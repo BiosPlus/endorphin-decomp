@@ -2009,6 +2009,12 @@
     "summary": "Maps r = this-\u003evfunc_4(arg) through a fixed table: r\u003c0 -\u003e 0, r in {0,1} -\u003e 3, r==2 -\u003e 1, r\u003e=3 -\u003e 0.",
     "lifted_path": "lifted/MultiTrackView/DiamondMarker.cpp"
   },
+  "0x00440970": {
+    "name": "setFlag88IfField8e",
+    "signature": "void fn_00440970(void* self)",
+    "summary": "If byte +0x88 is clear and byte +0x8e is set, set byte +0x88 to 1.",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x004409D0": {
     "name": "sub_004409D0",
     "signature": "uint32_t fn_004409D0(void* self)",

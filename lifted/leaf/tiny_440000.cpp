@@ -720,3 +720,20 @@ int fn_0044B5C0(void* self) {
     return fn(inner);
 }
 } // namespace lift_0044B5C0
+
+// [0x00440970]
+namespace lift_00440970 {
+// @name setFlag88IfField8e
+// @summary If byte +0x88 is clear and byte +0x8e is set, set byte +0x88 to 1.
+// @field <Unknown> +0x88 uint8_t field_0x88
+// @field <Unknown> +0x8E uint8_t field_0x8e
+void fn_00440970(void* self) {
+    if (lift_field<uint8_t>(self, 0x88) != 0) {
+        return;
+    }
+    if (lift_field<uint8_t>(self, 0x8E) == 0) {
+        return;
+    }
+    lift_field<uint8_t>(self, 0x88) = 1;
+}
+} // namespace lift_00440970

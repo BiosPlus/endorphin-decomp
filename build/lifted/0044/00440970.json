@@ -1,0 +1,27 @@
+{
+  "va": "0x00440970",
+  "size": 26,
+  "orig_symbol": "sub_00440970",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "setFlag88IfField8e",
+  "signature": "void fn_00440970(void* self)",
+  "summary": "If byte +0x88 is clear and byte +0x8e is set, set byte +0x88 to 1.",
+  "fields": [
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x88",
+      "type": "uint8_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x8E",
+      "type": "uint8_t",
+      "name": "field_0x8e"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:54:14Z"
+}
