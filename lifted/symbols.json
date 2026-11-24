@@ -3361,6 +3361,12 @@
     "summary": "If the child object at +0x64 is non-null, invoke its vtable slot 2 (offset 0x08) with it as `this`; then forward to the MFC80 thunk ext_006A5EA8.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044C2A0": {
+    "name": "DWORD_RangeCopy (descriptive; sub_0044C2A0)",
+    "signature": "DWORD* fn_0044C2A0(const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Copies DWORDs from [first, last) to out (skipping stores when out is null); returns out + count.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044C910": {
     "name": "sub_0044C910",
     "signature": "void fn_0044C910()",

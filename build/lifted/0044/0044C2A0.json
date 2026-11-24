@@ -1,0 +1,13 @@
+{
+  "va": "0x0044C2A0",
+  "size": 37,
+  "orig_symbol": "sub_0044C2A0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "DWORD_RangeCopy (descriptive; sub_0044C2A0)",
+  "signature": "DWORD* fn_0044C2A0(const DWORD* first, const DWORD* last, DWORD* out)",
+  "summary": "Copies DWORDs from [first, last) to out (skipping stores when out is null); returns out + count.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:01:41Z"
+}

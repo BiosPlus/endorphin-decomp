@@ -924,3 +924,25 @@ void fn_0044B700(void* self) {
     slot154(obj);
 }
 } // namespace lift_0044B700
+
+// [0x0044C2A0] sub_0044C2A0 (37 bytes)
+namespace lift_0044C2A0 {
+// @name DWORD_RangeCopy (descriptive; sub_0044C2A0)
+// @summary Copies DWORDs from [first, last) to out (skipping stores when out is null); returns out + count.
+// @field none (no struct field offsets accessed; operates only on raw pointer arguments)
+DWORD* fn_0044C2A0(const DWORD* first, const DWORD* last, DWORD* out) {
+    // Original is a cdecl loop: returns out unchanged when the range is empty.
+    if (first == last) {
+        return out;
+    }
+    // Do-while equivalent: range is non-empty on entry.
+    do {
+        if (out != nullptr) {
+            *out = *first;
+        }
+        ++first;
+        ++out;
+    } while (first != last);
+    return out;
+}
+} // namespace lift_0044C2A0
