@@ -8956,3 +8956,37 @@ void __thiscall vfunc_40(void* /*this*/, void* out) {
     lift_field<DWORD>(out, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(mem_00ADF9E8));
 }
 } // namespace lift_004AA590
+
+// [0x004AAA00] ExprParser::ReadWriteMethodType<NMData::BehaviourData, bool, isEnabled, bool, vcall{272}>::vfunc_40 (122 bytes)
+namespace lift_004AAA00 {
+// Known callee 0x0067A670: ctor-like init routine invoked once for the static object at mem_00ADF9F0 (26 bytes).
+extern void ext_0067A670(void* self, uint32_t arg);
+
+// Static one-time-init guard (bit 0 of the dword) and the static object storage.
+extern uint32_t mem_00ADF9F4;
+extern uint32_t mem_00ADF9F0;
+
+// Vtable address written into the static object once it is initialised.
+static constexpr uint32_t kStaticObjVtable = 0x00941A5Cu;
+// Guest address of the static object (mem_00ADF9F0).
+static constexpr uint32_t kStaticObjAddr = 0x00ADF9F0u;
+
+// @name ReadWriteMethodType_BehaviourData_isEnabled_vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, bool, {[thunk]: __thiscall NMData::BehaviourData::`vcall'{272, {flat}}, 0}>
+// @summary Lazily initialises the shared static object at 0x00ADF9F0 once, then stores its address into the out-pointer's +0x4 slot.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_004AAA00(void* out) {
+    // The original wraps this in an SEH frame (fs:[0] push/pop, scope id 0x88897E);
+    // exception-frame bookkeeping has no portable equivalent and is omitted.
+
+    if ((mem_00ADF9F4 & 1u) == 0) {
+        // First call: mark initialised, construct the static object, then install its vtable.
+        mem_00ADF9F4 |= 1u;
+        ext_0067A670(&mem_00ADF9F0, 0u);
+        mem_00ADF9F0 = kStaticObjVtable;
+    }
+
+    // Both paths hand back the static object's address through out+0x4.
+    lift_field<uint32_t>(out, 0x4) = kStaticObjAddr;
+}
+} // namespace lift_004AAA00

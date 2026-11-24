@@ -9510,6 +9510,13 @@
     "summary": "Writes a bool into BehaviourData: target = *ctx; if null throws; else value = src-\u003evfn3(src) (src = arg2-\u003efield_0x04's vtable slot 3) and calls target-\u003esetter(value) via callee 0x004C1710.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004AAA00": {
+    "name": "ReadWriteMethodType_BehaviourData_isEnabled_vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, bool, {[thunk]: __thiscall NMData::BehaviourData::`vcall'{272, {flat}}, 0}\u003e",
+    "signature": "void fn_004AAA00(void* out)",
+    "summary": "Lazily initialises the shared static object at 0x00ADF9F0 once, then stores its address into the out-pointer's +0x4 slot.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004AAA80": {
     "name": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0\u003e",
