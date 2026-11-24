@@ -73,3 +73,18 @@ void fn_005B72E0(void* self) {
     }
 }
 } // namespace lift_005B72E0
+
+// [0x005B1830] sub_005B1830 (17 bytes)
+namespace lift_005B1830 {
+// @name initVtableAndZeroFields_005B1830
+// @summary Thiscall initializer: stores the vtable address 0x0095F83C at [this+0], zeroes [this+4] and [this+8], and returns this.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+void* fn_005B1830(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x0095F83Cu; // immediate address, not a load from mem_0095F83C
+    lift_field<uint32_t>(self, 0x04) = 0u;
+    lift_field<uint32_t>(self, 0x08) = 0u;
+    return self;
+}
+} // namespace lift_005B1830
