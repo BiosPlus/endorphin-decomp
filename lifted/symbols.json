@@ -38453,6 +38453,12 @@
     "summary": "Passes (self + 0x118) to ext_006D2390 with arg1 as its this pointer, then returns arg1.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C2E30": {
+    "name": "sub_006C2E30",
+    "signature": "void* fn_006C2E30(void* self, void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C2CB0 (ForwardOffsetFieldToCalleeReturnArg).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C2F10": {
     "name": "sub_006C2F10",
     "signature": "extern \"C\" void __fastcall fn_006C2F10(void* self, int edx_unused, int32_t value)",
@@ -44021,6 +44027,18 @@
     "signature": "extern \"C\" int32_t __fastcall fn_0070EAF0(void* self)",
     "summary": "Getter returning int32_t field at offset +0x5C.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x0070EBC0": {
+    "name": "sub_0070EBC0",
+    "signature": "void* fn_0070EBC0(void* self, void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C2CB0 (ForwardOffsetFieldToCalleeReturnArg).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x0070EBF0": {
+    "name": "sub_0070EBF0",
+    "signature": "void* fn_0070EBF0(void* self, void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C2CB0 (ForwardOffsetFieldToCalleeReturnArg).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x0070EC20": {
     "name": "sub_0070EC20",

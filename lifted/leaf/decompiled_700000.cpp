@@ -3,6 +3,7 @@
 extern "C" void __fastcall ext_0070A1F0(void* self);
 extern "C" void __cdecl ext_006A5C5C(void* ptr);
 #include <cstdint>
+#include <cstring>
 
 // [0x0070A1D0] sub_0070A1D0 (32 bytes)
 // @name sub_0070A1D0
@@ -924,3 +925,43 @@ uint32_t fn_007027C0(void* self) {
     return *out;
 }
 } // namespace lift_007027C0
+
+// [0x0070EBC0] sub_0070EBC0 (48 bytes)
+namespace lift_0070EBC0 {
+// @name sub_0070EBC0
+// @summary Auto-lifted identical-shape clone of 0x006C2CB0 (ForwardOffsetFieldToCalleeReturnArg).
+namespace lift_006C2CB0 {
+// @name ForwardOffsetFieldToCalleeReturnArg
+// @summary Passes (self + 0x118) to ext_006D2390 with arg1 as its this pointer, then returns arg1.
+// @field unknown +0x118 uint8_t field_0x118
+
+
+extern void* ext_006B9D20(void* self, uint32_t arg1);
+
+void* fn_0070EBC0(void* self, void* arg1) {
+    uint32_t field_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(static_cast<uint8_t*>(self) + 0xAC));
+    ext_006B9D20(arg1, field_ptr);
+    return arg1;
+}
+} // namespace lift_006C2CB0
+} // namespace lift_0070EBC0
+
+// [0x0070EBF0] sub_0070EBF0 (48 bytes)
+namespace lift_0070EBF0 {
+// @name sub_0070EBF0
+// @summary Auto-lifted identical-shape clone of 0x006C2CB0 (ForwardOffsetFieldToCalleeReturnArg).
+namespace lift_006C2CB0 {
+// @name ForwardOffsetFieldToCalleeReturnArg
+// @summary Passes (self + 0x118) to ext_006D2390 with arg1 as its this pointer, then returns arg1.
+// @field unknown +0x118 uint8_t field_0x118
+
+
+extern void* ext_006B9D20(void* self, uint32_t arg1);
+
+void* fn_0070EBF0(void* self, void* arg1) {
+    uint32_t field_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(static_cast<uint8_t*>(self) + 0xF8));
+    ext_006B9D20(arg1, field_ptr);
+    return arg1;
+}
+} // namespace lift_006C2CB0
+} // namespace lift_0070EBF0
