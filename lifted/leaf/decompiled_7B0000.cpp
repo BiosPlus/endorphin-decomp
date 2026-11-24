@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_7B0000.cpp
 #include "lift_compat.h"
+#include <cstdint>
 
 // [0x007B7084] sub_007B7084 (12 bytes)
 namespace lift_007B7084 {
@@ -184,3 +185,28 @@ uint32_t sub_007BD310(uint32_t a1) {
     return a1;
 }
 } // namespace lift_007BD310
+
+// [0x007B7044]
+namespace lift_007B7044 {
+// @name sub_007B7044
+// @summary Adds byte and dword values from ebx, ecx, and edx into memory and eax
+
+uint32_t sub_007B7044(uint32_t eax, uint32_t ebx, uint32_t ecx, uint32_t edx) {
+    uint8_t* p_ebx8 = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(ebx));
+    const uint32_t* p_ebx32 = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(ebx));
+    const uint32_t* p_ecx32 = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(ecx));
+    const uint32_t* p_edx32 = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(edx));
+
+    for (int i = 0; i < 8; ++i) {
+        *p_ebx8 += static_cast<uint8_t>(eax);
+    }
+    for (int i = 0; i < 11; ++i) {
+        eax += *p_ebx32;
+    }
+    eax += *p_ecx32;
+    eax += *p_edx32;
+    uint8_t al = static_cast<uint8_t>(eax + *p_ebx8);
+    eax = (eax & ~0xFFu) | al;
+    return eax;
+}
+} // namespace lift_007B7044

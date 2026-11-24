@@ -1,0 +1,13 @@
+{
+  "va": "0x007B7044",
+  "size": 44,
+  "orig_symbol": "sub_007B7044",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "sub_007B7044",
+  "signature": "uint32_t sub_007B7044(uint32_t eax, uint32_t ebx, uint32_t ecx, uint32_t edx)",
+  "summary": "Adds byte and dword values from ebx, ecx, and edx into memory and eax",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:11:48Z"
+}

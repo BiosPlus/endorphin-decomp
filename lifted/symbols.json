@@ -46418,6 +46418,12 @@
     "summary": "Non-executing 20-byte data block (byte-value table 0x00-0x04); no observable logic.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B7044": {
+    "name": "sub_007B7044",
+    "signature": "uint32_t sub_007B7044(uint32_t eax, uint32_t ebx, uint32_t ecx, uint32_t edx)",
+    "summary": "Adds byte and dword values from ebx, ecx, and edx into memory and eax",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B7084": {
     "name": "SwitchCaseIndexTable_007B7084",
     "summary": "12-byte byte-index table indexed by (eax) and used by a jump table dispatch at 0x007B6xxx (mov cl, [eax+0x7B7084]; jmp [ecx*4+0x7B7074]); this is data, not code.",
