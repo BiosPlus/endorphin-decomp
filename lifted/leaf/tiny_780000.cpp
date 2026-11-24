@@ -326,3 +326,15 @@ uint32_t fn_0078C220(void* self, uint32_t arg) {
     return (arg - base) >> 4;
 }
 } // namespace lift_0078C220
+
+// [0x0078C230] sub_0078C230 (15 bytes)
+namespace lift_0078C230 {
+// @name Unknown::GetScaledOffsetPlusField4
+// @class Unknown
+// @summary Returns this->field_0x04 + (arg << 4) (thiscall, callee pops 4).
+// @field Unknown +0x04 uint32_t field_0x04
+uint32_t fn_0078C230(void* self, uint32_t arg) {
+    const uint32_t base = lift_field<uint32_t>(self, 0x04);
+    return (arg << 4) + base;
+}
+} // namespace lift_0078C230
