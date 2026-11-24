@@ -1,0 +1,34 @@
+{
+  "va": "0x00522220",
+  "size": 57,
+  "orig_symbol": "sub_00522220",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "CopyFillRange_00522220",
+  "class": "Unknown",
+  "signature": "void fn_00522220(uint8_t* first, uint8_t* last, const uint8_t* src)",
+  "summary": "Copy-fills each 0x28-byte entry in [first, last) from src: copies dwords at +0x04/+0x08 and string-assigns +0x0C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:19:23Z"
+}

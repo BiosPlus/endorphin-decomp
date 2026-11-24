@@ -349,3 +349,28 @@ uint32_t __cdecl fn_00520B90(uint32_t first, uint32_t last, uint32_t dst) {
     return cursor;
 }
 } // namespace lift_00520B90
+
+// [0x00522220] sub_00522220 (57 bytes)
+namespace lift_00522220 {
+// Indirect callee via IAT slot 0x00924FDC: MSVCP80 std::basic_string<char>::operator=(const basic_string&)
+// (thiscall: this = dst string, arg = src string, returns reference to this.)
+typedef void* (__thiscall *StringAssignFn)(void* self, const void* rhs);
+extern StringAssignFn mem_00924FDC;
+
+// @name CopyFillRange_00522220
+// @class Unknown
+// @summary Copy-fills each 0x28-byte entry in [first, last) from src: copies dwords at +0x04/+0x08 and string-assigns +0x0C.
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+// @field Unknown +0x0C std::string field_0x0c
+void fn_00522220(uint8_t* first, uint8_t* last, const uint8_t* src) {
+    if (first == last) {
+        return;
+    }
+    for (uint8_t* dst = first; dst != last; dst += 0x28) {
+        *reinterpret_cast<uint32_t*>(dst + 0x04) = *reinterpret_cast<const uint32_t*>(src + 0x04);
+        *reinterpret_cast<uint32_t*>(dst + 0x08) = *reinterpret_cast<const uint32_t*>(src + 0x08);
+        mem_00924FDC(dst + 0x0C, src + 0x0C);
+    }
+}
+} // namespace lift_00522220

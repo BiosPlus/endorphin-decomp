@@ -16364,6 +16364,13 @@
     "summary": "Constructs the std::string result (hidden return buffer) from a constant .rdata literal and returns that buffer.",
     "lifted_path": "lifted/classes/ThreeLayerNet.cpp"
   },
+  "0x00522220": {
+    "name": "CopyFillRange_00522220",
+    "class": "Unknown",
+    "signature": "void fn_00522220(uint8_t* first, uint8_t* last, const uint8_t* src)",
+    "summary": "Copy-fills each 0x28-byte entry in [first, last) from src: copies dwords at +0x04/+0x08 and string-assigns +0x0C.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00522260": {
     "name": "ExprParser::ReadWriteMethodType\u003cThreeLayerNet, int, \u0026public: int __thiscall ThreeLayerNet::getNumHidden(void) const, int, \u0026public: void __thiscall ThreeLayerNet::setNumHidden(int)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cThreeLayerNet, int, \u0026public: int __thiscall ThreeLayerNet::getNumHidden(void) const, int, \u0026public: void __thiscall ThreeLayerNet::setNumHidden(int)\u003e",
