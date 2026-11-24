@@ -8,11 +8,11 @@
 // Recovered field layout for ExprParser::ReadMethodType:
 namespace lifted_layout {
 struct ExprParser_ReadMethodType_Fields {
-    // +0x0   Chromosome::Descriptor*  descriptor  (evidence: 0x0046E570, 0x0059F600, 0x005B3680, 0x006749C0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   Chromosome::Descriptor*  descriptor  (evidence: 0x0046E570, 0x004983A0, 0x0059F600, 0x005B3680, 0x006749C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x004AA9B0, 0x00633240) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    object  (evidence: 0x0046E570, 0x0049D460, 0x005B3680, 0x006749C0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    object  (evidence: 0x0046E570, 0x004983A0, 0x0049D460, 0x005B3680, 0x006749C0) // CONFLICT: multiple definitions at +0x0
     // +0x4   void*                    accessor  (evidence: 0x0051D310, 0x0058C010, 0x005F5F50, 0x00633240, 0x00635740) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    inner  (evidence: 0x004A2580, 0x004A25E0, 0x005F5CC0, 0x005F5DC0, 0x00633240) // CONFLICT: multiple definitions at +0x4
-    // +0x8   void*                    valueSubobject  (evidence: 0x0046E570, 0x0049D460, 0x005B3680, 0x006749C0)
+    // +0x8   void*                    valueSubobject  (evidence: 0x0046E570, 0x004983A0, 0x0049D460, 0x005B3680, 0x006749C0)
 };
 } // namespace lifted_layout
