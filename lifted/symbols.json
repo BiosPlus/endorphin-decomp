@@ -14752,6 +14752,13 @@
     "summary": "Toggles a byte flag (at sub-object +0x04) to its logical NOT; sub-object pointer lives at self+0x84.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00544040": {
+    "name": "ForceApplicationTool::vfunc_23",
+    "class": "ForceApplicationTool",
+    "signature": "void ForceApplicationTool_vfunc_23(void* self)",
+    "summary": "If the held object at +0x88 is non-null, invoke its vmethod[14](1), then tail-dispatch this-\u003evmethod[26]().",
+    "lifted_path": "lifted/classes/ForceApplicationTool.cpp"
+  },
   "0x00544070": {
     "name": "ForceApplicationTool::vfunc_24",
     "class": "ForceApplicationTool",
