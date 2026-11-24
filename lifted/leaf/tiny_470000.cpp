@@ -47,3 +47,14 @@ void* fn_00476B80(void* a) {
 }
 } // namespace lift_005AC820
 } // namespace lift_00476B80
+
+// [0x00477500] sub_00477500 (29 bytes)
+namespace lift_00477500 {
+// @name fillFloatRange_00477500
+// @summary Stores the float at *value into every 4-byte slot in [first, last); no-op if first == last.
+void fn_00477500(float* first, float* last, const float* value) {
+    for (float* p = first; p != last; ++p) {
+        *p = *value;
+    }
+}
+} // namespace lift_00477500

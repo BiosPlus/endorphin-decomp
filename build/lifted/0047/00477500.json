@@ -1,0 +1,13 @@
+{
+  "va": "0x00477500",
+  "size": 29,
+  "orig_symbol": "sub_00477500",
+  "src_path": "src/leaf/tiny_470000.cpp",
+  "lifted_path": "lifted/leaf/tiny_470000.cpp",
+  "name": "fillFloatRange_00477500",
+  "signature": "void fn_00477500(float* first, float* last, const float* value)",
+  "summary": "Stores the float at *value into every 4-byte slot in [first, last); no-op if first == last.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:11:31Z"
+}
