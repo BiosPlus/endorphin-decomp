@@ -1,0 +1,28 @@
+{
+  "va": "0x004407B0",
+  "size": 14,
+  "orig_symbol": "sub_004407B0",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "GetPointerChainDword10",
+  "class": "\u003cClassName\u003e (unknown; receiver type not yet identified)",
+  "signature": "DWORD fn_004407B0(void* self)",
+  "summary": "Returns the DWORD at +0x10 of the pointer stored at self+0x44, or 0 if that pointer is null.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x44",
+      "type": "void*",
+      "name": "field_0x44"
+    },
+    {
+      "class": "void",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:24:42Z"
+}
