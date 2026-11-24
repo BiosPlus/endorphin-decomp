@@ -1,0 +1,27 @@
+{
+  "va": "0x005F3A30",
+  "size": 59,
+  "orig_symbol": "sub_005F3A30",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "recordRangeIfNonEmpty",
+  "signature": "void* fn_005F3A30(void* self, void* arg)",
+  "summary": "Stores arg into mem_00B46790 when arg is non-null, its +0x04 pointer is non-null and the +0x04..+0x08 span holds at least one dword; otherwise stores 0. Returns self unchanged.",
+  "fields": [
+    {
+      "class": "LiftRange",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "LiftRange",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:25:22Z"
+}

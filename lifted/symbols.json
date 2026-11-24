@@ -27250,6 +27250,12 @@
     "summary": "Reads a float from inner object's vtable slot 1, stores it through *arg into ext_0064F900, then writes a (value, inner) pair to out (value is 0 when inner is null).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005F3A30": {
+    "name": "recordRangeIfNonEmpty",
+    "signature": "void* fn_005F3A30(void* self, void* arg)",
+    "summary": "Stores arg into mem_00B46790 when arg is non-null, its +0x04 pointer is non-null and the +0x04..+0x08 span holds at least one dword; otherwise stores 0. Returns self unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005F3A70": {
     "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, setForceCaps\u003e::vfunc_40",
     "class": "ExprParser::WriteMethodType",

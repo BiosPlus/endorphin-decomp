@@ -112,3 +112,34 @@ void fn_005FF000() {
     word_at(head + 0x08) = head; // right = head
 }
 } // namespace lift_005FF000
+
+// [0x005F3A30] sub_005F3A30 (59 bytes)
+namespace lift_005F3A30 {
+extern int mem_00B46790;
+
+// @name recordRangeIfNonEmpty
+// @summary Stores arg into mem_00B46790 when arg is non-null, its +0x04 pointer is non-null and the +0x04..+0x08 span holds at least one dword; otherwise stores 0. Returns self unchanged.
+// @field LiftRange +0x04 uint32_t field_0x04
+// @field LiftRange +0x08 uint32_t field_0x08
+void* fn_005F3A30(void* self, void* arg) {
+    if (arg == nullptr) {
+        mem_00B46790 = 0;
+        return self;
+    }
+
+    const uint32_t begin = lift_field<uint32_t>(arg, 0x04);
+    if (begin == 0) {
+        mem_00B46790 = 0;
+        return self;
+    }
+
+    const uint32_t end = lift_field<uint32_t>(arg, 0x08);
+    const int32_t diff = static_cast<int32_t>(end - begin);
+    if ((diff >> 2) != 0) {
+        mem_00B46790 = static_cast<int>(reinterpret_cast<uintptr_t>(arg));
+    } else {
+        mem_00B46790 = 0;
+    }
+    return self;
+}
+} // namespace lift_005F3A30
