@@ -818,3 +818,26 @@ void sub_006DBEF0() {
     mem_00B5DAB4 = huge_ptr[1];
 }
 } // namespace lift_006DBEF0
+
+// [0x006DD980]
+namespace lift_006DD980 {
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5DC20;
+extern uint32_t mem_00B5DC24;
+extern uint32_t mem_00B5DC28;
+extern uint32_t mem_00B5DC2C;
+extern uint32_t mem_00B5DC30;
+extern uint32_t mem_00B5DC34;
+
+// @name initHugeVectorGlobals
+// @summary Initializes three 64-bit globals from the _HUGE double pointer at 0x00925284.
+void sub_006DD980() {
+    const uint32_t* huge_ptr = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5DC20 = huge_ptr[0];
+    mem_00B5DC24 = huge_ptr[1];
+    mem_00B5DC28 = huge_ptr[0];
+    mem_00B5DC2C = huge_ptr[1];
+    mem_00B5DC30 = huge_ptr[0];
+    mem_00B5DC34 = huge_ptr[1];
+}
+} // namespace lift_006DD980

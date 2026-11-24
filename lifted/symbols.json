@@ -45610,6 +45610,12 @@
     "summary": "Loads *_HUGE (double), negates it, and stores the result into mem_00B5DC10.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006DD980": {
+    "name": "initHugeVectorGlobals",
+    "signature": "void sub_006DD980()",
+    "summary": "Initializes three 64-bit globals from the _HUGE double pointer at 0x00925284.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DDEE0": {
     "name": "sub_006DDEE0",
     "signature": "extern \"C\" void* __fastcall fn_006DDEE0(void* self, int edx_unused, unsigned int flags)",
@@ -45752,6 +45758,12 @@
     "signature": "extern \"C\" void __fastcall fn_006E6340(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0x4C and tail-calls sub_006E7460.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E63C0": {
+    "name": "initHugeVec3",
+    "signature": "void sub_006E63C0()",
+    "summary": "Initializes three 64-bit globals (6 dwords at 0x00B5DDA0..0x00B5DDB4) from MSVCR80!_HUGE.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006E6410": {
     "name": "sub_006E6410",
@@ -46061,6 +46073,18 @@
     "class": "Unknown",
     "signature": "int64_t fn_006E9AE0(void* self)",
     "summary": "Reads the child pointer at +0x04, derives a value from it via helper calls, and returns that float truncated to int64.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
+  "0x006E9B70": {
+    "name": "sub_006E9B70",
+    "signature": "extern \"C\" void __fastcall fn_006E9B70(void* self, void* a1)",
+    "summary": "Looks up an item by key 0x00AA8D80 on the object from ext_006C9360(a1), invokes vtable+0x10 if found, and calls ext_00732CB0(a1).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
+  "0x006E9CB0": {
+    "name": "initHugeVectorGlobals",
+    "signature": "void sub_006E9CB0()",
+    "summary": "Initializes three 64-bit global values to MSVCR80!_HUGE.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006E9D00": {

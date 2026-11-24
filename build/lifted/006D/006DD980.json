@@ -1,0 +1,13 @@
+{
+  "va": "0x006DD980",
+  "size": 57,
+  "orig_symbol": "sub_006DD980",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "initHugeVectorGlobals",
+  "signature": "void sub_006DD980()",
+  "summary": "Initializes three 64-bit globals from the _HUGE double pointer at 0x00925284.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:21:37Z"
+}
