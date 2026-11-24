@@ -138,3 +138,21 @@ void fn_00433290(void* self, DWORD stackArg) {
     }
 }
 } // namespace lift_00433290
+
+// [0x0043C900] sub_0043C900 (21 bytes)
+namespace lift_0043C900 {
+// Tail-call target: indirect jump through mem_00925704 (IAT-style slot) to 0x006289B6 (USER32!SetCursor).
+extern void* ext_006289B6(void* hCursor);
+extern int mem_00925704;
+
+// @name Unknown::SetCursorFromTable
+// @class Unknown
+// @summary Looks up a cursor handle in the object's DWORD table at +0x128 by index and passes it to SetCursor.
+// @field Unknown +0x128 DWORD field_0x128
+void* fn_0043C900(void* self, DWORD index) {
+    DWORD cursor = lift_field<DWORD>(self, 0x128 + static_cast<ptrdiff_t>(index) * 4);
+    // Original tail-jumps to SetCursor with the cursor as its single stack argument,
+    // so the callee's return value is this function's return value.
+    return ext_006289B6(reinterpret_cast<void*>(static_cast<uintptr_t>(cursor)));
+}
+} // namespace lift_0043C900

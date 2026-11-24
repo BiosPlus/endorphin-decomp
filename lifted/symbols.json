@@ -1757,6 +1757,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0043BBD0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x0043C900": {
+    "name": "Unknown::SetCursorFromTable",
+    "class": "Unknown",
+    "signature": "void* fn_0043C900(void* self, DWORD index)",
+    "summary": "Looks up a cursor handle in the object's DWORD table at +0x128 by index and passes it to SetCursor.",
+    "lifted_path": "lifted/leaf/tiny_430000.cpp"
+  },
   "0x0043CAA0": {
     "name": "sub_0043CAA0",
     "signature": "extern \"C\" void __fastcall fn_0043CAA0(void* self)",

@@ -1,0 +1,22 @@
+{
+  "va": "0x0043C900",
+  "size": 21,
+  "orig_symbol": "sub_0043C900",
+  "src_path": "src/leaf/tiny_430000.cpp",
+  "lifted_path": "lifted/leaf/tiny_430000.cpp",
+  "name": "Unknown::SetCursorFromTable",
+  "class": "Unknown",
+  "signature": "void* fn_0043C900(void* self, DWORD index)",
+  "summary": "Looks up a cursor handle in the object's DWORD table at +0x128 by index and passes it to SetCursor.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x128",
+      "type": "DWORD",
+      "name": "field_0x128"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:11:32Z"
+}
