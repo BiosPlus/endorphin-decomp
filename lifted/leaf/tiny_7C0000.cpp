@@ -1092,3 +1092,17 @@ float addFloatFields_0x24_0x14(const unsigned char* self)
     return a + b;
 }
 } // namespace lift_007C9DF0
+
+// [0x007C2E50]
+namespace lift_007C2E50 {
+// @name sub_007C2E50
+// @summary Computes count * size and forwards the product to the CRT malloc import.
+// @field none
+
+extern uint32_t mem_00925208;
+
+uint32_t sub_007C2E50(uint32_t arg0, uint32_t arg1) {
+    uint32_t size = arg0 * arg1;
+    return reinterpret_cast<uint32_t (*)(uint32_t)>(mem_00925208)(size);
+}
+} // namespace lift_007C2E50

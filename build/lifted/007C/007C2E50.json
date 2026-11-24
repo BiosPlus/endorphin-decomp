@@ -1,0 +1,13 @@
+{
+  "va": "0x007C2E50",
+  "size": 20,
+  "orig_symbol": "sub_007C2E50",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "sub_007C2E50",
+  "signature": "uint32_t sub_007C2E50(uint32_t arg0, uint32_t arg1)",
+  "summary": "Computes count * size and forwards the product to the CRT malloc import.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:10:17Z"
+}

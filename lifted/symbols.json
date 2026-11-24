@@ -38853,6 +38853,12 @@
     "summary": "Copies a 32-bit value from the address in arg1 to the address in arg2 (cdecl, no stack cleanup).",
     "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
   },
+  "0x007C2E50": {
+    "name": "sub_007C2E50",
+    "signature": "uint32_t sub_007C2E50(uint32_t arg0, uint32_t arg1)",
+    "summary": "Computes count * size and forwards the product to the CRT malloc import.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C2E70": {
     "name": "CRT_free_thunk",
     "signature": "extern \"C\" void __cdecl fn_007C2E70(void* ptr)",
