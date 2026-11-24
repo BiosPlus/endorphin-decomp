@@ -7186,3 +7186,30 @@ void fn_006077D0(void* self, void* arg) {
     lift_field<uint32_t>(arg, 0x04) = 0x00B4779Cu;
 }
 } // namespace lift_006077D0
+
+// [0x005C6030]
+namespace lift_005C6030 {
+// @name ExprParser::WriteMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, addImpulse>::vfunc_40
+// @class ExprParser::WriteMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, addImpulse>
+// @summary Lazily initializes static singleton at 0x00B44438 and stores its address into out+0x4.
+// @field OutStruct +0x04 uint32_t field_0x04
+
+
+extern uint32_t mem_00B4443C;
+extern uint32_t mem_00B44438;
+
+extern void __thiscall ext_0067A670(void* self);
+
+void __thiscall fn_005C6030(void* self, void* out)
+{
+    (void)self;
+    if ((mem_00B4443C & 1u) == 0)
+    {
+        mem_00B4443C |= 1u;
+        ext_0067A670(&mem_00B44438);
+        mem_00B44438 = 0x0096424Cu;
+    }
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(out) + 0x4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B44438));
+}
+} // namespace lift_005C6030

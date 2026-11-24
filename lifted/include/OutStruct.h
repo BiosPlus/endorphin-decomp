@@ -8,6 +8,7 @@
 // Recovered field layout for OutStruct:
 namespace lifted_layout {
 struct OutStruct_Fields {
-    // +0x4   uint32_t*                field_0x04  (evidence: 0x004B1F70)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x005C6030) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t*                field_0x04  (evidence: 0x004B1F70) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout
