@@ -595,3 +595,47 @@ extern uint32_t fn_0066C300(void* self, uint32_t a1, uint32_t a2, uint32_t a3, u
 }
 } // namespace lift_005B7E80
 } // namespace lift_0066C300
+
+// [0x00692380]
+namespace lift_00692380 {
+// @name ExprParser::Method2Type<ValuePtrArrayObject, int, ValuePtr const &, setElement>::vfunc_49
+// @class ExprParser::Method2Type<ValuePtrArrayObject, int, ValuePtr const &, setElement>
+// @summary Calls virtual slot 2 on the object at arg3+4 with (arg3, arg4, *arg2, 0), forwards the result as the argument to ext_004ECA90 on *arg2, zeroes the out buffer at *arg2 via ext_00671F30 and returns *arg2.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+
+extern void __thiscall ext_004ECA90(void* self, uint32_t arg);
+extern void __cdecl ext_00671F30(uint32_t* out);
+extern uint32_t mem_00B599BC;
+
+namespace {
+
+using VSlot2Fn = uint32_t(__fastcall*)(void* self, void* edx, uint32_t a, uint32_t b, uint32_t c, uint32_t d);
+
+} // namespace
+
+extern uint32_t __stdcall fn_00692380(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4) {
+    (void)self;
+    (void)a1;
+
+    // esi = *(uint32_t*)a2
+    uint32_t* ptrSlot = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(a2));
+    uint32_t target = ptrSlot[0];
+
+    // obj = a3->field_0x04; r = obj->vtbl[2](obj, a3, a4, target, 0)
+    uint32_t* ctx = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(a3));
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(ctx[1]));
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    VSlot2Fn fn = reinterpret_cast<VSlot2Fn>(vtbl[2]);
+    uint32_t r = fn(obj, nullptr, a3, a4, target, 0);
+
+    // ext_004ECA90 is invoked on target with r as its single argument.
+    ext_004ECA90(reinterpret_cast<void*>(static_cast<uintptr_t>(target)), r);
+
+    // Zero the out buffer at target (first dword) and store the global second dword.
+    uint32_t* out = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(target));
+    ext_00671F30(out);
+
+    return target;
+}
+} // namespace lift_00692380
