@@ -48,3 +48,26 @@ uint32_t fn_00713810() {
 }
 } // namespace lift_006D2CA0
 } // namespace lift_00713810
+
+// [0x00714570] sub_00714570 (16 bytes)
+namespace lift_00714570 {
+// @name sub_00714570
+// @summary Auto-lifted identical-shape clone of 0x006B9D10 (Unknown::InitAndReturnSelf).
+namespace lift_006B9D10 {
+// @name Unknown::InitAndReturnSelf
+// @class Unknown
+// @summary Calls sub_006B9910 on the object (zero-inits fields, sets vtable) and returns the same object pointer.
+
+class Unknown;
+
+// External callee: sub_006B9910 (Unknown::sub_006B9910), __thiscall-style, takes this in ecx.
+extern void ext_00714580(Unknown* ecx);
+
+// Lifted from 0x006B9D10: push esi; mov esi, ecx; call sub_006B9910; mov eax, esi; pop esi; ret
+Unknown* fn_00714570(Unknown* ecx) {
+    Unknown* esi = ecx;
+    ext_00714580(ecx);
+    return esi;
+}
+} // namespace lift_006B9D10
+} // namespace lift_00714570

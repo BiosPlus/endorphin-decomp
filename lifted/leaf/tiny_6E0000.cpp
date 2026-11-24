@@ -17,6 +17,7 @@ extern "C" void __fastcall ext_006EA190(void* self);
 extern "C" int32_t mem_00B5E0A8;
 extern "C" int32_t mem_00B5E0B8;
 extern "C" int mem_00B5E0B0;
+#include <cstdint>
 
 // [0x006E7460] sub_006E7460 (16 bytes)
 // @name sub_006E7460
@@ -192,3 +193,35 @@ void fn_006EFF70(void* self, uint32_t a0, uint32_t a1) {
     lift_field<uint32_t>(self, 0x2060) = a0;
     lift_field<uint32_t>(self, 0x2064) = a1;
 }
+
+// [0x006E7FA0] sub_006E7FA0 (16 bytes)
+namespace lift_006E7FA0 {
+// @name sub_006E7FA0
+// @summary Auto-lifted identical-shape clone of 0x006BB7B0 (Unknown::SetField08).
+namespace lift_006BB7B0 {
+// @name Unknown::SetField08
+// @class Unknown
+// @summary Loads the pointer stored at this+0 and writes the single stack argument to its +0x08 slot.
+// @field Unknown +0x08 DWORD field_0x08
+void fn_006E7FA0(void* self, DWORD value) {
+    void* target = lift_field<void*>(self, 0x00);
+    lift_field<DWORD>(target, 0x54) = value;
+}
+} // namespace lift_006BB7B0
+} // namespace lift_006E7FA0
+
+// [0x006E86A0] sub_006E86A0 (16 bytes)
+namespace lift_006E86A0 {
+// @name sub_006E86A0
+// @summary Auto-lifted identical-shape clone of 0x006BB7B0 (Unknown::SetField08).
+namespace lift_006BB7B0 {
+// @name Unknown::SetField08
+// @class Unknown
+// @summary Loads the pointer stored at this+0 and writes the single stack argument to its +0x08 slot.
+// @field Unknown +0x08 DWORD field_0x08
+void fn_006E86A0(void* self, DWORD value) {
+    void* target = lift_field<void*>(self, 0x00);
+    lift_field<DWORD>(target, 0x48) = value;
+}
+} // namespace lift_006BB7B0
+} // namespace lift_006E86A0

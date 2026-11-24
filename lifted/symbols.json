@@ -31065,6 +31065,13 @@
     "summary": "Stores address of mem_00991168 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B9960": {
+    "name": "sub_006B9960",
+    "class": "Unknown",
+    "signature": "Unknown* fn_006B9960(Unknown* ecx)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B9D10 (Unknown::InitAndReturnSelf).",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B99C0": {
     "name": "sub_006B99C0",
     "signature": "extern \"C\" int32_t __fastcall fn_006B99C0(void* self)",
@@ -32238,6 +32245,20 @@
     "name": "sub_006E7460",
     "signature": "extern \"C\" int32_t __fastcall fn_006E7460(void* self)",
     "summary": "Getter returning int32_t field at offset +0x0.",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E7FA0": {
+    "name": "sub_006E7FA0",
+    "class": "Unknown",
+    "signature": "void fn_006E7FA0(void* self, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BB7B0 (Unknown::SetField08).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E86A0": {
+    "name": "sub_006E86A0",
+    "class": "Unknown",
+    "signature": "void fn_006E86A0(void* self, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BB7B0 (Unknown::SetField08).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
   "0x006E9420": {
@@ -35127,6 +35148,13 @@
     "signature": "extern void fn_00714560(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00714570": {
+    "name": "sub_00714570",
+    "class": "Unknown",
+    "signature": "Unknown* fn_00714570(Unknown* ecx)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B9D10 (Unknown::InitAndReturnSelf).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x00714970": {
     "name": "sub_00714970",

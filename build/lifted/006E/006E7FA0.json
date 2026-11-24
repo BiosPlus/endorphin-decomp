@@ -1,0 +1,22 @@
+{
+  "va": "0x006E7FA0",
+  "size": 16,
+  "orig_symbol": "sub_006E7FA0",
+  "src_path": "src/leaf/tiny_6E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6E0000.cpp",
+  "name": "sub_006E7FA0",
+  "class": "Unknown",
+  "signature": "void fn_006E7FA0(void* self, DWORD value)",
+  "summary": "Auto-lifted identical-shape clone of 0x006BB7B0 (Unknown::SetField08).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:37:47Z"
+}

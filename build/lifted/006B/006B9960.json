@@ -1,0 +1,14 @@
+{
+  "va": "0x006B9960",
+  "size": 16,
+  "orig_symbol": "sub_006B9960",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "sub_006B9960",
+  "class": "Unknown",
+  "signature": "Unknown* fn_006B9960(Unknown* ecx)",
+  "summary": "Auto-lifted identical-shape clone of 0x006B9D10 (Unknown::InitAndReturnSelf).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:37:47Z"
+}
