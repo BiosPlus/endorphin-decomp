@@ -1,0 +1,14 @@
+{
+  "va": "0x00471E20",
+  "size": 81,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cRuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cRuntimeEngine, bool, getPlaybackLoopingEnabled\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, bool, getPlaybackLoopingEnabled\u003e",
+  "signature": "void* __thiscall fn_00471E20(void* self, void* out_str, void** obj_ptr)",
+  "summary": "Reads playback looping state from a RuntimeEngine pointer and formats it as a boolean string, or throws on null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:43:08Z"
+}
