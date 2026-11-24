@@ -467,3 +467,20 @@ void fn_0044B1D0(void* self) {
 }
 } // namespace lift_0045E4A0
 } // namespace lift_0044B1D0
+
+// [0x00448280]
+namespace lift_00448280 {
+// @name sub_00448280
+// @summary Derived constructor that calls base constructor sub_006B0C40 and sets vtable to 0x0093333c.
+// @field unknown +0x00 uint32_t vtable
+
+
+extern uint32_t __thiscall ext_006B0C40(uint32_t self, uint32_t arg0);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+uint32_t __thiscall sub_00448280(uint32_t self, uint32_t arg0) {
+    ext_006B0C40(self, arg0);
+    mem_write32(self, 0x0093333c);
+    return self;
+}
+} // namespace lift_00448280

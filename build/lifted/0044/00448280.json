@@ -1,0 +1,21 @@
+{
+  "va": "0x00448280",
+  "size": 25,
+  "orig_symbol": "sub_00448280",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "sub_00448280",
+  "signature": "uint32_t __thiscall sub_00448280(uint32_t self, uint32_t arg0)",
+  "summary": "Derived constructor that calls base constructor sub_006B0C40 and sets vtable to 0x0093333c.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T11:55:35Z"
+}
