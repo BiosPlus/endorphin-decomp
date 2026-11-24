@@ -45229,6 +45229,12 @@
     "summary": "If global object pointer mem_00AB86EC is non-null, call the function pointer in its first slot with the argument and return the result; otherwise return -1.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x00857420": {
+    "name": "ForwardTwoArgsToGlobalObjectSlot8",
+    "signature": "int fn_00857420(int a, int b)",
+    "summary": "Calls the function pointer at +0x08 of the global object mem_00AB86EC with two cdecl args; returns -1 if the global is null.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00857470": {
     "name": "dispatchThroughGlobalObjectSlot0C",
     "signature": "void fn_00857470(uint32_t arg)",

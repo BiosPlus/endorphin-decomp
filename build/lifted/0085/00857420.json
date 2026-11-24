@@ -1,0 +1,21 @@
+{
+  "va": "0x00857420",
+  "size": 32,
+  "orig_symbol": "sub_00857420",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "ForwardTwoArgsToGlobalObjectSlot8",
+  "signature": "int fn_00857420(int a, int b)",
+  "summary": "Calls the function pointer at +0x08 of the global object mem_00AB86EC with two cdecl args; returns -1 if the global is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int (*)(int, int)",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:49:38Z"
+}

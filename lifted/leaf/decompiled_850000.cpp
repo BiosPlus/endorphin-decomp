@@ -120,3 +120,23 @@ void fn_00857470(uint32_t arg) {
     fn(arg);
 }
 } // namespace lift_00857470
+
+// [0x00857420] sub_00857420 (32 bytes)
+namespace lift_00857420 {
+extern void* mem_00AB86EC;
+
+// @name ForwardTwoArgsToGlobalObjectSlot8
+// @summary Calls the function pointer at +0x08 of the global object mem_00AB86EC with two cdecl args; returns -1 if the global is null.
+// @field Unknown +0x08 int (*)(int, int) field_0x08
+int fn_00857420(int a, int b) {
+    using Fn = int (*)(int, int);
+
+    void* obj = mem_00AB86EC;
+    if (obj == nullptr) {
+        return -1;
+    }
+
+    Fn fn = lift_field<Fn>(obj, 0x08);
+    return fn(a, b);
+}
+} // namespace lift_00857420
