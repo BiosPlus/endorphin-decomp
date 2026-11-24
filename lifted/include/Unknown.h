@@ -130,6 +130,7 @@ struct Unknown_Fields {
     // +0xC   ProcPtr                  field_0x0C  (evidence: 0x007DCAA0) // CONFLICT: multiple definitions at +0xC
     // +0xC   float                    field_0x0C  (evidence: 0x0043B3E0, 0x00622750, 0x00669E60, 0x0066A310, 0x0066A330, 0x007C9C90) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  field_0x0C  (evidence: 0x00492520, 0x006722B0, 0x00672490, 0x0067B070, 0x007C9ED0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   pointer                  field_0x0C  (evidence: 0x0071C0E0) // CONFLICT: multiple definitions at +0xC
     // +0xC   std::string              field_0x0C  (evidence: 0x00401B60) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x0040F290, 0x0050F970, 0x006657F0, 0x006A0670, 0x006C9A90, 0x006C9F60, 0x006D9010, 0x006E67C0, 0x006FC7E0, 0x007155A0, 0x0071B6D0, 0x0071B6E0, 0x0071B770, 0x0071B860, 0x0071B8F0, 0x0071BFC0, 0x0071C020, 0x0071C080, 0x0071C100, 0x0071C3D0, 0x0071C4A0, 0x0071C900, 0x0071C9D0, 0x0071CA00, 0x0071DEA0, 0x0077FAB0, 0x008703B0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t[16]             field_0x0C  (evidence: 0x0065C320, 0x0065F280) // CONFLICT: multiple definitions at +0xC
@@ -407,6 +408,8 @@ struct Unknown_Fields {
     // +0x270 uint8_t                  field_0x270  (evidence: 0x00702640, 0x0070E390, 0x0070E3B0, 0x0070EC70) // CONFLICT: multiple definitions at +0x270
     // +0x295 uint8_t                  field_0x295  (evidence: 0x0046F8B0, 0x0046F8D0)
     // +0x2DC void*                    field_0x2dc  (evidence: 0x00594600)
+    // +0x2F8 DWORD field_0x2F8 (on sub-object at this+0x0C)  (evidence: 0x0071C0E0)
+    // +0x2FC DWORD field_0x2FC (on sub-object at this+0x0C)  (evidence: 0x0071C0E0)
     // +0x3E0 uint32_t                 field_0x3e0  (evidence: 0x004800A0)
     // +0x420 void*                    field_0x420  (evidence: 0x00553760)
     // +0x428 void*                    field_0x428  (evidence: 0x0040B860, 0x0040B880)

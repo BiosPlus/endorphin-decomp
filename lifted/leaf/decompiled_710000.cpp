@@ -504,3 +504,18 @@ void fn_0071C3B0(void* self, DWORD arg1, DWORD arg2) {
     lift_field<DWORD>(sub, 0x1524) = arg2;
 }
 } // namespace lift_0071C3B0
+
+// [0x0071C0E0] sub_0071C0E0 (32 bytes)
+namespace lift_0071C0E0 {
+// @name Unknown::StoreArgPairIntoSubObject
+// @class Unknown
+// @summary Stores two stack arguments into the sub-object at this+0x0C at offsets +0x2F8 and +0x2FC.
+// @field Unknown +0x0C pointer field_0x0C
+// @field Unknown +0x2F8 DWORD field_0x2F8 (on sub-object at this+0x0C)
+// @field Unknown +0x2FC DWORD field_0x2FC (on sub-object at this+0x0C)
+void fn_0071C0E0(uint8_t* self, DWORD arg0, DWORD arg1) {
+    uint8_t* sub = *reinterpret_cast<uint8_t**>(self + 0x0C);
+    *reinterpret_cast<DWORD*>(sub + 0x2F8) = arg0;
+    *reinterpret_cast<DWORD*>(sub + 0x2FC) = arg1;
+}
+} // namespace lift_0071C0E0

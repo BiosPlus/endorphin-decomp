@@ -41483,6 +41483,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C0E0": {
+    "name": "Unknown::StoreArgPairIntoSubObject",
+    "class": "Unknown",
+    "signature": "void fn_0071C0E0(uint8_t* self, DWORD arg0, DWORD arg1)",
+    "summary": "Stores two stack arguments into the sub-object at this+0x0C at offsets +0x2F8 and +0x2FC.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071C100": {
     "name": "sub_0071C100",
     "class": "Unknown",
