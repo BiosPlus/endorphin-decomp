@@ -12,5 +12,6 @@ struct SubObject_Fields {
     // +0x28  pointer                  field_0x28  (evidence: 0x00648900)
     // +0x2C  int32_t                  field_0x2c  (evidence: 0x00672490, 0x00673B60)
     // +0x68  DWORD                    field_0x68  (evidence: 0x00687250)
+    // +0xA0  uint32_t                 field_0xA0  (evidence: 0x00548200)
 };
 } // namespace lifted_layout

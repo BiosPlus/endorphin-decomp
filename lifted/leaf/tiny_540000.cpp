@@ -234,3 +234,21 @@ int fn_0054E340(const void* self) {
     return (value == 0.0f) ? 1 : 0;
 }
 } // namespace lift_0054E340
+
+// [0x00548200] sub_00548200 (22 bytes)
+namespace lift_00548200 {
+extern float __fastcall ext_005D0710(uint32_t arg);
+extern float mem_00956CB0;
+
+// @name SubObject::GetScaleOrForward
+// @class SubObject
+// @summary Returns the value at +0xA0 forwarded to sub_005D0710 when non-zero; otherwise returns the float constant 4/3 (1.3333334).
+// @field SubObject +0xA0 uint32_t field_0xA0
+extern float __fastcall fn_00548200(void* self) {
+    const uint32_t v = lift_field<uint32_t>(self, 0xA0);
+    if (v != 0) {
+        return ext_005D0710(v);
+    }
+    return mem_00956CB0;
+}
+} // namespace lift_00548200

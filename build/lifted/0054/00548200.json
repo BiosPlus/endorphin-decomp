@@ -1,0 +1,22 @@
+{
+  "va": "0x00548200",
+  "size": 22,
+  "orig_symbol": "sub_00548200",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "SubObject::GetScaleOrForward",
+  "class": "SubObject",
+  "signature": "extern \"C\" float __fastcall fn_00548200(void* self)",
+  "summary": "Returns the value at +0xA0 forwarded to sub_005D0710 when non-zero; otherwise returns the float constant 4/3 (1.3333334).",
+  "fields": [
+    {
+      "class": "SubObject",
+      "offset": "+0xA0",
+      "type": "uint32_t",
+      "name": "field_0xA0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:29:13Z"
+}
