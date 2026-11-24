@@ -2468,6 +2468,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00440ED0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x00442960": {
+    "name": "Unknown::InitWithTag",
+    "class": "Unknown",
+    "signature": "void* fn_00442960(void* self, uint32_t arg, uint32_t unused_arg)",
+    "summary": "Runs the base init helper with arg, then overwrites the vtable slot with mem_009324DC and stores arg at +0x8; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00442980": {
     "name": "sub_00442980",
     "signature": "extern \"C\" void __fastcall fn_00442980(void* self)",

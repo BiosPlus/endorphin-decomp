@@ -551,3 +551,24 @@ int32_t fn_004410C0(void* self) {
     return static_cast<int32_t>(a - b);
 }
 } // namespace lift_004410C0
+
+// [0x00442960] sub_00442960 (32 bytes)
+namespace lift_00442960 {
+// Known callee 0x0041C750: sub_0041C750 (Constructor-style init: stores vtable mem_0092DB1C at +0x0 and the single stack argument at +0x4.)
+extern void __fastcall ext_0041C750(void* self, int edx_unused, uint32_t arg);
+// Vtable address mem_009324DC (value stored, not dereferenced).
+
+// @name Unknown::InitWithTag
+// @class Unknown
+// @summary Runs the base init helper with arg, then overwrites the vtable slot with mem_009324DC and stores arg at +0x8; returns self.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x08 uint32_t field_0x08
+void* fn_00442960(void* self, uint32_t arg, uint32_t unused_arg) {
+    (void)unused_arg; // stack-cleanup slot (ret 8); never read
+    ext_0041C750(self, 0, arg);
+    auto* words = static_cast<uint32_t*>(self);
+    words[0] = 0x009324DCu;
+    words[2] = arg;
+    return self;
+}
+} // namespace lift_00442960

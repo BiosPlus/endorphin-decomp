@@ -1,0 +1,28 @@
+{
+  "va": "0x00442960",
+  "size": 32,
+  "orig_symbol": "sub_00442960",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::InitWithTag",
+  "class": "Unknown",
+  "signature": "void* fn_00442960(void* self, uint32_t arg, uint32_t unused_arg)",
+  "summary": "Runs the base init helper with arg, then overwrites the vtable slot with mem_009324DC and stores arg at +0x8; returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:29:38Z"
+}
