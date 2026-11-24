@@ -62,3 +62,24 @@ void fn_0079EED0(int32_t offset) {
     std::fseek(reinterpret_cast<FILE*>(stream), static_cast<long>(offset), SEEK_SET);
 }
 } // namespace lift_0079EED0
+
+// [0x0079E5E0]
+namespace lift_0079E5E0 {
+// @name descriptiveName: SelectSelfOrOffsetByMode
+// @class (none, free function)
+// @summary Returns self for modes 0 and 2, self+4 for mode 3 (or null if self is null), and null otherwise.
+// @field none (self is never dereferenced; self+4 is returned as an address only)
+// The stack-passed second argument is not read by the original code, but the
+// callee pops 8 bytes (ret 0x8), so the trailing parameter is kept for ABI fidelity.
+void* __thiscall fn_0079E5E0(void* self, DWORD mode, DWORD /*unused*/) {
+    switch (mode) {
+    case 0:
+    case 2:
+        return self;
+    case 3:
+        return self ? static_cast<uint8_t*>(self) + 4 : nullptr;
+    default:
+        return nullptr;
+    }
+}
+} // namespace lift_0079E5E0
