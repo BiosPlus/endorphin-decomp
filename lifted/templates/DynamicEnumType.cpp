@@ -1816,3 +1816,34 @@ void* __thiscall fn_004D8BB0(void* /*self*/, void* out_str, void** obj_ptr, int 
     return out_str;
 }
 } // namespace lift_004D8BB0
+
+// [0x004D8B20]
+namespace lift_004D8B20 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData>::vfunc_27
+// @class ExprParser::DynamicEnumType<NMData::RigEventData>
+// @summary Calls getAvailableRigTypeName on the RigEventData instance and copies the resulting std::string to sret.
+
+
+extern uint32_t (__thiscall *ext_004D41C0)(uint32_t, uint32_t, uint32_t);
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FF4;
+
+uint32_t __thiscall fn_004D8B20(uint32_t self, uint32_t sret, uint32_t arg1, uint32_t arg2) {
+    (void)self;
+    uint8_t temp_str[0x1c];
+    uint32_t temp_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(temp_str));
+
+    uint32_t obj = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(arg1));
+    uint32_t ret_temp = ext_004D41C0(obj, temp_addr, arg2);
+
+    using StrCopyCtorFn = uint32_t (__thiscall *)(uint32_t, uint32_t);
+    auto str_copy_ctor = reinterpret_cast<StrCopyCtorFn>(static_cast<uintptr_t>(mem_00924FE0));
+    str_copy_ctor(sret, ret_temp);
+
+    using StrDtorFn = void (__thiscall *)(uint32_t);
+    auto str_dtor = reinterpret_cast<StrDtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+    str_dtor(temp_addr);
+
+    return sret;
+}
+} // namespace lift_004D8B20
