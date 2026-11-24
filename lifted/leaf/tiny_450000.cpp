@@ -343,3 +343,18 @@ extern int __stdcall fn_00455260(void* self, const char* src, size_t n, void* un
     return 0;
 }
 } // namespace lift_00455260
+
+// [0x004586A0] sub_004586A0 (25 bytes)
+namespace lift_004586A0 {
+// Known callee 0x006286D0: USER32!SetTimer (IAT jump thunk; args: hWnd, nIDEvent, uElapse, lpTimerFunc.)
+extern UINT_PTR ext_006286D0(HWND hWnd, UINT_PTR nIDEvent, UINT uElapse, void* lpTimerFunc);
+
+// @name StartOwnerTimerWithId
+// @class Unknown
+// @summary Starts a Win32 timer (no callback) with the given id and interval on the owner window stored at self+0x20.
+// @field Unknown +0x20 HWND ownerHwnd
+void fn_004586A0(void* self, UINT_PTR nIDEvent, UINT uElapse) {
+    HWND ownerHwnd = lift_field<HWND>(self, 0x20);
+    (void)ext_006286D0(ownerHwnd, nIDEvent, uElapse, nullptr);
+}
+} // namespace lift_004586A0

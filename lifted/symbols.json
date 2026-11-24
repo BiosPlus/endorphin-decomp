@@ -3240,6 +3240,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x54 and tail-calls sub_004584B0.",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x004586A0": {
+    "name": "StartOwnerTimerWithId",
+    "class": "Unknown",
+    "signature": "void fn_004586A0(void* self, UINT_PTR nIDEvent, UINT uElapse)",
+    "summary": "Starts a Win32 timer (no callback) with the given id and interval on the owner window stored at self+0x20.",
+    "lifted_path": "lifted/leaf/tiny_450000.cpp"
+  },
   "0x004586C0": {
     "name": "KillOwnerTimerWithId",
     "class": "Unknown",

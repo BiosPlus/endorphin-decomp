@@ -1,0 +1,22 @@
+{
+  "va": "0x004586A0",
+  "size": 25,
+  "orig_symbol": "sub_004586A0",
+  "src_path": "src/leaf/tiny_450000.cpp",
+  "lifted_path": "lifted/leaf/tiny_450000.cpp",
+  "name": "StartOwnerTimerWithId",
+  "class": "Unknown",
+  "signature": "void fn_004586A0(void* self, UINT_PTR nIDEvent, UINT uElapse)",
+  "summary": "Starts a Win32 timer (no callback) with the given id and interval on the owner window stored at self+0x20.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "ownerHwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:47:45Z"
+}
