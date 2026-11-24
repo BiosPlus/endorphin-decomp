@@ -1,0 +1,13 @@
+{
+  "va": "0x006B4D30",
+  "size": 41,
+  "orig_symbol": "sub_006B4D30",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "sub_006B4D30",
+  "signature": "extern \"C\" int32_t __thiscall fn_006B4D30(void* self, uint32_t /*unused_arg*/)",
+  "summary": "Checks selection via MFC80!ord_1903; if valid (!= -1), posts/sends message (0x200, 0, 0x20) via MFC80!ord_4118 and returns 0, else returns -1.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:03:09Z"
+}

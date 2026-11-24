@@ -446,3 +446,20 @@ void fn_006B7D90(void* self) {
     }
 }
 } // namespace lift_006B7D90
+
+// [0x006B4D30]
+namespace lift_006B4D30 {
+extern int32_t __thiscall ext_006A5EA8(void* self);
+extern void __thiscall ext_006A673C(void* self, uint32_t msg, uint32_t wParam, uint32_t lParam);
+
+// @name sub_006B4D30
+// @summary Checks selection via MFC80!ord_1903; if valid (!= -1), posts/sends message (0x200, 0, 0x20) via MFC80!ord_4118 and returns 0, else returns -1.
+extern int32_t __thiscall fn_006B4D30(void* self, uint32_t /*unused_arg*/) {
+    int32_t sel = ext_006A5EA8(self);
+    if (sel == -1) {
+        return -1;
+    }
+    ext_006A673C(self, 0x200u, 0u, 0x20u);
+    return 0;
+}
+} // namespace lift_006B4D30
