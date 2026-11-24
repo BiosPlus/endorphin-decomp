@@ -13936,6 +13936,12 @@
     "summary": "Returns float at this+0x1F4 of the object pointed to by this+0xA0 if non-null, else float at this+0x70.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x005481E0": {
+    "name": "sub_005481E0",
+    "signature": "uint8_t sub_005481E0(uint8_t* self)",
+    "summary": "Returns true (al=1) if this-\u003efield_0xA0 is non-null and its field_0x208 is non-zero; otherwise false.",
+    "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
   "0x00548200": {
     "name": "SubObject::GetScaleOrForward",
     "class": "SubObject",

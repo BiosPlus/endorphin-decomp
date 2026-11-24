@@ -373,3 +373,22 @@ int sub_00547CE0(void* self) {
     return 1;
 }
 } // namespace lift_00547CE0
+
+// [0x005481E0]
+namespace lift_005481E0 {
+// @name sub_005481E0
+// @summary Returns true (al=1) if this->field_0xA0 is non-null and its field_0x208 is non-zero; otherwise false.
+// @field field_0xA0 (pointer to inner object at this+0xA0)
+// @field field_0x208 (non-zero test on inner object at +0x208)
+uint8_t sub_005481E0(uint8_t* self) {
+    // mov eax, [ecx+0xa0]
+    uint8_t* inner = *reinterpret_cast<uint8_t**>(self + 0xA0);
+    // test eax, eax ; je -> return 0
+    if (inner == nullptr) {
+        return 0;
+    }
+    // cmp [eax+0x208], 0 ; setne al
+    uint32_t v = *reinterpret_cast<uint32_t*>(inner + 0x208);
+    return v != 0 ? 1 : 0;
+}
+} // namespace lift_005481E0

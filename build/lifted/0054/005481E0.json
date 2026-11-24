@@ -1,0 +1,13 @@
+{
+  "va": "0x005481E0",
+  "size": 27,
+  "orig_symbol": "sub_005481E0",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "sub_005481E0",
+  "signature": "uint8_t sub_005481E0(uint8_t* self)",
+  "summary": "Returns true (al=1) if this-\u003efield_0xA0 is non-null and its field_0x208 is non-zero; otherwise false.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:03:02Z"
+}
