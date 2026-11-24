@@ -43,3 +43,21 @@ void __thiscall fn_005330D0(void* self) {
     ext_0065C650(lock);
 }
 } // namespace lift_005330D0
+
+// [0x00536D00]
+namespace lift_00536D00 {
+// @name OglRenderer::vfunc_12
+// @class OglRenderer
+// @summary Toggles the flag byte at this+0xB8 selected by field_0x194 (stride 60) to its logical NOT, then sets field_0x464 to 1.
+// @field OglRenderer +0x194 uint32_t field_0x194
+// @field OglRenderer +0xB8 uint8_t table_0xB8
+// @field OglRenderer +0x464 uint8_t field_0x464
+
+void OglRenderer_vfunc_12(void* self) {
+    uint32_t idx = lift_field<uint32_t>(self, 0x194);
+    uint32_t stride = idx * 60u; // (idx << 4) - idx, then *4 in addressing = idx * 60
+    uint8_t& flag = lift_field<uint8_t>(self, static_cast<ptrdiff_t>(0xB8u + stride));
+    flag = static_cast<uint8_t>(flag == 0 ? 1 : 0);
+    lift_field<uint8_t>(self, 0x464) = 1;
+}
+} // namespace lift_00536D00

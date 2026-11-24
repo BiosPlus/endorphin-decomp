@@ -17,8 +17,8 @@ struct OglRenderer_Fields {
     // +0x80  uint32_t                 field_0x80  (evidence: 0x005353F0, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
     // +0x9C  void*                    field_0x9c  (evidence: 0x00533C50) // CONFLICT: multiple definitions at +0x9C
     // +0x9C  void* field_0x9C (embedded subobject; its first dword is the vtable pointer)  (evidence: 0x00533C70) // CONFLICT: multiple definitions at +0x9C
-    // +0xB8  uint8_t                  table_0xB8  (evidence: 0x00536E20)
-    // +0x194 uint32_t                 field_0x194  (evidence: 0x00536E20)
+    // +0xB8  uint8_t                  table_0xB8  (evidence: 0x00536D00, 0x00536E20)
+    // +0x194 uint32_t                 field_0x194  (evidence: 0x00536D00, 0x00536E20)
     // +0x1DA uint8_t                  field_0x1DA  (evidence: 0x00535610, 0x00536D70, 0x00545B80)
     // +0x27C void*                    field_0x27C  (evidence: 0x00535610, 0x00536CE0, 0x005449A0, 0x005449C0, 0x005449E0, 0x00544A70, 0x00544C50, 0x00545B80)
     // +0x288 uint8_t                  field_0x288  (evidence: 0x00535610, 0x00536CC0, 0x00545B80)
@@ -29,5 +29,6 @@ struct OglRenderer_Fields {
     // +0x400 float                    field_0x400  (evidence: 0x00533AE0, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
     // +0x404 float                    field_0x404  (evidence: 0x00533AC0, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
     // +0x408 float                    field_0x408  (evidence: 0x00533AD0, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
+    // +0x464 uint8_t                  field_0x464  (evidence: 0x00536D00)
 };
 } // namespace lifted_layout

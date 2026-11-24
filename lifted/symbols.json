@@ -14143,6 +14143,13 @@
     "summary": "Forwards the call to virtual slot +0x3C of the object held at this+0x27C, passing this+0x27C as the receiver.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00536D00": {
+    "name": "OglRenderer::vfunc_12",
+    "class": "OglRenderer",
+    "signature": "void OglRenderer_vfunc_12(void* self)",
+    "summary": "Toggles the flag byte at this+0xB8 selected by field_0x194 (stride 60) to its logical NOT, then sets field_0x464 to 1.",
+    "lifted_path": "lifted/classes/OglRenderer.cpp"
+  },
   "0x00536D70": {
     "name": "OglRenderer::vfunc_7",
     "class": "OglRenderer",

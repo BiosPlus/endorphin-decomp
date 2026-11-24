@@ -1,0 +1,34 @@
+{
+  "va": "0x00536D00",
+  "size": 42,
+  "orig_symbol": "OglRenderer::vfunc_12",
+  "src_path": "src/classes/OglRenderer.cpp",
+  "lifted_path": "lifted/classes/OglRenderer.cpp",
+  "name": "OglRenderer::vfunc_12",
+  "class": "OglRenderer",
+  "signature": "void OglRenderer_vfunc_12(void* self)",
+  "summary": "Toggles the flag byte at this+0xB8 selected by field_0x194 (stride 60) to its logical NOT, then sets field_0x464 to 1.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x194",
+      "type": "uint32_t",
+      "name": "field_0x194"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0xB8",
+      "type": "uint8_t",
+      "name": "table_0xB8"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x464",
+      "type": "uint8_t",
+      "name": "field_0x464"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:58:24Z"
+}
