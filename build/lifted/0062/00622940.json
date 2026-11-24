@@ -1,0 +1,34 @@
+{
+  "va": "0x00622940",
+  "size": 120,
+  "orig_symbol": "NMData::HingeCalibrationVariables::vfunc_29",
+  "src_path": "src/NMData/HingeCalibrationVariables.cpp",
+  "lifted_path": "lifted/NMData/HingeCalibrationVariables.cpp",
+  "name": "NMData::HingeCalibrationVariables::vfunc_29",
+  "class": "NMData::HingeCalibrationVariables",
+  "signature": "void __thiscall fn_00622940(void* self, void* serializer, uint32_t arg1, uint32_t arg2)",
+  "summary": "Serializes or compares three float calibration fields via vtable calls and sub_00487A30.",
+  "fields": [
+    {
+      "class": "NMData::HingeCalibrationVariables",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::HingeCalibrationVariables",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "NMData::HingeCalibrationVariables",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:47:44Z"
+}
