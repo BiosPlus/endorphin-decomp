@@ -1,0 +1,13 @@
+{
+  "va": "0x00611950",
+  "size": 41,
+  "orig_symbol": "sub_00611950",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "sub_00611950",
+  "signature": "extern \"C\" void __thiscall fn_00611950(void* this_ptr)",
+  "summary": "Calls vtable[0x10c](2) to get a float, then passes it to ext_00678130 on (ext_00594000() + 0x2e0).",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:02:01Z"
+}
