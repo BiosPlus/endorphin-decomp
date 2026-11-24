@@ -1,0 +1,22 @@
+{
+  "va": "0x00537C10",
+  "size": 17,
+  "orig_symbol": "CompoundRenderable::vfunc_19",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CompoundRenderable::vfunc_19",
+  "class": "CompoundRenderable",
+  "signature": "void* fn_00537C10(void* self)",
+  "summary": "Forwards to vtable slot 19 (byte offset 0x4C) of the object at +0x14, passing that object as this; returns 0 if the pointer is null.",
+  "fields": [
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:52:40Z"
+}

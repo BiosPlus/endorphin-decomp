@@ -5646,3 +5646,21 @@ void fn_00536CE0(void* self) {
     reinterpret_cast<void (*)(void*)>(vfn)(sub);
 }
 } // namespace lift_00536CE0
+
+// [0x00537C10] CompoundRenderable::vfunc_19 (17 bytes)
+namespace lift_00537C10 {
+// @name CompoundRenderable::vfunc_19
+// @class CompoundRenderable
+// @summary Forwards to vtable slot 19 (byte offset 0x4C) of the object at +0x14, passing that object as this; returns 0 if the pointer is null.
+// @field CompoundRenderable +0x14 void* field_0x14
+void* fn_00537C10(void* self) {
+    void* child = lift_field<void*>(self, 0x14);
+    if (child == nullptr) {
+        return nullptr;
+    }
+    // Vtable pointer is the first word of the child object; slot 19 lives at byte offset 0x4C.
+    void* vtbl = lift_field<void*>(child, 0);
+    auto target = reinterpret_cast<void* (*)(void*)>(lift_field<void*>(vtbl, 0x4C));
+    return target(child);
+}
+} // namespace lift_00537C10
