@@ -1,0 +1,39 @@
+{
+  "va": "0x004408B0",
+  "size": 45,
+  "orig_symbol": "sub_004408B0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "sub_004408B0",
+  "signature": "void __thiscall sub_004408B0(uint32_t ecx, double arg0)",
+  "summary": "Clamps a double value to a lower bound and stores it, clearing a flag if clamped",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "double",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "double",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x89",
+      "type": "uint8_t",
+      "name": "field_0x89"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8D",
+      "type": "uint8_t",
+      "name": "field_0x8d"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:13:52Z"
+}

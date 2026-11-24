@@ -1163,3 +1163,57 @@ void fn_0044B290(void* self, void* other) {
     notifyFn(other, flag);
 }
 } // namespace lift_0044B290
+
+// [0x004408B0]
+namespace lift_004408B0 {
+// @name sub_004408B0
+// @summary Clamps a double value to a lower bound and stores it, clearing a flag if clamped
+// @field Unknown +0x50 double field_0x50
+// @field Unknown +0x58 double field_0x58
+// @field Unknown +0x89 uint8_t field_0x89
+// @field Unknown +0x8d uint8_t field_0x8d
+
+
+extern uint8_t& mem_u8(uint32_t addr);
+extern double& mem_f64(uint32_t addr);
+
+void __thiscall sub_004408B0(uint32_t ecx, double arg0) {
+    if (mem_u8(ecx + 0x8d) != 0) {
+        double min_val = mem_f64(ecx + 0x50);
+        if (arg0 < min_val) {
+            mem_u8(ecx + 0x89) = 0;
+            mem_f64(ecx + 0x58) = min_val;
+        } else {
+            mem_f64(ecx + 0x58) = arg0;
+        }
+    }
+}
+} // namespace lift_004408B0
+
+// [0x00441A90]
+namespace lift_00441A90 {
+// @name computeBoundsRect
+// @summary Computes a 4-dword bounds/rect structure from source fields at +0x04, +0x0C, +0x18, +0x1C.
+// @field Src +0x04 int32_t field_0x04
+// @field Src +0x0C int32_t field_0x0C
+// @field Src +0x18 uint32_t field_0x18
+// @field Src +0x1C uint32_t field_0x1C
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+uint32_t __stdcall sub_00441A90(uint32_t dst, uint32_t src) {
+    uint32_t f04 = mem_read32(src + 0x04);
+    uint32_t f18 = mem_read32(src + 0x18);
+    uint32_t f1c = mem_read32(src + 0x1c);
+    uint32_t f0c = mem_read32(src + 0x0c);
+
+    mem_write32(dst + 0x00, f18);
+    mem_write32(dst + 0x04, f04 - 2u);
+    mem_write32(dst + 0x08, f1c);
+    mem_write32(dst + 0x0c, f0c + f04 + 1u);
+
+    return dst;
+}
+} // namespace lift_00441A90
