@@ -3208,6 +3208,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00447F20 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00448000": {
+    "name": "ProgressDialog::vfunc_63",
+    "class": "ProgressDialog",
+    "signature": "void __thiscall fn_00448000(void* self, uint32_t pDX)",
+    "summary": "Auto-lifted identical-shape clone of 0x00449F80 (ReloadCharacterDialog::DoDataExchange).",
+    "lifted_path": "lifted/classes/ProgressDialog.cpp"
+  },
   "0x00448030": {
     "name": "HotkeyEditDialog::vfunc_12",
     "class": "HotkeyEditDialog",

@@ -19,3 +19,28 @@ void fn_00447FA0(void* self, void* text) {
     ext_006A5F50(static_cast<char*>(self) + 0x58, cstr);
 }
 } // namespace lift_00447FA0
+
+// [0x00448000] ProgressDialog::vfunc_63 (46 bytes)
+namespace lift_00448000 {
+// @name ProgressDialog::vfunc_63
+// @class ProgressDialog
+// @summary Auto-lifted identical-shape clone of 0x00449F80 (ReloadCharacterDialog::DoDataExchange).
+// @field ProgressDialog +0x78 uint32_t field_0x78
+// @field ProgressDialog +0xCC uint32_t field_0xCC
+namespace lift_00449F80 {
+// @name ReloadCharacterDialog::DoDataExchange
+// @class ReloadCharacterDialog
+// @summary Exchanges dialog data for ReloadCharacterDialog controls at +0x74 and +0x78.
+// @field ReloadCharacterDialog +0x74 uint32_t field_0x74
+// @field ReloadCharacterDialog +0x78 uint32_t field_0x78
+
+
+extern void ext_006A5F44(uint32_t pDX, uint32_t nIDC, void* valuePtr);
+
+void __thiscall fn_00448000(void* self, uint32_t pDX) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    ext_006A5F44(pDX, 0x169, base + 0x78);
+    ext_006A5F44(pDX, 0x16B, base + 0xCC);
+}
+} // namespace lift_00449F80
+} // namespace lift_00448000

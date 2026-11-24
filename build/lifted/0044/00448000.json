@@ -1,0 +1,40 @@
+{
+  "va": "0x00448000",
+  "size": 46,
+  "orig_symbol": "ProgressDialog::vfunc_63",
+  "src_path": "src/classes/ProgressDialog.cpp",
+  "lifted_path": "lifted/classes/ProgressDialog.cpp",
+  "name": "ProgressDialog::vfunc_63",
+  "class": "ProgressDialog",
+  "signature": "void __thiscall fn_00448000(void* self, uint32_t pDX)",
+  "summary": "Auto-lifted identical-shape clone of 0x00449F80 (ReloadCharacterDialog::DoDataExchange).",
+  "fields": [
+    {
+      "class": "ProgressDialog",
+      "offset": "+0x78",
+      "type": "uint32_t",
+      "name": "field_0x78"
+    },
+    {
+      "class": "ProgressDialog",
+      "offset": "+0xCC",
+      "type": "uint32_t",
+      "name": "field_0xCC"
+    },
+    {
+      "class": "ReloadCharacterDialog",
+      "offset": "+0x74",
+      "type": "uint32_t",
+      "name": "field_0x74"
+    },
+    {
+      "class": "ReloadCharacterDialog",
+      "offset": "+0x78",
+      "type": "uint32_t",
+      "name": "field_0x78"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T14:05:35Z"
+}

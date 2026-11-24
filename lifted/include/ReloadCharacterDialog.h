@@ -10,7 +10,7 @@
 // Recovered field layout for ReloadCharacterDialog:
 namespace lifted_layout {
 struct ReloadCharacterDialog_Fields {
-    // +0x74  uint32_t                 field_0x74  (evidence: 0x00449F80)
-    // +0x78  uint32_t                 field_0x78  (evidence: 0x00449F80)
+    // +0x74  uint32_t                 field_0x74  (evidence: 0x00448000, 0x00449F80)
+    // +0x78  uint32_t                 field_0x78  (evidence: 0x00448000, 0x00449F80)
 };
 } // namespace lifted_layout
