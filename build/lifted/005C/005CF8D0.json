@@ -1,0 +1,14 @@
+{
+  "va": "0x005CF8D0",
+  "size": 57,
+  "orig_symbol": "NMData::InertialBodyData::vfunc_15",
+  "src_path": "src/NMData/InertialBodyData.cpp",
+  "lifted_path": "lifted/NMData/InertialBodyData.cpp",
+  "name": "NMData::InertialBodyData::vfunc_15",
+  "class": "NMData::InertialBodyData",
+  "signature": "uint32_t* fn_005CF8D0(void* self, uint32_t* out, uint32_t flag)",
+  "summary": "Writes into the output buffer via either the 0x00671F30 helper or the 0x005CF4A0 helper, depending on whether the flag argument equals 0x234; returns the output pointer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:39:34Z"
+}

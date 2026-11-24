@@ -21768,6 +21768,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005CF2B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005CF8D0": {
+    "name": "NMData::InertialBodyData::vfunc_15",
+    "class": "NMData::InertialBodyData",
+    "signature": "uint32_t* fn_005CF8D0(void* self, uint32_t* out, uint32_t flag)",
+    "summary": "Writes into the output buffer via either the 0x00671F30 helper or the 0x005CF4A0 helper, depending on whether the flag argument equals 0x234; returns the output pointer.",
+    "lifted_path": "lifted/NMData/InertialBodyData.cpp"
+  },
   "0x005CF910": {
     "name": "sub_005CF910",
     "signature": "void sub_005CF910()",

@@ -21,3 +21,23 @@ extern void* __thiscall fn_005CE760(void* self, void* a, int32_t id) {
     return a;
 }
 } // namespace lift_005CE760
+
+// [0x005CF8D0] NMData::InertialBodyData::vfunc_15 (57 bytes)
+namespace lift_005CF8D0 {
+// Known callee 0x005CF4A0: sub_005CF4A0 (30B, not yet lifted). Called with (this, out).
+extern void ext_005CF4A0(void* self, uint32_t* out);
+// Known callee 0x00671F30: sub_00671F30 (Zeroes the first dword of the output buffer and stores the global mem_00B599BC into the second dword.)
+extern void ext_00671F30(uint32_t* out);
+
+// @name NMData::InertialBodyData::vfunc_15
+// @class NMData::InertialBodyData
+// @summary Writes into the output buffer via either the 0x00671F30 helper or the 0x005CF4A0 helper, depending on whether the flag argument equals 0x234; returns the output pointer.
+uint32_t* fn_005CF8D0(void* self, uint32_t* out, uint32_t flag) {
+    if (flag == 0x234) {
+        ext_005CF4A0(self, out);
+    } else {
+        ext_00671F30(out);
+    }
+    return out;
+}
+} // namespace lift_005CF8D0
