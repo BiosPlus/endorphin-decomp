@@ -40617,3 +40617,38 @@ float __stdcall fn_004BCA80(void* const* arg) {
     return value;
 }
 } // namespace lift_004BCA80
+
+// [0x0059F650] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>::vfunc_3 (107 bytes)
+namespace lift_0059F650 {
+// Known callee 0x00682ED0: VirtualSlot9Thunk. Dispatches through vtable slot 9 (byte offset 0x24)
+// on the receiver and yields the const std::string& that the slot's target returns (here: the
+// Chromosome::Descriptor name accessor reached via the subobject at +0x04).
+const std::string& ext_00682ED0(void* self);
+
+// String literals at 0x0092F10C and 0x0093A810 in .rdata, compared against the name with
+// std::operator==(const std::string&, const char*). Contents are not recovered yet.
+extern const char mem_0092F10C[];
+extern const char mem_0093A810[];
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_3 (Chromosome::Descriptor name check)
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>
+// @summary Reads the Descriptor from the argument slot, throws on a null receiver, and returns 1 if its name equals one of two known literals, else 0.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field Chromosome::Descriptor +0x04 void* field_0x04
+// Original convention: __stdcall, one stack argument, returns BOOL in eax (ret 4).
+int fn_0059F650(void** arg) {
+    char* descriptor = static_cast<char*>(*arg);
+    if (descriptor == nullptr) {
+        throw std::runtime_error("ReadMethodType<Chromosome::Descriptor>::vfunc_3: null receiver");
+    }
+
+    const std::string& name = ext_00682ED0(descriptor + 0x04);
+    if (name == mem_0092F10C) {
+        return 1;
+    }
+    if (name == mem_0093A810) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_0059F650

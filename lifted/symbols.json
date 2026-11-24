@@ -20789,6 +20789,13 @@
     "summary": "Reads the Chromosome::Descriptor held by self, fetches its string value via the slot-9 accessor, and returns it parsed as a float (atof); throws if the descriptor pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0059F650": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_3 (Chromosome::Descriptor name check)",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e",
+    "signature": "int fn_0059F650(void** arg)",
+    "summary": "Reads the Descriptor from the argument slot, throws on a null receiver, and returns 1 if its name equals one of two known literals, else 0.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0059F6C0": {
     "name": "WriteMethodType\u003cCharacterData, ValuePtr const\u0026\u003e::vfunc_40",
     "class": "ExprParser::WriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e",
