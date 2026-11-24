@@ -792,3 +792,24 @@ void __thiscall sub_006F11A0(void* self, uint32_t arg1, void* arg2) {
     ext_00711A70(subobject, 1u);
 }
 } // namespace lift_006F11A0
+
+// [0x006F10E0] sub_006F10E0 (44 bytes)
+namespace lift_006F10E0 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15B, not yet lifted): takes the subobject as this and one stack argument.
+extern void ext_00711A70(void* self, uint32_t arg1);
+// Data referenced by immediate 0x006F8610 (pushed as arg3).
+extern uint8_t mem_006F8610[];
+
+// @name Unknown::forwardArgsToSubobjectAt4400
+// @class Unknown
+// @summary Forwards two stack arguments to the embedded subobject at self+0x4400 via ext_00711D40 (with a fixed data pointer and 0), then calls ext_00711A70 with 1.
+// @field Unknown +0x4400 uint8_t subobject_4400[] (embedded subobject, address only; used as this for both callees)
+void fn_006F10E0(void* self, uint32_t arg1, void* arg2) {
+    uint8_t* sub = static_cast<uint8_t*>(self) + 0x4400;
+    ext_00711D40(sub, arg1, arg2,
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_006F8610)), 0);
+    ext_00711A70(sub, 1);
+}
+} // namespace lift_006F10E0
