@@ -8,6 +8,6 @@
 // Recovered field layout for innerObject:
 namespace lifted_layout {
 struct innerObject_Fields {
-    // +0x0   void** vtable (vptr of the inner object)  (evidence: 0x00493E50, 0x00493E60)
+    // +0x0   void** vtable (vptr of the inner object)  (evidence: 0x00493E50, 0x00493E60, 0x00494050)
 };
 } // namespace lifted_layout

@@ -8,9 +8,9 @@
 // Recovered field layout for UnknownClass:
 namespace lifted_layout {
 struct UnknownClass_Fields {
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x00493D80)
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00493D80, 0x00780250)
-    // +0x8   uint8_t                  field_0x08  (evidence: 0x00493D80)
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x00493D80, 0x00494050)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00493D80, 0x00494050, 0x00780250)
+    // +0x8   uint8_t                  field_0x08  (evidence: 0x00493D80, 0x00494050)
     // +0x10  uint32_t[]               field_0x10  (evidence: 0x005B11D0)
     // +0x14  uint32_t                 field_0x14  (evidence: 0x007C6FB0)
     // +0x58  uint32_t                 field_0x58  (evidence: 0x007AEEE0)
