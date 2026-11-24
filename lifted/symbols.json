@@ -46018,6 +46018,12 @@
     "summary": "No-op stub (add eax, 0).",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085D530": {
+    "name": "copyBytesForward",
+    "signature": "void fn_0085D530(uint8_t* dst, const uint8_t* src, uint32_t count)",
+    "summary": "Forward byte-by-byte copy of `count` bytes from src to dst (cdecl, no return value).",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085D554": {
     "name": "sub_0085D554",
     "signature": "void fn_0085D554(void)",

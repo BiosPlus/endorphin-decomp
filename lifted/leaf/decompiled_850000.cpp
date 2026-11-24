@@ -179,3 +179,14 @@ uint32_t fn_0085E1F0(const char* str) {
     return static_cast<uint32_t>(p - str);
 }
 } // namespace lift_0085E1F0
+
+// [0x0085D530] sub_0085D530 (36 bytes)
+namespace lift_0085D530 {
+// @name copyBytesForward
+// @summary Forward byte-by-byte copy of `count` bytes from src to dst (cdecl, no return value).
+void fn_0085D530(uint8_t* dst, const uint8_t* src, uint32_t count) {
+    for (uint32_t i = 0; i < count; ++i) {
+        dst[i] = src[i];
+    }
+}
+} // namespace lift_0085D530
