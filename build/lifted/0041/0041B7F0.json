@@ -1,0 +1,22 @@
+{
+  "va": "0x0041B7F0",
+  "size": 60,
+  "orig_symbol": "CMemDC::vfunc_30",
+  "src_path": "src/classes/CMemDC.cpp",
+  "lifted_path": "lifted/classes/CMemDC.cpp",
+  "name": "CMemDC::vfunc_30",
+  "class": "CMemDC",
+  "signature": "void* fn_0041B7F0(void* self, void* p1, void* lpOutputFunc, LPARAM lpData, int nCount, int X, int Y, int nWidth, int nHeight)",
+  "summary": "Calls GrayStringA on this-\u003ehdc, using brush taken from the first argument's +0x04 (or NULL if arg is NULL) and forwarding the remaining seven arguments.",
+  "fields": [
+    {
+      "class": "CMemDC",
+      "offset": "+0x4",
+      "type": "HDC",
+      "name": "hdc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:26:22Z"
+}

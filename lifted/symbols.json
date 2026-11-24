@@ -1507,6 +1507,13 @@
     "summary": "Returns whether the given rect is visible in the memory DC's HDC (GDI32!RectVisible).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0041B7F0": {
+    "name": "CMemDC::vfunc_30",
+    "class": "CMemDC",
+    "signature": "void* fn_0041B7F0(void* self, void* p1, void* lpOutputFunc, LPARAM lpData, int nCount, int X, int Y, int nWidth, int nHeight)",
+    "summary": "Calls GrayStringA on this-\u003ehdc, using brush taken from the first argument's +0x04 (or NULL if arg is NULL) and forwarding the remaining seven arguments.",
+    "lifted_path": "lifted/classes/CMemDC.cpp"
+  },
   "0x0041B930": {
     "name": "CMemDC::vfunc_1",
     "class": "CMemDC",
