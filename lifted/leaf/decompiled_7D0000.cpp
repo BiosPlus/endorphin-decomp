@@ -223,3 +223,31 @@ uint32_t fn_007DAD70(uint32_t self_ptr) {
     return ext_007D5950(0u, value, 0x0099E1E0u);
 }
 } // namespace lift_007DAD70
+
+// [0x007D48F0] sub_007D48F0 (40 bytes)
+namespace lift_007D48F0 {
+extern uint32_t mem_read_u32(uint32_t addr);
+extern void mem_write_u32(uint32_t addr, uint32_t val);
+
+// @name TreeNode::rotateRightAbout
+// @class TreeNode
+// @summary Rotates node x's left child up into x's place (right rotation); updates child/parent links.
+// @field TreeNode +0x00 uint32_t left
+// @field TreeNode +0x04 uint32_t right
+// @field TreeNode +0x08 uint32_t parent
+void fn_007D48F0(uint32_t x) {
+    const uint32_t l  = mem_read_u32(x + 0x00);   // x->left
+    const uint32_t lr = mem_read_u32(l + 0x04);   // l->right
+    mem_write_u32(x + 0x00, lr);                  // x->left = l->right
+    mem_write_u32(lr + 0x08, x);                  // lr->parent = x
+    const uint32_t p = mem_read_u32(x + 0x08);    // p = x->parent
+    mem_write_u32(l + 0x08, p);                   // l->parent = p
+    if (x == mem_read_u32(p + 0x04)) {
+        mem_write_u32(p + 0x04, l);               // p->right = l (x was right child)
+    } else {
+        mem_write_u32(p + 0x00, l);               // p->left = l (x was left child)
+    }
+    mem_write_u32(l + 0x04, x);                   // l->right = x
+    mem_write_u32(x + 0x08, l);                   // x->parent = l
+}
+} // namespace lift_007D48F0

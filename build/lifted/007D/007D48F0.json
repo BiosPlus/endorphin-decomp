@@ -1,0 +1,34 @@
+{
+  "va": "0x007D48F0",
+  "size": 40,
+  "orig_symbol": "sub_007D48F0",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "TreeNode::rotateRightAbout",
+  "class": "TreeNode",
+  "signature": "void fn_007D48F0(uint32_t x)",
+  "summary": "Rotates node x's left child up into x's place (right rotation); updates child/parent links.",
+  "fields": [
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "parent"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:53:49Z"
+}

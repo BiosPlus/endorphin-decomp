@@ -46168,6 +46168,13 @@
     "summary": "Performs a left rotation on a binary tree node with parent pointers.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007D48F0": {
+    "name": "TreeNode::rotateRightAbout",
+    "class": "TreeNode",
+    "signature": "void fn_007D48F0(uint32_t x)",
+    "summary": "Rotates node x's left child up into x's place (right rotation); updates child/parent links.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D4AE0": {
     "name": "setFlag30_007D4AE0",
     "signature": "void fn_007D4AE0(void* self)",
