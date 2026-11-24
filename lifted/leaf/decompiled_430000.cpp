@@ -1875,3 +1875,21 @@ extern void* __cdecl fn_0043D370(const uint8_t* first, const uint8_t* last, uint
     return result;
 }
 } // namespace lift_0043D370
+
+// [0x0043C640] sub_0043C640 (40 bytes)
+namespace lift_0043C640 {
+// Known callee 0x00455F40: Unknown::returnTrueIfNeitherCheckMatches_00455F40 (Returns 1 only if both ext_00455CB0 and ext_004090C0 return 0 for self; otherwise returns 0.)
+extern int __fastcall ext_00455F40(void* self);
+// Known callee 0x004564A0: ForwardToFirstChildWindow (If flag 0x20 is set on self, looks up the first child HWND of self->+0x20 via GetWindow(GW_CHILD) and forwards to the MFC80 wrapper pair, passing the two stack arguments.)
+extern void __thiscall ext_004564A0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2);
+
+// @name Unknown::storeCheckResultAndForward_0043C640
+// @class Unknown
+// @summary Stores the result of ext_00455F40(self) into self+0xEC, then forwards the three stack arguments to ext_004564A0(self, arg0, arg1, arg2). Callee pops 12 bytes (ret 0xC).
+// @field Unknown +0xEC int checkResult
+void __thiscall fn_0043C640(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2) {
+    int result = ext_00455F40(self);
+    *reinterpret_cast<int*>(reinterpret_cast<uint8_t*>(self) + 0xEC) = result;
+    ext_004564A0(self, arg0, arg1, arg2);
+}
+} // namespace lift_0043C640

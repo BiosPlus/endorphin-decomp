@@ -2792,6 +2792,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0041CCA0 (ReleaseSubobjectAndChainDestructor).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043C640": {
+    "name": "Unknown::storeCheckResultAndForward_0043C640",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0043C640(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
+    "summary": "Stores the result of ext_00455F40(self) into self+0xEC, then forwards the three stack arguments to ext_004564A0(self, arg0, arg1, arg2). Callee pops 12 bytes (ret 0xC).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043C900": {
     "name": "Unknown::SetCursorFromTable",
     "class": "Unknown",
