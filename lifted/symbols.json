@@ -46045,6 +46045,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0071C970 (Unknown::getByteViaPtr0x0C_0x1960).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C870": {
+    "name": "Unknown::setChildFlag18D8",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_0071C870(void* self, int edx_unused, unsigned int value)",
+    "summary": "Sets byte +0x18D8 of the object at this+0x0C to 1 when value==0 and to 0 when value==1; other values are ignored (stdcall, ret 4).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071C8A0": {
     "name": "Unknown::IsSubObjectFlag0x18D8Clear",
     "class": "Unknown",

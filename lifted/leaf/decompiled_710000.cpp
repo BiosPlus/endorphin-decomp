@@ -1079,3 +1079,20 @@ float fn_007156B0(void* self) {
     return static_cast<float>(mem_0092A278);
 }
 } // namespace lift_007156B0
+
+// [0x0071C870] sub_0071C870 (48 bytes)
+namespace lift_0071C870 {
+// @name Unknown::setChildFlag18D8
+// @class Unknown
+// @summary Sets byte +0x18D8 of the object at this+0x0C to 1 when value==0 and to 0 when value==1; other values are ignored (stdcall, ret 4).
+// @field Unknown +0x0C void* field_0x0C
+extern void __fastcall fn_0071C870(void* self, int edx_unused, unsigned int value) {
+    (void)edx_unused;
+    uint8_t* child = *reinterpret_cast<uint8_t**>(static_cast<uint8_t*>(self) + 0x0C);
+    if (value == 0) {
+        child[0x18D8] = 1;
+    } else if (value == 1) {
+        child[0x18D8] = 0;
+    }
+}
+} // namespace lift_0071C870
