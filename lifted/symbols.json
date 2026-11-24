@@ -36525,6 +36525,24 @@
     "summary": "Auto-lifted identical-shape clone of 0x006D9020 (Unknown::LoadConstantOne).",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x00722180": {
+    "name": "getGlobalFlag_00B5FFC4",
+    "signature": "uint8_t sub_00722180()",
+    "summary": "Reads and returns the byte value at global address 0x00B5FFC4.",
+    "lifted_path": "lifted/leaf/tiny_720000.cpp"
+  },
+  "0x00722190": {
+    "name": "getGlobalFlag00AACAF0",
+    "signature": "uint8_t __cdecl sub_00722190()",
+    "summary": "Reads and returns the byte flag at 0x00AACAF0.",
+    "lifted_path": "lifted/leaf/tiny_720000.cpp"
+  },
+  "0x00722720": {
+    "name": "mulSquareDouble",
+    "signature": "double sub_00722720(double a, double b)",
+    "summary": "Computes (a * a) * b for two double-precision arguments.",
+    "lifted_path": "lifted/leaf/tiny_720000.cpp"
+  },
   "0x00722F60": {
     "name": "sub_00722F60",
     "signature": "extern \"C\" void* __fastcall fn_00722F60(void* self, int edx_unused, unsigned int flags)",
