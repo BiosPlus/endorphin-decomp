@@ -1,0 +1,22 @@
+{
+  "va": "0x00644F30",
+  "size": 29,
+  "orig_symbol": "sub_00644F30",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "Unknown::invokeNestedVirtualSlot0",
+  "class": "Unknown",
+  "signature": "extern \"C\" void fn_00644F30(void* self)",
+  "summary": "Calls ext_00644F00(self, 0), then if self-\u003e+0x04 is non-null invokes virtual slot 0 of the embedded object at nested+0x08 with argument 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:14:11Z"
+}

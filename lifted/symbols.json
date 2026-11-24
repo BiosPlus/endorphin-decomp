@@ -24925,6 +24925,13 @@
     "summary": "Dereferences the inner object at +0x00 and tail-calls its vtable slot +0x24",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00644F30": {
+    "name": "Unknown::invokeNestedVirtualSlot0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void fn_00644F30(void* self)",
+    "summary": "Calls ext_00644F00(self, 0), then if self-\u003e+0x04 is non-null invokes virtual slot 0 of the embedded object at nested+0x08 with argument 1.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x006452C0": {
     "name": "forwardVtable18",
     "signature": "uint32_t sub_006452C0(uint32_t self)",

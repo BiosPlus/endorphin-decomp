@@ -380,3 +380,29 @@ void __thiscall fn_00648940(void* self) {
 }
 } // namespace lift_004332B0
 } // namespace lift_00648940
+
+// [0x00644F30] sub_00644F30 (29 bytes)
+namespace lift_00644F30 {
+// Known callee 0x00644F00: Unknown::forwardByteToNestedObject (owner class not identified) (Loads a nested object pointer from self, and if its +0x20c pointer is non-null, stores the byte argument at +0x230 of that object.)
+extern void ext_00644F00(void* self, uint8_t value);
+
+// @name Unknown::invokeNestedVirtualSlot0
+// @class Unknown
+// @summary Calls ext_00644F00(self, 0), then if self->+0x04 is non-null invokes virtual slot 0 of the embedded object at nested+0x08 with argument 1.
+// @field Unknown +0x04 void* field_0x04
+extern void fn_00644F30(void* self) {
+    using Slot0Fn = void (*)(void* thisPtr, int arg);
+
+    ext_00644F00(self, 0);
+
+    void* nested = lift_field<void*>(self, 0x04);
+    if (nested == nullptr) {
+        return;
+    }
+
+    void* embedded = static_cast<char*>(nested) + 0x08;
+    void* vtbl = lift_field<void*>(embedded, 0x00);
+    Slot0Fn slot0 = lift_field<Slot0Fn>(vtbl, 0x00);
+    slot0(embedded, 1);
+}
+} // namespace lift_00644F30
