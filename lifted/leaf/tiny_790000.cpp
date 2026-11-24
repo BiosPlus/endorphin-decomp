@@ -320,3 +320,15 @@ uint8_t fn_0079EB70(void) {
     return lift_field<uint8_t>(obj, 0x0C);
 }
 } // namespace lift_0079EB70
+
+// [0x0079AF50] sub_0079AF50 (16 bytes)
+namespace lift_0079AF50 {
+extern HGLOBAL ext_GlobalFree(HGLOBAL hMem);
+extern int mem_009241E8;
+
+// @name GlobalFreeWrapper
+// @summary Frees a global memory handle via KERNEL32!GlobalFree and returns its result.
+HGLOBAL fn_0079AF50(HGLOBAL hMem) {
+    return ext_GlobalFree(hMem);
+}
+} // namespace lift_0079AF50

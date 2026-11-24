@@ -37096,6 +37096,12 @@
     "summary": "Allocates a global memory block of the requested size with uFlags = 0 (GMEM_FIXED) and returns the handle.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x0079AF50": {
+    "name": "GlobalFreeWrapper",
+    "signature": "HGLOBAL fn_0079AF50(HGLOBAL hMem)",
+    "summary": "Frees a global memory handle via KERNEL32!GlobalFree and returns its result.",
+    "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
   "0x0079BA40": {
     "name": "sub_0079BA40",
     "signature": "extern \"C\" int32_t __cdecl fn_0079BA40(void)",
