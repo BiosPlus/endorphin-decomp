@@ -163,3 +163,17 @@ extern uint8_t __fastcall fn_0072CF10(void* self, int edx_unused, int index) {
     return lift_field<uint8_t>(self, 0x1A9 + static_cast<uintptr_t>(index));
 }
 } // namespace lift_0072CF10
+
+// [0x00725DE0]
+namespace lift_00725DE0 {
+// @name xorChainBlock16
+// @summary In-place 16-byte chained XOR: buf[i] ^= key[i] ^ prev, prev seeded 0x40 (stdcall, ret 8).
+void sub_00725DE0(uint8_t* buf, const uint8_t* key) {
+    uint8_t prev = 0x40;
+    for (int i = 0; i < 16; ++i) {
+        uint8_t out = static_cast<uint8_t>(buf[i] ^ key[i] ^ prev);
+        buf[i] = out;
+        prev = out;
+    }
+}
+} // namespace lift_00725DE0

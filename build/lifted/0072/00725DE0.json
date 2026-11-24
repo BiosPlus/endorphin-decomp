@@ -1,0 +1,13 @@
+{
+  "va": "0x00725DE0",
+  "size": 48,
+  "orig_symbol": "sub_00725DE0",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "xorChainBlock16",
+  "signature": "void sub_00725DE0(uint8_t* buf, const uint8_t* key)",
+  "summary": "In-place 16-byte chained XOR: buf[i] ^= key[i] ^ prev, prev seeded 0x40 (stdcall, ret 8).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:23:24Z"
+}
