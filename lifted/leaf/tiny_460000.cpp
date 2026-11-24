@@ -723,3 +723,26 @@ void fn_00463950(void* self) {
 }
 } // namespace lift_0040BEE0
 } // namespace lift_00463950
+
+// [0x00465EF0] sub_00465EF0 (24 bytes)
+namespace lift_00465EF0 {
+// Known callee 0x00433290: Unknown::forwardToChildAt154 (Forwards the call to the child object at +0x154 via sub_0044E160; does nothing when the child is null.)
+extern void ext_00433290(void* self, DWORD stackArg);
+// Global holding a pointer to the object whose +0x20 flag gates the forward.
+extern void* mem_00ACDB40;
+
+// @name ForwardToChildIfFlagSet
+// @class Unknown
+// @summary Forwards one stack argument to forwardToChildAt154 on the global object when its +0x20 field is nonzero; otherwise returns (ret 4).
+// @field Unknown +0x20 DWORD field_0x20
+void fn_00465EF0(DWORD stackArg) {
+    void* self = mem_00ACDB40;
+    if (self == nullptr) {
+        return;
+    }
+    if (lift_field<DWORD>(self, 0x20) == 0) {
+        return;
+    }
+    ext_00433290(self, stackArg);
+}
+} // namespace lift_00465EF0

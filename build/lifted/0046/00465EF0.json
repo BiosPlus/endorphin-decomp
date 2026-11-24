@@ -1,0 +1,22 @@
+{
+  "va": "0x00465EF0",
+  "size": 24,
+  "orig_symbol": "sub_00465EF0",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "ForwardToChildIfFlagSet",
+  "class": "Unknown",
+  "signature": "void fn_00465EF0(DWORD stackArg)",
+  "summary": "Forwards one stack argument to forwardToChildAt154 on the global object when its +0x20 field is nonzero; otherwise returns (ret 4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:35:29Z"
+}
