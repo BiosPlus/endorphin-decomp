@@ -1,0 +1,22 @@
+{
+  "va": "0x005451A0",
+  "size": 15,
+  "orig_symbol": "PoseTool::vfunc_30",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "PoseTool::vfunc_30",
+  "class": "PoseTool",
+  "signature": "uint32_t PoseTool_vfunc_30(const uint8_t* self)",
+  "summary": "Returns 12 if the dword at this+0x9C is nonzero, otherwise 11.",
+  "fields": [
+    {
+      "class": "PoseTool",
+      "offset": "+0x9C",
+      "type": "uint32_t",
+      "name": "field_0x9c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:30:07Z"
+}

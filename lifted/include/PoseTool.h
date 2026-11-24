@@ -11,6 +11,7 @@
 namespace lifted_layout {
 struct PoseTool_Fields {
     // +0x88  void*                    field_0x88  (evidence: 0x00545650)
+    // +0x9C  uint32_t                 field_0x9c  (evidence: 0x005451A0)
     // +0xA0  void*                    field_0xA0  (evidence: 0x005455F0) // CONFLICT: multiple definitions at +0xA0
     // +0xA0  void*                    field_0xa0  (evidence: 0x00401730, 0x00401960, 0x00545600, 0x00545610, 0x005E1350) // CONFLICT: multiple definitions at +0xA0
 };

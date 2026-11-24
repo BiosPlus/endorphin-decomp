@@ -5386,3 +5386,16 @@ void HasCustomBufferedTMPtr_vfunc_4(HasCustomBufferedTMPtr* self) {
     self->field_0x4 = 0xFFFFFFFFu;
 }
 } // namespace lift_0053A570
+
+// [0x005451A0]
+namespace lift_005451A0 {
+// @name PoseTool::vfunc_30
+// @class PoseTool
+// @summary Returns 12 if the dword at this+0x9C is nonzero, otherwise 11.
+// @field PoseTool +0x9C uint32_t field_0x9c
+
+uint32_t PoseTool_vfunc_30(const uint8_t* self) {
+    const uint32_t flag = *reinterpret_cast<const uint32_t*>(self + 0x9C);
+    return (flag != 0u ? 1u : 0u) + 11u;
+}
+} // namespace lift_005451A0
