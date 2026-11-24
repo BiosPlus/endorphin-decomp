@@ -846,3 +846,27 @@ void fn_004CA850(void* self) {
     lift_field<uint32_t>(self, 4) = kStaticObjAddr;
 }
 } // namespace lift_004CA850
+
+// [0x004CA750] ExprParser::Method0Type<NMData::MetaBodyConstraintData, {[thunk]: __thiscall NMData::MetaBodyConstraintData::`vcall'{352, {flat}}, 0}>::vfunc_40 (122 bytes)
+namespace lift_004CA750 {
+// Callee 0x0067A670: thiscall (ecx = object address) with one stack argument (0).
+extern void ext_0067A670(uint32_t self, int32_t arg0);
+// One-time init guard for the static object (bit 0 = initialized).
+extern uint32_t mem_00AE4484;
+// Static object storage; first dword receives vtable 0x0094631C.
+extern uint32_t mem_00AE4480;
+
+// @name ExprParser::Method0Type<NMData::MetaBodyConstraintData>::vfunc_40
+// @class ExprParser::Method0Type<NMData::MetaBodyConstraintData, {[thunk]: __thiscall NMData::MetaBodyConstraintData::`vcall'{352, {flat}}, 0}>
+// @summary Lazily initializes the static object at mem_00AE4480 (guarded by bit 0 of mem_00AE4484, vtable 0x0094631C) and stores its address into the out object at +0x04.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+void fn_004CA750(void* out) {
+    // Original SEH frame setup/teardown (fs:[0] push/pop) has no semantic effect in the portable lift.
+    if ((mem_00AE4484 & 1u) == 0u) {
+        mem_00AE4484 |= 1u;
+        ext_0067A670(0x00AE4480u, 0);
+        mem_00AE4480 = 0x0094631Cu; // vtable pointer of the static object
+    }
+    lift_field<uint32_t>(out, 0x04) = 0x00AE4480u;
+}
+} // namespace lift_004CA750

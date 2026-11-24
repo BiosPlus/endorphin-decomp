@@ -1,0 +1,22 @@
+{
+  "va": "0x004CA750",
+  "size": 122,
+  "orig_symbol": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {[thunk]: __thiscall NMData::MetaBodyConstraintData::`vcall'{352, {flat}}, 0}\u003e::vfunc_40",
+  "src_path": "src/templates/Method0Type.cpp",
+  "lifted_path": "lifted/templates/Method0Type.cpp",
+  "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData\u003e::vfunc_40",
+  "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {[thunk]: __thiscall NMData::MetaBodyConstraintData::`vcall'{352, {flat}}, 0}\u003e",
+  "signature": "void fn_004CA750(void* out)",
+  "summary": "Lazily initializes the static object at mem_00AE4480 (guarded by bit 0 of mem_00AE4484, vtable 0x0094631C) and stores its address into the out object at +0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:45:56Z"
+}

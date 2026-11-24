@@ -10909,6 +10909,13 @@
     "summary": "Stores arg if it is in 0..4 into this+0x184, then sets byte +4 of the global object at mem_00AE29D0 (if non-null) to 1.",
     "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
   },
+  "0x004CA750": {
+    "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData\u003e::vfunc_40",
+    "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {[thunk]: __thiscall NMData::MetaBodyConstraintData::`vcall'{352, {flat}}, 0}\u003e",
+    "signature": "void fn_004CA750(void* out)",
+    "summary": "Lazily initializes the static object at mem_00AE4480 (guarded by bit 0 of mem_00AE4484, vtable 0x0094631C) and stores its address into the out object at +0x04.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x004CA7D0": {
     "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, fireEnable\u003e::vfunc_40",
     "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}\u003e",
