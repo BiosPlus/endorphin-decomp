@@ -22055,17 +22055,45 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xA4 and tail-calls sub_0065A8E0.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00647F00": {
+    "name": "sub_00647F00",
+    "class": "Unknown",
+    "signature": "uint32_t fn_00647F00(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00648480 (GetIndirectField_0x5c_0x00).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00647F20": {
     "name": "sub_00647F20",
     "signature": "extern \"C\" void __fastcall fn_00647F20(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0xA4 and tail-calls sub_0065A980.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00647F30": {
+    "name": "sub_00647F30",
+    "class": "Unknown",
+    "signature": "uint32_t fn_00647F30(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00648480 (GetIndirectField_0x5c_0x00).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00647F70": {
     "name": "sub_00647F70",
     "signature": "extern \"C\" void __fastcall fn_00647F70(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0xA4 and tail-calls sub_0065A910.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
+  "0x006481C0": {
+    "name": "sub_006481C0",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006481C0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00648480 (GetIndirectField_0x5c_0x00).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x006481E0": {
+    "name": "sub_006481E0",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006481E0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00648480 (GetIndirectField_0x5c_0x00).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
   "0x00648450": {
     "name": "sub_00648450",

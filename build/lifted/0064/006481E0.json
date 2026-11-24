@@ -1,0 +1,28 @@
+{
+  "va": "0x006481E0",
+  "size": 18,
+  "orig_symbol": "sub_006481E0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "sub_006481E0",
+  "class": "Unknown",
+  "signature": "uint32_t fn_006481E0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00648480 (GetIndirectField_0x5c_0x00).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:48:29Z"
+}
