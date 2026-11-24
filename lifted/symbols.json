@@ -47085,10 +47085,28 @@
     "summary": "Maps a selector argument (0, 1, 2) to one of three constant addresses (0x00AAF2BC, 0x00AAF2E4, 0x00AAF2EC); any other value returns 0.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00782BD0": {
+    "name": "sub_00782BD0",
+    "signature": "uint32_t __cdecl fn_00782BD0(uint32_t selector)",
+    "summary": "Auto-lifted identical-shape clone of 0x00782B30 (selectStaticAddressByIndex).",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
+  "0x00782C80": {
+    "name": "sub_00782C80",
+    "signature": "uint32_t __cdecl fn_00782C80(uint32_t selector)",
+    "summary": "Auto-lifted identical-shape clone of 0x00782B30 (selectStaticAddressByIndex).",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00782CB0": {
     "name": "GetRigidName",
     "signature": "const char* fn_00782CB0(DWORD selector)",
     "summary": "Returns the \"World Rigid\" (0) or \"Body Rigid\" (1) label string; NULL for any other selector.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
+  "0x00782CD0": {
+    "name": "sub_00782CD0",
+    "signature": "uint32_t __cdecl fn_00782CD0(uint32_t selector)",
+    "summary": "Auto-lifted identical-shape clone of 0x00782B30 (selectStaticAddressByIndex).",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
   "0x00782D00": {
@@ -50373,6 +50391,12 @@
     "signature": "void fn_008574B0(uint32_t arg)",
     "summary": "If the global sink object pointer is non-null, forward arg to its vtable slot 5 (+0x14) and return.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
+  "0x00858B60": {
+    "name": "sub_00858B60",
+    "signature": "uint32_t __cdecl fn_00858B60(uint32_t selector)",
+    "summary": "Auto-lifted identical-shape clone of 0x00782B30 (selectStaticAddressByIndex).",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
   "0x008596E0": {
     "name": "sub_008596E0",

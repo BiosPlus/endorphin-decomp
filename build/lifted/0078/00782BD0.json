@@ -1,0 +1,13 @@
+{
+  "va": "0x00782BD0",
+  "size": 48,
+  "orig_symbol": "sub_00782BD0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "sub_00782BD0",
+  "signature": "uint32_t __cdecl fn_00782BD0(uint32_t selector)",
+  "summary": "Auto-lifted identical-shape clone of 0x00782B30 (selectStaticAddressByIndex).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T14:25:19Z"
+}

@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_850000.cpp
 #include "lift_compat.h"
+#include <cstdio>
 
 // [0x0085E04B] sub_0085E04B (5 bytes)
 // @name sub_0085E04B
@@ -316,3 +317,21 @@ int32_t __cdecl sub_0085F7B0(const void* buf1, const void* buf2, uint32_t count)
     return static_cast<int32_t>(*p1) - static_cast<int32_t>(*p2);
 }
 } // namespace lift_0085F7B0
+
+// [0x00858B60] sub_00858B60 (48 bytes)
+namespace lift_00858B60 {
+// @name sub_00858B60
+// @summary Auto-lifted identical-shape clone of 0x00782B30 (selectStaticAddressByIndex).
+namespace lift_00782B30 {
+// @name selectStaticAddressByIndex
+// @summary Maps selector 0/1/2 to one of three static addresses; any other value yields 0.
+uint32_t __cdecl fn_00858B60(uint32_t selector) {
+    switch (selector) {
+        case 0:  return 0x4u;
+        case 1:  return 0x40u;
+        case 2:  return 0x28u;
+        default: return 0u;
+    }
+}
+} // namespace lift_00782B30
+} // namespace lift_00858B60

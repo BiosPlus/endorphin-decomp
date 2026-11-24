@@ -439,3 +439,57 @@ uint32_t __cdecl fn_00782B30(uint32_t selector) {
     }
 }
 } // namespace lift_00782B30
+
+// [0x00782BD0] sub_00782BD0 (48 bytes)
+namespace lift_00782BD0 {
+// @name sub_00782BD0
+// @summary Auto-lifted identical-shape clone of 0x00782B30 (selectStaticAddressByIndex).
+namespace lift_00782B30 {
+// @name selectStaticAddressByIndex
+// @summary Maps selector 0/1/2 to one of three static addresses; any other value yields 0.
+uint32_t __cdecl fn_00782BD0(uint32_t selector) {
+    switch (selector) {
+        case 0:  return 0xAAF2BCu;
+        case 1:  return 0xAAF2F4u;
+        case 2:  return 0xAAF2FCu;
+        default: return 0u;
+    }
+}
+} // namespace lift_00782B30
+} // namespace lift_00782BD0
+
+// [0x00782C80] sub_00782C80 (48 bytes)
+namespace lift_00782C80 {
+// @name sub_00782C80
+// @summary Auto-lifted identical-shape clone of 0x00782B30 (selectStaticAddressByIndex).
+namespace lift_00782B30 {
+// @name selectStaticAddressByIndex
+// @summary Maps selector 0/1/2 to one of three static addresses; any other value yields 0.
+uint32_t __cdecl fn_00782C80(uint32_t selector) {
+    switch (selector) {
+        case 0:  return 0xAAF328u;
+        case 1:  return 0xAAF330u;
+        case 2:  return 0xAAF338u;
+        default: return 0u;
+    }
+}
+} // namespace lift_00782B30
+} // namespace lift_00782C80
+
+// [0x00782CD0] sub_00782CD0 (48 bytes)
+namespace lift_00782CD0 {
+// @name sub_00782CD0
+// @summary Auto-lifted identical-shape clone of 0x00782B30 (selectStaticAddressByIndex).
+namespace lift_00782B30 {
+// @name selectStaticAddressByIndex
+// @summary Maps selector 0/1/2 to one of three static addresses; any other value yields 0.
+uint32_t __cdecl fn_00782CD0(uint32_t selector) {
+    switch (selector) {
+        case 0:  return 0xAAF360u;
+        case 1:  return 0xAAF36Cu;
+        case 2:  return 0xAAF378u;
+        default: return 0u;
+    }
+}
+} // namespace lift_00782B30
+} // namespace lift_00782CD0
