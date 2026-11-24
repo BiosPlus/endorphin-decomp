@@ -224,3 +224,34 @@ void fn_0067F9D0(void* self) {
     lift_field<uint32_t>(self, 0x08) = end - 8;
 }
 } // namespace lift_0067F9D0
+
+// [0x0067B3D0]
+namespace lift_0067B3D0 {
+// @name CriticalSectionGuardedRecord::init
+// @class CriticalSectionGuardedRecord
+// @summary Locks the embedded critical section at +0x18, stores three arguments into the record, clears the flag at +0x0C, then unlocks.
+// @field CriticalSectionGuardedRecord +0x04 uint32_t field_0x04 (zeroed)
+// @field CriticalSectionGuardedRecord +0x08 uint32_t field_0x08 (arg1)
+// @field CriticalSectionGuardedRecord +0x0C uint8_t field_0x0C (cleared)
+// @field CriticalSectionGuardedRecord +0x10 uint32_t field_0x10 (arg3)
+// @field CriticalSectionGuardedRecord +0x14 uint32_t field_0x14 (arg2)
+// @field CriticalSectionGuardedRecord +0x18 CriticalSectionLock lock
+
+void ext_0065C640(void* self);
+void ext_0065C650(void* self);
+
+void sub_0067B3D0(void* self, std::uint32_t arg1, std::uint32_t arg2, std::uint32_t arg3) {
+    auto* base = static_cast<std::uint8_t*>(self);
+    void* lock = base + 0x18;
+
+    ext_0065C640(lock);
+
+    *reinterpret_cast<std::uint32_t*>(base + 0x08) = arg1;
+    *reinterpret_cast<std::uint32_t*>(base + 0x10) = arg3;
+    *reinterpret_cast<std::uint32_t*>(base + 0x04) = 0;
+    *reinterpret_cast<std::uint32_t*>(base + 0x14) = arg2;
+    *reinterpret_cast<std::uint8_t*>(base + 0x0C) = 0;
+
+    ext_0065C650(lock);
+}
+} // namespace lift_0067B3D0

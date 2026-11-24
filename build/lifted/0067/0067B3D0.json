@@ -1,0 +1,52 @@
+{
+  "va": "0x0067B3D0",
+  "size": 55,
+  "orig_symbol": "sub_0067B3D0",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "CriticalSectionGuardedRecord::init",
+  "class": "CriticalSectionGuardedRecord",
+  "signature": "void sub_0067B3D0(void* self, std::uint32_t arg1, std::uint32_t arg2, std::uint32_t arg3)",
+  "summary": "Locks the embedded critical section at +0x18, stores three arguments into the record, clears the flag at +0x0C, then unlocks.",
+  "fields": [
+    {
+      "class": "CriticalSectionGuardedRecord",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04",
+      "name": "(zeroed)"
+    },
+    {
+      "class": "CriticalSectionGuardedRecord",
+      "offset": "+0x8",
+      "type": "uint32_t field_0x08",
+      "name": "(arg1)"
+    },
+    {
+      "class": "CriticalSectionGuardedRecord",
+      "offset": "+0xC",
+      "type": "uint8_t field_0x0C",
+      "name": "(cleared)"
+    },
+    {
+      "class": "CriticalSectionGuardedRecord",
+      "offset": "+0x10",
+      "type": "uint32_t field_0x10",
+      "name": "(arg3)"
+    },
+    {
+      "class": "CriticalSectionGuardedRecord",
+      "offset": "+0x14",
+      "type": "uint32_t field_0x14",
+      "name": "(arg2)"
+    },
+    {
+      "class": "CriticalSectionGuardedRecord",
+      "offset": "+0x18",
+      "type": "CriticalSectionLock",
+      "name": "lock"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:14:02Z"
+}

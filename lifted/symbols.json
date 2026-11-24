@@ -35942,6 +35942,13 @@
     "summary": "Writes vtable pointer 0x0098C5E4 to offset 0, then stores 1.0, 1.0, 0.0 as doubles at +0x08, +0x10, +0x18.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x0067B3D0": {
+    "name": "CriticalSectionGuardedRecord::init",
+    "class": "CriticalSectionGuardedRecord",
+    "signature": "void sub_0067B3D0(void* self, std::uint32_t arg1, std::uint32_t arg2, std::uint32_t arg3)",
+    "summary": "Locks the embedded critical section at +0x18, stores three arguments into the record, clears the flag at +0x0C, then unlocks.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067B5A0": {
     "name": "Timer::vfunc_0",
     "class": "Timer",
