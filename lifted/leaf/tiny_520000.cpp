@@ -57,3 +57,21 @@ void fn_00528B90(void* self, void* peer) {
     }
 }
 } // namespace lift_00528B90
+
+// [0x00528BB0] sub_00528BB0 (19 bytes)
+namespace lift_00528BB0 {
+// @name descriptiveName_00528BB0 (forwardVirtual0x2CIfNonNull)
+// @summary If this->field_0x04 is non-null, tail-dispatch virtual slot 0x2C/4 on it with the same args; otherwise return 0 (callee pops 8 bytes).
+// @field Unknown +0x04 DWORD field_0x04
+DWORD fn_00528BB0(void* self, DWORD arg0, DWORD arg1) {
+    DWORD child = lift_field<DWORD>(self, 0x04);
+    if (child == 0) {
+        return 0;
+    }
+    void* childPtr = reinterpret_cast<void*>(static_cast<uintptr_t>(child));
+    void* vtbl = reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<DWORD>(childPtr, 0x00)));
+    DWORD target = lift_field<DWORD>(vtbl, 0x2C);
+    auto fn = reinterpret_cast<DWORD (*)(void*, DWORD, DWORD)>(static_cast<uintptr_t>(target));
+    return fn(childPtr, arg0, arg1);
+}
+} // namespace lift_00528BB0

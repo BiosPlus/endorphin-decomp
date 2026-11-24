@@ -1,0 +1,21 @@
+{
+  "va": "0x00528BB0",
+  "size": 19,
+  "orig_symbol": "sub_00528BB0",
+  "src_path": "src/leaf/tiny_520000.cpp",
+  "lifted_path": "lifted/leaf/tiny_520000.cpp",
+  "name": "descriptiveName_00528BB0 (forwardVirtual0x2CIfNonNull)",
+  "signature": "DWORD fn_00528BB0(void* self, DWORD arg0, DWORD arg1)",
+  "summary": "If this-\u003efield_0x04 is non-null, tail-dispatch virtual slot 0x2C/4 on it with the same args; otherwise return 0 (callee pops 8 bytes).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:01:14Z"
+}

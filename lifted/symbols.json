@@ -11166,6 +11166,12 @@
     "summary": "Stores the argument at this+0x04; if it is non-null, writes this into argument+0x08.",
     "lifted_path": "lifted/leaf/tiny_520000.cpp"
   },
+  "0x00528BB0": {
+    "name": "descriptiveName_00528BB0 (forwardVirtual0x2CIfNonNull)",
+    "signature": "DWORD fn_00528BB0(void* self, DWORD arg0, DWORD arg1)",
+    "summary": "If this-\u003efield_0x04 is non-null, tail-dispatch virtual slot 0x2C/4 on it with the same args; otherwise return 0 (callee pops 8 bytes).",
+    "lifted_path": "lifted/leaf/tiny_520000.cpp"
+  },
   "0x00528C70": {
     "name": "setFlagOnPointedObject",
     "signature": "void fn_00528C70(void* self)",
