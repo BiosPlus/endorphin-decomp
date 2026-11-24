@@ -1544,3 +1544,18 @@ extern void* __cdecl fn_006CA0C0(int32_t n) {
     return mem_0092522C(static_cast<size_t>(n), 1);
 }
 } // namespace lift_006CA0C0
+
+// [0x006C1290] sub_006C1290 (31 bytes)
+namespace lift_006C1290 {
+// @name Unknown::ForwardToSubobjectVirtual2
+// @class Unknown
+// @summary Forwards two stack arguments (in order) to virtual slot 0xB8 of the object at self+0x1AE8, with that subobject as `this`; callee cleans the 8 bytes of arguments (ret 8).
+// @field Unknown +0x1AE8 void* field_0x1ae8
+void fn_006C1290(void* self, DWORD arg0, DWORD arg1) {
+    void* sub = lift_field<void*>(self, 0x1AE8);
+    void* vtbl = lift_field<void*>(sub, 0);
+    using Method = void (*)(void* self, DWORD arg0, DWORD arg1);
+    Method target = reinterpret_cast<Method>(lift_field<void*>(vtbl, 0xB8));
+    target(sub, arg0, arg1);
+}
+} // namespace lift_006C1290

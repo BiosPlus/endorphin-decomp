@@ -1,0 +1,22 @@
+{
+  "va": "0x006C1290",
+  "size": 31,
+  "orig_symbol": "sub_006C1290",
+  "src_path": "src/leaf/tiny_6C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6C0000.cpp",
+  "name": "Unknown::ForwardToSubobjectVirtual2",
+  "class": "Unknown",
+  "signature": "void fn_006C1290(void* self, DWORD arg0, DWORD arg1)",
+  "summary": "Forwards two stack arguments (in order) to virtual slot 0xB8 of the object at self+0x1AE8, with that subobject as `this`; callee cleans the 8 bytes of arguments (ret 8).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1AE8",
+      "type": "void*",
+      "name": "field_0x1ae8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:26:53Z"
+}
