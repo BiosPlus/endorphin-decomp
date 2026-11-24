@@ -1704,3 +1704,26 @@ void __thiscall fn_004346C0(void* self, void* obj) {
 }
 } // namespace lift_00434380
 } // namespace lift_004346C0
+
+// [0x0043CEF0]
+namespace lift_0043CEF0 {
+// @name Unknown::isCursorOverThis
+// @class Unknown
+// @summary Returns true when the window under the mouse cursor equals this object's window handle (ecx).
+
+extern uint32_t mem_00925718;  // IAT slot for USER32!GetCursorPos
+extern uint32_t mem_00925714;  // IAT slot for USER32!WindowFromPoint
+uint32_t ext_006A5E00(uint32_t hwnd);  // thunk to MFC80!ord_2372
+
+// Thiscall-style: `self` is the value of ecx on entry.
+uint32_t fn_0043CEF0(uint32_t self) {
+    uint32_t pt[2] = {0, 0};  // POINT { x, y }
+    // GetCursorPos(&pt) via IAT slot
+    reinterpret_cast<uint32_t (*)(uint32_t*)>(static_cast<uintptr_t>(mem_00925718))(pt);
+    // WindowFromPoint(pt.x, pt.y) via IAT slot; pushed as (y, x) in the original
+    uint32_t hwnd = reinterpret_cast<uint32_t (*)(uint32_t, uint32_t)>(
+        static_cast<uintptr_t>(mem_00925714))(pt[1], pt[0]);
+    uint32_t r = ext_006A5E00(hwnd);
+    return (r == self) ? 1u : 0u;
+}
+} // namespace lift_0043CEF0

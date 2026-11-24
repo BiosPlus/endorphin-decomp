@@ -2740,6 +2740,13 @@
     "summary": "Invalidates the view's window (InvalidateRect with a NULL rect and erase=TRUE, i.e. the whole client area is repainted).",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x0043CEF0": {
+    "name": "Unknown::isCursorOverThis",
+    "class": "Unknown",
+    "signature": "uint32_t ext_006A5E00(uint32_t hwnd);  // thunk to MFC80!ord_2372 } uint32_t fn_0043CEF0(uint32_t self)",
+    "summary": "Returns true when the window under the mouse cursor equals this object's window handle (ecx).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043D170": {
     "name": "sub_0043D170",
     "signature": "void __thiscall fn_0043D170(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",

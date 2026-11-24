@@ -1,0 +1,14 @@
+{
+  "va": "0x0043CEF0",
+  "size": 49,
+  "orig_symbol": "sub_0043CEF0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::isCursorOverThis",
+  "class": "Unknown",
+  "signature": "uint32_t ext_006A5E00(uint32_t hwnd);  // thunk to MFC80!ord_2372 } uint32_t fn_0043CEF0(uint32_t self)",
+  "summary": "Returns true when the window under the mouse cursor equals this object's window handle (ecx).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:30:37Z"
+}
