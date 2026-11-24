@@ -128,3 +128,22 @@ DWORD __thiscall fn_00774EC0(void* self, DWORD arg1, DWORD arg2) {
 }
 } // namespace lift_0072DC60
 } // namespace lift_00774EC0
+
+// [0x0077F9E0]
+namespace lift_0077F9E0 {
+// @name sub_0077F9E0
+// @summary Constructor initializing vtable, zeroing +0x04, and storing argument at +0x08
+// @field Obj +0x00 uint32_t vtable
+// @field Obj +0x04 uint32_t field_0x04
+// @field Obj +0x08 uint32_t field_0x08
+
+
+extern uint8_t mem_00996D48[];
+
+uint32_t __thiscall sub_0077F9E0(uint32_t self, uint32_t arg1) {
+    *(uint32_t*)(self + 0x04) = 0;
+    *(uint32_t*)(self + 0x08) = arg1;
+    *(uint32_t*)(self + 0x00) = (uint32_t)(uintptr_t)mem_00996D48;
+    return self;
+}
+} // namespace lift_0077F9E0

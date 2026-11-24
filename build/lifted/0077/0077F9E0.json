@@ -1,0 +1,33 @@
+{
+  "va": "0x0077F9E0",
+  "size": 25,
+  "orig_symbol": "sub_0077F9E0",
+  "src_path": "src/leaf/tiny_770000.cpp",
+  "lifted_path": "lifted/leaf/tiny_770000.cpp",
+  "name": "sub_0077F9E0",
+  "signature": "uint32_t __thiscall sub_0077F9E0(uint32_t self, uint32_t arg1)",
+  "summary": "Constructor initializing vtable, zeroing +0x04, and storing argument at +0x08",
+  "fields": [
+    {
+      "class": "Obj",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T11:52:17Z"
+}

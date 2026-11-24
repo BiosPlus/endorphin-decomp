@@ -8,6 +8,9 @@
 // Recovered field layout for Obj:
 namespace lifted_layout {
 struct Obj_Fields {
+    // +0x0   uint32_t                 vtable  (evidence: 0x0077F9E0)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x0077F9E0)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x0077F9E0)
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x007D47A0)
     // +0x14  uint32_t                 field_0x14  (evidence: 0x007D47A0)
 };
