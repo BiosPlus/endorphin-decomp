@@ -1,0 +1,22 @@
+{
+  "va": "0x00500290",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEvolveEngine, float, {private: void __thiscall EvolveEngine::stopWithFitness(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEvolveEngine,float,stopWithFitness\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cEvolveEngine, float, {private: void __thiscall EvolveEngine::stopWithFitness(float), 0}\u003e",
+  "signature": "void fn_00500290(void* self, void* out)",
+  "summary": "Lazily constructs a function-local static object (guarded by bit 0 of mem_00AEB2E0) and writes its address into the out-object's +0x04 slot.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:47:51Z"
+}

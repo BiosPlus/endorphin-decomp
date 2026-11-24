@@ -6897,3 +6897,32 @@ void __thiscall fn_004CB480(void* self, void* out) {
     lift_field<uint32_t>(out, 4) = 0x00AE44D0u;
 }
 } // namespace lift_004CB480
+
+// [0x00500290] ExprParser::WriteMethodType<EvolveEngine, float, {private: void __thiscall EvolveEngine::stopWithFitness(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_00500290 {
+extern void ext_0067A670(void* self, int32_t arg);
+extern uint32_t mem_00AEB2E0;
+extern uint32_t mem_00AEB2DC;
+
+// @name ExprParser::WriteMethodType<EvolveEngine,float,stopWithFitness>::vfunc_40
+// @class ExprParser::WriteMethodType<EvolveEngine, float, {private: void __thiscall EvolveEngine::stopWithFitness(float), 0}>
+// @summary Lazily constructs a function-local static object (guarded by bit 0 of mem_00AEB2E0) and writes its address into the out-object's +0x04 slot.
+// @field Unknown +0x04 uint32_t field_0x04
+//
+// Notes:
+//   - The original installs an MSVC-style SEH frame (fs:[0], handler 0x89133e)
+//     solely for unwinding the static initializer; it has no effect on the
+//     computed result and is omitted here.
+//   - The stack argument (out) is the object whose +0x04 receives the static's
+//     guest address (0x00AEB2DC). `self` (ecx on entry) is unused.
+//   - Guard bit is set before the constructor call, matching the original order.
+void fn_00500290(void* self, void* out) {
+    (void)self;
+    if ((mem_00AEB2E0 & 1u) == 0) {
+        mem_00AEB2E0 |= 1u;
+        ext_0067A670(&mem_00AEB2DC, 0);
+        mem_00AEB2DC = 0x0094ECDCu;
+    }
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(out) + 0x04) = 0x00AEB2DCu;
+}
+} // namespace lift_00500290

@@ -13711,6 +13711,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x13C and tail-calls sub_00515B70.",
     "lifted_path": "lifted/leaf/tiny_4F0000.cpp"
   },
+  "0x00500290": {
+    "name": "ExprParser::WriteMethodType\u003cEvolveEngine,float,stopWithFitness\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cEvolveEngine, float, {private: void __thiscall EvolveEngine::stopWithFitness(float), 0}\u003e",
+    "signature": "void fn_00500290(void* self, void* out)",
+    "summary": "Lazily constructs a function-local static object (guarded by bit 0 of mem_00AEB2E0) and writes its address into the out-object's +0x04 slot.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00500310": {
     "name": "DwordPairInitFromCall_00500310",
     "signature": "void* fn_00500310(void* self, void* pair, DWORD b)",
