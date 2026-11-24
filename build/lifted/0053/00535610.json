@@ -1,0 +1,34 @@
+{
+  "va": "0x00535610",
+  "size": 19,
+  "orig_symbol": "OglRenderer::vfunc_34",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "OglRenderer::vfunc_34",
+  "class": "OglRenderer",
+  "signature": "void fn_00535610(void* self, uint8_t value)",
+  "summary": "Stores a byte argument into byte +0xC4 of the object referenced by this-\u003e+0x38-\u003e+0x64.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    },
+    {
+      "class": "field_0x38",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "field_0x64"
+    },
+    {
+      "class": "field_0x64",
+      "offset": "+0xC4",
+      "type": "uint8_t",
+      "name": "field_0xC4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:01:42Z"
+}

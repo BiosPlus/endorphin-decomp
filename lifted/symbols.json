@@ -11738,6 +11738,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x38 and tail-calls sub_00530640.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00535610": {
+    "name": "OglRenderer::vfunc_34",
+    "class": "OglRenderer",
+    "signature": "void fn_00535610(void* self, uint8_t value)",
+    "summary": "Stores a byte argument into byte +0xC4 of the object referenced by this-\u003e+0x38-\u003e+0x64.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x005356B0": {
     "name": "OglRenderer::vfunc_39",
     "class": "OglRenderer",

@@ -5955,3 +5955,18 @@ uint32_t __thiscall fn_00528C30(void* self, uint32_t arg0) {
     return target(sub, arg0);
 }
 } // namespace lift_00528C30
+
+// [0x00535610] OglRenderer::vfunc_34 (19 bytes)
+namespace lift_00535610 {
+// @name OglRenderer::vfunc_34
+// @class OglRenderer
+// @summary Stores a byte argument into byte +0xC4 of the object referenced by this->+0x38->+0x64.
+// @field OglRenderer +0x38 void* field_0x38
+// @field field_0x38 +0x64 void* field_0x64
+// @field field_0x64 +0xC4 uint8_t field_0xC4
+void fn_00535610(void* self, uint8_t value) {
+    void* a = lift_field<void*>(self, 0x38);
+    void* b = lift_field<void*>(a, 0x64);
+    lift_field<uint8_t>(b, 0xC4) = value;
+}
+} // namespace lift_00535610
