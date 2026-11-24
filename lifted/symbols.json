@@ -31718,6 +31718,12 @@
     "summary": "Exception catch handler that logs an error string at [ebp-0x14]+0xC to std::cout and returns continuation 0x006A049F.",
     "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
+  "0x006A0530": {
+    "name": "catch_006A0530",
+    "signature": "uint32_t sub_006A0530(uintptr_t ebp)",
+    "summary": "Catch handler funclet that prints exception message at [ebp-0x14]+0xc to std::cout and returns continuation address 0x006A051F",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006A0670": {
     "name": "Unknown::zeroFields4_8_C",
     "class": "Unknown",
