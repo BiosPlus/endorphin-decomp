@@ -6753,3 +6753,28 @@ void fn_00489780(void* out) {
     lift_field<uintptr_t>(out, 4) = reinterpret_cast<uintptr_t>(&mem_00AD9E74);
 }
 } // namespace lift_00489780
+
+// [0x005956F0] ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setGravity(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_005956F0 {
+extern void ext_0067A670();
+extern int mem_00B413C0;
+extern int mem_00B413BC;
+
+// @name ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setGravity(float), 0}>::vfunc_40
+// @class ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setGravity(float), 0}>
+// @summary Lazily constructs the shared static instance (guarded by a one-bit init flag), then points this+0x04 at it.
+// @field ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setGravity(float), 0}> +0x04 uint32_t field_0x04
+void fn_005956F0(void* self) {
+    // One-time init guard: bit 0 of mem_00B413C0 marks the static instance as constructed.
+    if ((mem_00B413C0 & 1) == 0) {
+        mem_00B413C0 |= 1;
+        // Constructs the static object at mem_00B413BC (original passes it as `this` in ECX
+        // and a zero stack argument).
+        ext_0067A670();
+        // Install the vtable pointer for the static object.
+        mem_00B413BC = 0x0095D55C;
+    }
+    // Point this+0x04 at the static instance.
+    lift_field<uint32_t>(self, 0x04) = 0x00B413BC;
+}
+} // namespace lift_005956F0
