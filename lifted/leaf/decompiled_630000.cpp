@@ -21,3 +21,43 @@ void* fn_00630E60(void* self) {
     return subobject;
 }
 } // namespace lift_00630E60
+
+// [0x0063E240] sub_0063E240 (32 bytes)
+namespace lift_0063E240 {
+// @name sub_0063E240
+// @summary Auto-lifted identical-shape clone of 0x004F27E0 (descriptiveName_004F27E0).
+namespace lift_004F27E0 {
+// @name descriptiveName_004F27E0
+// @summary Thiscall initializer: calls ext_004F4D20(this, arg1, arg2), stores the @MO vtable at +0x00, returns this.
+// @field Unknown +0x00 DWORD vtable
+
+extern void ext_0063E0C0(void* self, DWORD arg1, DWORD arg2);
+extern const char mem_0097CB8C[];
+
+__thiscall void* fn_0063E240(void* self, DWORD arg1, DWORD arg2) {
+    ext_0063E0C0(self, arg1, arg2);
+    *reinterpret_cast<DWORD*>(self) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(mem_0097CB8C));
+    return self;
+}
+} // namespace lift_004F27E0
+} // namespace lift_0063E240
+
+// [0x0063F600] sub_0063F600 (32 bytes)
+namespace lift_0063F600 {
+// @name sub_0063F600
+// @summary Auto-lifted identical-shape clone of 0x004F27E0 (descriptiveName_004F27E0).
+namespace lift_004F27E0 {
+// @name descriptiveName_004F27E0
+// @summary Thiscall initializer: calls ext_004F4D20(this, arg1, arg2), stores the @MO vtable at +0x00, returns this.
+// @field Unknown +0x00 DWORD vtable
+
+extern void ext_0063F350(void* self, DWORD arg1, DWORD arg2);
+extern const char mem_0097CC60[];
+
+__thiscall void* fn_0063F600(void* self, DWORD arg1, DWORD arg2) {
+    ext_0063F350(self, arg1, arg2);
+    *reinterpret_cast<DWORD*>(self) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(mem_0097CC60));
+    return self;
+}
+} // namespace lift_004F27E0
+} // namespace lift_0063F600

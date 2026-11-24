@@ -208,3 +208,63 @@ int32_t fn_006BB790(void* self) {
     return ext_006D98E0();
 }
 } // namespace lift_006BB790
+
+// [0x006B3A90] sub_006B3A90 (32 bytes)
+namespace lift_006B3A90 {
+// @name sub_006B3A90
+// @summary Auto-lifted identical-shape clone of 0x004F27E0 (descriptiveName_004F27E0).
+namespace lift_004F27E0 {
+// @name descriptiveName_004F27E0
+// @summary Thiscall initializer: calls ext_004F4D20(this, arg1, arg2), stores the @MO vtable at +0x00, returns this.
+// @field Unknown +0x00 DWORD vtable
+
+extern void ext_006ADBF0(void* self, DWORD arg1, DWORD arg2);
+extern const char mem_009919BC[];
+
+__thiscall void* fn_006B3A90(void* self, DWORD arg1, DWORD arg2) {
+    ext_006ADBF0(self, arg1, arg2);
+    *reinterpret_cast<DWORD*>(self) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(mem_009919BC));
+    return self;
+}
+} // namespace lift_004F27E0
+} // namespace lift_006B3A90
+
+// [0x006B3C90] sub_006B3C90 (32 bytes)
+namespace lift_006B3C90 {
+// @name sub_006B3C90
+// @summary Auto-lifted identical-shape clone of 0x004F27E0 (descriptiveName_004F27E0).
+namespace lift_004F27E0 {
+// @name descriptiveName_004F27E0
+// @summary Thiscall initializer: calls ext_004F4D20(this, arg1, arg2), stores the @MO vtable at +0x00, returns this.
+// @field Unknown +0x00 DWORD vtable
+
+extern void ext_006ADBF0(void* self, DWORD arg1, DWORD arg2);
+extern const char mem_009919EC[];
+
+__thiscall void* fn_006B3C90(void* self, DWORD arg1, DWORD arg2) {
+    ext_006ADBF0(self, arg1, arg2);
+    *reinterpret_cast<DWORD*>(self) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(mem_009919EC));
+    return self;
+}
+} // namespace lift_004F27E0
+} // namespace lift_006B3C90
+
+// [0x006B4060] sub_006B4060 (32 bytes)
+namespace lift_006B4060 {
+// @name sub_006B4060
+// @summary Auto-lifted identical-shape clone of 0x004F27E0 (descriptiveName_004F27E0).
+namespace lift_004F27E0 {
+// @name descriptiveName_004F27E0
+// @summary Thiscall initializer: calls ext_004F4D20(this, arg1, arg2), stores the @MO vtable at +0x00, returns this.
+// @field Unknown +0x00 DWORD vtable
+
+extern void ext_006ADBF0(void* self, DWORD arg1, DWORD arg2);
+extern const char mem_00991A14[];
+
+__thiscall void* fn_006B4060(void* self, DWORD arg1, DWORD arg2) {
+    ext_006ADBF0(self, arg1, arg2);
+    *reinterpret_cast<DWORD*>(self) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(mem_00991A14));
+    return self;
+}
+} // namespace lift_004F27E0
+} // namespace lift_006B4060

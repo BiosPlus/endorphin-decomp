@@ -3687,6 +3687,13 @@
     "summary": "If byte at +0x128 is zero, forwards three stdcall args to ext_00456210 and returns its result; otherwise returns 0.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x004582B0": {
+    "name": "sub_004582B0",
+    "class": "Unknown",
+    "signature": "DWORD fn_004582B0(void* self, DWORD a1, DWORD a2, DWORD a3)",
+    "summary": "Auto-lifted identical-shape clone of 0x00458290 (descriptiveName: ForwardThreeArgsIfFlagClear).",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00458320": {
     "name": "CSizingControlBarGEx::vfunc_1",
     "class": "CSizingControlBarGEx",
@@ -17913,6 +17920,18 @@
     "summary": "If self+0x158 holds a sub-object pointer, tail-forwards to fn_006481E0 on that sub-object (passing its +0xAC pointer); otherwise yields zero.",
     "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
   },
+  "0x005B7000": {
+    "name": "sub_005B7000",
+    "signature": "void __thiscall fn_005B7000(uint8_t* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B67C0 (ForwardFloatToNestedAc).",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
+  "0x005B7020": {
+    "name": "sub_005B7020",
+    "signature": "void __thiscall fn_005B7020(uint8_t* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B67C0 (ForwardFloatToNestedAc).",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B7040": {
     "name": "sub_005B1140",
     "class": "UnknownClass",
@@ -24852,6 +24871,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0063E180 (AdvXMLParser::Text::vfunc_3).",
     "lifted_path": "lifted/AdvXMLParser/Attribute.cpp"
   },
+  "0x0063E240": {
+    "name": "sub_0063E240",
+    "signature": "__thiscall void* fn_0063E240(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F27E0 (descriptiveName_004F27E0).",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063E260": {
     "name": "sub_0063E260",
     "signature": "extern \"C\" void fn_0063E260(void)",
@@ -24960,6 +24985,12 @@
     "signature": "extern \"C\" void* __fastcall fn_0063EB50(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0063E9E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/AdvXMLParser/auto_tiny.cpp"
+  },
+  "0x0063F600": {
+    "name": "sub_0063F600",
+    "signature": "__thiscall void* fn_0063F600(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F27E0 (descriptiveName_004F27E0).",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
   "0x0063F8B0": {
     "name": "AdvXMLParser::Attribute::vfunc_0",
@@ -34863,6 +34894,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006B3350 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B3A90": {
+    "name": "sub_006B3A90",
+    "signature": "__thiscall void* fn_006B3A90(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F27E0 (descriptiveName_004F27E0).",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B3AB0": {
     "name": "sub_006B3AB0",
     "signature": "extern \"C\" void __fastcall fn_006B3AB0(void* self)",
@@ -34876,6 +34913,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006B3AB0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B3C90": {
+    "name": "sub_006B3C90",
+    "signature": "__thiscall void* fn_006B3C90(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F27E0 (descriptiveName_004F27E0).",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B3CB0": {
     "name": "sub_006B3CB0",
     "signature": "extern \"C\" void __fastcall fn_006B3CB0(void* self)",
@@ -34888,6 +34931,12 @@
     "signature": "extern \"C\" void* __fastcall fn_006B3D20(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006B3CB0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x006B4060": {
+    "name": "sub_006B4060",
+    "signature": "__thiscall void* fn_006B4060(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F27E0 (descriptiveName_004F27E0).",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
   "0x006B4080": {
     "name": "sub_006B4080",

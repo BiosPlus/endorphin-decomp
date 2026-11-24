@@ -1,0 +1,21 @@
+{
+  "va": "0x0063F600",
+  "size": 32,
+  "orig_symbol": "sub_0063F600",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "sub_0063F600",
+  "signature": "__thiscall void* fn_0063F600(void* self, DWORD arg1, DWORD arg2)",
+  "summary": "Auto-lifted identical-shape clone of 0x004F27E0 (descriptiveName_004F27E0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:30:35Z"
+}

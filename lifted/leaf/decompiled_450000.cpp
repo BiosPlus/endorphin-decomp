@@ -267,3 +267,24 @@ void fn_00458650(void* self, uint32_t firstArg, void* trailingArgs) {
     ext_006A5EA8(self);
 }
 } // namespace lift_00458650
+
+// [0x004582B0] sub_004582B0 (32 bytes)
+namespace lift_004582B0 {
+// @name sub_004582B0
+// @summary Auto-lifted identical-shape clone of 0x00458290 (descriptiveName: ForwardThreeArgsIfFlagClear).
+namespace lift_00458290 {
+extern DWORD ext_00456250(DWORD a1, DWORD a2, DWORD a3);
+
+// @name descriptiveName: ForwardThreeArgsIfFlagClear
+// @class Unknown
+// @summary If byte at +0x128 is zero, forwards three stdcall args to ext_00456210 and returns its result; otherwise returns 0.
+// @field Unknown +0x128 BYTE field_0x128
+DWORD fn_004582B0(void* self, DWORD a1, DWORD a2, DWORD a3) {
+    const BYTE flag = lift_field<BYTE>(self, 0x129);
+    if (flag != 0) {
+        return 0;
+    }
+    return ext_00456250(a1, a2, a3);
+}
+} // namespace lift_00458290
+} // namespace lift_004582B0
