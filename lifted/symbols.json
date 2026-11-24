@@ -5307,6 +5307,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005AC820 (Unknown::walkLinkUntilFlagSet_005AC820).",
     "lifted_path": "lifted/leaf/tiny_470000.cpp"
   },
+  "0x00476BA0": {
+    "name": "fn_00476BA0 (signed span divided by 3, zero-guarded)",
+    "class": "Unknown",
+    "signature": "int32_t __fastcall fn_00476BA0(void* ecx)",
+    "summary": "Returns (field_0x08 - field_0x04) / 3 as int32, or 0 when field_0x04 is 0.",
+    "lifted_path": "lifted/leaf/tiny_470000.cpp"
+  },
   "0x00476EA0": {
     "name": "SymbolPtrMap::vfunc_1",
     "class": "SymbolPtrMap\u003cSearchableMap\u003cNMData::TriggeredEventData *, GetNameFromAttribute\u003cNMData::TriggeredEventData *\u003e\u003e\u003e",

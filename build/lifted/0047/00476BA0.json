@@ -1,0 +1,28 @@
+{
+  "va": "0x00476BA0",
+  "size": 30,
+  "orig_symbol": "sub_00476BA0",
+  "src_path": "src/leaf/tiny_470000.cpp",
+  "lifted_path": "lifted/leaf/tiny_470000.cpp",
+  "name": "fn_00476BA0 (signed span divided by 3, zero-guarded)",
+  "class": "Unknown",
+  "signature": "int32_t __fastcall fn_00476BA0(void* ecx)",
+  "summary": "Returns (field_0x08 - field_0x04) / 3 as int32, or 0 when field_0x04 is 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:16:26Z"
+}

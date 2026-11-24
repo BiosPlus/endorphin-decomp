@@ -58,3 +58,25 @@ void fn_00477500(float* first, float* last, const float* value) {
     }
 }
 } // namespace lift_00477500
+
+// [0x00476BA0]
+namespace lift_00476BA0 {
+// @name fn_00476BA0 (signed span divided by 3, zero-guarded)
+// @class Unknown
+// @summary Returns (field_0x08 - field_0x04) / 3 as int32, or 0 when field_0x04 is 0.
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x08 int32_t field_0x08
+
+int32_t __fastcall fn_00476BA0(void* ecx) {
+    const int32_t a = lift_field<int32_t>(ecx, 0x04);
+    if (a == 0) {
+        return 0;
+    }
+    const int32_t b = lift_field<int32_t>(ecx, 0x08);
+    // Unsigned subtraction mirrors the wrapping 32-bit `sub` in the original.
+    const int32_t diff = static_cast<int32_t>(static_cast<uint32_t>(b) - static_cast<uint32_t>(a));
+    // Signed division by 3 (truncating toward zero), as compiled from the
+    // magic-multiply sequence 0x2AAAAAAB / sar / sign-correction.
+    return diff / 3;
+}
+} // namespace lift_00476BA0
