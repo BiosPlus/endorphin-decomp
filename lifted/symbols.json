@@ -21423,6 +21423,13 @@
     "summary": "Calls vtable slot 16 (offset 0x40) on this with argument 1",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00629DF0": {
+    "name": "ComputeFloatIntoField30",
+    "class": "\u003cunknown\u003e (owning class not yet identified)",
+    "signature": "extern \"C\" void __fastcall fn_00629DF0(void* self)",
+    "summary": "Fetches an int32 handle from ext_00594000, resolves it through ext_00594010, and stores the float result at this+0x30.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00629E40": {
     "name": "MetaBodySensor::vfunc_0",
     "class": "MetaBodySensor",
