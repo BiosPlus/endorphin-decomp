@@ -23,3 +23,23 @@ void* __thiscall fn_0074F820(void* self, void* obj, uint32_t index) {
 }
 } // namespace lift_006D2AA0
 } // namespace lift_0074F820
+
+// [0x0074F650] sub_0074F650 (48 bytes)
+namespace lift_0074F650 {
+// @name descriptiveName: wrapIndexOrSentinel
+// @summary Stdcall(a, n): if a is in (-n, 0) returns a + n; if a is in (0, n] returns a - 1; otherwise returns -1.
+// Pure arithmetic on its two stack arguments; no fields, globals, or external calls.
+int __stdcall fn_0074F650(int32_t a, int32_t n) {
+    if (a < 0) {
+        // Negate via unsigned arithmetic so INT32_MIN wraps instead of being UB.
+        const int32_t neg = static_cast<int32_t>(0u - static_cast<uint32_t>(a));
+        if (neg <= n) {
+            return static_cast<int32_t>(static_cast<uint32_t>(a) + static_cast<uint32_t>(n));
+        }
+    }
+    if (a > 0 && a <= n) {
+        return a - 1;
+    }
+    return -1;
+}
+} // namespace lift_0074F650

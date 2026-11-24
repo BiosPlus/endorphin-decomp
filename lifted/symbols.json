@@ -38533,6 +38533,12 @@
     "summary": "Returns field_0x158 if non-null and its vtable[0]() returns 6, else 0",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C3180": {
+    "name": "getTypedChild_0x158",
+    "signature": "uint32_t __thiscall fn_006C3180(void* self)",
+    "summary": "Returns the sub-object at +0x158 if non-null and its vtable[0] returns 7, otherwise 0.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C31B0": {
     "name": "getTypedChildIfType8",
     "signature": "uint32_t __thiscall sub_006C31B0(uint32_t self)",
@@ -46734,6 +46740,12 @@
     "signature": "extern \"C\" void* __fastcall fn_0074B840(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0074B860 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_740000.cpp"
+  },
+  "0x0074F650": {
+    "name": "descriptiveName: wrapIndexOrSentinel",
+    "signature": "int __stdcall fn_0074F650(int32_t a, int32_t n)",
+    "summary": "Stdcall(a, n): if a is in (-n, 0) returns a + n; if a is in (0, n] returns a - 1; otherwise returns -1.",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
   },
   "0x0074F820": {
     "name": "sub_0074F820",

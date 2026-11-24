@@ -1,0 +1,13 @@
+{
+  "va": "0x0074F650",
+  "size": 48,
+  "orig_symbol": "sub_0074F650",
+  "src_path": "src/leaf/decompiled_740000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_740000.cpp",
+  "name": "descriptiveName: wrapIndexOrSentinel",
+  "signature": "int __stdcall fn_0074F650(int32_t a, int32_t n)",
+  "summary": "Stdcall(a, n): if a is in (-n, 0) returns a + n; if a is in (0, n] returns a - 1; otherwise returns -1.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:23:47Z"
+}
