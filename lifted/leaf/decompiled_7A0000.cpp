@@ -85,3 +85,22 @@ void Unknown_SetByteSlot138(uint8_t* self, int32_t index, uint8_t value) {
     }
 }
 } // namespace lift_007AA930
+
+// [0x007AF7E0] sub_007AF7E0 (23 bytes)
+namespace lift_007AF7E0 {
+// Known callee 0x0079B140: DispatchThreeArgsToOptionalHook (If the global hook pointer mem_00AAFC2C is non-null, call it with (a1, a2, &a3); otherwise do nothing.)
+extern void ext_0079B140(uint32_t a1, uint32_t a2, uint32_t a3);
+
+// @name Unknown::DispatchFirstDwordWithTag
+// @class Unknown
+// @summary Loads the first dword of the struct pointed to by arg1 and forwards it with constant tag 0x00AB11D8 to the optional dispatch hook; always returns 0.
+// @field Unknown +0x00 uint32_t field_0x00
+uint32_t fn_007AF7E0(void* self) {
+    uint32_t value = lift_field<uint32_t>(self, 0x00);
+    // Only two values are pushed in the original code; the third callee slot
+    // holds the caller's return-address slot on the stack, which is not
+    // reproducible in portable C++. 0 is passed here as a stand-in.
+    ext_0079B140(value, 0x00AB11D8u, 0u);
+    return 0;
+}
+} // namespace lift_007AF7E0

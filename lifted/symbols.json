@@ -43437,6 +43437,13 @@
     "summary": "If the global callback pointer is set, call it cdecl with (a1, a2, \u0026a3) and return.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AF7E0": {
+    "name": "Unknown::DispatchFirstDwordWithTag",
+    "class": "Unknown",
+    "signature": "uint32_t fn_007AF7E0(void* self)",
+    "summary": "Loads the first dword of the struct pointed to by arg1 and forwards it with constant tag 0x00AB11D8 to the optional dispatch hook; always returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007B04A8": {
     "name": "dataTable_007B04A8",
     "class": "(none)",
