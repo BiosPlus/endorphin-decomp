@@ -5605,6 +5605,13 @@
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_1922.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00465960": {
+    "name": "Unknown::ResetStringFields0x84",
+    "class": "Unknown",
+    "signature": "void fn_00465960(void* self)",
+    "summary": "Assigns the same C string constant to three std::string members of the object.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00465B00": {
     "name": "sub_00465B00",
     "signature": "extern void fn_00465B00(void)",
@@ -37266,6 +37273,12 @@
     "signature": "inline void* as_ptr(uint32_t a)",
     "summary": "Resolves the held symbol chain and writes a two-dword result {value, res-\u003efield_0x04} to the caller's out buffer (zeros if the resolved object's field is null); returns out.",
     "lifted_path": "lifted/ExprParser/SingleVariableContainer.cpp"
+  },
+  "0x0069B640": {
+    "name": "sub_0069B640",
+    "signature": "uint32_t __thiscall sub_0069B640(uint32_t ecx, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Initializes a range of elements using sub_00596300 and returns the end pointer",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x0069B680": {
     "name": "sub_00699040",

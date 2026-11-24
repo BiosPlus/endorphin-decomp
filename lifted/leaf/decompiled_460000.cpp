@@ -778,3 +778,21 @@ void fn_00466360(void* self) {
     }
 }
 } // namespace lift_00466360
+
+// [0x00465960] sub_00465960 (56 bytes)
+namespace lift_00465960 {
+// Empty-string literal used by the original (0x00928B5D); contents not recovered.
+extern const char mem_00928B5D[];
+
+// @name Unknown::ResetStringFields0x84
+// @class Unknown
+// @summary Assigns the same C string constant to three std::string members of the object.
+// @field Unknown +0x84 std::string field_0x84
+// @field Unknown +0xA0 std::string field_0xA0
+// @field Unknown +0xBC std::string field_0xBC
+void fn_00465960(void* self) {
+    lift_field<std::string>(self, 0x84) = mem_00928B5D;
+    lift_field<std::string>(self, 0xA0) = mem_00928B5D;
+    lift_field<std::string>(self, 0xBC) = mem_00928B5D;
+}
+} // namespace lift_00465960
