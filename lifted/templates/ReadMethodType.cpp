@@ -32762,3 +32762,31 @@ void* __stdcall fn_0068F240(void* dst, void* const* obj_ptr) {
     return dst;
 }
 } // namespace lift_0068F240
+
+// [0x0046E250]
+namespace lift_0046E250 {
+// @name ExprParser::ReadMethodType<ImageExporter, bool, ImageExporter::isEnabled, 0>::vfunc_4
+// @class ExprParser::ReadMethodType
+// @summary Reads a boolean from ImageExporter::isEnabled and formats it as a string, or throws on null object.
+
+
+extern uint8_t __thiscall ext_0046C070(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint8_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern void* __thiscall fn_0046E250(void* self, void* out_str, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        uint8_t flag = ext_0046C070(obj);
+        ext_0046C460(out_str, flag);
+        return out_str;
+    }
+
+    uint8_t exc_buf[0x28];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, 0x009DEC1Cu);
+    return out_str;
+}
+} // namespace lift_0046E250

@@ -1,0 +1,14 @@
+{
+  "va": "0x0046E250",
+  "size": 81,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType",
+  "signature": "extern \"C\" void* __thiscall fn_0046E250(void* self, void* out_str, void** obj_ptr)",
+  "summary": "Reads a boolean from ImageExporter::isEnabled and formats it as a string, or throws on null object.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:43:00Z"
+}

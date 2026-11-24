@@ -6051,6 +6051,13 @@
     "summary": "Returns ImageExporter::isEnabled() for the held exporter; throws if no exporter is bound.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046E250": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "extern \"C\" void* __thiscall fn_0046E250(void* self, void* out_str, void** obj_ptr)",
+    "summary": "Reads a boolean from ImageExporter::isEnabled and formats it as a string, or throws on null object.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046E450": {
     "name": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)",
     "class": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, float, \u0026public: void __thiscall DoubleWithProperties::setValue(float)\u003e",
