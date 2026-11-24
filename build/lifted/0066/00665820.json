@@ -1,0 +1,28 @@
+{
+  "va": "0x00665820",
+  "size": 23,
+  "orig_symbol": "ChangePrimarySelectionCommand::vfunc_4",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ChangePrimarySelectionCommand::vfunc_4",
+  "class": "ChangePrimarySelectionCommand",
+  "signature": "void fn_00665820(void* self)",
+  "summary": "If the subobject at +0x08 is non-null, call its vtable slot 1 (thiscall) with the value at +0x0C.",
+  "fields": [
+    {
+      "class": "ChangePrimarySelectionCommand",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "ChangePrimarySelectionCommand",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:33:46Z"
+}

@@ -6316,3 +6316,23 @@ void fn_005850A0(void* arg1, void* arg2, void* target) {
     slot(target, &arg2);
 }
 } // namespace lift_005850A0
+
+// [0x00665820] ChangePrimarySelectionCommand::vfunc_4 (23 bytes)
+namespace lift_00665820 {
+// @name ChangePrimarySelectionCommand::vfunc_4
+// @class ChangePrimarySelectionCommand
+// @summary If the subobject at +0x08 is non-null, call its vtable slot 1 (thiscall) with the value at +0x0C.
+// @field ChangePrimarySelectionCommand +0x08 void* field_0x08
+// @field ChangePrimarySelectionCommand +0x0C uint32_t field_0x0C
+void fn_00665820(void* self) {
+    void* sub = lift_field<void*>(self, 0x08);
+    if (sub == nullptr) {
+        return;
+    }
+    uint32_t arg = lift_field<uint32_t>(self, 0x0C);
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    using SlotFn = void (*)(void* thisPtr, uint32_t arg);
+    auto slot1 = reinterpret_cast<SlotFn>(vtbl[1]);
+    slot1(sub, arg);
+}
+} // namespace lift_00665820

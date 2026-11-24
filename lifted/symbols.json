@@ -25103,6 +25103,13 @@
     "summary": "Stores address of mem_00987A04 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x00665820": {
+    "name": "ChangePrimarySelectionCommand::vfunc_4",
+    "class": "ChangePrimarySelectionCommand",
+    "signature": "void fn_00665820(void* self)",
+    "summary": "If the subobject at +0x08 is non-null, call its vtable slot 1 (thiscall) with the value at +0x0C.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00665870": {
     "name": "sub_00665870",
     "signature": "extern \"C\" int32_t __cdecl fn_00665870(void)",
