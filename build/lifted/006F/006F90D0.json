@@ -1,0 +1,14 @@
+{
+  "va": "0x006F90D0",
+  "size": 32,
+  "orig_symbol": "sub_006F90D0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::LookupTableEntry",
+  "class": "Unknown",
+  "signature": "uint32_t sub_006F90D0(int32_t idx)",
+  "summary": "Returns the u32 at index idx of the 0x2C-entry table at 0x00AAB3EC, or 0 if idx is out of range [0, 0x2C).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:36:40Z"
+}

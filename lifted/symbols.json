@@ -38942,6 +38942,13 @@
     "summary": "Getter returning uint8_t field at offset +0xA.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006F90D0": {
+    "name": "Unknown::LookupTableEntry",
+    "class": "Unknown",
+    "signature": "uint32_t sub_006F90D0(int32_t idx)",
+    "summary": "Returns the u32 at index idx of the 0x2C-entry table at 0x00AAB3EC, or 0 if idx is out of range [0, 0x2C).",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F9620": {
     "name": "sub_006F9620",
     "signature": "extern \"C\" int32_t __cdecl fn_006F9620(void)",

@@ -14,3 +14,18 @@ extern "C" void* __fastcall fn_006FD400(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+
+// [0x006F90D0]
+namespace lift_006F90D0 {
+// @name Unknown::LookupTableEntry
+// @summary Returns the u32 at index idx of the 0x2C-entry table at 0x00AAB3EC, or 0 if idx is out of range [0, 0x2C).
+
+extern const uint32_t mem_00AAB3EC[];
+
+uint32_t sub_006F90D0(int32_t idx) {
+    if (idx < 0 || idx >= 0x2C) {
+        return 0;
+    }
+    return mem_00AAB3EC[idx];
+}
+} // namespace lift_006F90D0
