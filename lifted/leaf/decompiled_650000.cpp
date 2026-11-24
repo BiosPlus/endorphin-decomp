@@ -36,3 +36,27 @@ void* fn_005142F0(void* self, void* pair) {
     return self;
 }
 } // namespace lift_005142F0
+
+// [0x00519C80] sub_00519C80 (42 bytes)
+namespace lift_00519C80 {
+// MSVC std::basic_string<char>::basic_string(const char*) (thiscall), imported via IAT slot mem_00924FE4.
+extern void ext_00629122(void* self, const char* s);
+// Literal passed to the string constructor (.rdata).
+extern const char mem_00928B5D[];
+
+// @name initStringAndCounters
+// @summary Constructs a vtable-tagged object holding a std::string built from a literal, then zeroes two counters and sets a flag to 1; returns this.
+// @field +0x00 uint32_t vtable (0x0095219C)
+// @field +0x04 std::string name (basic_string subobject, constructed from literal)
+// @field +0x20 int32_t field_0x20 (set to 1)
+// @field +0x24 int32_t field_0x24 (set to 0)
+// @field +0x28 int32_t field_0x28 (set to 0)
+void* fn_00519C80(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x0095219C;
+    ext_00629122(reinterpret_cast<uint8_t*>(self) + 0x04, mem_00928B5D);
+    lift_field<int32_t>(self, 0x24) = 0;
+    lift_field<int32_t>(self, 0x28) = 0;
+    lift_field<int32_t>(self, 0x20) = 1;
+    return self;
+}
+} // namespace lift_00519C80

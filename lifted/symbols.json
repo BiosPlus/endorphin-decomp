@@ -12948,6 +12948,12 @@
     "summary": "Wraps a signed int into [0, b) style range using the modulus at +0x04: negative values get b added, values \u003e= b get b subtracted.",
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
+  "0x00519C80": {
+    "name": "initStringAndCounters",
+    "signature": "void* fn_00519C80(void* self)",
+    "summary": "Constructs a vtable-tagged object holding a std::string built from a literal, then zeroes two counters and sets a flag to 1; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00519CE0": {
     "name": "std::basic_string\u003cchar\u003e::~basic_string (vtable-stamping thunk)",
     "class": "\u003cunknown\u003e (this is in ecx; owning class not yet recovered)",
