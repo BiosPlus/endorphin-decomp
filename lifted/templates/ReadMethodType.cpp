@@ -39408,3 +39408,29 @@ extern uint32_t __thiscall fn_004B1A00(void* self, uint32_t arg0) {
     return 0;
 }
 } // namespace lift_004B1A00
+
+// [0x0059F860]
+namespace lift_0059F860 {
+// @name ExprParser::ReadMethodType<NMData::CharacterData, float, vcall{128,4}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType
+// @summary Reads a float via virtual method at +0x80 on CharacterData+4 and rounds to int, or throws if null.
+
+extern float __fastcall ext_0059DEB0(void* self);
+extern int32_t __cdecl ext_006A6DE0(double val);
+extern void __fastcall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* exc, void* throw_info);
+
+extern int32_t __thiscall fn_0059F860(void* self, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1Cu));
+        return 0;
+    }
+    float val = ext_0059DEB0(static_cast<uint8_t*>(obj) + 4);
+    double adjusted = (val < 0.0f) ? (static_cast<double>(val) - 0.5) : (static_cast<double>(val) + 0.5);
+    return ext_006A6DE0(adjusted);
+}
+} // namespace lift_0059F860
