@@ -348,3 +348,29 @@ bool fn_00480560(void* self) {
     return (diff >> 2) == 0;
 }
 } // namespace lift_00480560
+
+// [0x00481770]
+namespace lift_00481770 {
+// @name fillStructArray64
+// @summary Copies a 64-byte template structure into count consecutive 64-byte slots starting at dst, skipping null dst.
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+void sub_00481770(uint32_t dst, uint32_t count, uint32_t src) {
+    if (count == 0) {
+        return;
+    }
+
+    do {
+        if (dst != 0) {
+            for (uint32_t i = 0; i < 16; ++i) {
+                mem_write32(dst + i * 4, mem_read32(src + i * 4));
+            }
+        }
+        count -= 1;
+        dst += 0x40;
+    } while (count > 0);
+}
+} // namespace lift_00481770
