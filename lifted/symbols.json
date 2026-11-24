@@ -2606,6 +2606,13 @@
     "summary": "Moves the cursor to X = this-\u003efield_0x1c while keeping its current Y; returns whether SetCursorPos succeeded.",
     "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/MoveState.cpp"
   },
+  "0x004436B0": {
+    "name": "Unknown::InitP3DTagged",
+    "class": "Unknown",
+    "signature": "void* fn_004436B0(void* self, uint32_t arg, uint32_t unused_arg)",
+    "summary": "Runs Unknown::InitWithTag with the first stack argument, then sets the vtable pointer at +0x00 to the \"p3D\" rdata string; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x004436D0": {
     "name": "MultiTrackView::MultiTrackViewStates::ResizeLeftState::vfunc_1",
     "class": "MultiTrackView::MultiTrackViewStates::ResizeLeftState",

@@ -1,0 +1,22 @@
+{
+  "va": "0x004436B0",
+  "size": 32,
+  "orig_symbol": "sub_004436B0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::InitP3DTagged",
+  "class": "Unknown",
+  "signature": "void* fn_004436B0(void* self, uint32_t arg, uint32_t unused_arg)",
+  "summary": "Runs Unknown::InitWithTag with the first stack argument, then sets the vtable pointer at +0x00 to the \"p3D\" rdata string; returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:31:16Z"
+}
