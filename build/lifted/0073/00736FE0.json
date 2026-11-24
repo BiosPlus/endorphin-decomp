@@ -9,5 +9,5 @@
   "summary": "Region is not recognizable as code: 00 05 05 05... followed by 0x90 (NOP) padding. No accessed fields; body is a no-op.",
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:43:21Z"
+  "lifted_at": "2026-11-24T12:43:26Z"
 }
