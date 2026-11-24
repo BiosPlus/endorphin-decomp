@@ -220,3 +220,25 @@ int cstrCompareStep2(const char* const* self, const char* other) {
     }
 }
 } // namespace lift_00698810
+
+// [0x0069B100] sub_0069B100 (49 bytes)
+namespace lift_0069B100 {
+// @name isIdentifierChar
+// @summary Returns 1 if the signed byte is an ASCII letter, digit, '_' or '$' (identifier character), else 0. Non-ASCII/high bytes (negative as signed char) and NUL return 0.
+// (No object fields accessed; no @class/@field lines.)
+int fn_0069B100(int8_t c) {
+    if (c != 0 && c >= 'A' && c <= 'Z') {
+        return 1;
+    }
+    if (c >= 'a' && c <= 'z') {
+        return 1;
+    }
+    if (c >= '0' && c <= '9') {
+        return 1;
+    }
+    if (c == '_' || c == '$') {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_0069B100

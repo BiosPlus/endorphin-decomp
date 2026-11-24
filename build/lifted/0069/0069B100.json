@@ -1,0 +1,13 @@
+{
+  "va": "0x0069B100",
+  "size": 49,
+  "orig_symbol": "sub_0069B100",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "isIdentifierChar",
+  "signature": "int fn_0069B100(int8_t c)",
+  "summary": "Returns 1 if the signed byte is an ASCII letter, digit, '_' or '$' (identifier character), else 0. Non-ASCII/high bytes (negative as signed char) and NUL return 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:31:04Z"
+}
