@@ -1,0 +1,22 @@
+{
+  "va": "0x006AD960",
+  "size": 15,
+  "orig_symbol": "sub_006AD960",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "ReleaseRefAndNotifyOnZero",
+  "class": "Unknown",
+  "signature": "void fn_006AD960(void* self)",
+  "summary": "Decrements the int32 counter at self+0x38; when it reaches zero, calls vtable slot 0 on self with argument 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "int32_t",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:31:54Z"
+}

@@ -30070,6 +30070,13 @@
     "summary": "Increments the 32-bit counter at offset +0x38 of the object passed in ecx.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006AD960": {
+    "name": "ReleaseRefAndNotifyOnZero",
+    "class": "Unknown",
+    "signature": "void fn_006AD960(void* self)",
+    "summary": "Decrements the int32 counter at self+0x38; when it reaches zero, calls vtable slot 0 on self with argument 1.",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006AEC30": {
     "name": "GWCPropertyValue::vfunc_0",
     "class": "GWCPropertyValue",

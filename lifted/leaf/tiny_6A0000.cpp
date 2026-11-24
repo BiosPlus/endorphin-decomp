@@ -15,6 +15,7 @@ void fn_006AD950(void* self) {
 extern "C" int mem_00990D38;
 extern "C" uintptr_t mem_009244D4;
 extern "C" uintptr_t mem_009242F8;
+#include <cstdint>
 
 // [0x006A2C20] sub_006A2C20 (11 bytes)
 // @name sub_006A2C20
@@ -303,3 +304,27 @@ void fn_006AD0F0(void* self, DWORD value) {
     }
 }
 } // namespace lift_006AD0F0
+
+// [0x006AD960] sub_006AD960 (15 bytes)
+namespace lift_006AD960 {
+// @name ReleaseRefAndNotifyOnZero
+// @class Unknown
+// @summary Decrements the int32 counter at self+0x38; when it reaches zero, calls vtable slot 0 on self with argument 1.
+// @field Unknown +0x38 int32_t field_0x38
+
+
+// Thiscall-style virtual slot 0: receives `self` as the implicit object and one int argument.
+using VirtualSlot0Fn = void(__thiscall*)(void* self, int arg);
+
+void fn_006AD960(void* self) {
+    auto* counter = reinterpret_cast<int32_t*>(reinterpret_cast<uint8_t*>(self) + 0x38);
+    *counter -= 1;
+    if (*counter != 0) {
+        return;
+    }
+
+    void** vtable = *reinterpret_cast<void***>(self);
+    auto slot0 = reinterpret_cast<VirtualSlot0Fn>(vtable[0]);
+    slot0(self, 1);
+}
+} // namespace lift_006AD960
