@@ -434,3 +434,21 @@ extern int __cdecl fn_00662E50(const void* path_string) {
     return relative == TRUE ? 1 : 0;
 }
 } // namespace lift_00662E50
+
+// [0x006649B0]
+namespace lift_006649B0 {
+// @name sub_006649B0_isWhitespace
+// @summary Returns 1 if the byte is ASCII whitespace (space, tab, CR, LF), otherwise 0.
+
+int sub_006649B0_isWhitespace(unsigned char c) {
+    switch (c) {
+        case 0x20: // space
+        case 0x09: // tab
+        case 0x0D: // carriage return
+        case 0x0A: // line feed
+            return 1;
+        default:
+            return 0;
+    }
+}
+} // namespace lift_006649B0

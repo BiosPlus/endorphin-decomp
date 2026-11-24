@@ -1,0 +1,13 @@
+{
+  "va": "0x006649B0",
+  "size": 29,
+  "orig_symbol": "sub_006649B0",
+  "src_path": "src/leaf/tiny_660000.cpp",
+  "lifted_path": "lifted/leaf/tiny_660000.cpp",
+  "name": "sub_006649B0_isWhitespace",
+  "signature": "int sub_006649B0_isWhitespace(unsigned char c)",
+  "summary": "Returns 1 if the byte is ASCII whitespace (space, tab, CR, LF), otherwise 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:13:51Z"
+}
