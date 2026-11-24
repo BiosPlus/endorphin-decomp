@@ -350,3 +350,16 @@ uint32_t Unknown_GetIndexedPtr(const Unknown* self, uint32_t index) {
     return self->field_0x10 + 4u * index;
 }
 } // namespace lift_006D59B0
+
+// [0x006D9010] sub_006D9010 (16 bytes)
+namespace lift_006D9010 {
+// @name Unknown::GetInnerDouble
+// @class Unknown
+// @summary Returns the double at +0x1E8 of the object pointed to by this+0x0C (thiscall, no stack args, result in st0).
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x1E8 double field_0x1E8
+double fn_006D9010(uint32_t self) {
+    uint32_t inner = *reinterpret_cast<uint32_t*>(self + 0x0Cu);
+    return *reinterpret_cast<double*>(inner + 0x1E8u);
+}
+} // namespace lift_006D9010

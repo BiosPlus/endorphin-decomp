@@ -1,0 +1,28 @@
+{
+  "va": "0x006D9010",
+  "size": 16,
+  "orig_symbol": "sub_006D9010",
+  "src_path": "src/leaf/tiny_6D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6D0000.cpp",
+  "name": "Unknown::GetInnerDouble",
+  "class": "Unknown",
+  "signature": "double fn_006D9010(uint32_t self)",
+  "summary": "Returns the double at +0x1E8 of the object pointed to by this+0x0C (thiscall, no stack args, result in st0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1E8",
+      "type": "double",
+      "name": "field_0x1E8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:39:17Z"
+}
