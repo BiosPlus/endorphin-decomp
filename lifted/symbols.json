@@ -35686,10 +35686,10 @@
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
   "0x0078C230": {
-    "name": "Unknown::GetScaledOffsetPlusField4",
-    "class": "Unknown",
-    "signature": "uint32_t fn_0078C230(void* self, uint32_t arg)",
-    "summary": "Returns this-\u003efield_0x04 + (arg \u003c\u003c 4) (thiscall, callee pops 4).",
+    "name": "sub_0078CBD0",
+    "class": "UnknownObject",
+    "signature": "extern \"C\" void __fastcall fn_0078CBD0(void* self)",
+    "summary": "Increments the 32-bit counter at offset +0x1C of the object passed in ecx; no other effect.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
   "0x0078C3A0": {

@@ -4,19 +4,55 @@
   "orig_symbol": "sub_0078C230",
   "src_path": "src/leaf/tiny_780000.cpp",
   "lifted_path": "lifted/leaf/tiny_780000.cpp",
-  "name": "Unknown::GetScaledOffsetPlusField4",
-  "class": "Unknown",
-  "signature": "uint32_t fn_0078C230(void* self, uint32_t arg)",
-  "summary": "Returns this-\u003efield_0x04 + (arg \u003c\u003c 4) (thiscall, callee pops 4).",
+  "name": "sub_0078CBD0",
+  "class": "UnknownObject",
+  "signature": "extern \"C\" void __fastcall fn_0078CBD0(void* self)",
+  "summary": "Increments the 32-bit counter at offset +0x1C of the object passed in ecx; no other effect.",
   "fields": [
+    {
+      "class": "UnknownObject",
+      "offset": "+0x1C",
+      "type": "int32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "CriticalSectionLock",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "criticalSection"
+    },
     {
       "class": "Unknown",
       "offset": "+0x4",
       "type": "uint32_t",
       "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "DWORD",
+      "name": "field_0x28"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T01:32:40Z"
+  "lifted_at": "2026-11-24T01:32:49Z"
 }
