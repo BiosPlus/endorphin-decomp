@@ -17290,6 +17290,13 @@
     "summary": "Stores the float argument into field +0x64 of the child object at this+0x04, if that child pointer is non-null.",
     "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
   },
+  "0x005DA170": {
+    "name": "Unknown::setChildField68",
+    "class": "Unknown",
+    "signature": "void fn_005DA170(void* self, int32_t value)",
+    "summary": "If the child pointer at +0x04 is non-null, store the stdcall argument into the child's +0x68 field.",
+    "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
+  },
   "0x005DA190": {
     "name": "sub_005DA190",
     "class": "CompoundRenderable",

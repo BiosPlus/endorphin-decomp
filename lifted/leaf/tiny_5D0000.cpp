@@ -103,3 +103,17 @@ extern void __thiscall fn_005DA150(void* self, int edx_unused, float value) {
     }
 }
 } // namespace lift_005DA150
+
+// [0x005DA170] sub_005DA170 (17 bytes)
+namespace lift_005DA170 {
+// @name Unknown::setChildField68
+// @class Unknown
+// @summary If the child pointer at +0x04 is non-null, store the stdcall argument into the child's +0x68 field.
+// @field Unknown +0x04 void* child
+void fn_005DA170(void* self, int32_t value) {
+    void* child = lift_field<void*>(self, 0x04);
+    if (child != nullptr) {
+        lift_field<int32_t>(child, 0x68) = value;
+    }
+}
+} // namespace lift_005DA170
