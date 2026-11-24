@@ -52596,6 +52596,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0072B330 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072B3D0": {
+    "name": "initHugeVectorGlobals",
+    "signature": "void sub_0072B3D0()",
+    "summary": "Initializes three 64-bit global values from MSVCR80!_HUGE.",
+    "lifted_path": "lifted/clones/auto_clones_720000.cpp"
+  },
   "0x0072B770": {
     "name": "isKnownGlobalHandle",
     "signature": "bool __stdcall sub_0072B770(uint32_t value)",
@@ -52688,6 +52694,12 @@
     "class": "Unknown",
     "signature": "void* fn_0072CB00(void* self, void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x0071B020 (Unknown::CallArgWithSubObjectAddr0x10).",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
+  "0x0072CC90": {
+    "name": "isKnownGlobalId",
+    "signature": "uint8_t __stdcall sub_0072CC90(uint32_t arg0)",
+    "summary": "Returns true if arg0 matches any of four global 32-bit values.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
   "0x0072CCD0": {
@@ -55709,6 +55721,12 @@
     "signature": "extern \"C\" void fn_007CA110(void)",
     "summary": "Pure jump thunk forwarding to sub_007C9F60.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x007CA1A0": {
+    "name": "BuildScaledPartialMatrix",
+    "signature": "void BuildScaledPartialMatrix(float a, float b, float* out)",
+    "summary": "Zeroes six slots of a float matrix and writes 0.4*a*b*b into slots 0, 4 and 8.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007CA240": {
     "name": "CopyBlock64",

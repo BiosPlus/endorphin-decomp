@@ -631,3 +631,28 @@ void sub_007CDBC0(uint32_t arg0) {
     mem_write32(ptr_70 + 4 * idx_74, 0);
 }
 } // namespace lift_007CDBC0
+
+// [0x007CA1A0]
+namespace lift_007CA1A0 {
+extern const double mem_009552D0;
+
+// @name BuildScaledPartialMatrix
+// @summary Zeroes six slots of a float matrix and writes 0.4*a*b*b into slots 0, 4 and 8.
+void BuildScaledPartialMatrix(float a, float b, float* out) {
+    double t = static_cast<double>(a) * mem_009552D0;
+    t = t * static_cast<double>(b);
+    t = static_cast<double>(b) * t;
+    const float v = static_cast<float>(t);
+
+    out[1] = 0.0f;
+    out[2] = 0.0f;
+    out[3] = 0.0f;
+    out[5] = 0.0f;
+    out[6] = 0.0f;
+    out[7] = 0.0f;
+
+    out[0] = v;
+    out[4] = v;
+    out[8] = v;
+}
+} // namespace lift_007CA1A0

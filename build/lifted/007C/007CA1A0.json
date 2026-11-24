@@ -1,0 +1,13 @@
+{
+  "va": "0x007CA1A0",
+  "size": 59,
+  "orig_symbol": "sub_007CA1A0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "BuildScaledPartialMatrix",
+  "signature": "void BuildScaledPartialMatrix(float a, float b, float* out)",
+  "summary": "Zeroes six slots of a float matrix and writes 0.4*a*b*b into slots 0, 4 and 8.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:25:36Z"
+}
