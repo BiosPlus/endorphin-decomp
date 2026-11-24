@@ -1,0 +1,21 @@
+{
+  "va": "0x00712000",
+  "size": 16,
+  "orig_symbol": "sub_00712000",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "getSubobjectField_00712000",
+  "signature": "extern \"C\" uint32_t __fastcall fn_00712000(void* self)",
+  "summary": "Calls fn_0071E680(self) and returns the uint32_t at offset +0x4 of the returned subobject.",
+  "fields": [
+    {
+      "class": "Subobject",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T01:43:44Z"
+}
