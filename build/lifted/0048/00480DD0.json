@@ -1,0 +1,13 @@
+{
+  "va": "0x00480DD0",
+  "size": 48,
+  "orig_symbol": "sub_00480DD0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "copyRange64",
+  "signature": "extern \"C\" uint32_t sub_00480DD0(uint32_t first, uint32_t last, uint32_t dst)",
+  "summary": "Copies 64-byte elements from [first, last) to dst (skipping writes if dst is null) and returns the advanced dst pointer.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:19:33Z"
+}
