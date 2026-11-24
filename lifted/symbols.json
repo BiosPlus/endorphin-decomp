@@ -24667,6 +24667,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0065BB60 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0065BD80": {
+    "name": "Space::InitDefaults",
+    "class": "Space",
+    "signature": "void fn_0065BD80(void* self)",
+    "summary": "Installs the Space vtable (0x009848CC) and resets fields +0x0C to 1.0f, +0x10 and +0x18 to 0.",
+    "lifted_path": "lifted/leaf/tiny_650000.cpp"
+  },
   "0x0065C640": {
     "name": "CriticalSectionLock::enter",
     "class": "CriticalSectionLock",

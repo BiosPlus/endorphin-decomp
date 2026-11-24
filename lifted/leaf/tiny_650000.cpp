@@ -88,3 +88,20 @@ void __thiscall sub_0065C640(void* self) {
     EnterCriticalSection(cs);
 }
 } // namespace lift_0065C640
+
+// [0x0065BD80] sub_0065BD80 (22 bytes)
+namespace lift_0065BD80 {
+// @name Space::InitDefaults
+// @class Space
+// @summary Installs the Space vtable (0x009848CC) and resets fields +0x0C to 1.0f, +0x10 and +0x18 to 0.
+// @field Space +0x00 uint32_t vtable
+// @field Space +0x0C float field_0x0C
+// @field Space +0x10 uint32_t field_0x10
+// @field Space +0x18 uint32_t field_0x18
+void fn_0065BD80(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x009848CC;
+    lift_field<float>(self, 0x0C) = 1.0f;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+}
+} // namespace lift_0065BD80
