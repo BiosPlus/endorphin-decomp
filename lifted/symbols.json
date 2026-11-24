@@ -44210,6 +44210,11 @@
     "summary": "Returns ecx when the first stack argument equals 2, otherwise 0; callee pops 8 bytes of arguments.",
     "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
   },
+  "0x007B50EC": {
+    "name": "dataTable_007B50EC",
+    "summary": "36-byte constant table (not executable code); bytes mostly 0x04 with 0x01/0x02/0x03 entries and a 0x8D 0x49 0x00 tail",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B5224": {
     "name": "Table_007B5224_Bytes16",
     "summary": "16-byte constant lookup table of values 0..3 (data, not executable code)",

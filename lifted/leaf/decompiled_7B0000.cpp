@@ -153,3 +153,13 @@ int sub_007BDA20(BYTE* self) {
     return 1;
 }
 } // namespace lift_007BDA20
+
+// [0x007B50EC] sub_007B50EC (36 bytes)
+namespace lift_007B50EC {
+// @name dataTable_007B50EC
+// @summary 36-byte constant table (not executable code); bytes mostly 0x04 with 0x01/0x02/0x03 entries and a 0x8D 0x49 0x00 tail
+// Bytes as dumped: 00 04 04 04 04 04 04 04 01 02 04 04 04 04 04 04 04 03 8D 49 00 (+ padding to 36)
+// The disassembly decodes to nonsense x86 (add [esp+eax],al ...), so this is data embedded in .text.
+// Lifted as a byte table instead of a function body.
+extern const unsigned char dataTable_007B50EC[36];
+} // namespace lift_007B50EC
