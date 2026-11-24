@@ -190,3 +190,22 @@ int fn_00867360(const char* s) {
     return static_cast<int>(result);
 }
 } // namespace lift_00867360
+
+// [0x0086AF30]
+namespace lift_0086AF30 {
+// @name CopyDwordRun
+// @summary Copies `count` DWORDs from src to dst, one at a time; returns immediately if count is zero.
+// (free function, no @class)
+
+extern void __cdecl fn_0086AF30(uint32_t* dst, const uint32_t* src, uint32_t count) {
+    if (count == 0) {
+        return;
+    }
+    do {
+        *dst = *src;
+        ++src;
+        ++dst;
+        --count;
+    } while (count != 0);
+}
+} // namespace lift_0086AF30

@@ -50947,6 +50947,12 @@
     "summary": "Zeroes `count` consecutive 32-bit words starting at `dst`; does nothing when count is 0.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086AF30": {
+    "name": "CopyDwordRun",
+    "signature": "extern \"C\" void __cdecl fn_0086AF30(uint32_t* dst, const uint32_t* src, uint32_t count)",
+    "summary": "Copies `count` DWORDs from src to dst, one at a time; returns immediately if count is zero.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086B200": {
     "name": "ZeroDwordArray5",
     "signature": "void fn_0086B200(void* self)",
