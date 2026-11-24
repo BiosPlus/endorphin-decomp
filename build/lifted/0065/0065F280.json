@@ -1,0 +1,13 @@
+{
+  "va": "0x0065F280",
+  "size": 24,
+  "orig_symbol": "sub_0065F280",
+  "src_path": "src/leaf/tiny_650000.cpp",
+  "lifted_path": "lifted/leaf/tiny_650000.cpp",
+  "name": "CopyDwords16FromIndirectSrcToIndirectDst",
+  "signature": "void fn_0065F280(void** dst_holder, const void* const* src_holder)",
+  "summary": "Copies 16 DWORDs (64 bytes) from *src into *dst; dst comes in ECX, src is the single stack argument (ret 4).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:37:37Z"
+}

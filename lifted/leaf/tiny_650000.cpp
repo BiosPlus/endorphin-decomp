@@ -118,3 +118,14 @@ void fn_0065C320(void* self, void* dst) {
     std::memcpy(dst, &lift_field<uint8_t>(self, 0x0C), 0x10 * sizeof(uint32_t));
 }
 } // namespace lift_0065C320
+
+// [0x0065F280] sub_0065F280 (24 bytes)
+namespace lift_0065F280 {
+// @name CopyDwords16FromIndirectSrcToIndirectDst
+// @summary Copies 16 DWORDs (64 bytes) from *src into *dst; dst comes in ECX, src is the single stack argument (ret 4).
+void fn_0065F280(void** dst_holder, const void* const* src_holder) {
+    // Original: mov eax,ecx; ecx=[esp+8]; esi=[ecx]; edi=[eax]; ecx=16; rep movsd
+    // Copy 16 dwords from *src_holder to *dst_holder.
+    std::memcpy(*dst_holder, *src_holder, 16 * sizeof(DWORD));
+}
+} // namespace lift_0065F280
