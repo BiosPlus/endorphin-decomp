@@ -1,0 +1,21 @@
+{
+  "va": "0x007C9D00",
+  "size": 35,
+  "orig_symbol": "sub_007C9D00",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "setAbsFloatField_0x8",
+  "signature": "void __cdecl sub_007C9D00(uint32_t arg0, float val)",
+  "summary": "Sets float field at offset +0x8 to the absolute value of the input float.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:01:58Z"
+}

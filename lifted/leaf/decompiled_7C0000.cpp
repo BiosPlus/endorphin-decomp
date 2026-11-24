@@ -203,3 +203,17 @@ void sub_007C6DB0(uint32_t arg0) {
     fn(ptr, arg0);
 }
 } // namespace lift_007C6DB0
+
+// [0x007C9D00]
+namespace lift_007C9D00 {
+// @name setAbsFloatField_0x8
+// @summary Sets float field at offset +0x8 to the absolute value of the input float.
+// @field Unknown +0x08 float field_0x08
+
+extern void mem_write_f32(uint32_t addr, float val);
+
+void __cdecl sub_007C9D00(uint32_t arg0, float val) {
+    float abs_val = (val < 0.0f) ? -val : val;
+    mem_write_f32(arg0 + 0x8, abs_val);
+}
+} // namespace lift_007C9D00
