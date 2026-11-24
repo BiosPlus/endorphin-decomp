@@ -32,3 +32,27 @@ void* fn_005D07E0() {
     return ext_005CFCC0(index);
 }
 } // namespace lift_005D07E0
+
+// [0x005DF270]
+namespace lift_005DF270 {
+extern void ext_006A5C5C(void* ptr);
+
+// @name Tree_eraseSubtree
+// @class Tree
+// @summary Recursively erases and frees all non-nil nodes in a red-black tree subtree
+// @field TreeNode +0x00 uint32_t left
+// @field TreeNode +0x08 uint32_t right
+// @field TreeNode +0x15 uint8_t isNil
+extern void __thiscall fn_005DF270(void* self, uint32_t node) {
+    uint32_t edi = node;
+    if (*reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(edi) + 0x15) == 0) {
+        uint32_t esi = edi;
+        do {
+            fn_005DF270(self, *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(esi) + 0x8));
+            esi = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(esi));
+            ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(edi)));
+            edi = esi;
+        } while (*reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(esi) + 0x15) == 0);
+    }
+}
+} // namespace lift_005DF270
