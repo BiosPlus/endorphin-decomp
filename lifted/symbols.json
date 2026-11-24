@@ -37602,6 +37602,12 @@
     "summary": "12-byte byte-index table indexed by (eax) and used by a jump table dispatch at 0x007B6xxx (mov cl, [eax+0x7B7084]; jmp [ecx*4+0x7B7074]); this is data, not code.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BAE20": {
+    "name": "copyDword",
+    "signature": "void sub_007BAE20(uint32_t *src, uint32_t *dst)",
+    "summary": "Copies a 32-bit value from the address in arg1 to the address in arg2 (cdecl, no stack cleanup).",
+    "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
+  },
   "0x007C2E70": {
     "name": "CRT_free_thunk",
     "signature": "extern \"C\" void __cdecl fn_007C2E70(void* ptr)",

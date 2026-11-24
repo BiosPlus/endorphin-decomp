@@ -123,3 +123,13 @@ uint32_t sub_007B2310(uint32_t ecx_in, uint32_t arg0, uint32_t /*arg1*/) {
     return (arg0 - 2u) == 0u ? ecx_in : 0u;
 }
 } // namespace lift_007B2310
+
+// [0x007BAE20]
+namespace lift_007BAE20 {
+// @name copyDword
+// @summary Copies a 32-bit value from the address in arg1 to the address in arg2 (cdecl, no stack cleanup).
+void sub_007BAE20(uint32_t *src, uint32_t *dst)
+{
+    *dst = *src;
+}
+} // namespace lift_007BAE20

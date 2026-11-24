@@ -1,0 +1,13 @@
+{
+  "va": "0x007BAE20",
+  "size": 16,
+  "orig_symbol": "sub_007BAE20",
+  "src_path": "src/leaf/tiny_7B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7B0000.cpp",
+  "name": "copyDword",
+  "signature": "void sub_007BAE20(uint32_t *src, uint32_t *dst)",
+  "summary": "Copies a 32-bit value from the address in arg1 to the address in arg2 (cdecl, no stack cleanup).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:46:51Z"
+}
