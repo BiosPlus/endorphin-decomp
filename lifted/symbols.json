@@ -42244,6 +42244,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0072CD20 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072CEB0": {
+    "name": "Unknown::SetArray1B8Element",
+    "class": "Unknown",
+    "signature": "void Unknown_SetArray1B8Element(uint8_t* self, int32_t index, int32_t value)",
+    "summary": "Stores a 32-bit value into slot [index] of a 6-entry int array at this+0x1B8; out-of-range indices are ignored.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072CF90": {
     "name": "sub_0072CF90",
     "signature": "extern \"C\" void* __fastcall fn_0072CF90(void* self, int edx_unused, unsigned int flags)",

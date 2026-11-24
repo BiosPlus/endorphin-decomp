@@ -85,3 +85,19 @@ uint32_t fn_00724FB0(uint8_t* ecx) {
     return dec > 0 ? static_cast<uint32_t>(dec) : 0u;
 }
 } // namespace lift_00724FB0
+
+// [0x0072CEB0]
+namespace lift_0072CEB0 {
+// @name Unknown::SetArray1B8Element
+// @class Unknown
+// @summary Stores a 32-bit value into slot [index] of a 6-entry int array at this+0x1B8; out-of-range indices are ignored.
+// @field Unknown +0x1B8 int32_t field_0x1B8 (int32_t[6] array, indexed 0..5)
+
+void Unknown_SetArray1B8Element(uint8_t* self, int32_t index, int32_t value) {
+    if (index < 0 || index >= 6) {
+        return;
+    }
+    int32_t* slots = reinterpret_cast<int32_t*>(self + 0x1B8);
+    slots[index] = value;
+}
+} // namespace lift_0072CEB0
