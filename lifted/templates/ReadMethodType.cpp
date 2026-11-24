@@ -42708,3 +42708,37 @@ int32_t fn_005B3720(void* self) {
     return ext_006A6DE0(adjusted);
 }
 } // namespace lift_005B3720
+
+// [0x0068F050] ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>::vfunc_2 (121 bytes)
+namespace lift_0068F050 {
+// Known callee 0x0068EE60: sub_0068EE60 (Auto-lifted identical-shape clone of 0x004CE810 (Unknown::GetRecordByIndex).)
+// Returns a pointer to a std::string record for the given index.
+extern void* ext_0068EE60(uint32_t index);
+
+// @name ExprParser::ReadMethodType<UnitsWithProperties>::vfunc_2
+// @class ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>
+// @summary Reads a string record by index, parses it as a float via atof, and returns it rounded half away from zero as int32.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field field_0x04 +0x04 void* field_0x04
+// @field field_0x0C +0x0C uint32_t field_0x0C
+int32_t fn_0068F050(void* arg) {
+    // arg is a ValuePtr-like object whose first word points to the holder.
+    void* holder = lift_field<void*>(arg, 0x00);
+    if (holder == nullptr) {
+        throw std::runtime_error("ReadMethodType::vfunc_2: null holder pointer");
+    }
+
+    void* inner = lift_field<void*>(holder, 0x04);
+    uint32_t index = lift_field<uint32_t>(inner, 0x0C);
+
+    const auto* str = static_cast<const std::string*>(ext_0068EE60(index));
+
+    // The original stores atof's double result as a float.
+    float value = static_cast<float>(std::atof(str->c_str()));
+
+    // Round half away from zero, then truncate toward zero to int.
+    double adjusted = (value < 0.0f) ? static_cast<double>(value) - 0.5
+                                     : static_cast<double>(value) + 0.5;
+    return static_cast<int32_t>(adjusted);
+}
+} // namespace lift_0068F050

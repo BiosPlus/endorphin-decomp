@@ -10,6 +10,7 @@ namespace lifted_layout {
 struct field_0x04_Fields {
     // +0x4   uint32_t inner (pointer loaded from arg0->+0x4)  (evidence: 0x00810350) // CONFLICT: multiple definitions at +0x4
     // +0x4   void field_0x04 (embedded subobject; address only, passed to callee)  (evidence: 0x006618A0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x0068F050) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t flags (dword read from inner->+0x4)  (evidence: 0x00810350) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (pointer-sized value loaded when the check passes)  (evidence: 0x0086CCC0, 0x0086EFD0) // CONFLICT: multiple definitions at +0x4
 };
