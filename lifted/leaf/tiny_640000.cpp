@@ -912,3 +912,28 @@ void fn_00642410(void* self, uint8_t want) {
 }
 } // namespace lift_00642390
 } // namespace lift_00642410
+
+// [0x00648400] sub_00648400 (29 bytes)
+namespace lift_00648400 {
+// @name resetStateBytesAndField58
+// @class <ClassName> (optional)
+// @summary Clears bytes at +0x40, +0x44, +0x45, +0x46 and dword at +0x58 to zero, and sets bytes at +0x41..+0x43 to 1.
+// @field <ClassName> +0x40 uint8_t field_0x40
+// @field <ClassName> +0x41 uint8_t field_0x41
+// @field <ClassName> +0x42 uint8_t field_0x42
+// @field <ClassName> +0x43 uint8_t field_0x43
+// @field <ClassName> +0x44 uint8_t field_0x44
+// @field <ClassName> +0x45 uint8_t field_0x45
+// @field <ClassName> +0x46 uint8_t field_0x46
+// @field <ClassName> +0x58 uint32_t field_0x58
+void fn_00648400(void* self) {
+    lift_field<uint8_t>(self, 0x40) = 0;
+    lift_field<uint8_t>(self, 0x41) = 1;
+    lift_field<uint8_t>(self, 0x42) = 1;
+    lift_field<uint8_t>(self, 0x43) = 1;
+    lift_field<uint8_t>(self, 0x44) = 0;
+    lift_field<uint8_t>(self, 0x45) = 0;
+    lift_field<uint8_t>(self, 0x46) = 0;
+    lift_field<uint32_t>(self, 0x58) = 0;
+}
+} // namespace lift_00648400

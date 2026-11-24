@@ -1,0 +1,64 @@
+{
+  "va": "0x00648400",
+  "size": 29,
+  "orig_symbol": "sub_00648400",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "resetStateBytesAndField58",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void fn_00648400(void* self)",
+  "summary": "Clears bytes at +0x40, +0x44, +0x45, +0x46 and dword at +0x58 to zero, and sets bytes at +0x41..+0x43 to 1.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x40",
+      "type": "uint8_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x41",
+      "type": "uint8_t",
+      "name": "field_0x41"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x42",
+      "type": "uint8_t",
+      "name": "field_0x42"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x43",
+      "type": "uint8_t",
+      "name": "field_0x43"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x44",
+      "type": "uint8_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x45",
+      "type": "uint8_t",
+      "name": "field_0x45"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x46",
+      "type": "uint8_t",
+      "name": "field_0x46"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x58",
+      "type": "uint32_t",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:13:57Z"
+}

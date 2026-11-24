@@ -25122,6 +25122,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00648400": {
+    "name": "resetStateBytesAndField58",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void fn_00648400(void* self)",
+    "summary": "Clears bytes at +0x40, +0x44, +0x45, +0x46 and dword at +0x58 to zero, and sets bytes at +0x41..+0x43 to 1.",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
   "0x00648450": {
     "name": "sub_00648450",
     "signature": "extern \"C\" void __fastcall fn_00648450(void* self)",
