@@ -44223,6 +44223,13 @@
     "summary": "Load the double pointed to by mem_00925284, negate it, and store the result to three globals.",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00710F80": {
+    "name": "UnknownBitfield::setOrClearBits",
+    "class": "UnknownBitfield",
+    "signature": "void setOrClearBits(DWORD* target, DWORD mask, BOOLEAN flag)",
+    "summary": "Sets (flag != 0) or clears (flag == 0) the bits in mask within the DWORD pointed to by target.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x007110B0": {
     "name": "isNotDoubleQuote",
     "signature": "uint8_t __stdcall sub_007110B0(uint8_t ch)",

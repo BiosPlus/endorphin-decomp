@@ -857,3 +857,18 @@ void SetOrClearFlags78(SetOrClearFlags78Self* self, uint32_t mask, uint8_t flag)
     }
 }
 } // namespace lift_00711CF0
+
+// [0x00710F80] sub_00710F80 (48 bytes)
+namespace lift_00710F80 {
+// @name UnknownBitfield::setOrClearBits
+// @summary Sets (flag != 0) or clears (flag == 0) the bits in mask within the DWORD pointed to by target.
+// @field <none> accessed directly through a raw DWORD pointer (ecx); no struct layout recovered.
+// Original: __thiscall (target in ECX), stack args: mask, flag; callee cleans 8 bytes.
+void setOrClearBits(DWORD* target, DWORD mask, BOOLEAN flag) {
+    if (flag) {
+        *target |= mask;
+    } else {
+        *target &= ~mask;
+    }
+}
+} // namespace lift_00710F80

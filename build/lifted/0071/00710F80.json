@@ -1,0 +1,14 @@
+{
+  "va": "0x00710F80",
+  "size": 48,
+  "orig_symbol": "sub_00710F80",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "UnknownBitfield::setOrClearBits",
+  "class": "UnknownBitfield",
+  "signature": "void setOrClearBits(DWORD* target, DWORD mask, BOOLEAN flag)",
+  "summary": "Sets (flag != 0) or clears (flag == 0) the bits in mask within the DWORD pointed to by target.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:21:27Z"
+}
