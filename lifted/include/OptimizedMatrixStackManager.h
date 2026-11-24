@@ -10,6 +10,7 @@
 // Recovered field layout for OptimizedMatrixStackManager:
 namespace lifted_layout {
 struct OptimizedMatrixStackManager_Fields {
+    // +0x0   void*                    vptr  (evidence: 0x0054EFC0)
     // +0x4   int32_t field_0x04 (current index, signed compare)  (evidence: 0x0054E9B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   LONG                     field_0x04  (evidence: 0x0054E9F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  field_0x04  (evidence: 0x0054E990, 0x0054E9D0, 0x0054EA10) // CONFLICT: multiple definitions at +0x4
@@ -18,7 +19,9 @@ struct OptimizedMatrixStackManager_Fields {
     // +0x8   int32_t                  field_0x08  (evidence: 0x0054E990, 0x0054E9D0, 0x0054EA10) // CONFLICT: multiple definitions at +0x8
     // +0xC   void*                    field_0x0C  (evidence: 0x0054E990, 0x0054E9D0, 0x0054E9F0, 0x0054EA10) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0c (sub-object pointer; its vtable slot 5 is called when index >= limit)  (evidence: 0x0054E9B0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void* field_0x0C (embedded sub-object, passed as this to sub_0054ECB0)  (evidence: 0x0054EFC0) // CONFLICT: multiple definitions at +0xC
     // +0x20  void*                    field_0x20  (evidence: 0x0054E990, 0x0054E9D0, 0x0054E9F0, 0x0054EA10) // CONFLICT: multiple definitions at +0x20
     // +0x20  void* field_0x20 (sub-object pointer; its vtable slot 5 is called when index < limit)  (evidence: 0x0054E9B0) // CONFLICT: multiple definitions at +0x20
+    // +0x20  void* field_0x20 (receives vtable constant 0x00956F94 before teardown)  (evidence: 0x0054EFC0) // CONFLICT: multiple definitions at +0x20
 };
 } // namespace lifted_layout

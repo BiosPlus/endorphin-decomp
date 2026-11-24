@@ -43844,10 +43844,22 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0071A1F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071A760": {
+    "name": "getMediaModeString",
+    "signature": "const char* __stdcall sub_0071A760(int32_t mode)",
+    "summary": "Returns a display string for a media/display mode enum (0=Disabled, 1=Always, 2=When Media), or nullptr.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071A790": {
     "name": "GetInterestOrCameraRelativeLabel",
     "signature": "uint32_t __stdcall fn_0071A790(uint32_t selector)",
     "summary": "Maps selector 0 to the \"Relative to Interest\" string address, 1 to \"Relative to Camera\", and any other value to 0.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
+  "0x0071A7C0": {
+    "name": "getLayerModeName",
+    "signature": "const char* __stdcall sub_0071A7C0(uint32_t mode)",
+    "summary": "Maps a layer mode enum (0..2) to its display string (\"Background\", \"Foreground\", \"Background \u0026 Forground\") or null.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x0071A7F0": {

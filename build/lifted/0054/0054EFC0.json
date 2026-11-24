@@ -1,0 +1,34 @@
+{
+  "va": "0x0054EFC0",
+  "size": 46,
+  "orig_symbol": "OptimizedMatrixStackManager::vfunc_0",
+  "src_path": "src/classes/OptimizedMatrixStackManager.cpp",
+  "lifted_path": "lifted/classes/OptimizedMatrixStackManager.cpp",
+  "name": "OptimizedMatrixStackManager::vfunc_0",
+  "class": "OptimizedMatrixStackManager",
+  "signature": "void* fn_0054EFC0(void* self, uint32_t flags)",
+  "summary": "Scalar deleting destructor: tears down the sub-object at +0x0C, stamps the vtable, and frees self when flags bit 0 is set. Returns self.",
+  "fields": [
+    {
+      "class": "OptimizedMatrixStackManager",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "OptimizedMatrixStackManager",
+      "offset": "+0xC",
+      "type": "void* field_0x0C (embedded sub-object, passed as this to",
+      "name": "sub_0054ECB0)"
+    },
+    {
+      "class": "OptimizedMatrixStackManager",
+      "offset": "+0x20",
+      "type": "void* field_0x20 (receives vtable constant 0x00956F94 before",
+      "name": "teardown)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:09:58Z"
+}

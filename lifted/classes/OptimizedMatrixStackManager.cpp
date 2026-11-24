@@ -120,3 +120,32 @@ intptr_t fn_0054E990(void* self) {
     return callVirtualSlot4(subobject);
 }
 } // namespace lift_0054E990
+
+// [0x0054EFC0] OptimizedMatrixStackManager::vfunc_0 (46 bytes)
+namespace lift_0054EFC0 {
+// Constructs/resets the embedded sub-object at this+0x0C.
+extern void ext_0054ECB0(void* subobject);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* p);
+
+// @name OptimizedMatrixStackManager::vfunc_0
+// @class OptimizedMatrixStackManager
+// @summary Scalar deleting destructor: tears down the sub-object at +0x0C, stamps the vtable, and frees self when flags bit 0 is set. Returns self.
+// @field OptimizedMatrixStackManager +0x00 void* vptr
+// @field OptimizedMatrixStackManager +0x0C void* field_0x0C (embedded sub-object, passed as this to sub_0054ECB0)
+// @field OptimizedMatrixStackManager +0x20 void* field_0x20 (receives vtable constant 0x00956F94 before teardown)
+void* fn_0054EFC0(void* self, uint32_t flags) {
+    auto* base = static_cast<uint8_t*>(self);
+    // Stamp the sub-object slot with the vtable constant used by the original code.
+    *reinterpret_cast<uint32_t*>(base + 0x20) = 0x00956F94u;
+    // Destroy the embedded sub-object at this+0x0C.
+    ext_0054ECB0(base + 0x0C);
+    // Restore this's vtable constant.
+    *reinterpret_cast<uint32_t*>(base) = 0x00956F94u;
+    // Bit 0 of flags: free the object (scalar deleting destructor behaviour).
+    if (flags & 1u) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+} // namespace lift_0054EFC0
