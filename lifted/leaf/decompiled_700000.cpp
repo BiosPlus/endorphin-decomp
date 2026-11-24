@@ -165,3 +165,16 @@ int fn_00702640(void* self) {
     return flag == 0 ? 1 : 0;
 }
 } // namespace lift_00702640
+
+// [0x00702620] sub_00702620 (32 bytes)
+namespace lift_00702620 {
+// @name Unknown::SetInverseFlagOnSubObject
+// @class Unknown
+// @summary Stores (arg == 0) as a byte into the sub-object pointed to by this+0x268, at offset +0x270.
+// @field Unknown +0x268 ptr field_0x268
+// @field Unknown +0x270 uint8 field_0x270
+void fn_00702620(void* self, DWORD arg) {
+    uint8_t* const sub = *reinterpret_cast<uint8_t* const*>(static_cast<uint8_t*>(self) + 0x268);
+    sub[0x270] = static_cast<uint8_t>(arg == 0 ? 1 : 0);
+}
+} // namespace lift_00702620

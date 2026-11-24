@@ -39507,6 +39507,13 @@
     "summary": "Getter returning int32_t field at offset +0x10C.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00702620": {
+    "name": "Unknown::SetInverseFlagOnSubObject",
+    "class": "Unknown",
+    "signature": "void fn_00702620(void* self, DWORD arg)",
+    "summary": "Stores (arg == 0) as a byte into the sub-object pointed to by this+0x268, at offset +0x270.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00702640": {
     "name": "Unknown::IsChainedFlagClear",
     "class": "Unknown",
