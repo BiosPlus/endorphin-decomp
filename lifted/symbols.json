@@ -38754,6 +38754,12 @@
     "summary": "Loads the CRT _HUGE constant, negates it, and stores the result into three globals.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006EA820": {
+    "name": "sub_006EA820_initGlobalTriple",
+    "signature": "void fn_006EA820(void)",
+    "summary": "Stores four 32-bit constants into globals mem_00B5E0B0..mem_00B5E0BC (two pointer-like values, one second pointer, and zero).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006EF800": {
     "name": "sub_006EF800",
     "signature": "extern \"C\" void __fastcall fn_006EF800(void* self, int edx_unused, int32_t value)",

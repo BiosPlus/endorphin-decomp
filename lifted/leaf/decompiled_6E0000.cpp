@@ -222,3 +222,20 @@ void fn_006E9D00(void) {
 }
 } // namespace lift_007747B0
 } // namespace lift_006E9D00
+
+// [0x006EA820] sub_006EA820 (41 bytes)
+namespace lift_006EA820 {
+extern uint32_t mem_00B5E0B0;
+extern uint32_t mem_00B5E0B4;
+extern uint32_t mem_00B5E0B8;
+extern uint32_t mem_00B5E0BC;
+
+// @name sub_006EA820_initGlobalTriple
+// @summary Stores four 32-bit constants into globals mem_00B5E0B0..mem_00B5E0BC (two pointer-like values, one second pointer, and zero).
+void fn_006EA820(void) {
+    mem_00B5E0B0 = 0x00B5E0A8u;
+    mem_00B5E0B8 = 0x00AAA350u;
+    mem_00B5E0B4 = 0x00B5F050u;
+    mem_00B5E0BC = 0x00000000u;
+}
+} // namespace lift_006EA820
