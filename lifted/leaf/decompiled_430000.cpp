@@ -2038,3 +2038,27 @@ void fn_00430AA0(void* self, void* sink) {
     sink_slot0(sink, result);
 }
 } // namespace lift_00430AA0
+
+// [0x00430780]
+namespace lift_00430780 {
+// @name sub_00430780
+// @class Unknown
+// @summary Enables a command UI object and, if field_0x100 is non-null, sets its check state based on whether ext_0044B5B0(field_0x100) equals 4.
+// @field Unknown +0x100 void* field_0x100
+
+
+extern int __fastcall ext_0044B5B0(void* self);
+
+void __thiscall sub_00430780(void* self, void* cmdUI) {
+    uint8_t* selfBytes = static_cast<uint8_t*>(self);
+    uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(cmdUI);
+    reinterpret_cast<void(__thiscall*)(void*, int)>(vtable[0])(cmdUI, 1);
+
+    void* field100 = *reinterpret_cast<void**>(selfBytes + 0x100);
+    if (field100 != nullptr) {
+        int val = ext_0044B5B0(field100);
+        uintptr_t* vtable2 = *reinterpret_cast<uintptr_t**>(cmdUI);
+        reinterpret_cast<void(__thiscall*)(void*, int)>(vtable2[1])(cmdUI, val == 4 ? 1 : 0);
+    }
+}
+} // namespace lift_00430780

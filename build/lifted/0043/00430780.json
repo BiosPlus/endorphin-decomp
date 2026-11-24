@@ -1,0 +1,22 @@
+{
+  "va": "0x00430780",
+  "size": 56,
+  "orig_symbol": "sub_00430780",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_00430780",
+  "class": "Unknown",
+  "signature": "void __thiscall sub_00430780(void* self, void* cmdUI)",
+  "summary": "Enables a command UI object and, if field_0x100 is non-null, sets its check state based on whether ext_0044B5B0(field_0x100) equals 4.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x100",
+      "type": "void*",
+      "name": "field_0x100"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:26:07Z"
+}
