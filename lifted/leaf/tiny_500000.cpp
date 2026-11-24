@@ -272,3 +272,27 @@ int32_t fn_00504A80(void* self) {
 }
 } // namespace lift_00404D50
 } // namespace lift_00504A80
+
+// [0x00504990] sub_00504990 (31 bytes)
+namespace lift_00504990 {
+// @name Unknown::GetCountFromBeginEnd
+// @class Unknown
+// @summary Returns (end - begin) / 36 when begin (+0x04) is non-null, otherwise 0.
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x08 int32_t field_0x08
+int32_t fn_00504990(void* self) {
+    unsigned char* base = static_cast<unsigned char*>(self);
+    int32_t begin;
+    int32_t end;
+    std::memcpy(&begin, base + 0x04, sizeof(begin));
+    if (begin == 0) {
+        return 0;
+    }
+    std::memcpy(&end, base + 0x08, sizeof(end));
+    // Unsigned subtraction avoids signed-overflow UB; the result is reinterpreted as signed,
+    // matching the 32-bit wrap of the original `sub ecx, eax`.
+    int32_t diff = static_cast<int32_t>(static_cast<uint32_t>(end) - static_cast<uint32_t>(begin));
+    // Signed division by 36 (truncating toward zero), as produced by the magic-multiply sequence.
+    return diff / 36;
+}
+} // namespace lift_00504990

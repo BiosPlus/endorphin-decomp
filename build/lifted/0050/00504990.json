@@ -1,0 +1,28 @@
+{
+  "va": "0x00504990",
+  "size": 31,
+  "orig_symbol": "sub_00504990",
+  "src_path": "src/leaf/tiny_500000.cpp",
+  "lifted_path": "lifted/leaf/tiny_500000.cpp",
+  "name": "Unknown::GetCountFromBeginEnd",
+  "class": "Unknown",
+  "signature": "int32_t fn_00504990(void* self)",
+  "summary": "Returns (end - begin) / 36 when begin (+0x04) is non-null, otherwise 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:23:39Z"
+}

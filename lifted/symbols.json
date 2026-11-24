@@ -11432,6 +11432,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00504990": {
+    "name": "Unknown::GetCountFromBeginEnd",
+    "class": "Unknown",
+    "signature": "int32_t fn_00504990(void* self)",
+    "summary": "Returns (end - begin) / 36 when begin (+0x04) is non-null, otherwise 0.",
+    "lifted_path": "lifted/leaf/tiny_500000.cpp"
+  },
   "0x00504A70": {
     "name": "thunk_MSVCP80_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ",
     "signature": "extern \"C\" void fn_00504A70(void)",
