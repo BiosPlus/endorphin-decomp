@@ -11,6 +11,7 @@ struct Unknown_Fields {
     // +0x0   void* field_0x00 (arg1: loaded to obtain the forwarding "this")  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   FILE* file               (inner+0x00)  (evidence: 0x007833F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t vtable          (vptr)  (evidence: 0x006BB7D0, 0x006E7F90, 0x006E7FB0, 0x006E7FC0, 0x006E7FD0, 0x006E7FE0, 0x006E7FF0, 0x006E8000, 0x006E8010, 0x006E8020, 0x006E8030, 0x006E8040, 0x006E86B0, 0x006E8810, 0x0072B1C0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void* vtable vtable pointer (dereferenced to fetch slot 2 at +0x08)  (evidence: 0x004DDE10) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (vtable pointer, dereferenced to read slot +0x80)  (evidence: 0x006E7F90, 0x006E8050, 0x006E8060, 0x006E8070, 0x006E8080) // CONFLICT: multiple definitions at +0x0
     // +0x0   void** vtable vtable pointer (slot 0 called with arg 1)  (evidence: 0x006DE130) // CONFLICT: multiple definitions at +0x0
     // +0x0   float* field_0x00 (arg1: dereferenced to get dst Vector4*)  (evidence: 0x0066B860) // CONFLICT: multiple definitions at +0x0

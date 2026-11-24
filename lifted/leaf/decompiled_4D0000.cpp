@@ -99,3 +99,20 @@ void fn_004DA800(void* self) {
 }
 } // namespace lift_00594790
 } // namespace lift_004DA800
+
+// [0x004DDE10] sub_004DDE10 (33 bytes)
+namespace lift_004DDE10 {
+// @name Unknown::forwardStringToVtableSlot2
+// @class Unknown
+// @summary Passes the C string of a std::string argument to virtual slot 2 of this object's vtable (thiscall, ret 4).
+// @field Unknown +0x00 void* vtable vtable pointer (dereferenced to fetch slot 2 at +0x08)
+
+// Thiscall on MSVC x86; empty macro elsewhere so this still type-checks on Linux.
+using VSlot2Fn = void(__thiscall*)(void* self, const char* text);
+
+void fn_004DDE10(void* self, const std::string& text) {
+    void** vtable = lift_field<void**>(self, 0x00);
+    VSlot2Fn slot2 = reinterpret_cast<VSlot2Fn>(vtable[2]);
+    slot2(self, text.c_str());
+}
+} // namespace lift_004DDE10
