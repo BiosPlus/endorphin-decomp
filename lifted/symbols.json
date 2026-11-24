@@ -2254,6 +2254,12 @@
     "summary": "Toggles or updates a child object state via virtual call at +0x15c and forwards to MFC80_ord_6081",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00431400": {
+    "name": "dispatchGlobalObjectVtableD0OrCC",
+    "signature": "void fn_00431400(void)",
+    "summary": "Calls vtable +0xD0 on the object from ext_00465B40 if ext_00430380() is non-zero, otherwise calls vtable +0xCC.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004329A0": {
     "name": "init_and_update_field_0x11c",
     "signature": "extern \"C\" void __thiscall fn_004329A0(uintptr_t self)",
@@ -3549,6 +3555,12 @@
     "name": "sub_0044B360",
     "signature": "void __thiscall sub_0044B360(void* self)",
     "summary": "Invokes two virtual methods on the object at offset 0x64 if non-null.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044B390": {
+    "name": "sub_0044B390_queryAndNotify",
+    "signature": "void __thiscall sub_0044B390(uint32_t this_ptr, uint32_t arg1)",
+    "summary": "If field_0x64 is non-null, calls its vtable[0xC0] method and passes the boolean result to arg1-\u003evtable[0x4].",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
   "0x0044B5A0": {

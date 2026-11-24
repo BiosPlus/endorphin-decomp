@@ -1345,3 +1345,32 @@ U32IterPair* __cdecl sub_00436A20(
     return out;
 }
 } // namespace lift_00436A20
+
+// [0x00431400]
+namespace lift_00431400 {
+// @name dispatchGlobalObjectVtableD0OrCC
+// @summary Calls vtable +0xD0 on the object from ext_00465B40 if ext_00430380() is non-zero, otherwise calls vtable +0xCC.
+
+extern uint8_t __cdecl ext_00430380(void);
+extern uint32_t __cdecl ext_00465B40(void);
+extern uint32_t mem_read32(uint32_t addr);
+
+void fn_00431400(void) {
+    uint32_t obj;
+    uint32_t vtable;
+    uint32_t target;
+
+    if (ext_00430380() != 0) {
+        obj = ext_00465B40();
+        vtable = mem_read32(obj);
+        target = mem_read32(vtable + 0xD0);
+    } else {
+        obj = ext_00465B40();
+        vtable = mem_read32(obj);
+        target = mem_read32(vtable + 0xCC);
+    }
+
+    typedef void (__thiscall *vfn_t)(uint32_t);
+    ((vfn_t)(uintptr_t)target)(obj);
+}
+} // namespace lift_00431400
