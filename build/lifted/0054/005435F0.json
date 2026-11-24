@@ -1,0 +1,28 @@
+{
+  "va": "0x005435F0",
+  "size": 40,
+  "orig_symbol": "sub_005435F0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "UnknownClass::forwardVirtual58AndClearFlags",
+  "class": "UnknownClass",
+  "signature": "void fn_005435F0(void* self, uint32_t a, uint32_t b)",
+  "summary": "Forwards two args to virtual slot +0x58 on self, then clears byte flags at +0x92 and +0x95.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x92",
+      "type": "uint8_t",
+      "name": "field_0x92"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x95",
+      "type": "uint8_t",
+      "name": "field_0x95"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:52:39Z"
+}

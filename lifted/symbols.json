@@ -13876,6 +13876,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x2D4 and tail-calls sub_0054C640.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005330D0": {
+    "name": "OglRenderer::vfunc_117",
+    "class": "OglRenderer",
+    "signature": "void __thiscall fn_005330D0(void* self)",
+    "summary": "Clears field_0x30 to 0 while holding the critical section lock returned by vfunc_118.",
+    "lifted_path": "lifted/classes/OglRenderer.cpp"
+  },
   "0x005331F0": {
     "name": "OglRenderer::vfunc_88",
     "class": "OglRenderer",
