@@ -1,0 +1,22 @@
+{
+  "va": "0x00468690",
+  "size": 16,
+  "orig_symbol": "VMCSEngine::vfunc_1",
+  "src_path": "src/classes/VMCSEngine.cpp",
+  "lifted_path": "lifted/classes/VMCSEngine.cpp",
+  "name": "VMCSEngine::vfunc_1",
+  "class": "VMCSEngine",
+  "signature": "uint32_t fn_00468690(void* self)",
+  "summary": "Tail-forwards to virtual slot +0xAC of the object at this-\u003e+0x18-\u003e+0xC, returning its result.",
+  "fields": [
+    {
+      "class": "VMCSEngine",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:34:23Z"
+}

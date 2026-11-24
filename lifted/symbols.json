@@ -3547,6 +3547,13 @@
     "summary": "Reads a 32-bit value at offset 0xc of the object pointed to by this+0x18",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00468690": {
+    "name": "VMCSEngine::vfunc_1",
+    "class": "VMCSEngine",
+    "signature": "uint32_t fn_00468690(void* self)",
+    "summary": "Tail-forwards to virtual slot +0xAC of the object at this-\u003e+0x18-\u003e+0xC, returning its result.",
+    "lifted_path": "lifted/classes/VMCSEngine.cpp"
+  },
   "0x00468F30": {
     "name": "sub_00468F30",
     "signature": "extern \"C\" void __fastcall fn_00468F30(void* self)",
