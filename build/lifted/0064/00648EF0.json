@@ -1,0 +1,22 @@
+{
+  "va": "0x00648EF0",
+  "size": 28,
+  "orig_symbol": "RelationshipRPROMagnet::vfunc_49",
+  "src_path": "src/classes/RelationshipRPROMagnet.cpp",
+  "lifted_path": "lifted/classes/RelationshipRPROMagnet.cpp",
+  "name": "RelationshipRPROMagnet::vfunc_49",
+  "class": "RelationshipRPROMagnet",
+  "signature": "uint32_t RelationshipRPROMagnet_vfunc_49(void* self)",
+  "summary": "Returns 1 if bit 0 of the field at +0x9C of the object stored at this+0x94 (passed through ext_007D8700) is set, otherwise 0.",
+  "fields": [
+    {
+      "class": "RelationshipRPROMagnet",
+      "offset": "+0x94",
+      "type": "uint32_t",
+      "name": "field_0x94"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:09:18Z"
+}

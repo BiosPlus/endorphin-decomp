@@ -3376,6 +3376,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00455680 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00455AD0": {
+    "name": "sub_00455AD0",
+    "signature": "void fn_00455AD0(void* self)",
+    "summary": "Clears the std::string field at +0x13c and tail-calls sub_00455820.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00455B80": {
     "name": "sub_00455B80",
     "signature": "extern \"C\" void fn_00455B80(void)",
@@ -4054,6 +4060,13 @@
     "signature": "extern \"C\" void __fastcall fn_00463580(void* self)",
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x15C.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
+  "0x004636C0": {
+    "name": "VideoGeneratorDialog::vfunc_1_off_74",
+    "class": "VideoGeneratorDialog",
+    "signature": "uint32_t __thiscall fn_004636C0(void* self, uint32_t pos)",
+    "summary": "Sends PBM_SETPOS (0x402) with the given position to the progress bar HWND",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x00463950": {
     "name": "sub_00463950",
@@ -25107,6 +25120,13 @@
     "signature": "uint32_t __thiscall fn_00648EE0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00629B00 (CompoundSensor::vfunc_19).",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
+  "0x00648EF0": {
+    "name": "RelationshipRPROMagnet::vfunc_49",
+    "class": "RelationshipRPROMagnet",
+    "signature": "uint32_t RelationshipRPROMagnet_vfunc_49(void* self)",
+    "summary": "Returns 1 if bit 0 of the field at +0x9C of the object stored at this+0x94 (passed through ext_007D8700) is set, otherwise 0.",
+    "lifted_path": "lifted/classes/RelationshipRPROMagnet.cpp"
   },
   "0x006490F0": {
     "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setPositionStrength(float), 0}\u003e::vfunc_41",
