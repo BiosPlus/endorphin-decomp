@@ -5310,3 +5310,18 @@ void fn_0049AF60(float* out, void* unused) {
     (void)unused;
 }
 } // namespace lift_0049AF60
+
+// [0x00503A10]
+namespace lift_00503A10 {
+// @name Evaluator::vfunc_1
+// @class Evaluator
+// @summary Stores a float argument widened to double at +0x28 and sets the flag byte at +0x20 to 1.
+// @field Evaluator +0x20 BYTE field_0x20
+// @field Evaluator +0x28 DOUBLE field_0x28
+
+// thiscall (this in ECX), one stack argument, callee pops 4 bytes (ret 4).
+void __thiscall Evaluator_vfunc_1(void* self, FLOAT value) {
+    lift_field<DOUBLE>(self, 0x28) = static_cast<DOUBLE>(value);
+    lift_field<BYTE>(self, 0x20) = 1;
+}
+} // namespace lift_00503A10

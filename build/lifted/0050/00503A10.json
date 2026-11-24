@@ -1,0 +1,28 @@
+{
+  "va": "0x00503A10",
+  "size": 14,
+  "orig_symbol": "Evaluator::vfunc_1",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "Evaluator::vfunc_1",
+  "class": "Evaluator",
+  "signature": "void __thiscall Evaluator_vfunc_1(void* self, FLOAT value)",
+  "summary": "Stores a float argument widened to double at +0x28 and sets the flag byte at +0x20 to 1.",
+  "fields": [
+    {
+      "class": "Evaluator",
+      "offset": "+0x20",
+      "type": "BYTE",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Evaluator",
+      "offset": "+0x28",
+      "type": "DOUBLE",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:24:59Z"
+}
