@@ -34879,6 +34879,13 @@
     "summary": "Setter storing int32_t argument into field at offset +0x114.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006FA190": {
+    "name": "descriptiveName_006FA190 (equalsGlobal: returns (arg == mem_00B5E400))",
+    "class": "(none, free function)",
+    "signature": "BOOL fn_006FA190(int arg)",
+    "summary": "Compares its single stack argument against the global at 0x00B5E400; returns 1 if equal, else 0 (stdcall, ret 4).",
+    "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
+  },
   "0x006FA1B0": {
     "name": "sub_006FA1B0",
     "signature": "extern \"C\" int32_t __cdecl fn_006FA1B0(void)",

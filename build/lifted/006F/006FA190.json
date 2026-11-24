@@ -1,0 +1,14 @@
+{
+  "va": "0x006FA190",
+  "size": 18,
+  "orig_symbol": "sub_006FA190",
+  "src_path": "src/leaf/tiny_6F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6F0000.cpp",
+  "name": "descriptiveName_006FA190 (equalsGlobal: returns (arg == mem_00B5E400))",
+  "class": "(none, free function)",
+  "signature": "BOOL fn_006FA190(int arg)",
+  "summary": "Compares its single stack argument against the global at 0x00B5E400; returns 1 if equal, else 0 (stdcall, ret 4).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:58:58Z"
+}

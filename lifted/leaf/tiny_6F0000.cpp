@@ -2635,3 +2635,16 @@ void* fn_006F8AC0(void* ecx) {
     return ext_006B9960(static_cast<uint8_t*>(ecx) + 4);
 }
 } // namespace lift_006F8AC0
+
+// [0x006FA190] sub_006FA190 (18 bytes)
+namespace lift_006FA190 {
+extern int mem_00B5E400;
+
+// @name descriptiveName_006FA190 (equalsGlobal: returns (arg == mem_00B5E400))
+// @class (none, free function)
+// @summary Compares its single stack argument against the global at 0x00B5E400; returns 1 if equal, else 0 (stdcall, ret 4).
+// @field (none)
+BOOL fn_006FA190(int arg) {
+    return arg == mem_00B5E400 ? TRUE : FALSE;
+}
+} // namespace lift_006FA190
