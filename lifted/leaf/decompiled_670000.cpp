@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_670000.cpp
 #include "lift_compat.h"
+#include <cstdio>
 
 // [0x006721B0] sub_006721B0 (18 bytes)
 namespace lift_006721B0 {
@@ -74,3 +75,28 @@ void fn_0067F8F0(void* self) {
     lift_field<uint32_t>(holder, 0x08) = end - 4;
 }
 } // namespace lift_0067F8F0
+
+// [0x0067EC70] sub_0067EC70 (34 bytes)
+namespace lift_0067EC70 {
+// Import slot for MSVCR80!_snprintf (0x009251E0). Not called directly; the
+// portable body below uses std::snprintf.
+extern int mem_009251E0;
+
+// @name Unknown::formatPairToBuffer
+// @class Unknown
+// @summary Formats the two ints at this+0x00 and this+0x04 into a caller buffer via snprintf (__thiscall, ret 8).
+// @field Unknown +0x00 int32_t field_0x00
+// @field Unknown +0x04 int32_t field_0x04
+//
+// Stack layout at entry: [esp+4] = buffer, [esp+8] = buffer size.
+// snprintf is called as snprintf(buffer, size, fmt, this->field_0x04, this->field_0x00),
+// with the format string at 0x0098C7C0 (not recovered here; see FORMAT below).
+// Return value is snprintf's result (left in eax).
+static constexpr const char* kFormat = "6|b"; // PLACEHOLDER: real format at 0x0098C7C0 not yet recovered
+
+int fn_0067EC70(void* self, char* buffer, int size) {
+    const int32_t field_0x00 = lift_field<int32_t>(self, 0x00);
+    const int32_t field_0x04 = lift_field<int32_t>(self, 0x04);
+    return std::snprintf(buffer, static_cast<size_t>(size), kFormat, field_0x04, field_0x00);
+}
+} // namespace lift_0067EC70

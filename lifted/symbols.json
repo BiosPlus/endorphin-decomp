@@ -29177,6 +29177,13 @@
     "summary": "Initializes a double at offset +0x00 to 0.0 and returns the pointer",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x0067EC70": {
+    "name": "Unknown::formatPairToBuffer",
+    "class": "Unknown",
+    "signature": "int fn_0067EC70(void* self, char* buffer, int size)",
+    "summary": "Formats the two ints at this+0x00 and this+0x04 into a caller buffer via snprintf (__thiscall, ret 8).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067ECF0": {
     "name": "Unknown::formatDwordHex (descriptive; owner class not identified)",
     "class": "Unknown",
