@@ -3269,10 +3269,10 @@
     "lifted_path": "lifted/SpinButtonStates/auto_tiny.cpp"
   },
   "0x00458790": {
-    "name": "SpinButtonStates::ClickedDownState::vfunc_1",
+    "name": "SpinButtonStates::ClickedDownState::vfunc_2",
     "class": "SpinButtonStates::ClickedDownState",
-    "signature": "void fn_00458790(void* self)",
-    "summary": "Starts timer id 2 with a 400 ms interval on the owner window of self-\u003efield_0x08.",
+    "signature": "void vfunc_2(ClickedDownState* self)",
+    "summary": "Kills timers 2 and 3 on the owner object stored at self+0x08.",
     "lifted_path": "lifted/SpinButtonStates/ClickedDownState.cpp"
   },
   "0x004587A0": {

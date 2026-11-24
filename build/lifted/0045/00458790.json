@@ -4,10 +4,10 @@
   "orig_symbol": "SpinButtonStates::ClickedDownState::vfunc_1",
   "src_path": "src/SpinButtonStates/ClickedDownState.cpp",
   "lifted_path": "lifted/SpinButtonStates/ClickedDownState.cpp",
-  "name": "SpinButtonStates::ClickedDownState::vfunc_1",
+  "name": "SpinButtonStates::ClickedDownState::vfunc_2",
   "class": "SpinButtonStates::ClickedDownState",
-  "signature": "void fn_00458790(void* self)",
-  "summary": "Starts timer id 2 with a 400 ms interval on the owner window of self-\u003efield_0x08.",
+  "signature": "void vfunc_2(ClickedDownState* self)",
+  "summary": "Kills timers 2 and 3 on the owner object stored at self+0x08.",
   "fields": [
     {
       "class": "SpinButtonStates::ClickedDownState",
@@ -18,5 +18,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T11:48:32Z"
+  "lifted_at": "2026-11-24T11:48:46Z"
 }
