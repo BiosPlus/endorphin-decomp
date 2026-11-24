@@ -360,3 +360,32 @@ uint8_t __thiscall sub_00783510(void* self, uint8_t* outByte) {
     return *outByte;
 }
 } // namespace lift_00783510
+
+// [0x00786050] sub_00786050 (46 bytes)
+namespace lift_00786050 {
+extern int mem_00B60A10;
+extern int mem_00B60A18;
+extern int mem_00B60A20;
+extern int mem_00B60A28;
+extern int mem_00925284;
+
+// @name negateHugeIntoGlobals
+// @summary Stores -_HUGE (negated MSVCR80 _HUGE double) into four global double slots.
+void fn_00786050(void* self) {
+    (void)self;
+    // mem_00925284 holds the address of the MSVCR80 _HUGE double.
+    const double huge = *reinterpret_cast<const double*>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925284)));
+    const double neg = -huge;
+
+    double* const slots[] = {
+        reinterpret_cast<double*>(static_cast<uintptr_t>(0x00B60A10u)),
+        reinterpret_cast<double*>(static_cast<uintptr_t>(0x00B60A18u)),
+        reinterpret_cast<double*>(static_cast<uintptr_t>(0x00B60A20u)),
+        reinterpret_cast<double*>(static_cast<uintptr_t>(0x00B60A28u)),
+    };
+    for (double* slot : slots) {
+        *slot = neg;
+    }
+}
+} // namespace lift_00786050
