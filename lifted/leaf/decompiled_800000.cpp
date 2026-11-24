@@ -206,3 +206,18 @@ void fn_0080ABA0(void) {
     enter(reinterpret_cast<void*>(&mem_00B73C58));
 }
 } // namespace lift_0080ABA0
+
+// [0x0080FAE0] sub_0080FAE0 (16 bytes)
+namespace lift_0080FAE0 {
+// Known callee 0x00859730: sub_00859730 (Auto-lifted identical-shape clone of 0x0079AF50 (GlobalFreeWrapper).)
+extern void* ext_00859730(void* hMem);
+
+// @name GlobalFreeIfNonNull
+// @summary If the stack argument is non-null, forwards it to ext_00859730 (GlobalFree wrapper); result discarded.
+// @field none (no member fields accessed)
+void fn_0080FAE0(void* hMem) {
+    if (hMem != nullptr) {
+        (void)ext_00859730(hMem);
+    }
+}
+} // namespace lift_0080FAE0
