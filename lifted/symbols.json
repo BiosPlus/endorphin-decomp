@@ -47251,6 +47251,12 @@
     "summary": "Returns twice the float at offset +0x14 of the object passed in (self + 0x14) * 2.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CC5D0": {
+    "name": "allocAndInit_007CC5D0",
+    "signature": "uint32_t fn_007CC5D0(uint32_t arg0)",
+    "summary": "Allocates a 16-byte object (16-byte aligned) via allocator at +0xb0/+0x8 and initializes it with sub_007CC200",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CC600": {
     "name": "get_field_0x28",
     "signature": "uint32_t sub_007CC600(uint32_t arg0)",
@@ -47592,6 +47598,12 @@
     "summary": "Reads the inner object pointer at +0x0C, loads its dword at +0xB0, forwards it with constant 0x0099E218 to ext_007D5950, and returns 0 (AX cleared).",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007DAE50": {
+    "name": "allocAndInit_007DAE50",
+    "signature": "uint32_t fn_007DAE50(uint32_t a1)",
+    "summary": "Allocates a 32-byte (16-byte aligned) block via context-\u003efield_0xb0 and initializes it with sub_007DAD50.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DB720": {
     "name": "getField0x18",
     "signature": "uint32_t sub_007DB720(uint32_t obj)",
@@ -47648,6 +47660,12 @@
     "signature": "void fn_007DD020(void* self)",
     "summary": "Resets the vtable to CxSmallSort and, if the field at +0x20 is set, calls slot 3 of the object at +0x28 with it as argument.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
+  "0x007DD130": {
+    "name": "UnknownClass_isIndexedEntryFlagSet",
+    "signature": "bool fn_007DD130(void* self, int32_t index)",
+    "summary": "Returns bit 0 of the flags of the table entry at index when index is in range and the entry's stored id equals index; otherwise returns false.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
   "0x007DE020": {
     "name": "CxSmallSort::vfunc_0",

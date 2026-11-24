@@ -1,0 +1,39 @@
+{
+  "va": "0x007DD130",
+  "size": 45,
+  "orig_symbol": "sub_007DD130",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "UnknownClass_isIndexedEntryFlagSet",
+  "signature": "bool fn_007DD130(void* self, int32_t index)",
+  "summary": "Returns bit 0 of the flags of the table entry at index when index is in range and the entry's stored id equals index; otherwise returns false.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x10",
+      "type": "uint8_t*",
+      "name": "entries"
+    },
+    {
+      "class": "UnknownEntry",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "id"
+    },
+    {
+      "class": "UnknownEntry",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "flags"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:08:24Z"
+}

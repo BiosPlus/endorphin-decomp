@@ -269,3 +269,53 @@ void __cdecl sub_007DFD80(uint32_t* out_header, uint32_t count, uint32_t* alloca
     out_header[2] = 0u;
 }
 } // namespace lift_007DFD80
+
+// [0x007DAE50]
+namespace lift_007DAE50 {
+// @name allocAndInit_007DAE50
+// @summary Allocates a 32-byte (16-byte aligned) block via context->field_0xb0 and initializes it with sub_007DAD50.
+// @field Context +0xb0 uint32_t field_0xb0
+
+extern uint32_t mem_read32(uint32_t addr);
+extern uint32_t ext_007DAD50(uint32_t a1, uint32_t a2);
+
+uint32_t fn_007DAE50(uint32_t a1) {
+    uint32_t alloc_obj = mem_read32(a1 + 0xb0);
+    uint32_t alloc_fn_addr = mem_read32(alloc_obj + 0x8);
+    using AllocFn = uint32_t (*)(uint32_t, uint32_t);
+    AllocFn alloc_fn = reinterpret_cast<AllocFn>(static_cast<uintptr_t>(alloc_fn_addr));
+    uint32_t ptr = alloc_fn(0x20, 0x10);
+    if (ptr == 0) {
+        return 0;
+    }
+    return ext_007DAD50(ptr, a1);
+}
+} // namespace lift_007DAE50
+
+// [0x007DD130]
+namespace lift_007DD130 {
+namespace lift_007DD130 {
+
+// @name UnknownClass_isIndexedEntryFlagSet
+// @summary Returns bit 0 of the flags of the table entry at index when index is in range and the entry's stored id equals index; otherwise returns false.
+// @field UnknownClass +0x0C int32_t count
+// @field UnknownClass +0x10 uint8_t* entries
+// @field UnknownEntry +0x08 int32_t id
+// @field UnknownEntry +0x10 uint32_t flags
+bool fn_007DD130(void* self, int32_t index) {
+    if (index < 0 || index >= lift_field<int32_t>(self, 0x0C)) {
+        return false;
+    }
+
+    uint8_t* entries = lift_field<uint8_t*>(self, 0x10);
+    uint8_t* entry = entries + static_cast<ptrdiff_t>(index) * 0x9C;
+
+    if (lift_field<int32_t>(entry, 0x08) != index) {
+        return false;
+    }
+
+    return (lift_field<uint32_t>(entry, 0x10) & 1u) != 0;
+}
+
+} // namespace lift_007DD130
+} // namespace lift_007DD130
