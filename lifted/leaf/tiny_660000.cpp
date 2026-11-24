@@ -275,3 +275,20 @@ uint8_t fn_00666CC0(void* self) {
 }
 } // namespace lift_0049ABC0
 } // namespace lift_00666CC0
+
+// [0x0066A310] sub_0066A310 (18 bytes)
+namespace lift_0066A310 {
+// @name identityVec4Init
+// @summary Writes the 4-float vector (0, 0, 0, 1) into the object at self (identity quaternion-style init).
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0C float field_0x0C
+void fn_0066A310(void* self) {
+    // self arrives in ECX (thiscall-style); stores 0.0f, 0.0f, 0.0f, 1.0f at +0x00..+0x0C.
+    lift_field<float>(self, 0x00) = 0.0f;
+    lift_field<float>(self, 0x04) = 0.0f;
+    lift_field<float>(self, 0x08) = 0.0f;
+    lift_field<float>(self, 0x0C) = 1.0f;
+}
+} // namespace lift_0066A310
