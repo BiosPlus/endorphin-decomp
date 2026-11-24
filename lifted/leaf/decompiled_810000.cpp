@@ -124,3 +124,21 @@ void fn_008103C0(void* self, DWORD flag) {
     }
 }
 } // namespace lift_008103C0
+
+// [0x00810410] sub_00810410 (42 bytes)
+namespace lift_00810410 {
+// @name SetOrClearFlag0x800ViaIndirect4
+// @class Object
+// @summary Sets (flag != 0) or clears (flag == 0) bit 0x800 in the dword at +0x4 of the object referenced by self+0x4.
+// @field Object +0x04 void* field_0x04
+// @field Object +0x04 uint32_t field_0x04 (flags dword at target+0x4)
+void fn_00810410(void* self, uint32_t flag) {
+    void* target = lift_field<void*>(self, 0x4);
+    uint32_t& flags = lift_field<uint32_t>(target, 0x4);
+    if (flag != 0) {
+        flags |= 0x800u;
+    } else {
+        flags &= ~0x800u;
+    }
+}
+} // namespace lift_00810410

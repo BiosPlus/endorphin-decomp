@@ -3199,6 +3199,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0040FDA0 (CColorCheck::vfunc_22).",
     "lifted_path": "lifted/classes/RegistrationDialog.cpp"
   },
+  "0x004499D0": {
+    "name": "getStringPair",
+    "signature": "void __thiscall sub_004499D0(void* this_ptr, void* out_str1, void* out_str2)",
+    "summary": "Copies two std::string fields (+0x1c4 and +0x1e0) into the provided output strings",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00449A00": {
     "name": "RegistrationDialog::initOnceAndGetCounter",
     "class": "RegistrationDialog",
@@ -47190,6 +47196,13 @@
     "signature": "uint32_t fn_008103F0(uint8_t* self)",
     "summary": "Returns bit 11 of the 32-bit word at +0x04 of the object referenced by +0x04 of the argument (0 or 1).",
     "lifted_path": "lifted/leaf/tiny_810000.cpp"
+  },
+  "0x00810410": {
+    "name": "SetOrClearFlag0x800ViaIndirect4",
+    "class": "Object",
+    "signature": "void fn_00810410(void* self, uint32_t flag)",
+    "summary": "Sets (flag != 0) or clears (flag == 0) bit 0x800 in the dword at +0x4 of the object referenced by self+0x4.",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
   },
   "0x00810440": {
     "name": "getNestedFlagBit10",
