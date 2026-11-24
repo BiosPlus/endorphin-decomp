@@ -1200,6 +1200,13 @@
     "summary": "Returns the address of the global data slot mem_0092EAC8 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00422CE0": {
+    "name": "SetFieldAndOffsetField78",
+    "class": "Unknown",
+    "signature": "void fn_00422CE0(void* self, DWORD value)",
+    "summary": "Stores the argument at this+0x74 and stores argument + 0x5C at this+0x78 (__thiscall, ret 4).",
+    "lifted_path": "lifted/leaf/tiny_420000.cpp"
+  },
   "0x004248D0": {
     "name": "ImportDialog::vfunc_1",
     "class": "ImportDialog",

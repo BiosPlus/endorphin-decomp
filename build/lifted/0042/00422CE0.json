@@ -1,0 +1,28 @@
+{
+  "va": "0x00422CE0",
+  "size": 16,
+  "orig_symbol": "sub_00422CE0",
+  "src_path": "src/leaf/tiny_420000.cpp",
+  "lifted_path": "lifted/leaf/tiny_420000.cpp",
+  "name": "SetFieldAndOffsetField78",
+  "class": "Unknown",
+  "signature": "void fn_00422CE0(void* self, DWORD value)",
+  "summary": "Stores the argument at this+0x74 and stores argument + 0x5C at this+0x78 (__thiscall, ret 4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "DWORD",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "DWORD",
+      "name": "field_0x78"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:33:38Z"
+}

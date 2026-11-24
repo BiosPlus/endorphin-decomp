@@ -52,3 +52,16 @@ extern "C" void __fastcall fn_004225D0(void* self) {
 extern "C" void __fastcall fn_0042F750(void* self) {
     ext_00584A10(static_cast<char*>(self) + 0x4);
 }
+
+// [0x00422CE0]
+namespace lift_00422CE0 {
+// @name SetFieldAndOffsetField78
+// @class Unknown
+// @summary Stores the argument at this+0x74 and stores argument + 0x5C at this+0x78 (__thiscall, ret 4).
+// @field Unknown +0x74 DWORD field_0x74
+// @field Unknown +0x78 DWORD field_0x78
+void fn_00422CE0(void* self, DWORD value) {
+    lift_field<DWORD>(self, 0x74) = value;
+    lift_field<DWORD>(self, 0x78) = value + 0x5C;
+}
+} // namespace lift_00422CE0
