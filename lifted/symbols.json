@@ -12588,6 +12588,12 @@
     "summary": "Setter storing float argument into field at offset +0x400.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00533CF0": {
+    "name": "descriptiveName_00533CF0",
+    "signature": "void fn_00533CF0(void* self)",
+    "summary": "Loads this-\u003efield_0x194 as an index i, then copies the DWORD at this+0xdc+4*(i*15) into this-\u003efield_0x498.",
+    "lifted_path": "lifted/leaf/tiny_530000.cpp"
+  },
   "0x00533D40": {
     "name": "SetField498",
     "class": "\u003cClassName\u003e (unknown; `this` is passed in ECX)",

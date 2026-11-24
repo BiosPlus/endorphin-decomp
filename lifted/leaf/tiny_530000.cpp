@@ -7,6 +7,7 @@ extern "C" void __fastcall ext_00532B40(void* self);
 extern "C" void __fastcall ext_00541000(void* self);
 extern "C" void __fastcall ext_00533CF0(void* self);
 #include <cstdint>
+#include <cstring>
 
 // [0x0053F894] sub_0053F894 (5 bytes)
 // @name sub_0053F894
@@ -361,3 +362,24 @@ void fn_00532B60(void* self) {
     *reinterpret_cast<uint32_t*>(p + 0x10) = 0;
 }
 } // namespace lift_00532B60
+
+// [0x00533CF0] sub_00533CF0 (27 bytes)
+namespace lift_00533CF0 {
+// @name descriptiveName_00533CF0
+// @summary Loads this->field_0x194 as an index i, then copies the DWORD at this+0xdc+4*(i*15) into this->field_0x498.
+// @field <Class> +0x194 DWORD field_0x194
+// @field <Class> +0xdc DWORD field_0xdc (array; element stride 4, indexed by field_0x194*15)
+// @field <Class> +0x498 DWORD field_0x498
+void fn_00533CF0(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+
+    std::uint32_t index = 0;
+    std::memcpy(&index, base + 0x194, sizeof(index));
+
+    const std::uint32_t elementIndex = index * 15u; // edx = eax*16 - eax
+    std::uint32_t value = 0;
+    std::memcpy(&value, base + 0xdc + static_cast<std::size_t>(elementIndex) * 4u, sizeof(value));
+
+    std::memcpy(base + 0x498, &value, sizeof(value));
+}
+} // namespace lift_00533CF0

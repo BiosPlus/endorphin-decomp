@@ -1,0 +1,33 @@
+{
+  "va": "0x00533CF0",
+  "size": 27,
+  "orig_symbol": "sub_00533CF0",
+  "src_path": "src/leaf/tiny_530000.cpp",
+  "lifted_path": "lifted/leaf/tiny_530000.cpp",
+  "name": "descriptiveName_00533CF0",
+  "signature": "void fn_00533CF0(void* self)",
+  "summary": "Loads this-\u003efield_0x194 as an index i, then copies the DWORD at this+0xdc+4*(i*15) into this-\u003efield_0x498.",
+  "fields": [
+    {
+      "class": "\u003cClass\u003e",
+      "offset": "+0x194",
+      "type": "DWORD",
+      "name": "field_0x194"
+    },
+    {
+      "class": "\u003cClass\u003e",
+      "offset": "+0xDC",
+      "type": "DWORD field_0xdc (array; element stride 4, indexed by",
+      "name": "field_0x194*15)"
+    },
+    {
+      "class": "\u003cClass\u003e",
+      "offset": "+0x498",
+      "type": "DWORD",
+      "name": "field_0x498"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:02:38Z"
+}
