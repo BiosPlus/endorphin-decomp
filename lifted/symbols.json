@@ -17769,6 +17769,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005ACD80 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Commands/auto_tiny.cpp"
   },
+  "0x005AD1C0": {
+    "name": "fillRangeWith8ByteValue",
+    "signature": "void fillRangeWith8ByteValue(uint32_t* dst_begin, uint32_t* dst_end, const uint32_t* src)",
+    "summary": "Writes the 8-byte value at *src into every 8-byte slot in [dst_begin, dst_end). Source pointer is not advanced.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005B0E90": {
     "name": "Geometry::MeshType::vfunc_6",
     "class": "Geometry::MeshType",

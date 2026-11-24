@@ -18,3 +18,23 @@ void fn_005A3610() {
 }
 } // namespace lift_00437DE0
 } // namespace lift_005A3610
+
+// [0x005AD1C0]
+namespace lift_005AD1C0 {
+// @name fillRangeWith8ByteValue
+// @summary Writes the 8-byte value at *src into every 8-byte slot in [dst_begin, dst_end). Source pointer is not advanced.
+
+void fillRangeWith8ByteValue(uint32_t* dst_begin, uint32_t* dst_end, const uint32_t* src) {
+    if (dst_begin == dst_end) {
+        return;
+    }
+    const uint32_t lo = src[0];
+    const uint32_t hi = src[1];
+    uint32_t* dst = dst_begin;
+    do {
+        dst[0] = lo;
+        dst[1] = hi;
+        dst += 2;
+    } while (dst != dst_end);
+}
+} // namespace lift_005AD1C0
