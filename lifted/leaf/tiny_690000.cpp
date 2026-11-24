@@ -48,3 +48,19 @@ extern DWORD fn_00692000(DWORD index) {
     return mem_00B5AE98[index];
 }
 } // namespace lift_00692000
+
+// [0x00699180] sub_00699180 (17 bytes)
+namespace lift_00699180 {
+// @name Unknown::initCore
+// @class Unknown
+// @summary Initializes three 32-bit fields of the object in ecx: stores the constant 0x0098FAC4 at +0x00, clears +0x04 and +0x08.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+void fn_00699180(void* self) {
+    // Original: mov eax,ecx / xor ecx,ecx / mov [eax+4],ecx / mov [eax],0x98fac4 / mov [eax+8],ecx / ret
+    lift_field<uint32_t>(self, 0x04) = 0u;
+    lift_field<uint32_t>(self, 0x00) = 0x0098FAC4u;
+    lift_field<uint32_t>(self, 0x08) = 0u;
+}
+} // namespace lift_00699180

@@ -1,0 +1,34 @@
+{
+  "va": "0x00699180",
+  "size": 17,
+  "orig_symbol": "sub_00699180",
+  "src_path": "src/leaf/tiny_690000.cpp",
+  "lifted_path": "lifted/leaf/tiny_690000.cpp",
+  "name": "Unknown::initCore",
+  "class": "Unknown",
+  "signature": "void fn_00699180(void* self)",
+  "summary": "Initializes three 32-bit fields of the object in ecx: stores the constant 0x0098FAC4 at +0x00, clears +0x04 and +0x08.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:54:23Z"
+}

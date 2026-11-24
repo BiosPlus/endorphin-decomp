@@ -25871,6 +25871,13 @@
     "summary": "Gets object via vfunc_24, dynamic_casts it, and invokes vfunc_3 if non-null",
     "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp"
   },
+  "0x00699180": {
+    "name": "Unknown::initCore",
+    "class": "Unknown",
+    "signature": "void fn_00699180(void* self)",
+    "summary": "Initializes three 32-bit fields of the object in ecx: stores the constant 0x0098FAC4 at +0x00, clears +0x04 and +0x08.",
+    "lifted_path": "lifted/leaf/tiny_690000.cpp"
+  },
   "0x00699220": {
     "name": "ExprParser::ExpressionContainerType::vfunc_29",
     "class": "ExprParser::ExpressionContainerType",
