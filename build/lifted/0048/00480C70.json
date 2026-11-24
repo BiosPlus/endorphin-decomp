@@ -1,0 +1,13 @@
+{
+  "va": "0x00480C70",
+  "size": 41,
+  "orig_symbol": "sub_00480C70",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "fillRange64",
+  "signature": "void __cdecl sub_00480C70(uint32_t first, uint32_t last, uint32_t value_ptr)",
+  "summary": "Fills a range [first, last) of 64-byte elements by copying from a source 64-byte element.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:00:57Z"
+}
