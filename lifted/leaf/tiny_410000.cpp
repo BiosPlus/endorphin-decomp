@@ -312,3 +312,28 @@ void fn_0041C380(uintptr_t esi) {
     (void)esi;
 }
 } // namespace lift_0041C380
+
+// [0x0041C6B0] sub_0041C6B0 (21 bytes)
+namespace lift_0041C6B0 {
+// @name Dispatch::ForwardSlot14IfChild
+// @summary If field +0x08 is non-null, tail-forward the call to its vtable slot 14 (+0x38) with the same args; otherwise return 0.
+// @field Unknown +0x08 void* field_0x08
+
+namespace {
+// Callee signature for vtable slot 14 is unknown; assumed thiscall with three
+// dword stack args (the original epilogue is `ret 0xc`, i.e. callee pops 12 bytes).
+using ChildSlot14Fn = uint32_t (__thiscall*)(void* self, uint32_t a0, uint32_t a1, uint32_t a2);
+}  // namespace
+
+// Original: cmp [ecx+8],0 / je -> xor al,al; ret 0xc / mov ecx,[ecx+8]; jmp [[ecx]+0x38]
+uint32_t fn_0041C6B0(void* self, uint32_t a0, uint32_t a1, uint32_t a2) {
+    void* child = lift_field<void*>(self, 0x08);
+    if (child == nullptr) {
+        return 0;  // original clears only AL; upper EAX bits are not modeled
+    }
+    void** vtable = *reinterpret_cast<void***>(child);
+    auto target = reinterpret_cast<ChildSlot14Fn>(vtable[0x38 / sizeof(void*)]);
+    // Original is a tail jump; the return value of `target` becomes ours unchanged.
+    return target(child, a0, a1, a2);
+}
+} // namespace lift_0041C6B0
