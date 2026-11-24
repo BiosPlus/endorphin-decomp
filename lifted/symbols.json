@@ -12790,6 +12790,13 @@
     "summary": "Builds a 3-dword record via setDwordTriple, applies two mask toggles to arg1, copies it to arg2, and stores 6 into arg3 and arg4.",
     "lifted_path": "lifted/NMData/RigEventData.cpp"
   },
+  "0x004D3DE0": {
+    "name": "Unknown::ForwardToChildrenIfFlag",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __thiscall fn_004D3DE0(void* self, uint8_t flag)",
+    "summary": "If the flag argument is nonzero, forwards the object at this+0x1EC entries to the subobject at global-object+0xF8.",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004D3E20": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e::vfunc_16",
     "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e",

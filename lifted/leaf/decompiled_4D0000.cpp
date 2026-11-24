@@ -146,3 +146,31 @@ void fn_004DE330(void* self, const void* src) {
     ext_0067E990(rec, result);
 }
 } // namespace lift_004DE330
+
+// [0x004D3DE0]
+namespace lift_004D3DE0 {
+// @name Unknown::ForwardToChildrenIfFlag
+// @class Unknown
+// @summary If the flag argument is nonzero, forwards the object at this+0x1EC entries to the subobject at global-object+0xF8.
+// @field Unknown +0x1EC int32_t field_0x1EC
+
+extern int32_t __cdecl fn_00594000(void);
+extern void __fastcall fn_00642680(void* self);
+
+// __thiscall: this in ECX, one stack argument (flag), callee cleans up 4 bytes (ret 4).
+extern void __thiscall fn_004D3DE0(void* self, uint8_t flag) {
+    if (flag == 0) {
+        return;
+    }
+
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    uintptr_t global_obj = static_cast<uintptr_t>(static_cast<uint32_t>(fn_00594000()));
+    uintptr_t sub = static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(global_obj + 0xF8));
+
+    // Count is re-read each iteration, matching the original cmp against [edi+0x1ec].
+    for (int32_t i = 0; i < *reinterpret_cast<int32_t*>(base + 0x1EC); ++i) {
+        fn_00642680(reinterpret_cast<void*>(sub));
+    }
+}
+} // namespace lift_004D3DE0
