@@ -1,0 +1,27 @@
+{
+  "va": "0x00856FE0",
+  "size": 15,
+  "orig_symbol": "sub_00856FE0",
+  "src_path": "src/leaf/tiny_850000.cpp",
+  "lifted_path": "lifted/leaf/tiny_850000.cpp",
+  "name": "sub_00856FE0",
+  "signature": "uint32_t sub_00856FE0(uint32_t* dst, const uint32_t* src)",
+  "summary": "Copies a 32-bit value from a source pointer to a destination pointer and returns 0.",
+  "fields": [
+    {
+      "class": "stack",
+      "offset": "+0x4",
+      "type": "ptr dst (first argument, written",
+      "name": "through)"
+    },
+    {
+      "class": "stack",
+      "offset": "+0x8",
+      "type": "ptr src (second argument, read",
+      "name": "through)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:33:15Z"
+}

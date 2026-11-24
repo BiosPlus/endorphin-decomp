@@ -37224,6 +37224,12 @@
     "summary": "Pops 4 bytes from stack and tail-jumps to the function pointer at [esi]",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x00856FE0": {
+    "name": "sub_00856FE0",
+    "signature": "uint32_t sub_00856FE0(uint32_t* dst, const uint32_t* src)",
+    "summary": "Copies a 32-bit value from a source pointer to a destination pointer and returns 0.",
+    "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
   "0x0085D504": {
     "name": "sub_0085D504",
     "signature": "void fn_0085D504(void)",

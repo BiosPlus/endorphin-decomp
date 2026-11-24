@@ -67,3 +67,17 @@ uint8_t ToUpperAscii(uint8_t ch) {
     return al;
 }
 } // namespace lift_0085E690
+
+// [0x00856FE0]
+namespace lift_00856FE0 {
+// @name sub_00856FE0
+// @summary Copies a 32-bit value from a source pointer to a destination pointer and returns 0.
+// @field stack +0x04 ptr dst (first argument, written through)
+// @field stack +0x08 ptr src (second argument, read through)
+
+uint32_t sub_00856FE0(uint32_t* dst, const uint32_t* src) {
+    uint32_t value = *src;
+    *dst = value;
+    return 0;
+}
+} // namespace lift_00856FE0
