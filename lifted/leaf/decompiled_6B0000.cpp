@@ -507,3 +507,29 @@ extern void __thiscall fn_006B9640(void* self, WPARAM wp, LPARAM lp) {
     ext_InvalidateRect(*reinterpret_cast<HWND*>(reinterpret_cast<uint8_t*>(self) + 0x20), nullptr, TRUE);
 }
 } // namespace lift_006B9640
+
+// [0x006B8190] sub_006B8190 (46 bytes)
+namespace lift_006B8190 {
+// Known callee 0x006A5E4E: thunk_MFC80_ord_6065 (IAT jump thunk forwarding to MFC80!ord_6065.)
+// Modeled as: ecx = child object, then six stack dwords (lowest address first).
+extern void ext_006A5E4E(void* child, void* stack0, DWORD stack1, DWORD stack2,
+                             DWORD stack3, DWORD stack4, DWORD stack5);
+
+// @name CallChildAt88Forward
+// @class Self
+// @summary If the embedded child at self+0x88 is non-null and its dword at +0x20 is nonzero, forwards two stack args plus constant 0x214 to the child-call thunk; callee pops 12 bytes.
+// @field Self +0x88 void* childObject
+// @field Self +0xA8 DWORD field_0xA8
+void fn_006B8190(void* self, DWORD unused, DWORD arg2, DWORD arg3) {
+    (void)unused;
+    const uintptr_t child = reinterpret_cast<uintptr_t>(self) + 0x88;
+    if (child == 0) {
+        return;
+    }
+    const DWORD flag = *reinterpret_cast<const DWORD*>(child + 0x20);
+    if (flag == 0) {
+        return;
+    }
+    ext_006A5E4E(reinterpret_cast<void*>(child), self, 0, 0, arg2, arg3, 0x214);
+}
+} // namespace lift_006B8190

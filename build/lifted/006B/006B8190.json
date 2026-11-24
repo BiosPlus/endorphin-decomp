@@ -1,0 +1,28 @@
+{
+  "va": "0x006B8190",
+  "size": 46,
+  "orig_symbol": "sub_006B8190",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "CallChildAt88Forward",
+  "class": "Self",
+  "signature": "void fn_006B8190(void* self, DWORD unused, DWORD arg2, DWORD arg3)",
+  "summary": "If the embedded child at self+0x88 is non-null and its dword at +0x20 is nonzero, forwards two stack args plus constant 0x214 to the child-call thunk; callee pops 12 bytes.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "childObject"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xA8",
+      "type": "DWORD",
+      "name": "field_0xA8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:10:07Z"
+}

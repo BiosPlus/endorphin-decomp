@@ -37559,6 +37559,13 @@
     "summary": "Conditionally calls UpdateSubobjects if the flag at +0x1A8 and pointer at +0x1A4 are non-zero.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B8190": {
+    "name": "CallChildAt88Forward",
+    "class": "Self",
+    "signature": "void fn_006B8190(void* self, DWORD unused, DWORD arg2, DWORD arg3)",
+    "summary": "If the embedded child at self+0x88 is non-null and its dword at +0x20 is nonzero, forwards two stack args plus constant 0x214 to the child-call thunk; callee pops 12 bytes.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B81C0": {
     "name": "sub_006B81C0",
     "signature": "extern \"C\" void* __cdecl fn_006B81C0(void)",
@@ -41765,6 +41772,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00700590(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_007005B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x007006B0": {
+    "name": "getLightTypeName",
+    "signature": "const char* __stdcall sub_007006B0(uint32_t lightType)",
+    "summary": "Returns the human-readable name string for a light type index (0=Point, 1=Infinite, 2=Spot), or nullptr.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x00700820": {
     "name": "sub_00700820",
