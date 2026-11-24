@@ -1,0 +1,14 @@
+{
+  "va": "0x00695990",
+  "size": 79,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026DoubleWithProperties::getValue, 0\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026DoubleWithProperties::getValue, 0\u003e",
+  "signature": "extern \"C\" void* __thiscall fn_00695990(void* self, void* out_result, void** target_ptr)",
+  "summary": "Reads a double from the target object, converts it to float, and constructs the result; throws if null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:42:37Z"
+}

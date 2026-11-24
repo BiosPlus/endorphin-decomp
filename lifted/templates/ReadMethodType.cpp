@@ -32704,3 +32704,61 @@ extern void* __thiscall fn_00695990(void* self, void* out_result, void** target_
     return out_result;
 }
 } // namespace lift_00695990
+
+// [0x0066F9A0]
+namespace lift_0066F9A0 {
+extern uint32_t mem_read32(uintptr_t addr);
+extern float mem_read_f32(uintptr_t addr);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NM::Vector3,float,NM::Vector3::calcNorm,1>::vfunc_1
+// @class ExprParser::ReadMethodType<NM::Vector3,float,NM::Vector3::calcNorm,1>
+// @summary Evaluates NM::Vector3::calcNorm on a dereferenced Vector3 pointer, or throws if null
+// @field NM::Vector3 +0x00 float x
+// @field NM::Vector3 +0x04 float y
+// @field NM::Vector3 +0x08 float z
+float __thiscall fn_0066F9A0(void* self, void* arg1) {
+    (void)self;
+    uintptr_t vec_addr = mem_read32(reinterpret_cast<uintptr_t>(arg1));
+    if (vec_addr == 0) {
+        uint8_t exc_buf[0x28];
+        ext_0046C3C0(exc_buf);
+        ext_006A6DD2(exc_buf, 0x009DEC1C);
+    }
+
+    float x = mem_read_f32(vec_addr + 0x0);
+    float y = mem_read_f32(vec_addr + 0x4);
+    float z = mem_read_f32(vec_addr + 0x8);
+    return std::sqrt(x * x + y * y + z * z);
+}
+} // namespace lift_0066F9A0
+
+// [0x0068F240]
+namespace lift_0068F240 {
+// @name ExprParser::ReadMethodType<UnitsWithProperties>::vfunc_4
+// @class ExprParser::ReadMethodType<UnitsWithProperties>
+// @summary Reads the angle unit name string from a UnitsWithProperties pointer and copy-constructs it into dst, or throws on null.
+// @field UnitsWithProperties +0x04 void* field_0x04
+
+
+extern void* __stdcall ext_0068EE60(uint32_t index);
+extern void* __cdecl ext_004276B0(void* dst, const void* src);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+void* __stdcall fn_0068F240(void* dst, void* const* obj_ptr) {
+    void* obj = *obj_ptr;
+    if (!obj) {
+        uint8_t exc[44];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1C);
+        return nullptr;
+    }
+    const void* inner = *reinterpret_cast<void* const*>(reinterpret_cast<const uint8_t*>(obj) + 0x4);
+    uint32_t index = *reinterpret_cast<const uint32_t*>(reinterpret_cast<const uint8_t*>(inner) + 0xC);
+    const void* src = ext_0068EE60(index);
+    ext_004276B0(dst, src);
+    return dst;
+}
+} // namespace lift_0068F240

@@ -31641,6 +31641,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B8970 (ExprParser::ReadMethodType\u003cNMData::EngineData\u003e::vfunc_1 (NMData::EngineData::getUnitMass)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0066F9A0": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3,float,NM::Vector3::calcNorm,1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3,float,NM::Vector3::calcNorm,1\u003e",
+    "signature": "float __thiscall fn_0066F9A0(void* self, void* arg1)",
+    "summary": "Evaluates NM::Vector3::calcNorm on a dereferenced Vector3 pointer, or throws if null",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00670090": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1\u003e",
@@ -32990,6 +32997,13 @@
     "class": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::string const \u0026, \u0026UnitsWithProperties::getAngleUnitName, 0\u003e",
     "signature": "float __stdcall fn_0068EFF0(void* const* arg)",
     "summary": "Evaluates UnitsWithProperties::getAngleUnitName() and converts the resulting string to float via atof, or throws if null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0068F240": {
+    "name": "ExprParser::ReadMethodType\u003cUnitsWithProperties\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cUnitsWithProperties\u003e",
+    "signature": "void* __stdcall fn_0068F240(void* dst, void* const* obj_ptr)",
+    "summary": "Reads the angle unit name string from a UnitsWithProperties pointer and copy-constructs it into dst, or throws on null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00692000": {
