@@ -14162,6 +14162,13 @@
     "summary": "Forwards vfunc_13 call to the child object at +0x14.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00537B80": {
+    "name": "CompoundRenderable::vfunc_22",
+    "class": "CompoundRenderable",
+    "signature": "inline void call_vslot22(void* obj, uint32_t arg)",
+    "summary": "Forwards a single-argument call to vtable slot 22 of the object held at +0x14 (if non-null) and of the embedded subobject at +0x18.",
+    "lifted_path": "lifted/classes/CompoundRenderable.cpp"
+  },
   "0x00537BF0": {
     "name": "CompoundRenderable::vfunc_18",
     "class": "CompoundRenderable",

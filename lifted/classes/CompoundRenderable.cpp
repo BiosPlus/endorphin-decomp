@@ -50,3 +50,34 @@ void fn_00537D60(void* self) {
     reinterpret_cast<VFunc>(vt2[24])(static_cast<uint8_t*>(self) + 0x18);
 }
 } // namespace lift_00537D60
+
+// [0x00537B80]
+namespace lift_00537B80 {
+// @name CompoundRenderable::vfunc_22
+// @class CompoundRenderable
+// @summary Forwards a single-argument call to vtable slot 22 of the object held at +0x14 (if non-null) and of the embedded subobject at +0x18.
+// @field CompoundRenderable +0x14 void* field_0x14
+// @field CompoundRenderable +0x18 void* field_0x18
+
+namespace {
+
+// Invokes vtable slot 22 (byte offset 0x58) on `obj`, passing `arg` as the single stack argument.
+inline void call_vslot22(void* obj, uint32_t arg) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    auto fn = reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(vtbl[22]);
+    fn(obj, arg);
+}
+
+}  // namespace
+
+void CompoundRenderable_vfunc_22(void* self, uint32_t arg) {
+    // Child object pointer at +0x14: notify only if present.
+    void* child = lift_field<void*>(self, 0x14);
+    if (child != nullptr) {
+        call_vslot22(child, arg);
+    }
+
+    // Embedded subobject at +0x18: its address is `this` for the call.
+    call_vslot22(static_cast<uint8_t*>(self) + 0x18, arg);
+}
+} // namespace lift_00537B80
