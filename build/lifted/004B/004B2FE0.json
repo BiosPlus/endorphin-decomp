@@ -1,0 +1,14 @@
+{
+  "va": "0x004B2FE0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, bool, {public: bool __thiscall NMData::GraphEngineData::attachToFrameBuffer(void) const, 0}, bool, {public: void __thiscall NMData::GraphEngineData::setAttachToFrameBuffer(bool), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData,bool\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData,bool\u003e",
+  "signature": "void __thiscall fn_004B2FE0(void* /*self*/, void* arg0)",
+  "summary": "Lazily initializes static object at 0x00AE0D40 and stores its address at arg0 + 4.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:58:31Z"
+}
