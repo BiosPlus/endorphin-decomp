@@ -12102,6 +12102,13 @@
     "summary": "Tail-forwards this-\u003efield_0x04 to vtable slot 4 of the other object; returns its result.",
     "lifted_path": "lifted/classes/HasConstantTMPtr.cpp"
   },
+  "0x00532220": {
+    "name": "HasRelativeTMPtr::vfunc_11",
+    "class": "HasRelativeTMPtr",
+    "signature": "void fn_00532220(void* self)",
+    "summary": "Multiplies the current GL matrix by the two matrix pointers stored at this+0x04 and this+0x08 via glMultMatrixf.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x005327D0": {
     "name": "Material::vfunc_0",
     "class": "Material",

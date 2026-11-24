@@ -1,0 +1,28 @@
+{
+  "va": "0x00532220",
+  "size": 25,
+  "orig_symbol": "HasRelativeTMPtr::vfunc_11",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "HasRelativeTMPtr::vfunc_11",
+  "class": "HasRelativeTMPtr",
+  "signature": "void fn_00532220(void* self)",
+  "summary": "Multiplies the current GL matrix by the two matrix pointers stored at this+0x04 and this+0x08 via glMultMatrixf.",
+  "fields": [
+    {
+      "class": "HasRelativeTMPtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "HasRelativeTMPtr",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:49:02Z"
+}

@@ -6371,3 +6371,21 @@ void fn_00402110(void* self) {
     slot5(transformInterface, mem_00B40640);
 }
 } // namespace lift_00402110
+
+// [0x00532220] HasRelativeTMPtr::vfunc_11 (25 bytes)
+namespace lift_00532220 {
+// glMultMatrixf (OPENGL32), pointer stored at mem_009253C8.
+extern void (*mem_009253C8)(const GLfloat* m);
+
+// @name HasRelativeTMPtr::vfunc_11
+// @class HasRelativeTMPtr
+// @summary Multiplies the current GL matrix by the two matrix pointers stored at this+0x04 and this+0x08 via glMultMatrixf.
+// @field HasRelativeTMPtr +0x04 uint32_t field_0x04
+// @field HasRelativeTMPtr +0x08 uint32_t field_0x08
+void fn_00532220(void* self) {
+    const uint32_t m0 = lift_field<uint32_t>(self, 0x04);
+    const uint32_t m1 = lift_field<uint32_t>(self, 0x08);
+    mem_009253C8(reinterpret_cast<const GLfloat*>(static_cast<uintptr_t>(m0)));
+    mem_009253C8(reinterpret_cast<const GLfloat*>(static_cast<uintptr_t>(m1)));
+}
+} // namespace lift_00532220

@@ -10,7 +10,7 @@
 // Recovered field layout for HasRelativeTMPtr:
 namespace lifted_layout {
 struct HasRelativeTMPtr_Fields {
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00535610, 0x0053A560, 0x0053A750, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x00535610, 0x0053A560, 0x0053A750, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00532220, 0x00535610, 0x0053A560, 0x0053A750, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00532220, 0x00535610, 0x0053A560, 0x0053A750, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
 };
 } // namespace lifted_layout
