@@ -15467,6 +15467,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xA4 and tail-calls sub_005DC420.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00547E80": {
+    "name": "Object::copyVec3IfFlagClearAndNotify",
+    "class": "Object",
+    "signature": "void __thiscall fn_00547E80(void* self, const float* src)",
+    "summary": "If field_0xa0 is zero, copies a 3-float vector from the argument into fields 0x68..0x70 and invokes vtable slot 17 on self.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x005480D0": {
     "name": "GetFloatViaIndirectOrInline",
     "class": "\u003cunknown\u003e",

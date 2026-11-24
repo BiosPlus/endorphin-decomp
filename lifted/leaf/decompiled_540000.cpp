@@ -315,3 +315,30 @@ void __thiscall fn_005435A0(uint32_t self, uint32_t a1, uint32_t a2) {
     mem_write8(self + 0x94, 0);
 }
 } // namespace lift_005435A0
+
+// [0x00547E80]
+namespace lift_00547E80 {
+// @name Object::copyVec3IfFlagClearAndNotify
+// @class Object
+// @summary If field_0xa0 is zero, copies a 3-float vector from the argument into fields 0x68..0x70 and invokes vtable slot 17 on self.
+// @field Object +0x68 float field_0x68
+// @field Object +0x6c float field_0x6c
+// @field Object +0x70 float field_0x70
+// @field Object +0xa0 uint32_t field_0xa0
+
+
+void __thiscall fn_00547E80(void* self, const float* src) {
+    if (lift_field<uint32_t>(self, 0xA0) != 0) {
+        return;
+    }
+
+    lift_field<float>(self, 0x68) = src[0];
+    lift_field<float>(self, 0x6C) = src[1];
+    lift_field<float>(self, 0x70) = src[2];
+
+    void** vtable = *reinterpret_cast<void***>(self);
+    using Slot17Fn = void(__thiscall*)(void*);
+    auto slot17 = reinterpret_cast<Slot17Fn>(vtable[0x44 / 4]);
+    slot17(self);
+}
+} // namespace lift_00547E80
