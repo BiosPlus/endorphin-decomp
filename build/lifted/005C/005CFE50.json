@@ -1,0 +1,28 @@
+{
+  "va": "0x005CFE50",
+  "size": 29,
+  "orig_symbol": "sub_005CFE50",
+  "src_path": "src/leaf/tiny_5C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5C0000.cpp",
+  "name": "ForwardToChildOrReadFlag",
+  "class": "UnknownObject",
+  "signature": "uint32_t fn_005CFE50(void* self)",
+  "summary": "If the child pointer at +0x2C4 is non-null, tail-dispatch to its vtable slot at +0x3C; otherwise return the byte at +0x1F2.",
+  "fields": [
+    {
+      "class": "UnknownObject",
+      "offset": "+0x1F2",
+      "type": "uint8_t",
+      "name": "field_0x1f2"
+    },
+    {
+      "class": "UnknownObject",
+      "offset": "+0x2C4",
+      "type": "void*",
+      "name": "field_0x2c4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:12:45Z"
+}

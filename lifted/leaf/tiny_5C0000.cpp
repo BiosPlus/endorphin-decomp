@@ -466,3 +466,21 @@ float __thiscall fn_005C3C00(void* self) {
     return fn(obj, child);
 }
 } // namespace lift_005C3C00
+
+// [0x005CFE50] sub_005CFE50 (29 bytes)
+namespace lift_005CFE50 {
+// @name ForwardToChildOrReadFlag
+// @class UnknownObject
+// @summary If the child pointer at +0x2C4 is non-null, tail-dispatch to its vtable slot at +0x3C; otherwise return the byte at +0x1F2.
+// @field UnknownObject +0x1F2 uint8_t field_0x1f2
+// @field UnknownObject +0x2C4 void* field_0x2c4
+uint32_t fn_005CFE50(void* self) {
+    void* child = lift_field<void*>(self, 0x2C4);
+    if (child == nullptr) {
+        return lift_field<uint8_t>(self, 0x1F2);
+    }
+    void* vtable = lift_field<void*>(child, 0);
+    auto target = reinterpret_cast<uint32_t (*)(void*)>(lift_field<void*>(vtable, 0x3C));
+    return target(child);
+}
+} // namespace lift_005CFE50
