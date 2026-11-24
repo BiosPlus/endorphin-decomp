@@ -31146,3 +31146,1507 @@ void* fn_00497F60(void* dst, void* const* holder) {
     return dst;
 }
 } // namespace lift_00497F60
+
+// [0x0046D660] ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_0046D660 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_006ACFB0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_0046D660(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_006ACFB0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_0046D660
+
+// [0x004A2FB0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004A2FB0 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_0049AA40(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004A2FB0(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_0049AA40(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004A2FB0
+
+// [0x004A3970] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004A3970 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_006658C0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004A3970(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_006658C0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004A3970
+
+// [0x004A3CA0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004A3CA0 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_004A2490(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004A3CA0(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_004A2490(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004A3CA0
+
+// [0x004AA750] ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004AA750 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_004A9A40(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004AA750(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_004A9A40(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004AA750
+
+// [0x004B4200] ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004B4200 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_006AD190(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004B4200(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_006AD190(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004B4200
+
+// [0x004C1150] ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004C1150 {
+// @name ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_005C84B0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004C1150(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_005C84B0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004C1150
+
+// [0x004C1440] ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004C1440 {
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_00410450(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004C1440(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_00410450(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004C1440
+
+// [0x004C76E0] ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004C76E0 {
+// @name ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_00486960(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004C76E0(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_00486960(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004C76E0
+
+// [0x004CB8B0] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004CB8B0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_004CA5E0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004CB8B0(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_004CA5E0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004CB8B0
+
+// [0x004CF640] ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004CF640 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_004CEA30(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004CF640(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_004CEA30(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004CF640
+
+// [0x004D1960] ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004D1960 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_004D0AF0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004D1960(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_004D0AF0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004D1960
+
+// [0x004D2100] ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004D2100 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_004D0E00(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004D2100(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_004D0E00(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004D2100
+
+// [0x004D7590] ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004D7590 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_004D39D0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004D7590(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_004D39D0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004D7590
+
+// [0x004D79F0] ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004D79F0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_004D39E0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004D79F0(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_004D39E0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004D79F0
+
+// [0x004D8F80] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004D8F80 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_004D3FD0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004D8F80(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_004D3FD0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004D8F80
+
+// [0x004DE4F0] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004DE4F0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_00528530(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004DE4F0(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_00528530(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004DE4F0
+
+// [0x004DEBB0] ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004DEBB0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_00486C90(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004DEBB0(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_00486C90(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004DEBB0
+
+// [0x004DF8C0] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004DF8C0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_004DE160(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004DF8C0(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_004DE160(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004DF8C0
+
+// [0x004E1610] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004E1610 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_004DE440(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004E1610(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_004DE440(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004E1610
+
+// [0x004ED0D0] ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004ED0D0 {
+// @name ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_00536F00(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004ED0D0(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_00536F00(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004ED0D0
+
+// [0x004FF4A0] ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>::vfunc_4 (73 bytes)
+namespace lift_004FF4A0 {
+// @name ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_006A7C10(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004FF4A0(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_006A7C10(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004FF4A0
+
+// [0x00509870] ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_00509870 {
+// @name ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_00503A00(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_00509870(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_00503A00(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_00509870
+
+// [0x0050A2A0] ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>::vfunc_4 (73 bytes)
+namespace lift_0050A2A0 {
+// @name ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_00508BA0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_0050A2A0(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_00508BA0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_0050A2A0
+
+// [0x00521530] ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_00521530 {
+// @name ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_00687090(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_00521530(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_00687090(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_00521530
+
+// [0x00585F00] ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>::vfunc_4 (73 bytes)
+namespace lift_00585F00 {
+// @name ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_00682ED0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_00585F00(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_00682ED0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_00585F00
+
+// [0x00594CA0] ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>::vfunc_4 (73 bytes)
+namespace lift_00594CA0 {
+// @name ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_00594060(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_00594CA0(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_00594060(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_00594CA0
+
+// [0x00597EA0] ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>::vfunc_4 (73 bytes)
+namespace lift_00597EA0 {
+// @name ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_00596330(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_00597EA0(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_00596330(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_00597EA0
+
+// [0x0059EC70] ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_0059EC70 {
+// @name ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_0042F750(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_0059EC70(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_0042F750(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_0059EC70
+
+// [0x005AB2F0] ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005AB2F0 {
+// @name ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_0044CCD0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_005AB2F0(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_0044CCD0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_005AB2F0
+
+// [0x005AB500] ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005AB500 {
+// @name ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_005AA9E0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_005AB500(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_005AA9E0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_005AB500
+
+// [0x005C7E50] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005C7E50 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_005C2F40(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_005C7E50(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_005C2F40(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_005C7E50
+
+// [0x005DAE20] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005DAE20 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_005D07E0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_005DAE20(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_005D07E0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_005DAE20
+
+// [0x005DB350] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005DB350 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_005D0810(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_005DB350(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_005D0810(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_005DB350
+
+// [0x005DBDC0] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005DBDC0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_005D07F0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_005DBDC0(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_005D07F0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_005DBDC0
+
+// [0x005E2D80] ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005E2D80 {
+// @name ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_005E02A0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_005E2D80(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_005E02A0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_005E2D80
+
+// [0x005E3720] ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005E3720 {
+// @name ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_0044CCE0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_005E3720(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_0044CCE0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_005E3720
+
+// [0x005E8500] ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005E8500 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_005E0E40(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_005E8500(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_005E0E40(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_005E8500
+
+// [0x005F7150] ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005F7150 {
+// @name ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_005F5280(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_005F7150(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_005F5280(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_005F7150
+
+// [0x005F85D0] ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005F85D0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_005F5120(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_005F85D0(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_005F5120(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_005F85D0
+
+// [0x00609C00] ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_4 (73 bytes)
+namespace lift_00609C00 {
+// @name ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_00609730(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_00609C00(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_00609730(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_00609C00
+
+// [0x00683E50] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_00683E50 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_006829E0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_00683E50(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_006829E0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_00683E50
+
+// [0x006842B0] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_006842B0 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_0049A9F0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_006842B0(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_0049A9F0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_006842B0
+
+// [0x00684DE0] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_00684DE0 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_00682E10(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_00684DE0(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_00682E10(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_00684DE0
+
+// [0x00685450] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_00685450 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_00672400(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_004276B0(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_00685450(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_00672400(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_004276B0(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_00685450
+
+// [0x0068E1C0] ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_0068E1C0 {
+// @name ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_0052F600(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_0068E1C0(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_0052F600(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_0068E1C0
+
+// [0x00692850] ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_00692850 {
+// @name ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_00692210(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_00692850(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_00692210(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_00692850

@@ -175,9 +175,12 @@ uint32_t __stdcall fn_0067A770(uint32_t arg0, uint32_t arg1) {
 void fn_004C0320(void* arg) {
     ext_00671100(1, arg);
 }
+#include <cstring>
+#include <cmath>
+#include <new>
 
-// [0x00515E80] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_1 (45 bytes)
-// @name ExprParser::DynamicEnumType::vfunc_1 (EvolverRuntimeOptions)
+#include <cmath>
+#include <new>
 // @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
 // @summary Reads the int at +0x0C of the object referenced by the first pointer in the argument block and returns it as a double; throws if that pointer is null.
 // @field <unknown> +0x0C int field_0x0C
@@ -1471,3 +1474,163 @@ void* fn_00494D90(void* arg1, void* arg2) {
     return nullptr; // not reached: the throw does not return
 }
 } // namespace lift_00494D90
+
+// [0x004AB650] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_4 (73 bytes)
+namespace lift_004AB650 {
+// @name ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_4
+// @class ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_004A9CE0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004AB650(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_004A9CE0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004AB650
+
+// [0x004B9D70] ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_4 (73 bytes)
+namespace lift_004B9D70 {
+// @name ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_4
+// @class ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_004B72D0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004B9D70(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_004B72D0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004B9D70
+
+// [0x004D4E00] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_4 (73 bytes)
+namespace lift_004D4E00 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_4
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_004D3CE0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004D4E00(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_004D3CE0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004D4E00
+
+// [0x004D5160] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_4 (73 bytes)
+namespace lift_004D5160 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_4
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_004D3CF0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_004D5160(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_004D3CF0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_004D5160
+
+// [0x005C8A80] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_4 (73 bytes)
+namespace lift_005C8A80 {
+// @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_4
+// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4).
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_005C3FB0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_005C8A80(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_005C3FB0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
+} // namespace lift_005C8A80
