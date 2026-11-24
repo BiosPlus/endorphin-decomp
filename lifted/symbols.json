@@ -3727,9 +3727,10 @@
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
   "0x004584C0": {
-    "name": "descriptiveName: InitTripleValueObject",
-    "signature": "void* fn_004584C0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
-    "summary": "Stores a constant tag word and two stack arguments into a 16-byte object and returns it.",
+    "name": "sub_00450A80",
+    "class": "CBase",
+    "signature": "extern void fn_00450A80(uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0043CB80 (call_MFC80_ord_1903_ret8).",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
   "0x004584E0": {
