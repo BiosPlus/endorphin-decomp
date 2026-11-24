@@ -1,0 +1,13 @@
+{
+  "va": "0x00477D90",
+  "size": 59,
+  "orig_symbol": "sub_00477D90",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "make_heap_dword",
+  "signature": "void fn_00477D90(uint32_t* first, uint32_t* last)",
+  "summary": "Builds a heap in place over a 32-bit element range by sifting down each parent from n/2-1 to 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:25:24Z"
+}

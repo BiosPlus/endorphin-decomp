@@ -7049,6 +7049,12 @@
     "summary": "Stores the float at *value into every 4-byte slot in [first, last); no-op if first == last.",
     "lifted_path": "lifted/leaf/tiny_470000.cpp"
   },
+  "0x00477D90": {
+    "name": "make_heap_dword",
+    "signature": "void fn_00477D90(uint32_t* first, uint32_t* last)",
+    "summary": "Builds a heap in place over a 32-bit element range by sifting down each parent from n/2-1 to 0.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00477E60": {
     "name": "FillTriplesFromSource",
     "signature": "void fn_00477E60(DWORD* dst, DWORD count, const DWORD* src)",

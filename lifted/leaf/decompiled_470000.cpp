@@ -84,3 +84,20 @@ __stdcall DWORD* fn_00478C20(DWORD* dst, DWORD count, const DWORD* src) {
     return dst + 3 * count;
 }
 } // namespace lift_00478C20
+
+// [0x00477D90] sub_00477D90 (59 bytes)
+namespace lift_00477D90 {
+extern void ext_00477280(uint32_t* begin, int32_t index, int32_t count, uint32_t value);
+
+// @name make_heap_dword
+// @summary Builds a heap in place over a 32-bit element range by sifting down each parent from n/2-1 to 0.
+void fn_00477D90(uint32_t* first, uint32_t* last) {
+    const int32_t count = static_cast<int32_t>(last - first);
+    int32_t index = count / 2;
+    while (index > 0) {
+        --index;
+        const uint32_t value = first[index];
+        ext_00477280(first, index, count, value);
+    }
+}
+} // namespace lift_00477D90
