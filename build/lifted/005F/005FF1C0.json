@@ -6,7 +6,7 @@
   "lifted_path": "lifted/classes/global_tiny.cpp",
   "name": "MetaBodySensor::vfunc_25",
   "class": "MetaBodySensor",
-  "signature": "extern \"C\" int __thiscall MetaBodySensor_vfunc_25(void* self, int value)",
+  "signature": "int MetaBodySensor_vfunc_25(const void* self, int value)",
   "summary": "Returns 1 if the sensor's stored value at +0x28 equals the single stack argument, else 0 (thiscall, ret 4).",
   "fields": [
     {
@@ -18,5 +18,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T01:30:34Z"
+  "lifted_at": "2026-11-24T01:30:41Z"
 }

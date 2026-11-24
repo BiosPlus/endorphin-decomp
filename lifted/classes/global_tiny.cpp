@@ -5461,8 +5461,9 @@ namespace lift_005FF1C0 {
 // @summary Returns 1 if the sensor's stored value at +0x28 equals the single stack argument, else 0 (thiscall, ret 4).
 // @field MetaBodySensor +0x28 int32_t field_0x28
 
-extern int __thiscall MetaBodySensor_vfunc_25(void* self, int value) {
-    int stored = *reinterpret_cast<int*>(reinterpret_cast<uint8_t*>(self) + 0x28);
+int MetaBodySensor_vfunc_25(const void* self, int value) {
+    const auto* base = static_cast<const unsigned char*>(self);
+    int stored = *reinterpret_cast<const int*>(base + 0x28);
     return (stored == value) ? 1 : 0;
 }
 } // namespace lift_005FF1C0
