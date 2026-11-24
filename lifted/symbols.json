@@ -38935,6 +38935,12 @@
     "summary": "Empty function (returns immediately).",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x0085F740": {
+    "name": "GetByte01",
+    "signature": "uint8_t fn_0085F740(void* self)",
+    "summary": "Returns the byte at offset +0x01 of the object pointed to by self.",
+    "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
   "0x0085FA64": {
     "name": "sub_0085FA64",
     "signature": "void fn_0085FA64(void)",

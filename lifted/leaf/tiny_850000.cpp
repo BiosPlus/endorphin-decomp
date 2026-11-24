@@ -155,3 +155,13 @@ void setFlagBit1Offset14(void* self) {
     *reinterpret_cast<uint32_t*>(base + 0x14) |= 0x2u;
 }
 } // namespace lift_0085C260
+
+// [0x0085F740] sub_0085F740 (16 bytes)
+namespace lift_0085F740 {
+// @name GetByte01
+// @summary Returns the byte at offset +0x01 of the object pointed to by self.
+// @field UnknownStruct +0x01 uint8_t field_0x01
+uint8_t fn_0085F740(void* self) {
+    return lift_field<uint8_t>(self, 0x01);
+}
+} // namespace lift_0085F740
