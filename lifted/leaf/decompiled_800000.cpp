@@ -80,3 +80,20 @@ uint32_t __cdecl fn_0080C690(uint32_t hMem) {
 }
 } // namespace lift_0085BFE0
 } // namespace lift_0080C690
+
+// [0x0080FC50]
+namespace lift_0080FC50 {
+extern uint32_t __cdecl ext_008596E0(uint32_t size);
+
+// @name allocZero12
+// @summary Allocates a 12-byte object and zeroes its three 32-bit fields if allocation succeeds.
+uint32_t __cdecl fn_0080FC50(void) {
+    uint32_t ptr = ext_008596E0(0xC);
+    if (ptr != 0) {
+        *(uint32_t*)(uintptr_t)(ptr + 0x0) = 0;
+        *(uint32_t*)(uintptr_t)(ptr + 0x4) = 0;
+        *(uint32_t*)(uintptr_t)(ptr + 0x8) = 0;
+    }
+    return ptr;
+}
+} // namespace lift_0080FC50
