@@ -17775,6 +17775,13 @@
     "summary": "If the object at self+0x234 is non-null, tail-dispatch to its vtable slot 6 with that object as `this`; otherwise return.",
     "lifted_path": "lifted/leaf/tiny_5E0000.cpp"
   },
+  "0x005E12F0": {
+    "name": "Unknown::forwardToChildSlot7",
+    "class": "Unknown",
+    "signature": "void fn_005E12F0(void* self)",
+    "summary": "If the child pointer at +0x234 is non-null, tail-calls its vtable slot at byte offset 0x1C with the child as this; otherwise returns.",
+    "lifted_path": "lifted/leaf/tiny_5E0000.cpp"
+  },
   "0x005E1350": {
     "name": "sub_005E1350",
     "class": "PoseTool",

@@ -84,3 +84,23 @@ void fn_005E0AB0(void* self) {
     reinterpret_cast<VFn0>(vtbl[0])(thisArg, 1);
 }
 } // namespace lift_005E0AB0
+
+// [0x005E12F0] sub_005E12F0 (18 bytes)
+namespace lift_005E12F0 {
+// @name Unknown::forwardToChildSlot7
+// @class Unknown
+// @summary If the child pointer at +0x234 is non-null, tail-calls its vtable slot at byte offset 0x1C with the child as this; otherwise returns.
+// @field Unknown +0x234 void* child
+void fn_005E12F0(void* self) {
+    unsigned char* base = static_cast<unsigned char*>(self);
+    void* child = *reinterpret_cast<void**>(base + 0x234);
+    if (child == nullptr) {
+        return;
+    }
+    // Vtable slot at byte offset 0x1C (32-bit layout: slot index 7).
+    unsigned char* vtable = *reinterpret_cast<unsigned char**>(child);
+    using SlotFn = void (*)(void*);
+    SlotFn target = *reinterpret_cast<SlotFn*>(vtable + 0x1C);
+    target(child);
+}
+} // namespace lift_005E12F0

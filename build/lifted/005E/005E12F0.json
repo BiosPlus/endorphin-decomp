@@ -1,0 +1,22 @@
+{
+  "va": "0x005E12F0",
+  "size": 18,
+  "orig_symbol": "sub_005E12F0",
+  "src_path": "src/leaf/tiny_5E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5E0000.cpp",
+  "name": "Unknown::forwardToChildSlot7",
+  "class": "Unknown",
+  "signature": "void fn_005E12F0(void* self)",
+  "summary": "If the child pointer at +0x234 is non-null, tail-calls its vtable slot at byte offset 0x1C with the child as this; otherwise returns.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x234",
+      "type": "void*",
+      "name": "child"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:58:42Z"
+}
