@@ -1,0 +1,27 @@
+{
+  "va": "0x006DE660",
+  "size": 39,
+  "orig_symbol": "sub_006DE660",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "getItemAt",
+  "signature": "uint32_t __thiscall fn_006DE660(uint32_t self, int32_t index)",
+  "summary": "Returns the 32-bit element at the given index if within [0, count), or 0 otherwise.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "uint32_t*",
+      "name": "items"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:55:31Z"
+}
