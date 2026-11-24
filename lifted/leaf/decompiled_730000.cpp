@@ -3,8 +3,8 @@
 
 // [0x00736FE0] sub_00736FE0 (32 bytes)
 namespace lift_00736FE0 {
-// @name descriptiveName: sub_00736FE0 (unidentified; bytes look like data/padding)
-// @summary Region is not recognizable as code: 00 05 05 05... followed by 0x90 (NOP) padding. No accessed fields; body is a no-op.
+// @name sub_00736FE0
+// @summary Unidentified; bytes are data/padding (00 05 05... then 0x90 NOPs), not real code. No-op.
 void fn_00736FE0() {
 }
 } // namespace lift_00736FE0

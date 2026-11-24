@@ -42325,9 +42325,9 @@
     "lifted_path": "lifted/leaf/tiny_730000.cpp"
   },
   "0x00736FE0": {
-    "name": "descriptiveName: sub_00736FE0 (unidentified; bytes look like data/padding)",
+    "name": "sub_00736FE0",
     "signature": "void fn_00736FE0()",
-    "summary": "Region is not recognizable as code: 00 05 05 05... followed by 0x90 (NOP) padding. No accessed fields; body is a no-op.",
+    "summary": "Unidentified; bytes are data/padding (00 05 05... then 0x90 NOPs), not real code. No-op.",
     "lifted_path": "lifted/leaf/decompiled_730000.cpp"
   },
   "0x00743AB0": {
