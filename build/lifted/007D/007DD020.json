@@ -1,0 +1,34 @@
+{
+  "va": "0x007DD020",
+  "size": 24,
+  "orig_symbol": "sub_007DD020",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "CxSmallSort::destructorBody",
+  "class": "CxSmallSort",
+  "signature": "void fn_007DD020(void* self)",
+  "summary": "Resets the vtable to CxSmallSort and, if the field at +0x20 is set, calls slot 3 of the object at +0x28 with it as argument.",
+  "fields": [
+    {
+      "class": "CxSmallSort",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable_ptr"
+    },
+    {
+      "class": "CxSmallSort",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "CxSmallSort",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:39:33Z"
+}

@@ -466,3 +466,34 @@ void* GetIndexedEntryChecked(void* self, int32_t index) {
     return nullptr;
 }
 } // namespace lift_007DB760
+
+// [0x007DD020] sub_007DD020 (24 bytes)
+namespace lift_007DD020 {
+// @name CxSmallSort::destructorBody
+// @class CxSmallSort
+// @summary Resets the vtable to CxSmallSort and, if the field at +0x20 is set, calls slot 3 of the object at +0x28 with it as argument.
+// @field CxSmallSort +0x00 uint32_t vtable_ptr
+// @field CxSmallSort +0x20 uint32_t field_0x20
+// @field CxSmallSort +0x28 uint32_t field_0x28
+void fn_007DD020(void* self) {
+    constexpr uint32_t kCxSmallSortVtable = 0x0099EBF0u;
+
+    // Stores the vtable pointer for CxSmallSort at the start of the object.
+    lift_field<uint32_t>(self, 0x00) = kCxSmallSortVtable;
+
+    const uint32_t arg = lift_field<uint32_t>(self, 0x20);
+    if (arg == 0) {
+        return;
+    }
+
+    // Load the sub-object at +0x28 and call its slot at vtable offset 0x0C,
+    // passing the +0x20 value as the single argument.
+    void* sub = reinterpret_cast<void*>(
+        static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x28)));
+    const uint32_t vtable = lift_field<uint32_t>(sub, 0x00);
+    const uint32_t slot = lift_field<uint32_t>(
+        reinterpret_cast<void*>(static_cast<uintptr_t>(vtable)), 0x0C);
+    using SlotFn = void(__fastcall*)(void* self, int edx_unused, uint32_t arg);
+    reinterpret_cast<SlotFn>(static_cast<uintptr_t>(slot))(sub, 0, arg);
+}
+} // namespace lift_007DD020

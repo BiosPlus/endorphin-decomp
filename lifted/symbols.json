@@ -41017,6 +41017,13 @@
     "summary": "Sets the first dword of the target to -1 and the second dword to 0.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007DD020": {
+    "name": "CxSmallSort::destructorBody",
+    "class": "CxSmallSort",
+    "signature": "void fn_007DD020(void* self)",
+    "summary": "Resets the vtable to CxSmallSort and, if the field at +0x20 is set, calls slot 3 of the object at +0x28 with it as argument.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007DE020": {
     "name": "CxSmallSort::vfunc_0",
     "class": "CxSmallSort",
