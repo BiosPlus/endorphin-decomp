@@ -17879,6 +17879,13 @@
     "summary": "Returns s2 * pi * m^2 where m = (s1 + s0) / 2 (rounded to float) and s_k = ext_005B11E0(k); the float argument is overwritten before being read, so it is unused.",
     "lifted_path": "lifted/Geometry/FrustumType.cpp"
   },
+  "0x005B1B60": {
+    "name": "Unknown::copyVec4AndSetFlag04",
+    "class": "Unknown",
+    "signature": "void fn_005B1B60(void* self, const void* src)",
+    "summary": "Copies four floats from the source pointer into self+0x10..0x1c and sets the byte flag at self+0x04 to 1.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B2130": {
     "name": "Unknown::ForwardArgToSubobjectVfunc5",
     "class": "Unknown",

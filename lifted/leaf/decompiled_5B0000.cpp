@@ -193,3 +193,23 @@ void fn_005B6B90(void* self) {
     }
 }
 } // namespace lift_005B6B90
+
+// [0x005B1B60] sub_005B1B60 (34 bytes)
+namespace lift_005B1B60 {
+// @name Unknown::copyVec4AndSetFlag04
+// @class Unknown
+// @summary Copies four floats from the source pointer into self+0x10..0x1c and sets the byte flag at self+0x04 to 1.
+// @field Unknown +0x04 uint8_t field_0x04
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x18 float field_0x18
+// @field Unknown +0x1c float field_0x1c
+void fn_005B1B60(void* self, const void* src) {
+    const float* in = reinterpret_cast<const float*>(src);
+    lift_field<float>(self, 0x10) = in[0];
+    lift_field<float>(self, 0x14) = in[1];
+    lift_field<float>(self, 0x18) = in[2];
+    lift_field<float>(self, 0x1c) = in[3];
+    lift_field<uint8_t>(self, 0x04) = 1;
+}
+} // namespace lift_005B1B60
