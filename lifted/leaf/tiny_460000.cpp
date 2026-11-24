@@ -606,3 +606,25 @@ void __thiscall fn_0046F8F0(Unknown* self, uint8_t value) {
 }
 } // namespace lift_005304A0
 } // namespace lift_0046F8F0
+
+// [0x00468580]
+namespace lift_00468580 {
+// @name Unknown::invokeChildVfunc0
+// @class Unknown
+// @summary Thiscall with no stack args. If *(this+0x00) is non-null, loads the pointer at (that+0x10), then calls vtable slot 0 of that object with this = (that+0x10) and one int argument of 1.
+// @field Unknown +0x00 void* field_0x00
+
+typedef void (*lift_vfunc_1_t)(void* self, int arg);
+
+void Unknown_invokeChildVfunc0(void* self) {
+    void* eax = lift_field<void*>(self, 0x00);
+    if (eax == nullptr) {
+        return;
+    }
+    void* ecx = reinterpret_cast<uint8_t*>(eax) + 0x10;
+    void* obj = *reinterpret_cast<void**>(ecx);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    lift_vfunc_1_t fn = reinterpret_cast<lift_vfunc_1_t>(vtbl[0]);
+    fn(ecx, 1);
+}
+} // namespace lift_00468580

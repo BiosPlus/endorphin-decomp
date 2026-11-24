@@ -3774,6 +3774,13 @@
     "summary": "Stores a byte argument into global mem_00B58DFC.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00468580": {
+    "name": "Unknown::invokeChildVfunc0",
+    "class": "Unknown",
+    "signature": "void Unknown_invokeChildVfunc0(void* self)",
+    "summary": "Thiscall with no stack args. If *(this+0x00) is non-null, loads the pointer at (that+0x10), then calls vtable slot 0 of that object with this = (that+0x10) and one int argument of 1.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00468660": {
     "name": "getNestedField_0x18_0xc",
     "signature": "uint32_t __thiscall sub_00468660(uint32_t this_ptr)",
