@@ -1,0 +1,27 @@
+{
+  "va": "0x007DCAA0",
+  "size": 30,
+  "orig_symbol": "sub_007DCAA0",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "sub_007DCAA0",
+  "signature": "void __cdecl sub_007DCAA0(void* a1, void* a2)",
+  "summary": "Reads the DWORD at arg1[0], invokes arg2's callback at +0x0C with it, then invokes the callback again with arg1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uintptr_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "ProcPtr",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:20:55Z"
+}

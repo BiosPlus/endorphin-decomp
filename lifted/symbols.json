@@ -43125,6 +43125,12 @@
     "summary": "Returns pointer to entry `index` (64-byte stride) of the object's entry array, or nullptr if index \u003e= count.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007DCAA0": {
+    "name": "sub_007DCAA0",
+    "signature": "void __cdecl sub_007DCAA0(void* a1, void* a2)",
+    "summary": "Reads the DWORD at arg1[0], invokes arg2's callback at +0x0C with it, then invokes the callback again with arg1.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007DCFF0": {
     "name": "sub_007DCFF0",
     "class": "\u003cunknown\u003e",

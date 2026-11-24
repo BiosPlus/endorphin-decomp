@@ -627,3 +627,23 @@ void fn_007D4780(void* self, DWORD value) {
     }
 }
 } // namespace lift_007D4780
+
+// [0x007DCAA0]
+namespace lift_007DCAA0 {
+// @name sub_007DCAA0
+// @summary Reads the DWORD at arg1[0], invokes arg2's callback at +0x0C with it, then invokes the callback again with arg1.
+// @field Unknown +0x00 uintptr_t field_0x00
+// @field Unknown +0x0C ProcPtr field_0x0C
+
+// Callback stored at arg2+0x0C: takes one pointer-sized argument, cdecl (caller cleans up).
+using ProcPtr = void(__cdecl*)(uintptr_t);
+
+void __cdecl sub_007DCAA0(void* a1, void* a2) {
+    ProcPtr fn = lift_field<ProcPtr>(a2, 0x0C);
+    uintptr_t first = lift_field<uintptr_t>(a1, 0x00);
+    fn(first);
+
+    fn = lift_field<ProcPtr>(a2, 0x0C);
+    fn(reinterpret_cast<uintptr_t>(a1));
+}
+} // namespace lift_007DCAA0
