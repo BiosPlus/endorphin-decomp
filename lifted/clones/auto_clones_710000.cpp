@@ -784,3 +784,21 @@ void fn_0071E0C0() {
     mem_00B5FE70 = -huge;
 }
 } // namespace lift_0071E0C0
+
+// [0x007182F0]
+namespace lift_007182F0 {
+// @name InitNegatedHugeGlobals
+// @summary Stores the negation of the double pointed to by _HUGE into three global doubles.
+
+extern uint32_t mem_00925284;   // .rdata u32: VA of the _HUGE double (0x0062D360)
+extern double mem_00B5FCC8;     // global double, written with -(*_HUGE)
+extern double mem_00B5FCD0;     // global double, written with -(*_HUGE)
+extern double mem_00B5FCD8;     // global double, written with -(*_HUGE)
+
+void sub_007182F0() {
+    const double* eax = reinterpret_cast<const double*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5FCC8 = -*eax;
+    mem_00B5FCD0 = -*eax;
+    mem_00B5FCD8 = -*eax;
+}
+} // namespace lift_007182F0

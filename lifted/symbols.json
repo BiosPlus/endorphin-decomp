@@ -41781,6 +41781,12 @@
     "summary": "Getter returning uint8_t field at offset +0x1DD.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x007182F0": {
+    "name": "InitNegatedHugeGlobals",
+    "signature": "extern uint32_t mem_00925284;   // .rdata u32: VA of the _HUGE double (0x0062D360) extern double mem_00B5FCC8;     // global double, written with -(*_HUGE) extern double mem_00B5FCD0;     // global double, written with -(*_HUGE) extern double mem_00B5FCD8;     // global double, written with -(*_HUGE) void sub_007182F0()",
+    "summary": "Stores the negation of the double pointed to by _HUGE into three global doubles.",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00719A90": {
     "name": "sub_00719A90",
     "signature": "extern \"C\" int32_t __cdecl fn_00719A90(void)",
