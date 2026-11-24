@@ -12303,6 +12303,13 @@
     "summary": "Thiscall tail-forwarder: takes the object at this-\u003efield_0x154, reads the pointer at its +0x10, and tail-jumps to the code address stored at that pointer's +0x4 with this = (object + 0x10).",
     "lifted_path": "lifted/StateMachine/State.cpp"
   },
+  "0x0051DE50": {
+    "name": "Unknown::GetElementCount12",
+    "class": "Unknown",
+    "signature": "int32_t Unknown_GetElementCount12(const Unknown* self)",
+    "summary": "Returns (end - begin) / 12 for the 12-byte element range at +0x4/+0x8, or 0 if begin is null.",
+    "lifted_path": "lifted/leaf/tiny_510000.cpp"
+  },
   "0x0051E730": {
     "name": "sub_0051E730",
     "signature": "extern \"C\" void fn_0051E730(void)",

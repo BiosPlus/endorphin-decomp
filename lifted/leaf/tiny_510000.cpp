@@ -112,3 +112,26 @@ void fn_005184B0(void* out, uint32_t a, uint32_t b) {
     lift_field<uint32_t>(out, 0x4) = b;
 }
 } // namespace lift_005184B0
+
+// [0x0051DE50]
+namespace lift_0051DE50 {
+// @name Unknown::GetElementCount12
+// @class Unknown
+// @summary Returns (end - begin) / 12 for the 12-byte element range at +0x4/+0x8, or 0 if begin is null.
+// @field Unknown +0x04 uint32_t field_0x04 (begin)
+// @field Unknown +0x08 uint32_t field_0x08 (end)
+
+struct Unknown {
+    uint8_t pad_0000[0x4];
+    uint32_t field_0x04;
+    uint32_t field_0x08;
+};
+
+int32_t Unknown_GetElementCount12(const Unknown* self) {
+    if (self->field_0x04 == 0) {
+        return 0;
+    }
+    int32_t diff = static_cast<int32_t>(self->field_0x08 - self->field_0x04);
+    return diff / 12;
+}
+} // namespace lift_0051DE50

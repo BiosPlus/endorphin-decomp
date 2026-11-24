@@ -50,6 +50,7 @@ struct Unknown_Fields {
     // +0x0   void*                    vtbl  (evidence: 0x006FC1E0, 0x007D4B10, 0x007D8470) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtbl  (evidence: 0x00648EA0, 0x006BB7C0) // CONFLICT: multiple definitions at +0x0
     // +0x1   uint8_t                  field_0x01  (evidence: 0x0046E450, 0x0046EA50, 0x004A25E0, 0x004B1D40, 0x004B7BC0, 0x00633240, 0x00678960)
+    // +0x4   uint32_t field_0x04      (begin)  (evidence: 0x0051DE50) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (arg2: sub-object pointer read at +0x4)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (inner object of the context argument)  (evidence: 0x005853E0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (sub-object pointer read from the NM::Vector3 const & argument)  (evidence: 0x005B80A0) // CONFLICT: multiple definitions at +0x4
@@ -83,6 +84,7 @@ struct Unknown_Fields {
     // +0x5   uint8_t                  field_0x05  (evidence: 0x004EB9B0) // CONFLICT: multiple definitions at +0x5
     // +0x6   BYTE                     field_0x06  (evidence: 0x004E9BB0)
     // +0x7   BYTE                     field_0x07  (evidence: 0x004E9BB0)
+    // +0x8   uint32_t field_0x08      (end)  (evidence: 0x0051DE50) // CONFLICT: multiple definitions at +0x8
     // +0x8   void* field_0x08 (child pointer table base; element i at +0x08 + 60*i)  (evidence: 0x00540D00) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    child  (evidence: 0x0041C710, 0x00441020, 0x0044B660, 0x0044B680, 0x0044B760, 0x00682DE0, 0x00687230) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 count  (evidence: 0x007D8470, 0x007D9610) // CONFLICT: multiple definitions at +0x8

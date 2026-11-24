@@ -1,0 +1,28 @@
+{
+  "va": "0x0051DE50",
+  "size": 31,
+  "orig_symbol": "sub_0051DE50",
+  "src_path": "src/leaf/tiny_510000.cpp",
+  "lifted_path": "lifted/leaf/tiny_510000.cpp",
+  "name": "Unknown::GetElementCount12",
+  "class": "Unknown",
+  "signature": "int32_t Unknown_GetElementCount12(const Unknown* self)",
+  "summary": "Returns (end - begin) / 12 for the 12-byte element range at +0x4/+0x8, or 0 if begin is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04",
+      "name": "(begin)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t field_0x08",
+      "name": "(end)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:24:23Z"
+}
