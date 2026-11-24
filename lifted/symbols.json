@@ -55543,6 +55543,12 @@
     "summary": "Loads the dword pointed to by arg1, then calls the function pointer stored at arg2+0x0C with that dword as its single argument and returns the result.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007EC6E0": {
+    "name": "reciprocalOrZero_007EC6E0",
+    "signature": "float fn_007EC6E0(float x)",
+    "summary": "Returns 1/x for x with |x| \u003e FLT_MIN (0x00800000), otherwise 0.0f (also for NaN).",
+    "lifted_path": "lifted/leaf/decompiled_7E0000.cpp"
+  },
   "0x007EFED0": {
     "name": "clearFlag_00AB2BD0",
     "signature": "void sub_007EFED0()",
