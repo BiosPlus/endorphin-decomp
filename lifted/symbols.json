@@ -7228,6 +7228,13 @@
     "summary": "Writes {self, self-\u003e+0x04} into the hidden out slot, asserting begin \u003c= end first; returns out.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00489440": {
+    "name": "ExprParser::WriteMethodType_DesiredPoseEventData::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "void fn_00489440(void* self)",
+    "summary": "Lazily constructs a function-local static object once, then publishes its address at +0x04 of the caller-supplied output object.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x004894C0": {
     "name": "WriteMethodType_DesiredPoseEventData_loadPoseImport::vfunc_40",
     "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseImport(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",

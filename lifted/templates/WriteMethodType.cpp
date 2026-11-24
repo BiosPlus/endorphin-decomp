@@ -6632,3 +6632,27 @@ void fn_00489600(void* self) {
     *reinterpret_cast<uintptr_t*>(reinterpret_cast<char*>(self) + 0x04) = addr;
 }
 } // namespace lift_00489600
+
+// [0x00489440] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_00489440 {
+extern void ext_0067A670();
+extern int mem_00AD9E48;
+extern int mem_00AD9E44;
+
+// @name ExprParser::WriteMethodType_DesiredPoseEventData::vfunc_40
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Lazily constructs a function-local static object once, then publishes its address at +0x04 of the caller-supplied output object.
+// @field ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}> +0x04 uint32_t field_0x04
+void fn_00489440(void* self) {
+    // Guard byte: bit 0 means the static has already been constructed.
+    if ((mem_00AD9E48 & 1) == 0) {
+        mem_00AD9E48 |= 1;
+        ext_0067A670();                      // constructor call on the static object
+        mem_00AD9E44 = 0x0093D4FC;           // vtable pointer of the static object
+    }
+    // Publish the static object's address at +0x04 of the output object.
+    const uint32_t addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AD9E44));
+    auto* out = static_cast<unsigned char*>(self);
+    std::memcpy(out + 0x04, &addr, sizeof(addr));
+}
+} // namespace lift_00489440
