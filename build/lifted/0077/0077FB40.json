@@ -1,0 +1,40 @@
+{
+  "va": "0x0077FB40",
+  "size": 48,
+  "orig_symbol": "sub_0077FB40",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "Unknown::setDoubleQuadToOnes",
+  "class": "Unknown",
+  "signature": "void* fn_0077FB40(void* self)",
+  "summary": "Writes four IEEE-754 doubles of 1.0 (0x3FF0000000000000) at +0x00, +0x08, +0x10, +0x18 and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "double",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "double",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "double",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "double",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:24:36Z"
+}

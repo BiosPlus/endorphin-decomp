@@ -46935,6 +46935,13 @@
     "summary": "Returns the double stored at element index (stride 8) of the object's table, thiscall, callee pops 4 bytes.",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
   },
+  "0x0077FB40": {
+    "name": "Unknown::setDoubleQuadToOnes",
+    "class": "Unknown",
+    "signature": "void* fn_0077FB40(void* self)",
+    "summary": "Writes four IEEE-754 doubles of 1.0 (0x3FF0000000000000) at +0x00, +0x08, +0x10, +0x18 and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
   "0x0077FE40": {
     "name": "sub_0077FE40",
     "signature": "extern \"C\" int32_t __cdecl fn_0077FE40(void)",

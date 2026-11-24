@@ -87,3 +87,21 @@ uint32_t sub_0077F5A0(uint32_t arg0) {
     }
 }
 } // namespace lift_0077F5A0
+
+// [0x0077FB40] sub_0077FB40 (48 bytes)
+namespace lift_0077FB40 {
+// @name Unknown::setDoubleQuadToOnes
+// @class Unknown
+// @summary Writes four IEEE-754 doubles of 1.0 (0x3FF0000000000000) at +0x00, +0x08, +0x10, +0x18 and returns self.
+// @field Unknown +0x00 double field_0x00
+// @field Unknown +0x08 double field_0x08
+// @field Unknown +0x10 double field_0x10
+// @field Unknown +0x18 double field_0x18
+void* fn_0077FB40(void* self) {
+    lift_field<double>(self, 0x00) = 1.0;
+    lift_field<double>(self, 0x08) = 1.0;
+    lift_field<double>(self, 0x10) = 1.0;
+    lift_field<double>(self, 0x18) = 1.0;
+    return self;
+}
+} // namespace lift_0077FB40
