@@ -7349,3 +7349,24 @@ void fn_00607AD0(void* out) {
     *slot = 0x00B477CCu;
 }
 } // namespace lift_00607AD0
+
+// [0x006078D0] ExprParser::WriteMethodType<EffectorBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall EffectorBase::`vcall'{64, {flat}}>::vfunc_40 (122 bytes)
+namespace lift_006078D0 {
+// Callee 0x0067A670: sub_0067A670 (26B), thiscall with one stack argument; initializes the static object at mem_00B477AC.
+extern void ext_0067A670(void* self, uint32_t arg);
+extern int mem_00B477B0;
+extern int mem_00B477AC;
+
+// @name WriteMethodType<EffectorBase, std::string const&>::vfunc_40
+// @class ExprParser::WriteMethodType<EffectorBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall EffectorBase::`vcall'{64, {flat}}>
+// @summary Lazily initializes a static object at mem_00B477AC once (guard bit 0 of mem_00B477B0), then stores its address into the argument's +0x04 slot.
+// @field Unknown +0x04 void* field_0x04
+void fn_006078D0(void* self) {
+    if ((mem_00B477B0 & 1) == 0) {
+        mem_00B477B0 |= 1;
+        ext_0067A670(reinterpret_cast<void*>(&mem_00B477AC), 0);
+        mem_00B477AC = 0x0097078C;
+    }
+    lift_field<uint32_t>(self, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B477AC));
+}
+} // namespace lift_006078D0

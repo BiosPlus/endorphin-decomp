@@ -26811,6 +26811,13 @@
     "summary": "Lazily initializes a static type descriptor at 0x00B477A4 and stores its address at arg0 + 0x4.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x006078D0": {
+    "name": "WriteMethodType\u003cEffectorBase, std::string const\u0026\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{64, {flat}}\u003e",
+    "signature": "void fn_006078D0(void* self)",
+    "summary": "Lazily initializes a static object at mem_00B477AC once (guard bit 0 of mem_00B477B0), then stores its address into the argument's +0x04 slot.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00607950": {
     "name": "ExprParser::WriteMethodType\u003cEffectorBase, std::string const \u0026, EffectorBase::vcall{60}\u003e::vfunc_40",
     "class": "ExprParser::WriteMethodType\u003cEffectorBase, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{60, {flat}}\u003e",
