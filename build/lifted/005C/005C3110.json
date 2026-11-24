@@ -1,0 +1,27 @@
+{
+  "va": "0x005C3110",
+  "size": 19,
+  "orig_symbol": "sub_005C3110",
+  "src_path": "src/leaf/tiny_5C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5C0000.cpp",
+  "name": "Forwarder_Field04_VSlot5",
+  "signature": "int fn_005C3110(void* self)",
+  "summary": "Forwards to virtual slot 5 (+0x14) of the object stored at +0x04, passing this+4 as this and the global mem_00B40640 as the single stack argument; returns the callee's result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "VTable",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "slot5"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:03:51Z"
+}

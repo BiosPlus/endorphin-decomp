@@ -331,3 +331,26 @@ extern void fn_005C30D0(void* self, DWORD stackArg0, DWORD stackArg1) {
 }
 } // namespace lift_005B7260
 } // namespace lift_005C30D0
+
+// [0x005C3110] sub_005C3110 (19 bytes)
+namespace lift_005C3110 {
+extern int mem_00B40640;
+
+// @name Forwarder_Field04_VSlot5
+// @summary Forwards to virtual slot 5 (+0x14) of the object stored at +0x04, passing this+4 as this and the global mem_00B40640 as the single stack argument; returns the callee's result.
+// @field Unknown +0x04 void* field_0x04
+// @field VTable +0x14 void* slot5
+int fn_005C3110(void* self) {
+    // mov eax, [ecx+4]          ; obj = self->field_0x04
+    void* obj = lift_field<void*>(self, 0x04);
+    // mov edx, [0xB40640]       ; edx = mem_00B40640 (pushed as argument)
+    // mov eax, [eax+0x14]       ; eax = obj->vtable[5]
+    void** vtable = lift_field<void**>(obj, 0x00);
+    // add ecx, 4                ; this = self + 4
+    void* thisPtr = static_cast<char*>(self) + 0x04;
+    // push edx / call eax       ; thiscall with one stack arg, callee cleans
+    using VSlot5Fn = int(__thiscall*)(void* self, int arg);
+    VSlot5Fn target = reinterpret_cast<VSlot5Fn>(vtable[5]);
+    return target(thisPtr, mem_00B40640);
+}
+} // namespace lift_005C3110
