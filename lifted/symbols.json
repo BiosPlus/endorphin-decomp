@@ -50661,6 +50661,13 @@
     "summary": "Five-byte no-op: `add eax, 0` (opcode 05 with imm32 0), which leaves the register value unchanged; no observable effect beyond flags.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x008599F0": {
+    "name": "lookupStringOrLength",
+    "class": "UnknownClass",
+    "signature": "uint32_t fn_008599F0(const void* s)",
+    "summary": "If ext_0086CCE0(s) returns 1, returns the DWORD at s+8; otherwise returns strlen(s).",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00859A20": {
     "name": "strcat_impl",
     "signature": "uint32_t sub_00859A20(uint32_t dst_addr, uint32_t src_addr)",

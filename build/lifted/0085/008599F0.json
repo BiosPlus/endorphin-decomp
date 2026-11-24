@@ -1,0 +1,22 @@
+{
+  "va": "0x008599F0",
+  "size": 48,
+  "orig_symbol": "sub_008599F0",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "lookupStringOrLength",
+  "class": "UnknownClass",
+  "signature": "uint32_t fn_008599F0(const void* s)",
+  "summary": "If ext_0086CCE0(s) returns 1, returns the DWORD at s+8; otherwise returns strlen(s).",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:28:47Z"
+}

@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_850000.cpp
 #include "lift_compat.h"
 #include <cstdio>
+#include <cstring>
 
 // [0x0085E04B] sub_0085E04B (5 bytes)
 // @name sub_0085E04B
@@ -443,3 +444,21 @@ uint32_t fn_00859330(void* self) {
     return lift_field<uint32_t>(obj, 0x00);
 }
 } // namespace lift_00859330
+
+// [0x008599F0] sub_008599F0 (48 bytes)
+namespace lift_008599F0 {
+extern uint8_t ext_0086CCE0(const void* s);
+
+// @name lookupStringOrLength
+// @class UnknownClass
+// @summary If ext_0086CCE0(s) returns 1, returns the DWORD at s+8; otherwise returns strlen(s).
+// @field UnknownClass +0x08 uint32_t field_0x08
+uint32_t fn_008599F0(const void* s) {
+    if (ext_0086CCE0(s) == 1) {
+        uint32_t value;
+        std::memcpy(&value, static_cast<const uint8_t*>(s) + 0x08, sizeof(value));
+        return value;
+    }
+    return static_cast<uint32_t>(std::strlen(static_cast<const char*>(s)));
+}
+} // namespace lift_008599F0
