@@ -41194,3 +41194,33 @@ void* fn_005B2510(void* self, void* /*second stack arg, unused (ret 0x8)*/) {
     return self;
 }
 } // namespace lift_005B2510
+
+// [0x0046D230] ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_0042F6E0(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_0046D230(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_0042F6E0(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230

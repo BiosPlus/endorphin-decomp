@@ -1,0 +1,22 @@
+{
+  "va": "0x0046D230",
+  "size": 114,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ImageExporter::getDestination(void) const, 0}, 0\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_2 (ImageExporter::getDestination)",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter\u003e",
+  "signature": "int32_t fn_0046D230(void* self)",
+  "summary": "Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadMethodType\u003cImageExporter\u003e",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:02:47Z"
+}

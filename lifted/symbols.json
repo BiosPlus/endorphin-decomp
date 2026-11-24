@@ -5974,6 +5974,13 @@
     "summary": "Reads the ImageExporter destination string via its first pointer field and returns it parsed as float; throws if the pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0046D230": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_2 (ImageExporter::getDestination)",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter\u003e",
+    "signature": "int32_t fn_0046D230(void* self)",
+    "summary": "Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046D2B0": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter, std::string const \u0026, ImageExporter::getDestination\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cImageExporter, std::string const \u0026, ImageExporter::getDestination\u003e",
