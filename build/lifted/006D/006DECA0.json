@@ -1,0 +1,27 @@
+{
+  "va": "0x006DECA0",
+  "size": 48,
+  "orig_symbol": "sub_006DECA0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "findNodeByKey",
+  "signature": "void* fn_006DECA0(void* self, int32_t key)",
+  "summary": "Walks the chain linked via +0x40 starting at self, returning the first node whose +0x58 key equals the argument (stops early once keys pass it; returns null if none).",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x40",
+      "type": "void*",
+      "name": "field_0x40"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x58",
+      "type": "int32_t",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:19:51Z"
+}

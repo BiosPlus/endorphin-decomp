@@ -655,3 +655,27 @@ void fn_006DBE30(void* self, void* out, int32_t value) {
     lift_field<int32_t>(out, 4) = static_cast<int32_t>(static_cast<uint32_t>(static_cast<uint64_t>(result) >> 32));
 }
 } // namespace lift_006DBE30
+
+// [0x006DECA0] sub_006DECA0 (48 bytes)
+namespace lift_006DECA0 {
+// @name findNodeByKey
+// @summary Walks the chain linked via +0x40 starting at self, returning the first node whose +0x58 key equals the argument (stops early once keys pass it; returns null if none).
+// @field <unknown> +0x40 void* field_0x40
+// @field <unknown> +0x58 int32_t field_0x58
+void* fn_006DECA0(void* self, int32_t key) {
+    unsigned char* node = static_cast<unsigned char*>(self);
+    for (;;) {
+        int32_t k = *reinterpret_cast<int32_t*>(node + 0x58);
+        if (k == key) {
+            return node;
+        }
+        if (k >= key) {
+            return nullptr;
+        }
+        node = *reinterpret_cast<unsigned char**>(node + 0x40);
+        if (node == nullptr) {
+            return nullptr;
+        }
+    }
+}
+} // namespace lift_006DECA0

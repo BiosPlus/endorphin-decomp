@@ -39765,6 +39765,12 @@
     "summary": "Returns the 32-bit element at the given index if within [0, count), or 0 otherwise.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006DECA0": {
+    "name": "findNodeByKey",
+    "signature": "void* fn_006DECA0(void* self, int32_t key)",
+    "summary": "Walks the chain linked via +0x40 starting at self, returning the first node whose +0x58 key equals the argument (stops early once keys pass it; returns null if none).",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DECD0": {
     "name": "sub_006DECD0",
     "signature": "extern \"C\" int32_t __fastcall fn_006DECD0(void* self)",
