@@ -39,3 +39,28 @@ void* fn_00702F60(void* self, void* arg) {
 }
 } // namespace lift_0071B020
 } // namespace lift_00702F60
+
+// [0x00701100]
+namespace lift_00701100 {
+// @name init_huge_vector_globals
+// @summary Initializes three 64-bit globals from the MSVCR80 _HUGE double pointer.
+
+
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5E7D8;
+extern uint32_t mem_00B5E7DC;
+extern uint32_t mem_00B5E7E0;
+extern uint32_t mem_00B5E7E4;
+extern uint32_t mem_00B5E7E8;
+extern uint32_t mem_00B5E7EC;
+
+void sub_00701100() {
+    uint32_t* huge_ptr = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5E7D8 = huge_ptr[0];
+    mem_00B5E7DC = huge_ptr[1];
+    mem_00B5E7E0 = huge_ptr[0];
+    mem_00B5E7E4 = huge_ptr[1];
+    mem_00B5E7E8 = huge_ptr[0];
+    mem_00B5E7EC = huge_ptr[1];
+}
+} // namespace lift_00701100
