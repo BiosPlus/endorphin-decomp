@@ -1134,3 +1134,32 @@ uint32_t __stdcall sub_00441A60(uint32_t dst, uint32_t src) {
     return dst;
 }
 } // namespace lift_00441A60
+
+// [0x0044B290] sub_0044B290 (47 bytes)
+namespace lift_0044B290 {
+// @name Unknown::forwardInvertedChildQueryToArg
+// @class Unknown
+// @summary If the child at +0x64 is set, query it via vtable slot 0x2E and call vtable slot 1 on arg with (result == 0).
+// @field Unknown +0x64 void* field_0x64
+
+// Vtable slot at byte offset 0xB8 (index 0x2E) on the child's vtable.
+// Vtable slot at byte offset 0x04 (index 0x01) on the argument's vtable.
+void fn_0044B290(void* self, void* other) {
+    void* child = lift_field<void*>(self, 0x64);
+    if (child == nullptr) {
+        return;
+    }
+
+    using ChildQueryFn = uint32_t(__thiscall*)(void* self);
+    void** childVtable = *reinterpret_cast<void***>(child);
+    auto queryFn = reinterpret_cast<ChildQueryFn>(childVtable[0xB8 / sizeof(void*)]);
+    const uint32_t queryResult = queryFn(child);
+
+    const uint32_t flag = (queryResult == 0u) ? 1u : 0u;
+
+    using NotifyFn = void(__thiscall*)(void* self, uint32_t flag);
+    void** otherVtable = *reinterpret_cast<void***>(other);
+    auto notifyFn = reinterpret_cast<NotifyFn>(otherVtable[1]);
+    notifyFn(other, flag);
+}
+} // namespace lift_0044B290

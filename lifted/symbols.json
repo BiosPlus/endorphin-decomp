@@ -3604,6 +3604,13 @@
     "summary": "If field +0x64 is non-null, call its vtable slot 0x24 with arg 0, then tail-jump to its vtable slot 0x154; otherwise do nothing.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044B290": {
+    "name": "Unknown::forwardInvertedChildQueryToArg",
+    "class": "Unknown",
+    "signature": "void fn_0044B290(void* self, void* other)",
+    "summary": "If the child at +0x64 is set, query it via vtable slot 0x2E and call vtable slot 1 on arg with (result == 0).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044B360": {
     "name": "sub_0044B360",
     "signature": "void __thiscall sub_0044B360(void* self)",
