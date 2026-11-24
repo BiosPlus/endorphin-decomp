@@ -266,3 +266,23 @@ extern void* fn_0042FE90() {
 }
 } // namespace lift_0042FB40
 } // namespace lift_0042FE90
+
+// [0x0042FE70] sub_0042FE70 (17 bytes)
+namespace lift_0042FE70 {
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430360 (getGlobalField0x58AndCall00469040).)
+// The callee leaves its result (an object pointer) in eax, so it is declared to return void*.
+extern void* ext_00465B40();
+
+// @name tailCallVirtualSlot60OfGlobalObject
+// @class (none; object type not recovered)
+// @summary Gets an object pointer from ext_00465B40, loads its vtable slot at +0xF0, calls it with the object as this, and returns the slot's result.
+// @field Unknown +0x00 void* vptr
+void* fn_0042FE70() {
+    void* self = ext_00465B40();                       // call 0x00465B40; eax = self
+    void* vptr = lift_field<void*>(self, 0x00);        // mov edx, [eax]
+    void* slot = lift_field<void*>(vptr, 0xF0);        // mov edx, [edx + 0xF0]
+    using SlotFn = void* (*)(void* thisPtr);
+    SlotFn fn = reinterpret_cast<SlotFn>(slot);
+    return fn(self);                                   // mov ecx, eax; jmp edx (tail call)
+}
+} // namespace lift_0042FE70

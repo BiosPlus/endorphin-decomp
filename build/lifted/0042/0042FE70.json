@@ -1,0 +1,22 @@
+{
+  "va": "0x0042FE70",
+  "size": 17,
+  "orig_symbol": "sub_0042FE70",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "tailCallVirtualSlot60OfGlobalObject",
+  "class": "(none; object type not recovered)",
+  "signature": "void* fn_0042FE70()",
+  "summary": "Gets an object pointer from ext_00465B40, loads its vtable slot at +0xF0, calls it with the object as this, and returns the slot's result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:51:03Z"
+}

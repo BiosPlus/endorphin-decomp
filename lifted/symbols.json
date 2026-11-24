@@ -1421,6 +1421,13 @@
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_4927.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0042FE70": {
+    "name": "tailCallVirtualSlot60OfGlobalObject",
+    "class": "(none; object type not recovered)",
+    "signature": "void* fn_0042FE70()",
+    "summary": "Gets an object pointer from ext_00465B40, loads its vtable slot at +0xF0, calls it with the object as this, and returns the slot's result.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x0042FE90": {
     "name": "sub_0042FE90",
     "signature": "extern void* fn_0042FE90()",

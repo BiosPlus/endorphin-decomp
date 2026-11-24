@@ -28,6 +28,7 @@ struct Unknown_Fields {
     // +0x0   double field_0x00[] (indexed by arg, stride 8; element type inferred from fld qword)  (evidence: 0x0077FAE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    subobject  (evidence: 0x006616C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer to a sub-object; dereferenced to reach the target)  (evidence: 0x006BB780) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vptr  (evidence: 0x0042FE70) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vptr  (evidence: 0x004104E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x00493FF0, 0x0063FFE0, 0x0079D730) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* const*             vtable  (evidence: 0x0064F8F0) // CONFLICT: multiple definitions at +0x0
