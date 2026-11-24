@@ -38733,6 +38733,12 @@
     "summary": "Returns the int32 value behind a double pointer (arg0) minus the int32 value behind a pointer (arg1).",
     "lifted_path": "lifted/leaf/tiny_800000.cpp"
   },
+  "0x0080A690": {
+    "name": "exchangeGlobal_00B62020",
+    "signature": "DWORD fn_0080A690(DWORD value)",
+    "summary": "Stores the argument into global mem_00B62020 and returns the previous value.",
+    "lifted_path": "lifted/leaf/tiny_800000.cpp"
+  },
   "0x0080EFC0": {
     "name": "sub_0080EFC0",
     "signature": "extern \"C\" void* __cdecl fn_0080EFC0(void)",

@@ -1,0 +1,13 @@
+{
+  "va": "0x0080A690",
+  "size": 16,
+  "orig_symbol": "sub_0080A690",
+  "src_path": "src/leaf/tiny_800000.cpp",
+  "lifted_path": "lifted/leaf/tiny_800000.cpp",
+  "name": "exchangeGlobal_00B62020",
+  "signature": "DWORD fn_0080A690(DWORD value)",
+  "summary": "Stores the argument into global mem_00B62020 and returns the previous value.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:48:08Z"
+}

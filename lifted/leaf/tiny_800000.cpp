@@ -18,3 +18,16 @@ int32_t fn_00803980(int32_t** a, const int32_t* b) {
     return **a - *b;
 }
 } // namespace lift_00803980
+
+// [0x0080A690] sub_0080A690 (16 bytes)
+namespace lift_0080A690 {
+extern DWORD mem_00B62020;
+
+// @name exchangeGlobal_00B62020
+// @summary Stores the argument into global mem_00B62020 and returns the previous value.
+DWORD fn_0080A690(DWORD value) {
+    DWORD previous = mem_00B62020;
+    mem_00B62020 = value;
+    return previous;
+}
+} // namespace lift_0080A690
