@@ -44475,6 +44475,12 @@
     "summary": "If the global hook pointer mem_00AAFC2C is non-null, call it with (a1, a2, \u0026a3); otherwise do nothing.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079B8F0": {
+    "name": "initGlobalsA_0079B8F0",
+    "signature": "void fn_0079B8F0(void* self)",
+    "summary": "Stores three constant addresses and a zero into four DWORD globals (static init).",
+    "lifted_path": "lifted/clones/auto_clones_790000.cpp"
+  },
   "0x0079BA40": {
     "name": "sub_0079BA40",
     "signature": "extern \"C\" int32_t __cdecl fn_0079BA40(void)",
