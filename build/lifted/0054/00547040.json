@@ -1,0 +1,28 @@
+{
+  "va": "0x00547040",
+  "size": 27,
+  "orig_symbol": "RotateTool::vfunc_14",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "RotateTool::vfunc_14",
+  "class": "RotateTool",
+  "signature": "int32_t fn_00547040(void* self)",
+  "summary": "Returns 1 if either of two signed counters (+0xA8, +0xC8) is non-negative, else 0.",
+  "fields": [
+    {
+      "class": "RotateTool",
+      "offset": "+0xA8",
+      "type": "int32_t",
+      "name": "field_0xA8"
+    },
+    {
+      "class": "RotateTool",
+      "offset": "+0xC8",
+      "type": "int32_t",
+      "name": "field_0xC8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:02:37Z"
+}

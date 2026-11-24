@@ -6487,3 +6487,21 @@ void* GuiBaseElement_vfunc_13(void* self, void* arg) {
     return al != 0 ? self : nullptr;
 }
 } // namespace lift_004EB9E0
+
+// [0x00547040] RotateTool::vfunc_14 (27 bytes)
+namespace lift_00547040 {
+// @name RotateTool::vfunc_14
+// @class RotateTool
+// @summary Returns 1 if either of two signed counters (+0xA8, +0xC8) is non-negative, else 0.
+// @field RotateTool +0xA8 int32_t field_0xA8
+// @field RotateTool +0xC8 int32_t field_0xC8
+int32_t fn_00547040(void* self) {
+    if (lift_field<int32_t>(self, 0xA8) >= 0) {
+        return 1;
+    }
+    if (lift_field<int32_t>(self, 0xC8) >= 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_00547040

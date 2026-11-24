@@ -13809,6 +13809,13 @@
     "summary": "Returns 1 if the int at RotateTool+0xA8 equals 4, otherwise 0.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00547040": {
+    "name": "RotateTool::vfunc_14",
+    "class": "RotateTool",
+    "signature": "int32_t fn_00547040(void* self)",
+    "summary": "Returns 1 if either of two signed counters (+0xA8, +0xC8) is non-negative, else 0.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00547060": {
     "name": "RotateTool::vfunc_1",
     "class": "RotateTool",
