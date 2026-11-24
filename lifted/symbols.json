@@ -14558,6 +14558,13 @@
     "summary": "Tail-dispatches virtual slot 6 on one of two embedded subobjects, chosen by whether field_0x04 \u003c field_0x08.",
     "lifted_path": "lifted/classes/OptimizedMatrixStackManager.cpp"
   },
+  "0x0054EA10": {
+    "name": "OptimizedMatrixStackManager::vfunc_3",
+    "class": "OptimizedMatrixStackManager",
+    "signature": "void fn_0054EA10(void* self)",
+    "summary": "Calls virtual slot 3 on the object held in one of two member slots (chosen by comparing the stack counter to its limit), then decrements the stack counter.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x0054EE60": {
     "name": "NMMatrixStackManager::vfunc_0",
     "class": "NMMatrixStackManager",

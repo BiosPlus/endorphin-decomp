@@ -6627,3 +6627,32 @@ void fn_00482420(void* self, uint8_t value) {
     // ret 4: the single stack argument (`value`) is consumed by the callee epilogue.
 }
 } // namespace lift_00482420
+
+// [0x0054EA10] OptimizedMatrixStackManager::vfunc_3 (30 bytes)
+namespace lift_0054EA10 {
+// @name OptimizedMatrixStackManager::vfunc_3
+// @class OptimizedMatrixStackManager
+// @summary Calls virtual slot 3 on the object held in one of two member slots (chosen by comparing the stack counter to its limit), then decrements the stack counter.
+// @field OptimizedMatrixStackManager +0x04 int32_t field_0x04
+// @field OptimizedMatrixStackManager +0x08 int32_t field_0x08
+// @field OptimizedMatrixStackManager +0x0C void* field_0x0C
+// @field OptimizedMatrixStackManager +0x20 void* field_0x20
+void fn_0054EA10(void* self) {
+    // Select slot: if field_0x04 > field_0x08 use field_0x0C, else field_0x20.
+    const int32_t count = lift_field<int32_t>(self, 0x04);
+    const int32_t limit = lift_field<int32_t>(self, 0x08);
+    void* slot = (count > limit)
+        ? static_cast<void*>(&lift_field<void*>(self, 0x0C))
+        : static_cast<void*>(&lift_field<void*>(self, 0x20));
+
+    // Load the object pointer stored in the slot and invoke its vtable[3].
+    // The callee receives the slot address as `this`, matching the original call site.
+    void* obj = *static_cast<void**>(slot);
+    void** vtbl = *static_cast<void***>(obj);
+    using VFn = void (__thiscall*)(void*);
+    reinterpret_cast<VFn>(vtbl[3])(slot);
+
+    // Decrement the stack counter.
+    lift_field<int32_t>(self, 0x04) -= 1;
+}
+} // namespace lift_0054EA10
