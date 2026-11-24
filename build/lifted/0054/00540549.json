@@ -1,0 +1,13 @@
+{
+  "va": "0x00540549",
+  "size": 41,
+  "orig_symbol": "sub_00540549",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "glSetWireframeNoCull",
+  "signature": "void sub_00540549()",
+  "summary": "Sets OpenGL polygon mode to wireframe, cull face to back, and disables face culling.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:01:11Z"
+}

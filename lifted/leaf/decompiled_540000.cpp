@@ -403,3 +403,19 @@ DWORD* __thiscall fn_0054F370(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_0054F370
+
+// [0x00540549]
+namespace lift_00540549 {
+// @name glSetWireframeNoCull
+// @summary Sets OpenGL polygon mode to wireframe, cull face to back, and disables face culling.
+
+extern void glPolygonMode(uint32_t face, uint32_t mode);
+extern void glCullFace(uint32_t mode);
+extern void glDisable(uint32_t cap);
+
+void sub_00540549() {
+    glPolygonMode(0x408u, 0x1B01u); // GL_FRONT_AND_BACK, GL_LINE
+    glCullFace(0x405u);             // GL_BACK
+    glDisable(0xB44u);              // GL_CULL_FACE
+}
+} // namespace lift_00540549

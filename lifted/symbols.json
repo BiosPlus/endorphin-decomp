@@ -15237,6 +15237,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00540130 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00540549": {
+    "name": "glSetWireframeNoCull",
+    "signature": "void sub_00540549()",
+    "summary": "Sets OpenGL polygon mode to wireframe, cull face to back, and disables face culling.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x005405B0": {
     "name": "sub_005405B0",
     "signature": "extern \"C\" void __fastcall fn_005405B0(void* self)",
