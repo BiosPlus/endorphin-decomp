@@ -1112,3 +1112,28 @@ void* fn_006FCF80(void* self, int32_t count) {
     return self;
 }
 } // namespace lift_006FCF80
+
+// [0x006FC610] sub_006FC610 (54 bytes)
+namespace lift_006FC610 {
+extern int mem_00B608B0;
+
+// @name UnknownClass::MatchOtherWhenKeyAndFieldAgree
+// @class UnknownClass
+// @summary Returns true when `other` is non-null, its vtable slot +0x14 check accepts the global mem_00B608B0, and its +0x40 field equals this object's +0x40 field.
+// @field UnknownClass +0x40 uint32_t field_0x40
+bool __fastcall fn_006FC610(void* self, int edx_unused, void* other) {
+    (void)edx_unused;
+    if (other == nullptr) {
+        return false;
+    }
+    using VirtualCheck = bool(__fastcall*)(void* self_, int edx_, int arg);
+    void* vtable = lift_field<void*>(other, 0);
+    auto check = reinterpret_cast<VirtualCheck>(lift_field<void*>(vtable, 0x14));
+    if (!check(other, 0, mem_00B608B0)) {
+        return false;
+    }
+    uint32_t other_field = lift_field<uint32_t>(other, 0x40);
+    uint32_t self_field = lift_field<uint32_t>(self, 0x40);
+    return other_field == self_field;
+}
+} // namespace lift_006FC610

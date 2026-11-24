@@ -1,0 +1,22 @@
+{
+  "va": "0x006FC610",
+  "size": 54,
+  "orig_symbol": "sub_006FC610",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "UnknownClass::MatchOtherWhenKeyAndFieldAgree",
+  "class": "UnknownClass",
+  "signature": "bool __fastcall fn_006FC610(void* self, int edx_unused, void* other)",
+  "summary": "Returns true when `other` is non-null, its vtable slot +0x14 check accepts the global mem_00B608B0, and its +0x40 field equals this object's +0x40 field.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:12:05Z"
+}
