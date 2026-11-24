@@ -1,0 +1,13 @@
+{
+  "va": "0x004A96E0",
+  "size": 60,
+  "orig_symbol": "sub_004A96E0",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "FindStringTableIndex",
+  "signature": "uint32_t fn_004A96E0(const void* key)",
+  "summary": "Linear-scans a 3-entry, 28-byte-stride std::string table at 0x00ADF300 and returns the matching index (0 if none).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:26:13Z"
+}

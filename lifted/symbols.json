@@ -9971,6 +9971,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005F0D40 (NMData::MagnetJointData::vfunc_59).",
     "lifted_path": "lifted/classes/VersionControlManager.cpp"
   },
+  "0x004A96E0": {
+    "name": "FindStringTableIndex",
+    "signature": "uint32_t fn_004A96E0(const void* key)",
+    "summary": "Linear-scans a 3-entry, 28-byte-stride std::string table at 0x00ADF300 and returns the matching index (0 if none).",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004A97B0": {
     "name": "VersionControlManager::vfunc_0",
     "class": "VersionControlManager",

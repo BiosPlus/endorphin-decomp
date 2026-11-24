@@ -158,3 +158,24 @@ uint32_t __thiscall sub_004A5A50(uint32_t self) {
     return 0;
 }
 } // namespace lift_004A5A50
+
+// [0x004A96E0] sub_004A96E0 (60 bytes)
+namespace lift_004A96E0 {
+// Holds the address of the MSVCP80 std::string equality operator (indirect call target).
+extern int mem_00924FC4;
+
+using StrEqFn = bool(__cdecl*)(const void* lhs, const void* rhs);
+
+// @name FindStringTableIndex
+// @summary Linear-scans a 3-entry, 28-byte-stride std::string table at 0x00ADF300 and returns the matching index (0 if none).
+uint32_t fn_004A96E0(const void* key) {
+    auto eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FC4)));
+    uint32_t index = 0;
+    for (uint32_t addr = 0x00ADF300; addr < 0x00ADF354; addr += 0x1C, ++index) {
+        if (eq(key, reinterpret_cast<const void*>(static_cast<uintptr_t>(addr)))) {
+            return index;
+        }
+    }
+    return 0;
+}
+} // namespace lift_004A96E0
