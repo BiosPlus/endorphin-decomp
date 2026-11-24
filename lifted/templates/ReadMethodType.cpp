@@ -30734,3 +30734,26 @@ void* fn_004B1E00(void* out, void** src) {
     return nullptr;
 }
 } // namespace lift_004B1E00
+
+// [0x006749C0] ExprParser::ReadMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, 0>::vfunc_4 (71 bytes)
+namespace lift_006749C0 {
+// Known callee 0x004276B0: StdStringCopyConstruct (Copy-constructs a std::string at dst from src via the MSVCP80 copy constructor; returns dst.)
+extern void* ext_004276B0(void* dst, const void* src);
+
+// @name ExprParser::ReadMethodType<ExpressionEntry>::vfunc_4 (ExpressionEntry::getExpression)
+// @class ExprParser::ReadMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, 0>
+// @summary Reads the ExpressionEntry pointer stored in *slot; if null, throws; otherwise copy-constructs the std::string at obj+0x1c into slot and returns slot.
+// @field ExpressionEntry +0x1c std::string field_0x1c
+void* fn_006749C0(void** slot, const void* unused) {
+    (void)unused;
+    void* obj = *slot;
+    if (obj == nullptr) {
+        // The original constructs an exception object (sub_0046C3C0) and throws it via
+        // MSVCR80!_CxxThrowException with RTTI 0x009DEC1C. Its exact type and message are not
+        // recovered; a portable std::runtime_error is used in its place.
+        throw std::runtime_error("ExprParser::ReadMethodType<ExpressionEntry>::vfunc_4: null ExpressionEntry");
+    }
+    ext_004276B0(slot, static_cast<const char*>(obj) + 0x1c);
+    return slot;
+}
+} // namespace lift_006749C0

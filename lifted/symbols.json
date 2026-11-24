@@ -31494,6 +31494,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0062E430 (ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, getVertAxis, 1\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006749C0": {
+    "name": "ExprParser::ReadMethodType\u003cExpressionEntry\u003e::vfunc_4 (ExpressionEntry::getExpression)",
+    "class": "ExprParser::ReadMethodType\u003cExpressionEntry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ExpressionEntry::getExpression(void) const, 0\u003e",
+    "signature": "void* fn_006749C0(void** slot, const void* unused)",
+    "summary": "Reads the ExpressionEntry pointer stored in *slot; if null, throws; otherwise copy-constructs the std::string at obj+0x1c into slot and returns slot.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00674C90": {
     "name": "ExprParser::ReadMethodType_ExpressionEntry_getExpression::vfunc_1",
     "class": "ExprParser::ReadMethodType_ExpressionEntry_getExpression",
