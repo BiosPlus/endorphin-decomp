@@ -10666,6 +10666,13 @@
     "summary": "Returns the byte flag at delegate_0x38-\u003efield_0x64-\u003e+0xC4.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005355C0": {
+    "name": "OglRenderer::vfunc_72",
+    "class": "OglRenderer",
+    "signature": "float fn_005355C0(void* self)",
+    "summary": "Returns the float at offset 0xB4 of the object referenced by this-\u003e+0x38 -\u003e +0x64 (chained pointer read).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00535600": {
     "name": "OglRenderer::vfunc_76",
     "class": "OglRenderer",

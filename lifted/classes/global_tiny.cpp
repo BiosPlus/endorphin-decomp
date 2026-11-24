@@ -4980,3 +4980,17 @@ uint8_t fn_005355B0(void* self) {
     return *reinterpret_cast<uint8_t*>(inner + 0xC4);
 }
 } // namespace lift_005355B0
+
+// [0x005355C0] OglRenderer::vfunc_72 (13 bytes)
+namespace lift_005355C0 {
+// @name OglRenderer::vfunc_72
+// @class OglRenderer
+// @summary Returns the float at offset 0xB4 of the object referenced by this->+0x38 -> +0x64 (chained pointer read).
+// @field OglRenderer +0x38 void* delegate_0x38
+float fn_005355C0(void* self) {
+    // Load this->+0x38, then its +0x64 pointer, then return the float at +0xB4 of that object.
+    auto* p38 = *reinterpret_cast<unsigned char**>(static_cast<unsigned char*>(self) + 0x38);
+    auto* p64 = *reinterpret_cast<unsigned char**>(p38 + 0x64);
+    return *reinterpret_cast<float*>(p64 + 0xB4);
+}
+} // namespace lift_005355C0

@@ -1,0 +1,22 @@
+{
+  "va": "0x005355C0",
+  "size": 13,
+  "orig_symbol": "OglRenderer::vfunc_72",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "OglRenderer::vfunc_72",
+  "class": "OglRenderer",
+  "signature": "float fn_005355C0(void* self)",
+  "summary": "Returns the float at offset 0xB4 of the object referenced by this-\u003e+0x38 -\u003e +0x64 (chained pointer read).",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "delegate_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:20:26Z"
+}
