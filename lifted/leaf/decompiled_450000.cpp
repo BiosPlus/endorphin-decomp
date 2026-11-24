@@ -627,3 +627,44 @@ int fn_00456280(void* self, int arg1, int arg2, int arg3) {
     return fn(self, arg1, arg2, arg3);
 }
 } // namespace lift_00456280
+
+// [0x004564A0] sub_004564A0 (57 bytes)
+namespace lift_004564A0 {
+// Known callee 0x006A5E00: thunk_MFC80_ord_2372 (IAT jump thunk forwarding to MFC80!ord_2372.)
+// Stdcall, one HWND argument, returns a non-zero object pointer on success.
+extern uint32_t __stdcall ext_006A5E00(uint32_t hwnd);
+// Known callee 0x006A5E5A: thunk_MFC80_ord_4125 (IAT jump thunk forwarding to MFC80!ord_4125.)
+// Thiscall with five stack arguments.
+extern void __thiscall ext_006A5E5A(uint32_t self, uint32_t p0, uint32_t p1,
+                                        uint32_t p2, uint32_t p3, uint32_t p4);
+// IAT slot for USER32!GetWindow.
+extern uint32_t mem_009256B0;
+
+// @name ForwardToFirstChildWindow
+// @class Object
+// @summary If flag 0x20 is set on self, looks up the first child HWND of self->+0x20 via GetWindow(GW_CHILD) and forwards to the MFC80 wrapper pair, passing the two stack arguments.
+// @field Object +0x20 uint32_t field_0x20
+// @field Object +0x94 uint8_t field_0x94
+void __thiscall fn_004564A0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2) {
+    (void)arg0;
+
+    // Flag test: bit 0x20 of byte +0x94.
+    if ((lift_field<uint8_t>(self, 0x94) & 0x20u) == 0) {
+        return;
+    }
+
+    using GetWindowFn = uint32_t(__stdcall*)(uint32_t hwnd, uint32_t cmd);
+    auto get_window = reinterpret_cast<GetWindowFn>(static_cast<uintptr_t>(mem_009256B0));
+
+    const uint32_t hwnd = lift_field<uint32_t>(self, 0x20);
+    constexpr uint32_t kGwChild = 5; // GetWindow(..., GW_CHILD)
+    const uint32_t child = get_window(hwnd, kGwChild);
+
+    const uint32_t wrapper = ext_006A5E00(child);
+    if (wrapper == 0) {
+        return;
+    }
+
+    ext_006A5E5A(wrapper, 0, 0, arg1, arg2, 1);
+}
+} // namespace lift_004564A0

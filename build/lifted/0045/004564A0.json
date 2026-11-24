@@ -1,0 +1,28 @@
+{
+  "va": "0x004564A0",
+  "size": 57,
+  "orig_symbol": "sub_004564A0",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "ForwardToFirstChildWindow",
+  "class": "Object",
+  "signature": "void __thiscall fn_004564A0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
+  "summary": "If flag 0x20 is set on self, looks up the first child HWND of self-\u003e+0x20 via GetWindow(GW_CHILD) and forwards to the MFC80 wrapper pair, passing the two stack arguments.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x94",
+      "type": "uint8_t",
+      "name": "field_0x94"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:18:26Z"
+}

@@ -4744,6 +4744,13 @@
     "summary": "Conditionally invokes vtable+0x188 on this before calling MFC80!ord_1903",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x004564A0": {
+    "name": "ForwardToFirstChildWindow",
+    "class": "Object",
+    "signature": "void __thiscall fn_004564A0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
+    "summary": "If flag 0x20 is set on self, looks up the first child HWND of self-\u003e+0x20 via GetWindow(GW_CHILD) and forwards to the MFC80 wrapper pair, passing the two stack arguments.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00456CC0": {
     "name": "CSizingControlBar::vfunc_1",
     "class": "CSizingControlBar",
