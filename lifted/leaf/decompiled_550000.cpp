@@ -228,3 +228,19 @@ extern void __stdcall fn_0055E180(void** objRef) {
     slot0(obj, 1u);
 }
 } // namespace lift_0055E180
+
+// [0x00552130]
+namespace lift_00552130 {
+// @name Matrix4::getRow
+// @class Matrix4
+// @summary Copies a 4-float row/element at the given index from this object into out.
+uint32_t __thiscall sub_00552130(uintptr_t this_ptr, uintptr_t out_ptr, uint32_t index) {
+    const float* src = reinterpret_cast<const float*>(this_ptr + (static_cast<uintptr_t>(index) << 4));
+    float* dst = reinterpret_cast<float*>(out_ptr);
+    dst[0] = src[0];
+    dst[1] = src[1];
+    dst[2] = src[2];
+    dst[3] = src[3];
+    return static_cast<uint32_t>(out_ptr);
+}
+} // namespace lift_00552130
