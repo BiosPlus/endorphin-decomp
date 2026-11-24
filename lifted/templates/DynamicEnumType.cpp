@@ -1439,3 +1439,35 @@ void* fn_005161E0(void* out_str, void** value_ref) {
     std::abort();
 }
 } // namespace lift_005161E0
+
+// [0x00494D90] ExprParser::DynamicEnumType<RigManager, ...>::vfunc_4 (73 bytes)
+namespace lift_00494D90 {
+// Known callee 0x006AD970: sub_006AD970 (4B). Returns a 32-bit value used as the flag argument.
+extern uint32_t ext_006AD970();
+// Known callee 0x0046C500: sub_0046C500 (auto-lifted clone of 0x00497860 forwardMakeBoolString).
+extern void* ext_0046C500(void* out_str, uint8_t flag);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B, thiscall on a local 0x28-byte object).
+extern void ext_0046C3C0(void* thisptr);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException).
+extern void ext_006A6DD2(void* obj, uint32_t throwInfo);
+
+// @name ExprParser::DynamicEnumType<RigManager>::vfunc_4
+// @class ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>
+// @summary If the holder's first word is non-zero, call ext_0046C500 with the holder and the flag from ext_006AD970 and return the holder; otherwise build a local object and throw.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_00494D90(void* arg1, void* arg2) {
+    (void)arg1;
+    const uint32_t first = *static_cast<uint32_t*>(arg2);
+    if (first != 0) {
+        const uint32_t flag = ext_006AD970();
+        ext_0046C500(arg2, static_cast<uint8_t>(flag));
+        return arg2;
+    }
+
+    // Error path: build a local object, then throw it with the type info at 0x009DEC1C.
+    alignas(8) uint8_t local[0x28] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, 0x009DEC1Cu);
+    return nullptr; // not reached: the throw does not return
+}
+} // namespace lift_00494D90
