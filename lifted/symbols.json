@@ -7154,6 +7154,12 @@
     "summary": "Copies 64-byte elements from [first, last) to dst (skipping writes if dst is null) and returns the advanced dst pointer.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00480E00": {
+    "name": "copyVec4Range",
+    "signature": "uint32_t sub_00480E00(uint32_t src_begin, uint32_t src_end, uint32_t dst)",
+    "summary": "Copies a range of 16-byte (4-float) elements from [src_begin, src_end) to dst, returning the end destination pointer.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x004816E0": {
     "name": "Commands::BufferTransformsCommand::vfunc_1",
     "class": "Commands::BufferTransformsCommand",
@@ -41780,6 +41786,13 @@
     "signature": "uint32_t __thiscall sub_006A8160(void* self, uint32_t lParam)",
     "summary": "Sends Windows message 0x41A with wParam=0 and lParam=arg0 to the control's window handle.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
+  "0x006A8800": {
+    "name": "AllocIndexAndStoreObject",
+    "class": "Unknown",
+    "signature": "void fn_006A8800(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Takes the next index from the counter at +0x16C, passes the index to the object in arg2, then stores arg2 into the slot returned by the sub-object at +0xB0 for arg1.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
   "0x006A88A0": {
     "name": "sub_006A88A0",

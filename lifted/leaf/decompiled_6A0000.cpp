@@ -253,3 +253,29 @@ uint32_t sub_006A0530(uintptr_t ebp) {
     return 0x006A051F;
 }
 } // namespace lift_006A0530
+
+// [0x006A8800] sub_006A8800 (54 bytes)
+namespace lift_006A8800 {
+// Callee 0x006B0C30: thiscall, ecx = object, one stack argument (callee pops 4).
+extern void ext_006B0C30(void* self, uint32_t arg);
+// Callee 0x00872754: thunk_MFC80_ord_869, thiscall, ecx = object, one stack argument; returns a pointer in eax.
+extern void* ext_00872754(void* self, uint32_t arg);
+
+// @name AllocIndexAndStoreObject
+// @class Unknown
+// @summary Takes the next index from the counter at +0x16C, passes the index to the object in arg2, then stores arg2 into the slot returned by the sub-object at +0xB0 for arg1.
+// @field Unknown +0x16C uint32_t field_0x16c
+// @field Unknown +0xB0 uint8_t field_0xb0 (embedded sub-object; its address is passed, not read)
+void fn_006A8800(void* self, uint32_t arg1, uint32_t arg2) {
+    uint32_t& counter = lift_field<uint32_t>(self, 0x16C);
+    uint32_t index = counter;
+    counter = index + 1;
+
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(arg2));
+    ext_006B0C30(obj, index);
+
+    void* sub = static_cast<uint8_t*>(self) + 0xB0;
+    void* slot = ext_00872754(sub, arg1);
+    lift_field<uint32_t>(slot, 0) = arg2;
+}
+} // namespace lift_006A8800

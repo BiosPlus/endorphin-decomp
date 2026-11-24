@@ -1,0 +1,28 @@
+{
+  "va": "0x006A8800",
+  "size": 54,
+  "orig_symbol": "sub_006A8800",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "AllocIndexAndStoreObject",
+  "class": "Unknown",
+  "signature": "void fn_006A8800(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Takes the next index from the counter at +0x16C, passes the index to the object in arg2, then stores arg2 into the slot returned by the sub-object at +0xB0 for arg1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x16C",
+      "type": "uint32_t",
+      "name": "field_0x16c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB0",
+      "type": "uint8_t field_0xb0 (embedded sub-object; its address is passed, not",
+      "name": "read)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:12:13Z"
+}
