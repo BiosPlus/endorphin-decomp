@@ -338,3 +338,35 @@ uint16_t __cdecl sub_0086BF40(uint32_t self) {
     return state == 1 ? 1 : 0;
 }
 } // namespace lift_0086BF40
+
+// [0x0086B1C0]
+namespace lift_0086B1C0 {
+// @name bitShiftRight160Once
+// @summary Shifts a 160-bit value (five big-endian-ordered u32 words) right by one bit, OR-ing the carried-out LSB into bit 29 of word 0 when set.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+void fn_0086B1C0(void* self) {
+    auto* w = static_cast<uint32_t*>(self);
+
+    // shr [w0], 1 : CF receives the bit shifted out of word 0.
+    uint32_t carry = w[0] & 1u;
+    w[0] >>= 1;
+
+    // rcr chain over words at +0x04, +0x08, +0x0C, +0x10.
+    // Each word shifts right, taking the previous carry into its MSB.
+    for (int i = 1; i <= 4; ++i) {
+        uint32_t v = w[i];
+        uint32_t next_carry = v & 1u;
+        w[i] = (v >> 1) | (carry << 31);
+        carry = next_carry;
+    }
+
+    // jae skips the OR when CF == 0.
+    if (carry) {
+        w[0] |= 0x20000000u;
+    }
+}
+} // namespace lift_0086B1C0

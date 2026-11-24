@@ -57074,6 +57074,12 @@
     "summary": "Returns the length of the `count` DWORD array at `data` after stripping trailing zero DWORDs (0 if all are zero).",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086B1C0": {
+    "name": "bitShiftRight160Once",
+    "signature": "void fn_0086B1C0(void* self)",
+    "summary": "Shifts a 160-bit value (five big-endian-ordered u32 words) right by one bit, OR-ing the carried-out LSB into bit 29 of word 0 when set.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086B200": {
     "name": "ZeroDwordArray5",
     "signature": "void fn_0086B200(void* self)",
