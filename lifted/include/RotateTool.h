@@ -10,7 +10,7 @@
 // Recovered field layout for RotateTool:
 namespace lifted_layout {
 struct RotateTool_Fields {
-    // +0x0   void*                    vtable  (evidence: 0x005471D0, 0x005A9ED0, 0x005FF1C0)
-    // +0xA8  int32_t                  field_0xA8  (evidence: 0x00546860, 0x005A9ED0, 0x005FF1C0, 0x006B4090, 0x006B9950)
+    // +0x0   void*                    vtable  (evidence: 0x00545B80, 0x005471D0, 0x005A9ED0, 0x005FF1C0)
+    // +0xA8  int32_t                  field_0xA8  (evidence: 0x00545B80, 0x00546860, 0x005A9ED0, 0x005FF1C0, 0x006B4090, 0x006B9950)
 };
 } // namespace lifted_layout

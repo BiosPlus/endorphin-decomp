@@ -10,6 +10,6 @@
 // Recovered field layout for ForceApplicationTool:
 namespace lifted_layout {
 struct ForceApplicationTool_Fields {
-    // +0x88  void*                    field_0x88  (evidence: 0x00544B10, 0x005A9ED0, 0x005FF1C0)
+    // +0x88  void*                    field_0x88  (evidence: 0x00544B10, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
 };
 } // namespace lifted_layout

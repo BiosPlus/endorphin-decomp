@@ -10,6 +10,6 @@
 // Recovered field layout for CMemDC:
 namespace lifted_layout {
 struct CMemDC_Fields {
-    // +0x4   HDC                      field_0x04  (evidence: 0x0041B6C0)
+    // +0x4   HDC                      field_0x04  (evidence: 0x0041B6C0, 0x00545B80)
 };
 } // namespace lifted_layout

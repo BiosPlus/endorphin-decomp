@@ -10,7 +10,7 @@
 // Recovered field layout for HasCustomBufferedTMPtr:
 namespace lifted_layout {
 struct HasCustomBufferedTMPtr_Fields {
-    // +0x4   uint32_t                 field_0x4  (evidence: 0x0053A570, 0x0053A710, 0x005A9ED0, 0x005FF1C0)
-    // +0x8   uint32_t                 field_0x8  (evidence: 0x0053A570, 0x0053A710, 0x005A9ED0, 0x005FF1C0)
+    // +0x4   uint32_t                 field_0x4  (evidence: 0x0053A570, 0x0053A710, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
+    // +0x8   uint32_t                 field_0x8  (evidence: 0x0053A570, 0x0053A710, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
 };
 } // namespace lifted_layout

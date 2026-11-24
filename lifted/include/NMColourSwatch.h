@@ -10,6 +10,6 @@
 // Recovered field layout for NMColourSwatch:
 namespace lifted_layout {
 struct NMColourSwatch_Fields {
-    // +0x0   void*                    vtable  (evidence: 0x0044A0C0, 0x0055BBD0, 0x005A9ED0, 0x005FF1C0)
+    // +0x0   void*                    vtable  (evidence: 0x0044A0C0, 0x00545B80, 0x0055BBD0, 0x005A9ED0, 0x005FF1C0)
 };
 } // namespace lifted_layout
