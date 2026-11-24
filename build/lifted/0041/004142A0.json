@@ -1,0 +1,21 @@
+{
+  "va": "0x004142A0",
+  "size": 52,
+  "orig_symbol": "sub_004142A0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "sub_004142A0",
+  "signature": "uint32_t __thiscall sub_004142A0(void* self, void* arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Calls MFC80!ord_2902 and MFC80!ord_876 on arg1, then dispatches result to this-\u003evtable+0x70",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:08:36Z"
+}

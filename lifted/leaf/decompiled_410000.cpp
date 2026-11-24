@@ -699,3 +699,22 @@ uint32_t __thiscall sub_00414260(void* self, uint32_t arg1, uint32_t arg2, uint3
     return fn(self, arg1, arg2, r2, r1);
 }
 } // namespace lift_00414260
+
+// [0x004142A0]
+namespace lift_004142A0 {
+extern uint32_t mem_0092431C;
+extern uint32_t mem_00924300;
+
+// @name sub_004142A0
+// @summary Calls MFC80!ord_2902 and MFC80!ord_876 on arg1, then dispatches result to this->vtable+0x70
+// @field Self +0x00 void** vtable
+uint32_t __thiscall sub_004142A0(void* self, void* arg1, uint32_t arg2, uint32_t arg3) {
+    auto vtable = *reinterpret_cast<void***>(self);
+    auto fn_2902 = reinterpret_cast<uint32_t(__thiscall*)(void*, uint32_t, uint32_t)>(mem_0092431C);
+    uint32_t r1 = fn_2902(arg1, arg2, arg3);
+    auto fn_876 = reinterpret_cast<uint32_t(__thiscall*)(void*, uint32_t)>(mem_00924300);
+    uint32_t r2 = fn_876(arg1, r1);
+    auto vfn = reinterpret_cast<uint32_t(__thiscall*)(void*, uint32_t)>(vtable[0x70 / 4]);
+    return vfn(self, r2);
+}
+} // namespace lift_004142A0
