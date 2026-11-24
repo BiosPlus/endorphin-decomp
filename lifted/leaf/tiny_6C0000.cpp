@@ -1513,3 +1513,19 @@ extern int __fastcall fn_006C12F0(void* self, int edx_unused, int arg) {
 }
 } // namespace lift_006C12B0
 } // namespace lift_006C12F0
+
+// [0x006C03A0] sub_006C03A0 (31 bytes)
+namespace lift_006C03A0 {
+extern int mem_00B5F1F8;
+extern int mem_00B5E400;
+
+// @name IsValueOneOfGlobalSentinels
+// @summary Returns 1 if the stack argument equals mem_00B5F1F8; otherwise returns 1 only if it equals mem_00B5E400. Callee cleans 4 bytes (ret 4).
+// @field none (no struct member accesses; operates on globals only)
+extern uint8_t __stdcall fn_006C03A0(DWORD value) {
+    if (value == static_cast<DWORD>(mem_00B5F1F8)) {
+        return 1;
+    }
+    return static_cast<uint8_t>(value == static_cast<DWORD>(mem_00B5E400));
+}
+} // namespace lift_006C03A0

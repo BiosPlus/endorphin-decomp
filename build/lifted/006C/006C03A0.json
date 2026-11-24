@@ -1,0 +1,13 @@
+{
+  "va": "0x006C03A0",
+  "size": 31,
+  "orig_symbol": "sub_006C03A0",
+  "src_path": "src/leaf/tiny_6C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6C0000.cpp",
+  "name": "IsValueOneOfGlobalSentinels",
+  "signature": "extern \"C\" uint8_t __stdcall fn_006C03A0(DWORD value)",
+  "summary": "Returns 1 if the stack argument equals mem_00B5F1F8; otherwise returns 1 only if it equals mem_00B5E400. Callee cleans 4 bytes (ret 4).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:26:41Z"
+}

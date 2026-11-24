@@ -35386,6 +35386,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x78 and tail-calls sub_006E7460.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006C03A0": {
+    "name": "IsValueOneOfGlobalSentinels",
+    "signature": "extern \"C\" uint8_t __stdcall fn_006C03A0(DWORD value)",
+    "summary": "Returns 1 if the stack argument equals mem_00B5F1F8; otherwise returns 1 only if it equals mem_00B5E400. Callee cleans 4 bytes (ret 4).",
+    "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
+  },
   "0x006C03C0": {
     "name": "sub_006C03C0",
     "signature": "extern \"C\" int32_t __cdecl fn_006C03C0(void)",
