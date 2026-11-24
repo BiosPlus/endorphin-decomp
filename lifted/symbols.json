@@ -121,6 +121,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00584FD0 (NMData::RPROJointData::vfunc_59).",
     "lifted_path": "lifted/classes/AVIIO.cpp"
   },
+  "0x00401CC0": {
+    "name": "FwdChildVfunc_78",
+    "signature": "void fn_00401CC0(void* self)",
+    "summary": "If the sub-object at +0x04 is non-null, invokes its vtable slot at +0x78 with the sub-object as this and the original object as one stack argument; otherwise returns.",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x00401CE0": {
     "name": "DirtyOrClean\u003cLoadableFromXMLBase\u003e::vfunc_0",
     "class": "DirtyOrClean\u003cLoadableFromXMLBase\u003e",

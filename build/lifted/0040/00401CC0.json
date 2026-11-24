@@ -1,0 +1,13 @@
+{
+  "va": "0x00401CC0",
+  "size": 20,
+  "orig_symbol": "sub_00401CC0",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "FwdChildVfunc_78",
+  "signature": "void fn_00401CC0(void* self)",
+  "summary": "If the sub-object at +0x04 is non-null, invokes its vtable slot at +0x78 with the sub-object as this and the original object as one stack argument; otherwise returns.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:05:17Z"
+}

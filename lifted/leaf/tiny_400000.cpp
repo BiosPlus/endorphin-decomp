@@ -350,3 +350,28 @@ void fn_0040BEE0(void* self) {
     ext_SendMessageA(hWnd, 0x18B, 0, 0);
 }
 } // namespace lift_0040BEE0
+
+// [0x00401CC0]
+namespace lift_00401CC0 {
+// @name FwdChildVfunc_78
+// @summary If the sub-object at +0x04 is non-null, invokes its vtable slot at +0x78 with the sub-object as this and the original object as one stack argument; otherwise returns.
+void fn_00401CC0(void* self) {
+    // child = self->field_0x04 (32-bit pointer)
+    uint32_t child = lift_field<uint32_t>(self, 4);
+    if (child == 0) {
+        return;
+    }
+
+    // vtbl = *(void**)child ; slot = vtbl[+0x78]
+    void* childPtr = reinterpret_cast<void*>(static_cast<uintptr_t>(child));
+    uint32_t vtbl = lift_field<uint32_t>(childPtr, 0);
+    void* vtblPtr = reinterpret_cast<void*>(static_cast<uintptr_t>(vtbl));
+    uint32_t slot = lift_field<uint32_t>(vtblPtr, 0x78);
+
+    // Callee is thiscall-style: this = child, one stack argument = original self
+    // (the original pushes ecx before the call; the callee pops it with ret 4).
+    using VFn = void (*)(void* thisp, void* arg);
+    VFn fn = reinterpret_cast<VFn>(static_cast<uintptr_t>(slot));
+    fn(childPtr, self);
+}
+} // namespace lift_00401CC0
