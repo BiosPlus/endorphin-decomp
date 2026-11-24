@@ -14864,6 +14864,13 @@
     "summary": "Thunk: adjusts this by +0x9C to the ToolClient base, then tail-dispatches vtable slot 15 (+0x3C).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00544A10": {
+    "name": "ReshapeTool::vfunc_16",
+    "class": "ReshapeTool",
+    "signature": "void* __thiscall fn_00544A10(void* self)",
+    "summary": "Calls vtable slot 32 (+0x80) on the object at this+0x88, then tail-calls vtable slot 16 (+0x40) on the object at this+0x9C with this = \u0026this+0x9C and returns its result.",
+    "lifted_path": "lifted/classes/ReshapeTool.cpp"
+  },
   "0x00544A70": {
     "name": "ReshapeTool::vfunc_26",
     "class": "ReshapeTool",

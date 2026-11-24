@@ -1,0 +1,28 @@
+{
+  "va": "0x00544A10",
+  "size": 37,
+  "orig_symbol": "ReshapeTool::vfunc_16",
+  "src_path": "src/classes/ReshapeTool.cpp",
+  "lifted_path": "lifted/classes/ReshapeTool.cpp",
+  "name": "ReshapeTool::vfunc_16",
+  "class": "ReshapeTool",
+  "signature": "void* __thiscall fn_00544A10(void* self)",
+  "summary": "Calls vtable slot 32 (+0x80) on the object at this+0x88, then tail-calls vtable slot 16 (+0x40) on the object at this+0x9C with this = \u0026this+0x9C and returns its result.",
+  "fields": [
+    {
+      "class": "ReshapeTool",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "ReshapeTool",
+      "offset": "+0x9C",
+      "type": "void*",
+      "name": "field_0x9C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:47:02Z"
+}
