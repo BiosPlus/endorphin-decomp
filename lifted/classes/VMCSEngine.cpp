@@ -14,10 +14,10 @@ uint32_t fn_00468690(void* self) {
         return reinterpret_cast<void*>(static_cast<uintptr_t>(value));
     };
 
-    void* obj = ptr_at(self, 0x18);          // mov eax, [ecx+0x18]
-    void* sub = ptr_at(obj, 0x0C);           // mov ecx, [eax+0xc]
-    void* vtbl = ptr_at(sub, 0);             // mov edx, [ecx]
-    uint32_t target = lift_field<uint32_t>(vtbl, 0xAC); // mov eax, [edx+0xac]
+    void* obj = ptr_at(self, 0x18);                      // mov eax, [ecx+0x18]
+    void* sub = ptr_at(obj, 0x0C);                       // mov ecx, [eax+0xc]
+    void* vtbl = ptr_at(sub, 0);                         // mov edx, [ecx]
+    uint32_t target = lift_field<uint32_t>(vtbl, 0xAC);  // mov eax, [edx+0xac]
 
     // jmp eax: call the resolved method with `sub` as `this` and return its result.
     using Method = uint32_t(__thiscall*)(void*);
