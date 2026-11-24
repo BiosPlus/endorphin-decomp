@@ -39897,6 +39897,12 @@
     "summary": "If the global object pointer mem_00AB86EC is non-null, forward the single stack argument to its vtable slot at +0x10.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x008574B0": {
+    "name": "forwardToGlobalSink",
+    "signature": "void fn_008574B0(uint32_t arg)",
+    "summary": "If the global sink object pointer is non-null, forward arg to its vtable slot 5 (+0x14) and return.",
+    "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
   "0x008596E0": {
     "name": "sub_008596E0",
     "signature": "uint32_t __cdecl fn_008596E0(uint32_t size)",

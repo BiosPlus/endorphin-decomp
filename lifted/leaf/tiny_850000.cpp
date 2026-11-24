@@ -187,3 +187,23 @@ void fn_00857490(uint32_t arg) {
     fn(arg);
 }
 } // namespace lift_00857490
+
+// [0x008574B0] sub_008574B0 (19 bytes)
+namespace lift_008574B0 {
+extern int mem_00AB86EC;
+
+// @name forwardToGlobalSink
+// @summary If the global sink object pointer is non-null, forward arg to its vtable slot 5 (+0x14) and return.
+// @field GlobalSinkObject +0x00 void** vtable (object's vtable pointer)
+// @field GlobalSinkObject +0x14 void (*field_0x14)(uint32_t) (vtable slot 5, cdecl, no this-pointer)
+void fn_008574B0(uint32_t arg) {
+    void* sink = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00AB86EC)));
+    if (sink == nullptr) {
+        return;
+    }
+    void** vtbl = lift_field<void**>(sink, 0x00);
+    // Slot at byte offset 0x14 -> index 5 for 4-byte entries (32-bit target).
+    auto slot = reinterpret_cast<void (*)(uint32_t)>(vtbl[5]);
+    slot(arg);
+}
+} // namespace lift_008574B0

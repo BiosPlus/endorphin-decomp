@@ -1,0 +1,27 @@
+{
+  "va": "0x008574B0",
+  "size": 19,
+  "orig_symbol": "sub_008574B0",
+  "src_path": "src/leaf/tiny_850000.cpp",
+  "lifted_path": "lifted/leaf/tiny_850000.cpp",
+  "name": "forwardToGlobalSink",
+  "signature": "void fn_008574B0(uint32_t arg)",
+  "summary": "If the global sink object pointer is non-null, forward arg to its vtable slot 5 (+0x14) and return.",
+  "fields": [
+    {
+      "class": "GlobalSinkObject",
+      "offset": "+0x0",
+      "type": "void** vtable (object's vtable",
+      "name": "pointer)"
+    },
+    {
+      "class": "GlobalSinkObject",
+      "offset": "+0x14",
+      "type": "void (*field_0x14)(uint32_t) (vtable slot 5, cdecl, no",
+      "name": "this-pointer)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:05:14Z"
+}
