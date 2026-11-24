@@ -4638,6 +4638,13 @@
     "summary": "Kills the timer identified by the argument, owned by the window handle at self+0x20.",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x004586E0": {
+    "name": "Unknown::cacheKeyPairAndForward",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_004586E0(void* self, const uint32_t* key, void* arg2)",
+    "summary": "If the (dword, dword) pair at arg1 differs from the cached pair in self, cache it and forward (arg1, arg2) to the vtable slot 8 method of the object at self+0x10.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00458720": {
     "name": "SpinButtonStates::ClickedDownState::vfunc_0",
     "class": "SpinButtonStates::ClickedDownState",

@@ -521,3 +521,32 @@ extern void __thiscall fn_00455F10(void* self, COLORREF color) {
 }
 } // namespace lift_00455F10
 } // namespace lift_00455F10
+
+// [0x004586E0] sub_004586E0 (49 bytes)
+namespace lift_004586E0 {
+// @name Unknown::cacheKeyPairAndForward
+// @class Unknown
+// @summary If the (dword, dword) pair at arg1 differs from the cached pair in self, cache it and forward (arg1, arg2) to the vtable slot 8 method of the object at self+0x10.
+// @field Unknown +0x10 void* forwardTarget
+// @field Unknown +0x1c uint32_t field_0x1c
+// @field Unknown +0x20 uint32_t field_0x20
+void __thiscall fn_004586E0(void* self, const uint32_t* key, void* arg2) {
+    auto& cached0 = lift_field<uint32_t>(self, 0x1c);
+    auto& cached1 = lift_field<uint32_t>(self, 0x20);
+
+    const uint32_t k0 = key[0];
+    const uint32_t k1 = key[1];
+
+    if (cached0 == k0 && cached1 == k1) {
+        return;
+    }
+
+    cached0 = k0;
+    cached1 = k1;
+
+    void* target = lift_field<void*>(self, 0x10);
+    void** vtbl = *reinterpret_cast<void***>(target);
+    auto fn = reinterpret_cast<void (__thiscall*)(void*, const uint32_t*, void*)>(vtbl[8]);
+    fn(target, key, arg2);
+}
+} // namespace lift_004586E0
