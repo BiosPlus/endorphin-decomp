@@ -7208,6 +7208,12 @@
     "summary": "Stores the single stack argument at offset 0, zeroes the 4-byte slots at +0x08/+0x0C/+0x10, returns this.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x00481DE0": {
+    "name": "fillStructArrayAndGetEnd",
+    "signature": "uint32_t __stdcall fn_00481DE0(uint32_t dst, uint32_t count, uint32_t src)",
+    "summary": "Fills count 64-byte slots at dst with the template at src via ext_00481770 and returns dst + count*64.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x004820D0": {
     "name": "sub_004820D0",
     "signature": "DWORD* __thiscall fn_004820D0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",

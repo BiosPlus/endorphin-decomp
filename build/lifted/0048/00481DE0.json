@@ -1,0 +1,13 @@
+{
+  "va": "0x00481DE0",
+  "size": 55,
+  "orig_symbol": "sub_00481DE0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "fillStructArrayAndGetEnd",
+  "signature": "uint32_t __stdcall fn_00481DE0(uint32_t dst, uint32_t count, uint32_t src)",
+  "summary": "Fills count 64-byte slots at dst with the template at src via ext_00481770 and returns dst + count*64.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:13:02Z"
+}
