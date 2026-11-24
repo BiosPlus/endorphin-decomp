@@ -15,7 +15,7 @@ struct unknown_Fields {
     // +0x0   uint32_t*                vtable  (evidence: 0x006A7F70) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x0042FAE0, 0x0042FB20) // CONFLICT: multiple definitions at +0x0
     // +0x4   float                    field_0x04  (evidence: 0x00648930) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00462A80, 0x00462A90, 0x004646A0, 0x00468730, 0x0046E190, 0x0048FB00, 0x006452C0, 0x006ACFC0, 0x006AD090, 0x007835F0, 0x0078C230, 0x00810320) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00462A80, 0x00462A90, 0x004646A0, 0x00468730, 0x0046E190, 0x0048FB00, 0x00595770, 0x006452C0, 0x006ACFC0, 0x006AD090, 0x007835F0, 0x0078C230, 0x00810320) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t*                field_0x04  (evidence: 0x006AD180) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x00515840, 0x00530690, 0x00530720, 0x00530730, 0x005946C0, 0x0059DE20, 0x00704FD0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void**                   vtable  (evidence: 0x004A5880) // CONFLICT: multiple definitions at +0x4

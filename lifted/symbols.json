@@ -19625,6 +19625,13 @@
     "summary": "Lazily constructs the shared static instance (guarded by a one-bit init flag), then points this+0x04 at it.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00595770": {
+    "name": "WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cWorld, float, {private: void __thiscall World::setFriction(float), 0}\u003e",
+    "signature": "void fn_00595770(void* out)",
+    "summary": "Lazily constructs the function-local static object at 0x00B413C4 (guarded by bit 0 of 0x00B413C8) and writes its address into out+4.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00595CF0": {
     "name": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1\u003e",

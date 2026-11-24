@@ -6801,3 +6801,26 @@ void fn_004CB500(uint8_t* holder) {
     lift_field<void*>(holder, 4) = obj;
 }
 } // namespace lift_004CB500
+
+// [0x00595770] ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setFriction(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_00595770 {
+extern void ext_0067A670(void* self, uint32_t value);
+extern int mem_00B413C8;
+extern int mem_00B413C4;
+
+// @name WriteMethodType<World, float, setFriction>::vfunc_40
+// @class ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setFriction(float), 0}>
+// @summary Lazily constructs the function-local static object at 0x00B413C4 (guarded by bit 0 of 0x00B413C8) and writes its address into out+4.
+// @field unknown +0x04 uint32_t field_0x04
+void fn_00595770(void* out) {
+    // One-time initialization guard (the SEH frame in the binary only exists
+    // to unwind the guard on exception; it is not reproduced here).
+    if ((mem_00B413C8 & 1) == 0) {
+        mem_00B413C8 |= 1;
+        ext_0067A670(&mem_00B413C4, 0);
+        mem_00B413C4 = 0x0095D70C;
+    }
+    const uint32_t handle = 0x00B413C4;
+    std::memcpy(static_cast<unsigned char*>(out) + 4, &handle, sizeof handle);
+}
+} // namespace lift_00595770

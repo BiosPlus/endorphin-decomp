@@ -1,0 +1,22 @@
+{
+  "va": "0x00595770",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cWorld, float, {private: void __thiscall World::setFriction(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "WriteMethodType\u003cWorld, float, setFriction\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cWorld, float, {private: void __thiscall World::setFriction(float), 0}\u003e",
+  "signature": "void fn_00595770(void* out)",
+  "summary": "Lazily constructs the function-local static object at 0x00B413C4 (guarded by bit 0 of 0x00B413C8) and writes its address into out+4.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:47:47Z"
+}
