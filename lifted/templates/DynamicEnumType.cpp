@@ -1768,3 +1768,51 @@ void fn_004949A0(void* out) {
     lift_field<void*>(out, 0x04) = &mem_00ADC4DC;
 }
 } // namespace lift_004949A0
+
+// [0x00495030]
+namespace lift_00495030 {
+extern void* __thiscall ext_00494860(void* self, void* sret, int32_t index);
+extern uintptr_t mem_00924FE0;
+extern uintptr_t mem_00924FF4;
+
+// @name DynamicEnumType<RigManager>::vfunc_27
+// @class ExprParser::DynamicEnumType<RigManager>
+// @summary Gets the rig type name string for the given index via RigManager::getRigTypeNameFromIndex
+extern void* __thiscall fn_00495030(void* self, void* sret, void** arg2, int32_t index) {
+    (void)self;
+    uint8_t temp_str[28];
+    void* rig_mgr = *arg2;
+    void* res = ext_00494860(rig_mgr, temp_str, index);
+
+    using CopyCtor = void* (__thiscall*)(void*, void*);
+    using Dtor = void(__thiscall*)(void*);
+    reinterpret_cast<CopyCtor>(mem_00924FE0)(sret, res);
+    reinterpret_cast<Dtor>(mem_00924FF4)(temp_str);
+
+    return sret;
+}
+} // namespace lift_00495030
+
+// [0x004D8BB0]
+namespace lift_004D8BB0 {
+// @name ExprParser::DynamicEnumType<NMData::RigEventData>::vfunc_27
+// @class ExprParser::DynamicEnumType<NMData::RigEventData>
+// @summary Forwards getAvailableTweakDescription(index) on the target RigEventData object and returns a copy of the resulting std::string.
+
+
+void* __thiscall ext_004D4230(void* self, void* out_str, int index);
+extern uintptr_t mem_00924FE0;
+extern uintptr_t mem_00924FF4;
+
+using StringCopyCtorFn = void* (__thiscall*)(void* self, const void* other);
+using StringDtorFn = void(__thiscall*)(void* self);
+
+void* __thiscall fn_004D8BB0(void* /*self*/, void* out_str, void** obj_ptr, int index) {
+    alignas(4) uint8_t temp_str[28]{};
+    void* target = *obj_ptr;
+    void* res = ext_004D4230(target, temp_str, index);
+    reinterpret_cast<StringCopyCtorFn>(mem_00924FE0)(out_str, res);
+    reinterpret_cast<StringDtorFn>(mem_00924FF4)(temp_str);
+    return out_str;
+}
+} // namespace lift_004D8BB0
