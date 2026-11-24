@@ -31140,6 +31140,12 @@
     "summary": "Loads the pointer stored at this+0 and writes the single stack argument to its +0x08 slot.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006BB820": {
+    "name": "GetVtableSlot24",
+    "signature": "uintptr_t fn_006BB820(void* self)",
+    "summary": "Returns the pointer-sized word at vtable offset 0x24 (slot 9) of the object's vtable.",
+    "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
   "0x006BC370": {
     "name": "sub_006BC370",
     "signature": "extern \"C\" void __fastcall fn_006BC370(void* self)",

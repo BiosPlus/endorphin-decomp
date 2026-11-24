@@ -1,0 +1,21 @@
+{
+  "va": "0x006BB820",
+  "size": 16,
+  "orig_symbol": "sub_006BB820",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "GetVtableSlot24",
+  "signature": "uintptr_t fn_006BB820(void* self)",
+  "summary": "Returns the pointer-sized word at vtable offset 0x24 (slot 9) of the object's vtable.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:38:05Z"
+}

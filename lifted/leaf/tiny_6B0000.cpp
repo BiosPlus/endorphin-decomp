@@ -668,3 +668,16 @@ void fn_006BB7B0(void* self, DWORD value) {
     lift_field<DWORD>(target, 0x08) = value;
 }
 } // namespace lift_006BB7B0
+
+// [0x006BB820] sub_006BB820 (16 bytes)
+namespace lift_006BB820 {
+// @name GetVtableSlot24
+// @summary Returns the pointer-sized word at vtable offset 0x24 (slot 9) of the object's vtable.
+// @field <unknown> +0x00 void* field_0x00
+uintptr_t fn_006BB820(void* self) {
+    // mov eax, [ecx]        ; eax = this->vptr
+    void* vptr = lift_field<void*>(self, 0x00);
+    // mov eax, [eax + 0x24] ; eax = vptr[9]
+    return lift_field<uintptr_t>(vptr, 0x24);
+}
+} // namespace lift_006BB820
