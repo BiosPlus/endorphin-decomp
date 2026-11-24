@@ -45,3 +45,18 @@ void fn_00504930(void) {
 }
 } // namespace lift_007AE0F0
 } // namespace lift_00504930
+
+// [0x0050EE70]
+namespace lift_0050EE70 {
+extern uintptr_t mem_00924FF4;
+
+// @name destroyStringRange
+// @summary Destroys a contiguous range [begin, end) of 0x20-byte std::string objects.
+void __stdcall sub_0050EE70(uint32_t begin, uint32_t end) {
+    using DtorFn = void(__thiscall*)(uint32_t);
+    auto dtor = reinterpret_cast<DtorFn>(mem_00924FF4);
+    for (uint32_t cur = begin; cur != end; cur += 0x20) {
+        dtor(cur);
+    }
+}
+} // namespace lift_0050EE70
