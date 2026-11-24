@@ -106,3 +106,21 @@ void fn_00783100(void* self) {
     mem_00B608D4 = 0x00000000u;
 }
 } // namespace lift_00783100
+
+// [0x007844A0] sub_007844A0 (41 bytes)
+namespace lift_007844A0 {
+extern uint32_t mem_00B60908;
+extern uint32_t mem_00B60910;
+extern uint32_t mem_00B6090C;
+extern uint32_t mem_00B60914;
+
+// @name SetGlobalsInitA_007844A0
+// @summary Stores three constant pointers/values into globals mem_00B60908/0C/10 and clears mem_00B60914.
+void fn_007844A0(void* self) {
+    (void)self;
+    mem_00B60908 = 0x00B608ECu;
+    mem_00B60910 = 0x00AAF3C0u;
+    mem_00B6090C = 0x00B5EB68u;
+    mem_00B60914 = 0x00000000u;
+}
+} // namespace lift_007844A0

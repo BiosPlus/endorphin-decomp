@@ -1,0 +1,13 @@
+{
+  "va": "0x007844A0",
+  "size": 41,
+  "orig_symbol": "sub_007844A0",
+  "src_path": "src/clones/auto_clones_780000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_780000.cpp",
+  "name": "SetGlobalsInitA_007844A0",
+  "signature": "void fn_007844A0(void* self)",
+  "summary": "Stores three constant pointers/values into globals mem_00B60908/0C/10 and clears mem_00B60914.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:57:21Z"
+}

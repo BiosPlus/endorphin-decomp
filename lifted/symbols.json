@@ -44122,6 +44122,12 @@
     "summary": "Zeroes the +0x04 word of the owner and of every node in its +0x00 singly linked chain.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x007844A0": {
+    "name": "SetGlobalsInitA_007844A0",
+    "signature": "void fn_007844A0(void* self)",
+    "summary": "Stores three constant pointers/values into globals mem_00B60908/0C/10 and clears mem_00B60914.",
+    "lifted_path": "lifted/clones/auto_clones_780000.cpp"
+  },
   "0x00784510": {
     "name": "sub_00784510",
     "signature": "void fn_00784510(void* self)",
