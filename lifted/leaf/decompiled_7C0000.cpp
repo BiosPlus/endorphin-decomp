@@ -382,3 +382,35 @@ void sub_007C9E50(uint32_t arg0, uint32_t arg1) {
     mem_write32(arg0 + 0x04, val);
 }
 } // namespace lift_007C9E50
+
+// [0x007CC5D0]
+namespace lift_007CC5D0 {
+// @name allocAndInit_007CC5D0
+// @summary Allocates a 16-byte object (16-byte aligned) via allocator at +0xb0/+0x8 and initializes it with sub_007CC200
+// @field Obj +0xb0 uint32_t allocatorPtr
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern uint32_t ext_007CC200(uint32_t obj, uint32_t arg);
+
+uint32_t fn_007CC5D0(uint32_t arg0) {
+    uint32_t allocator = mem_read32(arg0 + 0xb0);
+    uint32_t alloc_fn = mem_read32(allocator + 0x8);
+    uint32_t obj = ((uint32_t (*)(uint32_t, uint32_t))(uintptr_t)alloc_fn)(0x10, 0x10);
+    if (obj == 0) {
+        return 0;
+    }
+    return ext_007CC200(obj, arg0);
+}
+} // namespace lift_007CC5D0
+
+// [0x007CB940]
+namespace lift_007CB940 {
+// @name setNonNegativeFloat_0x10
+// @summary Clamps a float to >= 0.0f and stores it at offset +0x10
+// @field unknown +0x10 float field_0x10
+void sub_007CB940(void* self, float value) {
+    float clamped = (value < 0.0f) ? 0.0f : value;
+    *reinterpret_cast<float*>(reinterpret_cast<uintptr_t>(self) + 0x10) = clamped;
+}
+} // namespace lift_007CB940
