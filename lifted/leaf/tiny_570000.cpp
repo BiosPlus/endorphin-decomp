@@ -72,3 +72,22 @@ void fn_00576240(uint8_t* dst, uint8_t* dstEnd, const uint8_t* src) {
     } while (dst != dstEnd);
 }
 } // namespace lift_00576240
+
+// [0x005731D0] sub_005731D0 (31 bytes)
+namespace lift_005731D0 {
+// @name Unknown::GetElementCount
+// @class Unknown
+// @summary Returns (end - begin) / 12 for a 12-byte element array, or 0 when begin is null.
+// @field Unknown +0x04 uint32_t field_0x04 (begin pointer)
+// @field Unknown +0x08 uint32_t field_0x08 (end pointer)
+int32_t fn_005731D0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    const uint32_t begin = *reinterpret_cast<const uint32_t*>(base + 0x04);
+    if (begin == 0) {
+        return 0;
+    }
+    const uint32_t end = *reinterpret_cast<const uint32_t*>(base + 0x08);
+    const auto bytes = static_cast<int32_t>(end - begin);
+    return bytes / 12;
+}
+} // namespace lift_005731D0

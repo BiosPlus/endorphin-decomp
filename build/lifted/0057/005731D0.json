@@ -1,0 +1,28 @@
+{
+  "va": "0x005731D0",
+  "size": 31,
+  "orig_symbol": "sub_005731D0",
+  "src_path": "src/leaf/tiny_570000.cpp",
+  "lifted_path": "lifted/leaf/tiny_570000.cpp",
+  "name": "Unknown::GetElementCount",
+  "class": "Unknown",
+  "signature": "int32_t fn_005731D0(void* self)",
+  "summary": "Returns (end - begin) / 12 for a 12-byte element array, or 0 when begin is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04 (begin",
+      "name": "pointer)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t field_0x08 (end",
+      "name": "pointer)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:25:43Z"
+}

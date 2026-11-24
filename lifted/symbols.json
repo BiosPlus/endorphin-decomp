@@ -15480,6 +15480,13 @@
     "summary": "Resolves a pointer from the argument object via sub_00640390 using the constant key at 0x92FE24, forwards it to NMFileIO::vfunc_3 on this, and returns the argument.",
     "lifted_path": "lifted/classes/OBJIO.cpp"
   },
+  "0x005731D0": {
+    "name": "Unknown::GetElementCount",
+    "class": "Unknown",
+    "signature": "int32_t fn_005731D0(void* self)",
+    "summary": "Returns (end - begin) / 12 for a 12-byte element array, or 0 when begin is null.",
+    "lifted_path": "lifted/leaf/tiny_570000.cpp"
+  },
   "0x005746E0": {
     "name": "OBJIO::vfunc_12",
     "class": "OBJIO",
