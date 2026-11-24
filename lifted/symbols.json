@@ -3291,6 +3291,13 @@
     "summary": "Returns the address of the read-only string \"$aj\" in .rdata.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x0044B700": {
+    "name": "UnknownClass::callSubobjectVtable",
+    "class": "UnknownClass",
+    "signature": "void fn_0044B700(void* self)",
+    "summary": "If this+0x64 is non-null, calls vtable slot +0x28 on it with argument 0, then tail-calls vtable slot +0x154 on it.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044B760": {
     "name": "sub_0044B760",
     "signature": "uint8_t fn_0044B760(void* self)",

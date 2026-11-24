@@ -899,3 +899,28 @@ void fn_0044B260(void* self) {
     slot154(sub);
 }
 } // namespace lift_0044B260
+
+// [0x0044B700]
+namespace lift_0044B700 {
+// @name UnknownClass::callSubobjectVtable
+// @class UnknownClass
+// @summary If this+0x64 is non-null, calls vtable slot +0x28 on it with argument 0, then tail-calls vtable slot +0x154 on it.
+// @field UnknownClass +0x64 void* field_0x64
+
+void fn_0044B700(void* self) {
+    if (lift_field<void*>(self, 0x64) == nullptr) {
+        return;
+    }
+
+    void* obj = lift_field<void*>(self, 0x64);
+    void* vtbl = lift_field<void*>(obj, 0);
+    auto slot28 = lift_field<void (*)(void*, int)>(vtbl, 0x28);
+    slot28(obj, 0);
+
+    // Reload the subobject pointer: the first call may have changed it.
+    obj = lift_field<void*>(self, 0x64);
+    vtbl = lift_field<void*>(obj, 0);
+    auto slot154 = lift_field<void (*)(void*)>(vtbl, 0x154);
+    slot154(obj);
+}
+} // namespace lift_0044B700
