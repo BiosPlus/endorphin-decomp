@@ -45277,6 +45277,12 @@
     "summary": "Returns the dword at p+0x00; if bit 0x04 of the byte at p+0x14 is set, returns the dword that value points to instead.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x00859E70": {
+    "name": "FindNodeByKeyInChain",
+    "signature": "void* fn_00859E70(void* head, DWORD key)",
+    "summary": "Walks a singly linked node chain (next pointer at +0x1C) from head and returns the first node whose DWORD key at +0x00 equals the given key, or NULL if none match or head is NULL.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085BC20": {
     "name": "GetField08",
     "signature": "uint32_t GetField08(uint32_t self_ptr)",

@@ -1,0 +1,13 @@
+{
+  "va": "0x00859E70",
+  "size": 32,
+  "orig_symbol": "sub_00859E70",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "FindNodeByKeyInChain",
+  "signature": "void* fn_00859E70(void* head, DWORD key)",
+  "summary": "Walks a singly linked node chain (next pointer at +0x1C) from head and returns the first node whose DWORD key at +0x00 equals the given key, or NULL if none match or head is NULL.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:49:40Z"
+}

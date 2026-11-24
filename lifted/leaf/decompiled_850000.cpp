@@ -140,3 +140,19 @@ int fn_00857420(int a, int b) {
     return fn(a, b);
 }
 } // namespace lift_00857420
+
+// [0x00859E70] sub_00859E70 (32 bytes)
+namespace lift_00859E70 {
+// @name FindNodeByKeyInChain
+// @summary Walks a singly linked node chain (next pointer at +0x1C) from head and returns the first node whose DWORD key at +0x00 equals the given key, or NULL if none match or head is NULL.
+void* fn_00859E70(void* head, DWORD key) {
+    void* node = head;
+    while (node != nullptr) {
+        if (lift_field<DWORD>(node, 0x00) == key) {
+            return node;
+        }
+        node = lift_field<void*>(node, 0x1C);
+    }
+    return nullptr;
+}
+} // namespace lift_00859E70
