@@ -1,0 +1,14 @@
+{
+  "va": "0x0059F6C0",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "WriteMethodType\u003cCharacterData, ValuePtr const\u0026\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e",
+  "signature": "void fn_0059F6C0(void* self)",
+  "summary": "One-time lazy init of a static helper object (guard bit 0 of mem_00B414B0), then stores its address into self+0x04.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:48:21Z"
+}

@@ -6926,3 +6926,27 @@ void fn_00500290(void* self, void* out) {
     *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(out) + 0x04) = 0x00AEB2DCu;
 }
 } // namespace lift_00500290
+
+// [0x0059F6C0] ExprParser::WriteMethodType<NMData::CharacterData, ValuePtr const &, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_0059F6C0 {
+extern void ext_0067A670(void* self);
+extern int mem_00B414B0;
+extern int mem_00B414AC;
+
+// @name WriteMethodType<CharacterData, ValuePtr const&>::vfunc_40
+// @class ExprParser::WriteMethodType<NMData::CharacterData, ValuePtr const &, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const &), 0}>
+// @summary One-time lazy init of a static helper object (guard bit 0 of mem_00B414B0), then stores its address into self+0x04.
+// @field ExprParser::WriteMethodType<NMData::CharacterData, ValuePtr const &, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const &), 0}> +0x04 void* field_0x04
+void fn_0059F6C0(void* self) {
+    // Static-init guard: bit 0 of mem_00B414B0 marks the helper object as constructed.
+    uint32_t& guard = *reinterpret_cast<uint32_t*>(&mem_00B414B0);
+    if ((guard & 1u) == 0) {
+        guard |= 1u;
+        ext_0067A670(reinterpret_cast<void*>(&mem_00B414AC));
+        // Helper object's first dword is its vtable pointer (0x0095E1D4).
+        *reinterpret_cast<uint32_t*>(&mem_00B414AC) = 0x0095E1D4u;
+    }
+    // Both paths publish the helper object's address into self+0x04.
+    lift_field<uint32_t>(self, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B414AC));
+}
+} // namespace lift_0059F6C0

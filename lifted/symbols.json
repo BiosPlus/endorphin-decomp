@@ -19998,6 +19998,13 @@
     "summary": "Reads the Chromosome::Descriptor held by self, fetches its string value via the slot-9 accessor, and returns it parsed as a float (atof); throws if the descriptor pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0059F6C0": {
+    "name": "WriteMethodType\u003cCharacterData, ValuePtr const\u0026\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e",
+    "signature": "void fn_0059F6C0(void* self)",
+    "summary": "One-time lazy init of a static helper object (guard bit 0 of mem_00B414B0), then stores its address into self+0x04.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0059F820": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData\u003e::vfunc_1 (CharacterData vcall-128 accessor)",
     "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",
