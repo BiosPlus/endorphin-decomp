@@ -126,3 +126,21 @@ void fn_004064B0(void* self, int edx_unused, int a1, int a2) {
 }
 } // namespace lift_005694F0
 } // namespace lift_004064B0
+
+// [0x0040F270]
+namespace lift_0040F270 {
+// @name sub_0040F270
+// @summary Sets flags 0xb at offset +0x2c, calls thunk_MFC80_ord_1903, and returns -1 if result is -1 else 0
+// @field struct_0040F270 +0x2c uint32_t field_0x2c
+
+
+extern uint32_t ext_006A5EA8(void);
+uint32_t mem_read32(uintptr_t addr);
+void mem_write32(uintptr_t addr, uint32_t val);
+
+extern int32_t __stdcall fn_0040F270(uintptr_t arg0) {
+    mem_write32(arg0 + 0x2c, mem_read32(arg0 + 0x2c) | 0xb);
+    uint32_t res = ext_006A5EA8();
+    return (res == 0xFFFFFFFFu) ? -1 : 0;
+}
+} // namespace lift_0040F270
