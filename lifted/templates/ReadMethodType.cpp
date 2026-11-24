@@ -34147,3 +34147,35 @@ int32_t __stdcall fn_004B7D80(void* arg) {
     return static_cast<int32_t>(std::trunc(x));
 }
 } // namespace lift_004B7D80
+
+// [0x00604CE0]
+namespace lift_00604CE0 {
+void __thiscall ext_00672080(void* self, float value);
+void __thiscall ext_0046C3C0(void* self);
+void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+extern uint32_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<Effector, float, &Effector::getPoseRawDesiredDisplacement, 1>::vfunc_0
+// @class ExprParser::ReadMethodType
+// @summary Reads Effector::getPoseRawDesiredDisplacement into a ValuePtrType result, or throws if the Effector pointer is null.
+// @field Effector +0x00 void* vtable
+// @field Effector::vtable +0x38 void* getPoseRawDesiredDisplacement
+void* __thiscall fn_00604CE0(void* self, void* out, void* objPtrPtr) {
+    (void)self;
+    uint32_t effector = *reinterpret_cast<uint32_t*>(objPtrPtr);
+    float temp = 0.0f;
+    if (effector != 0) {
+        uint32_t vtable = *reinterpret_cast<uint32_t*>(effector);
+        typedef float* (__thiscall *GetDispFn)(uint32_t, float*);
+        GetDispFn fn = reinterpret_cast<GetDispFn>(*reinterpret_cast<uint32_t*>(vtable + 0x38));
+        float* res = fn(effector, &temp);
+        ext_00672080(out, *res);
+        return out;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return out;
+}
+} // namespace lift_00604CE0
