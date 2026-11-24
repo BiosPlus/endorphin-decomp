@@ -255,3 +255,30 @@ void sub_0067B3D0(void* self, std::uint32_t arg1, std::uint32_t arg2, std::uint3
     ext_0065C650(lock);
 }
 } // namespace lift_0067B3D0
+
+// [0x006799F0]
+namespace lift_006799F0 {
+// @name PerformanceTimer::PerformanceTimer
+// @class PerformanceTimer
+// @summary Allocates a 24-byte timer state block and initializes its performance frequency and counter.
+// @field PerformanceTimer +0x00 void* state
+
+
+void* ext_006A5C62(uint32_t size);
+extern void* mem_00924280;
+extern void* mem_0092427C;
+
+typedef int32_t (__stdcall *QueryPerfFn)(void* lpPerformanceCount);
+
+void* __thiscall fn_006799F0(void* self) {
+    uint8_t* state = static_cast<uint8_t*>(ext_006A5C62(0x18));
+    if (state != nullptr) {
+        reinterpret_cast<QueryPerfFn>(mem_00924280)(state + 0x10);
+        reinterpret_cast<QueryPerfFn>(mem_0092427C)(state);
+        *reinterpret_cast<void**>(self) = state;
+    } else {
+        *reinterpret_cast<void**>(self) = nullptr;
+    }
+    return self;
+}
+} // namespace lift_006799F0

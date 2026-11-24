@@ -1,0 +1,22 @@
+{
+  "va": "0x006799F0",
+  "size": 53,
+  "orig_symbol": "sub_006799F0",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "PerformanceTimer::PerformanceTimer",
+  "class": "PerformanceTimer",
+  "signature": "void* __thiscall fn_006799F0(void* self)",
+  "summary": "Allocates a 24-byte timer state block and initializes its performance frequency and counter.",
+  "fields": [
+    {
+      "class": "PerformanceTimer",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "state"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:16:46Z"
+}
