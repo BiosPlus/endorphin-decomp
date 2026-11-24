@@ -282,3 +282,38 @@ void* __thiscall fn_006799F0(void* self) {
     return self;
 }
 } // namespace lift_006799F0
+
+// [0x0067AEB0] sub_0067AEB0 (56 bytes)
+namespace lift_0067AEB0 {
+extern void ext_0067AEE8(void);
+extern void (*mem_00925134)(void);
+extern BOOL (*mem_00924260)(HANDLE hEvent);
+
+// @name Unknown::SetEventAtIndex
+// @class Unknown
+// @summary Signals the event handle stored at the given index of the vector referenced by this+0x0C; invalid index returns FALSE.
+// @field Unknown +0x0C pointer vecHolder
+// @field Unknown +0x04 uint32_t field_0x04 (vector begin, via holder)
+// @field Unknown +0x08 uint32_t field_0x08 (vector end, via holder)
+BOOL fn_0067AEB0(void* self, INT index) {
+    if (index < 0) {
+        ext_0067AEE8();
+        return FALSE;
+    }
+
+    uint32_t vecAddr = lift_field<uint32_t>(self, 0x0C);
+    void* vec = reinterpret_cast<void*>(static_cast<uintptr_t>(vecAddr));
+    uint32_t begin = lift_field<uint32_t>(vec, 0x04);
+    uint32_t end = lift_field<uint32_t>(vec, 0x08);
+
+    if (begin == 0 || static_cast<uint32_t>(index) >= ((end - begin) >> 2)) {
+        mem_00925134();
+        return FALSE;
+    }
+
+    void* elems = reinterpret_cast<void*>(static_cast<uintptr_t>(begin));
+    uint32_t handleValue = lift_field<uint32_t>(elems, static_cast<ptrdiff_t>(index) * 4);
+    HANDLE hEvent = reinterpret_cast<HANDLE>(static_cast<uintptr_t>(handleValue));
+    return mem_00924260(hEvent);
+}
+} // namespace lift_0067AEB0

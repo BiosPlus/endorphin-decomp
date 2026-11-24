@@ -36136,6 +36136,13 @@
     "summary": "Checks under a critical section lock whether a pointer's field at +0x10 is non-zero.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067AEB0": {
+    "name": "Unknown::SetEventAtIndex",
+    "class": "Unknown",
+    "signature": "BOOL fn_0067AEB0(void* self, INT index)",
+    "summary": "Signals the event handle stored at the given index of the vector referenced by this+0x0C; invalid index returns FALSE.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067AEE8": {
     "name": "sub_0067AEE8",
     "signature": "extern \"C\" void __stdcall fn_0067AEE8()",
