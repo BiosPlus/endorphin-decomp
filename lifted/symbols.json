@@ -45601,6 +45601,12 @@
     "summary": "Stores (arg + 0x8 float) minus the float at +0x14 into the float at +0x24 of the object passed as first argument.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C9E20": {
+    "name": "SetValueAndUpdateFlag",
+    "signature": "void SetValueAndUpdateFlag(uint32_t* p, uint32_t v)",
+    "summary": "Stores a 32-bit value at *p, then sets p[+0x04] to 1 if the value is nonzero or p[+0x50]/p[+0x1c] is nonzero, otherwise 0.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C9ED0": {
     "name": "ZeroFloatAndIntFields",
     "signature": "void fn_007C9ED0(void* self)",

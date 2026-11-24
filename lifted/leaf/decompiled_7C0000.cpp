@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_7C0000.cpp
 #include "lift_compat.h"
+#include <cstdint>
 
 // [0x007C97A0]
 namespace lift_007C97A0 {
@@ -236,3 +237,25 @@ float __thiscall sub_007CA790(uintptr_t self, uintptr_t other)
     return xy + mem_f32(other + 0x8) * mem_f32(self + 0x8);
 }
 } // namespace lift_007CA790
+
+// [0x007C9E20]
+namespace lift_007C9E20 {
+// @name SetValueAndUpdateFlag
+// @summary Stores a 32-bit value at *p, then sets p[+0x04] to 1 if the value is nonzero or p[+0x50]/p[+0x1c] is nonzero, otherwise 0.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x1c uint32_t field_0x1c
+// @field Unknown +0x50 uint32_t field_0x50
+
+
+void SetValueAndUpdateFlag(uint32_t* p, uint32_t v) {
+    *p = v;
+    if (v == 0) {
+        if (p[0x50 / 4] == v && p[0x1c / 4] == v) {
+            p[0x04 / 4] = v;
+            return;
+        }
+    }
+    p[0x04 / 4] = 1;
+}
+} // namespace lift_007C9E20
