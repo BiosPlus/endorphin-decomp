@@ -1,0 +1,45 @@
+{
+  "va": "0x007C9ED0",
+  "size": 24,
+  "orig_symbol": "sub_007C9ED0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "ZeroFloatAndIntFields",
+  "signature": "void fn_007C9ED0(void* self)",
+  "summary": "Zeroes three float fields (+0x10, +0x14, +0x20) and two int fields (+0x08, +0x0C) of the target object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:39:13Z"
+}

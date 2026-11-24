@@ -40720,6 +40720,12 @@
     "summary": "Stores (arg + 0x8 float) minus the float at +0x14 into the float at +0x24 of the object passed as first argument.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C9ED0": {
+    "name": "ZeroFloatAndIntFields",
+    "signature": "void fn_007C9ED0(void* self)",
+    "summary": "Zeroes three float fields (+0x10, +0x14, +0x20) and two int fields (+0x08, +0x0C) of the target object.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007CA110": {
     "name": "sub_007CA110",
     "signature": "extern \"C\" void fn_007CA110(void)",

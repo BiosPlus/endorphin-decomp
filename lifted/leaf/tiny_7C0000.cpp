@@ -1171,3 +1171,21 @@ void fn_007C8A50(void* self, uint32_t index, uint32_t value) {
     lift_field<uint32_t>(table, static_cast<ptrdiff_t>(offset)) = value;
 }
 } // namespace lift_007C8A50
+
+// [0x007C9ED0]
+namespace lift_007C9ED0 {
+// @name ZeroFloatAndIntFields
+// @summary Zeroes three float fields (+0x10, +0x14, +0x20) and two int fields (+0x08, +0x0C) of the target object.
+// @field Unknown +0x08 int32_t field_0x08
+// @field Unknown +0x0C int32_t field_0x0C
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x20 float field_0x20
+void fn_007C9ED0(void* self) {
+    lift_field<float>(self, 0x10) = 0.0f;
+    lift_field<float>(self, 0x20) = 0.0f;
+    lift_field<int32_t>(self, 0x08) = 0;
+    lift_field<float>(self, 0x14) = 0.0f;
+    lift_field<int32_t>(self, 0x0C) = 0;
+}
+} // namespace lift_007C9ED0
