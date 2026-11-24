@@ -1,0 +1,52 @@
+{
+  "va": "0x007D47D0",
+  "size": 46,
+  "orig_symbol": "sub_007D47D0",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "initTypeTag2Record",
+  "class": "\u003cunknown\u003e",
+  "signature": "void fn_007D47D0(void* self, DWORD arg2, DWORD arg3, DWORD arg4, DWORD arg5)",
+  "summary": "Initializes a 0x20-byte record: sets type tag to 2, clears +0x04, and stores four caller-supplied DWORDs (cdecl, caller cleans up).",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "typeTag"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "reserved"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "arg3Value"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "arg2Value"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "arg4Value"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x1C",
+      "type": "DWORD",
+      "name": "arg5Value"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:10:53Z"
+}

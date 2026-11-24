@@ -340,3 +340,24 @@ uint32_t fn_007D5B30(void* arg1, void* arg2, void* arg3) {
     return handler(arg1, arg2, arg3);
 }
 } // namespace lift_007D5B30
+
+// [0x007D47D0] sub_007D47D0 (46 bytes)
+namespace lift_007D47D0 {
+// @name initTypeTag2Record
+// @class <unknown>
+// @summary Initializes a 0x20-byte record: sets type tag to 2, clears +0x04, and stores four caller-supplied DWORDs (cdecl, caller cleans up).
+// @field <unknown> +0x00 DWORD typeTag
+// @field <unknown> +0x04 DWORD reserved
+// @field <unknown> +0x08 DWORD arg3Value
+// @field <unknown> +0x0C DWORD arg2Value
+// @field <unknown> +0x10 DWORD arg4Value
+// @field <unknown> +0x1C DWORD arg5Value
+void fn_007D47D0(void* self, DWORD arg2, DWORD arg3, DWORD arg4, DWORD arg5) {
+    lift_field<DWORD>(self, 0x00) = 2;
+    lift_field<DWORD>(self, 0x04) = 0;
+    lift_field<DWORD>(self, 0x08) = arg3;
+    lift_field<DWORD>(self, 0x0C) = arg2;
+    lift_field<DWORD>(self, 0x10) = arg4;
+    lift_field<DWORD>(self, 0x1C) = arg5;
+}
+} // namespace lift_007D47D0

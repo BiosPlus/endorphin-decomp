@@ -47588,6 +47588,13 @@
     "summary": "Returns the difference between two 32-bit fields at +0x14 and +0x0C of the passed object.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D47D0": {
+    "name": "initTypeTag2Record",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007D47D0(void* self, DWORD arg2, DWORD arg3, DWORD arg4, DWORD arg5)",
+    "summary": "Initializes a 0x20-byte record: sets type tag to 2, clears +0x04, and stores four caller-supplied DWORDs (cdecl, caller cleans up).",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D4800": {
     "name": "ConditionalForwardCall",
     "class": "// @summary If the object's +0x04 field is non-zero, forwards it with the +0x1c field and a constant to ext_007D5950.",
