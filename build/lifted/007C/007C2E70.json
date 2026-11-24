@@ -1,0 +1,13 @@
+{
+  "va": "0x007C2E70",
+  "size": 13,
+  "orig_symbol": "sub_007C2E70",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "CRT_free_thunk",
+  "signature": "extern \"C\" void __cdecl fn_007C2E70(void* ptr)",
+  "summary": "Cdecl wrapper that forwards its single pointer argument to the CRT free() via an indirect IAT call.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:23:16Z"
+}

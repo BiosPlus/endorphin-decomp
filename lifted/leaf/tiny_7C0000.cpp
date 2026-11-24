@@ -841,3 +841,14 @@ void fn_007C76A0(void* self, float value) {
 }
 } // namespace lift_007D85D0
 } // namespace lift_007C76A0
+
+// [0x007C2E70]
+namespace lift_007C2E70 {
+// @name CRT_free_thunk
+// @summary Cdecl wrapper that forwards its single pointer argument to the CRT free() via an indirect IAT call.
+extern void(__cdecl* mem_009251D8)(void*);
+
+extern void __cdecl fn_007C2E70(void* ptr) {
+    mem_009251D8(ptr);
+}
+} // namespace lift_007C2E70
