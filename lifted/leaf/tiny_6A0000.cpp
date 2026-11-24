@@ -479,3 +479,17 @@ int32_t __thiscall sub_006A7F70(void* self, uint32_t arg0, uint32_t arg1) {
     return 0;
 }
 } // namespace lift_006A7F70
+
+// [0x006A7F50]
+namespace lift_006A7F50 {
+// @name sub_006A7F50
+// @summary Forwards two arguments to virtual method at vtable offset +0x158 and returns 0.
+// @field Object +0x00 uint32_t* vtable
+uint32_t __thiscall sub_006A7F50(void* self, uint32_t arg1, uint32_t arg2) {
+    uint32_t vtable = *reinterpret_cast<const uint32_t*>(self);
+    uint32_t fn_addr = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(vtable + 0x158));
+    using VMethod = void(__thiscall*)(void*, uint32_t, uint32_t);
+    reinterpret_cast<VMethod>(static_cast<uintptr_t>(fn_addr))(self, arg1, arg2);
+    return 0;
+}
+} // namespace lift_006A7F50

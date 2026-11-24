@@ -1,0 +1,21 @@
+{
+  "va": "0x006A7F50",
+  "size": 25,
+  "orig_symbol": "sub_006A7F50",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "sub_006A7F50",
+  "signature": "uint32_t __thiscall sub_006A7F50(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Forwards two arguments to virtual method at vtable offset +0x158 and returns 0.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "uint32_t*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T11:54:52Z"
+}
