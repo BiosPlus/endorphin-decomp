@@ -23,3 +23,25 @@ void fn_004499B0(void* self) {
 }
 } // namespace lift_0040FDA0
 } // namespace lift_004499B0
+
+// [0x00449A00] RegistrationDialog::vfunc_7_off_74 (40 bytes)
+namespace lift_00449A00 {
+extern uint32_t mem_00AD08E4;
+extern uint32_t mem_00A2FE90;
+extern uint32_t mem_00A2FE94;
+extern uint32_t mem_00A2FE84;
+
+// @name RegistrationDialog::initOnceAndGetCounter
+// @class RegistrationDialog
+// @summary On first call, sets init bit 0 in mem_00AD08E4 and clears two globals; always returns &mem_00A2FE84.
+// @field (none: function does not access this-relative fields; self is unused)
+void* fn_00449A00(void* self) {
+    (void)self;
+    if ((mem_00AD08E4 & 1u) == 0u) {
+        mem_00AD08E4 |= 1u;
+        mem_00A2FE90 = 0u;
+        mem_00A2FE94 = 0u;
+    }
+    return &mem_00A2FE84;
+}
+} // namespace lift_00449A00

@@ -1,0 +1,14 @@
+{
+  "va": "0x00449A00",
+  "size": 40,
+  "orig_symbol": "RegistrationDialog::vfunc_7_off_74",
+  "src_path": "src/classes/RegistrationDialog.cpp",
+  "lifted_path": "lifted/classes/RegistrationDialog.cpp",
+  "name": "RegistrationDialog::initOnceAndGetCounter",
+  "class": "RegistrationDialog",
+  "signature": "void* fn_00449A00(void* self)",
+  "summary": "On first call, sets init bit 0 in mem_00AD08E4 and clears two globals; always returns \u0026mem_00A2FE84.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:51:29Z"
+}
