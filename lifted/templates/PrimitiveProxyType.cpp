@@ -567,3 +567,35 @@ void __thiscall fn_00497980(void* self, void** out_str_ptr, float val) {
     reinterpret_cast<DtorFn>(mem_00924FF4)(temp_str);
 }
 } // namespace lift_00497980
+
+// [0x00497AD0]
+namespace lift_00497AD0 {
+// @name ExprParser::PrimitiveProxyType<std::string>::vfunc_10
+// @class ExprParser::PrimitiveProxyType<std::string>
+// @summary Copies/transforms a std::string via sub_00497890 and assigns it to *arg1.
+
+void* ext_00497890(void* out_str, ...);
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FDC;
+extern uint32_t mem_00924FF4;
+
+using MsvcStringCtorCopy = void(__thiscall*)(void* self, const void* other);
+using MsvcStringAssign = void*(__thiscall*)(void* self, const void* other);
+using MsvcStringDtor = void(__thiscall*)(void* self);
+
+struct MsvcStringBuf {
+    uint8_t data[28];
+};
+
+void __stdcall fn_00497AD0(uint32_t* dst_ptr, const void* src_str) {
+    MsvcStringBuf temp_out;
+    MsvcStringBuf temp_arg;
+
+    reinterpret_cast<MsvcStringCtorCopy>(mem_00924FE0)(&temp_arg, src_str);
+    void* res = ext_00497890(&temp_out, temp_arg, src_str);
+
+    void* dst_str = reinterpret_cast<void*>(*dst_ptr);
+    reinterpret_cast<MsvcStringAssign>(mem_00924FDC)(dst_str, res);
+    reinterpret_cast<MsvcStringDtor>(mem_00924FF4)(&temp_out);
+}
+} // namespace lift_00497AD0
