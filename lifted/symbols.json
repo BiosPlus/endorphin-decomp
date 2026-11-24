@@ -4406,6 +4406,13 @@
     "summary": "Tail-calls vtable slot 0x1A0 on the object pointed to by field_0x00.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00493E50": {
+    "name": "forwardVtable18C",
+    "class": "(none)",
+    "signature": "uintptr_t fn_00493E50(void* self)",
+    "summary": "Dereferences self once to get an inner object, then tail-dispatches to vtable slot 0x18C of that object.",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
   "0x00494060": {
     "name": "sub_00494060",
     "signature": "void __thiscall sub_00494060(void* self, uint32_t mask)",

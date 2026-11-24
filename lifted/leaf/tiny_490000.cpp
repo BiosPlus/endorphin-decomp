@@ -98,3 +98,25 @@ intptr_t fn_00493E00(void* self) {
     return target(obj);                                                // jmp edx
 }
 } // namespace lift_00493E00
+
+// [0x00493E50] sub_00493E50 (12 bytes)
+namespace lift_00493E50 {
+// @name forwardVtable18C
+// @class (none)
+// @summary Dereferences self once to get an inner object, then tail-dispatches to vtable slot 0x18C of that object.
+// @field self +0x00 void* innerObject (pointer loaded from *self; passed as the new this)
+// @field innerObject +0x00 void** vtable (vptr of the inner object)
+// @field vtable +0x18C void* slot0x18C (call target, dispatched via jmp)
+//
+// Portable approximation: the original tail-jumps, so the callee sees the caller's
+// stack arguments unchanged. This C++ cannot forward an unknown argument list, so the
+// callee is invoked with no extra arguments and its return value is returned.
+using VtableSlotFn = uintptr_t (*)(void* thisPtr);
+
+uintptr_t fn_00493E50(void* self) {
+    void* inner = *reinterpret_cast<void**>(self);
+    void** vtable = *reinterpret_cast<void***>(inner);
+    auto target = reinterpret_cast<VtableSlotFn>(vtable[0x18C / sizeof(void*)]);
+    return target(inner);
+}
+} // namespace lift_00493E50

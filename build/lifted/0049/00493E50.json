@@ -1,0 +1,34 @@
+{
+  "va": "0x00493E50",
+  "size": 12,
+  "orig_symbol": "sub_00493E50",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "forwardVtable18C",
+  "class": "(none)",
+  "signature": "uintptr_t fn_00493E50(void* self)",
+  "summary": "Dereferences self once to get an inner object, then tail-dispatches to vtable slot 0x18C of that object.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x0",
+      "type": "void* innerObject (pointer loaded from *self; passed as the new",
+      "name": "this)"
+    },
+    {
+      "class": "innerObject",
+      "offset": "+0x0",
+      "type": "void** vtable (vptr of the inner",
+      "name": "object)"
+    },
+    {
+      "class": "vtable",
+      "offset": "+0x18C",
+      "type": "void* slot0x18C (call target, dispatched via",
+      "name": "jmp)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:14:25Z"
+}
