@@ -1,0 +1,39 @@
+{
+  "va": "0x00622750",
+  "size": 20,
+  "orig_symbol": "sub_00622750",
+  "src_path": "src/leaf/tiny_620000.cpp",
+  "lifted_path": "lifted/leaf/tiny_620000.cpp",
+  "name": "InitTaggedZeroFloatTriple",
+  "signature": "void* InitTaggedZeroFloatTriple(void* self)",
+  "summary": "Stores the tag address mem_0097707C at +0x00 and zeroes three floats at +0x04, +0x08, +0x0C; returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:07:51Z"
+}

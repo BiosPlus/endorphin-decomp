@@ -21147,6 +21147,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006227B0 (NMData::HingeCalibrationVariables::vfunc_28).",
     "lifted_path": "lifted/NMData/SkeletalCalibrationVariables.cpp"
   },
+  "0x00622750": {
+    "name": "InitTaggedZeroFloatTriple",
+    "signature": "void* InitTaggedZeroFloatTriple(void* self)",
+    "summary": "Stores the tag address mem_0097707C at +0x00 and zeroes three floats at +0x04, +0x08, +0x0C; returns self.",
+    "lifted_path": "lifted/leaf/tiny_620000.cpp"
+  },
   "0x00622780": {
     "name": "NMData::HingeCalibrationVariables::vfunc_3",
     "class": "NMData::HingeCalibrationVariables",

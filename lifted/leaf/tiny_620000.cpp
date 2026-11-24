@@ -45,3 +45,22 @@ extern "C" void __fastcall fn_006268F0(void* self) {
     lift_field<void*>(self, 0x0) = &mem_00977734;
     ext_0060BA10(self);
 }
+
+// [0x00622750] sub_00622750 (20 bytes)
+namespace lift_00622750 {
+extern const char mem_0097707C[];
+
+// @name InitTaggedZeroFloatTriple
+// @summary Stores the tag address mem_0097707C at +0x00 and zeroes three floats at +0x04, +0x08, +0x0C; returns self.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0C float field_0x0C
+void* InitTaggedZeroFloatTriple(void* self) {
+    lift_field<float>(self, 0x04) = 0.0f;
+    lift_field<uint32_t>(self, 0x00) = 0x0097707Cu;
+    lift_field<float>(self, 0x08) = 0.0f;
+    lift_field<float>(self, 0x0C) = 0.0f;
+    return self;
+}
+} // namespace lift_00622750
