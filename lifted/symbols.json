@@ -30731,6 +30731,13 @@
     "summary": "Reads a byte at offset +0x5 from the pointer stored at this+0x4",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006AD0A0": {
+    "name": "UnknownObject::setField44",
+    "class": "UnknownObject",
+    "signature": "void fn_006AD0A0(void* self, uint32_t value)",
+    "summary": "Stores its argument at offset +0x44 of this, then calls fn_006AD950 with that argument as its object pointer.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006AD0E0": {
     "name": "Unknown::setField28IfNonNull",
     "class": "Unknown",

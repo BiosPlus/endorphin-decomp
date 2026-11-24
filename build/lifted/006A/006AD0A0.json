@@ -1,0 +1,22 @@
+{
+  "va": "0x006AD0A0",
+  "size": 17,
+  "orig_symbol": "sub_006AD0A0",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "UnknownObject::setField44",
+  "class": "UnknownObject",
+  "signature": "void fn_006AD0A0(void* self, uint32_t value)",
+  "summary": "Stores its argument at offset +0x44 of this, then calls fn_006AD950 with that argument as its object pointer.",
+  "fields": [
+    {
+      "class": "UnknownObject",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:54:27Z"
+}
