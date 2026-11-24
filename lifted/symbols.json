@@ -34645,6 +34645,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00515840 (sub_00511290).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00705160": {
+    "name": "sub_00705160",
+    "signature": "uint8_t __fastcall sub_00705160(uint32_t ecx, uint32_t edx)",
+    "summary": "Reads a byte at offset 0x7cd from the object pointer at this+0xf0",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x00705250": {
     "name": "ClearGlobalDwordPair",
     "signature": "void fn_00705250(void* self)",

@@ -941,3 +941,35 @@ void __thiscall sub_00704EB0(uint32_t self) {
     reinterpret_cast<VFunc>(mem_r32(vtable + 0x154))(subobj);
 }
 } // namespace lift_00704EB0
+
+// [0x00707960]
+namespace lift_00707960 {
+// @name get_field_0xd0_item
+// @summary Returns the 32-bit element at the given index from the array at +0xd0
+// @field Self +0xd0 uint32_t* field_0xd0
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+uint32_t __thiscall sub_00707960(uint32_t self, uint32_t index) {
+    uint32_t arr = mem_read32(self + 0xd0);
+    return mem_read32(arr + index * 4);
+}
+} // namespace lift_00707960
+
+// [0x00705160]
+namespace lift_00705160 {
+// @name sub_00705160
+// @summary Reads a byte at offset 0x7cd from the object pointer at this+0xf0
+// @field unknown +0xf0 uint32_t field_0xf0
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern uint8_t mem_read8(uint32_t addr);
+
+uint8_t __fastcall sub_00705160(uint32_t ecx, uint32_t edx) {
+    (void)edx;
+    uint32_t ptr = mem_read32(ecx + 0xf0);
+    return mem_read8(ptr + 0x7cd);
+}
+} // namespace lift_00705160
