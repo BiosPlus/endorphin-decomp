@@ -24283,6 +24283,13 @@
     "summary": "Setter storing float argument into field at offset +0x8C.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00648EA0": {
+    "name": "Unknown::dispatchVirtualByFlag",
+    "class": "Unknown",
+    "signature": "void fn_00648EA0(void* self, bool flag)",
+    "summary": "Calls virtual slot 6 when flag is nonzero, otherwise virtual slot 7, on self (thiscall, one stack arg, ret 4).",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
   "0x00648EC0": {
     "name": "sub_00648EC0",
     "class": "CompoundSensor",

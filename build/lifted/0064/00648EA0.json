@@ -1,0 +1,22 @@
+{
+  "va": "0x00648EA0",
+  "size": 25,
+  "orig_symbol": "sub_00648EA0",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "Unknown::dispatchVirtualByFlag",
+  "class": "Unknown",
+  "signature": "void fn_00648EA0(void* self, bool flag)",
+  "summary": "Calls virtual slot 6 when flag is nonzero, otherwise virtual slot 7, on self (thiscall, one stack arg, ret 4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtbl"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:50:53Z"
+}

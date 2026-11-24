@@ -804,3 +804,24 @@ void fn_00644F00(void* self, uint8_t value) {
     }
 }
 } // namespace lift_00644F00
+
+// [0x00648EA0] sub_00648EA0 (25 bytes)
+namespace lift_00648EA0 {
+// @name Unknown::dispatchVirtualByFlag
+// @class Unknown
+// @summary Calls virtual slot 6 when flag is nonzero, otherwise virtual slot 7, on self (thiscall, one stack arg, ret 4).
+// @field Unknown +0x00 void** vtbl
+
+namespace {
+using VSlotFn = void (*)(void* self);
+}
+
+void fn_00648EA0(void* self, bool flag) {
+    void** vtbl = *reinterpret_cast<void***>(self);
+    if (flag) {
+        reinterpret_cast<VSlotFn>(vtbl[0x18 / sizeof(void*)])(self);
+    } else {
+        reinterpret_cast<VSlotFn>(vtbl[0x1C / sizeof(void*)])(self);
+    }
+}
+} // namespace lift_00648EA0
