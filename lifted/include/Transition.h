@@ -10,6 +10,6 @@
 // Recovered field layout for Transition:
 namespace lifted_layout {
 struct Transition_Fields {
-    // +0x0   void*                    object  (evidence: 0x0046E570, 0x004986A0, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x005B3680)
+    // +0x0   void*                    object  (evidence: 0x0046E570, 0x004986A0, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x005B3680, 0x006749C0)
 };
 } // namespace lifted_layout

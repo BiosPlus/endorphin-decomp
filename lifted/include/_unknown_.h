@@ -11,7 +11,7 @@ struct _unknown__Fields {
     // +0x0   void*                    delegate  (evidence: 0x00493E60, 0x00494050) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD                    field_0x00  (evidence: 0x00543300, 0x00782D00, 0x00784620, 0x00788E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   float                    field_0x00  (evidence: 0x00669E40) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x0040FDC0, 0x004584C0, 0x00481BB0, 0x00505030, 0x00519CE0, 0x005478F0, 0x0054C760, 0x0063E0F0, 0x00661920) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x0040FDC0, 0x004584C0, 0x00481BB0, 0x00505030, 0x00519CE0, 0x005478F0, 0x0054C760, 0x0063E0F0, 0x00661920, 0x006749C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t                  field_0x00  (evidence: 0x00710F50) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x00493EC0, 0x005E0AB0, 0x005E2C70, 0x006BB820) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vtable (set to&    mem_00991348)  (evidence: 0x006B0C60) // CONFLICT: multiple definitions at +0x0
