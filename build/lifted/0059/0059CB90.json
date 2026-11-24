@@ -1,0 +1,22 @@
+{
+  "va": "0x0059CB90",
+  "size": 15,
+  "orig_symbol": "IdentityNode::vfunc_11_off_4",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "IdentityNode::vfunc_11_off_4",
+  "class": "IdentityNode",
+  "signature": "uint32_t fn_0059CB90(void* self)",
+  "summary": "Forwards to vtable slot 3 (+0x0C) of the object, passing the global mem_00B40640 as the single argument; returns the callee's result.",
+  "fields": [
+    {
+      "class": "IdentityNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:30:27Z"
+}

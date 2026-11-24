@@ -5418,3 +5418,22 @@ uint32_t CompoundRenderable_vfunc_16(void* self) {
     return result + 1u;
 }
 } // namespace lift_00537A90
+
+// [0x0059CB90] IdentityNode::vfunc_11_off_4 (15 bytes)
+namespace lift_0059CB90 {
+extern int mem_00B40640;
+
+// @name IdentityNode::vfunc_11_off_4
+// @class IdentityNode
+// @summary Forwards to vtable slot 3 (+0x0C) of the object, passing the global mem_00B40640 as the single argument; returns the callee's result.
+// @field IdentityNode +0x00 void* vtable
+
+// Thiscall-style slot signature: self in ECX, one stack argument, callee cleans up.
+using IdentitySlot3Fn = uint32_t(__thiscall*)(void* self, int arg);
+
+uint32_t fn_0059CB90(void* self) {
+    void* const* vtable = *static_cast<void* const* const*>(self);
+    auto target = reinterpret_cast<IdentitySlot3Fn>(vtable[3]);
+    return target(self, static_cast<int>(mem_00B40640));
+}
+} // namespace lift_0059CB90
