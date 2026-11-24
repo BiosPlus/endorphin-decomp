@@ -5658,6 +5658,13 @@
     "summary": "Calls the scalar deleting destructor at 0x00494050 on self and returns self (ecx) unchanged.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x004940E0": {
+    "name": "Unknown::ToggleMaskIfTestMismatch",
+    "class": "Unknown",
+    "signature": "void fn_004940E0(void* self, uint32_t mask, uint8_t flag)",
+    "summary": "Tests whether any bit in mask is set in the dword at [this]; if that boolean differs from the byte flag argument, calls sub_00494060 to XOR mask into the dword.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x004947D0": {
     "name": "sub_004947D0",
     "signature": "extern \"C\" void __fastcall fn_004947D0(void* self)",

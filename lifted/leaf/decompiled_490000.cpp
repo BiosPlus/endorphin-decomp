@@ -78,3 +78,27 @@ uint32_t fn_00493E10(void* self, uint32_t arg) {
     return fn(obj, arg);
 }
 } // namespace lift_00493E10
+
+// [0x004940E0] sub_004940E0 (24 bytes)
+namespace lift_004940E0 {
+// Known callee 0x00494060: sub_00494060 (XORs a 32-bit value at [ecx] with the first stack argument.)
+extern void __thiscall ext_00494060(void* self, uint32_t mask);
+
+// @name Unknown::ToggleMaskIfTestMismatch
+// @class Unknown
+// @summary Tests whether any bit in mask is set in the dword at [this]; if that boolean differs from the byte flag argument, calls sub_00494060 to XOR mask into the dword.
+// @field Unknown +0x00 uint32_t field_0x00
+void fn_004940E0(void* self, uint32_t mask, uint8_t flag) {
+    // mov eax, [esp+4] ; test [ecx], eax ; setne dl
+    uint32_t word = lift_field<uint32_t>(self, 0x00);
+    uint8_t set = (word & mask) != 0 ? 1 : 0;
+
+    // cmp dl, [esp+8] ; je ret
+    if (set != flag) {
+        // push eax ; call sub_00494060 (thiscall: ecx = self, stack = mask)
+        ext_00494060(self, mask);
+    }
+
+    // ret 8 (callee-cleaned stack arguments; handled by the calling convention)
+}
+} // namespace lift_004940E0

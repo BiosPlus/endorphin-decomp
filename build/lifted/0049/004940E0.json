@@ -1,0 +1,22 @@
+{
+  "va": "0x004940E0",
+  "size": 24,
+  "orig_symbol": "sub_004940E0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "Unknown::ToggleMaskIfTestMismatch",
+  "class": "Unknown",
+  "signature": "void fn_004940E0(void* self, uint32_t mask, uint8_t flag)",
+  "summary": "Tests whether any bit in mask is set in the dword at [this]; if that boolean differs from the byte flag argument, calls sub_00494060 to XOR mask into the dword.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:35:28Z"
+}
