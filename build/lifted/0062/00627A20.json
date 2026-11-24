@@ -1,0 +1,22 @@
+{
+  "va": "0x00627A20",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSensors::SensorAbsoluteOrientation, int, \u0026public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSensors::SensorAbsoluteOrientation, int, setReference\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cSensors::SensorAbsoluteOrientation, int, \u0026public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)\u003e",
+  "signature": "extern \"C\" uint8_t mem_00B4D7C8;   // one-time init guard byte (bit 0) extern \"C\" uint32_t mem_00B4D7C4;  // function-local static object; first dword is its vtable void fn_00627A20(void* self)",
+  "summary": "Lazily constructs a guarded function-local static object (guard bit 0 of mem_00B4D7C8) and stores its address at +0x04 of the argument.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:57:07Z"
+}

@@ -28881,6 +28881,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00650DB0 (ExprParser::WriteMethodType\u003cSkeletalJoint, int, ...\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00627A20": {
+    "name": "ExprParser::WriteMethodType\u003cSensors::SensorAbsoluteOrientation, int, setReference\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cSensors::SensorAbsoluteOrientation, int, \u0026public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)\u003e",
+    "signature": "extern \"C\" uint8_t mem_00B4D7C8;   // one-time init guard byte (bit 0) extern \"C\" uint32_t mem_00B4D7C4;  // function-local static object; first dword is its vtable void fn_00627A20(void* self)",
+    "summary": "Lazily constructs a guarded function-local static object (guard bit 0 of mem_00B4D7C8) and stores its address at +0x04 of the argument.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00627AA0": {
     "name": "ExprParser::ReadMethodType\u003cSensors::SensorAbsoluteOrientation, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cSensors::SensorAbsoluteOrientation, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1\u003e",

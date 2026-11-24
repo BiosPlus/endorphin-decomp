@@ -7688,3 +7688,24 @@ void fn_0062A250(void* obj) {
     lift_field<uint32_t>(obj, 4) = 0x00B515CCu;
 }
 } // namespace lift_0062A250
+
+// [0x00627A20] ExprParser::WriteMethodType<Sensors::SensorAbsoluteOrientation, int, &public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)>::vfunc_40 (122 bytes)
+namespace lift_00627A20 {
+extern void ext_0067A670(void* self, uint32_t arg);
+extern uint8_t mem_00B4D7C8;   // one-time init guard byte (bit 0)
+extern uint32_t mem_00B4D7C4;  // function-local static object; first dword is its vtable
+
+// @name ExprParser::WriteMethodType<Sensors::SensorAbsoluteOrientation, int, setReference>::vfunc_40
+// @class ExprParser::WriteMethodType<Sensors::SensorAbsoluteOrientation, int, &public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)>
+// @summary Lazily constructs a guarded function-local static object (guard bit 0 of mem_00B4D7C8) and stores its address at +0x04 of the argument.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+void fn_00627A20(void* self) {
+    if ((mem_00B4D7C8 & 1u) == 0) {
+        mem_00B4D7C8 |= 1u;
+        ext_0067A670(&mem_00B4D7C4, 0);
+        mem_00B4D7C4 = 0x977dec;
+    }
+    lift_field<uint32_t>(self, 0x04) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B4D7C4));
+}
+} // namespace lift_00627A20
