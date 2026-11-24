@@ -11,6 +11,7 @@ struct UnknownClass_Fields {
     // +0x0   uint32_t                 field_0x00  (evidence: 0x00493D80, 0x00494050) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t                  field_0x00  (evidence: 0x004B0F50) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x00465B20, 0x00468730) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vptr  (evidence: 0x00413C40) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x006A7AE0) // CONFLICT: multiple definitions at +0x0
     // +0x1   uint8_t                  field_0x01  (evidence: 0x004B0F50)
     // +0x2   uint8_t                  field_0x02  (evidence: 0x004B0F50)
@@ -25,6 +26,8 @@ struct UnknownClass_Fields {
     // +0x10  uint32_t[]               field_0x10  (evidence: 0x005B11D0, 0x005B7040)
     // +0x14  uint32_t                 field_0x14  (evidence: 0x007C2E50, 0x007C6FB0)
     // +0x20  uint32_t                 field_0x20  (evidence: 0x004B0F50)
+    // +0x3C  void*                    field_0x3c  (evidence: 0x00413C40)
+    // +0x44  CRITICAL_SECTION         field_0x44  (evidence: 0x00413C40)
     // +0x58  uint32_t                 field_0x58  (evidence: 0x007AEEE0)
     // +0x64  void*                    field_0x64  (evidence: 0x0044B700)
     // +0x88  void*                    subobject  (evidence: 0x00454C00)

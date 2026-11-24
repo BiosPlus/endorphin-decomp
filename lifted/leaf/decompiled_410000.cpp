@@ -378,3 +378,37 @@ void fn_00413990(void* self) {
     ext_MSVCP80_basic_streambuf_dtor(self);
 }
 } // namespace lift_00413990
+
+// [0x00413C40] sub_00413C40 (40 bytes)
+namespace lift_00413C40 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// cdecl, one argument (pushed from [this+0x3c]).
+extern void ext_006A5C5C(void* arg);
+extern int mem_00924F48;  // IAT slot: MSVCP80 basic_streambuf dtor (base-class tail jump)
+extern int mem_009242E4;  // IAT slot: KERNEL32!DeleteCriticalSection (stdcall)
+
+// @name UnknownClass::teardown_00413C40
+// @class UnknownClass
+// @summary Destructor-style teardown: resets vptr to 0x92c230, deletes the CRITICAL_SECTION at +0x44, calls ext_006A5C5C(+0x3c), then tail-jumps to the MSVCP80 basic_streambuf dtor with the same this.
+// @field UnknownClass +0x00 uint32_t vptr
+// @field UnknownClass +0x3c void* field_0x3c
+// @field UnknownClass +0x44 CRITICAL_SECTION field_0x44
+extern void __thiscall fn_00413C40(void* self) {
+    using StdcallVoidFn = void(__stdcall*)(void*);
+    using ThiscallVoidFn = void(__thiscall*)(void*);
+
+    // mov dword ptr [esi], 0x92c230
+    lift_field<uint32_t>(self, 0x00) = 0x0092C230u;
+
+    // push (this+0x44); call [KERNEL32!DeleteCriticalSection]
+    auto deleteCriticalSection = reinterpret_cast<StdcallVoidFn>(mem_009242E4);
+    deleteCriticalSection(&lift_field<uint8_t>(self, 0x44));
+
+    // push [this+0x3c]; call thunk_MFC80_ord_764; add esp, 4
+    ext_006A5C5C(lift_field<void*>(self, 0x3c));
+
+    // mov ecx, esi; pop esi; jmp [MSVCP80 basic_streambuf dtor]
+    auto baseDtor = reinterpret_cast<ThiscallVoidFn>(mem_00924F48);
+    baseDtor(self);
+}
+} // namespace lift_00413C40

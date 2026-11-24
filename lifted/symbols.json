@@ -962,6 +962,13 @@
     "summary": "Reset vptr, delete embedded CRITICAL_SECTION at +0x44, release the resource at +0x3c via ext_006A5C5C, then tail-call the base streambuf destructor.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00413C40": {
+    "name": "UnknownClass::teardown_00413C40",
+    "class": "UnknownClass",
+    "signature": "extern \"C\" int mem_00924F48;  // IAT slot: MSVCP80 basic_streambuf dtor (base-class tail jump) extern \"C\" int mem_009242E4;  // IAT slot: KERNEL32!DeleteCriticalSection (stdcall) extern \"C\" void __thiscall fn_00413C40(void* self)",
+    "summary": "Destructor-style teardown: resets vptr to 0x92c230, deletes the CRITICAL_SECTION at +0x44, calls ext_006A5C5C(+0x3c), then tail-jumps to the MSVCP80 basic_streambuf dtor with the same this.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00414220": {
     "name": "ConsoleWnd::vfunc_1",
     "class": "ConsoleWnd",
