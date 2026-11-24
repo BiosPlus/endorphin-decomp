@@ -13649,6 +13649,13 @@
     "summary": "Forwards to vtable slot 3 (+0x0C) of the object, passing the global mem_00B40640 as the single argument; returns the callee's result.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0059CBA0": {
+    "name": "IdentityNode::vfunc_12_off_4",
+    "class": "IdentityNode",
+    "signature": "int fn_0059CBA0(void* self)",
+    "summary": "Forwards a call through the vtable slot at +0x8 with the global mem_00B40640 as the single argument, returning the callee's result.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x0059CBB0": {
     "name": "World::vfunc_1_off_C",
     "class": "World",

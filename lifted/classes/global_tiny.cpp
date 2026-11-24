@@ -5437,3 +5437,19 @@ uint32_t fn_0059CB90(void* self) {
     return target(self, static_cast<int>(mem_00B40640));
 }
 } // namespace lift_0059CB90
+
+// [0x0059CBA0] IdentityNode::vfunc_12_off_4 (15 bytes)
+namespace lift_0059CBA0 {
+extern int mem_00B40640;
+
+// @name IdentityNode::vfunc_12_off_4
+// @class IdentityNode
+// @summary Forwards a call through the vtable slot at +0x8 with the global mem_00B40640 as the single argument, returning the callee's result.
+// (No direct field accesses: only the vtable pointer at +0x0 and vtable slot 2 are read.)
+int fn_0059CBA0(void* self) {
+    using VFn = int (*)(void* self, int arg);
+    void** vtbl = *reinterpret_cast<void***>(self);
+    VFn target = reinterpret_cast<VFn>(vtbl[2]);
+    return target(self, mem_00B40640);
+}
+} // namespace lift_0059CBA0
