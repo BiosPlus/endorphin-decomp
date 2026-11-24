@@ -35395,6 +35395,12 @@
     "summary": "Returns 1 if the dword at this+0xAC is nonzero, otherwise 0.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072DC50": {
+    "name": "VirtualCall_Slot7_Forward",
+    "signature": "DWORD __thiscall fn_0072DC50(void* self, DWORD arg)",
+    "summary": "Thiscall wrapper: calls vtable slot 7 (+0x1c) on self with (0, arg) and returns its result.",
+    "lifted_path": "lifted/leaf/tiny_720000.cpp"
+  },
   "0x00732CB0": {
     "name": "sub_00732CB0",
     "signature": "extern \"C\" void __stdcall fn_00732CB0(int a1)",

@@ -251,3 +251,22 @@ uint32_t Unknown_hasField_AC(const Unknown* self) {
     return self->field_0xAC != 0 ? 1u : 0u;
 }
 } // namespace lift_0072DB80
+
+// [0x0072DC50] sub_0072DC50 (15 bytes)
+namespace lift_0072DC50 {
+// @name VirtualCall_Slot7_Forward
+// @summary Thiscall wrapper: calls vtable slot 7 (+0x1c) on self with (0, arg) and returns its result.
+// @field Unknown +0x00 void** field_0x00
+
+// Pointer to a thiscall method taking (this, int, int) and returning DWORD.
+// On 32-bit MSVC, __thiscall places `this` in ECX and the rest on the stack.
+typedef DWORD(__thiscall* VSlotFn)(void* self, DWORD a, DWORD b);
+
+DWORD __thiscall fn_0072DC50(void* self, DWORD arg) {
+    // [ecx] -> vtable; vtbl[7] is byte offset +0x1c on the 32-bit target.
+    void** vtbl = *reinterpret_cast<void***>(self);
+    VSlotFn slot = reinterpret_cast<VSlotFn>(vtbl[7]);
+    // Original pushes arg, then 0, so the callee receives (self, 0, arg).
+    return slot(self, 0, arg);
+}
+} // namespace lift_0072DC50

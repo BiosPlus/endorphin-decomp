@@ -1,0 +1,21 @@
+{
+  "va": "0x0072DC50",
+  "size": 15,
+  "orig_symbol": "sub_0072DC50",
+  "src_path": "src/leaf/tiny_720000.cpp",
+  "lifted_path": "lifted/leaf/tiny_720000.cpp",
+  "name": "VirtualCall_Slot7_Forward",
+  "signature": "DWORD __thiscall fn_0072DC50(void* self, DWORD arg)",
+  "summary": "Thiscall wrapper: calls vtable slot 7 (+0x1c) on self with (0, arg) and returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:32:49Z"
+}
