@@ -332,3 +332,39 @@ void __thiscall sub_00556610(void* self) {
     *(uint32_t*)((uint8_t*)self + 0xc) = 0;
 }
 } // namespace lift_00556610
+
+// [0x00556640] sub_00556640 (55 bytes)
+namespace lift_00556640 {
+// @name sub_00556640
+// @summary Auto-lifted identical-shape clone of 0x00481DE0 (fillStructArrayAndGetEnd).
+namespace lift_00481DE0 {
+extern void ext_005555D0(uint32_t dst, uint32_t count, uint32_t src);
+
+// @name fillStructArrayAndGetEnd
+// @summary Fills count 64-byte slots at dst with the template at src via ext_00481770 and returns dst + count*64.
+// Note: the original pushes extra stack words (saved ecx, a flag dword, and a duplicate of src) that the
+// callee ignores per its 3-argument signature; they are not reproduced here.
+uint32_t __stdcall fn_00556640(uint32_t dst, uint32_t count, uint32_t src) {
+    ext_005555D0(dst, count, src);
+    return dst + (count << 5);
+}
+} // namespace lift_00481DE0
+} // namespace lift_00556640
+
+// [0x0055F670] sub_0055F670 (55 bytes)
+namespace lift_0055F670 {
+// @name sub_0055F670
+// @summary Auto-lifted identical-shape clone of 0x00481DE0 (fillStructArrayAndGetEnd).
+namespace lift_00481DE0 {
+extern void ext_0055F390(uint32_t dst, uint32_t count, uint32_t src);
+
+// @name fillStructArrayAndGetEnd
+// @summary Fills count 64-byte slots at dst with the template at src via ext_00481770 and returns dst + count*64.
+// Note: the original pushes extra stack words (saved ecx, a flag dword, and a duplicate of src) that the
+// callee ignores per its 3-argument signature; they are not reproduced here.
+uint32_t __stdcall fn_0055F670(uint32_t dst, uint32_t count, uint32_t src) {
+    ext_0055F390(dst, count, src);
+    return dst + (count << 4);
+}
+} // namespace lift_00481DE0
+} // namespace lift_0055F670

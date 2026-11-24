@@ -7239,6 +7239,12 @@
     "summary": "Fills count 64-byte slots at dst with the template at src via ext_00481770 and returns dst + count*64.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00481E20": {
+    "name": "sub_00481E20",
+    "signature": "uint32_t __stdcall fn_00481E20(uint32_t dst, uint32_t count, uint32_t src)",
+    "summary": "Auto-lifted identical-shape clone of 0x00481DE0 (fillStructArrayAndGetEnd).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x004820D0": {
     "name": "sub_004820D0",
     "signature": "DWORD* __thiscall fn_004820D0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -13930,6 +13936,12 @@
     "summary": "Forwards its single stack argument and the address of the subobject at +0x14C to ext_004EBC80.",
     "lifted_path": "lifted/NMData/TopLevelState.cpp"
   },
+  "0x004EBE30": {
+    "name": "sub_004EBE30",
+    "signature": "void* fn_004EBE30()",
+    "summary": "Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004EC560": {
     "name": "NMData::TopLevelState::vfunc_0_off_10",
     "class": "NMData::TopLevelState",
@@ -14870,6 +14882,12 @@
     "name": "CopyRangeToDest",
     "signature": "uint32_t fn_00503C20(uint32_t first, uint32_t last, uint32_t dest)",
     "summary": "Copies the 8-byte-element range [first, last) to dest and returns dest plus the copied byte count.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x00503C60": {
+    "name": "sub_00503C60",
+    "signature": "uint32_t __stdcall fn_00503C60(uint32_t dst, uint32_t count, uint32_t src)",
+    "summary": "Auto-lifted identical-shape clone of 0x00481DE0 (fillStructArrayAndGetEnd).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x00503CA0": {
@@ -19265,6 +19283,12 @@
     "summary": "Deallocates the vector buffer if non-null and resets begin, end, and capacity pointers to zero.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00556640": {
+    "name": "sub_00556640",
+    "signature": "uint32_t __stdcall fn_00556640(uint32_t dst, uint32_t count, uint32_t src)",
+    "summary": "Auto-lifted identical-shape clone of 0x00481DE0 (fillStructArrayAndGetEnd).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00556AB0": {
     "name": "sub_00556AB0",
     "signature": "DWORD* __thiscall fn_00556AB0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -19561,6 +19585,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x0055F670": {
+    "name": "sub_0055F670",
+    "signature": "uint32_t __stdcall fn_0055F670(uint32_t dst, uint32_t count, uint32_t src)",
+    "summary": "Auto-lifted identical-shape clone of 0x00481DE0 (fillStructArrayAndGetEnd).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x0055F800": {
     "name": "sub_0055F800",
     "signature": "DWORD* __thiscall fn_0055F800(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -19673,6 +19703,12 @@
     "name": "sub_00569440",
     "signature": "DWORD* __thiscall fn_00569440(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
+  "0x005694B0": {
+    "name": "sub_005694B0",
+    "signature": "uint32_t __stdcall fn_005694B0(uint32_t dst, uint32_t count, uint32_t src)",
+    "summary": "Auto-lifted identical-shape clone of 0x00481DE0 (fillStructArrayAndGetEnd).",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
   "0x005694F0": {
@@ -21114,6 +21150,12 @@
     "summary": "Lazily constructs the function-local static object at 0x00B413C4 (guarded by bit 0 of 0x00B413C8) and writes its address into out+4.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00595C50": {
+    "name": "sub_00595C50",
+    "signature": "void* fn_00595C50()",
+    "summary": "Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00595CF0": {
     "name": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1\u003e",
@@ -21987,6 +22029,12 @@
     "signature": "extern \"C\" void* __fastcall fn_005AD0C0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_005ACD80 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Commands/auto_tiny.cpp"
+  },
+  "0x005AD180": {
+    "name": "sub_005AD180",
+    "signature": "void* fn_005AD180()",
+    "summary": "Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005AD1C0": {
     "name": "fillRangeWith8ByteValue",
@@ -29893,6 +29941,12 @@
     "summary": "Evaluates a SensorIsCollidingWith pointer and returns its boolean state as a std::string, or throws on null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00625910": {
+    "name": "sub_00625910",
+    "signature": "void* fn_00625910()",
+    "summary": "Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x006259C0": {
     "name": "Sensors::SensorIsCollidingWith::vfunc_2",
     "class": "Sensors::SensorIsCollidingWith",
@@ -30348,6 +30402,12 @@
     "signature": "static inline void* as_ptr(uint32_t v)",
     "summary": "Sums (B - A) vector deltas over an element array (A via objA-\u003evfunc_5(elem), B via objB-\u003evfunc_5(\u0026elem-\u003efield_0x08)), and if the sum's magnitude is \u003e 0 stores sub_0067B7F0's returned float[3] into self+0x30.",
     "lifted_path": "lifted/Sensors/HorizontalAxisSensor.cpp"
+  },
+  "0x0062C0A0": {
+    "name": "sub_0062C0A0",
+    "signature": "uint32_t __stdcall fn_0062C0A0(uint32_t dst, uint32_t count, uint32_t src)",
+    "summary": "Auto-lifted identical-shape clone of 0x00481DE0 (fillStructArrayAndGetEnd).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x0062C0E0": {
     "name": "sub_0062C0E0",
@@ -34088,6 +34148,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049ABC0 (Unknown::getByteAt09OfPtr12C).",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x00667140": {
+    "name": "sub_00667140",
+    "signature": "void* fn_00667140()",
+    "summary": "Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00668ED0": {
     "name": "FileProject::vfunc_0",
     "class": "FileProject",
@@ -35941,6 +36007,12 @@
     "class": "(none)",
     "signature": "void fn_006813B0(void* self, int edx_unused, int a1, int a2)",
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x006813D0": {
+    "name": "sub_006813D0",
+    "signature": "uint32_t __stdcall fn_006813D0(uint32_t dst, uint32_t count, uint32_t src)",
+    "summary": "Auto-lifted identical-shape clone of 0x00481DE0 (fillStructArrayAndGetEnd).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x00681B00": {

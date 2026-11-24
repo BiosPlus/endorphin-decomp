@@ -1,0 +1,13 @@
+{
+  "va": "0x006813D0",
+  "size": 55,
+  "orig_symbol": "sub_006813D0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "sub_006813D0",
+  "signature": "uint32_t __stdcall fn_006813D0(uint32_t dst, uint32_t count, uint32_t src)",
+  "summary": "Auto-lifted identical-shape clone of 0x00481DE0 (fillStructArrayAndGetEnd).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T15:13:43Z"
+}

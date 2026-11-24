@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <new>
 #include <string>
+#include <cstdint>
 
 // [0x005A3610] sub_005A3610 (8 bytes)
 namespace lift_005A3610 {
@@ -139,3 +140,46 @@ void fn_005AA850(void* self, const float* src) {
     }
 }
 } // namespace lift_005AA850
+
+// [0x005AD180] sub_005AD180 (55 bytes)
+namespace lift_005AD180 {
+// @name sub_005AD180
+// @summary Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).
+namespace lift_0043D780 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Cdecl allocator: takes one size argument (pushed by caller), returns the block address in eax.
+extern void* ext_006A5C62(uint32_t size);
+
+// @name AllocAndInitRecord
+// @summary Allocates a 0x18-byte record, zeroes its three dword slots at +0x00/+0x04/+0x08, sets the flag bytes at +0x14=1 and +0x15=0, and returns the record.
+// @field AllocAndInitRecord +0x00 uint32_t field_0x00
+// @field AllocAndInitRecord +0x04 uint32_t field_0x04
+// @field AllocAndInitRecord +0x08 uint32_t field_0x08
+// @field AllocAndInitRecord +0x14 uint8_t field_0x14
+// @field AllocAndInitRecord +0x15 uint8_t field_0x15
+void* fn_005AD180() {
+    // push 0x18 / call ext_006A5C62 / add esp,4 (cdecl: caller cleans up)
+    void* rec = ext_006A5C62(0x2C);
+    uintptr_t base = reinterpret_cast<uintptr_t>(rec);
+
+    // Each store is guarded by a null check on the computed slot address,
+    // matching the original `test ecx,ecx / je` pattern.
+    if (base != 0) {
+        *reinterpret_cast<uint32_t*>(base + 0x00) = 0;
+    }
+    uintptr_t slot04 = base + 0x04;
+    if (slot04 != 0) {
+        *reinterpret_cast<uint32_t*>(slot04) = 0;
+    }
+    uintptr_t slot08 = base + 0x08;
+    if (slot08 != 0) {
+        *reinterpret_cast<uint32_t*>(slot08) = 0;
+    }
+
+    *reinterpret_cast<uint8_t*>(base + 0x28) = 0x01;
+    *reinterpret_cast<uint8_t*>(base + 0x29) = 0x00;
+
+    return rec;
+}
+} // namespace lift_0043D780
+} // namespace lift_005AD180

@@ -413,3 +413,21 @@ uint32_t __thiscall sub_0068DDD0(uint32_t self, uint32_t other) {
     return self;
 }
 } // namespace lift_0068DDD0
+
+// [0x006813D0] sub_006813D0 (55 bytes)
+namespace lift_006813D0 {
+// @name sub_006813D0
+// @summary Auto-lifted identical-shape clone of 0x00481DE0 (fillStructArrayAndGetEnd).
+namespace lift_00481DE0 {
+extern void ext_006812E0(uint32_t dst, uint32_t count, uint32_t src);
+
+// @name fillStructArrayAndGetEnd
+// @summary Fills count 64-byte slots at dst with the template at src via ext_00481770 and returns dst + count*64.
+// Note: the original pushes extra stack words (saved ecx, a flag dword, and a duplicate of src) that the
+// callee ignores per its 3-argument signature; they are not reproduced here.
+uint32_t __stdcall fn_006813D0(uint32_t dst, uint32_t count, uint32_t src) {
+    ext_006812E0(dst, count, src);
+    return dst + (count << 4);
+}
+} // namespace lift_00481DE0
+} // namespace lift_006813D0

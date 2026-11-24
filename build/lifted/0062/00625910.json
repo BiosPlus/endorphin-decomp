@@ -1,0 +1,45 @@
+{
+  "va": "0x00625910",
+  "size": 55,
+  "orig_symbol": "sub_00625910",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "sub_00625910",
+  "signature": "void* fn_00625910()",
+  "summary": "Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).",
+  "fields": [
+    {
+      "class": "AllocAndInitRecord",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "AllocAndInitRecord",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "AllocAndInitRecord",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "AllocAndInitRecord",
+      "offset": "+0x14",
+      "type": "uint8_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "AllocAndInitRecord",
+      "offset": "+0x15",
+      "type": "uint8_t",
+      "name": "field_0x15"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T15:13:43Z"
+}

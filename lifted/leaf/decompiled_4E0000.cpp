@@ -25,6 +25,7 @@ void fn_004E7E90(void* self) {
     lift_field<uint8_t>(self, 0x1C) = 0;
 }
 } // namespace lift_004E7E90
+#include <cstdint>
 
 // [0x004E31A0] sub_004E31A0 (41 bytes)
 namespace lift_004E31A0 {
@@ -68,3 +69,46 @@ uint32_t __thiscall sub_004ECA40(void* self, uint32_t index) {
     return ptr + index * 8u;
 }
 } // namespace lift_004ECA40
+
+// [0x004EBE30] sub_004EBE30 (55 bytes)
+namespace lift_004EBE30 {
+// @name sub_004EBE30
+// @summary Auto-lifted identical-shape clone of 0x0043D780 (AllocAndInitRecord).
+namespace lift_0043D780 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Cdecl allocator: takes one size argument (pushed by caller), returns the block address in eax.
+extern void* ext_006A5C62(uint32_t size);
+
+// @name AllocAndInitRecord
+// @summary Allocates a 0x18-byte record, zeroes its three dword slots at +0x00/+0x04/+0x08, sets the flag bytes at +0x14=1 and +0x15=0, and returns the record.
+// @field AllocAndInitRecord +0x00 uint32_t field_0x00
+// @field AllocAndInitRecord +0x04 uint32_t field_0x04
+// @field AllocAndInitRecord +0x08 uint32_t field_0x08
+// @field AllocAndInitRecord +0x14 uint8_t field_0x14
+// @field AllocAndInitRecord +0x15 uint8_t field_0x15
+void* fn_004EBE30() {
+    // push 0x18 / call ext_006A5C62 / add esp,4 (cdecl: caller cleans up)
+    void* rec = ext_006A5C62(0x48);
+    uintptr_t base = reinterpret_cast<uintptr_t>(rec);
+
+    // Each store is guarded by a null check on the computed slot address,
+    // matching the original `test ecx,ecx / je` pattern.
+    if (base != 0) {
+        *reinterpret_cast<uint32_t*>(base + 0x00) = 0;
+    }
+    uintptr_t slot04 = base + 0x04;
+    if (slot04 != 0) {
+        *reinterpret_cast<uint32_t*>(slot04) = 0;
+    }
+    uintptr_t slot08 = base + 0x08;
+    if (slot08 != 0) {
+        *reinterpret_cast<uint32_t*>(slot08) = 0;
+    }
+
+    *reinterpret_cast<uint8_t*>(base + 0x44) = 0x01;
+    *reinterpret_cast<uint8_t*>(base + 0x45) = 0x00;
+
+    return rec;
+}
+} // namespace lift_0043D780
+} // namespace lift_004EBE30
