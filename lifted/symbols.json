@@ -12071,6 +12071,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x9C and tail-calls sub_00541220.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00536E20": {
+    "name": "OglRenderer::vfunc_92",
+    "class": "OglRenderer",
+    "signature": "uint8_t fn_00536E20(void* self)",
+    "summary": "Returns the byte at index-selected slot (stride 60) of the table at +0xB8, indexed by the dword at +0x194.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00536EF0": {
     "name": "OglRenderer::vfunc_0_off_8",
     "class": "OglRenderer",

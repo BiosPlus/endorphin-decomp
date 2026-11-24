@@ -6150,3 +6150,19 @@ uint8_t fn_00537DE0(void* self) {
     return lift_field<uint8_t>(self, 0x0C);
 }
 } // namespace lift_00537DE0
+
+// [0x00536E20]
+namespace lift_00536E20 {
+// @name OglRenderer::vfunc_92
+// @class OglRenderer
+// @summary Returns the byte at index-selected slot (stride 60) of the table at +0xB8, indexed by the dword at +0x194.
+// @field OglRenderer +0x194 uint32_t field_0x194
+// @field OglRenderer +0xB8 uint8_t table_0xB8 // array base; element stride 60 bytes (idx * 15 * 4)
+uint8_t fn_00536E20(void* self) {
+    // eax = this->field_0x194; edx = eax * 15; al = *(u8*)(this + 0xB8 + 4 * edx)
+    const uint32_t idx = lift_field<uint32_t>(self, 0x194);
+    const uint32_t n = idx * 15u;                 // (idx << 4) - idx, mod 2^32
+    const uint32_t off = 0xB8u + 4u * n;          // mod 2^32, matches 32-bit address arithmetic
+    return lift_field<uint8_t>(self, static_cast<ptrdiff_t>(off));
+}
+} // namespace lift_00536E20

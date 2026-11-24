@@ -1,0 +1,28 @@
+{
+  "va": "0x00536E20",
+  "size": 21,
+  "orig_symbol": "OglRenderer::vfunc_92",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "OglRenderer::vfunc_92",
+  "class": "OglRenderer",
+  "signature": "uint8_t fn_00536E20(void* self)",
+  "summary": "Returns the byte at index-selected slot (stride 60) of the table at +0xB8, indexed by the dword at +0x194.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x194",
+      "type": "uint32_t",
+      "name": "field_0x194"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0xB8",
+      "type": "uint8_t",
+      "name": "table_0xB8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:12:55Z"
+}
