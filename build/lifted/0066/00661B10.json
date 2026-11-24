@@ -1,0 +1,33 @@
+{
+  "va": "0x00661B10",
+  "size": 51,
+  "orig_symbol": "sub_00661B10",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "sub_00661B10",
+  "signature": "uint8_t __thiscall sub_00661B10(void* self)",
+  "summary": "Checks if a checked iterator points to the first element of its container",
+  "fields": [
+    {
+      "class": "Iterator",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Iterator",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Iterator",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:14:13Z"
+}

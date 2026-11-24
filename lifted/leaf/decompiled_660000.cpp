@@ -411,3 +411,32 @@ void* fn_00667140() {
 }
 } // namespace lift_0043D780
 } // namespace lift_00667140
+
+// [0x00661B10]
+namespace lift_00661B10 {
+extern void (*mem_00925134)();
+
+// @name sub_00661B10
+// @summary Checks if a checked iterator points to the first element of its container
+// @field Iterator +0x04 uint32_t field_0x04
+// @field Iterator +0x08 uint32_t field_0x08
+// @field Iterator +0x0c uint32_t field_0x0c
+uint8_t __thiscall sub_00661B10(void* self) {
+    uint32_t obj = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x4);
+    if (obj == 0) {
+        return 0;
+    }
+
+    uint32_t ptr = *reinterpret_cast<uint32_t*>(obj + 0x64);
+    uint32_t expected = obj + 0x60;
+    uint32_t target = *reinterpret_cast<uint32_t*>(ptr);
+
+    uint32_t cur = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x8);
+    if (cur == 0 || cur != expected) {
+        mem_00925134();
+    }
+
+    uint32_t val = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0xc);
+    return static_cast<uint8_t>(val == target);
+}
+} // namespace lift_00661B10
