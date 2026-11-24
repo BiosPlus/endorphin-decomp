@@ -1392,3 +1392,24 @@ uint8_t GetFlagBit16(const void* self) {
     return static_cast<uint8_t>((value >> 16) & 0x1u);
 }
 } // namespace lift_006C9F50
+
+// [0x006C9F60]
+namespace lift_006C9F60 {
+// @name Unknown::ClearFieldsA
+// @class Unknown
+// @summary Zeroes four 32-bit fields of the object at this (offsets 0x00, 0x08, 0x0C, 0x10).
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+
+
+// Thiscall: this arrives in ECX.
+void Unknown_ClearFieldsA(void* self) {
+    auto* p = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(p + 0x00) = 0u;
+    *reinterpret_cast<uint32_t*>(p + 0x08) = 0u;
+    *reinterpret_cast<uint32_t*>(p + 0x0C) = 0u;
+    *reinterpret_cast<uint32_t*>(p + 0x10) = 0u;
+}
+} // namespace lift_006C9F60

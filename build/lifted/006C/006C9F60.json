@@ -1,0 +1,40 @@
+{
+  "va": "0x006C9F60",
+  "size": 16,
+  "orig_symbol": "sub_006C9F60",
+  "src_path": "src/leaf/tiny_6C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6C0000.cpp",
+  "name": "Unknown::ClearFieldsA",
+  "class": "Unknown",
+  "signature": "void Unknown_ClearFieldsA(void* self)",
+  "summary": "Zeroes four 32-bit fields of the object at this (offsets 0x00, 0x08, 0x0C, 0x10).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:38:56Z"
+}

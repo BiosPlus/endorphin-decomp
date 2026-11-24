@@ -32026,6 +32026,13 @@
     "summary": "Returns bit 16 of the dword at this+0x10 as a 0/1 byte.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C9F60": {
+    "name": "Unknown::ClearFieldsA",
+    "class": "Unknown",
+    "signature": "void Unknown_ClearFieldsA(void* self)",
+    "summary": "Zeroes four 32-bit fields of the object at this (offsets 0x00, 0x08, 0x0C, 0x10).",
+    "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
+  },
   "0x006C9F70": {
     "name": "sub_006C9F70",
     "signature": "extern \"C\" float __fastcall fn_006C9F70(void* self)",
