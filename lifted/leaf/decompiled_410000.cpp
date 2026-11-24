@@ -611,3 +611,38 @@ uint8_t __thiscall sub_0041C630(uint32_t self, uint32_t arg1, uint32_t arg2, uin
     return reinterpret_cast<VMethod>(static_cast<uintptr_t>(fn_addr))(child, arg1, arg2, arg3);
 }
 } // namespace lift_0041C630
+
+// [0x004152D0]
+namespace lift_004152D0 {
+extern uint32_t mem_009241E4;
+extern uint32_t mem_009241E0;
+
+// @name MappedFile::close
+// @class MappedFile
+// @summary Unmaps the file view and closes the file mapping and file handles if open.
+// @field MappedFile +0x24 uint32_t hFile
+// @field MappedFile +0x28 uint32_t hMapping
+// @field MappedFile +0x2C uint32_t lpBaseAddress
+void __thiscall sub_004152D0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    uint32_t hFile = *reinterpret_cast<uint32_t*>(obj + 0x24);
+    if (hFile == 0) {
+        return;
+    }
+
+    using UnmapViewOfFileFn = int32_t(__stdcall*)(uint32_t);
+    using CloseHandleFn = int32_t(__stdcall*)(uint32_t);
+
+    auto unmapViewOfFile = reinterpret_cast<UnmapViewOfFileFn>(static_cast<uintptr_t>(mem_009241E4));
+    auto closeHandle = reinterpret_cast<CloseHandleFn>(static_cast<uintptr_t>(mem_009241E0));
+
+    uint32_t lpBaseAddress = *reinterpret_cast<uint32_t*>(obj + 0x2C);
+    unmapViewOfFile(lpBaseAddress);
+
+    uint32_t hMapping = *reinterpret_cast<uint32_t*>(obj + 0x28);
+    closeHandle(hMapping);
+
+    closeHandle(*reinterpret_cast<uint32_t*>(obj + 0x24));
+    *reinterpret_cast<uint32_t*>(obj + 0x24) = 0;
+}
+} // namespace lift_004152D0

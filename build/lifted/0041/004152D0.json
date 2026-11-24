@@ -1,0 +1,34 @@
+{
+  "va": "0x004152D0",
+  "size": 48,
+  "orig_symbol": "sub_004152D0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "MappedFile::close",
+  "class": "MappedFile",
+  "signature": "void __thiscall sub_004152D0(void* self)",
+  "summary": "Unmaps the file view and closes the file mapping and file handles if open.",
+  "fields": [
+    {
+      "class": "MappedFile",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "hFile"
+    },
+    {
+      "class": "MappedFile",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "hMapping"
+    },
+    {
+      "class": "MappedFile",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "lpBaseAddress"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:18:14Z"
+}
