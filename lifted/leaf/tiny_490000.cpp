@@ -79,3 +79,22 @@ uint32_t __fastcall sub_00493E30(uint32_t ecx) {
     return reinterpret_cast<uint32_t (__fastcall *)(uint32_t)>(fn)(inner);
 }
 } // namespace lift_00493E30
+
+// [0x00493E00] sub_00493E00 (12 bytes)
+namespace lift_00493E00 {
+// @name forwardVtable0B4_viaFirstField
+// @summary Thunk: loads the object pointed to by self's first field, then tail-calls its vtable slot at +0xB4 with that object as this.
+// @field Unknown +0x00 void* field_0x00
+
+// Original: mov ecx,[ecx]; mov eax,[ecx]; mov edx,[eax+0xB4]; jmp edx
+// Tail call: the callee's return value (eax) is returned unchanged.
+intptr_t fn_00493E00(void* self) {
+    using VirtualFn = intptr_t (*)(void* thisPtr);
+
+    void* obj = *reinterpret_cast<void**>(self);                       // mov ecx,[ecx]
+    void** vtable = *reinterpret_cast<void***>(obj);                   // mov eax,[ecx]
+    VirtualFn target = reinterpret_cast<VirtualFn>(
+        vtable[0xB4 / sizeof(void*)]);                                 // mov edx,[eax+0xB4]
+    return target(obj);                                                // jmp edx
+}
+} // namespace lift_00493E00
