@@ -1,0 +1,33 @@
+{
+  "va": "0x007FC290",
+  "size": 17,
+  "orig_symbol": "sub_007FC290",
+  "src_path": "src/leaf/tiny_7F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7F0000.cpp",
+  "name": "copyVec3Float",
+  "signature": "void copyVec3Float(const float* src, float* dst)",
+  "summary": "Copies three consecutive 32-bit floats (offsets 0x00, 0x04, 0x08) from src to dst.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:54:45Z"
+}
