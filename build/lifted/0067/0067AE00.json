@@ -1,0 +1,22 @@
+{
+  "va": "0x0067AE00",
+  "size": 25,
+  "orig_symbol": "sub_0067AE00",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "ThreadController::setLowestPriorityIfMode2",
+  "class": "ThreadController",
+  "signature": "void __thiscall sub_0067AE00(uint32_t self, uint32_t mode)",
+  "summary": "Sets the thread priority to lowest (-2) when the argument equals 2.",
+  "fields": [
+    {
+      "class": "ThreadController",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T11:54:17Z"
+}

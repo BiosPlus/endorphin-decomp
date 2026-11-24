@@ -480,3 +480,25 @@ void fn_0067B310(void* self, double value, double divisor) {
     lift_field<double>(self, 0x18) = 0.0;
 }
 } // namespace lift_0067B310
+
+// [0x0067AE00]
+namespace lift_0067AE00 {
+// @name ThreadController::setLowestPriorityIfMode2
+// @class ThreadController
+// @summary Sets the thread priority to lowest (-2) when the argument equals 2.
+// @field ThreadController +0x0C uint32_t field_0x0C
+
+
+extern uint32_t mem_00924288;
+
+using SetThreadPriorityFn = int32_t(__stdcall*)(uint32_t hThread, int32_t nPriority);
+
+void __thiscall sub_0067AE00(uint32_t self, uint32_t mode) {
+  if (mode == 2) {
+    uint32_t field_0c = *reinterpret_cast<uint32_t*>(self + 0x0C);
+    uint32_t thread_handle = *reinterpret_cast<uint32_t*>(field_0c + 0x10);
+    auto set_thread_priority = reinterpret_cast<SetThreadPriorityFn>(mem_00924288);
+    set_thread_priority(thread_handle, -2);
+  }
+}
+} // namespace lift_0067AE00

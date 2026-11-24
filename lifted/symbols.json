@@ -27706,6 +27706,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051AED0 (NMData::RealChannel::vfunc_8).",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x00696DB0": {
+    "name": "init_00696DB0",
+    "signature": "void __thiscall sub_00696DB0(void* self)",
+    "summary": "Initializes a 20-byte struct with 0x19, three zeros, and 1.",
+    "lifted_path": "lifted/leaf/tiny_690000.cpp"
+  },
   "0x00699040": {
     "name": "sub_00699040",
     "signature": "extern \"C\" void __fastcall fn_00699040(void* self)",
