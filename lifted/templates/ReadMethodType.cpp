@@ -42648,3 +42648,32 @@ void* fn_004D87A0(void** slot, const void* unused) {
     return slot;
 }
 } // namespace lift_004D87A0
+
+// [0x0066F9F0] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>::vfunc_2 (120 bytes)
+namespace lift_0066F9F0 {
+// @name ExprParser::ReadMethodType<NM::Vector3>::vfunc_2
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>
+// @summary Reads a Vector3 through a value pointer, computes its Euclidean norm, and rounds it half away from zero to an integral float.
+// @field NM::Vector3 +0x00 float field_0x00
+// @field NM::Vector3 +0x04 float field_0x04
+// @field NM::Vector3 +0x08 float field_0x08
+float fn_0066F9F0(void* const* arg) {
+    // Original: arg is a pointer to a slot holding the Vector3*; a null Vector3* throws.
+    const auto* v = static_cast<const float*>(*arg);
+    if (v == nullptr) {
+        throw std::runtime_error("ExprParser: null Vector3 in calcNorm");
+    }
+
+    const float x = v[0];  // +0x00
+    const float y = v[1];  // +0x04
+    const float z = v[2];  // +0x08
+
+    // Norm, stored as float in the original (fstp dword).
+    const float norm = std::sqrt(x * x + y * y + z * z);
+
+    // Round half away from zero: norm >= 0 ? norm + 0.5 : norm - 0.5, then truncate.
+    const double biased = (norm < 0.0f) ? static_cast<double>(norm) - 0.5
+                                        : static_cast<double>(norm) + 0.5;
+    return static_cast<float>(std::trunc(biased));
+}
+} // namespace lift_0066F9F0

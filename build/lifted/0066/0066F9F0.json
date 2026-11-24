@@ -1,0 +1,34 @@
+{
+  "va": "0x0066F9F0",
+  "size": 120,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNM::Vector3\u003e::vfunc_2",
+  "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e",
+  "signature": "float fn_0066F9F0(void* const* arg)",
+  "summary": "Reads a Vector3 through a value pointer, computes its Euclidean norm, and rounds it half away from zero to an integral float.",
+  "fields": [
+    {
+      "class": "NM::Vector3",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "NM::Vector3",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NM::Vector3",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:04:26Z"
+}

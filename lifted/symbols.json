@@ -34623,6 +34623,13 @@
     "summary": "Evaluates NM::Vector3::calcNorm on a dereferenced Vector3 pointer, or throws if null",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0066F9F0": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e",
+    "signature": "float fn_0066F9F0(void* const* arg)",
+    "summary": "Reads a Vector3 through a value pointer, computes its Euclidean norm, and rounds it half away from zero to an integral float.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0066FA70": {
     "name": "ReadMethodType\u003cNM::Vector3\u003e::vfunc_3 (NM::Vector3::calcNorm)",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e",
