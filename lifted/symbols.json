@@ -12595,6 +12595,13 @@
     "summary": "Setter storing float argument into field at offset +0x400.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00533C50": {
+    "name": "OglRenderer::vfunc_81",
+    "class": "OglRenderer",
+    "signature": "intptr_t fn_00533C50(uint8_t* self, intptr_t arg)",
+    "summary": "Forwards its argument to virtual slot 9 (+0x24) of the embedded sub-object at +0x9C, passing 0 as the second argument, and returns the result.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00533C70": {
     "name": "OglRenderer::vfunc_82",
     "class": "OglRenderer",

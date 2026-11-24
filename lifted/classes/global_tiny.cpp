@@ -6527,3 +6527,23 @@ void fn_00533C70(void* self, uint32_t arg) {
     fn(sub, arg, 0);
 }
 } // namespace lift_00533C70
+
+// [0x00533C50] OglRenderer::vfunc_81 (27 bytes)
+namespace lift_00533C50 {
+// @name OglRenderer::vfunc_81
+// @class OglRenderer
+// @summary Forwards its argument to virtual slot 9 (+0x24) of the embedded sub-object at +0x9C, passing 0 as the second argument, and returns the result.
+// @field OglRenderer +0x9c void* field_0x9c
+
+typedef intptr_t (*EmbeddedSlotFn)(void* self, intptr_t arg, intptr_t zero);
+
+intptr_t fn_00533C50(uint8_t* self, intptr_t arg) {
+    // Embedded sub-object lives at self + 0x9C; its first word is its vtable.
+    uint8_t* sub = self + 0x9C;
+    uint8_t* vtbl = *reinterpret_cast<uint8_t**>(sub);
+    // Slot at vtable + 0x24 (9th pointer on a 32-bit build).
+    EmbeddedSlotFn fn = reinterpret_cast<EmbeddedSlotFn>(
+        *reinterpret_cast<void**>(vtbl + 0x24));
+    return fn(sub, arg, 0);
+}
+} // namespace lift_00533C50

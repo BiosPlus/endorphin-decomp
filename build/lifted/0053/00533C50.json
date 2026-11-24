@@ -1,0 +1,22 @@
+{
+  "va": "0x00533C50",
+  "size": 27,
+  "orig_symbol": "OglRenderer::vfunc_81",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "OglRenderer::vfunc_81",
+  "class": "OglRenderer",
+  "signature": "intptr_t fn_00533C50(uint8_t* self, intptr_t arg)",
+  "summary": "Forwards its argument to virtual slot 9 (+0x24) of the embedded sub-object at +0x9C, passing 0 as the second argument, and returns the result.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x9C",
+      "type": "void*",
+      "name": "field_0x9c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:02:50Z"
+}
