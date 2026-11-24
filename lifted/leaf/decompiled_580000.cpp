@@ -149,3 +149,36 @@ DWORD* __thiscall fn_005817F0(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_005817F0
+
+// [0x0058AB30] sub_0058AB30 (44 bytes)
+namespace lift_0058AB30 {
+extern int mem_00B40644;
+
+// @name QueryFloatViaMemberCallback
+// @summary Calls a function pointer stored at this->field_0x04 + 0x10, passing a 0x40-byte result buffer, this->field_0xF0 and mem_00B40644; returns the float at the result's +0x30.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0xF0 int32_t field_0xF0
+
+// Thiscall callee: receiver in ecx, then (out buffer, a, b) on the stack; returns the result pointer in eax.
+using ThisCallFn = void* (__thiscall*)(void* self, void* out, int32_t a, int32_t b);
+
+float fn_0058AB30(void* self) {
+    // Stack-local 0x40-byte result buffer (sub esp, 0x40).
+    alignas(8) uint8_t resultBuf[0x40];
+
+    // Global value pushed as the last argument.
+    int32_t globalArg = mem_00B40644;
+
+    // Function pointer lives at [[self+4] + 0x10]; receiver passed in ecx is &self->field_0x04.
+    void* embedded = lift_field<void*>(self, 0x04);
+    ThisCallFn callback = lift_field<ThisCallFn>(embedded, 0x10);
+    void* receiver = static_cast<uint8_t*>(self) + 0x04;
+
+    int32_t memberArg = lift_field<int32_t>(self, 0xF0);
+
+    void* result = callback(receiver, resultBuf, memberArg, globalArg);
+
+    // fld dword ptr [result + 0x30]; value is returned in st0 (float).
+    return lift_field<float>(result, 0x30);
+}
+} // namespace lift_0058AB30

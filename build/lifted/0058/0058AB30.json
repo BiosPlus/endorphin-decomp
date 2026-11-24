@@ -1,0 +1,27 @@
+{
+  "va": "0x0058AB30",
+  "size": 44,
+  "orig_symbol": "sub_0058AB30",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "QueryFloatViaMemberCallback",
+  "signature": "float fn_0058AB30(void* self)",
+  "summary": "Calls a function pointer stored at this-\u003efield_0x04 + 0x10, passing a 0x40-byte result buffer, this-\u003efield_0xF0 and mem_00B40644; returns the float at the result's +0x30.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "int32_t",
+      "name": "field_0xF0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:03:20Z"
+}
