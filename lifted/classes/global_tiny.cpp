@@ -6751,3 +6751,36 @@ void fn_00528C50(void* self, void* arg, uint32_t /*unusedStackArg*/) {
     fn(target, arg);
 }
 } // namespace lift_00528C50
+
+// [0x00547200] RotateTool::vfunc_17 (31 bytes)
+namespace lift_00547200 {
+// @name RotateTool::vfunc_17
+// @class RotateTool
+// @summary Calls vfunc_21 on the sub-object at +0x88, then vfunc_29 on self; returns 0.
+// @field RotateTool +0x00 void* vtable
+// @field RotateTool +0x88 void* field_0x88
+
+namespace {
+
+// Fetch slot `index` of the vtable stored at the start of `obj`.
+inline void* vtable_slot(void* obj, std::size_t index) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    return vtbl[index];
+}
+
+// Virtual method taking only `this` and returning void.
+using VMethodVoid = void (*)(void* self);
+
+} // namespace
+
+int32_t fn_00547200(void* self, int32_t /*arg0*/, int32_t /*arg1*/) {
+    // Sub-object at +0x88: vtable slot 0x54 (index 21), no arguments.
+    void* sub = *reinterpret_cast<void**>(static_cast<unsigned char*>(self) + 0x88);
+    reinterpret_cast<VMethodVoid>(vtable_slot(sub, 0x54 / sizeof(void*)))(sub);
+
+    // self: vtable slot 0x74 (index 29), no arguments.
+    reinterpret_cast<VMethodVoid>(vtable_slot(self, 0x74 / sizeof(void*)))(self);
+
+    return 0;
+}
+} // namespace lift_00547200

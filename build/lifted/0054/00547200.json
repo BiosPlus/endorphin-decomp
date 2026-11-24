@@ -1,0 +1,28 @@
+{
+  "va": "0x00547200",
+  "size": 31,
+  "orig_symbol": "RotateTool::vfunc_17",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "RotateTool::vfunc_17",
+  "class": "RotateTool",
+  "signature": "inline void* vtable_slot(void* obj, std::size_t index)",
+  "summary": "Calls vfunc_21 on the sub-object at +0x88, then vfunc_29 on self; returns 0.",
+  "fields": [
+    {
+      "class": "RotateTool",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "RotateTool",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:24:59Z"
+}
