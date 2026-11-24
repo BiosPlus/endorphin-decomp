@@ -1,0 +1,13 @@
+{
+  "va": "0x0043C980",
+  "size": 45,
+  "orig_symbol": "sub_0043C980",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "DispatchVtable2COnSubobject10",
+  "signature": "extern \"C\" void __stdcall fn_0043C980(void* arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+  "summary": "If arg1 is non-null, retrieves its subobject via ext_004407B0 and invokes vtable slot +0x2C on it with (arg1, arg2, arg3, arg4).",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:12:41Z"
+}

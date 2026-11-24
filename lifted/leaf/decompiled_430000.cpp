@@ -1461,3 +1461,22 @@ void fn_00430BD0(void* self) {
     reinterpret_cast<void (*)(void*, uint8_t)>(selfSlot0)(self, flag);
 }
 } // namespace lift_00430BD0
+
+// [0x0043C980]
+namespace lift_0043C980 {
+// @name DispatchVtable2COnSubobject10
+// @summary If arg1 is non-null, retrieves its subobject via ext_004407B0 and invokes vtable slot +0x2C on it with (arg1, arg2, arg3, arg4).
+
+extern void* __thiscall ext_004407B0(void* self);
+
+extern void __stdcall fn_0043C980(void* arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) {
+    if (!arg1) {
+        return;
+    }
+    void* obj = ext_004407B0(arg1);
+    void** vtable = *reinterpret_cast<void***>(obj);
+    using Vfn = void(__thiscall*)(void* self, void* arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4);
+    auto fn = reinterpret_cast<Vfn>(vtable[0x2C / sizeof(void*)]);
+    fn(obj, arg1, arg2, arg3, arg4);
+}
+} // namespace lift_0043C980
