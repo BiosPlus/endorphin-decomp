@@ -10,5 +10,5 @@
   "summary": "Reads the dword pointed to by the second argument, forwards it as the ecx value with self to 0x00695E20, and returns self (stdcall, ret 0xc).",
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T13:48:12Z"
+  "lifted_at": "2026-11-24T13:48:25Z"
 }
