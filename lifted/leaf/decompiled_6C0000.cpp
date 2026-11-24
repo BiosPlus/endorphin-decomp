@@ -127,26 +127,6 @@ extern uint32_t __fastcall fn_006C35B0(void* self, int edx_unused, int32_t idx) 
 } // namespace lift_006C3470
 } // namespace lift_006C35B0
 
-// [0x006C9CE0]
-namespace lift_006C9CE0 {
-// @name Unknown::SetFlag0x100
-// @class Unknown
-// @summary Copies bit 8 of the stack argument into bit 8 (0x100) of the dword at this+0x10; other bits are preserved.
-// @field Unknown +0x10 uint32_t flags
-
-struct Unknown {
-    uint8_t pad_0x00[0x10];
-    uint32_t flags; // +0x10
-};
-
-void Unknown_SetFlag0x100(Unknown* self, uint32_t arg) {
-    uint32_t f = self->flags;
-    // ((f ^ arg) & 0x100) ^ f  ==  f with bit 8 replaced by bit 8 of arg
-    uint32_t edx = ((f ^ arg) & 0x100u) ^ f;
-    self->flags = edx;
-}
-} // namespace lift_006C9CE0
-
 // [0x006C9A90]
 namespace lift_006C9A90 {
 // @name Unknown::InitDefaults
@@ -233,3 +213,23 @@ int32_t fn_006C59C0(void* self, uint32_t index) {
     return ext_006E7460(children[index]);
 }
 } // namespace lift_006C59C0
+
+// [0x006C9CE0]
+namespace lift_006C9CE0 {
+// @name Unknown::SetFlag0x100
+// @class Unknown
+// @summary Copies bit 8 of the stack argument into bit 8 (0x100) of the dword at this+0x10; other bits are preserved.
+// @field Unknown +0x10 DWORD flags
+
+struct Unknown {
+    BYTE pad_0x00[0x10];
+    DWORD flags; // +0x10
+};
+
+void Unknown_SetFlag0x100(Unknown* self, DWORD arg) {
+    DWORD f = self->flags;
+    // ((f ^ arg) & 0x100) ^ f  ==  f with bit 8 replaced by bit 8 of arg
+    DWORD edx = ((f ^ arg) & 0x100u) ^ f;
+    self->flags = edx;
+}
+} // namespace lift_006C9CE0

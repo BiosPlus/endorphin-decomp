@@ -36485,7 +36485,7 @@
   "0x006C9CE0": {
     "name": "Unknown::SetFlag0x100",
     "class": "Unknown",
-    "signature": "void Unknown_SetFlag0x100(Unknown* self, uint32_t arg)",
+    "signature": "void Unknown_SetFlag0x100(Unknown* self, DWORD arg)",
     "summary": "Copies bit 8 of the stack argument into bit 8 (0x100) of the dword at this+0x10; other bits are preserved.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
