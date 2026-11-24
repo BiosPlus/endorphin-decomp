@@ -190,7 +190,7 @@ struct Unknown_Fields {
     // +0x28  float                    field_0x28  (evidence: 0x00538FA0) // CONFLICT: multiple definitions at +0x28
     // +0x28  int32_t                  field_0x28  (evidence: 0x006AD0E0) // CONFLICT: multiple definitions at +0x28
     // +0x28  std::string              field_0x28  (evidence: 0x005B18E0, 0x005B7040) // CONFLICT: multiple definitions at +0x28
-    // +0x28  uint32_t                 field_0x28  (evidence: 0x00648910, 0x00790DC0) // CONFLICT: multiple definitions at +0x28
+    // +0x28  uint32_t                 field_0x28  (evidence: 0x00648910, 0x00790DC0, 0x007CD510) // CONFLICT: multiple definitions at +0x28
     // +0x28  uint8_t                  field_0x28  (evidence: 0x00507F50, 0x00507F60, 0x0050E350, 0x0050F970) // CONFLICT: multiple definitions at +0x28
     // +0x28  void*                    field_0x28  (evidence: 0x004773B0, 0x00627280, 0x007C8A10) // CONFLICT: multiple definitions at +0x28
     // +0x29  uint8_t field_0x29 (flag byte)  (evidence: 0x0046FB80, 0x00476B80, 0x00486D40, 0x004928C0, 0x0052A1A0, 0x005AC820, 0x005E0AE0, 0x005E2C70, 0x00624CF0, 0x0065B120)
@@ -352,7 +352,8 @@ struct Unknown_Fields {
     // +0x204 DWORD                    field_0x204  (evidence: 0x004A57F0)
     // +0x208 float                    field_0x208  (evidence: 0x007C76B0)
     // +0x20C void*                    field_0x20c  (evidence: 0x00644F00)
-    // +0x210 DWORD                    field_0x210  (evidence: 0x004A57F0)
+    // +0x210 DWORD                    field_0x210  (evidence: 0x004A57F0) // CONFLICT: multiple definitions at +0x210
+    // +0x210 uint32_t                 field_0x210  (evidence: 0x007CD510) // CONFLICT: multiple definitions at +0x210
     // +0x230 uint8_t                  field_0x230  (evidence: 0x00644F00)
     // +0x234 void*                    child  (evidence: 0x005E12F0, 0x005E2C70) // CONFLICT: multiple definitions at +0x234
     // +0x234 void*                    field_0x234  (evidence: 0x005E1330, 0x005E1360, 0x005E2C70) // CONFLICT: multiple definitions at +0x234

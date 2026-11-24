@@ -1388,3 +1388,28 @@ uint32_t fn_007C5440(uint32_t x, int32_t n) {
     return result;
 }
 } // namespace lift_007C5440
+
+// [0x007CD510] sub_007CD510 (31 bytes)
+namespace lift_007CD510 {
+// @name Unknown::ClearOwnerBackref
+// @class Unknown
+// @summary If self's owner (self+0x28) points back to self (owner+0x210), clear both links.
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x210 uint32_t field_0x210
+void fn_007CD510(void* self) {
+    // Guest 32-bit addresses are stored as uint32_t fields.
+    const uint32_t self_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    const uint32_t owner_addr = lift_field<uint32_t>(self, 0x28);
+    if (owner_addr == 0) {
+        return;
+    }
+
+    void* owner = reinterpret_cast<void*>(static_cast<uintptr_t>(owner_addr));
+    if (lift_field<uint32_t>(owner, 0x210) != self_addr) {
+        return;
+    }
+
+    lift_field<uint32_t>(owner, 0x210) = 0;
+    lift_field<uint32_t>(self, 0x28) = 0;
+}
+} // namespace lift_007CD510

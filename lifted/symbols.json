@@ -43336,6 +43336,13 @@
     "summary": "Detaches the pointer at self+0x178, zeroes it, and clears the detached object's +0x18 dword if one was present.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CD510": {
+    "name": "Unknown::ClearOwnerBackref",
+    "class": "Unknown",
+    "signature": "void fn_007CD510(void* self)",
+    "summary": "If self's owner (self+0x28) points back to self (owner+0x210), clear both links.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007D4760": {
     "name": "IndexedPointerArray::nextPointer",
     "class": "IndexedPointerArray",

@@ -1,0 +1,28 @@
+{
+  "va": "0x007CD510",
+  "size": 31,
+  "orig_symbol": "sub_007CD510",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "Unknown::ClearOwnerBackref",
+  "class": "Unknown",
+  "signature": "void fn_007CD510(void* self)",
+  "summary": "If self's owner (self+0x28) points back to self (owner+0x210), clear both links.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x210",
+      "type": "uint32_t",
+      "name": "field_0x210"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:28:28Z"
+}
