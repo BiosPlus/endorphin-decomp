@@ -1,0 +1,13 @@
+{
+  "va": "0x006BB750",
+  "size": 16,
+  "orig_symbol": "sub_006BB750",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "StoreDwordThroughIndirectPtr",
+  "signature": "void fn_006BB750(uint32_t** self, uint32_t value)",
+  "summary": "Loads the pointer stored at *self and writes the stack argument through it (*(*self) = value); stdcall, ret 4.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:37:13Z"
+}

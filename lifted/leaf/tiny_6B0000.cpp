@@ -633,3 +633,14 @@ int fn_006B9950(void* self) {
     return v == 0 ? 1 : 0;
 }
 } // namespace lift_006B9950
+
+// [0x006BB750] sub_006BB750 (16 bytes)
+namespace lift_006BB750 {
+// @name StoreDwordThroughIndirectPtr
+// @summary Loads the pointer stored at *self and writes the stack argument through it (*(*self) = value); stdcall, ret 4.
+// @field (none) - no class instance; self is a pointer to a dword holding the target address, not a class object.
+void fn_006BB750(uint32_t** self, uint32_t value) {
+    uint32_t* target = *self;
+    *target = value;
+}
+} // namespace lift_006BB750
