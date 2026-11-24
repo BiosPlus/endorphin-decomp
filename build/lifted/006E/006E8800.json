@@ -1,0 +1,28 @@
+{
+  "va": "0x006E8800",
+  "size": 16,
+  "orig_symbol": "sub_006E8800",
+  "src_path": "src/leaf/tiny_6E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6E0000.cpp",
+  "name": "sub_006E8800",
+  "class": "Unknown",
+  "signature": "double fn_006E8800(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x006E8740 (Unknown::GetIndirectDouble50).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "double",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:42:24Z"
+}

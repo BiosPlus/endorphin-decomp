@@ -1,0 +1,28 @@
+{
+  "va": "0x006E87A0",
+  "size": 16,
+  "orig_symbol": "sub_006E87A0",
+  "src_path": "src/leaf/tiny_6E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6E0000.cpp",
+  "name": "sub_006E87A0",
+  "class": "Unknown",
+  "signature": "uint8_t fn_006E87A0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x006E8610 (Unknown::GetByteAtIndirect20).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint8_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:42:24Z"
+}

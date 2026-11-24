@@ -627,3 +627,38 @@ void sub_006E8790(void* self, uint8_t value) {
     *(target + 0x68) = value;
 }
 } // namespace lift_006E8790
+
+// [0x006E87A0] sub_006E87A0 (16 bytes)
+namespace lift_006E87A0 {
+// @name sub_006E87A0
+// @summary Auto-lifted identical-shape clone of 0x006E8610 (Unknown::GetByteAtIndirect20).
+namespace lift_006E8610 {
+// @name Unknown::GetByteAtIndirect20
+// @class Unknown
+// @summary Loads the pointer at this+0x00 and returns the byte at that pointer's +0x20 offset.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x20 uint8_t field_0x20
+uint8_t fn_006E87A0(void* self) {
+    // Thiscall: self (ecx) points at an object whose first dword is a pointer.
+    unsigned char* obj = *reinterpret_cast<unsigned char**>(self);
+    return *reinterpret_cast<uint8_t*>(obj + 0x68);
+}
+} // namespace lift_006E8610
+} // namespace lift_006E87A0
+
+// [0x006E8800] sub_006E8800 (16 bytes)
+namespace lift_006E8800 {
+// @name sub_006E8800
+// @summary Auto-lifted identical-shape clone of 0x006E8740 (Unknown::GetIndirectDouble50).
+namespace lift_006E8740 {
+// @name Unknown::GetIndirectDouble50
+// @class Unknown
+// @summary Returns the double at +0x50 of the object pointed to by the first dword of this (thiscall, result in st0).
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x50 double field_0x50
+double fn_006E8800(void* self) {
+    void* inner = *reinterpret_cast<void**>(self);
+    return lift_field<double>(inner, 0x70);
+}
+} // namespace lift_006E8740
+} // namespace lift_006E8800

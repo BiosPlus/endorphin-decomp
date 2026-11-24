@@ -32577,6 +32577,20 @@
     "summary": "Stores the byte argument at offset 0x68 of the object pointed to by this+0x00.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E87A0": {
+    "name": "sub_006E87A0",
+    "class": "Unknown",
+    "signature": "uint8_t fn_006E87A0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006E8610 (Unknown::GetByteAtIndirect20).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E8800": {
+    "name": "sub_006E8800",
+    "class": "Unknown",
+    "signature": "double fn_006E8800(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006E8740 (Unknown::GetIndirectDouble50).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
   "0x006E8810": {
     "name": "sub_006E8810",
     "class": "Unknown",
