@@ -437,3 +437,14 @@ void __cdecl sub_007C6F90(void* self, DWORD value) {
     lift_field<DWORD>(self, 0x10) = value;
 }
 } // namespace lift_007C6F90
+
+// [0x007C6FE0]
+namespace lift_007C6FE0 {
+// @name setField7C_007C6FE0
+// @class (none)
+// @summary Stores the second stack argument into the object's field at +0x7C (self = first stack argument).
+// @field (none) +0x7C uint32_t field_7C
+void setField7C_007C6FE0(uint32_t* self, uint32_t value) {
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x7C) = value;
+}
+} // namespace lift_007C6FE0

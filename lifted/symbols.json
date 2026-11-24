@@ -35405,6 +35405,13 @@
     "summary": "Stores a 32-bit value (second stack argument) into the object at offset +0x18 of the first argument.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C6FE0": {
+    "name": "setField7C_007C6FE0",
+    "class": "(none)",
+    "signature": "void setField7C_007C6FE0(uint32_t* self, uint32_t value)",
+    "summary": "Stores the second stack argument into the object's field at +0x7C (self = first stack argument).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C6FF0": {
     "name": "get_field_0x7c",
     "signature": "extern \"C\" uint32_t sub_007C6FF0(uint32_t obj)",
