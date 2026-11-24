@@ -1,0 +1,27 @@
+{
+  "va": "0x007BADD0",
+  "size": 27,
+  "orig_symbol": "sub_007BADD0",
+  "src_path": "src/leaf/tiny_7B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7B0000.cpp",
+  "name": "sub_007BADD0",
+  "signature": "uint32_t __cdecl sub_007BADD0(uintptr_t arg0)",
+  "summary": "Sets fields at +0x18C and +0x194 to 0x007BADF0 and returns 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18C",
+      "type": "uint32_t",
+      "name": "field_0x18C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x194",
+      "type": "uint32_t",
+      "name": "field_0x194"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:05:58Z"
+}

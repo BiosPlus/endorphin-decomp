@@ -41090,10 +41090,22 @@
     "summary": "24-byte constant table of byte pairs (not executable code): nine {0x00,0x02} pairs followed by {0x01,0x02}, {0x01,0x01}, {0x01,0x02}.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BADD0": {
+    "name": "sub_007BADD0",
+    "signature": "uint32_t __cdecl sub_007BADD0(uintptr_t arg0)",
+    "summary": "Sets fields at +0x18C and +0x194 to 0x007BADF0 and returns 1.",
+    "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
+  },
   "0x007BAE20": {
     "name": "copyDword",
     "signature": "void sub_007BAE20(uint32_t *src, uint32_t *dst)",
     "summary": "Copies a 32-bit value from the address in arg1 to the address in arg2 (cdecl, no stack cleanup).",
+    "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
+  },
+  "0x007BDC00": {
+    "name": "initField1A0And1A8",
+    "signature": "uint32_t sub_007BDC00(uint8_t* obj)",
+    "summary": "Sets fields at +0x1A0 and +0x1A8 to mem_007BDC20 and returns 1.",
     "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
   },
   "0x007C2E50": {

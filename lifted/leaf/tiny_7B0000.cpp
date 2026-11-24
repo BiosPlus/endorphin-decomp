@@ -147,3 +147,37 @@ DWORD fn_007B1F40(DWORD ecx_in, DWORD arg0, DWORD arg1) {
     return 0;
 }
 } // namespace lift_007B1F40
+
+// [0x007BADD0]
+namespace lift_007BADD0 {
+extern uint8_t mem_007BADF0[];
+
+// @name sub_007BADD0
+// @summary Sets fields at +0x18C and +0x194 to 0x007BADF0 and returns 1.
+// @field Unknown +0x18C uint32_t field_0x18C
+// @field Unknown +0x194 uint32_t field_0x194
+
+uint32_t __cdecl sub_007BADD0(uintptr_t arg0) {
+    uint32_t val = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_007BADF0));
+    *reinterpret_cast<uint32_t*>(arg0 + 0x18c) = val;
+    *reinterpret_cast<uint32_t*>(arg0 + 0x194) = val;
+    return 1;
+}
+} // namespace lift_007BADD0
+
+// [0x007BDC00]
+namespace lift_007BDC00 {
+extern uint8_t mem_007BDC20[];
+
+// @name initField1A0And1A8
+// @summary Sets fields at +0x1A0 and +0x1A8 to mem_007BDC20 and returns 1.
+// @field Object +0x1A0 uint32_t field_0x1A0
+// @field Object +0x1A8 uint32_t field_0x1A8
+
+uint32_t sub_007BDC00(uint8_t* obj) {
+    uint32_t val = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_007BDC20));
+    *reinterpret_cast<uint32_t*>(obj + 0x1A0) = val;
+    *reinterpret_cast<uint32_t*>(obj + 0x1A8) = val;
+    return 1;
+}
+} // namespace lift_007BDC00
