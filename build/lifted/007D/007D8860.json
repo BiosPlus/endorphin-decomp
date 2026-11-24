@@ -1,0 +1,27 @@
+{
+  "va": "0x007D8860",
+  "size": 46,
+  "orig_symbol": "sub_007D8860",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "setPairIfFlagClear",
+  "signature": "void fn_007D8860(void* self, uint32_t a1, uint32_t a2)",
+  "summary": "Resolves self via ext_007D8700, tests bit 0 of its +0x9C field via ext_007C9260; if clear, stores a1/a2 at self+0x94/+0x98.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x94",
+      "type": "uint32_t",
+      "name": "field_0x94"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x98",
+      "type": "uint32_t",
+      "name": "field_0x98"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:10:58Z"
+}

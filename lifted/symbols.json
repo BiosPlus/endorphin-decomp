@@ -47830,6 +47830,12 @@
     "summary": "Single-argument forwarding wrapper; passes its one stack argument to sub_007D8420 and returns that result unchanged.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007D8860": {
+    "name": "setPairIfFlagClear",
+    "signature": "void fn_007D8860(void* self, uint32_t a1, uint32_t a2)",
+    "summary": "Resolves self via ext_007D8700, tests bit 0 of its +0x9C field via ext_007C9260; if clear, stores a1/a2 at self+0x94/+0x98.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D95F0": {
     "name": "appendDwordToArray_007D95F0",
     "signature": "void sub_007D95F0(void* arg)",

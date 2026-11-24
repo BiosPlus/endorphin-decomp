@@ -361,3 +361,23 @@ void fn_007D47D0(void* self, DWORD arg2, DWORD arg3, DWORD arg4, DWORD arg5) {
     lift_field<DWORD>(self, 0x1C) = arg5;
 }
 } // namespace lift_007D47D0
+
+// [0x007D8860]
+namespace lift_007D8860 {
+// Callees (lifted elsewhere)
+extern uint32_t ext_007D8700(uint32_t arg0);
+extern uint32_t ext_007C9260(void* self);
+
+// @name setPairIfFlagClear
+// @summary Resolves self via ext_007D8700, tests bit 0 of its +0x9C field via ext_007C9260; if clear, stores a1/a2 at self+0x94/+0x98.
+// @field Unknown +0x94 uint32_t field_0x94
+// @field Unknown +0x98 uint32_t field_0x98
+void fn_007D8860(void* self, uint32_t a1, uint32_t a2) {
+    const uint32_t obj = ext_007D8700(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)));
+    const uint32_t flag = ext_007C9260(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+    if (flag == 0) {
+        lift_field<uint32_t>(self, 0x94) = a1;
+        lift_field<uint32_t>(self, 0x98) = a2;
+    }
+}
+} // namespace lift_007D8860
