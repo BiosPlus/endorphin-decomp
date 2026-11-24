@@ -210,3 +210,17 @@ extern float __thiscall sub_00661A30(uint32_t thisPtr) {
     return mem_readf32(obj + 0x138);
 }
 } // namespace lift_00661A30
+
+// [0x00665880] sub_00665880 (14 bytes)
+namespace lift_00665880 {
+// @name SetFlagIfClear
+// @class <Unknown> (free function taking object in ecx)
+// @summary If the dword at +0x0C is zero, set it to 1; otherwise leave it unchanged.
+// @field <Unknown> +0x0C int32_t field_0x0C
+void fn_00665880(void* self) {
+    int32_t& flag = lift_field<int32_t>(self, 0x0C);
+    if (flag == 0) {
+        flag = 1;
+    }
+}
+} // namespace lift_00665880

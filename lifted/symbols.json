@@ -22947,6 +22947,13 @@
     "summary": "Returns global int32 value from mem_00B59420.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x00665880": {
+    "name": "SetFlagIfClear",
+    "class": "\u003cUnknown\u003e (free function taking object in ecx)",
+    "signature": "void fn_00665880(void* self)",
+    "summary": "If the dword at +0x0C is zero, set it to 1; otherwise leave it unchanged.",
+    "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
   "0x006658A0": {
     "name": "hasField0x18",
     "signature": "uint32_t __thiscall sub_006658A0(void* self)",

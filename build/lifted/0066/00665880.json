@@ -1,0 +1,22 @@
+{
+  "va": "0x00665880",
+  "size": 14,
+  "orig_symbol": "sub_00665880",
+  "src_path": "src/leaf/tiny_660000.cpp",
+  "lifted_path": "lifted/leaf/tiny_660000.cpp",
+  "name": "SetFlagIfClear",
+  "class": "\u003cUnknown\u003e (free function taking object in ecx)",
+  "signature": "void fn_00665880(void* self)",
+  "summary": "If the dword at +0x0C is zero, set it to 1; otherwise leave it unchanged.",
+  "fields": [
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:25:37Z"
+}
