@@ -34118,3 +34118,32 @@ void fn_004B89A0(void* self) {
     ext_006A6DE0(adjusted);
 }
 } // namespace lift_004B89A0
+
+// [0x004B7D80] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_004B7D80 {
+// @name ExprParser::ReadMethodType<NMData::EngineData>::vfunc_2 (NMData::EngineData::getPosBufferFrameRate)
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0>
+// @summary Reads the float at +0x1c of the object referenced by *arg, rounds it half away from zero, and returns it as int32.
+// @field NMData::EngineData +0x1c float field_0x1c
+// The original throws via MSVC _CxxThrowException (ThrowInfo 0x009DEC1C) when *arg is null; this is
+// replaced with std::runtime_error. The float-to-int step (ext_006A6DE0) is done with a plain truncating
+// cast here, so out-of-range/NaN results do not reproduce the x87 integer-indefinite sentinel.
+int32_t __stdcall fn_004B7D80(void* arg) {
+    auto* obj = *static_cast<unsigned char**>(arg);
+    if (obj == nullptr) {
+        throw std::runtime_error("ReadMethodType<NMData::EngineData>::vfunc_2: null value pointer");
+    }
+
+    const float value = *reinterpret_cast<float*>(obj + 0x1c);
+
+    // Round half away from zero: x < 0 (or NaN) takes x - 0.5, otherwise x + 0.5.
+    double x = static_cast<double>(value);
+    if (!(x >= 0.0)) {
+        x -= 0.5;
+    } else {
+        x += 0.5;
+    }
+
+    return static_cast<int32_t>(std::trunc(x));
+}
+} // namespace lift_004B7D80
