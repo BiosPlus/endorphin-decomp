@@ -977,9 +977,10 @@
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
   "0x00414880": {
-    "name": "descriptiveName: fn_00414880 (ElementCountDelta)",
-    "signature": "int32_t fn_00414880(void* self, void* other)",
-    "summary": "Verifies both operands share the same first-word owner (unless it is null) and returns (self.field_0x04 - other.field_0x04) / 8 as a signed element count.",
+    "name": "sub_0041A4F0",
+    "class": "NMData::RealChannel",
+    "signature": "void __thiscall fn_0041A4F0(uint8_t* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
   "0x004153A0": {

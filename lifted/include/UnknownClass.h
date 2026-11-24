@@ -17,7 +17,7 @@ struct UnknownClass_Fields {
     // +0x3   uint8_t                  field_0x03  (evidence: 0x004B0F50)
     // +0x4   std::string              field_0x04  (evidence: 0x004B0F50) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00493D80, 0x00494050, 0x00780250) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    field_0x04  (evidence: 0x0041CEB0, 0x00602F00, 0x00602F20, 0x00630560, 0x006305C0, 0x006305E0, 0x00783630) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x00414880, 0x0041CEB0, 0x00602F00, 0x00602F20, 0x00630560, 0x006305C0, 0x006305E0, 0x00783630) // CONFLICT: multiple definitions at +0x4
     // +0x6   uint8_t                  field_0x06  (evidence: 0x007A9BD0)
     // +0x8   uint32_t                 field_0x08  (evidence: 0x006722B0, 0x00672490) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t                  field_0x08  (evidence: 0x00493D80, 0x00494050) // CONFLICT: multiple definitions at +0x8

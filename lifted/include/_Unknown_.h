@@ -19,7 +19,7 @@ struct _Unknown__Fields {
     // +0x8   uint32_t                 field_0x08  (evidence: 0x0080FBB0) // CONFLICT: multiple definitions at +0x8
     // +0xC   int32_t                  field_0x0C  (evidence: 0x00665880)
     // +0x1C  DWORD                    field_0x1C  (evidence: 0x00790DE0)
-    // +0x20  HWND                     hwnd  (evidence: 0x0041FEF0)
+    // +0x20  HWND                     hwnd  (evidence: 0x00414880, 0x0041FEF0)
     // +0x2C  DWORD                    field_0x2C  (evidence: 0x00790DE0)
     // +0x5C  DWORD                    field_0x5C  (evidence: 0x00790DE0)
     // +0x78  double                   scale  (evidence: 0x007AB720, 0x007AC670)

@@ -4,10 +4,91 @@
   "orig_symbol": "sub_00414880",
   "src_path": "src/leaf/decompiled_410000.cpp",
   "lifted_path": "lifted/leaf/decompiled_410000.cpp",
-  "name": "descriptiveName: fn_00414880 (ElementCountDelta)",
-  "signature": "int32_t fn_00414880(void* self, void* other)",
-  "summary": "Verifies both operands share the same first-word owner (unless it is null) and returns (self.field_0x04 - other.field_0x04) / 8 as a signed element count.",
+  "name": "sub_0041A4F0",
+  "class": "NMData::RealChannel",
+  "signature": "void __thiscall fn_0041A4F0(uint8_t* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
+  "fields": [
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "NMData::RealChannel",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x12C",
+      "type": "embedded_object",
+      "name": "field_0x12C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "int32_t",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "u32",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x12C",
+      "type": "u8",
+      "name": "field_0x12c"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD field_0x00 (first dword; compared for equality against",
+      "name": "other)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD field_0x04 (second dword;",
+      "name": "subtracted)"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T13:48:05Z"
+  "lifted_at": "2026-11-24T13:48:14Z"
 }
