@@ -1,0 +1,13 @@
+{
+  "va": "0x00772010",
+  "size": 48,
+  "orig_symbol": "sub_00772010",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "copyNBytesAndTerminate",
+  "signature": "bool fn_00772010(char** dstSlot, std::size_t n)",
+  "summary": "Copies n bytes via strncpy within the buffer whose pointer is stored at *dstSlot, NUL-terminates at index n, and returns true.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:24:36Z"
+}

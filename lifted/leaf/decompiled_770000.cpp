@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_770000.cpp
 #include "lift_compat.h"
 #include <cstring>
+#include <cstddef>
 
 // [0x0077FAC0] sub_0077FAC0 (32 bytes)
 namespace lift_0077FAC0 {
@@ -105,3 +106,16 @@ void* fn_0077FB40(void* self) {
     return self;
 }
 } // namespace lift_0077FB40
+
+// [0x00772010] sub_00772010 (48 bytes)
+namespace lift_00772010 {
+// @name copyNBytesAndTerminate
+// @summary Copies n bytes via strncpy within the buffer whose pointer is stored at *dstSlot, NUL-terminates at index n, and returns true.
+bool fn_00772010(char** dstSlot, std::size_t n) {
+    char* buf = *dstSlot;
+    std::strncpy(buf, buf, n);
+    buf = *dstSlot;
+    buf[n] = '\0';
+    return true;
+}
+} // namespace lift_00772010
