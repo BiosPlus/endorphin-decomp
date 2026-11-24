@@ -40577,3 +40577,19 @@ float fn_00512A00(void* arg) {
     return rate;
 }
 } // namespace lift_00512A00
+
+// [0x004D86A0] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_1 (109 bytes)
+namespace lift_004D86A0 {
+extern void* ext_004D5560(void* out, void* value);
+
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>
+// @summary Reads the held value through ext_004D5560 into a temporary std::string and returns it converted with atof() as a float.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_004D86A0(void* self) {
+    void* value = *static_cast<void**>(self);
+    std::string buf;
+    auto* str = static_cast<std::string*>(ext_004D5560(&buf, value));
+    return static_cast<float>(std::atof(str->c_str()));
+}
+} // namespace lift_004D86A0
