@@ -17851,6 +17851,13 @@
     "summary": "Gets the X component of row 3 from a transform matrix retrieved via vtable on this+0x4.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x0058A960": {
+    "name": "getRow3Element2",
+    "class": "Unknown",
+    "signature": "float __thiscall sub_0058A960(uintptr_t this_ptr)",
+    "summary": "Fetches an object from this+0x4, calls a vtable slot (0x30 if mem_00A85D54 is set, else 0x28) to get a matrix, calls Matrix4::getRow(3) on it, and returns the float at offset 0x8 of the returned pointer.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x0058AB30": {
     "name": "QueryFloatViaMemberCallback",
     "signature": "float fn_0058AB30(void* self)",

@@ -265,3 +265,29 @@ float __thiscall sub_0058A8F0(uintptr_t this_ptr) {
     return *reinterpret_cast<const float*>(out_ptr);
 }
 } // namespace lift_0058A8F0
+
+// [0x0058A960] sub_0058A960 (49 bytes)
+namespace lift_0058A960 {
+// Known callee 0x00552130: Matrix4::getRow (Copies a 4-float row/element at the given index from this object into out.)
+extern uint8_t mem_00A85D54;
+extern uint32_t __thiscall ext_00552130(uintptr_t this_ptr, uintptr_t out_ptr, uint32_t index);
+
+// @name getRow3Element2
+// @class Unknown
+// @summary Fetches an object from this+0x4, calls a vtable slot (0x30 if mem_00A85D54 is set, else 0x28) to get a matrix, calls Matrix4::getRow(3) on it, and returns the float at offset 0x8 of the returned pointer.
+// @field Unknown +0x04 void* obj_ptr
+float __thiscall sub_0058A960(uintptr_t this_ptr) {
+    uintptr_t sub_obj = this_ptr + 0x4;
+    uintptr_t vtable = *reinterpret_cast<const uint32_t*>(sub_obj);
+    uint32_t fn_addr = (mem_00A85D54 != 0)
+        ? *reinterpret_cast<const uint32_t*>(vtable + 0x30)
+        : *reinterpret_cast<const uint32_t*>(vtable + 0x28);
+
+    using GetMatrixFn = uintptr_t(__thiscall*)(uintptr_t);
+    uintptr_t matrix_ptr = reinterpret_cast<GetMatrixFn>(static_cast<uintptr_t>(fn_addr))(sub_obj);
+
+    float row[4]{};
+    uintptr_t ret = ext_00552130(matrix_ptr, reinterpret_cast<uintptr_t>(row), 3);
+    return *reinterpret_cast<const float*>(ret + 0x8);
+}
+} // namespace lift_0058A960
