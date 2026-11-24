@@ -1,0 +1,28 @@
+{
+  "va": "0x008102B0",
+  "size": 17,
+  "orig_symbol": "sub_008102B0",
+  "src_path": "src/leaf/tiny_810000.cpp",
+  "lifted_path": "lifted/leaf/tiny_810000.cpp",
+  "name": "Unknown::getFlagBit13ViaField4",
+  "class": "Unknown",
+  "signature": "int fn_008102B0(void* self)",
+  "summary": "Returns bit 13 of the DWORD at +0x04 of the object referenced by the +0x04 pointer of the argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:55:26Z"
+}

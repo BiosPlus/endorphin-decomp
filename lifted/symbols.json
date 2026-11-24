@@ -39268,6 +39268,13 @@
     "summary": "Returns bit 1 of the DWORD at +0x04 of the object referenced by self-\u003efield_0x04.",
     "lifted_path": "lifted/leaf/tiny_810000.cpp"
   },
+  "0x008102B0": {
+    "name": "Unknown::getFlagBit13ViaField4",
+    "class": "Unknown",
+    "signature": "int fn_008102B0(void* self)",
+    "summary": "Returns bit 13 of the DWORD at +0x04 of the object referenced by the +0x04 pointer of the argument.",
+    "lifted_path": "lifted/leaf/tiny_810000.cpp"
+  },
   "0x00810350": {
     "name": "getNestedFlagBit15",
     "signature": "uint32_t sub_00810350(const uint8_t* arg0)",

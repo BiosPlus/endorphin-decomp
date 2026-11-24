@@ -53,3 +53,18 @@ uint32_t fn_008103A0(uint8_t* self) {
     return (flags >> 12) & 1u;
 }
 } // namespace lift_008103A0
+
+// [0x008102B0] sub_008102B0 (17 bytes)
+namespace lift_008102B0 {
+// @name Unknown::getFlagBit13ViaField4
+// @class Unknown
+// @summary Returns bit 13 of the DWORD at +0x04 of the object referenced by the +0x04 pointer of the argument.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x04 DWORD field_0x04
+int fn_008102B0(void* self) {
+    // Load self->field_0x04, then its field_0x04 (DWORD), and extract bit 13.
+    void* child = lift_field<void*>(self, 0x04);
+    DWORD flags = lift_field<DWORD>(child, 0x04);
+    return (flags >> 13) & 1;
+}
+} // namespace lift_008102B0
