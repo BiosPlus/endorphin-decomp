@@ -36,3 +36,15 @@ extern "C" int __thiscall fn_00699930(void* self) {
     const int32_t diff = end - begin;
     return diff >> 3;
 }
+
+// [0x00692000] sub_00692000 (12 bytes)
+namespace lift_00692000 {
+// Table of 32-bit entries at global mem_00B5AE98, indexed by the first stack argument.
+extern DWORD mem_00B5AE98[];
+
+// @name lookupTableEntry00B5AE98
+// @summary Returns mem_00B5AE98[index] where index is the single stack argument (__cdecl).
+extern DWORD fn_00692000(DWORD index) {
+    return mem_00B5AE98[index];
+}
+} // namespace lift_00692000

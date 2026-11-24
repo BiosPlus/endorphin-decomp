@@ -24088,6 +24088,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00692000": {
+    "name": "lookupTableEntry00B5AE98",
+    "signature": "extern \"C\" DWORD fn_00692000(DWORD index)",
+    "summary": "Returns mem_00B5AE98[index] where index is the single stack argument (__cdecl).",
+    "lifted_path": "lifted/leaf/tiny_690000.cpp"
+  },
   "0x00692210": {
     "name": "sub_00692210",
     "signature": "extern \"C\" int __thiscall fn_00692210(void* self)",

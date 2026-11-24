@@ -1,0 +1,13 @@
+{
+  "va": "0x00692000",
+  "size": 12,
+  "orig_symbol": "sub_00692000",
+  "src_path": "src/leaf/tiny_690000.cpp",
+  "lifted_path": "lifted/leaf/tiny_690000.cpp",
+  "name": "lookupTableEntry00B5AE98",
+  "signature": "extern \"C\" DWORD fn_00692000(DWORD index)",
+  "summary": "Returns mem_00B5AE98[index] where index is the single stack argument (__cdecl).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:16:10Z"
+}
