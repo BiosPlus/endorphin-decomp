@@ -1,0 +1,14 @@
+{
+  "va": "0x00497650",
+  "size": 40,
+  "orig_symbol": "sub_00497650",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "Unknown::forwardVtableSlot4Passthrough",
+  "class": "Unknown",
+  "signature": "uint32_t fn_00497650(uint32_t self, uint32_t a1)",
+  "summary": "Forwards (self, a1, a1, 0) to ext_0046E780 (virtual slot 4 dispatch) and returns self unchanged.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:52:55Z"
+}

@@ -229,3 +229,20 @@ uint32_t fn_00492A50(void* self) {
     return index;
 }
 } // namespace lift_00492A50
+
+// [0x00497650] sub_00497650 (40 bytes)
+namespace lift_00497650 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (Calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg.)
+extern uint32_t ext_0046E780(void* self, uint32_t a1, uint32_t a2, uint32_t a3 /* unused */);
+
+// @name Unknown::forwardVtableSlot4Passthrough
+// @class Unknown
+// @summary Forwards (self, a1, a1, 0) to ext_0046E780 (virtual slot 4 dispatch) and returns self unchanged.
+uint32_t fn_00497650(uint32_t self, uint32_t a1) {
+    // Original stdcall (ret 8): two dword args. The callee is passed the
+    // second argument twice; its fourth argument is unused and set to zero.
+    void* selfPtr = reinterpret_cast<void*>(static_cast<uintptr_t>(self));
+    (void)ext_0046E780(selfPtr, a1, a1, 0u);
+    return self;
+}
+} // namespace lift_00497650

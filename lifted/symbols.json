@@ -7208,6 +7208,13 @@
     "summary": "Passes the first argument and the value stored at the pointee of the second argument to ext_004276B0, then returns the first argument.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x00497650": {
+    "name": "Unknown::forwardVtableSlot4Passthrough",
+    "class": "Unknown",
+    "signature": "uint32_t fn_00497650(uint32_t self, uint32_t a1)",
+    "summary": "Forwards (self, a1, a1, 0) to ext_0046E780 (virtual slot 4 dispatch) and returns self unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00497680": {
     "name": "NMData::Transition::vfunc_12",
     "class": "NMData::Transition",
@@ -14097,6 +14104,12 @@
     "signature": "extern \"C\" void __fastcall fn_005356B0(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0x38 and tail-calls sub_00530650.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x005356C0": {
+    "name": "copyByteRange",
+    "signature": "uint32_t sub_005356C0(uint32_t first, uint32_t last, uint32_t dest)",
+    "summary": "Copies a byte range [first, last) to dest using memmove if last \u003e first, returning dest + (last - first).",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
   "0x00536530": {
     "name": "sub_00536530",
