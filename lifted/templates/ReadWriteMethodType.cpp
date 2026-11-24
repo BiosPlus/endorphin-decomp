@@ -9693,3 +9693,27 @@ void fn_004CB250(void* self, void* out) {
         static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(obj));
 }
 } // namespace lift_004CB250
+
+// [0x004CB360] ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_004CB360 {
+extern void ext_0067A670();
+extern int mem_00AE44CC;
+extern int mem_00AE44C8;
+
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Lazily constructs the function-local static ValuePtr binding object once, then stores its address into the caller's output slot at +0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+
+void __stdcall fn_004CB360(void* self) {
+    // Guard byte: construct the static binding object on first use only.
+    if ((mem_00AE44CC & 1) == 0) {
+        mem_00AE44CC |= 1;
+        ext_0067A670();
+        mem_00AE44C8 = 0x946FC4;
+    }
+    // Publish the static object's address into self->field_0x04.
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x04) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE44C8));
+}
+} // namespace lift_004CB360
