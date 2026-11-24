@@ -714,7 +714,7 @@ extern void ext_00711A70(void* self, uint32_t arg1);
 // @summary Forwards arg1/arg2 to the embedded subobject at self+0x3300 via storeArgsAndNotifyChild with constant 0x006F84D0 and 0, then calls the subobject helper with 1.
 // @field Unknown +0x3300 uint8_t field_0x3300[] (embedded subobject, used by address only)
 void fn_006F08E0(void* self, uint32_t arg1, void* arg2) {
-    void* subobject = static_cast<uint8_t*>(self) + 0x3300;
+    uint8_t* subobject = static_cast<uint8_t*>(self) + 0x3300;
     ext_00711D40(subobject, arg1, arg2, 0x006F84D0u, 0u);
     ext_00711A70(subobject, 1u);
 }
@@ -756,3 +756,39 @@ void fn_006F0520(void* self, uint32_t arg1, void* arg2) {
     ext_00711A70(sub, 1u);
 }
 } // namespace lift_006F0520
+
+// [0x006F1160]
+namespace lift_006F1160 {
+// @name Unknown::initChildAndNotify
+// @class Unknown
+// @summary Initializes the child subobject at +0x4510 with two arguments and fixed callback/flag, then triggers its update.
+// @field Unknown +0x4510 uint8_t[] field_0x4510
+
+
+extern void __thiscall ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+extern void __thiscall ext_00711A70(void* self, uint32_t arg1);
+
+void __thiscall sub_006F1160(void* self, uint32_t arg1, void* arg2) {
+    void* child = static_cast<uint8_t*>(self) + 0x4510;
+    ext_00711D40(child, arg1, arg2, 0x006F7C20u, 0u);
+    ext_00711A70(child, 1u);
+}
+} // namespace lift_006F1160
+
+// [0x006F11A0]
+namespace lift_006F11A0 {
+// @name Unknown::initSubobjectAndNotify
+// @class Unknown
+// @summary Initializes the subobject at +0x4598 with two arguments and callback 0x6F7DC0, then calls ext_00711A70 with 1.
+// @field Unknown +0x4598 uint8_t field_0x4598
+
+
+extern void __thiscall ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+extern void __thiscall ext_00711A70(void* self, uint32_t arg1);
+
+void __thiscall sub_006F11A0(void* self, uint32_t arg1, void* arg2) {
+    void* subobject = static_cast<uint8_t*>(self) + 0x4598;
+    ext_00711D40(subobject, arg1, arg2, 0x006F7DC0u, 0u);
+    ext_00711A70(subobject, 1u);
+}
+} // namespace lift_006F11A0

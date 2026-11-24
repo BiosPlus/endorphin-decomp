@@ -40535,6 +40535,27 @@
     "summary": "Forwards two stack args plus constant 0x006F8460 to the embedded subobject at self+0x4378 via ext_00711D40, then calls ext_00711A70 with 1 on the same subobject.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006F1160": {
+    "name": "Unknown::initChildAndNotify",
+    "class": "Unknown",
+    "signature": "void __thiscall sub_006F1160(void* self, uint32_t arg1, void* arg2)",
+    "summary": "Initializes the child subobject at +0x4510 with two arguments and fixed callback/flag, then triggers its update.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
+  "0x006F11A0": {
+    "name": "Unknown::initSubobjectAndNotify",
+    "class": "Unknown",
+    "signature": "void __thiscall sub_006F11A0(void* self, uint32_t arg1, void* arg2)",
+    "summary": "Initializes the subobject at +0x4598 with two arguments and callback 0x6F7DC0, then calls ext_00711A70 with 1.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
+  "0x006F11E0": {
+    "name": "Unknown::configureChildAndEnable",
+    "class": "Unknown",
+    "signature": "void __thiscall sub_006F11E0(void* self, uint32_t arg1, void* arg2)",
+    "summary": "Configures the subobject at +0x4620 with args, callback 0x006F7F60, and 0, then calls sub_00711A70(1).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
   "0x006F1860": {
     "name": "sub_006F1860",
     "class": "Unknown",
