@@ -6974,3 +6974,25 @@ void fn_005B7490(void* valuePtr) {
     std::memcpy(static_cast<unsigned char*>(valuePtr) + 0x04, &objAddr, sizeof(objAddr));
 }
 } // namespace lift_005B7490
+
+// [0x005B7BC0] ExprParser::WriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::addForce(class NM::Vector3 const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_005B7BC0 {
+extern void ext_0067A670(void* self, int arg0);
+extern int mem_00B43C70;
+extern int mem_00B43C6C;
+
+// @name ExprParser::WriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::addForce(class NM::Vector3 const &), 0}>::vfunc_40
+// @class ExprParser::WriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::addForce(class NM::Vector3 const &), 0}>
+// @summary Lazily constructs a function-local static object (guarded by bit 0 of mem_00B43C70) and stores its address at +0x04 of the output argument.
+// @field ValuePtr +0x04 void* field_0x04
+void fn_005B7BC0(void* self, void* arg0) {
+    (void)self;
+    // One-time initialization guard for the function-local static.
+    if ((mem_00B43C70 & 1) == 0) {
+        mem_00B43C70 |= 1;
+        ext_0067A670(&mem_00B43C6C, 0);
+        mem_00B43C6C = 0x0096144C;
+    }
+    lift_field<uintptr_t>(arg0, 4) = reinterpret_cast<uintptr_t>(&mem_00B43C6C);
+}
+} // namespace lift_005B7BC0
