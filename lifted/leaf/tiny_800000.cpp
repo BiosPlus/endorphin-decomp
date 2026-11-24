@@ -49,8 +49,6 @@ uint32_t sub_0080FBB0_getField08(const uint8_t* obj) {
 namespace lift_0080F700 {
 // @name strlen
 // @summary Returns the length of a NUL-terminated string (equivalent to repne scasb strlen idiom).
-// @stackargs 1 pointer argument: const char* str (at [esp+4] on entry).
-
 
 uint32_t sub_0080F700(const char* str) {
     const char* p = str;
