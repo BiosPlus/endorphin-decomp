@@ -1407,3 +1407,29 @@ int __thiscall fn_0044BC10(void* self, void* arg1) {
 }
 } // namespace lift_0044B9D0
 } // namespace lift_0044BC10
+
+// [0x0044B220] sub_0044B220 (50 bytes)
+namespace lift_0044B220 {
+// @name Unknown::forwardChildFlagToTarget
+// @class Unknown
+// @summary If this->field_0x64 is non-null, queries its vtable slot 46 and forwards (result == 1) as a bool to target's vtable slot 1.
+// @field Unknown +0x64 void* field_0x64 (child object pointer; type unknown)
+typedef uint32_t(__thiscall* ChildQueryFn)(void* self);
+typedef void(__thiscall* TargetNotifyFn)(void* self, uint32_t flag);
+
+void __thiscall fn_0044B220(void* self, void* target) {
+    void* child = lift_field<void*>(self, 0x64);
+    if (child == nullptr) {
+        return;
+    }
+
+    void* childVtable = lift_field<void*>(child, 0x00);
+    ChildQueryFn query = lift_field<ChildQueryFn>(childVtable, 0xB8);
+    uint32_t result = query(child);
+    uint32_t flag = (result == 1) ? 1u : 0u;
+
+    void* targetVtable = lift_field<void*>(target, 0x00);
+    TargetNotifyFn notify = lift_field<TargetNotifyFn>(targetVtable, 0x04);
+    notify(target, flag);
+}
+} // namespace lift_0044B220

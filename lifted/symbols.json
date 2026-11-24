@@ -3748,6 +3748,13 @@
     "summary": "If this-\u003efield_0x64 is non-null, call its vtable slot 0x24 with arg 1, then tail-jump to its vtable slot 0x154; otherwise return.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044B220": {
+    "name": "Unknown::forwardChildFlagToTarget",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0044B220(void* self, void* target)",
+    "summary": "If this-\u003efield_0x64 is non-null, queries its vtable slot 46 and forwards (result == 1) as a bool to target's vtable slot 1.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044B260": {
     "name": "Unknown::forwardToSubobject_0x154",
     "class": "Unknown",
