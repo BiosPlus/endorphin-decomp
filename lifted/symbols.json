@@ -47549,6 +47549,12 @@
     "summary": "Reads two 32-bit fields from the object at self and forwards them with a constant tag to DispatchThreeArgsToOptionalHook.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007C1F60": {
+    "name": "writeU16BE",
+    "signature": "void __cdecl sub_007C1F60(void* self, uint32_t value)",
+    "summary": "Writes a 16-bit unsigned integer in big-endian order to a buffer and advances the write offset by 2.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C2E50": {
     "name": "readFloatPtr",
     "class": "unknown",

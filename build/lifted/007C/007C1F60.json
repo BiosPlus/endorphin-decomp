@@ -1,0 +1,27 @@
+{
+  "va": "0x007C1F60",
+  "size": 47,
+  "orig_symbol": "sub_007C1F60",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "writeU16BE",
+  "signature": "void __cdecl sub_007C1F60(void* self, uint32_t value)",
+  "summary": "Writes a 16-bit unsigned integer in big-endian order to a buffer and advances the write offset by 2.",
+  "fields": [
+    {
+      "class": "Buffer",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Buffer",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:16:56Z"
+}

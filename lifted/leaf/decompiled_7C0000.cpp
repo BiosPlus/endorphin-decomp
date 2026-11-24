@@ -455,3 +455,23 @@ void sub_007CCC00(uintptr_t ecx_ptr, float value) {
     }
 }
 } // namespace lift_007CCC00
+
+// [0x007C1F60]
+namespace lift_007C1F60 {
+// @name writeU16BE
+// @summary Writes a 16-bit unsigned integer in big-endian order to a buffer and advances the write offset by 2.
+// @field Buffer +0x08 uint8_t* field_0x08
+// @field Buffer +0x14 uint32_t field_0x14
+
+
+void __cdecl sub_007C1F60(void* self, uint32_t value) {
+    uint8_t* buf = *reinterpret_cast<uint8_t**>(reinterpret_cast<uintptr_t>(self) + 0x08);
+    uint32_t pos = *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(self) + 0x14);
+    buf[pos] = static_cast<uint8_t>(value >> 8);
+    pos += 1;
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(self) + 0x14) = pos;
+    buf = *reinterpret_cast<uint8_t**>(reinterpret_cast<uintptr_t>(self) + 0x08);
+    buf[pos] = static_cast<uint8_t>(value & 0xFFu);
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(self) + 0x14) = pos + 1;
+}
+} // namespace lift_007C1F60
