@@ -7003,6 +7003,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005F0D40 (NMData::MagnetJointData::vfunc_59).",
     "lifted_path": "lifted/Commands/CreateTriggeredEventCommand.cpp"
   },
+  "0x0048E2E0": {
+    "name": "Unknown::InitWithVtblAndFields",
+    "class": "Unknown",
+    "signature": "void* fn_0048E2E0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Initializes base via ext_006657F0(self, 0), sets vtable to 0x0093E5E8, and stores arg2 at +0x10, 0 at +0x14, and arg1 at +0x18; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048E790": {
     "name": "Commands::DestroyTriggeredEventCommand::vfunc_0",
     "class": "Commands::DestroyTriggeredEventCommand",
@@ -12922,6 +12929,12 @@
     "summary": "Stores address of mem_00950A74 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x0050F9A0": {
+    "name": "sub_0050F9A0",
+    "signature": "uint32_t __thiscall sub_0050F9A0(void* self, uint32_t arg0)",
+    "summary": "Stores arg0 at this+0xC, compares string at *arg0+0x3C with 0x950A80, and stores boolean result at this+0x8.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050F9D0": {
     "name": "CompareDoublesByOrder",
     "signature": "bool __thiscall fn_0050F9D0(void* self, double a, double b)",
@@ -15899,6 +15912,12 @@
     "summary": "Looks up a global key via virtual slot 7 and compares the resulting std::string against that same key.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00547B70": {
+    "name": "rotateIfEmptyLabel",
+    "signature": "void __fastcall sub_00547B70(uint8_t* self, uint32_t /*edx*/)",
+    "summary": "Calls glRotatef(-90.0f, 1.0f, 0.0f, 0.0f) when the string at +0x24 is empty",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00547CE0": {
     "name": "sub_00547CE0",
     "signature": "int sub_00547CE0(void* self)",
@@ -18371,6 +18390,12 @@
     "name": "sub_005A3610",
     "signature": "void fn_005A3610()",
     "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
+  "0x005A3DC0": {
+    "name": "catch_005A3DC0_printExceptionMessage",
+    "signature": "uint32_t sub_005A3DC0(uint32_t ebp)",
+    "summary": "Catch-block funclet that prints the caught exception's string at +0x0C to std::cout and returns continuation 0x005A3DAD.",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005A46C0": {

@@ -419,3 +419,20 @@ void sub_00540549() {
     glDisable(0xB44u);              // GL_CULL_FACE
 }
 } // namespace lift_00540549
+
+// [0x00547B70]
+namespace lift_00547B70 {
+// @name rotateIfEmptyLabel
+// @summary Calls glRotatef(-90.0f, 1.0f, 0.0f, 0.0f) when the string at +0x24 is empty
+// @field unknown +0x24 const char* field_0x24
+
+
+extern void __stdcall ext_glRotatef(float angle, float x, float y, float z);
+
+void __fastcall sub_00547B70(uint8_t* self, uint32_t /*edx*/) {
+    const char* str = *reinterpret_cast<const char* const*>(self + 0x24);
+    if (*str == '\0') {
+        ext_glRotatef(-90.0f, 1.0f, 0.0f, 0.0f);
+    }
+}
+} // namespace lift_00547B70
