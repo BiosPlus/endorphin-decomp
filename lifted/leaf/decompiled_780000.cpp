@@ -744,3 +744,27 @@ void* fn_00788E50(void* self) {
     return utf8;
 }
 } // namespace lift_00788E50
+
+// [0x0078CBE0] sub_0078CBE0 (48 bytes)
+namespace lift_0078CBE0 {
+// Known callee 0x006E7460: sub_006E7460 (Getter returning int32_t field at offset +0x0.)
+extern int32_t ext_006E7460(void* self);
+// Known callee 0x0078CB70: getIndexedDword (Returns the dword at index arg1 of the array whose pointer is stored at this+0x10 (thiscall, one stack arg, ret 4).)
+extern uint32_t ext_0078CB70(void* ecx, uint32_t index);
+
+// @name getIndexedDwordBoundedBy1C
+// @class UnknownClass
+// @summary Returns the dword at index this->field_0x1C if 0 <= index < ext_006E7460(this), else 0.
+// @field UnknownClass +0x1C int32_t field_0x1C
+uint32_t fn_0078CBE0(void* self) {
+    const int32_t index = *reinterpret_cast<int32_t*>(static_cast<uint8_t*>(self) + 0x1C);
+    if (index <= -1) {
+        return 0;
+    }
+    const int32_t count = ext_006E7460(self);
+    if (index >= count) {
+        return 0;
+    }
+    return ext_0078CB70(self, static_cast<uint32_t>(index));
+}
+} // namespace lift_0078CBE0

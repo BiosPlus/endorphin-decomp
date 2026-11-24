@@ -47552,6 +47552,13 @@
     "summary": "Increments the 32-bit counter at offset +0x1C of the object passed in ecx; no other effect.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x0078CBE0": {
+    "name": "getIndexedDwordBoundedBy1C",
+    "class": "UnknownClass",
+    "signature": "uint32_t fn_0078CBE0(void* self)",
+    "summary": "Returns the dword at index this-\u003efield_0x1C if 0 \u003c= index \u003c ext_006E7460(this), else 0.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078D1C0": {
     "name": "makeLowBitMask",
     "signature": "__cdecl uint32_t fn_0078D1C0(int32_t n)",
