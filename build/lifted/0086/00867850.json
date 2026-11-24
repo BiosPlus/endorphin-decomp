@@ -1,0 +1,13 @@
+{
+  "va": "0x00867850",
+  "size": 25,
+  "orig_symbol": "sub_00867850",
+  "src_path": "src/leaf/tiny_860000.cpp",
+  "lifted_path": "lifted/leaf/tiny_860000.cpp",
+  "name": "clampInt32InPlace",
+  "signature": "void sub_00867850(int32_t* val, int32_t min_val, int32_t max_val)",
+  "summary": "Clamps a signed 32-bit integer in-place to the inclusive range [min_val, max_val].",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T11:53:50Z"
+}
