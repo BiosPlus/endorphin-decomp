@@ -61,7 +61,6 @@ namespace lift_006D2064 {
 // @name DataTable_006D2064
 // @summary 20-byte constant table (00, ten 04s, 01, 04, 02, 04, 04, 04, 03, 8B, FF); the trailing 8B FF is the start of a mov edi,edi prologue, so this is data, not code
 // NOTE: this range is not a function; the disassembly is data. No calling code was verified.
-namespace lift_006D2064 {
 static const unsigned char kTable_006D2064[20] = {
     0x00, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04,
     0x01, 0x04, 0x02, 0x04, 0x04, 0x04, 0x03, 0x8B, 0xFF,
@@ -71,5 +70,4 @@ void fn_006D2064(void* self) {
     (void)self;
     (void)kTable_006D2064;
 }
-} // namespace lift_006D2064
 } // namespace lift_006D2064
