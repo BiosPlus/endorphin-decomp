@@ -28257,6 +28257,13 @@
     "summary": "Returns 1 if bit 0 of the field at +0x9C of the object stored at this+0x94 (passed through ext_007D8700) is set, otherwise 0.",
     "lifted_path": "lifted/classes/RelationshipRPROMagnet.cpp"
   },
+  "0x00649010": {
+    "name": "Unknown::forwardFloatToVfunc3Loop",
+    "class": "Unknown",
+    "signature": "void fn_00649010(void* self, float x)",
+    "summary": "For i in [3, 6): calls vtable slot 3 of this with (this, (double)x, i); thiscall, callee pops 4 bytes.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x006490F0": {
     "name": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setPositionStrength(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setPositionStrength(float), 0}\u003e",

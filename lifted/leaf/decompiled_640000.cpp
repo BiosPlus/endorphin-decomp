@@ -538,3 +538,20 @@ void __thiscall sub_006408F0(void* ecx) {
     }
 }
 } // namespace lift_006408F0
+
+// [0x00649010] sub_00649010 (49 bytes)
+namespace lift_00649010 {
+// @name Unknown::forwardFloatToVfunc3Loop
+// @summary For i in [3, 6): calls vtable slot 3 of this with (this, (double)x, i); thiscall, callee pops 4 bytes.
+// @field Unknown +0x00 void** vtable
+void fn_00649010(void* self, float x) {
+    using SlotFn = void (*)(void* self, double value, int32_t index);
+
+    for (int32_t i = 3; i < 6; ++i) {
+        // Original reloads the vtable pointer on every iteration.
+        void** vtbl = *reinterpret_cast<void***>(self);
+        SlotFn fn = reinterpret_cast<SlotFn>(vtbl[3]);
+        fn(self, static_cast<double>(x), i);
+    }
+}
+} // namespace lift_00649010
