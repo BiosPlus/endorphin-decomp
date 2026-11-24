@@ -43065,6 +43065,12 @@
     "summary": "No-op stub (add eax, 0).",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086B200": {
+    "name": "ZeroDwordArray5",
+    "signature": "void fn_0086B200(void* self)",
+    "summary": "Zeroes five consecutive DWORD slots starting at the target buffer.",
+    "lifted_path": "lifted/leaf/tiny_860000.cpp"
+  },
   "0x0086C014": {
     "name": "sub_0086C014",
     "signature": "void fn_0086C014(void)",

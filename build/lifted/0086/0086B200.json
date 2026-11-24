@@ -1,0 +1,45 @@
+{
+  "va": "0x0086B200",
+  "size": 28,
+  "orig_symbol": "sub_0086B200",
+  "src_path": "src/leaf/tiny_860000.cpp",
+  "lifted_path": "lifted/leaf/tiny_860000.cpp",
+  "name": "ZeroDwordArray5",
+  "signature": "void fn_0086B200(void* self)",
+  "summary": "Zeroes five consecutive DWORD slots starting at the target buffer.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:10:15Z"
+}
