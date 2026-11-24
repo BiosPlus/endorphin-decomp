@@ -12845,6 +12845,13 @@
     "summary": "Stores address of mem_00954474 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
   },
+  "0x00532C50": {
+    "name": "fn_00532C50",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_00532C50(const void* self, void* out)",
+    "summary": "Copies four floats from self+0x38..self+0x44 into the caller-provided 16-byte output (returned by hidden pointer).",
+    "lifted_path": "lifted/leaf/tiny_530000.cpp"
+  },
   "0x00532C70": {
     "name": "sub_00532C70",
     "signature": "extern \"C\" void __fastcall fn_00532C70(void* self)",

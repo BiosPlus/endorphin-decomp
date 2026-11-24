@@ -1,0 +1,40 @@
+{
+  "va": "0x00532C50",
+  "size": 30,
+  "orig_symbol": "sub_00532C50",
+  "src_path": "src/leaf/tiny_530000.cpp",
+  "lifted_path": "lifted/leaf/tiny_530000.cpp",
+  "name": "fn_00532C50",
+  "class": "\u003cunknown\u003e",
+  "signature": "void fn_00532C50(const void* self, void* out)",
+  "summary": "Copies four floats from self+0x38..self+0x44 into the caller-provided 16-byte output (returned by hidden pointer).",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "field_0x40"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:17:44Z"
+}

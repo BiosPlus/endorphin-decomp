@@ -383,3 +383,23 @@ void fn_00533CF0(void* self) {
     std::memcpy(base + 0x498, &value, sizeof(value));
 }
 } // namespace lift_00533CF0
+
+// [0x00532C50] sub_00532C50 (30 bytes)
+namespace lift_00532C50 {
+// @name fn_00532C50
+// @class <unknown>
+// @summary Copies four floats from self+0x38..self+0x44 into the caller-provided 16-byte output (returned by hidden pointer).
+// @field <unknown> +0x38 float field_0x38
+// @field <unknown> +0x3C float field_0x3C
+// @field <unknown> +0x40 float field_0x40
+// @field <unknown> +0x44 float field_0x44
+void fn_00532C50(const void* self, void* out) {
+    const auto* src = static_cast<const std::byte*>(self);
+    auto* dst = static_cast<std::byte*>(out);
+    for (std::size_t i = 0; i < 4; ++i) {
+        float v;
+        std::memcpy(&v, src + 0x38 + i * 4, sizeof(float));
+        std::memcpy(dst + i * 4, &v, sizeof(float));
+    }
+}
+} // namespace lift_00532C50
