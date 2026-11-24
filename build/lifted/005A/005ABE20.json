@@ -1,0 +1,46 @@
+{
+  "va": "0x005ABE20",
+  "size": 122,
+  "orig_symbol": "NMData::RigRoot::vfunc_17_off_C",
+  "src_path": "src/NMData/RigRoot.cpp",
+  "lifted_path": "lifted/NMData/RigRoot.cpp",
+  "name": "NMData::RigRoot::vfunc_17_off_C",
+  "class": "NMData::RigRoot",
+  "signature": "void* fn_005ABE20(void* self)",
+  "summary": "Allocates a 0x194-byte RigRoot, runs base initializer sub_005ABA70, installs the RigRoot vtables, and returns the new object (or null on allocation failure).",
+  "fields": [
+    {
+      "class": "NMData::RigRoot",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "NMData::RigRoot",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::RigRoot",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "NMData::RigRoot",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "NMData::RigRoot",
+      "offset": "+0x150",
+      "type": "void*",
+      "name": "field_0x150"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:49:16Z"
+}
