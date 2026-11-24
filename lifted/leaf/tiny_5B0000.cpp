@@ -219,3 +219,24 @@ extern void fn_005B7260(void* self, DWORD stackArg0, DWORD stackArg1) {
     }
 }
 } // namespace lift_005B7260
+
+// [0x005B67A0]
+namespace lift_005B67A0 {
+extern int ext_00647FD0(void* self);
+
+// @name Unknown::ForwardToSubobjectAc
+// @class Unknown
+// @summary Reads the pointer at this+0x158; if non-null, tail-forwards to ext_00647FD0 with the pointer's +0xAC field as `this`, otherwise returns 0.
+// @field Unknown +0x158 void* field_0x158
+// @field Unknown +0xAC void* field_0xAC (on the object pointed to by field_0x158)
+int fn_005B67A0(void* self) {
+    uintptr_t inner = 0;
+    std::memcpy(&inner, static_cast<unsigned char*>(self) + 0x158, sizeof(inner));
+    if (inner == 0) {
+        return 0;
+    }
+    uintptr_t next = 0;
+    std::memcpy(&next, reinterpret_cast<unsigned char*>(inner) + 0xAC, sizeof(next));
+    return ext_00647FD0(reinterpret_cast<void*>(next));
+}
+} // namespace lift_005B67A0

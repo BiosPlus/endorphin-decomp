@@ -16080,6 +16080,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00433290 (Unknown::forwardToChildAt154).",
     "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
   },
+  "0x005B67A0": {
+    "name": "Unknown::ForwardToSubobjectAc",
+    "class": "Unknown",
+    "signature": "int fn_005B67A0(void* self)",
+    "summary": "Reads the pointer at this+0x158; if non-null, tail-forwards to ext_00647FD0 with the pointer's +0xAC field as `this`, otherwise returns 0.",
+    "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
+  },
   "0x005B6880": {
     "name": "NMData::MetaBodyData::vfunc_6_off_C",
     "class": "NMData::MetaBodyData",
