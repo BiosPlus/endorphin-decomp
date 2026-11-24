@@ -1,0 +1,22 @@
+{
+  "va": "0x006C1BB0",
+  "size": 36,
+  "orig_symbol": "sub_006C1BB0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "SelectRrSsOrRrsString",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "const char* fn_006C1BB0(uint32_t selector)",
+  "summary": "Maps selector 0/1 to \"RrSs\", 2 to \"Rrs\", and anything else to null.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x0",
+      "type": "\u003ctype\u003e",
+      "name": "\u003cfieldName\u003e"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:46:50Z"
+}

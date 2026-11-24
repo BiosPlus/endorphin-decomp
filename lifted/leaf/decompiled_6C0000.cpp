@@ -341,3 +341,25 @@ bool fn_006CA4F0(void* self) {
 }
 } // namespace lift_00711A90
 } // namespace lift_006CA4F0
+
+// [0x006C1BB0] sub_006C1BB0 (36 bytes)
+namespace lift_006C1BB0 {
+extern char mem_00AA8C8C[];
+extern char mem_00AA8C94[];
+
+// @name SelectRrSsOrRrsString
+// @class <ClassName> (optional)
+// @summary Maps selector 0/1 to "RrSs", 2 to "Rrs", and anything else to null.
+// @field <ClassName> +0x00 <type> <fieldName>
+const char* fn_006C1BB0(uint32_t selector) {
+    switch (selector) {
+        case 0:
+        case 1:
+            return mem_00AA8C8C;
+        case 2:
+            return mem_00AA8C94;
+        default:
+            return nullptr;
+    }
+}
+} // namespace lift_006C1BB0

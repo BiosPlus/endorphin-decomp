@@ -36574,6 +36574,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006C1670 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C1BB0": {
+    "name": "SelectRrSsOrRrsString",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "const char* fn_006C1BB0(uint32_t selector)",
+    "summary": "Maps selector 0/1 to \"RrSs\", 2 to \"Rrs\", and anything else to null.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C1DB0": {
     "name": "sub_006C1DB0",
     "signature": "extern \"C\" void* __fastcall fn_006C1DB0(void* self, int edx_unused, unsigned int flags)",
