@@ -13421,6 +13421,13 @@
     "summary": "Returns 1 if the float at this+0x44 compares equal to 0.0 (NaN yields 0), else 0.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x0054E400": {
+    "name": "Unknown::SetFloatFromFlagInverted",
+    "class": "Unknown",
+    "signature": "void fn_0054E400(void* self, uint8_t flag)",
+    "summary": "Stores 1.0f at this+0x44 when the byte argument is zero, otherwise 0.0f.",
+    "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
   "0x0054E890": {
     "name": "sub_0054E890",
     "signature": "extern \"C\" void __fastcall fn_0054E890(void* self)",

@@ -252,3 +252,14 @@ extern float __fastcall fn_00548200(void* self) {
     return mem_00956CB0;
 }
 } // namespace lift_00548200
+
+// [0x0054E400]
+namespace lift_0054E400 {
+// @name Unknown::SetFloatFromFlagInverted
+// @class Unknown
+// @summary Stores 1.0f at this+0x44 when the byte argument is zero, otherwise 0.0f.
+// @field Unknown +0x44 float field_0x44
+void fn_0054E400(void* self, uint8_t flag) {
+    lift_field<float>(self, 0x44) = (flag == 0) ? 1.0f : 0.0f;
+}
+} // namespace lift_0054E400

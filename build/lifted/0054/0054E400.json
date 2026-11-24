@@ -1,0 +1,22 @@
+{
+  "va": "0x0054E400",
+  "size": 23,
+  "orig_symbol": "sub_0054E400",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "Unknown::SetFloatFromFlagInverted",
+  "class": "Unknown",
+  "signature": "void fn_0054E400(void* self, uint8_t flag)",
+  "summary": "Stores 1.0f at this+0x44 when the byte argument is zero, otherwise 0.0f.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:32:36Z"
+}
