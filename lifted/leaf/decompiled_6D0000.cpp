@@ -125,3 +125,16 @@ void fn_006D6AF0(void* self, DWORD index, BYTE value) {
     lift_field<BYTE>(self, static_cast<ptrdiff_t>(0x1B8) + static_cast<ptrdiff_t>(index)) = value;
 }
 } // namespace lift_006D6AF0
+
+// [0x006D2390] sub_006D2390 (32 bytes)
+namespace lift_006D2390 {
+extern void ext_007873F0(void* self, uint32_t arg1);
+
+// @name ForwardArgToCalleeReturnThis
+// @summary Forwards its single stack argument to sub_007873F0 with the same this pointer, then returns this.
+// Note: no member fields are accessed directly; `self` is only passed through.
+void* fn_006D2390(void* self, uint32_t arg1) {
+    ext_007873F0(self, arg1);
+    return self;
+}
+} // namespace lift_006D2390

@@ -36682,6 +36682,12 @@
     "summary": "Pure jump thunk forwarding to sub_006D2250.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D2390": {
+    "name": "ForwardArgToCalleeReturnThis",
+    "signature": "void* fn_006D2390(void* self, uint32_t arg1)",
+    "summary": "Forwards its single stack argument to sub_007873F0 with the same this pointer, then returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D23F0": {
     "name": "Unknown::GetAddressAt8",
     "class": "Unknown",
