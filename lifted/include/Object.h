@@ -8,6 +8,7 @@
 // Recovered field layout for Object:
 namespace lifted_layout {
 struct Object_Fields {
+    // +0x0   void* vptr (vtable pointer, dereferenced to find slot 0x148)  (evidence: 0x0040FD90) // CONFLICT: multiple definitions at +0x0
     // +0x0   double                   field_0x00  (evidence: 0x0067ADD0, 0x0067EC60) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x00492540, 0x00493E50, 0x00493E60, 0x00566FE0, 0x00644F20, 0x0065A8B0, 0x006A4CD0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x00661890) // CONFLICT: multiple definitions at +0x0

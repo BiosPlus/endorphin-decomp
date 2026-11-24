@@ -506,6 +506,13 @@
     "summary": "Checks whether field_0x54 equals 1.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0040FD90": {
+    "name": "CallVirtualSlot148",
+    "class": "(none: generic thiscall thunk, owner class unknown)",
+    "signature": "void fn_0040FD90(void* self, DWORD /*discarded_arg0*/, DWORD /*discarded_arg1*/)",
+    "summary": "Calls the virtual method at vtable byte offset 0x148 on self with no arguments; the two stack args are discarded (ret 8).",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x0040FDF0": {
     "name": "CColorCheck::vfunc_1",
     "class": "CColorCheck",

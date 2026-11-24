@@ -1,0 +1,22 @@
+{
+  "va": "0x0040FD90",
+  "size": 13,
+  "orig_symbol": "sub_0040FD90",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "CallVirtualSlot148",
+  "class": "(none: generic thiscall thunk, owner class unknown)",
+  "signature": "void fn_0040FD90(void* self, DWORD /*discarded_arg0*/, DWORD /*discarded_arg1*/)",
+  "summary": "Calls the virtual method at vtable byte offset 0x148 on self with no arguments; the two stack args are discarded (ret 8).",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "void* vptr (vtable pointer, dereferenced to find slot",
+      "name": "0x148)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:18:14Z"
+}

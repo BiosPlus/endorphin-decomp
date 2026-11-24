@@ -208,3 +208,21 @@ uint32_t fn_00401930(void* self) {
     return reinterpret_cast<Target>(static_cast<uintptr_t>(target))(self);
 }
 } // namespace lift_00401930
+
+// [0x0040FD90] sub_0040FD90 (13 bytes)
+namespace lift_0040FD90 {
+// @name CallVirtualSlot148
+// @class (none: generic thiscall thunk, owner class unknown)
+// @summary Calls the virtual method at vtable byte offset 0x148 on self with no arguments; the two stack args are discarded (ret 8).
+// @field Object +0x00 void* vptr (vtable pointer, dereferenced to find slot 0x148)
+void fn_0040FD90(void* self, DWORD /*discarded_arg0*/, DWORD /*discarded_arg1*/) {
+    // mov eax, [ecx]          -> vtable = self->vptr
+    uint8_t* vtbl = *reinterpret_cast<uint8_t**>(self);
+    // mov edx, [eax + 0x148]  -> fn = vtable[0x148] (byte offset, 32-bit layout)
+    using VirtFn = void (*)(void*);
+    VirtFn fn = *reinterpret_cast<VirtFn*>(vtbl + 0x148);
+    // call edx                -> thiscall with ecx = self, no pushed args
+    fn(self);
+    // ret 0x8                 -> caller's 8 bytes of args are dropped (handled by signature)
+}
+} // namespace lift_0040FD90
