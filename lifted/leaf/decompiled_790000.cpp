@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_790000.cpp
 #include "lift_compat.h"
+#include <cstdio>
 
 // [0x0079EBE0]
 namespace lift_0079EBE0 {
@@ -49,3 +50,15 @@ void fn_0079B140(uint32_t a1, uint32_t a2, uint32_t a3) {
     fn(a1, a2, &a3);
 }
 } // namespace lift_0079B140
+
+// [0x0079EED0] sub_0079EED0 (32 bytes)
+namespace lift_0079EED0 {
+extern int32_t __cdecl fn_0079EBE0(void);
+
+// @name GlobalStreamSeekSet
+// @summary Seeks the global stream (from GetGlobalIndirectInt32) to the given offset from its start via fseek(stream, offset, SEEK_SET).
+void fn_0079EED0(int32_t offset) {
+    const auto stream = static_cast<uintptr_t>(static_cast<uint32_t>(fn_0079EBE0()));
+    std::fseek(reinterpret_cast<FILE*>(stream), static_cast<long>(offset), SEEK_SET);
+}
+} // namespace lift_0079EED0
