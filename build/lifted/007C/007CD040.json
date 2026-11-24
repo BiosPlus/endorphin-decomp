@@ -1,0 +1,22 @@
+{
+  "va": "0x007CD040",
+  "size": 14,
+  "orig_symbol": "sub_007CD040",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "Unknown::postIncrementField04",
+  "class": "Unknown",
+  "signature": "extern \"C\" int32_t fn_007CD040(void* self)",
+  "summary": "Returns the current int32 at this+0x04 and then increments it by one (post-increment counter).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:27:46Z"
+}

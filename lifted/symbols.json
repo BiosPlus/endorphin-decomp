@@ -36673,6 +36673,13 @@
     "summary": "Reads and returns the 32-bit field at offset 0x0C of the object passed as arg0.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CD040": {
+    "name": "Unknown::postIncrementField04",
+    "class": "Unknown",
+    "signature": "extern \"C\" int32_t fn_007CD040(void* self)",
+    "summary": "Returns the current int32 at this+0x04 and then increments it by one (post-increment counter).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007D47A0": {
     "name": "getSpanDiff",
     "signature": "uint32_t sub_007D47A0(uint32_t obj)",

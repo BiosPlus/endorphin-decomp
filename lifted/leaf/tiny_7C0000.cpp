@@ -864,3 +864,19 @@ void setWordField24(uint8_t* self, uint16_t value) {
     *reinterpret_cast<uint16_t*>(self + 0x24) = value;
 }
 } // namespace lift_007C70F0
+
+// [0x007CD040]
+namespace lift_007CD040 {
+// @name Unknown::postIncrementField04
+// @class Unknown
+// @summary Returns the current int32 at this+0x04 and then increments it by one (post-increment counter).
+// @field Unknown +0x04 int32_t field_0x04
+
+extern int32_t fn_007CD040(void* self) {
+    auto* obj = static_cast<unsigned char*>(self);
+    auto* counter = reinterpret_cast<int32_t*>(obj + 0x04);
+    int32_t old = *counter;
+    *counter = old + 1;
+    return old;
+}
+} // namespace lift_007CD040
