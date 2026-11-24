@@ -221,3 +221,26 @@ bool __thiscall sub_007AEC30(void* self, uint32_t arg1, uint32_t arg2) {
     return true;
 }
 } // namespace lift_007AEC30
+
+// [0x007A5EF0]
+namespace lift_007A5EF0 {
+namespace lift_007A5EF0 {
+extern uint32_t mem_009251D8;
+
+// @name sub_007A5EF0
+// @summary Frees the buffer pointed to by *p (if non-null) via CRT free and nulls *p; no-op if p is null.
+void __cdecl fn_007A5EF0(void** p) {
+    using FreeFn = void(__cdecl*)(void*);
+    FreeFn crt_free = reinterpret_cast<FreeFn>(static_cast<uintptr_t>(mem_009251D8));
+
+    if (p == nullptr) {
+        return;
+    }
+    void* buf = *p;
+    if (buf != nullptr) {
+        crt_free(buf);
+    }
+    *p = nullptr;
+}
+} // namespace lift_007A5EF0
+} // namespace lift_007A5EF0

@@ -1,0 +1,13 @@
+{
+  "va": "0x007A5EF0",
+  "size": 48,
+  "orig_symbol": "sub_007A5EF0",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "sub_007A5EF0",
+  "signature": "void __cdecl fn_007A5EF0(void** p)",
+  "summary": "Frees the buffer pointed to by *p (if non-null) via CRT free and nulls *p; no-op if p is null.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:27:38Z"
+}

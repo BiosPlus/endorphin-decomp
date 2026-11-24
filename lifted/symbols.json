@@ -48005,6 +48005,12 @@
     "summary": "Destructor tail-call: restores vtable mem_009977F0 and tail-calls base destructor sub_007AA880.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x007A5EF0": {
+    "name": "sub_007A5EF0",
+    "signature": "void __cdecl fn_007A5EF0(void** p)",
+    "summary": "Frees the buffer pointed to by *p (if non-null) via CRT free and nulls *p; no-op if p is null.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007A9BD0": {
     "name": "SetField06FromGlobal",
     "signature": "void sub_007A9BD0(uint8_t* a1)",
