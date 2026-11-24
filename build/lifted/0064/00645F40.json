@@ -1,0 +1,14 @@
+{
+  "va": "0x00645F40",
+  "size": 50,
+  "orig_symbol": "RelationshipHinge::vfunc_11",
+  "src_path": "src/classes/RelationshipHinge.cpp",
+  "lifted_path": "lifted/classes/RelationshipHinge.cpp",
+  "name": "RelationshipHinge::vfunc_11",
+  "class": "RelationshipHinge",
+  "signature": "void fn_00645F40(float* value, float b, float c)",
+  "summary": "Running update of *value: raise it to b if b \u003e *value, else lower it to c if c \u003c *value (NaN-safe, ordered compares).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:06:51Z"
+}

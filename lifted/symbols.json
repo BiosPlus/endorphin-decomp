@@ -31682,6 +31682,13 @@
     "summary": "Returns (end - begin) / 6 for a range stored at +4 (begin) and +8 (end); 0 if begin is null.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00645F40": {
+    "name": "RelationshipHinge::vfunc_11",
+    "class": "RelationshipHinge",
+    "signature": "void fn_00645F40(float* value, float b, float c)",
+    "summary": "Running update of *value: raise it to b if b \u003e *value, else lower it to c if c \u003c *value (NaN-safe, ordered compares).",
+    "lifted_path": "lifted/classes/RelationshipHinge.cpp"
+  },
   "0x00645F80": {
     "name": "RelationshipHinge::vfunc_0_off_8",
     "class": "RelationshipHinge",

@@ -37,3 +37,22 @@ void fn_006588F0(void* self, FLOAT* out) {
     ext_007C9340(reinterpret_cast<const void*>(static_cast<uintptr_t>(base)), 0, out);
 }
 } // namespace lift_006588F0
+
+// [0x00645F40] RelationshipHinge::vfunc_11 (50 bytes)
+namespace lift_00645F40 {
+// Stdcall-style: (float* value, float b, float c), callee pops 12 bytes (ret 0xc).
+// @name RelationshipHinge::vfunc_11
+// @class RelationshipHinge
+// @summary Running update of *value: raise it to b if b > *value, else lower it to c if c < *value (NaN-safe, ordered compares).
+void fn_00645F40(float* value, float b, float c) {
+    // Phase 1: b > *value (ordered) -> *value = b.
+    if (b > *value) {
+        *value = b;
+        return;
+    }
+    // Phase 2: otherwise, c < *value (ordered) -> *value = c.
+    if (c < *value) {
+        *value = c;
+    }
+}
+} // namespace lift_00645F40
