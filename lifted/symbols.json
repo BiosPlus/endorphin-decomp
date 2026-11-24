@@ -32530,6 +32530,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006E8050 (Unknown::GetVtableSlot80).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E8600": {
+    "name": "sub_006E8600",
+    "signature": "void __thiscall sub_006E8600(void* this_ptr, uint8_t value)",
+    "summary": "Dereferences field_0x00 and sets its byte at offset 0x20 to the given value",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
   "0x006E8610": {
     "name": "Unknown::GetByteAtIndirect20",
     "class": "Unknown",

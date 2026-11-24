@@ -662,3 +662,15 @@ double fn_006E8800(void* self) {
 }
 } // namespace lift_006E8740
 } // namespace lift_006E8800
+
+// [0x006E8600]
+namespace lift_006E8600 {
+// @name sub_006E8600
+// @summary Dereferences field_0x00 and sets its byte at offset 0x20 to the given value
+// @field unknown +0x00 uint8_t* field_0x00
+
+void __thiscall sub_006E8600(void* this_ptr, uint8_t value) {
+    uint8_t* inner = *reinterpret_cast<uint8_t**>(this_ptr);
+    inner[0x20] = value;
+}
+} // namespace lift_006E8600

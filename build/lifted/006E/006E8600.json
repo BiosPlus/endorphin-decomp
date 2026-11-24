@@ -1,0 +1,21 @@
+{
+  "va": "0x006E8600",
+  "size": 16,
+  "orig_symbol": "sub_006E8600",
+  "src_path": "src/leaf/tiny_6E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6E0000.cpp",
+  "name": "sub_006E8600",
+  "signature": "void __thiscall sub_006E8600(void* this_ptr, uint8_t value)",
+  "summary": "Dereferences field_0x00 and sets its byte at offset 0x20 to the given value",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "uint8_t*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T01:43:53Z"
+}
