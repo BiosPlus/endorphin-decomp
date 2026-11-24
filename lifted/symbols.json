@@ -41052,6 +41052,13 @@
     "summary": "Forwards the call to the function pointer stored at self+0xa8, passing self unchanged; returns the callee's result.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C97A0": {
+    "name": "Unknown::setField44IfBit0Clear",
+    "class": "Unknown",
+    "signature": "void fn_007C97A0(void* self, uint32_t value)",
+    "summary": "Sets the 32-bit field at +0x44 if bit 0 of +0x9C is clear.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C9C50": {
     "name": "addOffset0x160",
     "signature": "uint32_t sub_007C9C50(uint32_t arg0)",
