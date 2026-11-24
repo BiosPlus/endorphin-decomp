@@ -1,0 +1,22 @@
+{
+  "va": "0x0078CB90",
+  "size": 48,
+  "orig_symbol": "sub_0078CB90",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "GetIndexedDwordIfInRange",
+  "class": "Unknown",
+  "signature": "uint32_t fn_0078CB90(void* self)",
+  "summary": "Returns the indexed dword for the index stored at +0x18, or 0 if the index is negative or not below the count returned by ext_006E7460.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "int32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:27:23Z"
+}

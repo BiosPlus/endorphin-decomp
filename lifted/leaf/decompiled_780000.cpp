@@ -846,3 +846,25 @@ void fn_0078AAC0(void* self) {
     (void)kDataTable_0078AAC0;
 }
 } // namespace lift_0078AAC0
+
+// [0x0078CB90] sub_0078CB90 (48 bytes)
+namespace lift_0078CB90 {
+extern int32_t ext_006E7460(void* self);
+extern uint32_t ext_0078CB70(void* ecx, uint32_t index);
+
+// @name GetIndexedDwordIfInRange
+// @class Unknown
+// @summary Returns the indexed dword for the index stored at +0x18, or 0 if the index is negative or not below the count returned by ext_006E7460.
+// @field Unknown +0x18 int32_t field_0x18
+uint32_t fn_0078CB90(void* self) {
+    int32_t index = *reinterpret_cast<int32_t*>(static_cast<uint8_t*>(self) + 0x18);
+    if (index <= -1) {
+        return 0;
+    }
+    int32_t count = ext_006E7460(self);
+    if (index >= count) {
+        return 0;
+    }
+    return ext_0078CB70(self, static_cast<uint32_t>(index));
+}
+} // namespace lift_0078CB90
