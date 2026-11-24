@@ -8519,3 +8519,23 @@ void fn_00497D50(void* self) {
         static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(&mem_00ADD15C));
 }
 } // namespace lift_00497D50
+
+// [0x0046E4A0]
+namespace lift_0046E4A0 {
+extern uint32_t mem_00AD8320;
+extern uint32_t mem_00AD831C;
+extern void __thiscall ext_0067A670(void* self);
+
+// @name ExprParser::ReadWriteMethodType<ImageExporter, bool>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool>
+// @summary Lazily initializes a static type/value descriptor at 0x00AD831C and stores its address at arg0 + 0x4.
+void __thiscall fn_0046E4A0(void* /*self*/, void* arg0) {
+    if ((mem_00AD8320 & 1u) == 0u) {
+        mem_00AD8320 |= 1u;
+        ext_0067A670(&mem_00AD831C);
+        mem_00AD831C = 0x0093AC64u;
+    }
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(arg0) + 4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AD831C));
+}
+} // namespace lift_0046E4A0

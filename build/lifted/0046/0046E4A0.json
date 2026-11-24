@@ -1,0 +1,14 @@
+{
+  "va": "0x0046E4A0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cImageExporter, bool\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cImageExporter, bool\u003e",
+  "signature": "void __thiscall fn_0046E4A0(void* /*self*/, void* arg0)",
+  "summary": "Lazily initializes a static type/value descriptor at 0x00AD831C and stores its address at arg0 + 0x4.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:47:56Z"
+}
