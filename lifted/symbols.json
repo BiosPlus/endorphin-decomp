@@ -1,4 +1,10 @@
 {
+  "0x00401000": {
+    "name": "IterateStridedCallback",
+    "signature": "void fn_00401000(void* base, std::int32_t stride, std::int32_t count, void (*callback)(void*))",
+    "summary": "Calls callback once per element of a stride-spaced array, passing each element's address as self; runs `count` times when count \u003e 0, otherwise does nothing.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x004010C0": {
     "name": "AddCharacterDialog::vfunc_64",
     "class": "AddCharacterDialog",

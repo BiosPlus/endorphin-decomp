@@ -1,0 +1,13 @@
+{
+  "va": "0x00401000",
+  "size": 50,
+  "orig_symbol": "sub_00401000",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "IterateStridedCallback",
+  "signature": "void fn_00401000(void* base, std::int32_t stride, std::int32_t count, void (*callback)(void*))",
+  "summary": "Calls callback once per element of a stride-spaced array, passing each element's address as self; runs `count` times when count \u003e 0, otherwise does nothing.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:31:58Z"
+}

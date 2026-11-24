@@ -457,3 +457,17 @@ uint32_t* __cdecl sub_00408090(const uint32_t* first, const uint32_t* last, uint
     return dest;
 }
 } // namespace lift_00408090
+
+// [0x00401000] sub_00401000 (50 bytes)
+namespace lift_00401000 {
+// @name IterateStridedCallback
+// @summary Calls callback once per element of a stride-spaced array, passing each element's address as self; runs `count` times when count > 0, otherwise does nothing.
+// (Stack args: base, stride, count, callback; callee cleans 16 bytes.)
+void fn_00401000(void* base, std::int32_t stride, std::int32_t count, void (*callback)(void*)) {
+    auto* cursor = static_cast<std::uint8_t*>(base);
+    for (std::int32_t remaining = count - 1; remaining >= 0; --remaining) {
+        callback(cursor);
+        cursor += stride;
+    }
+}
+} // namespace lift_00401000
