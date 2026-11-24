@@ -4966,3 +4966,17 @@ void fn_00458DE0(void* self) {
     slot0(self, 1);
 }
 } // namespace lift_00458DE0
+
+// [0x005355B0] OglRenderer::vfunc_71 (13 bytes)
+namespace lift_005355B0 {
+// @name OglRenderer::vfunc_71
+// @class OglRenderer
+// @summary Returns the byte flag at delegate_0x38->field_0x64->+0xC4.
+// @field OglRenderer +0x38 void* delegate_0x38
+uint8_t fn_005355B0(void* self) {
+    char* renderer = static_cast<char*>(self);
+    char* delegate = *reinterpret_cast<char**>(renderer + 0x38);
+    char* inner = *reinterpret_cast<char**>(delegate + 0x64);
+    return *reinterpret_cast<uint8_t*>(inner + 0xC4);
+}
+} // namespace lift_005355B0

@@ -1,0 +1,22 @@
+{
+  "va": "0x005355B0",
+  "size": 13,
+  "orig_symbol": "OglRenderer::vfunc_71",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "OglRenderer::vfunc_71",
+  "class": "OglRenderer",
+  "signature": "uint8_t fn_005355B0(void* self)",
+  "summary": "Returns the byte flag at delegate_0x38-\u003efield_0x64-\u003e+0xC4.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "delegate_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:20:07Z"
+}
