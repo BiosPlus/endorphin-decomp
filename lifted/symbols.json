@@ -24465,6 +24465,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005FF040 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00629EE0": {
+    "name": "ComputeDeltaFromSource",
+    "signature": "void fn_00629EE0(void* self)",
+    "summary": "Stores a float from a source provider at +0x30 and writes (value - +0x38) to +0x34.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00629F10": {
     "name": "StoreDeltaToField38",
     "class": "Unknown",

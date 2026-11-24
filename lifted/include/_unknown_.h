@@ -44,9 +44,10 @@ struct _unknown__Fields {
     // +0x24  float                    field_0x24  (evidence: 0x007C2E50, 0x007C9DF0)
     // +0x28  void* field_0x28 (on the object pointed to by field_0x210)  (evidence: 0x007CD530)
     // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0050E350)
-    // +0x30  float                    field_0x30  (evidence: 0x00629DF0) // CONFLICT: multiple definitions at +0x30
+    // +0x30  float                    field_0x30  (evidence: 0x00629DF0, 0x00629EE0) // CONFLICT: multiple definitions at +0x30
     // +0x30  uint32_t                 field_0x30  (evidence: 0x007D4AE0, 0x007D8470, 0x007DFDB0) // CONFLICT: multiple definitions at +0x30
-    // +0x38  float                    field_0x38  (evidence: 0x00532C50)
+    // +0x34  float                    field_0x34  (evidence: 0x00629EE0)
+    // +0x38  float                    field_0x38  (evidence: 0x00532C50, 0x00629EE0)
     // +0x3C  float                    field_0x3C  (evidence: 0x00532C50)
     // +0x40  float                    field_0x40  (evidence: 0x00532C50)
     // +0x44  float                    field_0x44  (evidence: 0x00532C50)
