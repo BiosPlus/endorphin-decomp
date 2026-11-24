@@ -42515,6 +42515,12 @@
     "summary": "Returns \"Biped\" for selector 0, \"Quadruped\" for selector 1, otherwise nullptr.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00782B60": {
+    "name": "GetAutoUserModeName",
+    "signature": "const char* sub_00782B60(uint32_t selector)",
+    "summary": "Returns \"Auto\" for selector 0, \"User\" for selector 1, otherwise nullptr.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00782D20": {
     "name": "sub_00782D20",
     "signature": "extern \"C\" void fn_00782D20(void)",

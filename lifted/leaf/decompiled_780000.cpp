@@ -35,3 +35,22 @@ const char* sub_00782B10(uint32_t selector) {
     return nullptr;
 }
 } // namespace lift_00782B10
+
+// [0x00782B60]
+namespace lift_00782B60 {
+// @name GetAutoUserModeName
+// @summary Returns "Auto" for selector 0, "User" for selector 1, otherwise nullptr.
+
+extern const char mem_00AAF2BC[]; // "Auto"
+extern const char mem_00AAF2C4[]; // "User"
+
+const char* sub_00782B60(uint32_t selector) {
+    if (selector == 0) {
+        return mem_00AAF2BC;
+    }
+    if (selector == 1) {
+        return mem_00AAF2C4;
+    }
+    return nullptr;
+}
+} // namespace lift_00782B60
