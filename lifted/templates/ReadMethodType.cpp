@@ -30574,3 +30574,23 @@ void* fn_005D2470(void* out_str, void* const* value_ptr) {
     return out_str;
 }
 } // namespace lift_005D2470
+
+// [0x00508F20] ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_4 (71 bytes)
+namespace lift_00508F20 {
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out_str, uint8_t flag);
+
+// @name ExprParser::ReadMethodType<NMData::Task, int, getID, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Forwards the Task's field at +0x14 to ext_0046C500 when the source task pointer is non-null; otherwise throws.
+// @field NMData::Task +0x14 uint32_t field_0x14
+void* fn_00508F20(void* out, void* const* src) {
+    void* task = *src;
+    if (task == nullptr) {
+        throw std::runtime_error("ReadMethodType<NMData::Task>::vfunc_4: null task");
+    }
+    uint32_t flag = lift_field<uint32_t>(task, 0x14);
+    ext_0046C500(out, static_cast<uint8_t>(flag));
+    return out;
+}
+} // namespace lift_00508F20
