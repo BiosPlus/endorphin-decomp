@@ -5023,3 +5023,18 @@ float fn_005355F0(void* self) {
     return lift_field<float>(inner, 0xC0);
 }
 } // namespace lift_005355F0
+
+// [0x005355D0] OglRenderer::vfunc_73 (13 bytes)
+namespace lift_005355D0 {
+// @name OglRenderer::vfunc_73
+// @class OglRenderer
+// @summary Returns the float at +0xB8 of the object at delegate->+0x64 (float result in st0).
+// @field OglRenderer +0x38 void* delegate_0x38
+// @field DelegateObject +0x64 void* field_0x64
+// @field DelegateObject +0xB8 float field_0xB8
+float fn_005355D0(void* self) {
+    uint8_t* const delegate = *reinterpret_cast<uint8_t**>(static_cast<uint8_t*>(self) + 0x38);
+    uint8_t* const inner = *reinterpret_cast<uint8_t**>(delegate + 0x64);
+    return *reinterpret_cast<float*>(inner + 0xB8);
+}
+} // namespace lift_005355D0

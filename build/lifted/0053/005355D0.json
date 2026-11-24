@@ -1,0 +1,34 @@
+{
+  "va": "0x005355D0",
+  "size": 13,
+  "orig_symbol": "OglRenderer::vfunc_73",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "OglRenderer::vfunc_73",
+  "class": "OglRenderer",
+  "signature": "float fn_005355D0(void* self)",
+  "summary": "Returns the float at +0xB8 of the object at delegate-\u003e+0x64 (float result in st0).",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "delegate_0x38"
+    },
+    {
+      "class": "DelegateObject",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "field_0x64"
+    },
+    {
+      "class": "DelegateObject",
+      "offset": "+0xB8",
+      "type": "float",
+      "name": "field_0xB8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:20:29Z"
+}
