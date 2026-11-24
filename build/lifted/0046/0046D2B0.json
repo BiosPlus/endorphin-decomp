@@ -1,0 +1,14 @@
+{
+  "va": "0x0046D2B0",
+  "size": 104,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ImageExporter::getDestination(void) const, 0}, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter, std::string const \u0026, ImageExporter::getDestination\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, std::string const \u0026, ImageExporter::getDestination\u003e",
+  "signature": "uint32_t __thiscall fn_0046D2B0(void* self, uint32_t* arg0)",
+  "summary": "Checks if ImageExporter::getDestination() matches one of two strings, throwing if the object pointer is null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:57:17Z"
+}

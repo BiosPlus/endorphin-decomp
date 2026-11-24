@@ -39434,3 +39434,37 @@ extern int32_t __thiscall fn_0059F860(void* self, void** obj_ptr) {
     return ext_006A6DE0(adjusted);
 }
 } // namespace lift_0059F860
+
+// [0x0046D2B0]
+namespace lift_0046D2B0 {
+uint32_t __thiscall ext_0042F6E0(uint32_t self);
+void __thiscall ext_0046C3C0(void* self);
+void ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+extern uint32_t mem_00924FC0;
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::string const &, ImageExporter::getDestination>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, std::string const &, ImageExporter::getDestination>
+// @summary Checks if ImageExporter::getDestination() matches one of two strings, throwing if the object pointer is null.
+uint32_t __thiscall fn_0046D2B0(void* self, uint32_t* arg0) {
+    (void)self;
+    uint32_t obj = *arg0;
+    if (obj == 0) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+        return 0;
+    }
+
+    uint32_t str_ptr = ext_0042F6E0(obj);
+    using eq_fn_t = uint8_t (__cdecl *)(uint32_t, uint32_t);
+    auto eq_fn = reinterpret_cast<eq_fn_t>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (eq_fn(str_ptr, 0x0092F10Cu) != 0) {
+        return 1;
+    }
+    if (eq_fn(str_ptr, 0x0093A810u) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_0046D2B0
