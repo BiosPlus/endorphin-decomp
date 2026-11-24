@@ -51,3 +51,24 @@ void* fn_00476630(std::string* out, const char* s)
     return out;
 }
 } // namespace lift_00476630
+
+// [0x00477E60] sub_00477E60 (49 bytes)
+namespace lift_00477E60 {
+// @name FillTriplesFromSource
+// @summary Writes the 12-byte triple at src into each of `count` consecutive 12-byte slots starting at dst (skipping writes when dst is null).
+// @field none (free function, no class members accessed)
+void fn_00477E60(DWORD* dst, DWORD count, const DWORD* src) {
+    if (count == 0) {
+        return;
+    }
+    do {
+        if (dst != nullptr) {
+            dst[0] = src[0];
+            dst[1] = src[1];
+            dst[2] = src[2];
+        }
+        dst += 3;
+        --count;
+    } while (count != 0);
+}
+} // namespace lift_00477E60

@@ -6491,6 +6491,12 @@
     "summary": "Stores the float at *value into every 4-byte slot in [first, last); no-op if first == last.",
     "lifted_path": "lifted/leaf/tiny_470000.cpp"
   },
+  "0x00477E60": {
+    "name": "FillTriplesFromSource",
+    "signature": "void fn_00477E60(DWORD* dst, DWORD count, const DWORD* src)",
+    "summary": "Writes the 12-byte triple at src into each of `count` consecutive 12-byte slots starting at dst (skipping writes when dst is null).",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00477EA0": {
     "name": "EvolvedIndividual::vfunc_8",
     "class": "EvolvedIndividual",

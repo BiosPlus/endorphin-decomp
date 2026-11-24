@@ -1,0 +1,13 @@
+{
+  "va": "0x00477E60",
+  "size": 49,
+  "orig_symbol": "sub_00477E60",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "FillTriplesFromSource",
+  "signature": "void fn_00477E60(DWORD* dst, DWORD count, const DWORD* src)",
+  "summary": "Writes the 12-byte triple at src into each of `count` consecutive 12-byte slots starting at dst (skipping writes when dst is null).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:30:37Z"
+}
