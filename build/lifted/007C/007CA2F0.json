@@ -1,0 +1,34 @@
+{
+  "va": "0x007CA2F0",
+  "size": 25,
+  "orig_symbol": "sub_007CA2F0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "Vec3::assign",
+  "class": "Vec3",
+  "signature": "extern \"C\" uint32_t __thiscall sub_007CA2F0(uint32_t self, uint32_t src)",
+  "summary": "Copies three 32-bit floats from src to this and returns this.",
+  "fields": [
+    {
+      "class": "Vec3",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "x"
+    },
+    {
+      "class": "Vec3",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "y"
+    },
+    {
+      "class": "Vec3",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "z"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T11:53:37Z"
+}
