@@ -32315,11 +32315,95 @@
     "summary": "Auto-lifted identical-shape clone of 0x006BB7B0 (Unknown::SetField08).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E7FB0": {
+    "name": "sub_006E7FB0",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006E7FB0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E7FC0": {
+    "name": "sub_006E7FC0",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006E7FC0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E7FD0": {
+    "name": "sub_006E7FD0",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006E7FD0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E7FE0": {
+    "name": "sub_006E7FE0",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006E7FE0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E7FF0": {
+    "name": "sub_006E7FF0",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006E7FF0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E8000": {
+    "name": "sub_006E8000",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006E8000(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E8010": {
+    "name": "sub_006E8010",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006E8010(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E8020": {
+    "name": "sub_006E8020",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006E8020(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E8030": {
+    "name": "sub_006E8030",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006E8030(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E8040": {
+    "name": "sub_006E8040",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006E8040(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
   "0x006E86A0": {
     "name": "sub_006E86A0",
     "class": "Unknown",
     "signature": "void fn_006E86A0(void* self, DWORD value)",
     "summary": "Auto-lifted identical-shape clone of 0x006BB7B0 (Unknown::SetField08).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E86B0": {
+    "name": "sub_006E86B0",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006E86B0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E8810": {
+    "name": "sub_006E8810",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006E8810(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
   "0x006E9420": {
@@ -35821,6 +35905,13 @@
     "name": "sub_0072B120",
     "signature": "extern \"C\" void __fastcall fn_0072B120(void* self, int edx_unused, int32_t value)",
     "summary": "Setter storing int32_t argument into field at offset +0x1C8.",
+    "lifted_path": "lifted/leaf/tiny_720000.cpp"
+  },
+  "0x0072B1C0": {
+    "name": "sub_0072B1C0",
+    "class": "Unknown",
+    "signature": "uint32_t fn_0072B1C0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
   "0x0072B1D0": {

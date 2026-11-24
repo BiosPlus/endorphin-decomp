@@ -31,6 +31,7 @@ extern "C" int32_t mem_00B60298;
 extern "C" int mem_00B60290;
 extern "C" void __fastcall ext_0072CD20(void* self);
 extern "C" void __fastcall ext_0072CFB0(void* self);
+#include <cstdint>
 
 // [0x00723A30] sub_00723A30 (16 bytes)
 // @name sub_00723A30
@@ -290,3 +291,22 @@ void fn_00726690(void* self) {
 }
 } // namespace lift_005B72E0
 } // namespace lift_00726690
+
+// [0x0072B1C0] sub_0072B1C0 (16 bytes)
+namespace lift_0072B1C0 {
+// @name sub_0072B1C0
+// @summary Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).
+namespace lift_006BB7D0 {
+// @name GetVtableSlot3
+// @class Unknown
+// @summary Returns the function pointer stored at vtable offset +0x0C (slot 3) of the object's vtable.
+// @field Unknown +0x00 uint32_t vtable (vptr)
+uint32_t fn_0072B1C0(void* self) {
+    // mov eax, [ecx]        -> vtable = *(uint32_t*)self
+    uint32_t vtable = lift_field<uint32_t>(self, 0x00);
+    // mov eax, [eax + 0xc]  -> return *(uint32_t*)(vtable + 0x0C)
+    void* vtable_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(vtable));
+    return lift_field<uint32_t>(vtable_ptr, 0x4);
+}
+} // namespace lift_006BB7D0
+} // namespace lift_0072B1C0

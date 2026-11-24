@@ -225,3 +225,231 @@ void fn_006E86A0(void* self, DWORD value) {
 }
 } // namespace lift_006BB7B0
 } // namespace lift_006E86A0
+
+// [0x006E7FB0] sub_006E7FB0 (16 bytes)
+namespace lift_006E7FB0 {
+// @name sub_006E7FB0
+// @summary Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).
+namespace lift_006BB7D0 {
+// @name GetVtableSlot3
+// @class Unknown
+// @summary Returns the function pointer stored at vtable offset +0x0C (slot 3) of the object's vtable.
+// @field Unknown +0x00 uint32_t vtable (vptr)
+uint32_t fn_006E7FB0(void* self) {
+    // mov eax, [ecx]        -> vtable = *(uint32_t*)self
+    uint32_t vtable = lift_field<uint32_t>(self, 0x00);
+    // mov eax, [eax + 0xc]  -> return *(uint32_t*)(vtable + 0x0C)
+    void* vtable_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(vtable));
+    return lift_field<uint32_t>(vtable_ptr, 0x54);
+}
+} // namespace lift_006BB7D0
+} // namespace lift_006E7FB0
+
+// [0x006E7FC0] sub_006E7FC0 (16 bytes)
+namespace lift_006E7FC0 {
+// @name sub_006E7FC0
+// @summary Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).
+namespace lift_006BB7D0 {
+// @name GetVtableSlot3
+// @class Unknown
+// @summary Returns the function pointer stored at vtable offset +0x0C (slot 3) of the object's vtable.
+// @field Unknown +0x00 uint32_t vtable (vptr)
+uint32_t fn_006E7FC0(void* self) {
+    // mov eax, [ecx]        -> vtable = *(uint32_t*)self
+    uint32_t vtable = lift_field<uint32_t>(self, 0x00);
+    // mov eax, [eax + 0xc]  -> return *(uint32_t*)(vtable + 0x0C)
+    void* vtable_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(vtable));
+    return lift_field<uint32_t>(vtable_ptr, 0x58);
+}
+} // namespace lift_006BB7D0
+} // namespace lift_006E7FC0
+
+// [0x006E7FD0] sub_006E7FD0 (16 bytes)
+namespace lift_006E7FD0 {
+// @name sub_006E7FD0
+// @summary Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).
+namespace lift_006BB7D0 {
+// @name GetVtableSlot3
+// @class Unknown
+// @summary Returns the function pointer stored at vtable offset +0x0C (slot 3) of the object's vtable.
+// @field Unknown +0x00 uint32_t vtable (vptr)
+uint32_t fn_006E7FD0(void* self) {
+    // mov eax, [ecx]        -> vtable = *(uint32_t*)self
+    uint32_t vtable = lift_field<uint32_t>(self, 0x00);
+    // mov eax, [eax + 0xc]  -> return *(uint32_t*)(vtable + 0x0C)
+    void* vtable_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(vtable));
+    return lift_field<uint32_t>(vtable_ptr, 0x5C);
+}
+} // namespace lift_006BB7D0
+} // namespace lift_006E7FD0
+
+// [0x006E7FE0] sub_006E7FE0 (16 bytes)
+namespace lift_006E7FE0 {
+// @name sub_006E7FE0
+// @summary Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).
+namespace lift_006BB7D0 {
+// @name GetVtableSlot3
+// @class Unknown
+// @summary Returns the function pointer stored at vtable offset +0x0C (slot 3) of the object's vtable.
+// @field Unknown +0x00 uint32_t vtable (vptr)
+uint32_t fn_006E7FE0(void* self) {
+    // mov eax, [ecx]        -> vtable = *(uint32_t*)self
+    uint32_t vtable = lift_field<uint32_t>(self, 0x00);
+    // mov eax, [eax + 0xc]  -> return *(uint32_t*)(vtable + 0x0C)
+    void* vtable_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(vtable));
+    return lift_field<uint32_t>(vtable_ptr, 0x60);
+}
+} // namespace lift_006BB7D0
+} // namespace lift_006E7FE0
+
+// [0x006E7FF0] sub_006E7FF0 (16 bytes)
+namespace lift_006E7FF0 {
+// @name sub_006E7FF0
+// @summary Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).
+namespace lift_006BB7D0 {
+// @name GetVtableSlot3
+// @class Unknown
+// @summary Returns the function pointer stored at vtable offset +0x0C (slot 3) of the object's vtable.
+// @field Unknown +0x00 uint32_t vtable (vptr)
+uint32_t fn_006E7FF0(void* self) {
+    // mov eax, [ecx]        -> vtable = *(uint32_t*)self
+    uint32_t vtable = lift_field<uint32_t>(self, 0x00);
+    // mov eax, [eax + 0xc]  -> return *(uint32_t*)(vtable + 0x0C)
+    void* vtable_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(vtable));
+    return lift_field<uint32_t>(vtable_ptr, 0x64);
+}
+} // namespace lift_006BB7D0
+} // namespace lift_006E7FF0
+
+// [0x006E8000] sub_006E8000 (16 bytes)
+namespace lift_006E8000 {
+// @name sub_006E8000
+// @summary Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).
+namespace lift_006BB7D0 {
+// @name GetVtableSlot3
+// @class Unknown
+// @summary Returns the function pointer stored at vtable offset +0x0C (slot 3) of the object's vtable.
+// @field Unknown +0x00 uint32_t vtable (vptr)
+uint32_t fn_006E8000(void* self) {
+    // mov eax, [ecx]        -> vtable = *(uint32_t*)self
+    uint32_t vtable = lift_field<uint32_t>(self, 0x00);
+    // mov eax, [eax + 0xc]  -> return *(uint32_t*)(vtable + 0x0C)
+    void* vtable_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(vtable));
+    return lift_field<uint32_t>(vtable_ptr, 0x68);
+}
+} // namespace lift_006BB7D0
+} // namespace lift_006E8000
+
+// [0x006E8010] sub_006E8010 (16 bytes)
+namespace lift_006E8010 {
+// @name sub_006E8010
+// @summary Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).
+namespace lift_006BB7D0 {
+// @name GetVtableSlot3
+// @class Unknown
+// @summary Returns the function pointer stored at vtable offset +0x0C (slot 3) of the object's vtable.
+// @field Unknown +0x00 uint32_t vtable (vptr)
+uint32_t fn_006E8010(void* self) {
+    // mov eax, [ecx]        -> vtable = *(uint32_t*)self
+    uint32_t vtable = lift_field<uint32_t>(self, 0x00);
+    // mov eax, [eax + 0xc]  -> return *(uint32_t*)(vtable + 0x0C)
+    void* vtable_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(vtable));
+    return lift_field<uint32_t>(vtable_ptr, 0x6C);
+}
+} // namespace lift_006BB7D0
+} // namespace lift_006E8010
+
+// [0x006E8020] sub_006E8020 (16 bytes)
+namespace lift_006E8020 {
+// @name sub_006E8020
+// @summary Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).
+namespace lift_006BB7D0 {
+// @name GetVtableSlot3
+// @class Unknown
+// @summary Returns the function pointer stored at vtable offset +0x0C (slot 3) of the object's vtable.
+// @field Unknown +0x00 uint32_t vtable (vptr)
+uint32_t fn_006E8020(void* self) {
+    // mov eax, [ecx]        -> vtable = *(uint32_t*)self
+    uint32_t vtable = lift_field<uint32_t>(self, 0x00);
+    // mov eax, [eax + 0xc]  -> return *(uint32_t*)(vtable + 0x0C)
+    void* vtable_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(vtable));
+    return lift_field<uint32_t>(vtable_ptr, 0x70);
+}
+} // namespace lift_006BB7D0
+} // namespace lift_006E8020
+
+// [0x006E8030] sub_006E8030 (16 bytes)
+namespace lift_006E8030 {
+// @name sub_006E8030
+// @summary Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).
+namespace lift_006BB7D0 {
+// @name GetVtableSlot3
+// @class Unknown
+// @summary Returns the function pointer stored at vtable offset +0x0C (slot 3) of the object's vtable.
+// @field Unknown +0x00 uint32_t vtable (vptr)
+uint32_t fn_006E8030(void* self) {
+    // mov eax, [ecx]        -> vtable = *(uint32_t*)self
+    uint32_t vtable = lift_field<uint32_t>(self, 0x00);
+    // mov eax, [eax + 0xc]  -> return *(uint32_t*)(vtable + 0x0C)
+    void* vtable_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(vtable));
+    return lift_field<uint32_t>(vtable_ptr, 0x74);
+}
+} // namespace lift_006BB7D0
+} // namespace lift_006E8030
+
+// [0x006E8040] sub_006E8040 (16 bytes)
+namespace lift_006E8040 {
+// @name sub_006E8040
+// @summary Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).
+namespace lift_006BB7D0 {
+// @name GetVtableSlot3
+// @class Unknown
+// @summary Returns the function pointer stored at vtable offset +0x0C (slot 3) of the object's vtable.
+// @field Unknown +0x00 uint32_t vtable (vptr)
+uint32_t fn_006E8040(void* self) {
+    // mov eax, [ecx]        -> vtable = *(uint32_t*)self
+    uint32_t vtable = lift_field<uint32_t>(self, 0x00);
+    // mov eax, [eax + 0xc]  -> return *(uint32_t*)(vtable + 0x0C)
+    void* vtable_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(vtable));
+    return lift_field<uint32_t>(vtable_ptr, 0x7C);
+}
+} // namespace lift_006BB7D0
+} // namespace lift_006E8040
+
+// [0x006E86B0] sub_006E86B0 (16 bytes)
+namespace lift_006E86B0 {
+// @name sub_006E86B0
+// @summary Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).
+namespace lift_006BB7D0 {
+// @name GetVtableSlot3
+// @class Unknown
+// @summary Returns the function pointer stored at vtable offset +0x0C (slot 3) of the object's vtable.
+// @field Unknown +0x00 uint32_t vtable (vptr)
+uint32_t fn_006E86B0(void* self) {
+    // mov eax, [ecx]        -> vtable = *(uint32_t*)self
+    uint32_t vtable = lift_field<uint32_t>(self, 0x00);
+    // mov eax, [eax + 0xc]  -> return *(uint32_t*)(vtable + 0x0C)
+    void* vtable_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(vtable));
+    return lift_field<uint32_t>(vtable_ptr, 0x48);
+}
+} // namespace lift_006BB7D0
+} // namespace lift_006E86B0
+
+// [0x006E8810] sub_006E8810 (16 bytes)
+namespace lift_006E8810 {
+// @name sub_006E8810
+// @summary Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).
+namespace lift_006BB7D0 {
+// @name GetVtableSlot3
+// @class Unknown
+// @summary Returns the function pointer stored at vtable offset +0x0C (slot 3) of the object's vtable.
+// @field Unknown +0x00 uint32_t vtable (vptr)
+uint32_t fn_006E8810(void* self) {
+    // mov eax, [ecx]        -> vtable = *(uint32_t*)self
+    uint32_t vtable = lift_field<uint32_t>(self, 0x00);
+    // mov eax, [eax + 0xc]  -> return *(uint32_t*)(vtable + 0x0C)
+    void* vtable_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(vtable));
+    return lift_field<uint32_t>(vtable_ptr, 0x78);
+}
+} // namespace lift_006BB7D0
+} // namespace lift_006E8810
