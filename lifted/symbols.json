@@ -2863,9 +2863,9 @@
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
   "0x0045BBE0": {
-    "name": "isVkControlDown",
-    "signature": "uint32_t fn_0045BBE0()",
-    "summary": "Returns 1 if the Ctrl virtual key (VK_CONTROL, 0x11) is currently held down, else 0.",
+    "name": "sub_004543E0",
+    "signature": "extern \"C\" const int* fn_004543E0()",
+    "summary": "Returns the address of the read-only constant mem_00935E44 (initialised to 0x006A5FCE).",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
   "0x0045BC10": {
