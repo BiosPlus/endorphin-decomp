@@ -23600,6 +23600,12 @@
     "summary": "IAT jump thunk forwarding to KERNEL32!GetCurrentThreadId.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0067ADD0": {
+    "name": "sleepMs",
+    "signature": "void sub_0067ADD0(std::uint32_t dwMilliseconds)",
+    "summary": "Forwards its single stack argument to KERNEL32 Sleep via the import slot at mem_00924248.",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
   "0x0067AEE8": {
     "name": "sub_0067AEE8",
     "signature": "extern \"C\" void __stdcall fn_0067AEE8()",

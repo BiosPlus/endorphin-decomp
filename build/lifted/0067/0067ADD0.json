@@ -1,0 +1,13 @@
+{
+  "va": "0x0067ADD0",
+  "size": 12,
+  "orig_symbol": "sub_0067ADD0",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "sleepMs",
+  "signature": "void sub_0067ADD0(std::uint32_t dwMilliseconds)",
+  "summary": "Forwards its single stack argument to KERNEL32 Sleep via the import slot at mem_00924248.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:15:47Z"
+}

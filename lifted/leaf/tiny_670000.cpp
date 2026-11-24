@@ -135,3 +135,19 @@ uint32_t __thiscall sub_00679A30(uint32_t* self) {
     return ext_QueryPerformanceCounter(lpPerformanceCount);
 }
 } // namespace lift_00679A30
+
+// [0x0067ADD0]
+namespace lift_0067ADD0 {
+// @name sleepMs
+// @summary Forwards its single stack argument to KERNEL32 Sleep via the import slot at mem_00924248.
+
+extern std::uint32_t mem_00924248;
+
+// Sleep(DWORD dwMilliseconds) is __stdcall; the import slot holds its address.
+using SleepFn = void(__stdcall*)(std::uint32_t);
+
+void sub_0067ADD0(std::uint32_t dwMilliseconds) {
+    auto fn = reinterpret_cast<SleepFn>(static_cast<std::uintptr_t>(mem_00924248));
+    fn(dwMilliseconds);
+}
+} // namespace lift_0067ADD0
