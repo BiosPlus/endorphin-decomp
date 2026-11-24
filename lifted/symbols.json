@@ -40213,6 +40213,13 @@
     "summary": "Forwards two stack arguments to the embedded subobject at this+0x2A80 via storeArgsAndNotifyChild, passing the 0x006F7CD0 thunk address and 0 as extra values, then calls ext_00711A70 with 1.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006F0520": {
+    "name": "Unknown::forwardArgsToSubobjectAt2B08",
+    "class": "Unknown",
+    "signature": "void fn_006F0520(void* self, uint32_t arg1, void* arg2)",
+    "summary": "Forwards two stack arguments plus a constant 0x006F7E70 and 0 to the subobject at +0x2B08 via ext_00711D40, then calls ext_00711A70 on it with 1.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F0560": {
     "name": "sub_006F0560",
     "class": "Unknown",
