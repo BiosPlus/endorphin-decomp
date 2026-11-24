@@ -10784,6 +10784,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004BC430 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004BCA80": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::MaterialPair, std::basic_string\u003cchar\u003e, generateDisplayName, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cNMData::MaterialPair, std::basic_string\u003cchar\u003e, generateDisplayName, 1\u003e",
+    "signature": "float __stdcall fn_004BCA80(void* const* arg)",
+    "summary": "Calls MaterialPair::generateDisplayName on the object at *arg and returns its text converted with atof",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004BED30": {
     "name": "NMData::EvolveEngineData::vfunc_6",
     "class": "NMData::EvolveEngineData",

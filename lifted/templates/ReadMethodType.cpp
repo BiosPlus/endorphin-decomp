@@ -40593,3 +40593,27 @@ float fn_004D86A0(void* self) {
     return static_cast<float>(std::atof(str->c_str()));
 }
 } // namespace lift_004D86A0
+
+// [0x004BCA80]
+namespace lift_004BCA80 {
+// @name ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char>, generateDisplayName, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char>, generateDisplayName, 1>
+// @summary Calls MaterialPair::generateDisplayName on the object at *arg and returns its text converted with atof
+// @field ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char>, generateDisplayName, 1> +0x00 void* object
+
+
+extern void* __stdcall ext_004BC770(void* out, void* obj);
+extern const char* __thiscall ext_0062903A(void* self);
+extern void __thiscall ext_00628FF0(void* self);
+extern double __cdecl ext_atof(const char* text);
+
+float __stdcall fn_004BCA80(void* const* arg) {
+    unsigned char str[0x1c];
+    void* obj = arg[0];
+    void* s = ext_004BC770(str, obj);
+    const char* text = ext_0062903A(s);
+    float value = (float)ext_atof(text);
+    ext_00628FF0(str);
+    return value;
+}
+} // namespace lift_004BCA80
