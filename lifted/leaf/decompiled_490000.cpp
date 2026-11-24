@@ -312,3 +312,29 @@ void* fn_00497830(void* out_str, uint8_t flag) {
 }
 } // namespace lift_00497860
 } // namespace lift_00497830
+
+// [0x004925D0]
+namespace lift_004925D0 {
+// @name sub_004925D0
+// @summary Checks whether field_0x08 equals field_0x0C (when mode == 0) or field_0x10 (when mode == 1), if field_0x00 == 1
+// @field unknown +0x00 uint32_t field_0x00
+// @field unknown +0x08 uint32_t field_0x08
+// @field unknown +0x0C uint32_t field_0x0C
+// @field unknown +0x10 uint32_t field_0x10
+
+
+extern uint32_t mem_r32(uint32_t addr);
+
+uint8_t __thiscall sub_004925D0(uint32_t self, uint32_t mode) {
+    if (mem_r32(self) != 1) {
+        return 0;
+    }
+    if (mode == 0) {
+        return mem_r32(self + 0x08) == mem_r32(self + 0x0C) ? 1 : 0;
+    }
+    if (mode == 1) {
+        return mem_r32(self + 0x08) == mem_r32(self + 0x10) ? 1 : 0;
+    }
+    return 0;
+}
+} // namespace lift_004925D0

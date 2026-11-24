@@ -1584,6 +1584,12 @@
     "summary": "Returns 0 for a null argument; otherwise forwards the argument to ext_006AD180 and returns its result.",
     "lifted_path": "lifted/Properties/GWCPropertiesControlDriver.cpp"
   },
+  "0x0041CB40": {
+    "name": "dynamicCastSubobject0x10",
+    "signature": "void* __stdcall fn_0041CB40(void* arg0)",
+    "summary": "Dereferences an object wrapper, forwards virtual call at +0x10, and dynamic_casts the result.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041CBD0": {
     "name": "Unknown::DelegateVfunc5ToField4",
     "class": "Unknown",
@@ -2354,6 +2360,12 @@
     "name": "sub_00431330",
     "signature": "extern \"C\" void __thiscall fn_00431330(uint32_t self)",
     "summary": "Calls vtable+0x15c(0) on field_0x104 and passes its negated boolean result to MFC80_ord_6081",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x00431360": {
+    "name": "sub_00431360",
+    "signature": "extern \"C\" void __thiscall fn_00431360(void* self)",
+    "summary": "If field_0x10c is non-null, calls its vfunc at +0x15c(0) and passes it with inverted result to thunk_MFC80_ord_6081.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
   "0x004313A0": {
@@ -5833,6 +5845,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x00469570": {
+    "name": "getVectorElementAt",
+    "signature": "uint32_t __thiscall sub_00469570(uint8_t* self, uint32_t index)",
+    "summary": "Returns the 32-bit element at the given index from a vector, calling _invalid_parameter_noinfo if out of bounds.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00469C50": {
     "name": "sub_00469C50",
     "signature": "void fn_00469C50()",
@@ -7975,6 +7993,12 @@
     "signature": "int fn_004925B0(void* self, DWORD arg0)",
     "summary": "Returns 1 if self-\u003e+0x00 is non-zero and self-\u003e+0x08 equals the single stack argument, otherwise 0 (callee pops 4 bytes).",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
+  "0x004925D0": {
+    "name": "sub_004925D0",
+    "signature": "uint8_t __thiscall sub_004925D0(uint32_t self, uint32_t mode)",
+    "summary": "Checks whether field_0x08 equals field_0x0C (when mode == 0) or field_0x10 (when mode == 1), if field_0x00 == 1",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
   "0x004928A0": {
     "name": "fn_004928A0 (null-checked byte flag test: returns 1 if self != nullptr \u0026\u0026 self-\u003efield_0x179 == 0)",
