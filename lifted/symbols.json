@@ -27062,6 +27062,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0060ED60 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0060F420": {
+    "name": "NMData::AxisDefineSensorData::vfunc_61",
+    "class": "NMData::AxisDefineSensorData",
+    "signature": "void fn_0060F420(void* self, void* arg1, void* arg2)",
+    "summary": "Gates on the string at +0x154 matching one of the literals; if so, copies the string at +0x180 and forwards to ext_005DF5C0 on arg2+0x598.",
+    "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp"
+  },
   "0x0060F540": {
     "name": "NMData::CompoundSensorData::vfunc_1_off_C",
     "class": "NMData::CompoundSensorData",

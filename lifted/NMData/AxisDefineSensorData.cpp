@@ -16,6 +16,7 @@ void fn_0060F0B0(void* dst) {
     std::memcpy(dst, src, 16 * sizeof(DWORD));
 }
 extern "C" void ext_0062CC10(void* arg, void* tm);
+#include <string>
 
 // [0x0058F6B0] NMData::AxisDefineSensorData::vfunc_14 (54 bytes)
 // @name NMData::AxisDefineSensorData::vfunc_14
@@ -58,3 +59,30 @@ void* fn_0060E7B0(void* self, void* arg1, uint32_t arg2) {
     return arg1;
 }
 } // namespace lift_0060E7B0
+
+// [0x0060F420] NMData::AxisDefineSensorData::vfunc_61 (122 bytes)
+namespace lift_0060F420 {
+extern void ext_005DF5C0(void* self);
+extern int mem_00924FC8;
+extern int mem_00924FE0;
+extern const char mem_0096F57C[];
+extern const char mem_0096F568[];
+extern const char mem_0096F554[];
+extern const char mem_0096F540[];
+
+// @name NMData::AxisDefineSensorData::vfunc_61
+// @class NMData::AxisDefineSensorData
+// @summary Gates on the string at +0x154 matching one of the literals; if so, copies the string at +0x180 and forwards to ext_005DF5C0 on arg2+0x598.
+// @field NMData::AxisDefineSensorData +0x154 std::string field_0x154
+// @field NMData::AxisDefineSensorData +0x180 std::string field_0x180
+void fn_0060F420(void* self, void* arg1, void* arg2) {
+    (void)arg1;
+
+    std::string& key = lift_field<std::string>(self, 0x154);
+    if (key != mem_0096F57C && key != mem_0096F568 && key != mem_0096F554 && key == mem_0096F540) {
+        std::string tmp(lift_field<std::string>(self, 0x180));
+        (void)tmp;
+        ext_005DF5C0(static_cast<uint8_t*>(arg2) + 0x598);
+    }
+}
+} // namespace lift_0060F420

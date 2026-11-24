@@ -1,0 +1,28 @@
+{
+  "va": "0x0060F420",
+  "size": 122,
+  "orig_symbol": "NMData::AxisDefineSensorData::vfunc_61",
+  "src_path": "src/NMData/AxisDefineSensorData.cpp",
+  "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp",
+  "name": "NMData::AxisDefineSensorData::vfunc_61",
+  "class": "NMData::AxisDefineSensorData",
+  "signature": "void fn_0060F420(void* self, void* arg1, void* arg2)",
+  "summary": "Gates on the string at +0x154 matching one of the literals; if so, copies the string at +0x180 and forwards to ext_005DF5C0 on arg2+0x598.",
+  "fields": [
+    {
+      "class": "NMData::AxisDefineSensorData",
+      "offset": "+0x154",
+      "type": "std::string",
+      "name": "field_0x154"
+    },
+    {
+      "class": "NMData::AxisDefineSensorData",
+      "offset": "+0x180",
+      "type": "std::string",
+      "name": "field_0x180"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:55:04Z"
+}
