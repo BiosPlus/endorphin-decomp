@@ -1,0 +1,22 @@
+{
+  "va": "0x006A15B0",
+  "size": 114,
+  "orig_symbol": "ExprParser::Operators::Function1::vfunc_3",
+  "src_path": "src/ExprParser/Operators/Function1.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Function1.cpp",
+  "name": "ExprParser::Operators::Function1::vfunc_3",
+  "class": "ExprParser::Operators::Function1",
+  "signature": "void __stdcall fn_006A15B0(void* arg1, uint32_t arg2)",
+  "summary": "Evaluates Function1 by invoking vfunc +0xc0 on field_0x04 and passing the result to sub_0041CF50",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::Function1",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:45:10Z"
+}
