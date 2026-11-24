@@ -989,3 +989,27 @@ uint32_t __thiscall fn_0044B730(void* self) {
     return reinterpret_cast<RetFn>(*reinterpret_cast<void**>(vtbl2 + 0x154))(obj);
 }
 } // namespace lift_0044B730
+
+// [0x0044C230] sub_0044C230 (38 bytes)
+namespace lift_0044C230 {
+// @name Unknown::ForwardPairToEmbeddedVirtual0
+// @class Unknown
+// @summary Packs stack args 1 and 2 into a local pair and forwards its address to virtual slot 0 of the embedded object at +0x58.
+// @field Unknown +0x58 void* field_58 (embedded object's vptr; slot 0 is called)
+void fn_0044C230(void* self, DWORD unused_arg0, DWORD arg1, DWORD arg2) {
+    (void)unused_arg0;
+
+    struct Pair {
+        DWORD first;
+        DWORD second;
+    } pair{arg1, arg2};
+
+    // Embedded object at self+0x58: its vptr is read, slot 0 is fetched.
+    void** vtbl = lift_field<void**>(self, 0x58);
+    using VirtualFn = void (*)(void* thisPtr, void* arg);
+    auto fn = reinterpret_cast<VirtualFn>(vtbl[0]);
+
+    // Callee's `this` is the address of the embedded object (self+0x58).
+    fn(static_cast<char*>(self) + 0x58, &pair);
+}
+} // namespace lift_0044C230

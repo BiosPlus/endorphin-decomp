@@ -3399,6 +3399,13 @@
     "summary": "If the child object at +0x64 is non-null, invoke its vtable slot 2 (offset 0x08) with it as `this`; then forward to the MFC80 thunk ext_006A5EA8.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044C230": {
+    "name": "Unknown::ForwardPairToEmbeddedVirtual0",
+    "class": "Unknown",
+    "signature": "void fn_0044C230(void* self, DWORD unused_arg0, DWORD arg1, DWORD arg2)",
+    "summary": "Packs stack args 1 and 2 into a local pair and forwards its address to virtual slot 0 of the embedded object at +0x58.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044C2A0": {
     "name": "DWORD_RangeCopy (descriptive; sub_0044C2A0)",
     "signature": "DWORD* fn_0044C2A0(const DWORD* first, const DWORD* last, DWORD* out)",
