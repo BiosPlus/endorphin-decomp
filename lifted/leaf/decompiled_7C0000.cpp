@@ -475,3 +475,25 @@ void __cdecl sub_007C1F60(void* self, uint32_t value) {
     *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(self) + 0x14) = pos + 1;
 }
 } // namespace lift_007C1F60
+
+// [0x007CAFD0] sub_007CAFD0 (49 bytes)
+namespace lift_007CAFD0 {
+// @name Unknown::setXYAndComputeLength
+// @class Unknown
+// @summary Stores x into +0x10, then sets +0x18 to sqrt(x*x + y*y) where y is read from +0x14.
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x18 float field_0x18
+extern void __cdecl fn_007CAFD0(void* self, float x) {
+    lift_field<float>(self, 0x10) = x;
+
+    // Original x87 sequence keeps intermediates at extended precision,
+    // so the sum of squares and the sqrt are evaluated in double and
+    // rounded to float only on store.
+    const double y = static_cast<double>(lift_field<float>(self, 0x14));
+    const double xd = static_cast<double>(x);
+    const double len = std::sqrt(xd * xd + y * y);
+
+    lift_field<float>(self, 0x18) = static_cast<float>(len);
+}
+} // namespace lift_007CAFD0
