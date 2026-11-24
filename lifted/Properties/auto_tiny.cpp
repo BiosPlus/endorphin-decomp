@@ -169,3 +169,17 @@ DWORD fn_0041D350(void* self) {
 }
 } // namespace lift_004407B0
 } // namespace lift_0041D350
+
+// [0x004F0510] Properties::TestControl::vfunc_8 (19 bytes)
+namespace lift_004F0510 {
+// @name Properties::TestControl::vfunc_8
+// @class Properties::TestControl
+// @summary Returns the dword at +0x40 of the given object, or 0 if the object pointer is null.
+// @field Properties::TestControl +0x40 DWORD field_0x40
+DWORD fn_004F0510(const void* self) {
+    if (self == nullptr) {
+        return 0;
+    }
+    return *reinterpret_cast<const DWORD*>(static_cast<const BYTE*>(self) + 0x40);
+}
+} // namespace lift_004F0510

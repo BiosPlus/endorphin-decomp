@@ -1,0 +1,22 @@
+{
+  "va": "0x004F0510",
+  "size": 19,
+  "orig_symbol": "Properties::TestControl::vfunc_8",
+  "src_path": "src/Properties/auto_tiny.cpp",
+  "lifted_path": "lifted/Properties/auto_tiny.cpp",
+  "name": "Properties::TestControl::vfunc_8",
+  "class": "Properties::TestControl",
+  "signature": "DWORD fn_004F0510(const void* self)",
+  "summary": "Returns the dword at +0x40 of the given object, or 0 if the object pointer is null.",
+  "fields": [
+    {
+      "class": "Properties::TestControl",
+      "offset": "+0x40",
+      "type": "DWORD",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:01:09Z"
+}

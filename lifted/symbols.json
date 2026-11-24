@@ -9471,6 +9471,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004F0510": {
+    "name": "Properties::TestControl::vfunc_8",
+    "class": "Properties::TestControl",
+    "signature": "DWORD fn_004F0510(const void* self)",
+    "summary": "Returns the dword at +0x40 of the given object, or 0 if the object pointer is null.",
+    "lifted_path": "lifted/Properties/auto_tiny.cpp"
+  },
   "0x004F0B00": {
     "name": "Properties::TargetSelectionProxy::vfunc_0_off_4",
     "class": "Properties::TargetSelectionProxy",
