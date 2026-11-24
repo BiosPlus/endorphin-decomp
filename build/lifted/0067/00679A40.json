@@ -4,10 +4,25 @@
   "orig_symbol": "sub_00679A40",
   "src_path": "src/leaf/tiny_670000.cpp",
   "lifted_path": "lifted/leaf/tiny_670000.cpp",
-  "name": "sub_00679A40 (QueryPerformanceCounter into *(this) + 8)",
-  "signature": "__declspec(noinline) void __thiscall sub_00679A40(void* self)",
-  "summary": "Reads a pointer-sized value from the object at ecx, offsets it by 8, and passes the result to QueryPerformanceCounter.",
+  "name": "sub_0067AEE8",
+  "class": "Unknown (no class recovered; receiver is passed in ecx)",
+  "signature": "extern \"C\" void __stdcall fn_0067AEE8()",
+  "summary": "Pops the return address into edi and returns, releasing 4 bytes of stack arguments.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "double",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T01:22:31Z"
+  "lifted_at": "2026-11-24T01:22:36Z"
 }
