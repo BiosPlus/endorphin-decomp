@@ -1,0 +1,22 @@
+{
+  "va": "0x004EAA40",
+  "size": 72,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0\u003e",
+  "signature": "void* fn_004EAA40(void* out, void* const* objRef)",
+  "summary": "Auto-lifted identical-shape clone of 0x004EA380 (ExprParser::ReadMethodType\u003cPoseToolOptions,isGravityEnabled\u003e::vfunc_4).",
+  "fields": [
+    {
+      "class": "NMData::PoseToolOptions",
+      "offset": "+0x6",
+      "type": "uint8_t",
+      "name": "field_0x06"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T14:40:55Z"
+}

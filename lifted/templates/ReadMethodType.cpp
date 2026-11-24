@@ -30757,3 +30757,183 @@ void* fn_006749C0(void** slot, const void* unused) {
     return slot;
 }
 } // namespace lift_006749C0
+
+// [0x004B8420] ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>::vfunc_4 (75 bytes)
+namespace lift_004B8420 {
+// @name ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004EA380 (ExprParser::ReadMethodType<PoseToolOptions,isGravityEnabled>::vfunc_4).
+namespace lift_004EA380 {
+// Known callee 0x0046C460: makeBoolString (Constructs a std::string from one of two static C-strings based on a boolean flag.)
+extern void* ext_0046C460(void* out, uint8_t flag);
+
+// @name ExprParser::ReadMethodType<PoseToolOptions,isGravityEnabled>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>
+// @summary Stringifies the gravity-enabled flag of the PoseToolOptions object referenced by the second argument into the caller-provided result slot; throws if the object pointer is null.
+// @field NMData::PoseToolOptions +0x06 uint8_t field_0x06
+void* fn_004B8420(void* out, void* const* objRef) {
+    void* obj = objRef ? *objRef : nullptr;
+    if (obj == nullptr) {
+        // Original raises a C++ exception here via _CxxThrowException; the exact
+        // exception type/message is not recovered, so a generic runtime_error is used.
+        throw std::runtime_error("ReadMethodType<PoseToolOptions>::vfunc_4: null object");
+    }
+    uint8_t flag = lift_field<uint8_t>(obj, 0x83);
+    return ext_0046C460(out, flag);
+}
+} // namespace lift_004EA380
+} // namespace lift_004B8420
+
+// [0x004EA5B0] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0>::vfunc_4 (72 bytes)
+namespace lift_004EA5B0 {
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004EA380 (ExprParser::ReadMethodType<PoseToolOptions,isGravityEnabled>::vfunc_4).
+namespace lift_004EA380 {
+// Known callee 0x0046C460: makeBoolString (Constructs a std::string from one of two static C-strings based on a boolean flag.)
+extern void* ext_0046C460(void* out, uint8_t flag);
+
+// @name ExprParser::ReadMethodType<PoseToolOptions,isGravityEnabled>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>
+// @summary Stringifies the gravity-enabled flag of the PoseToolOptions object referenced by the second argument into the caller-provided result slot; throws if the object pointer is null.
+// @field NMData::PoseToolOptions +0x06 uint8_t field_0x06
+void* fn_004EA5B0(void* out, void* const* objRef) {
+    void* obj = objRef ? *objRef : nullptr;
+    if (obj == nullptr) {
+        // Original raises a C++ exception here via _CxxThrowException; the exact
+        // exception type/message is not recovered, so a generic runtime_error is used.
+        throw std::runtime_error("ReadMethodType<PoseToolOptions>::vfunc_4: null object");
+    }
+    uint8_t flag = lift_field<uint8_t>(obj, 0x9);
+    return ext_0046C460(out, flag);
+}
+} // namespace lift_004EA380
+} // namespace lift_004EA5B0
+
+// [0x004EA740] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0>::vfunc_4 (72 bytes)
+namespace lift_004EA740 {
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004EA380 (ExprParser::ReadMethodType<PoseToolOptions,isGravityEnabled>::vfunc_4).
+namespace lift_004EA380 {
+// Known callee 0x0046C460: makeBoolString (Constructs a std::string from one of two static C-strings based on a boolean flag.)
+extern void* ext_0046C460(void* out, uint8_t flag);
+
+// @name ExprParser::ReadMethodType<PoseToolOptions,isGravityEnabled>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>
+// @summary Stringifies the gravity-enabled flag of the PoseToolOptions object referenced by the second argument into the caller-provided result slot; throws if the object pointer is null.
+// @field NMData::PoseToolOptions +0x06 uint8_t field_0x06
+void* fn_004EA740(void* out, void* const* objRef) {
+    void* obj = objRef ? *objRef : nullptr;
+    if (obj == nullptr) {
+        // Original raises a C++ exception here via _CxxThrowException; the exact
+        // exception type/message is not recovered, so a generic runtime_error is used.
+        throw std::runtime_error("ReadMethodType<PoseToolOptions>::vfunc_4: null object");
+    }
+    uint8_t flag = lift_field<uint8_t>(obj, 0x4);
+    return ext_0046C460(out, flag);
+}
+} // namespace lift_004EA380
+} // namespace lift_004EA740
+
+// [0x004EAA40] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>::vfunc_4 (72 bytes)
+namespace lift_004EAA40 {
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004EA380 (ExprParser::ReadMethodType<PoseToolOptions,isGravityEnabled>::vfunc_4).
+namespace lift_004EA380 {
+// Known callee 0x0046C460: makeBoolString (Constructs a std::string from one of two static C-strings based on a boolean flag.)
+extern void* ext_0046C460(void* out, uint8_t flag);
+
+// @name ExprParser::ReadMethodType<PoseToolOptions,isGravityEnabled>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>
+// @summary Stringifies the gravity-enabled flag of the PoseToolOptions object referenced by the second argument into the caller-provided result slot; throws if the object pointer is null.
+// @field NMData::PoseToolOptions +0x06 uint8_t field_0x06
+void* fn_004EAA40(void* out, void* const* objRef) {
+    void* obj = objRef ? *objRef : nullptr;
+    if (obj == nullptr) {
+        // Original raises a C++ exception here via _CxxThrowException; the exact
+        // exception type/message is not recovered, so a generic runtime_error is used.
+        throw std::runtime_error("ReadMethodType<PoseToolOptions>::vfunc_4: null object");
+    }
+    uint8_t flag = lift_field<uint8_t>(obj, 0x5);
+    return ext_0046C460(out, flag);
+}
+} // namespace lift_004EA380
+} // namespace lift_004EAA40
+
+// [0x005225B0] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_4 (74 bytes)
+namespace lift_005225B0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D2470 (ExprParser::ReadMethodType<NMData::VideoPlaneData, int, getFrameOffset, 0>::vfunc_4).
+namespace lift_005D2470 {
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out_str, uint8_t flag);
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, getFrameOffset, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>
+// @summary Reads the frame offset from the VideoPlaneData held by the ValuePtr and formats it into out_str; throws if the pointer is null.
+// @field NMData::VideoPlaneData +0x28 int32_t field_0x28
+void* fn_005225B0(void* out_str, void* const* value_ptr) {
+    auto* obj = static_cast<uint8_t*>(value_ptr ? *value_ptr : nullptr);
+    if (obj == nullptr) {
+        throw std::runtime_error("ReadMethodType<VideoPlaneData>: null object");
+    }
+    const int32_t frame_offset = *reinterpret_cast<const int32_t*>(obj + 0xC4);
+    ext_0046C500(out_str, static_cast<uint8_t>(frame_offset));
+    return out_str;
+}
+} // namespace lift_005D2470
+} // namespace lift_005225B0
+
+// [0x005D6BE0] ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>::vfunc_4 (72 bytes)
+namespace lift_005D6BE0 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004EA380 (ExprParser::ReadMethodType<PoseToolOptions,isGravityEnabled>::vfunc_4).
+namespace lift_004EA380 {
+// Known callee 0x0046C460: makeBoolString (Constructs a std::string from one of two static C-strings based on a boolean flag.)
+extern void* ext_0046C460(void* out, uint8_t flag);
+
+// @name ExprParser::ReadMethodType<PoseToolOptions,isGravityEnabled>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>
+// @summary Stringifies the gravity-enabled flag of the PoseToolOptions object referenced by the second argument into the caller-provided result slot; throws if the object pointer is null.
+// @field NMData::PoseToolOptions +0x06 uint8_t field_0x06
+void* fn_005D6BE0(void* out, void* const* objRef) {
+    void* obj = objRef ? *objRef : nullptr;
+    if (obj == nullptr) {
+        // Original raises a C++ exception here via _CxxThrowException; the exact
+        // exception type/message is not recovered, so a generic runtime_error is used.
+        throw std::runtime_error("ReadMethodType<PoseToolOptions>::vfunc_4: null object");
+    }
+    uint8_t flag = lift_field<uint8_t>(obj, 0x30);
+    return ext_0046C460(out, flag);
+}
+} // namespace lift_004EA380
+} // namespace lift_005D6BE0
+
+// [0x00638EA0] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_4 (74 bytes)
+namespace lift_00638EA0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D2470 (ExprParser::ReadMethodType<NMData::VideoPlaneData, int, getFrameOffset, 0>::vfunc_4).
+namespace lift_005D2470 {
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out_str, uint8_t flag);
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, getFrameOffset, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>
+// @summary Reads the frame offset from the VideoPlaneData held by the ValuePtr and formats it into out_str; throws if the pointer is null.
+// @field NMData::VideoPlaneData +0x28 int32_t field_0x28
+void* fn_00638EA0(void* out_str, void* const* value_ptr) {
+    auto* obj = static_cast<uint8_t*>(value_ptr ? *value_ptr : nullptr);
+    if (obj == nullptr) {
+        throw std::runtime_error("ReadMethodType<VideoPlaneData>: null object");
+    }
+    const int32_t frame_offset = *reinterpret_cast<const int32_t*>(obj + 0xC0);
+    ext_0046C500(out_str, static_cast<uint8_t>(frame_offset));
+    return out_str;
+}
+} // namespace lift_005D2470
+} // namespace lift_00638EA0
