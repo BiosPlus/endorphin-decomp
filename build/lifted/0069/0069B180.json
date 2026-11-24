@@ -1,0 +1,13 @@
+{
+  "va": "0x0069B180",
+  "size": 42,
+  "orig_symbol": "sub_0069B180",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "matchingCloseBracket",
+  "signature": "uint8_t matchingCloseBracket(int8_t c)",
+  "summary": "Maps an opening bracket ( \u003c [ { to its closing counterpart; returns 0 for any other char.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:59:30Z"
+}

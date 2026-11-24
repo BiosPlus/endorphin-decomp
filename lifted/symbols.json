@@ -30988,6 +30988,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0069A830 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0069B180": {
+    "name": "matchingCloseBracket",
+    "signature": "uint8_t matchingCloseBracket(int8_t c)",
+    "summary": "Maps an opening bracket ( \u003c [ { to its closing counterpart; returns 0 for any other char.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x0069B580": {
     "name": "ExprParser::ParseException::vfunc_0",
     "class": "ExprParser::ParseException",

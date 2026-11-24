@@ -127,3 +127,19 @@ void* __thiscall fn_006997E0(void* self, uint32_t arg1) {
     return ext_006A6E9E(obj, 0, reinterpret_cast<void*>(0x00A2E2F8), reinterpret_cast<void*>(0x00AA3D80), 0);
 }
 } // namespace lift_006997E0
+
+// [0x0069B180] sub_0069B180 (42 bytes)
+namespace lift_0069B180 {
+// @name matchingCloseBracket
+// @summary Maps an opening bracket ( < [ { to its closing counterpart; returns 0 for any other char.
+// @field none (no member access; free function)
+uint8_t matchingCloseBracket(int8_t c) {
+    switch (c) {
+    case '(': return ')';
+    case '<': return '>';
+    case '[': return ']';
+    case '{': return '}';
+    default:  return 0;
+    }
+}
+} // namespace lift_0069B180
