@@ -7435,3 +7435,26 @@ extern void __thiscall fn_005F3BF0(void* self, void* out) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B46844));
 }
 } // namespace lift_005F3BF0
+
+// [0x005F3C70]
+namespace lift_005F3C70 {
+// @name ExprParser::WriteMethodType<EffectorGroup, float>::vfunc_40
+// @class ExprParser::WriteMethodType<EffectorGroup, float>
+// @summary Lazily initializes a static helper object and stores its address at arg0 + 4
+// @field Arg0 +0x04 void* field_0x04
+
+
+extern uint32_t mem_00B46850;
+extern uint32_t mem_00B4684C;
+
+extern void __thiscall ext_0067A670(void* self);
+
+void __stdcall fn_005F3C70(void* arg0) {
+    if ((mem_00B46850 & 1u) == 0) {
+        mem_00B46850 |= 1u;
+        ext_0067A670(&mem_00B4684C);
+        mem_00B4684C = 0x0096C8B4u;
+    }
+    *reinterpret_cast<uintptr_t*>(static_cast<uint8_t*>(arg0) + 4) = reinterpret_cast<uintptr_t>(&mem_00B4684C);
+}
+} // namespace lift_005F3C70
