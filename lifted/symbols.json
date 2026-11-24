@@ -7024,6 +7024,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004B77C0": {
+    "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RenameElementCommand::vfunc_4",
+    "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RenameElementCommand",
+    "signature": "void fn_004B77C0(void* self)",
+    "summary": "If the pointer at +0x08 is non-null, invoke its virtual slot 1 with argument 1.",
+    "lifted_path": "lifted/templates/auto_tiny.cpp"
+  },
   "0x004B7A10": {
     "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_0",
     "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",

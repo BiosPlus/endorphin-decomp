@@ -123,3 +123,22 @@ uint32_t __thiscall fn_0052EF40(uintptr_t ecx) {
     return static_cast<uint32_t>(mem_read8(ecx + 0xC) != 0);
 }
 } // namespace lift_0052EF40
+
+// [0x004B77C0]
+namespace lift_004B77C0 {
+// @name PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>::RenameElementCommand::vfunc_4
+// @class PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>::RenameElementCommand
+// @summary If the pointer at +0x08 is non-null, invoke its virtual slot 1 with argument 1.
+// @field PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>::RenameElementCommand +0x08 void* field_0x08
+
+void fn_004B77C0(void* self) {
+    void* child = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x08);
+    if (child == nullptr) {
+        return;
+    }
+    void** vtable = *reinterpret_cast<void***>(child);
+    using SlotFn = void (*)(void* thisPtr, int arg);
+    auto slot1 = reinterpret_cast<SlotFn>(vtable[1]);
+    slot1(child, 1);
+}
+} // namespace lift_004B77C0

@@ -1,0 +1,22 @@
+{
+  "va": "0x004B77C0",
+  "size": 19,
+  "orig_symbol": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RenameElementCommand::vfunc_4",
+  "src_path": "src/templates/auto_tiny.cpp",
+  "lifted_path": "lifted/templates/auto_tiny.cpp",
+  "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RenameElementCommand::vfunc_4",
+  "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RenameElementCommand",
+  "signature": "void fn_004B77C0(void* self)",
+  "summary": "If the pointer at +0x08 is non-null, invoke its virtual slot 1 with argument 1.",
+  "fields": [
+    {
+      "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RenameElementCommand",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:01:12Z"
+}
