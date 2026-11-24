@@ -39271,6 +39271,13 @@
     "summary": "Returns the bits 28-29 (mask 0x30000000) of the dword at this+0x10.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C9D70": {
+    "name": "Unknown::mergeMaskedBitsField10",
+    "class": "Unknown",
+    "signature": "void Unknown_mergeMaskedBitsField10(Unknown* self, uint32_t value, uint32_t maskSource)",
+    "summary": "Replaces bits 28-29 (mask 0x30000000) of field +0x10 with the same bits from the first argument, selected by the second argument's mask bits.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C9DA0": {
     "name": "Unknown::SetFlags0x300000",
     "class": "Unknown",

@@ -1,0 +1,22 @@
+{
+  "va": "0x006C9D70",
+  "size": 48,
+  "orig_symbol": "sub_006C9D70",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::mergeMaskedBitsField10",
+  "class": "Unknown",
+  "signature": "void Unknown_mergeMaskedBitsField10(Unknown* self, uint32_t value, uint32_t maskSource)",
+  "summary": "Replaces bits 28-29 (mask 0x30000000) of field +0x10 with the same bits from the first argument, selected by the second argument's mask bits.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:23:24Z"
+}

@@ -645,3 +645,23 @@ void sub_006CA090(void* ptr, int32_t size) {
     std::free(ptr);
 }
 } // namespace lift_006CA090
+
+// [0x006C9D70]
+namespace lift_006C9D70 {
+// @name Unknown::mergeMaskedBitsField10
+// @class Unknown
+// @summary Replaces bits 28-29 (mask 0x30000000) of field +0x10 with the same bits from the first argument, selected by the second argument's mask bits.
+// @field Unknown +0x10 uint32_t field_0x10
+
+struct Unknown {
+    uint8_t pad_0000[0x10];
+    uint32_t field_0x10; // @field Unknown +0x10 uint32_t field_0x10
+};
+
+void Unknown_mergeMaskedBitsField10(Unknown* self, uint32_t value, uint32_t maskSource) {
+    uint32_t mask = maskSource & 0x30000000u;
+    uint32_t kept = self->field_0x10 & ~mask;
+    uint32_t incoming = value & mask;
+    self->field_0x10 = kept | incoming;
+}
+} // namespace lift_006C9D70
