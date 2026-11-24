@@ -45356,6 +45356,13 @@
     "summary": "Clears global flag mem_00AB2BD8 to 0",
     "lifted_path": "lifted/leaf/tiny_7E0000.cpp"
   },
+  "0x007F0B60": {
+    "name": "Unknown::appendZeroedEntry",
+    "class": "Unknown",
+    "signature": "void fn_007F0B60(void* self)",
+    "summary": "Appends one zero-initialized 20-byte entry to a dynamic array header (base ptr, count) and increments count.",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
   "0x007F2AC0": {
     "name": "MdtArthur::arthurSolver_vanilla::vfunc_0",
     "class": "MdtArthur::arthurSolver_vanilla",

@@ -17,6 +17,7 @@ struct Unknown_Fields {
     // +0x0   void* field_0x00 (pointer written from vtable call result; later passed to CriticalSectionLock::enter)  (evidence: 0x0040A8E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   float* field_0x00 (arg1: dereferenced to get dst Vector4*)  (evidence: 0x0066B860) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    __vfptr  (evidence: 0x006F7930) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t entries_base (pointer to 20-byte entry array, stored as 32-bit address)  (evidence: 0x007F0B60) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (target object pointer;* arg1)  (evidence: 0x005853E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer to inner object; inner->+0x04 holds the element array base)  (evidence: 0x0077FF90) // CONFLICT: multiple definitions at +0x0
     // +0x0   float field_0x00 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x0
@@ -79,6 +80,7 @@ struct Unknown_Fields {
     // +0x4   void*                    child  (evidence: 0x005DA150, 0x005DA170, 0x006305A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer to subobject, dereferenced)  (evidence: 0x00661A40) // CONFLICT: multiple definitions at +0x4
     // +0x4   float field_0x04 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 entry_count  (evidence: 0x007F0B60) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066BB70) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066AF60, 0x0066AFC0) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              field_04  (evidence: 0x0057BB20) // CONFLICT: multiple definitions at +0x4

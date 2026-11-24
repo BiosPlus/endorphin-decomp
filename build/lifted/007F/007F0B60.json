@@ -1,0 +1,58 @@
+{
+  "va": "0x007F0B60",
+  "size": 34,
+  "orig_symbol": "sub_007F0B60",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "Unknown::appendZeroedEntry",
+  "class": "Unknown",
+  "signature": "void fn_007F0B60(void* self)",
+  "summary": "Appends one zero-initialized 20-byte entry to a dynamic array header (base ptr, count) and increments count.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t entries_base (pointer to 20-byte entry array, stored as 32-bit",
+      "name": "address)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "entry_count"
+    },
+    {
+      "class": "Entry",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Entry",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Entry",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Entry",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Entry",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:55:52Z"
+}
