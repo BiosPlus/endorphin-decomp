@@ -40528,6 +40528,13 @@
     "summary": "Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006F1060": {
+    "name": "Unknown::initSubobject42F0AndNotify",
+    "class": "Unknown",
+    "signature": "void __thiscall sub_006F1060(void* self, uint32_t arg1, void* arg2)",
+    "summary": "Initializes the subobject at +0x42f0 with two arguments and a callback address, then triggers a state update.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F10A0": {
     "name": "Unknown::notifySubobjectAt4378",
     "class": "Unknown",

@@ -813,3 +813,20 @@ void fn_006F10E0(void* self, uint32_t arg1, void* arg2) {
     ext_00711A70(sub, 1);
 }
 } // namespace lift_006F10E0
+
+// [0x006F1060]
+namespace lift_006F1060 {
+// @name Unknown::initSubobject42F0AndNotify
+// @class Unknown
+// @summary Initializes the subobject at +0x42f0 with two arguments and a callback address, then triggers a state update.
+// @field Unknown +0x42f0 void* field_0x42f0
+
+extern void __thiscall ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+extern void __thiscall ext_00711A70(void* self, uint32_t arg1);
+
+void __thiscall sub_006F1060(void* self, uint32_t arg1, void* arg2) {
+    void* subobj = static_cast<uint8_t*>(self) + 0x42f0;
+    ext_00711D40(subobj, arg1, arg2, 0x006F82B0u, 0);
+    ext_00711A70(subobj, 1);
+}
+} // namespace lift_006F1060

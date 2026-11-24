@@ -1,0 +1,22 @@
+{
+  "va": "0x006F1160",
+  "size": 44,
+  "orig_symbol": "sub_006F1160",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::initChildAndNotify",
+  "class": "Unknown",
+  "signature": "void __thiscall sub_006F1160(void* self, uint32_t arg1, void* arg2)",
+  "summary": "Initializes the child subobject at +0x4510 with two arguments and fixed callback/flag, then triggers its update.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4510",
+      "type": "uint8_t[]",
+      "name": "field_0x4510"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:15:44Z"
+}
