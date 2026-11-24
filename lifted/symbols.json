@@ -46213,6 +46213,13 @@
     "summary": "Checks if index is in bounds [0, count) and the 40-byte entry's field at +0x24 is non-zero.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C8850": {
+    "name": "GetArrayEntryFieldIfValid",
+    "class": "(none)",
+    "signature": "uint32_t fn_007C8850(uint32_t obj, int32_t index)",
+    "summary": "Returns the dword at +0x20 of the 40-byte entry at index in the array held at obj+0x20, if the entry is valid; otherwise returns the constant 0x0099D280.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C8880": {
     "name": "get_field_0xa8",
     "signature": "uint32_t sub_007C8880(uint32_t a1)",

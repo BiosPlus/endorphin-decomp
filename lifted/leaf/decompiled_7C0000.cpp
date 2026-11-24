@@ -340,3 +340,25 @@ uint32_t sub_007C8820(uint32_t obj, int32_t index) {
     return (val != 0) ? 1u : 0u;
 }
 } // namespace lift_007C8820
+
+// [0x007C8850]
+namespace lift_007C8850 {
+extern uint32_t __cdecl ext_007C8820(uint32_t obj, int32_t index);
+
+// @name GetArrayEntryFieldIfValid
+// @class (none)
+// @summary Returns the dword at +0x20 of the 40-byte entry at index in the array held at obj+0x20, if the entry is valid; otherwise returns the constant 0x0099D280.
+// @field <Owner> +0x20 uint32_t field_0x20
+// @field Entry +0x20 uint32_t field_0x20
+uint32_t fn_007C8850(uint32_t obj, int32_t index) {
+    if (ext_007C8820(obj, index) == 0) {
+        return 0x0099D280u;
+    }
+
+    const uint8_t* const owner = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(obj));
+    const uint32_t array_base = lift_field<uint32_t>(owner, 0x20);
+    const uint8_t* const array = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(array_base));
+    const uint32_t entry_offset = static_cast<uint32_t>(index) * 40u + 0x20u;
+    return lift_field<uint32_t>(array, static_cast<ptrdiff_t>(entry_offset));
+}
+} // namespace lift_007C8850
