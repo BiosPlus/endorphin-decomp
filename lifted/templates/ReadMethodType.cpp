@@ -31006,3 +31006,29 @@ void* fn_0046D990(void* self) {
     return self;
 }
 } // namespace lift_0046D990
+
+// [0x004983A0] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004983A0 {
+// Known callee 0x00496F10: sub_00496F10 (4B), thiscall getter; receives the object pointer in ecx and returns the
+// resultant state ID string pointer in eax.
+extern void* ext_00496F10(void* self);
+// Known callee 0x004276B0: StdStringCopyConstruct (Copy-constructs a std::string at dst from src via the MSVCP80 copy constructor; returns dst.)
+extern void* ext_004276B0(void* dst, const void* src);
+
+// @name ExprParser::ReadMethodType<NMData::Transition>::vfunc_4 (NMData::Transition::getResultantStateID)
+// @class ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>
+// @summary Reads the Transition object pointer from the first dword of dst; throws if it is null, otherwise copy-constructs the resultant state ID string into dst and returns dst.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+//
+// The original is stdcall (ret 8); its second argument is unused and omitted here.
+// The first dword of dst is loaded as the Transition object pointer (self) for getResultantStateID.
+// The MSVC throw path (CxxThrowException with an MSVC type descriptor) is replaced with a portable std::runtime_error.
+void* fn_004983A0(void* dst) {
+    void* self = *static_cast<void**>(dst);
+    if (self == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::Transition>::vfunc_4: null object");
+    }
+    const void* src = ext_00496F10(self);
+    return ext_004276B0(dst, src);
+}
+} // namespace lift_004983A0
