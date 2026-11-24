@@ -1,0 +1,13 @@
+{
+  "va": "0x00460990",
+  "size": 35,
+  "orig_symbol": "sub_00460990",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "confirmAndTriggerAction",
+  "signature": "extern \"C\" void __cdecl fn_00460990(void)",
+  "summary": "Prompts the user with a Yes/No message box and, if Yes (6) is chosen, invokes ext_00666120 on the object from ext_00665870.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:04:25Z"
+}

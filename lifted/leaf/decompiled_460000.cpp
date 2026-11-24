@@ -532,3 +532,21 @@ uint32_t __thiscall sub_0046FD70(uint32_t self, uint32_t out_ptr) {
     return out_ptr;
 }
 } // namespace lift_0046FD70
+
+// [0x00460990]
+namespace lift_00460990 {
+extern int32_t __stdcall ext_006A5E60(uint32_t text, uint32_t type, uint32_t help_id);
+extern int32_t __cdecl ext_00665870(void);
+extern void __thiscall ext_00666120(int32_t self);
+
+extern uint8_t mem_00938458[];
+
+// @name confirmAndTriggerAction
+// @summary Prompts the user with a Yes/No message box and, if Yes (6) is chosen, invokes ext_00666120 on the object from ext_00665870.
+extern void __cdecl fn_00460990(void) {
+    if (ext_006A5E60(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00938458)), 0x104u, 0u) == 6) {
+        int32_t obj = ext_00665870();
+        ext_00666120(obj);
+    }
+}
+} // namespace lift_00460990
