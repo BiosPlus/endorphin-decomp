@@ -1,0 +1,13 @@
+{
+  "va": "0x006E9B70",
+  "size": 57,
+  "orig_symbol": "sub_006E9B70",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "sub_006E9B70",
+  "signature": "extern \"C\" void __fastcall fn_006E9B70(void* self, void* a1)",
+  "summary": "Looks up an item by key 0x00AA8D80 on the object from ext_006C9360(a1), invokes vtable+0x10 if found, and calls ext_00732CB0(a1).",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:21:40Z"
+}
