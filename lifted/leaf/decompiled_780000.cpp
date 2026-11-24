@@ -300,3 +300,23 @@ char* fn_00783440(void* self, char* buf, int n) {
     return std::fgets(buf, n, stream);
 }
 } // namespace lift_00783440
+
+// [0x007836D0]
+namespace lift_007836D0 {
+extern uint32_t mem_00925198;
+
+// @name FileStream::setSize
+// @class FileStream
+// @summary Resizes the underlying file descriptor via _chsize if the stream is open.
+// @field FileStream +0x04 void* field_0x04
+int32_t __thiscall fn_007836D0(void* this_ptr, int32_t size) {
+    uint8_t* inner = *reinterpret_cast<uint8_t**>(reinterpret_cast<uint8_t*>(this_ptr) + 0x4);
+    if (inner[0x4] == 0) {
+        return -1;
+    }
+    uint8_t* handle = *reinterpret_cast<uint8_t**>(inner);
+    int32_t fd = *reinterpret_cast<int32_t*>(handle + 0x10);
+    auto chsize_fn = reinterpret_cast<int32_t(__cdecl*)(int32_t, int32_t)>(mem_00925198);
+    return chsize_fn(fd, size);
+}
+} // namespace lift_007836D0

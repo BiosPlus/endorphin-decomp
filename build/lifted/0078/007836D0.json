@@ -1,0 +1,22 @@
+{
+  "va": "0x007836D0",
+  "size": 39,
+  "orig_symbol": "sub_007836D0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "FileStream::setSize",
+  "class": "FileStream",
+  "signature": "int32_t __thiscall fn_007836D0(void* this_ptr, int32_t size)",
+  "summary": "Resizes the underlying file descriptor via _chsize if the stream is open.",
+  "fields": [
+    {
+      "class": "FileStream",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:57:23Z"
+}
