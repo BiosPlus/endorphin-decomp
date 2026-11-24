@@ -181,3 +181,21 @@ float __thiscall sub_0068BE70(void* self) {
     return static_cast<float>(d);
 }
 } // namespace lift_0068BE70
+
+// [0x006829A0]
+namespace lift_006829A0 {
+extern void __stdcall ext_0065D3F0(int32_t handle);
+extern int32_t mem_00B5ACC8;
+
+// @name ReleaseHandleAtOffset88
+// @class <ClassName> (optional)
+// @summary If the int32 at +0x88 is valid (not -1) and the global at 0x00B5ACC8 is nonzero, releases that handle via ext_0065D3F0 and resets it to -1.
+// @field <ClassName> +0x88 int32_t field_0x88
+void fn_006829A0(void* self) {
+    int32_t handle = lift_field<int32_t>(self, 0x88);
+    if (handle != -1 && mem_00B5ACC8 != 0) {
+        ext_0065D3F0(handle);
+        lift_field<int32_t>(self, 0x88) = -1;
+    }
+}
+} // namespace lift_006829A0

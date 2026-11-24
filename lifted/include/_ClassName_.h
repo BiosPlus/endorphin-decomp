@@ -41,6 +41,7 @@ struct _ClassName__Fields {
     // +0x5C  float                    field_0x5C  (evidence: 0x0054E3D0) // CONFLICT: multiple definitions at +0x5C
     // +0x5C  int32_t                  maxLimit  (evidence: 0x007AEEC0) // CONFLICT: multiple definitions at +0x5C
     // +0x60  int32_t                  value  (evidence: 0x007AEEC0)
+    // +0x88  int32_t                  field_0x88  (evidence: 0x006829A0)
     // +0x8C  uint8_t                  field_0x8C  (evidence: 0x00584AE0)
     // +0x90  uint8_t                  field_0x90  (evidence: 0x00543550)
     // +0x93  uint8_t                  field_0x93  (evidence: 0x00543550)

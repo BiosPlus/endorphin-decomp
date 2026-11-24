@@ -2090,6 +2090,12 @@
     "summary": "Queries global field 0x58 via ext_00465B30, calls Acclaim2CharacterIO::vfunc_23, and invokes vtable[1] on the argument with (result == 2).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430520": {
+    "name": "update_control_enabled_from_mode",
+    "signature": "extern \"C\" int32_t __stdcall fn_00430520(void* arg1)",
+    "summary": "Calls global getter, queries mode via Acclaim2CharacterIO::vfunc_23, and invokes vtable+0x4 on arg1 with (mode == 3).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430900": {
     "name": "forwardChildStateToTarget",
     "signature": "void __thiscall fn_00430900(void* self, void* target)",
@@ -30229,6 +30235,13 @@
     "signature": "extern \"C\" void __fastcall fn_00682990(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0x6C and forwards through mem_00924FDC.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
+  },
+  "0x006829A0": {
+    "name": "ReleaseHandleAtOffset88",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void fn_006829A0(void* self)",
+    "summary": "If the int32 at +0x88 is valid (not -1) and the global at 0x00B5ACC8 is nonzero, releases that handle via ext_0065D3F0 and resets it to -1.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x006829D0": {
     "name": "setGlobal00B5ACC8",
