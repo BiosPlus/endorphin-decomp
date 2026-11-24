@@ -1383,3 +1383,30 @@ uint32_t __thiscall fn_0067AAA0(void* self, uint32_t arg0) {
     return 0x00B59F2Cu;
 }
 } // namespace lift_0067AAA0
+
+// [0x005165C0]
+namespace lift_005165C0 {
+// @name ExprParser::DynamicEnumType::vfunc_4
+// @class ExprParser::DynamicEnumType
+// @summary If the wrapped read-method pointer is non-null, forwards to fn_0046C500 with its field at +0x08 and returns the sret buffer; otherwise builds a temporary and throws.
+// @field ExprParser::DynamicEnumType +0x00 void* ptr_ref
+// @field ExprParser::DynamicEnumType +0x08 uint8_t field_0x08
+
+extern void* ext_0046C500(void* out_str, uint8_t flag);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* type_info, void* obj);
+
+extern void* fn_005165C0(void* out_str, void** ptr_ref) {
+    void* inner = *ptr_ref;
+    if (inner != nullptr) {
+        uint8_t flag = *reinterpret_cast<uint8_t*>(static_cast<uint8_t*>(inner) + 0x08);
+        ext_0046C500(out_str, flag);
+        return out_str;
+    }
+
+    alignas(8) uint8_t local_str[0x18];
+    ext_0046C3C0(local_str);
+    ext_006A6DD2(reinterpret_cast<void*>(0x009DEC1Cu), local_str);
+    return out_str;
+}
+} // namespace lift_005165C0

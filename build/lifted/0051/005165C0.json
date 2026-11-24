@@ -1,0 +1,28 @@
+{
+  "va": "0x005165C0",
+  "size": 71,
+  "orig_symbol": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const\u003e::vfunc_4",
+  "src_path": "src/templates/DynamicEnumType.cpp",
+  "lifted_path": "lifted/templates/DynamicEnumType.cpp",
+  "name": "ExprParser::DynamicEnumType::vfunc_4",
+  "class": "ExprParser::DynamicEnumType",
+  "signature": "extern \"C\" void* fn_005165C0(void* out_str, void** ptr_ref)",
+  "summary": "If the wrapped read-method pointer is non-null, forwards to fn_0046C500 with its field at +0x08 and returns the sret buffer; otherwise builds a temporary and throws.",
+  "fields": [
+    {
+      "class": "ExprParser::DynamicEnumType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ptr_ref"
+    },
+    {
+      "class": "ExprParser::DynamicEnumType",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:39:29Z"
+}
