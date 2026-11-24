@@ -21985,6 +21985,13 @@
     "summary": "Reads the VideoPlaneData object held in the wrapper and returns its frame offset (+0x28); throws if the object pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D2470": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, getFrameOffset, 0\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0\u003e",
+    "signature": "void* fn_005D2470(void* out_str, void* const* value_ptr)",
+    "summary": "Reads the frame offset from the VideoPlaneData held by the ValuePtr and formats it into out_str; throws if the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D2640": {
     "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, getFrameRate, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getFrameRate(void) const, 0\u003e",

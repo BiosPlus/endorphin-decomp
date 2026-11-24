@@ -30554,3 +30554,23 @@ void* fn_0068D7C0(void* unused, void** targetPtr) {
 }
 } // namespace lift_004B2B30
 } // namespace lift_0068D7C0
+
+// [0x005D2470] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_4 (71 bytes)
+namespace lift_005D2470 {
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out_str, uint8_t flag);
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, getFrameOffset, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>
+// @summary Reads the frame offset from the VideoPlaneData held by the ValuePtr and formats it into out_str; throws if the pointer is null.
+// @field NMData::VideoPlaneData +0x28 int32_t field_0x28
+void* fn_005D2470(void* out_str, void* const* value_ptr) {
+    auto* obj = static_cast<uint8_t*>(value_ptr ? *value_ptr : nullptr);
+    if (obj == nullptr) {
+        throw std::runtime_error("ReadMethodType<VideoPlaneData>: null object");
+    }
+    const int32_t frame_offset = *reinterpret_cast<const int32_t*>(obj + 0x28);
+    ext_0046C500(out_str, static_cast<uint8_t>(frame_offset));
+    return out_str;
+}
+} // namespace lift_005D2470
