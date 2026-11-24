@@ -25,3 +25,37 @@ void fn_00609730(void* self) {
 }
 } // namespace lift_004AEC60
 } // namespace lift_00609730
+
+// [0x00602EC0]
+namespace lift_00602EC0 {
+void mem_write32(uint32_t addr, uint32_t val);
+void mem_write_f32(uint32_t addr, float val);
+
+// @name sub_00602EC0_ctor
+// @summary Initializes vtable and zeroes integer and float fields of an object
+// @field Object +0x00 uint32_t vtable
+// @field Object +0x04 uint32_t field_0x04
+// @field Object +0x08 uint32_t field_0x08
+// @field Object +0x0c uint32_t field_0x0c
+// @field Object +0x10 uint32_t field_0x10
+// @field Object +0x14 float field_0x14
+// @field Object +0x18 float field_0x18
+// @field Object +0x1c float field_0x1c
+// @field Object +0x20 float field_0x20
+// @field Object +0x24 float field_0x24
+// @field Object +0x28 float field_0x28
+uint32_t __thiscall sub_00602EC0(uint32_t this_ptr) {
+    mem_write32(this_ptr + 0x00, 0x0096f81cu);
+    mem_write32(this_ptr + 0x04, 0u);
+    mem_write32(this_ptr + 0x08, 0u);
+    mem_write32(this_ptr + 0x0c, 0u);
+    mem_write32(this_ptr + 0x10, 0u);
+    mem_write_f32(this_ptr + 0x1c, 0.0f);
+    mem_write_f32(this_ptr + 0x18, 0.0f);
+    mem_write_f32(this_ptr + 0x14, 0.0f);
+    mem_write_f32(this_ptr + 0x28, 0.0f);
+    mem_write_f32(this_ptr + 0x24, 0.0f);
+    mem_write_f32(this_ptr + 0x20, 0.0f);
+    return this_ptr;
+}
+} // namespace lift_00602EC0

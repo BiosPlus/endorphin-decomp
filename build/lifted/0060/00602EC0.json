@@ -1,0 +1,81 @@
+{
+  "va": "0x00602EC0",
+  "size": 43,
+  "orig_symbol": "sub_00602EC0",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "sub_00602EC0_ctor",
+  "signature": "uint32_t __thiscall sub_00602EC0(uint32_t this_ptr)",
+  "summary": "Initializes vtable and zeroes integer and float fields of an object",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Object",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x28",
+      "type": "float",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:06:28Z"
+}
