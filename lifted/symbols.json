@@ -26291,6 +26291,13 @@
     "summary": "Stdcall (ret 4) epilogue fragment: restores the saved edi register and drops one stack argument; no other effect.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x0067B050": {
+    "name": "SubObject::ClearFlagThenVirtualSlot2",
+    "class": "Unknown",
+    "signature": "void fn_0067B050(void* self)",
+    "summary": "Clears the byte flag at +0x04, calls ext_0067AE50 on self, then dispatches virtual slot 2 on self's vtable (tail jump in original).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067B070": {
     "name": "ZeroFiveDwordsAt4",
     "signature": "uint32_t* ZeroFiveDwordsAt4(uint32_t* self)",

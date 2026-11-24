@@ -1,0 +1,22 @@
+{
+  "va": "0x0067B050",
+  "size": 22,
+  "orig_symbol": "sub_0067B050",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "SubObject::ClearFlagThenVirtualSlot2",
+  "class": "Unknown",
+  "signature": "void fn_0067B050(void* self)",
+  "summary": "Clears the byte flag at +0x04, calls ext_0067AE50 on self, then dispatches virtual slot 2 on self's vtable (tail jump in original).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:30:22Z"
+}
