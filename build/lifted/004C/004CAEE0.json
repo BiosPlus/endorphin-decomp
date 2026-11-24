@@ -1,0 +1,14 @@
+{
+  "va": "0x004CAEE0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, bool, {public: void __thiscall NMData::MetaBodyConstraintData::setMustKeepOffset(bool), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, bool, mustKeepOffset, bool, setMustKeepOffset\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, bool, ...\u003e",
+  "signature": "void lifted_004CAEE0(void* self_out)",
+  "summary": "Function-local static init guard that constructs the MetaBodyConstraintData mustKeepOffset read/write method-type record once and binds its vtable.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:05:06Z"
+}

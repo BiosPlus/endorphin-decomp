@@ -9438,3 +9438,31 @@ void fn_004B7F40(void* out) {
     lift_field<uint32_t>(out, 4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE1674));
 }
 } // namespace lift_004B7F40
+
+// [0x004CAEE0]
+namespace lift_004CAEE0 {
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, bool, mustKeepOffset, bool, setMustKeepOffset>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, bool, ...>
+// @summary Function-local static init guard that constructs the MetaBodyConstraintData mustKeepOffset read/write method-type record once and binds its vtable.
+
+namespace {
+    // Guard byte for the function-local static (was mem_00AE44B4).
+    volatile std::uint8_t g_guard = 0;
+    // Storage for the static method-type record (was mem_00AE44B0).
+    std::uintptr_t g_record[2] = {0, 0};
+}
+
+extern void ext_0067A670(void* record, std::uint32_t arg);
+
+// [0x004CAEE0]
+void lifted_004CAEE0(void* self_out)
+{
+    if (g_guard == 0) {
+        g_guard = 1;
+        ext_0067A670(g_record, 0);
+        g_record[1] = reinterpret_cast<std::uintptr_t>(g_record);
+    }
+    // Store the record pointer into the caller-provided slot at +4.
+    reinterpret_cast<std::uintptr_t*>(self_out)[1] = reinterpret_cast<std::uintptr_t>(g_record);
+}
+} // namespace lift_004CAEE0
