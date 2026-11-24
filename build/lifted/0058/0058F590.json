@@ -1,0 +1,14 @@
+{
+  "va": "0x0058F590",
+  "size": 16,
+  "orig_symbol": "sub_0058F590",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "sub_0058F590",
+  "class": "(none)",
+  "signature": "float fn_0058F590(float value)",
+  "summary": "Stdcall thunk: forwards its single float argument to sub_0058B5A0 and returns that call's result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:36:03Z"
+}
