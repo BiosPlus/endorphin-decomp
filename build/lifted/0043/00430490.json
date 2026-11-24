@@ -1,0 +1,21 @@
+{
+  "va": "0x00430490",
+  "size": 41,
+  "orig_symbol": "sub_00430490",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "updateControlFromGlobalState",
+  "signature": "extern \"C\" int32_t __stdcall fn_00430490(void* target)",
+  "summary": "Checks global state via ext_00465B30 and ext_00528530 and updates the target object via vfunc_1.",
+  "fields": [
+    {
+      "class": "Target",
+      "offset": "+0x0",
+      "type": "uintptr_t*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:58:32Z"
+}

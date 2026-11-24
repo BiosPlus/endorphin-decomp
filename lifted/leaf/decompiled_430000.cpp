@@ -1003,3 +1003,42 @@ void fn_00430A30(void* arg) {
     reinterpret_cast<void (*)(void*, uint8_t)>(callback)(arg, flag);
 }
 } // namespace lift_00430A30
+
+// [0x00430490]
+namespace lift_00430490 {
+// @name updateControlFromGlobalState
+// @summary Checks global state via ext_00465B30 and ext_00528530 and updates the target object via vfunc_1.
+// @field Target +0x00 uintptr_t* vtable
+
+
+extern int32_t __cdecl ext_00465B30(void);
+extern int32_t __thiscall ext_00528530(void* self);
+
+extern int32_t __stdcall fn_00430490(void* target) {
+    uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(target);
+    int32_t obj = ext_00465B30();
+    int32_t state = ext_00528530(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(obj))));
+    using VFunc1 = int32_t(__thiscall*)(void*, int32_t);
+    auto vfunc1 = reinterpret_cast<VFunc1>(vtable[1]);
+    return vfunc1(target, (state == 4) ? 1 : 0);
+}
+} // namespace lift_00430490
+
+// [0x004304C0]
+namespace lift_004304C0 {
+// @name updateStateFromGlobalField
+// @summary Queries global field 0x58 via ext_00465B30, calls Acclaim2CharacterIO::vfunc_23, and invokes vtable[1] on the argument with (result == 2).
+// @field Target +0x00 uintptr_t vtable
+
+extern int32_t __cdecl ext_00465B30(void);
+extern int32_t __thiscall ext_00528530(void* self);
+
+extern int32_t __stdcall fn_004304C0(void* target) {
+    uint32_t* vtable = *reinterpret_cast<uint32_t**>(target);
+    int32_t obj = ext_00465B30();
+    int32_t val = ext_00528530(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+    using VFunc1 = int32_t(__thiscall*)(void*, int32_t);
+    auto vfunc1 = reinterpret_cast<VFunc1>(static_cast<uintptr_t>(vtable[1]));
+    return vfunc1(target, (val == 2) ? 1 : 0);
+}
+} // namespace lift_004304C0
