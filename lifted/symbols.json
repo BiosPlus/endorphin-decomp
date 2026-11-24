@@ -44357,6 +44357,13 @@
     "summary": "Returns the float field at offset 0x1a8 from the given object pointer.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C5950": {
+    "name": "Unknown::doubleAcosOfField1B0",
+    "class": "Unknown",
+    "signature": "float fn_007C5950(void* self)",
+    "summary": "Returns 2 * acos(field at +0x1B0), with float rounding at each intermediate step.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C59B0": {
     "name": "getField0x1B8",
     "signature": "uint32_t sub_007C59B0(uint32_t obj)",

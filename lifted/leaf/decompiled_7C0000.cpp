@@ -52,3 +52,23 @@ uint32_t fn_007C9370(void* self, uint32_t arg2) {
     return ext_007CA120(handle, sub, 0, arg2);
 }
 } // namespace lift_007C9370
+
+// [0x007C5950] sub_007C5950 (34 bytes)
+namespace lift_007C5950 {
+// Known callee 0x006A7256: thunk_MSVCR80__CIacos (IAT jump thunk forwarding to MSVCR80!_CIacos.)
+// The CRT helper takes its operand and returns its result on the x87 stack; modelled here as float in/out.
+extern float ext_006A7256(float x);
+
+// @name Unknown::doubleAcosOfField1B0
+// @class Unknown
+// @summary Returns 2 * acos(field at +0x1B0), with float rounding at each intermediate step.
+// @field Unknown +0x1B0 float field_0x1B0
+float fn_007C5950(void* self) {
+    const auto* base = static_cast<const unsigned char*>(self);
+    float a;
+    std::memcpy(&a, base + 0x1B0, sizeof(a));
+    float r = ext_006A7256(a);   // acos
+    r = r + r;                   // 2 * acos
+    return r;
+}
+} // namespace lift_007C5950
