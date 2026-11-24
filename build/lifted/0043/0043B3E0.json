@@ -1,0 +1,40 @@
+{
+  "va": "0x0043B3E0",
+  "size": 31,
+  "orig_symbol": "sub_0043B3E0",
+  "src_path": "src/leaf/tiny_430000.cpp",
+  "lifted_path": "lifted/leaf/tiny_430000.cpp",
+  "name": "CopyFloat4Assign",
+  "class": "Unknown (class not yet identified; ecx = this, arg = const source ref)",
+  "signature": "void* fn_0043B3E0(void* self, const void* src)",
+  "summary": "Copies four 32-bit floats (16 bytes) from the source block into self and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:22:00Z"
+}

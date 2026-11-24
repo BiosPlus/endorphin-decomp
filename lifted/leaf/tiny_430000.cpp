@@ -211,3 +211,19 @@ extern uint32_t sub_0043CB50(uint32_t node) {
     return node;
 }
 } // namespace lift_0043CB50
+
+// [0x0043B3E0]
+namespace lift_0043B3E0 {
+// @name CopyFloat4Assign
+// @class Unknown (class not yet identified; ecx = this, arg = const source ref)
+// @summary Copies four 32-bit floats (16 bytes) from the source block into self and returns self.
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0C float field_0x0C
+void* fn_0043B3E0(void* self, const void* src) {
+    // Copy four floats in order; memcpy preserves bit patterns exactly.
+    std::memcpy(self, src, 4 * sizeof(float));
+    return self;
+}
+} // namespace lift_0043B3E0
