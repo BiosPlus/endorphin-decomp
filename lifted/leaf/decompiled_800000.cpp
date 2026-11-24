@@ -144,3 +144,22 @@ void fn_0080ABC0(void) {
     reinterpret_cast<LeaveCriticalSectionFn>(mem_009241BC)(mem_00B73C58);
 }
 } // namespace lift_0080ABC0
+
+// [0x0080AB80]
+namespace lift_0080AB80 {
+// @name EnterGlobalCriticalSection
+// @summary Ensures the global critical section is initialized, then enters it via the imported EnterCriticalSection.
+
+extern void ext_0080ABE0(void);
+extern uint32_t mem_00B73C80;
+extern uint8_t mem_00B73C58[];
+extern void* mem_009242E0;
+
+void fn_0080AB80(void) {
+    if (mem_00B73C80 == 0) {
+        ext_0080ABE0();
+    }
+    using EnterCriticalSectionFn = void(__stdcall*)(void*);
+    reinterpret_cast<EnterCriticalSectionFn>(mem_009242E0)(mem_00B73C58);
+}
+} // namespace lift_0080AB80
