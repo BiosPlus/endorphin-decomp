@@ -20112,6 +20112,13 @@
     "summary": "Calls virtual slot at vtable offset 0x108 on self with (1, arg) and returns its result.",
     "lifted_path": "lifted/leaf/tiny_610000.cpp"
   },
+  "0x00610AD0": {
+    "name": "ForwardArgToVirtualSlot66WithFlag2",
+    "class": "\u003cUnknown\u003e (owning class not yet identified; accessed via vptr at +0x00)",
+    "signature": "uint32_t fn_00610AD0(void* self, uint32_t arg)",
+    "summary": "Calls virtual slot at vtable offset 0x108 on self with (2, arg) and returns its result.",
+    "lifted_path": "lifted/leaf/tiny_610000.cpp"
+  },
   "0x00611160": {
     "name": "readFloatAtIndex3",
     "signature": "float fn_00611160(uint32_t ecx)",

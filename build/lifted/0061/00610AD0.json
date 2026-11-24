@@ -1,0 +1,22 @@
+{
+  "va": "0x00610AD0",
+  "size": 20,
+  "orig_symbol": "sub_00610AD0",
+  "src_path": "src/leaf/tiny_610000.cpp",
+  "lifted_path": "lifted/leaf/tiny_610000.cpp",
+  "name": "ForwardArgToVirtualSlot66WithFlag2",
+  "class": "\u003cUnknown\u003e (owning class not yet identified; accessed via vptr at +0x00)",
+  "signature": "uint32_t fn_00610AD0(void* self, uint32_t arg)",
+  "summary": "Calls virtual slot at vtable offset 0x108 on self with (2, arg) and returns its result.",
+  "fields": [
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:07:47Z"
+}
