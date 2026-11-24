@@ -163,3 +163,24 @@ extern void __thiscall fn_00611950(void* this_ptr) {
     ext_00678130(target, val);
 }
 } // namespace lift_00611950
+
+// [0x00611870]
+namespace lift_00611870 {
+// @name sub_00611870
+// @summary Calls vtable+0x10c(0) on self to get a float and passes it to ext_00678130 on ext_00594000() + 0x2e0.
+// @field Self +0x00 void** vtable
+
+
+extern int32_t __cdecl ext_00594000(void);
+extern void __thiscall ext_00678130(void* self, float value);
+
+extern void __thiscall fn_00611870(void* self) {
+    using VFunc = float(__thiscall*)(void*, int32_t);
+    void** vtable = *reinterpret_cast<void***>(self);
+    VFunc vfunc = reinterpret_cast<VFunc>(vtable[0x10c / sizeof(void*)]);
+    float val = vfunc(self, 0);
+    int32_t base = ext_00594000();
+    void* target = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(base)) + 0x2e0);
+    ext_00678130(target, val);
+}
+} // namespace lift_00611870

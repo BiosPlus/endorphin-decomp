@@ -1,0 +1,21 @@
+{
+  "va": "0x00611870",
+  "size": 41,
+  "orig_symbol": "sub_00611870",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "sub_00611870",
+  "signature": "extern \"C\" void __thiscall fn_00611870(void* self)",
+  "summary": "Calls vtable+0x10c(0) on self to get a float and passes it to ext_00678130 on ext_00594000() + 0x2e0.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:02:10Z"
+}

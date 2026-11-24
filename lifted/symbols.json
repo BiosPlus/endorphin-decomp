@@ -23951,6 +23951,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0058F6B0 (NMData::AxisDefineSensorData::vfunc_14).",
     "lifted_path": "lifted/NMData/SecondaryTwistAndSwingConstraint.cpp"
   },
+  "0x00611870": {
+    "name": "sub_00611870",
+    "signature": "extern \"C\" void __thiscall fn_00611870(void* self)",
+    "summary": "Calls vtable+0x10c(0) on self to get a float and passes it to ext_00678130 on ext_00594000() + 0x2e0.",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
   "0x006118E0": {
     "name": "invokeVFunc10CAndForwardTo00678130",
     "signature": "extern \"C\" void __thiscall fn_006118E0(void* self)",
