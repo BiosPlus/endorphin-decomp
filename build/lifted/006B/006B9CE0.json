@@ -1,0 +1,13 @@
+{
+  "va": "0x006B9CE0",
+  "size": 48,
+  "orig_symbol": "sub_006B9CE0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "strContainsChar",
+  "signature": "uint8_t __stdcall sub_006B9CE0(uint8_t ch, uintptr_t str)",
+  "summary": "Checks whether a null-terminated string contains a given byte character.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:21:40Z"
+}

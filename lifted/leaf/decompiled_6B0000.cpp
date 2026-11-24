@@ -595,3 +595,27 @@ void __thiscall sub_006B9990(void* ecx, uint32_t* out) {
     ext_006B9910(ecx);
 }
 } // namespace lift_006B9990
+
+// [0x006B9CE0]
+namespace lift_006B9CE0 {
+uint8_t mem_read_u8(uintptr_t);
+
+// @name strContainsChar
+// @summary Checks whether a null-terminated string contains a given byte character.
+uint8_t __stdcall sub_006B9CE0(uint8_t ch, uintptr_t str) {
+  if (str == 0) {
+    return 0;
+  }
+  while (str != 0) {
+    uint8_t c = mem_read_u8(str);
+    if (c == 0) {
+      return 0;
+    }
+    if (c == ch) {
+      return 1;
+    }
+    ++str;
+  }
+  return 0;
+}
+} // namespace lift_006B9CE0
