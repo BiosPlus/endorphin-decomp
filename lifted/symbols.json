@@ -16823,6 +16823,13 @@
     "summary": "Calls vtable slot 5 (+0x14) on self with a pointer to a local float holding 0.0f, then returns (callee pops one stack argument).",
     "lifted_path": "lifted/NMCamera/auto_tiny.cpp"
   },
+  "0x00551C30": {
+    "name": "NMCamera::Orthogonal::vfunc_20",
+    "class": "NMCamera::Orthogonal",
+    "signature": "void fn_00551C30(void* self, const int32_t* xy, const float* p, float* out)",
+    "summary": "Computes a 4-float normalized viewport/projection vector from two int32 screen coordinates, a float scalar, and the camera's +0xB0/+0xB8/+0xC0 scale terms.",
+    "lifted_path": "lifted/NMCamera/Orthogonal.cpp"
+  },
   "0x00551CB0": {
     "name": "NMCamera::Orthogonal::vfunc_19",
     "class": "NMCamera::Orthogonal",

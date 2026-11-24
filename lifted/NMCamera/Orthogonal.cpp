@@ -107,3 +107,40 @@ void __thiscall fn_00551A80(void* self) {
     mem_00925410(bottom * aspect, top * aspect, bottom, top, zNear, zFar);
 }
 } // namespace lift_00551A80
+
+// [0x00551C30] NMCamera::Orthogonal::vfunc_20 (125 bytes)
+namespace lift_00551C30 {
+// Known callee 0x005480D0: GetFloatViaIndirectOrInline (Returns float at this+0x1F4 of the object pointed to by this+0xA0 if non-null, else float at this+0x70.)
+extern float ext_005480D0(void* self);
+extern const double mem_0092A270; // .rdata double 1.0
+extern const double mem_00993828; // .rdata double 0.5
+
+// @name NMCamera::Orthogonal::vfunc_20
+// @class NMCamera::Orthogonal
+// @summary Computes a 4-float normalized viewport/projection vector from two int32 screen coordinates, a float scalar, and the camera's +0xB0/+0xB8/+0xC0 scale terms.
+// @field NMCamera::Orthogonal +0xB0 double field_0xb0
+// @field NMCamera::Orthogonal +0xB8 double field_0xb8
+// @field NMCamera::Orthogonal +0xC0 double field_0xc0
+void fn_00551C30(void* self, const int32_t* xy, const float* p, float* out) {
+    // Read the scalar input first, as the original does, before any output write.
+    const float pv = *p;
+
+    // out[0] = f0 * (2x / B0 - 1) * 0.5 * C0, where f0 = GetFloatViaIndirectOrInline(self)
+    const double f0 = static_cast<double>(ext_005480D0(self));
+    const double x = static_cast<double>(xy[0]);
+    const double b0 = lift_field<double>(self, 0xB0);
+    const double c0 = lift_field<double>(self, 0xC0);
+    const double v0 = f0 * (2.0 * x / b0 - mem_0092A270) * mem_00993828 * c0;
+
+    // out[1] = f1 * (1 - 2y / B8) * 0.5, where f1 = GetFloatViaIndirectOrInline(self)
+    const double f1 = static_cast<double>(ext_005480D0(self));
+    const double y = static_cast<double>(xy[1]);
+    const double b8 = lift_field<double>(self, 0xB8);
+    const double v1 = f1 * (mem_0092A270 - 2.0 * y / b8) * mem_00993828;
+
+    out[0] = static_cast<float>(v0);
+    out[1] = static_cast<float>(v1);
+    out[2] = pv;
+    out[3] = 1.0f;
+}
+} // namespace lift_00551C30
