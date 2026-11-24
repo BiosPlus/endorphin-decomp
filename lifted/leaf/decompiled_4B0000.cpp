@@ -140,3 +140,22 @@ void* fn_004B4740(void* arg1, DWORD arg2) {
 }
 } // namespace lift_004B4740
 } // namespace lift_004B4740
+
+// [0x004BA230] sub_004BA230 (37 bytes)
+namespace lift_004BA230 {
+namespace lift_004BA230 {
+// Known callee 0x004B7980: sub_004B7980 (35 bytes). Called with arg2 as its first argument;
+// the remaining two stack slots hold no meaningful value in the original code and are passed as 0.
+extern DWORD __stdcall ext_004B7980(DWORD a, DWORD b, DWORD c);
+// Known callee 0x0055DA20: initDwordPair (Stores two stack-passed DWORDs into the object at ECX and returns that object pointer (callee pops 8 bytes).)
+extern void __stdcall ext_0055DA20(void* self, DWORD a, DWORD b);
+
+// @name initDwordPairFromLookup
+// @summary Calls ext_004B7980 on arg2, then initialises arg1 with its result and arg2 via ext_0055DA20; returns arg1.
+void* fn_004BA230(void* arg1, DWORD arg2) {
+    DWORD result = ext_004B7980(arg2, 0, 0);
+    ext_0055DA20(arg1, result, arg2);
+    return arg1;
+}
+} // namespace lift_004BA230
+} // namespace lift_004BA230

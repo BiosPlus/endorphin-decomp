@@ -8842,6 +8842,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EB50 (ExprParser::ReadMethodType\u003cImageExporter,int,ImageExporter::getEndFrame,0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004BA230": {
+    "name": "initDwordPairFromLookup",
+    "signature": "void* fn_004BA230(void* arg1, DWORD arg2)",
+    "summary": "Calls ext_004B7980 on arg2, then initialises arg1 with its result and arg2 via ext_0055DA20; returns arg1.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BA260": {
     "name": "ExprParser::PrimitiveProxyType\u003cfloat\u003e::vfunc_37",
     "class": "ExprParser::PrimitiveProxyType\u003cfloat\u003e",
