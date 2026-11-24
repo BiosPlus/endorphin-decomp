@@ -36513,6 +36513,13 @@
     "summary": "Reads a 16-bit value at offset 0x24 from the given pointer.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C70F0": {
+    "name": "Unknown::setWordField24",
+    "class": "Unknown",
+    "signature": "void setWordField24(uint8_t* self, uint16_t value)",
+    "summary": "Stores a 16-bit value into the object at offset +0x24.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C7690": {
     "name": "getField_0x214",
     "signature": "float sub_007C7690(uintptr_t a1)",

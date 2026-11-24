@@ -1,0 +1,22 @@
+{
+  "va": "0x007C70F0",
+  "size": 14,
+  "orig_symbol": "sub_007C70F0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "Unknown::setWordField24",
+  "class": "Unknown",
+  "signature": "void setWordField24(uint8_t* self, uint16_t value)",
+  "summary": "Stores a 16-bit value into the object at offset +0x24.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "uint16_t",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:27:43Z"
+}

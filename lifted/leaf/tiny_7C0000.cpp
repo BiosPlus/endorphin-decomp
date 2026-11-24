@@ -852,3 +852,15 @@ extern void __cdecl fn_007C2E70(void* ptr) {
     mem_009251D8(ptr);
 }
 } // namespace lift_007C2E70
+
+// [0x007C70F0]
+namespace lift_007C70F0 {
+// @name Unknown::setWordField24
+// @class Unknown
+// @summary Stores a 16-bit value into the object at offset +0x24.
+// @field Unknown +0x24 uint16_t field_0x24
+
+void setWordField24(uint8_t* self, uint16_t value) {
+    *reinterpret_cast<uint16_t*>(self + 0x24) = value;
+}
+} // namespace lift_007C70F0
