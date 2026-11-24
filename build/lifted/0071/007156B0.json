@@ -1,0 +1,28 @@
+{
+  "va": "0x007156B0",
+  "size": 48,
+  "orig_symbol": "sub_007156B0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::getValueOrConstant",
+  "class": "Unknown",
+  "signature": "float fn_007156B0(void* self)",
+  "summary": "If field_0x0C == 2, forwards to ext_006DC460 and ext_006C9F70 via the value at field_0x04; otherwise returns the constant at mem_0092A278.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:22:37Z"
+}

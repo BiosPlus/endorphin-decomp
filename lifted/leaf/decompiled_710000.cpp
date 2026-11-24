@@ -1051,3 +1051,31 @@ uint32_t* fn_0071C700(void* self, uint32_t* dst) {
     return dst;
 }
 } // namespace lift_0071C700
+
+// [0x007156B0] sub_007156B0 (48 bytes)
+namespace lift_007156B0 {
+// Known callee 0x006DC460: Unknown::GetValueIfCountPositive (Returns *(this->field_0xC8) when this->field_0xB8 > 0, otherwise 0.)
+extern int32_t ext_006DC460(void* self);
+// Callee 0x006C9600: untyped 16-byte helper; takes its argument in ecx and returns eax.
+// Signature is a guess: int32 in, uint32 out.
+extern uint32_t ext_006C9600(int32_t arg);
+// Known callee 0x006C9F70: sub_006C9F70 (Getter returning float field at offset +0x14.)
+extern float ext_006C9F70(void* self);
+// .rdata constant at 0x0092A278, read via `fld qword`, so treated as a double.
+extern const double mem_0092A278;
+
+// @name Unknown::getValueOrConstant
+// @class Unknown
+// @summary If field_0x0C == 2, forwards to ext_006DC460 and ext_006C9F70 via the value at field_0x04; otherwise returns the constant at mem_0092A278.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x0C int32_t field_0x0C
+float fn_007156B0(void* self) {
+    if (lift_field<int32_t>(self, 0x0C) == 2) {
+        void* inner = lift_field<void*>(self, 0x04);
+        int32_t v = ext_006DC460(inner);
+        uint32_t w = ext_006C9600(v);
+        return ext_006C9F70(reinterpret_cast<void*>(static_cast<uintptr_t>(w)));
+    }
+    return static_cast<float>(mem_0092A278);
+}
+} // namespace lift_007156B0

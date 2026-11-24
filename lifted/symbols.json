@@ -38508,6 +38508,13 @@
     "summary": "Returns the child object at +0x158 if non-null and its vtable[0]() returns 1, else 0.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C3070": {
+    "name": "sub_006C3070",
+    "class": "UnknownClass",
+    "signature": "uint32_t __thiscall sub_006C3070(uintptr_t self)",
+    "summary": "Returns field_0x158 if non-null and its vtable[0]() returns 2, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C30F0": {
     "name": "sub_006C30F0",
     "signature": "uint32_t __fastcall sub_006C30F0(uint32_t this_ptr, uint32_t /*edx*/)",
@@ -45346,6 +45353,13 @@
     "signature": "uint8_t __thiscall sub_00715660(uint32_t self)",
     "summary": "Reads a byte at offset 0x310 from the object pointed to by this+0x10.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007156B0": {
+    "name": "Unknown::getValueOrConstant",
+    "class": "Unknown",
+    "signature": "float fn_007156B0(void* self)",
+    "summary": "If field_0x0C == 2, forwards to ext_006DC460 and ext_006C9F70 via the value at field_0x04; otherwise returns the constant at mem_0092A278.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x00715710": {
     "name": "Unknown::getFloatViaChain",
