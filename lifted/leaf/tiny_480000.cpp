@@ -154,3 +154,23 @@ void fn_004800A0(void* self, uint8_t arg) {
     lift_field<uint32_t>(self, 0x3e0) = bit0;
 }
 } // namespace lift_004800A0
+
+// [0x00481BB0]
+namespace lift_00481BB0 {
+// @name InitValueAndZeroTail
+// @class <unknown> (member, thiscall; 'this' passed in ECX)
+// @summary Stores the single stack argument at offset 0, zeroes the 4-byte slots at +0x08/+0x0C/+0x10, returns this.
+// @field <unknown> +0x00 uint32_t field_0x00
+// @field <unknown> +0x08 uint32_t field_0x08
+// @field <unknown> +0x0C uint32_t field_0x0C
+// @field <unknown> +0x10 uint32_t field_0x10
+
+// Callee-cleans one DWORD argument (ret 4).
+__declspec(noinline) void* __thiscall fn_00481BB0(void* self, uint32_t value) {
+    lift_field<uint32_t>(self, 0x00) = value;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    return self;
+}
+} // namespace lift_00481BB0

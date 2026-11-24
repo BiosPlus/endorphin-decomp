@@ -1,0 +1,40 @@
+{
+  "va": "0x00481BB0",
+  "size": 22,
+  "orig_symbol": "sub_00481BB0",
+  "src_path": "src/leaf/tiny_480000.cpp",
+  "lifted_path": "lifted/leaf/tiny_480000.cpp",
+  "name": "InitValueAndZeroTail",
+  "class": "\u003cunknown\u003e (member, thiscall; 'this' passed in ECX)",
+  "signature": "__declspec(noinline) void* __thiscall fn_00481BB0(void* self, uint32_t value)",
+  "summary": "Stores the single stack argument at offset 0, zeroes the 4-byte slots at +0x08/+0x0C/+0x10, returns this.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:28:18Z"
+}
