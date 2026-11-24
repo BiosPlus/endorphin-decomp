@@ -4,19 +4,145 @@
   "orig_symbol": "sub_006F01A0",
   "src_path": "src/leaf/decompiled_6F0000.cpp",
   "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
-  "name": "Unknown::forwardArgsToSubobject2398",
+  "name": "sub_006FD400",
   "class": "Unknown",
-  "signature": "void __thiscall fn_006F01A0(void* self, uint32_t arg1, void* arg2)",
-  "summary": "Forwards its two stack arguments, plus two constants, to the storeArgsAndNotifyChild callee using the subobject at this+0x2398.",
+  "signature": "extern \"C\" void* __fastcall fn_006FD400(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_006FD420 and frees memory when (flags \u0026 1) is set.",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5",
+      "type": "uint8_t",
+      "name": "field_0x05"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x6",
+      "type": "uint8_t",
+      "name": "field_0x06"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x7",
+      "type": "uint8_t",
+      "name": "field_0x07"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "__vfptr"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x34",
+      "type": "int32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Buffer",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "data"
+    },
+    {
+      "class": "Buffer",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Buffer",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x40",
+      "type": "int32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2200",
+      "type": "uint8_t",
+      "name": "field_0x2200"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20F0",
+      "type": "void*",
+      "name": "field_20F0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2288",
+      "type": "uint8_t",
+      "name": "field_0x2288"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2420",
+      "type": "uint8_t field_0x2420 (address only; subobject is passed as `this`, not dereferenced",
+      "name": "here)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2310",
+      "type": "(subobject) not dereferenced here; only its address is passed as self to",
+      "name": "ext_00711D40."
+    },
     {
       "class": "Unknown",
       "offset": "+0x2398",
       "type": "void* subobject2398 (address only; passed as self to the",
       "name": "callee)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24A8",
+      "type": "void*",
+      "name": "field_0x24A8"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T14:14:16Z"
+  "lifted_at": "2026-11-24T14:14:23Z"
 }

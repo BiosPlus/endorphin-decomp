@@ -8,10 +8,10 @@
 // Recovered field layout for Buffer:
 namespace lifted_layout {
 struct Buffer_Fields {
-    // +0x0   void*                    data  (evidence: 0x006F0120, 0x006FA1E0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    data  (evidence: 0x006F0120, 0x006F01A0, 0x006FA1E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x007D6260, 0x007DEC80) // CONFLICT: multiple definitions at +0x0
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x006F0120, 0x006FA1E0, 0x007D6260, 0x007DEC80)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x006F0120, 0x006FA1E0)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x006F0120, 0x006F01A0, 0x006FA1E0, 0x007D6260, 0x007DEC80)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x006F0120, 0x006F01A0, 0x006FA1E0)
     // +0x1C  uint32_t                 field_0x1c  (evidence: 0x007D6260, 0x007DEC80)
 };
 } // namespace lifted_layout
