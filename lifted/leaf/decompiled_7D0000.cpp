@@ -33,3 +33,26 @@ void fn_007D4800(void* self) {
     ext_007D5950(f04, 0x0099DE84u, f1c, 0u);
 }
 } // namespace lift_007D4800
+
+// [0x007DADA0] sub_007DADA0 (33 bytes)
+namespace lift_007DADA0 {
+extern void ext_007D5950(std::uint32_t a, std::uint32_t b, std::uint32_t c);
+
+// @name Unknown::forwardToInnerWithConstant
+// @class Unknown
+// @summary Reads the inner object pointer at +0x0C, loads its dword at +0xB0, forwards it with constant 0x0099E218 to ext_007D5950, and returns 0 (AX cleared).
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0xB0 uint32_t field_0xB0
+
+// Load/store helpers keep the 32-bit guest address arithmetic explicit.
+static inline std::uint32_t lift_load32(std::uint32_t addr) {
+    return *reinterpret_cast<const std::uint32_t*>(static_cast<std::uintptr_t>(addr));
+}
+
+std::uint16_t fn_007DADA0(std::uint8_t* self) {
+    const std::uint32_t inner = *reinterpret_cast<const std::uint32_t*>(self + 0x0C);
+    const std::uint32_t value = lift_load32(inner + 0xB0);
+    ext_007D5950(0u, value, 0x0099E218u);
+    return 0;
+}
+} // namespace lift_007DADA0

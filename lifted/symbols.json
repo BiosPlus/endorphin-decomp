@@ -45166,6 +45166,13 @@
     "summary": "Returns zero in the low 16 bits of the result register (xor ax, ax; ret).",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007DADA0": {
+    "name": "Unknown::forwardToInnerWithConstant",
+    "class": "Unknown",
+    "signature": "static inline std::uint32_t lift_load32(std::uint32_t addr)",
+    "summary": "Reads the inner object pointer at +0x0C, loads its dword at +0xB0, forwards it with constant 0x0099E218 to ext_007D5950, and returns 0 (AX cleared).",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DB720": {
     "name": "getField0x18",
     "signature": "uint32_t sub_007DB720(uint32_t obj)",
