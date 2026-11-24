@@ -42066,6 +42066,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00711A90 (Unknown::TestFlag0x08At0x78).",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x00724FB0": {
+    "name": "Unknown::DecrementClampZero",
+    "class": "Unknown",
+    "signature": "uint32_t fn_00724FB0(uint8_t* ecx)",
+    "summary": "Returns max(0, this-\u003efield_0x194 - 1) as a signed 32-bit value.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x00726690": {
     "name": "sub_00726690",
     "class": "Unknown",

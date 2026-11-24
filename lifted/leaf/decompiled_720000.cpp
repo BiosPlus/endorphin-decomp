@@ -70,3 +70,18 @@ bool fn_00724FA0(void* self) {
 }
 } // namespace lift_00711A90
 } // namespace lift_00724FA0
+
+// [0x00724FB0]
+namespace lift_00724FB0 {
+// @name Unknown::DecrementClampZero
+// @class Unknown
+// @summary Returns max(0, this->field_0x194 - 1) as a signed 32-bit value.
+// @field Unknown +0x194 int32_t field_0x194
+
+// Reads ecx-relative dword at +0x194, decrements it, and clamps negatives to zero.
+uint32_t fn_00724FB0(uint8_t* ecx) {
+    int32_t value = *reinterpret_cast<int32_t*>(ecx + 0x194);
+    int32_t dec = value - 1;
+    return dec > 0 ? static_cast<uint32_t>(dec) : 0u;
+}
+} // namespace lift_00724FB0
