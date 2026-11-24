@@ -533,3 +533,21 @@ void __stdcall sub_004444C0(uintptr_t obj) {
     }
 }
 } // namespace lift_004444C0
+
+// [0x004410C0] sub_004410C0 (17 bytes)
+namespace lift_004410C0 {
+// Callee 0x00441040: int32_t fn_00441040(void* self) (adds mem_0092BD70 to this+0x58, rounds to int32).
+extern int32_t ext_00441040(void* self);
+// Callee 0x00441020: int fn_00441020(void* self) (adds mem_0092BD70 to this+0x50, rounds to int32).
+// Note: symbols.json lists 0x00441020 as GetStringLiteral_00440680 (const char*), which conflicts
+// with the lifted body in lifted/leaf/tiny_440000.cpp. The result is used as an integer here.
+extern int ext_00441020(void* self);
+
+// @name descriptiveName: fn_004410C0 (difference of two rounded fields)
+// @summary Returns ext_00441040(self) - ext_00441020(self), computed with wrapping 32-bit arithmetic.
+int32_t fn_004410C0(void* self) {
+    const uint32_t a = static_cast<uint32_t>(ext_00441040(self));
+    const uint32_t b = static_cast<uint32_t>(ext_00441020(self));
+    return static_cast<int32_t>(a - b);
+}
+} // namespace lift_004410C0

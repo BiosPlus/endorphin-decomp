@@ -2344,6 +2344,12 @@
     "summary": "Adds the double constant at mem_0092BD70 to the double at this+0x58 and returns the result converted to a 32-bit int (round-to-nearest, INT32_MIN on overflow).",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x004410C0": {
+    "name": "descriptiveName: fn_004410C0 (difference of two rounded fields)",
+    "signature": "int32_t fn_004410C0(void* self)",
+    "summary": "Returns ext_00441040(self) - ext_00441020(self), computed with wrapping 32-bit arithmetic.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x004413C0": {
     "name": "MultiTrackView::TriangleMarker::vfunc_0",
     "class": "MultiTrackView::TriangleMarker",

@@ -1,0 +1,13 @@
+{
+  "va": "0x004410C0",
+  "size": 17,
+  "orig_symbol": "sub_004410C0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "descriptiveName: fn_004410C0 (difference of two rounded fields)",
+  "signature": "int32_t fn_004410C0(void* self)",
+  "summary": "Returns ext_00441040(self) - ext_00441020(self), computed with wrapping 32-bit arithmetic.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:16:36Z"
+}
