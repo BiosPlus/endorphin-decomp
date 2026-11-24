@@ -43690,6 +43690,12 @@
     "summary": "Getter returning uint8_t field at offset +0xDE.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00715130": {
+    "name": "isKnownGlobalValue",
+    "signature": "uint8_t __stdcall sub_00715130(uint32_t val)",
+    "summary": "Returns 1 if the 32-bit argument matches any of three global values, otherwise 0.",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00715160": {
     "name": "sub_00715160",
     "signature": "extern \"C\" int32_t __cdecl fn_00715160(void)",
@@ -45732,6 +45738,12 @@
     "name": "sub_0079B960_initGlobalQuad",
     "signature": "void sub_0079B960_initGlobalQuad()",
     "summary": "Stores four constant 32-bit values into the mem_00B60FB0..FBC global block.",
+    "lifted_path": "lifted/clones/auto_clones_790000.cpp"
+  },
+  "0x0079BA10": {
+    "name": "isKnownGlobalValue",
+    "signature": "uint8_t __stdcall sub_0079BA10(uint32_t value)",
+    "summary": "Checks whether the argument matches any of three global 32-bit values",
     "lifted_path": "lifted/clones/auto_clones_790000.cpp"
   },
   "0x0079BA40": {
