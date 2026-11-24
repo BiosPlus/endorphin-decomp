@@ -1,0 +1,21 @@
+{
+  "va": "0x007DFDB0",
+  "size": 12,
+  "orig_symbol": "sub_007DFDB0",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "sub_007DFDB0",
+  "signature": "void fn_007DFDB0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x007D4AE0 (setFlag30_007D4AE0).",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:17:29Z"
+}

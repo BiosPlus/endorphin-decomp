@@ -227,3 +227,48 @@ void fn_007D5BB0(void* self, DWORD value) {
     lift_field<DWORD>(self, 0x20) = value;
 }
 } // namespace lift_007D5BB0
+
+// [0x007D86F0] sub_007D86F0 (15 bytes)
+namespace lift_007D86F0 {
+// @name sub_007D86F0
+// @summary Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).
+namespace lift_007D5BB0 {
+// @name setField20_007D5BB0
+// @class <unknown>
+// @summary Stores a 32-bit value (second stack arg) into the object's +0x20 field.
+// @field <unknown> +0x20 DWORD field_20
+void fn_007D86F0(void* self, DWORD value) {
+    lift_field<DWORD>(self, 0x178) = value;
+}
+} // namespace lift_007D5BB0
+} // namespace lift_007D86F0
+
+// [0x007DCFF0] sub_007DCFF0 (12 bytes)
+namespace lift_007DCFF0 {
+// @name sub_007DCFF0
+// @summary Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).
+namespace lift_007D5BB0 {
+// @name setField20_007D5BB0
+// @class <unknown>
+// @summary Stores a 32-bit value (second stack arg) into the object's +0x20 field.
+// @field <unknown> +0x20 DWORD field_20
+void fn_007DCFF0(void* self, DWORD value) {
+    lift_field<DWORD>(self, 0x34) = value;
+}
+} // namespace lift_007D5BB0
+} // namespace lift_007DCFF0
+
+// [0x007DFDB0] sub_007DFDB0 (12 bytes)
+namespace lift_007DFDB0 {
+// @name sub_007DFDB0
+// @summary Auto-lifted identical-shape clone of 0x007D4AE0 (setFlag30_007D4AE0).
+namespace lift_007D4AE0 {
+// @name setFlag30_007D4AE0
+// @summary Stores the constant 1 as a 32-bit value at offset 0x30 of the object pointed to by the first argument.
+// @field <unknown> +0x30 uint32_t field_0x30
+void fn_007DFDB0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x8) = 0u;
+}
+} // namespace lift_007D4AE0
+} // namespace lift_007DFDB0

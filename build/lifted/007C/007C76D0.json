@@ -1,0 +1,22 @@
+{
+  "va": "0x007C76D0",
+  "size": 15,
+  "orig_symbol": "sub_007C76D0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "sub_007C76D0",
+  "class": "\u003cunknown\u003e",
+  "signature": "void fn_007C76D0(void* self, DWORD value)",
+  "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:17:29Z"
+}

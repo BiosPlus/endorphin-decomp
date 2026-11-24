@@ -35313,6 +35313,41 @@
     "summary": "Reads a 32-bit field at offset 0x1B8 from the passed object pointer.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C5A20": {
+    "name": "sub_007C5A20",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5A20(void* self, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5A30": {
+    "name": "sub_007C5A30",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5A30(void* self, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5AB0": {
+    "name": "sub_007C5AB0",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5AB0(void* self, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5C50": {
+    "name": "sub_007C5C50",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5C50(void* self, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5C60": {
+    "name": "sub_007C5C60",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5C60(void* self, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C5F80": {
     "name": "getOffset0x110",
     "signature": "uint32_t sub_007C5F80(uint32_t arg0)",
@@ -35436,6 +35471,13 @@
     "summary": "Returns the float field at offset 0x214 of the given object.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C76D0": {
+    "name": "sub_007C76D0",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C76D0(void* self, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C8810": {
     "name": "getField0x8cFloat",
     "signature": "float sub_007C8810(const void* obj)",
@@ -35446,6 +35488,13 @@
     "name": "get_field_0xa8",
     "signature": "uint32_t sub_007C8880(uint32_t a1)",
     "summary": "Reads and returns the 32-bit field at offset 0xA8 from the given object pointer.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C8A70": {
+    "name": "sub_007C8A70",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C8A70(void* self, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
   "0x007C8D70": {
@@ -35629,6 +35678,13 @@
     "summary": "Returns the float field at offset 0x58 of the given object.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D86F0": {
+    "name": "sub_007D86F0",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007D86F0(void* self, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D8700": {
     "name": "sub_007D8700",
     "signature": "extern \"C\" uint32_t fn_007D8700(uint32_t arg0)",
@@ -35677,6 +35733,13 @@
     "summary": "Reads and returns the 32-bit field at offset 0x1C of the given object.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007DCFF0": {
+    "name": "sub_007DCFF0",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007DCFF0(void* self, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007DE020": {
     "name": "CxSmallSort::vfunc_0",
     "class": "CxSmallSort",
@@ -35688,6 +35751,12 @@
     "name": "zeroU32Ptr",
     "signature": "uint32_t* sub_007DFB50(uint32_t* ptr)",
     "summary": "Zero-initializes a 32-bit value at the given pointer and returns the pointer",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
+  "0x007DFDB0": {
+    "name": "sub_007DFDB0",
+    "signature": "void fn_007DFDB0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D4AE0 (setFlag30_007D4AE0).",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
   "0x007EFED0": {
