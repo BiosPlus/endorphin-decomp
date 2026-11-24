@@ -1267,6 +1267,12 @@
     "summary": "Checks that the first dword of both objects is non-zero and equal (else calls invalid-parameter handler), then returns self.+0x04 - other.+0x04.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041A160": {
+    "name": "copyBackwardBytes",
+    "signature": "void* __cdecl sub_0041A160(const void* first, const void* last, void* destEnd)",
+    "summary": "Copies a byte range backward into a destination buffer ending at destEnd using memmove_s.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041A4F0": {
     "name": "sub_0041A4F0",
     "class": "NMData::RealChannel",
@@ -16362,6 +16368,13 @@
     "summary": "Returns 1 if the dword at this+0x1DC is \u003e= 1, otherwise 0.",
     "lifted_path": "lifted/ASFData/auto_tiny.cpp"
   },
+  "0x00569FD0": {
+    "name": "ASFData::Bone::vfunc_1",
+    "class": "ASFData::Bone",
+    "signature": "uint32_t fn_00569FD0(uint32_t self)",
+    "summary": "Returns 1 if field_0x1E0 is zero and the pointer range [0x28, 0x2C) is empty or null, else 0.",
+    "lifted_path": "lifted/ASFData/Bone.cpp"
+  },
   "0x0056B8C0": {
     "name": "Acclaim2CharacterIO::vfunc_48",
     "class": "Acclaim2CharacterIO",
@@ -26921,6 +26934,18 @@
     "signature": "extern \"C\" void __fastcall fn_006489E0(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0x30 and tail-calls sub_0065B250.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
+  "0x006489F0": {
+    "name": "updateField0x28IfGreater",
+    "signature": "void __thiscall sub_006489F0(void* this_ptr, float value)",
+    "summary": "Calls ext_0065BF00 on the object at +0x28 with value if ext_006488F0(this) \u003e ext_00648930(this).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x00648A60": {
+    "name": "call_0x65B040_if_0x04_lt_0x08",
+    "signature": "void __thiscall sub_00648A60(void* self, float arg)",
+    "summary": "Calls sub_0065B040 on field_0x30 with the float argument if field_0x28+0x04 \u003c field_0x28+0x08.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
   "0x00648E00": {
     "name": "sub_00648E00",

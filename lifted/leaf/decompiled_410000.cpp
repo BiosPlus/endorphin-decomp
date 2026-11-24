@@ -412,3 +412,21 @@ extern void __thiscall fn_00413C40(void* self) {
     baseDtor(self);
 }
 } // namespace lift_00413C40
+
+// [0x0041A160]
+namespace lift_0041A160 {
+extern int (__cdecl* mem_009251EC)(void* dest, size_t destsz, const void* src, size_t count);
+
+// @name copyBackwardBytes
+// @summary Copies a byte range backward into a destination buffer ending at destEnd using memmove_s.
+void* __cdecl sub_0041A160(const void* first, const void* last, void* destEnd) {
+    int32_t count = static_cast<int32_t>(
+        reinterpret_cast<uintptr_t>(last) - reinterpret_cast<uintptr_t>(first));
+    uintptr_t dest = reinterpret_cast<uintptr_t>(destEnd) - static_cast<uintptr_t>(count);
+    if (count > 0) {
+        size_t size = static_cast<size_t>(count);
+        mem_009251EC(reinterpret_cast<void*>(dest), size, first, size);
+    }
+    return reinterpret_cast<void*>(dest);
+}
+} // namespace lift_0041A160
