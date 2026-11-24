@@ -40676,6 +40676,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C5C30": {
+    "name": "setFields_0x1e4_0x1f4",
+    "signature": "void sub_007C5C30(void* self, uint32_t val1, uint32_t val2)",
+    "summary": "Sets two 32-bit fields at offsets +0x1e4 and +0x1f4 on the target object.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C5C50": {
     "name": "sub_007C5C50",
     "class": "\u003cunknown\u003e",

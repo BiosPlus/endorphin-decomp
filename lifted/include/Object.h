@@ -43,6 +43,8 @@ struct Object_Fields {
     // +0x1A4 uint32_t                 field_0x1A4  (evidence: 0x007C2E50, 0x007C5900)
     // +0x1B8 uint32_t                 field_0x1b8  (evidence: 0x007C2E50, 0x007C59B0)
     // +0x1D0 float                    field_0x1d0  (evidence: 0x007C2E50, 0x007C6120)
+    // +0x1E4 uint32_t                 field_0x1e4  (evidence: 0x007C5C30)
+    // +0x1F4 uint32_t                 field_0x1f4  (evidence: 0x007C5C30)
     // +0x214 float                    field_0x214  (evidence: 0x007C2E50, 0x007C7690)
     // +0x268 uint32_t                 field_0x268  (evidence: 0x00702790)
 };

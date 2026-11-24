@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <bit>
 #include <cstdint>
+#include <cstring>
 
 // [0x007C9CB0]
 namespace lift_007C9CB0 {
@@ -1206,3 +1207,18 @@ uint32_t sub_007C89F0(uint32_t self, int32_t col, int32_t row) {
     return base + static_cast<uint32_t>(idx * 24);
 }
 } // namespace lift_007C89F0
+
+// [0x007C5C30]
+namespace lift_007C5C30 {
+// @name setFields_0x1e4_0x1f4
+// @summary Sets two 32-bit fields at offsets +0x1e4 and +0x1f4 on the target object.
+// @field Object +0x1e4 uint32_t field_0x1e4
+// @field Object +0x1f4 uint32_t field_0x1f4
+
+
+void sub_007C5C30(void* self, uint32_t val1, uint32_t val2) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x1e4, &val1, sizeof(val1));
+    std::memcpy(base + 0x1f4, &val2, sizeof(val2));
+}
+} // namespace lift_007C5C30
