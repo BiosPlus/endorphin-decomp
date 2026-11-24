@@ -3,6 +3,7 @@
 #include <new>
 #include <string>
 #include <cstring>
+#include <cstdint>
 
 // [0x0066A760] sub_0066A760 (10 bytes)
 namespace lift_0066A760 {
@@ -312,3 +313,35 @@ uint32_t __thiscall sub_00661710(void* self, uint32_t arg1, uint32_t arg2) {
     return arg1;
 }
 } // namespace lift_00661710
+
+// [0x00664C30] sub_00664C30 (33 bytes)
+namespace lift_00664C30 {
+// @name sub_00664C30
+// @summary Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).
+namespace lift_00497860 {
+extern void ext_00664910(void* self, uint8_t flag);
+
+// @name forwardMakeBoolString
+// @summary Forwards out_str and flag to makeBoolString (0x0046C460) and returns out_str.
+void* fn_00664C30(void* out_str, uint8_t flag) {
+    ext_00664910(out_str, flag);
+    return out_str;
+}
+} // namespace lift_00497860
+} // namespace lift_00664C30
+
+// [0x0066AD10] sub_0066AD10 (33 bytes)
+namespace lift_0066AD10 {
+// @name sub_0066AD10
+// @summary Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).
+namespace lift_00497860 {
+extern void ext_00662610(void* self, uint8_t flag);
+
+// @name forwardMakeBoolString
+// @summary Forwards out_str and flag to makeBoolString (0x0046C460) and returns out_str.
+void* fn_0066AD10(void* out_str, uint8_t flag) {
+    ext_00662610(out_str, flag);
+    return out_str;
+}
+} // namespace lift_00497860
+} // namespace lift_0066AD10

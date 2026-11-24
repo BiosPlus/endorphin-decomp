@@ -1,0 +1,13 @@
+{
+  "va": "0x0066AD10",
+  "size": 33,
+  "orig_symbol": "sub_0066AD10",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "sub_0066AD10",
+  "signature": "void* fn_0066AD10(void* out_str, uint8_t flag)",
+  "summary": "Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T14:10:30Z"
+}

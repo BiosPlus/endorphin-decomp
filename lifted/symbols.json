@@ -5602,6 +5602,12 @@
     "summary": "Constructs a std::string from one of two static C-strings based on a boolean flag.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046C500": {
+    "name": "sub_0046C500",
+    "signature": "void* fn_0046C500(void* out_str, uint8_t flag)",
+    "summary": "Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046C550": {
     "name": "ImageExporter::vfunc_0_off_4",
     "class": "ImageExporter",
@@ -7609,6 +7615,12 @@
     "signature": "uint8_t __thiscall fn_00497780(void* self, uint32_t* arg1, uint32_t arg2)",
     "summary": "Compares a dereferenced string pointer with the string value extracted from arg2.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
+  "0x00497830": {
+    "name": "sub_00497830",
+    "signature": "void* fn_00497830(void* out_str, uint8_t flag)",
+    "summary": "Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
   "0x00497860": {
     "name": "forwardMakeBoolString",
@@ -29275,6 +29287,12 @@
     "summary": "Returns true if needle occurs as a substring of haystack (strstr on c_str() of both strings).",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00664C30": {
+    "name": "sub_00664C30",
+    "signature": "void* fn_00664C30(void* out_str, uint8_t flag)",
+    "summary": "Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x006657F0": {
     "name": "Unknown::InitVtblAndArg",
     "class": "Unknown",
@@ -29405,6 +29423,12 @@
     "signature": "extern \"C\" void __fastcall fn_0066AC80(void* self)",
     "summary": "Stores address of mem_0092DF34 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
+  "0x0066AD10": {
+    "name": "sub_0066AD10",
+    "signature": "void* fn_0066AD10(void* out_str, uint8_t flag)",
+    "summary": "Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x0066AD40": {
     "name": "ExprParser::RealType::vfunc_0",

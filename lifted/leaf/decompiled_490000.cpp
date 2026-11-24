@@ -296,3 +296,19 @@ void* fn_00497860(void* out_str, uint8_t flag) {
     return out_str;
 }
 } // namespace lift_00497860
+
+// [0x00497830] sub_00497830 (33 bytes)
+namespace lift_00497830 {
+// @name sub_00497830
+// @summary Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).
+namespace lift_00497860 {
+extern void ext_0046C500(void* self, uint8_t flag);
+
+// @name forwardMakeBoolString
+// @summary Forwards out_str and flag to makeBoolString (0x0046C460) and returns out_str.
+void* fn_00497830(void* out_str, uint8_t flag) {
+    ext_0046C500(out_str, flag);
+    return out_str;
+}
+} // namespace lift_00497860
+} // namespace lift_00497830
