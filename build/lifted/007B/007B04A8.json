@@ -1,0 +1,13 @@
+{
+  "va": "0x007B04A8",
+  "size": 24,
+  "orig_symbol": "sub_007B04A8",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "dataTable_007B04A8",
+  "class": "(none)",
+  "summary": "Static 12-byte lookup table (00 01 04 04 04 04 04 04 02 04 04 03) followed by 12 bytes of 0x90 padding; not executable code.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:38:48Z"
+}

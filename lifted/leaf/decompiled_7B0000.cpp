@@ -49,3 +49,15 @@ void fn_007B617C(void* self) {
     (void)self;
 }
 } // namespace lift_007B617C
+
+// [0x007B04A8] sub_007B04A8 (24 bytes)
+namespace lift_007B04A8 {
+// @name dataTable_007B04A8
+// @class (none)
+// @summary Static 12-byte lookup table (00 01 04 04 04 04 04 04 02 04 04 03) followed by 12 bytes of 0x90 padding; not executable code.
+// @field none (no class fields accessed)
+static const uint8_t kTable_007B04A8[12] = {
+    0x00, 0x01, 0x04, 0x04, 0x04, 0x04,
+    0x04, 0x04, 0x02, 0x04, 0x04, 0x03,
+};
+} // namespace lift_007B04A8
