@@ -39246,6 +39246,13 @@
     "summary": "Returns true if field_0x58 is non-zero",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AEEF0": {
+    "name": "IsUnlimitedOrFieldAtLeastLimit",
+    "class": "(none)",
+    "signature": "int fn_007AEEF0(void* self)",
+    "summary": "Returns 1 if field +0x58 is zero; otherwise returns 1 when field +0x60 \u003e= field +0x5c (unsigned), else 0.",
+    "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
+  },
   "0x007AEF70": {
     "name": "sub_007AEF70",
     "class": "none",

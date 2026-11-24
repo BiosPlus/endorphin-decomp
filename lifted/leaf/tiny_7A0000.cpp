@@ -402,3 +402,21 @@ void sub_007A9BD0(uint8_t* a1) {
     a1[0x06] = static_cast<uint8_t>(mem_00998070 & 0xFFu);
 }
 } // namespace lift_007A9BD0
+
+// [0x007AEEF0] sub_007AEEF0 (22 bytes)
+namespace lift_007AEEF0 {
+// @name IsUnlimitedOrFieldAtLeastLimit
+// @class (none)
+// @summary Returns 1 if field +0x58 is zero; otherwise returns 1 when field +0x60 >= field +0x5c (unsigned), else 0.
+// @field (unknown) +0x58 DWORD field_0x58
+// @field (unknown) +0x5c DWORD field_0x5c
+// @field (unknown) +0x60 DWORD field_0x60
+int fn_007AEEF0(void* self) {
+    if (lift_field<DWORD>(self, 0x58) == 0) {
+        return 1;
+    }
+    DWORD value = lift_field<DWORD>(self, 0x60);
+    DWORD limit = lift_field<DWORD>(self, 0x5c);
+    return value >= limit ? 1 : 0;
+}
+} // namespace lift_007AEEF0

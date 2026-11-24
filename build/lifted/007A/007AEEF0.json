@@ -1,0 +1,34 @@
+{
+  "va": "0x007AEEF0",
+  "size": 22,
+  "orig_symbol": "sub_007AEEF0",
+  "src_path": "src/leaf/tiny_7A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7A0000.cpp",
+  "name": "IsUnlimitedOrFieldAtLeastLimit",
+  "class": "(none)",
+  "signature": "int fn_007AEEF0(void* self)",
+  "summary": "Returns 1 if field +0x58 is zero; otherwise returns 1 when field +0x60 \u003e= field +0x5c (unsigned), else 0.",
+  "fields": [
+    {
+      "class": "(unknown)",
+      "offset": "+0x58",
+      "type": "DWORD",
+      "name": "field_0x58"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x5C",
+      "type": "DWORD",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x60",
+      "type": "DWORD",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:30:56Z"
+}
