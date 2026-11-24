@@ -668,3 +668,32 @@ uint32_t* __thiscall sub_0066CCD0(void* self, uint32_t* out, uint32_t* targetPtr
     return out;
 }
 } // namespace lift_0066CCD0
+
+// [0x0066CC70]
+namespace lift_0066CC70 {
+extern void __thiscall ext_0067BA20(void* self, const void* axis, float angle);
+extern void __cdecl ext_00671F30(uint32_t* out);
+
+// @name ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, float, &NM::Vector3::radArbitraryRotate>::vfunc_49
+// @class ExprParser::Method2Type
+// @summary Invokes NM::Vector3::radArbitraryRotate on the target vector using two evaluated expression arguments and initializes the output value.
+// @field ExprParser::Value +0x04 void* type_vtable
+uint32_t* __thiscall fn_0066CC70(void* self, uint32_t* out, void** target_ptr, void* arg_vec, void* arg_angle) {
+    (void)self;
+    void* target = *target_ptr;
+
+    void* angle_type = *(void**)((uint8_t*)arg_angle + 4);
+    void** angle_vt = *(void***)angle_type;
+    typedef float (__stdcall *GetFloatFn)(void*);
+    float angle = ((GetFloatFn)angle_vt[1])(arg_angle);
+
+    void* vec_type = *(void**)((uint8_t*)arg_vec + 4);
+    void** vec_vt = *(void***)vec_type;
+    typedef const void* (__stdcall *GetVecFn)(void*);
+    const void* axis = ((GetVecFn)vec_vt[5])(arg_vec);
+
+    ext_0067BA20(target, axis, angle);
+    ext_00671F30(out);
+    return out;
+}
+} // namespace lift_0066CC70

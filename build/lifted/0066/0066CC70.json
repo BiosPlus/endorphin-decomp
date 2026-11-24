@@ -1,0 +1,22 @@
+{
+  "va": "0x0066CC70",
+  "size": 86,
+  "orig_symbol": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, float, \u0026public: void __thiscall NM::Vector3::radArbitraryRotate(class NM::Vector3 const \u0026, float)\u003e::vfunc_49",
+  "src_path": "src/templates/Method2Type.cpp",
+  "lifted_path": "lifted/templates/Method2Type.cpp",
+  "name": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, float, \u0026NM::Vector3::radArbitraryRotate\u003e::vfunc_49",
+  "class": "ExprParser::Method2Type",
+  "signature": "uint32_t* __thiscall fn_0066CC70(void* self, uint32_t* out, void** target_ptr, void* arg_vec, void* arg_angle)",
+  "summary": "Invokes NM::Vector3::radArbitraryRotate on the target vector using two evaluated expression arguments and initializes the output value.",
+  "fields": [
+    {
+      "class": "ExprParser::Value",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "type_vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:44:19Z"
+}

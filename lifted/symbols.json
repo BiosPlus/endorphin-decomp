@@ -31747,6 +31747,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0066CC70": {
+    "name": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, float, \u0026NM::Vector3::radArbitraryRotate\u003e::vfunc_49",
+    "class": "ExprParser::Method2Type",
+    "signature": "uint32_t* __thiscall fn_0066CC70(void* self, uint32_t* out, void** target_ptr, void* arg_vec, void* arg_angle)",
+    "summary": "Invokes NM::Vector3::radArbitraryRotate on the target vector using two evaluated expression arguments and initializes the output value.",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
   "0x0066CCD0": {
     "name": "ExprParser::Method2Type_Vector3_radArbitraryRotateE::vfunc_49",
     "class": "ExprParser::Method2Type",
