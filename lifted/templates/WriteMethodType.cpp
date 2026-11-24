@@ -6996,3 +6996,27 @@ void fn_005B7BC0(void* self, void* arg0) {
     lift_field<uintptr_t>(arg0, 4) = reinterpret_cast<uintptr_t>(&mem_00B43C6C);
 }
 } // namespace lift_005B7BC0
+
+// [0x0059F740] ExprParser::WriteMethodType<NMData::CharacterData, int, {public: void __thiscall NMData::CharacterData::setPhysicsLevelFromFSM(int), 0}>::vfunc_40 (122 bytes)
+namespace lift_0059F740 {
+// Callee 0x0067A670: sub_0067A670 (26B), run once to construct the static accessor object (ecx = &mem_00B414B4).
+extern void ext_0067A670(void* self);
+
+// Static one-time-init guard flag (bit 0) and static accessor object storage.
+extern uint32_t mem_00B414B8;
+extern uint8_t mem_00B414B4[16];
+
+// @name ExprParser::WriteMethodType<CharacterData,int>::vfunc_40
+// @class ExprParser::WriteMethodType<NMData::CharacterData, int, {public: void __thiscall NMData::CharacterData::setPhysicsLevelFromFSM(int), 0}>
+// @summary Lazily constructs the static accessor object at 0xB414B4 once (guarded by bit 0 of 0xB414B8), then stores its address into the argument's +4 slot.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+void fn_0059F740(void* arg) {
+    if ((mem_00B414B8 & 1u) == 0) {
+        mem_00B414B8 |= 1u;
+        ext_0067A670(static_cast<void*>(mem_00B414B4));
+        // Install the accessor vtable for the static object (0x0095E2AC).
+        lift_field<uint32_t>(mem_00B414B4, 0) = 0x0095E2ACu;
+    }
+    lift_field<uint32_t>(arg, 0x04) = 0x00B414B4u;
+}
+} // namespace lift_0059F740

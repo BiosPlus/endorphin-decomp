@@ -1,0 +1,22 @@
+{
+  "va": "0x0059F740",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cNMData::CharacterData, int, {public: void __thiscall NMData::CharacterData::setPhysicsLevelFromFSM(int), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cCharacterData,int\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cNMData::CharacterData, int, {public: void __thiscall NMData::CharacterData::setPhysicsLevelFromFSM(int), 0}\u003e",
+  "signature": "void fn_0059F740(void* arg)",
+  "summary": "Lazily constructs the static accessor object at 0xB414B4 once (guarded by bit 0 of 0xB414B8), then stores its address into the argument's +4 slot.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:49:20Z"
+}
