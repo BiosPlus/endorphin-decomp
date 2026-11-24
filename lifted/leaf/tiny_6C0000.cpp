@@ -1448,3 +1448,26 @@ DWORD __thiscall fn_006C0420(void* self) {
     return slot(self, 0x17, global_addr, 0, static_cast<DWORD>(-1));
 }
 } // namespace lift_006C0420
+
+// [0x006C0440]
+namespace lift_006C0440 {
+// @name ForwardConstantsToVirtualSlot41
+// @class Unknown
+// @summary Calls vtable slot 41 (+0xA4) on the receiver with (0x18, mem_00B5EB80, 0, -1) and returns its result.
+// @field Unknown +0x00 void* field_0x00
+
+extern BYTE mem_00B5EB80[];
+
+typedef DWORD(__thiscall* VirtualSlot41Fn)(void* self, DWORD a0, DWORD a1, DWORD a2, DWORD a3);
+
+DWORD __thiscall ForwardConstantsToVirtualSlot41(void* self) {
+    void* const* vtbl = *reinterpret_cast<void* const* const*>(self);
+    // Slot at +0xA4 in the 32-bit vtable is index 41 (4-byte entries).
+    VirtualSlot41Fn fn = reinterpret_cast<VirtualSlot41Fn>(vtbl[41]);
+    return fn(self,
+              static_cast<DWORD>(0x18),
+              static_cast<DWORD>(reinterpret_cast<uintptr_t>(mem_00B5EB80)),
+              static_cast<DWORD>(0),
+              static_cast<DWORD>(-1));
+}
+} // namespace lift_006C0440

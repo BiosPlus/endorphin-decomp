@@ -32397,6 +32397,13 @@
     "summary": "Calls virtual slot 0xA4 (index 41) of the object's vtable with four constant stack args (0x17, \u0026mem_00B5EB80, 0, -1) and returns its result.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C0440": {
+    "name": "ForwardConstantsToVirtualSlot41",
+    "class": "Unknown",
+    "signature": "DWORD __thiscall ForwardConstantsToVirtualSlot41(void* self)",
+    "summary": "Calls vtable slot 41 (+0xA4) on the receiver with (0x18, mem_00B5EB80, 0, -1) and returns its result.",
+    "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
+  },
   "0x006C04A0": {
     "name": "sub_006C04A0",
     "signature": "extern \"C\" int32_t __cdecl fn_006C04A0(void)",

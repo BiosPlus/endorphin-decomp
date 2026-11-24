@@ -1,0 +1,22 @@
+{
+  "va": "0x006C0440",
+  "size": 20,
+  "orig_symbol": "sub_006C0440",
+  "src_path": "src/leaf/tiny_6C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6C0000.cpp",
+  "name": "ForwardConstantsToVirtualSlot41",
+  "class": "Unknown",
+  "signature": "DWORD __thiscall ForwardConstantsToVirtualSlot41(void* self)",
+  "summary": "Calls vtable slot 41 (+0xA4) on the receiver with (0x18, mem_00B5EB80, 0, -1) and returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:09:17Z"
+}
