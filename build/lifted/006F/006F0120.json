@@ -4,11 +4,113 @@
   "orig_symbol": "sub_006F0120",
   "src_path": "src/leaf/decompiled_6F0000.cpp",
   "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
-  "name": "Unknown::forwardArgsToSubobject2288",
+  "name": "sub_006FD400",
   "class": "Unknown",
-  "signature": "void fn_006F0120(void* self, uint32_t arg1, void* arg2)",
-  "summary": "Forwards its two stack arguments, plus two constant words, to ext_00711D40 on the subobject at self+0x2288.",
+  "signature": "extern \"C\" void* __fastcall fn_006FD400(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_006FD420 and frees memory when (flags \u0026 1) is set.",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5",
+      "type": "uint8_t",
+      "name": "field_0x05"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x6",
+      "type": "uint8_t",
+      "name": "field_0x06"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x7",
+      "type": "uint8_t",
+      "name": "field_0x07"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "__vfptr"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x34",
+      "type": "int32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Buffer",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "data"
+    },
+    {
+      "class": "Buffer",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Buffer",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x40",
+      "type": "int32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2200",
+      "type": "uint8_t",
+      "name": "field_0x2200"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20F0",
+      "type": "void*",
+      "name": "field_20F0"
+    },
     {
       "class": "Unknown",
       "offset": "+0x2288",
@@ -18,5 +120,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T14:13:54Z"
+  "lifted_at": "2026-11-24T14:14:00Z"
 }

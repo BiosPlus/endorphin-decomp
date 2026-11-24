@@ -3335,6 +3335,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0xD8 and tail-calls thunk_MFC80_ord_1280.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x00448920": {
+    "name": "Properties::PropInPlaceSpinbuttonEdit::vfunc_66",
+    "class": "Properties::PropInPlaceSpinbuttonEdit",
+    "signature": "void __thiscall fn_00448920(void* self, uint32_t* arg1)",
+    "summary": "Handles WM_KEYDOWN (0x100) by updating arg1+0x0 from this+0x7c before forwarding to MFC80!ord_5214.",
+    "lifted_path": "lifted/Properties/PropInPlaceSpinbuttonEdit.cpp"
+  },
   "0x004489E0": {
     "name": "Unknown::sendUserMessageToTargetWnd",
     "class": "Unknown",
@@ -40123,10 +40130,10 @@
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
   "0x006F0120": {
-    "name": "Unknown::forwardArgsToSubobject2288",
+    "name": "sub_006FD400",
     "class": "Unknown",
-    "signature": "void fn_006F0120(void* self, uint32_t arg1, void* arg2)",
-    "summary": "Forwards its two stack arguments, plus two constant words, to ext_00711D40 on the subobject at self+0x2288.",
+    "signature": "extern \"C\" void* __fastcall fn_006FD400(void* self, int edx_unused, unsigned int flags)",
+    "summary": "MSVC scalar deleting destructor: calls sub_006FD420 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
   "0x006F1AD0": {
