@@ -1,0 +1,13 @@
+{
+  "va": "0x006997E0",
+  "size": 38,
+  "orig_symbol": "sub_006997E0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "getTypedObjectViaVfunc60",
+  "signature": "void* __thiscall fn_006997E0(void* self, uint32_t arg1)",
+  "summary": "Calls virtual method at vtable+0x60 with arg1 and dynamic_casts the result via __RTDynamicCast",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:56:51Z"
+}

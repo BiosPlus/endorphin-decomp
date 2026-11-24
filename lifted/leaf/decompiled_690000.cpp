@@ -110,3 +110,20 @@ uint32_t fn_00698A40(uint32_t a1, uint32_t first, uint32_t a3, uint32_t last, ui
     return result;
 }
 } // namespace lift_00698A40
+
+// [0x006997E0]
+namespace lift_006997E0 {
+// @name getTypedObjectViaVfunc60
+// @summary Calls virtual method at vtable+0x60 with arg1 and dynamic_casts the result via __RTDynamicCast
+
+
+extern void* ext_006A6E9E(void* inptr, int32_t vfDelta, void* srcType, void* targetType, int32_t isReference);
+
+void* __thiscall fn_006997E0(void* self, uint32_t arg1) {
+    auto vtable = *reinterpret_cast<const uintptr_t* const*>(self);
+    using VFunc = void* (__thiscall*)(void*, uint32_t);
+    auto vfunc = reinterpret_cast<VFunc>(vtable[0x60 / sizeof(uintptr_t)]);
+    void* obj = vfunc(self, arg1);
+    return ext_006A6E9E(obj, 0, reinterpret_cast<void*>(0x00A2E2F8), reinterpret_cast<void*>(0x00AA3D80), 0);
+}
+} // namespace lift_006997E0
