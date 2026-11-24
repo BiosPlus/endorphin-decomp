@@ -1,0 +1,28 @@
+{
+  "va": "0x004ECA40",
+  "size": 44,
+  "orig_symbol": "sub_004ECA40",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "Vector8::operator[]",
+  "class": "Vector8",
+  "signature": "uint32_t __thiscall sub_004ECA40(void* self, uint32_t index)",
+  "summary": "Bounds-checked element access for an 8-byte-stride vector",
+  "fields": [
+    {
+      "class": "Vector8",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "Vector8",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:10:53Z"
+}
