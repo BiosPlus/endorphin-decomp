@@ -46237,10 +46237,10 @@
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x007DEC80": {
-    "name": "Unknown::initFromSource (descriptive placeholder; owning class not identified)",
-    "class": "Unknown",
-    "signature": "void fn_007DEC80(void* eax, void* ecx, uint16_t dx, float f)",
-    "summary": "Initializes a 0x16-byte record at eax from the record at ecx, copying two dwords, a float and a word argument, and setting two self-referencing pointers.",
+    "name": "sub_007D8850",
+    "class": "// @summary If the object's +0x04 field is non-zero, forwards it with the +0x1c field and a constant to ext_007D5950.",
+    "signature": "extern uint32_t sub_007D8850(uint32_t arg0)",
+    "summary": "Single-argument forwarding wrapper; passes its one stack argument to sub_007D8420 and returns that result unchanged.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
   "0x007DFB50": {

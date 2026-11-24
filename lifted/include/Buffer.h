@@ -8,8 +8,8 @@
 // Recovered field layout for Buffer:
 namespace lifted_layout {
 struct Buffer_Fields {
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x007D6260)
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x007D6260)
-    // +0x1C  uint32_t                 field_0x1c  (evidence: 0x007D6260)
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x007D6260, 0x007DEC80)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x007D6260, 0x007DEC80)
+    // +0x1C  uint32_t                 field_0x1c  (evidence: 0x007D6260, 0x007DEC80)
 };
 } // namespace lifted_layout

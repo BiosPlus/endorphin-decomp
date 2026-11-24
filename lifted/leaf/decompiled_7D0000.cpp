@@ -171,3 +171,34 @@ void fn_007D5DA0(uint32_t mode) {
     lift_x87_write_cw(static_cast<uint16_t>(slot));     // fnclex / fldcw word ptr [esp]
 }
 } // namespace lift_007D5DA0
+
+// [0x007DEC80] sub_007DEC80 (39 bytes)
+namespace lift_007DEC80 {
+// @name Unknown::initFromSource (descriptive placeholder; owning class not identified)
+// @class Unknown
+// @summary Initializes a 0x16-byte record at eax from the record at ecx, copying two dwords, a float and a word argument, and setting two self-referencing pointers.
+// @field Unknown +0x00 uint32_t ptrToSrcPlus8
+// @field Unknown +0x04 uint32_t ptrToSrcPlus14
+// @field Unknown +0x08 float    floatArg
+// @field Unknown +0x0C uint32_t srcField4
+// @field Unknown +0x10 uint32_t srcField0
+// @field Unknown +0x14 uint16_t wordArg
+// @field Unknown (source ecx) +0x00 uint32_t srcField0
+// @field Unknown (source ecx) +0x04 uint32_t srcField4
+void fn_007DEC80(void* eax, void* ecx, uint16_t dx, float f) {
+    uint8_t* out = static_cast<uint8_t*>(eax);
+    uint8_t* src = static_cast<uint8_t*>(ecx);
+
+    // Captured stack arguments: dx = [esp+4] (word), f = [esp+8] (float).
+    lift_field<uint16_t>(out, 0x14) = dx;
+    lift_field<float>(out, 0x08) = f;
+
+    // Pointers into the source record (32-bit addresses).
+    lift_field<uint32_t>(out, 0x00) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src) + 0x08);
+    lift_field<uint32_t>(out, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src) + 0x14);
+
+    // Copy dwords from source.
+    lift_field<uint32_t>(out, 0x10) = lift_field<uint32_t>(src, 0x00);
+    lift_field<uint32_t>(out, 0x0C) = lift_field<uint32_t>(src, 0x04);
+}
+} // namespace lift_007DEC80
