@@ -169,3 +169,20 @@ DWORD* __thiscall fn_0050C160(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_0050C160
+
+// [0x00503D00] sub_00503D00 (44 bytes)
+namespace lift_00503D00 {
+// @name fillDoublesFromSource
+// @summary Fills `count` consecutive doubles at `dst` with the double loaded from `*src` (re-read each iteration); returns dst + count.
+// (Stdcall, 3 args, ret 0xC. No struct field accesses.)
+void* fn_00503D00(void* dst, uint32_t count, const void* src) {
+    auto* out = static_cast<unsigned char*>(dst);
+    for (uint32_t i = count; i != 0; --i) {
+        double value;
+        std::memcpy(&value, src, sizeof(value));
+        std::memcpy(out, &value, sizeof(value));
+        out += sizeof(double);
+    }
+    return out;
+}
+} // namespace lift_00503D00

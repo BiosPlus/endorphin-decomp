@@ -2120,6 +2120,12 @@
     "summary": "Queries global field 0x58 via ext_00465B30, calls Acclaim2CharacterIO::vfunc_23, and invokes vtable[1] on the argument with (result == 2).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004304F0": {
+    "name": "updateObjStateFromGlobalCharIO",
+    "signature": "extern \"C\" int32_t __stdcall fn_004304F0(uintptr_t obj)",
+    "summary": "Queries Acclaim2CharacterIO::vfunc_23 on global field +0x58 and passes (res == 1) to obj-\u003evfunc_1.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430520": {
     "name": "update_control_enabled_from_mode",
     "signature": "extern \"C\" int32_t __stdcall fn_00430520(void* arg1)",
@@ -12358,6 +12364,12 @@
     "name": "initZeroState",
     "signature": "void fn_00503CA0(void* self)",
     "summary": "Installs vtable 0x0094F074 at +0x00, zeroes the dword/byte fields, and sets the double at +0x28 to 0.0.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x00503D00": {
+    "name": "fillDoublesFromSource",
+    "signature": "void* fn_00503D00(void* dst, uint32_t count, const void* src)",
+    "summary": "Fills `count` consecutive doubles at `dst` with the double loaded from `*src` (re-read each iteration); returns dst + count.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x00503DD0": {
@@ -36911,6 +36923,12 @@
     "signature": "extern \"C\" void fn_006B4C10(void)",
     "summary": "Pure jump thunk forwarding to sub_006B4C00.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x006B4D30": {
+    "name": "sub_006B4D30",
+    "signature": "extern \"C\" int32_t __thiscall fn_006B4D30(void* self, uint32_t /*unused_arg*/)",
+    "summary": "Checks selection via MFC80!ord_1903; if valid (!= -1), posts/sends message (0x200, 0, 0x20) via MFC80!ord_4118 and returns 0, else returns -1.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
   "0x006B4DE0": {
     "name": "GWCPropInPlaceHotKey::vfunc_1",
