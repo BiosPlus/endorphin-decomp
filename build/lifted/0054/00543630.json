@@ -1,0 +1,13 @@
+{
+  "va": "0x00543630",
+  "size": 14,
+  "orig_symbol": "sub_00543630",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "IsAltKeyDown",
+  "signature": "uint8_t fn_00543630()",
+  "summary": "Returns 1 if the VK_MENU (Alt) key is currently down, else 0 (high bit of GetAsyncKeyState(VK_MENU)).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:25:47Z"
+}

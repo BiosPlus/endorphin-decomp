@@ -111,3 +111,19 @@ DWORD fn_00548260(void* self) {
 }
 } // namespace lift_004407B0
 } // namespace lift_00548260
+
+// [0x00543630] sub_00543630 (14 bytes)
+namespace lift_00543630 {
+// IAT slot holding USER32!GetAsyncKeyState.
+extern uint32_t mem_009256E4;
+
+// @name IsAltKeyDown
+// @summary Returns 1 if the VK_MENU (Alt) key is currently down, else 0 (high bit of GetAsyncKeyState(VK_MENU)).
+// Note: no fields accessed; function takes no meaningful arguments (pushes VK_MENU=0x12 itself).
+uint8_t fn_00543630() {
+    using GetAsyncKeyStateFn = SHORT(__stdcall*)(INT);
+    auto getAsyncKeyState = reinterpret_cast<GetAsyncKeyStateFn>(static_cast<uintptr_t>(mem_009256E4));
+    const uint32_t state = static_cast<uint16_t>(getAsyncKeyState(0x12));
+    return static_cast<uint8_t>((state >> 15) & 0x01u);
+}
+} // namespace lift_00543630

@@ -11678,6 +11678,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00543630": {
+    "name": "IsAltKeyDown",
+    "signature": "uint8_t fn_00543630()",
+    "summary": "Returns 1 if the VK_MENU (Alt) key is currently down, else 0 (high bit of GetAsyncKeyState(VK_MENU)).",
+    "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
   "0x00543770": {
     "name": "Tool::vfunc_1",
     "class": "Tool",
