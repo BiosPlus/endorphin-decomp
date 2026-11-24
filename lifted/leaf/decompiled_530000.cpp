@@ -147,3 +147,19 @@ void* fn_00538530(void* self) {
     return self;
 }
 } // namespace lift_00538530
+
+// [0x0053ACF0] sub_0053ACF0 (32 bytes)
+namespace lift_0053ACF0 {
+// @name SetMaskBitsToMatchFlag
+// @class Unknown
+// @summary Tests whether all bits in mask are set in this+0x04; if that result differs from flag, toggles those mask bits in this+0x04.
+// @field Unknown +0x04 uint32_t field_0x04
+void fn_0053ACF0(void* self, uint32_t mask, uint8_t flag) {
+    uint32_t bits = lift_field<uint32_t>(self, 0x04);
+    uint8_t allSet = ((bits & mask) == mask) ? 1 : 0;
+    if (allSet != flag) {
+        bits ^= mask;
+        lift_field<uint32_t>(self, 0x04) = bits;
+    }
+}
+} // namespace lift_0053ACF0

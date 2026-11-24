@@ -1,0 +1,22 @@
+{
+  "va": "0x0053ACF0",
+  "size": 32,
+  "orig_symbol": "sub_0053ACF0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "SetMaskBitsToMatchFlag",
+  "class": "Unknown",
+  "signature": "void fn_0053ACF0(void* self, uint32_t mask, uint8_t flag)",
+  "summary": "Tests whether all bits in mask are set in this+0x04; if that result differs from flag, toggles those mask bits in this+0x04.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:29:56Z"
+}

@@ -13661,6 +13661,13 @@
     "summary": "Builds a stack record {0x009553B0, flags} and passes it to sub_0053A930; if flags has 0x200, copies the returned float[3] plus 0.5f into mem_00AF053C[0..3] and returns that buffer, otherwise returns the callee's result.",
     "lifted_path": "lifted/Primitives/Animation.cpp"
   },
+  "0x0053ACF0": {
+    "name": "SetMaskBitsToMatchFlag",
+    "class": "Unknown",
+    "signature": "void fn_0053ACF0(void* self, uint32_t mask, uint8_t flag)",
+    "summary": "Tests whether all bits in mask are set in this+0x04; if that result differs from flag, toggles those mask bits in this+0x04.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x0053AD10": {
     "name": "Primitives::Animation::vfunc_29",
     "class": "Primitives::Animation",
