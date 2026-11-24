@@ -22820,6 +22820,13 @@
     "summary": "Lazily initializes static singleton at 0x00B44438 and stores its address into out+0x4.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005C6130": {
+    "name": "ExprParser::Method2Type::vfunc_40",
+    "class": "ExprParser::Method2Type",
+    "signature": "void __thiscall fn_005C6130(void* self, void* arg0)",
+    "summary": "Lazily initializes a static type descriptor at 0x00B44448 and stores its address at arg0 + 0x4.",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
   "0x005C61B0": {
     "name": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e::vfunc_0",
     "class": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e",
@@ -22846,6 +22853,13 @@
     "class": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e",
     "signature": "void* fn_005C6210(void* unused, void* out)",
     "summary": "Auto-lifted identical-shape clone of 0x0066DD10 (ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2).",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
+  "0x005C6250": {
+    "name": "ExprParser::Method0Type::vfunc_40",
+    "class": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e",
+    "signature": "void __thiscall fn_005C6250(void* self, void* arg0)",
+    "summary": "Lazily initializes a static singleton and stores its pointer at arg0 + 0x4.",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
   "0x005C62D0": {
@@ -25613,6 +25627,13 @@
     "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}\u003e",
     "signature": "void fn_005F36B0(void* out, void** arg, void* self)",
     "summary": "Reads a float from inner object's vtable slot 1, stores it through *arg into ext_0064F900, then writes a (value, inner) pair to out (value is 0 when inner is null).",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x005F3A70": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, setForceCaps\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType",
+    "signature": "void __thiscall fn_005F3A70(void* self, void* arg0)",
+    "summary": "Lazily initializes a static type descriptor and stores its pointer at arg0 + 0x4",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x005F3D70": {

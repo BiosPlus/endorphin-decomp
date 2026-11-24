@@ -964,3 +964,26 @@ void fn_0060A0D0(void* out) {
     lift_field<uint32_t>(out, 0x04) = 0x00B478BCu;
 }
 } // namespace lift_0060A0D0
+
+// [0x005C6250]
+namespace lift_005C6250 {
+extern uint8_t mem_00B44454[];
+extern uint8_t mem_00B44450[];
+
+extern void __thiscall ext_0067A670(void* self);
+
+// @name ExprParser::Method0Type::vfunc_40
+// @class ExprParser::Method0Type<NMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}>
+// @summary Lazily initializes a static singleton and stores its pointer at arg0 + 0x4.
+// @field ExprParser::ValuePtrType +0x4 uint32_t field_0x4
+void __thiscall fn_005C6250(void* self, void* arg0) {
+    (void)self;
+    if ((*reinterpret_cast<uint32_t*>(mem_00B44454) & 1u) == 0u) {
+        *reinterpret_cast<uint32_t*>(mem_00B44454) |= 1u;
+        ext_0067A670(mem_00B44450);
+        *reinterpret_cast<uint32_t*>(mem_00B44450) = 0x0096331Cu;
+    }
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(arg0) + 4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00B44450));
+}
+} // namespace lift_005C6250
