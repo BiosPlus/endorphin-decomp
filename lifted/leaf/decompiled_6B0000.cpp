@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_6B0000.cpp
 #include "lift_compat.h"
+#include <new>
+#include <string>
 
-// [0x006B9D10]
+#include <string>
 namespace lift_006B9D10 {
 // @name Unknown::InitAndReturnSelf
 // @class Unknown
@@ -139,3 +141,24 @@ uint32_t __thiscall sub_006B2400(uint32_t self, uint32_t arg0) {
     return self;
 }
 } // namespace lift_006B2400
+
+// [0x006B6270] sub_006B6270 (25 bytes)
+namespace lift_006B6270 {
+// @name sub_006B6270
+// @summary Auto-lifted identical-shape clone of 0x00454BE0 (sub_00454BE0_storeArgAndTailCallSubobject).
+namespace lift_00454BE0 {
+// Callee 0x00454BB0 (sub_00454BB0, 10B): reached by tail jump.
+// Assumed ABI: this in ecx -> first parameter, stack argument -> second parameter.
+extern void ext_006B0DE0(void* self, DWORD value);
+
+// @name sub_00454BE0_storeArgAndTailCallSubobject
+// @class Unknown
+// @summary Stores its stack argument at self+0x120, then tail-forwards the same argument to sub_00454BB0 on the subobject at self+0x10C.
+// @field Unknown +0x120 DWORD field_0x120
+void fn_006B6270(void* self, DWORD value) {
+    BYTE* obj = static_cast<BYTE*>(self);
+    *reinterpret_cast<DWORD*>(obj + 0x114) = value;
+    ext_006B0DE0(obj + 0xA8, value);
+}
+} // namespace lift_00454BE0
+} // namespace lift_006B6270
