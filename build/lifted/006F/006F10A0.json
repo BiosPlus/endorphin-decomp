@@ -1,0 +1,22 @@
+{
+  "va": "0x006F10A0",
+  "size": 44,
+  "orig_symbol": "sub_006F10A0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::notifySubobjectAt4378",
+  "class": "Unknown",
+  "signature": "void fn_006F10A0(void* self, uint32_t a1, uint32_t a2)",
+  "summary": "Forwards two stack args plus constant 0x006F8460 to the embedded subobject at self+0x4378 via ext_00711D40, then calls ext_00711A70 with 1 on the same subobject.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4378",
+      "type": "uint8_t subobject (embedded object; passed as `this` to callees, not dereferenced",
+      "name": "here)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:15:19Z"
+}

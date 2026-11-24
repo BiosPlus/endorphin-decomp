@@ -40472,6 +40472,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006F00E0 (Unknown::forwardToSubobject2200).",
     "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
   },
+  "0x006F10A0": {
+    "name": "Unknown::notifySubobjectAt4378",
+    "class": "Unknown",
+    "signature": "void fn_006F10A0(void* self, uint32_t a1, uint32_t a2)",
+    "summary": "Forwards two stack args plus constant 0x006F8460 to the embedded subobject at self+0x4378 via ext_00711D40, then calls ext_00711A70 with 1 on the same subobject.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F1860": {
     "name": "sub_006F1860",
     "class": "Unknown",
