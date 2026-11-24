@@ -375,3 +375,25 @@ void __thiscall fn_00790DA0(void* self, uint32_t value) {
     *reinterpret_cast<uint32_t*>(base + 0x14) = value;
 }
 } // namespace lift_00790DA0
+
+// [0x0079C1F0] sub_0079C1F0 (17 bytes)
+namespace lift_0079C1F0 {
+// @name Unknown::callSubobjectSlot0
+// @class Unknown
+// @summary If self is non-null, invoke virtual slot 0 of the subobject at self+0x04 with arg 1.
+// @field Unknown +0x04 void* subVptr
+void fn_0079C1F0(void* self) {
+    if (self == nullptr) {
+        return;
+    }
+
+    // Subobject lives at self+0x04; its first dword is its vtable pointer.
+    void* subVptr = lift_field<void*>(self, 0x04);
+    void* subThis = static_cast<unsigned char*>(self) + 0x04;
+
+    // call dword ptr [eax] with eax = vtable pointer => vtable[0].
+    using SlotFn = void(__thiscall*)(void* thisPtr, int arg);
+    SlotFn fn = *reinterpret_cast<SlotFn*>(subVptr);
+    fn(subThis, 1);
+}
+} // namespace lift_0079C1F0

@@ -37638,6 +37638,13 @@
     "summary": "Destructor tail-call: restores vtable mem_00997530 and tail-calls base destructor sub_00705450.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x0079C1F0": {
+    "name": "Unknown::callSubobjectSlot0",
+    "class": "Unknown",
+    "signature": "void fn_0079C1F0(void* self)",
+    "summary": "If self is non-null, invoke virtual slot 0 of the subobject at self+0x04 with arg 1.",
+    "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
   "0x0079C210": {
     "name": "sub_0079C210",
     "signature": "extern \"C\" void __fastcall fn_0079C210(void* self, int edx_unused, uint8_t value)",

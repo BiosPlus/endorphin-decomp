@@ -1,0 +1,22 @@
+{
+  "va": "0x0079C1F0",
+  "size": 17,
+  "orig_symbol": "sub_0079C1F0",
+  "src_path": "src/leaf/tiny_790000.cpp",
+  "lifted_path": "lifted/leaf/tiny_790000.cpp",
+  "name": "Unknown::callSubobjectSlot0",
+  "class": "Unknown",
+  "signature": "void fn_0079C1F0(void* self)",
+  "summary": "If self is non-null, invoke virtual slot 0 of the subobject at self+0x04 with arg 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "subVptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:54:51Z"
+}
