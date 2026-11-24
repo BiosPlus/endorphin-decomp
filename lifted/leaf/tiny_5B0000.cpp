@@ -199,3 +199,23 @@ extern void __fastcall fn_005B72A0(void* self, void* /*edx*/, uintptr_t /*arg1*/
     return;
 }
 } // namespace lift_005B72A0
+
+// [0x005B7260] sub_005B7260 (18 bytes)
+namespace lift_005B7260 {
+// Known callee 0x005CE970: sub_005CE970 (Member forwarding thunk: loads subobject pointer at +0xAC and tail-calls sub_00647CE0.)
+extern void ext_005CE970(void* self);
+
+// @name Unknown::forwardIfChild
+// @class Unknown
+// @summary Forwards the call to ext_005CE970 when the pointer at +0x158 is non-null; otherwise returns, popping 8 bytes of stack arguments.
+// @field Unknown +0x158 void* field_0x158
+extern void fn_005B7260(void* self, DWORD stackArg0, DWORD stackArg1) {
+    (void)stackArg0;
+    (void)stackArg1;
+    auto* child = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x158);
+    if (child != nullptr) {
+        ext_005CE970(child);
+        return;
+    }
+}
+} // namespace lift_005B7260

@@ -15519,6 +15519,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00433290 (Unknown::forwardToChildAt154).",
     "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
   },
+  "0x005B7260": {
+    "name": "Unknown::forwardIfChild",
+    "class": "Unknown",
+    "signature": "extern \"C\" void fn_005B7260(void* self, DWORD stackArg0, DWORD stackArg1)",
+    "summary": "Forwards the call to ext_005CE970 when the pointer at +0x158 is non-null; otherwise returns, popping 8 bytes of stack arguments.",
+    "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
+  },
   "0x005B7280": {
     "name": "sub_005B7280",
     "class": "Unknown",
