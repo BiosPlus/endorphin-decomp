@@ -448,3 +448,30 @@ void PumpOneWindowMessage() {
     }
 }
 } // namespace lift_005331B0
+
+// [0x005398C0]
+namespace lift_005398C0 {
+// Known callee 0x00539860: sub_00539860 (47 bytes), stdcall, 6 dword args.
+extern void __stdcall ext_00539860(uint32_t a1, uint32_t a2, uint32_t a3,
+                                       uint32_t a4, uint32_t a5, uint32_t a6);
+
+// @name sub_005398C0
+// @summary Calls ext_00539860 with the three stack args plus a zeroed dword flag, then returns base + 12 * index (12-byte element stride).
+// @class (none)
+//
+// Stack args (stdcall, ret 0xC): arg1 = base pointer (edi), arg2 = element index (esi), arg3 = value forwarded to the callee.
+// The entry ECX is pushed as a raw argument to the callee; it is not a declared input here,
+// so it is passed as 0. The flag dword is the saved ECX with its low byte cleared by the byte store,
+// so it is modelled as 0 as well (exact upper bits depend on the caller's ECX).
+extern void* __stdcall fn_005398C0(uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    const uint32_t entry_ecx = 0;  // not a declared input; see comment above
+    const uint32_t flag = entry_ecx & ~0xFFu;  // byte store of 0 into low byte of saved ECX
+
+    ext_00539860(arg1, arg2, arg3, entry_ecx, arg3, flag);
+
+    uintptr_t base = static_cast<uintptr_t>(arg1);
+    uintptr_t index = static_cast<uintptr_t>(arg2);
+    uintptr_t offset = index * 3u * 4u;  // lea ecx,[esi+2*esi]; lea eax,[edi+4*ecx]
+    return reinterpret_cast<void*>(base + offset);
+}
+} // namespace lift_005398C0

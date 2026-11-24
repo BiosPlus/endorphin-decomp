@@ -17351,6 +17351,13 @@
     "summary": "Copies 12-byte (3 x float) records from [src_begin, src_end) to dst, advancing dst by 12 per record; skips the store when dst is null.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x005398C0": {
+    "name": "sub_005398C0",
+    "class": "(none)",
+    "signature": "extern \"C\" void* __stdcall fn_005398C0(uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Calls ext_00539860 with the three stack args plus a zeroed dword flag, then returns base + 12 * index (12-byte element stride).",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00539B00": {
     "name": "sub_00539B00",
     "signature": "DWORD* __thiscall fn_00539B00(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
