@@ -4,61 +4,19 @@
   "orig_symbol": "sub_006B9950",
   "src_path": "src/leaf/tiny_6B0000.cpp",
   "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
-  "name": "sub_006B0050",
-  "class": "RotateTool",
-  "signature": "extern \"C\" void __fastcall fn_006B0050(void* self)",
-  "summary": "Stores address of mem_00991168 into field at offset +0x0.",
+  "name": "Unknown::IsField04Zero",
+  "class": "Unknown",
+  "signature": "int fn_006B9950(void* self)",
+  "summary": "Thiscall predicate: returns 1 if the DWORD at this+0x04 is zero, else 0.",
   "fields": [
     {
-      "class": "Object",
-      "offset": "+0x0",
-      "type": "uint32_t",
-      "name": "vptr"
-    },
-    {
-      "class": "unknown",
-      "offset": "+0x0",
-      "type": "uint32_t",
-      "name": "vftable"
-    },
-    {
-      "class": "Object",
-      "offset": "+0x0",
-      "type": "uint32_t",
-      "name": "vtable"
-    },
-    {
-      "class": "RotateTool",
-      "offset": "+0xA8",
-      "type": "int32_t",
-      "name": "field_0xA8"
-    },
-    {
-      "class": "Unknown",
-      "offset": "+0x0",
-      "type": "uint32_t",
-      "name": "field_0x00"
-    },
-    {
       "class": "Unknown",
       "offset": "+0x4",
       "type": "uint32_t",
-      "name": "field_0x04"
-    },
-    {
-      "class": "Unknown",
-      "offset": "+0x8",
-      "type": "uint32_t",
-      "name": "field_0x08"
-    },
-    {
-      "class": "Unknown",
-      "offset": "+0x4",
-      "type": "DWORD",
       "name": "field_04"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T01:36:54Z"
+  "lifted_at": "2026-11-24T01:37:10Z"
 }

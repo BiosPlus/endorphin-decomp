@@ -600,18 +600,6 @@ void sub_006B9910(Unknown* ecx) {
 }
 } // namespace lift_006B9910
 
-// [0x006B9950] sub_006B9950 (16 bytes)
-namespace lift_006B9950 {
-// @name Unknown::IsField04Zero
-// @class Unknown
-// @summary Thiscall predicate: returns 1 if the DWORD at this+0x04 is zero, else 0.
-// @field Unknown +0x04 DWORD field_04
-int fn_006B9950(void* self) {
-    DWORD v = lift_field<DWORD>(self, 0x04);
-    return v == 0 ? 1 : 0;
-}
-} // namespace lift_006B9950
-
 // [0x006B9940] sub_006B9940 (16 bytes)
 namespace lift_006B9940 {
 // @name Unknown::IsNotTypeTag_B5D2BC
@@ -633,3 +621,15 @@ uint32_t fn_006B9940(void* self) {
     return first != kMem_00B5D2BC_VA ? 1u : 0u;
 }
 } // namespace lift_006B9940
+
+// [0x006B9950] sub_006B9950 (16 bytes)
+namespace lift_006B9950 {
+// @name Unknown::IsField04Zero
+// @class Unknown
+// @summary Thiscall predicate: returns 1 if the DWORD at this+0x04 is zero, else 0.
+// @field Unknown +0x04 uint32_t field_04
+int fn_006B9950(void* self) {
+    const uint32_t v = lift_field<uint32_t>(self, 0x04);
+    return v == 0 ? 1 : 0;
+}
+} // namespace lift_006B9950
