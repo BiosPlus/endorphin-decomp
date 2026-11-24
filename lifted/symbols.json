@@ -11808,6 +11808,13 @@
     "summary": "Returns 0x15E, plus 1 when the argument equals 0x67 (thiscall, one stack arg, callee pops 4).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004ECA40": {
+    "name": "Vector8::operator[]",
+    "class": "Vector8",
+    "signature": "uint32_t __thiscall sub_004ECA40(void* self, uint32_t index)",
+    "summary": "Bounds-checked element access for an 8-byte-stride vector",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004ECA70": {
     "name": "ExprParser::Function2Type\u003cRandomizer\u003e::vfunc_16",
     "class": "ExprParser::Function2Type\u003cSelectionVariable, bool, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026, {public: bool __thiscall SelectionVariable::getMethodForEachChild(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026), 0}\u003e",
@@ -45420,6 +45427,12 @@
     "signature": "void fn_00788D00(void* self)",
     "summary": "Zeroes a dword at offset 0x00 and a byte flag at offset 0x654 of the object.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
+  "0x00789260": {
+    "name": "ConstructRecord4",
+    "signature": "void* fn_00789260(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint8_t a4)",
+    "summary": "Constructor-style init: stores four args at +0x04..+0x10, zeroes +0x14, sets vtable at +0x00; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
   "0x00789290": {
     "name": "sub_00789290",

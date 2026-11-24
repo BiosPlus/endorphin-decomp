@@ -389,3 +389,25 @@ void fn_00786050(void* self) {
     }
 }
 } // namespace lift_00786050
+
+// [0x00789260] sub_00789260 (46 bytes)
+namespace lift_00789260 {
+// @name ConstructRecord4
+// @summary Constructor-style init: stores four args at +0x04..+0x10, zeroes +0x14, sets vtable at +0x00; returns self.
+// @field ConstructRecord4 +0x00 uint32_t vtable
+// @field ConstructRecord4 +0x04 uint32_t field_0x04
+// @field ConstructRecord4 +0x08 uint32_t field_0x08
+// @field ConstructRecord4 +0x0C uint32_t field_0x0C
+// @field ConstructRecord4 +0x10 uint8_t field_0x10
+// @field ConstructRecord4 +0x14 uint32_t field_0x14
+void* fn_00789260(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint8_t a4) {
+    // Original: thiscall (self in ecx), four stack args, callee-cleans 0x10 bytes, returns self in eax.
+    lift_field<uint32_t>(self, 0x04) = a1;
+    lift_field<uint32_t>(self, 0x08) = a2;
+    lift_field<uint32_t>(self, 0x0C) = a3;
+    lift_field<uint8_t>(self, 0x10) = a4;
+    lift_field<uint32_t>(self, 0x14) = 0;
+    lift_field<uint32_t>(self, 0x00) = 0x00996FA0; // vtable address from the binary
+    return self;
+}
+} // namespace lift_00789260
