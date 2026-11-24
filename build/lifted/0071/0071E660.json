@@ -1,0 +1,21 @@
+{
+  "va": "0x0071E660",
+  "size": 15,
+  "orig_symbol": "sub_0071E660",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "SetByteAtIndex20",
+  "signature": "void fn_0071E660(void* self, DWORD index, BYTE value)",
+  "summary": "Stores one byte into self[index + 0x20]; callee-cleans 8 bytes (thiscall-style, this in ECX).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "BYTE field_0x20 (base of byte array indexed by first",
+      "name": "argument)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:32:21Z"
+}

@@ -35159,6 +35159,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0071E510 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071E660": {
+    "name": "SetByteAtIndex20",
+    "signature": "void fn_0071E660(void* self, DWORD index, BYTE value)",
+    "summary": "Stores one byte into self[index + 0x20]; callee-cleans 8 bytes (thiscall-style, this in ECX).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x0071E670": {
     "name": "sub_0071E670",
     "signature": "extern \"C\" void* __fastcall fn_0071E670(void* self)",

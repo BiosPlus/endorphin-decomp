@@ -1712,3 +1712,14 @@ uint32_t fn_007126A0(void* self) {
     return *reinterpret_cast<const uint32_t*>(base + 0x18);
 }
 } // namespace lift_007126A0
+
+// [0x0071E660] sub_0071E660 (15 bytes)
+namespace lift_0071E660 {
+// @name SetByteAtIndex20
+// @summary Stores one byte into self[index + 0x20]; callee-cleans 8 bytes (thiscall-style, this in ECX).
+// @field Unknown +0x20 BYTE field_0x20 (base of byte array indexed by first argument)
+void fn_0071E660(void* self, DWORD index, BYTE value) {
+    auto* base = static_cast<BYTE*>(self);
+    base[index + 0x20] = value;
+}
+} // namespace lift_0071E660
