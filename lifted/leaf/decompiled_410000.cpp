@@ -745,3 +745,38 @@ void* __stdcall fn_0041CB40(void* arg0) {
     );
 }
 } // namespace lift_0041CB40
+
+// [0x00411590] sub_00411590 (54 bytes)
+namespace lift_00411590 {
+// @name sub_00411590
+// @summary Auto-lifted identical-shape clone of 0x005FF040 (ResourceHolder::ReleaseAndReset).
+namespace lift_005FF040 {
+// @name ResourceHolder::ReleaseAndReset
+// @class ResourceHolder
+// @summary Sets the vtable, releases the handle at +0x08 via thunk_MFC80_ord_764 if non-null, zeroes +0x08/+0x0C/+0x10, then tail-calls base cleanup fn_0065F440(this).
+// @field ResourceHolder +0x00 uint32_t vtable
+// @field ResourceHolder +0x08 uint32_t field_0x08
+// @field ResourceHolder +0x0C uint32_t field_0x0C
+// @field ResourceHolder +0x10 uint32_t field_0x10
+
+extern void ext_006A5C5C(void* arg);
+extern void __fastcall ext_00413480(void* self);
+
+extern void __fastcall fn_00411590(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    lift_field<uint32_t>(base, 0x00) = 0x92BE30;
+
+    const uint32_t handle = lift_field<uint32_t>(base, 0x58);
+    if (handle != 0) {
+        ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(handle)));
+    }
+
+    lift_field<uint32_t>(base, 0x58) = 0;
+    lift_field<uint32_t>(base, 0x5C) = 0;
+    lift_field<uint32_t>(base, 0x60) = 0;
+
+    ext_00413480(self);
+}
+} // namespace lift_005FF040
+} // namespace lift_00411590

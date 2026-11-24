@@ -987,6 +987,13 @@
     "summary": "Writes {this, this-\u003e+0x08} into the out-pointer after checking this-\u003e+0x04 \u003c= this-\u003e+0x08; returns out (thiscall, callee pops 4).",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00411590": {
+    "name": "sub_00411590",
+    "class": "ResourceHolder",
+    "signature": "extern void __fastcall fn_00411590(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FF040 (ResourceHolder::ReleaseAndReset).",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00411660": {
     "name": "MultiTrackView::CompositeEventTrack::vfunc_0",
     "class": "MultiTrackView::CompositeEventTrack",
@@ -1981,6 +1988,13 @@
     "signature": "int fn_0042EA50(void* self, void* arg)",
     "summary": "Releases the device context stored at this+0x20 using the window handle stored at arg+4; returns ReleaseDC's result.",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
+  },
+  "0x0042EC80": {
+    "name": "sub_0042EC80",
+    "class": "ResourceHolder",
+    "signature": "extern void __fastcall fn_0042EC80(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FF040 (ResourceHolder::ReleaseAndReset).",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
   "0x0042EE50": {
     "name": "sub_0042EE50",
@@ -30208,6 +30222,13 @@
     "summary": "Samples the bound float value source, feeds it into SensorIntegral::insert, then writes back a (value, source) pair.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0062B1F0": {
+    "name": "sub_0062B1F0",
+    "class": "ResourceHolder",
+    "signature": "extern void __fastcall fn_0062B1F0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FF040 (ResourceHolder::ReleaseAndReset).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x0062B230": {
     "name": "Sensors::SensorIntegral::vfunc_0",
     "class": "Sensors::SensorIntegral",
@@ -30275,6 +30296,13 @@
     "signature": "void fn_0060F0B0(void* dst)",
     "summary": "Fetches a 64-byte (16 x DWORD) block via ext_00480920 and copies it into the caller-supplied destination buffer.",
     "lifted_path": "lifted/NMData/AxisDefineSensorData.cpp"
+  },
+  "0x0062CCF0": {
+    "name": "sub_0062CCF0",
+    "class": "ResourceHolder",
+    "signature": "extern void __fastcall fn_0062CCF0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005FF040 (ResourceHolder::ReleaseAndReset).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x0062CF40": {
     "name": "CompoundSensor::vfunc_0",

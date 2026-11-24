@@ -1,0 +1,40 @@
+{
+  "va": "0x0062B1F0",
+  "size": 54,
+  "orig_symbol": "sub_0062B1F0",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "sub_0062B1F0",
+  "class": "ResourceHolder",
+  "signature": "extern void __fastcall fn_0062B1F0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x005FF040 (ResourceHolder::ReleaseAndReset).",
+  "fields": [
+    {
+      "class": "ResourceHolder",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "ResourceHolder",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "ResourceHolder",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "ResourceHolder",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T15:12:31Z"
+}
