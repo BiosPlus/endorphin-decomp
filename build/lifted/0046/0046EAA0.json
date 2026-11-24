@@ -1,0 +1,22 @@
+{
+  "va": "0x0046EAA0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cImageExporter, int, getEndFrame, int, setEndFrame\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cImageExporter, int, getEndFrame, int, setEndFrame\u003e",
+  "signature": "void __thiscall fn_0046EAA0(void* self, uint32_t arg0)",
+  "summary": "Initializes a static type descriptor if needed and assigns it to arg0+0x4.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:49:19Z"
+}
