@@ -571,3 +571,33 @@ extern void fn_0042FC90(void) {
     slotE0(second, 5, result);
 }
 } // namespace lift_0042FC90
+
+// [0x00422B20]
+namespace lift_00422B20 {
+// @name postCommandToMainWnd
+// @summary Calls MFC80_ord_1091, invokes vtable+0x7C if non-null, and posts WM_COMMAND with field_0x84 to the resulting CWnd's HWND.
+// @field Unknown +0x84 uint32_t field_0x84
+
+
+extern uint32_t ext_006A62FE(void);
+extern uint32_t mem_00925618;
+
+using VFunc_0x7C = uint32_t(__thiscall*)(uint32_t self);
+using PostMessageA_t = int32_t(__stdcall*)(uint32_t hWnd, uint32_t Msg, uint32_t wParam, uint32_t lParam);
+
+extern void __thiscall fn_00422B20(void* self, uint32_t, uint32_t, uint32_t) {
+    uint32_t obj = ext_006A62FE();
+    uint32_t wnd = 0;
+    if (obj != 0) {
+        uint32_t vtbl = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(obj));
+        auto vfunc = reinterpret_cast<VFunc_0x7C>(
+            static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(vtbl + 0x7C))));
+        wnd = vfunc(obj);
+    }
+
+    uint32_t wparam = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x84);
+    uint32_t hwnd = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(wnd + 0x20));
+    auto post_message = reinterpret_cast<PostMessageA_t>(static_cast<uintptr_t>(mem_00925618));
+    post_message(hwnd, 0x111u, wparam, 0u);
+}
+} // namespace lift_00422B20

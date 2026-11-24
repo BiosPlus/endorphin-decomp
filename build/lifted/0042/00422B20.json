@@ -1,0 +1,21 @@
+{
+  "va": "0x00422B20",
+  "size": 53,
+  "orig_symbol": "sub_00422B20",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "postCommandToMainWnd",
+  "signature": "extern \"C\" void __thiscall fn_00422B20(void* self, uint32_t, uint32_t, uint32_t)",
+  "summary": "Calls MFC80_ord_1091, invokes vtable+0x7C if non-null, and posts WM_COMMAND with field_0x84 to the resulting CWnd's HWND.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "uint32_t",
+      "name": "field_0x84"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:11:32Z"
+}
