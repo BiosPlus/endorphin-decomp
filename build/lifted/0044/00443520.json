@@ -1,0 +1,28 @@
+{
+  "va": "0x00443520",
+  "size": 174,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_18",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/DragSelectState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/DragSelectState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_18",
+  "class": "MultiTrackView::MultiTrackViewStates::DragSelectState",
+  "signature": "bool fn_00443520(void* self, void* arg)",
+  "summary": "Notifies the MFC helper with the argument, builds a unit Vector4 and an int4 snapshot from the state at +0x04, invokes the child update routines, and returns false.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::DragSelectState",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::DragSelectState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:38:25Z"
+}

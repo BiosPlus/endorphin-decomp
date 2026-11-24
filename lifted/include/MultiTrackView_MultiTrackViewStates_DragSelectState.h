@@ -10,6 +10,7 @@
 // Recovered field layout for MultiTrackView::MultiTrackViewStates::DragSelectState:
 namespace lifted_layout {
 struct MultiTrackView_MultiTrackViewStates_DragSelectState_Fields {
-    // +0x8   void*                    field_0x08  (evidence: 0x00443500)
+    // +0x4   void*                    field_0x04  (evidence: 0x00443520)
+    // +0x8   void*                    field_0x08  (evidence: 0x00443500, 0x00443520)
 };
 } // namespace lifted_layout

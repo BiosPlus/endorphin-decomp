@@ -3193,6 +3193,13 @@
     "summary": "Invalidates the owning view's window (full client area, erase background) and returns TRUE.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x00443520": {
+    "name": "MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_18",
+    "class": "MultiTrackView::MultiTrackViewStates::DragSelectState",
+    "signature": "bool fn_00443520(void* self, void* arg)",
+    "summary": "Notifies the MFC helper with the argument, builds a unit Vector4 and an int4 snapshot from the state at +0x04, invokes the child update routines, and returns false.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/DragSelectState.cpp"
+  },
   "0x00443650": {
     "name": "MultiTrackView::MultiTrackViewStates::MoveState::vfunc_7",
     "class": "MultiTrackView::MultiTrackViewStates::MoveState",
