@@ -12854,10 +12854,10 @@
     "lifted_path": "lifted/Primitives/Sensor.cpp"
   },
   "0x0053C8F0": {
-    "name": "Unknown::initDerivedVtable",
-    "class": "Unknown",
-    "signature": "void* fn_0053C8F0(void* self)",
-    "summary": "Runs the base initializer on self, then installs the derived vtable at +0x00 and returns self.",
+    "name": "sub_00530070",
+    "class": "QuadricWrapper",
+    "signature": "void* fn_00530070()",
+    "summary": "Auto-lifted identical-shape clone of 0x0061EA10 (HingeSecondaryConstraint::AllocAndConstruct).",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
   "0x0053C970": {

@@ -4,11 +4,17 @@
   "orig_symbol": "sub_0053C8F0",
   "src_path": "src/leaf/decompiled_530000.cpp",
   "lifted_path": "lifted/leaf/decompiled_530000.cpp",
-  "name": "Unknown::initDerivedVtable",
-  "class": "Unknown",
-  "signature": "void* fn_0053C8F0(void* self)",
-  "summary": "Runs the base initializer on self, then installs the derived vtable at +0x00 and returns self.",
+  "name": "sub_00530070",
+  "class": "QuadricWrapper",
+  "signature": "void* fn_00530070()",
+  "summary": "Auto-lifted identical-shape clone of 0x0061EA10 (HingeSecondaryConstraint::AllocAndConstruct).",
   "fields": [
+    {
+      "class": "QuadricWrapper",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "quadric"
+    },
     {
       "class": "Unknown",
       "offset": "+0x0",
@@ -18,5 +24,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T11:49:31Z"
+  "lifted_at": "2026-11-24T11:49:37Z"
 }
