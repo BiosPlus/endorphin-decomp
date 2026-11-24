@@ -1,0 +1,22 @@
+{
+  "va": "0x005470F0",
+  "size": 28,
+  "orig_symbol": "JointTool::vfunc_23",
+  "src_path": "src/classes/JointTool.cpp",
+  "lifted_path": "lifted/classes/JointTool.cpp",
+  "name": "JointTool::vfunc_23",
+  "class": "JointTool",
+  "signature": "inline void* vtable_slot(void* obj, ptrdiff_t byteOffset)",
+  "summary": "Calls vslot +0x38 on the object held at +0x88 with arg 1, then tail-calls vslot +0x68 on this.",
+  "fields": [
+    {
+      "class": "JointTool",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:08:07Z"
+}

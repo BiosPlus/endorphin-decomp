@@ -13955,6 +13955,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005450C0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005470F0": {
+    "name": "JointTool::vfunc_23",
+    "class": "JointTool",
+    "signature": "inline void* vtable_slot(void* obj, ptrdiff_t byteOffset)",
+    "summary": "Calls vslot +0x38 on the object held at +0x88 with arg 1, then tail-calls vslot +0x68 on this.",
+    "lifted_path": "lifted/classes/JointTool.cpp"
+  },
   "0x005471D0": {
     "name": "RotateTool::vfunc_26",
     "class": "RotateTool",
