@@ -1,0 +1,22 @@
+{
+  "va": "0x007057E0",
+  "size": 15,
+  "orig_symbol": "sub_007057E0",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "Unknown::sub_007057E0",
+  "class": "Unknown",
+  "signature": "bool fn_007057E0(void* self, uint32_t mask)",
+  "summary": "Returns true if any bit of the argument mask is set in the object's field at +0x78.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "uint32_t",
+      "name": "field_0x78"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:32:18Z"
+}

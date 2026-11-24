@@ -33894,6 +33894,13 @@
     "summary": "Returns constant 0.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x007057E0": {
+    "name": "Unknown::sub_007057E0",
+    "class": "Unknown",
+    "signature": "bool fn_007057E0(void* self, uint32_t mask)",
+    "summary": "Returns true if any bit of the argument mask is set in the object's field at +0x78.",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x0070A1D0": {
     "name": "sub_0070A1D0",
     "signature": "extern \"C\" void* __fastcall fn_0070A1D0(void* self, int edx_unused, unsigned int flags)",

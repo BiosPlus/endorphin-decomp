@@ -643,3 +643,15 @@ extern int __thiscall fn_00704FD0(void* self) {
 }
 } // namespace lift_00515840
 } // namespace lift_00704FD0
+
+// [0x007057E0] sub_007057E0 (15 bytes)
+namespace lift_007057E0 {
+// @name Unknown::sub_007057E0
+// @class Unknown
+// @summary Returns true if any bit of the argument mask is set in the object's field at +0x78.
+// @field Unknown +0x78 uint32_t field_0x78
+bool fn_007057E0(void* self, uint32_t mask) {
+    const uint32_t flags = lift_field<uint32_t>(self, 0x78);
+    return (mask & flags) != 0;
+}
+} // namespace lift_007057E0
