@@ -1117,10 +1117,22 @@
     "summary": "Forwards the call to the object at self+0x08 via its vtable slot at +0x44; returns 0 if that object is null.",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x0041C6F0": {
+    "name": "sub_0041C6F0",
+    "signature": "uint32_t fn_0041C6F0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0041C6D0 (Unknown::ForwardVirtual44 (descriptive; owner class not yet identified)).",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x0041C710": {
     "name": "descriptiveName_0041C710 (delegateToChildVirtual19)",
     "signature": "uint8_t fn_0041C710(void* self)",
     "summary": "If the pointer at +0x08 is null return 0; otherwise tail-call virtual slot 19 (vtable +0x4C) of that child object and return its result.",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
+  "0x0041C730": {
+    "name": "sub_0041C730",
+    "signature": "uint32_t fn_0041C730(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0041C6D0 (Unknown::ForwardVirtual44 (descriptive; owner class not yet identified)).",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
   "0x0041C750": {
@@ -11300,6 +11312,12 @@
     "name": "descriptiveName_00528BB0 (forwardVirtual0x2CIfNonNull)",
     "signature": "DWORD fn_00528BB0(void* self, DWORD arg0, DWORD arg1)",
     "summary": "If this-\u003efield_0x04 is non-null, tail-dispatch virtual slot 0x2C/4 on it with the same args; otherwise return 0 (callee pops 8 bytes).",
+    "lifted_path": "lifted/leaf/tiny_520000.cpp"
+  },
+  "0x00528BD0": {
+    "name": "sub_00528BD0",
+    "signature": "uint32_t fn_00528BD0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0041C6D0 (Unknown::ForwardVirtual44 (descriptive; owner class not yet identified)).",
     "lifted_path": "lifted/leaf/tiny_520000.cpp"
   },
   "0x00528BF0": {

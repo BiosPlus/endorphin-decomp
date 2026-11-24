@@ -1,0 +1,21 @@
+{
+  "va": "0x0041C6F0",
+  "size": 21,
+  "orig_symbol": "sub_0041C6F0",
+  "src_path": "src/leaf/tiny_410000.cpp",
+  "lifted_path": "lifted/leaf/tiny_410000.cpp",
+  "name": "sub_0041C6F0",
+  "signature": "uint32_t fn_0041C6F0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0041C6D0 (Unknown::ForwardVirtual44 (descriptive; owner class not yet identified)).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T02:11:07Z"
+}

@@ -1,0 +1,21 @@
+{
+  "va": "0x00528BD0",
+  "size": 21,
+  "orig_symbol": "sub_00528BD0",
+  "src_path": "src/leaf/tiny_520000.cpp",
+  "lifted_path": "lifted/leaf/tiny_520000.cpp",
+  "name": "sub_00528BD0",
+  "signature": "uint32_t fn_00528BD0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0041C6D0 (Unknown::ForwardVirtual44 (descriptive; owner class not yet identified)).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T02:11:07Z"
+}

@@ -357,3 +357,51 @@ uint32_t fn_0041C6D0(void* self) {
     return target(child);
 }
 } // namespace lift_0041C6D0
+
+// [0x0041C6F0] sub_0041C6F0 (21 bytes)
+namespace lift_0041C6F0 {
+// @name sub_0041C6F0
+// @summary Auto-lifted identical-shape clone of 0x0041C6D0 (Unknown::ForwardVirtual44 (descriptive; owner class not yet identified)).
+namespace lift_0041C6D0 {
+// @name Unknown::ForwardVirtual44 (descriptive; owner class not yet identified)
+// @summary Forwards the call to the object at self+0x08 via its vtable slot at +0x44; returns 0 if that object is null.
+// @field Unknown +0x08 void* field_0x08
+uint32_t fn_0041C6F0(void* self) {
+    // Original is a tail jump (jmp eax) that reuses the caller's stack args,
+    // with the stdcall-style "ret 4" epilogue on the null path. C++ cannot
+    // express the tail jump directly, so the forwarded call is written as an
+    // ordinary call returning the callee's result.
+    void* child = lift_field<void*>(self, 0x08);
+    if (child == nullptr) {
+        return 0;  // xor al, al; ret 4
+    }
+    void* vtable = lift_field<void*>(child, 0);
+    auto target = reinterpret_cast<uint32_t (*)(void*)>(lift_field<void*>(vtable, 0x48));
+    return target(child);
+}
+} // namespace lift_0041C6D0
+} // namespace lift_0041C6F0
+
+// [0x0041C730] sub_0041C730 (21 bytes)
+namespace lift_0041C730 {
+// @name sub_0041C730
+// @summary Auto-lifted identical-shape clone of 0x0041C6D0 (Unknown::ForwardVirtual44 (descriptive; owner class not yet identified)).
+namespace lift_0041C6D0 {
+// @name Unknown::ForwardVirtual44 (descriptive; owner class not yet identified)
+// @summary Forwards the call to the object at self+0x08 via its vtable slot at +0x44; returns 0 if that object is null.
+// @field Unknown +0x08 void* field_0x08
+uint32_t fn_0041C730(void* self) {
+    // Original is a tail jump (jmp eax) that reuses the caller's stack args,
+    // with the stdcall-style "ret 4" epilogue on the null path. C++ cannot
+    // express the tail jump directly, so the forwarded call is written as an
+    // ordinary call returning the callee's result.
+    void* child = lift_field<void*>(self, 0x08);
+    if (child == nullptr) {
+        return 0;  // xor al, al; ret 4
+    }
+    void* vtable = lift_field<void*>(child, 0);
+    auto target = reinterpret_cast<uint32_t (*)(void*)>(lift_field<void*>(vtable, 0x50));
+    return target(child);
+}
+} // namespace lift_0041C6D0
+} // namespace lift_0041C730

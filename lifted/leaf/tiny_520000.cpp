@@ -2,8 +2,10 @@
 #include "lift_compat.h"
 extern "C" uintptr_t mem_00924FDC;
 extern "C" int mem_00953454;
+#include <cstring>
+#include <cstdint>
 
-// [0x00521350] sub_00521350 (9 bytes)
+#include <cstdint>
 // @name sub_00521350
 // @summary This-adjustor thunk: adjusts `this` by +0x8 and forwards through mem_00924FDC.
 extern "C" void __fastcall fn_00521350(void* self) {
@@ -138,3 +140,27 @@ void __stdcall fn_00528CA0(void* p) {
     }
 }
 } // namespace lift_00528CA0
+
+// [0x00528BD0] sub_00528BD0 (21 bytes)
+namespace lift_00528BD0 {
+// @name sub_00528BD0
+// @summary Auto-lifted identical-shape clone of 0x0041C6D0 (Unknown::ForwardVirtual44 (descriptive; owner class not yet identified)).
+namespace lift_0041C6D0 {
+// @name Unknown::ForwardVirtual44 (descriptive; owner class not yet identified)
+// @summary Forwards the call to the object at self+0x08 via its vtable slot at +0x44; returns 0 if that object is null.
+// @field Unknown +0x08 void* field_0x08
+uint32_t fn_00528BD0(void* self) {
+    // Original is a tail jump (jmp eax) that reuses the caller's stack args,
+    // with the stdcall-style "ret 4" epilogue on the null path. C++ cannot
+    // express the tail jump directly, so the forwarded call is written as an
+    // ordinary call returning the callee's result.
+    void* child = lift_field<void*>(self, 0x4);
+    if (child == nullptr) {
+        return 0;  // xor al, al; ret 4
+    }
+    void* vtable = lift_field<void*>(child, 0);
+    auto target = reinterpret_cast<uint32_t (*)(void*)>(lift_field<void*>(vtable, 0x54));
+    return target(child);
+}
+} // namespace lift_0041C6D0
+} // namespace lift_00528BD0
