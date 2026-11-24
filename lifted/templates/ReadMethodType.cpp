@@ -30687,3 +30687,24 @@ void* fn_005DB700(void* out_str, void* const* holder) {
     return out_str;
 }
 } // namespace lift_005DB700
+
+// [0x004EA380] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>::vfunc_4 (72 bytes)
+namespace lift_004EA380 {
+// Known callee 0x0046C460: makeBoolString (Constructs a std::string from one of two static C-strings based on a boolean flag.)
+extern void* ext_0046C460(void* out, uint8_t flag);
+
+// @name ExprParser::ReadMethodType<PoseToolOptions,isGravityEnabled>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>
+// @summary Stringifies the gravity-enabled flag of the PoseToolOptions object referenced by the second argument into the caller-provided result slot; throws if the object pointer is null.
+// @field NMData::PoseToolOptions +0x06 uint8_t field_0x06
+void* fn_004EA380(void* out, void* const* objRef) {
+    void* obj = objRef ? *objRef : nullptr;
+    if (obj == nullptr) {
+        // Original raises a C++ exception here via _CxxThrowException; the exact
+        // exception type/message is not recovered, so a generic runtime_error is used.
+        throw std::runtime_error("ReadMethodType<PoseToolOptions>::vfunc_4: null object");
+    }
+    uint8_t flag = lift_field<uint8_t>(obj, 0x06);
+    return ext_0046C460(out, flag);
+}
+} // namespace lift_004EA380
