@@ -241,3 +241,23 @@ void sub_006F87B0() {
     mem_00B5E290 = -huge;
 }
 } // namespace lift_006F87B0
+
+// [0x006FFEE0] sub_006FFEE0 (36 bytes)
+namespace lift_006FFEE0 {
+namespace lift_006FFEE0 {
+// mem_00925284 holds the address of MSVCR80 _HUGE (a double, +inf); loaded indirectly.
+extern const double* mem_00925284;
+extern double mem_00B5E600;
+extern double mem_00B5E608;
+extern double mem_00B5E610;
+
+// @name SetNegHugeGlobals_006FFEE0
+// @summary Sets three global doubles to -_HUGE (negative infinity), loading _HUGE through the pointer stored at mem_00925284.
+void fn_006FFEE0() {
+    const double* huge = mem_00925284;
+    mem_00B5E600 = -*huge;
+    mem_00B5E610 = -*huge;
+    mem_00B5E608 = -*huge;
+}
+} // namespace lift_006FFEE0
+} // namespace lift_006FFEE0
