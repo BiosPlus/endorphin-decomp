@@ -5484,3 +5484,21 @@ bool fn_005A9ED0(void* argBlock) {
     return true;
 }
 } // namespace lift_005A9ED0
+
+// [0x0040FD10]
+namespace lift_0040FD10 {
+// @name CColorCheck::vfunc_81
+// @class CColorCheck
+// @summary Stores 1 into this->field_0x54 when the argument equals 1, otherwise 0.
+// @field CColorCheck +0x54 uint32_t field_0x54
+
+struct CColorCheck {
+    unsigned char pad_0000[0x54];
+    uint32_t field_0x54;
+};
+
+// Lifted as thiscall with one stack argument; callee pops 4 bytes (ret 4).
+void CColorCheck_vfunc_81(CColorCheck* self, int arg) {
+    self->field_0x54 = (arg == 1) ? 1u : 0u;
+}
+} // namespace lift_0040FD10

@@ -1,0 +1,22 @@
+{
+  "va": "0x0040FD10",
+  "size": 16,
+  "orig_symbol": "CColorCheck::vfunc_81",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CColorCheck::vfunc_81",
+  "class": "CColorCheck",
+  "signature": "void CColorCheck_vfunc_81(CColorCheck* self, int arg)",
+  "summary": "Stores 1 into this-\u003efield_0x54 when the argument equals 1, otherwise 0.",
+  "fields": [
+    {
+      "class": "CColorCheck",
+      "offset": "+0x54",
+      "type": "uint32_t",
+      "name": "field_0x54"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:33:31Z"
+}

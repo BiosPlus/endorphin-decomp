@@ -576,6 +576,13 @@
     "summary": "Destructor tail-call: restores vtable mem_0092B9D4 and tail-calls base destructor thunk_MFC80_ord_587.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x0040FD10": {
+    "name": "CColorCheck::vfunc_81",
+    "class": "CColorCheck",
+    "signature": "void CColorCheck_vfunc_81(CColorCheck* self, int arg)",
+    "summary": "Stores 1 into this-\u003efield_0x54 when the argument equals 1, otherwise 0.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x0040FD20": {
     "name": "CColorCheck::vfunc_82",
     "class": "CColorCheck",
