@@ -18,7 +18,7 @@ struct Obj_Fields {
     // +0x1C  uint32_t                 field_0x1C  (evidence: 0x007C9E50)
     // +0x20  uint32_t                 field_0x20  (evidence: 0x007C8820)
     // +0x50  uint32_t                 field_0x50  (evidence: 0x007C9E50)
-    // +0xB0  uint32_t                 allocatorPtr  (evidence: 0x007CC5D0)
+    // +0xB0  uint32_t                 allocatorPtr  (evidence: 0x007CA750, 0x007CC5D0)
     // +0x160 float                    field_0x160  (evidence: 0x007C5B70)
     // +0x164 float                    field_0x164  (evidence: 0x007C5B70)
     // +0x168 float                    field_0x168  (evidence: 0x007C5B70)

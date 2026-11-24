@@ -1,0 +1,21 @@
+{
+  "va": "0x007CA750",
+  "size": 51,
+  "orig_symbol": "sub_007CA750",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "allocateAndInitObject",
+  "signature": "extern \"C\" uint32_t fn_007CA750(uint32_t a1, float a2)",
+  "summary": "Allocates 20 bytes (16-byte aligned) via object+0xB0-\u003e0x8 and initializes it with sub_007CA340",
+  "fields": [
+    {
+      "class": "Obj",
+      "offset": "+0xB0",
+      "type": "uint32_t",
+      "name": "allocatorPtr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:08:07Z"
+}

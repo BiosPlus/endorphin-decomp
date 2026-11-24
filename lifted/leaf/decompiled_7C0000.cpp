@@ -532,3 +532,26 @@ void fn_007C9A60(uint8_t* self, DWORD flag, float* out) {
     std::memcpy(out, src, 4 * sizeof(float));
 }
 } // namespace lift_007C9A60
+
+// [0x007CA750]
+namespace lift_007CA750 {
+// @name allocateAndInitObject
+// @summary Allocates 20 bytes (16-byte aligned) via object+0xB0->0x8 and initializes it with sub_007CA340
+// @field Obj +0xB0 uint32_t allocatorPtr
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern uint32_t ext_007CA340(uint32_t a1, uint32_t a2, float a3);
+
+extern uint32_t fn_007CA750(uint32_t a1, float a2) {
+    uint32_t alloc_obj = mem_read32(a1 + 0xb0);
+    uint32_t alloc_fn_addr = mem_read32(alloc_obj + 0x8);
+    using AllocFn = uint32_t(*)(uint32_t, uint32_t);
+    AllocFn alloc_fn = reinterpret_cast<AllocFn>(static_cast<uintptr_t>(alloc_fn_addr));
+    uint32_t ptr = alloc_fn(0x14, 0x10);
+    if (!ptr) {
+        return 0;
+    }
+    return ext_007CA340(ptr, a1, a2);
+}
+} // namespace lift_007CA750
