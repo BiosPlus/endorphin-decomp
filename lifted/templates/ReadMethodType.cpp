@@ -40673,3 +40673,40 @@ float fn_005130A0(const void* self) {
     return static_cast<float>(std::atof(str->c_str()));
 }
 } // namespace lift_005130A0
+
+// [0x00604D80] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>::vfunc_2 (105 bytes)
+namespace lift_00604D80 {
+// Callee 0x006A6DE0: takes the rounded value (originally left on the x87 stack) and returns an int32 in eax.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<Effector>::vfunc_2 (Effector::getPoseRawDesiredDisplacement)
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>
+// @summary Reads a float via the inner value's vtable slot 14 (0x38), then rounds it half away from zero and passes it to 0x006A6DE0; throws if the inner pointer is null.
+// @field ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1> +0x00 void* field_0x00
+int32_t fn_00604D80(void* self) {
+    // Inner value pointer at +0x00 (the original reads [self] into ecx as `this` for the virtual call).
+    void* inner = lift_field<void*>(self, 0x00);
+    if (inner == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType: null value pointer");
+    }
+
+    // Virtual call: vtable slot 14 (offset 0x38), thiscall with one out-pointer argument.
+    // The callee returns a pointer to the float value.
+    using VSlot14Fn = const float* (*)(void* self, float* out);
+    void** vtbl = lift_field<void**>(inner, 0);
+    VSlot14Fn get = reinterpret_cast<VSlot14Fn>(vtbl[14]);
+    float scratch = 0.0f;
+    const float* src = get(inner, &scratch);
+
+    // Copy the float (the original spills it to a local slot).
+    const float v = *src;
+
+    // Half-away-from-zero offset. The original's `fcom` sets C0 for v < 0 and for unordered (NaN),
+    // which selects the subtract branch; keep that behaviour.
+    const double r = (v < 0.0f || std::isnan(v))
+                         ? static_cast<double>(v) - 0.5
+                         : static_cast<double>(v) + 0.5;
+
+    return ext_006A6DE0(r);
+}
+} // namespace lift_00604D80
