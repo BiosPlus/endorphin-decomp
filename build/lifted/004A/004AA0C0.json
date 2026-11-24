@@ -1,0 +1,22 @@
+{
+  "va": "0x004AA0C0",
+  "size": 122,
+  "orig_symbol": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}\u003e::vfunc_40",
+  "src_path": "src/templates/DynamicEnumType.cpp",
+  "lifted_path": "lifted/templates/DynamicEnumType.cpp",
+  "name": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData\u003e::vfunc_40",
+  "class": "ExprParser::ValuePtrType",
+  "signature": "extern \"C\" uint8_t mem_00ADF9E4;   // init guard byte (bit 0 = constructed) extern \"C\" uint32_t mem_00ADF9E0;  // static object storage (first dword = vtable) void fn_004AA0C0(void* out)",
+  "summary": "Lazily constructs a function-local static object (guarded by a one-time init flag) and stores its address into the out-object's +0x04 slot.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:45:55Z"
+}

@@ -1634,3 +1634,88 @@ void* fn_005C8A80(void* out, void* unused_arg) {
 }
 } // namespace lift_00471440
 } // namespace lift_005C8A80
+
+// [0x004B9A40]
+namespace lift_004B9A40 {
+// @name ExprParser::DynamicEnumType<NMData::MaterialPair>::vfunc_27
+// @class ExprParser::DynamicEnumType<NMData::MaterialPair>
+// @summary Returns the listed material interaction name for a MaterialPair at the given index
+
+extern uint32_t __thiscall ext_004B73A0(uint32_t self, uint32_t out_str, int32_t index);
+extern uint32_t mem_00924FE0;
+extern uint32_t mem_00924FF4;
+
+using std_string_copy_ctor_t = uint32_t(__thiscall*)(uint32_t self, uint32_t other);
+using std_string_dtor_t = void(__thiscall*)(uint32_t self);
+
+extern uint32_t __thiscall fn_004B9A40(
+    uint32_t /*self*/,
+    uint32_t out_str,
+    uint32_t* obj_ptr,
+    int32_t index) {
+  uint8_t temp_str[28] = {};
+  uint32_t temp_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(temp_str));
+  uint32_t mat_pair = *obj_ptr;
+
+  uint32_t res = ext_004B73A0(mat_pair, temp_ptr, index);
+
+  auto copy_ctor = reinterpret_cast<std_string_copy_ctor_t>(static_cast<uintptr_t>(mem_00924FE0));
+  copy_ctor(out_str, res);
+
+  auto dtor = reinterpret_cast<std_string_dtor_t>(static_cast<uintptr_t>(mem_00924FF4));
+  dtor(temp_ptr);
+
+  return out_str;
+}
+} // namespace lift_004B9A40
+
+// [0x004AB2C0]
+namespace lift_004AB2C0 {
+// @name ExprParser::DynamicEnumType<NMData::BehaviourData>::getCompatibleBehaviourDescription
+// @class ExprParser::DynamicEnumType<NMData::BehaviourData>
+// @summary Returns the compatible behaviour description string for the given index via BehaviourData.
+
+extern void* __thiscall ext_004A9E00(void* self, void* sret, int32_t index);
+extern void* mem_00924FE0;
+extern void* mem_00924FF4;
+
+struct MsvcString {
+    uint32_t data[7];
+};
+
+using StringCopyCtor = void*(__thiscall*)(void* self, const void* other);
+using StringDtor = void(__thiscall*)(void* self);
+
+void* __fastcall fn_004AB2C0(void* /*self*/, void* /*edx*/, void* sret, void** objPtr, int32_t index) {
+    MsvcString temp{};
+    void* result = ext_004A9E00(*objPtr, &temp, index);
+    reinterpret_cast<StringCopyCtor>(mem_00924FE0)(sret, result);
+    reinterpret_cast<StringDtor>(mem_00924FF4)(&temp);
+    return sret;
+}
+} // namespace lift_004AB2C0
+
+// [0x004AA0C0] ExprParser::DynamicEnumType<NMData::BehaviourData, ...>::vfunc_40 (122 bytes)
+namespace lift_004AA0C0 {
+extern void ext_0067A670();
+extern uint8_t mem_00ADF9E4;   // init guard byte (bit 0 = constructed)
+extern uint32_t mem_00ADF9E0;  // static object storage (first dword = vtable)
+
+// @name ExprParser::DynamicEnumType<NMData::BehaviourData>::vfunc_40
+// @class ExprParser::ValuePtrType
+// @summary Lazily constructs a function-local static object (guarded by a one-time init flag) and stores its address into the out-object's +0x04 slot.
+// @field ValuePtrType +0x04 void* field_0x04
+void fn_004AA0C0(void* out) {
+    // One-time initialization guard (original: test byte [adf9e4], al / or dword [adf9e4], eax).
+    if ((mem_00ADF9E4 & 1u) == 0) {
+        mem_00ADF9E4 |= 1u;
+        // Construct the static object; original passes its address in ecx and a zero arg.
+        ext_0067A670();
+        // Install the vtable pointer into the static object's first dword.
+        mem_00ADF9E0 = 0x0094153Cu;
+    }
+    // Store the static object's address into out+0x04.
+    *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(out) + 0x04) =
+        static_cast<void*>(&mem_00ADF9E0);
+}
+} // namespace lift_004AA0C0

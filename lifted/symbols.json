@@ -9251,6 +9251,13 @@
     "summary": "Dynamic-casts self to the BehaviourData enum type via __RTDynamicCast (pointer cast; returns null on failure).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004AA0C0": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData\u003e::vfunc_40",
+    "class": "ExprParser::ValuePtrType",
+    "signature": "extern \"C\" uint8_t mem_00ADF9E4;   // init guard byte (bit 0 = constructed) extern \"C\" uint32_t mem_00ADF9E0;  // static object storage (first dword = vtable) void fn_004AA0C0(void* out)",
+    "summary": "Lazily constructs a function-local static object (guarded by a one-time init flag) and stores its address into the out-object's +0x04 slot.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x004AA140": {
     "name": "ExprParser::ReadMethodType\u003cNMData::BehaviourData\u003e::vfunc_1 (NMData::BehaviourData::getCharacterName)",
     "class": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0\u003e",
@@ -9354,6 +9361,13 @@
     "class": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}\u003e",
     "signature": "void fn_004AB2B0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00495020 (ExprParser::DynamicEnumType\u003cRigManager\u003e::vfunc_26).",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
+  "0x004AB2C0": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData\u003e::getCompatibleBehaviourDescription",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData\u003e",
+    "signature": "void* __fastcall fn_004AB2C0(void* /*self*/, void* /*edx*/, void* sret, void** objPtr, int32_t index)",
+    "summary": "Returns the compatible behaviour description string for the given index via BehaviourData.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
   "0x004AB340": {
@@ -10178,6 +10192,13 @@
     "signature": "int fn_004B9400(void* self, void* arg)",
     "summary": "Returns 1 if the EngineData float at +0x44 is \u003e= 1e-6 (false for NaN); throws if the EngineData pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004B9A40": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair\u003e::vfunc_27",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair\u003e",
+    "signature": "extern \"C\" uint32_t __thiscall fn_004B9A40( uint32_t /*self*/, uint32_t out_str, uint32_t* obj_ptr, int32_t index)",
+    "summary": "Returns the listed material interaction name for a MaterialPair at the given index",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
   "0x004B9AC0": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair, \u0026public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, \u0026public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), \u0026public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const\u003e::vfunc_0",
