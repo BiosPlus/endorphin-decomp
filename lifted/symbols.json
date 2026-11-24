@@ -39863,6 +39863,12 @@
     "summary": "12-byte byte-index table indexed by (eax) and used by a jump table dispatch at 0x007B6xxx (mov cl, [eax+0x7B7084]; jmp [ecx*4+0x7B7074]); this is data, not code.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B8A48": {
+    "name": "dataTable_007B8A48",
+    "class": "none",
+    "summary": "24-byte constant table of byte pairs (not executable code): nine {0x00,0x02} pairs followed by {0x01,0x02}, {0x01,0x01}, {0x01,0x02}.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BAE20": {
     "name": "copyDword",
     "signature": "void sub_007BAE20(uint32_t *src, uint32_t *dst)",

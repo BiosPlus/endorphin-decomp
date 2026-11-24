@@ -1,0 +1,13 @@
+{
+  "va": "0x007B8A48",
+  "size": 24,
+  "orig_symbol": "sub_007B8A48",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "dataTable_007B8A48",
+  "class": "none",
+  "summary": "24-byte constant table of byte pairs (not executable code): nine {0x00,0x02} pairs followed by {0x01,0x02}, {0x01,0x01}, {0x01,0x02}.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:39:08Z"
+}
