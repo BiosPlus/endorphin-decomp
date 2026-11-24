@@ -8,6 +8,6 @@
 // Recovered field layout for field_0x00:
 namespace lifted_layout {
 struct field_0x00_Fields {
-    // +0x60  double                   field_0x60  (evidence: 0x006E86E0)
+    // +0x0   void*                    field_0x00  (evidence: 0x006618A0)
 };
 } // namespace lifted_layout

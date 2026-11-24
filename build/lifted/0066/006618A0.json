@@ -1,0 +1,27 @@
+{
+  "va": "0x006618A0",
+  "size": 25,
+  "orig_symbol": "sub_006618A0",
+  "src_path": "src/leaf/tiny_660000.cpp",
+  "lifted_path": "lifted/leaf/tiny_660000.cpp",
+  "name": "sub_006618A0",
+  "signature": "void fn_006618A0(void* self, void* arg1)",
+  "summary": "Forwards arg1 to virtual slot 3 of the object pointed to by self+0, passing self+4 as the first argument (thiscall, ret 4).",
+  "fields": [
+    {
+      "class": "field_0x00",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "field_0x04",
+      "offset": "+0x4",
+      "type": "void field_0x04 (embedded subobject; address only, passed to",
+      "name": "callee)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:51:11Z"
+}

@@ -346,3 +346,28 @@ uint32_t fn_006616F0(void* thisPtr, void* arg) {
     return fn(inner, self + 4, arg);
 }
 } // namespace lift_006616F0
+
+// [0x006618A0] sub_006618A0 (25 bytes)
+namespace lift_006618A0 {
+// @name sub_006618A0
+// @summary Forwards arg1 to virtual slot 3 of the object pointed to by self+0, passing self+4 as the first argument (thiscall, ret 4).
+// @field field_0x00 +0x00 void* field_0x00
+// @field field_0x04 +0x04 void field_0x04 (embedded subobject; address only, passed to callee)
+
+// Abstract view of the callee's vtable. Slot 3 (offset 0x0C on x86) is the
+// only slot used; the first three slots are placeholders so the index matches.
+struct IVtblSlot3 {
+    virtual void slot0() = 0;
+    virtual void slot1() = 0;
+    virtual void slot2() = 0;
+    virtual void slot3(void* subobject, void* arg1) = 0;
+};
+
+void fn_006618A0(void* self, void* arg1) {
+    // self+0 holds a pointer to the forwarding target object.
+    void* target = lift_field<void*>(self, 0x00);
+    // self+4 is passed by address to the target's slot 3.
+    void* subobject = static_cast<uint8_t*>(self) + 0x04;
+    reinterpret_cast<IVtblSlot3*>(target)->slot3(subobject, arg1);
+}
+} // namespace lift_006618A0
