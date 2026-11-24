@@ -751,3 +751,17 @@ void fn_00440990(void* self) {
     }
 }
 } // namespace lift_00440990
+
+// [0x0044CF40]
+namespace lift_0044CF40 {
+// @name sub_0044CF40
+// @summary Returns 1 if the argument is 1 or 3, otherwise 0 (stdcall, one arg, callee pops 4 bytes).
+
+// Original: mov eax,[esp+4]; cmp eax,1; je ret1; cmp eax,3; je ret1; xor eax,eax; ret 4; ret1: mov eax,1; ret 4
+int sub_0044CF40(int arg) {
+    if (arg == 1 || arg == 3) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_0044CF40

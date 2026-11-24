@@ -1,0 +1,13 @@
+{
+  "va": "0x0044CF40",
+  "size": 27,
+  "orig_symbol": "sub_0044CF40",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "sub_0044CF40",
+  "signature": "int sub_0044CF40(int arg)",
+  "summary": "Returns 1 if the argument is 1 or 3, otherwise 0 (stdcall, one arg, callee pops 4 bytes).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:00:42Z"
+}

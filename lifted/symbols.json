@@ -2963,6 +2963,12 @@
     "summary": "Reads this-\u003efield_0x74 and forwards it as a stack argument to ext_00494300, invoked on the subobject at this+0x78 (callee pops its argument).",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044CF40": {
+    "name": "sub_0044CF40",
+    "signature": "int sub_0044CF40(int arg)",
+    "summary": "Returns 1 if the argument is 1 or 3, otherwise 0 (stdcall, one arg, callee pops 4 bytes).",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x0044CF80": {
     "name": "hasField0x74",
     "signature": "uint32_t __thiscall sub_0044CF80(uint32_t self)",
