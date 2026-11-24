@@ -1,0 +1,40 @@
+{
+  "va": "0x0041DDA0",
+  "size": 50,
+  "orig_symbol": "sub_0041DDA0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::resetPtrAndStringMembers",
+  "class": "Unknown",
+  "signature": "void fn_0041DDA0(void* self)",
+  "summary": "Frees the pointer at +0x24 if set, zeroes +0x24/+0x28/+0x2C, then destroys the std::string at +0x04.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "strMember"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "ptrMember"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:31:58Z"
+}

@@ -646,3 +646,37 @@ void __thiscall sub_004152D0(void* self) {
     *reinterpret_cast<uint32_t*>(obj + 0x24) = 0;
 }
 } // namespace lift_004152D0
+
+// [0x0041DDA0] sub_0041DDA0 (50 bytes)
+namespace lift_0041DDA0 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* p);
+// .rdata slot 0x00924FF4 holds the address of the MSVCP80 basic_string destructor.
+extern int mem_00924FF4;
+
+// @name Unknown::resetPtrAndStringMembers
+// @class Unknown
+// @summary Frees the pointer at +0x24 if set, zeroes +0x24/+0x28/+0x2C, then destroys the std::string at +0x04.
+// @field Unknown +0x04 std::string strMember
+// @field Unknown +0x24 void* ptrMember
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x2C uint32_t field_0x2C
+void fn_0041DDA0(void* self) {
+    auto* base = reinterpret_cast<uint8_t*>(self);
+
+    void* ptr = lift_field<void*>(base, 0x24);
+    if (ptr != nullptr) {
+        ext_006A5C5C(ptr);
+    }
+
+    lift_field<void*>(base, 0x24) = nullptr;
+    lift_field<uint32_t>(base, 0x28) = 0;
+    lift_field<uint32_t>(base, 0x2C) = 0;
+
+    // Tail-jump to basic_string::~basic_string on this+0x04 (thiscall).
+    using DtorFn = void (__thiscall*)(void*);
+    auto dtor = reinterpret_cast<DtorFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+    dtor(base + 0x04);
+}
+} // namespace lift_0041DDA0

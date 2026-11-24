@@ -1661,6 +1661,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x1A0 and tail-calls sub_0041DB60.",
     "lifted_path": "lifted/Properties/auto_tiny.cpp"
   },
+  "0x0041DDA0": {
+    "name": "Unknown::resetPtrAndStringMembers",
+    "class": "Unknown",
+    "signature": "void fn_0041DDA0(void* self)",
+    "summary": "Frees the pointer at +0x24 if set, zeroes +0x24/+0x28/+0x2C, then destroys the std::string at +0x04.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041DDE0": {
     "name": "sub_0041DDE0",
     "signature": "DWORD* __thiscall fn_0041DDE0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
