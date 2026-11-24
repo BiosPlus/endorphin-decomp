@@ -405,3 +405,19 @@ int32_t fn_00455C80(void* self, int32_t arg) {
     return 0;
 }
 } // namespace lift_00455C80
+
+// [0x004545A0]
+namespace lift_004545A0 {
+// @name CWnd::IsChild
+// @class CWnd
+// @summary Checks whether the given window is a child window of this window using USER32!IsChild.
+// @field CWnd +0x20 uint32_t m_hWnd
+
+extern uint32_t (__stdcall *mem_009256BC)(uint32_t, uint32_t);
+
+uint32_t __thiscall sub_004545A0(uint32_t this_, uint32_t child) {
+    uint32_t child_hwnd = child ? *reinterpret_cast<uint32_t*>(child + 0x20) : 0;
+    uint32_t parent_hwnd = *reinterpret_cast<uint32_t*>(this_ + 0x20);
+    return mem_009256BC(parent_hwnd, child_hwnd);
+}
+} // namespace lift_004545A0

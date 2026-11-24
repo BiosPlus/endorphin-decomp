@@ -1,0 +1,22 @@
+{
+  "va": "0x004545A0",
+  "size": 39,
+  "orig_symbol": "sub_004545A0",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "CWnd::IsChild",
+  "class": "CWnd",
+  "signature": "uint32_t __thiscall sub_004545A0(uint32_t this_, uint32_t child)",
+  "summary": "Checks whether the given window is a child window of this window using USER32!IsChild.",
+  "fields": [
+    {
+      "class": "CWnd",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "m_hWnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:51:34Z"
+}
