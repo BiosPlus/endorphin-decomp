@@ -8461,3 +8461,28 @@ void fn_004886F0(void* self) {
     lift_field<uint32_t>(self, 0x04) = 0x00AD9E3C;
 }
 } // namespace lift_004886F0
+
+// [0x0046E190]
+namespace lift_0046E190 {
+// @name ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, bool, {public: void __thiscall ImageExporter::setEnabled(bool), 0}>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, bool, {public: void __thiscall ImageExporter::setEnabled(bool), 0}>
+// @summary Initializes a static singleton object if needed and stores its address at offset 0x4 of the output argument.
+// @field unknown +0x04 uint32_t field_0x04
+
+
+extern uint32_t mem_00AD8318;
+extern uint32_t mem_00AD8314;
+
+extern void __thiscall ext_0067A670(void* self);
+
+void __thiscall fn_0046E190(void* self, void* out) {
+    (void)self;
+    if ((mem_00AD8318 & 1u) == 0u) {
+        mem_00AD8318 |= 1u;
+        ext_0067A670(&mem_00AD8314);
+        mem_00AD8314 = 0x0093AAB4u;
+    }
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(out) + 0x4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AD8314));
+}
+} // namespace lift_0046E190
