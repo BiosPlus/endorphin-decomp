@@ -484,3 +484,20 @@ uint32_t fn_005CFE50(void* self) {
     return target(child);
 }
 } // namespace lift_005CFE50
+
+// [0x005C2FF0] sub_005C2FF0 (18 bytes)
+namespace lift_005C2FF0 {
+// Known callee 0x005B68F0: Unknown::ComputeScaledSubObjectValue (takes the sub-object in ecx, returns float).
+extern float ext_005B68F0(void* self);
+
+// @name GetScaledSubObjectValue
+// @summary Returns ComputeScaledSubObjectValue of the pointer at self+0x164, or 0.0f if that pointer is null.
+// @field Unknown +0x164 void* subObject
+float fn_005C2FF0(void* self) {
+    void* sub = lift_field<void*>(self, 0x164);
+    if (sub == nullptr) {
+        return 0.0f;
+    }
+    return ext_005B68F0(sub);
+}
+} // namespace lift_005C2FF0

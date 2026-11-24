@@ -1,0 +1,21 @@
+{
+  "va": "0x005C2FF0",
+  "size": 18,
+  "orig_symbol": "sub_005C2FF0",
+  "src_path": "src/leaf/tiny_5C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5C0000.cpp",
+  "name": "GetScaledSubObjectValue",
+  "signature": "float fn_005C2FF0(void* self)",
+  "summary": "Returns ComputeScaledSubObjectValue of the pointer at self+0x164, or 0.0f if that pointer is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x164",
+      "type": "void*",
+      "name": "subObject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:18:03Z"
+}

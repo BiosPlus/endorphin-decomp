@@ -23679,6 +23679,12 @@
     "summary": "Forwards a 3D point (with w=1.0f) to RenderObjectOwner::vfunc_5 after adjusting this pointer",
     "lifted_path": "lifted/NMData/CollisionModelData.cpp"
   },
+  "0x005C2FF0": {
+    "name": "GetScaledSubObjectValue",
+    "signature": "float fn_005C2FF0(void* self)",
+    "summary": "Returns ComputeScaledSubObjectValue of the pointer at self+0x164, or 0.0f if that pointer is null.",
+    "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
+  },
   "0x005C3010": {
     "name": "NMData::CollisionModelDataBase::vfunc_15",
     "class": "NMData::CollisionModelDataBase",
