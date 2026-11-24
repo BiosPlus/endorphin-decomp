@@ -6283,3 +6283,16 @@ void fn_00532E60(void* self, void* arg) {
 }
 } // namespace lift_00537A00
 } // namespace lift_00532E60
+
+// [0x0053A680] HasConstantTMPtr::vfunc_2 (23 bytes)
+namespace lift_0053A680 {
+// @name HasConstantTMPtr::vfunc_2
+// @class HasConstantTMPtr
+// @summary Copies the 16-float (64-byte, 4x4) matrix pointed to by this->field_0x04 into the caller-supplied destination buffer.
+// @field HasConstantTMPtr +0x04 const float* field_0x04
+void fn_0053A680(void* self, void* dst) {
+    const float* src = *reinterpret_cast<const float* const*>(
+        static_cast<const uint8_t*>(self) + 0x04);
+    std::memcpy(dst, src, 16 * sizeof(float));
+}
+} // namespace lift_0053A680

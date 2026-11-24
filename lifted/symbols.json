@@ -12416,6 +12416,13 @@
     "summary": "If global mem_00AEE8A8 is set, stores ext_00661A80(global, self+0x14 or null) into +0x30; then sets +0x08 = arg3, +0x20 = 0, and +0x04 = 1.",
     "lifted_path": "lifted/Primitives/Plane.cpp"
   },
+  "0x0053A680": {
+    "name": "HasConstantTMPtr::vfunc_2",
+    "class": "HasConstantTMPtr",
+    "signature": "void fn_0053A680(void* self, void* dst)",
+    "summary": "Copies the 16-float (64-byte, 4x4) matrix pointed to by this-\u003efield_0x04 into the caller-supplied destination buffer.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x0053A710": {
     "name": "HasCustomBufferedTMPtr::vfunc_5",
     "class": "HasCustomBufferedTMPtr",

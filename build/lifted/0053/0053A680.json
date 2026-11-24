@@ -1,0 +1,22 @@
+{
+  "va": "0x0053A680",
+  "size": 23,
+  "orig_symbol": "HasConstantTMPtr::vfunc_2",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "HasConstantTMPtr::vfunc_2",
+  "class": "HasConstantTMPtr",
+  "signature": "void fn_0053A680(void* self, void* dst)",
+  "summary": "Copies the 16-float (64-byte, 4x4) matrix pointed to by this-\u003efield_0x04 into the caller-supplied destination buffer.",
+  "fields": [
+    {
+      "class": "HasConstantTMPtr",
+      "offset": "+0x4",
+      "type": "const float*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:32:36Z"
+}
