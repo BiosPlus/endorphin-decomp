@@ -1,0 +1,22 @@
+{
+  "va": "0x007D85D0",
+  "size": 12,
+  "orig_symbol": "sub_007D85D0",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "setField58_007D85D0",
+  "class": "\u003cunknown\u003e",
+  "signature": "void fn_007D85D0(void* self, float value)",
+  "summary": "Stores a float argument into the object's +0x58 float slot.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x58",
+      "type": "float",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:17:46Z"
+}

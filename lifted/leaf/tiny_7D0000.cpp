@@ -272,3 +272,15 @@ void fn_007DFDB0(void* self) {
 }
 } // namespace lift_007D4AE0
 } // namespace lift_007DFDB0
+
+// [0x007D85D0] sub_007D85D0 (12 bytes)
+namespace lift_007D85D0 {
+// @name setField58_007D85D0
+// @class <unknown>
+// @summary Stores a float argument into the object's +0x58 float slot.
+// @field <unknown> +0x58 float field_0x58
+void fn_007D85D0(void* self, float value) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x58, &value, sizeof(float));
+}
+} // namespace lift_007D85D0

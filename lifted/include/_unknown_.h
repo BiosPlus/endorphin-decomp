@@ -16,5 +16,6 @@ struct _unknown__Fields {
     // +0xC   int32_t                  field_0x0C  (evidence: 0x00515B90) // CONFLICT: multiple definitions at +0xC
     // +0x20  DWORD                    field_20  (evidence: 0x007C5A20, 0x007C5A30, 0x007C5AB0, 0x007C5C50, 0x007C5C60, 0x007C76D0, 0x007C8A70, 0x007D5BB0, 0x007D86F0, 0x007DCFF0)
     // +0x30  uint32_t                 field_0x30  (evidence: 0x007D4AE0, 0x007DFDB0)
+    // +0x58  float                    field_0x58  (evidence: 0x007D85D0)
 };
 } // namespace lifted_layout
