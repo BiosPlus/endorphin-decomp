@@ -1,0 +1,46 @@
+{
+  "va": "0x00611E00",
+  "size": 145,
+  "orig_symbol": "NMData::PrimaryTwistAndSwingConstraint::vfunc_9_off_C",
+  "src_path": "src/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_9_off_C",
+  "class": "NMData::PrimaryTwistAndSwingConstraint",
+  "signature": "void callSlot(void* obj, std::size_t slotOffset, std::uint32_t arg)",
+  "summary": "Forwards the stack argument to the base AnimatableTransform::vfunc_9_off_C, then, if the sub-object at +0x4 is set, forwards it to slot 8 of the objects at +0x324, +0x328, +0x320 and +0x32C (slot 9 is also called on +0x320 and +0x32C).",
+  "fields": [
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (sub-object; when null the function returns after the base",
+      "name": "call)"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x320",
+      "type": "void* field_0x320 (object; vtable slots 8 and 9 are called with the",
+      "name": "argument)"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x324",
+      "type": "void* field_0x324 (object; vtable slot 8 is called with the",
+      "name": "argument)"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x328",
+      "type": "void* field_0x328 (object; vtable slot 8 is called with the",
+      "name": "argument)"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x32C",
+      "type": "void* field_0x32c (object; vtable slots 8 and 9 are called with the",
+      "name": "argument)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:36:18Z"
+}

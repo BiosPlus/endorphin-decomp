@@ -39,8 +39,10 @@ void* fn_0061DB80(void* self) {
     void* owner = static_cast<unsigned char*>(self) - 0xC;
     return ext_0061D7C0(mem, owner);
 }
+#include <cstddef>
+#include <cstdint>
 
-// [0x00612E80] NMData::PrimaryTwistAndSwingConstraint::vfunc_59 (45 bytes)
+#include <cstdint>
 // @name NMData::PrimaryTwistAndSwingConstraint::vfunc_59
 // @class NMData::PrimaryTwistAndSwingConstraint
 // @summary Forwards two arguments to the shared helper 0x00612310, using the subobject at self+0x224 when the flag argument is nonzero and self+0x164 otherwise.
@@ -100,3 +102,67 @@ void* fn_0061DBF0(void* self, void* arg1, void* arg2, uint32_t flag) {
     return arg1;
 }
 } // namespace lift_0061DBF0
+
+// [0x00611E00] NMData::PrimaryTwistAndSwingConstraint::vfunc_9_off_C (145 bytes)
+namespace lift_00611E00 {
+// Known callee 0x00528C30: AnimatableTransform::vfunc_9_off_C (If the sub-object at +0x4 is non-null, forwards the call (same stack argument) to its vtable slot 8; otherwise returns 0.)
+extern std::uint32_t ext_00528C30(void* self, std::uint32_t arg0);
+
+namespace {
+
+// Thiscall virtual slot taking one stack argument (callee pops 4) and returning nothing.
+using SlotFn = void (*)(void* self, std::uint32_t arg);
+
+// Calls the virtual slot at byte offset `slotOffset` (multiple of 4) of `obj` with `arg`.
+void callSlot(void* obj, std::size_t slotOffset, std::uint32_t arg) {
+    void** vtbl = *static_cast<void***>(obj);
+    auto fn = reinterpret_cast<SlotFn>(vtbl[slotOffset / sizeof(void*)]);
+    fn(obj, arg);
+}
+
+// Returns the object pointer stored at `offset` of `base`, or nullptr.
+void* objectAt(void* base, std::ptrdiff_t offset) {
+    return lift_field<void*>(base, offset);
+}
+
+}  // namespace
+
+// @name NMData::PrimaryTwistAndSwingConstraint::vfunc_9_off_C
+// @class NMData::PrimaryTwistAndSwingConstraint
+// @summary Forwards the stack argument to the base AnimatableTransform::vfunc_9_off_C, then, if the sub-object at +0x4 is set, forwards it to slot 8 of the objects at +0x324, +0x328, +0x320 and +0x32C (slot 9 is also called on +0x320 and +0x32C).
+// @field NMData::PrimaryTwistAndSwingConstraint +0x04 void* field_0x04 (sub-object; when null the function returns after the base call)
+// @field NMData::PrimaryTwistAndSwingConstraint +0x320 void* field_0x320 (object; vtable slots 8 and 9 are called with the argument)
+// @field NMData::PrimaryTwistAndSwingConstraint +0x324 void* field_0x324 (object; vtable slot 8 is called with the argument)
+// @field NMData::PrimaryTwistAndSwingConstraint +0x328 void* field_0x328 (object; vtable slot 8 is called with the argument)
+// @field NMData::PrimaryTwistAndSwingConstraint +0x32C void* field_0x32c (object; vtable slots 8 and 9 are called with the argument)
+
+void __thiscall fn_00611E00(void* self, std::uint32_t arg) {
+    ext_00528C30(self, arg);
+
+    if (objectAt(self, 0x4) == nullptr) {
+        return;
+    }
+
+    if (void* o = objectAt(self, 0x324)) {
+        callSlot(o, 0x20, arg);
+    }
+
+    if (void* o = objectAt(self, 0x328)) {
+        callSlot(o, 0x20, arg);
+    }
+
+    if (void* o = objectAt(self, 0x320)) {
+        callSlot(o, 0x20, arg);
+        if (void* o2 = objectAt(self, 0x320)) {
+            callSlot(o2, 0x24, arg);
+        }
+    }
+
+    if (void* o = objectAt(self, 0x32C)) {
+        callSlot(o, 0x20, arg);
+        if (void* o2 = objectAt(self, 0x32C)) {
+            callSlot(o2, 0x24, arg);
+        }
+    }
+}
+} // namespace lift_00611E00

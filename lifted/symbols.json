@@ -24925,6 +24925,13 @@
     "summary": "Stores a byte at this+0x328+index, calls vtable slot 79, then if ext_00468180() is nonzero tail-calls ext_00469530(result, 5, 0).",
     "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
   },
+  "0x00611E00": {
+    "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_9_off_C",
+    "class": "NMData::PrimaryTwistAndSwingConstraint",
+    "signature": "void callSlot(void* obj, std::size_t slotOffset, std::uint32_t arg)",
+    "summary": "Forwards the stack argument to the base AnimatableTransform::vfunc_9_off_C, then, if the sub-object at +0x4 is set, forwards it to slot 8 of the objects at +0x324, +0x328, +0x320 and +0x32C (slot 9 is also called on +0x320 and +0x32C).",
+    "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
+  },
   "0x006120D0": {
     "name": "NMData::HingeLimit::scalarDeletingDestructor",
     "class": "NMData::HingeLimit",
