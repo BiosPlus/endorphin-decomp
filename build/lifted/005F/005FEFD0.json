@@ -1,0 +1,28 @@
+{
+  "va": "0x005FEFD0",
+  "size": 45,
+  "orig_symbol": "sub_005FEFD0",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "fillRangeFromElement",
+  "class": "(none)",
+  "signature": "void fn_005FEFD0(LiftElem005FEFD0* begin, LiftElem005FEFD0* end, const LiftElem005FEFD0* src)",
+  "summary": "Assigns every element in [begin, end) from *src (string at +0x00 and dword at +0x1C); no-op when begin == end.",
+  "fields": [
+    {
+      "class": "LiftElem005FEFD0",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "LiftElem005FEFD0",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:07:07Z"
+}

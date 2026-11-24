@@ -23330,6 +23330,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005FEFD0": {
+    "name": "fillRangeFromElement",
+    "class": "(none)",
+    "signature": "void fn_005FEFD0(LiftElem005FEFD0* begin, LiftElem005FEFD0* end, const LiftElem005FEFD0* src)",
+    "summary": "Assigns every element in [begin, end) from *src (string at +0x00 and dword at +0x1C); no-op when begin == end.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005FF0E0": {
     "name": "CompoundSensor::vfunc_14",
     "class": "CompoundSensor",
