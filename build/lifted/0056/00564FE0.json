@@ -1,0 +1,21 @@
+{
+  "va": "0x00564FE0",
+  "size": 39,
+  "orig_symbol": "sub_00564FE0",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "setSceneFileOriginator",
+  "signature": "extern \"C\" void __thiscall fn_00564FE0(void* self)",
+  "summary": "Sets the originator on the scene's CSLFileInfo from a global std::string if FileInfo is non-null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x494",
+      "type": "void*",
+      "name": "scene"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:53:34Z"
+}
