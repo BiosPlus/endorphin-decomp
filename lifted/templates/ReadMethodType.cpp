@@ -40555,3 +40555,25 @@ int fn_0066FA70(void* self) {
     return (static_cast<double>(len) >= 1e-6) ? 1 : 0;
 }
 } // namespace lift_0066FA70
+
+// [0x00512A00] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_1 (109 bytes)
+namespace lift_00512A00 {
+extern void* ext_00511960(void* out, void* src);
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_1
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>
+// @summary Reads the source object's typical mutation rate string via ext_00511960 and returns it parsed as a float (atof).
+// (No direct field offsets are accessed; the source object is opaque and handled entirely through ext_00511960.)
+float fn_00512A00(void* arg) {
+    // arg points at a holder whose first word is the source object pointer.
+    void* src = *reinterpret_cast<void**>(arg);
+
+    // Temporary std::string storage filled by the helper.
+    alignas(std::string) unsigned char storage[sizeof(std::string)];
+    std::string* text = static_cast<std::string*>(ext_00511960(storage, src));
+
+    float rate = static_cast<float>(std::atof(text->c_str()));
+    text->~basic_string();
+    return rate;
+}
+} // namespace lift_00512A00
