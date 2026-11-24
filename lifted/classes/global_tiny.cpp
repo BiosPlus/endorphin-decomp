@@ -6002,3 +6002,24 @@ void fn_00535650(void* self, float value) {
     lift_field<float>(b, 0xB8) = value;
 }
 } // namespace lift_00535650
+
+// [0x00535670] OglRenderer::vfunc_37 (19 bytes)
+namespace lift_00535670 {
+// @name OglRenderer::vfunc_37
+// @class OglRenderer
+// @summary Stores the float argument into the float at offset +0xBC of the object referenced by this->field_0x38->+0x64.
+// @field OglRenderer +0x38 void* field_0x38
+void fn_00535670(void* self, float value) {
+    // Load this->field_0x38 (the object pointer at OglRenderer+0x38).
+    unsigned char* selfBytes = static_cast<unsigned char*>(self);
+    unsigned char* inner = nullptr;
+    std::memcpy(&inner, selfBytes + 0x38, sizeof(inner));
+
+    // Load the pointer at inner+0x64.
+    unsigned char* target = nullptr;
+    std::memcpy(&target, inner + 0x64, sizeof(target));
+
+    // Store the float argument at target+0xBC.
+    std::memcpy(target + 0xBC, &value, sizeof(value));
+}
+} // namespace lift_00535670

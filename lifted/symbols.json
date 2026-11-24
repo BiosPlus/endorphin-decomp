@@ -11785,6 +11785,13 @@
     "summary": "Stores a float argument into the target object's +0xB8 slot, reached via this-\u003e+0x38-\u003e+0x64.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00535670": {
+    "name": "OglRenderer::vfunc_37",
+    "class": "OglRenderer",
+    "signature": "void fn_00535670(void* self, float value)",
+    "summary": "Stores the float argument into the float at offset +0xBC of the object referenced by this-\u003efield_0x38-\u003e+0x64.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x005356B0": {
     "name": "OglRenderer::vfunc_39",
     "class": "OglRenderer",
