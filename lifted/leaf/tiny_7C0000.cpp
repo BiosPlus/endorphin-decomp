@@ -553,3 +553,291 @@ void fn_007C8A70(void* self, DWORD value) {
 }
 } // namespace lift_007D5BB0
 } // namespace lift_007C8A70
+
+// [0x007C5A40] sub_007C5A40 (15 bytes)
+namespace lift_007C5A40 {
+// @name sub_007C5A40
+// @summary Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).
+namespace lift_007D85D0 {
+// @name setField58_007D85D0
+// @class <unknown>
+// @summary Stores a float argument into the object's +0x58 float slot.
+// @field <unknown> +0x58 float field_0x58
+void fn_007C5A40(void* self, float value) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x1A8, &value, sizeof(float));
+}
+} // namespace lift_007D85D0
+} // namespace lift_007C5A40
+
+// [0x007C5AC0] sub_007C5AC0 (15 bytes)
+namespace lift_007C5AC0 {
+// @name sub_007C5AC0
+// @summary Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).
+namespace lift_007D85D0 {
+// @name setField58_007D85D0
+// @class <unknown>
+// @summary Stores a float argument into the object's +0x58 float slot.
+// @field <unknown> +0x58 float field_0x58
+void fn_007C5AC0(void* self, float value) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x1BC, &value, sizeof(float));
+}
+} // namespace lift_007D85D0
+} // namespace lift_007C5AC0
+
+// [0x007C5B30] sub_007C5B30 (15 bytes)
+namespace lift_007C5B30 {
+// @name sub_007C5B30
+// @summary Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).
+namespace lift_007D85D0 {
+// @name setField58_007D85D0
+// @class <unknown>
+// @summary Stores a float argument into the object's +0x58 float slot.
+// @field <unknown> +0x58 float field_0x58
+void fn_007C5B30(void* self, float value) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x1C0, &value, sizeof(float));
+}
+} // namespace lift_007D85D0
+} // namespace lift_007C5B30
+
+// [0x007C5B40] sub_007C5B40 (15 bytes)
+namespace lift_007C5B40 {
+// @name sub_007C5B40
+// @summary Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).
+namespace lift_007D85D0 {
+// @name setField58_007D85D0
+// @class <unknown>
+// @summary Stores a float argument into the object's +0x58 float slot.
+// @field <unknown> +0x58 float field_0x58
+void fn_007C5B40(void* self, float value) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x1DC, &value, sizeof(float));
+}
+} // namespace lift_007D85D0
+} // namespace lift_007C5B40
+
+// [0x007C5B50] sub_007C5B50 (15 bytes)
+namespace lift_007C5B50 {
+// @name sub_007C5B50
+// @summary Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).
+namespace lift_007D85D0 {
+// @name setField58_007D85D0
+// @class <unknown>
+// @summary Stores a float argument into the object's +0x58 float slot.
+// @field <unknown> +0x58 float field_0x58
+void fn_007C5B50(void* self, float value) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x1C4, &value, sizeof(float));
+}
+} // namespace lift_007D85D0
+} // namespace lift_007C5B50
+
+// [0x007C5B60] sub_007C5B60 (15 bytes)
+namespace lift_007C5B60 {
+// @name sub_007C5B60
+// @summary Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).
+namespace lift_007D85D0 {
+// @name setField58_007D85D0
+// @class <unknown>
+// @summary Stores a float argument into the object's +0x58 float slot.
+// @field <unknown> +0x58 float field_0x58
+void fn_007C5B60(void* self, float value) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x1E0, &value, sizeof(float));
+}
+} // namespace lift_007D85D0
+} // namespace lift_007C5B60
+
+// [0x007C5C70] sub_007C5C70 (15 bytes)
+namespace lift_007C5C70 {
+// @name sub_007C5C70
+// @summary Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).
+namespace lift_007D85D0 {
+// @name setField58_007D85D0
+// @class <unknown>
+// @summary Stores a float argument into the object's +0x58 float slot.
+// @field <unknown> +0x58 float field_0x58
+void fn_007C5C70(void* self, float value) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x1E8, &value, sizeof(float));
+}
+} // namespace lift_007D85D0
+} // namespace lift_007C5C70
+
+// [0x007C5C80] sub_007C5C80 (15 bytes)
+namespace lift_007C5C80 {
+// @name sub_007C5C80
+// @summary Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).
+namespace lift_007D85D0 {
+// @name setField58_007D85D0
+// @class <unknown>
+// @summary Stores a float argument into the object's +0x58 float slot.
+// @field <unknown> +0x58 float field_0x58
+void fn_007C5C80(void* self, float value) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x1F8, &value, sizeof(float));
+}
+} // namespace lift_007D85D0
+} // namespace lift_007C5C80
+
+// [0x007C5C90] sub_007C5C90 (15 bytes)
+namespace lift_007C5C90 {
+// @name sub_007C5C90
+// @summary Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).
+namespace lift_007D85D0 {
+// @name setField58_007D85D0
+// @class <unknown>
+// @summary Stores a float argument into the object's +0x58 float slot.
+// @field <unknown> +0x58 float field_0x58
+void fn_007C5C90(void* self, float value) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x204, &value, sizeof(float));
+}
+} // namespace lift_007D85D0
+} // namespace lift_007C5C90
+
+// [0x007C5CA0] sub_007C5CA0 (15 bytes)
+namespace lift_007C5CA0 {
+// @name sub_007C5CA0
+// @summary Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).
+namespace lift_007D85D0 {
+// @name setField58_007D85D0
+// @class <unknown>
+// @summary Stores a float argument into the object's +0x58 float slot.
+// @field <unknown> +0x58 float field_0x58
+void fn_007C5CA0(void* self, float value) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x1EC, &value, sizeof(float));
+}
+} // namespace lift_007D85D0
+} // namespace lift_007C5CA0
+
+// [0x007C5CB0] sub_007C5CB0 (15 bytes)
+namespace lift_007C5CB0 {
+// @name sub_007C5CB0
+// @summary Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).
+namespace lift_007D85D0 {
+// @name setField58_007D85D0
+// @class <unknown>
+// @summary Stores a float argument into the object's +0x58 float slot.
+// @field <unknown> +0x58 float field_0x58
+void fn_007C5CB0(void* self, float value) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x1FC, &value, sizeof(float));
+}
+} // namespace lift_007D85D0
+} // namespace lift_007C5CB0
+
+// [0x007C5CC0] sub_007C5CC0 (15 bytes)
+namespace lift_007C5CC0 {
+// @name sub_007C5CC0
+// @summary Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).
+namespace lift_007D85D0 {
+// @name setField58_007D85D0
+// @class <unknown>
+// @summary Stores a float argument into the object's +0x58 float slot.
+// @field <unknown> +0x58 float field_0x58
+void fn_007C5CC0(void* self, float value) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x208, &value, sizeof(float));
+}
+} // namespace lift_007D85D0
+} // namespace lift_007C5CC0
+
+// [0x007C5CD0] sub_007C5CD0 (15 bytes)
+namespace lift_007C5CD0 {
+// @name sub_007C5CD0
+// @summary Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).
+namespace lift_007D85D0 {
+// @name setField58_007D85D0
+// @class <unknown>
+// @summary Stores a float argument into the object's +0x58 float slot.
+// @field <unknown> +0x58 float field_0x58
+void fn_007C5CD0(void* self, float value) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x1F0, &value, sizeof(float));
+}
+} // namespace lift_007D85D0
+} // namespace lift_007C5CD0
+
+// [0x007C5CE0] sub_007C5CE0 (15 bytes)
+namespace lift_007C5CE0 {
+// @name sub_007C5CE0
+// @summary Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).
+namespace lift_007D85D0 {
+// @name setField58_007D85D0
+// @class <unknown>
+// @summary Stores a float argument into the object's +0x58 float slot.
+// @field <unknown> +0x58 float field_0x58
+void fn_007C5CE0(void* self, float value) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x200, &value, sizeof(float));
+}
+} // namespace lift_007D85D0
+} // namespace lift_007C5CE0
+
+// [0x007C5CF0] sub_007C5CF0 (15 bytes)
+namespace lift_007C5CF0 {
+// @name sub_007C5CF0
+// @summary Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).
+namespace lift_007D85D0 {
+// @name setField58_007D85D0
+// @class <unknown>
+// @summary Stores a float argument into the object's +0x58 float slot.
+// @field <unknown> +0x58 float field_0x58
+void fn_007C5CF0(void* self, float value) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x20C, &value, sizeof(float));
+}
+} // namespace lift_007D85D0
+} // namespace lift_007C5CF0
+
+// [0x007C6310] sub_007C6310 (15 bytes)
+namespace lift_007C6310 {
+// @name sub_007C6310
+// @summary Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).
+namespace lift_007D85D0 {
+// @name setField58_007D85D0
+// @class <unknown>
+// @summary Stores a float argument into the object's +0x58 float slot.
+// @field <unknown> +0x58 float field_0x58
+void fn_007C6310(void* self, float value) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x1CC, &value, sizeof(float));
+}
+} // namespace lift_007D85D0
+} // namespace lift_007C6310
+
+// [0x007C6320] sub_007C6320 (15 bytes)
+namespace lift_007C6320 {
+// @name sub_007C6320
+// @summary Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).
+namespace lift_007D85D0 {
+// @name setField58_007D85D0
+// @class <unknown>
+// @summary Stores a float argument into the object's +0x58 float slot.
+// @field <unknown> +0x58 float field_0x58
+void fn_007C6320(void* self, float value) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x1D0, &value, sizeof(float));
+}
+} // namespace lift_007D85D0
+} // namespace lift_007C6320
+
+// [0x007C76A0] sub_007C76A0 (15 bytes)
+namespace lift_007C76A0 {
+// @name sub_007C76A0
+// @summary Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).
+namespace lift_007D85D0 {
+// @name setField58_007D85D0
+// @class <unknown>
+// @summary Stores a float argument into the object's +0x58 float slot.
+// @field <unknown> +0x58 float field_0x58
+void fn_007C76A0(void* self, float value) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x264, &value, sizeof(float));
+}
+} // namespace lift_007D85D0
+} // namespace lift_007C76A0

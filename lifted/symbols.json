@@ -35375,11 +35375,53 @@
     "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C5A40": {
+    "name": "sub_007C5A40",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5A40(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C5AB0": {
     "name": "sub_007C5AB0",
     "class": "\u003cunknown\u003e",
     "signature": "void fn_007C5AB0(void* self, DWORD value)",
     "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5AC0": {
+    "name": "sub_007C5AC0",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5AC0(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5B30": {
+    "name": "sub_007C5B30",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5B30(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5B40": {
+    "name": "sub_007C5B40",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5B40(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5B50": {
+    "name": "sub_007C5B50",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5B50(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5B60": {
+    "name": "sub_007C5B60",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5B60(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
   "0x007C5C50": {
@@ -35394,6 +35436,69 @@
     "class": "\u003cunknown\u003e",
     "signature": "void fn_007C5C60(void* self, DWORD value)",
     "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5C70": {
+    "name": "sub_007C5C70",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5C70(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5C80": {
+    "name": "sub_007C5C80",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5C80(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5C90": {
+    "name": "sub_007C5C90",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5C90(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5CA0": {
+    "name": "sub_007C5CA0",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5CA0(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5CB0": {
+    "name": "sub_007C5CB0",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5CB0(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5CC0": {
+    "name": "sub_007C5CC0",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5CC0(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5CD0": {
+    "name": "sub_007C5CD0",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5CD0(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5CE0": {
+    "name": "sub_007C5CE0",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5CE0(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5CF0": {
+    "name": "sub_007C5CF0",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C5CF0(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
   "0x007C5F80": {
@@ -35430,6 +35535,20 @@
     "name": "getField_0x1D0",
     "signature": "float __cdecl sub_007C6120(uintptr_t arg0)",
     "summary": "Returns the float field at offset 0x1D0 of the given object.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C6310": {
+    "name": "sub_007C6310",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C6310(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C6320": {
+    "name": "sub_007C6320",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C6320(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
   "0x007C6C10": {
@@ -35517,6 +35636,13 @@
     "name": "getField_0x214",
     "signature": "float sub_007C7690(uintptr_t a1)",
     "summary": "Returns the float field at offset 0x214 of the given object.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C76A0": {
+    "name": "sub_007C76A0",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007C76A0(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
   "0x007C76D0": {

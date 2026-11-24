@@ -1,0 +1,22 @@
+{
+  "va": "0x007C5B60",
+  "size": 15,
+  "orig_symbol": "sub_007C5B60",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "sub_007C5B60",
+  "class": "\u003cunknown\u003e",
+  "signature": "void fn_007C5B60(void* self, float value)",
+  "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x58",
+      "type": "float",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:18:33Z"
+}
