@@ -31013,6 +31013,12 @@
     "summary": "Getter returning int32_t field at offset +0x34.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006CA080": {
+    "name": "ClearGlobalDwordPair",
+    "signature": "void ClearGlobalDwordPair()",
+    "summary": "Zeroes two adjacent global 32-bit values at 0x00B5D760 and 0x00B5D764.",
+    "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
+  },
   "0x006CA230": {
     "name": "sub_006CA230",
     "signature": "extern \"C\" void* __fastcall fn_006CA230(void* self, int edx_unused, unsigned int flags)",

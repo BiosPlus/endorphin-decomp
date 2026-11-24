@@ -22,6 +22,7 @@ extern "C" void __fastcall ext_006C1DD0(void* self);
 extern "C" void __fastcall ext_006D80A0(void* self);
 extern "C" void ext_006E7460(void);
 extern "C" void __fastcall ext_006CA250(void* self);
+#include <cstdint>
 
 // [0x006C03D0] sub_006C03D0 (6 bytes)
 // @name sub_006C03D0
@@ -1240,3 +1241,18 @@ void __thiscall sub_006C2070(void* self) {
     fn(obj);
 }
 } // namespace lift_006C2070
+
+// [0x006CA080]
+namespace lift_006CA080 {
+// @name ClearGlobalDwordPair
+// @summary Zeroes two adjacent global 32-bit values at 0x00B5D760 and 0x00B5D764.
+
+extern uint32_t mem_00B5D760;
+extern uint32_t mem_00B5D764;
+
+void ClearGlobalDwordPair() {
+    uint32_t zero = 0;
+    mem_00B5D760 = zero;
+    mem_00B5D764 = zero;
+}
+} // namespace lift_006CA080
