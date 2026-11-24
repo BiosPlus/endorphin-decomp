@@ -166,7 +166,7 @@ namespace lift_00481BB0 {
 // @field <unknown> +0x10 uint32_t field_0x10
 
 // Callee-cleans one DWORD argument (ret 4).
-__declspec(noinline) void* __thiscall fn_00481BB0(void* self, uint32_t value) {
+void* __thiscall fn_00481BB0(void* self, uint32_t value) {
     lift_field<uint32_t>(self, 0x00) = value;
     lift_field<uint32_t>(self, 0x08) = 0;
     lift_field<uint32_t>(self, 0x0C) = 0;
