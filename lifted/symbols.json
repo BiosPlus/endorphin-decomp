@@ -35206,6 +35206,13 @@
     "summary": "Sends Windows message 0x41A with wParam=0 and lParam=arg0 to the control's window handle.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006A88A0": {
+    "name": "sub_006A88A0",
+    "class": "(none)",
+    "signature": "uint32_t sub_006A88A0(void* self)",
+    "summary": "Calls ext_006A7C10 once; if nonzero, repeatedly calls ext_006A7C20 with each returned value (passing this) until it returns zero, and returns the number of successful iterations.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006A9340": {
     "name": "Unknown::ForwardField0xA4AndArg",
     "class": "Unknown",

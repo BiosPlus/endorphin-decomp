@@ -148,3 +148,25 @@ int sub_006A7A90() {
     return 4;
 }
 } // namespace lift_006A7A90
+
+// [0x006A88A0]
+namespace lift_006A88A0 {
+// @name sub_006A88A0
+// @class (none)
+// @summary Calls ext_006A7C10 once; if nonzero, repeatedly calls ext_006A7C20 with each returned value (passing this) until it returns zero, and returns the number of successful iterations.
+
+extern uint32_t ext_006A7C10(void* self);
+extern uint32_t ext_006A7C20(void* self, uint32_t arg);
+
+uint32_t sub_006A88A0(void* self) {
+    uint32_t count = 0;
+    uint32_t value = ext_006A7C10(self);
+    if (value != 0) {
+        do {
+            count += 1;
+            value = ext_006A7C20(self, value);
+        } while (value != 0);
+    }
+    return count;
+}
+} // namespace lift_006A88A0
