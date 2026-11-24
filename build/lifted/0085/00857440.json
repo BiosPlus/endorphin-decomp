@@ -1,0 +1,22 @@
+{
+  "va": "0x00857440",
+  "size": 48,
+  "orig_symbol": "sub_00857440",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "dispatchViaGlobalSlot18",
+  "class": "// @summary If the global object pointer at mem_00AB86EC is non-null, calls its slot at +0x18 as a cdecl (a1, a2, a3) function and returns the result; otherwise returns -1.",
+  "signature": "int fn_00857440(int a1, int a2, int a3)",
+  "summary": "If the global object pointer at mem_00AB86EC is non-null, calls its slot at +0x18 as a cdecl (a1, a2, a3) function and returns the result; otherwise returns -1.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x18",
+      "type": "DWORD",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:28:28Z"
+}

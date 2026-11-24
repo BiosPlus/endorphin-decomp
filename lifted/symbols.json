@@ -50575,6 +50575,13 @@
     "summary": "Calls the function pointer at +0x08 of the global object mem_00AB86EC with two cdecl args; returns -1 if the global is null.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x00857440": {
+    "name": "dispatchViaGlobalSlot18",
+    "class": "// @summary If the global object pointer at mem_00AB86EC is non-null, calls its slot at +0x18 as a cdecl (a1, a2, a3) function and returns the result; otherwise returns -1.",
+    "signature": "int fn_00857440(int a1, int a2, int a3)",
+    "summary": "If the global object pointer at mem_00AB86EC is non-null, calls its slot at +0x18 as a cdecl (a1, a2, a3) function and returns the result; otherwise returns -1.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00857470": {
     "name": "dispatchThroughGlobalObjectSlot0C",
     "signature": "void fn_00857470(uint32_t arg)",

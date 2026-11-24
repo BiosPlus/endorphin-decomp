@@ -374,3 +374,23 @@ void* fn_00859780(void* dst, const void* src, size_t n) {
     return dst;
 }
 } // namespace lift_00859780
+
+// [0x00857440] sub_00857440 (48 bytes)
+namespace lift_00857440 {
+extern uint32_t mem_00AB86EC;
+
+// @name dispatchViaGlobalSlot18
+// @class
+// @summary If the global object pointer at mem_00AB86EC is non-null, calls its slot at +0x18 as a cdecl (a1, a2, a3) function and returns the result; otherwise returns -1.
+// @field unknown +0x18 DWORD field_0x18
+int fn_00857440(int a1, int a2, int a3) {
+    uint32_t obj = mem_00AB86EC;
+    if (obj == 0) {
+        return -1;
+    }
+    using SlotFn = int(__cdecl*)(int, int, int);
+    uint8_t* slot = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(obj)) + 0x18;
+    SlotFn fn = *reinterpret_cast<SlotFn*>(slot);
+    return fn(a1, a2, a3);
+}
+} // namespace lift_00857440
