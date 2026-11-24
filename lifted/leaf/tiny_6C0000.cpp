@@ -1351,3 +1351,16 @@ uint32_t fn_006C9D20(void* self) {
     return value & 0x03000000u;
 }
 } // namespace lift_006C9D20
+
+// [0x006C9D60] sub_006C9D60 (16 bytes)
+namespace lift_006C9D60 {
+// @name Unknown::GetMaskedFlags30
+// @class Unknown
+// @summary Returns the bits 28-29 (mask 0x30000000) of the dword at this+0x10.
+// @field Unknown +0x10 uint32_t flags
+uint32_t fn_006C9D60(void* self) {
+    const auto* base = static_cast<const uint8_t*>(self);
+    uint32_t flags = *reinterpret_cast<const uint32_t*>(base + 0x10);
+    return flags & 0x30000000u;
+}
+} // namespace lift_006C9D60

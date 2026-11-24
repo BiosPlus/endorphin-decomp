@@ -1,0 +1,22 @@
+{
+  "va": "0x006C9D60",
+  "size": 16,
+  "orig_symbol": "sub_006C9D60",
+  "src_path": "src/leaf/tiny_6C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6C0000.cpp",
+  "name": "Unknown::GetMaskedFlags30",
+  "class": "Unknown",
+  "signature": "uint32_t fn_006C9D60(void* self)",
+  "summary": "Returns the bits 28-29 (mask 0x30000000) of the dword at this+0x10.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "flags"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:38:26Z"
+}
