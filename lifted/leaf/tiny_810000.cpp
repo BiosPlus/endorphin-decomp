@@ -83,3 +83,19 @@ uint32_t fn_008103F0(uint8_t* self) {
     return (flags >> 11) & 1u;
 }
 } // namespace lift_008103F0
+
+// [0x00810440] sub_00810440 (17 bytes)
+namespace lift_00810440 {
+// @name getNestedFlagBit10
+// @class Unknown
+// @summary Returns bit 10 of the DWORD at +0x04 of the object pointed to by +0x04 of the argument.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x04 DWORD field_0x04
+DWORD fn_00810440(void* self) {
+    auto* outer = *reinterpret_cast<BYTE* const*>(static_cast<BYTE*>(self) + 0x04);
+    auto* inner = *reinterpret_cast<BYTE* const*>(outer + 0x04);
+    DWORD flags = *reinterpret_cast<const DWORD*>(inner + 0x04);
+    return (flags >> 10) & 1;
+}
+} // namespace lift_00810440
