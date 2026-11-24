@@ -1,0 +1,14 @@
+{
+  "va": "0x0041CA70",
+  "size": 21,
+  "orig_symbol": "Properties::GWCPropertiesControlDriver::vfunc_8",
+  "src_path": "src/Properties/GWCPropertiesControlDriver.cpp",
+  "lifted_path": "lifted/Properties/GWCPropertiesControlDriver.cpp",
+  "name": "Properties::GWCPropertiesControlDriver::vfunc_8",
+  "class": "Properties::GWCPropertiesControlDriver",
+  "signature": "uint32_t fn_0041CA70(void* self)",
+  "summary": "Returns 0 for a null argument; otherwise forwards the argument to ext_006AD180 and returns its result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:11:26Z"
+}

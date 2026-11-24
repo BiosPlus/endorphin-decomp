@@ -39,3 +39,20 @@ void __thiscall fn_0041DED0(uint8_t* self) {
 }
 } // namespace lift_0051BF10
 } // namespace lift_0041DED0
+
+// [0x0041CA70] Properties::GWCPropertiesControlDriver::vfunc_8 (21 bytes)
+namespace lift_0041CA70 {
+// Known callee 0x006AD180: getDerefField0x4 (Reads a pointer at offset 0x4 and returns the dereferenced 32-bit value.)
+extern uint32_t ext_006AD180(void* self);
+
+// @name Properties::GWCPropertiesControlDriver::vfunc_8
+// @class Properties::GWCPropertiesControlDriver
+// @summary Returns 0 for a null argument; otherwise forwards the argument to ext_006AD180 and returns its result.
+// (no fields accessed by this function; +0x30 begin / +0x34 end are not touched)
+uint32_t fn_0041CA70(void* self) {
+    if (self == nullptr) {
+        return 0;
+    }
+    return ext_006AD180(self);
+}
+} // namespace lift_0041CA70
