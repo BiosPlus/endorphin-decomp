@@ -36717,6 +36717,12 @@
     "summary": "Stores the constant 1 as a 32-bit value at offset 0x30 of the object pointed to by the first argument.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D4B10": {
+    "name": "VtableSlot0Call_Arg18",
+    "signature": "int sub_007D4B10(int /*unused*/, void* obj)",
+    "summary": "Calls virtual slot 0 of the object passed as the second argument with 0x18 and returns its result.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D5AE0": {
     "name": "derefDword",
     "signature": "uint32_t sub_007D5AE0(uint32_t ptr)",

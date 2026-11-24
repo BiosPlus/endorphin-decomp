@@ -284,3 +284,18 @@ void fn_007D85D0(void* self, float value) {
     std::memcpy(base + 0x58, &value, sizeof(float));
 }
 } // namespace lift_007D85D0
+
+// [0x007D4B10]
+namespace lift_007D4B10 {
+// @name VtableSlot0Call_Arg18
+// @summary Calls virtual slot 0 of the object passed as the second argument with 0x18 and returns its result.
+// @field Unknown +0x00 void* vtbl
+
+// cdecl; first parameter is unused by the body.
+int sub_007D4B10(int /*unused*/, void* obj) {
+    using Slot0Fn = int (*)(int);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    Slot0Fn fn = reinterpret_cast<Slot0Fn>(vtbl[0]);
+    return fn(0x18);
+}
+} // namespace lift_007D4B10

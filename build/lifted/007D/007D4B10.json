@@ -1,0 +1,21 @@
+{
+  "va": "0x007D4B10",
+  "size": 14,
+  "orig_symbol": "sub_007D4B10",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "VtableSlot0Call_Arg18",
+  "signature": "int sub_007D4B10(int /*unused*/, void* obj)",
+  "summary": "Calls virtual slot 0 of the object passed as the second argument with 0x18 and returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtbl"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:28:02Z"
+}
