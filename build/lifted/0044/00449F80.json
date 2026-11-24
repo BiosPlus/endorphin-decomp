@@ -1,0 +1,28 @@
+{
+  "va": "0x00449F80",
+  "size": 43,
+  "orig_symbol": "ReloadCharacterDialog::vfunc_63",
+  "src_path": "src/classes/ReloadCharacterDialog.cpp",
+  "lifted_path": "lifted/classes/ReloadCharacterDialog.cpp",
+  "name": "ReloadCharacterDialog::DoDataExchange",
+  "class": "ReloadCharacterDialog",
+  "signature": "void __thiscall fn_00449F80(void* self, uint32_t pDX)",
+  "summary": "Exchanges dialog data for ReloadCharacterDialog controls at +0x74 and +0x78.",
+  "fields": [
+    {
+      "class": "ReloadCharacterDialog",
+      "offset": "+0x74",
+      "type": "uint32_t",
+      "name": "field_0x74"
+    },
+    {
+      "class": "ReloadCharacterDialog",
+      "offset": "+0x78",
+      "type": "uint32_t",
+      "name": "field_0x78"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:05:00Z"
+}

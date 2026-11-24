@@ -3348,6 +3348,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00449D00 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00449F80": {
+    "name": "ReloadCharacterDialog::DoDataExchange",
+    "class": "ReloadCharacterDialog",
+    "signature": "void __thiscall fn_00449F80(void* self, uint32_t pDX)",
+    "summary": "Exchanges dialog data for ReloadCharacterDialog controls at +0x74 and +0x78.",
+    "lifted_path": "lifted/classes/ReloadCharacterDialog.cpp"
+  },
   "0x00449FB0": {
     "name": "GetConstantAddress_00449FB0",
     "signature": "extern \"C\" void* __cdecl fn_00449FB0()",
@@ -4589,6 +4596,12 @@
     "signature": "extern \"C\" void* __fastcall fn_0045BC10(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0045B6B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x0045C090": {
+    "name": "WalkAndNotifyItems",
+    "signature": "extern \"C\" void __thiscall fn_0045C090(void* self, uint32_t item)",
+    "summary": "Iteratively calls MFC80_ord_2867 and sub_0045BF30 on a node chain until null.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
   "0x0045C2C0": {
     "name": "sub_0045C2C0",
