@@ -522,3 +522,20 @@ DWORD fn_00468A30(void* self) {
     return *reinterpret_cast<DWORD*>(child + 0x28);
 }
 } // namespace lift_00468A30
+
+// [0x00468AC0] sub_00468AC0 (16 bytes)
+namespace lift_00468AC0 {
+// @name Unknown::GetChildFieldOrZero
+// @class Unknown
+// @summary If the flag byte at +0x10 is nonzero, returns the dword at (*(this+0x14)) +0x24; otherwise returns 0.
+// @field Unknown +0x10 BYTE field_0x10
+// @field Unknown +0x14 DWORD field_0x14
+// @field Unknown +0x24 DWORD field_0x24
+DWORD fn_00468AC0(void* self) {
+    if (lift_field<BYTE>(self, 0x10) == 0) {
+        return 0;
+    }
+    const DWORD child = lift_field<DWORD>(self, 0x14);
+    return lift_field<DWORD>(reinterpret_cast<void*>(static_cast<uintptr_t>(child)), 0x24);
+}
+} // namespace lift_00468AC0

@@ -3560,6 +3560,13 @@
     "summary": "Returns the DWORD at +0x28 of the child object held at +0x14 when the byte flag at +0x10 is nonzero; otherwise returns 0.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00468AC0": {
+    "name": "Unknown::GetChildFieldOrZero",
+    "class": "Unknown",
+    "signature": "DWORD fn_00468AC0(void* self)",
+    "summary": "If the flag byte at +0x10 is nonzero, returns the dword at (*(this+0x14)) +0x24; otherwise returns 0.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00468F30": {
     "name": "sub_00468F30",
     "signature": "extern \"C\" void __fastcall fn_00468F30(void* self)",
