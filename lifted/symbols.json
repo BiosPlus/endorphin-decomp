@@ -3598,6 +3598,13 @@
     "summary": "Adjusts this from the +0xC (BaseEventListener) subobject back to RuntimeEngine and forwards to 0x0046F930.",
     "lifted_path": "lifted/classes/RuntimeEngine.cpp"
   },
+  "0x0046FAB0": {
+    "name": "ThreadRunner\u003cRuntimeEngine\u003e::vfunc_1",
+    "class": "ThreadRunner\u003cRuntimeEngine\u003e",
+    "signature": "uintptr_t fn_0046FAB0(void* self)",
+    "summary": "Thiscall thunk: adjusts this by (+0x18 + +0x14) and forwards to the function pointer stored at +0x10.",
+    "lifted_path": "lifted/templates/ThreadRunner.cpp"
+  },
   "0x0046FAC0": {
     "name": "sub_0046FAC0",
     "signature": "void __thiscall fn_0046FAC0(void* self)",
