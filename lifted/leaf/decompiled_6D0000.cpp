@@ -770,3 +770,28 @@ int32_t fn_006DE6E0(void* self, int32_t target) {
     return -1;
 }
 } // namespace lift_006DE6E0
+
+// [0x006D7570]
+namespace lift_006D7570 {
+// @name initHugeBounds
+// @summary Initializes three 64-bit global values (doubles) from MSVCR80.dll!_HUGE
+
+
+extern uint32_t* mem_00925284;
+extern uint32_t mem_00B5D788;
+extern uint32_t mem_00B5D78C;
+extern uint32_t mem_00B5D790;
+extern uint32_t mem_00B5D794;
+extern uint32_t mem_00B5D798;
+extern uint32_t mem_00B5D79C;
+
+void sub_006D7570() {
+    uint32_t* huge_ptr = mem_00925284;
+    mem_00B5D788 = huge_ptr[0];
+    mem_00B5D78C = huge_ptr[1];
+    mem_00B5D790 = huge_ptr[0];
+    mem_00B5D794 = huge_ptr[1];
+    mem_00B5D798 = huge_ptr[0];
+    mem_00B5D79C = huge_ptr[1];
+}
+} // namespace lift_006D7570
