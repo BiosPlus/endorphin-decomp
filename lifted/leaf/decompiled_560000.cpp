@@ -137,3 +137,26 @@ uint32_t __fastcall sub_0056B900(uint32_t ecx, uint32_t edx) {
     return (count > 1u) ? 1u : 0u;
 }
 } // namespace lift_0056B900
+
+// [0x00567040] sub_00567040 (45 bytes)
+namespace lift_00567040 {
+// @name Unknown::CopyFromSource_00567040
+// @class Unknown
+// @summary Writes vtable 0x00958C0C into self, copies byte +0x04 and four 32-bit words +0x08..+0x14 from src, returns self.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint8_t field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0C float field_0x0C
+// @field Unknown +0x10 float field_0x10
+// @field Unknown +0x14 float field_0x14
+void* fn_00567040(void* self, const void* src) {
+    // Floats are copied as raw 32-bit words so NaN payloads are preserved exactly.
+    lift_field<uint32_t>(self, 0x00) = 0x00958C0C;
+    lift_field<uint8_t>(self, 0x04) = lift_field<const uint8_t>(src, 0x04);
+    lift_field<uint32_t>(self, 0x08) = lift_field<const uint32_t>(src, 0x08);
+    lift_field<uint32_t>(self, 0x0C) = lift_field<const uint32_t>(src, 0x0C);
+    lift_field<uint32_t>(self, 0x10) = lift_field<const uint32_t>(src, 0x10);
+    lift_field<uint32_t>(self, 0x14) = lift_field<const uint32_t>(src, 0x14);
+    return self;
+}
+} // namespace lift_00567040
