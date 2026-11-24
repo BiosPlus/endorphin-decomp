@@ -25684,6 +25684,13 @@
     "summary": "Evaluates the argument expression, invokes EffectorBase virtual slot 20 on the target with it, and returns the (value, expr) pair.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00604CE0": {
+    "name": "ExprParser::ReadMethodType\u003cEffector, float, \u0026Effector::getPoseRawDesiredDisplacement, 1\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "void* __thiscall fn_00604CE0(void* self, void* out, void* objPtrPtr)",
+    "summary": "Reads Effector::getPoseRawDesiredDisplacement into a ValuePtrType result, or throws if the Effector pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00604D40": {
     "name": "ExprParser::ReadMethodType\u003cEffector, float, getPoseRawDesiredDisplacement\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e",
