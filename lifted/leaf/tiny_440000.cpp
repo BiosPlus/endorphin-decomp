@@ -700,3 +700,23 @@ uint32_t fn_004407C0(void* self) {
     return value;
 }
 } // namespace lift_004407C0
+
+// [0x0044B5C0] sub_0044B5C0 (22 bytes)
+namespace lift_0044B5C0 {
+// @name ForwardToOwnedVirtualSlot4
+// @summary Returns 0 if the gate field is clear; otherwise tail-dispatches virtual slot 4 on the object at self->+0x68->+0x4C.
+// @field Unknown +0x64 uint32_t field_0x64
+// @field Unknown +0x68 void* field_0x68
+// @field Unknown +0x4C void* field_0x4c
+int fn_0044B5C0(void* self) {
+    if (lift_field<uint32_t>(self, 0x64) == 0) {
+        return 0;
+    }
+    void* owner = lift_field<void*>(self, 0x68);
+    void* inner = lift_field<void*>(owner, 0x4c);
+    void* vtbl = lift_field<void*>(inner, 0);
+    using SlotFn = int (*)(void*);
+    SlotFn fn = reinterpret_cast<SlotFn>(lift_field<void*>(vtbl, 0x10));
+    return fn(inner);
+}
+} // namespace lift_0044B5C0

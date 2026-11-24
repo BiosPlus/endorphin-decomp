@@ -1,0 +1,33 @@
+{
+  "va": "0x0044B5C0",
+  "size": 22,
+  "orig_symbol": "sub_0044B5C0",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "ForwardToOwnedVirtualSlot4",
+  "signature": "int fn_0044B5C0(void* self)",
+  "summary": "Returns 0 if the gate field is clear; otherwise tail-dispatches virtual slot 4 on the object at self-\u003e+0x68-\u003e+0x4C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "void*",
+      "name": "field_0x4c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:27:57Z"
+}
