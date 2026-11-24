@@ -43328,6 +43328,12 @@
     "summary": "Setter storing uint8_t argument into field at offset +0x80.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00787520": {
+    "name": "initNegHugeGlobals",
+    "signature": "void fn_00787520(void* self)",
+    "summary": "Stores -HUGE_VAL into three double globals (mem_00B60B58/60/68).",
+    "lifted_path": "lifted/clones/auto_clones_780000.cpp"
+  },
   "0x00787840": {
     "name": "sub_00787840",
     "signature": "extern \"C\" void* __fastcall fn_00787840(void* self, int edx_unused, unsigned int flags)",

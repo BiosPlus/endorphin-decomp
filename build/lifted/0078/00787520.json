@@ -1,0 +1,13 @@
+{
+  "va": "0x00787520",
+  "size": 36,
+  "orig_symbol": "sub_00787520",
+  "src_path": "src/clones/auto_clones_780000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_780000.cpp",
+  "name": "initNegHugeGlobals",
+  "signature": "void fn_00787520(void* self)",
+  "summary": "Stores -HUGE_VAL into three double globals (mem_00B60B58/60/68).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:00:17Z"
+}

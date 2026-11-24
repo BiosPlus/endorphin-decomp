@@ -68,3 +68,23 @@ void negate_huge_into_globals() {
     mem_00B609E8 = -huge;
 }
 } // namespace lift_00785FB0
+
+// [0x00787520] sub_00787520 (36 bytes)
+namespace lift_00787520 {
+// MSVCR80 _HUGE: pointer to the HUGE_VAL double (original reads it via an import slot at 0x925284).
+extern double* ext__HUGE;
+
+extern double mem_00B60B58;
+extern double mem_00B60B60;
+extern double mem_00B60B68;
+
+// @name initNegHugeGlobals
+// @summary Stores -HUGE_VAL into three double globals (mem_00B60B58/60/68).
+void fn_00787520(void* self) {
+    (void)self;
+    const double negHuge = -*ext__HUGE;
+    mem_00B60B58 = negHuge;
+    mem_00B60B60 = negHuge;
+    mem_00B60B68 = negHuge;
+}
+} // namespace lift_00787520
