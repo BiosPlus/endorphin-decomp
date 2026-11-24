@@ -1,0 +1,14 @@
+{
+  "va": "0x007D5C80",
+  "size": 34,
+  "orig_symbol": "sub_007D5C80",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "Unknown::invokeCallbackAtOffset6C",
+  "class": "Unknown (no member access; pointer arithmetic only)",
+  "signature": "void fn_007D5C80(uint32_t arg0, uint32_t arg1)",
+  "summary": "Calls ext_007D5A00(arg0, arg1), then calls the function pointer at mem_00AB28C8 with (arg0 + 0x6C, arg1).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:55:50Z"
+}

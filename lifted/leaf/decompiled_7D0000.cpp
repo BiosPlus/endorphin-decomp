@@ -56,3 +56,21 @@ std::uint16_t fn_007DADA0(std::uint8_t* self) {
     return 0;
 }
 } // namespace lift_007DADA0
+
+// [0x007D5C80] sub_007D5C80 (34 bytes)
+namespace lift_007D5C80 {
+// Known callee 0x007D5A00: sub_007D5A00 (54 bytes)
+extern void ext_007D5A00(uint32_t a, uint32_t b);
+// Function pointer stored in .data at 0x00AB28C8 (holds 0x007D4780)
+extern uint32_t mem_00AB28C8;
+
+// @name Unknown::invokeCallbackAtOffset6C
+// @class Unknown (no member access; pointer arithmetic only)
+// @summary Calls ext_007D5A00(arg0, arg1), then calls the function pointer at mem_00AB28C8 with (arg0 + 0x6C, arg1).
+void fn_007D5C80(uint32_t arg0, uint32_t arg1) {
+    ext_007D5A00(arg0, arg1);
+    using Fn = void (*)(uint32_t, uint32_t);
+    Fn target = reinterpret_cast<Fn>(static_cast<uintptr_t>(mem_00AB28C8));
+    target(arg0 + 0x6C, arg1);
+}
+} // namespace lift_007D5C80

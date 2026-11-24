@@ -45120,6 +45120,13 @@
     "summary": "Dereferences a pointer to a byte pointer and returns the zero-extended byte value.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D5C80": {
+    "name": "Unknown::invokeCallbackAtOffset6C",
+    "class": "Unknown (no member access; pointer arithmetic only)",
+    "signature": "void fn_007D5C80(uint32_t arg0, uint32_t arg1)",
+    "summary": "Calls ext_007D5A00(arg0, arg1), then calls the function pointer at mem_00AB28C8 with (arg0 + 0x6C, arg1).",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D7A20": {
     "name": "sub_007D7A20",
     "signature": "extern \"C\" void* __cdecl fn_007D7A20(void)",
