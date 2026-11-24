@@ -1,0 +1,22 @@
+{
+  "va": "0x006C3590",
+  "size": 32,
+  "orig_symbol": "sub_006C3590",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "sub_006C3590",
+  "class": "Unknown",
+  "signature": "extern uint32_t __fastcall fn_006C3590(void* self, int edx_unused, int32_t idx)",
+  "summary": "Auto-lifted identical-shape clone of 0x006C3470 (Unknown::GetEntryAddressAlt).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "uint32_t",
+      "name": "field_0xF0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:33:19Z"
+}
