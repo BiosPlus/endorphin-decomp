@@ -340,3 +340,19 @@ void fn_00648510(void* self) {
 }
 } // namespace lift_00594790
 } // namespace lift_00648510
+
+// [0x00647E80]
+namespace lift_00647E80 {
+// @name sub_00647E80
+// @summary Forwards the argument and the dereferenced field at +0xa4 to ext_007C60E0
+// @field Class +0xa4 uint32_t* field_0xa4
+
+
+extern uint32_t ext_007C60E0(uint32_t arg0, uint32_t arg1);
+
+uint32_t __thiscall sub_00647E80(void* self, uint32_t arg0) {
+    uint32_t* ptr = *reinterpret_cast<uint32_t**>(reinterpret_cast<uintptr_t>(self) + 0xa4);
+    uint32_t val = *ptr;
+    return ext_007C60E0(val, arg0);
+}
+} // namespace lift_00647E80
