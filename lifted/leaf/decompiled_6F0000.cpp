@@ -1079,3 +1079,19 @@ extern void __thiscall fn_006F7950(void* self, uint32_t arg) {
     ext_00711DA0(self, value);
 }
 } // namespace lift_006F7950
+
+// [0x006FCF10] sub_006FCF10 (32 bytes)
+namespace lift_006FCF10 {
+// Known callee 0x006D2130: sub_006D2130 (Initializes a 20-byte struct with zeroed fields, a clamped minimum-1 count at +0x08, and arg2 at +0x0C, returning this.)
+extern void ext_006D2130(void* self, int32_t arg1, uint32_t arg2);
+
+// @name initWithArgAndSelfSubobject
+// @class Unknown
+// @summary Initializes the object via sub_006D2130 with arg1 and count 0x10, stores a pointer to self+0x10 at +0x14, and returns self.
+// @field Unknown +0x14 void* field_0x14
+void* fn_006FCF10(void* self, int32_t arg1) {
+    ext_006D2130(self, arg1, 0x10);
+    lift_field<void*>(self, 0x14) = static_cast<uint8_t*>(self) + 0x10;
+    return self;
+}
+} // namespace lift_006FCF10
