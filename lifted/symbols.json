@@ -598,6 +598,13 @@
     "summary": "Pure jump thunk forwarding to CharacterDialog::vfunc_91.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0040B780": {
+    "name": "NewCharacterDialog::vfunc_91",
+    "class": "NewCharacterDialog",
+    "signature": "void fn_0040B780(void* self)",
+    "summary": "Calls the base-class vfunc_91, then forwards three constants to a sub-object at this+0x49C.",
+    "lifted_path": "lifted/classes/NewCharacterDialog.cpp"
+  },
   "0x0040B860": {
     "name": "sub_0040B860",
     "signature": "bool fn_0040B860(void* self)",

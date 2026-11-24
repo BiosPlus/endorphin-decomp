@@ -1,0 +1,22 @@
+{
+  "va": "0x0040B780",
+  "size": 42,
+  "orig_symbol": "NewCharacterDialog::vfunc_91",
+  "src_path": "src/classes/NewCharacterDialog.cpp",
+  "lifted_path": "lifted/classes/NewCharacterDialog.cpp",
+  "name": "NewCharacterDialog::vfunc_91",
+  "class": "NewCharacterDialog",
+  "signature": "void fn_0040B780(void* self)",
+  "summary": "Calls the base-class vfunc_91, then forwards three constants to a sub-object at this+0x49C.",
+  "fields": [
+    {
+      "class": "NewCharacterDialog",
+      "offset": "+0x49C",
+      "type": "uint8_t",
+      "name": "field_0x49C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:58:24Z"
+}
