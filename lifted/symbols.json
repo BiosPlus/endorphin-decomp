@@ -1129,6 +1129,13 @@
     "summary": "Returns GetSysColor(COLOR_BTNFACE); the incoming stack argument is overwritten with 0xF before tail-jumping to USER32!GetSysColor.",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x00416010": {
+    "name": "CEnTabCtrl::vfunc_85",
+    "class": "CEnTabCtrl",
+    "signature": "int fn_00416010(void* self, int arg)",
+    "summary": "Returns GetSysColor(15) when arg is nonzero, flag bit 1 is set, and field +0x58 is -1; otherwise tail-continues to out-of-body code.",
+    "lifted_path": "lifted/classes/CEnTabCtrl.cpp"
+  },
   "0x0041603E": {
     "name": "sub_0041603E",
     "class": "CBaseTabCtrl",
