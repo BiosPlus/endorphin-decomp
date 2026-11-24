@@ -1,0 +1,21 @@
+{
+  "va": "0x0042FD30",
+  "size": 54,
+  "orig_symbol": "sub_0042FD30",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "fetchTwoObjectsAndDispatchVirtuals",
+  "signature": "void* fn_0042FD30()",
+  "summary": "Fetches two objects from ext_00465B40, calls vtable slot +0x9C on the first with (0, 0), then calls vtable slot +0xE0 on the second with (3, that result) and returns its result.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:10:32Z"
+}

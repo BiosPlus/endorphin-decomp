@@ -2104,6 +2104,12 @@
     "summary": "Fetches the global object via ext_00465B40, calls vtable+0x9C, and passes the result and offset +0x3C to vtable+0xE0.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x0042FD30": {
+    "name": "fetchTwoObjectsAndDispatchVirtuals",
+    "signature": "void* fn_0042FD30()",
+    "summary": "Fetches two objects from ext_00465B40, calls vtable slot +0x9C on the first with (0, 0), then calls vtable slot +0xE0 on the second with (3, that result) and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x0042FDB0": {
     "name": "sub_0042FDB0",
     "signature": "extern void* fn_0042FDB0()",

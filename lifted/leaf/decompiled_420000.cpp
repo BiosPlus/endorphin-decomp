@@ -487,3 +487,31 @@ void __cdecl fn_0042FC30(void) {
     fnE0(obj2, 6, res, res + 0x3c, 0);
 }
 } // namespace lift_0042FC30
+
+// [0x0042FD30] sub_0042FD30 (54 bytes)
+namespace lift_0042FD30 {
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430360 (getGlobalField0x58AndCall00469040).)
+extern void* ext_00465B40();
+
+// @name fetchTwoObjectsAndDispatchVirtuals
+// @summary Fetches two objects from ext_00465B40, calls vtable slot +0x9C on the first with (0, 0), then calls vtable slot +0xE0 on the second with (3, that result) and returns its result.
+// @field Object +0x00 void* vtable
+void* fn_0042FD30() {
+    void* first = ext_00465B40();
+    void* second = ext_00465B40();
+
+    // first->vtable[+0x9C](first, 0, 0)
+    void** first_vtable = *reinterpret_cast<void***>(first);
+    using FirstSlotFn = uint32_t (*)(void* self, uint32_t a, uint32_t b);
+    FirstSlotFn first_slot = reinterpret_cast<FirstSlotFn>(
+        *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(first_vtable) + 0x9C));
+    uint32_t first_result = first_slot(first, 0, 0);
+
+    // second->vtable[+0xE0](second, 3, first_result)
+    void** second_vtable = *reinterpret_cast<void***>(second);
+    using SecondSlotFn = void* (*)(void* self, uint32_t a, uint32_t b);
+    SecondSlotFn second_slot = reinterpret_cast<SecondSlotFn>(
+        *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(second_vtable) + 0xE0));
+    return second_slot(second, 3, first_result);
+}
+} // namespace lift_0042FD30
