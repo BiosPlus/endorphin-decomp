@@ -434,3 +434,32 @@ void sub_007DB9E0(uint32_t eax, uint32_t ecx) {
     mem_write_f32(eax + 0x1c, -x);
 }
 } // namespace lift_007DB9E0
+
+// [0x007DA8E0]
+namespace lift_007DA8E0 {
+// @name AccumulateStats
+// @summary Accumulates value from ext_007C9280 and either field_0x164 of ext_007D8710 or increments a miss counter
+// @field Stats +0x00 uint32_t field_0x00
+// @field Stats +0x04 uint32_t field_0x04
+// @field Stats +0x08 uint32_t field_0x08
+// @field Node +0x164 uint32_t field_0x164
+
+
+extern void* ext_007D8710(void* self);
+extern uint32_t ext_007C9280(void* self);
+
+static inline uint32_t& u32_at(void* base, uintptr_t offset) {
+    return *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(base) + offset);
+}
+
+extern void fn_007DA8E0(void* out_stats, void* obj) {
+    void* esi = ext_007D8710(obj);
+    uint32_t val = ext_007C9280(obj);
+    u32_at(out_stats, 0x0) += val;
+    if (esi != nullptr) {
+        u32_at(out_stats, 0x4) += u32_at(esi, 0x164);
+    } else {
+        u32_at(out_stats, 0x8) += 1;
+    }
+}
+} // namespace lift_007DA8E0

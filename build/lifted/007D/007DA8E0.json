@@ -1,0 +1,39 @@
+{
+  "va": "0x007DA8E0",
+  "size": 52,
+  "orig_symbol": "sub_007DA8E0",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "AccumulateStats",
+  "signature": "static inline uint32_t\u0026 u32_at(void* base, uintptr_t offset)",
+  "summary": "Accumulates value from ext_007C9280 and either field_0x164 of ext_007D8710 or increments a miss counter",
+  "fields": [
+    {
+      "class": "Stats",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Stats",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Stats",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x164",
+      "type": "uint32_t",
+      "name": "field_0x164"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:10:50Z"
+}
