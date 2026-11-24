@@ -7281,3 +7281,25 @@ void fn_00607A50(void* out) {
     *reinterpret_cast<uint32_t*>(static_cast<unsigned char*>(out) + 0x04) = 0x00B477C4u;
 }
 } // namespace lift_00607A50
+
+// [0x006079D0] ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>::vfunc_40 (122 bytes)
+namespace lift_006079D0 {
+extern void ext_0067A670();
+extern uint32_t mem_00B477C0;  // one-time-init guard flags (bit 0 = initialized)
+extern uint32_t mem_00B477BC;  // function-local static object; first dword is its vtable slot
+
+// @name ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, ...>::vfunc_40
+// @class ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>
+// @summary Lazily constructs a function-local static object once (guarded by a bit flag), then stores its address into the out-record at +4.
+// @field Unknown +0x04 uint32_t field_0x04
+void fn_006079D0(uint32_t* out) {
+    // Thread-safe-static style guard: construct the static on first use only.
+    if ((mem_00B477C0 & 1u) == 0) {
+        mem_00B477C0 |= 1u;
+        ext_0067A670();                 // constructs the static object at &mem_00B477BC
+        mem_00B477BC = 0x0097093Cu;     // vtable pointer of the constructed object
+    }
+    // Publish the static's address into the output record (+4).
+    out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B477BC));
+}
+} // namespace lift_006079D0

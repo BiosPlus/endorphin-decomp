@@ -1,0 +1,22 @@
+{
+  "va": "0x006079D0",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, ...\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}\u003e",
+  "signature": "extern \"C\" uint32_t mem_00B477C0;  // one-time-init guard flags (bit 0 = initialized) extern \"C\" uint32_t mem_00B477BC;  // function-local static object; first dword is its vtable slot void fn_006079D0(uint32_t* out)",
+  "summary": "Lazily constructs a function-local static object once (guarded by a bit flag), then stores its address into the out-record at +4.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:55:57Z"
+}

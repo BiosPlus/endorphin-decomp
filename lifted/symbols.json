@@ -26811,6 +26811,13 @@
     "summary": "Lazily initializes a static type descriptor at 0x00B477A4 and stores its address at arg0 + 0x4.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x006079D0": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, ...\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}\u003e",
+    "signature": "extern \"C\" uint32_t mem_00B477C0;  // one-time-init guard flags (bit 0 = initialized) extern \"C\" uint32_t mem_00B477BC;  // function-local static object; first dword is its vtable slot void fn_006079D0(uint32_t* out)",
+    "summary": "Lazily constructs a function-local static object once (guarded by a bit flag), then stores its address into the out-record at +4.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00607A50": {
     "name": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}\u003e::vfunc_40",
     "class": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}\u003e",
