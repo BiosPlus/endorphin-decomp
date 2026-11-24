@@ -30619,3 +30619,33 @@ void* fn_004B12D0(void* out, void** src) {
     ext_006A6DD2(&exc, &mem_009DEC1C);
 }
 } // namespace lift_004B12D0
+
+// [0x004B1160]
+namespace lift_004B1160 {
+// @name ExprParser::ReadMethodType<Interpreter,Interpreter::getType>::vfunc_4
+// @class ExprParser::ValuePtrType
+// @summary Copy-constructs the std::string held at the value pointer into the return slot; throws if the value pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00 (pointer to value; null triggers throw)
+// @field ExprParser::ValuePtrType +0x04 std::string field_0x04 (string source, copied from value+4)
+
+// Copy-constructs a std::string at dst from src (MSVCP80 copy ctor). Returns dst.
+void* ext_004276B0(void* dst, const void* src);
+
+// Default-constructs a std::string at self (thiscall, self passed in ecx).
+void ext_0046C3C0(void* self);
+
+// IAT thunk to MSVCR80!_CxxThrowException. Does not return.
+[[noreturn]] void ext_006A6DD2(void* obj, const void* throw_info);
+
+void* fn_004B1160(void* dst, void* src) {
+    void* value = lift_field<void*>(src, 0x00);
+    if (value != nullptr) {
+        ext_004276B0(dst, static_cast<const unsigned char*>(value) + 0x04);
+        return dst;
+    }
+
+    alignas(8) unsigned char err[0x28];
+    ext_0046C3C0(err);
+    ext_006A6DD2(err, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+}
+} // namespace lift_004B1160

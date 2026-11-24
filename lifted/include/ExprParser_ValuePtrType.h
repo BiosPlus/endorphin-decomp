@@ -30,6 +30,7 @@ struct ExprParser_ValuePtrType_Fields {
     // +0x0   NMData::VideoPlaneData*  target  (evidence: 0x0046E570, 0x004986A0, 0x004B1FF0, 0x004B8920, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x00508EE0, 0x005B2D00, 0x005B3680, 0x005D2860, 0x005D2C50, 0x0066F700, 0x0068DE60) // CONFLICT: multiple definitions at +0x0
     // +0x0   double*                  target  (evidence: 0x0046E450, 0x0046EA50, 0x004A25E0, 0x00633240, 0x0066EBA0, 0x00695620) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    target  (evidence: 0x0046CB30, 0x0046D950, 0x0046E450, 0x0046E570, 0x0046EA50, 0x004986A0, 0x0049C6E0, 0x004A2580, 0x004A25E0, 0x004B1FF0, 0x004B2810, 0x004B8920, 0x004B8E40, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x004EB230, 0x00508E30, 0x00508EE0, 0x0050E0A0, 0x0050F190, 0x00515B90, 0x00516550, 0x00516B10, 0x00522330, 0x0059F820, 0x005B2D00, 0x005B3680, 0x005D3050, 0x005F5CC0, 0x005F5DC0, 0x006059A0, 0x006059E0, 0x00633240, 0x006332E0, 0x00638E50, 0x0066EFE0, 0x0066F700, 0x0068DE60) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void* field_0x00 (pointer to value; null triggers throw)  (evidence: 0x004B1160) // CONFLICT: multiple definitions at +0x0
     // +0x0   const char*              value  (evidence: 0x00497900) // CONFLICT: multiple definitions at +0x0
     // +0x0   std::string*             value  (evidence: 0x004975B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    value  (evidence: 0x0046E570, 0x004AA140, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x005B3680) // CONFLICT: multiple definitions at +0x0
@@ -46,6 +47,7 @@ struct ExprParser_ValuePtrType_Fields {
     // +0x4   void*                    owner  (evidence: 0x00487000, 0x00649570, 0x0064EC00, 0x0064F0C0, 0x00651070) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    reader  (evidence: 0x00487000, 0x00594470, 0x00594520, 0x005F3600, 0x00605360, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    source  (evidence: 0x00487000, 0x0064F240, 0x0064F660) // CONFLICT: multiple definitions at +0x4
+    // +0x4   std::string field_0x04 (string source, copied from value+4)  (evidence: 0x004B1160) // CONFLICT: multiple definitions at +0x4
     // +0x5   uint8_t                  field_0x05  (evidence: 0x0046E570, 0x004986A0, 0x004B8920, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x004EA030, 0x005B2D00, 0x005B3680, 0x0066F700)
     // +0x6   uint8_t                  field_0x06  (evidence: 0x0046E570, 0x004986A0, 0x004B8920, 0x004B9080, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x004EA330, 0x005B2D00, 0x005B3680, 0x0066F700)
     // +0x8   int                      field_0x08  (evidence: 0x00515F80) // CONFLICT: multiple definitions at +0x8

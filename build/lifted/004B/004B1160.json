@@ -1,0 +1,28 @@
+{
+  "va": "0x004B1160",
+  "size": 71,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cInterpreter,Interpreter::getType\u003e::vfunc_4",
+  "class": "ExprParser::ValuePtrType",
+  "signature": "void* fn_004B1160(void* dst, void* src)",
+  "summary": "Copy-constructs the std::string held at the value pointer into the return slot; throws if the value pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (pointer to value; null triggers",
+      "name": "throw)"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "std::string field_0x04 (string source, copied from",
+      "name": "value+4)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:39:41Z"
+}
