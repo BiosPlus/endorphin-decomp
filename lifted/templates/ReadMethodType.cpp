@@ -35452,3 +35452,31 @@ int32_t __thiscall fn_006956E0(void* /*this*/, const double* const* arg0) {
     return ext_006A6DE0(adjusted);
 }
 } // namespace lift_006956E0
+
+// [0x0046C880]
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0046C080(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_0046C880(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0046C080(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880

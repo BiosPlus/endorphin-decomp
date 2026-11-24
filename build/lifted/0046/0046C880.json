@@ -1,0 +1,14 @@
+{
+  "va": "0x0046C880",
+  "size": 96,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter, float, getFrameRate\u003e::vfunc_2",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter, float, getFrameRate\u003e",
+  "signature": "int32_t __thiscall fn_0046C880(void *self, void **arg)",
+  "summary": "Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:52:20Z"
+}
