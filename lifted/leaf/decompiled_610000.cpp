@@ -56,3 +56,20 @@ extern void __thiscall fn_00610B40(void* self, float value) {
     lift_field<float>(self, 0x08) = result;
 }
 } // namespace lift_00610B40
+
+// [0x00610CB0]
+namespace lift_00610CB0 {
+// @name sub_00610CB0
+// @summary Gets float at index 0 from this+0x20 and passes it to ext_00678130 on (ext_00594000() + 0x2e0)
+// @field Self +0x20 uint8_t field_0x20
+
+extern float __thiscall ext_005B11E0(uint32_t ecx, uint32_t index);
+extern int32_t __cdecl ext_00594000(void);
+extern void __thiscall ext_00678130(uint32_t ecx, float val);
+
+extern void __thiscall fn_00610CB0(uint32_t ecx) {
+    float val = ext_005B11E0(ecx + 0x20, 0);
+    int32_t base = ext_00594000();
+    ext_00678130(static_cast<uint32_t>(base) + 0x2e0, val);
+}
+} // namespace lift_00610CB0

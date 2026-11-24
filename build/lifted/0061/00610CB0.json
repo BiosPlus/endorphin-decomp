@@ -1,0 +1,21 @@
+{
+  "va": "0x00610CB0",
+  "size": 39,
+  "orig_symbol": "sub_00610CB0",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "sub_00610CB0",
+  "signature": "extern \"C\" void __thiscall fn_00610CB0(uint32_t ecx)",
+  "summary": "Gets float at index 0 from this+0x20 and passes it to ext_00678130 on (ext_00594000() + 0x2e0)",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x20",
+      "type": "uint8_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:53:34Z"
+}
