@@ -138,3 +138,33 @@ void* fn_006D2390(void* self, uint32_t arg1) {
     return self;
 }
 } // namespace lift_006D2390
+
+// [0x006D7380] sub_006D7380 (32 bytes)
+namespace lift_006D7380 {
+// @name Unknown::ReleaseSubobjectFC
+// @class Unknown
+// @summary Releases the object held at this->field_0xFC->field_0x04 via its vtable slot 0 (deleting dtor, flag 1), then nulls that pointer.
+// @field Unknown +0xFC void* field_0xFC (pointer to holder struct; owner class not established)
+// @field SubobjectHolder +0x04 void* field_0x04 (owned object pointer; released via vtable slot 0 and cleared)
+
+// Holder struct reached through self+0xFC; only its +0x04 slot is touched.
+struct SubobjectHolder {
+    uint8_t pad_00[0x04];
+    void*   field_0x04;
+};
+
+void fn_006D7380(void* self) {
+    auto* holder = *reinterpret_cast<SubobjectHolder**>(
+        reinterpret_cast<uint8_t*>(self) + 0xFC);
+
+    void* obj = holder->field_0x04;
+    if (obj != nullptr) {
+        // Virtual call: slot 0 of the object's vtable, __thiscall(this, 1)
+        // (scalar deleting destructor with "free memory" flag set).
+        void** vtable = *reinterpret_cast<void***>(obj);
+        using SlotFn = void(__thiscall*)(void*, int);
+        reinterpret_cast<SlotFn>(vtable[0])(obj, 1);
+    }
+    holder->field_0x04 = nullptr;
+}
+} // namespace lift_006D7380

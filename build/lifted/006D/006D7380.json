@@ -1,0 +1,28 @@
+{
+  "va": "0x006D7380",
+  "size": 32,
+  "orig_symbol": "sub_006D7380",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::ReleaseSubobjectFC",
+  "class": "Unknown",
+  "signature": "void fn_006D7380(void* self)",
+  "summary": "Releases the object held at this-\u003efield_0xFC-\u003efield_0x04 via its vtable slot 0 (deleting dtor, flag 1), then nulls that pointer.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xFC",
+      "type": "void* field_0xFC (pointer to holder struct; owner class not",
+      "name": "established)"
+    },
+    {
+      "class": "SubobjectHolder",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (owned object pointer; released via vtable slot 0 and",
+      "name": "cleared)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:35:02Z"
+}

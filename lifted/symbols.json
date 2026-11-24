@@ -36796,6 +36796,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006D6C20 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D7380": {
+    "name": "Unknown::ReleaseSubobjectFC",
+    "class": "Unknown",
+    "signature": "void fn_006D7380(void* self)",
+    "summary": "Releases the object held at this-\u003efield_0xFC-\u003efield_0x04 via its vtable slot 0 (deleting dtor, flag 1), then nulls that pointer.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D78F0": {
     "name": "sub_006D78F0",
     "signature": "extern \"C\" void* __fastcall fn_006D78F0(void* self, int edx_unused, unsigned int flags)",
