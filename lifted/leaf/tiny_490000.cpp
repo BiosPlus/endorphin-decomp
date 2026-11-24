@@ -162,3 +162,23 @@ void fn_00493E60(void* self) {
     target(inner);
 }
 } // namespace lift_00493E60
+
+// [0x00493E80] sub_00493E80 (12 bytes)
+namespace lift_00493E80 {
+// @name forwardVtableSlot19C
+// @summary Tail-forwards the call to vtable slot 0x19C of the object referenced by self's first field.
+// @field Unknown +0x00 void* field_0x00
+
+using VtableSlotFn = uintptr_t (*)(void* thisPtr);
+
+uintptr_t fn_00493E80(void* self) {
+    // mov ecx, [ecx]          ; inner = *self
+    void* inner = *reinterpret_cast<void**>(self);
+    // mov eax, [ecx]          ; vtable = *inner
+    void** vtable = *reinterpret_cast<void***>(inner);
+    // mov eax, [eax+0x19c]    ; target = vtable[0x19C] (byte offset)
+    auto target = reinterpret_cast<VtableSlotFn>(lift_field<void*>(vtable, 0x19C));
+    // jmp eax                 ; tail-call with ecx == inner
+    return target(inner);
+}
+} // namespace lift_00493E80
