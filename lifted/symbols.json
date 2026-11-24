@@ -13747,6 +13747,13 @@
     "summary": "Returns the DWORD at this+0x0C + 4*index for index 0..2, otherwise 0 (__thiscall, 1 stack arg).",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x00553A10": {
+    "name": "SetFloatAndFlagAt",
+    "class": "Unknown",
+    "signature": "void fn_00553A10(void* self, DWORD index, float value)",
+    "summary": "If index (0..2) is in range, stores a float into slot[index] and sets the byte flag at +0x18+index; out-of-range indices are ignored. Callee pops 8 bytes (__thiscall-style, ret 8).",
+    "lifted_path": "lifted/leaf/tiny_550000.cpp"
+  },
   "0x00553A30": {
     "name": "SetIndexedSlot (descriptive; owning class not yet identified)",
     "class": "Unknown",

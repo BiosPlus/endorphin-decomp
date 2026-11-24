@@ -173,3 +173,24 @@ DWORD __thiscall fn_005539F0(void* self, DWORD index) {
     return lift_field<DWORD>(self, 0x0C + static_cast<ptrdiff_t>(index) * 4);
 }
 } // namespace lift_005539F0
+
+// [0x00553A10] sub_00553A10 (24 bytes)
+namespace lift_00553A10 {
+// @name SetFloatAndFlagAt
+// @class Unknown
+// @summary If index (0..2) is in range, stores a float into slot[index] and sets the byte flag at +0x18+index; out-of-range indices are ignored. Callee pops 8 bytes (__thiscall-style, ret 8).
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x18 uint8_t field_0x18
+// @field Unknown +0x19 uint8_t field_0x19
+// @field Unknown +0x1A uint8_t field_0x1A
+void fn_00553A10(void* self, DWORD index, float value) {
+    if (index > 2) {
+        return;
+    }
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + index * sizeof(float), &value, sizeof(float));
+    base[0x18 + index] = 1;
+}
+} // namespace lift_00553A10

@@ -1,0 +1,52 @@
+{
+  "va": "0x00553A10",
+  "size": 24,
+  "orig_symbol": "sub_00553A10",
+  "src_path": "src/leaf/tiny_550000.cpp",
+  "lifted_path": "lifted/leaf/tiny_550000.cpp",
+  "name": "SetFloatAndFlagAt",
+  "class": "Unknown",
+  "signature": "void fn_00553A10(void* self, DWORD index, float value)",
+  "summary": "If index (0..2) is in range, stores a float into slot[index] and sets the byte flag at +0x18+index; out-of-range indices are ignored. Callee pops 8 bytes (__thiscall-style, ret 8).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint8_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x19",
+      "type": "uint8_t",
+      "name": "field_0x19"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1A",
+      "type": "uint8_t",
+      "name": "field_0x1A"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:36:36Z"
+}
