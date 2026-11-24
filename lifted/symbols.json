@@ -5589,6 +5589,12 @@
     "summary": "Returns the RTTI type_info pointer for this object by forwarding to __RTtypeid.",
     "lifted_path": "lifted/ExprParser/BoolType.cpp"
   },
+  "0x0046C460": {
+    "name": "makeBoolString",
+    "signature": "void* sub_0046C460(void* out_str, uint8_t flag)",
+    "summary": "Constructs a std::string from one of two static C-strings based on a boolean flag.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046C550": {
     "name": "ImageExporter::vfunc_0_off_4",
     "class": "ImageExporter",
@@ -6265,6 +6271,12 @@
     "signature": "void fn_00477EA0(void* self, void* str)",
     "summary": "Auto-lifted identical-shape clone of 0x00401D00 (AVIIO::vfunc_7).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00479A90": {
+    "name": "fill_n_float",
+    "signature": "float* __stdcall sub_00479A90(float* dst, uint32_t count, const float* value)",
+    "summary": "Fills count floats starting at dst with *value and returns dst + count.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
   "0x0047A010": {
     "name": "sub_0047A010",
