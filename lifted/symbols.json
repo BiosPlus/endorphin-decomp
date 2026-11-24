@@ -19995,6 +19995,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005731A0 (OBJIO::vfunc_3).",
     "lifted_path": "lifted/classes/XSIIO.cpp"
   },
+  "0x005637D0": {
+    "name": "sub_005637D0",
+    "class": "(none)",
+    "signature": "bool fn_005637D0(void* self, uint32_t arg)",
+    "summary": "Returns true if any of three predicate callees (ext_00563220, ext_00563240, ext_00563260) returns true for the argument; short-circuits in that order.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x005645E0": {
     "name": "XSIIO::vfunc_0",
     "class": "XSIIO",

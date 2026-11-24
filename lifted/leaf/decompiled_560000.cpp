@@ -199,3 +199,28 @@ uint32_t __stdcall fn_005694B0(uint32_t dst, uint32_t count, uint32_t src) {
 }
 } // namespace lift_00481DE0
 } // namespace lift_005694B0
+
+// [0x005637D0] sub_005637D0 (59 bytes)
+namespace lift_005637D0 {
+// Known callees: thiscall-style, one stack argument, return a boolean in AL.
+extern uint8_t ext_00563220(void* self, uint32_t arg);
+extern uint8_t ext_00563240(void* self, uint32_t arg);
+extern uint8_t ext_00563260(void* self, uint32_t arg);
+
+// @name sub_005637D0
+// @class (none)
+// @summary Returns true if any of three predicate callees (ext_00563220, ext_00563240, ext_00563260) returns true for the argument; short-circuits in that order.
+// @field (none: function does not access this-relative fields; self is only forwarded)
+bool fn_005637D0(void* self, uint32_t arg) {
+    if (ext_00563220(self, arg) != 0) {
+        return true;
+    }
+    if (ext_00563240(self, arg) != 0) {
+        return true;
+    }
+    if (ext_00563260(self, arg) != 0) {
+        return true;
+    }
+    return false;
+}
+} // namespace lift_005637D0
