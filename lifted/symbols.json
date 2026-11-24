@@ -39213,6 +39213,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007747B0 (initNegatedHugeGlobals).",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D7660": {
+    "name": "negHugeIntoGlobals",
+    "signature": "void fn_006D7660(void* self)",
+    "summary": "Stores -(*_HUGE) into four consecutive double globals.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D78F0": {
     "name": "sub_006D78F0",
     "signature": "extern \"C\" void* __fastcall fn_006D78F0(void* self, int edx_unused, unsigned int flags)",

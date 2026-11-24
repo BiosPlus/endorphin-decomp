@@ -425,3 +425,25 @@ uint8_t __stdcall sub_006D8CA0(uint32_t val) {
     return val == mem_00B5E400 ? 1 : 0;
 }
 } // namespace lift_006D8CA0
+
+// [0x006D7660] sub_006D7660 (46 bytes)
+namespace lift_006D7660 {
+// Global double slots written by this function (each 8 bytes at the listed VA).
+extern double mem_00B5D7D8;
+extern double mem_00B5D7E0;
+extern double mem_00B5D7E8;
+extern double mem_00B5D7F0;
+// Holds a pointer to the CRT _HUGE double (MSVCR80 _HUGE is a double*).
+extern double* mem_00925284;
+
+// @name negHugeIntoGlobals
+// @summary Stores -(*_HUGE) into four consecutive double globals.
+void fn_006D7660(void* self) {
+    (void)self; // no arguments are read; signature kept from stub
+    const double negHuge = -*mem_00925284;
+    mem_00B5D7D8 = negHuge;
+    mem_00B5D7E0 = negHuge;
+    mem_00B5D7E8 = negHuge;
+    mem_00B5D7F0 = negHuge;
+}
+} // namespace lift_006D7660
