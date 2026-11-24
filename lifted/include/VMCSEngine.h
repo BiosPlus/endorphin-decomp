@@ -10,6 +10,7 @@
 // Recovered field layout for VMCSEngine:
 namespace lifted_layout {
 struct VMCSEngine_Fields {
+    // +0x14  void*                    field_0x14  (evidence: 0x00468670)
     // +0x18  void*                    field_0x18  (evidence: 0x00468690)
 };
 } // namespace lifted_layout

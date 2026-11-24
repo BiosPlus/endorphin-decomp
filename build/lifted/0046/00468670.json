@@ -1,0 +1,22 @@
+{
+  "va": "0x00468670",
+  "size": 30,
+  "orig_symbol": "VMCSEngine::vfunc_0",
+  "src_path": "src/classes/VMCSEngine.cpp",
+  "lifted_path": "lifted/classes/VMCSEngine.cpp",
+  "name": "VMCSEngine::vfunc_0",
+  "class": "VMCSEngine",
+  "signature": "void __thiscall fn_00468670(void* this_)",
+  "summary": "Sets a flag on a global subobject and delegates to sub_00480130 on a nested field.",
+  "fields": [
+    {
+      "class": "VMCSEngine",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:08:50Z"
+}
