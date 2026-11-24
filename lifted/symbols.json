@@ -1410,6 +1410,13 @@
     "summary": "Returns the address of the global mem_0092F394 (ignores this).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0042EA50": {
+    "name": "Unknown::ReleaseDCFromArg",
+    "class": "Unknown",
+    "signature": "int fn_0042EA50(void* self, void* arg)",
+    "summary": "Releases the device context stored at this+0x20 using the window handle stored at arg+4; returns ReleaseDC's result.",
+    "lifted_path": "lifted/leaf/tiny_420000.cpp"
+  },
   "0x0042EE50": {
     "name": "sub_0042EE50",
     "class": "NMData::RealChannel",

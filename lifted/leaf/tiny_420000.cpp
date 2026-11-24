@@ -132,3 +132,19 @@ std::string* fn_00426960(std::string* self) {
     return self;  // original: mov eax, esi
 }
 } // namespace lift_00426960
+
+// [0x0042EA50] sub_0042EA50 (21 bytes)
+namespace lift_0042EA50 {
+extern int ext_ReleaseDC(HWND hWnd, HDC hDC);
+
+// @name Unknown::ReleaseDCFromArg
+// @class Unknown
+// @summary Releases the device context stored at this+0x20 using the window handle stored at arg+4; returns ReleaseDC's result.
+// @field Unknown +0x20 HDC hdc
+// @field arg +0x04 HWND hwnd
+int fn_0042EA50(void* self, void* arg) {
+    HWND hwnd = lift_field<HWND>(arg, 4);
+    HDC hdc = lift_field<HDC>(self, 0x20);
+    return ext_ReleaseDC(hwnd, hdc);
+}
+} // namespace lift_0042EA50

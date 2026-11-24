@@ -1,0 +1,28 @@
+{
+  "va": "0x0042EA50",
+  "size": 21,
+  "orig_symbol": "sub_0042EA50",
+  "src_path": "src/leaf/tiny_420000.cpp",
+  "lifted_path": "lifted/leaf/tiny_420000.cpp",
+  "name": "Unknown::ReleaseDCFromArg",
+  "class": "Unknown",
+  "signature": "int fn_0042EA50(void* self, void* arg)",
+  "summary": "Releases the device context stored at this+0x20 using the window handle stored at arg+4; returns ReleaseDC's result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HDC",
+      "name": "hdc"
+    },
+    {
+      "class": "arg",
+      "offset": "+0x4",
+      "type": "HWND",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:11:30Z"
+}
