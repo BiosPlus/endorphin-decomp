@@ -43196,6 +43196,12 @@
     "summary": "Stores a dword into this-\u003efield_0xF0[index] when 0 \u003c index \u003c 0x12; otherwise does nothing. Callee pops 8 bytes (__thiscall-style, stdcall-like ret 8).",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AA910": {
+    "name": "GetIndexedFieldF0",
+    "signature": "uint32_t sub_007AA910(const uint8_t* self, int32_t index)",
+    "summary": "Returns the 32-bit slot at this+0xF0 + 4*index for index in [1, 17]; returns 0 otherwise.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AB350": {
     "name": "sub_007AB350",
     "signature": "extern \"C\" void* __fastcall fn_007AB350(void* self, int edx_unused, unsigned int flags)",

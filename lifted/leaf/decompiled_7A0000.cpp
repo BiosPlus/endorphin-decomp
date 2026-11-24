@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 extern "C" void __fastcall ext_007AD590(void* self);
 extern "C" void __cdecl ext_006A5C5C(void* ptr);
+#include <cstdint>
 
 // [0x007AD5C0] sub_007AD5C0 (32 bytes)
 // @name sub_007AD5C0
@@ -53,3 +54,20 @@ void Unknown_SetIndexedDwordIfInRange(Unknown* self, int32_t index, int32_t valu
     }
 }
 } // namespace lift_007AA8F0
+
+// [0x007AA910]
+namespace lift_007AA910 {
+// @name GetIndexedFieldF0
+// @summary Returns the 32-bit slot at this+0xF0 + 4*index for index in [1, 17]; returns 0 otherwise.
+// @field <unknown> +0xF0 uint32_t field_0xF0 (indexed array base, slots 0x00..0x11 at +0xF0..+0x128; index 0 never read)
+
+
+uint32_t sub_007AA910(const uint8_t* self, int32_t index) {
+    if (index > 0 && index < 0x12) {
+        uint32_t value;
+        __builtin_memcpy(&value, self + 0xF0 + static_cast<uintptr_t>(index) * 4, sizeof(value));
+        return value;
+    }
+    return 0;
+}
+} // namespace lift_007AA910

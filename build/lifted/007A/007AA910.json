@@ -1,0 +1,21 @@
+{
+  "va": "0x007AA910",
+  "size": 32,
+  "orig_symbol": "sub_007AA910",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "GetIndexedFieldF0",
+  "signature": "uint32_t sub_007AA910(const uint8_t* self, int32_t index)",
+  "summary": "Returns the 32-bit slot at this+0xF0 + 4*index for index in [1, 17]; returns 0 otherwise.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xF0",
+      "type": "uint32_t field_0xF0 (indexed array base, slots 0x00..0x11 at +0xF0..+0x128; index 0 never",
+      "name": "read)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:46:57Z"
+}
