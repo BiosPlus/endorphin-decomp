@@ -518,3 +518,29 @@ extern int __fastcall fn_004090C0(void* self) {
     return 0;
 }
 } // namespace lift_004090C0
+
+// [0x00404D50] sub_00404D50 (31 bytes)
+namespace lift_00404D50 {
+// @name ElementCountFromRange
+// @class Unknown
+// @summary Returns 0 if field +0x04 is null; otherwise (field +0x08 - field +0x04) / 88 (signed, truncating).
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x08 int32_t field_0x08
+int32_t fn_00404D50(void* self) {
+    const int32_t first = lift_field<int32_t>(self, 0x04);
+    if (first == 0) {
+        return 0;
+    }
+    // 32-bit wrapping difference, as computed by the original sub/imul sequence.
+    const int32_t diff = static_cast<int32_t>(
+        static_cast<uint32_t>(lift_field<int32_t>(self, 0x08)) -
+        static_cast<uint32_t>(first));
+    // Signed high-half multiply by 0x2E8BA2E9, arithmetic shift right by 4,
+    // then add the sign bit of the shifted value (round toward zero).
+    const int64_t product = static_cast<int64_t>(diff) * static_cast<int64_t>(0x2E8BA2E9);
+    const int32_t high = static_cast<int32_t>(product >> 32);
+    const int32_t shifted = high >> 4;
+    const int32_t sign = static_cast<int32_t>(static_cast<uint32_t>(shifted) >> 31);
+    return shifted + sign;
+}
+} // namespace lift_00404D50

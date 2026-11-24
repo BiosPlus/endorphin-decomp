@@ -411,6 +411,13 @@
     "summary": "IAT jump thunk forwarding to MFC80!ord_578.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00404D50": {
+    "name": "ElementCountFromRange",
+    "class": "Unknown",
+    "signature": "int32_t fn_00404D50(void* self)",
+    "summary": "Returns 0 if field +0x04 is null; otherwise (field +0x08 - field +0x04) / 88 (signed, truncating).",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x004064B0": {
     "name": "sub_004064B0",
     "class": "(none)",
