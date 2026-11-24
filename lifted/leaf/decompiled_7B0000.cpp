@@ -501,3 +501,27 @@ DWORD fn_007BFD40(void* a1, DWORD a2, void* a3) {
     return target(a1, a2, a3);
 }
 } // namespace lift_007BFD40
+
+// [0x007BEDA0] sub_007BEDA0 (59 bytes)
+namespace lift_007BEDA0 {
+// Known callee 0x0079AF40: GlobalAllocZeroFlags (Allocates a global block of the requested size with uFlags = 0 (GMEM_FIXED); returns the handle.)
+extern uint32_t ext_0079AF40(uint32_t size);
+// Known callee 0x0079B140: DispatchThreeArgsToOptionalHook (Calls the global hook mem_00AAFC2C if non-null.)
+// Call site pushes only two arguments, so the prototype here matches the call site.
+extern void ext_0079B140(uint32_t a1, uint32_t a2);
+
+// @name AllocBuffer11948IntoSelfField5C
+// @summary Allocates a 0x11948-byte global block, stores its handle at +0x5C of the object referenced by self+0x1CC, and returns 1 on success or 0 after dispatching the failure hook.
+// @field Unknown +0x1CC void* field_0x1cc
+// @field Unknown +0x5C uint32_t field_0x5c
+uint32_t fn_007BEDA0(void* self) {
+    void* target = lift_field<void*>(self, 0x1CC);
+    uint32_t handle = ext_0079AF40(0x11948);
+    lift_field<uint32_t>(target, 0x5C) = handle;
+    if (handle != 0) {
+        return 1;
+    }
+    ext_0079B140(0x999C2C, 0xAB2528);
+    return 0;
+}
+} // namespace lift_007BEDA0

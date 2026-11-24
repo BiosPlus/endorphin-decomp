@@ -1,0 +1,27 @@
+{
+  "va": "0x007BEDA0",
+  "size": 59,
+  "orig_symbol": "sub_007BEDA0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "AllocBuffer11948IntoSelfField5C",
+  "signature": "uint32_t fn_007BEDA0(void* self)",
+  "summary": "Allocates a 0x11948-byte global block, stores its handle at +0x5C of the object referenced by self+0x1CC, and returns 1 on success or 0 after dispatching the failure hook.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1CC",
+      "type": "void*",
+      "name": "field_0x1cc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:25:23Z"
+}

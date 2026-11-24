@@ -54620,6 +54620,12 @@
     "summary": "Reads two 32-bit fields from the object at self and forwards them with a constant tag to DispatchThreeArgsToOptionalHook.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BEDA0": {
+    "name": "AllocBuffer11948IntoSelfField5C",
+    "signature": "uint32_t fn_007BEDA0(void* self)",
+    "summary": "Allocates a 0x11948-byte global block, stores its handle at +0x5C of the object referenced by self+0x1CC, and returns 1 on success or 0 after dispatching the failure hook.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BF4A0": {
     "name": "Unknown::applyScaledDeltaToPair",
     "class": "Unknown",
