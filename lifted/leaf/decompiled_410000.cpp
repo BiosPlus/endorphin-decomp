@@ -430,3 +430,44 @@ void* __cdecl sub_0041A160(const void* first, const void* last, void* destEnd) {
     return reinterpret_cast<void*>(dest);
 }
 } // namespace lift_0041A160
+
+// [0x00410D10] sub_00410D10 (42 bytes)
+namespace lift_00410D10 {
+extern int mem_00925134;
+extern void ext_invalid_parameter_noinfo();
+
+// @name makeRangeFromBounds
+// @class (none)
+// @summary Writes {this, this->+0x08} into the out-pointer after checking this->+0x04 <= this->+0x08; returns out (thiscall, callee pops 4).
+// @field Range +0x04 uint32_t field_0x04
+// @field Range +0x08 uint32_t field_0x08
+void* fn_00410D10(void* self, void* out) {
+    uint32_t begin = lift_field<uint32_t>(self, 0x04);
+    uint32_t end = lift_field<uint32_t>(self, 0x08);
+
+    lift_field<uint32_t>(out, 0x00) = 0;
+    if (begin > end) {
+        ext_invalid_parameter_noinfo();
+    }
+    lift_field<uint32_t>(out, 0x00) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    lift_field<uint32_t>(out, 0x04) = end;
+    return out;
+}
+} // namespace lift_00410D10
+
+// [0x00414EC0]
+namespace lift_00414EC0 {
+// @name sub_00414EC0
+// @summary Forwards arguments with a zeroed flag byte to sub_004148F0
+
+extern uint32_t __cdecl ext_004148F0(
+    uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6);
+
+uint32_t __thiscall sub_00414EC0(
+    uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)
+{
+    (void)a1;
+    (void)a3;
+    return ext_004148F0(a2, a4, a5, self, a5, 0);
+}
+} // namespace lift_00414EC0

@@ -1,0 +1,13 @@
+{
+  "va": "0x00414EC0",
+  "size": 41,
+  "orig_symbol": "sub_00414EC0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "sub_00414EC0",
+  "signature": "uint32_t __thiscall sub_00414EC0( uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)",
+  "summary": "Forwards arguments with a zeroed flag byte to sub_004148F0",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:58:28Z"
+}
