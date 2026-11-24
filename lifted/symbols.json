@@ -11767,6 +11767,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00504940": {
+    "name": "Interpreter::vfunc_25",
+    "class": "Interpreter",
+    "signature": "extern \"C\" void* __thiscall fn_00504940(void* self, void* ret_buf, uint32_t arg1, uint32_t arg2)",
+    "summary": "Returns a std::string initialized from global C-string pointer at 0x00A9EE78.",
+    "lifted_path": "lifted/classes/Interpreter.cpp"
+  },
   "0x00504990": {
     "name": "Unknown::GetCountFromBeginEnd",
     "class": "Unknown",
@@ -13312,6 +13319,13 @@
     "signature": "void __thiscall HasConstantTMPtr_vfunc_11(void* self)",
     "summary": "Multiplies the current OpenGL matrix by the constant transformation matrix.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x005321B0": {
+    "name": "HasConstantTMPtr::vfunc_13",
+    "class": "HasConstantTMPtr",
+    "signature": "void __thiscall fn_005321B0(void* this_ptr)",
+    "summary": "Calls glTranslatef with the translation vector at offset 0x30 of the transform matrix pointed to by field_0x04.",
+    "lifted_path": "lifted/classes/HasConstantTMPtr.cpp"
   },
   "0x005321E0": {
     "name": "HasConstantTMPtr::vfunc_10",
