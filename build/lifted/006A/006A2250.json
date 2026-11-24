@@ -1,0 +1,22 @@
+{
+  "va": "0x006A2250",
+  "size": 188,
+  "orig_symbol": "ExprParser::Operators::Add::vfunc_2",
+  "src_path": "src/ExprParser/Operators/Add.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Add.cpp",
+  "name": "ExprParser::Operators::Add::vfunc_2",
+  "class": "ExprParser::Operators::Add",
+  "signature": "void __thiscall fn_006A2250(void* self, void* a1, void* a2)",
+  "summary": "Requires a2 to hold \u003e= 2 8-byte entries; calls this-\u003evtable[+0x0C](\u0026a2[n-2], \u0026a2[n-1]), then notifies and pops the last 8-byte entry of a2, then pops the last 4-byte entry of a1 if non-empty. Two stack args, ret 8.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::Add",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:38:55Z"
+}

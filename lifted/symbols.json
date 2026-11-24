@@ -33028,6 +33028,13 @@
     "summary": "Pops the last 8-byte element from a vector, forwards it to this-\u003evfunc_3, then shrinks the vector's end by 4 bytes if it is non-empty.",
     "lifted_path": "lifted/ExprParser/Operators/Abs.cpp"
   },
+  "0x006A2250": {
+    "name": "ExprParser::Operators::Add::vfunc_2",
+    "class": "ExprParser::Operators::Add",
+    "signature": "void __thiscall fn_006A2250(void* self, void* a1, void* a2)",
+    "summary": "Requires a2 to hold \u003e= 2 8-byte entries; calls this-\u003evtable[+0x0C](\u0026a2[n-2], \u0026a2[n-1]), then notifies and pops the last 8-byte entry of a2, then pops the last 4-byte entry of a1 if non-empty. Two stack args, ret 8.",
+    "lifted_path": "lifted/ExprParser/Operators/Add.cpp"
+  },
   "0x006A2B10": {
     "name": "TableLookup_006A2B10",
     "signature": "uint32_t fn_006A2B10(uint32_t index)",
