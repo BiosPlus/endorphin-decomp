@@ -4,11 +4,85 @@
   "orig_symbol": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::orientationTwistSwingAtoB(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_40",
   "src_path": "src/templates/Method2Type.cpp",
   "lifted_path": "lifted/templates/Method2Type.cpp",
-  "name": "ExprParser::Method2Type::vfunc_40 (orientationTwistSwingAtoB)",
-  "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::orientationTwistSwingAtoB(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e",
-  "signature": "extern \"C\" void ext_0067A670(uint32_t this_ecx); // ctor for mem_00B596A8, called with ecx = this extern \"C\" uint32_t mem_00B596A8;                // static object storage (first dword = vtable) extern \"C\" uint32_t mem_00B596AC;                // one-time-init guard word (bit 0 = initialized) void fn_0066D430(void* arg)",
-  "summary": "Lazily constructs the static object at mem_00B596A8 once (guarded by bit 0 of mem_00B596AC), then stores its address into the out-pointer's +0x04 slot.",
+  "name": "ExprParser::Method2Type::vfunc_49",
+  "class": "ExprParser::Method2Type",
+  "signature": "uint32_t callSlot5(uint32_t obj, uint32_t a, uint32_t b)",
+  "summary": "Calls virtual slot 5 twice on the object held by arg4 (first with 0, then with the first result), forwards the second result to the child at *arg2, zeroes the out buffer at arg2, and returns arg2.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uintptr_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uintptr_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::Value",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "type_vtable"
+    },
+    {
+      "class": "ExprValue",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "type"
+    },
+    {
+      "class": "OutArg",
+      "offset": "+0x4",
+      "type": "uint32_t*",
+      "name": "field_0x4"
+    },
+    {
+      "class": "arg0",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Arg0",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::RestrictedType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T14:55:59Z"
+  "lifted_at": "2026-11-24T14:56:06Z"
 }
