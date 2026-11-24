@@ -1,0 +1,14 @@
+{
+  "va": "0x00435160",
+  "size": 33,
+  "orig_symbol": "sub_00435160",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::forwardAroundGlobalVfunc109",
+  "class": "Unknown",
+  "signature": "void fn_00435160(void* self)",
+  "summary": "Forwards to subobjects, calls vtable slot 0x1B4 (109) on the global object, then forwards again.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:51:50Z"
+}

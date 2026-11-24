@@ -702,3 +702,32 @@ void fn_00435240(void* self) {
     ext_004332D0(self);
 }
 } // namespace lift_00435240
+
+// [0x00435160] sub_00435160 (33 bytes)
+namespace lift_00435160 {
+// Known callee 0x004332B0: Unknown::forwardToSubobjectsVfunc14 (Passes the object at +0x108 to ext_0043C8F0, then tail-calls ext_0044B780 with the object at +0x100.)
+extern void ext_004332B0(void* self);
+// Known callee 0x004332D0: sub_004332D0 (Auto-lifted identical-shape clone of 0x004332B0 (Unknown::forwardToSubobjectsVfunc14).)
+extern void ext_004332D0(void* self);
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430360 (getGlobalField0x58AndCall00469040).)
+// Returns the global object pointer in eax.
+extern void* ext_00465B40();
+
+// @name Unknown::forwardAroundGlobalVfunc109
+// @class Unknown
+// @summary Forwards to subobjects, calls vtable slot 0x1B4 (109) on the global object, then forwards again.
+// (No direct field accesses on self: self is only passed through to ext_004332B0 / ext_004332D0.)
+void fn_00435160(void* self) {
+    using VFn = void(__thiscall*)(void*);
+
+    ext_004332B0(self);
+
+    void* global = ext_00465B40();
+    // Vtable pointer lives at offset 0 of the object; slot is at byte offset 0x1B4.
+    uint8_t* vtbl = *reinterpret_cast<uint8_t**>(global);
+    auto fn = reinterpret_cast<VFn>(*reinterpret_cast<void**>(vtbl + 0x1B4));
+    fn(global);
+
+    ext_004332D0(self);
+}
+} // namespace lift_00435160

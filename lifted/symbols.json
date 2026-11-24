@@ -2090,6 +2090,13 @@
     "summary": "Forwards self to ext_004332B0, obtains an object via ext_00465B40, invokes its vtable slot at +0x1C0 with that object as this, then tail-calls ext_004332D0 with self.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00435160": {
+    "name": "Unknown::forwardAroundGlobalVfunc109",
+    "class": "Unknown",
+    "signature": "void fn_00435160(void* self)",
+    "summary": "Forwards to subobjects, calls vtable slot 0x1B4 (109) on the global object, then forwards again.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00435240": {
     "name": "Unknown::forwardThenCallVfunc1C4ThenForward",
     "class": "Unknown",
