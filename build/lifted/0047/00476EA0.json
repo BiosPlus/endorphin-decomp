@@ -1,0 +1,14 @@
+{
+  "va": "0x00476EA0",
+  "size": 28,
+  "orig_symbol": "SymbolPtrMap\u003cSearchableMap\u003cNMData::TriggeredEventData *, GetNameFromAttribute\u003cNMData::TriggeredEventData *\u003e\u003e\u003e::vfunc_1",
+  "src_path": "src/templates/auto_tiny.cpp",
+  "lifted_path": "lifted/templates/auto_tiny.cpp",
+  "name": "SymbolPtrMap::vfunc_1",
+  "class": "SymbolPtrMap\u003cSearchableMap\u003cNMData::TriggeredEventData *, GetNameFromAttribute\u003cNMData::TriggeredEventData *\u003e\u003e\u003e",
+  "signature": "uint32_t __thiscall fn_00476EA0(uint32_t self, uint32_t key)",
+  "summary": "Looks up a symbol pointer in the inner searchable map and dereferences the result if found.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:09:29Z"
+}

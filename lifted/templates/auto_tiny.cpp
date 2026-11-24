@@ -169,3 +169,24 @@ void fn_0060AE20(void* self) {
     slot1(target, 1);
 }
 } // namespace lift_0060AE20
+
+// [0x00476EA0]
+namespace lift_00476EA0 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name SymbolPtrMap::vfunc_1
+// @class SymbolPtrMap<SearchableMap<NMData::TriggeredEventData *, GetNameFromAttribute<NMData::TriggeredEventData *>>>
+// @summary Looks up a symbol pointer in the inner searchable map and dereferences the result if found.
+// @field SymbolPtrMap<SearchableMap<NMData::TriggeredEventData *, GetNameFromAttribute<NMData::TriggeredEventData *>>> +0x04 uint32_t field_0x04
+uint32_t __thiscall fn_00476EA0(uint32_t self, uint32_t key) {
+    uint32_t inner = mem_read32(self + 0x4);
+    uint32_t vtable = mem_read32(inner);
+    uint32_t vfunc0 = mem_read32(vtable);
+    using Vfunc0Fn = uint32_t(__thiscall*)(uint32_t, uint32_t);
+    uint32_t entry = reinterpret_cast<Vfunc0Fn>(vfunc0)(inner, key);
+    if (entry != 0) {
+        return mem_read32(entry);
+    }
+    return 0;
+}
+} // namespace lift_00476EA0

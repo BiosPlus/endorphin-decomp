@@ -2428,6 +2428,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x15C and tail-calls sub_0045C240.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x004444C0": {
+    "name": "updateField69IfNonNull",
+    "signature": "void __stdcall sub_004444C0(uintptr_t obj)",
+    "summary": "Calls ext_00584C20 on a non-null object and stores the negated boolean result at +0x69",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00446740": {
     "name": "NodeView::vfunc_0_off_14C",
     "class": "NodeView",
