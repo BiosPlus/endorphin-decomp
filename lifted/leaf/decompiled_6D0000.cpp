@@ -4,6 +4,7 @@ extern "C" void __fastcall ext_006D7B50(void* self);
 extern "C" void __cdecl ext_006A5C5C(void* ptr);
 extern "C" void __fastcall ext_006D7DB0(void* self);
 #include <cstring>
+#include <cstdlib>
 
 // [0x006D7B30] sub_006D7B30 (32 bytes)
 // @name sub_006D7B30
@@ -679,3 +680,23 @@ void* fn_006DECA0(void* self, int32_t key) {
     }
 }
 } // namespace lift_006DECA0
+
+// [0x006D2250]
+namespace lift_006D2250 {
+// @name Buffer::release
+// @class Buffer
+// @summary Frees the buffer at +0x10 if non-null and resets fields at +0x00, +0x04, and +0x10 to zero.
+// @field Buffer +0x00 uint32_t field_0x00
+// @field Buffer +0x04 uint32_t field_0x04
+// @field Buffer +0x10 uint32_t field_0x10
+void __thiscall sub_006D2250(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint32_t ptr = *reinterpret_cast<uint32_t*>(base + 0x10);
+    if (ptr != 0) {
+        std::free(reinterpret_cast<void*>(static_cast<uintptr_t>(ptr)));
+        *reinterpret_cast<uint32_t*>(base + 0x10) = 0;
+    }
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x04) = 0;
+}
+} // namespace lift_006D2250
