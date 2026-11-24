@@ -144,7 +144,7 @@ struct Unknown_Fields {
     // +0x8   uint32_t                 field_0x08  (evidence: 0x0040F290, 0x0041C5A0, 0x0041C600, 0x00442960, 0x00443700, 0x004800C0, 0x004809B0, 0x00494000, 0x004AEC90, 0x004E7E90, 0x00503CA0, 0x0050F970, 0x0050F9D0, 0x00532B60, 0x00540D00, 0x005478B0, 0x005478C0, 0x005478D0, 0x005B0E60, 0x005B1830, 0x005B7040, 0x005C3890, 0x005CF930, 0x005D06D0, 0x00611160, 0x006657F0, 0x00681FE0, 0x00687230, 0x00699180, 0x0069B680, 0x006A0670, 0x006B9910, 0x006B9950, 0x006BC0D0, 0x006C9F60, 0x006E67C0, 0x006E7120, 0x006F9DC0, 0x006FC7E0, 0x0077FAB0, 0x00783790, 0x00783800, 0x007D4B30, 0x007D8470, 0x007DA8D0, 0x008703B0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t                  field_0x08  (evidence: 0x00493E10, 0x004BF680, 0x006C1BB0, 0x006C9A90, 0x006F8AF0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void (*)(void*, int)     field_0x08  (evidence: 0x005F5190) // CONFLICT: multiple definitions at +0x8
-    // +0x8   void*                    field_0x08  (evidence: 0x00401950, 0x00401960, 0x0041C6B0, 0x0041C6D0, 0x0041C6F0, 0x0041C730, 0x00441020, 0x00447530, 0x00447540, 0x0044B6A0, 0x004AEC60, 0x00528BD0, 0x00553E80, 0x005E09B0, 0x00609730, 0x00666C90, 0x006FA920, 0x006FAF10, 0x00789650) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    field_0x08  (evidence: 0x00401950, 0x00401960, 0x0041C6B0, 0x0041C6D0, 0x0041C6F0, 0x0041C730, 0x00441020, 0x004429C0, 0x00447530, 0x00447540, 0x0044B6A0, 0x004AEC60, 0x00528BD0, 0x00553E80, 0x005E09B0, 0x00609730, 0x00666C90, 0x006FA920, 0x006FAF10, 0x00789650) // CONFLICT: multiple definitions at +0x8
     // +0x8   float                    floatArg  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    parent  (evidence: 0x005942D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    peer  (evidence: 0x00532B40, 0x0053F6A0) // CONFLICT: multiple definitions at +0x8
@@ -176,6 +176,7 @@ struct Unknown_Fields {
     // +0xC   void* field_0x0c (address taken only; no type information recovered)  (evidence: 0x00440770) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 srcField4  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0C (sub-object that receives the value via vfunc_8)  (evidence: 0x005853E0) // CONFLICT: multiple definitions at +0xC
+    // +0xD   uint8_t                  field_0x0d  (evidence: 0x004429C0)
     // +0x10  uint32_t field_0x10      (slot[1])  (evidence: 0x00553A30) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    child  (evidence: 0x00441020, 0x0044B780, 0x0044B7A0, 0x0044B7C0, 0x006722B0, 0x00672490, 0x00675D60) // CONFLICT: multiple definitions at +0x10
     // +0x10  void* field_0x10 (address only; this+0x10 passed as the this-pointer to ext_005111E0)  (evidence: 0x0068BC00) // CONFLICT: multiple definitions at +0x10

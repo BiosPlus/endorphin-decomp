@@ -2744,6 +2744,13 @@
     "summary": "Destructor tail-call: restores vtable mem_009324DC and tail-calls base destructor sub_0041C790.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x004429C0": {
+    "name": "resetOwnerTimer",
+    "class": "Unknown",
+    "signature": "void fn_004429C0(void* self)",
+    "summary": "Calls helper on owner, clears byte flag at +0x0D, kills owner timer, then restarts it with owner's +0x168 interval.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00442B60": {
     "name": "Unknown::InitWithTagAndSetVtable",
     "class": "Unknown",

@@ -1013,3 +1013,28 @@ void fn_0044C230(void* self, DWORD unused_arg0, DWORD arg1, DWORD arg2) {
     fn(static_cast<char*>(self) + 0x58, &pair);
 }
 } // namespace lift_0044C230
+
+// [0x004429C0] sub_004429C0 (42 bytes)
+namespace lift_004429C0 {
+// Unlifted helper 0x0043CDA0 (35 bytes): __thiscall on owner, one stack arg (passed 0).
+extern void ext_0043CDA0(void* self, UINT arg);
+// 0x0043CD80: KillOwnerTimer. Kills the timer whose ID is stored at self+0x138, owned by window at self+0x20.
+extern void ext_0043CD80(void* self);
+// 0x0043CD60: CWndDerived::startTimer. Starts a 1-ID timer on window at +0x20 with interval uElapse (ms); stores ID at +0x138.
+extern void ext_0043CD60(void* self, UINT uElapse);
+
+// @name resetOwnerTimer
+// @class Unknown
+// @summary Calls helper on owner, clears byte flag at +0x0D, kills owner timer, then restarts it with owner's +0x168 interval.
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x0D uint8_t field_0x0d
+// @field CWndDerived +0x168 UINT field_0x168
+void fn_004429C0(void* self) {
+    ext_0043CDA0(lift_field<void*>(self, 0x08), 0);
+    lift_field<uint8_t>(self, 0x0D) = 0;
+    ext_0043CD80(lift_field<void*>(self, 0x08));
+    void* owner = lift_field<void*>(self, 0x08);
+    UINT interval = lift_field<UINT>(owner, 0x168);
+    ext_0043CD60(owner, interval);
+}
+} // namespace lift_004429C0

@@ -1,0 +1,34 @@
+{
+  "va": "0x004429C0",
+  "size": 42,
+  "orig_symbol": "sub_004429C0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "resetOwnerTimer",
+  "class": "Unknown",
+  "signature": "void fn_004429C0(void* self)",
+  "summary": "Calls helper on owner, clears byte flag at +0x0D, kills owner timer, then restarts it with owner's +0x168 interval.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD",
+      "type": "uint8_t",
+      "name": "field_0x0d"
+    },
+    {
+      "class": "CWndDerived",
+      "offset": "+0x168",
+      "type": "UINT",
+      "name": "field_0x168"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:58:34Z"
+}
