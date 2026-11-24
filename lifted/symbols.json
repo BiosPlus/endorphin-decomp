@@ -16309,6 +16309,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0054ECB0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0054EFC0": {
+    "name": "OptimizedMatrixStackManager::vfunc_0",
+    "class": "OptimizedMatrixStackManager",
+    "signature": "void* fn_0054EFC0(void* self, uint32_t flags)",
+    "summary": "Scalar deleting destructor: tears down the sub-object at +0x0C, stamps the vtable, and frees self when flags bit 0 is set. Returns self.",
+    "lifted_path": "lifted/classes/OptimizedMatrixStackManager.cpp"
+  },
   "0x0054F1B0": {
     "name": "constructRange_0054F1B0",
     "signature": "void sub_0054F1B0(uint8_t* begin, uint8_t* end, uint32_t arg)",
