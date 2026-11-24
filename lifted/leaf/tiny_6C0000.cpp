@@ -1324,3 +1324,16 @@ DWORD fn_006C9CC0(void* self) {
     return v & 0x100u;
 }
 } // namespace lift_006C9CC0
+
+// [0x006C9CD0] sub_006C9CD0 (16 bytes)
+namespace lift_006C9CD0 {
+// @name Unknown::GetFlagsMask0F00
+// @class Unknown
+// @summary Returns the 0x0F00 bit-field of the dword at this+0x10.
+// @field Unknown +0x10 uint32_t field_0x10
+uint32_t fn_006C9CD0(void* self) {
+    const uint32_t field_0x10 = *reinterpret_cast<const uint32_t*>(
+        static_cast<const uint8_t*>(self) + 0x10);
+    return field_0x10 & 0x00000F00u;
+}
+} // namespace lift_006C9CD0

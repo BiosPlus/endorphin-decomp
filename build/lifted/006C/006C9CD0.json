@@ -1,0 +1,22 @@
+{
+  "va": "0x006C9CD0",
+  "size": 16,
+  "orig_symbol": "sub_006C9CD0",
+  "src_path": "src/leaf/tiny_6C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6C0000.cpp",
+  "name": "Unknown::GetFlagsMask0F00",
+  "class": "Unknown",
+  "signature": "uint32_t fn_006C9CD0(void* self)",
+  "summary": "Returns the 0x0F00 bit-field of the dword at this+0x10.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:38:18Z"
+}
