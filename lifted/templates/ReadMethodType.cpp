@@ -30649,3 +30649,21 @@ void* fn_004B1160(void* dst, void* src) {
     ext_006A6DD2(err, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
 }
 } // namespace lift_004B1160
+
+// [0x00505030] ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_4 (68 bytes)
+namespace lift_00505030 {
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out_str, uint8_t flag);
+
+// @name ExprParser::ReadMethodType::vfunc_4 (Interpreter::bogus)
+// @class ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>
+// @summary Stdcall (ret 8): throws if the dword at holder is zero; otherwise calls ext_0046C500(out, 0) and returns out.
+// @field <unknown> +0x00 uint32_t field_0x00
+void* fn_00505030(void* out, const uint32_t* holder) {
+    if (*holder == 0) {
+        throw std::runtime_error("ExprParser::ReadMethodType: null value");
+    }
+    ext_0046C500(out, 0);
+    return out;
+}
+} // namespace lift_00505030
