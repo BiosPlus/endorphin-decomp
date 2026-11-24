@@ -20277,6 +20277,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004D86A0 (ExprParser::ReadMethodType\u003cNMData::RigEventData, std::string, getUserRetargetRefFrame, 0\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005912A0": {
+    "name": "ExprParser::ReadMethodType\u003cTransformNode, std::string, TransformNode::getUserRefFrame, 0\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cTransformNode, std::string, TransformNode::getUserRefFrame, 0\u003e",
+    "signature": "void* __stdcall fn_005912A0(void* out, void* unused)",
+    "summary": "Reads the first dword of the first stack argument, builds a temporary std::string via ext_0058F770, copy-constructs the result into the first argument's buffer, destroys the temporary, and returns the first argument.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005914A0": {
     "name": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0\u003e",

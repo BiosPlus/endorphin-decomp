@@ -42511,3 +42511,38 @@ void* __stdcall fn_00513240(void* out, void* self) {
     return out;
 }
 } // namespace lift_00513240
+
+// [0x005912A0] (115 bytes)
+namespace lift_005912A0 {
+namespace lift_005912A0 {
+// Callee 0x0058F770: __stdcall helper (2 stack args, ret 8). Takes a DWORD read from the
+// first argument's first dword and a scratch std::string buffer; returns a pointer to the source string.
+extern void* __stdcall ext_0058F770(DWORD value, void* scratch);
+
+// Callee 0x004276B0: StdStringCopyConstruct(dst, src) -> dst.
+extern void* ext_004276B0(void* dst, const void* src);
+
+// IAT slot 0x00924FF4: MSVCP80 std::basic_string<char> destructor (__thiscall, this in ecx).
+extern void (*mem_00924FF4)(void* self);
+
+// @name ExprParser::ReadMethodType<TransformNode, std::string, TransformNode::getUserRefFrame, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<TransformNode, std::string, TransformNode::getUserRefFrame, 0>
+// @summary Reads the first dword of the first stack argument, builds a temporary std::string via ext_0058F770, copy-constructs the result into the first argument's buffer, destroys the temporary, and returns the first argument.
+// @field (arg0) +0x00 DWORD field_0x00
+void* __stdcall fn_005912A0(void* out, void* unused) {
+    (void)unused;
+    // Original: eax = arg0; edx = [eax]; push edx; push &tmp; call ext_0058F770 -> src.
+    const DWORD value = *reinterpret_cast<const DWORD*>(out);
+    alignas(std::string) unsigned char tmp[sizeof(std::string)];
+    const void* src = ext_0058F770(value, tmp);
+
+    // Original: push src; push out; call ext_004276B0(out, src).
+    ext_004276B0(out, src);
+
+    // Original: destroy the temporary std::string at tmp (__thiscall via IAT slot 0x00924FF4).
+    mem_00924FF4(tmp);
+
+    return out;
+}
+} // namespace lift_005912A0
+} // namespace lift_005912A0

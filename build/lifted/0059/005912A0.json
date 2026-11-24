@@ -1,0 +1,22 @@
+{
+  "va": "0x005912A0",
+  "size": 115,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cTransformNode, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cTransformNode, std::string, TransformNode::getUserRefFrame, 0\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cTransformNode, std::string, TransformNode::getUserRefFrame, 0\u003e",
+  "signature": "void* __stdcall fn_005912A0(void* out, void* unused)",
+  "summary": "Reads the first dword of the first stack argument, builds a temporary std::string via ext_0058F770, copy-constructs the result into the first argument's buffer, destroys the temporary, and returns the first argument.",
+  "fields": [
+    {
+      "class": "(arg0)",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:03:50Z"
+}
