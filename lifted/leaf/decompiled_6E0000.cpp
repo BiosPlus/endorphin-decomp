@@ -627,3 +627,85 @@ void* fn_006E72A0(void* self) {
     return self;
 }
 } // namespace lift_006E72A0
+
+// [0x006E63C0]
+namespace lift_006E63C0 {
+// @name initHugeVec3
+// @summary Initializes three 64-bit globals (6 dwords at 0x00B5DDA0..0x00B5DDB4) from MSVCR80!_HUGE.
+
+
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5DDA0;
+extern uint32_t mem_00B5DDA4;
+extern uint32_t mem_00B5DDA8;
+extern uint32_t mem_00B5DDAC;
+extern uint32_t mem_00B5DDB0;
+extern uint32_t mem_00B5DDB4;
+
+void sub_006E63C0() {
+    const uint32_t* huge_ptr = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    const uint32_t lo = huge_ptr[0];
+    const uint32_t hi = huge_ptr[1];
+    mem_00B5DDA0 = lo;
+    mem_00B5DDA4 = hi;
+    mem_00B5DDA8 = lo;
+    mem_00B5DDAC = hi;
+    mem_00B5DDB0 = lo;
+    mem_00B5DDB4 = hi;
+}
+} // namespace lift_006E63C0
+
+// [0x006E9CB0]
+namespace lift_006E9CB0 {
+// @name initHugeVectorGlobals
+// @summary Initializes three 64-bit global values to MSVCR80!_HUGE.
+
+
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5DF38;
+extern uint32_t mem_00B5DF3C;
+extern uint32_t mem_00B5DF40;
+extern uint32_t mem_00B5DF44;
+extern uint32_t mem_00B5DF48;
+extern uint32_t mem_00B5DF4C;
+
+void sub_006E9CB0() {
+    uint32_t* huge_ptr = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    uint32_t lo = huge_ptr[0];
+    uint32_t hi = huge_ptr[1];
+
+    mem_00B5DF38 = lo;
+    mem_00B5DF3C = hi;
+    mem_00B5DF40 = lo;
+    mem_00B5DF44 = hi;
+    mem_00B5DF48 = lo;
+    mem_00B5DF4C = hi;
+}
+} // namespace lift_006E9CB0
+
+// [0x006E9B70]
+namespace lift_006E9B70 {
+// @name sub_006E9B70
+// @summary Looks up an item by key 0x00AA8D80 on the object from ext_006C9360(a1), invokes vtable+0x10 if found, and calls ext_00732CB0(a1).
+
+
+extern int32_t __fastcall ext_006C9360(void* self);
+extern void __stdcall ext_00732CB0(int32_t a1);
+
+using vfn_find_t = int32_t (__thiscall*)(void* self, uint32_t key);
+using vfn_remove_t = void (__thiscall*)(void* self, int32_t index);
+
+extern void __fastcall fn_006E9B70(void* self, void* a1) {
+    (void)self;
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(ext_006C9360(a1))));
+    uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(obj);
+    auto fn_28 = reinterpret_cast<vfn_find_t>(vtable[0x28 / sizeof(uintptr_t)]);
+    int32_t idx = fn_28(obj, 0x00AA8D80u);
+    if (idx != -1) {
+        uintptr_t* vtable2 = *reinterpret_cast<uintptr_t**>(obj);
+        auto fn_10 = reinterpret_cast<vfn_remove_t>(vtable2[0x10 / sizeof(uintptr_t)]);
+        fn_10(obj, idx);
+    }
+    ext_00732CB0(static_cast<int32_t>(reinterpret_cast<uintptr_t>(a1)));
+}
+} // namespace lift_006E9B70
