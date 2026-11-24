@@ -1,0 +1,22 @@
+{
+  "va": "0x00714920",
+  "size": 32,
+  "orig_symbol": "sub_00714920",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::CallArgWithSubObjectAddr",
+  "class": "Unknown",
+  "signature": "void* fn_00714920(void* self, void* arg)",
+  "summary": "Calls 0x006D2390 with arg as this and (self + 0x08) as its stack argument, then returns arg.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "BYTE",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:41:10Z"
+}

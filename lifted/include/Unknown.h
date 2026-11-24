@@ -104,7 +104,7 @@ struct Unknown_Fields {
     // +0x8   uint32_t                 count  (evidence: 0x007D8470, 0x007D9610) // CONFLICT: multiple definitions at +0x8
     // +0x8   float field_0x08 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 elements[]  (evidence: 0x007D8470, 0x007D9610) // CONFLICT: multiple definitions at +0x8
-    // +0x8   BYTE                     field_0x08  (evidence: 0x004E9BB0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   BYTE                     field_0x08  (evidence: 0x004E9BB0, 0x00714920) // CONFLICT: multiple definitions at +0x8
     // +0x8   DWORD                    field_0x08  (evidence: 0x004F9800, 0x006BB7B0, 0x006C9F00, 0x006E7F90, 0x006E7FA0, 0x006E86A0, 0x0086B200) // CONFLICT: multiple definitions at +0x8
     // +0x8   DWORD*                   field_0x08  (evidence: 0x007D4780) // CONFLICT: multiple definitions at +0x8
     // +0x8   double                   field_0x08  (evidence: 0x006722B0, 0x0067B2F0, 0x0067B310, 0x0067B390) // CONFLICT: multiple definitions at +0x8

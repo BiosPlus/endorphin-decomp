@@ -340,3 +340,20 @@ void fn_007148C0(void* self, BYTE* out0, BYTE* out1, BYTE* out2) {
     *out2 = lift_field<BYTE>(self, 0x05);
 }
 } // namespace lift_007148C0
+
+// [0x00714920] sub_00714920 (32 bytes)
+namespace lift_00714920 {
+// Known callee 0x006D2390: ForwardArgToCalleeReturnThis (Forwards its single stack argument to sub_007873F0 with the same this pointer, then returns this.)
+extern void* ext_006D2390(void* self, uint32_t arg1);
+
+// @name Unknown::CallArgWithSubObjectAddr
+// @class Unknown
+// @summary Calls 0x006D2390 with arg as this and (self + 0x08) as its stack argument, then returns arg.
+// @field Unknown +0x08 BYTE field_0x08
+void* fn_00714920(void* self, void* arg) {
+    const uint32_t sub_addr =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self) + 0x08);
+    ext_006D2390(arg, sub_addr);
+    return arg;
+}
+} // namespace lift_00714920

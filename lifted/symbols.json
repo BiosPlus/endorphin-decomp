@@ -40996,6 +40996,13 @@
     "summary": "Copies object bytes +0x03, +0x04, +0x05 to three caller-supplied BYTE* out-pointers (thiscall, ret 0xC).",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00714920": {
+    "name": "Unknown::CallArgWithSubObjectAddr",
+    "class": "Unknown",
+    "signature": "void* fn_00714920(void* self, void* arg)",
+    "summary": "Calls 0x006D2390 with arg as this and (self + 0x08) as its stack argument, then returns arg.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00714970": {
     "name": "sub_00714970",
     "signature": "extern \"C\" void __fastcall fn_00714970(void* self, int edx_unused, uint8_t value)",
