@@ -46,6 +46,7 @@ struct Unknown_Fields {
     // +0x0   DWORD                    ptrAt00  (evidence: 0x00859E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    ptr_0x00  (evidence: 0x006E86E0, 0x006E8790) // CONFLICT: multiple definitions at +0x0
     // +0x0   double field_0x00[] (indexed by arg, stride 8; element type inferred from fld qword)  (evidence: 0x0077FAE0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 selector  (evidence: 0x0071A790) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    self  (evidence: 0x00493EE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* innerPtr (pointer to inner struct, dereferenced from self)  (evidence: 0x006BB790) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (on subobject returned by ext_0071E680, i.e. self+0x40)  (evidence: 0x00711A20, 0x0071F070) // CONFLICT: multiple definitions at +0x0

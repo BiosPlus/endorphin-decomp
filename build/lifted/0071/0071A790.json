@@ -1,0 +1,21 @@
+{
+  "va": "0x0071A790",
+  "size": 33,
+  "orig_symbol": "sub_0071A790",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "GetInterestOrCameraRelativeLabel",
+  "signature": "uint32_t __stdcall fn_0071A790(uint32_t selector)",
+  "summary": "Maps selector 0 to the \"Relative to Interest\" string address, 1 to \"Relative to Camera\", and any other value to 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "selector"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:53:52Z"
+}

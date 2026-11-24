@@ -654,3 +654,26 @@ const char* sub_0071A820(uint32_t mode) {
     return nullptr;
 }
 } // namespace lift_0071A820
+
+// [0x0071A790] sub_0071A790 (33 bytes)
+namespace lift_0071A790 {
+extern int mem_00AAC9F8;
+extern int mem_00AACA10;
+
+// @name GetInterestOrCameraRelativeLabel
+// @summary Maps selector 0 to the "Relative to Interest" string address, 1 to "Relative to Camera", and any other value to 0.
+// @field Unknown +0x00 uint32_t selector
+// Stdcall, one DWORD argument, returns a DWORD (string address or 0).
+uint32_t __stdcall fn_0071A790(uint32_t selector) {
+    switch (selector) {
+        case 0:
+            // Address of mem_00AAC9F8 ("Relative to Interest").
+            return 0x00AAC9F8u;
+        case 1:
+            // Address of mem_00AACA10 ("Relative to Camera").
+            return 0x00AACA10u;
+        default:
+            return 0u;
+    }
+}
+} // namespace lift_0071A790
