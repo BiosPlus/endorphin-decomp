@@ -418,3 +418,19 @@ void* fn_006657F0(void* self, uint32_t arg) {
     return self;
 }
 } // namespace lift_006657F0
+
+// [0x00662E50] sub_00662E50 (28 bytes)
+namespace lift_00662E50 {
+// MSVCP80 std::basic_string<char>::c_str (thiscall, this in ecx)
+extern const char* __thiscall ext_MSVCP80_string_c_str(const void* self);
+// SHLWAPI PathIsRelativeA (stdcall, returns BOOL)
+extern BOOL __stdcall ext_SHLWAPI_PathIsRelativeA(const char* path);
+
+// @name IsRelativePathString
+// @summary Returns 1 if the std::string path is relative (PathIsRelativeA == TRUE), else 0.
+extern int __cdecl fn_00662E50(const void* path_string) {
+    const char* path = ext_MSVCP80_string_c_str(path_string);
+    BOOL relative = ext_SHLWAPI_PathIsRelativeA(path);
+    return relative == TRUE ? 1 : 0;
+}
+} // namespace lift_00662E50
