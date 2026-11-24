@@ -610,3 +610,26 @@ void fn_0071C9E0(void* self, DWORD arg1, DWORD arg2) {
 }
 } // namespace lift_0071C3B0
 } // namespace lift_0071C9E0
+
+// [0x0071F070] sub_0071F070 (32 bytes)
+namespace lift_0071F070 {
+// @name Unknown::StoreArgAndDispatchSlot2
+// @class Unknown
+// @summary Stores the stack argument at this+0x4, calls vtable slot 2 on this with that argument, and returns this+0x8.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+
+typedef void(__thiscall* VSlot2Fn)(void* self, uint32_t arg);
+
+// ecx = this; arg = first stack argument (__thiscall, callee-cleans, ret 4).
+uint8_t* fn_0071F070(uint8_t* ecx, uint32_t arg) {
+    uint8_t* self = ecx;
+    *reinterpret_cast<uint32_t*>(self + 0x04) = arg;
+
+    void** vtbl = *reinterpret_cast<void***>(self + 0x00);
+    VSlot2Fn slot2 = reinterpret_cast<VSlot2Fn>(vtbl[2]);
+    slot2(self, arg);
+
+    return self + 0x08;
+}
+} // namespace lift_0071F070

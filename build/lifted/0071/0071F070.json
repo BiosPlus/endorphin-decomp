@@ -1,0 +1,28 @@
+{
+  "va": "0x0071F070",
+  "size": 32,
+  "orig_symbol": "sub_0071F070",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::StoreArgAndDispatchSlot2",
+  "class": "Unknown",
+  "signature": "uint8_t* fn_0071F070(uint8_t* ecx, uint32_t arg)",
+  "summary": "Stores the stack argument at this+0x4, calls vtable slot 2 on this with that argument, and returns this+0x8.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:43:08Z"
+}

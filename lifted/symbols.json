@@ -42004,6 +42004,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006F8AC0 (Unknown::InitZeroAndDelegate).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071F070": {
+    "name": "Unknown::StoreArgAndDispatchSlot2",
+    "class": "Unknown",
+    "signature": "uint8_t* fn_0071F070(uint8_t* ecx, uint32_t arg)",
+    "summary": "Stores the stack argument at this+0x4, calls vtable slot 2 on this with that argument, and returns this+0x8.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071F090": {
     "name": "sub_0071F090",
     "signature": "extern \"C\" void __fastcall fn_0071F090(void* self)",
