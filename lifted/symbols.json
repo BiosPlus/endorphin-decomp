@@ -47178,6 +47178,13 @@
     "summary": "Returns bit 12 of the 32-bit word at +0x04 of the object referenced by +0x04 of the argument (0 or 1).",
     "lifted_path": "lifted/leaf/tiny_810000.cpp"
   },
+  "0x008103C0": {
+    "name": "SetIndirectFlag0x1000",
+    "class": "Unknown",
+    "signature": "void fn_008103C0(void* self, DWORD flag)",
+    "summary": "Sets or clears bit 0x1000 (bit 12) in the dword at +0x04 of the object referenced by self+0x04, based on a flag argument.",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
   "0x008103F0": {
     "name": "getNestedFlagBit11",
     "signature": "uint32_t fn_008103F0(uint8_t* self)",

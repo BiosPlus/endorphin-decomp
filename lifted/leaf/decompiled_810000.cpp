@@ -106,3 +106,21 @@ void sub_008102D0(ObjA* a, uint32_t flag) {
     }
 }
 } // namespace lift_008102D0
+
+// [0x008103C0] sub_008103C0 (42 bytes)
+namespace lift_008103C0 {
+// @name SetIndirectFlag0x1000
+// @class Unknown
+// @summary Sets or clears bit 0x1000 (bit 12) in the dword at +0x04 of the object referenced by self+0x04, based on a flag argument.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x04 DWORD field_0x04
+void fn_008103C0(void* self, DWORD flag) {
+    void* inner = lift_field<void*>(self, 0x04);
+    DWORD& bits = lift_field<DWORD>(inner, 0x04);
+    if (flag != 0) {
+        bits |= 0x00001000u;
+    } else {
+        bits &= ~0x00001000u;
+    }
+}
+} // namespace lift_008103C0
