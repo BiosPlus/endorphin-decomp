@@ -225,3 +225,31 @@ uint32_t catchHandler_006A04B0(uintptr_t frame_ebp) {
     return 0x006A049F;
 }
 } // namespace lift_006A04B0
+
+// [0x006A0530]
+namespace lift_006A0530 {
+extern uint32_t mem_00924E90;
+extern uint32_t mem_00924FA0;
+extern uint32_t mem_00924E94;
+extern uint32_t mem_00924E98;
+
+// @name catch_006A0530
+// @summary Catch handler funclet that prints exception message at [ebp-0x14]+0xc to std::cout and returns continuation address 0x006A051F
+// @field ExceptionObj +0x0c std::string message
+uint32_t sub_006A0530(uintptr_t ebp) {
+    uint32_t obj = *reinterpret_cast<uint32_t*>(ebp - 0x14);
+    uintptr_t msg_ptr = static_cast<uintptr_t>(obj) + 0xc;
+    uintptr_t cout_ptr = static_cast<uintptr_t>(mem_00924FA0);
+    uintptr_t endl_ptr = static_cast<uintptr_t>(mem_00924E90);
+
+    using op_str_fn = uintptr_t (*)(uintptr_t, uintptr_t);
+    using op_endl_fn = uintptr_t (*)(uintptr_t, uintptr_t);
+
+    auto fn_str = reinterpret_cast<op_str_fn>(static_cast<uintptr_t>(mem_00924E94));
+    auto fn_endl = reinterpret_cast<op_endl_fn>(static_cast<uintptr_t>(mem_00924E98));
+
+    uintptr_t os = fn_str(cout_ptr, msg_ptr);
+    fn_endl(os, endl_ptr);
+    return 0x006A051F;
+}
+} // namespace lift_006A0530

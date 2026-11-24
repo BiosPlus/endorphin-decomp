@@ -1,0 +1,21 @@
+{
+  "va": "0x006A0530",
+  "size": 43,
+  "orig_symbol": "sub_006A0530",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "catch_006A0530",
+  "signature": "uint32_t sub_006A0530(uintptr_t ebp)",
+  "summary": "Catch handler funclet that prints exception message at [ebp-0x14]+0xc to std::cout and returns continuation address 0x006A051F",
+  "fields": [
+    {
+      "class": "ExceptionObj",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "message"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:07:39Z"
+}
