@@ -71,3 +71,17 @@ uint32_t sub_007AA910(const uint8_t* self, int32_t index) {
     return 0;
 }
 } // namespace lift_007AA910
+
+// [0x007AA930]
+namespace lift_007AA930 {
+// @name Unknown::SetByteSlot138
+// @class Unknown
+// @summary Stores a byte at this->field_0x138[index] for 1 <= index < 0x12; other indices are ignored.
+// @field Unknown +0x138 uint8_t field_0x138
+
+void Unknown_SetByteSlot138(uint8_t* self, int32_t index, uint8_t value) {
+    if (index > 0 && index < 0x12) {
+        self[0x138 + index] = value;
+    }
+}
+} // namespace lift_007AA930

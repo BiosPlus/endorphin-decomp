@@ -43202,6 +43202,13 @@
     "summary": "Returns the 32-bit slot at this+0xF0 + 4*index for index in [1, 17]; returns 0 otherwise.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AA930": {
+    "name": "Unknown::SetByteSlot138",
+    "class": "Unknown",
+    "signature": "void Unknown_SetByteSlot138(uint8_t* self, int32_t index, uint8_t value)",
+    "summary": "Stores a byte at this-\u003efield_0x138[index] for 1 \u003c= index \u003c 0x12; other indices are ignored.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AB350": {
     "name": "sub_007AB350",
     "signature": "extern \"C\" void* __fastcall fn_007AB350(void* self, int edx_unused, unsigned int flags)",

@@ -1,0 +1,22 @@
+{
+  "va": "0x007AA930",
+  "size": 32,
+  "orig_symbol": "sub_007AA930",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "Unknown::SetByteSlot138",
+  "class": "Unknown",
+  "signature": "void Unknown_SetByteSlot138(uint8_t* self, int32_t index, uint8_t value)",
+  "summary": "Stores a byte at this-\u003efield_0x138[index] for 1 \u003c= index \u003c 0x12; other indices are ignored.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x138",
+      "type": "uint8_t",
+      "name": "field_0x138"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:46:58Z"
+}

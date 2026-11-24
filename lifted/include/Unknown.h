@@ -358,6 +358,7 @@ struct Unknown_Fields {
     // +0x12C u8                       field_0x12c  (evidence: 0x0041CCA0, 0x00430DA0, 0x0043C620, 0x00455280, 0x004584C0) // CONFLICT: multiple definitions at +0x12C
     // +0x138 UINT                     field_0x138  (evidence: 0x0043CD80) // CONFLICT: multiple definitions at +0x138
     // +0x138 float                    field_0x138  (evidence: 0x004646A0, 0x00468730, 0x0046C110, 0x00594700, 0x0059DE20) // CONFLICT: multiple definitions at +0x138
+    // +0x138 uint8_t                  field_0x138  (evidence: 0x007AA930) // CONFLICT: multiple definitions at +0x138
     // +0x13C std::string              field_0x13c  (evidence: 0x00455AD0, 0x004584C0)
     // +0x148 void*                    subObject  (evidence: 0x0070E3B0, 0x0070EC50)
     // +0x14C BYTE field_0x14C[] (indexed by arg index; byte store target)  (evidence: 0x006D74E0)
