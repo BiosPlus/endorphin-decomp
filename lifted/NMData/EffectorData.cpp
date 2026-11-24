@@ -29,3 +29,44 @@ void* fn_0060BEA0() {
     }
     return ext_00622750(obj);
 }
+
+// [0x0060BE10] NMData::EffectorData::vfunc_17 (139 bytes)
+namespace lift_0060BE10 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Called cdecl with a 0x10-byte size; returns the allocated block in eax (0 on failure).
+extern void* ext_006A5C62(std::size_t size);
+// Known callee 0x00622750: InitTaggedZeroFloatTriple
+// Stores the tag mem_0097707C at +0x00, zeroes floats at +0x04/+0x08/+0x0C, returns self.
+extern void* ext_00622750(void* self);
+// .rdata float constants read by this function.
+extern const float mem_00956EE0; // 20.0f
+extern const float mem_00993858; // 3.0f
+extern const float mem_00965D08; // 5.0f
+
+// Virtual setter taking one float (thiscall on MSVC; macro expands to nothing elsewhere).
+using VFloatSetter = void(__thiscall*)(void* self, float value);
+
+// @name NMData::EffectorData::vfunc_17
+// @class NMData::EffectorData
+// @summary Allocates a 0x10-byte object, initializes it, calls virtual slots 5/3/4 with 20/3/5, and returns it.
+void* fn_0060BE10(void* self) {
+    (void)self; // this is unused by the original code
+
+    // Allocate and initialize. obj stays null if the allocation fails.
+    void* mem = ext_006A5C62(0x10);
+    void* obj = nullptr;
+    if (mem != nullptr) {
+        obj = ext_00622750(mem);
+    }
+
+    // The original dereferences obj without a null check; preserved as-is.
+    void** vtbl = *reinterpret_cast<void***>(obj);
+
+    // Vtable slot offsets: +0x14 -> slot 5, +0x0C -> slot 3, +0x10 -> slot 4.
+    reinterpret_cast<VFloatSetter>(vtbl[5])(obj, mem_00956EE0);
+    reinterpret_cast<VFloatSetter>(vtbl[3])(obj, mem_00993858);
+    reinterpret_cast<VFloatSetter>(vtbl[4])(obj, mem_00965D08);
+
+    return obj;
+}
+} // namespace lift_0060BE10

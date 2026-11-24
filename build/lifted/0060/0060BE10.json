@@ -1,0 +1,14 @@
+{
+  "va": "0x0060BE10",
+  "size": 139,
+  "orig_symbol": "NMData::EffectorData::vfunc_17",
+  "src_path": "src/NMData/EffectorData.cpp",
+  "lifted_path": "lifted/NMData/EffectorData.cpp",
+  "name": "NMData::EffectorData::vfunc_17",
+  "class": "NMData::EffectorData",
+  "signature": "void* fn_0060BE10(void* self)",
+  "summary": "Allocates a 0x10-byte object, initializes it, calls virtual slots 5/3/4 with 20/3/5, and returns it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:35:47Z"
+}
