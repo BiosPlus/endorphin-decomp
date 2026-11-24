@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 extern "C" int mem_0099E074;
 #include <cstdint>
+#include <bit>
 
 // [0x007DAD40] sub_007DAD40 (4 bytes)
 // @name ReturnZeroWord
@@ -407,3 +408,21 @@ void sub_007D4B30(uint8_t* self, uint32_t value) {
     *reinterpret_cast<uint32_t*>(self + 0x04) = 0;
 }
 } // namespace lift_007D4B30
+
+// [0x007D8710] sub_007D8710 (22 bytes)
+namespace lift_007D8710 {
+// @name sub_007D8710
+// @summary Auto-lifted identical-shape clone of 0x007C58E0 (ReturnSelfIfFieldB0IsNine).
+namespace lift_007C58E0 {
+// @name ReturnSelfIfFieldB0IsNine
+// @class Unknown
+// @summary Returns self if the uint32 at +0xB0 equals 9, otherwise returns NULL (cdecl, one arg).
+// @field Unknown +0xB0 uint32_t field_0xB0
+void* fn_007D8710(void* self) {
+    // Equivalent to: return (*(uint32_t*)(self + 0xB0) == 9) ? self : nullptr;
+    const uint32_t field = lift_field<uint32_t>(self, 0xB0);
+    const uintptr_t mask = (field == 5u) ? ~static_cast<uintptr_t>(0) : static_cast<uintptr_t>(0);
+    return reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) & mask);
+}
+} // namespace lift_007C58E0
+} // namespace lift_007D8710

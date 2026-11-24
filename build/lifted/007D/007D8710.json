@@ -1,0 +1,22 @@
+{
+  "va": "0x007D8710",
+  "size": 22,
+  "orig_symbol": "sub_007D8710",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "sub_007D8710",
+  "class": "Unknown",
+  "signature": "void* fn_007D8710(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x007C58E0 (ReturnSelfIfFieldB0IsNine).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xB0",
+      "type": "uint32_t",
+      "name": "field_0xB0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T11:31:12Z"
+}
