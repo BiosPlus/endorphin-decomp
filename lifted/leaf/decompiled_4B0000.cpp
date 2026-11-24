@@ -185,3 +185,23 @@ void* __stdcall fn_004B4C00(void* arg1, DWORD arg2) {
     return arg1;
 }
 } // namespace lift_004B4C00
+
+// [0x004B10A0] sub_004B10A0 (46 bytes)
+namespace lift_004B10A0 {
+extern void __stdcall ext_004B0ED0(float* v);
+
+// @name ObjectVec3_callWithScalar
+// @class Unknown
+// @summary Builds a float[4] {scalar, this->+0x20, this->+0x24, this->+0x28} and passes it to ext_004B0ED0 (stdcall, one pointer arg); scalar is a stack arg, callee pops 4 bytes.
+// @field Unknown +0x20 float field_0x20
+// @field Unknown +0x24 float field_0x24
+// @field Unknown +0x28 float field_0x28
+void __thiscall fn_004B10A0(void* self, float scalar) {
+    float v[4];
+    v[0] = scalar;
+    v[1] = lift_field<float>(self, 0x20);
+    v[2] = lift_field<float>(self, 0x24);
+    v[3] = lift_field<float>(self, 0x28);
+    ext_004B0ED0(v);
+}
+} // namespace lift_004B10A0
