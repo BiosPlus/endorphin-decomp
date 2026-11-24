@@ -3493,7 +3493,7 @@
   "0x00455CD0": {
     "name": "descriptiveName: sub_00455CD0_dispatchOnStateAOrB",
     "signature": "extern \"C\" int __fastcall fn_00455CD0(void* self)",
-    "summary": "Tail-dispatches to fn_00455CB0 when the int at self+0x98 is 0x0A or 0x0B, otherwise tail-calls fn_004090C0.",
+    "summary": "Tail-dispatches to ext_00455CB0 when the int at self+0x98 is 0x0A or 0x0B, otherwise tail-calls ext_004090C0.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
   "0x00455CF0": {
