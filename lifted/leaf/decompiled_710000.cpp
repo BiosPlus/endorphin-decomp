@@ -445,3 +445,16 @@ extern uint8_t __thiscall fn_00711A40(void* self) {
     return ext_00711A20(self, 8u);
 }
 } // namespace lift_00711A40
+
+// [0x00711A90] sub_00711A90 (16 bytes)
+namespace lift_00711A90 {
+// Known callee 0x00711D20: Unknown::TestMaskedFieldAt0x78 (Returns true when (this->field_0x78 & mask) is nonzero, else false.)
+extern bool ext_00711D20(void* self, DWORD mask);
+
+// @name Unknown::TestFlag0x08At0x78
+// @class Unknown
+// @summary Tests bit 0x08 of the flags word at this+0x78 by tail-forwarding to TestMaskedFieldAt0x78 and returns its result.
+bool fn_00711A90(void* self) {
+    return ext_00711D20(self, 0x8u);
+}
+} // namespace lift_00711A90
