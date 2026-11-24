@@ -2196,6 +2196,13 @@
     "summary": "Looks up a cursor handle in the object's DWORD table at +0x128 by index and passes it to SetCursor.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x0043C930": {
+    "name": "ForwardWmChar",
+    "class": "\u003cnone\u003e",
+    "signature": "void fn_0043C930(void* arg0, const DWORD* arg1)",
+    "summary": "Reads a 2-word record through arg1 and forwards it with message id 0x102 (WM_CHAR) to MFC80 ord_6144 with arg0 as this.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043C9B0": {
     "name": "Unknown::forwardVirtual150WithSubobject80",
     "class": "Unknown",

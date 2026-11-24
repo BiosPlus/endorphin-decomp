@@ -602,3 +602,27 @@ void fn_0043D2C0(void* self, uint32_t arg) {
     }
 }
 } // namespace lift_0043D2C0
+
+// [0x0043C930] sub_0043C930 (31 bytes)
+namespace lift_0043C930 {
+// Known callee 0x006A65E0: thunk_MFC80_ord_6144 (IAT jump thunk forwarding to MFC80!ord_6144.)
+extern void ext_006A65E0();
+
+// Typed view of the callee. The original pushes five stack words and passes
+// arg0 in ecx; the portable call below mirrors that shape.
+using MfcOrd6144Fn = void (*)(void* self, DWORD p0, DWORD p1, DWORD p2, DWORD p3, DWORD p4);
+
+// @name ForwardWmChar
+// @class <none>
+// @summary Reads a 2-word record through arg1 and forwards it with message id 0x102 (WM_CHAR) to MFC80 ord_6144 with arg0 as this.
+// @field UnknownStruct +0x00 DWORD field_0x00
+// @field UnknownStruct +0x04 DWORD field_0x04
+void fn_0043C930(void* arg0, const DWORD* arg1) {
+    const DWORD first = arg1[0];   // [arg1 + 0x00]
+    const DWORD second = arg1[1];  // [arg1 + 0x04]
+    // Original order of pushed words: 0, entry ecx, second, first, 0x102.
+    // Entry ecx is not recoverable portably; 0 is used as a placeholder.
+    reinterpret_cast<MfcOrd6144Fn>(ext_006A65E0)(
+        arg0, 0x102u, first, second, 0u, 0u);
+}
+} // namespace lift_0043C930

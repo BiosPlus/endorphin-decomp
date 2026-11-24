@@ -1,0 +1,28 @@
+{
+  "va": "0x0043C930",
+  "size": 31,
+  "orig_symbol": "sub_0043C930",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "ForwardWmChar",
+  "class": "\u003cnone\u003e",
+  "signature": "void fn_0043C930(void* arg0, const DWORD* arg1)",
+  "summary": "Reads a 2-word record through arg1 and forwards it with message id 0x102 (WM_CHAR) to MFC80 ord_6144 with arg0 as this.",
+  "fields": [
+    {
+      "class": "UnknownStruct",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownStruct",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:22:26Z"
+}
