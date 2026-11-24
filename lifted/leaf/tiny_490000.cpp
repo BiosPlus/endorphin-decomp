@@ -510,3 +510,20 @@ int fn_00492550(void* self) {
     return 0;
 }
 } // namespace lift_00492550
+
+// [0x00492570] sub_00492570 (20 bytes)
+namespace lift_00492570 {
+// @name IsStateTwoWithNonZeroPayload
+// @summary Returns TRUE when the object's state dword at +0x00 equals 2 and the dword at +0x08 is nonzero; otherwise FALSE.
+// @field Unknown +0x00 int32_t field_0x00
+// @field Unknown +0x08 int32_t field_0x08
+int fn_00492570(void* self) {
+    if (lift_field<int32_t>(self, 0x00) != 2) {
+        return 0;
+    }
+    if (lift_field<int32_t>(self, 0x08) == 0) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_00492570

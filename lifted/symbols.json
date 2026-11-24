@@ -5282,6 +5282,12 @@
     "summary": "Returns 1 if the dword at self+0x00 equals 1 and the dword at self+0x08 is nonzero, else 0.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00492570": {
+    "name": "IsStateTwoWithNonZeroPayload",
+    "signature": "int fn_00492570(void* self)",
+    "summary": "Returns TRUE when the object's state dword at +0x00 equals 2 and the dword at +0x08 is nonzero; otherwise FALSE.",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
   "0x00493D80": {
     "name": "ZeroHeaderFields",
     "class": "UnknownClass",

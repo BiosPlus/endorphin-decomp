@@ -1,0 +1,27 @@
+{
+  "va": "0x00492570",
+  "size": 20,
+  "orig_symbol": "sub_00492570",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "IsStateTwoWithNonZeroPayload",
+  "signature": "int fn_00492570(void* self)",
+  "summary": "Returns TRUE when the object's state dword at +0x00 equals 2 and the dword at +0x08 is nonzero; otherwise FALSE.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:05:45Z"
+}
