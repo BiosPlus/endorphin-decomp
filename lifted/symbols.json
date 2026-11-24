@@ -10382,6 +10382,13 @@
     "summary": "Returns the float at EngineData+0x24 (time zoom factor) via the value pointer; throws if the pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B8E70": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,0\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0\u003e",
+    "signature": "int32_t fn_004B8E70(void* arg)",
+    "summary": "Reads the EngineData time zoom factor (float at +0x24), rounds it half away from zero (+/-0.5 then truncate), and returns the int; throws if the object pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B8ED0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, getTimeZoomFactor, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0\u003e",

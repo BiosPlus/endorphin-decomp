@@ -34208,3 +34208,36 @@ extern void* __fastcall fn_0059F7C0(void* self, void* edx_unused, void* out_val,
     return out_val;
 }
 } // namespace lift_0059F7C0
+
+// [0x004B8E70] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_004B8E70 {
+// Callee 0x006A6DE0: takes the x87 top-of-stack value as a double and returns a
+// rounded int32 (same convention as lifted/NMCamera/Perspective.cpp).
+extern int32_t ext_006A6DE0(double rounded);
+// Callee 0x0046C3C0: constructs the exception object in place (ecx = this).
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+// .rdata throw-info block referenced by the throw at 0x004B8EBF.
+extern const char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::EngineData,float,getTimeZoomFactor,0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0>
+// @summary Reads the EngineData time zoom factor (float at +0x24), rounds it half away from zero (+/-0.5 then truncate), and returns the int; throws if the object pointer is null.
+// @field NMData::EngineData +0x24 float timeZoomFactor
+int32_t fn_004B8E70(void* arg) {
+    void* obj = *static_cast<void**>(arg);
+    if (obj == nullptr) {
+        uint32_t exc[4] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, mem_009DEC1C);
+    }
+
+    float v = *reinterpret_cast<float*>(static_cast<uint8_t*>(obj) + 0x24);
+    // Matches the x87 fcom/test-ah branch: negative (or unordered) takes the -0.5 path.
+    const bool negative = !(v >= 0.0f);
+    const double d = static_cast<double>(v);
+    const double rounded = negative ? (d - 0.5) : (d + 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_004B8E70

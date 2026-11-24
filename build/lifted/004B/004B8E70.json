@@ -1,0 +1,22 @@
+{
+  "va": "0x004B8E70",
+  "size": 94,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::EngineData,float,getTimeZoomFactor,0\u003e::vfunc_2",
+  "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, 0\u003e",
+  "signature": "int32_t fn_004B8E70(void* arg)",
+  "summary": "Reads the EngineData time zoom factor (float at +0x24), rounds it half away from zero (+/-0.5 then truncate), and returns the int; throws if the object pointer is null.",
+  "fields": [
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "timeZoomFactor"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:51:12Z"
+}
