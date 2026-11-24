@@ -1,0 +1,13 @@
+{
+  "va": "0x007747B0",
+  "size": 36,
+  "orig_symbol": "sub_007747B0",
+  "src_path": "src/clones/auto_clones_770000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_770000.cpp",
+  "name": "initNegatedHugeGlobals",
+  "signature": "void fn_007747B0(void)",
+  "summary": "Stores -_HUGE into three global doubles.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:00:15Z"
+}

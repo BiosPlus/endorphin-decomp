@@ -43011,6 +43011,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007720F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
   },
+  "0x007747B0": {
+    "name": "initNegatedHugeGlobals",
+    "signature": "void fn_007747B0(void)",
+    "summary": "Stores -_HUGE into three global doubles.",
+    "lifted_path": "lifted/clones/auto_clones_770000.cpp"
+  },
   "0x00774B10": {
     "name": "sub_00774B10",
     "signature": "extern \"C\" void* __fastcall fn_00774B10(void* self, int edx_unused, unsigned int flags)",
