@@ -1,0 +1,21 @@
+{
+  "va": "0x00431330",
+  "size": 43,
+  "orig_symbol": "sub_00431330",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_00431330",
+  "signature": "extern \"C\" void __thiscall fn_00431330(uint32_t self)",
+  "summary": "Calls vtable+0x15c(0) on field_0x104 and passes its negated boolean result to MFC80_ord_6081",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x104",
+      "type": "uint32_t",
+      "name": "field_0x104"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:03:20Z"
+}

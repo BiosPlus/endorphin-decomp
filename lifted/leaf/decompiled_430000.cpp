@@ -1200,3 +1200,23 @@ extern int32_t __stdcall fn_004304F0(uintptr_t obj) {
     return vfunc1(obj, is_one);
 }
 } // namespace lift_004304F0
+
+// [0x00431330]
+namespace lift_00431330 {
+// @name sub_00431330
+// @summary Calls vtable+0x15c(0) on field_0x104 and passes its negated boolean result to MFC80_ord_6081
+// @field Unknown +0x104 uint32_t field_0x104
+
+extern uint32_t mem_read32(uint32_t addr);
+extern void __thiscall fn_006A651A(uint32_t self, uint32_t arg1, uint32_t arg2);
+
+extern void __thiscall fn_00431330(uint32_t self) {
+    uint32_t obj = mem_read32(self + 0x104);
+    uint32_t vtable = mem_read32(obj);
+    using VFunc = uint32_t(__thiscall*)(uint32_t, uint32_t);
+    auto vfunc = reinterpret_cast<VFunc>(static_cast<uintptr_t>(mem_read32(vtable + 0x15c)));
+    uint32_t res = vfunc(obj, 0);
+    uint32_t flag = (res == 0) ? 1u : 0u;
+    fn_006A651A(self, obj, flag);
+}
+} // namespace lift_00431330
