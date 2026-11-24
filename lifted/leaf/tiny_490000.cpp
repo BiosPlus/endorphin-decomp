@@ -660,3 +660,23 @@ int fn_004928A0(void* self) {
     return 1;
 }
 } // namespace lift_004928A0
+
+// [0x0049AD70]
+namespace lift_0049AD70 {
+// @name Unknown::SpanDividedBy36OrZero
+// @class Unknown
+// @summary Returns 0 if field +0x04 is zero; otherwise (field +0x08 - field +0x04) / 36 (signed, truncating).
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x08 int32_t field_0x08
+int32_t fn_0049AD70(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    int32_t a;
+    std::memcpy(&a, base + 0x04, sizeof a);
+    if (a == 0) {
+        return 0;
+    }
+    int32_t b;
+    std::memcpy(&b, base + 0x08, sizeof b);
+    return (b - a) / 36;
+}
+} // namespace lift_0049AD70

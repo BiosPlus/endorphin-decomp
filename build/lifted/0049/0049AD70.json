@@ -1,0 +1,28 @@
+{
+  "va": "0x0049AD70",
+  "size": 31,
+  "orig_symbol": "sub_0049AD70",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "Unknown::SpanDividedBy36OrZero",
+  "class": "Unknown",
+  "signature": "int32_t fn_0049AD70(void* self)",
+  "summary": "Returns 0 if field +0x04 is zero; otherwise (field +0x08 - field +0x04) / 36 (signed, truncating).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:23:12Z"
+}
