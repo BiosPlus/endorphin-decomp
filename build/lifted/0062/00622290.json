@@ -1,0 +1,13 @@
+{
+  "va": "0x00622290",
+  "size": 41,
+  "orig_symbol": "sub_00622290",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "sub_00622290",
+  "signature": "void* __thiscall sub_00622290(void* self)",
+  "summary": "Constructor-like initialization setting vtable to 0x00976FC4 and zeroing 10 float fields (0x04..0x28).",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:01:57Z"
+}

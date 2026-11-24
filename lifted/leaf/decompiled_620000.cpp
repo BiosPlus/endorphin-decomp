@@ -329,3 +329,30 @@ DWORD* __thiscall fn_0062C130(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_0062C130
+
+// [0x00622290]
+namespace lift_00622290 {
+extern uint32_t mem_00976FC4;
+
+// @name sub_00622290
+// @summary Constructor-like initialization setting vtable to 0x00976FC4 and zeroing 10 float fields (0x04..0x28).
+// @field +0x00 uint32_t vftable
+// @field +0x04 float field_0x04
+// @field +0x08 float field_0x08
+// @field +0x0c float field_0x0c
+// @field +0x10 float field_0x10
+// @field +0x14 float field_0x14
+// @field +0x18 float field_0x18
+// @field +0x1c float field_0x1c
+// @field +0x20 float field_0x20
+// @field +0x24 float field_0x24
+// @field +0x28 float field_0x28
+void* __thiscall sub_00622290(void* self) {
+    uint8_t* p = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(p + 0x00) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00976FC4));
+    for (uint32_t offset = 0x04; offset <= 0x28; offset += 4) {
+        *reinterpret_cast<float*>(p + offset) = 0.0f;
+    }
+    return self;
+}
+} // namespace lift_00622290
