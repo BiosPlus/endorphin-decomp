@@ -272,3 +272,21 @@ extern void __fastcall fn_00711DC0(void* self, uint32_t value) {
     *reinterpret_cast<uint32_t*>(sub + 0x0C) = value;
 }
 } // namespace lift_00711DC0
+
+// [0x00711A20] sub_00711A20 (32 bytes)
+namespace lift_00711A20 {
+// @name Unknown::CompareArgWithSubObjectField
+// @class Unknown
+// @summary Returns 1 if the stack argument differs from the first DWORD of the subobject at self+0x40, else 0.
+// @field Unknown +0x00 uint32_t field_0x00 (on subobject returned by ext_0071E680, i.e. self+0x40)
+
+extern void* __fastcall ext_0071E680(void* self);
+
+extern uint8_t __thiscall fn_00711A20(void* self, uint32_t arg) {
+    // Call sub-object getter (ecx = self passed through), then compare arg
+    // against the DWORD at the start of the returned subobject.
+    uint32_t* sub = static_cast<uint32_t*>(ext_0071E680(self));
+    uint32_t field = *sub;
+    return static_cast<uint8_t>(arg != field);
+}
+} // namespace lift_00711A20

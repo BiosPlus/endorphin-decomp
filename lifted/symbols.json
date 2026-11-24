@@ -40250,6 +40250,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00711220 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00711A20": {
+    "name": "Unknown::CompareArgWithSubObjectField",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint8_t __thiscall fn_00711A20(void* self, uint32_t arg)",
+    "summary": "Returns 1 if the stack argument differs from the first DWORD of the subobject at self+0x40, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00711BA0": {
     "name": "getSubobjectField_0x18",
     "signature": "extern \"C\" double __fastcall fn_00711BA0(void* self)",

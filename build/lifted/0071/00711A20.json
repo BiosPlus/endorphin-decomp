@@ -1,0 +1,22 @@
+{
+  "va": "0x00711A20",
+  "size": 32,
+  "orig_symbol": "sub_00711A20",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::CompareArgWithSubObjectField",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint8_t __thiscall fn_00711A20(void* self, uint32_t arg)",
+  "summary": "Returns 1 if the stack argument differs from the first DWORD of the subobject at self+0x40, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (on subobject returned by ext_0071E680, i.e.",
+      "name": "self+0x40)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:40:37Z"
+}
