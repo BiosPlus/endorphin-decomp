@@ -20260,6 +20260,13 @@
     "summary": "Calls virtual slot 5 twice on the object held by arg4 (first with 0, then with the first result), forwards the second result to the child at *arg2, zeroes the out buffer at arg2, and returns arg2.",
     "lifted_path": "lifted/templates/Method2Type.cpp"
   },
+  "0x005B7F50": {
+    "name": "ExprParser::Method2Type::vfunc_49",
+    "class": "ExprParser::Method2Type",
+    "signature": "extern \"C\" uintptr_t __stdcall fn_005B7F50(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3, uintptr_t arg4)",
+    "summary": "Calls two virtual slot-5 methods on the argument objects, forwards the results to ext_005B72A0 on *arg2, then zeroes the out-buffer at arg2 via ext_00671F30 and returns arg2.",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
   "0x005B80A0": {
     "name": "ExprParser::FunctionType::vfunc_48 (getDistanceToPoint wrapper)",
     "class": "ExprParser::FunctionType\u003cNMData::MetaBodyData, float, NM::Vector3 const \u0026, {public: float __thiscall NMData::MetaBodyData::getDistanceToPoint(class NM::Vector3 const \u0026), 0}\u003e",

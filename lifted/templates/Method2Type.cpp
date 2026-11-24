@@ -46,3 +46,47 @@ extern uint32_t fn_005B7E80(void* self, uint32_t a1, uint32_t a2, uint32_t a3, u
     return a2;
 }
 } // namespace lift_005B7E80
+
+// [0x005B7F50]
+namespace lift_005B7F50 {
+// @name ExprParser::Method2Type::vfunc_49
+// @class ExprParser::Method2Type
+// @summary Calls two virtual slot-5 methods on the argument objects, forwards the results to ext_005B72A0 on *arg2, then zeroes the out-buffer at arg2 via ext_00671F30 and returns arg2.
+// @field Unknown +0x00 uintptr_t field_0x00
+// @field Unknown +0x04 uintptr_t field_0x04
+
+extern void __fastcall ext_005B72A0(void* self, void* edx, uintptr_t arg1, uintptr_t arg2);
+extern void __cdecl ext_00671F30(uint32_t* out);
+extern uint32_t mem_00B599BC;
+
+using VSlot5ThreeArg = uintptr_t(__fastcall*)(void* self, void* edx, uintptr_t a, uintptr_t b, uintptr_t c);
+using VSlot5TwoArg = uintptr_t(__fastcall*)(void* self, void* edx, uintptr_t a, uintptr_t b);
+
+extern uintptr_t __stdcall fn_005B7F50(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3, uintptr_t arg4) {
+    (void)arg1;
+    (void)arg3;
+
+    uintptr_t* A = reinterpret_cast<uintptr_t*>(arg2);
+    uintptr_t* B = reinterpret_cast<uintptr_t*>(arg4);
+
+    // r1 = B->field_0x04->vtbl[5](B, arg2_saved, 0)
+    void* objB = reinterpret_cast<void*>(B[1]);
+    uintptr_t* vtB = *reinterpret_cast<uintptr_t**>(objB);
+    VSlot5ThreeArg fnB = reinterpret_cast<VSlot5ThreeArg>(vtB[5]);
+    uintptr_t r1 = fnB(objB, nullptr, arg4, A[0], 0);
+
+    // r2 = A->field_0x04->vtbl[5](A, r1)
+    void* objA = reinterpret_cast<void*>(A[1]);
+    uintptr_t* vtA = *reinterpret_cast<uintptr_t**>(objA);
+    VSlot5TwoArg fnA = reinterpret_cast<VSlot5TwoArg>(vtA[5]);
+    uintptr_t r2 = fnA(objA, nullptr, arg2, r1);
+
+    // this = A->field_0x00 (object), forward r2 and A
+    ext_005B72A0(reinterpret_cast<void*>(A[0]), nullptr, r2, arg2);
+
+    // Zero out[0] and store mem_00B599BC into out[1]
+    ext_00671F30(reinterpret_cast<uint32_t*>(arg2));
+
+    return arg2;
+}
+} // namespace lift_005B7F50
