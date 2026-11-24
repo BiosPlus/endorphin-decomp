@@ -43228,6 +43228,13 @@
     "summary": "Stores a dword into slot `index` of the 0x194-based table when 0 \u003c index \u003c 0x12; otherwise does nothing. Callee pops 2 args (ret 8).",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AAA00": {
+    "name": "Unknown::SetIndexedDwordSlot734",
+    "class": "Unknown",
+    "signature": "void __thiscall Unknown_SetIndexedDwordSlot734(Unknown* self, int index, uint32_t value)",
+    "summary": "Stores a dword into slot[index] of the dword array at +0x734 when 0 \u003c index \u003c 0x12; out-of-range indices are ignored. thiscall, 2 stack args (cdecl-style callee cleanup of 8 bytes).",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AB350": {
     "name": "sub_007AB350",
     "signature": "extern \"C\" void* __fastcall fn_007AB350(void* self, int edx_unused, unsigned int flags)",

@@ -130,3 +130,25 @@ void Unknown_SetIndexedDwordIfInRange_14C(uint8_t* self, int32_t index, uint32_t
     }
 }
 } // namespace lift_007AA950
+
+// [0x007AAA00]
+namespace lift_007AAA00 {
+// @name Unknown::SetIndexedDwordSlot734
+// @class Unknown
+// @summary Stores a dword into slot[index] of the dword array at +0x734 when 0 < index < 0x12; out-of-range indices are ignored. thiscall, 2 stack args (cdecl-style callee cleanup of 8 bytes).
+// @field Unknown +0x734 uint32_t field_0x734 (base of 18-entry dword array; element i at +0x734 + 4*i, valid i = 1..17)
+
+struct Unknown;
+
+// Declared external/memory references used by this lift.
+// (none: function touches only `this` and its arguments)
+
+// thiscall: ECX = this, stack args: index (int), value (uint32_t); callee pops 8 bytes.
+// Equivalent to: if (index > 0 && index < 0x12) this->field_0x734[index] = value;
+void __thiscall Unknown_SetIndexedDwordSlot734(Unknown* self, int index, uint32_t value)
+{
+    if (index > 0 && index < 0x12) {
+        reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x734)[index] = value;
+    }
+}
+} // namespace lift_007AAA00
