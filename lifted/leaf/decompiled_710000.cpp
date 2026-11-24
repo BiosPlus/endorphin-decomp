@@ -998,3 +998,33 @@ float fn_00715710(void* self) {
     return 0.0f;
 }
 } // namespace lift_00715710
+
+// [0x00715520] sub_00715520 (48 bytes)
+namespace lift_00715520 {
+// Virtual slots used by this function, called through the object's vtable.
+typedef void (__thiscall* VSlot3Fn)(void* self);
+typedef void (__thiscall* VSlot2Fn)(void* self, void* old);
+
+// @name setFieldCAndReleaseField04
+// @summary If value differs from +0x0C, store it; then if +0x04 is non-null, call vtbl[3](this) and vtbl[2](this, old).
+// @field Subobject +0x04 void* field_0x04
+// @field Subobject +0x0C uint32_t field_0x0C
+void fn_00715520(void* self, uint32_t value) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint32_t* fieldC = reinterpret_cast<uint32_t*>(base + 0x0C);
+    if (value == *fieldC) {
+        return;
+    }
+
+    void* old = *reinterpret_cast<void**>(base + 0x04);
+    *fieldC = value;
+    if (old == nullptr) {
+        return;
+    }
+
+    void* const* vtbl = *reinterpret_cast<void* const* const*>(self);
+    reinterpret_cast<VSlot3Fn>(vtbl[3])(self);
+    vtbl = *reinterpret_cast<void* const* const*>(self);
+    reinterpret_cast<VSlot2Fn>(vtbl[2])(self, old);
+}
+} // namespace lift_00715520

@@ -1,0 +1,27 @@
+{
+  "va": "0x00715520",
+  "size": 48,
+  "orig_symbol": "sub_00715520",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "setFieldCAndReleaseField04",
+  "signature": "void fn_00715520(void* self, uint32_t value)",
+  "summary": "If value differs from +0x0C, store it; then if +0x04 is non-null, call vtbl[3](this) and vtbl[2](this, old).",
+  "fields": [
+    {
+      "class": "Subobject",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Subobject",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:22:33Z"
+}

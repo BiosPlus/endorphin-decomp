@@ -45301,6 +45301,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00715450 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00715520": {
+    "name": "setFieldCAndReleaseField04",
+    "signature": "void fn_00715520(void* self, uint32_t value)",
+    "summary": "If value differs from +0x0C, store it; then if +0x04 is non-null, call vtbl[3](this) and vtbl[2](this, old).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00715550": {
     "name": "sub_00715550",
     "signature": "extern \"C\" int32_t __fastcall fn_00715550(void* self)",
