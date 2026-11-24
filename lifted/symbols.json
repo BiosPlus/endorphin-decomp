@@ -13360,6 +13360,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00520D90": {
+    "name": "initArrayRange_00520D90",
+    "signature": "void __cdecl sub_00520D90(uint32_t begin, uint32_t end, uint32_t arg)",
+    "summary": "Iterates over a range [begin, end) with stride 0x168, calling ext_00520AE0 on each element with arg",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00521350": {
     "name": "sub_00521350",
     "signature": "extern \"C\" void __fastcall fn_00521350(void* self)",

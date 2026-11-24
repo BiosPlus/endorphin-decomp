@@ -265,3 +265,16 @@ DWORD* __thiscall fn_005231F0(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_005231F0
+
+// [0x00520D90]
+namespace lift_00520D90 {
+extern void __thiscall ext_00520AE0(uint32_t self, uint32_t arg);
+
+// @name initArrayRange_00520D90
+// @summary Iterates over a range [begin, end) with stride 0x168, calling ext_00520AE0 on each element with arg
+void __cdecl sub_00520D90(uint32_t begin, uint32_t end, uint32_t arg) {
+    for (uint32_t it = begin; it != end; it += 0x168) {
+        ext_00520AE0(it, arg);
+    }
+}
+} // namespace lift_00520D90
