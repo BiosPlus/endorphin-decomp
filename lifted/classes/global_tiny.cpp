@@ -4888,3 +4888,16 @@ int32_t TranslateTool_vfunc_14(const uint8_t* self) {
     return value >= 0 ? 1 : 0;
 }
 } // namespace lift_005472B0
+
+// [0x00545A60]
+namespace lift_00545A60 {
+// @name ResizeTool::vfunc_14
+// @class ResizeTool
+// @summary Returns 1 if the signed 32-bit value at this+0xAC is non-negative, else 0.
+// @field ResizeTool +0xAC int32_t field_0xAC
+int fn_00545A60(void* self) {
+    const auto* base = static_cast<const unsigned char*>(self);
+    const int32_t value = *reinterpret_cast<const int32_t*>(base + 0xAC);
+    return value >= 0 ? 1 : 0;
+}
+} // namespace lift_00545A60

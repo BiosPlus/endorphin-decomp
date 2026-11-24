@@ -1,0 +1,22 @@
+{
+  "va": "0x00545A60",
+  "size": 12,
+  "orig_symbol": "ResizeTool::vfunc_14",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ResizeTool::vfunc_14",
+  "class": "ResizeTool",
+  "signature": "int fn_00545A60(void* self)",
+  "summary": "Returns 1 if the signed 32-bit value at this+0xAC is non-negative, else 0.",
+  "fields": [
+    {
+      "class": "ResizeTool",
+      "offset": "+0xAC",
+      "type": "int32_t",
+      "name": "field_0xAC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:15:51Z"
+}

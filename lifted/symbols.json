@@ -11304,6 +11304,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x9C and tail-calls sub_005528A0.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00545A60": {
+    "name": "ResizeTool::vfunc_14",
+    "class": "ResizeTool",
+    "signature": "int fn_00545A60(void* self)",
+    "summary": "Returns 1 if the signed 32-bit value at this+0xAC is non-negative, else 0.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00545CA0": {
     "name": "ResizeTool::vfunc_1",
     "class": "ResizeTool",
