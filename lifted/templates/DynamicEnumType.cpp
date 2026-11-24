@@ -1847,3 +1847,96 @@ uint32_t __thiscall fn_004D8B20(uint32_t self, uint32_t sret, uint32_t arg1, uin
     return sret;
 }
 } // namespace lift_004D8B20
+
+// [0x00515D20] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_27 (118 bytes)
+namespace lift_00515D20 {
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_27
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
+// @summary Auto-lifted identical-shape clone of 0x004AB2C0 (ExprParser::DynamicEnumType<NMData::BehaviourData>::getCompatibleBehaviourDescription).
+namespace lift_004AB2C0 {
+// @name ExprParser::DynamicEnumType<NMData::BehaviourData>::getCompatibleBehaviourDescription
+// @class ExprParser::DynamicEnumType<NMData::BehaviourData>
+// @summary Returns the compatible behaviour description string for the given index via BehaviourData.
+
+extern void* __thiscall ext_00515890(void* self, void* sret, int32_t index);
+extern void* mem_00924FE0;
+extern void* mem_00924FF4;
+
+struct MsvcString {
+    uint32_t data[7];
+};
+
+using StringCopyCtor = void*(__thiscall*)(void* self, const void* other);
+using StringDtor = void(__thiscall*)(void* self);
+
+void* __fastcall fn_00515D20(void* /*self*/, void* /*edx*/, void* sret, void** objPtr, int32_t index) {
+    MsvcString temp{};
+    void* result = ext_00515890(*objPtr, &temp, index);
+    reinterpret_cast<StringCopyCtor>(mem_00924FE0)(sret, result);
+    reinterpret_cast<StringDtor>(mem_00924FF4)(&temp);
+    return sret;
+}
+} // namespace lift_004AB2C0
+} // namespace lift_00515D20
+
+// [0x00515DB0] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_27 (118 bytes)
+namespace lift_00515DB0 {
+// @name ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_27
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>
+// @summary Auto-lifted identical-shape clone of 0x004AB2C0 (ExprParser::DynamicEnumType<NMData::BehaviourData>::getCompatibleBehaviourDescription).
+namespace lift_004AB2C0 {
+// @name ExprParser::DynamicEnumType<NMData::BehaviourData>::getCompatibleBehaviourDescription
+// @class ExprParser::DynamicEnumType<NMData::BehaviourData>
+// @summary Returns the compatible behaviour description string for the given index via BehaviourData.
+
+extern void* __thiscall ext_00515A80(void* self, void* sret, int32_t index);
+extern void* mem_00924FE0;
+extern void* mem_00924FF4;
+
+struct MsvcString {
+    uint32_t data[7];
+};
+
+using StringCopyCtor = void*(__thiscall*)(void* self, const void* other);
+using StringDtor = void(__thiscall*)(void* self);
+
+void* __fastcall fn_00515DB0(void* /*self*/, void* /*edx*/, void* sret, void** objPtr, int32_t index) {
+    MsvcString temp{};
+    void* result = ext_00515A80(*objPtr, &temp, index);
+    reinterpret_cast<StringCopyCtor>(mem_00924FE0)(sret, result);
+    reinterpret_cast<StringDtor>(mem_00924FF4)(&temp);
+    return sret;
+}
+} // namespace lift_004AB2C0
+} // namespace lift_00515DB0
+
+// [0x005C85D0] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_27 (118 bytes)
+namespace lift_005C85D0 {
+// @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_27
+// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x004AB2C0 (ExprParser::DynamicEnumType<NMData::BehaviourData>::getCompatibleBehaviourDescription).
+namespace lift_004AB2C0 {
+// @name ExprParser::DynamicEnumType<NMData::BehaviourData>::getCompatibleBehaviourDescription
+// @class ExprParser::DynamicEnumType<NMData::BehaviourData>
+// @summary Returns the compatible behaviour description string for the given index via BehaviourData.
+
+extern void* __thiscall ext_005C3F40(void* self, void* sret, int32_t index);
+extern void* mem_00924FE0;
+extern void* mem_00924FF4;
+
+struct MsvcString {
+    uint32_t data[7];
+};
+
+using StringCopyCtor = void*(__thiscall*)(void* self, const void* other);
+using StringDtor = void(__thiscall*)(void* self);
+
+void* __fastcall fn_005C85D0(void* /*self*/, void* /*edx*/, void* sret, void** objPtr, int32_t index) {
+    MsvcString temp{};
+    void* result = ext_005C3F40(*objPtr, &temp, index);
+    reinterpret_cast<StringCopyCtor>(mem_00924FE0)(sret, result);
+    reinterpret_cast<StringDtor>(mem_00924FF4)(&temp);
+    return sret;
+}
+} // namespace lift_004AB2C0
+} // namespace lift_005C85D0
