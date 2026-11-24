@@ -1,0 +1,22 @@
+{
+  "va": "0x00487D30",
+  "size": 122,
+  "orig_symbol": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/Method0Type.cpp",
+  "lifted_path": "lifted/templates/Method0Type.cpp",
+  "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, capturePoseForBlend\u003e::vfunc_40",
+  "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}\u003e",
+  "signature": "void fn_00487D30(void* self)",
+  "summary": "Lazily initializes the static pose-capture helper object (once, guarded by a bit flag) and stores its guest address into the caller-supplied ValuePtr slot at +0x4.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "valuePtr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:44:58Z"
+}

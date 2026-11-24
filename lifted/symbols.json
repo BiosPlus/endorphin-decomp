@@ -7152,6 +7152,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00487D30": {
+    "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, capturePoseForBlend\u003e::vfunc_40",
+    "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}\u003e",
+    "signature": "void fn_00487D30(void* self)",
+    "summary": "Lazily initializes the static pose-capture helper object (once, guarded by a bit flag) and stores its guest address into the caller-supplied ValuePtr slot at +0x4.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x00487DB0": {
     "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, fire\u003e::vfunc_40",
     "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::fire(void), 0}\u003e",

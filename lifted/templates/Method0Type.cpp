@@ -149,6 +149,7 @@ extern "C" void ext_004CCAF0(void* target);
 // Callee takes its single argument in ECX (thiscall-style), so it is declared __fastcall.
 // Callee takes its single argument in ECX (thiscall-style), so it is declared __fastcall.
 extern "C" void __thiscall ext_0068BC50(void* self);
+#include <cstdint>
 
 // [0x004CB470] ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>::vfunc_41 (14 bytes)
 #include "lift_compat.h"
@@ -724,3 +725,28 @@ void fn_00487DB0(void* self) {
     lift_field<uint32_t>(self, 0x04) = 0x00AD9DDCu;
 }
 } // namespace lift_00487DB0
+
+// [0x00487D30] ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}>::vfunc_40 (122 bytes)
+namespace lift_00487D30 {
+// Guest-global one-time-init guard and static instance (32-bit guest addresses).
+extern uint32_t mem_00AD9DD8;
+extern uint32_t mem_00AD9DD4;
+// Callee 0x0067A670: thiscall(ecx = object address) with one stack argument.
+extern void ext_0067A670(uint32_t ecx_this, int32_t arg0);
+
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, capturePoseForBlend>::vfunc_40
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}>
+// @summary Lazily initializes the static pose-capture helper object (once, guarded by a bit flag) and stores its guest address into the caller-supplied ValuePtr slot at +0x4.
+// @field ExprParser::ValuePtrType +0x04 uint32_t valuePtr
+void fn_00487D30(void* self) {
+    // Guard: the first time through, mark initialized, run the helper's
+    // constructor, and install its vtable into the static instance.
+    if ((mem_00AD9DD8 & 1u) == 0u) {
+        mem_00AD9DD8 |= 1u;
+        ext_0067A670(0x00AD9DD4u, 0);
+        mem_00AD9DD4 = 0x0093CADCu; // vtable pointer for the static instance
+    }
+    // Publish the static instance's guest address into self+0x4.
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x4) = 0x00AD9DD4u;
+}
+} // namespace lift_00487D30
