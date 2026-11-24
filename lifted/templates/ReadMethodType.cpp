@@ -41095,3 +41095,30 @@ void* fn_004C05E0(void* out, void* self) {
     return out;
 }
 } // namespace lift_004C05E0
+
+// [0x00513020] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_0 (113 bytes)
+namespace lift_00513020 {
+// Stack-argument helper: builds a std::string into `out` from `value`; returns `out`.
+extern void* ext_005119F0(void* out, uint32_t value);
+// Thiscall on the owning object (this = self); takes the constructed string as its single stack argument.
+extern void ext_006720E0(void* str);
+// Import slot holding std::basic_string<char>::~basic_string (MSVCP80), called thiscall with the temp string.
+extern void (*mem_00924FF4)(void* thisptr);
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, ...>::vfunc_0 (Chromosome::Descriptor::getTypicalMutationSize)
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>
+// @summary Builds a std::string from the first dword of self via ext_005119F0, passes it to ext_006720E0 on self, destroys the temporary, and returns self.
+// @field ExprParser::ReadMethodType<Chromosome::Descriptor, ...> +0x00 uint32_t field_0x00
+void* fn_00513020(void* ret_slot, void* self) {
+    (void)ret_slot;  // stack arg at entry+4 is never read by this routine
+
+    // Temporary std::string storage (MSVC std::string is 28 bytes; 32 gives headroom).
+    alignas(8) uint8_t tmp[32] = {};
+
+    const uint32_t value = lift_field<uint32_t>(self, 0x00);
+    void* str = ext_005119F0(tmp, value);
+    ext_006720E0(str);
+    mem_00924FF4(tmp);
+    return self;
+}
+} // namespace lift_00513020

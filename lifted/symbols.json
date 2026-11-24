@@ -15043,6 +15043,13 @@
     "summary": "Runtime type check: returns self for a ReadMethodType\u003cNMData::JointLimit\u003e object (getDamping), else NULL; identity for valid objects.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00513020": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, ...\u003e::vfunc_0 (Chromosome::Descriptor::getTypicalMutationSize)",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1\u003e",
+    "signature": "void* fn_00513020(void* ret_slot, void* self)",
+    "summary": "Builds a std::string from the first dword of self via ext_005119F0, passes it to ext_006720E0 on self, destroys the temporary, and returns self.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005130A0": {
     "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1\u003e",
