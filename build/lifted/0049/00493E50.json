@@ -4,11 +4,29 @@
   "orig_symbol": "sub_00493E50",
   "src_path": "src/leaf/tiny_490000.cpp",
   "lifted_path": "lifted/leaf/tiny_490000.cpp",
-  "name": "forwardVtable18C",
+  "name": "sub_00491FC0",
   "class": "(none)",
-  "signature": "uintptr_t fn_00493E50(void* self)",
-  "summary": "Dereferences self once to get an inner object, then tail-dispatches to vtable slot 0x18C of that object.",
+  "signature": "extern \"C\" void* __fastcall fn_00491FC0(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_00491A90 and frees memory when (flags \u0026 1) is set.",
   "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
     {
       "class": "self",
       "offset": "+0x0",
@@ -26,9 +44,15 @@
       "offset": "+0x18C",
       "type": "void* slot0x18C (call target, dispatched via",
       "name": "jmp)"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x0",
+      "type": "\u003ctype\u003e",
+      "name": "\u003cfieldName\u003e"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T01:14:25Z"
+  "lifted_at": "2026-11-24T01:15:00Z"
 }
