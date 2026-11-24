@@ -1,0 +1,21 @@
+{
+  "va": "0x005528E0",
+  "size": 14,
+  "orig_symbol": "sub_005528E0",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "SetVtableAndInitGraphic",
+  "signature": "void* fn_005528E0(void* self)",
+  "summary": "Stores constant vtable-like word at +0x00 of self, calls fn_005528D0(self), returns self.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (constant 0x00957534 stored",
+      "name": "here)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:36:50Z"
+}

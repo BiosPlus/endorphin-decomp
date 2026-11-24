@@ -12499,6 +12499,12 @@
     "summary": "Sets the floats at +0x04 and +0x08 to 1.0f, then tail-calls SubObject::resetScaleAndIndex on the same object.",
     "lifted_path": "lifted/classes/HandleGraphic.cpp"
   },
+  "0x005528E0": {
+    "name": "SetVtableAndInitGraphic",
+    "signature": "void* fn_005528E0(void* self)",
+    "summary": "Stores constant vtable-like word at +0x00 of self, calls fn_005528D0(self), returns self.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00553720": {
     "name": "NMFileIO::vfunc_3",
     "class": "NMFileIO",
