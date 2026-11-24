@@ -35512,6 +35512,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xF50 and tail-calls sub_0079C1F0.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x0079D730": {
+    "name": "Unknown::dispatchVirtualSlot4IfNonNull",
+    "class": "Unknown",
+    "signature": "void fn_0079D730(void* self, uint32_t /*unused*/)",
+    "summary": "If self is non-null, calls its vtable slot 4 (+0x10 on the 32-bit layout) with argument 1; the incoming dword argument is ignored.",
+    "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
   "0x0079D890": {
     "name": "sub_0079D890",
     "signature": "extern \"C\" void* __fastcall fn_0079D890(void* self, int edx_unused, unsigned int flags)",

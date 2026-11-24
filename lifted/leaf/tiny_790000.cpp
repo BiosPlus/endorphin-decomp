@@ -277,3 +277,20 @@ extern DWORD __cdecl fn_0079ADC0(DWORD hFile) {
     return getFileSize(hFile, nullptr);
 }
 } // namespace lift_0079ADC0
+
+// [0x0079D730] sub_0079D730 (14 bytes)
+namespace lift_0079D730 {
+// @name Unknown::dispatchVirtualSlot4IfNonNull
+// @class Unknown
+// @summary If self is non-null, calls its vtable slot 4 (+0x10 on the 32-bit layout) with argument 1; the incoming dword argument is ignored.
+// @field Unknown +0x00 void* vtable
+void fn_0079D730(void* self, uint32_t /*unused*/) {
+    if (self == nullptr) {
+        return;
+    }
+    // Object's first word is its vtable pointer; slot 4 corresponds to +0x10 in the 32-bit layout.
+    void** vtable = *reinterpret_cast<void***>(self);
+    auto slot4 = reinterpret_cast<void (*)(void*, uint32_t)>(vtable[4]);
+    slot4(self, 1u);
+}
+} // namespace lift_0079D730
