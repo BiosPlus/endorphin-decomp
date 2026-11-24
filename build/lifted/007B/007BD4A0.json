@@ -1,0 +1,21 @@
+{
+  "va": "0x007BD4A0",
+  "size": 54,
+  "orig_symbol": "sub_007BD4A0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "DispatchOrStoreIndirect",
+  "signature": "static inline uint32_t* as_ptr(uint32_t addr)",
+  "summary": "If id == 0x10018, copies the value pointed to by self+0x1cc into **arg3 and returns 1; otherwise forwards (self, id, arg3) to vtable slot +0x18 of the object at self+0x1cc and returns its result.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x1CC",
+      "type": "void*",
+      "name": "field_0x1cc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:13:04Z"
+}

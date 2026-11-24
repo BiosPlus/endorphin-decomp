@@ -61,7 +61,7 @@ struct UnknownClass_Fields {
     // +0x158 uint32_t                 field_0x158  (evidence: 0x006C3070)
     // +0x15C int32_t                  field_0x15c  (evidence: 0x004C1AC0)
     // +0x160 int32_t                  field_0x160  (evidence: 0x004C1AC0)
-    // +0x1CC void*                    field_0x1cc  (evidence: 0x007BD640)
+    // +0x1CC void*                    field_0x1cc  (evidence: 0x007BD4A0, 0x007BD640)
     // +0x1D8 uint32_t                 field_0x1d8  (evidence: 0x007BD640)
     // +0x1E4 uint32_t                 field_0x1e4  (evidence: 0x007BD640)
     // +0x3B4 void*                    field_0x3B4  (evidence: 0x004805A0)

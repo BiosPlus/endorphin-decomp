@@ -53552,6 +53552,12 @@
     "summary": "Frees the handle stored at self+0x1cc (and its inner handle at +0xc, if set), then clears the slot.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BD4A0": {
+    "name": "DispatchOrStoreIndirect",
+    "signature": "static inline uint32_t* as_ptr(uint32_t addr)",
+    "summary": "If id == 0x10018, copies the value pointed to by self+0x1cc into **arg3 and returns 1; otherwise forwards (self, id, arg3) to vtable slot +0x18 of the object at self+0x1cc and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BD640": {
     "name": "SwitchCaseIndexTable_007B7084",
     "class": "(none)",

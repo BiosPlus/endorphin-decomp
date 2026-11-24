@@ -430,3 +430,32 @@ void ReleaseOwnedHandlePair(void* self) {
     }
 }
 } // namespace lift_007BD340
+
+// [0x007BD4A0]
+namespace lift_007BD4A0 {
+// @name DispatchOrStoreIndirect
+// @summary If id == 0x10018, copies the value pointed to by self+0x1cc into **arg3 and returns 1; otherwise forwards (self, id, arg3) to vtable slot +0x18 of the object at self+0x1cc and returns its result.
+// @field UnknownClass +0x1CC void* field_0x1cc
+
+static inline uint32_t* as_ptr(uint32_t addr) {
+    return reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(addr));
+}
+
+using ForwardFn = uint32_t(__cdecl*)(uint32_t, uint32_t, uint32_t);
+
+uint32_t __cdecl DispatchOrStoreIndirect(uint32_t self, uint32_t id, uint32_t arg3) {
+    uint32_t obj = lift_field<uint32_t>(as_ptr(self), 0x1cc);
+
+    if (id == 0x10018) {
+        uint32_t value = *as_ptr(obj);
+        uint32_t dst = *as_ptr(arg3);
+        *as_ptr(dst) = value;
+        return 1;
+    }
+
+    uint32_t vtable = *as_ptr(obj);
+    uint32_t slot = *as_ptr(vtable + 0x18);
+    ForwardFn fn = reinterpret_cast<ForwardFn>(static_cast<uintptr_t>(slot));
+    return fn(self, id, arg3);
+}
+} // namespace lift_007BD4A0
