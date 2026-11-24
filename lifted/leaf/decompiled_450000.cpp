@@ -550,3 +550,19 @@ void __thiscall fn_004586E0(void* self, const uint32_t* key, void* arg2) {
     fn(target, key, arg2);
 }
 } // namespace lift_004586E0
+
+// [0x00458840] sub_00458840 (21 bytes)
+namespace lift_00458840 {
+// Known callee 0x004586E0: Unknown::cacheKeyPairAndForward (If the (dword, dword) pair at arg1 differs from the cached pair in self, cache it and forward (arg1, arg2) to the vtable slot 8 method of the object at self+0x10.)
+extern void ext_004586E0(void* self, const uint32_t* key, void* arg2);
+
+// @name Unknown::forwardPairToInner
+// @class Unknown
+// @summary Loads the object at self+0x54 and forwards (arg1, pair) to ext_004586E0, where pair is the two stack dwords that follow arg1.
+// @field Unknown +0x54 void* field_0x54
+void fn_00458840(void* self, uint32_t arg1, uint32_t pairLo, uint32_t pairHi) {
+    void* inner = lift_field<void*>(self, 0x54);
+    const uint32_t key[2] = {pairLo, pairHi};
+    ext_004586E0(inner, key, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)));
+}
+} // namespace lift_00458840
