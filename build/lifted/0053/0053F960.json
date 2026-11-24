@@ -1,0 +1,40 @@
+{
+  "va": "0x0053F960",
+  "size": 46,
+  "orig_symbol": "sub_0053F960",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "RangeExceedsThreshold",
+  "class": "Self",
+  "signature": "int32_t fn_0053F960(void* self)",
+  "summary": "Returns 1 if either of the two (+0xC4 - +0xBC) or (+0xC8 - +0xC0) spans exceeds mem_00A44B84, else 0.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0xBC",
+      "type": "int32_t",
+      "name": "field_0xBC"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xC0",
+      "type": "int32_t",
+      "name": "field_0xC0"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xC4",
+      "type": "int32_t",
+      "name": "field_0xC4"
+    },
+    {
+      "class": "Self",
+      "offset": "+0xC8",
+      "type": "int32_t",
+      "name": "field_0xC8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:09:57Z"
+}

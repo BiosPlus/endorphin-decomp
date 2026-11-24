@@ -308,3 +308,28 @@ void fn_0053A5E0(void* self, uint32_t arg) {
     *reinterpret_cast<uint8_t*>(base + 0x0C) = r;
 }
 } // namespace lift_0053A5E0
+
+// [0x0053F960] sub_0053F960 (46 bytes)
+namespace lift_0053F960 {
+extern int32_t mem_00A44B84;
+
+// @name RangeExceedsThreshold
+// @class Self
+// @summary Returns 1 if either of the two (+0xC4 - +0xBC) or (+0xC8 - +0xC0) spans exceeds mem_00A44B84, else 0.
+// @field Self +0xBC int32_t field_0xBC
+// @field Self +0xC0 int32_t field_0xC0
+// @field Self +0xC4 int32_t field_0xC4
+// @field Self +0xC8 int32_t field_0xC8
+int32_t fn_0053F960(void* self) {
+    const int32_t threshold = mem_00A44B84;
+    int32_t span0 = lift_field<int32_t>(self, 0xC4) - lift_field<int32_t>(self, 0xBC);
+    if (span0 > threshold) {
+        return 1;
+    }
+    int32_t span1 = lift_field<int32_t>(self, 0xC8) - lift_field<int32_t>(self, 0xC0);
+    if (span1 > threshold) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_0053F960
