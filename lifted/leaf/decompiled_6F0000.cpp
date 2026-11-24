@@ -641,3 +641,23 @@ void fn_006F0FE0(void* self, uint32_t arg1, void* arg2) {
     ext_00711A70(sub, 1u);
 }
 } // namespace lift_006F0FE0
+
+// [0x006F0FA0] sub_006F0FA0 (44 bytes)
+namespace lift_006F0FA0 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes): thiscall taking one argument; signature inferred from call site.
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4158
+// @class Unknown
+// @summary Forwards two stack arguments plus constant 0x006F7DD0 and 0 into the subobject at this+0x4158 via ext_00711D40, then calls ext_00711A70 with 1.
+// @field Unknown +0x4158 uint8_t field_0x4158
+void fn_006F0FA0(void* self, uint32_t arg1, void* arg2) {
+    // Subobject at this+0x4158 (address computed with lea, no dereference here).
+    void* sub = reinterpret_cast<uint8_t*>(self) + 0x4158;
+
+    ext_00711D40(sub, arg1, arg2, 0x006F7DD0u, 0u);
+    ext_00711A70(sub, 1u);
+}
+} // namespace lift_006F0FA0

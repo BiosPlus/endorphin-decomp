@@ -40479,6 +40479,13 @@
     "summary": "Offsets self by 0x40D0 to reach an embedded subobject, forwards arg1/arg2 to storeArgsAndNotifyChild with constant 0x006F7C30 and 0, then calls ext_00711A70 with 1.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006F0FA0": {
+    "name": "Unknown::forwardArgsToSubobjectAt4158",
+    "class": "Unknown",
+    "signature": "void fn_006F0FA0(void* self, uint32_t arg1, void* arg2)",
+    "summary": "Forwards two stack arguments plus constant 0x006F7DD0 and 0 into the subobject at this+0x4158 via ext_00711D40, then calls ext_00711A70 with 1.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F0FE0": {
     "name": "Unknown::forwardArgsToSubobjectAt41E0",
     "class": "Unknown",
