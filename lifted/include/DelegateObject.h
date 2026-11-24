@@ -8,7 +8,7 @@
 // Recovered field layout for DelegateObject:
 namespace lifted_layout {
 struct DelegateObject_Fields {
-    // +0x64  void*                    field_0x64  (evidence: 0x005355D0, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
-    // +0xB8  float                    field_0xB8  (evidence: 0x005355D0, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
+    // +0x64  void*                    field_0x64  (evidence: 0x005355D0, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
+    // +0xB8  float                    field_0xB8  (evidence: 0x005355D0, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
 };
 } // namespace lifted_layout

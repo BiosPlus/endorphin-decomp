@@ -10,6 +10,6 @@
 // Recovered field layout for InitialVariableValues:
 namespace lifted_layout {
 struct InitialVariableValues_Fields {
-    // +0x0   void**                   vtable  (evidence: 0x005272B0, 0x00545B80)
+    // +0x0   void**                   vtable  (evidence: 0x005272B0, 0x00535610, 0x00545B80)
 };
 } // namespace lifted_layout

@@ -9,7 +9,7 @@
 // Recovered field layout for Evaluator:
 namespace lifted_layout {
 struct Evaluator_Fields {
-    // +0x20  BYTE                     field_0x20  (evidence: 0x00503A10, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
-    // +0x28  DOUBLE                   field_0x28  (evidence: 0x00503A10, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
+    // +0x20  BYTE                     field_0x20  (evidence: 0x00503A10, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
+    // +0x28  DOUBLE                   field_0x28  (evidence: 0x00503A10, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
 };
 } // namespace lifted_layout
