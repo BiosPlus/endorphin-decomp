@@ -1,0 +1,22 @@
+{
+  "va": "0x004B1AB0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData, int, \u0026public: int __thiscall NMData::GraphEntryData::getColor(void) const, int, \u0026public: void __thiscall NMData::GraphEntryData::setColor(int)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData, int, getColor, int, setColor\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType",
+  "signature": "void __thiscall fn_004B1AB0(void* self, uint8_t* out)",
+  "summary": "Initializes static type singleton if needed and stores its pointer at out + 0x4.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "typePtr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:53:07Z"
+}
