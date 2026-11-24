@@ -24560,6 +24560,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x006423B0": {
+    "name": "Unknown::setFlag2IfDiffers",
+    "class": "Unknown",
+    "signature": "void fn_006423B0(void* self, uint8_t desired)",
+    "summary": "Sets or clears bit 0x2 of the dword at +0x20 so that it equals the byte argument (treated as a boolean test); toggles bit 0x2 only when the current state differs from the argument.",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
   "0x00642500": {
     "name": "MainPhysicsAdapter::vfunc_0_off_8",
     "class": "MainPhysicsAdapter",

@@ -1,0 +1,22 @@
+{
+  "va": "0x006423B0",
+  "size": 29,
+  "orig_symbol": "sub_006423B0",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "Unknown::setFlag2IfDiffers",
+  "class": "Unknown",
+  "signature": "void fn_006423B0(void* self, uint8_t desired)",
+  "summary": "Sets or clears bit 0x2 of the dword at +0x20 so that it equals the byte argument (treated as a boolean test); toggles bit 0x2 only when the current state differs from the argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "flags"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:13:05Z"
+}

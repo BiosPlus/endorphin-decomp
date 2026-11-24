@@ -825,3 +825,19 @@ void fn_00648EA0(void* self, bool flag) {
     }
 }
 } // namespace lift_00648EA0
+
+// [0x006423B0] sub_006423B0 (29 bytes)
+namespace lift_006423B0 {
+// @name Unknown::setFlag2IfDiffers
+// @class Unknown
+// @summary Sets or clears bit 0x2 of the dword at +0x20 so that it equals the byte argument (treated as a boolean test); toggles bit 0x2 only when the current state differs from the argument.
+// @field Unknown +0x20 uint32_t flags
+void fn_006423B0(void* self, uint8_t desired) {
+    uint32_t flags = lift_field<uint32_t>(self, 0x20);
+    // dl = ((flags & 2) == 2) ? 1 : 0; compared as a full byte against the argument.
+    uint8_t current = ((flags & 0x2u) == 0x2u) ? 1 : 0;
+    if (current != desired) {
+        lift_field<uint32_t>(self, 0x20) = flags ^ 0x2u;
+    }
+}
+} // namespace lift_006423B0

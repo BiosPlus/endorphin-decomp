@@ -158,6 +158,7 @@ struct Unknown_Fields {
     // +0x20  uint32_t                 field_0x20  (evidence: 0x0046E450, 0x0046EA50, 0x004A25E0, 0x004B1A70, 0x00633240, 0x00641FE0, 0x00641FF0) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint8_t                  field_0x20  (evidence: 0x006E8610, 0x006E87A0) // CONFLICT: multiple definitions at +0x20
     // +0x20  void*                    field_0x20  (evidence: 0x0046C2A0, 0x007C8A50) // CONFLICT: multiple definitions at +0x20
+    // +0x20  uint32_t                 flags  (evidence: 0x006423B0) // CONFLICT: multiple definitions at +0x20
     // +0x20  HDC                      hdc  (evidence: 0x0042EA50) // CONFLICT: multiple definitions at +0x20
     // +0x20  HWND                     hwnd  (evidence: 0x0041FF10) // CONFLICT: multiple definitions at +0x20
     // +0x20  HWND                     ownerHwnd  (evidence: 0x004586A0, 0x00458DF0) // CONFLICT: multiple definitions at +0x20
