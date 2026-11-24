@@ -221,3 +221,22 @@ void __thiscall fn_0066B4A0(void* self, void* arg1, void* arg2, void* arg3) {
     str_dtor(local_str);
 }
 } // namespace lift_0066B4A0
+
+// [0x0066B410] ExprParser::StringType::vfunc_42 (136 bytes)
+namespace lift_0066B410 {
+// Known callee 0x0041CEB0: UnknownClass::forwardToSubobjectSlot4 (Calls vtable slot 4 of the subobject at +0x04 with (arg1, self, 0, 0), then returns arg1.)
+extern void* ext_0041CEB0(void* self, void* out);
+
+// @name ExprParser::StringType::vfunc_42
+// @class ExprParser::StringType
+// @summary Renders two stack-passed values into std::string temporaries via ext_0041CEB0 and returns whether the resulting strings are equal.
+bool fn_0066B410([[maybe_unused]] void* self, void* arg1, void* arg2) {
+    std::string lhs;
+    ext_0041CEB0(arg2, &lhs);
+
+    std::string rhs;
+    ext_0041CEB0(arg1, &rhs);
+
+    return lhs == rhs;
+}
+} // namespace lift_0066B410

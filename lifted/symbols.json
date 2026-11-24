@@ -30221,6 +30221,13 @@
     "summary": "Calls ext_006720E0(self, \u0026arg2-\u003e+0x2C, 0) and returns self; arguments 3-5 are unused.",
     "lifted_path": "lifted/ExprParser/StringType.cpp"
   },
+  "0x0066B410": {
+    "name": "ExprParser::StringType::vfunc_42",
+    "class": "ExprParser::StringType",
+    "signature": "bool fn_0066B410([[maybe_unused]] void* self, void* arg1, void* arg2)",
+    "summary": "Renders two stack-passed values into std::string temporaries via ext_0041CEB0 and returns whether the resulting strings are equal.",
+    "lifted_path": "lifted/ExprParser/StringType.cpp"
+  },
   "0x0066B4A0": {
     "name": "ExprParser::StringType::vfunc_33",
     "class": "ExprParser::StringType",
