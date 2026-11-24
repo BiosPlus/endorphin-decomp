@@ -750,3 +750,30 @@ void fn_00487D30(void* self) {
     *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x4) = 0x00AD9DD4u;
 }
 } // namespace lift_00487D30
+
+// [0x00487CB0]
+namespace lift_00487CB0 {
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, thunk vcall{352}>::vfunc_40
+// @class ExprParser::Method0Type
+// @summary Lazily initializes the static vtable-backed object at mem_00AD9DCC (guarded by flag mem_00AD9DD0), then stores its address into the caller-supplied out object at +0x4.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+
+extern "C++" {
+// Callee sub_0067A670: ecx = object (0x00AD9DCC), one stack argument (0).
+void ext_0067A670(uint32_t self, uint32_t arg);
+}
+
+// Static guard flag (bit 0 = initialized).
+extern uint32_t mem_00AD9DD0;
+// Static object storage; first dword receives vtable 0x0093CA04.
+extern uint32_t mem_00AD9DCC;
+
+void __stdcall lift_00487CB0(void* out) {
+    if ((mem_00AD9DD0 & 1u) == 0) {
+        mem_00AD9DD0 |= 1u;
+        ext_0067A670(0x00AD9DCCu, 0u);
+        mem_00AD9DCC = 0x0093CA04u;
+    }
+    lift_field<uint32_t>(out, 0x4) = 0x00AD9DCCu;
+}
+} // namespace lift_00487CB0

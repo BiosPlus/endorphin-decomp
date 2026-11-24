@@ -1,0 +1,22 @@
+{
+  "va": "0x00487CB0",
+  "size": 122,
+  "orig_symbol": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}\u003e::vfunc_40",
+  "src_path": "src/templates/Method0Type.cpp",
+  "lifted_path": "lifted/templates/Method0Type.cpp",
+  "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, thunk vcall{352}\u003e::vfunc_40",
+  "class": "ExprParser::Method0Type",
+  "signature": "void __stdcall lift_00487CB0(void* out)",
+  "summary": "Lazily initializes the static vtable-backed object at mem_00AD9DCC (guarded by flag mem_00AD9DD0), then stores its address into the caller-supplied out object at +0x4.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:45:02Z"
+}
