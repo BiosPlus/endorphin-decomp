@@ -918,3 +918,14 @@ void SetField24FromArgMinusField14(void* self, float value) {
     *reinterpret_cast<float*>(base + 0x24) = value - field14;
 }
 } // namespace lift_007C9E10
+
+// [0x007C6F50] sub_007C6F50 (16 bytes)
+namespace lift_007C6F50 {
+extern void __cdecl ext_007D5B60(void* self);
+
+// @name sub_007C6F50_adjustThisAndTailCall
+// @summary Adds 0x44 to the first argument and tail-calls ext_007D5B60 with the adjusted pointer (thunk).
+void fn_007C6F50(void* self) {
+    ext_007D5B60(static_cast<unsigned char*>(self) + 0x44);
+}
+} // namespace lift_007C6F50

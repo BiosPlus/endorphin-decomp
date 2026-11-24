@@ -1,0 +1,13 @@
+{
+  "va": "0x007C6F50",
+  "size": 16,
+  "orig_symbol": "sub_007C6F50",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "sub_007C6F50_adjustThisAndTailCall",
+  "signature": "void fn_007C6F50(void* self)",
+  "summary": "Adds 0x44 to the first argument and tail-calls ext_007D5B60 with the adjusted pointer (thunk).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:46:53Z"
+}
