@@ -1,0 +1,34 @@
+{
+  "va": "0x00549A10",
+  "size": 24,
+  "orig_symbol": "sub_00549A10",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "Unknown::CopyFloat3FromPtrTo18_1C_20",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00549A10(void* self, const float* src)",
+  "summary": "Copies three floats from the pointer argument into this+0x18, this+0x1C and this+0x20 (callee-cleans 4 bytes).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:36:33Z"
+}

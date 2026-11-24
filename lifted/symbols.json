@@ -13444,6 +13444,13 @@
     "summary": "Epilogue fragment: pops saved esi and releases 0x30 bytes of stack locals; no portable C++ equivalent for the stack unwind, so the body is empty.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00549A10": {
+    "name": "Unknown::CopyFloat3FromPtrTo18_1C_20",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00549A10(void* self, const float* src)",
+    "summary": "Copies three floats from the pointer argument into this+0x18, this+0x1C and this+0x20 (callee-cleans 4 bytes).",
+    "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
   "0x0054A3B0": {
     "name": "ToolGraphics::RotateHandleGraphic::vfunc_0",
     "class": "ToolGraphics::RotateHandleGraphic",

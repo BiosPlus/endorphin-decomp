@@ -318,3 +318,21 @@ BOOLEAN __thiscall fn_00547AD0(void* self) {
     return string_equals(lhs, key);
 }
 } // namespace lift_00547AD0
+
+// [0x00549A10] sub_00549A10 (24 bytes)
+namespace lift_00549A10 {
+// @name Unknown::CopyFloat3FromPtrTo18_1C_20
+// @class Unknown
+// @summary Copies three floats from the pointer argument into this+0x18, this+0x1C and this+0x20 (callee-cleans 4 bytes).
+// @field Unknown +0x18 float field_0x18
+// @field Unknown +0x1C float field_0x1c
+// @field Unknown +0x20 float field_0x20
+void __thiscall fn_00549A10(void* self, const float* src) {
+    // fld dword ptr [eax] / fstp dword ptr [ecx+0x18]
+    lift_field<float>(self, 0x18) = src[0];
+    // fld dword ptr [eax+4] / fstp dword ptr [ecx+0x1c]
+    lift_field<float>(self, 0x1C) = src[1];
+    // fld dword ptr [eax+8] / fstp dword ptr [ecx+0x20]
+    lift_field<float>(self, 0x20) = src[2];
+}
+} // namespace lift_00549A10
