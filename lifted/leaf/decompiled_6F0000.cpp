@@ -307,3 +307,28 @@ void fn_006FA1E0(void* self) {
     h->field_0x08 = 0;
 }
 } // namespace lift_006FA1E0
+
+// [0x006FC5E0] sub_006FC5E0 (42 bytes)
+namespace lift_006FC5E0 {
+// Thiscall with one stack argument (ret 4). Returns bool in al.
+// @name Object::MatchesHandle
+// @class Object
+// @summary Returns true if the optional object's virtual probe (vtable +0x14) accepts the stored handle at +0x40, or if the stored handle at +0x40 is -1; otherwise false.
+// @field Object +0x40 int32_t field_0x40
+
+bool fn_006FC5E0(void* self, void* obj) {
+    auto* base = static_cast<unsigned char*>(self);
+    int32_t handle = *reinterpret_cast<int32_t*>(base + 0x40);
+
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        using Probe = bool(__thiscall*)(void* obj, int32_t handle);
+        auto probe = reinterpret_cast<Probe>(vtbl[5]);
+        if (probe(obj, handle)) {
+            return true;
+        }
+    }
+
+    return handle == -1;
+}
+} // namespace lift_006FC5E0

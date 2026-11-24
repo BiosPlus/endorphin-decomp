@@ -40729,6 +40729,13 @@
     "summary": "Returns global int32 value from mem_00AAB8E8.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006FC5E0": {
+    "name": "Object::MatchesHandle",
+    "class": "Object",
+    "signature": "bool fn_006FC5E0(void* self, void* obj)",
+    "summary": "Returns true if the optional object's virtual probe (vtable +0x14) accepts the stored handle at +0x40, or if the stored handle at +0x40 is -1; otherwise false.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FC650": {
     "name": "sub_006FC650",
     "signature": "extern \"C\" void* __fastcall fn_006FC650(void* self, int edx_unused, unsigned int flags)",

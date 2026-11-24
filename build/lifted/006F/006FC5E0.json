@@ -1,0 +1,22 @@
+{
+  "va": "0x006FC5E0",
+  "size": 42,
+  "orig_symbol": "sub_006FC5E0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Object::MatchesHandle",
+  "class": "Object",
+  "signature": "bool fn_006FC5E0(void* self, void* obj)",
+  "summary": "Returns true if the optional object's virtual probe (vtable +0x14) accepts the stored handle at +0x40, or if the stored handle at +0x40 is -1; otherwise false.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x40",
+      "type": "int32_t",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:59:31Z"
+}
