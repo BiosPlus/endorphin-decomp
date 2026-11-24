@@ -1,0 +1,21 @@
+{
+  "va": "0x007A9BD0",
+  "size": 16,
+  "orig_symbol": "sub_007A9BD0",
+  "src_path": "src/leaf/tiny_7A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7A0000.cpp",
+  "name": "SetField06FromGlobal",
+  "signature": "void sub_007A9BD0(uint8_t* a1)",
+  "summary": "Copies the low byte of global mem_00998070 into byte +0x06 of the object passed as the single stack argument.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x6",
+      "type": "uint8_t",
+      "name": "field_0x06"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:46:32Z"
+}

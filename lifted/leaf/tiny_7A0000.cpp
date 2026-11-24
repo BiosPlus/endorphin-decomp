@@ -389,3 +389,16 @@ void sub_007AEC60(uint8_t* self) {
     fields[0x60 / 4] = 0;
 }
 } // namespace lift_007AEC60
+
+// [0x007A9BD0]
+namespace lift_007A9BD0 {
+// @name SetField06FromGlobal
+// @summary Copies the low byte of global mem_00998070 into byte +0x06 of the object passed as the single stack argument.
+// @field UnknownClass +0x06 uint8_t field_0x06
+
+extern uint32_t mem_00998070;
+
+void sub_007A9BD0(uint8_t* a1) {
+    a1[0x06] = static_cast<uint8_t>(mem_00998070 & 0xFFu);
+}
+} // namespace lift_007A9BD0
