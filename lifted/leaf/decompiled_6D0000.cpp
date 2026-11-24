@@ -447,3 +447,18 @@ void fn_006D7660(void* self) {
     mem_00B5D7F0 = negHuge;
 }
 } // namespace lift_006D7660
+
+// [0x006DAE00] sub_006DAE00 (47 bytes)
+namespace lift_006DAE00 {
+// @name storeScaledInt64
+// @summary Stores (int64_t)(0x0AC0E8D7B0 * scale) into the object's first 8 bytes, where scale is the double argument.
+// @field field_0x00 +0x00 int64_t field_0x00
+void __fastcall fn_006DAE00(void* self, double scale) {
+    // Constant 0x0A'C0E8D7B0 is loaded as an int64 and converted via fild.
+    constexpr int64_t kFactorBits = 0x0AC0E8D7B0LL;
+    const double product = static_cast<double>(kFactorBits) * scale;
+    // Truncating conversion, matching MSVCR80 _ftol.
+    const int64_t result = static_cast<int64_t>(product);
+    std::memcpy(self, &result, sizeof(result));
+}
+} // namespace lift_006DAE00

@@ -39454,6 +39454,12 @@
     "summary": "Loads int64 at *self, divides by constant 0x0000000AC0E8D7B0, returns quotient as double (x87 ST0).",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006DAE00": {
+    "name": "storeScaledInt64",
+    "signature": "void __fastcall fn_006DAE00(void* self, double scale)",
+    "summary": "Stores (int64_t)(0x0AC0E8D7B0 * scale) into the object's first 8 bytes, where scale is the double argument.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DC2A0": {
     "name": "sub_006DC2A0",
     "signature": "extern \"C\" void* __fastcall fn_006DC2A0(void* self, int edx_unused, unsigned int flags)",
