@@ -37,3 +37,23 @@ __thiscall void* fn_004F27E0(void* self, DWORD arg1, DWORD arg2) {
     return self;
 }
 } // namespace lift_004F27E0
+
+// [0x004F4ED0] sub_004F4ED0 (44 bytes)
+namespace lift_004F4ED0 {
+// Callee 0x004F4EA0: sub_004F4EA0 (__thiscall, returns float via x87; see fn_004F8240 usage)
+extern float ext_004F4EA0(void* self);
+
+// @name NMData::SkeletalCalibrationVariables::vfunc_13 (acos ratio helper)
+// @class NMData::SkeletalCalibrationVariables (inferred from callee ext_004F4EA0; not confirmed)
+// @summary Returns acos(field_0x04 / callee(self)) as a float, with intermediate float rounding as in the original x87 code.
+// @field NMData::SkeletalCalibrationVariables +0x04 float field_0x04
+float fn_004F4ED0(void* self) {
+    // fld dword [ecx+4] -> fstp dword -> fld dword: round the field through float.
+    const float num = lift_field<float>(self, 4);
+    // fstp qword: widen to double; call callee (ecx = self); fdivr: num / result.
+    const double quotient = static_cast<double>(num) / static_cast<double>(ext_004F4EA0(self));
+    // fstp dword: round quotient to float; then CIacos on the reloaded value; fstp dword.
+    const float ratio = static_cast<float>(quotient);
+    return static_cast<float>(std::acos(static_cast<double>(ratio)));
+}
+} // namespace lift_004F4ED0

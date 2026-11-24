@@ -1,0 +1,22 @@
+{
+  "va": "0x004F4ED0",
+  "size": 44,
+  "orig_symbol": "sub_004F4ED0",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "NMData::SkeletalCalibrationVariables::vfunc_13 (acos ratio helper)",
+  "class": "NMData::SkeletalCalibrationVariables (inferred from callee ext_004F4EA0; not confirmed)",
+  "signature": "float fn_004F4ED0(void* self)",
+  "summary": "Returns acos(field_0x04 / callee(self)) as a float, with intermediate float rounding as in the original x87 code.",
+  "fields": [
+    {
+      "class": "NMData::SkeletalCalibrationVariables",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:03:18Z"
+}

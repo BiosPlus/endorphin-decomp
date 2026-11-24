@@ -11766,6 +11766,13 @@
     "summary": "Setter storing float argument into field at offset +0x38.",
     "lifted_path": "lifted/leaf/tiny_4F0000.cpp"
   },
+  "0x004F4ED0": {
+    "name": "NMData::SkeletalCalibrationVariables::vfunc_13 (acos ratio helper)",
+    "class": "NMData::SkeletalCalibrationVariables (inferred from callee ext_004F4EA0; not confirmed)",
+    "signature": "float fn_004F4ED0(void* self)",
+    "summary": "Returns acos(field_0x04 / callee(self)) as a float, with intermediate float rounding as in the original x87 code.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F52F0": {
     "name": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getPhi, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026MatrixWithProperties::getPhi, 0\u003e",

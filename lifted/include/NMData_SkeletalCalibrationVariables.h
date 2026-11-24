@@ -10,6 +10,7 @@
 // Recovered field layout for NMData::SkeletalCalibrationVariables:
 namespace lifted_layout {
 struct NMData_SkeletalCalibrationVariables_Fields {
+    // +0x4   float                    field_0x04  (evidence: 0x004F4ED0)
     // +0x10  float                    field_0x10  (evidence: 0x004A9B50, 0x00622320)
     // +0x14  float                    field_0x14  (evidence: 0x004A9B50, 0x00622330)
     // +0x18  float                    field_0x18  (evidence: 0x004A9B50, 0x00622340)
