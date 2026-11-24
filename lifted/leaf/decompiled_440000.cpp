@@ -946,3 +946,24 @@ DWORD* fn_0044C2A0(const DWORD* first, const DWORD* last, DWORD* out) {
     return out;
 }
 } // namespace lift_0044C2A0
+
+// [0x0044B360]
+namespace lift_0044B360 {
+// @name sub_0044B360
+// @summary Invokes two virtual methods on the object at offset 0x64 if non-null.
+// @field Unknown +0x64 void* field_0x64
+
+
+void __thiscall sub_0044B360(void* self) {
+    uint32_t obj = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x64);
+    if (obj != 0) {
+        using VFunc = void(__thiscall*)(void*);
+        uint32_t* vtable = *reinterpret_cast<uint32_t**>(static_cast<uintptr_t>(obj));
+        reinterpret_cast<VFunc>(static_cast<uintptr_t>(vtable[0x20 / 4]))(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+
+        obj = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x64);
+        vtable = *reinterpret_cast<uint32_t**>(static_cast<uintptr_t>(obj));
+        reinterpret_cast<VFunc>(static_cast<uintptr_t>(vtable[0x154 / 4]))(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+    }
+}
+} // namespace lift_0044B360
