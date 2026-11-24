@@ -56,3 +56,30 @@ void* fn_00687510(void* self, void* arg1) {
 }
 } // namespace lift_0040A910
 } // namespace lift_00687510
+
+// [0x00682E20] sub_00682E20 (33 bytes)
+namespace lift_00682E20 {
+// @name Unknown::computeScaledDeltaDiv128
+// @class Unknown
+// @summary Returns 0 if field_0x04 is 0; otherwise returns (field_0x08 - field_0x04) scaled by a signed reciprocal multiply and divided by 128 with round-toward-zero correction.
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x08 int32_t field_0x08
+int32_t fn_00682E20(void* self) {
+    const int32_t a = lift_field<int32_t>(self, 0x04);
+    if (a == 0) {
+        return 0;
+    }
+
+    const int32_t delta = lift_field<int32_t>(self, 0x08) - a;
+
+    // Signed 32x32 -> 64 multiply (imul), keep the high dword.
+    const int64_t prod = static_cast<int64_t>(static_cast<int32_t>(0xDD67C8A7u)) *
+                         static_cast<int64_t>(delta);
+    int32_t hi = static_cast<int32_t>(static_cast<uint64_t>(prod) >> 32);
+    hi = static_cast<int32_t>(static_cast<uint32_t>(hi) + static_cast<uint32_t>(delta));
+
+    // Arithmetic shift by 7, then add 1 if the result was negative.
+    const int32_t t = hi >> 7;
+    return static_cast<int32_t>(t + static_cast<int32_t>(static_cast<uint32_t>(t) >> 31));
+}
+} // namespace lift_00682E20

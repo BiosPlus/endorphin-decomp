@@ -29209,6 +29209,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x50 and forwards through mem_00924FDC.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
+  "0x00682E20": {
+    "name": "Unknown::computeScaledDeltaDiv128",
+    "class": "Unknown",
+    "signature": "int32_t fn_00682E20(void* self)",
+    "summary": "Returns 0 if field_0x04 is 0; otherwise returns (field_0x08 - field_0x04) scaled by a signed reciprocal multiply and divided by 128 with round-toward-zero correction.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00682ED0": {
     "name": "VirtualSlot9Thunk",
     "class": "Object (unidentified; receiver is passed in ecx)",
