@@ -601,3 +601,16 @@ uint8_t fn_006E8610(void* self) {
     return *reinterpret_cast<uint8_t*>(obj + 0x20);
 }
 } // namespace lift_006E8610
+
+// [0x006E8740] sub_006E8740 (16 bytes)
+namespace lift_006E8740 {
+// @name Unknown::GetIndirectDouble50
+// @class Unknown
+// @summary Returns the double at +0x50 of the object pointed to by the first dword of this (thiscall, result in st0).
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x50 double field_0x50
+double fn_006E8740(void* self) {
+    void* inner = *reinterpret_cast<void**>(self);
+    return lift_field<double>(inner, 0x50);
+}
+} // namespace lift_006E8740

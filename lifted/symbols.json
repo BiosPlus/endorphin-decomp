@@ -32558,6 +32558,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x4C and tail-calls sub_006E7460.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E8740": {
+    "name": "Unknown::GetIndirectDouble50",
+    "class": "Unknown",
+    "signature": "double fn_006E8740(void* self)",
+    "summary": "Returns the double at +0x50 of the object pointed to by the first dword of this (thiscall, result in st0).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
   "0x006E8780": {
     "name": "Unknown::GetIndirectDoublePlus58",
     "class": "Unknown",
