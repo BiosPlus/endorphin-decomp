@@ -438,3 +438,22 @@ uint32_t fn_0040FD60(void* self, uint32_t mode) {
     return 0u;
 }
 } // namespace lift_0040FD60
+
+// [0x00408090]
+namespace lift_00408090 {
+// @name copy_backward_4b
+// @summary Copies a range of 4-byte elements backward using memmove_s and returns the start of the destination range.
+
+
+extern int32_t (__cdecl *mem_009251EC)(void* dest, size_t destsz, const void* src, size_t count);
+
+uint32_t* __cdecl sub_00408090(const uint32_t* first, const uint32_t* last, uint32_t* dest_end) {
+    int32_t count = static_cast<int32_t>(reinterpret_cast<uintptr_t>(last) - reinterpret_cast<uintptr_t>(first)) >> 2;
+    size_t byte_size = static_cast<size_t>(count) * 4;
+    uint32_t* dest = reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(dest_end) - byte_size);
+    if (count > 0) {
+        mem_009251EC(dest, byte_size, first, byte_size);
+    }
+    return dest;
+}
+} // namespace lift_00408090

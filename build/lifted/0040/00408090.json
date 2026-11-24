@@ -1,0 +1,13 @@
+{
+  "va": "0x00408090",
+  "size": 48,
+  "orig_symbol": "sub_00408090",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "copy_backward_4b",
+  "signature": "uint32_t* __cdecl sub_00408090(const uint32_t* first, const uint32_t* last, uint32_t* dest_end)",
+  "summary": "Copies a range of 4-byte elements backward using memmove_s and returns the start of the destination range.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:18:15Z"
+}
