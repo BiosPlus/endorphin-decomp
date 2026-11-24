@@ -8634,3 +8634,24 @@ void __thiscall fn_0046E840(void* self, void* arg1) {
     *(uint32_t*)((uint8_t*)arg1 + 4) = (uint32_t)(uintptr_t)&mem_00AD8324;
 }
 } // namespace lift_0046E840
+
+// [0x0046F0D0]
+namespace lift_0046F0D0 {
+// @name ExprParser::ReadWriteMethodType<ImageExporter>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<ImageExporter>
+// @summary Initializes a static type descriptor if needed and stores its address at out+0x4.
+// @field ExprParser::TypeDescriptor +0x4 uint32_t* field_0x04
+
+extern uint32_t mem_00AD8340;
+extern uint8_t mem_00AD833C[];
+extern void ext_0067A670(void* self);
+
+void __thiscall fn_0046F0D0(void* /*self*/, void* out) {
+    if ((mem_00AD8340 & 1) == 0) {
+        mem_00AD8340 |= 1;
+        ext_0067A670(mem_00AD833C);
+        *reinterpret_cast<uint32_t*>(mem_00AD833C) = 0x0093B324;
+    }
+    *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(out) + 4) = mem_00AD833C;
+}
+} // namespace lift_0046F0D0
