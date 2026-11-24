@@ -216,3 +216,16 @@ void* fn_0052FDF0() {
     return ext_0052F3C0(obj);
 }
 } // namespace lift_0052FDF0
+
+// [0x00528D30]
+namespace lift_00528D30 {
+extern uint16_t ext_00528CC0(uint16_t val); // bswap16
+
+// @name bswapArrayU16
+// @summary Byte-swaps each 16-bit element of an array in place (count <= 0 is a no-op).
+void fn_00528D30(uint16_t* data, int32_t count) {
+    for (int32_t i = 0; i < count; ++i) {
+        data[i] = ext_00528CC0(data[i]);
+    }
+}
+} // namespace lift_00528D30

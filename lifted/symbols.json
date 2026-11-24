@@ -13417,6 +13417,12 @@
     "summary": "Byte-swaps a 16-bit unsigned integer (endianness swap).",
     "lifted_path": "lifted/leaf/tiny_520000.cpp"
   },
+  "0x00528D30": {
+    "name": "bswapArrayU16",
+    "signature": "extern \"C\" uint16_t ext_00528CC0(uint16_t val); // bswap16 void fn_00528D30(uint16_t* data, int32_t count)",
+    "summary": "Byte-swaps each 16-bit element of an array in place (count \u003c= 0 is a no-op).",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x0052A070": {
     "name": "sub_0052A070",
     "signature": "void* fn_0052A070(void* arg)",

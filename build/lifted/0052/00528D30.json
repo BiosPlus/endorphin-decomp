@@ -1,0 +1,13 @@
+{
+  "va": "0x00528D30",
+  "size": 42,
+  "orig_symbol": "sub_00528D30",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "bswapArrayU16",
+  "signature": "extern \"C\" uint16_t ext_00528CC0(uint16_t val); // bswap16 void fn_00528D30(uint16_t* data, int32_t count)",
+  "summary": "Byte-swaps each 16-bit element of an array in place (count \u003c= 0 is a no-op).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:58:24Z"
+}
