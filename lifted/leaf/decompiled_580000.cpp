@@ -15,6 +15,7 @@ float fn_0058F590(float value) {
     return ext_0058B5A0(value);
 }
 } // namespace lift_0058F590
+#include <cstring>
 
 // [0x0058F570] sub_0058F570 (16 bytes)
 namespace lift_0058F570 {
@@ -291,3 +292,61 @@ float __thiscall sub_0058A960(uintptr_t this_ptr) {
     return *reinterpret_cast<const float*>(ret + 0x8);
 }
 } // namespace lift_0058A960
+
+// [0x0058A920] sub_0058A920 (49 bytes)
+namespace lift_0058A920 {
+namespace lift_0058A920 {
+
+// Known callee ext_00552130: Matrix4::getRow (copies a 4-float row/element at index from this into out; returns out).
+extern uint32_t ext_00552130(uintptr_t this_ptr, uintptr_t out_ptr, uint32_t index);
+
+// Indirect call through a function pointer read from the object at +0x28 / +0x30 (selected by mem_00A85D54).
+// Passes this_ptr as the implicit this argument and returns the 32-bit value left in eax.
+extern uint32_t ext_call_slot_0058A920(uint32_t target, uintptr_t this_ptr);
+
+// Known data: mem_00A85D54 .data u32 0x00000001 (only the low byte is tested).
+extern const uint8_t mem_00A85D54;
+
+static inline uint32_t load_u32(uintptr_t addr) {
+    uint32_t v;
+    std::memcpy(&v, reinterpret_cast<const void*>(addr), sizeof(v));
+    return v;
+}
+
+static inline float load_f32(uintptr_t addr) {
+    float v;
+    std::memcpy(&v, reinterpret_cast<const void*>(addr), sizeof(v));
+    return v;
+}
+
+// @name Unknown::GetMatrixRow3Y
+// @class Unknown
+// @summary Resolves the matrix object at this->field_0x04 via a selected slot getter, copies its row 3 with Matrix4::getRow, and returns that row's second float.
+// @field Unknown +0x04 uint32_t field_0x04
+
+// Returns the float left in st(0) by the original code: the value at offset +4 of the pointer returned by getRow.
+float fn_0058A920(uintptr_t self) {
+    // mov eax, [ecx+4]
+    uint32_t obj = load_u32(self + 0x04);
+    // add ecx, 4  (this pointer for the indirect call)
+    uintptr_t this_ptr = self + 0x04;
+
+    // cmp byte ptr [mem_00A85D54], 0 ; select slot +0x30 if nonzero, else +0x28
+    uint32_t slot_off = (mem_00A85D54 != 0) ? 0x30u : 0x28u;
+    uint32_t target = load_u32(static_cast<uintptr_t>(obj) + slot_off);
+
+    // call edx  -> eax
+    uint32_t mat = ext_call_slot_0058A920(target, this_ptr);
+
+    // sub esp, 0x10 ; out buffer lives on the stack
+    uint8_t out[0x10] = {};
+
+    // push 3 ; push out ; mov ecx, eax ; call sub_00552130
+    uint32_t row = ext_00552130(static_cast<uintptr_t>(mat), reinterpret_cast<uintptr_t>(out), 3u);
+
+    // fld dword ptr [eax + 4]
+    return load_f32(static_cast<uintptr_t>(row) + 4);
+}
+
+} // namespace lift_0058A920
+} // namespace lift_0058A920

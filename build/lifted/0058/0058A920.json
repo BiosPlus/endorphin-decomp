@@ -1,0 +1,22 @@
+{
+  "va": "0x0058A920",
+  "size": 49,
+  "orig_symbol": "sub_0058A920",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "Unknown::GetMatrixRow3Y",
+  "class": "Unknown",
+  "signature": "static inline uint32_t load_u32(uintptr_t addr)",
+  "summary": "Resolves the matrix object at this-\u003efield_0x04 via a selected slot getter, copies its row 3 with Matrix4::getRow, and returns that row's second float.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:31:09Z"
+}

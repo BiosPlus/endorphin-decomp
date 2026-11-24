@@ -17851,6 +17851,13 @@
     "summary": "Gets the X component of row 3 from a transform matrix retrieved via vtable on this+0x4.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x0058A920": {
+    "name": "Unknown::GetMatrixRow3Y",
+    "class": "Unknown",
+    "signature": "static inline uint32_t load_u32(uintptr_t addr)",
+    "summary": "Resolves the matrix object at this-\u003efield_0x04 via a selected slot getter, copies its row 3 with Matrix4::getRow, and returns that row's second float.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x0058A960": {
     "name": "getRow3Element2",
     "class": "Unknown",
