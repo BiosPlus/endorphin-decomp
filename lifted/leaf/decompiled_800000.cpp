@@ -380,3 +380,16 @@ void* fn_0080B590(void* dst, const void* src, size_t n) {
     return ext_00859780(dst, src, n);
 }
 } // namespace lift_0080B590
+
+// [0x0080B5B0]
+namespace lift_0080B5B0 {
+// Known callee 0x008597B0: sub_0085E04B (five-byte no-op `add eax, 0`; leaves eax unchanged).
+// cdecl: caller pushes three DWORD args and cleans up the stack.
+DWORD ext_008597B0(DWORD a, DWORD b, DWORD c);
+
+// @name Thunk::forwardThreeDwordArgs
+// @summary Forwards its three cdecl DWORD arguments unchanged to ext_008597B0 and returns the value left in eax by that call.
+DWORD fn_0080B5B0(DWORD a, DWORD b, DWORD c) {
+    return ext_008597B0(a, b, c);
+}
+} // namespace lift_0080B5B0

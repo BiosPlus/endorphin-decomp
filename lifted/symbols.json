@@ -50359,6 +50359,13 @@
     "summary": "Forwards (dst, src, n) unchanged to copyMemoryDwordThenBytes (ext_00859780) and returns its result.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x0080B5B0": {
+    "name": "Thunk::forwardThreeDwordArgs",
+    "class": "Thunk",
+    "signature": "DWORD fn_0080B5B0(DWORD a, DWORD b, DWORD c)",
+    "summary": "Forwards its three cdecl DWORD arguments unchanged to ext_008597B0 and returns the value left in eax by that call.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080B670": {
     "name": "sub_0080B670",
     "signature": "uint32_t fn_0080B670(uint32_t size)",
