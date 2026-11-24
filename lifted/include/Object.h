@@ -19,7 +19,7 @@ struct Object_Fields {
     // +0x0   uint32_t                 vtable  (evidence: 0x006B19B0, 0x006B9950) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t*                vtable  (evidence: 0x006A7F50) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x005F35C0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void**                   vtable  (evidence: 0x007558B0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void**                   vtable  (evidence: 0x005435A0, 0x007558B0) // CONFLICT: multiple definitions at +0x0
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00414880, 0x00419990, 0x007D4800, 0x007D48A0, 0x007D8470, 0x007DEC80)
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00790D40, 0x00790D60, 0x0079ADA0, 0x0079DCE0)
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x0071C500, 0x007C2E50, 0x007C6C10, 0x007C6C20, 0x007CC9F0) // CONFLICT: multiple definitions at +0xC
@@ -42,6 +42,8 @@ struct Object_Fields {
     // +0x69  uint8_t                  field_0x69  (evidence: 0x00443700, 0x004444C0)
     // +0x7C  uint32_t                 field_0x7c  (evidence: 0x007C2E50, 0x007C6FF0)
     // +0x8C  float                    field_0x8c  (evidence: 0x007C2E50, 0x007C8810)
+    // +0x91  uint8_t                  field_0x91  (evidence: 0x005435A0)
+    // +0x94  uint8_t                  field_0x94  (evidence: 0x005435A0)
     // +0xA0  void*                    ptr_a0  (evidence: 0x005481E0)
     // +0xA8  uint32_t                 field_0xa8  (evidence: 0x007C2E50, 0x007C8880)
     // +0xB0  float                    field_0xb0  (evidence: 0x007C62B0)

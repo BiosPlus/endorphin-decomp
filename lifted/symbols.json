@@ -15000,11 +15000,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x00543530 (VTableDispatch::ClearFlagsAndTailCallSlot16).",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x005435A0": {
+    "name": "Object::dispatchVirtualSlot14AndClearFlags",
+    "class": "Object",
+    "signature": "void __thiscall fn_005435A0(uint32_t self, uint32_t a1, uint32_t a2)",
+    "summary": "Calls virtual slot 0x50 on this with two stack arguments, then clears the byte flags at +0x91 and +0x94.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x005435D0": {
     "name": "sub_005435D0",
     "class": "VTableDispatch",
     "signature": "uint32_t fn_005435D0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00543530 (VTableDispatch::ClearFlagsAndTailCallSlot16).",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
+  "0x005435F0": {
+    "name": "UnknownClass::forwardVirtual58AndClearFlags",
+    "class": "UnknownClass",
+    "signature": "void fn_005435F0(void* self, uint32_t a, uint32_t b)",
+    "summary": "Forwards two args to virtual slot +0x58 on self, then clears byte flags at +0x92 and +0x95.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
   "0x00543620": {

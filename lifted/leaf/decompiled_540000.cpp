@@ -276,3 +276,42 @@ void fn_00543550(void* self, uint32_t arg0, uint32_t arg1) {
     lift_field<uint8_t>(self, 0x93) = 0;
 }
 } // namespace lift_00543550
+
+// [0x005435F0] sub_005435F0 (40 bytes)
+namespace lift_005435F0 {
+// @name UnknownClass::forwardVirtual58AndClearFlags
+// @class UnknownClass
+// @summary Forwards two args to virtual slot +0x58 on self, then clears byte flags at +0x92 and +0x95.
+// @field UnknownClass +0x92 uint8_t field_0x92
+// @field UnknownClass +0x95 uint8_t field_0x95
+
+using VirtualSlot58Fn = void (__thiscall*)(void* self, uint32_t a, uint32_t b);
+
+void fn_005435F0(void* self, uint32_t a, uint32_t b) {
+    void* vtable = lift_field<void*>(self, 0);
+    void* slot58 = lift_field<void*>(vtable, 0x58);
+    reinterpret_cast<VirtualSlot58Fn>(slot58)(self, a, b);
+    lift_field<uint8_t>(self, 0x92) = 0;
+    lift_field<uint8_t>(self, 0x95) = 0;
+}
+} // namespace lift_005435F0
+
+// [0x005435A0] sub_005435A0 (40 bytes)
+namespace lift_005435A0 {
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write8(uint32_t addr, uint8_t value);
+
+// @name Object::dispatchVirtualSlot14AndClearFlags
+// @summary Calls virtual slot 0x50 on this with two stack arguments, then clears the byte flags at +0x91 and +0x94.
+// @field Object +0x00 void** vtable
+// @field Object +0x91 uint8_t field_0x91
+// @field Object +0x94 uint8_t field_0x94
+void __thiscall fn_005435A0(uint32_t self, uint32_t a1, uint32_t a2) {
+    uint32_t vtable = mem_read32(self);
+    uint32_t fn_ptr = mem_read32(vtable + 0x50);
+    using VMethod = void(__thiscall*)(uint32_t, uint32_t, uint32_t);
+    reinterpret_cast<VMethod>(static_cast<uintptr_t>(fn_ptr))(self, a1, a2);
+    mem_write8(self + 0x91, 0);
+    mem_write8(self + 0x94, 0);
+}
+} // namespace lift_005435A0
