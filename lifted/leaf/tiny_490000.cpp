@@ -144,3 +144,21 @@ uintptr_t fn_00493E40(void* self) {
     return target(obj);
 }
 } // namespace lift_00493E40
+
+// [0x00493E60] sub_00493E60 (12 bytes)
+namespace lift_00493E60 {
+// @name forwardVtable188_viaFirstField
+// @summary Forwards the call to vtable slot +0x188 of the object pointed to by this+0x00 (tail call, no extra work).
+// @field <unknown> +0x00 void* delegate
+void fn_00493E60(void* self) {
+    // mov ecx, [ecx]        -> inner = *(void**)self
+    void* inner = lift_field<void*>(self, 0x00);
+    // mov eax, [ecx]        -> vtbl = *(void***)inner
+    void** vtbl = lift_field<void**>(inner, 0x00);
+    // mov eax, [eax+0x188]  -> target = vtbl[0x188 / 4]
+    using SlotFn = void (*)(void*);
+    SlotFn target = lift_field<SlotFn>(vtbl, 0x188);
+    // jmp eax               -> tail call target(inner) with the same this
+    target(inner);
+}
+} // namespace lift_00493E60
