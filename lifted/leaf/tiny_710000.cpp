@@ -2045,3 +2045,275 @@ void __thiscall fn_0071C980(Unknown* self, uint8_t value) {
 }
 } // namespace lift_005304A0
 } // namespace lift_0071C980
+
+// [0x007155A0] sub_007155A0 (16 bytes)
+namespace lift_007155A0 {
+// @name sub_007155A0
+// @summary Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).
+namespace lift_006D9010 {
+// @name Unknown::GetInnerDouble
+// @class Unknown
+// @summary Returns the double at +0x1E8 of the object pointed to by this+0x0C (thiscall, no stack args, result in st0).
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x1E8 double field_0x1E8
+double fn_007155A0(uint32_t self) {
+    uint32_t inner = *reinterpret_cast<uint32_t*>(self + 0x10u);
+    return *reinterpret_cast<double*>(inner + 0x1E8u);
+}
+} // namespace lift_006D9010
+} // namespace lift_007155A0
+
+// [0x0071B6D0] sub_0071B6D0 (16 bytes)
+namespace lift_0071B6D0 {
+// @name sub_0071B6D0
+// @summary Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).
+namespace lift_006D9010 {
+// @name Unknown::GetInnerDouble
+// @class Unknown
+// @summary Returns the double at +0x1E8 of the object pointed to by this+0x0C (thiscall, no stack args, result in st0).
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x1E8 double field_0x1E8
+double fn_0071B6D0(uint32_t self) {
+    uint32_t inner = *reinterpret_cast<uint32_t*>(self + 0x0Cu);
+    return *reinterpret_cast<double*>(inner + 0x518u);
+}
+} // namespace lift_006D9010
+} // namespace lift_0071B6D0
+
+// [0x0071B6E0] sub_0071B6E0 (16 bytes)
+namespace lift_0071B6E0 {
+// @name sub_0071B6E0
+// @summary Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).
+namespace lift_006D9010 {
+// @name Unknown::GetInnerDouble
+// @class Unknown
+// @summary Returns the double at +0x1E8 of the object pointed to by this+0x0C (thiscall, no stack args, result in st0).
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x1E8 double field_0x1E8
+double fn_0071B6E0(uint32_t self) {
+    uint32_t inner = *reinterpret_cast<uint32_t*>(self + 0x0Cu);
+    return *reinterpret_cast<double*>(inner + 0x5A0u);
+}
+} // namespace lift_006D9010
+} // namespace lift_0071B6E0
+
+// [0x0071B770] sub_0071B770 (16 bytes)
+namespace lift_0071B770 {
+// @name sub_0071B770
+// @summary Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).
+namespace lift_006D9010 {
+// @name Unknown::GetInnerDouble
+// @class Unknown
+// @summary Returns the double at +0x1E8 of the object pointed to by this+0x0C (thiscall, no stack args, result in st0).
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x1E8 double field_0x1E8
+double fn_0071B770(uint32_t self) {
+    uint32_t inner = *reinterpret_cast<uint32_t*>(self + 0x0Cu);
+    return *reinterpret_cast<double*>(inner + 0x628u);
+}
+} // namespace lift_006D9010
+} // namespace lift_0071B770
+
+// [0x0071B860] sub_0071B860 (16 bytes)
+namespace lift_0071B860 {
+// @name sub_0071B860
+// @summary Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).
+namespace lift_006D9010 {
+// @name Unknown::GetInnerDouble
+// @class Unknown
+// @summary Returns the double at +0x1E8 of the object pointed to by this+0x0C (thiscall, no stack args, result in st0).
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x1E8 double field_0x1E8
+double fn_0071B860(uint32_t self) {
+    uint32_t inner = *reinterpret_cast<uint32_t*>(self + 0x0Cu);
+    return *reinterpret_cast<double*>(inner + 0xA80u);
+}
+} // namespace lift_006D9010
+} // namespace lift_0071B860
+
+// [0x0071B8F0] sub_0071B8F0 (16 bytes)
+namespace lift_0071B8F0 {
+// @name sub_0071B8F0
+// @summary Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).
+namespace lift_006D9010 {
+// @name Unknown::GetInnerDouble
+// @class Unknown
+// @summary Returns the double at +0x1E8 of the object pointed to by this+0x0C (thiscall, no stack args, result in st0).
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x1E8 double field_0x1E8
+double fn_0071B8F0(uint32_t self) {
+    uint32_t inner = *reinterpret_cast<uint32_t*>(self + 0x0Cu);
+    return *reinterpret_cast<double*>(inner + 0xB08u);
+}
+} // namespace lift_006D9010
+} // namespace lift_0071B8F0
+
+// [0x0071BFC0] sub_0071BFC0 (16 bytes)
+namespace lift_0071BFC0 {
+// @name sub_0071BFC0
+// @summary Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).
+namespace lift_006D9010 {
+// @name Unknown::GetInnerDouble
+// @class Unknown
+// @summary Returns the double at +0x1E8 of the object pointed to by this+0x0C (thiscall, no stack args, result in st0).
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x1E8 double field_0x1E8
+double fn_0071BFC0(uint32_t self) {
+    uint32_t inner = *reinterpret_cast<uint32_t*>(self + 0x0Cu);
+    return *reinterpret_cast<double*>(inner + 0xB90u);
+}
+} // namespace lift_006D9010
+} // namespace lift_0071BFC0
+
+// [0x0071C020] sub_0071C020 (16 bytes)
+namespace lift_0071C020 {
+// @name sub_0071C020
+// @summary Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).
+namespace lift_006D9010 {
+// @name Unknown::GetInnerDouble
+// @class Unknown
+// @summary Returns the double at +0x1E8 of the object pointed to by this+0x0C (thiscall, no stack args, result in st0).
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x1E8 double field_0x1E8
+double fn_0071C020(uint32_t self) {
+    uint32_t inner = *reinterpret_cast<uint32_t*>(self + 0x0Cu);
+    return *reinterpret_cast<double*>(inner + 0xC18u);
+}
+} // namespace lift_006D9010
+} // namespace lift_0071C020
+
+// [0x0071C080] sub_0071C080 (16 bytes)
+namespace lift_0071C080 {
+// @name sub_0071C080
+// @summary Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).
+namespace lift_006D9010 {
+// @name Unknown::GetInnerDouble
+// @class Unknown
+// @summary Returns the double at +0x1E8 of the object pointed to by this+0x0C (thiscall, no stack args, result in st0).
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x1E8 double field_0x1E8
+double fn_0071C080(uint32_t self) {
+    uint32_t inner = *reinterpret_cast<uint32_t*>(self + 0x0Cu);
+    return *reinterpret_cast<double*>(inner + 0xD28u);
+}
+} // namespace lift_006D9010
+} // namespace lift_0071C080
+
+// [0x0071C100] sub_0071C100 (16 bytes)
+namespace lift_0071C100 {
+// @name sub_0071C100
+// @summary Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).
+namespace lift_006D9010 {
+// @name Unknown::GetInnerDouble
+// @class Unknown
+// @summary Returns the double at +0x1E8 of the object pointed to by this+0x0C (thiscall, no stack args, result in st0).
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x1E8 double field_0x1E8
+double fn_0071C100(uint32_t self) {
+    uint32_t inner = *reinterpret_cast<uint32_t*>(self + 0x0Cu);
+    return *reinterpret_cast<double*>(inner + 0x2F8u);
+}
+} // namespace lift_006D9010
+} // namespace lift_0071C100
+
+// [0x0071C3D0] sub_0071C3D0 (16 bytes)
+namespace lift_0071C3D0 {
+// @name sub_0071C3D0
+// @summary Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).
+namespace lift_006D9010 {
+// @name Unknown::GetInnerDouble
+// @class Unknown
+// @summary Returns the double at +0x1E8 of the object pointed to by this+0x0C (thiscall, no stack args, result in st0).
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x1E8 double field_0x1E8
+double fn_0071C3D0(uint32_t self) {
+    uint32_t inner = *reinterpret_cast<uint32_t*>(self + 0x0Cu);
+    return *reinterpret_cast<double*>(inner + 0x1520u);
+}
+} // namespace lift_006D9010
+} // namespace lift_0071C3D0
+
+// [0x0071C4A0] sub_0071C4A0 (16 bytes)
+namespace lift_0071C4A0 {
+// @name sub_0071C4A0
+// @summary Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).
+namespace lift_006D9010 {
+// @name Unknown::GetInnerDouble
+// @class Unknown
+// @summary Returns the double at +0x1E8 of the object pointed to by this+0x0C (thiscall, no stack args, result in st0).
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x1E8 double field_0x1E8
+double fn_0071C4A0(uint32_t self) {
+    uint32_t inner = *reinterpret_cast<uint32_t*>(self + 0x0Cu);
+    return *reinterpret_cast<double*>(inner + 0xFD0u);
+}
+} // namespace lift_006D9010
+} // namespace lift_0071C4A0
+
+// [0x0071C900] sub_0071C900 (16 bytes)
+namespace lift_0071C900 {
+// @name sub_0071C900
+// @summary Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).
+namespace lift_006D9010 {
+// @name Unknown::GetInnerDouble
+// @class Unknown
+// @summary Returns the double at +0x1E8 of the object pointed to by this+0x0C (thiscall, no stack args, result in st0).
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x1E8 double field_0x1E8
+double fn_0071C900(uint32_t self) {
+    uint32_t inner = *reinterpret_cast<uint32_t*>(self + 0x0Cu);
+    return *reinterpret_cast<double*>(inner + 0x1C08u);
+}
+} // namespace lift_006D9010
+} // namespace lift_0071C900
+
+// [0x0071C9D0] sub_0071C9D0 (16 bytes)
+namespace lift_0071C9D0 {
+// @name sub_0071C9D0
+// @summary Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).
+namespace lift_006D9010 {
+// @name Unknown::GetInnerDouble
+// @class Unknown
+// @summary Returns the double at +0x1E8 of the object pointed to by this+0x0C (thiscall, no stack args, result in st0).
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x1E8 double field_0x1E8
+double fn_0071C9D0(uint32_t self) {
+    uint32_t inner = *reinterpret_cast<uint32_t*>(self + 0x0Cu);
+    return *reinterpret_cast<double*>(inner + 0x1AF8u);
+}
+} // namespace lift_006D9010
+} // namespace lift_0071C9D0
+
+// [0x0071CA00] sub_0071CA00 (16 bytes)
+namespace lift_0071CA00 {
+// @name sub_0071CA00
+// @summary Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).
+namespace lift_006D9010 {
+// @name Unknown::GetInnerDouble
+// @class Unknown
+// @summary Returns the double at +0x1E8 of the object pointed to by this+0x0C (thiscall, no stack args, result in st0).
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x1E8 double field_0x1E8
+double fn_0071CA00(uint32_t self) {
+    uint32_t inner = *reinterpret_cast<uint32_t*>(self + 0x0Cu);
+    return *reinterpret_cast<double*>(inner + 0x1A70u);
+}
+} // namespace lift_006D9010
+} // namespace lift_0071CA00
+
+// [0x0071DEA0] sub_0071DEA0 (16 bytes)
+namespace lift_0071DEA0 {
+// @name sub_0071DEA0
+// @summary Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).
+namespace lift_006D9010 {
+// @name Unknown::GetInnerDouble
+// @class Unknown
+// @summary Returns the double at +0x1E8 of the object pointed to by this+0x0C (thiscall, no stack args, result in st0).
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x1E8 double field_0x1E8
+double fn_0071DEA0(uint32_t self) {
+    uint32_t inner = *reinterpret_cast<uint32_t*>(self + 0x10u);
+    return *reinterpret_cast<double*>(inner + 0x160u);
+}
+} // namespace lift_006D9010
+} // namespace lift_0071DEA0

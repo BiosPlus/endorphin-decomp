@@ -1,0 +1,28 @@
+{
+  "va": "0x007155A0",
+  "size": 16,
+  "orig_symbol": "sub_007155A0",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "sub_007155A0",
+  "class": "Unknown",
+  "signature": "double fn_007155A0(uint32_t self)",
+  "summary": "Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1E8",
+      "type": "double",
+      "name": "field_0x1E8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:39:35Z"
+}

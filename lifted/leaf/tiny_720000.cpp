@@ -310,3 +310,18 @@ uint32_t fn_0072B1C0(void* self) {
 }
 } // namespace lift_006BB7D0
 } // namespace lift_0072B1C0
+
+// [0x00722170] sub_00722170 (16 bytes)
+namespace lift_00722170 {
+// @name sub_00722170
+// @summary Auto-lifted identical-shape clone of 0x006D9020 (Unknown::LoadConstantOne).
+namespace lift_006D9020 {
+extern double mem_00AACAE0;
+
+// @name Unknown::LoadConstantOne
+// @summary Returns the double constant 1.0 (loaded from .rdata mem_0092A270); result is the float return value.
+double fn_00722170(void) {
+    return mem_00AACAE0;
+}
+} // namespace lift_006D9020
+} // namespace lift_00722170
