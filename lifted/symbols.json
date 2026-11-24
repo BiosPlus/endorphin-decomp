@@ -50941,6 +50941,13 @@
     "summary": "Forward byte-by-byte copy of `count` bytes from src to dst; no-op when count is zero.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x00869380": {
+    "name": "MD5Context::init",
+    "class": "MD5Context",
+    "signature": "void fn_00869380(void* self)",
+    "summary": "Resets an MD5 context: zeroes the 64-bit bit count and loads the four standard MD5 initial state words.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x00869F30": {
     "name": "ZeroDwordRange",
     "signature": "void ZeroDwordRange(uint32_t* dst, uint32_t count)",

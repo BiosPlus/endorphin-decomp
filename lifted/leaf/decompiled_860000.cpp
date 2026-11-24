@@ -209,3 +209,24 @@ extern void __cdecl fn_0086AF30(uint32_t* dst, const uint32_t* src, uint32_t cou
     } while (count != 0);
 }
 } // namespace lift_0086AF30
+
+// [0x00869380] sub_00869380 (48 bytes)
+namespace lift_00869380 {
+// @name MD5Context::init
+// @class MD5Context
+// @summary Resets an MD5 context: zeroes the 64-bit bit count and loads the four standard MD5 initial state words.
+// @field MD5Context +0x00 uint32_t field_0x00
+// @field MD5Context +0x04 uint32_t field_0x04
+// @field MD5Context +0x08 uint32_t field_0x08
+// @field MD5Context +0x0C uint32_t field_0x0C
+// @field MD5Context +0x10 uint32_t field_0x10
+// @field MD5Context +0x14 uint32_t field_0x14
+void fn_00869380(void* self) {
+    lift_field<uint32_t>(self, 0x14) = 0u;
+    lift_field<uint32_t>(self, 0x10) = 0u;
+    lift_field<uint32_t>(self, 0x00) = 0x67452301u;
+    lift_field<uint32_t>(self, 0x04) = 0xefcdab89u;
+    lift_field<uint32_t>(self, 0x08) = 0x98badcfeu;
+    lift_field<uint32_t>(self, 0x0C) = 0x10325476u;
+}
+} // namespace lift_00869380
