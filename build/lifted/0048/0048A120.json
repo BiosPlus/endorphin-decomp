@@ -1,0 +1,13 @@
+{
+  "va": "0x0048A120",
+  "size": 48,
+  "orig_symbol": "sub_0048A120",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "notifyRangeVtable78",
+  "signature": "void sub_0048A120(uint32_t begin, uint32_t end)",
+  "summary": "Iterates over an 8-byte-strided range [begin, end) and invokes vtable+0x78 on each non-null object at +0x04, passing the element address.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:19:32Z"
+}

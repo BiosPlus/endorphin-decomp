@@ -374,3 +374,54 @@ void sub_00481770(uint32_t dst, uint32_t count, uint32_t src) {
     } while (count > 0);
 }
 } // namespace lift_00481770
+
+// [0x0048A120]
+namespace lift_0048A120 {
+// @name notifyRangeVtable78
+// @summary Iterates over an 8-byte-strided range [begin, end) and invokes vtable+0x78 on each non-null object at +0x04, passing the element address.
+
+uint32_t mem_read32(uint32_t addr);
+
+void sub_0048A120(uint32_t begin, uint32_t end) {
+    if (begin == end) {
+        return;
+    }
+
+    uint32_t cur = begin;
+    do {
+        uint32_t obj = mem_read32(cur + 4u);
+        if (obj != 0u) {
+            uint32_t vtable = mem_read32(obj);
+            uint32_t vfn = mem_read32(vtable + 0x78u);
+            ((void(__thiscall*)(uint32_t, uint32_t))(uintptr_t)vfn)(obj, cur);
+        }
+        cur += 8u;
+    } while (cur != end);
+}
+} // namespace lift_0048A120
+
+// [0x00480DD0]
+namespace lift_00480DD0 {
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+// @name copyRange64
+// @summary Copies 64-byte elements from [first, last) to dst (skipping writes if dst is null) and returns the advanced dst pointer.
+extern uint32_t sub_00480DD0(uint32_t first, uint32_t last, uint32_t dst) {
+    uint32_t eax = dst;
+    uint32_t edx = first;
+    if (edx == last) {
+        return eax;
+    }
+    do {
+        if (eax != 0) {
+            for (uint32_t i = 0; i < 16; ++i) {
+                mem_write32(eax + i * 4, mem_read32(edx + i * 4));
+            }
+        }
+        edx += 0x40;
+        eax += 0x40;
+    } while (edx != last);
+    return eax;
+}
+} // namespace lift_00480DD0
