@@ -5365,3 +5365,24 @@ int fn_00482480(void* self) {
     return al == 0 ? 1 : 0;                                       // neg al; sbb eax,eax; add eax,1
 }
 } // namespace lift_00482480
+
+// [0x0053A570]
+namespace lift_0053A570 {
+// @name HasCustomBufferedTMPtr::vfunc_4
+// @class HasCustomBufferedTMPtr
+// @summary Resets the buffered TM pointer state: field_0x8 = 0, field_0x4 = -1.
+// @field HasCustomBufferedTMPtr +0x4 uint32_t field_0x4
+// @field HasCustomBufferedTMPtr +0x8 uint32_t field_0x8
+
+
+struct HasCustomBufferedTMPtr {
+    uint8_t  _pad0[0x4];
+    uint32_t field_0x4;
+    uint32_t field_0x8;
+};
+
+void HasCustomBufferedTMPtr_vfunc_4(HasCustomBufferedTMPtr* self) {
+    self->field_0x8 = 0u;
+    self->field_0x4 = 0xFFFFFFFFu;
+}
+} // namespace lift_0053A570

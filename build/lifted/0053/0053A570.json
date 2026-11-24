@@ -1,0 +1,28 @@
+{
+  "va": "0x0053A570",
+  "size": 15,
+  "orig_symbol": "HasCustomBufferedTMPtr::vfunc_4",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "HasCustomBufferedTMPtr::vfunc_4",
+  "class": "HasCustomBufferedTMPtr",
+  "signature": "void HasCustomBufferedTMPtr_vfunc_4(HasCustomBufferedTMPtr* self)",
+  "summary": "Resets the buffered TM pointer state: field_0x8 = 0, field_0x4 = -1.",
+  "fields": [
+    {
+      "class": "HasCustomBufferedTMPtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x4"
+    },
+    {
+      "class": "HasCustomBufferedTMPtr",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:30:04Z"
+}
