@@ -39869,6 +39869,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C76B0": {
+    "name": "fn_007C76B0_storeFloatToTwoFields",
+    "signature": "void fn_007C76B0(void* self, float value)",
+    "summary": "Stores a float argument into two float fields (+0x268 and +0x208) of the object pointed to by self.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C76D0": {
     "name": "sub_007C76D0",
     "class": "\u003cunknown\u003e",

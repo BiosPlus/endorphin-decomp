@@ -1,0 +1,27 @@
+{
+  "va": "0x007C76B0",
+  "size": 21,
+  "orig_symbol": "sub_007C76B0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "fn_007C76B0_storeFloatToTwoFields",
+  "signature": "void fn_007C76B0(void* self, float value)",
+  "summary": "Stores a float argument into two float fields (+0x268 and +0x208) of the object pointed to by self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x208",
+      "type": "float",
+      "name": "field_0x208"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x268",
+      "type": "float",
+      "name": "field_0x268"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:27:52Z"
+}

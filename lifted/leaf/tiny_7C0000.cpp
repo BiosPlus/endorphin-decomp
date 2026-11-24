@@ -1132,3 +1132,16 @@ void fn_007CA260(const void* src, void* dst) {
     }
 }
 } // namespace lift_007CA260
+
+// [0x007C76B0] sub_007C76B0 (21 bytes)
+namespace lift_007C76B0 {
+// @name fn_007C76B0_storeFloatToTwoFields
+// @summary Stores a float argument into two float fields (+0x268 and +0x208) of the object pointed to by self.
+// @field Unknown +0x208 float field_0x208
+// @field Unknown +0x268 float field_0x268
+void fn_007C76B0(void* self, float value) {
+    char* base = static_cast<char*>(self);
+    *reinterpret_cast<float*>(base + 0x268) = value;
+    *reinterpret_cast<float*>(base + 0x208) = value;
+}
+} // namespace lift_007C76B0
