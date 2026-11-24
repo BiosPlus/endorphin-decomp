@@ -579,3 +579,32 @@ void fn_007D85B0(void* self, float x, float y, float z) {
     lift_field<float>(self, 0x54) = z;
 }
 } // namespace lift_007D85B0
+
+// [0x007D4760]
+namespace lift_007D4760 {
+// @name IndexedPointerArray::nextPointer
+// @class IndexedPointerArray
+// @summary Returns the element at the current index and advances it; returns null once the index reaches the count.
+// @field IndexedPointerArray +0x08 uint32_t* items
+// @field IndexedPointerArray +0x0C int32_t index
+// @field IndexedPointerArray +0x14 int32_t count
+
+
+struct IndexedPointerArray {
+    uint8_t field_0x00[0x08];
+    uint32_t* items;     // +0x08
+    int32_t index;       // +0x0C
+    uint8_t field_0x10[0x04];
+    int32_t count;       // +0x14
+};
+
+uint32_t sub_007D4760(IndexedPointerArray* self) {
+    int32_t idx = self->index;
+    if (idx < self->count) {
+        uint32_t result = self->items[idx];
+        self->index = idx + 1;
+        return result;
+    }
+    return 0;
+}
+} // namespace lift_007D4760
