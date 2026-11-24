@@ -22689,6 +22689,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00602F00 (UnknownClass::GetSubobject14ViaVirtual28).",
     "lifted_path": "lifted/leaf/tiny_630000.cpp"
   },
+  "0x00630580": {
+    "name": "Self::GetSubobjectAndNotify",
+    "class": "Self",
+    "signature": "void* fn_00630580(void* self)",
+    "summary": "Calls vtable slot 12 of the object at self+0x04 with (self+0x114, 0), then returns self+0x114.",
+    "lifted_path": "lifted/leaf/tiny_630000.cpp"
+  },
   "0x006305C0": {
     "name": "sub_006305C0",
     "class": "UnknownClass",

@@ -1,0 +1,28 @@
+{
+  "va": "0x00630580",
+  "size": 26,
+  "orig_symbol": "sub_00630580",
+  "src_path": "src/leaf/tiny_630000.cpp",
+  "lifted_path": "lifted/leaf/tiny_630000.cpp",
+  "name": "Self::GetSubobjectAndNotify",
+  "class": "Self",
+  "signature": "void* fn_00630580(void* self)",
+  "summary": "Calls vtable slot 12 of the object at self+0x04 with (self+0x114, 0), then returns self+0x114.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_04"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x114",
+      "type": "void*",
+      "name": "field_114"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:56:39Z"
+}

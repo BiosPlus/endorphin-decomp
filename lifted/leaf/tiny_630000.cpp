@@ -115,3 +115,27 @@ void* fn_006305E0(void* self) {
 }
 } // namespace lift_00602F00
 } // namespace lift_006305E0
+
+// [0x00630580] sub_00630580 (26 bytes)
+namespace lift_00630580 {
+// @name Self::GetSubobjectAndNotify
+// @class Self
+// @summary Calls vtable slot 12 of the object at self+0x04 with (self+0x114, 0), then returns self+0x114.
+// @field Self +0x04 void* field_04
+// @field Self +0x114 void* field_114
+void* fn_00630580(void* self) {
+    // Object pointer stored at self+0x04.
+    void* obj = lift_field<void*>(self, 0x04);
+
+    // Address of the embedded subobject at self+0x114.
+    void* sub = static_cast<unsigned char*>(self) + 0x114;
+
+    // Virtual slot 12 (offset 0x30) of obj's vtable, called as (obj, sub, 0).
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    using SlotFn = void (__thiscall*)(void* self, void* arg, int flag);
+    auto slot = reinterpret_cast<SlotFn>(vtbl[12]);
+    slot(obj, sub, 0);
+
+    return sub;
+}
+} // namespace lift_00630580
