@@ -1,0 +1,22 @@
+{
+  "va": "0x004F2830",
+  "size": 31,
+  "orig_symbol": "VMCSMode::vfunc_141",
+  "src_path": "src/classes/VMCSMode.cpp",
+  "lifted_path": "lifted/classes/VMCSMode.cpp",
+  "name": "VMCSMode::vfunc_141",
+  "class": "VMCSMode",
+  "signature": "void* fn_004F2830(VMCSMode* self, uint32_t flags)",
+  "summary": "Resets the object's vtable to VMCSMode's; if bit 0 of the stack argument is set, calls ext_006A5C5C(this) first. Returns this (stdcall, ret 4).",
+  "fields": [
+    {
+      "class": "VMCSMode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vfptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:23:34Z"
+}

@@ -10786,6 +10786,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x8 and tail-calls sub_00469150.",
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
   },
+  "0x004F2830": {
+    "name": "VMCSMode::vfunc_141",
+    "class": "VMCSMode",
+    "signature": "void* fn_004F2830(VMCSMode* self, uint32_t flags)",
+    "summary": "Resets the object's vtable to VMCSMode's; if bit 0 of the stack argument is set, calls ext_006A5C5C(this) first. Returns this (stdcall, ret 4).",
+    "lifted_path": "lifted/classes/VMCSMode.cpp"
+  },
   "0x004F2890": {
     "name": "VMCSModes::SimulationMode::vfunc_143",
     "class": "VMCSModes::SimulationMode",
