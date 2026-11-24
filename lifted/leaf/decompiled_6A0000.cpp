@@ -77,3 +77,28 @@ uint32_t __thiscall sub_006A9340(void* self, uint32_t arg1) {
 
 } // namespace lift_006A9340
 } // namespace lift_006A9340
+
+// [0x006AD130] sub_006AD130 (29 bytes)
+namespace lift_006AD130 {
+// Known callee 0x006ACFD0: getField0x1COrZero (Returns the 32-bit field at offset 0x1C if the object pointer is non-null, otherwise 0.)
+extern void ext_006ACFD0();
+
+// @name walkChainFindTarget
+// @summary Follows the 0x1C link chain from self (via getField0x1COrZero) and returns 1 if target is found in it, else 0 (also 1 when the chain ends at target == 0).
+// @field (none: this function reads no offsets directly; the 0x1C read happens inside ext_006ACFD0)
+uint32_t fn_006AD130(void* self, uint32_t target) {
+    using GetField1C = uint32_t (*)(void*);
+    auto getField1C = reinterpret_cast<GetField1C>(ext_006ACFD0);
+
+    void* cur = self;
+    uint32_t next = 0;
+    for (;;) {
+        next = getField1C(cur);
+        if (next == 0 || next == target) {
+            break;
+        }
+        cur = reinterpret_cast<void*>(static_cast<uintptr_t>(next));
+    }
+    return target == next ? 1u : 0u;
+}
+} // namespace lift_006AD130
