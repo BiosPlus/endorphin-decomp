@@ -341,3 +341,23 @@ void fn_00538550(void* self, float value, uint8_t byteA, uint8_t byteB) {
     base[0x18] = byteB;
 }
 } // namespace lift_00538550
+
+// [0x00532B60]
+namespace lift_00532B60 {
+// @name Unknown::initVtableAndFlags
+// @class Unknown
+// @summary Stores the vtable address at +0x00, sets flag bytes at +0x04 and +0x0C to 1, and zeroes the dwords at +0x08 and +0x10.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint8_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint8_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+void fn_00532B60(void* self) {
+    auto* p = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(p + 0x00) = 0x009543E4u; // vtable address (mem_009543E4)
+    *(p + 0x04) = 1;
+    *reinterpret_cast<uint32_t*>(p + 0x08) = 0;
+    *(p + 0x0C) = 1;
+    *reinterpret_cast<uint32_t*>(p + 0x10) = 0;
+}
+} // namespace lift_00532B60
