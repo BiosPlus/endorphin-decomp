@@ -8,13 +8,13 @@
 // Recovered field layout for Vec4d:
 namespace lifted_layout {
 struct Vec4d_Fields {
-    // +0x0   double                   field_0x00  (evidence: 0x006D24D0, 0x006D26D0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   double                   field_0x00  (evidence: 0x006D24A0, 0x006D24D0, 0x006D26D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   double                   x  (evidence: 0x006E00C0) // CONFLICT: multiple definitions at +0x0
-    // +0x8   double                   field_0x08  (evidence: 0x006D24D0, 0x006D26D0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   double                   field_0x08  (evidence: 0x006D24A0, 0x006D24D0, 0x006D26D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   double                   y  (evidence: 0x006E00C0) // CONFLICT: multiple definitions at +0x8
-    // +0x10  double                   field_0x10  (evidence: 0x006D24D0, 0x006D26D0) // CONFLICT: multiple definitions at +0x10
+    // +0x10  double                   field_0x10  (evidence: 0x006D24A0, 0x006D24D0, 0x006D26D0) // CONFLICT: multiple definitions at +0x10
     // +0x10  double                   z  (evidence: 0x006E00C0) // CONFLICT: multiple definitions at +0x10
-    // +0x18  double                   field_0x18  (evidence: 0x006D24D0, 0x006D26D0) // CONFLICT: multiple definitions at +0x18
+    // +0x18  double                   field_0x18  (evidence: 0x006D24A0, 0x006D24D0, 0x006D26D0) // CONFLICT: multiple definitions at +0x18
     // +0x18  double                   w  (evidence: 0x006E00C0) // CONFLICT: multiple definitions at +0x18
 };
 } // namespace lifted_layout

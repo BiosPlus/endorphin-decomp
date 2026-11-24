@@ -723,3 +723,24 @@ uint32_t __thiscall sub_006D2130(uint32_t self, int32_t arg1, uint32_t arg2) {
     return self;
 }
 } // namespace lift_006D2130
+
+// [0x006D24A0]
+namespace lift_006D24A0 {
+// @name Vec4d::scale
+// @class Vec4d
+// @summary Multiplies all four double-precision components of this by a scalar and returns this.
+// @field Vec4d +0x00 double field_0x00
+// @field Vec4d +0x08 double field_0x08
+// @field Vec4d +0x10 double field_0x10
+// @field Vec4d +0x18 double field_0x18
+
+
+void* __thiscall sub_006D24A0(void* this_, double scale) {
+    auto* p = static_cast<double*>(this_);
+    p[0] *= scale;
+    p[1] *= scale;
+    p[2] *= scale;
+    p[3] *= scale;
+    return this_;
+}
+} // namespace lift_006D24A0
