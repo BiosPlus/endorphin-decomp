@@ -592,3 +592,26 @@ int32_t fn_006D86C0() {
     return *reinterpret_cast<int32_t*>(static_cast<uintptr_t>(second));
 }
 } // namespace lift_006D86C0
+
+// [0x006D8520] sub_006D8520 (48 bytes)
+namespace lift_006D8520 {
+// External callee (ecx = this, one stack argument of 0; returns eax).
+extern int32_t __thiscall ext_006FDF70(void* self, int32_t arg);
+// Lifted getter: returns the int32_t at offset +0x14 of its argument.
+extern int32_t __fastcall fn_006FC930(void* self);
+
+// @name GetFieldValueViaChain
+// @summary Calls ext_006FDF70 to test self; if non-zero, resolves a handle via ext_006FDF70 and fn_006FC930 and returns the int32_t at +0x18 of the result, else returns 0.
+// @field Unknown +0x18 int32_t field_0x18
+int32_t fn_006D8520(void* self) {
+    if (ext_006FDF70(self, 0) == 0) {
+        return 0;
+    }
+    const int32_t handle = ext_006FDF70(self, 0);
+    const int32_t raw = fn_006FC930(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(handle))));
+    if (raw == 0) {
+        return 0;
+    }
+    return lift_field<int32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(raw))), 0x18);
+}
+} // namespace lift_006D8520

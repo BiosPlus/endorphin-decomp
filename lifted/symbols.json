@@ -39530,6 +39530,12 @@
     "summary": "Returns the int32 at +4 of the 12-byte record at the given index in the array at +0x1D4, or -1 if index \u003e= count at +0x1C4.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D8520": {
+    "name": "GetFieldValueViaChain",
+    "signature": "int32_t fn_006D8520(void* self)",
+    "summary": "Calls ext_006FDF70 to test self; if non-zero, resolves a handle via ext_006FDF70 and fn_006FC930 and returns the int32_t at +0x18 of the result, else returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D8550": {
     "name": "queryIntAt08ViaSubobject",
     "class": "\u003cUnknown\u003e",

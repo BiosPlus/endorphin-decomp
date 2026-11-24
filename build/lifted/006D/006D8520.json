@@ -1,0 +1,21 @@
+{
+  "va": "0x006D8520",
+  "size": 48,
+  "orig_symbol": "sub_006D8520",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "GetFieldValueViaChain",
+  "signature": "int32_t fn_006D8520(void* self)",
+  "summary": "Calls ext_006FDF70 to test self; if non-zero, resolves a handle via ext_006FDF70 and fn_006FC930 and returns the int32_t at +0x18 of the result, else returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "int32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:19:29Z"
+}
