@@ -412,3 +412,29 @@ void* fn_0040FDC0(void* self) {
     return self;
 }
 } // namespace lift_0040FDC0
+
+// [0x0040FD60] sub_0040FD60 (47 bytes)
+namespace lift_0040FD60 {
+// @name Object::dispatchModeVirtual
+// @class Object
+// @summary If mode is 1 or 2, calls vtable slot 0x51 with 1; otherwise with 0; always returns 0.
+// @field Object +0x00 void** vtable
+
+namespace {
+// Vtable slot at byte offset 0x144 (index 0x51) on the object's vtable.
+using ModeVirtualFn = void(__thiscall*)(void* self, uint32_t flag);
+constexpr std::size_t kModeVirtualSlotOffset = 0x144;
+}
+
+uint32_t fn_0040FD60(void* self, uint32_t mode) {
+    // Target is 32-bit: the vtable pointer is the first DWORD of the object,
+    // and the slot is read as a 32-bit address at vtable + 0x144.
+    const auto vtableAddr = static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(self));
+    const auto slotAddr = vtableAddr + kModeVirtualSlotOffset;
+    const auto target = *reinterpret_cast<uint32_t*>(slotAddr);
+    auto fn = reinterpret_cast<ModeVirtualFn>(static_cast<uintptr_t>(target));
+    const uint32_t flag = (mode >= 1u && mode <= 2u) ? 1u : 0u;
+    fn(self, flag);
+    return 0u;
+}
+} // namespace lift_0040FD60

@@ -1,0 +1,22 @@
+{
+  "va": "0x0040FD60",
+  "size": 47,
+  "orig_symbol": "sub_0040FD60",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "Object::dispatchModeVirtual",
+  "class": "Object",
+  "signature": "uint32_t fn_0040FD60(void* self, uint32_t mode)",
+  "summary": "If mode is 1 or 2, calls vtable slot 0x51 with 1; otherwise with 0; always returns 0.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:11:00Z"
+}

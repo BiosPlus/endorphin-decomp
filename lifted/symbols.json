@@ -840,6 +840,13 @@
     "summary": "Checks whether field_0x54 equals 1.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0040FD60": {
+    "name": "Object::dispatchModeVirtual",
+    "class": "Object",
+    "signature": "uint32_t fn_0040FD60(void* self, uint32_t mode)",
+    "summary": "If mode is 1 or 2, calls vtable slot 0x51 with 1; otherwise with 0; always returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040FD90": {
     "name": "CallVirtualSlot148",
     "class": "(none: generic thiscall thunk, owner class unknown)",
