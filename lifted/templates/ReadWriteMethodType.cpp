@@ -9561,3 +9561,27 @@ void lifted_004CAEE0(void* self_out)
     reinterpret_cast<std::uintptr_t*>(self_out)[1] = reinterpret_cast<std::uintptr_t>(g_record);
 }
 } // namespace lift_004CAEE0
+
+// [0x004C0F40] ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>::vfunc_40 (122 bytes)
+namespace lift_004C0F40 {
+extern void ext_0067A670();
+extern int mem_00AE3010;
+extern int mem_00AE300C;
+
+// @name ReadWriteMethodType<TriggeredEventData, string>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}>
+// @summary Lazily initializes a function-local static object (guarded by one bit) and stores its address at out+0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_004C0F40(void* out) {
+    // One-time initialization guard: bit 0 of mem_00AE3010.
+    if ((mem_00AE3010 & 1) == 0) {
+        mem_00AE3010 |= 1;
+        // Constructs the static object at mem_00AE300C (ecx = &obj, one arg = 0).
+        ext_0067A670();
+        // Object's vtable pointer, set after construction.
+        mem_00AE300C = 0x0094481C;
+    }
+    // Both paths publish the static object's address into out+0x04.
+    *reinterpret_cast<uint32_t*>(static_cast<char*>(out) + 0x04) = 0x00AE300Cu;
+}
+} // namespace lift_004C0F40

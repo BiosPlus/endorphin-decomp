@@ -11019,6 +11019,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x170.",
     "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
   },
+  "0x004C0F40": {
+    "name": "ReadWriteMethodType\u003cTriggeredEventData, string\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::TriggeredEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}\u003e",
+    "signature": "void fn_004C0F40(void* out)",
+    "summary": "Lazily initializes a function-local static object (guarded by one bit) and stores its address at out+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004C0FE0": {
     "name": "sub_004C0FE0",
     "signature": "extern \"C\" void __fastcall fn_004C0FE0(void* self)",
