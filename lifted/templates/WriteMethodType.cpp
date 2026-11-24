@@ -6950,3 +6950,27 @@ void fn_0059F6C0(void* self) {
     lift_field<uint32_t>(self, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B414AC));
 }
 } // namespace lift_0059F6C0
+
+// [0x005B7490]
+namespace lift_005B7490 {
+extern void ext_0067A670();
+extern int mem_00B43C68;
+extern int mem_00B43C64;
+
+// @name ExprParser::WriteMethodType<NMData::MetaBodyData, NM::Vector3 const&>::vfunc_40
+// @class ExprParser::WriteMethodType<NMData::MetaBodyData, NM::Vector3 const&>
+// @summary Lazily initializes the static applyImpulseViaVelocity accessor object once, then publishes its address into the ValuePtr argument at +0x04.
+// @field ValuePtr +0x04 DWORD field_0x04
+void fn_005B7490(void* valuePtr) {
+    // One-time initialization guard for the static accessor object.
+    if ((mem_00B43C68 & 1) == 0) {
+        mem_00B43C68 |= 1;
+        ext_0067A670();
+        mem_00B43C64 = 0x00960BDC;
+    }
+
+    // Publish the static object's address into valuePtr->field_0x04.
+    const DWORD objAddr = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B43C64));
+    std::memcpy(static_cast<unsigned char*>(valuePtr) + 0x04, &objAddr, sizeof(objAddr));
+}
+} // namespace lift_005B7490

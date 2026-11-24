@@ -1,0 +1,22 @@
+{
+  "va": "0x005B7490",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::applyImpulseViaVelocity(class NM::Vector3 const \u0026), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const\u0026\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const\u0026\u003e",
+  "signature": "void fn_005B7490(void* valuePtr)",
+  "summary": "Lazily initializes the static applyImpulseViaVelocity accessor object once, then publishes its address into the ValuePtr argument at +0x04.",
+  "fields": [
+    {
+      "class": "ValuePtr",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:49:19Z"
+}
