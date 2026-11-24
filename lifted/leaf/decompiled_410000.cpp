@@ -87,3 +87,37 @@ void fn_0041FF10(void* self) {
     ext_006A5E00(result);
 }
 } // namespace lift_0041FF10
+
+// [0x0041CBD0] sub_0041CBD0 (27 bytes)
+namespace lift_0041CBD0 {
+// Known callee 0x006AD180: getDerefField0x4 (Reads a pointer at offset 0x4 and returns the dereferenced 32-bit value.)
+extern uint32_t ext_006AD180(void* self);
+
+namespace {
+
+inline void* as_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+} // namespace
+
+// @name Unknown::DelegateVfunc5ToField4
+// @class Unknown
+// @summary Passes arg through ext_006AD180, then tail-dispatches to vtable slot 5 (+0x14) of the object stored at self+0x4, passing the result as its argument.
+// @field Unknown +0x04 uint32_t field_0x04
+uint32_t fn_0041CBD0(void* self, uint32_t arg) {
+    // mov ecx, [esp+8] ; call ext_006AD180  -> eax
+    const uint32_t r = ext_006AD180(as_ptr(arg));
+
+    // mov ecx, [esi+4]  -> object pointer
+    void* const obj = as_ptr(lift_field<uint32_t>(self, 0x4));
+
+    // mov edx, [ecx]  -> object's vtable
+    const uint32_t vtbl = lift_field<uint32_t>(obj, 0x0);
+
+    // mov [esp+4], eax ; mov eax, [edx+0x14] ; jmp eax  (tail call, this = obj, arg = r)
+    const uint32_t slot = lift_field<uint32_t>(as_ptr(vtbl), 0x14);
+    using VFn = uint32_t (*)(void* self_, uint32_t arg_);
+    return reinterpret_cast<VFn>(as_ptr(slot))(obj, r);
+}
+} // namespace lift_0041CBD0

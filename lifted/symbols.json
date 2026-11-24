@@ -1282,6 +1282,13 @@
     "summary": "Returns 0 for a null argument; otherwise forwards the argument to ext_006AD180 and returns its result.",
     "lifted_path": "lifted/Properties/GWCPropertiesControlDriver.cpp"
   },
+  "0x0041CBD0": {
+    "name": "Unknown::DelegateVfunc5ToField4",
+    "class": "Unknown",
+    "signature": "inline void* as_ptr(uint32_t v)",
+    "summary": "Passes arg through ext_006AD180, then tail-dispatches to vtable slot 5 (+0x14) of the object stored at self+0x4, passing the result as its argument.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041CD60": {
     "name": "sub_0041CD60",
     "signature": "extern \"C\" int __thiscall fn_0041CD60(void* self)",

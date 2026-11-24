@@ -1,0 +1,22 @@
+{
+  "va": "0x0041CBD0",
+  "size": 27,
+  "orig_symbol": "sub_0041CBD0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::DelegateVfunc5ToField4",
+  "class": "Unknown",
+  "signature": "inline void* as_ptr(uint32_t v)",
+  "summary": "Passes arg through ext_006AD180, then tail-dispatches to vtable slot 5 (+0x14) of the object stored at self+0x4, passing the result as its argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:00:26Z"
+}
