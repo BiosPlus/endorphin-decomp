@@ -1,0 +1,13 @@
+{
+  "va": "0x00455240",
+  "size": 27,
+  "orig_symbol": "sub_00455240",
+  "src_path": "src/leaf/tiny_450000.cpp",
+  "lifted_path": "lifted/leaf/tiny_450000.cpp",
+  "name": "CopyStringPrefixReturnZero",
+  "signature": "uint32_t __stdcall fn_00455240(void* self, char* dst, uint32_t count, uint32_t unused)",
+  "summary": "Calls std::string::copy(dst, count, 0) on the string object and returns 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:01:30Z"
+}

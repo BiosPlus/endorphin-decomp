@@ -377,3 +377,20 @@ void fn_00458DF0(void* self) {
     lift_field<uint32_t>(self, 0x1c) = 0u;
 }
 } // namespace lift_00458DF0
+
+// [0x00455240] sub_00455240 (27 bytes)
+namespace lift_00455240 {
+// IAT slot holding MSVCP80 std::basic_string<char>::copy(char*, size_type, size_type).
+extern uint32_t mem_00925104;
+
+// @name CopyStringPrefixReturnZero
+// @summary Calls std::string::copy(dst, count, 0) on the string object and returns 0.
+using StringCopyFn = uint32_t(__thiscall*)(void* self, char* dst, uint32_t count, uint32_t pos);
+
+uint32_t __stdcall fn_00455240(void* self, char* dst, uint32_t count, uint32_t unused) {
+    (void)unused;
+    auto copy = reinterpret_cast<StringCopyFn>(static_cast<uintptr_t>(mem_00925104));
+    (void)copy(self, dst, count, 0u);
+    return 0;
+}
+} // namespace lift_00455240
