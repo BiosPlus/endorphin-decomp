@@ -29,3 +29,23 @@ void* fn_0079DD30(void* self, uint32_t value) {
     return self;
 }
 } // namespace lift_0079DD30
+
+// [0x0079B140] sub_0079B140 (32 bytes)
+namespace lift_0079B140 {
+extern int mem_00AAFC2C;
+
+// @name DispatchThreeArgsToOptionalHook
+// @summary If the global hook pointer mem_00AAFC2C is non-null, call it with (a1, a2, &a3); otherwise do nothing.
+// @field none (free function; no object fields accessed)
+void fn_0079B140(uint32_t a1, uint32_t a2, uint32_t a3) {
+    using HookFn = void (__cdecl*)(uint32_t, uint32_t, uint32_t*);
+
+    const uintptr_t hook = static_cast<uintptr_t>(mem_00AAFC2C);
+    if (hook == 0) {
+        return;
+    }
+
+    auto fn = reinterpret_cast<HookFn>(hook);
+    fn(a1, a2, &a3);
+}
+} // namespace lift_0079B140
