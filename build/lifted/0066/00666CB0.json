@@ -1,0 +1,22 @@
+{
+  "va": "0x00666CB0",
+  "size": 15,
+  "orig_symbol": "sub_00666CB0",
+  "src_path": "src/leaf/tiny_660000.cpp",
+  "lifted_path": "lifted/leaf/tiny_660000.cpp",
+  "name": "Unknown::sub_00666CB0",
+  "class": "Unknown",
+  "signature": "void sub_00666CB0(uint8_t* ecx)",
+  "summary": "If this-\u003e+0x94 is non-null, clears the byte at +0x04 of the pointed-to object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x94",
+      "type": "void*",
+      "name": "field_0x94"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:31:39Z"
+}

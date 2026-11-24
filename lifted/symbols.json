@@ -23207,6 +23207,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x0 and tail-calls sub_006667A0.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x00666CB0": {
+    "name": "Unknown::sub_00666CB0",
+    "class": "Unknown",
+    "signature": "void sub_00666CB0(uint8_t* ecx)",
+    "summary": "If this-\u003e+0x94 is non-null, clears the byte at +0x04 of the pointed-to object.",
+    "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
   "0x00668ED0": {
     "name": "FileProject::vfunc_0",
     "class": "FileProject",

@@ -224,3 +224,18 @@ void fn_00665880(void* self) {
     }
 }
 } // namespace lift_00665880
+
+// [0x00666CB0]
+namespace lift_00666CB0 {
+// @name Unknown::sub_00666CB0
+// @class Unknown
+// @summary If this->+0x94 is non-null, clears the byte at +0x04 of the pointed-to object.
+// @field Unknown +0x94 void* field_0x94
+
+void sub_00666CB0(uint8_t* ecx) {
+    uint8_t* eax = *reinterpret_cast<uint8_t**>(ecx + 0x94);
+    if (eax != nullptr) {
+        eax[0x04] = 0;
+    }
+}
+} // namespace lift_00666CB0
