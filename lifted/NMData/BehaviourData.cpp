@@ -179,3 +179,34 @@ void __thiscall fn_004C8440(void* self, void* arg0) {
     ext_004026E0(&local_buf);
 }
 } // namespace lift_004C8440
+
+// [0x004A9AC0]
+namespace lift_004A9AC0 {
+// Known callee 0x00494000: setDwordTriple. Stores three arguments into the first three DWORDs of the object and returns it.
+extern void* ext_00494000(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+// Known callee 0x004940E0: Unknown::ToggleMaskIfTestMismatch. XORs mask into the dword at [self] when (any mask bit set) != flag.
+extern void ext_004940E0(void* self, uint32_t mask, uint8_t flag);
+
+// @name NMData::BehaviourData::vfunc_0_off_154
+// @class NMData::BehaviourData
+// @summary Writes two {0,0,8}-derived triples (with mask toggles 0x1000/0x2000 and 0x1000) to the first two out-pointers, and stores 2 into the last two out-pointers.
+void fn_004A9AC0(uint32_t* out1, uint32_t* out2, uint32_t* out3, uint32_t* out4) {
+    uint32_t scratch1[3] = {0, 0, 0};
+    const uint32_t* t1 = static_cast<const uint32_t*>(ext_00494000(scratch1, 0, 0, 8));
+    out1[0] = t1[0];
+    out1[1] = t1[1];
+    out1[2] = t1[2];
+    ext_004940E0(out1, 0x1000, 1);
+    ext_004940E0(out1, 0x2000, 1);
+
+    uint32_t scratch2[3] = {0, 0, 0};
+    const uint32_t* t2 = static_cast<const uint32_t*>(ext_00494000(scratch2, 0, 0, 8));
+    out2[0] = t2[0];
+    out2[1] = t2[1];
+    out2[2] = t2[2];
+    ext_004940E0(out2, 0x1000, 1);
+
+    *out3 = 2;
+    *out4 = 2;
+}
+} // namespace lift_004A9AC0
