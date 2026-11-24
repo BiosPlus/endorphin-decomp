@@ -338,3 +338,53 @@ const uint8_t* fn_006D1FDC() {
     return kTable_006D1FDC;
 }
 } // namespace lift_006D1FDC
+
+// [0x006D66A0]
+namespace lift_006D66A0 {
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+extern void mem_write8(uint32_t addr, uint8_t val);
+
+// @name sub_006D66A0
+// @summary Releases and clears the owned sub-object at [this+0xFC]+0x4 and resets flag at +0x100
+// @field unknown +0xFC uint32_t field_0xFC
+// @field unknown +0x100 uint8_t field_0x100
+
+void __thiscall sub_006D66A0(uint32_t self) {
+    uint32_t edi = mem_read32(self + 0xfc);
+    uint32_t ecx = mem_read32(edi + 0x4);
+    if (ecx != 0) {
+        uint32_t vtable = mem_read32(ecx);
+        uint32_t dtor = mem_read32(vtable);
+        ((void (__thiscall *)(uint32_t, uint32_t))(uintptr_t)dtor)(ecx, 1);
+    }
+    mem_write32(edi + 0x4, 0);
+    mem_write8(self + 0x100, 0);
+}
+} // namespace lift_006D66A0
+
+// [0x006DE660]
+namespace lift_006DE660 {
+// @name getItemAt
+// @summary Returns the 32-bit element at the given index if within [0, count), or 0 otherwise.
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0x30 uint32_t* items
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+uint32_t __thiscall fn_006DE660(uint32_t self, int32_t index) {
+    if (index < 0) {
+        return 0;
+    }
+    uint32_t vtable = mem_read32(self);
+    uint32_t fn_count = mem_read32(vtable + 0x14);
+    int32_t count = static_cast<int32_t>(
+        reinterpret_cast<uint32_t(__thiscall*)(uint32_t)>(fn_count)(self));
+    if (index >= count) {
+        return 0;
+    }
+    uint32_t items = mem_read32(self + 0x30);
+    return mem_read32(items + static_cast<uint32_t>(index) * 4);
+}
+} // namespace lift_006DE660
