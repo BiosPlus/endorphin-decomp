@@ -1,0 +1,13 @@
+{
+  "va": "0x0079C1B0",
+  "size": 49,
+  "orig_symbol": "sub_0079C1B0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "codeSelectOrZero",
+  "signature": "uint32_t fn_0079C1B0(uint32_t ecxValue, uint32_t selector, uint32_t unusedArg)",
+  "summary": "Returns 0 for a zero or unknown selector; returns the register input for selector 0x3EA; for selector 0x33 returns the register input + 0xF50 (or 0 if the input is 0).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:31:58Z"
+}

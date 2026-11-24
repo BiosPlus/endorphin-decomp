@@ -47979,6 +47979,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007747B0 (initNegatedHugeGlobals).",
     "lifted_path": "lifted/clones/auto_clones_790000.cpp"
   },
+  "0x0079C1B0": {
+    "name": "codeSelectOrZero",
+    "signature": "uint32_t fn_0079C1B0(uint32_t ecxValue, uint32_t selector, uint32_t unusedArg)",
+    "summary": "Returns 0 for a zero or unknown selector; returns the register input for selector 0x3EA; for selector 0x33 returns the register input + 0xF50 (or 0 if the input is 0).",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079C1F0": {
     "name": "Unknown::callSubobjectSlot0",
     "class": "Unknown",

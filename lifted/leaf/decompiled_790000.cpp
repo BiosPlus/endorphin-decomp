@@ -323,3 +323,23 @@ void* fn_00798F90(void* dst, const void* src, size_t n) {
 }
 } // namespace lift_0080B590
 } // namespace lift_00798F90
+
+// [0x0079C1B0] sub_0079C1B0 (49 bytes)
+namespace lift_0079C1B0 {
+// @name codeSelectOrZero
+// @summary Returns 0 for a zero or unknown selector; returns the register input for selector 0x3EA; for selector 0x33 returns the register input + 0xF50 (or 0 if the input is 0).
+// Calling convention: first value arrives in ECX, selector is the first stack argument, ret 8 pops two stack dwords (second is unused).
+uint32_t fn_0079C1B0(uint32_t ecxValue, uint32_t selector, uint32_t unusedArg) {
+    (void)unusedArg;
+    if (selector == 0) {
+        return 0;
+    }
+    if (selector == 0x33) {
+        return ecxValue != 0 ? ecxValue + 0xF50u : 0u;
+    }
+    if (selector == 0x3EA) {
+        return ecxValue;
+    }
+    return 0;
+}
+} // namespace lift_0079C1B0
