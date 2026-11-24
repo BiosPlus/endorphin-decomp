@@ -1,0 +1,22 @@
+{
+  "va": "0x00630E60",
+  "size": 24,
+  "orig_symbol": "sub_00630E60",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "Unknown::NotifyAndReturnSubobjectF8",
+  "class": "Unknown",
+  "signature": "void* fn_00630E60(void* self)",
+  "summary": "Calls ext_00630580 on self, passes its result to ext_00693F40 on the subobject at self+0xF8, and returns that subobject's address.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF8",
+      "type": "uint8_t field_0xF8 (subobject; address taken only, not",
+      "name": "loaded)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:57:56Z"
+}

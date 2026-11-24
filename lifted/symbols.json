@@ -22737,6 +22737,13 @@
     "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x00630E60": {
+    "name": "Unknown::NotifyAndReturnSubobjectF8",
+    "class": "Unknown",
+    "signature": "void* fn_00630E60(void* self)",
+    "summary": "Calls ext_00630580 on self, passes its result to ext_00693F40 on the subobject at self+0xF8, and returns that subobject's address.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x006310F0": {
     "name": "EffectorSkeletal::vfunc_19",
     "class": "EffectorSkeletal",
