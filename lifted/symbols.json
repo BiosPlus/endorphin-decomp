@@ -37257,6 +37257,12 @@
     "summary": "Returns global int32 value from mem_00B61148.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x0079EBE0": {
+    "name": "GetGlobalIndirectInt32",
+    "signature": "extern \"C\" int32_t __cdecl fn_0079EBE0(void)",
+    "summary": "Calls ext_0079EBD0 (sub_0079EBD0) and returns the int32 stored at the address it yields.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079F330": {
     "name": "sub_0079F330",
     "signature": "extern \"C\" int32_t __cdecl fn_0079F330(void)",

@@ -1,0 +1,13 @@
+{
+  "va": "0x0079EBE0",
+  "size": 16,
+  "orig_symbol": "sub_0079EBE0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "GetGlobalIndirectInt32",
+  "signature": "extern \"C\" int32_t __cdecl fn_0079EBE0(void)",
+  "summary": "Calls ext_0079EBD0 (sub_0079EBD0) and returns the int32 stored at the address it yields.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:46:34Z"
+}
