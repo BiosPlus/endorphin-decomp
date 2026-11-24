@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <new>
 #include <string>
+#include <cstring>
 
 // [0x0066A760] sub_0066A760 (10 bytes)
 namespace lift_0066A760 {
@@ -217,3 +218,12 @@ uint32_t __thiscall sub_00661920(uint32_t self, uint32_t arg1, uint32_t arg2, ui
     return reinterpret_cast<Fn>(fn_addr)(inner, self + 4, arg1, arg2, arg3);
 }
 } // namespace lift_00661920
+
+// [0x00664B20] sub_00664B20 (37 bytes)
+namespace lift_00664B20 {
+// @name ContainsSubstring
+// @summary Returns true if needle occurs as a substring of haystack (strstr on c_str() of both strings).
+bool fn_00664B20(const std::string& haystack, const std::string& needle) {
+    return std::strstr(haystack.c_str(), needle.c_str()) != nullptr;
+}
+} // namespace lift_00664B20
