@@ -16310,6 +16310,12 @@
     "summary": "Opens the scene stored at this+0x494 using the C string of a std::string argument; returns true on failure (sete of Open's zero-check).",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
+  "0x00564FE0": {
+    "name": "setSceneFileOriginator",
+    "signature": "extern \"C\" void __thiscall fn_00564FE0(void* self)",
+    "summary": "Sets the originator on the scene's CSLFileInfo from a global std::string if FileInfo is non-null.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x005650F0": {
     "name": "writeAndCloseXSIScene",
     "class": "UnknownClass",
