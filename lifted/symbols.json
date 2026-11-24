@@ -22995,6 +22995,13 @@
     "summary": "Pure jump thunk forwarding to sub_0063E310.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0063E3C0": {
+    "name": "AdvXMLParser::Element::vfunc_3",
+    "class": "AdvXMLParser::Element",
+    "signature": "uint32_t fn_0063E3C0(uint32_t arg)",
+    "summary": "Single-argument virtual forwarder: returns 1 unchanged, otherwise tail-calls AnimatableTransform::vfunc_13_off_C with the same argument.",
+    "lifted_path": "lifted/AdvXMLParser/Element.cpp"
+  },
   "0x0063E4E0": {
     "name": "AdvXMLParser::Comment::vfunc_3",
     "class": "AdvXMLParser::Comment",
