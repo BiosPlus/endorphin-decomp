@@ -1,0 +1,13 @@
+{
+  "va": "0x007D8850",
+  "size": 12,
+  "orig_symbol": "sub_007D8850",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "sub_007D8850",
+  "signature": "extern \"C\" uint32_t sub_007D8850(uint32_t arg0)",
+  "summary": "Single-argument forwarding wrapper; passes its one stack argument to sub_007D8420 and returns that result unchanged.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:17:40Z"
+}

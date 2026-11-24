@@ -35715,6 +35715,12 @@
     "summary": "Pure jump thunk forwarding to sub_007D8680.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x007D8850": {
+    "name": "sub_007D8850",
+    "signature": "extern \"C\" uint32_t sub_007D8850(uint32_t arg0)",
+    "summary": "Single-argument forwarding wrapper; passes its one stack argument to sub_007D8420 and returns that result unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DAD40": {
     "name": "ReturnZeroWord",
     "signature": "uint16_t ReturnZeroWord()",
