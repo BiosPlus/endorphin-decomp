@@ -308,7 +308,7 @@ int fn_007BD640(void* self) {
     lift_field<uint32_t>(ecx, 0x30) = esi;
     uint32_t eax = lift_field<uint32_t>(self, 0x1e4);
     lift_field<uint32_t>(ecx, 0x34) = eax;
-    int r = ext_007BFDF0(reinterpret_cast<uint8_t*>(ecx) + 0x30);
+    int r = ext_007BFDF0(static_cast<uint8_t*>(ecx) + 0x30);
     return r == 0 ? 1 : 0;
 }
 } // namespace lift_007BD640
