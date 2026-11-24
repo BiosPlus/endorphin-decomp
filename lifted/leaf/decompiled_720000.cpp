@@ -116,3 +116,21 @@ int32_t Unknown_GetArrayEntry1B8(const uint8_t* self, int32_t idx) {
     return *reinterpret_cast<const int32_t*>(self + 0x1B8 + 4 * static_cast<uintptr_t>(idx));
 }
 } // namespace lift_0072CED0
+
+// [0x007266A0]
+namespace lift_007266A0 {
+// @name Unknown::ForwardSubObject0x250Value
+// @class Unknown
+// @summary Reads the pointer-sized value at this+0x250; if non-zero, tail-forwards to fn_006BC380 with that value as self, otherwise returns 0.
+// @field Unknown +0x250 int32_t field_0x250
+
+extern int32_t __fastcall ext_006BC380(void* self);
+
+extern int32_t __fastcall fn_007266A0(void* self) {
+    int32_t v = *reinterpret_cast<int32_t*>(reinterpret_cast<uint8_t*>(self) + 0x250);
+    if (v != 0) {
+        return ext_006BC380(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(v))));
+    }
+    return 0;
+}
+} // namespace lift_007266A0

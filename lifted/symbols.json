@@ -42080,6 +42080,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x007266A0": {
+    "name": "Unknown::ForwardSubObject0x250Value",
+    "class": "Unknown",
+    "signature": "extern \"C\" int32_t __fastcall fn_007266A0(void* self)",
+    "summary": "Reads the pointer-sized value at this+0x250; if non-zero, tail-forwards to fn_006BC380 with that value as self, otherwise returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x00728D30": {
     "name": "sub_00728D30",
     "signature": "extern \"C\" void* __fastcall fn_00728D30(void* self)",
