@@ -1,0 +1,22 @@
+{
+  "va": "0x004636E0",
+  "size": 39,
+  "orig_symbol": "VideoGeneratorDialog::vfunc_2_off_74",
+  "src_path": "src/classes/VideoGeneratorDialog.cpp",
+  "lifted_path": "lifted/classes/VideoGeneratorDialog.cpp",
+  "name": "VideoGeneratorDialog::setProgressRange",
+  "class": "VideoGeneratorDialog",
+  "signature": "uint32_t __thiscall fn_004636E0(uint8_t* self, uint16_t minVal, uint16_t maxVal)",
+  "summary": "Sets the progress bar range on m_hProgressWnd via PBM_SETRANGE",
+  "fields": [
+    {
+      "class": "VideoGeneratorDialog",
+      "offset": "+0x120",
+      "type": "uint32_t",
+      "name": "m_hProgressWnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:52:27Z"
+}

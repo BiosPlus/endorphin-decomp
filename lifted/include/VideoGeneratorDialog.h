@@ -10,6 +10,6 @@
 // Recovered field layout for VideoGeneratorDialog:
 namespace lifted_layout {
 struct VideoGeneratorDialog_Fields {
-    // +0x120 uint32_t                 m_hProgressWnd  (evidence: 0x004636C0)
+    // +0x120 uint32_t                 m_hProgressWnd  (evidence: 0x004636C0, 0x004636E0)
 };
 } // namespace lifted_layout
