@@ -1,8 +1,10 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_670000.cpp
 #include "lift_compat.h"
 #include <cstdio>
+#include <new>
+#include <string>
 
-// [0x006721B0] sub_006721B0 (18 bytes)
+#include <string>
 namespace lift_006721B0 {
 extern void ext_00672000(void* self);
 
@@ -164,3 +166,33 @@ BOOL __thiscall fn_00671F50(void* self, void* other) {
     return result ? TRUE : FALSE;
 }
 } // namespace lift_00671F50
+
+// [0x00678DE0] sub_00678DE0 (48 bytes)
+namespace lift_00678DE0 {
+// @name sub_00678DE0
+// @summary Auto-lifted identical-shape clone of 0x00503CD0 (fn_00503CD0).
+namespace lift_00503CD0 {
+extern void ext_006A5C5C(uint32_t ptr);
+extern uint32_t mem_0092FB68;
+
+// @name fn_00678DE0
+// @summary Sets vtable to 0x0094F074, frees buffer at +0x14 if non-null, and zeroes fields at +0x14, +0x18, +0x1C.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1c
+void __thiscall fn_00503CD0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(obj) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_0092FB68));
+
+    uint32_t ptr = *reinterpret_cast<uint32_t*>(obj + 0x8);
+    if (ptr != 0) {
+        ext_006A5C5C(ptr);
+    }
+
+    *reinterpret_cast<uint32_t*>(obj + 0x8) = 0;
+    *reinterpret_cast<uint32_t*>(obj + 0xC) = 0;
+    *reinterpret_cast<uint32_t*>(obj + 0x10) = 0;
+}
+} // namespace lift_00503CD0
+} // namespace lift_00678DE0

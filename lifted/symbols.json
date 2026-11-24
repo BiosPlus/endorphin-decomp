@@ -30911,6 +30911,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B13A0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData,bool,\u0026NMData::GraphEntryData::isActive,0\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00678DE0": {
+    "name": "sub_00678DE0",
+    "signature": "void __thiscall fn_00503CD0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00503CD0 (fn_00503CD0).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00679A30": {
     "name": "queryPerformanceCounter",
     "signature": "uint32_t __thiscall sub_00679A30(uint32_t* self)",
@@ -46264,6 +46270,13 @@
     "signature": "extern \"C\" void* __fastcall fn_0074B840(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0074B860 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_740000.cpp"
+  },
+  "0x0074F820": {
+    "name": "sub_0074F820",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_0074F820(void* self, void* obj, uint32_t index)",
+    "summary": "Auto-lifted identical-shape clone of 0x006D2AA0 (ForwardIndexedElementToCallee).",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
   },
   "0x0074F8F0": {
     "name": "sub_0074F8F0",
