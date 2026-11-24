@@ -836,3 +836,24 @@ void __thiscall sub_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg
     lift_field<uint32_t>(sub, 0x14) = arg4;
 }
 } // namespace lift_00711D40
+
+// [0x00711CF0]
+namespace lift_00711CF0 {
+// @name SetOrClearFlags78
+// @summary Sets (flag != 0) or clears (flag == 0) the bits in mask within the dword at +0x78.
+// @field field_0x78 +0x78 uint32_t field_0x78 (bits set/cleared by mask)
+
+struct SetOrClearFlags78Self {
+    uint8_t pad_0000[0x78];
+    uint32_t field_0x78;
+};
+
+// __thiscall: this in ecx, args (uint32_t mask, bool flag) on the stack, callee cleans (ret 8).
+void SetOrClearFlags78(SetOrClearFlags78Self* self, uint32_t mask, uint8_t flag) {
+    if (flag != 0) {
+        self->field_0x78 |= mask;
+    } else {
+        self->field_0x78 &= ~mask;
+    }
+}
+} // namespace lift_00711CF0

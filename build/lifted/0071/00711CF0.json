@@ -1,0 +1,21 @@
+{
+  "va": "0x00711CF0",
+  "size": 48,
+  "orig_symbol": "sub_00711CF0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "SetOrClearFlags78",
+  "signature": "void SetOrClearFlags78(SetOrClearFlags78Self* self, uint32_t mask, uint8_t flag)",
+  "summary": "Sets (flag != 0) or clears (flag == 0) the bits in mask within the dword at +0x78.",
+  "fields": [
+    {
+      "class": "field_0x78",
+      "offset": "+0x78",
+      "type": "uint32_t field_0x78 (bits set/cleared by",
+      "name": "mask)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:21:25Z"
+}

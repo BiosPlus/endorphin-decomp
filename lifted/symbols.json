@@ -44290,6 +44290,12 @@
     "summary": "Loads the sub-object at this+0x8; if it is null returns 0, otherwise calls its vtable slot 0 with (0, 0x98ABD146) and returns the result.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00711CF0": {
+    "name": "SetOrClearFlags78",
+    "signature": "void SetOrClearFlags78(SetOrClearFlags78Self* self, uint32_t mask, uint8_t flag)",
+    "summary": "Sets (flag != 0) or clears (flag == 0) the bits in mask within the dword at +0x78.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00711D20": {
     "name": "Unknown::TestMaskedFieldAt0x78",
     "class": "Unknown",
