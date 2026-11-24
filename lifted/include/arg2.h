@@ -8,6 +8,7 @@
 // Recovered field layout for arg2:
 namespace lifted_layout {
 struct arg2_Fields {
+    // +0x0   void* vptr (object at *arg2 is dispatched through its vtable at slot 15, offset 0x3C)  (evidence: 0x004FDF50)
     // +0x4   uint32_t                 field_0x04  (evidence: 0x006049D0)
 };
 } // namespace lifted_layout

@@ -119,3 +119,24 @@ uint32_t fn_004C5560(uint32_t self, uint32_t src_ptr, uint32_t arg3) {
 }
 } // namespace lift_00511930
 } // namespace lift_004C5560
+
+// [0x004FDF50] sub_004FDF50 (40 bytes)
+namespace lift_004FDF50 {
+// @name Properties::TerminalParentType<NMData::ValuePtrData>::vfunc_0
+// @class Properties::TerminalParentType<NMData::ValuePtrData>
+// @summary Forwards (arg1, arg3, 0) to virtual slot 15 of the object referenced by arg2, then returns arg1.
+// @field arg2 +0x00 void* vptr (object at *arg2 is dispatched through its vtable at slot 15, offset 0x3C)
+void* fn_004FDF50(void* arg1, void** arg2, uint32_t arg3) {
+    // Dispatch: obj = *arg2; vtable = obj->vptr; vtable[0x3C/4 = 15](obj, arg1, arg3, 0)
+    void* obj = arg2 ? *arg2 : nullptr;
+    if (obj) {
+        void** vtable = *reinterpret_cast<void***>(obj);
+        using SlotFn = void (*)(void* self, void* a, uint32_t b, uint32_t c);
+        SlotFn slot = reinterpret_cast<SlotFn>(vtable[0x3C / sizeof(void*)]);
+        if (slot) {
+            slot(obj, arg1, arg3, 0u);
+        }
+    }
+    return arg1;
+}
+} // namespace lift_004FDF50

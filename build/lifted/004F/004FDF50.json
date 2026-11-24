@@ -1,0 +1,22 @@
+{
+  "va": "0x004FDF50",
+  "size": 40,
+  "orig_symbol": "Properties::TerminalParentType\u003cNMData::ValuePtrData\u003e::vfunc_0",
+  "src_path": "src/templates/TerminalParentType.cpp",
+  "lifted_path": "lifted/templates/TerminalParentType.cpp",
+  "name": "Properties::TerminalParentType\u003cNMData::ValuePtrData\u003e::vfunc_0",
+  "class": "Properties::TerminalParentType\u003cNMData::ValuePtrData\u003e",
+  "signature": "void* fn_004FDF50(void* arg1, void** arg2, uint32_t arg3)",
+  "summary": "Forwards (arg1, arg3, 0) to virtual slot 15 of the object referenced by arg2, then returns arg1.",
+  "fields": [
+    {
+      "class": "arg2",
+      "offset": "+0x0",
+      "type": "void* vptr (object at *arg2 is dispatched through its vtable at slot 15, offset",
+      "name": "0x3C)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:52:45Z"
+}
