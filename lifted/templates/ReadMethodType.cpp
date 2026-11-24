@@ -42379,3 +42379,34 @@ void* fn_004BCC20(void* /*unused_arg*/, void* out) {
     return out;                                      // mov eax, esi; ret 8
 }
 } // namespace lift_004BCC20
+
+// [0x00512BA0] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_4 (115 bytes)
+namespace lift_00512BA0 {
+// Known callee 0x004276B0: StdStringCopyConstruct (Copy-constructs a std::string at dst from src via the MSVCP80 copy constructor; returns dst.)
+extern void* ext_004276B0(void* dst, const void* src);
+// Callee 0x00511960 (138B, sub_00511960): writes a std::string temp to out and returns a pointer to it.
+extern void* ext_00511960(void* out, void* src);
+// IAT slot 0x00924FF4: MSVCP80 std::string destructor (thiscall, this in ECX).
+extern void (*mem_00924FF4)(void* self);
+
+// @name ReadMethodType<Chromosome::Descriptor>::vfunc_4 (Chromosome::Descriptor::getTypicalMutationRate)
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>
+// @summary Returns a std::string by value (hidden return buffer) built from the string produced by sub_00511960 on the first pointer stored in self.
+// @field Chromosome::Descriptor +0x00 void* field_0x00
+void* fn_00512BA0(void* ret, void* self) {
+    // mov edx, [self]: first pointer-sized member of self.
+    void* src = *reinterpret_cast<void**>(self);
+
+    // Temp std::string, sized for the MSVC 32-bit std::string layout (28 bytes).
+    alignas(8) unsigned char tmp[32] = {};
+    void* text = ext_00511960(tmp, src);
+
+    // Copy-construct the result into the caller-supplied return buffer.
+    void* out = ext_004276B0(ret, text);
+
+    // Destroy the temp.
+    mem_00924FF4(tmp);
+
+    return out;
+}
+} // namespace lift_00512BA0
