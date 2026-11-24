@@ -24573,6 +24573,12 @@
     "summary": "Pops the last 8-byte element from a vector, forwards it to this-\u003evfunc_3, then shrinks the vector's end by 4 bytes if it is non-empty.",
     "lifted_path": "lifted/ExprParser/Operators/Abs.cpp"
   },
+  "0x006A2B10": {
+    "name": "TableLookup_006A2B10",
+    "signature": "uint32_t fn_006A2B10(uint32_t index)",
+    "summary": "Returns the 32-bit entry at index (cdecl arg) of the global table at 0x00AA4B08.",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006A2C20": {
     "name": "sub_006A2C20",
     "signature": "extern \"C\" void __fastcall fn_006A2C20(void* self)",

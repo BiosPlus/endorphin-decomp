@@ -1,0 +1,13 @@
+{
+  "va": "0x006A2B10",
+  "size": 12,
+  "orig_symbol": "sub_006A2B10",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "TableLookup_006A2B10",
+  "signature": "uint32_t fn_006A2B10(uint32_t index)",
+  "summary": "Returns the 32-bit entry at index (cdecl arg) of the global table at 0x00AA4B08.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:16:14Z"
+}

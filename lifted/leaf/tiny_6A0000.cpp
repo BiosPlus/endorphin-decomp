@@ -168,3 +168,15 @@ uint32_t __thiscall sub_006ACFD0(void* self) {
     return *reinterpret_cast<const uint32_t*>(static_cast<const uint8_t*>(self) + 0x1c);
 }
 } // namespace lift_006ACFD0
+
+// [0x006A2B10] sub_006A2B10 (12 bytes)
+namespace lift_006A2B10 {
+// External lookup table at VA 0x00AA4B08 (array of 32-bit words).
+extern const uint32_t mem_00AA4B08[];
+
+// @name TableLookup_006A2B10
+// @summary Returns the 32-bit entry at index (cdecl arg) of the global table at 0x00AA4B08.
+uint32_t fn_006A2B10(uint32_t index) {
+    return mem_00AA4B08[index];
+}
+} // namespace lift_006A2B10
