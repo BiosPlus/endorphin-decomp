@@ -46286,6 +46286,13 @@
     "summary": "Returns the length of a NUL-terminated string (equivalent to repne scasb strlen idiom).",
     "lifted_path": "lifted/leaf/tiny_800000.cpp"
   },
+  "0x0080F830": {
+    "name": "WriteByteAdvanceCursor",
+    "class": "Writer",
+    "signature": "void fn_0080F830(void* self, uint8_t value)",
+    "summary": "Writes one byte through the cursor pointed to by self+0x08, advances that cursor by one, and increments the two 32-bit counters at +0x10 and +0x14.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080FAC0": {
     "name": "GlobalFreeIfNonNullWithOwnedHandle",
     "signature": "void fn_0080FAC0(void* self)",

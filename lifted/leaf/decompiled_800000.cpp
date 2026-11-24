@@ -240,3 +240,33 @@ void fn_0080FAC0(void* self) {
     }
 }
 } // namespace lift_0080FAC0
+
+// [0x0080F830] sub_0080F830 (37 bytes)
+namespace lift_0080F830 {
+// @name WriteByteAdvanceCursor
+// @class Writer
+// @summary Writes one byte through the cursor pointed to by self+0x08, advances that cursor by one, and increments the two 32-bit counters at +0x10 and +0x14.
+// @field Writer +0x08 uint32_t cursorSlot
+// @field Writer +0x10 int32_t counterA
+// @field Writer +0x14 int32_t counterB
+void fn_0080F830(void* self, uint8_t value) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // self+0x08 holds the address of a 32-bit cursor slot.
+    uint32_t slotAddr = *reinterpret_cast<uint32_t*>(base + 0x08);
+    auto* slot = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(slotAddr));
+
+    // The cursor slot holds the address of the destination byte.
+    auto* dst = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(*slot));
+    *dst = value;
+
+    // Advance the cursor by one byte.
+    *slot += 1;
+
+    // Increment both counters.
+    auto* counterA = reinterpret_cast<int32_t*>(base + 0x10);
+    auto* counterB = reinterpret_cast<int32_t*>(base + 0x14);
+    *counterA += 1;
+    *counterB += 1;
+}
+} // namespace lift_0080F830

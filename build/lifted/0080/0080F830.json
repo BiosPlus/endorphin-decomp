@@ -1,0 +1,34 @@
+{
+  "va": "0x0080F830",
+  "size": 37,
+  "orig_symbol": "sub_0080F830",
+  "src_path": "src/leaf/decompiled_800000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_800000.cpp",
+  "name": "WriteByteAdvanceCursor",
+  "class": "Writer",
+  "signature": "void fn_0080F830(void* self, uint8_t value)",
+  "summary": "Writes one byte through the cursor pointed to by self+0x08, advances that cursor by one, and increments the two 32-bit counters at +0x10 and +0x14.",
+  "fields": [
+    {
+      "class": "Writer",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "cursorSlot"
+    },
+    {
+      "class": "Writer",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "counterA"
+    },
+    {
+      "class": "Writer",
+      "offset": "+0x14",
+      "type": "int32_t",
+      "name": "counterB"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:48:09Z"
+}
