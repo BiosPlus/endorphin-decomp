@@ -12420,6 +12420,13 @@
     "summary": "Setter storing float argument into field at offset +0x44.",
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
+  "0x00511930": {
+    "name": "Properties::TerminalParentType\u003cDoubleWithProperties\u003e::vfunc_0",
+    "class": "Properties::TerminalParentType\u003cDoubleWithProperties\u003e",
+    "signature": "uint32_t fn_00511930(uint32_t self, uint32_t src_ptr, uint32_t arg3)",
+    "summary": "Reads the dword pointed to by the second argument, forwards it as the ecx value with self to 0x00695E20, and returns self (stdcall, ret 0xc).",
+    "lifted_path": "lifted/templates/TerminalParentType.cpp"
+  },
   "0x00511F80": {
     "name": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e::vfunc_13",
     "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",
