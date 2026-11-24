@@ -3673,6 +3673,13 @@
     "summary": "Destructor tail-call: restores vtable mem_0093712C and tail-calls base destructor sub_00454BA0.",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x00458290": {
+    "name": "descriptiveName: ForwardThreeArgsIfFlagClear",
+    "class": "Unknown",
+    "signature": "DWORD fn_00458290(void* self, DWORD a1, DWORD a2, DWORD a3)",
+    "summary": "If byte at +0x128 is zero, forwards three stdcall args to ext_00456210 and returns its result; otherwise returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00458320": {
     "name": "CSizingControlBarGEx::vfunc_1",
     "class": "CSizingControlBarGEx",

@@ -233,3 +233,20 @@ void* fn_004584C0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
     return self;
 }
 } // namespace lift_004584C0
+
+// [0x00458290] sub_00458290 (32 bytes)
+namespace lift_00458290 {
+extern DWORD ext_00456210(DWORD a1, DWORD a2, DWORD a3);
+
+// @name descriptiveName: ForwardThreeArgsIfFlagClear
+// @class Unknown
+// @summary If byte at +0x128 is zero, forwards three stdcall args to ext_00456210 and returns its result; otherwise returns 0.
+// @field Unknown +0x128 BYTE field_0x128
+DWORD fn_00458290(void* self, DWORD a1, DWORD a2, DWORD a3) {
+    const BYTE flag = lift_field<BYTE>(self, 0x128);
+    if (flag != 0) {
+        return 0;
+    }
+    return ext_00456210(a1, a2, a3);
+}
+} // namespace lift_00458290
