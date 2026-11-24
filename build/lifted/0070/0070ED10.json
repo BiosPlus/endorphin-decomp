@@ -1,0 +1,22 @@
+{
+  "va": "0x0070ED10",
+  "size": 32,
+  "orig_symbol": "sub_0070ED10",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::ForwardSubObjectAt0x208",
+  "class": "Unknown",
+  "signature": "void fn_0070ED10(void* self, DWORD arg)",
+  "summary": "Forwards its single stack argument to ext_007873F0 using the sub-object at this+0x208 as the receiver.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x208",
+      "type": "void*",
+      "name": "field_0x208"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:40:01Z"
+}

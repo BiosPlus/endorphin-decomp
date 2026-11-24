@@ -39974,6 +39974,13 @@
     "summary": "Forwards its single stack argument to sub_007873F0 on the sub-object at this+0x228 and returns the callee's result.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x0070ED10": {
+    "name": "Unknown::ForwardSubObjectAt0x208",
+    "class": "Unknown",
+    "signature": "void fn_0070ED10(void* self, DWORD arg)",
+    "summary": "Forwards its single stack argument to ext_007873F0 using the sub-object at this+0x208 as the receiver.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070ED50": {
     "name": "sub_0070ED50",
     "class": "Unknown",

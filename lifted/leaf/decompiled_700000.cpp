@@ -660,3 +660,20 @@ DWORD fn_0070ECF0(void* self, DWORD arg) {
     return ext_007873F0(sub, arg);
 }
 } // namespace lift_0070ECF0
+
+// [0x0070ED10] sub_0070ED10 (32 bytes)
+namespace lift_0070ED10 {
+// Callee sub_007873F0 (64B). Signature inferred from the call site: `this`
+// sub-object passed in ecx, one DWORD argument pushed on the stack.
+extern void ext_007873F0(void* self, DWORD arg);
+
+// @name Unknown::ForwardSubObjectAt0x208
+// @class Unknown
+// @summary Forwards its single stack argument to ext_007873F0 using the sub-object at this+0x208 as the receiver.
+// @field Unknown +0x208 void* field_0x208
+void fn_0070ED10(void* self, DWORD arg) {
+    // ecx = this + 0x208 (address only, not dereferenced here)
+    void* sub = static_cast<unsigned char*>(self) + 0x208;
+    ext_007873F0(sub, arg);
+}
+} // namespace lift_0070ED10
