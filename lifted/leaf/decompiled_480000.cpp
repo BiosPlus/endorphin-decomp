@@ -42,3 +42,31 @@ void fn_0048CCA0(void* self, int edx_unused, int a1, int a2) {
 }
 } // namespace lift_005694F0
 } // namespace lift_0048CCA0
+
+// [0x004809B0]
+namespace lift_004809B0 {
+uint32_t mem_read32(uint32_t addr);
+uint8_t mem_read8(uint32_t addr);
+
+// @name sub_004809B0
+// @summary Returns 1 if vector at +0x08/+0x0C is null/empty or flag at +0x20 is non-zero, else 0.
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x20 uint8_t field_0x20
+
+uint32_t __thiscall sub_004809B0(uint32_t self) {
+    uint32_t begin = mem_read32(self + 0x08);
+    if (begin == 0) {
+        return 1;
+    }
+    uint32_t end = mem_read32(self + 0x0C);
+    int32_t count = static_cast<int32_t>(end - begin) >> 2;
+    if (count == 0) {
+        return 1;
+    }
+    if (mem_read8(self + 0x20) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004809B0
