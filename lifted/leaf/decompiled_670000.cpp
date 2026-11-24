@@ -365,3 +365,36 @@ extern BOOL __thiscall fn_0067AEF0(void* self, int index) {
     return ResetEvent(hEvent);
 }
 } // namespace lift_0067AEF0
+
+// [0x0067B410] sub_0067B410 (58 bytes)
+namespace lift_0067B410 {
+extern void __fastcall ext_0065C640(void* self); // CriticalSectionLock::enter
+extern void __fastcall ext_0065C650(void* self); // CriticalSectionLock::leave
+
+// WINMM imports, resolved through the IAT slots at 0x925734 / 0x925724.
+extern UINT(__stdcall* mem_00925734)(UINT uTimerID);  // timeKillEvent
+extern UINT(__stdcall* mem_00925724)(UINT uPeriod);   // timeEndPeriod
+
+// @name TimerHandle::stop
+// @class TimerHandle
+// @summary Kills the multimedia timer under the object's lock, ends the timer period, clears the timer id, and releases the lock.
+// @field TimerHandle +0x04 UINT field_0x04
+// @field TimerHandle +0x08 UINT field_0x08
+// @field TimerHandle +0x18 CriticalSectionLock field_0x18
+void fn_0067B410(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    auto& timerId = *reinterpret_cast<UINT*>(base + 0x04);
+    auto& period  = *reinterpret_cast<UINT*>(base + 0x08);
+    void* lock    = base + 0x18;
+
+    if (timerId == 0) {
+        return;
+    }
+
+    ext_0065C640(lock);
+    mem_00925734(timerId);
+    mem_00925724(period);
+    timerId = 0;
+    ext_0065C650(lock);
+}
+} // namespace lift_0067B410

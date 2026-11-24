@@ -1,0 +1,34 @@
+{
+  "va": "0x0067B410",
+  "size": 58,
+  "orig_symbol": "sub_0067B410",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "TimerHandle::stop",
+  "class": "TimerHandle",
+  "signature": "extern \"C\" void __fastcall ext_0065C640(void* self); // CriticalSectionLock::enter extern \"C\" void __fastcall ext_0065C650(void* self); // CriticalSectionLock::leave extern \"C\" UINT(__stdcall* mem_00925734)(UINT uTimerID);  // timeKillEvent extern \"C\" UINT(__stdcall* mem_00925724)(UINT uPeriod);   // timeEndPeriod void fn_0067B410(void* self)",
+  "summary": "Kills the multimedia timer under the object's lock, ends the timer period, clears the timer id, and releases the lock.",
+  "fields": [
+    {
+      "class": "TimerHandle",
+      "offset": "+0x4",
+      "type": "UINT",
+      "name": "field_0x04"
+    },
+    {
+      "class": "TimerHandle",
+      "offset": "+0x8",
+      "type": "UINT",
+      "name": "field_0x08"
+    },
+    {
+      "class": "TimerHandle",
+      "offset": "+0x18",
+      "type": "CriticalSectionLock",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:24:02Z"
+}

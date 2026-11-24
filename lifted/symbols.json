@@ -36468,6 +36468,13 @@
     "summary": "Locks the embedded critical section at +0x18, stores three arguments into the record, clears the flag at +0x0C, then unlocks.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067B410": {
+    "name": "TimerHandle::stop",
+    "class": "TimerHandle",
+    "signature": "extern \"C\" void __fastcall ext_0065C640(void* self); // CriticalSectionLock::enter extern \"C\" void __fastcall ext_0065C650(void* self); // CriticalSectionLock::leave extern \"C\" UINT(__stdcall* mem_00925734)(UINT uTimerID);  // timeKillEvent extern \"C\" UINT(__stdcall* mem_00925724)(UINT uPeriod);   // timeEndPeriod void fn_0067B410(void* self)",
+    "summary": "Kills the multimedia timer under the object's lock, ends the timer period, clears the timer id, and releases the lock.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067B5A0": {
     "name": "Timer::vfunc_0",
     "class": "Timer",
