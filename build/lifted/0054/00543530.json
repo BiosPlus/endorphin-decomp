@@ -1,0 +1,34 @@
+{
+  "va": "0x00543530",
+  "size": 21,
+  "orig_symbol": "sub_00543530",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "VTableDispatch::ClearFlagsAndTailCallSlot16",
+  "class": "VTableDispatch",
+  "signature": "uint32_t fn_00543530(void* self)",
+  "summary": "Sets the byte flags at +0x90 to 1 and +0x93 to 0, then tail-jumps through vtable slot at byte offset 0x40 (index 16) with the same this pointer.",
+  "fields": [
+    {
+      "class": "VTableDispatch",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable_ptr"
+    },
+    {
+      "class": "VTableDispatch",
+      "offset": "+0x90",
+      "type": "uint8_t",
+      "name": "flag_0x90"
+    },
+    {
+      "class": "VTableDispatch",
+      "offset": "+0x93",
+      "type": "uint8_t",
+      "name": "flag_0x93"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:13:03Z"
+}

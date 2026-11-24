@@ -12786,6 +12786,13 @@
     "summary": "Stores address of mem_009560E4 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00543530": {
+    "name": "VTableDispatch::ClearFlagsAndTailCallSlot16",
+    "class": "VTableDispatch",
+    "signature": "uint32_t fn_00543530(void* self)",
+    "summary": "Sets the byte flags at +0x90 to 1 and +0x93 to 0, then tail-jumps through vtable slot at byte offset 0x40 (index 16) with the same this pointer.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00543620": {
     "name": "sub_00543620",
     "class": "GWCCategoryWithButtonsItem",
