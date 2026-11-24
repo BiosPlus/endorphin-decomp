@@ -24,3 +24,18 @@ static const uint8_t kTable_007B5224[16] = {
     0x03, 0x02, 0x02, 0x03, 0x02, 0x03, 0x02, 0x03,
 };
 } // namespace lift_007B5224
+
+// [0x007B6094] sub_007B6094 (19 bytes)
+namespace lift_007B6094 {
+// @name dataTable_007B6094
+// @summary 19-byte constant byte table at 0x007B6094; not executable code (bytes do not decode to a coherent function)
+
+// The 19 bytes at 0x007B6094 are reproduced verbatim as data. They are not
+// executable: decoding them yields no valid control flow.
+static const uint8_t kDataTable_007B6094[19] = {
+    0x00, 0x04, 0x01,
+    0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04,
+    0x04, 0x04, 0x04, 0x04, 0x04, 0x04,
+    0x02, 0x03, 0x03,
+};
+} // namespace lift_007B6094
