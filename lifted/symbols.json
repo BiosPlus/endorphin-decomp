@@ -4706,6 +4706,13 @@
     "summary": "Pure jump thunk forwarding to sub_0067B1F0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0046F8B0": {
+    "name": "Unknown::IsReadyAndFlagSet",
+    "class": "Unknown",
+    "signature": "BOOL fn_0046F8B0(void* self)",
+    "summary": "Returns TRUE if ext_0046F8A0 succeeds and the byte at self+0x295 is nonzero; otherwise FALSE.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046F8D0": {
     "name": "Unknown::IsReadyAndFlagClear",
     "class": "Unknown",

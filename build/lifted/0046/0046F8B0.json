@@ -1,0 +1,22 @@
+{
+  "va": "0x0046F8B0",
+  "size": 27,
+  "orig_symbol": "sub_0046F8B0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "Unknown::IsReadyAndFlagSet",
+  "class": "Unknown",
+  "signature": "BOOL fn_0046F8B0(void* self)",
+  "summary": "Returns TRUE if ext_0046F8A0 succeeds and the byte at self+0x295 is nonzero; otherwise FALSE.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x295",
+      "type": "uint8_t",
+      "name": "field_0x295"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:01:27Z"
+}

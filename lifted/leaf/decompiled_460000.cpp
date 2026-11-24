@@ -387,3 +387,23 @@ BOOL fn_0046F8D0(void* self) {
     return TRUE;
 }
 } // namespace lift_0046F8D0
+
+// [0x0046F8B0] sub_0046F8B0 (27 bytes)
+namespace lift_0046F8B0 {
+extern BOOL ext_0046F8A0(void* self);
+
+// @name Unknown::IsReadyAndFlagSet
+// @class Unknown
+// @summary Returns TRUE if ext_0046F8A0 succeeds and the byte at self+0x295 is nonzero; otherwise FALSE.
+// @field Unknown +0x295 uint8_t field_0x295
+BOOL fn_0046F8B0(void* self) {
+    if (!ext_0046F8A0(self)) {
+        return FALSE;
+    }
+    const auto* bytes = static_cast<const uint8_t*>(self);
+    if (bytes[0x295] == 0) {
+        return FALSE;
+    }
+    return TRUE;
+}
+} // namespace lift_0046F8B0
