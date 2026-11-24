@@ -36,3 +36,22 @@ void* fn_00407850(void* self) {
     return ext_006A5E00(parent);
 }
 } // namespace lift_00407850
+
+// [0x0040F0B0] sub_0040F0B0 (25 bytes)
+namespace lift_0040F0B0 {
+// Known callee 0x006A5C6E: thunk_MFC80_ord_572 (IAT jump thunk forwarding to MFC80!ord_572.)
+extern void ext_006A5C6E();
+extern void ext_0040EFA0();
+extern int mem_0092B7F4;
+
+// @name Unknown::initVtableAndInit
+// @class Unknown
+// @summary Calls the MFC80 base-class initializer on this, sets vtable to mem_0092B7F4, then calls sub_0040EFA0(this); returns this.
+// @field Unknown +0x00 void* vptr
+void* fn_0040F0B0(void* self) {
+    ext_006A5C6E();
+    lift_field<void*>(self, 0x0) = &mem_0092B7F4;
+    ext_0040EFA0();
+    return self;
+}
+} // namespace lift_0040F0B0

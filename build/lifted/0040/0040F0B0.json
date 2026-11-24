@@ -1,0 +1,22 @@
+{
+  "va": "0x0040F0B0",
+  "size": 25,
+  "orig_symbol": "sub_0040F0B0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "Unknown::initVtableAndInit",
+  "class": "Unknown",
+  "signature": "void* fn_0040F0B0(void* self)",
+  "summary": "Calls the MFC80 base-class initializer on this, sets vtable to mem_0092B7F4, then calls sub_0040EFA0(this); returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:47:12Z"
+}
