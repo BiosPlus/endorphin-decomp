@@ -36377,6 +36377,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x007010B0": {
+    "name": "CopyHugeConstantToGlobals",
+    "signature": "extern uint32_t mem_00925284; // .rdata u32 0x0062D360 (pointer to _HUGE) extern uint32_t mem_00B5E7D0; // global, low dword extern uint32_t mem_00B5E7D4; // global, high dword void CopyHugeConstantToGlobals()",
+    "summary": "Loads the 64-bit value pointed to by mem_00925284 (_HUGE) and stores its two 32-bit halves into mem_00B5E7D0 / mem_00B5E7D4.",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x007010E0": {
     "name": "sub_007010E0",
     "signature": "void fn_006DD960(void)",

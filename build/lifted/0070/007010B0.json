@@ -1,0 +1,13 @@
+{
+  "va": "0x007010B0",
+  "size": 23,
+  "orig_symbol": "sub_007010B0",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "CopyHugeConstantToGlobals",
+  "signature": "extern uint32_t mem_00925284; // .rdata u32 0x0062D360 (pointer to _HUGE) extern uint32_t mem_00B5E7D0; // global, low dword extern uint32_t mem_00B5E7D4; // global, high dword void CopyHugeConstantToGlobals()",
+  "summary": "Loads the 64-bit value pointed to by mem_00925284 (_HUGE) and stores its two 32-bit halves into mem_00B5E7D0 / mem_00B5E7D4.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:34:08Z"
+}

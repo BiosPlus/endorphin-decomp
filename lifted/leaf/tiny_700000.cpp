@@ -990,3 +990,21 @@ uint8_t __thiscall sub_007008B0(uint32_t self) {
     return mem_r8(ptr + 0x1e8);
 }
 } // namespace lift_007008B0
+
+// [0x007010B0]
+namespace lift_007010B0 {
+// @name CopyHugeConstantToGlobals
+// @summary Loads the 64-bit value pointed to by mem_00925284 (_HUGE) and stores its two 32-bit halves into mem_00B5E7D0 / mem_00B5E7D4.
+
+extern uint32_t mem_00925284; // .rdata u32 0x0062D360 (pointer to _HUGE)
+extern uint32_t mem_00B5E7D0; // global, low dword
+extern uint32_t mem_00B5E7D4; // global, high dword
+
+void CopyHugeConstantToGlobals() {
+    const auto* src = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    const uint32_t lo = src[0];
+    const uint32_t hi = src[1];
+    mem_00B5E7D0 = lo;
+    mem_00B5E7D4 = hi;
+}
+} // namespace lift_007010B0
