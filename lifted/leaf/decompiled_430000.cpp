@@ -906,3 +906,24 @@ void __thiscall fn_00430900(void* self, void* target) {
     reinterpret_cast<Vfn>(static_cast<uintptr_t>(vfn))(target, static_cast<uint32_t>(state));
 }
 } // namespace lift_00430900
+
+// [0x00433080]
+namespace lift_00433080 {
+// @name handleEscapeKey
+// @summary Checks if arg0+0x8 equals 0x1b (Escape), invokes ext_0042FE90 and ext_00430360 if so, and returns whether it matched.
+// @field Arg0 +0x08 uint32_t field_0x08
+
+
+extern void* ext_0042FE90(void);
+extern void __cdecl ext_00430360(void);
+
+extern uint32_t __thiscall fn_00433080(void* self, void* arg0) {
+    (void)self;
+    bool is_esc = (*reinterpret_cast<const uint32_t*>(static_cast<const uint8_t*>(arg0) + 0x8) == 0x1bu);
+    if (is_esc) {
+        ext_0042FE90();
+        ext_00430360();
+    }
+    return is_esc ? 1u : 0u;
+}
+} // namespace lift_00433080

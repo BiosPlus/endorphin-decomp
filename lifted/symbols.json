@@ -2116,6 +2116,12 @@
     "summary": "Calls get_global_field_0x58, invokes ext_00469040 on the result, then calls thunk_MFC80_ord_6081 with field_0x11c, 1, and 0.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00433080": {
+    "name": "handleEscapeKey",
+    "signature": "extern \"C\" uint32_t __thiscall fn_00433080(void* self, void* arg0)",
+    "summary": "Checks if arg0+0x8 equals 0x1b (Escape), invokes ext_0042FE90 and ext_00430360 if so, and returns whether it matched.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00433290": {
     "name": "Unknown::forwardToChildAt154",
     "class": "Unknown",
