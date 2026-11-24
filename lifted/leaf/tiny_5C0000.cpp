@@ -354,3 +354,34 @@ int fn_005C3110(void* self) {
     return target(thisPtr, mem_00B40640);
 }
 } // namespace lift_005C3110
+
+// [0x005CE940] sub_005CE940 (20 bytes)
+namespace lift_005CE940 {
+// @name ForwardFieldAC_ToSubobjectVirtualSlot1
+// @class Unknown
+// @summary Forwards the dword at this+0xAC to virtual slot 1 of the subobject at this+0x30.
+// @field Unknown +0x30 void* field_0x30
+// @field Unknown +0xAC uint32_t field_0xAC
+void fn_005CE940(void* self) {
+    // Read a 32-bit little-endian value at byte offset 'off' from 'base'.
+    auto rd32 = [](const void* base, uint32_t off) -> uint32_t {
+        uint32_t v;
+        std::memcpy(&v, static_cast<const uint8_t*>(base) + off, sizeof v);
+        return v;
+    };
+
+    // Subobject pointer at this+0x30 and its vtable pointer (offset 0 of subobject).
+    const uint32_t sub_addr = rd32(self, 0x30);
+    const uint32_t vtbl_addr = rd32(reinterpret_cast<const void*>(static_cast<uintptr_t>(sub_addr)), 0);
+
+    // Argument at this+0xAC.
+    const uint32_t arg = rd32(self, 0xAC);
+
+    // Slot 1 of the vtable (offset +4) is the target; call it with the subobject as 'this'
+    // and 'arg' as the single stack argument. The return value is discarded.
+    using SlotFn = void (*)(void* self_obj, uint32_t arg_value);
+    const uint32_t target = rd32(reinterpret_cast<const void*>(static_cast<uintptr_t>(vtbl_addr)), 4);
+    auto fn = reinterpret_cast<SlotFn>(static_cast<uintptr_t>(target));
+    fn(reinterpret_cast<void*>(static_cast<uintptr_t>(sub_addr)), arg);
+}
+} // namespace lift_005CE940

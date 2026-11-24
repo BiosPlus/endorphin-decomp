@@ -17086,6 +17086,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xAC and tail-calls sub_00647F70.",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
   },
+  "0x005CE940": {
+    "name": "ForwardFieldAC_ToSubobjectVirtualSlot1",
+    "class": "Unknown",
+    "signature": "void fn_005CE940(void* self)",
+    "summary": "Forwards the dword at this+0xAC to virtual slot 1 of the subobject at this+0x30.",
+    "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
+  },
   "0x005CE960": {
     "name": "sub_005CE960",
     "signature": "extern \"C\" void __fastcall fn_005CE960(void* self)",

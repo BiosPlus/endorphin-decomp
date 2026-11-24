@@ -1,0 +1,28 @@
+{
+  "va": "0x005CE940",
+  "size": 20,
+  "orig_symbol": "sub_005CE940",
+  "src_path": "src/leaf/tiny_5C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5C0000.cpp",
+  "name": "ForwardFieldAC_ToSubobjectVirtualSlot1",
+  "class": "Unknown",
+  "signature": "void fn_005CE940(void* self)",
+  "summary": "Forwards the dword at this+0xAC to virtual slot 1 of the subobject at this+0x30.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "uint32_t",
+      "name": "field_0xAC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:07:30Z"
+}
