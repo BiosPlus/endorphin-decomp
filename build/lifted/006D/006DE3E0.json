@@ -1,0 +1,28 @@
+{
+  "va": "0x006DE3E0",
+  "size": 16,
+  "orig_symbol": "sub_006DE3E0",
+  "src_path": "src/leaf/tiny_6D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6D0000.cpp",
+  "name": "Unknown::GetIndirectUInt32At98",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint32_t __fastcall fn_006DE3E0(void* self)",
+  "summary": "Loads the pointer at self+0x14 and returns the uint32 stored at that object's +0x98 offset.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x98",
+      "type": "uint32_t",
+      "name": "field_0x98"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:39:53Z"
+}

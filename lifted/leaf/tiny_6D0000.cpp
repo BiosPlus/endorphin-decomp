@@ -432,3 +432,18 @@ void fn_006DD960(void) {
     mem_00B5DC10 = -(*huge);
 }
 } // namespace lift_006DD960
+
+// [0x006DE3E0]
+namespace lift_006DE3E0 {
+// @name Unknown::GetIndirectUInt32At98
+// @class Unknown
+// @summary Loads the pointer at self+0x14 and returns the uint32 stored at that object's +0x98 offset.
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x98 uint32_t field_0x98
+
+extern uint32_t __fastcall fn_006DE3E0(void* self) {
+    // mov eax, [ecx + 0x14]; mov eax, [eax + 0x98]; ret
+    void* inner = lift_field<void*>(self, 0x14);
+    return lift_field<uint32_t>(inner, 0x98);
+}
+} // namespace lift_006DE3E0

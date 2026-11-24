@@ -32353,6 +32353,13 @@
     "summary": "Loads the pointer at self+0x14, offsets it by 0x4C, and returns the int32 at that address via fn_006E7460.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006DE3E0": {
+    "name": "Unknown::GetIndirectUInt32At98",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t __fastcall fn_006DE3E0(void* self)",
+    "summary": "Loads the pointer at self+0x14 and returns the uint32 stored at that object's +0x98 offset.",
+    "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
   "0x006DECD0": {
     "name": "sub_006DECD0",
     "signature": "extern \"C\" int32_t __fastcall fn_006DECD0(void* self)",
