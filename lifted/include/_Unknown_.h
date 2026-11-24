@@ -8,6 +8,7 @@
 // Recovered field layout for <Unknown>:
 namespace lifted_layout {
 struct _Unknown__Fields {
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x0080FBB0)
     // +0xC   int32_t                  field_0x0C  (evidence: 0x00665880)
 };
 } // namespace lifted_layout

@@ -38773,6 +38773,12 @@
     "summary": "Returns address of global mem_00AB6B0C.",
     "lifted_path": "lifted/leaf/tiny_800000.cpp"
   },
+  "0x0080FBB0": {
+    "name": "sub_0080FBB0_getField08",
+    "signature": "uint32_t sub_0080FBB0_getField08(const uint8_t* obj)",
+    "summary": "Returns the 32-bit value at +0x08 of the object pointer passed as the single stack argument.",
+    "lifted_path": "lifted/leaf/tiny_800000.cpp"
+  },
   "0x0080FC40": {
     "name": "GlobalAllocZeroWrapper",
     "signature": "uint32_t fn_0080FC40(uint32_t size)",

@@ -31,3 +31,14 @@ DWORD fn_0080A690(DWORD value) {
     return previous;
 }
 } // namespace lift_0080A690
+
+// [0x0080FBB0]
+namespace lift_0080FBB0 {
+// @name sub_0080FBB0_getField08
+// @summary Returns the 32-bit value at +0x08 of the object pointer passed as the single stack argument.
+// @field <Unknown> +0x08 uint32_t field_0x08
+
+uint32_t sub_0080FBB0_getField08(const uint8_t* obj) {
+    return *reinterpret_cast<const uint32_t*>(obj + 0x08);
+}
+} // namespace lift_0080FBB0
