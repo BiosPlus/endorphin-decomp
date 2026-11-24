@@ -2597,3 +2597,14 @@ uint8_t __thiscall sub_006FA940(uint32_t self, uint32_t unused) {
     return mem_read32(self + 0x8) != 0 ? 1 : 0;
 }
 } // namespace lift_006FA940
+
+// [0x006F7700]
+namespace lift_006F7700 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name getTableEntry_00994764
+// @summary Reads a 32-bit value from the lookup table at 0x00994764 by index.
+uint32_t sub_006F7700(uint32_t index) {
+    return mem_read32(0x00994764u + index * 4u);
+}
+} // namespace lift_006F7700
