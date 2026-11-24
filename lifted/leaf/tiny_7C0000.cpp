@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/leaf/tiny_7C0000.cpp
 #include "lift_compat.h"
 #include <bit>
+#include <cstdint>
 
 // [0x007C9CB0]
 namespace lift_007C9CB0 {
@@ -901,3 +902,19 @@ extern int fn_007C6780(void* self) {
     return static_cast<int>(lift_field<uint32_t>(self, 0x1C4) & 0x1u);
 }
 } // namespace lift_007C6780
+
+// [0x007C9E10]
+namespace lift_007C9E10 {
+// @name SetField24FromArgMinusField14
+// @class Unknown
+// @summary Stores (arg + 0x8 float) minus the float at +0x14 into the float at +0x24 of the object passed as first argument.
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x24 float field_0x24
+
+
+void SetField24FromArgMinusField14(void* self, float value) {
+    auto* base = static_cast<std::uint8_t*>(self);
+    float field14 = *reinterpret_cast<float*>(base + 0x14);
+    *reinterpret_cast<float*>(base + 0x24) = value - field14;
+}
+} // namespace lift_007C9E10

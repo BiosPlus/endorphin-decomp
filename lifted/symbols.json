@@ -36905,6 +36905,13 @@
     "summary": "Adds 0x40 to the first 32-bit argument and returns the result.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C9E10": {
+    "name": "SetField24FromArgMinusField14",
+    "class": "Unknown",
+    "signature": "void SetField24FromArgMinusField14(void* self, float value)",
+    "summary": "Stores (arg + 0x8 float) minus the float at +0x14 into the float at +0x24 of the object passed as first argument.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007CA110": {
     "name": "sub_007CA110",
     "signature": "extern \"C\" void fn_007CA110(void)",

@@ -1,0 +1,28 @@
+{
+  "va": "0x007C9E10",
+  "size": 15,
+  "orig_symbol": "sub_007C9E10",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "SetField24FromArgMinusField14",
+  "class": "Unknown",
+  "signature": "void SetField24FromArgMinusField14(void* self, float value)",
+  "summary": "Stores (arg + 0x8 float) minus the float at +0x14 into the float at +0x24 of the object passed as first argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:33:21Z"
+}
