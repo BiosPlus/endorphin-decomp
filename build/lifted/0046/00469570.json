@@ -1,0 +1,27 @@
+{
+  "va": "0x00469570",
+  "size": 52,
+  "orig_symbol": "sub_00469570",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "getVectorElementAt",
+  "signature": "uint32_t __thiscall sub_00469570(uint8_t* self, uint32_t index)",
+  "summary": "Returns the 32-bit element at the given index from a vector, calling _invalid_parameter_noinfo if out of bounds.",
+  "fields": [
+    {
+      "class": "Class",
+      "offset": "+0x54",
+      "type": "uint32_t*",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Class",
+      "offset": "+0x58",
+      "type": "uint32_t*",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:09:02Z"
+}

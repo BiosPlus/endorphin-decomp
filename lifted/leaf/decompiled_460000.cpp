@@ -707,3 +707,27 @@ bool fn_004663A0(void* self) {
     return false;
 }
 } // namespace lift_004663A0
+
+// [0x00469570]
+namespace lift_00469570 {
+// @name getVectorElementAt
+// @summary Returns the 32-bit element at the given index from a vector, calling _invalid_parameter_noinfo if out of bounds.
+// @field Class +0x54 uint32_t* field_0x54
+// @field Class +0x58 uint32_t* field_0x58
+
+extern uint32_t mem_00925134;
+
+uint32_t __thiscall sub_00469570(uint8_t* self, uint32_t index) {
+    uint32_t* begin = *reinterpret_cast<uint32_t**>(self + 0x54);
+    if (begin != nullptr) {
+        uint32_t* end = *reinterpret_cast<uint32_t**>(self + 0x58);
+        int32_t count = static_cast<int32_t>(reinterpret_cast<uintptr_t>(end) - reinterpret_cast<uintptr_t>(begin)) >> 2;
+        if (index < static_cast<uint32_t>(count)) {
+            return begin[index];
+        }
+    }
+    reinterpret_cast<void(__cdecl*)()>(static_cast<uintptr_t>(mem_00925134))();
+    uint32_t* begin_after = *reinterpret_cast<uint32_t**>(self + 0x54);
+    return begin_after[index];
+}
+} // namespace lift_00469570
