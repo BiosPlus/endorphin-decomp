@@ -751,3 +751,22 @@ int fn_0043C9D0(void* self, int a1, int a2, int a3, int a4) {
     return target(self, a1, a2, a3, a4);
 }
 } // namespace lift_0043C9D0
+
+// [0x00430EB0] sub_00430EB0 (34 bytes)
+namespace lift_00430EB0 {
+// @name AssignReleasingOld
+// @class (none recovered)
+// @summary Replaces the pointer stored at offset 0 with a new value, calling vtable slot 1 (Release-style, arg 1) on the old object when it differs and is non-null.
+// @field self +0x00 void* ptr
+void fn_00430EB0(void* self, void* newValue) {
+    using ReleaseFn = void(__thiscall*)(void*, int);
+
+    void* old = lift_field<void*>(self, 0);
+    if (newValue != old && old != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(old);
+        auto release = reinterpret_cast<ReleaseFn>(vtbl[1]);
+        release(old, 1);
+    }
+    lift_field<void*>(self, 0) = newValue;
+}
+} // namespace lift_00430EB0

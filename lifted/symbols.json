@@ -2006,6 +2006,13 @@
     "summary": "Calls vtable[0] on the passed object with the result of ext_00430380() as its argument.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430EB0": {
+    "name": "AssignReleasingOld",
+    "class": "(none recovered)",
+    "signature": "void fn_00430EB0(void* self, void* newValue)",
+    "summary": "Replaces the pointer stored at offset 0 with a new value, calling vtable slot 1 (Release-style, arg 1) on the old object when it differs and is non-null.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430EE0": {
     "name": "SubobjectReleaseSlot1",
     "class": "Unknown",

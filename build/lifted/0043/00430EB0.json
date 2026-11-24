@@ -1,0 +1,22 @@
+{
+  "va": "0x00430EB0",
+  "size": 34,
+  "orig_symbol": "sub_00430EB0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "AssignReleasingOld",
+  "class": "(none recovered)",
+  "signature": "void fn_00430EB0(void* self, void* newValue)",
+  "summary": "Replaces the pointer stored at offset 0 with a new value, calling vtable slot 1 (Release-style, arg 1) on the old object when it differs and is non-null.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:54:31Z"
+}
