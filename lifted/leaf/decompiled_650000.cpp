@@ -23,6 +23,7 @@ void* fn_005136C0(void* self, void* pair, DWORD b) {
 } // namespace lift_00500310
 } // namespace lift_005136C0
 #include <cstring>
+#include <cstdint>
 
 // [0x005142F0] sub_005142F0 (35 bytes)
 namespace lift_005142F0 {
