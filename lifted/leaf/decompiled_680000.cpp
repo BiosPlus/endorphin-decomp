@@ -269,3 +269,25 @@ DWORD* __thiscall fn_00688D30(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_00688D30
+
+// [0x0068BED0]
+namespace lift_0068BED0 {
+extern uint32_t __thiscall ext_00508680(void* self);
+extern uint64_t mem_0093BD38;
+extern uint64_t mem_0098E430;
+
+// @name sub_0068BED0
+// @summary Converts an unsigned 32-bit value from sub_00508680(this + 0x10) to float via double scaling
+// @field sub_0068BED0 +0x10 uint8_t field_0x10
+float __thiscall sub_0068BED0(void* self) {
+    uint32_t eax = ext_00508680(static_cast<uint8_t*>(self) + 0x10);
+    double val = static_cast<double>(static_cast<int32_t>(eax));
+    if (static_cast<int32_t>(eax) < 0) {
+        double adj = *reinterpret_cast<const double*>(&mem_0093BD38);
+        val += adj;
+    }
+    double c = *reinterpret_cast<const double*>(&mem_0098E430);
+    double res = val * c + c;
+    return static_cast<float>(res);
+}
+} // namespace lift_0068BED0
