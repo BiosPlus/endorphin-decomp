@@ -104,3 +104,24 @@ void fn_005E12F0(void* self) {
     target(child);
 }
 } // namespace lift_005E12F0
+
+// [0x005E1310] sub_005E1310 (23 bytes)
+namespace lift_005E1310 {
+// @name DelegateToSubobjectVfunc49
+// @summary Forwards to vfunc slot 49 of the subobject at self+0x234; returns 0 if that subobject is null.
+// @field Unknown +0x234 void* field_0x234 (subobject pointer; class unrecovered)
+uint8_t fn_005E1310(void* self) {
+    // mov ecx, [self+0x234]
+    void* sub = lift_field<void*>(self, 0x234);
+    // test ecx, ecx / je -> xor al, al; ret
+    if (sub == nullptr) {
+        return 0;
+    }
+    // mov eax, [ecx]; mov edx, [eax+0xc4]; jmp edx
+    // Slot index is 0xc4 / sizeof(void*) on the 32-bit target; tail-call preserves the callee's return.
+    void** vtable = *reinterpret_cast<void***>(sub);
+    using VFunc = uint8_t (*)(void*);
+    VFunc target = reinterpret_cast<VFunc>(vtable[0xc4 / sizeof(void*)]);
+    return target(sub);
+}
+} // namespace lift_005E1310

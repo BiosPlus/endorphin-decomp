@@ -18583,6 +18583,12 @@
     "summary": "If the child pointer at +0x234 is non-null, tail-calls its vtable slot at byte offset 0x1C with the child as this; otherwise returns.",
     "lifted_path": "lifted/leaf/tiny_5E0000.cpp"
   },
+  "0x005E1310": {
+    "name": "DelegateToSubobjectVfunc49",
+    "signature": "uint8_t fn_005E1310(void* self)",
+    "summary": "Forwards to vfunc slot 49 of the subobject at self+0x234; returns 0 if that subobject is null.",
+    "lifted_path": "lifted/leaf/tiny_5E0000.cpp"
+  },
   "0x005E1350": {
     "name": "sub_005E1350",
     "class": "PoseTool",
