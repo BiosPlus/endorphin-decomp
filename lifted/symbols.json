@@ -32545,9 +32545,10 @@
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
   "0x006E86E0": {
-    "name": "sub_006E86E0",
-    "signature": "double sub_006E86E0(void* self)",
-    "summary": "Returns the double at offset 0x60 of the object referenced by the first field of this.",
+    "name": "sub_006E6340",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_006E6340(void* self)",
+    "summary": "This-adjustor thunk: adjusts `this` by +0x4C and tail-calls sub_006E7460.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
   "0x006E8780": {
