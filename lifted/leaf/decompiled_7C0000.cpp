@@ -217,3 +217,22 @@ void __cdecl sub_007C9D00(uint32_t arg0, float val) {
     mem_write_f32(arg0 + 0x8, abs_val);
 }
 } // namespace lift_007C9D00
+
+// [0x007CA790]
+namespace lift_007CA790 {
+// @name Vec3::dot
+// @class Vec3
+// @summary Computes the 3D dot product of this vector with another vector.
+// @field Vec3 +0x00 float x
+// @field Vec3 +0x04 float y
+// @field Vec3 +0x08 float z
+
+
+float mem_f32(uintptr_t addr);
+
+float __thiscall sub_007CA790(uintptr_t self, uintptr_t other)
+{
+    float xy = mem_f32(other + 0x4) * mem_f32(self + 0x4) + mem_f32(other) * mem_f32(self);
+    return xy + mem_f32(other + 0x8) * mem_f32(self + 0x8);
+}
+} // namespace lift_007CA790
