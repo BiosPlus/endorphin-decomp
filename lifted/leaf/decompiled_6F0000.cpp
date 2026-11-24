@@ -931,3 +931,25 @@ bool FindU16InZeroTerminatedList(uint16_t key, const uint16_t* list)
     return false;
 }
 } // namespace lift_006FF730
+
+// [0x006F8B30]
+namespace lift_006F8B30 {
+// @name Unknown::copyAssign9
+// @class Unknown
+// @summary Copies a 9-byte record (dword at +0, five bytes at +4..+8) from src into self and returns self.
+// @field Unknown +0x00 DWORD field_0x00
+// @field Unknown +0x04 BYTE field_0x04
+// @field Unknown +0x05 BYTE field_0x05
+// @field Unknown +0x06 BYTE field_0x06
+// @field Unknown +0x07 BYTE field_0x07
+// @field Unknown +0x08 BYTE field_0x08
+void* __thiscall sub_006F8B30(void* self, const void* src) {
+    lift_field<DWORD>(self, 0x00) = lift_field<const DWORD>(src, 0x00);
+    lift_field<BYTE>(self, 0x04) = lift_field<const BYTE>(src, 0x04);
+    lift_field<BYTE>(self, 0x05) = lift_field<const BYTE>(src, 0x05);
+    lift_field<BYTE>(self, 0x06) = lift_field<const BYTE>(src, 0x06);
+    lift_field<BYTE>(self, 0x07) = lift_field<const BYTE>(src, 0x07);
+    lift_field<BYTE>(self, 0x08) = lift_field<const BYTE>(src, 0x08);
+    return self;
+}
+} // namespace lift_006F8B30

@@ -1,0 +1,52 @@
+{
+  "va": "0x006F8B30",
+  "size": 48,
+  "orig_symbol": "sub_006F8B30",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::copyAssign9",
+  "class": "Unknown",
+  "signature": "void* __thiscall sub_006F8B30(void* self, const void* src)",
+  "summary": "Copies a 9-byte record (dword at +0, five bytes at +4..+8) from src into self and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "BYTE",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5",
+      "type": "BYTE",
+      "name": "field_0x05"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x6",
+      "type": "BYTE",
+      "name": "field_0x06"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x7",
+      "type": "BYTE",
+      "name": "field_0x07"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "BYTE",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:21:33Z"
+}

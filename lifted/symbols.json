@@ -42858,6 +42858,13 @@
     "summary": "Zeroes the leading dword, sets byte +0x04 to 1, and clears bytes +0x05..+0x08.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006F8B30": {
+    "name": "Unknown::copyAssign9",
+    "class": "Unknown",
+    "signature": "void* __thiscall sub_006F8B30(void* self, const void* src)",
+    "summary": "Copies a 9-byte record (dword at +0, five bytes at +4..+8) from src into self and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F8E00": {
     "name": "sub_006F8E00",
     "signature": "extern \"C\" void __fastcall fn_006F8E00(void* self, int edx_unused, uint8_t value)",
