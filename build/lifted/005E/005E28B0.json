@@ -4,16 +4,10 @@
   "orig_symbol": "sub_005E28B0",
   "src_path": "src/leaf/decompiled_5E0000.cpp",
   "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
-  "name": "descriptiveName_005E2770",
-  "signature": "float fn_005E2770(void* self)",
-  "summary": "Calls vtable slot 0x11C on the object at self+0x17C, then returns float index 0 of the result's +0x08 sub-object array.",
+  "name": "getFloatFromSubobject_005E28B0",
+  "signature": "float fn_005E28B0(void* self)",
+  "summary": "Fetches the sub-object at this+0x17c, calls its virtual slot 0x124 to obtain a child object, and returns float index 0 from that child's array.",
   "fields": [
-    {
-      "class": "Unknown",
-      "offset": "+0x17C",
-      "type": "void*",
-      "name": "field_0x17c"
-    },
     {
       "class": "\u003cunknown\u003e",
       "offset": "+0x17C",
@@ -23,5 +17,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:04:37Z"
+  "lifted_at": "2026-11-24T12:04:55Z"
 }
