@@ -1,0 +1,27 @@
+{
+  "va": "0x005D0AF0",
+  "size": 14,
+  "orig_symbol": "sub_005D0AF0",
+  "src_path": "src/leaf/tiny_5D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5D0000.cpp",
+  "name": "sub_005D0AF0",
+  "signature": "uint8_t sub_005D0AF0(void* self)",
+  "summary": "Returns 1 if the object at this+0x44 has a nonzero dword at offset +0x4, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "void*",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:25:33Z"
+}

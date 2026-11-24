@@ -15924,6 +15924,12 @@
     "summary": "Classifies the argument via 0x005CFD60; if the result is 3, forwards to AnimatableTransform::vfunc_57, otherwise returns a pointer into the 8-byte-stride table at this+0x264 indexed by the result.",
     "lifted_path": "lifted/NMData/CameraData.cpp"
   },
+  "0x005D0AF0": {
+    "name": "sub_005D0AF0",
+    "signature": "uint8_t sub_005D0AF0(void* self)",
+    "summary": "Returns 1 if the object at this+0x44 has a nonzero dword at offset +0x4, else 0.",
+    "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
+  },
   "0x005D14C0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0\u003e",
