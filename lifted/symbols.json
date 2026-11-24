@@ -23446,6 +23446,24 @@
     "summary": "Returns element 3 of the float array held by the sub-object at this+0x08.",
     "lifted_path": "lifted/leaf/decompiled_610000.cpp"
   },
+  "0x00611170": {
+    "name": "sub_00611170",
+    "signature": "extern \"C\" void __thiscall sub_00611170(uint32_t ecx)",
+    "summary": "Fetches float at index 0 from (this + 0x8) and passes it to ext_00678130 on (ext_00594000() + 0x2e0)",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x006111A0": {
+    "name": "sub_006111A0",
+    "signature": "extern \"C\" void __thiscall sub_006111A0(uint32_t ecx)",
+    "summary": "Gets float at index 1 from this+0x8 and passes it to global object at +0x2E0",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x006111D0": {
+    "name": "sub_006111D0",
+    "signature": "extern \"C\" void __thiscall fn_006111D0(uint32_t ecx)",
+    "summary": "Fetches a float at index 2 from this+0x8 and passes it to sub_00678130 on global+0x2E0",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
   "0x00611270": {
     "name": "NMData::Constraint::vfunc_22",
     "class": "NMData::Constraint",
