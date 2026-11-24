@@ -10,7 +10,9 @@
 // Recovered field layout for NMData::GraphicData:
 namespace lifted_layout {
 struct NMData_GraphicData_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x0061FE60, 0x0061FEA0)
+    // +0x0   void*                    field_0x00  (evidence: 0x00620120)
+    // +0x4   void*                    field_0x04  (evidence: 0x0061FE60, 0x0061FEA0, 0x00620120)
+    // +0xC   void* field_0x0C (address of subobject only; not read or written here)  (evidence: 0x00620120)
     // +0x148 void*                    field_0x148  (evidence: 0x0061FE60, 0x0061FEA0, 0x0061FEF0)
     // +0x150 DWORD                    field_150  (evidence: 0x004A9B50, 0x00587D40)
     // +0x154 uint8_t field_0x154 (address of subobject only; not read or written here)  (evidence: 0x0061FF40)

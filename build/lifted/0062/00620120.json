@@ -1,0 +1,34 @@
+{
+  "va": "0x00620120",
+  "size": 139,
+  "orig_symbol": "NMData::GraphicData::vfunc_34",
+  "src_path": "src/NMData/GraphicData.cpp",
+  "lifted_path": "lifted/NMData/GraphicData.cpp",
+  "name": "NMData::GraphicData::vfunc_34",
+  "class": "NMData::GraphicData",
+  "signature": "void* fn_00620120(void* self, void* arg)",
+  "summary": "Calls slot 3 on the sub-object at +0x04 and slot 54 on self (twice), resolves an object via ext_00493E40 from the stack argument and the slot 54 result, stores the second slot 54 result at its +0x20, links it to the +0x0C sub-object via ext_00528B90, and returns it.",
+  "fields": [
+    {
+      "class": "NMData::GraphicData",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "NMData::GraphicData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::GraphicData",
+      "offset": "+0xC",
+      "type": "void* field_0x0C (address of subobject only; not read or written",
+      "name": "here)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:36:42Z"
+}

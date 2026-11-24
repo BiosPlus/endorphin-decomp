@@ -105,3 +105,50 @@ void fn_0061FEA0(void* self, const float* v) {
     }
 }
 } // namespace lift_0061FEA0
+
+// [0x00620120] NMData::GraphicData::vfunc_34 (139 bytes)
+namespace lift_00620120 {
+// Known callee 0x00493E40: forwardVtableSlot194. Dereferences the pointer-to-pointer in self,
+// then forwards the two stack arguments to vtable slot 194 of the dereferenced object.
+extern uintptr_t ext_00493E40(void* self, uintptr_t a, uintptr_t b);
+// Known callee 0x00528B90: Unknown::setPeerWithBackLink. Stores peer at self+0x04; if peer is
+// non-null, writes self into peer+0x08.
+extern void ext_00528B90(void* self, void* peer);
+extern int mem_00B40640;
+
+// @name NMData::GraphicData::vfunc_34
+// @class NMData::GraphicData
+// @summary Calls slot 3 on the sub-object at +0x04 and slot 54 on self (twice), resolves an object via ext_00493E40 from the stack argument and the slot 54 result, stores the second slot 54 result at its +0x20, links it to the +0x0C sub-object via ext_00528B90, and returns it.
+// @field NMData::GraphicData +0x00 void* field_0x00
+// @field NMData::GraphicData +0x04 void* field_0x04
+// @field NMData::GraphicData +0x0C void* field_0x0C (address of subobject only; not read or written here)
+void* fn_00620120(void* self, void* arg) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void* sub0c = (base != nullptr) ? static_cast<void*>(base + 0x0C) : nullptr;
+
+    // Slot 3 (offset 0x0C) of the object at +0x04, called on the +0x04 sub-object.
+    void* sub04 = base + 0x04;
+    void** vt04 = *reinterpret_cast<void***>(sub04);
+    using Fn3 = uintptr_t (*)(void* self, uintptr_t a, void* b, uintptr_t c);
+    uintptr_t r1 = reinterpret_cast<Fn3>(lift_field<void*>(vt04, 0x0C))(
+        sub04, static_cast<uintptr_t>(mem_00B40640), sub0c, 0);
+
+    // Slot 54 (offset 0xD8) on self.
+    void** vt0 = *reinterpret_cast<void***>(self);
+    using Fn0 = uintptr_t (*)(void* self);
+    uintptr_t r2 = reinterpret_cast<Fn0>(lift_field<void*>(vt0, 0xD8))(self);
+
+    // Resolve the target object from the stack argument, forwarding r2 and r1.
+    uintptr_t target = ext_00493E40(arg, r2, r1);
+    void* obj = reinterpret_cast<void*>(target);
+
+    // Slot 54 on self again; store the result at obj+0x20.
+    uintptr_t r3 = reinterpret_cast<Fn0>(lift_field<void*>(vt0, 0xD8))(self);
+    lift_field<uintptr_t>(obj, 0x20) = r3;
+
+    // Link obj to the +0x0C sub-object.
+    ext_00528B90(base + 0x0C, obj);
+
+    return obj;
+}
+} // namespace lift_00620120

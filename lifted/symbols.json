@@ -25821,6 +25821,13 @@
     "summary": "If arg2 == 0x9C, forwards arg1 to sub_00661650 with the subobject at this+0x154; otherwise forwards (arg1, arg2) to AxisDefineSensorData::vfunc_14. Always returns arg1.",
     "lifted_path": "lifted/NMData/GraphicData.cpp"
   },
+  "0x00620120": {
+    "name": "NMData::GraphicData::vfunc_34",
+    "class": "NMData::GraphicData",
+    "signature": "void* fn_00620120(void* self, void* arg)",
+    "summary": "Calls slot 3 on the sub-object at +0x04 and slot 54 on self (twice), resolves an object via ext_00493E40 from the stack argument and the slot 54 result, stores the second slot 54 result at its +0x20, links it to the +0x0C sub-object via ext_00528B90, and returns it.",
+    "lifted_path": "lifted/NMData/GraphicData.cpp"
+  },
   "0x00620240": {
     "name": "NMData::GraphicData::vfunc_17_off_C",
     "class": "NMData::GraphicData",
