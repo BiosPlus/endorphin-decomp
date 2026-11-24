@@ -892,3 +892,35 @@ const char* __stdcall sub_00704BB0(uint32_t mode) {
     }
 }
 } // namespace lift_00704BB0
+
+// [0x007027C0]
+namespace lift_007027C0 {
+// @name Unknown::forwardVcall88ToSubobjectAt80
+// @class Unknown
+// @summary Follows this->field_0x268->field_0x168 and calls its vtable slot at +0x88 with an out-slot at +0x80 and three zero args; returns the dword written there.
+// @field Unknown +0x268 void* field_0x268
+
+namespace {
+
+// Vtable slot at +0x88 is thiscall-like with 4 stack args: (out, 0, 0, 0).
+using VSlot88Fn = void (*)(void* self, uint32_t* out, uint32_t a1, uint32_t a2, uint32_t a3);
+
+} // namespace
+
+uint32_t fn_007027C0(void* self) {
+    // Offsets below are on types not yet recovered (field_0x168 on the
+    // subobject at self->field_0x268, and field_0x80 on that subobject),
+    // so they are accessed by raw offset only.
+    void* sub = lift_field<void*>(self, 0x268);
+    void* obj = lift_field<void*>(sub, 0x168);
+
+    uint32_t* out = reinterpret_cast<uint32_t*>(
+        reinterpret_cast<uint8_t*>(obj) + 0x80);
+
+    void* vtbl = lift_field<void*>(obj, 0);
+    VSlot88Fn fn = reinterpret_cast<VSlot88Fn>(lift_field<void*>(vtbl, 0x88));
+    fn(obj, out, 0, 0, 0);
+
+    return *out;
+}
+} // namespace lift_007027C0
