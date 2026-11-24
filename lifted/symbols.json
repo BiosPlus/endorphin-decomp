@@ -30494,6 +30494,62 @@
     "summary": "Calls vfunc_0 on the +0x04 sub-component, vfunc_41 on the +0x08 member and the sub-component, then releases out[1] via its vfunc_30.",
     "lifted_path": "lifted/ExprParser/SubComponentType.cpp"
   },
+  "0x0066C060": {
+    "name": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_TS(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_49",
+    "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_TS(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e",
+    "signature": "uint32_t callSlot5(uint32_t obj, uint32_t a, uint32_t b)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B7E80 (ExprParser::Method2Type::vfunc_49).",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
+  "0x0066C100": {
+    "name": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_TSA(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_49",
+    "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_TSA(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e",
+    "signature": "uint32_t callSlot5(uint32_t obj, uint32_t a, uint32_t b)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B7E80 (ExprParser::Method2Type::vfunc_49).",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
+  "0x0066C150": {
+    "name": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_SE(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_49",
+    "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_SE(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e",
+    "signature": "uint32_t callSlot5(uint32_t obj, uint32_t a, uint32_t b)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B7E80 (ExprParser::Method2Type::vfunc_49).",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
+  "0x0066C1B0": {
+    "name": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_E(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_49",
+    "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_E(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e",
+    "signature": "uint32_t callSlot5(uint32_t obj, uint32_t a, uint32_t b)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B7E80 (ExprParser::Method2Type::vfunc_49).",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
+  "0x0066C200": {
+    "name": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::orientationTwistSwingAtoB(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_49",
+    "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::orientationTwistSwingAtoB(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e",
+    "signature": "uint32_t callSlot5(uint32_t obj, uint32_t a, uint32_t b)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B7E80 (ExprParser::Method2Type::vfunc_49).",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
+  "0x0066C250": {
+    "name": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::orientationTwistSwingAnglesAtoB(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_49",
+    "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::orientationTwistSwingAnglesAtoB(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e",
+    "signature": "uint32_t callSlot5(uint32_t obj, uint32_t a, uint32_t b)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B7E80 (ExprParser::Method2Type::vfunc_49).",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
+  "0x0066C2B0": {
+    "name": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::orientationShoulderEulersAtoB(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_49",
+    "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::orientationShoulderEulersAtoB(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e",
+    "signature": "uint32_t callSlot5(uint32_t obj, uint32_t a, uint32_t b)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B7E80 (ExprParser::Method2Type::vfunc_49).",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
+  "0x0066C300": {
+    "name": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::orientationEulersAtoB(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_49",
+    "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::orientationEulersAtoB(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e",
+    "signature": "uint32_t callSlot5(uint32_t obj, uint32_t a, uint32_t b)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B7E80 (ExprParser::Method2Type::vfunc_49).",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
   "0x0066C350": {
     "name": "ExprParser::WriteMethodType\u003cNM::Vector3, float, \u0026public: void __thiscall NM::Vector3::radRotateX(float)\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cNM::Vector3, float, \u0026public: void __thiscall NM::Vector3::radRotateX(float)\u003e",

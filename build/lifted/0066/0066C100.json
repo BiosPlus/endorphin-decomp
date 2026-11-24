@@ -1,0 +1,14 @@
+{
+  "va": "0x0066C100",
+  "size": 75,
+  "orig_symbol": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_TSA(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_49",
+  "src_path": "src/templates/Method2Type.cpp",
+  "lifted_path": "lifted/templates/Method2Type.cpp",
+  "name": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_TSA(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_49",
+  "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_TSA(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e",
+  "signature": "uint32_t callSlot5(uint32_t obj, uint32_t a, uint32_t b)",
+  "summary": "Auto-lifted identical-shape clone of 0x005B7E80 (ExprParser::Method2Type::vfunc_49).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T14:35:12Z"
+}
