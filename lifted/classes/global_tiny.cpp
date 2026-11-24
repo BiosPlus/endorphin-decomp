@@ -6469,3 +6469,21 @@ void fn_004801A0(void* self) {
     lift_field<uint8_t>(result, 0x86) = 1;
 }
 } // namespace lift_004801A0
+
+// [0x004EB9E0]
+namespace lift_004EB9E0 {
+// @name GuiBaseElement::vfunc_13
+// @class GuiBaseElement
+// @summary Calls virtual slot 21 (vtable +0x54) with the argument; returns this if the call result is nonzero, else null.
+// @field GuiBaseElement +0x0 void* vptr
+
+// Thiscall-style virtual dispatch: `self` is the receiver, `arg` the single stack argument.
+using VSlot21Fn = uint8_t (*)(void* self, void* arg);
+
+void* GuiBaseElement_vfunc_13(void* self, void* arg) {
+    void** vtbl = lift_field<void**>(self, 0x0);      // vptr
+    VSlot21Fn fn = reinterpret_cast<VSlot21Fn>(lift_field<void*>(vtbl, 0x54));
+    uint8_t al = fn(self, arg);
+    return al != 0 ? self : nullptr;
+}
+} // namespace lift_004EB9E0

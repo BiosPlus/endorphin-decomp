@@ -10143,6 +10143,13 @@
     "summary": "Stores address of mem_0093F994 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_4E0000.cpp"
   },
+  "0x004EB9E0": {
+    "name": "GuiBaseElement::vfunc_13",
+    "class": "GuiBaseElement",
+    "signature": "void* GuiBaseElement_vfunc_13(void* self, void* arg)",
+    "summary": "Calls virtual slot 21 (vtable +0x54) with the argument; returns this if the call result is nonzero, else null.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x004EBE10": {
     "name": "NMData::TopLevelState::vfunc_1",
     "class": "NMData::TopLevelState",

@@ -1,0 +1,22 @@
+{
+  "va": "0x004EB9E0",
+  "size": 27,
+  "orig_symbol": "GuiBaseElement::vfunc_13",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "GuiBaseElement::vfunc_13",
+  "class": "GuiBaseElement",
+  "signature": "void* GuiBaseElement_vfunc_13(void* self, void* arg)",
+  "summary": "Calls virtual slot 21 (vtable +0x54) with the argument; returns this if the call result is nonzero, else null.",
+  "fields": [
+    {
+      "class": "GuiBaseElement",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:02:03Z"
+}
