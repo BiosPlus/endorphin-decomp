@@ -11669,6 +11669,13 @@
     "summary": "Multiplies the current OpenGL matrix by the constant transformation matrix.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005321E0": {
+    "name": "HasConstantTMPtr::vfunc_10",
+    "class": "HasConstantTMPtr",
+    "signature": "uint32_t __thiscall fn_005321E0(void* self, void* other)",
+    "summary": "Tail-forwards this-\u003efield_0x04 to vtable slot 4 of the other object; returns its result.",
+    "lifted_path": "lifted/classes/HasConstantTMPtr.cpp"
+  },
   "0x005327D0": {
     "name": "Material::vfunc_0",
     "class": "Material",

@@ -1,0 +1,22 @@
+{
+  "va": "0x005321E0",
+  "size": 20,
+  "orig_symbol": "HasConstantTMPtr::vfunc_10",
+  "src_path": "src/classes/HasConstantTMPtr.cpp",
+  "lifted_path": "lifted/classes/HasConstantTMPtr.cpp",
+  "name": "HasConstantTMPtr::vfunc_10",
+  "class": "HasConstantTMPtr",
+  "signature": "uint32_t __thiscall fn_005321E0(void* self, void* other)",
+  "summary": "Tail-forwards this-\u003efield_0x04 to vtable slot 4 of the other object; returns its result.",
+  "fields": [
+    {
+      "class": "HasConstantTMPtr",
+      "offset": "+0x4",
+      "type": "const float*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:06:46Z"
+}
