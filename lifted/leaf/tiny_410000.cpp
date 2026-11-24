@@ -196,3 +196,18 @@ DWORD fn_0041603E(void* self) {
 }
 } // namespace lift_00404670
 } // namespace lift_0041603E
+
+// [0x00415FF6]
+namespace lift_00415FF6 {
+// Imported from USER32.dll (resolved through the IAT slot at mem_00925680).
+extern DWORD ext_GetSysColor(int nIndex);
+
+// @name GetSysColorBtnFace_TailThunk
+// @summary Returns GetSysColor(COLOR_BTNFACE); the incoming stack argument is overwritten with 0xF before tail-jumping to USER32!GetSysColor.
+// (No class fields are accessed.)
+DWORD fn_00415FF6(void* self, int /*ignored stack arg, overwritten with 0xF*/) {
+    (void)self;
+    // pop esi; pop ebx; mov [esp+4], 0Fh; jmp GetSysColor  -> tail call with COLOR_BTNFACE (15)
+    return ext_GetSysColor(15);
+}
+} // namespace lift_00415FF6
