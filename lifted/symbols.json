@@ -30233,6 +30233,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00621B30": {
+    "name": "ResetFieldsEx4_1C",
+    "signature": "void fn_00621B30(void* self)",
+    "summary": "Zeroes the 32-bit fields at +0x04, +0x08, +0x0C, +0x14, +0x18 and +0x1C of self (thiscall; the MSVC SEH frame setup/teardown is dropped in the portable form).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00622290": {
     "name": "sub_00622290",
     "signature": "void* __thiscall sub_00622290(void* self)",

@@ -622,3 +622,23 @@ uint32_t __thiscall sub_00624F10(void* self, const uint32_t* key) {
     return result;
 }
 } // namespace lift_00624F10
+
+// [0x00621B30] sub_00621B30 (59 bytes)
+namespace lift_00621B30 {
+// @name ResetFieldsEx4_1C
+// @summary Zeroes the 32-bit fields at +0x04, +0x08, +0x0C, +0x14, +0x18 and +0x1C of self (thiscall; the MSVC SEH frame setup/teardown is dropped in the portable form).
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+void fn_00621B30(void* self) {
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x14) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1C) = 0;
+}
+} // namespace lift_00621B30
