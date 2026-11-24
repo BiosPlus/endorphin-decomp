@@ -4,10 +4,18 @@
   "orig_symbol": "sub_007D4AE0",
   "src_path": "src/leaf/tiny_7D0000.cpp",
   "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
-  "name": "setFlag30",
-  "signature": "void sub_007D4AE0(void* self)",
-  "summary": "Sets the 32-bit word at offset 0x30 of the object pointed to by the first stack argument to 1.",
+  "name": "setFlag30_007D4AE0",
+  "signature": "void fn_007D4AE0(void* self)",
+  "summary": "Stores the constant 1 as a 32-bit value at offset 0x30 of the object pointed to by the first argument.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T01:17:02Z"
+  "lifted_at": "2026-11-24T01:17:11Z"
 }

@@ -195,17 +195,6 @@ extern uint32_t __cdecl sub_007D8740(uintptr_t obj) {
 }
 } // namespace lift_007D8740
 
-// [0x007D4AE0]
-namespace lift_007D4AE0 {
-// @name setFlag30
-// @summary Sets the 32-bit word at offset 0x30 of the object pointed to by the first stack argument to 1.
-void sub_007D4AE0(void* self) {
-    // mov eax, [esp+4]; mov dword ptr [eax+0x30], 1; ret
-    auto* p = static_cast<uint32_t*>(self);
-    *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(p) + 0x30) = 1u;
-}
-} // namespace lift_007D4AE0
-
 // [0x007D5BA0] sub_007D5BA0 (12 bytes)
 namespace lift_007D5BA0 {
 // @name setField04_007D5BA0
@@ -216,3 +205,14 @@ void fn_007D5BA0(void* self, uint32_t value) {
     *reinterpret_cast<uint32_t*>(base + 0x04) = value;
 }
 } // namespace lift_007D5BA0
+
+// [0x007D4AE0] sub_007D4AE0 (12 bytes)
+namespace lift_007D4AE0 {
+// @name setFlag30_007D4AE0
+// @summary Stores the constant 1 as a 32-bit value at offset 0x30 of the object pointed to by the first argument.
+// @field <unknown> +0x30 uint32_t field_0x30
+void fn_007D4AE0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x30) = 1u;
+}
+} // namespace lift_007D4AE0
