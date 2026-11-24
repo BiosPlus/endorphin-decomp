@@ -319,3 +319,24 @@ bool fn_007DD130(void* self, int32_t index) {
 
 } // namespace lift_007DD130
 } // namespace lift_007DD130
+
+// [0x007D5B30] sub_007D5B30 (45 bytes)
+namespace lift_007D5B30 {
+// @name dispatchThroughKindTable
+// @summary Reads a kind byte from arg1's object, indexes a 40-byte-stride dispatch table, and forwards (arg1, arg2, arg3) to the selected handler.
+// @field Unknown +0x00 void* field_0x00 (arg1 -> object pointer)
+// @field Unknown +0x00 uint32_t field_0x00 (object kind word; low byte used as index)
+// @field Unknown +0x0C void* field_0x0C (sub-object pointer)
+// @field Unknown +0x20 void* field_0x20 (dispatch table base, via sub-object)
+// @field Unknown +0x0C void* handler (handler pointer at table[kind*40 + 0x0C])
+uint32_t fn_007D5B30(void* arg1, void* arg2, void* arg3) {
+    using Handler = uint32_t (__cdecl*)(void*, void*, void*);
+
+    void* obj = lift_field<void*>(arg1, 0x00);
+    uint32_t kind = lift_field<uint32_t>(obj, 0x00) & 0xFFu;
+    void* sub = lift_field<void*>(obj, 0x0C);
+    void* table = lift_field<void*>(sub, 0x20);
+    Handler handler = lift_field<Handler>(table, static_cast<ptrdiff_t>(kind) * 40 + 0x0C);
+    return handler(arg1, arg2, arg3);
+}
+} // namespace lift_007D5B30

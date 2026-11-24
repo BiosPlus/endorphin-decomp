@@ -47443,6 +47443,12 @@
     "summary": "Dereference a 32-bit pointer and return its uint32_t value.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D5B30": {
+    "name": "dispatchThroughKindTable",
+    "signature": "uint32_t fn_007D5B30(void* arg1, void* arg2, void* arg3)",
+    "summary": "Reads a kind byte from arg1's object, indexes a 40-byte-stride dispatch table, and forwards (arg1, arg2, arg3) to the selected handler.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D5BA0": {
     "name": "setField04_007D5BA0",
     "signature": "void fn_007D5BA0(void* self, uint32_t value)",

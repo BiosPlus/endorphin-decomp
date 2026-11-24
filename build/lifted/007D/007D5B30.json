@@ -1,0 +1,45 @@
+{
+  "va": "0x007D5B30",
+  "size": 45,
+  "orig_symbol": "sub_007D5B30",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "dispatchThroughKindTable",
+  "signature": "uint32_t fn_007D5B30(void* arg1, void* arg2, void* arg3)",
+  "summary": "Reads a kind byte from arg1's object, indexes a 40-byte-stride dispatch table, and forwards (arg1, arg2, arg3) to the selected handler.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (arg1 -\u003e object",
+      "name": "pointer)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (object kind word; low byte used as",
+      "name": "index)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void* field_0x0C (sub-object",
+      "name": "pointer)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "void* field_0x20 (dispatch table base, via",
+      "name": "sub-object)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void* handler (handler pointer at table[kind*40 +",
+      "name": "0x0C])"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:08:32Z"
+}
