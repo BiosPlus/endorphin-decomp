@@ -10966,6 +10966,13 @@
     "summary": "Stores address of mem_00953454 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_520000.cpp"
   },
+  "0x00528B90": {
+    "name": "Unknown::setPeerWithBackLink",
+    "class": "Unknown",
+    "signature": "void fn_00528B90(void* self, void* peer)",
+    "summary": "Stores the argument at this+0x04; if it is non-null, writes this into argument+0x08.",
+    "lifted_path": "lifted/leaf/tiny_520000.cpp"
+  },
   "0x00528C70": {
     "name": "setFlagOnPointedObject",
     "signature": "void fn_00528C70(void* self)",

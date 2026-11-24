@@ -1,0 +1,22 @@
+{
+  "va": "0x00528B90",
+  "size": 17,
+  "orig_symbol": "sub_00528B90",
+  "src_path": "src/leaf/tiny_520000.cpp",
+  "lifted_path": "lifted/leaf/tiny_520000.cpp",
+  "name": "Unknown::setPeerWithBackLink",
+  "class": "Unknown",
+  "signature": "void fn_00528B90(void* self, void* peer)",
+  "summary": "Stores the argument at this+0x04; if it is non-null, writes this into argument+0x08.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "peer"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:52:15Z"
+}

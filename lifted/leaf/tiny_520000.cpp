@@ -40,3 +40,20 @@ void fn_00528C70(void* self) {
     }
 }
 } // namespace lift_00528C70
+
+// [0x00528B90] sub_00528B90 (17 bytes)
+namespace lift_00528B90 {
+// Original convention: thiscall with one stack argument, callee pops 4 (ret 4).
+// @name Unknown::setPeerWithBackLink
+// @class Unknown
+// @summary Stores the argument at this+0x04; if it is non-null, writes this into argument+0x08.
+// @field Unknown +0x04 void* peer
+void fn_00528B90(void* self, void* peer) {
+    auto* obj = static_cast<uint8_t*>(self);
+    *reinterpret_cast<void**>(obj + 0x04) = peer;
+    if (peer != nullptr) {
+        auto* other = static_cast<uint8_t*>(peer);
+        *reinterpret_cast<void**>(other + 0x08) = self;
+    }
+}
+} // namespace lift_00528B90
