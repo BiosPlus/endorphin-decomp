@@ -8,6 +8,6 @@
 // Recovered field layout for ReadMethodType:
 namespace lifted_layout {
 struct ReadMethodType_Fields {
-    // +0x4   void*                    inner  (evidence: 0x004886F0, 0x004A2530, 0x004A25E0, 0x004A2AD0, 0x00633240)
+    // +0x4   void*                    inner  (evidence: 0x004886F0, 0x004A2530, 0x004A25E0, 0x004A2AD0, 0x004CB250, 0x00633240)
 };
 } // namespace lifted_layout

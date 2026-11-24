@@ -8,6 +8,6 @@
 // Recovered field layout for ValueObject:
 namespace lifted_layout {
 struct ValueObject_Fields {
-    // +0x4   void*                    valueType  (evidence: 0x004886F0, 0x004A2AD0, 0x004F69A0)
+    // +0x4   void*                    valueType  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x004F69A0)
 };
 } // namespace lifted_layout

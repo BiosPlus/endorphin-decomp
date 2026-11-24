@@ -11701,10 +11701,10 @@
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x004CB250": {
-    "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData\u003e::vfunc_40 (lazy static accessor)",
-    "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setAngularStrengthFromFSM(class NM::Vector3 const \u0026), 0}\u003e",
-    "signature": "void fn_004CB250(void* self, void* out)",
-    "summary": "Lazily constructs a function-local static object at 0x00AE44C0 (once, guarded by a bit in 0x00AE44C4) and stores its address into the out ValuePtr slot at +0x04.",
+    "name": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)",
+    "class": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, float, \u0026public: void __thiscall DoubleWithProperties::setValue(float)\u003e",
+    "signature": "void fn_00695620(void* dst, void* src)",
+    "summary": "Reads a float via the source's inner getter and stores it as a double into the target slot; throws if the target slot is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x004CB3E0": {

@@ -8,6 +8,6 @@
 // Recovered field layout for OutType:
 namespace lifted_layout {
 struct OutType_Fields {
-    // +0x4   uint32_t                 typePtr  (evidence: 0x004B1D80)
+    // +0x4   uint32_t                 typePtr  (evidence: 0x004B1D80, 0x004CB250)
 };
 } // namespace lifted_layout

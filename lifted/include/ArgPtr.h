@@ -8,6 +8,6 @@
 // Recovered field layout for ArgPtr:
 namespace lifted_layout {
 struct ArgPtr_Fields {
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x004B7F40)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x004B7F40, 0x004CB250)
 };
 } // namespace lifted_layout

@@ -8,6 +8,6 @@
 // Recovered field layout for MatrixWithProperties*:
 namespace lifted_layout {
 struct MatrixWithPropertiesptr_Fields {
-    // +0x0   void*                    target  (evidence: 0x004886F0, 0x004A2AD0, 0x004F69A0)
+    // +0x0   void*                    target  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x004F69A0)
 };
 } // namespace lifted_layout
