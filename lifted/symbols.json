@@ -35900,6 +35900,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00503CD0 (fn_00503CD0).",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x006799F0": {
+    "name": "PerformanceTimer::PerformanceTimer",
+    "class": "PerformanceTimer",
+    "signature": "void* __thiscall fn_006799F0(void* self)",
+    "summary": "Allocates a 24-byte timer state block and initializes its performance frequency and counter.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00679A30": {
     "name": "queryPerformanceCounter",
     "signature": "uint32_t __thiscall sub_00679A30(uint32_t* self)",
