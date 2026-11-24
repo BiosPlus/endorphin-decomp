@@ -363,3 +363,26 @@ extern void __thiscall fn_006EFCB0(void* self, uint32_t arg1, void* arg2) {
     ext_00711D40(sub, arg1, arg2, kConstArg3, kConstArg4);
 }
 } // namespace lift_006EFCB0
+
+// [0x006EFF00] sub_006EFF00 (34 bytes)
+namespace lift_006EFF00 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+
+// Data addresses pushed as immediates by the caller.
+extern char mem_006C8BD0[];
+extern char mem_006C8C90[];
+
+// @name Unknown::forwardArgsToSubobject
+// @class Unknown
+// @summary Adjusts this by +0x1ED0 and forwards the two stack arguments plus two data-address constants to storeArgsAndNotifyChild.
+// @field Unknown +0x1ED0 void* field_0x1ED0
+void fn_006EFF00(void* self, uint32_t arg1, void* arg2) {
+    void* sub = static_cast<char*>(self) + 0x1ED0;
+    ext_00711D40(sub,
+                 arg1,
+                 arg2,
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_006C8C90)),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_006C8BD0)));
+}
+} // namespace lift_006EFF00

@@ -1,0 +1,22 @@
+{
+  "va": "0x006EFF00",
+  "size": 34,
+  "orig_symbol": "sub_006EFF00",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::forwardArgsToSubobject",
+  "class": "Unknown",
+  "signature": "void fn_006EFF00(void* self, uint32_t arg1, void* arg2)",
+  "summary": "Adjusts this by +0x1ED0 and forwards the two stack arguments plus two data-address constants to storeArgsAndNotifyChild.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1ED0",
+      "type": "void*",
+      "name": "field_0x1ED0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:13:53Z"
+}
