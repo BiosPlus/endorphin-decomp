@@ -1,0 +1,14 @@
+{
+  "va": "0x004AB2C0",
+  "size": 118,
+  "orig_symbol": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}\u003e::vfunc_27",
+  "src_path": "src/templates/DynamicEnumType.cpp",
+  "lifted_path": "lifted/templates/DynamicEnumType.cpp",
+  "name": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData\u003e::getCompatibleBehaviourDescription",
+  "class": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData\u003e",
+  "signature": "void* __fastcall fn_004AB2C0(void* /*self*/, void* /*edx*/, void* sret, void** objPtr, int32_t index)",
+  "summary": "Returns the compatible behaviour description string for the given index via BehaviourData.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:45:53Z"
+}
