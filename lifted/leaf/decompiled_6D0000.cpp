@@ -700,3 +700,26 @@ void __thiscall sub_006D2250(void* self) {
     *reinterpret_cast<uint32_t*>(base + 0x04) = 0;
 }
 } // namespace lift_006D2250
+
+// [0x006D2130]
+namespace lift_006D2130 {
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+// @name sub_006D2130
+// @summary Initializes a 20-byte struct with zeroed fields, a clamped minimum-1 count at +0x08, and arg2 at +0x0C, returning this.
+// @field struct_006D2130 +0x00 uint32_t field_0x00
+// @field struct_006D2130 +0x04 uint32_t field_0x04
+// @field struct_006D2130 +0x08 int32_t field_0x08
+// @field struct_006D2130 +0x0C uint32_t field_0x0C
+// @field struct_006D2130 +0x10 uint32_t field_0x10
+
+uint32_t __thiscall sub_006D2130(uint32_t self, int32_t arg1, uint32_t arg2) {
+    mem_write32(self + 0x10, 0);
+    mem_write32(self + 0x00, 0);
+    mem_write32(self + 0x04, 0);
+    mem_write32(self + 0x0C, arg2);
+    int32_t clamped = (arg1 > 1) ? arg1 : 1;
+    mem_write32(self + 0x08, static_cast<uint32_t>(clamped));
+    return self;
+}
+} // namespace lift_006D2130
