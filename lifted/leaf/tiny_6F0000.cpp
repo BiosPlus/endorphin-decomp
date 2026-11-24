@@ -2871,3 +2871,23 @@ extern BYTE __thiscall fn_006FAF10(void* self, DWORD a1, DWORD a2) {
     return fn(sub, a1, a2);
 }
 } // namespace lift_006FAF10
+
+// [0x006F22C0] sub_006F22C0 (31 bytes)
+namespace lift_006F22C0 {
+// @name Unknown::ForwardToSubobjectVirtual0xB8_6688
+// @class Unknown
+// @summary Forwards two stack arguments (in original order) to virtual slot 0xB8 of the embedded sub-object at +0x6688 and returns its result; callee cleans the 8 bytes of arguments (ret 8).
+// @field Unknown +0x6688 void* subobjVtbl
+
+// Original: thiscall-style, two stack args, callee cleans up (ret 8).
+DWORD fn_006F22C0(void* self, DWORD arg1, DWORD arg2) {
+    // Embedded sub-object at self + 0x6688; its first dword is its vtable pointer.
+    uint8_t* sub = reinterpret_cast<uint8_t*>(self) + 0x6688;
+    uintptr_t vtbl = static_cast<uintptr_t>(lift_field<DWORD>(sub, 0));
+
+    // Slot 0xB8 is a byte offset into the vtable (32-bit layout).
+    using VirtualFn = DWORD (*)(void* thisPtr, DWORD a, DWORD b);
+    VirtualFn target = reinterpret_cast<VirtualFn>(lift_field<DWORD>(reinterpret_cast<void*>(vtbl), 0xB8));
+    return target(sub, arg1, arg2);
+}
+} // namespace lift_006F22C0
