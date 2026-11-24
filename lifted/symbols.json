@@ -45991,6 +45991,12 @@
     "summary": "Calls ext_007D5A00(arg0, arg1), then calls the function pointer at mem_00AB28C8 with (arg0 + 0x6C, arg1).",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007D5DA0": {
+    "name": "x87_setPrecisionControl",
+    "signature": "void fn_007D5DA0(uint32_t mode)",
+    "summary": "Replaces x87 precision-control bits (CW bits 8-9) with the low 2 bits of the",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D6260": {
     "name": "freeBuffer",
     "signature": "void sub_007D6260(uint32_t arg0)",

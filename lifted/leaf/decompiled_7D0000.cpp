@@ -150,3 +150,24 @@ void sub_007D48C0(uint32_t eax) {
     mem_write32(eax + 0x8, ecx);
 }
 } // namespace lift_007D48C0
+
+// [0x007D5DA0] sub_007D5DA0 (39 bytes)
+namespace lift_007D5DA0 {
+// x87 control-word access (fnstcw / fnclex + fldcw). No external code is
+// called; these are hardware-state hooks the portable build provides.
+extern uint16_t lift_x87_read_cw(void);
+extern void lift_x87_write_cw(uint16_t cw);
+
+// @name x87_setPrecisionControl
+// @summary Replaces x87 precision-control bits (CW bits 8-9) with the low 2 bits of the
+//          stack argument, keeping exception masks and clearing the rest of the control word, then reloads it.
+void fn_007D5DA0(uint32_t mode) {
+    uint32_t slot = 0;                                  // mov dword ptr [esp], 0
+    slot = lift_x87_read_cw();                          // fnstcw word ptr [esp]
+    uint32_t eax = (mode & 0x3u) << 8;                  // and eax,3 / shl eax,8
+    uint32_t edx = slot & 0x7Fu;                        // mov edx,[esp] / and edx,7Fh
+    eax |= edx;                                         // or eax,edx
+    slot = eax;                                         // mov [esp],eax
+    lift_x87_write_cw(static_cast<uint16_t>(slot));     // fnclex / fldcw word ptr [esp]
+}
+} // namespace lift_007D5DA0
