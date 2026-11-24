@@ -1,0 +1,13 @@
+{
+  "va": "0x00575280",
+  "size": 56,
+  "orig_symbol": "sub_00575280",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "sub_00575280",
+  "signature": "uint32_t __cdecl fn_00575280(uint32_t first, uint32_t last, uint32_t dst)",
+  "summary": "Auto-lifted identical-shape clone of 0x00520B90 (initArrayRangeReverse_00520B90).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T15:16:25Z"
+}

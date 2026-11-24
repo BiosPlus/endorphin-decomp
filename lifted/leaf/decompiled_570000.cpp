@@ -401,3 +401,24 @@ __stdcall std::uint8_t* fn_0057E7D0(std::uint8_t* base, std::uint32_t index, std
 }
 } // namespace lift_0054F2C0
 } // namespace lift_0057E7D0
+
+// [0x00575280] sub_00575280 (56 bytes)
+namespace lift_00575280 {
+// @name sub_00575280
+// @summary Auto-lifted identical-shape clone of 0x00520B90 (initArrayRangeReverse_00520B90).
+namespace lift_00520B90 {
+extern void __thiscall ext_00575170(uint32_t self, uint32_t arg);
+
+// @name initArrayRangeReverse_00520B90
+// @summary Walks [first, last) backward in 0x168-byte steps, calling ext_00520AE0(dst slot, element) for each; returns the final dst cursor (dst itself if the range is empty)
+uint32_t __cdecl fn_00575280(uint32_t first, uint32_t last, uint32_t dst) {
+    uint32_t cursor = dst;
+    while (first != last) {
+        last -= 0xA0;
+        cursor -= 0xA0;
+        ext_00575170(cursor, last);
+    }
+    return cursor;
+}
+} // namespace lift_00520B90
+} // namespace lift_00575280

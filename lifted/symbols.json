@@ -20013,6 +20013,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005731A0 (OBJIO::vfunc_3).",
     "lifted_path": "lifted/classes/VIO.cpp"
   },
+  "0x00575280": {
+    "name": "sub_00575280",
+    "signature": "uint32_t __cdecl fn_00575280(uint32_t first, uint32_t last, uint32_t dst)",
+    "summary": "Auto-lifted identical-shape clone of 0x00520B90 (initArrayRangeReverse_00520B90).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00575C60": {
     "name": "VSTParser::vfunc_0",
     "class": "VSTParser",
