@@ -136,3 +136,17 @@ void fn_0049F2E0(void* self, int edx_unused, int a1, int a2) {
 }
 } // namespace lift_005694F0
 } // namespace lift_0049F2E0
+
+// [0x00494FF0]
+namespace lift_00494FF0 {
+// @name initWithOneAndArg
+// @summary Calls ext_00661680 on arg1 with (1, arg2) and returns arg1.
+
+
+extern uint32_t __thiscall ext_00661680(uint32_t self, uint32_t a1, uint32_t a2);
+
+uint32_t __stdcall sub_00494FF0(uint32_t arg1, uint32_t arg2) {
+    ext_00661680(arg1, 1, arg2);
+    return arg1;
+}
+} // namespace lift_00494FF0
