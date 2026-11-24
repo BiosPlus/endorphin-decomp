@@ -608,3 +608,22 @@ uint32_t sub_007D4760(IndexedPointerArray* self) {
     return 0;
 }
 } // namespace lift_007D4760
+
+// [0x007D4780] sub_007D4780 (28 bytes)
+namespace lift_007D4780 {
+// @name decrementAndStoreSlot
+// @class Unknown
+// @summary If the element count at +0x0C is positive, decrement it and store the value into the slot at the new count inside the array whose base pointer is at +0x08.
+// @field Unknown +0x08 DWORD* field_0x08
+// @field Unknown +0x0C INT field_0x0C
+void fn_007D4780(void* self, DWORD value) {
+    unsigned char* base = static_cast<unsigned char*>(self);
+    INT& count = *reinterpret_cast<INT*>(base + 0x0C);
+    if (count > 0) {
+        --count;
+        DWORD arrayAddr = *reinterpret_cast<DWORD*>(base + 0x08);
+        DWORD* array = reinterpret_cast<DWORD*>(static_cast<uintptr_t>(arrayAddr));
+        array[count] = value;
+    }
+}
+} // namespace lift_007D4780

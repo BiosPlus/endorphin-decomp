@@ -1,0 +1,28 @@
+{
+  "va": "0x007D4780",
+  "size": 28,
+  "orig_symbol": "sub_007D4780",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "decrementAndStoreSlot",
+  "class": "Unknown",
+  "signature": "void fn_007D4780(void* self, DWORD value)",
+  "summary": "If the element count at +0x0C is positive, decrement it and store the value into the slot at the new count inside the array whose base pointer is at +0x08.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "INT",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:10:19Z"
+}
