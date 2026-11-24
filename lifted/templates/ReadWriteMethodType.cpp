@@ -8839,3 +8839,26 @@ void fn_004A2AD0(void* self) {
     *slot = static_cast<int>(reinterpret_cast<intptr_t>(&mem_00ADE0DC));
 }
 } // namespace lift_004A2AD0
+
+// [0x004A3820] ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setFontSize(int), 0}>::vfunc_40 (122 bytes)
+namespace lift_004A3820 {
+extern void ext_0067A670();
+extern int mem_00ADE100;
+extern int mem_00ADE0FC;
+
+// @name ReadWriteMethodType<FSMEditView,int,getFontSize,int,setFontSize>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setFontSize(int), 0}>
+// @summary Lazily initializes the function-local static type descriptor for the FSMEditView font-size accessor and stores its address into the caller-supplied slot at +4.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+void fn_004A3820(void* self) {
+    // One-time initialization guard: bit 0 of mem_00ADE100 marks the descriptor as built.
+    if ((mem_00ADE100 & 1) == 0) {
+        mem_00ADE100 |= 1;
+        ext_0067A670();
+        mem_00ADE0FC = 0x009410A4;  // vtable pointer for the descriptor
+    }
+    // Publish the descriptor address into the object's +4 slot.
+    lift_field<uint32_t>(self, 4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00ADE0FC));
+}
+} // namespace lift_004A3820
