@@ -33086,6 +33086,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006B1C20 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B1E60": {
+    "name": "sub_006B1E60",
+    "signature": "uint32_t __thiscall sub_006B1E60(uint32_t self, uint32_t arg0)",
+    "summary": "Derived constructor that calls base sub_006B0C40 and sets vtable to 0x009917A0.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B1E80": {
     "name": "sub_006B1E80",
     "signature": "extern \"C\" void __fastcall fn_006B1E80(void* self)",
@@ -33098,6 +33104,12 @@
     "signature": "extern \"C\" void* __fastcall fn_006B1E90(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006B1E80 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x006B20A0": {
+    "name": "sub_006B20A0",
+    "signature": "uint32_t __thiscall sub_006B20A0(uint32_t self, uint32_t arg0)",
+    "summary": "Derived constructor that calls base sub_006B0C40 and sets vtable to 0x009917BC.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
   "0x006B20C0": {
     "name": "sub_006B20C0",
