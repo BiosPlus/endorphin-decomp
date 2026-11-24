@@ -514,3 +514,21 @@ extern void __cdecl fn_007CCCD0(void* self, float v) {
     lift_field<float>(self, 0x2c) = out;
 }
 } // namespace lift_007CCCD0
+
+// [0x007C9A60] sub_007C9A60 (50 bytes)
+namespace lift_007C9A60 {
+// @name copyVec4FromSelectedBlock
+// @summary Copies a 4-float block from self+0x160 (flag==0) or self+0x174 (flag!=0) into out.
+// @field self +0x160 float field_0x160
+// @field self +0x164 float field_0x164
+// @field self +0x168 float field_0x168
+// @field self +0x16C float field_0x16C
+// @field self +0x174 float field_0x174
+// @field self +0x178 float field_0x178
+// @field self +0x17C float field_0x17C
+// @field self +0x180 float field_0x180
+void fn_007C9A60(uint8_t* self, DWORD flag, float* out) {
+    const uint8_t* src = self + (flag == 0 ? 0x160 : 0x174);
+    std::memcpy(out, src, 4 * sizeof(float));
+}
+} // namespace lift_007C9A60

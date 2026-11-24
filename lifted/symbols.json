@@ -54043,6 +54043,12 @@
     "summary": "Calls ext_007C98C0 on the argument, then calls the indirect target in mem_00AB28C8 with (this+0x40+0x15C, this, this).",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C9A60": {
+    "name": "copyVec4FromSelectedBlock",
+    "signature": "void fn_007C9A60(uint8_t* self, DWORD flag, float* out)",
+    "summary": "Copies a 4-float block from self+0x160 (flag==0) or self+0x174 (flag!=0) into out.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C9C50": {
     "name": "addOffset0x160",
     "signature": "uint32_t sub_007C9C50(uint32_t arg0)",
