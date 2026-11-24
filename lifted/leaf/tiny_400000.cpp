@@ -291,3 +291,26 @@ uint32_t fn_00401960(void* self, uint32_t arg) {
     return 0;
 }
 } // namespace lift_00401960
+
+// [0x00401950] sub_00401950 (14 bytes)
+namespace lift_00401950 {
+// @name ForwardToCallbackOrZero
+// @class Unknown
+// @summary Tail-forwards the single stack argument to the function pointer at this+0x08; returns 0 if that pointer is null.
+// @field Unknown +0x08 void* field_0x08
+
+// Original: mov eax,[ecx+8]; test eax,eax; je +2; jmp eax; xor al,al; ret 4
+// The original tail-jumps with the caller's stack frame intact; this portable
+// form performs an ordinary call and returns its result, which is equivalent
+// in observable behavior for a normal (non-stack-manipulating) callee.
+using Fn_00401950_Callback = DWORD(__thiscall*)(void* self, DWORD arg);
+
+extern DWORD __thiscall fn_00401950(void* self, DWORD arg) {
+    const auto target = *reinterpret_cast<Fn_00401950_Callback*>(
+        reinterpret_cast<unsigned char*>(self) + 0x08);
+    if (target == nullptr) {
+        return 0;
+    }
+    return target(self, arg);
+}
+} // namespace lift_00401950

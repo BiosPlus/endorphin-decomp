@@ -60,6 +60,13 @@
     "summary": "If the pointer at this+0x04 is non-null, forward the call (this, arg) to it and return its result; otherwise return 0. Thiscall with one 4-byte stack arg (callee pops, ret 4).",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x00401950": {
+    "name": "ForwardToCallbackOrZero",
+    "class": "Unknown",
+    "signature": "extern \"C\" DWORD __thiscall fn_00401950(void* self, DWORD arg)",
+    "summary": "Tail-forwards the single stack argument to the function pointer at this+0x08; returns 0 if that pointer is null.",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x00401960": {
     "name": "ForwardToHandlerOrZero",
     "signature": "uint32_t fn_00401960(void* self, uint32_t arg)",
