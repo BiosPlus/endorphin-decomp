@@ -1,0 +1,13 @@
+{
+  "va": "0x006DBEF0",
+  "size": 57,
+  "orig_symbol": "sub_006DBEF0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "initGlobalVec3ToHuge",
+  "signature": "void sub_006DBEF0()",
+  "summary": "Initializes three consecutive 64-bit values (double[3]) at 0x00B5DAA0..0x00B5DAB4 to MSVCR80!_HUGE",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:21:11Z"
+}

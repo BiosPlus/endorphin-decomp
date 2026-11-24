@@ -795,3 +795,26 @@ void sub_006D7570() {
     mem_00B5D79C = huge_ptr[1];
 }
 } // namespace lift_006D7570
+
+// [0x006DBEF0]
+namespace lift_006DBEF0 {
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5DAA0;
+extern uint32_t mem_00B5DAA4;
+extern uint32_t mem_00B5DAA8;
+extern uint32_t mem_00B5DAAC;
+extern uint32_t mem_00B5DAB0;
+extern uint32_t mem_00B5DAB4;
+
+// @name initGlobalVec3ToHuge
+// @summary Initializes three consecutive 64-bit values (double[3]) at 0x00B5DAA0..0x00B5DAB4 to MSVCR80!_HUGE
+void sub_006DBEF0() {
+    const uint32_t* huge_ptr = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5DAA0 = huge_ptr[0];
+    mem_00B5DAA4 = huge_ptr[1];
+    mem_00B5DAA8 = huge_ptr[0];
+    mem_00B5DAAC = huge_ptr[1];
+    mem_00B5DAB0 = huge_ptr[0];
+    mem_00B5DAB4 = huge_ptr[1];
+}
+} // namespace lift_006DBEF0
