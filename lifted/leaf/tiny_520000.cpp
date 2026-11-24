@@ -27,3 +27,16 @@ uint16_t bswap16(uint16_t val) {
     return static_cast<uint16_t>((val >> 8) | (val << 8));
 }
 } // namespace lift_00528CC0
+
+// [0x00528C70] sub_00528C70 (12 bytes)
+namespace lift_00528C70 {
+// @name setFlagOnPointedObject
+// @summary If the pointer at self+0x04 is non-null, sets the byte at (that pointer)+0x04 to 1.
+// @field self +0x04 void* field_0x04 (pointer; the pointee's byte at +0x04 is set to 1 when non-null)
+void fn_00528C70(void* self) {
+    void* target = lift_field<void*>(self, 0x04);
+    if (target != nullptr) {
+        lift_field<uint8_t>(target, 0x04) = 1;
+    }
+}
+} // namespace lift_00528C70

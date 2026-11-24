@@ -1,0 +1,21 @@
+{
+  "va": "0x00528C70",
+  "size": 12,
+  "orig_symbol": "sub_00528C70",
+  "src_path": "src/leaf/tiny_520000.cpp",
+  "lifted_path": "lifted/leaf/tiny_520000.cpp",
+  "name": "setFlagOnPointedObject",
+  "signature": "void fn_00528C70(void* self)",
+  "summary": "If the pointer at self+0x04 is non-null, sets the byte at (that pointer)+0x04 to 1.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (pointer; the pointee's byte at +0x04 is set to 1 when",
+      "name": "non-null)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:15:51Z"
+}

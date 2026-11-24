@@ -9,5 +9,6 @@
 namespace lifted_layout {
 struct self_Fields {
     // +0x0   void* innerObject (pointer loaded from *self; passed as the new this)  (evidence: 0x00493E50, 0x00493E60)
+    // +0x4   void* field_0x04 (pointer; the pointee's byte at +0x04 is set to 1 when non-null)  (evidence: 0x00528C70)
 };
 } // namespace lifted_layout

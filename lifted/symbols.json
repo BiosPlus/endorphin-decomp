@@ -10062,6 +10062,12 @@
     "summary": "Stores address of mem_00953454 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_520000.cpp"
   },
+  "0x00528C70": {
+    "name": "setFlagOnPointedObject",
+    "signature": "void fn_00528C70(void* self)",
+    "summary": "If the pointer at self+0x04 is non-null, sets the byte at (that pointer)+0x04 to 1.",
+    "lifted_path": "lifted/leaf/tiny_520000.cpp"
+  },
   "0x00528C80": {
     "name": "RenderObjectOwner::vfunc_1",
     "class": "RenderObjectOwner",
