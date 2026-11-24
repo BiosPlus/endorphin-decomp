@@ -492,6 +492,7 @@ struct Unknown_Fields {
     // +0x104 void**                   childArray  (evidence: 0x006C1BB0, 0x006C59C0) // CONFLICT: multiple definitions at +0x104
     // +0x104 DWORD                    field_0x104  (evidence: 0x00455F10) // CONFLICT: multiple definitions at +0x104
     // +0x104 uint32_t                 field_0x104  (evidence: 0x00431330, 0x00433260, 0x00434900, 0x0071C700) // CONFLICT: multiple definitions at +0x104
+    // +0x104 void*                    field_0x104  (evidence: 0x004342A0) // CONFLICT: multiple definitions at +0x104
     // +0x108 void* field_0x108 (argument passed to ext_0043C8F0)  (evidence: 0x00430DA0, 0x004332B0, 0x004332D0, 0x00648940) // CONFLICT: multiple definitions at +0x108
     // +0x108 uint32_t                 field_0x108  (evidence: 0x0071C700) // CONFLICT: multiple definitions at +0x108
     // +0x10C uint32_t                 field_0x10C  (evidence: 0x0071C700)

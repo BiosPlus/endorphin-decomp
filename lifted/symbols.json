@@ -2402,6 +2402,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004342A0": {
+    "name": "Unknown::dispatchWithOwnerQuery",
+    "class": "Unknown",
+    "signature": "void fn_004342A0(void* self, void* obj)",
+    "summary": "Calls vtable slot 0 of the argument object with flag 1, queries owner+0x104 via vtable slot 0x57, then passes that result to the argument object's vtable slot 1.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00434380": {
     "name": "Unknown::notifyObjectWithQueryResult",
     "class": "Unknown",

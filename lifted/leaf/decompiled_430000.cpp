@@ -1534,3 +1534,25 @@ void __thiscall fn_00434380(void* self, void* obj) {
     reinterpret_cast<VoidThisFn>(vtableSlot(obj, 0x04))(obj, result);
 }
 } // namespace lift_00434380
+
+// [0x004342A0] sub_004342A0 (49 bytes)
+namespace lift_004342A0 {
+// @name Unknown::dispatchWithOwnerQuery
+// @class Unknown
+// @summary Calls vtable slot 0 of the argument object with flag 1, queries owner+0x104 via vtable slot 0x57, then passes that result to the argument object's vtable slot 1.
+// @field Unknown +0x104 void* field_0x104
+void fn_004342A0(void* self, void* obj) {
+    // obj->vtbl[0](obj, 1)
+    void* const* vt = lift_field<void* const*>(obj, 0);
+    reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(vt[0])(obj, 1u);
+
+    // q = self->field_0x104->vtbl[0x57](self->field_0x104)
+    void* query_obj = lift_field<void*>(self, 0x104);
+    void* const* query_vt = lift_field<void* const*>(query_obj, 0);
+    uint32_t result = reinterpret_cast<uint32_t(__thiscall*)(void*)>(lift_field<void*>(query_vt, 0x15c))(query_obj);
+
+    // The original re-reads obj's vtable after the calls above.
+    vt = lift_field<void* const*>(obj, 0);
+    reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(vt[1])(obj, result);
+}
+} // namespace lift_004342A0

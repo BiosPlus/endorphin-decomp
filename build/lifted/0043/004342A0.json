@@ -1,0 +1,22 @@
+{
+  "va": "0x004342A0",
+  "size": 49,
+  "orig_symbol": "sub_004342A0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::dispatchWithOwnerQuery",
+  "class": "Unknown",
+  "signature": "void fn_004342A0(void* self, void* obj)",
+  "summary": "Calls vtable slot 0 of the argument object with flag 1, queries owner+0x104 via vtable slot 0x57, then passes that result to the argument object's vtable slot 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x104",
+      "type": "void*",
+      "name": "field_0x104"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:30:01Z"
+}
