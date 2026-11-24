@@ -31094,3 +31094,33 @@ void* fn_00471440(void* out, void* unused_arg) {
     return out;
 }
 } // namespace lift_00471440
+
+// [0x0049B5F0] ExprParser::ReadMethodType<NMData::State, ...getFileName...>::vfunc_4 (73 bytes)
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_0049AA10(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_0049B5F0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_0049AA10(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
