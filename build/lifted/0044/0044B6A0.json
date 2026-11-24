@@ -1,0 +1,28 @@
+{
+  "va": "0x0044B6A0",
+  "size": 15,
+  "orig_symbol": "sub_0044B6A0",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "Unknown::forwardToChildIfFlagSet",
+  "class": "Unknown",
+  "signature": "void fn_0044B6A0(void* self)",
+  "summary": "If field_0x64 is nonzero, forwards the call to ext_005303F0 with field_0x68 as the receiver; otherwise does nothing.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "int32_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "field_0x68"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:28:51Z"
+}

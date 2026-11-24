@@ -452,3 +452,20 @@ void fn_004474D0(void* self) {
     }
 }
 } // namespace lift_004474D0
+
+// [0x0044B6A0]
+namespace lift_0044B6A0 {
+extern void ext_005303F0(void* self);
+
+// @name Unknown::forwardToChildIfFlagSet
+// @class Unknown
+// @summary If field_0x64 is nonzero, forwards the call to ext_005303F0 with field_0x68 as the receiver; otherwise does nothing.
+// @field Unknown +0x64 int32_t field_0x64
+// @field Unknown +0x68 void* field_0x68
+void fn_0044B6A0(void* self) {
+    if (lift_field<int32_t>(self, 0x64) != 0) {
+        void* child = lift_field<void*>(self, 0x68);
+        ext_005303F0(child);
+    }
+}
+} // namespace lift_0044B6A0

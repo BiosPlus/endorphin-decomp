@@ -2190,6 +2190,13 @@
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_1964.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0044B6A0": {
+    "name": "Unknown::forwardToChildIfFlagSet",
+    "class": "Unknown",
+    "signature": "void fn_0044B6A0(void* self)",
+    "summary": "If field_0x64 is nonzero, forwards the call to ext_005303F0 with field_0x68 as the receiver; otherwise does nothing.",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x0044BC40": {
     "name": "sub_0044BC40",
     "signature": "extern \"C\" void __fastcall fn_0044BC40(void* self)",
