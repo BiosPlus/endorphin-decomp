@@ -971,3 +971,30 @@ extern void __thiscall fn_00711DA0(void* self, uint32_t value) {
     *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(sub) + 0x28) = value;
 }
 } // namespace lift_00711DA0
+
+// [0x00715710] sub_00715710 (48 bytes)
+namespace lift_00715710 {
+extern void* ext_006C9610(void* self);
+// Known callee 0x006DC460: Unknown::GetValueIfCountPositive (Returns *(this->field_0xC8) when this->field_0xB8 > 0, otherwise 0.)
+extern int32_t ext_006DC460(void* self);
+// Known callee 0x006C9F70: sub_006C9F70 (Getter returning float field at offset +0x14.)
+extern float ext_006C9F70(void* self);
+extern const uint32_t mem_0092A278;
+
+// @name Unknown::getFloatViaChain
+// @class Unknown
+// @summary If field +0xC == 2, follows the pointer at +0x4 through two helper calls and returns a float getter result; otherwise returns 0.0.
+// @field Unknown +0x04 void* ptrToSubobject
+// @field Unknown +0x0C int32_t tag
+float fn_00715710(void* self) {
+    auto& tag = lift_field<int32_t>(self, 0x0C);
+    if (tag == 2) {
+        void* inner = lift_field<void*>(self, 0x04);
+        int32_t v = ext_006DC460(inner);
+        void* r = ext_006C9610(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(v))));
+        return ext_006C9F70(r);
+    }
+    // Fallthrough returns the 8-byte double at mem_0092A278, which is zero here.
+    return 0.0f;
+}
+} // namespace lift_00715710

@@ -1,0 +1,28 @@
+{
+  "va": "0x00715710",
+  "size": 48,
+  "orig_symbol": "sub_00715710",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::getFloatViaChain",
+  "class": "Unknown",
+  "signature": "float fn_00715710(void* self)",
+  "summary": "If field +0xC == 2, follows the pointer at +0x4 through two helper calls and returns a float getter result; otherwise returns 0.0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "ptrToSubobject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "tag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:22:31Z"
+}
