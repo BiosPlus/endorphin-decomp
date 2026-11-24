@@ -590,3 +590,40 @@ void fn_0045B4F0(void* self) {
     slot(target, state == kBstChecked ? TRUE : FALSE);
 }
 } // namespace lift_0045B4F0
+
+// [0x00456280] sub_00456280 (56 bytes)
+namespace lift_00456280 {
+// Known callee 0x00455F40: Unknown::returnTrueIfNeitherCheckMatches_00455F40
+// (Returns 1 only if both ext_00455CB0 and ext_004090C0 return 0 for self; otherwise returns 0.)
+extern int __fastcall ext_00455F40(void* self);
+
+// @name Unknown::dispatchIfArg10To17_00456280
+// @class Unknown
+// @summary Returns 0 if +0xDC is nonzero; returns 1 if ext_00455F40 is true; returns arg1 if arg1 is outside 10..17; otherwise calls the vtable slot at +0x184 with (arg1, arg2, arg3).
+// @field Unknown +0xDC uint32_t field_0xdc (read-only gate; multiple conflicting definitions in Unknown.h)
+// @field Unknown +0x00 void* vtable (dereferenced to locate slot +0x184)
+int fn_00456280(void* self, int arg1, int arg2, int arg3) {
+    using VSlot3 = int(__thiscall*)(void* self, int a1, int a2, int a3);
+
+    // Gate: a nonzero dword at +0xDC short-circuits. The original returns the
+    // caller's stale eax here, which has no portable equivalent; 0 is used.
+    if (lift_field<uint32_t>(self, 0xDC) != 0) {
+        return 0;
+    }
+
+    int sub = ext_00455F40(self);
+    if (sub != 0) {
+        return sub;
+    }
+
+    // Original: unsigned (arg1 - 10) > 7 -> return arg1 unchanged.
+    if (static_cast<uint32_t>(arg1) - 10u > 7u) {
+        return arg1;
+    }
+
+    // Virtual dispatch: vtable = *(void**)self; slot = *(vtable + 0x184).
+    void* vtbl = lift_field<void*>(self, 0);
+    auto fn = reinterpret_cast<VSlot3>(lift_field<void*>(vtbl, 0x184));
+    return fn(self, arg1, arg2, arg3);
+}
+} // namespace lift_00456280

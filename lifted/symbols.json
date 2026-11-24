@@ -4686,6 +4686,13 @@
     "summary": "If the subobject at +0x90 is set (+0x8C nonzero), forward the call with the same three stack args through its vtable slot 2; otherwise tail-call the MFC80 ord_1903 thunk.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x00456280": {
+    "name": "Unknown::dispatchIfArg10To17_00456280",
+    "class": "Unknown",
+    "signature": "int fn_00456280(void* self, int arg1, int arg2, int arg3)",
+    "summary": "Returns 0 if +0xDC is nonzero; returns 1 if ext_00455F40 is true; returns arg1 if arg1 is outside 10..17; otherwise calls the vtable slot at +0x184 with (arg1, arg2, arg3).",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x004562C0": {
     "name": "Unknown::forwardIfField0xdcThenVcall188ThenForward",
     "class": "Unknown",

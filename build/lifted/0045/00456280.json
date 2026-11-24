@@ -1,0 +1,28 @@
+{
+  "va": "0x00456280",
+  "size": 56,
+  "orig_symbol": "sub_00456280",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "Unknown::dispatchIfArg10To17_00456280",
+  "class": "Unknown",
+  "signature": "int fn_00456280(void* self, int arg1, int arg2, int arg3)",
+  "summary": "Returns 0 if +0xDC is nonzero; returns 1 if ext_00455F40 is true; returns arg1 if arg1 is outside 10..17; otherwise calls the vtable slot at +0x184 with (arg1, arg2, arg3).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xDC",
+      "type": "uint32_t field_0xdc (read-only gate; multiple conflicting definitions in",
+      "name": "Unknown.h)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* vtable (dereferenced to locate slot",
+      "name": "+0x184)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:15:45Z"
+}
