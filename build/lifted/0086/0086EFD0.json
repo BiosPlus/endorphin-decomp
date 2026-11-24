@@ -4,10 +4,79 @@
   "orig_symbol": "sub_0086EFD0",
   "src_path": "src/leaf/decompiled_860000.cpp",
   "lifted_path": "lifted/leaf/decompiled_860000.cpp",
-  "name": "SetFiveSlotsInvalidAndClearTopBits",
-  "signature": "void fn_0086EFD0(void* self)",
-  "summary": "Fills five 32-bit slots with 0xFFFFFFFF, then clears bits 30..31 of slot 0.",
+  "name": "sub_0086086B",
+  "class": "(none)",
+  "signature": "void fn_0086086B(void)",
+  "summary": "No-op: \"add eax, 0\" (eax unchanged; only flags are touched)",
+  "fields": [
+    {
+      "class": "field_0x04",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04 (pointer-sized value loaded when the check",
+      "name": "passes)"
+    },
+    {
+      "class": "MD5Context",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "MD5Context",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "MD5Context",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "MD5Context",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "MD5Context",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "MD5Context",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x0",
+      "type": "uint16_t",
+      "name": "tag"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x2",
+      "type": "uint16_t",
+      "name": "field_0x02"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x4",
+      "type": "uint16_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x6",
+      "type": "uint16_t",
+      "name": "field_0x06"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T14:29:26Z"
+  "lifted_at": "2026-11-24T14:29:33Z"
 }

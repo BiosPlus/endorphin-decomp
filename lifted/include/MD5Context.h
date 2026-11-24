@@ -8,11 +8,11 @@
 // Recovered field layout for MD5Context:
 namespace lifted_layout {
 struct MD5Context_Fields {
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x00869380)
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00869380)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x00869380)
-    // +0xC   uint32_t                 field_0x0C  (evidence: 0x00869380)
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x00869380)
-    // +0x14  uint32_t                 field_0x14  (evidence: 0x00869380)
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x00869380, 0x0086EFD0)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00869380, 0x0086EFD0)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00869380, 0x0086EFD0)
+    // +0xC   uint32_t                 field_0x0C  (evidence: 0x00869380, 0x0086EFD0)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x00869380, 0x0086EFD0)
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x00869380, 0x0086EFD0)
 };
 } // namespace lifted_layout

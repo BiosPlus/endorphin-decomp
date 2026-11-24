@@ -51030,9 +51030,10 @@
     "lifted_path": "lifted/leaf/tiny_860000.cpp"
   },
   "0x0086EFD0": {
-    "name": "SetFiveSlotsInvalidAndClearTopBits",
-    "signature": "void fn_0086EFD0(void* self)",
-    "summary": "Fills five 32-bit slots with 0xFFFFFFFF, then clears bits 30..31 of slot 0.",
+    "name": "sub_0086086B",
+    "class": "(none)",
+    "signature": "void fn_0086086B(void)",
+    "summary": "No-op: \"add eax, 0\" (eax unchanged; only flags are touched)",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
   "0x0086F000": {
