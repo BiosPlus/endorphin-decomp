@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_640000.cpp
 #include "lift_compat.h"
+#include <new>
+#include <string>
 
-// [0x00648480] sub_00648480 (15 bytes)
+#include <string>
 namespace lift_00648480 {
 // Known callee 0x007C6F70: GetField_0x44Thunk (Tail-calls getField_0x04 with arg0 + 0x44, returning the 32-bit value at object offset +0x48.)
 extern uint32_t __cdecl ext_007C6F70(uint32_t arg0);
@@ -356,3 +358,25 @@ uint32_t __thiscall sub_00647E80(void* self, uint32_t arg0) {
     return ext_007C60E0(val, arg0);
 }
 } // namespace lift_00647E80
+
+// [0x00648940] sub_00648940 (20 bytes)
+namespace lift_00648940 {
+// @name sub_00648940
+// @summary Auto-lifted identical-shape clone of 0x004332B0 (Unknown::forwardToSubobjectsVfunc14).
+namespace lift_004332B0 {
+// Known callee 0x0043C8F0: sub_0043C8F0 (8B), takes its object in ECX (thiscall-style).
+extern void __thiscall ext_0065BB70(void* self);
+// Known callee 0x0044B780: sub_0044B780 (Auto-lifted identical-shape clone of 0x00675D60 (Unknown::forwardToChildVfunc14)).
+extern void __thiscall ext_0065B5E0(void* self);
+
+// @name Unknown::forwardToSubobjectsVfunc14
+// @class Unknown
+// @summary Passes the object at +0x108 to ext_0043C8F0, then tail-calls ext_0044B780 with the object at +0x100.
+// @field Unknown +0x100 void* field_0x100 (tail-call target passed to ext_0044B780)
+// @field Unknown +0x108 void* field_0x108 (argument passed to ext_0043C8F0)
+void __thiscall fn_00648940(void* self) {
+    ext_0065BB70(lift_field<void*>(self, 0x2C));
+    ext_0065B5E0(lift_field<void*>(self, 0x30));
+}
+} // namespace lift_004332B0
+} // namespace lift_00648940

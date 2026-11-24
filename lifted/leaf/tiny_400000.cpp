@@ -410,3 +410,20 @@ bool fn_0040B880(void* self) {
     return fn(thisArg) != 0;
 }
 } // namespace lift_0040B880
+
+// [0x0040B860] sub_0040B860 (26 bytes)
+namespace lift_0040B860 {
+// @name sub_0040B860
+// @summary Auto-lifted identical-shape clone of 0x0040B880 (callChildSlot148NonZero).
+namespace lift_0040B880 {
+// @name callChildSlot148NonZero
+// @summary Calls the function pointer stored at child+0x148 (child = self+0x428), passing &self->child as this; returns true if it yields nonzero.
+// @field Unknown +0x428 void* field_0x428
+bool fn_0040B860(void* self) {
+    void* child = lift_field<void*>(self, 0x3B4);
+    auto fn = lift_field<int32_t (*)(void*)>(child, 0x148);
+    void* thisArg = static_cast<uint8_t*>(self) + 0x3B4;
+    return fn(thisArg) != 0;
+}
+} // namespace lift_0040B880
+} // namespace lift_0040B860

@@ -491,6 +491,12 @@
     "summary": "Pure jump thunk forwarding to CharacterDialog::vfunc_91.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0040B860": {
+    "name": "sub_0040B860",
+    "signature": "bool fn_0040B860(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0040B880 (callChildSlot148NonZero).",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x0040B880": {
     "name": "callChildSlot148NonZero",
     "signature": "bool fn_0040B880(void* self)",
@@ -1761,6 +1767,13 @@
     "class": "Unknown",
     "signature": "void __thiscall fn_004332B0(void* self)",
     "summary": "Passes the object at +0x108 to ext_0043C8F0, then tail-calls ext_0044B780 with the object at +0x100.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x004332D0": {
+    "name": "sub_004332D0",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_004332D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004332B0 (Unknown::forwardToSubobjectsVfunc14).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
   "0x00433B70": {
@@ -24260,6 +24273,13 @@
     "signature": "float __thiscall sub_00648930(void* this_ptr)",
     "summary": "Reads a pointer at +0x28 and returns the float at +0x04 of that object.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
+  "0x00648940": {
+    "name": "sub_00648940",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00648940(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004332B0 (Unknown::forwardToSubobjectsVfunc14).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
   "0x006489D0": {
     "name": "sub_006489D0",

@@ -348,3 +348,25 @@ void __thiscall fn_004332B0(void* self) {
     ext_0044B780(lift_field<void*>(self, 0x100));
 }
 } // namespace lift_004332B0
+
+// [0x004332D0] sub_004332D0 (26 bytes)
+namespace lift_004332D0 {
+// @name sub_004332D0
+// @summary Auto-lifted identical-shape clone of 0x004332B0 (Unknown::forwardToSubobjectsVfunc14).
+namespace lift_004332B0 {
+// Known callee 0x0043C8F0: sub_0043C8F0 (8B), takes its object in ECX (thiscall-style).
+extern void __thiscall ext_00440690(void* self);
+// Known callee 0x0044B780: sub_0044B780 (Auto-lifted identical-shape clone of 0x00675D60 (Unknown::forwardToChildVfunc14)).
+extern void __thiscall ext_0044B7A0(void* self);
+
+// @name Unknown::forwardToSubobjectsVfunc14
+// @class Unknown
+// @summary Passes the object at +0x108 to ext_0043C8F0, then tail-calls ext_0044B780 with the object at +0x100.
+// @field Unknown +0x100 void* field_0x100 (tail-call target passed to ext_0044B780)
+// @field Unknown +0x108 void* field_0x108 (argument passed to ext_0043C8F0)
+void __thiscall fn_004332D0(void* self) {
+    ext_00440690(lift_field<void*>(self, 0x108));
+    ext_0044B7A0(lift_field<void*>(self, 0x100));
+}
+} // namespace lift_004332B0
+} // namespace lift_004332D0

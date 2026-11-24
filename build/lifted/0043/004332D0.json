@@ -1,0 +1,28 @@
+{
+  "va": "0x004332D0",
+  "size": 26,
+  "orig_symbol": "sub_004332D0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_004332D0",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_004332D0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004332B0 (Unknown::forwardToSubobjectsVfunc14).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x100",
+      "type": "void* field_0x100 (tail-call target passed to",
+      "name": "ext_0044B780)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x108",
+      "type": "void* field_0x108 (argument passed to",
+      "name": "ext_0043C8F0)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T11:55:05Z"
+}

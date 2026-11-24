@@ -1,0 +1,21 @@
+{
+  "va": "0x0040B860",
+  "size": 26,
+  "orig_symbol": "sub_0040B860",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "sub_0040B860",
+  "signature": "bool fn_0040B860(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0040B880 (callChildSlot148NonZero).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x428",
+      "type": "void*",
+      "name": "field_0x428"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T11:55:05Z"
+}
