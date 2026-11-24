@@ -7115,3 +7115,24 @@ void __thiscall fn_005C5FB0(void* self, void* arg0) {
     *(uint32_t*)((uint8_t*)arg0 + 4) = (uint32_t)(uintptr_t)&mem_00B44430;
 }
 } // namespace lift_005C5FB0
+
+// [0x005F3D70] ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{96, {flat}}>::vfunc_40 (122 bytes)
+namespace lift_005F3D70 {
+extern void ext_0067A670(void* self, uint32_t arg0);
+extern uint32_t mem_00B46860;
+extern uint32_t mem_00B4685C;
+
+// @name WriteMethodType<EffectorGroup,float>::vfunc_40 (lazy static init, stores object ptr)
+// @class ExprParser::ValuePtrType
+// @summary Lazily constructs the static object at 0xB4685C (once, guarded by bit 0 of 0xB46860) and stores its address into out+4.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_005F3D70(uint8_t* out) {
+    if ((mem_00B46860 & 1u) == 0) {
+        mem_00B46860 |= 1u;
+        ext_0067A670(&mem_00B4685C, 0u);
+        mem_00B4685C = 0x0096CA64u;
+    }
+    const uint32_t addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B4685C));
+    std::memcpy(out + 4, &addr, sizeof addr);
+}
+} // namespace lift_005F3D70

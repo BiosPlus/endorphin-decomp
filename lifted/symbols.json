@@ -25601,6 +25601,13 @@
     "summary": "Reads a float from inner object's vtable slot 1, stores it through *arg into ext_0064F900, then writes a (value, inner) pair to out (value is 0 when inner is null).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005F3D70": {
+    "name": "WriteMethodType\u003cEffectorGroup,float\u003e::vfunc_40 (lazy static init, stores object ptr)",
+    "class": "ExprParser::ValuePtrType",
+    "signature": "void fn_005F3D70(uint8_t* out)",
+    "summary": "Lazily constructs the static object at 0xB4685C (once, guarded by bit 0 of 0xB46860) and stores its address into out+4.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005F4930": {
     "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setForceCaps(float)\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setForceCaps(float)\u003e",
