@@ -1,0 +1,14 @@
+{
+  "va": "0x007EFEE0",
+  "size": 14,
+  "orig_symbol": "sub_007EFEE0",
+  "src_path": "src/leaf/tiny_7E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7E0000.cpp",
+  "name": "Unknown::clearGlobalFlagAndReturnZero",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint16_t fn_007EFEE0(void)",
+  "summary": "Stores 0 to the global dword at 0x00AB2BD4, then zeroes the low word of EAX (AX) as the return value.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:28:01Z"
+}

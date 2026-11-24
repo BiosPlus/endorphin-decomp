@@ -36860,6 +36860,13 @@
     "summary": "Clears the 32-bit global flag at 0x00AB2BD0 to zero.",
     "lifted_path": "lifted/leaf/tiny_7E0000.cpp"
   },
+  "0x007EFEE0": {
+    "name": "Unknown::clearGlobalFlagAndReturnZero",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint16_t fn_007EFEE0(void)",
+    "summary": "Stores 0 to the global dword at 0x00AB2BD4, then zeroes the low word of EAX (AX) as the return value.",
+    "lifted_path": "lifted/leaf/tiny_7E0000.cpp"
+  },
   "0x007EFEF0": {
     "name": "resetFlag_00AB2BD8",
     "signature": "void sub_007EFEF0()",

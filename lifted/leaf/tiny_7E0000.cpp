@@ -23,3 +23,16 @@ void sub_007EFEF0() {
     mem_00AB2BD8 = 0;
 }
 } // namespace lift_007EFEF0
+
+// [0x007EFEE0] sub_007EFEE0 (14 bytes)
+namespace lift_007EFEE0 {
+extern uint32_t mem_00AB2BD4;
+
+// @name Unknown::clearGlobalFlagAndReturnZero
+// @summary Stores 0 to the global dword at 0x00AB2BD4, then zeroes the low word of EAX (AX) as the return value.
+// @field none
+extern uint16_t fn_007EFEE0(void) {
+    mem_00AB2BD4 = 0u;
+    return 0u; // xor ax, ax
+}
+} // namespace lift_007EFEE0
