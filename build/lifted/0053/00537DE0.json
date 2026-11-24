@@ -1,0 +1,28 @@
+{
+  "va": "0x00537DE0",
+  "size": 20,
+  "orig_symbol": "CompoundRenderable::vfunc_15",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CompoundRenderable::vfunc_15",
+  "class": "CompoundRenderable",
+  "signature": "uint8_t fn_00537DE0(void* self)",
+  "summary": "If the +0x14 child is set, forward to its vtable slot 15 with the child as this; otherwise return the byte at +0x0C.",
+  "fields": [
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:06:51Z"
+}

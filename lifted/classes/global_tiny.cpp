@@ -6129,3 +6129,24 @@ void fn_00534570(void* self) {
     words[1] = 0u;
 }
 } // namespace lift_00534570
+
+// [0x00537DE0] CompoundRenderable::vfunc_15 (20 bytes)
+namespace lift_00537DE0 {
+// @name CompoundRenderable::vfunc_15
+// @class CompoundRenderable
+// @summary If the +0x14 child is set, forward to its vtable slot 15 with the child as this; otherwise return the byte at +0x0C.
+// @field CompoundRenderable +0x0C uint8_t field_0x0C
+// @field CompoundRenderable +0x14 void* field_0x14
+uint8_t fn_00537DE0(void* self) {
+    using ChildFn = uint8_t (*)(void*);
+
+    void* child = lift_field<void*>(self, 0x14);
+    if (child != nullptr) {
+        // Tail-forward: vtable slot 15 (byte offset 0x3C on a 32-bit vtable).
+        void** vtbl = *reinterpret_cast<void***>(child);
+        ChildFn fn = reinterpret_cast<ChildFn>(vtbl[15]);
+        return fn(child);
+    }
+    return lift_field<uint8_t>(self, 0x0C);
+}
+} // namespace lift_00537DE0

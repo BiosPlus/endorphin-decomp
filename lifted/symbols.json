@@ -12014,6 +12014,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00537C30 (CompoundRenderable::forwardSlot8ToField14).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00537DE0": {
+    "name": "CompoundRenderable::vfunc_15",
+    "class": "CompoundRenderable",
+    "signature": "uint8_t fn_00537DE0(void* self)",
+    "summary": "If the +0x14 child is set, forward to its vtable slot 15 with the child as this; otherwise return the byte at +0x0C.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00537E20": {
     "name": "CompoundRenderable::vfunc_0",
     "class": "CompoundRenderable",
