@@ -326,3 +326,24 @@ uint32_t fn_005B6FC0(void* self) {
     return ext_006481C0(recv);
 }
 } // namespace lift_005B6FC0
+
+// [0x005B18E0]
+namespace lift_005B18E0 {
+// @name Unknown::assignStringAndSetFlag
+// @class Unknown
+// @summary Copy-assigns the std::string argument into the member at +0x28, then sets the byte flag at +0x04 to 1.
+// @field Unknown +0x04 uint8_t field_0x04
+// @field Unknown +0x28 std::string field_0x28
+
+// MSVCP80 std::basic_string<char>::operator=(const basic_string&), reached via import slot mem_00924FDC.
+extern void ext_string_assign(void* dst_string, const void* src_string);
+
+// Import slot value from .rdata at 0x00924FDC (documentation only; the call goes through ext_string_assign).
+extern const uint32_t mem_00924FDC;
+
+void __thiscall fn_005B18E0(void* self, const void* src_string) {
+    auto* base = static_cast<uint8_t*>(self);
+    ext_string_assign(base + 0x28, src_string);
+    base[0x04] = 1;
+}
+} // namespace lift_005B18E0
