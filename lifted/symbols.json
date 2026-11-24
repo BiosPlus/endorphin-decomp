@@ -9182,6 +9182,12 @@
     "summary": "Reads the target pointer held in the argument and returns the isProjectRootEnabled flag byte at PoseToolOptions+0x09; throws via CxxThrowException if the target pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004EB9B0": {
+    "name": "initVtableAndFlags",
+    "signature": "void fn_004EB9B0(void* self)",
+    "summary": "Stores the vtable address 0x0093F994 at +0x00 and sets two byte flags (+0x04 = 0, +0x05 = 1).",
+    "lifted_path": "lifted/leaf/tiny_4E0000.cpp"
+  },
   "0x004EB9D0": {
     "name": "sub_004EB9D0",
     "signature": "extern \"C\" void __fastcall fn_004EB9D0(void* self)",
