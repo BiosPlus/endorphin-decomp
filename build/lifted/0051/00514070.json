@@ -1,0 +1,28 @@
+{
+  "va": "0x00514070",
+  "size": 117,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::string const \u0026, vcall slot 9, 0\u003e::vfunc_2",
+  "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::string const \u0026, vcall slot 9, 0\u003e",
+  "signature": "double fn_00514070(void* arg)",
+  "summary": "Reads a string via virtual slot 9 on the held object at +0x04, parses it with atof, and rounds half away from zero.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:03:50Z"
+}

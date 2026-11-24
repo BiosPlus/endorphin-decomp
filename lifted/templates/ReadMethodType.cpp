@@ -42445,3 +42445,46 @@ int fn_0049D4B0(void* const* holder) {
     return ext_006A6DE0(rounded);
 }
 } // namespace lift_0049D4B0
+
+// [0x00514070]
+namespace lift_00514070 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, std::string const &, vcall slot 9, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::string const &, vcall slot 9, 0>
+// @summary Reads a string via virtual slot 9 on the held object at +0x04, parses it with atof, and rounds half away from zero.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+
+// Virtual dispatch thunk: performs the vtable slot 9 (offset 0x24) call on `self`
+// and returns the std::string const* produced by that method.
+extern void* ext_00682ED0(void* self);
+
+// Helper that consumes the rounded value left on the FPU stack and yields the result.
+extern double ext_006A6DE0(double rounded);
+
+// Constant 0.5 used for round-half-away-from-zero.
+extern const double mem_00993828;
+
+// Stdcall-style: one stack argument (ret 4); ecx is not read.
+double fn_00514070(void* arg) {
+    // Load the object pointer stored at *arg.
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj == nullptr) {
+        // Original constructs an exception object and throws it.
+        throw std::runtime_error("ExprParser: null value pointer");
+    }
+
+    // Virtual call through the embedded sub-object at obj+4.
+    void* self = static_cast<uint8_t*>(obj) + 4;
+    const std::string* str = static_cast<const std::string*>(ext_00682ED0(self));
+
+    // atof, stored as float (fstp dword).
+    float value = static_cast<float>(std::atof(str->c_str()));
+
+    // Round half away from zero: value -/+ 0.5 depending on sign.
+    double rounded = (value < 0.0f)
+        ? static_cast<double>(value) - mem_00993828
+        : static_cast<double>(value) + mem_00993828;
+
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_00514070

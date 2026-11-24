@@ -15231,6 +15231,13 @@
     "summary": "Null-checks the held value pointer, invokes the slot-9 (vtable +0x24) getter on the held object's +4 sub-object, passes the result to ext_006720E0, and returns the argument.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00514070": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::string const \u0026, vcall slot 9, 0\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::string const \u0026, vcall slot 9, 0\u003e",
+    "signature": "double fn_00514070(void* arg)",
+    "summary": "Reads a string via virtual slot 9 on the held object at +0x04, parses it with atof, and rounds half away from zero.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005141D0": {
     "name": "Chromosome::vfunc_13",
     "class": "Chromosome",
