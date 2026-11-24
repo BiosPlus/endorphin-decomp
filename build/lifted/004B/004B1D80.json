@@ -1,0 +1,22 @@
+{
+  "va": "0x004B1D80",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData, bool, \u0026public: bool __thiscall NMData::GraphEntryData::isActive(void) const, bool, \u0026public: void __thiscall NMData::GraphEntryData::activate(bool)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType_GraphEntryData_isActive_activate::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType",
+  "signature": "void __stdcall fn_004B1D80(uint32_t arg1)",
+  "summary": "Lazily initializes a static Type object at 0x00AE0D08 and stores its pointer at arg1 + 0x4",
+  "fields": [
+    {
+      "class": "OutType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "typePtr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:53:06Z"
+}

@@ -9594,6 +9594,13 @@
     "summary": "Reads the dword at the argument; if non-null, forwards it as `this` to ext_004A9A60 and returns its result, otherwise throws (original builds an exception object and calls _CxxThrowException).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004AABE0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::BehaviourData,bool,\u0026NMData::BehaviourData::getVisibility,bool,\u0026NMData::BehaviourData::vcall_32\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::BehaviourData,bool,\u0026NMData::BehaviourData::getVisibility,bool,\u0026NMData::BehaviourData::vcall_32\u003e",
+    "signature": "void __thiscall fn_004AABE0(void* self, void* arg0)",
+    "summary": "Initializes a static type descriptor if needed and stores its pointer at arg0 + 0x4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004AAC60": {
     "name": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0\u003e",
@@ -9952,11 +9959,25 @@
     "summary": "Reads the value pointer stored in the argument, throws if null, otherwise returns the GraphEntryData active flag byte at +0x01.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B1910": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData, std::string const \u0026, getExpression, std::string const \u0026, setExpression\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType",
+    "signature": "void __thiscall fn_004B1910(void* this_ptr, uintptr_t arg0)",
+    "summary": "Lazily initializes a static type/descriptor object at 0x00AE0CF8 and stores its pointer at arg0 + 0x4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004B1A70": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData,int,getColor,setColor\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData,int,getColor,setColor\u003e",
     "signature": "extern \"C\" void __stdcall fn_004B1A70(void* const* self, void* arg)",
     "summary": "Dereferences the first pointer in self; if non-null, calls vtable slot 2 of arg's sub-object with arg and stores the result at target+0x20; throws if null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x004B1AB0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData, int, getColor, int, setColor\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType",
+    "signature": "void __thiscall fn_004B1AB0(void* self, uint8_t* out)",
+    "summary": "Initializes static type singleton if needed and stores its pointer at out + 0x4.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x004B1B30": {
@@ -9971,6 +9992,13 @@
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData,bool,isActive,activate\u003e",
     "signature": "extern \"C\" void __stdcall fn_004B1D40(void* const* self, void* arg)",
     "summary": "Dereferences the first pointer in self; if non-null, calls vtable slot 3 of arg's sub-object with arg and stores the bool result at target+0x01; throws if null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x004B1D80": {
+    "name": "ExprParser::ReadWriteMethodType_GraphEntryData_isActive_activate::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType",
+    "signature": "void __stdcall fn_004B1D80(uint32_t arg1)",
+    "summary": "Lazily initializes a static Type object at 0x00AE0D08 and stores its pointer at arg1 + 0x4",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x004B1E00": {

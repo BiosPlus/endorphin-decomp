@@ -9054,3 +9054,93 @@ void __thiscall fn_00471300(void* /*self*/, void* out) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AD900C));
 }
 } // namespace lift_00471300
+
+// [0x004B1D80]
+namespace lift_004B1D80 {
+// @name ExprParser::ReadWriteMethodType_GraphEntryData_isActive_activate::vfunc_40
+// @class ExprParser::ReadWriteMethodType
+// @summary Lazily initializes a static Type object at 0x00AE0D08 and stores its pointer at arg1 + 0x4
+// @field OutType +0x04 uint32_t typePtr
+
+
+extern uint32_t mem_00AE0D08;
+extern uint32_t mem_00AE0D0C;
+extern void __thiscall ext_0067A670(void* self);
+
+void __stdcall fn_004B1D80(uint32_t arg1) {
+    if ((mem_00AE0D0C & 1u) == 0u) {
+        mem_00AE0D0C |= 1u;
+        ext_0067A670(&mem_00AE0D08);
+        mem_00AE0D08 = 0x009425F4u;
+    }
+    *(uint32_t*)(uintptr_t)(arg1 + 0x4u) = (uint32_t)(uintptr_t)&mem_00AE0D08;
+}
+} // namespace lift_004B1D80
+
+// [0x004B1910]
+namespace lift_004B1910 {
+// @name ExprParser::ReadWriteMethodType<NMData::GraphEntryData, std::string const &, getExpression, std::string const &, setExpression>::vfunc_40
+// @class ExprParser::ReadWriteMethodType
+// @summary Lazily initializes a static type/descriptor object at 0x00AE0CF8 and stores its pointer at arg0 + 0x4.
+
+
+extern uint32_t mem_00AE0CFC;
+extern uint32_t mem_00AE0CF8;
+
+extern void __thiscall ext_0067A670(void* this_ptr);
+
+void __thiscall fn_004B1910(void* this_ptr, uintptr_t arg0) {
+    (void)this_ptr;
+    if ((mem_00AE0CFC & 1u) == 0u) {
+        mem_00AE0CFC |= 1u;
+        ext_0067A670(&mem_00AE0CF8);
+        mem_00AE0CF8 = 0x00942294u;
+    }
+    *(uint32_t*)(arg0 + 4) = (uint32_t)(uintptr_t)&mem_00AE0CF8;
+}
+} // namespace lift_004B1910
+
+// [0x004B1AB0]
+namespace lift_004B1AB0 {
+// @name ExprParser::ReadWriteMethodType<NMData::GraphEntryData, int, getColor, int, setColor>::vfunc_40
+// @class ExprParser::ReadWriteMethodType
+// @summary Initializes static type singleton if needed and stores its pointer at out + 0x4.
+// @field ExprParser::ValuePtrType +0x4 uint32_t typePtr
+
+extern uint32_t mem_00AE0D04;
+extern uint32_t mem_00AE0D00;
+extern void __thiscall ext_0067A670(void* self);
+
+void __thiscall fn_004B1AB0(void* self, uint8_t* out) {
+    (void)self;
+    if ((mem_00AE0D04 & 1u) == 0u) {
+        mem_00AE0D04 |= 1u;
+        ext_0067A670(&mem_00AE0D00);
+        mem_00AE0D00 = 0x00942444u;
+    }
+    *reinterpret_cast<uint32_t*>(out + 0x4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE0D00));
+}
+} // namespace lift_004B1AB0
+
+// [0x004AABE0]
+namespace lift_004AABE0 {
+extern uint8_t mem_00ADF9FC[];
+extern uint8_t mem_00ADF9F8[];
+void* __thiscall ext_0067A670(void* self);
+
+// @name ExprParser::ReadWriteMethodType<NMData::BehaviourData,bool,&NMData::BehaviourData::getVisibility,bool,&NMData::BehaviourData::vcall_32>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::BehaviourData,bool,&NMData::BehaviourData::getVisibility,bool,&NMData::BehaviourData::vcall_32>
+// @summary Initializes a static type descriptor if needed and stores its pointer at arg0 + 0x4.
+
+void __thiscall fn_004AABE0(void* self, void* arg0) {
+    (void)self;
+    uint32_t* guard = reinterpret_cast<uint32_t*>(mem_00ADF9FC);
+    if ((*guard & 1u) == 0u) {
+        *guard |= 1u;
+        ext_0067A670(mem_00ADF9F8);
+        *reinterpret_cast<uint32_t*>(mem_00ADF9F8) = 0x009416FCu;
+    }
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(arg0) + 0x4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00ADF9F8));
+}
+} // namespace lift_004AABE0
