@@ -1,0 +1,22 @@
+{
+  "va": "0x00711DC0",
+  "size": 32,
+  "orig_symbol": "sub_00711DC0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::SetSubObjectAt0x0C",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __fastcall fn_00711DC0(void* self, uint32_t value)",
+  "summary": "Fetches the subobject via ext_0071E680(self) and stores the stack argument at its +0x0C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t field_0x0C (accessed on the subobject returned by",
+      "name": "ext_0071E680)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:40:32Z"
+}

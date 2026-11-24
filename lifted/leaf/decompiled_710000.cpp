@@ -257,3 +257,18 @@ bool fn_00711D20(void* self, DWORD mask) {
     return (field & mask) != 0;
 }
 } // namespace lift_00711D20
+
+// [0x00711DC0] sub_00711DC0 (32 bytes)
+namespace lift_00711DC0 {
+// Known callee 0x0071E680: sub_0071E680 (Returns pointer to subobject/field at offset +0x40.)
+extern void* __fastcall ext_0071E680(void* self);
+
+// @name Unknown::SetSubObjectAt0x0C
+// @class Unknown
+// @summary Fetches the subobject via ext_0071E680(self) and stores the stack argument at its +0x0C.
+// @field Unknown +0x0C uint32_t field_0x0C (accessed on the subobject returned by ext_0071E680)
+extern void __fastcall fn_00711DC0(void* self, uint32_t value) {
+    uint8_t* sub = static_cast<uint8_t*>(ext_0071E680(self));
+    *reinterpret_cast<uint32_t*>(sub + 0x0C) = value;
+}
+} // namespace lift_00711DC0

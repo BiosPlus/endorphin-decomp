@@ -40275,6 +40275,13 @@
     "summary": "Calls ext_0071E680 on self and returns the 32-bit field at offset +0x28 of the returned pointer.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00711DC0": {
+    "name": "Unknown::SetSubObjectAt0x0C",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_00711DC0(void* self, uint32_t value)",
+    "summary": "Fetches the subobject via ext_0071E680(self) and stores the stack argument at its +0x0C.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00711FD0": {
     "name": "getSubobjectField_0x40_0x08",
     "signature": "extern \"C\" uint32_t __fastcall fn_00711FD0(void* self)",
