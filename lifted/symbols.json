@@ -11873,6 +11873,12 @@
     "summary": "Calls ext_004FFD60 with the incoming this and second argument, then initialises the pair object (first argument) with that result and the second argument via initDwordPair; returns the pair object.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x005007C0": {
+    "name": "DwordPairInitWrapper_005007C0",
+    "signature": "void* fn_005007C0(void* self, void* pair, DWORD b)",
+    "summary": "Forwards (self, pair, b) to ext_00500310 with the result discarded, then returns the pair object (first stack argument).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x005013A0": {
     "name": "EvolveEngine::vfunc_2_off_10",
     "class": "EvolveEngine",

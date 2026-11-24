@@ -1,0 +1,13 @@
+{
+  "va": "0x005007C0",
+  "size": 35,
+  "orig_symbol": "sub_005007C0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "DwordPairInitWrapper_005007C0",
+  "signature": "void* fn_005007C0(void* self, void* pair, DWORD b)",
+  "summary": "Forwards (self, pair, b) to ext_00500310 with the result discarded, then returns the pair object (first stack argument).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:45:41Z"
+}

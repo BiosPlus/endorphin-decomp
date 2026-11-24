@@ -120,3 +120,16 @@ void* fn_00500310(void* self, void* pair, DWORD b) {
     return pair;
 }
 } // namespace lift_00500310
+
+// [0x005007C0] sub_005007C0 (35 bytes)
+namespace lift_005007C0 {
+// Known callee 0x00500310: DwordPairInitFromCall_00500310 (Calls ext_004FFD60 with the incoming this and second argument, then initialises the pair object (first argument) with that result and the second argument via initDwordPair; returns the pair object.)
+extern void* ext_00500310(void* self, void* pair, DWORD b);
+
+// @name DwordPairInitWrapper_005007C0
+// @summary Forwards (self, pair, b) to ext_00500310 with the result discarded, then returns the pair object (first stack argument).
+void* fn_005007C0(void* self, void* pair, DWORD b) {
+    ext_00500310(self, pair, b);
+    return pair;
+}
+} // namespace lift_005007C0
