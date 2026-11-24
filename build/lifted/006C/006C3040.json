@@ -1,0 +1,21 @@
+{
+  "va": "0x006C3040",
+  "size": 48,
+  "orig_symbol": "sub_006C3040",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "getValidatedChild0x158",
+  "signature": "uint32_t sub_006C3040(uint32_t self)",
+  "summary": "Returns the child object at +0x158 if non-null and its vtable[0]() returns 1, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "uint32_t",
+      "name": "field_0x158"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:22:25Z"
+}

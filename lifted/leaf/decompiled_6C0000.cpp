@@ -466,3 +466,26 @@ void fn_006C33F0(void* self, uint32_t index, uint8_t value) {
     lift_field<uint8_t>(table + offset, 0x1E7C) = value;
 }
 } // namespace lift_006C33F0
+
+// [0x006C3040]
+namespace lift_006C3040 {
+// @name getValidatedChild0x158
+// @summary Returns the child object at +0x158 if non-null and its vtable[0]() returns 1, else 0.
+// @field Unknown +0x158 uint32_t field_0x158
+
+
+extern uint32_t mem_u32(uint32_t addr);
+
+uint32_t sub_006C3040(uint32_t self) {
+    uint32_t obj = mem_u32(self + 0x158);
+    if (obj != 0) {
+        uint32_t vtable = mem_u32(obj);
+        using Vfn0 = uint32_t(__thiscall*)(uint32_t);
+        auto fn = reinterpret_cast<Vfn0>(static_cast<uintptr_t>(mem_u32(vtable)));
+        if (fn(obj) == 1) {
+            return mem_u32(self + 0x158);
+        }
+    }
+    return 0;
+}
+} // namespace lift_006C3040
