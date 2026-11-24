@@ -1115,3 +1115,20 @@ DWORD __stdcall LookupStaticAddress_007134C0(DWORD index) {
     }
 }
 } // namespace lift_007134C0
+
+// [0x00715360]
+namespace lift_00715360 {
+// @name get_string_by_index_00715360
+// @summary Maps an index in [0, 3] to a static data address, or 0 if out of range.
+
+
+uint32_t __stdcall sub_00715360(uint32_t index) {
+    switch (index) {
+        case 0: return 0x00aac34cu;
+        case 1: return 0x00aac340u;
+        case 2: return 0x00aac334u;
+        case 3: return 0x00aac32cu;
+        default: return 0u;
+    }
+}
+} // namespace lift_00715360

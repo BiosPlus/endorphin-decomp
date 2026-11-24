@@ -1,0 +1,13 @@
+{
+  "va": "0x00715360",
+  "size": 53,
+  "orig_symbol": "sub_00715360",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "get_string_by_index_00715360",
+  "signature": "uint32_t __stdcall sub_00715360(uint32_t index)",
+  "summary": "Maps an index in [0, 3] to a static data address, or 0 if out of range.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:17:59Z"
+}
