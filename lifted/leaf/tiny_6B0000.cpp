@@ -774,3 +774,18 @@ uint32_t fn_006B6990(void* self, uint32_t value, uint32_t /*unused*/) {
     return 0u;
 }
 } // namespace lift_006B6990
+
+// [0x006B0C40]
+namespace lift_006B0C40 {
+// @name sub_006B0C40
+// @summary Constructor that initializes vtable to 0x00991348, clears field_0x04, and stores arg0 at field_0x0c.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x0c uint32_t field_0x0c
+uint32_t __thiscall sub_006B0C40(uint32_t self, uint32_t arg0) {
+    *reinterpret_cast<uint32_t*>(self + 0x0) = 0x00991348u;
+    *reinterpret_cast<uint32_t*>(self + 0x4) = 0u;
+    *reinterpret_cast<uint32_t*>(self + 0xc) = arg0;
+    return self;
+}
+} // namespace lift_006B0C40

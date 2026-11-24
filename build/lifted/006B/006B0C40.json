@@ -1,0 +1,33 @@
+{
+  "va": "0x006B0C40",
+  "size": 25,
+  "orig_symbol": "sub_006B0C40",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "sub_006B0C40",
+  "signature": "uint32_t __thiscall sub_006B0C40(uint32_t self, uint32_t arg0)",
+  "summary": "Constructor that initializes vtable to 0x00991348, clears field_0x04, and stores arg0 at field_0x0c.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T11:51:56Z"
+}
