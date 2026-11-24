@@ -1,0 +1,46 @@
+{
+  "va": "0x005ABFB0",
+  "size": 122,
+  "orig_symbol": "NMData::TargetRigNode::vfunc_17_off_C",
+  "src_path": "src/NMData/TargetRigNode.cpp",
+  "lifted_path": "lifted/NMData/TargetRigNode.cpp",
+  "name": "NMData::TargetRigNode::vfunc_17_off_C",
+  "class": "NMData::TargetRigNode",
+  "signature": "static void store_u32(void* base, std::size_t off, std::uint32_t value)",
+  "summary": "Allocates a 0x194-byte TargetRigNode, runs the base constructor on the outer object, installs vtable pointers, and returns the new node (or null on allocation failure).",
+  "fields": [
+    {
+      "class": "NMData::TargetRigNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x000"
+    },
+    {
+      "class": "NMData::TargetRigNode",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x004"
+    },
+    {
+      "class": "NMData::TargetRigNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x008"
+    },
+    {
+      "class": "NMData::TargetRigNode",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x00C"
+    },
+    {
+      "class": "NMData::TargetRigNode",
+      "offset": "+0x150",
+      "type": "void*",
+      "name": "field_0x150"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:49:14Z"
+}

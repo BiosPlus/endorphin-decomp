@@ -20357,6 +20357,13 @@
     "summary": "Secondary-vtable (+0xC) slot 17: allocates a 0x194-byte SourceRigNode, runs its base constructor, installs vtables, returns the new object or NULL on allocation failure.",
     "lifted_path": "lifted/NMData/SourceRigNode.cpp"
   },
+  "0x005ABFB0": {
+    "name": "NMData::TargetRigNode::vfunc_17_off_C",
+    "class": "NMData::TargetRigNode",
+    "signature": "static void store_u32(void* base, std::size_t off, std::uint32_t value)",
+    "summary": "Allocates a 0x194-byte TargetRigNode, runs the base constructor on the outer object, installs vtable pointers, and returns the new node (or null on allocation failure).",
+    "lifted_path": "lifted/NMData/TargetRigNode.cpp"
+  },
   "0x005AC550": {
     "name": "sub_005AC550",
     "signature": "extern \"C\" void fn_005AC550(void)",
