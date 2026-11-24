@@ -126,3 +126,21 @@ void fn_00553A30(void* self, uint32_t index, uint32_t value) {
     }
 }
 } // namespace lift_00553A30
+
+// [0x005539D0] sub_005539D0 (20 bytes)
+namespace lift_005539D0 {
+// @name ReadFloatTripleOrZero
+// @class <ClassName> (optional)
+// @summary Returns float element [index] of a 3-float array at self for index 0..2, else 0.0f.
+// @field <ClassName> +0x00 float field_0x00
+// @field <ClassName> +0x04 float field_0x04
+// @field <ClassName> +0x08 float field_0x08
+float fn_005539D0(const void* self, uint32_t index) {
+    if (index > 2u) {
+        return 0.0f;
+    }
+    float value;
+    std::memcpy(&value, static_cast<const std::uint8_t*>(self) + 4u * index, sizeof(value));
+    return value;
+}
+} // namespace lift_005539D0

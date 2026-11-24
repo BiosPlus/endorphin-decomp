@@ -13263,6 +13263,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x24 and forwards through mem_00924FDC.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x005539D0": {
+    "name": "ReadFloatTripleOrZero",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "float fn_005539D0(const void* self, uint32_t index)",
+    "summary": "Returns float element [index] of a 3-float array at self for index 0..2, else 0.0f.",
+    "lifted_path": "lifted/leaf/tiny_550000.cpp"
+  },
   "0x00553A30": {
     "name": "SetIndexedSlot (descriptive; owning class not yet identified)",
     "class": "Unknown",

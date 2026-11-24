@@ -10,9 +10,12 @@ namespace lifted_layout {
 struct _ClassName__Fields {
     // +0x0   void* vptr               (field_0x00)  (evidence: 0x006FC1C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   <type>                   <fieldName>  (evidence: 0x00493E40, 0x00493E50, 0x00493E60, 0x00494050) // CONFLICT: multiple definitions at +0x0
+    // +0x0   float                    field_0x00  (evidence: 0x005539D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   int32_t                  field_0x00  (evidence: 0x00494050) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x00492590) // CONFLICT: multiple definitions at +0x0
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00494050)
+    // +0x4   float                    field_0x04  (evidence: 0x005539D0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00494050) // CONFLICT: multiple definitions at +0x4
+    // +0x8   float                    field_0x08  (evidence: 0x005539D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   int32_t                  field_0x08  (evidence: 0x0050FA00) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00492590, 0x00494050) // CONFLICT: multiple definitions at +0x8
     // +0x20  DWORD                    field_0x20  (evidence: 0x00641FD0)
