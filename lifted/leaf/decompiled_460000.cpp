@@ -591,3 +591,29 @@ void __thiscall sub_0046C2F0(uint32_t ecx_this, float val) {
     }
 }
 } // namespace lift_0046C2F0
+
+// [0x00462D10]
+namespace lift_00462D10 {
+// @name getByteByMode
+// @summary Dispatches on mode (1 or 2) to read a byte from this+0x0C+0x18 or via getInnerByte1C on this+0x08.
+// @field this +0x08 uint32_t field_0x08
+// @field this +0x0C uint32_t field_0x0C
+
+
+extern uint8_t __thiscall ext_00462A60(uint32_t this_ptr);
+
+uint8_t __thiscall sub_00462D10(uint32_t this_ptr, uint32_t mode) {
+    if (mode == 1) {
+        uint32_t ptr = *reinterpret_cast<const uint32_t*>(this_ptr + 0x0C);
+        return *reinterpret_cast<const uint8_t*>(ptr + 0x18);
+    }
+    if (mode == 2) {
+        uint32_t inner = *reinterpret_cast<const uint32_t*>(this_ptr + 0x08);
+        if (inner == 0) {
+            return 0;
+        }
+        return ext_00462A60(inner);
+    }
+    return 0;
+}
+} // namespace lift_00462D10
