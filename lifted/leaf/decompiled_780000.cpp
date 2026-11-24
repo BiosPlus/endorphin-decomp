@@ -868,3 +868,25 @@ uint32_t fn_0078CB90(void* self) {
     return ext_0078CB70(self, static_cast<uint32_t>(index));
 }
 } // namespace lift_0078CB90
+
+// [0x0078D4E0] sub_0078D4E0 (48 bytes)
+namespace lift_0078D4E0 {
+// @name UnknownClass::getEntryField10Ptr
+// @class UnknownClass
+// @summary Thiscall lookup: resolves self[a] (24-byte stride) -> table[b] -> entry, returns entry+0x10 + c*16.
+// @field UnknownClass +0x00 DWORD field_0x00 (array of 24-byte elements; element +0x10 holds table pointer)
+
+// 32-bit guest address -> host pointer.
+static inline uint8_t* lift_ptr(uint32_t addr) {
+    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(addr));
+}
+
+// Element layout (stride 24): +0x10 = guest pointer to uint32 table, indexed by b.
+// Table entry: guest pointer to a record whose +0x10 is a base of 16-byte records, indexed by c.
+uint8_t* __thiscall fn_0078D4E0(void* self, uint32_t a, uint32_t b, uint32_t c) {
+    uint32_t table = lift_field<uint32_t>(self, 24 * static_cast<ptrdiff_t>(a) + 0x10);
+    uint32_t record = lift_field<uint32_t>(lift_ptr(table), 4 * static_cast<ptrdiff_t>(b));
+    uint32_t base = lift_field<uint32_t>(lift_ptr(record), 0x10);
+    return lift_ptr(base + 16u * c);
+}
+} // namespace lift_0078D4E0

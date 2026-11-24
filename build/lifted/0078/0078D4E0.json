@@ -1,0 +1,22 @@
+{
+  "va": "0x0078D4E0",
+  "size": 48,
+  "orig_symbol": "sub_0078D4E0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "UnknownClass::getEntryField10Ptr",
+  "class": "UnknownClass",
+  "signature": "static inline uint8_t* lift_ptr(uint32_t addr)",
+  "summary": "Thiscall lookup: resolves self[a] (24-byte stride) -\u003e table[b] -\u003e entry, returns entry+0x10 + c*16.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "DWORD field_0x00 (array of 24-byte elements; element +0x10 holds table",
+      "name": "pointer)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:27:28Z"
+}
