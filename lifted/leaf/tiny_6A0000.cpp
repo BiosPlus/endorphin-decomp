@@ -380,3 +380,18 @@ DWORD __thiscall fn_006A7FB0(void* self, DWORD arg0, DWORD arg1) {
     return 0;
 }
 } // namespace lift_006A7FB0
+
+// [0x006A7F90] sub_006A7F90 (20 bytes)
+namespace lift_006A7F90 {
+// @name Unknown::CallVirtualSlot88WithArg
+// @class Unknown
+// @summary Thiscall forwarder: loads the vtable from this, calls virtual slot 0x160 (index 88) with the stack argument, then returns 0.
+// @field Unknown +0x00 void* vtable
+extern DWORD __thiscall fn_006A7F90(void* self, DWORD arg) {
+    using VirtFn = DWORD(__thiscall*)(void*, DWORD);
+    void* vtbl = lift_field<void*>(self, 0x0);
+    VirtFn target = reinterpret_cast<VirtFn>(lift_field<void*>(vtbl, 0x160));
+    target(self, arg);
+    return 0;
+}
+} // namespace lift_006A7F90

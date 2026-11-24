@@ -31324,6 +31324,13 @@
     "summary": "Forwards the first stack argument to virtual slot 0x154 (index 85) of self's vtable, then returns 0 (callee pops 8 bytes).",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006A7F90": {
+    "name": "Unknown::CallVirtualSlot88WithArg",
+    "class": "Unknown",
+    "signature": "extern \"C\" DWORD __thiscall fn_006A7F90(void* self, DWORD arg)",
+    "summary": "Thiscall forwarder: loads the vtable from this, calls virtual slot 0x160 (index 88) with the stack argument, then returns 0.",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006A7FB0": {
     "name": "Unknown::ForwardArgToVirtualSlot59",
     "class": "Unknown",
