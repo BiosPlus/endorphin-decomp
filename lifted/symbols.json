@@ -36828,6 +36828,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006D7B50 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D7CA0": {
+    "name": "sub_006D7CA0",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void fn_006D7CA0(void* self, uint8_t a, uint8_t b)",
+    "summary": "Stores two byte-sized arguments into this+0x1C0 and this+0x1C1 (callee-cleans 8 bytes, ret 0x8).",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D7D90": {
     "name": "sub_006D7D90",
     "signature": "extern \"C\" void* __fastcall fn_006D7D90(void* self, int edx_unused, unsigned int flags)",

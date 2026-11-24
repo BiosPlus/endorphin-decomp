@@ -181,3 +181,16 @@ void fn_006D74E0(void* self, DWORD index, BYTE value) {
     base[static_cast<ptrdiff_t>(0x14C) + static_cast<ptrdiff_t>(index)] = value;
 }
 } // namespace lift_006D74E0
+
+// [0x006D7CA0] sub_006D7CA0 (32 bytes)
+namespace lift_006D7CA0 {
+// @name sub_006D7CA0
+// @class <ClassName> (optional)
+// @summary Stores two byte-sized arguments into this+0x1C0 and this+0x1C1 (callee-cleans 8 bytes, ret 0x8).
+// @field <ClassName> +0x1C0 uint8_t field_0x1C0
+// @field <ClassName> +0x1C1 uint8_t field_0x1C1
+void fn_006D7CA0(void* self, uint8_t a, uint8_t b) {
+    lift_field<uint8_t>(self, 0x1C0) = a;
+    lift_field<uint8_t>(self, 0x1C1) = b;
+}
+} // namespace lift_006D7CA0

@@ -1,0 +1,28 @@
+{
+  "va": "0x006D7CA0",
+  "size": 32,
+  "orig_symbol": "sub_006D7CA0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "sub_006D7CA0",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void fn_006D7CA0(void* self, uint8_t a, uint8_t b)",
+  "summary": "Stores two byte-sized arguments into this+0x1C0 and this+0x1C1 (callee-cleans 8 bytes, ret 0x8).",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x1C0",
+      "type": "uint8_t",
+      "name": "field_0x1C0"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x1C1",
+      "type": "uint8_t",
+      "name": "field_0x1C1"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:35:18Z"
+}
