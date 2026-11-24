@@ -39285,6 +39285,13 @@
     "summary": "Copies bits 20-21 (0x300000) of the stack argument into the same bits of the dword at this+0x10; other bits are preserved.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C9DC0": {
+    "name": "Unknown::GetScaledOrRawValue",
+    "class": "Unknown",
+    "signature": "extern float __fastcall fn_006C9DC0(void* self, int edx_unused, int32_t idx)",
+    "summary": "For idx \u003c 2 returns the float at this+0x14+4*idx; otherwise returns int16 at this+0x18+2*idx scaled by 0.00010001f.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C9E60": {
     "name": "Unknown::GetFloatAt",
     "class": "Unknown",

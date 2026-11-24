@@ -681,3 +681,30 @@ void fn_006C9F20(void* self, uint8_t flag) {
     }
 }
 } // namespace lift_006C9F20
+
+// [0x006C9DC0] sub_006C9DC0 (48 bytes)
+namespace lift_006C9DC0 {
+namespace lift_006C9DC0 {
+// @name Unknown::GetScaledOrRawValue
+// @class Unknown
+// @summary For idx < 2 returns the float at this+0x14+4*idx; otherwise returns int16 at this+0x18+2*idx scaled by 0.00010001f.
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x18 float field_0x18
+// @field Unknown +0x1C int16_t field_0x1C (int16 array; element idx at +0x18+2*idx for idx >= 2)
+
+extern const float mem_0099381C;
+
+// Original: __thiscall-style (ecx = this, one stack arg), `ret 4`.
+//   if (idx < 2) return *(float*)(this + 0x14 + 4*idx);
+//   else         return (float)*(int16_t*)(this + 0x18 + 2*idx) * mem_0099381C;
+extern float __fastcall fn_006C9DC0(void* self, int edx_unused, int32_t idx) {
+    (void)edx_unused;
+    uint8_t* base = static_cast<uint8_t*>(self);
+    if (idx < 2) {
+        return lift_field<float>(base, 0x14 + static_cast<ptrdiff_t>(idx) * 4);
+    }
+    int16_t raw = lift_field<int16_t>(base, 0x18 + static_cast<ptrdiff_t>(idx) * 2);
+    return static_cast<float>(raw) * mem_0099381C;
+}
+} // namespace lift_006C9DC0
+} // namespace lift_006C9DC0
