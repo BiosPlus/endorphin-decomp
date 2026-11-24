@@ -4,11 +4,29 @@
   "orig_symbol": "sub_00538530",
   "src_path": "src/leaf/decompiled_530000.cpp",
   "lifted_path": "lifted/leaf/decompiled_530000.cpp",
-  "name": "Unknown::InitWithVTableAndDefaults",
-  "class": "Unknown",
-  "signature": "void* fn_00538530(void* self)",
-  "summary": "Base-initializes this object, then sets vtable to 0x95501c, a float at +0x14 to 1.0, and flag bytes at +0x18 and +0x19 to 1; returns this.",
+  "name": "sub_00530070",
+  "class": "QuadricWrapper",
+  "signature": "void* fn_00530070()",
+  "summary": "Auto-lifted identical-shape clone of 0x0061EA10 (HingeSecondaryConstraint::AllocAndConstruct).",
   "fields": [
+    {
+      "class": "QuadricWrapper",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "quadric"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "peer"
+    },
     {
       "class": "Unknown",
       "offset": "+0x0",
@@ -36,5 +54,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:24:23Z"
+  "lifted_at": "2026-11-24T12:24:29Z"
 }
