@@ -1,0 +1,22 @@
+{
+  "va": "0x006F0220",
+  "size": 34,
+  "orig_symbol": "sub_006F0220",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::forwardArgsToSubobjectAt24A8",
+  "class": "Unknown",
+  "signature": "void fn_006F0220(void* self, uint32_t arg1, void* arg2)",
+  "summary": "Offsets self by 0x24A8 to reach an embedded subobject and forwards arg1/arg2 to storeArgsAndNotifyChild along with two constant words (0x006F81E0, 0x006F8040).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x24A8",
+      "type": "void*",
+      "name": "field_0x24A8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:14:18Z"
+}
