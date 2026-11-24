@@ -1,0 +1,22 @@
+{
+  "va": "0x0046C2A0",
+  "size": 27,
+  "orig_symbol": "sub_0046C2A0",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "Unknown::CallSlot1B0OfChildField20",
+  "class": "Unknown",
+  "signature": "int32_t fn_0046C2A0(void* self)",
+  "summary": "If the object at +0x20 is non-null, calls its vtable slot +0x1B0 with (-1, -1) and returns that result; otherwise returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:01:30Z"
+}

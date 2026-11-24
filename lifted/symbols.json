@@ -4463,6 +4463,13 @@
     "summary": "Returns the float at +0x138 of the sub-object pointed to by self+0xF8.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x0046C2A0": {
+    "name": "Unknown::CallSlot1B0OfChildField20",
+    "class": "Unknown",
+    "signature": "int32_t fn_0046C2A0(void* self)",
+    "summary": "If the object at +0x20 is non-null, calls its vtable slot +0x1B0 with (-1, -1) and returns that result; otherwise returns 0.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x0046C430": {
     "name": "ExprParser::BoolType::vfunc_51",
     "class": "ExprParser::BoolType",

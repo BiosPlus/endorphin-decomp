@@ -828,3 +828,22 @@ void* fn_0046FBA0(void* arg) {
 }
 } // namespace lift_00401AF0
 } // namespace lift_0046FBA0
+
+// [0x0046C2A0] sub_0046C2A0 (27 bytes)
+namespace lift_0046C2A0 {
+// @name Unknown::CallSlot1B0OfChildField20
+// @class Unknown
+// @summary If the object at +0x20 is non-null, calls its vtable slot +0x1B0 with (-1, -1) and returns that result; otherwise returns 0.
+// @field Unknown +0x20 void* field_0x20
+int32_t fn_0046C2A0(void* self) {
+    void* child = lift_field<void*>(self, 0x20);
+    if (child == nullptr) {
+        return 0;
+    }
+
+    using SlotFn = int32_t (__thiscall*)(void* self, int32_t a, int32_t b);
+    void* vtbl = lift_field<void*>(child, 0);
+    auto slot = reinterpret_cast<SlotFn>(lift_field<void*>(vtbl, 0x1B0));
+    return slot(child, -1, -1);
+}
+} // namespace lift_0046C2A0
