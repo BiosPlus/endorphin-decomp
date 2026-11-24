@@ -1,0 +1,22 @@
+{
+  "va": "0x004586C0",
+  "size": 18,
+  "orig_symbol": "sub_004586C0",
+  "src_path": "src/leaf/tiny_450000.cpp",
+  "lifted_path": "lifted/leaf/tiny_450000.cpp",
+  "name": "KillOwnerTimerWithId",
+  "class": "Unknown",
+  "signature": "BOOL fn_004586C0(void* self, UINT_PTR timerId)",
+  "summary": "Kills the timer identified by the argument, owned by the window handle at self+0x20.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:57:02Z"
+}

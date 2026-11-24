@@ -2996,6 +2996,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x54 and tail-calls sub_004584B0.",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x004586C0": {
+    "name": "KillOwnerTimerWithId",
+    "class": "Unknown",
+    "signature": "BOOL fn_004586C0(void* self, UINT_PTR timerId)",
+    "summary": "Kills the timer identified by the argument, owned by the window handle at self+0x20.",
+    "lifted_path": "lifted/leaf/tiny_450000.cpp"
+  },
   "0x00458720": {
     "name": "SpinButtonStates::ClickedDownState::vfunc_0",
     "class": "SpinButtonStates::ClickedDownState",

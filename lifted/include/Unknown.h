@@ -95,7 +95,7 @@ struct Unknown_Fields {
     // +0x20  BYTE field_0x20 (base of byte array indexed by first argument)  (evidence: 0x0071E660) // CONFLICT: multiple definitions at +0x20
     // +0x20  DWORD                    field_0x20  (evidence: 0x00642010, 0x0078C230, 0x0078C3A0) // CONFLICT: multiple definitions at +0x20
     // +0x20  HMODULE                  field_0x20  (evidence: 0x004474D0, 0x0044B6A0) // CONFLICT: multiple definitions at +0x20
-    // +0x20  HWND                     field_0x20  (evidence: 0x00407850, 0x0043CD80) // CONFLICT: multiple definitions at +0x20
+    // +0x20  HWND                     field_0x20  (evidence: 0x00407850, 0x0043CD80, 0x004586C0) // CONFLICT: multiple definitions at +0x20
     // +0x20  double                   field_0x20  (evidence: 0x00507F50, 0x00507F60, 0x0050E350) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint32_t                 field_0x20  (evidence: 0x0046E450, 0x0046EA50, 0x004A25E0, 0x004B1A70, 0x00633240, 0x00641FE0, 0x00641FF0) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint8_t                  field_0x20  (evidence: 0x006E8610, 0x006E87A0) // CONFLICT: multiple definitions at +0x20

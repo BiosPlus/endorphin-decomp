@@ -264,3 +264,21 @@ uint32_t fn_0045BBE0() {
     return static_cast<uint32_t>(state) >> 15;
 }
 } // namespace lift_0045BBE0
+
+// [0x004586C0] sub_004586C0 (18 bytes)
+namespace lift_004586C0 {
+// IAT slot holding the address of USER32!KillTimer (.rdata 0x00925660).
+extern uint32_t mem_00925660;
+
+// @name KillOwnerTimerWithId
+// @class Unknown
+// @summary Kills the timer identified by the argument, owned by the window handle at self+0x20.
+// @field Unknown +0x20 HWND field_0x20
+BOOL fn_004586C0(void* self, UINT_PTR timerId) {
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+
+    using KillTimerFn = BOOL(__stdcall*)(HWND, UINT_PTR);
+    auto killTimer = reinterpret_cast<KillTimerFn>(static_cast<uintptr_t>(mem_00925660));
+    return killTimer(hwnd, timerId);
+}
+} // namespace lift_004586C0
