@@ -1,0 +1,28 @@
+{
+  "va": "0x006BB790",
+  "size": 31,
+  "orig_symbol": "sub_006BB790",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::GetStateTypeIs2OrChained",
+  "class": "Unknown",
+  "signature": "int32_t fn_006BB790(void* self)",
+  "summary": "Reads a type code from the object's inner struct (+0x04); if it is 2, returns the global-based",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* innerPtr (pointer to inner struct, dereferenced from",
+      "name": "self)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t field_0x04 (type code read from inner struct; compared against",
+      "name": "2)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:26:47Z"
+}

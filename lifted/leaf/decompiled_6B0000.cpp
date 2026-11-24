@@ -182,3 +182,29 @@ void fn_006B95F0(void* self) {
     (void)self;
 }
 } // namespace lift_006B95F0
+
+// [0x006BB790] sub_006BB790 (31 bytes)
+namespace lift_006BB790 {
+// Known callee 0x006D98E0: sub_006D98E0 (Returns global int32 value from mem_00AA91C4.)
+extern int32_t ext_006D98E0(void);
+
+// @name Unknown::GetStateTypeIs2OrChained
+// @class Unknown
+// @summary Reads a type code from the object's inner struct (+0x04); if it is 2, returns the global-based
+//          status, mapping a value of 2 to 1 and otherwise returning the global value again. Otherwise returns the type code.
+// @field Unknown +0x00 void* innerPtr (pointer to inner struct, dereferenced from self)
+// @field Unknown +0x04 int32_t field_0x04 (type code read from inner struct; compared against 2)
+int32_t fn_006BB790(void* self) {
+    // ecx = self; inner = *(void**)self; type = *(int32_t*)(inner + 4)
+    void* inner = *reinterpret_cast<void* const*>(self);
+    int32_t type = lift_field<int32_t>(inner, 4);
+    if (type != 2) {
+        return type;
+    }
+    if (ext_006D98E0() == 2) {
+        return 1;
+    }
+    // Original tail-jumps to 0x006D98E0 here.
+    return ext_006D98E0();
+}
+} // namespace lift_006BB790

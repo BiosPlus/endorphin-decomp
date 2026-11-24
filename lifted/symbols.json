@@ -35293,6 +35293,13 @@
     "summary": "Stores the stack argument into the dword at offset +4 of the object pointed to by self's first field (thiscall, callee pops 4 bytes).",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006BB790": {
+    "name": "Unknown::GetStateTypeIs2OrChained",
+    "class": "Unknown",
+    "signature": "int32_t fn_006BB790(void* self)",
+    "summary": "Reads a type code from the object's inner struct (+0x04); if it is 2, returns the global-based",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BB7B0": {
     "name": "Unknown::SetField08",
     "class": "Unknown",
