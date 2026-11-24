@@ -335,3 +335,23 @@ uint32_t __cdecl fn_00858B60(uint32_t selector) {
 }
 } // namespace lift_00782B30
 } // namespace lift_00858B60
+
+// [0x008597B0]
+namespace lift_008597B0 {
+// @name strncmpSignedChar
+// @summary Compares up to n chars of two strings as signed bytes; returns the first signed difference, or 0 if equal or n is 0.
+int strncmpSignedChar(const char* s1, const char* s2, std::size_t n) {
+    while (n != 0) {
+        const int a = static_cast<int>(static_cast<signed char>(*s1));
+        const int b = static_cast<int>(static_cast<signed char>(*s2));
+        const int diff = a - b;
+        if (diff != 0) {
+            return diff;
+        }
+        ++s1;
+        ++s2;
+        --n;
+    }
+    return 0;
+}
+} // namespace lift_008597B0

@@ -50597,6 +50597,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0079AF50 (GlobalFreeWrapper).",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x008597B0": {
+    "name": "strncmpSignedChar",
+    "signature": "int strncmpSignedChar(const char* s1, const char* s2, std::size_t n)",
+    "summary": "Compares up to n chars of two strings as signed bytes; returns the first signed difference, or 0 if equal or n is 0.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00859A20": {
     "name": "strcat_impl",
     "signature": "uint32_t sub_00859A20(uint32_t dst_addr, uint32_t src_addr)",
