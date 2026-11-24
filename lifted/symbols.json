@@ -13397,6 +13397,13 @@
     "summary": "Lazily caches a shared value via ext_0050A030 on first call, then forwards it with the this+4 sub-object address to ext_0055DA20 on arg1; returns arg1.",
     "lifted_path": "lifted/NMData/TaskTemplate.cpp"
   },
+  "0x0050AA70": {
+    "name": "NMData::Task::vfunc_15",
+    "class": "NMData::Task",
+    "signature": "uint32_t* fn_0050AA70(void* self, uint32_t* out, uint32_t key)",
+    "summary": "Returns out; if key == 0x386 calls ext_0050A120(out, this), otherwise zeroes out via ext_00671F30.",
+    "lifted_path": "lifted/NMData/Task.cpp"
+  },
   "0x0050AAB0": {
     "name": "NMData::Task::vfunc_13",
     "class": "NMData::Task",

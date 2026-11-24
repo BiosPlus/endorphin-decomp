@@ -49,3 +49,25 @@ extern void* __thiscall fn_0050C770(void* self, uint32_t flags) {
     return self;
 }
 } // namespace lift_0050C770
+
+// [0x0050AA70] NMData::Task::vfunc_15 (57 bytes)
+namespace lift_0050AA70 {
+// Known callee 0x0050A120: sub_0050A120 (30 bytes, not yet lifted). Called as (out, this).
+extern void ext_0050A120(uint32_t* out, void* self);
+// Known callee 0x00671F30: sub_00671F30 (Zeroes the first dword of the output buffer and stores the global mem_00B599BC into the second dword.)
+extern void ext_00671F30(uint32_t* out);
+
+// @name NMData::Task::vfunc_15
+// @class NMData::Task
+// @summary Returns out; if key == 0x386 calls ext_0050A120(out, this), otherwise zeroes out via ext_00671F30.
+// (No fields of the object are dereferenced; `self` is only passed through to ext_0050A120.)
+// (ecx on entry is the implicit `this`; the stack local it is saved to is dead.)
+uint32_t* fn_0050AA70(void* self, uint32_t* out, uint32_t key) {
+    if (key == 0x386) {
+        ext_0050A120(out, self);
+    } else {
+        ext_00671F30(out);
+    }
+    return out;
+}
+} // namespace lift_0050AA70

@@ -1,0 +1,14 @@
+{
+  "va": "0x0050AA70",
+  "size": 57,
+  "orig_symbol": "NMData::Task::vfunc_15",
+  "src_path": "src/NMData/Task.cpp",
+  "lifted_path": "lifted/NMData/Task.cpp",
+  "name": "NMData::Task::vfunc_15",
+  "class": "NMData::Task",
+  "signature": "uint32_t* fn_0050AA70(void* self, uint32_t* out, uint32_t key)",
+  "summary": "Returns out; if key == 0x386 calls ext_0050A120(out, this), otherwise zeroes out via ext_00671F30.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:38:30Z"
+}
