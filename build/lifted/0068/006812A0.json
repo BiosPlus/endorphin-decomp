@@ -1,0 +1,13 @@
+{
+  "va": "0x006812A0",
+  "size": 53,
+  "orig_symbol": "sub_006812A0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "clearBufferRange",
+  "signature": "void fn_006812A0(uint32_t first, uint32_t last)",
+  "summary": "Frees and zeroes out a range of 16-byte buffer descriptors",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:16:57Z"
+}

@@ -529,3 +529,26 @@ __stdcall std::uint8_t* fn_00688BA0(std::uint8_t* base, std::uint32_t index, std
 }
 } // namespace lift_0054F2C0
 } // namespace lift_00688BA0
+
+// [0x006812A0]
+namespace lift_006812A0 {
+// @name clearBufferRange
+// @summary Frees and zeroes out a range of 16-byte buffer descriptors
+
+
+extern uint32_t mem_read_u32(uint32_t addr);
+extern void mem_write_u32(uint32_t addr, uint32_t val);
+extern void ext_006A5C5C(uint32_t ptr);
+
+void fn_006812A0(uint32_t first, uint32_t last) {
+    for (uint32_t cur = first; cur != last; cur += 0x10) {
+        uint32_t ptr = mem_read_u32(cur + 0x4);
+        if (ptr != 0) {
+            ext_006A5C5C(ptr);
+        }
+        mem_write_u32(cur + 0x4, 0);
+        mem_write_u32(cur + 0x8, 0);
+        mem_write_u32(cur + 0xC, 0);
+    }
+}
+} // namespace lift_006812A0
