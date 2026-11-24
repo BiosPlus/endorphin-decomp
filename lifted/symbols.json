@@ -38773,6 +38773,12 @@
     "summary": "Forwards its single cdecl uint32_t argument unchanged to ext_008596E0 and returns that call's result.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x0080B560": {
+    "name": "GlobalFreeThunk_0080B560",
+    "signature": "void* fn_0080B560(void* hMem)",
+    "summary": "Forwards its single stack argument to the GlobalFree wrapper and returns the result.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080CA10": {
     "name": "GlobalFreeForwarder",
     "signature": "void* fn_0080CA10(void* hMem)",

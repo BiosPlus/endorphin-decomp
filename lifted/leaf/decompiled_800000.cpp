@@ -36,3 +36,15 @@ void* fn_0080CA10(void* hMem) {
     return ext_00859730(hMem);
 }
 } // namespace lift_0080CA10
+
+// [0x0080B560] sub_0080B560 (16 bytes)
+namespace lift_0080B560 {
+// Known callee 0x00859730: sub_00859730 (Auto-lifted identical-shape clone of 0x0079AF50 (GlobalFreeWrapper).)
+extern void* ext_00859730(void* hMem);
+
+// @name GlobalFreeThunk_0080B560
+// @summary Forwards its single stack argument to the GlobalFree wrapper and returns the result.
+void* fn_0080B560(void* hMem) {
+    return ext_00859730(hMem);
+}
+} // namespace lift_0080B560
