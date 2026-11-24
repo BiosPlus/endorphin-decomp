@@ -1,0 +1,40 @@
+{
+  "va": "0x006C9A60",
+  "size": 47,
+  "orig_symbol": "sub_006C9A60",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "RangeTracker::update",
+  "class": "RangeTracker",
+  "signature": "void RangeTracker::update(uint32_t mask, int32_t value)",
+  "summary": "ORs a mask into flags, increments count, and widens the min/max range with a new value (min sentinel -1 means unset).",
+  "fields": [
+    {
+      "class": "RangeTracker",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "flags"
+    },
+    {
+      "class": "RangeTracker",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "minValue"
+    },
+    {
+      "class": "RangeTracker",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "maxValue"
+    },
+    {
+      "class": "RangeTracker",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "count"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:12:19Z"
+}

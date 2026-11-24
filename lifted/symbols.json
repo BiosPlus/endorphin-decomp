@@ -38871,6 +38871,13 @@
     "summary": "Getter returning int32_t field at offset +0x4C.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C9A60": {
+    "name": "RangeTracker::update",
+    "class": "RangeTracker",
+    "signature": "void RangeTracker::update(uint32_t mask, int32_t value)",
+    "summary": "ORs a mask into flags, increments count, and widens the min/max range with a new value (min sentinel -1 means unset).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C9A90": {
     "name": "Unknown::InitDefaults",
     "class": "Unknown",

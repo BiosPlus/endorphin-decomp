@@ -384,3 +384,35 @@ uint8_t __stdcall sub_006C0470(uint32_t arg0) {
     return (arg0 == mem_00B5E400) ? 1 : 0;
 }
 } // namespace lift_006C0470
+
+// [0x006C9A60]
+namespace lift_006C9A60 {
+// @name RangeTracker::update
+// @class RangeTracker
+// @summary ORs a mask into flags, increments count, and widens the min/max range with a new value (min sentinel -1 means unset).
+// @field RangeTracker +0x00 uint32_t flags
+// @field RangeTracker +0x08 int32_t minValue
+// @field RangeTracker +0x0C int32_t maxValue
+// @field RangeTracker +0x10 int32_t count
+
+struct RangeTracker {
+    uint32_t flags;      // +0x00
+    uint32_t field_0x04; // +0x04
+    int32_t  minValue;   // +0x08
+    int32_t  maxValue;   // +0x0C
+    int32_t  count;      // +0x10
+
+    void update(uint32_t mask, int32_t value);
+};
+
+void RangeTracker::update(uint32_t mask, int32_t value) {
+    flags |= mask;
+    count++;
+    if (value < minValue || minValue == -1) {
+        minValue = value;
+    }
+    if (value > maxValue) {
+        maxValue = value;
+    }
+}
+} // namespace lift_006C9A60
