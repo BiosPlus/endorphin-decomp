@@ -582,3 +582,39 @@ void sub_00480CA0(uint32_t dst, uint32_t end, uint32_t src) {
     } while (dst + 0x10 != end);
 }
 } // namespace lift_00480CA0
+
+// [0x00489350] sub_00489350 (55 bytes)
+namespace lift_00489350 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void* ext_006A5C62(size_t size);
+
+// @name AllocAndInitRecord
+// @summary Allocates a 0x6C-byte record, zeroes three dwords at +0x00/+0x04/+0x08, and sets flag bytes +0x68=1 and +0x69=0.
+// @field UnknownObject +0x00 DWORD field_0x00
+// @field UnknownObject +0x04 DWORD field_0x04
+// @field UnknownObject +0x08 DWORD field_0x08
+// @field UnknownObject +0x68 BYTE field_0x68
+// @field UnknownObject +0x69 BYTE field_0x69
+void* fn_00489350() {
+    void* const obj = ext_006A5C62(0x6C);
+    const uintptr_t base = reinterpret_cast<uintptr_t>(obj);
+
+    if (obj != nullptr) {
+        lift_field<uint32_t>(obj, 0x00) = 0;
+    }
+
+    const uintptr_t p4 = base + 0x04;
+    if (p4 != 0) {
+        lift_field<uint32_t>(reinterpret_cast<void*>(p4), 0x00) = 0;
+    }
+
+    const uintptr_t p8 = base + 0x08;
+    if (p8 != 0) {
+        lift_field<uint32_t>(reinterpret_cast<void*>(p8), 0x00) = 0;
+    }
+
+    lift_field<uint8_t>(obj, 0x68) = 1;
+    lift_field<uint8_t>(obj, 0x69) = 0;
+    return obj;
+}
+} // namespace lift_00489350

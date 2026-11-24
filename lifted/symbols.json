@@ -7585,6 +7585,12 @@
     "summary": "Writes {self, self-\u003e+0x04} into the hidden out slot, asserting begin \u003c= end first; returns out.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00489350": {
+    "name": "AllocAndInitRecord",
+    "signature": "void* fn_00489350()",
+    "summary": "Allocates a 0x6C-byte record, zeroes three dwords at +0x00/+0x04/+0x08, and sets flag bytes +0x68=1 and +0x69=0.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00489440": {
     "name": "ExprParser::WriteMethodType_DesiredPoseEventData::vfunc_40",
     "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",

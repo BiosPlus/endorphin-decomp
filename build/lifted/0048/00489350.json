@@ -1,0 +1,45 @@
+{
+  "va": "0x00489350",
+  "size": 55,
+  "orig_symbol": "sub_00489350",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "AllocAndInitRecord",
+  "signature": "void* fn_00489350()",
+  "summary": "Allocates a 0x6C-byte record, zeroes three dwords at +0x00/+0x04/+0x08, and sets flag bytes +0x68=1 and +0x69=0.",
+  "fields": [
+    {
+      "class": "UnknownObject",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownObject",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownObject",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownObject",
+      "offset": "+0x68",
+      "type": "BYTE",
+      "name": "field_0x68"
+    },
+    {
+      "class": "UnknownObject",
+      "offset": "+0x69",
+      "type": "BYTE",
+      "name": "field_0x69"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:13:17Z"
+}
