@@ -1,0 +1,28 @@
+{
+  "va": "0x00585170",
+  "size": 52,
+  "orig_symbol": "AnimatableTransform::vfunc_34",
+  "src_path": "src/classes/AnimatableTransform.cpp",
+  "lifted_path": "lifted/classes/AnimatableTransform.cpp",
+  "name": "AnimatableTransform::vfunc_34",
+  "class": "AnimatableTransform",
+  "signature": "uint32_t fn_00585170(void* self, void* arg0)",
+  "summary": "Resolves a property/transform value via TransformInterface and vfunc_54, then forwards to ext_00493E40.",
+  "fields": [
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "transformInterface_vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:10:18Z"
+}

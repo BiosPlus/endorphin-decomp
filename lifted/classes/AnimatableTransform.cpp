@@ -80,3 +80,31 @@ void __thiscall fn_0058A550(void* self, uint32_t arg1, uint32_t arg2) {
     }
 }
 } // namespace lift_0058A550
+
+// [0x00585170]
+namespace lift_00585170 {
+// @name AnimatableTransform::vfunc_34
+// @class AnimatableTransform
+// @summary Resolves a property/transform value via TransformInterface and vfunc_54, then forwards to ext_00493E40.
+// @field AnimatableTransform +0x00 void* vtable
+// @field AnimatableTransform +0x04 void* transformInterface_vtable
+
+extern uint32_t mem_00B40640;
+extern uint32_t ext_00493E40(void* self, uint32_t arg);
+
+uint32_t fn_00585170(void* self, void* arg0) {
+    auto* base = static_cast<uint8_t*>(self);
+    void* iface = base + 0x4;
+    auto** iface_vtable = *reinterpret_cast<void***>(iface);
+    using vfunc2_t = uint32_t(*)(void*, uint32_t, uint32_t, uint32_t);
+    auto vfunc2 = reinterpret_cast<vfunc2_t>(iface_vtable[2]);
+    uint32_t r1 = vfunc2(iface, mem_00B40640, 0, 0);
+
+    auto** vtable = *reinterpret_cast<void***>(self);
+    using vfunc54_t = uint32_t(*)(void*, uint32_t);
+    auto vfunc54 = reinterpret_cast<vfunc54_t>(vtable[0xD8 / 4]);
+    uint32_t r2 = vfunc54(self, r1);
+
+    return ext_00493E40(arg0, r2);
+}
+} // namespace lift_00585170
