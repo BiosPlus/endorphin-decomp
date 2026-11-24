@@ -586,3 +586,23 @@ uint32_t fn_0078D720(void* self, int32_t arg1) {
     return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
 }
 } // namespace lift_0078D720
+
+// [0x00783540]
+namespace lift_00783540 {
+// Imported from MSVCR80: fwrite(const void* ptr, size_t size, size_t nmemb, FILE* stream).
+size_t ext_fwrite(const void* ptr, size_t size, size_t nmemb, FILE* stream);
+
+// @name writeIfEnabled (sub_00783540)
+// @summary Writes count bytes from buf to the stream held by self's inner object, unless that object's flag byte at +0x04 is zero; returns fwrite's result or 0 when disabled.
+// @field Unknown +0x04 void* field_0x04 (pointer to inner object)
+// @field Unknown +0x00 void* field_0x00 (FILE* stream passed to fwrite)
+// @field Unknown +0x04 uint8_t field_0x04 (enable flag on inner object)
+UINT fn_00783540(void* self, const void* buf, UINT count) {
+    void* inner = lift_field<void*>(self, 0x04);
+    if (lift_field<uint8_t>(inner, 0x04) == 0) {
+        return 0;
+    }
+    void* stream = lift_field<void*>(inner, 0x00);
+    return static_cast<UINT>(ext_fwrite(buf, 1, count, static_cast<FILE*>(stream)));
+}
+} // namespace lift_00783540
