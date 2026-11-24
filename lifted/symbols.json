@@ -38244,6 +38244,12 @@
     "summary": "Returns pointer to subobject/field at offset +0x8.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D8AB0": {
+    "name": "init_globals_b5d900",
+    "signature": "void sub_006D8AB0()",
+    "summary": "Stores four constants into globals mem_00B5D900..mem_00B5D90C (two addresses, one address-like value, and zero).",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D8CD0": {
     "name": "sub_006D8CD0",
     "signature": "extern \"C\" int32_t __cdecl fn_006D8CD0(void)",

@@ -388,3 +388,21 @@ uint32_t __thiscall fn_006DE660(uint32_t self, int32_t index) {
     return mem_read32(items + static_cast<uint32_t>(index) * 4);
 }
 } // namespace lift_006DE660
+
+// [0x006D8AB0]
+namespace lift_006D8AB0 {
+// @name init_globals_b5d900
+// @summary Stores four constants into globals mem_00B5D900..mem_00B5D90C (two addresses, one address-like value, and zero).
+
+extern uint32_t mem_00B5D900;
+extern uint32_t mem_00B5D904;
+extern uint32_t mem_00B5D908;
+extern uint32_t mem_00B5D90C;
+
+void sub_006D8AB0() {
+    mem_00B5D900 = 0x00B5D8F8u;
+    mem_00B5D908 = 0x00AA916Cu;
+    mem_00B5D904 = 0x00B5EB50u;
+    mem_00B5D90C = 0u;
+}
+} // namespace lift_006D8AB0

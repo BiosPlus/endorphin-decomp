@@ -1,0 +1,13 @@
+{
+  "va": "0x006D8AB0",
+  "size": 41,
+  "orig_symbol": "sub_006D8AB0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "init_globals_b5d900",
+  "signature": "void sub_006D8AB0()",
+  "summary": "Stores four constants into globals mem_00B5D900..mem_00B5D90C (two addresses, one address-like value, and zero).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:57:14Z"
+}
