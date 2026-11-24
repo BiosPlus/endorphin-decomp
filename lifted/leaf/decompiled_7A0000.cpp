@@ -149,3 +149,15 @@ void __thiscall Unknown_SetIndexedDwordSlot734(Unknown* self, int index, uint32_
     }
 }
 } // namespace lift_007AAA00
+
+// [0x007AEFD0]
+namespace lift_007AEFD0 {
+// @name SwapFirstTwoBytes
+// @summary Swaps the byte at offset 0 and the byte at offset 1 of the buffer pointed to by the single stack argument (cdecl, no cleanup).
+void sub_007AEFD0(uint8_t* p) {
+    uint8_t first = p[0];
+    uint8_t second = p[1];
+    p[1] = first;
+    p[0] = second;
+}
+} // namespace lift_007AEFD0

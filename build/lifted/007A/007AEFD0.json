@@ -1,0 +1,13 @@
+{
+  "va": "0x007AEFD0",
+  "size": 32,
+  "orig_symbol": "sub_007AEFD0",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "SwapFirstTwoBytes",
+  "signature": "void sub_007AEFD0(uint8_t* p)",
+  "summary": "Swaps the byte at offset 0 and the byte at offset 1 of the buffer pointed to by the single stack argument (cdecl, no cleanup).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:48:04Z"
+}

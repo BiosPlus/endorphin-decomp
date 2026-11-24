@@ -43451,6 +43451,12 @@
     "summary": "Thiscall-style thunk: passes the address of its stack argument block (esp+4) in ecx to fn_006B9D70, then returns 0 (al = 0) and pops 0x54 bytes of arguments.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AEFD0": {
+    "name": "SwapFirstTwoBytes",
+    "signature": "void sub_007AEFD0(uint8_t* p)",
+    "summary": "Swaps the byte at offset 0 and the byte at offset 1 of the buffer pointed to by the single stack argument (cdecl, no cleanup).",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AF620": {
     "name": "ForwardToCallbackWithArgPtr",
     "class": "\u003cClassName\u003e (optional)",
