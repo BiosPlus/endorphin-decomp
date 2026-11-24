@@ -213,3 +213,24 @@ void fn_005B1B60(void* self, const void* src) {
     lift_field<uint8_t>(self, 0x04) = 1;
 }
 } // namespace lift_005B1B60
+
+// [0x005B0E60]
+namespace lift_005B0E60 {
+extern int mem_00A88A40;
+extern int mem_00924FE4;
+
+extern uint32_t mem_read_u32(uintptr_t addr);
+// Indirect import through mem_00924FE4: MSVCP80 basic_string<char>::basic_string(const char*, const allocator&).
+extern void ext_00924FE4(uintptr_t self, uintptr_t cstr, uintptr_t alloc_ref);
+
+// @name Unknown::copyCStringTableEntryToString
+// @class Unknown
+// @summary Constructs the std::string at out from the C-string table entry selected by this->+0x08; returns out.
+// @field Unknown +0x08 uint32_t field_0x08
+uint32_t __thiscall sub_005B0E60(uintptr_t this_ptr, uintptr_t out_ptr) {
+    uint32_t index = mem_read_u32(this_ptr + 0x08);
+    uint32_t cstr = mem_read_u32(reinterpret_cast<uintptr_t>(&mem_00A88A40) + (static_cast<uintptr_t>(index) << 2));
+    ext_00924FE4(out_ptr, static_cast<uintptr_t>(cstr), 0);
+    return static_cast<uint32_t>(out_ptr);
+}
+} // namespace lift_005B0E60

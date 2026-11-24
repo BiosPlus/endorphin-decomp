@@ -18119,6 +18119,13 @@
     "summary": "Writes the 8-byte value at *src into every 8-byte slot in [dst_begin, dst_end). Source pointer is not advanced.",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005B0E60": {
+    "name": "Unknown::copyCStringTableEntryToString",
+    "class": "Unknown",
+    "signature": "uint32_t __thiscall sub_005B0E60(uintptr_t this_ptr, uintptr_t out_ptr)",
+    "summary": "Constructs the std::string at out from the C-string table entry selected by this-\u003e+0x08; returns out.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B0E90": {
     "name": "Geometry::MeshType::vfunc_6",
     "class": "Geometry::MeshType",
