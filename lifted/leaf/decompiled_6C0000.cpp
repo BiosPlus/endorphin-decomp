@@ -504,3 +504,26 @@ void __thiscall fn_006C33C0(void* self, uint32_t index, uint32_t* out) {
     *out = value;
 }
 } // namespace lift_006C33C0
+
+// [0x006C30F0]
+namespace lift_006C30F0 {
+// @name sub_006C30F0
+// @summary Returns field_0x158 if non-null and its vtable[0]() returns 4, else 0
+// @field Unknown +0x158 uint32_t field_0x158
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+uint32_t __fastcall sub_006C30F0(uint32_t this_ptr, uint32_t /*edx*/) {
+    uint32_t obj = mem_read32(this_ptr + 0x158);
+    if (obj != 0) {
+        uint32_t vtable = mem_read32(obj);
+        typedef uint32_t(__fastcall * vfn_t)(uint32_t, uint32_t);
+        vfn_t fn = reinterpret_cast<vfn_t>(static_cast<uintptr_t>(mem_read32(vtable)));
+        if (fn(obj, 0) == 4) {
+            return mem_read32(this_ptr + 0x158);
+        }
+    }
+    return 0;
+}
+} // namespace lift_006C30F0
