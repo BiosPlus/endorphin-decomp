@@ -938,3 +938,21 @@ extern void __thiscall fn_00711D70(void* self, uint32_t a, uint32_t b) {
     *reinterpret_cast<uint32_t*>(sub + 0x28) = b;
 }
 } // namespace lift_00711D70
+
+// [0x00715BE0] sub_00715BE0 (48 bytes)
+namespace lift_00715BE0 {
+// @name copyBlock24
+// @summary Copies a 24-byte (six dword) block from src to dst and returns dst.
+// @field Block24 +0x00 uint32_t field_0x00
+// @field Block24 +0x04 uint32_t field_0x04
+// @field Block24 +0x08 uint32_t field_0x08
+// @field Block24 +0x0C uint32_t field_0x0C
+// @field Block24 +0x10 uint32_t field_0x10
+// @field Block24 +0x14 uint32_t field_0x14
+void* fn_00715BE0(void* dst, const void* src) {
+    for (ptrdiff_t off = 0; off < 0x18; off += 4) {
+        lift_field<uint32_t>(dst, off) = lift_field<uint32_t>(src, off);
+    }
+    return dst;
+}
+} // namespace lift_00715BE0

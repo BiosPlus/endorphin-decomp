@@ -45314,6 +45314,12 @@
     "summary": "Reads a byte at offset 0x310 from the object pointed to by this+0x10.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00715BE0": {
+    "name": "copyBlock24",
+    "signature": "void* fn_00715BE0(void* dst, const void* src)",
+    "summary": "Copies a 24-byte (six dword) block from src to dst and returns dst.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00717D40": {
     "name": "sub_00717D40",
     "signature": "extern \"C\" void* __fastcall fn_00717D40(void* self, int edx_unused, unsigned int flags)",
