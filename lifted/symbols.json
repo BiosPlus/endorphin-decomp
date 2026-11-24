@@ -2372,6 +2372,13 @@
     "summary": "Returns the address of the read-only 32-bit constant at mem_009331C8 (.rdata).",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x00447FA0": {
+    "name": "ProgressDialog::vfunc_3_off_74",
+    "class": "ProgressDialog",
+    "signature": "void fn_00447FA0(void* self, void* text)",
+    "summary": "Converts a std::string argument to a C string and forwards it to the member at +0x58 (ord_6067 thunk).",
+    "lifted_path": "lifted/classes/ProgressDialog.cpp"
+  },
   "0x00447FE0": {
     "name": "ProgressDialog::vfunc_1",
     "class": "ProgressDialog",

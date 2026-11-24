@@ -1,0 +1,22 @@
+{
+  "va": "0x00447FA0",
+  "size": 26,
+  "orig_symbol": "ProgressDialog::vfunc_3_off_74",
+  "src_path": "src/classes/ProgressDialog.cpp",
+  "lifted_path": "lifted/classes/ProgressDialog.cpp",
+  "name": "ProgressDialog::vfunc_3_off_74",
+  "class": "ProgressDialog",
+  "signature": "void fn_00447FA0(void* self, void* text)",
+  "summary": "Converts a std::string argument to a C string and forwards it to the member at +0x58 (ord_6067 thunk).",
+  "fields": [
+    {
+      "class": "ProgressDialog",
+      "offset": "+0x58",
+      "type": "void*",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:54:49Z"
+}
