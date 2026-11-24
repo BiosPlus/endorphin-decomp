@@ -156,3 +156,21 @@ extern int __fastcall sub_00455F40(void* self) {
     return 1;
 }
 } // namespace lift_00455F40
+
+// [0x00455CD0]
+namespace lift_00455CD0 {
+// @name descriptiveName: sub_00455CD0_dispatchOnStateAOrB
+// @summary Tail-dispatches to fn_00455CB0 when the int at self+0x98 is 0x0A or 0x0B, otherwise tail-calls fn_004090C0.
+// @field Unknown +0x98 int32_t field_0x98
+
+extern int __fastcall fn_004090C0(void* self);
+extern int __fastcall fn_00455CB0(void* self);
+
+extern int __fastcall fn_00455CD0(void* self)
+{
+    int32_t state = *reinterpret_cast<int32_t*>(reinterpret_cast<uint8_t*>(self) + 0x98);
+    if (state == 0x0A || state == 0x0B)
+        return fn_00455CB0(self);
+    return fn_004090C0(self);
+}
+} // namespace lift_00455CD0
