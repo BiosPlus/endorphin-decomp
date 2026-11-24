@@ -157,3 +157,19 @@ uint8_t GetByteTableEntryOrZero(void* self, uint32_t index) {
     return lift_field<uint8_t>(self, 0x18 + static_cast<ptrdiff_t>(index));
 }
 } // namespace lift_005539B0
+
+// [0x005539F0] sub_005539F0 (21 bytes)
+namespace lift_005539F0 {
+// @name GetDwordTableEntryOrZero
+// @class Unknown
+// @summary Returns the DWORD at this+0x0C + 4*index for index 0..2, otherwise 0 (__thiscall, 1 stack arg).
+// @field Unknown +0x0C DWORD field_0x0C
+// @field Unknown +0x10 DWORD field_0x10
+// @field Unknown +0x14 DWORD field_0x14
+DWORD __thiscall fn_005539F0(void* self, DWORD index) {
+    if (index > 2) {
+        return 0;
+    }
+    return lift_field<DWORD>(self, 0x0C + static_cast<ptrdiff_t>(index) * 4);
+}
+} // namespace lift_005539F0

@@ -13451,6 +13451,13 @@
     "summary": "Returns float element [index] of a 3-float array at self for index 0..2, else 0.0f.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x005539F0": {
+    "name": "GetDwordTableEntryOrZero",
+    "class": "Unknown",
+    "signature": "DWORD __thiscall fn_005539F0(void* self, DWORD index)",
+    "summary": "Returns the DWORD at this+0x0C + 4*index for index 0..2, otherwise 0 (__thiscall, 1 stack arg).",
+    "lifted_path": "lifted/leaf/tiny_550000.cpp"
+  },
   "0x00553A30": {
     "name": "SetIndexedSlot (descriptive; owning class not yet identified)",
     "class": "Unknown",
