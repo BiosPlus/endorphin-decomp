@@ -1,0 +1,22 @@
+{
+  "va": "0x00480060",
+  "size": 53,
+  "orig_symbol": "ToolEngine::vfunc_17",
+  "src_path": "src/classes/ToolEngine.cpp",
+  "lifted_path": "lifted/classes/ToolEngine.cpp",
+  "name": "ToolEngine::vfunc_17",
+  "class": "ToolEngine",
+  "signature": "uint32_t fn_00480060(void* self, uint32_t arg1)",
+  "summary": "Initializes a 3-DWORD tuple (-1, 0, 0) and invokes vfunc at +0x60 on subobject +0x10",
+  "fields": [
+    {
+      "class": "ToolEngine",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:11:38Z"
+}

@@ -102,3 +102,26 @@ void fn_00480160(void* self) {
     lift_field<uint8_t>(result, 0x86) = 1;
 }
 } // namespace lift_00480160
+
+// [0x00480060]
+namespace lift_00480060 {
+extern void* ext_00494000(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+
+// @name ToolEngine::vfunc_17
+// @class ToolEngine
+// @summary Initializes a 3-DWORD tuple (-1, 0, 0) and invokes vfunc at +0x60 on subobject +0x10
+// @field ToolEngine +0x10 void* field_0x10
+
+uint32_t fn_00480060(void* self, uint32_t arg1) {
+    uint32_t tuple[3];
+    ext_00494000(tuple, 0xFFFFFFFFu, 0u, 0u);
+
+    uint8_t* subobj = static_cast<uint8_t*>(self) + 0x10;
+    uint32_t vtable = *reinterpret_cast<uint32_t*>(subobj);
+    uint32_t vfunc_addr = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(vtable) + 0x60);
+
+    using VFunc = uint32_t(__thiscall*)(void*, uint32_t, uint32_t, void*, uint32_t);
+    auto vfunc = reinterpret_cast<VFunc>(static_cast<uintptr_t>(vfunc_addr));
+    return vfunc(subobj, arg1, 3u, tuple, 1u);
+}
+} // namespace lift_00480060

@@ -5938,6 +5938,13 @@
     "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 2 (offset +0x8) with the same this pointer.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x0046A510": {
+    "name": "std::_Tree::_Erase",
+    "class": "std::_Tree",
+    "signature": "void __thiscall fn_0046A510(uint32_t self, uint32_t node)",
+    "summary": "Recursively frees all non-nil nodes in a red-black tree subtree",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046AC30": {
     "name": "sub_0046AC30",
     "signature": "extern \"C\" void fn_0046AC30(void)",
