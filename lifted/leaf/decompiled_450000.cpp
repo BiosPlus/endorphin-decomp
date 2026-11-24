@@ -216,3 +216,20 @@ void fn_00458670(void* self, uint32_t arg1, uint32_t* arg2) {
     ext_004584A0();
 }
 } // namespace lift_00458670
+
+// [0x004584C0] sub_004584C0 (32 bytes)
+namespace lift_004584C0 {
+// @name descriptiveName: InitTripleValueObject
+// @summary Stores a constant tag word and two stack arguments into a 16-byte object and returns it.
+// @field <unknown> +0x00 uint32_t field_0x00
+// @field <unknown> +0x04 uint32_t field_0x04
+// @field <unknown> +0x08 uint32_t field_0x08
+// @field <unknown> +0x0C uint32_t field_0x0C
+void* fn_004584C0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    lift_field<uint32_t>(self, 0x04) = arg1;
+    lift_field<uint32_t>(self, 0x00) = 0x937394u;
+    lift_field<uint32_t>(self, 0x08) = arg2;
+    lift_field<uint32_t>(self, 0x0C) = arg3;
+    return self;
+}
+} // namespace lift_004584C0

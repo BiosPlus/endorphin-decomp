@@ -3719,6 +3719,12 @@
     "summary": "Tail-call virtual method at vtable +0xC on member pointer at +0x10",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x004584C0": {
+    "name": "descriptiveName: InitTripleValueObject",
+    "signature": "void* fn_004584C0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Stores a constant tag word and two stack arguments into a 16-byte object and returns it.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x004584E0": {
     "name": "sub_004584E0",
     "signature": "extern \"C\" void __fastcall fn_004584E0(void* self)",
