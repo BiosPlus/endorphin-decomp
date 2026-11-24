@@ -25849,6 +25849,13 @@
     "summary": "Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x00672490": {
+    "name": "UnknownClass::ForwardToChildVirtual78",
+    "class": "UnknownClass",
+    "signature": "void fn_00672490(void* self)",
+    "summary": "If the child pointer at +0x0C is non-null, invoke its vtable slot at +0x78 with this=child and arg=self+0x08.",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
   "0x00672EB0": {
     "name": "sub_00672EB0",
     "signature": "extern \"C\" void fn_00672EB0(void)",

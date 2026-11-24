@@ -319,3 +319,32 @@ uint32_t* ZeroFiveDwordsAt4(uint32_t* self) {
     return self;
 }
 } // namespace lift_0067B070
+
+// [0x00672490] sub_00672490 (21 bytes)
+namespace lift_00672490 {
+// @name UnknownClass::ForwardToChildVirtual78
+// @class UnknownClass
+// @summary If the child pointer at +0x0C is non-null, invoke its vtable slot at +0x78 with this=child and arg=self+0x08.
+// @field UnknownClass +0x04 uint32_t field_0x04
+// @field UnknownClass +0x08 uint32_t field_0x08
+// @field UnknownClass +0x0C uint32_t child
+void fn_00672490(void* self) {
+    // Child pointer at self+0x0C (32-bit target layout).
+    const uint32_t child_addr = lift_field<uint32_t>(self, 0x0C);
+    if (child_addr == 0) {
+        return;
+    }
+
+    void* child = reinterpret_cast<void*>(static_cast<uintptr_t>(child_addr));
+    void* arg = static_cast<uint8_t*>(self) + 0x08;
+
+    // Load child's vtable pointer, then the function at vtable + 0x78.
+    const uint32_t vtbl_addr = lift_field<uint32_t>(child, 0);
+    const uint8_t* vtbl = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(vtbl_addr));
+    const uint32_t fn_addr = *reinterpret_cast<const uint32_t*>(vtbl + 0x78);
+
+    using VirtualFn = void (*)(void* this_ptr, void* arg);
+    auto fn = reinterpret_cast<VirtualFn>(static_cast<uintptr_t>(fn_addr));
+    fn(child, arg);
+}
+} // namespace lift_00672490

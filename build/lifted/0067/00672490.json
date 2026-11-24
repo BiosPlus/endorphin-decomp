@@ -1,0 +1,34 @@
+{
+  "va": "0x00672490",
+  "size": 21,
+  "orig_symbol": "sub_00672490",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "UnknownClass::ForwardToChildVirtual78",
+  "class": "UnknownClass",
+  "signature": "void fn_00672490(void* self)",
+  "summary": "If the child pointer at +0x0C is non-null, invoke its vtable slot at +0x78 with this=child and arg=self+0x08.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "child"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:26:35Z"
+}
