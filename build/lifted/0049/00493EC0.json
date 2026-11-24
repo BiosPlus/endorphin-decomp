@@ -1,0 +1,22 @@
+{
+  "va": "0x00493EC0",
+  "size": 17,
+  "orig_symbol": "sub_00493EC0",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "forwardToChildVSlot115",
+  "class": "\u003cunknown\u003e",
+  "signature": "void fn_00493EC0(void* self)",
+  "summary": "Loads the pointer at self+0x00; if null returns, otherwise tail-dispatches to that object's vtable slot 115 (offset 0x1CC) with the child as this.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:51:37Z"
+}

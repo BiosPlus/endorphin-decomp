@@ -318,3 +318,24 @@ void* fn_00493EE0(void* ecx) {
     return fn(self);                                   // jmp edx (tail call, ecx = self)
 }
 } // namespace lift_00493EE0
+
+// [0x00493EC0] sub_00493EC0 (17 bytes)
+namespace lift_00493EC0 {
+// @name forwardToChildVSlot115
+// @class <unknown>
+// @summary Loads the pointer at self+0x00; if null returns, otherwise tail-dispatches to that object's vtable slot 115 (offset 0x1CC) with the child as this.
+// @field <unknown> +0x00 void* field_0x00
+void fn_00493EC0(void* self) {
+    // child = self->field_0x00
+    void* const child = lift_field<void*>(self, 0x00);
+    if (child == nullptr) {
+        return;
+    }
+
+    // vtable = *child; slot = vtable[0x1CC / 4]; tail-jump to slot with child as this.
+    void** const vtable = *reinterpret_cast<void***>(child);
+    using VMethod = void (*)(void* self_obj);
+    auto method = reinterpret_cast<VMethod>(vtable[0x1CC / sizeof(void*)]);
+    method(child);
+}
+} // namespace lift_00493EC0

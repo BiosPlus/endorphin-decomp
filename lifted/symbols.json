@@ -5155,6 +5155,13 @@
     "summary": "Loads the object pointer stored at *self, and if non-null tail-calls its vtable slot at +0x1C8 with that object as this; returns null otherwise.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00493EC0": {
+    "name": "forwardToChildVSlot115",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_00493EC0(void* self)",
+    "summary": "Loads the pointer at self+0x00; if null returns, otherwise tail-dispatches to that object's vtable slot 115 (offset 0x1CC) with the child as this.",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
   "0x00493EE0": {
     "name": "dispatchVirtualSlot154OfPointedObject",
     "class": "(none; object type not recovered)",
