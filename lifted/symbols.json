@@ -39572,6 +39572,13 @@
     "summary": "Returns the double constant 1.0 (loaded from .rdata mem_0092A270); result is the float return value.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D9030": {
+    "name": "Unknown::setPendingPair",
+    "class": "Unknown",
+    "signature": "void fn_006D9030(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Stores two DWORD arguments into the object at this+0x0C (offsets 0x160/0x164) and sets the flag byte at this+0x15 to 1.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D9060": {
     "name": "GetDoubleAtIndirect160",
     "signature": "extern \"C\" double __fastcall fn_006D9060(void* self)",

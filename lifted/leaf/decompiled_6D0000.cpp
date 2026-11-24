@@ -492,3 +492,20 @@ void fn_006D74B0(void* self, uint8_t flag) {
     *target = (flag != 0) ? 0u : 1u;
 }
 } // namespace lift_006D74B0
+
+// [0x006D9030] sub_006D9030 (48 bytes)
+namespace lift_006D9030 {
+// @name Unknown::setPendingPair
+// @class Unknown
+// @summary Stores two DWORD arguments into the object at this+0x0C (offsets 0x160/0x164) and sets the flag byte at this+0x15 to 1.
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0x15 BYTE field_0x15
+// @field Unknown +0x160 DWORD field_0x160
+// @field Unknown +0x164 DWORD field_0x164
+void fn_006D9030(void* self, DWORD arg1, DWORD arg2) {
+    void* target = lift_field<void*>(self, 0x0C);
+    lift_field<DWORD>(target, 0x160) = arg1;
+    lift_field<DWORD>(target, 0x164) = arg2;
+    lift_field<BYTE>(self, 0x15) = 1;
+}
+} // namespace lift_006D9030
