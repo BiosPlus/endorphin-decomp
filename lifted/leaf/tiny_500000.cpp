@@ -153,3 +153,20 @@ void fn_0050F180(void* self) {
 }
 } // namespace lift_005B72E0
 } // namespace lift_0050F180
+
+// [0x0050FA00] sub_0050FA00 (20 bytes)
+namespace lift_0050FA00 {
+extern const double mem_00950A90;
+extern const double mem_00950A60;
+
+// @name ReturnConstantByField8
+// @summary Returns one of two double constants depending on whether the dword at self+0x08 is zero.
+// @field <ClassName> +0x08 int32_t field_0x08
+double fn_0050FA00(void* self) {
+    const int32_t field_0x08 = *reinterpret_cast<const int32_t*>(static_cast<const char*>(self) + 0x08);
+    if (field_0x08 != 0) {
+        return mem_00950A60;
+    }
+    return mem_00950A90;
+}
+} // namespace lift_0050FA00

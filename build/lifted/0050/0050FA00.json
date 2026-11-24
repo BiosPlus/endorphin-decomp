@@ -1,0 +1,21 @@
+{
+  "va": "0x0050FA00",
+  "size": 20,
+  "orig_symbol": "sub_0050FA00",
+  "src_path": "src/leaf/tiny_500000.cpp",
+  "lifted_path": "lifted/leaf/tiny_500000.cpp",
+  "name": "ReturnConstantByField8",
+  "signature": "double fn_0050FA00(void* self)",
+  "summary": "Returns one of two double constants depending on whether the dword at self+0x08 is zero.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:06:20Z"
+}
