@@ -1,0 +1,13 @@
+{
+  "va": "0x0081150C",
+  "size": 36,
+  "orig_symbol": "sub_0081150C",
+  "src_path": "src/leaf/decompiled_810000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_810000.cpp",
+  "name": "Data_0081150C_byteTable",
+  "signature": "const std::uint8_t* fn_0081150C(void* self)",
+  "summary": "36-byte read-only lookup table (not executable code): 22 index/value bytes followed by 9 0x90 padding bytes.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:01:29Z"
+}

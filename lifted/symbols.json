@@ -45974,6 +45974,12 @@
     "summary": "18-byte 0/1 flag table at 0x008113C4 followed by 10 bytes of 0x90 padding; not executable code.",
     "lifted_path": "lifted/leaf/decompiled_810000.cpp"
   },
+  "0x0081150C": {
+    "name": "Data_0081150C_byteTable",
+    "signature": "const std::uint8_t* fn_0081150C(void* self)",
+    "summary": "36-byte read-only lookup table (not executable code): 22 index/value bytes followed by 9 0x90 padding bytes.",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
   "0x008523A4": {
     "name": "adjustStackAndTailCall_0084A145",
     "signature": "void sub_008523A4()",

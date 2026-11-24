@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_810000.cpp
 #include "lift_compat.h"
+#include <cstdint>
 
 // [0x008113C4] sub_008113C4 (28 bytes)
 namespace lift_008113C4 {
@@ -31,3 +32,30 @@ int fn_008110F0(int c) {
     return c;
 }
 } // namespace lift_008110F0
+
+// [0x0081150C] sub_0081150C (36 bytes)
+namespace lift_0081150C {
+// @name Data_0081150C_byteTable
+// @summary 36-byte read-only lookup table (not executable code): 22 index/value bytes followed by 9 0x90 padding bytes.
+//
+// The bytes at this address are never executed; they are data. They are
+// exposed here as a const table plus an accessor so the lift is portable C++20.
+
+namespace {
+
+constexpr std::uint8_t kByteTable_0081150C[36] = {
+    0x00, 0x08, 0x08, 0x08, 0x08, 0x01, 0x02, 0x08,
+    0x08, 0x03, 0x08, 0x08, 0x08, 0x08, 0x04, 0x08,
+    0x08, 0x05, 0x08, 0x06, 0x08, 0x07, 0x90, 0x90,
+    0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90,
+    0x90, 0x90, 0x90, 0x90,
+};
+
+}  // namespace
+
+// Returns the address of the table (never dereferenced by callers here).
+const std::uint8_t* fn_0081150C(void* self) {
+    (void)self;
+    return kByteTable_0081150C;
+}
+} // namespace lift_0081150C
