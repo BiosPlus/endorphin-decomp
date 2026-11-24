@@ -18087,6 +18087,13 @@
     "summary": "If the pointer at +0x158 is non-null, forwards the address of the subobject at +0x1E8 to ext_005CEA00 using +0x158 as the receiver; otherwise does nothing.",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005B6C50": {
+    "name": "Unknown::forwardToSubobjectAt1F4",
+    "class": "Unknown",
+    "signature": "void fn_005B6C50(void* self)",
+    "summary": "Forwards this+0x1F4 to ext_005CEA10 using the subobject at +0x158 when it is non-null.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B6E70": {
     "name": "NMData::MetaBodyData::vfunc_36",
     "class": "NMData::MetaBodyData",

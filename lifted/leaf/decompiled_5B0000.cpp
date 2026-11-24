@@ -115,3 +115,23 @@ void fn_005B6C20(void* self) {
     }
 }
 } // namespace lift_005B6C20
+
+// [0x005B6C50] sub_005B6C50 (33 bytes)
+namespace lift_005B6C50 {
+// Known callee 0x005CEA10: sub_005CEA10 (Member forwarding thunk: loads subobject pointer at +0xAC and tail-calls sub_00647EC0.)
+// The original call passes one extra stack argument (lea of this+0x1F4); declared here to match the call site.
+extern void __fastcall ext_005CEA10(void* self, void* arg);
+
+// @name Unknown::forwardToSubobjectAt1F4
+// @class Unknown
+// @summary Forwards this+0x1F4 to ext_005CEA10 using the subobject at +0x158 when it is non-null.
+// @field Unknown +0x158 void* field_0x158
+// @field Unknown +0x1F4 uint8_t field_0x1F4
+void fn_005B6C50(void* self) {
+    auto* obj = reinterpret_cast<uint8_t*>(self);
+    void* sub = *reinterpret_cast<void**>(obj + 0x158);
+    if (sub != nullptr) {
+        ext_005CEA10(sub, obj + 0x1F4);
+    }
+}
+} // namespace lift_005B6C50

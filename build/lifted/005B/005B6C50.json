@@ -1,0 +1,28 @@
+{
+  "va": "0x005B6C50",
+  "size": 33,
+  "orig_symbol": "sub_005B6C50",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "Unknown::forwardToSubobjectAt1F4",
+  "class": "Unknown",
+  "signature": "void fn_005B6C50(void* self)",
+  "summary": "Forwards this+0x1F4 to ext_005CEA10 using the subobject at +0x158 when it is non-null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1F4",
+      "type": "uint8_t",
+      "name": "field_0x1F4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:53:39Z"
+}
