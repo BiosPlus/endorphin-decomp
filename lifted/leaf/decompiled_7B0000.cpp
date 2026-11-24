@@ -95,3 +95,17 @@ void fn_007BEA10(void* self) {
     ext_0079B140(field_0x00, 0x00AB24A4u, field_0x164);
 }
 } // namespace lift_007BEA10
+
+// [0x007B0680] sub_007B0680 (32 bytes)
+namespace lift_007B0680 {
+extern void ext_0079B140(uint32_t a1, uint32_t a2, uint32_t a3);
+
+// @name DispatchSelfFirstDwordWithTag
+// @class <none>
+// @summary Forwards the first dword of the argument object, the constant tag 0x00AB1400, and a second argument to ext_0079B140.
+// @field <object> +0x00 uint32_t field_0x00
+void fn_007B0680(void* self, uint32_t a2) {
+    const uint32_t first = lift_field<uint32_t>(self, 0x00);
+    ext_0079B140(first, 0x00AB1400u, a2);
+}
+} // namespace lift_007B0680

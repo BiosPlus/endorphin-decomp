@@ -1,0 +1,22 @@
+{
+  "va": "0x007B0680",
+  "size": 32,
+  "orig_symbol": "sub_007B0680",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "DispatchSelfFirstDwordWithTag",
+  "class": "\u003cnone\u003e",
+  "signature": "void fn_007B0680(void* self, uint32_t a2)",
+  "summary": "Forwards the first dword of the argument object, the constant tag 0x00AB1400, and a second argument to ext_0079B140.",
+  "fields": [
+    {
+      "class": "\u003cobject\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:48:11Z"
+}

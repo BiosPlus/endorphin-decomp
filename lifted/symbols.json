@@ -43477,6 +43477,13 @@
     "summary": "Static 12-byte lookup table (00 01 04 04 04 04 04 04 02 04 04 03) followed by 12 bytes of 0x90 padding; not executable code.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B0680": {
+    "name": "DispatchSelfFirstDwordWithTag",
+    "class": "\u003cnone\u003e",
+    "signature": "void fn_007B0680(void* self, uint32_t a2)",
+    "summary": "Forwards the first dword of the argument object, the constant tag 0x00AB1400, and a second argument to ext_0079B140.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B1E80": {
     "name": "sub_007B1E80",
     "signature": "void fn_007B1E80()",
