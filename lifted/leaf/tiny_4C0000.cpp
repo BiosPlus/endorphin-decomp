@@ -156,3 +156,20 @@ void fn_004CCB00(void* self) {
 }
 } // namespace lift_005B72E0
 } // namespace lift_004CCB00
+
+// [0x004CB3E0]
+namespace lift_004CB3E0 {
+// @name Unknown::GetFieldOr0x188Address
+// @class Unknown
+// @summary Returns (cached field at +0x180) + 0x18 if non-null; otherwise returns the address of the embedded slot at +0x188.
+// @field Unknown +0x180 DWORD field_0x180
+// @field Unknown +0x188 DWORD field_0x188
+DWORD fn_004CB3E0(void* self) {
+    DWORD value = lift_field<DWORD>(self, 0x180);
+    if (value != 0) {
+        return value + 0x18;
+    }
+    // Address of the slot at +0x188 (lea, not a dereference).
+    return static_cast<DWORD>(reinterpret_cast<uintptr_t>(self) + 0x188);
+}
+} // namespace lift_004CB3E0

@@ -8030,6 +8030,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004CB3E0": {
+    "name": "Unknown::GetFieldOr0x188Address",
+    "class": "Unknown",
+    "signature": "DWORD fn_004CB3E0(void* self)",
+    "summary": "Returns (cached field at +0x180) + 0x18 if non-null; otherwise returns the address of the embedded slot at +0x188.",
+    "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
+  },
   "0x004CB440": {
     "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData\u003e::vfunc_4",
     "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}\u003e",

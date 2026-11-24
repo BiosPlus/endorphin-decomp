@@ -1,0 +1,28 @@
+{
+  "va": "0x004CB3E0",
+  "size": 21,
+  "orig_symbol": "sub_004CB3E0",
+  "src_path": "src/leaf/tiny_4C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4C0000.cpp",
+  "name": "Unknown::GetFieldOr0x188Address",
+  "class": "Unknown",
+  "signature": "DWORD fn_004CB3E0(void* self)",
+  "summary": "Returns (cached field at +0x180) + 0x18 if non-null; otherwise returns the address of the embedded slot at +0x188.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x180",
+      "type": "DWORD",
+      "name": "field_0x180"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x188",
+      "type": "DWORD",
+      "name": "field_0x188"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:12:01Z"
+}
