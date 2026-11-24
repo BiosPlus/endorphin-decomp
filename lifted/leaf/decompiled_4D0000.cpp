@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <new>
 #include <string>
+#include <cstring>
 
 // [0x004DE130] sub_004DE130 (35 bytes)
 namespace lift_004DE130 {
@@ -116,3 +117,32 @@ void fn_004DDE10(void* self, const std::string& text) {
     slot2(self, text.c_str());
 }
 } // namespace lift_004DDE10
+
+// [0x004DE330] sub_004DE330 (55 bytes)
+namespace lift_004DE330 {
+extern void ext_0067E990(void* self, uint32_t arg);
+extern int mem_00B40640;
+
+// @name Unknown::CopyRecordAndForward
+// @summary Copies a 64-byte record from the source pointer into self+0x38, then calls the object at self+0x30 (vtable slot 5) with the global mem_00B40640 and forwards the returned value to ext_0067E990 on self+0x38.
+// @field Unknown +0x30 void* subObject
+// @field Unknown +0x38 uint8_t recordCopy[0x40]
+void fn_004DE330(void* self, const void* src) {
+    // rep movsd, ecx = 0x10 dwords = 64 bytes copied from src to self+0x38.
+    void* rec = &lift_field<uint8_t>(self, 0x38);
+    std::memcpy(rec, src, 0x40);
+
+    // eax = [self+0x30]; ecx = eax + 0x08 (interface pointer, this for the call).
+    void* obj = lift_field<void*>(self, 0x30);
+    void* iface = static_cast<uint8_t*>(obj) + 0x08;
+
+    // Call vtable slot 5 (offset 0x14) on the interface with mem_00B40640 as the argument.
+    void** vtbl = lift_field<void**>(iface, 0);
+    using SlotFn = uint32_t (*)(void* thisPtr, int arg);
+    auto slot5 = reinterpret_cast<SlotFn>(vtbl[5]);
+    uint32_t result = slot5(iface, mem_00B40640);
+
+    // Forward the result to ext_0067E990 with this = self+0x38.
+    ext_0067E990(rec, result);
+}
+} // namespace lift_004DE330

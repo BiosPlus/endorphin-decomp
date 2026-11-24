@@ -1,0 +1,28 @@
+{
+  "va": "0x004DE330",
+  "size": 55,
+  "orig_symbol": "sub_004DE330",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "Unknown::CopyRecordAndForward",
+  "class": "Unknown",
+  "signature": "void fn_004DE330(void* self, const void* src)",
+  "summary": "Copies a 64-byte record from the source pointer into self+0x38, then calls the object at self+0x30 (vtable slot 5) with the global mem_00B40640 and forwards the returned value to ext_0067E990 on self+0x38.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "subObject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "uint8_t",
+      "name": "recordCopy[0x40]"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:14:20Z"
+}

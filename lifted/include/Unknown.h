@@ -337,6 +337,7 @@ struct Unknown_Fields {
     // +0x30  void*                    field_0x30  (evidence: 0x005CE940) // CONFLICT: multiple definitions at +0x30
     // +0x30  u8 field_0x30 (flag byte inside sub-object at field_0xA4)  (evidence: 0x00547CE0) // CONFLICT: multiple definitions at +0x30
     // +0x30  uint32_t*                items  (evidence: 0x006DE660) // CONFLICT: multiple definitions at +0x30
+    // +0x30  void*                    subObject  (evidence: 0x004DE330) // CONFLICT: multiple definitions at +0x30
     // +0x34  BYTE                     field_0x34  (evidence: 0x006FA990) // CONFLICT: multiple definitions at +0x34
     // +0x34  float                    field_0x34  (evidence: 0x004F9950, 0x00554510) // CONFLICT: multiple definitions at +0x34
     // +0x34  int32_t                  field_0x34  (evidence: 0x006FA400) // CONFLICT: multiple definitions at +0x34
@@ -348,6 +349,7 @@ struct Unknown_Fields {
     // +0x38  uint8_t                  field_0x38  (evidence: 0x006ACEE0) // CONFLICT: multiple definitions at +0x38
     // +0x38  void*                    field_0x38  (evidence: 0x004345B0, 0x006FA990) // CONFLICT: multiple definitions at +0x38
     // +0x38  void* field_0x38 (subobject whose vtable slot 0x74 is invoked)  (evidence: 0x006FA9C0) // CONFLICT: multiple definitions at +0x38
+    // +0x38  uint8_t                  recordCopy[0x40]  (evidence: 0x004DE330) // CONFLICT: multiple definitions at +0x38
     // +0x39  uint8_t                  field_0x39  (evidence: 0x00553E80)
     // +0x3C  void*                    field_0x3C  (evidence: 0x006ACEE0)
     // +0x40  DWORD                    field_0x40  (evidence: 0x00540F60, 0x007C9930) // CONFLICT: multiple definitions at +0x40
