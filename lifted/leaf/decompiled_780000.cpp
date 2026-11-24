@@ -320,3 +320,21 @@ int32_t __thiscall fn_007836D0(void* this_ptr, int32_t size) {
     return chsize_fn(fd, size);
 }
 } // namespace lift_007836D0
+
+// [0x00783410] sub_00783410 (42 bytes)
+namespace lift_00783410 {
+// @name FileStream::ReadBytes
+// @class FileStream
+// @summary If the owner's flag byte at +0x04 is set, fread(buf, 1, count, stream) on the stream at +0x00 of the owner; otherwise return 0.
+// @field FileStream +0x04 void* owner
+// @field FileStream +0x00 uint32_t stream_handle
+uint32_t fn_00783410(void* self, void* buf, uint32_t count) {
+    void* owner = lift_field<void*>(self, 0x04);
+    if (lift_field<uint8_t>(owner, 0x04) == 0) {
+        return 0;
+    }
+    uint32_t stream = lift_field<uint32_t>(owner, 0x00);
+    return static_cast<uint32_t>(
+        std::fread(buf, 1, count, reinterpret_cast<FILE*>(static_cast<uintptr_t>(stream))));
+}
+} // namespace lift_00783410

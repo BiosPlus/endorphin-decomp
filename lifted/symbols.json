@@ -44243,6 +44243,13 @@
     "summary": "If the inner handle's open flag (+0x04) is set, clear it and fclose the FILE* at inner+0x00.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00783410": {
+    "name": "FileStream::ReadBytes",
+    "class": "FileStream",
+    "signature": "uint32_t fn_00783410(void* self, void* buf, uint32_t count)",
+    "summary": "If the owner's flag byte at +0x04 is set, fread(buf, 1, count, stream) on the stream at +0x00 of the owner; otherwise return 0.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00783440": {
     "name": "readLineFromHolderStream",
     "class": "Unknown",
