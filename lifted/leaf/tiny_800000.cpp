@@ -58,3 +58,23 @@ uint32_t sub_0080F700(const char* str) {
     return static_cast<uint32_t>(p - str);
 }
 } // namespace lift_0080F700
+
+// [0x0080AC30] sub_0080AC30 (31 bytes)
+namespace lift_0080AC30 {
+extern int mem_00B73C84;
+extern int mem_00B73C40;
+extern int mem_009242E4;
+
+// Imported from KERNEL32; takes a LPCRITICAL_SECTION (pointer to the CS object).
+extern void __stdcall ext_DeleteCriticalSection(void* cs);
+
+// @name ShutdownCriticalSectionOnce
+// @summary If the init flag mem_00B73C84 is set, delete the global critical section at mem_00B73C40 and clear the flag.
+void fn_0080AC30(void* self) {
+    (void)self;
+    if (mem_00B73C84 != 0) {
+        ext_DeleteCriticalSection(reinterpret_cast<void*>(&mem_00B73C40));
+        mem_00B73C84 = 0;
+    }
+}
+} // namespace lift_0080AC30

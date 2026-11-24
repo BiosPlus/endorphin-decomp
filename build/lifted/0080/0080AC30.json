@@ -1,0 +1,13 @@
+{
+  "va": "0x0080AC30",
+  "size": 31,
+  "orig_symbol": "sub_0080AC30",
+  "src_path": "src/leaf/tiny_800000.cpp",
+  "lifted_path": "lifted/leaf/tiny_800000.cpp",
+  "name": "ShutdownCriticalSectionOnce",
+  "signature": "void fn_0080AC30(void* self)",
+  "summary": "If the init flag mem_00B73C84 is set, delete the global critical section at mem_00B73C40 and clear the flag.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:28:45Z"
+}
