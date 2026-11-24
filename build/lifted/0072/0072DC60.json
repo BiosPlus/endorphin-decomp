@@ -1,0 +1,22 @@
+{
+  "va": "0x0072DC60",
+  "size": 20,
+  "orig_symbol": "sub_0072DC60",
+  "src_path": "src/leaf/tiny_720000.cpp",
+  "lifted_path": "lifted/leaf/tiny_720000.cpp",
+  "name": "Unknown::ForwardArgsToVirtualSlot8",
+  "class": "Unknown",
+  "signature": "DWORD __thiscall fn_0072DC60(void* self, DWORD arg1, DWORD arg2)",
+  "summary": "Calls virtual slot 0x20 (index 8) with (this, arg1, arg2, 0) and returns its result; callee pops its three stack args.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:09:19Z"
+}

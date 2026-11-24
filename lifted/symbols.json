@@ -37912,6 +37912,13 @@
     "summary": "Thiscall wrapper: calls vtable slot 7 (+0x1c) on self with (0, arg) and returns its result.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072DC60": {
+    "name": "Unknown::ForwardArgsToVirtualSlot8",
+    "class": "Unknown",
+    "signature": "DWORD __thiscall fn_0072DC60(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Calls virtual slot 0x20 (index 8) with (this, arg1, arg2, 0) and returns its result; callee pops its three stack args.",
+    "lifted_path": "lifted/leaf/tiny_720000.cpp"
+  },
   "0x00732CB0": {
     "name": "sub_00732CB0",
     "signature": "extern \"C\" void __stdcall fn_00732CB0(int a1)",

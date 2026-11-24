@@ -381,3 +381,20 @@ double sub_00722720(double a, double b) {
     return (a * a) * b;
 }
 } // namespace lift_00722720
+
+// [0x0072DC60]
+namespace lift_0072DC60 {
+// @name Unknown::ForwardArgsToVirtualSlot8
+// @class Unknown
+// @summary Calls virtual slot 0x20 (index 8) with (this, arg1, arg2, 0) and returns its result; callee pops its three stack args.
+// @field Unknown +0x00 void* vtable
+
+// Thiscall virtual slot: this in ecx, three stack arguments (callee pops them via ret 0x0C).
+typedef DWORD (__thiscall* VirtualSlot8Fn)(void* self, DWORD a0, DWORD a1, DWORD a2);
+
+DWORD __thiscall fn_0072DC60(void* self, DWORD arg1, DWORD arg2) {
+    void* vtable = lift_field<void*>(self, 0x00);
+    VirtualSlot8Fn slot = lift_field<VirtualSlot8Fn>(vtable, 0x20);
+    return slot(self, arg1, arg2, 0);
+}
+} // namespace lift_0072DC60
