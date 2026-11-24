@@ -1,0 +1,21 @@
+{
+  "va": "0x006111D0",
+  "size": 39,
+  "orig_symbol": "sub_006111D0",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "sub_006111D0",
+  "signature": "extern \"C\" void __thiscall fn_006111D0(uint32_t ecx)",
+  "summary": "Fetches a float at index 2 from this+0x8 and passes it to sub_00678130 on global+0x2E0",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:53:56Z"
+}
