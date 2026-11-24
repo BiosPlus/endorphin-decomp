@@ -6170,6 +6170,13 @@
     "summary": "If the first argument's target pointer is set, call the holder's virtual slot 2 to obtain an int and forward it to SelectionBuffer::vfunc_0; otherwise raise a C++ exception.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x0046F0D0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cImageExporter\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cImageExporter\u003e",
+    "signature": "void __thiscall fn_0046F0D0(void* /*self*/, void* out)",
+    "summary": "Initializes a static type descriptor if needed and stores its address at out+0x4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0046F150": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter, int, \u0026ImageExporter::getImageWidth, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cImageExporter, int, \u0026ImageExporter::getImageWidth, 0\u003e",
@@ -20342,6 +20349,13 @@
     "signature": "void* fn_005ABB70(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/NMData/RigNode.cpp"
+  },
+  "0x005ABF30": {
+    "name": "NMData::SourceRigNode::vfunc_17_off_C",
+    "class": "NMData::SourceRigNode",
+    "signature": "extern \"C\" void* ext_006A5C62(std::size_t size);       // MFC80 operator new (thunk) extern \"C\" void ext_005ABA70(void* self, void* outer); // SourceRigNode base constructor (thiscall, one stack arg) void* fn_005ABF30(void* self)",
+    "summary": "Secondary-vtable (+0xC) slot 17: allocates a 0x194-byte SourceRigNode, runs its base constructor, installs vtables, returns the new object or NULL on allocation failure.",
+    "lifted_path": "lifted/NMData/SourceRigNode.cpp"
   },
   "0x005AC550": {
     "name": "sub_005AC550",

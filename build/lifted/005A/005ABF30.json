@@ -1,0 +1,46 @@
+{
+  "va": "0x005ABF30",
+  "size": 122,
+  "orig_symbol": "NMData::SourceRigNode::vfunc_17_off_C",
+  "src_path": "src/NMData/SourceRigNode.cpp",
+  "lifted_path": "lifted/NMData/SourceRigNode.cpp",
+  "name": "NMData::SourceRigNode::vfunc_17_off_C",
+  "class": "NMData::SourceRigNode",
+  "signature": "extern \"C\" void* ext_006A5C62(std::size_t size);       // MFC80 operator new (thunk) extern \"C\" void ext_005ABA70(void* self, void* outer); // SourceRigNode base constructor (thiscall, one stack arg) void* fn_005ABF30(void* self)",
+  "summary": "Secondary-vtable (+0xC) slot 17: allocates a 0x194-byte SourceRigNode, runs its base constructor, installs vtables, returns the new object or NULL on allocation failure.",
+  "fields": [
+    {
+      "class": "NMData::SourceRigNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vfptr_RigNode"
+    },
+    {
+      "class": "NMData::SourceRigNode",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "vfptr_TransformInterface"
+    },
+    {
+      "class": "NMData::SourceRigNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "vfptr_AnimationInterface"
+    },
+    {
+      "class": "NMData::SourceRigNode",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "vfptr_Updateable"
+    },
+    {
+      "class": "NMData::SourceRigNode",
+      "offset": "+0x150",
+      "type": "void*",
+      "name": "vfptr_HasBufferedTM"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:49:14Z"
+}
