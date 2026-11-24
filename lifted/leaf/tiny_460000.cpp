@@ -873,3 +873,19 @@ void* fn_0046FB80(void* a) {
 }
 } // namespace lift_005AC820
 } // namespace lift_0046FB80
+
+// [0x00469C90] sub_00469C90 (30 bytes)
+namespace lift_00469C90 {
+// @name fn_00469C90 (fillDwordRangeFromSource)
+// @summary Writes the DWORD at *src into every 4-byte slot in [dst, end); no-op when dst == end.
+// (no @class: free function, no member field access)
+void fn_00469C90(uint32_t* dst, uint32_t* end, const uint32_t* src) {
+    if (dst == end) {
+        return;
+    }
+    do {
+        *dst = *src;
+        ++dst;
+    } while (dst != end);
+}
+} // namespace lift_00469C90

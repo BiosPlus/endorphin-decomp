@@ -1,0 +1,13 @@
+{
+  "va": "0x00469C90",
+  "size": 30,
+  "orig_symbol": "sub_00469C90",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "fn_00469C90 (fillDwordRangeFromSource)",
+  "signature": "void fn_00469C90(uint32_t* dst, uint32_t* end, const uint32_t* src)",
+  "summary": "Writes the DWORD at *src into every 4-byte slot in [dst, end); no-op when dst == end.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:16:25Z"
+}
