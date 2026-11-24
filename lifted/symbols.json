@@ -26811,6 +26811,13 @@
     "summary": "Lazily initializes a static type descriptor at 0x00B477A4 and stores its address at arg0 + 0x4.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00607950": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorBase, std::string const \u0026, EffectorBase::vcall{60}\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{60, {flat}}\u003e",
+    "signature": "void fn_00607950(void* out)",
+    "summary": "Lazily constructs the function-local static object at 0x00B477B4 (once, guarded by bit 0 of 0x00B477B8) and stores its address into the output object's +4 slot.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x006079D0": {
     "name": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, ...\u003e::vfunc_40",
     "class": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}\u003e",

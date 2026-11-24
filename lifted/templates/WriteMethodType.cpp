@@ -7303,3 +7303,24 @@ void fn_006079D0(uint32_t* out) {
     out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B477BC));
 }
 } // namespace lift_006079D0
+
+// [0x00607950] ExprParser::WriteMethodType<EffectorBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall EffectorBase::`vcall'{60, {flat}}>::vfunc_40 (122 bytes)
+namespace lift_00607950 {
+extern void ext_0067A670(void* self);
+extern uint32_t mem_00B477B8;
+extern uint32_t mem_00B477B4;
+
+// @name ExprParser::WriteMethodType<EffectorBase, std::string const &, EffectorBase::vcall{60}>::vfunc_40
+// @class ExprParser::WriteMethodType<EffectorBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall EffectorBase::`vcall'{60, {flat}}>
+// @summary Lazily constructs the function-local static object at 0x00B477B4 (once, guarded by bit 0 of 0x00B477B8) and stores its address into the output object's +4 slot.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_00607950(void* out) {
+    // One-time construction guard (bit 0 of the guard word).
+    if ((mem_00B477B8 & 1u) == 0) {
+        mem_00B477B8 |= 1u;
+        ext_0067A670(&mem_00B477B4);
+        mem_00B477B4 = 0x00970864u;  // vtable pointer of the static object
+    }
+    lift_field<uint32_t>(out, 4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B477B4));
+}
+} // namespace lift_00607950
