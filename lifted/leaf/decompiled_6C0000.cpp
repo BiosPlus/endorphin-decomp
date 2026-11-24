@@ -233,3 +233,17 @@ void Unknown_SetFlag0x100(Unknown* self, DWORD arg) {
     self->flags = edx;
 }
 } // namespace lift_006C9CE0
+
+// [0x006C9F00]
+namespace lift_006C9F00 {
+// @name Unknown::GetField0x08Pair
+// @class Unknown
+// @summary Copies the two DWORDs at this+0x08 and this+0x0C into the caller-supplied out buffer and returns it (thiscall, hidden out pointer, ret 4).
+// @field Unknown +0x08 DWORD field_0x08
+// @field Unknown +0x0C DWORD field_0x0C
+DWORD* fn_006C9F00(BYTE* self, DWORD* out) {
+    out[0] = *reinterpret_cast<DWORD*>(self + 0x08);
+    out[1] = *reinterpret_cast<DWORD*>(self + 0x0C);
+    return out;
+}
+} // namespace lift_006C9F00

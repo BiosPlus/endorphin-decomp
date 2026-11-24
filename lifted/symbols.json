@@ -36544,6 +36544,13 @@
     "summary": "Multiplies the float at [this+0x00] by the float argument and stores it back in place.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C9F00": {
+    "name": "Unknown::GetField0x08Pair",
+    "class": "Unknown",
+    "signature": "DWORD* fn_006C9F00(BYTE* self, DWORD* out)",
+    "summary": "Copies the two DWORDs at this+0x08 and this+0x0C into the caller-supplied out buffer and returns it (thiscall, hidden out pointer, ret 4).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C9F50": {
     "name": "Unknown::GetFlagBit16",
     "class": "Unknown",
