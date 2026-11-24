@@ -189,3 +189,17 @@ void* fn_004CB400(void* self) {
     return static_cast<uint8_t*>(self) + 0x194;
 }
 } // namespace lift_004CB400
+
+// [0x004CE810] sub_004CE810 (23 bytes)
+namespace lift_004CE810 {
+// Table of 28-byte records at 0x00AE5290.
+extern uint8_t mem_00AE5290[];
+
+// @name Unknown::GetRecordByIndex
+// @summary Returns the address of record `index` in the 28-byte-stride table at 0x00AE5290 (stdcall, ret 4).
+// (no @class / @field: the function touches no struct fields)
+void* __stdcall fn_004CE810(uint32_t index) {
+    // ecx = 8*eax - eax = 7*index; eax = 4*ecx + 0xAE5290 = 28*index + 0xAE5290
+    return mem_00AE5290 + static_cast<size_t>(index) * 28u;
+}
+} // namespace lift_004CE810

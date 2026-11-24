@@ -8396,6 +8396,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
     "lifted_path": "lifted/NMData/IncarnationEventData.cpp"
   },
+  "0x004CE810": {
+    "name": "Unknown::GetRecordByIndex",
+    "class": "Unknown",
+    "signature": "void* __stdcall fn_004CE810(uint32_t index)",
+    "summary": "Returns the address of record `index` in the 28-byte-stride table at 0x00AE5290 (stdcall, ret 4).",
+    "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
+  },
   "0x004CE830": {
     "name": "NMData::IncarnationEventData::vfunc_14",
     "class": "NMData::IncarnationEventData",

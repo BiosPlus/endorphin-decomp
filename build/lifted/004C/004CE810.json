@@ -1,0 +1,14 @@
+{
+  "va": "0x004CE810",
+  "size": 23,
+  "orig_symbol": "sub_004CE810",
+  "src_path": "src/leaf/tiny_4C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4C0000.cpp",
+  "name": "Unknown::GetRecordByIndex",
+  "class": "Unknown",
+  "signature": "void* __stdcall fn_004CE810(uint32_t index)",
+  "summary": "Returns the address of record `index` in the 28-byte-stride table at 0x00AE5290 (stdcall, ret 4).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:32:00Z"
+}
