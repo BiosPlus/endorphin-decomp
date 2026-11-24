@@ -2869,6 +2869,13 @@
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_1361.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0044C0D0": {
+    "name": "Unknown::ReleaseChildThenForward",
+    "class": "Unknown",
+    "signature": "void fn_0044C0D0(void* self)",
+    "summary": "If the child object at +0x64 is non-null, invoke its vtable slot 2 (offset 0x08) with it as `this`; then forward to the MFC80 thunk ext_006A5EA8.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044C910": {
     "name": "sub_0044C910",
     "signature": "void fn_0044C910()",

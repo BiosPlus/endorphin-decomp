@@ -484,3 +484,34 @@ uint32_t __thiscall sub_00448280(uint32_t self, uint32_t arg0) {
     return self;
 }
 } // namespace lift_00448280
+
+// [0x0044C0D0] sub_0044C0D0 (27 bytes)
+namespace lift_0044C0D0 {
+// Known callee 0x006A5EA8: thunk_MFC80_ord_1903 (IAT jump thunk forwarding to MFC80!ord_1903.)
+extern void ext_006A5EA8();
+// Known callee 0x006A663A: thunk_MFC80_ord_4888 (IAT jump thunk forwarding to MFC80!ord_4888.)
+extern void ext_006A663A();
+// Known callee 0x006A60D0: thunk_MFC80_ord_5833 (IAT jump thunk forwarding to MFC80!ord_5833.)
+extern void ext_006A60D0();
+// Known callee 0x006A5E00: thunk_MFC80_ord_2372 (IAT jump thunk forwarding to MFC80!ord_2372.)
+extern void ext_006A5E00();
+extern int mem_00925650;
+
+// @name Unknown::ReleaseChildThenForward
+// @class Unknown
+// @summary If the child object at +0x64 is non-null, invoke its vtable slot 2 (offset 0x08) with it as `this`; then forward to the MFC80 thunk ext_006A5EA8.
+// @field Unknown +0x64 void* child
+void fn_0044C0D0(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    void* child = *reinterpret_cast<void**>(base + 0x64);
+    if (child != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(child);
+        using VSlot2Fn = void (*)(void*);
+        auto fn = reinterpret_cast<VSlot2Fn>(vtbl[2]);
+        fn(child);
+    }
+    // Original tail-jumps to ext_006A5EA8 with ECX = self. The thunk takes no
+    // C++-visible arguments here, so the ECX passthrough is not expressible portably.
+    ext_006A5EA8();
+}
+} // namespace lift_0044C0D0
