@@ -2064,6 +2064,13 @@
     "summary": "Pure jump thunk forwarding to sub_0044CB80.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0044CCC0": {
+    "name": "ZeroFloatTriple_0044CCC0",
+    "class": "(none)",
+    "signature": "void* fn_0044CCC0(void* self)",
+    "summary": "Zeroes three consecutive floats at this+0x00, +0x04, +0x08 and returns this (eax).",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x0044CD70": {
     "name": "RigEditor::vfunc_0",
     "class": "RigEditor",

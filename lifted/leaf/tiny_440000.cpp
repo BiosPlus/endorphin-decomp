@@ -347,3 +347,21 @@ void __thiscall sub_00447520(void* self, uint32_t arg1, uint32_t arg2) {
     }
 }
 } // namespace lift_00447520
+
+// [0x0044CCC0] sub_0044CCC0 (13 bytes)
+namespace lift_0044CCC0 {
+// @name ZeroFloatTriple_0044CCC0
+// @class (none)
+// @summary Zeroes three consecutive floats at this+0x00, +0x04, +0x08 and returns this (eax).
+// @field (unknown) +0x00 float field_0x00
+// @field (unknown) +0x04 float field_0x04
+// @field (unknown) +0x08 float field_0x08
+void* fn_0044CCC0(void* self) {
+    unsigned char* base = static_cast<unsigned char*>(self);
+    const float zero = 0.0f;
+    std::memcpy(base + 0x08, &zero, sizeof(float));
+    std::memcpy(base + 0x04, &zero, sizeof(float));
+    std::memcpy(base + 0x00, &zero, sizeof(float));
+    return self;
+}
+} // namespace lift_0044CCC0

@@ -1,0 +1,34 @@
+{
+  "va": "0x0044CCC0",
+  "size": 13,
+  "orig_symbol": "sub_0044CCC0",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "ZeroFloatTriple_0044CCC0",
+  "class": "(none)",
+  "signature": "void* fn_0044CCC0(void* self)",
+  "summary": "Zeroes three consecutive floats at this+0x00, +0x04, +0x08 and returns this (eax).",
+  "fields": [
+    {
+      "class": "(unknown)",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:18:16Z"
+}
