@@ -1,0 +1,22 @@
+{
+  "va": "0x00547AB0",
+  "size": 26,
+  "orig_symbol": "Camera::vfunc_7",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "Camera::vfunc_7",
+  "class": "Camera",
+  "signature": "void* fn_00547AB0(void* self)",
+  "summary": "If Camera+0xA0 is non-null, tail-dispatch vtable slot 9 on that object; otherwise return \u0026Camera+0x08.",
+  "fields": [
+    {
+      "class": "Camera",
+      "offset": "+0xA0",
+      "type": "void*",
+      "name": "field_0xA0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:55:25Z"
+}

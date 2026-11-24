@@ -13647,6 +13647,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00519CE0 (std::basic_string\u003cchar\u003e::~basic_string (vtable-stamping thunk)).",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00547AB0": {
+    "name": "Camera::vfunc_7",
+    "class": "Camera",
+    "signature": "void* fn_00547AB0(void* self)",
+    "summary": "If Camera+0xA0 is non-null, tail-dispatch vtable slot 9 on that object; otherwise return \u0026Camera+0x08.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00547AD0": {
     "name": "Unknown::VirtualLookupEqualsGlobalKey",
     "class": "Unknown",

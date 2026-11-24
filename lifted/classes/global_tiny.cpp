@@ -6407,3 +6407,22 @@ float fn_00659610(void* self, uint32_t index) {
     return mem_0097E3E0;
 }
 } // namespace lift_00659610
+
+// [0x00547AB0] Camera::vfunc_7 (26 bytes)
+namespace lift_00547AB0 {
+// @name Camera::vfunc_7
+// @class Camera
+// @summary If Camera+0xA0 is non-null, tail-dispatch vtable slot 9 on that object; otherwise return &Camera+0x08.
+// @field Camera +0xA0 void* field_0xA0
+void* fn_00547AB0(void* self) {
+    uint8_t* camera = static_cast<uint8_t*>(self);
+    void* child = *reinterpret_cast<void**>(camera + 0xA0);
+    if (child == nullptr) {
+        return camera + 0x08;
+    }
+    void** vtable = *reinterpret_cast<void***>(child);
+    using SlotFn = void* (*)(void*);
+    SlotFn target = reinterpret_cast<SlotFn>(vtable[9]); // vtable + 0x24
+    return target(child);
+}
+} // namespace lift_00547AB0
