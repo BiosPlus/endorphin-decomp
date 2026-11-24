@@ -184,3 +184,30 @@ int32_t fn_00537BB0(void* self) {
 }
 } // namespace lift_00537BB0
 } // namespace lift_00537BB0
+
+// [0x00537CC0] CompoundRenderable::vfunc_12 (56 bytes)
+namespace lift_00537CC0 {
+// @name CompoundRenderable::vfunc_12
+// @class CompoundRenderable
+// @summary Forwards (a1, a2, a3) to virtual slot 12 of the optional child at +0x14, then to the embedded subobject at +0x18.
+// @field CompoundRenderable +0x14 void* field_0x14
+// @field CompoundRenderable +0x18 void* field_0x18
+
+// Invokes virtual slot 12 of the object at `obj` (obj is the `this` pointer).
+static void call_vslot12(void* obj, uint32_t a1, uint32_t a2, uint32_t a3) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    auto fn = reinterpret_cast<void (*)(void*, uint32_t, uint32_t, uint32_t)>(vtbl[12]);
+    fn(obj, a1, a2, a3);
+}
+
+void fn_00537CC0(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
+    // Optional child object pointer at +0x14.
+    void* child = lift_field<void*>(self, 0x14);
+    if (child != nullptr) {
+        call_vslot12(child, a1, a2, a3);
+    }
+
+    // Embedded subobject at +0x18; its vptr lives at +0x18, and `this` passed is &field_0x18.
+    call_vslot12(static_cast<uint8_t*>(self) + 0x18, a1, a2, a3);
+}
+} // namespace lift_00537CC0

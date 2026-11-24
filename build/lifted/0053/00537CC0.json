@@ -1,0 +1,28 @@
+{
+  "va": "0x00537CC0",
+  "size": 56,
+  "orig_symbol": "CompoundRenderable::vfunc_12",
+  "src_path": "src/classes/CompoundRenderable.cpp",
+  "lifted_path": "lifted/classes/CompoundRenderable.cpp",
+  "name": "CompoundRenderable::vfunc_12",
+  "class": "CompoundRenderable",
+  "signature": "static void call_vslot12(void* obj, uint32_t a1, uint32_t a2, uint32_t a3)",
+  "summary": "Forwards (a1, a2, a3) to virtual slot 12 of the optional child at +0x14, then to the embedded subobject at +0x18.",
+  "fields": [
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:16:02Z"
+}

@@ -17494,6 +17494,13 @@
     "summary": "Calls virtual slot 2 on the object at +0x14 (if non-null), then tail-calls virtual slot 2 on the object at +0x18 with this+0x18 as the receiver.",
     "lifted_path": "lifted/classes/CompoundRenderable.cpp"
   },
+  "0x00537CC0": {
+    "name": "CompoundRenderable::vfunc_12",
+    "class": "CompoundRenderable",
+    "signature": "static void call_vslot12(void* obj, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Forwards (a1, a2, a3) to virtual slot 12 of the optional child at +0x14, then to the embedded subobject at +0x18.",
+    "lifted_path": "lifted/classes/CompoundRenderable.cpp"
+  },
   "0x00537D00": {
     "name": "CompoundRenderable::vfunc_11",
     "class": "CompoundRenderable",
