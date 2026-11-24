@@ -1,0 +1,13 @@
+{
+  "va": "0x0079AE40",
+  "size": 12,
+  "orig_symbol": "sub_0079AE40",
+  "src_path": "src/leaf/tiny_790000.cpp",
+  "lifted_path": "lifted/leaf/tiny_790000.cpp",
+  "name": "UnmapViewOfFileThunk_0079AE40",
+  "signature": "BOOL fn_0079AE40(void* /*unused*/, const void* lpBaseAddress)",
+  "summary": "Thin wrapper: unmaps the view at the second stack argument via KERNEL32!UnmapViewOfFile and returns its BOOL result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:17:07Z"
+}

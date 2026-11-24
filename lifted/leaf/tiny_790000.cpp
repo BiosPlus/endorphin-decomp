@@ -228,3 +228,20 @@ void fn_0079DD10(void* self, uint32_t a0, uint32_t a1) {
     lift_field<uint32_t>(self, 0x80) = a0;
     lift_field<uint32_t>(self, 0x84) = a1;
 }
+
+// [0x0079AE40] sub_0079AE40 (12 bytes)
+namespace lift_0079AE40 {
+// Win32 import slot holding the address of KERNEL32!UnmapViewOfFile.
+extern uint32_t mem_009241E4;
+
+// @name UnmapViewOfFileThunk_0079AE40
+// @summary Thin wrapper: unmaps the view at the second stack argument via KERNEL32!UnmapViewOfFile and returns its BOOL result.
+// Note: the first argument is ignored (never read); the second argument is the base address to unmap.
+// Calling convention: caller-cleans (plain ret), so this is a cdecl-style function.
+using UnmapViewOfFile_fn = BOOL(__stdcall*)(const void* lpBaseAddress);
+
+BOOL fn_0079AE40(void* /*unused*/, const void* lpBaseAddress) {
+    auto unmap = reinterpret_cast<UnmapViewOfFile_fn>(static_cast<uintptr_t>(mem_009241E4));
+    return unmap(lpBaseAddress);
+}
+} // namespace lift_0079AE40
