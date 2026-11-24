@@ -1,0 +1,22 @@
+{
+  "va": "0x006E7F90",
+  "size": 16,
+  "orig_symbol": "sub_006E7F90",
+  "src_path": "src/leaf/tiny_6E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6E0000.cpp",
+  "name": "Unknown::GetIndirectInt32Plus8",
+  "class": "Unknown",
+  "signature": "__declspec(noinline) extern \"C\" int32_t __fastcall fn_006E7F90(void* self)",
+  "summary": "Loads the pointer stored at +0x00 of self, offsets it by 8, and tail-calls the int32 getter at 0x006E7460 on that sub-object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:40:21Z"
+}

@@ -464,3 +464,19 @@ uint8_t fn_006E3A40(void* self) {
     return lift_field<int32_t>(self, 0x68) == 2 ? 1 : 0;
 }
 } // namespace lift_006E3A40
+
+// [0x006E7F90] sub_006E7F90 (16 bytes)
+namespace lift_006E7F90 {
+// Known callee 0x006E7460: sub_006E7460 (Getter returning int32_t field at offset +0x0.)
+extern int32_t __fastcall ext_006E7460(void* self);
+
+// @name Unknown::GetIndirectInt32Plus8
+// @class Unknown
+// @summary Loads the pointer stored at +0x00 of self, offsets it by 8, and tail-calls the int32 getter at 0x006E7460 on that sub-object.
+// @field Unknown +0x00 uint32_t field_0x00
+__declspec(noinline) extern int32_t __fastcall fn_006E7F90(void* self) {
+    const uint32_t inner = lift_field<uint32_t>(self, 0x00);
+    void* const sub = reinterpret_cast<void*>(static_cast<uintptr_t>(inner + 0x08u));
+    return ext_006E7460(sub);
+}
+} // namespace lift_006E7F90
