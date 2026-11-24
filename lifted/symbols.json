@@ -9842,6 +9842,13 @@
     "summary": "Calls the helper at 0x004BA270 and stores its eax result at offset +0x4 of the object.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x004BA3B0": {
+    "name": "NMData::EngineData::vfunc_14",
+    "class": "NMData::EngineData",
+    "signature": "DWORD fn_004BA3B0(void* self, DWORD a1, DWORD a2)",
+    "summary": "Dispatches on the second stack argument (0xA5 / 0xE3 / 0xE6 cases) to sub-object helpers and returns one of the stack arguments.",
+    "lifted_path": "lifted/NMData/EngineData.cpp"
+  },
   "0x004BA580": {
     "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand::vfunc_0",
     "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand",

@@ -1,0 +1,34 @@
+{
+  "va": "0x004BA3B0",
+  "size": 131,
+  "orig_symbol": "NMData::EngineData::vfunc_14",
+  "src_path": "src/NMData/EngineData.cpp",
+  "lifted_path": "lifted/NMData/EngineData.cpp",
+  "name": "NMData::EngineData::vfunc_14",
+  "class": "NMData::EngineData",
+  "signature": "DWORD fn_004BA3B0(void* self, DWORD a1, DWORD a2)",
+  "summary": "Dispatches on the second stack argument (0xA5 / 0xE3 / 0xE6 cases) to sub-object helpers and returns one of the stack arguments.",
+  "fields": [
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x60",
+      "type": "void*",
+      "name": "field_0x60"
+    },
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x70",
+      "type": "void*",
+      "name": "field_0x70"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:36:04Z"
+}
