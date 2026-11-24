@@ -6389,3 +6389,21 @@ void fn_00532220(void* self) {
     mem_009253C8(reinterpret_cast<const GLfloat*>(static_cast<uintptr_t>(m1)));
 }
 } // namespace lift_00532220
+
+// [0x00659610] RelationshipRPROJoint::vfunc_39 (25 bytes)
+namespace lift_00659610 {
+extern float mem_0097E3E0;
+extern float mem_0093F7B8;
+
+// @name RelationshipRPROJoint::vfunc_39
+// @class RelationshipRPROJoint
+// @summary Returns -3.14f for index 0..2 and -1.0f for index >= 3 (unsigned compare).
+// (No object fields are accessed; `self` is unused.)
+float fn_00659610(void* self, uint32_t index) {
+    (void)self;
+    if (index >= 3u) {
+        return mem_0093F7B8;
+    }
+    return mem_0097E3E0;
+}
+} // namespace lift_00659610
