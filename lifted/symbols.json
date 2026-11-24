@@ -1825,6 +1825,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004225D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00422B20": {
+    "name": "postCommandToMainWnd",
+    "signature": "extern \"C\" void __thiscall fn_00422B20(void* self, uint32_t, uint32_t, uint32_t)",
+    "summary": "Calls MFC80_ord_1091, invokes vtable+0x7C if non-null, and posts WM_COMMAND with field_0x84 to the resulting CWnd's HWND.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00422BC0": {
     "name": "CImageButton::vfunc_69",
     "class": "CImageButton",
@@ -21596,6 +21602,12 @@
     "signature": "void ObjectWithChild_setValueAndNotifyChild(uint8_t* self, int32_t value)",
     "summary": "Stores a 32-bit value at +0x154, then calls vtable slot 0 on the object at +0x190 if it is non-null.",
     "lifted_path": "lifted/leaf/tiny_5A0000.cpp"
+  },
+  "0x005AA850": {
+    "name": "SetVec3AndNotifyChild",
+    "signature": "void fn_005AA850(void* self, const float* src)",
+    "summary": "Copies a 3-float vector into self+0x158..0x160, then forwards a no-arg notification (vtable slot 0) to the object at self+0x190 if it is set.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
   "0x005AA890": {
     "name": "CopyVec3ToSelfAndNotifyChild",

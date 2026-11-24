@@ -117,3 +117,25 @@ void CopyVec3ToSelfAndNotifyChild(void* self, const float* src) {
     }
 }
 } // namespace lift_005AA890
+
+// [0x005AA850] sub_005AA850 (54 bytes)
+namespace lift_005AA850 {
+// @name SetVec3AndNotifyChild
+// @summary Copies a 3-float vector into self+0x158..0x160, then forwards a no-arg notification (vtable slot 0) to the object at self+0x190 if it is set.
+// @field Object +0x158 float field_0x158
+// @field Object +0x15c float field_0x15c
+// @field Object +0x160 float field_0x160
+// @field Object +0x190 void* field_0x190
+void fn_005AA850(void* self, const float* src) {
+    lift_field<float>(self, 0x158) = src[0];
+    lift_field<float>(self, 0x15c) = src[1];
+    lift_field<float>(self, 0x160) = src[2];
+
+    void* child = lift_field<void*>(self, 0x190);
+    if (child != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(child);
+        using SlotFn = void(__thiscall*)(void*);
+        reinterpret_cast<SlotFn>(vtbl[0])(child);
+    }
+}
+} // namespace lift_005AA850
