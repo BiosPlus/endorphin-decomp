@@ -17658,6 +17658,13 @@
     "summary": "Classifies the argument via 0x005CFD60; if the result is 3, forwards to AnimatableTransform::vfunc_57, otherwise returns a pointer into the 8-byte-stride table at this+0x264 indexed by the result.",
     "lifted_path": "lifted/NMData/CameraData.cpp"
   },
+  "0x005D07E0": {
+    "name": "Unknown::GetRecordByCurrentIndex",
+    "class": "Unknown",
+    "signature": "void* fn_005D07E0()",
+    "summary": "Obtains an index from helper 0x005CFCB0 and returns the record at that index via 0x005CFCC0.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005D07F0": {
     "name": "sub_005D07F0",
     "class": "Unknown",

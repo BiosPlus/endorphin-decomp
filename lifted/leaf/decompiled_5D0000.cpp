@@ -17,3 +17,18 @@ float fn_005D06D0(uint32_t ecx) {
 }
 } // namespace lift_00611160
 } // namespace lift_005D06D0
+
+// [0x005D07E0] sub_005D07E0 (12 bytes)
+namespace lift_005D07E0 {
+extern uint32_t ext_005CFCB0();
+// Known callee 0x005CFCC0: sub_005CFCC0 (Auto-lifted identical-shape clone of 0x004CE810 (Unknown::GetRecordByIndex).)
+extern void* ext_005CFCC0(uint32_t index);
+
+// @name Unknown::GetRecordByCurrentIndex
+// @class Unknown
+// @summary Obtains an index from helper 0x005CFCB0 and returns the record at that index via 0x005CFCC0.
+void* fn_005D07E0() {
+    uint32_t index = ext_005CFCB0();
+    return ext_005CFCC0(index);
+}
+} // namespace lift_005D07E0
