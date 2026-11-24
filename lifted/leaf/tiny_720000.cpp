@@ -326,17 +326,6 @@ double fn_00722170(void) {
 } // namespace lift_006D9020
 } // namespace lift_00722170
 
-// [0x00728DE0] sub_00728DE0 (16 bytes)
-namespace lift_00728DE0 {
-// @name storeDwordThroughThis
-// @summary Stores the single stack argument into the DWORD at *this and returns this (thiscall, ret 4).
-// @field field_0x00 DWORD (unknown owner) field_0x00 (written via *self)
-void* fn_00728DE0(void* self, uint32_t value) {
-    *static_cast<uint32_t*>(self) = value;
-    return self;
-}
-} // namespace lift_00728DE0
-
 // [0x0072B1B0]
 namespace lift_0072B1B0 {
 // @name getInnerDword
@@ -350,3 +339,14 @@ uint32_t getInnerDword(uint32_t* this_) {
     return value;
 }
 } // namespace lift_0072B1B0
+
+// [0x00728DE0] sub_00728DE0 (16 bytes)
+namespace lift_00728DE0 {
+// @name storeDwordThroughThis
+// @summary Stores the single stack argument into the DWORD at *this and returns this (thiscall, ret 4).
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_00728DE0(void* self, uint32_t value) {
+    *static_cast<uint32_t*>(self) = value;
+    return self;
+}
+} // namespace lift_00728DE0
