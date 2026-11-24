@@ -29342,6 +29342,12 @@
     "summary": "Formats the DWORD at offset 0 of this object as 8-digit lowercase hex into a caller buffer (snprintf \"%08x\"), callee-cleans 2 stack args.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x0067ED10": {
+    "name": "parseHexFromString",
+    "signature": "uint32_t __thiscall fn_0067ED10(void* self, const void* str)",
+    "summary": "Parses a hexadecimal integer from a std::string and stores it at offset 0 of self",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067F5A0": {
     "name": "lookupTableByIndexField",
     "class": "Unknown (no class recovered; receiver is passed in ecx)",
@@ -43442,6 +43448,12 @@
     "signature": "extern \"C\" void* __fastcall fn_007928E0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00792900 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
+  "0x0079ABA0": {
+    "name": "sub_0079ABA0",
+    "signature": "void sub_0079ABA0(uint32_t eax, uint32_t ebx, uint32_t ecx, uint32_t edx)",
+    "summary": "Data/jump-table bytes at 0x0079ABA0 lifted as raw instruction sequence",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
   "0x0079ADA0": {
     "name": "sub_007928E0",

@@ -83,3 +83,48 @@ void* __thiscall fn_0079E5E0(void* self, DWORD mode, DWORD /*unused*/) {
     }
 }
 } // namespace lift_0079E5E0
+
+// [0x0079ABA0]
+namespace lift_0079ABA0 {
+// @name sub_0079ABA0
+// @summary Data/jump-table bytes at 0x0079ABA0 lifted as raw instruction sequence
+
+
+void sub_0079ABA0(uint32_t eax, uint32_t ebx, uint32_t ecx, uint32_t edx) {
+    uint8_t al = static_cast<uint8_t>(eax);
+    uint8_t cl = static_cast<uint8_t>(ecx);
+    uint8_t dl = static_cast<uint8_t>(edx);
+
+    uint8_t* p_ecx = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(ecx));
+    uint8_t* p_ebx = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(ebx));
+
+    uint16_t sum8 = static_cast<uint16_t>(*p_ecx) + al;
+    uint32_t cf = (sum8 >> 8) & 1u;
+    *p_ecx = static_cast<uint8_t>(sum8);
+
+    auto adc32 = [&](uint32_t imm) {
+        uint64_t res = static_cast<uint64_t>(eax) + imm + cf;
+        eax = static_cast<uint32_t>(res);
+        cf = static_cast<uint32_t>((res >> 32) & 1u);
+    };
+
+    adc32(0x15151515u);
+    adc32(0x03021515u);
+    adc32(0x07060504u);
+
+    *p_ecx |= cl;
+    cl |= *p_ebx;
+    cf = 0;
+
+    adc32(0x0c151515u);
+    adc32(0x150f0e0du);
+
+    sum8 = static_cast<uint16_t>(*p_ecx) + dl + static_cast<uint16_t>(cf);
+    cf = (sum8 >> 8) & 1u;
+    *p_ecx = static_cast<uint8_t>(sum8);
+
+    sum8 = static_cast<uint16_t>(dl) + *p_ebx + static_cast<uint16_t>(cf);
+    dl = static_cast<uint8_t>(sum8);
+    (void)dl;
+}
+} // namespace lift_0079ABA0
