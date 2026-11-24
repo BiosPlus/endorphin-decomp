@@ -1,0 +1,13 @@
+{
+  "va": "0x006CA2D0",
+  "size": 32,
+  "orig_symbol": "sub_006CA2D0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "CopyTriplet_ToOffset08",
+  "signature": "void fn_006CA2D0(void* self, const uint32_t* src)",
+  "summary": "If src is non-null, copy three 32-bit words from *src into self+0x08 (thiscall, one stack arg, ret 4).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:33:56Z"
+}

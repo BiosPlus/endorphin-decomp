@@ -36608,6 +36608,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006CA250 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006CA2D0": {
+    "name": "CopyTriplet_ToOffset08",
+    "signature": "void fn_006CA2D0(void* self, const uint32_t* src)",
+    "summary": "If src is non-null, copy three 32-bit words from *src into self+0x08 (thiscall, one stack arg, ret 4).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006CA6A0": {
     "name": "sub_006CA6A0",
     "signature": "extern \"C\" int32_t __fastcall fn_006CA6A0(void* self)",

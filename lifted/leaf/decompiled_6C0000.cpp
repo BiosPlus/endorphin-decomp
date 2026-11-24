@@ -247,3 +247,17 @@ DWORD* fn_006C9F00(BYTE* self, DWORD* out) {
     return out;
 }
 } // namespace lift_006C9F00
+
+// [0x006CA2D0] sub_006CA2D0 (32 bytes)
+namespace lift_006CA2D0 {
+// @name CopyTriplet_ToOffset08
+// @summary If src is non-null, copy three 32-bit words from *src into self+0x08 (thiscall, one stack arg, ret 4).
+void fn_006CA2D0(void* self, const uint32_t* src) {
+    if (src == nullptr) {
+        return;
+    }
+    lift_field<uint32_t>(self, 0x08) = src[0];
+    lift_field<uint32_t>(self, 0x0C) = src[1];
+    lift_field<uint32_t>(self, 0x10) = src[2];
+}
+} // namespace lift_006CA2D0
