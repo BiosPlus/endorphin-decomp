@@ -345,3 +345,26 @@ uint32_t sub_0080B680(uint32_t dst_addr, uint32_t src_addr) {
     return ext_00859A20(dst_addr, src_addr);
 }
 } // namespace lift_0080B680
+
+// [0x0080C6A0] sub_0080C6A0 (48 bytes)
+namespace lift_0080C6A0 {
+// @name followPointerChain
+// @summary Follows a singly linked chain of first-field pointers (count - 1) hops from start, stopping early at NULL; returns the node reached (start itself when count <= 1).
+// (No @class/@field: the function operates on untyped pointers without a known struct.)
+void* fn_0080C6A0(void* start, uint32_t count) {
+    if (count <= 1) {
+        return start;
+    }
+
+    const uint32_t hops = count - 1;
+    void* cur = start;
+    for (uint32_t i = 0; i < hops; ++i) {
+        if (cur == nullptr) {
+            break;
+        }
+        // Next-pointer is stored at offset 0 of each node.
+        cur = *static_cast<void* const*>(cur);
+    }
+    return cur;
+}
+} // namespace lift_0080C6A0
