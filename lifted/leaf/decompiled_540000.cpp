@@ -128,3 +128,27 @@ uint32_t fn_005435D0(void* self) {
 }
 } // namespace lift_00543530
 } // namespace lift_005435D0
+
+// [0x00540D00] sub_00540D00 (24 bytes)
+namespace lift_00540D00 {
+// Virtual slot 7 (vtable offset 0x1C) on a child object, called thiscall with no extra args.
+typedef DWORD(__thiscall* ChildSlot7Fn)(void* self);
+
+// @name Unknown::ForwardToIndexedChildSlot7
+// @class Unknown
+// @summary Picks child [self+0x08 + 60*index] where index = [self+0xF8], then tail-forwards the call to that child's vtable slot 7 and returns its result.
+// @field Unknown +0x08 void* field_0x08 (child pointer table base; element i at +0x08 + 60*i)
+// @field Unknown +0xF8 DWORD field_0xF8 (element index)
+DWORD fn_00540D00(void* self) {
+    // edx = index * 15; address = self + 4*edx + 8 = self + 8 + 60*index
+    DWORD index = lift_field<DWORD>(self, 0xF8);
+    DWORD slotOffset = index * 60u + 8u;
+    void* child = lift_field<void*>(self, static_cast<ptrdiff_t>(slotOffset));
+
+    // vtable = *child; target = vtable[7] (offset 0x1C)
+    void** vtable = *reinterpret_cast<void***>(child);
+    ChildSlot7Fn target = reinterpret_cast<ChildSlot7Fn>(vtable[7]);
+
+    return target(child);
+}
+} // namespace lift_00540D00

@@ -1,0 +1,28 @@
+{
+  "va": "0x00540D00",
+  "size": 24,
+  "orig_symbol": "sub_00540D00",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::ForwardToIndexedChildSlot7",
+  "class": "Unknown",
+  "signature": "DWORD fn_00540D00(void* self)",
+  "summary": "Picks child [self+0x08 + 60*index] where index = [self+0xF8], then tail-forwards the call to that child's vtable slot 7 and returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void* field_0x08 (child pointer table base; element i at +0x08 +",
+      "name": "60*i)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF8",
+      "type": "DWORD field_0xF8 (element",
+      "name": "index)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:36:10Z"
+}

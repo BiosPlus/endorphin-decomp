@@ -13007,6 +13007,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x0 and tail-calls sub_00548AB0.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00540D00": {
+    "name": "Unknown::ForwardToIndexedChildSlot7",
+    "class": "Unknown",
+    "signature": "DWORD fn_00540D00(void* self)",
+    "summary": "Picks child [self+0x08 + 60*index] where index = [self+0xF8], then tail-forwards the call to that child's vtable slot 7 and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x005431B0": {
     "name": "ViewportManager::vfunc_6",
     "class": "ViewportManager",
