@@ -201,3 +201,17 @@ void* __stdcall fn_0068EE60(uint32_t index) {
 }
 } // namespace lift_004CE810
 } // namespace lift_0068EE60
+
+// [0x00687280]
+namespace lift_00687280 {
+// @name writeIfFlagClear
+// @summary Writes a 32-bit value to out if (this->field_0x150 & mask) == 0
+// @field Self +0x150 uint32_t field_0x150
+
+
+void __thiscall sub_00687280(void* this_ptr, uint32_t val, uint32_t* out, uint32_t mask) {
+    if ((*reinterpret_cast<const uint32_t*>(reinterpret_cast<const uint8_t*>(this_ptr) + 0x150) & mask) == 0) {
+        *out = val;
+    }
+}
+} // namespace lift_00687280

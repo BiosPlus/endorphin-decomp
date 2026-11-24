@@ -21,6 +21,7 @@ struct Self_Fields {
     // +0xD0  uint32_t*                field_0xd0  (evidence: 0x00707960)
     // +0xF0  uint32_t                 field_0xF0  (evidence: 0x00704DA0) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  uint32_t                 field_0xf0  (evidence: 0x00704EB0) // CONFLICT: multiple definitions at +0xF0
+    // +0x150 uint32_t                 field_0x150  (evidence: 0x00687280)
     // +0x268 uint32_t                 field_0x268  (evidence: 0x00702780)
 };
 } // namespace lifted_layout

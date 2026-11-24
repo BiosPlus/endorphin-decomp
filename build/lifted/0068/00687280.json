@@ -1,0 +1,21 @@
+{
+  "va": "0x00687280",
+  "size": 25,
+  "orig_symbol": "sub_00687280",
+  "src_path": "src/leaf/tiny_680000.cpp",
+  "lifted_path": "lifted/leaf/tiny_680000.cpp",
+  "name": "writeIfFlagClear",
+  "signature": "void __thiscall sub_00687280(void* this_ptr, uint32_t val, uint32_t* out, uint32_t mask)",
+  "summary": "Writes a 32-bit value to out if (this-\u003efield_0x150 \u0026 mask) == 0",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x150",
+      "type": "uint32_t",
+      "name": "field_0x150"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T11:54:26Z"
+}
