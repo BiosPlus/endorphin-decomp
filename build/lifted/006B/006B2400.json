@@ -1,0 +1,21 @@
+{
+  "va": "0x006B2400",
+  "size": 25,
+  "orig_symbol": "sub_006B2400",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "sub_006B2400",
+  "signature": "uint32_t __thiscall sub_006B2400(uint32_t self, uint32_t arg0)",
+  "summary": "Constructor that calls base constructor sub_006B0C40 and sets vtable to 0x009917F4.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T11:56:05Z"
+}

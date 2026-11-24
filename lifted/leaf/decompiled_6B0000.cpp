@@ -124,3 +124,18 @@ uint32_t __thiscall sub_006B1E60(uint32_t self, uint32_t arg0) {
     return self;
 }
 } // namespace lift_006B1E60
+
+// [0x006B2400]
+namespace lift_006B2400 {
+extern void mem_write32(uint32_t addr, uint32_t val);
+extern uint32_t __thiscall ext_006B0C40(uint32_t self, uint32_t arg0);
+
+// @name sub_006B2400
+// @summary Constructor that calls base constructor sub_006B0C40 and sets vtable to 0x009917F4.
+// @field <unknown> +0x00 uint32_t vtable
+uint32_t __thiscall sub_006B2400(uint32_t self, uint32_t arg0) {
+    ext_006B0C40(self, arg0);
+    mem_write32(self, 0x009917F4u);
+    return self;
+}
+} // namespace lift_006B2400
