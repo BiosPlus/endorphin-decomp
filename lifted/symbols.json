@@ -38211,6 +38211,13 @@
     "summary": "Tail-calls getField_0x04 with arg0 + 0x44, returning the 32-bit value at object offset +0x48.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C6F80": {
+    "name": "sub_007C6F80_setField48Thunk",
+    "class": "// @summary Adds 0x44 to the first argument and tail-calls ext_007D5BA0 (setField04) with the adjusted pointer, so the 32-bit value lands at object offset +0x48.",
+    "signature": "void __cdecl sub_007C6F80(void* self, uint32_t value)",
+    "summary": "Adds 0x44 to the first argument and tail-calls ext_007D5BA0 (setField04) with the adjusted pointer, so the 32-bit value lands at object offset +0x48.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C6F90": {
     "name": "sub_007C6F90",
     "signature": "void __cdecl sub_007C6F90(void* self, DWORD value)",
