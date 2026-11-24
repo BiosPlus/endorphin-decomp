@@ -5008,3 +5008,18 @@ float fn_005355E0(void* self) {
     return lift_field<float>(inner, 0xBC);
 }
 } // namespace lift_005355E0
+
+// [0x005355F0] OglRenderer::vfunc_75 (13 bytes)
+namespace lift_005355F0 {
+// @name OglRenderer::vfunc_75
+// @class OglRenderer
+// @summary Returns float at delegate->field_0x64->field_0xC0 (chained pointer read, value returned in x87 st0)
+// @field OglRenderer +0x38 void* delegate_0x38
+float fn_005355F0(void* self) {
+    // Load delegate pointer at self+0x38, then the pointer at +0x64 of that object,
+    // then return the float at +0xC0 of that object.
+    void* delegate = lift_field<void*>(self, 0x38);
+    void* inner = lift_field<void*>(delegate, 0x64);
+    return lift_field<float>(inner, 0xC0);
+}
+} // namespace lift_005355F0
