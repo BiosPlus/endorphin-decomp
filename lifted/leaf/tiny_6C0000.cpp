@@ -1364,3 +1364,15 @@ uint32_t fn_006C9D60(void* self) {
     return flags & 0x30000000u;
 }
 } // namespace lift_006C9D60
+
+// [0x006C9E60] sub_006C9E60 (16 bytes)
+namespace lift_006C9E60 {
+// @name Unknown::GetFloatAt
+// @class Unknown
+// @summary Returns the float element at index idx of the float array stored at this+0x14 (thiscall, one stack arg).
+// @field Unknown +0x14 float field_0x14
+float fn_006C9E60(void* self, uint32_t idx) {
+    const auto* base = static_cast<const uint8_t*>(self);
+    return *reinterpret_cast<const float*>(base + 0x14 + static_cast<size_t>(idx) * 4u);
+}
+} // namespace lift_006C9E60

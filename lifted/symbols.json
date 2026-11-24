@@ -31999,6 +31999,13 @@
     "summary": "Returns the bits 28-29 (mask 0x30000000) of the dword at this+0x10.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C9E60": {
+    "name": "Unknown::GetFloatAt",
+    "class": "Unknown",
+    "signature": "float fn_006C9E60(void* self, uint32_t idx)",
+    "summary": "Returns the float element at index idx of the float array stored at this+0x14 (thiscall, one stack arg).",
+    "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
+  },
   "0x006C9E70": {
     "name": "Unknown::sub_006C9E70",
     "class": "Unknown",

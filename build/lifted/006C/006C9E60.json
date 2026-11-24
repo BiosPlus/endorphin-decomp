@@ -1,0 +1,22 @@
+{
+  "va": "0x006C9E60",
+  "size": 16,
+  "orig_symbol": "sub_006C9E60",
+  "src_path": "src/leaf/tiny_6C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6C0000.cpp",
+  "name": "Unknown::GetFloatAt",
+  "class": "Unknown",
+  "signature": "float fn_006C9E60(void* self, uint32_t idx)",
+  "summary": "Returns the float element at index idx of the float array stored at this+0x14 (thiscall, one stack arg).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:38:29Z"
+}
