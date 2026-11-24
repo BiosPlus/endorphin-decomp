@@ -1,0 +1,22 @@
+{
+  "va": "0x00493F00",
+  "size": 24,
+  "orig_symbol": "sub_00493F00",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "Unknown::ForwardToSlot45AndDispatch",
+  "class": "Unknown",
+  "signature": "void fn_00493F00(void* self)",
+  "summary": "Dereferences field_0x00, invokes its vtable slot 45 if non-null, and tail-dispatches ext_005304E0 on the result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:14:17Z"
+}

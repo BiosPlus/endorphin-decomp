@@ -680,3 +680,23 @@ int32_t fn_0049AD70(void* self) {
     return (b - a) / 36;
 }
 } // namespace lift_0049AD70
+
+// [0x00493F00]
+namespace lift_00493F00 {
+extern uint32_t mem_read32(const void* base, ptrdiff_t offset);
+extern uint32_t ext_vcall_slot45(void* obj);   // vtable +0xB4
+extern uint32_t ext_005304E0(void* self);
+
+// @name Unknown::ForwardToSlot45AndDispatch
+// @class Unknown
+// @summary Dereferences field_0x00, invokes its vtable slot 45 if non-null, and tail-dispatches ext_005304E0 on the result.
+// @field Unknown +0x00 void* field_0x00
+void fn_00493F00(void* self) {
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(mem_read32(self, 0x00)));
+    if (!obj) {
+        return;
+    }
+    void* next_obj = reinterpret_cast<void*>(static_cast<uintptr_t>(ext_vcall_slot45(obj)));
+    ext_005304E0(next_obj);
+}
+} // namespace lift_00493F00

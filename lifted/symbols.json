@@ -36592,6 +36592,12 @@
     "summary": "Converts an unsigned 32-bit value from sub_00508680(this + 0x10) to float via double scaling",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x0068BF00": {
+    "name": "scaleByRandom_0068BF00",
+    "signature": "extern \"C\" float __thiscall sub_0068BF00(void* self, float scale)",
+    "summary": "Scales a float argument using a value from sub_00508680 and two double constants.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x0068BF40": {
     "name": "ExprParser::FunctionType\u003cRandomizer, int, int, randIntExcN\u003e::vfunc_48",
     "class": "ExprParser::FunctionType",
