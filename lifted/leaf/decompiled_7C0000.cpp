@@ -497,3 +497,20 @@ extern void __cdecl fn_007CAFD0(void* self, float x) {
     lift_field<float>(self, 0x18) = static_cast<float>(len);
 }
 } // namespace lift_007CAFD0
+
+// [0x007CCCD0] sub_007CCCD0 (49 bytes)
+namespace lift_007CCCD0 {
+// @name Unknown::clampNonNegativeToFields20And2C
+// @class Unknown
+// @summary Stores v into +0x20 and +0x2c, replacing v with 0.0f when v < 0 (NaN and -0.0 pass through).
+// @field Unknown +0x20 float field_0x20
+// @field Unknown +0x2c float field_0x2c
+extern void __cdecl fn_007CCCD0(void* self, float v) {
+    // x87 fcom + fnstsw + test ah,5 + jp: the branch to the "store v" path is taken
+    // for v >= 0, equal, and unordered (NaN); only v < 0 falls through to store 0.0.
+    const float out = (v < 0.0f) ? 0.0f : v;
+
+    lift_field<float>(self, 0x20) = out;
+    lift_field<float>(self, 0x2c) = out;
+}
+} // namespace lift_007CCCD0

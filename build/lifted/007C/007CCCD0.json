@@ -1,0 +1,28 @@
+{
+  "va": "0x007CCCD0",
+  "size": 49,
+  "orig_symbol": "sub_007CCCD0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "Unknown::clampNonNegativeToFields20And2C",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __cdecl fn_007CCCD0(void* self, float v)",
+  "summary": "Stores v into +0x20 and +0x2c, replacing v with 0.0f when v \u003c 0 (NaN and -0.0 pass through).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "float",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:32:04Z"
+}

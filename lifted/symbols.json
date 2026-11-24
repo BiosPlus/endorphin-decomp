@@ -49946,6 +49946,13 @@
     "summary": "Stores a float at +0x1c and sets or clears bit 0x8 at +0xc based on its magnitude.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CCCD0": {
+    "name": "Unknown::clampNonNegativeToFields20And2C",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __cdecl fn_007CCCD0(void* self, float v)",
+    "summary": "Stores v into +0x20 and +0x2c, replacing v with 0.0f when v \u003c 0 (NaN and -0.0 pass through).",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CD040": {
     "name": "Unknown::postIncrementField04",
     "class": "Unknown",
