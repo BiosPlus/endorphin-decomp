@@ -51523,10 +51523,22 @@
     "summary": "Stores the dword at ptr+0x14 (or 0 if ptr is null) into self+0x04 and sets self+0x08 to -1.",
     "lifted_path": "lifted/leaf/decompiled_770000.cpp"
   },
+  "0x0077F550": {
+    "name": "lookupStringByIndex_0077F550",
+    "signature": "extern \"C\" uint32_t sub_0077F550(uint32_t index)",
+    "summary": "Maps an unsigned index (0..4) via a jump table to a constant address, defaulting to 0xaaeb2c.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
   "0x0077F5A0": {
     "name": "sub_0077F5A0",
     "signature": "uint32_t sub_0077F5A0(uint32_t arg0)",
     "summary": "Returns one of three constant addresses selected by the first stack argument (0, 1, 2); any other value yields the default 0x00AAF03C.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
+  "0x0077F5D0": {
+    "name": "get_type_name_0077F5D0",
+    "signature": "uint32_t sub_0077F5D0(uint32_t index)",
+    "summary": "Maps an enum index (0-4) to a static string or descriptor address, defaulting to 0x00AABB78.",
     "lifted_path": "lifted/leaf/decompiled_770000.cpp"
   },
   "0x0077F620": {

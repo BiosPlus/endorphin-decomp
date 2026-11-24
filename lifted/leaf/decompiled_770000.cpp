@@ -191,3 +191,43 @@ void fn_0077F620(void* self, uint32_t dest, uint32_t index) {
     }
 }
 } // namespace lift_0077F620
+
+// [0x0077F5D0]
+namespace lift_0077F5D0 {
+// @name get_type_name_0077F5D0
+// @summary Maps an enum index (0-4) to a static string or descriptor address, defaulting to 0x00AABB78.
+
+
+uint32_t sub_0077F5D0(uint32_t index) {
+    switch (index) {
+        case 0:
+            return 0x00AABB78u;
+        case 1:
+            return 0x00AAE5D4u;
+        case 2:
+            return 0x00AABB60u;
+        case 3:
+            return 0x00AABB54u;
+        case 4:
+            return 0x00AAE5C8u;
+        default:
+            return 0x00AABB78u;
+    }
+}
+} // namespace lift_0077F5D0
+
+// [0x0077F550]
+namespace lift_0077F550 {
+// @name lookupStringByIndex_0077F550
+// @summary Maps an unsigned index (0..4) via a jump table to a constant address, defaulting to 0xaaeb2c.
+extern uint32_t sub_0077F550(uint32_t index) {
+    switch (index) {
+        case 0:  return 0x00aaeb2cu;
+        case 1:  return 0x00aadfe0u;
+        case 2:  return 0x00aae0d4u;
+        case 3:  return 0x00aadfd4u;
+        case 4:  return 0x00aadfccu;
+        default: return 0x00aaeb2cu;
+    }
+}
+} // namespace lift_0077F550
