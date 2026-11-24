@@ -12,11 +12,11 @@
     {
       "class": "Unknown",
       "offset": "+0x40",
-      "type": "uint32_t",
+      "type": "DWORD",
       "name": "field_0x40"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:48:32Z"
+  "lifted_at": "2026-11-24T12:48:43Z"
 }
