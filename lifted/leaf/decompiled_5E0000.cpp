@@ -174,3 +174,26 @@ float fn_005E29A0(void* self) {
 }
 } // namespace lift_005E2770
 } // namespace lift_005E29A0
+
+// [0x005ED330]
+namespace lift_005ED330 {
+// @name std_Tree_Erase
+// @summary Recursively erases a red-black tree subtree in post-order (right child recursively, then left spine iteratively).
+// @field TreeNode +0x00 uint32_t left
+// @field TreeNode +0x08 uint32_t right
+// @field TreeNode +0x51 uint8_t isNil
+
+
+extern uint8_t mem_read8(uint32_t addr);
+extern uint32_t mem_read32(uint32_t addr);
+extern void ext_006A5C5C(uint32_t ptr);
+
+void __thiscall fn_005ED330(uint32_t self, uint32_t node) {
+    while (mem_read8(node + 0x51) == 0) {
+        fn_005ED330(self, mem_read32(node + 0x8));
+        uint32_t left = mem_read32(node);
+        ext_006A5C5C(node);
+        node = left;
+    }
+}
+} // namespace lift_005ED330
