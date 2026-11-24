@@ -1,0 +1,28 @@
+{
+  "va": "0x005760E0",
+  "size": 18,
+  "orig_symbol": "sub_005760E0",
+  "src_path": "src/leaf/tiny_570000.cpp",
+  "lifted_path": "lifted/leaf/tiny_570000.cpp",
+  "name": "sub_005760E0",
+  "class": "Unknown",
+  "signature": "extern void __fastcall fn_005760E0(void* self, int edx_unused, uint32_t arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x0041C750 (sub_0041C750).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:57:13Z"
+}

@@ -13331,6 +13331,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00574CF0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005760E0": {
+    "name": "sub_005760E0",
+    "class": "Unknown",
+    "signature": "extern void __fastcall fn_005760E0(void* self, int edx_unused, uint32_t arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0041C750 (sub_0041C750).",
+    "lifted_path": "lifted/leaf/tiny_570000.cpp"
+  },
   "0x00582B60": {
     "name": "Acclaim2MotionIO::vfunc_3",
     "class": "Acclaim2MotionIO",
@@ -15416,6 +15423,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x100.",
     "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
   },
+  "0x005B6780": {
+    "name": "sub_005B6780",
+    "class": "Unknown",
+    "signature": "void fn_005B6780(void* self, DWORD stackArg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00433290 (Unknown::forwardToChildAt154).",
+    "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
+  },
   "0x005B6880": {
     "name": "NMData::MetaBodyData::vfunc_6_off_C",
     "class": "NMData::MetaBodyData",
@@ -15449,6 +15463,27 @@
     "signature": "void __thiscall fn_005B6F00(void* self, const float* scale)",
     "summary": "Scales a dimension of the render object's bounding/transform vector and updates the attached object.",
     "lifted_path": "lifted/NMData/MetaBodyData.cpp"
+  },
+  "0x005B7240": {
+    "name": "sub_005B7240",
+    "class": "Unknown",
+    "signature": "void fn_005B7240(void* self, DWORD stackArg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00433290 (Unknown::forwardToChildAt154).",
+    "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
+  },
+  "0x005B7280": {
+    "name": "sub_005B7280",
+    "class": "Unknown",
+    "signature": "void fn_005B7280(void* self, DWORD stackArg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00433290 (Unknown::forwardToChildAt154).",
+    "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
+  },
+  "0x005B72C0": {
+    "name": "sub_005B72C0",
+    "class": "Unknown",
+    "signature": "void fn_005B72C0(void* self, DWORD stackArg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00433290 (Unknown::forwardToChildAt154).",
+    "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
   },
   "0x005B72E0": {
     "name": "Unknown::ForwardToSubobject158",
@@ -15918,6 +15953,13 @@
     "signature": "void* __thiscall fn_005C3010(void* self, void* a, void* b)",
     "summary": "Auto-lifted identical-shape clone of 0x005C32B0 (NMData::FluidObjectData::vfunc_15).",
     "lifted_path": "lifted/NMData/CollisionModelDataBase.cpp"
+  },
+  "0x005C30F0": {
+    "name": "sub_005C30F0",
+    "class": "Unknown",
+    "signature": "void fn_005C30F0(void* self, DWORD stackArg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00433290 (Unknown::forwardToChildAt154).",
+    "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
   },
   "0x005C3170": {
     "name": "sub_005C3170",
@@ -16607,6 +16649,13 @@
     "name": "sub_005CE8C0",
     "signature": "extern \"C\" void __fastcall fn_005CE8C0(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0x24 and tail-calls sub_005B2130.",
+    "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
+  },
+  "0x005CE8F0": {
+    "name": "sub_005CE8F0",
+    "class": "Unknown",
+    "signature": "void fn_005CE8F0(void* self, DWORD stackArg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00433290 (Unknown::forwardToChildAt154).",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
   },
   "0x005CE910": {

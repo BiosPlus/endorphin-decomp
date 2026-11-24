@@ -237,3 +237,49 @@ void fn_005CE920(void* self) {
 }
 } // namespace lift_005B72E0
 } // namespace lift_005CE920
+
+// [0x005C30F0] sub_005C30F0 (18 bytes)
+namespace lift_005C30F0 {
+// @name sub_005C30F0
+// @summary Auto-lifted identical-shape clone of 0x00433290 (Unknown::forwardToChildAt154).
+namespace lift_00433290 {
+// Known callee 0x0044E160: sub_0044E160 (36 bytes). Receives the child object as `this`
+// and the caller's stack argument unchanged (the original code tail-jumps into it).
+extern void ext_005B72C0(void* self, DWORD stackArg);
+
+// @name Unknown::forwardToChildAt154
+// @class Unknown
+// @summary Forwards the call to the child object at +0x154 via sub_0044E160; does nothing when the child is null.
+// @field Unknown +0x154 DWORD child
+void fn_005C30F0(void* self, DWORD stackArg) {
+    const DWORD child =
+        *reinterpret_cast<const DWORD*>(static_cast<const uint8_t*>(self) + 0x164);
+    if (child != 0) {
+        ext_005B72C0(reinterpret_cast<void*>(static_cast<uintptr_t>(child)), stackArg);
+    }
+}
+} // namespace lift_00433290
+} // namespace lift_005C30F0
+
+// [0x005CE8F0] sub_005CE8F0 (18 bytes)
+namespace lift_005CE8F0 {
+// @name sub_005CE8F0
+// @summary Auto-lifted identical-shape clone of 0x00433290 (Unknown::forwardToChildAt154).
+namespace lift_00433290 {
+// Known callee 0x0044E160: sub_0044E160 (36 bytes). Receives the child object as `this`
+// and the caller's stack argument unchanged (the original code tail-jumps into it).
+extern void ext_006483A0(void* self, DWORD stackArg);
+
+// @name Unknown::forwardToChildAt154
+// @class Unknown
+// @summary Forwards the call to the child object at +0x154 via sub_0044E160; does nothing when the child is null.
+// @field Unknown +0x154 DWORD child
+void fn_005CE8F0(void* self, DWORD stackArg) {
+    const DWORD child =
+        *reinterpret_cast<const DWORD*>(static_cast<const uint8_t*>(self) + 0xAC);
+    if (child != 0) {
+        ext_006483A0(reinterpret_cast<void*>(static_cast<uintptr_t>(child)), stackArg);
+    }
+}
+} // namespace lift_00433290
+} // namespace lift_005CE8F0

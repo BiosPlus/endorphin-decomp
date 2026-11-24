@@ -1,0 +1,22 @@
+{
+  "va": "0x005B7280",
+  "size": 18,
+  "orig_symbol": "sub_005B7280",
+  "src_path": "src/leaf/tiny_5B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5B0000.cpp",
+  "name": "sub_005B7280",
+  "class": "Unknown",
+  "signature": "void fn_005B7280(void* self, DWORD stackArg)",
+  "summary": "Auto-lifted identical-shape clone of 0x00433290 (Unknown::forwardToChildAt154).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x154",
+      "type": "DWORD",
+      "name": "child"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:57:13Z"
+}

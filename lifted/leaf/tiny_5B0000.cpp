@@ -88,3 +88,95 @@ void* fn_005B1830(void* self) {
     return self;
 }
 } // namespace lift_005B1830
+
+// [0x005B6780] sub_005B6780 (18 bytes)
+namespace lift_005B6780 {
+// @name sub_005B6780
+// @summary Auto-lifted identical-shape clone of 0x00433290 (Unknown::forwardToChildAt154).
+namespace lift_00433290 {
+// Known callee 0x0044E160: sub_0044E160 (36 bytes). Receives the child object as `this`
+// and the caller's stack argument unchanged (the original code tail-jumps into it).
+extern void ext_005CE8F0(void* self, DWORD stackArg);
+
+// @name Unknown::forwardToChildAt154
+// @class Unknown
+// @summary Forwards the call to the child object at +0x154 via sub_0044E160; does nothing when the child is null.
+// @field Unknown +0x154 DWORD child
+void fn_005B6780(void* self, DWORD stackArg) {
+    const DWORD child =
+        *reinterpret_cast<const DWORD*>(static_cast<const uint8_t*>(self) + 0x158);
+    if (child != 0) {
+        ext_005CE8F0(reinterpret_cast<void*>(static_cast<uintptr_t>(child)), stackArg);
+    }
+}
+} // namespace lift_00433290
+} // namespace lift_005B6780
+
+// [0x005B7240] sub_005B7240 (18 bytes)
+namespace lift_005B7240 {
+// @name sub_005B7240
+// @summary Auto-lifted identical-shape clone of 0x00433290 (Unknown::forwardToChildAt154).
+namespace lift_00433290 {
+// Known callee 0x0044E160: sub_0044E160 (36 bytes). Receives the child object as `this`
+// and the caller's stack argument unchanged (the original code tail-jumps into it).
+extern void ext_005CE960(void* self, DWORD stackArg);
+
+// @name Unknown::forwardToChildAt154
+// @class Unknown
+// @summary Forwards the call to the child object at +0x154 via sub_0044E160; does nothing when the child is null.
+// @field Unknown +0x154 DWORD child
+void fn_005B7240(void* self, DWORD stackArg) {
+    const DWORD child =
+        *reinterpret_cast<const DWORD*>(static_cast<const uint8_t*>(self) + 0x158);
+    if (child != 0) {
+        ext_005CE960(reinterpret_cast<void*>(static_cast<uintptr_t>(child)), stackArg);
+    }
+}
+} // namespace lift_00433290
+} // namespace lift_005B7240
+
+// [0x005B7280] sub_005B7280 (18 bytes)
+namespace lift_005B7280 {
+// @name sub_005B7280
+// @summary Auto-lifted identical-shape clone of 0x00433290 (Unknown::forwardToChildAt154).
+namespace lift_00433290 {
+// Known callee 0x0044E160: sub_0044E160 (36 bytes). Receives the child object as `this`
+// and the caller's stack argument unchanged (the original code tail-jumps into it).
+extern void ext_005CE980(void* self, DWORD stackArg);
+
+// @name Unknown::forwardToChildAt154
+// @class Unknown
+// @summary Forwards the call to the child object at +0x154 via sub_0044E160; does nothing when the child is null.
+// @field Unknown +0x154 DWORD child
+void fn_005B7280(void* self, DWORD stackArg) {
+    const DWORD child =
+        *reinterpret_cast<const DWORD*>(static_cast<const uint8_t*>(self) + 0x158);
+    if (child != 0) {
+        ext_005CE980(reinterpret_cast<void*>(static_cast<uintptr_t>(child)), stackArg);
+    }
+}
+} // namespace lift_00433290
+} // namespace lift_005B7280
+
+// [0x005B72C0] sub_005B72C0 (18 bytes)
+namespace lift_005B72C0 {
+// @name sub_005B72C0
+// @summary Auto-lifted identical-shape clone of 0x00433290 (Unknown::forwardToChildAt154).
+namespace lift_00433290 {
+// Known callee 0x0044E160: sub_0044E160 (36 bytes). Receives the child object as `this`
+// and the caller's stack argument unchanged (the original code tail-jumps into it).
+extern void ext_005CE9A0(void* self, DWORD stackArg);
+
+// @name Unknown::forwardToChildAt154
+// @class Unknown
+// @summary Forwards the call to the child object at +0x154 via sub_0044E160; does nothing when the child is null.
+// @field Unknown +0x154 DWORD child
+void fn_005B72C0(void* self, DWORD stackArg) {
+    const DWORD child =
+        *reinterpret_cast<const DWORD*>(static_cast<const uint8_t*>(self) + 0x158);
+    if (child != 0) {
+        ext_005CE9A0(reinterpret_cast<void*>(static_cast<uintptr_t>(child)), stackArg);
+    }
+}
+} // namespace lift_00433290
+} // namespace lift_005B72C0
