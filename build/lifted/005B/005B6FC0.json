@@ -1,0 +1,28 @@
+{
+  "va": "0x005B6FC0",
+  "size": 24,
+  "orig_symbol": "sub_005B6FC0",
+  "src_path": "src/leaf/tiny_5B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5B0000.cpp",
+  "name": "Unknown::ForwardToSubobjectField0x158",
+  "class": "Unknown",
+  "signature": "uint32_t fn_005B6FC0(void* self)",
+  "summary": "If self+0x158 is non-null, forwards to ext_006481C0 with the object at (self+0x158)+0xAC as receiver; otherwise returns 0 (0.0f bit pattern).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "uint32_t",
+      "name": "field_0x158"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "uint32_t",
+      "name": "field_0xac"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:37:42Z"
+}

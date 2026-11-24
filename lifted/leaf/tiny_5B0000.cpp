@@ -299,3 +299,30 @@ uint32_t fn_005B6FE0(void* self) {
     return ext_006481E0(next_obj);
 }
 } // namespace lift_005B6FE0
+
+// [0x005B6FC0] sub_005B6FC0 (24 bytes)
+namespace lift_005B6FC0 {
+// Known callee 0x006481C0: sub_006481C0 (Auto-lifted identical-shape clone of 0x00648480 (GetIndirectField_0x5c_0x00).)
+// Takes its receiver in ECX (the object pointer loaded from +0xAC).
+extern uint32_t ext_006481C0(void* self);
+
+// @name Unknown::ForwardToSubobjectField0x158
+// @class Unknown
+// @summary If self+0x158 is non-null, forwards to ext_006481C0 with the object at (self+0x158)+0xAC as receiver; otherwise returns 0 (0.0f bit pattern).
+// @field Unknown +0x158 uint32_t field_0x158
+// @field Unknown +0xAC uint32_t field_0xac
+uint32_t fn_005B6FC0(void* self) {
+    // mov eax, [ecx+0x158]; test eax,eax; je .zero
+    // mov ecx, [eax+0xac]; jmp ext_006481C0
+    // .zero: fldz; ret
+    const uint32_t sub_ptr = lift_field<uint32_t>(self, 0x158);
+    if (sub_ptr == 0) {
+        // Original returns 0.0f in x87 ST0; its bit pattern is 0, which is what EAX carries here.
+        return 0u;
+    }
+    void* sub = reinterpret_cast<void*>(static_cast<uintptr_t>(sub_ptr));
+    const uint32_t recv_ptr = lift_field<uint32_t>(sub, 0xAC);
+    void* recv = reinterpret_cast<void*>(static_cast<uintptr_t>(recv_ptr));
+    return ext_006481C0(recv);
+}
+} // namespace lift_005B6FC0

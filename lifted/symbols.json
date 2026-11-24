@@ -16378,6 +16378,13 @@
     "summary": "Scales a dimension of the render object's bounding/transform vector and updates the attached object.",
     "lifted_path": "lifted/NMData/MetaBodyData.cpp"
   },
+  "0x005B6FC0": {
+    "name": "Unknown::ForwardToSubobjectField0x158",
+    "class": "Unknown",
+    "signature": "uint32_t fn_005B6FC0(void* self)",
+    "summary": "If self+0x158 is non-null, forwards to ext_006481C0 with the object at (self+0x158)+0xAC as receiver; otherwise returns 0 (0.0f bit pattern).",
+    "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
+  },
   "0x005B6FE0": {
     "name": "Unknown::ForwardToSubobjectField0x158",
     "class": "Unknown",
