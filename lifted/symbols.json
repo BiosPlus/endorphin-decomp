@@ -38264,6 +38264,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x78 and tail-calls sub_006E7460.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006BD210": {
+    "name": "Pair::equals",
+    "class": "Pair",
+    "signature": "uint32_t __thiscall sub_006BD210(uint32_t* self, const uint32_t* other)",
+    "summary": "Compares two 32-bit fields at offsets +0x00 and +0x04 for equality.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BDAF0": {
     "name": "Unknown::MatchesLinkedTag",
     "class": "Unknown",
