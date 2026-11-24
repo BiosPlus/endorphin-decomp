@@ -19640,6 +19640,13 @@
     "summary": "Calls the vtable slot at +0x28 of the object pointed to by this+0x04, passing the address this+0x14 as its single argument (callee pops), then returns this+0x14; thiscall.",
     "lifted_path": "lifted/leaf/tiny_600000.cpp"
   },
+  "0x00602F20": {
+    "name": "sub_00602F20",
+    "class": "UnknownClass",
+    "signature": "void* fn_00602F20(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00602F00 (UnknownClass::GetSubobject14ViaVirtual28).",
+    "lifted_path": "lifted/leaf/tiny_600000.cpp"
+  },
   "0x00602FF0": {
     "name": "Effector::vfunc_26",
     "class": "Effector",
@@ -21869,6 +21876,27 @@
     "signature": "extern \"C\" void (*mem_00925134)();   // CRT _invalid_parameter_noinfo (IAT slot) namespace",
     "summary": "Takes the positions of the first two child sensors, builds a cross-product frame from them and a reference offset, and stores the derived plane terms (doubles at +0x58..+0x70) plus the cached positions (+0x78, +0x84).",
     "lifted_path": "lifted/Sensors/CompoundSensorHorizontalPlane.cpp"
+  },
+  "0x00630560": {
+    "name": "sub_00630560",
+    "class": "UnknownClass",
+    "signature": "void* fn_00630560(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00602F00 (UnknownClass::GetSubobject14ViaVirtual28).",
+    "lifted_path": "lifted/leaf/tiny_630000.cpp"
+  },
+  "0x006305C0": {
+    "name": "sub_006305C0",
+    "class": "UnknownClass",
+    "signature": "void* fn_006305C0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00602F00 (UnknownClass::GetSubobject14ViaVirtual28).",
+    "lifted_path": "lifted/leaf/tiny_630000.cpp"
+  },
+  "0x006305E0": {
+    "name": "sub_006305E0",
+    "class": "UnknownClass",
+    "signature": "void* fn_006305E0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00602F00 (UnknownClass::GetSubobject14ViaVirtual28).",
+    "lifted_path": "lifted/leaf/tiny_630000.cpp"
   },
   "0x00630C80": {
     "name": "EffectorSkeletal::vfunc_20",

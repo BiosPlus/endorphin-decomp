@@ -1,0 +1,22 @@
+{
+  "va": "0x006305C0",
+  "size": 24,
+  "orig_symbol": "sub_006305C0",
+  "src_path": "src/leaf/tiny_630000.cpp",
+  "lifted_path": "lifted/leaf/tiny_630000.cpp",
+  "name": "sub_006305C0",
+  "class": "UnknownClass",
+  "signature": "void* fn_006305C0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00602F00 (UnknownClass::GetSubobject14ViaVirtual28).",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T11:26:12Z"
+}

@@ -52,3 +52,66 @@ void fn_0063E0F0(void* self) {
 }
 } // namespace lift_00519CE0
 } // namespace lift_0063E0F0
+
+// [0x00630560] sub_00630560 (24 bytes)
+namespace lift_00630560 {
+// @name sub_00630560
+// @summary Auto-lifted identical-shape clone of 0x00602F00 (UnknownClass::GetSubobject14ViaVirtual28).
+namespace lift_00602F00 {
+// @name UnknownClass::GetSubobject14ViaVirtual28
+// @class UnknownClass
+// @summary Calls the vtable slot at +0x28 of the object pointed to by this+0x04, passing the address this+0x14 as its single argument (callee pops), then returns this+0x14; thiscall.
+// @field UnknownClass +0x04 void* field_0x04
+void* fn_00630560(void* self) {
+    void* subobject = static_cast<uint8_t*>(self) + 0x12C;
+    void* obj = lift_field<void*>(self, 0x04);
+    void* vtable = lift_field<void*>(obj, 0x00);
+    using Slot28Fn = void (*)(void* thisPtr, void* arg);
+    auto fn = reinterpret_cast<Slot28Fn>(lift_field<void*>(vtable, 0x3C));
+    fn(obj, subobject);
+    return subobject;
+}
+} // namespace lift_00602F00
+} // namespace lift_00630560
+
+// [0x006305C0] sub_006305C0 (24 bytes)
+namespace lift_006305C0 {
+// @name sub_006305C0
+// @summary Auto-lifted identical-shape clone of 0x00602F00 (UnknownClass::GetSubobject14ViaVirtual28).
+namespace lift_00602F00 {
+// @name UnknownClass::GetSubobject14ViaVirtual28
+// @class UnknownClass
+// @summary Calls the vtable slot at +0x28 of the object pointed to by this+0x04, passing the address this+0x14 as its single argument (callee pops), then returns this+0x14; thiscall.
+// @field UnknownClass +0x04 void* field_0x04
+void* fn_006305C0(void* self) {
+    void* subobject = static_cast<uint8_t*>(self) + 0x120;
+    void* obj = lift_field<void*>(self, 0x04);
+    void* vtable = lift_field<void*>(obj, 0x00);
+    using Slot28Fn = void (*)(void* thisPtr, void* arg);
+    auto fn = reinterpret_cast<Slot28Fn>(lift_field<void*>(vtable, 0x34));
+    fn(obj, subobject);
+    return subobject;
+}
+} // namespace lift_00602F00
+} // namespace lift_006305C0
+
+// [0x006305E0] sub_006305E0 (24 bytes)
+namespace lift_006305E0 {
+// @name sub_006305E0
+// @summary Auto-lifted identical-shape clone of 0x00602F00 (UnknownClass::GetSubobject14ViaVirtual28).
+namespace lift_00602F00 {
+// @name UnknownClass::GetSubobject14ViaVirtual28
+// @class UnknownClass
+// @summary Calls the vtable slot at +0x28 of the object pointed to by this+0x04, passing the address this+0x14 as its single argument (callee pops), then returns this+0x14; thiscall.
+// @field UnknownClass +0x04 void* field_0x04
+void* fn_006305E0(void* self) {
+    void* subobject = static_cast<uint8_t*>(self) + 0x138;
+    void* obj = lift_field<void*>(self, 0x04);
+    void* vtable = lift_field<void*>(obj, 0x00);
+    using Slot28Fn = void (*)(void* thisPtr, void* arg);
+    auto fn = reinterpret_cast<Slot28Fn>(lift_field<void*>(vtable, 0x40));
+    fn(obj, subobject);
+    return subobject;
+}
+} // namespace lift_00602F00
+} // namespace lift_006305E0
