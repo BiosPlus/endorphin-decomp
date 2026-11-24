@@ -1527,6 +1527,13 @@
     "summary": "Returns the address of the global constant mem_0092E4B8 (initialised to 0x006A5FCE).",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
   },
+  "0x00422E00": {
+    "name": "TreeCtrl::sendExpandMessage",
+    "class": "TreeCtrl",
+    "signature": "int32_t __thiscall sub_00422E00(void* self, uint32_t lParam, uint32_t wParam)",
+    "summary": "Sends a TVM_EXPAND (0x1102) message to the window handle at this+0x20.",
+    "lifted_path": "lifted/leaf/tiny_420000.cpp"
+  },
   "0x004248D0": {
     "name": "ImportDialog::vfunc_1",
     "class": "ImportDialog",

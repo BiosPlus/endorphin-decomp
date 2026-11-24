@@ -184,3 +184,19 @@ void* fn_00420590(void* arg) {
 }
 } // namespace lift_00401AF0
 } // namespace lift_00420590
+
+// [0x00422E00]
+namespace lift_00422E00 {
+extern uint32_t mem_00925694;
+
+// @name TreeCtrl::sendExpandMessage
+// @class TreeCtrl
+// @summary Sends a TVM_EXPAND (0x1102) message to the window handle at this+0x20.
+// @field TreeCtrl +0x20 uint32_t hWnd
+int32_t __thiscall sub_00422E00(void* self, uint32_t lParam, uint32_t wParam) {
+    uint32_t hWnd = *reinterpret_cast<const uint32_t*>(reinterpret_cast<const uint8_t*>(self) + 0x20);
+    using SendMessageAFn = int32_t(__stdcall*)(uint32_t hWnd, uint32_t Msg, uint32_t wParam, uint32_t lParam);
+    auto fn = reinterpret_cast<SendMessageAFn>(static_cast<uintptr_t>(mem_00925694));
+    return fn(hWnd, 0x1102u, wParam, lParam);
+}
+} // namespace lift_00422E00

@@ -1,0 +1,22 @@
+{
+  "va": "0x00422E00",
+  "size": 28,
+  "orig_symbol": "sub_00422E00",
+  "src_path": "src/leaf/tiny_420000.cpp",
+  "lifted_path": "lifted/leaf/tiny_420000.cpp",
+  "name": "TreeCtrl::sendExpandMessage",
+  "class": "TreeCtrl",
+  "signature": "int32_t __thiscall sub_00422E00(void* self, uint32_t lParam, uint32_t wParam)",
+  "summary": "Sends a TVM_EXPAND (0x1102) message to the window handle at this+0x20.",
+  "fields": [
+    {
+      "class": "TreeCtrl",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "hWnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:07:13Z"
+}
