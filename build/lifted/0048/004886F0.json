@@ -4,11 +4,337 @@
   "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriod(float), 0}\u003e::vfunc_40",
   "src_path": "src/templates/ReadWriteMethodType.cpp",
   "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
-  "name": "ExprParser::ReadWriteMethodType\u003cDesiredPoseEventData, float\u003e::vfunc_40",
-  "class": "ExprParser::ReadWriteMethodType\u003cNMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriod(float), 0}\u003e",
-  "signature": "void fn_004886F0(void* self)",
-  "summary": "Runs the one-time guarded init of the static proxy object at 0x00AD9E3C, then stores that object's address into the target's +0x04 slot.",
+  "name": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)",
+  "class": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, float, \u0026public: void __thiscall DoubleWithProperties::setValue(float)\u003e",
+  "signature": "void fn_00695620(void* dst, void* src)",
+  "summary": "Reads a float via the source's inner getter and stores it as a double into the target slot; throws if the target slot is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "double*",
+      "name": "target"
+    },
+    {
+      "class": "ExprParser::ReadWriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "inner"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1",
+      "type": "uint8_t",
+      "name": "field_0x01"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Effector",
+      "offset": "+0x54",
+      "type": "float",
+      "name": "field_0x54"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "Effector",
+      "offset": "+0x4C",
+      "type": "float",
+      "name": "gradient"
+    },
+    {
+      "class": "Effector",
+      "offset": "+0x50",
+      "type": "float",
+      "name": "gradientCap"
+    },
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ReadWriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ptr"
+    },
+    {
+      "class": "ImageExporter",
+      "offset": "+0x20",
+      "type": "int",
+      "name": "field_0x20"
+    },
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "ReadMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "inner"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "NMData::State*",
+      "name": "target"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "inner"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04 (source object pointer; its vtable slot +0x0c is the",
+      "name": "getter)"
+    },
+    {
+      "class": "UnknownArg2",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ReadWriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "accessor"
+    },
+    {
+      "class": "ExprParser::ReadWriteMethodType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_04"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "EffectorSkeletal*",
+      "name": "target"
+    },
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "accessor"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (target object pointer;*",
+      "name": "arg1)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (inner object of the context",
+      "name": "argument)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void* field_0x0C (sub-object that receives the value via",
+      "name": "vfunc_8)"
+    },
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "unitMass"
+    },
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x84",
+      "type": "uint8_t",
+      "name": "field_0x84"
+    },
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "unitLength"
+    },
+    {
+      "class": "ExprParser::ValuePtr",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ptr"
+    },
+    {
+      "class": "ExprParser::Value",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "type"
+    },
+    {
+      "class": "NMData::IncarnationEventData",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "instance"
+    },
+    {
+      "class": "ExprParser::ValuePtr",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "evaluator"
+    },
+    {
+      "class": "NMData::TransitionEventData",
+      "offset": "+0x194",
+      "type": "float",
+      "name": "m_momentumScaleFactor"
+    },
+    {
+      "class": "ExprParser::ExprArg",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "typeObj"
+    },
+    {
+      "class": "ExprArg",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "valueObj"
+    },
+    {
+      "class": "ExprArg",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "evaluator"
+    },
+    {
+      "class": "MatrixWithProperties*",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "ValueObject",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "valueType"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (sub-object used as this for the slot-25",
+      "name": "dispatch)"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0x9C",
+      "type": "float",
+      "name": "desiredPosition_x"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0xA0",
+      "type": "float",
+      "name": "desiredPosition_y"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0xA4",
+      "type": "float",
+      "name": "desiredPosition_z"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0xA8",
+      "type": "float",
+      "name": "desiredLinearVelocity_x"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0xAC",
+      "type": "float",
+      "name": "desiredLinearVelocity_y"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0xB0",
+      "type": "float",
+      "name": "desiredLinearVelocity_z"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "valuePtr"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T14:46:40Z"
+  "lifted_at": "2026-11-24T14:46:46Z"
 }

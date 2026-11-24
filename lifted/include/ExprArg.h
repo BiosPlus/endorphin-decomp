@@ -8,7 +8,7 @@
 // Recovered field layout for ExprArg:
 namespace lifted_layout {
 struct ExprArg_Fields {
-    // +0x4   void*                    evaluator  (evidence: 0x004F6620) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    valueObj  (evidence: 0x004DE8E0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    evaluator  (evidence: 0x004886F0, 0x004F6620) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    valueObj  (evidence: 0x004886F0, 0x004DE8E0) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout

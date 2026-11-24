@@ -7222,10 +7222,10 @@
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x004886F0": {
-    "name": "ExprParser::ReadWriteMethodType\u003cDesiredPoseEventData, float\u003e::vfunc_40",
-    "class": "ExprParser::ReadWriteMethodType\u003cNMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriod(float), 0}\u003e",
-    "signature": "void fn_004886F0(void* self)",
-    "summary": "Runs the one-time guarded init of the static proxy object at 0x00AD9E3C, then stores that object's address into the target's +0x04 slot.",
+    "name": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)",
+    "class": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, float, \u0026public: void __thiscall DoubleWithProperties::setValue(float)\u003e",
+    "signature": "void fn_00695620(void* dst, void* src)",
+    "summary": "Reads a float via the source's inner getter and stores it as a double into the target slot; throws if the target slot is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x00488770": {

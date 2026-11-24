@@ -11,7 +11,7 @@ struct ExprParser_Value_Fields {
     // +0x0   void*                    field_0x00  (evidence: 0x00487000, 0x00649150, 0x006492B0, 0x00649620, 0x00649D50, 0x0064EC00)
     // +0x4   uint32_t                 field_0x04  (evidence: 0x0068C230) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x00487000, 0x00649150, 0x006492B0, 0x00649620, 0x00649D50, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    type  (evidence: 0x00488270) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    type  (evidence: 0x00488270, 0x004886F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    type_vtable  (evidence: 0x0066CC70) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout
