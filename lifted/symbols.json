@@ -39274,6 +39274,12 @@
     "summary": "Returns bit 15 of the uint32 at arg0-\u003e+0x4-\u003e+0x4 (as 0 or 1).",
     "lifted_path": "lifted/leaf/tiny_810000.cpp"
   },
+  "0x008103A0": {
+    "name": "getNestedFlagBit12",
+    "signature": "uint32_t fn_008103A0(uint8_t* self)",
+    "summary": "Returns bit 12 of the 32-bit word at +0x04 of the object referenced by +0x04 of the argument (0 or 1).",
+    "lifted_path": "lifted/leaf/tiny_810000.cpp"
+  },
   "0x008103F0": {
     "name": "sub_008103F0",
     "summary": "Follows a chain of three pointers (arg+0x4 -\u003e +0x4 -\u003e +0x4) and returns bit 11 of the final dword.",

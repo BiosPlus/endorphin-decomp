@@ -40,3 +40,16 @@ uint32_t sub_00810350(const uint8_t* arg0) {
     return (flags >> 15) & 1u;
 }
 } // namespace lift_00810350
+
+// [0x008103A0] sub_008103A0 (17 bytes)
+namespace lift_008103A0 {
+// @name getNestedFlagBit12
+// @summary Returns bit 12 of the 32-bit word at +0x04 of the object referenced by +0x04 of the argument (0 or 1).
+// @field Unknown +0x04 uint8_t* next
+// @field Unknown +0x04 uint32_t flags
+uint32_t fn_008103A0(uint8_t* self) {
+    uint8_t* inner = *reinterpret_cast<uint8_t**>(self + 0x04);
+    uint32_t flags = *reinterpret_cast<uint32_t*>(inner + 0x04);
+    return (flags >> 12) & 1u;
+}
+} // namespace lift_008103A0
