@@ -1,0 +1,22 @@
+{
+  "va": "0x00607AD0",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorBase, float, \u0026[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorBase, float, \u0026[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cEffectorBase, float, \u0026[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}\u003e",
+  "signature": "extern \"C\" int mem_00B477D0;   // one-time-init guard word (bit 0 = initialized) extern \"C\" int mem_00B477CC;   // static object; first dword is its vtable pointer void fn_00607AD0(void* out)",
+  "summary": "Lazily initializes the static object at 0xB477CC (guarded by bit 0 of 0xB477D0), then stores its address into out+0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:56:02Z"
+}

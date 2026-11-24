@@ -7324,3 +7324,28 @@ void fn_00607950(void* out) {
     lift_field<uint32_t>(out, 4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B477B4));
 }
 } // namespace lift_00607950
+
+// [0x00607AD0] ExprParser::WriteMethodType<EffectorBase, float, &[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}>::vfunc_40 (122 bytes)
+namespace lift_00607AD0 {
+// Thiscall callee 0x0067A670 (sub_0067A670, 26B): receives the static object as `this`, no stack args.
+extern void ext_0067A670(void* self);
+extern int mem_00B477D0;   // one-time-init guard word (bit 0 = initialized)
+extern int mem_00B477CC;   // static object; first dword is its vtable pointer
+
+// @name ExprParser::WriteMethodType<EffectorBase, float, &[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}>::vfunc_40
+// @class ExprParser::WriteMethodType<EffectorBase, float, &[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}>
+// @summary Lazily initializes the static object at 0xB477CC (guarded by bit 0 of 0xB477D0), then stores its address into out+0x04.
+// @field ExprParser::WriteMethodType +0x04 void* field_0x04
+void fn_00607AD0(void* out) {
+    // One-time initialization guard for the static object.
+    if ((static_cast<uint32_t>(mem_00B477D0) & 1u) == 0) {
+        mem_00B477D0 = static_cast<int>(static_cast<uint32_t>(mem_00B477D0) | 1u);
+        ext_0067A670(&mem_00B477CC);
+        mem_00B477CC = static_cast<int>(0x00970AECu);   // vtable pointer of the static object
+    }
+
+    // Publish the static object's address into the output slot at +0x04.
+    uint32_t* slot = reinterpret_cast<uint32_t*>(static_cast<char*>(out) + 0x04);
+    *slot = 0x00B477CCu;
+}
+} // namespace lift_00607AD0
