@@ -323,3 +323,31 @@ uint32_t __thiscall fn_00573250(uint32_t self) {
     return mem_read32(self + 0x04);
 }
 } // namespace lift_00573250
+
+// [0x005749F0]
+namespace lift_005749F0 {
+extern uint32_t mem_00924E48;
+
+// @name dispatchIfTypeMatches
+// @summary Calls vtable+0x5c(arg2) on obj if obj is non-null and obj->vtable+0x24() compares equal to 0x00928B5D
+// @field Object +0x00 uint32_t vtable
+
+void __stdcall sub_005749F0(uint32_t obj, uint32_t arg2) {
+  if (obj == 0) {
+    return;
+  }
+  uint32_t vtable = *reinterpret_cast<uint32_t*>(obj);
+  auto get_name = reinterpret_cast<uint32_t(__thiscall*)(uint32_t)>(
+      *reinterpret_cast<uint32_t*>(vtable + 0x24));
+  uint32_t name_str = get_name(obj);
+
+  auto str_compare = reinterpret_cast<int(__thiscall*)(uint32_t, const char*)>(
+      mem_00924E48);
+  if (str_compare(name_str, reinterpret_cast<const char*>(0x00928B5D)) == 0) {
+    vtable = *reinterpret_cast<uint32_t*>(obj);
+    auto on_match = reinterpret_cast<void(__thiscall*)(uint32_t, uint32_t)>(
+        *reinterpret_cast<uint32_t*>(vtable + 0x5c));
+    on_match(obj, arg2);
+  }
+}
+} // namespace lift_005749F0
