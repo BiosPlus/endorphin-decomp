@@ -119,3 +119,23 @@ bool fn_00772010(char** dstSlot, std::size_t n) {
     return true;
 }
 } // namespace lift_00772010
+
+// [0x0077F520] sub_0077F520 (48 bytes)
+namespace lift_0077F520 {
+// @name Unknown::cacheIndirectDwordAndReset
+// @class Unknown
+// @summary Stores the dword at ptr+0x14 (or 0 if ptr is null) into self+0x04 and sets self+0x08 to -1.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+// Note: when field_0x00 is non-null, reads DWORD at (field_0x00 + 0x14) (pointee layout not recovered).
+void fn_0077F520(void* self) {
+    void* ptr = lift_field<void*>(self, 0x00);
+    DWORD value = 0;
+    if (ptr != nullptr) {
+        value = lift_field<DWORD>(ptr, 0x14);
+    }
+    lift_field<DWORD>(self, 0x08) = 0xFFFFFFFFu;
+    lift_field<DWORD>(self, 0x04) = value;
+}
+} // namespace lift_0077F520

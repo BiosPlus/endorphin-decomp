@@ -46891,6 +46891,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0072DC60 (Unknown::ForwardArgsToVirtualSlot8).",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
   },
+  "0x0077F520": {
+    "name": "Unknown::cacheIndirectDwordAndReset",
+    "class": "Unknown",
+    "signature": "void fn_0077F520(void* self)",
+    "summary": "Stores the dword at ptr+0x14 (or 0 if ptr is null) into self+0x04 and sets self+0x08 to -1.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
   "0x0077F5A0": {
     "name": "sub_0077F5A0",
     "signature": "uint32_t sub_0077F5A0(uint32_t arg0)",

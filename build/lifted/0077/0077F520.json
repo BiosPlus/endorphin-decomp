@@ -1,0 +1,34 @@
+{
+  "va": "0x0077F520",
+  "size": 48,
+  "orig_symbol": "sub_0077F520",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "Unknown::cacheIndirectDwordAndReset",
+  "class": "Unknown",
+  "signature": "void fn_0077F520(void* self)",
+  "summary": "Stores the dword at ptr+0x14 (or 0 if ptr is null) into self+0x04 and sets self+0x08 to -1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:24:38Z"
+}
