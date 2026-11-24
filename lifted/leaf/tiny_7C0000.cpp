@@ -1310,3 +1310,18 @@ void fn_007C6130(const void* self, void* out) {
     std::memcpy(dst + 0x8, &v2, sizeof(float));
 }
 } // namespace lift_007C6130
+
+// [0x007C8A10]
+namespace lift_007C8A10 {
+// @name Unknown::LookupTableEntry24Dword
+// @class Unknown
+// @summary Computes index = (*self) * y + x and returns the DWORD at +0x14 of the 24-byte table entry at that index in the table pointed to by self+0x28.
+// @field Unknown +0x00 DWORD field_0x00
+// @field Unknown +0x28 void* field_0x28
+DWORD fn_007C8A10(void* self, DWORD x, DWORD y) {
+    DWORD stride = lift_field<DWORD>(self, 0x00);
+    DWORD index = stride * y + x;
+    const uint8_t* table = lift_field<const uint8_t*>(self, 0x28);
+    return *reinterpret_cast<const DWORD*>(table + static_cast<size_t>(index) * 24 + 0x14);
+}
+} // namespace lift_007C8A10

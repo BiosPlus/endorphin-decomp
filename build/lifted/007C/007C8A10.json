@@ -1,0 +1,28 @@
+{
+  "va": "0x007C8A10",
+  "size": 26,
+  "orig_symbol": "sub_007C8A10",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "Unknown::LookupTableEntry24Dword",
+  "class": "Unknown",
+  "signature": "DWORD fn_007C8A10(void* self, DWORD x, DWORD y)",
+  "summary": "Computes index = (*self) * y + x and returns the DWORD at +0x14 of the 24-byte table entry at that index in the table pointed to by self+0x28.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:57:52Z"
+}
