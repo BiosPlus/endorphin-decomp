@@ -1,0 +1,14 @@
+{
+  "va": "0x00681B00",
+  "size": 28,
+  "orig_symbol": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e, Properties::GetPropertySource\u003e::vfunc_1",
+  "src_path": "src/templates/PointainerVectorType.cpp",
+  "lifted_path": "lifted/templates/PointainerVectorType.cpp",
+  "name": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e, Properties::GetPropertySource\u003e::vfunc_1",
+  "class": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e, Properties::GetPropertySource\u003e",
+  "signature": "void* fn_00681B00(void* self, uint32_t a1, uint32_t a2)",
+  "summary": "Calls the base-class helper ext_00661620 on self with a zero argument and returns self (fluent thunk).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:09:19Z"
+}
