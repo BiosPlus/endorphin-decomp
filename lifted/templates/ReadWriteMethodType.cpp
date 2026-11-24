@@ -8588,3 +8588,49 @@ void fn_00498260(void* out) {
     lift_field<void*>(out, 0x04) = &mem_00ADD164;
 }
 } // namespace lift_00498260
+
+// [0x0046EDF0]
+namespace lift_0046EDF0 {
+// @name ExprParser::ReadWriteMethodType<ImageExporter, int, getImageHeight, int, setImageHeight>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, getImageHeight, int, setImageHeight>
+// @summary Lazily initializes static singleton at 0x00AD8334 and stores its pointer at arg0 + 0x4.
+
+
+extern void __thiscall ext_0067A670(void* self);
+extern uint32_t mem_00AD8338;
+extern uint32_t mem_00AD8334;
+
+void __thiscall fn_0046EDF0(void* self, void* arg0) {
+    (void)self;
+    if ((mem_00AD8338 & 1u) == 0u) {
+        mem_00AD8338 |= 1u;
+        ext_0067A670(&mem_00AD8334);
+        mem_00AD8334 = 0x0093B174u;
+    }
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(arg0) + 0x4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AD8334));
+}
+} // namespace lift_0046EDF0
+
+// [0x0046E840]
+namespace lift_0046E840 {
+// @name ExprParser::ReadWriteMethodType<ImageExporter, getDestination, setDestination>::vfunc_40
+// @class ExprParser::ReadWriteMethodType
+// @summary Lazily initializes a static value type descriptor and stores it into arg1+0x4
+// @field Arg1 +0x04 uint32_t typeDescriptor
+
+
+extern uint32_t mem_00AD8328;
+extern uint32_t mem_00AD8324;
+extern void __thiscall ext_0067A670(void* self);
+
+void __thiscall fn_0046E840(void* self, void* arg1) {
+    (void)self;
+    if ((mem_00AD8328 & 1u) == 0u) {
+        mem_00AD8328 |= 1u;
+        ext_0067A670(&mem_00AD8324);
+        mem_00AD8324 = 0x0093AE14u;
+    }
+    *(uint32_t*)((uint8_t*)arg1 + 4) = (uint32_t)(uintptr_t)&mem_00AD8324;
+}
+} // namespace lift_0046E840

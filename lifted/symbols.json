@@ -6114,6 +6114,13 @@
     "summary": "Calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046E840": {
+    "name": "ExprParser::ReadWriteMethodType\u003cImageExporter, getDestination, setDestination\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType",
+    "signature": "void __thiscall fn_0046E840(void* self, void* arg1)",
+    "summary": "Lazily initializes a static value type descriptor and stores it into arg1+0x4",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0046E8C0": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_4 (ImageExporter::getDestination reader)",
     "class": "ExprParser::ReadMethodType\u003cImageExporter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ImageExporter::getDestination(void) const, 0}, 0\u003e",
@@ -6147,6 +6154,13 @@
     "class": "ExprParser::ReadWriteMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, int, {public: void __thiscall ImageExporter::setImageHeight(int), 0}\u003e",
     "signature": "void __stdcall fn_0046EDA0(void* const* self, void* arg)",
     "summary": "Dereferences the first pointer in self; if non-null, calls vtable slot 2 of arg's sub-object with arg and stores the int result at target+0x20 (ImageExporter height slot); throws if null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x0046EDF0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cImageExporter, int, getImageHeight, int, setImageHeight\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cImageExporter, int, getImageHeight, int, setImageHeight\u003e",
+    "signature": "void __thiscall fn_0046EDF0(void* self, void* arg0)",
+    "summary": "Lazily initializes static singleton at 0x00AD8334 and stores its pointer at arg0 + 0x4.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x0046F080": {
