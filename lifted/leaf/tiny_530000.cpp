@@ -403,3 +403,19 @@ void fn_00532C50(const void* self, void* out) {
     }
 }
 } // namespace lift_00532C50
+
+// [0x00538FA0] sub_00538FA0 (31 bytes)
+namespace lift_00538FA0 {
+// @name SetFloatPairAndDwordPair
+// @summary Stores two float arguments at +0x28/+0x2C and two dword arguments at +0x20/+0x24 of this (thiscall, ECX = this, callee pops 0x10 bytes).
+// @field Unknown +0x20 DWORD field_0x20
+// @field Unknown +0x24 DWORD field_0x24
+// @field Unknown +0x28 float field_0x28
+// @field Unknown +0x2C float field_0x2C
+void fn_00538FA0(void* self, float f0, float f1, DWORD d0, DWORD d1) {
+    lift_field<float>(self, 0x28) = f0;
+    lift_field<float>(self, 0x2C) = f1;
+    lift_field<DWORD>(self, 0x20) = d0;
+    lift_field<DWORD>(self, 0x24) = d1;
+}
+} // namespace lift_00538FA0
