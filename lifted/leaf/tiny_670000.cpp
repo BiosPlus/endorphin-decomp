@@ -282,3 +282,20 @@ void* fn_00673B60(void* self) {
     return ext_00687250(inner);
 }
 } // namespace lift_00673B60
+
+// [0x00675D60] sub_00675D60 (17 bytes)
+namespace lift_00675D60 {
+// @name Unknown::forwardToChildVfunc14
+// @summary If the child pointer at +0x10 is non-null, invoke the child's vtable slot at +0x14 with the child as this.
+// @field Unknown +0x10 void* child
+void fn_00675D60(void* self) {
+    void* child = lift_field<void*>(self, 0x10);
+    if (child == nullptr) {
+        return;
+    }
+    void* vtable = lift_field<void*>(child, 0x0);
+    void* slot = lift_field<void*>(vtable, 0x14);
+    using Fn = void (*)(void*);
+    reinterpret_cast<Fn>(slot)(child);
+}
+} // namespace lift_00675D60
