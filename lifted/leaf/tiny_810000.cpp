@@ -13,3 +13,16 @@ uint32_t fn_00810240(void* self) {
     return (value >> 1) & 1u;
 }
 } // namespace lift_00810240
+
+// [0x008103F0]
+namespace lift_008103F0 {
+// @name sub_008103F0
+// @summary Follows a chain of three pointers (arg+0x4 -> +0x4 -> +0x4) and returns bit 11 of the final dword.
+// @field Unknown +0x04 ptr field_0x04 (first hop, arg)
+// @field Unknown +0x04 ptr field_0x04 (second hop)
+// @field Unknown +0x04 u32 field_0x04 (final dword whose bit 11 is returned)
+
+struct Unknown;
+
+extern uint32_t sub_008103F0(Unknown* arg);
+} // namespace lift_008103F0

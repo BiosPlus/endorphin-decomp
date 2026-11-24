@@ -39,6 +39,7 @@ struct Unknown_Fields {
     // +0x0   void**                   vtbl  (evidence: 0x006BB7C0) // CONFLICT: multiple definitions at +0x0
     // +0x1   uint8_t                  field_0x01  (evidence: 0x0046E450, 0x0046EA50, 0x004A25E0, 0x004B1D40, 0x004B7BC0, 0x00633240, 0x00678960)
     // +0x4   void* field_0x04 (arg2: sub-object pointer read at +0x4)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   ptr field_0x04 (first hop, arg)  (evidence: 0x008103F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (inner object of the context argument)  (evidence: 0x005853E0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (sub-object pointer read from the NM::Vector3 const & argument)  (evidence: 0x005B80A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    child  (evidence: 0x005DA150, 0x005DA170) // CONFLICT: multiple definitions at +0x4
@@ -53,8 +54,10 @@ struct Unknown_Fields {
     // +0x4   uint8_t                  field_0x04  (evidence: 0x004C0340, 0x004EB9B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x00401940, 0x00401960, 0x0046E140, 0x0046E450, 0x0046E570, 0x0046EA50, 0x0049B220, 0x004A25E0, 0x004AA9B0, 0x004AEC60, 0x004B7B50, 0x004B7B80, 0x0059F8D0, 0x005B3680, 0x005B7AE0, 0x005C5E50, 0x005DA110, 0x005DA130, 0x005DA150, 0x005E09B0, 0x00609730, 0x00617300, 0x00617520, 0x00618010, 0x00618460, 0x00618880, 0x00618BB0, 0x00619F40, 0x0061A220, 0x0061A4E0, 0x0061A7D0, 0x0061AE50, 0x0061B2F0, 0x00632D20, 0x00632D70, 0x00632DC0, 0x00632E10, 0x00632E60, 0x00632EB0, 0x00632F00, 0x00632F50, 0x00632FA0, 0x00633240, 0x0066B1A0, 0x0066B1D0, 0x0066B620, 0x0066B680, 0x0066B6B0, 0x0066D0E0, 0x0066D120, 0x0066EC60, 0x00670CB0, 0x00670CD0, 0x006719C0, 0x0067A7D0, 0x0067A930, 0x006A1240, 0x006A1540, 0x00810240) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (destination operand holder; inner object's vtable slot 6 returns float* to 4 floats)  (evidence: 0x0066D190) // CONFLICT: multiple definitions at +0x4
+    // +0x4   ptr field_0x04 (second   hop)  (evidence: 0x008103F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (sub-component object returned by vfunc_0; its class is not identified)  (evidence: 0x0066BDB0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    peer  (evidence: 0x00528B90) // CONFLICT: multiple definitions at +0x4
+    // +0x4   u32 field_0x04 (final dword whose bit 11 is returned)  (evidence: 0x008103F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD field_0x04 (accessed through the pointer loaded from self+0x04)  (evidence: 0x00810240) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (arg2: inner object pointer whose vtable slot 6 yields src)  (evidence: 0x0066B860) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    subVptr  (evidence: 0x0079C1F0) // CONFLICT: multiple definitions at +0x4

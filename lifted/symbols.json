@@ -39268,6 +39268,11 @@
     "summary": "Returns bit 1 of the DWORD at +0x04 of the object referenced by self-\u003efield_0x04.",
     "lifted_path": "lifted/leaf/tiny_810000.cpp"
   },
+  "0x008103F0": {
+    "name": "sub_008103F0",
+    "summary": "Follows a chain of three pointers (arg+0x4 -\u003e +0x4 -\u003e +0x4) and returns bit 11 of the final dword.",
+    "lifted_path": "lifted/leaf/tiny_810000.cpp"
+  },
   "0x008523A4": {
     "name": "adjustStackAndTailCall_0084A145",
     "signature": "void sub_008523A4()",
