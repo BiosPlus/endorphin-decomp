@@ -4539,6 +4539,13 @@
     "summary": "Returns true if the 32-bit value at offset 0 of the object is zero.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00493D80": {
+    "name": "ZeroHeaderFields",
+    "class": "UnknownClass",
+    "signature": "void* fn_00493D80(void* self)",
+    "summary": "Zeroes the dword at +0x0, the dword at +0x4, and the byte at +0x8 of the object, then returns it.",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
   "0x00493E00": {
     "name": "forwardVtable0B4_viaFirstField",
     "signature": "intptr_t fn_00493E00(void* self)",

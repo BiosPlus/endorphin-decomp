@@ -206,3 +206,19 @@ uintptr_t fn_00493E70(void* self) {
     return target(obj);
 }
 } // namespace lift_00493E70
+
+// [0x00493D80] sub_00493D80 (13 bytes)
+namespace lift_00493D80 {
+// @name ZeroHeaderFields
+// @class UnknownClass
+// @summary Zeroes the dword at +0x0, the dword at +0x4, and the byte at +0x8 of the object, then returns it.
+// @field UnknownClass +0x00 uint32_t field_0x00
+// @field UnknownClass +0x04 uint32_t field_0x04
+// @field UnknownClass +0x08 uint8_t field_0x08
+void* fn_00493D80(void* self) {
+    lift_field<uint32_t>(self, 0x0) = 0;
+    lift_field<uint32_t>(self, 0x4) = 0;
+    lift_field<uint8_t>(self, 0x8) = 0;
+    return self;
+}
+} // namespace lift_00493D80
