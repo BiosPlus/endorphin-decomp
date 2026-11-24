@@ -46093,6 +46093,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007747B0 (initNegatedHugeGlobals).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006EA050": {
+    "name": "isKnownGlobalId",
+    "signature": "bool __stdcall sub_006EA050(uint32_t value)",
+    "summary": "Checks whether the given 32-bit value matches one of four global values.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006EA090": {
     "name": "sub_006EA090",
     "signature": "extern \"C\" int32_t __cdecl fn_006EA090(void)",
@@ -46140,6 +46146,12 @@
     "class": "Unknown",
     "signature": "void fn_006EF810(void* self, uint32_t value)",
     "summary": "Clears the low 3 bits of this-\u003efield_0x34 and ORs in the 32-bit argument (thiscall, ret 4).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
+  "0x006EF860": {
+    "name": "isKnownGlobalValue",
+    "signature": "bool __stdcall sub_006EF860(uint32_t value)",
+    "summary": "Checks whether the argument matches any of four global uint32_t constants.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006EF8A0": {

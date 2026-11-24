@@ -709,3 +709,38 @@ extern void __fastcall fn_006E9B70(void* self, void* a1) {
     ext_00732CB0(static_cast<int32_t>(reinterpret_cast<uintptr_t>(a1)));
 }
 } // namespace lift_006E9B70
+
+// [0x006EA050]
+namespace lift_006EA050 {
+// @name isKnownGlobalId
+// @summary Checks whether the given 32-bit value matches one of four global values.
+
+extern uint32_t mem_00B5DF20;
+extern uint32_t mem_00B5F060;
+extern uint32_t mem_00B5EB78;
+extern uint32_t mem_00B5E400;
+
+bool __stdcall sub_006EA050(uint32_t value) {
+    return value == mem_00B5DF20 ||
+           value == mem_00B5F060 ||
+           value == mem_00B5EB78 ||
+           value == mem_00B5E400;
+}
+} // namespace lift_006EA050
+
+// [0x006EF860]
+namespace lift_006EF860 {
+extern uint32_t mem_00B5E0A8;
+extern uint32_t mem_00B5F060;
+extern uint32_t mem_00B5EB78;
+extern uint32_t mem_00B5E400;
+
+// @name isKnownGlobalValue
+// @summary Checks whether the argument matches any of four global uint32_t constants.
+bool __stdcall sub_006EF860(uint32_t value) {
+    return value == mem_00B5E0A8 ||
+           value == mem_00B5F060 ||
+           value == mem_00B5EB78 ||
+           value == mem_00B5E400;
+}
+} // namespace lift_006EF860

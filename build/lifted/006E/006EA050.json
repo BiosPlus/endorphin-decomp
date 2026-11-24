@@ -1,0 +1,13 @@
+{
+  "va": "0x006EA050",
+  "size": 57,
+  "orig_symbol": "sub_006EA050",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "isKnownGlobalId",
+  "signature": "bool __stdcall sub_006EA050(uint32_t value)",
+  "summary": "Checks whether the given 32-bit value matches one of four global values.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:21:57Z"
+}
