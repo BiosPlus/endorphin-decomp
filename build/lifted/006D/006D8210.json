@@ -1,0 +1,28 @@
+{
+  "va": "0x006D8210",
+  "size": 48,
+  "orig_symbol": "sub_006D8210",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "getRecordValueAtIndex",
+  "class": "Unknown",
+  "signature": "int32_t __thiscall fn_006D8210(void* self, int32_t index)",
+  "summary": "Returns the int32 at +4 of the 12-byte record at the given index in the array at +0x1D4, or -1 if index \u003e= count at +0x1C4.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C4",
+      "type": "int32_t",
+      "name": "field_0x1c4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1D4",
+      "type": "uint32_t",
+      "name": "field_0x1d4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:19:24Z"
+}

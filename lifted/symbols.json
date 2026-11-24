@@ -39523,6 +39523,13 @@
     "summary": "Getter returning int32_t field at offset +0x1EC.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D8210": {
+    "name": "getRecordValueAtIndex",
+    "class": "Unknown",
+    "signature": "int32_t __thiscall fn_006D8210(void* self, int32_t index)",
+    "summary": "Returns the int32 at +4 of the 12-byte record at the given index in the array at +0x1D4, or -1 if index \u003e= count at +0x1C4.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D89C0": {
     "name": "sub_006D89C0",
     "signature": "extern \"C\" void* __fastcall fn_006D89C0(void* self)",

@@ -526,3 +526,21 @@ void fn_006D26D0(double* self, const double* src) {
     self[3] += src[3];
 }
 } // namespace lift_006D26D0
+
+// [0x006D8210]
+namespace lift_006D8210 {
+// @name getRecordValueAtIndex
+// @class Unknown
+// @summary Returns the int32 at +4 of the 12-byte record at the given index in the array at +0x1D4, or -1 if index >= count at +0x1C4.
+// @field Unknown +0x1c4 int32_t field_0x1c4
+// @field Unknown +0x1d4 uint32_t field_0x1d4
+int32_t __thiscall fn_006D8210(void* self, int32_t index) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    int32_t count = lift_field<int32_t>(obj, 0x1c4);
+    if (index >= count) {
+        return -1;
+    }
+    uint8_t* records = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(lift_field<uint32_t>(obj, 0x1d4)));
+    return lift_field<int32_t>(records, static_cast<ptrdiff_t>(index) * 12 + 4);
+}
+} // namespace lift_006D8210
