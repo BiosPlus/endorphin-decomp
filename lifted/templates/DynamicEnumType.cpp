@@ -1410,3 +1410,32 @@ extern void* fn_005165C0(void* out_str, void** ptr_ref) {
     return out_str;
 }
 } // namespace lift_005165C0
+
+// [0x005161E0] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_4 (71 bytes)
+namespace lift_005161E0 {
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). Ctor-style call on a local buffer (ecx = this).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString)).
+extern void* ext_0046C500(void* out_str, uint8_t flag);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException).
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType::vfunc_4
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
+// @summary Returns the individual description string for the value held behind the pointer-to-pointer argument; throws if that pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* value_ptr
+// @field ExprParser::ValuePtrType +0x0C int field_0x0C
+void* fn_005161E0(void* out_str, void** value_ref) {
+    void* obj = *value_ref;
+    if (obj != nullptr) {
+        uint8_t flag = lift_field<uint8_t>(obj, 0x0C);
+        return ext_0046C500(out_str, flag);
+    }
+
+    // Null path: build a local string object and throw.
+    alignas(8) uint8_t local[0x28] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2();
+    std::abort();
+}
+} // namespace lift_005161E0

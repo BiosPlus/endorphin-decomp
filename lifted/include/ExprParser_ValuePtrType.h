@@ -35,6 +35,7 @@ struct ExprParser_ValuePtrType_Fields {
     // +0x0   std::string*             value  (evidence: 0x004975B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    value  (evidence: 0x0046E570, 0x004AA140, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x005B3680) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    valuePtr  (evidence: 0x0046D920, 0x0046E570, 0x004986A0, 0x004B1FF0, 0x004B8920, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x00508EE0, 0x005B2D00, 0x005B3680, 0x0066F700, 0x0068DE60) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    value_ptr  (evidence: 0x005161E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x00487000, 0x0064F0C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtbl  (evidence: 0x00487000, 0x005F3600, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x0
     // +0x4   void* field_0x04 (sub-object used as this for the slot-25 dispatch)  (evidence: 0x0059EF40) // CONFLICT: multiple definitions at +0x4
@@ -53,6 +54,7 @@ struct ExprParser_ValuePtrType_Fields {
     // +0x8   int                      field_0x08  (evidence: 0x00515F80) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00515C50) // CONFLICT: multiple definitions at +0x8
     // +0x9   uint8_t                  field_0x09  (evidence: 0x0046E570, 0x004986A0, 0x004B8920, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x004EA4D0, 0x005B2D00, 0x005B3680, 0x0066F700)
+    // +0xC   int                      field_0x0C  (evidence: 0x005161E0) // CONFLICT: multiple definitions at +0xC
     // +0xC   std::uint32_t            field_0x0c  (evidence: 0x00516170, 0x00516550) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0x0c  (evidence: 0x005B3680) // CONFLICT: multiple definitions at +0xC
     // +0x10  float                    field_0x10  (evidence: 0x0046E570, 0x004986A0, 0x004B8920, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x005B21E0, 0x005B2D00, 0x005B3680, 0x0066F700)
