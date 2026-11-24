@@ -1,0 +1,21 @@
+{
+  "va": "0x006111A0",
+  "size": 39,
+  "orig_symbol": "sub_006111A0",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "sub_006111A0",
+  "signature": "extern \"C\" void __thiscall sub_006111A0(uint32_t ecx)",
+  "summary": "Gets float at index 1 from this+0x8 and passes it to global object at +0x2E0",
+  "fields": [
+    {
+      "class": "this",
+      "offset": "+0x8",
+      "type": "struct",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:53:57Z"
+}

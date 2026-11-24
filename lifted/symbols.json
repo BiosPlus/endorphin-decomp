@@ -15777,6 +15777,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00551A20 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMCamera/auto_tiny.cpp"
   },
+  "0x00552130": {
+    "name": "Matrix4::getRow",
+    "class": "Matrix4",
+    "signature": "uint32_t __thiscall sub_00552130(uintptr_t this_ptr, uintptr_t out_ptr, uint32_t index)",
+    "summary": "Copies a 4-float row/element at the given index from this object into out.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x005521D0": {
     "name": "NMCamera::Perspective::vfunc_3",
     "class": "NMCamera::Perspective",
