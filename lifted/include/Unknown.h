@@ -45,6 +45,7 @@ struct Unknown_Fields {
     // +0x14  void*                    field_0x14  (evidence: 0x00543210) // CONFLICT: multiple definitions at +0x14
     // +0x18  uint32_t                 field_0x18  (evidence: 0x004646A0, 0x00468660, 0x007126A0)
     // +0x1C  HMODULE                  hModule  (evidence: 0x00401920)
+    // +0x20  DWORD                    field_0x20  (evidence: 0x00642010) // CONFLICT: multiple definitions at +0x20
     // +0x20  HMODULE                  field_0x20  (evidence: 0x004474D0, 0x0044B6A0) // CONFLICT: multiple definitions at +0x20
     // +0x20  double                   field_0x20  (evidence: 0x00507F50, 0x00507F60, 0x0050E350) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint32_t                 field_0x20  (evidence: 0x0046E450, 0x0046EA50, 0x004A25E0, 0x004B1A70, 0x00633240, 0x00641FE0, 0x00641FF0) // CONFLICT: multiple definitions at +0x20

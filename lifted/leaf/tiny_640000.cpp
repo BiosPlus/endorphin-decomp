@@ -776,3 +776,14 @@ uint8_t fn_00641FE0(void* self) {
     return (flags & 0x2u) == 0x2u ? 1 : 0;
 }
 } // namespace lift_00641FE0
+
+// [0x00642010] sub_00642010 (15 bytes)
+namespace lift_00642010 {
+// @name IsFlag20Set
+// @summary Returns 1 if bit 0x20 is set in the dword at +0x20 of self, else 0.
+// @field Unknown +0x20 DWORD field_0x20
+BOOLEAN fn_00642010(void* self) {
+    DWORD flags = lift_field<DWORD>(self, 0x20);
+    return (static_cast<BYTE>(flags) & 0x20) == 0x20;
+}
+} // namespace lift_00642010

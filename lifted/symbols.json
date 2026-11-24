@@ -21350,6 +21350,12 @@
     "summary": "Returns 1 if bit 0x10 is set in the byte at this+0x20, otherwise 0.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00642010": {
+    "name": "IsFlag20Set",
+    "signature": "BOOLEAN fn_00642010(void* self)",
+    "summary": "Returns 1 if bit 0x20 is set in the dword at +0x20 of self, else 0.",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
   "0x00642040": {
     "name": "ExprParser::ReadWriteMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDebugDrawEnabled(bool), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDebugDrawEnabled(bool), 0}\u003e",

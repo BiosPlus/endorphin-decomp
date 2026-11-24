@@ -1,0 +1,21 @@
+{
+  "va": "0x00642010",
+  "size": 15,
+  "orig_symbol": "sub_00642010",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "IsFlag20Set",
+  "signature": "BOOLEAN fn_00642010(void* self)",
+  "summary": "Returns 1 if bit 0x20 is set in the dword at +0x20 of self, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:31:29Z"
+}
