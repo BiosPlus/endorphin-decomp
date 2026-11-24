@@ -49365,6 +49365,12 @@
     "summary": "Writes one byte through the cursor pointed to by self+0x08, advances that cursor by one, and increments the two 32-bit counters at +0x10 and +0x14.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x0080F910": {
+    "name": "writeByteToStreamBuffer",
+    "signature": "void sub_0080F910(uintptr_t arg0, uint32_t arg1)",
+    "summary": "Writes a byte to a stream buffer if within capacity, advancing cursors and total count",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080FAC0": {
     "name": "GlobalFreeIfNonNullWithOwnedHandle",
     "signature": "void fn_0080FAC0(void* self)",
@@ -49574,6 +49580,12 @@
     "signature": "HGLOBAL fn_00859730(HGLOBAL hMem)",
     "summary": "Auto-lifted identical-shape clone of 0x0079AF50 (GlobalFreeWrapper).",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
+  "0x00859A20": {
+    "name": "strcat_impl",
+    "signature": "uint32_t sub_00859A20(uint32_t dst_addr, uint32_t src_addr)",
+    "summary": "Appends a null-terminated source string to the end of a destination string and returns the destination pointer.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
   "0x00859D30": {
     "name": "sub_00859D30",

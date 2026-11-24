@@ -224,3 +224,39 @@ extern uint32_t __cdecl fn_00856F00(uint32_t* obj) {
     return 0;
 }
 } // namespace lift_00856F00
+
+// [0x00859A20]
+namespace lift_00859A20 {
+uint8_t mem_read8(uint32_t addr);
+void mem_write8(uint32_t addr, uint8_t val);
+
+// @name strcat_impl
+// @summary Appends a null-terminated source string to the end of a destination string and returns the destination pointer.
+
+uint32_t sub_00859A20(uint32_t dst_addr, uint32_t src_addr) {
+    uint32_t ecx = dst_addr;
+    if (mem_read8(ecx) != 0) {
+        uint8_t dl;
+        do {
+            dl = mem_read8(ecx + 1);
+            ecx++;
+        } while (dl != 0);
+    }
+
+    uint32_t esi = src_addr;
+    ecx++;
+    uint8_t dl = mem_read8(esi);
+    esi++;
+    mem_write8(ecx - 1, dl);
+    if (dl != 0) {
+        do {
+            dl = mem_read8(esi);
+            mem_write8(ecx, dl);
+            ecx++;
+            esi++;
+        } while (dl != 0);
+    }
+
+    return dst_addr;
+}
+} // namespace lift_00859A20
