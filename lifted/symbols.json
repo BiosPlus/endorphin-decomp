@@ -9033,6 +9033,13 @@
     "summary": "Assigns the std::string argument into the member at +0x14, then calls ext_004C0340(this).",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004C1AC0": {
+    "name": "UnknownClass::setValueAboveField15cAndNotify",
+    "class": "UnknownClass",
+    "signature": "void fn_004C1AC0(void* self, int32_t value)",
+    "summary": "Stores the argument at +0x160; if it is not greater than the signed value at +0x15c, stores +0x15c + 1 instead, then calls ext_004C0340.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C1B20": {
     "name": "NMData::ForceEventData::vfunc_73",
     "class": "NMData::ForceEventData",

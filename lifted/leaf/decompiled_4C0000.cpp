@@ -52,3 +52,25 @@ void* fn_004CFFE0(void* self, void* dst, void* arg2) {
     return dst;
 }
 } // namespace lift_004CFFE0
+
+// [0x004C1AC0] sub_004C1AC0 (37 bytes)
+namespace lift_004C1AC0 {
+// Known callee 0x004C0340: SetGlobalObjectFlag4IfPresent (If the global object pointer mem_00AE29D0 is non-null, set the byte at its +0x04 offset to 1.)
+extern void ext_004C0340();
+
+// @name UnknownClass::setValueAboveField15cAndNotify
+// @class UnknownClass
+// @summary Stores the argument at +0x160; if it is not greater than the signed value at +0x15c, stores +0x15c + 1 instead, then calls ext_004C0340.
+// @field UnknownClass +0x15c int32_t field_0x15c
+// @field UnknownClass +0x160 int32_t field_0x160
+void fn_004C1AC0(void* self, int32_t value) {
+    int32_t& threshold = lift_field<int32_t>(self, 0x15c);
+    int32_t& out = lift_field<int32_t>(self, 0x160);
+
+    out = value;
+    if (value <= threshold) {
+        out = static_cast<int32_t>(static_cast<uint32_t>(threshold) + 1u);
+    }
+    ext_004C0340();
+}
+} // namespace lift_004C1AC0
