@@ -105,3 +105,15 @@ void fn_0042FEC0(void* self) {
 }
 } // namespace lift_005B72E0
 } // namespace lift_0042FEC0
+
+// [0x0042FAA0] sub_0042FAA0 (17 bytes)
+namespace lift_0042FAA0 {
+// @name Unknown::toggleFlagF5
+// @class Unknown
+// @summary Logically negates the byte flag at this+0xF5 in place (sets it to 1 if it was 0, otherwise 0).
+// @field Unknown +0xF5 uint8_t field_0xF5
+void fn_0042FAA0(void* self) {
+    uint8_t& flag = lift_field<uint8_t>(self, 0xF5);
+    flag = static_cast<uint8_t>(flag == 0);
+}
+} // namespace lift_0042FAA0

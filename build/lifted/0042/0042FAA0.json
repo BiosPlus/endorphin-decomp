@@ -1,0 +1,22 @@
+{
+  "va": "0x0042FAA0",
+  "size": 17,
+  "orig_symbol": "sub_0042FAA0",
+  "src_path": "src/leaf/tiny_420000.cpp",
+  "lifted_path": "lifted/leaf/tiny_420000.cpp",
+  "name": "Unknown::toggleFlagF5",
+  "class": "Unknown",
+  "signature": "void fn_0042FAA0(void* self)",
+  "summary": "Logically negates the byte flag at this+0xF5 in place (sets it to 1 if it was 0, otherwise 0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF5",
+      "type": "uint8_t",
+      "name": "field_0xF5"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:50:15Z"
+}

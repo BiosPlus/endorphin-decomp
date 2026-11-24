@@ -1353,6 +1353,13 @@
     "summary": "Virtual getter returning the address of the global slot mem_0092F82C (self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0042FAA0": {
+    "name": "Unknown::toggleFlagF5",
+    "class": "Unknown",
+    "signature": "void fn_0042FAA0(void* self)",
+    "summary": "Logically negates the byte flag at this+0xF5 in place (sets it to 1 if it was 0, otherwise 0).",
+    "lifted_path": "lifted/leaf/tiny_420000.cpp"
+  },
   "0x0042FC20": {
     "name": "sub_0042FC20",
     "class": "Unknown",
