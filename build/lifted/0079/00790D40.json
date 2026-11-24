@@ -1,0 +1,28 @@
+{
+  "va": "0x00790D40",
+  "size": 17,
+  "orig_symbol": "sub_00790D40",
+  "src_path": "src/leaf/tiny_790000.cpp",
+  "lifted_path": "lifted/leaf/tiny_790000.cpp",
+  "name": "Object::setFieldsFromArg",
+  "class": "Object",
+  "signature": "void fn_00790D40(void* self, uint32_t arg)",
+  "summary": "Stores the stack argument at +0x08 and clears the dword at +0x28 (thiscall, ret 4).",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:54:21Z"
+}

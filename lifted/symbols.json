@@ -37537,6 +37537,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0078D850 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00790D40": {
+    "name": "Object::setFieldsFromArg",
+    "class": "Object",
+    "signature": "void fn_00790D40(void* self, uint32_t arg)",
+    "summary": "Stores the stack argument at +0x08 and clears the dword at +0x28 (thiscall, ret 4).",
+    "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
   "0x007928E0": {
     "name": "sub_007928E0",
     "signature": "extern \"C\" void* __fastcall fn_007928E0(void* self, int edx_unused, unsigned int flags)",

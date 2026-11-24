@@ -332,3 +332,18 @@ HGLOBAL fn_0079AF50(HGLOBAL hMem) {
     return ext_GlobalFree(hMem);
 }
 } // namespace lift_0079AF50
+
+// [0x00790D40] sub_00790D40 (17 bytes)
+namespace lift_00790D40 {
+// @name Object::setFieldsFromArg
+// @class Object
+// @summary Stores the stack argument at +0x08 and clears the dword at +0x28 (thiscall, ret 4).
+// @field Object +0x08 uint32_t field_0x08
+// @field Object +0x28 uint32_t field_0x28
+void fn_00790D40(void* self, uint32_t arg) {
+    auto* base = static_cast<uint8_t*>(self);
+    uint32_t zero = 0;
+    std::memcpy(base + 0x28, &zero, sizeof(zero));
+    std::memcpy(base + 0x08, &arg, sizeof(arg));
+}
+} // namespace lift_00790D40
