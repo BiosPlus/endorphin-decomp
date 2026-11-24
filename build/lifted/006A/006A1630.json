@@ -1,0 +1,22 @@
+{
+  "va": "0x006A1630",
+  "size": 119,
+  "orig_symbol": "ExprParser::Operators::Function2::vfunc_3",
+  "src_path": "src/ExprParser/Operators/Function2.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/Function2.cpp",
+  "name": "ExprParser::Operators::Function2::vfunc_3",
+  "class": "ExprParser::Operators::Function2",
+  "signature": "extern \"C\" uint32_t __stdcall fn_006A1630(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3)",
+  "summary": "Delegates evaluation to field_0x04-\u003evfunc(0xC4), passes result to sub_0041CF50, and cleans up the temporary object.",
+  "fields": [
+    {
+      "class": "ExprParser::Operators::Function2",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:47:53Z"
+}
