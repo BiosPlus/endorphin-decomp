@@ -1,0 +1,22 @@
+{
+  "va": "0x0041B6A0",
+  "size": 23,
+  "orig_symbol": "CMemDC::vfunc_23",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CMemDC::vfunc_23",
+  "class": "CMemDC",
+  "signature": "int fn_0041B6A0(void* self, int x, int y)",
+  "summary": "Returns whether the point (x, y) is inside the current clip region of the DC at this+4 (GDI PtVisible).",
+  "fields": [
+    {
+      "class": "CMemDC",
+      "offset": "+0x4",
+      "type": "HDC",
+      "name": "hdc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:31:38Z"
+}

@@ -6225,3 +6225,21 @@ void fn_00460CE0(void* self) {
     reinterpret_cast<InvalidateRectFn>(static_cast<uintptr_t>(mem_00925688))(hwnd, nullptr, 1);
 }
 } // namespace lift_00460CE0
+
+// [0x0041B6A0] CMemDC::vfunc_23 (23 bytes)
+namespace lift_0041B6A0 {
+// Import-thunk slot holding the address of GDI32!PtVisible (.rdata constant 0x00628DE4).
+extern int mem_009240F4;
+
+using PtVisibleFn = BOOL(__stdcall*)(HDC, int, int);
+
+// @name CMemDC::vfunc_23
+// @class CMemDC
+// @summary Returns whether the point (x, y) is inside the current clip region of the DC at this+4 (GDI PtVisible).
+// @field CMemDC +0x04 HDC hdc
+int fn_0041B6A0(void* self, int x, int y) {
+    HDC hdc = lift_field<HDC>(self, 0x04);
+    auto ptVisible = reinterpret_cast<PtVisibleFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_009240F4)));
+    return ptVisible(hdc, x, y);
+}
+} // namespace lift_0041B6A0

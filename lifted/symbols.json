@@ -1077,6 +1077,13 @@
     "summary": "Pure jump thunk forwarding to sub_0041B580.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0041B6A0": {
+    "name": "CMemDC::vfunc_23",
+    "class": "CMemDC",
+    "signature": "int fn_0041B6A0(void* self, int x, int y)",
+    "summary": "Returns whether the point (x, y) is inside the current clip region of the DC at this+4 (GDI PtVisible).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x0041B6C0": {
     "name": "CMemDC::vfunc_24",
     "class": "CMemDC",
