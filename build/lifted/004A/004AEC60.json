@@ -1,0 +1,34 @@
+{
+  "va": "0x004AEC60",
+  "size": 14,
+  "orig_symbol": "sub_004AEC60",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "thunk_004AEC60",
+  "class": "Unknown",
+  "signature": "void fn_004AEC60(void* self)",
+  "summary": "Adjustor thunk: follows this-\u003e+0x04 to an embedded subobject, loads a vtable-like pointer from its +0x08, and forwards the call to slot +0x50 with this adjusted by +8.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "void*",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:24:44Z"
+}
