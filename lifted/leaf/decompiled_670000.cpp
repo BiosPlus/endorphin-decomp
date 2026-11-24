@@ -398,3 +398,35 @@ void fn_0067B410(void* self) {
     ext_0065C650(lock);
 }
 } // namespace lift_0067B410
+
+// [0x0067AE70] sub_0067AE70 (58 bytes)
+namespace lift_0067AE70 {
+extern DWORD __stdcall WaitForSingleObject(HANDLE hHandle, DWORD dwMilliseconds);
+extern void __cdecl _invalid_parameter_noinfo(void);
+
+// @name HandleTable::waitOnHandle
+// @class Unknown
+// @summary Waits infinitely on the handle at the given index of the owner's handle array; negative indices return without waiting.
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0x04 HANDLE* field_0x04
+// @field Unknown +0x08 HANDLE* field_0x08
+void __thiscall fn_0067AE70(void* self, int32_t index) {
+    if (index < 0) {
+        return;
+    }
+
+    void* header = lift_field<void*>(self, 0x0C);
+    HANDLE* begin = lift_field<HANDLE*>(header, 0x04);
+    HANDLE* end = lift_field<HANDLE*>(header, 0x08);
+
+    // Original: if begin is null or index >= element count, report invalid parameter
+    // (the original then continues with the same read).
+    if (begin == nullptr ||
+        static_cast<uint32_t>(index) >= static_cast<uint32_t>(end - begin)) {
+        _invalid_parameter_noinfo();
+    }
+
+    HANDLE handle = begin[index];
+    WaitForSingleObject(handle, 0xFFFFFFFFu); // INFINITE
+}
+} // namespace lift_0067AE70

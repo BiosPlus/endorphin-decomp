@@ -1,0 +1,34 @@
+{
+  "va": "0x0067AE70",
+  "size": 58,
+  "orig_symbol": "sub_0067AE70",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "HandleTable::waitOnHandle",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_0067AE70(void* self, int32_t index)",
+  "summary": "Waits infinitely on the handle at the given index of the owner's handle array; negative indices return without waiting.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "HANDLE*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "HANDLE*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:24:09Z"
+}

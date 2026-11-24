@@ -36395,6 +36395,13 @@
     "summary": "Checks under a critical section lock whether a pointer's field at +0x10 is non-zero.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067AE70": {
+    "name": "HandleTable::waitOnHandle",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0067AE70(void* self, int32_t index)",
+    "summary": "Waits infinitely on the handle at the given index of the owner's handle array; negative indices return without waiting.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067AEB0": {
     "name": "Unknown::SetEventAtIndex",
     "class": "Unknown",
