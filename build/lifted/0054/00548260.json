@@ -1,0 +1,28 @@
+{
+  "va": "0x00548260",
+  "size": 20,
+  "orig_symbol": "sub_00548260",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "sub_00548260",
+  "class": "\u003cClassName\u003e (unknown; receiver type not yet identified)",
+  "signature": "DWORD fn_00548260(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004407B0 (GetPointerChainDword10).",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x44",
+      "type": "void*",
+      "name": "field_0x44"
+    },
+    {
+      "class": "void",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:25:19Z"
+}

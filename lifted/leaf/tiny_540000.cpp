@@ -91,3 +91,23 @@ void __thiscall sub_00543210(void* self) {
         reinterpret_cast<void*>(static_cast<uintptr_t>(member)));
 }
 } // namespace lift_00543210
+
+// [0x00548260] sub_00548260 (20 bytes)
+namespace lift_00548260 {
+// @name sub_00548260
+// @summary Auto-lifted identical-shape clone of 0x004407B0 (GetPointerChainDword10).
+namespace lift_004407B0 {
+// @name GetPointerChainDword10
+// @class <ClassName> (unknown; receiver type not yet identified)
+// @summary Returns the DWORD at +0x10 of the pointer stored at self+0x44, or 0 if that pointer is null.
+// @field <ClassName> +0x44 void* field_0x44
+// @field void +0x10 DWORD field_0x10
+DWORD fn_00548260(void* self) {
+    void* p = *reinterpret_cast<void**>(static_cast<uint8_t*>(self) + 0xA0);
+    if (p == nullptr) {
+        return 0;
+    }
+    return *reinterpret_cast<DWORD*>(static_cast<uint8_t*>(p) + 0x208);
+}
+} // namespace lift_004407B0
+} // namespace lift_00548260

@@ -22,6 +22,7 @@ extern "C" void __fastcall ext_00448540(void* self);
 extern "C" void __fastcall ext_00462380(void* self);
 extern "C" void __fastcall ext_004AEF60(void* self);
 extern "C" void __fastcall ext_004F1210(void* self);
+#include <cstdint>
 
 // [0x0041CFC0] Properties::PropertiesControl::vfunc_87 (11 bytes)
 // @name Properties::PropertiesControl::vfunc_87
@@ -147,3 +148,24 @@ uint32_t fn_00681B20(void* self, uint32_t arg1, uint32_t arg2) {
     return arg2;
 }
 } // namespace lift_00681B20
+
+// [0x0041D350] Properties::GWCPropertiesControlDriver::vfunc_9 (17 bytes)
+namespace lift_0041D350 {
+// @name Properties::GWCPropertiesControlDriver::vfunc_9
+// @class Properties::GWCPropertiesControlDriver
+// @summary Auto-lifted identical-shape clone of 0x004407B0 (GetPointerChainDword10).
+namespace lift_004407B0 {
+// @name GetPointerChainDword10
+// @class <ClassName> (unknown; receiver type not yet identified)
+// @summary Returns the DWORD at +0x10 of the pointer stored at self+0x44, or 0 if that pointer is null.
+// @field <ClassName> +0x44 void* field_0x44
+// @field void +0x10 DWORD field_0x10
+DWORD fn_0041D350(void* self) {
+    void* p = *reinterpret_cast<void**>(static_cast<uint8_t*>(self) + 0xC);
+    if (p == nullptr) {
+        return 0;
+    }
+    return *reinterpret_cast<DWORD*>(static_cast<uint8_t*>(p) + 0x19C);
+}
+} // namespace lift_004407B0
+} // namespace lift_0041D350

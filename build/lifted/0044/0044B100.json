@@ -1,0 +1,22 @@
+{
+  "va": "0x0044B100",
+  "size": 11,
+  "orig_symbol": "sub_0044B100",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "sub_0044B100",
+  "class": "CBase",
+  "signature": "void fn_0044B100(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
+  "fields": [
+    {
+      "class": "CBase",
+      "offset": "+0x2D0",
+      "type": "void*",
+      "name": "field_0x2D0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:25:19Z"
+}

@@ -1051,6 +1051,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x1A0 and tail-calls sub_0041CB80.",
     "lifted_path": "lifted/Properties/auto_tiny.cpp"
   },
+  "0x0041D350": {
+    "name": "Properties::GWCPropertiesControlDriver::vfunc_9",
+    "class": "Properties::GWCPropertiesControlDriver",
+    "signature": "DWORD fn_0041D350(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004407B0 (GetPointerChainDword10).",
+    "lifted_path": "lifted/Properties/auto_tiny.cpp"
+  },
   "0x0041D940": {
     "name": "Properties::PropertyViewFrame::vfunc_1",
     "class": "Properties::PropertyViewFrame",
@@ -1324,6 +1331,13 @@
     "name": "sub_00431310",
     "signature": "void fn_00431310(uint32_t arg)",
     "summary": "Auto-lifted identical-shape clone of 0x00551A10 (NMCamera::Orthogonal::vfunc_5).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x00433FF0": {
+    "name": "sub_00433FF0",
+    "class": "CBase",
+    "signature": "void fn_00433FF0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
   "0x00434E30": {
@@ -2056,6 +2070,104 @@
     "signature": "void* fn_0044B070(void* self)",
     "summary": "Returns the address of the read-only constant mem_00934B98 (its value is 0x00934B8C); ignores this.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x0044B100": {
+    "name": "sub_0044B100",
+    "class": "CBase",
+    "signature": "void fn_0044B100(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044B110": {
+    "name": "sub_0044B110",
+    "class": "CBase",
+    "signature": "void fn_0044B110(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044B120": {
+    "name": "sub_0044B120",
+    "class": "CBase",
+    "signature": "void fn_0044B120(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044B130": {
+    "name": "sub_0044B130",
+    "class": "CBase",
+    "signature": "void fn_0044B130(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044B140": {
+    "name": "sub_0044B140",
+    "class": "CBase",
+    "signature": "void fn_0044B140(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044B150": {
+    "name": "sub_0044B150",
+    "class": "CBase",
+    "signature": "void fn_0044B150(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044B160": {
+    "name": "sub_0044B160",
+    "class": "CBase",
+    "signature": "void fn_0044B160(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044B170": {
+    "name": "sub_0044B170",
+    "class": "CBase",
+    "signature": "void fn_0044B170(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044B180": {
+    "name": "sub_0044B180",
+    "class": "CBase",
+    "signature": "void fn_0044B180(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044B190": {
+    "name": "sub_0044B190",
+    "class": "CBase",
+    "signature": "void fn_0044B190(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044B1A0": {
+    "name": "sub_0044B1A0",
+    "class": "CBase",
+    "signature": "void fn_0044B1A0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044B1B0": {
+    "name": "sub_0044B1B0",
+    "class": "CBase",
+    "signature": "void fn_0044B1B0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044B1C0": {
+    "name": "sub_0044B1C0",
+    "class": "CBase",
+    "signature": "void fn_0044B1C0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044B1D0": {
+    "name": "sub_0044B1D0",
+    "class": "CBase",
+    "signature": "void fn_0044B1D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
   "0x0044B5A0": {
     "name": "RenderView::vfunc_26",
@@ -11778,6 +11890,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xA4 and tail-calls sub_005DC420.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00548260": {
+    "name": "sub_00548260",
+    "class": "\u003cClassName\u003e (unknown; receiver type not yet identified)",
+    "signature": "DWORD fn_00548260(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004407B0 (GetPointerChainDword10).",
+    "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
   "0x00548FBB": {
     "name": "sub_00548FBB",
     "signature": "void fn_00548FBB(void* self)",
@@ -16594,6 +16713,13 @@
     "summary": "Calls virtual slot 55 (0xDC) on self for indices 0..5 and returns how many calls returned true.",
     "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
   },
+  "0x005E09B0": {
+    "name": "NMData::FixedPathJointData::vfunc_44",
+    "class": "NMData::FixedPathJointData",
+    "signature": "void fn_005E09B0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004AEC60 (thunk_004AEC60).",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005E0E70": {
     "name": "NMData::FixedPathJointData::vfunc_0_off_154",
     "class": "NMData::FixedPathJointData",
@@ -18270,6 +18396,13 @@
     "signature": "extern \"C\" void* __fastcall fn_00608160(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006080D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00609730": {
+    "name": "sub_00609730",
+    "class": "Unknown",
+    "signature": "void fn_00609730(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004AEC60 (thunk_004AEC60).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
   "0x00609740": {
     "name": "ExprParser::ROMethod0Type\u003cNM::Vector3, normalize2\u003e::vfunc_4",

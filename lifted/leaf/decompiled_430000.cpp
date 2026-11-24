@@ -120,3 +120,22 @@ extern void __cdecl fn_00430330(void) {
 }
 } // namespace lift_00430360
 } // namespace lift_00430330
+
+// [0x00433FF0] sub_00433FF0 (14 bytes)
+namespace lift_00433FF0 {
+// @name sub_00433FF0
+// @summary Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).
+namespace lift_0045E4A0 {
+// Thunk to MFC80!ord_6090 (IAT jump). Original call passes ecx and pushes 0.
+extern void ext_0043DC90(void* self, int arg);
+
+// @name CBase::forwardToMfcOrd6090
+// @class CBase
+// @summary Loads the pointer stored at +0x2D0 and forwards it, with a zero argument, to the MFC80 ord_6090 thunk.
+// @field CBase +0x2D0 void* field_0x2D0
+void fn_00433FF0(void* self) {
+    void* inner = lift_field<void*>(self, 0x108);
+    ext_0043DC90(inner, -1);
+}
+} // namespace lift_0045E4A0
+} // namespace lift_00433FF0

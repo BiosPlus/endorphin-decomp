@@ -201,3 +201,269 @@ void fn_0044CF30(void* self) {
     ext_00494300(base + 0x78, arg);
 }
 } // namespace lift_0044CF30
+
+// [0x0044B100] sub_0044B100 (11 bytes)
+namespace lift_0044B100 {
+// @name sub_0044B100
+// @summary Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).
+namespace lift_0045E4A0 {
+// Thunk to MFC80!ord_6090 (IAT jump). Original call passes ecx and pushes 0.
+extern void ext_00530D80(void* self, int arg);
+
+// @name CBase::forwardToMfcOrd6090
+// @class CBase
+// @summary Loads the pointer stored at +0x2D0 and forwards it, with a zero argument, to the MFC80 ord_6090 thunk.
+// @field CBase +0x2D0 void* field_0x2D0
+void fn_0044B100(void* self) {
+    void* inner = lift_field<void*>(self, 0x68);
+    ext_00530D80(inner, 3);
+}
+} // namespace lift_0045E4A0
+} // namespace lift_0044B100
+
+// [0x0044B110] sub_0044B110 (11 bytes)
+namespace lift_0044B110 {
+// @name sub_0044B110
+// @summary Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).
+namespace lift_0045E4A0 {
+// Thunk to MFC80!ord_6090 (IAT jump). Original call passes ecx and pushes 0.
+extern void ext_00530D80(void* self, int arg);
+
+// @name CBase::forwardToMfcOrd6090
+// @class CBase
+// @summary Loads the pointer stored at +0x2D0 and forwards it, with a zero argument, to the MFC80 ord_6090 thunk.
+// @field CBase +0x2D0 void* field_0x2D0
+void fn_0044B110(void* self) {
+    void* inner = lift_field<void*>(self, 0x68);
+    ext_00530D80(inner, 4);
+}
+} // namespace lift_0045E4A0
+} // namespace lift_0044B110
+
+// [0x0044B120] sub_0044B120 (11 bytes)
+namespace lift_0044B120 {
+// @name sub_0044B120
+// @summary Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).
+namespace lift_0045E4A0 {
+// Thunk to MFC80!ord_6090 (IAT jump). Original call passes ecx and pushes 0.
+extern void ext_00530D80(void* self, int arg);
+
+// @name CBase::forwardToMfcOrd6090
+// @class CBase
+// @summary Loads the pointer stored at +0x2D0 and forwards it, with a zero argument, to the MFC80 ord_6090 thunk.
+// @field CBase +0x2D0 void* field_0x2D0
+void fn_0044B120(void* self) {
+    void* inner = lift_field<void*>(self, 0x68);
+    ext_00530D80(inner, 2);
+}
+} // namespace lift_0045E4A0
+} // namespace lift_0044B120
+
+// [0x0044B130] sub_0044B130 (11 bytes)
+namespace lift_0044B130 {
+// @name sub_0044B130
+// @summary Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).
+namespace lift_0045E4A0 {
+// Thunk to MFC80!ord_6090 (IAT jump). Original call passes ecx and pushes 0.
+extern void ext_00530D80(void* self, int arg);
+
+// @name CBase::forwardToMfcOrd6090
+// @class CBase
+// @summary Loads the pointer stored at +0x2D0 and forwards it, with a zero argument, to the MFC80 ord_6090 thunk.
+// @field CBase +0x2D0 void* field_0x2D0
+void fn_0044B130(void* self) {
+    void* inner = lift_field<void*>(self, 0x68);
+    ext_00530D80(inner, 5);
+}
+} // namespace lift_0045E4A0
+} // namespace lift_0044B130
+
+// [0x0044B140] sub_0044B140 (11 bytes)
+namespace lift_0044B140 {
+// @name sub_0044B140
+// @summary Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).
+namespace lift_0045E4A0 {
+// Thunk to MFC80!ord_6090 (IAT jump). Original call passes ecx and pushes 0.
+extern void ext_00530D80(void* self, int arg);
+
+// @name CBase::forwardToMfcOrd6090
+// @class CBase
+// @summary Loads the pointer stored at +0x2D0 and forwards it, with a zero argument, to the MFC80 ord_6090 thunk.
+// @field CBase +0x2D0 void* field_0x2D0
+void fn_0044B140(void* self) {
+    void* inner = lift_field<void*>(self, 0x68);
+    ext_00530D80(inner, 7);
+}
+} // namespace lift_0045E4A0
+} // namespace lift_0044B140
+
+// [0x0044B150] sub_0044B150 (11 bytes)
+namespace lift_0044B150 {
+// @name sub_0044B150
+// @summary Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).
+namespace lift_0045E4A0 {
+// Thunk to MFC80!ord_6090 (IAT jump). Original call passes ecx and pushes 0.
+extern void ext_00530D80(void* self, int arg);
+
+// @name CBase::forwardToMfcOrd6090
+// @class CBase
+// @summary Loads the pointer stored at +0x2D0 and forwards it, with a zero argument, to the MFC80 ord_6090 thunk.
+// @field CBase +0x2D0 void* field_0x2D0
+void fn_0044B150(void* self) {
+    void* inner = lift_field<void*>(self, 0x68);
+    ext_00530D80(inner, 6);
+}
+} // namespace lift_0045E4A0
+} // namespace lift_0044B150
+
+// [0x0044B160] sub_0044B160 (11 bytes)
+namespace lift_0044B160 {
+// @name sub_0044B160
+// @summary Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).
+namespace lift_0045E4A0 {
+// Thunk to MFC80!ord_6090 (IAT jump). Original call passes ecx and pushes 0.
+extern void ext_00530D80(void* self, int arg);
+
+// @name CBase::forwardToMfcOrd6090
+// @class CBase
+// @summary Loads the pointer stored at +0x2D0 and forwards it, with a zero argument, to the MFC80 ord_6090 thunk.
+// @field CBase +0x2D0 void* field_0x2D0
+void fn_0044B160(void* self) {
+    void* inner = lift_field<void*>(self, 0x68);
+    ext_00530D80(inner, 9);
+}
+} // namespace lift_0045E4A0
+} // namespace lift_0044B160
+
+// [0x0044B170] sub_0044B170 (11 bytes)
+namespace lift_0044B170 {
+// @name sub_0044B170
+// @summary Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).
+namespace lift_0045E4A0 {
+// Thunk to MFC80!ord_6090 (IAT jump). Original call passes ecx and pushes 0.
+extern void ext_00530D80(void* self, int arg);
+
+// @name CBase::forwardToMfcOrd6090
+// @class CBase
+// @summary Loads the pointer stored at +0x2D0 and forwards it, with a zero argument, to the MFC80 ord_6090 thunk.
+// @field CBase +0x2D0 void* field_0x2D0
+void fn_0044B170(void* self) {
+    void* inner = lift_field<void*>(self, 0x68);
+    ext_00530D80(inner, 10);
+}
+} // namespace lift_0045E4A0
+} // namespace lift_0044B170
+
+// [0x0044B180] sub_0044B180 (11 bytes)
+namespace lift_0044B180 {
+// @name sub_0044B180
+// @summary Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).
+namespace lift_0045E4A0 {
+// Thunk to MFC80!ord_6090 (IAT jump). Original call passes ecx and pushes 0.
+extern void ext_00530D80(void* self, int arg);
+
+// @name CBase::forwardToMfcOrd6090
+// @class CBase
+// @summary Loads the pointer stored at +0x2D0 and forwards it, with a zero argument, to the MFC80 ord_6090 thunk.
+// @field CBase +0x2D0 void* field_0x2D0
+void fn_0044B180(void* self) {
+    void* inner = lift_field<void*>(self, 0x68);
+    ext_00530D80(inner, 11);
+}
+} // namespace lift_0045E4A0
+} // namespace lift_0044B180
+
+// [0x0044B190] sub_0044B190 (11 bytes)
+namespace lift_0044B190 {
+// @name sub_0044B190
+// @summary Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).
+namespace lift_0045E4A0 {
+// Thunk to MFC80!ord_6090 (IAT jump). Original call passes ecx and pushes 0.
+extern void ext_00530D80(void* self, int arg);
+
+// @name CBase::forwardToMfcOrd6090
+// @class CBase
+// @summary Loads the pointer stored at +0x2D0 and forwards it, with a zero argument, to the MFC80 ord_6090 thunk.
+// @field CBase +0x2D0 void* field_0x2D0
+void fn_0044B190(void* self) {
+    void* inner = lift_field<void*>(self, 0x68);
+    ext_00530D80(inner, 12);
+}
+} // namespace lift_0045E4A0
+} // namespace lift_0044B190
+
+// [0x0044B1A0] sub_0044B1A0 (11 bytes)
+namespace lift_0044B1A0 {
+// @name sub_0044B1A0
+// @summary Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).
+namespace lift_0045E4A0 {
+// Thunk to MFC80!ord_6090 (IAT jump). Original call passes ecx and pushes 0.
+extern void ext_00530D80(void* self, int arg);
+
+// @name CBase::forwardToMfcOrd6090
+// @class CBase
+// @summary Loads the pointer stored at +0x2D0 and forwards it, with a zero argument, to the MFC80 ord_6090 thunk.
+// @field CBase +0x2D0 void* field_0x2D0
+void fn_0044B1A0(void* self) {
+    void* inner = lift_field<void*>(self, 0x68);
+    ext_00530D80(inner, 13);
+}
+} // namespace lift_0045E4A0
+} // namespace lift_0044B1A0
+
+// [0x0044B1B0] sub_0044B1B0 (11 bytes)
+namespace lift_0044B1B0 {
+// @name sub_0044B1B0
+// @summary Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).
+namespace lift_0045E4A0 {
+// Thunk to MFC80!ord_6090 (IAT jump). Original call passes ecx and pushes 0.
+extern void ext_00530D80(void* self, int arg);
+
+// @name CBase::forwardToMfcOrd6090
+// @class CBase
+// @summary Loads the pointer stored at +0x2D0 and forwards it, with a zero argument, to the MFC80 ord_6090 thunk.
+// @field CBase +0x2D0 void* field_0x2D0
+void fn_0044B1B0(void* self) {
+    void* inner = lift_field<void*>(self, 0x68);
+    ext_00530D80(inner, 14);
+}
+} // namespace lift_0045E4A0
+} // namespace lift_0044B1B0
+
+// [0x0044B1C0] sub_0044B1C0 (11 bytes)
+namespace lift_0044B1C0 {
+// @name sub_0044B1C0
+// @summary Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).
+namespace lift_0045E4A0 {
+// Thunk to MFC80!ord_6090 (IAT jump). Original call passes ecx and pushes 0.
+extern void ext_00530D80(void* self, int arg);
+
+// @name CBase::forwardToMfcOrd6090
+// @class CBase
+// @summary Loads the pointer stored at +0x2D0 and forwards it, with a zero argument, to the MFC80 ord_6090 thunk.
+// @field CBase +0x2D0 void* field_0x2D0
+void fn_0044B1C0(void* self) {
+    void* inner = lift_field<void*>(self, 0x68);
+    ext_00530D80(inner, 15);
+}
+} // namespace lift_0045E4A0
+} // namespace lift_0044B1C0
+
+// [0x0044B1D0] sub_0044B1D0 (11 bytes)
+namespace lift_0044B1D0 {
+// @name sub_0044B1D0
+// @summary Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).
+namespace lift_0045E4A0 {
+// Thunk to MFC80!ord_6090 (IAT jump). Original call passes ecx and pushes 0.
+extern void ext_00530D80(void* self, int arg);
+
+// @name CBase::forwardToMfcOrd6090
+// @class CBase
+// @summary Loads the pointer stored at +0x2D0 and forwards it, with a zero argument, to the MFC80 ord_6090 thunk.
+// @field CBase +0x2D0 void* field_0x2D0
+void fn_0044B1D0(void* self) {
+    void* inner = lift_field<void*>(self, 0x68);
+    ext_00530D80(inner, 16);
+}
+} // namespace lift_0045E4A0
+} // namespace lift_0044B1D0

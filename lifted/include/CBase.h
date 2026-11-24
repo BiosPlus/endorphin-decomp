@@ -8,6 +8,6 @@
 // Recovered field layout for CBase:
 namespace lifted_layout {
 struct CBase_Fields {
-    // +0x2D0 void*                    field_0x2D0  (evidence: 0x0045E4A0)
+    // +0x2D0 void*                    field_0x2D0  (evidence: 0x00433FF0, 0x0044B100, 0x0044B110, 0x0044B120, 0x0044B130, 0x0044B140, 0x0044B150, 0x0044B160, 0x0044B170, 0x0044B180, 0x0044B190, 0x0044B1A0, 0x0044B1B0, 0x0044B1C0, 0x0044B1D0, 0x0045E4A0)
 };
 } // namespace lifted_layout

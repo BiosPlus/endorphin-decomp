@@ -1,0 +1,34 @@
+{
+  "va": "0x00609730",
+  "size": 14,
+  "orig_symbol": "sub_00609730",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "sub_00609730",
+  "class": "Unknown",
+  "signature": "void fn_00609730(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004AEC60 (thunk_004AEC60).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "void*",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:25:19Z"
+}

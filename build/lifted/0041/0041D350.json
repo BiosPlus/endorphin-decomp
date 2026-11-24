@@ -1,0 +1,28 @@
+{
+  "va": "0x0041D350",
+  "size": 17,
+  "orig_symbol": "Properties::GWCPropertiesControlDriver::vfunc_9",
+  "src_path": "src/Properties/auto_tiny.cpp",
+  "lifted_path": "lifted/Properties/auto_tiny.cpp",
+  "name": "Properties::GWCPropertiesControlDriver::vfunc_9",
+  "class": "Properties::GWCPropertiesControlDriver",
+  "signature": "DWORD fn_0041D350(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004407B0 (GetPointerChainDword10).",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x44",
+      "type": "void*",
+      "name": "field_0x44"
+    },
+    {
+      "class": "void",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:25:19Z"
+}
