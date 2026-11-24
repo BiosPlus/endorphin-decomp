@@ -37923,6 +37923,12 @@
     "summary": "Calls vtable slot 41 (+0xA4) on the receiver with (0x18, mem_00B5EB80, 0, -1) and returns its result.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C0470": {
+    "name": "isKnownGlobalHandle",
+    "signature": "uint8_t __stdcall sub_006C0470(uint32_t arg0)",
+    "summary": "Checks whether the given 32-bit value matches one of three global values.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C04A0": {
     "name": "sub_006C04A0",
     "signature": "extern \"C\" int32_t __cdecl fn_006C04A0(void)",
@@ -39189,6 +39195,12 @@
     "name": "init_globals_b5d900",
     "signature": "void sub_006D8AB0()",
     "summary": "Stores four constants into globals mem_00B5D900..mem_00B5D90C (two addresses, one address-like value, and zero).",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
+  "0x006D8CA0": {
+    "name": "isKnownGlobalValue",
+    "signature": "uint8_t __stdcall sub_006D8CA0(uint32_t val)",
+    "summary": "Checks whether the given 32-bit value matches any of three global constants.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006D8CD0": {
@@ -41517,6 +41529,12 @@
     "summary": "Tail-dispatches vtable slot 0x40/4 (index 16) on self with fixed arguments (0, 0x11, self, -1, 0, 0, 0) and returns its result; the callee pops the 7 stack args.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006FC570": {
+    "name": "isKnownGlobalHandle",
+    "signature": "uint8_t __stdcall sub_006FC570(uint32_t value)",
+    "summary": "Checks whether the given 32-bit value matches any of three global handles.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FC5A0": {
     "name": "sub_006FC5A0",
     "signature": "extern \"C\" int32_t __cdecl fn_006FC5A0(void)",
@@ -41657,6 +41675,12 @@
     "signature": "void fn_006FFEE0()",
     "summary": "Sets three global doubles to -_HUGE (negative infinity), loading _HUGE through the pointer stored at mem_00925284.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
+  "0x007004C0": {
+    "name": "isKnownGlobalValue",
+    "signature": "uint8_t __stdcall sub_007004C0(uint32_t arg0)",
+    "summary": "Returns 1 if the 32-bit argument matches any of three global values, 0 otherwise.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x007004F0": {
     "name": "sub_007004F0",

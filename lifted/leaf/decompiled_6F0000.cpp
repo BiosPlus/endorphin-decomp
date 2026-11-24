@@ -332,3 +332,22 @@ bool fn_006FC5E0(void* self, void* obj) {
     return handle == -1;
 }
 } // namespace lift_006FC5E0
+
+// [0x006FC570]
+namespace lift_006FC570 {
+extern uint32_t mem_00B608B0;
+extern uint32_t mem_00B608B4;
+extern uint32_t mem_00B5E400;
+
+// @name isKnownGlobalHandle
+// @summary Checks whether the given 32-bit value matches any of three global handles.
+uint8_t __stdcall sub_006FC570(uint32_t value) {
+    if (value == mem_00B608B0) {
+        return 1;
+    }
+    if (value == mem_00B608B4) {
+        return 1;
+    }
+    return value == mem_00B5E400 ? 1 : 0;
+}
+} // namespace lift_006FC570

@@ -1,0 +1,13 @@
+{
+  "va": "0x006FC570",
+  "size": 44,
+  "orig_symbol": "sub_006FC570",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "isKnownGlobalHandle",
+  "signature": "uint8_t __stdcall sub_006FC570(uint32_t value)",
+  "summary": "Checks whether the given 32-bit value matches any of three global handles.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:09:46Z"
+}
