@@ -1,0 +1,13 @@
+{
+  "va": "0x007182A0",
+  "size": 57,
+  "orig_symbol": "sub_007182A0",
+  "src_path": "src/clones/auto_clones_710000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_710000.cpp",
+  "name": "initHugeVectorGlobals",
+  "signature": "void sub_007182A0(void)",
+  "summary": "Initializes three 64-bit double globals from MSVCR80!_HUGE.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:25:14Z"
+}
