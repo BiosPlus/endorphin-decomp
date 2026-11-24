@@ -26206,6 +26206,13 @@
     "summary": "Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x006722B0": {
+    "name": "Unknown::ForwardArgToSubobjectVfunc31",
+    "class": "Unknown",
+    "signature": "int __thiscall fn_006722B0(Unknown* self, int arg)",
+    "summary": "Forwards its single stack argument, together with this, to virtual slot 0x7C of the subobject at +0x4 and returns the result.",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
   "0x00672490": {
     "name": "sub_0067AEE8",
     "class": "Unknown (no class recovered; receiver is passed in ecx)",

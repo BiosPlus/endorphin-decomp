@@ -382,3 +382,28 @@ void fn_0067B390(void* self) {
     *reinterpret_cast<double*>(base + 0x18) = 0.0;
 }
 } // namespace lift_0067B390
+
+// [0x006722B0]
+namespace lift_006722B0 {
+// @name Unknown::ForwardArgToSubobjectVfunc31
+// @class Unknown
+// @summary Forwards its single stack argument, together with this, to virtual slot 0x7C of the subobject at +0x4 and returns the result.
+// @field Unknown +0x04 ptr subobject
+
+struct Subobject;
+
+struct Unknown {
+    unsigned char field_0x00[0x04];
+    Subobject* subobject;  // +0x04
+};
+
+// Virtual slot at byte offset 0x7C (index 31) of the subobject's vtable.
+using ForwardFn = int(__stdcall*)(Unknown* self, int arg);
+
+int __thiscall fn_006722B0(Unknown* self, int arg) {
+    Subobject* sub = self->subobject;
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    ForwardFn fn = reinterpret_cast<ForwardFn>(vtbl[0x7C / sizeof(void*)]);
+    return fn(self, arg);
+}
+} // namespace lift_006722B0

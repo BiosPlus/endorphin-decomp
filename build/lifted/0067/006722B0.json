@@ -1,0 +1,22 @@
+{
+  "va": "0x006722B0",
+  "size": 23,
+  "orig_symbol": "sub_006722B0",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "Unknown::ForwardArgToSubobjectVfunc31",
+  "class": "Unknown",
+  "signature": "int __thiscall fn_006722B0(Unknown* self, int arg)",
+  "summary": "Forwards its single stack argument, together with this, to virtual slot 0x7C of the subobject at +0x4 and returns the result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "ptr",
+      "name": "subobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:33:41Z"
+}
