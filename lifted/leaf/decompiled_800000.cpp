@@ -310,3 +310,27 @@ void fn_0080AC00(void) {
     }
 }
 } // namespace lift_0080AC00
+
+// [0x0080F910]
+namespace lift_0080F910 {
+// @name writeByteToStreamBuffer
+// @summary Writes a byte to a stream buffer if within capacity, advancing cursors and total count
+// @field StreamBuffer +0x08 uint32_t field_0x08
+// @field StreamBuffer +0x10 int32_t field_0x10
+// @field StreamBuffer +0x14 int32_t field_0x14
+// @field StreamBuffer +0x18 int32_t field_0x18
+void sub_0080F910(uintptr_t arg0, uint32_t arg1) {
+    int32_t v10 = *reinterpret_cast<int32_t*>(arg0 + 0x10);
+    int32_t v18 = *reinterpret_cast<int32_t*>(arg0 + 0x18);
+    uintptr_t* ptr_addr = *reinterpret_cast<uintptr_t**>(arg0 + 0x08);
+
+    if (v10 < v18) {
+        uint8_t* cursor = reinterpret_cast<uint8_t*>(*ptr_addr);
+        *cursor = static_cast<uint8_t>(arg1);
+        *ptr_addr = *ptr_addr + 1;
+        *reinterpret_cast<int32_t*>(arg0 + 0x14) += 1;
+    }
+
+    *reinterpret_cast<int32_t*>(arg0 + 0x10) += 1;
+}
+} // namespace lift_0080F910

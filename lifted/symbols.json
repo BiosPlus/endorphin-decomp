@@ -49611,6 +49611,12 @@
     "summary": "Returns the 32-bit value at offset +0x08 of the object pointed to by the first stack argument.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x0085BF40": {
+    "name": "findEntryValueByKey",
+    "signature": "uint32_t sub_0085BF40(uint32_t tablePtr, uint32_t key)",
+    "summary": "Linearly searches an array of 8-byte key-value pairs for a matching 32-bit key and returns its 32-bit value, or 0 if not found.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085BFE0": {
     "name": "GlobalFreeForwarder_0085BFE0",
     "signature": "uint32_t __cdecl fn_0085BFE0(uint32_t hMem)",

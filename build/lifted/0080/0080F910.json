@@ -1,0 +1,39 @@
+{
+  "va": "0x0080F910",
+  "size": 47,
+  "orig_symbol": "sub_0080F910",
+  "src_path": "src/leaf/decompiled_800000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_800000.cpp",
+  "name": "writeByteToStreamBuffer",
+  "signature": "void sub_0080F910(uintptr_t arg0, uint32_t arg1)",
+  "summary": "Writes a byte to a stream buffer if within capacity, advancing cursors and total count",
+  "fields": [
+    {
+      "class": "StreamBuffer",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "StreamBuffer",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "StreamBuffer",
+      "offset": "+0x14",
+      "type": "int32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "StreamBuffer",
+      "offset": "+0x18",
+      "type": "int32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:17:43Z"
+}
