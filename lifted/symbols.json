@@ -1356,6 +1356,12 @@
     "summary": "Calls get_global_field_0x58 and tail-calls ext_00469040 with the returned pointer in ECX.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430370": {
+    "name": "CheckFieldAt60IsZero",
+    "signature": "extern \"C\" uint8_t __cdecl fn_00430370(void)",
+    "summary": "Calls sub_004658C0 to get an object pointer, returns 1 if its int32 at +0x60 is zero, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430D40": {
     "name": "sub_00430D40",
     "signature": "extern \"C\" void fn_00430D40(void)",

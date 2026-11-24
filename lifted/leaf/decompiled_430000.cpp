@@ -139,3 +139,19 @@ void fn_00433FF0(void* self) {
 }
 } // namespace lift_0045E4A0
 } // namespace lift_00433FF0
+
+// [0x00430370] sub_00430370 (16 bytes)
+namespace lift_00430370 {
+// Known callee 0x004658C0: sub_004658C0 (Returns global int32 value from mem_00AD6C80.)
+extern int32_t ext_004658C0(void);
+
+// @name CheckFieldAt60IsZero
+// @summary Calls sub_004658C0 to get an object pointer, returns 1 if its int32 at +0x60 is zero, else 0.
+// @field Unknown +0x60 int32_t field_0x60
+extern uint8_t __cdecl fn_00430370(void) {
+    const int32_t raw = ext_004658C0();
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(raw)));
+    const int32_t field = lift_field<int32_t>(obj, 0x60);
+    return static_cast<uint8_t>(field == 0 ? 1 : 0);
+}
+} // namespace lift_00430370
