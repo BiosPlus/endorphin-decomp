@@ -1,0 +1,28 @@
+{
+  "va": "0x0046C110",
+  "size": 13,
+  "orig_symbol": "sub_0046C110",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "Unknown::GetFieldF138ViaF8",
+  "class": "Unknown",
+  "signature": "float fn_0046C110(void* self)",
+  "summary": "Returns the float at +0x138 of the sub-object pointed to by self+0xF8.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF8",
+      "type": "void*",
+      "name": "field_0xF8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x138",
+      "type": "float",
+      "name": "field_0x138"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:18:54Z"
+}

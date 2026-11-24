@@ -406,3 +406,17 @@ void __stdcall sub_004684C0(uint8_t value) {
     mem_00B58DFC = value;
 }
 } // namespace lift_004684C0
+
+// [0x0046C110] sub_0046C110 (13 bytes)
+namespace lift_0046C110 {
+// @name Unknown::GetFieldF138ViaF8
+// @class Unknown
+// @summary Returns the float at +0x138 of the sub-object pointed to by self+0xF8.
+// @field Unknown +0xF8 void* field_0xF8
+// @field Unknown +0x138 float field_0x138
+float fn_0046C110(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    auto* sub = *reinterpret_cast<unsigned char**>(base + 0xF8);
+    return *reinterpret_cast<float*>(sub + 0x138);
+}
+} // namespace lift_0046C110
