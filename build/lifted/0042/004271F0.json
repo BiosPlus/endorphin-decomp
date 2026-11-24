@@ -1,0 +1,13 @@
+{
+  "va": "0x004271F0",
+  "size": 23,
+  "orig_symbol": "sub_004271F0",
+  "src_path": "src/leaf/tiny_420000.cpp",
+  "lifted_path": "lifted/leaf/tiny_420000.cpp",
+  "name": "IsArgStringNotEqualToGlobalName",
+  "signature": "extern \"C\" bool __stdcall fn_004271F0(const void* str)",
+  "summary": "Stdcall (callee pops 4): compares the std::string passed on the stack against the global C-string at mem_00ACD9E0 via operator!=, returning the bool result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:31:46Z"
+}

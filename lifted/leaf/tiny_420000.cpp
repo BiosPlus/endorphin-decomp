@@ -148,3 +148,17 @@ int fn_0042EA50(void* self, void* arg) {
     return ext_ReleaseDC(hwnd, hdc);
 }
 } // namespace lift_0042EA50
+
+// [0x004271F0] sub_004271F0 (23 bytes)
+namespace lift_004271F0 {
+extern const char* mem_00ACD9E0;
+
+// std::operator!=(const std::basic_string<char>&, const char*) from MSVCP80.
+extern bool __cdecl ext_operator_ne_string_cstr(const void* lhs, const char* rhs);
+
+// @name IsArgStringNotEqualToGlobalName
+// @summary Stdcall (callee pops 4): compares the std::string passed on the stack against the global C-string at mem_00ACD9E0 via operator!=, returning the bool result.
+extern bool __stdcall fn_004271F0(const void* str) {
+    return ext_operator_ne_string_cstr(str, mem_00ACD9E0);
+}
+} // namespace lift_004271F0
