@@ -303,3 +303,24 @@ void fn_006CA6B0(void* dst, void* self) {
     std::memcpy(dst, src, 10 * sizeof(uint32_t));
 }
 } // namespace lift_006CA6B0
+
+// [0x006CE0A0] sub_006CE0A0 (32 bytes)
+namespace lift_006CE0A0 {
+// @name Unknown::IsNotSentinel48
+// @class Unknown
+// @summary Returns 0 when the qword at +0x48 is the sentinel (-1, 0x7FFFFFFF); otherwise 1.
+// @field Unknown +0x48 uint32_t field_0x48
+// @field Unknown +0x4C uint32_t field_0x4C
+int fn_006CE0A0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    uint32_t lo = *reinterpret_cast<uint32_t*>(base + 0x48);
+    if (lo != 0xFFFFFFFFu) {
+        return 1;
+    }
+    uint32_t hi = *reinterpret_cast<uint32_t*>(base + 0x4C);
+    if (hi == 0x7FFFFFFFu) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_006CE0A0

@@ -1,0 +1,28 @@
+{
+  "va": "0x006CE0A0",
+  "size": 32,
+  "orig_symbol": "sub_006CE0A0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::IsNotSentinel48",
+  "class": "Unknown",
+  "signature": "int fn_006CE0A0(void* self)",
+  "summary": "Returns 0 when the qword at +0x48 is the sentinel (-1, 0x7FFFFFFF); otherwise 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "uint32_t",
+      "name": "field_0x4C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:34:50Z"
+}

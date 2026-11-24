@@ -36645,6 +36645,13 @@
     "summary": "Stores two dwords and one double-as-float into this at +0x48, +0x4C, +0x50; returns 0 (ret 0x10).",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006CE0A0": {
+    "name": "Unknown::IsNotSentinel48",
+    "class": "Unknown",
+    "signature": "int fn_006CE0A0(void* self)",
+    "summary": "Returns 0 when the qword at +0x48 is the sentinel (-1, 0x7FFFFFFF); otherwise 1.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006D03D0": {
     "name": "sub_006D03D0",
     "signature": "extern \"C\" void __fastcall fn_006D03D0(void* self)",
