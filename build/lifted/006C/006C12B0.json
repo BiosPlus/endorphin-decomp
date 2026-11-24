@@ -1,0 +1,22 @@
+{
+  "va": "0x006C12B0",
+  "size": 26,
+  "orig_symbol": "sub_006C12B0",
+  "src_path": "src/leaf/tiny_6C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6C0000.cpp",
+  "name": "Unknown::ForwardArgToSubobjectSlotB0",
+  "class": "Unknown",
+  "signature": "extern \"C\" int __fastcall fn_006C12B0(void* self, int edx_unused, int arg)",
+  "summary": "Forwards its single stack argument to virtual slot +0xB0 of the object at this+0x1AE8, passing (this+0x1AE8) as the callee's this, and returns the callee's result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1AE8",
+      "type": "void*",
+      "name": "field_1AE8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:57:12Z"
+}

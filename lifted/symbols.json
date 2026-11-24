@@ -33943,6 +33943,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C12B0": {
+    "name": "Unknown::ForwardArgToSubobjectSlotB0",
+    "class": "Unknown",
+    "signature": "extern \"C\" int __fastcall fn_006C12B0(void* self, int edx_unused, int arg)",
+    "summary": "Forwards its single stack argument to virtual slot +0xB0 of the object at this+0x1AE8, passing (this+0x1AE8) as the callee's this, and returns the callee's result.",
+    "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
+  },
   "0x006C1560": {
     "name": "sub_006C1560",
     "signature": "extern \"C\" void* __fastcall fn_006C1560(void* self, int edx_unused, unsigned int flags)",

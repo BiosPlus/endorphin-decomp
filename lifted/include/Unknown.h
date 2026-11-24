@@ -289,5 +289,6 @@ struct Unknown_Fields {
     // +0x5A4 DWORD                    field_0x5A4  (evidence: 0x007046E0)
     // +0x654 uint8_t                  field_0x654  (evidence: 0x00788D00)
     // +0x1960 uint8_t                  field_0x1960  (evidence: 0x0071C740, 0x0071C8D0, 0x0071C970)
+    // +0x1AE8 void*                    field_1AE8  (evidence: 0x006C12B0)
 };
 } // namespace lifted_layout
