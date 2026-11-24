@@ -1,0 +1,21 @@
+{
+  "va": "0x004F28C0",
+  "size": 25,
+  "orig_symbol": "sub_004F28C0",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "ReleaseNestedCriticalSection",
+  "signature": "void fn_004F28C0(void* self)",
+  "summary": "If the pointer stored at self is non-null, leave the critical section stored in that object's first field, then pass the object to MFC80 ord_764.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:48:32Z"
+}
