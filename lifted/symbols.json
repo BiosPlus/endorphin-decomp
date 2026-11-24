@@ -38851,6 +38851,12 @@
     "summary": "Returns the 32-bit value at offset +0x08 of the object pointed to by the first stack argument.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x0085BFE0": {
+    "name": "GlobalFreeForwarder_0085BFE0",
+    "signature": "uint32_t __cdecl fn_0085BFE0(uint32_t hMem)",
+    "summary": "Forwards its single stack argument (an HGLOBAL) to ext_00859730 (GlobalFree wrapper) and returns the result.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085D504": {
     "name": "sub_0085D504",
     "signature": "void fn_0085D504(void)",
