@@ -1,0 +1,14 @@
+{
+  "va": "0x005F3BF0",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setAll(float)\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026EffectorGroup::setAll\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026EffectorGroup::setAll\u003e",
+  "signature": "extern \"C\" void __thiscall fn_005F3BF0(void* self, void* out)",
+  "summary": "Lazily initializes a static local object and stores its pointer at arg0 + 0x4.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:56:15Z"
+}
