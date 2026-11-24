@@ -138,3 +138,62 @@ void OglRenderer_vfunc_15(void* self, float value) {
     vfunc(self);
 }
 } // namespace lift_00533340
+
+// [0x00533400]
+namespace lift_00533400 {
+// @name OglRenderer::vfunc_18
+// @class OglRenderer
+// @summary Sets a renderer value (at +0x394 or +0x384 depending on +0x379, and at +0x44C), marks +0x430 dirty, and invokes vfunc at +0x154.
+// @field OglRenderer +0x379 uint8_t field_0x379
+// @field OglRenderer +0x384 uint32_t field_0x384
+// @field OglRenderer +0x394 uint32_t field_0x394
+// @field OglRenderer +0x430 uint8_t field_0x430
+// @field OglRenderer +0x44C uint32_t field_0x44C
+void __thiscall OglRenderer_vfunc_18(void* self, uint32_t value) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    if (*(base + 0x379) != 0) {
+        *reinterpret_cast<uint32_t*>(base + 0x394) = value;
+    } else {
+        *reinterpret_cast<uint32_t*>(base + 0x384) = value;
+    }
+    *reinterpret_cast<uint32_t*>(base + 0x44C) = value;
+    *(base + 0x430) = 1;
+
+    uint32_t* vtable = *reinterpret_cast<uint32_t**>(self);
+    using VFunc154 = void (__thiscall*)(void*);
+    VFunc154 fn = reinterpret_cast<VFunc154>(vtable[0x154 / 4]);
+    fn(self);
+}
+} // namespace lift_00533400
+
+// [0x005333C0]
+namespace lift_005333C0 {
+// @name OglRenderer::vfunc_17
+// @class OglRenderer
+// @summary Sets a renderer parameter at +0x398 or +0x388 based on +0x379, stores it at +0x450, sets +0x430 = 1, and invokes vtable +0x154.
+// @field OglRenderer +0x379 uint8_t field_0x379
+// @field OglRenderer +0x388 uint32_t field_0x388
+// @field OglRenderer +0x398 uint32_t field_0x398
+// @field OglRenderer +0x430 uint8_t field_0x430
+// @field OglRenderer +0x450 uint32_t field_0x450
+
+
+extern uint8_t mem_read8(uint32_t addr);
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write8(uint32_t addr, uint8_t val);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+void __thiscall OglRenderer_vfunc_17(uint32_t self, uint32_t arg0) {
+    if (mem_read8(self + 0x379) != 0) {
+        mem_write32(self + 0x398, arg0);
+    } else {
+        mem_write32(self + 0x388, arg0);
+    }
+    mem_write32(self + 0x450, arg0);
+    uint32_t vtable = mem_read32(self);
+    uint32_t vfn = mem_read32(vtable + 0x154);
+    mem_write8(self + 0x430, 1);
+    typedef void (__thiscall *vfn_t)(uint32_t);
+    ((vfn_t)(uintptr_t)vfn)(self);
+}
+} // namespace lift_005333C0

@@ -1,0 +1,46 @@
+{
+  "va": "0x00533400",
+  "size": 53,
+  "orig_symbol": "OglRenderer::vfunc_18",
+  "src_path": "src/classes/OglRenderer.cpp",
+  "lifted_path": "lifted/classes/OglRenderer.cpp",
+  "name": "OglRenderer::vfunc_18",
+  "class": "OglRenderer",
+  "signature": "void __thiscall OglRenderer_vfunc_18(void* self, uint32_t value)",
+  "summary": "Sets a renderer value (at +0x394 or +0x384 depending on +0x379, and at +0x44C), marks +0x430 dirty, and invokes vfunc at +0x154.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x379",
+      "type": "uint8_t",
+      "name": "field_0x379"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x384",
+      "type": "uint32_t",
+      "name": "field_0x384"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x394",
+      "type": "uint32_t",
+      "name": "field_0x394"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x430",
+      "type": "uint8_t",
+      "name": "field_0x430"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x44C",
+      "type": "uint32_t",
+      "name": "field_0x44C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:13:30Z"
+}

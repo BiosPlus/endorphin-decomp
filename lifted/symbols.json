@@ -16989,6 +16989,20 @@
     "summary": "Sets a float property on OglRenderer (selecting +0x390 or +0x380 based on +0x379) and +0x458, marks +0x430 dirty, and invokes vtable +0x154",
     "lifted_path": "lifted/classes/OglRenderer.cpp"
   },
+  "0x005333C0": {
+    "name": "OglRenderer::vfunc_17",
+    "class": "OglRenderer",
+    "signature": "void __thiscall OglRenderer_vfunc_17(uint32_t self, uint32_t arg0)",
+    "summary": "Sets a renderer parameter at +0x398 or +0x388 based on +0x379, stores it at +0x450, sets +0x430 = 1, and invokes vtable +0x154.",
+    "lifted_path": "lifted/classes/OglRenderer.cpp"
+  },
+  "0x00533400": {
+    "name": "OglRenderer::vfunc_18",
+    "class": "OglRenderer",
+    "signature": "void __thiscall OglRenderer_vfunc_18(void* self, uint32_t value)",
+    "summary": "Sets a renderer value (at +0x394 or +0x384 depending on +0x379, and at +0x44C), marks +0x430 dirty, and invokes vfunc at +0x154.",
+    "lifted_path": "lifted/classes/OglRenderer.cpp"
+  },
   "0x00533780": {
     "name": "OglRenderer::vfunc_111",
     "class": "OglRenderer",
