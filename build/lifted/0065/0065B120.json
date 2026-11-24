@@ -1,0 +1,28 @@
+{
+  "va": "0x0065B120",
+  "size": 28,
+  "orig_symbol": "sub_0065B120",
+  "src_path": "src/leaf/tiny_650000.cpp",
+  "lifted_path": "lifted/leaf/tiny_650000.cpp",
+  "name": "sub_0065B120",
+  "class": "Unknown",
+  "signature": "void* fn_0065B120(void* a)",
+  "summary": "Auto-lifted identical-shape clone of 0x005AC820 (Unknown::walkLinkUntilFlagSet_005AC820).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void* field_0x08 (next link",
+      "name": "pointer)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x29",
+      "type": "uint8_t field_0x29 (flag",
+      "name": "byte)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:08:56Z"
+}

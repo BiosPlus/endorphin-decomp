@@ -446,3 +446,25 @@ uint32_t __stdcall fn_00430E00(void* obj) {
     return fn(obj, static_cast<uint32_t>(flag));
 }
 } // namespace lift_00430E00
+
+// [0x00435290] sub_00435290 (28 bytes)
+namespace lift_00435290 {
+// @name sub_00435290
+// @summary Auto-lifted identical-shape clone of 0x00435270 (Unknown::updateSubobjectsAndGlobal_00435270).
+namespace lift_00435270 {
+void __thiscall ext_004332B0(void* self);
+int32_t __cdecl ext_00465B30(void);
+void __thiscall ext_00468CA0(void* self);
+void __thiscall ext_004332D0(void* self);
+
+// @name Unknown::updateSubobjectsAndGlobal_00435270
+// @class Unknown
+// @summary Calls ext_004332B0 on self, calls ext_00468C80 on the object returned by ext_00465B30, then tail-calls ext_004332D0 on self.
+void __thiscall fn_00435290(void* self) {
+    ext_004332B0(self);
+    int32_t obj = ext_00465B30();
+    ext_00468CA0(reinterpret_cast<void*>(static_cast<intptr_t>(obj)));
+    ext_004332D0(self);
+}
+} // namespace lift_00435270
+} // namespace lift_00435290

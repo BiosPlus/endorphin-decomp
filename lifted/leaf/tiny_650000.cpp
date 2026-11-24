@@ -23,6 +23,7 @@ extern "C" void __fastcall fn_0065BB60(void* self) {
 }
 extern "C" int mem_0093BF24;
 #include <cstring>
+#include <cstdint>
 
 // [0x0065C660] sub_0065C660 (7 bytes)
 // @name sub_0065C660
@@ -129,3 +130,29 @@ void fn_0065F280(void** dst_holder, const void* const* src_holder) {
     std::memcpy(*dst_holder, *src_holder, 16 * sizeof(DWORD));
 }
 } // namespace lift_0065F280
+
+// [0x0065B120] sub_0065B120 (28 bytes)
+namespace lift_0065B120 {
+// @name sub_0065B120
+// @summary Auto-lifted identical-shape clone of 0x005AC820 (Unknown::walkLinkUntilFlagSet_005AC820).
+namespace lift_005AC820 {
+// @name Unknown::walkLinkUntilFlagSet_005AC820
+// @class Unknown
+// @summary Follow the +0x08 link chain from arg until a node with byte +0x29 set is reached; returns the node whose +0x08 link leads to it (or arg itself if the first link already matches).
+// @field Unknown +0x08 void* field_0x08 (next link pointer)
+// @field Unknown +0x29 uint8_t field_0x29 (flag byte)
+
+void* fn_0065B120(void* a) {
+    void* eax = a;
+    void* ecx = lift_field<void*>(eax, 0x08);
+    if (lift_field<uint8_t>(ecx, 0x11) != 0) {
+        return eax;
+    }
+    do {
+        eax = ecx;
+        ecx = lift_field<void*>(eax, 0x08);
+    } while (lift_field<uint8_t>(ecx, 0x11) == 0);
+    return eax;
+}
+} // namespace lift_005AC820
+} // namespace lift_0065B120

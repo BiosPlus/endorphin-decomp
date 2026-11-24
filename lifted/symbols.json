@@ -1989,6 +1989,13 @@
     "summary": "Calls ext_004332B0 on self, calls ext_00468C80 on the object returned by ext_00465B30, then tail-calls ext_004332D0 on self.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00435290": {
+    "name": "sub_00435290",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00435290(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00435270 (Unknown::updateSubobjectsAndGlobal_00435270).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00435360": {
     "name": "sub_00435360",
     "signature": "extern \"C\" void* __fastcall fn_00435360(void* self, int edx_unused, unsigned int flags)",
@@ -4883,6 +4890,13 @@
     "summary": "Loads the 32-bit value at [ecx+0x00] and passes it to thunk_MFC80_ord_764.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046FB80": {
+    "name": "sub_0046FB80",
+    "class": "Unknown",
+    "signature": "void* fn_0046FB80(void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x005AC820 (Unknown::walkLinkUntilFlagSet_005AC820).",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x0046FBA0": {
     "name": "sub_0046FBA0",
     "signature": "void* fn_0046FBA0(void* arg)",
@@ -5161,6 +5175,13 @@
     "signature": "extern \"C\" int __thiscall fn_004769D0(void* self, const void* unused)",
     "summary": "Forwards the literal \"\u003cScene/\u003e\" to vtable slot 2 (inherited XML loader) with two zero arguments and returns its result; the incoming stack argument is ignored.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x00476B80": {
+    "name": "sub_00476B80",
+    "class": "Unknown",
+    "signature": "void* fn_00476B80(void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x005AC820 (Unknown::walkLinkUntilFlagSet_005AC820).",
+    "lifted_path": "lifted/leaf/tiny_470000.cpp"
   },
   "0x004773B0": {
     "name": "Unknown::SetByteAndAssignString",
@@ -5451,6 +5472,13 @@
     "signature": "void* fn_00486C40(void* self, void* arg1, uint32_t arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x0061FF40 (NMData::GraphicData::vfunc_14).",
     "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp"
+  },
+  "0x00486D40": {
+    "name": "sub_00486D40",
+    "class": "Unknown",
+    "signature": "void* fn_00486D40(void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x005AC820 (Unknown::walkLinkUntilFlagSet_005AC820).",
+    "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
   "0x00486D60": {
     "name": "sub_00486D60",
@@ -5971,6 +5999,13 @@
     "name": "CheckFieldNonZeroAndArgMatches",
     "signature": "int fn_004925B0(void* self, DWORD arg0)",
     "summary": "Returns 1 if self-\u003e+0x00 is non-zero and self-\u003e+0x08 equals the single stack argument, otherwise 0 (callee pops 4 bytes).",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
+  "0x004928C0": {
+    "name": "sub_004928C0",
+    "class": "Unknown",
+    "signature": "void* fn_004928C0(void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x005AC820 (Unknown::walkLinkUntilFlagSet_005AC820).",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
   "0x004928E0": {
@@ -12203,6 +12238,13 @@
     "name": "sub_0052A070",
     "signature": "void* fn_0052A070(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
+    "lifted_path": "lifted/leaf/tiny_520000.cpp"
+  },
+  "0x0052A1A0": {
+    "name": "sub_0052A1A0",
+    "class": "Unknown",
+    "signature": "void* fn_0052A1A0(void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x005AC820 (Unknown::walkLinkUntilFlagSet_005AC820).",
     "lifted_path": "lifted/leaf/tiny_520000.cpp"
   },
   "0x0052ED00": {
@@ -19536,6 +19578,13 @@
     "summary": "If this-\u003efield_0x00 is non-null, calls vtable slot 0 of the object at field_0x00-\u003efield_0x08 with ecx = \u0026field_0x00-\u003efield_0x08 and arg 1.",
     "lifted_path": "lifted/leaf/tiny_5E0000.cpp"
   },
+  "0x005E0AE0": {
+    "name": "sub_005E0AE0",
+    "class": "Unknown",
+    "signature": "void* fn_005E0AE0(void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x005AC820 (Unknown::walkLinkUntilFlagSet_005AC820).",
+    "lifted_path": "lifted/leaf/tiny_5E0000.cpp"
+  },
   "0x005E0B00": {
     "name": "sub_005E0B00",
     "signature": "void* fn_005E0B00(void* arg)",
@@ -22778,6 +22827,13 @@
     "signature": "extern \"C\" void* __fastcall fn_00624C70(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00624B70 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00624CF0": {
+    "name": "sub_00624CF0",
+    "class": "Unknown",
+    "signature": "void* fn_00624CF0(void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x005AC820 (Unknown::walkLinkUntilFlagSet_005AC820).",
+    "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
   "0x00624D10": {
     "name": "sub_00624D10",
@@ -26069,6 +26125,13 @@
     "name": "sub_0065ACB0",
     "signature": "extern \"C\" void __fastcall fn_0065ACB0(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0x4 and tail-calls sub_0065F2A0.",
+    "lifted_path": "lifted/leaf/tiny_650000.cpp"
+  },
+  "0x0065B120": {
+    "name": "sub_0065B120",
+    "class": "Unknown",
+    "signature": "void* fn_0065B120(void* a)",
+    "summary": "Auto-lifted identical-shape clone of 0x005AC820 (Unknown::walkLinkUntilFlagSet_005AC820).",
     "lifted_path": "lifted/leaf/tiny_650000.cpp"
   },
   "0x0065BB60": {

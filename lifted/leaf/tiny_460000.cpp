@@ -847,3 +847,29 @@ int32_t fn_0046C2A0(void* self) {
     return slot(child, -1, -1);
 }
 } // namespace lift_0046C2A0
+
+// [0x0046FB80] sub_0046FB80 (28 bytes)
+namespace lift_0046FB80 {
+// @name sub_0046FB80
+// @summary Auto-lifted identical-shape clone of 0x005AC820 (Unknown::walkLinkUntilFlagSet_005AC820).
+namespace lift_005AC820 {
+// @name Unknown::walkLinkUntilFlagSet_005AC820
+// @class Unknown
+// @summary Follow the +0x08 link chain from arg until a node with byte +0x29 set is reached; returns the node whose +0x08 link leads to it (or arg itself if the first link already matches).
+// @field Unknown +0x08 void* field_0x08 (next link pointer)
+// @field Unknown +0x29 uint8_t field_0x29 (flag byte)
+
+void* fn_0046FB80(void* a) {
+    void* eax = a;
+    void* ecx = lift_field<void*>(eax, 0x08);
+    if (lift_field<uint8_t>(ecx, 0x45) != 0) {
+        return eax;
+    }
+    do {
+        eax = ecx;
+        ecx = lift_field<void*>(eax, 0x08);
+    } while (lift_field<uint8_t>(ecx, 0x45) == 0);
+    return eax;
+}
+} // namespace lift_005AC820
+} // namespace lift_0046FB80
