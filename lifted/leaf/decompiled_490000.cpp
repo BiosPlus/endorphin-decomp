@@ -102,3 +102,37 @@ void fn_004940E0(void* self, uint32_t mask, uint8_t flag) {
     // ret 8 (callee-cleaned stack arguments; handled by the calling convention)
 }
 } // namespace lift_004940E0
+
+// [0x00491870] sub_00491870 (27 bytes)
+namespace lift_00491870 {
+// @name sub_00491870
+// @summary Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).
+namespace lift_005694F0 {
+extern void __cdecl ext_00491730(int a1, int a2, void* self, int a4);
+
+// @name DestroyRangeForward_005694F0
+// @class (none)
+// @summary Forwards two stack arguments plus the incoming ECX value to ext_005693E0 (range destroy helper).
+void fn_00491870(void* self, int edx_unused, int a1, int a2) {
+    // Original: push a2, push ecx, push a2, push a1, call ext_005693E0(a1, a2, self, a2).
+    ext_00491730(a1, a2, self, a2);
+}
+} // namespace lift_005694F0
+} // namespace lift_00491870
+
+// [0x0049F2E0] sub_0049F2E0 (27 bytes)
+namespace lift_0049F2E0 {
+// @name sub_0049F2E0
+// @summary Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).
+namespace lift_005694F0 {
+extern void __cdecl ext_0049ECB0(int a1, int a2, void* self, int a4);
+
+// @name DestroyRangeForward_005694F0
+// @class (none)
+// @summary Forwards two stack arguments plus the incoming ECX value to ext_005693E0 (range destroy helper).
+void fn_0049F2E0(void* self, int edx_unused, int a1, int a2) {
+    // Original: push a2, push ecx, push a2, push a1, call ext_005693E0(a1, a2, self, a2).
+    ext_0049ECB0(a1, a2, self, a2);
+}
+} // namespace lift_005694F0
+} // namespace lift_0049F2E0

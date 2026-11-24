@@ -392,6 +392,13 @@
     "summary": "IAT jump thunk forwarding to MFC80!ord_578.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004064B0": {
+    "name": "sub_004064B0",
+    "class": "(none)",
+    "signature": "void fn_004064B0(void* self, int edx_unused, int a1, int a2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x004067D0": {
     "name": "AddCharacterDialog::vfunc_79",
     "class": "AddCharacterDialog",
@@ -1356,6 +1363,13 @@
     "signature": "extern \"C\" void __fastcall fn_0041DD30(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0x1A0 and tail-calls sub_0041DB60.",
     "lifted_path": "lifted/Properties/auto_tiny.cpp"
+  },
+  "0x0041DE10": {
+    "name": "sub_0041DE10",
+    "class": "(none)",
+    "signature": "void fn_0041DE10(void* self, int edx_unused, int a1, int a2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
   "0x0041DED0": {
     "name": "Properties::GWCPropertiesControlDriver::vfunc_5",
@@ -5605,6 +5619,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005B0D90 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0048CCA0": {
+    "name": "sub_0048CCA0",
+    "class": "(none)",
+    "signature": "void fn_0048CCA0(void* self, int edx_unused, int a1, int a2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048DA40": {
     "name": "NMData::AnimationEventData::vfunc_79",
     "class": "NMData::AnimationEventData",
@@ -5825,6 +5846,13 @@
     "signature": "__stdcall int32_t fn_0048FF80(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00491870": {
+    "name": "sub_00491870",
+    "class": "(none)",
+    "signature": "void fn_00491870(void* self, int edx_unused, int a1, int a2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
   "0x00491A80": {
     "name": "GraphEngine::vfunc_0_off_10",
@@ -6703,6 +6731,13 @@
     "signature": "extern \"C\" void __fastcall fn_0049ED30(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0xC4 and tail-calls sub_0049EB50.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
+  "0x0049F2E0": {
+    "name": "sub_0049F2E0",
+    "class": "(none)",
+    "signature": "void fn_0049F2E0(void* self, int edx_unused, int a1, int a2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
   "0x0049FA70": {
     "name": "NMData::State::vfunc_6",
@@ -14310,6 +14345,13 @@
     "summary": "Returns the argument passed through ext_005530B0, scaled by the float at self+0x20.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x005571E0": {
+    "name": "sub_005571E0",
+    "class": "(none)",
+    "signature": "void fn_005571E0(void* self, int edx_unused, int a1, int a2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00557260": {
     "name": "sub_00557260",
     "signature": "extern \"C\" void __fastcall fn_00557260(void* self)",
@@ -14321,6 +14363,20 @@
     "signature": "extern \"C\" void __fastcall fn_00557270(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0xC and tail-calls sub_004026E0.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
+  },
+  "0x005572D0": {
+    "name": "sub_005572D0",
+    "class": "(none)",
+    "signature": "void fn_005572D0(void* self, int edx_unused, int a1, int a2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
+  "0x00557360": {
+    "name": "sub_00557360",
+    "class": "(none)",
+    "signature": "void fn_00557360(void* self, int edx_unused, int a1, int a2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
   "0x00558A10": {
     "name": "sub_00558A10",
@@ -14340,6 +14396,34 @@
     "signature": "static inline uint32_t load_u32(uint32_t addr)",
     "summary": "Scans a 4-byte-stride pointer range; entries whose std::string at +4 equals a fixed key are routed into this+0x5C (first hit, then moved to +0x16C via ext_00406FC0) or into this+0x16C (later hits).",
     "lifted_path": "lifted/classes/NMFileIO.cpp"
+  },
+  "0x00559620": {
+    "name": "sub_00559620",
+    "class": "(none)",
+    "signature": "void fn_00559620(void* self, int edx_unused, int a1, int a2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
+  "0x00559640": {
+    "name": "sub_00559640",
+    "class": "(none)",
+    "signature": "void fn_00559640(void* self, int edx_unused, int a1, int a2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
+  "0x00559660": {
+    "name": "sub_00559660",
+    "class": "(none)",
+    "signature": "void fn_00559660(void* self, int edx_unused, int a1, int a2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
+  "0x00559C30": {
+    "name": "sub_00559C30",
+    "class": "(none)",
+    "signature": "void fn_00559C30(void* self, int edx_unused, int a1, int a2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
   "0x00559E40": {
     "name": "Acclaim2CharacterIO::vfunc_0",
@@ -14415,6 +14499,13 @@
     "signature": "extern \"C\" void __fastcall fn_0055B770(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0x4 and tail-calls sub_0055B720.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
+  },
+  "0x0055B860": {
+    "name": "sub_0055B860",
+    "class": "(none)",
+    "signature": "void fn_0055B860(void* self, int edx_unused, int a1, int a2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
   "0x0055BBD0": {
     "name": "ExportDialog::vfunc_0",
@@ -19416,6 +19507,12 @@
     "summary": "Calls vtable slot 0x11C on the object at self+0x17C, then returns float index 0 of the result's +0x08 sub-object array.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005E27C0": {
+    "name": "sub_005E27C0",
+    "signature": "float fn_005E27C0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005E2770 (descriptiveName_005E2770).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E2810": {
     "name": "descriptiveName_005E2810",
     "signature": "float fn_005E2810(void* self)",
@@ -19432,6 +19529,24 @@
     "name": "getFloatFromSubobject_005E28B0",
     "signature": "float fn_005E28B0(void* self)",
     "summary": "Fetches the sub-object at this+0x17c, calls its virtual slot 0x124 to obtain a child object, and returns float index 0 from that child's array.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005E2900": {
+    "name": "sub_005E2900",
+    "signature": "float fn_005E2900(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005E2770 (descriptiveName_005E2770).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005E2950": {
+    "name": "sub_005E2950",
+    "signature": "float fn_005E2950(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005E2770 (descriptiveName_005E2770).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005E29A0": {
+    "name": "sub_005E29A0",
+    "signature": "float fn_005E29A0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005E2770 (descriptiveName_005E2770).",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
   "0x005E29F0": {
@@ -22426,6 +22541,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004D3070 (NMData::TransitionEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/classes/IdentityNode.cpp"
   },
+  "0x00621720": {
+    "name": "sub_00621720",
+    "class": "(none)",
+    "signature": "void fn_00621720(void* self, int edx_unused, int a1, int a2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00622320": {
     "name": "NMData::SkeletalCalibrationVariables::vfunc_19",
     "class": "NMData::SkeletalCalibrationVariables",
@@ -22930,6 +23052,13 @@
     "signature": "static inline void* as_ptr(uint32_t v)",
     "summary": "Sums (B - A) vector deltas over an element array (A via objA-\u003evfunc_5(elem), B via objB-\u003evfunc_5(\u0026elem-\u003efield_0x08)), and if the sum's magnitude is \u003e 0 stores sub_0067B7F0's returned float[3] into self+0x30.",
     "lifted_path": "lifted/Sensors/HorizontalAxisSensor.cpp"
+  },
+  "0x0062C0E0": {
+    "name": "sub_0062C0E0",
+    "class": "(none)",
+    "signature": "void fn_0062C0E0(void* self, int edx_unused, int a1, int a2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x0062C5E0": {
     "name": "Sensors::AxisSensor::vfunc_0",
@@ -27215,6 +27344,13 @@
     "summary": "Pops the return address into edi and returns, releasing 4 bytes of stack arguments.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00672E50": {
+    "name": "sub_00672E50",
+    "class": "(none)",
+    "signature": "void fn_00672E50(void* self, int edx_unused, int a1, int a2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00672EB0": {
     "name": "sub_00672EB0",
     "signature": "extern \"C\" void fn_00672EB0(void)",
@@ -27600,6 +27736,13 @@
     "signature": "uint32_t __fastcall fn_0067F5A0(void* self)",
     "summary": "Reads a 32-bit index from the receiver and returns the entry at that index in the global table at 0x00B5CA88.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
+  "0x006813B0": {
+    "name": "sub_006813B0",
+    "class": "(none)",
+    "signature": "void fn_006813B0(void* self, int edx_unused, int a1, int a2)",
+    "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x00681B20": {
     "name": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e, Properties::GetPropertySource\u003e::vfunc_8",

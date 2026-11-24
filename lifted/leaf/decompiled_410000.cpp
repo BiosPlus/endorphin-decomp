@@ -121,3 +121,20 @@ uint32_t fn_0041CBD0(void* self, uint32_t arg) {
     return reinterpret_cast<VFn>(as_ptr(slot))(obj, r);
 }
 } // namespace lift_0041CBD0
+
+// [0x0041DE10] sub_0041DE10 (27 bytes)
+namespace lift_0041DE10 {
+// @name sub_0041DE10
+// @summary Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).
+namespace lift_005694F0 {
+extern void __cdecl ext_0041DD40(int a1, int a2, void* self, int a4);
+
+// @name DestroyRangeForward_005694F0
+// @class (none)
+// @summary Forwards two stack arguments plus the incoming ECX value to ext_005693E0 (range destroy helper).
+void fn_0041DE10(void* self, int edx_unused, int a1, int a2) {
+    // Original: push a2, push ecx, push a2, push a1, call ext_005693E0(a1, a2, self, a2).
+    ext_0041DD40(a1, a2, self, a2);
+}
+} // namespace lift_005694F0
+} // namespace lift_0041DE10

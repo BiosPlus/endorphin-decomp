@@ -86,3 +86,91 @@ float fn_005E28B0(void* self) {
     return ext_005B11E0(static_cast<uint8_t*>(child) + 0x8, 0u);
 }
 } // namespace lift_005E28B0
+
+// [0x005E27C0] sub_005E27C0 (27 bytes)
+namespace lift_005E27C0 {
+// @name sub_005E27C0
+// @summary Auto-lifted identical-shape clone of 0x005E2770 (descriptiveName_005E2770).
+namespace lift_005E2770 {
+// Known callee 0x005B11E0: getFloatAt (Returns a float from a 32-bit float array at offset +0x10 indexed by the argument)
+extern float ext_005B11E0(uint32_t ecx, uint32_t index);
+
+// @name descriptiveName_005E2770
+// @summary Calls vtable slot 0x11C on the object at self+0x17C, then returns float index 0 of the result's +0x08 sub-object array.
+// @field Unknown +0x17C void* field_0x17c
+float fn_005E27C0(void* self) {
+    uintptr_t ecx = lift_field<uintptr_t>(self, 0x17C);
+    uintptr_t vtbl = lift_field<uintptr_t>(reinterpret_cast<void*>(ecx), 1);
+    uintptr_t slot = lift_field<uintptr_t>(reinterpret_cast<void*>(vtbl), 0x11C);
+    using VFn = uintptr_t(__thiscall*)(uintptr_t);
+    uintptr_t eax = reinterpret_cast<VFn>(slot)(ecx);
+    return ext_005B11E0(static_cast<uint32_t>(eax + 0x08), 1);
+}
+} // namespace lift_005E2770
+} // namespace lift_005E27C0
+
+// [0x005E2900] sub_005E2900 (27 bytes)
+namespace lift_005E2900 {
+// @name sub_005E2900
+// @summary Auto-lifted identical-shape clone of 0x005E2770 (descriptiveName_005E2770).
+namespace lift_005E2770 {
+// Known callee 0x005B11E0: getFloatAt (Returns a float from a 32-bit float array at offset +0x10 indexed by the argument)
+extern float ext_005B11E0(uint32_t ecx, uint32_t index);
+
+// @name descriptiveName_005E2770
+// @summary Calls vtable slot 0x11C on the object at self+0x17C, then returns float index 0 of the result's +0x08 sub-object array.
+// @field Unknown +0x17C void* field_0x17c
+float fn_005E2900(void* self) {
+    uintptr_t ecx = lift_field<uintptr_t>(self, 0x17C);
+    uintptr_t vtbl = lift_field<uintptr_t>(reinterpret_cast<void*>(ecx), 1);
+    uintptr_t slot = lift_field<uintptr_t>(reinterpret_cast<void*>(vtbl), 0x124);
+    using VFn = uintptr_t(__thiscall*)(uintptr_t);
+    uintptr_t eax = reinterpret_cast<VFn>(slot)(ecx);
+    return ext_005B11E0(static_cast<uint32_t>(eax + 0x08), 1);
+}
+} // namespace lift_005E2770
+} // namespace lift_005E2900
+
+// [0x005E2950] sub_005E2950 (27 bytes)
+namespace lift_005E2950 {
+// @name sub_005E2950
+// @summary Auto-lifted identical-shape clone of 0x005E2770 (descriptiveName_005E2770).
+namespace lift_005E2770 {
+// Known callee 0x005B11E0: getFloatAt (Returns a float from a 32-bit float array at offset +0x10 indexed by the argument)
+extern float ext_005B11E0(uint32_t ecx, uint32_t index);
+
+// @name descriptiveName_005E2770
+// @summary Calls vtable slot 0x11C on the object at self+0x17C, then returns float index 0 of the result's +0x08 sub-object array.
+// @field Unknown +0x17C void* field_0x17c
+float fn_005E2950(void* self) {
+    uintptr_t ecx = lift_field<uintptr_t>(self, 0x17C);
+    uintptr_t vtbl = lift_field<uintptr_t>(reinterpret_cast<void*>(ecx), 2);
+    uintptr_t slot = lift_field<uintptr_t>(reinterpret_cast<void*>(vtbl), 0x124);
+    using VFn = uintptr_t(__thiscall*)(uintptr_t);
+    uintptr_t eax = reinterpret_cast<VFn>(slot)(ecx);
+    return ext_005B11E0(static_cast<uint32_t>(eax + 0x08), 2);
+}
+} // namespace lift_005E2770
+} // namespace lift_005E2950
+
+// [0x005E29A0] sub_005E29A0 (27 bytes)
+namespace lift_005E29A0 {
+// @name sub_005E29A0
+// @summary Auto-lifted identical-shape clone of 0x005E2770 (descriptiveName_005E2770).
+namespace lift_005E2770 {
+// Known callee 0x005B11E0: getFloatAt (Returns a float from a 32-bit float array at offset +0x10 indexed by the argument)
+extern float ext_005B11E0(uint32_t ecx, uint32_t index);
+
+// @name descriptiveName_005E2770
+// @summary Calls vtable slot 0x11C on the object at self+0x17C, then returns float index 0 of the result's +0x08 sub-object array.
+// @field Unknown +0x17C void* field_0x17c
+float fn_005E29A0(void* self) {
+    uintptr_t ecx = lift_field<uintptr_t>(self, 0x17C);
+    uintptr_t vtbl = lift_field<uintptr_t>(reinterpret_cast<void*>(ecx), 3);
+    uintptr_t slot = lift_field<uintptr_t>(reinterpret_cast<void*>(vtbl), 0x124);
+    using VFn = uintptr_t(__thiscall*)(uintptr_t);
+    uintptr_t eax = reinterpret_cast<VFn>(slot)(ecx);
+    return ext_005B11E0(static_cast<uint32_t>(eax + 0x08), 3);
+}
+} // namespace lift_005E2770
+} // namespace lift_005E29A0

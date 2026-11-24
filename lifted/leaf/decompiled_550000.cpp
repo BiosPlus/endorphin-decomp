@@ -47,3 +47,139 @@ float fn_00554CE0(void* self, float x) {
     return ext_005530B0(x) * scale;
 }
 } // namespace lift_00554CE0
+
+// [0x005571E0] sub_005571E0 (27 bytes)
+namespace lift_005571E0 {
+// @name sub_005571E0
+// @summary Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).
+namespace lift_005694F0 {
+extern void __cdecl ext_005566D0(int a1, int a2, void* self, int a4);
+
+// @name DestroyRangeForward_005694F0
+// @class (none)
+// @summary Forwards two stack arguments plus the incoming ECX value to ext_005693E0 (range destroy helper).
+void fn_005571E0(void* self, int edx_unused, int a1, int a2) {
+    // Original: push a2, push ecx, push a2, push a1, call ext_005693E0(a1, a2, self, a2).
+    ext_005566D0(a1, a2, self, a2);
+}
+} // namespace lift_005694F0
+} // namespace lift_005571E0
+
+// [0x005572D0] sub_005572D0 (27 bytes)
+namespace lift_005572D0 {
+// @name sub_005572D0
+// @summary Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).
+namespace lift_005694F0 {
+extern void __cdecl ext_00556740(int a1, int a2, void* self, int a4);
+
+// @name DestroyRangeForward_005694F0
+// @class (none)
+// @summary Forwards two stack arguments plus the incoming ECX value to ext_005693E0 (range destroy helper).
+void fn_005572D0(void* self, int edx_unused, int a1, int a2) {
+    // Original: push a2, push ecx, push a2, push a1, call ext_005693E0(a1, a2, self, a2).
+    ext_00556740(a1, a2, self, a2);
+}
+} // namespace lift_005694F0
+} // namespace lift_005572D0
+
+// [0x00557360] sub_00557360 (27 bytes)
+namespace lift_00557360 {
+// @name sub_00557360
+// @summary Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).
+namespace lift_005694F0 {
+extern void __cdecl ext_005567D0(int a1, int a2, void* self, int a4);
+
+// @name DestroyRangeForward_005694F0
+// @class (none)
+// @summary Forwards two stack arguments plus the incoming ECX value to ext_005693E0 (range destroy helper).
+void fn_00557360(void* self, int edx_unused, int a1, int a2) {
+    // Original: push a2, push ecx, push a2, push a1, call ext_005693E0(a1, a2, self, a2).
+    ext_005567D0(a1, a2, self, a2);
+}
+} // namespace lift_005694F0
+} // namespace lift_00557360
+
+// [0x00559620] sub_00559620 (27 bytes)
+namespace lift_00559620 {
+// @name sub_00559620
+// @summary Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).
+namespace lift_005694F0 {
+extern void __cdecl ext_00558F20(int a1, int a2, void* self, int a4);
+
+// @name DestroyRangeForward_005694F0
+// @class (none)
+// @summary Forwards two stack arguments plus the incoming ECX value to ext_005693E0 (range destroy helper).
+void fn_00559620(void* self, int edx_unused, int a1, int a2) {
+    // Original: push a2, push ecx, push a2, push a1, call ext_005693E0(a1, a2, self, a2).
+    ext_00558F20(a1, a2, self, a2);
+}
+} // namespace lift_005694F0
+} // namespace lift_00559620
+
+// [0x00559640] sub_00559640 (27 bytes)
+namespace lift_00559640 {
+// @name sub_00559640
+// @summary Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).
+namespace lift_005694F0 {
+extern void __cdecl ext_00558F80(int a1, int a2, void* self, int a4);
+
+// @name DestroyRangeForward_005694F0
+// @class (none)
+// @summary Forwards two stack arguments plus the incoming ECX value to ext_005693E0 (range destroy helper).
+void fn_00559640(void* self, int edx_unused, int a1, int a2) {
+    // Original: push a2, push ecx, push a2, push a1, call ext_005693E0(a1, a2, self, a2).
+    ext_00558F80(a1, a2, self, a2);
+}
+} // namespace lift_005694F0
+} // namespace lift_00559640
+
+// [0x00559660] sub_00559660 (27 bytes)
+namespace lift_00559660 {
+// @name sub_00559660
+// @summary Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).
+namespace lift_005694F0 {
+extern void __cdecl ext_00558FE0(int a1, int a2, void* self, int a4);
+
+// @name DestroyRangeForward_005694F0
+// @class (none)
+// @summary Forwards two stack arguments plus the incoming ECX value to ext_005693E0 (range destroy helper).
+void fn_00559660(void* self, int edx_unused, int a1, int a2) {
+    // Original: push a2, push ecx, push a2, push a1, call ext_005693E0(a1, a2, self, a2).
+    ext_00558FE0(a1, a2, self, a2);
+}
+} // namespace lift_005694F0
+} // namespace lift_00559660
+
+// [0x00559C30] sub_00559C30 (27 bytes)
+namespace lift_00559C30 {
+// @name sub_00559C30
+// @summary Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).
+namespace lift_005694F0 {
+extern void __cdecl ext_00559840(int a1, int a2, void* self, int a4);
+
+// @name DestroyRangeForward_005694F0
+// @class (none)
+// @summary Forwards two stack arguments plus the incoming ECX value to ext_005693E0 (range destroy helper).
+void fn_00559C30(void* self, int edx_unused, int a1, int a2) {
+    // Original: push a2, push ecx, push a2, push a1, call ext_005693E0(a1, a2, self, a2).
+    ext_00559840(a1, a2, self, a2);
+}
+} // namespace lift_005694F0
+} // namespace lift_00559C30
+
+// [0x0055B860] sub_0055B860 (27 bytes)
+namespace lift_0055B860 {
+// @name sub_0055B860
+// @summary Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).
+namespace lift_005694F0 {
+extern void __cdecl ext_0055B780(int a1, int a2, void* self, int a4);
+
+// @name DestroyRangeForward_005694F0
+// @class (none)
+// @summary Forwards two stack arguments plus the incoming ECX value to ext_005693E0 (range destroy helper).
+void fn_0055B860(void* self, int edx_unused, int a1, int a2) {
+    // Original: push a2, push ecx, push a2, push a1, call ext_005693E0(a1, a2, self, a2).
+    ext_0055B780(a1, a2, self, a2);
+}
+} // namespace lift_005694F0
+} // namespace lift_0055B860

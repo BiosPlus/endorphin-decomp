@@ -1,0 +1,14 @@
+{
+  "va": "0x0055B860",
+  "size": 27,
+  "orig_symbol": "sub_0055B860",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "sub_0055B860",
+  "class": "(none)",
+  "signature": "void fn_0055B860(void* self, int edx_unused, int a1, int a2)",
+  "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:05:12Z"
+}

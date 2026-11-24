@@ -19,3 +19,20 @@ void* fn_006829E0(void* self) {
     return ext_0066B080(index);
 }
 } // namespace lift_006829E0
+
+// [0x006813B0] sub_006813B0 (27 bytes)
+namespace lift_006813B0 {
+// @name sub_006813B0
+// @summary Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).
+namespace lift_005694F0 {
+extern void __cdecl ext_006812A0(int a1, int a2, void* self, int a4);
+
+// @name DestroyRangeForward_005694F0
+// @class (none)
+// @summary Forwards two stack arguments plus the incoming ECX value to ext_005693E0 (range destroy helper).
+void fn_006813B0(void* self, int edx_unused, int a1, int a2) {
+    // Original: push a2, push ecx, push a2, push a1, call ext_005693E0(a1, a2, self, a2).
+    ext_006812A0(a1, a2, self, a2);
+}
+} // namespace lift_005694F0
+} // namespace lift_006813B0

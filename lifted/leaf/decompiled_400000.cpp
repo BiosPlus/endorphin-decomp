@@ -109,3 +109,20 @@ float fn_00407870(float x) {
     return static_cast<float>(std::floor(static_cast<double>(x)));
 }
 } // namespace lift_00407870
+
+// [0x004064B0] sub_004064B0 (27 bytes)
+namespace lift_004064B0 {
+// @name sub_004064B0
+// @summary Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).
+namespace lift_005694F0 {
+extern void __cdecl ext_00406380(int a1, int a2, void* self, int a4);
+
+// @name DestroyRangeForward_005694F0
+// @class (none)
+// @summary Forwards two stack arguments plus the incoming ECX value to ext_005693E0 (range destroy helper).
+void fn_004064B0(void* self, int edx_unused, int a1, int a2) {
+    // Original: push a2, push ecx, push a2, push a1, call ext_005693E0(a1, a2, self, a2).
+    ext_00406380(a1, a2, self, a2);
+}
+} // namespace lift_005694F0
+} // namespace lift_004064B0

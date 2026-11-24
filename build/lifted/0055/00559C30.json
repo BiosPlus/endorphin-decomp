@@ -1,0 +1,14 @@
+{
+  "va": "0x00559C30",
+  "size": 27,
+  "orig_symbol": "sub_00559C30",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "sub_00559C30",
+  "class": "(none)",
+  "signature": "void fn_00559C30(void* self, int edx_unused, int a1, int a2)",
+  "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:05:12Z"
+}
