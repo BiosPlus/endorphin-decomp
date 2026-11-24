@@ -1,0 +1,28 @@
+{
+  "va": "0x006F69C0",
+  "size": 48,
+  "orig_symbol": "sub_006F69C0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::SetIntAndStoreDouble",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __fastcall fn_006F69C0(void* self, int32_t value)",
+  "summary": "Stores the int argument at self+0x2A78, then forwards it as a double (index 0) to SetDoubleElement16 on the object at self+0x6958 after a helper lookup.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x2A78",
+      "type": "int32_t",
+      "name": "intField_2a78"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x6958",
+      "type": "void*",
+      "name": "ptr_6958"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:20:56Z"
+}

@@ -41488,6 +41488,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006F6B40 (GetRigidNameStdcall).",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006F69C0": {
+    "name": "Unknown::SetIntAndStoreDouble",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_006F69C0(void* self, int32_t value)",
+    "summary": "Stores the int argument at self+0x2A78, then forwards it as a double (index 0) to SetDoubleElement16 on the object at self+0x6958 after a helper lookup.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F6B40": {
     "name": "GetRigidNameStdcall",
     "signature": "const char* fn_006F6B40(DWORD selector)",

@@ -863,3 +863,25 @@ void fn_006F2260(void* self, uint32_t arg1, void* arg2) {
     ext_00711D40(sub, arg1, arg2, 0x006F8550u, 0x006F83A0u);
 }
 } // namespace lift_006F2260
+
+// [0x006F69C0]
+namespace lift_006F69C0 {
+// @name Unknown::SetIntAndStoreDouble
+// @class Unknown
+// @summary Stores the int argument at self+0x2A78, then forwards it as a double (index 0) to SetDoubleElement16 on the object at self+0x6958 after a helper lookup.
+// @field Unknown +0x2A78 int32_t intField_2a78
+// @field Unknown +0x6958 void* ptr_6958
+
+extern int32_t __fastcall ext_006F76F0(void* self, int32_t arg);
+extern void __fastcall ext_0077FF90(void* self, int32_t index, double value);
+
+extern void __fastcall fn_006F69C0(void* self, int32_t value) {
+    auto* obj = static_cast<uint8_t*>(self);
+    *reinterpret_cast<int32_t*>(obj + 0x2A78) = value;
+
+    void* inner = *reinterpret_cast<void**>(obj + 0x6958);
+    int32_t result = ext_006F76F0(inner, 0xAC);
+
+    ext_0077FF90(reinterpret_cast<void*>(static_cast<intptr_t>(result)), 0, static_cast<double>(value));
+}
+} // namespace lift_006F69C0
