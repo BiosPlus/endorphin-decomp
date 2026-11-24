@@ -1,0 +1,21 @@
+{
+  "va": "0x0044B1F0",
+  "size": 37,
+  "orig_symbol": "sub_0044B1F0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "ForwardToSubobjectSlots",
+  "signature": "void fn_0044B1F0(void* self)",
+  "summary": "If this-\u003efield_0x64 is non-null, call its vtable slot 0x24 with arg 1, then tail-jump to its vtable slot 0x154; otherwise return.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:01:20Z"
+}

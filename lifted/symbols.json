@@ -3232,6 +3232,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044B1F0": {
+    "name": "ForwardToSubobjectSlots",
+    "signature": "void fn_0044B1F0(void* self)",
+    "summary": "If this-\u003efield_0x64 is non-null, call its vtable slot 0x24 with arg 1, then tail-jump to its vtable slot 0x154; otherwise return.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044B5A0": {
     "name": "RenderView::vfunc_26",
     "class": "RenderView",
@@ -45183,6 +45189,12 @@
     "signature": "float* sub_007C9CC0(float* dst, float val)",
     "summary": "Stores a 32-bit float value to the destination pointer and returns the pointer",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C9CD0": {
+    "name": "setAbsField04",
+    "signature": "void sub_007C9CD0(void* dst, float val)",
+    "summary": "Stores the absolute value of a float argument into offset +0x04 of the target struct.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007C9DD0": {
     "name": "addOffset0x30",

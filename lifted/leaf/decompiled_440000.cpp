@@ -841,3 +841,31 @@ void fn_00449D00(void* self) {
     ext_006A5F6E();
 }
 } // namespace lift_00449D00
+
+// [0x0044B1F0] sub_0044B1F0 (37 bytes)
+namespace lift_0044B1F0 {
+// @name ForwardToSubobjectSlots
+// @summary If this->field_0x64 is non-null, call its vtable slot 0x24 with arg 1, then tail-jump to its vtable slot 0x154; otherwise return.
+// @field Unknown +0x64 void* field_0x64
+
+namespace {
+typedef void (*VirtualFn1)(void* self, int arg);
+typedef void (*VirtualFn0)(void* self);
+} // namespace
+
+// Original is __thiscall (this in ECX); portable form takes `self` directly.
+void fn_0044B1F0(void* self) {
+    void* sub = lift_field<void*>(self, 0x64);
+    if (sub == nullptr) {
+        return;
+    }
+
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    reinterpret_cast<VirtualFn1>(lift_field<void*>(vtbl, 0x24))(sub, 1);
+
+    // Re-read the field: the call above may have changed it.
+    sub = lift_field<void*>(self, 0x64);
+    vtbl = *reinterpret_cast<void***>(sub);
+    reinterpret_cast<VirtualFn0>(lift_field<void*>(vtbl, 0x154))(sub);
+}
+} // namespace lift_0044B1F0
