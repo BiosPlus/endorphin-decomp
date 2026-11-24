@@ -418,3 +418,31 @@ void sub_006BEC70_init_globals() {
     mem_00B5D45C = 0u;
 }
 } // namespace lift_006BEC70
+
+// [0x006B7D90] sub_006B7D90 (42 bytes)
+namespace lift_006B7D90 {
+// Known callee 0x006A5F4A: thunk_MFC80_ord_3761 (IAT jump thunk forwarding to MFC80!ord_3761.)
+// Takes its object in ecx and one stack argument.
+extern void ext_006A5F4A(void* ecx, void* arg);
+
+// @name CObjectBase::UpdateSubobjects
+// @class CObjectBase
+// @summary Calls the thunk on the embedded subobject at +0x88 (passing +0x74 as the argument), then invokes vtable slot 0 of the object at +0x1A4 if it is set.
+// @field CObjectBase +0x74 void* field_0x74
+// @field CObjectBase +0x88 void* field_0x88
+// @field CObjectBase +0x1A4 void* field_0x1A4
+void fn_006B7D90(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    void* arg = base + 0x74;
+    void* subobj = base + 0x88;
+    ext_006A5F4A(subobj, arg);
+
+    void* obj = lift_field<void*>(self, 0x1A4);
+    if (obj != nullptr) {
+        void** vtbl = *static_cast<void***>(obj);
+        auto slot0 = reinterpret_cast<void (*)(void*, void*)>(vtbl[0]);
+        slot0(obj, self);
+    }
+}
+} // namespace lift_006B7D90

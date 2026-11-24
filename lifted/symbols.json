@@ -3578,6 +3578,12 @@
     "summary": "Copies DWORDs from [first, last) to out (skipping stores when out is null); returns out + count.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044C4D0": {
+    "name": "DWORD_RangeCopy_thiscall",
+    "signature": "DWORD* __thiscall fn_0044C4D0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044C910": {
     "name": "sub_0044C910",
     "signature": "void fn_0044C910()",
@@ -36693,6 +36699,13 @@
     "signature": "void fn_006B7D60(void* self)",
     "summary": "Calls MFC80 ord_781 on the member at +0x74 with \u0026+0x78, then forwards self to the virtual slot 0 of the object at +0x1a4 if set.",
     "lifted_path": "lifted/classes/NMCMultilineEditDlg.cpp"
+  },
+  "0x006B7D90": {
+    "name": "CObjectBase::UpdateSubobjects",
+    "class": "CObjectBase",
+    "signature": "void fn_006B7D90(void* self)",
+    "summary": "Calls the thunk on the embedded subobject at +0x88 (passing +0x74 as the argument), then invokes vtable slot 0 of the object at +0x1A4 if it is set.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
   "0x006B7DC0": {
     "name": "sub_006B7DC0",

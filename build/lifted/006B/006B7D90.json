@@ -1,0 +1,34 @@
+{
+  "va": "0x006B7D90",
+  "size": 42,
+  "orig_symbol": "sub_006B7D90",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "CObjectBase::UpdateSubobjects",
+  "class": "CObjectBase",
+  "signature": "void fn_006B7D90(void* self)",
+  "summary": "Calls the thunk on the embedded subobject at +0x88 (passing +0x74 as the argument), then invokes vtable slot 0 of the object at +0x1A4 if it is set.",
+  "fields": [
+    {
+      "class": "CObjectBase",
+      "offset": "+0x74",
+      "type": "void*",
+      "name": "field_0x74"
+    },
+    {
+      "class": "CObjectBase",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "CObjectBase",
+      "offset": "+0x1A4",
+      "type": "void*",
+      "name": "field_0x1A4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:59:34Z"
+}
