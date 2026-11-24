@@ -9084,6 +9084,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004A2E70": {
+    "name": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView, int, getDrawDepth, int, setDrawDepth\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView, int, getDrawDepth, int, setDrawDepth\u003e",
+    "signature": "void ExprParser_ReadWriteMethodType_FSMEditView_DrawDepth_vfunc_40(void* out)",
+    "summary": "One-time initialization of the static DrawDepth read/write method-type instance; stores its address into the out-pointer's +0x04 slot.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004A2EF0": {
     "name": "ReadMethodType_FSMEditView_getDrawDepth::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, getDrawDepth, 0\u003e",

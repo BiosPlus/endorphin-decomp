@@ -8910,3 +8910,28 @@ void fn_004A34B0(void* self) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00ADE0F4));
 }
 } // namespace lift_004A34B0
+
+// [0x004A2E70]
+namespace lift_004A2E70 {
+// @name ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, getDrawDepth, int, setDrawDepth>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, getDrawDepth, int, setDrawDepth>
+// @summary One-time initialization of the static DrawDepth read/write method-type instance; stores its address into the out-pointer's +0x04 slot.
+// @field ValuePtrType +0x04 uint32_t field_0x04
+
+// One-time initialization guard (bit 0 is the "constructed" flag).
+extern uint32_t mem_00ADE0E8;
+// Storage of the static method-type object; first dword is its vtable pointer.
+extern uint32_t mem_00ADE0E4;
+// Base-class constructor: this in ecx, one stack argument (always 0 here).
+extern void ext_0067A670(void* self, int32_t arg);
+
+void ExprParser_ReadWriteMethodType_FSMEditView_DrawDepth_vfunc_40(void* out)
+{
+    if ((mem_00ADE0E8 & 1u) == 0) {
+        mem_00ADE0E8 |= 1u;
+        ext_0067A670(reinterpret_cast<void*>(&mem_00ADE0E4), 0);
+        mem_00ADE0E4 = 0x00940B94u;
+    }
+    lift_field<uint32_t>(out, 0x4) = 0x00ADE0E4u;
+}
+} // namespace lift_004A2E70
