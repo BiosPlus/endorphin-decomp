@@ -459,3 +459,28 @@ uint32_t fn_0046E780(void* self, uint32_t a1, uint32_t a2, uint32_t /*a3 (unused
     return a1;                                              // mov eax, esi (esi == a1)
 }
 } // namespace lift_0046E780
+
+// [0x00462E50] sub_00462E50 (37 bytes)
+namespace lift_00462E50 {
+// Known callee 0x00401940: Dispatch::ForwardToField4 (forwards (this, arg) to the pointer at this+0x04).
+extern DWORD ext_00401940(void* self, DWORD arg);
+
+// Import slot 0x00924FF0 -> MSVCP80 std::basic_string<char>::c_str (thiscall; string object in ECX).
+extern const char* (*mem_00924FF0)(void* self);
+
+// @name Dispatch::forwardStringIfInnerCountOne
+// @class Dispatch
+// @summary If this->+0x04 object's +0x04 word equals 1, pass the c_str() of the std::string argument to ForwardToField4 on this->+0x0C; otherwise return (word - 1).
+// @field Dispatch +0x04 void* field_0x04
+// @field Dispatch +0x0C void* field_0x0C
+DWORD fn_00462E50(void* self, void* str) {
+    void* inner = lift_field<void*>(self, 0x04);
+    DWORD v = lift_field<DWORD>(inner, 0x04) - 1;
+    if (v != 0) {
+        return v;
+    }
+    const char* s = mem_00924FF0(str);
+    void* target = lift_field<void*>(self, 0x0C);
+    return ext_00401940(target, static_cast<DWORD>(reinterpret_cast<uintptr_t>(s)));
+}
+} // namespace lift_00462E50

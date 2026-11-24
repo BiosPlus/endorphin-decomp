@@ -4524,6 +4524,13 @@
     "summary": "Clears the dword at offset 0x4 of the object pointed to by field_0x04.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00462E50": {
+    "name": "Dispatch::forwardStringIfInnerCountOne",
+    "class": "Dispatch",
+    "signature": "DWORD fn_00462E50(void* self, void* str)",
+    "summary": "If this-\u003e+0x04 object's +0x04 word equals 1, pass the c_str() of the std::string argument to ForwardToField4 on this-\u003e+0x0C; otherwise return (word - 1).",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00462F40": {
     "name": "VersionControlObserver::vfunc_0",
     "class": "VersionControlObserver",

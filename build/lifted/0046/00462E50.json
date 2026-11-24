@@ -1,0 +1,28 @@
+{
+  "va": "0x00462E50",
+  "size": 37,
+  "orig_symbol": "sub_00462E50",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "Dispatch::forwardStringIfInnerCountOne",
+  "class": "Dispatch",
+  "signature": "DWORD fn_00462E50(void* self, void* str)",
+  "summary": "If this-\u003e+0x04 object's +0x04 word equals 1, pass the c_str() of the std::string argument to ForwardToField4 on this-\u003e+0x0C; otherwise return (word - 1).",
+  "fields": [
+    {
+      "class": "Dispatch",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Dispatch",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:02:05Z"
+}
