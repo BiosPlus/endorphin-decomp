@@ -9776,3 +9776,28 @@ void __stdcall ReadWriteMethodType_TransitionEventData_vfunc_40(void* obj) {
     lift_field<DWORD>(obj, 4) = 0x00AE559Cu;
 }
 } // namespace lift_004D1710
+
+// [0x004CEF40] ExprParser::ReadWriteMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, float, {public: void __thiscall NMData::IncarnationEventData::setMomentumScaleFactor(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_004CEF40 {
+extern void ext_0067A670();
+extern uint32_t mem_00AE4B80;
+extern uint32_t mem_00AE4B7C;
+
+// @name ReadWriteMethodType<IncarnationEventData, float>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, float, {public: void __thiscall NMData::IncarnationEventData::setMomentumScaleFactor(float), 0}>
+// @summary Lazily initializes the shared static object at mem_00AE4B7C (once, guarded by bit 0 of mem_00AE4B80) and stores its address into the caller's object at +0x04.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+
+void fn_004CEF40(void* self) {
+    // One-time initialization guarded by bit 0 of mem_00AE4B80.
+    if ((mem_00AE4B80 & 1u) == 0) {
+        mem_00AE4B80 |= 1u;
+        ext_0067A670();                       // constructs the static object at mem_00AE4B7C
+        mem_00AE4B7C = 0x0094765Cu;          // vtable pointer of the static object
+    }
+
+    // Publish the address of the static object into self->field_0x04.
+    uint32_t* slot = reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x04);
+    *slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE4B7C));
+}
+} // namespace lift_004CEF40

@@ -12070,6 +12070,13 @@
     "summary": "Evaluates an expression to a float and sets NMData::IncarnationEventData::momentumScaleFactor, throwing if target is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004CEF40": {
+    "name": "ReadWriteMethodType\u003cIncarnationEventData, float\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, float, {public: void __thiscall NMData::IncarnationEventData::setMomentumScaleFactor(float), 0}\u003e",
+    "signature": "void fn_004CEF40(void* self)",
+    "summary": "Lazily initializes the shared static object at mem_00AE4B7C (once, guarded by bit 0 of mem_00AE4B80) and stores its address into the caller's object at +0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004CEFC0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e",
