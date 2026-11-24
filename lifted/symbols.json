@@ -27148,10 +27148,10 @@
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x00661860": {
-    "name": "sub_0066A760",
+    "name": "Unknown::CallSubobjectVirtualSlot1",
     "class": "Unknown",
-    "signature": "void __thiscall fn_0066A760(void* self)",
-    "summary": "Auto-lifted identical-shape clone of 0x0046FAC0 (sub_0046FAC0).",
+    "signature": "void* fn_00661860(void* self, void* arg1, void* arg2)",
+    "summary": "Forwards (arg1, this+4, arg2) to virtual slot 1 of the object pointed to by this+0, then returns arg1.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x00661880": {

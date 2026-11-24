@@ -80,7 +80,7 @@ void* fn_00661860(void* self, void* arg1, void* arg2) {
     // mov ecx, [this]         -> subobject pointer
     void* subobject = *reinterpret_cast<void**>(base + 0x00);
     // mov edx, [subobject]    -> vtable of subobject
-    auto* vtable = *reinterpret_cast<uint8_t**>(subobject);
+    auto* vtable = *reinterpret_cast<uint8_t**>(static_cast<uint8_t*>(subobject));
     // mov eax, [vtable + 4]   -> slot 1
     auto slot1 = *reinterpret_cast<VirtualSlot1Fn*>(vtable + 0x04);
     // push arg2; push (this + 4); push arg1; call slot1
