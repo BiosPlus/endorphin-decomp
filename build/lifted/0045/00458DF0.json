@@ -4,10 +4,79 @@
   "orig_symbol": "sub_00458DF0",
   "src_path": "src/leaf/tiny_450000.cpp",
   "lifted_path": "lifted/leaf/tiny_450000.cpp",
-  "name": "descriptiveName: initObjectWithVtableAndZeroedTail",
-  "signature": "void fn_00458DF0(void* self)",
-  "summary": "Stores a vtable pointer at +0x00, a global value at +0x14, and zeroes +0x18 and +0x1c.",
+  "name": "sub_004543E0",
+  "class": "Unknown",
+  "signature": "extern \"C\" const int* fn_004543E0()",
+  "summary": "Returns the address of the read-only constant mem_00935E44 (initialised to 0x006A5FCE).",
+  "fields": [
+    {
+      "class": "Class",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "HWND",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "hwnd"
+    },
+    {
+      "class": "std::string",
+      "offset": "+0x0",
+      "type": "std::string (whole object, accessed via",
+      "name": "std::string::assign)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "ownerHwnd"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T11:55:25Z"
+  "lifted_at": "2026-11-24T11:55:32Z"
 }

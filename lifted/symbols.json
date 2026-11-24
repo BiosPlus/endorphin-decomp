@@ -3381,9 +3381,10 @@
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x00458DF0": {
-    "name": "descriptiveName: initObjectWithVtableAndZeroedTail",
-    "signature": "void fn_00458DF0(void* self)",
-    "summary": "Stores a vtable pointer at +0x00, a global value at +0x14, and zeroes +0x18 and +0x1c.",
+    "name": "sub_004543E0",
+    "class": "Unknown",
+    "signature": "extern \"C\" const int* fn_004543E0()",
+    "summary": "Returns the address of the read-only constant mem_00935E44 (initialised to 0x006A5FCE).",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
   "0x00458E10": {
