@@ -1,0 +1,13 @@
+{
+  "va": "0x0085D860",
+  "size": 48,
+  "orig_symbol": "sub_0085D860",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "rotateDwordLeftByCount",
+  "signature": "void fn_0085D860(uint32_t* dst, uint16_t count)",
+  "summary": "Rotates the DWORD at *dst left by 1 bit, count times (count == 0 leaves it unchanged).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:28:50Z"
+}

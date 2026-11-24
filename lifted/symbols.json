@@ -50746,6 +50746,12 @@
     "summary": "No-op: \"add eax, 0\" (eax unchanged; only flags are touched)",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085D860": {
+    "name": "rotateDwordLeftByCount",
+    "signature": "void fn_0085D860(uint32_t* dst, uint16_t count)",
+    "summary": "Rotates the DWORD at *dst left by 1 bit, count times (count == 0 leaves it unchanged).",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085DA40": {
     "name": "NoOpReturn_0085DA40",
     "signature": "void fn_0085DA40(void* self)",

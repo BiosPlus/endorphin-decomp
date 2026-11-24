@@ -482,3 +482,17 @@ char* fn_0085E9E0(char* dst, const char* src) {
     return dst;
 }
 } // namespace lift_0085E9E0
+
+// [0x0085D860] sub_0085D860 (48 bytes)
+namespace lift_0085D860 {
+// @name rotateDwordLeftByCount
+// @summary Rotates the DWORD at *dst left by 1 bit, count times (count == 0 leaves it unchanged).
+void fn_0085D860(uint32_t* dst, uint16_t count) {
+    uint32_t value;
+    std::memcpy(&value, dst, sizeof(value));
+    for (uint16_t i = 0; i < count; ++i) {
+        value = std::rotl(value, 1);
+    }
+    std::memcpy(dst, &value, sizeof(value));
+}
+} // namespace lift_0085D860
