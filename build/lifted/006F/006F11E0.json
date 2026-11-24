@@ -1,0 +1,22 @@
+{
+  "va": "0x006F11E0",
+  "size": 44,
+  "orig_symbol": "sub_006F11E0",
+  "src_path": "src/clones/auto_clones_6F0000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_6F0000.cpp",
+  "name": "Unknown::configureChildAndEnable",
+  "class": "Unknown",
+  "signature": "void __thiscall sub_006F11E0(void* self, uint32_t arg1, void* arg2)",
+  "summary": "Configures the subobject at +0x4620 with args, callback 0x006F7F60, and 0, then calls sub_00711A70(1).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4620",
+      "type": "uint8_t[]",
+      "name": "field_0x4620"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:15:44Z"
+}

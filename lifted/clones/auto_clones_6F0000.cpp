@@ -1736,3 +1736,21 @@ void fn_006F2450(void* self, uint32_t arg1, uint32_t arg2) {
 }
 } // namespace lift_006F00E0
 } // namespace lift_006F2450
+
+// [0x006F11E0]
+namespace lift_006F11E0 {
+// @name Unknown::configureChildAndEnable
+// @class Unknown
+// @summary Configures the subobject at +0x4620 with args, callback 0x006F7F60, and 0, then calls sub_00711A70(1).
+// @field Unknown +0x4620 uint8_t[] field_0x4620
+
+
+extern void __thiscall ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+extern void __thiscall ext_00711A70(void* self, uint32_t arg1);
+
+void __thiscall sub_006F11E0(void* self, uint32_t arg1, void* arg2) {
+    void* child = static_cast<uint8_t*>(self) + 0x4620;
+    ext_00711D40(child, arg1, arg2, 0x006F7F60u, 0u);
+    ext_00711A70(child, 1u);
+}
+} // namespace lift_006F11E0
