@@ -1,0 +1,13 @@
+{
+  "va": "0x00698B90",
+  "size": 41,
+  "orig_symbol": "sub_00698B90",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "CopyBytesRangeStdcallAdapter",
+  "signature": "extern \"C\" uint8_t* __stdcall fn_00698B90(uint32_t /*arg0*/, const uint8_t* first, uint32_t /*arg2*/, const uint8_t* last, uint8_t* dst)",
+  "summary": "__stdcall adapter that forwards arg1, arg3, and arg4 to CopyBytesRange.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:02:29Z"
+}

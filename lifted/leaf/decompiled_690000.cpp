@@ -179,3 +179,15 @@ DWORD* __thiscall fn_0069E850(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_0069E850
+
+// [0x00698B90]
+namespace lift_00698B90 {
+// @name CopyBytesRangeStdcallAdapter
+// @summary __stdcall adapter that forwards arg1, arg3, and arg4 to CopyBytesRange.
+
+extern uint8_t* ext_006989B0(const uint8_t* first, const uint8_t* last, uint8_t* dst);
+
+extern uint8_t* __stdcall fn_00698B90(uint32_t /*arg0*/, const uint8_t* first, uint32_t /*arg2*/, const uint8_t* last, uint8_t* dst) {
+    return ext_006989B0(first, last, dst);
+}
+} // namespace lift_00698B90
