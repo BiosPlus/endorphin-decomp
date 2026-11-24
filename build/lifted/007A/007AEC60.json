@@ -1,0 +1,34 @@
+{
+  "va": "0x007AEC60",
+  "size": 16,
+  "orig_symbol": "sub_007AEC60",
+  "src_path": "src/leaf/tiny_7A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7A0000.cpp",
+  "name": "sub_007AEC60",
+  "class": "(unknown)",
+  "signature": "void sub_007AEC60(uint8_t* self)",
+  "summary": "Zeroes three dword fields (+0x58, +0x5c, +0x60) of the object passed in ECX.",
+  "fields": [
+    {
+      "class": "(unknown)",
+      "offset": "+0x58",
+      "type": "uint32_t",
+      "name": "field_0x58"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:46:31Z"
+}

@@ -37485,6 +37485,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007AEBE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AEC60": {
+    "name": "sub_007AEC60",
+    "class": "(unknown)",
+    "signature": "void sub_007AEC60(uint8_t* self)",
+    "summary": "Zeroes three dword fields (+0x58, +0x5c, +0x60) of the object passed in ECX.",
+    "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
+  },
   "0x007AEEB0": {
     "name": "Unknown::getField60IfField58",
     "class": "Unknown",

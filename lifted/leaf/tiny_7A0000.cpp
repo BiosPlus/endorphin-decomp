@@ -372,3 +372,20 @@ extern int32_t __fastcall fn_007AE130(void) {
     return fn_006E7460(static_cast<void*>(mem_00B61758));
 }
 } // namespace lift_007AE130
+
+// [0x007AEC60]
+namespace lift_007AEC60 {
+// @name sub_007AEC60
+// @class (unknown)
+// @summary Zeroes three dword fields (+0x58, +0x5c, +0x60) of the object passed in ECX.
+// @field (unknown) +0x58 uint32_t field_0x58
+// @field (unknown) +0x5c uint32_t field_0x5c
+// @field (unknown) +0x60 uint32_t field_0x60
+
+void sub_007AEC60(uint8_t* self) {
+    auto* fields = reinterpret_cast<uint32_t*>(self);
+    fields[0x58 / 4] = 0;
+    fields[0x5c / 4] = 0;
+    fields[0x60 / 4] = 0;
+}
+} // namespace lift_007AEC60
