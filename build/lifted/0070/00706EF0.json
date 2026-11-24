@@ -1,0 +1,22 @@
+{
+  "va": "0x00706EF0",
+  "size": 32,
+  "orig_symbol": "sub_00706EF0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::CallWithField5COrDefault",
+  "class": "Unknown",
+  "signature": "int32_t __fastcall fn_00706EF0(void* self)",
+  "summary": "Passes self-\u003efield_0x5C to fn_006E7460, or the address of mem_00B5D268 when that field is zero.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "int32_t",
+      "name": "field_0x5C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:38:30Z"
+}

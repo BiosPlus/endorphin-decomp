@@ -219,3 +219,22 @@ extern void fn_00705D70(Unknown* a, Unknown* b) {
     slot(a);
 }
 } // namespace lift_00705D70
+
+// [0x00706EF0] sub_00706EF0 (32 bytes)
+namespace lift_00706EF0 {
+// Known callee 0x006E7460: sub_006E7460 (Getter returning int32_t field at offset +0x0.)
+extern int32_t __fastcall ext_006E7460(void* self);
+extern uint8_t mem_00B5D268[];
+
+// @name Unknown::CallWithField5COrDefault
+// @class Unknown
+// @summary Passes self->field_0x5C to fn_006E7460, or the address of mem_00B5D268 when that field is zero.
+// @field Unknown +0x5C int32_t field_0x5C
+int32_t __fastcall fn_00706EF0(void* self) {
+    int32_t v = *reinterpret_cast<int32_t*>(reinterpret_cast<uintptr_t>(self) + 0x5C);
+    if (v == 0) {
+        v = static_cast<int32_t>(reinterpret_cast<uintptr_t>(mem_00B5D268));
+    }
+    return ext_006E7460(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(v))));
+}
+} // namespace lift_00706EF0
