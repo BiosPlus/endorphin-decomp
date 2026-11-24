@@ -628,3 +628,41 @@ void Unknown_invokeChildVfunc0(void* self) {
     fn(ecx, 1);
 }
 } // namespace lift_00468580
+
+// [0x0046FE10] sub_0046FE10 (25 bytes)
+namespace lift_0046FE10 {
+// @name sub_0046FE10
+// @summary Auto-lifted identical-shape clone of 0x00535610 (ExportDialog::vfunc_0).
+namespace lift_00535610 {
+// @name OglRenderer::vfunc_34
+// @class OglRenderer
+// @summary Stores a byte argument into byte +0xC4 of the object referenced by this->+0x38->+0x64.
+// @field OglRenderer +0x38 void* field_0x38
+// @field field_0x38 +0x64 void* field_0x64
+// @field field_0x64 +0xC4 uint8_t field_0xC4
+void fn_0046FE10(void* self, uint8_t value) {
+    void* a = lift_field<void*>(self, 0xCC);
+    void* b = lift_field<void*>(a, 0x26C);
+    lift_field<uint8_t>(b, 0x1F0) = value;
+}
+} // namespace lift_00535610
+} // namespace lift_0046FE10
+
+// [0x0046FE30] sub_0046FE30 (25 bytes)
+namespace lift_0046FE30 {
+// @name sub_0046FE30
+// @summary Auto-lifted identical-shape clone of 0x00535610 (ExportDialog::vfunc_0).
+namespace lift_00535610 {
+// @name OglRenderer::vfunc_34
+// @class OglRenderer
+// @summary Stores a byte argument into byte +0xC4 of the object referenced by this->+0x38->+0x64.
+// @field OglRenderer +0x38 void* field_0x38
+// @field field_0x38 +0x64 void* field_0x64
+// @field field_0x64 +0xC4 uint8_t field_0xC4
+void fn_0046FE30(void* self, uint8_t value) {
+    void* a = lift_field<void*>(self, 0xCC);
+    void* b = lift_field<void*>(a, 0x26C);
+    lift_field<uint8_t>(b, 0x1F1) = value;
+}
+} // namespace lift_00535610
+} // namespace lift_0046FE30

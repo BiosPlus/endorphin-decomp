@@ -4255,6 +4255,20 @@
     "summary": "Loads the 32-bit value at [ecx+0x00] and passes it to thunk_MFC80_ord_764.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046FE10": {
+    "name": "sub_0046FE10",
+    "class": "OglRenderer",
+    "signature": "void fn_0046FE10(void* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x00535610 (ExportDialog::vfunc_0).",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
+  "0x0046FE30": {
+    "name": "sub_0046FE30",
+    "class": "OglRenderer",
+    "signature": "void fn_0046FE30(void* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x00535610 (ExportDialog::vfunc_0).",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x0046FE50": {
     "name": "sub_0046FE50",
     "class": "OglRenderer",

@@ -1,0 +1,34 @@
+{
+  "va": "0x0046FE30",
+  "size": 25,
+  "orig_symbol": "sub_0046FE30",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "sub_0046FE30",
+  "class": "OglRenderer",
+  "signature": "void fn_0046FE30(void* self, uint8_t value)",
+  "summary": "Auto-lifted identical-shape clone of 0x00535610 (ExportDialog::vfunc_0).",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    },
+    {
+      "class": "field_0x38",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "field_0x64"
+    },
+    {
+      "class": "field_0x64",
+      "offset": "+0xC4",
+      "type": "uint8_t",
+      "name": "field_0xC4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T02:02:11Z"
+}
