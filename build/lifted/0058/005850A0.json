@@ -1,0 +1,22 @@
+{
+  "va": "0x005850A0",
+  "size": 23,
+  "orig_symbol": "AnimationInterface::vfunc_12",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "AnimationInterface::vfunc_12",
+  "class": "AnimationInterface",
+  "signature": "void fn_005850A0(void* arg1, void* arg2, void* target)",
+  "summary": "Calls vtable slot 30 (+0x78) on the target object, passing the address of the second argument; no-op if target is null.",
+  "fields": [
+    {
+      "class": "AnimationInterface",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:32:45Z"
+}

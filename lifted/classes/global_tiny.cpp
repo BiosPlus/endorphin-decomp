@@ -6296,3 +6296,23 @@ void fn_0053A680(void* self, void* dst) {
     std::memcpy(dst, src, 16 * sizeof(float));
 }
 } // namespace lift_0053A680
+
+// [0x005850A0] AnimationInterface::vfunc_12 (23 bytes)
+namespace lift_005850A0 {
+// Vtable slot 0x78 / sizeof(void*) on the 32-bit target.
+typedef void (__thiscall* AnimVFn)(void* self, void* arg);
+
+// @name AnimationInterface::vfunc_12
+// @class AnimationInterface
+// @summary Calls vtable slot 30 (+0x78) on the target object, passing the address of the second argument; no-op if target is null.
+// @field AnimationInterface +0x00 void** vtable
+void fn_005850A0(void* arg1, void* arg2, void* target) {
+    (void)arg1;
+    if (target == nullptr) {
+        return;
+    }
+    void** vtable = *static_cast<void***>(target);
+    AnimVFn slot = reinterpret_cast<AnimVFn>(vtable[30]);
+    slot(target, &arg2);
+}
+} // namespace lift_005850A0

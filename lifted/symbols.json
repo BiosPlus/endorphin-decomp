@@ -14209,6 +14209,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::RPROJointData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005850A0": {
+    "name": "AnimationInterface::vfunc_12",
+    "class": "AnimationInterface",
+    "signature": "void fn_005850A0(void* arg1, void* arg2, void* target)",
+    "summary": "Calls vtable slot 30 (+0x78) on the target object, passing the address of the second argument; no-op if target is null.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00585250": {
     "name": "NMData::RPROJointData::vfunc_0",
     "class": "NMData::RPROJointData",
