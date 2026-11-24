@@ -9614,3 +9614,30 @@ void fn_004B88A0(void* self, void* out) {
     *slot = 0x00AE168Cu;
 }
 } // namespace lift_004B88A0
+
+// [0x004C7400] ExprParser::ReadWriteMethodType<NMData::SeverEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SeverEventData::getSeverEventType(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::SeverEventData::setSeverEventType(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_004C7400 {
+extern void ext_0067A670(uint32_t self, uint32_t arg);
+extern uint32_t mem_00AE3D88;
+extern uint32_t mem_00AE3D84;
+
+// @name ExprParser::ReadWriteMethodType<NMData::SeverEventData>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::SeverEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SeverEventData::getSeverEventType(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::SeverEventData::setSeverEventType(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Lazily constructs the static SeverEventType value-pointer object (guarded by a one-time init bit) and stores its address into the caller's out-parameter at +4.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+
+// Behaviour: one-time init guard on bit 0 of mem_00AE3D88. On first call, sets
+// the bit, runs the constructor for the static object at mem_00AE3D84 (thiscall
+// emulated as ext_0067A670(self, 0)), writes its vtable (0x00945B64), then
+// publishes the object's address into out[+4]. Later calls skip construction.
+// The original MSVC SEH frame (fs:[0] push/restore) is omitted; the guard bit
+// is set before the constructor call, matching the original ordering.
+void fn_004C7400(uint32_t* out) {
+    if ((mem_00AE3D88 & 1u) == 0u) {
+        mem_00AE3D88 |= 1u;
+        ext_0067A670(0x00AE3D84u, 0u);
+        mem_00AE3D84 = 0x00945B64u;
+    }
+    out[1] = 0x00AE3D84u;
+}
+} // namespace lift_004C7400
