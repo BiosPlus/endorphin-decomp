@@ -234,3 +234,27 @@ void fn_00553E80(void* arg) {
     } while (*(next + 0x39) == 0);
 }
 } // namespace lift_00553E80
+
+// [0x00554510] sub_00554510 (29 bytes)
+namespace lift_00554510 {
+// @name Unknown::getVec4At30_w1
+// @class Unknown
+// @summary Writes a vec4 to the caller-supplied return buffer: xyz copied from self+0x30..0x38, w = 1.0f.
+// @field Unknown +0x30 float field_0x30
+// @field Unknown +0x34 float field_0x34
+// @field Unknown +0x38 float field_0x38
+
+// Original ABI: `this` in ECX, hidden return-buffer pointer on the stack, callee pops 4 (ret 0x4).
+// Portable form takes both explicitly; the caller must provide a 4-float buffer.
+void fn_00554510(const void* self, float* out) {
+    const auto* base = static_cast<const unsigned char*>(self);
+    float x, y, z;
+    std::memcpy(&x, base + 0x30, sizeof(float));
+    std::memcpy(&y, base + 0x34, sizeof(float));
+    std::memcpy(&z, base + 0x38, sizeof(float));
+    out[0] = x;
+    out[1] = y;
+    out[2] = z;
+    out[3] = 1.0f;
+}
+} // namespace lift_00554510
