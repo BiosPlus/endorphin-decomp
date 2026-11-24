@@ -9717,3 +9717,35 @@ void __stdcall fn_004CB360(void* self) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE44C8));
 }
 } // namespace lift_004CB360
+
+// [0x004CEE70] ExprParser::ReadWriteMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::IncarnationEventData::setPhysicsLevel(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_004CEE70 {
+extern void ext_0067A670();
+extern int mem_00AE4B78;
+extern int mem_00AE4B74;
+
+// @name ExprParser::ReadWriteMethodType<NMData::IncarnationEventData>::vfunc_40 (lazy-init accessor binding)
+// @class ExprParser::ReadWriteMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::IncarnationEventData::setPhysicsLevel(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary On first call, runs a one-time initializer for the shared static accessor object at mem_00AE4B74 and marks it initialized; then points the output slot's +0x04 at that object.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_004CEE70(void* out) {
+    // Guard flag: bit 0 of mem_00AE4B78 means the shared object is already initialized.
+    // (The original SEH frame setup/teardown around this is an MSVC unwind detail and is omitted.)
+    auto* slot = reinterpret_cast<std::uint32_t*>(out);
+    const auto objAddr = static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(&mem_00AE4B74));
+
+    if ((mem_00AE4B78 & 1) == 0) {
+        mem_00AE4B78 |= 1;
+
+        // Constructor-style call on the shared object (ecx = &mem_00AE4B74, one stack arg = 0).
+        typedef void(__thiscall* InitFn)(void* self, int arg);
+        reinterpret_cast<InitFn>(ext_0067A670)(reinterpret_cast<void*>(&mem_00AE4B74), 0);
+
+        // Store the vtable pointer for the shared object.
+        mem_00AE4B74 = static_cast<int>(0x009474AC);
+    }
+
+    // out +0x04 = address of the shared object.
+    slot[1] = objAddr;
+}
+} // namespace lift_004CEE70
