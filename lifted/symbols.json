@@ -36427,6 +36427,13 @@
     "summary": "Returns address of global mem_00992904.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B7D60": {
+    "name": "NMCMultilineEditDlg::vfunc_87",
+    "class": "NMCMultilineEditDlg",
+    "signature": "void fn_006B7D60(void* self)",
+    "summary": "Calls MFC80 ord_781 on the member at +0x74 with \u0026+0x78, then forwards self to the virtual slot 0 of the object at +0x1a4 if set.",
+    "lifted_path": "lifted/classes/NMCMultilineEditDlg.cpp"
+  },
   "0x006B7DC0": {
     "name": "sub_006B7DC0",
     "signature": "void __thiscall sub_006B7DC0(uint8_t* self, uint32_t packed)",

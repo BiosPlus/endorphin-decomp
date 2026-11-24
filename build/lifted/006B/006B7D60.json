@@ -1,0 +1,34 @@
+{
+  "va": "0x006B7D60",
+  "size": 40,
+  "orig_symbol": "NMCMultilineEditDlg::vfunc_87",
+  "src_path": "src/classes/NMCMultilineEditDlg.cpp",
+  "lifted_path": "lifted/classes/NMCMultilineEditDlg.cpp",
+  "name": "NMCMultilineEditDlg::vfunc_87",
+  "class": "NMCMultilineEditDlg",
+  "signature": "void fn_006B7D60(void* self)",
+  "summary": "Calls MFC80 ord_781 on the member at +0x74 with \u0026+0x78, then forwards self to the virtual slot 0 of the object at +0x1a4 if set.",
+  "fields": [
+    {
+      "class": "NMCMultilineEditDlg",
+      "offset": "+0x74",
+      "type": "void*",
+      "name": "field_0x74"
+    },
+    {
+      "class": "NMCMultilineEditDlg",
+      "offset": "+0x78",
+      "type": "BYTE",
+      "name": "field_0x78"
+    },
+    {
+      "class": "NMCMultilineEditDlg",
+      "offset": "+0x1A4",
+      "type": "void*",
+      "name": "field_0x1a4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:53:45Z"
+}
