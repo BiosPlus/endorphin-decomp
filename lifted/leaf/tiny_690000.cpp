@@ -64,3 +64,22 @@ void fn_00699180(void* self) {
     lift_field<uint32_t>(self, 0x08) = 0u;
 }
 } // namespace lift_00699180
+
+// [0x00696DB0]
+namespace lift_00696DB0 {
+// @name init_00696DB0
+// @summary Initializes a 20-byte struct with 0x19, three zeros, and 1.
+// @field struct +0x00 uint32_t field_0x00
+// @field struct +0x04 uint32_t field_0x04
+// @field struct +0x08 uint32_t field_0x08
+// @field struct +0x0C uint32_t field_0x0C
+// @field struct +0x10 uint32_t field_0x10
+void __thiscall sub_00696DB0(void* self) {
+    uint32_t* fields = reinterpret_cast<uint32_t*>(self);
+    fields[0] = 0x19;
+    fields[1] = 0;
+    fields[2] = 0;
+    fields[3] = 0;
+    fields[4] = 1;
+}
+} // namespace lift_00696DB0
