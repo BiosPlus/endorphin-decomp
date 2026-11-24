@@ -219,3 +219,32 @@ void __thiscall sub_005CFE10(uint32_t self, uint32_t arg) {
     mem_write8(self + 0x1F2, static_cast<uint8_t>(arg));
 }
 } // namespace lift_005CFE10
+
+// [0x005C40C0] sub_005C40C0 (56 bytes)
+namespace lift_005C40C0 {
+// Known callee 0x006484F0: sub_006484F0 (Member forwarding thunk: loads subobject pointer at +0x5C and tail-calls sub_0065AF30.)
+// The original passes one extra stack argument (the peer pointer) that the thunk forwards; it is modelled here as a second parameter.
+extern void ext_006484F0(void* self, void* arg);
+
+// @name ForwardToPeerIfAccepted
+// @class <ClassName> (unknown)
+// @summary If field +0x16C is set and the peer's virtual slot 0xEC accepts it, forwards the peer's +0x16C into the delegate thunk.
+// @field <ClassName> +0x16C void* field_0x16C
+void fn_005C40C0(void* self, void* peer) {
+    using AcceptFn = BOOLEAN (__thiscall*)(void*);
+
+    if (lift_field<void*>(self, 0x16C) == nullptr) {
+        return;
+    }
+
+    void* vtbl = lift_field<void*>(peer, 0);
+    AcceptFn accept = lift_field<AcceptFn>(vtbl, 0xEC);
+    if (!accept(peer)) {
+        return;
+    }
+
+    void* self_delegate = lift_field<void*>(self, 0x16C);
+    void* peer_delegate = lift_field<void*>(peer, 0x16C);
+    ext_006484F0(self_delegate, peer_delegate);
+}
+} // namespace lift_005C40C0

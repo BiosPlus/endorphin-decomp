@@ -23875,6 +23875,13 @@
     "summary": "Assigns a string literal to the string member at +0x17C, clears the dword at +0x198, sets flags at +0x19C..+0x19E (true) and +0x19F (false), then calls the base-class vfunc_33.",
     "lifted_path": "lifted/NMData/CollisionModelData.cpp"
   },
+  "0x005C40C0": {
+    "name": "ForwardToPeerIfAccepted",
+    "class": "\u003cClassName\u003e (unknown)",
+    "signature": "void fn_005C40C0(void* self, void* peer)",
+    "summary": "If field +0x16C is set and the peer's virtual slot 0xEC accepts it, forwards the peer's +0x16C into the delegate thunk.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005C44A0": {
     "name": "NMData::FluidObjectData::vfunc_33",
     "class": "NMData::FluidObjectData",
@@ -27548,6 +27555,12 @@
     "signature": "void* fn_005FCC50(void* const* holder)",
     "summary": "Reads the object pointer from the argument holder; if non-null, forwards to virtual slot 14 (0x38) on that object, otherwise raises a C++ exception.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005FD330": {
+    "name": "TreeNode_eraseSubtree",
+    "signature": "void __thiscall fn_005FD330(uint32_t self, uint32_t node)",
+    "summary": "Recursively erases a red-black tree subtree and frees its nodes.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
   "0x005FD370": {
     "name": "ExprParser::ReadMethodType\u003cSensor, float, \u0026[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1\u003e::vfunc_0",
