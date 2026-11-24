@@ -597,7 +597,7 @@ struct Unknown_Fields {
     // +0x40D0 void*                    field_0x40D0  (evidence: 0x006F08E0, 0x006F0F60, 0x006F1120)
     // +0x4158 uint8_t                  field_0x4158  (evidence: 0x006F08E0, 0x006F0FA0, 0x006F1120)
     // +0x41E0 uint8_t field_0x41e0 (subobject; only its address is taken)  (evidence: 0x006F08E0, 0x006F0FE0, 0x006F1120)
-    // +0x4268 void* field_0x4268 (subobject, passed as this to callees)  (evidence: 0x006F08E0, 0x006F1020, 0x006F1120)
+    // +0x4268 void* field_0x4268 (subobject, passed as this to callees)  (evidence: 0x006F08E0, 0x006F1020, 0x006F1120, 0x006F1220, 0x006F1260, 0x006F12A0, 0x006F12E0, 0x006F1320, 0x006F1360, 0x006F13A0, 0x006F13E0, 0x006F1420, 0x006F1460, 0x006F14A0, 0x006F14E0, 0x006F1520, 0x006F1560, 0x006F15A0, 0x006F15E0, 0x006F1620, 0x006F1660, 0x006F16A0, 0x006F16E0, 0x006F1720, 0x006F1760, 0x006F17A0, 0x006F17E0, 0x006F1820, 0x006F18A0, 0x006F1AA0, 0x006F1EA0)
     // +0x42F0 void*                    field_0x42f0  (evidence: 0x006F1060, 0x006F1120)
     // +0x4378 uint8_t subobject (embedded object; passed as `this` to callees, not dereferenced here)  (evidence: 0x006F08E0, 0x006F10A0, 0x006F1120)
     // +0x4400 uint8_t subobject_4400[] (embedded subobject, address only; used as this for both callees)  (evidence: 0x006F10E0, 0x006F1120)

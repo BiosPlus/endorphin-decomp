@@ -1754,3 +1754,647 @@ void __thiscall sub_006F11E0(void* self, uint32_t arg1, void* arg2) {
     ext_00711A70(child, 1u);
 }
 } // namespace lift_006F11E0
+
+// [0x006F1220] sub_006F1220 (44 bytes)
+namespace lift_006F1220 {
+// @name sub_006F1220
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F1220(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x46A8;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F8100u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F1220
+
+// [0x006F1260] sub_006F1260 (44 bytes)
+namespace lift_006F1260 {
+// @name sub_006F1260
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F1260(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x4730;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F82A0u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F1260
+
+// [0x006F12A0] sub_006F12A0 (44 bytes)
+namespace lift_006F12A0 {
+// @name sub_006F12A0
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F12A0(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x47B8;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F8450u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F12A0
+
+// [0x006F12E0] sub_006F12E0 (44 bytes)
+namespace lift_006F12E0 {
+// @name sub_006F12E0
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F12E0(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x4840;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F8600u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F12E0
+
+// [0x006F1320] sub_006F1320 (44 bytes)
+namespace lift_006F1320 {
+// @name sub_006F1320
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F1320(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x48C8;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F7A70u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F1320
+
+// [0x006F1360] sub_006F1360 (44 bytes)
+namespace lift_006F1360 {
+// @name sub_006F1360
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F1360(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x4950;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F7C10u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F1360
+
+// [0x006F13A0] sub_006F13A0 (44 bytes)
+namespace lift_006F13A0 {
+// @name sub_006F13A0
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F13A0(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x49D8;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F7DB0u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F13A0
+
+// [0x006F13E0] sub_006F13E0 (44 bytes)
+namespace lift_006F13E0 {
+// @name sub_006F13E0
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F13E0(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x4A60;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F7F50u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F13E0
+
+// [0x006F1420] sub_006F1420 (44 bytes)
+namespace lift_006F1420 {
+// @name sub_006F1420
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F1420(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x4AE8;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F80F0u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F1420
+
+// [0x006F1460] sub_006F1460 (44 bytes)
+namespace lift_006F1460 {
+// @name sub_006F1460
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F1460(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x4B70;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F8290u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F1460
+
+// [0x006F14A0] sub_006F14A0 (44 bytes)
+namespace lift_006F14A0 {
+// @name sub_006F14A0
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F14A0(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x4BF8;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F8440u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F14A0
+
+// [0x006F14E0] sub_006F14E0 (44 bytes)
+namespace lift_006F14E0 {
+// @name sub_006F14E0
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F14E0(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x4C80;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F85F0u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F14E0
+
+// [0x006F1520] sub_006F1520 (44 bytes)
+namespace lift_006F1520 {
+// @name sub_006F1520
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F1520(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x4D08;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F7A60u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F1520
+
+// [0x006F1560] sub_006F1560 (44 bytes)
+namespace lift_006F1560 {
+// @name sub_006F1560
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F1560(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x4D90;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F7C00u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F1560
+
+// [0x006F15A0] sub_006F15A0 (44 bytes)
+namespace lift_006F15A0 {
+// @name sub_006F15A0
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F15A0(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x4E18;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F7DA0u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F15A0
+
+// [0x006F15E0] sub_006F15E0 (44 bytes)
+namespace lift_006F15E0 {
+// @name sub_006F15E0
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F15E0(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x4EA0;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F7F40u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F15E0
+
+// [0x006F1620] sub_006F1620 (44 bytes)
+namespace lift_006F1620 {
+// @name sub_006F1620
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F1620(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x4F28;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F80E0u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F1620
+
+// [0x006F1660] sub_006F1660 (44 bytes)
+namespace lift_006F1660 {
+// @name sub_006F1660
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F1660(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x4FB0;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F8280u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F1660
+
+// [0x006F16A0] sub_006F16A0 (44 bytes)
+namespace lift_006F16A0 {
+// @name sub_006F16A0
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F16A0(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x5038;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F8430u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F16A0
+
+// [0x006F16E0] sub_006F16E0 (44 bytes)
+namespace lift_006F16E0 {
+// @name sub_006F16E0
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F16E0(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x50C0;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F85E0u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F16E0
+
+// [0x006F1720] sub_006F1720 (44 bytes)
+namespace lift_006F1720 {
+// @name sub_006F1720
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F1720(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x5148;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F7A50u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F1720
+
+// [0x006F1760] sub_006F1760 (44 bytes)
+namespace lift_006F1760 {
+// @name sub_006F1760
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F1760(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x51D0;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F7BF0u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F1760
+
+// [0x006F17A0] sub_006F17A0 (44 bytes)
+namespace lift_006F17A0 {
+// @name sub_006F17A0
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F17A0(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x5258;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F7D90u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F17A0
+
+// [0x006F17E0] sub_006F17E0 (44 bytes)
+namespace lift_006F17E0 {
+// @name sub_006F17E0
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F17E0(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x52E0;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F7F30u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F17E0
+
+// [0x006F1820] sub_006F1820 (44 bytes)
+namespace lift_006F1820 {
+// @name sub_006F1820
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F1820(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x5368;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F80D0u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F1820
+
+// [0x006F18A0] sub_006F18A0 (44 bytes)
+namespace lift_006F18A0 {
+// @name sub_006F18A0
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F18A0(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x5478;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F85D0u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F18A0
+
+// [0x006F1AA0] sub_006F1AA0 (44 bytes)
+namespace lift_006F1AA0 {
+// @name sub_006F1AA0
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F1AA0(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x58B8;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F8400u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F1AA0
+
+// [0x006F1EA0] sub_006F1EA0 (44 bytes)
+namespace lift_006F1EA0 {
+// @name sub_006F1EA0
+// @summary Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).
+namespace lift_006F1020 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+// Callee 0x00711A70 (15 bytes, unrecovered signature): called thiscall with one stack argument (1).
+extern void ext_00711A70(void* self, uint32_t arg1);
+
+// @name Unknown::forwardArgsToSubobjectAt4268
+// @class Unknown
+// @summary Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.
+// @field Unknown +0x4268 void* field_0x4268 (subobject, passed as this to callees)
+void fn_006F1EA0(void* self, uint32_t arg1, uint32_t arg2) {
+    (void)arg2;  // second stack argument is not read by the original code
+    void* subobj = reinterpret_cast<uint8_t*>(self) + 0x5FA0;
+    ext_00711D40(subobj, arg1, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)), 0x6F8580u, 0u);
+    ext_00711A70(subobj, 1u);
+}
+} // namespace lift_006F1020
+} // namespace lift_006F1EA0

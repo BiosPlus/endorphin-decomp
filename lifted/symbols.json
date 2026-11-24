@@ -40577,11 +40577,193 @@
     "summary": "Configures the subobject at +0x4620 with args, callback 0x006F7F60, and 0, then calls sub_00711A70(1).",
     "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
   },
+  "0x006F1220": {
+    "name": "sub_006F1220",
+    "class": "Unknown",
+    "signature": "void fn_006F1220(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F1260": {
+    "name": "sub_006F1260",
+    "class": "Unknown",
+    "signature": "void fn_006F1260(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F12A0": {
+    "name": "sub_006F12A0",
+    "class": "Unknown",
+    "signature": "void fn_006F12A0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F12E0": {
+    "name": "sub_006F12E0",
+    "class": "Unknown",
+    "signature": "void fn_006F12E0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F1320": {
+    "name": "sub_006F1320",
+    "class": "Unknown",
+    "signature": "void fn_006F1320(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F1360": {
+    "name": "sub_006F1360",
+    "class": "Unknown",
+    "signature": "void fn_006F1360(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F13A0": {
+    "name": "sub_006F13A0",
+    "class": "Unknown",
+    "signature": "void fn_006F13A0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F13E0": {
+    "name": "sub_006F13E0",
+    "class": "Unknown",
+    "signature": "void fn_006F13E0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F1420": {
+    "name": "sub_006F1420",
+    "class": "Unknown",
+    "signature": "void fn_006F1420(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F1460": {
+    "name": "sub_006F1460",
+    "class": "Unknown",
+    "signature": "void fn_006F1460(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F14A0": {
+    "name": "sub_006F14A0",
+    "class": "Unknown",
+    "signature": "void fn_006F14A0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F14E0": {
+    "name": "sub_006F14E0",
+    "class": "Unknown",
+    "signature": "void fn_006F14E0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F1520": {
+    "name": "sub_006F1520",
+    "class": "Unknown",
+    "signature": "void fn_006F1520(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F1560": {
+    "name": "sub_006F1560",
+    "class": "Unknown",
+    "signature": "void fn_006F1560(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F15A0": {
+    "name": "sub_006F15A0",
+    "class": "Unknown",
+    "signature": "void fn_006F15A0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F15E0": {
+    "name": "sub_006F15E0",
+    "class": "Unknown",
+    "signature": "void fn_006F15E0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F1620": {
+    "name": "sub_006F1620",
+    "class": "Unknown",
+    "signature": "void fn_006F1620(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F1660": {
+    "name": "sub_006F1660",
+    "class": "Unknown",
+    "signature": "void fn_006F1660(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F16A0": {
+    "name": "sub_006F16A0",
+    "class": "Unknown",
+    "signature": "void fn_006F16A0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F16E0": {
+    "name": "sub_006F16E0",
+    "class": "Unknown",
+    "signature": "void fn_006F16E0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F1720": {
+    "name": "sub_006F1720",
+    "class": "Unknown",
+    "signature": "void fn_006F1720(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F1760": {
+    "name": "sub_006F1760",
+    "class": "Unknown",
+    "signature": "void fn_006F1760(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F17A0": {
+    "name": "sub_006F17A0",
+    "class": "Unknown",
+    "signature": "void fn_006F17A0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F17E0": {
+    "name": "sub_006F17E0",
+    "class": "Unknown",
+    "signature": "void fn_006F17E0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F1820": {
+    "name": "sub_006F1820",
+    "class": "Unknown",
+    "signature": "void fn_006F1820(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
   "0x006F1860": {
     "name": "sub_006F1860",
     "class": "Unknown",
     "signature": "void fn_006F1860(void* self, uint32_t arg1, uint32_t arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x006F00E0 (Unknown::forwardToSubobject2200).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F18A0": {
+    "name": "sub_006F18A0",
+    "class": "Unknown",
+    "signature": "void fn_006F18A0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
     "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
   },
   "0x006F18E0": {
@@ -40631,6 +40813,13 @@
     "class": "Unknown",
     "signature": "void fn_006F1A60(void* self, uint32_t arg1, uint32_t arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x006F00E0 (Unknown::forwardToSubobject2200).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F1AA0": {
+    "name": "sub_006F1AA0",
+    "class": "Unknown",
+    "signature": "void fn_006F1AA0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
     "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
   },
   "0x006F1AD0": {
@@ -40751,6 +40940,13 @@
     "class": "Unknown",
     "signature": "void fn_006F1E60(void* self, uint32_t arg1, uint32_t arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x006F00E0 (Unknown::forwardToSubobject2200).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F1EA0": {
+    "name": "sub_006F1EA0",
+    "class": "Unknown",
+    "signature": "void fn_006F1EA0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1020 (Unknown::forwardArgsToSubobjectAt4268).",
     "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
   },
   "0x006F1ED0": {
