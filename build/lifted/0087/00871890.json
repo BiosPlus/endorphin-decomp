@@ -1,0 +1,45 @@
+{
+  "va": "0x00871890",
+  "size": 39,
+  "orig_symbol": "sub_00871890",
+  "src_path": "src/leaf/decompiled_870000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_870000.cpp",
+  "name": "copyConstructVtable20",
+  "signature": "void* fn_00871890(void* self, const void* src)",
+  "summary": "Copy-constructs a 20-byte object: installs vtable 0x0099F138 at +0x00, copies +0x04..+0x10 from source, returns this.",
+  "fields": [
+    {
+      "class": "object",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "object",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "object",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "object",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "object",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:51:27Z"
+}

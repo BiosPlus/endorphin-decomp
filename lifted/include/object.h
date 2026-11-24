@@ -8,7 +8,12 @@
 // Recovered field layout for object:
 namespace lifted_layout {
 struct object_Fields {
-    // +0x0   void* vtable (read via global mem_00AEED24)  (evidence: 0x00532B80)
+    // +0x0   void* vtable (read via global mem_00AEED24)  (evidence: 0x00532B80) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vtable  (evidence: 0x00871890) // CONFLICT: multiple definitions at +0x0
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00871890)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00871890)
+    // +0xC   uint32_t                 field_0x0C  (evidence: 0x00871890)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x00871890)
     // +0x88  uint8_t                  field_0x88  (evidence: 0x00440990, 0x00441020)
     // +0x8E  uint8_t                  field_0x8e  (evidence: 0x00440990, 0x00441020)
 };

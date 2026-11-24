@@ -79,3 +79,22 @@ DWORD* fn_00870320(void* self, DWORD* outPair) {
     return outPair;
 }
 } // namespace lift_00870320
+
+// [0x00871890] sub_00871890 (39 bytes)
+namespace lift_00871890 {
+// @name copyConstructVtable20
+// @summary Copy-constructs a 20-byte object: installs vtable 0x0099F138 at +0x00, copies +0x04..+0x10 from source, returns this.
+// @field object +0x00 void* vtable
+// @field object +0x04 uint32_t field_0x04
+// @field object +0x08 uint32_t field_0x08
+// @field object +0x0C uint32_t field_0x0C
+// @field object +0x10 uint32_t field_0x10
+void* fn_00871890(void* self, const void* src) {
+    lift_field<uint32_t>(self, 0x00) = 0x0099F138u;
+    lift_field<uint32_t>(self, 0x04) = lift_field<const uint32_t>(src, 0x04);
+    lift_field<uint32_t>(self, 0x08) = lift_field<const uint32_t>(src, 0x08);
+    lift_field<uint32_t>(self, 0x0C) = lift_field<const uint32_t>(src, 0x0C);
+    lift_field<uint32_t>(self, 0x10) = lift_field<const uint32_t>(src, 0x10);
+    return self;
+}
+} // namespace lift_00871890
