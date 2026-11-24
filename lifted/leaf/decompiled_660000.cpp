@@ -45,3 +45,21 @@ void* __thiscall fn_00661840(void* self, void* arg1, void* arg2) {
     return arg1;
 }
 } // namespace lift_00661840
+
+// [0x0066A330] sub_0066A330 (32 bytes)
+namespace lift_0066A330 {
+// @name Unknown::SetFloat4
+// @class Unknown
+// @summary Copies four stack float arguments into consecutive float fields at self+0x00..+0x0C (thiscall, callee pops 0x10 bytes).
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0C float field_0x0C
+void fn_0066A330(void* self, float a0, float a1, float a2, float a3) {
+    auto* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<float*>(base + 0x00) = a0;
+    *reinterpret_cast<float*>(base + 0x04) = a1;
+    *reinterpret_cast<float*>(base + 0x08) = a2;
+    *reinterpret_cast<float*>(base + 0x0C) = a3;
+}
+} // namespace lift_0066A330
