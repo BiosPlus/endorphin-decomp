@@ -871,3 +871,17 @@ uint8_t __fastcall sub_00700920(uintptr_t ecx) {
     return mem_read8(static_cast<uintptr_t>(obj) + 0x2f8);
 }
 } // namespace lift_00700920
+
+// [0x00700960]
+namespace lift_00700960 {
+extern uint32_t mem_read32(uintptr_t addr);
+extern uint8_t mem_read8(uintptr_t addr);
+
+// @name sub_00700960
+// @summary Reads a byte flag at offset 0x380 from the object pointed to by field_0x0c.
+// @field Self +0x0c uint32_t field_0x0c
+uint8_t __thiscall sub_00700960(uintptr_t self) {
+    uint32_t ptr = mem_read32(self + 0xc);
+    return mem_read8(static_cast<uintptr_t>(ptr) + 0x380);
+}
+} // namespace lift_00700960

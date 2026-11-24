@@ -34401,6 +34401,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00700960": {
+    "name": "sub_00700960",
+    "signature": "uint8_t __thiscall sub_00700960(uintptr_t self)",
+    "summary": "Reads a byte flag at offset 0x380 from the object pointed to by field_0x0c.",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x00700970": {
     "name": "sub_00700970",
     "class": "Unknown",
