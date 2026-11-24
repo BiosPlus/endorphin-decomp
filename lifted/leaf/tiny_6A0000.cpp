@@ -232,3 +232,17 @@ void sub_006ACF90(void* ecx, uint8_t arg)
     }
 }
 } // namespace lift_006ACF90
+
+// [0x006AD070] sub_006AD070 (14 bytes)
+namespace lift_006AD070 {
+// @name sub_006AD070
+// @class (unknown)
+// @summary If `this` (ECX) is non-null, store the stack argument (dword) at this+0x20; stdcall-style, pops 4.
+// @field (unknown) +0x20 uint32_t field_0x20
+void sub_006AD070(void* ecx, uint32_t arg)
+{
+    if (ecx != nullptr) {
+        reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(ecx) + 0x20)[0] = arg;
+    }
+}
+} // namespace lift_006AD070

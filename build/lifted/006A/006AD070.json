@@ -1,0 +1,22 @@
+{
+  "va": "0x006AD070",
+  "size": 14,
+  "orig_symbol": "sub_006AD070",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "sub_006AD070",
+  "class": "(unknown)",
+  "signature": "void sub_006AD070(void* ecx, uint32_t arg)",
+  "summary": "If `this` (ECX) is non-null, store the stack argument (dword) at this+0x20; stdcall-style, pops 4.",
+  "fields": [
+    {
+      "class": "(unknown)",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:26:09Z"
+}

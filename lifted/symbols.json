@@ -29754,6 +29754,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0xC and forwards through mem_009242F8.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006AD070": {
+    "name": "sub_006AD070",
+    "class": "(unknown)",
+    "signature": "void sub_006AD070(void* ecx, uint32_t arg)",
+    "summary": "If `this` (ECX) is non-null, store the stack argument (dword) at this+0x20; stdcall-style, pops 4.",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006AD090": {
     "name": "sub_006AD090",
     "signature": "uint8_t __thiscall sub_006AD090(uint32_t self)",
