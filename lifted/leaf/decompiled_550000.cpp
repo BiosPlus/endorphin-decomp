@@ -183,3 +183,23 @@ void fn_0055B860(void* self, int edx_unused, int a1, int a2) {
 }
 } // namespace lift_005694F0
 } // namespace lift_0055B860
+
+// [0x00553760] sub_00553760 (31 bytes)
+namespace lift_00553760 {
+// Known callee 0x00661A00: sub_00661A00 (Member forwarding thunk: loads subobject pointer at +0x4 and tail-calls sub_0065D570.)
+// Returns the callee's eax value (tail-call passthrough), so it is declared with an int result.
+extern int __fastcall ext_00661A00(void* self);
+// Callee 0x00553080 (41B): takes `this` in ecx and one stack argument; callee cleans the stack.
+extern void __thiscall ext_00553080(void* self, int arg);
+
+// @name Unknown::CallSubobjectThenDecrement
+// @class Unknown
+// @summary Forwards to the subobject at +0x420 via ext_00661A00, decrements the result, and passes it to ext_00553080 on the member at +0x16C.
+// @field Unknown +0x420 void* field_0x420
+void fn_00553760(void* self) {
+    void* subobject = lift_field<void*>(self, 0x420);
+    int result = ext_00661A00(subobject);
+    result = result - 1;
+    ext_00553080(static_cast<char*>(self) + 0x16C, result);
+}
+} // namespace lift_00553760

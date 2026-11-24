@@ -1,0 +1,22 @@
+{
+  "va": "0x00553760",
+  "size": 31,
+  "orig_symbol": "sub_00553760",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "Unknown::CallSubobjectThenDecrement",
+  "class": "Unknown",
+  "signature": "void fn_00553760(void* self)",
+  "summary": "Forwards to the subobject at +0x420 via ext_00661A00, decrements the result, and passes it to ext_00553080 on the member at +0x16C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x420",
+      "type": "void*",
+      "name": "field_0x420"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:25:42Z"
+}
