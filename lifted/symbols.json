@@ -41133,6 +41133,13 @@
     "summary": "Copies 16 DWORDs (64 bytes) forward from src to dst (cdecl, rep movsd semantics).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CA2F0": {
+    "name": "Vec3::assign",
+    "class": "Vec3",
+    "signature": "extern \"C\" uint32_t __thiscall sub_007CA2F0(uint32_t self, uint32_t src)",
+    "summary": "Copies three 32-bit floats from src to this and returns this.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007CA820": {
     "name": "sub_007CA820",
     "signature": "extern \"C\" void fn_007CA820(void)",
@@ -41191,6 +41198,12 @@
     "name": "getField0x0C",
     "signature": "uint32_t sub_007CC9F0(uintptr_t arg0)",
     "summary": "Reads and returns the 32-bit field at offset 0x0C of the object passed as arg0.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007CCA00": {
+    "name": "getIndexedField_007CCA00",
+    "signature": "uint32_t __cdecl sub_007CCA00(uint32_t arg0)",
+    "summary": "Reads a 32-bit value from a 40-byte-strided table using an index byte at +0x00 and table pointer at (+0x0C)-\u003e+0x20.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
   "0x007CD040": {

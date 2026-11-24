@@ -1,0 +1,33 @@
+{
+  "va": "0x007CCA00",
+  "size": 25,
+  "orig_symbol": "sub_007CCA00",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "getIndexedField_007CCA00",
+  "signature": "uint32_t __cdecl sub_007CCA00(uint32_t arg0)",
+  "summary": "Reads a 32-bit value from a 40-byte-strided table using an index byte at +0x00 and table pointer at (+0x0C)-\u003e+0x20.",
+  "fields": [
+    {
+      "class": "Arg0",
+      "offset": "+0x0",
+      "type": "uint8_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Arg0",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "SubObj",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T11:53:37Z"
+}

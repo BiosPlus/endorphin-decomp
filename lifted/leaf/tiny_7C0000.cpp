@@ -1222,3 +1222,40 @@ void sub_007C5C30(void* self, uint32_t val1, uint32_t val2) {
     std::memcpy(base + 0x1f4, &val2, sizeof(val2));
 }
 } // namespace lift_007C5C30
+
+// [0x007CA2F0]
+namespace lift_007CA2F0 {
+float& mem_f32(uint32_t);
+
+// @name Vec3::assign
+// @class Vec3
+// @summary Copies three 32-bit floats from src to this and returns this.
+// @field Vec3 +0x00 float x
+// @field Vec3 +0x04 float y
+// @field Vec3 +0x08 float z
+
+extern uint32_t __thiscall sub_007CA2F0(uint32_t self, uint32_t src) {
+    mem_f32(self + 0x00) = mem_f32(src + 0x00);
+    mem_f32(self + 0x04) = mem_f32(src + 0x04);
+    mem_f32(self + 0x08) = mem_f32(src + 0x08);
+    return self;
+}
+} // namespace lift_007CA2F0
+
+// [0x007CCA00]
+namespace lift_007CCA00 {
+uint32_t mem_read32(uint32_t addr);
+
+// @name getIndexedField_007CCA00
+// @summary Reads a 32-bit value from a 40-byte-strided table using an index byte at +0x00 and table pointer at (+0x0C)->+0x20.
+// @field Arg0 +0x00 uint8_t field_0x00
+// @field Arg0 +0x0C uint32_t field_0x0C
+// @field SubObj +0x20 uint32_t field_0x20
+
+uint32_t __cdecl sub_007CCA00(uint32_t arg0) {
+    uint32_t index = mem_read32(arg0) & 0xffu;
+    uint32_t sub = mem_read32(arg0 + 0x0cu);
+    uint32_t table = mem_read32(sub + 0x20u);
+    return mem_read32(table + index * 40u + 0x1cu);
+}
+} // namespace lift_007CCA00
