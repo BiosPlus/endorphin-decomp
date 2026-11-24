@@ -921,3 +921,20 @@ uint8_t fn_007148E0(void* self) {
     return 0;
 }
 } // namespace lift_007148E0
+
+// [0x00711D70] sub_00711D70 (48 bytes)
+namespace lift_00711D70 {
+// Known callee 0x0071E680: sub_0071E680 (Returns pointer to subobject/field at offset +0x40.)
+extern void* __fastcall ext_0071E680(void* self);
+
+// @name Subobject::setField04AndField28
+// @summary Stores arg1 at Subobject +0x04 and arg2 at Subobject +0x28, both reached via ext_0071E680(self).
+// @field Subobject +0x04 uint32_t field_0x04
+// @field Subobject +0x28 uint32_t field_0x28
+extern void __thiscall fn_00711D70(void* self, uint32_t a, uint32_t b) {
+    uint8_t* sub = static_cast<uint8_t*>(ext_0071E680(self));
+    *reinterpret_cast<uint32_t*>(sub + 0x04) = a;
+    sub = static_cast<uint8_t*>(ext_0071E680(self));
+    *reinterpret_cast<uint32_t*>(sub + 0x28) = b;
+}
+} // namespace lift_00711D70

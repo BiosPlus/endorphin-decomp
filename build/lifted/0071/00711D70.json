@@ -1,0 +1,28 @@
+{
+  "va": "0x00711D70",
+  "size": 48,
+  "orig_symbol": "sub_00711D70",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Subobject::setField04AndField28",
+  "class": "Subobject",
+  "signature": "extern \"C\" void __thiscall fn_00711D70(void* self, uint32_t a, uint32_t b)",
+  "summary": "Stores arg1 at Subobject +0x04 and arg2 at Subobject +0x28, both reached via ext_0071E680(self).",
+  "fields": [
+    {
+      "class": "Subobject",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Subobject",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:21:54Z"
+}
