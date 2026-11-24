@@ -11,8 +11,10 @@ struct ListNode_Fields {
     // +0x0   WORD                     index  (evidence: 0x007B8E30, 0x007BD640) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 key  (evidence: 0x007B2DF0, 0x007BD640) // CONFLICT: multiple definitions at +0x0
     // +0x0   ListNode*                next  (evidence: 0x0049FCF0) // CONFLICT: multiple definitions at +0x0
-    // +0x8   uint32_t                 next  (evidence: 0x007F6830)
-    // +0xC   uint32_t                 prev  (evidence: 0x007F6830)
+    // +0x4   uint32_t                 prev  (evidence: 0x007CC930)
+    // +0x8   uint32_t                 next  (evidence: 0x007CC930, 0x007F6830)
+    // +0xC   uint32_t                 list  (evidence: 0x007CC930) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t                 prev  (evidence: 0x007F6830) // CONFLICT: multiple definitions at +0xC
     // +0x10  void*                    embedded_obj  (evidence: 0x0049FCF0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 next  (evidence: 0x007B2DF0, 0x007BD640) // CONFLICT: multiple definitions at +0x10
     // +0x14  DWORD                    next  (evidence: 0x007B8E30, 0x007BD640)

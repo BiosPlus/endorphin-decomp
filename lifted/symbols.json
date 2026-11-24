@@ -54860,6 +54860,12 @@
     "summary": "Zeroes the dword at offsets +0x00, +0x04 and +0x08 of the object pointed to by the first argument.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007DA8E0": {
+    "name": "AccumulateStats",
+    "signature": "static inline uint32_t\u0026 u32_at(void* base, uintptr_t offset)",
+    "summary": "Accumulates value from ext_007C9280 and either field_0x164 of ext_007D8710 or increments a miss counter",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DAD40": {
     "name": "ReturnZeroWord",
     "signature": "uint16_t ReturnZeroWord()",
