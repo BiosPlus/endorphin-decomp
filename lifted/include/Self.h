@@ -27,5 +27,6 @@ struct Self_Fields {
     // +0x114 void*                    field_114  (evidence: 0x00630580)
     // +0x150 uint32_t                 field_0x150  (evidence: 0x00687230, 0x00687280)
     // +0x268 uint32_t                 field_0x268  (evidence: 0x00702780)
+    // +0x5F8 uint32_t                 field_0x5F8  (evidence: 0x0059E060)
 };
 } // namespace lifted_layout

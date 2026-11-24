@@ -21,3 +21,28 @@ void fn_00594790(void* self) {
     }
 }
 } // namespace lift_00594790
+
+// [0x0059E060] sub_0059E060 (31 bytes)
+namespace lift_0059E060 {
+// Callee 0x006AD940 (sub_006AD940): thiscall, takes the object in ECX, returns a pointer-sized value in EAX.
+extern uint32_t __thiscall ext_006AD940(void* self);
+// Known callee 0x00492550: IsStateOneWithNonZeroField8 (Returns 1 if the dword at self+0x00 equals 1 and the dword at self+0x08 is nonzero, else 0.)
+extern int __thiscall ext_00492550(void* self);
+
+// @name IsResolvedChildStateOneWithNonZeroField8
+// @summary Returns 0 if the dword at +0x5F8 is null; otherwise resolves the object at +0x26C of that pointer via ext_006AD940 and tail-returns IsStateOneWithNonZeroField8 on the result.
+// @field Self +0x5F8 uint32_t field_0x5F8
+// @field ChildObject +0x26C uint32_t field_0x26C
+int __thiscall fn_0059E060(void* self) {
+    const uint32_t child = lift_field<uint32_t>(self, 0x5F8);
+    if (child == 0) {
+        return 0;
+    }
+
+    void* child_obj = reinterpret_cast<void*>(static_cast<uintptr_t>(child));
+    const uint32_t arg = lift_field<uint32_t>(child_obj, 0x26C);
+    const uint32_t resolved = ext_006AD940(reinterpret_cast<void*>(static_cast<uintptr_t>(arg)));
+
+    return ext_00492550(reinterpret_cast<void*>(static_cast<uintptr_t>(resolved)));
+}
+} // namespace lift_0059E060

@@ -16691,6 +16691,12 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x5FC and tail-calls sub_006750B0.",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
+  "0x0059E060": {
+    "name": "IsResolvedChildStateOneWithNonZeroField8",
+    "signature": "int __thiscall fn_0059E060(void* self)",
+    "summary": "Returns 0 if the dword at +0x5F8 is null; otherwise resolves the object at +0x26C of that pointer via ext_006AD940 and tail-returns IsStateOneWithNonZeroField8 on the result.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x0059E1E0": {
     "name": "ExprParser::SingleVariableContainer::vfunc_0",
     "class": "ExprParser::SingleVariableContainer",

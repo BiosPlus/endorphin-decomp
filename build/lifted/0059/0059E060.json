@@ -1,0 +1,27 @@
+{
+  "va": "0x0059E060",
+  "size": 31,
+  "orig_symbol": "sub_0059E060",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "IsResolvedChildStateOneWithNonZeroField8",
+  "signature": "int __thiscall fn_0059E060(void* self)",
+  "summary": "Returns 0 if the dword at +0x5F8 is null; otherwise resolves the object at +0x26C of that pointer via ext_006AD940 and tail-returns IsStateOneWithNonZeroField8 on the result.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x5F8",
+      "type": "uint32_t",
+      "name": "field_0x5F8"
+    },
+    {
+      "class": "ChildObject",
+      "offset": "+0x26C",
+      "type": "uint32_t",
+      "name": "field_0x26C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:25:48Z"
+}
