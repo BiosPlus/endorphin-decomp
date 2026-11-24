@@ -61,3 +61,34 @@ void sub_004B7030(float *out)
     out[2] = mem_00A384A4;
 }
 } // namespace lift_004B7030
+
+// [0x004B6CC0] sub_004B6CC0 (33 bytes)
+namespace lift_004B6CC0 {
+// The string constructor is reached through the MSVCP80 import slot at 0x924FE8,
+// whose .rdata value is 0x006290D8 (mem_00924FE8); it is called here by that target.
+extern void __thiscall ext_006290D8(void* self);
+
+// @name Unknown::initStringAndZeroFloats1C
+// @class Unknown
+// @summary Default-constructs the std::string at +0x00, then zeroes the float fields at +0x1C..+0x30; returns this.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1C float field_0x1C
+// @field Unknown +0x20 float field_0x20
+// @field Unknown +0x24 float field_0x24
+// @field Unknown +0x28 float field_0x28
+// @field Unknown +0x2C float field_0x2C
+// @field Unknown +0x30 float field_0x30
+
+// [0x004B6CC0]
+void* fn_004B6CC0(void* self) {
+    uint8_t* esi = static_cast<uint8_t*>(self);
+    ext_006290D8(esi);
+    *reinterpret_cast<float*>(esi + 0x1C) = 0.0f;
+    *reinterpret_cast<float*>(esi + 0x20) = 0.0f;
+    *reinterpret_cast<float*>(esi + 0x24) = 0.0f;
+    *reinterpret_cast<float*>(esi + 0x28) = 0.0f;
+    *reinterpret_cast<float*>(esi + 0x2C) = 0.0f;
+    *reinterpret_cast<float*>(esi + 0x30) = 0.0f;
+    return esi;
+}
+} // namespace lift_004B6CC0

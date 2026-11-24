@@ -8359,6 +8359,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00622380 (NMData::SkeletalCalibrationVariables::vfunc_28).",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
+  "0x004B6CC0": {
+    "name": "Unknown::initStringAndZeroFloats1C",
+    "class": "Unknown",
+    "signature": "void* fn_004B6CC0(void* self)",
+    "summary": "Default-constructs the std::string at +0x00, then zeroes the float fields at +0x1C..+0x30; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B6CF0": {
     "name": "sub_004B6CF0",
     "class": "Unknown",
