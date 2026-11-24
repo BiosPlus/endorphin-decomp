@@ -4563,6 +4563,13 @@
     "summary": "Stores the single stack argument into field +0x1E0 of the object reached via self-\u003e+0xCC-\u003e+0x26C (thiscall, ret 4).",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x0046FDC0": {
+    "name": "sub_0046FDC0",
+    "class": "Unknown",
+    "signature": "void fn_0046FDC0(void* self, int32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046FDA0 (Unknown::setSubobject1E0Value).",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x0046FE10": {
     "name": "sub_0046FE10",
     "class": "OglRenderer",

@@ -1,0 +1,34 @@
+{
+  "va": "0x0046FDC0",
+  "size": 25,
+  "orig_symbol": "sub_0046FDC0",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "sub_0046FDC0",
+  "class": "Unknown",
+  "signature": "void fn_0046FDC0(void* self, int32_t value)",
+  "summary": "Auto-lifted identical-shape clone of 0x0046FDA0 (Unknown::setSubobject1E0Value).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xCC",
+      "type": "void*",
+      "name": "field_0xcc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x26C",
+      "type": "void*",
+      "name": "field_0x26c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1E0",
+      "type": "int32_t",
+      "name": "field_0x1e0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T11:48:07Z"
+}
