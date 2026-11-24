@@ -84,3 +84,57 @@ void fn_00533D10(void* self, DWORD arg0, DWORD arg1) {
     lift_field<DWORD>(self, 0x498) = arg1;
 }
 } // namespace lift_00533D10
+
+// [0x00533380]
+namespace lift_00533380 {
+// @name OglRenderer::vfunc_16
+// @class OglRenderer
+// @summary Sets a float property on OglRenderer (selecting +0x390 or +0x380 based on +0x379) and +0x458, marks +0x430 dirty, and invokes vtable +0x154
+// @field OglRenderer +0x379 uint8_t field_0x379
+// @field OglRenderer +0x380 float field_0x380
+// @field OglRenderer +0x390 float field_0x390
+// @field OglRenderer +0x430 uint8_t field_0x430
+// @field OglRenderer +0x458 float field_0x458
+
+
+void __thiscall fn_00533380(void* self, float value) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    if (base[0x379] != 0) {
+        *reinterpret_cast<float*>(base + 0x390) = value;
+    } else {
+        *reinterpret_cast<float*>(base + 0x380) = value;
+    }
+    *reinterpret_cast<float*>(base + 0x458) = value;
+    base[0x430] = 1;
+
+    uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(self);
+    auto vfunc = reinterpret_cast<void(__thiscall*)(void*)>(vtable[0x154 / sizeof(uintptr_t)]);
+    vfunc(self);
+}
+} // namespace lift_00533380
+
+// [0x00533340]
+namespace lift_00533340 {
+// @name OglRenderer::vfunc_15
+// @class OglRenderer
+// @summary Sets a float property on OglRenderer (selecting +0x38c or +0x37c based on +0x379), stores it at +0x454, sets +0x430 to 1, and invokes vfunc at +0x154.
+// @field OglRenderer +0x379 uint8_t field_0x379
+// @field OglRenderer +0x37c float field_0x37c
+// @field OglRenderer +0x38c float field_0x38c
+// @field OglRenderer +0x430 uint8_t field_0x430
+// @field OglRenderer +0x454 float field_0x454
+
+void OglRenderer_vfunc_15(void* self, float value) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    if (*reinterpret_cast<uint8_t*>(base + 0x379) != 0) {
+        *reinterpret_cast<float*>(base + 0x38c) = value;
+    } else {
+        *reinterpret_cast<float*>(base + 0x37c) = value;
+    }
+    *reinterpret_cast<float*>(base + 0x454) = value;
+    void** vtable = *reinterpret_cast<void***>(base);
+    auto vfunc = reinterpret_cast<void (*)(void*)>(vtable[0x154 / sizeof(void*)]);
+    *reinterpret_cast<uint8_t*>(base + 0x430) = 1;
+    vfunc(self);
+}
+} // namespace lift_00533340
