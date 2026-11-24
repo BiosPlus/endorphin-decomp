@@ -272,3 +272,27 @@ float __thiscall sub_00486850(const void* thisPtr, const void* other) {
     return b[1] * a[1] + b[0] * a[0] + b[2] * a[2] + b[3] * a[3];
 }
 } // namespace lift_00486850
+
+// [0x0048E2E0]
+namespace lift_0048E2E0 {
+// @name Unknown::InitWithVtblAndFields
+// @class Unknown
+// @summary Initializes base via ext_006657F0(self, 0), sets vtable to 0x0093E5E8, and stores arg2 at +0x10, 0 at +0x14, and arg1 at +0x18; returns self.
+// @field Unknown +0x00 uint32_t vftable
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+
+
+extern void* ext_006657F0(void* self, uint32_t arg);
+
+void* fn_0048E2E0(void* self, uint32_t arg1, uint32_t arg2) {
+    ext_006657F0(self, 0);
+    uint8_t* p = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(p + 0x10) = arg2;
+    *reinterpret_cast<uint32_t*>(p + 0x00) = 0x0093E5E8u;
+    *reinterpret_cast<uint32_t*>(p + 0x14) = 0u;
+    *reinterpret_cast<uint32_t*>(p + 0x18) = arg1;
+    return self;
+}
+} // namespace lift_0048E2E0
