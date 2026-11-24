@@ -39828,6 +39828,12 @@
     "summary": "Component-wise add of two 4-element double vectors: out = a + b.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E3790": {
+    "name": "ScaleDoubleArray",
+    "signature": "void fn_006E3790(double* dst, const double* src, double scale, uint32_t count)",
+    "summary": "Writes dst[i] = src[i] * scale for i in [0, count), one double per element.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E3A40": {
     "name": "Unknown::IsField68Equal2",
     "class": "Unknown",

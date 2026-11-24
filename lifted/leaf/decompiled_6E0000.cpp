@@ -440,3 +440,14 @@ void sub_006E3660(double* out, const double* a, const double* b) {
     out[3] = a[3] + b[3];
 }
 } // namespace lift_006E3660
+
+// [0x006E3790]
+namespace lift_006E3790 {
+// @name ScaleDoubleArray
+// @summary Writes dst[i] = src[i] * scale for i in [0, count), one double per element.
+void fn_006E3790(double* dst, const double* src, double scale, uint32_t count) {
+    for (uint32_t i = 0; i < count; ++i) {
+        dst[i] = src[i] * scale;
+    }
+}
+} // namespace lift_006E3790
