@@ -40990,3 +40990,20 @@ void* fn_004BCA00(void* unused, void* self) {
     return self;
 }
 } // namespace lift_004BCA00
+
+// [0x00512980] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_0 (113 bytes)
+namespace lift_00512980 {
+extern void* ext_00511960(void* tmp, uint32_t value);
+extern void ext_006720E0(void* self, void* src);
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_0 (Chromosome::Descriptor::getTypicalMutationRate)
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>
+// @summary Reads the first dword behind the source pointer, passes it through ext_00511960 to get a string source, and assigns that into the caller-supplied string return slot (getTypicalMutationRate).
+// @field ExprParser::ReadMethodType +0x00 uint32_t src_value (dword read through the source pointer argument; not a field of this object)
+void* fn_00512980(const uint32_t* src, void* out) {
+    alignas(8) unsigned char tmp[0x20] = {};
+    void* text = ext_00511960(tmp, *src);
+    ext_006720E0(out, text);
+    return out;
+}
+} // namespace lift_00512980
