@@ -17763,6 +17763,12 @@
     "summary": "Constructs a std::string from the literal at 0x0096B92C in the caller's sret buffer and returns that buffer.",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
+  "0x005E12D0": {
+    "name": "forwardToChild",
+    "signature": "void fn_005E12D0(void* self)",
+    "summary": "If the object at self+0x234 is non-null, tail-dispatch to its vtable slot 6 with that object as `this`; otherwise return.",
+    "lifted_path": "lifted/leaf/tiny_5E0000.cpp"
+  },
   "0x005E1350": {
     "name": "sub_005E1350",
     "class": "PoseTool",

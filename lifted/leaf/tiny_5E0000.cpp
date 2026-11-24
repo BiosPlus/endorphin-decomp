@@ -44,3 +44,21 @@ uintptr_t fn_005E1350(void* self) {
 }
 } // namespace lift_00545610
 } // namespace lift_005E1350
+
+// [0x005E12D0] sub_005E12D0 (18 bytes)
+namespace lift_005E12D0 {
+// @name forwardToChild
+// @summary If the object at self+0x234 is non-null, tail-dispatch to its vtable slot 6 with that object as `this`; otherwise return.
+// @field self +0x234 void* field_0x234
+void fn_005E12D0(void* self) {
+    auto* const base = static_cast<unsigned char*>(self);
+    void* const child = *reinterpret_cast<void**>(base + 0x234);
+    if (child == nullptr) {
+        return;
+    }
+    // Vtable slot 6 (byte offset 0x18 on a 32-bit target).
+    void** const vtbl = *reinterpret_cast<void***>(child);
+    auto const fn = reinterpret_cast<void (*)(void*)>(vtbl[6]);
+    fn(child);
+}
+} // namespace lift_005E12D0
