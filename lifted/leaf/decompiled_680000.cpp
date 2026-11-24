@@ -458,3 +458,24 @@ void fn_006878E0(void* dst, void* end, const void* src) {
     } while (dst != end);
 }
 } // namespace lift_006878E0
+
+// [0x0068BF00]
+namespace lift_0068BF00 {
+extern uint32_t __thiscall ext_00508680(void* self);
+extern const double mem_0093BD38;
+extern const double mem_0098E430;
+
+// @name scaleByRandom_0068BF00
+// @summary Scales a float argument using a value from sub_00508680 and two double constants.
+// @field unknown +0x10 uint8_t field_0x10[]
+extern float __thiscall sub_0068BF00(void* self, float scale) {
+    uint32_t val = ext_00508680(static_cast<uint8_t*>(self) + 0x10);
+    double d = static_cast<double>(static_cast<int32_t>(val));
+    if (static_cast<int32_t>(val) < 0) {
+        d += mem_0093BD38;
+    }
+    double factor = mem_0098E430;
+    double res = (d * factor + factor) * static_cast<double>(scale);
+    return static_cast<float>(res);
+}
+} // namespace lift_0068BF00

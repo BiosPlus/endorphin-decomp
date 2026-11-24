@@ -1,0 +1,21 @@
+{
+  "va": "0x0068BF00",
+  "size": 51,
+  "orig_symbol": "sub_0068BF00",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "scaleByRandom_0068BF00",
+  "signature": "extern \"C\" float __thiscall sub_0068BF00(void* self, float scale)",
+  "summary": "Scales a float argument using a value from sub_00508680 and two double constants.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10[]"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:14:23Z"
+}
