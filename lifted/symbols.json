@@ -44461,6 +44461,13 @@
     "summary": "Sets the 32-bit field at +0x44 if bit 0 of +0x9C is clear.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C9930": {
+    "name": "Unknown::CallHelperThenDispatchAt15C",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __cdecl sub_007C9930(void* self)",
+    "summary": "Calls ext_007C98C0 on the argument, then calls the indirect target in mem_00AB28C8 with (this+0x40+0x15C, this, this).",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C9C50": {
     "name": "addOffset0x160",
     "signature": "uint32_t sub_007C9C50(uint32_t arg0)",

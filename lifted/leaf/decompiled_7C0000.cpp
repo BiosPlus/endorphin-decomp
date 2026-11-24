@@ -17,3 +17,22 @@ void fn_007C97A0(void* self, uint32_t value) {
     }
 }
 } // namespace lift_007C97A0
+
+// [0x007C9930]
+namespace lift_007C9930 {
+// @name Unknown::CallHelperThenDispatchAt15C
+// @summary Calls ext_007C98C0 on the argument, then calls the indirect target in mem_00AB28C8 with (this+0x40+0x15C, this, this).
+// @field Unknown +0x40 uint32_t field_0x40
+
+extern void ext_007C98C0(void* self);
+extern uint32_t mem_00AB28C8;
+
+extern void __cdecl sub_007C9930(void* self) {
+    ext_007C98C0(self);
+    using DispatchFn = void(__cdecl*)(uint32_t, void*, void*);
+    auto target = reinterpret_cast<DispatchFn>(mem_00AB28C8);
+    uint32_t base = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x40);
+    uint32_t arg = base + 0x15C;
+    target(arg, self, self);
+}
+} // namespace lift_007C9930

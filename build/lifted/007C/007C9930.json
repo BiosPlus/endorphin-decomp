@@ -1,0 +1,22 @@
+{
+  "va": "0x007C9930",
+  "size": 32,
+  "orig_symbol": "sub_007C9930",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "Unknown::CallHelperThenDispatchAt15C",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __cdecl sub_007C9930(void* self)",
+  "summary": "Calls ext_007C98C0 on the argument, then calls the indirect target in mem_00AB28C8 with (this+0x40+0x15C, this, this).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:48:32Z"
+}
