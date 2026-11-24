@@ -883,3 +883,26 @@ void sub_0043D3B0(uint32_t* begin, uint32_t* end, uint32_t value) {
     }
 }
 } // namespace lift_0043D3B0
+
+// [0x00430900]
+namespace lift_00430900 {
+// @name forwardChildStateToTarget
+// @summary If child at +0x100 is non-null, queries its state via ext_0044B660 and passes it to target's vtable+0x4 method.
+// @field unknown +0x100 void* field_0x100
+
+
+extern uint8_t ext_0044B660(void* self);
+extern uint32_t mem_read32(uint32_t addr);
+
+void __thiscall fn_00430900(void* self, void* target) {
+    uint32_t child = mem_read32(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)) + 0x100);
+    if (!child) {
+        return;
+    }
+    uint32_t vtable = mem_read32(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(target)));
+    uint8_t state = ext_0044B660(reinterpret_cast<void*>(static_cast<uintptr_t>(child)));
+    uint32_t vfn = mem_read32(vtable + 4);
+    using Vfn = void(__thiscall*)(void*, uint32_t);
+    reinterpret_cast<Vfn>(static_cast<uintptr_t>(vfn))(target, static_cast<uint32_t>(state));
+}
+} // namespace lift_00430900

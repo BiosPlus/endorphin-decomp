@@ -1,0 +1,21 @@
+{
+  "va": "0x00430900",
+  "size": 39,
+  "orig_symbol": "sub_00430900",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "forwardChildStateToTarget",
+  "signature": "void __thiscall fn_00430900(void* self, void* target)",
+  "summary": "If child at +0x100 is non-null, queries its state via ext_0044B660 and passes it to target's vtable+0x4 method.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x100",
+      "type": "void*",
+      "name": "field_0x100"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:51:13Z"
+}

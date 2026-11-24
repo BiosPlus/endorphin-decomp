@@ -2025,6 +2025,12 @@
     "summary": "Reads byte field +0xF6 of this and tail-forwards it as the argument to vtable slot 1 of the object passed on the stack.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430900": {
+    "name": "forwardChildStateToTarget",
+    "signature": "void __thiscall fn_00430900(void* self, void* target)",
+    "summary": "If child at +0x100 is non-null, queries its state via ext_0044B660 and passes it to target's vtable+0x4 method.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430CA0": {
     "name": "Unknown::forwardVirtual0WithArg1",
     "class": "Unknown",
