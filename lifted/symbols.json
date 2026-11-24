@@ -27127,6 +27127,13 @@
     "summary": "Forwards (this+4, arg) to vfunc slot 8 (vtable +0x20) of the object pointed to by the first member.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x00661840": {
+    "name": "Unknown::CallSubobjectVirtualSlot2",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_00661840(void* self, void* arg1, void* arg2)",
+    "summary": "Forwards (arg1, this+4, arg2) to virtual slot 2 of the object pointed to by this+0, then returns arg1.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00661880": {
     "name": "sub_00661880",
     "signature": "void sub_00661880(uint32_t ecx)",
