@@ -6676,3 +6676,26 @@ void fn_00489680(void* out) {
     lift_field<uint32_t>(out, 4) = 0x00AD9E64u;
 }
 } // namespace lift_00489680
+
+// [0x00489700] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setRootFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_00489700 {
+extern void ext_0067A670();
+extern int mem_00AD9E70;
+extern int mem_00AD9E6C;
+
+// @name ExprParser::WriteMethodType_DesiredPoseEventData_setRootFromFSM::vfunc_40
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setRootFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Lazily initializes the static object at mem_00AD9E6C (once, guarded by bit 0 of mem_00AD9E70) and stores its address at self+0x04.
+// @field ExprParser::WriteMethodType<...> +0x04 uint32_t field_0x04
+void fn_00489700(void* self) {
+    // One-time initialization guard: bit 0 of mem_00AD9E70 marks the static as constructed.
+    if ((mem_00AD9E70 & 1) == 0) {
+        mem_00AD9E70 |= 1;
+        ext_0067A670();
+        // Vtable pointer for the static object at mem_00AD9E6C.
+        mem_00AD9E6C = 0x0093D934;
+    }
+    // Store the address of the static object into the caller-provided object (+0x04).
+    lift_field<uint32_t>(self, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AD9E6C));
+}
+} // namespace lift_00489700
