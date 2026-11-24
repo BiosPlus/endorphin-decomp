@@ -1,0 +1,14 @@
+{
+  "va": "0x0062A1D0",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSensors::SensorRelativeTime, float, \u0026public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSensors::SensorRelativeTime, float, resetTime\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cSensors::SensorRelativeTime, float, \u0026public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)\u003e",
+  "signature": "void fn_0062A1D0(uint32_t* self)",
+  "summary": "One-time guarded init of the shared static object at 0x00B515C4, then stores its address into the object's +0x04 slot.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:56:56Z"
+}

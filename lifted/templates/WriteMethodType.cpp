@@ -7486,3 +7486,25 @@ void __stdcall lift_0062A7D0(void* obj) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B51C2C));
 }
 } // namespace lift_0062A7D0
+
+// [0x0062A1D0] ExprParser::WriteMethodType<Sensors::SensorRelativeTime, float, &public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)>::vfunc_40 (122 bytes)
+namespace lift_0062A1D0 {
+extern void ext_0067A670();
+extern uint32_t mem_00B515C8;
+extern uint32_t mem_00B515C4;
+
+// @name ExprParser::WriteMethodType<Sensors::SensorRelativeTime, float, resetTime>::vfunc_40
+// @class ExprParser::WriteMethodType<Sensors::SensorRelativeTime, float, &public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)>
+// @summary One-time guarded init of the shared static object at 0x00B515C4, then stores its address into the object's +0x04 slot.
+// @field ExprParser::WriteMethodType<Sensors::SensorRelativeTime, float, &public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)> +0x04 uint32_t field_0x04
+void fn_0062A1D0(uint32_t* self) {
+    // Guard bit 0 of mem_00B515C8: first call runs the external initializer
+    // and installs the static object's vtable (0x0097887C).
+    if ((mem_00B515C8 & 1u) == 0) {
+        mem_00B515C8 |= 1u;
+        ext_0067A670();
+        mem_00B515C4 = 0x0097887Cu;
+    }
+    self[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B515C4));
+}
+} // namespace lift_0062A1D0
