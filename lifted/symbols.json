@@ -32509,6 +32509,27 @@
     "summary": "Returns the 32-bit value stored at vtable offset +0x80 of the object's vtable.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E8060": {
+    "name": "sub_006E8060",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006E8060(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006E8050 (Unknown::GetVtableSlot80).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E8070": {
+    "name": "sub_006E8070",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006E8070(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006E8050 (Unknown::GetVtableSlot80).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E8080": {
+    "name": "sub_006E8080",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006E8080(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006E8050 (Unknown::GetVtableSlot80).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
   "0x006E86A0": {
     "name": "sub_006E86A0",
     "class": "Unknown",
@@ -32528,6 +32549,13 @@
     "class": "Unknown",
     "signature": "uint32_t fn_006E8810(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E8900": {
+    "name": "sub_006E8900",
+    "class": "Unknown",
+    "signature": "__declspec(noinline) extern int32_t __fastcall fn_006E8900(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006E7F90 (sub_006E6340).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
   "0x006E9420": {
@@ -34328,11 +34356,24 @@
     "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00700970": {
+    "name": "sub_00700970",
+    "class": "Unknown",
+    "signature": "extern uint32_t __fastcall fn_00700970(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x00700980": {
     "name": "sub_00700980",
     "class": "VMCSModes::DefaultImplementation",
     "signature": "void fn_00700980(void* self, uint32_t value)",
     "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x007010E0": {
+    "name": "sub_007010E0",
+    "signature": "void fn_006DD960(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006DD960 (fn_006DD960 (MSVCR _HUGE negated into global)).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
   "0x007019D0": {
@@ -34707,6 +34748,12 @@
     "name": "sub_0070F340",
     "signature": "extern \"C\" int32_t __fastcall fn_0070F340(void* self)",
     "summary": "Getter returning int32_t field at offset +0x2F8.",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x0070F760": {
+    "name": "sub_0070F760",
+    "signature": "void fn_006DD960(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x006DD960 (fn_006DD960 (MSVCR _HUGE negated into global)).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
   "0x0070FB60": {
@@ -35504,6 +35551,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00715570": {
+    "name": "sub_00715570",
+    "class": "Unknown",
+    "signature": "extern uint32_t __fastcall fn_00715570(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x007155A0": {
     "name": "sub_007155A0",
     "class": "Unknown",
@@ -35698,11 +35752,32 @@
     "summary": "Returns constant 0x7.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071B0F0": {
+    "name": "sub_0071B0F0",
+    "class": "Unknown",
+    "signature": "extern uint32_t __fastcall fn_0071B0F0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x0071B100": {
     "name": "sub_0071B100",
     "class": "VMCSModes::DefaultImplementation",
     "signature": "void fn_0071B100(void* self, uint32_t value)",
     "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071B4F0": {
+    "name": "sub_0071B4F0",
+    "class": "Unknown",
+    "signature": "extern uint32_t __fastcall fn_0071B4F0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071B6C0": {
+    "name": "sub_0071B6C0",
+    "class": "Unknown",
+    "signature": "extern uint32_t __fastcall fn_0071B6C0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
   "0x0071B6D0": {
@@ -35747,6 +35822,20 @@
     "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071BF90": {
+    "name": "sub_0071BF90",
+    "class": "Unknown",
+    "signature": "extern uint32_t __fastcall fn_0071BF90(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071BFA0": {
+    "name": "sub_0071BFA0",
+    "class": "Unknown",
+    "signature": "extern uint32_t __fastcall fn_0071BFA0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x0071BFB0": {
     "name": "sub_0071BFB0",
     "class": "VMCSModes::DefaultImplementation",
@@ -35789,11 +35878,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C360": {
+    "name": "sub_0071C360",
+    "class": "Unknown",
+    "signature": "extern uint32_t __fastcall fn_0071C360(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x0071C370": {
     "name": "sub_0071C370",
     "class": "VMCSModes::DefaultImplementation",
     "signature": "void fn_0071C370(void* self, uint32_t value)",
     "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C380": {
+    "name": "sub_0071C380",
+    "class": "Unknown",
+    "signature": "extern uint32_t __fastcall fn_0071C380(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
   "0x0071C390": {
@@ -35822,6 +35925,13 @@
     "class": "VMCSModes::DefaultImplementation",
     "signature": "void fn_0071C4B0(void* self, uint32_t value)",
     "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C4C0": {
+    "name": "sub_0071C4C0",
+    "class": "Unknown",
+    "signature": "extern uint32_t __fastcall fn_0071C4C0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
   "0x0071C4D0": {
@@ -35904,6 +36014,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C600": {
+    "name": "sub_0071C600",
+    "class": "Unknown",
+    "signature": "extern uint32_t __fastcall fn_0071C600(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x0071C610": {
     "name": "sub_0071C610",
     "signature": "extern \"C\" void __fastcall fn_0071C610(void* self, int edx_unused, uint8_t value)",
@@ -35956,6 +36073,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C940": {
+    "name": "sub_0071C940",
+    "class": "Unknown",
+    "signature": "extern uint32_t __fastcall fn_0071C940(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x0071C950": {
     "name": "sub_0071C950",
     "class": "Unknown",
@@ -35975,6 +36099,13 @@
     "class": "VMCSModes::DefaultImplementation",
     "signature": "void fn_0071C990(void* self, uint32_t value)",
     "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C9A0": {
+    "name": "sub_0071C9A0",
+    "class": "Unknown",
+    "signature": "extern uint32_t __fastcall fn_0071C9A0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
   "0x0071C9D0": {

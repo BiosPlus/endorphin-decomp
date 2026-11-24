@@ -1,0 +1,13 @@
+{
+  "va": "0x007010E0",
+  "size": 16,
+  "orig_symbol": "sub_007010E0",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "sub_007010E0",
+  "signature": "void fn_006DD960(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x006DD960 (fn_006DD960 (MSVCR _HUGE negated into global)).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:40:49Z"
+}

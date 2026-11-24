@@ -1,0 +1,22 @@
+{
+  "va": "0x006E8060",
+  "size": 16,
+  "orig_symbol": "sub_006E8060",
+  "src_path": "src/leaf/tiny_6E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6E0000.cpp",
+  "name": "sub_006E8060",
+  "class": "Unknown",
+  "signature": "uint32_t fn_006E8060(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x006E8050 (Unknown::GetVtableSlot80).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (vtable pointer, dereferenced to read slot",
+      "name": "+0x80)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:40:49Z"
+}

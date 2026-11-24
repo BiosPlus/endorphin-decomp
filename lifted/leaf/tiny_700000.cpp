@@ -764,3 +764,66 @@ void __thiscall fn_00700950(Unknown* self, uint8_t value) {
 }
 } // namespace lift_005304A0
 } // namespace lift_00700950
+
+// [0x00700970] sub_00700970 (16 bytes)
+namespace lift_00700970 {
+// @name sub_00700970
+// @summary Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).
+namespace lift_006DE3E0 {
+// @name Unknown::GetIndirectUInt32At98
+// @class Unknown
+// @summary Loads the pointer at self+0x14 and returns the uint32 stored at that object's +0x98 offset.
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x98 uint32_t field_0x98
+
+extern uint32_t __fastcall fn_00700970(void* self) {
+    // mov eax, [ecx + 0x14]; mov eax, [eax + 0x98]; ret
+    void* inner = lift_field<void*>(self, 0xC);
+    return lift_field<uint32_t>(inner, 0x160);
+}
+} // namespace lift_006DE3E0
+} // namespace lift_00700970
+
+// [0x007010E0] sub_007010E0 (16 bytes)
+namespace lift_007010E0 {
+// @name sub_007010E0
+// @summary Auto-lifted identical-shape clone of 0x006DD960 (fn_006DD960 (MSVCR _HUGE negated into global)).
+namespace lift_006DD960 {
+// Globals accessed by this function.
+// mem_00925284: .rdata u32 holding the address of MSVCR80 _HUGE (0x0062D360).
+extern uint32_t mem_00925284;
+// mem_00B5DC10: global double destination.
+extern double mem_00B5E7C8;
+
+// @name fn_007010E0 (MSVCR _HUGE negated into global)
+// @summary Loads *_HUGE (double), negates it, and stores the result into mem_00B5DC10.
+void fn_006DD960(void) {
+    // eax = [mem_00925284]  (pointer to _HUGE)
+    // fld qword [eax]; fchs; fstp qword [mem_00B5DC10]
+    const double* huge = reinterpret_cast<const double*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5E7C8 = -(*huge);
+}
+} // namespace lift_006DD960
+} // namespace lift_007010E0
+
+// [0x0070F760] sub_0070F760 (16 bytes)
+namespace lift_0070F760 {
+// @name sub_0070F760
+// @summary Auto-lifted identical-shape clone of 0x006DD960 (fn_006DD960 (MSVCR _HUGE negated into global)).
+namespace lift_006DD960 {
+// Globals accessed by this function.
+// mem_00925284: .rdata u32 holding the address of MSVCR80 _HUGE (0x0062D360).
+extern uint32_t mem_00925284;
+// mem_00B5DC10: global double destination.
+extern double mem_00B5EED0;
+
+// @name fn_0070F760 (MSVCR _HUGE negated into global)
+// @summary Loads *_HUGE (double), negates it, and stores the result into mem_00B5DC10.
+void fn_006DD960(void) {
+    // eax = [mem_00925284]  (pointer to _HUGE)
+    // fld qword [eax]; fchs; fstp qword [mem_00B5DC10]
+    const double* huge = reinterpret_cast<const double*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5EED0 = -(*huge);
+}
+} // namespace lift_006DD960
+} // namespace lift_0070F760

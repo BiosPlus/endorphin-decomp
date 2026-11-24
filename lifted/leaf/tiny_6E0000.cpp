@@ -492,3 +492,73 @@ uint32_t fn_006E8050(void* self) {
     return lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(vtbl)), 0x80);
 }
 } // namespace lift_006E8050
+
+// [0x006E8060] sub_006E8060 (16 bytes)
+namespace lift_006E8060 {
+// @name sub_006E8060
+// @summary Auto-lifted identical-shape clone of 0x006E8050 (Unknown::GetVtableSlot80).
+namespace lift_006E8050 {
+// @name Unknown::GetVtableSlot80
+// @class Unknown
+// @summary Returns the 32-bit value stored at vtable offset +0x80 of the object's vtable.
+// @field Unknown +0x00 uint32_t field_0x00 (vtable pointer, dereferenced to read slot +0x80)
+uint32_t fn_006E8060(void* self) {
+    uint32_t vtbl = lift_field<uint32_t>(self, 0x00);
+    return lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(vtbl)), 0x84);
+}
+} // namespace lift_006E8050
+} // namespace lift_006E8060
+
+// [0x006E8070] sub_006E8070 (16 bytes)
+namespace lift_006E8070 {
+// @name sub_006E8070
+// @summary Auto-lifted identical-shape clone of 0x006E8050 (Unknown::GetVtableSlot80).
+namespace lift_006E8050 {
+// @name Unknown::GetVtableSlot80
+// @class Unknown
+// @summary Returns the 32-bit value stored at vtable offset +0x80 of the object's vtable.
+// @field Unknown +0x00 uint32_t field_0x00 (vtable pointer, dereferenced to read slot +0x80)
+uint32_t fn_006E8070(void* self) {
+    uint32_t vtbl = lift_field<uint32_t>(self, 0x00);
+    return lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(vtbl)), 0x88);
+}
+} // namespace lift_006E8050
+} // namespace lift_006E8070
+
+// [0x006E8080] sub_006E8080 (16 bytes)
+namespace lift_006E8080 {
+// @name sub_006E8080
+// @summary Auto-lifted identical-shape clone of 0x006E8050 (Unknown::GetVtableSlot80).
+namespace lift_006E8050 {
+// @name Unknown::GetVtableSlot80
+// @class Unknown
+// @summary Returns the 32-bit value stored at vtable offset +0x80 of the object's vtable.
+// @field Unknown +0x00 uint32_t field_0x00 (vtable pointer, dereferenced to read slot +0x80)
+uint32_t fn_006E8080(void* self) {
+    uint32_t vtbl = lift_field<uint32_t>(self, 0x00);
+    return lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(vtbl)), 0x8C);
+}
+} // namespace lift_006E8050
+} // namespace lift_006E8080
+
+// [0x006E8900] sub_006E8900 (16 bytes)
+namespace lift_006E8900 {
+extern void __fastcall ext_006D2250(void* self);
+
+// @name sub_006E8900
+// @summary Auto-lifted identical-shape clone of 0x006E7F90 (sub_006E6340).
+namespace lift_006E7F90 {
+// Known callee 0x006E7460: sub_006E7460 (Getter returning int32_t field at offset +0x0.)
+extern int32_t __fastcall ext_006D2250(void* self);
+
+// @name Unknown::GetIndirectInt32Plus8
+// @class Unknown
+// @summary Loads the pointer stored at +0x00 of self, offsets it by 8, and tail-calls the int32 getter at 0x006E7460 on that sub-object.
+// @field Unknown +0x00 uint32_t field_0x00
+__declspec(noinline) extern int32_t __fastcall fn_006E8900(void* self) {
+    const uint32_t inner = lift_field<uint32_t>(self, 0x00);
+    void* const sub = reinterpret_cast<void*>(static_cast<uintptr_t>(inner + 0x78u));
+    return ext_006D2250(sub);
+}
+} // namespace lift_006E7F90
+} // namespace lift_006E8900

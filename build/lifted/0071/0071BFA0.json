@@ -1,0 +1,28 @@
+{
+  "va": "0x0071BFA0",
+  "size": 16,
+  "orig_symbol": "sub_0071BFA0",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "sub_0071BFA0",
+  "class": "Unknown",
+  "signature": "extern uint32_t __fastcall fn_0071BFA0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x98",
+      "type": "uint32_t",
+      "name": "field_0x98"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:40:49Z"
+}

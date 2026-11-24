@@ -2317,3 +2317,231 @@ double fn_0071DEA0(uint32_t self) {
 }
 } // namespace lift_006D9010
 } // namespace lift_0071DEA0
+
+// [0x00715570] sub_00715570 (16 bytes)
+namespace lift_00715570 {
+// @name sub_00715570
+// @summary Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).
+namespace lift_006DE3E0 {
+// @name Unknown::GetIndirectUInt32At98
+// @class Unknown
+// @summary Loads the pointer at self+0x14 and returns the uint32 stored at that object's +0x98 offset.
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x98 uint32_t field_0x98
+
+extern uint32_t __fastcall fn_00715570(void* self) {
+    // mov eax, [ecx + 0x14]; mov eax, [eax + 0x98]; ret
+    void* inner = lift_field<void*>(self, 0x10);
+    return lift_field<uint32_t>(inner, 0x160);
+}
+} // namespace lift_006DE3E0
+} // namespace lift_00715570
+
+// [0x0071B0F0] sub_0071B0F0 (16 bytes)
+namespace lift_0071B0F0 {
+// @name sub_0071B0F0
+// @summary Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).
+namespace lift_006DE3E0 {
+// @name Unknown::GetIndirectUInt32At98
+// @class Unknown
+// @summary Loads the pointer at self+0x14 and returns the uint32 stored at that object's +0x98 offset.
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x98 uint32_t field_0x98
+
+extern uint32_t __fastcall fn_0071B0F0(void* self) {
+    // mov eax, [ecx + 0x14]; mov eax, [eax + 0x98]; ret
+    void* inner = lift_field<void*>(self, 0xC);
+    return lift_field<uint32_t>(inner, 0x1850);
+}
+} // namespace lift_006DE3E0
+} // namespace lift_0071B0F0
+
+// [0x0071B4F0] sub_0071B4F0 (16 bytes)
+namespace lift_0071B4F0 {
+// @name sub_0071B4F0
+// @summary Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).
+namespace lift_006DE3E0 {
+// @name Unknown::GetIndirectUInt32At98
+// @class Unknown
+// @summary Loads the pointer at self+0x14 and returns the uint32 stored at that object's +0x98 offset.
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x98 uint32_t field_0x98
+
+extern uint32_t __fastcall fn_0071B4F0(void* self) {
+    // mov eax, [ecx + 0x14]; mov eax, [eax + 0x98]; ret
+    void* inner = lift_field<void*>(self, 0xC);
+    return lift_field<uint32_t>(inner, 0x490);
+}
+} // namespace lift_006DE3E0
+} // namespace lift_0071B4F0
+
+// [0x0071B6C0] sub_0071B6C0 (16 bytes)
+namespace lift_0071B6C0 {
+// @name sub_0071B6C0
+// @summary Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).
+namespace lift_006DE3E0 {
+// @name Unknown::GetIndirectUInt32At98
+// @class Unknown
+// @summary Loads the pointer at self+0x14 and returns the uint32 stored at that object's +0x98 offset.
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x98 uint32_t field_0x98
+
+extern uint32_t __fastcall fn_0071B6C0(void* self) {
+    // mov eax, [ecx + 0x14]; mov eax, [eax + 0x98]; ret
+    void* inner = lift_field<void*>(self, 0xC);
+    return lift_field<uint32_t>(inner, 0x380);
+}
+} // namespace lift_006DE3E0
+} // namespace lift_0071B6C0
+
+// [0x0071BF90] sub_0071BF90 (16 bytes)
+namespace lift_0071BF90 {
+// @name sub_0071BF90
+// @summary Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).
+namespace lift_006DE3E0 {
+// @name Unknown::GetIndirectUInt32At98
+// @class Unknown
+// @summary Loads the pointer at self+0x14 and returns the uint32 stored at that object's +0x98 offset.
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x98 uint32_t field_0x98
+
+extern uint32_t __fastcall fn_0071BF90(void* self) {
+    // mov eax, [ecx + 0x14]; mov eax, [eax + 0x98]; ret
+    void* inner = lift_field<void*>(self, 0xC);
+    return lift_field<uint32_t>(inner, 0xDB0);
+}
+} // namespace lift_006DE3E0
+} // namespace lift_0071BF90
+
+// [0x0071BFA0] sub_0071BFA0 (16 bytes)
+namespace lift_0071BFA0 {
+// @name sub_0071BFA0
+// @summary Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).
+namespace lift_006DE3E0 {
+// @name Unknown::GetIndirectUInt32At98
+// @class Unknown
+// @summary Loads the pointer at self+0x14 and returns the uint32 stored at that object's +0x98 offset.
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x98 uint32_t field_0x98
+
+extern uint32_t __fastcall fn_0071BFA0(void* self) {
+    // mov eax, [ecx + 0x14]; mov eax, [eax + 0x98]; ret
+    void* inner = lift_field<void*>(self, 0xC);
+    return lift_field<uint32_t>(inner, 0x408);
+}
+} // namespace lift_006DE3E0
+} // namespace lift_0071BFA0
+
+// [0x0071C360] sub_0071C360 (16 bytes)
+namespace lift_0071C360 {
+// @name sub_0071C360
+// @summary Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).
+namespace lift_006DE3E0 {
+// @name Unknown::GetIndirectUInt32At98
+// @class Unknown
+// @summary Loads the pointer at self+0x14 and returns the uint32 stored at that object's +0x98 offset.
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x98 uint32_t field_0x98
+
+extern uint32_t __fastcall fn_0071C360(void* self) {
+    // mov eax, [ecx + 0x14]; mov eax, [eax + 0x98]; ret
+    void* inner = lift_field<void*>(self, 0xC);
+    return lift_field<uint32_t>(inner, 0xF48);
+}
+} // namespace lift_006DE3E0
+} // namespace lift_0071C360
+
+// [0x0071C380] sub_0071C380 (16 bytes)
+namespace lift_0071C380 {
+// @name sub_0071C380
+// @summary Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).
+namespace lift_006DE3E0 {
+// @name Unknown::GetIndirectUInt32At98
+// @class Unknown
+// @summary Loads the pointer at self+0x14 and returns the uint32 stored at that object's +0x98 offset.
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x98 uint32_t field_0x98
+
+extern uint32_t __fastcall fn_0071C380(void* self) {
+    // mov eax, [ecx + 0x14]; mov eax, [eax + 0x98]; ret
+    void* inner = lift_field<void*>(self, 0xC);
+    return lift_field<uint32_t>(inner, 0x1498);
+}
+} // namespace lift_006DE3E0
+} // namespace lift_0071C380
+
+// [0x0071C4C0] sub_0071C4C0 (16 bytes)
+namespace lift_0071C4C0 {
+// @name sub_0071C4C0
+// @summary Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).
+namespace lift_006DE3E0 {
+// @name Unknown::GetIndirectUInt32At98
+// @class Unknown
+// @summary Loads the pointer at self+0x14 and returns the uint32 stored at that object's +0x98 offset.
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x98 uint32_t field_0x98
+
+extern uint32_t __fastcall fn_0071C4C0(void* self) {
+    // mov eax, [ecx + 0x14]; mov eax, [eax + 0x98]; ret
+    void* inner = lift_field<void*>(self, 0xC);
+    return lift_field<uint32_t>(inner, 0x1058);
+}
+} // namespace lift_006DE3E0
+} // namespace lift_0071C4C0
+
+// [0x0071C600] sub_0071C600 (16 bytes)
+namespace lift_0071C600 {
+// @name sub_0071C600
+// @summary Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).
+namespace lift_006DE3E0 {
+// @name Unknown::GetIndirectUInt32At98
+// @class Unknown
+// @summary Loads the pointer at self+0x14 and returns the uint32 stored at that object's +0x98 offset.
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x98 uint32_t field_0x98
+
+extern uint32_t __fastcall fn_0071C600(void* self) {
+    // mov eax, [ecx + 0x14]; mov eax, [eax + 0x98]; ret
+    void* inner = lift_field<void*>(self, 0xC);
+    return lift_field<uint32_t>(inner, 0x16B8);
+}
+} // namespace lift_006DE3E0
+} // namespace lift_0071C600
+
+// [0x0071C940] sub_0071C940 (16 bytes)
+namespace lift_0071C940 {
+// @name sub_0071C940
+// @summary Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).
+namespace lift_006DE3E0 {
+// @name Unknown::GetIndirectUInt32At98
+// @class Unknown
+// @summary Loads the pointer at self+0x14 and returns the uint32 stored at that object's +0x98 offset.
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x98 uint32_t field_0x98
+
+extern uint32_t __fastcall fn_0071C940(void* self) {
+    // mov eax, [ecx + 0x14]; mov eax, [eax + 0x98]; ret
+    void* inner = lift_field<void*>(self, 0xC);
+    return lift_field<uint32_t>(inner, 0x1D18);
+}
+} // namespace lift_006DE3E0
+} // namespace lift_0071C940
+
+// [0x0071C9A0] sub_0071C9A0 (16 bytes)
+namespace lift_0071C9A0 {
+// @name sub_0071C9A0
+// @summary Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).
+namespace lift_006DE3E0 {
+// @name Unknown::GetIndirectUInt32At98
+// @class Unknown
+// @summary Loads the pointer at self+0x14 and returns the uint32 stored at that object's +0x98 offset.
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x98 uint32_t field_0x98
+
+extern uint32_t __fastcall fn_0071C9A0(void* self) {
+    // mov eax, [ecx + 0x14]; mov eax, [eax + 0x98]; ret
+    void* inner = lift_field<void*>(self, 0xC);
+    return lift_field<uint32_t>(inner, 0x19E8);
+}
+} // namespace lift_006DE3E0
+} // namespace lift_0071C9A0
