@@ -2812,3 +2812,22 @@ extern int __fastcall fn_006F24A0(void* self, int edx_unused, int arg) {
 }
 } // namespace lift_006C12B0
 } // namespace lift_006F24A0
+
+// [0x006FA920] sub_006FA920 (26 bytes)
+namespace lift_006FA920 {
+// @name Unknown::NotifySlot17IfSelfLinked
+// @class Unknown
+// @summary If the object's field at +0x08 points back to the object itself, calls virtual slot 17 with arg 0 and returns true; otherwise returns false.
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0x08 void* field_0x08
+bool fn_006FA920(void* self) {
+    void** vtable = lift_field<void**>(self, 0x00);
+    if (lift_field<void*>(self, 0x08) != self) {
+        return false;
+    }
+    using NotifyFn = void (*)(void* self, int arg);
+    auto notify = reinterpret_cast<NotifyFn>(lift_field<void*>(vtable, 0x44));
+    notify(self, 0);
+    return true;
+}
+} // namespace lift_006FA920

@@ -1,0 +1,28 @@
+{
+  "va": "0x006FA920",
+  "size": 26,
+  "orig_symbol": "sub_006FA920",
+  "src_path": "src/leaf/tiny_6F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6F0000.cpp",
+  "name": "Unknown::NotifySlot17IfSelfLinked",
+  "class": "Unknown",
+  "signature": "bool fn_006FA920(void* self)",
+  "summary": "If the object's field at +0x08 points back to the object itself, calls virtual slot 17 with arg 0 and returns true; otherwise returns false.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:57:58Z"
+}

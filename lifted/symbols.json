@@ -36970,6 +36970,13 @@
     "summary": "Returns constant 0.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006FA920": {
+    "name": "Unknown::NotifySlot17IfSelfLinked",
+    "class": "Unknown",
+    "signature": "bool fn_006FA920(void* self)",
+    "summary": "If the object's field at +0x08 points back to the object itself, calls virtual slot 17 with arg 0 and returns true; otherwise returns false.",
+    "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
+  },
   "0x006FA940": {
     "name": "hasField0x08",
     "signature": "uint8_t __thiscall sub_006FA940(uint32_t self, uint32_t unused)",
