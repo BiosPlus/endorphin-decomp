@@ -718,3 +718,29 @@ int fn_00441090(void* self) {
     return static_cast<int>(rounded);
 }
 } // namespace lift_00441090
+
+// [0x00441060] sub_00441060 (33 bytes)
+namespace lift_00441060 {
+// Read as a qword by the original `fadd qword ptr [0x92bd70]`. Only the low dword
+// (0xE1796495) was supplied in RDATA_CONSTANTS; the high dword is unverified.
+extern const double mem_0092BD70;
+
+// @name Unknown::roundedFieldPlusConstToInt
+// @class Unknown
+// @summary Returns (int32) round-to-nearest of (this->field_0x90 + mem_0092BD70), x87 fistp semantics.
+// @field Unknown +0x90 double field_0x90
+int fn_00441060(void* self) {
+    double field_0x90;
+    std::memcpy(&field_0x90, static_cast<const unsigned char*>(self) + 0x90, sizeof(field_0x90));
+
+    const double sum = field_0x90 + mem_0092BD70;
+
+    // x87 fistp uses the current rounding mode (round-to-nearest-even by default).
+    // Out-of-range / NaN produce the x87 "integer indefinite" value INT32_MIN.
+    const double rounded = std::nearbyint(sum);
+    if (!(rounded >= -2147483648.0 && rounded <= 2147483647.0)) {
+        return INT32_MIN;
+    }
+    return static_cast<int>(rounded);
+}
+} // namespace lift_00441060
