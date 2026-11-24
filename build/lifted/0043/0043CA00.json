@@ -1,0 +1,22 @@
+{
+  "va": "0x0043CA00",
+  "size": 48,
+  "orig_symbol": "sub_0043CA00",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "CWindow::trackMouseLeave",
+  "class": "CWindow",
+  "signature": "uint32_t __thiscall fn_0043CA00(uint32_t this_ptr)",
+  "summary": "Registers the window to receive a WM_MOUSELEAVE notification via TrackMouseEvent.",
+  "fields": [
+    {
+      "class": "CWindow",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:18:46Z"
+}

@@ -1480,3 +1480,24 @@ extern void __stdcall fn_0043C980(void* arg1, uint32_t arg2, uint32_t arg3, uint
     fn(obj, arg1, arg2, arg3, arg4);
 }
 } // namespace lift_0043C980
+
+// [0x0043CA00]
+namespace lift_0043CA00 {
+// @name CWindow::trackMouseLeave
+// @class CWindow
+// @summary Registers the window to receive a WM_MOUSELEAVE notification via TrackMouseEvent.
+// @field CWindow +0x20 uint32_t hwnd
+
+
+extern uint32_t mem_009255E8;
+
+uint32_t __thiscall fn_0043CA00(uint32_t this_ptr) {
+    uint32_t tme[4];
+    tme[0] = 0x10;
+    tme[1] = 0x2;
+    tme[2] = *reinterpret_cast<const uint32_t*>(uintptr_t(this_ptr) + 0x20);
+    tme[3] = 0xFFFFFFFFu;
+    using TrackMouseEventFn = uint32_t (__stdcall *)(uint32_t*);
+    return reinterpret_cast<TrackMouseEventFn>(mem_009255E8)(tme);
+}
+} // namespace lift_0043CA00
