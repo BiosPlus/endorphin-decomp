@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_530000.cpp
 #include "lift_compat.h"
+#include <cstring>
 
 // [0x00530070] sub_00530070 (89 bytes)
 namespace lift_00530070 {
@@ -231,3 +232,21 @@ void* __thiscall sub_00533FB0(void* self, void* out) {
     return out;
 }
 } // namespace lift_00533FB0
+
+// [0x005356C0]
+namespace lift_005356C0 {
+// @name copyByteRange
+// @summary Copies a byte range [first, last) to dest using memmove if last > first, returning dest + (last - first).
+uint32_t sub_005356C0(uint32_t first, uint32_t last, uint32_t dest) {
+    int32_t size = static_cast<int32_t>(last - first);
+    uint32_t result = dest + static_cast<uint32_t>(size);
+    if (size > 0) {
+        std::memmove(
+            reinterpret_cast<void*>(static_cast<uintptr_t>(dest)),
+            reinterpret_cast<const void*>(static_cast<uintptr_t>(first)),
+            static_cast<size_t>(size)
+        );
+    }
+    return result;
+}
+} // namespace lift_005356C0

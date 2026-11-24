@@ -1,0 +1,13 @@
+{
+  "va": "0x005356C0",
+  "size": 39,
+  "orig_symbol": "sub_005356C0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "copyByteRange",
+  "signature": "uint32_t sub_005356C0(uint32_t first, uint32_t last, uint32_t dest)",
+  "summary": "Copies a byte range [first, last) to dest using memmove if last \u003e first, returning dest + (last - first).",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:52:55Z"
+}
