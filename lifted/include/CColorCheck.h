@@ -10,6 +10,6 @@
 // Recovered field layout for CColorCheck:
 namespace lifted_layout {
 struct CColorCheck_Fields {
-    // +0x54  uint32_t                 field_0x54  (evidence: 0x0040FD20, 0x005FF1C0)
+    // +0x54  uint32_t                 field_0x54  (evidence: 0x0040FD20, 0x005A9ED0, 0x005FF1C0)
 };
 } // namespace lifted_layout

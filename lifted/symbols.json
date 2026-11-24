@@ -13978,10 +13978,10 @@
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
   "0x005A9ED0": {
-    "name": "CharacterReloader::vfunc_14",
-    "class": "CharacterReloader",
-    "signature": "bool fn_005A9ED0(void* argBlock)",
-    "summary": "Destroys the by-value std::string argument at the start of the 0x20-byte argument block and returns true.",
+    "name": "ExportDialog::vfunc_0",
+    "class": "ExportDialog",
+    "signature": "void* fn_00417330(void* self)",
+    "summary": "Returns the address of the global data slot mem_0092CE00 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x005AA050": {

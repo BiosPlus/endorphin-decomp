@@ -10,6 +10,6 @@
 // Recovered field layout for NullRelationship:
 namespace lifted_layout {
 struct NullRelationship_Fields {
-    // +0x0   uint32_t                 vtable  (evidence: 0x005FF1C0, 0x00646220)
+    // +0x0   uint32_t                 vtable  (evidence: 0x005A9ED0, 0x005FF1C0, 0x00646220)
 };
 } // namespace lifted_layout
