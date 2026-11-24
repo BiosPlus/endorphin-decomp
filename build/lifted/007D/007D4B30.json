@@ -1,0 +1,40 @@
+{
+  "va": "0x007D4B30",
+  "size": 22,
+  "orig_symbol": "sub_007D4B30",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "Unknown::InitFieldsAndStoreValue",
+  "class": "Unknown",
+  "signature": "void sub_007D4B30(uint8_t* self, uint32_t value)",
+  "summary": "Stores the second argument at +0x14, then zeroes the fields at +0x00, +0x04 and +0x08.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:30:51Z"
+}

@@ -389,3 +389,21 @@ void sub_007D9610(uint32_t* self) {
     p[2] = count;
 }
 } // namespace lift_007D9610
+
+// [0x007D4B30]
+namespace lift_007D4B30 {
+// @name Unknown::InitFieldsAndStoreValue
+// @class Unknown
+// @summary Stores the second argument at +0x14, then zeroes the fields at +0x00, +0x04 and +0x08.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x14 uint32_t field_0x14
+
+void sub_007D4B30(uint8_t* self, uint32_t value) {
+    *reinterpret_cast<uint32_t*>(self + 0x14) = value;
+    *reinterpret_cast<uint32_t*>(self + 0x08) = 0;
+    *reinterpret_cast<uint32_t*>(self + 0x00) = 0;
+    *reinterpret_cast<uint32_t*>(self + 0x04) = 0;
+}
+} // namespace lift_007D4B30

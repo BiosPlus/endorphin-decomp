@@ -40293,6 +40293,13 @@
     "summary": "Calls the function pointer stored at obj+0xc with the first argument, passing obj as the receiver; returns the callee's result.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D4B30": {
+    "name": "Unknown::InitFieldsAndStoreValue",
+    "class": "Unknown",
+    "signature": "void sub_007D4B30(uint8_t* self, uint32_t value)",
+    "summary": "Stores the second argument at +0x14, then zeroes the fields at +0x00, +0x04 and +0x08.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D5AE0": {
     "name": "derefDword",
     "signature": "uint32_t sub_007D5AE0(uint32_t ptr)",
