@@ -35480,3 +35480,34 @@ int32_t __thiscall fn_0046C880(void *self, void **arg) {
     return ext_006A6DE0(rounded);
 }
 } // namespace lift_0046C880
+
+// [0x00470370]
+namespace lift_00470370 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, float, RuntimeEngine::getPosBufferFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, RuntimeEngine::getPosBufferFrameRate>
+// @summary Evaluates getPosBufferFrameRate on a RuntimeEngine pointer and rounds to nearest integer, or throws if null.
+
+
+extern float __thiscall ext_0046C110(void* self);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, void* throwInfo);
+extern double mem_00993828;
+
+int32_t __stdcall fn_00470370(void** ptr) {
+    void* obj = *ptr;
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+        return 0;
+    }
+
+    float val = ext_0046C110(obj);
+    double half = mem_00993828;
+    if (val < 0.0f) {
+        return static_cast<int32_t>(static_cast<double>(val) - half);
+    } else {
+        return static_cast<int32_t>(static_cast<double>(val) + half);
+    }
+}
+} // namespace lift_00470370

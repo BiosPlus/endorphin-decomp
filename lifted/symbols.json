@@ -6443,6 +6443,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData\u003e::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00470370": {
+    "name": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, RuntimeEngine::getPosBufferFrameRate\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, RuntimeEngine::getPosBufferFrameRate\u003e",
+    "signature": "int32_t __stdcall fn_00470370(void** ptr)",
+    "summary": "Evaluates getPosBufferFrameRate on a RuntimeEngine pointer and rounds to nearest integer, or throws if null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004703E0": {
     "name": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0\u003e",
