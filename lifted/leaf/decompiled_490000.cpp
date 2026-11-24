@@ -460,3 +460,31 @@ void* fn_0049BEE0(void* out, uint32_t value, void* head, uint32_t unused, void* 
     return out;
 }
 } // namespace lift_0049BEE0
+
+// [0x0049DBA0] sub_0049DBA0 (57 bytes)
+namespace lift_0049DBA0 {
+// @name ListFindFirstAccepting_0049DBA0
+// @summary Walks an intrusive list from begin until end; writes (first, node) to out, where node is the first entry whose embedded object's virtual slot 10 accepts key, or end if none does.
+// @field ListNode +0x00 void* next
+// @field ListNode +0x10 void* embeddedObjectVtable
+// @field ListFindResult +0x00 DWORD first
+// @field ListFindResult +0x04 void* node
+
+// Virtual slot 10 (byte offset 0x28 in a 32-bit vtable): bool Accept(DWORD key).
+typedef bool (__thiscall *ItemAcceptFn)(void* self, DWORD key);
+
+void fn_0049DBA0(void* out, DWORD first, void* begin, DWORD /*unused arg3*/, void* end, DWORD key) {
+    void* node = begin;
+    while (node != end) {
+        void* obj = static_cast<uint8_t*>(node) + 0x10;
+        void* vtable = lift_field<void*>(node, 0x10);
+        ItemAcceptFn accept = lift_field<ItemAcceptFn>(vtable, 0x28);
+        if (accept(obj, key)) {
+            break;
+        }
+        node = lift_field<void*>(node, 0x00);
+    }
+    lift_field<DWORD>(out, 0x00) = first;
+    lift_field<void*>(out, 0x04) = node;
+}
+} // namespace lift_0049DBA0

@@ -9334,6 +9334,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00499190 (ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_38).",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x0049DBA0": {
+    "name": "ListFindFirstAccepting_0049DBA0",
+    "signature": "void fn_0049DBA0(void* out, DWORD first, void* begin, DWORD /*unused arg3*/, void* end, DWORD key)",
+    "summary": "Walks an intrusive list from begin until end; writes (first, node) to out, where node is the first entry whose embedded object's virtual slot 10 accepts key, or end if none does.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049DBE0": {
     "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_38",
     "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",

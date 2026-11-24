@@ -1,0 +1,39 @@
+{
+  "va": "0x0049DBA0",
+  "size": 57,
+  "orig_symbol": "sub_0049DBA0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "ListFindFirstAccepting_0049DBA0",
+  "signature": "void fn_0049DBA0(void* out, DWORD first, void* begin, DWORD /*unused arg3*/, void* end, DWORD key)",
+  "summary": "Walks an intrusive list from begin until end; writes (first, node) to out, where node is the first entry whose embedded object's virtual slot 10 accepts key, or end if none does.",
+  "fields": [
+    {
+      "class": "ListNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "next"
+    },
+    {
+      "class": "ListNode",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "embeddedObjectVtable"
+    },
+    {
+      "class": "ListFindResult",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "first"
+    },
+    {
+      "class": "ListFindResult",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "node"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:18:29Z"
+}
