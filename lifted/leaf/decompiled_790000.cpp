@@ -282,3 +282,27 @@ uint32_t fn_0079E620(uint32_t self) {
     return self;
 }
 } // namespace lift_0079E620
+
+// [0x0079EA60] sub_0079EA60 (48 bytes)
+namespace lift_0079EA60 {
+// Guest globals used by this function.
+extern uint32_t mem_00B6114C; // (global) guest u32 holding the slot table base address
+extern uint32_t mem_009977EC; // .rdata u32 0x0000FCFF; only the low byte (0xFF) is used
+
+// @name UnknownClass::releaseSlotIfOwned
+// @class UnknownClass
+// @summary If the object's slot in the table (indexed by its byte at +0x0C) points to it, clear the slot and set the object's +0x0C byte to the sentinel from mem_009977EC.
+// @field UnknownClass +0x0C uint8_t field_0x0C
+void fn_0079EA60(void* self) {
+    const uintptr_t obj = reinterpret_cast<uintptr_t>(self);
+    uint32_t* table = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(mem_00B6114C));
+
+    const uint8_t index = lift_field<uint8_t>(self, 0x0C);
+    uint32_t* slot = &table[index];
+
+    if (static_cast<uintptr_t>(*slot) == obj) {
+        *slot = 0;
+        lift_field<uint8_t>(self, 0x0C) = static_cast<uint8_t>(mem_009977EC);
+    }
+}
+} // namespace lift_0079EA60

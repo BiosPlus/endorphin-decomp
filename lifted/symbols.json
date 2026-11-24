@@ -47930,6 +47930,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls sub_0079E610.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x0079EA60": {
+    "name": "UnknownClass::releaseSlotIfOwned",
+    "class": "UnknownClass",
+    "signature": "extern \"C\" uint32_t mem_00B6114C; // (global) guest u32 holding the slot table base address extern \"C\" uint32_t mem_009977EC; // .rdata u32 0x0000FCFF; only the low byte (0xFF) is used void fn_0079EA60(void* self)",
+    "summary": "If the object's slot in the table (indexed by its byte at +0x0C) points to it, clear the slot and set the object's +0x0C byte to the sentinel from mem_009977EC.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079EB70": {
     "name": "Unknown::getByteViaGlobalPtr0x0C",
     "class": "Unknown",

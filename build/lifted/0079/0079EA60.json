@@ -1,0 +1,22 @@
+{
+  "va": "0x0079EA60",
+  "size": 48,
+  "orig_symbol": "sub_0079EA60",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "UnknownClass::releaseSlotIfOwned",
+  "class": "UnknownClass",
+  "signature": "extern \"C\" uint32_t mem_00B6114C; // (global) guest u32 holding the slot table base address extern \"C\" uint32_t mem_009977EC; // .rdata u32 0x0000FCFF; only the low byte (0xFF) is used void fn_0079EA60(void* self)",
+  "summary": "If the object's slot in the table (indexed by its byte at +0x0C) points to it, clear the slot and set the object's +0x0C byte to the sentinel from mem_009977EC.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:27:25Z"
+}
