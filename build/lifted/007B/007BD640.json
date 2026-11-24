@@ -4,11 +4,119 @@
   "orig_symbol": "sub_007BD640",
   "src_path": "src/leaf/decompiled_7B0000.cpp",
   "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
-  "name": "UnknownClass::copyFieldsToSubobjectAndCheck",
-  "class": "UnknownClass",
-  "signature": "int fn_007BD640(void* self)",
-  "summary": "Copies two fields from self into the subobject at self-\u003e+0x1cc and returns 1 if ext_007BFDF0 yields 0, else 0.",
+  "name": "SwitchCaseIndexTable_007B7084",
+  "class": "(none)",
+  "signature": "void fn_007B617C(void* self)",
+  "summary": "12-byte byte-index table indexed by (eax) and used by a jump table dispatch at 0x007B6xxx (mov cl, [eax+0x7B7084]; jmp [ecx*4+0x7B7074]); this is data, not code.",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x164",
+      "type": "uint32_t",
+      "name": "field_0x164"
+    },
+    {
+      "class": "\u003cobject\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint16_t",
+      "name": "field_00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_14"
+    },
+    {
+      "class": "self",
+      "offset": "+0x1A0",
+      "type": "DWORD slotA (pointer to",
+      "name": "mem_007BDA50)"
+    },
+    {
+      "class": "self",
+      "offset": "+0x1A8",
+      "type": "DWORD slotB (pointer to",
+      "name": "mem_007BDA50)"
+    },
+    {
+      "class": "self",
+      "offset": "+0x1B0",
+      "type": "DWORD slotC (pointer to",
+      "name": "mem_007BDA50)"
+    },
+    {
+      "class": "struct",
+      "offset": "+0x40",
+      "type": "uint16_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "struct",
+      "offset": "+0x42",
+      "type": "uint16_t",
+      "name": "field_0x42"
+    },
+    {
+      "class": "struct",
+      "offset": "+0x46",
+      "type": "uint16_t",
+      "name": "field_0x46"
+    },
+    {
+      "class": "struct",
+      "offset": "+0x4E",
+      "type": "uint16_t",
+      "name": "field_0x4e"
+    },
+    {
+      "class": "Arg1",
+      "offset": "+0x1CC",
+      "type": "uint32_t",
+      "name": "field_0x1cc"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "ListNode",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "key"
+    },
+    {
+      "class": "ListNode",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "next"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "listHead"
+    },
+    {
+      "class": "UnknownNode",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "next"
+    },
     {
       "class": "UnknownClass",
       "offset": "+0x1CC",
@@ -38,9 +146,21 @@
       "offset": "+0x34",
       "type": "uint32_t",
       "name": "field_0x34"
+    },
+    {
+      "class": "ListNode",
+      "offset": "+0x0",
+      "type": "WORD",
+      "name": "index"
+    },
+    {
+      "class": "ListNode",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "next"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T14:28:28Z"
+  "lifted_at": "2026-11-24T14:28:34Z"
 }

@@ -9,7 +9,7 @@
 namespace lifted_layout {
 struct UnknownNode_Fields {
     // +0x8   void*                    field_0x08  (evidence: 0x005942F0)
-    // +0x10  void*                    next  (evidence: 0x007B2E20)
+    // +0x10  void*                    next  (evidence: 0x007B2E20, 0x007BD640)
     // +0x31  uint8_t                  field_0x31  (evidence: 0x005942F0)
 };
 } // namespace lifted_layout

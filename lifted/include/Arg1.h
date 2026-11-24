@@ -9,6 +9,6 @@
 namespace lifted_layout {
 struct Arg1_Fields {
     // +0x5C  uint32_t                 field_0x5C  (evidence: 0x007D8470, 0x007D8750)
-    // +0x1CC uint32_t                 field_0x1cc  (evidence: 0x007BFC60)
+    // +0x1CC uint32_t                 field_0x1cc  (evidence: 0x007BD640, 0x007BFC60)
 };
 } // namespace lifted_layout
