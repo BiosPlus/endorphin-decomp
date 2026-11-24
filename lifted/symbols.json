@@ -27804,6 +27804,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x84.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00603370": {
+    "name": "Effector::vfunc_28",
+    "class": "Effector",
+    "signature": "static inline void call_vslot(void* self, std::size_t index, float value)",
+    "summary": "Forwards one float argument to virtual slots 25, 26 and 27 of the same object, in that order.",
+    "lifted_path": "lifted/classes/Effector.cpp"
+  },
   "0x006033B0": {
     "name": "Effector::vfunc_30",
     "class": "Effector",
@@ -36241,6 +36248,12 @@
     "signature": "void fn_0067F9D0(void* self)",
     "summary": "Notifies the last 8-byte element of the range at +0x04..+0x08 via ext_0048A120, then shrinks the range end by one element.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
+  "0x006812A0": {
+    "name": "clearBufferRange",
+    "signature": "void fn_006812A0(uint32_t first, uint32_t last)",
+    "summary": "Frees and zeroes out a range of 16-byte buffer descriptors",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x00681380": {
     "name": "sub_00681380",

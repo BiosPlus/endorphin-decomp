@@ -21,3 +21,31 @@ void __thiscall fn_006033B0(void* self, float val) {
     }
 }
 } // namespace lift_006033B0
+
+// [0x00603370] Effector::vfunc_28 (56 bytes)
+namespace lift_00603370 {
+// @name Effector::vfunc_28
+// @class Effector
+// @summary Forwards one float argument to virtual slots 25, 26 and 27 of the same object, in that order.
+// @field Effector +0x00 void** vtable
+
+namespace lift_00603370 {
+
+// Virtual slot signature: thiscall-style method taking one float, callee pops it.
+// Modeled portably as a plain function taking the object pointer first.
+using VSlotFloatFn = void (*)(void* self, float value);
+
+static inline void call_vslot(void* self, std::size_t index, float value) {
+    void** vtable = *reinterpret_cast<void***>(self);
+    auto fn = reinterpret_cast<VSlotFloatFn>(vtable[index]);
+    fn(self, value);
+}
+
+void __thiscall fn_00603370(void* self, float value) {
+    call_vslot(self, 25, value);
+    call_vslot(self, 26, value);
+    call_vslot(self, 27, value);
+}
+
+} // namespace lift_00603370
+} // namespace lift_00603370

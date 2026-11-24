@@ -1,0 +1,22 @@
+{
+  "va": "0x00603370",
+  "size": 56,
+  "orig_symbol": "Effector::vfunc_28",
+  "src_path": "src/classes/Effector.cpp",
+  "lifted_path": "lifted/classes/Effector.cpp",
+  "name": "Effector::vfunc_28",
+  "class": "Effector",
+  "signature": "static inline void call_vslot(void* self, std::size_t index, float value)",
+  "summary": "Forwards one float argument to virtual slots 25, 26 and 27 of the same object, in that order.",
+  "fields": [
+    {
+      "class": "Effector",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:16:58Z"
+}
