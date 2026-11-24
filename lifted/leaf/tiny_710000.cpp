@@ -2655,3 +2655,42 @@ Unknown* zeroTwoDwords(Unknown* self) {
     return self;
 }
 } // namespace lift_0071F100
+
+// [0x0071C530]
+namespace lift_0071C530 {
+// @name getIndirectByte_0x970
+// @summary Reads a byte at offset 0x970 from the object pointed to by this+0x0c.
+// @field Self +0x0C uint32_t field_0x0c
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern uint8_t mem_read8(uint32_t addr);
+
+uint8_t __fastcall sub_0071C530(uint32_t ecx, uint32_t edx) {
+    (void)edx;
+    uint32_t ptr = mem_read32(ecx + 0x0Cu);
+    return mem_read8(ptr + 0x970u);
+}
+} // namespace lift_0071C530
+
+// [0x0071C520]
+namespace lift_0071C520 {
+// @name get_field_0x860_via_0xc
+// @summary Reads a byte at offset 0x860 from the object pointed to by this+0x0c.
+// @field Object +0x0c void* field_0x0c
+uint8_t __thiscall sub_0071C520(void* self) {
+    uint8_t* ptr = *reinterpret_cast<uint8_t**>(reinterpret_cast<uint8_t*>(self) + 0x0c);
+    return ptr[0x860];
+}
+} // namespace lift_0071C520
+
+// [0x0071C960] sub_0071C960 (16 bytes)
+namespace lift_0071C960 {
+// @name Unknown::getSubObjectByteField0x1C90
+// @summary Returns the byte at +0x1C90 of the object pointed to by self+0x0C.
+// @field Unknown +0x0C void* field_0x0C
+uint8_t fn_0071C960(void* self) {
+    void* sub = lift_field<void*>(self, 0x0C);
+    return lift_field<uint8_t>(sub, 0x1C90);
+}
+} // namespace lift_0071C960
