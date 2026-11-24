@@ -1,0 +1,34 @@
+{
+  "va": "0x004C4D80",
+  "size": 45,
+  "orig_symbol": "sub_004C4D80",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "Vec3::Scale",
+  "class": "Vec3",
+  "signature": "void fn_004C4D80(const void* self, void* out, float scale)",
+  "summary": "Writes this vector (ecx) multiplied by a scalar into the output vector (first stack arg); callee pops 8 bytes.",
+  "fields": [
+    {
+      "class": "Vec3",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "x"
+    },
+    {
+      "class": "Vec3",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "y"
+    },
+    {
+      "class": "Vec3",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "z"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:07:01Z"
+}

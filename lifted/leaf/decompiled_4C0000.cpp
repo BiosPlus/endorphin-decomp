@@ -74,3 +74,22 @@ void fn_004C1AC0(void* self, int32_t value) {
     ext_004C0340();
 }
 } // namespace lift_004C1AC0
+
+// [0x004C4D80] sub_004C4D80 (45 bytes)
+namespace lift_004C4D80 {
+// @name Vec3::Scale
+// @class Vec3
+// @summary Writes this vector (ecx) multiplied by a scalar into the output vector (first stack arg); callee pops 8 bytes.
+// @field Vec3 +0x00 float x
+// @field Vec3 +0x04 float y
+// @field Vec3 +0x08 float z
+void fn_004C4D80(const void* self, void* out, float scale) {
+    const float x = lift_field<float>(self, 0x00);
+    const float y = lift_field<float>(self, 0x04);
+    const float z = lift_field<float>(self, 0x08);
+
+    lift_field<float>(out, 0x00) = x * scale;
+    lift_field<float>(out, 0x04) = y * scale;
+    lift_field<float>(out, 0x08) = z * scale;
+}
+} // namespace lift_004C4D80
