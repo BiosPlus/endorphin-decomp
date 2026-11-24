@@ -105,3 +105,27 @@ void fn_00537C70(void* self, void* arg) {
     reinterpret_cast<Fn>(vtbl18[1])(&lift_field<void*>(self, 0x18), arg);
 }
 } // namespace lift_00537C70
+
+// [0x00537D00]
+namespace lift_00537D00 {
+// @name CompoundRenderable::vfunc_11
+// @class CompoundRenderable
+// @summary Forwards vfunc_11(arg1, arg2) to optional child renderable at +0x14 and embedded object at +0x18.
+// @field CompoundRenderable +0x14 void* field_0x14
+// @field CompoundRenderable +0x18 void* field_0x18
+
+
+void __thiscall fn_00537D00(void* self, uint32_t arg1, uint32_t arg2) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    void* child = *reinterpret_cast<void**>(obj + 0x14);
+    if (child != nullptr) {
+        uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(child);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, uint32_t, uint32_t)>(vtable[0x2c / 4]);
+        fn(child, arg1, arg2);
+    }
+    void* embedded = obj + 0x18;
+    uintptr_t* embedded_vtable = *reinterpret_cast<uintptr_t**>(embedded);
+    auto embedded_fn = reinterpret_cast<void(__thiscall*)(void*, uint32_t, uint32_t)>(embedded_vtable[0x2c / 4]);
+    embedded_fn(embedded, arg1, arg2);
+}
+} // namespace lift_00537D00
