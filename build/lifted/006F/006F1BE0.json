@@ -1,0 +1,22 @@
+{
+  "va": "0x006F1BE0",
+  "size": 34,
+  "orig_symbol": "sub_006F1BE0",
+  "src_path": "src/clones/auto_clones_6F0000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_6F0000.cpp",
+  "name": "sub_006F1BE0",
+  "class": "Unknown",
+  "signature": "void fn_006F1BE0(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Auto-lifted identical-shape clone of 0x006F00E0 (Unknown::forwardToSubobject2200).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x2200",
+      "type": "uint8_t",
+      "name": "field_0x2200"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T14:14:54Z"
+}
