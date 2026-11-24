@@ -3564,6 +3564,13 @@
     "summary": "Pure jump thunk forwarding to sub_0067B1F0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0046F910": {
+    "name": "Unknown::ReadF8ObjectByte12C",
+    "class": "Unknown",
+    "signature": "uint8_t fn_0046F910(void* self)",
+    "summary": "Returns the low byte at +0x12C of the object referenced by this+0xF8.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x0046F920": {
     "name": "sub_0046F920",
     "signature": "void fn_0046F920(void* self)",

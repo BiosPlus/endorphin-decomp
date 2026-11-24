@@ -420,3 +420,16 @@ float fn_0046C110(void* self) {
     return *reinterpret_cast<float*>(sub + 0x138);
 }
 } // namespace lift_0046C110
+
+// [0x0046F910] sub_0046F910 (13 bytes)
+namespace lift_0046F910 {
+// @name Unknown::ReadF8ObjectByte12C
+// @class Unknown
+// @summary Returns the low byte at +0x12C of the object referenced by this+0xF8.
+// @field Unknown +0xF8 void* field_0xF8
+// @field Unknown +0x12C uint8_t field_0x12C
+uint8_t fn_0046F910(void* self) {
+    void* inner = lift_field<void*>(self, 0xF8);
+    return lift_field<uint8_t>(inner, 0x12C);
+}
+} // namespace lift_0046F910
