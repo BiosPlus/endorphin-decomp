@@ -1,0 +1,21 @@
+{
+  "va": "0x005946C0",
+  "size": 14,
+  "orig_symbol": "sub_005946C0",
+  "src_path": "src/leaf/tiny_590000.cpp",
+  "lifted_path": "lifted/leaf/tiny_590000.cpp",
+  "name": "sub_005946C0",
+  "signature": "extern int __thiscall fn_005946C0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00515840 (sub_00511290).",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:26:27Z"
+}

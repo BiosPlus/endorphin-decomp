@@ -155,3 +155,21 @@ float fn_00594700(void* self) {
 }
 } // namespace lift_0046C110
 } // namespace lift_00594700
+
+// [0x005946C0] sub_005946C0 (14 bytes)
+namespace lift_005946C0 {
+// @name sub_005946C0
+// @summary Auto-lifted identical-shape clone of 0x00515840 (sub_00511290).
+namespace lift_00515840 {
+// Known callee 0x00508BA0: sub_00508BA0 (Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).)
+extern int __thiscall ext_004C49C0(void* self);
+
+// @name getChannelCountAt0xA4
+// @summary Loads the pointer at this+0x04 and tail-calls ext_00508BA0 with (that pointer + 0xA4) as this; returns its result.
+// @field unknown +0x04 void* field_0x04
+extern int __thiscall fn_005946C0(void* self) {
+    void* inner = lift_field<void*>(self, 0x26C);
+    return ext_004C49C0(static_cast<uint8_t*>(inner) + 0x8);
+}
+} // namespace lift_00515840
+} // namespace lift_005946C0

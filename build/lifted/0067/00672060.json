@@ -1,0 +1,22 @@
+{
+  "va": "0x00672060",
+  "size": 17,
+  "orig_symbol": "sub_00672060",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "sub_00672060",
+  "class": "CompoundRenderable",
+  "signature": "void fn_00672060(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0052EF20 (CompoundRenderable::vfunc_7).",
+  "fields": [
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:26:27Z"
+}

@@ -10,7 +10,7 @@
 // Recovered field layout for CompoundRenderable:
 namespace lifted_layout {
 struct CompoundRenderable_Fields {
-    // +0x10  void*                    field_0x10  (evidence: 0x0052EF20)
+    // +0x10  void*                    field_0x10  (evidence: 0x0052EF20, 0x00672020, 0x00672040, 0x00672060)
     // +0x14  void*                    field_0x14  (evidence: 0x00537AA0)
     // +0x18  uint32_t*                field_0x18  (evidence: 0x005379F0)
 };

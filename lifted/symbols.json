@@ -10795,6 +10795,24 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A24A0 (setGlobalU32FromArg).",
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
   },
+  "0x00530690": {
+    "name": "sub_00530690",
+    "signature": "extern int __thiscall fn_00530690(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00515840 (sub_00511290).",
+    "lifted_path": "lifted/leaf/tiny_530000.cpp"
+  },
+  "0x00530720": {
+    "name": "sub_00530720",
+    "signature": "extern int __thiscall fn_00530720(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00515840 (sub_00511290).",
+    "lifted_path": "lifted/leaf/tiny_530000.cpp"
+  },
+  "0x00530730": {
+    "name": "sub_00530730",
+    "signature": "extern int __thiscall fn_00530730(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00515840 (sub_00511290).",
+    "lifted_path": "lifted/leaf/tiny_530000.cpp"
+  },
   "0x005314C0": {
     "name": "getNestedField_0x10_0x1b0",
     "signature": "uint32_t __thiscall sub_005314C0(uint32_t this_ptr)",
@@ -13339,6 +13357,12 @@
     "name": "sub_00594640",
     "signature": "extern \"C\" void __fastcall fn_00594640(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0x26C and tail-calls sub_0047A580.",
+    "lifted_path": "lifted/leaf/tiny_590000.cpp"
+  },
+  "0x005946C0": {
+    "name": "sub_005946C0",
+    "signature": "extern int __thiscall fn_005946C0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00515840 (sub_00511290).",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
   "0x00594700": {
@@ -24010,6 +24034,27 @@
     "summary": "Pure jump thunk forwarding to sub_00671C70.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00672020": {
+    "name": "sub_00672020",
+    "class": "CompoundRenderable",
+    "signature": "void fn_00672020(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0052EF20 (CompoundRenderable::vfunc_7).",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
+  "0x00672040": {
+    "name": "sub_00672040",
+    "class": "CompoundRenderable",
+    "signature": "void fn_00672040(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0052EF20 (CompoundRenderable::vfunc_7).",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
+  "0x00672060": {
+    "name": "sub_00672060",
+    "class": "CompoundRenderable",
+    "signature": "void fn_00672060(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0052EF20 (CompoundRenderable::vfunc_7).",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
   "0x00672EB0": {
     "name": "sub_00672EB0",
     "signature": "extern \"C\" void fn_00672EB0(void)",
@@ -33552,6 +33597,12 @@
     "name": "sub_00704CE0",
     "signature": "extern \"C\" void* __fastcall fn_00704CE0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00704D00 and frees memory when (flags \u0026 1) is set.",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x00704FD0": {
+    "name": "sub_00704FD0",
+    "signature": "extern int __thiscall fn_00704FD0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00515840 (sub_00511290).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
   "0x00705250": {

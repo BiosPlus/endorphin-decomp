@@ -148,3 +148,57 @@ void fn_00532B80() {
     reinterpret_cast<VFunc1Fn>(slot1)(self);
 }
 } // namespace lift_00532B80
+
+// [0x00530690] sub_00530690 (14 bytes)
+namespace lift_00530690 {
+// @name sub_00530690
+// @summary Auto-lifted identical-shape clone of 0x00515840 (sub_00511290).
+namespace lift_00515840 {
+// Known callee 0x00508BA0: sub_00508BA0 (Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).)
+extern int __thiscall ext_00540D00(void* self);
+
+// @name getChannelCountAt0xA4
+// @summary Loads the pointer at this+0x04 and tail-calls ext_00508BA0 with (that pointer + 0xA4) as this; returns its result.
+// @field unknown +0x04 void* field_0x04
+extern int __thiscall fn_00530690(void* self) {
+    void* inner = lift_field<void*>(self, 0x10);
+    return ext_00540D00(static_cast<uint8_t*>(inner) + 0x9C);
+}
+} // namespace lift_00515840
+} // namespace lift_00530690
+
+// [0x00530720] sub_00530720 (14 bytes)
+namespace lift_00530720 {
+// @name sub_00530720
+// @summary Auto-lifted identical-shape clone of 0x00515840 (sub_00511290).
+namespace lift_00515840 {
+// Known callee 0x00508BA0: sub_00508BA0 (Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).)
+extern int __thiscall ext_00542FE0(void* self);
+
+// @name getChannelCountAt0xA4
+// @summary Loads the pointer at this+0x04 and tail-calls ext_00508BA0 with (that pointer + 0xA4) as this; returns its result.
+// @field unknown +0x04 void* field_0x04
+extern int __thiscall fn_00530720(void* self) {
+    void* inner = lift_field<void*>(self, 0x10);
+    return ext_00542FE0(static_cast<uint8_t*>(inner) + 0x9C);
+}
+} // namespace lift_00515840
+} // namespace lift_00530720
+
+// [0x00530730] sub_00530730 (14 bytes)
+namespace lift_00530730 {
+// @name sub_00530730
+// @summary Auto-lifted identical-shape clone of 0x00515840 (sub_00511290).
+namespace lift_00515840 {
+// Known callee 0x00508BA0: sub_00508BA0 (Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).)
+extern int __thiscall ext_00542740(void* self);
+
+// @name getChannelCountAt0xA4
+// @summary Loads the pointer at this+0x04 and tail-calls ext_00508BA0 with (that pointer + 0xA4) as this; returns its result.
+// @field unknown +0x04 void* field_0x04
+extern int __thiscall fn_00530730(void* self) {
+    void* inner = lift_field<void*>(self, 0x10);
+    return ext_00542740(static_cast<uint8_t*>(inner) + 0x9C);
+}
+} // namespace lift_00515840
+} // namespace lift_00530730

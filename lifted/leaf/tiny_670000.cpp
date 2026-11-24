@@ -184,3 +184,81 @@ void SetIntValueAndSetFlag(void* self, DWORD value) {
     base[0x65] = 1;
 }
 } // namespace lift_00673B80
+
+// [0x00672020] sub_00672020 (17 bytes)
+namespace lift_00672020 {
+// @name sub_00672020
+// @summary Auto-lifted identical-shape clone of 0x0052EF20 (CompoundRenderable::vfunc_7).
+namespace lift_0052EF20 {
+// @name CompoundRenderable::vfunc_7
+// @class CompoundRenderable
+// @summary Forwards to vtable slot 6 of the object at this+0x10, passing this as the single argument.
+// @field CompoundRenderable +0x10 void* field_0x10
+void fn_00672020(void* self) {
+    // Child object pointer stored at this+0x10.
+    void* child = lift_field<void*>(self, 0x4);
+
+    // Child vtable; slot at byte offset 0x18 is entry index 6 (4-byte pointers).
+    void* vtable = lift_field<void*>(child, 0);
+    void* slot = lift_field<void*>(vtable, 0x94);
+
+    // Original: ecx = child, push this, call [vtable+0x18]. Modeled as a
+    // plain function pointer taking (child, this) since __thiscall has no
+    // portable spelling.
+    using SlotFn = void (*)(void* self_obj, void* arg);
+    reinterpret_cast<SlotFn>(slot)(child, self);
+}
+} // namespace lift_0052EF20
+} // namespace lift_00672020
+
+// [0x00672040] sub_00672040 (17 bytes)
+namespace lift_00672040 {
+// @name sub_00672040
+// @summary Auto-lifted identical-shape clone of 0x0052EF20 (CompoundRenderable::vfunc_7).
+namespace lift_0052EF20 {
+// @name CompoundRenderable::vfunc_7
+// @class CompoundRenderable
+// @summary Forwards to vtable slot 6 of the object at this+0x10, passing this as the single argument.
+// @field CompoundRenderable +0x10 void* field_0x10
+void fn_00672040(void* self) {
+    // Child object pointer stored at this+0x10.
+    void* child = lift_field<void*>(self, 0x4);
+
+    // Child vtable; slot at byte offset 0x18 is entry index 6 (4-byte pointers).
+    void* vtable = lift_field<void*>(child, 0);
+    void* slot = lift_field<void*>(vtable, 0x98);
+
+    // Original: ecx = child, push this, call [vtable+0x18]. Modeled as a
+    // plain function pointer taking (child, this) since __thiscall has no
+    // portable spelling.
+    using SlotFn = void (*)(void* self_obj, void* arg);
+    reinterpret_cast<SlotFn>(slot)(child, self);
+}
+} // namespace lift_0052EF20
+} // namespace lift_00672040
+
+// [0x00672060] sub_00672060 (17 bytes)
+namespace lift_00672060 {
+// @name sub_00672060
+// @summary Auto-lifted identical-shape clone of 0x0052EF20 (CompoundRenderable::vfunc_7).
+namespace lift_0052EF20 {
+// @name CompoundRenderable::vfunc_7
+// @class CompoundRenderable
+// @summary Forwards to vtable slot 6 of the object at this+0x10, passing this as the single argument.
+// @field CompoundRenderable +0x10 void* field_0x10
+void fn_00672060(void* self) {
+    // Child object pointer stored at this+0x10.
+    void* child = lift_field<void*>(self, 0x4);
+
+    // Child vtable; slot at byte offset 0x18 is entry index 6 (4-byte pointers).
+    void* vtable = lift_field<void*>(child, 0);
+    void* slot = lift_field<void*>(vtable, 0xA0);
+
+    // Original: ecx = child, push this, call [vtable+0x18]. Modeled as a
+    // plain function pointer taking (child, this) since __thiscall has no
+    // portable spelling.
+    using SlotFn = void (*)(void* self_obj, void* arg);
+    reinterpret_cast<SlotFn>(slot)(child, self);
+}
+} // namespace lift_0052EF20
+} // namespace lift_00672060
