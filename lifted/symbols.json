@@ -32567,6 +32567,12 @@
     "summary": "Forwards the first stack argument to virtual slot 0x154 (index 85) of self's vtable, then returns 0 (callee pops 8 bytes).",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006A7F50": {
+    "name": "sub_006A7F50",
+    "signature": "uint32_t __thiscall sub_006A7F50(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Forwards two arguments to virtual method at vtable offset +0x158 and returns 0.",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006A7F70": {
     "name": "sub_006A7F70",
     "signature": "int32_t __thiscall sub_006A7F70(void* self, uint32_t arg0, uint32_t arg1)",
