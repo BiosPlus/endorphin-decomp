@@ -1108,3 +1108,29 @@ void fn_0044CE90(void* self) {
     ext_006A673C(base + 0x9C0, 0x20201, 0, 0x20);
 }
 } // namespace lift_0044CE90
+
+// [0x00441A60]
+namespace lift_00441A60 {
+extern uint32_t mem_r32(uint32_t addr);
+extern void mem_w32(uint32_t addr, uint32_t val);
+
+// @name adjustRectBounds
+// @summary Copies a 16-byte struct from src to dst while adjusting offsets +0x04 and +0x0c.
+// @field Rect +0x00 uint32_t field_0x00
+// @field Rect +0x04 uint32_t field_0x04
+// @field Rect +0x08 uint32_t field_0x08
+// @field Rect +0x0c uint32_t field_0x0c
+uint32_t __stdcall sub_00441A60(uint32_t dst, uint32_t src) {
+    uint32_t f0 = mem_r32(src + 0x0);
+    uint32_t f4 = mem_r32(src + 0x4);
+    uint32_t f8 = mem_r32(src + 0x8);
+    uint32_t fc = mem_r32(src + 0xc);
+
+    mem_w32(dst + 0x0, f0);
+    mem_w32(dst + 0x4, f4 - 2u);
+    mem_w32(dst + 0x8, f8);
+    mem_w32(dst + 0xc, fc + f4 + 1u);
+
+    return dst;
+}
+} // namespace lift_00441A60
