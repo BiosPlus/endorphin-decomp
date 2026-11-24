@@ -19,13 +19,13 @@ struct Self_Fields {
     // +0x10  uint32_t                 field_0x10  (evidence: 0x005314C0)
     // +0x28  void*                    field_0x28  (evidence: 0x00627510)
     // +0x34  int32_t                  field_0x34  (evidence: 0x006FA3B0)
-    // +0x48  uint32_t                 field_0x48  (evidence: 0x006872C0)
+    // +0x48  uint32_t                 field_0x48  (evidence: 0x00687230, 0x006872C0)
     // +0x54  uint8_t                  field_0x54  (evidence: 0x00627510)
     // +0xD0  uint32_t*                field_0xd0  (evidence: 0x00707960)
     // +0xF0  uint32_t                 field_0xF0  (evidence: 0x00704DA0) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  uint32_t                 field_0xf0  (evidence: 0x00704EB0) // CONFLICT: multiple definitions at +0xF0
     // +0x114 void*                    field_114  (evidence: 0x00630580)
-    // +0x150 uint32_t                 field_0x150  (evidence: 0x00687280)
+    // +0x150 uint32_t                 field_0x150  (evidence: 0x00687230, 0x00687280)
     // +0x268 uint32_t                 field_0x268  (evidence: 0x00702780)
 };
 } // namespace lifted_layout
