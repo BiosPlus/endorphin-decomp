@@ -10580,6 +10580,13 @@
     "summary": "Returns one of two double constants depending on whether the dword at self+0x08 is zero.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x0050FA20": {
+    "name": "SelectConstantByField8",
+    "class": "Unknown",
+    "signature": "double fn_0050FA20(void* self)",
+    "summary": "Returns one of two qword constants (as x87 st0) depending on whether this-\u003efield_0x08 is nonzero.",
+    "lifted_path": "lifted/leaf/tiny_500000.cpp"
+  },
   "0x0050FB00": {
     "name": "SelectionMethod::vfunc_0",
     "class": "SelectionMethod",

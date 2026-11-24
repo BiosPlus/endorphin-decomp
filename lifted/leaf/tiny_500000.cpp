@@ -170,3 +170,21 @@ double fn_0050FA00(void* self) {
     return mem_00950A90;
 }
 } // namespace lift_0050FA00
+
+// [0x0050FA20] sub_0050FA20 (20 bytes)
+namespace lift_0050FA20 {
+extern double mem_00950A60;
+extern double mem_00950A90;
+
+// @name SelectConstantByField8
+// @class Unknown
+// @summary Returns one of two qword constants (as x87 st0) depending on whether this->field_0x08 is nonzero.
+// @field Unknown +0x08 int32_t field_0x08
+
+double fn_0050FA20(void* self) {
+    if (lift_field<int32_t>(self, 0x08) != 0) {
+        return mem_00950A90;
+    }
+    return mem_00950A60;
+}
+} // namespace lift_0050FA20

@@ -66,7 +66,7 @@ struct Unknown_Fields {
     // +0x8   void*                    child  (evidence: 0x0041C710, 0x0044B660, 0x0044B680, 0x0044B760, 0x00682DE0) // CONFLICT: multiple definitions at +0x8
     // +0x8   DWORD                    field_0x08  (evidence: 0x006BB7B0, 0x006E7F90, 0x006E7FA0, 0x006E86A0) // CONFLICT: multiple definitions at +0x8
     // +0x8   float                    field_0x08  (evidence: 0x0052EF50, 0x00535610, 0x00545B80, 0x0066A310, 0x007FC290) // CONFLICT: multiple definitions at +0x8
-    // +0x8   int32_t                  field_0x08  (evidence: 0x00492570, 0x005B4BA0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   int32_t                  field_0x08  (evidence: 0x00492570, 0x0050FA20, 0x005B4BA0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 field_0x08  (evidence: 0x004800C0, 0x004AEC90, 0x005478B0, 0x005478C0, 0x005478D0, 0x005B1830, 0x005C3890, 0x005CF930, 0x005D06D0, 0x00611160, 0x00681FE0, 0x00699180, 0x006A0670, 0x006B9910, 0x006B9950, 0x006C9F60, 0x0077FAB0, 0x00783790, 0x007DA8D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t                  field_0x08  (evidence: 0x004BF680) // CONFLICT: multiple definitions at +0x8
     // +0x8   void (*)(void*, int)     field_0x08  (evidence: 0x005F5190) // CONFLICT: multiple definitions at +0x8

@@ -1,0 +1,22 @@
+{
+  "va": "0x0050FA20",
+  "size": 20,
+  "orig_symbol": "sub_0050FA20",
+  "src_path": "src/leaf/tiny_500000.cpp",
+  "lifted_path": "lifted/leaf/tiny_500000.cpp",
+  "name": "SelectConstantByField8",
+  "class": "Unknown",
+  "signature": "double fn_0050FA20(void* self)",
+  "summary": "Returns one of two qword constants (as x87 st0) depending on whether this-\u003efield_0x08 is nonzero.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:06:25Z"
+}
