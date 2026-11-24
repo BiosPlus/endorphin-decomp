@@ -288,3 +288,23 @@ void* fn_00430430(void* self, void* other) {
     return reinterpret_cast<void*>(static_cast<uintptr_t>(slot(other, flag)));
 }
 } // namespace lift_00430430
+
+// [0x00430450] sub_00430450 (24 bytes)
+namespace lift_00430450 {
+// @name CallSlot1WithFlagByte
+// @class <Unknown>
+// @summary Reads a byte flag from self, then tail-dispatches obj's vtable slot 1 with obj as this and the flag as the single argument.
+// @field <Unknown> +0xF5 BYTE field_0xF5
+// Original is a tail-jump thunk: ecx=self, [esp+4]=obj; it overwrites the stack arg with the
+// zero-extended flag byte and jumps to obj->vtbl[1] (thiscall with obj in ecx). The portable form
+// performs the same call and returns its result unchanged.
+
+typedef DWORD (*Slot1Fn)(void* self, BYTE value);
+
+DWORD fn_00430450(void* self, void* obj) {
+    BYTE flag = lift_field<BYTE>(self, 0xF5);
+    void** vtbl = lift_field<void**>(obj, 0x00);
+    Slot1Fn target = reinterpret_cast<Slot1Fn>(vtbl[1]);
+    return target(obj, flag);
+}
+} // namespace lift_00430450

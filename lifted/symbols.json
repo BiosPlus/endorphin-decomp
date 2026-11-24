@@ -1664,6 +1664,13 @@
     "summary": "Reads the byte at this+0xF4 and tail-calls virtual slot 1 of the object passed in on the stack, forwarding that byte as its argument.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430450": {
+    "name": "CallSlot1WithFlagByte",
+    "class": "\u003cUnknown\u003e",
+    "signature": "DWORD fn_00430450(void* self, void* obj)",
+    "summary": "Reads a byte flag from self, then tail-dispatches obj's vtable slot 1 with obj as this and the flag as the single argument.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430CA0": {
     "name": "Unknown::forwardVirtual0WithArg1",
     "class": "Unknown",
