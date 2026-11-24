@@ -58,3 +58,27 @@ void __cdecl sub_00774760() {
     mem_00B605C4 = huge_ptr[1];
 }
 } // namespace lift_00774760
+
+// [0x0077F6D0]
+namespace lift_0077F6D0 {
+// @name initHugeVectorGlobals
+// @summary Initializes three 64-bit double globals from MSVCR80.dll!_HUGE.
+
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B60730;
+extern uint32_t mem_00B60734;
+extern uint32_t mem_00B60738;
+extern uint32_t mem_00B6073C;
+extern uint32_t mem_00B60740;
+extern uint32_t mem_00B60744;
+
+void sub_0077F6D0() {
+    const uint32_t* huge = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B60730 = huge[0];
+    mem_00B60734 = huge[1];
+    mem_00B60738 = huge[0];
+    mem_00B6073C = huge[1];
+    mem_00B60740 = huge[0];
+    mem_00B60744 = huge[1];
+}
+} // namespace lift_0077F6D0
