@@ -1,0 +1,22 @@
+{
+  "va": "0x00470290",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, float, {public: void __thiscall RuntimeEngine::setPosBufferFrameRate(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cRuntimeEngine,float\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cRuntimeEngine,float\u003e",
+  "signature": "void __thiscall fn_00470290(void* self, uint32_t arg0)",
+  "summary": "Lazily initializes a static type descriptor at 0x00AD8FEC and stores its pointer at arg0 + 0x4.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:49:29Z"
+}
