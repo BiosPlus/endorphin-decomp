@@ -38263,6 +38263,12 @@
     "summary": "Returns the 32-bit value at offset 0x7C of the given object pointer.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C7000": {
+    "name": "sub_007C7000_derefDwordAt44Thunk",
+    "signature": "DWORD fn_007C7000(DWORD self)",
+    "summary": "Adjusts the first argument by +0x44 and tail-forwards to derefDword (ext_007D5AE0), returning the dword read from that address.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C70C0": {
     "name": "sub_007C70C0_setField20Thunk",
     "signature": "void fn_007C70C0(void* self, DWORD value)",

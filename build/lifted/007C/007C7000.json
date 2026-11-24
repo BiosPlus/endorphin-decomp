@@ -1,0 +1,21 @@
+{
+  "va": "0x007C7000",
+  "size": 16,
+  "orig_symbol": "sub_007C7000",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "sub_007C7000_derefDwordAt44Thunk",
+  "signature": "DWORD fn_007C7000(DWORD self)",
+  "summary": "Adjusts the first argument by +0x44 and tail-forwards to derefDword (ext_007D5AE0), returning the dword read from that address.",
+  "fields": [
+    {
+      "class": "none",
+      "offset": "+0x44",
+      "type": "DWORD (pointer adjustment only; the function does not read this field",
+      "name": "directly)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:47:37Z"
+}

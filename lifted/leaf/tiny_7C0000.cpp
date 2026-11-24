@@ -987,3 +987,17 @@ void __cdecl sub_007C6F80(void* self, uint32_t value) {
 }
 } // namespace lift_007C6F80
 } // namespace lift_007C6F80
+
+// [0x007C7000]
+namespace lift_007C7000 {
+// Known callee 0x007D5AE0: derefDword (Dereference a 32-bit pointer and return its uint32_t value.)
+extern DWORD ext_007D5AE0(DWORD ptr);
+
+// @name sub_007C7000_derefDwordAt44Thunk
+// @summary Adjusts the first argument by +0x44 and tail-forwards to derefDword (ext_007D5AE0), returning the dword read from that address.
+// @field none +0x44 DWORD (pointer adjustment only; the function does not read this field directly)
+
+DWORD fn_007C7000(DWORD self) {
+    return ext_007D5AE0(self + 0x44);
+}
+} // namespace lift_007C7000
