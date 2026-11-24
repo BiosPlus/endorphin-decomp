@@ -1,0 +1,28 @@
+{
+  "va": "0x0044CE90",
+  "size": 45,
+  "orig_symbol": "sub_0044CE90",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "initSubobjects_0044CE90",
+  "class": "Unknown",
+  "signature": "void fn_0044CE90(void* self)",
+  "summary": "Initializes two embedded subobjects at +0xAC and +0x9C0 via ord_4118 with flags 0x20201, size 0x20.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "uint8_t",
+      "name": "field_0xAC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x9C0",
+      "type": "uint8_t",
+      "name": "field_0x9C0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:07:03Z"
+}

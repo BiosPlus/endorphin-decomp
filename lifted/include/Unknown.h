@@ -381,6 +381,7 @@ struct Unknown_Fields {
     // +0xA8  void*                    field_0xa8  (evidence: 0x007C2E50, 0x007C9480) // CONFLICT: multiple definitions at +0xA8
     // +0xAC  void* field_0xAC (on the object pointed to by field_0x158)  (evidence: 0x005B67A0, 0x005B7040) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  uint32_t                 field_0xAC  (evidence: 0x005CE940, 0x0072DB80) // CONFLICT: multiple definitions at +0xAC
+    // +0xAC  uint8_t                  field_0xAC  (evidence: 0x0044CE90) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  void*                    field_0xAC  (evidence: 0x005B0E60, 0x005B67C0, 0x005B7000, 0x005B7020) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  uint32_t                 field_0xac  (evidence: 0x005B6FC0, 0x005B7040) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  void*                    field_0xac  (evidence: 0x005CE8D0) // CONFLICT: multiple definitions at +0xAC
@@ -539,6 +540,7 @@ struct Unknown_Fields {
     // +0x5A4 DWORD                    field_0x5A4  (evidence: 0x007046E0)
     // +0x654 uint8_t                  field_0x654  (evidence: 0x00788D00)
     // +0x734 uint32_t field_0x734 (base of 18-entry dword array; element i at +0x734 + 4*i, valid i = 1..17)  (evidence: 0x007AAA00, 0x007AC670)
+    // +0x9C0 uint8_t                  field_0x9C0  (evidence: 0x0044CE90)
     // +0xFD0 uint32_t field_0xFD0 (on the object pointed to by +0x0C)  (evidence: 0x0071C480, 0x0071F070)
     // +0xFD4 uint32_t field_0xFD4 (on the object pointed to by +0x0C)  (evidence: 0x0071C480, 0x0071F070)
     // +0x1048 uint32_t                 field_0x1048  (evidence: 0x0086D600)

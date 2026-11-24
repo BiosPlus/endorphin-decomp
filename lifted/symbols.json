@@ -3799,6 +3799,13 @@
     "summary": "Returns the address of the static constant mem_00935578 (a .rdata word holding 0x0093556C); ignores this.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0044CE90": {
+    "name": "initSubobjects_0044CE90",
+    "class": "Unknown",
+    "signature": "void fn_0044CE90(void* self)",
+    "summary": "Initializes two embedded subobjects at +0xAC and +0x9C0 via ord_4118 with flags 0x20201, size 0x20.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044CF30": {
     "name": "ForwardFieldToSubobject_0044CF30",
     "class": "\u003cunknown\u003e",

@@ -1090,3 +1090,21 @@ void __thiscall sub_0044B390(uint32_t this_ptr, uint32_t arg1) {
     reinterpret_cast<FnNotify>(mem_r32(arg1_vtable + 0x4))(arg1, static_cast<uint32_t>(result));
 }
 } // namespace lift_0044B390
+
+// [0x0044CE90] sub_0044CE90 (45 bytes)
+namespace lift_0044CE90 {
+// Known callee 0x006A673C: thunk_MFC80_ord_4118 (IAT jump thunk forwarding to MFC80!ord_4118.)
+// Lifted call shape: `this` in ECX, three stack arguments (flags, zero, size).
+extern void ext_006A673C(void* self, uint32_t flags, uint32_t zero, uint32_t size);
+
+// @name initSubobjects_0044CE90
+// @class Unknown
+// @summary Initializes two embedded subobjects at +0xAC and +0x9C0 via ord_4118 with flags 0x20201, size 0x20.
+// @field Unknown +0xAC uint8_t field_0xAC
+// @field Unknown +0x9C0 uint8_t field_0x9C0
+void fn_0044CE90(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    ext_006A673C(base + 0xAC, 0x20201, 0, 0x20);
+    ext_006A673C(base + 0x9C0, 0x20201, 0, 0x20);
+}
+} // namespace lift_0044CE90
