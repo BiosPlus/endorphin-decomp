@@ -5975,3 +5975,57 @@ void __thiscall fn_006329B0(void* self, void* arg1, void* arg2) {
     reinterpret_cast<DtorFn>(static_cast<uintptr_t>(mem_00924FF4))(temp_str);
 }
 } // namespace lift_006329B0
+
+// [0x00487000] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_48 (162 bytes)
+namespace lift_00487000 {
+// Known callee 0x0046E780: Unknown::forwardVtableSlot4 (Calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg.)
+extern uint32_t ext_0046E780(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3);
+// Known callee 0x00486AF0: sub_00486AF0 (Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).)
+extern uint32_t ext_00486AF0(uint32_t self);
+
+namespace {
+
+struct PoseResult {
+    uint32_t first;
+    uint32_t second;
+};
+
+inline uint32_t as_u32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+inline void* as_ptr(uint32_t v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+} // namespace
+
+// @name ExprParser::WriteMethodType::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Forwards the pose-file path through a helper, then returns the object pointer at +0x04 together with the value its vtable slot 0x70 yields (or zero if none).
+// @field ExprParser::WriteMethodType +0x04 void* field_0x04
+PoseResult* fn_00487000(PoseResult* out, void* arg2, void* arg3) {
+    // Object pointed to by arg2 (its first dword is the "this" for the helper call).
+    const uint32_t self = lift_field<uint32_t>(arg2, 0);
+
+    // Helper call: forward arg3 and arg2 with a zeroed slot; its result is discarded.
+    uint32_t slot = 0;
+    (void)ext_0046E780(as_u32(&slot), as_u32(arg3), as_u32(arg2), 0);
+    (void)ext_00486AF0(self);
+
+    // Pointer to the result value: either returned by the virtual call, or the zeroed slot.
+    uint32_t* result = &slot;
+    const uint32_t obj_word = lift_field<uint32_t>(arg3, 4);
+    if (obj_word != 0) {
+        void* obj = as_ptr(obj_word);
+        void** vtable = *reinterpret_cast<void***>(obj);
+        using VSlot70 = uint32_t* (*)(void* self_obj, void* arg, uint32_t* out_slot);
+        VSlot70 fn = reinterpret_cast<VSlot70>(lift_field<void*>(vtable, 0x70));
+        result = fn(obj, arg3, &slot);
+    }
+
+    out->first = *result;
+    out->second = lift_field<uint32_t>(arg3, 4);
+    return out;
+}
+} // namespace lift_00487000
