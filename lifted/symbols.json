@@ -32535,6 +32535,13 @@
     "summary": "Calls ext_0065BF00 on the object at +0x28 with value if ext_006488F0(this) \u003e ext_00648930(this).",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00648A20": {
+    "name": "forwardThreeFloatsToChildIfFieldGreater",
+    "class": "unknown",
+    "signature": "void __thiscall fn_00648A20(void* self, float a, float b, float c)",
+    "summary": "If ext_006488F0(this) \u003e ext_00648930(this), forwards three float args to ext_0065BF30 on the object at +0x28.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00648A60": {
     "name": "call_0x65B040_if_0x04_lt_0x08",
     "signature": "void __thiscall sub_00648A60(void* self, float arg)",

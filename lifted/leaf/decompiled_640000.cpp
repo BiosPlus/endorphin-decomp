@@ -604,3 +604,23 @@ extern void __thiscall fn_00640CD0(void* self) {
     lift_field<uint8_t>(self, 0x10) = 1;
 }
 } // namespace lift_00640CD0
+
+// [0x00648A20] sub_00648A20 (55 bytes)
+namespace lift_00648A20 {
+extern float __thiscall ext_00648930(void* self);
+extern float __thiscall ext_006488F0(const void* self);
+extern void __thiscall ext_0065BF30(void* self, float a, float b, float c);
+
+// @name forwardThreeFloatsToChildIfFieldGreater
+// @class unknown
+// @summary If ext_006488F0(this) > ext_00648930(this), forwards three float args to ext_0065BF30 on the object at +0x28.
+// @field unknown +0x28 void* field_0x28
+void __thiscall fn_00648A20(void* self, float a, float b, float c) {
+    float v04 = ext_00648930(self);
+    float v08 = ext_006488F0(self);
+    if (v08 > v04) {
+        void* child = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(self) + 0x28);
+        ext_0065BF30(child, a, b, c);
+    }
+}
+} // namespace lift_00648A20
