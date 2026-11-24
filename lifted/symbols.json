@@ -25692,6 +25692,13 @@
     "summary": "Lazily initializes a static helper object and stores its address at arg0 + 4",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005F3CF0": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, vcall{92}\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, vcall{92}\u003e",
+    "signature": "void __thiscall fn_005F3CF0(void* self, void* out)",
+    "summary": "Lazily initializes a static type descriptor and stores its pointer at arg0+0x4",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005F3D70": {
     "name": "WriteMethodType\u003cEffectorGroup,float\u003e::vfunc_40 (lazy static init, stores object ptr)",
     "class": "ExprParser::ValuePtrType",
@@ -26900,6 +26907,13 @@
     "class": "ExprParser::WriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}\u003e",
     "signature": "void fn_00607BD0(void* out)",
     "summary": "Lazily constructs a static Effector-related object guarded by a one-time flag, then stores its address into the caller-supplied output's +4 slot.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00607CD0": {
+    "name": "ExprParser::WriteMethodType\u003cEffector, float, \u0026Effector::setDesiredVelocity\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cEffector, float, \u0026public: void __thiscall Effector::setDesiredVelocity(float)\u003e",
+    "signature": "void fn_00607CD0(void* self)",
+    "summary": "One-time init of a function-local static (guard bit 0 of mem_00B477F0), then stores the static's address into self+0x4.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x00608160": {

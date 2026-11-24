@@ -7550,3 +7550,52 @@ void fn_00607B50(void* out) {
     lift_field<uint32_t>(out, 4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B477D4));
 }
 } // namespace lift_00607B50
+
+// [0x005F3CF0]
+namespace lift_005F3CF0 {
+// @name ExprParser::WriteMethodType<EffectorGroup, float, vcall{92}>::vfunc_40
+// @class ExprParser::WriteMethodType<EffectorGroup, float, vcall{92}>
+// @summary Lazily initializes a static type descriptor and stores its pointer at arg0+0x4
+// @field ExprParser::WriteMethodType +0x4 uint32_t field_0x04
+
+
+extern uint32_t mem_00B46858;
+extern uint32_t mem_00B46854;
+extern void __thiscall ext_0067A670(void* self);
+
+void __thiscall fn_005F3CF0(void* self, void* out) {
+    (void)self;
+    if ((static_cast<uint8_t>(mem_00B46858) & 1) == 0) {
+        mem_00B46858 |= 1;
+        ext_0067A670(&mem_00B46854);
+        mem_00B46854 = 0x0096C98Cu;
+    }
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(out) + 4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B46854));
+}
+} // namespace lift_005F3CF0
+
+// [0x00607CD0] ExprParser::WriteMethodType<Effector, float, &public: void __thiscall Effector::setDesiredVelocity(float)>::vfunc_40 (122 bytes)
+namespace lift_00607CD0 {
+extern void ext_0067A670();
+extern int mem_00B477F0;
+extern int mem_00B477EC;
+
+// @name ExprParser::WriteMethodType<Effector, float, &Effector::setDesiredVelocity>::vfunc_40
+// @class ExprParser::WriteMethodType<Effector, float, &public: void __thiscall Effector::setDesiredVelocity(float)>
+// @summary One-time init of a function-local static (guard bit 0 of mem_00B477F0), then stores the static's address into self+0x4.
+// @field ExprParser::WriteMethodType<Effector, float, &public: void __thiscall Effector::setDesiredVelocity(float)> +0x04 uint32_t field_0x04
+void fn_00607CD0(void* self) {
+    // Guard byte: bit 0 set means the static object has already been constructed.
+    if ((mem_00B477F0 & 1) == 0) {
+        mem_00B477F0 |= 1;
+        // Construct the static object at mem_00B477EC (original: ecx = &mem_00B477EC, stack arg = 0).
+        ext_0067A670();
+        // Install the static object's vtable (0x00970E4C).
+        mem_00B477EC = 0x00970E4C;
+    }
+    // Store the static object's address into self+0x4.
+    lift_field<uint32_t>(self, 4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B477EC));
+}
+} // namespace lift_00607CD0

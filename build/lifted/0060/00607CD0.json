@@ -1,0 +1,14 @@
+{
+  "va": "0x00607CD0",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffector, float, \u0026public: void __thiscall Effector::setDesiredVelocity(float)\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffector, float, \u0026Effector::setDesiredVelocity\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cEffector, float, \u0026public: void __thiscall Effector::setDesiredVelocity(float)\u003e",
+  "signature": "void fn_00607CD0(void* self)",
+  "summary": "One-time init of a function-local static (guard bit 0 of mem_00B477F0), then stores the static's address into self+0x4.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:57:02Z"
+}
