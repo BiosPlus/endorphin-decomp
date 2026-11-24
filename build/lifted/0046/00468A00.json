@@ -1,0 +1,27 @@
+{
+  "va": "0x00468A00",
+  "size": 46,
+  "orig_symbol": "sub_00468A00",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "getNestedPairOrZero",
+  "signature": "void fn_00468A00(void* self, void* out_ptr)",
+  "summary": "If the flag byte at +0x10 is clear, zero the 8-byte output pair; otherwise forward to the child object at +0x14 and return the output pointer.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:08:20Z"
+}

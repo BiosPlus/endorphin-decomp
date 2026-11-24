@@ -5389,6 +5389,12 @@
     "summary": "If the byte at +0x10 is nonzero, tail-forward to the object at +0x14 via ext_0046FE70; otherwise return 0.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x00468A00": {
+    "name": "getNestedPairOrZero",
+    "signature": "void fn_00468A00(void* self, void* out_ptr)",
+    "summary": "If the flag byte at +0x10 is clear, zero the 8-byte output pair; otherwise forward to the child object at +0x14 and return the output pointer.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00468A30": {
     "name": "GetEnabledChildField28OrZero",
     "signature": "DWORD fn_00468A30(void* self)",

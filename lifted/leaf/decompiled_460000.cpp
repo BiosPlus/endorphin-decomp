@@ -617,3 +617,28 @@ uint8_t __thiscall sub_00462D10(uint32_t this_ptr, uint32_t mode) {
     return 0;
 }
 } // namespace lift_00462D10
+
+// [0x00468A00] sub_00468A00 (46 bytes)
+namespace lift_00468A00 {
+// Known callee 0x0046FD70: sub_0046FD70 (Copies an 8-byte value from nested member pointers into the output buffer and returns the output pointer.)
+extern uint32_t ext_0046FD70(uint32_t self, uint32_t out_ptr);
+
+// @name getNestedPairOrZero
+// @summary If the flag byte at +0x10 is clear, zero the 8-byte output pair; otherwise forward to the child object at +0x14 and return the output pointer.
+// @field <ClassName> +0x10 uint8_t field_0x10
+// @field <ClassName> +0x14 void* field_0x14
+void fn_00468A00(void* self, void* out_ptr) {
+    auto* base = static_cast<uint8_t*>(self);
+    auto* out = static_cast<uint32_t*>(out_ptr);
+
+    if (base[0x10] == 0) {
+        out[0] = 0;
+        out[1] = 0;
+        return;
+    }
+
+    void* child = *reinterpret_cast<void**>(base + 0x14);
+    ext_0046FD70(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(child)),
+                 static_cast<uint32_t>(reinterpret_cast<uintptr_t>(out_ptr)));
+}
+} // namespace lift_00468A00
