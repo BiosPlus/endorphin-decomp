@@ -5984,25 +5984,6 @@ void fn_00535630(void* self, float value) {
 }
 } // namespace lift_00535630
 
-// [0x00535650] OglRenderer::vfunc_36 (19 bytes)
-namespace lift_00535650 {
-// @name OglRenderer::vfunc_36
-// @class OglRenderer
-// @summary Stores a float argument into the target object's +0xB8 slot, reached via this->+0x38->+0x64.
-// @field OglRenderer +0x38 void* field_0x38
-
-namespace {
-// Layout of the object at this->+0x38 and its +0x64 sub-object is not recovered.
-// Only the float slot at +0xB8 of the innermost object is accessed here.
-}
-
-void fn_00535650(void* self, float value) {
-    void* a = lift_field<void*>(self, 0x38);
-    void* b = lift_field<void*>(a, 0x64);
-    lift_field<float>(b, 0xB8) = value;
-}
-} // namespace lift_00535650
-
 // [0x00535670] OglRenderer::vfunc_37 (19 bytes)
 namespace lift_00535670 {
 // @name OglRenderer::vfunc_37
@@ -6023,3 +6004,19 @@ void fn_00535670(void* self, float value) {
     std::memcpy(target + 0xBC, &value, sizeof(value));
 }
 } // namespace lift_00535670
+
+// [0x00535650] OglRenderer::vfunc_36 (19 bytes)
+namespace lift_00535650 {
+// @name OglRenderer::vfunc_36
+// @class OglRenderer
+// @summary Stores a float argument into the innermost object's +0xB8 slot, reached via this->+0x38->+0x64.
+// @field OglRenderer +0x38 void* field_0x38
+
+// Layouts of the objects at this->+0x38 and ->+0x64 are not recovered; only the
+// float slot at +0xB8 of the innermost object is written here.
+void fn_00535650(void* self, float value) {
+    void* a = lift_field<void*>(self, 0x38);
+    void* b = lift_field<void*>(a, 0x64);
+    lift_field<float>(b, 0xB8) = value;
+}
+} // namespace lift_00535650

@@ -11786,10 +11786,10 @@
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x00535650": {
-    "name": "ExportDialog::vfunc_0",
-    "class": "ExportDialog",
-    "signature": "void* fn_00417330(void* self)",
-    "summary": "Returns the address of the global data slot mem_0092CE00 (leaf accessor; self is unused).",
+    "name": "OglRenderer::vfunc_36",
+    "class": "OglRenderer",
+    "signature": "void fn_00535650(void* self, float value)",
+    "summary": "Stores a float argument into the innermost object's +0xB8 slot, reached via this-\u003e+0x38-\u003e+0x64.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x00535670": {
