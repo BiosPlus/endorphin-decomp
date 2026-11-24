@@ -39304,6 +39304,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x007008F0": {
+    "name": "Unknown::GetSubObjectValue",
+    "class": "Unknown",
+    "signature": "int32_t fn_007008F0(void* self)",
+    "summary": "Passes the embedded sub-object at +0x10 to a flag check; returns 0 if the flag is set, otherwise the sub-object's int32 getter value.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00700910": {
     "name": "sub_00700910",
     "class": "Unknown",

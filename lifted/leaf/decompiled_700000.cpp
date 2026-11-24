@@ -44,3 +44,23 @@ bool fn_00707970(void* self) {
 }
 } // namespace lift_00707980
 } // namespace lift_00707970
+
+// [0x007008F0] sub_007008F0 (32 bytes)
+namespace lift_007008F0 {
+// Known callee 0x006B9950: sub_006B9950 (returns a bool-like flag in al; takes this in ecx)
+extern uint8_t ext_006B9950(void* self);
+// Known callee 0x006E7460: sub_006E7460 (Getter returning int32_t field at offset +0x0.)
+extern int32_t ext_006E7460(void* self);
+
+// @name Unknown::GetSubObjectValue
+// @class Unknown
+// @summary Passes the embedded sub-object at +0x10 to a flag check; returns 0 if the flag is set, otherwise the sub-object's int32 getter value.
+// @field Unknown +0x10 <embedded object> field_0x10
+int32_t fn_007008F0(void* self) {
+    uint8_t* sub = static_cast<uint8_t*>(self) + 0x10;
+    if (ext_006B9950(sub) != 0) {
+        return 0;
+    }
+    return ext_006E7460(sub);
+}
+} // namespace lift_007008F0
