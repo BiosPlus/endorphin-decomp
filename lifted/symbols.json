@@ -2763,6 +2763,13 @@
     "summary": "Forwards the argument to the member object at +0x2D0 via ext_00460540, then calls ext_006A5E72 on that member with 5.",
     "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
   },
+  "0x0045E4A0": {
+    "name": "CBase::forwardToMfcOrd6090",
+    "class": "CBase",
+    "signature": "void fn_0045E4A0(void* self)",
+    "summary": "Loads the pointer stored at +0x2D0 and forwards it, with a zero argument, to the MFC80 ord_6090 thunk.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045E4B0": {
     "name": "sub_0045E4B0",
     "signature": "extern \"C\" void* __cdecl fn_0045E4B0(void)",

@@ -23,3 +23,18 @@ extern void fn_00450A80(uint32_t arg1, uint32_t arg2) {
 }
 } // namespace lift_0043CB80
 } // namespace lift_00450A80
+
+// [0x0045E4A0] sub_0045E4A0 (14 bytes)
+namespace lift_0045E4A0 {
+// Thunk to MFC80!ord_6090 (IAT jump). Original call passes ecx and pushes 0.
+extern void ext_006A5E72(void* self, int arg);
+
+// @name CBase::forwardToMfcOrd6090
+// @class CBase
+// @summary Loads the pointer stored at +0x2D0 and forwards it, with a zero argument, to the MFC80 ord_6090 thunk.
+// @field CBase +0x2D0 void* field_0x2D0
+void fn_0045E4A0(void* self) {
+    void* inner = lift_field<void*>(self, 0x2D0);
+    ext_006A5E72(inner, 0);
+}
+} // namespace lift_0045E4A0

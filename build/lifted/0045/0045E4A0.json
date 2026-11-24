@@ -1,0 +1,22 @@
+{
+  "va": "0x0045E4A0",
+  "size": 14,
+  "orig_symbol": "sub_0045E4A0",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "CBase::forwardToMfcOrd6090",
+  "class": "CBase",
+  "signature": "void fn_0045E4A0(void* self)",
+  "summary": "Loads the pointer stored at +0x2D0 and forwards it, with a zero argument, to the MFC80 ord_6090 thunk.",
+  "fields": [
+    {
+      "class": "CBase",
+      "offset": "+0x2D0",
+      "type": "void*",
+      "name": "field_0x2D0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:24:44Z"
+}
