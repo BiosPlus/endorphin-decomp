@@ -18073,6 +18073,13 @@
     "summary": "If the pointer at +0x158 is non-null, tail-forwards to ext_00647F80 with the child pointer's +0xAC value as `this`; otherwise returns 0.",
     "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
   },
+  "0x005B6BC0": {
+    "name": "Unknown::forwardToSubobjectAt1D0IfSet",
+    "class": "Unknown",
+    "signature": "void fn_005B6BC0(void* self)",
+    "summary": "If the pointer at +0x158 is non-null, forwards the address of the subobject at +0x1D0 to ext_005CE9E0 using that pointer as the receiver.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B6E70": {
     "name": "NMData::MetaBodyData::vfunc_36",
     "class": "NMData::MetaBodyData",
