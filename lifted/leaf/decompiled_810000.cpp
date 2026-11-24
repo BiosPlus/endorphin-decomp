@@ -19,3 +19,15 @@ void fn_008113C4(void* self) {
     (void)kFlagTable_008113C4;
 }
 } // namespace lift_008113C4
+
+// [0x008110F0] sub_008110F0 (32 bytes)
+namespace lift_008110F0 {
+// @name ToUpperAsciiLowercaseOnly
+// @summary Returns c - 0x20 if c is in ['a', 'z'] (signed compare), otherwise c unchanged.
+int fn_008110F0(int c) {
+    if (c >= 0x61 && c <= 0x7A) {
+        c += -0x20;
+    }
+    return c;
+}
+} // namespace lift_008110F0

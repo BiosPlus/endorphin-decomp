@@ -45175,6 +45175,12 @@
     "summary": "Returns bit 10 of the DWORD at +0x04 of the object pointed to by +0x04 of the argument.",
     "lifted_path": "lifted/leaf/tiny_810000.cpp"
   },
+  "0x008110F0": {
+    "name": "ToUpperAsciiLowercaseOnly",
+    "signature": "int fn_008110F0(int c)",
+    "summary": "Returns c - 0x20 if c is in ['a', 'z'] (signed compare), otherwise c unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
   "0x008113C4": {
     "name": "FlagTable_008113C4",
     "signature": "void fn_008113C4(void* self)",
