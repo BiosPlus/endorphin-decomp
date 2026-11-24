@@ -454,3 +454,36 @@ void __stdcall sub_00540572(uint32_t /*unused*/) {
     glEnable(0x0B44u);               // GL_CULL_FACE
 }
 } // namespace lift_00540572
+
+// [0x005434F0]
+namespace lift_005434F0 {
+// @name CUnknown::LatchFlagsAndDispatch
+// @class CUnknown
+// @summary Latches 0x93..0x95 to 1 when the matching 0x90..0x92 flag bytes are set, then tail-calls virtual slot 15 on this.
+// @field CUnknown +0x90 BYTE field_0x90
+// @field CUnknown +0x91 BYTE field_0x91
+// @field CUnknown +0x92 BYTE field_0x92
+// @field CUnknown +0x93 BYTE field_0x93
+// @field CUnknown +0x94 BYTE field_0x94
+// @field CUnknown +0x95 BYTE field_0x95
+
+typedef DWORD (__thiscall *VirtualSlot15Fn)(void* self);
+
+DWORD __thiscall fn_005434F0(void* self) {
+    BYTE al = 1;
+
+    if (lift_field<BYTE>(self, 0x90) != 0) {
+        lift_field<BYTE>(self, 0x93) = al;
+    }
+    if (lift_field<BYTE>(self, 0x91) != 0) {
+        lift_field<BYTE>(self, 0x94) = al;
+    }
+    if (lift_field<BYTE>(self, 0x92) != 0) {
+        lift_field<BYTE>(self, 0x95) = al;
+    }
+
+    void* vtbl = *reinterpret_cast<void**>(self);
+    VirtualSlot15Fn target = reinterpret_cast<VirtualSlot15Fn*>(vtbl)[0x3c / sizeof(void*)];
+    return target(self);
+}
+} // namespace lift_005434F0

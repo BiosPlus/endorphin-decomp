@@ -18087,6 +18087,13 @@
     "summary": "Returns 1 if this-\u003efield_0x88 is null; otherwise tail-dispatches vtable slot 8 (+0x20) on the object at field_0x88 and returns its result.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x005434F0": {
+    "name": "CUnknown::LatchFlagsAndDispatch",
+    "class": "CUnknown",
+    "signature": "DWORD __thiscall fn_005434F0(void* self)",
+    "summary": "Latches 0x93..0x95 to 1 when the matching 0x90..0x92 flag bytes are set, then tail-calls virtual slot 15 on this.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00543530": {
     "name": "VTableDispatch::ClearFlagsAndTailCallSlot16",
     "class": "VTableDispatch",

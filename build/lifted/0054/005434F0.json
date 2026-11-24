@@ -1,0 +1,52 @@
+{
+  "va": "0x005434F0",
+  "size": 54,
+  "orig_symbol": "sub_005434F0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "CUnknown::LatchFlagsAndDispatch",
+  "class": "CUnknown",
+  "signature": "DWORD __thiscall fn_005434F0(void* self)",
+  "summary": "Latches 0x93..0x95 to 1 when the matching 0x90..0x92 flag bytes are set, then tail-calls virtual slot 15 on this.",
+  "fields": [
+    {
+      "class": "CUnknown",
+      "offset": "+0x90",
+      "type": "BYTE",
+      "name": "field_0x90"
+    },
+    {
+      "class": "CUnknown",
+      "offset": "+0x91",
+      "type": "BYTE",
+      "name": "field_0x91"
+    },
+    {
+      "class": "CUnknown",
+      "offset": "+0x92",
+      "type": "BYTE",
+      "name": "field_0x92"
+    },
+    {
+      "class": "CUnknown",
+      "offset": "+0x93",
+      "type": "BYTE",
+      "name": "field_0x93"
+    },
+    {
+      "class": "CUnknown",
+      "offset": "+0x94",
+      "type": "BYTE",
+      "name": "field_0x94"
+    },
+    {
+      "class": "CUnknown",
+      "offset": "+0x95",
+      "type": "BYTE",
+      "name": "field_0x95"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:11:34Z"
+}
