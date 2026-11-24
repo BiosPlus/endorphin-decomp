@@ -177,3 +177,19 @@ void sub_00725DE0(uint8_t* buf, const uint8_t* key) {
     }
 }
 } // namespace lift_00725DE0
+
+// [0x00725E10]
+namespace lift_00725E10 {
+// @name xorChainDiffBlock16
+// @summary In-place 16-byte chained XOR of buf against (end - buf)-relative source; prev seeded 0x40 (stdcall, ret 8).
+// (no struct field accesses: buf/end are raw byte pointers)
+void sub_00725E10(uint8_t* buf, const uint8_t* end) {
+    uint8_t prev = 0x40;
+    for (int i = 0; i < 16; ++i) {
+        uint8_t cur = buf[i];
+        uint8_t out = static_cast<uint8_t>(end[i] ^ cur ^ prev);
+        buf[i] = out;
+        prev = cur;
+    }
+}
+} // namespace lift_00725E10

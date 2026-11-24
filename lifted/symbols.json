@@ -46400,6 +46400,12 @@
     "summary": "In-place 16-byte chained XOR: buf[i] ^= key[i] ^ prev, prev seeded 0x40 (stdcall, ret 8).",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x00725E10": {
+    "name": "xorChainDiffBlock16",
+    "signature": "void sub_00725E10(uint8_t* buf, const uint8_t* end)",
+    "summary": "In-place 16-byte chained XOR of buf against (end - buf)-relative source; prev seeded 0x40 (stdcall, ret 8).",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x00726690": {
     "name": "sub_00726690",
     "class": "Unknown",
