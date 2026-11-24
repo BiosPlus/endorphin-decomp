@@ -1,0 +1,34 @@
+{
+  "va": "0x005141D0",
+  "size": 189,
+  "orig_symbol": "Chromosome::vfunc_13",
+  "src_path": "src/classes/Chromosome.cpp",
+  "lifted_path": "lifted/classes/Chromosome.cpp",
+  "name": "Chromosome::vfunc_13",
+  "class": "Chromosome",
+  "signature": "DWORD fn_005141D0(void* self, DWORD arg1, DWORD arg2)",
+  "summary": "Compares a name string against two known keys; on the first key lazily initializes a global handle and registers this+4, on the second forwards to 0x661650 with this+0x18, otherwise calls 0x46F7D0. Always returns arg1.",
+  "fields": [
+    {
+      "class": "Chromosome",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Chromosome",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Chromosome",
+      "offset": "+0x18",
+      "type": "DWORD",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:38:21Z"
+}

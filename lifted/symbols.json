@@ -13663,6 +13663,13 @@
     "summary": "Null-checks the held value pointer, invokes the slot-9 (vtable +0x24) getter on the held object's +4 sub-object, passes the result to ext_006720E0, and returns the argument.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005141D0": {
+    "name": "Chromosome::vfunc_13",
+    "class": "Chromosome",
+    "signature": "DWORD fn_005141D0(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Compares a name string against two known keys; on the first key lazily initializes a global handle and registers this+4, on the second forwards to 0x661650 with this+0x18, otherwise calls 0x46F7D0. Always returns arg1.",
+    "lifted_path": "lifted/classes/Chromosome.cpp"
+  },
   "0x005142F0": {
     "name": "WrapPairInit_005142F0",
     "signature": "void* fn_005142F0(void* self, void* pair)",
