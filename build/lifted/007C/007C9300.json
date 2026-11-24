@@ -1,0 +1,21 @@
+{
+  "va": "0x007C9300",
+  "size": 16,
+  "orig_symbol": "sub_007C9300",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "sub_007C9300_getIndexedField94",
+  "signature": "uint32_t sub_007C9300_getIndexedField94(const void* self, uint32_t idx)",
+  "summary": "Returns the 32-bit entry at index `idx` of the 4-byte array stored at +0x94 in the object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x94",
+      "type": "uint32_t field_0x94[] (array of 4-byte entries, indexed by",
+      "name": "idx)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:47:45Z"
+}

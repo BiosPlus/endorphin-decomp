@@ -38371,6 +38371,12 @@
     "summary": "Returns the 32-bit value at offset +0x40 of the given object.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C9300": {
+    "name": "sub_007C9300_getIndexedField94",
+    "signature": "uint32_t sub_007C9300_getIndexedField94(const void* self, uint32_t idx)",
+    "summary": "Returns the 32-bit entry at index `idx` of the 4-byte array stored at +0x94 in the object.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C9C50": {
     "name": "addOffset0x160",
     "signature": "uint32_t sub_007C9C50(uint32_t arg0)",

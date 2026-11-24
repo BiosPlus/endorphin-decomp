@@ -1014,3 +1014,16 @@ extern uint32_t sub_007C70D0(uint32_t arg0) {
     return ext_007D5BC0(adjusted);
 }
 } // namespace lift_007C70D0
+
+// [0x007C9300]
+namespace lift_007C9300 {
+// @name sub_007C9300_getIndexedField94
+// @summary Returns the 32-bit entry at index `idx` of the 4-byte array stored at +0x94 in the object.
+// @field Unknown +0x94 uint32_t field_0x94[] (array of 4-byte entries, indexed by idx)
+
+
+uint32_t sub_007C9300_getIndexedField94(const void* self, uint32_t idx) {
+    const uint8_t* base = static_cast<const uint8_t*>(self);
+    return *reinterpret_cast<const uint32_t*>(base + 0x94 + 4u * idx);
+}
+} // namespace lift_007C9300
