@@ -55,6 +55,7 @@ struct Unknown_Fields {
     // +0x0   void*                    self  (evidence: 0x00493EE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* innerPtr (pointer to inner struct, dereferenced from self)  (evidence: 0x006BB790) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (on subobject returned by ext_0071E680, i.e. self+0x40)  (evidence: 0x00711A20, 0x0071F070) // CONFLICT: multiple definitions at +0x0
+    // +0x0   float                    src_x  (evidence: 0x007CA310) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t* field_0x00 (pointer to range-holder struct)  (evidence: 0x0067F8F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    subobject  (evidence: 0x006616C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer to a sub-object; dereferenced to reach the target)  (evidence: 0x006BB780) // CONFLICT: multiple definitions at +0x0
@@ -110,6 +111,7 @@ struct Unknown_Fields {
     // +0x4   uint32_t field_0x04 (begin pointer)  (evidence: 0x005731D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD field_0x04 (accessed through the pointer loaded from self+0x04)  (evidence: 0x00810240) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (arg2: inner object pointer whose vtable slot 6 yields src)  (evidence: 0x0066B860) // CONFLICT: multiple definitions at +0x4
+    // +0x4   float                    src_y  (evidence: 0x007CA310) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    subVptr  (evidence: 0x0079ADA0, 0x0079C1F0, 0x0079DCE0) // CONFLICT: multiple definitions at +0x4
     // +0x4   ptr                      subobject  (evidence: 0x00486980, 0x006721D0, 0x006722B0, 0x006722D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD field_0x04 (second dword; subtracted)  (evidence: 0x0041A070) // CONFLICT: multiple definitions at +0x4
@@ -142,6 +144,7 @@ struct Unknown_Fields {
     // +0x8   void*                    peer  (evidence: 0x00532B40, 0x0053F6A0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t field_0x08 (end pointer)  (evidence: 0x005731D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void* field_0x08 (next link pointer)  (evidence: 0x0046FB80, 0x00476B80, 0x00486D40, 0x004928C0, 0x0052A1A0, 0x005AC820, 0x005E0AE0, 0x005E2C70, 0x00624CF0, 0x0065B120) // CONFLICT: multiple definitions at +0x8
+    // +0x8   float                    src_z  (evidence: 0x007CA310) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    stringPtr  (evidence: 0x00640940) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    subObject  (evidence: 0x00711BC0, 0x0071F070) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    subobject  (evidence: 0x004AECC0) // CONFLICT: multiple definitions at +0x8

@@ -1,0 +1,33 @@
+{
+  "va": "0x007CA310",
+  "size": 37,
+  "orig_symbol": "sub_007CA310",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "scaleVec3Store",
+  "signature": "void scaleVec3Store(float* dst, float s, const float* src)",
+  "summary": "Writes dst[i] = src[i] * s for i in 0..2 (3-float vector scale; dst and src are float[3] pointers, s is a float scalar).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "src_x"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "src_y"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "src_z"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:47:20Z"
+}

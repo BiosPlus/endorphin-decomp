@@ -259,3 +259,17 @@ void SetValueAndUpdateFlag(uint32_t* p, uint32_t v) {
     p[0x04 / 4] = 1;
 }
 } // namespace lift_007C9E20
+
+// [0x007CA310] sub_007CA310 (37 bytes)
+namespace lift_007CA310 {
+// @name scaleVec3Store
+// @summary Writes dst[i] = src[i] * s for i in 0..2 (3-float vector scale; dst and src are float[3] pointers, s is a float scalar).
+// @field Unknown +0x00 float src_x
+// @field Unknown +0x04 float src_y
+// @field Unknown +0x08 float src_z
+void scaleVec3Store(float* dst, float s, const float* src) {
+    dst[0] = src[0] * s;
+    dst[1] = src[1] * s;
+    dst[2] = src[2] * s;
+}
+} // namespace lift_007CA310

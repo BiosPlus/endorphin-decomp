@@ -45643,6 +45643,12 @@
     "summary": "Copies three 32-bit floats from src to this and returns this.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CA310": {
+    "name": "scaleVec3Store",
+    "signature": "void scaleVec3Store(float* dst, float s, const float* src)",
+    "summary": "Writes dst[i] = src[i] * s for i in 0..2 (3-float vector scale; dst and src are float[3] pointers, s is a float scalar).",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CA790": {
     "name": "Vec3::dot",
     "class": "Vec3",
