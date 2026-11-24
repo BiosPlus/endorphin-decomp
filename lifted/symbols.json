@@ -38833,6 +38833,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0079AF50 (GlobalFreeWrapper).",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x00859D30": {
+    "name": "sub_00859D30",
+    "signature": "uint32_t sub_00859D30(uint32_t arg0)",
+    "summary": "Follows an indirection when flag 0x4 is set at +0x14, then returns the pointer at +0x4.",
+    "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
   "0x0085D504": {
     "name": "sub_0085D504",
     "signature": "void fn_0085D504(void)",

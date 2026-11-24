@@ -1,0 +1,33 @@
+{
+  "va": "0x00859D30",
+  "size": 16,
+  "orig_symbol": "sub_00859D30",
+  "src_path": "src/leaf/tiny_850000.cpp",
+  "lifted_path": "lifted/leaf/tiny_850000.cpp",
+  "name": "sub_00859D30",
+  "signature": "uint32_t sub_00859D30(uint32_t arg0)",
+  "summary": "Follows an indirection when flag 0x4 is set at +0x14, then returns the pointer at +0x4.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "ptr",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "ptr",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "u8",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:48:56Z"
+}

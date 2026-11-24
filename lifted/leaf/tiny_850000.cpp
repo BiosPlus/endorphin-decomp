@@ -113,3 +113,21 @@ HGLOBAL fn_00859730(HGLOBAL hMem) {
 }
 } // namespace lift_0079AF50
 } // namespace lift_00859730
+
+// [0x00859D30]
+namespace lift_00859D30 {
+// @name sub_00859D30
+// @summary Follows an indirection when flag 0x4 is set at +0x14, then returns the pointer at +0x4.
+// @field Unknown +0x00 ptr field_0x00
+// @field Unknown +0x04 ptr field_0x04
+// @field Unknown +0x14 u8 field_0x14
+
+uint32_t sub_00859D30(uint32_t arg0) {
+    uint32_t eax = arg0;
+    if (*reinterpret_cast<uint8_t*>(eax + 0x14) & 0x04) {
+        eax = *reinterpret_cast<uint32_t*>(eax);
+    }
+    eax = *reinterpret_cast<uint32_t*>(eax + 0x04);
+    return eax;
+}
+} // namespace lift_00859D30
