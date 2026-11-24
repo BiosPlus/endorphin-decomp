@@ -1,0 +1,22 @@
+{
+  "va": "0x00430310",
+  "size": 18,
+  "orig_symbol": "sub_00430310",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::forwardToChildVfunc14Guarded",
+  "class": "Unknown",
+  "signature": "void fn_00430310(void* self)",
+  "summary": "Forwards to the child object at +0x100 via ext_0044B7C0 when that child pointer is non-null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x100",
+      "type": "void*",
+      "name": "field_0x100"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:56:17Z"
+}

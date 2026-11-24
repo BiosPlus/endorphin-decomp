@@ -195,3 +195,22 @@ uint8_t fn_00430380(void) {
     return value == 1 ? uint8_t{1} : uint8_t{0};
 }
 } // namespace lift_00430380
+
+// [0x00430310] sub_00430310 (18 bytes)
+namespace lift_00430310 {
+// Known callee 0x0044B7C0: sub_0044B7C0 (Auto-lifted identical-shape clone of 0x00675D60 (Unknown::forwardToChildVfunc14).)
+extern void ext_0044B7C0(void* self);
+// Known callee 0x004444B0: sub_004444B0 (This-adjustor thunk: adjusts `this` by +0x15C and tail-calls sub_0045C240.)
+extern void ext_004444B0(void* self);
+
+// @name Unknown::forwardToChildVfunc14Guarded
+// @class Unknown
+// @summary Forwards to the child object at +0x100 via ext_0044B7C0 when that child pointer is non-null.
+// @field Unknown +0x100 void* field_0x100
+void fn_00430310(void* self) {
+    void* child = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x100);
+    if (child != nullptr) {
+        ext_0044B7C0(child);
+    }
+}
+} // namespace lift_00430310
