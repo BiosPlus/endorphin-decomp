@@ -4407,6 +4407,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004554C0 (MultiTrackView::Frame::vfunc_106).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0044F740": {
+    "name": "fn_0044F740 (global object subsystem check)",
+    "signature": "int32_t fn_0044F740(void)",
+    "summary": "Returns 1 if both selector 0 and selector 1 of the subsystem object at global-\u003e+0x26C are nonzero, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044FF10": {
     "name": "RigEditorFrame::vfunc_12",
     "class": "RigEditorFrame",

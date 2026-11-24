@@ -1,0 +1,21 @@
+{
+  "va": "0x0044F740",
+  "size": 59,
+  "orig_symbol": "sub_0044F740",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "fn_0044F740 (global object subsystem check)",
+  "signature": "int32_t fn_0044F740(void)",
+  "summary": "Returns 1 if both selector 0 and selector 1 of the subsystem object at global-\u003e+0x26C are nonzero, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x26C",
+      "type": "uint32_t",
+      "name": "field_0x26C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:25:24Z"
+}

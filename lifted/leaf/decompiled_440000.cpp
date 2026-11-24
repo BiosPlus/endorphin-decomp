@@ -1559,3 +1559,32 @@ uint32_t sub_0044C360(uint32_t first, uint32_t last, uint32_t d_last) {
     return result;
 }
 } // namespace lift_0044C360
+
+// [0x0044F740] sub_0044F740 (59 bytes)
+namespace lift_0044F740 {
+// Known callee 0x00492520: fn_00492520 (select field by selector: 0 -> +0x0C, 1 -> +0x10, else 0) (Returns one of two 32-bit fields of self based on a selector argument; returns 0 for other selectors.)
+// __thiscall: this in ECX, one stack argument (selector).
+extern int32_t __thiscall ext_00492520(void* self, int32_t selector);
+// Unknown callee 0x006AD940 (4 bytes): __thiscall taking this in ECX, returns a pointer in EAX.
+extern void* __thiscall ext_006AD940(void* self);
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t __cdecl ext_00594000(void);
+
+// @name fn_0044F740 (global object subsystem check)
+// @summary Returns 1 if both selector 0 and selector 1 of the subsystem object at global->+0x26C are nonzero, else 0.
+// @field Unknown +0x26C uint32_t field_0x26C
+int32_t fn_0044F740(void) {
+    uintptr_t global = static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000()));
+    uint32_t inner = *reinterpret_cast<uint32_t*>(global + 0x26C);
+
+    void* sub = ext_006AD940(reinterpret_cast<void*>(static_cast<uintptr_t>(inner)));
+
+    int32_t first = ext_00492520(sub, 0);
+    int32_t second = ext_00492520(sub, 1);
+
+    if (first != 0 && second != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_0044F740
