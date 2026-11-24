@@ -114,3 +114,19 @@ void* fn_00584BD0(void* self) {
     return base + 0x14;
 }
 } // namespace lift_00584BD0
+
+// [0x0058A170]
+namespace lift_0058A170 {
+extern uintptr_t mem_00A9F3AC;
+extern void (__thiscall* mem_00924FE4)(void* self, const char* str);
+
+// @name initDefaultString
+// @summary Initializes a std::string at arg1 with the global C-string at mem_00A9F3AC and returns arg1
+uint32_t __stdcall sub_0058A170(uint32_t arg1, uint32_t arg2) {
+    (void)arg2;
+    void* out_str = reinterpret_cast<void*>(static_cast<uintptr_t>(arg1));
+    const char* src = reinterpret_cast<const char*>(mem_00A9F3AC);
+    mem_00924FE4(out_str, src);
+    return arg1;
+}
+} // namespace lift_0058A170

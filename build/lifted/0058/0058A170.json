@@ -1,0 +1,13 @@
+{
+  "va": "0x0058A170",
+  "size": 35,
+  "orig_symbol": "sub_0058A170",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "initDefaultString",
+  "signature": "uint32_t __stdcall sub_0058A170(uint32_t arg1, uint32_t arg2)",
+  "summary": "Initializes a std::string at arg1 with the global C-string at mem_00A9F3AC and returns arg1",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:58:39Z"
+}
