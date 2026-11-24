@@ -246,3 +246,24 @@ int __thiscall sub_0041A070(void* self, void* other) {
     return static_cast<int>(self_second - other_second);
 }
 } // namespace lift_0041A070
+
+// [0x0041CEB0] sub_0041CEB0 (35 bytes)
+namespace lift_0041CEB0 {
+// @name UnknownClass::forwardToSubobjectSlot4
+// @class UnknownClass
+// @summary Calls vtable slot 4 of the subobject at +0x04 with (arg1, self, 0, 0), then returns arg1.
+// @field UnknownClass +0x04 void* field_0x04
+// Note: the original pushes the caller's saved ESI into the callee's 3rd stack slot;
+// that is a register-preservation artifact with no portable meaning, so it is passed as 0.
+// The callee's calling convention is not confirmed; the signature below is a portable approximation.
+using SubobjectSlot4Fn = uint32_t (*)(void* subobject, uint32_t arg1, void* owner, uint32_t spill, uint32_t zero);
+
+uint32_t fn_0041CEB0(void* self, uint32_t arg1) {
+    uint32_t subobjectAddr = lift_field<uint32_t>(self, 0x04);
+    uint32_t vtableAddr = lift_field<uint32_t>(reinterpret_cast<void*>(subobjectAddr), 0x00);
+    uint32_t slot4Addr = lift_field<uint32_t>(reinterpret_cast<void*>(vtableAddr), 0x10);
+    auto slot4 = reinterpret_cast<SubobjectSlot4Fn>(static_cast<uintptr_t>(slot4Addr));
+    slot4(reinterpret_cast<void*>(static_cast<uintptr_t>(subobjectAddr)), arg1, self, 0u, 0u);
+    return arg1;
+}
+} // namespace lift_0041CEB0

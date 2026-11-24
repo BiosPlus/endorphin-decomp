@@ -1,0 +1,22 @@
+{
+  "va": "0x0041CEB0",
+  "size": 35,
+  "orig_symbol": "sub_0041CEB0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "UnknownClass::forwardToSubobjectSlot4",
+  "class": "UnknownClass",
+  "signature": "uint32_t fn_0041CEB0(void* self, uint32_t arg1)",
+  "summary": "Calls vtable slot 4 of the subobject at +0x04 with (arg1, self, 0, 0), then returns arg1.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:56:29Z"
+}
