@@ -1,0 +1,28 @@
+{
+  "va": "0x006FA990",
+  "size": 48,
+  "orig_symbol": "sub_006FA990",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::forwardArgIfFlagged",
+  "class": "Unknown",
+  "signature": "BOOL fn_006FA990(void* self, DWORD arg, DWORD unused)",
+  "summary": "If bit 0 of the byte at +0x34 is set, forwards the first argument to the sub-object at +0x38 via vtable slot 0x74 and returns its bool result; otherwise returns false.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "BYTE",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:21:37Z"
+}

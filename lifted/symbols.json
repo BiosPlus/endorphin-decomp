@@ -43051,6 +43051,13 @@
     "summary": "Returns whether the 32-bit field at offset +0x08 is non-zero.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006FA990": {
+    "name": "Unknown::forwardArgIfFlagged",
+    "class": "Unknown",
+    "signature": "BOOL fn_006FA990(void* self, DWORD arg, DWORD unused)",
+    "summary": "If bit 0 of the byte at +0x34 is set, forwards the first argument to the sub-object at +0x38 via vtable slot 0x74 and returns its bool result; otherwise returns false.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FA9C0": {
     "name": "Unknown::flagGatedVirtualQuery",
     "class": "Unknown",

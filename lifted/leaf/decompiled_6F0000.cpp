@@ -973,3 +973,26 @@ bool fn_006FA9C0(void* self, DWORD arg) {
     return ext_vcall_0x74(sub, arg);
 }
 } // namespace lift_006FA9C0
+
+// [0x006FA990] sub_006FA990 (48 bytes)
+namespace lift_006FA990 {
+// @name Unknown::forwardArgIfFlagged
+// @class Unknown
+// @summary If bit 0 of the byte at +0x34 is set, forwards the first argument to the sub-object at +0x38 via vtable slot 0x74 and returns its bool result; otherwise returns false.
+// @field Unknown +0x34 BYTE field_0x34
+// @field Unknown +0x38 void* field_0x38
+
+using FlaggedForwardFn = BOOL(__thiscall*)(void* self, DWORD arg);
+
+BOOL fn_006FA990(void* self, DWORD arg, DWORD unused) {
+    (void)unused;
+    if ((lift_field<BYTE>(self, 0x34) & 0x01) == 0) {
+        return FALSE;
+    }
+    void* sub = lift_field<void*>(self, 0x38);
+    void* vtbl = lift_field<void*>(sub, 0);
+    void* slot = lift_field<void*>(vtbl, 0x74);
+    auto fn = reinterpret_cast<FlaggedForwardFn>(slot);
+    return fn(sub, arg) ? TRUE : FALSE;
+}
+} // namespace lift_006FA990
