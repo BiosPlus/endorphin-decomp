@@ -11864,6 +11864,12 @@
     "summary": "Stores the double at *value into every 8-byte slot in [first, last); no-op if first == last.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x00503CA0": {
+    "name": "initZeroState",
+    "signature": "void fn_00503CA0(void* self)",
+    "summary": "Installs vtable 0x0094F074 at +0x00, zeroes the dword/byte fields, and sets the double at +0x28 to 0.0.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00503DD0": {
     "name": "Evaluator::vfunc_0",
     "class": "Evaluator",

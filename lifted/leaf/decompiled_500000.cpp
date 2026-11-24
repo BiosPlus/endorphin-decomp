@@ -60,3 +60,29 @@ void __stdcall sub_0050EE70(uint32_t begin, uint32_t end) {
     }
 }
 } // namespace lift_0050EE70
+
+// [0x00503CA0] sub_00503CA0 (37 bytes)
+namespace lift_00503CA0 {
+// @name initZeroState
+// @summary Installs vtable 0x0094F074 at +0x00, zeroes the dword/byte fields, and sets the double at +0x28 to 0.0.
+// @field Unknown +0x00 uint32_t vtablePtr
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 uint8_t field_0x20
+// @field Unknown +0x21 uint8_t field_0x21
+// @field Unknown +0x28 double field_0x28
+void fn_00503CA0(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x0094F074u;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x14) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    lift_field<uint32_t>(self, 0x1C) = 0;
+    lift_field<double>(self, 0x28) = 0.0;
+    lift_field<uint8_t>(self, 0x20) = 0;
+    lift_field<uint8_t>(self, 0x21) = 0;
+}
+} // namespace lift_00503CA0

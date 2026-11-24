@@ -1,0 +1,69 @@
+{
+  "va": "0x00503CA0",
+  "size": 37,
+  "orig_symbol": "sub_00503CA0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "initZeroState",
+  "signature": "void fn_00503CA0(void* self)",
+  "summary": "Installs vtable 0x0094F074 at +0x00, zeroes the dword/byte fields, and sets the double at +0x28 to 0.0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtablePtr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint8_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x21",
+      "type": "uint8_t",
+      "name": "field_0x21"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "double",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:03:08Z"
+}
