@@ -1,0 +1,22 @@
+{
+  "va": "0x00528C10",
+  "size": 19,
+  "orig_symbol": "sub_00528C10",
+  "src_path": "src/leaf/tiny_520000.cpp",
+  "lifted_path": "lifted/leaf/tiny_520000.cpp",
+  "name": "AnimatableTransform::vfunc_forwardToChild (forwardVirtual0x38IfNonNull)",
+  "class": "AnimatableTransform",
+  "signature": "uint32_t fn_00528C10(void* self, uint32_t a0, uint32_t a1)",
+  "summary": "If the object at +0x04 is non-null, tail-forward the call to its vtable slot 14 (+0x38) with the same two stack arguments; otherwise return immediately, popping 8 bytes of arguments.",
+  "fields": [
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "child"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:01:35Z"
+}

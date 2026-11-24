@@ -95,3 +95,30 @@ extern void __thiscall fn_00528BF0(void* self, uint32_t a0, uint32_t a1, uint32_
     target(child, a0, a1, a2);
 }
 } // namespace lift_00528BF0
+
+// [0x00528C10]
+namespace lift_00528C10 {
+// @name AnimatableTransform::vfunc_forwardToChild (forwardVirtual0x38IfNonNull)
+// @class AnimatableTransform
+// @summary If the object at +0x04 is non-null, tail-forward the call to its vtable slot 14 (+0x38) with the same two stack arguments; otherwise return immediately, popping 8 bytes of arguments.
+// @field AnimatableTransform +0x04 void* child
+//
+// Original: cmp [ecx+4],0 / je -> ret 8 / mov ecx,[ecx+4] / mov eax,[ecx] /
+//           mov eax,[eax+0x38] / jmp eax
+// The jmp is a tail call: the callee inherits the caller's two stack arguments
+// and performs the ret 8 itself. Here the arguments are modeled explicitly and
+// the tail call becomes a normal forwarding call. The null-path return value is
+// the incoming eax, which the original leaves untouched; it is not modeled here.
+typedef uint32_t (__thiscall *ChildVirtualFn)(void* self, uint32_t a0, uint32_t a1);
+
+uint32_t fn_00528C10(void* self, uint32_t a0, uint32_t a1) {
+    void* child = lift_field<void*>(self, 0x04);
+    if (child == nullptr) {
+        return 0;
+    }
+    void* vtable = lift_field<void*>(child, 0x00);
+    void* slot = lift_field<void*>(vtable, 0x38);
+    auto fn = reinterpret_cast<ChildVirtualFn>(slot);
+    return fn(child, a0, a1);
+}
+} // namespace lift_00528C10
