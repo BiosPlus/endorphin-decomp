@@ -1,0 +1,27 @@
+{
+  "va": "0x00790DA0",
+  "size": 17,
+  "orig_symbol": "sub_00790DA0",
+  "src_path": "src/leaf/tiny_790000.cpp",
+  "lifted_path": "lifted/leaf/tiny_790000.cpp",
+  "name": "SetFieldsFromArg_0x14_0x2c",
+  "signature": "void __thiscall fn_00790DA0(void* self, uint32_t value)",
+  "summary": "Stores the stack argument into this+0x14 and zeroes this+0x2c (thiscall, callee pops 4 bytes).",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:54:43Z"
+}

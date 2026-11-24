@@ -37572,6 +37572,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00792900 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x00790DA0": {
+    "name": "SetFieldsFromArg_0x14_0x2c",
+    "signature": "void __thiscall fn_00790DA0(void* self, uint32_t value)",
+    "summary": "Stores the stack argument into this+0x14 and zeroes this+0x2c (thiscall, callee pops 4 bytes).",
+    "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
   "0x007928E0": {
     "name": "sub_007928E0",
     "signature": "extern \"C\" void* __fastcall fn_007928E0(void* self, int edx_unused, unsigned int flags)",

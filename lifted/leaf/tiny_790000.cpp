@@ -362,3 +362,16 @@ void fn_00790D60(void* self, std::uint32_t value) {
     *reinterpret_cast<std::uint32_t*>(base + 0x0c) = value;
 }
 } // namespace lift_00790D60
+
+// [0x00790DA0] sub_00790DA0 (17 bytes)
+namespace lift_00790DA0 {
+// @name SetFieldsFromArg_0x14_0x2c
+// @summary Stores the stack argument into this+0x14 and zeroes this+0x2c (thiscall, callee pops 4 bytes).
+// @field Object +0x14 uint32_t field_0x14
+// @field Object +0x2c uint32_t field_0x2c
+void __thiscall fn_00790DA0(void* self, uint32_t value) {
+    auto* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x2c) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x14) = value;
+}
+} // namespace lift_00790DA0
