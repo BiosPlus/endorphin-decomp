@@ -1,0 +1,13 @@
+{
+  "va": "0x00701990",
+  "size": 57,
+  "orig_symbol": "sub_00701990",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "isKnownGlobalHandle",
+  "signature": "uint8_t __stdcall sub_00701990(uint32_t value)",
+  "summary": "Checks whether the given 32-bit value matches any of four global values.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:22:51Z"
+}
