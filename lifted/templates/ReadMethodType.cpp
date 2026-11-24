@@ -35511,3 +35511,3864 @@ int32_t __stdcall fn_00470370(void** ptr) {
     }
 }
 } // namespace lift_00470370
+
+// [0x00470780] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_00470780 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00407700(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00470780(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00407700(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00470780
+
+// [0x00471BF0] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_00471BF0 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0046F860(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00471BF0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0046F860(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00471BF0
+
+// [0x00488800] ExprParser::ReadMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_00488800 {
+// @name ExprParser::ReadMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00486970(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00488800(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00486970(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00488800
+
+// [0x0048FF10] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_0048FF10 {
+// @name ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0048FB10(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_0048FF10(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0048FB10(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_0048FF10
+
+// [0x004B3430] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_004B3430 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0048FAC0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004B3430(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0048FAC0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004B3430
+
+// [0x004B37C0] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_004B37C0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00622310(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004B37C0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00622310(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004B37C0
+
+// [0x004B3B00] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_004B3B00 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0048FAD0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004B3B00(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0048FAD0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004B3B00
+
+// [0x004B3E10] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_004B3E10 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0048FAE0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004B3E10(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0048FAE0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004B3E10
+
+// [0x004C55C0] ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_004C55C0 {
+// @name ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_004C4DB0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004C55C0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_004C4DB0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004C55C0
+
+// [0x004CEB80] ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_004CEB80 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_004CE580(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004CEB80(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_004CE580(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004CEB80
+
+// [0x004D12A0] ExprParser::ReadMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_004D12A0 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_004D0B10(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004D12A0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_004D0B10(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004D12A0
+
+// [0x004E0850] ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_004E0850 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getStrength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_004DDE70(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004E0850(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_004DDE70(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004E0850
+
+// [0x004E0FE0] ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_004E0FE0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_004DDE40(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004E0FE0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_004DDE40(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004E0FE0
+
+// [0x004E2050] ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_004E2050 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_004E1980(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004E2050(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_004E1980(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004E2050
+
+// [0x004F5370] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getPhi(void) const, 0>::vfunc_2 (96 bytes)
+namespace lift_004F5370 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getPhi(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getPhi(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_004F4DB0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004F5370(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_004F4DB0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004F5370
+
+// [0x004F5770] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getX(void) const, 0>::vfunc_2 (96 bytes)
+namespace lift_004F5770 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getX(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getX(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_004F4DD0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004F5770(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_004F4DD0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004F5770
+
+// [0x004F6A70] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getY(void) const, 0>::vfunc_2 (96 bytes)
+namespace lift_004F6A70 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getY(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getY(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_004F4DE0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004F6A70(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_004F4DE0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004F6A70
+
+// [0x004F6DF0] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, 0>::vfunc_2 (96 bytes)
+namespace lift_004F6DF0 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_004F4DF0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004F6DF0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_004F4DF0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004F6DF0
+
+// [0x004F72D0] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>::vfunc_2 (96 bytes)
+namespace lift_004F72D0 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_004F4EA0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004F72D0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_004F4EA0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004F72D0
+
+// [0x004F7C10] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>::vfunc_2 (96 bytes)
+namespace lift_004F7C10 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_004F4F80(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004F7C10(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_004F4F80(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004F7C10
+
+// [0x004F7EC0] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>::vfunc_2 (96 bytes)
+namespace lift_004F7EC0 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_004F4FE0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004F7EC0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_004F4FE0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004F7EC0
+
+// [0x004F85B0] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>::vfunc_2 (96 bytes)
+namespace lift_004F85B0 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_004F4F00(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004F85B0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_004F4F00(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004F85B0
+
+// [0x004F8A10] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_2 (96 bytes)
+namespace lift_004F8A10 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_004F4F20(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004F8A10(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_004F4F20(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004F8A10
+
+// [0x004FE200] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_004FE200 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_004FD810(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004FE200(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_004FD810(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004FE200
+
+// [0x004FE810] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_004FE810 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_004FD830(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004FE810(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_004FD830(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004FE810
+
+// [0x004FEE20] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_004FEE20 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_004FD850(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_004FEE20(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_004FD850(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_004FEE20
+
+// [0x00513AD0] ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_00513AD0 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00511270(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00513AD0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00511270(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00513AD0
+
+// [0x00513C40] ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_00513C40 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00511280(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00513C40(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00511280(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00513C40
+
+// [0x0051AFA0] ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>::vfunc_2 (96 bytes)
+namespace lift_0051AFA0 {
+// @name ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0051AE90(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_0051AFA0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0051AE90(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_0051AFA0
+
+// [0x00525880] ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>::vfunc_2 (96 bytes)
+namespace lift_00525880 {
+// @name ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00524A60(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00525880(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00524A60(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00525880
+
+// [0x00525A30] ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>::vfunc_2 (96 bytes)
+namespace lift_00525A30 {
+// @name ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00524AE0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00525A30(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00524AE0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00525A30
+
+// [0x005263E0] ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>::vfunc_2 (96 bytes)
+namespace lift_005263E0 {
+// @name ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00525E70(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005263E0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00525E70(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005263E0
+
+// [0x0058B700] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_0058B700 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0058A8F0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_0058B700(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0058A8F0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_0058B700
+
+// [0x0058B9E0] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_0058B9E0 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0058A920(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_0058B9E0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0058A920(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_0058B9E0
+
+// [0x0058BD40] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_0058BD40 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0058A960(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_0058BD40(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0058A960(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_0058BD40
+
+// [0x0058D960] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_0058D960 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0058CFB0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_0058D960(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0058CFB0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_0058D960
+
+// [0x0058DCF0] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_0058DCF0 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0058CFC0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_0058DCF0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0058CFC0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_0058DCF0
+
+// [0x0058DFA0] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_0058DFA0 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0058CFD0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_0058DFA0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0058CFD0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_0058DFA0
+
+// [0x00590500] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_00590500 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0058F5C0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00590500(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0058F5C0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00590500
+
+// [0x00590B50] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_00590B50 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0058F5E0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00590B50(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0058F5E0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00590B50
+
+// [0x005914A0] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005914A0 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0058F5A0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005914A0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0058F5A0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005914A0
+
+// [0x005917C0] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005917C0 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0058F5B0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005917C0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0058F5B0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005917C0
+
+// [0x00591F10] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_00591F10 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0058F5D0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00591F10(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0058F5D0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00591F10
+
+// [0x005924F0] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005924F0 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0058F5F0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005924F0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0058F5F0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005924F0
+
+// [0x00595170] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_00595170 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00594070(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00595170(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00594070(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00595170
+
+// [0x00595D80] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_00595D80 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00594700(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00595D80(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00594700(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00595D80
+
+// [0x00598370] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_00598370 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005963B0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00598370(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005963B0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00598370
+
+// [0x00599650] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_00599650 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005971D0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00599650(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005971D0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00599650
+
+// [0x0059E430] ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_0059E430 {
+// @name ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0059D580(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_0059E430(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0059D580(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_0059E430
+
+// [0x005B8FB0] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_005B8FB0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005B6970(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005B8FB0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005B6970(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005B8FB0
+
+// [0x005BB400] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_005BB400 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005B7040(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005BB400(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005B7040(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005BB400
+
+// [0x005BDD10] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005BDD10 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005B68F0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005BDD10(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005B68F0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005BDD10
+
+// [0x005BDF70] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005BDF70 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005B6FE0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005BDF70(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005B6FE0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005BDF70
+
+// [0x005BE1F0] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005BE1F0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005B6FC0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005BE1F0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005B6FC0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005BE1F0
+
+// [0x005C5890] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_005C5890 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005C2FF0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005C5890(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005C2FF0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005C5890
+
+// [0x005C9490] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_005C9490 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005C3AA0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005C9490(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005C3AA0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005C9490
+
+// [0x005CAE60] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_005CAE60 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005C3C00(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005CAE60(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005C3C00(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005CAE60
+
+// [0x005CEA80] ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005CEA80 {
+// @name ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005CE4E0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005CEA80(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005CE4E0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005CEA80
+
+// [0x005D1D60] ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005D1D60 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005D06D0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005D1D60(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005D06D0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005D1D60
+
+// [0x005D3DC0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005D3DC0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005D0670(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005D3DC0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005D0670(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005D3DC0
+
+// [0x005D41D0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005D41D0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005CF930(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005D41D0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005CF930(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005D41D0
+
+// [0x005D4B70] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005D4B70 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005478B0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005D4B70(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005478B0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005D4B70
+
+// [0x005D4E50] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005D4E50 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005D0710(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005D4E50(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005D0710(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005D4E50
+
+// [0x005D5130] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005D5130 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005478E0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005D5130(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005478E0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005D5130
+
+// [0x005D5430] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005D5430 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005478C0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005D5430(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005478C0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005D5430
+
+// [0x005D5710] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005D5710 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005478D0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005D5710(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005478D0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005D5710
+
+// [0x005D7B80] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005D7B80 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005478A0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005D7B80(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005478A0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005D7B80
+
+// [0x005D8280] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005D8280 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00552160(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005D8280(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00552160(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005D8280
+
+// [0x005DA3E0] ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005DA3E0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005D12A0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005DA3E0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005D12A0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005DA3E0
+
+// [0x005E4E20] ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005E4E20 {
+// @name ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005E25B0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005E4E20(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005E25B0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005E4E20
+
+// [0x005E55D0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005E55D0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005E2700(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005E55D0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005E2700(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005E55D0
+
+// [0x005E6250] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005E6250 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005E28B0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005E6250(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005E28B0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005E6250
+
+// [0x005E6590] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005E6590 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005E2900(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005E6590(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005E2900(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005E6590
+
+// [0x005E6880] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005E6880 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005E2950(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005E6880(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005E2950(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005E6880
+
+// [0x005E6A50] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005E6A50 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005E29A0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005E6A50(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005E29A0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005E6A50
+
+// [0x005E7130] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005E7130 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005E1F10(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005E7130(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005E1F10(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005E7130
+
+// [0x005E7A20] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005E7A20 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005E2620(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005E7A20(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005E2620(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005E7A20
+
+// [0x005E7E00] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005E7E00 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005E2690(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005E7E00(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005E2690(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005E7E00
+
+// [0x005E87F0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005E87F0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005E2770(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005E87F0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005E2770(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005E87F0
+
+// [0x005E8C60] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005E8C60 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005E27C0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005E8C60(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005E27C0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005E8C60
+
+// [0x005E8FD0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005E8FD0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005E2810(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005E8FD0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005E2810(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005E8FD0
+
+// [0x005E94F0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005E94F0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005E2860(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005E94F0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005E2860(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005E94F0
+
+// [0x005EA560] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005EA560 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005E1EE0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005EA560(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005E1EE0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005EA560
+
+// [0x005EAAC0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005EAAC0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005E1F40(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005EAAC0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005E1F40(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005EAAC0
+
+// [0x005F8300] ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005F8300 {
+// @name ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005F51C0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005F8300(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005F51C0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005F8300
+
+// [0x005F8A60] ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_005F8A60 {
+// @name ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005F5130(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005F8A60(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005F5130(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005F8A60
+
+// [0x005FD400] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>::vfunc_2 (96 bytes)
+namespace lift_005FD400 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0064F8F0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005FD400(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0064F8F0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005FD400
+
+// [0x005FD9E0] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>::vfunc_2 (96 bytes)
+namespace lift_005FD9E0 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0062A580(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005FD9E0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0062A580(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005FD9E0
+
+// [0x005FDE30] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>::vfunc_2 (96 bytes)
+namespace lift_005FDE30 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_005FCB30(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005FDE30(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_005FCB30(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005FDE30
+
+// [0x005FE440] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>::vfunc_2 (96 bytes)
+namespace lift_005FE440 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00603680(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005FE440(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00603680(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005FE440
+
+// [0x005FEA50] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>::vfunc_2 (96 bytes)
+namespace lift_005FEA50 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_006036A0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_005FEA50(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_006036A0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005FEA50
+
+// [0x006043B0] ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>::vfunc_2 (96 bytes)
+namespace lift_006043B0 {
+// @name ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00602F40(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_006043B0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00602F40(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_006043B0
+
+// [0x006143A0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>::vfunc_2 (96 bytes)
+namespace lift_006143A0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00611170(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_006143A0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00611170(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_006143A0
+
+// [0x00614680] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>::vfunc_2 (96 bytes)
+namespace lift_00614680 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_006111A0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00614680(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_006111A0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00614680
+
+// [0x00616460] ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_00616460 {
+// @name ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00611950(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00616460(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00611950(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00616460
+
+// [0x00617130] ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>::vfunc_2 (96 bytes)
+namespace lift_00617130 {
+// @name ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00610B20(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00617130(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00610B20(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00617130
+
+// [0x00617A30] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>::vfunc_2 (96 bytes)
+namespace lift_00617A30 {
+// @name ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00610CE0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00617A30(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00610CE0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00617A30
+
+// [0x00617C80] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>::vfunc_2 (96 bytes)
+namespace lift_00617C80 {
+// @name ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00610CB0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00617C80(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00610CB0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00617C80
+
+// [0x00619660] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>::vfunc_2 (96 bytes)
+namespace lift_00619660 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_006111D0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00619660(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_006111D0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00619660
+
+// [0x00619AC0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>::vfunc_2 (96 bytes)
+namespace lift_00619AC0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00611160(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00619AC0(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00611160(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00619AC0
+
+// [0x0061BD10] ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_0061BD10 {
+// @name ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00611870(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_0061BD10(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00611870(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_0061BD10
+
+// [0x0061BF20] ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_0061BF20 {
+// @name ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_006118E0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_0061BF20(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_006118E0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_0061BF20
+
+// [0x0062AB20] ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>::vfunc_2 (96 bytes)
+namespace lift_0062AB20 {
+// @name ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0062A590(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_0062AB20(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0062A590(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_0062AB20
+
+// [0x00649F00] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_00649F00 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00648EC0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00649F00(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00648EC0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00649F00
+
+// [0x0064A510] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_0064A510 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00648ED0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_0064A510(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00648ED0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_0064A510
+
+// [0x0064AB20] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_0064AB20 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_00648EE0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_0064AB20(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_00648EE0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_0064AB20
+
+// [0x00651510] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_00651510 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0064EA20(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00651510(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0064EA20(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00651510
+
+// [0x00651B20] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_00651B20 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0064EA30(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00651B20(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0064EA30(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00651B20
+
+// [0x00652130] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_00652130 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0064EA40(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00652130(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0064EA40(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00652130
+
+// [0x00652740] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_00652740 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0064EA50(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00652740(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0064EA50(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00652740
+
+// [0x00652D50] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_00652D50 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0064EA60(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00652D50(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0064EA60(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00652D50
+
+// [0x00653360] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_00653360 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0064EA70(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00653360(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0064EA70(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00653360
+
+// [0x00670120] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>::vfunc_2 (96 bytes)
+namespace lift_00670120 {
+// @name ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0067C550(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00670120(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0067C550(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_00670120
+
+// [0x0068C620] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_0068C620 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0068BDC0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_0068C620(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0068BDC0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_0068C620
+
+// [0x0068CC30] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_0068CC30 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0068BED0(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_0068CC30(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0068BED0(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_0068CC30
+
+// [0x0068D240] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_0068D240 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0068BE70(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_0068D240(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0068BE70(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_0068D240
+
+// [0x0068D850] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>::vfunc_2 (96 bytes)
+namespace lift_0068D850 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0068BC30(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_0068D850(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0068BC30(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_0068D850
