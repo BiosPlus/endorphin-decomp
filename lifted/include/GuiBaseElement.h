@@ -9,6 +9,7 @@
 // Recovered field layout for GuiBaseElement:
 namespace lifted_layout {
 struct GuiBaseElement_Fields {
-    // +0x0   void*                    vptr  (evidence: 0x00499AB0)
+    // +0x0   void* vptr (not accessed here; the function writes through its first argument, not `this`)  (evidence: 0x0049AF60) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vptr  (evidence: 0x00499AB0) // CONFLICT: multiple definitions at +0x0
 };
 } // namespace lifted_layout

@@ -1,0 +1,22 @@
+{
+  "va": "0x0049AF60",
+  "size": 14,
+  "orig_symbol": "GuiBaseElement::vfunc_12",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "GuiBaseElement::vfunc_12",
+  "class": "GuiBaseElement",
+  "signature": "void fn_0049AF60(float* out, void* unused)",
+  "summary": "Zeroes a two-float pair at the pointer passed as the first stack argument (stdcall, ret 8).",
+  "fields": [
+    {
+      "class": "GuiBaseElement",
+      "offset": "+0x0",
+      "type": "void* vptr (not accessed here; the function writes through its first argument, not",
+      "name": "`this`)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:24:41Z"
+}

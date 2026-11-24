@@ -5078,6 +5078,13 @@
     "summary": "Stdcall (ret 4) accessor: follows the proxy's first-dword value pointer and returns 1 if the int it points to is nonzero, else 0.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0049AF60": {
+    "name": "GuiBaseElement::vfunc_12",
+    "class": "GuiBaseElement",
+    "signature": "void fn_0049AF60(float* out, void* unused)",
+    "summary": "Zeroes a two-float pair at the pointer passed as the first stack argument (stdcall, ret 8).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x0049AF70": {
     "name": "NMData::State::vfunc_10_off_8",
     "class": "NMData::State",

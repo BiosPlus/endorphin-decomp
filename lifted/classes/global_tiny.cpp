@@ -5296,3 +5296,17 @@ void fn_004067D0(uint16_t arg) {
     ext_006A5F92(widened);
 }
 } // namespace lift_004067D0
+
+// [0x0049AF60] GuiBaseElement::vfunc_12 (14 bytes)
+namespace lift_0049AF60 {
+// @name GuiBaseElement::vfunc_12
+// @class GuiBaseElement
+// @summary Zeroes a two-float pair at the pointer passed as the first stack argument (stdcall, ret 8).
+// @field GuiBaseElement +0x00 void* vptr  (not accessed here; the function writes through its first argument, not `this`)
+void fn_0049AF60(float* out, void* unused) {
+    // fldz; fst [eax]; fstp [eax+4]
+    out[0] = 0.0f;
+    out[1] = 0.0f;
+    (void)unused;
+}
+} // namespace lift_0049AF60
