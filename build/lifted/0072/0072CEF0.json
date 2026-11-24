@@ -1,0 +1,22 @@
+{
+  "va": "0x0072CEF0",
+  "size": 32,
+  "orig_symbol": "sub_0072CEF0",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "Unknown::SetArray1A9Element",
+  "class": "Unknown",
+  "signature": "void fn_0072CEF0(uint8_t* self, int32_t index, uint8_t value)",
+  "summary": "Stores a byte into slot [index] of a 13-entry byte array at this+0x1A9; out-of-range indices are ignored.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1A9",
+      "type": "uint8_t field_0x1A9 (uint8_t[13] array, indexed",
+      "name": "0..12)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:43:24Z"
+}

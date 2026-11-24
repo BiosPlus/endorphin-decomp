@@ -134,3 +134,17 @@ int32_t Unknown_GetArrayEntry1B8(const uint8_t* self, int32_t idx) {
     return *reinterpret_cast<const int32_t*>(self + 0x1B8 + 4 * static_cast<uintptr_t>(idx));
 }
 } // namespace lift_0072CED0
+
+// [0x0072CEF0] sub_0072CEF0 (32 bytes)
+namespace lift_0072CEF0 {
+// @name Unknown::SetArray1A9Element
+// @class Unknown
+// @summary Stores a byte into slot [index] of a 13-entry byte array at this+0x1A9; out-of-range indices are ignored.
+// @field Unknown +0x1A9 uint8_t field_0x1A9 (uint8_t[13] array, indexed 0..12)
+void fn_0072CEF0(uint8_t* self, int32_t index, uint8_t value) {
+    if (index < 0 || index >= 13) {
+        return;
+    }
+    self[0x1A9 + index] = value;
+}
+} // namespace lift_0072CEF0
