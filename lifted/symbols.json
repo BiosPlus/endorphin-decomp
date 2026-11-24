@@ -14970,6 +14970,13 @@
     "summary": "Scales a dimension of the render object's bounding/transform vector and updates the attached object.",
     "lifted_path": "lifted/NMData/MetaBodyData.cpp"
   },
+  "0x005B72E0": {
+    "name": "Unknown::ForwardToSubobject158",
+    "class": "Unknown",
+    "signature": "void fn_005B72E0(void* self)",
+    "summary": "Loads the DWORD at +0x158; if non-zero, tail-forwards to ext_005CE9B0 with it as self.",
+    "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
+  },
   "0x005B7420": {
     "name": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::applyImpulseViaVelocity(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
     "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::applyImpulseViaVelocity(class NM::Vector3 const \u0026), 0}\u003e",

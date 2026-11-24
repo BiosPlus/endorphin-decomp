@@ -57,3 +57,19 @@ bool sub_005B64D0(const unsigned char* self) {
     return value == 6;
 }
 } // namespace lift_005B64D0
+
+// [0x005B72E0] sub_005B72E0 (16 bytes)
+namespace lift_005B72E0 {
+extern void ext_005CE9B0(void* self);
+
+// @name Unknown::ForwardToSubobject158
+// @class Unknown
+// @summary Loads the DWORD at +0x158; if non-zero, tail-forwards to ext_005CE9B0 with it as self.
+// @field Unknown +0x158 DWORD field_0x158
+void fn_005B72E0(void* self) {
+    DWORD sub = *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(self) + 0x158);
+    if (sub != 0) {
+        ext_005CE9B0(reinterpret_cast<void*>(static_cast<uintptr_t>(sub)));
+    }
+}
+} // namespace lift_005B72E0

@@ -1,0 +1,22 @@
+{
+  "va": "0x005B72E0",
+  "size": 16,
+  "orig_symbol": "sub_005B72E0",
+  "src_path": "src/leaf/tiny_5B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5B0000.cpp",
+  "name": "Unknown::ForwardToSubobject158",
+  "class": "Unknown",
+  "signature": "void fn_005B72E0(void* self)",
+  "summary": "Loads the DWORD at +0x158; if non-zero, tail-forwards to ext_005CE9B0 with it as self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "DWORD",
+      "name": "field_0x158"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:36:06Z"
+}
