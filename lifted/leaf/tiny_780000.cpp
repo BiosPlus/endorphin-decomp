@@ -338,3 +338,18 @@ uint32_t fn_0078C230(void* self, uint32_t arg) {
     return (arg << 4) + base;
 }
 } // namespace lift_0078C230
+
+// [0x0078C3A0]
+namespace lift_0078C3A0 {
+// @name Unknown::sub_0078C3A0
+// @summary Returns the dword at +0x28 if the dword at +0x20 is nonzero, otherwise the dword at +0x04.
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x20 DWORD field_0x20
+// @field Unknown +0x28 DWORD field_0x28
+DWORD sub_0078C3A0(const void* ecx) {
+    if (lift_field<DWORD>(ecx, 0x20) != 0) {
+        return lift_field<DWORD>(ecx, 0x28);
+    }
+    return lift_field<DWORD>(ecx, 0x04);
+}
+} // namespace lift_0078C3A0

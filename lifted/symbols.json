@@ -35692,6 +35692,13 @@
     "summary": "Returns this-\u003efield_0x04 + (arg \u003c\u003c 4) (thiscall, callee pops 4).",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x0078C3A0": {
+    "name": "Unknown::sub_0078C3A0",
+    "class": "Unknown",
+    "signature": "DWORD sub_0078C3A0(const void* ecx)",
+    "summary": "Returns the dword at +0x28 if the dword at +0x20 is nonzero, otherwise the dword at +0x04.",
+    "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
   "0x0078CBD0": {
     "name": "sub_0078CBD0",
     "class": "UnknownObject",
