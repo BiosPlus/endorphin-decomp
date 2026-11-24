@@ -1,0 +1,28 @@
+{
+  "va": "0x00553F70",
+  "size": 31,
+  "orig_symbol": "sub_00553F70",
+  "src_path": "src/leaf/tiny_550000.cpp",
+  "lifted_path": "lifted/leaf/tiny_550000.cpp",
+  "name": "ScaledRangeDivide160",
+  "class": "\u003cClassName\u003e (unknown; accessed fields are raw offsets)",
+  "signature": "int32_t fn_00553F70(void* self)",
+  "summary": "Returns 0 if field +0x04 is zero; otherwise returns (field +0x08 - field +0x04) / 160 using a 0x66666667 magic-multiply with sign fix-up.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:25:45Z"
+}

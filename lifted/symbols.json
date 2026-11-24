@@ -15010,6 +15010,13 @@
     "summary": "Follows the pointer at +0x08 from the argument, repeatedly, until it reaches an object whose byte at +0x39 is nonzero; returns nothing.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x00553F70": {
+    "name": "ScaledRangeDivide160",
+    "class": "\u003cClassName\u003e (unknown; accessed fields are raw offsets)",
+    "signature": "int32_t fn_00553F70(void* self)",
+    "summary": "Returns 0 if field +0x04 is zero; otherwise returns (field +0x08 - field +0x04) / 160 using a 0x66666667 magic-multiply with sign fix-up.",
+    "lifted_path": "lifted/leaf/tiny_550000.cpp"
+  },
   "0x00554510": {
     "name": "Unknown::getVec4At30_w1",
     "class": "Unknown",

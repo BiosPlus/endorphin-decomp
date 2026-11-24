@@ -288,3 +288,36 @@ int32_t fn_00553E60(void* self) {
 }
 } // namespace lift_00404D50
 } // namespace lift_00553E60
+
+// [0x00553F70] sub_00553F70 (31 bytes)
+namespace lift_00553F70 {
+// @name ScaledRangeDivide160
+// @class <ClassName> (unknown; accessed fields are raw offsets)
+// @summary Returns 0 if field +0x04 is zero; otherwise returns (field +0x08 - field +0x04) / 160 using a 0x66666667 magic-multiply with sign fix-up.
+// @field <ClassName> +0x04 int32_t field_0x04
+// @field <ClassName> +0x08 int32_t field_0x08
+int32_t fn_00553F70(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    int32_t start;
+    std::memcpy(&start, base + 0x04, sizeof(start));
+    if (start == 0) {
+        return 0;
+    }
+    int32_t end;
+    std::memcpy(&end, base + 0x08, sizeof(end));
+
+    // 32-bit wrapping subtraction, as the original sub does.
+    int32_t delta = static_cast<int32_t>(static_cast<uint32_t>(end) - static_cast<uint32_t>(start));
+
+    // imul with 0x66666667 -> high dword of the signed 64-bit product.
+    int64_t product = static_cast<int64_t>(static_cast<int32_t>(0x66666667)) * static_cast<int64_t>(delta);
+    int32_t hi = static_cast<int32_t>(product >> 32);
+
+    // sar edx, 6
+    int32_t q = hi >> 6;
+
+    // Add 1 if q is negative (shr eax,31 ; add eax,edx).
+    uint32_t signBit = static_cast<uint32_t>(q) >> 31;
+    return static_cast<int32_t>(static_cast<uint32_t>(signBit) + static_cast<uint32_t>(q));
+}
+} // namespace lift_00553F70
