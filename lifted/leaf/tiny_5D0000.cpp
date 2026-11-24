@@ -117,3 +117,17 @@ void fn_005DA170(void* self, int32_t value) {
     }
 }
 } // namespace lift_005DA170
+
+// [0x005D1480] sub_005D1480 (18 bytes)
+namespace lift_005D1480 {
+// @name descriptiveName_005D1480 (thiscall: stores arg into first dword, zeroes second, returns this)
+// @summary Initializes a two-dword record from one stack argument; second dword is cleared to 0; returns this.
+// @field Unknown +0x00 DWORD field_0x00
+// @field Unknown +0x04 DWORD field_0x04
+void* fn_005D1480(void* self, DWORD arg) {
+    DWORD* p = static_cast<DWORD*>(self);
+    p[0] = arg;   // [this+0x00] = arg
+    p[1] = 0;     // [this+0x04] = 0
+    return self;  // eax = this
+}
+} // namespace lift_005D1480

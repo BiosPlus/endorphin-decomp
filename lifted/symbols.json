@@ -16912,6 +16912,12 @@
     "summary": "Returns 1 if the object at this+0x44 has a nonzero dword at offset +0x4, else 0.",
     "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
   },
+  "0x005D1480": {
+    "name": "descriptiveName_005D1480 (thiscall: stores arg into first dword, zeroes second, returns this)",
+    "signature": "void* fn_005D1480(void* self, DWORD arg)",
+    "summary": "Initializes a two-dword record from one stack argument; second dword is cleared to 0; returns this.",
+    "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
+  },
   "0x005D14C0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0\u003e",

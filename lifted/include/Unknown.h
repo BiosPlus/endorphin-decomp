@@ -14,7 +14,7 @@ struct Unknown_Fields {
     // +0x0   void** vtable vtable pointer (slot 0 called with arg 1)  (evidence: 0x006DE130) // CONFLICT: multiple definitions at +0x0
     // +0x0   float* field_0x00 (arg1: dereferenced to get dst Vector4*)  (evidence: 0x0066B860) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (target object pointer;* arg1)  (evidence: 0x005853E0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   DWORD                    field_0x00  (evidence: 0x0046FA80, 0x0046FAA0, 0x00728DE0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   DWORD                    field_0x00  (evidence: 0x0046FA80, 0x0046FAA0, 0x005D1480, 0x00728DE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   float                    field_0x00  (evidence: 0x0052EF50, 0x00545B80, 0x006C9E90, 0x007FC290) // CONFLICT: multiple definitions at +0x0
     // +0x0   float*                   field_0x00  (evidence: 0x004B7A10, 0x0066B680, 0x0066B6B0, 0x006719C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   ptr                      field_0x00  (evidence: 0x00859D30) // CONFLICT: multiple definitions at +0x0
@@ -45,7 +45,7 @@ struct Unknown_Fields {
     // +0x4   uint32_t field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066BB70) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066AF60, 0x0066AFC0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_04  (evidence: 0x006B9950) // CONFLICT: multiple definitions at +0x4
-    // +0x4   DWORD                    field_0x04  (evidence: 0x0078C230, 0x0078C3A0, 0x008102B0, 0x00810440) // CONFLICT: multiple definitions at +0x4
+    // +0x4   DWORD                    field_0x04  (evidence: 0x005D1480, 0x0078C230, 0x0078C3A0, 0x008102B0, 0x00810440) // CONFLICT: multiple definitions at +0x4
     // +0x4   float                    field_0x04  (evidence: 0x0052EF50, 0x00545B80, 0x007FC290) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  field_0x04  (evidence: 0x005B4BA0, 0x007CD040) // CONFLICT: multiple definitions at +0x4
     // +0x4   ptr                      field_0x04  (evidence: 0x00859D30) // CONFLICT: multiple definitions at +0x4
