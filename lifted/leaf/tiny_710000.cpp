@@ -1694,3 +1694,21 @@ void fn_0071C990(void* self, uint32_t value) {
 }
 } // namespace lift_004F9840
 } // namespace lift_0071C990
+
+// [0x007126A0] sub_007126A0 (14 bytes)
+namespace lift_007126A0 {
+// @name Unknown::getFieldByFlag34
+// @class Unknown
+// @summary Returns the dword at +0x14 if bit 0 of the byte at +0x34 is set, otherwise the dword at +0x18.
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x34 uint8_t field_0x34
+uint32_t fn_007126A0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    const uint8_t flags = *reinterpret_cast<const uint8_t*>(base + 0x34);
+    if (flags & 0x01) {
+        return *reinterpret_cast<const uint32_t*>(base + 0x14);
+    }
+    return *reinterpret_cast<const uint32_t*>(base + 0x18);
+}
+} // namespace lift_007126A0

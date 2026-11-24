@@ -33914,6 +33914,13 @@
     "summary": "Destructor tail-call: restores vtable mem_00995FE8 and tail-calls base destructor sub_00711220.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x007126A0": {
+    "name": "Unknown::getFieldByFlag34",
+    "class": "Unknown",
+    "signature": "uint32_t fn_007126A0(void* self)",
+    "summary": "Returns the dword at +0x14 if bit 0 of the byte at +0x34 is set, otherwise the dword at +0x18.",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x00712950": {
     "name": "sub_00712950",
     "signature": "extern \"C\" void __fastcall fn_00712950(void* self)",

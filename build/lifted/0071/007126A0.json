@@ -1,0 +1,34 @@
+{
+  "va": "0x007126A0",
+  "size": 14,
+  "orig_symbol": "sub_007126A0",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "Unknown::getFieldByFlag34",
+  "class": "Unknown",
+  "signature": "uint32_t fn_007126A0(void* self)",
+  "summary": "Returns the dword at +0x14 if bit 0 of the byte at +0x34 is set, otherwise the dword at +0x18.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "uint8_t",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:26:44Z"
+}
