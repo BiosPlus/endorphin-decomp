@@ -1,0 +1,22 @@
+{
+  "va": "0x00430CA0",
+  "size": 18,
+  "orig_symbol": "sub_00430CA0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::forwardVirtual0WithArg1",
+  "class": "Unknown",
+  "signature": "void fn_00430CA0(void* self, int32_t /*arg, overwritten with 1*/)",
+  "summary": "Tail-forwards to the object's vtable slot 0 with the single stack argument replaced by 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:56:23Z"
+}

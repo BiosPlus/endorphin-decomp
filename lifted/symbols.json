@@ -1505,6 +1505,13 @@
     "summary": "Returns 1 if the int32 at +0x60 of the object returned by ext_004658C0 equals 1, else 0.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430CA0": {
+    "name": "Unknown::forwardVirtual0WithArg1",
+    "class": "Unknown",
+    "signature": "void fn_00430CA0(void* self, int32_t /*arg, overwritten with 1*/)",
+    "summary": "Tail-forwards to the object's vtable slot 0 with the single stack argument replaced by 1.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430D40": {
     "name": "sub_00430D40",
     "signature": "extern \"C\" void fn_00430D40(void)",

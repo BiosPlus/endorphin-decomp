@@ -214,3 +214,22 @@ void fn_00430310(void* self) {
     }
 }
 } // namespace lift_00430310
+
+// [0x00430CA0] sub_00430CA0 (18 bytes)
+namespace lift_00430CA0 {
+// @name Unknown::forwardVirtual0WithArg1
+// @class Unknown
+// @summary Tail-forwards to the object's vtable slot 0 with the single stack argument replaced by 1.
+// @field Unknown +0x00 void* field_0x00
+
+// Original: mov ecx,[esp+4]; mov eax,[ecx]; mov edx,[eax];
+//           mov [esp+4],1; jmp edx
+// The caller's stack argument is overwritten with 1 and control is transferred
+// (as a tail call) to vtable[0], which receives `self` as its this-pointer.
+void fn_00430CA0(void* self, int32_t /*arg, overwritten with 1*/) {
+    void* vtbl = lift_field<void*>(self, 0x00);
+    using VSlot0 = void (*)(void* self, int32_t arg);
+    VSlot0 target = reinterpret_cast<VSlot0>(lift_field<void*>(vtbl, 0x00));
+    target(self, 1);
+}
+} // namespace lift_00430CA0
