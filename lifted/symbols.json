@@ -15347,6 +15347,13 @@
     "summary": "Calls sub_00640390 on its argument, forwards the result to NMFileIO::vfunc_3 on this, and returns the original argument.",
     "lifted_path": "lifted/classes/FBXIO.cpp"
   },
+  "0x0055E180": {
+    "name": "ForwardVirtualSlot0WithOne",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __stdcall fn_0055E180(void** objRef)",
+    "summary": "Calls ext_0055E150, then if the object pointed to by the argument is non-null, invokes its vtable slot 0 with the object as this and 1 as the argument.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x0055E220": {
     "name": "sub_0055E220",
     "signature": "extern \"C\" void fn_0055E220(void)",

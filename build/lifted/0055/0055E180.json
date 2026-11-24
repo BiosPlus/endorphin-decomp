@@ -1,0 +1,22 @@
+{
+  "va": "0x0055E180",
+  "size": 32,
+  "orig_symbol": "sub_0055E180",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "ForwardVirtualSlot0WithOne",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __stdcall fn_0055E180(void** objRef)",
+  "summary": "Calls ext_0055E150, then if the object pointed to by the argument is non-null, invokes its vtable slot 0 with the object as this and 1 as the argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:30:16Z"
+}

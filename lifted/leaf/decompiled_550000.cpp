@@ -203,3 +203,28 @@ void fn_00553760(void* self) {
     ext_00553080(static_cast<char*>(self) + 0x16C, result);
 }
 } // namespace lift_00553760
+
+// [0x0055E180] sub_0055E180 (32 bytes)
+namespace lift_0055E180 {
+extern void ext_0055E150();
+
+// Virtual slot 0 of the object, called with the object in ECX (thiscall) and one stack arg.
+typedef void (__thiscall *VirtualSlot0Fn)(void* self, uint32_t arg);
+
+// @name ForwardVirtualSlot0WithOne
+// @class Unknown
+// @summary Calls ext_0055E150, then if the object pointed to by the argument is non-null, invokes its vtable slot 0 with the object as this and 1 as the argument.
+// @field Unknown +0x00 void* field_0x00
+extern void __stdcall fn_0055E180(void** objRef) {
+    ext_0055E150();
+
+    void* obj = *objRef;
+    if (obj == nullptr) {
+        return;
+    }
+
+    void** vtable = lift_field<void**>(obj, 0x00);
+    auto slot0 = reinterpret_cast<VirtualSlot0Fn>(vtable[0]);
+    slot0(obj, 1u);
+}
+} // namespace lift_0055E180
