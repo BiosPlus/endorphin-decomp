@@ -38803,6 +38803,12 @@
     "summary": "Forwards its single uint32_t size argument to ext_008596E0 (GlobalAllocZeroFlags clone) and returns the result.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x00810240": {
+    "name": "getBit1OfNestedField04",
+    "signature": "uint32_t fn_00810240(void* self)",
+    "summary": "Returns bit 1 of the DWORD at +0x04 of the object referenced by self-\u003efield_0x04.",
+    "lifted_path": "lifted/leaf/tiny_810000.cpp"
+  },
   "0x008523A4": {
     "name": "adjustStackAndTailCall_0084A145",
     "signature": "void sub_008523A4()",
