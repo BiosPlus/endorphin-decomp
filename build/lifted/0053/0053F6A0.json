@@ -1,0 +1,22 @@
+{
+  "va": "0x0053F6A0",
+  "size": 32,
+  "orig_symbol": "sub_0053F6A0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "ForwardSetField498ToChild",
+  "class": "Unknown",
+  "signature": "void fn_0053F6A0(void* self, DWORD arg0, DWORD value)",
+  "summary": "Forwards the second stack argument to child object at this+0xB4 via SetField498 with tag 0x93A444; pops 8 bytes.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xB4",
+      "type": "void*",
+      "name": "field_0xB4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:30:02Z"
+}

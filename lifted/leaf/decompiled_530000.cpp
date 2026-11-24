@@ -163,3 +163,19 @@ void fn_0053ACF0(void* self, uint32_t mask, uint8_t flag) {
     }
 }
 } // namespace lift_0053ACF0
+
+// [0x0053F6A0] sub_0053F6A0 (32 bytes)
+namespace lift_0053F6A0 {
+// Callee (ext_00533D40): stores its 3rd argument into this+0x498.
+void fn_00533D40(void* self, DWORD arg0, DWORD value);
+
+// @name ForwardSetField498ToChild
+// @class Unknown
+// @summary Forwards the second stack argument to child object at this+0xB4 via SetField498 with tag 0x93A444; pops 8 bytes.
+// @field Unknown +0xB4 void* field_0xB4
+void fn_0053F6A0(void* self, DWORD arg0, DWORD value) {
+    (void)arg0; // first stack argument is unused; callee receives the constant tag 0x93A444
+    void* child = lift_field<void*>(self, 0xB4);
+    fn_00533D40(child, 0x93A444u, value);
+}
+} // namespace lift_0053F6A0

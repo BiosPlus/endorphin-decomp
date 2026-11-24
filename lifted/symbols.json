@@ -14128,6 +14128,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xB4 and tail-calls sub_00533CF0.",
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
   },
+  "0x0053F6A0": {
+    "name": "ForwardSetField498ToChild",
+    "class": "Unknown",
+    "signature": "void fn_0053F6A0(void* self, DWORD arg0, DWORD value)",
+    "summary": "Forwards the second stack argument to child object at this+0xB4 via SetField498 with tag 0x93A444; pops 8 bytes.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x0053F894": {
     "name": "sub_0053F894",
     "signature": "void __stdcall fn_0053F894(uint32_t arg_unused)",
