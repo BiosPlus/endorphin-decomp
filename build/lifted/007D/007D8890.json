@@ -1,0 +1,27 @@
+{
+  "va": "0x007D8890",
+  "size": 43,
+  "orig_symbol": "sub_007D8890",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "sub_007D8890",
+  "signature": "extern \"C\" void fn_007D8890(void* self, uint32_t a1, uint32_t a2)",
+  "summary": "Reads a dword from self-\u003e+0x40-\u003e+0x5F0, calls ext_007D8710(self) to get a pointer, then calls ext_007D8860(ptr, a1, a2).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "void*",
+      "name": "field_0x40"
+    },
+    {
+      "class": "UnknownPtr40",
+      "offset": "+0x5F0",
+      "type": "uint32_t",
+      "name": "field_0x5f0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:12:30Z"
+}

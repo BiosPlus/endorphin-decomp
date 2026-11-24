@@ -381,3 +381,27 @@ void fn_007D8860(void* self, uint32_t a1, uint32_t a2) {
     }
 }
 } // namespace lift_007D8860
+
+// [0x007D8890] sub_007D8890 (43 bytes)
+namespace lift_007D8890 {
+// Known callee 0x007D8710: sub_007D8710 (void* fn(void* self); returns self)
+extern void* ext_007D8710(void* self);
+// Known callee 0x007D8860: setPairIfFlagClear (void fn(void* self, a1, a2))
+extern void ext_007D8860(void* self, uint32_t a1, uint32_t a2);
+
+// @name sub_007D8890
+// @summary Reads a dword from self->+0x40->+0x5F0, calls ext_007D8710(self) to get a pointer, then calls ext_007D8860(ptr, a1, a2).
+// @field Unknown +0x40 void* field_0x40
+// @field UnknownPtr40 +0x5F0 uint32_t field_0x5f0
+extern void fn_007D8890(void* self, uint32_t a1, uint32_t a2) {
+    auto* inner = *reinterpret_cast<uint8_t**>(static_cast<uint8_t*>(self) + 0x40);
+    // Dereference performed by the original code; the value is passed on the
+    // stack to ext_007D8710 but that callee is cdecl with one parameter and
+    // never reads it, so it has no effect beyond the load.
+    volatile uint32_t tag = *reinterpret_cast<uint32_t*>(inner + 0x5F0);
+    (void)tag;
+
+    void* result = ext_007D8710(self);
+    ext_007D8860(result, a1, a2);
+}
+} // namespace lift_007D8890
