@@ -27520,6 +27520,13 @@
     "summary": "Reads the bool value of a held sensor object (null-checked; throws if the pointer is null); calls virtual slot 17 on the object before reading its bool at +0x30.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006250F0": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith,bool\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith,bool\u003e",
+    "signature": "void* __thiscall fn_006250F0(void* self, void* out_str, void** sensor_ptr)",
+    "summary": "Evaluates a SensorIsCollidingWith pointer and returns its boolean state as a std::string, or throws on null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x006259C0": {
     "name": "Sensors::SensorIsCollidingWith::vfunc_2",
     "class": "Sensors::SensorIsCollidingWith",

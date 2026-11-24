@@ -34241,3 +34241,35 @@ int32_t fn_004B8E70(void* arg) {
     return ext_006A6DE0(rounded);
 }
 } // namespace lift_004B8E70
+
+// [0x006250F0]
+namespace lift_006250F0 {
+// @name ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith,bool>::vfunc_4
+// @class ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith,bool>
+// @summary Evaluates a SensorIsCollidingWith pointer and returns its boolean state as a std::string, or throws on null.
+// @field Sensors::SensorIsCollidingWith +0x00 void** vtable
+// @field Sensors::SensorIsCollidingWith +0x30 uint8_t field_0x30
+
+
+extern void* ext_0046C460(void* out_str, uint8_t flag);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throw_info);
+extern const uint32_t mem_009DEC1C;
+
+void* __thiscall fn_006250F0(void* self, void* out_str, void** sensor_ptr) {
+    (void)self;
+    void* sensor = *sensor_ptr;
+    if (sensor == nullptr) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+    }
+    void** vtable = *reinterpret_cast<void***>(sensor);
+    using VFunc44 = double(__thiscall*)(void*);
+    auto vfunc_44 = reinterpret_cast<VFunc44>(vtable[0x44 / sizeof(void*)]);
+    (void)vfunc_44(sensor);
+    uint8_t flag = *reinterpret_cast<const uint8_t*>(reinterpret_cast<const uint8_t*>(sensor) + 0x30);
+    ext_0046C460(out_str, flag);
+    return out_str;
+}
+} // namespace lift_006250F0
