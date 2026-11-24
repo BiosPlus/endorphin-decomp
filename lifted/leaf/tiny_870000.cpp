@@ -86,3 +86,27 @@ void* fn_008703B0(void* self) {
     return self;
 }
 } // namespace lift_008703B0
+
+// [0x00870E10]
+namespace lift_00870E10 {
+// @name sub_00870E10
+// @summary Constructor initializing vtable pointer and member fields
+// @field sub_00870E10 +0x00 uint32_t vftable
+// @field sub_00870E10 +0x04 uint32_t field_0x04
+// @field sub_00870E10 +0x10 uint32_t field_0x10
+// @field sub_00870E10 +0x14 uint32_t field_0x14
+// @field sub_00870E10 +0x18 uint32_t field_0x18
+
+
+extern uint32_t mem_0099F140;
+
+void* __thiscall sub_00870E10(void* self) {
+    uint8_t* p = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(p + 0x00) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_0099F140));
+    *reinterpret_cast<uint32_t*>(p + 0x04) = 0;
+    *reinterpret_cast<uint32_t*>(p + 0x10) = 1;
+    *reinterpret_cast<uint32_t*>(p + 0x14) = 0;
+    *reinterpret_cast<uint32_t*>(p + 0x18) = 0;
+    return self;
+}
+} // namespace lift_00870E10

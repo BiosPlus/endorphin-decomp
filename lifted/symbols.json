@@ -366,6 +366,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00404650 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00404700": {
+    "name": "setValueAndInvalidate",
+    "signature": "void __thiscall sub_00404700(void* self, uint32_t value)",
+    "summary": "Sets field_0x58 and invalidates the associated window if non-null.",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x00404C40": {
     "name": "GetConstant_006A5ED2",
     "signature": "extern \"C\" int* __cdecl fn_00404C40()",
@@ -42830,6 +42836,12 @@
     "signature": "extern \"C\" void fn_00870E00(void)",
     "summary": "Pure jump thunk forwarding to sub_0063E970.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x00870E10": {
+    "name": "sub_00870E10",
+    "signature": "void* __thiscall sub_00870E10(void* self)",
+    "summary": "Constructor initializing vtable pointer and member fields",
+    "lifted_path": "lifted/leaf/tiny_870000.cpp"
   },
   "0x00870E30": {
     "name": "sub_00870E30",
