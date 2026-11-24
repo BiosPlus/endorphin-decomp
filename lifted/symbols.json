@@ -11044,6 +11044,13 @@
     "summary": "Returns whether the byte field at offset 0x0C is non-zero.",
     "lifted_path": "lifted/templates/auto_tiny.cpp"
   },
+  "0x0052EF50": {
+    "name": "CompoundRenderable::vfunc_20",
+    "class": "CompoundRenderable",
+    "signature": "void fn_0052EF50(void* out)",
+    "summary": "Zeroes three consecutive floats at the argument pointer (+0x0, +0x4, +0x8).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x0052EF80": {
     "name": "Primitives::Animation::vfunc_10",
     "class": "Primitives::Animation",

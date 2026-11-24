@@ -5616,3 +5616,18 @@ void fn_00536D70(void* self) {
 }
 } // namespace lift_0042FAA0
 } // namespace lift_00536D70
+
+// [0x0052EF50] CompoundRenderable::vfunc_20 (17 bytes)
+namespace lift_0052EF50 {
+// @name CompoundRenderable::vfunc_20
+// @class CompoundRenderable
+// @summary Zeroes three consecutive floats at the argument pointer (+0x0, +0x4, +0x8).
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+void fn_0052EF50(void* out) {
+    lift_field<float>(out, 0x00) = 0.0f;
+    lift_field<float>(out, 0x04) = 0.0f;
+    lift_field<float>(out, 0x08) = 0.0f;
+}
+} // namespace lift_0052EF50
