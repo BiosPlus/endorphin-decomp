@@ -46930,6 +46930,13 @@
     "summary": "Returns one of three constant addresses selected by the first stack argument (0, 1, 2); any other value yields the default 0x00AAF03C.",
     "lifted_path": "lifted/leaf/decompiled_770000.cpp"
   },
+  "0x0077F620": {
+    "name": "Unknown::copyIndexedBlock32",
+    "class": "Unknown",
+    "signature": "void fn_0077F620(void* self, uint32_t dest, uint32_t index)",
+    "summary": "Copies the 32-byte (8 x DWORD) entry at index from the table at self+0x10 into dest.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
   "0x0077F720": {
     "name": "NegateHugeIntoGlobals",
     "signature": "void fn_0077F720()",

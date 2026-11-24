@@ -169,3 +169,25 @@ int sub_0077FB10(void* self, const void* other) {
     return 0;
 }
 } // namespace lift_0077FB10
+
+// [0x0077F620] sub_0077F620 (48 bytes)
+namespace lift_0077F620 {
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t value);
+
+// @name Unknown::copyIndexedBlock32
+// @class Unknown
+// @summary Copies the 32-byte (8 x DWORD) entry at index from the table at self+0x10 into dest.
+// @field Unknown +0x10 uint32_t field_0x10 (table base address; entries are 32 bytes each)
+//
+// Original calling convention: thiscall (ecx = self), stdcall args (dest, index), ret 8.
+// The original also leaves ecx = 0 on return; that register side effect is not modeled here.
+void fn_0077F620(void* self, uint32_t dest, uint32_t index) {
+    const uint32_t base = lift_field<uint32_t>(self, 0x10);
+    const uint32_t src = base + (index << 5);
+
+    for (uint32_t i = 0; i < 8; ++i) {
+        mem_write32(dest + i * 4, mem_read32(src + i * 4));
+    }
+}
+} // namespace lift_0077F620
