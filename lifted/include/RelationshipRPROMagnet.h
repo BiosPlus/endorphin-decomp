@@ -10,6 +10,6 @@
 // Recovered field layout for RelationshipRPROMagnet:
 namespace lifted_layout {
 struct RelationshipRPROMagnet_Fields {
-    // +0x94  uint32_t                 field_0x94  (evidence: 0x00648EF0)
+    // +0x94  uint32_t                 field_0x94  (evidence: 0x00648EF0, 0x00648F90)
 };
 } // namespace lifted_layout

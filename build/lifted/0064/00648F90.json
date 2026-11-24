@@ -1,0 +1,22 @@
+{
+  "va": "0x00648F90",
+  "size": 52,
+  "orig_symbol": "RelationshipRPROMagnet::vfunc_50",
+  "src_path": "src/classes/RelationshipRPROMagnet.cpp",
+  "lifted_path": "lifted/classes/RelationshipRPROMagnet.cpp",
+  "name": "RelationshipRPROMagnet::vfunc_50",
+  "class": "RelationshipRPROMagnet",
+  "signature": "extern \"C\" void __thiscall fn_00648F90(void* self)",
+  "summary": "Releases and clears field_0x94 if non-null after invoking vtable+0x1c",
+  "fields": [
+    {
+      "class": "RelationshipRPROMagnet",
+      "offset": "+0x94",
+      "type": "uint32_t",
+      "name": "field_0x94"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:10:00Z"
+}
