@@ -170,3 +170,30 @@ uint32_t sub_006A88A0(void* self) {
     return count;
 }
 } // namespace lift_006A88A0
+
+// [0x006AF8E0]
+namespace lift_006AF8E0 {
+// @name getArrayElement
+// @summary Bounds-checked 32-bit array element accessor returning 0 when index >= limit
+// @field this +0x54 uint32_t* field_0x54
+// @field this +0x58 int32_t field_0x58
+
+
+extern int32_t ext_006A7C10(void);
+extern void ext_006A60EE(void);
+
+uint32_t __thiscall fn_006AF8E0(uint8_t* self, int32_t index) {
+    int32_t limit = ext_006A7C10();
+    if (index >= limit) {
+        return 0;
+    }
+    int32_t count = *reinterpret_cast<const int32_t*>(self + 0x58);
+    if (index < 0 || index >= count) {
+        ext_006A60EE();
+        return 0;
+    }
+    uint32_t data = *reinterpret_cast<const uint32_t*>(self + 0x54);
+    const uint32_t* arr = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(data));
+    return arr[index];
+}
+} // namespace lift_006AF8E0

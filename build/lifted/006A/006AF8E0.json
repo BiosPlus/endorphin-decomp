@@ -1,0 +1,27 @@
+{
+  "va": "0x006AF8E0",
+  "size": 41,
+  "orig_symbol": "sub_006AF8E0",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "getArrayElement",
+  "signature": "uint32_t __thiscall fn_006AF8E0(uint8_t* self, int32_t index)",
+  "summary": "Bounds-checked 32-bit array element accessor returning 0 when index \u003e= limit",
+  "fields": [
+    {
+      "class": "this",
+      "offset": "+0x54",
+      "type": "uint32_t*",
+      "name": "field_0x54"
+    },
+    {
+      "class": "this",
+      "offset": "+0x58",
+      "type": "int32_t",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:02:40Z"
+}

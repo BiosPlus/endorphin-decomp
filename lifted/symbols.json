@@ -36452,6 +36452,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x6C and forwards through mem_00924FD4.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006AF8E0": {
+    "name": "getArrayElement",
+    "signature": "uint32_t __thiscall fn_006AF8E0(uint8_t* self, int32_t index)",
+    "summary": "Bounds-checked 32-bit array element accessor returning 0 when index \u003e= limit",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006AF940": {
     "name": "GWCCategoryItem::vfunc_1",
     "class": "GWCCategoryItem",
