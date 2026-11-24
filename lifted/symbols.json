@@ -20888,6 +20888,13 @@
     "summary": "Dynamically casts the input object pointer to NMData::CollisionModelDataBase using __RTDynamicCast.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x005C4890": {
+    "name": "ExprParser::Method2Type::vfunc_49 (addForceAtPostion dispatch)",
+    "class": "ExprParser::Method2Type\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addForceAtPostion(class NM::Vector3 const \u0026, NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "inline uint32_t addr32(const void* p)",
+    "summary": "Calls a3's object virtual slot +0x14, then a1's object virtual slot +0x14 with that result, forwards the result to ext_005C3070 on *a1, then zeroes the out buffer via ext_00671F30 and returns it.",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
   "0x005C48E0": {
     "name": "ExprParser::Method2Type::vfunc_49",
     "class": "ExprParser::Method2Type\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addImpulseAtPostion(class NM::Vector3 const \u0026, NM::Vector3 const \u0026), 0}\u003e",

@@ -130,3 +130,60 @@ void* fn_005C48E0(void* out, void* a1, DWORD a2, void* a3) {
     return out;
 }
 } // namespace lift_005C48E0
+
+// [0x005C4890] ExprParser::Method2Type<NMData::CollisionModelDataBase, NM::Vector3 const &, NM::Vector3 const &, {protected: void __thiscall NMData::CollisionModelDataBase::addForceAtPostion(class NM::Vector3 const &, NM::Vector3 const &), 0}>::vfunc_49 (75 bytes)
+namespace lift_005C4890 {
+namespace lift_005C4890 {
+// Known callee 0x005C3070: ext_005C3070 (Auto-lifted identical-shape clone of 0x005B7260 (Unknown::forwardIfChild).)
+extern void ext_005C3070(void* self, uint32_t stackArg0, uint32_t stackArg1);
+// Known callee 0x00671F30: ext_00671F30 (Zeroes the first dword of the output buffer and stores the global mem_00B599BC into the second dword.)
+extern void ext_00671F30(void* out);
+
+// Virtual slot +0x14 with three stack args (callee-cleans) and a uint32 result.
+using VirtualCall3 = uint32_t(__thiscall*)(void* self, uint32_t a, uint32_t b, uint32_t c);
+// Virtual slot +0x14 with two stack args and a uint32 result.
+using VirtualCall2 = uint32_t(__thiscall*)(void* self, uint32_t a, uint32_t b);
+
+inline uint32_t addr32(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+inline void* ptrAt(const void* base, ptrdiff_t off) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(base, off)));
+}
+
+// Loads the function pointer stored at vtable[slotOff] of obj.
+inline uintptr_t vtableSlot(const void* obj, ptrdiff_t slotOff) {
+    const void* vtbl = ptrAt(obj, 0x00);
+    return static_cast<uintptr_t>(lift_field<uint32_t>(vtbl, slotOff));
+}
+
+// @name ExprParser::Method2Type::vfunc_49 (addForceAtPostion dispatch)
+// @class ExprParser::Method2Type<NMData::CollisionModelDataBase, NM::Vector3 const &, NM::Vector3 const &, {protected: void __thiscall NMData::CollisionModelDataBase::addForceAtPostion(class NM::Vector3 const &, NM::Vector3 const &), 0}>
+// @summary Calls a3's object virtual slot +0x14, then a1's object virtual slot +0x14 with that result, forwards the result to ext_005C3070 on *a1, then zeroes the out buffer via ext_00671F30 and returns it.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void* fn_005C4890(void* out, void* a1, uint32_t a2, void* a3) {
+    (void)a2;
+
+    // First virtual call: object at a3->+0x04, passing a3 and the zero local.
+    // The middle stack argument is the caller's saved ESI in the original code,
+    // which is not recoverable here, so it is passed as 0.
+    void* obj3 = ptrAt(a3, 0x04);
+    auto call3 = reinterpret_cast<VirtualCall3>(vtableSlot(obj3, 0x14));
+    uint32_t r1 = call3(obj3, addr32(a3), 0u, 0u);
+
+    // Second virtual call: object at a1->+0x04, passing a1 and r1.
+    void* obj1 = ptrAt(a1, 0x04);
+    auto call2 = reinterpret_cast<VirtualCall2>(vtableSlot(obj1, 0x14));
+    uint32_t r2 = call2(obj1, addr32(a1), r1);
+
+    // ECX = *a1 (this for ext_005C3070), stack args: r2 and the zero local.
+    void* self = ptrAt(a1, 0x00);
+    ext_005C3070(self, r2, 0u);
+
+    ext_00671F30(out);
+    return out;
+}
+} // namespace lift_005C4890
+} // namespace lift_005C4890
