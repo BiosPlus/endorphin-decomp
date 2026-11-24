@@ -1,0 +1,28 @@
+{
+  "va": "0x0048E0A0",
+  "size": 13,
+  "orig_symbol": "Commands::SetPlaybackEndFrameCommand::vfunc_2",
+  "src_path": "src/Commands/SetPlaybackEndFrameCommand.cpp",
+  "lifted_path": "lifted/Commands/SetPlaybackEndFrameCommand.cpp",
+  "name": "Commands::SetPlaybackEndFrameCommand::vfunc_2",
+  "class": "Commands::SetPlaybackEndFrameCommand",
+  "signature": "void fn_0048E0A0(void* self)",
+  "summary": "Forwards this-\u003efield_0x18 as an argument to ext_004736B0, using this-\u003efield_0x10 as the receiver.",
+  "fields": [
+    {
+      "class": "Commands::SetPlaybackEndFrameCommand",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Commands::SetPlaybackEndFrameCommand",
+      "offset": "+0x18",
+      "type": "DWORD",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:19:18Z"
+}
