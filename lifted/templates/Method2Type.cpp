@@ -697,3 +697,59 @@ uint32_t* __thiscall fn_0066CC70(void* self, uint32_t* out, void** target_ptr, v
     return out;
 }
 } // namespace lift_0066CC70
+
+// [0x0066CD90]
+namespace lift_0066CD90 {
+void __cdecl ext_00671F30(uint32_t* out);
+void __thiscall ext_0067C810(void* self, void* vec, float angle);
+
+// @name ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, float, &NM::Vector3::radArbitraryRotateTSA>::vfunc_49
+// @class ExprParser::Method2Type
+// @summary Invokes NM::Vector3::radArbitraryRotateTSA with a Vector3 and float extracted from expression arguments, then initializes the output value.
+// @field ExprValue +0x04 void* type
+uint32_t* __thiscall fn_0066CD90(void* self, uint32_t* out, void** target, void* vecArg, void* angleArg) {
+    (void)self;
+    void* vecObj = *target;
+
+    void* angleType = *(void**)((uint8_t*)angleArg + 4);
+    auto angleFn = *(float (__thiscall**)(void*, void*))(*(uint8_t**)angleType + 4);
+    float angle = angleFn(angleType, angleArg);
+
+    void* vecType = *(void**)((uint8_t*)vecArg + 4);
+    auto vecFn = *(void* (__thiscall**)(void*, void*))(*(uint8_t**)vecType + 0x14);
+    void* vecPtr = vecFn(vecType, vecArg);
+
+    ext_0067C810(vecObj, vecPtr, angle);
+    ext_00671F30(out);
+    return out;
+}
+} // namespace lift_0066CD90
+
+// [0x0066CD30]
+namespace lift_0066CD30 {
+// @name ExprParser::Method2Type_NM_Vector3_radArbitraryRotateTS::vfunc_49
+// @class ExprParser::Method2Type
+// @summary Invokes NM::Vector3::radArbitraryRotateTS on the target vector with evaluated axis and angle arguments, then initializes the output expression value.
+
+extern void __thiscall ext_0067C760(void* self, void* axis, float angle);
+extern void __cdecl ext_00671F30(uint32_t* out);
+
+void* __thiscall fn_0066CD30(void* self, uint32_t* out, void** targetPtr, uint32_t* argAxis, uint32_t* argAngle) {
+    (void)self;
+    void* target = *targetPtr;
+
+    void* angleType = reinterpret_cast<void*>(argAngle[1]);
+    auto angleVtable = *reinterpret_cast<void***>(angleType);
+    auto getFloat = reinterpret_cast<float(__thiscall*)(void*, uint32_t*)>(angleVtable[1]);
+    float angle = getFloat(angleType, argAngle);
+
+    void* axisType = reinterpret_cast<void*>(argAxis[1]);
+    auto axisVtable = *reinterpret_cast<void***>(axisType);
+    auto getVec3 = reinterpret_cast<void*(__thiscall*)(void*, uint32_t*)>(axisVtable[5]);
+    void* axis = getVec3(axisType, argAxis);
+
+    ext_0067C760(target, axis, angle);
+    ext_00671F30(out);
+    return out;
+}
+} // namespace lift_0066CD30
