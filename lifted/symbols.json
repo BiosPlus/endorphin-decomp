@@ -27429,6 +27429,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006588F0": {
+    "name": "RelationshipHinge::vfunc_9",
+    "class": "RelationshipHinge",
+    "signature": "void fn_006588F0(void* self, FLOAT* out)",
+    "summary": "Copies the vec3 at +0x10 of element 0 of the buffer pointed to by this+0x64 into out.",
+    "lifted_path": "lifted/classes/RelationshipHinge.cpp"
+  },
   "0x00658910": {
     "name": "RelationshipHinge::vfunc_10",
     "class": "RelationshipHinge",

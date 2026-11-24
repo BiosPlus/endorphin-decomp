@@ -1,0 +1,22 @@
+{
+  "va": "0x006588F0",
+  "size": 31,
+  "orig_symbol": "RelationshipHinge::vfunc_9",
+  "src_path": "src/classes/RelationshipHinge.cpp",
+  "lifted_path": "lifted/classes/RelationshipHinge.cpp",
+  "name": "RelationshipHinge::vfunc_9",
+  "class": "RelationshipHinge",
+  "signature": "void fn_006588F0(void* self, FLOAT* out)",
+  "summary": "Copies the vec3 at +0x10 of element 0 of the buffer pointed to by this+0x64 into out.",
+  "fields": [
+    {
+      "class": "RelationshipHinge",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:02:45Z"
+}
