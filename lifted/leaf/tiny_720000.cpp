@@ -325,3 +325,18 @@ double fn_00722170(void) {
 }
 } // namespace lift_006D9020
 } // namespace lift_00722170
+
+// [0x0072B1B0]
+namespace lift_0072B1B0 {
+// @name sub_0072B1B0
+// @class (none)
+// @summary Loads the pointer at [this], then returns the dword at [that pointer] (double dereference of the first field).
+// @field <this> +0x00 pointer field_0x00 (pointer to inner object, dereferenced)
+// @field <inner> +0x00 uint32 field_0x00 (returned value)
+
+uint32_t sub_0072B1B0(uint32_t* this_) {
+    uint32_t inner = *this_;
+    uint32_t value = *reinterpret_cast<uint32_t*>(inner);
+    return value;
+}
+} // namespace lift_0072B1B0

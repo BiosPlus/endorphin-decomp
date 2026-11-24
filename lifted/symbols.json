@@ -36461,6 +36461,13 @@
     "summary": "Setter storing int32_t argument into field at offset +0x1C8.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072B1B0": {
+    "name": "sub_0072B1B0",
+    "class": "(none)",
+    "signature": "uint32_t sub_0072B1B0(uint32_t* this_)",
+    "summary": "Loads the pointer at [this], then returns the dword at [that pointer] (double dereference of the first field).",
+    "lifted_path": "lifted/leaf/tiny_720000.cpp"
+  },
   "0x0072B1C0": {
     "name": "sub_0072B1C0",
     "class": "Unknown",
