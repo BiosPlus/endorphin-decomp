@@ -6079,6 +6079,13 @@
     "summary": "Reads a float via the source's inner getter and stores it as a double into the target slot; throws if the target slot is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x0046E4A0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cImageExporter, bool\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cImageExporter, bool\u003e",
+    "signature": "void __thiscall fn_0046E4A0(void* /*self*/, void* arg0)",
+    "summary": "Lazily initializes a static type/value descriptor at 0x00AD831C and stores its address at arg0 + 0x4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0046E520": {
     "name": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e",
