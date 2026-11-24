@@ -322,7 +322,7 @@ bool fn_006FC5E0(void* self, void* obj) {
 
     if (obj != nullptr) {
         void** vtbl = *reinterpret_cast<void***>(obj);
-        using Probe = bool(__thiscall*)(void* obj, int32_t handle);
+        using Probe = bool (*)(void* obj, int32_t handle);
         auto probe = reinterpret_cast<Probe>(vtbl[5]);
         if (probe(obj, handle)) {
             return true;
