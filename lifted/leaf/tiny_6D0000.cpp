@@ -399,3 +399,18 @@ uint32_t Unknown_GetFlag08(const uint8_t* self) {
     return v & 0x8u;
 }
 } // namespace lift_006DEEA0
+
+// [0x006DE3D0]
+namespace lift_006DE3D0 {
+// @name Unknown::GetIndirectInt32Plus4C
+// @summary Loads the pointer at self+0x14, offsets it by 0x4C, and returns the int32 at that address via fn_006E7460.
+
+extern int32_t __fastcall ext_006E7460(void* self);
+
+extern int32_t __fastcall fn_006DE3D0(void* self) {
+    // mov ecx, [self + 0x14]; add ecx, 0x4c; jmp fn_006E7460
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    uint8_t* inner = *reinterpret_cast<uint8_t**>(base + 0x14);
+    return ext_006E7460(inner + 0x4c);
+}
+} // namespace lift_006DE3D0

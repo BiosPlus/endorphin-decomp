@@ -1,0 +1,14 @@
+{
+  "va": "0x006DE3D0",
+  "size": 16,
+  "orig_symbol": "sub_006DE3D0",
+  "src_path": "src/leaf/tiny_6D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6D0000.cpp",
+  "name": "Unknown::GetIndirectInt32Plus4C",
+  "class": "Unknown",
+  "signature": "extern \"C\" int32_t __fastcall fn_006DE3D0(void* self)",
+  "summary": "Loads the pointer at self+0x14, offsets it by 0x4C, and returns the int32 at that address via fn_006E7460.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:39:49Z"
+}
