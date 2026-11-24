@@ -19,3 +19,18 @@ void __thiscall fn_004DE130(void* self, const int32_t* range) {
     ext_0047C480(mem_00AE29D0, field_0x168);
 }
 } // namespace lift_004DE130
+
+// [0x004DE440] sub_004DE440 (12 bytes)
+namespace lift_004DE440 {
+// Known callee 0x004DE160: sub_004DE160 (Returns (this->field_0x15c - this->field_0x9a0) + 1 as a 32-bit signed value.)
+extern int32_t __fastcall ext_004DE160(void* self);
+
+// @name ComputeRangeCountWithBias
+// @summary Returns ext_004DE160(self) plus this->field_0x9d0 as a 32-bit signed value.
+// @field self +0x9D0 int32_t field_0x9d0
+int32_t fn_004DE440(void* self) {
+    int32_t base = ext_004DE160(self);
+    int32_t bias = lift_field<int32_t>(self, 0x9D0);
+    return base + bias;
+}
+} // namespace lift_004DE440

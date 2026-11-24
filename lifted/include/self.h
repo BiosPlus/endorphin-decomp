@@ -13,5 +13,6 @@ struct self_Fields {
     // +0x4   void* field_0x04 (pointer; the pointee's byte at +0x04 is set to 1 when non-null)  (evidence: 0x00528C70)
     // +0x15C int32_t                  field_0x15c  (evidence: 0x004DE160)
     // +0x9A0 int32_t                  field_0x9a0  (evidence: 0x004DE160)
+    // +0x9D0 int32_t                  field_0x9d0  (evidence: 0x004DE440)
 };
 } // namespace lifted_layout

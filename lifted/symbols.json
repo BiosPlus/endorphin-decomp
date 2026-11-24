@@ -8540,6 +8540,12 @@
     "summary": "Calls this-\u003evtable[15](a, 0x334, 0) (result discarded) and returns a.",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004DE440": {
+    "name": "ComputeRangeCountWithBias",
+    "signature": "int32_t fn_004DE440(void* self)",
+    "summary": "Returns ext_004DE160(self) plus this-\u003efield_0x9d0 as a 32-bit signed value.",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004DE450": {
     "name": "NMData::AnimationEventData::vfunc_67",
     "class": "NMData::AnimationEventData",
