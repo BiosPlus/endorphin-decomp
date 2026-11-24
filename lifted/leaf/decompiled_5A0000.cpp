@@ -38,3 +38,33 @@ void fillRangeWith8ByteValue(uint32_t* dst_begin, uint32_t* dst_end, const uint3
     } while (dst != dst_end);
 }
 } // namespace lift_005AD1C0
+
+// [0x005A3DC0]
+namespace lift_005A3DC0 {
+extern uint32_t mem_00924E90;
+extern uint32_t mem_00924FA0;
+extern uint32_t mem_00924E94;
+extern uint32_t mem_00924E98;
+
+// @name catch_005A3DC0_printExceptionMessage
+// @summary Catch-block funclet that prints the caught exception's string at +0x0C to std::cout and returns continuation 0x005A3DAD.
+uint32_t sub_005A3DC0(uint32_t ebp) {
+    using StreamPtr = void*;
+    using EndlFn = StreamPtr (__cdecl*)(StreamPtr);
+    using PrintStrFn = StreamPtr (__cdecl*)(StreamPtr, const void*);
+    using StreamManipFn = StreamPtr (__thiscall*)(StreamPtr, EndlFn);
+
+    EndlFn endl_fn = reinterpret_cast<EndlFn>(static_cast<uintptr_t>(mem_00924E90));
+    StreamPtr cout_obj = reinterpret_cast<StreamPtr>(static_cast<uintptr_t>(mem_00924FA0));
+    PrintStrFn print_str = reinterpret_cast<PrintStrFn>(static_cast<uintptr_t>(mem_00924E94));
+    StreamManipFn stream_manip = reinterpret_cast<StreamManipFn>(static_cast<uintptr_t>(mem_00924E98));
+
+    uint32_t exc_ptr = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(ebp - 0x14));
+    const void* str_ptr = reinterpret_cast<const void*>(static_cast<uintptr_t>(exc_ptr + 0x0C));
+
+    StreamPtr os = print_str(cout_obj, str_ptr);
+    stream_manip(os, endl_fn);
+
+    return 0x005A3DADu;
+}
+} // namespace lift_005A3DC0

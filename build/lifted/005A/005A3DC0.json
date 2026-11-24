@@ -1,0 +1,13 @@
+{
+  "va": "0x005A3DC0",
+  "size": 43,
+  "orig_symbol": "sub_005A3DC0",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "catch_005A3DC0_printExceptionMessage",
+  "signature": "uint32_t sub_005A3DC0(uint32_t ebp)",
+  "summary": "Catch-block funclet that prints the caught exception's string at +0x0C to std::cout and returns continuation 0x005A3DAD.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:05:57Z"
+}
