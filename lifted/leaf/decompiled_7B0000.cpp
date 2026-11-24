@@ -163,3 +163,24 @@ namespace lift_007B50EC {
 // Lifted as a byte table instead of a function body.
 extern const unsigned char dataTable_007B50EC[36];
 } // namespace lift_007B50EC
+
+// [0x007BD310]
+namespace lift_007BD310 {
+uint16_t mem_read16(uint32_t addr);
+void mem_write16(uint32_t addr, uint16_t val);
+
+// @name initField40And4E
+// @summary Sets +0x40 to 0x10, +0x42 to 2, and +0x4e to 1 if +0x46 == 0x804c else 3.
+// @field struct +0x40 uint16_t field_0x40
+// @field struct +0x42 uint16_t field_0x42
+// @field struct +0x46 uint16_t field_0x46
+// @field struct +0x4e uint16_t field_0x4e
+uint32_t sub_007BD310(uint32_t a1) {
+    uint16_t val46 = mem_read16(a1 + 0x46);
+    mem_write16(a1 + 0x40, 0x10);
+    mem_write16(a1 + 0x42, 0x2);
+    uint16_t val4e = (val46 == 0x804c) ? 1 : 3;
+    mem_write16(a1 + 0x4e, val4e);
+    return a1;
+}
+} // namespace lift_007BD310
