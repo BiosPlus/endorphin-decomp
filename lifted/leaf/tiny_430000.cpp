@@ -175,3 +175,20 @@ uintptr_t fn_0043C9B0(void* self, void* arg) {
     return fn(self, arg, static_cast<uint8_t*>(self) + 0x80);
 }
 } // namespace lift_0043C9B0
+
+// [0x00433990] sub_00433990 (27 bytes)
+namespace lift_00433990 {
+// @name Unknown::CallbackAtField168IfNot2
+// @class Unknown
+// @summary If mode != 2, calls the function pointer stored at offset 8 of the pointer held in this+0x168, with this = self+0x168.
+// @field Unknown +0x168 void* field_0x168
+void fn_00433990(void* self, int mode) {
+    if (mode == 2) {
+        return;
+    }
+    void* p = lift_field<void*>(self, 0x168);
+    void* target = lift_field<void*>(p, 0x8);
+    using ThisFn = void (*)(void*);
+    reinterpret_cast<ThisFn>(target)(static_cast<uint8_t*>(self) + 0x168);
+}
+} // namespace lift_00433990

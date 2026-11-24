@@ -272,6 +272,7 @@ struct Unknown_Fields {
     // +0x158 uint32_t field_0x158 (child pointer; non-null selects the forward path)  (evidence: 0x005B6980) // CONFLICT: multiple definitions at +0x158
     // +0x15C void*                    field_0x15c  (evidence: 0x005C3C00)
     // +0x160 double                   field_0x160  (evidence: 0x006D9060)
+    // +0x168 void*                    field_0x168  (evidence: 0x00433990)
     // +0x178 uint32_t                 field_0x178  (evidence: 0x007CD490)
     // +0x180 DWORD                    field_0x180  (evidence: 0x004CB3E0) // CONFLICT: multiple definitions at +0x180
     // +0x180 void*                    field_0x180  (evidence: 0x004CB400) // CONFLICT: multiple definitions at +0x180
