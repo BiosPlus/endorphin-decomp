@@ -1,0 +1,13 @@
+{
+  "va": "0x0059DE20",
+  "size": 26,
+  "orig_symbol": "sub_0059DE20",
+  "src_path": "src/leaf/tiny_590000.cpp",
+  "lifted_path": "lifted/leaf/tiny_590000.cpp",
+  "name": "descriptiveName: MinFloatPtr",
+  "signature": "float* fn_0059DE20(float* a, float* b)",
+  "summary": "Returns the pointer whose float value is smaller; on ties or NaN returns the second pointer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:55:25Z"
+}

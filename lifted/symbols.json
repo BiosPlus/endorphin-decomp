@@ -15533,6 +15533,12 @@
     "summary": "Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9ED98; this is unused.",
     "lifted_path": "lifted/NMData/BackGroundData.cpp"
   },
+  "0x0059DE20": {
+    "name": "descriptiveName: MinFloatPtr",
+    "signature": "float* fn_0059DE20(float* a, float* b)",
+    "summary": "Returns the pointer whose float value is smaller; on ties or NaN returns the second pointer.",
+    "lifted_path": "lifted/leaf/tiny_590000.cpp"
+  },
   "0x0059DEB0": {
     "name": "sub_0059DEB0",
     "signature": "extern \"C\" void __fastcall fn_0059DEB0(void* self)",

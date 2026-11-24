@@ -201,3 +201,15 @@ void fn_00594040(void* self, int32_t value) {
     }
 }
 } // namespace lift_00594040
+
+// [0x0059DE20] sub_0059DE20 (26 bytes)
+namespace lift_0059DE20 {
+// @name descriptiveName: MinFloatPtr
+// @summary Returns the pointer whose float value is smaller; on ties or NaN returns the second pointer.
+// Note: the disassembly is cdecl-style (args at [esp+4], [esp+8]); the first arg is `a` (ecx),
+// the second is `b` (edx). The return is `b` unless `*a < *b`, in which case it is `a`.
+float* fn_0059DE20(float* a, float* b) {
+    // fld [a]; fld [b]; fcompp -> compares *b with *a; ZF set if *b <= *a or unordered.
+    return (*b > *a) ? a : b;
+}
+} // namespace lift_0059DE20
