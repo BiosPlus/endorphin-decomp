@@ -151,3 +151,17 @@ extern int32_t __fastcall fn_00706AF0(void* self) {
     return ext_006E7460(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(v))));
 }
 } // namespace lift_00706AF0
+
+// [0x00702640] sub_00702640 (32 bytes)
+namespace lift_00702640 {
+// @name Unknown::IsChainedFlagClear
+// @class Unknown
+// @summary Follows the pointer at this+0x268 and returns 1 if the byte at that object's +0x270 is zero, else 0.
+// @field Unknown +0x268 void* field_0x268
+// @field Unknown +0x270 uint8_t field_0x270
+int fn_00702640(void* self) {
+    void* sub = lift_field<void*>(self, 0x268);
+    uint8_t flag = lift_field<uint8_t>(sub, 0x270);
+    return flag == 0 ? 1 : 0;
+}
+} // namespace lift_00702640

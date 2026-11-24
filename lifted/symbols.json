@@ -39507,6 +39507,13 @@
     "summary": "Getter returning int32_t field at offset +0x10C.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00702640": {
+    "name": "Unknown::IsChainedFlagClear",
+    "class": "Unknown",
+    "signature": "int fn_00702640(void* self)",
+    "summary": "Follows the pointer at this+0x268 and returns 1 if the byte at that object's +0x270 is zero, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00702780": {
     "name": "getNestedField_0x268_0x490",
     "signature": "uint32_t __thiscall sub_00702780(uint32_t self)",
