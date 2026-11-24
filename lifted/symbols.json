@@ -318,6 +318,13 @@
     "summary": "IAT jump thunk forwarding to MFC80!ord_578.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004067D0": {
+    "name": "AddCharacterDialog::vfunc_79",
+    "class": "AddCharacterDialog",
+    "signature": "void fn_004067D0(uint16_t arg)",
+    "summary": "Zero-extends its 16-bit stack argument to 32 bits and forwards it to MFC80 ord_1551.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00406FA0": {
     "name": "BatchModeDialog::vfunc_1",
     "class": "BatchModeDialog",

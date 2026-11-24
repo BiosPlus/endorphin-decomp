@@ -5280,3 +5280,19 @@ DWORD fn_00404670(void* self) {
     return ext_GetSysColor(8);
 }
 } // namespace lift_00404670
+
+// [0x004067D0] AddCharacterDialog::vfunc_79 (14 bytes)
+namespace lift_004067D0 {
+// Known callee 0x006A5F92: thunk_MFC80_ord_1551 (IAT jump thunk forwarding to MFC80!ord_1551.)
+// The original is a tail jump, so the single stack argument is passed through unchanged.
+extern void ext_006A5F92(uint32_t value);
+
+// @name AddCharacterDialog::vfunc_79
+// @class AddCharacterDialog
+// @summary Zero-extends its 16-bit stack argument to 32 bits and forwards it to MFC80 ord_1551.
+void fn_004067D0(uint16_t arg) {
+    // movzx edx, word [esp+4]; mov [esp+4], edx; jmp ext_006A5F92
+    const uint32_t widened = static_cast<uint32_t>(arg);
+    ext_006A5F92(widened);
+}
+} // namespace lift_004067D0

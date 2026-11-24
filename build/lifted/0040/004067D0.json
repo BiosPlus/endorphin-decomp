@@ -1,0 +1,14 @@
+{
+  "va": "0x004067D0",
+  "size": 14,
+  "orig_symbol": "AddCharacterDialog::vfunc_79",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "AddCharacterDialog::vfunc_79",
+  "class": "AddCharacterDialog",
+  "signature": "void fn_004067D0(uint16_t arg)",
+  "summary": "Zero-extends its 16-bit stack argument to 32 bits and forwards it to MFC80 ord_1551.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:23:57Z"
+}
