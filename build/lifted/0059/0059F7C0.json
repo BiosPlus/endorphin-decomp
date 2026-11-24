@@ -1,0 +1,22 @@
+{
+  "va": "0x0059F7C0",
+  "size": 85,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, vcall128\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType",
+  "signature": "extern \"C\" void* __fastcall fn_0059F7C0(void* self, void* edx_unused, void* out_val, void** obj_ptr)",
+  "summary": "Reads a float via virtual method at +0x80 on CharacterData+0x4 and stores it into out_val, or throws on null.",
+  "fields": [
+    {
+      "class": "NMData::CharacterData",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:50:58Z"
+}
