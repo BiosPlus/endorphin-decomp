@@ -53040,6 +53040,12 @@
     "summary": "Copies the 32-byte (8 x DWORD) entry at index from the table at self+0x10 into dest.",
     "lifted_path": "lifted/leaf/decompiled_770000.cpp"
   },
+  "0x0077F6D0": {
+    "name": "initHugeVectorGlobals",
+    "signature": "void sub_0077F6D0()",
+    "summary": "Initializes three 64-bit double globals from MSVCR80.dll!_HUGE.",
+    "lifted_path": "lifted/clones/auto_clones_770000.cpp"
+  },
   "0x0077F720": {
     "name": "NegateHugeIntoGlobals",
     "signature": "void fn_0077F720()",
@@ -53400,6 +53406,13 @@
     "summary": "If the flag at +0x10 is set, qsorts the entry array at +0x00 (count at +0x04, 8-byte elements) with ext_00784790, then clears the flag; always returns 0.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x007847E0": {
+    "name": "SortedArray::find",
+    "class": "SortedArray",
+    "signature": "void* __thiscall sub_007847E0(void* self, uint32_t key_val)",
+    "summary": "Binary-searches an 8-byte-element sorted array for a matching key, returning the element pointer or null.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00784820": {
     "name": "sub_00784820",
     "signature": "void sub_00784820()",
@@ -53472,6 +53485,12 @@
     "signature": "extern \"C\" void __fastcall fn_00787000(void* self, int edx_unused, uint8_t value)",
     "summary": "Setter storing uint8_t argument into field at offset +0x80.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
+  "0x007874D0": {
+    "name": "initGlobalHugeTriple",
+    "signature": "void sub_007874D0()",
+    "summary": "Initializes three 64-bit globals from MSVCR80.dll!_HUGE.",
+    "lifted_path": "lifted/clones/auto_clones_780000.cpp"
   },
   "0x00787520": {
     "name": "initNegHugeGlobals",
