@@ -182,6 +182,13 @@
     "summary": "Pure jump thunk forwarding to sub_00401D20.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004023C0": {
+    "name": "AVIIO::vfunc_23",
+    "class": "AVIIO",
+    "signature": "uint32_t fn_004023C0(void* self)",
+    "summary": "Returns the dword at offset 0xD8 of the object referenced by this-\u003e+0x470.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00402460": {
     "name": "AVIIO::vfunc_0",
     "class": "AVIIO",

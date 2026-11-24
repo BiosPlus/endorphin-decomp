@@ -4929,3 +4929,18 @@ void fn_004010C0(void* self) {
     ext_EnableWindow(hWnd, FALSE);
 }
 } // namespace lift_004010C0
+
+// [0x004023C0] AVIIO::vfunc_23 (13 bytes)
+namespace lift_004023C0 {
+// @name AVIIO::vfunc_23
+// @class AVIIO
+// @summary Returns the dword at offset 0xD8 of the object referenced by this->+0x470.
+// @field AVIIO +0x470 uint32_t field_0x470
+// @field Unknown +0xD8 uint32_t field_0xD8
+uint32_t fn_004023C0(void* self) {
+    // Pointer at +0x470 is a 32-bit guest address; widen via uintptr_t for host-side typing.
+    const uint32_t inner = lift_field<uint32_t>(self, 0x470);
+    const void* inner_ptr = reinterpret_cast<const void*>(static_cast<uintptr_t>(inner));
+    return lift_field<uint32_t>(inner_ptr, 0xD8);
+}
+} // namespace lift_004023C0
