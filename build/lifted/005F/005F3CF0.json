@@ -1,0 +1,22 @@
+{
+  "va": "0x005F3CF0",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{92, {flat}}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, vcall{92}\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, vcall{92}\u003e",
+  "signature": "void __thiscall fn_005F3CF0(void* self, void* out)",
+  "summary": "Lazily initializes a static type descriptor and stores its pointer at arg0+0x4",
+  "fields": [
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:57:01Z"
+}
