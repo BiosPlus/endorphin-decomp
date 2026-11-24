@@ -1,0 +1,28 @@
+{
+  "va": "0x0041A070",
+  "size": 35,
+  "orig_symbol": "sub_0041A070",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::validateAndSubtractSecond",
+  "class": "Unknown",
+  "signature": "int __thiscall sub_0041A070(void* self, void* other)",
+  "summary": "Checks that the first dword of both objects is non-zero and equal (else calls invalid-parameter handler), then returns self.+0x04 - other.+0x04.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD field_0x00 (first dword; compared for equality against",
+      "name": "other)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD field_0x04 (second dword;",
+      "name": "subtracted)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:56:12Z"
+}

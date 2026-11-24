@@ -45,6 +45,7 @@ struct Unknown_Fields {
     // +0x0   void*                    object  (evidence: 0x00493EA0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer to the array-owning object)  (evidence: 0x0077FF70, 0x0077FFB0) // CONFLICT: multiple definitions at +0x0
     // +0x0   double[] array (base pointer in ecx; element i at byte offset 8*i, dynamic index so no fixed offset)  (evidence: 0x006D2400) // CONFLICT: multiple definitions at +0x0
+    // +0x0   DWORD field_0x00 (first dword; compared for equality against other)  (evidence: 0x0041A070) // CONFLICT: multiple definitions at +0x0
     // +0x0   void** vtable (sub-object's vtable pointer)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD                    ptrAt00  (evidence: 0x00859E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    ptr_0x00  (evidence: 0x006E86E0, 0x006E8790) // CONFLICT: multiple definitions at +0x0
@@ -107,6 +108,7 @@ struct Unknown_Fields {
     // +0x4   void* field_0x04 (arg2: inner object pointer whose vtable slot 6 yields src)  (evidence: 0x0066B860) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    subVptr  (evidence: 0x0079ADA0, 0x0079C1F0, 0x0079DCE0) // CONFLICT: multiple definitions at +0x4
     // +0x4   ptr                      subobject  (evidence: 0x00486980, 0x006721D0, 0x006722B0, 0x006722D0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   DWORD field_0x04 (second dword; subtracted)  (evidence: 0x0041A070) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* vtable_slot1 (vtable slot 1 = offset +0x4, called with the sub-object as this)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x4
     // +0x5   BYTE                     field_0x05  (evidence: 0x004E9BB0, 0x007148C0, 0x0071F070) // CONFLICT: multiple definitions at +0x5
     // +0x5   uint8_t                  field_0x05  (evidence: 0x004EB9B0, 0x006F8AF0, 0x007148A0, 0x0071F070) // CONFLICT: multiple definitions at +0x5

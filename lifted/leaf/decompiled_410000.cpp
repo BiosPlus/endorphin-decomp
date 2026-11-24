@@ -222,3 +222,27 @@ void fn_0041FEF0(void* self, DWORD arg) {
     ext_006A5E00();
 }
 } // namespace lift_0041FEF0
+
+// [0x0041A070]
+namespace lift_0041A070 {
+// @name Unknown::validateAndSubtractSecond
+// @class Unknown
+// @summary Checks that the first dword of both objects is non-zero and equal (else calls invalid-parameter handler), then returns self.+0x04 - other.+0x04.
+// @field Unknown +0x00 DWORD field_0x00 (first dword; compared for equality against other)
+// @field Unknown +0x04 DWORD field_0x04 (second dword; subtracted)
+
+extern void ext_MSVCR80_invalid_parameter_noinfo(void);
+
+int __thiscall sub_0041A070(void* self, void* other) {
+    DWORD self_first = lift_field<DWORD>(self, 0x00);
+    DWORD other_first = lift_field<DWORD>(other, 0x00);
+
+    if (self_first == 0 || self_first != other_first) {
+        ext_MSVCR80_invalid_parameter_noinfo();
+    }
+
+    DWORD self_second = lift_field<DWORD>(self, 0x04);
+    DWORD other_second = lift_field<DWORD>(other, 0x04);
+    return static_cast<int>(self_second - other_second);
+}
+} // namespace lift_0041A070
