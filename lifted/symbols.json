@@ -46885,6 +46885,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0072DC60 (Unknown::ForwardArgsToVirtualSlot8).",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
   },
+  "0x0077F5A0": {
+    "name": "sub_0077F5A0",
+    "signature": "uint32_t sub_0077F5A0(uint32_t arg0)",
+    "summary": "Returns one of three constant addresses selected by the first stack argument (0, 1, 2); any other value yields the default 0x00AAF03C.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
   "0x0077F720": {
     "name": "NegateHugeIntoGlobals",
     "signature": "void fn_0077F720()",

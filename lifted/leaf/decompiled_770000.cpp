@@ -68,3 +68,22 @@ void fn_0077FF90(void* self, int32_t index, double value) {
     std::memcpy(dst, &value, sizeof(value));
 }
 } // namespace lift_0077FF90
+
+// [0x0077F5A0]
+namespace lift_0077F5A0 {
+// @name sub_0077F5A0
+// @summary Returns one of three constant addresses selected by the first stack argument (0, 1, 2); any other value yields the default 0x00AAF03C.
+
+uint32_t sub_0077F5A0(uint32_t arg0) {
+    switch (arg0) {
+        case 0:
+            return 0x00AAF03Cu;
+        case 1:
+            return 0x00AAE5C0u;
+        case 2:
+            return 0x00AAE5B0u;
+        default:
+            return 0x00AAF03Cu;
+    }
+}
+} // namespace lift_0077F5A0
