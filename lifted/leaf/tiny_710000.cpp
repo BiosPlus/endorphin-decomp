@@ -2555,3 +2555,22 @@ uint8_t __stdcall sub_007110B0(uint8_t ch) {
     return ch != 0x22 ? 1 : 0;
 }
 } // namespace lift_007110B0
+
+// [0x0071F060] sub_0071F060 (16 bytes)
+namespace lift_0071F060 {
+// @name sub_0071F060
+// @summary Auto-lifted identical-shape clone of 0x006F8AC0 (Unknown::InitZeroAndDelegate).
+namespace lift_006F8AC0 {
+// @name Unknown::InitZeroAndDelegate
+// @class Unknown
+// @summary Zeroes the first dword of this and tail-calls fn_006B9960 on this + 4.
+// @field Unknown +0x00 uint32_t field_0x00
+
+extern void* ext_006D2160(void* ecx);
+
+void* fn_0071F060(void* ecx) {
+    *static_cast<uint32_t*>(ecx) = 10053548;
+    return ext_006D2160(static_cast<uint8_t*>(ecx) + 8);
+}
+} // namespace lift_006F8AC0
+} // namespace lift_0071F060

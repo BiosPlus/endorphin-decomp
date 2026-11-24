@@ -1,0 +1,22 @@
+{
+  "va": "0x00785430",
+  "size": 16,
+  "orig_symbol": "sub_00785430",
+  "src_path": "src/leaf/tiny_780000.cpp",
+  "lifted_path": "lifted/leaf/tiny_780000.cpp",
+  "name": "sub_00785430",
+  "class": "Unknown",
+  "signature": "void* fn_00785430(void* ecx)",
+  "summary": "Auto-lifted identical-shape clone of 0x006F8AC0 (Unknown::InitZeroAndDelegate).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:44:27Z"
+}

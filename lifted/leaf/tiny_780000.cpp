@@ -353,3 +353,22 @@ DWORD sub_0078C3A0(const void* ecx) {
     return lift_field<DWORD>(ecx, 0x04);
 }
 } // namespace lift_0078C3A0
+
+// [0x00785430] sub_00785430 (16 bytes)
+namespace lift_00785430 {
+// @name sub_00785430
+// @summary Auto-lifted identical-shape clone of 0x006F8AC0 (Unknown::InitZeroAndDelegate).
+namespace lift_006F8AC0 {
+// @name Unknown::InitZeroAndDelegate
+// @class Unknown
+// @summary Zeroes the first dword of this and tail-calls fn_006B9960 on this + 4.
+// @field Unknown +0x00 uint32_t field_0x00
+
+extern void* ext_007641C0(void* ecx);
+
+void* fn_00785430(void* ecx) {
+    *static_cast<uint32_t*>(ecx) = 10055388;
+    return ext_007641C0(static_cast<uint8_t*>(ecx) + 32);
+}
+} // namespace lift_006F8AC0
+} // namespace lift_00785430
