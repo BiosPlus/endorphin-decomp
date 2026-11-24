@@ -307,3 +307,35 @@ int32_t fn_007AF4C0(void** a, void** b) {
     return (valB >= valA) ? 1 : -1;
 }
 } // namespace lift_007AF4C0
+
+// [0x007ABD00]
+namespace lift_007ABD00 {
+// @name ReleaseBufferItems
+// @class Buffer
+// @summary Walks the item array of the Buffer at this+0x04 from the last index down, calls ext_00772040 and ext_006A5C5C on each non-null item, then releases the Buffer.
+// @field Buffer +0x00 uint32_t count
+// @field Buffer +0x10 void** items
+
+extern void ext_00772040(void* self);
+extern void ext_006A5C5C(void* item);
+extern void ext_006D2250(void* self);
+
+void fn_007ABD00(void* ecx) {
+    uint8_t* buf = reinterpret_cast<uint8_t*>(ecx) + 0x04;
+
+    uint32_t n = *reinterpret_cast<uint32_t*>(buf + 0x00);
+    if (n != 0) {
+        do {
+            --n;
+            void** items = *reinterpret_cast<void***>(buf + 0x10);
+            void* item = items[n];
+            if (item != nullptr) {
+                ext_00772040(item);
+                ext_006A5C5C(item);
+            }
+        } while (n != 0);
+    }
+
+    ext_006D2250(buf);
+}
+} // namespace lift_007ABD00

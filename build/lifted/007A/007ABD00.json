@@ -1,0 +1,28 @@
+{
+  "va": "0x007ABD00",
+  "size": 54,
+  "orig_symbol": "sub_007ABD00",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "ReleaseBufferItems",
+  "class": "Buffer",
+  "signature": "void fn_007ABD00(void* ecx)",
+  "summary": "Walks the item array of the Buffer at this+0x04 from the last index down, calls ext_00772040 and ext_006A5C5C on each non-null item, then releases the Buffer.",
+  "fields": [
+    {
+      "class": "Buffer",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "count"
+    },
+    {
+      "class": "Buffer",
+      "offset": "+0x10",
+      "type": "void**",
+      "name": "items"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:12:59Z"
+}
