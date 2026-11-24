@@ -5005,6 +5005,13 @@
     "summary": "Calls ext_00594000 to obtain an int32 handle, reads the dword at handle+0x26C, and tail-forwards that value to ext_00477380.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x004691D0": {
+    "name": "SetOwnerFlagAndString",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __stdcall fn_004691D0(uint32_t flag, const void* rhs)",
+    "summary": "Gets the pointer from ext_00594000, takes the object stored at its +0x26C, forwards the two stack arguments (flag, rhs) to ext_004773B0 on that object, then sets the object's byte at +0x04 to 1.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x004693D0": {
     "name": "sub_004693D0",
     "class": "Unknown",

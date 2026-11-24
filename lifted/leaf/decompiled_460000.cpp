@@ -484,3 +484,27 @@ DWORD fn_00462E50(void* self, void* str) {
     return ext_00401940(target, static_cast<DWORD>(reinterpret_cast<uintptr_t>(s)));
 }
 } // namespace lift_00462E50
+
+// [0x004691D0] sub_004691D0 (37 bytes)
+namespace lift_004691D0 {
+// Known callee 0x00594000: sub_00594000 (cdecl, no args). The original dereferences eax right after
+// the call ([eax+0x26C]), so it is modelled as returning a pointer rather than the int32 noted in the callee table.
+extern void* __cdecl ext_00594000();
+// Known callee 0x004773B0: Unknown::SetByteAndAssignString. thiscall (this in ecx), two stack args
+// (flag pushed last, so it is the first argument; rhs second), callee-cleans.
+extern void __thiscall ext_004773B0(void* self, uint8_t flag, const void* rhs);
+
+// @name SetOwnerFlagAndString
+// @class Unknown
+// @summary Gets the pointer from ext_00594000, takes the object stored at its +0x26C, forwards the two stack arguments (flag, rhs) to ext_004773B0 on that object, then sets the object's byte at +0x04 to 1.
+// @field Unknown +0x26C void* field_0x26C
+// @field Unknown +0x04 uint8_t field_0x04
+extern void __stdcall fn_004691D0(uint32_t flag, const void* rhs) {
+    uint8_t* base = static_cast<uint8_t*>(ext_00594000());
+    uint32_t objBits = *reinterpret_cast<const uint32_t*>(base + 0x26C);
+    uint8_t* obj = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(objBits));
+
+    ext_004773B0(obj, static_cast<uint8_t>(flag), rhs);
+    obj[0x04] = 1;
+}
+} // namespace lift_004691D0
