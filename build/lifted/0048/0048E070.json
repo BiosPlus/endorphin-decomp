@@ -1,0 +1,28 @@
+{
+  "va": "0x0048E070",
+  "size": 13,
+  "orig_symbol": "Commands::SetPlaybackStartFrameCommand::vfunc_1",
+  "src_path": "src/Commands/SetPlaybackStartFrameCommand.cpp",
+  "lifted_path": "lifted/Commands/SetPlaybackStartFrameCommand.cpp",
+  "name": "Commands::SetPlaybackStartFrameCommand::vfunc_1",
+  "class": "Commands::SetPlaybackStartFrameCommand",
+  "signature": "void fn_0048E070(void* self)",
+  "summary": "Forwards two dwords from this+0x10/+0x14 to ext_00473670 (ecx = +0x10, stack arg = +0x14).",
+  "fields": [
+    {
+      "class": "SetPlaybackStartFrameCommand",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "SetPlaybackStartFrameCommand",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:19:12Z"
+}
