@@ -127,3 +127,34 @@ extern void __stdcall sub_004AEF30(uint32_t begin, uint32_t end) {
     }
 }
 } // namespace lift_004AEF30
+
+// [0x004A5A50]
+namespace lift_004A5A50 {
+extern uint32_t mem_r32(uint32_t addr);
+extern uint8_t mem_r8(uint32_t addr);
+
+// @name sub_004A5A50
+// @summary Returns 1 if pointer array is null/empty or flag at +0x24 is non-zero, otherwise 0.
+// @field Unknown +0x0c uint32_t field_0x0c
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x24 uint8_t field_0x24
+
+uint32_t __thiscall sub_004A5A50(uint32_t self) {
+    uint32_t begin = mem_r32(self + 0x0c);
+    if (begin == 0) {
+        return 1;
+    }
+
+    uint32_t end = mem_r32(self + 0x10);
+    int32_t count = static_cast<int32_t>(end - begin) >> 2;
+    if (count == 0) {
+        return 1;
+    }
+
+    if (mem_r8(self + 0x24) != 0) {
+        return 1;
+    }
+
+    return 0;
+}
+} // namespace lift_004A5A50
