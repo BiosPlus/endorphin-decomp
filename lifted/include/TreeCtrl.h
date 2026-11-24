@@ -8,6 +8,6 @@
 // Recovered field layout for TreeCtrl:
 namespace lifted_layout {
 struct TreeCtrl_Fields {
-    // +0x20  uint32_t                 hWnd  (evidence: 0x00422E00)
+    // +0x20  uint32_t                 hWnd  (evidence: 0x00422E00, 0x004275C0)
 };
 } // namespace lifted_layout

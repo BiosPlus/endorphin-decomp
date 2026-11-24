@@ -1647,10 +1647,10 @@
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
   },
   "0x004275C0": {
-    "name": "CallVtableSlot2ThenReturnArg",
-    "class": "(none)",
-    "signature": "uint32_t __thiscall fn_004275C0(void* self, uint32_t arg)",
-    "summary": "Loads the object pointer stored at *this, calls its vtable slot at +0x08 with (arg, 0), and returns arg.",
+    "name": "sub_00421AB0",
+    "class": "Unknown",
+    "signature": "extern \"C\" int* fn_00421AB0()",
+    "summary": "Returns the address of the global constant mem_0092E4B8 (initialised to 0x006A5FCE).",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
   },
   "0x00428FE0": {

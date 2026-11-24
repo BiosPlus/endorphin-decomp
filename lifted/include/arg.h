@@ -8,6 +8,6 @@
 // Recovered field layout for arg:
 namespace lifted_layout {
 struct arg_Fields {
-    // +0x4   HWND                     hwnd  (evidence: 0x0042EA50)
+    // +0x4   HWND                     hwnd  (evidence: 0x004275C0, 0x0042EA50)
 };
 } // namespace lifted_layout
