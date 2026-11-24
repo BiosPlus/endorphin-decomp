@@ -39,3 +39,13 @@ static const uint8_t kDataTable_007B6094[19] = {
     0x02, 0x03, 0x03,
 };
 } // namespace lift_007B6094
+
+// [0x007B617C] sub_007B617C (20 bytes)
+namespace lift_007B617C {
+// @name DataBytes_007B617C
+// @summary Non-executing 20-byte data block (byte-value table 0x00-0x04); no observable logic.
+// Note: disassembly decodes as add/lea pairs with no control flow, consistent with table data rather than code.
+void fn_007B617C(void* self) {
+    (void)self;
+}
+} // namespace lift_007B617C

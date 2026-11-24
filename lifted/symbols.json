@@ -38842,6 +38842,12 @@
     "summary": "19-byte constant byte table at 0x007B6094; not executable code (bytes do not decode to a coherent function)",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B617C": {
+    "name": "DataBytes_007B617C",
+    "signature": "void fn_007B617C(void* self)",
+    "summary": "Non-executing 20-byte data block (byte-value table 0x00-0x04); no observable logic.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B7084": {
     "name": "SwitchCaseIndexTable_007B7084",
     "summary": "12-byte byte-index table indexed by (eax) and used by a jump table dispatch at 0x007B6xxx (mov cl, [eax+0x7B7084]; jmp [ecx*4+0x7B7074]); this is data, not code.",
