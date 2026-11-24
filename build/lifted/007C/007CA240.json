@@ -1,0 +1,13 @@
+{
+  "va": "0x007CA240",
+  "size": 20,
+  "orig_symbol": "sub_007CA240",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "CopyBlock64",
+  "signature": "void fn_007CA240(void* dst, const void* src)",
+  "summary": "Copies 16 dwords (64 bytes) from src to dst, equivalent to rep movsd with ecx=16.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:10:19Z"
+}

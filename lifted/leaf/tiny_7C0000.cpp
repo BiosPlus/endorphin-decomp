@@ -1106,3 +1106,12 @@ uint32_t sub_007C2E50(uint32_t arg0, uint32_t arg1) {
     return reinterpret_cast<uint32_t (*)(uint32_t)>(mem_00925208)(size);
 }
 } // namespace lift_007C2E50
+
+// [0x007CA240] sub_007CA240 (20 bytes)
+namespace lift_007CA240 {
+// @name CopyBlock64
+// @summary Copies 16 dwords (64 bytes) from src to dst, equivalent to rep movsd with ecx=16.
+void fn_007CA240(void* dst, const void* src) {
+    std::memcpy(dst, src, 16 * sizeof(uint32_t));
+}
+} // namespace lift_007CA240
