@@ -754,3 +754,27 @@ void __thiscall fn_0046A510(uint32_t self, uint32_t node) {
     }
 }
 } // namespace lift_0046A510
+
+// [0x00466360] sub_00466360 (55 bytes)
+namespace lift_00466360 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t __cdecl ext_00594000(void);
+
+// @name UnknownClass::ResetSubobjectAndRelease
+// @class UnknownClass
+// @summary Clears a counter in a sub-object reached via global context +0x26C, then invokes virtual slot 1 (deleting-style, arg 1) on the owned object at +0xD8 and nulls it.
+// @field UnknownClass +0xD8 void* ownedObject
+void fn_00466360(void* self) {
+    auto* base = reinterpret_cast<uint8_t*>(ext_00594000());
+    auto* sub = *reinterpret_cast<uint8_t**>(base + 0x26C);
+    *reinterpret_cast<int32_t*>(sub + 0x558) = 0;
+
+    auto* obj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0xD8);
+    if (obj != nullptr) {
+        void** vtable = *reinterpret_cast<void***>(obj);
+        auto slot = reinterpret_cast<void (*)(void*, int32_t)>(vtable[1]);
+        slot(obj, 1);
+        *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0xD8) = nullptr;
+    }
+}
+} // namespace lift_00466360

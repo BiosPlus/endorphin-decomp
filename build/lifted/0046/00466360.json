@@ -1,0 +1,22 @@
+{
+  "va": "0x00466360",
+  "size": 55,
+  "orig_symbol": "sub_00466360",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "UnknownClass::ResetSubobjectAndRelease",
+  "class": "UnknownClass",
+  "signature": "void fn_00466360(void* self)",
+  "summary": "Clears a counter in a sub-object reached via global context +0x26C, then invokes virtual slot 1 (deleting-style, arg 1) on the owned object at +0xD8 and nulls it.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0xD8",
+      "type": "void*",
+      "name": "ownedObject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:12:54Z"
+}
