@@ -752,3 +752,16 @@ DWORD IsFlagBit0AtOffset20(const void* self) {
     return value & 1u;
 }
 } // namespace lift_00641FD0
+
+// [0x00641FF0] sub_00641FF0 (15 bytes)
+namespace lift_00641FF0 {
+// @name IsFlag08Set
+// @class Unknown
+// @summary Returns 1 if bit 0x08 of the dword at this+0x20 is set, else 0.
+// @field Unknown +0x20 uint32_t field_0x20
+uint8_t fn_00641FF0(void* self) {
+    const uint32_t flags = *reinterpret_cast<const uint32_t*>(
+        static_cast<const uint8_t*>(self) + 0x20);
+    return (flags & 0x08u) == 0x08u ? 1u : 0u;
+}
+} // namespace lift_00641FF0

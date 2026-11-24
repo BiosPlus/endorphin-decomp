@@ -21330,6 +21330,13 @@
     "summary": "Returns bit 0 of the DWORD at this+0x20 as 0 or 1 (x86 sequence: and al,1 / sub / neg / sbb / add 1).",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00641FF0": {
+    "name": "IsFlag08Set",
+    "class": "Unknown",
+    "signature": "uint8_t fn_00641FF0(void* self)",
+    "summary": "Returns 1 if bit 0x08 of the dword at this+0x20 is set, else 0.",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
   "0x00642000": {
     "name": "FlagsTest_Bit10",
     "class": "unknown (this-pointer accessor; owning class not identified)",

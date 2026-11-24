@@ -1,0 +1,22 @@
+{
+  "va": "0x00641FF0",
+  "size": 15,
+  "orig_symbol": "sub_00641FF0",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "IsFlag08Set",
+  "class": "Unknown",
+  "signature": "uint8_t fn_00641FF0(void* self)",
+  "summary": "Returns 1 if bit 0x08 of the dword at this+0x20 is set, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:31:25Z"
+}
