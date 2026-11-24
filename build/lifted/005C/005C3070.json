@@ -1,0 +1,22 @@
+{
+  "va": "0x005C3070",
+  "size": 18,
+  "orig_symbol": "sub_005C3070",
+  "src_path": "src/leaf/tiny_5C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5C0000.cpp",
+  "name": "sub_005C3070",
+  "class": "Unknown",
+  "signature": "extern void fn_005C3070(void* self, DWORD stackArg0, DWORD stackArg1)",
+  "summary": "Auto-lifted identical-shape clone of 0x005B7260 (Unknown::forwardIfChild).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:58:18Z"
+}

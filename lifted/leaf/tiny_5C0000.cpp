@@ -283,3 +283,51 @@ void fn_005CE8F0(void* self, DWORD stackArg) {
 }
 } // namespace lift_00433290
 } // namespace lift_005CE8F0
+
+// [0x005C3070] sub_005C3070 (18 bytes)
+namespace lift_005C3070 {
+// @name sub_005C3070
+// @summary Auto-lifted identical-shape clone of 0x005B7260 (Unknown::forwardIfChild).
+namespace lift_005B7260 {
+// Known callee 0x005CE970: sub_005CE970 (Member forwarding thunk: loads subobject pointer at +0xAC and tail-calls sub_00647CE0.)
+extern void ext_005B7260(void* self);
+
+// @name Unknown::forwardIfChild
+// @class Unknown
+// @summary Forwards the call to ext_005CE970 when the pointer at +0x158 is non-null; otherwise returns, popping 8 bytes of stack arguments.
+// @field Unknown +0x158 void* field_0x158
+extern void fn_005C3070(void* self, DWORD stackArg0, DWORD stackArg1) {
+    (void)stackArg0;
+    (void)stackArg1;
+    auto* child = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x164);
+    if (child != nullptr) {
+        ext_005B7260(child);
+        return;
+    }
+}
+} // namespace lift_005B7260
+} // namespace lift_005C3070
+
+// [0x005C30D0] sub_005C30D0 (18 bytes)
+namespace lift_005C30D0 {
+// @name sub_005C30D0
+// @summary Auto-lifted identical-shape clone of 0x005B7260 (Unknown::forwardIfChild).
+namespace lift_005B7260 {
+// Known callee 0x005CE970: sub_005CE970 (Member forwarding thunk: loads subobject pointer at +0xAC and tail-calls sub_00647CE0.)
+extern void ext_005B72A0(void* self);
+
+// @name Unknown::forwardIfChild
+// @class Unknown
+// @summary Forwards the call to ext_005CE970 when the pointer at +0x158 is non-null; otherwise returns, popping 8 bytes of stack arguments.
+// @field Unknown +0x158 void* field_0x158
+extern void fn_005C30D0(void* self, DWORD stackArg0, DWORD stackArg1) {
+    (void)stackArg0;
+    (void)stackArg1;
+    auto* child = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x164);
+    if (child != nullptr) {
+        ext_005B72A0(child);
+        return;
+    }
+}
+} // namespace lift_005B7260
+} // namespace lift_005C30D0

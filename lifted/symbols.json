@@ -16016,6 +16016,20 @@
     "summary": "Auto-lifted identical-shape clone of 0x005C32B0 (NMData::FluidObjectData::vfunc_15).",
     "lifted_path": "lifted/NMData/CollisionModelDataBase.cpp"
   },
+  "0x005C3070": {
+    "name": "sub_005C3070",
+    "class": "Unknown",
+    "signature": "extern void fn_005C3070(void* self, DWORD stackArg0, DWORD stackArg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B7260 (Unknown::forwardIfChild).",
+    "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
+  },
+  "0x005C30D0": {
+    "name": "sub_005C30D0",
+    "class": "Unknown",
+    "signature": "extern void fn_005C30D0(void* self, DWORD stackArg0, DWORD stackArg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B7260 (Unknown::forwardIfChild).",
+    "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
+  },
   "0x005C30F0": {
     "name": "sub_005C30F0",
     "class": "Unknown",
