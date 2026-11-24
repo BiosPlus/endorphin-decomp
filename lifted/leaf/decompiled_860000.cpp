@@ -370,3 +370,16 @@ void fn_0086B1C0(void* self) {
     }
 }
 } // namespace lift_0086B1C0
+
+// [0x0086F120] sub_0086F120 (59 bytes)
+namespace lift_0086F120 {
+// @name addLimbArrays20
+// @summary Adds two 20-entry arrays of 16-bit limbs (stored as dwords) with carry propagation from index 19 down to 0; writes the low 16 bits of each result limb to out.
+void fn_0086F120(const uint32_t* a, const uint32_t* b, uint32_t* out) {
+    uint32_t carry = 0;
+    for (int i = 19; i >= 0; --i) {
+        carry = (carry >> 16) + (a[i] + b[i]);
+        out[i] = carry & 0xFFFFu;
+    }
+}
+} // namespace lift_0086F120

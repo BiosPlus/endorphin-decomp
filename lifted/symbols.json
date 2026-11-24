@@ -57343,6 +57343,12 @@
     "summary": "Copies 20 DWORDs from src to dst, walking indices 19 down to 0.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086F120": {
+    "name": "addLimbArrays20",
+    "signature": "void fn_0086F120(const uint32_t* a, const uint32_t* b, uint32_t* out)",
+    "summary": "Adds two 20-entry arrays of 16-bit limbs (stored as dwords) with carry propagation from index 19 down to 0; writes the low 16 bits of each result limb to out.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086F15B": {
     "name": "sub_0086F15B",
     "signature": "void fn_0086F15B(void)",
