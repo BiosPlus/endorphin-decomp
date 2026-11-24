@@ -22,11 +22,14 @@ struct UnknownClass_Fields {
     // +0x6   uint8_t                  field_0x06  (evidence: 0x007A9BD0)
     // +0x8   uint32_t                 field_0x08  (evidence: 0x006722B0, 0x00672490) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t                  field_0x08  (evidence: 0x00493D80, 0x00494050) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    field_0x08  (evidence: 0x00789590) // CONFLICT: multiple definitions at +0x8
     // +0xC   uint32_t                 child  (evidence: 0x006722B0, 0x00672490) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  count  (evidence: 0x007DD130) // CONFLICT: multiple definitions at +0xC
+    // +0xC   DWORD                    field_0x0c  (evidence: 0x00789590) // CONFLICT: multiple definitions at +0xC
     // +0x10  uint8_t*                 entries  (evidence: 0x007DD130) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t[]               field_0x10  (evidence: 0x005B11D0, 0x005B7040) // CONFLICT: multiple definitions at +0x10
-    // +0x14  uint32_t                 field_0x14  (evidence: 0x007C2E50, 0x007C6FB0)
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x007C2E50, 0x007C6FB0) // CONFLICT: multiple definitions at +0x14
+    // +0x14  void*                    field_0x14  (evidence: 0x00789590) // CONFLICT: multiple definitions at +0x14
     // +0x1C  int32_t                  field_0x1C  (evidence: 0x0078CBE0)
     // +0x20  uint32_t                 field_0x20  (evidence: 0x004B0F50, 0x004B10D0)
     // +0x30  std::string              field_0x30  (evidence: 0x004970A0, 0x0049AD40)

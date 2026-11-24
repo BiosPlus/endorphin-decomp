@@ -1,0 +1,34 @@
+{
+  "va": "0x00789590",
+  "size": 48,
+  "orig_symbol": "sub_00789590",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "UnknownClass::releaseChildOrField14",
+  "class": "UnknownClass",
+  "signature": "void fn_00789590(void* self)",
+  "summary": "If the pointer at +0x08 is set, calls vtable slot 4 on it; otherwise calls vtable slot 3 on the object at +0x14. Then clears the DWORD at +0x0c.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:27:19Z"
+}

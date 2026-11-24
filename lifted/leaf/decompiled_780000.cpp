@@ -768,3 +768,27 @@ uint32_t fn_0078CBE0(void* self) {
     return ext_0078CB70(self, static_cast<uint32_t>(index));
 }
 } // namespace lift_0078CBE0
+
+// [0x00789590] sub_00789590 (48 bytes)
+namespace lift_00789590 {
+// @name UnknownClass::releaseChildOrField14
+// @class UnknownClass
+// @summary If the pointer at +0x08 is set, calls vtable slot 4 on it; otherwise calls vtable slot 3 on the object at +0x14. Then clears the DWORD at +0x0c.
+// @field UnknownClass +0x08 void* field_0x08
+// @field UnknownClass +0x0c DWORD field_0x0c
+// @field UnknownClass +0x14 void* field_0x14
+void fn_00789590(void* self) {
+    using VFn = void(__thiscall*)(void*);
+
+    void* obj = lift_field<void*>(self, 0x08);
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        reinterpret_cast<VFn>(vtbl[4])(obj);   // vtable +0x10
+    } else {
+        void* other = lift_field<void*>(self, 0x14);
+        void** vtbl = *reinterpret_cast<void***>(other);
+        reinterpret_cast<VFn>(vtbl[3])(other); // vtable +0x0c
+    }
+    lift_field<DWORD>(self, 0x0c) = 0;
+}
+} // namespace lift_00789590
