@@ -60,3 +60,31 @@ uint32_t fn_0054E9B0(void* self) {
     return fn(target);
 }
 } // namespace lift_0054E9B0
+
+// [0x0054E9F0] OptimizedMatrixStackManager::vfunc_6 (30 bytes)
+namespace lift_0054E9F0 {
+// @name OptimizedMatrixStackManager::vfunc_6
+// @class OptimizedMatrixStackManager
+// @summary Tail-dispatches virtual slot 6 on one of two embedded subobjects, chosen by whether field_0x04 < field_0x08.
+// @field OptimizedMatrixStackManager +0x04 LONG field_0x04
+// @field OptimizedMatrixStackManager +0x08 LONG field_0x08
+// @field OptimizedMatrixStackManager +0x0C void* field_0x0C
+// @field OptimizedMatrixStackManager +0x20 void* field_0x20
+DWORD fn_0054E9F0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    const LONG index = lift_field<LONG>(base, 0x04);
+    const LONG count = lift_field<LONG>(base, 0x08);
+
+    // Embedded subobject: index < count -> subobject at +0x20, else at +0x0C.
+    uint8_t* sub = (index < count) ? (base + 0x20) : (base + 0x0C);
+
+    // The subobject's first word is its vtable pointer; slot 6 is at byte offset 0x18.
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    using Slot6Fn = DWORD (*)(void* thisPtr);
+    auto fn = reinterpret_cast<Slot6Fn>(vtbl[6]);
+
+    // Original is a tail jump, so the callee's return value (eax) is passed straight through.
+    return fn(sub);
+}
+} // namespace lift_0054E9F0

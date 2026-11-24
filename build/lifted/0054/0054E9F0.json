@@ -1,0 +1,40 @@
+{
+  "va": "0x0054E9F0",
+  "size": 30,
+  "orig_symbol": "OptimizedMatrixStackManager::vfunc_6",
+  "src_path": "src/classes/OptimizedMatrixStackManager.cpp",
+  "lifted_path": "lifted/classes/OptimizedMatrixStackManager.cpp",
+  "name": "OptimizedMatrixStackManager::vfunc_6",
+  "class": "OptimizedMatrixStackManager",
+  "signature": "DWORD fn_0054E9F0(void* self)",
+  "summary": "Tail-dispatches virtual slot 6 on one of two embedded subobjects, chosen by whether field_0x04 \u003c field_0x08.",
+  "fields": [
+    {
+      "class": "OptimizedMatrixStackManager",
+      "offset": "+0x4",
+      "type": "LONG",
+      "name": "field_0x04"
+    },
+    {
+      "class": "OptimizedMatrixStackManager",
+      "offset": "+0x8",
+      "type": "LONG",
+      "name": "field_0x08"
+    },
+    {
+      "class": "OptimizedMatrixStackManager",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "OptimizedMatrixStackManager",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:17:56Z"
+}
