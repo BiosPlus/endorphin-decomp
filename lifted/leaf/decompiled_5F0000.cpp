@@ -55,3 +55,26 @@ extern void __fastcall fn_005FF040(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_005FF040
+
+// [0x005FD330]
+namespace lift_005FD330 {
+// @name TreeNode_eraseSubtree
+// @summary Recursively erases a red-black tree subtree and frees its nodes.
+// @field TreeNode +0x00 uint32_t left
+// @field TreeNode +0x08 uint32_t right
+// @field TreeNode +0x19 uint8_t isNil
+
+
+extern void ext_006A5C5C(uint32_t ptr);
+extern uint8_t mem_read8(uint32_t addr);
+extern uint32_t mem_read32(uint32_t addr);
+
+void __thiscall fn_005FD330(uint32_t self, uint32_t node) {
+    while (mem_read8(node + 0x19) == 0) {
+        fn_005FD330(self, mem_read32(node + 0x8));
+        uint32_t left = mem_read32(node);
+        ext_006A5C5C(node);
+        node = left;
+    }
+}
+} // namespace lift_005FD330
