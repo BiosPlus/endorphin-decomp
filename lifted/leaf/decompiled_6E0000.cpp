@@ -462,3 +462,18 @@ void fn_006E3760(double* dst, const double* a, const double* b, uint32_t count) 
     }
 }
 } // namespace lift_006E3760
+
+// [0x006E8670] sub_006E8670 (48 bytes)
+namespace lift_006E8670 {
+// @name Unknown::copyIndirectBlock32
+// @class Unknown
+// @summary Copies 32 bytes from (*self + 0x28) into dest and returns dest.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x28 uint8_t field_0x28[32]
+void* fn_006E8670(void* self, void* dest) {
+    uint8_t* base = lift_field<uint8_t*>(self, 0x00);
+    const uint8_t* src = base + 0x28;
+    memcpy(dest, src, 8 * sizeof(uint32_t));
+    return dest;
+}
+} // namespace lift_006E8670

@@ -1,0 +1,28 @@
+{
+  "va": "0x006E8670",
+  "size": 48,
+  "orig_symbol": "sub_006E8670",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::copyIndirectBlock32",
+  "class": "Unknown",
+  "signature": "void* fn_006E8670(void* self, void* dest)",
+  "summary": "Copies 32 bytes from (*self + 0x28) into dest and returns dest.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint8_t",
+      "name": "field_0x28[32]"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:20:27Z"
+}

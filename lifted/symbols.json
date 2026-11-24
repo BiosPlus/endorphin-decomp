@@ -40037,6 +40037,13 @@
     "summary": "Loads the pointer at this+0x00 and returns the byte at that pointer's +0x20 offset.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E8670": {
+    "name": "Unknown::copyIndirectBlock32",
+    "class": "Unknown",
+    "signature": "void* fn_006E8670(void* self, void* dest)",
+    "summary": "Copies 32 bytes from (*self + 0x28) into dest and returns dest.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E86A0": {
     "name": "sub_006E86A0",
     "class": "Unknown",
