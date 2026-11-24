@@ -1,0 +1,13 @@
+{
+  "va": "0x0079B030",
+  "size": 51,
+  "orig_symbol": "sub_0079B030",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "memcmp_0079B030",
+  "signature": "int32_t sub_0079B030(uint32_t arg1, uint32_t arg2, uint32_t count)",
+  "summary": "Compares up to count bytes of two buffers and returns the signed difference of the first mismatching byte.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:08:04Z"
+}

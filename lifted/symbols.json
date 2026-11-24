@@ -52341,6 +52341,12 @@
     "summary": "Forward copy of n bytes from src to dst (cdecl, 3 stack args, ret 0): copies n/4 dwords, then the n%4 trailing bytes (rep movsd + rep movsb).",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x0079B030": {
+    "name": "memcmp_0079B030",
+    "signature": "int32_t sub_0079B030(uint32_t arg1, uint32_t arg2, uint32_t count)",
+    "summary": "Compares up to count bytes of two buffers and returns the signed difference of the first mismatching byte.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079B140": {
     "name": "DispatchThreeArgsToOptionalHook",
     "signature": "void fn_0079B140(uint32_t a1, uint32_t a2, uint32_t a3)",
@@ -54253,6 +54259,12 @@
     "name": "scaleVec3Store",
     "signature": "void scaleVec3Store(float* dst, float s, const float* src)",
     "summary": "Writes dst[i] = src[i] * s for i in 0..2 (3-float vector scale; dst and src are float[3] pointers, s is a float scalar).",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
+  "0x007CA750": {
+    "name": "allocateAndInitObject",
+    "signature": "extern \"C\" uint32_t fn_007CA750(uint32_t a1, float a2)",
+    "summary": "Allocates 20 bytes (16-byte aligned) via object+0xB0-\u003e0x8 and initializes it with sub_007CA340",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007CA790": {

@@ -343,3 +343,26 @@ uint32_t fn_0079C1B0(uint32_t ecxValue, uint32_t selector, uint32_t unusedArg) {
     return 0;
 }
 } // namespace lift_0079C1B0
+
+// [0x0079B030]
+namespace lift_0079B030 {
+// @name memcmp_0079B030
+// @summary Compares up to count bytes of two buffers and returns the signed difference of the first mismatching byte.
+
+int32_t sub_0079B030(uint32_t arg1, uint32_t arg2, uint32_t count) {
+    if (count == 0) {
+        return 0;
+    }
+
+    const uint8_t* p1 = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(arg1));
+    const uint8_t* p2 = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(arg2));
+
+    for (uint32_t i = 0; i < count; ++i) {
+        int32_t diff = static_cast<int32_t>(p1[i]) - static_cast<int32_t>(p2[i]);
+        if (diff != 0) {
+            return diff;
+        }
+    }
+    return 0;
+}
+} // namespace lift_0079B030
