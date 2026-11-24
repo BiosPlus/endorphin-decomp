@@ -1,0 +1,34 @@
+{
+  "va": "0x00644F00",
+  "size": 25,
+  "orig_symbol": "sub_00644F00",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "Unknown::forwardByteToNestedObject (owner class not identified)",
+  "class": "Unknown",
+  "signature": "void fn_00644F00(void* self, uint8_t value)",
+  "summary": "Loads a nested object pointer from self, and if its +0x20c pointer is non-null, stores the byte argument at +0x230 of that object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20C",
+      "type": "void*",
+      "name": "field_0x20c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x230",
+      "type": "uint8_t",
+      "name": "field_0x230"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:50:53Z"
+}

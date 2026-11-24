@@ -787,3 +787,20 @@ BOOLEAN fn_00642010(void* self) {
     return (static_cast<BYTE>(flags) & 0x20) == 0x20;
 }
 } // namespace lift_00642010
+
+// [0x00644F00] sub_00644F00 (25 bytes)
+namespace lift_00644F00 {
+// @name Unknown::forwardByteToNestedObject (owner class not identified)
+// @class Unknown
+// @summary Loads a nested object pointer from self, and if its +0x20c pointer is non-null, stores the byte argument at +0x230 of that object.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x20c void* field_0x20c
+// @field Unknown +0x230 uint8_t field_0x230
+void fn_00644F00(void* self, uint8_t value) {
+    void* nested = lift_field<void*>(self, 0x00);
+    void* target = lift_field<void*>(nested, 0x20c);
+    if (target != nullptr) {
+        lift_field<uint8_t>(target, 0x230) = value;
+    }
+}
+} // namespace lift_00644F00
