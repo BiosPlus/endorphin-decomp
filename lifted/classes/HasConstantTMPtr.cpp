@@ -53,3 +53,22 @@ void fn_00532200(void* self, void* other) {
     fn(other, arg);
 }
 } // namespace lift_00532200
+
+// [0x005321B0]
+namespace lift_005321B0 {
+// @name HasConstantTMPtr::vfunc_13
+// @class HasConstantTMPtr
+// @summary Calls glTranslatef with the translation vector at offset 0x30 of the transform matrix pointed to by field_0x04.
+// @field HasConstantTMPtr +0x04 const float* field_0x04
+
+extern void (*mem_009253D0)(float, float, float);
+
+void __thiscall fn_005321B0(void* this_ptr) {
+    const float* tm = *reinterpret_cast<const float* const*>(
+        reinterpret_cast<const uint8_t*>(this_ptr) + 0x4);
+    float x = tm[0x30 / sizeof(float)];
+    float y = tm[0x34 / sizeof(float)];
+    float z = tm[0x38 / sizeof(float)];
+    mem_009253D0(x, y, z);
+}
+} // namespace lift_005321B0
