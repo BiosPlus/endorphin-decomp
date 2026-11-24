@@ -31425,6 +31425,13 @@
     "summary": "Calls sub_00508680 on this+0x10 and converts the unsigned 32-bit result to a scaled float",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x0068BEA0": {
+    "name": "Unknown::scaledCallResult",
+    "class": "Unknown",
+    "signature": "extern \"C\" double mem_0093BD38; // 2^32 correction added to negative signed inputs (x87 fild sign fixup) extern \"C\" double mem_0098E428; // scale constant applied to converted value float fn_0068BEA0(void* self, float scale)",
+    "summary": "Calls sub_00508680 on self+0x10, converts the unsigned-corrected result to double, scales it by two constants and the float argument, and returns it as float.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x0068BED0": {
     "name": "sub_0068BED0",
     "signature": "float __thiscall sub_0068BED0(void* self)",

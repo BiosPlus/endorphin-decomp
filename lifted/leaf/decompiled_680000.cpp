@@ -348,3 +348,24 @@ void fn_00689570(void* self) {
     lift_field<DOUBLE>(self, 0x30) = 1.0;
 }
 } // namespace lift_00689570
+
+// [0x0068BEA0] sub_0068BEA0 (47 bytes)
+namespace lift_0068BEA0 {
+extern int32_t ext_00508680(void* self);
+extern double mem_0093BD38; // 2^32 correction added to negative signed inputs (x87 fild sign fixup)
+extern double mem_0098E428; // scale constant applied to converted value
+
+// @name Unknown::scaledCallResult
+// @class Unknown
+// @summary Calls sub_00508680 on self+0x10, converts the unsigned-corrected result to double, scales it by two constants and the float argument, and returns it as float.
+// @field Unknown +0x10 void* field_0x10
+float fn_0068BEA0(void* self, float scale) {
+    int32_t raw = ext_00508680(static_cast<uint8_t*>(self) + 0x10);
+    double value = static_cast<double>(raw);
+    if (raw < 0) {
+        value += mem_0093BD38;
+    }
+    value *= mem_0098E428;
+    return static_cast<float>(value * static_cast<double>(scale));
+}
+} // namespace lift_0068BEA0
