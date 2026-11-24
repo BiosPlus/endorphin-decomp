@@ -234,3 +234,20 @@ extern void __cdecl fn_0072B860(void) {
 }
 } // namespace lift_0072B880
 } // namespace lift_0072B860
+
+// [0x0072DB80]
+namespace lift_0072DB80 {
+// @name Unknown::hasField_AC
+// @class Unknown
+// @summary Returns 1 if the dword at this+0xAC is nonzero, otherwise 0.
+// @field Unknown +0xAC uint32_t field_0xAC
+
+struct Unknown {
+    uint8_t pad_0000[0xAC];
+    uint32_t field_0xAC;
+};
+
+uint32_t Unknown_hasField_AC(const Unknown* self) {
+    return self->field_0xAC != 0 ? 1u : 0u;
+}
+} // namespace lift_0072DB80

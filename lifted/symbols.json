@@ -35108,6 +35108,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0072D640 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x0072DB80": {
+    "name": "Unknown::hasField_AC",
+    "class": "Unknown",
+    "signature": "uint32_t Unknown_hasField_AC(const Unknown* self)",
+    "summary": "Returns 1 if the dword at this+0xAC is nonzero, otherwise 0.",
+    "lifted_path": "lifted/leaf/tiny_720000.cpp"
+  },
   "0x00732CB0": {
     "name": "sub_00732CB0",
     "signature": "extern \"C\" void __stdcall fn_00732CB0(int a1)",

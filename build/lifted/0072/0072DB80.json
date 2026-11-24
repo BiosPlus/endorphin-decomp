@@ -1,0 +1,22 @@
+{
+  "va": "0x0072DB80",
+  "size": 14,
+  "orig_symbol": "sub_0072DB80",
+  "src_path": "src/leaf/tiny_720000.cpp",
+  "lifted_path": "lifted/leaf/tiny_720000.cpp",
+  "name": "Unknown::hasField_AC",
+  "class": "Unknown",
+  "signature": "uint32_t Unknown_hasField_AC(const Unknown* self)",
+  "summary": "Returns 1 if the dword at this+0xAC is nonzero, otherwise 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "uint32_t",
+      "name": "field_0xAC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:26:39Z"
+}
