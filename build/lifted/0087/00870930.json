@@ -1,0 +1,28 @@
+{
+  "va": "0x00870930",
+  "size": 116,
+  "orig_symbol": "NMData::Marker::vfunc_34",
+  "src_path": "src/NMData/Marker.cpp",
+  "lifted_path": "lifted/NMData/Marker.cpp",
+  "name": "NMData::Marker::vfunc_34",
+  "class": "NMData::Marker",
+  "signature": "static uintptr_t callVirtualSlot(void* thisPtr, uintptr_t byteOffset)",
+  "summary": "Calls two virtuals, forwards a caller-supplied slot through ext_00493E40, and stores the result into the embedded subobject at +0x0C via ext_00528B90.",
+  "fields": [
+    {
+      "class": "NMData::Marker",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::Marker",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:34:34Z"
+}

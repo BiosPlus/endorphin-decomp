@@ -51432,6 +51432,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049FC80 (NMData::State::vfunc_7_off_10).",
     "lifted_path": "lifted/leaf/decompiled_870000.cpp"
   },
+  "0x00870930": {
+    "name": "NMData::Marker::vfunc_34",
+    "class": "NMData::Marker",
+    "signature": "static uintptr_t callVirtualSlot(void* thisPtr, uintptr_t byteOffset)",
+    "summary": "Calls two virtuals, forwards a caller-supplied slot through ext_00493E40, and stores the result into the embedded subobject at +0x0C via ext_00528B90.",
+    "lifted_path": "lifted/NMData/Marker.cpp"
+  },
   "0x00870E00": {
     "name": "sub_00870E00",
     "signature": "extern \"C\" void fn_00870E00(void)",
