@@ -1,0 +1,22 @@
+{
+  "va": "0x006A7FB0",
+  "size": 20,
+  "orig_symbol": "sub_006A7FB0",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "Unknown::ForwardArgToVirtualSlot59",
+  "class": "Unknown",
+  "signature": "DWORD __thiscall fn_006A7FB0(void* self, DWORD arg0, DWORD arg1)",
+  "summary": "Forwards its first stack argument to virtual slot 0x164 (index 89) of the object's vtable, then returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:08:49Z"
+}

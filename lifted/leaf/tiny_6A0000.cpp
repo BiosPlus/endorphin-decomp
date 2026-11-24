@@ -361,3 +361,22 @@ int32_t fn_006A7F30(void* self, uint32_t arg, [[maybe_unused]] uint32_t unused) 
     return 0;
 }
 } // namespace lift_006A7F30
+
+// [0x006A7FB0]
+namespace lift_006A7FB0 {
+// @name Unknown::ForwardArgToVirtualSlot59
+// @class Unknown
+// @summary Forwards its first stack argument to virtual slot 0x164 (index 89) of the object's vtable, then returns 0.
+// @field Unknown +0x00 void* vtable
+
+// Thiscall virtual slot: this in ecx, one stack argument. Return value is ignored by the caller.
+typedef void (__thiscall* VirtualSlot59Fn)(void* self, DWORD arg);
+
+DWORD __thiscall fn_006A7FB0(void* self, DWORD arg0, DWORD arg1) {
+    (void)arg1; // second stack argument is popped by the callee (ret 8) but never read
+    void* vtable = lift_field<void*>(self, 0x00);
+    VirtualSlot59Fn slot = lift_field<VirtualSlot59Fn>(vtable, 0x164);
+    slot(self, arg0);
+    return 0;
+}
+} // namespace lift_006A7FB0

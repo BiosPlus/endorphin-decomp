@@ -31324,6 +31324,13 @@
     "summary": "Forwards the first stack argument to virtual slot 0x154 (index 85) of self's vtable, then returns 0 (callee pops 8 bytes).",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006A7FB0": {
+    "name": "Unknown::ForwardArgToVirtualSlot59",
+    "class": "Unknown",
+    "signature": "DWORD __thiscall fn_006A7FB0(void* self, DWORD arg0, DWORD arg1)",
+    "summary": "Forwards its first stack argument to virtual slot 0x164 (index 89) of the object's vtable, then returns 0.",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006A7FD0": {
     "name": "CTypedPtrMap\u003cCMapStringToPtr, ATL::CStringT\u003cchar, StrTraitMFC_DLL\u003cchar, ATL::ChTraitsCRT\u003cchar\u003e\u003e\u003e, GWCPropertyFeel *\u003e::vfunc_1",
     "class": "CTypedPtrMap\u003cCMapStringToPtr, ATL::CStringT\u003cchar, StrTraitMFC_DLL\u003cchar, ATL::ChTraitsCRT\u003cchar\u003e\u003e\u003e, GWCPropertyFeel *\u003e",
