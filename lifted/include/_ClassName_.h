@@ -34,6 +34,8 @@ struct _ClassName__Fields {
     // +0x5C  int32_t                  maxLimit  (evidence: 0x007AEEC0)
     // +0x60  int32_t                  value  (evidence: 0x007AEEC0)
     // +0x8C  uint8_t                  field_0x8C  (evidence: 0x00584AE0)
+    // +0x90  uint8_t                  field_0x90  (evidence: 0x00543550)
+    // +0x93  uint8_t                  field_0x93  (evidence: 0x00543550)
     // +0x98  double                   field_0x98  (evidence: 0x00441090)
     // +0xE8  DWORD                    field_0xe8  (evidence: 0x00455D10)
     // +0xF4  int32_t                  field_0xF4  (evidence: 0x00594020, 0x0059DE20)

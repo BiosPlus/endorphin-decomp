@@ -14980,6 +14980,13 @@
     "summary": "Sets the byte flags at +0x90 to 1 and +0x93 to 0, then tail-jumps through vtable slot at byte offset 0x40 (index 16) with the same this pointer.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x00543550": {
+    "name": "forwardVtableSlot17AndClearFlags",
+    "class": "\u003cClassName\u003e (unknown; no class context recovered)",
+    "signature": "void fn_00543550(void* self, uint32_t arg0, uint32_t arg1)",
+    "summary": "Forwards two stack args to virtual slot 17 (vtable+0x44) on self, then clears the byte flags at self+0x90 and self+0x93.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00543580": {
     "name": "sub_00543580",
     "class": "VTableDispatch",

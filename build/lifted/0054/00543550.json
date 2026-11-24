@@ -1,0 +1,28 @@
+{
+  "va": "0x00543550",
+  "size": 40,
+  "orig_symbol": "sub_00543550",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "forwardVtableSlot17AndClearFlags",
+  "class": "\u003cClassName\u003e (unknown; no class context recovered)",
+  "signature": "void fn_00543550(void* self, uint32_t arg0, uint32_t arg1)",
+  "summary": "Forwards two stack args to virtual slot 17 (vtable+0x44) on self, then clears the byte flags at self+0x90 and self+0x93.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x90",
+      "type": "uint8_t",
+      "name": "field_0x90"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x93",
+      "type": "uint8_t",
+      "name": "field_0x93"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:52:35Z"
+}

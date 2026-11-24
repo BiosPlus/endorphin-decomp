@@ -256,3 +256,23 @@ extern void __fastcall fn_005498E0(void* self) {
     ext_00552850(self);
 }
 } // namespace lift_005498E0
+
+// [0x00543550] sub_00543550 (40 bytes)
+namespace lift_00543550 {
+// @name forwardVtableSlot17AndClearFlags
+// @class <ClassName> (unknown; no class context recovered)
+// @summary Forwards two stack args to virtual slot 17 (vtable+0x44) on self, then clears the byte flags at self+0x90 and self+0x93.
+// @field <ClassName> +0x90 uint8_t field_0x90
+// @field <ClassName> +0x93 uint8_t field_0x93
+void fn_00543550(void* self, uint32_t arg0, uint32_t arg1) {
+    // Virtual call: vtable slot 17 (byte offset 0x44), thiscall with (arg0, arg1); callee cleans the stack.
+    // Slot is addressed by byte offset (0x44) so it is correct on both 32- and 64-bit hosts.
+    uint8_t* vtable = *reinterpret_cast<uint8_t**>(self);
+    using VSlot17 = void(__thiscall*)(void*, uint32_t, uint32_t);
+    auto slot17 = *reinterpret_cast<VSlot17*>(vtable + 0x44);
+    slot17(self, arg0, arg1);
+
+    lift_field<uint8_t>(self, 0x90) = 0;
+    lift_field<uint8_t>(self, 0x93) = 0;
+}
+} // namespace lift_00543550
