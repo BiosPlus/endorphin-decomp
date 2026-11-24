@@ -1,0 +1,28 @@
+{
+  "va": "0x00493EA0",
+  "size": 17,
+  "orig_symbol": "sub_00493EA0",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "tailCallVirtualSlot1C8OfHolderObject",
+  "class": "(none; object type not recovered)",
+  "signature": "void* fn_00493EA0(void* self)",
+  "summary": "Loads the object pointer stored at *self, and if non-null tail-calls its vtable slot at +0x1C8 with that object as this; returns null otherwise.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "object"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:51:33Z"
+}

@@ -277,3 +277,23 @@ int32_t sub_00493FF0(void** slot) {
     return fn(obj);
 }
 } // namespace lift_00493FF0
+
+// [0x00493EA0] sub_00493EA0 (17 bytes)
+namespace lift_00493EA0 {
+// @name tailCallVirtualSlot1C8OfHolderObject
+// @class (none; object type not recovered)
+// @summary Loads the object pointer stored at *self, and if non-null tail-calls its vtable slot at +0x1C8 with that object as this; returns null otherwise.
+// @field Unknown +0x00 void* object
+// @field Unknown +0x00 void* vptr
+void* fn_00493EA0(void* self) {
+    void* obj = lift_field<void*>(self, 0x00);         // mov ecx, [ecx]; obj = *self
+    if (obj == nullptr) {
+        return nullptr;                                // test ecx, ecx; je -> ret (eax left undefined in original)
+    }
+    void* vptr = lift_field<void*>(obj, 0x00);         // mov eax, [ecx]; vptr = obj->vptr
+    void* slot = lift_field<void*>(vptr, 0x1C8);       // mov edx, [eax + 0x1c8]; slot 0x1C8 (index 114)
+    using SlotFn = void* (*)(void* thisPtr);
+    SlotFn fn = reinterpret_cast<SlotFn>(slot);
+    return fn(obj);                                    // jmp edx (tail call, ecx = obj as this)
+}
+} // namespace lift_00493EA0
