@@ -8862,3 +8862,27 @@ void fn_004A3820(void* self) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00ADE0FC));
 }
 } // namespace lift_004A3820
+
+// [0x004A3BA0] ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setCodeWindowFontSize(int), 0}>::vfunc_40 (122 bytes)
+namespace lift_004A3BA0 {
+extern void ext_0067A670();
+extern int mem_00ADE108;
+extern int mem_00ADE104;
+
+// @name ExprParser::ReadWriteMethodType<FSMEditView,int,getCodeWindowFontSize,int,setCodeWindowFontSize>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setCodeWindowFontSize(int), 0}>
+// @summary Lazily initializes the shared static ReadWriteMethodType instance (once, guarded by a flag bit) and stores its address into the out-object at +0x04.
+// @field ExprParser::ReadWriteMethodType<...> +0x04 void* field_0x04 (pointer written with the address of the shared static instance)
+void fn_004A3BA0(void* out) {
+    // One-time initialization guarded by bit 0 of mem_00ADE108.
+    if ((static_cast<uint32_t>(mem_00ADE108) & 1u) == 0) {
+        mem_00ADE108 = static_cast<int>(static_cast<uint32_t>(mem_00ADE108) | 1u);
+        ext_0067A670();                                   // base-class constructor for the static instance
+        mem_00ADE104 = static_cast<int>(0x00941254u);     // vtable pointer of the static instance
+    }
+    // Publish the static instance's address at out->+0x04.
+    const uint32_t instance = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00ADE104));
+    auto* slot = reinterpret_cast<uint32_t*>(static_cast<char*>(out) + 0x04);
+    *slot = instance;
+}
+} // namespace lift_004A3BA0

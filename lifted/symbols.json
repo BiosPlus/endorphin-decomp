@@ -9175,6 +9175,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004A3BA0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cFSMEditView,int,getCodeWindowFontSize,int,setCodeWindowFontSize\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setCodeWindowFontSize(int), 0}\u003e",
+    "signature": "void fn_004A3BA0(void* out)",
+    "summary": "Lazily initializes the shared static ReadWriteMethodType instance (once, guarded by a flag bit) and stores its address into the out-object at +0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004A3C20": {
     "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0\u003e",
