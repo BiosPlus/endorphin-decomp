@@ -469,3 +469,22 @@ uint8_t fn_0046FE70(void* self) {
 }
 } // namespace lift_005355B0
 } // namespace lift_0046FE70
+
+// [0x004646A0] sub_004646A0 (15 bytes)
+namespace lift_004646A0 {
+// USER32!GetKeyState import slot (IAT entry at 0x009255F4).
+extern int mem_009255F4;
+// Imported USER32!GetKeyState(int nVirtKey) -> SHORT (__stdcall).
+extern SHORT ext_GetKeyState(INT nVirtKey);
+
+// @name Input::isMiddleMouseDown
+// @summary Returns 1 if virtual key 0x04 (VK_MBUTTON) is currently down, else 0.
+// Note: no struct fields are accessed, so no @field lines.
+uint8_t fn_004646A0() {
+    // push 4; call GetKeyState; test ax,ax; setl al; ret
+    // setl after test: OF is cleared by test, so result = sign bit of AX
+    // (i.e. the high bit of GetKeyState's SHORT return, set while the key is down).
+    const SHORT state = ext_GetKeyState(4);
+    return static_cast<uint8_t>(state < 0);
+}
+} // namespace lift_004646A0

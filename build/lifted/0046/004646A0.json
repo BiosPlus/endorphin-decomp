@@ -1,0 +1,14 @@
+{
+  "va": "0x004646A0",
+  "size": 15,
+  "orig_symbol": "sub_004646A0",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "Input::isMiddleMouseDown",
+  "class": "Input",
+  "signature": "uint8_t fn_004646A0()",
+  "summary": "Returns 1 if virtual key 0x04 (VK_MBUTTON) is currently down, else 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:28:56Z"
+}

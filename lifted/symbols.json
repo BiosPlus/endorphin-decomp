@@ -3230,6 +3230,13 @@
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_593.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004646A0": {
+    "name": "Input::isMiddleMouseDown",
+    "class": "Input",
+    "signature": "uint8_t fn_004646A0()",
+    "summary": "Returns 1 if virtual key 0x04 (VK_MBUTTON) is currently down, else 0.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x004647C0": {
     "name": "sub_004647C0",
     "signature": "extern \"C\" void fn_004647C0(void)",
