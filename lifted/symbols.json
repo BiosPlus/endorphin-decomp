@@ -28377,6 +28377,13 @@
     "summary": "Initializes a double at offset +0x00 to 0.0 and returns the pointer",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x0067ECF0": {
+    "name": "Unknown::formatDwordHex (descriptive; owner class not identified)",
+    "class": "Unknown",
+    "signature": "void fn_0067ECF0(void* self, char* buffer, size_t size)",
+    "summary": "Formats the DWORD at offset 0 of this object as 8-digit lowercase hex into a caller buffer (snprintf \"%08x\"), callee-cleans 2 stack args.",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
   "0x0067F5A0": {
     "name": "lookupTableByIndexField",
     "class": "Unknown (no class recovered; receiver is passed in ecx)",

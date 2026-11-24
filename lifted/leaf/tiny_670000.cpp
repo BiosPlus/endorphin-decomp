@@ -38,6 +38,7 @@ extern "C" void* __fastcall fn_006710E0(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+#include <cstdio>
 
 // [0x00675670] sub_00675670 (6 bytes)
 // @name sub_00675670
@@ -555,3 +556,17 @@ int __stdcall fn_0067ADB0(void* self) {
     return 0;
 }
 } // namespace lift_0067ADB0
+
+// [0x0067ECF0] sub_0067ECF0 (30 bytes)
+namespace lift_0067ECF0 {
+extern const char mem_0098C7CC[]; // .rdata "%08x"
+
+// @name Unknown::formatDwordHex (descriptive; owner class not identified)
+// @class Unknown
+// @summary Formats the DWORD at offset 0 of this object as 8-digit lowercase hex into a caller buffer (snprintf "%08x"), callee-cleans 2 stack args.
+// @field Unknown +0x00 DWORD field_0x00
+void fn_0067ECF0(void* self, char* buffer, size_t size) {
+    const DWORD value = lift_field<DWORD>(self, 0x00);
+    std::snprintf(buffer, size, mem_0098C7CC, value);
+}
+} // namespace lift_0067ECF0
