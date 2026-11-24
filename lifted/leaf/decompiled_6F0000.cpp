@@ -953,3 +953,23 @@ void* __thiscall sub_006F8B30(void* self, const void* src) {
     return self;
 }
 } // namespace lift_006F8B30
+
+// [0x006FA9C0] sub_006FA9C0 (48 bytes)
+namespace lift_006FA9C0 {
+// Vtable slot 0x74 of the subobject at self+0x38, called with one argument; returns bool (al).
+extern bool ext_vcall_0x74(void* obj, DWORD arg);
+
+// @name Unknown::flagGatedVirtualQuery
+// @class Unknown
+// @summary If flag bit 0x2 at self+0x34 is set, forwards arg to the vtable slot 0x74 method of the subobject at self+0x38 and returns its bool result; otherwise returns false.
+// @field Unknown +0x34 BYTE field_0x34 (bit 0x2 gates the forward)
+// @field Unknown +0x38 void* field_0x38 (subobject whose vtable slot 0x74 is invoked)
+bool fn_006FA9C0(void* self, DWORD arg) {
+    const BYTE flags = lift_field<BYTE>(self, 0x34);
+    if ((flags & 0x2) == 0) {
+        return false;
+    }
+    void* sub = lift_field<void*>(self, 0x38);
+    return ext_vcall_0x74(sub, arg);
+}
+} // namespace lift_006FA9C0
