@@ -294,3 +294,15 @@ void fn_0079D730(void* self, uint32_t /*unused*/) {
     slot4(self, 1u);
 }
 } // namespace lift_0079D730
+
+// [0x0079AF40] sub_0079AF40 (16 bytes)
+namespace lift_0079AF40 {
+extern uint32_t mem_009241F0;  // IAT slot holding KERNEL32!GlobalAlloc
+extern HGLOBAL __stdcall ext_GlobalAlloc(UINT uFlags, SIZE_T dwBytes);
+
+// @name GlobalAllocZeroFlags
+// @summary Allocates a global memory block of the requested size with uFlags = 0 (GMEM_FIXED) and returns the handle.
+uint32_t __cdecl fn_0079AF40(uint32_t size) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(ext_GlobalAlloc(0, static_cast<SIZE_T>(size))));
+}
+} // namespace lift_0079AF40

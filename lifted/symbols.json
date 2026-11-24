@@ -36158,6 +36158,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C500": {
+    "name": "getField0xEC0FromField0x0C",
+    "signature": "uint8_t __fastcall sub_0071C500(uint32_t self)",
+    "summary": "Reads a byte at offset 0xEC0 from the pointer stored at this+0x0C.",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x0071C510": {
     "name": "sub_0071C510",
     "class": "Unknown",
@@ -36189,6 +36195,12 @@
     "class": "Unknown",
     "signature": "void __thiscall fn_0071C550(Unknown* self, uint8_t value)",
     "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C560": {
+    "name": "getField0x7d8",
+    "signature": "uint8_t __thiscall sub_0071C560(void* self)",
+    "summary": "Reads a byte at offset 0x7d8 from the pointer stored at this+0x0c",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
   "0x0071C570": {
@@ -37076,6 +37088,12 @@
     "name": "UnmapViewOfFileThunk_0079AE40",
     "signature": "BOOL fn_0079AE40(void* /*unused*/, const void* lpBaseAddress)",
     "summary": "Thin wrapper: unmaps the view at the second stack argument via KERNEL32!UnmapViewOfFile and returns its BOOL result.",
+    "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
+  "0x0079AF40": {
+    "name": "GlobalAllocZeroFlags",
+    "signature": "uint32_t __cdecl fn_0079AF40(uint32_t size)",
+    "summary": "Allocates a global memory block of the requested size with uFlags = 0 (GMEM_FIXED) and returns the handle.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
   "0x0079BA40": {

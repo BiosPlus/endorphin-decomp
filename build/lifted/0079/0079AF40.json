@@ -1,0 +1,13 @@
+{
+  "va": "0x0079AF40",
+  "size": 16,
+  "orig_symbol": "sub_0079AF40",
+  "src_path": "src/leaf/tiny_790000.cpp",
+  "lifted_path": "lifted/leaf/tiny_790000.cpp",
+  "name": "GlobalAllocZeroFlags",
+  "signature": "uint32_t __cdecl fn_0079AF40(uint32_t size)",
+  "summary": "Allocates a global memory block of the requested size with uFlags = 0 (GMEM_FIXED) and returns the handle.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:45:51Z"
+}
