@@ -290,3 +290,22 @@ extern uint8_t __thiscall fn_00711A20(void* self, uint32_t arg) {
     return static_cast<uint8_t>(arg != field);
 }
 } // namespace lift_00711A20
+
+// [0x00711BC0] sub_00711BC0 (32 bytes)
+namespace lift_00711BC0 {
+// @name Unknown::InvokeSubObjectSlot0
+// @class Unknown
+// @summary Loads the sub-object at this+0x8; if it is null returns 0, otherwise calls its vtable slot 0 with (0, 0x98ABD146) and returns the result.
+// @field Unknown +0x08 void* subObject
+DWORD fn_00711BC0(void* self) {
+    void* sub = *reinterpret_cast<void**>(static_cast<uint8_t*>(self) + 0x8);
+    if (sub == nullptr) {
+        return 0;
+    }
+    // Virtual call: vtable pointer is at sub+0, slot 0 is the first entry.
+    void* const* vtable = *reinterpret_cast<void* const* const*>(sub);
+    using Slot0Fn = DWORD (__thiscall*)(void* self, DWORD arg0, DWORD arg1);
+    Slot0Fn fn = reinterpret_cast<Slot0Fn>(vtable[0]);
+    return fn(sub, 0, 0x98ABD146u);
+}
+} // namespace lift_00711BC0
