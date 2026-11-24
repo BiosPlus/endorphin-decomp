@@ -5471,6 +5471,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0047DBC0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0047FFF0": {
+    "name": "InitIdentityFloats",
+    "signature": "void InitIdentityFloats(float* self)",
+    "summary": "Writes 1.0f/0.0f constants into the float block at ecx (diagonal-style init).",
+    "lifted_path": "lifted/leaf/tiny_470000.cpp"
+  },
   "0x004800A0": {
     "name": "Unknown::setField3E0FromInvertedArgBit0",
     "class": "Unknown",

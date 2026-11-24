@@ -1,0 +1,13 @@
+{
+  "va": "0x0047FFF0",
+  "size": 31,
+  "orig_symbol": "sub_0047FFF0",
+  "src_path": "src/leaf/tiny_470000.cpp",
+  "lifted_path": "lifted/leaf/tiny_470000.cpp",
+  "name": "InitIdentityFloats",
+  "signature": "void InitIdentityFloats(float* self)",
+  "summary": "Writes 1.0f/0.0f constants into the float block at ecx (diagonal-style init).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:23:08Z"
+}
