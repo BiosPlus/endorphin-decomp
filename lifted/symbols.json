@@ -44447,6 +44447,12 @@
     "summary": "Thiscall setter: sets +0x5C to 1, stores the stack argument at +0x24, and clears +0x2C; callee pops 4 bytes.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x007911E0": {
+    "name": "sub_007911E0",
+    "signature": "uint32_t __thiscall sub_007911E0(uint8_t* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Initializes object fields at offsets 0x28, 0x2c, 0x48, 0x4c, 0x50, and 0x60 and returns 0",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x007928E0": {
     "name": "sub_007928E0",
     "signature": "extern \"C\" void* __fastcall fn_007928E0(void* self, int edx_unused, unsigned int flags)",
