@@ -3937,6 +3937,13 @@
     "summary": "Adjusts this from the +0xC (BaseEventListener) subobject back to RuntimeEngine and forwards to 0x0046F930.",
     "lifted_path": "lifted/classes/RuntimeEngine.cpp"
   },
+  "0x0046FAA0": {
+    "name": "Unknown::NotifyChildIfPresent",
+    "class": "Unknown",
+    "signature": "void fn_0046FAA0(void* self)",
+    "summary": "If the child pointer at +0x00 is nonnull, calls the child's vtable slot at +0x10 (thiscall, arg 1); otherwise does nothing.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x0046FAB0": {
     "name": "ThreadRunner\u003cRuntimeEngine\u003e::vfunc_1",
     "class": "ThreadRunner\u003cRuntimeEngine\u003e",

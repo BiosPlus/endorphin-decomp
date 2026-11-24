@@ -1,0 +1,22 @@
+{
+  "va": "0x0046FAA0",
+  "size": 16,
+  "orig_symbol": "sub_0046FAA0",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "Unknown::NotifyChildIfPresent",
+  "class": "Unknown",
+  "signature": "void fn_0046FAA0(void* self)",
+  "summary": "If the child pointer at +0x00 is nonnull, calls the child's vtable slot at +0x10 (thiscall, arg 1); otherwise does nothing.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:34:48Z"
+}
