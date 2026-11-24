@@ -1,0 +1,21 @@
+{
+  "va": "0x0068BE70",
+  "size": 39,
+  "orig_symbol": "sub_0068BE70",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "sub_0068BE70",
+  "signature": "float __thiscall sub_0068BE70(void* self)",
+  "summary": "Calls sub_00508680 on this+0x10 and converts the unsigned 32-bit result to a scaled float",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:55:03Z"
+}
