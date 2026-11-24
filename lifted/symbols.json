@@ -1544,6 +1544,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00551A10 (NMCamera::Orthogonal::vfunc_5).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00433B70": {
+    "name": "forwardToChildAt114IfPresent",
+    "signature": "extern \"C\" void __thiscall fn_00433B70(void* self, int32_t stackArg)",
+    "summary": "If the pointer at this+0x114 is non-null, forward this pointer to ext_004444B0; then return (ret 4 pops one stack argument).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00433FF0": {
     "name": "sub_00433FF0",
     "class": "CBase",

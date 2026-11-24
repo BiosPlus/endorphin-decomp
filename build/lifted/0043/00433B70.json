@@ -1,0 +1,21 @@
+{
+  "va": "0x00433B70",
+  "size": 18,
+  "orig_symbol": "sub_00433B70",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "forwardToChildAt114IfPresent",
+  "signature": "extern \"C\" void __thiscall fn_00433B70(void* self, int32_t stackArg)",
+  "summary": "If the pointer at this+0x114 is non-null, forward this pointer to ext_004444B0; then return (ret 4 pops one stack argument).",
+  "fields": [
+    {
+      "class": "this",
+      "offset": "+0x114",
+      "type": "void*",
+      "name": "child"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:56:51Z"
+}

@@ -233,3 +233,19 @@ void fn_00430CA0(void* self, int32_t /*arg, overwritten with 1*/) {
     target(self, 1);
 }
 } // namespace lift_00430CA0
+
+// [0x00433B70] sub_00433B70 (18 bytes)
+namespace lift_00433B70 {
+extern void __fastcall ext_004444B0(void* self);
+
+// @name forwardToChildAt114IfPresent
+// @summary If the pointer at this+0x114 is non-null, forward this pointer to ext_004444B0; then return (ret 4 pops one stack argument).
+// @field this +0x114 void* child
+extern void __thiscall fn_00433B70(void* self, int32_t stackArg) {
+    (void)stackArg;
+    void* child = *reinterpret_cast<void**>(static_cast<uint8_t*>(self) + 0x114);
+    if (child != nullptr) {
+        ext_004444B0(child);
+    }
+}
+} // namespace lift_00433B70
