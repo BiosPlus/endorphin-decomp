@@ -245,3 +245,15 @@ void fn_00714880(const BYTE* src /* ecx */, BYTE* dst0 /* [esp+4] */, BYTE* dst1
     dst2[0] = src[2];
 }
 } // namespace lift_00714880
+
+// [0x00711D20] sub_00711D20 (32 bytes)
+namespace lift_00711D20 {
+// @name Unknown::TestMaskedFieldAt0x78
+// @class Unknown
+// @summary Returns true when (this->field_0x78 & mask) is nonzero, else false.
+// @field Unknown +0x78 DWORD field_0x78
+bool fn_00711D20(void* self, DWORD mask) {
+    const DWORD field = *reinterpret_cast<const DWORD*>(static_cast<const uint8_t*>(self) + 0x78);
+    return (field & mask) != 0;
+}
+} // namespace lift_00711D20

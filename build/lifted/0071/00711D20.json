@@ -1,0 +1,22 @@
+{
+  "va": "0x00711D20",
+  "size": 32,
+  "orig_symbol": "sub_00711D20",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::TestMaskedFieldAt0x78",
+  "class": "Unknown",
+  "signature": "bool fn_00711D20(void* self, DWORD mask)",
+  "summary": "Returns true when (this-\u003efield_0x78 \u0026 mask) is nonzero, else false.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "DWORD",
+      "name": "field_0x78"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:40:30Z"
+}
