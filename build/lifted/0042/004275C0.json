@@ -1,0 +1,14 @@
+{
+  "va": "0x004275C0",
+  "size": 31,
+  "orig_symbol": "sub_004275C0",
+  "src_path": "src/leaf/tiny_420000.cpp",
+  "lifted_path": "lifted/leaf/tiny_420000.cpp",
+  "name": "CallVtableSlot2ThenReturnArg",
+  "class": "(none)",
+  "signature": "uint32_t __thiscall fn_004275C0(void* self, uint32_t arg)",
+  "summary": "Loads the object pointer stored at *this, calls its vtable slot at +0x08 with (arg, 0), and returns arg.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:22:15Z"
+}

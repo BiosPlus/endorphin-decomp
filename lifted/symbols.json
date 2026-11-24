@@ -1646,6 +1646,13 @@
     "summary": "Walks +0x08 pointers until the next node has a non-zero byte at +0x59, returning the preceding node.",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
   },
+  "0x004275C0": {
+    "name": "CallVtableSlot2ThenReturnArg",
+    "class": "(none)",
+    "signature": "uint32_t __thiscall fn_004275C0(void* self, uint32_t arg)",
+    "summary": "Loads the object pointer stored at *this, calls its vtable slot at +0x08 with (arg, 0), and returns arg.",
+    "lifted_path": "lifted/leaf/tiny_420000.cpp"
+  },
   "0x00428FE0": {
     "name": "sub_00428FE0",
     "signature": "extern \"C\" void fn_00428FE0(void)",

@@ -238,3 +238,29 @@ void* fn_00425DA0(void* self) {
     return self;
 }
 } // namespace lift_00425DA0
+
+// [0x004275C0] sub_004275C0 (31 bytes)
+namespace lift_004275C0 {
+// @name CallVtableSlot2ThenReturnArg
+// @class (none)
+// @summary Loads the object pointer stored at *this, calls its vtable slot at +0x08 with (arg, 0), and returns arg.
+// Note: the original reuses a saved-ECX stack slot as the second argument and the epilogue depends on
+// the callee's stack cleanup; the portable form below only models the call and the returned value.
+uint32_t __thiscall fn_004275C0(void* self, uint32_t arg) {
+    // mov ecx, [ecx]: self points at a slot holding the object pointer.
+    const uint32_t obj = *reinterpret_cast<const uint32_t*>(self);
+    // mov eax, [ecx]: first dword of the object is the vtable pointer.
+    const uint32_t vtbl = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(obj));
+    // mov edx, [eax + 8]: vtable slot 2 (32-bit layout).
+    const uint32_t slot2 = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(vtbl) + 8);
+
+    using Slot2Fn = uint32_t(__thiscall*)(void* self_obj, uint32_t a0, uint32_t a1);
+    const Slot2Fn fn = reinterpret_cast<Slot2Fn>(static_cast<uintptr_t>(slot2));
+
+    // Pushes (arg, 0) and calls with ECX = object.
+    fn(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), arg, 0u);
+
+    // mov eax, esi: the original returns its argument.
+    return arg;
+}
+} // namespace lift_004275C0
