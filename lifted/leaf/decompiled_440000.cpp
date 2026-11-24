@@ -781,3 +781,31 @@ void* fn_0044CFE0(void* self, void* arg1) {
 }
 } // namespace lift_0040A910
 } // namespace lift_0044CFE0
+
+// [0x00440770]
+namespace lift_00440770 {
+// @name Unknown::getNameOrFallbackPtr
+// @class Unknown
+// @summary Returns the address of the std::string at +0x28 when it is non-empty; otherwise returns the address of the subobject at +0x0c.
+// @field Unknown +0x0c void* field_0x0c (address taken only; no type information recovered)
+// @field Unknown +0x28 std::string field_0x28 (compared against "" via MSVCP80 operator!=)
+
+// IAT slot holding the MSVCP80 operator!=(const std::string&, const char*) entry point.
+extern const uint32_t mem_00924FC8;
+// .rdata empty C string "" used as the comparison operand.
+extern const char mem_00928B5D[];
+
+void* sub_00440770(void* self) {
+    using NotEqualFn = bool (*)(const void* lhs, const char* rhs);
+    auto* base = reinterpret_cast<uint8_t*>(self);
+    void* str28 = base + 0x28;
+
+    NotEqualFn ne = reinterpret_cast<NotEqualFn>(static_cast<uintptr_t>(mem_00924FC8));
+    bool nonEmpty = ne(str28, mem_00928B5D);
+
+    if (nonEmpty) {
+        return str28;
+    }
+    return base + 0x0c;
+}
+} // namespace lift_00440770

@@ -1,0 +1,28 @@
+{
+  "va": "0x00440770",
+  "size": 34,
+  "orig_symbol": "sub_00440770",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::getNameOrFallbackPtr",
+  "class": "Unknown",
+  "signature": "void* sub_00440770(void* self)",
+  "summary": "Returns the address of the std::string at +0x28 when it is non-empty; otherwise returns the address of the subobject at +0x0c.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void* field_0x0c (address taken only; no type information",
+      "name": "recovered)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "std::string field_0x28 (compared against \"\" via MSVCP80",
+      "name": "operator!=)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:54:41Z"
+}
