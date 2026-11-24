@@ -4,29 +4,24 @@
   "orig_symbol": "sub_008103F0",
   "src_path": "src/leaf/tiny_810000.cpp",
   "lifted_path": "lifted/leaf/tiny_810000.cpp",
-  "name": "sub_008103F0",
-  "summary": "Follows a chain of three pointers (arg+0x4 -\u003e +0x4 -\u003e +0x4) and returns bit 11 of the final dword.",
+  "name": "getNestedFlagBit11",
+  "signature": "uint32_t fn_008103F0(uint8_t* self)",
+  "summary": "Returns bit 11 of the 32-bit word at +0x04 of the object referenced by +0x04 of the argument (0 or 1).",
   "fields": [
     {
       "class": "Unknown",
       "offset": "+0x4",
-      "type": "ptr field_0x04 (first hop,",
-      "name": "arg)"
+      "type": "uint8_t*",
+      "name": "next"
     },
     {
       "class": "Unknown",
       "offset": "+0x4",
-      "type": "ptr field_0x04 (second",
-      "name": "hop)"
-    },
-    {
-      "class": "Unknown",
-      "offset": "+0x4",
-      "type": "u32 field_0x04 (final dword whose bit 11 is",
-      "name": "returned)"
+      "type": "uint32_t",
+      "name": "flags"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T01:55:19Z"
+  "lifted_at": "2026-11-24T01:55:29Z"
 }

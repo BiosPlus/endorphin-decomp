@@ -14,19 +14,6 @@ uint32_t fn_00810240(void* self) {
 }
 } // namespace lift_00810240
 
-// [0x008103F0]
-namespace lift_008103F0 {
-// @name sub_008103F0
-// @summary Follows a chain of three pointers (arg+0x4 -> +0x4 -> +0x4) and returns bit 11 of the final dword.
-// @field Unknown +0x04 ptr field_0x04 (first hop, arg)
-// @field Unknown +0x04 ptr field_0x04 (second hop)
-// @field Unknown +0x04 u32 field_0x04 (final dword whose bit 11 is returned)
-
-struct Unknown;
-
-extern uint32_t sub_008103F0(Unknown* arg);
-} // namespace lift_008103F0
-
 // [0x00810350]
 namespace lift_00810350 {
 // @name getNestedFlagBit15
@@ -83,3 +70,16 @@ uint32_t fn_00810300(void* self) {
     return (v >> 24) & 1u;
 }
 } // namespace lift_00810300
+
+// [0x008103F0]
+namespace lift_008103F0 {
+// @name getNestedFlagBit11
+// @summary Returns bit 11 of the 32-bit word at +0x04 of the object referenced by +0x04 of the argument (0 or 1).
+// @field Unknown +0x04 uint8_t* next
+// @field Unknown +0x04 uint32_t flags
+uint32_t fn_008103F0(uint8_t* self) {
+    uint8_t* inner = *reinterpret_cast<uint8_t**>(self + 0x04);
+    uint32_t flags = *reinterpret_cast<uint32_t*>(inner + 0x04);
+    return (flags >> 11) & 1u;
+}
+} // namespace lift_008103F0
