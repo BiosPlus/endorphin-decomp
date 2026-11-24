@@ -1,0 +1,13 @@
+{
+  "va": "0x004940D0",
+  "size": 8,
+  "orig_symbol": "sub_004940D0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "ForwardToDeletingDtorReturnSelf",
+  "signature": "void* fn_004940D0(void* self)",
+  "summary": "Calls the scalar deleting destructor at 0x00494050 on self and returns self (ecx) unchanged.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:30:25Z"
+}

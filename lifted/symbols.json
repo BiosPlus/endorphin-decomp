@@ -4890,6 +4890,12 @@
     "summary": "XORs a 32-bit value at [ecx] with the first stack argument.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x004940D0": {
+    "name": "ForwardToDeletingDtorReturnSelf",
+    "signature": "void* fn_004940D0(void* self)",
+    "summary": "Calls the scalar deleting destructor at 0x00494050 on self and returns self (ecx) unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x004947D0": {
     "name": "sub_004947D0",
     "signature": "extern \"C\" void __fastcall fn_004947D0(void* self)",

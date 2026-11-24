@@ -36,3 +36,20 @@ void __thiscall fn_00495A20(uint8_t* self) {
 }
 } // namespace lift_0051BF10
 } // namespace lift_00495A20
+
+// [0x004940D0] sub_004940D0 (8 bytes)
+namespace lift_004940D0 {
+// Known callee 0x00494050: sub_00491FC0 (MSVC scalar deleting destructor: calls sub_00491A90 and frees memory when (flags & 1) is set.)
+extern void ext_00494050();
+
+// @name ForwardToDeletingDtorReturnSelf
+// @summary Calls the scalar deleting destructor at 0x00494050 on self and returns self (ecx) unchanged.
+void* fn_004940D0(void* self) {
+    // The original passes ecx through the call, then returns ecx in eax.
+    // The callee's flags argument is not set up by this stub; the call is
+    // modeled with no arguments, so the callee's stack-based flags are not
+    // reproduced here.
+    ext_00494050();
+    return self;
+}
+} // namespace lift_004940D0
