@@ -1,0 +1,28 @@
+{
+  "va": "0x005C3090",
+  "size": 54,
+  "orig_symbol": "sub_005C3090",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "CObjectHolder::ForwardToSubobject",
+  "class": "CObjectHolder",
+  "signature": "void fn_005C3090(void* self, uintptr_t arg)",
+  "summary": "If the subobject at +0x164 exists, queries the object at +0x04 via vtable slot 5 using global mem_00B40640 and forwards the result (+0x30) with arg to the subobject's handler.",
+  "fields": [
+    {
+      "class": "CObjectHolder",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "m_pObject"
+    },
+    {
+      "class": "CObjectHolder",
+      "offset": "+0x164",
+      "type": "void*",
+      "name": "m_pSubobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:11:42Z"
+}

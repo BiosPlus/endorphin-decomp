@@ -23329,6 +23329,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005B7260 (Unknown::forwardIfChild).",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
   },
+  "0x005C3090": {
+    "name": "CObjectHolder::ForwardToSubobject",
+    "class": "CObjectHolder",
+    "signature": "void fn_005C3090(void* self, uintptr_t arg)",
+    "summary": "If the subobject at +0x164 exists, queries the object at +0x04 via vtable slot 5 using global mem_00B40640 and forwards the result (+0x30) with arg to the subobject's handler.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005C30D0": {
     "name": "sub_005C30D0",
     "class": "Unknown",

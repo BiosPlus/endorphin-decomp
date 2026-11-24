@@ -141,3 +141,33 @@ uint32_t __thiscall fn_005CE8D0(void* self, uint32_t arg1) {
     return ext_00648370(sub, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)), arg1);
 }
 } // namespace lift_005CE8D0
+
+// [0x005C3090] sub_005C3090 (54 bytes)
+namespace lift_005C3090 {
+// @name CObjectHolder::ForwardToSubobject
+// @class CObjectHolder
+// @summary If the subobject at +0x164 exists, queries the object at +0x04 via vtable slot 5 using global mem_00B40640 and forwards the result (+0x30) with arg to the subobject's handler.
+// @field CObjectHolder +0x004 void* m_pObject
+// @field CObjectHolder +0x164 void* m_pSubobject
+
+extern void ext_005B72A0(void* self, void* edx, uintptr_t arg1, uintptr_t arg2);
+extern uint32_t mem_00B40640;
+
+void fn_005C3090(void* self, uintptr_t arg) {
+    auto* base = static_cast<uint8_t*>(self);
+    void* sub = *reinterpret_cast<void**>(base + 0x164);
+    if (sub == nullptr) {
+        return;
+    }
+
+    // Virtual call on the object at +0x04: load its vptr, take slot 5 (offset 0x14),
+    // call with this = &obj and the global mem_00B40640 as the single argument.
+    void* obj = base + 0x04;
+    void** vptr = *static_cast<void***>(obj);
+    using VFn = uintptr_t (*)(void* thisPtr, uintptr_t param);
+    VFn vfn = reinterpret_cast<VFn>(vptr[5]);
+    uintptr_t result = vfn(obj, static_cast<uintptr_t>(mem_00B40640));
+
+    ext_005B72A0(sub, nullptr, arg, result + 0x30);
+}
+} // namespace lift_005C3090
