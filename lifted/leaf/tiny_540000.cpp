@@ -291,3 +291,30 @@ void fn_0054E400(void* self, uint8_t flag) {
     lift_field<float>(self, 0x44) = (flag == 0) ? 1.0f : 0.0f;
 }
 } // namespace lift_0054E400
+
+// [0x00547AD0] sub_00547AD0 (24 bytes)
+namespace lift_00547AD0 {
+extern uint32_t mem_00A44E28;
+extern uint32_t mem_00924FC8;
+
+// Virtual slot 7 (vtable +0x1c): takes one 32-bit key, returns a pointer to a string object.
+typedef uint32_t (__thiscall *VirtualLookupFn)(void* self, uint32_t key);
+// MSVCP80 operator==(const std::string&, const char*), cdecl, returns bool.
+typedef BOOLEAN (__cdecl *StringEqualsFn)(uint32_t lhs_string, uint32_t rhs_cstr);
+
+// @name Unknown::VirtualLookupEqualsGlobalKey
+// @class Unknown
+// @summary Looks up a global key via virtual slot 7 and compares the resulting std::string against that same key.
+// @field Unknown +0x00 void* vtable
+BOOLEAN __thiscall fn_00547AD0(void* self) {
+    const uint32_t key = mem_00A44E28;
+
+    const uintptr_t vtable = lift_field<uint32_t>(self, 0x00);
+    const uint32_t slot7 = lift_field<uint32_t>(reinterpret_cast<void*>(vtable), 0x1c);
+    const auto lookup = reinterpret_cast<VirtualLookupFn>(static_cast<uintptr_t>(slot7));
+    const uint32_t lhs = lookup(self, key);
+
+    const auto string_equals = reinterpret_cast<StringEqualsFn>(static_cast<uintptr_t>(mem_00924FC8));
+    return string_equals(lhs, key);
+}
+} // namespace lift_00547AD0

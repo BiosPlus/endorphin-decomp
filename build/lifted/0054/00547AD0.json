@@ -1,0 +1,22 @@
+{
+  "va": "0x00547AD0",
+  "size": 24,
+  "orig_symbol": "sub_00547AD0",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "Unknown::VirtualLookupEqualsGlobalKey",
+  "class": "Unknown",
+  "signature": "BOOLEAN __thiscall fn_00547AD0(void* self)",
+  "summary": "Looks up a global key via virtual slot 7 and compares the resulting std::string against that same key.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:36:20Z"
+}

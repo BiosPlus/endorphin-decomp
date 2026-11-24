@@ -13398,6 +13398,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00519CE0 (std::basic_string\u003cchar\u003e::~basic_string (vtable-stamping thunk)).",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00547AD0": {
+    "name": "Unknown::VirtualLookupEqualsGlobalKey",
+    "class": "Unknown",
+    "signature": "BOOLEAN __thiscall fn_00547AD0(void* self)",
+    "summary": "Looks up a global key via virtual slot 7 and compares the resulting std::string against that same key.",
+    "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
   "0x00547D00": {
     "name": "sub_00547D00",
     "signature": "extern \"C\" void __fastcall fn_00547D00(void* self)",
