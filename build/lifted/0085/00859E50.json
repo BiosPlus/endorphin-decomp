@@ -1,0 +1,27 @@
+{
+  "va": "0x00859E50",
+  "size": 32,
+  "orig_symbol": "sub_00859E50",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "ResolveDwordThroughFlaggedIndirection",
+  "signature": "uint32_t ResolveDwordThroughFlaggedIndirection(void* self)",
+  "summary": "Returns the dword at p+0x00; if bit 0x04 of the byte at p+0x14 is set, returns the dword that value points to instead.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "ptrAt00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "BYTE",
+      "name": "flags14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:49:34Z"
+}

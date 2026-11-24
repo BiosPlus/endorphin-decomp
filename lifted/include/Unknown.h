@@ -41,6 +41,7 @@ struct Unknown_Fields {
     // +0x0   void* field_0x00 (pointer to the array-owning object)  (evidence: 0x0077FF70, 0x0077FFB0) // CONFLICT: multiple definitions at +0x0
     // +0x0   double[] array (base pointer in ecx; element i at byte offset 8*i, dynamic index so no fixed offset)  (evidence: 0x006D2400) // CONFLICT: multiple definitions at +0x0
     // +0x0   void** vtable (sub-object's vtable pointer)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   DWORD                    ptrAt00  (evidence: 0x00859E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    ptr_0x00  (evidence: 0x006E86E0, 0x006E8790) // CONFLICT: multiple definitions at +0x0
     // +0x0   double field_0x00[] (indexed by arg, stride 8; element type inferred from fld qword)  (evidence: 0x0077FAE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    self  (evidence: 0x00493EE0) // CONFLICT: multiple definitions at +0x0
@@ -172,6 +173,7 @@ struct Unknown_Fields {
     // +0x14  uint32_t                 field_0x14  (evidence: 0x00468710, 0x00468730, 0x006C9A90, 0x006FC7E0, 0x007126A0, 0x007D4B30, 0x007D8470) // CONFLICT: multiple definitions at +0x14
     // +0x14  void*                    field_0x14  (evidence: 0x00468770, 0x0046F7D0, 0x004A2510, 0x00543210, 0x006DE3B0, 0x006DE3E0, 0x00700970, 0x00715570, 0x0071B0F0, 0x0071B4F0, 0x0071B6C0, 0x0071BF90, 0x0071BFA0, 0x0071C360, 0x0071C380, 0x0071C4C0, 0x0071C600, 0x0071C940, 0x0071C9A0, 0x00789650) // CONFLICT: multiple definitions at +0x14
     // +0x14  void*                    field_14  (evidence: 0x005C3130, 0x007B9050) // CONFLICT: multiple definitions at +0x14
+    // +0x14  BYTE                     flags14  (evidence: 0x00859E50) // CONFLICT: multiple definitions at +0x14
     // +0x14  float field_0x14 (float array base; indexed by idx)  (evidence: 0x006C9E70) // CONFLICT: multiple definitions at +0x14
     // +0x18  uint8_t field_0x18 (3 bytes, indexed by 0..2)  (evidence: 0x005539B0) // CONFLICT: multiple definitions at +0x18
     // +0x18  double                   field_0x18  (evidence: 0x0050F970, 0x006722B0, 0x0067B2F0, 0x0067B310, 0x0067B390) // CONFLICT: multiple definitions at +0x18

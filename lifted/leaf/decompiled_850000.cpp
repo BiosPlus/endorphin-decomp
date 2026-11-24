@@ -85,3 +85,19 @@ void* fn_0085D560(SIZE_T uBytes) {
     return ext_LocalAlloc(0, uBytes);
 }
 } // namespace lift_0085D560
+
+// [0x00859E50] sub_00859E50 (32 bytes)
+namespace lift_00859E50 {
+// @name ResolveDwordThroughFlaggedIndirection
+// @summary Returns the dword at p+0x00; if bit 0x04 of the byte at p+0x14 is set, returns the dword that value points to instead.
+// @field Unknown +0x00 DWORD ptrAt00
+// @field Unknown +0x14 BYTE flags14
+uint32_t ResolveDwordThroughFlaggedIndirection(void* self) {
+    uint32_t value = lift_field<uint32_t>(self, 0x00);
+    uint8_t flags = lift_field<uint8_t>(self, 0x14);
+    if (flags & 0x04) {
+        value = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(value));
+    }
+    return value;
+}
+} // namespace lift_00859E50

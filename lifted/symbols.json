@@ -45259,6 +45259,12 @@
     "summary": "Follows an indirection when flag 0x4 is set at +0x14, then returns the pointer at +0x4.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x00859E50": {
+    "name": "ResolveDwordThroughFlaggedIndirection",
+    "signature": "uint32_t ResolveDwordThroughFlaggedIndirection(void* self)",
+    "summary": "Returns the dword at p+0x00; if bit 0x04 of the byte at p+0x14 is set, returns the dword that value points to instead.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085BC20": {
     "name": "GetField08",
     "signature": "uint32_t GetField08(uint32_t self_ptr)",
