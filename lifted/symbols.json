@@ -37407,6 +37407,13 @@
     "summary": "Epilogue fragment: pops saved edi, esi and ebx from the stack; no portable C++ equivalent for the register restore, so the body is empty.",
     "lifted_path": "lifted/leaf/decompiled_870000.cpp"
   },
+  "0x00871860": {
+    "name": "Unknown_CallVtableSlot0_IfNonNull",
+    "class": "Unknown",
+    "signature": "void Unknown_CallVtableSlot0_IfNonNull(void* self)",
+    "summary": "If the pointer stored at *self is non-null, invoke its vtable slot 0 as a thiscall with argument 1.",
+    "lifted_path": "lifted/leaf/tiny_870000.cpp"
+  },
   "0x00871870": {
     "name": "AdvXMLParser::Parser::vfunc_0",
     "class": "AdvXMLParser::Parser",

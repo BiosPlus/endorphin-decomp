@@ -1,0 +1,22 @@
+{
+  "va": "0x00871860",
+  "size": 15,
+  "orig_symbol": "sub_00871860",
+  "src_path": "src/leaf/tiny_870000.cpp",
+  "lifted_path": "lifted/leaf/tiny_870000.cpp",
+  "name": "Unknown_CallVtableSlot0_IfNonNull",
+  "class": "Unknown",
+  "signature": "void Unknown_CallVtableSlot0_IfNonNull(void* self)",
+  "summary": "If the pointer stored at *self is non-null, invoke its vtable slot 0 as a thiscall with argument 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:33:30Z"
+}
