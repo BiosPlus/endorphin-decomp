@@ -10,6 +10,7 @@ namespace lifted_layout {
 struct UnknownClass_Fields {
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00780250)
     // +0x10  uint32_t[]               field_0x10  (evidence: 0x005B11D0)
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x007C6FB0)
     // +0x58  uint32_t                 field_0x58  (evidence: 0x007AEEE0)
 };
 } // namespace lifted_layout

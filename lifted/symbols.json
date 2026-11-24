@@ -35374,6 +35374,13 @@
     "summary": "Returns the 32-bit value at offset 0x10 of the given struct pointer.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C6FB0": {
+    "name": "storeArgToField14",
+    "class": "UnknownClass",
+    "signature": "void sub_007C6FB0(uint8_t* self, uint32_t value)",
+    "summary": "Stores the second stack argument into the object's field at +0x14.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C6FC0": {
     "name": "getField0x14",
     "signature": "uint32_t sub_007C6FC0(uint32_t arg0)",

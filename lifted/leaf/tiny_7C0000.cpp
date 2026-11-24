@@ -413,3 +413,16 @@ void setField18_007C6FD0(uint8_t* self, uint32_t value) {
     *reinterpret_cast<uint32_t*>(self + 0x18) = value;
 }
 } // namespace lift_007C6FD0
+
+// [0x007C6FB0]
+namespace lift_007C6FB0 {
+// @name storeArgToField14
+// @class UnknownClass
+// @summary Stores the second stack argument into the object's field at +0x14.
+// @field UnknownClass +0x14 uint32_t field_0x14
+
+// Stack args (cdecl): arg0 (esp+4) = object pointer, arg1 (esp+8) = value.
+void sub_007C6FB0(uint8_t* self, uint32_t value) {
+    *reinterpret_cast<uint32_t*>(self + 0x14) = value;
+}
+} // namespace lift_007C6FB0
