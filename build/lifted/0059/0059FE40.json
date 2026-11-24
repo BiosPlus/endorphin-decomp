@@ -1,0 +1,13 @@
+{
+  "va": "0x0059FE40",
+  "size": 59,
+  "orig_symbol": "sub_0059FE40",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "makeHeapU32Range",
+  "signature": "void fn_0059FE40(uint32_t* first, const uint32_t* last)",
+  "summary": "Heapify a uint32 range [first, last): for each index from count/2 down to 1, call ext_0059F310 (sift-down) with that element as the value.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:25:24Z"
+}

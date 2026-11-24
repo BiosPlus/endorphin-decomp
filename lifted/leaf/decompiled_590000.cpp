@@ -256,3 +256,23 @@ uint32_t sub_00596370() {
     return 0;
 }
 } // namespace lift_00596370
+
+// [0x0059FE40] sub_0059FE40 (59 bytes)
+namespace lift_0059FE40 {
+extern void ext_0059F310(void* base, int32_t index, int32_t count, uint32_t value);
+
+// @name makeHeapU32Range
+// @summary Heapify a uint32 range [first, last): for each index from count/2 down to 1, call ext_0059F310 (sift-down) with that element as the value.
+// @field none (function accesses only the argument array; no struct offsets)
+void fn_0059FE40(uint32_t* first, const uint32_t* last) {
+    // Element count, rounded toward zero when halving (matches cdq/sub/sar sequence).
+    int32_t count = static_cast<int32_t>(last - first);
+    int32_t half = (count < 0 ? count + 1 : count) >> 1;
+
+    while (half > 0) {
+        uint32_t value = first[half - 1];
+        --half;
+        ext_0059F310(first, half, count, value);
+    }
+}
+} // namespace lift_0059FE40
