@@ -2566,6 +2566,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00431330 (sub_00431330).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00434AB0": {
+    "name": "Cursor::CopyAndAdvance",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __thiscall fn_00434AB0(void* self, void* out, uint32_t popped_arg)",
+    "summary": "Copies the 8-byte cursor {owner, index} from *this into *out, checks owner and index (against owner+0x8) via the invalid-parameter handler, then advances index by 0x1C. Returns out. Callee pops 8 bytes (ret 0x8); the second stack dword is never read.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00434E30": {
     "name": "sub_00434E30",
     "signature": "void fn_00434E30()",

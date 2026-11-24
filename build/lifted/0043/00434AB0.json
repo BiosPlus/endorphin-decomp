@@ -1,0 +1,28 @@
+{
+  "va": "0x00434AB0",
+  "size": 55,
+  "orig_symbol": "sub_00434AB0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Cursor::CopyAndAdvance",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __thiscall fn_00434AB0(void* self, void* out, uint32_t popped_arg)",
+  "summary": "Copies the 8-byte cursor {owner, index} from *this into *out, checks owner and index (against owner+0x8) via the invalid-parameter handler, then advances index by 0x1C. Returns out. Callee pops 8 bytes (ret 0x8); the second stack dword is never read.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:13:15Z"
+}

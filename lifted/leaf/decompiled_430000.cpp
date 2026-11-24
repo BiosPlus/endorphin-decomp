@@ -1824,3 +1824,35 @@ void* fn_0043D780() {
     return rec;
 }
 } // namespace lift_0043D780
+
+// [0x00434AB0] sub_00434AB0 (55 bytes)
+namespace lift_00434AB0 {
+// Import slot for the invalid-parameter handler (_invalid_parameter_noinfo in MSVCR80).
+extern void (*mem_00925134)(void);
+
+// @name Cursor::CopyAndAdvance
+// @class Unknown
+// @summary Copies the 8-byte cursor {owner, index} from *this into *out, checks owner and index (against owner+0x8) via the invalid-parameter handler, then advances index by 0x1C. Returns out. Callee pops 8 bytes (ret 0x8); the second stack dword is never read.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+extern void* __thiscall fn_00434AB0(void* self, void* out, uint32_t popped_arg) {
+    (void)popped_arg;
+
+    void* owner = lift_field<void*>(self, 0x00);
+    uint32_t index = lift_field<uint32_t>(self, 0x04);
+
+    lift_field<void*>(out, 0x00) = owner;
+    lift_field<uint32_t>(out, 0x04) = index;
+
+    if (owner == nullptr) {
+        mem_00925134();
+    }
+
+    if (index >= lift_field<uint32_t>(owner, 0x08)) {
+        mem_00925134();
+    }
+
+    lift_field<uint32_t>(self, 0x04) = index + 0x1C;
+    return out;
+}
+} // namespace lift_00434AB0
