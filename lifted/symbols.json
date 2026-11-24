@@ -28348,6 +28348,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051AED0 (NMData::RealChannel::vfunc_8).",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x00696D90": {
+    "name": "initStruct_00696D90",
+    "signature": "uint32_t __thiscall sub_00696D90(uint32_t this_ptr)",
+    "summary": "Initializes a 20-byte struct with 0x19 at +0x00, zeros at +0x04..+0x0C, and 1 at +0x10, returning this.",
+    "lifted_path": "lifted/leaf/tiny_690000.cpp"
+  },
   "0x00696DB0": {
     "name": "init_00696DB0",
     "signature": "void __thiscall sub_00696DB0(void* self)",
@@ -35306,6 +35312,12 @@
     "summary": "Getter returning int32_t field at offset +0x1C.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D5620": {
+    "name": "getElementAt",
+    "signature": "uint32_t __thiscall sub_006D5620(uint32_t self, int32_t index)",
+    "summary": "Returns the 32-bit element at the given index if within [0, count), otherwise 0.",
+    "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
   "0x006D59B0": {
     "name": "Unknown::GetIndexedPtr",
     "class": "Unknown",
@@ -38339,6 +38351,12 @@
     "name": "sub_00712950",
     "signature": "extern \"C\" void __fastcall fn_00712950(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0078CBD0 (sub_0078CBD0).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007129A0": {
+    "name": "sub_007129A0",
+    "signature": "void __thiscall sub_007129A0(uint32_t self, uint32_t* out_a, uint32_t* out_b)",
+    "summary": "Reads fields at +0x84 and +0x80 from this into two output pointers",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
   "0x00712A20": {

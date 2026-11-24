@@ -495,3 +495,20 @@ void sub_006DD930() {
     mem_00B5DC1C = hi;
 }
 } // namespace lift_006DD930
+
+// [0x006D5620]
+namespace lift_006D5620 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name getElementAt
+// @summary Returns the 32-bit element at the given index if within [0, count), otherwise 0.
+// @field Unknown +0x64 int32_t field_0x64
+// @field Unknown +0x74 uint32_t field_0x74
+uint32_t __thiscall sub_006D5620(uint32_t self, int32_t index) {
+    if (index < 0 || index >= static_cast<int32_t>(mem_read32(self + 0x64))) {
+        return 0;
+    }
+    uint32_t table = mem_read32(self + 0x74);
+    return mem_read32(table + static_cast<uint32_t>(index) * 4);
+}
+} // namespace lift_006D5620
