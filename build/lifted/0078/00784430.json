@@ -1,0 +1,13 @@
+{
+  "va": "0x00784430",
+  "size": 41,
+  "orig_symbol": "sub_00784430",
+  "src_path": "src/clones/auto_clones_780000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_780000.cpp",
+  "name": "initGlobals_B60918",
+  "signature": "void fn_00784430(void)",
+  "summary": "Stores two constant pointer-sized values and a zero into four consecutive globals at 0xB60918..0xB60924.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:57:22Z"
+}

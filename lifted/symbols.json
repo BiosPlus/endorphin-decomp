@@ -44129,6 +44129,12 @@
     "summary": "Zeroes the +0x04 word of the owner and of every node in its +0x00 singly linked chain.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00784430": {
+    "name": "initGlobals_B60918",
+    "signature": "void fn_00784430(void)",
+    "summary": "Stores two constant pointer-sized values and a zero into four consecutive globals at 0xB60918..0xB60924.",
+    "lifted_path": "lifted/clones/auto_clones_780000.cpp"
+  },
   "0x007844A0": {
     "name": "SetGlobalsInitA_007844A0",
     "signature": "void fn_007844A0(void* self)",
@@ -44443,6 +44449,12 @@
     "name": "sub_0079ABA0",
     "signature": "void sub_0079ABA0(uint32_t eax, uint32_t ebx, uint32_t ecx, uint32_t edx)",
     "summary": "Data/jump-table bytes at 0x0079ABA0 lifted as raw instruction sequence",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
+  "0x0079ACF0": {
+    "name": "readFileBytes",
+    "signature": "uint32_t sub_0079ACF0(uint32_t hFile, uint32_t lpBuffer, uint32_t nNumberOfBytesToRead)",
+    "summary": "Reads bytes from a file handle using ReadFile and returns the number of bytes read, or 0 on failure.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
   "0x0079ADA0": {

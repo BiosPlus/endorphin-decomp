@@ -124,3 +124,20 @@ void fn_007844A0(void* self) {
     mem_00B60914 = 0x00000000u;
 }
 } // namespace lift_007844A0
+
+// [0x00784430] sub_00784430 (41 bytes)
+namespace lift_00784430 {
+extern int mem_00B60918;
+extern int mem_00B60920;
+extern int mem_00B6091C;
+extern int mem_00B60924;
+
+// @name initGlobals_B60918
+// @summary Stores two constant pointer-sized values and a zero into four consecutive globals at 0xB60918..0xB60924.
+void fn_00784430(void) {
+    mem_00B60918 = 0x00B608E8;
+    mem_00B60920 = 0x00AAF3CC;
+    mem_00B6091C = 0x00B61690;
+    mem_00B60924 = 0x00000000;
+}
+} // namespace lift_00784430
