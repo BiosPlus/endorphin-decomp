@@ -280,3 +280,40 @@ void fn_0051AE90(void* self) {
 }
 } // namespace lift_0051AEF0
 } // namespace lift_0051AE90
+
+// [0x00516EB0] sub_00516EB0 (59 bytes)
+namespace lift_00516EB0 {
+// Known callee (IAT slot 0x925134): MSVCR80!_invalid_parameter_noinfo, reached on null table or out-of-range index.
+extern void ext_00925134();
+// Global pointer to the table object (value of dword at 0x00AEC0A4).
+extern uint32_t mem_00AEC0A4;
+
+// @name GetTableEntryByIndex
+// @class GlobalIndexTable
+// @summary Returns the pointer stored at index self->+0x34 of the global table's buffer (begin at +0x14, end at +0x18); returns 0 if the global is null. Stdcall, 1 arg, ret 4.
+// @field GlobalIndexTable +0x14 uint32_t begin
+// @field GlobalIndexTable +0x18 uint32_t end
+// @field Arg +0x34 uint32_t index
+uint32_t __stdcall fn_00516EB0(void* self) {
+    const uint32_t table = mem_00AEC0A4;
+    if (table == 0) {
+        return 0;
+    }
+
+    const uint32_t index = lift_field<uint32_t>(self, 0x34);
+    const uint32_t begin = lift_field<uint32_t>(reinterpret_cast<void*>(table), 0x14);
+
+    if (begin == 0) {
+        ext_00925134();
+    } else {
+        const uint32_t end = lift_field<uint32_t>(reinterpret_cast<void*>(table), 0x18);
+        const uint32_t count = (end - begin) >> 2;
+        if (index >= count) {
+            ext_00925134();
+        }
+    }
+
+    const uint32_t buffer = lift_field<uint32_t>(reinterpret_cast<void*>(table), 0x14);
+    return lift_field<uint32_t>(reinterpret_cast<void*>(buffer), static_cast<ptrdiff_t>(index) * 4);
+}
+} // namespace lift_00516EB0

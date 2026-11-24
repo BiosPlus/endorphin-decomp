@@ -1,0 +1,34 @@
+{
+  "va": "0x00516EB0",
+  "size": 59,
+  "orig_symbol": "sub_00516EB0",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "GetTableEntryByIndex",
+  "class": "GlobalIndexTable",
+  "signature": "uint32_t __stdcall fn_00516EB0(void* self)",
+  "summary": "Returns the pointer stored at index self-\u003e+0x34 of the global table's buffer (begin at +0x14, end at +0x18); returns 0 if the global is null. Stdcall, 1 arg, ret 4.",
+  "fields": [
+    {
+      "class": "GlobalIndexTable",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "GlobalIndexTable",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "end"
+    },
+    {
+      "class": "Arg",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "index"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:25:21Z"
+}
