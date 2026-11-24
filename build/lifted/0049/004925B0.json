@@ -1,0 +1,28 @@
+{
+  "va": "0x004925B0",
+  "size": 27,
+  "orig_symbol": "sub_004925B0",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "sub_004925B0",
+  "class": "(unknown)",
+  "signature": "int sub_004925B0(uint32_t self, uint32_t arg0)",
+  "summary": "Returns 1 if this-\u003efield_0x00 is non-zero and this-\u003efield_0x08 equals the single stack argument, otherwise 0. Callee cleans 4 bytes (ret 4).",
+  "fields": [
+    {
+      "class": "(unknown)",
+      "offset": "+0x0",
+      "type": "dword field_0x00 (tested for",
+      "name": "zero)"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x8",
+      "type": "dword field_0x08 (compared against the stack",
+      "name": "argument)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:01:52Z"
+}

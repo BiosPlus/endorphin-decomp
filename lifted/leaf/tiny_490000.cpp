@@ -583,3 +583,23 @@ void* fn_004928E0(void* arg) {
 }
 } // namespace lift_00401AF0
 } // namespace lift_004928E0
+
+// [0x004925B0]
+namespace lift_004925B0 {
+// @name sub_004925B0
+// @class (unknown)
+// @summary Returns 1 if this->field_0x00 is non-zero and this->field_0x08 equals the single stack argument, otherwise 0. Callee cleans 4 bytes (ret 4).
+// @field (unknown) +0x00 dword field_0x00 (tested for zero)
+// @field (unknown) +0x08 dword field_0x08 (compared against the stack argument)
+
+int sub_004925B0(uint32_t self, uint32_t arg0) {
+    const uint32_t* p = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(self));
+    if (p[0] == 0) {
+        return 0;
+    }
+    if (p[2] != arg0) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_004925B0
