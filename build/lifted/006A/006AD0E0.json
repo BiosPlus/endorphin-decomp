@@ -1,0 +1,22 @@
+{
+  "va": "0x006AD0E0",
+  "size": 14,
+  "orig_symbol": "sub_006AD0E0",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "Unknown::setField28IfNonNull",
+  "class": "Unknown",
+  "signature": "static void setField28IfNonNull_impl(Unknown* self, int32_t value)",
+  "summary": "If this is non-null, store the stack argument into this-\u003efield_0x28; otherwise do nothing. Callee cleans up 4 bytes.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "int32_t",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:26:41Z"
+}

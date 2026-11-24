@@ -268,3 +268,23 @@ void Unknown_setField24IfNonNull(Unknown* self, int32_t arg)
     }
 }
 } // namespace lift_006AD080
+
+// [0x006AD0E0]
+namespace lift_006AD0E0 {
+// @name Unknown::setField28IfNonNull
+// @class Unknown
+// @summary If this is non-null, store the stack argument into this->field_0x28; otherwise do nothing. Callee cleans up 4 bytes.
+// @field Unknown +0x28 int32_t field_0x28
+
+struct Unknown {
+    unsigned char _pad_0000[0x28];
+    int32_t field_0x28;
+};
+
+// Calling convention: this in ECX, one stack argument, callee pops 4 bytes (ret 4).
+static void setField28IfNonNull_impl(Unknown* self, int32_t value) {
+    if (self != nullptr) {
+        self->field_0x28 = value;
+    }
+}
+} // namespace lift_006AD0E0

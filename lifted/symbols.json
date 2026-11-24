@@ -29819,6 +29819,13 @@
     "summary": "Reads a byte at offset +0x5 from the pointer stored at this+0x4",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006AD0E0": {
+    "name": "Unknown::setField28IfNonNull",
+    "class": "Unknown",
+    "signature": "static void setField28IfNonNull_impl(Unknown* self, int32_t value)",
+    "summary": "If this is non-null, store the stack argument into this-\u003efield_0x28; otherwise do nothing. Callee cleans up 4 bytes.",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006AD110": {
     "name": "sub_006AD110_getField24",
     "signature": "uint32_t __thiscall sub_006AD110(uintptr_t self)",
