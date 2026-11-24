@@ -39540,3 +39540,31 @@ extern uint32_t __thiscall fn_00674CE0(void* /*self*/, uint32_t* entry_ptr) {
     return 0;
 }
 } // namespace lift_00674CE0
+
+// [0x004D1090] ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_004D0AF0(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_004D1090(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_004D0AF0(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090

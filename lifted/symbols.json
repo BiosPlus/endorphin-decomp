@@ -11928,6 +11928,13 @@
     "summary": "Reads the uint32 index stored at self+0x188 and returns the 28-byte-stride table entry address for it.",
     "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
   },
+  "0x004D1090": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData\u003e::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0\u003e",
+    "signature": "uint32_t fn_004D1090(void* const* holder)",
+    "summary": "Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004D1240": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e",
