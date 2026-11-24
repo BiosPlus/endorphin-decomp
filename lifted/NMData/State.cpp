@@ -120,3 +120,26 @@ uint8_t __thiscall fn_0049E000(void* self, void* arg0) {
     return 0;
 }
 } // namespace lift_0049E000
+
+// [0x0049ABE0] NMData::State::vfunc_35_off_8 (56 bytes)
+namespace lift_0049ABE0 {
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast.)
+// Signature: void* __RTDynamicCast(void* input, int srcIsPolymorphic, void* srcType, void* targetType, int isReference)
+extern void* ext_006A6E9E(void* input, int srcIsPolymorphic, void* srcType, void* targetType, int isReference);
+
+// @name NMData::State::castArg2AndInvokeVSlot10
+// @class NMData::State
+// @summary Dynamic-casts arg2 to a polymorphic target type; if non-null, calls vtable slot 10 on it with (arg1, this-8).
+void fn_0049ABE0(void* self, DWORD arg1, DWORD arg2) {
+    void* adjusted = static_cast<unsigned char*>(self) - 8;
+    void* casted = ext_006A6E9E(reinterpret_cast<void*>(static_cast<uintptr_t>(arg2)), 0,
+                                reinterpret_cast<void*>(static_cast<uintptr_t>(0xA303F4u)),
+                                reinterpret_cast<void*>(static_cast<uintptr_t>(0xA30418u)), 0);
+    if (casted == nullptr) {
+        return;
+    }
+    void* const* vtbl = *reinterpret_cast<void* const* const*>(casted);
+    auto slot10 = reinterpret_cast<void(__thiscall*)(void*, DWORD, void*)>(vtbl[10]);
+    slot10(casted, arg1, adjusted);
+}
+} // namespace lift_0049ABE0

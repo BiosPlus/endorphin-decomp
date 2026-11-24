@@ -8114,6 +8114,13 @@
     "summary": "Returns byte +0x09 of the pointer stored at +0x12C, or 0 if that pointer is null.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x0049ABE0": {
+    "name": "NMData::State::castArg2AndInvokeVSlot10",
+    "class": "NMData::State",
+    "signature": "void fn_0049ABE0(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Dynamic-casts arg2 to a polymorphic target type; if non-null, calls vtable slot 10 on it with (arg1, this-8).",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
   "0x0049AD40": {
     "name": "sub_00495A20",
     "class": "NMData::RealChannel",

@@ -1,0 +1,14 @@
+{
+  "va": "0x0049ABE0",
+  "size": 56,
+  "orig_symbol": "NMData::State::vfunc_35_off_8",
+  "src_path": "src/NMData/State.cpp",
+  "lifted_path": "lifted/NMData/State.cpp",
+  "name": "NMData::State::castArg2AndInvokeVSlot10",
+  "class": "NMData::State",
+  "signature": "void fn_0049ABE0(void* self, DWORD arg1, DWORD arg2)",
+  "summary": "Dynamic-casts arg2 to a polymorphic target type; if non-null, calls vtable slot 10 on it with (arg1, this-8).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:33:44Z"
+}
