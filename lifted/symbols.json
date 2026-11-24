@@ -380,6 +380,13 @@
     "summary": "Returns the address of the global data slot mem_0092A1CC (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00407830": {
+    "name": "sub_00407830",
+    "class": "unknown",
+    "signature": "void fn_00407830(void* self)",
+    "summary": "Passes the field at self+0x20 to USER32!GetDC, then forwards the returned HDC to MFC80 ord_2367.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00408040": {
     "name": "sub_00408040",
     "signature": "extern \"C\" void fn_00408040(void)",

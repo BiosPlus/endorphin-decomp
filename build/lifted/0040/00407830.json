@@ -1,0 +1,22 @@
+{
+  "va": "0x00407830",
+  "size": 17,
+  "orig_symbol": "sub_00407830",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "sub_00407830",
+  "class": "unknown",
+  "signature": "void fn_00407830(void* self)",
+  "summary": "Passes the field at self+0x20 to USER32!GetDC, then forwards the returned HDC to MFC80 ord_2367.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:50:00Z"
+}
