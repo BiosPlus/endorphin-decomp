@@ -5664,3 +5664,33 @@ void* fn_00537C10(void* self) {
     return target(child);
 }
 } // namespace lift_00537C10
+
+// [0x00537C30] CompoundRenderable::vfunc_8 (17 bytes)
+namespace lift_00537C30 {
+// @name CompoundRenderable::forwardSlot8ToField14
+// @class CompoundRenderable
+// @summary Loads this->field_0x14; if null returns 0 (ret 4 pops one stack arg), otherwise tail-calls vtable slot 8 (+0x20) of that object with the same this and stack argument.
+// @field CompoundRenderable +0x14 void* field_0x14
+namespace lift_00537C30 {
+
+// Slot 8 of the subobject's vtable, invoked with the original stack argument.
+using SlotFn = uint32_t(__fastcall*)(void* self, void* edx_unused, uint32_t arg0);
+
+uint32_t __fastcall fn_00537C30(void* self, void* edx_unused, uint32_t arg0) {
+    (void)edx_unused;
+    // mov ecx, [ecx + 0x14]  ; ecx = self->field_0x14
+    void* sub = lift_field<void*>(self, 0x14);
+    // test ecx, ecx / je ret4 ; null -> return (callee-cleans one stack arg)
+    if (sub == nullptr) {
+        return 0;
+    }
+    // mov eax, [ecx]         ; eax = sub->vtable
+    void** vtable = *reinterpret_cast<void***>(sub);
+    // mov eax, [eax + 0x20]  ; slot 8
+    // jmp eax                ; tail-jump, this still in ecx, stack arg untouched
+    SlotFn target = reinterpret_cast<SlotFn>(vtable[0x20 / sizeof(void*)]);
+    return target(sub, nullptr, arg0);
+}
+
+} // namespace lift_00537C30
+} // namespace lift_00537C30

@@ -11609,6 +11609,13 @@
     "summary": "Forwards to vtable slot 19 (byte offset 0x4C) of the object at +0x14, passing that object as this; returns 0 if the pointer is null.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00537C30": {
+    "name": "CompoundRenderable::forwardSlot8ToField14",
+    "class": "CompoundRenderable",
+    "signature": "uint32_t __fastcall fn_00537C30(void* self, void* edx_unused, uint32_t arg0)",
+    "summary": "Loads this-\u003efield_0x14; if null returns 0 (ret 4 pops one stack arg), otherwise tail-calls vtable slot 8 (+0x20) of that object with the same this and stack argument.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00537E20": {
     "name": "CompoundRenderable::vfunc_0",
     "class": "CompoundRenderable",
