@@ -115,17 +115,6 @@ double fn_006D2700(const void* self, const void* other) {
 }
 } // namespace lift_006D2700
 
-// [0x006D6AF0]
-namespace lift_006D6AF0 {
-// @name Unknown::SetByteAtIndex0x1B8
-// @class Unknown
-// @summary Stores one byte into the byte array at this+0x1B8, indexed by the first stack argument.
-// @field Unknown +0x1B8 BYTE field_0x1B8[] (indexed by arg index; byte store target)
-void fn_006D6AF0(void* self, DWORD index, BYTE value) {
-    lift_field<BYTE>(self, static_cast<ptrdiff_t>(0x1B8) + static_cast<ptrdiff_t>(index)) = value;
-}
-} // namespace lift_006D6AF0
-
 // [0x006D2390] sub_006D2390 (32 bytes)
 namespace lift_006D2390 {
 extern void ext_007873F0(void* self, uint32_t arg1);
@@ -168,3 +157,14 @@ void fn_006D7380(void* self) {
     holder->field_0x04 = nullptr;
 }
 } // namespace lift_006D7380
+
+// [0x006D6AF0]
+namespace lift_006D6AF0 {
+// @name Unknown::SetByteAtIndex0x1B8
+// @class Unknown
+// @summary Stores one byte into the byte array at this+0x1B8, indexed by the first stack argument.
+// @field Unknown +0x1B8 BYTE field_0x1B8[] (indexed by arg index; byte store target)
+void fn_006D6AF0(void* self, DWORD index, BYTE value) {
+    lift_field<BYTE>(self, static_cast<ptrdiff_t>(0x1B8) + static_cast<ptrdiff_t>(index)) = value;
+}
+} // namespace lift_006D6AF0
