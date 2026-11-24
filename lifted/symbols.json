@@ -40304,6 +40304,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006F00E0 (Unknown::forwardToSubobject2200).",
     "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
   },
+  "0x006F08A0": {
+    "name": "Unknown::forwardArgsToSubobjectAt3278",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_006F08A0(void* self, int edx_unused, uint32_t arg1, void* arg2)",
+    "summary": "Passes arg1/arg2 plus the callback address 0x006F8320 and a zero to the subobject at self+0x3278 via ext_00711D40, then calls ext_00711A70 with 1 on the same subobject.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F08E0": {
     "name": "Unknown::forwardArgsToSubobjectAt3300",
     "class": "Unknown",
