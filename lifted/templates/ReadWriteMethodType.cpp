@@ -8539,3 +8539,24 @@ void __thiscall fn_0046E4A0(void* /*self*/, void* arg0) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AD831C));
 }
 } // namespace lift_0046E4A0
+
+// [0x0049C160] ExprParser::ReadWriteMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::State::setName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_0049C160 {
+// @name ExprParser::ReadWriteMethodType<NMData::State>::vfunc_40 (setName accessor setup)
+// @class ExprParser::ReadWriteMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::State::setName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Lazily constructs the static State::setName ReadWriteMethodType object (once, guarded by bit 0 of mem_00ADD7F8) and publishes its address into the out-object's +0x04 slot.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+
+extern void ext_0067A670(void* self, uint32_t flag);
+extern uint32_t mem_00ADD7F8; // one-time initialization guard word (bit 0)
+extern uint32_t mem_00ADD7F4; // static object storage; first dword becomes its vtable VA
+
+void fn_0049C160(void* out) {
+    if ((mem_00ADD7F8 & 1u) == 0u) {
+        mem_00ADD7F8 |= 1u;
+        ext_0067A670(static_cast<void*>(&mem_00ADD7F4), 0u);
+        mem_00ADD7F4 = 0x009401D4u;
+    }
+    lift_field<uint32_t>(out, 4) = 0x00ADD7F4u;
+}
+} // namespace lift_0049C160

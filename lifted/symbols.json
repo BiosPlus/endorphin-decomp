@@ -8688,6 +8688,13 @@
     "summary": "Adds the int32 returned by ctx's child virtual slot 2 into *value_ptr (*value_ptr += ctx-\u003efield_0x04-\u003evfunc_2(ctx)).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0049C160": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::State\u003e::vfunc_40 (setName accessor setup)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::State::setName(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "extern uint32_t mem_00ADD7F8; // one-time initialization guard word (bit 0) extern uint32_t mem_00ADD7F4; // static object storage; first dword becomes its vtable VA void fn_0049C160(void* out)",
+    "summary": "Lazily constructs the static State::setName ReadWriteMethodType object (once, guarded by bit 0 of mem_00ADD7F8) and publishes its address into the out-object's +0x04 slot.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x0049C690": {
     "name": "ExprParser::ReadMethodType\u003cNMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0\u003e",
