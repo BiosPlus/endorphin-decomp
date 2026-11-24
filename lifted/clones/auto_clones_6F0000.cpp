@@ -2398,3 +2398,30 @@ void fn_006F1EA0(void* self, uint32_t arg1, uint32_t arg2) {
 }
 } // namespace lift_006F1020
 } // namespace lift_006F1EA0
+
+// [0x006F8760]
+namespace lift_006F8760 {
+// @name initHugeVectorGlobals
+// @summary Initializes three 64-bit globals (6 dwords) from MSVCR80!_HUGE
+
+
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5E268;
+extern uint32_t mem_00B5E26C;
+extern uint32_t mem_00B5E270;
+extern uint32_t mem_00B5E274;
+extern uint32_t mem_00B5E278;
+extern uint32_t mem_00B5E27C;
+
+void sub_006F8760() {
+    uint32_t* huge_ptr = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    uint32_t lo = huge_ptr[0];
+    uint32_t hi = huge_ptr[1];
+    mem_00B5E268 = lo;
+    mem_00B5E26C = hi;
+    mem_00B5E270 = lo;
+    mem_00B5E274 = hi;
+    mem_00B5E278 = lo;
+    mem_00B5E27C = hi;
+}
+} // namespace lift_006F8760
