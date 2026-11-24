@@ -708,3 +708,60 @@ extern float __fastcall fn_006C9DC0(void* self, int edx_unused, int32_t idx) {
 }
 } // namespace lift_006C9DC0
 } // namespace lift_006C9DC0
+
+// [0x006C3360]
+namespace lift_006C3360 {
+// @name sub_006C3360
+// @class Unknown
+// @summary Sets a 32-bit field at offset 0x1f04 in an indexed 0x1f0-byte entry of the subobject at this+0xf0
+// @field Unknown +0xf0 uint32_t field_0xf0
+void __thiscall sub_006C3360(void* self, uint32_t index, uint32_t value) {
+    uint8_t* base = *reinterpret_cast<uint8_t**>(reinterpret_cast<uint8_t*>(self) + 0xf0);
+    uint32_t offset = index * 0x1f0u + 0x1f04u;
+    *reinterpret_cast<uint32_t*>(base + offset) = value;
+}
+} // namespace lift_006C3360
+
+// [0x006C31B0]
+namespace lift_006C31B0 {
+uint32_t mem_r32(uint32_t);
+
+// @name getTypedChildIfType8
+// @summary Returns field_0x158 if non-null and its vtable[0]() returns 8, otherwise 0.
+// @field Unknown +0x158 uint32_t field_0x158
+uint32_t __thiscall sub_006C31B0(uint32_t self) {
+    uint32_t obj = mem_r32(self + 0x158);
+    if (obj != 0) {
+        uint32_t vtbl = mem_r32(obj);
+        uint32_t fn = mem_r32(vtbl);
+        using vfn_t = uint32_t(__thiscall*)(uint32_t);
+        if (reinterpret_cast<vfn_t>(fn)(obj) == 8) {
+            return mem_r32(self + 0x158);
+        }
+    }
+    return 0;
+}
+} // namespace lift_006C31B0
+
+// [0x006C31E0]
+namespace lift_006C31E0 {
+// @name sub_006C31E0
+// @summary Returns field_0x158 if non-null and its vtable[0]() returns 9, otherwise 0.
+// @field Unknown +0x158 uint32_t field_0x158
+
+
+uint32_t sub_006C31E0(uint32_t ecx) {
+    uint32_t obj = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(ecx + 0x158));
+    if (obj == 0) {
+        return 0;
+    }
+    uint32_t vtable = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(obj));
+    uint32_t fn = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(vtable));
+    using VFn0 = uint32_t(*)(uint32_t);
+    uint32_t res = reinterpret_cast<VFn0>(static_cast<uintptr_t>(fn))(obj);
+    if (res != 9) {
+        return 0;
+    }
+    return *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(ecx + 0x158));
+}
+} // namespace lift_006C31E0

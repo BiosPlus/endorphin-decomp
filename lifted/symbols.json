@@ -38533,6 +38533,18 @@
     "summary": "Returns field_0x158 if non-null and its vtable[0]() returns 6, else 0",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C31B0": {
+    "name": "getTypedChildIfType8",
+    "signature": "uint32_t __thiscall sub_006C31B0(uint32_t self)",
+    "summary": "Returns field_0x158 if non-null and its vtable[0]() returns 8, otherwise 0.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
+  "0x006C31E0": {
+    "name": "sub_006C31E0",
+    "signature": "uint32_t sub_006C31E0(uint32_t ecx)",
+    "summary": "Returns field_0x158 if non-null and its vtable[0]() returns 9, otherwise 0.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C3360": {
     "name": "sub_006C3360",
     "class": "Unknown",
