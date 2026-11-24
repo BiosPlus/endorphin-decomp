@@ -1,0 +1,22 @@
+{
+  "va": "0x004C5BD0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, float, {public: void __thiscall NMData::ForceEventData::setRelativeAcceleration(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "GetReadWriteMethodType_ForceEventData_RelativeAcceleration",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::ForceEventData, float, getRelativeAcceleration, float, setRelativeAcceleration\u003e",
+  "signature": "void GetReadWriteMethodType_ForceEventData_RelativeAcceleration(void* out)",
+  "summary": "One-time lazy init of the static ForceEventData relativeAcceleration accessor object; stores its address into the caller-supplied out pointer at +4.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:05:14Z"
+}

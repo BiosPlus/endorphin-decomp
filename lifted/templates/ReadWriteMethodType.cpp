@@ -9537,3 +9537,25 @@ void* fn_004C1040(void* out) {
     return out;
 }
 } // namespace lift_004C1040
+
+// [0x004C5BD0]
+namespace lift_004C5BD0 {
+extern void ext_0067A670(int self, int arg);
+extern int mem_00AE3704;
+extern int mem_00AE3700;
+
+// @name GetReadWriteMethodType_ForceEventData_RelativeAcceleration
+// @class ExprParser::ReadWriteMethodType<NMData::ForceEventData, float, getRelativeAcceleration, float, setRelativeAcceleration>
+// @summary One-time lazy init of the static ForceEventData relativeAcceleration accessor object; stores its address into the caller-supplied out pointer at +4.
+// @field ValuePtrType +0x04 void* field_0x04
+void GetReadWriteMethodType_ForceEventData_RelativeAcceleration(void* out) {
+    if ((mem_00AE3704 & 1) == 0) {
+        mem_00AE3704 |= 1;
+        ext_0067A670(0x00AE3700, 0);
+        mem_00AE3700 = 0x009456A4;
+        lift_field<int>(out, 4) = 0x00AE3700;
+    } else {
+        lift_field<int>(out, 4) = 0x00AE3700;
+    }
+}
+} // namespace lift_004C5BD0
