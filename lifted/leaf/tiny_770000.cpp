@@ -76,3 +76,22 @@ extern "C" void __fastcall fn_0077FA20(void* self) {
 extern "C" int32_t __cdecl fn_0077FE40(void) {
     return 0xB1;
 }
+
+// [0x0077FAB0] sub_0077FAB0 (16 bytes)
+namespace lift_0077FAB0 {
+// @name Unknown::zeroFourDwords
+// @class Unknown
+// @summary Zeroes four consecutive 32-bit fields (offsets 0x00, 0x04, 0x08, 0x0C) of the object and returns it.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+void* fn_0077FAB0(void* self) {
+    auto* p = static_cast<uint32_t*>(self);
+    p[0] = 0; // +0x00
+    p[2] = 0; // +0x08
+    p[1] = 0; // +0x04
+    p[3] = 0; // +0x0C
+    return self;
+}
+} // namespace lift_0077FAB0

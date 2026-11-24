@@ -36734,6 +36734,13 @@
     "summary": "Stores address of mem_00996D48 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
   },
+  "0x0077FAB0": {
+    "name": "Unknown::zeroFourDwords",
+    "class": "Unknown",
+    "signature": "void* fn_0077FAB0(void* self)",
+    "summary": "Zeroes four consecutive 32-bit fields (offsets 0x00, 0x04, 0x08, 0x0C) of the object and returns it.",
+    "lifted_path": "lifted/leaf/tiny_770000.cpp"
+  },
   "0x0077FE40": {
     "name": "sub_0077FE40",
     "signature": "extern \"C\" int32_t __cdecl fn_0077FE40(void)",
