@@ -35,3 +35,18 @@ void sub_004DDE00() {
     *reinterpret_cast<uint8_t*>(&mem_00A85D54) = 0;
 }
 } // namespace lift_004DDE00
+
+// [0x004DE160]
+namespace lift_004DE160 {
+// @name sub_004DE160
+// @summary Returns (this->field_0x15c - this->field_0x9a0) + 1 as a 32-bit signed value.
+// @field self +0x15C int32_t field_0x15c
+// @field self +0x9A0 int32_t field_0x9a0
+
+int32_t sub_004DE160(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    int32_t a = *reinterpret_cast<int32_t*>(base + 0x15C);
+    int32_t b = *reinterpret_cast<int32_t*>(base + 0x9A0);
+    return (a - b) + 1;
+}
+} // namespace lift_004DE160

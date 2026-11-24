@@ -1,0 +1,27 @@
+{
+  "va": "0x004DE160",
+  "size": 16,
+  "orig_symbol": "sub_004DE160",
+  "src_path": "src/leaf/tiny_4D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4D0000.cpp",
+  "name": "sub_004DE160",
+  "signature": "int32_t sub_004DE160(void* self)",
+  "summary": "Returns (this-\u003efield_0x15c - this-\u003efield_0x9a0) + 1 as a 32-bit signed value.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x15C",
+      "type": "int32_t",
+      "name": "field_0x15c"
+    },
+    {
+      "class": "self",
+      "offset": "+0x9A0",
+      "type": "int32_t",
+      "name": "field_0x9a0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:35:23Z"
+}
