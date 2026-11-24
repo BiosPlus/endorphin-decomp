@@ -1,0 +1,22 @@
+{
+  "va": "0x005355E0",
+  "size": 13,
+  "orig_symbol": "OglRenderer::vfunc_74",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "OglRenderer::vfunc_74",
+  "class": "OglRenderer",
+  "signature": "float fn_005355E0(void* self)",
+  "summary": "Returns float at delegate-\u003efield_0x64-\u003efield_0xBC (chained pointer read, float result).",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "delegate_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:20:27Z"
+}

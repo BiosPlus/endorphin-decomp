@@ -4994,3 +4994,17 @@ float fn_005355C0(void* self) {
     return *reinterpret_cast<float*>(p64 + 0xB4);
 }
 } // namespace lift_005355C0
+
+// [0x005355E0] OglRenderer::vfunc_74 (13 bytes)
+namespace lift_005355E0 {
+// @name OglRenderer::vfunc_74
+// @class OglRenderer
+// @summary Returns float at delegate->field_0x64->field_0xBC (chained pointer read, float result).
+// @field OglRenderer +0x38 void* delegate_0x38
+// Note: the object at delegate+0x64 and its float at +0xBC are of an unrecovered type; not guessed.
+float fn_005355E0(void* self) {
+    void* delegate = lift_field<void*>(self, 0x38);
+    void* inner = lift_field<void*>(delegate, 0x64);
+    return lift_field<float>(inner, 0xBC);
+}
+} // namespace lift_005355E0

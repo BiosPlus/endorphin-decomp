@@ -10673,6 +10673,13 @@
     "summary": "Returns the float at offset 0xB4 of the object referenced by this-\u003e+0x38 -\u003e +0x64 (chained pointer read).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005355E0": {
+    "name": "OglRenderer::vfunc_74",
+    "class": "OglRenderer",
+    "signature": "float fn_005355E0(void* self)",
+    "summary": "Returns float at delegate-\u003efield_0x64-\u003efield_0xBC (chained pointer read, float result).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00535600": {
     "name": "OglRenderer::vfunc_76",
     "class": "OglRenderer",
