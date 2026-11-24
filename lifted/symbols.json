@@ -42548,6 +42548,13 @@
     "summary": "Returns the \"World Rigid\" (0) or \"Body Rigid\" (1) label string; NULL for any other selector.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00782D00": {
+    "name": "sub_00782D00 (thiscall: reset object state, store one DWORD argument)",
+    "class": "\u003cunknown\u003e (self pointer in ECX; class not identified)",
+    "signature": "void fn_00782D00(void* self, DWORD arg)",
+    "summary": "Zeroes the dword fields at +0x00/+0x04/+0x08 and byte flags at +0x10/+0x11, stores the stack argument at +0x0C, then returns (ret 4).",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00782D20": {
     "name": "sub_00782D20",
     "signature": "extern \"C\" void fn_00782D20(void)",

@@ -94,3 +94,25 @@ const char* fn_00782CB0(DWORD selector) {
     }
 }
 } // namespace lift_00782CB0
+
+// [0x00782D00] sub_00782D00 (32 bytes)
+namespace lift_00782D00 {
+// @name sub_00782D00 (thiscall: reset object state, store one DWORD argument)
+// @class <unknown> (self pointer in ECX; class not identified)
+// @summary Zeroes the dword fields at +0x00/+0x04/+0x08 and byte flags at +0x10/+0x11, stores the stack argument at +0x0C, then returns (ret 4).
+// @field <unknown> +0x00 DWORD field_0x00
+// @field <unknown> +0x04 DWORD field_0x04
+// @field <unknown> +0x08 DWORD field_0x08
+// @field <unknown> +0x0C DWORD field_0x0C
+// @field <unknown> +0x10 BYTE field_0x10
+// @field <unknown> +0x11 BYTE field_0x11
+void fn_00782D00(void* self, DWORD arg) {
+    BYTE* obj = static_cast<BYTE*>(self);
+    *reinterpret_cast<BYTE*>(obj + 0x11) = 0;
+    *reinterpret_cast<DWORD*>(obj + 0x00) = 0;
+    *reinterpret_cast<DWORD*>(obj + 0x04) = 0;
+    *reinterpret_cast<DWORD*>(obj + 0x08) = 0;
+    *reinterpret_cast<DWORD*>(obj + 0x0C) = arg;
+    *reinterpret_cast<BYTE*>(obj + 0x10) = 0;
+}
+} // namespace lift_00782D00

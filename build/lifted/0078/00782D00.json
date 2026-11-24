@@ -1,0 +1,52 @@
+{
+  "va": "0x00782D00",
+  "size": 32,
+  "orig_symbol": "sub_00782D00",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "sub_00782D00 (thiscall: reset object state, store one DWORD argument)",
+  "class": "\u003cunknown\u003e (self pointer in ECX; class not identified)",
+  "signature": "void fn_00782D00(void* self, DWORD arg)",
+  "summary": "Zeroes the dword fields at +0x00/+0x04/+0x08 and byte flags at +0x10/+0x11, stores the stack argument at +0x0C, then returns (ret 4).",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x10",
+      "type": "BYTE",
+      "name": "field_0x10"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x11",
+      "type": "BYTE",
+      "name": "field_0x11"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:44:49Z"
+}
