@@ -260,3 +260,31 @@ uint32_t sub_00859A20(uint32_t dst_addr, uint32_t src_addr) {
     return dst_addr;
 }
 } // namespace lift_00859A20
+
+// [0x0085BF40]
+namespace lift_0085BF40 {
+// @name findEntryValueByKey
+// @summary Linearly searches an array of 8-byte key-value pairs for a matching 32-bit key and returns its 32-bit value, or 0 if not found.
+// @field Table +0x00 uint32_t count
+// @field Table +0x04 uint32_t entriesPtr
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+uint32_t sub_0085BF40(uint32_t tablePtr, uint32_t key) {
+    uint32_t count = mem_read32(tablePtr + 0x0);
+    if (count == 0) {
+        return 0;
+    }
+
+    uint32_t entriesPtr = mem_read32(tablePtr + 0x4);
+    for (uint32_t i = 0; i < count; ++i) {
+        uint32_t entryAddr = entriesPtr + i * 8;
+        if (mem_read32(entryAddr) == key) {
+            return mem_read32(entryAddr + 0x4);
+        }
+    }
+
+    return 0;
+}
+} // namespace lift_0085BF40

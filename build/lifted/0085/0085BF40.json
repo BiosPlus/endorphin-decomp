@@ -1,0 +1,27 @@
+{
+  "va": "0x0085BF40",
+  "size": 47,
+  "orig_symbol": "sub_0085BF40",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "findEntryValueByKey",
+  "signature": "uint32_t sub_0085BF40(uint32_t tablePtr, uint32_t key)",
+  "summary": "Linearly searches an array of 8-byte key-value pairs for a matching 32-bit key and returns its 32-bit value, or 0 if not found.",
+  "fields": [
+    {
+      "class": "Table",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "count"
+    },
+    {
+      "class": "Table",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "entriesPtr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:17:46Z"
+}
