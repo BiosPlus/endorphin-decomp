@@ -1,0 +1,22 @@
+{
+  "va": "0x006EFCB0",
+  "size": 34,
+  "orig_symbol": "sub_006EFCB0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::ForwardArgsToSubobject1A08",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __thiscall fn_006EFCB0(void* self, uint32_t arg1, void* arg2)",
+  "summary": "Forwards two stack arguments plus two constant data words to the callee at 0x00711D40, using the subobject at this+0x1A08 as its `this`. Thiscall, callee cleans 8 bytes (ret 8).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1A08",
+      "type": "void* field_0x1A08 (embedded subobject; address only, passed as `this` to",
+      "name": "0x00711D40)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:13:54Z"
+}
