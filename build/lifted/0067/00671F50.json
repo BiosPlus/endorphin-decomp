@@ -1,0 +1,21 @@
+{
+  "va": "0x00671F50",
+  "size": 45,
+  "orig_symbol": "sub_00671F50",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "compareOwnerAndDispatchVirtual",
+  "signature": "BOOL __thiscall fn_00671F50(void* self, void* other)",
+  "summary": "If self and other share the same owner pointer at +0x04, call vtable slot 42 on that owner with (self, other); return its result as BOOL, else FALSE.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:07:29Z"
+}

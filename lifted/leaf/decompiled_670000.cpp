@@ -142,3 +142,25 @@ extern bool __thiscall sub_0067AE20(void* self) {
     return result;
 }
 } // namespace lift_0067AE20
+
+// [0x00671F50] sub_00671F50 (45 bytes)
+namespace lift_00671F50 {
+// @name compareOwnerAndDispatchVirtual
+// @summary If self and other share the same owner pointer at +0x04, call vtable slot 42 on that owner with (self, other); return its result as BOOL, else FALSE.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x04 void* field_0x04
+BOOL __thiscall fn_00671F50(void* self, void* other) {
+    void* selfOwner = lift_field<void*>(self, 0x04);
+    void* otherOwner = lift_field<void*>(other, 0x04);
+    if (selfOwner != otherOwner) {
+        return FALSE;
+    }
+
+    // Vtable slot at byte offset 0xA8 => index 42 (pointer-sized slots).
+    void** vtable = *reinterpret_cast<void***>(selfOwner);
+    using VirtualFn = BOOL (*)(void* thisPtr, void* a, void* b);
+    auto fn = reinterpret_cast<VirtualFn>(vtable[0xA8 / sizeof(void*)]);
+    BOOL result = fn(selfOwner, self, other);
+    return result ? TRUE : FALSE;
+}
+} // namespace lift_00671F50
