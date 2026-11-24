@@ -68,9 +68,33 @@
       "offset": "+0x150",
       "type": "uint32_t",
       "name": "field_0x150"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "int32",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA8",
+      "type": "int32",
+      "name": "field_0xA8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB0",
+      "type": "uint8",
+      "name": "field_0xB0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x150",
+      "type": "uint32_t",
+      "name": "field_0x150"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:19:17Z"
+  "lifted_at": "2026-11-24T12:19:33Z"
 }
