@@ -1,0 +1,14 @@
+{
+  "va": "0x00607BD0",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffector, float\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}\u003e",
+  "signature": "void fn_00607BD0(void* out)",
+  "summary": "Lazily constructs a static Effector-related object guarded by a one-time flag, then stores its address into the caller-supplied output's +4 slot.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:56:59Z"
+}

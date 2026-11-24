@@ -7508,3 +7508,25 @@ void fn_0062A1D0(uint32_t* self) {
     self[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B515C4));
 }
 } // namespace lift_0062A1D0
+
+// [0x00607BD0] ExprParser::WriteMethodType<Effector, float, &[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}>::vfunc_40 (122 bytes)
+namespace lift_00607BD0 {
+extern void ext_0067A670(void* self, int arg);
+extern uint8_t mem_00B477E0;
+extern uint32_t mem_00B477DC;
+
+// @name ExprParser::WriteMethodType<Effector, float>::vfunc_40
+// @class ExprParser::WriteMethodType<Effector, float, &[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}>
+// @summary Lazily constructs a static Effector-related object guarded by a one-time flag, then stores its address into the caller-supplied output's +4 slot.
+// @field ExprParser::WriteMethodType<Effector, float, &[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}> +0x04 void* field_0x04
+void fn_00607BD0(void* out) {
+    // One-time initialization guard: bit 0 of mem_00B477E0 marks the object as constructed.
+    if ((mem_00B477E0 & 1) == 0) {
+        mem_00B477E0 |= 1;
+        ext_0067A670(&mem_00B477DC, 0);
+        mem_00B477DC = 0x970c9c;
+    }
+    // Both paths publish the object's address into out->+4.
+    *reinterpret_cast<void**>(static_cast<char*>(out) + 0x04) = &mem_00B477DC;
+}
+} // namespace lift_00607BD0
