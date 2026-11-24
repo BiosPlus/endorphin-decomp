@@ -10,10 +10,10 @@
 // Recovered field layout for PoseTool:
 namespace lifted_layout {
 struct PoseTool_Fields {
-    // +0x88  void*                    field_0x88  (evidence: 0x00535610, 0x00545650, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
-    // +0x9C  uint32_t                 field_0x9c  (evidence: 0x00535610, 0x005451A0, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
-    // +0xA0  void*                    field_0xA0  (evidence: 0x00535610, 0x005455F0, 0x00545B80, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0xA0
-    // +0xA0  void*                    field_0xa0  (evidence: 0x00401730, 0x00401960, 0x00535610, 0x00545600, 0x00545610, 0x00545B80, 0x005A9ED0, 0x005E1350, 0x005FF1C0) // CONFLICT: multiple definitions at +0xA0
-    // +0x350 uint32_t                 field_0x350  (evidence: 0x00535610, 0x005453B0, 0x00545B80)
+    // +0x88  void*                    field_0x88  (evidence: 0x00535610, 0x00535650, 0x00545650, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
+    // +0x9C  uint32_t                 field_0x9c  (evidence: 0x00535610, 0x00535650, 0x005451A0, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
+    // +0xA0  void*                    field_0xA0  (evidence: 0x00535610, 0x00535650, 0x005455F0, 0x00545B80, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0xA0
+    // +0xA0  void*                    field_0xa0  (evidence: 0x00401730, 0x00401960, 0x00535610, 0x00535650, 0x00545600, 0x00545610, 0x00545B80, 0x005A9ED0, 0x005E1350, 0x005FF1C0) // CONFLICT: multiple definitions at +0xA0
+    // +0x350 uint32_t                 field_0x350  (evidence: 0x00535610, 0x00535650, 0x005453B0, 0x00545B80)
 };
 } // namespace lifted_layout

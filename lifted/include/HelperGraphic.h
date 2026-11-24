@@ -10,7 +10,7 @@
 // Recovered field layout for HelperGraphic:
 namespace lifted_layout {
 struct HelperGraphic_Fields {
-    // +0x4   void*                    vfptr_TransformInterface  (evidence: 0x00402150, 0x00535610, 0x00545B80) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    vptr_TransformInterface  (evidence: 0x00402130, 0x00535610, 0x00545B80) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    vfptr_TransformInterface  (evidence: 0x00402150, 0x00535610, 0x00535650, 0x00545B80) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    vptr_TransformInterface  (evidence: 0x00402130, 0x00535610, 0x00535650, 0x00545B80) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout

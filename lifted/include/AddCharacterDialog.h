@@ -10,6 +10,6 @@
 // Recovered field layout for AddCharacterDialog:
 namespace lifted_layout {
 struct AddCharacterDialog_Fields {
-    // +0x20  HWND                     field_0x20  (evidence: 0x004010C0, 0x004010D0, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
+    // +0x20  HWND                     field_0x20  (evidence: 0x004010C0, 0x004010D0, 0x00535610, 0x00535650, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
 };
 } // namespace lifted_layout

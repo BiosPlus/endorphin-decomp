@@ -10,7 +10,7 @@
 // Recovered field layout for AcclaimIO:
 namespace lifted_layout {
 struct AcclaimIO_Fields {
-    // +0x0   void**                   vtable  (evidence: 0x00535610, 0x00545B80, 0x0055BBD0, 0x0055BE30, 0x00584660, 0x00584690, 0x005846F0, 0x005A9ED0, 0x005FF1C0)
+    // +0x0   void**                   vtable  (evidence: 0x00535610, 0x00535650, 0x00545B80, 0x0055BBD0, 0x0055BE30, 0x00584660, 0x00584690, 0x005846F0, 0x005A9ED0, 0x005FF1C0)
     // +0x8   uint8_t                  field_0x08  (evidence: 0x00584730)
     // +0x24  uint8_t                  field_0x24  (evidence: 0x00584730)
     // +0x5C  uint8_t                  field_0x5C  (evidence: 0x005847C0)
