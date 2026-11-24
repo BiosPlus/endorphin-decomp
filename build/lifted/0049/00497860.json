@@ -1,0 +1,13 @@
+{
+  "va": "0x00497860",
+  "size": 33,
+  "orig_symbol": "sub_00497860",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "forwardMakeBoolString",
+  "signature": "void* fn_00497860(void* out_str, uint8_t flag)",
+  "summary": "Forwards out_str and flag to makeBoolString (0x0046C460) and returns out_str.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:09:53Z"
+}

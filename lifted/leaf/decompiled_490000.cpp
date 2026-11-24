@@ -38,6 +38,7 @@ void __thiscall fn_00495A20(uint8_t* self) {
 }
 } // namespace lift_0051BF10
 } // namespace lift_00495A20
+#include <cstdint>
 
 // [0x004940D0] sub_004940D0 (8 bytes)
 namespace lift_004940D0 {
@@ -283,3 +284,15 @@ DWORD* __thiscall fn_00491980(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_00491980
+
+// [0x00497860] sub_00497860 (33 bytes)
+namespace lift_00497860 {
+extern void ext_0046C460(void* self, uint8_t flag);
+
+// @name forwardMakeBoolString
+// @summary Forwards out_str and flag to makeBoolString (0x0046C460) and returns out_str.
+void* fn_00497860(void* out_str, uint8_t flag) {
+    ext_0046C460(out_str, flag);
+    return out_str;
+}
+} // namespace lift_00497860

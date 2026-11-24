@@ -7610,6 +7610,12 @@
     "summary": "Compares a dereferenced string pointer with the string value extracted from arg2.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x00497860": {
+    "name": "forwardMakeBoolString",
+    "signature": "void* fn_00497860(void* out_str, uint8_t flag)",
+    "summary": "Forwards out_str and flag to makeBoolString (0x0046C460) and returns out_str.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00497900": {
     "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_0",
     "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",
