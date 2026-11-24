@@ -1,0 +1,22 @@
+{
+  "va": "0x006F7930",
+  "size": 32,
+  "orig_symbol": "sub_006F7930",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::QueryVirtualSlot8C",
+  "class": "Unknown",
+  "signature": "uint32_t fn_006F7930(void* self, uint32_t\u0026 value)",
+  "summary": "Calls virtual slot 0x8C/4 (35) on this with (\u0026value, 0, 0, 0) and returns its result; value is the caller's by-value stack argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "__vfptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:36:59Z"
+}

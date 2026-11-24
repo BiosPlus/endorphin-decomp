@@ -67,3 +67,20 @@ void fn_006F9DC0(void* ecx, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint8_t
     lift_field<uint8_t>(ecx, 0x0C) = arg3;
 }
 } // namespace lift_006F9DC0
+
+// [0x006F7930] sub_006F7930 (32 bytes)
+namespace lift_006F7930 {
+// @name Unknown::QueryVirtualSlot8C
+// @class Unknown
+// @summary Calls virtual slot 0x8C/4 (35) on this with (&value, 0, 0, 0) and returns its result; value is the caller's by-value stack argument.
+// @field Unknown +0x00 void* __vfptr
+uint32_t fn_006F7930(void* self, uint32_t& value) {
+    using VirtualSlot35 = uint32_t(__thiscall*)(void* self, uint32_t* arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4);
+
+    // Slot at byte offset 0x8C in the vtable (32-bit layout: index 35).
+    void* vtable = *reinterpret_cast<void**>(self);
+    void* target = *reinterpret_cast<void**>(static_cast<uint8_t*>(vtable) + 0x8C);
+    auto slot = reinterpret_cast<VirtualSlot35>(target);
+    return slot(self, &value, 0u, 0u, 0u);
+}
+} // namespace lift_006F7930
