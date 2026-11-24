@@ -4,19 +4,73 @@
   "orig_symbol": "sub_00443700",
   "src_path": "src/leaf/decompiled_440000.cpp",
   "lifted_path": "lifted/leaf/decompiled_440000.cpp",
-  "name": "Unknown::InitP3DTaggedAltVtable",
-  "class": "Unknown",
-  "signature": "void* fn_00443700(void* self, uint32_t arg, uint32_t unused_arg)",
-  "summary": "Runs Unknown::InitP3DTagged with the two stack arguments, then overwrites the vtable pointer at +0x00 with the mem_0093279C rdata address; returns self.",
+  "name": "sub_004409D0",
+  "class": "\u003cunknown\u003e",
+  "signature": "uint32_t fn_004409D0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00497090 (NMData::Transition::vfunc_37).",
   "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x74",
+      "type": "DWORD",
+      "name": "field_0x74"
+    },
+    {
+      "class": "CBase",
+      "offset": "+0x2D0",
+      "type": "void*",
+      "name": "field_0x2D0"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "child"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x69",
+      "type": "uint8_t",
+      "name": "field_0x69"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* vtable (written with",
+      "name": "mem_009326EC)"
+    },
     {
       "class": "Unknown",
       "offset": "+0x0",
       "type": "void*",
       "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:32:30Z"
+  "lifted_at": "2026-11-24T12:32:40Z"
 }
