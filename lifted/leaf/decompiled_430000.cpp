@@ -866,3 +866,20 @@ extern void __stdcall fn_004345E0(void* self) {
     reinterpret_cast<VSlot0>(static_cast<uintptr_t>(slot0))(self, flag);
 }
 } // namespace lift_004345E0
+
+// [0x0043D3B0]
+namespace lift_0043D3B0 {
+// @name fillCStringRange
+// @summary Initializes or assigns a range of 4-byte CString objects from a source value
+
+extern uint32_t mem_009244D4;
+
+void sub_0043D3B0(uint32_t* begin, uint32_t* end, uint32_t value) {
+    using Fn = void(__thiscall*)(uint32_t*, uint32_t);
+    uint32_t* cur = begin;
+    while (cur != end) {
+        reinterpret_cast<Fn>(mem_009244D4)(cur, value);
+        ++cur;
+    }
+}
+} // namespace lift_0043D3B0

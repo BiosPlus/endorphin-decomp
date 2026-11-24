@@ -1,0 +1,13 @@
+{
+  "va": "0x0043D3B0",
+  "size": 39,
+  "orig_symbol": "sub_0043D3B0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "fillCStringRange",
+  "signature": "void sub_0043D3B0(uint32_t* begin, uint32_t* end, uint32_t value)",
+  "summary": "Initializes or assigns a range of 4-byte CString objects from a source value",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:51:05Z"
+}
