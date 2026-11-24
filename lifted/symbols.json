@@ -2402,6 +2402,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00434380": {
+    "name": "Unknown::notifyObjectWithQueryResult",
+    "class": "Unknown",
+    "signature": "inline void* vtableSlot(void* obj, ptrdiff_t slotOffset)",
+    "summary": "Calls obj vtbl[0](1), queries the object at this+0xE0 via vtbl[0x15C] and passes the result to obj vtbl[1].",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004345B0": {
     "name": "CallVtbl0WithField18Flag",
     "class": "Unknown",

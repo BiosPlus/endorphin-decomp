@@ -1,0 +1,22 @@
+{
+  "va": "0x00434380",
+  "size": 49,
+  "orig_symbol": "sub_00434380",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::notifyObjectWithQueryResult",
+  "class": "Unknown",
+  "signature": "inline void* vtableSlot(void* obj, ptrdiff_t slotOffset)",
+  "summary": "Calls obj vtbl[0](1), queries the object at this+0xE0 via vtbl[0x15C] and passes the result to obj vtbl[1].",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xE0",
+      "type": "void*",
+      "name": "field_0xe0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:29:58Z"
+}

@@ -1501,3 +1501,36 @@ uint32_t __thiscall fn_0043CA00(uint32_t this_ptr) {
     return reinterpret_cast<TrackMouseEventFn>(mem_009255E8)(tme);
 }
 } // namespace lift_0043CA00
+
+// [0x00434380] sub_00434380 (49 bytes)
+namespace lift_00434380 {
+// @name Unknown::notifyObjectWithQueryResult
+// @class Unknown
+// @summary Calls obj vtbl[0](1), queries the object at this+0xE0 via vtbl[0x15C] and passes the result to obj vtbl[1].
+// @field Unknown +0xe0 void* field_0xe0
+
+namespace {
+
+using VoidThisFn = void(__thiscall*)(void* self, uint32_t arg);
+using QueryThisFn = uint32_t(__thiscall*)(void* self);
+
+// Reads vtable slot at byte offset `slotOffset` from the object at `obj`.
+inline void* vtableSlot(void* obj, ptrdiff_t slotOffset) {
+    void** vtbl = lift_field<void**>(obj, 0);
+    return vtbl[slotOffset / sizeof(void*)];
+}
+
+} // namespace
+
+void __thiscall fn_00434380(void* self, void* obj) {
+    // obj->vtbl[0](1)
+    reinterpret_cast<VoidThisFn>(vtableSlot(obj, 0x00))(obj, 1);
+
+    // q = self->field_0xe0; r = q->vtbl[0x15C](q)
+    void* target = lift_field<void*>(self, 0xe0);
+    uint32_t result = reinterpret_cast<QueryThisFn>(vtableSlot(target, 0x15C))(target);
+
+    // obj->vtbl[1](result)
+    reinterpret_cast<VoidThisFn>(vtableSlot(obj, 0x04))(obj, result);
+}
+} // namespace lift_00434380
