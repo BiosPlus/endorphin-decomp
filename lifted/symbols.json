@@ -51035,6 +51035,12 @@
     "summary": "Zeroes the 20 DWORD entries (indices 0..19) of the array passed by pointer, highest index first.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086F020": {
+    "name": "CopyDwordBlock20Reverse",
+    "signature": "void fn_0086F020(const DWORD* src, DWORD* dst)",
+    "summary": "Copies 20 DWORDs from src to dst, walking indices 19 down to 0.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086F15B": {
     "name": "sub_0086F15B",
     "signature": "void fn_0086F15B(void)",

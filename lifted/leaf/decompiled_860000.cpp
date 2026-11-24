@@ -289,3 +289,14 @@ extern uint32_t __cdecl fn_0086AF00(const uint32_t* data, uint32_t count) {
     return 1;
 }
 } // namespace lift_0086AF00
+
+// [0x0086F020] sub_0086F020 (48 bytes)
+namespace lift_0086F020 {
+// @name CopyDwordBlock20Reverse
+// @summary Copies 20 DWORDs from src to dst, walking indices 19 down to 0.
+void fn_0086F020(const DWORD* src, DWORD* dst) {
+    for (int i = 19; i >= 0; --i) {
+        dst[i] = src[i];
+    }
+}
+} // namespace lift_0086F020
