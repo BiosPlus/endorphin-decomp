@@ -43861,6 +43861,12 @@
     "summary": "Copies a 32-bit value from the address in arg1 to the address in arg2 (cdecl, no stack cleanup).",
     "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
   },
+  "0x007BDA20": {
+    "name": "sub_007BDA20",
+    "signature": "int sub_007BDA20(std::uint8_t* self)",
+    "summary": "Stores mem_007BDA50 into three pointer slots of the object at +0x1A0, +0x1A8, +0x1B0 and returns 1.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BDC00": {
     "name": "initField1A0And1A8",
     "signature": "uint32_t sub_007BDC00(uint8_t* obj)",

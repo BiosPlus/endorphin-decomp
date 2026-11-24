@@ -135,3 +135,20 @@ uint32_t fn_007B9050(uint16_t key) {
     return static_cast<uint32_t>(node);
 }
 } // namespace lift_007B9050
+
+// [0x007BDA20]
+namespace lift_007BDA20 {
+// @name sub_007BDA20
+// @summary Stores mem_007BDA50 into three pointer slots of the object at +0x1A0, +0x1A8, +0x1B0 and returns 1.
+
+extern std::uint32_t mem_007BDA50;
+
+int sub_007BDA20(std::uint8_t* self) {
+    auto* slots = reinterpret_cast<std::uint32_t*>(self);
+    *reinterpret_cast<std::uint32_t*>(self + 0x1A0) = static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(&mem_007BDA50));
+    *reinterpret_cast<std::uint32_t*>(self + 0x1A8) = static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(&mem_007BDA50));
+    *reinterpret_cast<std::uint32_t*>(self + 0x1B0) = static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(&mem_007BDA50));
+    (void)slots;
+    return 1;
+}
+} // namespace lift_007BDA20
