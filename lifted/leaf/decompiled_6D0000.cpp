@@ -239,3 +239,24 @@ int32_t Unknown_GetValueIfCountPositive(void* self) {
     return 0;
 }
 } // namespace lift_006DC460
+
+// [0x006DE3B0]
+namespace lift_006DE3B0 {
+// @name Unknown::DispatchViaField0x14
+// @class Unknown
+// @summary Loads subobject at +0x14; if its +0x9C word is nonzero tail-calls fn_00712000 with it, else tail-calls fn_006E7460 on the subobject.
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x9C uint32_t field_0x9c
+
+extern uint32_t __fastcall fn_00712000(void* self);
+extern int32_t __fastcall fn_006E7460(void* self);
+
+extern uint32_t __fastcall fn_006DE3B0(void* self) {
+    uint8_t* obj = *reinterpret_cast<uint8_t**>(reinterpret_cast<uint8_t*>(self) + 0x14);
+    uint32_t v = *reinterpret_cast<uint32_t*>(obj + 0x9C);
+    if (v != 0) {
+        return fn_00712000(reinterpret_cast<void*>(static_cast<uintptr_t>(v)));
+    }
+    return static_cast<uint32_t>(fn_006E7460(obj));
+}
+} // namespace lift_006DE3B0

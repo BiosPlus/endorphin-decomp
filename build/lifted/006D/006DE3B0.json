@@ -1,0 +1,28 @@
+{
+  "va": "0x006DE3B0",
+  "size": 32,
+  "orig_symbol": "sub_006DE3B0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::DispatchViaField0x14",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint32_t __fastcall fn_006DE3B0(void* self)",
+  "summary": "Loads subobject at +0x14; if its +0x9C word is nonzero tail-calls fn_00712000 with it, else tail-calls fn_006E7460 on the subobject.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x9C",
+      "type": "uint32_t",
+      "name": "field_0x9c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:35:53Z"
+}
