@@ -11505,6 +11505,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00544F30 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005455F0": {
+    "name": "PoseTool::vfunc_28",
+    "class": "PoseTool",
+    "signature": "void* fn_005455F0(void* self)",
+    "summary": "Forwards the call to virtual slot +0x70 of the object held at PoseTool +0xA0, returning its result.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00545600": {
     "name": "PoseTool::vfunc_29",
     "class": "PoseTool",
