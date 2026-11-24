@@ -20004,6 +20004,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x0058FA60": {
+    "name": "ExprParser::ReadMethodType\u003cTransformNode\u003e::vfunc_0 (TransformNode::getUserRefFrame)",
+    "class": "ExprParser::ReadMethodType\u003cTransformNode, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0\u003e",
+    "signature": "void* fn_0058FA60(void* self, void* unused_arg)",
+    "summary": "Reads the TransformNode from the wrapper, fetches its user reference frame string, passes it to the consumer, discards the temporary, and returns self.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0058FE80": {
     "name": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0\u003e",

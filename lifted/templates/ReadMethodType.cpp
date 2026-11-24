@@ -40931,3 +40931,31 @@ bool fn_005B37A0(void* self) {
     return false;
 }
 } // namespace lift_005B37A0
+
+// [0x0058FA60] ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_0 (113 bytes)
+namespace lift_0058FA60 {
+// Opaque callees (no portable prototype recovered yet).
+// ext_0058F770: builds the TransformNode::getUserRefFrame() string into the caller-provided buffer; returns that buffer.
+extern void* ext_0058F770(void* out, void* node);
+// ext_006720E0: consumes the produced string for the wrapper object (thiscall, ecx = self).
+extern void ext_006720E0(void* self, void* value);
+
+// @name ExprParser::ReadMethodType<TransformNode>::vfunc_0 (TransformNode::getUserRefFrame)
+// @class ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>
+// @summary Reads the TransformNode from the wrapper, fetches its user reference frame string, passes it to the consumer, discards the temporary, and returns self.
+// @field ExprParser::ReadMethodType<TransformNode> +0x00 void* field_0x00
+void* fn_0058FA60(void* self, void* unused_arg) {
+    void* node = lift_field<void*>(self, 0);
+
+    // Temporary std::string storage (MSVC std::string is 28 bytes on this target; 32 is a safe upper bound).
+    alignas(8) unsigned char frame_str[32] = {};
+
+    void* result = ext_0058F770(frame_str, node);
+    ext_006720E0(self, result);
+
+    // The original destroys the temporary std::string here (via the MSVCP80 dtor import);
+    // no portable equivalent is required since the buffer is trivially reclaimed.
+    (void)unused_arg;
+    return self;
+}
+} // namespace lift_0058FA60
