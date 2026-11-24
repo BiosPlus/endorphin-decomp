@@ -1,0 +1,22 @@
+{
+  "va": "0x00464780",
+  "size": 22,
+  "orig_symbol": "sub_00464780",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "SetField0xB4ThenForwardResult",
+  "class": "Unknown",
+  "signature": "void fn_00464780(void* self)",
+  "summary": "Stores 8 into self+0xB4, then tail-forwards the int32 result of ext_004658C0 (as ECX) to ext_00467380.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xB4",
+      "type": "int32_t",
+      "name": "field_0xB4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:28:24Z"
+}

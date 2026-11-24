@@ -3699,6 +3699,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0042FB40 (thunkGetterVirtualSlot54).",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x00464780": {
+    "name": "SetField0xB4ThenForwardResult",
+    "class": "Unknown",
+    "signature": "void fn_00464780(void* self)",
+    "summary": "Stores 8 into self+0xB4, then tail-forwards the int32 result of ext_004658C0 (as ECX) to ext_00467380.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x004647C0": {
     "name": "sub_004647C0",
     "signature": "extern \"C\" void fn_004647C0(void)",

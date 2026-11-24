@@ -260,3 +260,22 @@ uint8_t fn_00468770(void* self) {
     return 0;
 }
 } // namespace lift_00468770
+
+// [0x00464780] sub_00464780 (22 bytes)
+namespace lift_00464780 {
+// Known callee 0x004658C0: sub_004658C0 (Returns global int32 value from mem_00AD6C80.)
+extern int32_t ext_004658C0(void);
+// Known callee 0x00467380: sub_00467380 (Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).)
+// Received in ECX by the original tail jump.
+extern void ext_00467380(uint32_t ecx);
+
+// @name SetField0xB4ThenForwardResult
+// @class Unknown
+// @summary Stores 8 into self+0xB4, then tail-forwards the int32 result of ext_004658C0 (as ECX) to ext_00467380.
+// @field Unknown +0xB4 int32_t field_0xB4
+void fn_00464780(void* self) {
+    lift_field<int32_t>(self, 0xB4) = 8;
+    const int32_t result = ext_004658C0();
+    ext_00467380(static_cast<uint32_t>(result));
+}
+} // namespace lift_00464780
