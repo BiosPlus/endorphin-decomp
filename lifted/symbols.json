@@ -37097,6 +37097,13 @@
     "summary": "Initializes a 16-byte object: stores arg2 at +0x00, zeroes +0x04 and +0x08, stores arg1 at +0x0C (thiscall, ret 8).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E6AD0": {
+    "name": "Unknown::StoreSlot31ResultIfPresent",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __stdcall fn_006E6AD0(void* self, double* out)",
+    "summary": "If the object pointer at self+0 is non-null, calls its vtable slot 31 (+0x7C) and stores the returned double to *out (stack arg).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E7390": {
     "name": "sub_006E7390",
     "signature": "void* fn_006E7390(void* self, uint32_t arg1)",

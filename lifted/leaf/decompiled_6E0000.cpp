@@ -109,3 +109,26 @@ void fn_006EF810(void* self, uint32_t value) {
     field = (field & ~7u) | value;
 }
 } // namespace lift_006EF810
+
+// [0x006E6AD0] sub_006E6AD0 (32 bytes)
+namespace lift_006E6AD0 {
+// @name Unknown::StoreSlot31ResultIfPresent
+// @class Unknown
+// @summary If the object pointer at self+0 is non-null, calls its vtable slot 31 (+0x7C) and stores the returned double to *out (stack arg).
+// @field Unknown +0x00 void* field_0x00
+
+// Thiscall virtual method returning a double (result left in st0 by the original).
+typedef double(__thiscall* Slot31Fn)(void* self);
+
+// ecx = self (pointer whose first dword is an object pointer), [esp+4] = double* out.
+extern void __stdcall fn_006E6AD0(void* self, double* out) {
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj == nullptr) {
+        return;
+    }
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    Slot31Fn slot = reinterpret_cast<Slot31Fn>(vtbl[31]); // +0x7C / 4 = slot 31
+    const double value = slot(obj);
+    *out = value;
+}
+} // namespace lift_006E6AD0
