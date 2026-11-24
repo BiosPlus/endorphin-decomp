@@ -33248,6 +33248,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x54 and tail-calls sub_006C9A40.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D2064": {
+    "name": "DataTable_006D2064",
+    "signature": "void fn_006D2064(void* self)",
+    "summary": "20-byte constant table (00, ten 04s, 01, 04, 02, 04, 04, 04, 03, 8B, FF); the trailing 8B FF is the start of a mov edi,edi prologue, so this is data, not code",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D208C": {
     "name": "DataTable_006D208C",
     "signature": "void fn_006D208C(void* self)",
