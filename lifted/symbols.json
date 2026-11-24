@@ -18189,6 +18189,13 @@
     "summary": "Pure jump thunk forwarding to sub_005FF040.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x005FF1C0": {
+    "name": "MetaBodySensor::vfunc_25",
+    "class": "MetaBodySensor",
+    "signature": "extern \"C\" int __thiscall MetaBodySensor_vfunc_25(void* self, int value)",
+    "summary": "Returns 1 if the sensor's stored value at +0x28 equals the single stack argument, else 0 (thiscall, ret 4).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x005FF1E0": {
     "name": "Sensors::SensorAbsoluteShoulderAlpha::vfunc_14",
     "class": "Sensors::SensorAbsoluteShoulderAlpha",

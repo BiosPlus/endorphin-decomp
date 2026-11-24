@@ -5453,3 +5453,16 @@ int fn_0059CBA0(void* self) {
     return target(self, mem_00B40640);
 }
 } // namespace lift_0059CBA0
+
+// [0x005FF1C0]
+namespace lift_005FF1C0 {
+// @name MetaBodySensor::vfunc_25
+// @class MetaBodySensor
+// @summary Returns 1 if the sensor's stored value at +0x28 equals the single stack argument, else 0 (thiscall, ret 4).
+// @field MetaBodySensor +0x28 int32_t field_0x28
+
+extern int __thiscall MetaBodySensor_vfunc_25(void* self, int value) {
+    int stored = *reinterpret_cast<int*>(reinterpret_cast<uint8_t*>(self) + 0x28);
+    return (stored == value) ? 1 : 0;
+}
+} // namespace lift_005FF1C0
