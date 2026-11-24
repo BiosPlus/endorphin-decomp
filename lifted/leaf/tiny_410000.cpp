@@ -405,3 +405,17 @@ uint32_t fn_0041C730(void* self) {
 }
 } // namespace lift_0041C6D0
 } // namespace lift_0041C730
+
+// [0x00414510] std::string operator+ forwarder (22 bytes)
+namespace lift_00414510 {
+// Import slot 0x00924EF4: MSVCP80 std::operator+(const std::basic_string<char>&, const std::basic_string<char>&)
+// Called via indirect `call dword ptr [0x924ef4]` with two cdecl stack arguments.
+extern uint32_t (*mem_00924EF4)(uint32_t lhs, uint32_t rhs);
+
+// @name std::operator+ (basic_string<char> forwarder)
+// @summary Forwards its two string-operand arguments in order to MSVCP80 std::operator+ and returns the callee's result.
+// @field (none) — no struct fields accessed; operands are opaque handles passed through.
+uint32_t fn_00414510(uint32_t lhs, uint32_t rhs) {
+    return mem_00924EF4(lhs, rhs);
+}
+} // namespace lift_00414510

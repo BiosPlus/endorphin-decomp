@@ -1,0 +1,14 @@
+{
+  "va": "0x00414510",
+  "size": 22,
+  "orig_symbol": "sub_00414510",
+  "src_path": "src/leaf/tiny_410000.cpp",
+  "lifted_path": "lifted/leaf/tiny_410000.cpp",
+  "name": "std::operator+ (basic_string\u003cchar\u003e forwarder)",
+  "class": "std",
+  "signature": "uint32_t fn_00414510(uint32_t lhs, uint32_t rhs)",
+  "summary": "Forwards its two string-operand arguments in order to MSVCP80 std::operator+ and returns the callee's result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:27:57Z"
+}
