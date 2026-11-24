@@ -39,7 +39,9 @@ struct UnknownClass_Fields {
     // +0x24  uint32_t                 field_0x24  (evidence: 0x00798840)
     // +0x28  int32_t                  field_0x28  (evidence: 0x0078C410)
     // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0078C410)
-    // +0x30  std::string              field_0x30  (evidence: 0x004970A0, 0x0049AD40)
+    // +0x30  std::string              field_0x30  (evidence: 0x004970A0, 0x0049AD40) // CONFLICT: multiple definitions at +0x30
+    // +0x30  uint32_t                 field_0x30  (evidence: 0x007BD640) // CONFLICT: multiple definitions at +0x30
+    // +0x34  uint32_t                 field_0x34  (evidence: 0x007BD640)
     // +0x3C  void*                    field_0x3c  (evidence: 0x00413C40)
     // +0x40  uint16_t                 field_0x40  (evidence: 0x00798840)
     // +0x44  CRITICAL_SECTION         field_0x44  (evidence: 0x00413C40)
@@ -57,6 +59,9 @@ struct UnknownClass_Fields {
     // +0x158 uint32_t                 field_0x158  (evidence: 0x006C3070)
     // +0x15C int32_t                  field_0x15c  (evidence: 0x004C1AC0)
     // +0x160 int32_t                  field_0x160  (evidence: 0x004C1AC0)
+    // +0x1CC void*                    field_0x1cc  (evidence: 0x007BD640)
+    // +0x1D8 uint32_t                 field_0x1d8  (evidence: 0x007BD640)
+    // +0x1E4 uint32_t                 field_0x1e4  (evidence: 0x007BD640)
     // +0x3B4 void*                    field_0x3B4  (evidence: 0x004805A0)
     // +0x3B8 uint32_t                 field_0x3B8  (evidence: 0x004805A0)
     // +0x478 std::string              field_0x478  (evidence: 0x005650F0)

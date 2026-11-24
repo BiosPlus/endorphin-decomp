@@ -289,3 +289,26 @@ void fn_007B2E20(void* self, void* value) {
     lift_field<void*>(node, 0x10) = value;
 }
 } // namespace lift_007B2E20
+
+// [0x007BD640] sub_007BD640 (48 bytes)
+namespace lift_007BD640 {
+extern int ext_007BFDF0(void* arg);
+
+// @name UnknownClass::copyFieldsToSubobjectAndCheck
+// @class UnknownClass
+// @summary Copies two fields from self into the subobject at self->+0x1cc and returns 1 if ext_007BFDF0 yields 0, else 0.
+// @field UnknownClass +0x1cc void* field_0x1cc
+// @field UnknownClass +0x1d8 uint32_t field_0x1d8
+// @field UnknownClass +0x1e4 uint32_t field_0x1e4
+// @field UnknownClass +0x30 uint32_t field_0x30
+// @field UnknownClass +0x34 uint32_t field_0x34
+int fn_007BD640(void* self) {
+    void* ecx = lift_field<void*>(self, 0x1cc);
+    uint32_t esi = lift_field<uint32_t>(self, 0x1d8);
+    lift_field<uint32_t>(ecx, 0x30) = esi;
+    uint32_t eax = lift_field<uint32_t>(self, 0x1e4);
+    lift_field<uint32_t>(ecx, 0x34) = eax;
+    int r = ext_007BFDF0(reinterpret_cast<uint8_t*>(ecx) + 0x30);
+    return r == 0 ? 1 : 0;
+}
+} // namespace lift_007BD640

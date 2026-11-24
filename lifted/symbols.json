@@ -48542,6 +48542,13 @@
     "summary": "Sets +0x40 to 0x10, +0x42 to 2, and +0x4e to 1 if +0x46 == 0x804c else 3.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BD640": {
+    "name": "UnknownClass::copyFieldsToSubobjectAndCheck",
+    "class": "UnknownClass",
+    "signature": "int fn_007BD640(void* self)",
+    "summary": "Copies two fields from self into the subobject at self-\u003e+0x1cc and returns 1 if ext_007BFDF0 yields 0, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BDA20": {
     "name": "sub_007BDA20",
     "signature": "int sub_007BDA20(BYTE* self)",
