@@ -129,3 +129,15 @@ void sub_007C5FA0(uint32_t src, uint32_t dst) {
     mem_write<float>(dst + 0x8, mem_read<float>(src + 0x148));
 }
 } // namespace lift_007C5FA0
+
+// [0x007C9340] sub_007C9340 (36 bytes)
+namespace lift_007C9340 {
+// @name copyVec3FromIndexedElement
+// @summary Copies three floats at +0x10 of the idx-th 32-byte element of base into out[0..2].
+void fn_007C9340(const void* base, UINT idx, FLOAT* out) {
+    const auto* element = reinterpret_cast<const uint8_t*>(base) + static_cast<size_t>(idx) * 32u;
+    out[0] = lift_field<FLOAT>(element, 0x10);
+    out[1] = lift_field<FLOAT>(element, 0x14);
+    out[2] = lift_field<FLOAT>(element, 0x18);
+}
+} // namespace lift_007C9340

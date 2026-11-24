@@ -1,0 +1,13 @@
+{
+  "va": "0x007C9340",
+  "size": 36,
+  "orig_symbol": "sub_007C9340",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "copyVec3FromIndexedElement",
+  "signature": "void fn_007C9340(const void* base, UINT idx, FLOAT* out)",
+  "summary": "Copies three floats at +0x10 of the idx-th 32-byte element of base into out[0..2].",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:01:18Z"
+}

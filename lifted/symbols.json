@@ -45119,6 +45119,12 @@
     "summary": "Returns the 32-bit entry at index `idx` of the 4-byte array stored at +0x94 in the object.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C9340": {
+    "name": "copyVec3FromIndexedElement",
+    "signature": "void fn_007C9340(const void* base, UINT idx, FLOAT* out)",
+    "summary": "Copies three floats at +0x10 of the idx-th 32-byte element of base into out[0..2].",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C9370": {
     "name": "Unknown::forwardWithSubobject",
     "class": "Unknown",
