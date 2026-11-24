@@ -19817,6 +19817,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x24 and tail-calls sub_005B2130.",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
   },
+  "0x005CE8D0": {
+    "name": "Forwarder::ForwardToSubobjectAC",
+    "class": "Unknown",
+    "signature": "uint32_t __thiscall fn_005CE8D0(void* self, uint32_t arg1)",
+    "summary": "Forwards its stack argument to sub_00648370 with the object at +0xac as \"this\", passing the original this pointer and the argument.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005CE8F0": {
     "name": "sub_005CE8F0",
     "class": "Unknown",

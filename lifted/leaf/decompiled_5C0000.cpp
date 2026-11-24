@@ -125,3 +125,19 @@ void __thiscall fn_005CFC80(void* self) {
     }
 }
 } // namespace lift_005CFC80
+
+// [0x005CE8D0] sub_005CE8D0 (20 bytes)
+namespace lift_005CE8D0 {
+// Known callee 0x00648370: sub_00648370 (Calls ext_0065A8C0 on field_0xa4 and forwards two arguments to ext_00647AE0 on this.)
+uint32_t __thiscall ext_00648370(void* self, uint32_t arg1, uint32_t arg2);
+
+// @name Forwarder::ForwardToSubobjectAC
+// @class Unknown
+// @summary Forwards its stack argument to sub_00648370 with the object at +0xac as "this", passing the original this pointer and the argument.
+// @field Unknown +0xac void* field_0xac
+uint32_t __thiscall fn_005CE8D0(void* self, uint32_t arg1) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void* sub = *reinterpret_cast<void**>(base + 0xac);
+    return ext_00648370(sub, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)), arg1);
+}
+} // namespace lift_005CE8D0
