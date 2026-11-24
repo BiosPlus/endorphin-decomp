@@ -314,3 +314,37 @@ void fn_00486BB0(void* self, const std::string& src) {
     ext_004C0340();
 }
 } // namespace lift_00486BB0
+
+// [0x00480560] sub_00480560 (46 bytes)
+namespace lift_00480560 {
+// Indirect virtual call through the object stored at self+0x10 (vtable slot 3, offset 0x0C).
+// Returned pointer addresses a container whose begin/end pointers live at +4 and +8.
+
+// @name descriptiveName: isInnerContainerEmptyViaVirtual
+// @summary Calls vtable slot 3 of the object at self+0x10 and returns true if the returned container's begin is null or holds fewer than 4 bytes of elements (size 0).
+// @field Unknown +0x10 uint32_t field_0x10
+bool fn_00480560(void* self) {
+    // Read the object pointer stored at self+0x10 (32-bit guest address).
+    const uint32_t obj = lift_field<uint32_t>(self, 0x10);
+
+    // Load its vtable and fetch slot 3 (offset 0x0C).
+    const uint32_t vtbl = lift_field<uint32_t>(reinterpret_cast<const void*>(static_cast<uintptr_t>(obj)), 0);
+    const uint32_t slot = lift_field<uint32_t>(reinterpret_cast<const void*>(static_cast<uintptr_t>(vtbl)), 0x0C);
+
+    // Thiscall: ECX = self + 0x10, returns the container pointer in EAX.
+    using VirtFn = uint32_t (*)(uint32_t thisPtr);
+    const uint32_t thisPtr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)) + 0x10;
+    const uint32_t container = reinterpret_cast<VirtFn>(static_cast<uintptr_t>(slot))(thisPtr);
+
+    // begin = [container+4]
+    const uint32_t begin = lift_field<uint32_t>(reinterpret_cast<const void*>(static_cast<uintptr_t>(container)), 0x04);
+    if (begin == 0) {
+        return true;
+    }
+
+    // end = [container+8]; count = (end - begin) >> 2 (arithmetic shift); return count == 0.
+    const uint32_t end = lift_field<uint32_t>(reinterpret_cast<const void*>(static_cast<uintptr_t>(container)), 0x08);
+    const int32_t diff = static_cast<int32_t>(end - begin);
+    return (diff >> 2) == 0;
+}
+} // namespace lift_00480560

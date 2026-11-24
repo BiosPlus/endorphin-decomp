@@ -1,0 +1,21 @@
+{
+  "va": "0x00480560",
+  "size": 46,
+  "orig_symbol": "sub_00480560",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "descriptiveName: isInnerContainerEmptyViaVirtual",
+  "signature": "bool fn_00480560(void* self)",
+  "summary": "Calls vtable slot 3 of the object at self+0x10 and returns true if the returned container's begin is null or holds fewer than 4 bytes of elements (size 0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:08:30Z"
+}
