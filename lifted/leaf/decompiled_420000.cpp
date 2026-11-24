@@ -545,3 +545,29 @@ void fn_0042FD70() {
     (void)secondFn(second, 0, result);
 }
 } // namespace lift_0042FD70
+
+// [0x0042FC90] sub_0042FC90 (54 bytes)
+namespace lift_0042FC90 {
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430360 (getGlobalField0x58AndCall00469040).)
+extern void* ext_00465B40(void);
+
+// @name callVtableSlotsOnTwoObjects
+// @summary Fetches two objects from ext_00465B40; calls vtable slot +0x9C of the first with (0, 0), then vtable slot +0xE0 of the second with (5, that result).
+// @field Unknown +0x00 void* vptr (vtable pointer of both objects returned by ext_00465B40)
+extern void fn_0042FC90(void) {
+    using Slot9C = uintptr_t (__thiscall*)(void* self, uintptr_t a0, uintptr_t a1);
+    using SlotE0 = void (__thiscall*)(void* self, uintptr_t a0, uintptr_t a1);
+
+    void* first = ext_00465B40();
+    void* second = ext_00465B40();
+
+    void** vtFirst = lift_field<void**>(first, 0x0);
+    void** vtSecond = lift_field<void**>(second, 0x0);
+
+    Slot9C slot9C = lift_field<Slot9C>(vtFirst, 0x9C);
+    uintptr_t result = slot9C(first, 0, 0);
+
+    SlotE0 slotE0 = lift_field<SlotE0>(vtSecond, 0xE0);
+    slotE0(second, 5, result);
+}
+} // namespace lift_0042FC90
