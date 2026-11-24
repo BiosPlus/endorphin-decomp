@@ -17,6 +17,7 @@ void* fn_00617340(void* self) {
 #include <cstring>
 #include <cmath>
 #include <new>
+#include <memory>
 
 // [0x006178B0] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getLowerDamping(void) const, 0>::vfunc_16 (30 bytes)
 // @name ExprParser::ReadMethodType<NMData::HingeLimit>::vfunc_16 (NMData::HingeLimit::getLowerDamping)
@@ -42546,3 +42547,26 @@ void* __stdcall fn_005912A0(void* out, void* unused) {
 }
 } // namespace lift_005912A0
 } // namespace lift_005912A0
+
+// [0x004C0800] ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>::vfunc_4 (115 bytes)
+namespace lift_004C0800 {
+// Known callee 0x004276B0: StdStringCopyConstruct (copy-constructs a std::string at dst from src; returns dst).
+extern void* ext_004276B0(void* dst, const void* src);
+// Callee 0x004C0280: builds a std::string into the caller-supplied buffer from a value; returns that buffer.
+extern void* ext_004C0280(void* out, const void* value);
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_4 (NMData::TriggeredEventData::getPropertySourceDescription)
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Returns the property source description std::string for a TriggeredEventData ReadMethodType wrapper: builds a temporary string from the wrapper's stored value, copies it into the return buffer, then destroys the temporary.
+// @field ExprParser::ReadMethodType<NMData::TriggeredEventData> +0x00 void* field_0x00
+void* fn_004C0800(void* retbuf, const void* self) {
+    alignas(std::string) unsigned char tmp[sizeof(std::string)];
+
+    const void* value = *static_cast<void* const*>(self);
+    void* str = ext_004C0280(tmp, value);
+    ext_004276B0(retbuf, str);
+
+    std::destroy_at(reinterpret_cast<std::string*>(tmp));
+    return retbuf;
+}
+} // namespace lift_004C0800
