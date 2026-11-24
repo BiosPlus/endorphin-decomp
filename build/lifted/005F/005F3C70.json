@@ -1,0 +1,22 @@
+{
+  "va": "0x005F3C70",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{88, {flat}}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float\u003e",
+  "signature": "void __stdcall fn_005F3C70(void* arg0)",
+  "summary": "Lazily initializes a static helper object and stores its address at arg0 + 4",
+  "fields": [
+    {
+      "class": "Arg0",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:56:15Z"
+}
