@@ -873,6 +873,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00404670 (CBaseTabCtrl::vfunc_85).",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x004160A0": {
+    "name": "sub_004160A0",
+    "signature": "void sub_004160A0(uint32_t arg0, uint32_t arg1)",
+    "summary": "Stores its stack argument into global mem_00AC9CD8, or 0 if the argument is null.",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x00416190": {
     "name": "CEnTabCtrl::vfunc_1",
     "class": "CEnTabCtrl",

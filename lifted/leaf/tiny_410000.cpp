@@ -439,3 +439,19 @@ int32_t fn_0041FEA0(void* self) {
     return static_cast<int32_t>(result) + 1;
 }
 } // namespace lift_0041FEA0
+
+// [0x004160A0]
+namespace lift_004160A0 {
+// @name sub_004160A0
+// @summary Stores its stack argument into global mem_00AC9CD8, or 0 if the argument is null.
+
+extern uint32_t mem_00AC9CD8;
+
+void sub_004160A0(uint32_t arg0, uint32_t arg1) {
+    if (arg0 == 0) {
+        mem_00AC9CD8 = 0;
+        return;
+    }
+    mem_00AC9CD8 = arg1;
+}
+} // namespace lift_004160A0

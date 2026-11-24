@@ -1,0 +1,13 @@
+{
+  "va": "0x004160A0",
+  "size": 25,
+  "orig_symbol": "sub_004160A0",
+  "src_path": "src/leaf/tiny_410000.cpp",
+  "lifted_path": "lifted/leaf/tiny_410000.cpp",
+  "name": "sub_004160A0",
+  "signature": "void sub_004160A0(uint32_t arg0, uint32_t arg1)",
+  "summary": "Stores its stack argument into global mem_00AC9CD8, or 0 if the argument is null.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:47:03Z"
+}
