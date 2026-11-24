@@ -244,3 +244,20 @@ void fn_004B1100(void* self, float arg0) {
     ext_004B0ED0(quad);
 }
 } // namespace lift_004B1100
+
+// [0x004B1130] sub_004B1130 (46 bytes)
+namespace lift_004B1130 {
+extern void __thiscall ext_004B0ED0(void* self, float* out, float b, float c, float d);
+
+// @name sub_004B1130
+// @class Unknown
+// @summary Copies three float fields from self into locals, calls sub_004B0ED0 with them plus the stack float argument, and returns (ret 4).
+// @field Unknown +0x1c float field_0x1C
+// @field Unknown +0x20 float field_0x20
+// @field Unknown +0x24 float field_0x24
+extern void __thiscall fn_004B1130(void* self, float arg) {
+    float a = lift_field<float>(self, 0x1c);
+    float b = lift_field<float>(self, 0x20);
+    float c = lift_field<float>(self, 0x24);
+    ext_004B0ED0(self, &a, b, c, arg);}
+} // namespace lift_004B1130
