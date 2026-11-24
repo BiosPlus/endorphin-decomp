@@ -42570,3 +42570,30 @@ void* fn_004C0800(void* retbuf, const void* self) {
     return retbuf;
 }
 } // namespace lift_004C0800
+
+// [0x005B3300] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_4 (115 bytes)
+namespace lift_005B3300 {
+// Known callee 0x004276B0: StdStringCopyConstruct (Copy-constructs a std::string at dst from src via the MSVCP80 copy constructor; returns dst.)
+extern void* ext_004276B0(void* dst, const void* src);
+// Callee 0x005B1220 (sub_005B1220, 138B, not yet lifted): fills the string at out from obj, returns a pointer to the string data used as copy source.
+extern void* ext_005B1220(void* out, const void* obj);
+// MSVCP80 std::string destructor, called indirectly through the import slot at 0x00924FF4.
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType::vfunc_4 (Geometry::getTypeNameNonConst)
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>
+// @summary Builds a std::string result in dst: reads the object from src, fills a temporary string via 0x005B1220, copy-constructs dst from it, destroys the temporary, and returns dst.
+void* fn_005B3300(void* dst, const void* src) {
+    const void* obj = *static_cast<const void* const*>(src);
+
+    alignas(8) unsigned char tmp[32];
+    void* result = ext_005B1220(tmp, obj);
+    ext_004276B0(dst, result);
+
+    using StringDtor = void (__thiscall*)(void*);
+    auto string_dtor = reinterpret_cast<StringDtor>(static_cast<uintptr_t>(mem_00924FF4));
+    string_dtor(tmp);
+
+    return dst;
+}
+} // namespace lift_005B3300
