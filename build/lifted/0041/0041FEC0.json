@@ -1,0 +1,22 @@
+{
+  "va": "0x0041FEC0",
+  "size": 41,
+  "orig_symbol": "sub_0041FEC0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "ListView::getNextSelectedItem",
+  "class": "ListView",
+  "signature": "uint32_t __thiscall sub_0041FEC0(void* this_ptr, int32_t* pIndex)",
+  "summary": "Queries the next selected list-view item via SendMessageA(LVM_GETNEXTITEM), updates the cursor, and returns the 0-based index.",
+  "fields": [
+    {
+      "class": "ListView",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:58:36Z"
+}
