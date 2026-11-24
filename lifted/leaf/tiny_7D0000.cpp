@@ -534,3 +534,18 @@ void CopyVec3FromOffset4C(const void* src, float* out) {
     std::memcpy(out, base + 0x4C, 3 * sizeof(float));
 }
 } // namespace lift_007D8470
+
+// [0x007D8590]
+namespace lift_007D8590 {
+// @name SetVec3Offset40
+// @summary Stores three float arguments into the vec3 at +0x40..+0x48 of the object pointer argument.
+// @field Unknown +0x40 float field_0x40
+// @field Unknown +0x44 float field_0x44
+// @field Unknown +0x48 float field_0x48
+
+void SetVec3Offset40(unsigned char* self, float x, float y, float z) {
+    *reinterpret_cast<float*>(self + 0x40) = x;
+    *reinterpret_cast<float*>(self + 0x44) = y;
+    *reinterpret_cast<float*>(self + 0x48) = z;
+}
+} // namespace lift_007D8590

@@ -41677,6 +41677,12 @@
     "summary": "Returns the float field at offset 0x58 of the given object.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D8590": {
+    "name": "SetVec3Offset40",
+    "signature": "void SetVec3Offset40(unsigned char* self, float x, float y, float z)",
+    "summary": "Stores three float arguments into the vec3 at +0x40..+0x48 of the object pointer argument.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D85D0": {
     "name": "setField58_007D85D0",
     "class": "\u003cunknown\u003e",

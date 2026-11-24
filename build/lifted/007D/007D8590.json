@@ -1,0 +1,33 @@
+{
+  "va": "0x007D8590",
+  "size": 26,
+  "orig_symbol": "sub_007D8590",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "SetVec3Offset40",
+  "signature": "void SetVec3Offset40(unsigned char* self, float x, float y, float z)",
+  "summary": "Stores three float arguments into the vec3 at +0x40..+0x48 of the object pointer argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:59:02Z"
+}
