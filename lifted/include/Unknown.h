@@ -633,7 +633,9 @@ struct Unknown_Fields {
     // +0x1A8 HWND                     field_0x1a8  (evidence: 0x00416B20) // CONFLICT: multiple definitions at +0x1A8
     // +0x1A9 uint8_t field_0x1A9 (uint8_t[13] array, indexed 0..12)  (evidence: 0x0072B180, 0x0072CEF0) // CONFLICT: multiple definitions at +0x1A9
     // +0x1A9 uint8_t[13]              byte1A9Array  (evidence: 0x0072B180, 0x0072CF10) // CONFLICT: multiple definitions at +0x1A9
-    // +0x1B0 float                    field_0x1B0  (evidence: 0x007C5950)
+    // +0x1AC std::streambuf*          field_0x1AC  (evidence: 0x00413810)
+    // +0x1B0 float                    field_0x1B0  (evidence: 0x007C5950) // CONFLICT: multiple definitions at +0x1B0
+    // +0x1B0 std::basic_streambuf<wchar_t>* field_0x1B0  (evidence: 0x00413810) // CONFLICT: multiple definitions at +0x1B0
     // +0x1B8 int32_t field_0x1B8 (int32_t[6] array, indexed 0..5)  (evidence: 0x0072B180, 0x0072CEB0) // CONFLICT: multiple definitions at +0x1B8
     // +0x1B8 int32_t[6]               field_0x1B8  (evidence: 0x0072B180, 0x0072CED0) // CONFLICT: multiple definitions at +0x1B8
     // +0x1B8 void*                    field_0x1b8  (evidence: 0x005B0E60, 0x005B6B60) // CONFLICT: multiple definitions at +0x1B8

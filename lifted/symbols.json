@@ -1070,6 +1070,12 @@
     "summary": "Calls an MFC80 import (ord 578) on the embedded object at +0x12C, then tail-calls the base destructor.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00413810": {
+    "name": "ApplyStdStreamBuffers_00413810",
+    "signature": "extern \"C\" void fn_00413810(void* self)",
+    "summary": "Calls the MFC80 thunk, then redirects std::cout and std::wcout to the stream buffers stored at this+0x1AC and this+0x1B0.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00413990": {
     "name": "StreambufDerived::~StreambufDerived",
     "class": "StreambufDerived",

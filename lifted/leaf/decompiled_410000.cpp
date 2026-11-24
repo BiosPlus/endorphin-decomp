@@ -38,8 +38,10 @@ void __thiscall fn_0041A4F0(uint8_t* self) {
 }
 } // namespace lift_0051BF10
 } // namespace lift_0041A4F0
+#include <iostream>
+#include <streambuf>
 
-// [0x0041FD10]
+#include <streambuf>
 namespace lift_0041FD10 {
 extern void fn_006A608E(void);
 
@@ -948,3 +950,24 @@ void fn_00416B20(void* self) {
     ext_InvalidateRect(subWnd, nullptr, TRUE);
 }
 } // namespace lift_00416B20
+
+// [0x00413810] sub_00413810 (60 bytes)
+namespace lift_00413810 {
+// Known callee 0x006A6178: thunk_MFC80_ord_4339 (IAT jump thunk forwarding to MFC80!ord_4339.)
+extern void ext_006A6178();
+
+// @name ApplyStdStreamBuffers_00413810
+// @summary Calls the MFC80 thunk, then redirects std::cout and std::wcout to the stream buffers stored at this+0x1AC and this+0x1B0.
+// @field Unknown +0x1AC std::streambuf* field_0x1AC
+// @field Unknown +0x1B0 std::basic_streambuf<wchar_t>* field_0x1B0
+extern void fn_00413810(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    ext_006A6178();
+
+    auto* narrowBuf = *reinterpret_cast<std::streambuf**>(base + 0x1AC);
+    std::cout.rdbuf(narrowBuf);
+
+    auto* wideBuf = *reinterpret_cast<std::basic_streambuf<wchar_t>**>(base + 0x1B0);
+    std::wcout.rdbuf(wideBuf);
+}
+} // namespace lift_00413810
