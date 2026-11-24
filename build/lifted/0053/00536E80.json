@@ -1,0 +1,28 @@
+{
+  "va": "0x00536E80",
+  "size": 28,
+  "orig_symbol": "OglRenderer::vfunc_120",
+  "src_path": "src/classes/OglRenderer.cpp",
+  "lifted_path": "lifted/classes/OglRenderer.cpp",
+  "name": "OglRenderer::releaseContext",
+  "class": "OglRenderer",
+  "signature": "void __thiscall fn_00536E80(void* self)",
+  "summary": "Unbinds the current OpenGL context if flag at +0x30 is zero, then leaves the critical section at +0x10",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:09:38Z"
+}
