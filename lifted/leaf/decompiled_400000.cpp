@@ -568,3 +568,32 @@ void fn_00403290(void* self) {
     ext_006A342A();
 }
 } // namespace lift_00403290
+
+// [0x00408050]
+namespace lift_00408050 {
+// @name sub_00408050
+// @summary Shows/configures a UI control via MFC80_ord_5731 and vtable+0x38, then returns field_0x4C4
+// @field Unknown +0x4C4 uint32_t field_0x4C4
+
+
+extern void __thiscall ext_006A6010(void* self, int nCmdShow);
+extern uint32_t mem_0093A0CC;
+
+extern uint32_t __thiscall fn_00408050(void* self, void* ctrl, uint32_t unused2, uint32_t unused3) {
+    (void)unused2;
+    (void)unused3;
+
+    ext_006A6010(ctrl, 1);
+
+    using VFn38 = void (__thiscall*)(void*, uint32_t);
+    auto vtable = *reinterpret_cast<uintptr_t**>(ctrl);
+    auto vfn = reinterpret_cast<VFn38>(vtable[0x38 / sizeof(uintptr_t)]);
+    vfn(ctrl, mem_0093A0CC);
+
+    uintptr_t subobj = reinterpret_cast<uintptr_t>(self) + 0x4C0;
+    if (subobj != 0) {
+        return *reinterpret_cast<uint32_t*>(subobj + 4);
+    }
+    return 0;
+}
+} // namespace lift_00408050

@@ -1,0 +1,21 @@
+{
+  "va": "0x00408050",
+  "size": 54,
+  "orig_symbol": "sub_00408050",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "sub_00408050",
+  "signature": "extern \"C\" uint32_t __thiscall fn_00408050(void* self, void* ctrl, uint32_t unused2, uint32_t unused3)",
+  "summary": "Shows/configures a UI control via MFC80_ord_5731 and vtable+0x38, then returns field_0x4C4",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4C4",
+      "type": "uint32_t",
+      "name": "field_0x4C4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:18:02Z"
+}
