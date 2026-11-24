@@ -1,0 +1,14 @@
+{
+  "va": "0x006B4870",
+  "size": 54,
+  "orig_symbol": "sub_006B4870",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "CallCreateWithArgsAndNotify",
+  "class": "\u003cClass\u003e (none: no direct field access, self is forwarded only)",
+  "signature": "DWORD fn_006B4870(void* self, DWORD a1, DWORD a2, DWORD a3, DWORD a4)",
+  "summary": "Forwards four dwords plus fixed flags to MFC80!ord_1161, then passes its result and self to MFC80!ord_1655.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:12:16Z"
+}

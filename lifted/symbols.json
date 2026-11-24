@@ -42473,6 +42473,13 @@
     "summary": "Destructor tail-call: restores vtable mem_00991A6C and tail-calls base destructor thunk_MFC80_ord_760.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B4870": {
+    "name": "CallCreateWithArgsAndNotify",
+    "class": "\u003cClass\u003e (none: no direct field access, self is forwarded only)",
+    "signature": "DWORD fn_006B4870(void* self, DWORD a1, DWORD a2, DWORD a3, DWORD a4)",
+    "summary": "Forwards four dwords plus fixed flags to MFC80!ord_1161, then passes its result and self to MFC80!ord_1655.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B49A0": {
     "name": "GWCPropInPlaceCheckBox::vfunc_1",
     "class": "GWCPropInPlaceCheckBox",

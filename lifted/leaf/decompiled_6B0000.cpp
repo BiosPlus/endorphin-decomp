@@ -694,3 +694,24 @@ extern void __fastcall fn_006B53D0(void* self) {
     ext_006A5EA8(self);
 }
 } // namespace lift_006B53D0
+
+// [0x006B4870] sub_006B4870 (54 bytes)
+namespace lift_006B4870 {
+// Known callee 0x006A64AE: thunk_MFC80_ord_1161 (IAT jump thunk forwarding to MFC80!ord_1161.)
+// Stdcall-style: 11 stack dwords, callee cleans up (no caller adjustment after call).
+extern DWORD ext_006A64AE(DWORD, DWORD, DWORD, DWORD, DWORD, DWORD,
+                              DWORD, DWORD, DWORD, DWORD, DWORD);
+// Known callee 0x006A5CEC: thunk_MFC80_ord_1655 (IAT jump thunk forwarding to MFC80!ord_1655.)
+// Thiscall-style: ECX = self, two stack dwords.
+extern DWORD ext_006A5CEC(void* self, DWORD, DWORD);
+
+// @name CallCreateWithArgsAndNotify
+// @class <Class> (none: no direct field access, self is forwarded only)
+// @summary Forwards four dwords plus fixed flags to MFC80!ord_1161, then passes its result and self to MFC80!ord_1655.
+// (no @field: function reads no object offsets directly)
+DWORD fn_006B4870(void* self, DWORD a1, DWORD a2, DWORD a3, DWORD a4) {
+    DWORD r = ext_006A64AE(0x40, 0, 0, 0, 0, a1, a2, a3, a4, 0,
+                           static_cast<DWORD>(reinterpret_cast<uintptr_t>(self)));
+    return ext_006A5CEC(self, 0, r);
+}
+} // namespace lift_006B4870
