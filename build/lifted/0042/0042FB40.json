@@ -1,0 +1,13 @@
+{
+  "va": "0x0042FB40",
+  "size": 17,
+  "orig_symbol": "sub_0042FB40",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "thunkGetterVirtualSlot54",
+  "signature": "extern \"C\" void* fn_0042FB40()",
+  "summary": "Calls the global getter ext_00465B40 to obtain an object, then tail-dispatches its vtable slot at +0xD8 (virtual index 54) with that object as this.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:50:27Z"
+}
