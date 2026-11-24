@@ -1,0 +1,13 @@
+{
+  "va": "0x0070C8E0",
+  "size": 57,
+  "orig_symbol": "sub_0070C8E0",
+  "src_path": "src/clones/auto_clones_700000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_700000.cpp",
+  "name": "initHugeBounds",
+  "signature": "void sub_0070C8E0()",
+  "summary": "Initializes three 64-bit global values from MSVCR80.dll!_HUGE.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:23:55Z"
+}
