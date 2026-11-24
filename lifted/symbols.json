@@ -24574,6 +24574,13 @@
     "summary": "Sets or clears bit 0x2 of the dword at +0x20 so that it equals the byte argument (treated as a boolean test); toggles bit 0x2 only when the current state differs from the argument.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x006423D0": {
+    "name": "Unknown::setFlag8To",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_006423D0(void* self, uint8_t want)",
+    "summary": "Sets flag bit 0x8 in the dword at +0x20 to the given byte value, toggling it only when its current state differs.",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
   "0x00642500": {
     "name": "MainPhysicsAdapter::vfunc_0_off_8",
     "class": "MainPhysicsAdapter",

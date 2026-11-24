@@ -1,0 +1,22 @@
+{
+  "va": "0x006423D0",
+  "size": 29,
+  "orig_symbol": "sub_006423D0",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "Unknown::setFlag8To",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_006423D0(void* self, uint8_t want)",
+  "summary": "Sets flag bit 0x8 in the dword at +0x20 to the given byte value, toggling it only when its current state differs.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:13:13Z"
+}

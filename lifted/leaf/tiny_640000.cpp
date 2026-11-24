@@ -857,3 +857,18 @@ void fn_00642390(void* self, uint8_t want) {
     }
 }
 } // namespace lift_00642390
+
+// [0x006423D0] sub_006423D0 (29 bytes)
+namespace lift_006423D0 {
+// @name Unknown::setFlag8To
+// @class Unknown
+// @summary Sets flag bit 0x8 in the dword at +0x20 to the given byte value, toggling it only when its current state differs.
+// @field Unknown +0x20 DWORD field_0x20
+void __thiscall fn_006423D0(void* self, uint8_t want) {
+    auto* flags = reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x20);
+    const uint8_t isSet = (*flags & 0x8u) != 0 ? 1 : 0;
+    if (isSet != want) {
+        *flags ^= 0x8u;
+    }
+}
+} // namespace lift_006423D0
