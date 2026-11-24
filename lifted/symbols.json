@@ -42645,6 +42645,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00705250 (ClearGlobalDwordPair).",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00784620": {
+    "name": "sub_00784620 (thiscall: reset object state, store one DWORD argument)",
+    "class": "\u003cunknown\u003e (self pointer in ECX; class not identified)",
+    "signature": "void fn_00784620(void* self, DWORD arg)",
+    "summary": "Zeroes the dword fields at +0x00/+0x04/+0x08 and byte flag at +0x10, stores the stack argument at +0x0C (ret 4).",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00784640": {
     "name": "sub_00784640",
     "signature": "extern \"C\" void fn_00784640(void)",

@@ -178,3 +178,24 @@ void fn_00783820(void* self) {
     }
 }
 } // namespace lift_00783820
+
+// [0x00784620] sub_00784620 (32 bytes)
+namespace lift_00784620 {
+// @name sub_00784620 (thiscall: reset object state, store one DWORD argument)
+// @class <unknown> (self pointer in ECX; class not identified)
+// @summary Zeroes the dword fields at +0x00/+0x04/+0x08 and byte flag at +0x10, stores the stack argument at +0x0C (ret 4).
+// @field <unknown> +0x00 DWORD field_0x00
+// @field <unknown> +0x04 DWORD field_0x04
+// @field <unknown> +0x08 DWORD field_0x08
+// @field <unknown> +0x0C DWORD field_0x0C
+// @field <unknown> +0x10 BYTE field_0x10
+void fn_00784620(void* self, DWORD arg) {
+    auto* base = static_cast<uint8_t*>(self);
+    const DWORD zero = 0;
+    std::memcpy(base + 0x00, &zero, sizeof(DWORD));
+    std::memcpy(base + 0x04, &zero, sizeof(DWORD));
+    std::memcpy(base + 0x08, &zero, sizeof(DWORD));
+    std::memcpy(base + 0x0C, &arg, sizeof(DWORD));
+    base[0x10] = 0;
+}
+} // namespace lift_00784620
