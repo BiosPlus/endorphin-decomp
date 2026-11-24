@@ -4066,6 +4066,12 @@
     "summary": "Copies DWORDs from [first, last) to out (skipping stores when out is null); returns out + count.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044C360": {
+    "name": "copyBackwardDwords",
+    "signature": "uint32_t sub_0044C360(uint32_t first, uint32_t last, uint32_t d_last)",
+    "summary": "Copies 32-bit dwords backward from [first, last) to [d_last - count, d_last) and returns the destination start address.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044C420": {
     "name": "ArrayDwordElementAddr",
     "signature": "uint32_t __stdcall ArrayDwordElementAddr(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t ecx_in)",
