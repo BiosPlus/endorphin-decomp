@@ -559,3 +559,27 @@ void fn_0046FAA0(void* self) {
     fn(reinterpret_cast<void*>(static_cast<uintptr_t>(child)), 1);
 }
 } // namespace lift_0046FAA0
+
+// [0x0046FA80] sub_0046FA80 (19 bytes)
+namespace lift_0046FA80 {
+// @name sub_0046FA80
+// @summary Auto-lifted identical-shape clone of 0x0046FAA0 (Unknown::NotifyChildIfPresent).
+namespace lift_0046FAA0 {
+// @name Unknown::NotifyChildIfPresent
+// @class Unknown
+// @summary If the child pointer at +0x00 is nonnull, calls the child's vtable slot at +0x10 (thiscall, arg 1); otherwise does nothing.
+// @field Unknown +0x00 DWORD field_0x00
+void fn_0046FA80(void* self) {
+    const DWORD child = lift_field<DWORD>(self, 0x00);
+    if (child == 0) {
+        return;
+    }
+    // Child's vtable pointer is at child+0x00; slot at vtable+0x10 is the callee.
+    const DWORD vtable = lift_field<DWORD>(reinterpret_cast<void*>(static_cast<uintptr_t>(child)), 0x00);
+    const DWORD slot = lift_field<DWORD>(reinterpret_cast<void*>(static_cast<uintptr_t>(vtable)), 0xFC);
+    using SlotFn = void(__thiscall*)(void* thisPtr, int arg);
+    auto fn = reinterpret_cast<SlotFn>(static_cast<uintptr_t>(slot));
+    fn(reinterpret_cast<void*>(static_cast<uintptr_t>(child)), 1);
+}
+} // namespace lift_0046FAA0
+} // namespace lift_0046FA80

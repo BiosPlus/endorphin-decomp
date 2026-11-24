@@ -1394,6 +1394,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004348F0": {
+    "name": "sub_004348F0",
+    "class": "(none)",
+    "signature": "extern int32_t fn_004691C0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x004691C0 (fn_004691C0 (descriptiveName: ForwardFieldAt26CFromGlobalResult)).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00434E30": {
     "name": "sub_00434E30",
     "signature": "void fn_00434E30()",
@@ -3936,6 +3943,13 @@
     "signature": "void fn_0046FA30(void* self)",
     "summary": "Adjusts this from the +0xC (BaseEventListener) subobject back to RuntimeEngine and forwards to 0x0046F930.",
     "lifted_path": "lifted/classes/RuntimeEngine.cpp"
+  },
+  "0x0046FA80": {
+    "name": "sub_0046FA80",
+    "class": "Unknown",
+    "signature": "void fn_0046FA80(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046FAA0 (Unknown::NotifyChildIfPresent).",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
   "0x0046FAA0": {
     "name": "Unknown::NotifyChildIfPresent",
