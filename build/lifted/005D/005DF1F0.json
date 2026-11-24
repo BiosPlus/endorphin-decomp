@@ -1,0 +1,14 @@
+{
+  "va": "0x005DF1F0",
+  "size": 30,
+  "orig_symbol": "AnimatableTransform::vfunc_15",
+  "src_path": "src/classes/AnimatableTransform.cpp",
+  "lifted_path": "lifted/classes/AnimatableTransform.cpp",
+  "name": "AnimatableTransform::vfunc_15",
+  "class": "AnimatableTransform",
+  "signature": "uint32_t __stdcall fn_005DF1F0(uint32_t self, uint32_t arg2)",
+  "summary": "Passes its first argument to ext_00671F30 (zero first dword, store global into second) and returns the argument.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:18:23Z"
+}

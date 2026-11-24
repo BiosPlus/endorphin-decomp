@@ -20,3 +20,18 @@ void* fn_00593870(void* self) {
     return ext_005935A0(mem, owner);
 }
 } // namespace lift_00593870
+
+// [0x005DF1F0] AnimatableTransform::vfunc_15 (30 bytes)
+namespace lift_005DF1F0 {
+extern void ext_00671F30(uint32_t);
+
+// @name AnimatableTransform::vfunc_15
+// @class AnimatableTransform
+// @summary Passes its first argument to ext_00671F30 (zero first dword, store global into second) and returns the argument.
+
+uint32_t __stdcall fn_005DF1F0(uint32_t self, uint32_t arg2) {
+    (void)arg2;
+    ext_00671F30(self);
+    return self;
+}
+} // namespace lift_005DF1F0

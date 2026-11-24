@@ -19869,6 +19869,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/NMData/CameraData.cpp"
   },
+  "0x005DF1F0": {
+    "name": "AnimatableTransform::vfunc_15",
+    "class": "AnimatableTransform",
+    "signature": "uint32_t __stdcall fn_005DF1F0(uint32_t self, uint32_t arg2)",
+    "summary": "Passes its first argument to ext_00671F30 (zero first dword, store global into second) and returns the argument.",
+    "lifted_path": "lifted/classes/AnimatableTransform.cpp"
+  },
   "0x005E0160": {
     "name": "CalibrationManager::vfunc_0",
     "class": "CalibrationManager",
