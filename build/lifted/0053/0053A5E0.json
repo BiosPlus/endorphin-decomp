@@ -1,0 +1,28 @@
+{
+  "va": "0x0053A5E0",
+  "size": 44,
+  "orig_symbol": "sub_0053A5E0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::forwardArgToChildAndStoreResult",
+  "class": "Unknown",
+  "signature": "void fn_0053A5E0(void* self, uint32_t arg)",
+  "summary": "If child pointer at +0x08 is set, call its vtable slot 14 with (\u0026mem_0093A444, arg) and store the uint8 result at +0x0C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "child"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "result"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:03:17Z"
+}

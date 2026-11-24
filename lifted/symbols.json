@@ -14685,6 +14685,13 @@
     "summary": "Allocates one OpenGL display list via glGenLists(1) and stores its id at this+0x34.",
     "lifted_path": "lifted/Primitives/auto_tiny.cpp"
   },
+  "0x0053A5E0": {
+    "name": "Unknown::forwardArgToChildAndStoreResult",
+    "class": "Unknown",
+    "signature": "void fn_0053A5E0(void* self, uint32_t arg)",
+    "summary": "If child pointer at +0x08 is set, call its vtable slot 14 with (\u0026mem_0093A444, arg) and store the uint8 result at +0x0C.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x0053A610": {
     "name": "Primitives::Plane::vfunc_25",
     "class": "Primitives::Plane",

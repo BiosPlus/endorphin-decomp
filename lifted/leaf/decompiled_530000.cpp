@@ -285,3 +285,26 @@ void __fastcall fn_00538D10(void* self, void* /*edx, unused*/, float arg1, float
     mem_write32(reinterpret_cast<uintptr_t>(self) + 0x24, arg4);
 }
 } // namespace lift_00538D10
+
+// [0x0053A5E0] sub_0053A5E0 (44 bytes)
+namespace lift_0053A5E0 {
+extern uint8_t mem_0093A444;
+
+// @name Unknown::forwardArgToChildAndStoreResult
+// @class Unknown
+// @summary If child pointer at +0x08 is set, call its vtable slot 14 with (&mem_0093A444, arg) and store the uint8 result at +0x0C.
+// @field Unknown +0x08 void* child
+// @field Unknown +0x0C uint8_t result
+void fn_0053A5E0(void* self, uint32_t arg) {
+    auto* base = static_cast<uint8_t*>(self);
+    void* child = *reinterpret_cast<void**>(base + 0x08);
+    if (child == nullptr) {
+        return;
+    }
+    using VSlot14Fn = uint8_t(__thiscall*)(void* obj, void* p, uint32_t v);
+    void** vtable = *reinterpret_cast<void***>(child);
+    auto fn = reinterpret_cast<VSlot14Fn>(vtable[0x38 / sizeof(void*)]);
+    uint8_t r = fn(child, &mem_0093A444, arg);
+    *reinterpret_cast<uint8_t*>(base + 0x0C) = r;
+}
+} // namespace lift_0053A5E0

@@ -131,7 +131,7 @@ struct Unknown_Fields {
     // +0x7   uint8_t                  field_0x07  (evidence: 0x006F8AF0) // CONFLICT: multiple definitions at +0x7
     // +0x8   uint32_t field_0x08      (end)  (evidence: 0x0051DE50) // CONFLICT: multiple definitions at +0x8
     // +0x8   void* field_0x08 (child pointer table base; element i at +0x08 + 60*i)  (evidence: 0x00540D00) // CONFLICT: multiple definitions at +0x8
-    // +0x8   void*                    child  (evidence: 0x0041C710, 0x00441020, 0x0044B660, 0x0044B680, 0x0044B760, 0x00682DE0, 0x00687230) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    child  (evidence: 0x0041C710, 0x00441020, 0x0044B660, 0x0044B680, 0x0044B760, 0x0053A5E0, 0x00682DE0, 0x00687230) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 count  (evidence: 0x007D8470, 0x007D9610) // CONFLICT: multiple definitions at +0x8
     // +0x8   float field_0x08 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 elements[]  (evidence: 0x007D8470, 0x007D9610) // CONFLICT: multiple definitions at +0x8
@@ -176,6 +176,7 @@ struct Unknown_Fields {
     // +0xC   void*                    field_0xc  (evidence: 0x007D4B20, 0x007D8470) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t slot3 (vtable entry 3, read as a pointer)  (evidence: 0x007DAD70) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0c (address taken only; no type information recovered)  (evidence: 0x00440770) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint8_t                  result  (evidence: 0x0053A5E0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 srcField4  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0C (sub-object that receives the value via vfunc_8)  (evidence: 0x005853E0) // CONFLICT: multiple definitions at +0xC
     // +0xD   uint8_t                  field_0x0d  (evidence: 0x004429C0)
