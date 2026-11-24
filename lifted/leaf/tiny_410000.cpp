@@ -284,3 +284,19 @@ uint8_t fn_0041C710(void* self) {
     return fn(child);
 }
 } // namespace lift_0041C710
+
+// [0x00419940] sub_00419940 (20 bytes)
+namespace lift_00419940 {
+// MFC80 import thunk slot (ordinal 297, IMAGE_ORDINAL_FLAG | 0x129).
+extern uint32_t mem_00924494;
+// MFC80 ordinal 297 import; its signature is not recovered, so it takes one
+// DWORD argument and its return value is ignored.
+extern void ext_MFC80_ord297(uint32_t arg);
+
+// @name ThisPassthrough_CallMfc80Ord297
+// @summary Forwards its single stack argument to MFC80 ordinal 297 and returns this unchanged.
+void* fn_00419940(void* self, uint32_t arg) {
+    ext_MFC80_ord297(arg);
+    return self;
+}
+} // namespace lift_00419940
