@@ -273,3 +273,23 @@ void __thiscall sub_006601E0(void* self) {
     }
 }
 } // namespace lift_006601E0
+
+// [0x0066EDB0]
+namespace lift_0066EDB0 {
+// @name sub_0066EDB0_scalar_deleting_dtor
+// @summary Scalar deleting destructor adjusting this by +4 for subobject destructor and optionally freeing memory
+// @field Self +0x04 void field_0x04
+
+
+extern void __fastcall ext_0065F440(void* self);
+extern void ext_006A5C5C(void* ptr);
+
+extern void* __thiscall fn_0066EDB0(void* self, uint32_t flags) {
+    void* subobj = self ? reinterpret_cast<uint8_t*>(self) + 4 : nullptr;
+    ext_0065F440(subobj);
+    if (flags & 1) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+} // namespace lift_0066EDB0

@@ -1,0 +1,21 @@
+{
+  "va": "0x0066EDB0",
+  "size": 41,
+  "orig_symbol": "sub_0066EDB0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "sub_0066EDB0_scalar_deleting_dtor",
+  "signature": "extern \"C\" void* __thiscall fn_0066EDB0(void* self, uint32_t flags)",
+  "summary": "Scalar deleting destructor adjusting this by +4 for subobject destructor and optionally freeing memory",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "void",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:02:24Z"
+}

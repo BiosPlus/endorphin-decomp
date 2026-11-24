@@ -29821,6 +29821,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls sub_0066EDB0.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0066EDB0": {
+    "name": "sub_0066EDB0_scalar_deleting_dtor",
+    "signature": "extern \"C\" void* __thiscall fn_0066EDB0(void* self, uint32_t flags)",
+    "summary": "Scalar deleting destructor adjusting this by +4 for subobject destructor and optionally freeing memory",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x0066EDE0": {
     "name": "ExprParser::RealType::vfunc_50",
     "class": "ExprParser::RealType",
