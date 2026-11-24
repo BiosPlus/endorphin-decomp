@@ -282,3 +282,22 @@ void fn_006EFE00(void* self, uint32_t arg1, void* arg2) {
     ext_00711D40(sub, arg1, arg2, 0x006C8820u, 0x006C8D60u);
 }
 } // namespace lift_006EFE00
+
+// [0x006EFEA0]
+namespace lift_006EFEA0 {
+// @name Unknown::forwardArgsToSubobject1E48
+// @class Unknown
+// @summary Forwards two stack arguments plus two constant addresses to ext_00711D40 on the subobject at this+0x1E48.
+// @field Unknown +0x1E48 void* field_0x1e48
+
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+
+extern void sub_006EFEA0(void* self, uint32_t arg1, void* arg2) {
+    void* subobject = static_cast<uint8_t*>(self) + 0x1E48;
+    ext_00711D40(subobject,
+                 arg1,
+                 arg2,
+                 0x006C8B20u,
+                 0x006C8A60u);
+}
+} // namespace lift_006EFEA0

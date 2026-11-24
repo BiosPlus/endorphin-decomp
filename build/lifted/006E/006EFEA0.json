@@ -1,0 +1,22 @@
+{
+  "va": "0x006EFEA0",
+  "size": 34,
+  "orig_symbol": "sub_006EFEA0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::forwardArgsToSubobject1E48",
+  "class": "Unknown",
+  "signature": "extern \"C\" void sub_006EFEA0(void* self, uint32_t arg1, void* arg2)",
+  "summary": "Forwards two stack arguments plus two constant addresses to ext_00711D40 on the subobject at this+0x1E48.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1E48",
+      "type": "void*",
+      "name": "field_0x1e48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:13:48Z"
+}
