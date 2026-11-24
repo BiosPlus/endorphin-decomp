@@ -138,3 +138,19 @@ void fn_004F9800(void* self, DWORD arg1, DWORD arg2) {
     lift_field<DWORD>(self, 0x00) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_0094DDEC));
 }
 } // namespace lift_004F9800
+
+// [0x004F9950] sub_004F9950 (29 bytes)
+namespace lift_004F9950 {
+// @name Unknown::copyVec3WithZeroW_004F9950
+// @class Unknown
+// @summary Copies three floats from self+0x30..0x38 to out[0..2] and sets out[3] = 0.0f (Vec3 -> Vec4 with w = 0).
+// @field Unknown +0x30 float field_0x30
+// @field Unknown +0x34 float field_0x34
+// @field Unknown +0x38 float field_0x38
+void fn_004F9950(void* self, float* out) {
+    out[0] = lift_field<float>(self, 0x30);
+    out[1] = lift_field<float>(self, 0x34);
+    out[2] = lift_field<float>(self, 0x38);
+    out[3] = 0.0f;
+}
+} // namespace lift_004F9950

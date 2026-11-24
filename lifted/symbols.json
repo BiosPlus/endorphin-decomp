@@ -10934,6 +10934,13 @@
     "summary": "Calls vmethod at vtable+0x84 on self and returns 1 if its low byte is zero, else 0.",
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
   },
+  "0x004F9950": {
+    "name": "Unknown::copyVec3WithZeroW_004F9950",
+    "class": "Unknown",
+    "signature": "void fn_004F9950(void* self, float* out)",
+    "summary": "Copies three floats from self+0x30..0x38 to out[0..2] and sets out[3] = 0.0f (Vec3 -\u003e Vec4 with w = 0).",
+    "lifted_path": "lifted/leaf/tiny_4F0000.cpp"
+  },
   "0x004F9BD0": {
     "name": "VMCSModes::DefaultImplementation::vfunc_33",
     "class": "VMCSModes::DefaultImplementation",
