@@ -1,0 +1,13 @@
+{
+  "va": "0x0058F570",
+  "size": 16,
+  "orig_symbol": "sub_0058F570",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "sub_0058F570",
+  "signature": "extern \"C\" void __thiscall fn_0058F570(void* self, float value)",
+  "summary": "Thiscall float forwarder: passes its single float argument and `this` unchanged to sub_0058B4E0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:36:04Z"
+}
