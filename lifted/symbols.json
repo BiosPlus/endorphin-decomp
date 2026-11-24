@@ -11651,6 +11651,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004CB1D0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setPositionStrengthFromFSM(class NM::Vector3 const \u0026), 0}\u003e",
+    "signature": "extern \"C\" int mem_00AE44BC;  // init-guard flags (bit 0) extern \"C\" int mem_00AE44B8;  // static accessor object storage (vptr slot) void fn_004CB1D0(void* out)",
+    "summary": "Lazily constructs the shared static accessor object (guarded by a one-bit init flag) and stores its address into the ValuePtr argument at +0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004CB3E0": {
     "name": "Unknown::GetFieldOr0x188Address",
     "class": "Unknown",

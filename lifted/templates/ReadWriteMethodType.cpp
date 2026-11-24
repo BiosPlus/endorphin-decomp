@@ -9490,3 +9490,25 @@ void fn_004B8310(void* out) {
     lift_field<uintptr_t>(out, 4) = reinterpret_cast<uintptr_t>(&mem_00AE167C);
 }
 } // namespace lift_004B8310
+
+// [0x004CB1D0] ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyConstraintData::setPositionStrengthFromFSM(class NM::Vector3 const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_004CB1D0 {
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyConstraintData::setPositionStrengthFromFSM(class NM::Vector3 const &), 0}>
+// @summary Lazily constructs the shared static accessor object (guarded by a one-bit init flag) and stores its address into the ValuePtr argument at +0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+
+extern void ext_0067A670(void* self, int arg);
+extern int mem_00AE44BC;  // init-guard flags (bit 0)
+extern int mem_00AE44B8;  // static accessor object storage (vptr slot)
+
+void fn_004CB1D0(void* out) {
+    if ((mem_00AE44BC & 1) == 0) {
+        mem_00AE44BC |= 1;
+        ext_0067A670(&mem_00AE44B8, 0);
+        mem_00AE44B8 = 0x946ab4;
+    }
+    *reinterpret_cast<uintptr_t*>(static_cast<char*>(out) + 0x4) =
+        reinterpret_cast<uintptr_t>(&mem_00AE44B8);
+}
+} // namespace lift_004CB1D0
