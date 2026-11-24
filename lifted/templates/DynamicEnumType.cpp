@@ -1982,3 +1982,28 @@ void ExprParser_DynamicEnumType_RigEventData_vfunc_40(uint32_t* out) {
     out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE5CF4));
 }
 } // namespace lift_004D47A0
+
+// [0x004D4A50] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_40 (122 bytes)
+namespace lift_004D4A50 {
+extern void ext_0067A670();
+extern int mem_00AE5D00;
+extern int mem_00AE5CFC;
+
+// @name ExprParser::DynamicEnumType<NMData::RigEventData>::vfunc_40
+// @class ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>
+// @summary One-time (guarded) initialization of a global object at mem_00AE5CFC; stores its address into the +0x04 slot of the argument.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_004D4A50(void* out) {
+    // Thread-safe-style one-shot init guard: bit 0 of mem_00AE5D00 marks construction done.
+    if ((mem_00AE5D00 & 1) == 0) {
+        mem_00AE5D00 |= 1;
+        // Construct global object at mem_00AE5CFC (thiscall; receiver = &mem_00AE5CFC, one zeroed stack arg).
+        ext_0067A670();
+        // Install the object's vtable pointer.
+        mem_00AE5CFC = 0x00948444;
+    }
+    // Publish the global object's address into out->+0x04.
+    auto* base = static_cast<unsigned char*>(out);
+    *reinterpret_cast<uintptr_t*>(base + 0x04) = reinterpret_cast<uintptr_t>(&mem_00AE5CFC);
+}
+} // namespace lift_004D4A50
