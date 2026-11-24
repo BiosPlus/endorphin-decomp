@@ -40500,6 +40500,13 @@
     "summary": "Forwards two stack arguments plus constants to the subobject at this+0x41E0 via ext_00711D40, then calls ext_00711A70 with 1.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006F1020": {
+    "name": "Unknown::forwardArgsToSubobjectAt4268",
+    "class": "Unknown",
+    "signature": "void fn_006F1020(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Forwards arg1 (twice) and a constant to the subobject at +0x4268 via storeArgsAndNotifyChild, then invokes the subobject's ext_00711A70 with flag 1.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F10A0": {
     "name": "Unknown::notifySubobjectAt4378",
     "class": "Unknown",
