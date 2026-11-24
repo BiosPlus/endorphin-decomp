@@ -104,3 +104,25 @@ void* __thiscall fn_0063E0C0(void* self, uint32_t arg0, const void* name) {
     return self;                                                  // mov eax, esi
 }
 } // namespace lift_0063E0C0
+
+// [0x00630510] sub_00630510 (40 bytes)
+namespace lift_00630510 {
+// @name Unknown::copyVec3ToFieldsAndSetFlag
+// @class Unknown
+// @summary Copies three floats from the source pointer into self+0xB4..0xBC and sets the byte flag at self+0xF6 to 1.
+// @field Unknown +0xB4 float field_0xB4
+// @field Unknown +0xB8 float field_0xB8
+// @field Unknown +0xBC float field_0xBC
+// @field Unknown +0xF6 uint8_t field_0xF6
+void fn_00630510(void* self, const float* src) {
+    auto* base = static_cast<uint8_t*>(self);
+    float x, y, z;
+    std::memcpy(&x, src + 0, sizeof(float));
+    std::memcpy(&y, src + 1, sizeof(float));
+    std::memcpy(&z, src + 2, sizeof(float));
+    std::memcpy(base + 0xB4, &x, sizeof(float));
+    std::memcpy(base + 0xB8, &y, sizeof(float));
+    std::memcpy(base + 0xBC, &z, sizeof(float));
+    base[0xF6] = 1;
+}
+} // namespace lift_00630510

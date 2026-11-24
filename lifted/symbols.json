@@ -25042,6 +25042,13 @@
     "summary": "Takes the positions of the first two child sensors, builds a cross-product frame from them and a reference offset, and stores the derived plane terms (doubles at +0x58..+0x70) plus the cached positions (+0x78, +0x84).",
     "lifted_path": "lifted/Sensors/CompoundSensorHorizontalPlane.cpp"
   },
+  "0x00630510": {
+    "name": "Unknown::copyVec3ToFieldsAndSetFlag",
+    "class": "Unknown",
+    "signature": "void fn_00630510(void* self, const float* src)",
+    "summary": "Copies three floats from the source pointer into self+0xB4..0xBC and sets the byte flag at self+0xF6 to 1.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x00630560": {
     "name": "sub_00630560",
     "class": "UnknownClass",
