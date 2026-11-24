@@ -233,3 +233,22 @@ void fn_00533090(void* self) {
     ext_0065C650(lock);
 }
 } // namespace lift_00533090
+
+// [0x00532F60]
+namespace lift_00532F60 {
+// @name OglRenderer::vfunc_113
+// @class OglRenderer
+// @summary Stops the multimedia timer embedded at this+0x48, then kills the Win32 timer identified by this+0x1C on the window.
+// @field OglRenderer +0x1C void* field_0x1C
+// @field OglRenderer +0x48 void* field_0x48
+
+extern void __fastcall ext_0067B410(void* self);
+extern BOOL(__stdcall* mem_00925660)(HWND hWnd, UINT_PTR uIDEvent);
+
+void __fastcall fn_00532F60(void* self) {
+    unsigned char* p = static_cast<unsigned char*>(self);
+    ext_0067B410(p + 0x48);
+    HWND hwnd = *reinterpret_cast<HWND*>(p + 0x1C);
+    mem_00925660(hwnd, 1);
+}
+} // namespace lift_00532F60

@@ -17228,6 +17228,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x2D4 and tail-calls sub_0054C640.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00532F60": {
+    "name": "OglRenderer::vfunc_113",
+    "class": "OglRenderer",
+    "signature": "void __fastcall fn_00532F60(void* self)",
+    "summary": "Stops the multimedia timer embedded at this+0x48, then kills the Win32 timer identified by this+0x1C on the window.",
+    "lifted_path": "lifted/classes/OglRenderer.cpp"
+  },
   "0x00533090": {
     "name": "OglRenderer::vfunc_116",
     "class": "OglRenderer",
