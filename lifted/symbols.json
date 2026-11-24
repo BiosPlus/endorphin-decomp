@@ -1946,9 +1946,10 @@
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
   "0x00430DA0": {
-    "name": "sub_00430DA0",
-    "signature": "extern \"C\" void __cdecl fn_00430DA0(void)",
-    "summary": "Calls a status getter, passes its result to a predicate; if the predicate is false, shows a message box via MFC80 ord_1123.",
+    "name": "sub_00431310",
+    "class": "CBase",
+    "signature": "void fn_00431310(uint32_t arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00551A10 (NMCamera::Orthogonal::vfunc_5).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
   "0x00430DE0": {

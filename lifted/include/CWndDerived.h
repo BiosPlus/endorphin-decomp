@@ -8,7 +8,7 @@
 // Recovered field layout for CWndDerived:
 namespace lifted_layout {
 struct CWndDerived_Fields {
-    // +0x20  uint32_t                 m_hWnd  (evidence: 0x00430FA0)
-    // +0x160 uint32_t                 timerId  (evidence: 0x00430FA0)
+    // +0x20  uint32_t                 m_hWnd  (evidence: 0x00430DA0, 0x00430FA0)
+    // +0x160 uint32_t                 timerId  (evidence: 0x00430DA0, 0x00430FA0)
 };
 } // namespace lifted_layout
