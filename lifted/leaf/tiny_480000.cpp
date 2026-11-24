@@ -269,3 +269,32 @@ void* fn_00486D40(void* a) {
 }
 } // namespace lift_005AC820
 } // namespace lift_00486D40
+
+// [0x00486AD0] sub_00486AD0 (30 bytes)
+namespace lift_00486AD0 {
+// @name Unknown::storeValueMaybeNotify
+// @class Unknown
+// @summary Stores the dword argument at +0x168; if the byte flag argument is nonzero, invokes vtable slot 0x128 on self.
+// @field Unknown +0x0 void* field_0x00
+// @field Unknown +0x168 uint32_t field_0x168
+
+namespace {
+// Vtable slot at byte offset 0x128: thiscall-style, takes only `this`.
+using NotifySlotFn = void (*)(void* thisptr);
+} // namespace
+
+// Original is __thiscall with two stack args (dword value, byte notify); callee pops 8 bytes.
+void fn_00486AD0(void* self, uint32_t value, uint8_t notify) {
+    // mov eax, [esp+4]; mov [ecx+0x168], eax
+    lift_field<uint32_t>(self, 0x168) = value;
+
+    // cmp byte ptr [esp+8], 0; je ret
+    if (notify != 0) {
+        // mov edx, [ecx]; mov eax, [edx+0x128]; call eax
+        void* vtable = lift_field<void*>(self, 0);
+        auto slot = reinterpret_cast<NotifySlotFn>(lift_field<void*>(vtable, 0x128));
+        slot(self);
+    }
+    // ret 8: both stack arguments are consumed by the callee epilogue.
+}
+} // namespace lift_00486AD0

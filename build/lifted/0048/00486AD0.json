@@ -1,0 +1,28 @@
+{
+  "va": "0x00486AD0",
+  "size": 30,
+  "orig_symbol": "sub_00486AD0",
+  "src_path": "src/leaf/tiny_480000.cpp",
+  "lifted_path": "lifted/leaf/tiny_480000.cpp",
+  "name": "Unknown::storeValueMaybeNotify",
+  "class": "Unknown",
+  "signature": "void fn_00486AD0(void* self, uint32_t value, uint8_t notify)",
+  "summary": "Stores the dword argument at +0x168; if the byte flag argument is nonzero, invokes vtable slot 0x128 on self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x168",
+      "type": "uint32_t",
+      "name": "field_0x168"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:17:02Z"
+}

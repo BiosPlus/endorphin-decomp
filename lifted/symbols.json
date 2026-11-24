@@ -5609,6 +5609,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
     "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp"
   },
+  "0x00486AD0": {
+    "name": "Unknown::storeValueMaybeNotify",
+    "class": "Unknown",
+    "signature": "void fn_00486AD0(void* self, uint32_t value, uint8_t notify)",
+    "summary": "Stores the dword argument at +0x168; if the byte flag argument is nonzero, invokes vtable slot 0x128 on self.",
+    "lifted_path": "lifted/leaf/tiny_480000.cpp"
+  },
   "0x00486AF0": {
     "name": "sub_00486AF0",
     "class": "AnimatableTransform",
