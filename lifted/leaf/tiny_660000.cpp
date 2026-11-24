@@ -472,3 +472,19 @@ void __thiscall copyFloat4From(void* self, const void* src) {
     lift_field<float>(self, 0x0C) = s[3];
 }
 } // namespace lift_00669E60
+
+// [0x00669E40] sub_00669E40 (30 bytes)
+namespace lift_00669E40 {
+// @name setFloat4FromStack
+// @summary Copies four float arguments into the first 16 bytes of self (ret 0x10, callee-cleans 4 floats).
+// @field <unknown> +0x00 float field_0x00
+// @field <unknown> +0x04 float field_0x04
+// @field <unknown> +0x08 float field_0x08
+// @field <unknown> +0x0C float field_0x0C
+void fn_00669E40(void* self, float a0, float a1, float a2, float a3) {
+    lift_field<float>(self, 0x00) = a0;
+    lift_field<float>(self, 0x04) = a1;
+    lift_field<float>(self, 0x08) = a2;
+    lift_field<float>(self, 0x0C) = a3;
+}
+} // namespace lift_00669E40
