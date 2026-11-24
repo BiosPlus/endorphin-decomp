@@ -8441,3 +8441,23 @@ void fn_00488510(void* self) {
     lift_field<uint32_t>(self, 0x04) = 0x00AD9E34u;
 }
 } // namespace lift_00488510
+
+// [0x004886F0] ExprParser::ReadWriteMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriod(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_004886F0 {
+extern void ext_0067A670();
+extern int mem_00AD9E40;
+extern int mem_00AD9E3C;
+
+// @name ExprParser::ReadWriteMethodType<DesiredPoseEventData, float>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriod(float), 0}>
+// @summary Runs the one-time guarded init of the static proxy object at 0x00AD9E3C, then stores that object's address into the target's +0x04 slot.
+// @field ExprParser::ReadWriteMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriod(float), 0}> +0x04 uint32_t field_0x04
+void fn_004886F0(void* self) {
+    if ((mem_00AD9E40 & 1) == 0) {
+        mem_00AD9E40 |= 1;
+        ext_0067A670();
+        mem_00AD9E3C = 0x0093DFF4;  // vtable pointer of the static object
+    }
+    lift_field<uint32_t>(self, 0x04) = 0x00AD9E3C;
+}
+} // namespace lift_004886F0
