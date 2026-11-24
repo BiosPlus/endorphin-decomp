@@ -20986,6 +20986,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0058F590 (sub_0058F590).",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x0058F670": {
+    "name": "HelperGraphic::vfunc_15_off_4",
+    "class": "HelperGraphic",
+    "signature": "void fn_0058F670(void* self, uint32_t arg)",
+    "summary": "Calls ext_00661A70 with arg and either (self + 0x14C) or 0 (when self - 4 is zero), then stores the result at +0xE4.",
+    "lifted_path": "lifted/classes/HelperGraphic.cpp"
+  },
   "0x0058F6B0": {
     "name": "NMData::AxisDefineSensorData::vfunc_14",
     "class": "NMData::AxisDefineSensorData",

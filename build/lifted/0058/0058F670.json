@@ -1,0 +1,28 @@
+{
+  "va": "0x0058F670",
+  "size": 58,
+  "orig_symbol": "HelperGraphic::vfunc_15_off_4",
+  "src_path": "src/classes/HelperGraphic.cpp",
+  "lifted_path": "lifted/classes/HelperGraphic.cpp",
+  "name": "HelperGraphic::vfunc_15_off_4",
+  "class": "HelperGraphic",
+  "signature": "void fn_0058F670(void* self, uint32_t arg)",
+  "summary": "Calls ext_00661A70 with arg and either (self + 0x14C) or 0 (when self - 4 is zero), then stores the result at +0xE4.",
+  "fields": [
+    {
+      "class": "HelperGraphic",
+      "offset": "+0xE4",
+      "type": "uint32_t",
+      "name": "field_0xE4"
+    },
+    {
+      "class": "HelperGraphic",
+      "offset": "+0x14C",
+      "type": "uint8_t",
+      "name": "field_0x14C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:24:16Z"
+}
