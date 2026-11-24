@@ -1,0 +1,14 @@
+{
+  "va": "0x00435130",
+  "size": 33,
+  "orig_symbol": "sub_00435130",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::forwardSubobjectsThenVcall1C0Tail",
+  "class": "Unknown",
+  "signature": "void fn_00435130(void* self)",
+  "summary": "Forwards self to ext_004332B0, obtains an object via ext_00465B40, invokes its vtable slot at +0x1C0 with that object as this, then tail-calls ext_004332D0 with self.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:51:37Z"
+}

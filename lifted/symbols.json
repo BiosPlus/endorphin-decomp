@@ -2083,6 +2083,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x14C and tail-calls sub_00425DC0.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x00435130": {
+    "name": "Unknown::forwardSubobjectsThenVcall1C0Tail",
+    "class": "Unknown",
+    "signature": "void fn_00435130(void* self)",
+    "summary": "Forwards self to ext_004332B0, obtains an object via ext_00465B40, invokes its vtable slot at +0x1C0 with that object as this, then tail-calls ext_004332D0 with self.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00435270": {
     "name": "Unknown::updateSubobjectsAndGlobal_00435270",
     "class": "Unknown",

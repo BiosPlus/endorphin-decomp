@@ -644,3 +644,29 @@ void fn_0043CD60(void* self, UINT uElapse) {
     *reinterpret_cast<UINT*>(base + 0x138) = static_cast<UINT>(id);
 }
 } // namespace lift_0043CD60
+
+// [0x00435130] sub_00435130 (33 bytes)
+namespace lift_00435130 {
+// Known callee 0x004332B0: Unknown::forwardToSubobjectsVfunc14 (void __thiscall, takes self in ECX)
+extern void ext_004332B0(void* self);
+// Known callee 0x00465B40: sub_00465B40 (__cdecl, no args, returns object pointer in EAX)
+extern void* ext_00465B40();
+// Known callee 0x004332D0: sub_004332D0 (void __thiscall, takes self in ECX; tail-called)
+extern void ext_004332D0(void* self);
+
+// @name Unknown::forwardSubobjectsThenVcall1C0Tail
+// @class Unknown
+// @summary Forwards self to ext_004332B0, obtains an object via ext_00465B40, invokes its vtable slot at +0x1C0 with that object as this, then tail-calls ext_004332D0 with self.
+void fn_00435130(void* self) {
+    ext_004332B0(self);
+
+    void* obj = ext_00465B40();
+
+    // Virtual call through obj's vtable at byte offset 0x1C0 (thiscall: this = obj).
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    auto vfn = *reinterpret_cast<void (**)(void*)>(reinterpret_cast<uint8_t*>(vtbl) + 0x1C0);
+    vfn(obj);
+
+    ext_004332D0(self);
+}
+} // namespace lift_00435130
