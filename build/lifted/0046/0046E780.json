@@ -1,0 +1,22 @@
+{
+  "va": "0x0046E780",
+  "size": 34,
+  "orig_symbol": "sub_0046E780",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "Unknown::forwardVtableSlot4",
+  "class": "Unknown",
+  "signature": "uint32_t fn_0046E780(void* self, uint32_t a1, uint32_t a2, uint32_t /*a3 (unused)*/)",
+  "summary": "Calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:54:53Z"
+}

@@ -437,3 +437,25 @@ void fn_00465EA0(void* self) {
     ext_0044B150(reinterpret_cast<void*>(static_cast<uintptr_t>(sub)));
 }
 } // namespace lift_00465EA0
+
+// [0x0046E780] sub_0046E780 (34 bytes)
+namespace lift_0046E780 {
+// Signature inferred from disassembly: thiscall, 3 stack args, ret 0xc (callee-cleans 12 bytes).
+// Calls vtable slot 4 (vptr + 0x10) on self with (a1, a2, <caller ESI>, 0) and returns a1.
+// @name Unknown::forwardVtableSlot4
+// @class Unknown
+// @summary Calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg.
+// @field Unknown +0x00 void* vptr
+
+typedef uint32_t(__thiscall* VirtualSlot4Fn)(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4);
+
+uint32_t fn_0046E780(void* self, uint32_t a1, uint32_t a2, uint32_t /*a3 (unused)*/) {
+    void** vtbl = *reinterpret_cast<void***>(self);        // mov eax, [ecx]
+    void* slot4 = vtbl[4];                                  // mov eax, [eax+0x10]
+    // Original pushes the caller's ESI as the 3rd stack arg (not recoverable here) and
+    // overwrites the 4th stack slot with 0.
+    const uint32_t callerEsiSlot = 0;
+    reinterpret_cast<VirtualSlot4Fn>(slot4)(self, a1, a2, callerEsiSlot, 0u);
+    return a1;                                              // mov eax, esi (esi == a1)
+}
+} // namespace lift_0046E780
