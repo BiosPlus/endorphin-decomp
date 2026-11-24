@@ -19855,6 +19855,13 @@
     "summary": "Calls vtable slot 30 (+0x78) on the target object, passing the address of the second argument; no-op if target is null.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00585170": {
+    "name": "AnimatableTransform::vfunc_34",
+    "class": "AnimatableTransform",
+    "signature": "uint32_t fn_00585170(void* self, void* arg0)",
+    "summary": "Resolves a property/transform value via TransformInterface and vfunc_54, then forwards to ext_00493E40.",
+    "lifted_path": "lifted/classes/AnimatableTransform.cpp"
+  },
   "0x00585250": {
     "name": "NMData::RPROJointData::vfunc_0",
     "class": "NMData::RPROJointData",
@@ -36336,6 +36343,12 @@
     "signature": "__stdcall int32_t fn_0068D8C0(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0068DDD0": {
+    "name": "copy_0068DDD0",
+    "signature": "uint32_t __thiscall sub_0068DDD0(uint32_t self, uint32_t other)",
+    "summary": "Copy constructor setting vtables and copying 0x276 dwords from offset 0x10",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x0068DE10": {
     "name": "ExprParser::ReadMethodType\u003cRandomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0\u003e::vfunc_0",

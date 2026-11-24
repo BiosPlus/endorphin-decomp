@@ -390,3 +390,26 @@ float __thiscall fn_0068BE40(void* self, float scale) {
     return static_cast<float>(d);
 }
 } // namespace lift_0068BE40
+
+// [0x0068DDD0]
+namespace lift_0068DDD0 {
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+// @name copy_0068DDD0
+// @summary Copy constructor setting vtables and copying 0x276 dwords from offset 0x10
+// @field Obj +0x00 uint32_t vtable_0
+// @field Obj +0x04 uint32_t vtable_4
+// @field Obj +0x08 uint32_t field_0x08
+// @field Obj +0x10 uint8_t[0x9d8] field_0x10
+
+uint32_t __thiscall sub_0068DDD0(uint32_t self, uint32_t other) {
+    mem_write32(self, 0x0098dd14u);
+    mem_write32(self + 0x4u, 0x0098dce4u);
+    mem_write32(self + 0x8u, mem_read32(other + 0x8u));
+    for (uint32_t i = 0; i < 0x276u; ++i) {
+        mem_write32(self + 0x10u + i * 4u, mem_read32(other + 0x10u + i * 4u));
+    }
+    return self;
+}
+} // namespace lift_0068DDD0

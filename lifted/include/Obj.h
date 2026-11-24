@@ -11,9 +11,12 @@ struct Obj_Fields {
     // +0x0   int32_t                  field_0x00  (evidence: 0x007C8820) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x007C9E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable  (evidence: 0x0077F9E0) // CONFLICT: multiple definitions at +0x0
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x0077F9E0, 0x007C9E50)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x0077F9E0)
+    // +0x0   uint32_t                 vtable_0  (evidence: 0x0068DDD0) // CONFLICT: multiple definitions at +0x0
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x0077F9E0, 0x007C9E50) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 vtable_4  (evidence: 0x0068DDD0) // CONFLICT: multiple definitions at +0x4
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x0068DDD0, 0x0077F9E0)
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x007D47A0, 0x007D8470)
+    // +0x10  uint8_t[0x9d8]           field_0x10  (evidence: 0x0068DDD0)
     // +0x14  uint32_t                 field_0x14  (evidence: 0x007D47A0, 0x007D8470)
     // +0x1C  uint32_t                 field_0x1C  (evidence: 0x007C9E50)
     // +0x20  uint32_t                 field_0x20  (evidence: 0x007C8820)
