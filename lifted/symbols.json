@@ -35260,6 +35260,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x4 and tail-calls sub_00682FD0.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
+  "0x00683710": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::ValuePtrData\u003e::vfunc_0 (NMData::ValuePtrData::getPropertyDescription)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1\u003e",
+    "signature": "void* fn_00683710(void* out_str, const void* const* obj_ptr)",
+    "summary": "Builds the property description of the ValuePtrData held in *obj_ptr into a temporary via ext_00683100, assigns it to the returned std::string out_str, and returns out_str.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00683790": {
     "name": "ExprParser::ReadMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1\u003e",

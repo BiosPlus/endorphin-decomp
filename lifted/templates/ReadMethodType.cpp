@@ -41259,3 +41259,23 @@ int32_t fn_00488B80(void* self) {
     return static_cast<int32_t>(r);
 }
 } // namespace lift_00488B80
+
+// [0x00683710] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_0 (113 bytes)
+namespace lift_00683710 {
+extern void* __stdcall ext_00683100(void* tmp, const void* obj);
+extern void __thiscall ext_006720E0(void* dst, const void* src);
+
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData>::vfunc_0 (NMData::ValuePtrData::getPropertyDescription)
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Builds the property description of the ValuePtrData held in *obj_ptr into a temporary via ext_00683100, assigns it to the returned std::string out_str, and returns out_str.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* fn_00683710(void* out_str, const void* const* obj_ptr) {
+    alignas(8) uint8_t tmp[0x20]{};
+    const void* obj = obj_ptr ? *obj_ptr : nullptr;
+    const void* src = ext_00683100(tmp, obj);
+    ext_006720E0(out_str, src);
+    // The original destroys the temporary std::string here via the MSVCP80 basic_string
+    // destructor (IAT slot mem_00924FF4); no portable equivalent, so the temporary is left as raw storage.
+    return out_str;
+}
+} // namespace lift_00683710
