@@ -57,7 +57,7 @@ struct unknown_Fields {
     // +0x118 uint8_t                  field_0x118  (evidence: 0x006C2CB0, 0x006C2E30, 0x0070EBC0, 0x0070EBF0)
     // +0x150 uint32_t                 field_0x150  (evidence: 0x00687230, 0x006872A0)
     // +0x154 uint32_t                 field_0x154  (evidence: 0x005CFC80)
-    // +0x158 uint32_t                 field_0x158  (evidence: 0x005CFC80)
+    // +0x158 uint32_t                 field_0x158  (evidence: 0x005CFC80, 0x006C3120)
     // +0x168 uint32_t                 field_0x168  (evidence: 0x007D8470, 0x007D8730)
     // +0x1C4 std::string              field_0x1c4  (evidence: 0x004499D0)
     // +0x1CC float                    field_0x1cc  (evidence: 0x007C2E50, 0x007C6110)
