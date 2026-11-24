@@ -32790,3 +32790,58 @@ extern void* __thiscall fn_0046E250(void* self, void* out_str, void** obj_ptr) {
     return out_str;
 }
 } // namespace lift_0046E250
+
+// [0x0046E5C0]
+namespace lift_0046E5C0 {
+// @name ExprParser::ReadMethodType<ImageExporter,bool>::vfunc_4
+// @class ExprParser::ReadMethodType<ImageExporter,bool>
+// @summary Calls ImageExporter::getUseRenderer on a dereferenced pointer and formats the boolean result as a string, or throws on null.
+
+
+uint8_t ext_0046C2E0(void* self);
+void* ext_0046C460(void* out_str, uint8_t flag);
+void ext_0046C3C0(void* exc_buf);
+void ext_006A6DD2(void* exc_obj, uint32_t throw_info);
+
+void* fn_0046E5C0(void* self, void* out_str, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        uint8_t val = ext_0046C2E0(obj);
+        ext_0046C460(out_str, val);
+        return out_str;
+    }
+
+    uint8_t exc_buf[0x28];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, 0x009DEC1C);
+    return out_str;
+}
+} // namespace lift_0046E5C0
+
+// [0x00471E20]
+namespace lift_00471E20 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, bool, getPlaybackLoopingEnabled>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, bool, getPlaybackLoopingEnabled>
+// @summary Reads playback looping state from a RuntimeEngine pointer and formats it as a boolean string, or throws on null.
+
+
+uint8_t __thiscall ext_0046F910(void* self);
+void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+void* __thiscall fn_00471E20(void* self, void* out_str, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (!obj) {
+        uint8_t err_buf[0x28];
+        ext_0046C3C0(err_buf);
+        ext_006A6DD2(err_buf, reinterpret_cast<void*>(0x009DEC1Cu));
+    }
+
+    uint8_t flag = ext_0046F910(obj);
+    ext_0046C460(out_str, flag);
+    return out_str;
+}
+} // namespace lift_00471E20

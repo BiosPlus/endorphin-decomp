@@ -1,0 +1,14 @@
+{
+  "va": "0x0046E5C0",
+  "size": 81,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cImageExporter,bool\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cImageExporter,bool\u003e",
+  "signature": "void* fn_0046E5C0(void* self, void* out_str, void** obj_ptr)",
+  "summary": "Calls ImageExporter::getUseRenderer on a dereferenced pointer and formats the boolean result as a string, or throws on null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:43:05Z"
+}
