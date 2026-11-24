@@ -172,3 +172,16 @@ void* fn_004BA920(void* arg1, DWORD arg2) {
     return arg1;
 }
 } // namespace lift_004BA920
+
+// [0x004B4C00] sub_004B4C00 (35 bytes)
+namespace lift_004B4C00 {
+// Known callee 0x004B4740: sub_004B4740 (Calls ext_004B18E0 on arg2, then initialises arg1 with its result and arg2 via ext_0055DA20; returns arg1.)
+extern void* ext_004B4740(void* arg1, DWORD arg2);
+
+// @name initAndReturnFirstArg
+// @summary Calls ext_004B4740(arg1, arg2) for its side effects and returns arg1 unchanged (stdcall, 2 args).
+void* __stdcall fn_004B4C00(void* arg1, DWORD arg2) {
+    ext_004B4740(arg1, arg2);
+    return arg1;
+}
+} // namespace lift_004B4C00

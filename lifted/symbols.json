@@ -8561,6 +8561,12 @@
     "summary": "Lazily caches a value from ext_004B4710 in a global on first call, then forwards it with the self+8 subobject to ext_0055DA20 on the second stack argument; returns that second argument.",
     "lifted_path": "lifted/NMData/GraphEngineData.cpp"
   },
+  "0x004B4C00": {
+    "name": "initAndReturnFirstArg",
+    "signature": "void* __stdcall fn_004B4C00(void* arg1, DWORD arg2)",
+    "summary": "Calls ext_004B4740(arg1, arg2) for its side effects and returns arg1 unchanged (stdcall, 2 args).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B5160": {
     "name": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand::vfunc_0",
     "class": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand",
