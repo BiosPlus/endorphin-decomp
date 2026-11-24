@@ -1,0 +1,46 @@
+{
+  "va": "0x0074B080",
+  "size": 48,
+  "orig_symbol": "sub_0074B080",
+  "src_path": "src/leaf/decompiled_740000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_740000.cpp",
+  "name": "Unknown::initStateFlags",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_0074B080(void* self)",
+  "summary": "Calls ext_00784620(self, 0x14) to reset base state, sets byte flags +0x14..+0x16 to 1, clears byte +0x17, zeroes dword +0x18, and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint8_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x15",
+      "type": "uint8_t",
+      "name": "field_0x15"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x16",
+      "type": "uint8_t",
+      "name": "field_0x16"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x17",
+      "type": "uint8_t",
+      "name": "field_0x17"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:23:50Z"
+}

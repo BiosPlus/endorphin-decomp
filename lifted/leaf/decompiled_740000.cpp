@@ -43,3 +43,29 @@ int __stdcall fn_0074F650(int32_t a, int32_t n) {
     return -1;
 }
 } // namespace lift_0074F650
+
+// [0x0074B080]
+namespace lift_0074B080 {
+// @name Unknown::initStateFlags
+// @class Unknown
+// @summary Calls ext_00784620(self, 0x14) to reset base state, sets byte flags +0x14..+0x16 to 1, clears byte +0x17, zeroes dword +0x18, and returns self.
+// @field Unknown +0x14 uint8_t field_0x14
+// @field Unknown +0x15 uint8_t field_0x15
+// @field Unknown +0x16 uint8_t field_0x16
+// @field Unknown +0x17 uint8_t field_0x17
+// @field Unknown +0x18 uint32_t field_0x18
+
+
+// Known callee 0x00784620: sub_00784620 (thiscall: reset object state, store one DWORD argument)
+extern void ext_00784620(void* self, DWORD arg);
+
+void* __thiscall fn_0074B080(void* self) {
+    ext_00784620(self, 0x14);
+    lift_field<uint8_t>(self, 0x14) = 1;
+    lift_field<uint8_t>(self, 0x15) = 1;
+    lift_field<uint8_t>(self, 0x16) = 1;
+    lift_field<uint8_t>(self, 0x17) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+    return self;
+}
+} // namespace lift_0074B080
