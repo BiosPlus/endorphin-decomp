@@ -68,3 +68,18 @@ int fn_008102B0(void* self) {
     return (flags >> 13) & 1;
 }
 } // namespace lift_008102B0
+
+// [0x00810300] sub_00810300 (17 bytes)
+namespace lift_00810300 {
+// @name getNestedFlagBit24
+// @class (none)
+// @summary Follows two pointer hops (self+0x4, then +0x4) and returns bit 24 of the final dword as 0 or 1.
+// @field <Unknown> +0x04 void* field_0x04
+// @field <Unknown> +0x04 uint32_t field_0x04
+uint32_t fn_00810300(void* self) {
+    // self (arg0) -> ptr at +0x04 -> dword at +0x04 -> bit 24
+    void* a = lift_field<void*>(self, 0x04);
+    uint32_t v = lift_field<uint32_t>(a, 0x04);
+    return (v >> 24) & 1u;
+}
+} // namespace lift_00810300

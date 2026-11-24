@@ -39275,6 +39275,13 @@
     "summary": "Returns bit 13 of the DWORD at +0x04 of the object referenced by the +0x04 pointer of the argument.",
     "lifted_path": "lifted/leaf/tiny_810000.cpp"
   },
+  "0x00810300": {
+    "name": "getNestedFlagBit24",
+    "class": "(none)",
+    "signature": "uint32_t fn_00810300(void* self)",
+    "summary": "Follows two pointer hops (self+0x4, then +0x4) and returns bit 24 of the final dword as 0 or 1.",
+    "lifted_path": "lifted/leaf/tiny_810000.cpp"
+  },
   "0x00810350": {
     "name": "getNestedFlagBit15",
     "signature": "uint32_t sub_00810350(const uint8_t* arg0)",

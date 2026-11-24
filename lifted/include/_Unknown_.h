@@ -8,6 +8,8 @@
 // Recovered field layout for <Unknown>:
 namespace lifted_layout {
 struct _Unknown__Fields {
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00810300) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x00810300) // CONFLICT: multiple definitions at +0x4
     // +0x8   uint32_t                 field_0x08  (evidence: 0x0080FBB0)
     // +0xC   int32_t                  field_0x0C  (evidence: 0x00665880)
     // +0x84  uint8_t*                 field_0x84  (evidence: 0x00543900)

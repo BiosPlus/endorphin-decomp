@@ -1,0 +1,28 @@
+{
+  "va": "0x00810300",
+  "size": 17,
+  "orig_symbol": "sub_00810300",
+  "src_path": "src/leaf/tiny_810000.cpp",
+  "lifted_path": "lifted/leaf/tiny_810000.cpp",
+  "name": "getNestedFlagBit24",
+  "class": "(none)",
+  "signature": "uint32_t fn_00810300(void* self)",
+  "summary": "Follows two pointer hops (self+0x4, then +0x4) and returns bit 24 of the final dword as 0 or 1.",
+  "fields": [
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:55:27Z"
+}
