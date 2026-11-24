@@ -23957,6 +23957,12 @@
     "summary": "Calls virtual method at +0x10C with arg 1, then passes the float result to ext_00678130 on ext_00594000() + 0x2E0.",
     "lifted_path": "lifted/leaf/decompiled_610000.cpp"
   },
+  "0x00611950": {
+    "name": "sub_00611950",
+    "signature": "extern \"C\" void __thiscall fn_00611950(void* this_ptr)",
+    "summary": "Calls vtable[0x10c](2) to get a float, then passes it to ext_00678130 on (ext_00594000() + 0x2e0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
   "0x00611B80": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_69",
     "class": "NMData::PrimaryTwistAndSwingConstraint",
