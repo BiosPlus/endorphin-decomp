@@ -976,3 +976,35 @@ void fn_0066D430(void* arg) {
     *slot = 0x00B596A8u;
 }
 } // namespace lift_0066D430
+
+// [0x0066D3B0] ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, NM::Vector3 const &, &public: void __thiscall NM::Vector3::cartesianAtoB_E(class NM::Vector3 const &, NM::Vector3 const &)>::vfunc_40 (122 bytes)
+namespace lift_0066D3B0 {
+// Callee 0x0067A670 (sub_0067A670): one-time initializer for the static at mem_00B596A0.
+// Receives the static's address as `this` (ecx). The stack slot the original wrote as 0
+// is the SEH try-level bookkeeping, not an argument, so it is not lifted.
+extern void ext_0067A670(void* self);
+extern int mem_00B596A4; // guard word for the function-local static (bit 0 = initialized)
+extern int mem_00B596A0; // function-local static object (its first dword is a vtable pointer)
+
+// @name ExprParser::Method2Type::vfunc_40
+// @class ExprParser::Method2Type
+// @summary Lazily initializes the static object at 0x00B596A0 (once, guarded by bit 0 of 0x00B596A4) and writes its address to the out-pointer's +4 slot.
+
+// Behavior:
+//   if ((guard & 1) == 0) {          // first call
+//       guard |= 1;
+//       ext_0067A670(&static_obj);   // construct/initialize the static
+//       static_obj.vtable = 0x0098882C;
+//   }
+//   *(uint32_t*)(out + 4) = 0x00B596A0;  // return the static's address via out
+// The original is a single-stack-argument routine (ret 4); `out` is that argument.
+// Only the +4 slot of `out` is accessed; its owning class is not identified, so no @field is emitted.
+void fn_0066D3B0(void* out) {
+    if ((mem_00B596A4 & 1) == 0) {
+        mem_00B596A4 |= 1;
+        ext_0067A670(&mem_00B596A0);
+        mem_00B596A0 = static_cast<int>(0x0098882Cu);
+    }
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(out) + 4) = 0x00B596A0u;
+}
+} // namespace lift_0066D3B0

@@ -1,0 +1,14 @@
+{
+  "va": "0x0066D3B0",
+  "size": 122,
+  "orig_symbol": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_E(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_40",
+  "src_path": "src/templates/Method2Type.cpp",
+  "lifted_path": "lifted/templates/Method2Type.cpp",
+  "name": "ExprParser::Method2Type::vfunc_40",
+  "class": "ExprParser::Method2Type",
+  "signature": "extern \"C\" int mem_00B596A4; // guard word for the function-local static (bit 0 = initialized) extern \"C\" int mem_00B596A0; // function-local static object (its first dword is a vtable pointer) void fn_0066D3B0(void* out)",
+  "summary": "Lazily initializes the static object at 0x00B596A0 (once, guarded by bit 0 of 0x00B596A4) and writes its address to the out-pointer's +4 slot.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:56:02Z"
+}
