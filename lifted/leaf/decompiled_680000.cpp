@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_680000.cpp
 #include "lift_compat.h"
+#include <cstdint>
 
 // [0x006829E0] sub_006829E0 (20 bytes)
 namespace lift_006829E0 {
@@ -121,3 +122,22 @@ void fn_00688BE0(uint8_t* begin, uint8_t* end) {
     } while (begin != end);
 }
 } // namespace lift_00688BE0
+
+// [0x00688B20] sub_00688B20 (37 bytes)
+namespace lift_00688B20 {
+extern uintptr_t mem_00924FF4;
+
+// @name DestroyStringRange
+// @summary Destroys the std::string at +0x10 of each 44-byte element in [begin, end) (__stdcall, ret 8).
+// @field Unknown +0x10 std::string field_0x10
+void __stdcall fn_00688B20(uint8_t* begin, uint8_t* end) {
+    // Element stride is 0x2C; the string destructor is called through the
+    // import slot at mem_00924FF4 with `this` = element + 0x10.
+    using StringDtorFn = void(__thiscall*)(void*);
+    auto dtor = reinterpret_cast<StringDtorFn>(mem_00924FF4);
+
+    for (uint8_t* p = begin; p != end; p += 0x2C) {
+        dtor(p + 0x10);
+    }
+}
+} // namespace lift_00688B20
