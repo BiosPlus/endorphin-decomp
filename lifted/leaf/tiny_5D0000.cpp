@@ -163,3 +163,19 @@ extern DWORD __fastcall fn_005D0810(void* self) {
 }
 } // namespace lift_004D0AF0
 } // namespace lift_005D0810
+
+// [0x005D14A0] sub_005D14A0 (27 bytes)
+namespace lift_005D14A0 {
+// @name ResetOwnedObject
+// @summary If the object at +0x04 is non-null, call its vtable slot 0 with flag 1 (deleting destructor), then clear the pointer.
+// @field <ClassName> +0x04 void* field_0x04
+void fn_005D14A0(void* self) {
+    void* obj = lift_field<void*>(self, 0x04);
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        auto slot0 = reinterpret_cast<void (__thiscall*)(void*, int)>(vtbl[0]);
+        slot0(obj, 1);
+    }
+    lift_field<void*>(self, 0x04) = nullptr;
+}
+} // namespace lift_005D14A0

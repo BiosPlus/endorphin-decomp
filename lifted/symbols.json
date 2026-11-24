@@ -18480,6 +18480,12 @@
     "summary": "Initializes a two-dword record from one stack argument; second dword is cleared to 0; returns this.",
     "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
   },
+  "0x005D14A0": {
+    "name": "ResetOwnedObject",
+    "signature": "void fn_005D14A0(void* self)",
+    "summary": "If the object at +0x04 is non-null, call its vtable slot 0 with flag 1 (deleting destructor), then clear the pointer.",
+    "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
+  },
   "0x005D14C0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0\u003e",

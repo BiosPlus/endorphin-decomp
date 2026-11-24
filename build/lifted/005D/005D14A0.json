@@ -1,0 +1,21 @@
+{
+  "va": "0x005D14A0",
+  "size": 27,
+  "orig_symbol": "sub_005D14A0",
+  "src_path": "src/leaf/tiny_5D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5D0000.cpp",
+  "name": "ResetOwnedObject",
+  "signature": "void fn_005D14A0(void* self)",
+  "summary": "If the object at +0x04 is non-null, call its vtable slot 0 with flag 1 (deleting destructor), then clear the pointer.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:03:57Z"
+}
