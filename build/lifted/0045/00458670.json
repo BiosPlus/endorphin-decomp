@@ -1,0 +1,22 @@
+{
+  "va": "0x00458670",
+  "size": 30,
+  "orig_symbol": "sub_00458670",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "Unknown::forwardToSubobjectSlot5",
+  "class": "Unknown",
+  "signature": "void fn_00458670(void* self, uint32_t arg1, uint32_t* arg2)",
+  "summary": "Calls the MFC80 thunk, then forwards to forwardVtableSlot5 using the subobject at +0x54 and the stack arguments.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "void*",
+      "name": "field_0x54"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:16:39Z"
+}

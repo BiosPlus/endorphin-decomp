@@ -192,3 +192,27 @@ void fn_00454BE0(void* self, DWORD value) {
     ext_00454BB0(obj + 0x10C, value);
 }
 } // namespace lift_00454BE0
+
+// [0x00458670] sub_00458670 (30 bytes)
+namespace lift_00458670 {
+// Known callee 0x006A5EA8: thunk_MFC80_ord_1903 (IAT jump thunk forwarding to MFC80!ord_1903.)
+extern void ext_006A5EA8();
+// Known callee 0x004584A0: forwardVtableSlot5 (Tail-calls virtual method at vtable offset 0x14 on member at +0x10)
+extern void ext_004584A0();
+
+// @name Unknown::forwardToSubobjectSlot5
+// @class Unknown
+// @summary Calls the MFC80 thunk, then forwards to forwardVtableSlot5 using the subobject at +0x54 and the stack arguments.
+// @field Unknown +0x54 void* field_0x54
+void fn_00458670(void* self, uint32_t arg1, uint32_t* arg2) {
+    ext_006A5EA8();
+    void* subobject = lift_field<void*>(self, 0x54);
+    // The original pushes (&arg2, arg1) on the stack and passes subobject in ecx
+    // before calling ext_004584A0; the stub signature carries no parameters, so
+    // the subobject and stack arguments are not forwarded here.
+    (void)subobject;
+    (void)arg1;
+    (void)arg2;
+    ext_004584A0();
+}
+} // namespace lift_00458670
