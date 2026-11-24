@@ -99,3 +99,17 @@ void fn_00507F60(void* self, double value) {
     *reinterpret_cast<double*>(base + 0x20) = value;
 }
 } // namespace lift_00507F60
+
+// [0x0050E350] sub_0050E350 (15 bytes)
+namespace lift_0050E350 {
+extern uint32_t mem_00AEC0A4;
+
+// @name SetField2CAndGlobalFromArg
+// @class <unknown> (this is in ecx; owning class not yet recovered)
+// @summary Stores the single stack argument into this->field_0x2c and into global mem_00AEC0A4, then returns (ret 4).
+// @field <unknown> +0x2c uint32_t field_0x2c
+extern void __thiscall fn_0050E350(void* self, uint32_t value) {
+    lift_field<uint32_t>(self, 0x2c) = value;   // mov [ecx+0x2c], eax
+    mem_00AEC0A4 = value;                        // mov [0xaec0a4], eax
+}
+} // namespace lift_0050E350

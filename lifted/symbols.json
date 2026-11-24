@@ -9861,6 +9861,13 @@
     "summary": "Loads the target object pointer from the first argument's leading dword and forwards it to the shared method-invoke helper (randomizeTasks path); pops 8 bytes of stack args.",
     "lifted_path": "lifted/templates/WriteOnlyMethod0Type.cpp"
   },
+  "0x0050E350": {
+    "name": "SetField2CAndGlobalFromArg",
+    "class": "\u003cunknown\u003e (this is in ecx; owning class not yet recovered)",
+    "signature": "extern \"C\" void __thiscall fn_0050E350(void* self, uint32_t value)",
+    "summary": "Stores the single stack argument into this-\u003efield_0x2c and into global mem_00AEC0A4, then returns (ret 4).",
+    "lifted_path": "lifted/leaf/tiny_500000.cpp"
+  },
   "0x0050E4C0": {
     "name": "NMData::PopulationData::vfunc_0",
     "class": "NMData::PopulationData",

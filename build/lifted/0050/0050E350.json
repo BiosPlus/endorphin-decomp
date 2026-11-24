@@ -1,0 +1,22 @@
+{
+  "va": "0x0050E350",
+  "size": 15,
+  "orig_symbol": "sub_0050E350",
+  "src_path": "src/leaf/tiny_500000.cpp",
+  "lifted_path": "lifted/leaf/tiny_500000.cpp",
+  "name": "SetField2CAndGlobalFromArg",
+  "class": "\u003cunknown\u003e (this is in ecx; owning class not yet recovered)",
+  "signature": "extern \"C\" void __thiscall fn_0050E350(void* self, uint32_t value)",
+  "summary": "Stores the single stack argument into this-\u003efield_0x2c and into global mem_00AEC0A4, then returns (ret 4).",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:29:25Z"
+}
