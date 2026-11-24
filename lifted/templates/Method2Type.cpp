@@ -776,3 +776,26 @@ void __thiscall fn_005B7ED0(void* self, void* arg1) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B43C84));
 }
 } // namespace lift_005B7ED0
+
+// [0x005B7FA0]
+namespace lift_005B7FA0 {
+// @name ExprParser::Method2Type<NMData::MetaBodyData, addImpulseAtPostion>::vfunc_40
+// @class ExprParser::Method2Type<NMData::MetaBodyData, NM::Vector3 const &, NM::Vector3 const &, addImpulseAtPostion>
+// @summary Lazily initializes a static type/method descriptor at 0x00B43C8C and stores its address at arg0 + 4.
+
+
+extern uint32_t mem_00B43C90;
+extern uint32_t mem_00B43C8C;
+
+extern void __thiscall ext_0067A670(uint32_t self);
+
+void __thiscall fn_005B7FA0(uint32_t self, uint32_t arg0) {
+    (void)self;
+    if ((mem_00B43C90 & 1u) == 0u) {
+        mem_00B43C90 |= 1u;
+        ext_0067A670(0x00B43C8Cu);
+        mem_00B43C8C = 0x00961CBCu;
+    }
+    *reinterpret_cast<uint32_t*>(arg0 + 4u) = 0x00B43C8Cu;
+}
+} // namespace lift_005B7FA0

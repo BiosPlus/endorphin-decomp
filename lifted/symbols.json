@@ -22003,6 +22003,13 @@
     "summary": "Calls two virtual slot-5 methods on the argument objects, forwards the results to ext_005B72A0 on *arg2, then zeroes the out-buffer at arg2 via ext_00671F30 and returns arg2.",
     "lifted_path": "lifted/templates/Method2Type.cpp"
   },
+  "0x005B7FA0": {
+    "name": "ExprParser::Method2Type\u003cNMData::MetaBodyData, addImpulseAtPostion\u003e::vfunc_40",
+    "class": "ExprParser::Method2Type\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, NM::Vector3 const \u0026, addImpulseAtPostion\u003e",
+    "signature": "void __thiscall fn_005B7FA0(uint32_t self, uint32_t arg0)",
+    "summary": "Lazily initializes a static type/method descriptor at 0x00B43C8C and stores its address at arg0 + 4.",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
   "0x005B8020": {
     "name": "ExprParser::Method0Type\u003cNMData::MetaBodyData, resetForcesAndImpulses\u003e::vfunc_40",
     "class": "ExprParser::Method0Type",

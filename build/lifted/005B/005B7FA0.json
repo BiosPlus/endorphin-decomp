@@ -1,0 +1,14 @@
+{
+  "va": "0x005B7FA0",
+  "size": 122,
+  "orig_symbol": "ExprParser::Method2Type\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::addImpulseAtPostion(class NM::Vector3 const \u0026, NM::Vector3 const \u0026), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/Method2Type.cpp",
+  "lifted_path": "lifted/templates/Method2Type.cpp",
+  "name": "ExprParser::Method2Type\u003cNMData::MetaBodyData, addImpulseAtPostion\u003e::vfunc_40",
+  "class": "ExprParser::Method2Type\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, NM::Vector3 const \u0026, addImpulseAtPostion\u003e",
+  "signature": "void __thiscall fn_005B7FA0(uint32_t self, uint32_t arg0)",
+  "summary": "Lazily initializes a static type/method descriptor at 0x00B43C8C and stores its address at arg0 + 4.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:54:12Z"
+}
