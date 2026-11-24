@@ -34,7 +34,7 @@ struct Unknown_Fields {
     // +0x0   void*                    vptr  (evidence: 0x0041C750, 0x0042FE70, 0x00493EA0, 0x00493EE0, 0x005760E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vptr  (evidence: 0x004104E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable  (evidence: 0x008703B0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    vtable  (evidence: 0x00493FF0, 0x0063FFE0, 0x006A7AC0, 0x006A7F30, 0x006A7F90, 0x006A7FB0, 0x006C0420, 0x0072DC60, 0x00774EC0, 0x00790D60, 0x0079ADA0, 0x0079D730, 0x0079DCE0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vtable  (evidence: 0x00458FE0, 0x00493FF0, 0x0063FFE0, 0x006A7AC0, 0x006A7F30, 0x006A7F90, 0x006A7FB0, 0x006C0420, 0x0072DC60, 0x00774EC0, 0x00790D60, 0x0079ADA0, 0x0079D730, 0x0079DCE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* const*             vtable  (evidence: 0x0064F8F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x0042FDD0, 0x00790D60, 0x0079ADA0, 0x0079DCE0, 0x0079E610) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtbl  (evidence: 0x006FC1E0, 0x007D4B10) // CONFLICT: multiple definitions at +0x0
@@ -107,6 +107,7 @@ struct Unknown_Fields {
     // +0x1C  HWND                     field_0x1c  (evidence: 0x00458E10) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 field_0x1c  (evidence: 0x0078CB80) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  HMODULE                  hModule  (evidence: 0x00401920) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  void*                    hwnd  (evidence: 0x00458FE0) // CONFLICT: multiple definitions at +0x1C
     // +0x20  BYTE field_0x20 (base of byte array indexed by first argument)  (evidence: 0x0071E660) // CONFLICT: multiple definitions at +0x20
     // +0x20  DWORD                    field_0x20  (evidence: 0x00642010, 0x0078C230, 0x0078C3A0) // CONFLICT: multiple definitions at +0x20
     // +0x20  HMODULE                  field_0x20  (evidence: 0x004474D0, 0x0044B6A0) // CONFLICT: multiple definitions at +0x20

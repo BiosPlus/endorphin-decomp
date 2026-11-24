@@ -3165,6 +3165,13 @@
     "summary": "Sends the global message id to the window handle stored in self+0x1c, passing self as lParam and 0 as wParam; returns the LRESULT.",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x00458FE0": {
+    "name": "Unknown::SetVtableAndSendIfWindow",
+    "class": "Unknown",
+    "signature": "extern \"C\" int32_t __fastcall fn_00458FE0(void* self)",
+    "summary": "Sets the vtable to mem_0093785C; if the window handle at +0x1c is non-null, tail-calls SendMessageToFieldWindow, otherwise returns.",
+    "lifted_path": "lifted/leaf/tiny_450000.cpp"
+  },
   "0x004590E0": {
     "name": "CMessageReflector::vfunc_0",
     "class": "CMessageReflector",

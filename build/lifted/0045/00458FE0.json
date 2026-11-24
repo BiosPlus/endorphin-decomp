@@ -1,0 +1,28 @@
+{
+  "va": "0x00458FE0",
+  "size": 18,
+  "orig_symbol": "sub_00458FE0",
+  "src_path": "src/leaf/tiny_450000.cpp",
+  "lifted_path": "lifted/leaf/tiny_450000.cpp",
+  "name": "Unknown::SetVtableAndSendIfWindow",
+  "class": "Unknown",
+  "signature": "extern \"C\" int32_t __fastcall fn_00458FE0(void* self)",
+  "summary": "Sets the vtable to mem_0093785C; if the window handle at +0x1c is non-null, tail-calls SendMessageToFieldWindow, otherwise returns.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:12:37Z"
+}

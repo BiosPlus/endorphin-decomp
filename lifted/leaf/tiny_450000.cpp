@@ -303,3 +303,26 @@ int32_t fn_00458E10(void* self) {
     return ext_SendMessageA(hwnd, msg, 0u, lParam);
 }
 } // namespace lift_00458E10
+
+// [0x00458FE0] sub_00458FE0 (18 bytes)
+namespace lift_00458FE0 {
+// Known callee 0x00458E10: SendMessageToFieldWindow (Sends the global message id to the window handle stored in self+0x1c, passing self as lParam and 0 as wParam; returns the LRESULT.)
+extern int32_t __fastcall ext_00458E10(void* self);
+extern int mem_0093785C;
+
+// @name Unknown::SetVtableAndSendIfWindow
+// @class Unknown
+// @summary Sets the vtable to mem_0093785C; if the window handle at +0x1c is non-null, tail-calls SendMessageToFieldWindow, otherwise returns.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x1c void* hwnd
+extern int32_t __fastcall fn_00458FE0(void* self) {
+    // cmp [self+0x1c], 0 ; mov [self], vtable ; je .ret ; jmp ext_00458E10
+    // Note: the original leaves eax untouched on the early-return path; 0 is returned here as the closest portable equivalent.
+    void* hwnd = lift_field<void*>(self, 0x1c);
+    lift_field<void*>(self, 0x0) = &mem_0093785C;
+    if (hwnd == nullptr) {
+        return 0;
+    }
+    return ext_00458E10(self);
+}
+} // namespace lift_00458FE0
