@@ -22968,11 +22968,25 @@
     "summary": "Pure jump thunk forwarding to sub_0063E1A0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0063E220": {
+    "name": "AdvXMLParser::Attribute::vfunc_3",
+    "class": "AdvXMLParser::Attribute",
+    "signature": "uint32_t fn_0063E220(void* self, uint32_t arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0063E180 (AdvXMLParser::Text::vfunc_3).",
+    "lifted_path": "lifted/AdvXMLParser/Attribute.cpp"
+  },
   "0x0063E260": {
     "name": "sub_0063E260",
     "signature": "extern \"C\" void fn_0063E260(void)",
     "summary": "Pure jump thunk forwarding to sub_0063E0F0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x0063E270": {
+    "name": "AdvXMLParser::CharRef::vfunc_3",
+    "class": "AdvXMLParser::CharRef",
+    "signature": "uint32_t fn_0063E270(void* self, uint32_t arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0063E180 (AdvXMLParser::Text::vfunc_3).",
+    "lifted_path": "lifted/AdvXMLParser/CharRef.cpp"
   },
   "0x0063E380": {
     "name": "AdvXMLParser::CharRef::vfunc_4",
@@ -22981,12 +22995,26 @@
     "summary": "Pure jump thunk forwarding to sub_0063E310.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0063E4E0": {
+    "name": "AdvXMLParser::Comment::vfunc_3",
+    "class": "AdvXMLParser::Comment",
+    "signature": "uint32_t fn_0063E4E0(void* self, uint32_t arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0063E180 (AdvXMLParser::Text::vfunc_3).",
+    "lifted_path": "lifted/AdvXMLParser/Comment.cpp"
+  },
   "0x0063E5A0": {
     "name": "AdvXMLParser::Comment::vfunc_4",
     "class": "AdvXMLParser::Comment",
     "signature": "extern \"C\" void fn_0063E5A0(void)",
     "summary": "Pure jump thunk forwarding to sub_0063E500.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x0063E6A0": {
+    "name": "AdvXMLParser::Pi::vfunc_3",
+    "class": "AdvXMLParser::Pi",
+    "signature": "uint32_t fn_0063E6A0(void* self, uint32_t arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0063E180 (AdvXMLParser::Text::vfunc_3).",
+    "lifted_path": "lifted/AdvXMLParser/Pi.cpp"
   },
   "0x0063E760": {
     "name": "AdvXMLParser::Pi::vfunc_4",
@@ -22995,12 +23023,26 @@
     "summary": "Pure jump thunk forwarding to sub_0063E6C0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0063E870": {
+    "name": "AdvXMLParser::CData::vfunc_3",
+    "class": "AdvXMLParser::CData",
+    "signature": "uint32_t fn_0063E870(void* self, uint32_t arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0063E180 (AdvXMLParser::Text::vfunc_3).",
+    "lifted_path": "lifted/AdvXMLParser/CData.cpp"
+  },
   "0x0063E930": {
     "name": "AdvXMLParser::CData::vfunc_4",
     "class": "AdvXMLParser::CData",
     "signature": "extern \"C\" void fn_0063E930(void)",
     "summary": "Pure jump thunk forwarding to sub_0063E890.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x0063E940": {
+    "name": "AdvXMLParser::Document::vfunc_3",
+    "class": "AdvXMLParser::Document",
+    "signature": "uint32_t fn_0063E940(void* self, uint32_t arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0063E180 (AdvXMLParser::Text::vfunc_3).",
+    "lifted_path": "lifted/AdvXMLParser/Document.cpp"
   },
   "0x0063E960": {
     "name": "sub_0063E960_ctor",

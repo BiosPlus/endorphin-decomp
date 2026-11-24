@@ -1,0 +1,14 @@
+{
+  "va": "0x0063E870",
+  "size": 23,
+  "orig_symbol": "AdvXMLParser::CData::vfunc_3",
+  "src_path": "src/AdvXMLParser/CData.cpp",
+  "lifted_path": "lifted/AdvXMLParser/CData.cpp",
+  "name": "AdvXMLParser::CData::vfunc_3",
+  "class": "AdvXMLParser::CData",
+  "signature": "uint32_t fn_0063E870(void* self, uint32_t arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x0063E180 (AdvXMLParser::Text::vfunc_3).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T11:33:25Z"
+}
