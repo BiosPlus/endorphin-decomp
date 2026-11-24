@@ -1,0 +1,27 @@
+{
+  "va": "0x006E6970",
+  "size": 48,
+  "orig_symbol": "sub_006E6970",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "ForwardToSubobjectsVfunc",
+  "signature": "void fn_006E6970(void* self, void* arg)",
+  "summary": "Calls vfunc +0x78 on the subobject at +0x00 with the argument, then vfunc +0x128 on the subobject at +0x04 passing self; null subobjects are skipped.",
+  "fields": [
+    {
+      "class": "ForwardToSubobjectsVfunc",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ForwardToSubobjectsVfunc",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:20:32Z"
+}

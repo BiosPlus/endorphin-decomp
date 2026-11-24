@@ -543,3 +543,28 @@ double fn_006E7190(void* self) {
     return lift_field<double>(sub, 0xA8);
 }
 } // namespace lift_006E7190
+
+// [0x006E6970]
+namespace lift_006E6970 {
+// @name ForwardToSubobjectsVfunc
+// @summary Calls vfunc +0x78 on the subobject at +0x00 with the argument, then vfunc +0x128 on the subobject at +0x04 passing self; null subobjects are skipped.
+// @field ForwardToSubobjectsVfunc +0x00 void* field_0x00
+// @field ForwardToSubobjectsVfunc +0x04 void* field_0x04
+void fn_006E6970(void* self, void* arg) {
+    // First subobject: vtable slot at +0x78 (index 30 on 32-bit), receives arg.
+    void* first = lift_field<void*>(self, 0x00);
+    if (first != nullptr) {
+        void* vt = lift_field<void*>(first, 0x00);
+        void* fp = lift_field<void*>(vt, 0x78);
+        reinterpret_cast<void (*)(void*, void*)>(fp)(first, arg);
+    }
+
+    // Second subobject: vtable slot at +0x128 (index 74 on 32-bit), receives self.
+    void* second = lift_field<void*>(self, 0x04);
+    if (second != nullptr) {
+        void* vt = lift_field<void*>(second, 0x00);
+        void* fp = lift_field<void*>(vt, 0x128);
+        reinterpret_cast<void (*)(void*, void*)>(fp)(second, self);
+    }
+}
+} // namespace lift_006E6970
