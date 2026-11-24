@@ -9984,6 +9984,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004F9820 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
   },
+  "0x004F4D20": {
+    "name": "initVtableAndStoreTwoArgs",
+    "signature": "void fn_004F4D20(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "__thiscall initializer: stores vtable pointer at +0x00, then the two stack arguments at +0x04 and +0x08 (callee cleans 8 bytes).",
+    "lifted_path": "lifted/leaf/tiny_4F0000.cpp"
+  },
   "0x004F4E00": {
     "name": "sub_004F4E00",
     "signature": "extern \"C\" void __fastcall fn_004F4E00(void* self, int edx_unused, float value)",

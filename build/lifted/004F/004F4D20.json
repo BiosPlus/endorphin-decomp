@@ -1,0 +1,33 @@
+{
+  "va": "0x004F4D20",
+  "size": 25,
+  "orig_symbol": "sub_004F4D20",
+  "src_path": "src/leaf/tiny_4F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4F0000.cpp",
+  "name": "initVtableAndStoreTwoArgs",
+  "signature": "void fn_004F4D20(void* self, DWORD arg1, DWORD arg2)",
+  "summary": "__thiscall initializer: stores vtable pointer at +0x00, then the two stack arguments at +0x04 and +0x08 (callee cleans 8 bytes).",
+  "fields": [
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x0",
+      "type": "\u003cDWORD\u003e",
+      "name": "vtable"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x4",
+      "type": "\u003cDWORD\u003e",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x8",
+      "type": "\u003cDWORD\u003e",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:48:26Z"
+}
