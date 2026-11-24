@@ -15692,6 +15692,13 @@
     "summary": "Calls vtable slot 32 (+0x80) on the object at this+0x88, then tail-calls vtable slot 16 (+0x40) on the object at this+0x9C with this = \u0026this+0x9C and returns its result.",
     "lifted_path": "lifted/classes/ReshapeTool.cpp"
   },
+  "0x00544A40": {
+    "name": "ReshapeTool::vfunc_17",
+    "class": "ReshapeTool",
+    "signature": "inline void** vtable_of(void* obj)",
+    "summary": "Calls vtable slot 33 on the object at +0x88 and slot 29 on self, then tail-calls slot 17 of the embedded object at +0x9C.",
+    "lifted_path": "lifted/classes/ReshapeTool.cpp"
+  },
   "0x00544A70": {
     "name": "ReshapeTool::vfunc_26",
     "class": "ReshapeTool",

@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/classes/ReshapeTool.cpp
 #include "lift_compat.h"
+#include <cstdint>
 
 // [0x00544A10] ReshapeTool::vfunc_16 (37 bytes)
 namespace lift_00544A10 {
@@ -21,3 +22,42 @@ void* __thiscall fn_00544A10(void* self) {
     return reinterpret_cast<VFuncRet>(secondVtbl[0x40 / sizeof(void*)])(fieldAddr);
 }
 } // namespace lift_00544A10
+
+// [0x00544A40]
+namespace lift_00544A40 {
+// @name ReshapeTool::vfunc_17
+// @class ReshapeTool
+// @summary Calls vtable slot 33 on the object at +0x88 and slot 29 on self, then tail-calls slot 17 of the embedded object at +0x9C.
+// @field ReshapeTool +0x88 void* field_0x88
+// @field ReshapeTool +0x9C void* field_0x9C
+
+
+
+namespace {
+
+using VoidThisFn = void (*)(void*);
+using U32ThisFn = uint32_t (*)(void*);
+
+// Returns the vtable pointer stored at the start of an object.
+inline void** vtable_of(void* obj) {
+    return *reinterpret_cast<void***>(obj);
+}
+
+}  // namespace
+
+uint32_t ReshapeTool_vfunc_17(void* self) {
+    auto* base = reinterpret_cast<unsigned char*>(self);
+
+    // call [vtable(obj+0x88) + 0x84]  (slot 33), ecx = obj+0x88
+    void* obj88 = *reinterpret_cast<void**>(base + 0x88);
+    reinterpret_cast<VoidThisFn>(vtable_of(obj88)[33])(obj88);
+
+    // call [vtable(self) + 0x74]  (slot 29), ecx = self
+    reinterpret_cast<VoidThisFn>(vtable_of(self)[29])(self);
+
+    // jmp [vtable(*(self+0x9C)) + 0x44]  (slot 17), ecx = self+0x9C
+    void* sub9c = base + 0x9C;
+    void* obj9c = *reinterpret_cast<void**>(base + 0x9C);
+    return reinterpret_cast<U32ThisFn>(vtable_of(obj9c)[17])(sub9c);
+}
+} // namespace lift_00544A40

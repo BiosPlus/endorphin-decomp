@@ -1,0 +1,28 @@
+{
+  "va": "0x00544A40",
+  "size": 46,
+  "orig_symbol": "ReshapeTool::vfunc_17",
+  "src_path": "src/classes/ReshapeTool.cpp",
+  "lifted_path": "lifted/classes/ReshapeTool.cpp",
+  "name": "ReshapeTool::vfunc_17",
+  "class": "ReshapeTool",
+  "signature": "inline void** vtable_of(void* obj)",
+  "summary": "Calls vtable slot 33 on the object at +0x88 and slot 29 on self, then tail-calls slot 17 of the embedded object at +0x9C.",
+  "fields": [
+    {
+      "class": "ReshapeTool",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "ReshapeTool",
+      "offset": "+0x9C",
+      "type": "void*",
+      "name": "field_0x9C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:09:51Z"
+}
