@@ -102,3 +102,21 @@ void* fn_00500310(void* self, void* pair, DWORD b) {
     return pair;
 }
 } // namespace lift_00500310
+
+// [0x0050F9D0]
+namespace lift_0050F9D0 {
+// @name CompareDoublesByOrder
+// @summary Compares two doubles in ascending or descending order based on field_0x08
+// @field Unknown +0x08 uint32_t field_0x08
+
+
+extern uint32_t mem_read32(uintptr_t addr);
+
+bool __thiscall fn_0050F9D0(void* self, double a, double b) {
+    uint32_t descending = mem_read32(reinterpret_cast<uintptr_t>(self) + 0x8);
+    if (descending == 0) {
+        return a < b;
+    }
+    return a > b;
+}
+} // namespace lift_0050F9D0

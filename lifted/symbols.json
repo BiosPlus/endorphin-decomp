@@ -12320,6 +12320,12 @@
     "summary": "Stores address of mem_00950A74 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x0050F9D0": {
+    "name": "CompareDoublesByOrder",
+    "signature": "bool __thiscall fn_0050F9D0(void* self, double a, double b)",
+    "summary": "Compares two doubles in ascending or descending order based on field_0x08",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050FA00": {
     "name": "ReturnConstantByField8",
     "signature": "double fn_0050FA00(void* self)",
