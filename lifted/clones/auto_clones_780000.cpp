@@ -88,3 +88,21 @@ void fn_00787520(void* self) {
     mem_00B60B68 = negHuge;
 }
 } // namespace lift_00787520
+
+// [0x00783100] sub_00783100 (41 bytes)
+namespace lift_00783100 {
+extern uint32_t mem_00B608C8;
+extern uint32_t mem_00B608D0;
+extern uint32_t mem_00B608CC;
+extern uint32_t mem_00B608D4;
+
+// @name init_global_block_B608C8
+// @summary Initializes four dwords of the global block at 0xB608C8 (two link pointers, a vtable pointer, and a zeroed tail word).
+void fn_00783100(void* self) {
+    (void)self;
+    mem_00B608C8 = 0x00B608B0u;
+    mem_00B608D0 = 0x00AAF38Cu;
+    mem_00B608CC = 0x00B608B8u;
+    mem_00B608D4 = 0x00000000u;
+}
+} // namespace lift_00783100

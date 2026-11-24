@@ -1,0 +1,13 @@
+{
+  "va": "0x00783100",
+  "size": 41,
+  "orig_symbol": "sub_00783100",
+  "src_path": "src/clones/auto_clones_780000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_780000.cpp",
+  "name": "init_global_block_B608C8",
+  "signature": "void fn_00783100(void* self)",
+  "summary": "Initializes four dwords of the global block at 0xB608C8 (two link pointers, a vtable pointer, and a zeroed tail word).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:57:18Z"
+}

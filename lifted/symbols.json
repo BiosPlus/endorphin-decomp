@@ -44037,6 +44037,12 @@
     "summary": "Pure jump thunk forwarding to sub_00782D30.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00783100": {
+    "name": "init_global_block_B608C8",
+    "signature": "void fn_00783100(void* self)",
+    "summary": "Initializes four dwords of the global block at 0xB608C8 (two link pointers, a vtable pointer, and a zeroed tail word).",
+    "lifted_path": "lifted/clones/auto_clones_780000.cpp"
+  },
   "0x00783250": {
     "name": "sub_00783250",
     "signature": "extern \"C\" void* __fastcall fn_00783250(void* self, int edx_unused, unsigned int flags)",
