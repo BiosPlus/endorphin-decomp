@@ -5219,6 +5219,12 @@
     "summary": "Loads the pointer at self+0; if non-null, tail-dispatches virtual slot 0x14C on that object, otherwise returns.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00493DE0": {
+    "name": "dispatchThroughSlot0xCC_00493DE0",
+    "signature": "DWORD dispatchThroughSlot0xCC_00493DE0(void* ecxSlot, DWORD a1, DWORD a2)",
+    "summary": "Forwards a two-DWORD call to vtable slot 0xCC of the object referenced by the slot at ECX; returns 0 if the object is null.",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
   "0x00493E00": {
     "name": "forwardVtable0B4_viaFirstField",
     "signature": "intptr_t fn_00493E00(void* self)",

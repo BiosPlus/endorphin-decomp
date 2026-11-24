@@ -1,0 +1,13 @@
+{
+  "va": "0x00493DE0",
+  "size": 19,
+  "orig_symbol": "sub_00493DE0",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "dispatchThroughSlot0xCC_00493DE0",
+  "signature": "DWORD dispatchThroughSlot0xCC_00493DE0(void* ecxSlot, DWORD a1, DWORD a2)",
+  "summary": "Forwards a two-DWORD call to vtable slot 0xCC of the object referenced by the slot at ECX; returns 0 if the object is null.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:00:34Z"
+}

@@ -393,3 +393,27 @@ uint32_t fn_00493DA0(void** self, uint32_t arg) {
     return fn(object, arg);
 }
 } // namespace lift_00493DA0
+
+// [0x00493DE0] sub_00493DE0 (19 bytes)
+namespace lift_00493DE0 {
+// @name dispatchThroughSlot0xCC_00493DE0
+// @summary Forwards a two-DWORD call to vtable slot 0xCC of the object referenced by the slot at ECX; returns 0 if the object is null.
+// Note: the original tail-jumps with the caller's stack args intact (ret 8 only on the null path).
+// The portable version cannot tail-call, so the args are forwarded by value and the return value is passed through.
+typedef DWORD (*Slot0CCFn)(void* self, DWORD a1, DWORD a2);
+
+DWORD dispatchThroughSlot0xCC_00493DE0(void* ecxSlot, DWORD a1, DWORD a2) {
+    // mov ecx, [ecx] : object pointer stored in the slot at ECX
+    void* obj = *reinterpret_cast<void**>(ecxSlot);
+    // test ecx, ecx / je -> ret 8
+    if (obj == nullptr) {
+        return 0;
+    }
+    // mov eax, [ecx] : vtable pointer at object offset 0
+    void* vtable = lift_field<void*>(obj, 0);
+    // mov eax, [eax + 0xCC] : vtable slot at byte offset 0xCC
+    uintptr_t target = static_cast<uintptr_t>(lift_field<uintptr_t>(vtable, 0xCC));
+    // jmp eax
+    return reinterpret_cast<Slot0CCFn>(target)(obj, a1, a2);
+}
+} // namespace lift_00493DE0
