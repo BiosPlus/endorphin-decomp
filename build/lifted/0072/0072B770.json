@@ -1,0 +1,13 @@
+{
+  "va": "0x0072B770",
+  "size": 57,
+  "orig_symbol": "sub_0072B770",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "isKnownGlobalHandle",
+  "signature": "bool __stdcall sub_0072B770(uint32_t value)",
+  "summary": "Returns true if the argument matches any of four known global 32-bit values.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:25:32Z"
+}

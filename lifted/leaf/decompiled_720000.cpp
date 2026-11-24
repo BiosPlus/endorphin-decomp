@@ -309,3 +309,51 @@ int32_t __thiscall fn_0072BDB0(void* self, int32_t index) {
     return ext_006E7460(target);
 }
 } // namespace lift_0072BDB0
+
+// [0x0072B770]
+namespace lift_0072B770 {
+// @name isKnownGlobalHandle
+// @summary Returns true if the argument matches any of four known global 32-bit values.
+
+
+extern uint32_t mem_00B600A0;
+extern uint32_t mem_00B5F060;
+extern uint32_t mem_00B5EB78;
+extern uint32_t mem_00B5E400;
+
+bool __stdcall sub_0072B770(uint32_t value) {
+    if (value == mem_00B600A0) {
+        return true;
+    }
+    if (value == mem_00B5F060) {
+        return true;
+    }
+    if (value == mem_00B5EB78) {
+        return true;
+    }
+    return value == mem_00B5E400;
+}
+} // namespace lift_0072B770
+
+// [0x0072CC90]
+namespace lift_0072CC90 {
+extern uint32_t mem_00B60288;
+extern uint32_t mem_00B60F58;
+extern uint32_t mem_00B5EB78;
+extern uint32_t mem_00B5E400;
+
+// @name isKnownGlobalId
+// @summary Returns true if arg0 matches any of four global 32-bit values.
+uint8_t __stdcall sub_0072CC90(uint32_t arg0) {
+    if (arg0 == mem_00B60288) {
+        return 1;
+    }
+    if (arg0 == mem_00B60F58) {
+        return 1;
+    }
+    if (arg0 == mem_00B5EB78) {
+        return 1;
+    }
+    return arg0 == mem_00B5E400 ? 1 : 0;
+}
+} // namespace lift_0072CC90
