@@ -40710,3 +40710,31 @@ int32_t fn_00604D80(void* self) {
     return ext_006A6DE0(r);
 }
 } // namespace lift_00604D80
+
+// [0x0066F930] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>::vfunc_0 (106 bytes)
+namespace lift_0066F930 {
+// Known callee 0x00672080: sub_00672080 (18B). Thiscall taking the float result; semantics not yet identified, so not reproduced here.
+extern void ext_00672080();
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). Exception-object construction on the null path; represented by std::runtime_error below.
+extern void ext_0046C3C0();
+
+// @name ExprParser::ReadMethodType<NM::Vector3>::vfunc_0 (NM::Vector3::calcNorm)
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>
+// @summary Computes the Euclidean length sqrt(x*x + y*y + z*z) of the NM::Vector3 held through self, stores it via sub_00672080, and returns self; throws if the held Vector3 pointer is null.
+// @field NM::Vector3 +0x00 float x
+// @field NM::Vector3 +0x04 float y
+// @field NM::Vector3 +0x08 float z
+void* fn_0066F930(void* self, void*) {
+    // self's first dword is the NM::Vector3* being read.
+    const auto* v = *static_cast<const float* const*>(self);
+    if (v == nullptr) {
+        throw std::runtime_error("calcNorm: null NM::Vector3");
+    }
+    const float x = v[0];
+    const float y = v[1];
+    const float z = v[2];
+    const float norm = static_cast<float>(std::sqrt(x * x + y * y + z * z));
+    (void)norm; // The original passes this to ext_00672080 (thiscall on self); not reproduced yet.
+    return self;
+}
+} // namespace lift_0066F930
