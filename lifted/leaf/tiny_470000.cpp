@@ -85,15 +85,15 @@ int32_t __fastcall fn_00476BA0(void* ecx) {
 namespace lift_0047FFF0 {
 // @name InitIdentityFloats
 // @summary Writes 1.0f/0.0f constants into the float block at ecx (diagonal-style init).
-// @field field_0x00 float +0x00 field_0x00 (set to 1.0f)
-// @field field_0x04 float +0x04 field_0x04 (set to 0.0f)
-// @field field_0x08 float +0x08 field_0x08 (set to 0.0f)
-// @field field_0x10 float +0x10 field_0x10 (set to 0.0f)
-// @field field_0x14 float +0x14 field_0x14 (set to 1.0f)
-// @field field_0x18 float +0x18 field_0x18 (set to 0.0f)
-// @field field_0x20 float +0x20 field_0x20 (set to 0.0f)
-// @field field_0x24 float +0x24 field_0x24 (set to 0.0f)
-// @field field_0x28 float +0x28 field_0x28 (set to 1.0f)
+// @field InitIdentityFloats +0x00 float field_0x00
+// @field InitIdentityFloats +0x04 float field_0x04
+// @field InitIdentityFloats +0x08 float field_0x08
+// @field InitIdentityFloats +0x10 float field_0x10
+// @field InitIdentityFloats +0x14 float field_0x14
+// @field InitIdentityFloats +0x18 float field_0x18
+// @field InitIdentityFloats +0x20 float field_0x20
+// @field InitIdentityFloats +0x24 float field_0x24
+// @field InitIdentityFloats +0x28 float field_0x28
 
 void InitIdentityFloats(float* self)
 {

@@ -5479,10 +5479,9 @@
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
   "0x0047FFF0": {
-    "name": "Unknown::SetByteAndAssignString",
-    "class": "Unknown",
-    "signature": "void fn_004773B0(void* self, uint8_t flag, const void* rhs)",
-    "summary": "Stores a flag byte into the owner object at self-\u003e+0x28 (+0x1C), then assigns the string argument to that owner via std::string::operator=.",
+    "name": "InitIdentityFloats",
+    "signature": "void InitIdentityFloats(float* self)",
+    "summary": "Writes 1.0f/0.0f constants into the float block at ecx (diagonal-style init).",
     "lifted_path": "lifted/leaf/tiny_470000.cpp"
   },
   "0x004800A0": {
