@@ -1,0 +1,22 @@
+{
+  "va": "0x006F01E0",
+  "size": 34,
+  "orig_symbol": "sub_006F01E0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "ForwardArgsToSubobject2420",
+  "class": "Unknown",
+  "signature": "void fn_006F01E0(void* self, uint32_t arg1, void* arg2)",
+  "summary": "Forwards its two stack arguments, plus two constants, to ext_00711D40 on the subobject at this+0x2420 (thiscall, ret 8).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x2420",
+      "type": "uint8_t field_0x2420 (address only; subobject is passed as `this`, not dereferenced",
+      "name": "here)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:14:13Z"
+}
