@@ -1044,3 +1044,33 @@ uint8_t __stdcall sub_007045A0(uint32_t value) {
     return value == mem_00B5E400 ? 1 : 0;
 }
 } // namespace lift_007045A0
+
+// [0x00704A20]
+namespace lift_00704A20 {
+extern void (__cdecl *mem_009251D8)(void*);
+
+// @name sub_00704A20
+// @summary Frees field_0x81c if non-null, calls vtable+0x10, and if non-null calls vtable+0x8(1)
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0x81C void* field_0x81C
+void __thiscall sub_00704A20(void* self, uint32_t /*unused*/)
+{
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    void* ptr = *reinterpret_cast<void**>(obj + 0x81C);
+    if (ptr != nullptr) {
+        mem_009251D8(ptr);
+        *reinterpret_cast<void**>(obj + 0x81C) = nullptr;
+    }
+
+    using Vfn0 = void(__thiscall*)(void*);
+    using Vfn1 = void(__thiscall*)(void*, uint32_t);
+
+    void** vtable = *reinterpret_cast<void***>(obj);
+    reinterpret_cast<Vfn0>(vtable[0x10 / sizeof(void*)])(obj);
+
+    if (obj != nullptr) {
+        vtable = *reinterpret_cast<void***>(obj);
+        reinterpret_cast<Vfn1>(vtable[0x8 / sizeof(void*)])(obj, 1);
+    }
+}
+} // namespace lift_00704A20

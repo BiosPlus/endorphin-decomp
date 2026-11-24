@@ -84,7 +84,7 @@ struct Unknown_Fields {
     // +0x0   uint32_t*                vtable  (evidence: 0x0070FBD0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x00442B80, 0x00442BB0, 0x00442BD0, 0x004436B0, 0x00443700, 0x004562C0, 0x00458DF0, 0x00458FE0, 0x00493FF0, 0x00538530, 0x0053F6A0, 0x00547AD0, 0x005ACC50, 0x005ACEE0, 0x00611910, 0x00611980, 0x006203B0, 0x0063FFE0, 0x006A7AC0, 0x006A7F30, 0x006A7F90, 0x006A7FB0, 0x006B2590, 0x006C0420, 0x00705760, 0x00705D70, 0x0070E390, 0x0070E3B0, 0x0070EC70, 0x0072DC60, 0x00774EC0, 0x00788E50, 0x0078BEC0, 0x00790D60, 0x0079ADA0, 0x0079D730, 0x0079DCE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* const*             vtable  (evidence: 0x0064F8F0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void**                   vtable  (evidence: 0x0042FAE0, 0x0042FDD0, 0x004345B0, 0x00456340, 0x0062A590, 0x00648A20, 0x00649010, 0x0067ADB0, 0x006DE660, 0x006FA920, 0x00790D60, 0x0079ADA0, 0x0079DCE0, 0x0079E610) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void**                   vtable  (evidence: 0x0042FAE0, 0x0042FDD0, 0x004345B0, 0x00456340, 0x0062A590, 0x00648A20, 0x00649010, 0x0067ADB0, 0x006DE660, 0x006FA920, 0x00704A20, 0x00790D60, 0x0079ADA0, 0x0079DCE0, 0x0079E610) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtablePtr  (evidence: 0x00503CA0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtbl  (evidence: 0x006FC1E0, 0x007D4B10, 0x007D8470) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtbl  (evidence: 0x00648EA0, 0x006BB7C0) // CONFLICT: multiple definitions at +0x0
@@ -690,6 +690,7 @@ struct Unknown_Fields {
     // +0x5A4 DWORD                    field_0x5A4  (evidence: 0x007046E0)
     // +0x654 uint8_t                  field_0x654  (evidence: 0x00788D00)
     // +0x734 uint32_t field_0x734 (base of 18-entry dword array; element i at +0x734 + 4*i, valid i = 1..17)  (evidence: 0x007AAA00, 0x007AC670)
+    // +0x81C void*                    field_0x81C  (evidence: 0x00704A20)
     // +0x9C0 uint8_t                  field_0x9C0  (evidence: 0x0044CE90)
     // +0xF88 uint8_t                  field_0xF88  (evidence: 0x0079D6D0)
     // +0xFD0 uint32_t field_0xFD0 (on the object pointed to by +0x0C)  (evidence: 0x0071C480, 0x0071F070)

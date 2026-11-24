@@ -1,0 +1,27 @@
+{
+  "va": "0x00704A20",
+  "size": 57,
+  "orig_symbol": "sub_00704A20",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "sub_00704A20",
+  "signature": "void __thiscall sub_00704A20(void* self, uint32_t /*unused*/)",
+  "summary": "Frees field_0x81c if non-null, calls vtable+0x10, and if non-null calls vtable+0x8(1)",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x81C",
+      "type": "void*",
+      "name": "field_0x81C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:23:15Z"
+}
