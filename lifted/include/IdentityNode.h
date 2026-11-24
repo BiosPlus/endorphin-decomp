@@ -10,6 +10,6 @@
 // Recovered field layout for IdentityNode:
 namespace lifted_layout {
 struct IdentityNode_Fields {
-    // +0x0   void*                    vtable  (evidence: 0x0059CB90)
+    // +0x0   void*                    vtable  (evidence: 0x0059CB90, 0x005FF1C0)
 };
 } // namespace lifted_layout

@@ -10,7 +10,7 @@
 // Recovered field layout for ToolEngine:
 namespace lifted_layout {
 struct ToolEngine_Fields {
-    // +0x0   void*                    vptr  (evidence: 0x00482480)
-    // +0x3B4 void*                    delegate_0x3B4  (evidence: 0x00480590, 0x004805D0, 0x004805F0, 0x00480600, 0x00480610, 0x00480620, 0x00480630, 0x00480640, 0x00480650, 0x00480660, 0x00480670, 0x004806A0, 0x004806B0)
+    // +0x0   void*                    vptr  (evidence: 0x00482480, 0x005FF1C0)
+    // +0x3B4 void*                    delegate_0x3B4  (evidence: 0x00480590, 0x004805D0, 0x004805F0, 0x00480600, 0x00480610, 0x00480620, 0x00480630, 0x00480640, 0x00480650, 0x00480660, 0x00480670, 0x004806A0, 0x004806B0, 0x005FF1C0)
 };
 } // namespace lifted_layout

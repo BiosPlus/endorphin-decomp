@@ -18197,10 +18197,10 @@
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
   "0x005FF1C0": {
-    "name": "MetaBodySensor::vfunc_25",
-    "class": "MetaBodySensor",
-    "signature": "int MetaBodySensor_vfunc_25(const void* self, int value)",
-    "summary": "Returns 1 if the sensor's stored value at +0x28 equals the single stack argument, else 0 (thiscall, ret 4).",
+    "name": "ExportDialog::vfunc_0",
+    "class": "ExportDialog",
+    "signature": "void* fn_00417330(void* self)",
+    "summary": "Returns the address of the global data slot mem_0092CE00 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x005FF1E0": {

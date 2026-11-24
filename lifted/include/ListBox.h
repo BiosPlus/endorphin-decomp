@@ -10,6 +10,6 @@
 // Recovered field layout for ListBox:
 namespace lifted_layout {
 struct ListBox_Fields {
-    // +0x0   unknown                  field_0x00  (evidence: 0x0042EA40, 0x0055BBD0)
+    // +0x0   unknown                  field_0x00  (evidence: 0x0042EA40, 0x0055BBD0, 0x005FF1C0)
 };
 } // namespace lifted_layout

@@ -10,7 +10,7 @@
 // Recovered field layout for CompoundSensor:
 namespace lifted_layout {
 struct CompoundSensor_Fields {
-    // +0x0   uint32_t*                vtable  (evidence: 0x00627270) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void**                   vtable  (evidence: 0x005FC040, 0x00610A80, 0x00610A90, 0x00610AA0, 0x00629B00, 0x00648EC0, 0x00648ED0, 0x00648EE0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t*                vtable  (evidence: 0x005FF1C0, 0x00627270) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void**                   vtable  (evidence: 0x005FC040, 0x005FF1C0, 0x00610A80, 0x00610A90, 0x00610AA0, 0x00629B00, 0x00648EC0, 0x00648ED0, 0x00648EE0) // CONFLICT: multiple definitions at +0x0
 };
 } // namespace lifted_layout

@@ -72,7 +72,7 @@ struct Unknown_Fields {
     // +0x9C  std::string              field_0x9c  (evidence: 0x0053DAA0) // CONFLICT: multiple definitions at +0x9C
     // +0x9C  uint32_t                 field_0x9c  (evidence: 0x007C9260) // CONFLICT: multiple definitions at +0x9C
     // +0xAC  uint32_t                 field_0xAC  (evidence: 0x0072DB80)
-    // +0xD8  uint32_t                 field_0xD8  (evidence: 0x004023C0)
+    // +0xD8  uint32_t                 field_0xD8  (evidence: 0x004023C0, 0x005FF1C0)
     // +0xF0  void*                    field_0xf0  (evidence: 0x006C2070)
     // +0xF8  void*                    field_0xF8  (evidence: 0x004646A0, 0x0046C110, 0x0046F910, 0x00594700)
     // +0x12C uint8_t                  field_0x12C  (evidence: 0x004646A0, 0x0046F910)

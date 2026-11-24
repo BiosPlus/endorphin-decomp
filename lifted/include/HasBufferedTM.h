@@ -9,6 +9,6 @@
 // Recovered field layout for HasBufferedTM:
 namespace lifted_layout {
 struct HasBufferedTM_Fields {
-    // +0x0   void*                    vtable  (evidence: 0x00401A60)
+    // +0x0   void*                    vtable  (evidence: 0x00401A60, 0x005FF1C0)
 };
 } // namespace lifted_layout

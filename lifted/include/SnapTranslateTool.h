@@ -10,6 +10,6 @@
 // Recovered field layout for SnapTranslateTool:
 namespace lifted_layout {
 struct SnapTranslateTool_Fields {
-    // +0x88  uint32_t                 field_0x88  (evidence: 0x00544E10)
+    // +0x88  uint32_t                 field_0x88  (evidence: 0x00544E10, 0x005FF1C0)
 };
 } // namespace lifted_layout
