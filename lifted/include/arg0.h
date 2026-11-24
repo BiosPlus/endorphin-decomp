@@ -9,7 +9,7 @@
 namespace lifted_layout {
 struct arg0_Fields {
     // +0x0   uint32_t field_0x00 (written with 0)  (evidence: 0x00671F30)
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x005C6130, 0x00607850, 0x0066D430) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x005C6130, 0x00607850, 0x0066D3B0, 0x0066D430) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (written with mem_00B599BC)  (evidence: 0x00671F30) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* sub (pointer to    sub-object)  (evidence: 0x00810370) // CONFLICT: multiple definitions at +0x4
 };

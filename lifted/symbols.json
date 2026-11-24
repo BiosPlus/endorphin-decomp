@@ -25650,6 +25650,13 @@
     "summary": "Lazily initializes a static type descriptor and stores its pointer at arg0 + 0x4",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005F3AF0": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026EffectorGroup::setGradientCaps(float)\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026EffectorGroup::setGradientCaps(float)\u003e",
+    "signature": "void __thiscall fn_005F3AF0(void* self, void* out)",
+    "summary": "Lazily initializes a static type/value descriptor at 0x00B46834 and stores its pointer into out+0x4.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005F3D70": {
     "name": "WriteMethodType\u003cEffectorGroup,float\u003e::vfunc_40 (lazy static init, stores object ptr)",
     "class": "ExprParser::ValuePtrType",
@@ -33736,10 +33743,10 @@
     "lifted_path": "lifted/templates/Method2Type.cpp"
   },
   "0x0066D3B0": {
-    "name": "ExprParser::Method2Type::vfunc_40",
+    "name": "ExprParser::Method2Type::vfunc_49",
     "class": "ExprParser::Method2Type",
-    "signature": "extern \"C\" int mem_00B596A4; // guard word for the function-local static (bit 0 = initialized) extern \"C\" int mem_00B596A0; // function-local static object (its first dword is a vtable pointer) void fn_0066D3B0(void* out)",
-    "summary": "Lazily initializes the static object at 0x00B596A0 (once, guarded by bit 0 of 0x00B596A4) and writes its address to the out-pointer's +4 slot.",
+    "signature": "uint32_t callSlot5(uint32_t obj, uint32_t a, uint32_t b)",
+    "summary": "Calls virtual slot 5 twice on the object held by arg4 (first with 0, then with the first result), forwards the second result to the child at *arg2, zeroes the out buffer at arg2, and returns arg2.",
     "lifted_path": "lifted/templates/Method2Type.cpp"
   },
   "0x0066D430": {

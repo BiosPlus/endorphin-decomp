@@ -8,6 +8,6 @@
 // Recovered field layout for OutArg:
 namespace lifted_layout {
 struct OutArg_Fields {
-    // +0x4   uint32_t*                field_0x4  (evidence: 0x005B7ED0, 0x0066D2B0, 0x0066D430)
+    // +0x4   uint32_t*                field_0x4  (evidence: 0x005B7ED0, 0x0066D2B0, 0x0066D3B0, 0x0066D430)
 };
 } // namespace lifted_layout

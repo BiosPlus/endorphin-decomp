@@ -8,6 +8,6 @@
 // Recovered field layout for ExprValue:
 namespace lifted_layout {
 struct ExprValue_Fields {
-    // +0x4   void*                    type  (evidence: 0x0066CD90, 0x0066D2B0, 0x0066D430)
+    // +0x4   void*                    type  (evidence: 0x0066CD90, 0x0066D2B0, 0x0066D3B0, 0x0066D430)
 };
 } // namespace lifted_layout

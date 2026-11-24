@@ -10,6 +10,6 @@
 // Recovered field layout for ExprParser::RestrictedType:
 namespace lifted_layout {
 struct ExprParser_RestrictedType_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x0066D430, 0x0066D4B0)
+    // +0x4   void*                    field_0x04  (evidence: 0x0066D3B0, 0x0066D430, 0x0066D4B0)
 };
 } // namespace lifted_layout

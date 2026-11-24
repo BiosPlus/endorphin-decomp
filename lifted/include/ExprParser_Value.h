@@ -13,6 +13,6 @@ struct ExprParser_Value_Fields {
     // +0x4   uint32_t                 field_0x04  (evidence: 0x0068C230) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x00487000, 0x005B7BC0, 0x00649150, 0x006492B0, 0x00649620, 0x00649D50, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    type  (evidence: 0x00488270, 0x004886F0, 0x004A2AD0, 0x005B7BC0, 0x00603480) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    type_vtable  (evidence: 0x0066CC70, 0x0066D2B0, 0x0066D430) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    type_vtable  (evidence: 0x0066CC70, 0x0066D2B0, 0x0066D3B0, 0x0066D430) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout
