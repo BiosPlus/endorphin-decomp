@@ -1,0 +1,34 @@
+{
+  "va": "0x0059F370",
+  "size": 129,
+  "orig_symbol": "NMData::CharacterData::vfunc_34_off_4",
+  "src_path": "src/NMData/CharacterData.cpp",
+  "lifted_path": "lifted/NMData/CharacterData.cpp",
+  "name": "NMData::CharacterData::vfunc_34_off_4",
+  "class": "NMData::CharacterData",
+  "signature": "uintptr_t NMData_CharacterData_vfunc_34_off_4(void* self)",
+  "summary": "Looks up a handle via the object at this+0x04, stores this+0x4F4 into the result's +0x20, links the result back to this+0x0C, and returns the result.",
+  "fields": [
+    {
+      "class": "NMData::CharacterData",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "NMData::CharacterData",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "NMData::CharacterData",
+      "offset": "+0x4F4",
+      "type": "void*",
+      "name": "field_0x4f4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:35:55Z"
+}

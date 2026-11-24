@@ -18983,6 +18983,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType\u003cNMData::State, ...getPropertySourceDescription...\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0059F370": {
+    "name": "NMData::CharacterData::vfunc_34_off_4",
+    "class": "NMData::CharacterData",
+    "signature": "uintptr_t NMData_CharacterData_vfunc_34_off_4(void* self)",
+    "summary": "Looks up a handle via the object at this+0x04, stores this+0x4F4 into the result's +0x20, links the result back to this+0x0C, and returns the result.",
+    "lifted_path": "lifted/NMData/CharacterData.cpp"
+  },
   "0x0059F490": {
     "name": "NMData::BackGroundData::vfunc_14_off_4",
     "class": "NMData::BackGroundData",
