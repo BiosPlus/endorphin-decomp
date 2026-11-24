@@ -251,3 +251,21 @@ void fn_007D48F0(uint32_t x) {
     mem_write_u32(x + 0x08, l);                   // x->parent = l
 }
 } // namespace lift_007D48F0
+
+// [0x007DFD80]
+namespace lift_007DFD80 {
+// @name initAllocatedArray
+// @summary Allocates a buffer of 4-byte elements using the provided allocator and initializes a 12-byte array header.
+// @field ArrayHeader +0x00 uint32_t data
+// @field ArrayHeader +0x04 uint32_t count
+// @field ArrayHeader +0x08 uint32_t field_0x08
+
+void __cdecl sub_007DFD80(uint32_t* out_header, uint32_t count, uint32_t* allocator_ptr) {
+    using AllocFn = uint32_t(__cdecl*)(uint32_t);
+    auto alloc_fn = reinterpret_cast<AllocFn>(static_cast<uintptr_t>(allocator_ptr[0]));
+    uint32_t buffer = alloc_fn(count * 4u);
+    out_header[1] = count;
+    out_header[0] = buffer;
+    out_header[2] = 0u;
+}
+} // namespace lift_007DFD80

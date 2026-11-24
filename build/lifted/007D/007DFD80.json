@@ -1,0 +1,33 @@
+{
+  "va": "0x007DFD80",
+  "size": 42,
+  "orig_symbol": "sub_007DFD80",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "initAllocatedArray",
+  "signature": "void __cdecl sub_007DFD80(uint32_t* out_header, uint32_t count, uint32_t* allocator_ptr)",
+  "summary": "Allocates a buffer of 4-byte elements using the provided allocator and initializes a 12-byte array header.",
+  "fields": [
+    {
+      "class": "ArrayHeader",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "data"
+    },
+    {
+      "class": "ArrayHeader",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "count"
+    },
+    {
+      "class": "ArrayHeader",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:06:59Z"
+}
