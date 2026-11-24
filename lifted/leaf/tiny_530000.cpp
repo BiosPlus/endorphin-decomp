@@ -306,3 +306,22 @@ void fn_00532E40(void* self, void* arg) {
 }
 } // namespace lift_00537A00
 } // namespace lift_00532E40
+
+// [0x00538CF0] sub_00538CF0 (24 bytes)
+namespace lift_00538CF0 {
+// @name Unknown::SetFloatsFields18_1C_20
+// @class Unknown
+// @summary Stores three stack float arguments into this+0x20, this+0x18 and this+0x1C (callee-cleans 12 bytes).
+// @field Unknown +0x18 float field_0x18
+// @field Unknown +0x1C float field_0x1c
+// @field Unknown +0x20 float field_0x20
+void __fastcall fn_00538CF0(void* self, void* /*edx, unused*/, float arg1, float arg2, float arg3) {
+    // fld dword ptr [esp+4] / fstp dword ptr [ecx+0x20]
+    lift_field<float>(self, 0x20) = arg1;
+    // fld dword ptr [esp+8] / fstp dword ptr [ecx+0x18]
+    lift_field<float>(self, 0x18) = arg2;
+    // fld dword ptr [esp+0xc] / fstp dword ptr [ecx+0x1c]
+    lift_field<float>(self, 0x1C) = arg3;
+    // ret 0xc: stdcall-style stack cleanup is implied by the __fastcall parameter list
+}
+} // namespace lift_00538CF0

@@ -12402,6 +12402,13 @@
     "summary": "Deletes the GLU quadric object stored at offset +0x00.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x00538CF0": {
+    "name": "Unknown::SetFloatsFields18_1C_20",
+    "class": "Unknown",
+    "signature": "void __fastcall fn_00538CF0(void* self, void* /*edx, unused*/, float arg1, float arg2, float arg3)",
+    "summary": "Stores three stack float arguments into this+0x20, this+0x18 and this+0x1C (callee-cleans 12 bytes).",
+    "lifted_path": "lifted/leaf/tiny_530000.cpp"
+  },
   "0x005394F0": {
     "name": "UtilityGraphics::Locator::vfunc_0",
     "class": "UtilityGraphics::Locator",
