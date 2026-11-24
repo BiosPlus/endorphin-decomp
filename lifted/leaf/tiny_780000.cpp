@@ -508,3 +508,17 @@ int32_t __cdecl sub_00784790(const uint32_t* a, const uint32_t* b) {
     return (va > vb) ? 1 : 0;
 }
 } // namespace lift_00784790
+
+// [0x0078D1C0] sub_0078D1C0 (29 bytes)
+namespace lift_0078D1C0 {
+// @name makeLowBitMask
+// @summary Returns a 32-bit value with bits 0..n-1 set (n = stack argument); x86 shift count is masked to 5 bits, so bit index wraps modulo 32.
+// @field none (no struct fields accessed)
+__cdecl uint32_t fn_0078D1C0(int32_t n) {
+    uint32_t result = 0;
+    for (int32_t i = 0; i < n; ++i) {
+        result |= uint32_t(1) << (uint32_t(i) & 31u);
+    }
+    return result;
+}
+} // namespace lift_0078D1C0

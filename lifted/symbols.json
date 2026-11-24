@@ -40985,6 +40985,12 @@
     "summary": "Increments the 32-bit counter at offset +0x1C of the object passed in ecx; no other effect.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x0078D1C0": {
+    "name": "makeLowBitMask",
+    "signature": "__cdecl uint32_t fn_0078D1C0(int32_t n)",
+    "summary": "Returns a 32-bit value with bits 0..n-1 set (n = stack argument); x86 shift count is masked to 5 bits, so bit index wraps modulo 32.",
+    "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
   "0x0078D1E0": {
     "name": "CriticalSectionLock::unlock",
     "class": "CriticalSectionLock",

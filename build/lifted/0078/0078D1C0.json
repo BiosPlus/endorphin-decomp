@@ -1,0 +1,13 @@
+{
+  "va": "0x0078D1C0",
+  "size": 29,
+  "orig_symbol": "sub_0078D1C0",
+  "src_path": "src/leaf/tiny_780000.cpp",
+  "lifted_path": "lifted/leaf/tiny_780000.cpp",
+  "name": "makeLowBitMask",
+  "signature": "__cdecl uint32_t fn_0078D1C0(int32_t n)",
+  "summary": "Returns a 32-bit value with bits 0..n-1 set (n = stack argument); x86 shift count is masked to 5 bits, so bit index wraps modulo 32.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:15:05Z"
+}
