@@ -515,3 +515,21 @@ void fn_0044C0D0(void* self) {
     ext_006A5EA8();
 }
 } // namespace lift_0044C0D0
+
+// [0x004444C0]
+namespace lift_004444C0 {
+// @name updateField69IfNonNull
+// @summary Calls ext_00584C20 on a non-null object and stores the negated boolean result at +0x69
+// @field Object +0x69 uint8_t field_0x69
+
+
+extern uint8_t __thiscall ext_00584C20(uintptr_t self);
+extern void mem_write8(uintptr_t addr, uint8_t val);
+
+void __stdcall sub_004444C0(uintptr_t obj) {
+    if (obj != 0) {
+        uint8_t res = ext_00584C20(obj);
+        mem_write8(obj + 0x69, (res == 0) ? 1 : 0);
+    }
+}
+} // namespace lift_004444C0

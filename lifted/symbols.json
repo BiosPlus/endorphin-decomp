@@ -12960,6 +12960,13 @@
     "summary": "Returns the byte at index-selected slot (stride 60) of the table at +0xB8, indexed by the dword at +0x194.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00536E80": {
+    "name": "OglRenderer::releaseContext",
+    "class": "OglRenderer",
+    "signature": "void __thiscall fn_00536E80(void* self)",
+    "summary": "Unbinds the current OpenGL context if flag at +0x30 is zero, then leaves the critical section at +0x10",
+    "lifted_path": "lifted/classes/OglRenderer.cpp"
+  },
   "0x00536EF0": {
     "name": "OglRenderer::vfunc_0_off_8",
     "class": "OglRenderer",

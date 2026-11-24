@@ -1,0 +1,21 @@
+{
+  "va": "0x004444C0",
+  "size": 28,
+  "orig_symbol": "sub_004444C0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "updateField69IfNonNull",
+  "signature": "void __stdcall sub_004444C0(uintptr_t obj)",
+  "summary": "Calls ext_00584C20 on a non-null object and stores the negated boolean result at +0x69",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x69",
+      "type": "uint8_t",
+      "name": "field_0x69"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:09:33Z"
+}
