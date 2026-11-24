@@ -1854,6 +1854,12 @@
     "summary": "Returns the DWORD at +0x10 of the pointer stored at self+0x44, or 0 if that pointer is null.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x004407C0": {
+    "name": "getDerefSelectedField_004407C0",
+    "signature": "uint32_t fn_004407C0(void* self)",
+    "summary": "Returns the 32-bit value pointed to by one of two pointer fields, chosen by the byte flag at +0x88 (flag==0 uses +0x70, otherwise +0x74).",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x004408E0": {
     "name": "setDoublePairAt50_58",
     "signature": "void __thiscall fn_004408E0(void* self, double a0, double a1)",

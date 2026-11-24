@@ -1,0 +1,33 @@
+{
+  "va": "0x004407C0",
+  "size": 21,
+  "orig_symbol": "sub_004407C0",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "getDerefSelectedField_004407C0",
+  "signature": "uint32_t fn_004407C0(void* self)",
+  "summary": "Returns the 32-bit value pointed to by one of two pointer fields, chosen by the byte flag at +0x88 (flag==0 uses +0x70, otherwise +0x74).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "uint32_t",
+      "name": "field_0x70"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "uint32_t",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "uint8_t",
+      "name": "field_0x88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:11:30Z"
+}

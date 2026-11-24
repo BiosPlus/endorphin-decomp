@@ -673,3 +673,30 @@ uint8_t fn_0044B760(void* self) {
 }
 } // namespace lift_0041C710
 } // namespace lift_0044B760
+
+// [0x004407C0] sub_004407C0 (21 bytes)
+namespace lift_004407C0 {
+// @name getDerefSelectedField_004407C0
+// @summary Returns the 32-bit value pointed to by one of two pointer fields, chosen by the byte flag at +0x88 (flag==0 uses +0x70, otherwise +0x74).
+// @field Unknown +0x70 uint32_t field_0x70
+// @field Unknown +0x74 uint32_t field_0x74
+// @field Unknown +0x88 uint8_t field_0x88
+uint32_t fn_004407C0(void* self) {
+    const auto* base = static_cast<const uint8_t*>(self);
+
+    uint8_t flag = 0;
+    std::memcpy(&flag, base + 0x88, sizeof(flag));
+
+    // Pick which pointer slot to follow.
+    const uint32_t slotOffset = (flag == 0) ? 0x70u : 0x74u;
+
+    uint32_t ptr = 0;
+    std::memcpy(&ptr, base + slotOffset, sizeof(ptr));
+
+    // Dereference the selected pointer and return the 32-bit value it points to.
+    uint32_t value = 0;
+    const auto* target = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(ptr));
+    std::memcpy(&value, target, sizeof(value));
+    return value;
+}
+} // namespace lift_004407C0
