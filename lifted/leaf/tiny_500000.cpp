@@ -67,3 +67,19 @@ double __thiscall sub_0050EA10(void* self) {
     return mem_read_f64(static_cast<uintptr_t>(ptr) + 0x20);
 }
 } // namespace lift_0050EA10
+
+// [0x00507F50] sub_00507F50 (14 bytes)
+namespace lift_00507F50 {
+// @name SetDoubleValueAndEnableFlag
+// @class Unknown
+// @summary Stores a double argument at self+0x20 and sets the byte flag at self+0x28 to 1.
+// @field Unknown +0x20 double field_0x20
+// @field Unknown +0x28 uint8_t field_0x28
+
+// __thiscall-style: self in ECX, one 8-byte stack argument, callee pops 8 bytes (ret 0x8).
+void fn_00507F50(void* self, double value) {
+    auto* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint8_t*>(base + 0x28) = 1;
+    *reinterpret_cast<double*>(base + 0x20) = value;
+}
+} // namespace lift_00507F50

@@ -9479,6 +9479,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00584FD0 (NMData::RPROJointData::vfunc_59).",
     "lifted_path": "lifted/classes/EvolvedIndividual.cpp"
   },
+  "0x00507F50": {
+    "name": "SetDoubleValueAndEnableFlag",
+    "class": "Unknown",
+    "signature": "void fn_00507F50(void* self, double value)",
+    "summary": "Stores a double argument at self+0x20 and sets the byte flag at self+0x28 to 1.",
+    "lifted_path": "lifted/leaf/tiny_500000.cpp"
+  },
   "0x00507F70": {
     "name": "EvolvedIndividual::vfunc_0_off_C",
     "class": "EvolvedIndividual",
