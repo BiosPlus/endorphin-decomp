@@ -4256,6 +4256,13 @@
     "summary": "Returns false if virtual slot 0x28 returns true; otherwise returns whether the string at +0x458 equals global mem_00B41B80.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044CD30": {
+    "name": "RigEditorFrame::vfunc_108",
+    "class": "RigEditorFrame",
+    "signature": "void fn_0044CD30(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
+    "summary": "Forwards its three stack arguments to ForwardToFirstChildWindow, then calls the MFC80 wrapper (ord_6065) on field +0x150 with arguments (0, 0, 0, arg2, arg1, 4).",
+    "lifted_path": "lifted/classes/RigEditorFrame.cpp"
+  },
   "0x0044CD70": {
     "name": "RigEditor::vfunc_0",
     "class": "RigEditor",
