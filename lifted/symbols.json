@@ -44887,6 +44887,12 @@
     "summary": "Copies three consecutive floats from self+0x30..+0x38 into out[0..2].",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C62B0": {
+    "name": "set_vec3_0xb0",
+    "signature": "void sub_007C62B0(uintptr_t obj, float a1, float a2, float a3)",
+    "summary": "Store three float values into object fields at offsets 0xb0, 0xb4, and 0xb8",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C6310": {
     "name": "sub_007C6310",
     "class": "\u003cunknown\u003e",
@@ -45157,6 +45163,12 @@
     "signature": "uint32_t sub_007C9300_getIndexedField94(const void* self, uint32_t idx)",
     "summary": "Returns the 32-bit entry at index `idx` of the 4-byte array stored at +0x94 in the object.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C9310": {
+    "name": "copyVec3AtStride32",
+    "signature": "void __cdecl sub_007C9310(uint32_t base, uint32_t index, uint32_t out)",
+    "summary": "Copies 3 floats from base + index * 32 to out.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007C9340": {
     "name": "copyVec3FromIndexedElement",
