@@ -1,0 +1,28 @@
+{
+  "va": "0x00673B80",
+  "size": 14,
+  "orig_symbol": "sub_00673B80",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "SetIntValueAndSetFlag",
+  "class": "Unknown",
+  "signature": "void SetIntValueAndSetFlag(void* self, DWORD value)",
+  "summary": "Stores a DWORD argument at this+0x60 and sets the byte flag at this+0x65 to 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "DWORD",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x65",
+      "type": "BYTE",
+      "name": "field_0x65"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:26:03Z"
+}

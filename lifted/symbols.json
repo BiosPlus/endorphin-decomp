@@ -24036,6 +24036,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006737B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x00673B80": {
+    "name": "SetIntValueAndSetFlag",
+    "class": "Unknown",
+    "signature": "void SetIntValueAndSetFlag(void* self, DWORD value)",
+    "summary": "Stores a DWORD argument at this+0x60 and sets the byte flag at this+0x65 to 1.",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
   "0x006744A0": {
     "name": "NMData::State::vfunc_7",
     "class": "NMData::State",

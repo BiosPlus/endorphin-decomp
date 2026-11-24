@@ -170,3 +170,17 @@ __declspec(noinline) void __thiscall sub_00679A40(void* self) {
     (void)ext_QueryPerformanceCounter(reinterpret_cast<void*>(target));
 }
 } // namespace lift_00679A40
+
+// [0x00673B80] sub_00673B80 (14 bytes)
+namespace lift_00673B80 {
+// @name SetIntValueAndSetFlag
+// @class Unknown
+// @summary Stores a DWORD argument at this+0x60 and sets the byte flag at this+0x65 to 1.
+// @field Unknown +0x60 DWORD field_0x60
+// @field Unknown +0x65 BYTE field_0x65
+void SetIntValueAndSetFlag(void* self, DWORD value) {
+    BYTE* base = static_cast<BYTE*>(self);
+    *reinterpret_cast<DWORD*>(base + 0x60) = value;
+    base[0x65] = 1;
+}
+} // namespace lift_00673B80
