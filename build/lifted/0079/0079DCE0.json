@@ -4,11 +4,71 @@
   "orig_symbol": "sub_0079DCE0",
   "src_path": "src/leaf/tiny_790000.cpp",
   "lifted_path": "lifted/leaf/tiny_790000.cpp",
-  "name": "descriptiveName_0079DCE0",
-  "class": "(none: this-pointer class not identified)",
-  "signature": "void __thiscall descriptiveName_0079DCE0(void* self, const uint32_t* src)",
-  "summary": "thiscall: copies two dwords from *(arg1) into this+0x78 and this+0x7c, returns with 4 bytes of args popped.",
+  "name": "sub_007928E0",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __fastcall fn_007928E0(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_00792900 and frees memory when (flags \u0026 1) is set.",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "subVptr"
+    },
     {
       "class": "\u003cunknown\u003e",
       "offset": "+0x78",
@@ -24,5 +84,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T01:58:57Z"
+  "lifted_at": "2026-11-24T01:59:02Z"
 }

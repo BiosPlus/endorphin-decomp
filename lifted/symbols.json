@@ -37937,10 +37937,10 @@
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
   "0x0079DCE0": {
-    "name": "descriptiveName_0079DCE0",
-    "class": "(none: this-pointer class not identified)",
-    "signature": "void __thiscall descriptiveName_0079DCE0(void* self, const uint32_t* src)",
-    "summary": "thiscall: copies two dwords from *(arg1) into this+0x78 and this+0x7c, returns with 4 bytes of args popped.",
+    "name": "sub_007928E0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __fastcall fn_007928E0(void* self, int edx_unused, unsigned int flags)",
+    "summary": "MSVC scalar deleting destructor: calls sub_00792900 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
   "0x0079DD10": {
