@@ -783,6 +783,13 @@
     "summary": "Pure jump thunk forwarding to sub_0040FED0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00410310": {
+    "name": "Unknown::setValueAndRedraw_00410310",
+    "class": "Unknown",
+    "signature": "void fn_00410310(void* self, DWORD value)",
+    "summary": "Stores a DWORD argument at this+0x60 and force-redraws the window at this+0x20 (RedrawWindow flags 0x105).",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x00410330": {
     "name": "CColorStatic::vfunc_1",
     "class": "CColorStatic",

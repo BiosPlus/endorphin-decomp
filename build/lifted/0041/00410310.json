@@ -1,0 +1,28 @@
+{
+  "va": "0x00410310",
+  "size": 29,
+  "orig_symbol": "sub_00410310",
+  "src_path": "src/leaf/tiny_410000.cpp",
+  "lifted_path": "lifted/leaf/tiny_410000.cpp",
+  "name": "Unknown::setValueAndRedraw_00410310",
+  "class": "Unknown",
+  "signature": "void fn_00410310(void* self, DWORD value)",
+  "summary": "Stores a DWORD argument at this+0x60 and force-redraws the window at this+0x20 (RedrawWindow flags 0x105).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "DWORD",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:10:40Z"
+}

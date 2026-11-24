@@ -474,3 +474,28 @@ int fn_00410370(void* self) {
     return 0;
 }
 } // namespace lift_00410370
+
+// [0x00410310] sub_00410310 (29 bytes)
+namespace lift_00410310 {
+// IAT slot holding the address of USER32!RedrawWindow.
+extern int mem_00925668;
+
+// @name Unknown::setValueAndRedraw_00410310
+// @class Unknown
+// @summary Stores a DWORD argument at this+0x60 and force-redraws the window at this+0x20 (RedrawWindow flags 0x105).
+// @field Unknown +0x20 HWND field_0x20
+// @field Unknown +0x60 DWORD field_0x60
+void fn_00410310(void* self, DWORD value) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    *reinterpret_cast<DWORD*>(base + 0x60) = value;
+
+    HWND hwnd = *reinterpret_cast<HWND*>(base + 0x20);
+
+    // BOOL RedrawWindow(HWND, const RECT*, HRGN, UINT) — __stdcall, called via IAT.
+    // Flags 0x105 = RDW_INVALIDATE (0x1) | RDW_ERASE (0x4) | RDW_UPDATENOW (0x100).
+    using RedrawWindowFn = int(__stdcall*)(HWND, const void*, HRGN, UINT);
+    auto redraw = reinterpret_cast<RedrawWindowFn>(static_cast<uintptr_t>(mem_00925668));
+    redraw(hwnd, nullptr, nullptr, 0x105u);
+}
+} // namespace lift_00410310
