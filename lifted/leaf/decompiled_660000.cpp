@@ -345,3 +345,26 @@ void* fn_0066AD10(void* out_str, uint8_t flag) {
 }
 } // namespace lift_00497860
 } // namespace lift_0066AD10
+
+// [0x00664BF0]
+namespace lift_00664BF0 {
+// @name ScanBytesUntil
+// @summary Walks bytes in [begin, end) calling pred(byte) (cdecl) and returns the first position where it returns nonzero, or end if none match.
+// Callback returns a byte in AL; only its low byte is tested.
+
+using ByteTestFn = uint8_t(__cdecl*)(int);
+
+const uint8_t* ScanBytesUntil(const uint8_t* begin, const uint8_t* end, ByteTestFn pred) {
+    const uint8_t* cur = begin;
+    if (cur == end) {
+        return cur;
+    }
+    do {
+        if (pred(static_cast<int>(*cur)) != 0) {
+            break;
+        }
+        ++cur;
+    } while (cur != end);
+    return cur;
+}
+} // namespace lift_00664BF0

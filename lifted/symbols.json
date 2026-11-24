@@ -33550,6 +33550,12 @@
     "summary": "Returns true if needle occurs as a substring of haystack (strstr on c_str() of both strings).",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00664BF0": {
+    "name": "ScanBytesUntil",
+    "signature": "const uint8_t* ScanBytesUntil(const uint8_t* begin, const uint8_t* end, ByteTestFn pred)",
+    "summary": "Walks bytes in [begin, end) calling pred(byte) (cdecl) and returns the first position where it returns nonzero, or end if none match.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00664C30": {
     "name": "sub_00664C30",
     "signature": "void* fn_00664C30(void* out_str, uint8_t flag)",
