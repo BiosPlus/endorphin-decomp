@@ -698,3 +698,29 @@ extern "C" int __stdcall fn_0068BFC0(void* self) {
     ext_0068BC50(target);
     return 0;
 }
+
+// [0x00487DB0] ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::fire(void), 0}>::vfunc_40 (122 bytes)
+namespace lift_00487DB0 {
+extern void ext_0067A670();
+extern int mem_00AD9DE0;
+extern int mem_00AD9DDC;
+
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, fire>::vfunc_40
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::fire(void), 0}>
+// @summary Lazily constructs a function-local static object (guarded by bit 0 of mem_00AD9DE0) and stores its address into this+0x04.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+void fn_00487DB0(void* self) {
+    // Original SEH frame setup/teardown (fs:[0] push/pop) is omitted; it has no
+    // semantic effect in the portable lift.
+
+    // One-time initialization guard for the static object at 0x00AD9DDC.
+    if ((mem_00AD9DE0 & 1) == 0) {
+        mem_00AD9DE0 |= 1;
+        ext_0067A670();                 // constructor call for the static object (ecx = 0x00AD9DDC)
+        mem_00AD9DDC = 0x0093CBB4;      // vtable pointer of the static object
+    }
+
+    // this->field_0x04 = &static_object
+    lift_field<uint32_t>(self, 0x04) = 0x00AD9DDCu;
+}
+} // namespace lift_00487DB0
