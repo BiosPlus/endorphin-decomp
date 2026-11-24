@@ -5,9 +5,29 @@
   "src_path": "src/leaf/decompiled_7B0000.cpp",
   "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
   "name": "sub_007BDA20",
-  "signature": "int sub_007BDA20(std::uint8_t* self)",
-  "summary": "Stores mem_007BDA50 into three pointer slots of the object at +0x1A0, +0x1A8, +0x1B0 and returns 1.",
+  "signature": "int sub_007BDA20(BYTE* self)",
+  "summary": "Stores the address of mem_007BDA50 into three pointer slots (+0x1A0, +0x1A8, +0x1B0) of self and returns 1.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x1A0",
+      "type": "DWORD slotA (pointer to",
+      "name": "mem_007BDA50)"
+    },
+    {
+      "class": "self",
+      "offset": "+0x1A8",
+      "type": "DWORD slotB (pointer to",
+      "name": "mem_007BDA50)"
+    },
+    {
+      "class": "self",
+      "offset": "+0x1B0",
+      "type": "DWORD slotC (pointer to",
+      "name": "mem_007BDA50)"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:54:25Z"
+  "lifted_at": "2026-11-24T12:54:35Z"
 }

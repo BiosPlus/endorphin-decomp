@@ -43884,8 +43884,8 @@
   },
   "0x007BDA20": {
     "name": "sub_007BDA20",
-    "signature": "int sub_007BDA20(std::uint8_t* self)",
-    "summary": "Stores mem_007BDA50 into three pointer slots of the object at +0x1A0, +0x1A8, +0x1B0 and returns 1.",
+    "signature": "int sub_007BDA20(BYTE* self)",
+    "summary": "Stores the address of mem_007BDA50 into three pointer slots (+0x1A0, +0x1A8, +0x1B0) of self and returns 1.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
   "0x007BDC00": {
