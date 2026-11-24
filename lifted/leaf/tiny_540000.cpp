@@ -206,3 +206,20 @@ float fn_00548220(void* self) {
     return lift_field<float>(subobj, 0x204);
 }
 } // namespace lift_00548220
+
+// [0x005480D0]
+namespace lift_005480D0 {
+// @name GetFloatViaIndirectOrInline
+// @class <unknown>
+// @summary Returns float at this+0x1F4 of the object pointed to by this+0xA0 if non-null, else float at this+0x70.
+// @field <unknown> +0x70 float field_0x70
+// @field <unknown> +0xA0 void* field_0xA0
+// @field <unknown> +0x1F4 float field_0x1F4
+float GetFloatViaIndirectOrInline(void* self) {
+    void* indirect = lift_field<void*>(self, 0xA0);
+    if (indirect != nullptr) {
+        return lift_field<float>(indirect, 0x1F4);
+    }
+    return lift_field<float>(self, 0x70);
+}
+} // namespace lift_005480D0

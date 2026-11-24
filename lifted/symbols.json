@@ -13136,6 +13136,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xA4 and tail-calls sub_005DC420.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x005480D0": {
+    "name": "GetFloatViaIndirectOrInline",
+    "class": "\u003cunknown\u003e",
+    "signature": "float GetFloatViaIndirectOrInline(void* self)",
+    "summary": "Returns float at this+0x1F4 of the object pointed to by this+0xA0 if non-null, else float at this+0x70.",
+    "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
   "0x00548220": {
     "name": "ReadSubobjectFloatOrOne",
     "signature": "float fn_00548220(void* self)",
