@@ -38194,6 +38194,12 @@
     "summary": "Returns the first argument offset by 0x44 bytes.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C6F70": {
+    "name": "GetField_0x44Thunk",
+    "signature": "uint32_t sub_007C6F70(uint32_t arg0)",
+    "summary": "Tail-calls getField_0x04 with arg0 + 0x44, returning the 32-bit value at object offset +0x48.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C6F90": {
     "name": "sub_007C6F90",
     "signature": "void __cdecl sub_007C6F90(void* self, DWORD value)",

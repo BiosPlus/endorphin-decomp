@@ -929,3 +929,17 @@ void fn_007C6F50(void* self) {
     ext_007D5B60(static_cast<unsigned char*>(self) + 0x44);
 }
 } // namespace lift_007C6F50
+
+// [0x007C6F70]
+namespace lift_007C6F70 {
+// @name GetField_0x44Thunk
+// @summary Tail-calls getField_0x04 with arg0 + 0x44, returning the 32-bit value at object offset +0x48.
+
+uint32_t ext_007D48A0(uint32_t arg0);
+
+uint32_t sub_007C6F70(uint32_t arg0) {
+    // mov eax, [esp+4]; add eax, 0x44; mov [esp+4], eax; jmp ext_007D48A0
+    uint32_t adjusted = arg0 + 0x44;
+    return ext_007D48A0(adjusted);
+}
+} // namespace lift_007C6F70
