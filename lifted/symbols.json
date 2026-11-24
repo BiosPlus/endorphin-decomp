@@ -32985,6 +32985,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CE810 (Unknown::GetRecordByIndex).",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
+  "0x0068EFF0": {
+    "name": "ExprParser::ReadMethodType\u003cUnitsWithProperties, getAngleUnitName\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::string const \u0026, \u0026UnitsWithProperties::getAngleUnitName, 0\u003e",
+    "signature": "float __stdcall fn_0068EFF0(void* const* arg)",
+    "summary": "Evaluates UnitsWithProperties::getAngleUnitName() and converts the resulting string to float via atof, or throws if null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00692000": {
     "name": "lookupTableEntry00B5AE98",
     "signature": "extern \"C\" DWORD fn_00692000(DWORD index)",
@@ -33114,6 +33121,13 @@
     "signature": "void fn_00695620(void* dst, void* src)",
     "summary": "Reads a float via the source's inner getter and stores it as a double into the target slot; throws if the target slot is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x00695990": {
+    "name": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026DoubleWithProperties::getValue, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026DoubleWithProperties::getValue, 0\u003e",
+    "signature": "extern \"C\" void* __thiscall fn_00695990(void* self, void* out_result, void** target_ptr)",
+    "summary": "Reads a double from the target object, converts it to float, and constructs the result; throws if null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x006959E0": {
     "name": "ExprParser::ReadMethodType\u003cDoubleWithProperties\u003e::vfunc_1 (DoubleWithProperties::getValue)",

@@ -32650,3 +32650,57 @@ void* fn_00692850(void* out, void* unused_arg) {
 }
 } // namespace lift_00471440
 } // namespace lift_00692850
+
+// [0x0068EFF0]
+namespace lift_0068EFF0 {
+// @name ExprParser::ReadMethodType<UnitsWithProperties, getAngleUnitName>::vfunc_1
+// @class ExprParser::ReadMethodType<UnitsWithProperties, std::string const &, &UnitsWithProperties::getAngleUnitName, 0>
+// @summary Evaluates UnitsWithProperties::getAngleUnitName() and converts the resulting string to float via atof, or throws if null.
+// @field UnitsWithProperties +0x4 void* field_0x4
+// @field Unknown +0xC uint32_t field_0xC
+
+
+extern void* __stdcall ext_0068EE60(uint32_t index);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+float __stdcall fn_0068EFF0(void* const* arg) {
+    const uint8_t* obj = static_cast<const uint8_t*>(*arg);
+    if (obj == nullptr) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1Cu));
+        return 0.0f;
+    }
+    const uint8_t* inner = *reinterpret_cast<const uint8_t* const*>(obj + 0x4);
+    uint32_t index = *reinterpret_cast<const uint32_t*>(inner + 0xC);
+    const std::string* str = static_cast<const std::string*>(ext_0068EE60(index));
+    return static_cast<float>(std::atof(str->c_str()));
+}
+} // namespace lift_0068EFF0
+
+// [0x00695990]
+namespace lift_00695990 {
+// @name ExprParser::ReadMethodType<DoubleWithProperties, float, &DoubleWithProperties::getValue, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<DoubleWithProperties, float, &DoubleWithProperties::getValue, 0>
+// @summary Reads a double from the target object, converts it to float, and constructs the result; throws if null.
+
+extern void __thiscall ext_00672080(void* dst, float value);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+extern void* __thiscall fn_00695990(void* self, void* out_result, void** target_ptr) {
+    (void)self;
+    void* obj = *target_ptr;
+    if (obj != nullptr) {
+        float val = static_cast<float>(*reinterpret_cast<const double*>(obj));
+        ext_00672080(out_result, val);
+        return out_result;
+    }
+
+    uint8_t exc[40];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1C);
+    return out_result;
+}
+} // namespace lift_00695990
