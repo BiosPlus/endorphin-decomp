@@ -45991,6 +45991,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0070EC30 (Unknown::ForwardSubObjectAt0x168).",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x0071C700": {
+    "name": "Unknown::copyBlock0xF0ToDst",
+    "class": "Unknown",
+    "signature": "uint32_t* fn_0071C700(void* self, uint32_t* dst)",
+    "summary": "Copies the 32-byte block at +0xF0 (8 dwords) into the caller-supplied buffer and returns that buffer. Caller's ECX is clobbered to 0 by the original code; not reproduced.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071C730": {
     "name": "sub_0071C730",
     "class": "Unknown",

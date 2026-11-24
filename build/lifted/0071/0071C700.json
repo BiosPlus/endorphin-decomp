@@ -1,0 +1,64 @@
+{
+  "va": "0x0071C700",
+  "size": 48,
+  "orig_symbol": "sub_0071C700",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::copyBlock0xF0ToDst",
+  "class": "Unknown",
+  "signature": "uint32_t* fn_0071C700(void* self, uint32_t* dst)",
+  "summary": "Copies the 32-byte block at +0xF0 (8 dwords) into the caller-supplied buffer and returns that buffer. Caller's ECX is clobbered to 0 by the original code; not reproduced.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "uint32_t",
+      "name": "field_0xF0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF4",
+      "type": "uint32_t",
+      "name": "field_0xF4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF8",
+      "type": "uint32_t",
+      "name": "field_0xF8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xFC",
+      "type": "uint32_t",
+      "name": "field_0xFC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x100",
+      "type": "uint32_t",
+      "name": "field_0x100"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x104",
+      "type": "uint32_t",
+      "name": "field_0x104"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x108",
+      "type": "uint32_t",
+      "name": "field_0x108"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10C",
+      "type": "uint32_t",
+      "name": "field_0x10C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:22:34Z"
+}

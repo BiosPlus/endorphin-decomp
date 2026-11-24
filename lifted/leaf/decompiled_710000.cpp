@@ -1028,3 +1028,26 @@ void fn_00715520(void* self, uint32_t value) {
     reinterpret_cast<VSlot2Fn>(vtbl[2])(self, old);
 }
 } // namespace lift_00715520
+
+// [0x0071C700]
+namespace lift_0071C700 {
+// @name Unknown::copyBlock0xF0ToDst
+// @class Unknown
+// @summary Copies the 32-byte block at +0xF0 (8 dwords) into the caller-supplied buffer and returns that buffer. Caller's ECX is clobbered to 0 by the original code; not reproduced.
+// @field Unknown +0xF0 uint32_t field_0xF0
+// @field Unknown +0xF4 uint32_t field_0xF4
+// @field Unknown +0xF8 uint32_t field_0xF8
+// @field Unknown +0xFC uint32_t field_0xFC
+// @field Unknown +0x100 uint32_t field_0x100
+// @field Unknown +0x104 uint32_t field_0x104
+// @field Unknown +0x108 uint32_t field_0x108
+// @field Unknown +0x10C uint32_t field_0x10C
+
+
+uint32_t* fn_0071C700(void* self, uint32_t* dst) {
+    for (size_t i = 0; i < 8; ++i) {
+        dst[i] = lift_field<uint32_t>(self, static_cast<ptrdiff_t>(0xF0 + i * 4));
+    }
+    return dst;
+}
+} // namespace lift_0071C700
