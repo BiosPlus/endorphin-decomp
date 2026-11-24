@@ -9585,3 +9585,32 @@ void fn_004C0F40(void* out) {
     *reinterpret_cast<uint32_t*>(static_cast<char*>(out) + 0x04) = 0x00AE300Cu;
 }
 } // namespace lift_004C0F40
+
+// [0x004B88A0] ExprParser::ReadWriteMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, float, &public: void __thiscall NMData::EngineData::setUnitMass(float)>::vfunc_40 (122 bytes)
+namespace lift_004B88A0 {
+extern void ext_0067A670(void* self, std::uint32_t arg);
+extern std::uint32_t mem_00AE1690;
+extern std::uint32_t mem_00AE168C;
+
+// @name ExprParser::ReadWriteMethodType<NMData::EngineData>::vfunc_40 (lazy-init accessor binding)
+// @class ExprParser::ReadWriteMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, float, &public: void __thiscall NMData::EngineData::setUnitMass(float)>
+// @summary Lazily constructs a static inner accessor object (once, guarded by bit 0 of mem_00AE1690) and stores its address into the out slot at +0x04.
+// @field ExprParser::ValuePtrType +0x04 std::uint32_t field_0x04
+void fn_004B88A0(void* self, void* out) {
+    // self (ecx) is unused by the original code.
+    (void)self;
+
+    // One-time initialization guard: bit 0 of mem_00AE1690.
+    if ((mem_00AE1690 & 1u) == 0) {
+        mem_00AE1690 |= 1u;
+        // Construct the static inner object at 0x00AE168C (original passes it in ecx and pushes 0 as the stack argument).
+        ext_0067A670(reinterpret_cast<void*>(&mem_00AE168C), 0u);
+        // Install the inner object's vtable (0x00943FDC) as its first dword.
+        mem_00AE168C = 0x00943FDCu;
+    }
+
+    // Publish the static object's address into out+0x04.
+    auto* slot = reinterpret_cast<std::uint32_t*>(static_cast<std::uint8_t*>(out) + 0x04);
+    *slot = 0x00AE168Cu;
+}
+} // namespace lift_004B88A0

@@ -10655,6 +10655,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004EA380 (ExprParser::ReadMethodType\u003cPoseToolOptions,isGravityEnabled\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B88A0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData\u003e::vfunc_40 (lazy-init accessor binding)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitMass(void) const, float, \u0026public: void __thiscall NMData::EngineData::setUnitMass(float)\u003e",
+    "signature": "void fn_004B88A0(void* self, void* out)",
+    "summary": "Lazily constructs a static inner accessor object (once, guarded by bit 0 of mem_00AE1690) and stores its address into the out slot at +0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004B8920": {
     "name": "ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)",
     "class": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getDamping(void) const, 0\u003e",

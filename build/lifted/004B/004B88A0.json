@@ -1,0 +1,22 @@
+{
+  "va": "0x004B88A0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitMass(void) const, float, \u0026public: void __thiscall NMData::EngineData::setUnitMass(float)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData\u003e::vfunc_40 (lazy-init accessor binding)",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitMass(void) const, float, \u0026public: void __thiscall NMData::EngineData::setUnitMass(float)\u003e",
+  "signature": "void fn_004B88A0(void* self, void* out)",
+  "summary": "Lazily constructs a static inner accessor object (once, guarded by bit 0 of mem_00AE1690) and stores its address into the out slot at +0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "std::uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:05:16Z"
+}
