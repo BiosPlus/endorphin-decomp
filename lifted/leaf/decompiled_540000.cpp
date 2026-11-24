@@ -355,3 +355,32 @@ void sub_0054F1B0(uint8_t* begin, uint8_t* end, uint32_t arg) {
     }
 }
 } // namespace lift_0054F1B0
+
+// [0x0054E3D0] sub_0054E3D0 (42 bytes)
+namespace lift_0054E3D0 {
+extern float mem_00955D10; // 180.0f
+extern float mem_0093F7B8; // -1.0f
+
+// @name initDefaultFloats
+// @summary Sets a flag byte and seeds several float fields with default values (0, 180, 1, -1).
+// @field <ClassName> +0x04 uint8_t field_0x04
+// @field <ClassName> +0x14 float field_0x14
+// @field <ClassName> +0x24 float field_0x24
+// @field <ClassName> +0x34 float field_0x34
+// @field <ClassName> +0x48 float field_0x48
+// @field <ClassName> +0x4C float field_0x4C
+// @field <ClassName> +0x58 float field_0x58
+// @field <ClassName> +0x5C float field_0x5C
+void fn_0054E3D0(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+
+    *(base + 0x04) = 1;
+    *reinterpret_cast<float*>(base + 0x48) = 0.0f;
+    *reinterpret_cast<float*>(base + 0x4C) = mem_00955D10;
+    *reinterpret_cast<float*>(base + 0x5C) = 1.0f;
+    *reinterpret_cast<float*>(base + 0x14) = 1.0f;
+    *reinterpret_cast<float*>(base + 0x58) = mem_0093F7B8;
+    *reinterpret_cast<float*>(base + 0x34) = mem_0093F7B8;
+    *reinterpret_cast<float*>(base + 0x24) = mem_0093F7B8;
+}
+} // namespace lift_0054E3D0

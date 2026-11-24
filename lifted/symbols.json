@@ -15641,6 +15641,12 @@
     "summary": "Returns 1 if the float at this+0x44 compares equal to 0.0 (NaN yields 0), else 0.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x0054E3D0": {
+    "name": "initDefaultFloats",
+    "signature": "void fn_0054E3D0(void* self)",
+    "summary": "Sets a flag byte and seeds several float fields with default values (0, 180, 1, -1).",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054E400": {
     "name": "Unknown::SetFloatFromFlagInverted",
     "class": "Unknown",
