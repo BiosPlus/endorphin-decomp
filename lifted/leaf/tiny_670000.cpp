@@ -24,8 +24,10 @@ extern "C" void __stdcall fn_0067AF28(void* arg) {
 extern "C" void __fastcall ext_00679990(void* self);
 extern "C" void __fastcall ext_0067A080(void* self);
 extern "C" int mem_0098C5E4;
+#include <cstddef>
+#include <cstdint>
 
-// [0x006710E0] sub_006710E0 (30 bytes)
+#include <cstdint>
 // @name sub_006710E0
 // @summary MSVC scalar deleting destructor: calls sub_00671040 and frees memory when (flags & 1) is set.
 extern "C" void* __fastcall fn_006710E0(void* self, int edx_unused, unsigned int flags) {
