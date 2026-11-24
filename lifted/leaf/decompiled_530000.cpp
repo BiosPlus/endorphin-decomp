@@ -124,3 +124,26 @@ void __thiscall fn_00532B40(void* self) {
     }
 }
 } // namespace lift_00532B40
+
+// [0x00538530] sub_00538530 (31 bytes)
+namespace lift_00538530 {
+// Known callee 0x00532B60: Unknown::initVtableAndFlags (Stores the vtable address at +0x00, sets flag bytes at +0x04 and +0x0C to 1, and zeroes the dwords at +0x08 and +0x10.)
+extern void ext_00532B60();
+
+// @name Unknown::InitWithVTableAndDefaults
+// @class Unknown
+// @summary Base-initializes this object, then sets vtable to 0x95501c, a float at +0x14 to 1.0, and flag bytes at +0x18 and +0x19 to 1; returns this.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x18 uint8_t field_0x18
+// @field Unknown +0x19 uint8_t field_0x19
+void* fn_00538530(void* self) {
+    auto* p = static_cast<unsigned char*>(self);
+    ext_00532B60(); // thiscall: ecx = self, still live from entry
+    *reinterpret_cast<float*>(p + 0x14) = 1.0f;
+    p[0x18] = 1;
+    p[0x19] = 1;
+    *reinterpret_cast<const void**>(p) = reinterpret_cast<const void*>(static_cast<uintptr_t>(0x95501cu));
+    return self;
+}
+} // namespace lift_00538530
