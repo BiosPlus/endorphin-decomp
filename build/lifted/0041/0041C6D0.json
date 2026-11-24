@@ -1,0 +1,22 @@
+{
+  "va": "0x0041C6D0",
+  "size": 21,
+  "orig_symbol": "sub_0041C6D0",
+  "src_path": "src/leaf/tiny_410000.cpp",
+  "lifted_path": "lifted/leaf/tiny_410000.cpp",
+  "name": "Unknown::ForwardVirtual44 (descriptive; owner class not yet identified)",
+  "class": "Unknown",
+  "signature": "uint32_t fn_0041C6D0(void* self)",
+  "summary": "Forwards the call to the object at self+0x08 via its vtable slot at +0x44; returns 0 if that object is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:10:49Z"
+}

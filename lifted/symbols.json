@@ -1110,6 +1110,13 @@
     "summary": "If field +0x08 is non-null, tail-forward the call to its vtable slot 14 (+0x38) with the same args; otherwise return 0.",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x0041C6D0": {
+    "name": "Unknown::ForwardVirtual44 (descriptive; owner class not yet identified)",
+    "class": "Unknown",
+    "signature": "uint32_t fn_0041C6D0(void* self)",
+    "summary": "Forwards the call to the object at self+0x08 via its vtable slot at +0x44; returns 0 if that object is null.",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x0041C710": {
     "name": "descriptiveName_0041C710 (delegateToChildVirtual19)",
     "signature": "uint8_t fn_0041C710(void* self)",
