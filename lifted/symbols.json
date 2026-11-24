@@ -24695,6 +24695,12 @@
     "summary": "Returns the magnitude sqrt(f30^2 + f38^2) of the two horizontal velocity floats, sign-normalized to non-negative.",
     "lifted_path": "lifted/Sensors/SensorAbsoluteHorizontalVelocityMag.cpp"
   },
+  "0x00627450": {
+    "name": "copyIndirectMatrix64",
+    "signature": "void fn_00627450(void* self)",
+    "summary": "Copies 64 bytes (16 dwords) from an indirectly referenced object into self+0x60.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00627480": {
     "name": "Sensors::SensorAbsoluteTM::vfunc_14",
     "class": "Sensors::SensorAbsoluteTM",

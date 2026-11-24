@@ -214,3 +214,28 @@ void fn_00629EE0(void* self) {
     lift_field<float>(self, 0x34) = value - lift_field<float>(self, 0x38);
 }
 } // namespace lift_00629EE0
+
+// [0x00627450]
+namespace lift_00627450 {
+// @name copyIndirectMatrix64
+// @summary Copies 64 bytes (16 dwords) from an indirectly referenced object into self+0x60.
+// @field Object +0x28 uint32_t field_0x28
+// @field Object +0x60 uint32_t[16] field_0x60
+
+
+extern uint32_t mem_read32(uintptr_t addr);
+extern void mem_write32(uintptr_t addr, uint32_t val);
+extern uint32_t ext_00647F00(void* self);
+
+void fn_00627450(void* self) {
+    uint32_t a = mem_read32(reinterpret_cast<uintptr_t>(self) + 0x28u);
+    uint32_t b = mem_read32(static_cast<uintptr_t>(a) + 0x158u);
+    uint32_t c = mem_read32(static_cast<uintptr_t>(b) + 0xACu);
+    uint32_t src = ext_00647F00(reinterpret_cast<void*>(static_cast<uintptr_t>(c)));
+    uintptr_t dst = reinterpret_cast<uintptr_t>(self) + 0x60u;
+    for (uint32_t i = 0; i < 0x10u; ++i) {
+        uint32_t val = mem_read32(static_cast<uintptr_t>(src) + i * 4u);
+        mem_write32(dst + i * 4u, val);
+    }
+}
+} // namespace lift_00627450
