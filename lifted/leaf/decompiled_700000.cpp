@@ -178,3 +178,21 @@ void fn_00702620(void* self, DWORD arg) {
     sub[0x270] = static_cast<uint8_t>(arg == 0 ? 1 : 0);
 }
 } // namespace lift_00702620
+
+// [0x00705190] sub_00705190 (32 bytes)
+namespace lift_00705190 {
+// Known callee 0x006E7460: getter returning int32_t at offset +0x0 of its self.
+extern int32_t ext_006E7460(void* self);
+
+// @name GetChildInt32At0x7D0
+// @class Unknown
+// @summary Loads the pointer at self+0xF0, offsets it by 0x7D0, and returns the int32 at its +0x0 via the getter.
+// @field Unknown +0xF0 uint32_t field_0xF0
+extern int32_t __fastcall fn_00705190(void* self) {
+    // mov ecx, [self+0xF0]; add ecx, 0x7D0; jmp getter
+    const uint32_t child = *reinterpret_cast<const uint32_t*>(
+        static_cast<const char*>(self) + 0xF0);
+    void* adjusted = reinterpret_cast<void*>(static_cast<uintptr_t>(child + 0x7D0u));
+    return ext_006E7460(adjusted);
+}
+} // namespace lift_00705190

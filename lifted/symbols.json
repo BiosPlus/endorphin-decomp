@@ -39649,6 +39649,13 @@
     "summary": "Reads a byte at offset 0x7cd from the object pointer at this+0xf0",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00705190": {
+    "name": "GetChildInt32At0x7D0",
+    "class": "Unknown",
+    "signature": "extern \"C\" int32_t __fastcall fn_00705190(void* self)",
+    "summary": "Loads the pointer at self+0xF0, offsets it by 0x7D0, and returns the int32 at its +0x0 via the getter.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00705250": {
     "name": "ClearGlobalDwordPair",
     "signature": "void fn_00705250(void* self)",
