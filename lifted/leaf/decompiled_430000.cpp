@@ -1433,3 +1433,31 @@ void fn_00434610(void* self) {
     reinterpret_cast<MethodFn>(vtbl[0])(self, 1u);
 }
 } // namespace lift_00434610
+
+// [0x00430BD0]
+namespace lift_00430BD0 {
+// Known callee 0x00465B30: get_global_field_0x58 (Calls ext_004658C0 and returns the int32_t field at offset +0x58.)
+extern int32_t ext_00465B30(void);
+// Known callee 0x00468660: getNestedField_0x18_0xc (Reads a 32-bit value at offset 0xc of the object pointed to by this+0x18)
+extern uint32_t ext_00468660(uint32_t this_ptr);
+
+// @name dispatchNestedFlagToSelf
+// @summary Fetches a nested object via the global field, queries a boolean virtual method on it, and forwards the result to slot 0 of self's vtable.
+void fn_00430BD0(void* self) {
+    // call ext_00465B30() -> eax; pass it as this to ext_00468660 -> eax (object pointer)
+    int32_t g = ext_00465B30();
+    uint32_t objAddr = ext_00468660(static_cast<uint32_t>(g));
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(objAddr));
+
+    // edx = [obj] (vtable of obj); eax = [edx + 0x1ac]; al = obj->vfn_0x1ac()
+    void* objVtbl = lift_field<void*>(obj, 0);
+    void* boolMethod = lift_field<void*>(objVtbl, 0x1ac);
+    // edi = [self] (vtable of self), read before the virtual call as in the original
+    void* selfVtbl = lift_field<void*>(self, 0);
+    uint8_t flag = reinterpret_cast<uint8_t (*)(void*)>(boolMethod)(obj);
+
+    // edx = [edi] ; self->slot0(flag)
+    void* selfSlot0 = lift_field<void*>(selfVtbl, 0);
+    reinterpret_cast<void (*)(void*, uint8_t)>(selfSlot0)(self, flag);
+}
+} // namespace lift_00430BD0

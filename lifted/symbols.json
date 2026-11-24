@@ -2183,6 +2183,12 @@
     "summary": "Fetches the global object, calls its vtable slot at +0x1A4 (index 105) to obtain a byte flag, then passes that flag to vtable slot 0 of the argument object.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430BD0": {
+    "name": "dispatchNestedFlagToSelf",
+    "signature": "void fn_00430BD0(void* self)",
+    "summary": "Fetches a nested object via the global field, queries a boolean virtual method on it, and forwards the result to slot 0 of self's vtable.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430CA0": {
     "name": "Unknown::forwardVirtual0WithArg1",
     "class": "Unknown",
