@@ -11,11 +11,12 @@
 namespace lifted_layout {
 struct NMData_State_Fields {
     // +0x1C  void*                    adjusted_base  (evidence: 0x004A9B50, 0x006744A0)
+    // +0x54  BYTE                     field_0x54  (evidence: 0x0049DF50)
     // +0xD0  void*                    list_sentinel  (evidence: 0x0049FCF0)
     // +0xE0  float                    field_0xE0  (evidence: 0x0049AF70, 0x0049E000, 0x0049FAC0)
     // +0xE4  float                    field_0xE4  (evidence: 0x0049AF70, 0x0049FAC0)
     // +0xE8  float                    field_0xE8  (evidence: 0x0049AF70, 0x0049FAC0, 0x0049FB50)
     // +0xEC  float                    field_0xEC  (evidence: 0x0049ABA0, 0x0049AF70, 0x0049FAC0, 0x0049FB50)
-    // +0x10C void*                    field_0x10C  (evidence: 0x0049FC80, 0x008703F0)
+    // +0x10C void*                    field_0x10C  (evidence: 0x0049DF50, 0x0049FC80, 0x008703F0)
 };
 } // namespace lifted_layout

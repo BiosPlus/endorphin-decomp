@@ -143,3 +143,35 @@ void fn_0049ABE0(void* self, DWORD arg1, DWORD arg2) {
     slot10(casted, arg1, adjusted);
 }
 } // namespace lift_0049ABE0
+
+// [0x0049DF50] NMData::State::vfunc_14_off_10 (77 bytes)
+namespace lift_0049DF50 {
+// Known callee 0x0046F7D0: sub_00467320 (Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).)
+extern void ext_0046F7D0(DWORD arg);
+// Known callee 0x0049D360: sub_0049D360 (35B), takes one stack arg (callee pops), returns in EAX.
+extern DWORD ext_0049D360(DWORD arg);
+// Known callee 0x0055DA20: initDwordPair (Stores two stack-passed DWORDs into the object at ECX and returns that object pointer (callee pops 8 bytes).)
+extern void* ext_0055DA20(void* self, DWORD a, DWORD b);
+
+// @name NMData::State::vfunc_14_off_10
+// @class NMData::State
+// @summary Returns arg1 after forwarding it to 0x0046F7D0 unless byte +0x54 is zero and arg2 == 0x1B3, in which case it initializes the sub-object at +0x10C and returns arg2.
+// @field NMData::State +0x54 BYTE field_0x54
+// @field NMData::State +0x10C void* field_0x10C
+DWORD fn_0049DF50(void* self, DWORD arg1, DWORD arg2) {
+    if (lift_field<uint8_t>(self, 0x54) == 0 && arg2 == 0x1B3) {
+        // Address of this+0x10C is passed to 0x0049D360.
+        DWORD sub = static_cast<DWORD>(reinterpret_cast<uintptr_t>(
+            reinterpret_cast<uint8_t*>(self) + 0x10C));
+        DWORD t = ext_0049D360(sub);
+
+        // Original pushes eax and the caller's saved ESI as the two stack DWORDs.
+        // The caller's ESI is not recoverable here; 0 is a placeholder.
+        ext_0055DA20(reinterpret_cast<void*>(static_cast<uintptr_t>(arg2)), t, 0);
+        return arg2;
+    }
+
+    ext_0046F7D0(arg1);
+    return arg1;
+}
+} // namespace lift_0049DF50

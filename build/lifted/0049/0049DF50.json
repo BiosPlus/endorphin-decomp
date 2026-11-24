@@ -1,0 +1,28 @@
+{
+  "va": "0x0049DF50",
+  "size": 77,
+  "orig_symbol": "NMData::State::vfunc_14_off_10",
+  "src_path": "src/NMData/State.cpp",
+  "lifted_path": "lifted/NMData/State.cpp",
+  "name": "NMData::State::vfunc_14_off_10",
+  "class": "NMData::State",
+  "signature": "DWORD fn_0049DF50(void* self, DWORD arg1, DWORD arg2)",
+  "summary": "Returns arg1 after forwarding it to 0x0046F7D0 unless byte +0x54 is zero and arg2 == 0x1B3, in which case it initializes the sub-object at +0x10C and returns arg2.",
+  "fields": [
+    {
+      "class": "NMData::State",
+      "offset": "+0x54",
+      "type": "BYTE",
+      "name": "field_0x54"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0x10C",
+      "type": "void*",
+      "name": "field_0x10C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:33:59Z"
+}

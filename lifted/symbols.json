@@ -8429,6 +8429,13 @@
     "summary": "Calls helper sub_0049DA40 and stores its result at object offset +0x04.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x0049DF50": {
+    "name": "NMData::State::vfunc_14_off_10",
+    "class": "NMData::State",
+    "signature": "DWORD fn_0049DF50(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Returns arg1 after forwarding it to 0x0046F7D0 unless byte +0x54 is zero and arg2 == 0x1B3, in which case it initializes the sub-object at +0x10C and returns arg2.",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
   "0x0049E000": {
     "name": "NMData::State::vfunc_21_off_8",
     "class": "NMData::State",
