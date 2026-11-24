@@ -1973,3 +1973,35 @@ extern INT __cdecl fn_00430410(void) {
 }
 } // namespace lift_004E9D70
 } // namespace lift_00430410
+
+// [0x00430A60] sub_00430A60 (59 bytes)
+namespace lift_00430A60 {
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430360 (getGlobalField0x58AndCall00469040).)
+// Returns the object pointer in EAX.
+extern void* ext_00465B40(void);
+// Known callee 0x00430370: CheckFieldAt60IsZero (Calls sub_004658C0 to get an object pointer, returns 1 if its int32 at +0x60 is zero, else 0.)
+extern uint8_t ext_00430370(void);
+
+// @name ConditionalVtableSlot0Dispatch
+// @class Unknown
+// @summary Computes r = !obj->vtable[0x220](obj) && CheckFieldAt60IsZero(), where obj = ext_00465B40(), then tail-dispatches arg->vtable[0] with arg as this and r (0 or 1) as the argument.
+void __thiscall fn_00430A60(void* self, void* dispatch_target) {
+    (void)self; // ECX (self) is forwarded to ext_00430370 in the original; the leaf callee takes no arguments.
+
+    void* obj = ext_00465B40();
+    void* obj_vtable = *reinterpret_cast<void**>(obj);
+    using PredicateFn = uint8_t(__thiscall*)(void*);
+    PredicateFn predicate = reinterpret_cast<PredicateFn>(
+        *reinterpret_cast<void**>(static_cast<char*>(obj_vtable) + 0x220));
+
+    uint32_t result = 0;
+    if (predicate(obj) == 0) {
+        result = (ext_00430370() != 0) ? 1u : 0u;
+    }
+
+    void* target_vtable = *reinterpret_cast<void**>(dispatch_target);
+    using SinkFn = void(__thiscall*)(void*, uint32_t);
+    SinkFn sink = reinterpret_cast<SinkFn>(*reinterpret_cast<void**>(target_vtable));
+    sink(dispatch_target, result);
+}
+} // namespace lift_00430A60

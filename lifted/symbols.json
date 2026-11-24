@@ -2375,6 +2375,13 @@
     "summary": "Queries a byte flag from the global object (vtable slot 0x130) and forwards it to the callback stored at the first word of *arg.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430A60": {
+    "name": "ConditionalVtableSlot0Dispatch",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00430A60(void* self, void* dispatch_target)",
+    "summary": "Computes r = !obj-\u003evtable[0x220](obj) \u0026\u0026 CheckFieldAt60IsZero(), where obj = ext_00465B40(), then tail-dispatches arg-\u003evtable[0] with arg as this and r (0 or 1) as the argument.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430AE0": {
     "name": "Object::callVirtualWithBoolResult",
     "class": "Object",
