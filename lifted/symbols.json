@@ -37272,6 +37272,12 @@
     "summary": "Empty function (returns immediately).",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x0085E690": {
+    "name": "ToUpperAscii",
+    "signature": "uint8_t ToUpperAscii(uint8_t ch)",
+    "summary": "Converts an ASCII lowercase letter (a-z) to uppercase; other values are returned unchanged. Result is in AL.",
+    "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
   "0x0085F730": {
     "name": "sub_0085F730",
     "signature": "extern \"C\" void __cdecl fn_0085F730(void)",

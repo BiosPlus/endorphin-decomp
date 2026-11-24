@@ -54,3 +54,16 @@ void sub_008523A4() {
     ext_0084A145();
 }
 } // namespace lift_008523A4
+
+// [0x0085E690]
+namespace lift_0085E690 {
+// @name ToUpperAscii
+// @summary Converts an ASCII lowercase letter (a-z) to uppercase; other values are returned unchanged. Result is in AL.
+uint8_t ToUpperAscii(uint8_t ch) {
+    uint8_t al = ch;
+    if (al >= 0x61 && al <= 0x7A) {
+        al = static_cast<uint8_t>(al - 0x20);
+    }
+    return al;
+}
+} // namespace lift_0085E690
