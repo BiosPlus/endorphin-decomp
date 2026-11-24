@@ -257,3 +257,23 @@ void fn_00494050(void* self) {
     lift_field<uint32_t>(self, 0x08) = 0;
 }
 } // namespace lift_00494050
+
+// [0x00493FF0]
+namespace lift_00493FF0 {
+// @name sub_00493FF0
+// @summary Reads an object pointer through its argument; if non-null, tail-calls the object's vtable slot at +0x38 with the object as the argument, otherwise returns 0 (original does ret 4).
+// @field Unknown +0x00 void* vtable
+
+// Vtable slot at byte offset 0x38 (slot index 14 on 32-bit).
+using VSlot14Fn = int32_t (*)(void* self);
+
+int32_t sub_00493FF0(void** slot) {
+    void* obj = *slot;
+    if (obj == nullptr) {
+        return 0;
+    }
+    auto* vtbl = *reinterpret_cast<uint8_t**>(obj);
+    auto fn = reinterpret_cast<VSlot14Fn>(*reinterpret_cast<void**>(vtbl + 0x38));
+    return fn(obj);
+}
+} // namespace lift_00493FF0

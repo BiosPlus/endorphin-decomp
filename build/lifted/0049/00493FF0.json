@@ -1,0 +1,21 @@
+{
+  "va": "0x00493FF0",
+  "size": 16,
+  "orig_symbol": "sub_00493FF0",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "sub_00493FF0",
+  "signature": "int32_t sub_00493FF0(void** slot)",
+  "summary": "Reads an object pointer through its argument; if non-null, tail-calls the object's vtable slot at +0x38 with the object as the argument, otherwise returns 0 (original does ret 4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:35:35Z"
+}
