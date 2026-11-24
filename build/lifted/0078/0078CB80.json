@@ -1,0 +1,28 @@
+{
+  "va": "0x0078CB80",
+  "size": 16,
+  "orig_symbol": "sub_0078CB80",
+  "src_path": "src/leaf/tiny_780000.cpp",
+  "lifted_path": "lifted/leaf/tiny_780000.cpp",
+  "name": "zeroTwoDwordsAt18",
+  "class": "Unknown",
+  "signature": "void zeroTwoDwordsAt18(uint8_t* this_)",
+  "summary": "Zeroes the dwords at this+0x18 and this+0x1c.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:45:36Z"
+}

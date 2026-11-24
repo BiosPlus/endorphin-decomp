@@ -37001,6 +37001,13 @@
     "summary": "Returns the dword at index arg1 of the array whose pointer is stored at this+0x10 (thiscall, one stack arg, ret 4).",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x0078CB80": {
+    "name": "zeroTwoDwordsAt18",
+    "class": "Unknown",
+    "signature": "void zeroTwoDwordsAt18(uint8_t* this_)",
+    "summary": "Zeroes the dwords at this+0x18 and this+0x1c.",
+    "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
   "0x0078CBD0": {
     "name": "sub_0078CBD0",
     "class": "UnknownObject",

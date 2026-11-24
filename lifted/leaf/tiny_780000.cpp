@@ -417,3 +417,17 @@ uint32_t getIndexedDword(void* ecx, uint32_t index) {
     return base[index];
 }
 } // namespace lift_0078CB70
+
+// [0x0078CB80]
+namespace lift_0078CB80 {
+// @name zeroTwoDwordsAt18
+// @class Unknown
+// @summary Zeroes the dwords at this+0x18 and this+0x1c.
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1c uint32_t field_0x1c
+
+void zeroTwoDwordsAt18(uint8_t* this_) {
+    *reinterpret_cast<uint32_t*>(this_ + 0x18) = 0;
+    *reinterpret_cast<uint32_t*>(this_ + 0x1c) = 0;
+}
+} // namespace lift_0078CB80
