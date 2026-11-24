@@ -2588,6 +2588,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00451B20 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00452100": {
+    "name": "Unknown::forwardField74",
+    "class": "Unknown",
+    "signature": "void fn_00452100(void* self, DWORD arg)",
+    "summary": "Forwards this object's +0x74 field and the single argument to sub_00451CE0.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00453F30": {
     "name": "RigEditorFrame::vfunc_1_off_144",
     "class": "RigEditorFrame",

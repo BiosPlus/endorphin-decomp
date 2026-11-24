@@ -1,0 +1,22 @@
+{
+  "va": "0x00452100",
+  "size": 17,
+  "orig_symbol": "sub_00452100",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "Unknown::forwardField74",
+  "class": "Unknown",
+  "signature": "void fn_00452100(void* self, DWORD arg)",
+  "summary": "Forwards this object's +0x74 field and the single argument to sub_00451CE0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "DWORD",
+      "name": "field_0x74"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:50:59Z"
+}

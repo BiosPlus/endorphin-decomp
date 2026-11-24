@@ -38,3 +38,17 @@ void fn_0045E4A0(void* self) {
     ext_006A5E72(inner, 0);
 }
 } // namespace lift_0045E4A0
+
+// [0x00452100] sub_00452100 (17 bytes)
+namespace lift_00452100 {
+extern void ext_00451CE0(DWORD a, DWORD b);
+
+// @name Unknown::forwardField74
+// @class Unknown
+// @summary Forwards this object's +0x74 field and the single argument to sub_00451CE0.
+// @field Unknown +0x74 DWORD field_0x74
+void fn_00452100(void* self, DWORD arg) {
+    DWORD field74 = lift_field<DWORD>(self, 0x74);
+    ext_00451CE0(field74, arg);
+}
+} // namespace lift_00452100
