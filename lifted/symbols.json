@@ -38869,6 +38869,12 @@
     "summary": "Forwards its single stack argument (an HGLOBAL) to ext_00859730 (GlobalFree wrapper) and returns the result.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085C260": {
+    "name": "setFlagBit1Offset14",
+    "signature": "void setFlagBit1Offset14(void* self)",
+    "summary": "Sets bit 1 (0x2) in the 32-bit word at +0x14 of the object passed as the first argument.",
+    "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
   "0x0085D504": {
     "name": "sub_0085D504",
     "signature": "void fn_0085D504(void)",

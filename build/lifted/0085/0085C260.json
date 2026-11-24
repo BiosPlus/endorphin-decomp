@@ -1,0 +1,21 @@
+{
+  "va": "0x0085C260",
+  "size": 16,
+  "orig_symbol": "sub_0085C260",
+  "src_path": "src/leaf/tiny_850000.cpp",
+  "lifted_path": "lifted/leaf/tiny_850000.cpp",
+  "name": "setFlagBit1Offset14",
+  "signature": "void setFlagBit1Offset14(void* self)",
+  "summary": "Sets bit 1 (0x2) in the 32-bit word at +0x14 of the object passed as the first argument.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:49:38Z"
+}

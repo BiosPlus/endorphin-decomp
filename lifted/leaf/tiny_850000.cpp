@@ -143,3 +143,15 @@ uint32_t GetField08(uint32_t self_ptr) {
     return *reinterpret_cast<uint32_t*>(self_ptr + 0x08);
 }
 } // namespace lift_0085BC20
+
+// [0x0085C260]
+namespace lift_0085C260 {
+// @name setFlagBit1Offset14
+// @summary Sets bit 1 (0x2) in the 32-bit word at +0x14 of the object passed as the first argument.
+// @field Object +0x14 uint32_t field_0x14
+
+void setFlagBit1Offset14(void* self) {
+    auto* base = reinterpret_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x14) |= 0x2u;
+}
+} // namespace lift_0085C260
