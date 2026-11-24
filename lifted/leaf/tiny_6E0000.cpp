@@ -575,3 +575,15 @@ double sub_006E86E0(void* self) {
     return *reinterpret_cast<double*>(inner + 0x60);
 }
 } // namespace lift_006E86E0
+
+// [0x006E8780] sub_006E8780 (16 bytes)
+namespace lift_006E8780 {
+// @name Unknown::GetIndirectDoublePlus58
+// @class Unknown
+// @summary Returns the double at offset +0x58 of the object pointed to by the first dword of self (thiscall, result in ST0).
+// @field Unknown +0x58 double field_0x58
+double fn_006E8780(void* self) {
+    void* inner = lift_field<void*>(self, 0);
+    return lift_field<double>(inner, 0x58);
+}
+} // namespace lift_006E8780

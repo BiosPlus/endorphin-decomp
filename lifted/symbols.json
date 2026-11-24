@@ -32550,6 +32550,13 @@
     "summary": "Returns the double at offset 0x60 of the object referenced by the first field of this.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E8780": {
+    "name": "Unknown::GetIndirectDoublePlus58",
+    "class": "Unknown",
+    "signature": "double fn_006E8780(void* self)",
+    "summary": "Returns the double at offset +0x58 of the object pointed to by the first dword of self (thiscall, result in ST0).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
   "0x006E8810": {
     "name": "sub_006E8810",
     "class": "Unknown",
