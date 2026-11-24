@@ -15192,6 +15192,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00401D20 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0058F550": {
+    "name": "descriptiveName_0058F550",
+    "signature": "void* fn_0058F550(void* self)",
+    "summary": "Calls ext_0058F4C0(self, 0) for its side effects and returns self unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x0058F570": {
     "name": "sub_0058F570",
     "signature": "extern \"C\" void __thiscall fn_0058F570(void* self, float value)",

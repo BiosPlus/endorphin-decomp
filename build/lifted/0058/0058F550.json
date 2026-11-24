@@ -1,0 +1,13 @@
+{
+  "va": "0x0058F550",
+  "size": 27,
+  "orig_symbol": "sub_0058F550",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "descriptiveName_0058F550",
+  "signature": "void* fn_0058F550(void* self)",
+  "summary": "Calls ext_0058F4C0(self, 0) for its side effects and returns self unchanged.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:03:53Z"
+}

@@ -58,3 +58,16 @@ float fn_0058F620(float value) {
 }
 } // namespace lift_0058F590
 } // namespace lift_0058F620
+
+// [0x0058F550] sub_0058F550 (27 bytes)
+namespace lift_0058F550 {
+extern void ext_0058F4C0(void* self, int32_t flag);
+
+// @name descriptiveName_0058F550
+// @summary Calls ext_0058F4C0(self, 0) for its side effects and returns self unchanged.
+// (No direct field accesses; the function only forwards its pointer argument.)
+void* fn_0058F550(void* self) {
+    ext_0058F4C0(self, 0);
+    return self;
+}
+} // namespace lift_0058F550
