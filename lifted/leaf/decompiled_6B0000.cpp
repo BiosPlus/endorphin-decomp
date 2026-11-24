@@ -61,3 +61,35 @@ void fn_006B8790(void* self, void* arg) {
     // ret 4 (single stack argument, popped by callee)
 }
 } // namespace lift_006B8790
+
+// [0x006B1C00]
+namespace lift_006B1C00 {
+// @name sub_006B1C00
+// @summary Derived constructor calling sub_006B0C40 and setting vtable to 0x00991784.
+// @field Unknown +0x00 uint32_t vtable
+
+
+extern uint32_t __thiscall ext_006B0C40(uint32_t self, uint32_t arg0);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+uint32_t __thiscall sub_006B1C00(uint32_t self, uint32_t arg0) {
+    ext_006B0C40(self, arg0);
+    mem_write32(self, 0x00991784u);
+    return self;
+}
+} // namespace lift_006B1C00
+
+// [0x006B1AA0]
+namespace lift_006B1AA0 {
+extern uint32_t __thiscall ext_006B0C40(uint32_t self, uint32_t arg0);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+// @name sub_006B1AA0_ctor
+// @summary Constructor that calls base constructor ext_006B0C40 and sets vtable to 0x00991768.
+// @field +0x00 uint32_t vtable
+uint32_t __thiscall sub_006B1AA0(uint32_t self, uint32_t arg0) {
+    ext_006B0C40(self, arg0);
+    mem_write32(self, 0x00991768u);
+    return self;
+}
+} // namespace lift_006B1AA0
