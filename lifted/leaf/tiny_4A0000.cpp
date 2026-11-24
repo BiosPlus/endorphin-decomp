@@ -103,3 +103,17 @@ void __fastcall sub_004A5880(void* ecx) {
     reinterpret_cast<fn_t>(fn_addr)(reinterpret_cast<void*>(subobj));
 }
 } // namespace lift_004A5880
+
+// [0x004A24A0] sub_004A24A0 (12 bytes)
+namespace lift_004A24A0 {
+extern uint32_t mem_00A35B7C;
+
+// @name setGlobalU32FromArg
+// @summary Stores its single stack argument (stdcall, callee pops 4 bytes) into the global mem_00A35B7C.
+void fn_004A24A0(uint32_t value) {
+    // mov eax, [esp+4]     -> eax = first argument
+    // mov [0xa35b7c], eax  -> mem_00A35B7C = eax
+    mem_00A35B7C = value;
+    // ret 4                -> stdcall epilogue; handled by the calling convention
+}
+} // namespace lift_004A24A0

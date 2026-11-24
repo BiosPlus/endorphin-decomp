@@ -1,0 +1,13 @@
+{
+  "va": "0x004A24A0",
+  "size": 12,
+  "orig_symbol": "sub_004A24A0",
+  "src_path": "src/leaf/tiny_4A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4A0000.cpp",
+  "name": "setGlobalU32FromArg",
+  "signature": "void fn_004A24A0(uint32_t value)",
+  "summary": "Stores its single stack argument (stdcall, callee pops 4 bytes) into the global mem_00A35B7C.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:15:14Z"
+}
