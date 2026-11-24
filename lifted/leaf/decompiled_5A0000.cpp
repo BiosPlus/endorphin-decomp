@@ -95,3 +95,25 @@ void __thiscall fn_005AA8D0(void* self, const void* src) {
     }
 }
 } // namespace lift_005AA8D0
+
+// [0x005AA890]
+namespace lift_005AA890 {
+// @name CopyVec3ToSelfAndNotifyChild
+// @summary Copies a 3-float vector into self+0x164..0x16c, then calls virtual slot 0 on the child at self+0x190 if present.
+// @field Self +0x164 float field_0x164
+// @field Self +0x168 float field_0x168
+// @field Self +0x16c float field_0x16c
+// @field Self +0x190 void* field_0x190
+void CopyVec3ToSelfAndNotifyChild(void* self, const float* src) {
+    lift_field<float>(self, 0x164) = src[0];
+    lift_field<float>(self, 0x168) = src[1];
+    lift_field<float>(self, 0x16c) = src[2];
+
+    void* child = lift_field<void*>(self, 0x190);
+    if (child != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(child);
+        auto slot0 = reinterpret_cast<void (*)(void*)>(vtbl[0]);
+        slot0(child);
+    }
+}
+} // namespace lift_005AA890

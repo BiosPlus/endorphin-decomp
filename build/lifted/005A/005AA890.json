@@ -1,0 +1,39 @@
+{
+  "va": "0x005AA890",
+  "size": 54,
+  "orig_symbol": "sub_005AA890",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "CopyVec3ToSelfAndNotifyChild",
+  "signature": "void CopyVec3ToSelfAndNotifyChild(void* self, const float* src)",
+  "summary": "Copies a 3-float vector into self+0x164..0x16c, then calls virtual slot 0 on the child at self+0x190 if present.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x164",
+      "type": "float",
+      "name": "field_0x164"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x168",
+      "type": "float",
+      "name": "field_0x168"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x16C",
+      "type": "float",
+      "name": "field_0x16c"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x190",
+      "type": "void*",
+      "name": "field_0x190"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:11:32Z"
+}

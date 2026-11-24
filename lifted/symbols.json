@@ -21597,6 +21597,12 @@
     "summary": "Stores a 32-bit value at +0x154, then calls vtable slot 0 on the object at +0x190 if it is non-null.",
     "lifted_path": "lifted/leaf/tiny_5A0000.cpp"
   },
+  "0x005AA890": {
+    "name": "CopyVec3ToSelfAndNotifyChild",
+    "signature": "void CopyVec3ToSelfAndNotifyChild(void* self, const float* src)",
+    "summary": "Copies a 3-float vector into self+0x164..0x16c, then calls virtual slot 0 on the child at self+0x190 if present.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005AA8D0": {
     "name": "sub_005AA8D0",
     "signature": "void __thiscall fn_005AA8D0(void* self, const void* src)",
