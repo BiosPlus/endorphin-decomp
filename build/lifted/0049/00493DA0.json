@@ -1,0 +1,13 @@
+{
+  "va": "0x00493DA0",
+  "size": 19,
+  "orig_symbol": "sub_00493DA0",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "descriptiveName_00493DA0 (forwardVirtual0x150IfNonNull)",
+  "signature": "uint32_t fn_00493DA0(void** self, uint32_t arg)",
+  "summary": "Dereferences the pointer stored at *self; if non-null, tail-jumps to vtable slot 0x150 of that object (passing the one stack arg through), else returns 4-byte stack cleanup.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:00:05Z"
+}

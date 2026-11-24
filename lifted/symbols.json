@@ -5201,6 +5201,12 @@
     "summary": "Zeroes the dword at +0x0, the dword at +0x4, and the byte at +0x8 of the object, then returns it.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00493DA0": {
+    "name": "descriptiveName_00493DA0 (forwardVirtual0x150IfNonNull)",
+    "signature": "uint32_t fn_00493DA0(void** self, uint32_t arg)",
+    "summary": "Dereferences the pointer stored at *self; if non-null, tail-jumps to vtable slot 0x150 of that object (passing the one stack arg through), else returns 4-byte stack cleanup.",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
   "0x00493DC0": {
     "name": "virtualCall14C_00493DC0",
     "signature": "void fn_00493DC0(void* self)",

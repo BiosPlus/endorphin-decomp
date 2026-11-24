@@ -371,3 +371,25 @@ void fn_00493DC0(void* self) {
     fn(obj);
 }
 } // namespace lift_00493DC0
+
+// [0x00493DA0] sub_00493DA0 (19 bytes)
+namespace lift_00493DA0 {
+// @name descriptiveName_00493DA0 (forwardVirtual0x150IfNonNull)
+// @summary Dereferences the pointer stored at *self; if non-null, tail-jumps to vtable slot 0x150 of that object (passing the one stack arg through), else returns 4-byte stack cleanup.
+// @field field_0x00 <void*> object (pointer loaded from *self; object's first DWORD is its vtable)
+// @field field_0x00 <void**> vtable (object+0x00 vtable pointer; slot at +0x150 is the forward target)
+uint32_t fn_00493DA0(void** self, uint32_t arg) {
+    // ecx = *self; if (ecx == 0) ret 4;
+    // eax = [ecx]; jmp [eax + 0x150]  (ecx = object, stack arg untouched)
+    void* object = *self;
+    if (object == nullptr) {
+        // Original path only pops the stack arg; eax is left unchanged there.
+        return 0;
+    }
+    uint32_t vtable = lift_field<uint32_t>(object, 0x00);
+    uint32_t target = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(vtable)), 0x150);
+    using Slot = uint32_t(__thiscall*)(void* thisPtr, uint32_t arg);
+    auto fn = reinterpret_cast<Slot>(static_cast<uintptr_t>(target));
+    return fn(object, arg);
+}
+} // namespace lift_00493DA0
