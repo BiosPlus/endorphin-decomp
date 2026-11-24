@@ -1,0 +1,22 @@
+{
+  "va": "0x00648510",
+  "size": 25,
+  "orig_symbol": "sub_00648510",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "sub_00648510",
+  "class": "Unknown",
+  "signature": "void fn_00648510(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "heldPtr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T11:50:28Z"
+}

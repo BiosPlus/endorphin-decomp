@@ -147,6 +147,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006204A0 (Sensors::SensorAbsoluteTime::vfunc_0).",
     "lifted_path": "lifted/classes/AVIException.cpp"
   },
+  "0x00401DE0": {
+    "name": "sub_00401DE0",
+    "class": "Unknown",
+    "signature": "void fn_00401DE0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00401FC0": {
     "name": "AVIIO::vfunc_0_off_4",
     "class": "AVIIO",
@@ -4184,6 +4191,20 @@
     "summary": "Calls ext_00594000 to obtain an int32 handle, reads the dword at handle+0x26C, and tail-forwards that value to ext_00477380.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x004693D0": {
+    "name": "sub_004693D0",
+    "class": "Unknown",
+    "signature": "void fn_004693D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
+  "0x004693F0": {
+    "name": "sub_004693F0",
+    "class": "Unknown",
+    "signature": "void fn_004693F0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00469C50": {
     "name": "sub_00469C50",
     "signature": "void fn_00469C50()",
@@ -5000,6 +5021,13 @@
     "signature": "extern \"C\" void __fastcall fn_004806C0(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0x3B4 and tail-calls sub_004A6710.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
+  },
+  "0x00480750": {
+    "name": "sub_00480750",
+    "class": "Unknown",
+    "signature": "void fn_00480750(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
   "0x004816E0": {
     "name": "Commands::BufferTransformsCommand::vfunc_1",
@@ -6781,6 +6809,13 @@
     "summary": "Adjusts this by +4 and tail-calls vtable slot 3 (+0xc)",
     "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
   },
+  "0x004A5BE0": {
+    "name": "sub_004A5BE0",
+    "class": "Unknown",
+    "signature": "void fn_004A5BE0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004A6C60": {
     "name": "sub_004A6C60",
     "signature": "extern \"C\" void fn_004A6C60(void)",
@@ -7066,6 +7101,13 @@
     "signature": "int fn_004AECC0(void* self)",
     "summary": "Returns the number of 8-byte elements in the sub-object's range (end - begin) / 8, or 0 if begin is null.",
     "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
+  },
+  "0x004AECE0": {
+    "name": "sub_004AECE0",
+    "class": "Unknown",
+    "signature": "void fn_004AECE0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
   "0x004AF040": {
     "name": "Properties::PropertySelectionEngine::vfunc_1",
@@ -8763,6 +8805,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getEndFrame, 0\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004D2C70": {
+    "name": "sub_004D2C70",
+    "class": "Unknown",
+    "signature": "void fn_004D2C70(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004D2DD0": {
     "name": "NMData::TransitionEventData::vfunc_0_off_158",
     "class": "NMData::TransitionEventData",
@@ -9216,6 +9265,13 @@
     "signature": "void fn_004D9DA0(void* arg1, void* arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x004DA800": {
+    "name": "sub_004DA800",
+    "class": "Unknown",
+    "signature": "void fn_004DA800(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
   },
   "0x004DAB50": {
     "name": "NMData::RigEventData::vfunc_0_off_158",
@@ -17252,6 +17308,13 @@
     "summary": "Assigns a string literal to the member std::string at +0x17c, clears the flag at +0x198, then forwards to the base NMData::CollisionModelDataBase::vfunc_33.",
     "lifted_path": "lifted/NMData/FluidObjectData.cpp"
   },
+  "0x005C4780": {
+    "name": "sub_005C4780",
+    "class": "Unknown",
+    "signature": "void fn_005C4780(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005C47A0": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}\u003e::vfunc_41",
     "class": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}\u003e",
@@ -17907,6 +17970,13 @@
     "signature": "extern \"C\" void __fastcall fn_005CEA20(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0xAC and tail-calls sub_00647EE0.",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
+  },
+  "0x005CEA30": {
+    "name": "sub_005CEA30",
+    "class": "Unknown",
+    "signature": "void fn_005CEA30(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
   "0x005CEA50": {
     "name": "ExprParser::ReadMethodType\u003cNMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0\u003e::vfunc_1",
@@ -24016,6 +24086,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00648480 (GetIndirectField_0x5c_0x00).",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00648200": {
+    "name": "sub_00648200",
+    "class": "Unknown",
+    "signature": "void fn_00648200(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00648450": {
     "name": "sub_00648450",
     "signature": "extern \"C\" void __fastcall fn_00648450(void* self)",
@@ -24088,6 +24165,13 @@
     "signature": "extern \"C\" void __fastcall fn_00648500(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0x5C and tail-calls sub_0065AEC0.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
+  "0x00648510": {
+    "name": "sub_00648510",
+    "class": "Unknown",
+    "signature": "void fn_00648510(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
   "0x00648850": {
     "name": "sub_00648850",
