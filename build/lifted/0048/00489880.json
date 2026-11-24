@@ -1,0 +1,21 @@
+{
+  "va": "0x00489880",
+  "size": 27,
+  "orig_symbol": "sub_00489880",
+  "src_path": "src/leaf/tiny_480000.cpp",
+  "lifted_path": "lifted/leaf/tiny_480000.cpp",
+  "name": "CallChildVtableSlot1EIfPresent",
+  "signature": "void* fn_00489880(void* self)",
+  "summary": "If self-\u003e+0x04 is non-null, tail-calls child's vtable slot 0x78/4 with child as this and self as the argument; otherwise returns self.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:02:06Z"
+}

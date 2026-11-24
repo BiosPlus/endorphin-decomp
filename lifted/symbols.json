@@ -5473,6 +5473,12 @@
     "summary": "Forwards the object's first dword to ext_00493D90 and returns 0 (stdcall, one arg).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x00489880": {
+    "name": "CallChildVtableSlot1EIfPresent",
+    "signature": "void* fn_00489880(void* self)",
+    "summary": "If self-\u003e+0x04 is non-null, tail-calls child's vtable slot 0x78/4 with child as this and self as the argument; otherwise returns self.",
+    "lifted_path": "lifted/leaf/tiny_480000.cpp"
+  },
   "0x0048ABF0": {
     "name": "sub_0048ABF0",
     "class": "Unknown",

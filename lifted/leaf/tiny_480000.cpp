@@ -225,3 +225,21 @@ void* fn_00486D60(void* arg) {
 }
 } // namespace lift_00401AF0
 } // namespace lift_00486D60
+
+// [0x00489880] sub_00489880 (27 bytes)
+namespace lift_00489880 {
+// @name CallChildVtableSlot1EIfPresent
+// @summary If self->+0x04 is non-null, tail-calls child's vtable slot 0x78/4 with child as this and self as the argument; otherwise returns self.
+// @field self +0x04 void* field_0x04
+void* fn_00489880(void* self) {
+    void* child = lift_field<void*>(self, 0x04);
+    if (child == nullptr) {
+        return self;
+    }
+
+    using SlotFn = void* (*)(void* thisObj, void* arg);
+    void* vtbl = lift_field<void*>(child, 0x00);
+    auto slot = reinterpret_cast<SlotFn>(lift_field<void*>(vtbl, 0x78));
+    return slot(child, self);
+}
+} // namespace lift_00489880
