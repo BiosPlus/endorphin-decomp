@@ -30594,3 +30594,28 @@ void* fn_00508F20(void* out, void* const* src) {
     return out;
 }
 } // namespace lift_00508F20
+
+// [0x004B12D0]
+namespace lift_004B12D0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>
+// @summary Reads through a pointer-to-object; formats the object's +0x20 field into out via ext_0046C500 and returns out, or throws if the object pointer is null.
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+
+extern void* ext_0046C500(void* out_str, uint8_t flag);
+extern void ext_0046C3C0(void* self);
+[[noreturn]] extern void ext_006A6DD2(void* exc_obj, const void* type_info);
+extern uint8_t mem_009DEC1C;
+
+void* fn_004B12D0(void* out, void** src) {
+    void* obj = *src;
+    if (obj != nullptr) {
+        uint32_t flag = *reinterpret_cast<uint32_t*>(static_cast<char*>(obj) + 0x20);
+        ext_0046C500(out, static_cast<uint8_t>(flag));
+        return out;
+    }
+    uint32_t exc = 0;
+    ext_0046C3C0(&exc);
+    ext_006A6DD2(&exc, &mem_009DEC1C);
+}
+} // namespace lift_004B12D0
