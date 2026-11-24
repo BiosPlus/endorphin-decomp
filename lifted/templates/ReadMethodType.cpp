@@ -40778,3 +40778,35 @@ float fn_004C0660(void* self) {
     return result;
 }
 } // namespace lift_004C0660
+
+// [0x0049D780] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>::vfunc_3 (107 bytes)
+namespace lift_0049D780 {
+// Virtual dispatch thunk 0x0046A470: calls slot 1 on the object at `self` and returns the
+// const std::string* it produces.
+const std::string* ext_0046A470(void* self);
+
+// String literals at VA 0x0092F10C and 0x0093A810 (contents are not recovered in this lift;
+// they are compared via std::string operator== exactly as the original does).
+extern const char kLit_0092F10C[];
+extern const char kLit_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_3 (NMData::State name check)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>
+// @summary Reads the object held by the holder; throws if null, else returns true when the virtual string accessor at obj+8 equals one of two fixed literals.
+// @field ExprParser::ReadMethodType<NMData::State> +0x08 void* field_0x08 (subobject passed as `this` to the virtual string accessor)
+bool fn_0049D780(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType: null object");
+    }
+    void* sub = static_cast<uint8_t*>(obj) + 0x08;
+    const std::string* str = ext_0046A470(sub);
+    if (*str == kLit_0092F10C) {
+        return true;
+    }
+    if (*str == kLit_0093A810) {
+        return true;
+    }
+    return false;
+}
+} // namespace lift_0049D780
