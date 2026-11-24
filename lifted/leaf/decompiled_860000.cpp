@@ -70,3 +70,20 @@ namespace lift_00862976 {
 void sub_00862976() {
 }
 } // namespace lift_00862976
+
+// [0x008665CC] sub_008665CC (20 bytes)
+namespace lift_008665CC {
+// Non-executing data block, not a function. Disassembly decodes as add/lea
+// pairs with no control flow: a byte table of values 0x00-0x04 followed by a
+// 4-byte `lea esp,[esp]` alignment pad.
+// @name DataBytes_008665CC
+// @summary Non-executing 20-byte data block (byte-value table 0x00-0x04); no observable logic.
+static const uint8_t kDataTable_008665CC[20] = {
+    0x00, 0x01, 0x04, 0x04, 0x04, 0x04, 0x04, 0x02, 0x04, 0x04,
+    0x04, 0x04, 0x04, 0x04, 0x04, 0x03, 0x8D, 0x64, 0x24, 0x00,
+};
+
+void fn_008665CC(void* self) {
+    (void)self;
+}
+} // namespace lift_008665CC

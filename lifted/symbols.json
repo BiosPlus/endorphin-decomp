@@ -40345,6 +40345,12 @@
     "summary": "Multi-byte alignment NOP padding (lea ecx, [ecx]; lea esp, [esp])",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x008665CC": {
+    "name": "DataBytes_008665CC",
+    "signature": "void fn_008665CC(void* self)",
+    "summary": "Non-executing 20-byte data block (byte-value table 0x00-0x04); no observable logic.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x008683E4": {
     "name": "sub_008683E4",
     "signature": "void fn_008683E4(void)",
