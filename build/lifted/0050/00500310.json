@@ -1,0 +1,13 @@
+{
+  "va": "0x00500310",
+  "size": 37,
+  "orig_symbol": "sub_00500310",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "DwordPairInitFromCall_00500310",
+  "signature": "void* fn_00500310(void* self, void* pair, DWORD b)",
+  "summary": "Calls ext_004FFD60 with the incoming this and second argument, then initialises the pair object (first argument) with that result and the second argument via initDwordPair; returns the pair object.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:03:17Z"
+}

@@ -11830,6 +11830,12 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x13C and tail-calls sub_00515B70.",
     "lifted_path": "lifted/leaf/tiny_4F0000.cpp"
   },
+  "0x00500310": {
+    "name": "DwordPairInitFromCall_00500310",
+    "signature": "void* fn_00500310(void* self, void* pair, DWORD b)",
+    "summary": "Calls ext_004FFD60 with the incoming this and second argument, then initialises the pair object (first argument) with that result and the second argument via initDwordPair; returns the pair object.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x005013A0": {
     "name": "EvolveEngine::vfunc_2_off_10",
     "class": "EvolveEngine",

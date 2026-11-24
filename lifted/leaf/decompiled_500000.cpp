@@ -86,3 +86,19 @@ void fn_00503CA0(void* self) {
     lift_field<uint8_t>(self, 0x21) = 0;
 }
 } // namespace lift_00503CA0
+
+// [0x00500310] sub_00500310 (37 bytes)
+namespace lift_00500310 {
+// Callee 0x004FFD60: sub_004FFD60 (35B). Called with ECX passed through as `this`, two stack args, DWORD result in EAX.
+extern DWORD __thiscall ext_004FFD60(void* self, DWORD a, DWORD b);
+// Known callee 0x0055DA20: initDwordPair (Stores two stack-passed DWORDs into the object at ECX and returns that object pointer (callee pops 8 bytes).)
+extern void* __thiscall ext_0055DA20(void* self, DWORD a, DWORD b);
+
+// @name DwordPairInitFromCall_00500310
+// @summary Calls ext_004FFD60 with the incoming this and second argument, then initialises the pair object (first argument) with that result and the second argument via initDwordPair; returns the pair object.
+void* fn_00500310(void* self, void* pair, DWORD b) {
+    const DWORD value = ext_004FFD60(self, b, 0);
+    ext_0055DA20(pair, value, b);
+    return pair;
+}
+} // namespace lift_00500310
