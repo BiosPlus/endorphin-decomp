@@ -535,3 +535,19 @@ uint32_t fn_00859DD0(void* self) {
 
 } // namespace lift_00859DD0
 } // namespace lift_00859DD0
+
+// [0x0085F700] sub_0085F700 (48 bytes)
+namespace lift_0085F700 {
+// Known callee 0x0085F730: sub_0085F730 (Empty function (returns immediately).)
+extern void ext_0085F730();
+
+// @name fn_0085F700_offsetCalls
+// @summary Computes pointer+2 and pointer+0x0E and passes each to an empty callee (no observable effect).
+void fn_0085F700(void* self) {
+    // Original passes (self+2, 8) and (self+0xE, 0x18) to ext_0085F730.
+    // The callee is empty and takes no arguments, so the calls have no effect.
+    (void)self;
+    ext_0085F730();
+    ext_0085F730();
+}
+} // namespace lift_0085F700

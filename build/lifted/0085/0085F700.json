@@ -1,0 +1,13 @@
+{
+  "va": "0x0085F700",
+  "size": 48,
+  "orig_symbol": "sub_0085F700",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "fn_0085F700_offsetCalls",
+  "signature": "void fn_0085F700(void* self)",
+  "summary": "Computes pointer+2 and pointer+0x0E and passes each to an empty callee (no observable effect).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:29:25Z"
+}

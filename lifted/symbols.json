@@ -50832,6 +50832,12 @@
     "summary": "Appends the NUL-terminated string src to the end of dst (strcat-equivalent); returns dst.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085F700": {
+    "name": "fn_0085F700_offsetCalls",
+    "signature": "void fn_0085F700(void* self)",
+    "summary": "Computes pointer+2 and pointer+0x0E and passes each to an empty callee (no observable effect).",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085F730": {
     "name": "sub_0085F730",
     "signature": "extern \"C\" void __cdecl fn_0085F730(void)",
