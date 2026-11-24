@@ -1,0 +1,21 @@
+{
+  "va": "0x00648A60",
+  "size": 38,
+  "orig_symbol": "sub_00648A60",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "call_0x65B040_if_0x04_lt_0x08",
+  "signature": "void __thiscall sub_00648A60(void* self, float arg)",
+  "summary": "Calls sub_0065B040 on field_0x30 with the float argument if field_0x28+0x04 \u003c field_0x28+0x08.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:56:12Z"
+}
