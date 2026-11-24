@@ -15764,6 +15764,12 @@
     "summary": "Forwards self and the entry ecx value to ext_0051AE20, then returns self.",
     "lifted_path": "lifted/NMData/RealChannel.cpp"
   },
+  "0x0051AF30": {
+    "name": "ComputeStride20Address",
+    "signature": "uint32_t fn_0051AF30(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Forwards three stack args plus self to ext_0051AA60, then returns a1 + 20 * a2 (a 20-byte-stride element address).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x0051AF70": {
     "name": "ExprParser::ReadMethodType\u003cNMData::RealChannel, float, \u0026public: float __thiscall NMData::RealChannel::getValue(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::RealChannel, float, \u0026public: float __thiscall NMData::RealChannel::getValue(void) const, 0\u003e",

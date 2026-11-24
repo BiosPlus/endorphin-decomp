@@ -1,0 +1,13 @@
+{
+  "va": "0x0051AF30",
+  "size": 54,
+  "orig_symbol": "sub_0051AF30",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "ComputeStride20Address",
+  "signature": "uint32_t fn_0051AF30(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3)",
+  "summary": "Forwards three stack args plus self to ext_0051AA60, then returns a1 + 20 * a2 (a 20-byte-stride element address).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:10:34Z"
+}

@@ -131,3 +131,23 @@ uint32_t __cdecl sub_00519D10(const void* str) {
     return eq(str, mem_00AECC28) != 0 ? 1u : 0u;
 }
 } // namespace lift_00519D10
+
+// [0x0051AF30] sub_0051AF30 (54 bytes)
+namespace lift_0051AF30 {
+extern void ext_0051AA60(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t self, uint32_t a3Copy, uint32_t flagArg);
+
+// @name ComputeStride20Address
+// @summary Forwards three stack args plus self to ext_0051AA60, then returns a1 + 20 * a2 (a 20-byte-stride element address).
+// (no direct field accesses on self: ecx is only forwarded to the callee, so no @field lines)
+uint32_t fn_0051AF30(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3) {
+    // The original stores a bool local into a stack slot that still holds the
+    // pushed ecx; only the low byte is overwritten, so the pushed dword is
+    // self with its low byte cleared.
+    const uint32_t flagArg = self & 0xFFFFFF00u;
+
+    ext_0051AA60(a1, a2, a3, self, a3, flagArg);
+
+    // lea ecx,[esi+4*esi] => 5*a2 ; lea eax,[edi+4*ecx] => a1 + 20*a2
+    return a1 + 20u * a2;
+}
+} // namespace lift_0051AF30
