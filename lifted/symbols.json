@@ -40401,6 +40401,12 @@
     "summary": "Returns the u32 at index idx of the 0x2C-entry table at 0x00AAB3EC, or 0 if idx is out of range [0, 0x2C).",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006F9380": {
+    "name": "sub_006F9380_initGlobals",
+    "signature": "void fn_006F9380(void* self)",
+    "summary": "Stores four constant words into globals mem_00B5E248/250/24C/254 (no class context).",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F9620": {
     "name": "sub_006F9620",
     "signature": "extern \"C\" int32_t __cdecl fn_006F9620(void)",

@@ -261,3 +261,21 @@ void fn_006FFEE0() {
 }
 } // namespace lift_006FFEE0
 } // namespace lift_006FFEE0
+
+// [0x006F9380] sub_006F9380 (41 bytes)
+namespace lift_006F9380 {
+extern uint32_t mem_00B5E248;
+extern uint32_t mem_00B5E250;
+extern uint32_t mem_00B5E24C;
+extern uint32_t mem_00B5E254;
+
+// @name sub_006F9380_initGlobals
+// @summary Stores four constant words into globals mem_00B5E248/250/24C/254 (no class context).
+void fn_006F9380(void* self) {
+    (void)self;
+    mem_00B5E248 = 0x00B5E240u;
+    mem_00B5E250 = 0x00AAB4A4u;
+    mem_00B5E24C = 0x00B5F050u;
+    mem_00B5E254 = 0x00000000u;
+}
+} // namespace lift_006F9380
