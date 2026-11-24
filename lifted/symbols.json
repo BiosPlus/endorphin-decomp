@@ -3702,6 +3702,13 @@
     "summary": "If the flag byte at self+0x10 is set, tail-forward to ext_0046FE50 with the pointer at self+0x14; otherwise return 0.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x00468770": {
+    "name": "Unknown::forwardIfFlag10",
+    "class": "Unknown",
+    "signature": "uint8_t fn_00468770(void* self)",
+    "summary": "If the byte at +0x10 is nonzero, tail-forward to the object at +0x14 via ext_0046FE70; otherwise return 0.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00468A30": {
     "name": "GetEnabledChildField28OrZero",
     "signature": "DWORD fn_00468A30(void* self)",

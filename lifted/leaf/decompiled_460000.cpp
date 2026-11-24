@@ -241,3 +241,22 @@ uint8_t fn_00468750(void* self) {
     return ext_0046FE50(reinterpret_cast<void*>(static_cast<uintptr_t>(child)));
 }
 } // namespace lift_00468750
+
+// [0x00468770] sub_00468770 (17 bytes)
+namespace lift_00468770 {
+// Known callee 0x0046FE70: sub_0046FE70 (Auto-lifted identical-shape clone of 0x005355B0 (OglRenderer::vfunc_71).)
+extern uint8_t ext_0046FE70(void* self);
+
+// @name Unknown::forwardIfFlag10
+// @class Unknown
+// @summary If the byte at +0x10 is nonzero, tail-forward to the object at +0x14 via ext_0046FE70; otherwise return 0.
+// @field Unknown +0x10 uint8_t field_0x10
+// @field Unknown +0x14 void* field_0x14
+uint8_t fn_00468770(void* self) {
+    if (lift_field<uint8_t>(self, 0x10) != 0) {
+        void* child = lift_field<void*>(self, 0x14);
+        return ext_0046FE70(child);
+    }
+    return 0;
+}
+} // namespace lift_00468770
