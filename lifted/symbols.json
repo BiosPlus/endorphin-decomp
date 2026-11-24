@@ -1023,6 +1023,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00414EC0": {
+    "name": "sub_00414EC0",
+    "signature": "uint32_t __thiscall sub_00414EC0( uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)",
+    "summary": "Forwards arguments with a zeroed flag byte to sub_004148F0",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x004153A0": {
     "name": "sub_004153A0",
     "signature": "extern \"C\" void fn_004153A0(void)",
