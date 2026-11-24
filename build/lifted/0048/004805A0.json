@@ -1,0 +1,28 @@
+{
+  "va": "0x004805A0",
+  "size": 40,
+  "orig_symbol": "sub_004805A0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "UnknownClass::setValueAndForward_004805A0",
+  "class": "UnknownClass",
+  "signature": "void fn_004805A0(void* self, uint32_t arg)",
+  "summary": "Stores its argument at this+0x3B8, forwards it to sub_004AF850 on this+8, then copies it into the object at this+0x3B4 (+0x2AC).",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x3B4",
+      "type": "void*",
+      "name": "field_0x3B4"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x3B8",
+      "type": "uint32_t",
+      "name": "field_0x3B8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:52:28Z"
+}

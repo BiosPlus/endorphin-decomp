@@ -4050,6 +4050,12 @@
     "summary": "If this+0xDC is non-null, invoke vtable slot 0x188 on this; then forward to ext_006A5EA8 with ecx=this.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x00456340": {
+    "name": "sub_00456340",
+    "signature": "extern \"C\" void __thiscall fn_00456340(void* self, void* arg1)",
+    "summary": "Conditionally invokes vtable+0x188 on this before calling MFC80!ord_1903",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00456CC0": {
     "name": "CSizingControlBar::vfunc_1",
     "class": "CSizingControlBar",
@@ -4731,6 +4737,13 @@
     "signature": "uint32_t __thiscall fn_004636C0(void* self, uint32_t pos)",
     "summary": "Sends PBM_SETPOS (0x402) with the given position to the progress bar HWND",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x004636E0": {
+    "name": "VideoGeneratorDialog::setProgressRange",
+    "class": "VideoGeneratorDialog",
+    "signature": "uint32_t __thiscall fn_004636E0(uint8_t* self, uint16_t minVal, uint16_t maxVal)",
+    "summary": "Sets the progress bar range on m_hProgressWnd via PBM_SETRANGE",
+    "lifted_path": "lifted/classes/VideoGeneratorDialog.cpp"
   },
   "0x00463950": {
     "name": "sub_00463950",
@@ -5621,6 +5634,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x0046FBE0": {
+    "name": "sub_0046FBE0",
+    "signature": "int32_t __thiscall sub_0046FBE0(void* self, float value)",
+    "summary": "Rounds a float argument by adding a constant double, stores the integer result at +0x288, and returns it",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046FD70": {
     "name": "sub_0046FD70",
     "signature": "uint32_t __thiscall sub_0046FD70(uint32_t self, uint32_t out_ptr)",
@@ -6049,6 +6068,13 @@
     "signature": "extern \"C\" void __fastcall fn_00480590(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0x3B4 and tail-calls sub_004A5A50.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x004805A0": {
+    "name": "UnknownClass::setValueAndForward_004805A0",
+    "class": "UnknownClass",
+    "signature": "void fn_004805A0(void* self, uint32_t arg)",
+    "summary": "Stores its argument at this+0x3B8, forwards it to sub_004AF850 on this+8, then copies it into the object at this+0x3B4 (+0x2AC).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
   "0x004805D0": {
     "name": "ToolEngine::vfunc_38",

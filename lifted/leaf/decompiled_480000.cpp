@@ -111,3 +111,22 @@ BOOLEAN fn_00480280(void* self) {
     return (diff >> 2) == 0 ? 1 : 0;
 }
 } // namespace lift_00480280
+
+// [0x004805A0] sub_004805A0 (40 bytes)
+namespace lift_004805A0 {
+extern void ext_004AF850(void* self_plus_8, uint32_t arg);
+
+// @name UnknownClass::setValueAndForward_004805A0
+// @class UnknownClass
+// @summary Stores its argument at this+0x3B8, forwards it to sub_004AF850 on this+8, then copies it into the object at this+0x3B4 (+0x2AC).
+// @field UnknownClass +0x3B4 void* field_0x3B4
+// @field UnknownClass +0x3B8 uint32_t field_0x3B8
+void fn_004805A0(void* self, uint32_t arg) {
+    lift_field<uint32_t>(self, 0x3B8) = arg;
+
+    ext_004AF850(static_cast<uint8_t*>(self) + 0x8, arg);
+
+    void* target = lift_field<void*>(self, 0x3B4);
+    lift_field<uint32_t>(target, 0x2AC) = arg;
+}
+} // namespace lift_004805A0
