@@ -378,3 +378,37 @@ DWORD* __thiscall fn_0040E860(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_0040E860
+
+// [0x0040FDC0] sub_0040FDC0 (46 bytes)
+namespace lift_0040FDC0 {
+// Known callee 0x006A5C6E: thunk_MFC80_ord_572 (IAT jump thunk forwarding to MFC80!ord_572.)
+extern void ext_006A5C6E();
+
+// @name initRecordDefaults_0040FDC0
+// @summary Calls an MFC thunk, then zeroes five dwords and sets a vtable-like word and two 0xE6 fields in the object.
+// @field <unknown> +0x00 uint32_t field_0x00
+// @field <unknown> +0x54 uint32_t field_0x54
+// @field <unknown> +0x58 uint32_t field_0x58
+// @field <unknown> +0x5C uint32_t field_0x5C
+// @field <unknown> +0x60 uint32_t field_0x60
+// @field <unknown> +0x64 uint32_t field_0x64
+// @field <unknown> +0x68 uint32_t field_0x68
+// @field <unknown> +0x6C uint32_t field_0x6C
+static void store_u32(void* self, std::uintptr_t off, std::uint32_t value) {
+    std::memcpy(static_cast<std::uint8_t*>(self) + off, &value, sizeof(value));
+}
+
+void* fn_0040FDC0(void* self) {
+    ext_006A5C6E();
+
+    store_u32(self, 0x54, 0u);
+    store_u32(self, 0x5C, 0u);
+    store_u32(self, 0x58, 0u);
+    store_u32(self, 0x64, 0u);
+    store_u32(self, 0x6C, 0u);
+    store_u32(self, 0x00, 0x92B9D4u);
+    store_u32(self, 0x60, 0xE6u);
+    store_u32(self, 0x68, 0xE6u);
+    return self;
+}
+} // namespace lift_0040FDC0

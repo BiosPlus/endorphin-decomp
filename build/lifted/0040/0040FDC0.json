@@ -1,0 +1,63 @@
+{
+  "va": "0x0040FDC0",
+  "size": 46,
+  "orig_symbol": "sub_0040FDC0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "initRecordDefaults_0040FDC0",
+  "signature": "static void store_u32(void* self, std::uintptr_t off, std::uint32_t value)",
+  "summary": "Calls an MFC thunk, then zeroes five dwords and sets a vtable-like word and two 0xE6 fields in the object.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x54",
+      "type": "uint32_t",
+      "name": "field_0x54"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x58",
+      "type": "uint32_t",
+      "name": "field_0x58"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x68",
+      "type": "uint32_t",
+      "name": "field_0x68"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x6C",
+      "type": "uint32_t",
+      "name": "field_0x6C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:08:19Z"
+}

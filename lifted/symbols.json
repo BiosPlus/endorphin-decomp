@@ -854,6 +854,12 @@
     "summary": "Forwards to MFC80 ord_4115 with fixed arguments (0x1f, 0x0b, 0x20), then tail-calls MFC80 ord_5200 on the same object.",
     "lifted_path": "lifted/classes/CColorCheck.cpp"
   },
+  "0x0040FDC0": {
+    "name": "initRecordDefaults_0040FDC0",
+    "signature": "static void store_u32(void* self, std::uintptr_t off, std::uint32_t value)",
+    "summary": "Calls an MFC thunk, then zeroes five dwords and sets a vtable-like word and two 0xE6 fields in the object.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040FDF0": {
     "name": "CColorCheck::vfunc_1",
     "class": "CColorCheck",
