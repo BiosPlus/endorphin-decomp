@@ -1,0 +1,28 @@
+{
+  "va": "0x006294F0",
+  "size": 32,
+  "orig_symbol": "sub_006294F0",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "ReadSubobjectVirtualFloatInto0x30",
+  "class": "self",
+  "signature": "void fn_006294F0(void* self)",
+  "summary": "Calls virtual slot 8 (+0x20) on the object chained from self+0x28/+0x20c/+0x234 with arg 0, storing the float result at self+0x30.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "self",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:31:34Z"
+}

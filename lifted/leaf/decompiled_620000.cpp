@@ -134,3 +134,31 @@ extern void __fastcall fn_00627510(void* self) {
     ext_00647F20(target, nullptr, arg);
 }
 } // namespace lift_00627510
+
+// [0x006294F0] sub_006294F0 (32 bytes)
+namespace lift_006294F0 {
+// @name ReadSubobjectVirtualFloatInto0x30
+// @class self
+// @summary Calls virtual slot 8 (+0x20) on the object chained from self+0x28/+0x20c/+0x234 with arg 0, storing the float result at self+0x30.
+// @field self +0x28 void* field_0x28
+// @field self +0x30 float field_0x30
+
+namespace {
+// Portable stand-in for the original thiscall virtual dispatch (this in ecx, one int argument).
+using VirtualFloatFn = float (*)(void* self, int32_t arg);
+}
+
+void fn_006294F0(void* self) {
+    // self -> subobject at +0x28 -> +0x20c -> +0x234 (object used as `this`)
+    void* sub = lift_field<void*>(self, 0x28);
+    void* mid = lift_field<void*>(sub, 0x20c);
+    void* obj = lift_field<void*>(mid, 0x234);
+
+    // Vtable slot at +0x20 is index 8 (4-byte pointers).
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    auto fn = reinterpret_cast<VirtualFloatFn>(vtbl[0x20 / sizeof(void*)]);
+
+    float result = fn(obj, 0);
+    lift_field<float>(self, 0x30) = result;
+}
+} // namespace lift_006294F0
