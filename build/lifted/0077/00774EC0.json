@@ -1,0 +1,22 @@
+{
+  "va": "0x00774EC0",
+  "size": 20,
+  "orig_symbol": "sub_00774EC0",
+  "src_path": "src/leaf/tiny_770000.cpp",
+  "lifted_path": "lifted/leaf/tiny_770000.cpp",
+  "name": "sub_00774EC0",
+  "class": "Unknown",
+  "signature": "DWORD __thiscall fn_00774EC0(void* self, DWORD arg1, DWORD arg2)",
+  "summary": "Auto-lifted identical-shape clone of 0x0072DC60 (Unknown::ForwardArgsToVirtualSlot8).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T02:10:05Z"
+}

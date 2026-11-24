@@ -38033,6 +38033,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00774B30 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
   },
+  "0x00774EC0": {
+    "name": "sub_00774EC0",
+    "class": "Unknown",
+    "signature": "DWORD __thiscall fn_00774EC0(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0072DC60 (Unknown::ForwardArgsToVirtualSlot8).",
+    "lifted_path": "lifted/leaf/tiny_770000.cpp"
+  },
   "0x0077FA00": {
     "name": "sub_0077FA00",
     "signature": "extern \"C\" void* __fastcall fn_0077FA00(void* self, int edx_unused, unsigned int flags)",

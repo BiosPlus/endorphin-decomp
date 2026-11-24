@@ -7,6 +7,7 @@ extern "C" void __fastcall ext_007720F0(void* self);
 extern "C" void __fastcall ext_00774B30(void* self);
 extern "C" void __fastcall ext_0077FA20(void* self);
 extern "C" int mem_00996D48;
+#include <cstdint>
 
 // [0x00771BF0] sub_00771BF0 (30 bytes)
 // @name sub_00771BF0
@@ -106,3 +107,24 @@ double fn_0077FAE0(void* self, int32_t index) {
     return lift_field<double>(self, static_cast<ptrdiff_t>(index) * 8);
 }
 } // namespace lift_0077FAE0
+
+// [0x00774EC0] sub_00774EC0 (20 bytes)
+namespace lift_00774EC0 {
+// @name sub_00774EC0
+// @summary Auto-lifted identical-shape clone of 0x0072DC60 (Unknown::ForwardArgsToVirtualSlot8).
+namespace lift_0072DC60 {
+// @name Unknown::ForwardArgsToVirtualSlot8
+// @class Unknown
+// @summary Calls virtual slot 0x20 (index 8) with (this, arg1, arg2, 0) and returns its result; callee pops its three stack args.
+// @field Unknown +0x00 void* vtable
+
+// Thiscall virtual slot: this in ecx, three stack arguments (callee pops them via ret 0x0C).
+typedef DWORD (__thiscall* VirtualSlot8Fn)(void* self, DWORD a0, DWORD a1, DWORD a2);
+
+DWORD __thiscall fn_00774EC0(void* self, DWORD arg1, DWORD arg2) {
+    void* vtable = lift_field<void*>(self, 0x00);
+    VirtualSlot8Fn slot = lift_field<VirtualSlot8Fn>(vtable, 0x24);
+    return slot(self, arg1, arg2, 0);
+}
+} // namespace lift_0072DC60
+} // namespace lift_00774EC0
