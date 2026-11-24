@@ -42905,6 +42905,12 @@
     "summary": "Returns mem_00AABF1C[getSubobjectField28(self)].",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x007124F0": {
+    "name": "isKnownGlobalHandle",
+    "signature": "bool __stdcall sub_007124F0(uint32_t value)",
+    "summary": "Checks whether the given 32-bit value matches any of three global values",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00712520": {
     "name": "sub_00712520",
     "signature": "extern \"C\" int32_t __cdecl fn_00712520(void)",
@@ -43779,6 +43785,12 @@
     "summary": "Stores the negation of the double pointed to by _HUGE into three global doubles.",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00719A60": {
+    "name": "isKnownGlobalHandle",
+    "signature": "uint8_t __stdcall sub_00719A60(uint32_t a1)",
+    "summary": "Checks whether the given 32-bit value matches one of three global handles.",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00719A90": {
     "name": "sub_00719A90",
     "signature": "extern \"C\" int32_t __cdecl fn_00719A90(void)",
@@ -43886,6 +43898,12 @@
     "signature": "extern \"C\" void* __fastcall fn_0071A1D0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0071A1F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071A5E0": {
+    "name": "getOrientationString",
+    "signature": "const char* __stdcall sub_0071A5E0(int32_t orientation)",
+    "summary": "Maps an orientation enum value (0..2) to its display string or nullptr.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x0071A760": {
     "name": "getMediaModeString",
