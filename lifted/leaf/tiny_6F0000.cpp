@@ -2620,3 +2620,18 @@ int32_t __thiscall sub_006FA3B0(uintptr_t self) {
     return *reinterpret_cast<const int32_t*>(self + 0x34) >> 27;
 }
 } // namespace lift_006FA3B0
+
+// [0x006F8AC0]
+namespace lift_006F8AC0 {
+// @name Unknown::InitZeroAndDelegate
+// @class Unknown
+// @summary Zeroes the first dword of this and tail-calls fn_006B9960 on this + 4.
+// @field Unknown +0x00 uint32_t field_0x00
+
+extern void* ext_006B9960(void* ecx);
+
+void* fn_006F8AC0(void* ecx) {
+    *static_cast<uint32_t*>(ecx) = 0;
+    return ext_006B9960(static_cast<uint8_t*>(ecx) + 4);
+}
+} // namespace lift_006F8AC0
