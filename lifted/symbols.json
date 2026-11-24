@@ -9862,10 +9862,10 @@
     "lifted_path": "lifted/templates/WriteOnlyMethod0Type.cpp"
   },
   "0x0050E350": {
-    "name": "SetField2CAndGlobalFromArg",
-    "class": "\u003cunknown\u003e (this is in ecx; owning class not yet recovered)",
-    "signature": "extern \"C\" void __thiscall fn_0050E350(void* self, uint32_t value)",
-    "summary": "Stores the single stack argument into this-\u003efield_0x2c and into global mem_00AEC0A4, then returns (ret 4).",
+    "name": "sub_0050F990",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_0050F990(void* self)",
+    "summary": "Stores address of mem_00950A74 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
   "0x0050E4C0": {
