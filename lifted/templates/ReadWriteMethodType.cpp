@@ -8815,3 +8815,27 @@ void __thiscall fn_004706A0(void* self, void* out) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00AD8FF4));
 }
 } // namespace lift_004706A0
+
+// [0x004A2AD0] ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawActions(bool), 0}>::vfunc_40 (122 bytes)
+namespace lift_004A2AD0 {
+extern void ext_0067A670(void* ctor_this, int arg);
+extern int mem_00ADE0E0;
+extern int mem_00ADE0DC;
+
+// @name ExprParser::ReadWriteMethodType<FSMEditView, bool>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawActions(bool), 0}>
+// @summary Lazily constructs the shared static ReadWriteMethodType object (once-guarded by bit 0 of mem_00ADE0E0) and stores its address into self+0x04.
+// @field ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawActions(bool), 0}> +0x04 void* field_0x04
+void fn_004A2AD0(void* self) {
+    // One-time initialization guard: bit 0 of mem_00ADE0E0.
+    if ((mem_00ADE0E0 & 1) == 0) {
+        mem_00ADE0E0 |= 1;
+        ext_0067A670(&mem_00ADE0DC, 0);
+        // Install the vtable pointer for the static object.
+        mem_00ADE0DC = 0x009409E4;
+    }
+    // Publish the static object's address into self+0x04.
+    auto* slot = reinterpret_cast<int*>(static_cast<char*>(self) + 0x04);
+    *slot = static_cast<int>(reinterpret_cast<intptr_t>(&mem_00ADE0DC));
+}
+} // namespace lift_004A2AD0

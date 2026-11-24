@@ -8821,6 +8821,13 @@
     "summary": "Reads the object's string value via virtual slot 1 on its +0x8 subobject and returns it converted to float (atof).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0049D530": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::State\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cNMData::State\u003e",
+    "signature": "void* __thiscall fn_0049D530(void* self, void* out_str, void** obj_ptr_ptr)",
+    "summary": "Invokes virtual slot 1 at +0x8 on a non-null NMData::State to copy-construct a std::string result, or throws on null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0049DA30": {
     "name": "ExprParser::PrimitiveProxyType\u003cint\u003e::vfunc_37",
     "class": "ExprParser::PrimitiveProxyType\u003cint\u003e",
@@ -9048,6 +9055,13 @@
     "signature": "extern void* __thiscall fn_004A28D0(void* self, void* out_str, void** target_ptr)",
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004A2AD0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cFSMEditView, bool\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawActions(bool), 0}\u003e",
+    "signature": "void fn_004A2AD0(void* self)",
+    "summary": "Lazily constructs the shared static ReadWriteMethodType object (once-guarded by bit 0 of mem_00ADE0E0) and stores its address into self+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x004A2B50": {
     "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, drawActions, 0\u003e::vfunc_2",
@@ -21022,6 +21036,13 @@
     "summary": "Reads the Geometry-side object pointer held at +0x00 of the method-type object, throws if it is null, calls the object's vtable slot 8 (Geometry::getFileName) and returns atof() of the resulting file name as a float.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005B3B70": {
+    "name": "ExprParser::ReadMethodType\u003cGeometry, std::string const \u0026, \u0026Geometry::getFileName, 0\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "void* __thiscall fn_005B3B70(void* self, void* out_str, void** obj_ptr)",
+    "summary": "Evaluates Geometry::getFileName on the dereferenced object's Geometry member and copy-constructs the result string, or throws on null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005B4150": {
     "name": "Geometry::SphereType::vfunc_18",
     "class": "Geometry::SphereType",
@@ -27393,6 +27414,13 @@
     "signature": "int fn_00624EE0(const void* a, const void* b)",
     "summary": "Returns 1 if the second 64-bit (hi:lo dword pair) operand is strictly greater than the first, else 0 (__stdcall, 2 args, ret 8).",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x00624FA0": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026Sensors::SensorIsCollidingWith::getBool, 1\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026Sensors::SensorIsCollidingWith::getBool, 1\u003e",
+    "signature": "void* __thiscall fn_00624FA0(void* self, void* outValue, void** sensorPtr)",
+    "summary": "Evaluates SensorIsCollidingWith::getBool() on the target sensor pointer and constructs a boolean result value, or throws if null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00625060": {
     "name": "ExprParser::ReadMethodType\u003cSensorIsCollidingWith\u003e::vfunc_2",
