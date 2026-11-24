@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_620000.cpp
 #include "lift_compat.h"
+#include <cstdint>
 
 // [0x00629DF0] sub_00629DF0 (20 bytes)
 namespace lift_00629DF0 {
@@ -41,3 +42,25 @@ void fn_006271D0(void* self) {
     ext_00647E00(receiver, arg);
 }
 } // namespace lift_006271D0
+
+// [0x00627280] sub_00627280 (25 bytes)
+namespace lift_00627280 {
+extern void __thiscall ext_00647E20(void* self, uint32_t arg);
+
+// @name Unknown::forwardToNestedObject30
+// @class Unknown
+// @summary Walks self->field_0x28 -> ->field_0x158 -> ->field_0xAC to get a `this` pointer, then calls sub_00647E20 on it with the address self+0x30 as its single stack argument.
+// @field Unknown +0x28 void* field_0x28
+void __thiscall fn_00627280(void* self) {
+    // mov ecx, [ecx+0x28]      ; sub = self->field_0x28
+    uint8_t* sub = lift_field<uint8_t*>(self, 0x28);
+    // mov edx, [ecx+0x158]     ; inner = sub->field_0x158
+    uint8_t* inner = lift_field<uint8_t*>(sub, 0x158);
+    // mov ecx, [edx+0xac]      ; target = inner->field_0xAC (becomes `this` for the call)
+    void* target = lift_field<void*>(inner, 0xAC);
+    // lea eax, [self+0x30]     ; argument = address of self+0x30
+    uint32_t arg = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(static_cast<uint8_t*>(self) + 0x30));
+    // push eax / call sub_00647E20
+    ext_00647E20(target, arg);
+}
+} // namespace lift_00627280

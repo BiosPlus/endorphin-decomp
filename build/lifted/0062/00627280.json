@@ -1,0 +1,22 @@
+{
+  "va": "0x00627280",
+  "size": 25,
+  "orig_symbol": "sub_00627280",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "Unknown::forwardToNestedObject30",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00627280(void* self)",
+  "summary": "Walks self-\u003efield_0x28 -\u003e -\u003efield_0x158 -\u003e -\u003efield_0xAC to get a `this` pointer, then calls sub_00647E20 on it with the address self+0x30 as its single stack argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:50:19Z"
+}

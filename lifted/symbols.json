@@ -22108,6 +22108,13 @@
     "summary": "Virtual method wrapper that invokes vtable slot +0x40 (vfunc_16) with argument 0",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00627280": {
+    "name": "Unknown::forwardToNestedObject30",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00627280(void* self)",
+    "summary": "Walks self-\u003efield_0x28 -\u003e -\u003efield_0x158 -\u003e -\u003efield_0xAC to get a `this` pointer, then calls sub_00647E20 on it with the address self+0x30 as its single stack argument.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x006272B0": {
     "name": "SensorAbsoluteVerticalVelocityMag::vfunc_17",
     "class": "Sensors::SensorAbsoluteVerticalVelocityMag",
