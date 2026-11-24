@@ -47549,6 +47549,12 @@
     "summary": "Reads two 32-bit fields from the object at self and forwards them with a constant tag to DispatchThreeArgsToOptionalHook.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BFC60": {
+    "name": "sub_007BFC60",
+    "signature": "uint32_t sub_007BFC60(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
+    "summary": "Dispatches two virtual/table callbacks via *(arg1 + 0x1cc) at offsets +0xc and +0x10",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007C1F60": {
     "name": "writeU16BE",
     "signature": "void __cdecl sub_007C1F60(void* self, uint32_t value)",
@@ -49155,6 +49161,19 @@
     "signature": "void sub_007EFEF0()",
     "summary": "Clears global flag mem_00AB2BD8 to 0",
     "lifted_path": "lifted/leaf/tiny_7E0000.cpp"
+  },
+  "0x007F0B00": {
+    "name": "SpatialHash::insertItem",
+    "class": "SpatialHash",
+    "signature": "uint32_t __fastcall sub_007F0B00(uint32_t ecx, uint32_t edx, uint32_t edi)",
+    "summary": "Inserts an item into a spatial hash bucket and updates its bucket index",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
+  "0x007F0B30": {
+    "name": "insertNodeIntoBucket",
+    "signature": "uint32_t sub_007F0B30(uint32_t ecx, uint32_t edx, uint32_t edi)",
+    "summary": "Allocates an 8-byte node from a pool, stores edi and bucket index, and prepends it to the bucket's linked list.",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
   "0x007F0B60": {
     "name": "Unknown::appendZeroedEntry",

@@ -210,3 +210,21 @@ uint32_t sub_007B7044(uint32_t eax, uint32_t ebx, uint32_t ecx, uint32_t edx) {
     return eax;
 }
 } // namespace lift_007B7044
+
+// [0x007BFC60]
+namespace lift_007BFC60 {
+// @name sub_007BFC60
+// @summary Dispatches two virtual/table callbacks via *(arg1 + 0x1cc) at offsets +0xc and +0x10
+// @field Arg1 +0x1cc uint32_t field_0x1cc
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+uint32_t sub_007BFC60(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) {
+    uint32_t vtable = mem_read32(arg1 + 0x1cc);
+    using fn3_t = void (*)(uint32_t, uint32_t, uint32_t);
+    using fn4_t = uint32_t (*)(uint32_t, uint32_t, uint32_t, uint32_t);
+    reinterpret_cast<fn3_t>(mem_read32(vtable + 0xc))(arg1, arg2, arg3);
+    return reinterpret_cast<fn4_t>(mem_read32(vtable + 0x10))(arg1, arg2, arg3, arg4);
+}
+} // namespace lift_007BFC60
