@@ -38481,6 +38481,13 @@
     "summary": "If the object pointer at self+0 is non-null, calls its vtable slot 31 (+0x7C) and stores the returned double to *out (stack arg).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E7120": {
+    "name": "getFieldA0OrNegHuge",
+    "class": "Unknown",
+    "signature": "extern \"C\" double __fastcall fn_006E7120(void* self)",
+    "summary": "If self-\u003e+0x00 is nonzero, tail-returns ext_00711BA0(self); otherwise returns *(double*)(self-\u003e+0x08 + 0xA0), or -_HUGE if that pointer is null.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E7390": {
     "name": "sub_006E7390",
     "signature": "void* fn_006E7390(void* self, uint32_t arg1)",

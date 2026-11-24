@@ -1,0 +1,34 @@
+{
+  "va": "0x006E7120",
+  "size": 41,
+  "orig_symbol": "sub_006E7120",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "getFieldA0OrNegHuge",
+  "class": "Unknown",
+  "signature": "extern \"C\" double __fastcall fn_006E7120(void* self)",
+  "summary": "If self-\u003e+0x00 is nonzero, tail-returns ext_00711BA0(self); otherwise returns *(double*)(self-\u003e+0x08 + 0xA0), or -_HUGE if that pointer is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA0",
+      "type": "double field_0xA0 (accessed through the pointer at",
+      "name": "+0x08)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:57:28Z"
+}

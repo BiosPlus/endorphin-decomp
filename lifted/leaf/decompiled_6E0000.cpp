@@ -239,3 +239,31 @@ void fn_006EA820(void) {
     mem_00B5E0BC = 0x00000000u;
 }
 } // namespace lift_006EA820
+
+// [0x006E7120] sub_006E7120 (41 bytes)
+namespace lift_006E7120 {
+// Known callee 0x00711BA0: getSubobjectField_0x18 (Calls fn_0071E680 on self and returns the double at offset +0x18 of the returned subobject.)
+extern double __fastcall ext_00711BA0(void* self);
+// .rdata pointer at 0x00925284 -> 0x0062D360 (a double constant, _HUGE)
+extern uint32_t mem_00925284;
+
+// @name getFieldA0OrNegHuge
+// @class Unknown
+// @summary If self->+0x00 is nonzero, tail-returns ext_00711BA0(self); otherwise returns *(double*)(self->+0x08 + 0xA0), or -_HUGE if that pointer is null.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0xA0 double field_0xA0 (accessed through the pointer at +0x08)
+extern double __fastcall fn_006E7120(void* self) {
+    auto* s = static_cast<uint32_t*>(self);
+    if (s[0x00 / 4] != 0) {
+        return ext_00711BA0(self);
+    }
+    const uintptr_t sub = static_cast<uintptr_t>(s[0x08 / 4]);
+    if (sub == 0) {
+        const double huge = *reinterpret_cast<const double*>(
+            static_cast<uintptr_t>(mem_00925284));
+        return -huge;
+    }
+    return *reinterpret_cast<const double*>(sub + 0xA0);
+}
+} // namespace lift_006E7120
