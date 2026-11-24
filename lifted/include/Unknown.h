@@ -128,7 +128,7 @@ struct Unknown_Fields {
     // +0x18  uint8_t field_0x18 (3 bytes, indexed by 0..2)  (evidence: 0x005539B0) // CONFLICT: multiple definitions at +0x18
     // +0x18  double                   field_0x18  (evidence: 0x006722B0, 0x0067B2F0, 0x0067B310, 0x0067B390) // CONFLICT: multiple definitions at +0x18
     // +0x18  float                    field_0x18  (evidence: 0x00538CF0, 0x00549A10) // CONFLICT: multiple definitions at +0x18
-    // +0x18  uint32_t                 field_0x18  (evidence: 0x004646A0, 0x00468660, 0x00468730, 0x006DEEA0, 0x006DEEB0, 0x007126A0, 0x0078CB80) // CONFLICT: multiple definitions at +0x18
+    // +0x18  uint32_t                 field_0x18  (evidence: 0x004646A0, 0x00468660, 0x00468730, 0x006DEEA0, 0x006DEEB0, 0x007126A0, 0x0078CB80, 0x007CD490) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint8_t                  field_0x18  (evidence: 0x00538550, 0x00553A10) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 value  (evidence: 0x00790DC0) // CONFLICT: multiple definitions at +0x18
     // +0x19  uint8_t                  field_0x19  (evidence: 0x00538550, 0x00553A10)
@@ -260,6 +260,7 @@ struct Unknown_Fields {
     // +0x158 uint32_t field_0x158 (child pointer; non-null selects the forward path)  (evidence: 0x005B6980) // CONFLICT: multiple definitions at +0x158
     // +0x15C void*                    field_0x15c  (evidence: 0x005C3C00)
     // +0x160 double                   field_0x160  (evidence: 0x006D9060)
+    // +0x178 uint32_t                 field_0x178  (evidence: 0x007CD490)
     // +0x180 DWORD                    field_0x180  (evidence: 0x004CB3E0) // CONFLICT: multiple definitions at +0x180
     // +0x180 void*                    field_0x180  (evidence: 0x004CB400) // CONFLICT: multiple definitions at +0x180
     // +0x184 int32_t                  field_0x184  (evidence: 0x005B64D0)

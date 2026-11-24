@@ -41570,6 +41570,13 @@
     "summary": "Returns the current int32 at this+0x04 and then increments it by one (post-increment counter).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CD490": {
+    "name": "Unknown::ClearPendingChildF8",
+    "class": "Unknown",
+    "signature": "void fn_007CD490(void* self)",
+    "summary": "Detaches the pointer at self+0x178, zeroes it, and clears the detached object's +0x18 dword if one was present.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007D47A0": {
     "name": "getSpanDiff",
     "signature": "uint32_t sub_007D47A0(uint32_t obj)",

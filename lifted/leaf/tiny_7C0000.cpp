@@ -1338,3 +1338,21 @@ extern int __cdecl CompareIntSign(int a, int b) {
     return (a > b) ? 1 : 0;
 }
 } // namespace lift_007C9F40
+
+// [0x007CD490] sub_007CD490 (26 bytes)
+namespace lift_007CD490 {
+// @name Unknown::ClearPendingChildF8
+// @class Unknown
+// @summary Detaches the pointer at self+0x178, zeroes it, and clears the detached object's +0x18 dword if one was present.
+// @field Unknown +0x178 uint32_t field_0x178
+// @field Unknown +0x18 uint32_t field_0x18
+void fn_007CD490(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    uint32_t old = *reinterpret_cast<uint32_t*>(base + 0x178);
+    *reinterpret_cast<uint32_t*>(base + 0x178) = 0;
+    if (old != 0) {
+        auto* target = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(old));
+        *reinterpret_cast<uint32_t*>(target + 0x18) = 0;
+    }
+}
+} // namespace lift_007CD490
