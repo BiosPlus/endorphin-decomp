@@ -45046,6 +45046,12 @@
     "summary": "Stores the argument into global mem_00B62020 and returns the previous value.",
     "lifted_path": "lifted/leaf/tiny_800000.cpp"
   },
+  "0x0080ABE0": {
+    "name": "InitCriticalSectionAndSetReadyFlag",
+    "signature": "void fn_0080ABE0(void)",
+    "summary": "Initializes the critical section at 0x00B73C58 and sets the flag at 0x00B73C80 to 1.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080AC30": {
     "name": "ShutdownCriticalSectionOnce",
     "signature": "void fn_0080AC30(void* self)",

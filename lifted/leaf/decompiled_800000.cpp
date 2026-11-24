@@ -97,3 +97,17 @@ uint32_t __cdecl fn_0080FC50(void) {
     return ptr;
 }
 } // namespace lift_0080FC50
+
+// [0x0080ABE0] sub_0080ABE0 (32 bytes)
+namespace lift_0080ABE0 {
+extern void __stdcall ext_InitializeCriticalSection(void* lpCriticalSection);
+extern DWORD mem_00B73C58;
+extern DWORD mem_00B73C80;
+
+// @name InitCriticalSectionAndSetReadyFlag
+// @summary Initializes the critical section at 0x00B73C58 and sets the flag at 0x00B73C80 to 1.
+void fn_0080ABE0(void) {
+    ext_InitializeCriticalSection(&mem_00B73C58);
+    mem_00B73C80 = 1;
+}
+} // namespace lift_0080ABE0

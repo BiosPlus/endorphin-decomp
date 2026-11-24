@@ -1,0 +1,13 @@
+{
+  "va": "0x0080ABE0",
+  "size": 32,
+  "orig_symbol": "sub_0080ABE0",
+  "src_path": "src/leaf/decompiled_800000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_800000.cpp",
+  "name": "InitCriticalSectionAndSetReadyFlag",
+  "signature": "void fn_0080ABE0(void)",
+  "summary": "Initializes the critical section at 0x00B73C58 and sets the flag at 0x00B73C80 to 1.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:48:42Z"
+}
