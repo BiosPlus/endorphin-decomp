@@ -15526,6 +15526,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00433290 (Unknown::forwardToChildAt154).",
     "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
   },
+  "0x005B72A0": {
+    "name": "sub_005B72A0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_005B72A0(void* self, void* /*edx*/, uintptr_t /*arg1*/, uintptr_t /*arg2*/)",
+    "summary": "Loads the subobject pointer at this+0x158; tail-calls fn_005CE990 on it if non-null, otherwise returns (ret 8).",
+    "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
+  },
   "0x005B72C0": {
     "name": "sub_005B72C0",
     "class": "Unknown",

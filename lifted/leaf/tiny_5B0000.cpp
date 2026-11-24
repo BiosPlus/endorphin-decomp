@@ -180,3 +180,22 @@ void fn_005B72C0(void* self, DWORD stackArg) {
 }
 } // namespace lift_00433290
 } // namespace lift_005B72C0
+
+// [0x005B72A0]
+namespace lift_005B72A0 {
+// @name sub_005B72A0
+// @class Unknown
+// @summary Loads the subobject pointer at this+0x158; tail-calls fn_005CE990 on it if non-null, otherwise returns (ret 8).
+// @field Unknown +0x158 void* field_0x158
+
+extern void fn_005CE990(void* self);
+
+extern void __fastcall fn_005B72A0(void* self, void* /*edx*/, uintptr_t /*arg1*/, uintptr_t /*arg2*/) {
+    void* sub = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x158);
+    if (sub != nullptr) {
+        fn_005CE990(sub);
+        return;
+    }
+    return;
+}
+} // namespace lift_005B72A0
