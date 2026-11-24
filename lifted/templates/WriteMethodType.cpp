@@ -7213,3 +7213,49 @@ void __thiscall fn_005C6030(void* self, void* out)
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B44438));
 }
 } // namespace lift_005C6030
+
+// [0x005F3A70]
+namespace lift_005F3A70 {
+extern uint32_t mem_00B46830;
+extern uint32_t mem_00B4682C;
+
+extern void __thiscall ext_0067A670(void* self);
+
+// @name ExprParser::WriteMethodType<EffectorGroup, float, setForceCaps>::vfunc_40
+// @class ExprParser::WriteMethodType
+// @summary Lazily initializes a static type descriptor and stores its pointer at arg0 + 0x4
+// @field ExprParser::WriteMethodType +0x04 uint32_t field_0x04
+void __thiscall fn_005F3A70(void* self, void* arg0) {
+    (void)self;
+    if ((mem_00B46830 & 1u) == 0u) {
+        mem_00B46830 |= 1u;
+        ext_0067A670(&mem_00B4682C);
+        mem_00B4682C = 0x0096C554u;
+    }
+    *(uint32_t*)((uint8_t*)arg0 + 4) = 0x00B4682Cu;
+}
+} // namespace lift_005F3A70
+
+// [0x00607850]
+namespace lift_00607850 {
+// @name ExprParser::WriteMethodType<EffectorBase, bool, EffectorBase::setEnabled>::vfunc_40
+// @class ExprParser::WriteMethodType<EffectorBase, bool, &public: void __thiscall EffectorBase::setEnabled(bool)>
+// @summary Lazily initializes a static type descriptor at 0x00B477A4 and stores its address at arg0 + 0x4.
+// @field arg0 +0x04 uint32_t field_0x04
+
+
+extern uint32_t mem_00B477A4;
+extern uint32_t mem_00B477A8;
+void __thiscall ext_0067A670(void* self);
+
+void __thiscall fn_00607850(void* self, void* arg0) {
+    (void)self;
+    if ((mem_00B477A8 & 1u) == 0) {
+        mem_00B477A8 |= 1u;
+        ext_0067A670(&mem_00B477A4);
+        mem_00B477A4 = 0x009706B4u;
+    }
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(arg0) + 4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B477A4));
+}
+} // namespace lift_00607850

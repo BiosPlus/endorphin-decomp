@@ -22820,6 +22820,13 @@
     "summary": "Lazily initializes static singleton at 0x00B44438 and stores its address into out+0x4.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005C60B0": {
+    "name": "ExprParser::Method2Type_addForceAtPostion::vfunc_40",
+    "class": "ExprParser::Method2Type\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, NM::Vector3 const \u0026, addForceAtPostion\u003e",
+    "signature": "void __thiscall fn_005C60B0(void* self, void* arg0)",
+    "summary": "Lazily initializes static object at 0x00B44440 and stores its address at arg0 + 0x4",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
   "0x005C6130": {
     "name": "ExprParser::Method2Type::vfunc_40",
     "class": "ExprParser::Method2Type",
@@ -26788,6 +26795,13 @@
     "class": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}\u003e",
     "signature": "void fn_006077D0(void* self, void* arg)",
     "summary": "Lazily initializes a static EffectorBase-related object (guarded by bit 0 of 0x00B477A0), then stores its address into the +0x04 field of the argument.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00607850": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorBase, bool, EffectorBase::setEnabled\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026public: void __thiscall EffectorBase::setEnabled(bool)\u003e",
+    "signature": "void __thiscall fn_00607850(void* self, void* arg0)",
+    "summary": "Lazily initializes a static type descriptor at 0x00B477A4 and stores its address at arg0 + 0x4.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x00608160": {
