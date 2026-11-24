@@ -1,0 +1,13 @@
+{
+  "va": "0x00728DE0",
+  "size": 16,
+  "orig_symbol": "sub_00728DE0",
+  "src_path": "src/leaf/tiny_720000.cpp",
+  "lifted_path": "lifted/leaf/tiny_720000.cpp",
+  "name": "storeDwordThroughThis",
+  "signature": "void* fn_00728DE0(void* self, uint32_t value)",
+  "summary": "Stores the single stack argument into the DWORD at *this and returns this (thiscall, ret 4).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:44:44Z"
+}
