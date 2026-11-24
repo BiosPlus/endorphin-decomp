@@ -36577,6 +36577,13 @@
     "summary": "IAT jump thunk forwarding to MSVCR80!realloc.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x007C9260": {
+    "name": "Unknown::getField9CBit0",
+    "class": "Unknown",
+    "signature": "uint32_t fn_007C9260(void* self)",
+    "summary": "Returns bit 0 of the 32-bit field at +0x9C of the object passed as the single stack argument.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C9270": {
     "name": "getField0x40",
     "signature": "uint32_t __cdecl sub_007C9270(uint32_t arg0)",

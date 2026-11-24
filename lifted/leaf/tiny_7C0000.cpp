@@ -880,3 +880,14 @@ extern int32_t fn_007CD040(void* self) {
     return old;
 }
 } // namespace lift_007CD040
+
+// [0x007C9260] sub_007C9260 (14 bytes)
+namespace lift_007C9260 {
+// @name Unknown::getField9CBit0
+// @class Unknown
+// @summary Returns bit 0 of the 32-bit field at +0x9C of the object passed as the single stack argument.
+// @field Unknown +0x9C uint32_t field_0x9c
+uint32_t fn_007C9260(void* self) {
+    return lift_field<uint32_t>(self, 0x9C) & 1u;
+}
+} // namespace lift_007C9260
