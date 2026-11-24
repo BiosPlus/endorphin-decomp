@@ -1,0 +1,14 @@
+{
+  "va": "0x00670D10",
+  "size": 39,
+  "orig_symbol": "ExprParser::ExpressionContainerType::vfunc_4",
+  "src_path": "src/ExprParser/ExpressionContainerType.cpp",
+  "lifted_path": "lifted/ExprParser/ExpressionContainerType.cpp",
+  "name": "ExprParser::ExpressionContainerType::vfunc_4",
+  "class": "ExprParser::ExpressionContainerType",
+  "signature": "void* __thiscall fn_00670D10(void* self, void* arg1, void* arg2)",
+  "summary": "Calls helper 0x006999B0 with (arg2, arg1), forwards its result as self to 0x0041CEB0 with arg1, and returns arg1.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:38:30Z"
+}

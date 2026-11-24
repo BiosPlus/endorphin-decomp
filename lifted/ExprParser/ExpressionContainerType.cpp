@@ -196,3 +196,21 @@ void fn_00699220(void* self, void** out) {
     }
 }
 } // namespace lift_00699220
+
+// [0x00670D10] ExprParser::ExpressionContainerType::vfunc_4 (39 bytes)
+namespace lift_00670D10 {
+// Helper 0x006999B0: takes two stack arguments (stdcall, callee-cleans 8 bytes), returns a pointer in eax.
+extern void* __stdcall ext_006999B0(void* arg0, void* arg1);
+// Known callee 0x0041CEB0: UnknownClass::forwardToSubobjectSlot4 (thiscall; self in ecx, arg1 on stack).
+extern void* __thiscall ext_0041CEB0(void* self, void* arg1);
+
+// @name ExprParser::ExpressionContainerType::vfunc_4
+// @class ExprParser::ExpressionContainerType
+// @summary Calls helper 0x006999B0 with (arg2, arg1), forwards its result as self to 0x0041CEB0 with arg1, and returns arg1.
+void* __thiscall fn_00670D10(void* self, void* arg1, void* arg2) {
+    (void)self;
+    void* helperResult = ext_006999B0(arg2, arg1);
+    ext_0041CEB0(helperResult, arg1);
+    return arg1;
+}
+} // namespace lift_00670D10
