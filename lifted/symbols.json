@@ -15172,6 +15172,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046C110 (Unknown::GetFieldF138ViaF8).",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
+  "0x00594790": {
+    "name": "Unknown::releaseHeldObject (descriptive; owner class not identified)",
+    "class": "Unknown",
+    "signature": "void fn_00594790(void* self)",
+    "summary": "Reads a pointer at +0x00 of self; if non-null, invokes ext_00675650 with it as the this-pointer, then passes it to ext_006A5C5C as a single cdecl argument.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00594BA0": {
     "name": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1\u003e",

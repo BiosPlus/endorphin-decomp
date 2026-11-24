@@ -1,0 +1,22 @@
+{
+  "va": "0x00594790",
+  "size": 25,
+  "orig_symbol": "sub_00594790",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "Unknown::releaseHeldObject (descriptive; owner class not identified)",
+  "class": "Unknown",
+  "signature": "void fn_00594790(void* self)",
+  "summary": "Reads a pointer at +0x00 of self; if non-null, invokes ext_00675650 with it as the this-pointer, then passes it to ext_006A5C5C as a single cdecl argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "heldPtr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:49:36Z"
+}
