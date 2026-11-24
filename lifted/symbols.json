@@ -22481,6 +22481,12 @@
     "summary": "Calls virtual slot at vtable offset 0x108 on self with (2, arg) and returns its result.",
     "lifted_path": "lifted/leaf/tiny_610000.cpp"
   },
+  "0x00610B20": {
+    "name": "ForwardFloat08ToSubobject2E0",
+    "signature": "extern \"C\" void __thiscall fn_00610B20(void* self)",
+    "summary": "Reads float self+0x08, obtains an int32 key from ext_00594000, then calls ext_00678130 on the object at key+0x2E0 passing the saved float.",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
   "0x00611160": {
     "name": "readFloatAtIndex3",
     "signature": "float fn_00611160(uint32_t ecx)",

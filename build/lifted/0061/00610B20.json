@@ -1,0 +1,21 @@
+{
+  "va": "0x00610B20",
+  "size": 32,
+  "orig_symbol": "sub_00610B20",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "ForwardFloat08ToSubobject2E0",
+  "signature": "extern \"C\" void __thiscall fn_00610B20(void* self)",
+  "summary": "Reads float self+0x08, obtains an int32 key from ext_00594000, then calls ext_00678130 on the object at key+0x2E0 passing the saved float.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:31:44Z"
+}
