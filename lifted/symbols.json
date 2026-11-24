@@ -37070,6 +37070,13 @@
     "summary": "Returns 1 if the dword at this+0x68 equals 2, otherwise 0 (cmp/sete/ret).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E5710": {
+    "name": "Unknown::MaskByFlag40",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t __stdcall fn_006E5710(void* self, uint32_t value)",
+    "summary": "Returns `value` if GetFlag40(self) is nonzero, otherwise 0 (branchless select via neg/sbb/and).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E62A0": {
     "name": "Unknown::SetChainField0x60",
     "class": "Unknown",

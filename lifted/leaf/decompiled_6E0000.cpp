@@ -63,3 +63,18 @@ void fn_006E62A0(void* self, DWORD value) {
     }
 }
 } // namespace lift_006E62A0
+
+// [0x006E5710] sub_006E5710 (32 bytes)
+namespace lift_006E5710 {
+// Known callee 0x006DEEB0: Unknown::GetFlag40 (Returns bit 0x40 of the dword at this+0x18 (0 or 0x40).)
+extern uint32_t __fastcall ext_006DEEB0(void* self);
+
+// @name Unknown::MaskByFlag40
+// @class Unknown
+// @summary Returns `value` if GetFlag40(self) is nonzero, otherwise 0 (branchless select via neg/sbb/and).
+extern uint32_t __stdcall fn_006E5710(void* self, uint32_t value) {
+    const uint32_t flag = ext_006DEEB0(self);
+    const uint32_t mask = (flag != 0u) ? 0xFFFFFFFFu : 0u;
+    return value & mask;
+}
+} // namespace lift_006E5710

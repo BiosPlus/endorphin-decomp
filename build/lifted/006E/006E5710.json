@@ -1,0 +1,14 @@
+{
+  "va": "0x006E5710",
+  "size": 32,
+  "orig_symbol": "sub_006E5710",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::MaskByFlag40",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint32_t __stdcall fn_006E5710(void* self, uint32_t value)",
+  "summary": "Returns `value` if GetFlag40(self) is nonzero, otherwise 0 (branchless select via neg/sbb/and).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:36:05Z"
+}
