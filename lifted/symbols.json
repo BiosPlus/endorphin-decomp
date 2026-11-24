@@ -3724,6 +3724,13 @@
     "summary": "Returns 1 only if both ext_00455CB0 and ext_004090C0 return 0 for self; otherwise returns 0.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x004562C0": {
+    "name": "Unknown::forwardIfField0xdcThenVcall188ThenForward",
+    "class": "Unknown",
+    "signature": "void fn_004562C0(void* self)",
+    "summary": "If this+0xDC is non-null, invoke vtable slot 0x188 on this; then forward to ext_006A5EA8 with ecx=this.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00456CC0": {
     "name": "CSizingControlBar::vfunc_1",
     "class": "CSizingControlBar",

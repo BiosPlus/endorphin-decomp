@@ -288,3 +288,26 @@ DWORD fn_004582B0(void* self, DWORD a1, DWORD a2, DWORD a3) {
 }
 } // namespace lift_00458290
 } // namespace lift_004582B0
+
+// [0x004562C0] sub_004562C0 (33 bytes)
+namespace lift_004562C0 {
+// Known callee 0x006A5EA8: thunk_MFC80_ord_1903 (IAT jump thunk forwarding to MFC80!ord_1903.)
+extern void ext_006A5EA8();
+
+// @name Unknown::forwardIfField0xdcThenVcall188ThenForward
+// @class Unknown
+// @summary If this+0xDC is non-null, invoke vtable slot 0x188 on this; then forward to ext_006A5EA8 with ecx=this.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0xDC void* field_0xdc
+void fn_004562C0(void* self) {
+    // Conditional: if (self->field_0xdc != 0) self->vtable[0x188]();
+    if (lift_field<uint32_t>(self, 0xDC) != 0) {
+        uint32_t vtbl = lift_field<uint32_t>(self, 0x00);
+        uint32_t slot = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(vtbl)), 0x188);
+        using VFn = void (*)(void*);
+        reinterpret_cast<VFn>(static_cast<uintptr_t>(slot))(self);
+    }
+    // Tail-forward to the MFC80 thunk with this in ecx (stdcall-style 0xC arg cleanup is caller-side in lift).
+    ext_006A5EA8();
+}
+} // namespace lift_004562C0
