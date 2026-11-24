@@ -354,3 +354,22 @@ void fn_00540F60(void* self, DWORD /*unused_arg0*/, DWORD value) {
     *reinterpret_cast<DWORD*>(base + 0xF4) = value;
 }
 } // namespace lift_00540F60
+
+// [0x00547CE0]
+namespace lift_00547CE0 {
+// @name sub_00547CE0
+// @summary Returns 1 if this->field_0xA4 is non-null and its byte at +0x30 is nonzero, else 0.
+// @field Unknown +0xA4 ptr field_0xA4 (pointer to sub-object; owner class not identified)
+// @field Unknown +0x30 u8 field_0x30 (flag byte inside sub-object at field_0xA4)
+
+int sub_00547CE0(void* self) {
+    auto* obj = *reinterpret_cast<unsigned char**>(static_cast<unsigned char*>(self) + 0xA4);
+    if (obj == nullptr) {
+        return 0;
+    }
+    if (*(obj + 0x30) == 0) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_00547CE0

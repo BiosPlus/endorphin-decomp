@@ -161,7 +161,8 @@ struct Unknown_Fields {
     // +0x2C  uint32_t                 field_0x2C  (evidence: 0x00790E20) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  DWORD                    field_0x2c  (evidence: 0x006AD0F0) // CONFLICT: multiple definitions at +0x2C
     // +0x2C  uint32_t                 field_0x2c  (evidence: 0x00790D60, 0x0079ADA0, 0x0079DCE0) // CONFLICT: multiple definitions at +0x2C
-    // +0x30  void*                    field_0x30  (evidence: 0x005CE940)
+    // +0x30  void*                    field_0x30  (evidence: 0x005CE940) // CONFLICT: multiple definitions at +0x30
+    // +0x30  u8 field_0x30 (flag byte inside sub-object at field_0xA4)  (evidence: 0x00547CE0) // CONFLICT: multiple definitions at +0x30
     // +0x34  uint8_t                  field_0x34  (evidence: 0x007126A0)
     // +0x38  int32_t                  field_0x38  (evidence: 0x006AD960)
     // +0x40  DWORD                    field_0x40  (evidence: 0x00540F60)
@@ -206,7 +207,8 @@ struct Unknown_Fields {
     // +0x98  uint32_t                 field_0x98  (evidence: 0x006DE3E0, 0x00700970, 0x00715570, 0x0071B0F0, 0x0071B4F0, 0x0071B6C0, 0x0071BF90, 0x0071BFA0, 0x0071C360, 0x0071C380, 0x0071C4C0, 0x0071C600, 0x0071C940, 0x0071C9A0)
     // +0x9C  std::string              field_0x9c  (evidence: 0x0053DAA0) // CONFLICT: multiple definitions at +0x9C
     // +0x9C  uint32_t                 field_0x9c  (evidence: 0x007C2E50, 0x007C9260) // CONFLICT: multiple definitions at +0x9C
-    // +0xA4  void*                    field_0xA4  (evidence: 0x00647BF0, 0x00647C10, 0x00647C30, 0x00647C50)
+    // +0xA4  void*                    field_0xA4  (evidence: 0x00647BF0, 0x00647C10, 0x00647C30, 0x00647C50) // CONFLICT: multiple definitions at +0xA4
+    // +0xA4  ptr field_0xA4 (pointer to sub-object; owner class not identified)  (evidence: 0x00547CE0) // CONFLICT: multiple definitions at +0xA4
     // +0xA8  void*                    field_0xa8  (evidence: 0x007C2E50, 0x007C9480)
     // +0xAC  void* field_0xAC (on the object pointed to by field_0x158)  (evidence: 0x005B67A0) // CONFLICT: multiple definitions at +0xAC
     // +0xAC  uint32_t                 field_0xAC  (evidence: 0x005CE940, 0x0072DB80) // CONFLICT: multiple definitions at +0xAC

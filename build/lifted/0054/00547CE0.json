@@ -1,0 +1,27 @@
+{
+  "va": "0x00547CE0",
+  "size": 25,
+  "orig_symbol": "sub_00547CE0",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "sub_00547CE0",
+  "signature": "int sub_00547CE0(void* self)",
+  "summary": "Returns 1 if this-\u003efield_0xA4 is non-null and its byte at +0x30 is nonzero, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xA4",
+      "type": "ptr field_0xA4 (pointer to sub-object; owner class not",
+      "name": "identified)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "u8 field_0x30 (flag byte inside sub-object at",
+      "name": "field_0xA4)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:49:29Z"
+}

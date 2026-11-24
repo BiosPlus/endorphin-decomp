@@ -13534,6 +13534,12 @@
     "summary": "Looks up a global key via virtual slot 7 and compares the resulting std::string against that same key.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00547CE0": {
+    "name": "sub_00547CE0",
+    "signature": "int sub_00547CE0(void* self)",
+    "summary": "Returns 1 if this-\u003efield_0xA4 is non-null and its byte at +0x30 is nonzero, else 0.",
+    "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
   "0x00547D00": {
     "name": "sub_00547D00",
     "signature": "extern \"C\" void __fastcall fn_00547D00(void* self)",
