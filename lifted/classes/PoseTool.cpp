@@ -73,3 +73,35 @@ void __thiscall fn_00545170(void* self) {
 }
 } // namespace lift_00544070
 } // namespace lift_00545170
+
+// [0x005453D0] PoseTool::vfunc_18_off_98 (45 bytes)
+namespace lift_005453D0 {
+// Dispatcher: reads a mode word at +0x2b8 of this, then forwards the call (with
+// the same two stack arguments) to a virtual method on the object at this-0x10.
+// Mode 1 -> vtable slot 0x9c; mode 2 -> vtable slot 0xa0; otherwise no-op.
+// @name PoseTool::vfunc_18_off_98
+// @class PoseTool
+// @summary Mode-switched forwarder: mode 1 tail-calls vslot 0x9c, mode 2 tail-calls vslot 0xa0 on the object at this-0x10; passes the two stack args through unchanged.
+// @field PoseTool +0x2b8 uint32_t field_0x2b8
+void __thiscall fn_005453D0(void* self, uintptr_t arg0, uintptr_t arg1) {
+    const uint32_t mode = lift_field<uint32_t>(self, 0x2b8);
+
+    if (mode == 1) {
+        void* target = lift_field<void*>(self, -0x10);
+        void** vtable = *reinterpret_cast<void***>(target);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, uintptr_t, uintptr_t)>(
+            vtable[0x9c / sizeof(void*)]);
+        fn(target, arg0, arg1);
+        return;
+    }
+
+    if (mode == 2) {
+        void* target = lift_field<void*>(self, -0x10);
+        void** vtable = *reinterpret_cast<void***>(target);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, uintptr_t, uintptr_t)>(
+            vtable[0xa0 / sizeof(void*)]);
+        fn(target, arg0, arg1);
+        return;
+    }
+}
+} // namespace lift_005453D0

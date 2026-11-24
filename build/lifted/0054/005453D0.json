@@ -1,0 +1,22 @@
+{
+  "va": "0x005453D0",
+  "size": 45,
+  "orig_symbol": "PoseTool::vfunc_18_off_98",
+  "src_path": "src/classes/PoseTool.cpp",
+  "lifted_path": "lifted/classes/PoseTool.cpp",
+  "name": "PoseTool::vfunc_18_off_98",
+  "class": "PoseTool",
+  "signature": "void __thiscall fn_005453D0(void* self, uintptr_t arg0, uintptr_t arg1)",
+  "summary": "Mode-switched forwarder: mode 1 tail-calls vslot 0x9c, mode 2 tail-calls vslot 0xa0 on the object at this-0x10; passes the two stack args through unchanged.",
+  "fields": [
+    {
+      "class": "PoseTool",
+      "offset": "+0x2B8",
+      "type": "uint32_t",
+      "name": "field_0x2b8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:07:03Z"
+}

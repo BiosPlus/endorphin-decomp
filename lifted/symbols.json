@@ -15734,6 +15734,13 @@
     "summary": "Clears the dword at this+0x350 and returns 1 (ret 8 =\u003e two stack args, unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005453D0": {
+    "name": "PoseTool::vfunc_18_off_98",
+    "class": "PoseTool",
+    "signature": "void __thiscall fn_005453D0(void* self, uintptr_t arg0, uintptr_t arg1)",
+    "summary": "Mode-switched forwarder: mode 1 tail-calls vslot 0x9c, mode 2 tail-calls vslot 0xa0 on the object at this-0x10; passes the two stack args through unchanged.",
+    "lifted_path": "lifted/classes/PoseTool.cpp"
+  },
   "0x005455F0": {
     "name": "PoseTool::vfunc_28",
     "class": "PoseTool",
