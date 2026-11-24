@@ -1,0 +1,22 @@
+{
+  "va": "0x00486BB0",
+  "size": 45,
+  "orig_symbol": "sub_00486BB0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Unknown::AssignNameIfNonEmpty",
+  "class": "Unknown",
+  "signature": "void fn_00486BB0(void* self, const std::string\u0026 src)",
+  "summary": "If the source string is non-empty, copy it into the string at +0x180 and notify the global object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x180",
+      "type": "std::string",
+      "name": "field_0x180"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:06:58Z"
+}

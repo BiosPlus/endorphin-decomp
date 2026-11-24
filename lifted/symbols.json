@@ -6561,6 +6561,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x00486BB0": {
+    "name": "Unknown::AssignNameIfNonEmpty",
+    "class": "Unknown",
+    "signature": "void fn_00486BB0(void* self, const std::string\u0026 src)",
+    "summary": "If the source string is non-empty, copy it into the string at +0x180 and notify the global object.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00486BE0": {
     "name": "NMData::AnimationEventData::vfunc_81",
     "class": "NMData::AnimationEventData",
@@ -44879,6 +44886,13 @@
     "summary": "Reads a line into buf from the FILE* held by the holder object; returns buf, or NULL when the holder's flag byte is zero.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00783510": {
+    "name": "StreamReader::readByte",
+    "class": "StreamReader",
+    "signature": "uint8_t __thiscall sub_00783510(void* self, uint8_t* outByte)",
+    "summary": "Reads a single byte from the underlying FILE stream if open, returning the byte read or 0.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x007835F0": {
     "name": "sub_007835F0",
     "signature": "uint8_t __fastcall sub_007835F0(uint32_t ecx)",
@@ -45248,6 +45262,12 @@
     "signature": "extern \"C\" void* __fastcall fn_007928E0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00792900 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
+  "0x0079A0EC": {
+    "name": "sub_0079A0EC",
+    "signature": "void sub_0079A0EC()",
+    "summary": "Data table at 0x0079A0EC (43 bytes) misidentified as code; lifted as no-op/stub",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
   "0x0079A16C": {
     "name": "fn_0079A16C_byteLookupTable",

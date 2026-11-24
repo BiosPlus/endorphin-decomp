@@ -296,3 +296,21 @@ void* fn_0048E2E0(void* self, uint32_t arg1, uint32_t arg2) {
     return self;
 }
 } // namespace lift_0048E2E0
+
+// [0x00486BB0] sub_00486BB0 (45 bytes)
+namespace lift_00486BB0 {
+// Known callee 0x004C0340: SetGlobalObjectFlag4IfPresent (If the global object pointer mem_00AE29D0 is non-null, set the byte at its +0x04 offset to 1.)
+extern void ext_004C0340();
+
+// @name Unknown::AssignNameIfNonEmpty
+// @class Unknown
+// @summary If the source string is non-empty, copy it into the string at +0x180 and notify the global object.
+// @field Unknown +0x180 std::string field_0x180
+void fn_00486BB0(void* self, const std::string& src) {
+    if (src.empty()) {
+        return;
+    }
+    *reinterpret_cast<std::string*>(static_cast<unsigned char*>(self) + 0x180) = src;
+    ext_004C0340();
+}
+} // namespace lift_00486BB0
