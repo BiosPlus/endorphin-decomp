@@ -12623,6 +12623,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x80.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005471E0": {
+    "name": "RotateTool::vfunc_16",
+    "class": "RotateTool",
+    "signature": "extern \"C\" int __thiscall fn_005471E0(void* self, DWORD arg0, DWORD arg1)",
+    "summary": "Forwards a no-argument virtual call (vtable slot at +0x50) to the object stored at this+0x88, then returns 0. The two stack arguments are ignored (thiscall, ret 8).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x005472B0": {
     "name": "TranslateTool::vfunc_14",
     "class": "TranslateTool",

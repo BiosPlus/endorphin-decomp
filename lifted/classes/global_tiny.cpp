@@ -5911,3 +5911,26 @@ int32_t PoseTool_vfunc_22(uint8_t* self, uint32_t /*arg1*/, uint32_t /*arg2*/) {
     return 1;
 }
 } // namespace lift_005453B0
+
+// [0x005471E0] RotateTool::vfunc_16 (18 bytes)
+namespace lift_005471E0 {
+// @name RotateTool::vfunc_16
+// @class RotateTool
+// @summary Forwards a no-argument virtual call (vtable slot at +0x50) to the object stored at this+0x88, then returns 0. The two stack arguments are ignored (thiscall, ret 8).
+// @field RotateTool +0x88 void* field_0x88
+//
+// Note: the forwarded object's vtable is read through its first pointer (+0x00),
+// which is the standard MSVC vtable layout; the slot is addressed by byte offset 0x50.
+typedef int(__thiscall* VoidThisFn)(void* self);
+
+extern int __thiscall fn_005471E0(void* self, DWORD arg0, DWORD arg1) {
+    (void)arg0;
+    (void)arg1;
+    void* target = *reinterpret_cast<void**>(static_cast<std::uint8_t*>(self) + 0x88);
+    void** vtable = *reinterpret_cast<void***>(target);
+    VoidThisFn slot = reinterpret_cast<VoidThisFn>(
+        *reinterpret_cast<void**>(reinterpret_cast<std::uint8_t*>(vtable) + 0x50));
+    (void)slot(target);
+    return 0;
+}
+} // namespace lift_005471E0
