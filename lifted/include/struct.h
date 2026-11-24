@@ -22,5 +22,11 @@ struct struct_Fields {
     // +0x42  uint16_t                 field_0x42  (evidence: 0x007BD310, 0x007BD640)
     // +0x46  uint16_t                 field_0x46  (evidence: 0x007BD310, 0x007BD640)
     // +0x4E  uint16_t                 field_0x4e  (evidence: 0x007BD310, 0x007BD640)
+    // +0x70  uint32_t*                field_0x70  (evidence: 0x007CDBC0)
+    // +0x74  uint32_t                 field_0x74  (evidence: 0x007CDBC0)
+    // +0x7C  uint32_t*                field_0x7c  (evidence: 0x007CDBC0)
+    // +0x80  uint32_t                 field_0x80  (evidence: 0x007CDBC0)
+    // +0x88  uint32_t*                field_0x88  (evidence: 0x007CDBC0)
+    // +0x8C  uint32_t                 field_0x8c  (evidence: 0x007CDBC0)
 };
 } // namespace lifted_layout

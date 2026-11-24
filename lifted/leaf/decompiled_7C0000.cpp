@@ -601,3 +601,33 @@ void sub_007CB980(uint8_t* self, float x) {
     *reinterpret_cast<float*>(self + 0x14) = v;
 }
 } // namespace lift_007CB980
+
+// [0x007CDBC0]
+namespace lift_007CDBC0 {
+// @name clearIndexedSlots
+// @summary Zeroes three indexed 32-bit array elements referenced by pointer/index pairs in the struct.
+// @field struct +0x70 uint32_t* field_0x70
+// @field struct +0x74 uint32_t field_0x74
+// @field struct +0x7c uint32_t* field_0x7c
+// @field struct +0x80 uint32_t field_0x80
+// @field struct +0x88 uint32_t* field_0x88
+// @field struct +0x8c uint32_t field_0x8c
+
+
+uint32_t mem_read32(uint32_t addr);
+void mem_write32(uint32_t addr, uint32_t val);
+
+void sub_007CDBC0(uint32_t arg0) {
+    uint32_t idx_80 = mem_read32(arg0 + 0x80);
+    uint32_t ptr_7c = mem_read32(arg0 + 0x7c);
+    mem_write32(ptr_7c + 4 * idx_80, 0);
+
+    uint32_t idx_8c = mem_read32(arg0 + 0x8c);
+    uint32_t ptr_88 = mem_read32(arg0 + 0x88);
+    mem_write32(ptr_88 + 4 * idx_8c, 0);
+
+    uint32_t idx_74 = mem_read32(arg0 + 0x74);
+    uint32_t ptr_70 = mem_read32(arg0 + 0x70);
+    mem_write32(ptr_70 + 4 * idx_74, 0);
+}
+} // namespace lift_007CDBC0
