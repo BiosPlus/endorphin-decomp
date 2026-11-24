@@ -42788,6 +42788,13 @@
     "summary": "Increments the 32-bit counter at offset +0x1C of the object passed in ecx; no other effect.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x0078C240": {
+    "name": "Unknown::AccumulateScaledDelta",
+    "class": "Unknown",
+    "signature": "void fn_0078C240(void* self, uint32_t arg)",
+    "summary": "Computes the scaled delta of arg against field +0x04 and then bumps the counter at +0x1C.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078C3A0": {
     "name": "Unknown::sub_0078C3A0",
     "class": "Unknown",

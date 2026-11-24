@@ -199,3 +199,18 @@ void fn_00784620(void* self, DWORD arg) {
     base[0x10] = 0;
 }
 } // namespace lift_00784620
+
+// [0x0078C240] sub_0078C240 (32 bytes)
+namespace lift_0078C240 {
+uint32_t ext_0078C220(void* self, uint32_t arg);
+void ext_0078C230(void* self);
+
+// @name Unknown::AccumulateScaledDelta
+// @class Unknown
+// @summary Computes the scaled delta of arg against field +0x04 and then bumps the counter at +0x1C.
+void fn_0078C240(void* self, uint32_t arg) {
+    const uint32_t delta = ext_0078C220(self, arg);
+    (void)delta;
+    ext_0078C230(self);
+}
+} // namespace lift_0078C240
