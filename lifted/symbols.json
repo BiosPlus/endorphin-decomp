@@ -3787,6 +3787,13 @@
     "summary": "Saves the incoming this pointer, runs MFC80 ord_501 on a 0x54-byte stack temp, then MFC80 ord_709 on the saved pointer slot.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x00455D10": {
+    "name": "ForwardToExternalAndClearField0xE8 (descriptive; original name unknown)",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void fn_00455D10(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Forwards two stack arguments with this to an external MFC80 routine, then zeroes the DWORD at this+0xE8.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00455F40": {
     "name": "Unknown::returnTrueIfNeitherCheckMatches_00455F40",
     "class": "Unknown",

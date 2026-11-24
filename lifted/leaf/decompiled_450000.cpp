@@ -334,3 +334,19 @@ void fn_00456250(void* self, DWORD a1, DWORD a2, DWORD a3) {
     slot2(obj, a1, a2, a3);
 }
 } // namespace lift_00456250
+
+// [0x00455D10] sub_00455D10 (34 bytes)
+namespace lift_00455D10 {
+// Known callee 0x006A678A: thunk_MFC80_ord_4908 (IAT jump thunk forwarding to MFC80!ord_4908.)
+// Original call passes ECX = this and two stack arguments (the enclosing function does `ret 8`).
+extern void ext_006A678A(void* self, DWORD a, DWORD b);
+
+// @name ForwardToExternalAndClearField0xE8 (descriptive; original name unknown)
+// @class <ClassName> (optional)
+// @summary Forwards two stack arguments with this to an external MFC80 routine, then zeroes the DWORD at this+0xE8.
+// @field <ClassName> +0xE8 DWORD field_0xe8
+void fn_00455D10(void* self, DWORD arg1, DWORD arg2) {
+    ext_006A678A(self, arg1, arg2);
+    *reinterpret_cast<DWORD*>(static_cast<uint8_t*>(self) + 0xE8) = 0;
+}
+} // namespace lift_00455D10

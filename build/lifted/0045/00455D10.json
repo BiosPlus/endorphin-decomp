@@ -1,0 +1,22 @@
+{
+  "va": "0x00455D10",
+  "size": 34,
+  "orig_symbol": "sub_00455D10",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "ForwardToExternalAndClearField0xE8 (descriptive; original name unknown)",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void fn_00455D10(void* self, DWORD arg1, DWORD arg2)",
+  "summary": "Forwards two stack arguments with this to an external MFC80 routine, then zeroes the DWORD at this+0xE8.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0xE8",
+      "type": "DWORD",
+      "name": "field_0xe8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:54:40Z"
+}
