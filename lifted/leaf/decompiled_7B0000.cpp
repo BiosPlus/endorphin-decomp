@@ -376,3 +376,19 @@ void fn_007B8E30(void* self) {
     }
 }
 } // namespace lift_007B8E30
+
+// [0x007BF4A0] sub_007BF4A0 (49 bytes)
+namespace lift_007BF4A0 {
+// @name Unknown::applyScaledDeltaToPair
+// @class Unknown
+// @summary Adds scale * field_0x1D0 to field_0x1E0 and subtracts it from field_0x1E4; returns 1.
+// @field Unknown +0x1D0 int32_t field_0x1D0
+// @field Unknown +0x1E0 int32_t field_0x1E0
+// @field Unknown +0x1E4 int32_t field_0x1E4
+int32_t fn_007BF4A0(void* self, int32_t scale) {
+    const int32_t delta = lift_field<int32_t>(self, 0x1D0) * scale;
+    lift_field<int32_t>(self, 0x1E0) += delta;
+    lift_field<int32_t>(self, 0x1E4) -= delta;
+    return 1;
+}
+} // namespace lift_007BF4A0

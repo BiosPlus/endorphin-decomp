@@ -1,0 +1,34 @@
+{
+  "va": "0x007BF4A0",
+  "size": 49,
+  "orig_symbol": "sub_007BF4A0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "Unknown::applyScaledDeltaToPair",
+  "class": "Unknown",
+  "signature": "int32_t fn_007BF4A0(void* self, int32_t scale)",
+  "summary": "Adds scale * field_0x1D0 to field_0x1E0 and subtracts it from field_0x1E4; returns 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1D0",
+      "type": "int32_t",
+      "name": "field_0x1D0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1E0",
+      "type": "int32_t",
+      "name": "field_0x1E0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1E4",
+      "type": "int32_t",
+      "name": "field_0x1E4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:31:52Z"
+}

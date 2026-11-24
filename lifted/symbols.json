@@ -48728,6 +48728,13 @@
     "summary": "Reads two 32-bit fields from the object at self and forwards them with a constant tag to DispatchThreeArgsToOptionalHook.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BF4A0": {
+    "name": "Unknown::applyScaledDeltaToPair",
+    "class": "Unknown",
+    "signature": "int32_t fn_007BF4A0(void* self, int32_t scale)",
+    "summary": "Adds scale * field_0x1D0 to field_0x1E0 and subtracts it from field_0x1E4; returns 1.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BFC60": {
     "name": "sub_007BFC60",
     "signature": "uint32_t sub_007BFC60(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4)",
