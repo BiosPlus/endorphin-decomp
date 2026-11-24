@@ -19896,6 +19896,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005731A0 (OBJIO::vfunc_3).",
     "lifted_path": "lifted/classes/VSKIO.cpp"
   },
+  "0x005749F0": {
+    "name": "dispatchIfTypeMatches",
+    "signature": "void __stdcall sub_005749F0(uint32_t obj, uint32_t arg2)",
+    "summary": "Calls vtable+0x5c(arg2) on obj if obj is non-null and obj-\u003evtable+0x24() compares equal to 0x00928B5D",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00574CF0": {
     "name": "sub_00574CF0",
     "signature": "extern \"C\" void __fastcall fn_00574CF0(void* self)",
