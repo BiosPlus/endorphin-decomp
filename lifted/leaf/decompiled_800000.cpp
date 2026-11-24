@@ -368,3 +368,15 @@ void* fn_0080C6A0(void* start, uint32_t count) {
     return cur;
 }
 } // namespace lift_0080C6A0
+
+// [0x0080B590]
+namespace lift_0080B590 {
+// @name Thunk::copyMemoryDwordThenBytesForward
+// @summary Forwards (dst, src, n) unchanged to copyMemoryDwordThenBytes (ext_00859780) and returns its result.
+
+void* ext_00859780(void* dst, const void* src, size_t n);
+
+void* fn_0080B590(void* dst, const void* src, size_t n) {
+    return ext_00859780(dst, src, n);
+}
+} // namespace lift_0080B590
