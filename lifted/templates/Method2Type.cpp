@@ -842,3 +842,42 @@ void fn_0066D2B0(void* self) {
     lift_field<uint32_t>(self, 4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B59690));
 }
 } // namespace lift_0066D2B0
+
+// [0x0066D330]
+namespace lift_0066D330 {
+namespace lift_0066D330 {
+// @name ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, NM::Vector3 const &, &NM::Vector3::cartesianAtoB_SE>::vfunc_40
+// @class ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, NM::Vector3 const &, &NM::Vector3::cartesianAtoB_SE>
+// @summary Lazily constructs the function-local static type object at mem_00B59698 (guarded by mem_00B5969C) and stores its address at out+4.
+// @field Unknown +0x04 uint32_t field_0x04
+
+extern void ext_0067A670(void* self);
+extern uint8_t mem_00B5969C; // one-time initialization guard byte
+extern uint8_t mem_00B59698; // static object storage (vtable pointer at +0)
+
+namespace {
+
+constexpr uint32_t kStaticVtable = 0x0098867Cu;
+
+} // namespace
+
+extern void fn_0066D330(void* self, uint32_t outAddr)
+{
+    (void)self;
+
+    uint32_t* out = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(outAddr));
+    void* staticObj = static_cast<void*>(&mem_00B59698);
+
+    if ((mem_00B5969C & 1u) == 0) {
+        // First call: mark initialized before constructing (guards re-entry),
+        // construct the object, then install its vtable pointer.
+        mem_00B5969C = static_cast<uint8_t>(mem_00B5969C | 1u);
+        ext_0067A670(staticObj);
+        *reinterpret_cast<uint32_t*>(staticObj) = kStaticVtable;
+    }
+
+    out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(staticObj));
+}
+
+} // namespace lift_0066D330
+} // namespace lift_0066D330

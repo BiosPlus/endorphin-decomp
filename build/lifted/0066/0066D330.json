@@ -1,0 +1,22 @@
+{
+  "va": "0x0066D330",
+  "size": 122,
+  "orig_symbol": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_SE(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_40",
+  "src_path": "src/templates/Method2Type.cpp",
+  "lifted_path": "lifted/templates/Method2Type.cpp",
+  "name": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026NM::Vector3::cartesianAtoB_SE\u003e::vfunc_40",
+  "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026NM::Vector3::cartesianAtoB_SE\u003e",
+  "signature": "extern \"C\" uint8_t mem_00B59698; // static object storage (vtable pointer at +0) namespace",
+  "summary": "Lazily constructs the function-local static type object at mem_00B59698 (guarded by mem_00B5969C) and stores its address at out+4.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:54:44Z"
+}

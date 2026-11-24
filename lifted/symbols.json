@@ -33644,6 +33644,13 @@
     "summary": "Calls virtual slot 5 twice on the object held by arg4 (first with 0, then with the first result), forwards the second result to the child at *arg2, zeroes the out buffer at arg2, and returns arg2.",
     "lifted_path": "lifted/templates/Method2Type.cpp"
   },
+  "0x0066D330": {
+    "name": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026NM::Vector3::cartesianAtoB_SE\u003e::vfunc_40",
+    "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026NM::Vector3::cartesianAtoB_SE\u003e",
+    "signature": "extern \"C\" uint8_t mem_00B59698; // static object storage (vtable pointer at +0) namespace",
+    "summary": "Lazily constructs the function-local static type object at mem_00B59698 (guarded by mem_00B5969C) and stores its address at out+4.",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
   "0x0066DCB0": {
     "name": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e::vfunc_0",
     "class": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",
