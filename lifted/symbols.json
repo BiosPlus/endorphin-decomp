@@ -13942,6 +13942,13 @@
     "summary": "Sets byte flags at +0x04 and +0x05 to 1, and clears bytes +0x06 through +0x09.",
     "lifted_path": "lifted/leaf/tiny_4E0000.cpp"
   },
+  "0x004E9D70": {
+    "name": "Unknown::DispatchIndex5ToSelector",
+    "class": "Unknown",
+    "signature": "extern \"C\" INT __cdecl fn_004E9D70(void)",
+    "summary": "Fetches a global int32 as the receiver and dispatches index 5 (arg 0) to its indexed child.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004EA030": {
     "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, isCollisionEnabled, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0\u003e",

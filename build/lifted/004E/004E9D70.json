@@ -1,0 +1,14 @@
+{
+  "va": "0x004E9D70",
+  "size": 17,
+  "orig_symbol": "sub_004E9D70",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "Unknown::DispatchIndex5ToSelector",
+  "class": "Unknown",
+  "signature": "extern \"C\" INT __cdecl fn_004E9D70(void)",
+  "summary": "Fetches a global int32 as the receiver and dispatches index 5 (arg 0) to its indexed child.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:19:25Z"
+}

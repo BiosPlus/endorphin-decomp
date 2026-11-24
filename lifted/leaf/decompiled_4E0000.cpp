@@ -112,3 +112,19 @@ void* fn_004EBE30() {
 }
 } // namespace lift_0043D780
 } // namespace lift_004EBE30
+
+// [0x004E9D70] sub_004E9D70 (17 bytes)
+namespace lift_004E9D70 {
+// Known callee 0x00468180: sub_00468180 (Returns global int32 value from mem_00AD7CD8.)
+extern INT __cdecl ext_00468180(void);
+// Known callee 0x00469530: Unknown::DispatchToIndexedChild (Bounds-checks index against the pointer array at +0x54..+0x58, then calls vtable slot 1 of the selected element with arg and returns its result.)
+extern INT __thiscall ext_00469530(void* self, INT index, INT arg);
+
+// @name Unknown::DispatchIndex5ToSelector
+// @class Unknown
+// @summary Fetches a global int32 as the receiver and dispatches index 5 (arg 0) to its indexed child.
+extern INT __cdecl fn_004E9D70(void) {
+    INT self = ext_00468180();
+    return ext_00469530(reinterpret_cast<void*>(static_cast<intptr_t>(self)), 5, 0);
+}
+} // namespace lift_004E9D70
