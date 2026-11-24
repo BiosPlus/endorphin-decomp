@@ -8767,3 +8767,51 @@ void __stdcall fn_0049C610(void* out) {
     std::memcpy(static_cast<uint8_t*>(out) + 4, &bound, sizeof(bound));
 }
 } // namespace lift_0049C610
+
+// [0x00470290]
+namespace lift_00470290 {
+// @name ExprParser::ReadWriteMethodType<RuntimeEngine,float>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<RuntimeEngine,float>
+// @summary Lazily initializes a static type descriptor at 0x00AD8FEC and stores its pointer at arg0 + 0x4.
+// @field unknown +0x04 uint32_t field_0x04
+
+
+extern uint8_t mem_00AD8FF0;
+extern uint32_t mem_00AD8FEC;
+
+extern void __thiscall ext_0067A670(void* self);
+
+void __thiscall fn_00470290(void* self, uint32_t arg0) {
+    (void)self;
+    if ((mem_00AD8FF0 & 1u) == 0u) {
+        mem_00AD8FF0 |= 1u;
+        ext_0067A670(&mem_00AD8FEC);
+        mem_00AD8FEC = 0x0093B524u;
+    }
+    *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(arg0) + 4u) = 0x00AD8FECu;
+}
+} // namespace lift_00470290
+
+// [0x004706A0]
+namespace lift_004706A0 {
+// @name ExprParser::ReadWriteMethodType<RuntimeEngine, float, getTimeZoomFactor, float, setTimeZoomFactor>::vfunc_40
+// @class ExprParser::ReadWriteMethodType
+// @summary Initializes static type/value descriptor if needed and stores its pointer at arg0 + 0x4.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+
+
+extern uint32_t mem_00AD8FF8;
+extern uint8_t mem_00AD8FF4[];
+extern void __thiscall ext_0067A670(void* self);
+
+void __thiscall fn_004706A0(void* self, void* out) {
+    (void)self;
+    if ((mem_00AD8FF8 & 1u) == 0u) {
+        mem_00AD8FF8 |= 1u;
+        ext_0067A670(mem_00AD8FF4);
+        *reinterpret_cast<uint32_t*>(mem_00AD8FF4) = 0x0093B6D4u;
+    }
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(out) + 4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00AD8FF4));
+}
+} // namespace lift_004706A0

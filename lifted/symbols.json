@@ -6422,6 +6422,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x00470290": {
+    "name": "ExprParser::ReadWriteMethodType\u003cRuntimeEngine,float\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cRuntimeEngine,float\u003e",
+    "signature": "void __thiscall fn_00470290(void* self, uint32_t arg0)",
+    "summary": "Lazily initializes a static type descriptor at 0x00AD8FEC and stores its pointer at arg0 + 0x4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x00470310": {
     "name": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0\u003e",
@@ -6435,6 +6442,13 @@
     "signature": "__stdcall int32_t fn_004703E0(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x004706A0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cRuntimeEngine, float, getTimeZoomFactor, float, setTimeZoomFactor\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType",
+    "signature": "void __thiscall fn_004706A0(void* self, void* out)",
+    "summary": "Initializes static type/value descriptor if needed and stores its pointer at arg0 + 0x4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x00470720": {
     "name": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0\u003e::vfunc_0",
