@@ -9229,3 +9229,28 @@ void __thiscall fn_004B2070(void* self, uint32_t arg1) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE0D18));
 }
 } // namespace lift_004B2070
+
+// [0x004C1380] ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::TriggeredEventData::setEndFrameNumber(int), 0}>::vfunc_40 (122 bytes)
+namespace lift_004C1380 {
+extern void ext_0067A670();
+extern int mem_00AE301C;
+extern int mem_00AE3020;
+
+// @name TriggeredEventData_EndFrameNumber_ReadWriteType_vfunc40
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::TriggeredEventData::setEndFrameNumber(int), 0}>
+// @summary Lazily constructs a function-local static ReadWriteMethodType for TriggeredEventData end frame number (guarded by a one-time flag) and stores its address into out->+0x04.
+// @field field_0x04 void* (out pointer, receives address of the static instance)
+void fn_004C1380(void* self) {
+    // One-time initialization guard: bit 0 of mem_00AE3020.
+    if ((mem_00AE3020 & 1) == 0) {
+        mem_00AE3020 |= 1;
+        // Base-class constructor call (original: thiscall on &mem_00AE301C with arg 0).
+        ext_0067A670();
+        // Install the vtable for the static instance.
+        mem_00AE301C = 0x944B7C;
+    }
+    // Publish the static instance address into the output object at +0x04.
+    *reinterpret_cast<void**>(static_cast<unsigned char*>(self) + 0x04) =
+        static_cast<void*>(&mem_00AE301C);
+}
+} // namespace lift_004C1380

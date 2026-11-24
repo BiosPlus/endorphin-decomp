@@ -10836,6 +10836,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004C1380": {
+    "name": "TriggeredEventData_EndFrameNumber_ReadWriteType_vfunc40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::TriggeredEventData::setEndFrameNumber(int), 0}\u003e",
+    "signature": "void fn_004C1380(void* self)",
+    "summary": "Lazily constructs a function-local static ReadWriteMethodType for TriggeredEventData end frame number (guarded by a one-time flag) and stores its address into out-\u003e+0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004C1400": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0\u003e",
