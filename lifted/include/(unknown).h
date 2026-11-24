@@ -11,5 +11,6 @@ struct (unknown)_Fields {
     // +0x0   float                    field_0x00  (evidence: 0x0044CCC0)
     // +0x4   float                    field_0x04  (evidence: 0x0044CCC0)
     // +0x8   float                    field_0x08  (evidence: 0x0044CCC0)
+    // +0x40  uint8_t                  field_0x40  (evidence: 0x006ACF90)
 };
 } // namespace lifted_layout

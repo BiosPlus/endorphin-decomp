@@ -1,0 +1,22 @@
+{
+  "va": "0x006ACF90",
+  "size": 14,
+  "orig_symbol": "sub_006ACF90",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "sub_006ACF90",
+  "class": "(unknown)",
+  "signature": "void sub_006ACF90(void* ecx, uint8_t arg)",
+  "summary": "If `this` (ECX) is non-null, store the low byte of the stack argument at this+0x40; stdcall, pops 4.",
+  "fields": [
+    {
+      "class": "(unknown)",
+      "offset": "+0x40",
+      "type": "uint8_t",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:26:06Z"
+}

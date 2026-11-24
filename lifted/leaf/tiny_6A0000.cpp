@@ -217,3 +217,18 @@ Unknown* zeroFields4_8_C(Unknown* self) {
     return self;
 }
 } // namespace lift_006A0670
+
+// [0x006ACF90]
+namespace lift_006ACF90 {
+// @name sub_006ACF90
+// @class (unknown)
+// @summary If `this` (ECX) is non-null, store the low byte of the stack argument at this+0x40; stdcall, pops 4.
+// @field (unknown) +0x40 uint8_t field_0x40
+
+void sub_006ACF90(void* ecx, uint8_t arg)
+{
+    if (ecx != nullptr) {
+        reinterpret_cast<uint8_t*>(ecx)[0x40] = arg;
+    }
+}
+} // namespace lift_006ACF90

@@ -29723,6 +29723,13 @@
     "summary": "Returns address of global mem_0099101C.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006ACF90": {
+    "name": "sub_006ACF90",
+    "class": "(unknown)",
+    "signature": "void sub_006ACF90(void* ecx, uint8_t arg)",
+    "summary": "If `this` (ECX) is non-null, store the low byte of the stack argument at this+0x40; stdcall, pops 4.",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006ACFC0": {
     "name": "sub_006ACFC0",
     "signature": "uint8_t __fastcall sub_006ACFC0(uintptr_t ecx)",
