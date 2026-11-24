@@ -1,0 +1,22 @@
+{
+  "va": "0x006A7AC0",
+  "size": 20,
+  "orig_symbol": "sub_006A7AC0",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "Unknown::ForwardArgToVirtualSlot140",
+  "class": "Unknown",
+  "signature": "int32_t __thiscall fn_006A7AC0(void* self, int32_t arg, int32_t unused)",
+  "summary": "Forwards its first stack argument to the virtual method at vtable offset +0x140 on the object in ECX, then returns 0 and pops 8 bytes of arguments.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:08:43Z"
+}

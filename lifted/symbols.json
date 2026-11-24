@@ -31310,6 +31310,13 @@
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_663.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006A7AC0": {
+    "name": "Unknown::ForwardArgToVirtualSlot140",
+    "class": "Unknown",
+    "signature": "int32_t __thiscall fn_006A7AC0(void* self, int32_t arg, int32_t unused)",
+    "summary": "Forwards its first stack argument to the virtual method at vtable offset +0x140 on the object in ECX, then returns 0 and pops 8 bytes of arguments.",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006A7FD0": {
     "name": "CTypedPtrMap\u003cCMapStringToPtr, ATL::CStringT\u003cchar, StrTraitMFC_DLL\u003cchar, ATL::ChTraitsCRT\u003cchar\u003e\u003e\u003e, GWCPropertyFeel *\u003e::vfunc_1",
     "class": "CTypedPtrMap\u003cCMapStringToPtr, ATL::CStringT\u003cchar, StrTraitMFC_DLL\u003cchar, ATL::ChTraitsCRT\u003cchar\u003e\u003e\u003e, GWCPropertyFeel *\u003e",

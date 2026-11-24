@@ -328,3 +328,22 @@ void fn_006AD960(void* self) {
     slot0(self, 1);
 }
 } // namespace lift_006AD960
+
+// [0x006A7AC0]
+namespace lift_006A7AC0 {
+// @name Unknown::ForwardArgToVirtualSlot140
+// @class Unknown
+// @summary Forwards its first stack argument to the virtual method at vtable offset +0x140 on the object in ECX, then returns 0 and pops 8 bytes of arguments.
+// @field Unknown +0x00 void* vtable
+
+typedef int32_t (__thiscall *VirtualArgFn)(void* self, int32_t arg);
+
+int32_t __thiscall fn_006A7AC0(void* self, int32_t arg, int32_t unused) {
+    (void)unused;
+    void* vtable = lift_field<void*>(self, 0x00);
+    VirtualArgFn slot = reinterpret_cast<VirtualArgFn>(
+        reinterpret_cast<void**>(vtable)[0x140 / sizeof(void*)]);
+    slot(self, arg);
+    return 0;
+}
+} // namespace lift_006A7AC0
