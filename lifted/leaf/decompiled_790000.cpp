@@ -167,3 +167,42 @@ uint32_t sub_0079ACF0(uint32_t hFile, uint32_t lpBuffer, uint32_t nNumberOfBytes
     return 0;
 }
 } // namespace lift_0079ACF0
+
+// [0x0079AD20]
+namespace lift_0079AD20 {
+// @name writeFileBytes
+// @summary Calls WriteFile and returns bytes written on success or 0 on failure.
+
+extern uint32_t (__stdcall *mem_00924180)(uint32_t hFile, uint32_t lpBuffer, uint32_t nNumberOfBytesToWrite, uint32_t* lpNumberOfBytesWritten, uint32_t lpOverlapped);
+
+uint32_t __cdecl sub_0079AD20(uint32_t hFile, uint32_t lpBuffer, uint32_t nNumberOfBytesToWrite) {
+    uint32_t bytesWritten = nNumberOfBytesToWrite;
+    uint32_t ok = mem_00924180(hFile, lpBuffer, nNumberOfBytesToWrite, &bytesWritten, 0);
+    return ok ? bytesWritten : 0;
+}
+} // namespace lift_0079AD20
+
+// [0x007911E0]
+namespace lift_007911E0 {
+// @name sub_007911E0
+// @summary Initializes object fields at offsets 0x28, 0x2c, 0x48, 0x4c, 0x50, and 0x60 and returns 0
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x2c uint32_t field_0x2c
+// @field Unknown +0x48 uint32_t field_0x48
+// @field Unknown +0x4c uint32_t field_0x4c
+// @field Unknown +0x50 uint32_t field_0x50
+// @field Unknown +0x60 uint32_t field_0x60
+
+
+void mem_write32(void* addr, uint32_t val);
+
+uint32_t __thiscall sub_007911E0(uint8_t* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    mem_write32(self + 0x50, arg1);
+    mem_write32(self + 0x4c, arg3);
+    mem_write32(self + 0x48, arg2);
+    mem_write32(self + 0x60, 1);
+    mem_write32(self + 0x28, 0);
+    mem_write32(self + 0x2c, 0);
+    return 0;
+}
+} // namespace lift_007911E0

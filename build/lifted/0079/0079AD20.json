@@ -1,0 +1,13 @@
+{
+  "va": "0x0079AD20",
+  "size": 39,
+  "orig_symbol": "sub_0079AD20",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "writeFileBytes",
+  "signature": "uint32_t __cdecl sub_0079AD20(uint32_t hFile, uint32_t lpBuffer, uint32_t nNumberOfBytesToWrite)",
+  "summary": "Calls WriteFile and returns bytes written on success or 0 on failure.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:57:30Z"
+}
