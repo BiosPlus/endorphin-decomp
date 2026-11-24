@@ -1,0 +1,28 @@
+{
+  "va": "0x006B8170",
+  "size": 24,
+  "orig_symbol": "sub_006B8170",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "CObjectBase::UpdateSubobjectsIfEnabled",
+  "class": "CObjectBase",
+  "signature": "void fn_006B8170(void* self)",
+  "summary": "Conditionally calls UpdateSubobjects if the flag at +0x1A8 and pointer at +0x1A4 are non-zero.",
+  "fields": [
+    {
+      "class": "CObjectBase",
+      "offset": "+0x1A4",
+      "type": "void*",
+      "name": "field_0x1A4"
+    },
+    {
+      "class": "CObjectBase",
+      "offset": "+0x1A8",
+      "type": "uint8_t",
+      "name": "field_0x1A8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:03:24Z"
+}

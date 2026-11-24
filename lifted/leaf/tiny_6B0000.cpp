@@ -817,3 +817,27 @@ int __thiscall fn_006B67E0(void* self, WPARAM a1, LPARAM a2) {
     return 0;
 }
 } // namespace lift_006B67E0
+
+// [0x006B8170]
+namespace lift_006B8170 {
+// @name CObjectBase::UpdateSubobjectsIfEnabled
+// @class CObjectBase
+// @summary Conditionally calls UpdateSubobjects if the flag at +0x1A8 and pointer at +0x1A4 are non-zero.
+// @field CObjectBase +0x1A4 void* field_0x1A4
+// @field CObjectBase +0x1A8 uint8_t field_0x1A8
+
+
+extern uint8_t mem_u8(const void* base, int32_t off);
+extern uint32_t mem_u32(const void* base, int32_t off);
+extern void ext_006B7D90(void* self);
+
+void fn_006B8170(void* self) {
+    if (mem_u8(self, 0x1A8) == 0) {
+        return;
+    }
+    if (mem_u32(self, 0x1A4) == 0) {
+        return;
+    }
+    ext_006B7D90(self);
+}
+} // namespace lift_006B8170
