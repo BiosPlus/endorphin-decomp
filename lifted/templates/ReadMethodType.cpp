@@ -42359,3 +42359,23 @@ int32_t fn_00685360(void* self) {
 }
 } // namespace lift_0046D230
 } // namespace lift_00685360
+
+// [0x004BCC20]
+namespace lift_004BCC20 {
+// @name ExprParser::ReadMethodType<NMData::MaterialPair,...>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MaterialPair,...>
+// @summary Reads the object pointer from *out, builds a temporary std::string via sub_004BC770, copy-assigns it into out, and returns out.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+
+
+void* ext_004BC770(void* dst, void* obj);            // sub_004BC770 (138B)
+void* ext_004276B0(void* dst, const void* src);      // StdStringCopyConstruct (MSVCP80)
+
+void* fn_004BCC20(void* /*unused_arg*/, void* out) {
+    std::string local;                               // stack temp at esp+0x0c, destroyed on exit
+    void* obj = *static_cast<void**>(out);           // mov edx, [eax]
+    void* src = ext_004BC770(&local, obj);           // sub_004BC770(&local, obj)
+    ext_004276B0(out, src);                          // copy-construct *out from src
+    return out;                                      // mov eax, esi; ret 8
+}
+} // namespace lift_004BCC20
