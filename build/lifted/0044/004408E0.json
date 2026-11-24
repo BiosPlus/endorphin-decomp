@@ -1,0 +1,27 @@
+{
+  "va": "0x004408E0",
+  "size": 17,
+  "orig_symbol": "sub_004408E0",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "setDoublePairAt50_58",
+  "signature": "void __thiscall fn_004408E0(void* self, double a0, double a1)",
+  "summary": "Stores two double arguments into the object at offsets +0x50 and +0x58 (thiscall, callee pops 16 bytes).",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x50",
+      "type": "double",
+      "name": "field_0x50"
+    },
+    {
+      "class": "self",
+      "offset": "+0x58",
+      "type": "double",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:50:54Z"
+}

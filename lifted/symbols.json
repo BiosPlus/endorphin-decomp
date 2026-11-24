@@ -1703,6 +1703,12 @@
     "summary": "Returns the DWORD at +0x10 of the pointer stored at self+0x44, or 0 if that pointer is null.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x004408E0": {
+    "name": "setDoublePairAt50_58",
+    "signature": "void __thiscall fn_004408E0(void* self, double a0, double a1)",
+    "summary": "Stores two double arguments into the object at offsets +0x50 and +0x58 (thiscall, callee pops 16 bytes).",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x00440940": {
     "name": "MultiTrackView::DiamondMarker::vfunc_3",
     "class": "MultiTrackView::DiamondMarker",

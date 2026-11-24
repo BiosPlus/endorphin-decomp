@@ -487,3 +487,15 @@ int sub_0044B5B0(unsigned char* self) {
     return *reinterpret_cast<int*>(obj + 0x38);
 }
 } // namespace lift_0044B5B0
+
+// [0x004408E0] sub_004408E0 (17 bytes)
+namespace lift_004408E0 {
+// @name setDoublePairAt50_58
+// @summary Stores two double arguments into the object at offsets +0x50 and +0x58 (thiscall, callee pops 16 bytes).
+// @field self +0x50 double field_0x50
+// @field self +0x58 double field_0x58
+void __thiscall fn_004408E0(void* self, double a0, double a1) {
+    lift_field<double>(self, 0x50) = a0;
+    lift_field<double>(self, 0x58) = a1;
+}
+} // namespace lift_004408E0
