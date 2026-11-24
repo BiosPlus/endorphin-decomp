@@ -1,0 +1,46 @@
+{
+  "va": "0x007D4720",
+  "size": 55,
+  "orig_symbol": "sub_007D4720",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "Unknown::InvokeSlotThenForward",
+  "class": "Unknown",
+  "signature": "static inline SlotFn slotAt(uint32_t table, int32_t offset)",
+  "summary": "If the count at +0x14 is positive, call slot +0x10 (flag set) or +0x0c (flag clear) of the table at +0x1c with +0x04, then tail-call slot +0x0c of the table with +0x08.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "int32_t",
+      "name": "flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "table"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:15:43Z"
+}

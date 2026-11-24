@@ -21292,6 +21292,12 @@
     "summary": "Validates a checked iterator in global object +0x8 and returns node+0x8 decremented by 1 if non-zero.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x00596370": {
+    "name": "getGlobalListFrontMinusOne",
+    "signature": "uint32_t sub_00596370()",
+    "summary": "Validates a global list iterator at [0xB40644]+8 and returns its node value minus one (or 0 if zero)",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00596A30": {
     "name": "CallForEachOffsetPlusBase",
     "signature": "void fn_00596A30(uint32_t* out, uint32_t /*stack slot +0x08, unused*/, const uint32_t* begin, uint32_t /*stack slot +0x10, unused*/, const uint32_t* end, OffsetCallback cb, uint32_t base)",
@@ -55148,6 +55154,13 @@
     "signature": "void fn_007CD550(void* self)",
     "summary": "Clears the pointer-sized slot at +0x18, and if it was non-null, passes it through ext_007D8700 and tail-dispatches the result to ext_007C9930; otherwise returns.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
+  "0x007D4720": {
+    "name": "Unknown::InvokeSlotThenForward",
+    "class": "Unknown",
+    "signature": "static inline SlotFn slotAt(uint32_t table, int32_t offset)",
+    "summary": "If the count at +0x14 is positive, call slot +0x10 (flag set) or +0x0c (flag clear) of the table at +0x1c with +0x04, then tail-call slot +0x0c of the table with +0x08.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
   "0x007D4760": {
     "name": "IndexedPointerArray::nextPointer",

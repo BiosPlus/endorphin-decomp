@@ -542,3 +542,40 @@ int32_t fn_007D7190(int32_t* counter, int32_t bias, int32_t limit, int32_t delta
     return oldValue + bias;
 }
 } // namespace lift_007D7190
+
+// [0x007D4720] sub_007D4720 (55 bytes)
+namespace lift_007D4720 {
+// @name Unknown::InvokeSlotThenForward
+// @class Unknown
+// @summary If the count at +0x14 is positive, call slot +0x10 (flag set) or +0x0c (flag clear) of the table at +0x1c with +0x04, then tail-call slot +0x0c of the table with +0x08.
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x08 int32_t field_0x08
+// @field Unknown +0x14 int32_t count
+// @field Unknown +0x18 int32_t flag
+// @field Unknown +0x1c uint32_t table
+
+using SlotFn = int32_t (*)(uint32_t table, int32_t arg);
+
+static inline SlotFn slotAt(uint32_t table, int32_t offset) {
+    uintptr_t base = static_cast<uintptr_t>(table);
+    return reinterpret_cast<SlotFn>(lift_field<uint32_t>(reinterpret_cast<void*>(base), offset));
+}
+
+int32_t fn_007D4720(void* self) {
+    if (lift_field<int32_t>(self, 0x14) <= 0) {
+        return 0;
+    }
+
+    int32_t flag = lift_field<int32_t>(self, 0x18);
+    uint32_t table = lift_field<uint32_t>(self, 0x1c);
+    int32_t firstArg = lift_field<int32_t>(self, 0x04);
+
+    SlotFn first = slotAt(table, flag != 0 ? 0x10 : 0x0c);
+    (void)first(table, firstArg);
+
+    table = lift_field<uint32_t>(self, 0x1c);
+    int32_t secondArg = lift_field<int32_t>(self, 0x08);
+    SlotFn tail = slotAt(table, 0x0c);
+    return tail(table, secondArg);
+}
+} // namespace lift_007D4720
