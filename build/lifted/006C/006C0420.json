@@ -1,0 +1,22 @@
+{
+  "va": "0x006C0420",
+  "size": 20,
+  "orig_symbol": "sub_006C0420",
+  "src_path": "src/leaf/tiny_6C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6C0000.cpp",
+  "name": "Unknown::CallVirtualSlot41WithGlobalArgs",
+  "class": "Unknown",
+  "signature": "DWORD __thiscall fn_006C0420(void* self)",
+  "summary": "Calls virtual slot 0xA4 (index 41) of the object's vtable with four constant stack args (0x17, \u0026mem_00B5EB80, 0, -1) and returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:09:00Z"
+}

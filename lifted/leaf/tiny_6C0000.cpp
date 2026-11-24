@@ -1428,3 +1428,23 @@ void fn_006C9E90(void* self, float factor) {
     *value = *value * factor;
 }
 } // namespace lift_006C9E90
+
+// [0x006C0420]
+namespace lift_006C0420 {
+// @name Unknown::CallVirtualSlot41WithGlobalArgs
+// @class Unknown
+// @summary Calls virtual slot 0xA4 (index 41) of the object's vtable with four constant stack args (0x17, &mem_00B5EB80, 0, -1) and returns its result.
+// @field Unknown +0x00 void* vtable
+
+extern char mem_00B5EB80;
+
+// Thiscall virtual slot: this in ecx, four stack arguments (callee pops them via ret 0x10).
+typedef DWORD (__thiscall* VirtualSlot41Fn)(void* self, DWORD a0, DWORD a1, DWORD a2, DWORD a3);
+
+DWORD __thiscall fn_006C0420(void* self) {
+    void* vtable = lift_field<void*>(self, 0x00);
+    VirtualSlot41Fn slot = lift_field<VirtualSlot41Fn>(vtable, 0xA4);
+    DWORD global_addr = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B5EB80));
+    return slot(self, 0x17, global_addr, 0, static_cast<DWORD>(-1));
+}
+} // namespace lift_006C0420
