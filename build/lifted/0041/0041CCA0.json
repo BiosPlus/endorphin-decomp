@@ -1,0 +1,27 @@
+{
+  "va": "0x0041CCA0",
+  "size": 29,
+  "orig_symbol": "sub_0041CCA0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "ReleaseSubobjectAndChainDestructor",
+  "signature": "void fn_0041CCA0(void* self)",
+  "summary": "Sets the object vtable, calls MFC80 ord_578 on the subobject at +0x12c, then tail-calls the base destructor.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "u32",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x12C",
+      "type": "u8",
+      "name": "field_0x12c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:10:53Z"
+}

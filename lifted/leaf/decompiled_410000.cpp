@@ -176,3 +176,23 @@ uint32_t __stdcall sub_00419990(uint32_t arg0, uint32_t arg1, uint32_t arg2, uin
     return 0;
 }
 } // namespace lift_00419990
+
+// [0x0041CCA0] sub_0041CCA0 (29 bytes)
+namespace lift_0041CCA0 {
+extern void __fastcall ext_00454BA0(void* self);
+extern uint32_t mem_009242F4; // .rdata IAT slot holding MFC80 ord_578
+
+// @name ReleaseSubobjectAndChainDestructor
+// @summary Sets the object vtable, calls MFC80 ord_578 on the subobject at +0x12c, then tail-calls the base destructor.
+// @field Unknown +0x00 u32 field_0x00
+// @field Unknown +0x12c u8 field_0x12c
+void fn_0041CCA0(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x0092DD84u;
+
+    auto release = reinterpret_cast<void (__thiscall*)(void*)>(
+        static_cast<uintptr_t>(mem_009242F4));
+    release(static_cast<uint8_t*>(self) + 0x12c);
+
+    ext_00454BA0(self);
+}
+} // namespace lift_0041CCA0
