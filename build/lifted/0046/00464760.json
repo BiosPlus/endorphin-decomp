@@ -1,0 +1,13 @@
+{
+  "va": "0x00464760",
+  "size": 17,
+  "orig_symbol": "sub_00464760",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "sub_00464760",
+  "signature": "extern void* fn_00464760()",
+  "summary": "Auto-lifted identical-shape clone of 0x0042FB40 (thunkGetterVirtualSlot54).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:50:36Z"
+}

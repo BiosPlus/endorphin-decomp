@@ -1,0 +1,28 @@
+{
+  "va": "0x00536CC0",
+  "size": 17,
+  "orig_symbol": "OglRenderer::vfunc_90",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "OglRenderer::vfunc_90",
+  "class": "OglRenderer",
+  "signature": "void fn_00536CC0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0042FAA0 (Unknown::toggleFlagF5).",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x288",
+      "type": "uint8_t",
+      "name": "field_0x288"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF5",
+      "type": "uint8_t",
+      "name": "field_0xF5"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:50:36Z"
+}

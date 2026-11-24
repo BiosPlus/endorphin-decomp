@@ -195,3 +195,29 @@ extern int32_t fn_004691C0(void) {
     return ext_00477380(ecx);
 }
 } // namespace lift_004691C0
+
+// [0x00464760] sub_00464760 (17 bytes)
+namespace lift_00464760 {
+// @name sub_00464760
+// @summary Auto-lifted identical-shape clone of 0x0042FB40 (thunkGetterVirtualSlot54).
+namespace lift_0042FB40 {
+// @name thunkGetterVirtualSlot54
+// @summary Calls the global getter ext_00465B40 to obtain an object, then tail-dispatches its vtable slot at +0xD8 (virtual index 54) with that object as this.
+
+extern void* ext_004658C0();
+
+// call ext_00465B40; obj = eax
+// mov edx, [eax]        ; vtable = obj->vptr
+// mov ecx, eax          ; this = obj
+// mov eax, [edx+0xD8]   ; target = vtable[54]
+// jmp eax               ; tail call, result returned unchanged
+extern void* fn_00464760() {
+    void* obj = ext_004658C0();
+    void* vtable = *reinterpret_cast<void**>(obj);
+    using VirtFn = void* (*)(void*);
+    VirtFn target = reinterpret_cast<VirtFn>(
+        *reinterpret_cast<void**>(static_cast<char*>(vtable) + 0xA4));
+    return target(obj);
+}
+} // namespace lift_0042FB40
+} // namespace lift_00464760

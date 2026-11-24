@@ -1366,6 +1366,42 @@
     "summary": "Calls the global getter ext_00465B40 to obtain an object, then tail-dispatches its vtable slot at +0xD8 (virtual index 54) with that object as this.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x0042FB60": {
+    "name": "sub_0042FB60",
+    "signature": "extern void* fn_0042FB60()",
+    "summary": "Auto-lifted identical-shape clone of 0x0042FB40 (thunkGetterVirtualSlot54).",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
+  "0x0042FB80": {
+    "name": "sub_0042FB80",
+    "signature": "extern void* fn_0042FB80()",
+    "summary": "Auto-lifted identical-shape clone of 0x0042FB40 (thunkGetterVirtualSlot54).",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
+  "0x0042FBA0": {
+    "name": "sub_0042FBA0",
+    "signature": "extern void* fn_0042FBA0()",
+    "summary": "Auto-lifted identical-shape clone of 0x0042FB40 (thunkGetterVirtualSlot54).",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
+  "0x0042FBC0": {
+    "name": "sub_0042FBC0",
+    "signature": "extern void* fn_0042FBC0()",
+    "summary": "Auto-lifted identical-shape clone of 0x0042FB40 (thunkGetterVirtualSlot54).",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
+  "0x0042FBE0": {
+    "name": "sub_0042FBE0",
+    "signature": "extern void* fn_0042FBE0()",
+    "summary": "Auto-lifted identical-shape clone of 0x0042FB40 (thunkGetterVirtualSlot54).",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
+  "0x0042FC00": {
+    "name": "sub_0042FC00",
+    "signature": "extern void* fn_0042FC00()",
+    "summary": "Auto-lifted identical-shape clone of 0x0042FB40 (thunkGetterVirtualSlot54).",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x0042FC20": {
     "name": "sub_0042FC20",
     "class": "Unknown",
@@ -1373,11 +1409,23 @@
     "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
   },
+  "0x0042FDB0": {
+    "name": "sub_0042FDB0",
+    "signature": "extern void* fn_0042FDB0()",
+    "summary": "Auto-lifted identical-shape clone of 0x0042FB40 (thunkGetterVirtualSlot54).",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x0042FE60": {
     "name": "sub_0042FE60",
     "signature": "extern \"C\" void fn_0042FE60(void)",
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_4927.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x0042FE90": {
+    "name": "sub_0042FE90",
+    "signature": "extern void* fn_0042FE90()",
+    "summary": "Auto-lifted identical-shape clone of 0x0042FB40 (thunkGetterVirtualSlot54).",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
   "0x0042FEB0": {
     "name": "sub_0042FEB0",
@@ -3351,6 +3399,12 @@
     "signature": "void fn_0046A470(void* self)",
     "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 1 (offset +0x4) with the same this pointer.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
+  "0x00464760": {
+    "name": "sub_00464760",
+    "signature": "extern void* fn_00464760()",
+    "summary": "Auto-lifted identical-shape clone of 0x0042FB40 (thunkGetterVirtualSlot54).",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
   "0x004647C0": {
     "name": "sub_004647C0",
@@ -11224,6 +11278,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x2D4 and tail-calls sub_0054C640.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005331F0": {
+    "name": "OglRenderer::vfunc_88",
+    "class": "OglRenderer",
+    "signature": "void fn_005331F0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0042FAA0 (Unknown::toggleFlagF5).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00533240": {
     "name": "OglRenderer::vfunc_50",
     "class": "OglRenderer",
@@ -11362,6 +11423,20 @@
     "signature": "extern \"C\" void fn_00536530(void)",
     "summary": "Pure jump thunk forwarding to sub_00505D00.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x00536CC0": {
+    "name": "OglRenderer::vfunc_90",
+    "class": "OglRenderer",
+    "signature": "void fn_00536CC0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0042FAA0 (Unknown::toggleFlagF5).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00536D70": {
+    "name": "OglRenderer::vfunc_7",
+    "class": "OglRenderer",
+    "signature": "void fn_00536D70(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0042FAA0 (Unknown::toggleFlagF5).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x00536DB0": {
     "name": "OglRenderer::vfunc_9",

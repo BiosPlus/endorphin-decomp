@@ -5562,3 +5562,57 @@ void fn_00402150(void* self) {
     (void)target(adj);
 }
 } // namespace lift_00402150
+
+// [0x005331F0] OglRenderer::vfunc_88 (17 bytes)
+namespace lift_005331F0 {
+// @name OglRenderer::vfunc_88
+// @class OglRenderer
+// @summary Auto-lifted identical-shape clone of 0x0042FAA0 (Unknown::toggleFlagF5).
+// @field OglRenderer +0x378 uint8_t field_0x378
+namespace lift_0042FAA0 {
+// @name Unknown::toggleFlagF5
+// @class Unknown
+// @summary Logically negates the byte flag at this+0xF5 in place (sets it to 1 if it was 0, otherwise 0).
+// @field Unknown +0xF5 uint8_t field_0xF5
+void fn_005331F0(void* self) {
+    uint8_t& flag = lift_field<uint8_t>(self, 0x378);
+    flag = static_cast<uint8_t>(flag == 0);
+}
+} // namespace lift_0042FAA0
+} // namespace lift_005331F0
+
+// [0x00536CC0] OglRenderer::vfunc_90 (17 bytes)
+namespace lift_00536CC0 {
+// @name OglRenderer::vfunc_90
+// @class OglRenderer
+// @summary Auto-lifted identical-shape clone of 0x0042FAA0 (Unknown::toggleFlagF5).
+// @field OglRenderer +0x288 uint8_t field_0x288
+namespace lift_0042FAA0 {
+// @name Unknown::toggleFlagF5
+// @class Unknown
+// @summary Logically negates the byte flag at this+0xF5 in place (sets it to 1 if it was 0, otherwise 0).
+// @field Unknown +0xF5 uint8_t field_0xF5
+void fn_00536CC0(void* self) {
+    uint8_t& flag = lift_field<uint8_t>(self, 0x288);
+    flag = static_cast<uint8_t>(flag == 0);
+}
+} // namespace lift_0042FAA0
+} // namespace lift_00536CC0
+
+// [0x00536D70] OglRenderer::vfunc_7 (17 bytes)
+namespace lift_00536D70 {
+// @name OglRenderer::vfunc_7
+// @class OglRenderer
+// @summary Auto-lifted identical-shape clone of 0x0042FAA0 (Unknown::toggleFlagF5).
+// @field OglRenderer +0x1DA uint8_t field_0x1DA
+namespace lift_0042FAA0 {
+// @name Unknown::toggleFlagF5
+// @class Unknown
+// @summary Logically negates the byte flag at this+0xF5 in place (sets it to 1 if it was 0, otherwise 0).
+// @field Unknown +0xF5 uint8_t field_0xF5
+void fn_00536D70(void* self) {
+    uint8_t& flag = lift_field<uint8_t>(self, 0x1DA);
+    flag = static_cast<uint8_t>(flag == 0);
+}
+} // namespace lift_0042FAA0
+} // namespace lift_00536D70

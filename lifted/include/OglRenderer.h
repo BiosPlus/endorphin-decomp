@@ -13,6 +13,9 @@ struct OglRenderer_Fields {
     // +0x38  void*                    delegate_0x38  (evidence: 0x004646A0, 0x0046FE50, 0x0046FE70, 0x005355B0, 0x005355C0, 0x005355D0, 0x005355E0, 0x005355F0, 0x00535600, 0x005356B0, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0x38
     // +0x38  void*                    field_0x38  (evidence: 0x005353F0, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0x38
     // +0x80  uint32_t                 field_0x80  (evidence: 0x005353F0, 0x005A9ED0, 0x005FF1C0)
+    // +0x1DA uint8_t                  field_0x1DA  (evidence: 0x00536D70)
+    // +0x288 uint8_t                  field_0x288  (evidence: 0x00536CC0)
+    // +0x378 uint8_t                  field_0x378  (evidence: 0x005331F0)
     // +0x3F4 float                    field_0x3F4  (evidence: 0x00533A30, 0x005A9ED0, 0x005FF1C0)
     // +0x3FC float                    field_0x3FC  (evidence: 0x00533A40, 0x005A9ED0, 0x005FF1C0)
     // +0x400 float                    field_0x400  (evidence: 0x00533AE0, 0x005A9ED0, 0x005FF1C0)
