@@ -1062,3 +1062,36 @@ extern int32_t __stdcall fn_00430520(void* arg1) {
     return vfunc(arg1, mode == 3 ? 1 : 0);
 }
 } // namespace lift_00430520
+
+// [0x0043D230]
+namespace lift_0043D230 {
+extern uint8_t __thiscall ext_0041C600(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+extern void ext_006A5EA8(void);
+
+// @name forwardVtableCall7OrFallback
+// @summary Forwards a 3-argument call to field_0x64 via forwardVtableCall7, falling back to MFC80_ord_1903 if it returns false.
+// @field Unknown +0x64 uint8_t field_0x64
+void __thiscall fn_0043D230(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    if (!ext_0041C600(base + 0x64, arg1, arg2, arg3)) {
+        ext_006A5EA8();
+    }
+}
+} // namespace lift_0043D230
+
+// [0x0043D1D0]
+namespace lift_0043D1D0 {
+// @name sub_0043D1D0
+// @summary Forwards a 3-argument call to field_0x64 via sub_0041C5A0, falling back to MFC80_ord_1903 on false.
+// @field unknown +0x64 uint32_t field_0x64
+
+
+extern bool __thiscall ext_0041C5A0(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+extern void __thiscall ext_006A5EA8(uint32_t self);
+
+void __thiscall fn_0043D1D0(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    if (!ext_0041C5A0(self + 0x64u, arg1, arg2, arg3)) {
+        ext_006A5EA8(self);
+    }
+}
+} // namespace lift_0043D1D0
