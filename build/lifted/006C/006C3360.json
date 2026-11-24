@@ -1,0 +1,22 @@
+{
+  "va": "0x006C3360",
+  "size": 48,
+  "orig_symbol": "sub_006C3360",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "sub_006C3360",
+  "class": "Unknown",
+  "signature": "void __thiscall sub_006C3360(void* self, uint32_t index, uint32_t value)",
+  "summary": "Sets a 32-bit field at offset 0x1f04 in an indexed 0x1f0-byte entry of the subobject at this+0xf0",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "uint32_t",
+      "name": "field_0xf0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:23:39Z"
+}
