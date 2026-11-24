@@ -487,3 +487,32 @@ DWORD __thiscall fn_005434F0(void* self) {
     return target(self);
 }
 } // namespace lift_005434F0
+
+// [0x00543E00]
+namespace lift_00543E00 {
+// @name accumulateClampedFloat
+// @summary Adds a float delta to the field at +0x14, clamps low to 0.1f, and resets to 0.1f when above 1.0.
+// @field Unknown +0x14 float field_0x14
+
+extern const double mem_0092C508; // .rdata double 0.10000000149011612
+extern const float  mem_0093F8EC; // .rdata float 0.1 (u32 0x3DCCCCCD)
+
+// __thiscall: ecx = self, one stack argument (float delta), callee cleans stack (ret 4).
+void __thiscall fn_00543E00(void* self, float delta) {
+    float& value = lift_field<float>(self, 0x14);
+
+    // x = delta + value, rounded to float and stored back.
+    value = delta + value;
+
+    // if (value < 0.1) value = 0.1f;  (unordered falls through to the second check)
+    if (static_cast<double>(value) < mem_0092C508) {
+        value = mem_0093F8EC;
+        return;
+    }
+
+    // if (1.0f < value) value = 0.1f;  (NaN/unordered leaves value unchanged)
+    if (1.0f < value) {
+        value = mem_0093F8EC;
+    }
+}
+} // namespace lift_00543E00

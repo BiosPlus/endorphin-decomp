@@ -1,0 +1,21 @@
+{
+  "va": "0x00543E00",
+  "size": 55,
+  "orig_symbol": "sub_00543E00",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "accumulateClampedFloat",
+  "signature": "extern const float  mem_0093F8EC; // .rdata float 0.1 (u32 0x3DCCCCCD) void __thiscall fn_00543E00(void* self, float delta)",
+  "summary": "Adds a float delta to the field at +0x14, clamps low to 0.1f, and resets to 0.1f when above 1.0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:14:15Z"
+}

@@ -18319,6 +18319,12 @@
     "summary": "Toggles a byte flag (at sub-object +0x04) to its logical NOT; sub-object pointer lives at self+0x84.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00543E00": {
+    "name": "accumulateClampedFloat",
+    "signature": "extern const float  mem_0093F8EC; // .rdata float 0.1 (u32 0x3DCCCCCD) void __thiscall fn_00543E00(void* self, float delta)",
+    "summary": "Adds a float delta to the field at +0x14, clamps low to 0.1f, and resets to 0.1f when above 1.0.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00544040": {
     "name": "ForceApplicationTool::vfunc_23",
     "class": "ForceApplicationTool",
@@ -34002,6 +34008,12 @@
     "signature": "extern \"C\" void __fastcall fn_00661AD0(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0x4 and tail-calls sub_0065D300.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
+  "0x00661B10": {
+    "name": "sub_00661B10",
+    "signature": "uint8_t __thiscall sub_00661B10(void* self)",
+    "summary": "Checks if a checked iterator points to the first element of its container",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x006629B0": {
     "name": "fileExists",
