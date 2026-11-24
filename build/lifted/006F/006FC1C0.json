@@ -1,0 +1,22 @@
+{
+  "va": "0x006FC1C0",
+  "size": 19,
+  "orig_symbol": "sub_006FC1C0",
+  "src_path": "src/leaf/tiny_6F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6F0000.cpp",
+  "name": "sub_006FC1C0",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void fn_006FC1C0(void* self)",
+  "summary": "Virtual dispatch: calls vtable slot 16 (offset +0x40) on self with args (0, 0x10, self, -1, 0, 0, 0).",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x0",
+      "type": "void* vptr",
+      "name": "(field_0x00)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:03:45Z"
+}

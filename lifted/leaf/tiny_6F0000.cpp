@@ -2648,3 +2648,29 @@ BOOL fn_006FA190(int arg) {
     return arg == mem_00B5E400 ? TRUE : FALSE;
 }
 } // namespace lift_006FA190
+
+// [0x006FC1C0] sub_006FC1C0 (19 bytes)
+namespace lift_006FC1C0 {
+// @name sub_006FC1C0
+// @class <ClassName> (optional)
+// @summary Virtual dispatch: calls vtable slot 16 (offset +0x40) on self with args (0, 0x10, self, -1, 0, 0, 0).
+// @field <ClassName> +0x00 void* vptr (field_0x00)
+
+// Callee signature for the vtable entry. The original pushes seven stack
+// arguments in this order (arg1 first) with `self` in the this register.
+using VSlot16Fn = void (*)(void* self,
+                           int32_t a1,
+                           int32_t a2,
+                           void* a3,
+                           int32_t a4,
+                           int32_t a5,
+                           int32_t a6,
+                           int32_t a7);
+
+void fn_006FC1C0(void* self) {
+    // self->vptr (field_0x00); the entry is at vtable + 0x40.
+    void** vtbl = *static_cast<void***>(self);
+    VSlot16Fn slot = reinterpret_cast<VSlot16Fn>(vtbl[0x40 / sizeof(void*)]);
+    slot(self, 0, 0x10, self, -1, 0, 0, 0);
+}
+} // namespace lift_006FC1C0
