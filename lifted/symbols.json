@@ -46823,6 +46823,12 @@
     "summary": "No-op: `add eax, 0` (opcode 05 with imm32 0), which leaves eax unchanged; only flags are touched.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x00870320": {
+    "name": "initPairWithMemberLookup",
+    "signature": "DWORD* fn_00870320(void* self, DWORD* outPair)",
+    "summary": "Calls ext_0049D360 on (this + 4) and initializes outPair with (result, this + 4), returning outPair.",
+    "lifted_path": "lifted/leaf/decompiled_870000.cpp"
+  },
   "0x008703B0": {
     "name": "Unknown::ctorResetFields_008703B0",
     "class": "Unknown",

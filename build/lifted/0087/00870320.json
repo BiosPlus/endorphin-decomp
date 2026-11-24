@@ -1,0 +1,21 @@
+{
+  "va": "0x00870320",
+  "size": 38,
+  "orig_symbol": "sub_00870320",
+  "src_path": "src/leaf/decompiled_870000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_870000.cpp",
+  "name": "initPairWithMemberLookup",
+  "signature": "DWORD* fn_00870320(void* self, DWORD* outPair)",
+  "summary": "Calls ext_0049D360 on (this + 4) and initializes outPair with (result, this + 4), returning outPair.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:50:05Z"
+}

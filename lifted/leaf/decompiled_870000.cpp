@@ -63,3 +63,19 @@ extern int __stdcall fn_008727FB(uint32_t arg1, uint32_t arg2) {
     return 1;
 }
 } // namespace lift_008727FB
+
+// [0x00870320]
+namespace lift_00870320 {
+DWORD ext_0049D360(void* arg);
+void ext_0055DA20(DWORD* self, DWORD a, DWORD b);
+
+// @name initPairWithMemberLookup
+// @summary Calls ext_0049D360 on (this + 4) and initializes outPair with (result, this + 4), returning outPair.
+// @field Unknown +0x04 DWORD field_0x04
+DWORD* fn_00870320(void* self, DWORD* outPair) {
+    DWORD* member = reinterpret_cast<DWORD*>(reinterpret_cast<BYTE*>(self) + 4);
+    DWORD res = ext_0049D360(member);
+    ext_0055DA20(outPair, res, static_cast<DWORD>(reinterpret_cast<uintptr_t>(member)));
+    return outPair;
+}
+} // namespace lift_00870320
