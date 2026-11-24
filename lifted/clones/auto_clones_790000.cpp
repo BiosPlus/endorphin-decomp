@@ -75,3 +75,16 @@ void sub_0079B960_initGlobalQuad() {
     mem_00B60FBC = 0x00000000u;
 }
 } // namespace lift_0079B960
+
+// [0x0079BA10]
+namespace lift_0079BA10 {
+extern uint32_t mem_00B60F58;
+extern uint32_t mem_00B5EB78;
+extern uint32_t mem_00B5E400;
+
+// @name isKnownGlobalValue
+// @summary Checks whether the argument matches any of three global 32-bit values
+uint8_t __stdcall sub_0079BA10(uint32_t value) {
+    return (value == mem_00B60F58 || value == mem_00B5EB78 || value == mem_00B5E400) ? 1 : 0;
+}
+} // namespace lift_0079BA10

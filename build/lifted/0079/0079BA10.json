@@ -1,0 +1,13 @@
+{
+  "va": "0x0079BA10",
+  "size": 44,
+  "orig_symbol": "sub_0079BA10",
+  "src_path": "src/clones/auto_clones_790000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_790000.cpp",
+  "name": "isKnownGlobalValue",
+  "signature": "uint8_t __stdcall sub_0079BA10(uint32_t value)",
+  "summary": "Checks whether the argument matches any of three global 32-bit values",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:11:10Z"
+}
