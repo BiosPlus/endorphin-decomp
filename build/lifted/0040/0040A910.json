@@ -4,11 +4,65 @@
   "orig_symbol": "sub_0040A910",
   "src_path": "src/leaf/decompiled_400000.cpp",
   "lifted_path": "lifted/leaf/decompiled_400000.cpp",
-  "name": "Unknown::forwardSubobject68ThenMfcOrd297",
-  "class": "Unknown",
-  "signature": "void* fn_0040A910(void* self, void* arg1)",
-  "summary": "Calls MFC80 ordinal 297 on the argument with (this+0x68, 0) and returns the argument.",
+  "name": "sub_00407830",
+  "class": "unknown",
+  "signature": "void fn_00407830(void* self)",
+  "summary": "Passes the field at self+0x20 to USER32!GetDC, then forwards the returned HDC to MFC80 ord_2367.",
   "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "heldPtr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vfptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "struct_0040F270",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xDC",
+      "type": "void*",
+      "name": "field_0xdc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xE4",
+      "type": "void*",
+      "name": "field_0xe4"
+    },
     {
       "class": "Unknown",
       "offset": "+0x68",
@@ -18,5 +72,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:52:35Z"
+  "lifted_at": "2026-11-24T12:52:41Z"
 }
