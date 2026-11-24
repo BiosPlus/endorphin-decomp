@@ -1413,3 +1413,18 @@ void Unknown_ClearFieldsA(void* self) {
     *reinterpret_cast<uint32_t*>(p + 0x10) = 0u;
 }
 } // namespace lift_006C9F60
+
+// [0x006C9E90] sub_006C9E90 (16 bytes)
+namespace lift_006C9E90 {
+// @name Unknown::ScaleFloatField
+// @class Unknown
+// @summary Multiplies the float at [this+0x00] by the float argument and stores it back in place.
+// @field Unknown +0x00 float field_0x00
+//
+// Original: fld [esp+4]; fmul [ecx]; fstp [ecx]; ret 4
+// Convention: thiscall (this in ECX), one float stack argument, callee pops 4 bytes.
+void fn_006C9E90(void* self, float factor) {
+    auto* value = static_cast<float*>(self);
+    *value = *value * factor;
+}
+} // namespace lift_006C9E90

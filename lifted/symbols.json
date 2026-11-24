@@ -32019,6 +32019,13 @@
     "summary": "Getter returning float field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C9E90": {
+    "name": "Unknown::ScaleFloatField",
+    "class": "Unknown",
+    "signature": "void fn_006C9E90(void* self, float factor)",
+    "summary": "Multiplies the float at [this+0x00] by the float argument and stores it back in place.",
+    "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
+  },
   "0x006C9F50": {
     "name": "Unknown::GetFlagBit16",
     "class": "Unknown",

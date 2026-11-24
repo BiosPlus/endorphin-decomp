@@ -1,0 +1,22 @@
+{
+  "va": "0x006C9E90",
+  "size": 16,
+  "orig_symbol": "sub_006C9E90",
+  "src_path": "src/leaf/tiny_6C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6C0000.cpp",
+  "name": "Unknown::ScaleFloatField",
+  "class": "Unknown",
+  "signature": "void fn_006C9E90(void* self, float factor)",
+  "summary": "Multiplies the float at [this+0x00] by the float argument and stores it back in place.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:39:04Z"
+}
