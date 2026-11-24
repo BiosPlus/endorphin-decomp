@@ -1,0 +1,13 @@
+{
+  "va": "0x00798C98",
+  "size": 47,
+  "orig_symbol": "sub_00798C98",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "lookupTable_00798C98",
+  "signature": "void fn_00798C98(void* self)",
+  "summary": "47-byte index-to-class lookup table (default 0x0c; sparse entries 0x00-0x0a); data, not code",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:12:48Z"
+}
