@@ -41166,3 +41166,31 @@ extern uint32_t fn_004B1990(void* self_ref) {
 }
 } // namespace lift_004B1990
 } // namespace lift_004B1990
+
+// [0x005B2510] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_0 (113 bytes)
+namespace lift_005B2510 {
+// sub_005B1220 (138B): builds a std::string into `out` from the object's vtable pointer; returns `out`.
+extern void* ext_005B1220(void* out, void* vtbl);
+// sub_006720E0 (43B): thiscall helper on `self`, receives the string returned above.
+extern void ext_006720E0(void* self, void* str);
+// Import slot for std::string::~basic_string (the value is the destructor's address).
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<Geometry>::vfunc_0 (Geometry::getTypeNameNonConst)
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>
+// @summary Builds the Geometry type-name string from the object's vtable, forwards it to a helper, destroys the temporary, and returns self.
+// @field ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0> +0x00 void* vftable
+void* fn_005B2510(void* self, void* /*second stack arg, unused (ret 0x8)*/) {
+    // Temporary std::string storage (MSVC 8.0 std::string is 0x1C bytes).
+    alignas(8) unsigned char str_buf[0x1C] = {};
+
+    void* vtbl = lift_field<void*>(self, 0x00);
+    void* str = ext_005B1220(str_buf, vtbl);
+    ext_006720E0(self, str);
+
+    using StrDtor = void (*)(void*);
+    reinterpret_cast<StrDtor>(static_cast<uintptr_t>(mem_00924FF4))(str_buf);
+
+    return self;
+}
+} // namespace lift_005B2510
