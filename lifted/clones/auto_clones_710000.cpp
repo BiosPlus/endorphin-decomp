@@ -853,3 +853,49 @@ uint8_t __stdcall sub_00715130(uint32_t val) {
     return val == mem_00B5E400 ? 1 : 0;
 }
 } // namespace lift_00715130
+
+// [0x00710590]
+namespace lift_00710590 {
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5F078;
+extern uint32_t mem_00B5F07C;
+extern uint32_t mem_00B5F080;
+extern uint32_t mem_00B5F084;
+extern uint32_t mem_00B5F088;
+extern uint32_t mem_00B5F08C;
+
+// @name initHugeDoubleTriplet
+// @summary Initializes three 64-bit values at 0x00B5F078..0x00B5F08C from MSVCR80!_HUGE.
+void sub_00710590() {
+    uint32_t* huge_ptr = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5F078 = huge_ptr[0];
+    mem_00B5F07C = huge_ptr[1];
+    mem_00B5F080 = huge_ptr[0];
+    mem_00B5F084 = huge_ptr[1];
+    mem_00B5F088 = huge_ptr[0];
+    mem_00B5F08C = huge_ptr[1];
+}
+} // namespace lift_00710590
+
+// [0x00710C00]
+namespace lift_00710C00 {
+extern uint32_t* mem_00925284;
+extern uint32_t mem_00B5F228;
+extern uint32_t mem_00B5F22C;
+extern uint32_t mem_00B5F230;
+extern uint32_t mem_00B5F234;
+extern uint32_t mem_00B5F238;
+extern uint32_t mem_00B5F23C;
+
+// @name initHugeVec3
+// @summary Initializes three 64-bit global values (0x00B5F228..0x00B5F23C) from MSVCR80!_HUGE.
+void sub_00710C00() {
+    const uint32_t* huge_ptr = mem_00925284;
+    mem_00B5F228 = huge_ptr[0];
+    mem_00B5F22C = huge_ptr[1];
+    mem_00B5F230 = huge_ptr[0];
+    mem_00B5F234 = huge_ptr[1];
+    mem_00B5F238 = huge_ptr[0];
+    mem_00B5F23C = huge_ptr[1];
+}
+} // namespace lift_00710C00

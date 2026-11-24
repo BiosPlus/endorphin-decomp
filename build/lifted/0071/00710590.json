@@ -1,0 +1,13 @@
+{
+  "va": "0x00710590",
+  "size": 57,
+  "orig_symbol": "sub_00710590",
+  "src_path": "src/clones/auto_clones_710000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_710000.cpp",
+  "name": "initHugeDoubleTriplet",
+  "signature": "void sub_00710590()",
+  "summary": "Initializes three 64-bit values at 0x00B5F078..0x00B5F08C from MSVCR80!_HUGE.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:24:17Z"
+}
