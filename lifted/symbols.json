@@ -12956,9 +12956,9 @@
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
   "0x00519C80": {
-    "name": "initStringAndCounters",
-    "signature": "void* fn_00519C80(void* self)",
-    "summary": "Constructs a vtable-tagged object holding a std::string built from a literal, then zeroes two counters and sets a flag to 1; returns this.",
+    "name": "sub_005136C0",
+    "signature": "void* fn_005136C0(void* self, void* pair, DWORD b)",
+    "summary": "Auto-lifted identical-shape clone of 0x00500310 (DwordPairInitFromCall_00500310).",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
   "0x00519CE0": {

@@ -4,10 +4,10 @@
   "orig_symbol": "sub_00519C80",
   "src_path": "src/leaf/decompiled_650000.cpp",
   "lifted_path": "lifted/leaf/decompiled_650000.cpp",
-  "name": "initStringAndCounters",
-  "signature": "void* fn_00519C80(void* self)",
-  "summary": "Constructs a vtable-tagged object holding a std::string built from a literal, then zeroes two counters and sets a flag to 1; returns this.",
+  "name": "sub_005136C0",
+  "signature": "void* fn_005136C0(void* self, void* pair, DWORD b)",
+  "summary": "Auto-lifted identical-shape clone of 0x00500310 (DwordPairInitFromCall_00500310).",
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T13:58:35Z"
+  "lifted_at": "2026-11-24T13:58:42Z"
 }
