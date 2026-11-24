@@ -4,10 +4,89 @@
   "orig_symbol": "sub_0069B680",
   "src_path": "src/leaf/tiny_690000.cpp",
   "lifted_path": "lifted/leaf/tiny_690000.cpp",
-  "name": "shrinkEndByOneSlotIfNonEmpty",
-  "signature": "void fn_0069B680(void* self)",
-  "summary": "If the pointer at +0x4 is non-null and (end - begin) \u003e\u003e 3 is nonzero, subtract 8 from the pointer at +0x8.",
+  "name": "sub_00699040",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __fastcall fn_00699040(void* self)",
+  "summary": "Stores address of mem_0098FABC into field at offset +0x0.",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "struct",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "struct",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "struct",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "struct",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "struct",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Struct",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Struct",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Struct",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Struct",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Struct",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
     {
       "class": "\u003cunknown\u003e",
       "offset": "+0x4",
@@ -23,5 +102,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:19:28Z"
+  "lifted_at": "2026-11-24T12:19:33Z"
 }

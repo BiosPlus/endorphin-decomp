@@ -29137,9 +29137,10 @@
     "lifted_path": "lifted/ExprParser/SingleVariableContainer.cpp"
   },
   "0x0069B680": {
-    "name": "shrinkEndByOneSlotIfNonEmpty",
-    "signature": "void fn_0069B680(void* self)",
-    "summary": "If the pointer at +0x4 is non-null and (end - begin) \u003e\u003e 3 is nonzero, subtract 8 from the pointer at +0x8.",
+    "name": "sub_00699040",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_00699040(void* self)",
+    "summary": "Stores address of mem_0098FABC into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_690000.cpp"
   },
   "0x006A0340": {
