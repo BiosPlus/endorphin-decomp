@@ -35380,6 +35380,13 @@
     "summary": "Reads and returns the 32-bit value at offset 0x14 from the pointer argument.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C6FD0": {
+    "name": "setField18_007C6FD0",
+    "class": "unknown",
+    "signature": "void setField18_007C6FD0(uint8_t* self, uint32_t value)",
+    "summary": "Stores a 32-bit value (second stack argument) into the object at offset +0x18 of the first argument.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C6FF0": {
     "name": "get_field_0x7c",
     "signature": "extern \"C\" uint32_t sub_007C6FF0(uint32_t obj)",

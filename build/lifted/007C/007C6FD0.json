@@ -1,0 +1,22 @@
+{
+  "va": "0x007C6FD0",
+  "size": 12,
+  "orig_symbol": "sub_007C6FD0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "setField18_007C6FD0",
+  "class": "unknown",
+  "signature": "void setField18_007C6FD0(uint8_t* self, uint32_t value)",
+  "summary": "Stores a 32-bit value (second stack argument) into the object at offset +0x18 of the first argument.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:16:46Z"
+}

@@ -402,3 +402,14 @@ void fn_007CC9E0(uint32_t* p) {
     *p += 0xFFFFFF00u;
 }
 } // namespace lift_007CC9E0
+
+// [0x007C6FD0]
+namespace lift_007C6FD0 {
+// @name setField18_007C6FD0
+// @class unknown
+// @summary Stores a 32-bit value (second stack argument) into the object at offset +0x18 of the first argument.
+// @field unknown +0x18 uint32_t field_0x18
+void setField18_007C6FD0(uint8_t* self, uint32_t value) {
+    *reinterpret_cast<uint32_t*>(self + 0x18) = value;
+}
+} // namespace lift_007C6FD0
