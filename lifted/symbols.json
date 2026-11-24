@@ -47266,6 +47266,12 @@
     "summary": "Pure jump thunk forwarding to sub_00784720.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00784720": {
+    "name": "resetBufferState",
+    "signature": "void fn_00784720(void* self)",
+    "summary": "Frees the owned buffer at +0x00 (if non-null), then zeroes the buffer pointer, +0x04, +0x08 and the flag byte at +0x10.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00784790": {
     "name": "compareUint32Ptr",
     "signature": "int32_t __cdecl sub_00784790(const uint32_t* a, const uint32_t* b)",

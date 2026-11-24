@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_780000.cpp
 #include "lift_compat.h"
 #include <cstdio>
+#include <cstdlib>
 
 // [0x00780250]
 namespace lift_00780250 {
@@ -523,3 +524,23 @@ void bumpNodeChainCounters(Node* self)
     }
 }
 } // namespace lift_007837A0
+
+// [0x00784720] sub_00784720 (48 bytes)
+namespace lift_00784720 {
+// @name resetBufferState
+// @summary Frees the owned buffer at +0x00 (if non-null), then zeroes the buffer pointer, +0x04, +0x08 and the flag byte at +0x10.
+// @field Unknown +0x00 void* buffer
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint8_t field_0x10
+void fn_00784720(void* self) {
+    void*& buffer = lift_field<void*>(self, 0x00);
+    if (buffer != nullptr) {
+        std::free(buffer);
+        buffer = nullptr;
+    }
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint8_t>(self, 0x10) = 0;
+}
+} // namespace lift_00784720
