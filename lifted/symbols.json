@@ -45046,6 +45046,12 @@
     "summary": "Stores the argument into global mem_00B62020 and returns the previous value.",
     "lifted_path": "lifted/leaf/tiny_800000.cpp"
   },
+  "0x0080ABC0": {
+    "name": "LeaveGlobalCriticalSection",
+    "signature": "void fn_0080ABC0(void)",
+    "summary": "Ensures the global critical section is initialized, then leaves it via the imported LeaveCriticalSection.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080ABE0": {
     "name": "InitCriticalSectionAndSetReadyFlag",
     "signature": "void fn_0080ABE0(void)",

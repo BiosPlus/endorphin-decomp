@@ -125,3 +125,22 @@ void fn_0080AD90(void) {
     mem_00B73C84 = 1;
 }
 } // namespace lift_0080AD90
+
+// [0x0080ABC0]
+namespace lift_0080ABC0 {
+// @name LeaveGlobalCriticalSection
+// @summary Ensures the global critical section is initialized, then leaves it via the imported LeaveCriticalSection.
+
+extern void ext_0080ABE0(void);
+extern uint32_t mem_00B73C80;
+extern uint8_t mem_00B73C58[];
+extern void* mem_009241BC;
+
+void fn_0080ABC0(void) {
+    if (mem_00B73C80 == 0) {
+        ext_0080ABE0();
+    }
+    using LeaveCriticalSectionFn = void(__stdcall*)(void*);
+    reinterpret_cast<LeaveCriticalSectionFn>(mem_009241BC)(mem_00B73C58);
+}
+} // namespace lift_0080ABC0
