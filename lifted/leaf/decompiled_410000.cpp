@@ -138,3 +138,41 @@ void fn_0041DE10(void* self, int edx_unused, int a1, int a2) {
 }
 } // namespace lift_005694F0
 } // namespace lift_0041DE10
+
+// [0x00415F97]
+namespace lift_00415F97 {
+// @name getSysColorOrField
+// @summary Returns system color COLOR_3DFACE (0xF) if eax is non-zero and [ecx+0x54] == -1, otherwise branches to 0x415FB3/0x415FBA
+// @field Unknown +0x54 int32_t field_0x54
+
+extern uint32_t __stdcall GetSysColor(int32_t nIndex);
+
+uint32_t __fastcall sub_00415F97(void* ecx_val, uint32_t eax_val) {
+    if (eax_val != 0) {
+        int32_t val = *reinterpret_cast<int32_t*>(reinterpret_cast<uint8_t*>(ecx_val) + 0x54);
+        if (val == -1) {
+            return GetSysColor(0xF);
+        }
+    }
+    return 0;
+}
+} // namespace lift_00415F97
+
+// [0x00419990]
+namespace lift_00419990 {
+// @name setFieldAndMaybeCall
+// @summary Stores arg0 into field_0x04 of arg3, calls ext_00419960(arg3) if arg1 == 1, and returns 0.
+// @field Object +0x04 uint32_t field_0x04
+
+
+extern void __thiscall ext_00419960(uintptr_t self);
+
+uint32_t __stdcall sub_00419990(uint32_t arg0, uint32_t arg1, uint32_t arg2, uintptr_t arg3) {
+    (void)arg2;
+    *reinterpret_cast<uint32_t*>(arg3 + 0x4) = arg0;
+    if (arg1 == 1) {
+        ext_00419960(arg3);
+    }
+    return 0;
+}
+} // namespace lift_00419990

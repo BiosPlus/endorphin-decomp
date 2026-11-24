@@ -958,6 +958,12 @@
     "summary": "Destructor tail-call: restores vtable mem_0092C764 and tail-calls base destructor sub_00404650.",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x00415F97": {
+    "name": "getSysColorOrField",
+    "signature": "uint32_t __fastcall sub_00415F97(void* ecx_val, uint32_t eax_val)",
+    "summary": "Returns system color COLOR_3DFACE (0xF) if eax is non-zero and [ecx+0x54] == -1, otherwise branches to 0x415FB3/0x415FBA",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00415FF6": {
     "name": "GetSysColorBtnFace_TailThunk",
     "signature": "DWORD fn_00415FF6(void* self, int /*ignored stack arg, overwritten with 0xF*/)",
@@ -1118,6 +1124,12 @@
     "signature": "void* fn_00419940(void* self, uint32_t arg)",
     "summary": "Forwards its single stack argument to MFC80 ordinal 297 and returns this unchanged.",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
+  "0x00419990": {
+    "name": "setFieldAndMaybeCall",
+    "signature": "uint32_t __stdcall sub_00419990(uint32_t arg0, uint32_t arg1, uint32_t arg2, uintptr_t arg3)",
+    "summary": "Stores arg0 into field_0x04 of arg3, calls ext_00419960(arg3) if arg1 == 1, and returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
   "0x00419E20": {
     "name": "FolderDialog::vfunc_79",
