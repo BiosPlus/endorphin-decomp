@@ -1,0 +1,34 @@
+{
+  "va": "0x0067F8F0",
+  "size": 32,
+  "orig_symbol": "sub_0067F8F0",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "Unknown::PopBackIfSpanAtLeast4",
+  "class": "Unknown",
+  "signature": "void fn_0067F8F0(void* self)",
+  "summary": "If the element range [begin, end) spans at least one 4-byte slot, decrement end by 4 (pop back).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint8_t* field_0x00 (pointer to range-holder",
+      "name": "struct)"
+    },
+    {
+      "class": "RangeHolder",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04 (range",
+      "name": "begin)"
+    },
+    {
+      "class": "RangeHolder",
+      "offset": "+0x8",
+      "type": "uint32_t field_0x08 (range",
+      "name": "end)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:32:24Z"
+}

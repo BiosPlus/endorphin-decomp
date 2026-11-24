@@ -50,3 +50,27 @@ void fn_00672E50(void* self, int edx_unused, int a1, int a2) {
 }
 } // namespace lift_005694F0
 } // namespace lift_00672E50
+
+// [0x0067F8F0] sub_0067F8F0 (32 bytes)
+namespace lift_0067F8F0 {
+// @name Unknown::PopBackIfSpanAtLeast4
+// @class Unknown
+// @summary If the element range [begin, end) spans at least one 4-byte slot, decrement end by 4 (pop back).
+// @field Unknown +0x00 uint8_t* field_0x00 (pointer to range-holder struct)
+// @field RangeHolder +0x04 uint32_t field_0x04 (range begin)
+// @field RangeHolder +0x08 uint32_t field_0x08 (range end)
+void fn_0067F8F0(void* self) {
+    uint8_t* holder = lift_field<uint8_t*>(self, 0x00);
+    uint32_t begin = lift_field<uint32_t>(holder, 0x04);
+    if (begin == 0) {
+        return;
+    }
+    uint32_t end = lift_field<uint32_t>(holder, 0x08);
+    // Original: esi = (end - begin) sar 2; ZF from that shift decides the branch.
+    int32_t span = static_cast<int32_t>(end - begin);
+    if ((span >> 2) == 0) {
+        return;
+    }
+    lift_field<uint32_t>(holder, 0x08) = end - 4;
+}
+} // namespace lift_0067F8F0

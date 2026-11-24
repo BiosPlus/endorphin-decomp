@@ -28880,6 +28880,13 @@
     "summary": "Reads a 32-bit index from the receiver and returns the entry at that index in the global table at 0x00B5CA88.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x0067F8F0": {
+    "name": "Unknown::PopBackIfSpanAtLeast4",
+    "class": "Unknown",
+    "signature": "void fn_0067F8F0(void* self)",
+    "summary": "If the element range [begin, end) spans at least one 4-byte slot, decrement end by 4 (pop back).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x006813B0": {
     "name": "sub_006813B0",
     "class": "(none)",
