@@ -8715,3 +8715,28 @@ void fn_004A2790(void* out) {
 }
 } // namespace lift_004A2790
 } // namespace lift_004A2790
+
+// [0x0049C270] ExprParser::ReadWriteMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::State::setFileName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_0049C270 {
+extern void ext_0067A670(void* thiz);
+extern int mem_00ADD800;
+extern int mem_00ADD7FC;
+
+// @name ExprParser::ReadWriteMethodType<NMData::State>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::State::setFileName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary One-time initializes a static accessor object at mem_00ADD7FC (guarded by bit 0 of mem_00ADD800), then stores its address into self+0x04.
+// @field ExprParser::ReadWriteMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::State::setFileName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}> +0x04 uint32_t field_0x04
+//
+// The original wraps the body in an SEH frame (fs:[0] push/restore); that is
+// dropped here as it has no portable equivalent and does not affect the logic.
+// The guard test/set is a bit-0 test on the dword at mem_00ADD800.
+// ext_0067A670 is called with the static object's address as its implicit `this`.
+void fn_0049C270(void* self) {
+    if ((mem_00ADD800 & 1) == 0) {
+        mem_00ADD800 |= 1;
+        ext_0067A670(&mem_00ADD7FC);
+        mem_00ADD7FC = 0x00940384;
+    }
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x04) = 0x00ADD7FCu;
+}
+} // namespace lift_0049C270
