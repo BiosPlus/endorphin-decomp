@@ -265,3 +265,34 @@ BOOL __thiscall sub_005B34C0(void* ecx) {
     return TRUE;
 }
 } // namespace lift_005B34C0
+
+// [0x005B68F0] sub_005B68F0 (56 bytes)
+namespace lift_005B68F0 {
+extern double mem_00928E78;
+
+// @name Unknown::ComputeScaledSubObjectValue
+// @class Unknown
+// @summary Returns 1000 * sub->[0x70] * vcall(sub->[0x30], &sub->[0x24]) for sub = self->[0x158], or 0.0 if sub is null.
+// @field Unknown +0x158 void* subObject
+// @field SubObject +0x24 void* embeddedAt24
+// @field SubObject +0x30 void* owner
+// @field SubObject +0x70 float scale
+float fn_005B68F0(void* self) {
+    void* sub = lift_field<void*>(self, 0x158);
+    if (sub == nullptr) {
+        return 0.0f;
+    }
+
+    void* owner = lift_field<void*>(sub, 0x30);
+    void** vtbl = lift_field<void**>(owner, 0);
+    void* slot = lift_field<void*>(vtbl, 0x0c);
+    void* arg = static_cast<uint8_t*>(sub) + 0x24;
+
+    auto fn = reinterpret_cast<float (*)(void*, void*)>(slot);
+    float t1 = fn(owner, arg);
+
+    float scale = lift_field<float>(sub, 0x70);
+    double prod = static_cast<double>(scale) * static_cast<double>(t1);
+    return static_cast<float>(prod * mem_00928E78);
+}
+} // namespace lift_005B68F0

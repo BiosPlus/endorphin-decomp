@@ -1,0 +1,40 @@
+{
+  "va": "0x005B68F0",
+  "size": 56,
+  "orig_symbol": "sub_005B68F0",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "Unknown::ComputeScaledSubObjectValue",
+  "class": "Unknown",
+  "signature": "float fn_005B68F0(void* self)",
+  "summary": "Returns 1000 * sub-\u003e[0x70] * vcall(sub-\u003e[0x30], \u0026sub-\u003e[0x24]) for sub = self-\u003e[0x158], or 0.0 if sub is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "subObject"
+    },
+    {
+      "class": "SubObject",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "embeddedAt24"
+    },
+    {
+      "class": "SubObject",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "owner"
+    },
+    {
+      "class": "SubObject",
+      "offset": "+0x70",
+      "type": "float",
+      "name": "scale"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:17:03Z"
+}

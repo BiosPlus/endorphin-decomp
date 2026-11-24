@@ -22956,6 +22956,13 @@
     "summary": "Thiscall getter: reads the pointer at this+0x14C; if null returns 0, otherwise reads a 32-bit index at (ptr)+0x2C and returns mem_0095F750[index].",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x005B68F0": {
+    "name": "Unknown::ComputeScaledSubObjectValue",
+    "class": "Unknown",
+    "signature": "float fn_005B68F0(void* self)",
+    "summary": "Returns 1000 * sub-\u003e[0x70] * vcall(sub-\u003e[0x30], \u0026sub-\u003e[0x24]) for sub = self-\u003e[0x158], or 0.0 if sub is null.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B6970": {
     "name": "getField0x04From005B6930",
     "signature": "float sub_005B6970()",
