@@ -19,6 +19,7 @@ bool fn_006CA060(void* self) {
 }
 } // namespace lift_00707980
 } // namespace lift_006CA060
+#include <cstdlib>
 
 // [0x006C3450] sub_006C3450 (32 bytes)
 namespace lift_006C3450 {
@@ -630,3 +631,17 @@ uint32_t __thiscall sub_006C3150(uint32_t this_ptr) {
     return 0;
 }
 } // namespace lift_006C3150
+
+// [0x006CA090]
+namespace lift_006CA090 {
+// @name sub_006CA090
+// @summary Conditionally subtracts a size from the global counter mem_00B5D768 and frees the pointer.
+extern int32_t mem_00B5D768;
+
+void sub_006CA090(void* ptr, int32_t size) {
+    if (ptr != nullptr) {
+        mem_00B5D768 -= size;
+    }
+    std::free(ptr);
+}
+} // namespace lift_006CA090

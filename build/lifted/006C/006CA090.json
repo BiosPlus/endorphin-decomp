@@ -1,0 +1,13 @@
+{
+  "va": "0x006CA090",
+  "size": 48,
+  "orig_symbol": "sub_006CA090",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "sub_006CA090",
+  "signature": "void sub_006CA090(void* ptr, int32_t size)",
+  "summary": "Conditionally subtracts a size from the global counter mem_00B5D768 and frees the pointer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:23:20Z"
+}
