@@ -3773,6 +3773,13 @@
     "summary": "Returns the address of the read-only global mem_009362B4 (0x009362B4).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004545A0": {
+    "name": "CWnd::IsChild",
+    "class": "CWnd",
+    "signature": "uint32_t __thiscall sub_004545A0(uint32_t this_, uint32_t child)",
+    "summary": "Checks whether the given window is a child window of this window using USER32!IsChild.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00454B60": {
     "name": "ConsoleWnd::vfunc_107",
     "class": "ConsoleWnd",
