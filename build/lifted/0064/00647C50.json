@@ -1,0 +1,28 @@
+{
+  "va": "0x00647C50",
+  "size": 20,
+  "orig_symbol": "sub_00647C50",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "sub_00647C50",
+  "class": "Unknown",
+  "signature": "extern void __thiscall fn_00647C50(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00647BF0 (Unknown::ForwardFloat68ToSubobjectA4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "float",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA4",
+      "type": "void*",
+      "name": "field_0xA4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T02:08:23Z"
+}

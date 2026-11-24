@@ -198,3 +198,63 @@ extern void __thiscall fn_00647BF0(void* self) {
     ext_0065AA30(subobject, self, value);
 }
 } // namespace lift_00647BF0
+
+// [0x00647C10] sub_00647C10 (20 bytes)
+namespace lift_00647C10 {
+// @name sub_00647C10
+// @summary Auto-lifted identical-shape clone of 0x00647BF0 (Unknown::ForwardFloat68ToSubobjectA4).
+namespace lift_00647BF0 {
+extern void __thiscall ext_0065ABE0(void* self, void* outer, float value);
+
+// @name Unknown::ForwardFloat68ToSubobjectA4
+// @class Unknown
+// @summary Loads float at this+0x68, then calls sub_0065AA30 on the subobject at this+0xA4 passing (this, float) as stack args (thiscall, callee pops 8).
+// @field Unknown +0x68 float field_0x68
+// @field Unknown +0xA4 void* field_0xA4
+extern void __thiscall fn_00647C10(void* self) {
+    float value = lift_field<float>(self, 0x68);
+    void* subobject = lift_field<void*>(self, 0xA4);
+    ext_0065ABE0(subobject, self, value);
+}
+} // namespace lift_00647BF0
+} // namespace lift_00647C10
+
+// [0x00647C30] sub_00647C30 (20 bytes)
+namespace lift_00647C30 {
+// @name sub_00647C30
+// @summary Auto-lifted identical-shape clone of 0x00647BF0 (Unknown::ForwardFloat68ToSubobjectA4).
+namespace lift_00647BF0 {
+extern void __thiscall ext_0065AAB0(void* self, void* outer, float value);
+
+// @name Unknown::ForwardFloat68ToSubobjectA4
+// @class Unknown
+// @summary Loads float at this+0x68, then calls sub_0065AA30 on the subobject at this+0xA4 passing (this, float) as stack args (thiscall, callee pops 8).
+// @field Unknown +0x68 float field_0x68
+// @field Unknown +0xA4 void* field_0xA4
+extern void __thiscall fn_00647C30(void* self) {
+    float value = lift_field<float>(self, 0x68);
+    void* subobject = lift_field<void*>(self, 0xA4);
+    ext_0065AAB0(subobject, self, value);
+}
+} // namespace lift_00647BF0
+} // namespace lift_00647C30
+
+// [0x00647C50] sub_00647C50 (20 bytes)
+namespace lift_00647C50 {
+// @name sub_00647C50
+// @summary Auto-lifted identical-shape clone of 0x00647BF0 (Unknown::ForwardFloat68ToSubobjectA4).
+namespace lift_00647BF0 {
+extern void __thiscall ext_0065AB40(void* self, void* outer, float value);
+
+// @name Unknown::ForwardFloat68ToSubobjectA4
+// @class Unknown
+// @summary Loads float at this+0x68, then calls sub_0065AA30 on the subobject at this+0xA4 passing (this, float) as stack args (thiscall, callee pops 8).
+// @field Unknown +0x68 float field_0x68
+// @field Unknown +0xA4 void* field_0xA4
+extern void __thiscall fn_00647C50(void* self) {
+    float value = lift_field<float>(self, 0x68);
+    void* subobject = lift_field<void*>(self, 0xA4);
+    ext_0065AB40(subobject, self, value);
+}
+} // namespace lift_00647BF0
+} // namespace lift_00647C50

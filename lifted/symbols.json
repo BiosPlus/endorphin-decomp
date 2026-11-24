@@ -23033,6 +23033,27 @@
     "summary": "Loads float at this+0x68, then calls sub_0065AA30 on the subobject at this+0xA4 passing (this, float) as stack args (thiscall, callee pops 8).",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00647C10": {
+    "name": "sub_00647C10",
+    "class": "Unknown",
+    "signature": "extern void __thiscall fn_00647C10(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00647BF0 (Unknown::ForwardFloat68ToSubobjectA4).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x00647C30": {
+    "name": "sub_00647C30",
+    "class": "Unknown",
+    "signature": "extern void __thiscall fn_00647C30(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00647BF0 (Unknown::ForwardFloat68ToSubobjectA4).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x00647C50": {
+    "name": "sub_00647C50",
+    "class": "Unknown",
+    "signature": "extern void __thiscall fn_00647C50(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00647BF0 (Unknown::ForwardFloat68ToSubobjectA4).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00647CA0": {
     "name": "sub_00647CA0",
     "signature": "extern \"C\" void __fastcall fn_00647CA0(void* self)",
