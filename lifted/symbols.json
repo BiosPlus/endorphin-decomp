@@ -18620,6 +18620,12 @@
     "summary": "Stores a 32-bit value at +0x154, then calls vtable slot 0 on the object at +0x190 if it is non-null.",
     "lifted_path": "lifted/leaf/tiny_5A0000.cpp"
   },
+  "0x005AA8D0": {
+    "name": "sub_005AA8D0",
+    "signature": "void __thiscall fn_005AA8D0(void* self, const void* src)",
+    "summary": "Assigns the incoming string to the member at +0x170, then if the object at +0x190 is non-null invokes its vtable slot 0.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005AA9E0": {
     "name": "sub_005AA9E0",
     "class": "Unknown",

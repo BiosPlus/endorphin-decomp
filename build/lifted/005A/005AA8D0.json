@@ -1,0 +1,27 @@
+{
+  "va": "0x005AA8D0",
+  "size": 45,
+  "orig_symbol": "sub_005AA8D0",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "sub_005AA8D0",
+  "signature": "void __thiscall fn_005AA8D0(void* self, const void* src)",
+  "summary": "Assigns the incoming string to the member at +0x170, then if the object at +0x190 is non-null invokes its vtable slot 0.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x170",
+      "type": "std::string",
+      "name": "field_0x170"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x190",
+      "type": "void*",
+      "name": "field_0x190"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:07:05Z"
+}

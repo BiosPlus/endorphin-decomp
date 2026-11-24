@@ -68,3 +68,30 @@ uint32_t sub_005A3DC0(uint32_t ebp) {
     return 0x005A3DADu;
 }
 } // namespace lift_005A3DC0
+
+// [0x005AA8D0] sub_005AA8D0 (45 bytes)
+namespace lift_005AA8D0 {
+// Import slot for std::basic_string<char> copy-assignment (MSVCP80), used as thiscall.
+extern int mem_00924FDC;
+
+// @name sub_005AA8D0
+// @summary Assigns the incoming string to the member at +0x170, then if the object at +0x190 is non-null invokes its vtable slot 0.
+// @field <ClassName> +0x170 std::string field_0x170
+// @field <ClassName> +0x190 void* field_0x190
+void __thiscall fn_005AA8D0(void* self, const void* src) {
+    using StrAssignFn = void* (__thiscall*)(void* self, const void* rhs);
+    using VFn = void (__thiscall*)(void* self);
+
+    auto assign = reinterpret_cast<StrAssignFn>(static_cast<uintptr_t>(mem_00924FDC));
+    auto* base = static_cast<unsigned char*>(self);
+
+    assign(base + 0x170, src);
+
+    void* obj = *reinterpret_cast<void**>(base + 0x190);
+    if (obj != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(obj);
+        auto slot0 = reinterpret_cast<VFn>(vtbl[0]);
+        slot0(obj);
+    }
+}
+} // namespace lift_005AA8D0
