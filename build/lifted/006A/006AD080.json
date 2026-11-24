@@ -1,0 +1,22 @@
+{
+  "va": "0x006AD080",
+  "size": 14,
+  "orig_symbol": "sub_006AD080",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "Unknown::setField24IfNonNull",
+  "class": "Unknown",
+  "signature": "void Unknown_setField24IfNonNull(Unknown* self, int32_t arg)",
+  "summary": "If the object pointer is non-null, store the single stack argument at +0x24; callee pops 4 bytes.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "int32_t",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:26:40Z"
+}

@@ -246,3 +246,25 @@ void sub_006AD070(void* ecx, uint32_t arg)
     }
 }
 } // namespace lift_006AD070
+
+// [0x006AD080]
+namespace lift_006AD080 {
+// @name Unknown::setField24IfNonNull
+// @class Unknown
+// @summary If the object pointer is non-null, store the single stack argument at +0x24; callee pops 4 bytes.
+// @field Unknown +0x24 int32_t field_0x24
+
+struct Unknown {
+    unsigned char _pad0[0x24];
+    int32_t field_0x24;
+};
+
+// Lifted from: test ecx,ecx / je / mov eax,[esp+4] / mov [ecx+0x24],eax / ret 4
+// ecx = this (may be null), arg = first stack argument.
+void Unknown_setField24IfNonNull(Unknown* self, int32_t arg)
+{
+    if (self != nullptr) {
+        self->field_0x24 = arg;
+    }
+}
+} // namespace lift_006AD080
