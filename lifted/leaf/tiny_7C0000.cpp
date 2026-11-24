@@ -1039,3 +1039,14 @@ uint32_t fn_007C9480(void* self) {
     return reinterpret_cast<Target>(target)(self);
 }
 } // namespace lift_007C9480
+
+// [0x007C8D80] sub_007C8D80 (17 bytes)
+namespace lift_007C8D80 {
+// @name allocZeroed
+// @class (none)
+// @summary Thin cdecl wrapper that returns calloc(1, size): a zero-initialised allocation of `size` bytes via the MSVCR80 import at 0x92522C.
+void* fn_007C8D80(uint32_t size) {
+    // Import slot [0x92522C] resolves to MSVCR80!calloc; the call is calloc(1, size).
+    return std::calloc(1, size);
+}
+} // namespace lift_007C8D80

@@ -38800,6 +38800,13 @@
     "summary": "IAT jump thunk forwarding to MSVCR80!malloc.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x007C8D80": {
+    "name": "allocZeroed",
+    "class": "(none)",
+    "signature": "void* fn_007C8D80(uint32_t size)",
+    "summary": "Thin cdecl wrapper that returns calloc(1, size): a zero-initialised allocation of `size` bytes via the MSVCR80 import at 0x92522C.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C8DA0": {
     "name": "thunk_MSVCR80_free",
     "signature": "extern \"C\" void fn_007C8DA0(void)",
