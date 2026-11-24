@@ -196,3 +196,26 @@ extern void __thiscall fn_005C3030(void* self, DWORD arg0) {
     ext_005B7260(lift_field<void*>(self, 0x164), arg0, result + 0x30);
 }
 } // namespace lift_005C3030
+
+// [0x005CFE10]
+namespace lift_005CFE10 {
+// @name sub_005CFE10
+// @summary Forwards a byte/flag to child object at +0x2C4 via vtable[1] if present, and stores it at +0x1F2.
+// @field Unknown +0x1F2 uint8_t field_0x1F2
+// @field Unknown +0x2C4 uint32_t field_0x2C4
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write8(uint32_t addr, uint8_t val);
+
+void __thiscall sub_005CFE10(uint32_t self, uint32_t arg) {
+    uint32_t child = mem_read32(self + 0x2C4);
+    if (child != 0) {
+        uint32_t vtable = mem_read32(child);
+        uint32_t fn = mem_read32(vtable + 0x4);
+        using FnType = void(__thiscall*)(uint32_t, uint32_t);
+        reinterpret_cast<FnType>(static_cast<uintptr_t>(fn))(child, arg);
+    }
+    mem_write8(self + 0x1F2, static_cast<uint8_t>(arg));
+}
+} // namespace lift_005CFE10
