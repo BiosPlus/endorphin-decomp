@@ -44,3 +44,64 @@ DWORD fn_007F1480(void) {
 #endif
 }
 } // namespace lift_007F1480
+
+// [0x007F0B30]
+namespace lift_007F0B30 {
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+// @name insertNodeIntoBucket
+// @summary Allocates an 8-byte node from a pool, stores edi and bucket index, and prepends it to the bucket's linked list.
+// @field struct_ecx +0x00 uint32_t buckets
+// @field struct_ecx +0x0C uint32_t node_pool
+// @field struct_ecx +0x14 uint32_t node_count
+// @field struct_edi +0x154 uint32_t field_0x154
+// @field bucket +0x0C uint32_t head
+// @field bucket +0x10 uint32_t count
+// @field node +0x00 uint32_t next
+// @field node +0x04 uint32_t value
+uint32_t sub_007F0B30(uint32_t ecx, uint32_t edx, uint32_t edi) {
+    uint32_t buckets = mem_read32(ecx);
+    mem_write32(edi + 0x154, edx);
+    uint32_t bucket = buckets + edx * 20;
+    uint32_t pool = mem_read32(ecx + 0x0C);
+    uint32_t idx = mem_read32(ecx + 0x14);
+    uint32_t node = pool + idx * 8;
+    mem_write32(ecx + 0x14, idx + 1);
+    mem_write32(node + 0x04, edi);
+    uint32_t head = mem_read32(bucket + 0x0C);
+    mem_write32(node, head);
+    mem_write32(bucket + 0x10, mem_read32(bucket + 0x10) + 1);
+    mem_write32(bucket + 0x0C, node);
+    return bucket;
+}
+} // namespace lift_007F0B30
+
+// [0x007F0B00]
+namespace lift_007F0B00 {
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+// @name SpatialHash::insertItem
+// @class SpatialHash
+// @summary Inserts an item into a spatial hash bucket and updates its bucket index
+// @field SpatialHash +0x00 uint32_t buckets
+// @field SpatialHash +0x08 uint32_t nodePool
+// @field SpatialHash +0x10 uint32_t nodeCount
+// @field Item +0x218 uint32_t bucketIndex
+uint32_t __fastcall sub_007F0B00(uint32_t ecx, uint32_t edx, uint32_t edi) {
+    uint32_t buckets = mem_read32(ecx);
+    mem_write32(edi + 0x218, edx);
+    uint32_t bucket = buckets + (edx * 5) * 4;
+    uint32_t nodePool = mem_read32(ecx + 0x8);
+    uint32_t nodeCount = mem_read32(ecx + 0x10);
+    uint32_t node = nodePool + nodeCount * 8;
+    mem_write32(ecx + 0x10, nodeCount + 1);
+    mem_write32(node + 0x4, edi);
+    uint32_t head = mem_read32(bucket + 0x4);
+    mem_write32(node, head);
+    mem_write32(bucket + 0x8, mem_read32(bucket + 0x8) + 1);
+    mem_write32(bucket + 0x4, node);
+    return bucket;
+}
+} // namespace lift_007F0B00
