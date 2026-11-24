@@ -41060,3 +41060,38 @@ int fn_0068F0D0(void* arg) {
     return 0;
 }
 } // namespace lift_0068F0D0
+
+// [0x004C05E0] ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>::vfunc_0 (113 bytes)
+namespace lift_004C05E0 {
+// Callee: sub_004C0280 (stack args: out-string buffer, then the held value; callee cleans; returns pointer to the std::string it filled).
+extern void* ext_004C0280(void* out, uint32_t value);
+// Callee: sub_006720E0 (thiscall on destination std::string, one stack arg: source std::string*; assigns src into dst).
+extern void ext_006720E0(void* dst, void* src);
+// Import slot (IAT entry): MSVCP80 basic_string::~basic_string.
+extern void* mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Builds the property-source description string for the held value via ext_004C0280 and copies it into the caller's return string slot.
+// @field ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1> +0x00 uint32_t field_0x00
+void* fn_004C05E0(void* out, void* self) {
+    using DtorFn = void (*)(void* str);
+
+    // Local std::string storage filled by ext_004C0280 (0x1C bytes, MSVC 2005 std::string layout).
+    alignas(8) unsigned char tmp[0x1C] = {};
+
+    // arg = this->field_0x00 (the original reads the dword at offset 0 as a value)
+    uint32_t arg = lift_field<uint32_t>(self, 0x00);
+
+    // str = ext_004C0280(tmp, arg); returns the populated string object.
+    void* str = ext_004C0280(tmp, arg);
+
+    // *out = *str (assignment into the caller's return slot)
+    ext_006720E0(out, str);
+
+    // tmp.~basic_string()
+    reinterpret_cast<DtorFn>(mem_00924FF4)(tmp);
+
+    return out;
+}
+} // namespace lift_004C05E0
