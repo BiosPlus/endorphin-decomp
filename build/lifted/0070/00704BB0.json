@@ -1,0 +1,13 @@
+{
+  "va": "0x00704BB0",
+  "size": 44,
+  "orig_symbol": "sub_00704BB0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "getStorageTypeName",
+  "signature": "const char* __stdcall sub_00704BB0(uint32_t mode)",
+  "summary": "Returns the string name for a storage mode enum (0=Disk, 1=Memory, 2=Disk Async), or nullptr.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:10:10Z"
+}

@@ -846,3 +846,49 @@ uint8_t __stdcall sub_007004C0(uint32_t arg0) {
     return arg0 == mem_00B5E400 ? 1 : 0;
 }
 } // namespace lift_007004C0
+
+// [0x007006B0]
+namespace lift_007006B0 {
+// @name getLightTypeName
+// @summary Returns the human-readable name string for a light type index (0=Point, 1=Infinite, 2=Spot), or nullptr.
+
+
+extern uint8_t mem_00AAB9E4[]; // "Point Light"
+extern uint8_t mem_00AAB9F0[]; // "Infinite Light"
+extern uint8_t mem_00AABA00[]; // "Spot Light"
+
+const char* __stdcall sub_007006B0(uint32_t lightType) {
+    switch (lightType) {
+        case 0:
+            return reinterpret_cast<const char*>(mem_00AAB9E4);
+        case 1:
+            return reinterpret_cast<const char*>(mem_00AAB9F0);
+        case 2:
+            return reinterpret_cast<const char*>(mem_00AABA00);
+        default:
+            return nullptr;
+    }
+}
+} // namespace lift_007006B0
+
+// [0x00704BB0]
+namespace lift_00704BB0 {
+extern const char mem_00AABD00[]; // "Disk"
+extern const char mem_00AABD08[]; // "Memory"
+extern const char mem_00AABD10[]; // "Disk Async"
+
+// @name getStorageTypeName
+// @summary Returns the string name for a storage mode enum (0=Disk, 1=Memory, 2=Disk Async), or nullptr.
+const char* __stdcall sub_00704BB0(uint32_t mode) {
+    switch (mode) {
+        case 0:
+            return mem_00AABD00;
+        case 1:
+            return mem_00AABD08;
+        case 2:
+            return mem_00AABD10;
+        default:
+            return nullptr;
+    }
+}
+} // namespace lift_00704BB0
