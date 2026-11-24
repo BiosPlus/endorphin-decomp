@@ -25697,6 +25697,13 @@
     "summary": "Pure jump thunk forwarding to sub_006633B0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006657F0": {
+    "name": "Unknown::InitVtblAndArg",
+    "class": "Unknown",
+    "signature": "void* fn_006657F0(void* self, uint32_t arg)",
+    "summary": "Stores the vtable pointer (0x00987A04), a stack argument at +0x04, and zeroes +0x08/+0x0C; returns self.",
+    "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
   "0x00665810": {
     "name": "sub_00665810",
     "signature": "extern \"C\" void __fastcall fn_00665810(void* self)",

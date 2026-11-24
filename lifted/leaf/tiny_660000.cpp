@@ -399,3 +399,22 @@ uint32_t fn_00661950(void* thisPtr, void* arg) {
 }
 } // namespace lift_006616F0
 } // namespace lift_00661950
+
+// [0x006657F0] sub_006657F0 (26 bytes)
+namespace lift_006657F0 {
+extern int mem_00987A04;
+
+// @name Unknown::InitVtblAndArg
+// @summary Stores the vtable pointer (0x00987A04), a stack argument at +0x04, and zeroes +0x08/+0x0C; returns self.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+void* fn_006657F0(void* self, uint32_t arg) {
+    lift_field<uint32_t>(self, 0x00) = 0x00987A04u;
+    lift_field<uint32_t>(self, 0x04) = arg;
+    lift_field<uint32_t>(self, 0x08) = 0u;
+    lift_field<uint32_t>(self, 0x0C) = 0u;
+    return self;
+}
+} // namespace lift_006657F0
