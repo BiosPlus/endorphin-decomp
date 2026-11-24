@@ -1,0 +1,22 @@
+{
+  "va": "0x004D0E00",
+  "size": 16,
+  "orig_symbol": "sub_004D0E00",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "GetTableEntryForSelfIndex",
+  "class": "(none)",
+  "signature": "extern \"C\" void* fn_004D0E00(void* self)",
+  "summary": "Reads the uint32 index stored at self+0x188 and returns the 28-byte-stride table entry address for it.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x188",
+      "type": "uint32_t",
+      "name": "field_0x188"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:25:31Z"
+}

@@ -8447,6 +8447,13 @@
     "summary": "Returns property value for ID 0x40 from field_0x198 if field_0x168-\u003evfunc_10() is false, otherwise delegates to base vfunc_14.",
     "lifted_path": "lifted/NMData/TransitionEventData.cpp"
   },
+  "0x004D0E00": {
+    "name": "GetTableEntryForSelfIndex",
+    "class": "(none)",
+    "signature": "extern \"C\" void* fn_004D0E00(void* self)",
+    "summary": "Reads the uint32 index stored at self+0x188 and returns the 28-byte-stride table entry address for it.",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004D1240": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e",

@@ -34,3 +34,18 @@ int32_t fn_004DE440(void* self) {
     return base + bias;
 }
 } // namespace lift_004DE440
+
+// [0x004D0E00] sub_004D0E00 (16 bytes)
+namespace lift_004D0E00 {
+// Known callee 0x004D0B60: GetTableEntry28Address (Returns the address of entry `index` in a 28-byte-stride table based at 0x00AE5C10 (0xAE5C10 + index * 28).)
+extern void* ext_004D0B60(uint32_t index);
+
+// @name GetTableEntryForSelfIndex
+// @class (none)
+// @summary Reads the uint32 index stored at self+0x188 and returns the 28-byte-stride table entry address for it.
+// @field self +0x188 uint32_t field_0x188
+extern void* fn_004D0E00(void* self) {
+    uint32_t index = lift_field<uint32_t>(self, 0x188);
+    return ext_004D0B60(index);
+}
+} // namespace lift_004D0E00
