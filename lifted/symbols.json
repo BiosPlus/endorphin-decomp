@@ -30316,6 +30316,12 @@
     "summary": "Initializes a 20-byte struct with 0x19, three zeros, and 1.",
     "lifted_path": "lifted/leaf/tiny_690000.cpp"
   },
+  "0x006989B0": {
+    "name": "CopyBytesRange",
+    "signature": "uint8_t* CopyBytesRange(const uint8_t* first, const uint8_t* last, uint8_t* dst)",
+    "summary": "Copies bytes from [first, last) to dst; returns dst advanced past the copied bytes. Null dst skips stores but still advances the count.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00699040": {
     "name": "sub_00699040",
     "signature": "extern \"C\" void __fastcall fn_00699040(void* self)",

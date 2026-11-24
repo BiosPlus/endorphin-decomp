@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_690000.cpp
 #include "lift_compat.h"
+#include <cstddef>
+#include <cstdint>
 
-// [0x00692D90] sub_00692D90 (60 bytes)
+#include <cstdint>
 namespace lift_00692D90 {
 extern void (*mem_00925134)();
 
@@ -70,3 +72,23 @@ void __thiscall sub_006991F0(uint32_t self, uint32_t newPtr) {
     mem_w32(self + 0x8, newPtr);
 }
 } // namespace lift_006991F0
+
+// [0x006989B0]
+namespace lift_006989B0 {
+// @name CopyBytesRange
+// @summary Copies bytes from [first, last) to dst; returns dst advanced past the copied bytes. Null dst skips stores but still advances the count.
+uint8_t* CopyBytesRange(const uint8_t* first, const uint8_t* last, uint8_t* dst) {
+    uint8_t* out = dst;
+    if (first == last) {
+        return out;
+    }
+    do {
+        if (out != nullptr) {
+            *out = *first;
+        }
+        ++first;
+        ++out;
+    } while (first != last);
+    return out;
+}
+} // namespace lift_006989B0
