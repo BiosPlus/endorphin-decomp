@@ -156,3 +156,12 @@ void* fn_00859E70(void* head, DWORD key) {
     return nullptr;
 }
 } // namespace lift_00859E70
+
+// [0x0085DA40] sub_0085DA40 (32 bytes)
+namespace lift_0085DA40 {
+// @name NoOpReturn_0085DA40
+// @summary Empty stub: returns immediately without touching state; trailing bytes are alignment padding.
+void fn_0085DA40(void* self) {
+    (void)self;
+}
+} // namespace lift_0085DA40

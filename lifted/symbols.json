@@ -45325,6 +45325,12 @@
     "summary": "No-op: \"add eax, 0\" (eax unchanged; only flags are touched)",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085DA40": {
+    "name": "NoOpReturn_0085DA40",
+    "signature": "void fn_0085DA40(void* self)",
+    "summary": "Empty stub: returns immediately without touching state; trailing bytes are alignment padding.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085DA60": {
     "name": "checkRangeAllZeroStride20",
     "signature": "int fn_0085DA60(void* self)",
