@@ -157,3 +157,21 @@ uint32_t fn_005E1740(void* self) {
     return fn(child);
 }
 } // namespace lift_005E1740
+
+// [0x005E1330]
+namespace lift_005E1330 {
+// Indirect dispatch on the subobject at self+0x234: invokes its vtable slot 0xCC,
+// passing the subobject as `this` and the original self as the single stack argument.
+extern void ext_VirtualCall0xCC_StackArg(void* subobject, void* stackArg);
+
+// @name Unknown::ForwardVCall0xCCToSubobjectField0x234
+// @class Unknown
+// @summary If the subobject at +0x234 is non-null, call its virtual slot 0xCC with self as the stack argument.
+// @field Unknown +0x234 void* field_0x234
+void fn_005E1330(void* self) {
+    void* subobject = lift_field<void*>(self, 0x234);
+    if (subobject != nullptr) {
+        ext_VirtualCall0xCC_StackArg(subobject, self);
+    }
+}
+} // namespace lift_005E1330

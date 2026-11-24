@@ -18708,6 +18708,13 @@
     "summary": "Forwards to vfunc slot 49 of the subobject at self+0x234; returns 0 if that subobject is null.",
     "lifted_path": "lifted/leaf/tiny_5E0000.cpp"
   },
+  "0x005E1330": {
+    "name": "Unknown::ForwardVCall0xCCToSubobjectField0x234",
+    "class": "Unknown",
+    "signature": "void fn_005E1330(void* self)",
+    "summary": "If the subobject at +0x234 is non-null, call its virtual slot 0xCC with self as the stack argument.",
+    "lifted_path": "lifted/leaf/tiny_5E0000.cpp"
+  },
   "0x005E1350": {
     "name": "sub_005E1350",
     "class": "PoseTool",

@@ -1,0 +1,22 @@
+{
+  "va": "0x005E1330",
+  "size": 24,
+  "orig_symbol": "sub_005E1330",
+  "src_path": "src/leaf/tiny_5E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5E0000.cpp",
+  "name": "Unknown::ForwardVCall0xCCToSubobjectField0x234",
+  "class": "Unknown",
+  "signature": "void fn_005E1330(void* self)",
+  "summary": "If the subobject at +0x234 is non-null, call its virtual slot 0xCC with self as the stack argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x234",
+      "type": "void*",
+      "name": "field_0x234"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:37:35Z"
+}

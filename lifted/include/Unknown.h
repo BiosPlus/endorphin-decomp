@@ -239,7 +239,7 @@ struct Unknown_Fields {
     // +0x208 float                    field_0x208  (evidence: 0x007C76B0)
     // +0x210 DWORD                    field_0x210  (evidence: 0x004A57F0)
     // +0x234 void*                    child  (evidence: 0x005E12F0) // CONFLICT: multiple definitions at +0x234
-    // +0x234 void*                    field_0x234  (evidence: 0x005E1360) // CONFLICT: multiple definitions at +0x234
+    // +0x234 void*                    field_0x234  (evidence: 0x005E1330, 0x005E1360) // CONFLICT: multiple definitions at +0x234
     // +0x234 void* field_0x234 (subobject pointer; class unrecovered)  (evidence: 0x005E1310) // CONFLICT: multiple definitions at +0x234
     // +0x268 float                    field_0x268  (evidence: 0x007C76B0) // CONFLICT: multiple definitions at +0x268
     // +0x268 uint32_t                 field_0x268  (evidence: 0x00702400) // CONFLICT: multiple definitions at +0x268
