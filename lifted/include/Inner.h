@@ -9,5 +9,6 @@
 namespace lifted_layout {
 struct Inner_Fields {
     // +0x270 uint8_t                  field_0x270  (evidence: 0x00700940)
+    // +0x1168 uint8_t                  field_0x1168  (evidence: 0x0071B910)
 };
 } // namespace lifted_layout

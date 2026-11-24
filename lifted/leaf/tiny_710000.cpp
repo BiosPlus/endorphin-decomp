@@ -2574,3 +2574,18 @@ void* fn_0071F060(void* ecx) {
 }
 } // namespace lift_006F8AC0
 } // namespace lift_0071F060
+
+// [0x0071B910]
+namespace lift_0071B910 {
+extern uint32_t mem_read32(uint32_t addr);
+extern uint8_t mem_read8(uint32_t addr);
+
+// @name sub_0071B910
+// @summary Reads a byte flag at offset 0x1168 from the object pointer at this+0xC.
+// @field Self +0x0C uint32_t field_0x0C
+// @field Inner +0x1168 uint8_t field_0x1168
+uint8_t sub_0071B910(uint32_t self) {
+    uint32_t ptr = mem_read32(self + 0xC);
+    return mem_read8(ptr + 0x1168);
+}
+} // namespace lift_0071B910
