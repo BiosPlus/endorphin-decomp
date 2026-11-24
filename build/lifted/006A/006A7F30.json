@@ -1,0 +1,22 @@
+{
+  "va": "0x006A7F30",
+  "size": 20,
+  "orig_symbol": "sub_006A7F30",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "Unknown::ForwardArgToVirtualSlot85",
+  "class": "Unknown",
+  "signature": "int32_t fn_006A7F30(void* self, uint32_t arg, [[maybe_unused]] uint32_t unused)",
+  "summary": "Forwards the first stack argument to virtual slot 0x154 (index 85) of self's vtable, then returns 0 (callee pops 8 bytes).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:08:46Z"
+}

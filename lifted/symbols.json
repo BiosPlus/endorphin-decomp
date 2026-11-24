@@ -31317,6 +31317,13 @@
     "summary": "Forwards its first stack argument to the virtual method at vtable offset +0x140 on the object in ECX, then returns 0 and pops 8 bytes of arguments.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006A7F30": {
+    "name": "Unknown::ForwardArgToVirtualSlot85",
+    "class": "Unknown",
+    "signature": "int32_t fn_006A7F30(void* self, uint32_t arg, [[maybe_unused]] uint32_t unused)",
+    "summary": "Forwards the first stack argument to virtual slot 0x154 (index 85) of self's vtable, then returns 0 (callee pops 8 bytes).",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006A7FD0": {
     "name": "CTypedPtrMap\u003cCMapStringToPtr, ATL::CStringT\u003cchar, StrTraitMFC_DLL\u003cchar, ATL::ChTraitsCRT\u003cchar\u003e\u003e\u003e, GWCPropertyFeel *\u003e::vfunc_1",
     "class": "CTypedPtrMap\u003cCMapStringToPtr, ATL::CStringT\u003cchar, StrTraitMFC_DLL\u003cchar, ATL::ChTraitsCRT\u003cchar\u003e\u003e\u003e, GWCPropertyFeel *\u003e",

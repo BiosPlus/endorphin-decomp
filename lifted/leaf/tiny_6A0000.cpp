@@ -347,3 +347,17 @@ int32_t __thiscall fn_006A7AC0(void* self, int32_t arg, int32_t unused) {
     return 0;
 }
 } // namespace lift_006A7AC0
+
+// [0x006A7F30] sub_006A7F30 (20 bytes)
+namespace lift_006A7F30 {
+// @name Unknown::ForwardArgToVirtualSlot85
+// @class Unknown
+// @summary Forwards the first stack argument to virtual slot 0x154 (index 85) of self's vtable, then returns 0 (callee pops 8 bytes).
+// @field Unknown +0x00 void* vtable
+int32_t fn_006A7F30(void* self, uint32_t arg, [[maybe_unused]] uint32_t unused) {
+    void* vtable = lift_field<void*>(self, 0x00);
+    auto slot = lift_field<void (*)(void*, uint32_t)>(vtable, 0x154);
+    slot(self, arg);
+    return 0;
+}
+} // namespace lift_006A7F30
