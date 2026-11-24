@@ -102,3 +102,16 @@ void CopyBytesForward(uint8_t* dst, const uint8_t* src, uint32_t count) {
     }
 }
 } // namespace lift_00869310
+
+// [0x008692F0] sub_008692F0 (32 bytes)
+namespace lift_008692F0 {
+// @name fillBytes
+// @summary Writes the low byte of a value to `count` consecutive bytes starting at `dst` (cdecl, memset-like; no-op when count is 0).
+extern void __cdecl fn_008692F0(uint8_t* dst, uint32_t value, uint32_t count) {
+    const uint8_t byte = static_cast<uint8_t>(value);
+    while (count != 0) {
+        *dst++ = byte;
+        --count;
+    }
+}
+} // namespace lift_008692F0

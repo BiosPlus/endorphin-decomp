@@ -45475,6 +45475,12 @@
     "summary": "No-op stub (add eax, 0).",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x008692F0": {
+    "name": "fillBytes",
+    "signature": "extern \"C\" void __cdecl fn_008692F0(uint8_t* dst, uint32_t value, uint32_t count)",
+    "summary": "Writes the low byte of a value to `count` consecutive bytes starting at `dst` (cdecl, memset-like; no-op when count is 0).",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x00869310": {
     "name": "CopyBytesForward",
     "signature": "void CopyBytesForward(uint8_t* dst, const uint8_t* src, uint32_t count)",
