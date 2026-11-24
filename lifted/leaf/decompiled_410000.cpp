@@ -49,3 +49,21 @@ void __stdcall fn_0041FD10(uint32_t arg0, uint32_t arg1) {
     fn_006A608E();
 }
 } // namespace lift_0041FD10
+
+// [0x004137F0] sub_004137F0 (23 bytes)
+namespace lift_004137F0 {
+// Known callee 0x00454BA0: sub_00454BA0 (Destructor tail-call: restores vtable mem_0093652C and tail-calls base destructor sub_00455EB0.)
+// Imported slot at 0x009242F4 (MFC80 ordinal 578); the IAT entry holds an unresolved ordinal thunk at file level.
+extern void __fastcall ext_00454BA0(void* self);
+extern void* mem_009242F4;
+
+// @name CleanupEmbeddedAt12CAndChainBaseDtor
+// @summary Calls an MFC80 import (ord 578) on the embedded object at +0x12C, then tail-calls the base destructor.
+// @field Unknown +0x12C embedded_object field_0x12C
+void fn_004137F0(void* self) {
+    auto* embedded = reinterpret_cast<uint8_t*>(self) + 0x12C;
+    auto import578 = reinterpret_cast<void(__fastcall*)(void*)>(mem_009242F4);
+    import578(embedded);
+    ext_00454BA0(self);
+}
+} // namespace lift_004137F0

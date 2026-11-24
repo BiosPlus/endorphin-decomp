@@ -1,0 +1,21 @@
+{
+  "va": "0x004137F0",
+  "size": 23,
+  "orig_symbol": "sub_004137F0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "CleanupEmbeddedAt12CAndChainBaseDtor",
+  "signature": "void fn_004137F0(void* self)",
+  "summary": "Calls an MFC80 import (ord 578) on the embedded object at +0x12C, then tail-calls the base destructor.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x12C",
+      "type": "embedded_object",
+      "name": "field_0x12C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:31:39Z"
+}

@@ -763,6 +763,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x20 and tail-calls sub_00406940.",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x004137F0": {
+    "name": "CleanupEmbeddedAt12CAndChainBaseDtor",
+    "signature": "void fn_004137F0(void* self)",
+    "summary": "Calls an MFC80 import (ord 578) on the embedded object at +0x12C, then tail-calls the base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00414220": {
     "name": "ConsoleWnd::vfunc_1",
     "class": "ConsoleWnd",

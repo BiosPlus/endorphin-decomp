@@ -191,6 +191,7 @@ struct Unknown_Fields {
     // +0xF8  void*                    field_0xF8  (evidence: 0x004646A0, 0x00468730, 0x0046C110, 0x0046F910, 0x00594700)
     // +0x100 void*                    field_0x100  (evidence: 0x00430310)
     // +0x128 DWORD                    field_0x128  (evidence: 0x0043C900)
+    // +0x12C embedded_object          field_0x12C  (evidence: 0x004137F0) // CONFLICT: multiple definitions at +0x12C
     // +0x12C uint8_t                  field_0x12C  (evidence: 0x004646A0, 0x00468730, 0x0046F910) // CONFLICT: multiple definitions at +0x12C
     // +0x12C void*                    field_0x12C  (evidence: 0x0049ABC0, 0x00666CC0) // CONFLICT: multiple definitions at +0x12C
     // +0x138 UINT                     field_0x138  (evidence: 0x0043CD80) // CONFLICT: multiple definitions at +0x138
