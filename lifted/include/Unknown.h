@@ -579,6 +579,7 @@ struct Unknown_Fields {
     // +0x1CB0 void* field_1CB0 (address computed as this + 0x1CB0 and passed on; not dereferenced here)  (evidence: 0x006EFDC0)
     // +0x1D38 uint8_t field_1D38 (address taken only; passed as `this` to ext_00711D40)  (evidence: 0x006EFE00)
     // +0x1E48 void*                    field_0x1e48  (evidence: 0x006EFEA0)
+    // +0x2068 uint8_t                  field_2068  (evidence: 0x006EFFE0)
     // +0x20F0 void*                    field_20F0  (evidence: 0x006F0040)
     // +0x2200 uint8_t                  field_0x2200  (evidence: 0x006F00E0)
     // +0x2288 uint8_t                  field_0x2288  (evidence: 0x006F0120)

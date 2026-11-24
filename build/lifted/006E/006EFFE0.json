@@ -1,0 +1,22 @@
+{
+  "va": "0x006EFFE0",
+  "size": 34,
+  "orig_symbol": "sub_006EFFE0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::forwardToSubobject2068",
+  "class": "Unknown",
+  "signature": "void fn_006EFFE0(void* self, uint32_t arg1, void* arg2)",
+  "summary": "Forwards two arguments plus two constants to the subobject at self+0x2068 via storeArgsAndNotifyChild.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x2068",
+      "type": "uint8_t",
+      "name": "field_2068"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:13:54Z"
+}
