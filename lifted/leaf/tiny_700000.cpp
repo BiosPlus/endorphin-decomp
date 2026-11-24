@@ -1330,3 +1330,23 @@ DWORD fn_0070FDC0(void* self, DWORD arg1, DWORD arg2) {
 }
 } // namespace lift_006C12D0
 } // namespace lift_0070FDC0
+
+// [0x00704C20] sub_00704C20 (31 bytes)
+namespace lift_00704C20 {
+// Known callee 0x007641C0: sub_007641C0 (This-adjustor thunk: adjusts `this` by +0x8 and tail-calls sub_006B9D70.)
+extern void ext_007641C0(void* self);
+extern uint8_t mem_00B5E9A0;
+extern uint8_t mem_00B5E948;
+
+// @name Unknown::InitOnceForwardToSubobject (descriptive)
+// @summary One-shot guard: if bit 0 of mem_00B5E9A0 is clear, set it and forward &mem_00B5E948 to ext_007641C0; otherwise return.
+void fn_00704C20(void* self) {
+    (void)self;
+    uint8_t flags = mem_00B5E9A0;
+    if ((flags & 0x01u) != 0) {
+        return;
+    }
+    mem_00B5E9A0 = static_cast<uint8_t>(flags | 0x01u);
+    ext_007641C0(static_cast<void*>(&mem_00B5E948));
+}
+} // namespace lift_00704C20

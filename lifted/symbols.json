@@ -39075,6 +39075,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_700000.cpp"
   },
+  "0x00704C20": {
+    "name": "Unknown::InitOnceForwardToSubobject (descriptive)",
+    "class": "Unknown",
+    "signature": "void fn_00704C20(void* self)",
+    "summary": "One-shot guard: if bit 0 of mem_00B5E9A0 is clear, set it and forward \u0026mem_00B5E948 to ext_007641C0; otherwise return.",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x00704CE0": {
     "name": "sub_00704CE0",
     "signature": "extern \"C\" void* __fastcall fn_00704CE0(void* self, int edx_unused, unsigned int flags)",
