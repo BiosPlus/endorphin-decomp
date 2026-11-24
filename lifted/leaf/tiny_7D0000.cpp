@@ -564,3 +564,18 @@ void sub_007D85E0(void* dst, const void* src) {
     }
 }
 } // namespace lift_007D85E0
+
+// [0x007D85B0] sub_007D85B0 (26 bytes)
+namespace lift_007D85B0 {
+// @name Unknown::SetVec3Field4C
+// @class Unknown
+// @summary Stores three float arguments into consecutive float fields at +0x4C, +0x50 and +0x54.
+// @field Unknown +0x4C float field_0x4C
+// @field Unknown +0x50 float field_0x50
+// @field Unknown +0x54 float field_0x54
+void fn_007D85B0(void* self, float x, float y, float z) {
+    lift_field<float>(self, 0x4C) = x;
+    lift_field<float>(self, 0x50) = y;
+    lift_field<float>(self, 0x54) = z;
+}
+} // namespace lift_007D85B0
