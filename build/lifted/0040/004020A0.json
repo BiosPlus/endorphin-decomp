@@ -1,0 +1,22 @@
+{
+  "va": "0x004020A0",
+  "size": 27,
+  "orig_symbol": "AnimatableTransform::vfunc_7_off_4",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "AnimatableTransform::vfunc_7_off_4",
+  "class": "AnimatableTransform",
+  "signature": "int32_t AnimatableTransform_vfunc_7_off_4(void* self)",
+  "summary": "Returns 1 if global mem_00B40640 is nonzero and this-\u003efield_0xE4 is not 0xFFFFFFFF, else 0.",
+  "fields": [
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0xE4",
+      "type": "uint32_t",
+      "name": "field_0xE4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:59:24Z"
+}

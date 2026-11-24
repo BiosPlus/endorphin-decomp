@@ -222,6 +222,13 @@
     "summary": "Tail-calls virtual method at +0x8 on the RenderObjectOwner/Updateable subobject at +0xC.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004020A0": {
+    "name": "AnimatableTransform::vfunc_7_off_4",
+    "class": "AnimatableTransform",
+    "signature": "int32_t AnimatableTransform_vfunc_7_off_4(void* self)",
+    "summary": "Returns 1 if global mem_00B40640 is nonzero and this-\u003efield_0xE4 is not 0xFFFFFFFF, else 0.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x004020C0": {
     "name": "AnimatableTransform::vfunc_13_off_4",
     "class": "AnimatableTransform",

@@ -6426,3 +6426,24 @@ void* fn_00547AB0(void* self) {
     return target(child);
 }
 } // namespace lift_00547AB0
+
+// [0x004020A0]
+namespace lift_004020A0 {
+// @name AnimatableTransform::vfunc_7_off_4
+// @class AnimatableTransform
+// @summary Returns 1 if global mem_00B40640 is nonzero and this->field_0xE4 is not 0xFFFFFFFF, else 0.
+// @field AnimatableTransform +0xE4 uint32_t field_0xE4
+
+extern uint32_t mem_00B40640;
+
+int32_t AnimatableTransform_vfunc_7_off_4(void* self) {
+    if (mem_00B40640 == 0) {
+        return 0;
+    }
+    const uint32_t field_0xE4 = lift_field<uint32_t>(self, 0xE4);
+    if (field_0xE4 >= 0xFFFFFFFFu) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_004020A0

@@ -16,5 +16,6 @@ struct AnimatableTransform_Fields {
     // +0x4   void*                    subobject  (evidence: 0x00528C30, 0x00535610) // CONFLICT: multiple definitions at +0x4
     // +0xC   uint32_t*                renderObjectOwner_vtable  (evidence: 0x00402050, 0x00486AF0, 0x00535610, 0x005379F0, 0x00544980, 0x00544A90, 0x00545B80, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 subobj_vtable_0xC  (evidence: 0x00402070, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0xC
+    // +0xE4  uint32_t                 field_0xE4  (evidence: 0x004020A0)
 };
 } // namespace lifted_layout
