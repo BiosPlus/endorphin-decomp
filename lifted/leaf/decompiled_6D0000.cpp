@@ -3,6 +3,7 @@
 extern "C" void __fastcall ext_006D7B50(void* self);
 extern "C" void __cdecl ext_006A5C5C(void* ptr);
 extern "C" void __fastcall ext_006D7DB0(void* self);
+#include <cstring>
 
 // [0x006D7B30] sub_006D7B30 (32 bytes)
 // @name sub_006D7B30
@@ -92,3 +93,24 @@ void sub_006D1FB4(uint32_t eax, uint32_t ecx, uint32_t esp) {
     eax = (eax & ~0xFFu) | ((eax + 4u) & 0xFFu);
 }
 } // namespace lift_006D1FB4
+
+// [0x006D2700] sub_006D2700 (32 bytes)
+namespace lift_006D2700 {
+// @name Vec3d::Dot
+// @class Vec3d
+// @summary Returns the dot product of this and another 3-component double vector.
+// @field Vec3d +0x00 double x
+// @field Vec3d +0x08 double y
+// @field Vec3d +0x10 double z
+double fn_006D2700(const void* self, const void* other) {
+    double a[3];
+    double b[3];
+    std::memcpy(a, self, sizeof(a));
+    std::memcpy(b, other, sizeof(b));
+    // Same evaluation order as the original: ((z*z' + y*y') + x*x')
+    double t = a[2] * b[2];
+    t = t + a[1] * b[1];
+    t = t + a[0] * b[0];
+    return t;
+}
+} // namespace lift_006D2700

@@ -36689,6 +36689,13 @@
     "summary": "Stores a double into an 8-byte-stride array at ecx, indexed by the first stack argument (ret 0xc: callee pops index + value).",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D2700": {
+    "name": "Vec3d::Dot",
+    "class": "Vec3d",
+    "signature": "double fn_006D2700(const void* self, const void* other)",
+    "summary": "Returns the dot product of this and another 3-component double vector.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D2A30": {
     "name": "sub_006D2A30",
     "signature": "extern \"C\" void* __fastcall fn_006D2A30(void* self)",
