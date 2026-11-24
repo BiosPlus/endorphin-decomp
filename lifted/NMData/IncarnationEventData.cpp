@@ -108,3 +108,25 @@ extern void __thiscall fn_004CFE90(void* self) {
     ext_004CFCE0(new_obj, self);
 }
 } // namespace lift_004CFE90
+
+// [0x004CF320] NMData::IncarnationEventData::vfunc_89 (29 bytes)
+namespace lift_004CF320 {
+// Callee 0x004CEAC0 (sub_004CEAC0, 87B, not yet lifted). Original call is
+// thiscall-style: ECX = [self+0x184], and the caller's original ECX (self) is pushed as a stack argument.
+extern void ext_004CEAC0(void* ecx, void* arg);
+
+// @name NMData::IncarnationEventData::vfunc_89
+// @class NMData::IncarnationEventData
+// @summary If the byte at +0x17C is set, forwards this object's +0x184 pointer to ext_004CEAC0; always clears the byte at +0x188.
+// @field NMData::IncarnationEventData +0x17C uint8_t field_0x17c
+// @field NMData::IncarnationEventData +0x184 void* field_0x184
+// @field NMData::IncarnationEventData +0x188 uint8_t field_0x188
+void fn_004CF320(void* self) {
+    const uint8_t flag = lift_field<uint8_t>(self, 0x17C);
+    lift_field<uint8_t>(self, 0x188) = 0;
+    if (flag != 0) {
+        void* target = lift_field<void*>(self, 0x184);
+        ext_004CEAC0(target, self);
+    }
+}
+} // namespace lift_004CF320

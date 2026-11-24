@@ -10894,6 +10894,13 @@
     "summary": "Virtual dispatcher: loads this-\u003evtable[7] (offset 0x1C) and calls it with this, then pops the one stack argument.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CF320": {
+    "name": "NMData::IncarnationEventData::vfunc_89",
+    "class": "NMData::IncarnationEventData",
+    "signature": "void fn_004CF320(void* self)",
+    "summary": "If the byte at +0x17C is set, forwards this object's +0x184 pointer to ext_004CEAC0; always clears the byte at +0x188.",
+    "lifted_path": "lifted/NMData/IncarnationEventData.cpp"
+  },
   "0x004CF340": {
     "name": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, std::string const\u0026, getPhysicsLevel\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, std::string const\u0026, getPhysicsLevel\u003e",
