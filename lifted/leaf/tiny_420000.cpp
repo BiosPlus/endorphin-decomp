@@ -14,8 +14,10 @@ extern "C" int* fn_00421AB0() {
     return &mem_0092E4B8;
 }
 extern "C" void __fastcall ext_00584A10(void* self);
+#include <new>
+#include <string>
 
-// [0x00422C60] sub_00422C60 (6 bytes)
+#include <string>
 // @name sub_00422C60
 // @summary Returns the address of the global constant mem_0092EA38 (string "$aj").
 extern "C" int* fn_00422C60() {
@@ -117,3 +119,16 @@ void fn_0042FAA0(void* self) {
     flag = static_cast<uint8_t>(flag == 0);
 }
 } // namespace lift_0042FAA0
+
+// [0x00426960] sub_00426960 (18 bytes)
+namespace lift_00426960 {
+extern int mem_00928B5D;
+
+// @name std::string::basic_string(const char*) [empty-literal ctor]
+// @class std::string
+// @summary Constructs *self as std::string from the empty C literal at mem_00928B5D and returns self.
+std::string* fn_00426960(std::string* self) {
+    new (self) std::string(reinterpret_cast<const char*>(&mem_00928B5D));
+    return self;  // original: mov eax, esi
+}
+} // namespace lift_00426960

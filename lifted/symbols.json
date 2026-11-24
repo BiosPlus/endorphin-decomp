@@ -1286,6 +1286,13 @@
     "summary": "Pure jump thunk forwarding to sub_00425D80.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00426960": {
+    "name": "std::string::basic_string(const char*) [empty-literal ctor]",
+    "class": "std::string",
+    "signature": "std::string* fn_00426960(std::string* self)",
+    "summary": "Constructs *self as std::string from the empty C literal at mem_00928B5D and returns self.",
+    "lifted_path": "lifted/leaf/tiny_420000.cpp"
+  },
   "0x00428FE0": {
     "name": "sub_00428FE0",
     "signature": "extern \"C\" void fn_00428FE0(void)",
