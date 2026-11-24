@@ -1,0 +1,22 @@
+{
+  "va": "0x004949A0",
+  "size": 122,
+  "orig_symbol": "ExprParser::DynamicEnumType\u003cRigManager, \u0026public: int __thiscall RigManager::getRigTypeIndex(void) const, \u0026public: void __thiscall RigManager::setRigTypeIndex(int), \u0026public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall RigManager::getRigTypeNameFromIndex(int) const\u003e::vfunc_40",
+  "src_path": "src/templates/DynamicEnumType.cpp",
+  "lifted_path": "lifted/templates/DynamicEnumType.cpp",
+  "name": "ExprParser::DynamicEnumType\u003cRigManager\u003e::vfunc_40 (lazy static accessor)",
+  "class": "ExprParser::DynamicEnumType\u003cRigManager, \u0026public: int __thiscall RigManager::getRigTypeIndex(void) const, \u0026public: void __thiscall RigManager::setRigTypeIndex(int), \u0026public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall RigManager::getRigTypeNameFromIndex(int) const\u003e",
+  "signature": "void fn_004949A0(void* out)",
+  "summary": "Lazily constructs the function-local static object at 0x00ADC4DC (guarded by bit 0 of 0x00ADC4E0) and stores its address into out+0x04.",
+  "fields": [
+    {
+      "class": "ValueArg",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:46:11Z"
+}

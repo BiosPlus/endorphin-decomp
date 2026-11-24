@@ -1740,3 +1740,31 @@ void fn_004B7460(void* out) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE1614));
 }
 } // namespace lift_004B7460
+
+// [0x004949A0] ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_40 (122 bytes)
+namespace lift_004949A0 {
+// Callee: constructs the function-local static at mem_00ADC4DC (thiscall, one flag arg).
+extern void ext_0067A670(void* self, int flag);
+
+// Once-init guard word (bit 0 = object constructed) and the static object itself.
+extern uint32_t mem_00ADC4E0;
+extern uint32_t mem_00ADC4DC;
+
+// @name ExprParser::DynamicEnumType<RigManager>::vfunc_40 (lazy static accessor)
+// @class ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>
+// @summary Lazily constructs the function-local static object at 0x00ADC4DC (guarded by bit 0 of 0x00ADC4E0) and stores its address into out+0x04.
+// @field ValueArg +0x04 void* field_0x4
+//
+// The original is MSVC-generated: fs:[0] SEH frame setup/teardown and the
+// `ret 4` stdcall epilogue are dropped; the single stack argument is `out`.
+// The 32-bit VA stores are expressed as native pointers to the globals.
+void fn_004949A0(void* out) {
+    if ((mem_00ADC4E0 & 1u) == 0) {
+        mem_00ADC4E0 |= 1u;
+        ext_0067A670(&mem_00ADC4DC, 0);
+        // Vtable pointer of the constructed object (MSVC-specific RTTI slot, 0x0093EB54).
+        mem_00ADC4DC = 0x0093EB54u;
+    }
+    lift_field<void*>(out, 0x04) = &mem_00ADC4DC;
+}
+} // namespace lift_004949A0
