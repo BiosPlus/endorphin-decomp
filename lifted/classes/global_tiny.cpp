@@ -5235,3 +5235,17 @@ void fn_00630C80(void* self, int32_t /*unused*/) {
     ext_00630370(self, 7);
 }
 } // namespace lift_00630C80
+
+// [0x004020E0] AnimatableTransform::vfunc_55 (14 bytes)
+namespace lift_004020E0 {
+// @name AnimatableTransform::vfunc_55
+// @class AnimatableTransform
+// @summary Forwards the call to vtable slot 7 (+0x1C) of the embedded subobject at +0x04, passing the subobject as `this` and returning its result.
+// @field AnimatableTransform +0x04 void* field_0x04
+uint32_t fn_004020E0(void* self, uint32_t arg) {
+    void* sub = lift_field<void*>(self, 0x04);
+    void* vtbl = lift_field<void*>(sub, 0x00);
+    auto target = reinterpret_cast<uint32_t (*)(void*, uint32_t)>(lift_field<void*>(vtbl, 0x1C));
+    return target(sub, arg);
+}
+} // namespace lift_004020E0

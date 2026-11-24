@@ -197,6 +197,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x8 and tail-calls sub_0058A6D0.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004020E0": {
+    "name": "AnimatableTransform::vfunc_55",
+    "class": "AnimatableTransform",
+    "signature": "uint32_t fn_004020E0(void* self, uint32_t arg)",
+    "summary": "Forwards the call to vtable slot 7 (+0x1C) of the embedded subobject at +0x04, passing the subobject as `this` and returning its result.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00402100": {
     "name": "NMData::AnimationEventData::vfunc_0_off_150",
     "class": "NMData::AnimationEventData",

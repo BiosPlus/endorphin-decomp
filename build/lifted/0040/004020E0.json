@@ -1,0 +1,22 @@
+{
+  "va": "0x004020E0",
+  "size": 14,
+  "orig_symbol": "AnimatableTransform::vfunc_55",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "AnimatableTransform::vfunc_55",
+  "class": "AnimatableTransform",
+  "signature": "uint32_t fn_004020E0(void* self, uint32_t arg)",
+  "summary": "Forwards the call to vtable slot 7 (+0x1C) of the embedded subobject at +0x04, passing the subobject as `this` and returning its result.",
+  "fields": [
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:23:43Z"
+}
