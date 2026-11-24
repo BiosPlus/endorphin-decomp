@@ -9254,3 +9254,24 @@ void fn_004C1380(void* self) {
         static_cast<void*>(&mem_00AE301C);
 }
 } // namespace lift_004C1380
+
+// [0x004C17A0] ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, bool, {public: bool __thiscall NMData::TriggeredEventData::isEnabled(void) const, 0}, bool, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{272, {flat}}, 0}>::vfunc_40 (122 bytes)
+namespace lift_004C17A0 {
+extern void ext_0067A670();
+extern int mem_00AE3048;
+extern int mem_00AE3044;
+
+// @name ExprParser::ReadWriteMethodType<TriggeredEventData,isEnabled>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, bool, {public: bool __thiscall NMData::TriggeredEventData::isEnabled(void) const, 0}, bool, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{272, {flat}}, 0}>
+// @summary Lazily initializes a function-local static helper object (guarded by a flag bit) and stores its address into the out-pointer at +0x04.
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+void fn_004C17A0(void* out) {
+    // One-time initialization guarded by bit 0 of mem_00AE3048.
+    if ((mem_00AE3048 & 1) == 0) {
+        mem_00AE3048 |= 1;
+        ext_0067A670();                 // constructor for the static object (this = &mem_00AE3044, arg = 0)
+        mem_00AE3044 = 0x944d2c;        // install vtable pointer on the static object
+    }
+    lift_field<void*>(out, 4) = &mem_00AE3044;
+}
+} // namespace lift_004C17A0
