@@ -1,0 +1,27 @@
+{
+  "va": "0x007131C0",
+  "size": 22,
+  "orig_symbol": "sub_007131C0",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "zeroPairAndReturnTrue",
+  "signature": "extern \"C\" uint8_t __stdcall fn_007131C0(void* self)",
+  "summary": "Stdcall (ret 4) helper: zeroes two consecutive 32-bit fields at +0x00 and +0x04 of the object whose pointer is passed on the stack, then returns 1 in al.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:30:20Z"
+}

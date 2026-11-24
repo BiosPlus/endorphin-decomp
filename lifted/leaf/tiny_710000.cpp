@@ -2800,3 +2800,16 @@ uint8_t __thiscall fn_0071C8D0(uint8_t* self) {
 }
 } // namespace lift_0071C970
 } // namespace lift_0071C8D0
+
+// [0x007131C0] sub_007131C0 (22 bytes)
+namespace lift_007131C0 {
+// @name zeroPairAndReturnTrue
+// @summary Stdcall (ret 4) helper: zeroes two consecutive 32-bit fields at +0x00 and +0x04 of the object whose pointer is passed on the stack, then returns 1 in al.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+extern uint8_t __stdcall fn_007131C0(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0;
+    lift_field<uint32_t>(self, 0x04) = 0;
+    return 1;
+}
+} // namespace lift_007131C0
