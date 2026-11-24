@@ -55,3 +55,20 @@ void* fn_005DA190(void* self) {
 }
 } // namespace lift_00537C10
 } // namespace lift_005DA190
+
+// [0x005DA110]
+namespace lift_005DA110 {
+// @name Unknown::setChildField5C
+// @class Unknown
+// @summary If this->field_0x04 is non-null, store the argument at ptr->field_0x5C.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x5C std::uint32_t field_0x5C
+
+// Thiscall with one stack argument (ret 4). `self` is ECX, `arg` is [esp+4].
+void sub_005DA110(std::uint8_t* self, std::uint32_t arg) {
+    std::uint8_t* target = *reinterpret_cast<std::uint8_t**>(self + 0x04);
+    if (target != nullptr) {
+        *reinterpret_cast<std::uint32_t*>(target + 0x5C) = arg;
+    }
+}
+} // namespace lift_005DA110

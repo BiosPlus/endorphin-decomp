@@ -17249,6 +17249,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046E210 (ExprParser::ReadMethodType\u003cImageExporter, bool, ImageExporter::isEnabled, 0\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005DA110": {
+    "name": "Unknown::setChildField5C",
+    "class": "Unknown",
+    "signature": "void sub_005DA110(std::uint8_t* self, std::uint32_t arg)",
+    "summary": "If this-\u003efield_0x04 is non-null, store the argument at ptr-\u003efield_0x5C.",
+    "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
+  },
   "0x005DA190": {
     "name": "sub_005DA190",
     "class": "CompoundRenderable",
