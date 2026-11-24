@@ -5934,3 +5934,24 @@ extern int __thiscall fn_005471E0(void* self, DWORD arg0, DWORD arg1) {
     return 0;
 }
 } // namespace lift_005471E0
+
+// [0x00528C30] AnimatableTransform::vfunc_9_off_C (19 bytes)
+namespace lift_00528C30 {
+// @name AnimatableTransform::vfunc_9_off_C
+// @class AnimatableTransform
+// @summary If the sub-object at +0x4 is non-null, forwards the call (same stack argument) to its vtable slot 8; otherwise returns 0.
+// @field AnimatableTransform +0x04 void* subobject
+uint32_t __thiscall fn_00528C30(void* self, uint32_t arg0) {
+    // cmp [ecx+4], 0 / je -> ret 4 (eax unspecified on the null path; 0 used here)
+    void* sub = lift_field<void*>(self, 0x4);
+    if (sub == nullptr) {
+        return 0;
+    }
+    // mov ecx,[ecx+4]; mov eax,[ecx]; mov eax,[eax+0x20]; jmp eax
+    // Tail call: callee receives the new this (sub) and the same stack argument.
+    void** subVtable = *reinterpret_cast<void***>(sub);
+    using SlotFn = uint32_t(__thiscall*)(void*, uint32_t);
+    SlotFn target = reinterpret_cast<SlotFn>(subVtable[8]);
+    return target(sub, arg0);
+}
+} // namespace lift_00528C30

@@ -1,0 +1,22 @@
+{
+  "va": "0x00528C30",
+  "size": 19,
+  "orig_symbol": "AnimatableTransform::vfunc_9_off_C",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "AnimatableTransform::vfunc_9_off_C",
+  "class": "AnimatableTransform",
+  "signature": "uint32_t __thiscall fn_00528C30(void* self, uint32_t arg0)",
+  "summary": "If the sub-object at +0x4 is non-null, forwards the call (same stack argument) to its vtable slot 8; otherwise returns 0.",
+  "fields": [
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "subobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:01:36Z"
+}
