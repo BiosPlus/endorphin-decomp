@@ -4,11 +4,29 @@
   "orig_symbol": "sub_005DA150",
   "src_path": "src/leaf/tiny_5D0000.cpp",
   "lifted_path": "lifted/leaf/tiny_5D0000.cpp",
-  "name": "Unknown::setChildField64",
-  "class": "Unknown",
-  "signature": "extern \"C\" void __thiscall fn_005DA150(void* self, int edx_unused, float value)",
-  "summary": "Stores the float argument into field +0x64 of the child object at this+0x04, if that child pointer is non-null.",
+  "name": "sub_005DC420",
+  "class": "CompoundRenderable",
+  "signature": "extern \"C\" void __fastcall fn_005DC420(void* self)",
+  "summary": "Member forwarding thunk: loads subobject pointer at +0x44 and tail-calls sub_005DA190.",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "void*",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
     {
       "class": "Unknown",
       "offset": "+0x4",
@@ -17,12 +35,30 @@
     },
     {
       "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "std::uint32_t",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Unknown",
       "offset": "+0x64",
       "type": "float",
       "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "child"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T01:53:36Z"
+  "lifted_at": "2026-11-24T01:53:46Z"
 }

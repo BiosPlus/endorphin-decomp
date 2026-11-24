@@ -17284,10 +17284,10 @@
     "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
   },
   "0x005DA150": {
-    "name": "Unknown::setChildField64",
-    "class": "Unknown",
-    "signature": "extern \"C\" void __thiscall fn_005DA150(void* self, int edx_unused, float value)",
-    "summary": "Stores the float argument into field +0x64 of the child object at this+0x04, if that child pointer is non-null.",
+    "name": "sub_005DC420",
+    "class": "CompoundRenderable",
+    "signature": "extern \"C\" void __fastcall fn_005DC420(void* self)",
+    "summary": "Member forwarding thunk: loads subobject pointer at +0x44 and tail-calls sub_005DA190.",
     "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
   },
   "0x005DA170": {
