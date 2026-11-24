@@ -1001,3 +1001,16 @@ DWORD fn_007C7000(DWORD self) {
     return ext_007D5AE0(self + 0x44);
 }
 } // namespace lift_007C7000
+
+// [0x007C70D0]
+namespace lift_007C70D0 {
+// @name getField0x64Thunk
+// @summary Adds 0x44 to the passed pointer and tail-calls getField0x20, returning the uint32 at offset 0x64 of the original pointer.
+extern uint32_t ext_007D5BC0(uint32_t arg0);
+
+extern uint32_t sub_007C70D0(uint32_t arg0) {
+    // Original: mov eax,[esp+4]; add eax,0x44; mov [esp+4],eax; jmp getField0x20
+    uint32_t adjusted = arg0 + 0x44u;
+    return ext_007D5BC0(adjusted);
+}
+} // namespace lift_007C70D0

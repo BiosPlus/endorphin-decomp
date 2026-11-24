@@ -1,0 +1,13 @@
+{
+  "va": "0x007C70D0",
+  "size": 16,
+  "orig_symbol": "sub_007C70D0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "getField0x64Thunk",
+  "signature": "extern \"C\" uint32_t sub_007C70D0(uint32_t arg0)",
+  "summary": "Adds 0x44 to the passed pointer and tail-calls getField0x20, returning the uint32 at offset 0x64 of the original pointer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:47:39Z"
+}

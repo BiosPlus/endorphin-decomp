@@ -38275,6 +38275,12 @@
     "summary": "Adjusts this by +0x44 and tail-forwards the call to setField20_007D5BB0, which stores value at +0x20 of that subobject.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C70D0": {
+    "name": "getField0x64Thunk",
+    "signature": "extern \"C\" uint32_t sub_007C70D0(uint32_t arg0)",
+    "summary": "Adds 0x44 to the passed pointer and tail-calls getField0x20, returning the uint32 at offset 0x64 of the original pointer.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C70E0": {
     "name": "getField0x24",
     "signature": "uint16_t sub_007C70E0(uint32_t obj)",
