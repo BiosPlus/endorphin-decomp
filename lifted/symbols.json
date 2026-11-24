@@ -955,6 +955,13 @@
     "summary": "Calls an MFC80 import (ord 578) on the embedded object at +0x12C, then tail-calls the base destructor.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00413990": {
+    "name": "StreambufDerived::~StreambufDerived",
+    "class": "StreambufDerived",
+    "signature": "void fn_00413990(void* self)",
+    "summary": "Reset vptr, delete embedded CRITICAL_SECTION at +0x44, release the resource at +0x3c via ext_006A5C5C, then tail-call the base streambuf destructor.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00414220": {
     "name": "ConsoleWnd::vfunc_1",
     "class": "ConsoleWnd",
@@ -46214,6 +46221,13 @@
     "signature": "extern \"C\" void* __fastcall fn_007DE020(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_007DD020 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x007DEC80": {
+    "name": "Unknown::initFromSource (descriptive placeholder; owning class not identified)",
+    "class": "Unknown",
+    "signature": "void fn_007DEC80(void* eax, void* ecx, uint16_t dx, float f)",
+    "summary": "Initializes a 0x16-byte record at eax from the record at ecx, copying two dwords, a float and a word argument, and setting two self-referencing pointers.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
   "0x007DFB50": {
     "name": "zeroU32Ptr",

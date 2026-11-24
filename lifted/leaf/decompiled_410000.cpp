@@ -352,3 +352,29 @@ uint8_t sub_0041C570(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3)
     return reinterpret_cast<Fn>(static_cast<uintptr_t>(fn_addr))(target, arg1, arg2, arg3);
 }
 } // namespace lift_0041C570
+
+// [0x00413990] sub_00413990 (40 bytes)
+namespace lift_00413990 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* arg);
+// KERNEL32!DeleteCriticalSection, called through IAT slot at 0x009242E4.
+extern void ext_DeleteCriticalSection(void* cs);
+// MSVCP80 basic_streambuf<char> destructor, tail-jumped through IAT slot at 0x00924F9C.
+extern void ext_MSVCP80_basic_streambuf_dtor(void* self);
+extern int mem_009242E4;
+extern int mem_00924F9C;
+
+// @name StreambufDerived::~StreambufDerived
+// @class StreambufDerived
+// @summary Reset vptr, delete embedded CRITICAL_SECTION at +0x44, release the resource at +0x3c via ext_006A5C5C, then tail-call the base streambuf destructor.
+// @field StreambufDerived +0x00 void* vptr
+// @field StreambufDerived +0x3c void* field_0x3c
+// @field StreambufDerived +0x44 CRITICAL_SECTION cs
+void fn_00413990(void* self) {
+    auto* obj = static_cast<unsigned char*>(self);
+    *reinterpret_cast<const void**>(obj + 0x00) = reinterpret_cast<const void*>(0x0092c1f4);
+    ext_DeleteCriticalSection(obj + 0x44);
+    ext_006A5C5C(*reinterpret_cast<void**>(obj + 0x3c));
+    ext_MSVCP80_basic_streambuf_dtor(self);
+}
+} // namespace lift_00413990
