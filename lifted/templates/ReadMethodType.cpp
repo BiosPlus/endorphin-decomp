@@ -42677,3 +42677,34 @@ float fn_0066F9F0(void* const* arg) {
     return static_cast<float>(std::trunc(biased));
 }
 } // namespace lift_0066F9F0
+
+// [0x005B3720] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_2 (119 bytes)
+namespace lift_005B3720 {
+extern int32_t ext_006A6DE0(double value);
+
+// @name ExprParser::ReadMethodType<Geometry>::vfunc_2
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>
+// @summary Gets the Geometry's file name string via vtable slot 8 of the sub-object at +0x0C, parses it with atof, rounds half away from zero, and returns the int result; throws if the Geometry pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field Geometry +0x0C void* field_0x0C
+int32_t fn_005B3720(void* self) {
+    // self points at the ValuePtr; its first dword is the Geometry*.
+    void* geometry = *reinterpret_cast<void**>(self);
+    if (geometry == nullptr) {
+        throw std::runtime_error("ReadMethodType<Geometry>::vfunc_2: null Geometry");
+    }
+
+    // Sub-object at Geometry+0x0C; vtable slot at +0x20 (index 8) returns const std::string&.
+    void* source = *reinterpret_cast<void**>(static_cast<uint8_t*>(geometry) + 0x0C);
+    void** vtbl = *reinterpret_cast<void***>(source);
+    using GetStringFn = const std::string* (*)(void*);
+    const std::string* str = reinterpret_cast<GetStringFn>(vtbl[8])(source);
+
+    float parsed = static_cast<float>(std::atof(str->c_str()));
+
+    // Round half away from zero: add/subtract 0.5 depending on sign, then convert.
+    double adjusted = (parsed < 0.0f) ? static_cast<double>(parsed) - 0.5
+                                      : static_cast<double>(parsed) + 0.5;
+    return ext_006A6DE0(adjusted);
+}
+} // namespace lift_005B3720

@@ -22058,6 +22058,13 @@
     "summary": "Reads the Geometry-side object pointer held at +0x00 of the method-type object, throws if it is null, calls the object's vtable slot 8 (Geometry::getFileName) and returns atof() of the resulting file name as a float.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005B3720": {
+    "name": "ExprParser::ReadMethodType\u003cGeometry\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e",
+    "signature": "int32_t fn_005B3720(void* self)",
+    "summary": "Gets the Geometry's file name string via vtable slot 8 of the sub-object at +0x0C, parses it with atof, rounds half away from zero, and returns the int result; throws if the Geometry pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005B37A0": {
     "name": "ExprParser::ReadMethodType\u003cGeometry\u003e::vfunc_3 (Geometry::getFileName bool check)",
     "class": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e",
