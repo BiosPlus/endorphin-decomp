@@ -3825,6 +3825,12 @@
     "summary": "Tail-forwards to virtual slot +0xAC of the object at this-\u003e+0x18-\u003e+0xC, returning its result.",
     "lifted_path": "lifted/classes/VMCSEngine.cpp"
   },
+  "0x00468710": {
+    "name": "descriptiveName_00468710 (forwardToChildIfEnabled)",
+    "signature": "void fn_00468710(void* self, uint8_t value)",
+    "summary": "If the byte flag at +0x10 is set, forward the call and value to the object pointer stored at +0x14; otherwise return.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00468750": {
     "name": "guardedForwardToChild",
     "signature": "uint8_t fn_00468750(void* self)",

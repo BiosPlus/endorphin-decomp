@@ -1,0 +1,27 @@
+{
+  "va": "0x00468710",
+  "size": 17,
+  "orig_symbol": "sub_00468710",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "descriptiveName_00468710 (forwardToChildIfEnabled)",
+  "signature": "void fn_00468710(void* self, uint8_t value)",
+  "summary": "If the byte flag at +0x10 is set, forward the call and value to the object pointer stored at +0x14; otherwise return.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:02:33Z"
+}

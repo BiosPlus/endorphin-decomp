@@ -666,3 +666,21 @@ void fn_0046FE30(void* self, uint8_t value) {
 }
 } // namespace lift_00535610
 } // namespace lift_0046FE30
+
+// [0x00468710] sub_00468710 (17 bytes)
+namespace lift_00468710 {
+// Known callee 0x0046FE10: sub_0046FE10 (Auto-lifted identical-shape clone of 0x00535610 (ExportDialog::vfunc_0).)
+extern void ext_0046FE10(void* self, uint8_t value);
+
+// @name descriptiveName_00468710 (forwardToChildIfEnabled)
+// @summary If the byte flag at +0x10 is set, forward the call and value to the object pointer stored at +0x14; otherwise return.
+// @field Unknown +0x10 uint8_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+void fn_00468710(void* self, uint8_t value) {
+    if (lift_field<uint8_t>(self, 0x10) == 0) {
+        return;
+    }
+    const uint32_t next = lift_field<uint32_t>(self, 0x14);
+    ext_0046FE10(reinterpret_cast<void*>(static_cast<uintptr_t>(next)), value);
+}
+} // namespace lift_00468710
