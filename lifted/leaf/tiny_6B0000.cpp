@@ -644,3 +644,15 @@ void fn_006BB750(uint32_t** self, uint32_t value) {
     *target = value;
 }
 } // namespace lift_006BB750
+
+// [0x006BB780]
+namespace lift_006BB780 {
+// @name SetPointeeWord4
+// @summary Stores the stack argument into the dword at offset +4 of the object pointed to by self's first field (thiscall, callee pops 4 bytes).
+// @field Unknown +0x00 void* field_0x00 (pointer to a sub-object; dereferenced to reach the target)
+// @field Unknown (pointee) +0x04 uint32_t field_0x04 (written with the argument value)
+void __thiscall fn_006BB780(void* self, uint32_t value) {
+    void* target = lift_field<void*>(self, 0x00);
+    lift_field<uint32_t>(target, 0x04) = value;
+}
+} // namespace lift_006BB780

@@ -31120,6 +31120,12 @@
     "summary": "Loads the pointer stored at *self and writes the stack argument through it (*(*self) = value); stdcall, ret 4.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006BB780": {
+    "name": "SetPointeeWord4",
+    "signature": "void __thiscall fn_006BB780(void* self, uint32_t value)",
+    "summary": "Stores the stack argument into the dword at offset +4 of the object pointed to by self's first field (thiscall, callee pops 4 bytes).",
+    "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
   "0x006BC370": {
     "name": "sub_006BC370",
     "signature": "extern \"C\" void __fastcall fn_006BC370(void* self)",

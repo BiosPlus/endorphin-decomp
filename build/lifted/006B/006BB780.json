@@ -1,0 +1,21 @@
+{
+  "va": "0x006BB780",
+  "size": 16,
+  "orig_symbol": "sub_006BB780",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "SetPointeeWord4",
+  "signature": "void __thiscall fn_006BB780(void* self, uint32_t value)",
+  "summary": "Stores the stack argument into the dword at offset +4 of the object pointed to by self's first field (thiscall, callee pops 4 bytes).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (pointer to a sub-object; dereferenced to reach the",
+      "name": "target)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:37:21Z"
+}
