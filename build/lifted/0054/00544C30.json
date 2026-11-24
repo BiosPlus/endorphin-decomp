@@ -1,0 +1,22 @@
+{
+  "va": "0x00544C30",
+  "size": 19,
+  "orig_symbol": "ReshapeTool::vfunc_14_off_98",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ReshapeTool::vfunc_14_off_98",
+  "class": "ReshapeTool",
+  "signature": "void fn_00544C30(void* self, uint32_t arg)",
+  "summary": "Secondary-base thunk (ToolClient at +0x98): if the forwarding object at +0x88 is set, tail-dispatches its vtable slot 14 with the same argument; otherwise returns, popping the 4-byte argument.",
+  "fields": [
+    {
+      "class": "ReshapeTool",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:03:05Z"
+}

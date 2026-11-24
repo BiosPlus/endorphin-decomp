@@ -12665,6 +12665,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00544920 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00544C30": {
+    "name": "ReshapeTool::vfunc_14_off_98",
+    "class": "ReshapeTool",
+    "signature": "void fn_00544C30(void* self, uint32_t arg)",
+    "summary": "Secondary-base thunk (ToolClient at +0x98): if the forwarding object at +0x88 is set, tail-dispatches its vtable slot 14 with the same argument; otherwise returns, popping the 4-byte argument.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00544C50": {
     "name": "ReshapeTool::vfunc_23",
     "class": "ReshapeTool",

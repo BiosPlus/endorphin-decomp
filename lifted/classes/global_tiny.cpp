@@ -6054,3 +6054,23 @@ uint32_t fn_00537BF0(void* self, uint32_t arg) {
     return target(child, arg);
 }
 } // namespace lift_00537BF0
+
+// [0x00544C30] ReshapeTool::vfunc_14_off_98 (19 bytes)
+namespace lift_00544C30 {
+// @name ReshapeTool::vfunc_14_off_98
+// @class ReshapeTool
+// @summary Secondary-base thunk (ToolClient at +0x98): if the forwarding object at +0x88 is set, tail-dispatches its vtable slot 14 with the same argument; otherwise returns, popping the 4-byte argument.
+// @field ReshapeTool +0x88 void* field_0x88
+void fn_00544C30(void* self, uint32_t arg) {
+    // self is the ToolClient subobject (ReshapeTool + 0x98); ReshapeTool +0x88 is self - 0x10.
+    void* target = lift_field<void*>(self, -0x10);
+    if (target == nullptr) {
+        return; // original: ret 4 (callee pops the one stack argument)
+    }
+    // Vtable slot 14 (byte offset 0x38) of the target object.
+    using SlotFn = void (*)(void*, uint32_t);
+    void** vtbl = *reinterpret_cast<void***>(target);
+    auto fn = reinterpret_cast<SlotFn>(vtbl[14]);
+    fn(target, arg); // original: tail jmp, argument forwarded unchanged
+}
+} // namespace lift_00544C30
