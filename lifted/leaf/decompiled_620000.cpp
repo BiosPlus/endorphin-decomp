@@ -20,3 +20,24 @@ extern void __fastcall fn_00629DF0(void* self) {
     lift_field<float>(self, 0x30) = value;
 }
 } // namespace lift_00629DF0
+
+// [0x006271D0] sub_006271D0 (25 bytes)
+namespace lift_006271D0 {
+extern void __thiscall ext_00647E00(void* self, uint32_t arg);
+
+// @name descriptiveFunctionName (owner class not identified)
+// @summary Forwards a pointer to this+0x30 to ext_00647E00, using this->field_0x28->field_0x158->field_0xac as the receiver.
+// @field field_0x28 void* field_0x28
+// @field field_0x158 void* field_0x158
+// @field field_0xac void* field_0xac
+void fn_006271D0(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    void* p28 = *reinterpret_cast<void**>(base + 0x28);
+    void* p158 = *reinterpret_cast<void**>(static_cast<uint8_t*>(p28) + 0x158);
+    void* receiver = *reinterpret_cast<void**>(static_cast<uint8_t*>(p158) + 0xac);
+
+    uint32_t arg = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base + 0x30));
+    ext_00647E00(receiver, arg);
+}
+} // namespace lift_006271D0

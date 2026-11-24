@@ -1,0 +1,13 @@
+{
+  "va": "0x006271D0",
+  "size": 25,
+  "orig_symbol": "sub_006271D0",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "descriptiveFunctionName (owner class not identified)",
+  "signature": "void fn_006271D0(void* self)",
+  "summary": "Forwards a pointer to this+0x30 to ext_00647E00, using this-\u003efield_0x28-\u003efield_0x158-\u003efield_0xac as the receiver.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:50:15Z"
+}

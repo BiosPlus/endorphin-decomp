@@ -22095,6 +22095,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006268F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x006271D0": {
+    "name": "descriptiveFunctionName (owner class not identified)",
+    "signature": "void fn_006271D0(void* self)",
+    "summary": "Forwards a pointer to this+0x30 to ext_00647E00, using this-\u003efield_0x28-\u003efield_0x158-\u003efield_0xac as the receiver.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00627270": {
     "name": "CompoundSensor::vfunc_18",
     "class": "CompoundSensor",
