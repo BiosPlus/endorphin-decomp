@@ -1,0 +1,13 @@
+{
+  "va": "0x00714B50",
+  "size": 57,
+  "orig_symbol": "sub_00714B50",
+  "src_path": "src/clones/auto_clones_710000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_710000.cpp",
+  "name": "initHugeVec3Globals",
+  "signature": "void sub_00714B50()",
+  "summary": "Initializes three 64-bit double globals from MSVCR80.dll!_HUGE.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:25:14Z"
+}
