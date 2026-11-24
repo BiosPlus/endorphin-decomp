@@ -1,0 +1,27 @@
+{
+  "va": "0x0055DA20",
+  "size": 18,
+  "orig_symbol": "sub_0055DA20",
+  "src_path": "src/leaf/tiny_550000.cpp",
+  "lifted_path": "lifted/leaf/tiny_550000.cpp",
+  "name": "initDwordPair",
+  "signature": "void fn_0055DA20(DWORD* self, DWORD a, DWORD b)",
+  "summary": "Stores two stack-passed DWORDs into the object at ECX and returns that object pointer (callee pops 8 bytes).",
+  "fields": [
+    {
+      "class": "DwordPair",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "DwordPair",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:57:58Z"
+}

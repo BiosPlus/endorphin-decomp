@@ -13138,6 +13138,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0055D6E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0055DA20": {
+    "name": "initDwordPair",
+    "signature": "void fn_0055DA20(DWORD* self, DWORD a, DWORD b)",
+    "summary": "Stores two stack-passed DWORDs into the object at ECX and returns that object pointer (callee pops 8 bytes).",
+    "lifted_path": "lifted/leaf/tiny_550000.cpp"
+  },
   "0x0055DE20": {
     "name": "NMData::NullRelationshipData::vfunc_59",
     "class": "NMData::NullRelationshipData",

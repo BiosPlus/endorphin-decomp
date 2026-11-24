@@ -96,3 +96,17 @@ void fn_005528A0(void* self) {
     lift_field<float>(self, 0x0C) = 1.0f;
 }
 } // namespace lift_005528A0
+
+// [0x0055DA20] sub_0055DA20 (18 bytes)
+namespace lift_0055DA20 {
+// @name initDwordPair
+// @summary Stores two stack-passed DWORDs into the object at ECX and returns that object pointer (callee pops 8 bytes).
+// @field DwordPair +0x00 DWORD field_0x00
+// @field DwordPair +0x04 DWORD field_0x04
+void fn_0055DA20(DWORD* self, DWORD a, DWORD b) {
+    // mov edx,[esp+8]; mov eax,ecx; mov ecx,[esp+4]
+    // mov [eax],ecx; mov [eax+4],edx; ret 8
+    self[0] = a;
+    self[1] = b;
+}
+} // namespace lift_0055DA20
