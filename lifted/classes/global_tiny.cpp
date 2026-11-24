@@ -5124,3 +5124,23 @@ void fn_00544A00(void* self) {
     (void)target;
 }
 } // namespace lift_00544A00
+
+// [0x00545600] PoseTool::vfunc_29 (13 bytes)
+namespace lift_00545600 {
+// @name PoseTool::vfunc_29
+// @class PoseTool
+// @summary Forwards the call to virtual slot 29 (+0x74) of the object held at this+0xA0, returning its result.
+// @field PoseTool +0xA0 void* field_0xa0
+DWORD fn_00545600(void* self) {
+    // Load the delegate object pointer stored at this+0xA0.
+    void* obj = lift_field<void*>(self, 0xA0);
+
+    // Dispatch through the delegate's vtable, slot at byte offset 0x74 (index 29).
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    using VFn = DWORD (*)(void*);
+    VFn target = reinterpret_cast<VFn>(vtbl[0x74 / sizeof(void*)]);
+
+    // Tail-call equivalent: return the delegate's result unchanged.
+    return target(obj);
+}
+} // namespace lift_00545600

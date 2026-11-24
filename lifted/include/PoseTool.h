@@ -11,5 +11,6 @@
 namespace lifted_layout {
 struct PoseTool_Fields {
     // +0x88  void*                    field_0x88  (evidence: 0x00545650)
+    // +0xA0  void*                    field_0xa0  (evidence: 0x00545600)
 };
 } // namespace lifted_layout

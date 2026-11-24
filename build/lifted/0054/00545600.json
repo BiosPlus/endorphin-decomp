@@ -1,0 +1,22 @@
+{
+  "va": "0x00545600",
+  "size": 13,
+  "orig_symbol": "PoseTool::vfunc_29",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "PoseTool::vfunc_29",
+  "class": "PoseTool",
+  "signature": "DWORD fn_00545600(void* self)",
+  "summary": "Forwards the call to virtual slot 29 (+0x74) of the object held at this+0xA0, returning its result.",
+  "fields": [
+    {
+      "class": "PoseTool",
+      "offset": "+0xA0",
+      "type": "void*",
+      "name": "field_0xa0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:21:06Z"
+}
