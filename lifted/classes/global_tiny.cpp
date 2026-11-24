@@ -5467,3 +5467,20 @@ int MetaBodySensor_vfunc_25(const void* self, int value) {
     return (stored == value) ? 1 : 0;
 }
 } // namespace lift_005FF1C0
+
+// [0x005A9ED0] CharacterReloader::vfunc_14 (15 bytes)
+namespace lift_005A9ED0 {
+// Imported MSVCP80 std::basic_string<char> destructor, reached through the IAT slot at mem_00924FF4.
+extern void __thiscall ext_msvcp80_string_dtor(void* self);
+
+// Stdcall-style thunk: the 0x20-byte argument block holds a std::string by value at its start;
+// the function destroys that string and returns true. The RET 0x20 stack pop cannot be expressed
+// portably, so the argument block is passed as a pointer and the caller owns cleanup.
+// @name CharacterReloader::vfunc_14
+// @class CharacterReloader
+// @summary Destroys the by-value std::string argument at the start of the 0x20-byte argument block and returns true.
+bool fn_005A9ED0(void* argBlock) {
+    ext_msvcp80_string_dtor(argBlock);
+    return true;
+}
+} // namespace lift_005A9ED0
