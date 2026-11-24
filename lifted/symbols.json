@@ -37094,6 +37094,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006C12B0 (Unknown::ForwardArgToSubobjectSlotB0).",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006F2330": {
+    "name": "Unknown::ForwardTwoArgsToSubobjectVirtual0xB8",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006F2330(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Forwards two stack arguments to virtual slot 0xB8 of the embedded subobject at +0x6718 and returns its result.",
+    "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
+  },
   "0x006F2350": {
     "name": "sub_006F2350",
     "class": "Unknown",

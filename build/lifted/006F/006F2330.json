@@ -1,0 +1,22 @@
+{
+  "va": "0x006F2330",
+  "size": 31,
+  "orig_symbol": "sub_006F2330",
+  "src_path": "src/leaf/tiny_6F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6F0000.cpp",
+  "name": "Unknown::ForwardTwoArgsToSubobjectVirtual0xB8",
+  "class": "Unknown",
+  "signature": "uint32_t fn_006F2330(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Forwards two stack arguments to virtual slot 0xB8 of the embedded subobject at +0x6718 and returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x6718",
+      "type": "void*",
+      "name": "field_0x6718"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:27:23Z"
+}

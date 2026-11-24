@@ -2891,3 +2891,19 @@ DWORD fn_006F22C0(void* self, DWORD arg1, DWORD arg2) {
     return target(sub, arg1, arg2);
 }
 } // namespace lift_006F22C0
+
+// [0x006F2330] sub_006F2330 (31 bytes)
+namespace lift_006F2330 {
+// @name Unknown::ForwardTwoArgsToSubobjectVirtual0xB8
+// @class Unknown
+// @summary Forwards two stack arguments to virtual slot 0xB8 of the embedded subobject at +0x6718 and returns its result.
+// @field Unknown +0x6718 void* field_0x6718
+uint32_t fn_006F2330(void* self, uint32_t arg1, uint32_t arg2) {
+    // Embedded subobject lives at self + 0x6718; its first dword is the vtable pointer.
+    void* subobject = static_cast<uint8_t*>(self) + 0x6718;
+    void* vtable = lift_field<void*>(self, 0x6718);
+    using VirtualFn = uint32_t (*)(void* thisPtr, uint32_t a, uint32_t b);
+    VirtualFn target = *reinterpret_cast<VirtualFn*>(static_cast<uint8_t*>(vtable) + 0xB8);
+    return target(subobject, arg1, arg2);
+}
+} // namespace lift_006F2330
