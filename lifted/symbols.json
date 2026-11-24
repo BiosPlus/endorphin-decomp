@@ -27405,6 +27405,13 @@
     "summary": "Increments the counter at +0x0C; if flag bit 0 at +0x00 is clear, runs the newline helper and the flush helper, then clears the one-shot byte at +0x10.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00640CD0": {
+    "name": "Unknown::flushOnceAndDecrementCount",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __thiscall fn_00640CD0(void* self)",
+    "summary": "If flag bit 0 is clear: when the one-shot byte at +0x10 is set, runs AppendNewlineOnce and the flush helper; then decrements the count at +0x0C and sets the one-shot byte at +0x10.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00641FD0": {
     "name": "IsFlagBit0AtOffset20",
     "class": "\u003cClassName\u003e (optional)",

@@ -578,3 +578,29 @@ extern void __thiscall fn_00640CB0(void* ecx) {
     }
 }
 } // namespace lift_00640CB0
+
+// [0x00640CD0] sub_00640CD0 (36 bytes)
+namespace lift_00640CD0 {
+// Known callee 0x00640940: Unknown::AppendNewlineOnce (If flag bit 0 is clear and the one-shot byte at +0x11 is clear, appends '\n' to the std::string referenced at +0x08 and sets +0x11.)
+extern void __thiscall ext_00640940(void* self);
+// Known callee 0x006408F0: sub_006408F0 (Clears the flag at +0x11, then appends the C-string at +0x04 to the string at +0x08 (count-1) times, with count read from +0x0C.)
+extern void __thiscall ext_006408F0(void* self);
+
+// @name Unknown::flushOnceAndDecrementCount
+// @class Unknown
+// @summary If flag bit 0 is clear: when the one-shot byte at +0x10 is set, runs AppendNewlineOnce and the flush helper; then decrements the count at +0x0C and sets the one-shot byte at +0x10.
+// @field Unknown +0x00 uint8_t field_0x00 (bit 0 = suppress flag)
+// @field Unknown +0x0C uint32_t field_0x0C (count, decremented)
+// @field Unknown +0x10 uint8_t field_0x10 (one-shot byte)
+extern void __thiscall fn_00640CD0(void* self) {
+    if (lift_field<uint8_t>(self, 0x00) & 0x01) {
+        return;
+    }
+    if (lift_field<uint8_t>(self, 0x10) != 0) {
+        ext_00640940(self);
+        ext_006408F0(self);
+    }
+    lift_field<uint32_t>(self, 0x0C) -= 1;
+    lift_field<uint8_t>(self, 0x10) = 1;
+}
+} // namespace lift_00640CD0

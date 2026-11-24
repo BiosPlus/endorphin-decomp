@@ -1,0 +1,34 @@
+{
+  "va": "0x00640CD0",
+  "size": 36,
+  "orig_symbol": "sub_00640CD0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "Unknown::flushOnceAndDecrementCount",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __thiscall fn_00640CD0(void* self)",
+  "summary": "If flag bit 0 is clear: when the one-shot byte at +0x10 is set, runs AppendNewlineOnce and the flush helper; then decrements the count at +0x0C and sets the one-shot byte at +0x10.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint8_t field_0x00 (bit 0 = suppress",
+      "name": "flag)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t field_0x0C (count,",
+      "name": "decremented)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t field_0x10 (one-shot",
+      "name": "byte)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:31:59Z"
+}
