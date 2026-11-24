@@ -967,3 +967,25 @@ void __thiscall sub_0044B360(void* self) {
     }
 }
 } // namespace lift_0044B360
+
+// [0x0044B730] sub_0044B730 (35 bytes)
+namespace lift_0044B730 {
+// @name ReleaseAndForwardVirtual154
+// @class unknown
+// @summary If this+0x64 is non-null, calls vtable slot +0x30 on that object, then returns the result of vtable slot +0x154 on the same object; returns 0 when this+0x64 is null.
+// @field unknown +0x64 void* field_0x64
+uint32_t __thiscall fn_0044B730(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    auto* obj = *reinterpret_cast<uint8_t**>(base + 0x64);
+    if (obj == nullptr) {
+        return 0;
+    }
+    // Vtable slots are addressed by byte offset (+0x30, +0x154) from the vtable pointer.
+    auto* vtbl = *reinterpret_cast<uint8_t**>(obj);
+    using VoidFn = void(__thiscall*)(void*);
+    using RetFn = uint32_t(__thiscall*)(void*);
+    reinterpret_cast<VoidFn>(*reinterpret_cast<void**>(vtbl + 0x30))(obj);
+    auto* vtbl2 = *reinterpret_cast<uint8_t**>(obj);
+    return reinterpret_cast<RetFn>(*reinterpret_cast<void**>(vtbl2 + 0x154))(obj);
+}
+} // namespace lift_0044B730

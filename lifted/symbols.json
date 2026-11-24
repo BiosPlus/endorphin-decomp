@@ -3316,6 +3316,13 @@
     "summary": "If this+0x64 is non-null, calls vtable slot +0x28 on it with argument 0, then tail-calls vtable slot +0x154 on it.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044B730": {
+    "name": "ReleaseAndForwardVirtual154",
+    "class": "unknown",
+    "signature": "uint32_t __thiscall fn_0044B730(void* self)",
+    "summary": "If this+0x64 is non-null, calls vtable slot +0x30 on that object, then returns the result of vtable slot +0x154 on the same object; returns 0 when this+0x64 is null.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044B760": {
     "name": "sub_0044B760",
     "signature": "uint8_t fn_0044B760(void* self)",

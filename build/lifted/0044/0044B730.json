@@ -1,0 +1,22 @@
+{
+  "va": "0x0044B730",
+  "size": 35,
+  "orig_symbol": "sub_0044B730",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "ReleaseAndForwardVirtual154",
+  "class": "unknown",
+  "signature": "uint32_t __thiscall fn_0044B730(void* self)",
+  "summary": "If this+0x64 is non-null, calls vtable slot +0x30 on that object, then returns the result of vtable slot +0x154 on the same object; returns 0 when this+0x64 is null.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:45:34Z"
+}
