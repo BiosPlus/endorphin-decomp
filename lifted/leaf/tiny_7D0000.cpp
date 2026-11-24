@@ -194,3 +194,14 @@ extern uint32_t __cdecl sub_007D8740(uintptr_t obj) {
     return mem_read32(obj + 0x178);
 }
 } // namespace lift_007D8740
+
+// [0x007D4AE0]
+namespace lift_007D4AE0 {
+// @name setFlag30
+// @summary Sets the 32-bit word at offset 0x30 of the object pointed to by the first stack argument to 1.
+void sub_007D4AE0(void* self) {
+    // mov eax, [esp+4]; mov dword ptr [eax+0x30], 1; ret
+    auto* p = static_cast<uint32_t*>(self);
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(p) + 0x30) = 1u;
+}
+} // namespace lift_007D4AE0

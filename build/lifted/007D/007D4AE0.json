@@ -1,0 +1,13 @@
+{
+  "va": "0x007D4AE0",
+  "size": 12,
+  "orig_symbol": "sub_007D4AE0",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "setFlag30",
+  "signature": "void sub_007D4AE0(void* self)",
+  "summary": "Sets the 32-bit word at offset 0x30 of the object pointed to by the first stack argument to 1.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:17:02Z"
+}

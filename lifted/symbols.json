@@ -35574,6 +35574,12 @@
     "summary": "Computes the difference between the 32-bit fields at +0x0C and +0x04 of a struct.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D4AE0": {
+    "name": "setFlag30",
+    "signature": "void sub_007D4AE0(void* self)",
+    "summary": "Sets the 32-bit word at offset 0x30 of the object pointed to by the first stack argument to 1.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D5AE0": {
     "name": "derefDword",
     "signature": "uint32_t sub_007D5AE0(uint32_t ptr)",
