@@ -7242,6 +7242,13 @@
     "summary": "Lazily initializes the shared static type object once, then stores its address at +4 of the argument object.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00489600": {
+    "name": "ExprParser::WriteMethodType\u003cDesiredPoseEventData\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "void fn_00489600(void* self)",
+    "summary": "Lazily constructs a guarded static object (once, via a bit in mem_00AD9E60) and stores its address into the +0x04 slot of the argument.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00489880": {
     "name": "CallChildVtableSlot1EIfPresent",
     "signature": "void* fn_00489880(void* self)",

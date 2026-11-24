@@ -6605,3 +6605,30 @@ void fn_00489580(void* self) {
     lift_field<void*>(self, 4) = reinterpret_cast<void*>(&mem_00AD9E54);
 }
 } // namespace lift_00489580
+
+// [0x00489600] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_00489600 {
+// Callee 0x0067A670: sub_0067A670 (26B). Invoked with the static object as `this` and a single zero argument.
+extern void ext_0067A670(void* self, uint32_t arg);
+
+// Function-local static guard byte and the static object it guards.
+extern uint32_t mem_00AD9E60;
+extern uint32_t mem_00AD9E5C;
+
+// @name ExprParser::WriteMethodType<DesiredPoseEventData>::vfunc_40
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Lazily constructs a guarded static object (once, via a bit in mem_00AD9E60) and stores its address into the +0x04 slot of the argument.
+// @field ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setCharacterNameFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}> +0x04 void* field_0x04
+void fn_00489600(void* self) {
+    // One-time initialization guard: bit 0 of mem_00AD9E60 marks the static as constructed.
+    if ((mem_00AD9E60 & 1u) == 0) {
+        mem_00AD9E60 |= 1u;
+        ext_0067A670(&mem_00AD9E5C, 0);
+        // Store the static object's vtable pointer (0x0093D784) into its first word.
+        mem_00AD9E5C = 0x0093D784u;
+    }
+    // Publish the address of the static object into self+0x04.
+    uintptr_t addr = reinterpret_cast<uintptr_t>(&mem_00AD9E5C);
+    *reinterpret_cast<uintptr_t*>(reinterpret_cast<char*>(self) + 0x04) = addr;
+}
+} // namespace lift_00489600
