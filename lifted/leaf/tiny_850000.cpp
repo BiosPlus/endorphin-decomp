@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/leaf/tiny_850000.cpp
 #include "lift_compat.h"
 extern "C" void ext_00868180(void);
+#include <cstdint>
 
 // [0x0085DA80] sub_0085DA80 (16 bytes)
 // @name sub_0085DA80
@@ -225,3 +226,21 @@ int32_t fn_008573D0(int32_t arg) {
     return fn(arg);
 }
 } // namespace lift_008573D0
+
+// [0x0085E030]
+namespace lift_0085E030 {
+// @name strcpy_impl
+// @summary Copies a null-terminated C string from src to dst and returns dst.
+
+
+
+extern char* sub_0085E030(char* dst, const char* src) {
+    char* out = dst;
+    char ch;
+    do {
+        ch = *src++;
+        *dst++ = ch;
+    } while (ch != '\0');
+    return out;
+}
+} // namespace lift_0085E030
