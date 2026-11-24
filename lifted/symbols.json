@@ -8255,6 +8255,13 @@
     "summary": "Appends the string representation of arg1 to *arg0",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x00497D50": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::Transition\u003e::vfunc_40 (Transition condition accessor setup)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::Transition, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::Transition::getCondition(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::Transition::setCondition(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "void fn_00497D50(void* self)",
+    "summary": "Lazily constructs a shared static accessor object (guarded by bit 0 of a global flag word) and stores its address into the caller's slot at +0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x00497DD0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::Transition, std::string const \u0026, NMData::Transition::getCondition, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::Transition, std::string const \u0026, NMData::Transition::getCondition, 0\u003e",

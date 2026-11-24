@@ -8486,3 +8486,36 @@ void __thiscall fn_0046E190(void* self, void* out) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AD8314));
 }
 } // namespace lift_0046E190
+
+// [0x00497D50] ExprParser::ReadWriteMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::Transition::setCondition(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_00497D50 {
+// Constructor-style call for the function-local static object at mem_00ADD15C.
+// Original: call 0x0067A670 with ecx = &obj and one stack argument (0).
+extern void ext_0067A670(std::uint32_t self, std::uint32_t arg0);
+
+// Guard word (bit 0 = "static already initialized/initializing") and the static object storage.
+extern int mem_00ADD160;
+extern int mem_00ADD15C;
+
+// @name ExprParser::ReadWriteMethodType<NMData::Transition>::vfunc_40 (Transition condition accessor setup)
+// @class ExprParser::ReadWriteMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::Transition::setCondition(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Lazily constructs a shared static accessor object (guarded by bit 0 of a global flag word) and stores its address into the caller's slot at +0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_00497D50(void* self) {
+    // Thread-safe-style guard: the first caller sets bit 0 and constructs the static object.
+    if ((mem_00ADD160 & 1) == 0) {
+        mem_00ADD160 |= 1;
+
+        // Construct the static object (ecx = &mem_00ADD15C, one stack arg = 0).
+        ext_0067A670(static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(&mem_00ADD15C)), 0u);
+
+        // Install the object's vtable pointer (0x0093F50C) as its first dword.
+        *reinterpret_cast<std::uint32_t*>(&mem_00ADD15C) = 0x0093F50Cu;
+    }
+
+    // Store the static object's address into self+0x04.
+    std::uint8_t* base = static_cast<std::uint8_t*>(self);
+    *reinterpret_cast<std::uint32_t*>(base + 0x04) =
+        static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(&mem_00ADD15C));
+}
+} // namespace lift_00497D50
