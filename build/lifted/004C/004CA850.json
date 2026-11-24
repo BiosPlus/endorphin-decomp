@@ -1,0 +1,14 @@
+{
+  "va": "0x004CA850",
+  "size": 122,
+  "orig_symbol": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/Method0Type.cpp",
+  "lifted_path": "lifted/templates/Method0Type.cpp",
+  "name": "Method0Type\u003cMetaBodyConstraintData, fireDisable\u003e::vfunc_40",
+  "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}\u003e",
+  "signature": "void fn_004CA850(void* self)",
+  "summary": "One-time initializes the static function-object at 0x00AE4490 (guarded by bit 0 of 0x00AE4494), then points self+0x04 at it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:45:56Z"
+}

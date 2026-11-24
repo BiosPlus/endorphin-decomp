@@ -822,3 +822,27 @@ void fn_004CA7D0(void* out) {
     std::memcpy(out_bytes + 0x04, &addr, sizeof(addr));
 }
 } // namespace lift_004CA7D0
+
+// [0x004CA850]
+namespace lift_004CA850 {
+extern void ext_0067A670();
+extern int mem_00AE4494;
+extern int mem_00AE4490;
+
+// @name Method0Type<MetaBodyConstraintData, fireDisable>::vfunc_40
+// @class ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}>
+// @summary One-time initializes the static function-object at 0x00AE4490 (guarded by bit 0 of 0x00AE4494), then points self+0x04 at it.
+// @field ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}> +0x04 uint32_t field_0x04
+void fn_004CA850(void* self) {
+    constexpr uint32_t kStaticObjAddr = 0x00AE4490u;
+    constexpr uint32_t kStaticVTable  = 0x009464CCu;
+
+    if ((mem_00AE4494 & 1) == 0) {
+        mem_00AE4494 |= 1;
+        ext_0067A670();
+        mem_00AE4490 = static_cast<int>(kStaticVTable);
+    }
+
+    lift_field<uint32_t>(self, 4) = kStaticObjAddr;
+}
+} // namespace lift_004CA850
