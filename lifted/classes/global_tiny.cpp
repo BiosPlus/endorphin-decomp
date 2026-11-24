@@ -5399,3 +5399,22 @@ uint32_t PoseTool_vfunc_30(const uint8_t* self) {
     return (flag != 0u ? 1u : 0u) + 11u;
 }
 } // namespace lift_005451A0
+
+// [0x00537A90]
+namespace lift_00537A90 {
+// @name CompoundRenderable::vfunc_16
+// @class CompoundRenderable
+// @summary Calls the function pointer stored at +0x40 of the object referenced by this+0x18, passing &this->field_0x18 as this, and returns its result plus one.
+// @field CompoundRenderable +0x18 uint32_t* field_0x18
+
+using LiftThiscallFn = uint32_t (*)(void* self);
+
+uint32_t CompoundRenderable_vfunc_16(void* self) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    uint32_t* obj = lift_field<uint32_t*>(base, 0x18);
+    void* target = lift_field<void*>(obj, 0x40);
+    LiftThiscallFn fn = reinterpret_cast<LiftThiscallFn>(target);
+    const uint32_t result = fn(base + 0x18);
+    return result + 1u;
+}
+} // namespace lift_00537A90

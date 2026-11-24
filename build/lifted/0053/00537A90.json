@@ -1,0 +1,22 @@
+{
+  "va": "0x00537A90",
+  "size": 15,
+  "orig_symbol": "CompoundRenderable::vfunc_16",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CompoundRenderable::vfunc_16",
+  "class": "CompoundRenderable",
+  "signature": "uint32_t CompoundRenderable_vfunc_16(void* self)",
+  "summary": "Calls the function pointer stored at +0x40 of the object referenced by this+0x18, passing \u0026this-\u003efield_0x18 as this, and returns its result plus one.",
+  "fields": [
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x18",
+      "type": "uint32_t*",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:30:19Z"
+}

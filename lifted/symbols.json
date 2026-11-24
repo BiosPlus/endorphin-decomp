@@ -11141,6 +11141,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x18 and tail-calls sub_0054C640.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00537A90": {
+    "name": "CompoundRenderable::vfunc_16",
+    "class": "CompoundRenderable",
+    "signature": "uint32_t CompoundRenderable_vfunc_16(void* self)",
+    "summary": "Calls the function pointer stored at +0x40 of the object referenced by this+0x18, passing \u0026this-\u003efield_0x18 as this, and returns its result plus one.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00537AA0": {
     "name": "CompoundRenderable::vfunc_13",
     "class": "CompoundRenderable",
