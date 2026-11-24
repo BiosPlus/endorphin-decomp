@@ -1,0 +1,14 @@
+{
+  "va": "0x00464670",
+  "size": 40,
+  "orig_symbol": "CAboutDlg::vfunc_7_off_74",
+  "src_path": "src/classes/CAboutDlg.cpp",
+  "lifted_path": "lifted/classes/CAboutDlg.cpp",
+  "name": "CAboutDlg::vfunc_7_off_74",
+  "class": "CAboutDlg",
+  "signature": "void* fn_00464670(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00449A00 (RegistrationDialog::initOnceAndGetCounter).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T13:52:04Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x004614E0",
+  "size": 40,
+  "orig_symbol": "UpdateAvailableDialog::vfunc_7_off_74",
+  "src_path": "src/classes/UpdateAvailableDialog.cpp",
+  "lifted_path": "lifted/classes/UpdateAvailableDialog.cpp",
+  "name": "UpdateAvailableDialog::vfunc_7_off_74",
+  "class": "UpdateAvailableDialog",
+  "signature": "void* fn_004614E0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00449A00 (RegistrationDialog::initOnceAndGetCounter).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T13:52:04Z"
+}

@@ -4561,6 +4561,13 @@
     "summary": "Returns address of global mem_00938708.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004614E0": {
+    "name": "UpdateAvailableDialog::vfunc_7_off_74",
+    "class": "UpdateAvailableDialog",
+    "signature": "void* fn_004614E0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00449A00 (RegistrationDialog::initOnceAndGetCounter).",
+    "lifted_path": "lifted/classes/UpdateAvailableDialog.cpp"
+  },
   "0x00461630": {
     "name": "ExportUnavailableDialog::vfunc_63",
     "class": "ExportUnavailableDialog",
@@ -4763,6 +4770,13 @@
     "signature": "extern \"C\" void fn_00464600(void)",
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_593.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x00464670": {
+    "name": "CAboutDlg::vfunc_7_off_74",
+    "class": "CAboutDlg",
+    "signature": "void* fn_00464670(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00449A00 (RegistrationDialog::initOnceAndGetCounter).",
+    "lifted_path": "lifted/classes/CAboutDlg.cpp"
   },
   "0x004646A0": {
     "name": "VirtualSlot1Thunk",
