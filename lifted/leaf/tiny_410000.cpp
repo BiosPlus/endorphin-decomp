@@ -419,3 +419,23 @@ uint32_t fn_00414510(uint32_t lhs, uint32_t rhs) {
     return mem_00924EF4(lhs, rhs);
 }
 } // namespace lift_00414510
+
+// [0x0041FEA0] sub_0041FEA0 (23 bytes)
+namespace lift_0041FEA0 {
+// USER32!SendMessageA, imported via the IAT slot at mem_00925694.
+extern LRESULT ext_SendMessageA(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
+// @name Unknown::SendWmUser100CAndIncrement
+// @class Unknown
+// @summary Sends message 0x100C (WM_USER+12) to the handle at +0x20 with wParam=-1, lParam=2, and returns the result plus one.
+// @field Unknown +0x20 DWORD field_0x20
+int32_t fn_0041FEA0(void* self) {
+    const DWORD hwnd = lift_field<DWORD>(self, 0x20);
+    const LRESULT result = ext_SendMessageA(
+        reinterpret_cast<HWND>(static_cast<uintptr_t>(hwnd)),
+        0x100C,
+        static_cast<WPARAM>(-1),
+        static_cast<LPARAM>(2));
+    return static_cast<int32_t>(result) + 1;
+}
+} // namespace lift_0041FEA0

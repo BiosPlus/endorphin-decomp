@@ -1291,6 +1291,13 @@
     "summary": "Forwards to MFC80!ord_6236 with a zero argument and cleans up 8 bytes of stack arguments",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041FEA0": {
+    "name": "Unknown::SendWmUser100CAndIncrement",
+    "class": "Unknown",
+    "signature": "int32_t fn_0041FEA0(void* self)",
+    "summary": "Sends message 0x100C (WM_USER+12) to the handle at +0x20 with wParam=-1, lParam=2, and returns the result plus one.",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x00420190": {
     "name": "HotkeyDialog::vfunc_1",
     "class": "HotkeyDialog",
