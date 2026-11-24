@@ -33,3 +33,23 @@ float* fn_0053A6A0(void* self, float* out) {
     return out;
 }
 } // namespace lift_0053A6A0
+
+// [0x00532200] HasConstantTMPtr::vfunc_12 (23 bytes)
+namespace lift_00532200 {
+// @name HasConstantTMPtr::vfunc_12
+// @class HasConstantTMPtr
+// @summary Tail-calls other->vfunc_7 passing (this->field_0x04 + 0x30) as its argument.
+// @field HasConstantTMPtr +0x04 const float* field_0x04
+void fn_00532200(void* self, void* other) {
+    // Load this->field_0x04 and offset it by 0x30 bytes (12 floats = 3 floats, i.e. the Vec3 at +0x30).
+    const auto* base = *reinterpret_cast<const unsigned char* const*>(
+        static_cast<unsigned char*>(self) + 0x04);
+    const void* arg = base + 0x30;
+
+    // other->vtable[7] (vtable slot at +0x1C), invoked with `other` as this and `arg` as the sole stack argument.
+    void* const* vtbl = *reinterpret_cast<void* const* const*>(other);
+    using Slot7Fn = void (*)(void* self, const void* arg);
+    auto fn = reinterpret_cast<Slot7Fn>(vtbl[7]);
+    fn(other, arg);
+}
+} // namespace lift_00532200

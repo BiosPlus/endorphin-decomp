@@ -12706,6 +12706,13 @@
     "summary": "Tail-forwards this-\u003efield_0x04 to vtable slot 4 of the other object; returns its result.",
     "lifted_path": "lifted/classes/HasConstantTMPtr.cpp"
   },
+  "0x00532200": {
+    "name": "HasConstantTMPtr::vfunc_12",
+    "class": "HasConstantTMPtr",
+    "signature": "void fn_00532200(void* self, void* other)",
+    "summary": "Tail-calls other-\u003evfunc_7 passing (this-\u003efield_0x04 + 0x30) as its argument.",
+    "lifted_path": "lifted/classes/HasConstantTMPtr.cpp"
+  },
   "0x00532220": {
     "name": "HasRelativeTMPtr::vfunc_11",
     "class": "HasRelativeTMPtr",
