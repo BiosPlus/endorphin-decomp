@@ -173,3 +173,35 @@ extern uint8_t* __stdcall fn_00577AE0(uint8_t* dst, uint32_t count, const uint8_
     return end;
 }
 } // namespace lift_00577AE0
+
+// [0x00572680] sub_00572680 (49 bytes)
+namespace lift_00572680 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uint32_t arg);
+extern int mem_00924FF4;
+
+// @name Unknown::releaseAndResetField20
+// @class Unknown
+// @summary Releases the pointer at +0x20 via MFC80 ord_764 when non-null, zeroes the +0x20..+0x28 dword fields, then destroys the object at offset 0 through the basic_string destructor slot.
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x28 uint32_t field_0x28
+void __thiscall fn_00572680(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    uint32_t* f20 = reinterpret_cast<uint32_t*>(obj + 0x20);
+    uint32_t* f24 = reinterpret_cast<uint32_t*>(obj + 0x24);
+    uint32_t* f28 = reinterpret_cast<uint32_t*>(obj + 0x28);
+
+    if (*f20 != 0) {
+        ext_006A5C5C(*f20);
+    }
+
+    *f20 = 0;
+    *f24 = 0;
+    *f28 = 0;
+
+    using StringDtorFn = void(__thiscall*)(void*);
+    StringDtorFn string_dtor = reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+    string_dtor(self);
+}
+} // namespace lift_00572680

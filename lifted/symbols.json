@@ -17427,6 +17427,13 @@
     "summary": "Validates field_0x414 and this, opens path for writing (throws on failure), writes a header via the sink at field_0x424, emits one record per index through the container at field_0x420, and closes the file.",
     "lifted_path": "lifted/classes/CSMMotionIO.cpp"
   },
+  "0x00572680": {
+    "name": "Unknown::releaseAndResetField20",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00572680(void* self)",
+    "summary": "Releases the pointer at +0x20 via MFC80 ord_764 when non-null, zeroes the +0x20..+0x28 dword fields, then destroys the object at offset 0 through the basic_string destructor slot.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00572CC0": {
     "name": "CSMMotionIO::vfunc_11",
     "class": "CSMMotionIO",
