@@ -27308,6 +27308,12 @@
     "summary": "Returns the address of the +0x10 subobject when the flag at +0x68 is zero, otherwise the +0x54 subobject.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
+  "0x00687280": {
+    "name": "writeIfFlagClear",
+    "signature": "void __thiscall sub_00687280(void* this_ptr, uint32_t val, uint32_t* out, uint32_t mask)",
+    "summary": "Writes a 32-bit value to out if (this-\u003efield_0x150 \u0026 mask) == 0",
+    "lifted_path": "lifted/leaf/tiny_680000.cpp"
+  },
   "0x006872C0": {
     "name": "getTableFlagAt0x48",
     "signature": "uint8_t sub_006872C0(uint32_t self)",
