@@ -1,0 +1,22 @@
+{
+  "va": "0x00788D10",
+  "size": 16,
+  "orig_symbol": "sub_00788D10",
+  "src_path": "src/leaf/tiny_780000.cpp",
+  "lifted_path": "lifted/leaf/tiny_780000.cpp",
+  "name": "FileFindCursor::closeFindIfOpen",
+  "class": "FileFindCursor",
+  "signature": "void fn_00788D10(void* self)",
+  "summary": "Tail-calls closeFind when the find handle at +0x00 is nonzero; otherwise returns.",
+  "fields": [
+    {
+      "class": "FileFindCursor",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "hFind"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:27:17Z"
+}

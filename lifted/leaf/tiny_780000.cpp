@@ -522,3 +522,20 @@ __cdecl uint32_t fn_0078D1C0(int32_t n) {
     return result;
 }
 } // namespace lift_0078D1C0
+
+// [0x00788D10]
+namespace lift_00788D10 {
+extern void ext_00788E20(void* self);
+
+// @name FileFindCursor::closeFindIfOpen
+// @class FileFindCursor
+// @summary Tail-calls closeFind when the find handle at +0x00 is nonzero; otherwise returns.
+// @field FileFindCursor +0x00 uint32_t hFind
+void fn_00788D10(void* self) {
+    auto* cursor = static_cast<uint32_t*>(self);
+    if (cursor[0] == 0) {
+        return;
+    }
+    ext_00788E20(self);
+}
+} // namespace lift_00788D10
