@@ -272,3 +272,38 @@ void fn_007AD590(void* self) {
     lift_field<uint32_t>(self, 0) = 0x009989F0u;
 }
 } // namespace lift_007AD590
+
+// [0x007AF4C0] sub_007AF4C0 (50 bytes)
+namespace lift_007AF4C0 {
+// @name compareKeyPairThenSignedField
+// @class Unknown
+// @summary Three-way style compare of two objects: unsigned key at +0x00 first, then signed value at +0x08 on tie; returns -1 or 1 (never 0).
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x08 int32_t field_0x08
+static uint32_t readU32At(const void* obj, std::size_t off) {
+    uint32_t v = 0;
+    std::memcpy(&v, static_cast<const uint8_t*>(obj) + off, sizeof(v));
+    return v;
+}
+
+static int32_t readS32At(const void* obj, std::size_t off) {
+    int32_t v = 0;
+    std::memcpy(&v, static_cast<const uint8_t*>(obj) + off, sizeof(v));
+    return v;
+}
+
+int32_t fn_007AF4C0(void** a, void** b) {
+    const void* objA = *a;
+    const void* objB = *b;
+
+    uint32_t keyA = readU32At(objA, 0x00);
+    uint32_t keyB = readU32At(objB, 0x00);
+    if (keyA != keyB) {
+        return (keyA < keyB) ? -1 : 1;
+    }
+
+    int32_t valA = readS32At(objA, 0x08);
+    int32_t valB = readS32At(objB, 0x08);
+    return (valB >= valA) ? 1 : -1;
+}
+} // namespace lift_007AF4C0

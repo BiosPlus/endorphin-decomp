@@ -52924,6 +52924,13 @@
     "summary": "Swaps the two bytes of each 16-bit pair in a buffer, for `count` pairs (cdecl, args: buffer, count).",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AF4C0": {
+    "name": "compareKeyPairThenSignedField",
+    "class": "Unknown",
+    "signature": "static uint32_t readU32At(const void* obj, std::size_t off)",
+    "summary": "Three-way style compare of two objects: unsigned key at +0x00 first, then signed value at +0x08 on tie; returns -1 or 1 (never 0).",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AF620": {
     "name": "ForwardToCallbackWithArgPtr",
     "class": "\u003cClassName\u003e (optional)",
