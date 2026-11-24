@@ -1,0 +1,22 @@
+{
+  "va": "0x004086A0",
+  "size": 19,
+  "orig_symbol": "BottomPanel::vfunc_92",
+  "src_path": "src/classes/BottomPanel.cpp",
+  "lifted_path": "lifted/classes/BottomPanel.cpp",
+  "name": "BottomPanel::vfunc_92",
+  "class": "BottomPanel",
+  "signature": "uint32_t fn_004086A0(void* self, uint32_t unk_arg, uint16_t arg16)",
+  "summary": "Virtual thunk: widens the 16-bit stack argument to 32 bits and forwards the call through vtable slot 93 (+0x174), returning its result.",
+  "fields": [
+    {
+      "class": "BottomPanel",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:59:44Z"
+}
