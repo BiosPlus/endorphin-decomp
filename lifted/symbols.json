@@ -23316,6 +23316,12 @@
     "summary": "Scales the float at this+0x54 in place by the single float argument (thiscall, callee pops 4 bytes).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00602EC0": {
+    "name": "sub_00602EC0_ctor",
+    "signature": "uint32_t __thiscall sub_00602EC0(uint32_t this_ptr)",
+    "summary": "Initializes vtable and zeroes integer and float fields of an object",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x00602EF0": {
     "name": "sub_00602EF0",
     "signature": "extern \"C\" void __fastcall fn_00602EF0(void* self)",
@@ -23356,6 +23362,13 @@
     "signature": "extern \"C\" void __fastcall fn_00603010(void* self)",
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x84.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x006033B0": {
+    "name": "Effector::vfunc_30",
+    "class": "Effector",
+    "signature": "void __thiscall fn_006033B0(void* self, float val)",
+    "summary": "Clamps field_0x54 to non-negative or updates it to the maximum of itself and the argument.",
+    "lifted_path": "lifted/classes/Effector.cpp"
   },
   "0x00603420": {
     "name": "ExprParser::ROWriteMethodType::vfunc_16 (EffectorBase vcall 76)",
@@ -31110,6 +31123,12 @@
     "summary": "Calls sub_00508680 on this+0x10 and converts the unsigned 32-bit result to a scaled float",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x0068BED0": {
+    "name": "sub_0068BED0",
+    "signature": "float __thiscall sub_0068BED0(void* self)",
+    "summary": "Converts an unsigned 32-bit value from sub_00508680(this + 0x10) to float via double scaling",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x0068BF40": {
     "name": "ExprParser::FunctionType\u003cRandomizer, int, int, randIntExcN\u003e::vfunc_48",
     "class": "ExprParser::FunctionType",
@@ -31610,6 +31629,12 @@
     "signature": "extern \"C\" void* __fastcall fn_006A0340(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006A02B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Commands/auto_tiny.cpp"
+  },
+  "0x006A04B0": {
+    "name": "catchHandler_006A04B0",
+    "signature": "uint32_t catchHandler_006A04B0(uintptr_t frame_ebp)",
+    "summary": "Exception catch handler that logs an error string at [ebp-0x14]+0xC to std::cout and returns continuation 0x006A049F.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
   "0x006A0670": {
     "name": "Unknown::zeroFields4_8_C",

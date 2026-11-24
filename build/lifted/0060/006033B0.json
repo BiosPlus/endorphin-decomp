@@ -1,0 +1,22 @@
+{
+  "va": "0x006033B0",
+  "size": 43,
+  "orig_symbol": "Effector::vfunc_30",
+  "src_path": "src/classes/Effector.cpp",
+  "lifted_path": "lifted/classes/Effector.cpp",
+  "name": "Effector::vfunc_30",
+  "class": "Effector",
+  "signature": "void __thiscall fn_006033B0(void* self, float val)",
+  "summary": "Clamps field_0x54 to non-negative or updates it to the maximum of itself and the argument.",
+  "fields": [
+    {
+      "class": "Effector",
+      "offset": "+0x54",
+      "type": "float",
+      "name": "field_0x54"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:06:28Z"
+}
