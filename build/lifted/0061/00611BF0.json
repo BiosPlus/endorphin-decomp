@@ -1,0 +1,46 @@
+{
+  "va": "0x00611BF0",
+  "size": 157,
+  "orig_symbol": "NMData::PrimaryTwistAndSwingConstraint::vfunc_14",
+  "src_path": "src/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_14",
+  "class": "NMData::PrimaryTwistAndSwingConstraint",
+  "signature": "void* fn_00611BF0(void* self, void* arg1, uint32_t id)",
+  "summary": "Dispatches on selector id: 0xAC and 0x16C forward to ext_00661650 when any of the flag bytes at +0x328..+0x32A is set; 0x138 always forwards to it; all other paths call ext_0046F7D0. Returns arg1.",
+  "fields": [
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x164",
+      "type": "uint8_t",
+      "name": "field_0x164"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x224",
+      "type": "uint8_t",
+      "name": "field_0x224"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x328",
+      "type": "uint8_t",
+      "name": "field_0x328"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x329",
+      "type": "uint8_t",
+      "name": "field_0x329"
+    },
+    {
+      "class": "NMData::PrimaryTwistAndSwingConstraint",
+      "offset": "+0x32A",
+      "type": "uint8_t",
+      "name": "field_0x32A"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:36:29Z"
+}

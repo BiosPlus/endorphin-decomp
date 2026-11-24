@@ -11,12 +11,14 @@
 namespace lifted_layout {
 struct NMData_PrimaryTwistAndSwingConstraint_Fields {
     // +0x4   void* field_0x04 (sub-object; when null the function returns after the base call)  (evidence: 0x00611E00)
-    // +0x164 uint8_t                  field_0x164  (evidence: 0x00612E80, 0x0061DBF0)
-    // +0x224 uint8_t                  field_0x224  (evidence: 0x00612E80, 0x0061DBF0)
+    // +0x164 uint8_t                  field_0x164  (evidence: 0x00611BF0, 0x00612E80, 0x0061DBF0)
+    // +0x224 uint8_t                  field_0x224  (evidence: 0x00611BF0, 0x00612E80, 0x0061DBF0)
     // +0x320 void* field_0x320 (object; vtable slots 8 and 9 are called with the argument)  (evidence: 0x00611E00)
     // +0x324 void* field_0x324 (object; vtable slot 8 is called with the argument)  (evidence: 0x00611E00)
     // +0x328 void* field_0x328 (object; vtable slot 8 is called with the argument)  (evidence: 0x00611E00) // CONFLICT: multiple definitions at +0x328
-    // +0x328 uint8_t                  field_0x328  (evidence: 0x004A9B50, 0x00611C90) // CONFLICT: multiple definitions at +0x328
+    // +0x328 uint8_t                  field_0x328  (evidence: 0x004A9B50, 0x00611BF0, 0x00611C90) // CONFLICT: multiple definitions at +0x328
+    // +0x329 uint8_t                  field_0x329  (evidence: 0x00611BF0)
+    // +0x32A uint8_t                  field_0x32A  (evidence: 0x00611BF0)
     // +0x32C void* field_0x32c (object; vtable slots 8 and 9 are called with the argument)  (evidence: 0x00611E00)
 };
 } // namespace lifted_layout

@@ -166,3 +166,47 @@ void __thiscall fn_00611E00(void* self, std::uint32_t arg) {
     }
 }
 } // namespace lift_00611E00
+
+// [0x00611BF0] NMData::PrimaryTwistAndSwingConstraint::vfunc_14 (157 bytes)
+namespace lift_00611BF0 {
+// Known callee 0x0046F7D0: sub_00467320 (Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).)
+extern void ext_0046F7D0(void* arg);
+// Known callee 0x00661650: sub_00661650 (35B). Called with arg in ecx and one stack argument.
+extern void ext_00661650(void* self_arg, void* stack_arg);
+
+// @name NMData::PrimaryTwistAndSwingConstraint::vfunc_14
+// @class NMData::PrimaryTwistAndSwingConstraint
+// @summary Dispatches on selector id: 0xAC and 0x16C forward to ext_00661650 when any of the flag bytes at +0x328..+0x32A is set; 0x138 always forwards to it; all other paths call ext_0046F7D0. Returns arg1.
+// @field NMData::PrimaryTwistAndSwingConstraint +0x164 uint8_t field_0x164
+// @field NMData::PrimaryTwistAndSwingConstraint +0x224 uint8_t field_0x224
+// @field NMData::PrimaryTwistAndSwingConstraint +0x328 uint8_t field_0x328
+// @field NMData::PrimaryTwistAndSwingConstraint +0x329 uint8_t field_0x329
+// @field NMData::PrimaryTwistAndSwingConstraint +0x32A uint8_t field_0x32A
+void* fn_00611BF0(void* self, void* arg1, uint32_t id) {
+    auto* base = static_cast<uint8_t*>(self);
+    const bool flagSet = base[0x328] != 0 || base[0x329] != 0 || base[0x32A] != 0;
+
+    switch (id) {
+    case 0xACu:
+        if (flagSet) {
+            ext_00661650(arg1, base + 0x224);
+            return arg1;
+        }
+        break;
+    case 0x138u:
+        ext_00661650(arg1, base);
+        return arg1;
+    case 0x16Cu:
+        if (flagSet) {
+            ext_00661650(arg1, base + 0x164);
+            return arg1;
+        }
+        break;
+    default:
+        break;
+    }
+
+    ext_0046F7D0(arg1);
+    return arg1;
+}
+} // namespace lift_00611BF0
