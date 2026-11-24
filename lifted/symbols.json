@@ -446,6 +446,12 @@
     "summary": "Gets the parent of the window handle stored at this+0x20 and passes it to the MFC80 wrapper lookup (ord_2372); returns that result.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00407870": {
+    "name": "FloorFloat",
+    "signature": "float fn_00407870(float x)",
+    "summary": "Returns floor(x) for a float argument, computed via double precision and returned as float.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00408040": {
     "name": "sub_00408040",
     "signature": "extern \"C\" void fn_00408040(void)",

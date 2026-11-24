@@ -99,3 +99,13 @@ void fn_00401B60(void* self) {
     ext_MSVCR80_exception_dtor(self);
 }
 } // namespace lift_00401B60
+
+// [0x00407870] sub_00407870 (27 bytes)
+namespace lift_00407870 {
+// @name FloorFloat
+// @summary Returns floor(x) for a float argument, computed via double precision and returned as float.
+float fn_00407870(float x) {
+    // Original: widen arg to double, call MSVCR80 floor (ext_006A6E92), narrow result back to float.
+    return static_cast<float>(std::floor(static_cast<double>(x)));
+}
+} // namespace lift_00407870
