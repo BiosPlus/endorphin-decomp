@@ -11831,9 +11831,10 @@
     "lifted_path": "lifted/leaf/tiny_4F0000.cpp"
   },
   "0x00500310": {
-    "name": "DwordPairInitFromCall_00500310",
-    "signature": "void* fn_00500310(void* self, void* pair, DWORD b)",
-    "summary": "Calls ext_004FFD60 with the incoming this and second argument, then initialises the pair object (first argument) with that result and the second argument via initDwordPair; returns the pair object.",
+    "name": "sub_00508310",
+    "class": "NMData::RealChannel",
+    "signature": "void* __thiscall fn_00508310(const void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051C6D0 (NMData::RealChannel::vfunc_4).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x005013A0": {
