@@ -53,3 +53,28 @@ void* fn_004940D0(void* self) {
     return self;
 }
 } // namespace lift_004940D0
+
+// [0x00493E10] sub_00493E10 (20 bytes)
+namespace lift_00493E10 {
+// @name ForwardByteArgToVirtualSlot5
+// @summary Stores the low byte of its argument at this+0x08, then tail-dispatches the same argument to vtable slot 5 (+0x14) of the object referenced by this+0x00.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x08 uint8_t field_0x08
+uint32_t fn_00493E10(void* self, uint32_t arg) {
+    // mov byte ptr [self+0x08], al
+    lift_field<uint8_t>(self, 0x08) = static_cast<uint8_t>(arg);
+
+    // mov ecx, [self]        ; ecx = object pointer (becomes `this` for the callee)
+    void* obj = lift_field<void*>(self, 0x00);
+
+    // mov edx, [ecx]         ; edx = object's vtable
+    void* vtable = lift_field<void*>(obj, 0x00);
+
+    // mov [esp+4], eax       ; argument is re-stored unchanged
+    // mov eax, [edx+0x14]    ; eax = vtable[5]
+    // jmp eax                ; tail call: callee receives (obj, arg) and its result is ours
+    using VirtualFn = uint32_t (*)(void* self_obj, uint32_t value);
+    auto fn = reinterpret_cast<VirtualFn>(lift_field<void*>(vtable, 0x14));
+    return fn(obj, arg);
+}
+} // namespace lift_00493E10
