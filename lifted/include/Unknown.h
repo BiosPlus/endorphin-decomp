@@ -43,7 +43,7 @@ struct Unknown_Fields {
     // +0x10  uint32_t                 field_0x10  (evidence: 0x00454E70, 0x0045BBE0)
     // +0x14  uint32_t                 field_0x14  (evidence: 0x007126A0) // CONFLICT: multiple definitions at +0x14
     // +0x14  void*                    field_0x14  (evidence: 0x00543210) // CONFLICT: multiple definitions at +0x14
-    // +0x18  uint32_t                 field_0x18  (evidence: 0x00468660, 0x007126A0)
+    // +0x18  uint32_t                 field_0x18  (evidence: 0x004646A0, 0x00468660, 0x007126A0)
     // +0x1C  HMODULE                  hModule  (evidence: 0x00401920)
     // +0x20  HMODULE                  field_0x20  (evidence: 0x004474D0, 0x0044B6A0) // CONFLICT: multiple definitions at +0x20
     // +0x20  double                   field_0x20  (evidence: 0x00507F50, 0x00507F60) // CONFLICT: multiple definitions at +0x20
@@ -74,9 +74,9 @@ struct Unknown_Fields {
     // +0xAC  uint32_t                 field_0xAC  (evidence: 0x0072DB80)
     // +0xD8  uint32_t                 field_0xD8  (evidence: 0x004023C0)
     // +0xF0  void*                    field_0xf0  (evidence: 0x006C2070)
-    // +0xF8  void*                    field_0xF8  (evidence: 0x0046C110, 0x0046F910, 0x00594700)
-    // +0x12C uint8_t                  field_0x12C  (evidence: 0x0046F910)
-    // +0x138 float                    field_0x138  (evidence: 0x0046C110, 0x00594700)
+    // +0xF8  void*                    field_0xF8  (evidence: 0x004646A0, 0x0046C110, 0x0046F910, 0x00594700)
+    // +0x12C uint8_t                  field_0x12C  (evidence: 0x004646A0, 0x0046F910)
+    // +0x138 float                    field_0x138  (evidence: 0x004646A0, 0x0046C110, 0x00594700)
     // +0x184 int32_t                  field_0x184  (evidence: 0x005B64D0)
     // +0x1C4 uint32_t                 field_0x1C4  (evidence: 0x007C6780)
     // +0x1C8 float                    field_0x1c8  (evidence: 0x007C5F90)

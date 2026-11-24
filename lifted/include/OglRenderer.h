@@ -10,7 +10,7 @@
 // Recovered field layout for OglRenderer:
 namespace lifted_layout {
 struct OglRenderer_Fields {
-    // +0x38  void*                    delegate_0x38  (evidence: 0x0046FE50, 0x0046FE70, 0x005355B0, 0x005355C0, 0x005355D0, 0x005355E0, 0x005355F0, 0x00535600, 0x005356B0) // CONFLICT: multiple definitions at +0x38
+    // +0x38  void*                    delegate_0x38  (evidence: 0x004646A0, 0x0046FE50, 0x0046FE70, 0x005355B0, 0x005355C0, 0x005355D0, 0x005355E0, 0x005355F0, 0x00535600, 0x005356B0) // CONFLICT: multiple definitions at +0x38
     // +0x38  void*                    field_0x38  (evidence: 0x005353F0) // CONFLICT: multiple definitions at +0x38
     // +0x80  uint32_t                 field_0x80  (evidence: 0x005353F0)
     // +0x3F4 float                    field_0x3F4  (evidence: 0x00533A30)
