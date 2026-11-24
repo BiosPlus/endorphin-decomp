@@ -1,0 +1,22 @@
+{
+  "va": "0x00401920",
+  "size": 15,
+  "orig_symbol": "sub_00401920",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "freeLibraryAtField1C",
+  "class": "Unknown",
+  "signature": "void sub_00401920(void* self)",
+  "summary": "If the HMODULE stored at this+0x1C is non-null, calls FreeLibrary on it; otherwise does nothing.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "HMODULE",
+      "name": "hModule"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:28:13Z"
+}

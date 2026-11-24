@@ -314,3 +314,24 @@ extern DWORD __thiscall fn_00401950(void* self, DWORD arg) {
     return target(self, arg);
 }
 } // namespace lift_00401950
+
+// [0x00401920]
+namespace lift_00401920 {
+// IAT slot holding KERNEL32!FreeLibrary (import at VA 0x009241DC).
+extern void* mem_009241DC;
+
+// @name freeLibraryAtField1C
+// @class Unknown
+// @summary If the HMODULE stored at this+0x1C is non-null, calls FreeLibrary on it; otherwise does nothing.
+// @field Unknown +0x1C HMODULE hModule
+
+// Original is a member-style routine: `this` arrives in ecx and is the only input.
+void sub_00401920(void* self) {
+    HMODULE h = lift_field<HMODULE>(self, 0x1C);
+    if (h != nullptr) {
+        using FreeLibraryFn = BOOL (*)(HMODULE);
+        auto freeLibrary = reinterpret_cast<FreeLibraryFn>(mem_009241DC);
+        freeLibrary(h);
+    }
+}
+} // namespace lift_00401920
