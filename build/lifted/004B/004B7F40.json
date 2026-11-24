@@ -1,0 +1,22 @@
+{
+  "va": "0x004B7F40",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, float, \u0026public: void __thiscall NMData::EngineData::setTimeZoomFactor(float)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData\u003e",
+  "signature": "void fn_004B7F40(void* out)",
+  "summary": "Lazily initializes a static object once (guarded), then stores its address into the caller-supplied out-object at +0x04.",
+  "fields": [
+    {
+      "class": "ArgPtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:04:34Z"
+}

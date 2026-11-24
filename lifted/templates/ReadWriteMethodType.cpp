@@ -9416,3 +9416,25 @@ void __thiscall fn_004B7CB0(void* self, void* arg0) {
     *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(arg0) + 4) = 0x00AE166Cu;
 }
 } // namespace lift_004B7CB0
+
+// [0x004B7F40] ExprParser::ReadWriteMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, float, &public: void __thiscall NMData::EngineData::setTimeZoomFactor(float)>::vfunc_40 (122 bytes)
+namespace lift_004B7F40 {
+// Callee 0x0067A670 (sub_0067A670): one-time init of the static object; called with the object as `this`.
+extern void ext_0067A670(void* self);
+// Guard word for the function-local static (bit 0 = initialized). Original: [0x00AE1678].
+extern uint32_t mem_00AE1678;
+// Static object storage. Original: [0x00AE1674], first dword receives the vtable pointer 0x00943ACC.
+extern uint32_t mem_00AE1674;
+
+// @name ExprParser::ReadWriteMethodType<NMData::EngineData>::vfunc_40
+// @summary Lazily initializes a static object once (guarded), then stores its address into the caller-supplied out-object at +0x04.
+// @field ArgPtr +0x04 uint32_t field_0x04
+void fn_004B7F40(void* out) {
+    if ((mem_00AE1678 & 1u) == 0) {
+        mem_00AE1678 |= 1u;
+        ext_0067A670(&mem_00AE1674);
+        mem_00AE1674 = 0x943ACCu;
+    }
+    lift_field<uint32_t>(out, 4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE1674));
+}
+} // namespace lift_004B7F40
