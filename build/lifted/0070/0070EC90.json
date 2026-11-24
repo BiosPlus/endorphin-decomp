@@ -1,0 +1,14 @@
+{
+  "va": "0x0070EC90",
+  "size": 32,
+  "orig_symbol": "sub_0070EC90",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::ForwardArgToSubObjectAt0x1C8",
+  "class": "Unknown",
+  "signature": "DWORD fn_0070EC90(void* self, DWORD arg)",
+  "summary": "Forwards its single argument to ext_007873F0 on the sub-object at this+0x1C8 and returns the callee's result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:39:26Z"
+}

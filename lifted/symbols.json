@@ -39925,6 +39925,13 @@
     "summary": "Forwards one argument to sub_007873F0 on the sub-object at this+0x188 and returns its result.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x0070EC90": {
+    "name": "Unknown::ForwardArgToSubObjectAt0x1C8",
+    "class": "Unknown",
+    "signature": "DWORD fn_0070EC90(void* self, DWORD arg)",
+    "summary": "Forwards its single argument to ext_007873F0 on the sub-object at this+0x1C8 and returns the callee's result.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070ED50": {
     "name": "sub_0070ED50",
     "class": "Unknown",

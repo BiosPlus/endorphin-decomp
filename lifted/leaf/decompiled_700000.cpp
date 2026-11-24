@@ -555,3 +555,17 @@ DWORD fn_0070EC70(void* self, DWORD arg) {
     return ext_007873F0(sub, arg);
 }
 } // namespace lift_0070EC70
+
+// [0x0070EC90] sub_0070EC90 (32 bytes)
+namespace lift_0070EC90 {
+// Callee signature inferred from call site: this in ecx (self+0x1C8), one stack arg, result in eax.
+extern DWORD ext_007873F0(void* self, DWORD arg);
+
+// @name Unknown::ForwardArgToSubObjectAt0x1C8
+// @class Unknown
+// @summary Forwards its single argument to ext_007873F0 on the sub-object at this+0x1C8 and returns the callee's result.
+DWORD fn_0070EC90(void* self, DWORD arg) {
+    void* sub = static_cast<uint8_t*>(self) + 0x1C8;
+    return ext_007873F0(sub, arg);
+}
+} // namespace lift_0070EC90
