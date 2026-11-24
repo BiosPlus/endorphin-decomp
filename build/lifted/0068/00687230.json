@@ -1,0 +1,13 @@
+{
+  "va": "0x00687230",
+  "size": 30,
+  "orig_symbol": "sub_00687230",
+  "src_path": "src/leaf/tiny_680000.cpp",
+  "lifted_path": "lifted/leaf/tiny_680000.cpp",
+  "name": "conditionalSetFlagB0IfModeNot19Or20",
+  "signature": "void fn_00687230(void* self)",
+  "summary": "If the pointer at +0xA8 is non-null and the mode at +0x48 is neither 0x13 nor 0x14, sets the byte at +0xB0 to 1.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:19:10Z"
+}

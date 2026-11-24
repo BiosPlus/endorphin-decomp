@@ -28599,6 +28599,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x10 and forwards through mem_00924FF4.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
+  "0x00687230": {
+    "name": "conditionalSetFlagB0IfModeNot19Or20",
+    "signature": "void fn_00687230(void* self)",
+    "summary": "If the pointer at +0xA8 is non-null and the mode at +0x48 is neither 0x13 nor 0x14, sets the byte at +0xB0 to 1.",
+    "lifted_path": "lifted/leaf/tiny_680000.cpp"
+  },
   "0x00687250": {
     "name": "SubObject::getActiveSubobject",
     "class": "SubObject",
