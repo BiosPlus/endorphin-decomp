@@ -4390,6 +4390,13 @@
     "summary": "Forwards two fields of this command (+0x10 as receiver, +0x18 as argument) to ext_00473670.",
     "lifted_path": "lifted/Commands/SetPlaybackStartFrameCommand.cpp"
   },
+  "0x0048E090": {
+    "name": "Commands::SetPlaybackEndFrameCommand::vfunc_1",
+    "class": "Commands::SetPlaybackEndFrameCommand",
+    "signature": "void fn_0048E090(void* self)",
+    "summary": "Forwards the command's field at +0x10 as the receiver and its field at +0x14 as the single argument to ext_004736B0.",
+    "lifted_path": "lifted/Commands/SetPlaybackEndFrameCommand.cpp"
+  },
   "0x0048E0A0": {
     "name": "Commands::SetPlaybackEndFrameCommand::vfunc_2",
     "class": "Commands::SetPlaybackEndFrameCommand",

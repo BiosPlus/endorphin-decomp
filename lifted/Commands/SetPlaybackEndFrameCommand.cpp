@@ -16,3 +16,19 @@ void fn_0048E0A0(void* self) {
     ext_004736B0(target, value);
 }
 } // namespace lift_0048E0A0
+
+// [0x0048E090] Commands::SetPlaybackEndFrameCommand::vfunc_1 (13 bytes)
+namespace lift_0048E090 {
+extern void __thiscall ext_004736B0(uintptr_t self, uint32_t arg0);
+
+// @name Commands::SetPlaybackEndFrameCommand::vfunc_1
+// @class Commands::SetPlaybackEndFrameCommand
+// @summary Forwards the command's field at +0x10 as the receiver and its field at +0x14 as the single argument to ext_004736B0.
+// @field Commands::SetPlaybackEndFrameCommand +0x10 uint32_t field_0x10
+// @field Commands::SetPlaybackEndFrameCommand +0x14 uint32_t field_0x14
+void fn_0048E090(void* self) {
+    const uint32_t arg0 = lift_field<uint32_t>(self, 0x14);
+    const uint32_t recv = lift_field<uint32_t>(self, 0x10);
+    ext_004736B0(static_cast<uintptr_t>(recv), arg0);
+}
+} // namespace lift_0048E090

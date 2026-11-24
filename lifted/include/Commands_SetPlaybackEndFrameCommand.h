@@ -10,7 +10,9 @@
 // Recovered field layout for Commands::SetPlaybackEndFrameCommand:
 namespace lifted_layout {
 struct Commands_SetPlaybackEndFrameCommand_Fields {
-    // +0x10  void*                    field_0x10  (evidence: 0x0048E0A0)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x0048E090) // CONFLICT: multiple definitions at +0x10
+    // +0x10  void*                    field_0x10  (evidence: 0x0048E0A0) // CONFLICT: multiple definitions at +0x10
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x0048E090)
     // +0x18  DWORD                    field_0x18  (evidence: 0x0048E0A0)
 };
 } // namespace lifted_layout
