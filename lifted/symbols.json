@@ -31438,6 +31438,12 @@
     "summary": "Calls ext_00508680 on this+0x10, converts unsigned result to double, scales by mem_0094FF78, and returns float",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x0068BE40": {
+    "name": "getScaledUnsignedSubvalue",
+    "signature": "extern \"C\" double mem_0093BD38; // 2^32 bias for unsigned conversion (qword) extern \"C\" double mem_0094FF78; // scale constant (qword) float __thiscall fn_0068BE40(void* self, float scale)",
+    "summary": "Calls sub_00508680 on this+0x10, treats its 32-bit result as unsigned, scales by mem_0094FF78 and the float argument, returns float.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x0068BE70": {
     "name": "sub_0068BE70",
     "signature": "float __thiscall sub_0068BE70(void* self)",

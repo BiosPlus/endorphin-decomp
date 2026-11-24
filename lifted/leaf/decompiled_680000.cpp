@@ -370,3 +370,23 @@ float fn_0068BEA0(void* self, float scale) {
     return static_cast<float>(value * static_cast<double>(scale));
 }
 } // namespace lift_0068BEA0
+
+// [0x0068BE40] sub_0068BE40 (47 bytes)
+namespace lift_0068BE40 {
+extern int __thiscall ext_00508680(void* self);
+extern double mem_0093BD38; // 2^32 bias for unsigned conversion (qword)
+extern double mem_0094FF78; // scale constant (qword)
+
+// @name getScaledUnsignedSubvalue
+// @summary Calls sub_00508680 on this+0x10, treats its 32-bit result as unsigned, scales by mem_0094FF78 and the float argument, returns float.
+float __thiscall fn_0068BE40(void* self, float scale) {
+    int v = ext_00508680(static_cast<char*>(self) + 0x10);
+    double d = static_cast<double>(v);
+    if (v < 0) {
+        d += mem_0093BD38;
+    }
+    d *= mem_0094FF78;
+    d *= static_cast<double>(scale);
+    return static_cast<float>(d);
+}
+} // namespace lift_0068BE40
