@@ -156,3 +156,28 @@ void fn_005451B0(uint32_t self) {
     ext_call_thiscall_0(fn3, self);
 }
 } // namespace lift_005451B0
+
+// [0x00545370]
+namespace lift_00545370 {
+// @name PoseTool::vfunc_21
+// @class PoseTool
+// @summary Sets state fields and delegates to subobject vfunc at +0x44, returning 1.
+// @field PoseTool +0x254 void* field_0x254
+// @field PoseTool +0x338 uint8_t field_0x338
+// @field PoseTool +0x350 uint32_t field_0x350
+
+
+uint32_t __thiscall fn_00545370(void* self, uint32_t arg1, uint32_t arg2) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint8_t* sub = base + 0x254;
+    void** vtable = *reinterpret_cast<void***>(sub);
+    auto vfunc = reinterpret_cast<void(__thiscall*)(void*, uint32_t, uint32_t)>(
+        vtable[0x44 / sizeof(void*)]);
+
+    *reinterpret_cast<uint32_t*>(base + 0x350) = 2;
+    *reinterpret_cast<uint8_t*>(base + 0x338) = 1;
+
+    vfunc(sub, arg1, arg2);
+    return 1;
+}
+} // namespace lift_00545370
