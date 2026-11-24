@@ -1,0 +1,13 @@
+{
+  "va": "0x006BEC70",
+  "size": 41,
+  "orig_symbol": "sub_006BEC70",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "sub_006BEC70_init_globals",
+  "signature": "void sub_006BEC70_init_globals()",
+  "summary": "Stores four initialization values into globals at 0x00B5D450..0x00B5D45C.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:57:14Z"
+}

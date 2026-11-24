@@ -400,3 +400,21 @@ void fn_006B51D0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
     ext_006A5EA8(self);
 }
 } // namespace lift_006B51D0
+
+// [0x006BEC70]
+namespace lift_006BEC70 {
+// @name sub_006BEC70_init_globals
+// @summary Stores four initialization values into globals at 0x00B5D450..0x00B5D45C.
+
+extern uint32_t mem_00B5D450;
+extern uint32_t mem_00B5D454;
+extern uint32_t mem_00B5D458;
+extern uint32_t mem_00B5D45C;
+
+void sub_006BEC70_init_globals() {
+    mem_00B5D450 = 0x00B5D448u;
+    mem_00B5D458 = 0x00AA88B0u;
+    mem_00B5D454 = 0x00B5F050u;
+    mem_00B5D45C = 0u;
+}
+} // namespace lift_006BEC70
