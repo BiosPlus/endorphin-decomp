@@ -39,6 +39,7 @@ extern "C" void* __fastcall fn_006710E0(void* self, int edx_unused, unsigned int
     return self;
 }
 #include <cstdio>
+#include <cstring>
 
 // [0x00675670] sub_00675670 (6 bytes)
 // @name sub_00675670
@@ -570,3 +571,77 @@ void fn_0067ECF0(void* self, char* buffer, size_t size) {
     std::snprintf(buffer, size, mem_0098C7CC, value);
 }
 } // namespace lift_0067ECF0
+
+// [0x00672410] sub_00672410 (31 bytes)
+namespace lift_00672410 {
+// @name sub_00672410
+// @summary Auto-lifted identical-shape clone of 0x00553F70 (ScaledRangeDivide160).
+namespace lift_00553F70 {
+// @name ScaledRangeDivide160
+// @class <ClassName> (unknown; accessed fields are raw offsets)
+// @summary Returns 0 if field +0x04 is zero; otherwise returns (field +0x08 - field +0x04) / 160 using a 0x66666667 magic-multiply with sign fix-up.
+// @field <ClassName> +0x04 int32_t field_0x04
+// @field <ClassName> +0x08 int32_t field_0x08
+int32_t fn_00672410(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    int32_t start;
+    std::memcpy(&start, base + 0x04, sizeof(start));
+    if (start == 0) {
+        return 0;
+    }
+    int32_t end;
+    std::memcpy(&end, base + 0x08, sizeof(end));
+
+    // 32-bit wrapping subtraction, as the original sub does.
+    int32_t delta = static_cast<int32_t>(static_cast<uint32_t>(end) - static_cast<uint32_t>(start));
+
+    // imul with 0x66666667 -> high dword of the signed 64-bit product.
+    int64_t product = static_cast<int64_t>(static_cast<int32_t>(0x66666667)) * static_cast<int64_t>(delta);
+    int32_t hi = static_cast<int32_t>(product >> 32);
+
+    // sar edx, 6
+    int32_t q = hi >> 5;
+
+    // Add 1 if q is negative (shr eax,31 ; add eax,edx).
+    uint32_t signBit = static_cast<uint32_t>(q) >> 31;
+    return static_cast<int32_t>(static_cast<uint32_t>(signBit) + static_cast<uint32_t>(q));
+}
+} // namespace lift_00553F70
+} // namespace lift_00672410
+
+// [0x00675DB0] sub_00675DB0 (31 bytes)
+namespace lift_00675DB0 {
+// @name sub_00675DB0
+// @summary Auto-lifted identical-shape clone of 0x00553F70 (ScaledRangeDivide160).
+namespace lift_00553F70 {
+// @name ScaledRangeDivide160
+// @class <ClassName> (unknown; accessed fields are raw offsets)
+// @summary Returns 0 if field +0x04 is zero; otherwise returns (field +0x08 - field +0x04) / 160 using a 0x66666667 magic-multiply with sign fix-up.
+// @field <ClassName> +0x04 int32_t field_0x04
+// @field <ClassName> +0x08 int32_t field_0x08
+int32_t fn_00675DB0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    int32_t start;
+    std::memcpy(&start, base + 0x04, sizeof(start));
+    if (start == 0) {
+        return 0;
+    }
+    int32_t end;
+    std::memcpy(&end, base + 0x08, sizeof(end));
+
+    // 32-bit wrapping subtraction, as the original sub does.
+    int32_t delta = static_cast<int32_t>(static_cast<uint32_t>(end) - static_cast<uint32_t>(start));
+
+    // imul with 0x66666667 -> high dword of the signed 64-bit product.
+    int64_t product = static_cast<int64_t>(static_cast<int32_t>(0x2E8BA2E9)) * static_cast<int64_t>(delta);
+    int32_t hi = static_cast<int32_t>(product >> 32);
+
+    // sar edx, 6
+    int32_t q = hi >> 3;
+
+    // Add 1 if q is negative (shr eax,31 ; add eax,edx).
+    uint32_t signBit = static_cast<uint32_t>(q) >> 31;
+    return static_cast<int32_t>(static_cast<uint32_t>(signBit) + static_cast<uint32_t>(q));
+}
+} // namespace lift_00553F70
+} // namespace lift_00675DB0

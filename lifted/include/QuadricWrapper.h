@@ -8,6 +8,6 @@
 // Recovered field layout for QuadricWrapper:
 namespace lifted_layout {
 struct QuadricWrapper_Fields {
-    // +0x0   uint32_t                 quadric  (evidence: 0x00537EC0, 0x00538530, 0x0053C8F0)
+    // +0x0   uint32_t                 quadric  (evidence: 0x00537EC0, 0x0053C8F0)
 };
 } // namespace lifted_layout

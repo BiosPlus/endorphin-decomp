@@ -28279,6 +28279,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006722B0 (sub_0067AEE8).",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00672410": {
+    "name": "sub_00672410",
+    "class": "\u003cClassName\u003e (unknown; accessed fields are raw offsets)",
+    "signature": "int32_t fn_00672410(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00553F70 (ScaledRangeDivide160).",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
   "0x00672490": {
     "name": "sub_0067AEE8",
     "class": "Unknown (no class recovered; receiver is passed in ecx)",
@@ -28389,6 +28396,13 @@
     "class": "Unknown",
     "signature": "void fn_00675D60(void* self)",
     "summary": "If the child pointer at +0x10 is non-null, invoke the child's vtable slot at +0x14 with the child as this.",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
+  "0x00675DB0": {
+    "name": "sub_00675DB0",
+    "class": "\u003cClassName\u003e (unknown; accessed fields are raw offsets)",
+    "signature": "int32_t fn_00675DB0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00553F70 (ScaledRangeDivide160).",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
   "0x00676850": {
