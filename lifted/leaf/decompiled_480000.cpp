@@ -661,3 +661,30 @@ __stdcall std::uint8_t* fn_0048CC30(std::uint8_t* base, std::uint32_t index, std
 }
 } // namespace lift_0054F2C0
 } // namespace lift_0048CC30
+
+// [0x0048C960] sub_0048C960 (56 bytes)
+namespace lift_0048C960 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uint32_t arg);
+// Known callee 0x00519CE0: std::basic_string<char>::~basic_string (vtable-stamping thunk)
+extern void ext_00519CE0(void* self);
+
+// @name Unknown::releaseFieldAndResetSubObject
+// @class Unknown
+// @summary If field +0x34 is non-null, pass it to MFC80 ord_764; then zero +0x34/+0x38/+0x3C and run the string destructor on the sub-object at +0x04.
+// @field Unknown +0x34 uint32_t field_0x34
+// @field Unknown +0x38 uint32_t field_0x38
+// @field Unknown +0x3C uint32_t field_0x3C
+void fn_0048C960(void* self) {
+    uint32_t pending = lift_field<uint32_t>(self, 0x34);
+    if (pending != 0) {
+        ext_006A5C5C(pending);
+    }
+
+    lift_field<uint32_t>(self, 0x34) = 0;
+    lift_field<uint32_t>(self, 0x38) = 0;
+    lift_field<uint32_t>(self, 0x3C) = 0;
+
+    ext_00519CE0(static_cast<uint8_t*>(self) + 0x04);
+}
+} // namespace lift_0048C960
