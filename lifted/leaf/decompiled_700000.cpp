@@ -1121,3 +1121,20 @@ DWORD getSubStateCode(void* self) {
     return index + 1;                                       // case i -> mov eax, i+1
 }
 } // namespace lift_00702700
+
+// [0x0070FB20]
+namespace lift_0070FB20 {
+extern uint32_t mem_00B5EEB8;
+extern uint32_t mem_00B5F060;
+extern uint32_t mem_00B5EB78;
+extern uint32_t mem_00B5E400;
+
+// @name isKnownGlobalId
+// @summary Checks whether the given 32-bit value matches any of four global constants.
+bool __stdcall sub_0070FB20(uint32_t value) {
+    return value == mem_00B5EEB8 ||
+           value == mem_00B5F060 ||
+           value == mem_00B5EB78 ||
+           value == mem_00B5E400;
+}
+} // namespace lift_0070FB20
