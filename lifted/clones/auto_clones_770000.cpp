@@ -35,3 +35,26 @@ void fn_0077F720() {
     mem_00B60758 = -huge;
 }
 } // namespace lift_0077F720
+
+// [0x00774760]
+namespace lift_00774760 {
+extern uint32_t* mem_00925284;
+extern uint32_t mem_00B605B0;
+extern uint32_t mem_00B605B4;
+extern uint32_t mem_00B605B8;
+extern uint32_t mem_00B605BC;
+extern uint32_t mem_00B605C0;
+extern uint32_t mem_00B605C4;
+
+// @name initHugeVectorGlobals
+// @summary Initializes three 64-bit global values from MSVCR80!_HUGE.
+void __cdecl sub_00774760() {
+    uint32_t* huge_ptr = mem_00925284;
+    mem_00B605B0 = huge_ptr[0];
+    mem_00B605B4 = huge_ptr[1];
+    mem_00B605B8 = huge_ptr[0];
+    mem_00B605BC = huge_ptr[1];
+    mem_00B605C0 = huge_ptr[0];
+    mem_00B605C4 = huge_ptr[1];
+}
+} // namespace lift_00774760
