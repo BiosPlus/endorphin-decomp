@@ -3,6 +3,7 @@
 extern "C" int mem_0099E074;
 #include <cstdint>
 #include <bit>
+#include <cstring>
 
 // [0x007DAD40] sub_007DAD40 (4 bytes)
 // @name ReturnZeroWord
@@ -520,3 +521,16 @@ void fn_007D8450(const void* self, void* out) {
     std::memcpy(dst + 0x8, &v2, sizeof(float));
 }
 } // namespace lift_007D8450
+
+// [0x007D8470] sub_007D8470 (26 bytes)
+namespace lift_007D8470 {
+// @name CopyVec3FromOffset4C
+// @summary Copies three consecutive floats at src+0x4C..0x54 into out[0..2] (cdecl, void).
+// @field Unknown +0x4c float field_0x4c
+// @field Unknown +0x50 float field_0x50
+// @field Unknown +0x54 float field_0x54
+void CopyVec3FromOffset4C(const void* src, float* out) {
+    const auto* base = static_cast<const std::uint8_t*>(src);
+    std::memcpy(out, base + 0x4C, 3 * sizeof(float));
+}
+} // namespace lift_007D8470

@@ -1,0 +1,33 @@
+{
+  "va": "0x007D8470",
+  "size": 26,
+  "orig_symbol": "sub_007D8470",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "CopyVec3FromOffset4C",
+  "signature": "void CopyVec3FromOffset4C(const void* src, float* out)",
+  "summary": "Copies three consecutive floats at src+0x4C..0x54 into out[0..2] (cdecl, void).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "float",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "float",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "float",
+      "name": "field_0x54"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:58:21Z"
+}

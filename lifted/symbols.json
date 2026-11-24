@@ -41664,6 +41664,12 @@
     "summary": "Copies three consecutive floats from self+0x40..+0x48 into out[0..2].",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D8470": {
+    "name": "CopyVec3FromOffset4C",
+    "signature": "void CopyVec3FromOffset4C(const void* src, float* out)",
+    "summary": "Copies three consecutive floats at src+0x4C..0x54 into out[0..2] (cdecl, void).",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D8490": {
     "name": "getFloatAt0x58",
     "signature": "float sub_007D8490(uint32_t obj)",
