@@ -738,3 +738,49 @@ uint32_t __stdcall sub_00713F30(uint32_t arg0) {
     }
 }
 } // namespace lift_00713F30
+
+// [0x0071A760]
+namespace lift_0071A760 {
+extern const char mem_00AAC9D8[];
+extern const char mem_00AAC9E4[];
+extern const char mem_00AAC9EC[];
+
+// @name getMediaModeString
+// @summary Returns a display string for a media/display mode enum (0=Disabled, 1=Always, 2=When Media), or nullptr.
+const char* __stdcall sub_0071A760(int32_t mode) {
+    switch (mode) {
+        case 0:
+            return mem_00AAC9D8; // "Disabled"
+        case 1:
+            return mem_00AAC9E4; // "Always"
+        case 2:
+            return mem_00AAC9EC; // "When Media"
+        default:
+            return nullptr;
+    }
+}
+} // namespace lift_0071A760
+
+// [0x0071A7C0]
+namespace lift_0071A7C0 {
+// @name getLayerModeName
+// @summary Maps a layer mode enum (0..2) to its display string ("Background", "Foreground", "Background & Forground") or null.
+
+
+extern const char mem_00AACA24[];
+extern const char mem_00AACA30[];
+extern const char mem_00AACA3C[];
+
+const char* __stdcall sub_0071A7C0(uint32_t mode) {
+    switch (mode) {
+        case 0:
+            return mem_00AACA24;
+        case 1:
+            return mem_00AACA30;
+        case 2:
+            return mem_00AACA3C;
+        default:
+            return nullptr;
+    }
+}
+} // namespace lift_0071A7C0

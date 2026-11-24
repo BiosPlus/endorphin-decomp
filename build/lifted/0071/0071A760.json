@@ -1,0 +1,13 @@
+{
+  "va": "0x0071A760",
+  "size": 44,
+  "orig_symbol": "sub_0071A760",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "getMediaModeString",
+  "signature": "const char* __stdcall sub_0071A760(int32_t mode)",
+  "summary": "Returns a display string for a media/display mode enum (0=Disabled, 1=Always, 2=When Media), or nullptr.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:10:09Z"
+}
