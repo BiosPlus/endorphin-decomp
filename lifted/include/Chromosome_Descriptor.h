@@ -10,6 +10,6 @@
 // Recovered field layout for Chromosome::Descriptor:
 namespace lifted_layout {
 struct Chromosome_Descriptor_Fields {
-    // +0x4   std::string              value_subobject  (evidence: 0x0046E570, 0x004983A0, 0x0059F600, 0x005B3680, 0x006749C0)
+    // +0x4   std::string              value_subobject  (evidence: 0x0046E570, 0x004983A0, 0x004B7D80, 0x0059F600, 0x005B3680, 0x006749C0)
 };
 } // namespace lifted_layout
