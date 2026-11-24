@@ -87,3 +87,18 @@ void fn_008665CC(void* self) {
     (void)self;
 }
 } // namespace lift_008665CC
+
+// [0x00869310]
+namespace lift_00869310 {
+// @name CopyBytesForward
+// @summary Forward byte-by-byte copy of `count` bytes from src to dst; no-op when count is zero.
+
+void CopyBytesForward(uint8_t* dst, const uint8_t* src, uint32_t count) {
+    while (count != 0) {
+        *dst = *src;
+        ++dst;
+        ++src;
+        --count;
+    }
+}
+} // namespace lift_00869310

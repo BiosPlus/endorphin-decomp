@@ -45457,6 +45457,12 @@
     "summary": "No-op stub (add eax, 0).",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x00869310": {
+    "name": "CopyBytesForward",
+    "signature": "void CopyBytesForward(uint8_t* dst, const uint8_t* src, uint32_t count)",
+    "summary": "Forward byte-by-byte copy of `count` bytes from src to dst; no-op when count is zero.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086B200": {
     "name": "ZeroDwordArray5",
     "signature": "void fn_0086B200(void* self)",

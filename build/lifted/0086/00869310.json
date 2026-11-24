@@ -1,0 +1,13 @@
+{
+  "va": "0x00869310",
+  "size": 32,
+  "orig_symbol": "sub_00869310",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "CopyBytesForward",
+  "signature": "void CopyBytesForward(uint8_t* dst, const uint8_t* src, uint32_t count)",
+  "summary": "Forward byte-by-byte copy of `count` bytes from src to dst; no-op when count is zero.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:50:09Z"
+}
