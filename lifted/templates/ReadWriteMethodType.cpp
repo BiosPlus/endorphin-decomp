@@ -8935,3 +8935,24 @@ void ExprParser_ReadWriteMethodType_FSMEditView_DrawDepth_vfunc_40(void* out)
     lift_field<uint32_t>(out, 0x4) = 0x00ADE0E4u;
 }
 } // namespace lift_004A2E70
+
+// [0x004AA590]
+namespace lift_004AA590 {
+// Externals referenced by this function.
+extern void ext_0067A670(void* self);   // constructor-like init of the static object (sub_0067A670)
+extern uint8_t mem_00ADF9EC;            // function-local static init guard (bit 0)
+extern uint8_t mem_00ADF9E8[];          // function-local static object storage
+
+// @name ExprParser::ReadWriteMethodType<NMData::BehaviourData, std::string const&, NMData::BehaviourData::getCharacterName, std::string const&, vcall324>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::BehaviourData, std::string const&, NMData::BehaviourData::getCharacterName, std::string const&, vcall324>
+// @summary Lazily constructs a static object once, then stores its address into the ValuePtr output argument at +0x4.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void __thiscall vfunc_40(void* /*this*/, void* out) {
+    if ((mem_00ADF9EC & 1) == 0) {
+        mem_00ADF9EC |= 1;
+        ext_0067A670(mem_00ADF9E8);
+        lift_field<DWORD>(mem_00ADF9E8, 0) = 0x009418AC;
+    }
+    lift_field<DWORD>(out, 4) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(mem_00ADF9E8));
+}
+} // namespace lift_004AA590

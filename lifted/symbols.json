@@ -9482,6 +9482,13 @@
     "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 8 (offset +0x20) with the same this pointer.",
     "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
   },
+  "0x004AA590": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::BehaviourData, std::string const\u0026, NMData::BehaviourData::getCharacterName, std::string const\u0026, vcall324\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::BehaviourData, std::string const\u0026, NMData::BehaviourData::getCharacterName, std::string const\u0026, vcall324\u003e",
+    "signature": "extern void ext_0067A670(void* self);   // constructor-like init of the static object (sub_0067A670) extern uint8_t mem_00ADF9EC;            // function-local static init guard (bit 0) extern uint8_t mem_00ADF9E8[];          // function-local static object storage void __thiscall vfunc_40(void* /*this*/, void* out)",
+    "summary": "Lazily constructs a static object once, then stores its address into the ValuePtr output argument at +0x4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004AA610": {
     "name": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0\u003e",
