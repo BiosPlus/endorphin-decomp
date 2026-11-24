@@ -1,0 +1,22 @@
+{
+  "va": "0x0066D4B0",
+  "size": 122,
+  "orig_symbol": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::orientationTwistSwingAnglesAtoB(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_40",
+  "src_path": "src/templates/Method2Type.cpp",
+  "lifted_path": "lifted/templates/Method2Type.cpp",
+  "name": "ExprParser::Method2Type::vfunc_40 (NM::Vector3::orientationTwistSwingAnglesAtoB)",
+  "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::orientationTwistSwingAnglesAtoB(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e",
+  "signature": "void fn_0066D4B0(void* out)",
+  "summary": "Lazily initializes the static type descriptor at mem_00B596B0 (guarded by bit 0 of mem_00B596B4), then stores its address into out-\u003e+0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::RestrictedType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:55:55Z"
+}

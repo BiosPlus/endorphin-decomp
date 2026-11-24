@@ -33700,6 +33700,13 @@
     "summary": "Lazily constructs the function-local static type object at mem_00B59698 (guarded by mem_00B5969C) and stores its address at out+4.",
     "lifted_path": "lifted/templates/Method2Type.cpp"
   },
+  "0x0066D4B0": {
+    "name": "ExprParser::Method2Type::vfunc_40 (NM::Vector3::orientationTwistSwingAnglesAtoB)",
+    "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::orientationTwistSwingAnglesAtoB(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e",
+    "signature": "void fn_0066D4B0(void* out)",
+    "summary": "Lazily initializes the static type descriptor at mem_00B596B0 (guarded by bit 0 of mem_00B596B4), then stores its address into out-\u003e+0x04.",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
   "0x0066DCB0": {
     "name": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e::vfunc_0",
     "class": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",

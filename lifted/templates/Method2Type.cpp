@@ -905,3 +905,48 @@ void __thiscall fn_005C6130(void* self, void* arg0) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B44448));
 }
 } // namespace lift_005C6130
+
+// [0x005C60B0]
+namespace lift_005C60B0 {
+// @name ExprParser::Method2Type_addForceAtPostion::vfunc_40
+// @class ExprParser::Method2Type<NMData::CollisionModelDataBase, NM::Vector3 const &, NM::Vector3 const &, addForceAtPostion>
+// @summary Lazily initializes static object at 0x00B44440 and stores its address at arg0 + 0x4
+// @field Arg0 +0x04 uint32_t field_0x04
+
+
+extern uint32_t mem_00B44444;
+extern uint32_t mem_00B44440;
+extern void __thiscall ext_0067A670(void* self);
+
+void __thiscall fn_005C60B0(void* self, void* arg0) {
+    (void)self;
+    if ((mem_00B44444 & 1u) == 0u) {
+        mem_00B44444 |= 1u;
+        ext_0067A670(&mem_00B44440);
+        mem_00B44440 = 0x00964834u;
+    }
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(arg0) + 4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B44440));
+}
+} // namespace lift_005C60B0
+
+// [0x0066D4B0]
+namespace lift_0066D4B0 {
+extern void ext_0067A670();
+extern int mem_00B596B4;
+extern int mem_00B596B0;
+
+// @name ExprParser::Method2Type::vfunc_40 (NM::Vector3::orientationTwistSwingAnglesAtoB)
+// @class ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, NM::Vector3 const &, &public: void __thiscall NM::Vector3::orientationTwistSwingAnglesAtoB(class NM::Vector3 const &, NM::Vector3 const &)>
+// @summary Lazily initializes the static type descriptor at mem_00B596B0 (guarded by bit 0 of mem_00B596B4), then stores its address into out->+0x04.
+// @field ExprParser::RestrictedType +0x04 void* field_0x04
+void fn_0066D4B0(void* out) {
+    if ((mem_00B596B4 & 1) == 0) {
+        mem_00B596B4 |= 1;
+        ext_0067A670();
+        mem_00B596B0 = 0x00988B8C;
+    }
+    auto* slot = reinterpret_cast<uint32_t*>(static_cast<char*>(out) + 0x04);
+    *slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B596B0));
+}
+} // namespace lift_0066D4B0
