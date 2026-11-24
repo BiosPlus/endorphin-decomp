@@ -670,3 +670,35 @@ void fn_00435130(void* self) {
     ext_004332D0(self);
 }
 } // namespace lift_00435130
+
+// [0x00435240] sub_00435240 (33 bytes)
+namespace lift_00435240 {
+// Known callee 0x004332B0: Unknown::forwardToSubobjectsVfunc14 (Passes the object at +0x108 to ext_0043C8F0, then tail-calls ext_0044B780 with the object at +0x100.)
+extern void ext_004332B0(void* self);
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430360 (getGlobalField0x58AndCall00469040).)
+extern void* ext_00465B40(void);
+// Known callee 0x004332D0: sub_004332D0 (Auto-lifted identical-shape clone of 0x004332B0 (Unknown::forwardToSubobjectsVfunc14).)
+extern void ext_004332D0(void* self);
+
+// @name Unknown::forwardThenCallVfunc1C4ThenForward
+// @class Unknown
+// @summary Forwards to subobjects, fetches a global object, invokes its vtable slot at +0x1C4 with no arguments, then forwards again.
+void fn_00435240(void* self) {
+    // push esi; mov esi, ecx  -> self saved in esi
+    ext_004332B0(self);
+
+    // call sub_00465B40 -> eax = object
+    void* obj = ext_00465B40();
+
+    // mov edx, [eax]; mov ecx, eax; mov eax, [edx+0x1c4]; call eax
+    // Vtable slot is addressed by its original byte offset (+0x1c4) within the vtable.
+    void* vtable = *static_cast<void**>(obj);
+    void* slot = nullptr;
+    std::memcpy(&slot, static_cast<const unsigned char*>(vtable) + 0x1c4, sizeof(slot));
+    using VFn = void (*)(void*);
+    reinterpret_cast<VFn>(slot)(obj);
+
+    // mov ecx, esi; pop esi; jmp ext_004332D0 -> tail call with original self
+    ext_004332D0(self);
+}
+} // namespace lift_00435240
