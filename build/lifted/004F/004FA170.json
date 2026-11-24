@@ -1,0 +1,22 @@
+{
+  "va": "0x004FA170",
+  "size": 54,
+  "orig_symbol": "VMCSModes::DefaultImplementation::vfunc_106",
+  "src_path": "src/VMCSModes/DefaultImplementation.cpp",
+  "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp",
+  "name": "VMCSModes::DefaultImplementation::vfunc_106",
+  "class": "VMCSModes::DefaultImplementation",
+  "signature": "extern bool __fastcall fn_004FA170(uint32_t self, int edx_unused)",
+  "summary": "Returns true if the vector at (object reached via this-\u003e+0x8 -\u003e +0x14 -\u003e +0x34)+0x3D0 is non-empty (end != begin, nonzero begin); false otherwise.",
+  "fields": [
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:10:30Z"
+}

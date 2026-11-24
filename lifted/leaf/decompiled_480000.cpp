@@ -451,3 +451,44 @@ void fn_0048C860(void* self) {
     ext_00519CE0(base + 4);
 }
 } // namespace lift_0048C860
+
+// [0x004803F0]
+namespace lift_004803F0 {
+// @name Matrix4x4::SetIdentity
+// @class Matrix4x4
+// @summary Fills a 4x4 float matrix (16 floats, row-major) with the identity matrix.
+// @field Matrix4x4 +0x00 float field_0x00
+// @field Matrix4x4 +0x04 float field_0x04
+// @field Matrix4x4 +0x08 float field_0x08
+// @field Matrix4x4 +0x0C float field_0x0C
+// @field Matrix4x4 +0x10 float field_0x10
+// @field Matrix4x4 +0x14 float field_0x14
+// @field Matrix4x4 +0x18 float field_0x18
+// @field Matrix4x4 +0x1C float field_0x1C
+// @field Matrix4x4 +0x20 float field_0x20
+// @field Matrix4x4 +0x24 float field_0x24
+// @field Matrix4x4 +0x28 float field_0x28
+// @field Matrix4x4 +0x2C float field_0x2C
+// @field Matrix4x4 +0x30 float field_0x30
+// @field Matrix4x4 +0x34 float field_0x34
+// @field Matrix4x4 +0x38 float field_0x38
+// @field Matrix4x4 +0x3C float field_0x3C
+void Matrix4x4_SetIdentity(void* self) {
+    lift_field<float>(self, 0x00) = 1.0f;
+    lift_field<float>(self, 0x04) = 0.0f;
+    lift_field<float>(self, 0x08) = 0.0f;
+    lift_field<float>(self, 0x0C) = 0.0f;
+    lift_field<float>(self, 0x10) = 0.0f;
+    lift_field<float>(self, 0x14) = 1.0f;
+    lift_field<float>(self, 0x18) = 0.0f;
+    lift_field<float>(self, 0x1C) = 0.0f;
+    lift_field<float>(self, 0x20) = 0.0f;
+    lift_field<float>(self, 0x24) = 0.0f;
+    lift_field<float>(self, 0x28) = 1.0f;
+    lift_field<float>(self, 0x2C) = 0.0f;
+    lift_field<float>(self, 0x30) = 0.0f;
+    lift_field<float>(self, 0x34) = 0.0f;
+    lift_field<float>(self, 0x38) = 0.0f;
+    lift_field<float>(self, 0x3C) = 1.0f;
+}
+} // namespace lift_004803F0

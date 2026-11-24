@@ -6935,6 +6935,13 @@
     "summary": "Returns true if the range pointer at +0x04 is null, or the byte span [+0x04, +0x08) has fewer than one 4-byte element (signed (end - begin) \u003e\u003e 2 == 0).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x004803F0": {
+    "name": "Matrix4x4::SetIdentity",
+    "class": "Matrix4x4",
+    "signature": "void Matrix4x4_SetIdentity(void* self)",
+    "summary": "Fills a 4x4 float matrix (16 floats, row-major) with the identity matrix.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00480530": {
     "name": "ReleaseSubobjectsThenForwardToTail",
     "class": "\u003cUnknown\u003e (owner class not identified)",
@@ -14457,6 +14464,13 @@
     "class": "VMCSModes::DefaultImplementation",
     "signature": "uintptr_t fn_004F9E50(void* self)",
     "summary": "Forwards the call to virtual slot 7 (+0x1c) of the object at this-\u003e+0x8-\u003e+0x14-\u003e+0x34 and returns its result.",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
+  "0x004FA170": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_106",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "extern bool __fastcall fn_004FA170(uint32_t self, int edx_unused)",
+    "summary": "Returns true if the vector at (object reached via this-\u003e+0x8 -\u003e +0x14 -\u003e +0x34)+0x3D0 is non-empty (end != begin, nonzero begin); false otherwise.",
     "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
   },
   "0x004FD800": {
