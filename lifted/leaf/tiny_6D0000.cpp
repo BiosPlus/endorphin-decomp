@@ -322,3 +322,14 @@ void fn_006D2400(void* self, int32_t index, double value) {
     base[index] = value;
 }
 } // namespace lift_006D2400
+
+// [0x006D23F0]
+namespace lift_006D23F0 {
+// @name Unknown::GetAddressAt8
+// @class Unknown
+// @summary Returns this + 8 * index (32-bit address of an 8-byte element in an array based at this); thiscall, one stack argument, callee pops 4.
+// (No fixed-offset field is accessed: the function only computes a base-plus-scaled-index address, so no @field lines are emitted.)
+uint32_t fn_006D23F0(uint32_t self, uint32_t index) {
+    return static_cast<uint32_t>(self + index * 8u);
+}
+} // namespace lift_006D23F0

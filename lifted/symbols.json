@@ -32099,6 +32099,13 @@
     "summary": "Pure jump thunk forwarding to sub_006D2250.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D23F0": {
+    "name": "Unknown::GetAddressAt8",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006D23F0(uint32_t self, uint32_t index)",
+    "summary": "Returns this + 8 * index (32-bit address of an 8-byte element in an array based at this); thiscall, one stack argument, callee pops 4.",
+    "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
   "0x006D2400": {
     "name": "Unknown::SetDoubleAt",
     "class": "Unknown",

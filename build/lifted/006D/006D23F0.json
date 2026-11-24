@@ -1,0 +1,14 @@
+{
+  "va": "0x006D23F0",
+  "size": 16,
+  "orig_symbol": "sub_006D23F0",
+  "src_path": "src/leaf/tiny_6D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6D0000.cpp",
+  "name": "Unknown::GetAddressAt8",
+  "class": "Unknown",
+  "signature": "uint32_t fn_006D23F0(uint32_t self, uint32_t index)",
+  "summary": "Returns this + 8 * index (32-bit address of an 8-byte element in an array based at this); thiscall, one stack argument, callee pops 4.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:39:03Z"
+}
