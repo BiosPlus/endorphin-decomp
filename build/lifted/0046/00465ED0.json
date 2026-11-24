@@ -1,0 +1,22 @@
+{
+  "va": "0x00465ED0",
+  "size": 31,
+  "orig_symbol": "sub_00465ED0",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "ForwardToMfcIfEnabled",
+  "class": "UnknownGlobalObject",
+  "signature": "extern \"C\" uint32_t mem_00ACDB40;  // global object pointer (dword) extern \"C\" uint8_t mem_00AD6C6C;   // global enable flag (byte) void fn_00465ED0(void* self)",
+  "summary": "Forwards self to 0x00433FF0 when the global object exists, its +0x20 dword is nonzero, and the global flag is set; otherwise returns.",
+  "fields": [
+    {
+      "class": "UnknownGlobalObject",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:22:28Z"
+}

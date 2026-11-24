@@ -4465,6 +4465,13 @@
     "summary": "Pure jump thunk forwarding to sub_004658B0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00465ED0": {
+    "name": "ForwardToMfcIfEnabled",
+    "class": "UnknownGlobalObject",
+    "signature": "extern \"C\" uint32_t mem_00ACDB40;  // global object pointer (dword) extern \"C\" uint8_t mem_00AD6C6C;   // global enable flag (byte) void fn_00465ED0(void* self)",
+    "summary": "Forwards self to 0x00433FF0 when the global object exists, its +0x20 dword is nonzero, and the global flag is set; otherwise returns.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00465EF0": {
     "name": "ForwardToChildIfFlagSet",
     "class": "Unknown",

@@ -889,3 +889,30 @@ void fn_00469C90(uint32_t* dst, uint32_t* end, const uint32_t* src) {
     } while (dst != end);
 }
 } // namespace lift_00469C90
+
+// [0x00465ED0] sub_00465ED0 (31 bytes)
+namespace lift_00465ED0 {
+// Known callee 0x00433FF0: sub_00433FF0 (Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).)
+extern void ext_00433FF0(void* self);
+extern uint32_t mem_00ACDB40;  // global object pointer (dword)
+extern uint8_t mem_00AD6C6C;   // global enable flag (byte)
+
+// @name ForwardToMfcIfEnabled
+// @class UnknownGlobalObject
+// @summary Forwards self to 0x00433FF0 when the global object exists, its +0x20 dword is nonzero, and the global flag is set; otherwise returns.
+// @field UnknownGlobalObject +0x20 int32_t field_0x20
+void fn_00465ED0(void* self) {
+    const uint32_t obj = mem_00ACDB40;
+    if (obj == 0) {
+        return;
+    }
+    const void* object = reinterpret_cast<const void*>(static_cast<uintptr_t>(obj));
+    if (lift_field<int32_t>(object, 0x20) == 0) {
+        return;
+    }
+    if (mem_00AD6C6C == 0) {
+        return;
+    }
+    ext_00433FF0(self);
+}
+} // namespace lift_00465ED0
