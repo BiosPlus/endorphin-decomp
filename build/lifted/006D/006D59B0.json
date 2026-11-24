@@ -1,0 +1,22 @@
+{
+  "va": "0x006D59B0",
+  "size": 16,
+  "orig_symbol": "sub_006D59B0",
+  "src_path": "src/leaf/tiny_6D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6D0000.cpp",
+  "name": "Unknown::GetIndexedPtr",
+  "class": "Unknown",
+  "signature": "uint32_t Unknown_GetIndexedPtr(const Unknown* self, uint32_t index)",
+  "summary": "Returns this-\u003efield_0x10 + 4 * index, where index is the single stack argument (thiscall, ret 4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:39:08Z"
+}

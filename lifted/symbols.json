@@ -32157,6 +32157,13 @@
     "summary": "Getter returning int32_t field at offset +0x1C.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D59B0": {
+    "name": "Unknown::GetIndexedPtr",
+    "class": "Unknown",
+    "signature": "uint32_t Unknown_GetIndexedPtr(const Unknown* self, uint32_t index)",
+    "summary": "Returns this-\u003efield_0x10 + 4 * index, where index is the single stack argument (thiscall, ret 4).",
+    "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
   "0x006D5A40": {
     "name": "sub_006D5A40",
     "signature": "extern \"C\" void* __fastcall fn_006D5A40(void* self, int edx_unused, unsigned int flags)",

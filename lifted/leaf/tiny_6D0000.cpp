@@ -333,3 +333,20 @@ uint32_t fn_006D23F0(uint32_t self, uint32_t index) {
     return static_cast<uint32_t>(self + index * 8u);
 }
 } // namespace lift_006D23F0
+
+// [0x006D59B0]
+namespace lift_006D59B0 {
+// @name Unknown::GetIndexedPtr
+// @class Unknown
+// @summary Returns this->field_0x10 + 4 * index, where index is the single stack argument (thiscall, ret 4).
+// @field Unknown +0x10 uint32_t field_0x10
+
+struct Unknown {
+    uint8_t pad_0000[0x10];
+    uint32_t field_0x10;
+};
+
+uint32_t Unknown_GetIndexedPtr(const Unknown* self, uint32_t index) {
+    return self->field_0x10 + 4u * index;
+}
+} // namespace lift_006D59B0
