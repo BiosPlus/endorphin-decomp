@@ -370,3 +370,22 @@ extern uint32_t __cdecl fn_007DFDC0(void* arg1, void* arg2) {
     return fn(value);
 }
 } // namespace lift_007DFDC0
+
+// [0x007D9610]
+namespace lift_007D9610 {
+// @name Unknown::PopIndexedSlot
+// @class Unknown
+// @summary Pops the element at index count from a counted array: stores it to the first dword and decrements count.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x08 uint32_t count
+// @field Unknown +0x08 uint32_t elements[]
+
+void sub_007D9610(uint32_t* self) {
+    uint32_t* p = self;
+    uint32_t count = p[2];
+    uint32_t value = p[2 + count];
+    count = count - 1;
+    p[0] = value;
+    p[2] = count;
+}
+} // namespace lift_007D9610
