@@ -790,3 +790,20 @@ void fn_0046FDC0(void* self, int32_t value) {
 }
 } // namespace lift_0046FDA0
 } // namespace lift_0046FDC0
+
+// [0x00468B10] sub_00468B10 (26 bytes)
+namespace lift_00468B10 {
+// @name UnknownObject::getInnerFields
+// @class UnknownObject
+// @summary Loads the sub-object at this+0x14 and returns its fields at +0x24 (dword), +0x28 (dword) and +0x2C (byte) via out-params (original returns in ecx, edx, al).
+// @field UnknownObject +0x14 void* field_0x14
+// @field UnknownObject +0x24 uint32_t field_0x24
+// @field UnknownObject +0x28 uint32_t field_0x28
+// @field UnknownObject +0x2C uint8_t field_0x2C
+void fn_00468B10(void* self, uint32_t* out_ecx, uint32_t* out_edx, uint8_t* out_al) {
+    void* inner = lift_field<void*>(self, 0x14);
+    *out_ecx = lift_field<uint32_t>(inner, 0x24);
+    *out_edx = lift_field<uint32_t>(inner, 0x28);
+    *out_al = lift_field<uint8_t>(inner, 0x2C);
+}
+} // namespace lift_00468B10

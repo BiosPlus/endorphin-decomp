@@ -4231,6 +4231,13 @@
     "summary": "If the flag byte at +0x10 is nonzero, returns the dword at (*(this+0x14)) +0x24; otherwise returns 0.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00468B10": {
+    "name": "UnknownObject::getInnerFields",
+    "class": "UnknownObject",
+    "signature": "void fn_00468B10(void* self, uint32_t* out_ecx, uint32_t* out_edx, uint8_t* out_al)",
+    "summary": "Loads the sub-object at this+0x14 and returns its fields at +0x24 (dword), +0x28 (dword) and +0x2C (byte) via out-params (original returns in ecx, edx, al).",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00468F30": {
     "name": "sub_00468F30",
     "signature": "extern \"C\" void __fastcall fn_00468F30(void* self)",
@@ -33041,6 +33048,12 @@
     "signature": "extern \"C\" void* __fastcall fn_006B1AD0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006B1AC0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x006B1C00": {
+    "name": "sub_006B1C00",
+    "signature": "uint32_t __thiscall sub_006B1C00(uint32_t self, uint32_t arg0)",
+    "summary": "Derived constructor calling sub_006B0C40 and setting vtable to 0x00991784.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
   "0x006B1C20": {
     "name": "sub_006B1C20",

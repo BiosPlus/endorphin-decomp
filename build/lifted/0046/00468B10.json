@@ -1,0 +1,40 @@
+{
+  "va": "0x00468B10",
+  "size": 26,
+  "orig_symbol": "sub_00468B10",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "UnknownObject::getInnerFields",
+  "class": "UnknownObject",
+  "signature": "void fn_00468B10(void* self, uint32_t* out_ecx, uint32_t* out_edx, uint8_t* out_al)",
+  "summary": "Loads the sub-object at this+0x14 and returns its fields at +0x24 (dword), +0x28 (dword) and +0x2C (byte) via out-params (original returns in ecx, edx, al).",
+  "fields": [
+    {
+      "class": "UnknownObject",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "UnknownObject",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "UnknownObject",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "UnknownObject",
+      "offset": "+0x2C",
+      "type": "uint8_t",
+      "name": "field_0x2C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:55:33Z"
+}
