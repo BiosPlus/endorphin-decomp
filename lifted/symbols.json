@@ -40773,6 +40773,12 @@
     "summary": "Reads and returns the 32-bit field at offset 0x1C of the given object.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007DB740": {
+    "name": "GetIndexedEntryOrZero",
+    "signature": "DWORD fn_007DB740(const void* obj, INT index)",
+    "summary": "Returns the element at index from the object's array if index \u003c count (signed), else 0.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007DCFF0": {
     "name": "sub_007DCFF0",
     "class": "\u003cunknown\u003e",

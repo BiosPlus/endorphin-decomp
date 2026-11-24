@@ -1,0 +1,27 @@
+{
+  "va": "0x007DB740",
+  "size": 23,
+  "orig_symbol": "sub_007DB740",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "GetIndexedEntryOrZero",
+  "signature": "DWORD fn_007DB740(const void* obj, INT index)",
+  "summary": "Returns the element at index from the object's array if index \u003c count (signed), else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "INT",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:34:50Z"
+}

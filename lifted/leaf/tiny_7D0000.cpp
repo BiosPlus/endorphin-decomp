@@ -426,3 +426,26 @@ void* fn_007D8710(void* self) {
 }
 } // namespace lift_007C58E0
 } // namespace lift_007D8710
+
+// [0x007DB740] sub_007DB740 (23 bytes)
+namespace lift_007DB740 {
+// @name GetIndexedEntryOrZero
+// @summary Returns the element at index from the object's array if index < count (signed), else 0.
+// @field Unknown +0x14 DWORD field_0x14
+// @field Unknown +0x1C INT field_0x1c
+DWORD fn_007DB740(const void* obj, INT index) {
+    const BYTE* base = static_cast<const BYTE*>(obj);
+
+    INT count;
+    std::memcpy(&count, base + 0x1C, sizeof(count));
+    if (index >= count) {
+        return 0;
+    }
+
+    DWORD arrayPtr;
+    std::memcpy(&arrayPtr, base + 0x14, sizeof(arrayPtr));
+
+    const DWORD* array = reinterpret_cast<const DWORD*>(static_cast<uintptr_t>(arrayPtr));
+    return array[index];
+}
+} // namespace lift_007DB740
