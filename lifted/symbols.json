@@ -26888,6 +26888,13 @@
     "summary": "Lazily initializes the static object at 0xB477CC (guarded by bit 0 of 0xB477D0), then stores its address into out+0x04.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00607B50": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorBase, float, \u0026[thunk]: __thiscall EffectorBase::`vcall'{120, {flat}}\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, float, \u0026[thunk]: __thiscall EffectorBase::`vcall'{120, {flat}}\u003e",
+    "signature": "extern \"C\" uint32_t mem_00B477D8; // one-time init guard word (bit 0) extern \"C\" uint32_t mem_00B477D4; // function-local static object; first dword = vtable 0x00970BC4 void fn_00607B50(void* out)",
+    "summary": "Lazily constructs a static object once (guarded by bit 0 of mem_00B477D8), then stores its address at out+0x04.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00607BD0": {
     "name": "ExprParser::WriteMethodType\u003cEffector, float\u003e::vfunc_40",
     "class": "ExprParser::WriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall EffectorBase::`vcall'{112, {flat}}\u003e",

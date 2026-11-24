@@ -7530,3 +7530,23 @@ void fn_00607BD0(void* out) {
     *reinterpret_cast<void**>(static_cast<char*>(out) + 0x04) = &mem_00B477DC;
 }
 } // namespace lift_00607BD0
+
+// [0x00607B50]
+namespace lift_00607B50 {
+extern void ext_0067A670();
+extern uint32_t mem_00B477D8; // one-time init guard word (bit 0)
+extern uint32_t mem_00B477D4; // function-local static object; first dword = vtable 0x00970BC4
+
+// @name ExprParser::WriteMethodType<EffectorBase, float, &[thunk]: __thiscall EffectorBase::`vcall'{120, {flat}}>::vfunc_40
+// @class ExprParser::WriteMethodType<EffectorBase, float, &[thunk]: __thiscall EffectorBase::`vcall'{120, {flat}}>
+// @summary Lazily constructs a static object once (guarded by bit 0 of mem_00B477D8), then stores its address at out+0x04.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+void fn_00607B50(void* out) {
+    if ((mem_00B477D8 & 1u) == 0) {
+        mem_00B477D8 |= 1u;
+        ext_0067A670();              // constructs the static object at &mem_00B477D4
+        mem_00B477D4 = 0x00970BC4u;  // vtable pointer for the constructed object
+    }
+    lift_field<uint32_t>(out, 4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B477D4));
+}
+} // namespace lift_00607B50
