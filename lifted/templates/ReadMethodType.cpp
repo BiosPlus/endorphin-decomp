@@ -40873,3 +40873,31 @@ float fn_00683790(void* self) {
 }
 } // namespace lift_004D86A0
 } // namespace lift_00683790
+
+// [0x004D8620] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_0 (113 bytes)
+namespace lift_004D8620 {
+extern void ext_004D5560(void* out, void* vtable);
+extern void ext_006720E0(void* self, void* value);
+
+// @name ExprParser::ReadMethodType<NMData::RigEventData>::vfunc_0 (NMData::RigEventData::getUserRetargetRefFrame)
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>
+// @summary Reads the object's vtable pointer, builds a temporary string result via ext_004D5560, passes it to ext_006720E0 on self, and returns self.
+// @field ValuePtrType +0x00 void* __vfptr
+
+// Stack-args: (unused, self); ret 8. Returns self in eax.
+void* fn_004D8620(void* unused, void* self) {
+    (void)unused;
+
+    // Read the object's vtable pointer (original: mov edx, [self]).
+    void* vtable = *static_cast<void**>(self);
+
+    // Temporary result storage for the string produced by ext_004D5560.
+    alignas(8) unsigned char tmp[32] = {};
+    ext_004D5560(tmp, vtable);
+
+    // Pass the temporary to ext_006720E0 with self as the implicit receiver.
+    ext_006720E0(self, tmp);
+
+    return self;
+}
+} // namespace lift_004D8620

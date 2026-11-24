@@ -12614,6 +12614,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004D8620": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData\u003e::vfunc_0 (NMData::RigEventData::getUserRetargetRefFrame)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0\u003e",
+    "signature": "void* fn_004D8620(void* unused, void* self)",
+    "summary": "Reads the object's vtable pointer, builds a temporary string result via ext_004D5560, passes it to ext_006720E0 on self, and returns self.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004D86A0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::RigEventData, std::string, getUserRetargetRefFrame, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::RigEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0\u003e",
