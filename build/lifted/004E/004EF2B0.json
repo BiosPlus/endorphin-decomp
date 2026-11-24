@@ -1,0 +1,28 @@
+{
+  "va": "0x004EF2B0",
+  "size": 27,
+  "orig_symbol": "sub_004EF2B0",
+  "src_path": "src/leaf/tiny_4E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4E0000.cpp",
+  "name": "CopyPairOut",
+  "class": "\u003cUnknown\u003e (free function; self is passed in ECX)",
+  "signature": "void fn_004EF2B0(void* self, void* out)",
+  "summary": "Copies two DWORD fields (+0x04, +0x08) of self into the out-pointer argument at [out+0], [out+4].",
+  "fields": [
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:02:42Z"
+}

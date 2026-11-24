@@ -46,3 +46,18 @@ void fn_004E9BB0(void* self) {
     lift_field<BYTE>(self, 0x07) = 0;
 }
 } // namespace lift_004E9BB0
+
+// [0x004EF2B0] sub_004EF2B0 (27 bytes)
+namespace lift_004EF2B0 {
+// @name CopyPairOut
+// @class <Unknown> (free function; self is passed in ECX)
+// @summary Copies two DWORD fields (+0x04, +0x08) of self into the out-pointer argument at [out+0], [out+4].
+// @field <Unknown> +0x04 DWORD field_0x04
+// @field <Unknown> +0x08 DWORD field_0x08
+void fn_004EF2B0(void* self, void* out) {
+    DWORD a = lift_field<DWORD>(self, 0x04);
+    DWORD b = lift_field<DWORD>(self, 0x08);
+    lift_field<DWORD>(out, 0x00) = a;
+    lift_field<DWORD>(out, 0x04) = b;
+}
+} // namespace lift_004EF2B0
