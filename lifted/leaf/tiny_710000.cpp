@@ -2813,3 +2813,19 @@ extern uint8_t __stdcall fn_007131C0(void* self) {
     return 1;
 }
 } // namespace lift_007131C0
+
+// [0x007129A0]
+namespace lift_007129A0 {
+// @name sub_007129A0
+// @summary Reads fields at +0x84 and +0x80 from this into two output pointers
+// @field unknown +0x80 uint32_t field_0x80
+// @field unknown +0x84 uint32_t field_0x84
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+void __thiscall sub_007129A0(uint32_t self, uint32_t* out_a, uint32_t* out_b) {
+    *out_a = mem_read32(self + 0x84);
+    *out_b = mem_read32(self + 0x80);
+}
+} // namespace lift_007129A0
