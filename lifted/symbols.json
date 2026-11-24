@@ -29755,6 +29755,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004D3070 (NMData::TransitionEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/classes/TransformRefNode.cpp"
   },
+  "0x00626770": {
+    "name": "FindStringTableIndex",
+    "signature": "int32_t fn_00626770(const void* arg)",
+    "summary": "Scans a 9-entry string-pointer table and returns the index of the first entry equal to the argument (0 if none match).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00626820": {
     "name": "NMData::EffectorSkeletalData::vfunc_8",
     "class": "NMData::EffectorSkeletalData",

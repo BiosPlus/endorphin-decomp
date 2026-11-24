@@ -381,3 +381,23 @@ uint32_t fn_006233B0(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3) {
 }
 } // namespace lift_0051AF30
 } // namespace lift_006233B0
+
+// [0x00626770]
+namespace lift_00626770 {
+// Import thunk at 0x006294AC: forwards to MSVCP80 string-equality helper (std::operator==(basic_string const&, char const*)).
+extern uint8_t __cdecl ext_006294AC(const void* lhs, const char* rhs);
+// Table of 9 const char* string-literal pointers.
+extern uint32_t mem_00A97F70[9];
+
+// @name FindStringTableIndex
+// @summary Scans a 9-entry string-pointer table and returns the index of the first entry equal to the argument (0 if none match).
+int32_t fn_00626770(const void* arg) {
+    for (int32_t i = 0; i < 9; ++i) {
+        const char* entry = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A97F70[i]));
+        if (ext_006294AC(arg, entry) != 0) {
+            return i;
+        }
+    }
+    return 0;
+}
+} // namespace lift_00626770
