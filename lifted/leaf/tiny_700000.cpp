@@ -827,3 +827,47 @@ void fn_006DD960(void) {
 }
 } // namespace lift_006DD960
 } // namespace lift_0070F760
+
+// [0x00700940]
+namespace lift_00700940 {
+// @name getInnerByte270
+// @summary Reads a byte at offset 0x270 from the object pointed to at +0x0C.
+// @field Self +0x0C uint32_t field_0x0C
+// @field Inner +0x270 uint8_t field_0x270
+extern uint8_t __thiscall sub_00700940(void* self) {
+    uint32_t inner = *reinterpret_cast<const uint32_t*>(
+        reinterpret_cast<const uint8_t*>(self) + 0x0C);
+    return *reinterpret_cast<const uint8_t*>(
+        static_cast<uintptr_t>(inner) + 0x270);
+}
+} // namespace lift_00700940
+
+// [0x00702400]
+namespace lift_00702400 {
+// @name sub_00702400
+// @summary Reads a byte at offset 0x408 from the object pointer at this+0x268.
+// @field Unknown +0x268 uint32_t field_0x268
+
+
+uint32_t mem_read32(uintptr_t addr);
+uint8_t mem_read8(uintptr_t addr);
+
+uint8_t __thiscall sub_00702400(uintptr_t self) {
+    uint32_t obj = mem_read32(self + 0x268);
+    return mem_read8(obj + 0x408);
+}
+} // namespace lift_00702400
+
+// [0x00700920]
+namespace lift_00700920 {
+uint32_t mem_read32(uintptr_t addr);
+uint8_t mem_read8(uintptr_t addr);
+
+// @name get_field_0x2f8_via_0xc
+// @summary Reads a uint8_t at offset 0x2f8 from the object pointed to by this+0xc
+// @field Self +0xc uint32_t field_0xc
+uint8_t __fastcall sub_00700920(uintptr_t ecx) {
+    uint32_t obj = mem_read32(ecx + 0xc);
+    return mem_read8(static_cast<uintptr_t>(obj) + 0x2f8);
+}
+} // namespace lift_00700920

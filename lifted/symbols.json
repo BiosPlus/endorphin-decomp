@@ -34375,11 +34375,23 @@
     "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00700920": {
+    "name": "get_field_0x2f8_via_0xc",
+    "signature": "uint8_t __fastcall sub_00700920(uintptr_t ecx)",
+    "summary": "Reads a uint8_t at offset 0x2f8 from the object pointed to by this+0xc",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x00700930": {
     "name": "sub_00700930",
     "class": "Unknown",
     "signature": "void __thiscall fn_00700930(Unknown* self, uint8_t value)",
     "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x00700940": {
+    "name": "getInnerByte270",
+    "signature": "extern \"C\" uint8_t __thiscall sub_00700940(void* self)",
+    "summary": "Reads a byte at offset 0x270 from the object pointed to at +0x0C.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
   "0x00700950": {
@@ -34455,6 +34467,12 @@
     "name": "sub_00702210",
     "signature": "extern \"C\" void __fastcall fn_00702210(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0x160 and tail-calls sub_006E7460.",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x00702400": {
+    "name": "sub_00702400",
+    "signature": "uint8_t __thiscall sub_00702400(uintptr_t self)",
+    "summary": "Reads a byte at offset 0x408 from the object pointer at this+0x268.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
   "0x00702410": {
