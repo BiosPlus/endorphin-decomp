@@ -1,0 +1,33 @@
+{
+  "va": "0x007AEC30",
+  "size": 35,
+  "orig_symbol": "sub_007AEC30",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "sub_007AEC30",
+  "signature": "bool __thiscall sub_007AEC30(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Sets two 32-bit fields at +0x58 and +0x5C and clears +0x60 if the first argument is non-null.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x58",
+      "type": "uint32_t",
+      "name": "field_0x58"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5C"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:00:15Z"
+}

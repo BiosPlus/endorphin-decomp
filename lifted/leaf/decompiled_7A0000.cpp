@@ -201,3 +201,23 @@ void fn_007AC670(void* self) {
     }
 }
 } // namespace lift_007AC670
+
+// [0x007AEC30]
+namespace lift_007AEC30 {
+// @name sub_007AEC30
+// @summary Sets two 32-bit fields at +0x58 and +0x5C and clears +0x60 if the first argument is non-null.
+// @field unknown +0x58 uint32_t field_0x58
+// @field unknown +0x5C uint32_t field_0x5C
+// @field unknown +0x60 uint32_t field_0x60
+
+bool __thiscall sub_007AEC30(void* self, uint32_t arg1, uint32_t arg2) {
+    if (arg1 == 0) {
+        return false;
+    }
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(obj + 0x58) = arg1;
+    *reinterpret_cast<uint32_t*>(obj + 0x5C) = arg2;
+    *reinterpret_cast<uint32_t*>(obj + 0x60) = 0;
+    return true;
+}
+} // namespace lift_007AEC30
