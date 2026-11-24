@@ -1,0 +1,33 @@
+{
+  "va": "0x00468A30",
+  "size": 16,
+  "orig_symbol": "sub_00468A30",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "GetEnabledChildField28OrZero",
+  "signature": "DWORD fn_00468A30(void* self)",
+  "summary": "Returns the DWORD at +0x28 of the child object held at +0x14 when the byte flag at +0x10 is nonzero; otherwise returns 0.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x10",
+      "type": "BYTE",
+      "name": "enabledFlag"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "child"
+    },
+    {
+      "class": "Child",
+      "offset": "+0x28",
+      "type": "DWORD",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:34:30Z"
+}

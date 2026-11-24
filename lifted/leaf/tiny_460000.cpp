@@ -505,3 +505,20 @@ void fn_00465B20(void* self) {
     fn(obj, 1);
 }
 } // namespace lift_00465B20
+
+// [0x00468A30] sub_00468A30 (16 bytes)
+namespace lift_00468A30 {
+// @name GetEnabledChildField28OrZero
+// @summary Returns the DWORD at +0x28 of the child object held at +0x14 when the byte flag at +0x10 is nonzero; otherwise returns 0.
+// @field Object +0x10 BYTE enabledFlag
+// @field Object +0x14 void* child
+// @field Child +0x28 DWORD field_0x28
+DWORD fn_00468A30(void* self) {
+    auto* base = reinterpret_cast<BYTE*>(self);
+    if (*(base + 0x10) == 0) {
+        return 0;
+    }
+    auto* child = *reinterpret_cast<BYTE**>(base + 0x14);
+    return *reinterpret_cast<DWORD*>(child + 0x28);
+}
+} // namespace lift_00468A30

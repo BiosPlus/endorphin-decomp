@@ -3554,6 +3554,12 @@
     "summary": "Tail-forwards to virtual slot +0xAC of the object at this-\u003e+0x18-\u003e+0xC, returning its result.",
     "lifted_path": "lifted/classes/VMCSEngine.cpp"
   },
+  "0x00468A30": {
+    "name": "GetEnabledChildField28OrZero",
+    "signature": "DWORD fn_00468A30(void* self)",
+    "summary": "Returns the DWORD at +0x28 of the child object held at +0x14 when the byte flag at +0x10 is nonzero; otherwise returns 0.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00468F30": {
     "name": "sub_00468F30",
     "signature": "extern \"C\" void __fastcall fn_00468F30(void* self)",
