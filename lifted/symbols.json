@@ -2336,6 +2336,13 @@
     "summary": "Returns (int32)round_to_nearest(this-\u003efield_0x50 + mem_0092BD70), with x87 fistp overflow/NaN giving INT32_MIN.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x00441040": {
+    "name": "Unknown::addConstantAndTruncateToInt",
+    "class": "Unknown",
+    "signature": "int32_t fn_00441040(void* self)",
+    "summary": "Adds the double constant at mem_0092BD70 to the double at this+0x58 and returns the result converted to a 32-bit int (round-to-nearest, INT32_MIN on overflow).",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x004413C0": {
     "name": "MultiTrackView::TriangleMarker::vfunc_0",
     "class": "MultiTrackView::TriangleMarker",

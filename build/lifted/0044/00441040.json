@@ -1,0 +1,22 @@
+{
+  "va": "0x00441040",
+  "size": 30,
+  "orig_symbol": "sub_00441040",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "Unknown::addConstantAndTruncateToInt",
+  "class": "Unknown",
+  "signature": "int32_t fn_00441040(void* self)",
+  "summary": "Adds the double constant at mem_0092BD70 to the double at this+0x58 and returns the result converted to a 32-bit int (round-to-nearest, INT32_MIN on overflow).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "double",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:15:39Z"
+}

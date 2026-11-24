@@ -795,3 +795,21 @@ int fn_00441020(void* self) {
     return static_cast<int>(std::nearbyint(sum));
 }
 } // namespace lift_00441020
+
+// [0x00441040] sub_00441040 (30 bytes)
+namespace lift_00441040 {
+extern const double mem_0092BD70;
+
+// @name Unknown::addConstantAndTruncateToInt
+// @class Unknown
+// @summary Adds the double constant at mem_0092BD70 to the double at this+0x58 and returns the result converted to a 32-bit int (round-to-nearest, INT32_MIN on overflow).
+// @field Unknown +0x58 double field_0x58
+int32_t fn_00441040(void* self) {
+    const double sum = lift_field<double>(self, 0x58) + mem_0092BD70;
+    const double rounded = std::nearbyint(sum);
+    if (!(rounded >= -2147483648.0 && rounded < 2147483648.0)) {
+        return INT32_MIN;
+    }
+    return static_cast<int32_t>(rounded);
+}
+} // namespace lift_00441040
