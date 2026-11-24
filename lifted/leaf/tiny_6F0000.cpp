@@ -2674,3 +2674,25 @@ void fn_006FC1C0(void* self) {
     slot(self, 0, 0x10, self, -1, 0, 0, 0);
 }
 } // namespace lift_006FC1C0
+
+// [0x006FC1E0] sub_006FC1E0 (19 bytes)
+namespace lift_006FC1E0 {
+// @name forwardVirtual0x40WithFixedArgs
+// @summary Tail-dispatches vtable slot 0x40/4 (index 16) on self with fixed arguments (0, 0x11, self, -1, 0, 0, 0) and returns its result; the callee pops the 7 stack args.
+// @field Unknown +0x00 void* vtbl
+//
+// Original: mov eax,[ecx]; push 0; push 0; push 0; push -1; push ecx;
+//           push 0x11; push 0; call [eax+0x40]; ret
+//
+// The seven stack arguments are pushed in the order shown above, so the callee
+// sees (first to last): 0, 0x11, self, -1, 0, 0, 0. `self` is also passed as the
+// this-pointer (ecx). The wrapper has a plain `ret`, so the callee cleans up.
+DWORD fn_006FC1E0(void* self) {
+    void* vtbl = reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<DWORD>(self, 0x00)));
+    DWORD target = lift_field<DWORD>(vtbl, 0x40);
+    using VSlot16 = DWORD (*)(void* self, DWORD a0, DWORD a1, void* a2, int32_t a3,
+                              DWORD a4, DWORD a5, DWORD a6);
+    auto fn = reinterpret_cast<VSlot16>(static_cast<uintptr_t>(target));
+    return fn(self, 0, 0x11, self, -1, 0, 0, 0);
+}
+} // namespace lift_006FC1E0

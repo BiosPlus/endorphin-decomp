@@ -36,7 +36,7 @@ struct Unknown_Fields {
     // +0x0   void*                    vtable  (evidence: 0x00493FF0, 0x0063FFE0, 0x00790D60, 0x0079D730, 0x0079DCE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* const*             vtable  (evidence: 0x0064F8F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x00790D60, 0x0079DCE0, 0x0079E610) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    vtbl  (evidence: 0x007D4B10) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vtbl  (evidence: 0x006FC1E0, 0x007D4B10) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtbl  (evidence: 0x006BB7C0) // CONFLICT: multiple definitions at +0x0
     // +0x1   uint8_t                  field_0x01  (evidence: 0x0046E450, 0x0046EA50, 0x004A25E0, 0x004B1D40, 0x004B7BC0, 0x00633240, 0x00678960)
     // +0x4   void* field_0x04 (arg2: sub-object pointer read at +0x4)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x4

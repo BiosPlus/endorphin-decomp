@@ -1,0 +1,21 @@
+{
+  "va": "0x006FC1E0",
+  "size": 19,
+  "orig_symbol": "sub_006FC1E0",
+  "src_path": "src/leaf/tiny_6F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6F0000.cpp",
+  "name": "forwardVirtual0x40WithFixedArgs",
+  "signature": "DWORD fn_006FC1E0(void* self)",
+  "summary": "Tail-dispatches vtable slot 0x40/4 (index 16) on self with fixed arguments (0, 0x11, self, -1, 0, 0, 0) and returns its result; the callee pops the 7 stack args.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtbl"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:03:56Z"
+}
