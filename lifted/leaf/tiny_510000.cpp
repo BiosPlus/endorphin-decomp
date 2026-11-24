@@ -57,3 +57,17 @@ uint32_t __thiscall sub_00515830(uint32_t this_ptr) {
     return mem_read32(ptr + 0x30);
 }
 } // namespace lift_00515830
+
+// [0x00515840] sub_00515840 (14 bytes)
+namespace lift_00515840 {
+// Known callee 0x00508BA0: sub_00508BA0 (Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).)
+extern int __thiscall ext_00508BA0(void* self);
+
+// @name getChannelCountAt0xA4
+// @summary Loads the pointer at this+0x04 and tail-calls ext_00508BA0 with (that pointer + 0xA4) as this; returns its result.
+// @field unknown +0x04 void* field_0x04
+extern int __thiscall fn_00515840(void* self) {
+    void* inner = lift_field<void*>(self, 0x4);
+    return ext_00508BA0(static_cast<uint8_t*>(inner) + 0xA4);
+}
+} // namespace lift_00515840
