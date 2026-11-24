@@ -44670,6 +44670,13 @@
     "summary": "Returns the difference between two 32-bit fields at +0x14 and +0x0C of the passed object.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D4800": {
+    "name": "ConditionalForwardCall",
+    "class": "// @summary If the object's +0x04 field is non-zero, forwards it with the +0x1c field and a constant to ext_007D5950.",
+    "signature": "void fn_007D4800(void* self)",
+    "summary": "If the object's +0x04 field is non-zero, forwards it with the +0x1c field and a constant to ext_007D5950.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D48A0": {
     "name": "getField_0x04",
     "signature": "uint32_t sub_007D48A0(uint32_t arg0)",

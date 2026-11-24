@@ -1,0 +1,28 @@
+{
+  "va": "0x007D4800",
+  "size": 32,
+  "orig_symbol": "sub_007D4800",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "ConditionalForwardCall",
+  "class": "// @summary If the object's +0x04 field is non-zero, forwards it with the +0x1c field and a constant to ext_007D5950.",
+  "signature": "void fn_007D4800(void* self)",
+  "summary": "If the object's +0x04 field is non-zero, forwards it with the +0x1c field and a constant to ext_007D5950.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:48:34Z"
+}
