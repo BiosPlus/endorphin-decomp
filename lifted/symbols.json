@@ -41623,6 +41623,12 @@
     "summary": "Maps a projection mode index (0 or 1) to its name string; returns null for other values.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x0071A850": {
+    "name": "sub_0071A850 (selectorToStringPtr)",
+    "signature": "const void* sub_0071A850(uint32_t selector)",
+    "summary": "Maps selector 0 or 1 to one of two static string pointers; returns null for other values.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071A950": {
     "name": "sub_0071A950",
     "signature": "extern \"C\" void* __fastcall fn_0071A950(void* self, int edx_unused, unsigned int flags)",

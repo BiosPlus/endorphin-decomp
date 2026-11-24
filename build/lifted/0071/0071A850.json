@@ -1,0 +1,13 @@
+{
+  "va": "0x0071A850",
+  "size": 33,
+  "orig_symbol": "sub_0071A850",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "sub_0071A850 (selectorToStringPtr)",
+  "signature": "const void* sub_0071A850(uint32_t selector)",
+  "summary": "Maps selector 0 or 1 to one of two static string pointers; returns null for other values.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:54:03Z"
+}

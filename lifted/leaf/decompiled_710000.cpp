@@ -696,3 +696,24 @@ void* fn_0071A7F0(int shape) {
     }
 }
 } // namespace lift_0071A7F0
+
+// [0x0071A850] sub_0071A850 (33 bytes)
+namespace lift_0071A850 {
+// @name sub_0071A850 (selectorToStringPtr)
+// @summary Maps selector 0 or 1 to one of two static string pointers; returns null for other values.
+// @field none
+
+extern const char mem_00AACA94[];
+extern const char mem_00AACAA4[];
+
+// stdcall, one stack argument (ret 4)
+const void* sub_0071A850(uint32_t selector) {
+    if (selector == 0) {
+        return mem_00AACA94;
+    }
+    if (selector == 1) {
+        return mem_00AACAA4;
+    }
+    return nullptr;
+}
+} // namespace lift_0071A850
