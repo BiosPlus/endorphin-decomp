@@ -287,3 +287,23 @@ void* fn_0066B000(void* self, void* /*arg2*/) {
     ext_0041CEB0(self, 0);
     return self;
 }
+
+// [0x0066BB20]
+namespace lift_0066BB20 {
+// @name ExprParser::ExtROType::vfunc_46
+// @class ExprParser::ExtROType
+// @summary Refreshes the cached child via ext_0066BA00, then forwards (self, arg2) to vtable slot 46 (+0xB8) of the inner object.
+// @field ExprParser::ExtROType +0x04 void* field_0x04
+
+extern void ext_0066BA00(uint32_t* self);
+
+void fn_0066BB20(void* self, uint32_t arg2) {
+    ext_0066BA00(reinterpret_cast<uint32_t*>(self));
+
+    void* inner = lift_field<void*>(self, 0x04);
+    void** vtbl = *reinterpret_cast<void***>(inner);
+    using SlotFn = void (__thiscall*)(void* this_, void* self_arg, uint32_t arg2_arg);
+    SlotFn fn = reinterpret_cast<SlotFn>(vtbl[0xB8 / sizeof(void*)]);
+    fn(inner, self, arg2);
+}
+} // namespace lift_0066BB20
