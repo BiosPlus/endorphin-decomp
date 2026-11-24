@@ -22666,6 +22666,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x005C47F0": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase\u003e::vfunc_40",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase\u003e",
+    "signature": "void __thiscall fn_005C47F0(void* self, uint32_t arg0)",
+    "summary": "Lazily initializes a static helper object and stores its pointer at arg0 + 0x4.",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x005C4870": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase\u003e::vfunc_16",
     "class": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase\u003e",
@@ -22784,6 +22791,20 @@
     "signature": "void* fn_005C5EE0(void* self, void* a, void** b, void* c)",
     "summary": "Calls CollisionModelDataBase::getAreaToNormal on the object held by arg B, using the vector obtained via a virtual call on arg C, and stores the float result into B; returns B.",
     "lifted_path": "lifted/templates/FunctionType.cpp"
+  },
+  "0x005C5F30": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, \u0026NMData::CollisionModelDataBase::addForce\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, \u0026NMData::CollisionModelDataBase::addForce\u003e",
+    "signature": "void* __thiscall fn_005C5F30(void* self, void* arg0)",
+    "summary": "Initializes a static type descriptor if needed and stores its pointer at arg0 + 0x4.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x005C5FB0": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, addTorque\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType",
+    "signature": "void __thiscall fn_005C5FB0(void* self, void* arg0)",
+    "summary": "Lazily initializes a static type descriptor at 0x00B44430 and stores its pointer at arg0 + 0x4.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x005C61B0": {
     "name": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e::vfunc_0",

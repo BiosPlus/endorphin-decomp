@@ -7068,3 +7068,50 @@ void __thiscall fn_005B7E00(void* self, void* arg0)
     *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(arg0) + 4) = 0x00B43C7Cu;
 }
 } // namespace lift_005B7E00
+
+// [0x005C5F30]
+namespace lift_005C5F30 {
+// @name ExprParser::WriteMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, &NMData::CollisionModelDataBase::addForce>::vfunc_40
+// @class ExprParser::WriteMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, &NMData::CollisionModelDataBase::addForce>
+// @summary Initializes a static type descriptor if needed and stores its pointer at arg0 + 0x4.
+// @field unknown +0x04 uint32_t field_0x04
+
+
+extern uint32_t mem_00B44428;
+extern uint32_t mem_00B4442C;
+
+extern void __thiscall ext_0067A670(void* self);
+
+void* __thiscall fn_005C5F30(void* self, void* arg0) {
+    (void)self;
+    if ((mem_00B4442C & 1u) == 0) {
+        mem_00B4442C |= 1u;
+        ext_0067A670(&mem_00B44428);
+        mem_00B44428 = 0x00963EECu;
+    }
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(arg0) + 0x4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B44428));
+    return arg0;
+}
+} // namespace lift_005C5F30
+
+// [0x005C5FB0]
+namespace lift_005C5FB0 {
+// @name ExprParser::WriteMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, addTorque>::vfunc_40
+// @class ExprParser::WriteMethodType
+// @summary Lazily initializes a static type descriptor at 0x00B44430 and stores its pointer at arg0 + 0x4.
+
+extern uint32_t mem_00B44434;
+extern uint32_t mem_00B44430;
+extern void __thiscall ext_0067A670(void* self);
+
+void __thiscall fn_005C5FB0(void* self, void* arg0) {
+    (void)self;
+    if ((mem_00B44434 & 1u) == 0u) {
+        mem_00B44434 |= 1u;
+        ext_0067A670(&mem_00B44430);
+        mem_00B44430 = 0x0096409Cu;
+    }
+    *(uint32_t*)((uint8_t*)arg0 + 4) = (uint32_t)(uintptr_t)&mem_00B44430;
+}
+} // namespace lift_005C5FB0

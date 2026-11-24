@@ -1,0 +1,22 @@
+{
+  "va": "0x005C5F30",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addForce(class NM::Vector3 const \u0026), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, \u0026NMData::CollisionModelDataBase::addForce\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, \u0026NMData::CollisionModelDataBase::addForce\u003e",
+  "signature": "void* __thiscall fn_005C5F30(void* self, void* arg0)",
+  "summary": "Initializes a static type descriptor if needed and stores its pointer at arg0 + 0x4.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:54:25Z"
+}
