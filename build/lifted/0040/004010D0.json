@@ -1,0 +1,22 @@
+{
+  "va": "0x004010D0",
+  "size": 13,
+  "orig_symbol": "AddCharacterDialog::vfunc_65",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "AddCharacterDialog::vfunc_65",
+  "class": "AddCharacterDialog",
+  "signature": "void fn_004010D0(void* self)",
+  "summary": "Enables the dialog's stored window handle (EnableWindow(hwnd, TRUE)).",
+  "fields": [
+    {
+      "class": "AddCharacterDialog",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:17:46Z"
+}
