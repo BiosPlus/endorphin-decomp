@@ -1,0 +1,13 @@
+{
+  "va": "0x004817A0",
+  "size": 53,
+  "orig_symbol": "sub_004817A0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "fillVec4Array",
+  "signature": "void sub_004817A0(uint32_t dst, uint32_t count, uint32_t src)",
+  "summary": "Fills an array of 16-byte 4-float vectors with a constant 4-float value.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:13:02Z"
+}
