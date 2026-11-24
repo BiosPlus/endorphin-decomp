@@ -43984,6 +43984,12 @@
     "summary": "Returns address of global mem_00B5F050.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C04D0": {
+    "name": "isKnownGlobalHandle",
+    "signature": "uint8_t __stdcall sub_006C04D0(uint32_t value)",
+    "summary": "Checks whether the argument matches any of four global values.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C0510": {
     "name": "sub_006C0510",
     "signature": "extern \"C\" int32_t __cdecl fn_006C0510(void)",
@@ -44840,6 +44846,12 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x138.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C8E60": {
+    "name": "initHugeBounds",
+    "signature": "void __cdecl sub_006C8E60()",
+    "summary": "Initializes three 64-bit double globals from MSVCR80.dll!_HUGE.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C9330": {
     "name": "sub_006C9330",
     "signature": "extern \"C\" void fn_006C9330(void)",
@@ -45327,6 +45339,12 @@
     "class": "Unknown",
     "signature": "void fn_006D74E0(void* self, DWORD index, BYTE value)",
     "summary": "Stores one byte into the byte array at this+0x14C, indexed by the first stack argument (ret 8).",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
+  "0x006D7570": {
+    "name": "initHugeBounds",
+    "signature": "void sub_006D7570()",
+    "summary": "Initializes three 64-bit global values (doubles) from MSVCR80.dll!_HUGE",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006D75C0": {

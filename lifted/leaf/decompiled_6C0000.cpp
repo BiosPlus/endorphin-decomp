@@ -790,3 +790,67 @@ uint32_t __thiscall fn_006C3180(void* self) {
     return 0;
 }
 } // namespace lift_006C3180
+
+// [0x006C3390]
+namespace lift_006C3390 {
+uint32_t& mem_u32(uintptr_t);
+
+// @name sub_006C3390
+// @summary Sets a 32-bit field at offset 0x1e78 in an array of 496-byte entries pointed to by this+0xf0.
+// @field this +0xf0 uint32_t field_0xf0
+
+void __thiscall sub_006C3390(uintptr_t self, uint32_t index, uint32_t value) {
+    uint32_t base = mem_u32(self + 0xf0);
+    mem_u32(base + index * 496u + 0x1e78u) = value;
+}
+} // namespace lift_006C3390
+
+// [0x006C04D0]
+namespace lift_006C04D0 {
+extern uint32_t mem_00B5D448;
+extern uint32_t mem_00B5F060;
+extern uint32_t mem_00B5EB78;
+extern uint32_t mem_00B5E400;
+
+// @name isKnownGlobalHandle
+// @summary Checks whether the argument matches any of four global values.
+uint8_t __stdcall sub_006C04D0(uint32_t value) {
+    if (value == mem_00B5D448) {
+        return 1;
+    }
+    if (value == mem_00B5F060) {
+        return 1;
+    }
+    if (value == mem_00B5EB78) {
+        return 1;
+    }
+    return value == mem_00B5E400 ? 1 : 0;
+}
+} // namespace lift_006C04D0
+
+// [0x006C8E60]
+namespace lift_006C8E60 {
+// @name initHugeBounds
+// @summary Initializes three 64-bit double globals from MSVCR80.dll!_HUGE.
+
+
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5D5F0;
+extern uint32_t mem_00B5D5F4;
+extern uint32_t mem_00B5D5F8;
+extern uint32_t mem_00B5D5FC;
+extern uint32_t mem_00B5D600;
+extern uint32_t mem_00B5D604;
+
+void __cdecl sub_006C8E60() {
+    uint32_t* huge_ptr = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    uint32_t lo = huge_ptr[0];
+    uint32_t hi = huge_ptr[1];
+    mem_00B5D5F0 = lo;
+    mem_00B5D5F4 = hi;
+    mem_00B5D5F8 = lo;
+    mem_00B5D5FC = hi;
+    mem_00B5D600 = lo;
+    mem_00B5D604 = hi;
+}
+} // namespace lift_006C8E60

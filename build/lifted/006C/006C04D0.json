@@ -1,0 +1,13 @@
+{
+  "va": "0x006C04D0",
+  "size": 57,
+  "orig_symbol": "sub_006C04D0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "isKnownGlobalHandle",
+  "signature": "uint8_t __stdcall sub_006C04D0(uint32_t value)",
+  "summary": "Checks whether the argument matches any of four global values.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:20:58Z"
+}
