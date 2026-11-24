@@ -19318,6 +19318,13 @@
     "summary": "Checks whether a CSLModel pointer is non-null and has primitive type 0x1b or 0x1c.",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
+  "0x005632F0": {
+    "name": "CheckModelAgainstSelf",
+    "class": "\u003cClassName\u003e (unknown; `this` is passed in ecx)",
+    "signature": "bool __thiscall fn_005632F0(void* self, void* model)",
+    "summary": "Returns true if model is non-null and is either a mesh/NURBS primitive or accepted by sub_00563220(this, model).",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x00563600": {
     "name": "XSIIO::vfunc_3",
     "class": "XSIIO",

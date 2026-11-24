@@ -1,0 +1,14 @@
+{
+  "va": "0x005632F0",
+  "size": 51,
+  "orig_symbol": "sub_005632F0",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "CheckModelAgainstSelf",
+  "class": "\u003cClassName\u003e (unknown; `this` is passed in ecx)",
+  "signature": "bool __thiscall fn_005632F0(void* self, void* model)",
+  "summary": "Returns true if model is non-null and is either a mesh/NURBS primitive or accepted by sub_00563220(this, model).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:07:09Z"
+}

@@ -160,3 +160,24 @@ void* fn_00567040(void* self, const void* src) {
     return self;
 }
 } // namespace lift_00567040
+
+// [0x005632F0] sub_005632F0 (51 bytes)
+namespace lift_005632F0 {
+// Known callee 0x005631F0: isMeshOrNurbsPrimitive (Checks whether a CSLModel pointer is non-null and has primitive type 0x1b or 0x1c.)
+extern bool __stdcall ext_005631F0(void* model);
+// Callee 0x00563220 (24 bytes): thiscall, `this` in ecx, one stack argument.
+extern bool __thiscall ext_00563220(void* self, void* model);
+
+// @name CheckModelAgainstSelf
+// @class <ClassName> (unknown; `this` is passed in ecx)
+// @summary Returns true if model is non-null and is either a mesh/NURBS primitive or accepted by sub_00563220(this, model).
+bool __thiscall fn_005632F0(void* self, void* model) {
+    if (model == nullptr) {
+        return false;
+    }
+    if (ext_005631F0(model)) {
+        return true;
+    }
+    return ext_00563220(self, model);
+}
+} // namespace lift_005632F0
