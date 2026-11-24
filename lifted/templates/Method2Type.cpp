@@ -881,3 +881,27 @@ extern void fn_0066D330(void* self, uint32_t outAddr)
 
 } // namespace lift_0066D330
 } // namespace lift_0066D330
+
+// [0x005C6130]
+namespace lift_005C6130 {
+// @name ExprParser::Method2Type::vfunc_40
+// @class ExprParser::Method2Type
+// @summary Lazily initializes a static type descriptor at 0x00B44448 and stores its address at arg0 + 0x4.
+// @field arg0 +0x04 uint32_t field_0x04
+
+
+extern uint32_t mem_00B44448;
+extern uint32_t mem_00B4444C;
+void __thiscall ext_0067A670(void* self);
+
+void __thiscall fn_005C6130(void* self, void* arg0) {
+    (void)self;
+    if ((mem_00B4444C & 1u) == 0) {
+        mem_00B4444C |= 1u;
+        ext_0067A670(&mem_00B44448);
+        mem_00B44448 = 0x009649E4u;
+    }
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(arg0) + 4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B44448));
+}
+} // namespace lift_005C6130

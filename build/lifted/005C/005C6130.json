@@ -1,0 +1,22 @@
+{
+  "va": "0x005C6130",
+  "size": 122,
+  "orig_symbol": "ExprParser::Method2Type\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addImpulseAtPostion(class NM::Vector3 const \u0026, NM::Vector3 const \u0026), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/Method2Type.cpp",
+  "lifted_path": "lifted/templates/Method2Type.cpp",
+  "name": "ExprParser::Method2Type::vfunc_40",
+  "class": "ExprParser::Method2Type",
+  "signature": "void __thiscall fn_005C6130(void* self, void* arg0)",
+  "summary": "Lazily initializes a static type descriptor at 0x00B44448 and stores its address at arg0 + 0x4.",
+  "fields": [
+    {
+      "class": "arg0",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:55:46Z"
+}
