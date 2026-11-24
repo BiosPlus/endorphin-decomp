@@ -257,3 +257,30 @@ extern void __fastcall fn_0041C750(void* self, int edx_unused, uint32_t arg) {
     lift_field<uint32_t>(self, 0x4) = arg;
 }
 } // namespace lift_0041C750
+
+// [0x0041C710] sub_0041C710 (19 bytes)
+namespace lift_0041C710 {
+// @name descriptiveName_0041C710 (delegateToChildVirtual19)
+// @summary If the pointer at +0x08 is null return 0; otherwise tail-call virtual slot 19 (vtable +0x4C) of that child object and return its result.
+// @field Unknown +0x08 void* child
+
+namespace {
+// Callee signature for the child's virtual slot; result is returned in the low byte.
+using ChildVirtual19 = uint8_t (*)(void* self);
+}
+
+uint8_t fn_0041C710(void* self) {
+    // cmp dword ptr [ecx+8], 0 / je -> return 0
+    void* child = lift_field<void*>(self, 0x08);
+    if (child == nullptr) {
+        return 0;
+    }
+
+    // mov ecx, [ecx+8]; mov eax, [ecx]; mov edx, [eax+0x4c]; jmp edx
+    // Vtable is read using the original 32-bit layout (slot at +0x4C).
+    void* vtbl = lift_field<void*>(child, 0x00);
+    const uintptr_t target = static_cast<uintptr_t>(lift_field<uint32_t>(vtbl, 0x4C));
+    auto fn = reinterpret_cast<ChildVirtual19>(target);
+    return fn(child);
+}
+} // namespace lift_0041C710

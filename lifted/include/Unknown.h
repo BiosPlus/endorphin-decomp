@@ -63,6 +63,7 @@ struct Unknown_Fields {
     // +0x4   void*                    subVptr  (evidence: 0x0079C1F0, 0x0079DCE0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* vtable_slot1 (vtable slot 1 = offset +0x4, called with the sub-object as this)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x4
     // +0x5   uint8_t                  field_0x05  (evidence: 0x004EB9B0)
+    // +0x8   void*                    child  (evidence: 0x0041C710) // CONFLICT: multiple definitions at +0x8
     // +0x8   DWORD                    field_0x08  (evidence: 0x006BB7B0, 0x006E7F90, 0x006E7FA0, 0x006E86A0) // CONFLICT: multiple definitions at +0x8
     // +0x8   float                    field_0x08  (evidence: 0x0052EF50, 0x00545B80, 0x0066A310, 0x007FC290) // CONFLICT: multiple definitions at +0x8
     // +0x8   int32_t                  field_0x08  (evidence: 0x005B4BA0) // CONFLICT: multiple definitions at +0x8

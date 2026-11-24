@@ -1072,6 +1072,12 @@
     "summary": "Pure jump thunk forwarding to GetStringConstant_0041BFA0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0041C710": {
+    "name": "descriptiveName_0041C710 (delegateToChildVirtual19)",
+    "signature": "uint8_t fn_0041C710(void* self)",
+    "summary": "If the pointer at +0x08 is null return 0; otherwise tail-call virtual slot 19 (vtable +0x4C) of that child object and return its result.",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x0041C750": {
     "name": "sub_0041C750",
     "class": "Unknown",
