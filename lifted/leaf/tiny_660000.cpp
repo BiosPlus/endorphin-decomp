@@ -371,3 +371,31 @@ void fn_006618A0(void* self, void* arg1) {
     reinterpret_cast<IVtblSlot3*>(target)->slot3(subobject, arg1);
 }
 } // namespace lift_006618A0
+
+// [0x00661950] sub_00661950 (25 bytes)
+namespace lift_00661950 {
+// @name sub_00661950
+// @summary Auto-lifted identical-shape clone of 0x006616F0 (Unknown::forwardToInnerVfunc8 (descriptive; owner class not identified)).
+namespace lift_006616F0 {
+// @name Unknown::forwardToInnerVfunc8 (descriptive; owner class not identified)
+// @class Unknown
+// @summary Forwards (this+4, arg) to vfunc slot 8 (vtable +0x20) of the object pointed to by the first member.
+// @field Unknown +0x00 void* field_0x00 (pointer to inner object whose vtable slot 8 is invoked)
+
+// Callee signature: (this, a, b) with the 32-bit thiscall convention flattened
+// into a plain function pointer; the first argument is the implicit `this`.
+typedef uint32_t (*VFunc8)(void* self, void* a, void* b);
+
+uint32_t fn_00661950(void* thisPtr, void* arg) {
+    uint8_t* self = static_cast<uint8_t*>(thisPtr);
+    // ecx = [eax]: inner object pointer stored at +0x00
+    void* inner = *reinterpret_cast<void**>(self);
+    // edx = [ecx]: inner object's vtable
+    uint8_t* vtbl = *reinterpret_cast<uint8_t**>(inner);
+    // eax = [edx + 0x20]: vtable slot 8
+    VFunc8 fn = *reinterpret_cast<VFunc8*>(vtbl + 0x30);
+    // push arg; push (this + 4); call with this = inner
+    return fn(inner, self + 4, arg);
+}
+} // namespace lift_006616F0
+} // namespace lift_00661950

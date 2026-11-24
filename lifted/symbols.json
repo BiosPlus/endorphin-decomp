@@ -25474,6 +25474,13 @@
     "summary": "Forwards arg1 to virtual slot 3 of the object pointed to by self+0, passing self+4 as the first argument (thiscall, ret 4).",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x00661950": {
+    "name": "sub_00661950",
+    "class": "Unknown",
+    "signature": "uint32_t fn_00661950(void* thisPtr, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x006616F0 (Unknown::forwardToInnerVfunc8 (descriptive; owner class not identified)).",
+    "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
   "0x00661980": {
     "name": "setVtable_0093BFB4",
     "signature": "void fn_00661980(void* self)",
