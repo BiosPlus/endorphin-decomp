@@ -965,3 +965,26 @@ void* fn_0070EBF0(void* self, void* arg1) {
 }
 } // namespace lift_006C2CB0
 } // namespace lift_0070EBF0
+
+// [0x00708D70]
+namespace lift_00708D70 {
+extern uint8_t __thiscall ext_00711A80(void* self);
+
+// @name Unknown::CountSubObjectsMatching0x40
+// @class Unknown
+// @summary Counts entries in a pointer array at +0xD0 (length +0xC0) for which CompareSubObjectWith0x40 returns nonzero.
+// @field Unknown +0xC0 int32_t count
+// @field Unknown +0xD0 void** entries
+extern uint32_t __thiscall sub_00708D70(void* self) {
+    uint32_t matches = 0;
+    for (int32_t i = 0; i < lift_field<int32_t>(self, 0xC0); ++i) {
+        void* entry = lift_field<void*>(self, 0xD0) == nullptr
+            ? nullptr
+            : static_cast<void**>(lift_field<void*>(self, 0xD0))[i];
+        if (ext_00711A80(entry) != 0) {
+            ++matches;
+        }
+    }
+    return matches;
+}
+} // namespace lift_00708D70

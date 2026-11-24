@@ -49187,6 +49187,13 @@
     "summary": "Forwards its single argument to ext_006FA920 and returns that result.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00708D70": {
+    "name": "Unknown::CountSubObjectsMatching0x40",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t __thiscall sub_00708D70(void* self)",
+    "summary": "Counts entries in a pointer array at +0xD0 (length +0xC0) for which CompareSubObjectWith0x40 returns nonzero.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00709C90": {
     "name": "ChainedNodeValueIfKeyMatches",
     "signature": "DWORD fn_00709C90(void* self)",
