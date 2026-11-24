@@ -50,3 +50,20 @@ void fn_006F8AF0(void* self) {
     lift_field<uint8_t>(self, 0x08) = 0;
 }
 } // namespace lift_006F8AF0
+
+// [0x006F9DC0] sub_006F9DC0 (32 bytes)
+namespace lift_006F9DC0 {
+// @name Unknown::SetFourFields
+// @class Unknown
+// @summary Stores four stack arguments into this object: two dwords at +0x00/+0x04 and +0x08, then a byte at +0x0C.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint8_t field_0x0C
+void fn_006F9DC0(void* ecx, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint8_t arg3) {
+    lift_field<uint32_t>(ecx, 0x00) = arg0;
+    lift_field<uint32_t>(ecx, 0x04) = arg1;
+    lift_field<uint32_t>(ecx, 0x08) = arg2;
+    lift_field<uint8_t>(ecx, 0x0C) = arg3;
+}
+} // namespace lift_006F9DC0
