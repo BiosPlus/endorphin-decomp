@@ -1,0 +1,22 @@
+{
+  "va": "0x004587A0",
+  "size": 25,
+  "orig_symbol": "SpinButtonStates::ClickedDownState::vfunc_2",
+  "src_path": "src/SpinButtonStates/ClickedDownState.cpp",
+  "lifted_path": "lifted/SpinButtonStates/ClickedDownState.cpp",
+  "name": "SpinButtonStates::ClickedDownState::vfunc_2",
+  "class": "SpinButtonStates::ClickedDownState",
+  "signature": "void vfunc_2(ClickedDownState* self)",
+  "summary": "Kills timers 2 and 3 on the owner object stored at self+0x08.",
+  "fields": [
+    {
+      "class": "SpinButtonStates::ClickedDownState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:47:39Z"
+}

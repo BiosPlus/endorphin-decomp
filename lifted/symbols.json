@@ -3254,6 +3254,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004584E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/SpinButtonStates/auto_tiny.cpp"
   },
+  "0x004587A0": {
+    "name": "SpinButtonStates::ClickedDownState::vfunc_2",
+    "class": "SpinButtonStates::ClickedDownState",
+    "signature": "void vfunc_2(ClickedDownState* self)",
+    "summary": "Kills timers 2 and 3 on the owner object stored at self+0x08.",
+    "lifted_path": "lifted/SpinButtonStates/ClickedDownState.cpp"
+  },
   "0x004589E0": {
     "name": "sub_004589E0",
     "signature": "extern \"C\" void* __cdecl fn_004589E0(void)",
