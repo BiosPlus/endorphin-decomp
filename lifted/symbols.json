@@ -47421,6 +47421,13 @@
     "summary": "Zeroes a dword at offset 0x00 and a byte flag at offset 0x654 of the object.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00788DF0": {
+    "name": "FileFindCursor::findNextRaw",
+    "class": "FileFindCursor",
+    "signature": "extern void* mem_0092416C; // .rdata u32 0x0062D568 -\u003e KERNEL32!SetErrorMode (IAT slot) extern void* mem_00924170; // .rdata u32 0x0062D578 -\u003e KERNEL32!FindNextFileW (IAT slot) struct FileFindCursor",
+    "summary": "Calls FindNextFileW on the handle at +0x00 with the WIN32_FIND_DATAW buffer at +0x04, wrapped in SetErrorMode(1)/SetErrorMode(0); returns true if an entry was found.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00789260": {
     "name": "ConstructRecord4",
     "signature": "void* fn_00789260(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint8_t a4)",

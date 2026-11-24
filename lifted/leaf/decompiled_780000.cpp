@@ -651,3 +651,37 @@ int32_t sortEntriesIfDirty(void* self) {
     return 0;
 }
 } // namespace lift_007847B0
+
+// [0x00788DF0]
+namespace lift_00788DF0 {
+// @name FileFindCursor::findNextRaw
+// @class FileFindCursor
+// @summary Calls FindNextFileW on the handle at +0x00 with the WIN32_FIND_DATAW buffer at +0x04, wrapped in SetErrorMode(1)/SetErrorMode(0); returns true if an entry was found.
+
+extern void* mem_0092416C; // .rdata u32 0x0062D568 -> KERNEL32!SetErrorMode (IAT slot)
+extern void* mem_00924170; // .rdata u32 0x0062D578 -> KERNEL32!FindNextFileW (IAT slot)
+
+struct FileFindCursor {
+    HANDLE hFind;                       // +0x00 (field_0x00)
+    uint8_t findData[0x23C];            // +0x04 WIN32_FIND_DATAW (field_0x04)
+
+    bool findNextRaw();
+};
+
+using SetErrorMode_fn  = UINT (*)(UINT);
+using FindNextFileW_fn = BOOL (*)(HANDLE, void*);
+
+bool FileFindCursor::findNextRaw()
+{
+    auto setErrorMode = reinterpret_cast<SetErrorMode_fn>(mem_0092416C);
+    auto findNext     = reinterpret_cast<FindNextFileW_fn>(mem_00924170);
+
+    bool found = false;
+    setErrorMode(1);
+    if (findNext(this->hFind, this->findData) != 0) {
+        found = true;
+    }
+    setErrorMode(0);
+    return found;
+}
+} // namespace lift_00788DF0
