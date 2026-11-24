@@ -104,3 +104,23 @@ void* fn_0053C8F0(void* self) {
     return self;
 }
 } // namespace lift_0053C8F0
+
+// [0x00532B40]
+namespace lift_00532B40 {
+// @name Unknown::dtor_00532B40
+// @class Unknown
+// @summary Sets vtable to 0x009543E4 and unlinks peer at +0x08 if it points back to this at +0x04.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x08 void* peer
+
+
+extern void __thiscall ext_00528B90(void* self, void* peer);
+
+void __thiscall fn_00532B40(void* self) {
+    *reinterpret_cast<uint32_t*>(self) = 0x009543E4u;
+    void* peer = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x08);
+    if (peer != nullptr && *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(peer) + 0x04) == self) {
+        ext_00528B90(peer, nullptr);
+    }
+}
+} // namespace lift_00532B40

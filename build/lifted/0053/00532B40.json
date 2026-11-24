@@ -1,0 +1,28 @@
+{
+  "va": "0x00532B40",
+  "size": 28,
+  "orig_symbol": "sub_00532B40",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::dtor_00532B40",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00532B40(void* self)",
+  "summary": "Sets vtable to 0x009543E4 and unlinks peer at +0x08 if it points back to this at +0x04.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "peer"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:09:48Z"
+}
