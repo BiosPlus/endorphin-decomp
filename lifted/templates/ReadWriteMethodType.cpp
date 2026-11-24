@@ -9299,3 +9299,32 @@ void __thiscall fn_004A3140(void* self, uint8_t* arg1) {
     *(uint32_t*)(arg1 + 0x4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00ADE0EC));
 }
 } // namespace lift_004A3140
+
+// [0x004C58B0]
+namespace lift_004C58B0 {
+// @name ExprParser::ReadWriteMethodType<NMData::ForceEventData,int,getFrameNumber,setFrameNumber>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::ForceEventData,int,getFrameNumber,setFrameNumber>
+// @summary Thread-safe one-time init of the shared static value-pointer object, then publishes its address into the caller's ValuePtr slot at +0x4.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+
+// One-time initialization guard word (bit 0 = initialized).
+extern uint32_t mem_00AE36FC;
+// Static storage for the shared object; first dword is its vtable pointer.
+extern uint8_t mem_00AE36F8[];
+// Constructor-style init routine for the static object (thiscall, no stack args).
+extern void __thiscall ext_0067A670(void* self);
+
+void __thiscall ExprParser_ReadWriteMethodType_vfunc40(void* self, void* out) {
+    (void)self;
+
+    void* obj = static_cast<void*>(mem_00AE36F8);
+
+    if ((mem_00AE36FC & 1u) == 0) {
+        mem_00AE36FC |= 1u;
+        ext_0067A670(obj);
+        *reinterpret_cast<uint32_t*>(mem_00AE36F8) = 0x009454F4u;
+    }
+
+    lift_field<uint32_t>(out, 4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_004C58B0

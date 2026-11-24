@@ -1,0 +1,22 @@
+{
+  "va": "0x004C58B0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::ForceEventData::setFrameNumber(int), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::ForceEventData,int,getFrameNumber,setFrameNumber\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::ForceEventData,int,getFrameNumber,setFrameNumber\u003e",
+  "signature": "void __thiscall ExprParser_ReadWriteMethodType_vfunc40(void* self, void* out)",
+  "summary": "Thread-safe one-time init of the shared static value-pointer object, then publishes its address into the caller's ValuePtr slot at +0x4.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:57:04Z"
+}
