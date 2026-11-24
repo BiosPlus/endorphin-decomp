@@ -2254,6 +2254,13 @@
     "summary": "Invalidates the view's window (InvalidateRect with a NULL rect and erase=TRUE, i.e. the whole client area is repainted).",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x0043D2C0": {
+    "name": "Unknown::ForwardOrFallback",
+    "class": "Unknown",
+    "signature": "void fn_0043D2C0(void* self, uint32_t arg)",
+    "summary": "Forwards arg to the subobject at this+0x64 via ext_0041C6D0; if that reports failure, calls the ord_1903 fallback thunk on this.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043D360": {
     "name": "GetConstantString_0043D360",
     "signature": "extern \"C\" const char* fn_0043D360()",

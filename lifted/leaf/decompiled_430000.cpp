@@ -582,3 +582,23 @@ void fn_004352B0(void* self) {
     ext_006A5E72(sub, 5);
 }
 } // namespace lift_004352B0
+
+// [0x0043D2C0]
+namespace lift_0043D2C0 {
+// @name Unknown::ForwardOrFallback
+// @class Unknown
+// @summary Forwards arg to the subobject at this+0x64 via ext_0041C6D0; if that reports failure, calls the ord_1903 fallback thunk on this.
+// @field Unknown +0x64 void* field_0x64
+
+extern uint32_t ext_0041C6D0(void* self, uint32_t arg);
+extern void ext_006A5EA8(void);
+
+// Thiscall (ecx = this), one stack argument, callee-cleans (ret 4).
+void fn_0043D2C0(void* self, uint32_t arg) {
+    void* sub = reinterpret_cast<uint8_t*>(self) + 0x64;
+    uint32_t ok = ext_0041C6D0(sub, arg);
+    if ((ok & 0xFFu) == 0) {
+        ext_006A5EA8();
+    }
+}
+} // namespace lift_0043D2C0

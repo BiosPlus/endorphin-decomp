@@ -1,0 +1,22 @@
+{
+  "va": "0x0043D2C0",
+  "size": 31,
+  "orig_symbol": "sub_0043D2C0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::ForwardOrFallback",
+  "class": "Unknown",
+  "signature": "void fn_0043D2C0(void* self, uint32_t arg)",
+  "summary": "Forwards arg to the subobject at this+0x64 via ext_0041C6D0; if that reports failure, calls the ord_1903 fallback thunk on this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:22:16Z"
+}
