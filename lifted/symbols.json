@@ -46750,10 +46750,10 @@
     "lifted_path": "lifted/leaf/tiny_740000.cpp"
   },
   "0x0074B080": {
-    "name": "Unknown::initStateFlags",
+    "name": "sub_0074F820",
     "class": "Unknown",
-    "signature": "void* __thiscall fn_0074B080(void* self)",
-    "summary": "Calls ext_00784620(self, 0x14) to reset base state, sets byte flags +0x14..+0x16 to 1, clears byte +0x17, zeroes dword +0x18, and returns self.",
+    "signature": "void* __thiscall fn_0074F820(void* self, void* obj, uint32_t index)",
+    "summary": "Auto-lifted identical-shape clone of 0x006D2AA0 (ForwardIndexedElementToCallee).",
     "lifted_path": "lifted/leaf/decompiled_740000.cpp"
   },
   "0x0074B840": {
