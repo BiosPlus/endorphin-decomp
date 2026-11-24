@@ -99,3 +99,25 @@ DWORD fn_0068BC00(void* self, DWORD count) {
     return ext_005111E0(static_cast<uint8_t*>(self) + 0x10, &count);
 }
 } // namespace lift_0068BC00
+
+// [0x00688BE0] sub_00688BE0 (37 bytes)
+namespace lift_00688BE0 {
+extern int mem_00924FF4;
+
+// @name DestroyStringRange
+// @summary Destroys the std::string member (at +0x08) of each 0x24-byte element in [begin, end).
+// @field Unknown +0x08 std::string field_0x08
+
+using BasicStringDtor = void(__thiscall*)(void* self);
+
+void fn_00688BE0(uint8_t* begin, uint8_t* end) {
+    if (begin == end) {
+        return;
+    }
+    auto dtor = reinterpret_cast<BasicStringDtor>(static_cast<uintptr_t>(mem_00924FF4));
+    do {
+        dtor(begin + 0x08);
+        begin += 0x24;
+    } while (begin != end);
+}
+} // namespace lift_00688BE0

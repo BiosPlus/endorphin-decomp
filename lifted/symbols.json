@@ -29906,6 +29906,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0040A910 (sub_00407830).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00688BE0": {
+    "name": "DestroyStringRange",
+    "signature": "void fn_00688BE0(uint8_t* begin, uint8_t* end)",
+    "summary": "Destroys the std::string member (at +0x08) of each 0x24-byte element in [begin, end).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00688ED0": {
     "name": "sub_00688ED0",
     "signature": "extern \"C\" void fn_00688ED0(void)",
