@@ -1,0 +1,28 @@
+{
+  "va": "0x00458810",
+  "size": 41,
+  "orig_symbol": "SpinButtonStates::DragSpinState::vfunc_1",
+  "src_path": "src/SpinButtonStates/DragSpinState.cpp",
+  "lifted_path": "lifted/SpinButtonStates/DragSpinState.cpp",
+  "name": "SpinButtonStates::DragSpinState::vfunc_1",
+  "class": "SpinButtonStates::DragSpinState",
+  "signature": "void* __thiscall fn_00458810(void* self)",
+  "summary": "Captures mouse, hides cursor, and records initial message position on drag start",
+  "fields": [
+    {
+      "class": "SpinButtonStates::DragSpinState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "SpinButtonStates::DragSpinState",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:59:54Z"
+}
