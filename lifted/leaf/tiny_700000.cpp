@@ -1031,3 +1031,23 @@ void fn_0070F730(void* self) {
     mem_00B5EEDC = static_cast<int>(hi);
 }
 } // namespace lift_0070F730
+
+// [0x007046E0] sub_007046E0 (24 bytes)
+namespace lift_007046E0 {
+// @name Unknown::CopyPairFromSubobject0x5A0
+// @class Unknown
+// @summary Copies the two DWORDs at this+0x5A0 and this+0x5A4 into the DWORD pair pointed to by the single stack argument (thiscall, ret 4).
+// @field Unknown +0x5A0 DWORD field_0x5A0
+// @field Unknown +0x5A4 DWORD field_0x5A4
+
+// Thiscall: `self` arrives in ECX, `out` is the single stack argument.
+// Equivalent to: out[0] = self->field_0x5A0; out[1] = self->field_0x5A4;
+void fn_007046E0(void* self, DWORD* out) {
+    const auto* base = static_cast<const uint8_t*>(self);
+    DWORD lo, hi;
+    std::memcpy(&lo, base + 0x5A0, sizeof(DWORD));
+    std::memcpy(&hi, base + 0x5A4, sizeof(DWORD));
+    std::memcpy(&out[0], &lo, sizeof(DWORD));
+    std::memcpy(&out[1], &hi, sizeof(DWORD));
+}
+} // namespace lift_007046E0

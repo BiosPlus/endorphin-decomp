@@ -1,0 +1,28 @@
+{
+  "va": "0x007046E0",
+  "size": 24,
+  "orig_symbol": "sub_007046E0",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "Unknown::CopyPairFromSubobject0x5A0",
+  "class": "Unknown",
+  "signature": "void fn_007046E0(void* self, DWORD* out)",
+  "summary": "Copies the two DWORDs at this+0x5A0 and this+0x5A4 into the DWORD pair pointed to by the single stack argument (thiscall, ret 4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x5A0",
+      "type": "DWORD",
+      "name": "field_0x5A0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5A4",
+      "type": "DWORD",
+      "name": "field_0x5A4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:38:09Z"
+}

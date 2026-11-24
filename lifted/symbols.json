@@ -36738,6 +36738,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x007046E0": {
+    "name": "Unknown::CopyPairFromSubobject0x5A0",
+    "class": "Unknown",
+    "signature": "void fn_007046E0(void* self, DWORD* out)",
+    "summary": "Copies the two DWORDs at this+0x5A0 and this+0x5A4 into the DWORD pair pointed to by the single stack argument (thiscall, ret 4).",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x00704760": {
     "name": "sub_00704760",
     "signature": "extern \"C\" void* __fastcall fn_00704760(void* self, int edx_unused, unsigned int flags)",
