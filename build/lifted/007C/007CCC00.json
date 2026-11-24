@@ -1,0 +1,27 @@
+{
+  "va": "0x007CCC00",
+  "size": 44,
+  "orig_symbol": "sub_007CCC00",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "setFloatAndUpdateFlag",
+  "signature": "void sub_007CCC00(uintptr_t ecx_ptr, float value)",
+  "summary": "Stores a float at +0x1c and sets or clears bit 0x8 at +0xc based on its magnitude.",
+  "fields": [
+    {
+      "class": "struct",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0xc"
+    },
+    {
+      "class": "struct",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:12:19Z"
+}

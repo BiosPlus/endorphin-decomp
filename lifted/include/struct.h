@@ -11,8 +11,10 @@ struct struct_Fields {
     // +0x0   uint32_t                 field_0x00  (evidence: 0x00696DB0, 0x0069B680, 0x007C89F0)
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00696DB0, 0x0069B680)
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00696DB0, 0x0069B680)
-    // +0xC   uint32_t                 field_0x0C  (evidence: 0x00696DB0, 0x0069B680)
+    // +0xC   uint32_t                 field_0x0C  (evidence: 0x00696DB0, 0x0069B680) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t                 field_0xc  (evidence: 0x007CCC00) // CONFLICT: multiple definitions at +0xC
     // +0x10  uint32_t                 field_0x10  (evidence: 0x00696DB0, 0x0069B680, 0x007C2E50, 0x007C6FA0)
+    // +0x1C  float                    field_0x1c  (evidence: 0x007CCC00)
     // +0x28  uint32_t                 field_0x28  (evidence: 0x007C89F0)
     // +0x40  uint16_t                 field_0x40  (evidence: 0x007BD310)
     // +0x42  uint16_t                 field_0x42  (evidence: 0x007BD310)
