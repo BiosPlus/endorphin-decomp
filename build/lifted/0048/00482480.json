@@ -1,0 +1,22 @@
+{
+  "va": "0x00482480",
+  "size": 15,
+  "orig_symbol": "ToolEngine::vfunc_8",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ToolEngine::vfunc_8",
+  "class": "ToolEngine",
+  "signature": "int fn_00482480(void* self)",
+  "summary": "Calls virtual slot 9 (+0x24) on self; returns 1 if the returned byte is zero, else 0.",
+  "fields": [
+    {
+      "class": "ToolEngine",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:28:53Z"
+}

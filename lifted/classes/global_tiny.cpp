@@ -5347,3 +5347,21 @@ void fn_0052EF20(void* self) {
     reinterpret_cast<SlotFn>(slot)(child, self);
 }
 } // namespace lift_0052EF20
+
+// [0x00482480] ToolEngine::vfunc_8 (15 bytes)
+namespace lift_00482480 {
+// @name ToolEngine::vfunc_8
+// @class ToolEngine
+// @summary Calls virtual slot 9 (+0x24) on self; returns 1 if the returned byte is zero, else 0.
+// @field ToolEngine +0x00 void* vptr
+
+typedef uint8_t (*ToolEngineVSlotFn)(void* self);
+
+// [0x00482480] ToolEngine::vfunc_8
+int fn_00482480(void* self) {
+    void** vtbl = *static_cast<void***>(self);                    // mov eax, [ecx]
+    auto slot = reinterpret_cast<ToolEngineVSlotFn>(vtbl[0x24 / sizeof(void*)]); // mov edx, [eax+0x24]
+    uint8_t al = slot(self);                                      // call edx
+    return al == 0 ? 1 : 0;                                       // neg al; sbb eax,eax; add eax,1
+}
+} // namespace lift_00482480

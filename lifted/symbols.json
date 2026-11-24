@@ -4272,6 +4272,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00419E20 (FolderDialog::vfunc_79).",
     "lifted_path": "lifted/Commands/BufferTransformsCommand.cpp"
   },
+  "0x00482480": {
+    "name": "ToolEngine::vfunc_8",
+    "class": "ToolEngine",
+    "signature": "int fn_00482480(void* self)",
+    "summary": "Calls virtual slot 9 (+0x24) on self; returns 1 if the returned byte is zero, else 0.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00483070": {
     "name": "ToolEngine::vfunc_63",
     "class": "ToolEngine",
