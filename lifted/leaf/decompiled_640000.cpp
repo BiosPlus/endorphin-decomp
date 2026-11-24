@@ -506,3 +506,35 @@ void fn_006408C0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2) {
     lift_field<uint8_t>(self, 0x11) = 0;
 }
 } // namespace lift_006408C0
+
+// [0x006408F0]
+namespace lift_006408F0 {
+// @name sub_006408F0
+// @class Unknown
+// @summary Clears the flag at +0x11, then appends the C-string at +0x04 to the string at +0x08 (count-1) times, with count read from +0x0C.
+// @field Unknown +0x04 const char* str_ptr
+// @field Unknown +0x08 void* str_obj
+// @field Unknown +0x0C int32_t count
+// @field Unknown +0x11 uint8_t flag
+
+// IAT slot for MSVCP80 basic_string<char>::operator+=(const char*); thiscall.
+extern DWORD mem_00924ED0;
+// Imported thunk wrapping the call through mem_00924ED0.
+extern void* ext_string_append_cstr(void* self, const char* s);
+
+void __thiscall sub_006408F0(void* ecx) {
+    auto self = ecx;
+    lift_field<uint8_t>(self, 0x11) = 0;
+
+    int32_t i = 0;
+    while (true) {
+        int32_t limit = lift_field<int32_t>(self, 0x0C) - 1;
+        if (!(i < limit)) {
+            break;
+        }
+        const char* s = lift_field<const char*>(self, 0x04);
+        ext_string_append_cstr(lift_field<void*>(self, 0x08), s);
+        ++i;
+    }
+}
+} // namespace lift_006408F0

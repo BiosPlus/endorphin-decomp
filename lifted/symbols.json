@@ -27324,6 +27324,13 @@
     "summary": "Initializes a 18-byte record at self: stores arg2 at +0x00, arg1 at +0x04 (defaulting to \u0026mem_0092F67C when zero), arg0 at +0x08, zeroes +0x0C and the two flag bytes at +0x10/+0x11. Callee-cleans 12 bytes.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x006408F0": {
+    "name": "sub_006408F0",
+    "class": "Unknown",
+    "signature": "void __thiscall sub_006408F0(void* ecx)",
+    "summary": "Clears the flag at +0x11, then appends the C-string at +0x04 to the string at +0x08 (count-1) times, with count read from +0x0C.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00640930": {
     "name": "sub_00640930",
     "signature": "void __thiscall sub_00640930(void* self)",
