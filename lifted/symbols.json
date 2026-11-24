@@ -147,6 +147,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0065C660 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/templates/auto_tiny.cpp"
   },
+  "0x00401D00": {
+    "name": "AVIIO::vfunc_7",
+    "class": "AVIIO",
+    "signature": "void fn_00401D00(void* self, void* str)",
+    "summary": "Passes the C string of a std::string argument to the object's vtable slot +0x20.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00401DA0": {
     "name": "sub_00401DA0",
     "signature": "extern \"C\" void __fastcall fn_00401DA0(void* self)",

@@ -1,0 +1,22 @@
+{
+  "va": "0x00401D00",
+  "size": 31,
+  "orig_symbol": "AVIIO::vfunc_7",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "AVIIO::vfunc_7",
+  "class": "AVIIO",
+  "signature": "void fn_00401D00(void* self, void* str)",
+  "summary": "Passes the C string of a std::string argument to the object's vtable slot +0x20.",
+  "fields": [
+    {
+      "class": "AVIIO",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:21:04Z"
+}
