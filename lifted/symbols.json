@@ -32905,6 +32905,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x58 and tail-calls thunk_MFC80_ord_1280.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B6990": {
+    "name": "SetValueClampedMin2",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006B6990(void* self, uint32_t value, uint32_t /*unused*/)",
+    "summary": "Stores the argument at this+0x64, raising it to 2 if it is below 2 (unsigned); returns 0.",
+    "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
   "0x006B75D0": {
     "name": "GWCPropInPlaceList::vfunc_1",
     "class": "GWCPropInPlaceList",

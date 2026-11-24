@@ -755,3 +755,22 @@ void fn_006B0C60(void* self) {
     }
 }
 } // namespace lift_006B0C60
+
+// [0x006B6990] sub_006B6990 (24 bytes)
+namespace lift_006B6990 {
+// @name SetValueClampedMin2
+// @class Unknown
+// @summary Stores the argument at this+0x64, raising it to 2 if it is below 2 (unsigned); returns 0.
+// @field Unknown +0x64 uint32_t field_0x64
+
+// Calling convention: __thiscall-style (this in ECX), one stack argument, `ret 8`.
+// The second stack slot is popped by the callee but never read.
+uint32_t fn_006B6990(void* self, uint32_t value, uint32_t /*unused*/) {
+    uint32_t stored = value;
+    if (stored < 2u) {
+        stored = 2u;
+    }
+    lift_field<uint32_t>(self, 0x64) = stored;
+    return 0u;
+}
+} // namespace lift_006B6990
