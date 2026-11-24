@@ -5722,6 +5722,12 @@
     "summary": "Reads an object pointer through its argument; if non-null, tail-calls the object's vtable slot at +0x38 with the object as the argument, otherwise returns 0 (original does ret 4).",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00494000": {
+    "name": "setDwordTriple",
+    "signature": "void* fn_00494000(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Stores three stack arguments into the first three DWORD slots of the object at ECX and returns that object (callee pops 12 bytes; original is thiscall-style, lifted as a plain function taking self first).",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
   "0x00494050": {
     "name": "sub_00491FC0",
     "class": "(none)",
@@ -9990,6 +9996,12 @@
     "signature": "uint32_t __thiscall fn_004F2890(void* this_ptr)",
     "summary": "Auto-lifted identical-shape clone of 0x004F9BD0 (VMCSModes::DefaultImplementation::vfunc_33).",
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
+  },
+  "0x004F28C0": {
+    "name": "ReleaseNestedCriticalSection",
+    "signature": "void fn_004F28C0(void* self)",
+    "summary": "If the pointer stored at self is non-null, leave the critical section stored in that object's first field, then pass the object to MFC80 ord_764.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
   "0x004F2E00": {
     "name": "VMCSModes::DefaultImplementation::vfunc_141",

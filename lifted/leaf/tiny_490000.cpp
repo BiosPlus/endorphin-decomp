@@ -545,3 +545,19 @@ int fn_00492590(void* self) {
     return 1;
 }
 } // namespace lift_00492590
+
+// [0x00494000] sub_00494000 (25 bytes)
+namespace lift_00494000 {
+// @name setDwordTriple
+// @summary Stores three stack arguments into the first three DWORD slots of the object at ECX and returns that object (callee pops 12 bytes; original is thiscall-style, lifted as a plain function taking self first).
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+void* fn_00494000(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    auto* dst = static_cast<uint32_t*>(self);
+    dst[0] = arg1;
+    dst[1] = arg2;
+    dst[2] = arg3;
+    return self;
+}
+} // namespace lift_00494000

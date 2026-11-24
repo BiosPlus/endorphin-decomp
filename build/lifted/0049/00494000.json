@@ -1,0 +1,33 @@
+{
+  "va": "0x00494000",
+  "size": 25,
+  "orig_symbol": "sub_00494000",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "setDwordTriple",
+  "signature": "void* fn_00494000(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Stores three stack arguments into the first three DWORD slots of the object at ECX and returns that object (callee pops 12 bytes; original is thiscall-style, lifted as a plain function taking self first).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:48:34Z"
+}
