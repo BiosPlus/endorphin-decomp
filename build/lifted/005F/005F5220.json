@@ -1,0 +1,14 @@
+{
+  "va": "0x005F5220",
+  "size": 30,
+  "orig_symbol": "HelperGraphic::vfunc_14",
+  "src_path": "src/classes/HelperGraphic.cpp",
+  "lifted_path": "lifted/classes/HelperGraphic.cpp",
+  "name": "HelperGraphic::vfunc_14",
+  "class": "HelperGraphic",
+  "signature": "uint32_t __stdcall fn_005F5220(uint32_t self, uint32_t arg2)",
+  "summary": "Calls ext_0046F7D0(arg1, 0) and returns its first argument unchanged.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:18:28Z"
+}

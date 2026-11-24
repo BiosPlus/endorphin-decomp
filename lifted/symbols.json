@@ -20847,6 +20847,13 @@
     "summary": "Loads the pointer at self+0x04, reads a function pointer at its +0x08, and calls it with (self+0x04) as this and the global mem_00B40640 as its single argument.",
     "lifted_path": "lifted/leaf/tiny_5F0000.cpp"
   },
+  "0x005F5220": {
+    "name": "HelperGraphic::vfunc_14",
+    "class": "HelperGraphic",
+    "signature": "uint32_t __stdcall fn_005F5220(uint32_t self, uint32_t arg2)",
+    "summary": "Calls ext_0046F7D0(arg1, 0) and returns its first argument unchanged.",
+    "lifted_path": "lifted/classes/HelperGraphic.cpp"
+  },
   "0x005F5280": {
     "name": "sub_005F5280",
     "class": "Unknown",
