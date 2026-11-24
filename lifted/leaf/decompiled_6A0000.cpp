@@ -197,3 +197,31 @@ uint32_t __thiscall fn_006AF8E0(uint8_t* self, int32_t index) {
     return arr[index];
 }
 } // namespace lift_006AF8E0
+
+// [0x006A04B0]
+namespace lift_006A04B0 {
+extern uint32_t mem_00924E90;
+extern uint32_t mem_00924FA0;
+extern uint32_t mem_00924E94;
+extern uint32_t mem_00924E98;
+
+// @name catchHandler_006A04B0
+// @summary Exception catch handler that logs an error string at [ebp-0x14]+0xC to std::cout and returns continuation 0x006A049F.
+uint32_t catchHandler_006A04B0(uintptr_t frame_ebp) {
+    using OstreamStrFn = void* (__cdecl*)(void*, const void*);
+    using OstreamEndlFn = void* (__thiscall*)(void*, void*);
+
+    void* endl_fn = reinterpret_cast<void*>(static_cast<uintptr_t>(mem_00924E90));
+    uint32_t obj_ptr = *reinterpret_cast<const uint32_t*>(frame_ebp - 0x14);
+    const void* str_ptr = reinterpret_cast<const void*>(static_cast<uintptr_t>(obj_ptr + 0xC));
+    void* cout_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(mem_00924FA0));
+
+    auto op_lshift_str = reinterpret_cast<OstreamStrFn>(static_cast<uintptr_t>(mem_00924E94));
+    void* os = op_lshift_str(cout_ptr, str_ptr);
+
+    auto op_lshift_endl = reinterpret_cast<OstreamEndlFn>(static_cast<uintptr_t>(mem_00924E98));
+    op_lshift_endl(os, endl_fn);
+
+    return 0x006A049F;
+}
+} // namespace lift_006A04B0

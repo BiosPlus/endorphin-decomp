@@ -1,0 +1,13 @@
+{
+  "va": "0x006A04B0",
+  "size": 43,
+  "orig_symbol": "sub_006A04B0",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "catchHandler_006A04B0",
+  "signature": "uint32_t catchHandler_006A04B0(uintptr_t frame_ebp)",
+  "summary": "Exception catch handler that logs an error string at [ebp-0x14]+0xC to std::cout and returns continuation 0x006A049F.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:06:28Z"
+}
