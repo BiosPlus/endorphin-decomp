@@ -1,0 +1,13 @@
+{
+  "va": "0x006629B0",
+  "size": 35,
+  "orig_symbol": "sub_006629B0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "fileExists",
+  "signature": "uint32_t __cdecl sub_006629B0(uint32_t path_str)",
+  "summary": "Checks whether a file exists by calling _stat64i32 on std::string::c_str()",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:59:02Z"
+}

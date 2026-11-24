@@ -169,3 +169,19 @@ void fn_0066BA00(uint32_t* self) {
     self[0] = result;                               // mov [esi], eax
 }
 } // namespace lift_0066BA00
+
+// [0x006629B0]
+namespace lift_006629B0 {
+// @name fileExists
+// @summary Checks whether a file exists by calling _stat64i32 on std::string::c_str()
+
+uint32_t __thiscall ext_MSVCP80_std_string_c_str(uint32_t this_ptr);
+int32_t __cdecl ext_MSVCR80__stat64i32(uint32_t path, void* stat_buf);
+
+uint32_t __cdecl sub_006629B0(uint32_t path_str) {
+    uint8_t stat_buf[0x30];
+    uint32_t c_str = ext_MSVCP80_std_string_c_str(path_str);
+    int32_t res = ext_MSVCR80__stat64i32(c_str, stat_buf);
+    return (res == 0) ? 1u : 0u;
+}
+} // namespace lift_006629B0
