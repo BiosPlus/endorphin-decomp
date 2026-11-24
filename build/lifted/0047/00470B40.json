@@ -1,0 +1,22 @@
+{
+  "va": "0x00470B40",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, float, {public: void __thiscall RuntimeEngine::setSimulationFrameRate(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cRuntimeEngine, float, getSimulationFrameRate, float, setSimulationFrameRate\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cRuntimeEngine, float, getSimulationFrameRate, float, setSimulationFrameRate\u003e",
+  "signature": "void __stdcall fn_00470B40(uint8_t* out)",
+  "summary": "Lazily initializes a static type descriptor at 0x00AD8FFC and stores its pointer at arg0 + 0x04",
+  "fields": [
+    {
+      "class": "Arg0",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:51:48Z"
+}

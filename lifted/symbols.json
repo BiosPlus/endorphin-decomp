@@ -6471,6 +6471,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x00470B40": {
+    "name": "ExprParser::ReadWriteMethodType\u003cRuntimeEngine, float, getSimulationFrameRate, float, setSimulationFrameRate\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cRuntimeEngine, float, getSimulationFrameRate, float, setSimulationFrameRate\u003e",
+    "signature": "void __stdcall fn_00470B40(uint8_t* out)",
+    "summary": "Lazily initializes a static type descriptor at 0x00AD8FFC and stores its pointer at arg0 + 0x04",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x00471050": {
     "name": "ExprParser::ReadMethodType\u003cRuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0\u003e",
@@ -27651,6 +27658,13 @@
     "class": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026Sensors::SensorIsCollidingWith::getBool, 1\u003e",
     "signature": "void* __thiscall fn_00624FA0(void* self, void* outValue, void** sensorPtr)",
     "summary": "Evaluates SensorIsCollidingWith::getBool() on the target sensor pointer and constructs a boolean result value, or throws if null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00625000": {
+    "name": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, getBool, 1\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, getBool, 1\u003e",
+    "signature": "float __thiscall fn_00625000(void* self, void** arg0)",
+    "summary": "Evaluates SensorIsCollidingWith::getBool() as 1.0f or 0.0f, or throws if null",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00625060": {

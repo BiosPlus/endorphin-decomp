@@ -8990,3 +8990,24 @@ void fn_004AAA00(void* out) {
     lift_field<uint32_t>(out, 0x4) = kStaticObjAddr;
 }
 } // namespace lift_004AAA00
+
+// [0x00470B40]
+namespace lift_00470B40 {
+extern uint32_t mem_00AD9000;
+extern uint32_t mem_00AD8FFC;
+
+extern void __thiscall ext_0067A670(void* self);
+
+// @name ExprParser::ReadWriteMethodType<RuntimeEngine, float, getSimulationFrameRate, float, setSimulationFrameRate>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<RuntimeEngine, float, getSimulationFrameRate, float, setSimulationFrameRate>
+// @summary Lazily initializes a static type descriptor at 0x00AD8FFC and stores its pointer at arg0 + 0x04
+// @field Arg0 +0x04 uint32_t field_0x04
+void __stdcall fn_00470B40(uint8_t* out) {
+    if ((mem_00AD9000 & 1u) == 0u) {
+        mem_00AD9000 |= 1u;
+        ext_0067A670(&mem_00AD8FFC);
+        mem_00AD8FFC = 0x0093B884u;
+    }
+    *reinterpret_cast<uint32_t*>(out + 4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AD8FFC));
+}
+} // namespace lift_00470B40
