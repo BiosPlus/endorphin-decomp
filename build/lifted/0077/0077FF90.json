@@ -1,0 +1,22 @@
+{
+  "va": "0x0077FF90",
+  "size": 32,
+  "orig_symbol": "sub_0077FF90",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "Unknown::SetDoubleElement16",
+  "class": "Unknown",
+  "signature": "void fn_0077FF90(void* self, int32_t index, double value)",
+  "summary": "Stores a double at byte offset 8 of the 16-byte element selected by index in the array pointed to by inner-\u003e+0x04.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (pointer to inner object; inner-\u003e+0x04 holds the element array",
+      "name": "base)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:44:45Z"
+}

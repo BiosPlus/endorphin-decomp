@@ -50,3 +50,21 @@ double fn_0077FFB0(void* self, DWORD index) {
 }
 } // namespace lift_0077FFB0
 } // namespace lift_0077FFB0
+
+// [0x0077FF90] sub_0077FF90 (32 bytes)
+namespace lift_0077FF90 {
+// @name Unknown::SetDoubleElement16
+// @class Unknown
+// @summary Stores a double at byte offset 8 of the 16-byte element selected by index in the array pointed to by inner->+0x04.
+// @field Unknown +0x00 void* field_0x00 (pointer to inner object; inner->+0x04 holds the element array base)
+void fn_0077FF90(void* self, int32_t index, double value) {
+    // self->+0x00 -> inner object; inner->+0x04 -> element array base.
+    uint32_t inner_addr = *reinterpret_cast<const uint32_t*>(self);
+    uint32_t base_addr = *reinterpret_cast<const uint32_t*>(
+        static_cast<uintptr_t>(inner_addr) + 0x04);
+    uint32_t element_off = static_cast<uint32_t>(index) << 4;
+    uint8_t* dst = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(base_addr))
+                   + element_off + 0x08;
+    std::memcpy(dst, &value, sizeof(value));
+}
+} // namespace lift_0077FF90

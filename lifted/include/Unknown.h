@@ -15,6 +15,7 @@ struct Unknown_Fields {
     // +0x0   float* field_0x00 (arg1: dereferenced to get dst Vector4*)  (evidence: 0x0066B860) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    __vfptr  (evidence: 0x006F7930) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (target object pointer;* arg1)  (evidence: 0x005853E0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void* field_0x00 (pointer to inner object; inner->+0x04 holds the element array base)  (evidence: 0x0077FF90) // CONFLICT: multiple definitions at +0x0
     // +0x0   float field_0x00 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD                    field_00  (evidence: 0x0057BB20, 0x006BDAF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD                    field_0x00  (evidence: 0x00468730, 0x0046FA80, 0x0046FAA0, 0x005D1480, 0x0067ECF0, 0x00728DE0, 0x007C8A10, 0x0086B200) // CONFLICT: multiple definitions at +0x0

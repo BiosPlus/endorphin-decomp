@@ -42490,6 +42490,13 @@
     "summary": "Returns the DWORD at element index (16-byte stride) of the array referenced via self-\u003efield_0x00-\u003efield_0x04.",
     "lifted_path": "lifted/leaf/decompiled_770000.cpp"
   },
+  "0x0077FF90": {
+    "name": "Unknown::SetDoubleElement16",
+    "class": "Unknown",
+    "signature": "void fn_0077FF90(void* self, int32_t index, double value)",
+    "summary": "Stores a double at byte offset 8 of the 16-byte element selected by index in the array pointed to by inner-\u003e+0x04.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
   "0x0077FFB0": {
     "name": "Unknown::GetDoubleElement16",
     "class": "Unknown",
