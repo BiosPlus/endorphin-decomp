@@ -3,6 +3,7 @@
 #include <stdexcept>
 #include <cstdint>
 #include <cstring>
+#include <cstddef>
 
 // [0x00695620] ExprParser::ReadWriteMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, float, &public: void __thiscall DoubleWithProperties::setValue(float)>::vfunc_41 (62 bytes)
 namespace lift_00695620 {
@@ -8560,3 +8561,30 @@ void fn_0049C160(void* out) {
     lift_field<uint32_t>(out, 4) = 0x00ADD7F4u;
 }
 } // namespace lift_0049C160
+
+// [0x00498260] ExprParser::ReadWriteMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::Transition::setResultantState(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_00498260 {
+extern void ext_0067A670(void* self, int arg);
+extern int mem_00ADD168;
+extern int mem_00ADD164;
+
+// @name ExprParser::ReadWriteMethodType<NMData::Transition>::vfunc_40 (static accessor binding)
+// @class ExprParser::ReadWriteMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::Transition::setResultantState(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Lazily initializes one shared static accessor object (guard bit 0 of mem_00ADD168) and stores its address into the caller's object at +0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_00498260(void* out) {
+    // Function-local static guard: bit 0 of mem_00ADD168 marks the static as initialized.
+    // The original is MSVC thread-safe static init (SEH frame on fs:[0]); no portable
+    // equivalent of the SEH frame or the runtime's init lock is reproduced here.
+    if ((mem_00ADD168 & 1) == 0) {
+        mem_00ADD168 |= 1;
+        // Constructor for the static object at mem_00ADD164 (original: thiscall with one stack arg of 0).
+        ext_0067A670(&mem_00ADD164, 0);
+        // First word of the static object is the vtable pointer for its class.
+        mem_00ADD164 = 0x0093F6BC;
+    }
+
+    // out +0x04 = address of the shared static object.
+    lift_field<void*>(out, 0x04) = &mem_00ADD164;
+}
+} // namespace lift_00498260
