@@ -715,3 +715,29 @@ DWORD fn_006B4870(void* self, DWORD a1, DWORD a2, DWORD a3, DWORD a4) {
     return ext_006A5CEC(self, 0, r);
 }
 } // namespace lift_006B4870
+
+// [0x006B2230]
+namespace lift_006B2230 {
+// @name sub_006B2230_ctor
+// @summary Constructor that calls base sub_006B0C40, sets vtable to 0x009917d8, and stores four byte fields at +0x10..+0x13.
+// @field +0x00 uint32_t vtable
+// @field +0x10 uint8_t field_0x10
+// @field +0x11 uint8_t field_0x11
+// @field +0x12 uint8_t field_0x12
+// @field +0x13 uint8_t field_0x13
+
+
+extern uint8_t& mem_u8(uint32_t addr);
+extern uint32_t& mem_u32(uint32_t addr);
+extern uint32_t __thiscall ext_006B0C40(uint32_t self, uint32_t arg0);
+
+uint32_t __thiscall fn_006B2230(uint32_t self, uint32_t arg0, uint8_t arg1, uint8_t arg2, uint8_t arg3, uint8_t arg4) {
+    ext_006B0C40(self, arg0);
+    mem_u8(self + 0x10) = arg1;
+    mem_u8(self + 0x12) = arg2;
+    mem_u32(self + 0x00) = 0x009917D8u;
+    mem_u8(self + 0x11) = arg3;
+    mem_u8(self + 0x13) = arg4;
+    return self;
+}
+} // namespace lift_006B2230
