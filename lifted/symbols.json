@@ -34941,6 +34941,12 @@
     "summary": "Calls fn_0071E680 on self and returns the double at offset +0x18 of the returned subobject.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00711BB0": {
+    "name": "sub_00711BB0",
+    "signature": "extern double __fastcall fn_00711BB0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00711BA0 (getSubobjectField_0x18).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00712520": {
     "name": "sub_00712520",
     "signature": "extern \"C\" int32_t __cdecl fn_00712520(void)",

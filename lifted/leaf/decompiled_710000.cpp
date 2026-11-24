@@ -87,3 +87,22 @@ extern double __fastcall fn_00711BA0(void* self) {
     return *reinterpret_cast<const double*>(static_cast<const uint8_t*>(sub) + 0x18);
 }
 } // namespace lift_00711BA0
+
+// [0x00711BB0] sub_00711BB0 (16 bytes)
+namespace lift_00711BB0 {
+// @name sub_00711BB0
+// @summary Auto-lifted identical-shape clone of 0x00711BA0 (getSubobjectField_0x18).
+namespace lift_00711BA0 {
+// @name getSubobjectField_0x18
+// @summary Calls fn_0071E680 on self and returns the double at offset +0x18 of the returned subobject.
+// @field Subobject +0x18 double field_0x18
+
+
+extern void* __fastcall fn_0071E680(void* self);
+
+extern double __fastcall fn_00711BB0(void* self) {
+    void* sub = fn_0071E680(self);
+    return *reinterpret_cast<const double*>(static_cast<const uint8_t*>(sub) + 0x20);
+}
+} // namespace lift_00711BA0
+} // namespace lift_00711BB0

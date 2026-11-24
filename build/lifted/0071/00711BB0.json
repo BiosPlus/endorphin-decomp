@@ -1,0 +1,21 @@
+{
+  "va": "0x00711BB0",
+  "size": 16,
+  "orig_symbol": "sub_00711BB0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "sub_00711BB0",
+  "signature": "extern double __fastcall fn_00711BB0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00711BA0 (getSubobjectField_0x18).",
+  "fields": [
+    {
+      "class": "Subobject",
+      "offset": "+0x18",
+      "type": "double",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:43:26Z"
+}
