@@ -49506,6 +49506,13 @@
     "summary": "Follows the pointer at this+0x268 and returns 1 if the byte at that object's +0x270 is zero, else 0.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00702700": {
+    "name": "getSubStateCode",
+    "class": "Unknown",
+    "signature": "DWORD getSubStateCode(void* self)",
+    "summary": "Reads this-\u003efield_0x268-\u003efield_0x160 and maps values 1..5 to codes 1..5; anything else returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00702780": {
     "name": "getNestedField_0x268_0x490",
     "signature": "uint32_t __thiscall sub_00702780(uint32_t self)",

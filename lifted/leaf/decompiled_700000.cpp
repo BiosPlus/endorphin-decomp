@@ -1093,3 +1093,31 @@ bool __stdcall sub_0070AAD0(uint32_t arg0) {
         || arg0 == mem_00B5E400;
 }
 } // namespace lift_0070AAD0
+
+// [0x00702700] sub_00702700 (58 bytes)
+namespace lift_00702700 {
+// @name getSubStateCode
+// @class Unknown
+// @summary Reads this->field_0x268->field_0x160 and maps values 1..5 to codes 1..5; anything else returns 0.
+// @field Unknown +0x268 DWORD field_0x268
+// @field Unknown +0x160 DWORD field_0x160
+
+// Assumes the jump table at 0x70273c maps index i (value i+1) to the
+// case block that returns i+1, i.e. the function is an identity over 1..5.
+DWORD getSubStateCode(void* self) {
+    const auto* base = static_cast<const std::uint8_t*>(self);
+
+    DWORD sub = 0;
+    std::memcpy(&sub, base + 0x268, sizeof(sub));          // this->field_0x268 (pointer-sized slot, 32-bit image)
+
+    DWORD value = 0;
+    std::memcpy(&value, reinterpret_cast<const std::uint8_t*>(static_cast<std::uintptr_t>(sub)) + 0x160,
+                sizeof(value));                             // sub->field_0x160
+
+    DWORD index = value - 1;                                // dec eax
+    if (index > 4) {                                        // cmp eax, 4 / ja
+        return 0;
+    }
+    return index + 1;                                       // case i -> mov eax, i+1
+}
+} // namespace lift_00702700
