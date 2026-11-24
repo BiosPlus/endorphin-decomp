@@ -1,0 +1,13 @@
+{
+  "va": "0x006BB9B0",
+  "size": 57,
+  "orig_symbol": "sub_006BB9B0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "initHugeVectorGlobals",
+  "signature": "void sub_006BB9B0(void)",
+  "summary": "Initializes three 64-bit global values from MSVCR80.dll!_HUGE.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:20:39Z"
+}
