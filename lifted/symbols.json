@@ -8041,6 +8041,13 @@
     "summary": "Loads the pointer stored at offset 0 of self and forwards it to the helper at 0x00494830.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x00495030": {
+    "name": "DynamicEnumType\u003cRigManager\u003e::vfunc_27",
+    "class": "ExprParser::DynamicEnumType\u003cRigManager\u003e",
+    "signature": "extern \"C\" void* __thiscall fn_00495030(void* self, void* sret, void** arg2, int32_t index)",
+    "summary": "Gets the rig type name string for the given index via RigManager::getRigTypeNameFromIndex",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
   "0x00495A20": {
     "name": "sub_00495A20",
     "class": "NMData::RealChannel",
@@ -12059,6 +12066,13 @@
     "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}\u003e",
     "signature": "void fn_004D8BA0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00495020 (ExprParser::DynamicEnumType\u003cRigManager\u003e::vfunc_26).",
+    "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
+  "0x004D8BB0": {
+    "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e::vfunc_27",
+    "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e",
+    "signature": "void* __thiscall fn_004D8BB0(void* /*self*/, void* out_str, void** obj_ptr, int index)",
+    "summary": "Forwards getAvailableTweakDescription(index) on the target RigEventData object and returns a copy of the resulting std::string.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
   "0x004D8EB0": {
