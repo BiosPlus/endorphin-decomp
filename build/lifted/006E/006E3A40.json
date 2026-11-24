@@ -1,0 +1,22 @@
+{
+  "va": "0x006E3A40",
+  "size": 16,
+  "orig_symbol": "sub_006E3A40",
+  "src_path": "src/leaf/tiny_6E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6E0000.cpp",
+  "name": "Unknown::IsField68Equal2",
+  "class": "Unknown",
+  "signature": "uint8_t fn_006E3A40(void* self)",
+  "summary": "Returns 1 if the dword at this+0x68 equals 2, otherwise 0 (cmp/sete/ret).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "int32_t",
+      "name": "field_0x68"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:40:08Z"
+}

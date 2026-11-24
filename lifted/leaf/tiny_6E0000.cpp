@@ -453,3 +453,14 @@ uint32_t fn_006E8810(void* self) {
 }
 } // namespace lift_006BB7D0
 } // namespace lift_006E8810
+
+// [0x006E3A40] sub_006E3A40 (16 bytes)
+namespace lift_006E3A40 {
+// @name Unknown::IsField68Equal2
+// @class Unknown
+// @summary Returns 1 if the dword at this+0x68 equals 2, otherwise 0 (cmp/sete/ret).
+// @field Unknown +0x68 int32_t field_0x68
+uint8_t fn_006E3A40(void* self) {
+    return lift_field<int32_t>(self, 0x68) == 2 ? 1 : 0;
+}
+} // namespace lift_006E3A40

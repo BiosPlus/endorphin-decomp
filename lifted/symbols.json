@@ -32399,6 +32399,13 @@
     "summary": "Getter returning int32_t field at offset +0x38.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006E3A40": {
+    "name": "Unknown::IsField68Equal2",
+    "class": "Unknown",
+    "signature": "uint8_t fn_006E3A40(void* self)",
+    "summary": "Returns 1 if the dword at this+0x68 equals 2, otherwise 0 (cmp/sete/ret).",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
   "0x006E6340": {
     "name": "sub_006E6340",
     "signature": "extern \"C\" void __fastcall fn_006E6340(void* self)",
