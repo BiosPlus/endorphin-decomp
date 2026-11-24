@@ -1,0 +1,28 @@
+{
+  "va": "0x007AEEB0",
+  "size": 14,
+  "orig_symbol": "sub_007AEEB0",
+  "src_path": "src/leaf/tiny_7A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7A0000.cpp",
+  "name": "Unknown::getField60IfField58",
+  "class": "Unknown",
+  "signature": "DWORD fn_007AEEB0(void* self)",
+  "summary": "Returns the DWORD at +0x60 when the DWORD at +0x58 is nonzero; otherwise returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "DWORD",
+      "name": "field_58"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "DWORD",
+      "name": "field_60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:27:10Z"
+}

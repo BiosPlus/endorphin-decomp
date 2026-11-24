@@ -344,3 +344,18 @@ bool __thiscall sub_007AEEE0(uint32_t ecx)
     return edx != 0;
 }
 } // namespace lift_007AEEE0
+
+// [0x007AEEB0] sub_007AEEB0 (14 bytes)
+namespace lift_007AEEB0 {
+// @name Unknown::getField60IfField58
+// @class Unknown
+// @summary Returns the DWORD at +0x60 when the DWORD at +0x58 is nonzero; otherwise returns 0.
+// @field Unknown +0x58 DWORD field_58
+// @field Unknown +0x60 DWORD field_60
+DWORD fn_007AEEB0(void* self) {
+    if (lift_field<DWORD>(self, 0x58) != 0) {
+        return lift_field<DWORD>(self, 0x60);
+    }
+    return 0;
+}
+} // namespace lift_007AEEB0
