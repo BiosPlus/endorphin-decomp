@@ -442,3 +442,27 @@ void* __stdcall fn_005CFCC0(uint32_t index) {
 }
 } // namespace lift_004CE810
 } // namespace lift_005CFCC0
+
+// [0x005C3C00] sub_005C3C00 (25 bytes)
+namespace lift_005C3C00 {
+// @name Unknown::getValueViaChild
+// @class Unknown
+// @summary Returns 0.0f if the pointer at +0x15C is null; otherwise forwards to the vtable slot 3 method of the object at (ptr+0x0C), passing ptr as argument, and returns its float result.
+// @field Unknown +0x15C void* field_0x15c
+
+// Vtable slot 3 (+0x0C) of the child object: float __thiscall(this, owner).
+typedef float (__thiscall *ChildGetFn)(void* self, void* owner);
+
+float __thiscall fn_005C3C00(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    void* child = *reinterpret_cast<void**>(base + 0x15C);
+    if (child == nullptr) {
+        return 0.0f;
+    }
+    auto* childBytes = static_cast<uint8_t*>(child);
+    void* obj = *reinterpret_cast<void**>(childBytes + 0x0C);
+    void** vtable = *reinterpret_cast<void***>(obj);
+    auto fn = reinterpret_cast<ChildGetFn>(vtable[3]);
+    return fn(obj, child);
+}
+} // namespace lift_005C3C00

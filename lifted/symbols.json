@@ -17224,6 +17224,13 @@
     "summary": "Builds a zeroed vec3, scales one axis by *scale depending on the kind code of the object at +0x15C, pushes it to the sub-object at +0x0C, then forwards a renderer-derived value to the object at +0x10.",
     "lifted_path": "lifted/NMData/CollisionModelData.cpp"
   },
+  "0x005C3C00": {
+    "name": "Unknown::getValueViaChild",
+    "class": "Unknown",
+    "signature": "float __thiscall fn_005C3C00(void* self)",
+    "summary": "Returns 0.0f if the pointer at +0x15C is null; otherwise forwards to the vtable slot 3 method of the object at (ptr+0x0C), passing ptr as argument, and returns its float result.",
+    "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
+  },
   "0x005C3E20": {
     "name": "NMData::CollisionModelData::vfunc_14",
     "class": "NMData::CollisionModelData",

@@ -1,0 +1,22 @@
+{
+  "va": "0x005C3C00",
+  "size": 25,
+  "orig_symbol": "sub_005C3C00",
+  "src_path": "src/leaf/tiny_5C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5C0000.cpp",
+  "name": "Unknown::getValueViaChild",
+  "class": "Unknown",
+  "signature": "float __thiscall fn_005C3C00(void* self)",
+  "summary": "Returns 0.0f if the pointer at +0x15C is null; otherwise forwards to the vtable slot 3 method of the object at (ptr+0x0C), passing ptr as argument, and returns its float result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x15C",
+      "type": "void*",
+      "name": "field_0x15c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:49:49Z"
+}
