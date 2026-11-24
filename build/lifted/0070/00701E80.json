@@ -1,0 +1,13 @@
+{
+  "va": "0x00701E80",
+  "size": 53,
+  "orig_symbol": "sub_00701E80",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "getTableEntryByIndex",
+  "signature": "extern \"C\" uint32_t __stdcall sub_00701E80(uint32_t index)",
+  "summary": "Maps an unsigned index (0..3) to a corresponding static data pointer, returning 0 if out of range.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:17:09Z"
+}

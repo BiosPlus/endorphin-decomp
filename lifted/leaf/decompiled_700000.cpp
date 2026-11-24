@@ -988,3 +988,18 @@ extern uint32_t __thiscall sub_00708D70(void* self) {
     return matches;
 }
 } // namespace lift_00708D70
+
+// [0x00701E80]
+namespace lift_00701E80 {
+// @name getTableEntryByIndex
+// @summary Maps an unsigned index (0..3) to a corresponding static data pointer, returning 0 if out of range.
+extern uint32_t __stdcall sub_00701E80(uint32_t index) {
+    switch (index) {
+        case 0: return 0x00AABB78u;
+        case 1: return 0x00AABB6Cu;
+        case 2: return 0x00AABB60u;
+        case 3: return 0x00AABB54u;
+        default: return 0u;
+    }
+}
+} // namespace lift_00701E80
