@@ -1628,6 +1628,12 @@
     "summary": "Fetches the nested object from the global, then calls its vtable slot 0xDC with arg 1 and returns the result.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x0042FB20": {
+    "name": "GlobalNestedObject_VCall_0xDC_Arg3",
+    "signature": "extern \"C\" uint32_t __cdecl fn_0042FB20(void)",
+    "summary": "Gets a global value, resolves a nested object from it, and calls that object's vfunc at vtable slot +0xDC with argument 3; returns the vfunc result.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x0042FB40": {
     "name": "thunkGetterVirtualSlot54",
     "signature": "extern \"C\" void* fn_0042FB40()",

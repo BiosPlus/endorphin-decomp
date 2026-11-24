@@ -405,3 +405,24 @@ uint32_t fn_0042FB00(void) {
     return slot(obj, 1);
 }
 } // namespace lift_0042FB00
+
+// [0x0042FB20] sub_0042FB20 (27 bytes)
+namespace lift_0042FB20 {
+// Known callee 0x00465B30: get_global_field_0x58 (Calls ext_004658C0 and returns the int32_t field at offset +0x58.)
+extern int32_t __cdecl ext_00465B30(void);
+// Known callee 0x00468660: getNestedField_0x18_0xc. Call site uses eax as an object pointer (vtable deref), so it returns a pointer.
+extern void* __fastcall ext_00468660(void* self);
+
+// @name GlobalNestedObject_VCall_0xDC_Arg3
+// @summary Gets a global value, resolves a nested object from it, and calls that object's vfunc at vtable slot +0xDC with argument 3; returns the vfunc result.
+// @field unknown +0x00 void* vtable
+extern uint32_t __cdecl fn_0042FB20(void) {
+    const uintptr_t handle = static_cast<uintptr_t>(static_cast<uint32_t>(ext_00465B30()));
+    void* obj = ext_00468660(reinterpret_cast<void*>(handle));
+
+    void** vtable = *reinterpret_cast<void***>(obj);
+    using VFn = uint32_t(__thiscall*)(void* self, int32_t arg);
+    VFn slot = reinterpret_cast<VFn>(vtable[0xDC / sizeof(void*)]);
+    return slot(obj, 3);
+}
+} // namespace lift_0042FB20

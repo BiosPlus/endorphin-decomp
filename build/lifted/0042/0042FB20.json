@@ -1,0 +1,21 @@
+{
+  "va": "0x0042FB20",
+  "size": 27,
+  "orig_symbol": "sub_0042FB20",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "GlobalNestedObject_VCall_0xDC_Arg3",
+  "signature": "extern \"C\" uint32_t __cdecl fn_0042FB20(void)",
+  "summary": "Gets a global value, resolves a nested object from it, and calls that object's vfunc at vtable slot +0xDC with argument 3; returns the vfunc result.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:00:18Z"
+}
