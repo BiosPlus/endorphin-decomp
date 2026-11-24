@@ -28613,6 +28613,12 @@
     "summary": "Returns the address of the +0x10 subobject when the flag at +0x68 is zero, otherwise the +0x54 subobject.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
+  "0x00687260": {
+    "name": "ConditionalStringAssignIfMaskClear",
+    "signature": "void fn_00687260(void* self, void* arg1, void* arg2, uint32_t mask)",
+    "summary": "If (self-\u003efield_0x150 \u0026 mask) == 0, assign string arg1 into string arg2 (std::string::operator=); otherwise no-op. Callee-cleans 12 bytes.",
+    "lifted_path": "lifted/leaf/tiny_680000.cpp"
+  },
   "0x00687280": {
     "name": "writeIfFlagClear",
     "signature": "void __thiscall sub_00687280(void* this_ptr, uint32_t val, uint32_t* out, uint32_t mask)",

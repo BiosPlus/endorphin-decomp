@@ -248,3 +248,19 @@ void fn_00687230(void* self) {
     lift_field<uint8_t>(self, 0xB0) = 1;
 }
 } // namespace lift_00687230
+
+// [0x00687260] sub_00687260 (30 bytes)
+namespace lift_00687260 {
+extern int mem_00924FDC;
+extern void* ext_MSVCP80_basic_string_assign(void* dst, const void* src);
+
+// @name ConditionalStringAssignIfMaskClear
+// @summary If (self->field_0x150 & mask) == 0, assign string arg1 into string arg2 (std::string::operator=); otherwise no-op. Callee-cleans 12 bytes.
+// @field Unknown +0x150 uint32_t field_0x150
+void fn_00687260(void* self, void* arg1, void* arg2, uint32_t mask) {
+    const uint32_t flags = *reinterpret_cast<const uint32_t*>(static_cast<const char*>(self) + 0x150);
+    if ((flags & mask) == 0) {
+        ext_MSVCP80_basic_string_assign(arg2, arg1);
+    }
+}
+} // namespace lift_00687260
