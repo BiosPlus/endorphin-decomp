@@ -163,3 +163,21 @@ void fn_0080AB80(void) {
     reinterpret_cast<EnterCriticalSectionFn>(mem_009242E0)(mem_00B73C58);
 }
 } // namespace lift_0080AB80
+
+// [0x0080FAF0] sub_0080FAF0 (32 bytes)
+namespace lift_0080FAF0 {
+// @name ResetDwordTripleReturnFirst
+// @summary Zeroes three dwords at +0x00, +0x04 and +0x08 of the target block and returns the previous value of +0x00.
+// @field ResetDwordTriple +0x00 uint32_t field_0x00
+// @field ResetDwordTriple +0x04 uint32_t field_0x04
+// @field ResetDwordTriple +0x08 uint32_t field_0x08
+
+// cdecl: single pointer argument at [esp+4]; result returned in eax.
+uint32_t fn_0080FAF0(uint32_t* self) {
+    uint32_t previous = self[0];
+    self[0] = 0;
+    self[2] = 0;
+    self[1] = 0;
+    return previous;
+}
+} // namespace lift_0080FAF0
