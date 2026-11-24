@@ -1,0 +1,14 @@
+{
+  "va": "0x00430D80",
+  "size": 31,
+  "orig_symbol": "sub_00430D80",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "CheckGlobalField58Ok",
+  "class": "(none)",
+  "signature": "void fn_00430D80(void)",
+  "summary": "Queries the global +0x58 value, passes it to a predicate, and on failure raises a message via MFC ordinal 1123 with resource 0x92F8B8.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:21:50Z"
+}

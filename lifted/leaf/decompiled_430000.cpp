@@ -536,3 +536,26 @@ extern void __cdecl fn_00430DA0(void) {
     (void)ecx_val;
 }
 } // namespace lift_00430DA0
+
+// [0x00430D80] sub_00430D80 (31 bytes)
+namespace lift_00430D80 {
+// Known callee 0x00465B30: get_global_field_0x58 (Calls ext_004658C0 and returns the int32_t field at offset +0x58.)
+extern int32_t __cdecl ext_00465B30(void);
+// Known callee 0x00469C50: sub_00469C50 (Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).)
+// Takes its argument in ECX and reports a boolean result in AL.
+extern uint8_t __fastcall ext_00469C50(int32_t ecx);
+// Known callee 0x006A5E60: thunk_MFC80_ord_1123 (IAT jump thunk forwarding to MFC80!ord_1123.)
+// Called with three cdecl arguments (pushed right-to-left).
+extern int32_t __cdecl ext_006A5E60(uint32_t arg0, uint32_t arg1, uint32_t arg2);
+
+// @name CheckGlobalField58Ok
+// @class (none)
+// @summary Queries the global +0x58 value, passes it to a predicate, and on failure raises a message via MFC ordinal 1123 with resource 0x92F8B8.
+void fn_00430D80(void) {
+    const int32_t value = ext_00465B30();
+    const uint8_t ok = ext_00469C50(value);
+    if (ok == 0) {
+        ext_006A5E60(0x0092F8B8u, 0x30u, 0u);
+    }
+}
+} // namespace lift_00430D80
