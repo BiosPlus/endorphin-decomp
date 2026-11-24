@@ -1,0 +1,22 @@
+{
+  "va": "0x006AD010",
+  "size": 33,
+  "orig_symbol": "sub_006AD010",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "sub_006AD010",
+  "class": "Unknown",
+  "signature": "void* fn_006AD010(void* self, void* arg1)",
+  "summary": "Auto-lifted identical-shape clone of 0x0040A910 (sub_00407830).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "subobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:53:14Z"
+}

@@ -1,0 +1,28 @@
+{
+  "va": "0x00665840",
+  "size": 33,
+  "orig_symbol": "MacroCommand::vfunc_3",
+  "src_path": "src/classes/MacroCommand.cpp",
+  "lifted_path": "lifted/classes/MacroCommand.cpp",
+  "name": "MacroCommand::vfunc_3",
+  "class": "MacroCommand",
+  "signature": "void* fn_00665840(void* self, void* arg1)",
+  "summary": "Auto-lifted identical-shape clone of 0x0040A910 (sub_00407830).",
+  "fields": [
+    {
+      "class": "MacroCommand",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "subobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:53:14Z"
+}

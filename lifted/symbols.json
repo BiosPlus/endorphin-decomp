@@ -565,6 +565,13 @@
     "summary": "Passes the field at self+0x20 to USER32!GetDC, then forwards the returned HDC to MFC80 ord_2367.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x0040AB30": {
+    "name": "sub_0040AB30",
+    "class": "Unknown",
+    "signature": "void* fn_0040AB30(void* self, void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x0040A910 (sub_00407830).",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040AE10": {
     "name": "sub_0040AE10",
     "signature": "extern \"C\" void __fastcall fn_0040AE10(void* self)",
@@ -3402,6 +3409,13 @@
     "signature": "extern \"C\" void __fastcall fn_0044CFD0(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0x94 and forwards through mem_00924FDC.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
+  "0x0044CFE0": {
+    "name": "sub_0044CFE0",
+    "class": "Unknown",
+    "signature": "void* fn_0044CFE0(void* self, void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x0040A910 (sub_00407830).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
   "0x0044D010": {
     "name": "sub_0044D010",
@@ -25098,6 +25112,13 @@
     "summary": "Pure jump thunk forwarding to sub_0063E500.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0063E670": {
+    "name": "AdvXMLParser::CData::vfunc_1",
+    "class": "AdvXMLParser::CData",
+    "signature": "void* fn_0063E670(void* self, void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x0040A910 (sub_00407830).",
+    "lifted_path": "lifted/AdvXMLParser/CData.cpp"
+  },
   "0x0063E6A0": {
     "name": "AdvXMLParser::Pi::vfunc_3",
     "class": "AdvXMLParser::Pi",
@@ -27420,6 +27441,13 @@
     "summary": "If the subobject at +0x08 is non-null, call its vtable slot 1 (thiscall) with the value at +0x0C.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00665840": {
+    "name": "MacroCommand::vfunc_3",
+    "class": "MacroCommand",
+    "signature": "void* fn_00665840(void* self, void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x0040A910 (sub_00407830).",
+    "lifted_path": "lifted/classes/MacroCommand.cpp"
+  },
   "0x00665870": {
     "name": "sub_00665870",
     "signature": "extern \"C\" int32_t __cdecl fn_00665870(void)",
@@ -29264,6 +29292,13 @@
     "signature": "uint8_t __thiscall sub_006872D0(uint32_t self)",
     "summary": "Reads a byte from a table at 0x00AA2FC8 indexed by the 32-bit field at offset 0x48.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
+  },
+  "0x00687510": {
+    "name": "sub_00687510",
+    "class": "Unknown",
+    "signature": "void* fn_00687510(void* self, void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x0040A910 (sub_00407830).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x00688ED0": {
     "name": "sub_00688ED0",
@@ -34633,6 +34668,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x8 and forwards through mem_009244D4.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006AD010": {
+    "name": "sub_006AD010",
+    "class": "Unknown",
+    "signature": "void* fn_006AD010(void* self, void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x0040A910 (sub_00407830).",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006AD040": {
     "name": "sub_006AD040",
     "signature": "extern \"C\" void __fastcall fn_006AD040(void* self)",
@@ -35257,6 +35299,13 @@
     "signature": "extern \"C\" void fn_006B4F90(void)",
     "summary": "Pure jump thunk forwarding to sub_006B4F80.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x006B4FA0": {
+    "name": "sub_006B4FA0",
+    "class": "Unknown",
+    "signature": "void* fn_006B4FA0(void* self, void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x0040A910 (sub_00407830).",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
   "0x006B4FD0": {
     "name": "IsEscapeKeyUp",

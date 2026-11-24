@@ -1,0 +1,28 @@
+{
+  "va": "0x0063E670",
+  "size": 33,
+  "orig_symbol": "AdvXMLParser::CData::vfunc_1",
+  "src_path": "src/AdvXMLParser/CData.cpp",
+  "lifted_path": "lifted/AdvXMLParser/CData.cpp",
+  "name": "AdvXMLParser::CData::vfunc_1",
+  "class": "AdvXMLParser::CData",
+  "signature": "void* fn_0063E670(void* self, void* arg1)",
+  "summary": "Auto-lifted identical-shape clone of 0x0040A910 (sub_00407830).",
+  "fields": [
+    {
+      "class": "AdvXMLParser::CData",
+      "offset": "+0x20",
+      "type": "DWORD",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "subobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:53:14Z"
+}
