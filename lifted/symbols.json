@@ -31985,6 +31985,13 @@
     "summary": "Returns the 0x0F00 bit-field of the dword at this+0x10.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C9D20": {
+    "name": "Unknown::GetMaskedFlags18",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006C9D20(void* self)",
+    "summary": "Returns the bits 0x03000000 of the DWORD at this+0x10.",
+    "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
+  },
   "0x006C9E70": {
     "name": "Unknown::sub_006C9E70",
     "class": "Unknown",

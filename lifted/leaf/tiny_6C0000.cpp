@@ -1337,3 +1337,17 @@ uint32_t fn_006C9CD0(void* self) {
     return field_0x10 & 0x00000F00u;
 }
 } // namespace lift_006C9CD0
+
+// [0x006C9D20] sub_006C9D20 (16 bytes)
+namespace lift_006C9D20 {
+// @name Unknown::GetMaskedFlags18
+// @class Unknown
+// @summary Returns the bits 0x03000000 of the DWORD at this+0x10.
+// @field Unknown +0x10 uint32_t field_0x10
+uint32_t fn_006C9D20(void* self) {
+    const auto* base = static_cast<const unsigned char*>(self);
+    uint32_t value;
+    std::memcpy(&value, base + 0x10, sizeof(value));
+    return value & 0x03000000u;
+}
+} // namespace lift_006C9D20
