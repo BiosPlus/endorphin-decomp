@@ -1413,3 +1413,28 @@ void fn_007CD510(void* self) {
     lift_field<uint32_t>(self, 0x28) = 0;
 }
 } // namespace lift_007CD510
+
+// [0x007CD530] sub_007CD530 (31 bytes)
+namespace lift_007CD530 {
+// @name ClearMutualLinkAt0x210
+// @class <unknown>
+// @summary If self->field_0x210 points to an object whose +0x28 back-links to self, clear both links.
+// @field <unknown> +0x210 void* field_0x210
+// @field <unknown> +0x28 void* field_0x28 (on the object pointed to by field_0x210)
+void fn_007CD530(void* self) {
+    if (self == nullptr) {
+        return;
+    }
+    void*& link = lift_field<void*>(self, 0x210);
+    void* other = link;
+    if (other == nullptr) {
+        return;
+    }
+    void*& back = lift_field<void*>(other, 0x28);
+    if (back != self) {
+        return;
+    }
+    back = nullptr;
+    link = nullptr;
+}
+} // namespace lift_007CD530

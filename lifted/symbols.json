@@ -43343,6 +43343,13 @@
     "summary": "If self's owner (self+0x28) points back to self (owner+0x210), clear both links.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CD530": {
+    "name": "ClearMutualLinkAt0x210",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_007CD530(void* self)",
+    "summary": "If self-\u003efield_0x210 points to an object whose +0x28 back-links to self, clear both links.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007D4760": {
     "name": "IndexedPointerArray::nextPointer",
     "class": "IndexedPointerArray",

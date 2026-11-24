@@ -39,6 +39,7 @@ struct _unknown__Fields {
     // +0x14  float                    field_0x14  (evidence: 0x007C2E50, 0x007C9DF0, 0x007CB9C0) // CONFLICT: multiple definitions at +0x14
     // +0x20  DWORD                    field_20  (evidence: 0x007C2E50, 0x007C5A20, 0x007C5A30, 0x007C5AB0, 0x007C5C50, 0x007C5C60, 0x007C76D0, 0x007C8A70, 0x007D5BB0, 0x007D8470, 0x007D86F0, 0x007DCFF0)
     // +0x24  float                    field_0x24  (evidence: 0x007C2E50, 0x007C9DF0)
+    // +0x28  void* field_0x28 (on the object pointed to by field_0x210)  (evidence: 0x007CD530)
     // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0050E350)
     // +0x30  float                    field_0x30  (evidence: 0x00629DF0) // CONFLICT: multiple definitions at +0x30
     // +0x30  uint32_t                 field_0x30  (evidence: 0x007D4AE0, 0x007D8470, 0x007DFDB0) // CONFLICT: multiple definitions at +0x30
@@ -59,6 +60,7 @@ struct _unknown__Fields {
     // +0x138 FLOAT                    field_0x138  (evidence: 0x0065D0A0)
     // +0x17C void*                    field_0x17c  (evidence: 0x005E28B0)
     // +0x1F4 float                    field_0x1F4  (evidence: 0x005480D0)
+    // +0x210 void*                    field_0x210  (evidence: 0x007CD530)
     // +0x234 uint32_t                 field_0x234  (evidence: 0x005E1740, 0x005E2C70)
 };
 } // namespace lifted_layout
