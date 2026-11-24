@@ -44925,6 +44925,12 @@
     "summary": "Sets bit 0x8 in the 32-bit flags field at offset +0xC of the given object.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C6DB0": {
+    "name": "sub_007C6DB0",
+    "signature": "void sub_007C6DB0(uint32_t arg0)",
+    "summary": "Initializes object via sub_007C6C60 and invokes callback at 0x00AB28C8 with field_0x17c + 0x114 and object",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C6F20": {
     "name": "get_byte_at_field_0x44",
     "signature": "uint32_t sub_007C6F20(uint32_t arg0)",

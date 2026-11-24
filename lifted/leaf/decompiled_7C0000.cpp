@@ -184,3 +184,22 @@ void sub_007C62B0(uintptr_t obj, float a1, float a2, float a3) {
     *reinterpret_cast<float*>(obj + 0xb8) = a3;
 }
 } // namespace lift_007C62B0
+
+// [0x007C6DB0]
+namespace lift_007C6DB0 {
+// @name sub_007C6DB0
+// @summary Initializes object via sub_007C6C60 and invokes callback at 0x00AB28C8 with field_0x17c + 0x114 and object
+// @field Object +0x17c uint32_t field_0x17c
+
+
+extern void ext_007C6C60(uint32_t);
+extern uint32_t mem_00AB28C8;
+
+void sub_007C6DB0(uint32_t arg0) {
+    ext_007C6C60(arg0);
+    uint32_t ptr = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(arg0 + 0x17c)) + 0x114;
+    using Fn = void (*)(uint32_t, uint32_t);
+    Fn fn = reinterpret_cast<Fn>(static_cast<uintptr_t>(mem_00AB28C8));
+    fn(ptr, arg0);
+}
+} // namespace lift_007C6DB0
