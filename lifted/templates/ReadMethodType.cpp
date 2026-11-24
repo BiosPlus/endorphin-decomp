@@ -30667,3 +30667,23 @@ void* fn_00505030(void* out, const uint32_t* holder) {
     return out;
 }
 } // namespace lift_00505030
+
+// [0x005DB700] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_4 (71 bytes)
+namespace lift_005DB700 {
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out_str, uint8_t flag);
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData>::vfunc_4 (NMData::VideoPlaneData::getEndFrame)
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>
+// @summary Reads the value pointer held in *holder; throws if it is null, otherwise forwards the object's int at +0x24 (as a uint8 flag) to ext_0046C500 writing into out_str, and returns out_str.
+// @field NMData::VideoPlaneData +0x24 int field_0x24
+void* fn_005DB700(void* out_str, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::VideoPlaneData>: null value pointer");
+    }
+    const int32_t value = lift_field<int32_t>(obj, 0x24);
+    ext_0046C500(out_str, static_cast<uint8_t>(value));
+    return out_str;
+}
+} // namespace lift_005DB700

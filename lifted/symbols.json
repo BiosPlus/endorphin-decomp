@@ -22615,6 +22615,13 @@
     "summary": "Reads the GraphEntryData object held by the value pointer and returns whether its +0x20 field is non-zero; throws if the pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005DB700": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData\u003e::vfunc_4 (NMData::VideoPlaneData::getEndFrame)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0\u003e",
+    "signature": "void* fn_005DB700(void* out_str, void* const* holder)",
+    "summary": "Reads the value pointer held in *holder; throws if it is null, otherwise forwards the object's int at +0x24 (as a uint8 flag) to ext_0046C500 writing into out_str, and returns out_str.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005DBCB0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CameraData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::CameraData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0\u003e",
