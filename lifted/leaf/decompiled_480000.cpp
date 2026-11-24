@@ -492,3 +492,31 @@ void Matrix4x4_SetIdentity(void* self) {
     lift_field<float>(self, 0x3C) = 1.0f;
 }
 } // namespace lift_004803F0
+
+// [0x00480E00]
+namespace lift_00480E00 {
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+// @name copyVec4Range
+// @summary Copies a range of 16-byte (4-float) elements from [src_begin, src_end) to dst, returning the end destination pointer.
+uint32_t sub_00480E00(uint32_t src_begin, uint32_t src_end, uint32_t dst) {
+    uint32_t ecx = src_begin;
+    uint32_t edx = src_end;
+    uint32_t eax = dst;
+    if (ecx == edx) {
+        return eax;
+    }
+    do {
+        if (eax != 0) {
+            mem_write32(eax + 0x0, mem_read32(ecx + 0x0));
+            mem_write32(eax + 0x4, mem_read32(ecx + 0x4));
+            mem_write32(eax + 0x8, mem_read32(ecx + 0x8));
+            mem_write32(eax + 0xc, mem_read32(ecx + 0xc));
+        }
+        ecx += 0x10;
+        eax += 0x10;
+    } while (ecx != edx);
+    return eax;
+}
+} // namespace lift_00480E00
