@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_590000.cpp
 #include "lift_compat.h"
+#include <new>
+#include <string>
 
-// [0x00594790] sub_00594790 (25 bytes)
+#include <string>
 namespace lift_00594790 {
 // @name Unknown::releaseHeldObject (descriptive; owner class not identified)
 // @class Unknown
@@ -83,3 +85,20 @@ uint32_t __thiscall fn_00599E70(void* self) {
     return lift_field<uint32_t>(s_obj, 0x38C);
 }
 } // namespace lift_00599E70
+
+// [0x00599C10] sub_00599C10 (41 bytes)
+namespace lift_00599C10 {
+// @name sub_00599C10
+// @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_004148F0(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_00599C10(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_004148F0(first, last, out);
+}
+} // namespace lift_0044C4D0
+} // namespace lift_00599C10

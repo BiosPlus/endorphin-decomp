@@ -1,0 +1,13 @@
+{
+  "va": "0x00573A10",
+  "size": 41,
+  "orig_symbol": "sub_00573A10",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "sub_00573A10",
+  "signature": "DWORD* __thiscall fn_00573A10(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+  "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T14:00:23Z"
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x0051F640",
+  "size": 41,
+  "orig_symbol": "sub_0051F640",
+  "src_path": "src/leaf/decompiled_510000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_510000.cpp",
+  "name": "sub_0051F640",
+  "signature": "DWORD* __thiscall fn_0051F640(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+  "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T14:00:23Z"
+}

@@ -1,8 +1,10 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_680000.cpp
 #include "lift_compat.h"
 #include <cstdint>
+#include <new>
+#include <string>
 
-// [0x006829E0] sub_006829E0 (20 bytes)
+#include <string>
 namespace lift_006829E0 {
 // Known callee 0x0066B080: sub_0066B080 (Auto-lifted identical-shape clone of 0x004D0B60 (GetTableEntry28Address).)
 extern void* ext_0066B080(uint32_t index);
@@ -199,3 +201,71 @@ void fn_006829A0(void* self) {
     }
 }
 } // namespace lift_006829A0
+
+// [0x00681380] sub_00681380 (41 bytes)
+namespace lift_00681380 {
+// @name sub_00681380
+// @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_00681170(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_00681380(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_00681170(first, last, out);
+}
+} // namespace lift_0044C4D0
+} // namespace lift_00681380
+
+// [0x00686800] sub_00686800 (41 bytes)
+namespace lift_00686800 {
+// @name sub_00686800
+// @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_00685DA0(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_00686800(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_00685DA0(first, last, out);
+}
+} // namespace lift_0044C4D0
+} // namespace lift_00686800
+
+// [0x00688AF0] sub_00688AF0 (41 bytes)
+namespace lift_00688AF0 {
+// @name sub_00688AF0
+// @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_00687F10(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_00688AF0(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_00687F10(first, last, out);
+}
+} // namespace lift_0044C4D0
+} // namespace lift_00688AF0
+
+// [0x00688D30] sub_00688D30 (41 bytes)
+namespace lift_00688D30 {
+// @name sub_00688D30
+// @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_00687FC0(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_00688D30(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_00687FC0(first, last, out);
+}
+} // namespace lift_0044C4D0
+} // namespace lift_00688D30

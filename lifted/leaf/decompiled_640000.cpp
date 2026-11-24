@@ -464,3 +464,20 @@ void __thiscall sub_006489F0(void* this_ptr, float value) {
     }
 }
 } // namespace lift_006489F0
+
+// [0x0064CC60] sub_0064CC60 (41 bytes)
+namespace lift_0064CC60 {
+// @name sub_0064CC60
+// @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_0064B840(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_0064CC60(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_0064B840(first, last, out);
+}
+} // namespace lift_0044C4D0
+} // namespace lift_0064CC60

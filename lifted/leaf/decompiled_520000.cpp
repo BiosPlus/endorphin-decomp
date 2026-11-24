@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_520000.cpp
 #include "lift_compat.h"
+#include <new>
+#include <string>
 
-// [0x0052EFC0] sub_0052EFC0 (86 bytes)
+#include <string>
 namespace lift_0052EFC0 {
 extern void* ext_006A5C62(size_t size);
 extern void* ext_0053B6B0(void* self);
@@ -229,3 +231,37 @@ void fn_00528D30(uint16_t* data, int32_t count) {
     }
 }
 } // namespace lift_00528D30
+
+// [0x00520AB0] sub_00520AB0 (41 bytes)
+namespace lift_00520AB0 {
+// @name sub_00520AB0
+// @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_00520380(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_00520AB0(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_00520380(first, last, out);
+}
+} // namespace lift_0044C4D0
+} // namespace lift_00520AB0
+
+// [0x005231F0] sub_005231F0 (41 bytes)
+namespace lift_005231F0 {
+// @name sub_005231F0
+// @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_00505A80(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_005231F0(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_00505A80(first, last, out);
+}
+} // namespace lift_0044C4D0
+} // namespace lift_005231F0

@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_420000.cpp
 #include "lift_compat.h"
+#include <new>
+#include <string>
 
-// [0x0042EE50] sub_0042EE50 (60 bytes)
+#include <string>
 namespace lift_0042EE50 {
 extern void (*mem_00925134)();
 
@@ -445,3 +447,20 @@ void* fn_004276B0(void* dst, const void* src) {
     return dst;
 }
 } // namespace lift_004276B0
+
+// [0x00428BA0] sub_00428BA0 (41 bytes)
+namespace lift_00428BA0 {
+// @name sub_00428BA0
+// @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_004279B0(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_00428BA0(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_004279B0(first, last, out);
+}
+} // namespace lift_0044C4D0
+} // namespace lift_00428BA0

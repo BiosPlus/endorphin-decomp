@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_480000.cpp
 #include "lift_compat.h"
+#include <new>
+#include <string>
 
-// [0x00480750] sub_00480750 (25 bytes)
+#include <string>
 namespace lift_00480750 {
 // @name sub_00480750
 // @summary Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).
@@ -153,3 +155,54 @@ void* fn_00489320(void* self, void* out) {
     return out;
 }
 } // namespace lift_00489320
+
+// [0x004820D0] sub_004820D0 (41 bytes)
+namespace lift_004820D0 {
+// @name sub_004820D0
+// @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_00480E00(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_004820D0(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_00480E00(first, last, out);
+}
+} // namespace lift_0044C4D0
+} // namespace lift_004820D0
+
+// [0x0048A9C0] sub_0048A9C0 (41 bytes)
+namespace lift_0048A9C0 {
+// @name sub_0048A9C0
+// @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_00489DC0(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_0048A9C0(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_00489DC0(first, last, out);
+}
+} // namespace lift_0044C4D0
+} // namespace lift_0048A9C0
+
+// [0x0048CDB0] sub_0048CDB0 (41 bytes)
+namespace lift_0048CDB0 {
+// @name sub_0048CDB0
+// @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_0048CAE0(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_0048CDB0(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_0048CAE0(first, last, out);
+}
+} // namespace lift_0044C4D0
+} // namespace lift_0048CDB0

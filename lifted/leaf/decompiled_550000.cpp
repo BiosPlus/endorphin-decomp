@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_550000.cpp
 #include "lift_compat.h"
+#include <new>
+#include <string>
 
-// [0x005528E0] sub_005528E0 (14 bytes)
+#include <string>
 namespace lift_005528E0 {
 // Known callee 0x005528D0: HandleGraphic::vfunc_1 (Sets the floats at +0x04 and +0x08 to 1.0f, then tail-calls SubObject::resetScaleAndIndex on the same object.)
 extern void __fastcall fn_005528D0(void* self);
@@ -244,3 +246,37 @@ uint32_t __thiscall sub_00552130(uintptr_t this_ptr, uintptr_t out_ptr, uint32_t
     return static_cast<uint32_t>(out_ptr);
 }
 } // namespace lift_00552130
+
+// [0x00556AB0] sub_00556AB0 (41 bytes)
+namespace lift_00556AB0 {
+// @name sub_00556AB0
+// @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_00402630(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_00556AB0(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_00402630(first, last, out);
+}
+} // namespace lift_0044C4D0
+} // namespace lift_00556AB0
+
+// [0x0055F800] sub_0055F800 (41 bytes)
+namespace lift_0055F800 {
+// @name sub_0055F800
+// @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_0055E940(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_0055F800(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_0055E940(first, last, out);
+}
+} // namespace lift_0044C4D0
+} // namespace lift_0055F800

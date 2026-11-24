@@ -1,0 +1,21 @@
+{
+  "va": "0x0043D260",
+  "size": 41,
+  "orig_symbol": "sub_0043D260",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_0043D260",
+  "signature": "void __thiscall fn_0043D260(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Auto-lifted identical-shape clone of 0x0043D230 (forwardVtableCall7OrFallback).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "uint8_t",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T14:00:23Z"
+}

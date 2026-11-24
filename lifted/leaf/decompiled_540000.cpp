@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_540000.cpp
 #include "lift_compat.h"
+#include <new>
+#include <string>
 
-// [0x005478B0] sub_005478B0 (14 bytes)
+#include <string>
 namespace lift_005478B0 {
 // @name sub_005478B0
 // @summary Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).
@@ -384,3 +386,20 @@ void fn_0054E3D0(void* self) {
     *reinterpret_cast<float*>(base + 0x24) = mem_0093F7B8;
 }
 } // namespace lift_0054E3D0
+
+// [0x0054F370] sub_0054F370 (41 bytes)
+namespace lift_0054F370 {
+// @name sub_0054F370
+// @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_0054F170(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_0054F370(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_0054F170(first, last, out);
+}
+} // namespace lift_0044C4D0
+} // namespace lift_0054F370

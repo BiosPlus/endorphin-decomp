@@ -425,11 +425,23 @@
     "summary": "Returns 0 if field +0x04 is null; otherwise (field +0x08 - field +0x04) / 88 (signed, truncating).",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x00406480": {
+    "name": "sub_00406480",
+    "signature": "DWORD* __thiscall fn_00406480(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x004064B0": {
     "name": "sub_004064B0",
     "class": "(none)",
     "signature": "void fn_004064B0(void* self, int edx_unused, int a1, int a2)",
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
+  "0x00406610": {
+    "name": "sub_00406610",
+    "signature": "DWORD* __thiscall fn_00406610(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
   "0x004067D0": {
@@ -735,6 +747,12 @@
     "name": "fill_std_string_range",
     "signature": "void sub_0040E1A0(uint32_t first, uint32_t last, uint32_t val)",
     "summary": "Fills a range of std::string objects [first, last) with copies of val.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
+  "0x0040E860": {
+    "name": "sub_0040E860",
+    "signature": "DWORD* __thiscall fn_0040E860(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
   "0x0040EF90": {
@@ -1580,6 +1598,12 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x1A0 and tail-calls sub_0041DB60.",
     "lifted_path": "lifted/Properties/auto_tiny.cpp"
   },
+  "0x0041DDE0": {
+    "name": "sub_0041DDE0",
+    "signature": "DWORD* __thiscall fn_0041DDE0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041DE10": {
     "name": "sub_0041DE10",
     "class": "(none)",
@@ -1796,6 +1820,12 @@
     "name": "StdStringCopyConstruct",
     "signature": "void* fn_004276B0(void* dst, const void* src)",
     "summary": "Copy-constructs a std::string at dst from src via the MSVCP80 copy constructor; returns dst.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
+  "0x00428BA0": {
+    "name": "sub_00428BA0",
+    "signature": "DWORD* __thiscall fn_00428BA0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
   "0x00428FE0": {
@@ -2517,16 +2547,34 @@
     "summary": "Invalidates the view's window (InvalidateRect with a NULL rect and erase=TRUE, i.e. the whole client area is repainted).",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x0043D170": {
+    "name": "sub_0043D170",
+    "signature": "void __thiscall fn_0043D170(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x0043D230 (forwardVtableCall7OrFallback).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043D1D0": {
     "name": "sub_0043D1D0",
     "signature": "void __thiscall fn_0043D1D0(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
     "summary": "Forwards a 3-argument call to field_0x64 via sub_0041C5A0, falling back to MFC80_ord_1903 on false.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043D200": {
+    "name": "sub_0043D200",
+    "signature": "void __thiscall fn_0043D200(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x0043D230 (forwardVtableCall7OrFallback).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043D230": {
     "name": "forwardVtableCall7OrFallback",
     "signature": "void __thiscall fn_0043D230(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
     "summary": "Forwards a 3-argument call to field_0x64 via forwardVtableCall7, falling back to MFC80_ord_1903 if it returns false.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x0043D260": {
+    "name": "sub_0043D260",
+    "signature": "void __thiscall fn_0043D260(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x0043D230 (forwardVtableCall7OrFallback).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
   "0x0043D2C0": {
@@ -2565,6 +2613,12 @@
     "name": "destroyRange_0043E3A0",
     "signature": "void __stdcall sub_0043E3A0(uint32_t begin, uint32_t end)",
     "summary": "Calls MFC80!ord_578 on each 4-byte element in [begin, end)",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x0043E7D0": {
+    "name": "sub_0043E7D0",
+    "signature": "DWORD* __thiscall fn_0043E7D0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
   "0x0043EA80": {
@@ -6081,6 +6135,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00401D00 (AVIIO::vfunc_7).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0047A010": {
+    "name": "sub_0047A010",
+    "signature": "DWORD* __thiscall fn_0047A010(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x0047D9E0": {
     "name": "sub_0047D9E0",
     "signature": "extern \"C\" void fn_0047D9E0(void)",
@@ -6320,6 +6380,12 @@
     "summary": "Stores the single stack argument at offset 0, zeroes the 4-byte slots at +0x08/+0x0C/+0x10, returns this.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x004820D0": {
+    "name": "sub_004820D0",
+    "signature": "DWORD* __thiscall fn_004820D0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00482420": {
     "name": "ToolEngine::vfunc_3",
     "class": "ToolEngine",
@@ -6554,6 +6620,12 @@
     "summary": "If self-\u003e+0x04 is non-null, tail-calls child's vtable slot 0x78/4 with child as this and self as the argument; otherwise returns self.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x0048A9C0": {
+    "name": "sub_0048A9C0",
+    "signature": "DWORD* __thiscall fn_0048A9C0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048ABF0": {
     "name": "sub_0048ABF0",
     "class": "Unknown",
@@ -6685,6 +6757,12 @@
     "class": "(none)",
     "signature": "void fn_0048CCA0(void* self, int edx_unused, int a1, int a2)",
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
+  "0x0048CDB0": {
+    "name": "sub_0048CDB0",
+    "signature": "DWORD* __thiscall fn_0048CDB0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
   "0x0048DA40": {
@@ -6913,6 +6991,12 @@
     "class": "(none)",
     "signature": "void fn_00491870(void* self, int edx_unused, int a1, int a2)",
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
+  "0x00491980": {
+    "name": "sub_00491980",
+    "signature": "DWORD* __thiscall fn_00491980(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
   "0x00491A80": {
@@ -11249,6 +11333,12 @@
     "summary": "Updates cached frame/time at +0x9CC and triggers ext_004E1F50 on field_0xB74 when matching +0x160",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004E31A0": {
+    "name": "sub_004E31A0",
+    "signature": "DWORD* __thiscall fn_004E31A0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004E6900": {
     "name": "NMData::AnimationEventData::vfunc_0_off_158",
     "class": "NMData::AnimationEventData",
@@ -12382,6 +12472,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00506090 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00506D10": {
+    "name": "sub_00506D10",
+    "signature": "DWORD* __thiscall fn_00506D10(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00507360": {
     "name": "InitialVariableValues::vfunc_0",
     "class": "InitialVariableValues",
@@ -12588,6 +12684,12 @@
     "signature": "extern \"C\" void fn_0050BFE0(void)",
     "summary": "Pure jump thunk forwarding to sub_0050B960.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x0050C160": {
+    "name": "sub_0050C160",
+    "signature": "DWORD* __thiscall fn_0050C160(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x0050C770": {
     "name": "NMData::Task::~Task (scalar deleting destructor)",
@@ -13213,12 +13315,24 @@
     "summary": "Pure jump thunk forwarding to sub_0051E560.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0051E7D0": {
+    "name": "sub_0051E7D0",
+    "signature": "DWORD* __thiscall fn_0051E7D0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x0051EBB0": {
     "name": "StateMachine::State::vfunc_2",
     "class": "StateMachine::State",
     "signature": "void* fn_0051EBB0(void* self, void* a1, uint32_t a2)",
     "summary": "Forwards a stack argument to the sub-object at +0x158; if it yields a nonzero result, calls ext_006721F0, otherwise calls Character::vfunc_2. Returns the first argument.",
     "lifted_path": "lifted/StateMachine/State.cpp"
+  },
+  "0x0051F640": {
+    "name": "sub_0051F640",
+    "signature": "DWORD* __thiscall fn_0051F640(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
   "0x0051F830": {
     "name": "sub_0051F830",
@@ -13239,6 +13353,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00520420(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0051FBB0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/StateMachine/auto_tiny.cpp"
+  },
+  "0x00520AB0": {
+    "name": "sub_00520AB0",
+    "signature": "DWORD* __thiscall fn_00520AB0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
   "0x00521350": {
     "name": "sub_00521350",
@@ -13315,6 +13435,12 @@
     "signature": "int fn_005223C0(const void* holder)",
     "summary": "Auto-lifted identical-shape clone of 0x004B12A0 (ExprParser::ReadMethodType\u003cNMData::GraphEntryData\u003e::vfunc_2 (NMData::GraphEntryData::getColor)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x005231F0": {
+    "name": "sub_005231F0",
+    "signature": "DWORD* __thiscall fn_005231F0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
   "0x00524DA0": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::VariableValue, float, \u0026public: float __thiscall NMData::VariableValue::getInitialValue(void) const, float, \u0026public: void __thiscall NMData::VariableValue::setInitialValue(float)\u003e::vfunc_41",
@@ -14480,6 +14606,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00539720(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00538F00 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/UtilityGraphics/auto_tiny.cpp"
+  },
+  "0x00539B00": {
+    "name": "sub_00539B00",
+    "signature": "DWORD* __thiscall fn_00539B00(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
   "0x00539B30": {
     "name": "UtilityGraphics::SpiralArrow::vfunc_0",
@@ -15860,6 +15992,12 @@
     "summary": "Invokes sub_0054F030 on each 0x68-byte element in [begin, end) with arg.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x0054F370": {
+    "name": "sub_0054F370",
+    "signature": "DWORD* __thiscall fn_0054F370(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054F400": {
     "name": "LightList::vfunc_0",
     "class": "LightList",
@@ -16102,6 +16240,12 @@
     "name": "descriptiveName_00554CE0",
     "signature": "float fn_00554CE0(void* self, float x)",
     "summary": "Returns the argument passed through ext_005530B0, scaled by the float at self+0x20.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
+  "0x00556AB0": {
+    "name": "sub_00556AB0",
+    "signature": "DWORD* __thiscall fn_00556AB0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
   "0x005571E0": {
@@ -16394,6 +16538,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x0055F800": {
+    "name": "sub_0055F800",
+    "signature": "DWORD* __thiscall fn_0055F800(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x0055F830": {
     "name": "FBXIO::vfunc_0",
     "class": "FBXIO",
@@ -16481,6 +16631,12 @@
     "signature": "uint32_t __thiscall sub_00566FE0(void* this_ptr, uint32_t value)",
     "summary": "Sets the 32-bit field at offset 0x00 of the object and returns this.",
     "lifted_path": "lifted/leaf/tiny_560000.cpp"
+  },
+  "0x00569440": {
+    "name": "sub_00569440",
+    "signature": "DWORD* __thiscall fn_00569440(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
   "0x005694F0": {
     "name": "DestroyRangeForward_005694F0",
@@ -16608,6 +16764,12 @@
     "summary": "Returns (end - begin) / 12 for a 12-byte element array, or 0 when begin is null.",
     "lifted_path": "lifted/leaf/tiny_570000.cpp"
   },
+  "0x00573A10": {
+    "name": "sub_00573A10",
+    "signature": "DWORD* __thiscall fn_00573A10(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x005746E0": {
     "name": "OBJIO::vfunc_12",
     "class": "OBJIO",
@@ -16655,12 +16817,66 @@
     "summary": "Writes the byte at *src into every byte in [dst, dstEnd); does nothing if dst == dstEnd. The source pointer is not advanced.",
     "lifted_path": "lifted/leaf/tiny_570000.cpp"
   },
+  "0x00578020": {
+    "name": "sub_00578020",
+    "signature": "DWORD* __thiscall fn_00578020(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x00578050": {
+    "name": "sub_00578050",
+    "signature": "DWORD* __thiscall fn_00578050(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057A7D0": {
+    "name": "sub_0057A7D0",
+    "signature": "DWORD* __thiscall fn_0057A7D0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057BB20": {
     "name": "Unknown::StoreValueAndInitString",
     "class": "Unknown",
     "signature": "void* fn_0057BB20(void* self, DWORD value)",
     "summary": "Stores the DWORD argument at offset 0, then default-constructs an std::string at offset 4; returns self.",
     "lifted_path": "lifted/leaf/tiny_570000.cpp"
+  },
+  "0x0057CF50": {
+    "name": "sub_0057CF50",
+    "signature": "DWORD* __thiscall fn_0057CF50(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057E840": {
+    "name": "sub_0057E840",
+    "signature": "DWORD* __thiscall fn_0057E840(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057EB20": {
+    "name": "sub_0057EB20",
+    "signature": "DWORD* __thiscall fn_0057EB20(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057EB50": {
+    "name": "sub_0057EB50",
+    "signature": "DWORD* __thiscall fn_0057EB50(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057EB80": {
+    "name": "sub_0057EB80",
+    "signature": "DWORD* __thiscall fn_0057EB80(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x005817F0": {
+    "name": "sub_005817F0",
+    "signature": "DWORD* __thiscall fn_005817F0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
   "0x00582B60": {
     "name": "Acclaim2MotionIO::vfunc_3",
@@ -17699,6 +17915,12 @@
     "signature": "__stdcall int32_t fn_005996C0(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00599C10": {
+    "name": "sub_00599C10",
+    "signature": "DWORD* __thiscall fn_00599C10(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
   "0x00599E70": {
     "name": "GetNestedDwordAt38C",
@@ -24624,6 +24846,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x006217A0": {
+    "name": "sub_006217A0",
+    "signature": "DWORD* __thiscall fn_006217A0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00622320": {
     "name": "NMData::SkeletalCalibrationVariables::vfunc_19",
     "class": "NMData::SkeletalCalibrationVariables",
@@ -24713,6 +24941,12 @@
     "signature": "void* __thiscall fn_006228E0(uint8_t* self)",
     "summary": "Allocates and constructs a 16-byte object and initializes it with three float fields via virtual setters.",
     "lifted_path": "lifted/NMData/HingeCalibrationVariables.cpp"
+  },
+  "0x00623D80": {
+    "name": "sub_00623D80",
+    "signature": "DWORD* __thiscall fn_00623D80(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x006244C0": {
     "name": "sub_006244C0",
@@ -25185,6 +25419,18 @@
     "class": "(none)",
     "signature": "void fn_0062C0E0(void* self, int edx_unused, int a1, int a2)",
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x0062C100": {
+    "name": "sub_0062C100",
+    "signature": "DWORD* __thiscall fn_0062C100(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x0062C130": {
+    "name": "sub_0062C130",
+    "signature": "DWORD* __thiscall fn_0062C130(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x0062C5E0": {
@@ -27476,6 +27722,12 @@
     "signature": "extern void __stdcall fn_0064CB90(void* out, void* const* targetRef, void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0064CC60": {
+    "name": "sub_0064CC60",
+    "signature": "DWORD* __thiscall fn_0064CC60(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
   "0x0064DC80": {
     "name": "ForwardScaledFieldToCallee",
@@ -30225,6 +30477,12 @@
     "summary": "If the element range [begin, end) spans at least one 4-byte slot, decrement end by 4 (pop back).",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x00681380": {
+    "name": "sub_00681380",
+    "signature": "DWORD* __thiscall fn_00681380(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x006813B0": {
     "name": "sub_006813B0",
     "class": "(none)",
@@ -30415,6 +30673,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049B7D0 (ExprParser::ReadMethodType\u003cNMData::State, ...getPropertySourceDescription...\u003e::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00686800": {
+    "name": "sub_00686800",
+    "signature": "DWORD* __thiscall fn_00686800(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00687100": {
     "name": "SymbolContainer::vfunc_6",
     "class": "SymbolContainer",
@@ -30492,6 +30756,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0040A910 (sub_00407830).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00688AF0": {
+    "name": "sub_00688AF0",
+    "signature": "DWORD* __thiscall fn_00688AF0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00688B20": {
     "name": "DestroyStringRange",
     "signature": "void __stdcall fn_00688B20(uint8_t* begin, uint8_t* end)",
@@ -30502,6 +30772,12 @@
     "name": "DestroyStringRange",
     "signature": "void fn_00688BE0(uint8_t* begin, uint8_t* end)",
     "summary": "Destroys the std::string member (at +0x08) of each 0x24-byte element in [begin, end).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x00688D30": {
+    "name": "sub_00688D30",
+    "signature": "DWORD* __thiscall fn_00688D30(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x00688ED0": {
@@ -31011,6 +31287,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).",
     "lifted_path": "lifted/leaf/tiny_690000.cpp"
   },
+  "0x0069A1C0": {
+    "name": "sub_0069A1C0",
+    "signature": "DWORD* __thiscall fn_0069A1C0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x0069A820": {
     "name": "ExprParser::ExpressionContainer::vfunc_0_off_4",
     "class": "ExprParser::ExpressionContainer",
@@ -31051,6 +31333,12 @@
     "signature": "extern \"C\" void __fastcall fn_00699040(void* self)",
     "summary": "Stores address of mem_0098FABC into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_690000.cpp"
+  },
+  "0x0069E850": {
+    "name": "sub_0069E850",
+    "signature": "DWORD* __thiscall fn_0069E850(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x006A0340": {
     "name": "Commands::ChangePropertyCommand::vfunc_0",

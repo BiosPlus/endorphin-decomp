@@ -1,8 +1,10 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_400000.cpp
 #include "lift_compat.h"
 #include <cstdint>
+#include <new>
+#include <string>
 
-// [0x00407830] sub_00407830 (17 bytes)
+#include <string>
 namespace lift_00407830 {
 // Known callee 0x006A6004: thunk_MFC80_ord_2367 (IAT jump thunk forwarding to MFC80!ord_2367.)
 extern void ext_006A6004();
@@ -325,3 +327,54 @@ uintptr_t __stdcall fn_0040B220(uintptr_t out_ptr, uintptr_t rhs_ptr) {
     return out_ptr;
 }
 } // namespace lift_0040B220
+
+// [0x00406480] sub_00406480 (41 bytes)
+namespace lift_00406480 {
+// @name sub_00406480
+// @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_004023D0(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_00406480(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_004023D0(first, last, out);
+}
+} // namespace lift_0044C4D0
+} // namespace lift_00406480
+
+// [0x00406610] sub_00406610 (41 bytes)
+namespace lift_00406610 {
+// @name sub_00406610
+// @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_004062C0(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_00406610(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_004062C0(first, last, out);
+}
+} // namespace lift_0044C4D0
+} // namespace lift_00406610
+
+// [0x0040E860] sub_0040E860 (41 bytes)
+namespace lift_0040E860 {
+// @name sub_0040E860
+// @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_0040E230(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_0040E860(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_0040E230(first, last, out);
+}
+} // namespace lift_0044C4D0
+} // namespace lift_0040E860

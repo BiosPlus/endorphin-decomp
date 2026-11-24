@@ -1095,3 +1095,86 @@ void __thiscall fn_0043D1D0(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_
     }
 }
 } // namespace lift_0043D1D0
+
+// [0x0043D170] sub_0043D170 (41 bytes)
+namespace lift_0043D170 {
+extern void ext_006A5EA8(uint32_t arg);
+
+// @name sub_0043D170
+// @summary Auto-lifted identical-shape clone of 0x0043D230 (forwardVtableCall7OrFallback).
+namespace lift_0043D230 {
+extern uint8_t __thiscall ext_0041C540(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+extern void ext_006A5EA8(void);
+
+// @name forwardVtableCall7OrFallback
+// @summary Forwards a 3-argument call to field_0x64 via forwardVtableCall7, falling back to MFC80_ord_1903 if it returns false.
+// @field Unknown +0x64 uint8_t field_0x64
+void __thiscall fn_0043D170(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    if (!ext_0041C540(base + 0x64, arg1, arg2, arg3)) {
+        ext_006A5EA8();
+    }
+}
+} // namespace lift_0043D230
+} // namespace lift_0043D170
+
+// [0x0043D200] sub_0043D200 (41 bytes)
+namespace lift_0043D200 {
+extern void ext_006A5EA8(uint32_t arg);
+
+// @name sub_0043D200
+// @summary Auto-lifted identical-shape clone of 0x0043D230 (forwardVtableCall7OrFallback).
+namespace lift_0043D230 {
+extern uint8_t __thiscall ext_0041C5D0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+extern void ext_006A5EA8(void);
+
+// @name forwardVtableCall7OrFallback
+// @summary Forwards a 3-argument call to field_0x64 via forwardVtableCall7, falling back to MFC80_ord_1903 if it returns false.
+// @field Unknown +0x64 uint8_t field_0x64
+void __thiscall fn_0043D200(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    if (!ext_0041C5D0(base + 0x64, arg1, arg2, arg3)) {
+        ext_006A5EA8();
+    }
+}
+} // namespace lift_0043D230
+} // namespace lift_0043D200
+
+// [0x0043D260] sub_0043D260 (41 bytes)
+namespace lift_0043D260 {
+extern void ext_006A5EA8(uint32_t arg);
+
+// @name sub_0043D260
+// @summary Auto-lifted identical-shape clone of 0x0043D230 (forwardVtableCall7OrFallback).
+namespace lift_0043D230 {
+extern uint8_t __thiscall ext_0041C630(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+extern void ext_006A5EA8(void);
+
+// @name forwardVtableCall7OrFallback
+// @summary Forwards a 3-argument call to field_0x64 via forwardVtableCall7, falling back to MFC80_ord_1903 if it returns false.
+// @field Unknown +0x64 uint8_t field_0x64
+void __thiscall fn_0043D260(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    if (!ext_0041C630(base + 0x64, arg1, arg2, arg3)) {
+        ext_006A5EA8();
+    }
+}
+} // namespace lift_0043D230
+} // namespace lift_0043D260
+
+// [0x0043E7D0] sub_0043E7D0 (41 bytes)
+namespace lift_0043E7D0 {
+// @name sub_0043E7D0
+// @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_0043D580(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_0043E7D0(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_0043D580(first, last, out);
+}
+} // namespace lift_0044C4D0
+} // namespace lift_0043E7D0
