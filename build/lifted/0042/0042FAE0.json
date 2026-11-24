@@ -1,0 +1,21 @@
+{
+  "va": "0x0042FAE0",
+  "size": 27,
+  "orig_symbol": "sub_0042FAE0",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "DispatchVirtualSlotDC_Arg2",
+  "signature": "void DispatchVirtualSlotDC_Arg2(void)",
+  "summary": "Gets an object via ext_00465B30/ext_00468660, then calls its vtable slot at +0xDC with argument 2.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:00:17Z"
+}

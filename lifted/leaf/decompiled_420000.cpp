@@ -349,3 +349,32 @@ void fn_0042FAC0(void* self) {
     fn(obj, 4);
 }
 } // namespace lift_0042FAC0
+
+// [0x0042FAE0]
+namespace lift_0042FAE0 {
+// Callees
+extern int32_t __cdecl ext_00465B30(void);
+extern uint32_t __thiscall ext_00468660(uint32_t this_ptr);
+
+// @name DispatchVirtualSlotDC_Arg2
+// @summary Gets an object via ext_00465B30/ext_00468660, then calls its vtable slot at +0xDC with argument 2.
+// @field Unknown +0x00 uint32_t field_0x00
+
+using VirtualMethod = void (*)(void* self, int32_t arg);
+
+void DispatchVirtualSlotDC_Arg2(void) {
+    const int32_t key = ext_00465B30();
+    const uint32_t obj_addr = ext_00468660(static_cast<uint32_t>(key));
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(obj_addr));
+
+    // vtable pointer lives at object +0x00
+    const uint32_t vtbl_addr = lift_field<uint32_t>(obj, 0x00);
+    void* vtbl = reinterpret_cast<void*>(static_cast<uintptr_t>(vtbl_addr));
+
+    // method pointer lives at vtable +0xDC
+    const uint32_t slot_addr = lift_field<uint32_t>(vtbl, 0xDC);
+    auto fn = reinterpret_cast<VirtualMethod>(static_cast<uintptr_t>(slot_addr));
+
+    fn(obj, 2);
+}
+} // namespace lift_0042FAE0
