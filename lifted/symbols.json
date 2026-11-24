@@ -2475,6 +2475,12 @@
     "summary": "Records the current cursor position into the state, starts the owner's capture-based resize.",
     "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/ResizeLeftState.cpp"
   },
+  "0x004442C0": {
+    "name": "descriptiveName: fn_004442C0 (walk first-link chain until flag at +0xC1 is set)",
+    "signature": "void fn_004442C0(void* self)",
+    "summary": "Starting from the object at arg, follows the dword at offset 0 of each node (linked chain) until it reaches a node whose byte at +0xC1 is nonzero; returns the node preceding that node (or arg itself if the first node already matches).",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x00444470": {
     "name": "NodeView::vfunc_106",
     "class": "NodeView",

@@ -1,0 +1,21 @@
+{
+  "va": "0x004442C0",
+  "size": 30,
+  "orig_symbol": "sub_004442C0",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "descriptiveName: fn_004442C0 (walk first-link chain until flag at +0xC1 is set)",
+  "signature": "void fn_004442C0(void* self)",
+  "summary": "Starting from the object at arg, follows the dword at offset 0 of each node (linked chain) until it reaches a node whose byte at +0xC1 is nonzero; returns the node preceding that node (or arg itself if the first node already matches).",
+  "fields": [
+    {
+      "class": "field_0xC1",
+      "offset": "+0xC1",
+      "type": "uint8_t",
+      "name": "flag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:16:28Z"
+}

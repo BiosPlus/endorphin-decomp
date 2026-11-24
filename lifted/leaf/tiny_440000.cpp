@@ -813,3 +813,23 @@ int32_t fn_00441040(void* self) {
     return static_cast<int32_t>(rounded);
 }
 } // namespace lift_00441040
+
+// [0x004442C0] sub_004442C0 (30 bytes)
+namespace lift_004442C0 {
+// @name descriptiveName: fn_004442C0 (walk first-link chain until flag at +0xC1 is set)
+// @summary Starting from the object at arg, follows the dword at offset 0 of each node (linked chain) until it reaches a node whose byte at +0xC1 is nonzero; returns the node preceding that node (or arg itself if the first node already matches).
+// @field field_0xC1 +0xC1 uint8_t flag
+void fn_004442C0(void* self) {
+    // Mirrors the 32-bit original: nodes are addressed by 32-bit pointers stored at offset 0.
+    DWORD eax = (DWORD)(uintptr_t)self;
+    DWORD ecx = *reinterpret_cast<const DWORD*>(static_cast<uintptr_t>(eax));
+    if (*reinterpret_cast<const BYTE*>(static_cast<uintptr_t>(ecx + 0xC1)) != 0) {
+        return;
+    }
+    do {
+        eax = ecx;
+        ecx = *reinterpret_cast<const DWORD*>(static_cast<uintptr_t>(eax));
+    } while (*reinterpret_cast<const BYTE*>(static_cast<uintptr_t>(ecx + 0xC1)) == 0);
+    (void)eax;
+}
+} // namespace lift_004442C0
