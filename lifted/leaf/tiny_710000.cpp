@@ -2694,3 +2694,16 @@ uint8_t fn_0071C960(void* self) {
     return lift_field<uint8_t>(sub, 0x1C90);
 }
 } // namespace lift_0071C960
+
+// [0x0071C970] sub_0071C970 (16 bytes)
+namespace lift_0071C970 {
+// @name Unknown::getByteViaPtr0x0C_0x1960
+// @class Unknown
+// @summary Loads the pointer at self+0x0C and returns the byte at offset 0x1960 within the pointed-to object.
+// @field Unknown +0x0C void* field_0x0c
+// @field Unknown +0x1960 uint8_t field_0x1960
+uint8_t __thiscall fn_0071C970(uint8_t* self) {
+    uint8_t* inner = *reinterpret_cast<uint8_t**>(self + 0x0C);
+    return inner[0x1960];
+}
+} // namespace lift_0071C970

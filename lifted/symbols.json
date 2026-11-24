@@ -36316,6 +36316,13 @@
     "summary": "Returns the byte at +0x1C90 of the object pointed to by self+0x0C.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C970": {
+    "name": "Unknown::getByteViaPtr0x0C_0x1960",
+    "class": "Unknown",
+    "signature": "uint8_t __thiscall fn_0071C970(uint8_t* self)",
+    "summary": "Loads the pointer at self+0x0C and returns the byte at offset 0x1960 within the pointed-to object.",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x0071C980": {
     "name": "sub_0071C980",
     "class": "Unknown",

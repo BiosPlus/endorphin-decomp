@@ -56,6 +56,7 @@ struct Unknown_Fields {
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x006A0670, 0x006C9F60, 0x006D9010, 0x007155A0, 0x0071B6D0, 0x0071B6E0, 0x0071B770, 0x0071B860, 0x0071B8F0, 0x0071BFC0, 0x0071C020, 0x0071C080, 0x0071C100, 0x0071C3D0, 0x0071C4A0, 0x0071C900, 0x0071C9D0, 0x0071CA00, 0x0071DEA0, 0x0077FAB0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0x0C  (evidence: 0x006D9060, 0x0071C960) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0x0c  (evidence: 0x00783790) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    field_0x0c  (evidence: 0x0071C970) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0C (sub-object that receives the value via vfunc_8)  (evidence: 0x005853E0) // CONFLICT: multiple definitions at +0xC
     // +0x10  BYTE                     field_0x10  (evidence: 0x00468AC0) // CONFLICT: multiple definitions at +0x10
     // +0x10  DWORD                    field_0x10  (evidence: 0x006C9CC0) // CONFLICT: multiple definitions at +0x10
@@ -132,5 +133,6 @@ struct Unknown_Fields {
     // +0x26C int32_t                  field_0x26C  (evidence: 0x004348F0, 0x004691C0)
     // +0x4E2 uint8_t                  field_0x4E2  (evidence: 0x004104E0)
     // +0x654 uint8_t                  field_0x654  (evidence: 0x00788D00)
+    // +0x1960 uint8_t                  field_0x1960  (evidence: 0x0071C970)
 };
 } // namespace lifted_layout

@@ -1,0 +1,28 @@
+{
+  "va": "0x0071C970",
+  "size": 16,
+  "orig_symbol": "sub_0071C970",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "Unknown::getByteViaPtr0x0C_0x1960",
+  "class": "Unknown",
+  "signature": "uint8_t __thiscall fn_0071C970(uint8_t* self)",
+  "summary": "Loads the pointer at self+0x0C and returns the byte at offset 0x1960 within the pointed-to object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1960",
+      "type": "uint8_t",
+      "name": "field_0x1960"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:45:43Z"
+}
