@@ -40810,3 +40810,66 @@ bool fn_0049D780(void* const* holder) {
     return false;
 }
 } // namespace lift_0049D780
+
+// [0x005911A0] ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_1 (109 bytes)
+namespace lift_005911A0 {
+// @name ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D86A0 (ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame, 0>::vfunc_1).
+namespace lift_004D86A0 {
+extern void* ext_0058F770(void* out, void* value);
+
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>
+// @summary Reads the held value through ext_004D5560 into a temporary std::string and returns it converted with atof() as a float.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_005911A0(void* self) {
+    void* value = *static_cast<void**>(self);
+    std::string buf;
+    auto* str = static_cast<std::string*>(ext_0058F770(&buf, value));
+    return static_cast<float>(std::atof(str->c_str()));
+}
+} // namespace lift_004D86A0
+} // namespace lift_005911A0
+
+// [0x005B31F0] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_1 (109 bytes)
+namespace lift_005B31F0 {
+// @name ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D86A0 (ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame, 0>::vfunc_1).
+namespace lift_004D86A0 {
+extern void* ext_005B1220(void* out, void* value);
+
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>
+// @summary Reads the held value through ext_004D5560 into a temporary std::string and returns it converted with atof() as a float.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_005B31F0(void* self) {
+    void* value = *static_cast<void**>(self);
+    std::string buf;
+    auto* str = static_cast<std::string*>(ext_005B1220(&buf, value));
+    return static_cast<float>(std::atof(str->c_str()));
+}
+} // namespace lift_004D86A0
+} // namespace lift_005B31F0
+
+// [0x00683790] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_1 (109 bytes)
+namespace lift_00683790 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D86A0 (ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame, 0>::vfunc_1).
+namespace lift_004D86A0 {
+extern void* ext_00683100(void* out, void* value);
+
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::string, getUserRetargetRefFrame, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>
+// @summary Reads the held value through ext_004D5560 into a temporary std::string and returns it converted with atof() as a float.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_00683790(void* self) {
+    void* value = *static_cast<void**>(self);
+    std::string buf;
+    auto* str = static_cast<std::string*>(ext_00683100(&buf, value));
+    return static_cast<float>(std::atof(str->c_str()));
+}
+} // namespace lift_004D86A0
+} // namespace lift_00683790
