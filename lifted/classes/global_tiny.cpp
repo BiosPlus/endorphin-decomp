@@ -5835,3 +5835,17 @@ void fn_00544C50(void* self) {
 }
 } // namespace lift_00536CE0
 } // namespace lift_00544C50
+
+// [0x0053A750] HasRelativeTMPtr::vfunc_6 (17 bytes)
+namespace lift_0053A750 {
+// @name HasRelativeTMPtr::vfunc_6
+// @class HasRelativeTMPtr
+// @summary Stores two stack-passed 32-bit values into this->field_0x04 (first arg) and this->field_0x08 (second arg); callee pops 8 bytes.
+// @field HasRelativeTMPtr +0x04 uint32_t field_0x04
+// @field HasRelativeTMPtr +0x08 uint32_t field_0x08
+void __thiscall fn_0053A750(void* self, uint32_t arg0, uint32_t arg1) {
+    auto* fields = static_cast<uint32_t*>(self);
+    fields[1] = arg0; // +0x04
+    fields[2] = arg1; // +0x08
+}
+} // namespace lift_0053A750

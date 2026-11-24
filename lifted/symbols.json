@@ -11714,6 +11714,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0053A750": {
+    "name": "HasRelativeTMPtr::vfunc_6",
+    "class": "HasRelativeTMPtr",
+    "signature": "void __thiscall fn_0053A750(void* self, uint32_t arg0, uint32_t arg1)",
+    "summary": "Stores two stack-passed 32-bit values into this-\u003efield_0x04 (first arg) and this-\u003efield_0x08 (second arg); callee pops 8 bytes.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x0053A8C0": {
     "name": "Primitives::Animation::vfunc_21",
     "class": "Primitives::Animation",

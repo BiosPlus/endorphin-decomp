@@ -1,0 +1,28 @@
+{
+  "va": "0x0053A750",
+  "size": 17,
+  "orig_symbol": "HasRelativeTMPtr::vfunc_6",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "HasRelativeTMPtr::vfunc_6",
+  "class": "HasRelativeTMPtr",
+  "signature": "void __thiscall fn_0053A750(void* self, uint32_t arg0, uint32_t arg1)",
+  "summary": "Stores two stack-passed 32-bit values into this-\u003efield_0x04 (first arg) and this-\u003efield_0x08 (second arg); callee pops 8 bytes.",
+  "fields": [
+    {
+      "class": "HasRelativeTMPtr",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "HasRelativeTMPtr",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:53:19Z"
+}
