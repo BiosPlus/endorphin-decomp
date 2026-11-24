@@ -8419,6 +8419,13 @@
     "summary": "Setter storing float argument into field at offset +0x194.",
     "lifted_path": "lifted/leaf/tiny_4D0000.cpp"
   },
+  "0x004D0B60": {
+    "name": "GetTableEntry28Address",
+    "class": "(none)",
+    "signature": "void* fn_004D0B60(uint32_t index)",
+    "summary": "Returns the address of entry `index` in a 28-byte-stride table based at 0x00AE5C10 (0xAE5C10 + index * 28).",
+    "lifted_path": "lifted/leaf/tiny_4D0000.cpp"
+  },
   "0x004D0B80": {
     "name": "NMData::TransitionEventData::vfunc_59",
     "class": "NMData::TransitionEventData",

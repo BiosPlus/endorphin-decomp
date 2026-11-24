@@ -1,0 +1,14 @@
+{
+  "va": "0x004D0B60",
+  "size": 21,
+  "orig_symbol": "sub_004D0B60",
+  "src_path": "src/leaf/tiny_4D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4D0000.cpp",
+  "name": "GetTableEntry28Address",
+  "class": "(none)",
+  "signature": "void* fn_004D0B60(uint32_t index)",
+  "summary": "Returns the address of entry `index` in a 28-byte-stride table based at 0x00AE5C10 (0xAE5C10 + index * 28).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:12:36Z"
+}

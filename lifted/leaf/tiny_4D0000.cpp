@@ -50,3 +50,14 @@ int32_t sub_004DE160(void* self) {
     return (a - b) + 1;
 }
 } // namespace lift_004DE160
+
+// [0x004D0B60] sub_004D0B60 (21 bytes)
+namespace lift_004D0B60 {
+// @name GetTableEntry28Address
+// @class (none)
+// @summary Returns the address of entry `index` in a 28-byte-stride table based at 0x00AE5C10 (0xAE5C10 + index * 28).
+void* fn_004D0B60(uint32_t index) {
+    constexpr uintptr_t kTableBase = 0x00AE5C10u;
+    return reinterpret_cast<void*>(kTableBase + static_cast<uintptr_t>(index) * 28u);
+}
+} // namespace lift_004D0B60
