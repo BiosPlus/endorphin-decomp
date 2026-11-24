@@ -92,5 +92,8 @@ struct _unknown__Fields {
     // +0x1F4 float                    field_0x1F4  (evidence: 0x005480D0)
     // +0x210 void*                    field_0x210  (evidence: 0x007CD530)
     // +0x234 uint32_t                 field_0x234  (evidence: 0x005E1740, 0x005E2C70)
+    // +0x46C void*                    aviFile  (evidence: 0x00403290)
+    // +0x470 void*                    aviStreamA  (evidence: 0x00403290)
+    // +0x500 void*                    aviStreamB  (evidence: 0x00403290)
 };
 } // namespace lifted_layout

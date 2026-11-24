@@ -532,3 +532,39 @@ __stdcall std::uint8_t* fn_004064D0(std::uint8_t* base, std::uint32_t index, std
 }
 } // namespace lift_0054F2C0
 } // namespace lift_004064D0
+
+// [0x00403290] sub_00403290 (57 bytes)
+namespace lift_00403290 {
+// Known callee 0x006A3430: thunk_AVIFIL32_AVIFileRelease (IAT jump thunk forwarding to AVIFIL32!AVIFileRelease.)
+extern ULONG ext_006A3430(void* pFile);
+// Known callee 0x006A3436: thunk_AVIFIL32_AVIStreamRelease (IAT jump thunk forwarding to AVIFIL32!AVIStreamRelease.)
+extern ULONG ext_006A3436(void* pStream);
+// Known callee 0x006A342A: thunk_AVIFIL32_AVIFileExit (IAT jump thunk forwarding to AVIFIL32!AVIFileExit.)
+extern void ext_006A342A();
+
+// @name AviHandles_release
+// @summary Releases the two AVI stream handles (+0x470, +0x500) if non-null, then the AVI file handle (+0x46C) if non-null, then calls AVIFileExit.
+// @field <unknown> +0x46C void* aviFile
+// @field <unknown> +0x470 void* aviStreamA
+// @field <unknown> +0x500 void* aviStreamB
+void fn_00403290(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+
+    void* streamA = *reinterpret_cast<void**>(base + 0x470);
+    if (streamA != nullptr) {
+        ext_006A3436(streamA);
+    }
+
+    void* streamB = *reinterpret_cast<void**>(base + 0x500);
+    if (streamB != nullptr) {
+        ext_006A3436(streamB);
+    }
+
+    void* file = *reinterpret_cast<void**>(base + 0x46C);
+    if (file != nullptr) {
+        ext_006A3430(file);
+    }
+
+    ext_006A342A();
+}
+} // namespace lift_00403290
