@@ -1,0 +1,22 @@
+{
+  "va": "0x0070FDA0",
+  "size": 26,
+  "orig_symbol": "sub_0070FDA0",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "sub_0070FDA0",
+  "class": "Unknown",
+  "signature": "extern int __fastcall fn_0070FDA0(void* self, int edx_unused, int arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x006C12B0 (Unknown::ForwardArgToSubobjectSlotB0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1AE8",
+      "type": "void*",
+      "name": "field_1AE8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T11:57:33Z"
+}

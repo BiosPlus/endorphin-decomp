@@ -1490,3 +1490,26 @@ extern int __fastcall fn_006C12B0(void* self, int edx_unused, int arg) {
     return target(sub, 0, arg);                             // push edx; ret 4 pops caller's arg
 }
 } // namespace lift_006C12B0
+
+// [0x006C12F0] sub_006C12F0 (26 bytes)
+namespace lift_006C12F0 {
+// @name sub_006C12F0
+// @summary Auto-lifted identical-shape clone of 0x006C12B0 (Unknown::ForwardArgToSubobjectSlotB0).
+namespace lift_006C12B0 {
+// @name Unknown::ForwardArgToSubobjectSlotB0
+// @class Unknown
+// @summary Forwards its single stack argument to virtual slot +0xB0 of the object at this+0x1AE8, passing (this+0x1AE8) as the callee's this, and returns the callee's result.
+// @field Unknown +0x1AE8 void* field_1AE8
+extern int __fastcall fn_006C12F0(void* self, int edx_unused, int arg) {
+    (void)edx_unused;
+    using SlotFn = int(__fastcall*)(void* self, int edx_unused, int arg);
+
+    char* base = static_cast<char*>(self);
+    void* sub = base + 0x1B78;                              // add ecx, 0x1ae8
+    void* obj = *reinterpret_cast<void**>(base + 0x1B78);   // mov eax, [ecx+0x1ae8]
+    char* vtbl = *reinterpret_cast<char**>(obj);            // vptr of obj
+    SlotFn target = *reinterpret_cast<SlotFn*>(vtbl + 0xB0); // call dword ptr [eax+0xb0]
+    return target(sub, 0, arg);                             // push edx; ret 4 pops caller's arg
+}
+} // namespace lift_006C12B0
+} // namespace lift_006C12F0
