@@ -40055,6 +40055,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006F00E0": {
+    "name": "Unknown::forwardToSubobject2200",
+    "class": "Unknown",
+    "signature": "void fn_006F00E0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Forwards two stack arguments, plus two constant tail values, to ext_00711D40 on the subobject at self+0x2200.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F1AD0": {
     "name": "sub_006F1AD0",
     "signature": "void fn_006F1AD0(void* self, uint32_t a0, uint32_t a1)",

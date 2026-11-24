@@ -351,3 +351,22 @@ uint8_t __stdcall sub_006FC570(uint32_t value) {
     return value == mem_00B5E400 ? 1 : 0;
 }
 } // namespace lift_006FC570
+
+// [0x006F00E0] sub_006F00E0 (34 bytes)
+namespace lift_006F00E0 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+
+// @name Unknown::forwardToSubobject2200
+// @class Unknown
+// @summary Forwards two stack arguments, plus two constant tail values, to ext_00711D40 on the subobject at self+0x2200.
+// @field Unknown +0x2200 uint8_t field_0x2200
+void fn_006F00E0(void* self, uint32_t arg1, uint32_t arg2) {
+    void* subobject = reinterpret_cast<uint8_t*>(self) + 0x2200;
+    ext_00711D40(subobject,
+                 arg1,
+                 reinterpret_cast<void*>(static_cast<uintptr_t>(arg2)),
+                 0x006C8980u,
+                 0x006C88C0u);
+}
+} // namespace lift_006F00E0
