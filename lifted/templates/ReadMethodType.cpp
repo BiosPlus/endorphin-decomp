@@ -40652,3 +40652,24 @@ int fn_0059F650(void** arg) {
     return 0;
 }
 } // namespace lift_0059F650
+
+// [0x005130A0] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_1 (109 bytes)
+namespace lift_005130A0 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_1
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>
+// @summary Reads the first word of its argument, converts the string it resolves to via atof, and returns the result as a float.
+// @field ExprParser::ReadMethodType<Chromosome::Descriptor> +0x00 void* field_0x00
+
+// Helper at 0x005119F0 (138 bytes): takes an output string slot and the
+// first dword of the argument, and returns a pointer to the resolved string.
+extern std::string* ext_005119F0(std::string* out, const void* src);
+
+float fn_005130A0(const void* self) {
+    // Original: `push 0x8b56f9` / fs:[0] SEH frame and `sub esp,0x1c` are
+    // compiler exception-frame bookkeeping, not logic; dropped here.
+    const void* src = *static_cast<void* const*>(self);
+    std::string tmp;
+    std::string* str = ext_005119F0(&tmp, src);
+    return static_cast<float>(std::atof(str->c_str()));
+}
+} // namespace lift_005130A0

@@ -15001,6 +15001,13 @@
     "summary": "Reads the source object's typical mutation rate string via ext_00511960 and returns it parsed as a float (atof).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005130A0": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_1",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1\u003e",
+    "signature": "float fn_005130A0(const void* self)",
+    "summary": "Reads the first word of its argument, converts the string it resolves to via atof, and returns the result as a float.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005136C0": {
     "name": "sub_005136C0",
     "signature": "void* fn_005136C0(void* self, void* pair, DWORD b)",
