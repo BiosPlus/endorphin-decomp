@@ -364,3 +364,21 @@ uint8_t fn_0067ADE0(void* self) {
     return current == ownerThread ? 1 : 0;
 }
 } // namespace lift_0067ADE0
+
+// [0x0067B390] sub_0067B390 (22 bytes)
+namespace lift_0067B390 {
+// @name Unknown::InitVtableAndSetDefaults
+// @class Unknown
+// @summary Writes vtable pointer 0x0098C5E4 to offset 0, then stores 1.0, 1.0, 0.0 as doubles at +0x08, +0x10, +0x18.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x08 double field_0x08
+// @field Unknown +0x10 double field_0x10
+// @field Unknown +0x18 double field_0x18
+void fn_0067B390(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0x0098C5E4u;
+    *reinterpret_cast<double*>(base + 0x08) = 1.0;
+    *reinterpret_cast<double*>(base + 0x10) = 1.0;
+    *reinterpret_cast<double*>(base + 0x18) = 0.0;
+}
+} // namespace lift_0067B390

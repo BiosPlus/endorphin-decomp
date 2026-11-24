@@ -26317,6 +26317,13 @@
     "summary": "Stores address of mem_0098C5E4 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x0067B390": {
+    "name": "Unknown::InitVtableAndSetDefaults",
+    "class": "Unknown",
+    "signature": "void fn_0067B390(void* self)",
+    "summary": "Writes vtable pointer 0x0098C5E4 to offset 0, then stores 1.0, 1.0, 0.0 as doubles at +0x08, +0x10, +0x18.",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
   "0x0067B5A0": {
     "name": "Timer::vfunc_0",
     "class": "Timer",
