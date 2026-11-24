@@ -13418,6 +13418,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x24 and forwards through mem_00924FDC.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x005539B0": {
+    "name": "GetByteTableEntryOrZero",
+    "signature": "uint8_t GetByteTableEntryOrZero(void* self, uint32_t index)",
+    "summary": "Returns this-\u003ebyte[+0x18 + index] for index 0..2, otherwise 0 (thiscall, one stack arg, ret 4).",
+    "lifted_path": "lifted/leaf/tiny_550000.cpp"
+  },
   "0x005539D0": {
     "name": "ReadFloatTripleOrZero",
     "class": "\u003cClassName\u003e (optional)",

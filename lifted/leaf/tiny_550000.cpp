@@ -144,3 +144,16 @@ float fn_005539D0(const void* self, uint32_t index) {
     return value;
 }
 } // namespace lift_005539D0
+
+// [0x005539B0]
+namespace lift_005539B0 {
+// @name GetByteTableEntryOrZero
+// @summary Returns this->byte[+0x18 + index] for index 0..2, otherwise 0 (thiscall, one stack arg, ret 4).
+// @field Unknown +0x18 uint8_t field_0x18 (3 bytes, indexed by 0..2)
+uint8_t GetByteTableEntryOrZero(void* self, uint32_t index) {
+    if (index > 2) {
+        return 0;
+    }
+    return lift_field<uint8_t>(self, 0x18 + static_cast<ptrdiff_t>(index));
+}
+} // namespace lift_005539B0

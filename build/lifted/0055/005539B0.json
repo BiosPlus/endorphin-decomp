@@ -1,0 +1,21 @@
+{
+  "va": "0x005539B0",
+  "size": 21,
+  "orig_symbol": "sub_005539B0",
+  "src_path": "src/leaf/tiny_550000.cpp",
+  "lifted_path": "lifted/leaf/tiny_550000.cpp",
+  "name": "GetByteTableEntryOrZero",
+  "signature": "uint8_t GetByteTableEntryOrZero(void* self, uint32_t index)",
+  "summary": "Returns this-\u003ebyte[+0x18 + index] for index 0..2, otherwise 0 (thiscall, one stack arg, ret 4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint8_t field_0x18 (3 bytes, indexed by",
+      "name": "0..2)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:25:22Z"
+}
