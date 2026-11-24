@@ -109,3 +109,29 @@ void fn_007B0680(void* self, uint32_t a2) {
     ext_0079B140(first, 0x00AB1400u, a2);
 }
 } // namespace lift_007B0680
+
+// [0x007B9050] sub_007B9050 (32 bytes)
+namespace lift_007B9050 {
+extern uint32_t mem_00B61DB8;
+
+// @name FindNodeByWordKey
+// @summary Walks the linked list headed by global mem_00B61DB8 and returns the first node whose leading 16-bit key equals the argument, or NULL.
+// @field Unknown +0x00 uint16_t field_00
+// @field Unknown +0x14 void* field_14
+uint32_t fn_007B9050(uint16_t key) {
+    // [0x007B9050] eax = head; while (eax && *(uint16_t*)eax != key) eax = eax->next;
+    uintptr_t node = static_cast<uintptr_t>(mem_00B61DB8);
+    while (node != 0) {
+        const uint8_t* p = reinterpret_cast<const uint8_t*>(node);
+        uint16_t k;
+        std::memcpy(&k, p, sizeof(k));
+        if (k == key) {
+            break;
+        }
+        uint32_t next;
+        std::memcpy(&next, p + 0x14, sizeof(next));
+        node = next;
+    }
+    return static_cast<uint32_t>(node);
+}
+} // namespace lift_007B9050

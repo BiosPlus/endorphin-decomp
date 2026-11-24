@@ -43583,6 +43583,12 @@
     "summary": "24-byte constant table of byte pairs (not executable code): nine {0x00,0x02} pairs followed by {0x01,0x02}, {0x01,0x01}, {0x01,0x02}.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B9050": {
+    "name": "FindNodeByWordKey",
+    "signature": "uint32_t fn_007B9050(uint16_t key)",
+    "summary": "Walks the linked list headed by global mem_00B61DB8 and returns the first node whose leading 16-bit key equals the argument, or NULL.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BADD0": {
     "name": "sub_007BADD0",
     "signature": "uint32_t __cdecl sub_007BADD0(uintptr_t arg0)",
