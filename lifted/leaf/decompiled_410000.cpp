@@ -891,3 +891,34 @@ extern uint32_t __thiscall fn_00410290(void* self, void* arg1, uint32_t stackArg
     return result;
 }
 } // namespace lift_00410290
+
+// [0x0041B540]
+namespace lift_0041B540 {
+// @name fn_0041B540
+// @summary Sets transparent background mode and white text color on a CDC, then returns a brush handle from this+0x114
+// @field this +0x114 uint32_t field_0x114
+// @field this +0x118 uint32_t field_0x118
+
+
+extern void __thiscall ext_006A6010(void* pThis, uint32_t mode);
+extern uint32_t mem_0093A0E4;
+
+uint32_t __thiscall fn_0041B540(void* pThis, void* pDC, void* pWnd, uint32_t nCtlColor) {
+    (void)pWnd;
+    (void)nCtlColor;
+
+    ext_006A6010(pDC, 1);
+
+    uint32_t color = mem_0093A0E4;
+    uintptr_t vtable = *reinterpret_cast<const uintptr_t*>(pDC);
+    using SetTextColorFn = void(__thiscall*)(void*, uint32_t);
+    auto setTextColor = *reinterpret_cast<const SetTextColorFn*>(vtable + 0x38);
+    setTextColor(pDC, color);
+
+    uintptr_t brushPtr = reinterpret_cast<uintptr_t>(pThis) + 0x114;
+    if (brushPtr != 0) {
+        return *reinterpret_cast<const uint32_t*>(brushPtr + 4);
+    }
+    return 0;
+}
+} // namespace lift_0041B540
