@@ -194,3 +194,16 @@ void fn_006D7CA0(void* self, uint8_t a, uint8_t b) {
     lift_field<uint8_t>(self, 0x1C1) = b;
 }
 } // namespace lift_006D7CA0
+
+// [0x006D7CC0] sub_006D7CC0 (32 bytes)
+namespace lift_006D7CC0 {
+// @name descriptiveName: Unknown::SetBytePair0x1C2
+// @class Unknown
+// @summary Stores two byte arguments into this+0x1C2 and this+0x1C3 (thiscall, ret 8).
+// @field Unknown +0x1C2 uint8_t field_0x1C2
+// @field Unknown +0x1C3 uint8_t field_0x1C3
+void fn_006D7CC0(void* self, uint8_t a, uint8_t b) {
+    lift_field<uint8_t>(self, 0x1C2) = a;
+    lift_field<uint8_t>(self, 0x1C3) = b;
+}
+} // namespace lift_006D7CC0

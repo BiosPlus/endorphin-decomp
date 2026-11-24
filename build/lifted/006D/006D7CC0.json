@@ -1,0 +1,28 @@
+{
+  "va": "0x006D7CC0",
+  "size": 32,
+  "orig_symbol": "sub_006D7CC0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "descriptiveName: Unknown::SetBytePair0x1C2",
+  "class": "Unknown",
+  "signature": "void fn_006D7CC0(void* self, uint8_t a, uint8_t b)",
+  "summary": "Stores two byte arguments into this+0x1C2 and this+0x1C3 (thiscall, ret 8).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C2",
+      "type": "uint8_t",
+      "name": "field_0x1C2"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C3",
+      "type": "uint8_t",
+      "name": "field_0x1C3"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:35:21Z"
+}
