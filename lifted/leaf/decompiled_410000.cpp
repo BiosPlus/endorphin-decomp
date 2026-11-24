@@ -922,3 +922,29 @@ uint32_t __thiscall fn_0041B540(void* pThis, void* pDC, void* pWnd, uint32_t nCt
     return 0;
 }
 } // namespace lift_0041B540
+
+// [0x00416B20]
+namespace lift_00416B20 {
+// Win32 imports used by this function (resolved by the linker in the original binary).
+extern LRESULT ext_SendMessageA(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+extern BOOL ext_InvalidateRect(HWND hWnd, const RECT* lpRect, BOOL bErase);
+
+// @name Control::sendMessage0x147AndInvalidate
+// @class Unknown
+// @summary Sends message 0x147 to the owner window, stores the result in the sub-object, then invalidates the sub-object's window with erase.
+// @field Unknown +0x1a8 HWND field_0x1a8
+// @field Unknown +0x184 void* field_0x184
+// @field Unknown +0x188 int32_t field_0x188
+// @field Unknown +0x20 HWND field_0x20
+void fn_00416B20(void* self) {
+    const HWND hwnd = lift_field<HWND>(self, 0x1a8);
+    const LRESULT result = ext_SendMessageA(hwnd, 0x147, 0, 0);
+
+    void* sub = lift_field<void*>(self, 0x184);
+    lift_field<int32_t>(sub, 0x188) = static_cast<int32_t>(result);
+
+    sub = lift_field<void*>(self, 0x184);
+    const HWND subWnd = lift_field<HWND>(sub, 0x20);
+    ext_InvalidateRect(subWnd, nullptr, TRUE);
+}
+} // namespace lift_00416B20

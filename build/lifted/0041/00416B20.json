@@ -1,0 +1,40 @@
+{
+  "va": "0x00416B20",
+  "size": 59,
+  "orig_symbol": "sub_00416B20",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Control::sendMessage0x147AndInvalidate",
+  "class": "Unknown",
+  "signature": "void fn_00416B20(void* self)",
+  "summary": "Sends message 0x147 to the owner window, stores the result in the sub-object, then invalidates the sub-object's window with erase.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1A8",
+      "type": "HWND",
+      "name": "field_0x1a8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x184",
+      "type": "void*",
+      "name": "field_0x184"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x188",
+      "type": "int32_t",
+      "name": "field_0x188"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:24:01Z"
+}
