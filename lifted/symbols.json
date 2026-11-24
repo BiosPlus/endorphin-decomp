@@ -14530,6 +14530,13 @@
     "summary": "IAT jump thunk forwarding to OPENGL32!glPopMatrix.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0054E990": {
+    "name": "OptimizedMatrixStackManager::vfunc_4",
+    "class": "OptimizedMatrixStackManager",
+    "signature": "static intptr_t callVirtualSlot4(void* subobject)",
+    "summary": "Tail-dispatches virtual slot 4 on one of two embedded sub-objects: +0x20 if field_0x04 \u003c field_0x08, otherwise +0x0C; returns the callee's result.",
+    "lifted_path": "lifted/classes/OptimizedMatrixStackManager.cpp"
+  },
   "0x0054E9B0": {
     "name": "OptimizedMatrixStackManager::vfunc_5",
     "class": "OptimizedMatrixStackManager",

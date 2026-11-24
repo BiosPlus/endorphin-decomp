@@ -88,3 +88,35 @@ DWORD fn_0054E9F0(void* self) {
     return fn(sub);
 }
 } // namespace lift_0054E9F0
+
+// [0x0054E990] OptimizedMatrixStackManager::vfunc_4 (30 bytes)
+namespace lift_0054E990 {
+// @name OptimizedMatrixStackManager::vfunc_4
+// @class OptimizedMatrixStackManager
+// @summary Tail-dispatches virtual slot 4 on one of two embedded sub-objects: +0x20 if field_0x04 < field_0x08, otherwise +0x0C; returns the callee's result.
+// @field OptimizedMatrixStackManager +0x04 int32_t field_0x04
+// @field OptimizedMatrixStackManager +0x08 int32_t field_0x08
+// @field OptimizedMatrixStackManager +0x0C void* field_0x0C
+// @field OptimizedMatrixStackManager +0x20 void* field_0x20
+
+// Invokes vtable slot 4 of the object embedded at `subobject`, passing it as `this`.
+static intptr_t callVirtualSlot4(void* subobject) {
+    void** vtable = *static_cast<void***>(subobject);
+    auto fn = reinterpret_cast<intptr_t (*)(void*)>(vtable[4]);
+    return fn(subobject);
+}
+
+// The original is a pair of tail jumps, so the callee's return value (eax) is passed through unchanged.
+intptr_t fn_0054E990(void* self) {
+    auto* bytes = static_cast<unsigned char*>(self);
+
+    int32_t field04;
+    int32_t field08;
+    std::memcpy(&field04, bytes + 0x04, sizeof(field04));
+    std::memcpy(&field08, bytes + 0x08, sizeof(field08));
+
+    void* subobject = (field04 < field08) ? static_cast<void*>(bytes + 0x20)
+                                          : static_cast<void*>(bytes + 0x0C);
+    return callVirtualSlot4(subobject);
+}
+} // namespace lift_0054E990

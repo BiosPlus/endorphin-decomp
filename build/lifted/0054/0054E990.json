@@ -1,0 +1,40 @@
+{
+  "va": "0x0054E990",
+  "size": 30,
+  "orig_symbol": "OptimizedMatrixStackManager::vfunc_4",
+  "src_path": "src/classes/OptimizedMatrixStackManager.cpp",
+  "lifted_path": "lifted/classes/OptimizedMatrixStackManager.cpp",
+  "name": "OptimizedMatrixStackManager::vfunc_4",
+  "class": "OptimizedMatrixStackManager",
+  "signature": "static intptr_t callVirtualSlot4(void* subobject)",
+  "summary": "Tail-dispatches virtual slot 4 on one of two embedded sub-objects: +0x20 if field_0x04 \u003c field_0x08, otherwise +0x0C; returns the callee's result.",
+  "fields": [
+    {
+      "class": "OptimizedMatrixStackManager",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "OptimizedMatrixStackManager",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "OptimizedMatrixStackManager",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "OptimizedMatrixStackManager",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:18:00Z"
+}
