@@ -1,0 +1,21 @@
+{
+  "va": "0x00504970",
+  "size": 26,
+  "orig_symbol": "sub_00504970",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "GetTableEntryPlus20",
+  "signature": "void* __fastcall fn_00504970(void* self)",
+  "summary": "Returns the table entry at self-\u003e+0x34 offset by 0x20, or null if the global table or entry is absent.",
+  "fields": [
+    {
+      "class": "field_0x30",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "global_table_handle"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:26:16Z"
+}

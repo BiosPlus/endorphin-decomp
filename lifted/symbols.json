@@ -15180,6 +15180,12 @@
     "summary": "Returns a std::string initialized from global C-string pointer at 0x00A9EE78.",
     "lifted_path": "lifted/classes/Interpreter.cpp"
   },
+  "0x00504970": {
+    "name": "GetTableEntryPlus20",
+    "signature": "void* __fastcall fn_00504970(void* self)",
+    "summary": "Returns the table entry at self-\u003e+0x34 offset by 0x20, or null if the global table or entry is absent.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00504990": {
     "name": "Unknown::GetCountFromBeginEnd",
     "class": "Unknown",

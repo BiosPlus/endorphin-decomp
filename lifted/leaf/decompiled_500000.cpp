@@ -322,3 +322,24 @@ __stdcall std::uint8_t* fn_00506810(std::uint8_t* base, std::uint32_t index, std
 }
 } // namespace lift_0054F2C0
 } // namespace lift_00506810
+
+// [0x00504970] sub_00504970 (26 bytes)
+namespace lift_00504970 {
+// Known callee 0x00516EB0: GetTableEntryByIndex (Returns the pointer stored at index self->+0x34 of the global table's buffer (begin at +0x14, end at +0x18); returns 0 if the global is null. Stdcall, 1 arg, ret 4.)
+uint32_t __stdcall ext_00516EB0(void* self);
+
+// @name GetTableEntryPlus20
+// @summary Returns the table entry at self->+0x34 offset by 0x20, or null if the global table or entry is absent.
+// @field field_0x30 +0x30 uint32_t global_table_handle
+void* __fastcall fn_00504970(void* self) {
+    uint32_t global_table_handle = lift_field<uint32_t>(self, 0x30);
+    if (global_table_handle == 0) {
+        return nullptr;
+    }
+    uint32_t entry = ext_00516EB0(self);
+    if (entry == 0) {
+        return nullptr;
+    }
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(entry) + 0x20);
+}
+} // namespace lift_00504970
