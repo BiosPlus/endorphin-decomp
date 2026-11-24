@@ -49292,6 +49292,12 @@
     "summary": "Initializes the critical section at 0x00B73C58 and sets the flag at 0x00B73C80 to 1.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x0080AC00": {
+    "name": "ShutdownCriticalSections",
+    "signature": "void fn_0080AC00(void)",
+    "summary": "Shut down the first global critical section via ext_0080AC30 and, if mem_00B73C80 is set, delete the global critical section at mem_00B73C58 and clear the flag.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080AC30": {
     "name": "ShutdownCriticalSectionOnce",
     "signature": "void fn_0080AC30(void* self)",

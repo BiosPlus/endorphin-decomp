@@ -292,3 +292,21 @@ extern uint32_t sub_0080EBD0(int8_t ch) {
     return 0;
 }
 } // namespace lift_0080EBD0
+
+// [0x0080AC00]
+namespace lift_0080AC00 {
+void ext_0080AC30(void* self);
+void DeleteCriticalSection(void* lpCriticalSection);
+extern uint32_t mem_00B73C80;
+extern uint8_t mem_00B73C58;
+
+// @name ShutdownCriticalSections
+// @summary Shut down the first global critical section via ext_0080AC30 and, if mem_00B73C80 is set, delete the global critical section at mem_00B73C58 and clear the flag.
+void fn_0080AC00(void) {
+    ext_0080AC30(nullptr);
+    if (mem_00B73C80 != 0) {
+        DeleteCriticalSection(&mem_00B73C58);
+        mem_00B73C80 = 0;
+    }
+}
+} // namespace lift_0080AC00
