@@ -318,3 +318,16 @@ void ZeroThreeDwords(void* self) {
     *reinterpret_cast<std::uint32_t*>(base + 0x00) = 0;
 }
 } // namespace lift_007DA8D0
+
+// [0x007D4B20] sub_007D4B20 (16 bytes)
+namespace lift_007D4B20 {
+// @name sub_007D4B20_callVirtualSlot0xCWithArg
+// @summary Calls the function pointer stored at obj+0xc with the first argument, passing obj as the receiver; returns the callee's result.
+// @field Unknown +0x0c void* field_0xc
+uint32_t fn_007D4B20(uint32_t arg, void* obj) {
+    // Original: mov eax,[esp+4]; mov ecx,[esp+0xc]; mov edx,[ecx+0xc]; push eax; call edx; pop ecx; ret
+    using Target = uint32_t (*)(void* self, uint32_t arg);
+    const auto target = lift_field<uintptr_t>(obj, 0x0c);
+    return reinterpret_cast<Target>(target)(obj, arg);
+}
+} // namespace lift_007D4B20

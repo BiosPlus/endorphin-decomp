@@ -38516,6 +38516,12 @@
     "summary": "Calls virtual slot 0 of the object passed as the second argument with 0x18 and returns its result.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D4B20": {
+    "name": "sub_007D4B20_callVirtualSlot0xCWithArg",
+    "signature": "uint32_t fn_007D4B20(uint32_t arg, void* obj)",
+    "summary": "Calls the function pointer stored at obj+0xc with the first argument, passing obj as the receiver; returns the callee's result.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D5AE0": {
     "name": "derefDword",
     "signature": "uint32_t sub_007D5AE0(uint32_t ptr)",

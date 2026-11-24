@@ -58,6 +58,7 @@ struct Unknown_Fields {
     // +0xC   void*                    field_0x0C  (evidence: 0x006D9060, 0x0071C960) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0x0c  (evidence: 0x00783790) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0x0c  (evidence: 0x0071C740, 0x0071C8D0, 0x0071C970) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    field_0xc  (evidence: 0x007D4B20) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0C (sub-object that receives the value via vfunc_8)  (evidence: 0x005853E0) // CONFLICT: multiple definitions at +0xC
     // +0x10  BYTE                     field_0x10  (evidence: 0x00468AC0) // CONFLICT: multiple definitions at +0x10
     // +0x10  DWORD                    field_0x10  (evidence: 0x006C9CC0) // CONFLICT: multiple definitions at +0x10
