@@ -2481,6 +2481,13 @@
     "summary": "Destructor tail-call: restores vtable mem_009324DC and tail-calls base destructor sub_0041C790.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x00442B60": {
+    "name": "Unknown::InitWithTagAndSetVtable",
+    "class": "Unknown",
+    "signature": "void* fn_00442B60(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Calls the base init helper (ext_00442960) with (self, arg1, arg2), then writes the address of mem_0093258C into the first dword of self and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00442BA0": {
     "name": "MultiTrackView::MultiTrackViewStates::PanState::vfunc_4",
     "class": "MultiTrackView::MultiTrackViewStates::PanState",

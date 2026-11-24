@@ -1,0 +1,22 @@
+{
+  "va": "0x00442B60",
+  "size": 32,
+  "orig_symbol": "sub_00442B60",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::InitWithTagAndSetVtable",
+  "class": "Unknown",
+  "signature": "void* fn_00442B60(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Calls the base init helper (ext_00442960) with (self, arg1, arg2), then writes the address of mem_0093258C into the first dword of self and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:31:00Z"
+}
