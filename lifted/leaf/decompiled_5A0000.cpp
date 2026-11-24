@@ -216,3 +216,36 @@ void* __thiscall fn_005ACC50(void* self, uint32_t arg0, uint32_t arg1) {
     return self;
 }
 } // namespace lift_005ACC50
+
+// [0x005ACEE0] sub_005ACEE0 (57 bytes)
+namespace lift_005ACEE0 {
+// Known callee 0x006657F0: Unknown::InitVtblAndArg (Stores the vtable pointer (0x00987A04), a stack argument at +0x04, and zeroes +0x08/+0x0C; returns self.)
+extern void* __thiscall ext_006657F0(void* self, uint32_t arg);
+// Vtable for this object (address of the static vtable in the executable).
+extern int mem_0095F5C4;
+
+// @name Unknown::initWithArgsAndZeroFloats_005ACEE0
+// @class Unknown
+// @summary Calls ext_006657F0(self, 0), stores the second stack argument at +0x10 and the first at +0x14, sets the vtable to mem_0095F5C4, zeroes +0x18 (int) and the floats at +0x1C..+0x28, and returns self.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 int32_t field_0x18
+// @field Unknown +0x1C float field_0x1C
+// @field Unknown +0x20 float field_0x20
+// @field Unknown +0x24 float field_0x24
+// @field Unknown +0x28 float field_0x28
+void* __thiscall fn_005ACEE0(void* self, uint32_t arg0, uint32_t arg1) {
+    ext_006657F0(self, 0);
+    const float zero = 0.0f;
+    lift_field<uint32_t>(self, 0x10) = arg1;
+    lift_field<void*>(self, 0x00) = &mem_0095F5C4;
+    lift_field<uint32_t>(self, 0x14) = arg0;
+    lift_field<float>(self, 0x28) = zero;
+    lift_field<float>(self, 0x24) = zero;
+    lift_field<int32_t>(self, 0x18) = 0;
+    lift_field<float>(self, 0x20) = zero;
+    lift_field<float>(self, 0x1C) = zero;
+    return self;
+}
+} // namespace lift_005ACEE0
