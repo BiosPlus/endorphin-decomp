@@ -12,6 +12,7 @@ extern "C" void __fastcall fn_004805E0(void* self) {
     void* delegate_obj = lift_field<void*>(self, 0x3B4);
     ext_004A66D0(delegate_obj);
 }
+#include <cstddef>
 
 // [0x004806C0] sub_004806C0 (11 bytes)
 // @name sub_004806C0
@@ -174,3 +175,32 @@ void* __thiscall fn_00481BB0(void* self, uint32_t value) {
     return self;
 }
 } // namespace lift_00481BB0
+
+// [0x00486980] sub_00486980 (26 bytes)
+namespace lift_00486980 {
+// @name sub_00486980
+// @summary Auto-lifted identical-shape clone of 0x006722B0 (sub_0067AEE8).
+namespace lift_006722B0 {
+// @name Unknown::ForwardArgToSubobjectVfunc31
+// @class Unknown
+// @summary Forwards its single stack argument, together with this, to virtual slot 0x7C of the subobject at +0x4 and returns the result.
+// @field Unknown +0x04 ptr subobject
+
+struct Subobject;
+
+struct Unknown {
+    unsigned char field_0x00[0x04];
+    Subobject* subobject;  // +0x04
+};
+
+// Virtual slot at byte offset 0x7C (index 31) of the subobject's vtable.
+using ForwardFn = int(__stdcall*)(Unknown* self, int arg);
+
+int __thiscall fn_00486980(Unknown* self, int arg) {
+    Subobject* sub = self->subobject;
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    ForwardFn fn = reinterpret_cast<ForwardFn>(vtbl[0xA4 / sizeof(void*)]);
+    return fn(self, arg);
+}
+} // namespace lift_006722B0
+} // namespace lift_00486980

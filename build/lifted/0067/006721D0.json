@@ -1,0 +1,22 @@
+{
+  "va": "0x006721D0",
+  "size": 26,
+  "orig_symbol": "sub_006721D0",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "sub_006721D0",
+  "class": "Unknown",
+  "signature": "int __thiscall fn_006721D0(Unknown* self, int arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x006722B0 (sub_0067AEE8).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "ptr",
+      "name": "subobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T11:34:30Z"
+}

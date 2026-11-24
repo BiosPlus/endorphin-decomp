@@ -407,3 +407,61 @@ int __thiscall fn_006722B0(Unknown* self, int arg) {
     return fn(self, arg);
 }
 } // namespace lift_006722B0
+
+// [0x006721D0] sub_006721D0 (26 bytes)
+namespace lift_006721D0 {
+// @name sub_006721D0
+// @summary Auto-lifted identical-shape clone of 0x006722B0 (sub_0067AEE8).
+namespace lift_006722B0 {
+// @name Unknown::ForwardArgToSubobjectVfunc31
+// @class Unknown
+// @summary Forwards its single stack argument, together with this, to virtual slot 0x7C of the subobject at +0x4 and returns the result.
+// @field Unknown +0x04 ptr subobject
+
+struct Subobject;
+
+struct Unknown {
+    unsigned char field_0x00[0x04];
+    Subobject* subobject;  // +0x04
+};
+
+// Virtual slot at byte offset 0x7C (index 31) of the subobject's vtable.
+using ForwardFn = int(__stdcall*)(Unknown* self, int arg);
+
+int __thiscall fn_006721D0(Unknown* self, int arg) {
+    Subobject* sub = self->subobject;
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    ForwardFn fn = reinterpret_cast<ForwardFn>(vtbl[0x9C / sizeof(void*)]);
+    return fn(self, arg);
+}
+} // namespace lift_006722B0
+} // namespace lift_006721D0
+
+// [0x006722D0] sub_006722D0 (26 bytes)
+namespace lift_006722D0 {
+// @name sub_006722D0
+// @summary Auto-lifted identical-shape clone of 0x006722B0 (sub_0067AEE8).
+namespace lift_006722B0 {
+// @name Unknown::ForwardArgToSubobjectVfunc31
+// @class Unknown
+// @summary Forwards its single stack argument, together with this, to virtual slot 0x7C of the subobject at +0x4 and returns the result.
+// @field Unknown +0x04 ptr subobject
+
+struct Subobject;
+
+struct Unknown {
+    unsigned char field_0x00[0x04];
+    Subobject* subobject;  // +0x04
+};
+
+// Virtual slot at byte offset 0x7C (index 31) of the subobject's vtable.
+using ForwardFn = int(__stdcall*)(Unknown* self, int arg);
+
+int __thiscall fn_006722D0(Unknown* self, int arg) {
+    Subobject* sub = self->subobject;
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    ForwardFn fn = reinterpret_cast<ForwardFn>(vtbl[0x80 / sizeof(void*)]);
+    return fn(self, arg);
+}
+} // namespace lift_006722B0
+} // namespace lift_006722D0
