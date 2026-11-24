@@ -87,4 +87,17 @@ namespace lift_005AA830 {
 // @summary Stores a 32-bit value at +0x154, then calls vtable slot 0 on the object at +0x190 if it is non-null.
 // @field ObjectWithChild +0x154 int32_t field_0x154
 // @field ObjectWithChild +0x190 void* field_0x190
+
+// Portable approximation of the x86 thiscall: `self` is passed explicitly.
+void ObjectWithChild_setValueAndNotifyChild(uint8_t* self, int32_t value)
+{
+    *reinterpret_cast<int32_t*>(self + 0x154) = value;
+
+    void* child = *reinterpret_cast<void**>(self + 0x190);
+    if (child != nullptr) {
+        void** vtable = *reinterpret_cast<void***>(child);
+        using VFunc0 = void (*)(void*);
+        reinterpret_cast<VFunc0>(vtable[0])(child);
+    }
+}
 } // namespace lift_005AA830

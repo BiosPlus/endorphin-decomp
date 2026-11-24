@@ -6,6 +6,7 @@
   "lifted_path": "lifted/leaf/tiny_5A0000.cpp",
   "name": "ObjectWithChild::setValueAndNotifyChild",
   "class": "ObjectWithChild",
+  "signature": "void ObjectWithChild_setValueAndNotifyChild(uint8_t* self, int32_t value)",
   "summary": "Stores a 32-bit value at +0x154, then calls vtable slot 0 on the object at +0x190 if it is non-null.",
   "fields": [
     {
@@ -23,5 +24,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:12:34Z"
+  "lifted_at": "2026-11-24T12:12:43Z"
 }
