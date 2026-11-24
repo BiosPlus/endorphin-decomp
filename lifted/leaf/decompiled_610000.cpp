@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_610000.cpp
 #include "lift_compat.h"
+#include <cstdint>
 
 // [0x00611160] sub_00611160 (11 bytes)
 namespace lift_00611160 {
@@ -37,3 +38,21 @@ extern void __thiscall fn_00610B20(void* self) {
     ext_00678130(subobject, value);
 }
 } // namespace lift_00610B20
+
+// [0x00610B40] sub_00610B40 (34 bytes)
+namespace lift_00610B40 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t __cdecl ext_00594000(void);
+// Callee 0x006781B0: thiscall, one float stack arg (callee pops 4), returns float in st(0).
+extern float __thiscall ext_006781B0(void* self, float value);
+
+// @name UnknownClass::setFieldF08FromChild
+// @class Unknown
+// @summary Gets an int32 handle from ext_00594000, calls ext_006781B0 on the object at (handle + 0x2E0) with the float argument, and stores the float result into this+0x08; thiscall, callee pops 4 bytes.
+// @field Unknown +0x08 float field_0x08
+extern void __thiscall fn_00610B40(void* self, float value) {
+    uintptr_t child = static_cast<uint32_t>(ext_00594000()) + 0x2E0;
+    float result = ext_006781B0(reinterpret_cast<void*>(child), value);
+    lift_field<float>(self, 0x08) = result;
+}
+} // namespace lift_00610B40
