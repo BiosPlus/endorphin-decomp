@@ -187,3 +187,17 @@ void fn_007AB720(void* self) {
     ext_007857F0(self);
 }
 } // namespace lift_007AB720
+
+// [0x007AC670] sub_007AC670 (32 bytes)
+namespace lift_007AC670 {
+// @name FreeAndClearPointerSlot
+// @summary Frees the pointer stored in *slot (if slot is non-null) via free(), then sets *slot to null.
+// @field Unknown +0x00 void* field_0x00
+void fn_007AC670(void* self) {
+    void** slot = static_cast<void**>(self);
+    if (slot != nullptr) {
+        std::free(*slot);
+        *slot = nullptr;
+    }
+}
+} // namespace lift_007AC670
