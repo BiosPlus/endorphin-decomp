@@ -144,6 +144,17 @@ extern void* __cdecl fn_0086CCC0(void* self) {
 }
 } // namespace lift_0086CCC0
 
+// [0x0086F000] sub_0086F000 (32 bytes)
+namespace lift_0086F000 {
+// @name ZeroDwordArray20
+// @summary Zeroes the 20 DWORD entries (indices 0..19) of the array passed by pointer, highest index first.
+void fn_0086F000(DWORD* dst) {
+    for (int i = 19; i >= 0; --i) {
+        dst[i] = 0;
+    }
+}
+} // namespace lift_0086F000
+
 // [0x0086CF90] sub_0086CF90 (32 bytes)
 namespace lift_0086CF90 {
 extern uint32_t mem_00924214;
@@ -157,14 +168,3 @@ void* fn_0086CF90(uint32_t count, uint32_t size) {
     return local_alloc(kLmemZeroinit, count * size);
 }
 } // namespace lift_0086CF90
-
-// [0x0086F000] sub_0086F000 (32 bytes)
-namespace lift_0086F000 {
-// @name ZeroDwordArray20
-// @summary Zeroes the 20 DWORD entries (indices 0..19) of the array passed by pointer, highest index first.
-void fn_0086F000(DWORD* dst) {
-    for (int i = 19; i >= 0; --i) {
-        dst[i] = 0;
-    }
-}
-} // namespace lift_0086F000
