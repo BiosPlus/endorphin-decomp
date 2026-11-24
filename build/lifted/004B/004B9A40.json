@@ -1,0 +1,14 @@
+{
+  "va": "0x004B9A40",
+  "size": 118,
+  "orig_symbol": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair, \u0026public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, \u0026public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), \u0026public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const\u003e::vfunc_27",
+  "src_path": "src/templates/DynamicEnumType.cpp",
+  "lifted_path": "lifted/templates/DynamicEnumType.cpp",
+  "name": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair\u003e::vfunc_27",
+  "class": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair\u003e",
+  "signature": "extern \"C\" uint32_t __thiscall fn_004B9A40( uint32_t /*self*/, uint32_t out_str, uint32_t* obj_ptr, int32_t index)",
+  "summary": "Returns the listed material interaction name for a MaterialPair at the given index",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:45:53Z"
+}
