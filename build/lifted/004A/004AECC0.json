@@ -1,0 +1,34 @@
+{
+  "va": "0x004AECC0",
+  "size": 25,
+  "orig_symbol": "sub_004AECC0",
+  "src_path": "src/leaf/tiny_4A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4A0000.cpp",
+  "name": "Unknown::getSubobjectElementCount",
+  "class": "Unknown",
+  "signature": "int fn_004AECC0(void* self)",
+  "summary": "Returns the number of 8-byte elements in the sub-object's range (end - begin) / 8, or 0 if begin is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "subobject"
+    },
+    {
+      "class": "Subobject",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "begin"
+    },
+    {
+      "class": "Subobject",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:48:27Z"
+}

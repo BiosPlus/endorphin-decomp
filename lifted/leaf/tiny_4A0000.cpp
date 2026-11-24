@@ -131,3 +131,30 @@ extern void __fastcall fn_004A57F0(void* self, int edx_unused, DWORD value) {
     *reinterpret_cast<DWORD*>(base + 0x210) = value;
 }
 } // namespace lift_004A57F0
+
+// [0x004AECC0] sub_004AECC0 (25 bytes)
+namespace lift_004AECC0 {
+// @name Unknown::getSubobjectElementCount
+// @class Unknown
+// @summary Returns the number of 8-byte elements in the sub-object's range (end - begin) / 8, or 0 if begin is null.
+// @field Unknown +0x08 void* subobject
+// @field Subobject +0x24 uint32_t begin
+// @field Subobject +0x28 uint32_t end
+int fn_004AECC0(void* self) {
+    // mov eax, [ecx + 8]  ; eax = this->subobject
+    uint32_t sub = lift_field<uint32_t>(self, 0x08);
+    // mov ecx, [eax + 24] ; ecx = sub->begin
+    uint32_t begin = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(sub)), 0x24);
+    // add eax, 20         ; eax = sub + 0x20 (base of the range record)
+    // test ecx, ecx ; jne  -> if begin != 0, use range path
+    if (begin == 0) {
+        // xor eax, eax ; ret
+        return 0;
+    }
+    // mov eax, [eax + 8]  ; eax = (sub + 0x20)->+8 = sub->end
+    uint32_t end = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(sub)), 0x28);
+    // sub eax, ecx ; sar eax, 3  -> (end - begin) >> 3 (arithmetic)
+    int32_t diff = static_cast<int32_t>(end - begin);
+    return diff >> 3;
+}
+} // namespace lift_004AECC0

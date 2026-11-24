@@ -7047,6 +7047,13 @@
     "summary": "Reads a 32-bit value at offset +0x08 and returns it plus 0x30.",
     "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
   },
+  "0x004AECC0": {
+    "name": "Unknown::getSubobjectElementCount",
+    "class": "Unknown",
+    "signature": "int fn_004AECC0(void* self)",
+    "summary": "Returns the number of 8-byte elements in the sub-object's range (end - begin) / 8, or 0 if begin is null.",
+    "lifted_path": "lifted/leaf/tiny_4A0000.cpp"
+  },
   "0x004AF040": {
     "name": "Properties::PropertySelectionEngine::vfunc_1",
     "class": "Properties::PropertySelectionEngine",
