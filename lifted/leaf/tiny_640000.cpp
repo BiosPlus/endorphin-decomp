@@ -959,3 +959,28 @@ int32_t fn_006455B0(void* self) {
     return diff / 6;
 }
 } // namespace lift_006455B0
+
+// [0x00640940] sub_00640940 (31 bytes)
+namespace lift_00640940 {
+// MSVCP80 std::basic_string<char>::operator+=(char), reached via IAT slot mem_00924EC0.
+extern void* __thiscall ext_00924EC0(void* str, char c);
+
+// @name Unknown::AppendNewlineOnce
+// @class Unknown
+// @summary If flag bit 0 is clear and the one-shot byte at +0x11 is clear, appends '\n' to the std::string referenced at +0x08 and sets +0x11.
+// @field Unknown +0x00 uint8_t flags
+// @field Unknown +0x08 void* stringPtr
+// @field Unknown +0x11 uint8_t appendedNewline
+extern void __thiscall fn_00640940(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    if ((base[0x00] & 0x01u) != 0) {
+        return;
+    }
+    if (base[0x11] != 0) {
+        return;
+    }
+    void* str = *reinterpret_cast<void**>(base + 0x08);
+    ext_00924EC0(str, '\n');
+    base[0x11] = 1;
+}
+} // namespace lift_00640940

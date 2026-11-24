@@ -24949,6 +24949,13 @@
     "summary": "Decrements dword at +0xc and sets byte at +0x10 to 1",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00640940": {
+    "name": "Unknown::AppendNewlineOnce",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __thiscall fn_00640940(void* self)",
+    "summary": "If flag bit 0 is clear and the one-shot byte at +0x11 is clear, appends '\\n' to the std::string referenced at +0x08 and sets +0x11.",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
   "0x00641FD0": {
     "name": "IsFlagBit0AtOffset20",
     "class": "\u003cClassName\u003e (optional)",
