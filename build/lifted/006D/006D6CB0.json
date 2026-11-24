@@ -1,0 +1,52 @@
+{
+  "va": "0x006D6CB0",
+  "size": 58,
+  "orig_symbol": "sub_006D6CB0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::InitDefaults",
+  "class": "Unknown",
+  "signature": "Unknown* fn_006D6CB0(Unknown* ecx)",
+  "summary": "Releases the object at this-\u003efield_0xFC, sets default flag bytes at +0x14C..+0x156, and re-initializes the subobject at +0xB0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14C",
+      "type": "uint32_t",
+      "name": "field_0x14C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14F",
+      "type": "uint8_t",
+      "name": "field_0x14F"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x150",
+      "type": "uint32_t",
+      "name": "field_0x150"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x154",
+      "type": "uint16_t",
+      "name": "field_0x154"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x156",
+      "type": "uint8_t",
+      "name": "field_0x156"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB0",
+      "type": "uint8_t",
+      "name": "field_0xB0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:23:51Z"
+}

@@ -841,3 +841,37 @@ void sub_006DD980() {
     mem_00B5DC34 = huge_ptr[1];
 }
 } // namespace lift_006DD980
+
+// [0x006D6CB0]
+namespace lift_006D6CB0 {
+// @name Unknown::InitDefaults
+// @class Unknown
+// @summary Releases the object at this->field_0xFC, sets default flag bytes at +0x14C..+0x156, and re-initializes the subobject at +0xB0.
+// @field Unknown +0x14C uint32_t field_0x14C
+// @field Unknown +0x14F uint8_t field_0x14F
+// @field Unknown +0x150 uint32_t field_0x150
+// @field Unknown +0x154 uint16_t field_0x154
+// @field Unknown +0x156 uint8_t field_0x156
+// @field Unknown +0xB0 uint8_t field_0xB0
+
+struct Unknown;
+
+void ext_006D7380(void* self);
+Unknown* ext_006B9960(Unknown* ecx);
+
+// [0x006D6CB0]
+Unknown* fn_006D6CB0(Unknown* ecx) {
+    uint8_t* self = reinterpret_cast<uint8_t*>(ecx);
+
+    ext_006D7380(self);
+
+    const uint32_t pattern = 0x01010101u;
+    *reinterpret_cast<uint32_t*>(self + 0x14C) = pattern;
+    *reinterpret_cast<uint32_t*>(self + 0x150) = pattern;
+    *reinterpret_cast<uint16_t*>(self + 0x154) = static_cast<uint16_t>(pattern & 0xFFFFu);
+    *reinterpret_cast<uint8_t*>(self + 0x156) = static_cast<uint8_t>(pattern & 0xFFu);
+    *reinterpret_cast<uint8_t*>(self + 0x14F) = 0x00;
+
+    return ext_006B9960(reinterpret_cast<Unknown*>(self + 0xB0));
+}
+} // namespace lift_006D6CB0

@@ -491,6 +491,7 @@ struct Unknown_Fields {
     // +0xAC  uint32_t field_0xac (read from the sub-object at self+0x158, not from self)  (evidence: 0x005B6FE0, 0x005B7040) // CONFLICT: multiple definitions at +0xAC
     // +0xB0  uint32_t                 field_0xB0  (evidence: 0x007C58E0, 0x007D8470, 0x007D8710, 0x007DADA0, 0x007DEC80) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  uint8                    field_0xB0  (evidence: 0x00687230) // CONFLICT: multiple definitions at +0xB0
+    // +0xB0  uint8_t                  field_0xB0  (evidence: 0x006D6CB0) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  void*                    field_0xb0  (evidence: 0x007DB4C0) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  uint8_t field_0xb0 (embedded sub-object; its address is passed, not read)  (evidence: 0x006A8800) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  uint32_t field_0xb0 (dword inside the object referenced by slot3)  (evidence: 0x007DAD70) // CONFLICT: multiple definitions at +0xB0
@@ -577,10 +578,14 @@ struct Unknown_Fields {
     // +0x148 int32_t                  field_0x148  (evidence: 0x0046F830) // CONFLICT: multiple definitions at +0x148
     // +0x148 void*                    subObject  (evidence: 0x0070E3B0, 0x0070EC50) // CONFLICT: multiple definitions at +0x148
     // +0x14C int32_t field_0x14C (indexed array base; element stride 4, indices 1..17)  (evidence: 0x007AA950, 0x007AC670) // CONFLICT: multiple definitions at +0x14C
+    // +0x14C uint32_t                 field_0x14C  (evidence: 0x006D6CB0) // CONFLICT: multiple definitions at +0x14C
     // +0x14C BYTE field_0x14C[] (indexed by arg index; byte store target)  (evidence: 0x006D74E0) // CONFLICT: multiple definitions at +0x14C
+    // +0x14F uint8_t                  field_0x14F  (evidence: 0x006D6CB0)
     // +0x150 int32_t                  field_0x150  (evidence: 0x0072BC70) // CONFLICT: multiple definitions at +0x150
-    // +0x150 uint32_t                 field_0x150  (evidence: 0x00687230, 0x00687260) // CONFLICT: multiple definitions at +0x150
-    // +0x154 DWORD                    child  (evidence: 0x00433290, 0x005B6780, 0x005B7040, 0x005B7240, 0x005B7280, 0x005B72C0, 0x005C30F0, 0x005CE8F0)
+    // +0x150 uint32_t                 field_0x150  (evidence: 0x00687230, 0x00687260, 0x006D6CB0) // CONFLICT: multiple definitions at +0x150
+    // +0x154 DWORD                    child  (evidence: 0x00433290, 0x005B6780, 0x005B7040, 0x005B7240, 0x005B7280, 0x005B72C0, 0x005C30F0, 0x005CE8F0) // CONFLICT: multiple definitions at +0x154
+    // +0x154 uint16_t                 field_0x154  (evidence: 0x006D6CB0) // CONFLICT: multiple definitions at +0x154
+    // +0x156 uint8_t                  field_0x156  (evidence: 0x006D6CB0)
     // +0x158 void* field_0x158 (sub-object base; +0x30 pointer, +0x24 argument address)  (evidence: 0x005B7040) // CONFLICT: multiple definitions at +0x158
     // +0x158 DWORD                    field_0x158  (evidence: 0x004275C0, 0x0042FC20, 0x0042FEC0, 0x0048ABF0, 0x004CCAF0, 0x004CCB00, 0x0050AD20, 0x0050F180, 0x005B7040, 0x005B72E0, 0x005C3170, 0x005CE910, 0x005CE920, 0x00726690) // CONFLICT: multiple definitions at +0x158
     // +0x158 uint32_t                 field_0x158  (evidence: 0x005B0E60, 0x005B6B90, 0x005B6FC0, 0x005B6FE0, 0x005B7040, 0x006C3040, 0x006C30F0, 0x006C3150, 0x006C3180, 0x006C31B0, 0x006C31E0) // CONFLICT: multiple definitions at +0x158
