@@ -5249,3 +5249,19 @@ uint32_t fn_004020E0(void* self, uint32_t arg) {
     return target(sub, arg);
 }
 } // namespace lift_004020E0
+
+// [0x00404660] CBaseTabCtrl::vfunc_84 (14 bytes)
+namespace lift_00404660 {
+// Imported from USER32.dll (resolved through the IAT slot at mem_00925680).
+extern DWORD ext_GetSysColor(int nIndex);
+
+// @name CBaseTabCtrl::vfunc_84
+// @class CBaseTabCtrl
+// @summary Returns GetSysColor(COLOR_BTNFACE); the incoming stack argument is discarded.
+// (No CBaseTabCtrl fields are accessed.)
+DWORD fn_00404660(void* self, int /*ignored stack arg, overwritten with 0xF*/) {
+    (void)self;
+    // mov [esp+4], 0Fh ; jmp GetSysColor  -> tail call with COLOR_BTNFACE (15)
+    return ext_GetSysColor(15);
+}
+} // namespace lift_00404660

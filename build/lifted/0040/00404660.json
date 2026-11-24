@@ -1,0 +1,14 @@
+{
+  "va": "0x00404660",
+  "size": 14,
+  "orig_symbol": "CBaseTabCtrl::vfunc_84",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CBaseTabCtrl::vfunc_84",
+  "class": "CBaseTabCtrl",
+  "signature": "DWORD fn_00404660(void* self, int /*ignored stack arg, overwritten with 0xF*/)",
+  "summary": "Returns GetSysColor(COLOR_BTNFACE); the incoming stack argument is discarded.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:23:50Z"
+}
