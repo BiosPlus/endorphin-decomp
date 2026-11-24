@@ -1,0 +1,34 @@
+{
+  "va": "0x0078C410",
+  "size": 48,
+  "orig_symbol": "sub_0078C410",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "UnknownClass::getByteAtIndex",
+  "class": "UnknownClass",
+  "signature": "uint8_t fn_0078C410(const void* self, int32_t index)",
+  "summary": "Returns the last byte of the string at index in the pointer table, or 'S' if the table is empty or index is out of range.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x28",
+      "type": "int32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:27:21Z"
+}

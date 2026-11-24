@@ -792,3 +792,27 @@ void fn_00789590(void* self) {
     lift_field<DWORD>(self, 0x0c) = 0;
 }
 } // namespace lift_00789590
+
+// [0x0078C410] sub_0078C410 (48 bytes)
+namespace lift_0078C410 {
+// @name UnknownClass::getByteAtIndex
+// @summary Returns the last byte of the string at index in the pointer table, or 'S' if the table is empty or index is out of range.
+// @field UnknownClass +0x20 int32_t field_0x20
+// @field UnknownClass +0x28 int32_t field_0x28
+// @field UnknownClass +0x2c uint32_t field_0x2c
+uint8_t fn_0078C410(const void* self, int32_t index) {
+    const uint8_t* base = static_cast<const uint8_t*>(self);
+    int32_t len = *reinterpret_cast<const int32_t*>(base + 0x20);
+    if (len == 0) {
+        return 0x53; // 'S'
+    }
+    int32_t count = *reinterpret_cast<const int32_t*>(base + 0x28);
+    if (index >= count) {
+        return 0x53; // 'S'
+    }
+    uint32_t table = *reinterpret_cast<const uint32_t*>(base + 0x2c);
+    uint32_t entry = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(table))[index];
+    const uint8_t* str = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(entry));
+    return str[len - 1];
+}
+} // namespace lift_0078C410

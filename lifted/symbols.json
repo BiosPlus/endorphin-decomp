@@ -47534,6 +47534,13 @@
     "summary": "Returns the dword at +0x28 if the dword at +0x20 is nonzero, otherwise the dword at +0x04.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x0078C410": {
+    "name": "UnknownClass::getByteAtIndex",
+    "class": "UnknownClass",
+    "signature": "uint8_t fn_0078C410(const void* self, int32_t index)",
+    "summary": "Returns the last byte of the string at index in the pointer table, or 'S' if the table is empty or index is out of range.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078CA10": {
     "name": "SwitchIndexByteTable_0078CA10",
     "summary": "Byte lookup table (17 entries) used as switch-case index map; not executable code.",
