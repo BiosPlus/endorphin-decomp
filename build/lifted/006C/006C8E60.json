@@ -1,0 +1,13 @@
+{
+  "va": "0x006C8E60",
+  "size": 57,
+  "orig_symbol": "sub_006C8E60",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "initHugeBounds",
+  "signature": "void __cdecl sub_006C8E60()",
+  "summary": "Initializes three 64-bit double globals from MSVCR80.dll!_HUGE.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:21:00Z"
+}
