@@ -93,3 +93,53 @@ void fn_004C4D80(const void* self, void* out, float scale) {
     lift_field<float>(out, 0x08) = z * scale;
 }
 } // namespace lift_004C4D80
+
+// [0x004CCC30]
+namespace lift_004CCC30 {
+// @name initDefaults
+// @class Unknown
+// @summary Zeroes dword fields at +0x04..+0x10 and byte fields at +0x14/+0x16, sets byte +0x15 to 1, and clears float fields +0x18..+0x2C to 0.0.
+// @field Unknown +0x04 uint32 field_0x04
+// @field Unknown +0x08 uint32 field_0x08
+// @field Unknown +0x0C uint32 field_0x0C
+// @field Unknown +0x10 uint32 field_0x10
+// @field Unknown +0x14 uint8 field_0x14
+// @field Unknown +0x15 uint8 field_0x15
+// @field Unknown +0x16 uint8 field_0x16
+// @field Unknown +0x18 float field_0x18
+// @field Unknown +0x1C float field_0x1C
+// @field Unknown +0x20 float field_0x20
+// @field Unknown +0x24 float field_0x24
+// @field Unknown +0x28 float field_0x28
+// @field Unknown +0x2C float field_0x2C
+
+static inline void store_u32(uint8_t* base, uint32_t off, uint32_t v) {
+    std::memcpy(base + off, &v, sizeof(v));
+}
+static inline void store_u8(uint8_t* base, uint32_t off, uint8_t v) {
+    base[off] = v;
+}
+static inline void store_f32(uint8_t* base, uint32_t off, float v) {
+    std::memcpy(base + off, &v, sizeof(v));
+}
+
+void sub_004CCC30(uint8_t* self) {
+    const float zero = 0.0f;
+
+    store_u32(self, 0x04, 0);
+    store_u32(self, 0x08, 0);
+    store_u32(self, 0x0C, 0);
+    store_u32(self, 0x10, 0);
+
+    store_u8(self, 0x14, 0);
+    store_u8(self, 0x15, 1);
+    store_u8(self, 0x16, 0);
+
+    store_f32(self, 0x18, zero);
+    store_f32(self, 0x1C, zero);
+    store_f32(self, 0x20, zero);
+    store_f32(self, 0x24, zero);
+    store_f32(self, 0x28, zero);
+    store_f32(self, 0x2C, zero);
+}
+} // namespace lift_004CCC30

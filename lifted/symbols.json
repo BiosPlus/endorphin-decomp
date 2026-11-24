@@ -10308,6 +10308,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006362D0 (ExprParser::ReadWriteMethodType\u003cEffectorSkeletal\u003e::vfunc_41 (EffectorSkeletal::getDesiredTwistAndSwing -\u003e setDesiredTwistAndSwing)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004CCC30": {
+    "name": "initDefaults",
+    "class": "Unknown",
+    "signature": "static inline void store_u32(uint8_t* base, uint32_t off, uint32_t v)",
+    "summary": "Zeroes dword fields at +0x04..+0x10 and byte fields at +0x14/+0x16, sets byte +0x15 to 1, and clears float fields +0x18..+0x2C to 0.0.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CCC80": {
     "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}\u003e::vfunc_0",
     "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}\u003e",
@@ -47544,6 +47551,12 @@
     "summary": "Pure jump thunk forwarding to sub_007CC930.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x007CA8A0": {
+    "name": "getDoubledVec3",
+    "signature": "void __cdecl sub_007CA8A0(const void* self, float* outX, float* outY, float* outZ)",
+    "summary": "Reads three floats at offsets +0x10, +0x14, +0x18, multiplies each by 2.0, and writes them to three output pointers.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CA8D0": {
     "name": "add_0x10",
     "signature": "uint32_t sub_007CA8D0(uint32_t arg0)",
@@ -47615,6 +47628,12 @@
     "signature": "uint32_t __cdecl sub_007CCA00(uint32_t arg0)",
     "summary": "Reads a 32-bit value from a 40-byte-strided table using an index byte at +0x00 and table pointer at (+0x0C)-\u003e+0x20.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007CCC00": {
+    "name": "setFloatAndUpdateFlag",
+    "signature": "void sub_007CCC00(uintptr_t ecx_ptr, float value)",
+    "summary": "Stores a float at +0x1c and sets or clears bit 0x8 at +0xc based on its magnitude.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007CD040": {
     "name": "Unknown::postIncrementField04",
