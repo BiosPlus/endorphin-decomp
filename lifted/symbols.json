@@ -32346,6 +32346,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006DE060 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006DE130": {
+    "name": "Unknown::ReleaseIfNonNull",
+    "class": "Unknown",
+    "signature": "void fn_006DE130(void* self, int32_t unused_stack_arg)",
+    "summary": "If self is non-null, invokes vtable slot 0 (scalar deleting destructor) with flag 1; the single stack argument is ignored.",
+    "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
   "0x006DE3D0": {
     "name": "Unknown::GetIndirectInt32Plus4C",
     "class": "Unknown",

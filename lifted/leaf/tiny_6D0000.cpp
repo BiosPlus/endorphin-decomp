@@ -447,3 +447,21 @@ extern uint32_t __fastcall fn_006DE3E0(void* self) {
     return lift_field<uint32_t>(inner, 0x98);
 }
 } // namespace lift_006DE3E0
+
+// [0x006DE130] sub_006DE130 (16 bytes)
+namespace lift_006DE130 {
+// @name Unknown::ReleaseIfNonNull
+// @class Unknown
+// @summary If self is non-null, invokes vtable slot 0 (scalar deleting destructor) with flag 1; the single stack argument is ignored.
+// @field Unknown +0x00 void** vtable vtable pointer (slot 0 called with arg 1)
+void fn_006DE130(void* self, int32_t unused_stack_arg) {
+    (void)unused_stack_arg;  // callee pops 4 bytes (ret 4) but never reads it
+    if (self == nullptr) {
+        return;
+    }
+    void** vtable = lift_field<void**>(self, 0x00);
+    using SlotFn = void (*)(void*, int32_t);
+    auto slot0 = reinterpret_cast<SlotFn>(vtable[0]);
+    slot0(self, 1);
+}
+} // namespace lift_006DE130
