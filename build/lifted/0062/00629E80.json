@@ -1,0 +1,34 @@
+{
+  "va": "0x00629E80",
+  "size": 36,
+  "orig_symbol": "sub_00629E80",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "SetValueAndDeltaFromBase",
+  "class": "Unknown",
+  "signature": "void fn_00629E80(void* self)",
+  "summary": "Stores the float from ext_00594010 at +0x28 and writes (value - float at +0x30) to +0x2C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "float",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "float",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:45:36Z"
+}

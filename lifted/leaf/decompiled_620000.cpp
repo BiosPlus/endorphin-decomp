@@ -183,3 +183,34 @@ void fn_00629EE0(void* self) {
     lift_field<float>(self, 0x34) = value - lift_field<float>(self, 0x38);
 }
 } // namespace lift_00629EE0
+
+// [0x00629E80] sub_00629E80 (36 bytes)
+namespace lift_00629E80 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t __cdecl ext_00594000(void);
+// Known callee 0x00594010: sub_00594010 (Member forwarding thunk: loads subobject pointer at +0xF8 and tail-calls sub_00642650.)
+// Caller consumes the float result from x87 st0, so it is declared float-returning.
+extern float __fastcall ext_00594010(void* self);
+
+// @name SetValueAndDeltaFromBase
+// @class Unknown
+// @summary Stores the float from ext_00594010 at +0x28 and writes (value - float at +0x30) to +0x2C.
+// @field Unknown +0x28 float field_0x28
+// @field Unknown +0x2C float field_0x2C
+// @field Unknown +0x30 float field_0x30
+void fn_00629E80(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+
+    // ecx = sub_00594000(); then ecx passed as `this` to sub_00594010.
+    const int32_t handle = ext_00594000();
+    void* subobject = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(handle)));
+    const float value = ext_00594010(subobject);
+
+    float base30;
+    std::memcpy(&base30, base + 0x30, sizeof(float));
+    const float delta = value - base30;
+
+    std::memcpy(base + 0x28, &value, sizeof(float));
+    std::memcpy(base + 0x2C, &delta, sizeof(float));
+}
+} // namespace lift_00629E80
