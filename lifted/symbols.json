@@ -46480,6 +46480,12 @@
     "summary": "Pops 4 bytes from stack and tail-jumps to the function pointer at [esi]",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x00856F00": {
+    "name": "initStruct24",
+    "signature": "extern \"C\" uint32_t __cdecl fn_00856F00(uint32_t* obj)",
+    "summary": "Zeroes a 16-byte buffer at +0x04, clears field +0x14, sets field +0x00 to 0x100, and returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00856FE0": {
     "name": "sub_00856FE0",
     "signature": "uint32_t sub_00856FE0(uint32_t* dst, const uint32_t* src)",

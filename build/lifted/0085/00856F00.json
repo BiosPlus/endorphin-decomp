@@ -1,0 +1,13 @@
+{
+  "va": "0x00856F00",
+  "size": 38,
+  "orig_symbol": "sub_00856F00",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "initStruct24",
+  "signature": "extern \"C\" uint32_t __cdecl fn_00856F00(uint32_t* obj)",
+  "summary": "Zeroes a 16-byte buffer at +0x04, clears field +0x14, sets field +0x00 to 0x100, and returns 0.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:49:37Z"
+}

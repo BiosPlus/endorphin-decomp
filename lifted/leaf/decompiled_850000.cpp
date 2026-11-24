@@ -207,3 +207,20 @@ int32_t sub_008573F0(uint32_t arg1, uint32_t arg2, uint32_t arg3) {
     return fn(arg1, arg2, arg3);
 }
 } // namespace lift_008573F0
+
+// [0x00856F00]
+namespace lift_00856F00 {
+// @name initStruct24
+// @summary Zeroes a 16-byte buffer at +0x04, clears field +0x14, sets field +0x00 to 0x100, and returns 0.
+
+
+extern void __cdecl ext_008692F0(uint8_t* dst, uint32_t value, uint32_t count);
+
+extern uint32_t __cdecl fn_00856F00(uint32_t* obj) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(obj);
+    ext_008692F0(base + 0x04, 0, 0x10);
+    *reinterpret_cast<uint32_t*>(base + 0x14) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0x100;
+    return 0;
+}
+} // namespace lift_00856F00
