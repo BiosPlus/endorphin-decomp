@@ -37505,6 +37505,13 @@
     "summary": "Returns the 32-bit element at the given index from the array at +0xd0",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00707980": {
+    "name": "Unknown::NotifySlot17IfSelfLinkedWrapper",
+    "class": "Unknown",
+    "signature": "bool fn_00707980(void* self)",
+    "summary": "Forwards its single argument to ext_006FA920 and returns that result.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00709C90": {
     "name": "ChainedNodeValueIfKeyMatches",
     "signature": "DWORD fn_00709C90(void* self)",
