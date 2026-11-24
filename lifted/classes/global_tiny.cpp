@@ -6166,3 +6166,20 @@ uint8_t fn_00536E20(void* self) {
     return lift_field<uint8_t>(self, static_cast<ptrdiff_t>(off));
 }
 } // namespace lift_00536E20
+
+// [0x00659630] RelationshipRPROJoint::vfunc_38 (21 bytes)
+namespace lift_00659630 {
+extern float mem_0097E3E4;
+
+// @name RelationshipRPROJoint::vfunc_38
+// @class RelationshipRPROJoint
+// @summary Returns 3.14f for an index below 3, otherwise 1.0f.
+// @field none (self is not dereferenced)
+float fn_00659630(void* self, uint32_t index) {
+    (void)self;
+    if (index < 3u) {
+        return mem_0097E3E4;
+    }
+    return 1.0f;
+}
+} // namespace lift_00659630

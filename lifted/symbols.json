@@ -24520,6 +24520,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x68 and tail-calls sub_0065C2C0.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00659630": {
+    "name": "RelationshipRPROJoint::vfunc_38",
+    "class": "RelationshipRPROJoint",
+    "signature": "float fn_00659630(void* self, uint32_t index)",
+    "summary": "Returns 3.14f for an index below 3, otherwise 1.0f.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x0065A8B0": {
     "name": "initZeroField0",
     "signature": "uint32_t __fastcall sub_0065A8B0(uint32_t ecx, uint32_t edx)",

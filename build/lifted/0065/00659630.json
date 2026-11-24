@@ -1,0 +1,14 @@
+{
+  "va": "0x00659630",
+  "size": 21,
+  "orig_symbol": "RelationshipRPROJoint::vfunc_38",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "RelationshipRPROJoint::vfunc_38",
+  "class": "RelationshipRPROJoint",
+  "signature": "float fn_00659630(void* self, uint32_t index)",
+  "summary": "Returns 3.14f for an index below 3, otherwise 1.0f.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:26:30Z"
+}
