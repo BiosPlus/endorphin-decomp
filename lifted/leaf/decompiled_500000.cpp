@@ -236,3 +236,29 @@ uint32_t __thiscall sub_0050F9A0(void* self, uint32_t arg0) {
     return res;
 }
 } // namespace lift_0050F9A0
+
+// [0x00503CD0]
+namespace lift_00503CD0 {
+extern void ext_006A5C5C(uint32_t ptr);
+extern uint32_t mem_0094F074;
+
+// @name fn_00503CD0
+// @summary Sets vtable to 0x0094F074, frees buffer at +0x14 if non-null, and zeroes fields at +0x14, +0x18, +0x1C.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1c
+void __thiscall fn_00503CD0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(obj) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_0094F074));
+
+    uint32_t ptr = *reinterpret_cast<uint32_t*>(obj + 0x14);
+    if (ptr != 0) {
+        ext_006A5C5C(ptr);
+    }
+
+    *reinterpret_cast<uint32_t*>(obj + 0x14) = 0;
+    *reinterpret_cast<uint32_t*>(obj + 0x18) = 0;
+    *reinterpret_cast<uint32_t*>(obj + 0x1c) = 0;
+}
+} // namespace lift_00503CD0
