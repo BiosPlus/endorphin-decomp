@@ -354,3 +354,20 @@ uint8_t fn_0049ABC0(void* self) {
     return lift_field<uint8_t>(ptr, 0x09);
 }
 } // namespace lift_0049ABC0
+
+// [0x00493DC0] sub_00493DC0 (19 bytes)
+namespace lift_00493DC0 {
+// @name virtualCall14C_00493DC0
+// @summary Loads the pointer at self+0; if non-null, tail-dispatches virtual slot 0x14C on that object, otherwise returns.
+// @field Unknown +0x00 void* field_0x00
+void fn_00493DC0(void* self) {
+    void* obj = lift_field<void*>(self, 0);
+    if (!obj) {
+        return;
+    }
+    void* vtable = lift_field<void*>(obj, 0);
+    using Slot = void (*)(void*);
+    Slot fn = reinterpret_cast<Slot>(lift_field<void*>(vtable, 0x14C));
+    fn(obj);
+}
+} // namespace lift_00493DC0

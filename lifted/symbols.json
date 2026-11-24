@@ -5201,6 +5201,12 @@
     "summary": "Zeroes the dword at +0x0, the dword at +0x4, and the byte at +0x8 of the object, then returns it.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00493DC0": {
+    "name": "virtualCall14C_00493DC0",
+    "signature": "void fn_00493DC0(void* self)",
+    "summary": "Loads the pointer at self+0; if non-null, tail-dispatches virtual slot 0x14C on that object, otherwise returns.",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
   "0x00493E00": {
     "name": "forwardVtable0B4_viaFirstField",
     "signature": "intptr_t fn_00493E00(void* self)",

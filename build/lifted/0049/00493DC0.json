@@ -1,0 +1,21 @@
+{
+  "va": "0x00493DC0",
+  "size": 19,
+  "orig_symbol": "sub_00493DC0",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "virtualCall14C_00493DC0",
+  "signature": "void fn_00493DC0(void* self)",
+  "summary": "Loads the pointer at self+0; if non-null, tail-dispatches virtual slot 0x14C on that object, otherwise returns.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:00:00Z"
+}
