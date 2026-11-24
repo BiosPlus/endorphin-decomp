@@ -9,5 +9,5 @@
   "summary": "Stores four constant 32-bit values into the mem_00B60FB0..FBC global block.",
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T13:57:33Z"
+  "lifted_at": "2026-11-24T13:57:46Z"
 }
