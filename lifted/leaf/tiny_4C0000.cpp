@@ -203,3 +203,23 @@ void* __stdcall fn_004CE810(uint32_t index) {
     return mem_00AE5290 + static_cast<size_t>(index) * 28u;
 }
 } // namespace lift_004CE810
+
+// [0x004CA570] sub_004CA570 (31 bytes)
+namespace lift_004CA570 {
+extern void* mem_00AE29D0;
+
+// @name Unknown::SetIndexClamped0To4
+// @class Unknown
+// @summary Stores arg if it is in 0..4 into this+0x184, then sets byte +4 of the global object at mem_00AE29D0 (if non-null) to 1.
+// @field Unknown +0x184 DWORD field_0x184
+void __thiscall fn_004CA570(void* self, DWORD value) {
+    if (value > 4) {
+        return;
+    }
+    lift_field<DWORD>(self, 0x184) = value;
+    void* obj = mem_00AE29D0;
+    if (obj != nullptr) {
+        lift_field<BYTE>(obj, 4) = 1;
+    }
+}
+} // namespace lift_004CA570

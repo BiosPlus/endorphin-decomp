@@ -1,0 +1,22 @@
+{
+  "va": "0x004CA570",
+  "size": 31,
+  "orig_symbol": "sub_004CA570",
+  "src_path": "src/leaf/tiny_4C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4C0000.cpp",
+  "name": "Unknown::SetIndexClamped0To4",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_004CA570(void* self, DWORD value)",
+  "summary": "Stores arg if it is in 0..4 into this+0x184, then sets byte +4 of the global object at mem_00AE29D0 (if non-null) to 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x184",
+      "type": "DWORD",
+      "name": "field_0x184"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:23:33Z"
+}

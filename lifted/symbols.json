@@ -8995,6 +8995,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x160.",
     "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
   },
+  "0x004CA570": {
+    "name": "Unknown::SetIndexClamped0To4",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_004CA570(void* self, DWORD value)",
+    "summary": "Stores arg if it is in 0..4 into this+0x184, then sets byte +4 of the global object at mem_00AE29D0 (if non-null) to 1.",
+    "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
+  },
   "0x004CA8D0": {
     "name": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setLockTypeString(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
