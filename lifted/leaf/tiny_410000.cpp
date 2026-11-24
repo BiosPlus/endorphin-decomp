@@ -499,3 +499,23 @@ void fn_00410310(void* self, DWORD value) {
     redraw(hwnd, nullptr, nullptr, 0x105u);
 }
 } // namespace lift_00410310
+
+// [0x00412CA0] sub_00412CA0 (29 bytes)
+namespace lift_00412CA0 {
+// MFC80 imports (ordinal 876 and 1482), resolved through the IAT slots
+// mem_00924300 and mem_0092449C at runtime.
+// ext_MFC80_ord876: takes its argument in ECX (thiscall-style), returns EAX.
+extern int ext_MFC80_ord876(void* self);
+// ext_MFC80_ord1482: receives `self` in ECX and one stack argument, returns EAX.
+extern int ext_MFC80_ord1482(void* self, int value);
+
+// @name descriptiveName: sub_00412CA0_negateCompareResult
+// @summary Calls ord876 on arg2, feeds its result into ord1482 on arg1, and returns 1 if that result is zero, else 0.
+// (no @field: the function does not dereference any struct offsets)
+int fn_00412CA0(void* arg1, void* arg2) {
+    int r = ext_MFC80_ord876(arg2);
+    int s = ext_MFC80_ord1482(arg1, r);
+    // neg/sbb/add sequence: returns 1 when s == 0, otherwise 0.
+    return s == 0 ? 1 : 0;
+}
+} // namespace lift_00412CA0
