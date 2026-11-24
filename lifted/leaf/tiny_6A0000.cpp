@@ -288,3 +288,18 @@ static void setField28IfNonNull_impl(Unknown* self, int32_t value) {
     }
 }
 } // namespace lift_006AD0E0
+
+// [0x006AD0F0] sub_006AD0F0 (14 bytes)
+namespace lift_006AD0F0 {
+// @name Unknown::setField2C
+// @class Unknown
+// @summary If self is non-null, store the single stack argument into self->field_0x2c (DWORD).
+// @field Unknown +0x2c DWORD field_0x2c
+
+// Original: ecx = this (may be null), [esp+4] = value, callee pops 4 bytes (ret 4).
+void fn_006AD0F0(void* self, DWORD value) {
+    if (self != nullptr) {
+        *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(self) + 0x2c) = value;
+    }
+}
+} // namespace lift_006AD0F0

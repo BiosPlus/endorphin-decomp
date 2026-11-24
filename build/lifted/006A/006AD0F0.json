@@ -1,0 +1,22 @@
+{
+  "va": "0x006AD0F0",
+  "size": 14,
+  "orig_symbol": "sub_006AD0F0",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "Unknown::setField2C",
+  "class": "Unknown",
+  "signature": "void fn_006AD0F0(void* self, DWORD value)",
+  "summary": "If self is non-null, store the single stack argument into self-\u003efield_0x2c (DWORD).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "DWORD",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:26:44Z"
+}

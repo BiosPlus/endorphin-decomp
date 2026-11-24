@@ -29826,6 +29826,13 @@
     "summary": "If this is non-null, store the stack argument into this-\u003efield_0x28; otherwise do nothing. Callee cleans up 4 bytes.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006AD0F0": {
+    "name": "Unknown::setField2C",
+    "class": "Unknown",
+    "signature": "void fn_006AD0F0(void* self, DWORD value)",
+    "summary": "If self is non-null, store the single stack argument into self-\u003efield_0x2c (DWORD).",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006AD110": {
     "name": "sub_006AD110_getField24",
     "signature": "uint32_t __thiscall sub_006AD110(uintptr_t self)",
