@@ -1,0 +1,22 @@
+{
+  "va": "0x00537A00",
+  "size": 23,
+  "orig_symbol": "CompoundRenderable::vfunc_3",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CompoundRenderable::vfunc_3",
+  "class": "CompoundRenderable",
+  "signature": "void fn_00537A00(void* self, void* arg)",
+  "summary": "If arg is non-null, forward it to ext_0054C6E0 on the subobject at this+0x18; otherwise do nothing.",
+  "fields": [
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x18",
+      "type": "uint32_t* field_0x18 (address only: this+0x18 is passed on, not dereferenced",
+      "name": "here)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:32:08Z"
+}

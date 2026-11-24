@@ -6243,3 +6243,20 @@ int fn_0041B6A0(void* self, int x, int y) {
     return ptVisible(hdc, x, y);
 }
 } // namespace lift_0041B6A0
+
+// [0x00537A00] CompoundRenderable::vfunc_3 (23 bytes)
+namespace lift_00537A00 {
+extern void ext_0054C6E0(void* self, void* arg);
+
+// @name CompoundRenderable::vfunc_3
+// @class CompoundRenderable
+// @summary If arg is non-null, forward it to ext_0054C6E0 on the subobject at this+0x18; otherwise do nothing.
+// @field CompoundRenderable +0x18 uint32_t* field_0x18 (address only: this+0x18 is passed on, not dereferenced here)
+void fn_00537A00(void* self, void* arg) {
+    if (arg == nullptr) {
+        return;
+    }
+    // Original is a tail jump (jmp) to ext_0054C6E0 with ecx = self + 0x18 and the same stack argument.
+    ext_0054C6E0(static_cast<char*>(self) + 0x18, arg);
+}
+} // namespace lift_00537A00
