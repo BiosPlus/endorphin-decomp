@@ -1,0 +1,39 @@
+{
+  "va": "0x006D24D0",
+  "size": 48,
+  "orig_symbol": "sub_006D24D0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "vec4d_divScalar",
+  "signature": "void vec4d_divScalar(double divisor, double* self)",
+  "summary": "Divides four consecutive doubles at this+0x00..+0x18 by a scalar double argument (stdcall-style, ret 8).",
+  "fields": [
+    {
+      "class": "Vec4d",
+      "offset": "+0x0",
+      "type": "double",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Vec4d",
+      "offset": "+0x8",
+      "type": "double",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Vec4d",
+      "offset": "+0x10",
+      "type": "double",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Vec4d",
+      "offset": "+0x18",
+      "type": "double",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:19:12Z"
+}

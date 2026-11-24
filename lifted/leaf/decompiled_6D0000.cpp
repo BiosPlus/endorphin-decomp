@@ -462,3 +462,20 @@ void __fastcall fn_006DAE00(void* self, double scale) {
     std::memcpy(self, &result, sizeof(result));
 }
 } // namespace lift_006DAE00
+
+// [0x006D24D0]
+namespace lift_006D24D0 {
+// @name vec4d_divScalar
+// @summary Divides four consecutive doubles at this+0x00..+0x18 by a scalar double argument (stdcall-style, ret 8).
+// @field Vec4d +0x00 double field_0x00
+// @field Vec4d +0x08 double field_0x08
+// @field Vec4d +0x10 double field_0x10
+// @field Vec4d +0x18 double field_0x18
+
+void vec4d_divScalar(double divisor, double* self) {
+    self[0] = self[0] / divisor;
+    self[1] = self[1] / divisor;
+    self[2] = self[2] / divisor;
+    self[3] = self[3] / divisor;
+}
+} // namespace lift_006D24D0

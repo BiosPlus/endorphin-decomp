@@ -39282,6 +39282,12 @@
     "summary": "Stores a double into an 8-byte-stride array at ecx, indexed by the first stack argument (ret 0xc: callee pops index + value).",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D24D0": {
+    "name": "vec4d_divScalar",
+    "signature": "void vec4d_divScalar(double divisor, double* self)",
+    "summary": "Divides four consecutive doubles at this+0x00..+0x18 by a scalar double argument (stdcall-style, ret 8).",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D2700": {
     "name": "Vec3d::Dot",
     "class": "Vec3d",
