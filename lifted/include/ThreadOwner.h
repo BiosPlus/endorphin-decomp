@@ -8,6 +8,6 @@
 // Recovered field layout for ThreadOwner:
 namespace lifted_layout {
 struct ThreadOwner_Fields {
-    // +0x14  DWORD                    field_0x14  (evidence: 0x0067ADE0)
+    // +0x14  DWORD                    field_0x14  (evidence: 0x006722B0, 0x0067ADE0)
 };
 } // namespace lifted_layout

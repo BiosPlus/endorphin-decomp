@@ -26228,10 +26228,10 @@
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x006722B0": {
-    "name": "Unknown::ForwardArgToSubobjectVfunc31",
-    "class": "Unknown",
-    "signature": "int __thiscall fn_006722B0(Unknown* self, int arg)",
-    "summary": "Forwards its single stack argument, together with this, to virtual slot 0x7C of the subobject at +0x4 and returns the result.",
+    "name": "sub_0067AEE8",
+    "class": "Unknown (no class recovered; receiver is passed in ecx)",
+    "signature": "extern \"C\" void __stdcall fn_0067AEE8()",
+    "summary": "Pops the return address into edi and returns, releasing 4 bytes of stack arguments.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
   "0x00672490": {

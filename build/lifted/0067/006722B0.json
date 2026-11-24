@@ -4,11 +4,131 @@
   "orig_symbol": "sub_006722B0",
   "src_path": "src/leaf/tiny_670000.cpp",
   "lifted_path": "lifted/leaf/tiny_670000.cpp",
-  "name": "Unknown::ForwardArgToSubobjectVfunc31",
-  "class": "Unknown",
-  "signature": "int __thiscall fn_006722B0(Unknown* self, int arg)",
-  "summary": "Forwards its single stack argument, together with this, to virtual slot 0x7C of the subobject at +0x4 and returns the result.",
+  "name": "sub_0067AEE8",
+  "class": "Unknown (no class recovered; receiver is passed in ecx)",
+  "signature": "extern \"C\" void __stdcall fn_0067AEE8()",
+  "summary": "Pops the return address into edi and returns, releasing 4 bytes of stack arguments.",
   "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "double",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "DWORD",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x65",
+      "type": "BYTE",
+      "name": "field_0x65"
+    },
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "SubObject",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "SubObject",
+      "offset": "+0x2C",
+      "type": "int32_t",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "child"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "int32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "child"
+    },
+    {
+      "class": "SubObject",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "ThreadOwner",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "double",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "double",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "double",
+      "name": "field_0x18"
+    },
     {
       "class": "Unknown",
       "offset": "+0x4",
@@ -18,5 +138,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T11:33:41Z"
+  "lifted_at": "2026-11-24T11:33:49Z"
 }
