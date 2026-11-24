@@ -325,7 +325,6 @@ namespace lift_00672490 {
 // @name UnknownClass::ForwardToChildVirtual78
 // @class UnknownClass
 // @summary If the child pointer at +0x0C is non-null, invoke its vtable slot at +0x78 with this=child and arg=self+0x08.
-// @field UnknownClass +0x04 uint32_t field_0x04
 // @field UnknownClass +0x08 uint32_t field_0x08
 // @field UnknownClass +0x0C uint32_t child
 void fn_00672490(void* self) {

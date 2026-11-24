@@ -4,16 +4,88 @@
   "orig_symbol": "sub_00672490",
   "src_path": "src/leaf/tiny_670000.cpp",
   "lifted_path": "lifted/leaf/tiny_670000.cpp",
-  "name": "UnknownClass::ForwardToChildVirtual78",
-  "class": "UnknownClass",
-  "signature": "void fn_00672490(void* self)",
-  "summary": "If the child pointer at +0x0C is non-null, invoke its vtable slot at +0x78 with this=child and arg=self+0x08.",
+  "name": "sub_0067AEE8",
+  "class": "Unknown (no class recovered; receiver is passed in ecx)",
+  "signature": "extern \"C\" void __stdcall fn_0067AEE8()",
+  "summary": "Pops the return address into edi and returns, releasing 4 bytes of stack arguments.",
   "fields": [
     {
-      "class": "UnknownClass",
-      "offset": "+0x4",
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "double",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
       "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "DWORD",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x65",
+      "type": "BYTE",
+      "name": "field_0x65"
+    },
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "SubObject",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "SubObject",
+      "offset": "+0x2C",
+      "type": "int32_t",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "child"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
       "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "int32_t",
+      "name": "field_0x14"
     },
     {
       "class": "UnknownClass",
@@ -30,5 +102,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T11:26:35Z"
+  "lifted_at": "2026-11-24T11:26:51Z"
 }
