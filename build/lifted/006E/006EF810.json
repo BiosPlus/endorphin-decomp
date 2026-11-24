@@ -1,0 +1,22 @@
+{
+  "va": "0x006EF810",
+  "size": 32,
+  "orig_symbol": "sub_006EF810",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::SetFlagsLow3Bits",
+  "class": "Unknown",
+  "signature": "void fn_006EF810(void* self, uint32_t value)",
+  "summary": "Clears the low 3 bits of this-\u003efield_0x34 and ORs in the 32-bit argument (thiscall, ret 4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:36:19Z"
+}

@@ -37357,6 +37357,13 @@
     "summary": "Setter storing int32_t argument into field at offset +0xC.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006EF810": {
+    "name": "Unknown::SetFlagsLow3Bits",
+    "class": "Unknown",
+    "signature": "void fn_006EF810(void* self, uint32_t value)",
+    "summary": "Clears the low 3 bits of this-\u003efield_0x34 and ORs in the 32-bit argument (thiscall, ret 4).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006EF8A0": {
     "name": "sub_006EF8A0",
     "signature": "extern \"C\" int32_t __cdecl fn_006EF8A0(void)",

@@ -94,3 +94,18 @@ void* __thiscall fn_006E8A20(void* self, uint32_t value) {
     return self;
 }
 } // namespace lift_006E8A20
+
+// [0x006EF810] sub_006EF810 (32 bytes)
+namespace lift_006EF810 {
+// @name Unknown::SetFlagsLow3Bits
+// @class Unknown
+// @summary Clears the low 3 bits of this->field_0x34 and ORs in the 32-bit argument (thiscall, ret 4).
+// @field Unknown +0x34 uint32_t field_0x34
+void fn_006EF810(void* self, uint32_t value) {
+    // mov eax,[ecx+0x34]; mov edx,[esp+4]; and al,-8; or eax,edx; mov [ecx+0x34],eax; ret 4
+    // "and al,-8" clears only the low byte's bits 0..2, but "or eax,edx" ORs the full
+    // 32-bit argument, so the net effect on the whole dword is (field & ~7u) | value.
+    uint32_t& field = lift_field<uint32_t>(self, 0x34);
+    field = (field & ~7u) | value;
+}
+} // namespace lift_006EF810
