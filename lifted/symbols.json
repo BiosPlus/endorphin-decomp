@@ -38187,6 +38187,12 @@
     "summary": "Returns the float field at offset +0x1C of the given object.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C6F40": {
+    "name": "sub_007C6F40",
+    "signature": "void fn_007C6F40(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007C6F50 (sub_007C6F50_adjustThisAndTailCall).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C6F50": {
     "name": "sub_007C6F50_adjustThisAndTailCall",
     "signature": "void fn_007C6F50(void* self)",

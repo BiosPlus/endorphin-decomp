@@ -1,0 +1,13 @@
+{
+  "va": "0x007C6F40",
+  "size": 16,
+  "orig_symbol": "sub_007C6F40",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "sub_007C6F40",
+  "signature": "void fn_007C6F40(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x007C6F50 (sub_007C6F50_adjustThisAndTailCall).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:47:16Z"
+}

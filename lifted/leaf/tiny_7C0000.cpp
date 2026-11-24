@@ -943,3 +943,18 @@ uint32_t sub_007C6F70(uint32_t arg0) {
     return ext_007D48A0(adjusted);
 }
 } // namespace lift_007C6F70
+
+// [0x007C6F40] sub_007C6F40 (16 bytes)
+namespace lift_007C6F40 {
+// @name sub_007C6F40
+// @summary Auto-lifted identical-shape clone of 0x007C6F50 (sub_007C6F50_adjustThisAndTailCall).
+namespace lift_007C6F50 {
+extern void __cdecl ext_007D5A40(void* self);
+
+// @name sub_007C6F50_adjustThisAndTailCall
+// @summary Adds 0x44 to the first argument and tail-calls ext_007D5B60 with the adjusted pointer (thunk).
+void fn_007C6F40(void* self) {
+    ext_007D5A40(static_cast<unsigned char*>(self) + 0x44);
+}
+} // namespace lift_007C6F50
+} // namespace lift_007C6F40
