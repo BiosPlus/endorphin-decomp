@@ -1,0 +1,14 @@
+{
+  "va": "0x007AF620",
+  "size": 30,
+  "orig_symbol": "sub_007AF620",
+  "src_path": "src/leaf/tiny_7A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7A0000.cpp",
+  "name": "ForwardToCallbackWithArgPtr",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void fn_007AF620(uint32_t a1, uint32_t a2, uint32_t a3)",
+  "summary": "If the global callback pointer is set, call it cdecl with (a1, a2, \u0026a3) and return.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:20:27Z"
+}

@@ -41752,6 +41752,13 @@
     "summary": "Thiscall-style thunk: passes the address of its stack argument block (esp+4) in ecx to fn_006B9D70, then returns 0 (al = 0) and pops 0x54 bytes of arguments.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AF620": {
+    "name": "ForwardToCallbackWithArgPtr",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void fn_007AF620(uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "If the global callback pointer is set, call it cdecl with (a1, a2, \u0026a3) and return.",
+    "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
+  },
   "0x007B04A8": {
     "name": "dataTable_007B04A8",
     "class": "(none)",

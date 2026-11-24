@@ -439,3 +439,20 @@ void fn_007AEEC0(void* self, int32_t value) {
     lift_field<int32_t>(self, 0x60) = value;
 }
 } // namespace lift_007AEEC0
+
+// [0x007AF620] sub_007AF620 (30 bytes)
+namespace lift_007AF620 {
+extern uint32_t mem_00AAFC28;  // .data u32 0x0079B070: cdecl callback pointer
+
+// @name ForwardToCallbackWithArgPtr
+// @class <ClassName> (optional)
+// @summary If the global callback pointer is set, call it cdecl with (a1, a2, &a3) and return.
+void fn_007AF620(uint32_t a1, uint32_t a2, uint32_t a3) {
+    using Callback = void (__cdecl*)(uint32_t, uint32_t, uint32_t*);
+    const uint32_t target = mem_00AAFC28;
+    if (target != 0) {
+        auto fn = reinterpret_cast<Callback>(static_cast<uintptr_t>(target));
+        fn(a1, a2, &a3);
+    }
+}
+} // namespace lift_007AF620
