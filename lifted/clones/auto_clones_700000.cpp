@@ -89,3 +89,83 @@ void sub_00703C60(void) {
     mem_00B5E9E4 = hi;
 }
 } // namespace lift_00703C60
+
+// [0x0070A2A0]
+namespace lift_0070A2A0 {
+// @name initHugeVectorGlobals
+// @summary Initializes three 64-bit globals (likely a 3D double vector) from MSVCR80!_HUGE.
+
+
+extern uint32_t* mem_00925284;
+extern uint32_t mem_00B5EBC8;
+extern uint32_t mem_00B5EBCC;
+extern uint32_t mem_00B5EBD0;
+extern uint32_t mem_00B5EBD4;
+extern uint32_t mem_00B5EBD8;
+extern uint32_t mem_00B5EBDC;
+
+void sub_0070A2A0() {
+    uint32_t* huge = mem_00925284;
+    mem_00B5EBC8 = huge[0];
+    mem_00B5EBCC = huge[1];
+    mem_00B5EBD0 = huge[0];
+    mem_00B5EBD4 = huge[1];
+    mem_00B5EBD8 = huge[0];
+    mem_00B5EBDC = huge[1];
+}
+} // namespace lift_0070A2A0
+
+// [0x0070F780]
+namespace lift_0070F780 {
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5EEE0;
+extern uint32_t mem_00B5EEE4;
+extern uint32_t mem_00B5EEE8;
+extern uint32_t mem_00B5EEEC;
+extern uint32_t mem_00B5EEF0;
+extern uint32_t mem_00B5EEF4;
+
+// @name initHugeDoubleGlobals
+// @summary Initializes three 64-bit globals from MSVCR80!_HUGE
+void sub_0070F780() {
+    const uint32_t* huge = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5EEE0 = huge[0];
+    mem_00B5EEE4 = huge[1];
+    mem_00B5EEE8 = huge[0];
+    mem_00B5EEEC = huge[1];
+    mem_00B5EEF0 = huge[0];
+    mem_00B5EEF4 = huge[1];
+}
+} // namespace lift_0070F780
+
+// [0x0070C8E0]
+namespace lift_0070C8E0 {
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5ED48;
+extern uint32_t mem_00B5ED4C;
+extern uint32_t mem_00B5ED50;
+extern uint32_t mem_00B5ED54;
+extern uint32_t mem_00B5ED58;
+extern uint32_t mem_00B5ED5C;
+
+// @name initHugeBounds
+// @summary Initializes three 64-bit global values from MSVCR80.dll!_HUGE.
+void sub_0070C8E0() {
+    uint32_t* huge_ptr = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    uint32_t lo = huge_ptr[0];
+    uint32_t hi = huge_ptr[1];
+
+    mem_00B5ED48 = lo;
+    mem_00B5ED4C = hi;
+
+    lo = huge_ptr[0];
+    hi = huge_ptr[1];
+    mem_00B5ED50 = lo;
+    mem_00B5ED54 = hi;
+
+    lo = huge_ptr[0];
+    hi = huge_ptr[1];
+    mem_00B5ED58 = lo;
+    mem_00B5ED5C = hi;
+}
+} // namespace lift_0070C8E0
