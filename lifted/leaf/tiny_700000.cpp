@@ -885,3 +885,59 @@ uint8_t __thiscall sub_00700960(uintptr_t self) {
     return mem_read8(static_cast<uintptr_t>(ptr) + 0x380);
 }
 } // namespace lift_00700960
+
+// [0x00702790]
+namespace lift_00702790 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name sub_00702790
+// @summary Reads a 32-bit value at offset 0x518 from the object pointed to by field_0x268.
+// @field Object +0x268 uint32_t field_0x268
+uint32_t __thiscall sub_00702790(uint32_t self) {
+    uint32_t inner = mem_read32(self + 0x268);
+    return mem_read32(inner + 0x518);
+}
+} // namespace lift_00702790
+
+// [0x00702780]
+namespace lift_00702780 {
+uint32_t mem_read32(uint32_t addr);
+
+// @name getNestedField_0x268_0x490
+// @summary Dereferences pointer at this+0x268 and returns the 32-bit value at offset 0x490.
+// @field Self +0x268 uint32_t field_0x268
+uint32_t __thiscall sub_00702780(uint32_t self) {
+    uint32_t ptr = mem_read32(self + 0x268u);
+    return mem_read32(ptr + 0x490u);
+}
+} // namespace lift_00702780
+
+// [0x00704DA0]
+namespace lift_00704DA0 {
+extern uint32_t mem_read32(uintptr_t addr);
+extern uint8_t mem_read8(uintptr_t addr);
+
+// @name sub_00704DA0
+// @summary Reads a byte at offset 0x7CC from the sub-object at this+0xF0.
+// @field Self +0xF0 uint32_t field_0xF0
+// @field SubObj +0x7CC uint8_t field_0x7CC
+uint8_t __thiscall sub_00704DA0(uintptr_t self) {
+    uint32_t obj = mem_read32(self + 0xF0);
+    return mem_read8(static_cast<uintptr_t>(obj) + 0x7CC);
+}
+} // namespace lift_00704DA0
+
+// [0x00704EB0]
+namespace lift_00704EB0 {
+extern uint32_t mem_r32(uint32_t addr);
+
+// @name forwardVirtual_0x154
+// @summary Forwards virtual call at vtable +0x154 to subobject at +0xf0
+// @field Self +0xf0 uint32_t field_0xf0
+void __thiscall sub_00704EB0(uint32_t self) {
+    uint32_t subobj = mem_r32(self + 0xf0);
+    uint32_t vtable = mem_r32(subobj);
+    using VFunc = void(__thiscall*)(uint32_t);
+    reinterpret_cast<VFunc>(mem_r32(vtable + 0x154))(subobj);
+}
+} // namespace lift_00704EB0
