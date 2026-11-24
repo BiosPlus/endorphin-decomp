@@ -79,3 +79,30 @@ void sub_00810320(uint32_t arg1, uint32_t arg2) {
     }
 }
 } // namespace lift_00810320
+
+// [0x008102D0]
+namespace lift_008102D0 {
+// @name sub_008102D0
+// @summary Sets (flag != 0) or clears (flag == 0) bit 0x2000 in the dword at +0x4 of the object referenced by the first argument's +0x4 pointer.
+// @field ObjA +0x04 ptr<ObjB> ptr_b
+// @field ObjB +0x04 uint32 flags
+
+struct ObjB {
+    uint8_t field_0x00[0x04];
+    uint32_t flags;             // +0x04
+};
+
+struct ObjA {
+    uint8_t field_0x00[0x04];
+    ObjB* ptr_b;                // +0x04
+};
+
+void sub_008102D0(ObjA* a, uint32_t flag) {
+    ObjB* b = a->ptr_b;
+    if (flag != 0) {
+        b->flags |= 0x00002000u;
+    } else {
+        b->flags &= ~0x00002000u;
+    }
+}
+} // namespace lift_008102D0

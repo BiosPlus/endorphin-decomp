@@ -47128,6 +47128,12 @@
     "summary": "Returns bit 13 of the DWORD at +0x04 of the object referenced by the +0x04 pointer of the argument.",
     "lifted_path": "lifted/leaf/tiny_810000.cpp"
   },
+  "0x008102D0": {
+    "name": "sub_008102D0",
+    "signature": "void sub_008102D0(ObjA* a, uint32_t flag)",
+    "summary": "Sets (flag != 0) or clears (flag == 0) bit 0x2000 in the dword at +0x4 of the object referenced by the first argument's +0x4 pointer.",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
   "0x00810300": {
     "name": "getNestedFlagBit24",
     "class": "(none)",
