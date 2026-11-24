@@ -581,6 +581,7 @@ struct Unknown_Fields {
     // +0x1E48 void*                    field_0x1e48  (evidence: 0x006EFEA0)
     // +0x20F0 void*                    field_20F0  (evidence: 0x006F0040)
     // +0x2200 uint8_t                  field_0x2200  (evidence: 0x006F00E0)
+    // +0x2288 uint8_t                  field_0x2288  (evidence: 0x006F0120)
     // +0x6688 void*                    subobjVtbl  (evidence: 0x006F22C0)
     // +0x6718 void*                    field_0x6718  (evidence: 0x006F2330)
     // +0x67A8 void*                    field_0x67A8  (evidence: 0x006F23A0)

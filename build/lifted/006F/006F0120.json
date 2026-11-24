@@ -1,0 +1,22 @@
+{
+  "va": "0x006F0120",
+  "size": 34,
+  "orig_symbol": "sub_006F0120",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::forwardArgsToSubobject2288",
+  "class": "Unknown",
+  "signature": "void fn_006F0120(void* self, uint32_t arg1, void* arg2)",
+  "summary": "Forwards its two stack arguments, plus two constant words, to ext_00711D40 on the subobject at self+0x2288.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x2288",
+      "type": "uint8_t",
+      "name": "field_0x2288"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:13:54Z"
+}
