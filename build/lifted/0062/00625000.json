@@ -1,0 +1,28 @@
+{
+  "va": "0x00625000",
+  "size": 89,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, getBool, 1\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, getBool, 1\u003e",
+  "signature": "float __thiscall fn_00625000(void* self, void** arg0)",
+  "summary": "Evaluates SensorIsCollidingWith::getBool() as 1.0f or 0.0f, or throws if null",
+  "fields": [
+    {
+      "class": "Sensors::SensorIsCollidingWith",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Sensors::SensorIsCollidingWith",
+      "offset": "+0x30",
+      "type": "uint8_t",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:51:49Z"
+}

@@ -35361,3 +35361,37 @@ int32_t __stdcall fn_0066F350(void* arg) {
 }
 } // namespace lift_004B7D80
 } // namespace lift_0066F350
+
+// [0x00625000]
+namespace lift_00625000 {
+// @name ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, getBool, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, getBool, 1>
+// @summary Evaluates SensorIsCollidingWith::getBool() as 1.0f or 0.0f, or throws if null
+// @field Sensors::SensorIsCollidingWith +0x00 void** vtable
+// @field Sensors::SensorIsCollidingWith +0x30 uint8_t field_0x30
+
+
+void __thiscall ext_0046C3C0(void* self);
+void __stdcall ext_006A6DD2(void* pExceptionObject, const void* pThrowInfo);
+extern uint32_t mem_009DEC1C;
+
+float __thiscall fn_00625000(void* self, void** arg0) {
+    (void)self;
+    void* sensor = *arg0;
+    if (sensor != nullptr) {
+        void** vtable = *reinterpret_cast<void***>(sensor);
+        using Vfunc44 = double(__thiscall*)(void*);
+        auto vfunc = reinterpret_cast<Vfunc44>(vtable[0x44 / sizeof(void*)]);
+        (void)vfunc(sensor);
+
+        uint8_t flag = *reinterpret_cast<const uint8_t*>(
+            reinterpret_cast<const uint8_t*>(sensor) + 0x30);
+        return (flag != 0) ? 1.0f : 0.0f;
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return 0.0f;
+}
+} // namespace lift_00625000
