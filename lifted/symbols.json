@@ -39530,6 +39530,13 @@
     "summary": "Returns the int32 at +4 of the 12-byte record at the given index in the array at +0x1D4, or -1 if index \u003e= count at +0x1C4.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D8550": {
+    "name": "queryIntAt08ViaSubobject",
+    "class": "\u003cUnknown\u003e",
+    "signature": "extern \"C\" int32_t __fastcall fn_006D8550(void* self)",
+    "summary": "Resolves a sub-object via two ext_006FDF70 calls and ext_006FC930; returns the int32 at +0x08 of the result, or 0 if any step is null.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D89C0": {
     "name": "sub_006D89C0",
     "signature": "extern \"C\" void* __fastcall fn_006D89C0(void* self)",

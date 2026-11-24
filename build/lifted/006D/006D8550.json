@@ -1,0 +1,22 @@
+{
+  "va": "0x006D8550",
+  "size": 48,
+  "orig_symbol": "sub_006D8550",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "queryIntAt08ViaSubobject",
+  "class": "\u003cUnknown\u003e",
+  "signature": "extern \"C\" int32_t __fastcall fn_006D8550(void* self)",
+  "summary": "Resolves a sub-object via two ext_006FDF70 calls and ext_006FC930; returns the int32 at +0x08 of the result, or 0 if any step is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:19:25Z"
+}

@@ -544,3 +544,27 @@ int32_t __thiscall fn_006D8210(void* self, int32_t index) {
     return lift_field<int32_t>(records, static_cast<ptrdiff_t>(index) * 12 + 4);
 }
 } // namespace lift_006D8210
+
+// [0x006D8550]
+namespace lift_006D8550 {
+extern void* __thiscall ext_006FDF70(void* self, int32_t arg);
+extern int32_t __fastcall ext_006FC930(void* self);
+
+// @name queryIntAt08ViaSubobject
+// @class <Unknown>
+// @summary Resolves a sub-object via two ext_006FDF70 calls and ext_006FC930; returns the int32 at +0x08 of the result, or 0 if any step is null.
+// @field Unknown +0x08 int32_t field_0x08
+extern int32_t __fastcall fn_006D8550(void* self) {
+    if (ext_006FDF70(self, 0) == nullptr) {
+        return 0;
+    }
+    void* sub = ext_006FDF70(self, 0);
+    uint32_t obj = static_cast<uint32_t>(ext_006FC930(sub));
+    if (obj == 0) {
+        return 0;
+    }
+    int32_t value = 0;
+    std::memcpy(&value, reinterpret_cast<const void*>(static_cast<uintptr_t>(obj) + 0x08), sizeof value);
+    return value;
+}
+} // namespace lift_006D8550
