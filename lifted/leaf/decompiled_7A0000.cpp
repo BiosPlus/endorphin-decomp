@@ -104,3 +104,16 @@ uint32_t fn_007AF7E0(void* self) {
     return 0;
 }
 } // namespace lift_007AF7E0
+
+// [0x007AA970] sub_007AA970 (32 bytes)
+namespace lift_007AA970 {
+// @name Unknown::SetIndexedDwordSlot194
+// @class Unknown
+// @summary Stores a dword into slot `index` of the 0x194-based table when 0 < index < 0x12; otherwise does nothing. Callee pops 2 args (ret 8).
+// @field Unknown +0x194 DWORD field_0x194[18]
+void fn_007AA970(void* self, LONG index, DWORD value) {
+    if (index > 0 && index < 0x12) {
+        lift_field<DWORD>(self, 0x194 + static_cast<ptrdiff_t>(index) * 4) = value;
+    }
+}
+} // namespace lift_007AA970

@@ -1,0 +1,22 @@
+{
+  "va": "0x007AA970",
+  "size": 32,
+  "orig_symbol": "sub_007AA970",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "Unknown::SetIndexedDwordSlot194",
+  "class": "Unknown",
+  "signature": "void fn_007AA970(void* self, LONG index, DWORD value)",
+  "summary": "Stores a dword into slot `index` of the 0x194-based table when 0 \u003c index \u003c 0x12; otherwise does nothing. Callee pops 2 args (ret 8).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x194",
+      "type": "DWORD",
+      "name": "field_0x194[18]"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:47:18Z"
+}
