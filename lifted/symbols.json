@@ -38495,6 +38495,13 @@
     "summary": "Getter returning int32_t field at offset +0x158.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C33F0": {
+    "name": "Unknown::setTableEntryByte",
+    "class": "Unknown",
+    "signature": "void fn_006C33F0(void* self, uint32_t index, uint8_t value)",
+    "summary": "Stores a byte into a 496-byte-stride table entry: table[index * 496 + 0x1E7C] = value.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C3450": {
     "name": "Unknown::GetEntryAddress",
     "class": "Unknown",

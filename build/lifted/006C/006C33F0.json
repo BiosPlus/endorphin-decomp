@@ -1,0 +1,22 @@
+{
+  "va": "0x006C33F0",
+  "size": 48,
+  "orig_symbol": "sub_006C33F0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::setTableEntryByte",
+  "class": "Unknown",
+  "signature": "void fn_006C33F0(void* self, uint32_t index, uint8_t value)",
+  "summary": "Stores a byte into a 496-byte-stride table entry: table[index * 496 + 0x1E7C] = value.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "void*",
+      "name": "tablePtr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:22:24Z"
+}

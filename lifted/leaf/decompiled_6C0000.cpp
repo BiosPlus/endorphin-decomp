@@ -452,3 +452,17 @@ void* fn_006C2E30(void* self, void* arg1) {
 }
 } // namespace lift_006C2CB0
 } // namespace lift_006C2E30
+
+// [0x006C33F0] sub_006C33F0 (48 bytes)
+namespace lift_006C33F0 {
+// @name Unknown::setTableEntryByte
+// @class Unknown
+// @summary Stores a byte into a 496-byte-stride table entry: table[index * 496 + 0x1E7C] = value.
+// @field Unknown +0xF0 void* tablePtr
+void fn_006C33F0(void* self, uint32_t index, uint8_t value) {
+    uint32_t stride = index * 31u;          // (index << 5) - index
+    uint32_t offset = stride << 4;          // * 16 -> index * 496
+    uint8_t* table = lift_field<uint8_t*>(self, 0xF0);
+    lift_field<uint8_t>(table + offset, 0x1E7C) = value;
+}
+} // namespace lift_006C33F0
