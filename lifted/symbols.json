@@ -7443,6 +7443,12 @@
     "summary": "Returns byte +0x09 of the pointer stored at +0x12C, or 0 if that pointer is null.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x0049AD40": {
+    "name": "checkKeyAndCompareValue",
+    "signature": "bool fn_0049AD40(const void* self, const void* other)",
+    "summary": "Requires self-\u003efield_00 to be non-zero and equal to other-\u003efield_00 (else invalid-parameter path), then returns whether self-\u003efield_04 differs from other-\u003efield_04.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049AD70": {
     "name": "Unknown::SpanDividedBy36OrZero",
     "class": "Unknown",

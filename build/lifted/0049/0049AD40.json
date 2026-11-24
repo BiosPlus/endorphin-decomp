@@ -1,0 +1,27 @@
+{
+  "va": "0x0049AD40",
+  "size": 42,
+  "orig_symbol": "sub_0049AD40",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "checkKeyAndCompareValue",
+  "signature": "bool fn_0049AD40(const void* self, const void* other)",
+  "summary": "Requires self-\u003efield_00 to be non-zero and equal to other-\u003efield_00 (else invalid-parameter path), then returns whether self-\u003efield_04 differs from other-\u003efield_04.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:58:26Z"
+}

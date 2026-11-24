@@ -246,3 +246,21 @@ uint32_t fn_00497650(uint32_t self, uint32_t a1) {
     return self;
 }
 } // namespace lift_00497650
+
+// [0x0049AD40]
+namespace lift_0049AD40 {
+extern int mem_00925134;
+extern void ext_invalid_parameter_noinfo(void);
+
+// @name checkKeyAndCompareValue
+// @summary Requires self->field_00 to be non-zero and equal to other->field_00 (else invalid-parameter path), then returns whether self->field_04 differs from other->field_04.
+// @field Unknown +0x00 DWORD field_00
+// @field Unknown +0x04 DWORD field_04
+bool fn_0049AD40(const void* self, const void* other) {
+    DWORD selfKey = lift_field<DWORD>(self, 0x00);
+    if (selfKey == 0 || selfKey != lift_field<DWORD>(other, 0x00)) {
+        ext_invalid_parameter_noinfo();
+    }
+    return lift_field<DWORD>(self, 0x04) != lift_field<DWORD>(other, 0x04);
+}
+} // namespace lift_0049AD40
