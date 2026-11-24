@@ -144,3 +144,26 @@ extern int32_t __stdcall fn_0040F270(uintptr_t arg0) {
     return (res == 0xFFFFFFFFu) ? -1 : 0;
 }
 } // namespace lift_0040F270
+
+// [0x00403400] sub_00403400 (30 bytes)
+namespace lift_00403400 {
+// Known callee 0x006A3454: thunk_MSVFW32_DrawDibClose (IAT jump thunk forwarding to MSVFW32!DrawDibClose.)
+extern void __stdcall ext_006A3454(void* hdd);
+// IAT slot 0x009240A8 holding the resolved address of GDI32!DeleteDC.
+extern int mem_009240A8;
+
+// @name Unknown::closeDrawDibAndDeleteDC
+// @class Unknown
+// @summary Closes the DrawDib handle at this+0xDC via DrawDibClose, then deletes the device context at this+0xE4 via GDI32!DeleteDC (thiscall, no args).
+// @field Unknown +0xDC void* field_0xdc
+// @field Unknown +0xE4 void* field_0xe4
+void __thiscall fn_00403400(void* self) {
+    void* hdd = lift_field<void*>(self, 0xDC);
+    ext_006A3454(hdd);
+
+    using DeleteDCFn = int(__stdcall*)(void*);
+    void* hdc = lift_field<void*>(self, 0xE4);
+    auto deleteDC = reinterpret_cast<DeleteDCFn>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_009240A8)));
+    deleteDC(hdc);
+}
+} // namespace lift_00403400

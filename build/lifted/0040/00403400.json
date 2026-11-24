@@ -1,0 +1,28 @@
+{
+  "va": "0x00403400",
+  "size": 30,
+  "orig_symbol": "sub_00403400",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "Unknown::closeDrawDibAndDeleteDC",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00403400(void* self)",
+  "summary": "Closes the DrawDib handle at this+0xDC via DrawDibClose, then deletes the device context at this+0xE4 via GDI32!DeleteDC (thiscall, no args).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xDC",
+      "type": "void*",
+      "name": "field_0xdc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xE4",
+      "type": "void*",
+      "name": "field_0xe4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:15:26Z"
+}
