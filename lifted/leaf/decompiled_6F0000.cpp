@@ -453,7 +453,7 @@ extern void __thiscall ext_00711D40(void* self, uint32_t arg1, void* arg2, uint3
 // @summary Forwards its two stack arguments, plus two constants, to the storeArgsAndNotifyChild callee using the subobject at this+0x2398.
 // @field Unknown +0x2398 void* subobject2398 (address only; passed as self to the callee)
 void __thiscall fn_006F01A0(void* self, uint32_t arg1, void* arg2) {
-    void* sub = lift_field<uint8_t*>(self, 0x2398);
+    void* sub = static_cast<uint8_t*>(self) + 0x2398;
     ext_00711D40(sub, arg1, arg2, 0x006F7B60u, 0x006F86F0u);
 }
 } // namespace lift_006F01A0
