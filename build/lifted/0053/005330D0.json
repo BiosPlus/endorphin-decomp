@@ -1,0 +1,22 @@
+{
+  "va": "0x005330D0",
+  "size": 39,
+  "orig_symbol": "OglRenderer::vfunc_117",
+  "src_path": "src/classes/OglRenderer.cpp",
+  "lifted_path": "lifted/classes/OglRenderer.cpp",
+  "name": "OglRenderer::vfunc_117",
+  "class": "OglRenderer",
+  "signature": "void __thiscall fn_005330D0(void* self)",
+  "summary": "Clears field_0x30 to 0 while holding the critical section lock returned by vfunc_118.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:52:48Z"
+}

@@ -21,3 +21,25 @@ void __thiscall fn_00536E80(void* self) {
     ext_0065C650(base + 0x10);
 }
 } // namespace lift_00536E80
+
+// [0x005330D0]
+namespace lift_005330D0 {
+// @name OglRenderer::vfunc_117
+// @class OglRenderer
+// @summary Clears field_0x30 to 0 while holding the critical section lock returned by vfunc_118.
+// @field OglRenderer +0x30 uint32_t field_0x30
+
+
+extern void __thiscall ext_0065C640(void* self);
+extern void __thiscall ext_0065C650(void* self);
+
+void __thiscall fn_005330D0(void* self) {
+    void** vtable = *reinterpret_cast<void***>(self);
+    using GetLockFn = void* (__thiscall*)(void*);
+    auto getLock = reinterpret_cast<GetLockFn>(vtable[0x1D8 / 4]);
+    void* lock = getLock(self);
+    ext_0065C640(lock);
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x30) = 0;
+    ext_0065C650(lock);
+}
+} // namespace lift_005330D0
