@@ -309,3 +309,19 @@ DWORD fn_00711BC0(void* self) {
     return fn(sub, 0, 0x98ABD146u);
 }
 } // namespace lift_00711BC0
+
+// [0x007148A0] sub_007148A0 (32 bytes)
+namespace lift_007148A0 {
+// @name Unknown::SetThreeByteFields
+// @class Unknown
+// @summary Stores three byte arguments into this object at +0x03, +0x04 and +0x05 (callee pops 12 bytes).
+// @field Unknown +0x03 uint8_t field_0x03
+// @field Unknown +0x04 uint8_t field_0x04
+// @field Unknown +0x05 uint8_t field_0x05
+void fn_007148A0(void* self, uint8_t arg0, uint8_t arg1, uint8_t arg2) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    obj[0x03] = arg0;
+    obj[0x04] = arg1;
+    obj[0x05] = arg2;
+}
+} // namespace lift_007148A0

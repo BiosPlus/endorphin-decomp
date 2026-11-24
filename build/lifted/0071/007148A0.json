@@ -1,0 +1,34 @@
+{
+  "va": "0x007148A0",
+  "size": 32,
+  "orig_symbol": "sub_007148A0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::SetThreeByteFields",
+  "class": "Unknown",
+  "signature": "void fn_007148A0(void* self, uint8_t arg0, uint8_t arg1, uint8_t arg2)",
+  "summary": "Stores three byte arguments into this object at +0x03, +0x04 and +0x05 (callee pops 12 bytes).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x3",
+      "type": "uint8_t",
+      "name": "field_0x03"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5",
+      "type": "uint8_t",
+      "name": "field_0x05"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:40:56Z"
+}

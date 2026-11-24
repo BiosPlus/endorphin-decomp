@@ -40982,6 +40982,13 @@
     "summary": "Copies the first three bytes at src (ecx) to three caller-supplied byte destinations (stdcall, ret 0xC).",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x007148A0": {
+    "name": "Unknown::SetThreeByteFields",
+    "class": "Unknown",
+    "signature": "void fn_007148A0(void* self, uint8_t arg0, uint8_t arg1, uint8_t arg2)",
+    "summary": "Stores three byte arguments into this object at +0x03, +0x04 and +0x05 (callee pops 12 bytes).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00714970": {
     "name": "sub_00714970",
     "signature": "extern \"C\" void __fastcall fn_00714970(void* self, int edx_unused, uint8_t value)",
