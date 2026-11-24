@@ -1,0 +1,22 @@
+{
+  "va": "0x006F08E0",
+  "size": 44,
+  "orig_symbol": "sub_006F08E0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::forwardArgsToSubobjectAt3300",
+  "class": "Unknown",
+  "signature": "void fn_006F08E0(void* self, uint32_t arg1, void* arg2)",
+  "summary": "Forwards arg1/arg2 to the embedded subobject at self+0x3300 via storeArgsAndNotifyChild with constant 0x006F84D0 and 0, then calls the subobject helper with 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x3300",
+      "type": "uint8_t field_0x3300[] (embedded subobject, used by address",
+      "name": "only)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:15:23Z"
+}

@@ -40304,6 +40304,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006F00E0 (Unknown::forwardToSubobject2200).",
     "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
   },
+  "0x006F08E0": {
+    "name": "Unknown::forwardArgsToSubobjectAt3300",
+    "class": "Unknown",
+    "signature": "void fn_006F08E0(void* self, uint32_t arg1, void* arg2)",
+    "summary": "Forwards arg1/arg2 to the embedded subobject at self+0x3300 via storeArgsAndNotifyChild with constant 0x006F84D0 and 0, then calls the subobject helper with 1.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F0920": {
     "name": "sub_006F0920",
     "class": "Unknown",
