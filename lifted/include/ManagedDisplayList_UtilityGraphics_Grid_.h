@@ -10,6 +10,8 @@
 // Recovered field layout for ManagedDisplayList<UtilityGraphics::Grid>:
 namespace lifted_layout {
 struct ManagedDisplayList_UtilityGraphics_Grid__Fields {
+    // +0x0   void*                    vptr  (evidence: 0x00533E90)
     // +0xC   uint8_t                  field_0x0C  (evidence: 0x0052EF40)
+    // +0x30  GLuint                   displayList  (evidence: 0x00533E90)
 };
 } // namespace lifted_layout

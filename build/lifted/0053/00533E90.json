@@ -1,0 +1,28 @@
+{
+  "va": "0x00533E90",
+  "size": 54,
+  "orig_symbol": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e::vfunc_0",
+  "src_path": "src/templates/ManagedDisplayList.cpp",
+  "lifted_path": "lifted/templates/ManagedDisplayList.cpp",
+  "name": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e::vfunc_0",
+  "class": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e",
+  "signature": "void* fn_00533E90(void* self, uint32_t flags)",
+  "summary": "Scalar deleting destructor: releases the GL display list, runs the base dtor, optionally frees the object, and returns this.",
+  "fields": [
+    {
+      "class": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e",
+      "offset": "+0x30",
+      "type": "GLuint",
+      "name": "displayList"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:10:27Z"
+}
