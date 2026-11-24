@@ -1,0 +1,22 @@
+{
+  "va": "0x00430380",
+  "size": 17,
+  "orig_symbol": "sub_00430380",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "isGlobalObjectField60Is1",
+  "class": "Unknown (object returned by ext_004658C0)",
+  "signature": "uint8_t fn_00430380(void)",
+  "summary": "Returns 1 if the int32 at +0x60 of the object returned by ext_004658C0 equals 1, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "int32_t",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:50:57Z"
+}

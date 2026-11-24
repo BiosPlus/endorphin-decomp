@@ -177,3 +177,21 @@ extern int32_t fn_004691C0(void) {
 }
 } // namespace lift_004691C0
 } // namespace lift_004348F0
+
+// [0x00430380] sub_00430380 (17 bytes)
+namespace lift_00430380 {
+// Known callee 0x004658C0: sub_004658C0 (returns global int32 from mem_00AD6C80)
+extern int32_t ext_004658C0(void);
+
+// @name isGlobalObjectField60Is1
+// @class Unknown (object returned by ext_004658C0)
+// @summary Returns 1 if the int32 at +0x60 of the object returned by ext_004658C0 equals 1, else 0.
+// @field Unknown +0x60 int32_t field_0x60
+uint8_t fn_00430380(void) {
+    const uint32_t handle = static_cast<uint32_t>(ext_004658C0());
+    const auto* base = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(handle));
+    int32_t value = 0;
+    std::memcpy(&value, base + 0x60, sizeof value);
+    return value == 1 ? uint8_t{1} : uint8_t{0};
+}
+} // namespace lift_00430380

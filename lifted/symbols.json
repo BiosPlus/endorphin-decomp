@@ -1464,6 +1464,13 @@
     "summary": "Calls sub_004658C0 to get an object pointer, returns 1 if its int32 at +0x60 is zero, else 0.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430380": {
+    "name": "isGlobalObjectField60Is1",
+    "class": "Unknown (object returned by ext_004658C0)",
+    "signature": "uint8_t fn_00430380(void)",
+    "summary": "Returns 1 if the int32 at +0x60 of the object returned by ext_004658C0 equals 1, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430D40": {
     "name": "sub_00430D40",
     "signature": "extern \"C\" void fn_00430D40(void)",
