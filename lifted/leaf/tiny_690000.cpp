@@ -106,3 +106,28 @@ uint32_t __thiscall sub_00696D90(uint32_t this_ptr) {
     return this_ptr;
 }
 } // namespace lift_00696D90
+
+// [0x0069B680] sub_0069B680 (30 bytes)
+namespace lift_0069B680 {
+// @name shrinkEndByOneSlotIfNonEmpty
+// @summary If the pointer at +0x4 is non-null and (end - begin) >> 3 is nonzero, subtract 8 from the pointer at +0x8.
+// @field <unknown> +0x04 uint32_t field_0x04
+// @field <unknown> +0x08 uint32_t field_0x08
+void fn_0069B680(void* self) {
+    auto& first = lift_field<uint32_t>(self, 0x04);
+    auto& last = lift_field<uint32_t>(self, 0x08);
+
+    if (first == 0) {
+        return;
+    }
+
+    // The original code computes (last - first) >> 3 with `sar`, which sets ZF
+    // from the shifted result; `je` therefore tests that shifted value.
+    const int32_t slots = static_cast<int32_t>(last - first) >> 3;
+    if (slots == 0) {
+        return;
+    }
+
+    last -= 8;
+}
+} // namespace lift_0069B680

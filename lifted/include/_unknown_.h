@@ -18,12 +18,12 @@ struct _unknown__Fields {
     // +0x0   uint32_t                 vtable  (evidence: 0x006B2400) // CONFLICT: multiple definitions at +0x0
     // +0x4   void* field_0x04 (child object; slot 1 invoked with arg 1)  (evidence: 0x006B0C60) // CONFLICT: multiple definitions at +0x4
     // +0x4   float                    field_0x04  (evidence: 0x00669E40) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x007D5BA0, 0x007D8470) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x0069B680, 0x007D5BA0, 0x007D8470) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t*                field_0x04  (evidence: 0x006AD170) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x00515B90) // CONFLICT: multiple definitions at +0x4
     // +0x8   DWORD                    field_0x08  (evidence: 0x00543300) // CONFLICT: multiple definitions at +0x8
     // +0x8   float                    field_0x08  (evidence: 0x00669E40) // CONFLICT: multiple definitions at +0x8
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x00481BB0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00481BB0, 0x0069B680) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x08  (evidence: 0x005E0AB0, 0x005E2C70) // CONFLICT: multiple definitions at +0x8
     // +0xC   DWORD                    field_0x0C  (evidence: 0x00543300) // CONFLICT: multiple definitions at +0xC
     // +0xC   float                    field_0x0C  (evidence: 0x00669E40) // CONFLICT: multiple definitions at +0xC

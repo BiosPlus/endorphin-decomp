@@ -29136,6 +29136,12 @@
     "summary": "Resolves the held symbol chain and writes a two-dword result {value, res-\u003efield_0x04} to the caller's out buffer (zeros if the resolved object's field is null); returns out.",
     "lifted_path": "lifted/ExprParser/SingleVariableContainer.cpp"
   },
+  "0x0069B680": {
+    "name": "shrinkEndByOneSlotIfNonEmpty",
+    "signature": "void fn_0069B680(void* self)",
+    "summary": "If the pointer at +0x4 is non-null and (end - begin) \u003e\u003e 3 is nonzero, subtract 8 from the pointer at +0x8.",
+    "lifted_path": "lifted/leaf/tiny_690000.cpp"
+  },
   "0x006A0340": {
     "name": "Commands::ChangePropertyCommand::vfunc_0",
     "class": "Commands::ChangePropertyCommand",
