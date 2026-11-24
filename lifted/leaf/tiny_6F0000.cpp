@@ -2854,3 +2854,20 @@ void fn_006FC7E0(void* self) {
     lift_field<uint32_t>(self, 0x18) = 0;
 }
 } // namespace lift_006FC7E0
+
+// [0x006FAF10] sub_006FAF10 (30 bytes)
+namespace lift_006FAF10 {
+// @name ForwardToSubobjectVfn30
+// @summary Thiscall forwarder: if this->field_0x08 is null returns 0, otherwise tail-calls the subobject's vtable slot 12 with the two arguments.
+// @field Unknown +0x08 void* field_0x08
+extern BYTE __thiscall fn_006FAF10(void* self, DWORD a1, DWORD a2) {
+    void* sub = lift_field<void*>(self, 0x08);
+    if (sub == nullptr) {
+        return 0;
+    }
+    using VirtualFn = BYTE(__thiscall*)(void* self, DWORD a1, DWORD a2);
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    auto fn = reinterpret_cast<VirtualFn>(vtbl[0x30 / sizeof(void*)]);
+    return fn(sub, a1, a2);
+}
+} // namespace lift_006FAF10

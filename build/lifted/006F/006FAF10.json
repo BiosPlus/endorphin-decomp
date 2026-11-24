@@ -1,0 +1,21 @@
+{
+  "va": "0x006FAF10",
+  "size": 30,
+  "orig_symbol": "sub_006FAF10",
+  "src_path": "src/leaf/tiny_6F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6F0000.cpp",
+  "name": "ForwardToSubobjectVfn30",
+  "signature": "extern \"C\" BYTE __thiscall fn_006FAF10(void* self, DWORD a1, DWORD a2)",
+  "summary": "Thiscall forwarder: if this-\u003efield_0x08 is null returns 0, otherwise tail-calls the subobject's vtable slot 12 with the two arguments.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:20:34Z"
+}
