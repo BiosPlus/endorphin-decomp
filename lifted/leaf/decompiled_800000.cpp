@@ -334,3 +334,14 @@ void sub_0080F910(uintptr_t arg0, uint32_t arg1) {
     *reinterpret_cast<int32_t*>(arg0 + 0x10) += 1;
 }
 } // namespace lift_0080F910
+
+// [0x0080B680]
+namespace lift_0080B680 {
+extern uint32_t ext_00859A20(uint32_t dst_addr, uint32_t src_addr);
+
+// @name strcat_wrapper
+// @summary Forwards destination and source string pointers to strcat_impl (sub_00859A20) and returns the destination pointer.
+uint32_t sub_0080B680(uint32_t dst_addr, uint32_t src_addr) {
+    return ext_00859A20(dst_addr, src_addr);
+}
+} // namespace lift_0080B680
