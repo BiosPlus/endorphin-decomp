@@ -22332,6 +22332,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00665810 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005ACC50": {
+    "name": "Unknown::initWithArgsAndZeroFloats_005ACC50",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_005ACC50(void* self, uint32_t arg0, uint32_t arg1)",
+    "summary": "Calls ext_006657F0(self, 0), stores the second stack argument at +0x10 and the first at +0x14, sets the vtable to mem_0095F594, zeroes +0x18 (int) and the floats at +0x1C..+0x28, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005AD0C0": {
     "name": "Commands::MirrorCollisionModelCommand::vfunc_0",
     "class": "Commands::MirrorCollisionModelCommand",
