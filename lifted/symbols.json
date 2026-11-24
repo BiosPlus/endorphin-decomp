@@ -31672,6 +31672,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x54 and tail-calls sub_006C9A40.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D208C": {
+    "name": "DataTable_006D208C",
+    "signature": "void fn_006D208C(void* self)",
+    "summary": "15-byte constant table (values 0x00,0x04,0x01,0x02); bytes decode as nonsense x86, so this is data, not code",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D2160": {
     "name": "sub_006D2160",
     "signature": "extern \"C\" void fn_006D2160(void)",

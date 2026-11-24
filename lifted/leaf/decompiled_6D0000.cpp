@@ -40,3 +40,18 @@ uint32_t fn_006D2CA0() {
     return ext_006A6C87(arg);
 }
 } // namespace lift_006D2CA0
+
+// [0x006D208C] sub_006D208C (15 bytes)
+namespace lift_006D208C {
+// @name DataTable_006D208C
+// @summary 15-byte constant table (values 0x00,0x04,0x01,0x02); bytes decode as nonsense x86, so this is data, not code
+// NOTE: this range is not a function; the disassembly is data. No calling code was verified.
+static const unsigned char kTable_006D208C[15] = {
+    0x00, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x01, 0x04, 0x02, 0x04, 0x04, 0x04, 0x04,
+};
+
+void fn_006D208C(void* self) {
+    (void)self;
+    (void)kTable_006D208C;
+}
+} // namespace lift_006D208C

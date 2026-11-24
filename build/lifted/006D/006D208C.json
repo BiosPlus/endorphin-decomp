@@ -1,0 +1,13 @@
+{
+  "va": "0x006D208C",
+  "size": 15,
+  "orig_symbol": "sub_006D208C",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "DataTable_006D208C",
+  "signature": "void fn_006D208C(void* self)",
+  "summary": "15-byte constant table (values 0x00,0x04,0x01,0x02); bytes decode as nonsense x86, so this is data, not code",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:32:22Z"
+}
