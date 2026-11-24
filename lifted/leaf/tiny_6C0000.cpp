@@ -1256,3 +1256,24 @@ void ClearGlobalDwordPair() {
     mem_00B5D764 = zero;
 }
 } // namespace lift_006CA080
+
+// [0x006C9E70]
+namespace lift_006C9E70 {
+// @name Unknown::sub_006C9E70
+// @class Unknown
+// @summary Stores a float into element idx of the float array at this+0x14 (idx * 4 byte stride).
+// @field Unknown +0x14 float field_0x14 (float array base; indexed by idx)
+
+struct Unknown {
+    unsigned char field_0x00[0x14];
+    // Array of floats starting at offset 0x14, indexed with a 4-byte stride.
+    float field_0x14[1];
+
+    void sub_006C9E70(int idx, float value);
+};
+
+// Thiscall-style member: ecx = this, args: idx (esp+4), value (esp+8), callee cleans 8 bytes.
+void Unknown::sub_006C9E70(int idx, float value) {
+    field_0x14[idx] = value;
+}
+} // namespace lift_006C9E70

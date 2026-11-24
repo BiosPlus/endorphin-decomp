@@ -1,0 +1,22 @@
+{
+  "va": "0x006C9E70",
+  "size": 15,
+  "orig_symbol": "sub_006C9E70",
+  "src_path": "src/leaf/tiny_6C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6C0000.cpp",
+  "name": "Unknown::sub_006C9E70",
+  "class": "Unknown",
+  "signature": "void Unknown::sub_006C9E70(int idx, float value)",
+  "summary": "Stores a float into element idx of the float array at this+0x14 (idx * 4 byte stride).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "float field_0x14 (float array base; indexed by",
+      "name": "idx)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:31:55Z"
+}

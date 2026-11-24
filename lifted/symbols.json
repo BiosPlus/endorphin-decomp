@@ -31605,6 +31605,13 @@
     "summary": "Getter returning int32_t field at offset +0x4C.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C9E70": {
+    "name": "Unknown::sub_006C9E70",
+    "class": "Unknown",
+    "signature": "void Unknown::sub_006C9E70(int idx, float value)",
+    "summary": "Stores a float into element idx of the float array at this+0x14 (idx * 4 byte stride).",
+    "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
+  },
   "0x006C9E80": {
     "name": "sub_006C9E80",
     "signature": "extern \"C\" float __fastcall fn_006C9E80(void* self)",
