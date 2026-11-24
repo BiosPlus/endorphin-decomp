@@ -41665,9 +41665,10 @@
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
   "0x007D8470": {
-    "name": "CopyVec3FromOffset4C",
-    "signature": "void CopyVec3FromOffset4C(const void* src, float* out)",
-    "summary": "Copies three consecutive floats at src+0x4C..0x54 into out[0..2] (cdecl, void).",
+    "name": "ReturnZeroWord",
+    "class": "\u003cunknown\u003e",
+    "signature": "uint16_t ReturnZeroWord()",
+    "summary": "Returns zero in the low 16 bits of the result register (xor ax, ax; ret).",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
   "0x007D8490": {
