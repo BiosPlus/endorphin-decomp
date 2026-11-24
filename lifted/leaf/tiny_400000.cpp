@@ -484,3 +484,22 @@ void __thiscall sub_00404700(void* self, uint32_t value) {
     }
 }
 } // namespace lift_00404700
+
+// [0x004046E0]
+namespace lift_004046E0 {
+// @name CWnd_SetField54AndInvalidate
+// @summary Sets field_0x54 and invalidates the window rect if hwnd (field_0x20) is non-null.
+// @field CWnd +0x20 uint32_t hwnd
+// @field CWnd +0x54 uint32_t field_0x54
+
+extern void __stdcall ext_InvalidateRect(uint32_t hWnd, uint32_t lpRect, uint32_t bErase);
+
+void __thiscall sub_004046E0(void* self, uint32_t value) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x54) = value;
+    uint32_t hwnd = *reinterpret_cast<uint32_t*>(base + 0x20);
+    if (hwnd != 0) {
+        ext_InvalidateRect(hwnd, 0, 1);
+    }
+}
+} // namespace lift_004046E0

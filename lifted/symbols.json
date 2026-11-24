@@ -366,6 +366,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00404650 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004046E0": {
+    "name": "CWnd_SetField54AndInvalidate",
+    "signature": "void __thiscall sub_004046E0(void* self, uint32_t value)",
+    "summary": "Sets field_0x54 and invalidates the window rect if hwnd (field_0x20) is non-null.",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x00404700": {
     "name": "setValueAndInvalidate",
     "signature": "void __thiscall sub_00404700(void* self, uint32_t value)",
@@ -675,6 +681,12 @@
     "signature": "extern \"C\" void* __fastcall fn_0040F0D0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0040EF90 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x0040F270": {
+    "name": "sub_0040F270",
+    "signature": "extern \"C\" int32_t __stdcall fn_0040F270(uintptr_t arg0)",
+    "summary": "Sets flags 0xb at offset +0x2c, calls thunk_MFC80_ord_1903, and returns -1 if result is -1 else 0",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
   "0x0040F290": {
     "name": "Unknown::ResetFieldsAndSetVtable",
