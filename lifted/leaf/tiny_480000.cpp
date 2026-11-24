@@ -121,3 +121,23 @@ void Unknown::setField60IfChanged(uint32_t value) {
     }
 }
 } // namespace lift_0048FB20
+
+// [0x0048ABF0] sub_0048ABF0 (16 bytes)
+namespace lift_0048ABF0 {
+// @name sub_0048ABF0
+// @summary Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).
+namespace lift_005B72E0 {
+extern void ext_0048A810(void* self);
+
+// @name Unknown::ForwardToSubobject158
+// @class Unknown
+// @summary Loads the DWORD at +0x158; if non-zero, tail-forwards to ext_005CE9B0 with it as self.
+// @field Unknown +0x158 DWORD field_0x158
+void fn_0048ABF0(void* self) {
+    DWORD sub = *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(self) + 0x234);
+    if (sub != 0) {
+        ext_0048A810(reinterpret_cast<void*>(static_cast<uintptr_t>(sub)));
+    }
+}
+} // namespace lift_005B72E0
+} // namespace lift_0048ABF0

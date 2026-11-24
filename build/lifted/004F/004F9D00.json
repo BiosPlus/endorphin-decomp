@@ -1,0 +1,22 @@
+{
+  "va": "0x004F9D00",
+  "size": 19,
+  "orig_symbol": "VMCSModes::DefaultImplementation::vfunc_97",
+  "src_path": "src/VMCSModes/DefaultImplementation.cpp",
+  "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp",
+  "name": "VMCSModes::DefaultImplementation::vfunc_97",
+  "class": "VMCSModes::DefaultImplementation",
+  "signature": "uintptr_t fn_004F9D00(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004F9E50 (VMCSModes::DefaultImplementation::vfunc_133).",
+  "fields": [
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "delegate_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:36:30Z"
+}

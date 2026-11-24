@@ -177,3 +177,63 @@ void sub_005CF910() {
     mem_00B3F200 = 0;
 }
 } // namespace lift_005CF910
+
+// [0x005C3170] sub_005C3170 (16 bytes)
+namespace lift_005C3170 {
+// @name sub_005C3170
+// @summary Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).
+namespace lift_005B72E0 {
+extern void ext_005B72E0(void* self);
+
+// @name Unknown::ForwardToSubobject158
+// @class Unknown
+// @summary Loads the DWORD at +0x158; if non-zero, tail-forwards to ext_005CE9B0 with it as self.
+// @field Unknown +0x158 DWORD field_0x158
+void fn_005C3170(void* self) {
+    DWORD sub = *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(self) + 0x164);
+    if (sub != 0) {
+        ext_005B72E0(reinterpret_cast<void*>(static_cast<uintptr_t>(sub)));
+    }
+}
+} // namespace lift_005B72E0
+} // namespace lift_005C3170
+
+// [0x005CE910] sub_005CE910 (16 bytes)
+namespace lift_005CE910 {
+// @name sub_005CE910
+// @summary Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).
+namespace lift_005B72E0 {
+extern void ext_00648120(void* self);
+
+// @name Unknown::ForwardToSubobject158
+// @class Unknown
+// @summary Loads the DWORD at +0x158; if non-zero, tail-forwards to ext_005CE9B0 with it as self.
+// @field Unknown +0x158 DWORD field_0x158
+void fn_005CE910(void* self) {
+    DWORD sub = *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(self) + 0xAC);
+    if (sub != 0) {
+        ext_00648120(reinterpret_cast<void*>(static_cast<uintptr_t>(sub)));
+    }
+}
+} // namespace lift_005B72E0
+} // namespace lift_005CE910
+
+// [0x005CE920] sub_005CE920 (16 bytes)
+namespace lift_005CE920 {
+// @name sub_005CE920
+// @summary Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).
+namespace lift_005B72E0 {
+extern void ext_00648150(void* self);
+
+// @name Unknown::ForwardToSubobject158
+// @class Unknown
+// @summary Loads the DWORD at +0x158; if non-zero, tail-forwards to ext_005CE9B0 with it as self.
+// @field Unknown +0x158 DWORD field_0x158
+void fn_005CE920(void* self) {
+    DWORD sub = *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(self) + 0xAC);
+    if (sub != 0) {
+        ext_00648150(reinterpret_cast<void*>(static_cast<uintptr_t>(sub)));
+    }
+}
+} // namespace lift_005B72E0
+} // namespace lift_005CE920

@@ -24,3 +24,37 @@ extern void __thiscall fn_0058F570(void* self, float value) {
     ext_0058B4E0(self, value);
 }
 } // namespace lift_0058F570
+
+// [0x0058F600] sub_0058F600 (16 bytes)
+namespace lift_0058F600 {
+// @name sub_0058F600
+// @summary Auto-lifted identical-shape clone of 0x0058F590 (sub_0058F590).
+namespace lift_0058F590 {
+extern float ext_0058ABC0(float value);
+
+// @name sub_0058F590
+// @class (none)
+// @summary Stdcall thunk: forwards its single float argument to sub_0058B5A0 and returns that call's result.
+// @field (none)
+float fn_0058F600(float value) {
+    return ext_0058ABC0(value);
+}
+} // namespace lift_0058F590
+} // namespace lift_0058F600
+
+// [0x0058F620] sub_0058F620 (16 bytes)
+namespace lift_0058F620 {
+// @name sub_0058F620
+// @summary Auto-lifted identical-shape clone of 0x0058F590 (sub_0058F590).
+namespace lift_0058F590 {
+extern float ext_0058AD80(float value);
+
+// @name sub_0058F590
+// @class (none)
+// @summary Stdcall thunk: forwards its single float argument to sub_0058B5A0 and returns that call's result.
+// @field (none)
+float fn_0058F620(float value) {
+    return ext_0058AD80(value);
+}
+} // namespace lift_0058F590
+} // namespace lift_0058F620

@@ -1,0 +1,22 @@
+{
+  "va": "0x0050AD20",
+  "size": 13,
+  "orig_symbol": "sub_0050AD20",
+  "src_path": "src/leaf/tiny_500000.cpp",
+  "lifted_path": "lifted/leaf/tiny_500000.cpp",
+  "name": "sub_0050AD20",
+  "class": "Unknown",
+  "signature": "void fn_0050AD20(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "DWORD",
+      "name": "field_0x158"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:36:30Z"
+}

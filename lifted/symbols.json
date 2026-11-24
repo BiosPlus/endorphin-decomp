@@ -1326,6 +1326,13 @@
     "summary": "Virtual getter returning the address of the global slot mem_0092F82C (self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0042FC20": {
+    "name": "sub_0042FC20",
+    "class": "Unknown",
+    "signature": "void fn_0042FC20(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
+    "lifted_path": "lifted/leaf/tiny_420000.cpp"
+  },
   "0x0042FE60": {
     "name": "sub_0042FE60",
     "signature": "extern \"C\" void fn_0042FE60(void)",
@@ -1337,6 +1344,13 @@
     "signature": "extern \"C\" void fn_0042FEB0(void)",
     "summary": "Pure jump thunk forwarding to sub_0042FE90.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x0042FEC0": {
+    "name": "sub_0042FEC0",
+    "class": "Unknown",
+    "signature": "void fn_0042FEC0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
+    "lifted_path": "lifted/leaf/tiny_420000.cpp"
   },
   "0x004302A0": {
     "name": "sub_004302A0",
@@ -3917,6 +3931,13 @@
     "summary": "Pure jump thunk forwarding to sub_0067B1F0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0046F8F0": {
+    "name": "sub_0046F8F0",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0046F8F0(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x0046F910": {
     "name": "Unknown::ReadF8ObjectByte12C",
     "class": "Unknown",
@@ -4567,6 +4588,13 @@
     "signature": "int fn_0060A070(void* self)",
     "summary": "Forwards the object's first dword to ext_00493D90 and returns 0 (stdcall, one arg).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
+  "0x0048ABF0": {
+    "name": "sub_0048ABF0",
+    "class": "Unknown",
+    "signature": "void fn_0048ABF0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
+    "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
   "0x0048AD50": {
     "name": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::fireWithStrength(float), 0}\u003e::vfunc_41",
@@ -7541,6 +7569,20 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004CCAF0": {
+    "name": "sub_004CCAF0",
+    "class": "Unknown",
+    "signature": "void fn_004CCAF0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
+    "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
+  },
+  "0x004CCB00": {
+    "name": "sub_004CCB00",
+    "class": "Unknown",
+    "signature": "void fn_004CCB00(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
+    "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
+  },
   "0x004CCB90": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setPositionStrengthFromFSM(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setPositionStrengthFromFSM(class NM::Vector3 const \u0026), 0}\u003e",
@@ -9463,6 +9505,13 @@
     "summary": "Forwards vfunc_34 to sub_0046F8A0 on the object at delegate_0x8 + 0x14",
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
   },
+  "0x004F9D00": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_97",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uintptr_t fn_004F9D00(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F9E50 (VMCSModes::DefaultImplementation::vfunc_133).",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
+  },
   "0x004F9E50": {
     "name": "VMCSModes::DefaultImplementation::vfunc_133",
     "class": "VMCSModes::DefaultImplementation",
@@ -9947,6 +9996,13 @@
     "summary": "Lazily caches ext_0050A140() once, then calls ext_0055DA20 on arg1 with the cached value and this+0x04; returns arg1.",
     "lifted_path": "lifted/NMData/Task.cpp"
   },
+  "0x0050AD20": {
+    "name": "sub_0050AD20",
+    "class": "Unknown",
+    "signature": "void fn_0050AD20(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
+    "lifted_path": "lifted/leaf/tiny_500000.cpp"
+  },
   "0x0050BFE0": {
     "name": "sub_0050BFE0",
     "signature": "extern \"C\" void fn_0050BFE0(void)",
@@ -10025,6 +10081,13 @@
     "name": "sub_0050EA10",
     "signature": "double __thiscall sub_0050EA10(void* self)",
     "summary": "Returns a double at offset 0x20 from the object pointed to by this+0x8.",
+    "lifted_path": "lifted/leaf/tiny_500000.cpp"
+  },
+  "0x0050F180": {
+    "name": "sub_0050F180",
+    "class": "Unknown",
+    "signature": "void fn_0050F180(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
   "0x0050F190": {
@@ -13346,6 +13409,20 @@
     "summary": "Pure jump thunk forwarding to sub_0058AB90.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0058F600": {
+    "name": "sub_0058F600",
+    "class": "(none)",
+    "signature": "float fn_0058F600(float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058F590 (sub_0058F590).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
+  "0x0058F620": {
+    "name": "sub_0058F620",
+    "class": "(none)",
+    "signature": "float fn_0058F620(float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0058F590 (sub_0058F590).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x0058F6B0": {
     "name": "NMData::AxisDefineSensorData::vfunc_14",
     "class": "NMData::AxisDefineSensorData",
@@ -15439,6 +15516,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005C32B0 (NMData::FluidObjectData::vfunc_15).",
     "lifted_path": "lifted/NMData/CollisionModelDataBase.cpp"
   },
+  "0x005C3170": {
+    "name": "sub_005C3170",
+    "class": "Unknown",
+    "signature": "void fn_005C3170(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
+    "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
+  },
   "0x005C3180": {
     "name": "NMData::CollisionModelData::GetSharedName",
     "class": "NMData::CollisionModelData",
@@ -16120,6 +16204,20 @@
     "name": "sub_005CE8C0",
     "signature": "extern \"C\" void __fastcall fn_005CE8C0(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0x24 and tail-calls sub_005B2130.",
+    "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
+  },
+  "0x005CE910": {
+    "name": "sub_005CE910",
+    "class": "Unknown",
+    "signature": "void fn_005CE910(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
+    "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
+  },
+  "0x005CE920": {
+    "name": "sub_005CE920",
+    "class": "Unknown",
+    "signature": "void fn_005CE920(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
   },
   "0x005CE930": {
@@ -31180,6 +31278,13 @@
     "summary": "Getter returning int32_t field at offset +0xF4.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C78B0": {
+    "name": "sub_006C78B0",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_006C78B0(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
+  },
   "0x006C8500": {
     "name": "sub_006C8500",
     "signature": "extern \"C\" void __fastcall fn_006C8500(void* self)",
@@ -33846,6 +33951,34 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00700840 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x007008C0": {
+    "name": "sub_007008C0",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_007008C0(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x00700910": {
+    "name": "sub_00700910",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00700910(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x00700930": {
+    "name": "sub_00700930",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00700930(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x00700950": {
+    "name": "sub_00700950",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00700950(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x00700980": {
     "name": "sub_00700980",
     "class": "VMCSModes::DefaultImplementation",
@@ -35015,6 +35148,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00715650": {
+    "name": "sub_00715650",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00715650(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x00717D40": {
     "name": "sub_00717D40",
     "signature": "extern \"C\" void* __fastcall fn_00717D40(void* self, int edx_unused, unsigned int flags)",
@@ -35202,6 +35342,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071B900": {
+    "name": "sub_0071B900",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0071B900(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x0071BFB0": {
     "name": "sub_0071BFB0",
     "class": "VMCSModes::DefaultImplementation",
@@ -35223,11 +35370,53 @@
     "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C390": {
+    "name": "sub_0071C390",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0071C390(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x0071C4B0": {
     "name": "sub_0071C4B0",
     "class": "VMCSModes::DefaultImplementation",
     "signature": "void fn_0071C4B0(void* self, uint32_t value)",
     "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C4D0": {
+    "name": "sub_0071C4D0",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0071C4D0(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C4F0": {
+    "name": "sub_0071C4F0",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0071C4F0(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C510": {
+    "name": "sub_0071C510",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0071C510(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C540": {
+    "name": "sub_0071C540",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0071C540(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C550": {
+    "name": "sub_0071C550",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0071C550(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
   "0x0071C570": {
@@ -35240,6 +35429,20 @@
     "name": "sub_0071C580",
     "signature": "extern \"C\" uint8_t __fastcall fn_0071C580(void* self)",
     "summary": "Getter returning uint8_t field at offset +0xE8.",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C590": {
+    "name": "sub_0071C590",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0071C590(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C5B0": {
+    "name": "sub_0071C5B0",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0071C5B0(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
   "0x0071C5D0": {
@@ -35273,6 +35476,20 @@
     "summary": "Getter returning uint8_t field at offset +0xEA.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C730": {
+    "name": "sub_0071C730",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0071C730(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C8C0": {
+    "name": "sub_0071C8C0",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0071C8C0(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x0071C910": {
     "name": "sub_0071C910",
     "signature": "extern \"C\" void __fastcall fn_0071C910(void* self, int edx_unused, int32_t value)",
@@ -35290,6 +35507,20 @@
     "class": "VMCSModes::DefaultImplementation",
     "signature": "void fn_0071C930(void* self, uint32_t value)",
     "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C950": {
+    "name": "sub_0071C950",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0071C950(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C980": {
+    "name": "sub_0071C980",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0071C980(Unknown* self, uint8_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
   "0x0071C990": {
@@ -35411,6 +35642,13 @@
     "name": "sub_00723A30",
     "signature": "extern \"C\" void fn_00723A30(void)",
     "summary": "Pure jump thunk forwarding to sub_007892B0.",
+    "lifted_path": "lifted/leaf/tiny_720000.cpp"
+  },
+  "0x00726690": {
+    "name": "sub_00726690",
+    "class": "Unknown",
+    "signature": "void fn_00726690(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
   "0x00728D30": {

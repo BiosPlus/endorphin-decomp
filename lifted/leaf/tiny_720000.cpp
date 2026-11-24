@@ -270,3 +270,23 @@ DWORD __thiscall fn_0072DC50(void* self, DWORD arg) {
     return slot(self, 0, arg);
 }
 } // namespace lift_0072DC50
+
+// [0x00726690] sub_00726690 (16 bytes)
+namespace lift_00726690 {
+// @name sub_00726690
+// @summary Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).
+namespace lift_005B72E0 {
+extern void ext_00789BE0(void* self);
+
+// @name Unknown::ForwardToSubobject158
+// @class Unknown
+// @summary Loads the DWORD at +0x158; if non-zero, tail-forwards to ext_005CE9B0 with it as self.
+// @field Unknown +0x158 DWORD field_0x158
+void fn_00726690(void* self) {
+    DWORD sub = *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(self) + 0x250);
+    if (sub != 0) {
+        ext_00789BE0(reinterpret_cast<void*>(static_cast<uintptr_t>(sub)));
+    }
+}
+} // namespace lift_005B72E0
+} // namespace lift_00726690

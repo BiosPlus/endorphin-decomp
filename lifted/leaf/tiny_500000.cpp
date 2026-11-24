@@ -113,3 +113,43 @@ extern void __thiscall fn_0050E350(void* self, uint32_t value) {
     mem_00AEC0A4 = value;                        // mov [0xaec0a4], eax
 }
 } // namespace lift_0050E350
+
+// [0x0050AD20] sub_0050AD20 (13 bytes)
+namespace lift_0050AD20 {
+// @name sub_0050AD20
+// @summary Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).
+namespace lift_005B72E0 {
+extern void ext_0050AB00(void* self);
+
+// @name Unknown::ForwardToSubobject158
+// @class Unknown
+// @summary Loads the DWORD at +0x158; if non-zero, tail-forwards to ext_005CE9B0 with it as self.
+// @field Unknown +0x158 DWORD field_0x158
+void fn_0050AD20(void* self) {
+    DWORD sub = *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(self) + 0x34);
+    if (sub != 0) {
+        ext_0050AB00(reinterpret_cast<void*>(static_cast<uintptr_t>(sub)));
+    }
+}
+} // namespace lift_005B72E0
+} // namespace lift_0050AD20
+
+// [0x0050F180] sub_0050F180 (13 bytes)
+namespace lift_0050F180 {
+// @name sub_0050F180
+// @summary Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).
+namespace lift_005B72E0 {
+extern void ext_0050F100(void* self);
+
+// @name Unknown::ForwardToSubobject158
+// @class Unknown
+// @summary Loads the DWORD at +0x158; if non-zero, tail-forwards to ext_005CE9B0 with it as self.
+// @field Unknown +0x158 DWORD field_0x158
+void fn_0050F180(void* self) {
+    DWORD sub = *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(self) + 0x74);
+    if (sub != 0) {
+        ext_0050F100(reinterpret_cast<void*>(static_cast<uintptr_t>(sub)));
+    }
+}
+} // namespace lift_005B72E0
+} // namespace lift_0050F180

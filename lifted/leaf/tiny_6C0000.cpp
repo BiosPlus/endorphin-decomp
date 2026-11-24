@@ -1277,3 +1277,26 @@ void Unknown::sub_006C9E70(int idx, float value) {
     field_0x14[idx] = value;
 }
 } // namespace lift_006C9E70
+
+// [0x006C78B0] sub_006C78B0 (19 bytes)
+namespace lift_006C78B0 {
+// @name sub_006C78B0
+// @summary Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).
+namespace lift_005304A0 {
+// @name Unknown::SetByteAt1D8
+// @class Unknown
+// @summary Stores a byte argument into the sub-object at this->+0x10 at offset +0x1D8.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x1D8 uint8_t field_0x1D8
+
+struct Unknown {
+    uint8_t pad_0000[0xF0];
+    uint8_t* field_0x10;
+};
+
+void __thiscall fn_006C78B0(Unknown* self, uint8_t value) {
+    uint8_t* sub = self->field_0x10;
+    sub[0xD78] = value;
+}
+} // namespace lift_005304A0
+} // namespace lift_006C78B0

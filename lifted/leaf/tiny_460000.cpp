@@ -583,3 +583,26 @@ void fn_0046FA80(void* self) {
 }
 } // namespace lift_0046FAA0
 } // namespace lift_0046FA80
+
+// [0x0046F8F0] sub_0046F8F0 (19 bytes)
+namespace lift_0046F8F0 {
+// @name sub_0046F8F0
+// @summary Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).
+namespace lift_005304A0 {
+// @name Unknown::SetByteAt1D8
+// @class Unknown
+// @summary Stores a byte argument into the sub-object at this->+0x10 at offset +0x1D8.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x1D8 uint8_t field_0x1D8
+
+struct Unknown {
+    uint8_t pad_0000[0xF8];
+    uint8_t* field_0x10;
+};
+
+void __thiscall fn_0046F8F0(Unknown* self, uint8_t value) {
+    uint8_t* sub = self->field_0x10;
+    sub[0x12C] = value;
+}
+} // namespace lift_005304A0
+} // namespace lift_0046F8F0

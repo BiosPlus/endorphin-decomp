@@ -1,0 +1,22 @@
+{
+  "va": "0x004CCAF0",
+  "size": 16,
+  "orig_symbol": "sub_004CCAF0",
+  "src_path": "src/leaf/tiny_4C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4C0000.cpp",
+  "name": "sub_004CCAF0",
+  "class": "Unknown",
+  "signature": "void fn_004CCAF0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "DWORD",
+      "name": "field_0x158"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:36:30Z"
+}

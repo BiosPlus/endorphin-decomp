@@ -1,0 +1,28 @@
+{
+  "va": "0x0071B900",
+  "size": 16,
+  "orig_symbol": "sub_0071B900",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "sub_0071B900",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_0071B900(Unknown* self, uint8_t value)",
+  "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1D8",
+      "type": "uint8_t",
+      "name": "field_0x1D8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:36:30Z"
+}

@@ -65,3 +65,43 @@ void fn_00422CE0(void* self, DWORD value) {
     lift_field<DWORD>(self, 0x78) = value + 0x5C;
 }
 } // namespace lift_00422CE0
+
+// [0x0042FC20] sub_0042FC20 (16 bytes)
+namespace lift_0042FC20 {
+// @name sub_0042FC20
+// @summary Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).
+namespace lift_005B72E0 {
+extern void ext_0044B5E0(void* self);
+
+// @name Unknown::ForwardToSubobject158
+// @class Unknown
+// @summary Loads the DWORD at +0x158; if non-zero, tail-forwards to ext_005CE9B0 with it as self.
+// @field Unknown +0x158 DWORD field_0x158
+void fn_0042FC20(void* self) {
+    DWORD sub = *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(self) + 0x100);
+    if (sub != 0) {
+        ext_0044B5E0(reinterpret_cast<void*>(static_cast<uintptr_t>(sub)));
+    }
+}
+} // namespace lift_005B72E0
+} // namespace lift_0042FC20
+
+// [0x0042FEC0] sub_0042FEC0 (16 bytes)
+namespace lift_0042FEC0 {
+// @name sub_0042FEC0
+// @summary Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).
+namespace lift_005B72E0 {
+extern void ext_0044B6B0(void* self);
+
+// @name Unknown::ForwardToSubobject158
+// @class Unknown
+// @summary Loads the DWORD at +0x158; if non-zero, tail-forwards to ext_005CE9B0 with it as self.
+// @field Unknown +0x158 DWORD field_0x158
+void fn_0042FEC0(void* self) {
+    DWORD sub = *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(self) + 0x100);
+    if (sub != 0) {
+        ext_0044B6B0(reinterpret_cast<void*>(static_cast<uintptr_t>(sub)));
+    }
+}
+} // namespace lift_005B72E0
+} // namespace lift_0042FEC0

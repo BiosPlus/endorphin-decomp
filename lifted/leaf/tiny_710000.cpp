@@ -1723,3 +1723,325 @@ void fn_0071E660(void* self, DWORD index, BYTE value) {
     base[index + 0x20] = value;
 }
 } // namespace lift_0071E660
+
+// [0x00715650] sub_00715650 (16 bytes)
+namespace lift_00715650 {
+// @name sub_00715650
+// @summary Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).
+namespace lift_005304A0 {
+// @name Unknown::SetByteAt1D8
+// @class Unknown
+// @summary Stores a byte argument into the sub-object at this->+0x10 at offset +0x1D8.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x1D8 uint8_t field_0x1D8
+
+struct Unknown {
+    uint8_t pad_0000[0x10];
+    uint8_t* field_0x10;
+};
+
+void __thiscall fn_00715650(Unknown* self, uint8_t value) {
+    uint8_t* sub = self->field_0x10;
+    sub[0x310] = value;
+}
+} // namespace lift_005304A0
+} // namespace lift_00715650
+
+// [0x0071B900] sub_0071B900 (16 bytes)
+namespace lift_0071B900 {
+// @name sub_0071B900
+// @summary Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).
+namespace lift_005304A0 {
+// @name Unknown::SetByteAt1D8
+// @class Unknown
+// @summary Stores a byte argument into the sub-object at this->+0x10 at offset +0x1D8.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x1D8 uint8_t field_0x1D8
+
+struct Unknown {
+    uint8_t pad_0000[0xC];
+    uint8_t* field_0x10;
+};
+
+void __thiscall fn_0071B900(Unknown* self, uint8_t value) {
+    uint8_t* sub = self->field_0x10;
+    sub[0x1168] = value;
+}
+} // namespace lift_005304A0
+} // namespace lift_0071B900
+
+// [0x0071C390] sub_0071C390 (16 bytes)
+namespace lift_0071C390 {
+// @name sub_0071C390
+// @summary Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).
+namespace lift_005304A0 {
+// @name Unknown::SetByteAt1D8
+// @class Unknown
+// @summary Stores a byte argument into the sub-object at this->+0x10 at offset +0x1D8.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x1D8 uint8_t field_0x1D8
+
+struct Unknown {
+    uint8_t pad_0000[0xC];
+    uint8_t* field_0x10;
+};
+
+void __thiscall fn_0071C390(Unknown* self, uint8_t value) {
+    uint8_t* sub = self->field_0x10;
+    sub[0x15A8] = value;
+}
+} // namespace lift_005304A0
+} // namespace lift_0071C390
+
+// [0x0071C4D0] sub_0071C4D0 (16 bytes)
+namespace lift_0071C4D0 {
+// @name sub_0071C4D0
+// @summary Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).
+namespace lift_005304A0 {
+// @name Unknown::SetByteAt1D8
+// @class Unknown
+// @summary Stores a byte argument into the sub-object at this->+0x10 at offset +0x1D8.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x1D8 uint8_t field_0x1D8
+
+struct Unknown {
+    uint8_t pad_0000[0xC];
+    uint8_t* field_0x10;
+};
+
+void __thiscall fn_0071C4D0(Unknown* self, uint8_t value) {
+    uint8_t* sub = self->field_0x10;
+    sub[0x10E0] = value;
+}
+} // namespace lift_005304A0
+} // namespace lift_0071C4D0
+
+// [0x0071C4F0] sub_0071C4F0 (16 bytes)
+namespace lift_0071C4F0 {
+// @name sub_0071C4F0
+// @summary Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).
+namespace lift_005304A0 {
+// @name Unknown::SetByteAt1D8
+// @class Unknown
+// @summary Stores a byte argument into the sub-object at this->+0x10 at offset +0x1D8.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x1D8 uint8_t field_0x1D8
+
+struct Unknown {
+    uint8_t pad_0000[0xC];
+    uint8_t* field_0x10;
+};
+
+void __thiscall fn_0071C4F0(Unknown* self, uint8_t value) {
+    uint8_t* sub = self->field_0x10;
+    sub[0xEC0] = value;
+}
+} // namespace lift_005304A0
+} // namespace lift_0071C4F0
+
+// [0x0071C510] sub_0071C510 (16 bytes)
+namespace lift_0071C510 {
+// @name sub_0071C510
+// @summary Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).
+namespace lift_005304A0 {
+// @name Unknown::SetByteAt1D8
+// @class Unknown
+// @summary Stores a byte argument into the sub-object at this->+0x10 at offset +0x1D8.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x1D8 uint8_t field_0x1D8
+
+struct Unknown {
+    uint8_t pad_0000[0xC];
+    uint8_t* field_0x10;
+};
+
+void __thiscall fn_0071C510(Unknown* self, uint8_t value) {
+    uint8_t* sub = self->field_0x10;
+    sub[0x860] = value;
+}
+} // namespace lift_005304A0
+} // namespace lift_0071C510
+
+// [0x0071C540] sub_0071C540 (16 bytes)
+namespace lift_0071C540 {
+// @name sub_0071C540
+// @summary Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).
+namespace lift_005304A0 {
+// @name Unknown::SetByteAt1D8
+// @class Unknown
+// @summary Stores a byte argument into the sub-object at this->+0x10 at offset +0x1D8.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x1D8 uint8_t field_0x1D8
+
+struct Unknown {
+    uint8_t pad_0000[0xC];
+    uint8_t* field_0x10;
+};
+
+void __thiscall fn_0071C540(Unknown* self, uint8_t value) {
+    uint8_t* sub = self->field_0x10;
+    sub[0x970] = value;
+}
+} // namespace lift_005304A0
+} // namespace lift_0071C540
+
+// [0x0071C550] sub_0071C550 (16 bytes)
+namespace lift_0071C550 {
+// @name sub_0071C550
+// @summary Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).
+namespace lift_005304A0 {
+// @name Unknown::SetByteAt1D8
+// @class Unknown
+// @summary Stores a byte argument into the sub-object at this->+0x10 at offset +0x1D8.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x1D8 uint8_t field_0x1D8
+
+struct Unknown {
+    uint8_t pad_0000[0xC];
+    uint8_t* field_0x10;
+};
+
+void __thiscall fn_0071C550(Unknown* self, uint8_t value) {
+    uint8_t* sub = self->field_0x10;
+    sub[0x7D8] = value;
+}
+} // namespace lift_005304A0
+} // namespace lift_0071C550
+
+// [0x0071C590] sub_0071C590 (16 bytes)
+namespace lift_0071C590 {
+// @name sub_0071C590
+// @summary Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).
+namespace lift_005304A0 {
+// @name Unknown::SetByteAt1D8
+// @class Unknown
+// @summary Stores a byte argument into the sub-object at this->+0x10 at offset +0x1D8.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x1D8 uint8_t field_0x1D8
+
+struct Unknown {
+    uint8_t pad_0000[0xC];
+    uint8_t* field_0x10;
+};
+
+void __thiscall fn_0071C590(Unknown* self, uint8_t value) {
+    uint8_t* sub = self->field_0x10;
+    sub[0x9F8] = value;
+}
+} // namespace lift_005304A0
+} // namespace lift_0071C590
+
+// [0x0071C5B0] sub_0071C5B0 (16 bytes)
+namespace lift_0071C5B0 {
+// @name sub_0071C5B0
+// @summary Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).
+namespace lift_005304A0 {
+// @name Unknown::SetByteAt1D8
+// @class Unknown
+// @summary Stores a byte argument into the sub-object at this->+0x10 at offset +0x1D8.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x1D8 uint8_t field_0x1D8
+
+struct Unknown {
+    uint8_t pad_0000[0xC];
+    uint8_t* field_0x10;
+};
+
+void __thiscall fn_0071C5B0(Unknown* self, uint8_t value) {
+    uint8_t* sub = self->field_0x10;
+    sub[0x1630] = value;
+}
+} // namespace lift_005304A0
+} // namespace lift_0071C5B0
+
+// [0x0071C730] sub_0071C730 (16 bytes)
+namespace lift_0071C730 {
+// @name sub_0071C730
+// @summary Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).
+namespace lift_005304A0 {
+// @name Unknown::SetByteAt1D8
+// @class Unknown
+// @summary Stores a byte argument into the sub-object at this->+0x10 at offset +0x1D8.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x1D8 uint8_t field_0x1D8
+
+struct Unknown {
+    uint8_t pad_0000[0xC];
+    uint8_t* field_0x10;
+};
+
+void __thiscall fn_0071C730(Unknown* self, uint8_t value) {
+    uint8_t* sub = self->field_0x10;
+    sub[0x6B0] = value;
+}
+} // namespace lift_005304A0
+} // namespace lift_0071C730
+
+// [0x0071C8C0] sub_0071C8C0 (16 bytes)
+namespace lift_0071C8C0 {
+// @name sub_0071C8C0
+// @summary Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).
+namespace lift_005304A0 {
+// @name Unknown::SetByteAt1D8
+// @class Unknown
+// @summary Stores a byte argument into the sub-object at this->+0x10 at offset +0x1D8.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x1D8 uint8_t field_0x1D8
+
+struct Unknown {
+    uint8_t pad_0000[0xC];
+    uint8_t* field_0x10;
+};
+
+void __thiscall fn_0071C8C0(Unknown* self, uint8_t value) {
+    uint8_t* sub = self->field_0x10;
+    sub[0x1B80] = value;
+}
+} // namespace lift_005304A0
+} // namespace lift_0071C8C0
+
+// [0x0071C950] sub_0071C950 (16 bytes)
+namespace lift_0071C950 {
+// @name sub_0071C950
+// @summary Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).
+namespace lift_005304A0 {
+// @name Unknown::SetByteAt1D8
+// @class Unknown
+// @summary Stores a byte argument into the sub-object at this->+0x10 at offset +0x1D8.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x1D8 uint8_t field_0x1D8
+
+struct Unknown {
+    uint8_t pad_0000[0xC];
+    uint8_t* field_0x10;
+};
+
+void __thiscall fn_0071C950(Unknown* self, uint8_t value) {
+    uint8_t* sub = self->field_0x10;
+    sub[0x1C90] = value;
+}
+} // namespace lift_005304A0
+} // namespace lift_0071C950
+
+// [0x0071C980] sub_0071C980 (16 bytes)
+namespace lift_0071C980 {
+// @name sub_0071C980
+// @summary Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).
+namespace lift_005304A0 {
+// @name Unknown::SetByteAt1D8
+// @class Unknown
+// @summary Stores a byte argument into the sub-object at this->+0x10 at offset +0x1D8.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x1D8 uint8_t field_0x1D8
+
+struct Unknown {
+    uint8_t pad_0000[0xC];
+    uint8_t* field_0x10;
+};
+
+void __thiscall fn_0071C980(Unknown* self, uint8_t value) {
+    uint8_t* sub = self->field_0x10;
+    sub[0x1960] = value;
+}
+} // namespace lift_005304A0
+} // namespace lift_0071C980
