@@ -1,0 +1,27 @@
+{
+  "va": "0x006E8790",
+  "size": 16,
+  "orig_symbol": "sub_006E8790",
+  "src_path": "src/leaf/tiny_6E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6E0000.cpp",
+  "name": "sub_006E8790",
+  "signature": "void sub_006E8790(void* self, uint8_t value)",
+  "summary": "Stores the byte argument at offset 0x68 of the object pointed to by this+0x00.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ptr_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "uint8_t",
+      "name": "field_0x68"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:41:26Z"
+}

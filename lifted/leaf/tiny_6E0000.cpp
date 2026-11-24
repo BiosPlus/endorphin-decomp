@@ -614,3 +614,16 @@ double sub_006E86E0(void* self) {
     return *reinterpret_cast<double*>(target + 0x60);
 }
 } // namespace lift_006E86E0
+
+// [0x006E8790]
+namespace lift_006E8790 {
+// @name sub_006E8790
+// @summary Stores the byte argument at offset 0x68 of the object pointed to by this+0x00.
+// @field Unknown +0x00 void* ptr_0x00
+// @field Unknown +0x68 uint8_t field_0x68
+
+void sub_006E8790(void* self, uint8_t value) {
+    uint8_t* target = *static_cast<uint8_t**>(self);
+    *(target + 0x68) = value;
+}
+} // namespace lift_006E8790
