@@ -1,0 +1,13 @@
+{
+  "va": "0x006FD090",
+  "size": 57,
+  "orig_symbol": "sub_006FD090",
+  "src_path": "src/clones/auto_clones_6F0000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_6F0000.cpp",
+  "name": "initHugeVectorGlobals",
+  "signature": "void sub_006FD090()",
+  "summary": "Initializes three 64-bit double globals (0x00B5E450..0x00B5E464) to MSVCR80._HUGE.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:22:32Z"
+}

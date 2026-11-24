@@ -48800,6 +48800,12 @@
     "summary": "Stores four constant words into globals mem_00B5E248/250/24C/254 (no class context).",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006F95E0": {
+    "name": "isKnownGlobalId",
+    "signature": "uint8_t __stdcall sub_006F95E0(uint32_t value)",
+    "summary": "Checks whether the given 32-bit value matches any of four global values.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F9620": {
     "name": "sub_006F9620",
     "signature": "extern \"C\" int32_t __cdecl fn_006F9620(void)",
@@ -49152,6 +49158,12 @@
     "summary": "Initializes this as a 20-byte struct with count (clamped to \u003e= 1) and element size 0x20, then points +0x14 at the inline storage at +0x10; returns this.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006FD090": {
+    "name": "initHugeVectorGlobals",
+    "signature": "void sub_006FD090()",
+    "summary": "Initializes three 64-bit double globals (0x00B5E450..0x00B5E464) to MSVCR80._HUGE.",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
   "0x006FD400": {
     "name": "sub_006FD400",
     "signature": "extern \"C\" void* __fastcall fn_006FD400(void* self, int edx_unused, unsigned int flags)",
@@ -49163,6 +49175,12 @@
     "signature": "bool FindU16InZeroTerminatedList(uint16_t key, const uint16_t* list)",
     "summary": "Returns true if key appears in a zero-terminated uint16 array before the terminator; false otherwise (including null list).",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
+  "0x006FFE90": {
+    "name": "initHugeVectorGlobals",
+    "signature": "void sub_006FFE90()",
+    "summary": "Initializes three 64-bit global values from MSVCR80!_HUGE",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
   },
   "0x006FFEE0": {
     "name": "SetNegHugeGlobals_006FFEE0",
@@ -49331,6 +49349,12 @@
     "signature": "void fn_006DD960(void)",
     "summary": "Auto-lifted identical-shape clone of 0x006DD960 (fn_006DD960 (MSVCR _HUGE negated into global)).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x00701100": {
+    "name": "init_huge_vector_globals",
+    "signature": "void sub_00701100()",
+    "summary": "Initializes three 64-bit globals from the MSVCR80 _HUGE double pointer.",
+    "lifted_path": "lifted/clones/auto_clones_700000.cpp"
   },
   "0x007019D0": {
     "name": "sub_007019D0",
