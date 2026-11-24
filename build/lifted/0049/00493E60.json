@@ -4,18 +4,67 @@
   "orig_symbol": "sub_00493E60",
   "src_path": "src/leaf/tiny_490000.cpp",
   "lifted_path": "lifted/leaf/tiny_490000.cpp",
-  "name": "forwardVtable188_viaFirstField",
-  "signature": "void fn_00493E60(void* self)",
-  "summary": "Forwards the call to vtable slot +0x188 of the object pointed to by this+0x00 (tail call, no extra work).",
+  "name": "sub_00491FC0",
+  "class": "(none)",
+  "signature": "extern \"C\" void* __fastcall fn_00491FC0(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_00491A90 and frees memory when (flags \u0026 1) is set.",
   "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "self",
+      "offset": "+0x0",
+      "type": "void* innerObject (pointer loaded from *self; passed as the new",
+      "name": "this)"
+    },
+    {
+      "class": "innerObject",
+      "offset": "+0x0",
+      "type": "void** vtable (vptr of the inner",
+      "name": "object)"
+    },
+    {
+      "class": "vtable",
+      "offset": "+0x18C",
+      "type": "void* slot0x18C (call target, dispatched via",
+      "name": "jmp)"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x0",
+      "type": "\u003ctype\u003e",
+      "name": "\u003cfieldName\u003e"
+    },
     {
       "class": "\u003cunknown\u003e",
       "offset": "+0x0",
       "type": "void*",
       "name": "delegate"
+    },
+    {
+      "class": "vtable",
+      "offset": "+0x198",
+      "type": "void* field_0x198 (call target, dispatched via",
+      "name": "jmp)"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T01:15:08Z"
+  "lifted_at": "2026-11-24T01:15:25Z"
 }

@@ -8,6 +8,6 @@
 // Recovered field layout for <ClassName>:
 namespace lifted_layout {
 struct _ClassName__Fields {
-    // +0x0   <type>                   <fieldName>  (evidence: 0x00493E40, 0x00493E50)
+    // +0x0   <type>                   <fieldName>  (evidence: 0x00493E40, 0x00493E50, 0x00493E60)
 };
 } // namespace lifted_layout

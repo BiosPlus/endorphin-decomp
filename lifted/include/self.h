@@ -8,6 +8,6 @@
 // Recovered field layout for self:
 namespace lifted_layout {
 struct self_Fields {
-    // +0x0   void* innerObject (pointer loaded from *self; passed as the new this)  (evidence: 0x00493E50)
+    // +0x0   void* innerObject (pointer loaded from *self; passed as the new this)  (evidence: 0x00493E50, 0x00493E60)
 };
 } // namespace lifted_layout
