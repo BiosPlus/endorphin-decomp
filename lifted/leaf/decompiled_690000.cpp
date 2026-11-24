@@ -242,3 +242,32 @@ int fn_0069B100(int8_t c) {
     return 0;
 }
 } // namespace lift_0069B100
+
+// [0x00698200]
+namespace lift_00698200 {
+// @name copyStringPairRange
+// @summary For each 0x38-byte element in [begin, end), assigns its two std::string members (at +0x00 and +0x1C) from the matching members of src via basic_string::operator=.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1C std::string field_0x1C
+
+
+extern uint32_t mem_00924FDC;
+
+using StringAssign_t = void(__thiscall*)(void* self, const void* rhs);
+
+extern void __cdecl fn_00698200(uint32_t begin, uint32_t end, uint32_t src) {
+    if (begin == end) {
+        return;
+    }
+
+    auto assign = reinterpret_cast<StringAssign_t>(static_cast<uintptr_t>(mem_00924FDC));
+    uint32_t cur = begin;
+    do {
+        assign(reinterpret_cast<void*>(static_cast<uintptr_t>(cur)),
+               reinterpret_cast<const void*>(static_cast<uintptr_t>(src)));
+        assign(reinterpret_cast<void*>(static_cast<uintptr_t>(cur + 0x1C)),
+               reinterpret_cast<const void*>(static_cast<uintptr_t>(src + 0x1C)));
+        cur += 0x38;
+    } while (cur != end);
+}
+} // namespace lift_00698200
