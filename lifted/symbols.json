@@ -7235,6 +7235,13 @@
     "summary": "Forwards the object's first dword to ext_00493D90 and returns 0 (stdcall, one arg).",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x00489580": {
+    "name": "WriteMethodType_DesiredPoseEventData_fireWithStrength_vfunc40",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::fireWithStrength(float), 0}\u003e",
+    "signature": "extern \"C\" int mem_00AD9E58;  // one-time initialization guard (bit 0) void fn_00489580(void* self)",
+    "summary": "Lazily initializes the shared static type object once, then stores its address at +4 of the argument object.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00489880": {
     "name": "CallChildVtableSlot1EIfPresent",
     "signature": "void* fn_00489880(void* self)",

@@ -6582,3 +6582,26 @@ void fn_004894C0(void* self) {
     lift_field<uintptr_t>(self, 4) = reinterpret_cast<uintptr_t>(&mem_00AD9E4C);
 }
 } // namespace lift_004894C0
+
+// [0x00489580] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::fireWithStrength(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_00489580 {
+extern void ext_0067A670();
+extern int mem_00AD9E54;  // static object; first dword becomes vtable 0x0093D6AC
+extern int mem_00AD9E58;  // one-time initialization guard (bit 0)
+
+// @name WriteMethodType_DesiredPoseEventData_fireWithStrength_vfunc40
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::fireWithStrength(float), 0}>
+// @summary Lazily initializes the shared static type object once, then stores its address at +4 of the argument object.
+// @field ExprParser::WriteMethodType +0x04 void* field_0x04
+void fn_00489580(void* self) {
+    // One-time setup guarded by bit 0 of mem_00AD9E58. The original passes
+    // &mem_00AD9E54 as the callee's this-pointer (ecx) and a zero stack slot;
+    // the callee takes no declared parameters here.
+    if ((mem_00AD9E58 & 1) == 0) {
+        mem_00AD9E58 |= 1;
+        ext_0067A670();
+        mem_00AD9E54 = 0x0093D6AC;
+    }
+    lift_field<void*>(self, 4) = reinterpret_cast<void*>(&mem_00AD9E54);
+}
+} // namespace lift_00489580

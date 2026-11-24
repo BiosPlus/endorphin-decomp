@@ -1,0 +1,22 @@
+{
+  "va": "0x00489580",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::fireWithStrength(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "WriteMethodType_DesiredPoseEventData_fireWithStrength_vfunc40",
+  "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::fireWithStrength(float), 0}\u003e",
+  "signature": "extern \"C\" int mem_00AD9E58;  // one-time initialization guard (bit 0) void fn_00489580(void* self)",
+  "summary": "Lazily initializes the shared static type object once, then stores its address at +4 of the argument object.",
+  "fields": [
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:45:01Z"
+}
