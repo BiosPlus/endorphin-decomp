@@ -642,3 +642,18 @@ void fn_00468A00(void* self, void* out_ptr) {
                  static_cast<uint32_t>(reinterpret_cast<uintptr_t>(out_ptr)));
 }
 } // namespace lift_00468A00
+
+// [0x0046C460]
+namespace lift_0046C460 {
+// @name makeBoolString
+// @summary Constructs a std::string from one of two static C-strings based on a boolean flag.
+
+
+extern uint32_t mem_00924FE4;
+
+void* sub_0046C460(void* out_str, uint8_t flag) {
+    const char* str = reinterpret_cast<const char*>(flag != 0 ? 0x0092F10Cu : 0x0093A808u);
+    reinterpret_cast<void(__thiscall*)(void*, const char*)>(mem_00924FE4)(out_str, str);
+    return out_str;
+}
+} // namespace lift_0046C460
