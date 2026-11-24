@@ -1026,3 +1026,16 @@ void __cdecl sub_007C6F80(void* self, uint32_t value) {
 }
 } // namespace lift_007C6F80
 } // namespace lift_007C6F80
+
+// [0x007C9480] sub_007C9480 (16 bytes)
+namespace lift_007C9480 {
+// @name sub_007C9480_virtualSlot0xA8Thunk
+// @summary Forwards the call to the function pointer stored at self+0xa8, passing self unchanged; returns the callee's result.
+// @field Unknown +0xa8 void* field_0xa8
+uint32_t fn_007C9480(void* self) {
+    // Original: mov eax,[esp+4]; mov edx,[eax+0xa8]; mov [esp+4],eax; jmp edx
+    using Target = uint32_t (*)(void*);
+    const auto target = lift_field<uintptr_t>(self, 0xa8);
+    return reinterpret_cast<Target>(target)(self);
+}
+} // namespace lift_007C9480

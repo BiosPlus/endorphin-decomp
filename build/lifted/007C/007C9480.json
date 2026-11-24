@@ -1,0 +1,21 @@
+{
+  "va": "0x007C9480",
+  "size": 16,
+  "orig_symbol": "sub_007C9480",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "sub_007C9480_virtualSlot0xA8Thunk",
+  "signature": "uint32_t fn_007C9480(void* self)",
+  "summary": "Forwards the call to the function pointer stored at self+0xa8, passing self unchanged; returns the callee's result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xA8",
+      "type": "void*",
+      "name": "field_0xa8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:48:00Z"
+}

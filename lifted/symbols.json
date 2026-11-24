@@ -38376,6 +38376,12 @@
     "summary": "Returns the 32-bit entry at index `idx` of the 4-byte array stored at +0x94 in the object.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C9480": {
+    "name": "sub_007C9480_virtualSlot0xA8Thunk",
+    "signature": "uint32_t fn_007C9480(void* self)",
+    "summary": "Forwards the call to the function pointer stored at self+0xa8, passing self unchanged; returns the callee's result.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C9C50": {
     "name": "addOffset0x160",
     "signature": "uint32_t sub_007C9C50(uint32_t arg0)",
