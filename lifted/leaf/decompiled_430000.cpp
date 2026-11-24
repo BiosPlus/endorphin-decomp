@@ -806,3 +806,30 @@ extern void __thiscall fn_004329A0(uintptr_t self) {
     ext_006A651A(self, val, 1, 0);
 }
 } // namespace lift_004329A0
+
+// [0x004345B0] sub_004345B0 (38 bytes)
+namespace lift_004345B0 {
+// Known callee 0x00468180: sub_00468180 (Returns global int32 value from mem_00AD7CD8.)
+extern int32_t __cdecl ext_00468180(void);
+// Known callee 0x006658A0: hasField0x18 (Returns 1 if the 32-bit field at offset 0x18 is non-zero, otherwise 0.)
+extern uint32_t __thiscall ext_006658A0(void* self);
+
+// @name CallVtbl0WithField18Flag
+// @class Unknown
+// @summary Reads the object at global root+0x38, computes its hasField0x18 flag, and calls vtable slot 0 of the argument with that flag.
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0x38 void* field_0x38
+void fn_004345B0(void* obj) {
+    // Root object is the 32-bit value returned by the global accessor.
+    const uintptr_t root = static_cast<uintptr_t>(static_cast<uint32_t>(ext_00468180()));
+    void* inner = lift_field<void*>(reinterpret_cast<void*>(root), 0x38);
+
+    // Only the low byte (al) of the callee result is used.
+    const uint8_t flag = static_cast<uint8_t>(ext_006658A0(inner));
+
+    // Virtual dispatch on obj: slot 0 receives (this = obj, flag zero-extended to 32 bits).
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    using Slot0Fn = void (*)(void* self, uint32_t arg);
+    reinterpret_cast<Slot0Fn>(vtbl[0])(obj, static_cast<uint32_t>(flag));
+}
+} // namespace lift_004345B0

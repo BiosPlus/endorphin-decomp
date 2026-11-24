@@ -1,0 +1,28 @@
+{
+  "va": "0x004345B0",
+  "size": 38,
+  "orig_symbol": "sub_004345B0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "CallVtbl0WithField18Flag",
+  "class": "Unknown",
+  "signature": "void fn_004345B0(void* obj)",
+  "summary": "Reads the object at global root+0x38, computes its hasField0x18 flag, and calls vtable slot 0 of the argument with that flag.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:48:10Z"
+}
