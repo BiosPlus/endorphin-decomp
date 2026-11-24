@@ -10,7 +10,7 @@
 // Recovered field layout for NMData::IncarnationEventData:
 namespace lifted_layout {
 struct NMData_IncarnationEventData_Fields {
-    // +0x0   void*                    instance  (evidence: 0x004886F0, 0x004CEEF0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    instance  (evidence: 0x004886F0, 0x004A2AD0, 0x004CEEF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vptr  (evidence: 0x004CE710) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x004A9B50, 0x004CE8C0, 0x004CF310) // CONFLICT: multiple definitions at +0x0
     // +0x17C uint8_t                  field_0x17c  (evidence: 0x004CF320)

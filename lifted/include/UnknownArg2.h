@@ -8,6 +8,6 @@
 // Recovered field layout for UnknownArg2:
 namespace lifted_layout {
 struct UnknownArg2_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x004886F0, 0x004A26A0, 0x00633240)
+    // +0x4   void*                    field_0x04  (evidence: 0x004886F0, 0x004A26A0, 0x004A2AD0, 0x00633240)
 };
 } // namespace lifted_layout

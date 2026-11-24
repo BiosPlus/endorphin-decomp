@@ -8,6 +8,6 @@
 // Recovered field layout for ExprParser::TypeDescriptor:
 namespace lifted_layout {
 struct ExprParser_TypeDescriptor_Fields {
-    // +0x4   uint32_t*                field_0x04  (evidence: 0x0046F0D0)
+    // +0x4   uint32_t*                field_0x04  (evidence: 0x0046F0D0, 0x004A2AD0)
 };
 } // namespace lifted_layout

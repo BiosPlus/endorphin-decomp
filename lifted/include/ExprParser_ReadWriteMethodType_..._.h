@@ -8,6 +8,6 @@
 // Recovered field layout for ExprParser::ReadWriteMethodType<...>:
 namespace lifted_layout {
 struct ExprParser_ReadWriteMethodType_...__Fields {
-    // +0x4   void* field_0x04 (pointer written with the address of the shared static instance)  (evidence: 0x004A3BA0)
+    // +0x4   void* field_0x04 (pointer written with the address of the shared static instance)  (evidence: 0x004A2AD0, 0x004A3BA0)
 };
 } // namespace lifted_layout

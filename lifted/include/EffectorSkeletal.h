@@ -10,11 +10,11 @@
 // Recovered field layout for EffectorSkeletal:
 namespace lifted_layout {
 struct EffectorSkeletal_Fields {
-    // +0x9C  float                    desiredPosition_x  (evidence: 0x004886F0, 0x006330E0)
-    // +0xA0  float                    desiredPosition_y  (evidence: 0x004886F0, 0x006330E0)
-    // +0xA4  float                    desiredPosition_z  (evidence: 0x004886F0, 0x006330E0)
-    // +0xA8  float                    desiredLinearVelocity_x  (evidence: 0x004886F0, 0x00633140)
-    // +0xAC  float                    desiredLinearVelocity_y  (evidence: 0x004886F0, 0x00633140)
-    // +0xB0  float                    desiredLinearVelocity_z  (evidence: 0x004886F0, 0x00633140)
+    // +0x9C  float                    desiredPosition_x  (evidence: 0x004886F0, 0x004A2AD0, 0x006330E0)
+    // +0xA0  float                    desiredPosition_y  (evidence: 0x004886F0, 0x004A2AD0, 0x006330E0)
+    // +0xA4  float                    desiredPosition_z  (evidence: 0x004886F0, 0x004A2AD0, 0x006330E0)
+    // +0xA8  float                    desiredLinearVelocity_x  (evidence: 0x004886F0, 0x004A2AD0, 0x00633140)
+    // +0xAC  float                    desiredLinearVelocity_y  (evidence: 0x004886F0, 0x004A2AD0, 0x00633140)
+    // +0xB0  float                    desiredLinearVelocity_z  (evidence: 0x004886F0, 0x004A2AD0, 0x00633140)
 };
 } // namespace lifted_layout
