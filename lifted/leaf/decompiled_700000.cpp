@@ -831,3 +831,18 @@ uint32_t __thiscall fn_00706CD0(void* self, uint32_t arg) {
     return lift_field<uint32_t>(node, 0x04);
 }
 } // namespace lift_00706CD0
+
+// [0x007004C0]
+namespace lift_007004C0 {
+extern uint32_t mem_00B5E5C0;
+extern uint32_t mem_00B5EB78;
+extern uint32_t mem_00B5E400;
+
+// @name isKnownGlobalValue
+// @summary Returns 1 if the 32-bit argument matches any of three global values, 0 otherwise.
+uint8_t __stdcall sub_007004C0(uint32_t arg0) {
+    if (arg0 == mem_00B5E5C0) return 1;
+    if (arg0 == mem_00B5EB78) return 1;
+    return arg0 == mem_00B5E400 ? 1 : 0;
+}
+} // namespace lift_007004C0
