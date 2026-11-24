@@ -15,7 +15,7 @@ struct Unknown_Fields {
     // +0x0   float* field_0x00 (arg1: dereferenced to get dst Vector4*)  (evidence: 0x0066B860) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (target object pointer;* arg1)  (evidence: 0x005853E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   float field_0x00 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   DWORD                    field_00  (evidence: 0x0057BB20) // CONFLICT: multiple definitions at +0x0
+    // +0x0   DWORD                    field_00  (evidence: 0x0057BB20, 0x006BDAF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD                    field_0x00  (evidence: 0x00468730, 0x0046FA80, 0x0046FAA0, 0x005D1480, 0x0067ECF0, 0x00728DE0, 0x007C8A10, 0x0086B200) // CONFLICT: multiple definitions at +0x0
     // +0x0   float                    field_0x00  (evidence: 0x0043B3E0, 0x0052EF50, 0x00535610, 0x00545B80, 0x00553A10, 0x00669E60, 0x0066A310, 0x0066A330, 0x006C9E90, 0x007C9C90, 0x007FC290) // CONFLICT: multiple definitions at +0x0
     // +0x0   float*                   field_0x00  (evidence: 0x004B7A10, 0x0066B680, 0x0066B6B0, 0x006719C0) // CONFLICT: multiple definitions at +0x0
@@ -79,6 +79,7 @@ struct Unknown_Fields {
     // +0x4   uint32_t                 flags  (evidence: 0x008103A0, 0x008103F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (destination operand holder; inner object's vtable slot 6 returns float* to 4 floats)  (evidence: 0x0066D190) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (sub-component object returned by vfunc_0; its class is not identified)  (evidence: 0x0066BDB0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    linked  (evidence: 0x006BDAF0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t*                 next  (evidence: 0x008103A0, 0x008103F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    peer  (evidence: 0x00528B90) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (begin pointer)  (evidence: 0x005731D0) // CONFLICT: multiple definitions at +0x4

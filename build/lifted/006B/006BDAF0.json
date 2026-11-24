@@ -1,0 +1,28 @@
+{
+  "va": "0x006BDAF0",
+  "size": 32,
+  "orig_symbol": "sub_006BDAF0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "Unknown::MatchesLinkedTag",
+  "class": "Unknown",
+  "signature": "BOOL fn_006BDAF0(void* self)",
+  "summary": "Returns TRUE if the object's linked pointer at +0x04 is non-null and its first dword equals the object's own first dword at +0x00.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "linked"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:32:50Z"
+}

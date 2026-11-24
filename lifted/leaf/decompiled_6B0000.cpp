@@ -286,3 +286,24 @@ uintptr_t fn_006B2590(void* self, uint32_t arg0, uint32_t /*arg1: unused, stdcal
     return reinterpret_cast<uintptr_t>(self);
 }
 } // namespace lift_006B2590
+
+// [0x006BDAF0] sub_006BDAF0 (32 bytes)
+namespace lift_006BDAF0 {
+// @name Unknown::MatchesLinkedTag
+// @class Unknown
+// @summary Returns TRUE if the object's linked pointer at +0x04 is non-null and its first dword equals the object's own first dword at +0x00.
+// @field Unknown +0x00 DWORD field_00
+// @field Unknown +0x04 void* linked
+BOOL fn_006BDAF0(void* self) {
+    void* linked = lift_field<void*>(self, 0x04);
+    if (linked == nullptr) {
+        return FALSE;
+    }
+    DWORD linkedTag = *reinterpret_cast<DWORD*>(linked);
+    DWORD ownTag = lift_field<DWORD>(self, 0x00);
+    if (linkedTag != ownTag) {
+        return FALSE;
+    }
+    return TRUE;
+}
+} // namespace lift_006BDAF0

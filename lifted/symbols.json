@@ -35612,6 +35612,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x78 and tail-calls sub_006E7460.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006BDAF0": {
+    "name": "Unknown::MatchesLinkedTag",
+    "class": "Unknown",
+    "signature": "BOOL fn_006BDAF0(void* self)",
+    "summary": "Returns TRUE if the object's linked pointer at +0x04 is non-null and its first dword equals the object's own first dword at +0x00.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006C03A0": {
     "name": "IsValueOneOfGlobalSentinels",
     "signature": "extern \"C\" uint8_t __stdcall fn_006C03A0(DWORD value)",
