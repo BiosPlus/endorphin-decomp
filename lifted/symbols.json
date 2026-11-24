@@ -25449,6 +25449,13 @@
     "summary": "Forwards a call to virtual slot 7 of the object stored at +0x00, passing the address of this+0x04 as the single argument.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x006616F0": {
+    "name": "Unknown::forwardToInnerVfunc8 (descriptive; owner class not identified)",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006616F0(void* thisPtr, void* arg)",
+    "summary": "Forwards (this+4, arg) to vfunc slot 8 (vtable +0x20) of the object pointed to by the first member.",
+    "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
   "0x00661880": {
     "name": "sub_00661880",
     "signature": "void sub_00661880(uint32_t ecx)",

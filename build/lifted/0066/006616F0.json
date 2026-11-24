@@ -1,0 +1,22 @@
+{
+  "va": "0x006616F0",
+  "size": 25,
+  "orig_symbol": "sub_006616F0",
+  "src_path": "src/leaf/tiny_660000.cpp",
+  "lifted_path": "lifted/leaf/tiny_660000.cpp",
+  "name": "Unknown::forwardToInnerVfunc8 (descriptive; owner class not identified)",
+  "class": "Unknown",
+  "signature": "uint32_t fn_006616F0(void* thisPtr, void* arg)",
+  "summary": "Forwards (this+4, arg) to vfunc slot 8 (vtable +0x20) of the object pointed to by the first member.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (pointer to inner object whose vtable slot 8 is",
+      "name": "invoked)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:50:56Z"
+}

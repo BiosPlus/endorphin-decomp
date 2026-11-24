@@ -322,3 +322,27 @@ float fn_00661A40(void* self) {
     return result;
 }
 } // namespace lift_00661A40
+
+// [0x006616F0] (25 bytes)
+namespace lift_006616F0 {
+// @name Unknown::forwardToInnerVfunc8 (descriptive; owner class not identified)
+// @class Unknown
+// @summary Forwards (this+4, arg) to vfunc slot 8 (vtable +0x20) of the object pointed to by the first member.
+// @field Unknown +0x00 void* field_0x00 (pointer to inner object whose vtable slot 8 is invoked)
+
+// Callee signature: (this, a, b) with the 32-bit thiscall convention flattened
+// into a plain function pointer; the first argument is the implicit `this`.
+typedef uint32_t (*VFunc8)(void* self, void* a, void* b);
+
+uint32_t fn_006616F0(void* thisPtr, void* arg) {
+    uint8_t* self = static_cast<uint8_t*>(thisPtr);
+    // ecx = [eax]: inner object pointer stored at +0x00
+    void* inner = *reinterpret_cast<void**>(self);
+    // edx = [ecx]: inner object's vtable
+    uint8_t* vtbl = *reinterpret_cast<uint8_t**>(inner);
+    // eax = [edx + 0x20]: vtable slot 8
+    VFunc8 fn = *reinterpret_cast<VFunc8*>(vtbl + 0x20);
+    // push arg; push (this + 4); call with this = inner
+    return fn(inner, self + 4, arg);
+}
+} // namespace lift_006616F0
