@@ -1310,3 +1310,38 @@ extern void __thiscall fn_00434900(uint32_t self) {
 }
 } // namespace lift_00431330
 } // namespace lift_00434900
+
+// [0x00436A20]
+namespace lift_00436A20 {
+// @name findU32Iterator
+// @summary Linearly searches a uint32_t range [first, last) for *val_ptr and writes {tag, found_ptr} to out.
+
+
+struct U32IterPair {
+    uint32_t tag;
+    uint32_t* ptr;
+};
+
+U32IterPair* __cdecl sub_00436A20(
+    U32IterPair* out,
+    uint32_t tag,
+    uint32_t* first,
+    uint32_t /*unused_arg4*/,
+    uint32_t* last,
+    const uint32_t* val_ptr)
+{
+    uint32_t* cur = first;
+    if (cur != last) {
+        const uint32_t target = *val_ptr;
+        do {
+            if (*cur == target) {
+                break;
+            }
+            ++cur;
+        } while (cur != last);
+    }
+    out->tag = tag;
+    out->ptr = cur;
+    return out;
+}
+} // namespace lift_00436A20

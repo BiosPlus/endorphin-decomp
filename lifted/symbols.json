@@ -2412,6 +2412,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00433320 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x00436A20": {
+    "name": "findU32Iterator",
+    "signature": "U32IterPair* __cdecl sub_00436A20( U32IterPair* out, uint32_t tag, uint32_t* first, uint32_t /*unused_arg4*/, uint32_t* last, const uint32_t* val_ptr)",
+    "summary": "Linearly searches a uint32_t range [first, last) for *val_ptr and writes {tag, found_ptr} to out.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00436F20": {
     "name": "sub_00436F20",
     "signature": "extern \"C\" void fn_00436F20(void)",

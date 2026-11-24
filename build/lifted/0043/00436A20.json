@@ -1,0 +1,13 @@
+{
+  "va": "0x00436A20",
+  "size": 43,
+  "orig_symbol": "sub_00436A20",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "findU32Iterator",
+  "signature": "U32IterPair* __cdecl sub_00436A20( U32IterPair* out, uint32_t tag, uint32_t* first, uint32_t /*unused_arg4*/, uint32_t* last, const uint32_t* val_ptr)",
+  "summary": "Linearly searches a uint32_t range [first, last) for *val_ptr and writes {tag, found_ptr} to out.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:04:43Z"
+}
