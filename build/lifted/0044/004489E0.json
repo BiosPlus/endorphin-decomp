@@ -1,0 +1,28 @@
+{
+  "va": "0x004489E0",
+  "size": 33,
+  "orig_symbol": "sub_004489E0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::sendUserMessageToTargetWnd",
+  "class": "Unknown",
+  "signature": "int fn_004489E0(void* self, WPARAM arg1, LPARAM arg2)",
+  "summary": "Sends WM_USER+0x6F (0x46F) with arg1 as wParam and arg2 as lParam to the window handle at this-\u003efield_0x58-\u003efield_0x20; returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "void*",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:52:40Z"
+}

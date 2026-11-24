@@ -744,3 +744,20 @@ int fn_00441060(void* self) {
     return static_cast<int>(rounded);
 }
 } // namespace lift_00441060
+
+// [0x004489E0] sub_004489E0 (33 bytes)
+namespace lift_004489E0 {
+extern LRESULT(__stdcall* ext_SendMessageA)(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+
+// @name Unknown::sendUserMessageToTargetWnd
+// @class Unknown
+// @summary Sends WM_USER+0x6F (0x46F) with arg1 as wParam and arg2 as lParam to the window handle at this->field_0x58->field_0x20; returns 0.
+// @field Unknown +0x58 void* field_0x58
+// @field Unknown +0x20 void* field_0x20
+int fn_004489E0(void* self, WPARAM arg1, LPARAM arg2) {
+    void* sub = *reinterpret_cast<void**>(static_cast<char*>(self) + 0x58);
+    HWND target = *reinterpret_cast<HWND*>(static_cast<char*>(sub) + 0x20);
+    ext_SendMessageA(target, 0x46F, arg1, arg2);
+    return 0;
+}
+} // namespace lift_004489E0

@@ -2892,6 +2892,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0xD8 and tail-calls thunk_MFC80_ord_1280.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x004489E0": {
+    "name": "Unknown::sendUserMessageToTargetWnd",
+    "class": "Unknown",
+    "signature": "int fn_004489E0(void* self, WPARAM arg1, LPARAM arg2)",
+    "summary": "Sends WM_USER+0x6F (0x46F) with arg1 as wParam and arg2 as lParam to the window handle at this-\u003efield_0x58-\u003efield_0x20; returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00448F00": {
     "name": "Properties::PropInPlaceSpinbuttonEdit::vfunc_1",
     "class": "Properties::PropInPlaceSpinbuttonEdit",
