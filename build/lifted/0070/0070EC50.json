@@ -1,0 +1,22 @@
+{
+  "va": "0x0070EC50",
+  "size": 32,
+  "orig_symbol": "sub_0070EC50",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::ForwardSubObjectAt0x148",
+  "class": "Unknown",
+  "signature": "extern \"C\" DWORD __thiscall fn_0070EC50(void* self, DWORD arg)",
+  "summary": "Forwards its single argument to ext_007873F0 on the sub-object at this+0x148 and returns that result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x148",
+      "type": "void*",
+      "name": "subObject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:39:32Z"
+}
