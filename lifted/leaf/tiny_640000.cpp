@@ -713,3 +713,16 @@ void fn_00648850(uint32_t value) {
 }
 } // namespace lift_004A24A0
 } // namespace lift_00648850
+
+// [0x00648900] sub_00648900 (13 bytes)
+namespace lift_00648900 {
+// @name SubObject::setField8Float
+// @class SubObject
+// @summary Stores a float argument into the float at +0x08 of the object pointed to by +0x28.
+// @field SubObject +0x28 pointer field_0x28
+// @field SubObject::field_0x28 +0x08 float field_0x08
+void sub_00648900_setField8Float(void* self, float value) {
+    void* inner = lift_field<void*>(self, 0x28);
+    lift_field<float>(inner, 0x08) = value;
+}
+} // namespace lift_00648900

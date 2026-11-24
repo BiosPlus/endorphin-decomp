@@ -1,0 +1,28 @@
+{
+  "va": "0x00648900",
+  "size": 13,
+  "orig_symbol": "sub_00648900",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "SubObject::setField8Float",
+  "class": "SubObject",
+  "signature": "void sub_00648900_setField8Float(void* self, float value)",
+  "summary": "Stores a float argument into the float at +0x08 of the object pointed to by +0x28.",
+  "fields": [
+    {
+      "class": "SubObject",
+      "offset": "+0x28",
+      "type": "pointer",
+      "name": "field_0x28"
+    },
+    {
+      "class": "SubObject::field_0x28",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:22:13Z"
+}

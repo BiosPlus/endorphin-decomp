@@ -21348,6 +21348,13 @@
     "summary": "Reads a float at offset +0x08 from the pointer stored at this+0x28",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00648900": {
+    "name": "SubObject::setField8Float",
+    "class": "SubObject",
+    "signature": "void sub_00648900_setField8Float(void* self, float value)",
+    "summary": "Stores a float argument into the float at +0x08 of the object pointed to by +0x28.",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
   "0x00648910": {
     "name": "getNestedField0x0C",
     "signature": "extern \"C\" uint32_t __thiscall sub_00648910(uintptr_t self)",
