@@ -3264,6 +3264,12 @@
     "summary": "If field +0x64 is non-null, call its vtable slot 0x24 with arg 0, then tail-jump to its vtable slot 0x154; otherwise do nothing.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044B360": {
+    "name": "sub_0044B360",
+    "signature": "void __thiscall sub_0044B360(void* self)",
+    "summary": "Invokes two virtual methods on the object at offset 0x64 if non-null.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044B5A0": {
     "name": "RenderView::vfunc_26",
     "class": "RenderView",

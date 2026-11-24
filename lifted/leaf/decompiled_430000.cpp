@@ -787,3 +787,22 @@ void __stdcall sub_0043E3A0(uint32_t begin, uint32_t end) {
     }
 }
 } // namespace lift_0043E3A0
+
+// [0x004329A0]
+namespace lift_004329A0 {
+// @name init_and_update_field_0x11c
+// @summary Calls get_global_field_0x58, invokes ext_00469040 on the result, then calls thunk_MFC80_ord_6081 with field_0x11c, 1, and 0.
+// @field Self +0x11c int32_t field_0x11c
+
+
+extern int32_t __cdecl ext_00465B30(void);
+extern void __thiscall ext_00469040(uintptr_t self);
+extern void __thiscall ext_006A651A(uintptr_t self, int32_t arg1, int32_t arg2, int32_t arg3);
+
+extern void __thiscall fn_004329A0(uintptr_t self) {
+    int32_t obj = ext_00465B30();
+    ext_00469040(static_cast<uintptr_t>(static_cast<uint32_t>(obj)));
+    int32_t val = *reinterpret_cast<const int32_t*>(self + 0x11c);
+    ext_006A651A(self, val, 1, 0);
+}
+} // namespace lift_004329A0

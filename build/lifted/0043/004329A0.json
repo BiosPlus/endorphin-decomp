@@ -1,0 +1,21 @@
+{
+  "va": "0x004329A0",
+  "size": 35,
+  "orig_symbol": "sub_004329A0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "init_and_update_field_0x11c",
+  "signature": "extern \"C\" void __thiscall fn_004329A0(uintptr_t self)",
+  "summary": "Calls get_global_field_0x58, invokes ext_00469040 on the result, then calls thunk_MFC80_ord_6081 with field_0x11c, 1, and 0.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x11C",
+      "type": "int32_t",
+      "name": "field_0x11c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:04:24Z"
+}
