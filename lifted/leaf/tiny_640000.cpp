@@ -841,3 +841,19 @@ void fn_006423B0(void* self, uint8_t desired) {
     }
 }
 } // namespace lift_006423B0
+
+// [0x00642390] sub_00642390 (29 bytes)
+namespace lift_00642390 {
+// @name ToggleFlagBit0IfMismatch
+// @summary If bit 0 of the dword at self+0x20 differs from the byte argument, flip bit 0 and store back.
+// @field Unknown +0x20 uint32_t field_0x20
+void fn_00642390(void* self, uint8_t want) {
+    auto* flags = reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x20);
+    uint32_t v = *flags;
+    uint8_t cur = static_cast<uint8_t>((v & 1u) == 1u);
+    if (cur != want) {
+        v ^= 1u;
+        *flags = v;
+    }
+}
+} // namespace lift_00642390

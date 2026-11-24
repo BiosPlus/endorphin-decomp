@@ -24560,6 +24560,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x00642390": {
+    "name": "ToggleFlagBit0IfMismatch",
+    "signature": "void fn_00642390(void* self, uint8_t want)",
+    "summary": "If bit 0 of the dword at self+0x20 differs from the byte argument, flip bit 0 and store back.",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
   "0x006423B0": {
     "name": "Unknown::setFlag2IfDiffers",
     "class": "Unknown",

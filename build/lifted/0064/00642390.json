@@ -1,0 +1,21 @@
+{
+  "va": "0x00642390",
+  "size": 29,
+  "orig_symbol": "sub_00642390",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "ToggleFlagBit0IfMismatch",
+  "signature": "void fn_00642390(void* self, uint8_t want)",
+  "summary": "If bit 0 of the dword at self+0x20 differs from the byte argument, flip bit 0 and store back.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:13:05Z"
+}
