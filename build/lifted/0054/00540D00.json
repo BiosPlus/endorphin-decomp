@@ -4,11 +4,35 @@
   "orig_symbol": "sub_00540D00",
   "src_path": "src/leaf/decompiled_540000.cpp",
   "lifted_path": "lifted/leaf/decompiled_540000.cpp",
-  "name": "Unknown::ForwardToIndexedChildSlot7",
-  "class": "Unknown",
-  "signature": "DWORD fn_00540D00(void* self)",
-  "summary": "Picks child [self+0x08 + 60*index] where index = [self+0xF8], then tail-forwards the call to that child's vtable slot 7 and returns its result.",
+  "name": "sub_005478B0",
+  "class": "VTableDispatch",
+  "signature": "float fn_005478B0(uint32_t ecx)",
+  "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "VTableDispatch",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable_ptr"
+    },
+    {
+      "class": "VTableDispatch",
+      "offset": "+0x90",
+      "type": "uint8_t",
+      "name": "flag_0x90"
+    },
+    {
+      "class": "VTableDispatch",
+      "offset": "+0x93",
+      "type": "uint8_t",
+      "name": "flag_0x93"
+    },
     {
       "class": "Unknown",
       "offset": "+0x8",
@@ -24,5 +48,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T11:36:10Z"
+  "lifted_at": "2026-11-24T11:36:20Z"
 }
