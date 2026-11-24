@@ -1,0 +1,21 @@
+{
+  "va": "0x0078CB70",
+  "size": 16,
+  "orig_symbol": "sub_0078CB70",
+  "src_path": "src/leaf/tiny_780000.cpp",
+  "lifted_path": "lifted/leaf/tiny_780000.cpp",
+  "name": "getIndexedDword",
+  "signature": "uint32_t getIndexedDword(void* ecx, uint32_t index)",
+  "summary": "Returns the dword at index arg1 of the array whose pointer is stored at this+0x10 (thiscall, one stack arg, ret 4).",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x10",
+      "type": "uint32_t* field_0x10 (array base",
+      "name": "pointer)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:45:08Z"
+}

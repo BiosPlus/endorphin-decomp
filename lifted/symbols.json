@@ -36982,6 +36982,12 @@
     "summary": "Returns the dword at +0x28 if the dword at +0x20 is nonzero, otherwise the dword at +0x04.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x0078CB70": {
+    "name": "getIndexedDword",
+    "signature": "uint32_t getIndexedDword(void* ecx, uint32_t index)",
+    "summary": "Returns the dword at index arg1 of the array whose pointer is stored at this+0x10 (thiscall, one stack arg, ret 4).",
+    "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
   "0x0078CBD0": {
     "name": "sub_0078CBD0",
     "class": "UnknownObject",

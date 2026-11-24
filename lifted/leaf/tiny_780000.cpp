@@ -405,3 +405,15 @@ void fn_00788D00(void* self) {
     base[0x654] = 0u;
 }
 } // namespace lift_00788D00
+
+// [0x0078CB70]
+namespace lift_0078CB70 {
+// @name getIndexedDword
+// @summary Returns the dword at index arg1 of the array whose pointer is stored at this+0x10 (thiscall, one stack arg, ret 4).
+// @field <unknown> +0x10 uint32_t* field_0x10 (array base pointer)
+
+uint32_t getIndexedDword(void* ecx, uint32_t index) {
+    uint32_t* base = *reinterpret_cast<uint32_t**>(static_cast<uint8_t*>(ecx) + 0x10);
+    return base[index];
+}
+} // namespace lift_0078CB70
