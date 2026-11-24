@@ -70,3 +70,22 @@ void* fn_0060BE10(void* self) {
     return obj;
 }
 } // namespace lift_0060BE10
+
+// [0x0060BDF0] NMData::EffectorData::vfunc_19 (24 bytes)
+namespace lift_0060BDF0 {
+// Base-class vfunc_19 (0x0060BB50), called with the same this pointer.
+extern void ext_0060BB50();
+// Known callee 0x0060BCD0: descriptiveName (unknown class; initializes a 0x11-byte record) (Sets floats at +0x0 (1.0), +0x4 (1.0), +0x8 (mem_009518E0 = 10.0), +0xC (0.0) and byte at +0x10 (1); thiscall, this in ecx.)
+extern void ext_0060BCD0();
+
+// @name NMData::EffectorData::vfunc_19
+// @class NMData::EffectorData
+// @summary Runs the base-class vfunc_19, clears the dword at +0x44, then tail-calls the sub-object initializer at this+0x48.
+// @field NMData::EffectorData +0x44 uint32_t field_0x44
+void fn_0060BDF0(void* self) {
+    ext_0060BB50();
+    lift_field<uint32_t>(self, 0x44) = 0;
+    // Tail-call 0x0060BCD0 with this = self + 0x48 (thiscall, this in ecx).
+    ext_0060BCD0();
+}
+} // namespace lift_0060BDF0

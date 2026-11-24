@@ -1,0 +1,22 @@
+{
+  "va": "0x0060BDF0",
+  "size": 24,
+  "orig_symbol": "NMData::EffectorData::vfunc_19",
+  "src_path": "src/NMData/EffectorData.cpp",
+  "lifted_path": "lifted/NMData/EffectorData.cpp",
+  "name": "NMData::EffectorData::vfunc_19",
+  "class": "NMData::EffectorData",
+  "signature": "void fn_0060BDF0(void* self)",
+  "summary": "Runs the base-class vfunc_19, clears the dword at +0x44, then tail-calls the sub-object initializer at this+0x48.",
+  "fields": [
+    {
+      "class": "NMData::EffectorData",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:37:43Z"
+}

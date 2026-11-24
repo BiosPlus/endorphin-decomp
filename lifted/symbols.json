@@ -24647,6 +24647,13 @@
     "summary": "Sets floats at +0x0 (1.0), +0x4 (1.0), +0x8 (mem_009518E0 = 10.0), +0xC (0.0) and byte at +0x10 (1); thiscall, this in ecx.",
     "lifted_path": "lifted/leaf/tiny_600000.cpp"
   },
+  "0x0060BDF0": {
+    "name": "NMData::EffectorData::vfunc_19",
+    "class": "NMData::EffectorData",
+    "signature": "void fn_0060BDF0(void* self)",
+    "summary": "Runs the base-class vfunc_19, clears the dword at +0x44, then tail-calls the sub-object initializer at this+0x48.",
+    "lifted_path": "lifted/NMData/EffectorData.cpp"
+  },
   "0x0060BE10": {
     "name": "NMData::EffectorData::vfunc_17",
     "class": "NMData::EffectorData",
