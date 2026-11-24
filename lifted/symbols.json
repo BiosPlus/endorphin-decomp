@@ -10980,6 +10980,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0061EA10 (HingeSecondaryConstraint::AllocAndConstruct).",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x005304A0": {
+    "name": "Unknown::SetByteAt1D8",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_005304A0(Unknown* self, uint8_t value)",
+    "summary": "Stores a byte argument into the sub-object at this-\u003e+0x10 at offset +0x1D8.",
+    "lifted_path": "lifted/leaf/tiny_530000.cpp"
+  },
   "0x00530640": {
     "name": "sub_00530640",
     "signature": "extern \"C\" int32_t __cdecl fn_00530640(void)",

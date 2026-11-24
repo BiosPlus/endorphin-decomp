@@ -1,0 +1,28 @@
+{
+  "va": "0x005304A0",
+  "size": 16,
+  "orig_symbol": "sub_005304A0",
+  "src_path": "src/leaf/tiny_530000.cpp",
+  "lifted_path": "lifted/leaf/tiny_530000.cpp",
+  "name": "Unknown::SetByteAt1D8",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_005304A0(Unknown* self, uint8_t value)",
+  "summary": "Stores a byte argument into the sub-object at this-\u003e+0x10 at offset +0x1D8.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1D8",
+      "type": "uint8_t",
+      "name": "field_0x1D8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:35:25Z"
+}

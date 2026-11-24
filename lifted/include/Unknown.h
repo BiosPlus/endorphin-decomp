@@ -45,6 +45,7 @@ struct Unknown_Fields {
     // +0xC   void* field_0x0C (sub-object that receives the value via vfunc_8)  (evidence: 0x005853E0) // CONFLICT: multiple definitions at +0xC
     // +0x10  BYTE                     field_0x10  (evidence: 0x00468AC0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 field_0x10  (evidence: 0x00454E70, 0x0045BBE0, 0x006D2A90) // CONFLICT: multiple definitions at +0x10
+    // +0x10  void*                    field_0x10  (evidence: 0x005304A0) // CONFLICT: multiple definitions at +0x10
     // +0x14  DWORD                    field_0x14  (evidence: 0x00468AC0) // CONFLICT: multiple definitions at +0x14
     // +0x14  float                    field_0x14  (evidence: 0x007C9E10) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t                 field_0x14  (evidence: 0x007126A0) // CONFLICT: multiple definitions at +0x14
@@ -98,6 +99,7 @@ struct Unknown_Fields {
     // +0x184 int32_t                  field_0x184  (evidence: 0x005B64D0)
     // +0x1C4 uint32_t                 field_0x1C4  (evidence: 0x007C6780)
     // +0x1C8 float                    field_0x1c8  (evidence: 0x007C5F90)
+    // +0x1D8 uint8_t                  field_0x1D8  (evidence: 0x005304A0)
     // +0x234 void*                    field_0x234  (evidence: 0x005E1360)
     // +0x26C int32_t                  field_0x26C  (evidence: 0x004348F0, 0x004691C0)
     // +0x4E2 uint8_t                  field_0x4E2  (evidence: 0x004104E0)
