@@ -2,8 +2,10 @@
 #include "lift_compat.h"
 #include <new>
 #include <string>
+#include <cmath>
+#include <cstdint>
 
-// [0x00467320] sub_00467320 (8 bytes)
+#include <cstdint>
 namespace lift_00467320 {
 // @name sub_00467320
 // @summary Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).
@@ -550,3 +552,42 @@ extern void __cdecl fn_00460990(void) {
     }
 }
 } // namespace lift_00460990
+
+// [0x0046FBE0]
+namespace lift_0046FBE0 {
+// @name sub_0046FBE0
+// @summary Rounds a float argument by adding a constant double, stores the integer result at +0x288, and returns it
+// @field Unknown +0x288 int32_t field_0x288
+
+
+extern const double mem_0092BD70;
+
+int32_t __thiscall sub_0046FBE0(void* self, float value) {
+    double sum = static_cast<double>(value) + mem_0092BD70;
+    int32_t result = static_cast<int32_t>(std::llrint(sum));
+    *reinterpret_cast<int32_t*>(reinterpret_cast<uint8_t*>(self) + 0x288) = result;
+    return result;
+}
+} // namespace lift_0046FBE0
+
+// [0x0046C2F0]
+namespace lift_0046C2F0 {
+// @name set_field_0x1c_if_le_limit
+// @summary Sets this+0x1c to val if val is less than or equal to the float limit at *( *(this+0x4c) + 0xf8 ) + 0x138.
+// @field unknown +0x1c float field_0x1c
+// @field unknown +0x4c void* field_0x4c
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern float mem_read_f32(uint32_t addr);
+extern void mem_write_f32(uint32_t addr, float val);
+
+void __thiscall sub_0046C2F0(uint32_t ecx_this, float val) {
+    uint32_t eax = mem_read32(ecx_this + 0x4c);
+    uint32_t edx = mem_read32(eax + 0xf8);
+    float limit = mem_read_f32(edx + 0x138);
+    if (!(limit < val)) {
+        mem_write_f32(ecx_this + 0x1c, val);
+    }
+}
+} // namespace lift_0046C2F0

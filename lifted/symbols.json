@@ -5290,6 +5290,12 @@
     "summary": "If the object at +0x20 is non-null, calls its vtable slot +0x1B0 with (-1, -1) and returns that result; otherwise returns 0.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x0046C2F0": {
+    "name": "set_field_0x1c_if_le_limit",
+    "signature": "void __thiscall sub_0046C2F0(uint32_t ecx_this, float val)",
+    "summary": "Sets this+0x1c to val if val is less than or equal to the float limit at *( *(this+0x4c) + 0xf8 ) + 0x138.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046C430": {
     "name": "ExprParser::BoolType::vfunc_51",
     "class": "ExprParser::BoolType",
