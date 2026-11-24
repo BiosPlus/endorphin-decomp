@@ -777,3 +777,21 @@ extern int __stdcall IsValueTwoOrThree(int value) {
     return 0;
 }
 } // namespace lift_0044CF60
+
+// [0x00441020] sub_00441020 (30 bytes)
+namespace lift_00441020 {
+extern const double mem_0092BD70;
+
+// @name descriptiveName: fn_00441020 (round-biased field to int32)
+// @summary Returns (int32)round_to_nearest(this->field_0x50 + mem_0092BD70), with x87 fistp overflow/NaN giving INT32_MIN.
+// @field <unknown> +0x50 double field_0x50
+int fn_00441020(void* self) {
+    const double sum = lift_field<double>(self, 0x50) + mem_0092BD70;
+
+    // x87 fistp with default control word (round-to-nearest-even); out-of-range or NaN yields 0x80000000.
+    if (!(sum >= -2147483648.0 - 0.5 && sum < 2147483648.0)) {
+        return INT32_MIN;
+    }
+    return static_cast<int>(std::nearbyint(sum));
+}
+} // namespace lift_00441020

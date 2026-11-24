@@ -2330,6 +2330,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004406C0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x00441020": {
+    "name": "descriptiveName: fn_00441020 (round-biased field to int32)",
+    "signature": "int fn_00441020(void* self)",
+    "summary": "Returns (int32)round_to_nearest(this-\u003efield_0x50 + mem_0092BD70), with x87 fistp overflow/NaN giving INT32_MIN.",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x004413C0": {
     "name": "MultiTrackView::TriangleMarker::vfunc_0",
     "class": "MultiTrackView::TriangleMarker",

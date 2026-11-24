@@ -1,0 +1,21 @@
+{
+  "va": "0x00441020",
+  "size": 30,
+  "orig_symbol": "sub_00441020",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "descriptiveName: fn_00441020 (round-biased field to int32)",
+  "signature": "int fn_00441020(void* self)",
+  "summary": "Returns (int32)round_to_nearest(this-\u003efield_0x50 + mem_0092BD70), with x87 fistp overflow/NaN giving INT32_MIN.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x50",
+      "type": "double",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:15:37Z"
+}
