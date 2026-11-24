@@ -1,0 +1,13 @@
+{
+  "va": "0x004AEF30",
+  "size": 35,
+  "orig_symbol": "sub_004AEF30",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "destroyRange_8byte",
+  "signature": "extern \"C\" void __stdcall sub_004AEF30(uint32_t begin, uint32_t end)",
+  "summary": "Iterates over a range of 8-byte objects [begin, end) and calls ext_00493D90 on each element.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:57:41Z"
+}

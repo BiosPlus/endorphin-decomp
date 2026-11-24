@@ -111,3 +111,19 @@ void fn_004A98D0(void* self) {
     obj[0x14 / 4] = 1u;
 }
 } // namespace lift_004A98D0
+
+// [0x004AEF30]
+namespace lift_004AEF30 {
+// @name destroyRange_8byte
+// @summary Iterates over a range of 8-byte objects [begin, end) and calls ext_00493D90 on each element.
+
+extern void ext_00493D90(uint32_t self);
+
+extern void __stdcall sub_004AEF30(uint32_t begin, uint32_t end) {
+    uint32_t cur = begin;
+    while (cur != end) {
+        ext_00493D90(cur);
+        cur += 8;
+    }
+}
+} // namespace lift_004AEF30
