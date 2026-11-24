@@ -21,6 +21,7 @@ void* fn_00530070() {
     return ext_0052F890(obj);
 }
 } // namespace lift_00530070
+#include <cstdint>
 
 // [0x005300D0] sub_005300D0 (86 bytes)
 namespace lift_005300D0 {
@@ -405,3 +406,45 @@ uint32_t fn_005304E0(void* self) {
 
 } // namespace lift_005304E0
 } // namespace lift_005304E0
+
+// [0x005331B0]
+namespace lift_005331B0 {
+// @name PumpOneWindowMessage
+// @summary Peeks one queued window message (PM_REMOVE); if present, translates and dispatches it.
+// @class none
+
+// USER32 imports, reached in the original via IAT slots at 0x009255A0..0x009255A8.
+using ext_PeekMessageA_t = int32_t (*)(void* lpMsg, void* hWnd, uint32_t wMsgFilterMin, uint32_t wMsgFilterMax, uint32_t wRemoveMsg);
+using ext_TranslateMessage_t = int32_t (*)(const void* lpMsg);
+using ext_DispatchMessageA_t = int32_t (*)(const void* lpMsg);
+
+extern ext_PeekMessageA_t ext_PeekMessageA;
+extern ext_TranslateMessage_t ext_TranslateMessage;
+extern ext_DispatchMessageA_t ext_DispatchMessageA;
+
+// IAT slot addresses (.rdata); the call goes through these.
+extern void* mem_009255A0;
+extern void* mem_009255A4;
+extern void* mem_009255A8;
+
+// MSG is 0x1C bytes: hwnd, message, wParam, lParam, time, pt.x, pt.y (7 x 32-bit).
+struct WinMsg {
+    void* hwnd;
+    uint32_t message;
+    uint32_t wParam;
+    int32_t lParam;
+    uint32_t time;
+    int32_t ptX;
+    int32_t ptY;
+};
+static_assert(sizeof(WinMsg) == 0x1C || sizeof(void*) == 8, "MSG must be 0x1C bytes on 32-bit");
+
+void PumpOneWindowMessage() {
+    WinMsg msg{};
+    // PM_REMOVE = 1; no HWND filter, no min/max filter.
+    if (ext_PeekMessageA(&msg, nullptr, 0, 0, 1) != 0) {
+        ext_TranslateMessage(&msg);
+        ext_DispatchMessageA(&msg);
+    }
+}
+} // namespace lift_005331B0

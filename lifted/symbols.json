@@ -16726,6 +16726,13 @@
     "summary": "Clears field_0x30 to 0 while holding the critical section lock returned by vfunc_118.",
     "lifted_path": "lifted/classes/OglRenderer.cpp"
   },
+  "0x005331B0": {
+    "name": "PumpOneWindowMessage",
+    "class": "none",
+    "signature": "void PumpOneWindowMessage()",
+    "summary": "Peeks one queued window message (PM_REMOVE); if present, translates and dispatches it.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x005331F0": {
     "name": "OglRenderer::vfunc_88",
     "class": "OglRenderer",
