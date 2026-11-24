@@ -15568,6 +15568,12 @@
     "summary": "Returns global int32 value from mem_00B40D08.",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
+  "0x0059DE40": {
+    "name": "MinFloatPtr",
+    "signature": "float* __cdecl sub_0059DE40(float* a, float* b)",
+    "summary": "Returns the pointer to the smaller float: returns b if *a \u003e *b, otherwise a (NaN-safe: a is returned when unordered).",
+    "lifted_path": "lifted/leaf/tiny_590000.cpp"
+  },
   "0x0059DEB0": {
     "name": "sub_0059DEB0",
     "signature": "extern \"C\" void __fastcall fn_0059DEB0(void* self)",

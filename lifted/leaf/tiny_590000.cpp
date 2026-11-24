@@ -213,3 +213,14 @@ float* fn_0059DE20(float* a, float* b) {
     return (*b > *a) ? a : b;
 }
 } // namespace lift_0059DE20
+
+// [0x0059DE40]
+namespace lift_0059DE40 {
+// @name MinFloatPtr
+// @summary Returns the pointer to the smaller float: returns b if *a > *b, otherwise a (NaN-safe: a is returned when unordered).
+
+
+float* __cdecl sub_0059DE40(float* a, float* b) {
+    return (*a > *b) ? b : a;
+}
+} // namespace lift_0059DE40

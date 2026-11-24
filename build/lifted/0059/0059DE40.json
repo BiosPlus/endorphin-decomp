@@ -1,0 +1,13 @@
+{
+  "va": "0x0059DE40",
+  "size": 26,
+  "orig_symbol": "sub_0059DE40",
+  "src_path": "src/leaf/tiny_590000.cpp",
+  "lifted_path": "lifted/leaf/tiny_590000.cpp",
+  "name": "MinFloatPtr",
+  "signature": "float* __cdecl sub_0059DE40(float* a, float* b)",
+  "summary": "Returns the pointer to the smaller float: returns b if *a \u003e *b, otherwise a (NaN-safe: a is returned when unordered).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:55:52Z"
+}
