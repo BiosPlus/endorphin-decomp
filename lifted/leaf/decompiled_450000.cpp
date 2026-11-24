@@ -479,3 +479,20 @@ extern void __thiscall fn_0045C090(void* self, uint32_t item) {
     }
 }
 } // namespace lift_0045C090
+
+// [0x0045C5F0]
+namespace lift_0045C5F0 {
+// @name CTreeCtrl_ResetAndPopulate
+// @summary Clears all tree view items via TVM_DELETEITEM and calls sub_0045C5C0
+// @field CTreeCtrl +0x20 HWND m_hWnd
+
+
+extern uint32_t (__stdcall *mem_00925694)(uint32_t hWnd, uint32_t Msg, uint32_t wParam, uint32_t lParam);
+extern uint32_t __thiscall ext_0045C5C0(void* self, uint32_t arg0, uint32_t arg1);
+
+uint32_t __thiscall sub_0045C5F0(void* self, uint32_t arg0) {
+    uint32_t hWnd = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x20);
+    mem_00925694(hWnd, 0x1101, 0, 0xFFFF0000u);
+    return ext_0045C5C0(self, arg0, 0);
+}
+} // namespace lift_0045C5F0

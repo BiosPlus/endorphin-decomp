@@ -4616,6 +4616,12 @@
     "summary": "Pure jump thunk forwarding to sub_0045C2C0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0045C5F0": {
+    "name": "CTreeCtrl_ResetAndPopulate",
+    "signature": "uint32_t __thiscall sub_0045C5F0(void* self, uint32_t arg0)",
+    "summary": "Clears all tree view items via TVM_DELETEITEM and calls sub_0045C5C0",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045D8B0": {
     "name": "MultiTrackView::TriggeredEventView::GetTrailingRangeValue",
     "class": "MultiTrackView::TriggeredEventView",
