@@ -1,0 +1,21 @@
+{
+  "va": "0x006C3180",
+  "size": 48,
+  "orig_symbol": "sub_006C3180",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "getTypedChild_0x158",
+  "signature": "uint32_t __thiscall fn_006C3180(void* self)",
+  "summary": "Returns the sub-object at +0x158 if non-null and its vtable[0] returns 7, otherwise 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "uint32_t",
+      "name": "field_0x158"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:23:46Z"
+}
