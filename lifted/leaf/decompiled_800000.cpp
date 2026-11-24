@@ -111,3 +111,17 @@ void fn_0080ABE0(void) {
     mem_00B73C80 = 1;
 }
 } // namespace lift_0080ABE0
+
+// [0x0080AD90] sub_0080AD90 (32 bytes)
+namespace lift_0080AD90 {
+extern void __stdcall ext_InitializeCriticalSection(void* lpCriticalSection);
+extern int mem_00B73C40;
+extern int mem_00B73C84;
+
+// @name InitGlobalCriticalSectionAndSetReadyFlag
+// @summary Initializes the global critical section at 0x00B73C40 and sets the flag at 0x00B73C84 to 1.
+void fn_0080AD90(void) {
+    ext_InitializeCriticalSection(&mem_00B73C40);
+    mem_00B73C84 = 1;
+}
+} // namespace lift_0080AD90

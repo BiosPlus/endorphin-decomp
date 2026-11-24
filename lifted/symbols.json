@@ -45058,6 +45058,12 @@
     "summary": "If the init flag mem_00B73C84 is set, delete the global critical section at mem_00B73C40 and clear the flag.",
     "lifted_path": "lifted/leaf/tiny_800000.cpp"
   },
+  "0x0080AD90": {
+    "name": "InitGlobalCriticalSectionAndSetReadyFlag",
+    "signature": "void fn_0080AD90(void)",
+    "summary": "Initializes the global critical section at 0x00B73C40 and sets the flag at 0x00B73C84 to 1.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080B530": {
     "name": "sub_0080B530_forwardAllocZeroFlags",
     "signature": "extern \"C\" uint32_t fn_0080B530(uint32_t size)",
