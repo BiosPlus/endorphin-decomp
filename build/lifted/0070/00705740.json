@@ -1,0 +1,21 @@
+{
+  "va": "0x00705740",
+  "size": 30,
+  "orig_symbol": "sub_00705740",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "descriptiveName_CallSlot58ForEachReverse",
+  "signature": "void fn_00705740(void* self)",
+  "summary": "Calls virtual slot 0xE8 once per index, from (count-1) down to 0, where count is the int at +0xC0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC0",
+      "type": "int",
+      "name": "field_0xC0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:20:23Z"
+}

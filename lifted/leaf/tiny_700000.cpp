@@ -1187,3 +1187,24 @@ extern int __fastcall fn_0070FDE0(void* self, int edx_unused, int arg) {
 }
 } // namespace lift_006C12B0
 } // namespace lift_0070FDE0
+
+// [0x00705740] sub_00705740 (30 bytes)
+namespace lift_00705740 {
+// @name descriptiveName_CallSlot58ForEachReverse
+// @summary Calls virtual slot 0xE8 once per index, from (count-1) down to 0, where count is the int at +0xC0.
+// @field Unknown +0xC0 int field_0xC0
+void fn_00705740(void* self) {
+    // count = self->field_0xC0; for (i = count - 1; i >= 0; --i) self->vtbl[0xE8](self, i);
+    int32_t i = lift_field<int32_t>(self, 0xC0) - 1;
+    if (i < 0) {
+        return;
+    }
+    void* vtbl = lift_field<void*>(self, 0);
+    using SlotFn = void (*)(void* self, int32_t index);
+    do {
+        SlotFn fn = lift_field<SlotFn>(vtbl, 0xE8);
+        fn(self, i);
+        --i;
+    } while (i >= 0);
+}
+} // namespace lift_00705740

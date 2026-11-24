@@ -38716,6 +38716,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00705450 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00705740": {
+    "name": "descriptiveName_CallSlot58ForEachReverse",
+    "signature": "void fn_00705740(void* self)",
+    "summary": "Calls virtual slot 0xE8 once per index, from (count-1) down to 0, where count is the int at +0xC0.",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x007057C0": {
     "name": "sub_007057C0",
     "signature": "extern \"C\" int32_t __stdcall fn_007057C0(int a1, int a2, int a3)",
