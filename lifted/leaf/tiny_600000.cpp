@@ -102,3 +102,20 @@ extern "C" void __fastcall fn_0060BCC0(void* self) {
     lift_field<void*>(self, 0x0) = &mem_0097215C;
     ext_0060BA10(self);
 }
+
+// [0x00602F00] sub_00602F00 (21 bytes)
+namespace lift_00602F00 {
+// @name UnknownClass::GetSubobject14ViaVirtual28
+// @class UnknownClass
+// @summary Calls the vtable slot at +0x28 of the object pointed to by this+0x04, passing the address this+0x14 as its single argument (callee pops), then returns this+0x14; thiscall.
+// @field UnknownClass +0x04 void* field_0x04
+void* fn_00602F00(void* self) {
+    void* subobject = static_cast<uint8_t*>(self) + 0x14;
+    void* obj = lift_field<void*>(self, 0x04);
+    void* vtable = lift_field<void*>(obj, 0x00);
+    using Slot28Fn = void (*)(void* thisPtr, void* arg);
+    auto fn = reinterpret_cast<Slot28Fn>(lift_field<void*>(vtable, 0x28));
+    fn(obj, subobject);
+    return subobject;
+}
+} // namespace lift_00602F00

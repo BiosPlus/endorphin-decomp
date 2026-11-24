@@ -1,0 +1,22 @@
+{
+  "va": "0x00602F00",
+  "size": 21,
+  "orig_symbol": "sub_00602F00",
+  "src_path": "src/leaf/tiny_600000.cpp",
+  "lifted_path": "lifted/leaf/tiny_600000.cpp",
+  "name": "UnknownClass::GetSubobject14ViaVirtual28",
+  "class": "UnknownClass",
+  "signature": "void* fn_00602F00(void* self)",
+  "summary": "Calls the vtable slot at +0x28 of the object pointed to by this+0x04, passing the address this+0x14 as its single argument (callee pops), then returns this+0x14; thiscall.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:26:04Z"
+}

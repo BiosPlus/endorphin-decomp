@@ -19633,6 +19633,13 @@
     "summary": "Destructor tail-call: restores vtable mem_0096F81C and tail-calls base destructor sub_0065F440.",
     "lifted_path": "lifted/leaf/tiny_600000.cpp"
   },
+  "0x00602F00": {
+    "name": "UnknownClass::GetSubobject14ViaVirtual28",
+    "class": "UnknownClass",
+    "signature": "void* fn_00602F00(void* self)",
+    "summary": "Calls the vtable slot at +0x28 of the object pointed to by this+0x04, passing the address this+0x14 as its single argument (callee pops), then returns this+0x14; thiscall.",
+    "lifted_path": "lifted/leaf/tiny_600000.cpp"
+  },
   "0x00602FF0": {
     "name": "Effector::vfunc_26",
     "class": "Effector",
