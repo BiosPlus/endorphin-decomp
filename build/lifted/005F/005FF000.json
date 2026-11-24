@@ -1,0 +1,46 @@
+{
+  "va": "0x005FF000",
+  "size": 53,
+  "orig_symbol": "sub_005FF000",
+  "src_path": "src/leaf/decompiled_5F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5F0000.cpp",
+  "name": "RbTree_clear",
+  "class": "RbTree",
+  "signature": "extern \"C\" uint32_t mem_00B4B3F0; // RbTree head pointer (+0x04 of tree object) extern \"C\" uint32_t mem_00B4B3F4; // RbTree element count (+0x08 of tree object) extern \"C\" uint32_t mem_00B4B3EC; // RbTree object base (passed as this) static inline uint32_t\u0026 word_at(uint32_t addr)",
+  "summary": "Erases the whole tree below the head sentinel, then resets the head to empty (self-linked) with count 0.",
+  "fields": [
+    {
+      "class": "RbTree",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "head"
+    },
+    {
+      "class": "RbTree",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "count"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "parent"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "right"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:18:09Z"
+}

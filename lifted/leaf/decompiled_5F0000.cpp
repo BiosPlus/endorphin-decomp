@@ -78,3 +78,37 @@ void __thiscall fn_005FD330(uint32_t self, uint32_t node) {
     }
 }
 } // namespace lift_005FD330
+
+// [0x005FF000] sub_005FF000 (53 bytes)
+namespace lift_005FF000 {
+// Known callee 0x005FD330: TreeNode_eraseSubtree (recursively erases a red-black subtree).
+extern void ext_005FD330(uint32_t self, uint32_t node);
+extern uint32_t mem_00B4B3F0; // RbTree head pointer (+0x04 of tree object)
+extern uint32_t mem_00B4B3F4; // RbTree element count (+0x08 of tree object)
+extern uint32_t mem_00B4B3EC; // RbTree object base (passed as this)
+
+// Read/write a 32-bit word at a guest address held in a uint32_t.
+static inline uint32_t& word_at(uint32_t addr) {
+    return *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(addr));
+}
+
+// @name RbTree_clear
+// @class RbTree
+// @summary Erases the whole tree below the head sentinel, then resets the head to empty (self-linked) with count 0.
+// @field RbTree +0x04 uint32_t head
+// @field RbTree +0x08 uint32_t count
+// @field TreeNode +0x00 uint32_t left
+// @field TreeNode +0x04 uint32_t parent
+// @field TreeNode +0x08 uint32_t right
+void fn_005FF000() {
+    uint32_t head = mem_00B4B3F0;
+    // Erase the subtree rooted at head->parent.
+    ext_005FD330(0x00B4B3ECu, word_at(head + 0x04));
+
+    head = mem_00B4B3F0;
+    word_at(head + 0x04) = head; // parent = head (empty root)
+    mem_00B4B3F4 = 0;            // count = 0
+    word_at(head + 0x00) = head; // left = head
+    word_at(head + 0x08) = head; // right = head
+}
+} // namespace lift_005FF000

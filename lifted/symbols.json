@@ -27734,6 +27734,13 @@
     "summary": "Assigns every element in [begin, end) from *src (string at +0x00 and dword at +0x1C); no-op when begin == end.",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
+  "0x005FF000": {
+    "name": "RbTree_clear",
+    "class": "RbTree",
+    "signature": "extern \"C\" uint32_t mem_00B4B3F0; // RbTree head pointer (+0x04 of tree object) extern \"C\" uint32_t mem_00B4B3F4; // RbTree element count (+0x08 of tree object) extern \"C\" uint32_t mem_00B4B3EC; // RbTree object base (passed as this) static inline uint32_t\u0026 word_at(uint32_t addr)",
+    "summary": "Erases the whole tree below the head sentinel, then resets the head to empty (self-linked) with count 0.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
   "0x005FF040": {
     "name": "ResourceHolder::ReleaseAndReset",
     "class": "ResourceHolder",
