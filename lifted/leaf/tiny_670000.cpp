@@ -465,3 +465,18 @@ int __thiscall fn_006722D0(Unknown* self, int arg) {
 }
 } // namespace lift_006722B0
 } // namespace lift_006722D0
+
+// [0x0067B310] sub_0067B310 (24 bytes)
+namespace lift_0067B310 {
+// @name InitValueReciprocalZero
+// @class Unknown
+// @summary Stores a value, its reciprocal (1.0 / divisor), and 0.0 into self; the 16-byte arg block is callee-popped (ret 0x10).
+// @field Unknown +0x08 double field_0x08
+// @field Unknown +0x10 double field_0x10
+// @field Unknown +0x18 double field_0x18
+void fn_0067B310(void* self, double value, double divisor) {
+    lift_field<double>(self, 0x08) = value;
+    lift_field<double>(self, 0x10) = 1.0 / divisor;
+    lift_field<double>(self, 0x18) = 0.0;
+}
+} // namespace lift_0067B310

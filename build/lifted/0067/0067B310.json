@@ -1,0 +1,34 @@
+{
+  "va": "0x0067B310",
+  "size": 24,
+  "orig_symbol": "sub_0067B310",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "InitValueReciprocalZero",
+  "class": "Unknown",
+  "signature": "void fn_0067B310(void* self, double value, double divisor)",
+  "summary": "Stores a value, its reciprocal (1.0 / divisor), and 0.0 into self; the 16-byte arg block is callee-popped (ret 0x10).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "double",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "double",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "double",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:38:03Z"
+}
