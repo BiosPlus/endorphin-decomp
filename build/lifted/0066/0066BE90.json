@@ -1,0 +1,22 @@
+{
+  "va": "0x0066BE90",
+  "size": 122,
+  "orig_symbol": "ExprParser::SubComponentType::vfunc_4",
+  "src_path": "src/ExprParser/SubComponentType.cpp",
+  "lifted_path": "lifted/ExprParser/SubComponentType.cpp",
+  "name": "ExprParser::SubComponentType::vfunc_4",
+  "class": "ExprParser::SubComponentType",
+  "signature": "inline void* lift_ptr(uint32_t addr)",
+  "summary": "Calls virtual slot 0 on this to obtain an object and out-pointer, forwards the object to ext_0041CEB0 with arg1, then releases the out-pointer via its virtual slot 30 if non-null; returns arg1.",
+  "fields": [
+    {
+      "class": "ExprParser::SubComponentType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:35:03Z"
+}

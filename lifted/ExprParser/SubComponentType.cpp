@@ -206,3 +206,46 @@ uint32_t fn_0066BF10(void* self, uint32_t first, uint32_t arg) {
 
     return first;
 }
+
+// [0x0066BE90]
+namespace lift_0066BE90 {
+// @name ExprParser::SubComponentType::vfunc_4
+// @class ExprParser::SubComponentType
+// @summary Calls virtual slot 0 on this to obtain an object and out-pointer, forwards the object to ext_0041CEB0 with arg1, then releases the out-pointer via its virtual slot 30 if non-null; returns arg1.
+// @field ExprParser::SubComponentType +0x00 void* vptr
+
+extern uint32_t ext_0041CEB0(void* self, uint32_t arg1);
+
+namespace {
+
+inline void* lift_ptr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+inline void* const* lift_vtable(void* obj) {
+    return *reinterpret_cast<void* const* const*>(obj);
+}
+
+} // namespace
+
+uint32_t fn_0066BE90(void* self, uint32_t arg1, uint32_t arg2) {
+    // Slot 0: obj = self->vfunc0(&tmp, arg2)
+    uint32_t tmp = 0;
+    using Slot0Fn = uint32_t (*)(void* self, uint32_t* out, uint32_t arg);
+    auto slot0 = reinterpret_cast<Slot0Fn>(lift_vtable(self)[0]);
+    uint32_t obj = slot0(self, &tmp, arg2);
+
+    (void)ext_0041CEB0(lift_ptr(obj), arg1);
+
+    // If the out-pointer is non-null, invoke its virtual slot 30 (offset 0x78).
+    if (tmp != 0) {
+        uint32_t scratch = 0;
+        using Slot30Fn = uint32_t (*)(void* self, uint32_t* arg);
+        void* tobj = lift_ptr(tmp);
+        auto slot30 = reinterpret_cast<Slot30Fn>(lift_vtable(tobj)[0x78 / sizeof(void*)]);
+        (void)slot30(tobj, &scratch);
+    }
+
+    return arg1;
+}
+} // namespace lift_0066BE90

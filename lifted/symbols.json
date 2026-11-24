@@ -30473,6 +30473,13 @@
     "summary": "Calls vtable slot 0 to fetch a sub-object, queries its vtable slot 3 for a bool, then releases the temporary via vtable slot 30 and returns the bool.",
     "lifted_path": "lifted/ExprParser/SubComponentType.cpp"
   },
+  "0x0066BE90": {
+    "name": "ExprParser::SubComponentType::vfunc_4",
+    "class": "ExprParser::SubComponentType",
+    "signature": "inline void* lift_ptr(uint32_t addr)",
+    "summary": "Calls virtual slot 0 on this to obtain an object and out-pointer, forwards the object to ext_0041CEB0 with arg1, then releases the out-pointer via its virtual slot 30 if non-null; returns arg1.",
+    "lifted_path": "lifted/ExprParser/SubComponentType.cpp"
+  },
   "0x0066BF10": {
     "name": "ExprParser::SubComponentType::vfunc_0",
     "class": "ExprParser::SubComponentType",
