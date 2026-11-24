@@ -48359,6 +48359,12 @@
     "summary": "Swaps the byte at offset 0 and the byte at offset 1 of the buffer pointed to by the single stack argument (cdecl, no cleanup).",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AF010": {
+    "name": "swapBytePairsInBuffer",
+    "signature": "void fn_007AF010(uint8_t* buffer, uint32_t count)",
+    "summary": "Swaps the two bytes of each 16-bit pair in a buffer, for `count` pairs (cdecl, args: buffer, count).",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AF620": {
     "name": "ForwardToCallbackWithArgPtr",
     "class": "\u003cClassName\u003e (optional)",

@@ -244,3 +244,19 @@ void __cdecl fn_007A5EF0(void** p) {
 }
 } // namespace lift_007A5EF0
 } // namespace lift_007A5EF0
+
+// [0x007AF010] sub_007AF010 (48 bytes)
+namespace lift_007AF010 {
+// @name swapBytePairsInBuffer
+// @summary Swaps the two bytes of each 16-bit pair in a buffer, for `count` pairs (cdecl, args: buffer, count).
+void fn_007AF010(uint8_t* buffer, uint32_t count) {
+    // Loop runs `count` times; each iteration swaps buffer[i] and buffer[i+1], then advances by 2.
+    // A zero count returns immediately.
+    for (uint32_t i = 0; i < count; ++i) {
+        uint8_t* p = buffer + static_cast<size_t>(i) * 2;
+        uint8_t first = p[0];
+        p[0] = p[1];
+        p[1] = first;
+    }
+}
+} // namespace lift_007AF010

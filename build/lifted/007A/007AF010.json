@@ -1,0 +1,13 @@
+{
+  "va": "0x007AF010",
+  "size": 48,
+  "orig_symbol": "sub_007AF010",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "swapBytePairsInBuffer",
+  "signature": "void fn_007AF010(uint8_t* buffer, uint32_t count)",
+  "summary": "Swaps the two bytes of each 16-bit pair in a buffer, for `count` pairs (cdecl, args: buffer, count).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:27:39Z"
+}
