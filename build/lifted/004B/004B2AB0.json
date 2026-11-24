@@ -1,0 +1,22 @@
+{
+  "va": "0x004B2AB0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setMaxAutoWidth(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, float, getMaxAutoWidth, float, setMaxAutoWidth\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, float, getMaxAutoWidth, float, setMaxAutoWidth\u003e",
+  "signature": "void* __thiscall fn_004B2AB0(void* self, void* out)",
+  "summary": "Lazily initializes a static type descriptor at 0x00AE0D30 and stores its pointer at out+0x4",
+  "fields": [
+    {
+      "class": "OutStruct",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "type_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:58:30Z"
+}

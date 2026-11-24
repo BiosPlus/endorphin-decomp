@@ -9395,3 +9395,24 @@ void __thiscall fn_004B2FE0(void* /*self*/, void* arg0) {
     *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(arg0) + 4) = 0x00AE0D40u;
 }
 } // namespace lift_004B2FE0
+
+// [0x004B7CB0]
+namespace lift_004B7CB0 {
+// @name ExprParser::ReadWriteMethodType<NMData::EngineData, float, getPosBufferFrameRate, setPosBufferFrameRate>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::EngineData, float, getPosBufferFrameRate, setPosBufferFrameRate>
+// @summary Lazily initializes static type descriptor at 0x00AE166C and stores its address at arg0 + 4.
+
+extern uint32_t mem_00AE1670;
+extern uint32_t mem_00AE166C;
+void __thiscall ext_0067A670(void* self);
+
+void __thiscall fn_004B7CB0(void* self, void* arg0) {
+    (void)self;
+    if ((mem_00AE1670 & 1u) == 0u) {
+        mem_00AE1670 |= 1u;
+        ext_0067A670(&mem_00AE166C);
+        mem_00AE166C = 0x0094391Cu;
+    }
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(arg0) + 4) = 0x00AE166Cu;
+}
+} // namespace lift_004B7CB0

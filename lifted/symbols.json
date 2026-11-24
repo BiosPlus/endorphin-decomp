@@ -10529,6 +10529,13 @@
     "summary": "Evaluates a float expression and sets NMData::EngineData unitMass (+0x48) and dirty flag (+0x84), or throws on null object.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004B7CB0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData, float, getPosBufferFrameRate, setPosBufferFrameRate\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData, float, getPosBufferFrameRate, setPosBufferFrameRate\u003e",
+    "signature": "void __thiscall fn_004B7CB0(void* self, void* arg0)",
+    "summary": "Lazily initializes static type descriptor at 0x00AE166C and stores its address at arg0 + 4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004B7D30": {
     "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, getPosBufferFrameRate, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0\u003e",
