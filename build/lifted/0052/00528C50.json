@@ -1,0 +1,28 @@
+{
+  "va": "0x00528C50",
+  "size": 31,
+  "orig_symbol": "AnimatableTransform::vfunc_10_off_C",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "AnimatableTransform::vfunc_10_off_C",
+  "class": "AnimatableTransform",
+  "signature": "void fn_00528C50(void* self, void* arg, uint32_t /*unusedStackArg*/)",
+  "summary": "If this+0x4 and its +0x10 sub-object are non-null, forwards arg to the sub-object's vtable slot 9 (vfunc at +0x24).",
+  "fields": [
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0x10",
+      "type": "void* subobject_0x10 (sub-object pointer read from field_0x04 + 0x10; class",
+      "name": "unknown)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:24:24Z"
+}

@@ -6724,3 +6724,30 @@ void fn_00477EA0(void* self, void* str) {
 }
 } // namespace lift_00401D00
 } // namespace lift_00477EA0
+
+// [0x00528C50]
+namespace lift_00528C50 {
+// @name AnimatableTransform::vfunc_10_off_C
+// @class AnimatableTransform
+// @summary If this+0x4 and its +0x10 sub-object are non-null, forwards arg to the sub-object's vtable slot 9 (vfunc at +0x24).
+// @field AnimatableTransform +0x04 void* field_0x04
+// @field AnimatableTransform +0x10 void* subobject_0x10 (sub-object pointer read from field_0x04 + 0x10; class unknown)
+
+namespace {
+using ForwardFn = void (*)(void* self, void* arg);
+}
+
+void fn_00528C50(void* self, void* arg, uint32_t /*unusedStackArg*/) {
+    void* child = lift_field<void*>(self, 0x04);
+    if (!child) {
+        return;
+    }
+    void* target = lift_field<void*>(child, 0x10);
+    if (!target) {
+        return;
+    }
+    void* vtable = lift_field<void*>(target, 0x00);
+    ForwardFn fn = lift_field<ForwardFn>(vtable, 0x24);
+    fn(target, arg);
+}
+} // namespace lift_00528C50
