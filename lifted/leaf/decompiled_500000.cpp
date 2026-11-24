@@ -343,3 +343,35 @@ void* __fastcall fn_00504970(void* self) {
     return reinterpret_cast<void*>(static_cast<uintptr_t>(entry) + 0x20);
 }
 } // namespace lift_00504970
+
+// [0x005049B0] sub_005049B0 (60 bytes)
+namespace lift_005049B0 {
+extern int mem_00925134;
+
+// Import thunk for MSVCR80!_invalid_parameter_noinfo (called through the IAT slot at 0x00925134).
+extern void ext_invalid_parameter_noinfo();
+
+// @name ElementArray::getElementAt
+// @class ElementArray
+// @summary Returns the address of element `index` in a contiguous array of 104-byte records whose begin/end pointers are at +0x04/+0x08; calls the invalid-parameter handler if the array is empty or index >= count.
+// @field ElementArray +0x04 uint32_t field_0x04
+// @field ElementArray +0x08 uint32_t field_0x08
+uint8_t* fn_005049B0(void* self, uint32_t index) {
+    constexpr uint32_t kElementSize = 0x68;
+
+    auto* base = static_cast<uint8_t*>(self);
+    const uint32_t begin = *reinterpret_cast<uint32_t*>(base + 0x04);
+
+    if (begin == 0) {
+        ext_invalid_parameter_noinfo();
+    } else {
+        const uint32_t end = *reinterpret_cast<uint32_t*>(base + 0x08);
+        const int32_t count = static_cast<int32_t>(end - begin) / static_cast<int32_t>(kElementSize);
+        if (!(index < static_cast<uint32_t>(count))) {
+            ext_invalid_parameter_noinfo();
+        }
+    }
+
+    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(begin + index * kElementSize));
+}
+} // namespace lift_005049B0

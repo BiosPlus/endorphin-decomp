@@ -15193,6 +15193,13 @@
     "summary": "Returns (end - begin) / 36 when begin (+0x04) is non-null, otherwise 0.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x005049B0": {
+    "name": "ElementArray::getElementAt",
+    "class": "ElementArray",
+    "signature": "uint8_t* fn_005049B0(void* self, uint32_t index)",
+    "summary": "Returns the address of element `index` in a contiguous array of 104-byte records whose begin/end pointers are at +0x04/+0x08; calls the invalid-parameter handler if the array is empty or index \u003e= count.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00504A70": {
     "name": "thunk_MSVCP80_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ",
     "signature": "extern \"C\" void fn_00504A70(void)",
