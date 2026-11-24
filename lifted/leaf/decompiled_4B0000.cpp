@@ -92,3 +92,32 @@ void* fn_004B6CC0(void* self) {
     return esi;
 }
 } // namespace lift_004B6CC0
+
+// [0x004B0F50] sub_004B0F50 (37 bytes)
+namespace lift_004B0F50 {
+// @name InitFlagsAndEmptyString
+// @summary Sets four header bytes (3 x 1, 1 x 0), default-constructs a std::string at +0x04, zeroes the dword at +0x20, and returns self.
+// @field UnknownClass +0x00 uint8_t field_0x00
+// @field UnknownClass +0x01 uint8_t field_0x01
+// @field UnknownClass +0x02 uint8_t field_0x02
+// @field UnknownClass +0x03 uint8_t field_0x03
+// @field UnknownClass +0x04 std::string field_0x04
+// @field UnknownClass +0x20 uint32_t field_0x20
+void* fn_004B0F50(void* self) {
+    auto* base = static_cast<std::uint8_t*>(self);
+
+    base[0x00] = 1;
+    base[0x01] = 1;
+    base[0x02] = 1;
+    base[0x03] = 0;
+
+    // Original calls the MSVC std::string default ctor through mem_00924FE8
+    // (MSVCP80) on this+4. Expressed here as a placement-new of std::string.
+    // Caveat: MSVC basic_string is 0x18 bytes; libstdc++ differs, so the
+    // +0x20 store below only matches the original layout under MSVC ABI.
+    new (base + 0x04) std::string();
+
+    *reinterpret_cast<std::uint32_t*>(base + 0x20) = 0;
+    return self;
+}
+} // namespace lift_004B0F50
