@@ -52596,6 +52596,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0072B330 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072B770": {
+    "name": "isKnownGlobalHandle",
+    "signature": "bool __stdcall sub_0072B770(uint32_t value)",
+    "summary": "Returns true if the argument matches any of four known global 32-bit values.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072B7B0": {
     "name": "sub_0072B7B0",
     "signature": "extern \"C\" int32_t __cdecl fn_0072B7B0(void)",
