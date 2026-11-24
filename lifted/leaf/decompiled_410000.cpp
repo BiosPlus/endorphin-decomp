@@ -680,3 +680,22 @@ void fn_0041DDA0(void* self) {
     dtor(base + 0x04);
 }
 } // namespace lift_0041DDA0
+
+// [0x00414260]
+namespace lift_00414260 {
+// @name sub_00414260
+// @summary Forwards two MFC80 ord_2902/ord_876 results from arg3 along with arg1 and arg2 to vtable+0x64
+// @field Self +0x00 uint32_t* vtable
+
+extern uint32_t (__thiscall *mem_0092431C)(uint32_t);
+extern uint32_t (__thiscall *mem_00924300)(uint32_t);
+
+uint32_t __thiscall sub_00414260(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    uint32_t* vtable = *reinterpret_cast<uint32_t**>(self);
+    uint32_t r1 = mem_0092431C(arg3);
+    uint32_t r2 = mem_00924300(arg3);
+    using vfn_t = uint32_t(__thiscall*)(void*, uint32_t, uint32_t, uint32_t, uint32_t);
+    vfn_t fn = reinterpret_cast<vfn_t>(vtable[0x64 / 4]);
+    return fn(self, arg1, arg2, r2, r1);
+}
+} // namespace lift_00414260

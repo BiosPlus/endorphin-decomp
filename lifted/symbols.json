@@ -1058,6 +1058,12 @@
     "summary": "Pure jump thunk forwarding to sub_00414240.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00414260": {
+    "name": "sub_00414260",
+    "signature": "uint32_t __thiscall sub_00414260(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Forwards two MFC80 ord_2902/ord_876 results from arg3 along with arg1 and arg2 to vtable+0x64",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00414510": {
     "name": "std::operator+ (basic_string\u003cchar\u003e forwarder)",
     "class": "std",

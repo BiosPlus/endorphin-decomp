@@ -1,0 +1,21 @@
+{
+  "va": "0x00414260",
+  "size": 52,
+  "orig_symbol": "sub_00414260",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "sub_00414260",
+  "signature": "uint32_t __thiscall sub_00414260(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Forwards two MFC80 ord_2902/ord_876 results from arg3 along with arg1 and arg2 to vtable+0x64",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "uint32_t*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:08:27Z"
+}
