@@ -1,0 +1,22 @@
+{
+  "va": "0x004474D0",
+  "size": 15,
+  "orig_symbol": "sub_004474D0",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "ReleaseLibraryHandle_0x20",
+  "class": "Unknown",
+  "signature": "void fn_004474D0(void* self)",
+  "summary": "If the handle stored at this+0x20 is non-null, free it with FreeLibrary; always returns.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HMODULE",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:28:15Z"
+}

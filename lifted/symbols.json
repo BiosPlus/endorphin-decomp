@@ -1781,6 +1781,13 @@
     "summary": "Pure jump thunk forwarding to GetStringLiteral_004473D0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004474D0": {
+    "name": "ReleaseLibraryHandle_0x20",
+    "class": "Unknown",
+    "signature": "void fn_004474D0(void* self)",
+    "summary": "If the handle stored at this+0x20 is non-null, free it with FreeLibrary; always returns.",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x004474E0": {
     "name": "invokeCallbackOrReturn",
     "signature": "void __thiscall sub_004474E0(void* self, uint32_t arg1)",

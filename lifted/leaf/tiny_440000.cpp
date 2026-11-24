@@ -436,3 +436,19 @@ DWORD fn_004407B0(void* self) {
     return *reinterpret_cast<DWORD*>(static_cast<uint8_t*>(p) + 0x10);
 }
 } // namespace lift_004407B0
+
+// [0x004474D0]
+namespace lift_004474D0 {
+extern BOOL ext_FreeLibrary(HMODULE hLibModule);
+
+// @name ReleaseLibraryHandle_0x20
+// @class Unknown
+// @summary If the handle stored at this+0x20 is non-null, free it with FreeLibrary; always returns.
+// @field Unknown +0x20 HMODULE field_0x20
+void fn_004474D0(void* self) {
+    HMODULE handle = lift_field<HMODULE>(self, 0x20);
+    if (handle != nullptr) {
+        ext_FreeLibrary(handle);
+    }
+}
+} // namespace lift_004474D0
