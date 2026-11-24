@@ -37672,6 +37672,12 @@
     "summary": "Pure jump thunk forwarding to NMCAutoCompleteEdit::vfunc_80.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006B9640": {
+    "name": "SendMsg0x19A_InvalidateWindow",
+    "signature": "extern \"C\" void __thiscall fn_006B9640(void* self, WPARAM wp, LPARAM lp)",
+    "summary": "Sends message 0x19A to the window handle stored at this+0x20 with the two stack arguments, then invalidates that window's full client area.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B98D0": {
     "name": "sub_006B98D0",
     "signature": "void fn_006B98D0(void)",

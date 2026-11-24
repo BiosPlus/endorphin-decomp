@@ -1,0 +1,13 @@
+{
+  "va": "0x006B9640",
+  "size": 46,
+  "orig_symbol": "sub_006B9640",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "SendMsg0x19A_InvalidateWindow",
+  "signature": "extern \"C\" void __thiscall fn_006B9640(void* self, WPARAM wp, LPARAM lp)",
+  "summary": "Sends message 0x19A to the window handle stored at this+0x20 with the two stack arguments, then invalidates that window's full client area.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:09:56Z"
+}

@@ -492,3 +492,18 @@ void fn_006B8B20(uint32_t ecx, uint32_t arg0) {
     ext_006A5EA8(ecx);
 }
 } // namespace lift_006B8B20
+
+// [0x006B9640]
+namespace lift_006B9640 {
+extern LRESULT ext_SendMessageA(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp);
+// USER32!InvalidateRect through IAT slot mem_00925688
+extern BOOL ext_InvalidateRect(HWND hwnd, const RECT* rect, BOOL erase);
+
+// @name SendMsg0x19A_InvalidateWindow
+// @summary Sends message 0x19A to the window handle stored at this+0x20 with the two stack arguments, then invalidates that window's full client area.
+extern void __thiscall fn_006B9640(void* self, WPARAM wp, LPARAM lp) {
+    HWND hwnd = *reinterpret_cast<HWND*>(reinterpret_cast<uint8_t*>(self) + 0x20);
+    ext_SendMessageA(hwnd, 0x19A, wp, lp);
+    ext_InvalidateRect(*reinterpret_cast<HWND*>(reinterpret_cast<uint8_t*>(self) + 0x20), nullptr, TRUE);
+}
+} // namespace lift_006B9640
