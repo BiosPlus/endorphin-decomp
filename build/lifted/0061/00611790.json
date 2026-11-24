@@ -1,0 +1,28 @@
+{
+  "va": "0x00611790",
+  "size": 52,
+  "orig_symbol": "NMData::HingeSecondaryConstraint::vfunc_8_off_C",
+  "src_path": "src/NMData/HingeSecondaryConstraint.cpp",
+  "lifted_path": "lifted/NMData/HingeSecondaryConstraint.cpp",
+  "name": "NMData::HingeSecondaryConstraint::vfunc_8_off_C",
+  "class": "NMData::HingeSecondaryConstraint",
+  "signature": "void fn_00611790(void* self, DWORD arg0)",
+  "summary": "Stores the low byte of its argument at +0x5C and, if the sub-object at +0x154 is present, forwards that argument via ext_00528BB0 and sets a flag through ext_00528C70.",
+  "fields": [
+    {
+      "class": "NMData::HingeSecondaryConstraint",
+      "offset": "+0x154",
+      "type": "void*",
+      "name": "field_0x154"
+    },
+    {
+      "class": "NMData::HingeSecondaryConstraint",
+      "offset": "+0x5C",
+      "type": "BYTE",
+      "name": "field_0x5C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:33:34Z"
+}

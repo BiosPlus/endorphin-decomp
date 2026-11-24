@@ -20,3 +20,25 @@ void* fn_0061EA10() {
     }
     return ext_0061E9D0(obj);
 }
+
+// [0x00611790] NMData::HingeSecondaryConstraint::vfunc_8_off_C (52 bytes)
+namespace lift_00611790 {
+// Known callee 0x00528BB0: descriptiveName_00528BB0 (forwardVirtual0x2CIfNonNull) (If this->field_0x04 is non-null, tail-dispatch virtual slot 0x2C/4 on it with the same args; otherwise return 0 (callee pops 8 bytes).)
+extern DWORD ext_00528BB0(void* self, DWORD arg0, DWORD arg1);
+// Known callee 0x00528C70: setFlagOnPointedObject (If the pointer at self+0x04 is non-null, sets the byte at (that pointer)+0x04 to 1.)
+extern void ext_00528C70(void* self);
+
+// @name NMData::HingeSecondaryConstraint::vfunc_8_off_C
+// @class NMData::HingeSecondaryConstraint
+// @summary Stores the low byte of its argument at +0x5C and, if the sub-object at +0x154 is present, forwards that argument via ext_00528BB0 and sets a flag through ext_00528C70.
+// @field NMData::HingeSecondaryConstraint +0x154 void* field_0x154
+// @field NMData::HingeSecondaryConstraint +0x5C BYTE field_0x5C
+void fn_00611790(void* self, DWORD arg0) {
+    void* sub = lift_field<void*>(self, 0x154);
+    lift_field<BYTE>(self, 0x5C) = static_cast<BYTE>(arg0);
+    if (sub != nullptr) {
+        ext_00528BB0(static_cast<uint8_t*>(sub) + 0x0C, 0x20000, arg0);
+        ext_00528C70(static_cast<uint8_t*>(lift_field<void*>(self, 0x154)) + 0x0C);
+    }
+}
+} // namespace lift_00611790
