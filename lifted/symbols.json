@@ -43789,6 +43789,13 @@
     "summary": "Destructor tail-call: restores vtable mem_00997028 and tail-calls base destructor sub_007892B0.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x0078BEC0": {
+    "name": "Unknown::VirtualGateThenForwardOrReadField1C",
+    "class": "Unknown",
+    "signature": "DWORD fn_0078BEC0(void* self)",
+    "summary": "If the virtual gate at vtable +0x2c returns true, forward to ext_00789650; a -1 result is returned unchanged, otherwise return the DWORD at +0x1C. Returns 0 when the gate is false.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078C220": {
     "name": "Unknown::GetScaledDeltaFromField4",
     "class": "Unknown",

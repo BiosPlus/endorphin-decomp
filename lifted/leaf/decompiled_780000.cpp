@@ -251,3 +251,33 @@ extern const unsigned char sub_0078CA10[17] = {
     0x01, 0x05, 0x05, 0x05, 0x05, 0x05, 0x03, 0x04
 };
 } // namespace lift_0078CA10
+
+// [0x0078BEC0] sub_0078BEC0 (37 bytes)
+namespace lift_0078BEC0 {
+// Known callee 0x00789650: Unknown::ForwardVirtualByField08OrField14 (Forwards to a virtual method on the object at +0x08 if set, otherwise to a virtual method on the object at +0x14.)
+extern DWORD __fastcall ext_00789650(void* self);
+
+// Virtual gate at vtable slot +0x2c (thiscall, no stack args, returns bool in AL).
+using GateFn = BYTE(__thiscall*)(void* self);
+
+// @name Unknown::VirtualGateThenForwardOrReadField1C
+// @class Unknown
+// @summary If the virtual gate at vtable +0x2c returns true, forward to ext_00789650; a -1 result is returned unchanged, otherwise return the DWORD at +0x1C. Returns 0 when the gate is false.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x1c DWORD field_0x1c
+DWORD fn_0078BEC0(void* self) {
+    auto* bytes = static_cast<unsigned char*>(self);
+    void** vtable = *reinterpret_cast<void***>(self);
+    GateFn gate = *reinterpret_cast<GateFn*>(reinterpret_cast<unsigned char*>(vtable) + 0x2c);
+
+    if (!gate(self)) {
+        return 0;
+    }
+
+    DWORD r = ext_00789650(self);
+    if (r == 0xFFFFFFFFu) {
+        return r;
+    }
+    return *reinterpret_cast<DWORD*>(bytes + 0x1c);
+}
+} // namespace lift_0078BEC0

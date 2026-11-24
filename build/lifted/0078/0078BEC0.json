@@ -1,0 +1,28 @@
+{
+  "va": "0x0078BEC0",
+  "size": 37,
+  "orig_symbol": "sub_0078BEC0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "Unknown::VirtualGateThenForwardOrReadField1C",
+  "class": "Unknown",
+  "signature": "DWORD fn_0078BEC0(void* self)",
+  "summary": "If the virtual gate at vtable +0x2c returns true, forward to ext_00789650; a -1 result is returned unchanged, otherwise return the DWORD at +0x1C. Returns 0 when the gate is false.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "DWORD",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:47:27Z"
+}
