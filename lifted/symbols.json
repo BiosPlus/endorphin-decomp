@@ -30702,6 +30702,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_6D0000.cpp"
   },
+  "0x006D2CA0": {
+    "name": "forwardMem006D2CB0_006D2CA0",
+    "signature": "uint32_t fn_006D2CA0()",
+    "summary": "Pushes the address of mem_006D2CB0 as a single cdecl argument, calls sub_006A6C87, and returns its result unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D2F90": {
     "name": "sub_006D2F90",
     "signature": "extern \"C\" void* __fastcall fn_006D2F90(void* self, int edx_unused, unsigned int flags)",

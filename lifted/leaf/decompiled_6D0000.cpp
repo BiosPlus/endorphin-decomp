@@ -27,3 +27,16 @@ extern "C" void* __fastcall fn_006D7D90(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+
+// [0x006D2CA0] sub_006D2CA0 (12 bytes)
+namespace lift_006D2CA0 {
+extern uint32_t ext_006A6C87(uint32_t arg);
+extern int mem_006D2CB0;
+
+// @name forwardMem006D2CB0_006D2CA0
+// @summary Pushes the address of mem_006D2CB0 as a single cdecl argument, calls sub_006A6C87, and returns its result unchanged.
+uint32_t fn_006D2CA0() {
+    const uint32_t arg = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_006D2CB0));
+    return ext_006A6C87(arg);
+}
+} // namespace lift_006D2CA0

@@ -1,0 +1,13 @@
+{
+  "va": "0x006D2CA0",
+  "size": 12,
+  "orig_symbol": "sub_006D2CA0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "forwardMem006D2CB0_006D2CA0",
+  "signature": "uint32_t fn_006D2CA0()",
+  "summary": "Pushes the address of mem_006D2CB0 as a single cdecl argument, calls sub_006A6C87, and returns its result unchanged.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:16:26Z"
+}
