@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <cstdio>
 #include <cstring>
+#include <cstdint>
 
 // [0x0085E04B] sub_0085E04B (5 bytes)
 // @name sub_0085E04B
@@ -496,3 +497,41 @@ void fn_0085D860(uint32_t* dst, uint16_t count) {
     std::memcpy(dst, &value, sizeof(value));
 }
 } // namespace lift_0085D860
+
+// [0x00859DD0] sub_00859DD0 (48 bytes)
+namespace lift_00859DD0 {
+// @name Unknown::ReadNextByteOrSentinel
+// @class Unknown
+// @summary Returns the byte at the cursor and advances it, or 0xFF00 when the cursor is at or past the buffer length. If flag bit 2 is set, the buffer header is reached through the pointer at +0x00.
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x14 uint8_t field_0x14
+namespace lift_00859DD0 {
+
+// Buffer header layout (object pointed to by +0x00 when flag bit 2 is set):
+//   +0x00 uint8_t* data
+//   +0x04 uint32_t length
+uint32_t fn_00859DD0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    uint8_t flags = *(obj + 0x14);
+
+    // Resolve the buffer header: indirect through *self when flag bit 2 is set.
+    uint8_t* header = obj;
+    if (flags & 0x04) {
+        header = *reinterpret_cast<uint8_t**>(obj);
+    }
+
+    uint32_t cursor = *reinterpret_cast<uint32_t*>(obj + 0x08);
+    uint32_t length = *reinterpret_cast<uint32_t*>(header + 0x04);
+
+    if (cursor >= length) {
+        return 0xFF00u;
+    }
+
+    uint8_t* data = *reinterpret_cast<uint8_t**>(header);
+    uint32_t value = data[cursor];
+    *reinterpret_cast<uint32_t*>(obj + 0x08) = cursor + 1;
+    return value;
+}
+
+} // namespace lift_00859DD0
+} // namespace lift_00859DD0

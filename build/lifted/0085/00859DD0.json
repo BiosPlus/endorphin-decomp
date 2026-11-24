@@ -1,0 +1,28 @@
+{
+  "va": "0x00859DD0",
+  "size": 48,
+  "orig_symbol": "sub_00859DD0",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "Unknown::ReadNextByteOrSentinel",
+  "class": "Unknown",
+  "signature": "uint32_t fn_00859DD0(void* self)",
+  "summary": "Returns the byte at the cursor and advances it, or 0xFF00 when the cursor is at or past the buffer length. If flag bit 2 is set, the buffer header is reached through the pointer at +0x00.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint8_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:28:53Z"
+}

@@ -50680,6 +50680,13 @@
     "summary": "Follows an indirection when flag 0x4 is set at +0x14, then returns the pointer at +0x4.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x00859DD0": {
+    "name": "Unknown::ReadNextByteOrSentinel",
+    "class": "Unknown",
+    "signature": "uint32_t fn_00859DD0(void* self)",
+    "summary": "Returns the byte at the cursor and advances it, or 0xFF00 when the cursor is at or past the buffer length. If flag bit 2 is set, the buffer header is reached through the pointer at +0x00.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00859E50": {
     "name": "ResolveDwordThroughFlaggedIndirection",
     "signature": "uint32_t ResolveDwordThroughFlaggedIndirection(void* self)",
