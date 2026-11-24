@@ -1,0 +1,33 @@
+{
+  "va": "0x00681FE0",
+  "size": 17,
+  "orig_symbol": "sub_00681FE0",
+  "src_path": "src/leaf/tiny_680000.cpp",
+  "lifted_path": "lifted/leaf/tiny_680000.cpp",
+  "name": "sub_00681FE0",
+  "signature": "void* fn_00681FE0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x005B1830 (initVtableAndZeroFields_005B1830).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:54:06Z"
+}

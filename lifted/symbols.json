@@ -2386,6 +2386,24 @@
     "summary": "Returns the address of the read-only string \"$aj\" in .rdata.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x0044B780": {
+    "name": "sub_0044B780",
+    "signature": "void fn_0044B780(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00675D60 (Unknown::forwardToChildVfunc14).",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
+  "0x0044B7A0": {
+    "name": "sub_0044B7A0",
+    "signature": "void fn_0044B7A0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00675D60 (Unknown::forwardToChildVfunc14).",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
+  "0x0044B7C0": {
+    "name": "sub_0044B7C0",
+    "signature": "void fn_0044B7C0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00675D60 (Unknown::forwardToChildVfunc14).",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x0044BC40": {
     "name": "sub_0044BC40",
     "signature": "extern \"C\" void __fastcall fn_0044BC40(void* self)",
@@ -25266,6 +25284,12 @@
     "signature": "uint32_t fn_00681B20(void* self, uint32_t arg1, uint32_t arg2)",
     "summary": "Virtual method that returns its second stack argument.",
     "lifted_path": "lifted/Properties/auto_tiny.cpp"
+  },
+  "0x00681FE0": {
+    "name": "sub_00681FE0",
+    "signature": "void* fn_00681FE0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B1830 (initVtableAndZeroFields_005B1830).",
+    "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
   "0x00682000": {
     "name": "XMLDocumentLoader::vfunc_0",

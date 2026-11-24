@@ -131,3 +131,22 @@ void* fn_00687250(void* self) {
     return reinterpret_cast<uint8_t*>(self) + 0x54;
 }
 } // namespace lift_00687250
+
+// [0x00681FE0] sub_00681FE0 (17 bytes)
+namespace lift_00681FE0 {
+// @name sub_00681FE0
+// @summary Auto-lifted identical-shape clone of 0x005B1830 (initVtableAndZeroFields_005B1830).
+namespace lift_005B1830 {
+// @name initVtableAndZeroFields_005B1830
+// @summary Thiscall initializer: stores the vtable address 0x0095F83C at [this+0], zeroes [this+4] and [this+8], and returns this.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+void* fn_00681FE0(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x98CDA4u; // immediate address, not a load from mem_0095F83C
+    lift_field<uint32_t>(self, 0x04) = 0u;
+    lift_field<uint32_t>(self, 0x08) = 0u;
+    return self;
+}
+} // namespace lift_005B1830
+} // namespace lift_00681FE0

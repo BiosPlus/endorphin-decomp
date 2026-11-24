@@ -54,6 +54,7 @@ extern "C" void __fastcall ext_00530720(void* self);
 extern "C" void __fastcall ext_00530690(void* self);
 extern "C" uintptr_t mem_00924FDC;
 #include <cstdint>
+#include <cstddef>
 
 // [0x00448F20] sub_00448F20 (6 bytes)
 // @name GetStringLiteral_00448F20
@@ -515,3 +516,66 @@ void __thiscall fn_00440900(void* self, double a0, double a1) {
 }
 } // namespace lift_004408E0
 } // namespace lift_00440900
+
+// [0x0044B780] sub_0044B780 (20 bytes)
+namespace lift_0044B780 {
+// @name sub_0044B780
+// @summary Auto-lifted identical-shape clone of 0x00675D60 (Unknown::forwardToChildVfunc14).
+namespace lift_00675D60 {
+// @name Unknown::forwardToChildVfunc14
+// @summary If the child pointer at +0x10 is non-null, invoke the child's vtable slot at +0x14 with the child as this.
+// @field Unknown +0x10 void* child
+void fn_0044B780(void* self) {
+    void* child = lift_field<void*>(self, 0x64);
+    if (child == nullptr) {
+        return;
+    }
+    void* vtable = lift_field<void*>(child, 0x0);
+    void* slot = lift_field<void*>(vtable, 0x1C8);
+    using Fn = void (*)(void*);
+    reinterpret_cast<Fn>(slot)(child);
+}
+} // namespace lift_00675D60
+} // namespace lift_0044B780
+
+// [0x0044B7A0] sub_0044B7A0 (20 bytes)
+namespace lift_0044B7A0 {
+// @name sub_0044B7A0
+// @summary Auto-lifted identical-shape clone of 0x00675D60 (Unknown::forwardToChildVfunc14).
+namespace lift_00675D60 {
+// @name Unknown::forwardToChildVfunc14
+// @summary If the child pointer at +0x10 is non-null, invoke the child's vtable slot at +0x14 with the child as this.
+// @field Unknown +0x10 void* child
+void fn_0044B7A0(void* self) {
+    void* child = lift_field<void*>(self, 0x64);
+    if (child == nullptr) {
+        return;
+    }
+    void* vtable = lift_field<void*>(child, 0x0);
+    void* slot = lift_field<void*>(vtable, 0x1CC);
+    using Fn = void (*)(void*);
+    reinterpret_cast<Fn>(slot)(child);
+}
+} // namespace lift_00675D60
+} // namespace lift_0044B7A0
+
+// [0x0044B7C0] sub_0044B7C0 (20 bytes)
+namespace lift_0044B7C0 {
+// @name sub_0044B7C0
+// @summary Auto-lifted identical-shape clone of 0x00675D60 (Unknown::forwardToChildVfunc14).
+namespace lift_00675D60 {
+// @name Unknown::forwardToChildVfunc14
+// @summary If the child pointer at +0x10 is non-null, invoke the child's vtable slot at +0x14 with the child as this.
+// @field Unknown +0x10 void* child
+void fn_0044B7C0(void* self) {
+    void* child = lift_field<void*>(self, 0x64);
+    if (child == nullptr) {
+        return;
+    }
+    void* vtable = lift_field<void*>(child, 0x0);
+    void* slot = lift_field<void*>(vtable, 0x154);
+    using Fn = void (*)(void*);
+    reinterpret_cast<Fn>(slot)(child);
+}
+} // namespace lift_00675D60
+} // namespace lift_0044B7C0

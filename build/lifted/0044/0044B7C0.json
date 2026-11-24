@@ -1,0 +1,21 @@
+{
+  "va": "0x0044B7C0",
+  "size": 20,
+  "orig_symbol": "sub_0044B7C0",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "sub_0044B7C0",
+  "signature": "void fn_0044B7C0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00675D60 (Unknown::forwardToChildVfunc14).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "child"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:54:06Z"
+}
