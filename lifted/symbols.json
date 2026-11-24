@@ -491,6 +491,12 @@
     "summary": "Pure jump thunk forwarding to CharacterDialog::vfunc_91.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0040B880": {
+    "name": "callChildSlot148NonZero",
+    "signature": "bool fn_0040B880(void* self)",
+    "summary": "Calls the function pointer stored at child+0x148 (child = self+0x428), passing \u0026self-\u003echild as this; returns true if it yields nonzero.",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x0040BC30": {
     "name": "sub_0040BC30",
     "signature": "extern \"C\" void __fastcall fn_0040BC30(void* self)",

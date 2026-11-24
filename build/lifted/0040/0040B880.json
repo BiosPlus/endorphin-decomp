@@ -1,0 +1,21 @@
+{
+  "va": "0x0040B880",
+  "size": 26,
+  "orig_symbol": "sub_0040B880",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "callChildSlot148NonZero",
+  "signature": "bool fn_0040B880(void* self)",
+  "summary": "Calls the function pointer stored at child+0x148 (child = self+0x428), passing \u0026self-\u003echild as this; returns true if it yields nonzero.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x428",
+      "type": "void*",
+      "name": "field_0x428"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:54:21Z"
+}
