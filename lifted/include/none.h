@@ -8,6 +8,6 @@
 // Recovered field layout for none:
 namespace lifted_layout {
 struct none_Fields {
-    // +0x44  DWORD (pointer adjustment only; the function does not read this field directly)  (evidence: 0x007C7000)
+    // +0x44  DWORD (pointer adjustment only; the function does not read this field directly)  (evidence: 0x007C2E50, 0x007C7000)
 };
 } // namespace lifted_layout

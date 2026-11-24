@@ -20,30 +20,30 @@ struct Object_Fields {
     // +0x0   void**                   vtable  (evidence: 0x007558B0) // CONFLICT: multiple definitions at +0x0
     // +0x4   uint32_t                 field_0x04  (evidence: 0x007D48A0)
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00790D40, 0x00790D60, 0x0079ADA0, 0x0079DCE0)
-    // +0xC   uint32_t                 field_0x0C  (evidence: 0x0071C500, 0x007C6C10, 0x007C6C20, 0x007CC9F0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t                 field_0x0C  (evidence: 0x0071C500, 0x007C2E50, 0x007C6C10, 0x007C6C20, 0x007CC9F0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0x0c  (evidence: 0x0071C520) // CONFLICT: multiple definitions at +0xC
     // +0x10  BYTE                     enabledFlag  (evidence: 0x00468730, 0x00468A30) // CONFLICT: multiple definitions at +0x10
     // +0x10  float[]                  field_0x10  (evidence: 0x005B11E0) // CONFLICT: multiple definitions at +0x10
     // +0x14  void*                    child  (evidence: 0x00468730, 0x00468A30) // CONFLICT: multiple definitions at +0x14
-    // +0x14  uint32_t                 field_0x14  (evidence: 0x00790DA0, 0x0079ADA0, 0x0079DCE0, 0x007C6FC0, 0x0085C260) // CONFLICT: multiple definitions at +0x14
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x00790DA0, 0x0079ADA0, 0x0079DCE0, 0x007C2E50, 0x007C6FC0, 0x0085C260) // CONFLICT: multiple definitions at +0x14
     // +0x18  uint32_t                 field_0x18  (evidence: 0x007DB720)
-    // +0x1C  float                    field_0x1C  (evidence: 0x007C6F30) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  float                    field_0x1C  (evidence: 0x007C2E50, 0x007C6F30) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 field_0x1C  (evidence: 0x006ACFD0, 0x007DB730) // CONFLICT: multiple definitions at +0x1C
     // +0x20  uint32_t                 field_0x20  (evidence: 0x006AD120)
-    // +0x24  uint16_t                 field_0x24  (evidence: 0x007C70E0)
-    // +0x28  uint32_t                 field_0x28  (evidence: 0x00790D40, 0x00790D60, 0x0079ADA0, 0x0079DCE0, 0x007CC600)
+    // +0x24  uint16_t                 field_0x24  (evidence: 0x007C2E50, 0x007C70E0)
+    // +0x28  uint32_t                 field_0x28  (evidence: 0x00790D40, 0x00790D60, 0x0079ADA0, 0x0079DCE0, 0x007C2E50, 0x007CC600)
     // +0x2C  uint32_t                 field_0x2c  (evidence: 0x00648920, 0x00790DA0, 0x0079ADA0, 0x0079DCE0)
-    // +0x40  uint32_t                 field_0x40  (evidence: 0x007C9270)
-    // +0x44  uint32_t                 field_0x44  (evidence: 0x007C6F20)
+    // +0x40  uint32_t                 field_0x40  (evidence: 0x007C2E50, 0x007C9270)
+    // +0x44  uint32_t                 field_0x44  (evidence: 0x007C2E50, 0x007C6F20)
     // +0x58  float                    field_0x58  (evidence: 0x007D8490)
-    // +0x7C  uint32_t                 field_0x7c  (evidence: 0x007C6FF0)
-    // +0x8C  float                    field_0x8c  (evidence: 0x007C8810)
-    // +0xA8  uint32_t                 field_0xa8  (evidence: 0x007C8880)
+    // +0x7C  uint32_t                 field_0x7c  (evidence: 0x007C2E50, 0x007C6FF0)
+    // +0x8C  float                    field_0x8c  (evidence: 0x007C2E50, 0x007C8810)
+    // +0xA8  uint32_t                 field_0xa8  (evidence: 0x007C2E50, 0x007C8880)
     // +0x178 uint32_t                 field_0x178  (evidence: 0x007D8740)
-    // +0x1A4 uint32_t                 field_0x1A4  (evidence: 0x007C5900)
-    // +0x1B8 uint32_t                 field_0x1b8  (evidence: 0x007C59B0)
-    // +0x1D0 float                    field_0x1d0  (evidence: 0x007C6120)
-    // +0x214 float                    field_0x214  (evidence: 0x007C7690)
+    // +0x1A4 uint32_t                 field_0x1A4  (evidence: 0x007C2E50, 0x007C5900)
+    // +0x1B8 uint32_t                 field_0x1b8  (evidence: 0x007C2E50, 0x007C59B0)
+    // +0x1D0 float                    field_0x1d0  (evidence: 0x007C2E50, 0x007C6120)
+    // +0x214 float                    field_0x214  (evidence: 0x007C2E50, 0x007C7690)
     // +0x268 uint32_t                 field_0x268  (evidence: 0x00702790)
 };
 } // namespace lifted_layout

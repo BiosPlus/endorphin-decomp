@@ -8,6 +8,6 @@
 // Recovered field layout for field_0x10:
 namespace lifted_layout {
 struct field_0x10_Fields {
-    // +0x10  DWORD                    field_0x10  (evidence: 0x007C6F90)
+    // +0x10  DWORD                    field_0x10  (evidence: 0x007C2E50, 0x007C6F90)
 };
 } // namespace lifted_layout

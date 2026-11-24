@@ -38860,9 +38860,10 @@
     "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
   },
   "0x007C2E50": {
-    "name": "sub_007C2E50",
-    "signature": "uint32_t sub_007C2E50(uint32_t arg0, uint32_t arg1)",
-    "summary": "Computes count * size and forwards the product to the CRT malloc import.",
+    "name": "readFloatPtr",
+    "class": "unknown",
+    "signature": "float sub_007C9CB0(const float* ptr)",
+    "summary": "Dereference a float pointer and return its value.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
   "0x007C2E70": {
