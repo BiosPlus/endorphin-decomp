@@ -770,3 +770,20 @@ void fn_00430EB0(void* self, void* newValue) {
     lift_field<void*>(self, 0) = newValue;
 }
 } // namespace lift_00430EB0
+
+// [0x0043E3A0]
+namespace lift_0043E3A0 {
+// @name destroyRange_0043E3A0
+// @summary Calls MFC80!ord_578 on each 4-byte element in [begin, end)
+
+
+extern uint32_t mem_009242F4;
+
+void __stdcall sub_0043E3A0(uint32_t begin, uint32_t end) {
+    using Fn = void (__thiscall *)(uint32_t);
+    Fn fn = reinterpret_cast<Fn>(mem_009242F4);
+    for (uint32_t it = begin; it != end; it += 4) {
+        fn(it);
+    }
+}
+} // namespace lift_0043E3A0

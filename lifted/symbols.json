@@ -46061,6 +46061,12 @@
     "summary": "If global object pointer mem_00AB86EC is non-null, call the function pointer in its first slot with the argument and return the result; otherwise return -1.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x008573F0": {
+    "name": "dispatchCallback0x4",
+    "signature": "int32_t sub_008573F0(uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Dispatches a 3-argument cdecl callback at offset +0x4 of the global table mem_00AB86EC, or returns -1 if null.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00857420": {
     "name": "ForwardTwoArgsToGlobalObjectSlot8",
     "signature": "int fn_00857420(int a, int b)",
