@@ -41279,3 +41279,1083 @@ void* fn_00683710(void* out_str, const void* const* obj_ptr) {
     return out_str;
 }
 } // namespace lift_00683710
+
+// [0x00497E70] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_00497E70 {
+// @name ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_00496F20(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_00497E70(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_00496F20(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_00497E70
+
+// [0x004986F0] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_004986F0 {
+// @name ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_00496F10(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_004986F0(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_00496F10(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_004986F0
+
+// [0x0049B570] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_0049B570 {
+// @name ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_0049AA10(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_0049B570(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_0049AA10(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_0049B570
+
+// [0x0049B820] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_2 (114 bytes)
+namespace lift_0049B820 {
+// @name ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_004C0310(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_0049B820(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_004C0310(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_0049B820
+
+// [0x004AA660] ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_004AA660 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_004A9A40(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_004AA660(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_004A9A40(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_004AA660
+
+// [0x004C7480] ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_004C7480 {
+// @name ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_00486960(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_004C7480(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_00486960(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_004C7480
+
+// [0x004CB680] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_004CB680 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_004CA5E0(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_004CB680(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_004CA5E0(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_004CB680
+
+// [0x004CF550] ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_004CF550 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_004CEA30(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_004CF550(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_004CEA30(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_004CF550
+
+// [0x004D1010] ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_004D1010 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_004D0AF0(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_004D1010(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_004D0AF0(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_004D1010
+
+// [0x004D2010] ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_004D2010 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_004D0E00(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_004D2010(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_004D0E00(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_004D2010
+
+// [0x004D8F00] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_004D8F00 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_004D3FD0(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_004D8F00(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_004D3FD0(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_004D8F00
+
+// [0x005218D0] ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_005218D0 {
+// @name ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_00687090(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_005218D0(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_00687090(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_005218D0
+
+// [0x0059F0B0] ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_0059F0B0 {
+// @name ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_0042F750(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_0059F0B0(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_0042F750(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_0059F0B0
+
+// [0x005AAEA0] ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_005AAEA0 {
+// @name ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_005AA9E0(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_005AAEA0(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_005AA9E0(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_005AAEA0
+
+// [0x005AB270] ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_005AB270 {
+// @name ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_0044CCD0(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_005AB270(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_0044CCD0(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_005AB270
+
+// [0x005C80D0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_005C80D0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_005C2F40(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_005C80D0(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_005C2F40(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_005C80D0
+
+// [0x005DAD30] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_005DAD30 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_005D07E0(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_005DAD30(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_005D07E0(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_005DAD30
+
+// [0x005DAF10] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_005DAF10 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_005D07F0(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_005DAF10(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_005D07F0(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_005DAF10
+
+// [0x005DB260] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_005DB260 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_005D0810(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_005DB260(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_005D0810(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_005DB260
+
+// [0x005E2C90] ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_005E2C90 {
+// @name ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_005E02A0(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_005E2C90(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_005E02A0(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_005E2C90
+
+// [0x005E36A0] ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_005E36A0 {
+// @name ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_0044CCE0(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_005E36A0(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_0044CCE0(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_005E36A0
+
+// [0x005E58E0] ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_005E58E0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_005E0E40(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_005E58E0(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_005E0E40(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_005E58E0
+
+// [0x005F6470] ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_005F6470 {
+// @name ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_005F5120(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_005F6470(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_005F5120(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_005F6470
+
+// [0x005F7060] ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_005F7060 {
+// @name ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_005F5280(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_005F7060(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_005F5280(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_005F7060
+
+// [0x00609B10] ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_2 (114 bytes)
+namespace lift_00609B10 {
+// @name ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_00609730(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_00609B10(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_00609730(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_00609B10
+
+// [0x006841C0] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_006841C0 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_0049A9F0(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_006841C0(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_0049A9F0(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_006841C0
+
+// [0x00684490] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_00684490 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_00682E10(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_00684490(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_00682E10(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_00684490
+
+// [0x00684650] ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>::vfunc_2 (114 bytes)
+namespace lift_00684650 {
+// @name ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_00682ED0(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_00684650(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_00682ED0(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_00684650
+
+// [0x00684810] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_00684810 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_006829E0(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_00684810(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_006829E0(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_00684810
+
+// [0x00685360] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_00685360 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)).
+// @field ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0> +0x0 void* field_0x00
+namespace lift_0046D230 {
+// Callee 0x0042F6E0 (4B): receives the target object (ecx) and returns the address of the
+// std::string it yields (ImageExporter::getDestination). Modelled as returning void*.
+extern void* ext_00672400(void* self);
+// Callee 0x006A6DE0 (171B): receives the rounded value (originally left on the x87 stack);
+// its eax result is returned by the caller. Modelled as a double parameter.
+extern int32_t ext_006A6DE0(double rounded);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_2 (ImageExporter::getDestination)
+// @class ExprParser::ReadMethodType<ImageExporter>
+// @summary Parses the destination string of the held ImageExporter as a float (atof, stored as float), rounds it half away from zero, and passes the result to 0x006A6DE0; throws if the held object pointer is null.
+// @field ExprParser::ReadMethodType<ImageExporter> +0x00 void* field_0x00
+int32_t fn_00685360(void* self) {
+    void* target = *static_cast<void**>(self);
+    if (target == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<ImageExporter>: null object pointer");
+    }
+
+    const auto* dest = static_cast<const std::string*>(ext_00672400(target));
+    const float value = static_cast<float>(std::atof(dest->c_str()));
+
+    // Rounds half away from zero. Matches the x87 test of C0 (set for value < 0 and for NaN):
+    // non-negative values get +0.5, everything else gets -0.5.
+    const double rounded = (value >= 0.0f) ? static_cast<double>(value) + 0.5
+                                           : static_cast<double>(value) - 0.5;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046D230
+} // namespace lift_00685360
