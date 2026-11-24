@@ -4851,10 +4851,10 @@
     "lifted_path": "lifted/Commands/BufferTransformsCommand.cpp"
   },
   "0x00481BB0": {
-    "name": "InitValueAndZeroTail",
-    "class": "\u003cunknown\u003e (member, thiscall; 'this' passed in ECX)",
-    "signature": "__declspec(noinline) void* __thiscall fn_00481BB0(void* self, uint32_t value)",
-    "summary": "Stores the single stack argument at offset 0, zeroes the 4-byte slots at +0x08/+0x0C/+0x10, returns this.",
+    "name": "sub_004805E0",
+    "class": "AnimatableTransform",
+    "signature": "extern \"C\" void __fastcall fn_004805E0(void* self)",
+    "summary": "Member forwarding thunk: loads subobject pointer at +0x3B4 and tail-calls sub_004A66D0.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
   "0x00482480": {
