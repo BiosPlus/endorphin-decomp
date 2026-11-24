@@ -1,0 +1,28 @@
+{
+  "va": "0x006D7CE0",
+  "size": 32,
+  "orig_symbol": "sub_006D7CE0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::SetBytesAt0x1C4",
+  "class": "Unknown",
+  "signature": "void fn_006D7CE0(void* self, uint8_t arg1, uint8_t arg2)",
+  "summary": "Stores two byte arguments into consecutive fields at this+0x1C4 and this+0x1C5 (callee pops 8 bytes).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C4",
+      "type": "uint8_t",
+      "name": "field_0x1C4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C5",
+      "type": "uint8_t",
+      "name": "field_0x1C5"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:35:21Z"
+}

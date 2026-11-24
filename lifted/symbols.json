@@ -36842,6 +36842,13 @@
     "summary": "Stores two byte arguments into this+0x1C2 and this+0x1C3 (thiscall, ret 8).",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D7CE0": {
+    "name": "Unknown::SetBytesAt0x1C4",
+    "class": "Unknown",
+    "signature": "void fn_006D7CE0(void* self, uint8_t arg1, uint8_t arg2)",
+    "summary": "Stores two byte arguments into consecutive fields at this+0x1C4 and this+0x1C5 (callee pops 8 bytes).",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D7D90": {
     "name": "sub_006D7D90",
     "signature": "extern \"C\" void* __fastcall fn_006D7D90(void* self, int edx_unused, unsigned int flags)",
