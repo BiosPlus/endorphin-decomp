@@ -234,9 +234,9 @@ void __thiscall sub_006872A0(uint8_t* self, uint8_t val, uint8_t* out, uint32_t 
 namespace lift_00687230 {
 // @name conditionalSetFlagB0IfModeNot19Or20
 // @summary If the pointer at +0xA8 is non-null and the mode at +0x48 is neither 0x13 nor 0x14, sets the byte at +0xB0 to 1.
-// @field field_0x48 int32 mode (class not identified)
-// @field field_0xA8 int32 gate (class not identified; tested against 0)
-// @field field_0xB0 uint8 flag (class not identified)
+// @field Unknown +0x48 int32 field_0x48
+// @field Unknown +0xA8 int32 field_0xA8
+// @field Unknown +0xB0 uint8 field_0xB0
 void fn_00687230(void* self) {
     if (lift_field<int32_t>(self, 0xA8) == 0) {
         return;
