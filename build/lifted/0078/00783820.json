@@ -1,0 +1,28 @@
+{
+  "va": "0x00783820",
+  "size": 32,
+  "orig_symbol": "sub_00783820",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "ResetChainLinkFields (descriptive label inferred from behavior; no class name recovered)",
+  "class": "Unknown",
+  "signature": "void fn_00783820(void* self)",
+  "summary": "Zeroes the +0x04 word of the owner and of every node in its +0x00 singly linked chain.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "next_or_head"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:45:44Z"
+}

@@ -159,3 +159,22 @@ void fn_00783800(void* self) {
     }
 }
 } // namespace lift_00783800
+
+// [0x00783820] sub_00783820 (32 bytes)
+namespace lift_00783820 {
+// @name ResetChainLinkFields (descriptive label inferred from behavior; no class name recovered)
+// @class Unknown
+// @summary Zeroes the +0x04 word of the owner and of every node in its +0x00 singly linked chain.
+// @field Unknown +0x00 uint32_t next_or_head
+// @field Unknown +0x04 uint32_t field_0x04
+void fn_00783820(void* self) {
+    uint32_t node = lift_field<uint32_t>(self, 0x00);
+    lift_field<uint32_t>(self, 0x04) = 0;
+
+    while (node != 0) {
+        void* n = reinterpret_cast<void*>(static_cast<uintptr_t>(node));
+        lift_field<uint32_t>(n, 0x04) = 0;
+        node = lift_field<uint32_t>(n, 0x00);
+    }
+}
+} // namespace lift_00783820
