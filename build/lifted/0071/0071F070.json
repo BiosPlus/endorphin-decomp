@@ -4,11 +4,179 @@
   "orig_symbol": "sub_0071F070",
   "src_path": "src/leaf/decompiled_710000.cpp",
   "lifted_path": "lifted/leaf/decompiled_710000.cpp",
-  "name": "Unknown::StoreArgAndDispatchSlot2",
+  "name": "sub_00712F40",
   "class": "Unknown",
-  "signature": "uint8_t* fn_0071F070(uint8_t* ecx, uint32_t arg)",
-  "summary": "Stores the stack argument at this+0x4, calls vtable slot 2 on this with that argument, and returns this+0x8.",
+  "signature": "extern \"C\" void* __fastcall fn_00712F40(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_00712F60 and frees memory when (flags \u0026 1) is set.",
   "fields": [
+    {
+      "class": "Subobject",
+      "offset": "+0x18",
+      "type": "double",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Subobject",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Subobject",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x10",
+      "type": "uint8_t[]",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "\u003cembedded object\u003e",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "DWORD",
+      "name": "field_0x78"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t field_0x0C (accessed on the subobject returned by",
+      "name": "ext_0071E680)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (on subobject returned by ext_0071E680, i.e.",
+      "name": "self+0x40)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "subObject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3",
+      "type": "uint8_t",
+      "name": "field_0x03"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5",
+      "type": "uint8_t",
+      "name": "field_0x05"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3",
+      "type": "BYTE",
+      "name": "field_0x03"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "BYTE",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5",
+      "type": "BYTE",
+      "name": "field_0x05"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "BYTE",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "BYTE",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "void*",
+      "name": "subObject"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "pointer",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2F8",
+      "type": "DWORD field_0x2F8 (on sub-object at",
+      "name": "this+0x0C)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2FC",
+      "type": "DWORD field_0x2FC (on sub-object at",
+      "name": "this+0x0C)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xFD0",
+      "type": "uint32_t field_0xFD0 (on the object pointed to by",
+      "name": "+0x0C)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xFD4",
+      "type": "uint32_t field_0xFD4 (on the object pointed to by",
+      "name": "+0x0C)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1520",
+      "type": "DWORD",
+      "name": "field_0x1520"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1524",
+      "type": "DWORD",
+      "name": "field_0x1524"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18D8",
+      "type": "BYTE",
+      "name": "field_0x18D8"
+    },
     {
       "class": "Unknown",
       "offset": "+0x0",
@@ -24,5 +192,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:43:08Z"
+  "lifted_at": "2026-11-24T12:43:13Z"
 }

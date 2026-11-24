@@ -42005,10 +42005,10 @@
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
   "0x0071F070": {
-    "name": "Unknown::StoreArgAndDispatchSlot2",
+    "name": "sub_00712F40",
     "class": "Unknown",
-    "signature": "uint8_t* fn_0071F070(uint8_t* ecx, uint32_t arg)",
-    "summary": "Stores the stack argument at this+0x4, calls vtable slot 2 on this with that argument, and returns this+0x8.",
+    "signature": "extern \"C\" void* __fastcall fn_00712F40(void* self, int edx_unused, unsigned int flags)",
+    "summary": "MSVC scalar deleting destructor: calls sub_00712F60 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x0071F090": {
