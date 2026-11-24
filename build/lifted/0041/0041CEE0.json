@@ -1,0 +1,27 @@
+{
+  "va": "0x0041CEE0",
+  "size": 18,
+  "orig_symbol": "sub_0041CEE0",
+  "src_path": "src/leaf/tiny_410000.cpp",
+  "lifted_path": "lifted/leaf/tiny_410000.cpp",
+  "name": "initZeroAndCopyGlobalToSelf",
+  "signature": "void fn_0041CEE0(void* self)",
+  "summary": "Zeroes the first dword of self and stores the global mem_00B599BC into self+4.",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "self",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:56:13Z"
+}

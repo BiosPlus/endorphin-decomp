@@ -228,3 +228,17 @@ void fn_00417630(void* self, DWORD value) {
 }
 } // namespace lift_00422CE0
 } // namespace lift_00417630
+
+// [0x0041CEE0] sub_0041CEE0 (18 bytes)
+namespace lift_0041CEE0 {
+extern int mem_00B599BC;
+
+// @name initZeroAndCopyGlobalToSelf
+// @summary Zeroes the first dword of self and stores the global mem_00B599BC into self+4.
+// @field self +0x00 uint32_t field_0x00
+// @field self +0x04 int32_t field_0x04
+void fn_0041CEE0(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0;
+    lift_field<int32_t>(self, 0x04) = static_cast<int32_t>(mem_00B599BC);
+}
+} // namespace lift_0041CEE0

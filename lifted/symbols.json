@@ -1098,6 +1098,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0066AC80 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0041CEE0": {
+    "name": "initZeroAndCopyGlobalToSelf",
+    "signature": "void fn_0041CEE0(void* self)",
+    "summary": "Zeroes the first dword of self and stores the global mem_00B599BC into self+4.",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x0041CFB0": {
     "name": "Properties::PropertiesControl::vfunc_86",
     "class": "Properties::PropertiesControl",

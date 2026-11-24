@@ -8,9 +8,11 @@
 // Recovered field layout for self:
 namespace lifted_layout {
 struct self_Fields {
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x0041CEE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (constant 0x00957534 stored here)  (evidence: 0x005528E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* innerObject (pointer loaded from *self; passed as the new this)  (evidence: 0x00493E50, 0x00493E60, 0x00494050) // CONFLICT: multiple definitions at +0x0
-    // +0x4   void* field_0x04 (pointer; the pointee's byte at +0x04 is set to 1 when non-null)  (evidence: 0x00528C70)
+    // +0x4   int32_t                  field_0x04  (evidence: 0x0041CEE0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void* field_0x04 (pointer; the pointee's byte at +0x04 is set to 1 when non-null)  (evidence: 0x00528C70) // CONFLICT: multiple definitions at +0x4
     // +0x10  uint8_t                  field_0x10  (evidence: 0x00468750)
     // +0x14  uint32_t                 field_0x14  (evidence: 0x00468750)
     // +0x50  double                   field_0x50  (evidence: 0x004408E0, 0x00440900)
