@@ -32292,6 +32292,12 @@
     "summary": "Returns the double constant 1.0 (loaded from .rdata mem_0092A270); result is the float return value.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D9060": {
+    "name": "GetDoubleAtIndirect160",
+    "signature": "extern \"C\" double __fastcall fn_006D9060(void* self)",
+    "summary": "Returns the double stored at +0x160 of the object pointed to by this+0x0C.",
+    "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
   "0x006D9450": {
     "name": "sub_006D9450",
     "signature": "extern \"C\" void __fastcall fn_006D9450(void* self)",

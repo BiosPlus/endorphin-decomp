@@ -1,0 +1,27 @@
+{
+  "va": "0x006D9060",
+  "size": 16,
+  "orig_symbol": "sub_006D9060",
+  "src_path": "src/leaf/tiny_6D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6D0000.cpp",
+  "name": "GetDoubleAtIndirect160",
+  "signature": "extern \"C\" double __fastcall fn_006D9060(void* self)",
+  "summary": "Returns the double stored at +0x160 of the object pointed to by this+0x0C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x160",
+      "type": "double",
+      "name": "field_0x160"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:39:20Z"
+}

@@ -374,3 +374,15 @@ double fn_006D9020(void) {
     return mem_0092A270;
 }
 } // namespace lift_006D9020
+
+// [0x006D9060] sub_006D9060 (16 bytes)
+namespace lift_006D9060 {
+// @name GetDoubleAtIndirect160
+// @summary Returns the double stored at +0x160 of the object pointed to by this+0x0C.
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0x160 double field_0x160
+extern double __fastcall fn_006D9060(void* self) {
+    void* inner = lift_field<void*>(self, 0x0C);
+    return lift_field<double>(inner, 0x160);
+}
+} // namespace lift_006D9060
