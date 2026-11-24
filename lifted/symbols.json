@@ -1866,6 +1866,12 @@
     "summary": "Tail-forwards to the object's vtable slot 0 with the single stack argument replaced by 1.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430CC0": {
+    "name": "DispatchVtable0WithCheck",
+    "signature": "extern \"C\" void __stdcall fn_00430CC0(void* obj)",
+    "summary": "Checks if field at +0x60 is zero via ext_00430370 and invokes vtable[0] on the given object with the result.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430D40": {
     "name": "sub_00430D40",
     "signature": "extern \"C\" void fn_00430D40(void)",
@@ -1884,6 +1890,13 @@
     "signature": "void fn_00430F9E()",
     "summary": "Discards the caller's pushed stack slot and clobbers the saved esi register, then returns; a 2-byte \"pop esi / ret\" tail.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
+  },
+  "0x00430FA0": {
+    "name": "CWndDerived::killTimerAndForward",
+    "class": "CWndDerived",
+    "signature": "void __fastcall fn_00430FA0(uint32_t thisPtr)",
+    "summary": "Kills the timer stored at +0x160 for HWND at +0x20 and tail-calls MFC80!ord_4342.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
   "0x00431310": {
     "name": "sub_00431310",
@@ -1962,6 +1975,13 @@
     "signature": "extern \"C\" void __fastcall fn_00434FE0(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0x14C and tail-calls sub_00425DC0.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
+  },
+  "0x00435270": {
+    "name": "Unknown::updateSubobjectsAndGlobal_00435270",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00435270(void* self)",
+    "summary": "Calls ext_004332B0 on self, calls ext_00468C80 on the object returned by ext_00465B30, then tail-calls ext_004332D0 on self.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
   "0x00435360": {
     "name": "sub_00435360",
@@ -14380,6 +14400,12 @@
     "name": "sub_00553E40",
     "signature": "int32_t fn_00553E40(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0051C7A0 (NMData::QuatChannel::vfunc_9).",
+    "lifted_path": "lifted/leaf/tiny_550000.cpp"
+  },
+  "0x00553E80": {
+    "name": "walkLinkUntilFlagged",
+    "signature": "void fn_00553E80(void* arg)",
+    "summary": "Follows the pointer at +0x08 from the argument, repeatedly, until it reaches an object whose byte at +0x39 is nonzero; returns nothing.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
   "0x00554CE0": {

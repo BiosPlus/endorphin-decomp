@@ -1,0 +1,27 @@
+{
+  "va": "0x00553E80",
+  "size": 28,
+  "orig_symbol": "sub_00553E80",
+  "src_path": "src/leaf/tiny_550000.cpp",
+  "lifted_path": "lifted/leaf/tiny_550000.cpp",
+  "name": "walkLinkUntilFlagged",
+  "signature": "void fn_00553E80(void* arg)",
+  "summary": "Follows the pointer at +0x08 from the argument, repeatedly, until it reaches an object whose byte at +0x39 is nonzero; returns nothing.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x39",
+      "type": "uint8_t",
+      "name": "field_0x39"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:08:04Z"
+}

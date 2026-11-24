@@ -215,3 +215,22 @@ void* fn_0055E8C0(void* arg) {
 }
 } // namespace lift_00401AF0
 } // namespace lift_0055E8C0
+
+// [0x00553E80]
+namespace lift_00553E80 {
+// @name walkLinkUntilFlagged
+// @summary Follows the pointer at +0x08 from the argument, repeatedly, until it reaches an object whose byte at +0x39 is nonzero; returns nothing.
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x39 uint8_t field_0x39
+void fn_00553E80(void* arg) {
+    unsigned char* node = static_cast<unsigned char*>(arg);
+    unsigned char* next = *reinterpret_cast<unsigned char**>(node + 0x08);
+    if (*(next + 0x39) != 0) {
+        return;
+    }
+    do {
+        node = next;
+        next = *reinterpret_cast<unsigned char**>(node + 0x08);
+    } while (*(next + 0x39) == 0);
+}
+} // namespace lift_00553E80
