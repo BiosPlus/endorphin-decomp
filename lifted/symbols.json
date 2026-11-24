@@ -13148,6 +13148,13 @@
     "summary": "Calls virtual slot 2 on the object at +0x14 (if non-null), then tail-calls virtual slot 2 on the object at +0x18 with this+0x18 as the receiver.",
     "lifted_path": "lifted/classes/CompoundRenderable.cpp"
   },
+  "0x00537D60": {
+    "name": "CompoundRenderable::vfunc_24",
+    "class": "CompoundRenderable",
+    "signature": "void fn_00537D60(void* self)",
+    "summary": "Calls vfunc slot 24 on the sub-renderable at +0x14 (if present), then tail-calls slot 24 on the object at +0x18 with this = \u0026field_0x18.",
+    "lifted_path": "lifted/classes/CompoundRenderable.cpp"
+  },
   "0x00537DE0": {
     "name": "CompoundRenderable::vfunc_15",
     "class": "CompoundRenderable",
