@@ -538,3 +538,24 @@ extern uint32_t fn_00419BF0(uint32_t csidl) {
     return pidl;
 }
 } // namespace lift_00419BF0
+
+// [0x0041C5D0]
+namespace lift_0041C5D0 {
+// @name sub_0041C5D0
+// @summary Stores two 32-bit fields on this and forwards the call to vtable+0x18 on field_0x08 if non-null
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0c
+// @field Unknown +0x10 uint32_t field_0x10
+uint8_t __thiscall sub_0041C5D0(uintptr_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    *reinterpret_cast<uint32_t*>(self + 0x0c) = arg2;
+    *reinterpret_cast<uint32_t*>(self + 0x10) = arg3;
+    uintptr_t child = *reinterpret_cast<uint32_t*>(self + 0x08);
+    if (!child) {
+        return 0;
+    }
+    uintptr_t vtable = *reinterpret_cast<uint32_t*>(child);
+    using Fn = uint8_t(__thiscall*)(uintptr_t, uint32_t, uint32_t, uint32_t);
+    Fn fn = reinterpret_cast<Fn>(*reinterpret_cast<uint32_t*>(vtable + 0x18));
+    return fn(child, arg1, arg2, arg3);
+}
+} // namespace lift_0041C5D0
