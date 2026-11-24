@@ -142,3 +142,30 @@ void fn_004B77C0(void* self) {
     slot1(child, 1);
 }
 } // namespace lift_004B77C0
+
+// [0x0060AE20] PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>::AddElementCommand::vfunc_4 (25 bytes)
+namespace lift_0060AE20 {
+// @name PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>::AddElementCommand::vfunc_4
+// @class PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>::AddElementCommand
+// @summary If field +0x14 is zero and the object at +0x08 is non-null, invoke its vtable slot 1 with argument 1.
+// @field AddElementCommand +0x08 void* field_0x08
+// @field AddElementCommand +0x14 int32_t field_0x14
+
+namespace {
+// Thiscall-style slot signature: `this` first, then the single int argument.
+using VSlot1Fn = void (*)(void* self, int32_t arg);
+}
+
+void fn_0060AE20(void* self) {
+    if (lift_field<int32_t>(self, 0x14) != 0) {
+        return;
+    }
+    void* target = lift_field<void*>(self, 0x08);
+    if (target == nullptr) {
+        return;
+    }
+    void** vtable = *reinterpret_cast<void***>(target);
+    auto slot1 = reinterpret_cast<VSlot1Fn>(vtable[1]);
+    slot1(target, 1);
+}
+} // namespace lift_0060AE20

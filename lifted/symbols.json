@@ -20687,6 +20687,13 @@
     "summary": "Returns a property/member wrapper for DisabledCollisionPairList based on string key comparison",
     "lifted_path": "lifted/NMData/DisabledCollisionPairList.cpp"
   },
+  "0x0060AE20": {
+    "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand::vfunc_4",
+    "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand",
+    "signature": "void fn_0060AE20(void* self)",
+    "summary": "If field +0x14 is zero and the object at +0x08 is non-null, invoke its vtable slot 1 with argument 1.",
+    "lifted_path": "lifted/templates/auto_tiny.cpp"
+  },
   "0x0060B440": {
     "name": "NMData::DisabledCollisionPairList::vfunc_0",
     "class": "NMData::DisabledCollisionPairList",
