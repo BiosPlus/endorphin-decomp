@@ -261,3 +261,18 @@ void fn_006CA2D0(void* self, const uint32_t* src) {
     lift_field<uint32_t>(self, 0x10) = src[2];
 }
 } // namespace lift_006CA2D0
+
+// [0x006CA6B0] sub_006CA6B0 (32 bytes)
+namespace lift_006CA6B0 {
+// Callee: 0x006CA060 (identical-shape clone of 0x00707980, Unknown::NotifySlot17IfSelfLinkedWrapper).
+// Used here as a source-pointer provider: its return value is the address of a 40-byte block.
+extern void* ext_006CA060(void* self);
+
+// @name CopyTenDwordsFromResolved
+// @summary Resolve a source block via ext_006CA060(arg2), then copy 10 dwords (40 bytes) into arg1 (stdcall, ret 8).
+void fn_006CA6B0(void* dst, void* self) {
+    const void* src = ext_006CA060(self);
+    // rep movsd, ecx = 10: copy 10 * 4 bytes from src to dst.
+    std::memcpy(dst, src, 10 * sizeof(uint32_t));
+}
+} // namespace lift_006CA6B0

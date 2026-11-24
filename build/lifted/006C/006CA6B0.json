@@ -1,0 +1,13 @@
+{
+  "va": "0x006CA6B0",
+  "size": 32,
+  "orig_symbol": "sub_006CA6B0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "CopyTenDwordsFromResolved",
+  "signature": "void fn_006CA6B0(void* dst, void* self)",
+  "summary": "Resolve a source block via ext_006CA060(arg2), then copy 10 dwords (40 bytes) into arg1 (stdcall, ret 8).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:34:01Z"
+}
