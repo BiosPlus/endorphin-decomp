@@ -1,0 +1,14 @@
+{
+  "va": "0x004AABE0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, bool, {[thunk]: __thiscall NMData::BehaviourData::`vcall'{32, {flat}}, 12}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::BehaviourData,bool,\u0026NMData::BehaviourData::getVisibility,bool,\u0026NMData::BehaviourData::vcall_32\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::BehaviourData,bool,\u0026NMData::BehaviourData::getVisibility,bool,\u0026NMData::BehaviourData::vcall_32\u003e",
+  "signature": "void __thiscall fn_004AABE0(void* self, void* arg0)",
+  "summary": "Initializes a static type descriptor if needed and stores its pointer at arg0 + 0x4.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:53:07Z"
+}
