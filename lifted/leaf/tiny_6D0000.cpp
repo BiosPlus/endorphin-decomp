@@ -465,3 +465,15 @@ void fn_006DE130(void* self, int32_t unused_stack_arg) {
     slot0(self, 1);
 }
 } // namespace lift_006DE130
+
+// [0x006DEEB0] sub_006DEEB0 (16 bytes)
+namespace lift_006DEEB0 {
+// @name Unknown::GetFlag40
+// @class Unknown
+// @summary Returns bit 0x40 of the dword at this+0x18 (0 or 0x40).
+// @field Unknown +0x18 uint32_t field_0x18
+uint32_t fn_006DEEB0(void* self) {
+    uint32_t v = lift_field<uint32_t>(self, 0x18);
+    return v & 0x40u;
+}
+} // namespace lift_006DEEB0
