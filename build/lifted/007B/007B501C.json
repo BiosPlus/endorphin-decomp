@@ -1,0 +1,13 @@
+{
+  "va": "0x007B501C",
+  "size": 48,
+  "orig_symbol": "sub_007B501C",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "lookupTable_007B501C",
+  "signature": "uint8_t fn_007B501C(uint32_t index)",
+  "summary": "48-byte constant lookup table; returns the entry at a given index.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:28:29Z"
+}

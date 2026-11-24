@@ -312,3 +312,27 @@ int fn_007BD640(void* self) {
     return r == 0 ? 1 : 0;
 }
 } // namespace lift_007BD640
+
+// [0x007B501C] sub_007B501C (48 bytes)
+namespace lift_007B501C {
+// The bytes at this address are a 48-byte data table, not executable code.
+// Layout: 3 rows of 16 bytes; each row is one 0x00 followed by fifteen 0x02 values.
+// @name lookupTable_007B501C
+// @summary 48-byte constant lookup table; returns the entry at a given index.
+
+extern const uint8_t mem_007B501C[48];
+
+const uint8_t mem_007B501C[48] = {
+    0x00, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02,
+    0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02,
+    0x00, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02,
+    0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02,
+    0x00, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02,
+    0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02,
+};
+
+// Returns the table entry at index (0..47); out-of-range indices yield 0.
+uint8_t fn_007B501C(uint32_t index) {
+    return index < 48 ? mem_007B501C[index] : 0;
+}
+} // namespace lift_007B501C

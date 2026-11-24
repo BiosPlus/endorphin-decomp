@@ -48480,6 +48480,12 @@
     "summary": "Stores value in the head slot if empty, otherwise appends it to the tail of the +0x10 linked list headed at +0x14.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B501C": {
+    "name": "lookupTable_007B501C",
+    "signature": "uint8_t fn_007B501C(uint32_t index)",
+    "summary": "48-byte constant lookup table; returns the entry at a given index.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B50EC": {
     "name": "dataTable_007B50EC",
     "summary": "36-byte constant table (not executable code); bytes mostly 0x04 with 0x01/0x02/0x03 entries and a 0x8D 0x49 0x00 tail",
