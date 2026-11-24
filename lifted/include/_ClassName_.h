@@ -23,6 +23,7 @@ struct _ClassName__Fields {
     // +0x58  int32_t                  enableFlag  (evidence: 0x007AEEC0)
     // +0x5C  int32_t                  maxLimit  (evidence: 0x007AEEC0)
     // +0x60  int32_t                  value  (evidence: 0x007AEEC0)
+    // +0x8C  uint8_t                  field_0x8C  (evidence: 0x00584AE0)
     // +0xF4  int32_t                  field_0xF4  (evidence: 0x00594020, 0x0059DE20)
     // +0x498 DWORD                    field_0x498  (evidence: 0x00533D40)
 };

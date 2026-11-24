@@ -1,0 +1,22 @@
+{
+  "va": "0x00584AE0",
+  "size": 27,
+  "orig_symbol": "sub_00584AE0",
+  "src_path": "src/leaf/tiny_580000.cpp",
+  "lifted_path": "lifted/leaf/tiny_580000.cpp",
+  "name": "descriptiveName_00584AE0",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "int fn_00584AE0(void* self)",
+  "summary": "Returns 1 if global flag mem_00B58DFC is set and this+0x8C is clear, else 0.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x8C",
+      "type": "uint8_t",
+      "name": "field_0x8C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:03:46Z"
+}

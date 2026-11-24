@@ -14829,6 +14829,13 @@
     "summary": "Refreshes the cached 0x880-0x890 values from +0x414/+0x420/+0x424, re-initializes the subobject at +0x42C, and dispatches a virtual call on subobject +0x46C.",
     "lifted_path": "lifted/classes/AcclaimIO.cpp"
   },
+  "0x00584AE0": {
+    "name": "descriptiveName_00584AE0",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "int fn_00584AE0(void* self)",
+    "summary": "Returns 1 if global flag mem_00B58DFC is set and this+0x8C is clear, else 0.",
+    "lifted_path": "lifted/leaf/tiny_580000.cpp"
+  },
   "0x00584B00": {
     "name": "AnimatableTransform::vfunc_54",
     "class": "AnimatableTransform",
