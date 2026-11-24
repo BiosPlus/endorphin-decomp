@@ -2517,6 +2517,12 @@
     "summary": "Invalidates the view's window (InvalidateRect with a NULL rect and erase=TRUE, i.e. the whole client area is repainted).",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x0043D230": {
+    "name": "forwardVtableCall7OrFallback",
+    "signature": "void __thiscall fn_0043D230(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Forwards a 3-argument call to field_0x64 via forwardVtableCall7, falling back to MFC80_ord_1903 if it returns false.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043D2C0": {
     "name": "Unknown::ForwardOrFallback",
     "class": "Unknown",
