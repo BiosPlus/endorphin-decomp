@@ -1,0 +1,52 @@
+{
+  "va": "0x004A98D0",
+  "size": 33,
+  "orig_symbol": "sub_004A98D0",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "InitVtableAndSeedFields",
+  "class": "(unknown)",
+  "signature": "void fn_004A98D0(void* self)",
+  "summary": "Writes vtable pointer 0x00941484 to the object, zeroes field +0x04, and sets fields +0x08..+0x14 to 1.",
+  "fields": [
+    {
+      "class": "(unknown)",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:52:29Z"
+}

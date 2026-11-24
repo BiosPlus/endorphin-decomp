@@ -89,3 +89,25 @@ void fn_004AECE0(void* self) {
 }
 } // namespace lift_00594790
 } // namespace lift_004AECE0
+
+// [0x004A98D0] sub_004A98D0 (33 bytes)
+namespace lift_004A98D0 {
+// @name InitVtableAndSeedFields
+// @class (unknown)
+// @summary Writes vtable pointer 0x00941484 to the object, zeroes field +0x04, and sets fields +0x08..+0x14 to 1.
+// @field (unknown) +0x00 DWORD field_0x00
+// @field (unknown) +0x04 DWORD field_0x04
+// @field (unknown) +0x08 DWORD field_0x08
+// @field (unknown) +0x0C DWORD field_0x0C
+// @field (unknown) +0x10 DWORD field_0x10
+// @field (unknown) +0x14 DWORD field_0x14
+void fn_004A98D0(void* self) {
+    DWORD* obj = reinterpret_cast<DWORD*>(self);
+    obj[0x00 / 4] = 0x00941484u;
+    obj[0x04 / 4] = 0u;
+    obj[0x08 / 4] = 1u;
+    obj[0x0C / 4] = 1u;
+    obj[0x10 / 4] = 1u;
+    obj[0x14 / 4] = 1u;
+}
+} // namespace lift_004A98D0
