@@ -4596,6 +4596,13 @@
     "summary": "Pure jump thunk forwarding to sub_004658B0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00465EA0": {
+    "name": "forwardGlobalSubobjectVfunc100",
+    "class": "\u003cnone\u003e",
+    "signature": "void fn_00465EA0(void* self)",
+    "summary": "If the global object pointer and its +0x20 flag are set, forward the object at +0x100 to ext_0044B150; otherwise return.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00465ED0": {
     "name": "ForwardToMfcIfEnabled",
     "class": "UnknownGlobalObject",

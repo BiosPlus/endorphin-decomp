@@ -407,3 +407,33 @@ BOOL fn_0046F8B0(void* self) {
     return TRUE;
 }
 } // namespace lift_0046F8B0
+
+// [0x00465EA0] sub_00465EA0 (33 bytes)
+namespace lift_00465EA0 {
+// Known callee 0x0044B150: sub_0044B150 (Auto-lifted identical-shape clone of 0x0045E4A0 (CBase::forwardToMfcOrd6090).)
+extern void ext_0044B150(void* self);
+// Global holding a 32-bit object pointer.
+extern uint32_t mem_00ACDB40;
+
+// @name forwardGlobalSubobjectVfunc100
+// @class <none>
+// @summary If the global object pointer and its +0x20 flag are set, forward the object at +0x100 to ext_0044B150; otherwise return.
+// @field <none> +0x20 int32_t field_0x20
+// @field <none> +0x100 uint32_t field_0x100
+void fn_00465EA0(void* self) {
+    (void)self;
+    const uint32_t obj = mem_00ACDB40;
+    if (obj == 0) {
+        return;
+    }
+    const void* base = reinterpret_cast<const void*>(static_cast<uintptr_t>(obj));
+    if (lift_field<int32_t>(base, 0x20) == 0) {
+        return;
+    }
+    const uint32_t sub = lift_field<uint32_t>(base, 0x100);
+    if (sub == 0) {
+        return;
+    }
+    ext_0044B150(reinterpret_cast<void*>(static_cast<uintptr_t>(sub)));
+}
+} // namespace lift_00465EA0

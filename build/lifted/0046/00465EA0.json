@@ -1,0 +1,28 @@
+{
+  "va": "0x00465EA0",
+  "size": 33,
+  "orig_symbol": "sub_00465EA0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "forwardGlobalSubobjectVfunc100",
+  "class": "\u003cnone\u003e",
+  "signature": "void fn_00465EA0(void* self)",
+  "summary": "If the global object pointer and its +0x20 flag are set, forward the object at +0x100 to ext_0044B150; otherwise return.",
+  "fields": [
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x100",
+      "type": "uint32_t",
+      "name": "field_0x100"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:52:30Z"
+}

@@ -10,5 +10,7 @@ namespace lifted_layout {
 struct _none__Fields {
     // +0x0   uint32_t                 first  (evidence: 0x005E2C70)
     // +0x4   uint32_t block[16] (bytes +0x04..+0x43)  (evidence: 0x005E2C70)
+    // +0x20  int32_t                  field_0x20  (evidence: 0x00465EA0)
+    // +0x100 uint32_t                 field_0x100  (evidence: 0x00465EA0)
 };
 } // namespace lifted_layout
