@@ -1,0 +1,27 @@
+{
+  "va": "0x0059DC60",
+  "size": 55,
+  "orig_symbol": "sub_0059DC60",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "SetResultFromSubobjectCall",
+  "signature": "extern \"C\" void __fastcall fn_0059DC60(void* self, uint32_t arg0)",
+  "summary": "Calls ext_00661A90 with the stack argument as self and (this+0x158) as its argument (0 when this is null), then stores the result at this+0x61C.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x158",
+      "type": "BYTE field_0x158 (address taken only, passed to ext_00661A90; not dereferenced",
+      "name": "here)"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x61C",
+      "type": "uint32_t result (written with the return value of",
+      "name": "ext_00661A90)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:14:16Z"
+}

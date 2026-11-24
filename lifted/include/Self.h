@@ -45,6 +45,7 @@ struct Self_Fields {
     // +0x114 void*                    field_114  (evidence: 0x00630580)
     // +0x11C int32_t                  field_0x11c  (evidence: 0x004329A0)
     // +0x150 uint32_t                 field_0x150  (evidence: 0x00687230, 0x00687280)
+    // +0x158 BYTE field_0x158 (address taken only, passed to ext_00661A90; not dereferenced here)  (evidence: 0x0059DC60)
     // +0x164 float                    field_0x164  (evidence: 0x005AA890)
     // +0x168 float                    field_0x168  (evidence: 0x005AA890)
     // +0x16C float                    field_0x16c  (evidence: 0x005AA890)
@@ -52,5 +53,6 @@ struct Self_Fields {
     // +0x268 uint32_t                 field_0x268  (evidence: 0x00702780)
     // +0x26C uint32_t                 field_0x26C  (evidence: 0x00599E70)
     // +0x5F8 uint32_t                 field_0x5F8  (evidence: 0x0059E060)
+    // +0x61C uint32_t result (written with the return value of ext_00661A90)  (evidence: 0x0059DC60)
 };
 } // namespace lifted_layout

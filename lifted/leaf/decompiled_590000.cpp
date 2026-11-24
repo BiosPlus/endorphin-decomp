@@ -169,3 +169,26 @@ void* fn_00595C50() {
 }
 } // namespace lift_0043D780
 } // namespace lift_00595C50
+
+// [0x0059DC60]
+namespace lift_0059DC60 {
+extern uint32_t __fastcall ext_00661A90(void* self, uint32_t arg);
+
+// @name SetResultFromSubobjectCall
+// @summary Calls ext_00661A90 with the stack argument as self and (this+0x158) as its argument (0 when this is null), then stores the result at this+0x61C.
+// @field Self +0x158 BYTE field_0x158 (address taken only, passed to ext_00661A90; not dereferenced here)
+// @field Self +0x61C uint32_t result (written with the return value of ext_00661A90)
+extern void __fastcall fn_0059DC60(void* self, uint32_t arg0) {
+    // Null-this path: callee receives 0 as its second argument and the store
+    // goes to absolute address 0x61C, exactly as the original code does.
+    uint32_t subobjectAddr = 0;
+    if (self != nullptr) {
+        subobjectAddr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)) + 0x158u;
+    }
+
+    void* first = reinterpret_cast<void*>(static_cast<uintptr_t>(arg0));
+    uint32_t r = ext_00661A90(first, subobjectAddr);
+
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(self) + 0x61Cu) = r;
+}
+} // namespace lift_0059DC60

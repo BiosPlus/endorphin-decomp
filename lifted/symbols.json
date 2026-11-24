@@ -21375,6 +21375,12 @@
     "summary": "Returns 0x40 if the byte at +0x4DE is nonzero, otherwise 0xC0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0059DC60": {
+    "name": "SetResultFromSubobjectCall",
+    "signature": "extern \"C\" void __fastcall fn_0059DC60(void* self, uint32_t arg0)",
+    "summary": "Calls ext_00661A90 with the stack argument as self and (this+0x158) as its argument (0 when this is null), then stores the result at this+0x61C.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x0059DCA0": {
     "name": "sub_0059DCA0",
     "signature": "extern \"C\" void __fastcall fn_0059DCA0(void* self, int edx_unused, float value)",
