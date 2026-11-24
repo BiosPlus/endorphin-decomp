@@ -1,0 +1,22 @@
+{
+  "va": "0x006F11A0",
+  "size": 44,
+  "orig_symbol": "sub_006F11A0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::initSubobjectAndNotify",
+  "class": "Unknown",
+  "signature": "void __thiscall sub_006F11A0(void* self, uint32_t arg1, void* arg2)",
+  "summary": "Initializes the subobject at +0x4598 with two arguments and callback 0x6F7DC0, then calls ext_00711A70 with 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4598",
+      "type": "uint8_t",
+      "name": "field_0x4598"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:15:45Z"
+}
