@@ -6971,6 +6971,12 @@
     "summary": "If self-\u003e+0x04 is non-null, tail-calls child's vtable slot 0x78/4 with child as this and self as the argument; otherwise returns self.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x0048A120": {
+    "name": "notifyRangeVtable78",
+    "signature": "void sub_0048A120(uint32_t begin, uint32_t end)",
+    "summary": "Iterates over an 8-byte-strided range [begin, end) and invokes vtable+0x78 on each non-null object at +0x04, passing the element address.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048A9C0": {
     "name": "sub_0048A9C0",
     "signature": "DWORD* __thiscall fn_0048A9C0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
