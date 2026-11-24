@@ -2792,6 +2792,12 @@
     "summary": "Returns the 32-bit value pointed to by one of two pointer fields, chosen by the byte flag at +0x88 (flag==0 uses +0x70, otherwise +0x74).",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x004408B0": {
+    "name": "sub_004408B0",
+    "signature": "void __thiscall sub_004408B0(uint32_t ecx, double arg0)",
+    "summary": "Clamps a double value to a lower bound and stores it, clearing a flag if clamped",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x004408E0": {
     "name": "setDoublePairAt50_58",
     "signature": "void __thiscall fn_004408E0(void* self, double a0, double a1)",
