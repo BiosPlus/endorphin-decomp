@@ -10627,6 +10627,13 @@
     "summary": "Lazily initializes a static object once (guarded), then stores its address into the caller-supplied out-object at +0x04.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004B8310": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData\u003e::vfunc_40",
+    "class": "ExprParser::ValuePtrType",
+    "signature": "void fn_004B8310(void* out)",
+    "summary": "Lazily initializes the static-local type object at mem_00AE167C (guarded by bit 0 of mem_00AE1680) and stores its address into the caller-supplied output's +0x04 slot.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004B8390": {
     "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0\u003e",

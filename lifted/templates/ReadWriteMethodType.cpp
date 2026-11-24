@@ -9466,3 +9466,27 @@ void lifted_004CAEE0(void* self_out)
     reinterpret_cast<std::uintptr_t*>(self_out)[1] = reinterpret_cast<std::uintptr_t>(g_record);
 }
 } // namespace lift_004CAEE0
+
+// [0x004B8310] ExprParser::ReadWriteMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, bool, &public: void __thiscall NMData::EngineData::setEnableNonSphericalInertialBodies(bool)>::vfunc_40 (122 bytes)
+namespace lift_004B8310 {
+extern void ext_0067A670();
+extern int mem_00AE1680;
+extern int mem_00AE167C;
+
+// @name ExprParser::ReadWriteMethodType<NMData::EngineData>::vfunc_40
+// @class ExprParser::ValuePtrType
+// @summary Lazily initializes the static-local type object at mem_00AE167C (guarded by bit 0 of mem_00AE1680) and stores its address into the caller-supplied output's +0x04 slot.
+// @field ValuePtrType +0x04 void* field_0x04
+
+void fn_004B8310(void* out) {
+    // One-time initialization guard (function-local static).
+    if ((mem_00AE1680 & 1) == 0) {
+        mem_00AE1680 |= 1;
+        // Original passes &mem_00AE167C in ecx and a zero dword on the stack;
+        // those ABI details are not expressible portably, so the call is kept as declared.
+        ext_0067A670();
+        mem_00AE167C = 0x943c7c;
+    }
+    lift_field<uintptr_t>(out, 4) = reinterpret_cast<uintptr_t>(&mem_00AE167C);
+}
+} // namespace lift_004B8310

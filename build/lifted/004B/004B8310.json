@@ -1,0 +1,22 @@
+{
+  "va": "0x004B8310",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, bool, \u0026public: void __thiscall NMData::EngineData::setEnableNonSphericalInertialBodies(bool)\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData\u003e::vfunc_40",
+  "class": "ExprParser::ValuePtrType",
+  "signature": "void fn_004B8310(void* out)",
+  "summary": "Lazily initializes the static-local type object at mem_00AE167C (guarded by bit 0 of mem_00AE1680) and stores its address into the caller-supplied output's +0x04 slot.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:05:12Z"
+}
