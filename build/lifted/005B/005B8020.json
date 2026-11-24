@@ -1,0 +1,14 @@
+{
+  "va": "0x005B8020",
+  "size": 122,
+  "orig_symbol": "ExprParser::Method0Type\u003cNMData::MetaBodyData, {public: void __thiscall NMData::MetaBodyData::resetForcesAndImpulses(void), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/Method0Type.cpp",
+  "lifted_path": "lifted/templates/Method0Type.cpp",
+  "name": "ExprParser::Method0Type\u003cNMData::MetaBodyData, resetForcesAndImpulses\u003e::vfunc_40",
+  "class": "ExprParser::Method0Type",
+  "signature": "void __thiscall fn_005B8020(void* self, void* arg0)",
+  "summary": "Lazily initializes a static helper object and stores its address into arg0 + 0x4.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:54:01Z"
+}

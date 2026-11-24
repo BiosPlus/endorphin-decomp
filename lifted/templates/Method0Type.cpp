@@ -891,3 +891,27 @@ void fn_004CA9F0(void* out) {
     lift_field<uint32_t>(out, 0x04) = 0x00AE4498u;
 }
 } // namespace lift_004CA9F0
+
+// [0x005B8020]
+namespace lift_005B8020 {
+// @name ExprParser::Method0Type<NMData::MetaBodyData, resetForcesAndImpulses>::vfunc_40
+// @class ExprParser::Method0Type
+// @summary Lazily initializes a static helper object and stores its address into arg0 + 0x4.
+
+
+extern uint32_t mem_00B43C98;
+extern uint32_t mem_00B43C94;
+
+extern void __thiscall ext_0067A670(void* ecx);
+
+void __thiscall fn_005B8020(void* self, void* arg0) {
+    (void)self;
+    if ((mem_00B43C98 & 1u) == 0u) {
+        mem_00B43C98 |= 1u;
+        ext_0067A670(&mem_00B43C94);
+        mem_00B43C94 = 0x00960A2Cu;
+    }
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(arg0) + 0x4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B43C94));
+}
+} // namespace lift_005B8020
