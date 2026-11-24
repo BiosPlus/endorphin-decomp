@@ -4,10 +4,10 @@
   "orig_symbol": "sub_00519CB0",
   "src_path": "src/leaf/decompiled_650000.cpp",
   "lifted_path": "lifted/leaf/decompiled_650000.cpp",
-  "name": "ctorFromStdString",
+  "name": "sub_005136C0",
   "class": "Unknown (vtable 0x0095219C)",
-  "signature": "static inline void store_u32(unsigned char* base, std::size_t off, std::uint32_t v)",
-  "summary": "Constructor: writes vtable 0x0095219C, copy-constructs a std::string at +0x04 from the argument, sets +0x20 = 1, zeroes +0x24 and +0x28, returns this.",
+  "signature": "void* fn_005136C0(void* self, void* pair, DWORD b)",
+  "summary": "Auto-lifted identical-shape clone of 0x00500310 (DwordPairInitFromCall_00500310).",
   "fields": [
     {
       "class": "Unknown",
@@ -42,5 +42,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T14:03:28Z"
+  "lifted_at": "2026-11-24T14:03:34Z"
 }
