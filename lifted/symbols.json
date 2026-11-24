@@ -40785,6 +40785,12 @@
     "summary": "Returns the element at index from the object's array if index \u003c count (signed), else 0.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007DB760": {
+    "name": "GetIndexedEntryChecked",
+    "signature": "void* GetIndexedEntryChecked(void* self, int32_t index)",
+    "summary": "Returns pointer to entry `index` (64-byte stride) of the object's entry array, or nullptr if index \u003e= count.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007DCFF0": {
     "name": "sub_007DCFF0",
     "class": "\u003cunknown\u003e",

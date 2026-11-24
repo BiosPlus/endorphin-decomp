@@ -1,0 +1,27 @@
+{
+  "va": "0x007DB760",
+  "size": 23,
+  "orig_symbol": "sub_007DB760",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "GetIndexedEntryChecked",
+  "signature": "void* GetIndexedEntryChecked(void* self, int32_t index)",
+  "summary": "Returns pointer to entry `index` (64-byte stride) of the object's entry array, or nullptr if index \u003e= count.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "int32_t",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:34:51Z"
+}

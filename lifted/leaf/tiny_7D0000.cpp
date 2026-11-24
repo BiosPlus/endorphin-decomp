@@ -449,3 +449,20 @@ DWORD fn_007DB740(const void* obj, INT index) {
     return array[index];
 }
 } // namespace lift_007DB740
+
+// [0x007DB760]
+namespace lift_007DB760 {
+// @name GetIndexedEntryChecked
+// @summary Returns pointer to entry `index` (64-byte stride) of the object's entry array, or nullptr if index >= count.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x1C int32_t field_0x1c
+void* GetIndexedEntryChecked(void* self, int32_t index) {
+    const int32_t count = lift_field<int32_t>(self, 0x1C);
+    if (index < count) {
+        uint32_t offset = static_cast<uint32_t>(index) << 6;
+        uint8_t* base = lift_field<uint8_t*>(self, 0x10);
+        return base + offset;
+    }
+    return nullptr;
+}
+} // namespace lift_007DB760
