@@ -15176,6 +15176,13 @@
     "summary": "Reads the first word of its argument, converts the string it resolves to via atof, and returns the result as a float.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00513240": {
+    "name": "ExprParser::ReadMethodType\u003cChromosome::Descriptor\u003e::vfunc_4 (Chromosome::Descriptor::getTypicalMutationSize)",
+    "class": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1\u003e",
+    "signature": "void* __stdcall fn_00513240(void* out, void* self)",
+    "summary": "Fetches a value through the object's first pointer via ext_005119F0, copy-constructs the std::string result into the hidden return slot, destroys the scratch string, and returns the slot.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005136C0": {
     "name": "sub_005136C0",
     "signature": "void* fn_005136C0(void* self, void* pair, DWORD b)",

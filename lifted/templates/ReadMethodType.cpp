@@ -42488,3 +42488,26 @@ double fn_00514070(void* arg) {
     return ext_006A6DE0(rounded);
 }
 } // namespace lift_00514070
+
+// [0x00513240] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_4 (115 bytes)
+namespace lift_00513240 {
+// Known callee 0x004276B0: StdStringCopyConstruct (copy-constructs a std::string at dst from src; returns dst).
+extern void* ext_004276B0(void* dst, const void* src);
+// Callee 0x005119F0 (138B): takes a scratch buffer and a value pointer, returns a pointer to the source string.
+extern void* ext_005119F0(void* scratch, void* value);
+// Callee reached through the MSVCP80 import slot mem_00924FF4 (target 0x00628FF0): std::string destructor.
+extern void ext_00628FF0(void* self);
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_4 (Chromosome::Descriptor::getTypicalMutationSize)
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>
+// @summary Fetches a value through the object's first pointer via ext_005119F0, copy-constructs the std::string result into the hidden return slot, destroys the scratch string, and returns the slot.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+void* __stdcall fn_00513240(void* out, void* self) {
+    unsigned char scratch[0x1C] = {};  // scratch std::string (28 bytes)
+    void* src = ext_005119F0(scratch, *static_cast<void**>(self));
+    ext_004276B0(out, src);
+    ext_00628FF0(scratch);
+    return out;
+}
+} // namespace lift_00513240
