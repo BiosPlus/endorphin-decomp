@@ -338,3 +338,31 @@ uint8_t __thiscall sub_004925D0(uint32_t self, uint32_t mode) {
     return 0;
 }
 } // namespace lift_004925D0
+
+// [0x00493330]
+namespace lift_00493330 {
+// @name TreeErase
+// @summary Recursively erases a red-black tree subtree starting from the given node.
+// @field TreeNode +0x00 uint32_t left
+// @field TreeNode +0x08 uint32_t right
+// @field TreeNode +0x21 uint8_t is_nil
+
+
+extern uint8_t mem_read8(uint32_t addr);
+extern uint32_t mem_read32(uint32_t addr);
+extern void ext_006A5C5C(uint32_t ptr);
+
+void __thiscall fn_00493330(void* self, uint32_t node) {
+    uint32_t edi = node;
+    if (mem_read8(edi + 0x21) == 0) {
+        uint32_t esi = edi;
+        do {
+            uint32_t right = mem_read32(esi + 0x8);
+            fn_00493330(self, right);
+            esi = mem_read32(esi);
+            ext_006A5C5C(edi);
+            edi = esi;
+        } while (mem_read8(esi + 0x21) == 0);
+    }
+}
+} // namespace lift_00493330
