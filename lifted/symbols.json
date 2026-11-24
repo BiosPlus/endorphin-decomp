@@ -12646,6 +12646,13 @@
     "summary": "Pure jump thunk forwarding to NMData::NetworkConnectorData::vfunc_27.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00522160": {
+    "name": "ThreeLayerNet::vfunc_25",
+    "class": "ThreeLayerNet",
+    "signature": "void* fn_00522160(void* self, void* out, uint32_t arg1, uint32_t arg2)",
+    "summary": "Constructs the std::string result (hidden return buffer) from a constant .rdata literal and returns that buffer.",
+    "lifted_path": "lifted/classes/ThreeLayerNet.cpp"
+  },
   "0x00522260": {
     "name": "ExprParser::ReadWriteMethodType\u003cThreeLayerNet, int, \u0026public: int __thiscall ThreeLayerNet::getNumHidden(void) const, int, \u0026public: void __thiscall ThreeLayerNet::setNumHidden(int)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cThreeLayerNet, int, \u0026public: int __thiscall ThreeLayerNet::getNumHidden(void) const, int, \u0026public: void __thiscall ThreeLayerNet::setNumHidden(int)\u003e",
