@@ -499,3 +499,19 @@ void __thiscall fn_004408E0(void* self, double a0, double a1) {
     lift_field<double>(self, 0x58) = a1;
 }
 } // namespace lift_004408E0
+
+// [0x00440900] sub_00440900 (23 bytes)
+namespace lift_00440900 {
+// @name sub_00440900
+// @summary Auto-lifted identical-shape clone of 0x004408E0 (setDoublePairAt50_58).
+namespace lift_004408E0 {
+// @name setDoublePairAt50_58
+// @summary Stores two double arguments into the object at offsets +0x50 and +0x58 (thiscall, callee pops 16 bytes).
+// @field self +0x50 double field_0x50
+// @field self +0x58 double field_0x58
+void __thiscall fn_00440900(void* self, double a0, double a1) {
+    lift_field<double>(self, 0x90) = a0;
+    lift_field<double>(self, 0x98) = a1;
+}
+} // namespace lift_004408E0
+} // namespace lift_00440900

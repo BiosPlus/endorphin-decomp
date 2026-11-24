@@ -1723,6 +1723,12 @@
     "summary": "Stores two double arguments into the object at offsets +0x50 and +0x58 (thiscall, callee pops 16 bytes).",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x00440900": {
+    "name": "sub_00440900",
+    "signature": "void __thiscall fn_00440900(void* self, double a0, double a1)",
+    "summary": "Auto-lifted identical-shape clone of 0x004408E0 (setDoublePairAt50_58).",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x00440940": {
     "name": "MultiTrackView::DiamondMarker::vfunc_3",
     "class": "MultiTrackView::DiamondMarker",
