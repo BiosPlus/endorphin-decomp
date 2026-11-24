@@ -4,10 +4,10 @@
   "orig_symbol": "sub_00803980",
   "src_path": "src/leaf/tiny_800000.cpp",
   "lifted_path": "lifted/leaf/tiny_800000.cpp",
-  "name": "descriptiveName: fn_00803980 (returns **a - *b)",
-  "signature": "extern \"C++\" int32_t fn_00803980(int32_t** a, const int32_t* b)",
-  "summary": "Returns the difference between the int32 value behind a double pointer (arg0) and the int32 value behind a pointer (arg1).",
+  "name": "sub_0080EFC0",
+  "signature": "extern \"C\" void* __cdecl fn_0080EFC0(void)",
+  "summary": "Returns address of global mem_00AB6B0C.",
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T01:23:14Z"
+  "lifted_at": "2026-11-24T01:23:19Z"
 }
