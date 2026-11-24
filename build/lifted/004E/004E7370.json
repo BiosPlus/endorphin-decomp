@@ -1,0 +1,22 @@
+{
+  "va": "0x004E7370",
+  "size": 24,
+  "orig_symbol": "SelectionBuffer::vfunc_22",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "SelectionBuffer::vfunc_22",
+  "class": "SelectionBuffer",
+  "signature": "uint32_t __thiscall fn_004E7370(void* self, uint32_t a, uint32_t b)",
+  "summary": "Forwards to virtual slot 24 (vtable +0x60) with arguments (a, 3, b, 1) and returns its result.",
+  "fields": [
+    {
+      "class": "SelectionBuffer",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:36:12Z"
+}

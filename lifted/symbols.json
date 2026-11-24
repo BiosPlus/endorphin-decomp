@@ -9605,6 +9605,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004E6E90 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004E7370": {
+    "name": "SelectionBuffer::vfunc_22",
+    "class": "SelectionBuffer",
+    "signature": "uint32_t __thiscall fn_004E7370(void* self, uint32_t a, uint32_t b)",
+    "summary": "Forwards to virtual slot 24 (vtable +0x60) with arguments (a, 3, b, 1) and returns its result.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x004E81C0": {
     "name": "sub_004E81C0",
     "signature": "extern \"C\" void fn_004E81C0(void)",

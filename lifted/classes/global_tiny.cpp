@@ -6336,3 +6336,18 @@ void fn_00665820(void* self) {
     slot1(sub, arg);
 }
 } // namespace lift_00665820
+
+// [0x004E7370] SelectionBuffer::vfunc_22 (24 bytes)
+namespace lift_004E7370 {
+// @name SelectionBuffer::vfunc_22
+// @class SelectionBuffer
+// @summary Forwards to virtual slot 24 (vtable +0x60) with arguments (a, 3, b, 1) and returns its result.
+// @field SelectionBuffer +0x00 void* vtable
+uint32_t __thiscall fn_004E7370(void* self, uint32_t a, uint32_t b) {
+    using VirtualFn = uint32_t(__thiscall*)(void* self, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3);
+
+    void** vtbl = *reinterpret_cast<void***>(self);
+    VirtualFn target = reinterpret_cast<VirtualFn>(vtbl[0x60 / sizeof(void*)]);
+    return target(self, a, 3u, b, 1u);
+}
+} // namespace lift_004E7370
