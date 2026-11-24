@@ -4383,6 +4383,13 @@
     "summary": "Forwards two dwords from this+0x10/+0x14 to ext_00473670 (ecx = +0x10, stack arg = +0x14).",
     "lifted_path": "lifted/Commands/SetPlaybackStartFrameCommand.cpp"
   },
+  "0x0048E080": {
+    "name": "Commands::SetPlaybackStartFrameCommand::vfunc_2",
+    "class": "Commands::SetPlaybackStartFrameCommand",
+    "signature": "void fn_0048E080(void* self)",
+    "summary": "Forwards two fields of this command (+0x10 as receiver, +0x18 as argument) to ext_00473670.",
+    "lifted_path": "lifted/Commands/SetPlaybackStartFrameCommand.cpp"
+  },
   "0x0048E0F0": {
     "name": "Commands::CreateTriggeredEventCommand::vfunc_3",
     "class": "Commands::CreateTriggeredEventCommand",

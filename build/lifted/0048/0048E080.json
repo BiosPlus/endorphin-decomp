@@ -1,0 +1,28 @@
+{
+  "va": "0x0048E080",
+  "size": 13,
+  "orig_symbol": "Commands::SetPlaybackStartFrameCommand::vfunc_2",
+  "src_path": "src/Commands/SetPlaybackStartFrameCommand.cpp",
+  "lifted_path": "lifted/Commands/SetPlaybackStartFrameCommand.cpp",
+  "name": "Commands::SetPlaybackStartFrameCommand::vfunc_2",
+  "class": "Commands::SetPlaybackStartFrameCommand",
+  "signature": "void fn_0048E080(void* self)",
+  "summary": "Forwards two fields of this command (+0x10 as receiver, +0x18 as argument) to ext_00473670.",
+  "fields": [
+    {
+      "class": "Commands::SetPlaybackStartFrameCommand",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Commands::SetPlaybackStartFrameCommand",
+      "offset": "+0x18",
+      "type": "uintptr_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:19:18Z"
+}
