@@ -45253,6 +45253,12 @@
     "summary": "Stores the absolute value of a float argument into offset +0x04 of the target struct.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C9D00": {
+    "name": "setAbsFloatField_0x8",
+    "signature": "void __cdecl sub_007C9D00(uint32_t arg0, float val)",
+    "summary": "Sets float field at offset +0x8 to the absolute value of the input float.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C9DD0": {
     "name": "addOffset0x30",
     "signature": "uint32_t sub_007C9DD0(uint32_t arg0)",
