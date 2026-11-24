@@ -1,0 +1,22 @@
+{
+  "va": "0x006DEEA0",
+  "size": 16,
+  "orig_symbol": "sub_006DEEA0",
+  "src_path": "src/leaf/tiny_6D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6D0000.cpp",
+  "name": "Unknown::GetFlag08",
+  "class": "Unknown",
+  "signature": "uint32_t Unknown_GetFlag08(const uint8_t* self)",
+  "summary": "Returns bit 0x08 of the dword at this+0x18 (0 or 8).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:39:48Z"
+}

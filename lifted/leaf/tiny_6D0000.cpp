@@ -386,3 +386,16 @@ extern double __fastcall fn_006D9060(void* self) {
     return lift_field<double>(inner, 0x160);
 }
 } // namespace lift_006D9060
+
+// [0x006DEEA0]
+namespace lift_006DEEA0 {
+// @name Unknown::GetFlag08
+// @class Unknown
+// @summary Returns bit 0x08 of the dword at this+0x18 (0 or 8).
+// @field Unknown +0x18 uint32_t field_0x18
+
+uint32_t Unknown_GetFlag08(const uint8_t* self) {
+    uint32_t v = *reinterpret_cast<const uint32_t*>(self + 0x18);
+    return v & 0x8u;
+}
+} // namespace lift_006DEEA0

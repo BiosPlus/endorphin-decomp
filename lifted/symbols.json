@@ -32352,6 +32352,13 @@
     "summary": "Setter storing int32_t argument into field at offset +0x44.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006DEEA0": {
+    "name": "Unknown::GetFlag08",
+    "class": "Unknown",
+    "signature": "uint32_t Unknown_GetFlag08(const uint8_t* self)",
+    "summary": "Returns bit 0x08 of the dword at this+0x18 (0 or 8).",
+    "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
   "0x006DEEC0": {
     "name": "sub_006DEEC0",
     "signature": "extern \"C\" int32_t __fastcall fn_006DEEC0(void* self)",
