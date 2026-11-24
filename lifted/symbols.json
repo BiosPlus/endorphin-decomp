@@ -17268,10 +17268,10 @@
     "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
   },
   "0x005B7040": {
-    "name": "Unknown::forwardToSubobjectVfunc3_005B7040",
-    "class": "Unknown",
-    "signature": "float fn_005B7040(void* self)",
-    "summary": "If self-\u003efield_0x158 is null return 0.0f; otherwise call vtable slot 3 of",
+    "name": "sub_005B1140",
+    "class": "UnknownClass",
+    "signature": "extern \"C\" void __fastcall fn_005B1140(void* self)",
+    "summary": "Stores address of mem_0095F7EC into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
   },
   "0x005B7240": {

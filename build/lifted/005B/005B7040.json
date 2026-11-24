@@ -4,16 +4,118 @@
   "orig_symbol": "sub_005B7040",
   "src_path": "src/leaf/tiny_5B0000.cpp",
   "lifted_path": "lifted/leaf/tiny_5B0000.cpp",
-  "name": "Unknown::forwardToSubobjectVfunc3_005B7040",
-  "class": "Unknown",
-  "signature": "float fn_005B7040(void* self)",
-  "summary": "If self-\u003efield_0x158 is null return 0.0f; otherwise call vtable slot 3 of",
+  "name": "sub_005B1140",
+  "class": "UnknownClass",
+  "signature": "extern \"C\" void __fastcall fn_005B1140(void* self)",
+  "summary": "Stores address of mem_0095F7EC into field at offset +0x0.",
   "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x10",
+      "type": "uint32_t[]",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x10",
+      "type": "float[]",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x184",
+      "type": "int32_t",
+      "name": "field_0x184"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "DWORD",
+      "name": "field_0x158"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x154",
+      "type": "DWORD",
+      "name": "child"
+    },
     {
       "class": "Unknown",
       "offset": "+0x158",
       "type": "void*",
       "name": "field_0x158"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "void* field_0xAC (on the object pointed to by",
+      "name": "field_0x158)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "uint32_t field_0x158 (child pointer; non-null selects the forward",
+      "name": "path)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "uint32_t field_0xac (read from the child at +0x158; becomes `this` for the",
+      "name": "forward)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "uint32_t",
+      "name": "field_0x158"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "uint32_t field_0xac (read from the sub-object at self+0x158, not from",
+      "name": "self)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "uint32_t",
+      "name": "field_0xac"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "std::string",
+      "name": "field_0x28"
     },
     {
       "class": "Unknown",
@@ -24,5 +126,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:09:19Z"
+  "lifted_at": "2026-11-24T12:09:27Z"
 }
