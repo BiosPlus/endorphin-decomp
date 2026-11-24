@@ -1,0 +1,22 @@
+{
+  "va": "0x006A8140",
+  "size": 25,
+  "orig_symbol": "sub_006A8140",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "Control::setScrollPos",
+  "class": "Control",
+  "signature": "int32_t __thiscall sub_006A8140(uint32_t this_ptr, int32_t nPos, int32_t bRedraw)",
+  "summary": "Sets the scroll position of a control's scrollbar via USER32!SetScrollPos.",
+  "fields": [
+    {
+      "class": "Control",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T11:51:56Z"
+}

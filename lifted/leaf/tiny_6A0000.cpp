@@ -432,3 +432,36 @@ void fn_006A95C0(void* self) {
     lift_field<BYTE>(self, 0x198) = 1;
 }
 } // namespace lift_006A95C0
+
+// [0x006A8140]
+namespace lift_006A8140 {
+extern uint32_t mem_0092557C;
+
+// @name Control::setScrollPos
+// @class Control
+// @summary Sets the scroll position of a control's scrollbar via USER32!SetScrollPos.
+// @field Control +0x20 uint32_t hwnd
+int32_t __thiscall sub_006A8140(uint32_t this_ptr, int32_t nPos, int32_t bRedraw) {
+    uint32_t hwnd = *reinterpret_cast<const uint32_t*>(this_ptr + 0x20);
+    using SetScrollPosFn = int32_t(__stdcall*)(uint32_t, int32_t, int32_t, int32_t);
+    return reinterpret_cast<SetScrollPosFn>(mem_0092557C)(hwnd, 2, nPos, bRedraw);
+}
+} // namespace lift_006A8140
+
+// [0x006A8160]
+namespace lift_006A8160 {
+// @name Control::sendMessage0x41A
+// @class Control
+// @summary Sends Windows message 0x41A with wParam=0 and lParam=arg0 to the control's window handle.
+// @field Control +0x20 uint32_t hwnd
+
+extern uint32_t mem_00925694;
+
+using SendMessageAFn = uint32_t(__stdcall*)(uint32_t hWnd, uint32_t Msg, uint32_t wParam, uint32_t lParam);
+
+uint32_t __thiscall sub_006A8160(void* self, uint32_t lParam) {
+    uint32_t hwnd = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x20);
+    auto fn = reinterpret_cast<SendMessageAFn>(mem_00925694);
+    return fn(hwnd, 0x41au, 0u, lParam);
+}
+} // namespace lift_006A8160

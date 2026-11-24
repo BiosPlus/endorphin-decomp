@@ -32525,6 +32525,20 @@
     "summary": "MSVC scalar deleting destructor: calls thunk_MFC80_ord_663 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/templates/auto_tiny.cpp"
   },
+  "0x006A8140": {
+    "name": "Control::setScrollPos",
+    "class": "Control",
+    "signature": "int32_t __thiscall sub_006A8140(uint32_t this_ptr, int32_t nPos, int32_t bRedraw)",
+    "summary": "Sets the scroll position of a control's scrollbar via USER32!SetScrollPos.",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
+  "0x006A8160": {
+    "name": "Control::sendMessage0x41A",
+    "class": "Control",
+    "signature": "uint32_t __thiscall sub_006A8160(void* self, uint32_t lParam)",
+    "summary": "Sends Windows message 0x41A with wParam=0 and lParam=arg0 to the control's window handle.",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006A95C0": {
     "name": "SubObject::SetWindowUpdateLocked",
     "class": "SubObject",
@@ -32781,6 +32795,12 @@
     "signature": "extern \"C\" void* __fastcall fn_006B0BF0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006B06A0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x006B0C40": {
+    "name": "sub_006B0C40",
+    "signature": "uint32_t __thiscall sub_006B0C40(uint32_t self, uint32_t arg0)",
+    "summary": "Constructor that initializes vtable to 0x00991348, clears field_0x04, and stores arg0 at field_0x0c.",
+    "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
   "0x006B0C60": {
     "name": "ReleaseOwnedChildVirtual",
