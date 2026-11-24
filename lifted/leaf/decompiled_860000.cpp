@@ -150,7 +150,6 @@ extern uint32_t mem_00924214;
 
 // @name AllocZeroedProduct
 // @summary Allocates a zero-initialised block of count*size bytes via LocalAlloc(LMEM_ZEROINIT, count*size).
-// @field none
 void* fn_0086CF90(uint32_t count, uint32_t size) {
     using LocalAllocFn = void* (*)(uint32_t flags, uint32_t bytes);
     const uint32_t kLmemZeroinit = 0x40;

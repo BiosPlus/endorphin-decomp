@@ -45518,9 +45518,9 @@
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
   "0x0086CF90": {
-    "name": "AllocZeroedProduct",
-    "signature": "void* fn_0086CF90(uint32_t count, uint32_t size)",
-    "summary": "Allocates a zero-initialised block of count*size bytes via LocalAlloc(LMEM_ZEROINIT, count*size).",
+    "name": "sub_0086086B",
+    "signature": "void fn_0086086B(void)",
+    "summary": "No-op: \"add eax, 0\" (eax unchanged; only flags are touched)",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
   "0x0086D600": {

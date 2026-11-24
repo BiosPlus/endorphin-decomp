@@ -4,10 +4,18 @@
   "orig_symbol": "sub_0086CF90",
   "src_path": "src/leaf/decompiled_860000.cpp",
   "lifted_path": "lifted/leaf/decompiled_860000.cpp",
-  "name": "AllocZeroedProduct",
-  "signature": "void* fn_0086CF90(uint32_t count, uint32_t size)",
-  "summary": "Allocates a zero-initialised block of count*size bytes via LocalAlloc(LMEM_ZEROINIT, count*size).",
+  "name": "sub_0086086B",
+  "signature": "void fn_0086086B(void)",
+  "summary": "No-op: \"add eax, 0\" (eax unchanged; only flags are touched)",
+  "fields": [
+    {
+      "class": "field_0x04",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04 (pointer-sized value loaded when the check",
+      "name": "passes)"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:50:34Z"
+  "lifted_at": "2026-11-24T12:50:48Z"
 }
