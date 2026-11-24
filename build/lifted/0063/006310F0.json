@@ -1,0 +1,14 @@
+{
+  "va": "0x006310F0",
+  "size": 12,
+  "orig_symbol": "EffectorSkeletal::vfunc_19",
+  "src_path": "src/classes/EffectorSkeletal.cpp",
+  "lifted_path": "lifted/classes/EffectorSkeletal.cpp",
+  "name": "EffectorSkeletal::vfunc_19",
+  "class": "EffectorSkeletal",
+  "signature": "uint32_t __thiscall fn_006310F0(uint32_t self)",
+  "summary": "Calls ext_00630370(self, 7), then tail-forwards self to ext_00630DD0 and returns its result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:16:02Z"
+}

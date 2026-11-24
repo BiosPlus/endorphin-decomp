@@ -19638,6 +19638,13 @@
     "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x006310F0": {
+    "name": "EffectorSkeletal::vfunc_19",
+    "class": "EffectorSkeletal",
+    "signature": "uint32_t __thiscall fn_006310F0(uint32_t self)",
+    "summary": "Calls ext_00630370(self, 7), then tail-forwards self to ext_00630DD0 and returns its result.",
+    "lifted_path": "lifted/classes/EffectorSkeletal.cpp"
+  },
   "0x00631100": {
     "name": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1\u003e",
