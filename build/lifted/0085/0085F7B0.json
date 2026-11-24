@@ -1,0 +1,13 @@
+{
+  "va": "0x0085F7B0",
+  "size": 47,
+  "orig_symbol": "sub_0085F7B0",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "memcmp",
+  "signature": "int32_t __cdecl sub_0085F7B0(const void* buf1, const void* buf2, uint32_t count)",
+  "summary": "Compare up to n bytes of two memory buffers and return the unsigned byte difference at the first mismatch",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:18:14Z"
+}

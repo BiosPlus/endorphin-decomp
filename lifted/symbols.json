@@ -510,6 +510,12 @@
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_1903.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00408090": {
+    "name": "copy_backward_4b",
+    "signature": "uint32_t* __cdecl sub_00408090(const uint32_t* first, const uint32_t* last, uint32_t* dest_end)",
+    "summary": "Copies a range of 4-byte elements backward using memmove_s and returns the start of the destination range.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x004086A0": {
     "name": "BottomPanel::vfunc_92",
     "class": "BottomPanel",
@@ -1058,6 +1064,13 @@
     "name": "sub_00414EC0",
     "signature": "uint32_t __thiscall sub_00414EC0( uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)",
     "summary": "Forwards arguments with a zeroed flag byte to sub_004148F0",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
+  "0x004152D0": {
+    "name": "MappedFile::close",
+    "class": "MappedFile",
+    "signature": "void __thiscall sub_004152D0(void* self)",
+    "summary": "Unmaps the file view and closes the file mapping and file handles if open.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
   "0x004153A0": {
@@ -2040,6 +2053,12 @@
     "signature": "void fn_0042FC20(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x005B72E0 (Unknown::ForwardToSubobject158).",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
+  },
+  "0x0042FC30": {
+    "name": "dispatchVtable0xE0WithVtable0x9CResult",
+    "signature": "void __cdecl fn_0042FC30(void)",
+    "summary": "Fetches the global object via ext_00465B40, calls vtable+0x9C, and passes the result and offset +0x3C to vtable+0xE0.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
   "0x0042FDB0": {
     "name": "sub_0042FDB0",
@@ -49730,6 +49749,12 @@
     "signature": "uint8_t fn_0085F740(void* self)",
     "summary": "Returns the byte at offset +0x01 of the object pointed to by self.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
+  "0x0085F7B0": {
+    "name": "memcmp",
+    "signature": "int32_t __cdecl sub_0085F7B0(const void* buf1, const void* buf2, uint32_t count)",
+    "summary": "Compare up to n bytes of two memory buffers and return the unsigned byte difference at the first mismatch",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
   "0x0085FA64": {
     "name": "sub_0085FA64",

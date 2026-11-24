@@ -288,3 +288,31 @@ uint32_t sub_0085BF40(uint32_t tablePtr, uint32_t key) {
     return 0;
 }
 } // namespace lift_0085BF40
+
+// [0x0085F7B0]
+namespace lift_0085F7B0 {
+// @name memcmp
+// @summary Compare up to n bytes of two memory buffers and return the unsigned byte difference at the first mismatch
+
+
+int32_t __cdecl sub_0085F7B0(const void* buf1, const void* buf2, uint32_t count) {
+    if (count == 0) {
+        return 0;
+    }
+
+    const uint8_t* p1 = static_cast<const uint8_t*>(buf1);
+    const uint8_t* p2 = static_cast<const uint8_t*>(buf2);
+    uint32_t remaining = count - 1;
+
+    while (remaining != 0) {
+        if (*p1 != *p2) {
+            break;
+        }
+        ++p1;
+        ++p2;
+        --remaining;
+    }
+
+    return static_cast<int32_t>(*p1) - static_cast<int32_t>(*p2);
+}
+} // namespace lift_0085F7B0
