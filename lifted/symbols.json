@@ -31211,6 +31211,13 @@
     "summary": "If the element range [begin, end) spans at least one 4-byte slot, decrement end by 4 (pop back).",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067F9D0": {
+    "name": "Unknown::notifyAndPopBack",
+    "class": "Unknown",
+    "signature": "void fn_0067F9D0(void* self)",
+    "summary": "Notifies the last 8-byte element of the range at +0x04..+0x08 via ext_0048A120, then shrinks the range end by one element.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00681380": {
     "name": "sub_00681380",
     "signature": "DWORD* __thiscall fn_00681380(void* self, const DWORD* first, const DWORD* last, DWORD* out)",

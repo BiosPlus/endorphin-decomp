@@ -196,3 +196,31 @@ void __thiscall fn_00503CD0(void* self) {
 }
 } // namespace lift_00503CD0
 } // namespace lift_00678DE0
+
+// [0x0067F9D0]
+namespace lift_0067F9D0 {
+// @name Unknown::notifyAndPopBack
+// @class Unknown
+// @summary Notifies the last 8-byte element of the range at +0x04..+0x08 via ext_0048A120, then shrinks the range end by one element.
+// @field Unknown +0x04 uint32_t begin
+// @field Unknown +0x08 uint32_t end
+
+extern void ext_0048A120(uint32_t begin, uint32_t end, uint32_t self);
+
+void fn_0067F9D0(void* self) {
+    uint32_t begin = lift_field<uint32_t>(self, 0x04);
+    if (begin == 0) {
+        return;
+    }
+
+    uint32_t end = lift_field<uint32_t>(self, 0x08);
+    int32_t count = static_cast<int32_t>(end - begin) >> 3;
+    if (count == 0) {
+        return;
+    }
+
+    uint32_t last = end - 8;
+    ext_0048A120(last, end, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)));
+    lift_field<uint32_t>(self, 0x08) = end - 8;
+}
+} // namespace lift_0067F9D0
