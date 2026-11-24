@@ -187,3 +187,17 @@ void fn_00594020(void* self, int32_t value) {
     }
 }
 } // namespace lift_00594020
+
+// [0x00594040] sub_00594040 (21 bytes)
+namespace lift_00594040 {
+// @name UnknownClass::RaiseFieldF4ToMax
+// @class UnknownClass
+// @summary Stores the argument into the object's int field at +0xF4 if it is greater than the current value (signed max-assign); thiscall, callee pops 4 bytes.
+// @field UnknownClass +0xF4 int32_t field_0xF4
+void fn_00594040(void* self, int32_t value) {
+    int32_t& field = lift_field<int32_t>(self, 0xF4);
+    if (value > field) {
+        field = value;
+    }
+}
+} // namespace lift_00594040

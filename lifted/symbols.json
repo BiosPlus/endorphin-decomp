@@ -14610,6 +14610,13 @@
     "summary": "Stores value into self+0xF4 if it is greater than the current value (running max); thiscall, one stack arg, callee pops 4.",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
+  "0x00594040": {
+    "name": "UnknownClass::RaiseFieldF4ToMax",
+    "class": "UnknownClass",
+    "signature": "void fn_00594040(void* self, int32_t value)",
+    "summary": "Stores the argument into the object's int field at +0xF4 if it is greater than the current value (signed max-assign); thiscall, callee pops 4 bytes.",
+    "lifted_path": "lifted/leaf/tiny_590000.cpp"
+  },
   "0x00594070": {
     "name": "sub_00594070",
     "signature": "extern \"C\" void __fastcall fn_00594070(void* self)",

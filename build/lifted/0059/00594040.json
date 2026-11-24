@@ -1,0 +1,22 @@
+{
+  "va": "0x00594040",
+  "size": 21,
+  "orig_symbol": "sub_00594040",
+  "src_path": "src/leaf/tiny_590000.cpp",
+  "lifted_path": "lifted/leaf/tiny_590000.cpp",
+  "name": "UnknownClass::RaiseFieldF4ToMax",
+  "class": "UnknownClass",
+  "signature": "void fn_00594040(void* self, int32_t value)",
+  "summary": "Stores the argument into the object's int field at +0xF4 if it is greater than the current value (signed max-assign); thiscall, callee pops 4 bytes.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0xF4",
+      "type": "int32_t",
+      "name": "field_0xF4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:25:51Z"
+}
