@@ -869,3 +869,33 @@ void fn_0044B1F0(void* self) {
     reinterpret_cast<VirtualFn0>(lift_field<void*>(vtbl, 0x154))(sub);
 }
 } // namespace lift_0044B1F0
+
+// [0x0044B260] sub_0044B260 (37 bytes)
+namespace lift_0044B260 {
+// @name Unknown::forwardToSubobject_0x154
+// @class Unknown
+// @summary If field +0x64 is non-null, call its vtable slot 0x24 with arg 0, then tail-jump to its vtable slot 0x154; otherwise do nothing.
+// @field Unknown +0x64 void* field_0x64
+void fn_0044B260(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    void* sub = *reinterpret_cast<void**>(base + 0x64);
+    if (sub == nullptr) {
+        return;
+    }
+
+    // First virtual call: vtable slot at offset 0x24, thiscall with one argument (0).
+    void** vt = *reinterpret_cast<void***>(sub);
+    auto slot24 = reinterpret_cast<void (*)(void*, int)>(
+        *reinterpret_cast<void**>(reinterpret_cast<unsigned char*>(vt) + 0x24));
+    slot24(sub, 0);
+
+    // Second virtual call: the original re-reads field +0x64 and jumps (tail call)
+    // through vtable slot 0x154 with no extra arguments. Expressed here as a plain call;
+    // the callee's return value (eax) is not propagated since the original is void-like.
+    sub = *reinterpret_cast<void**>(base + 0x64);
+    vt = *reinterpret_cast<void***>(sub);
+    auto slot154 = reinterpret_cast<void (*)(void*)>(
+        *reinterpret_cast<void**>(reinterpret_cast<unsigned char*>(vt) + 0x154));
+    slot154(sub);
+}
+} // namespace lift_0044B260
