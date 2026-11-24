@@ -1,0 +1,13 @@
+{
+  "va": "0x007134C0",
+  "size": 56,
+  "orig_symbol": "sub_007134C0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "LookupStaticAddress_007134C0",
+  "signature": "DWORD __stdcall LookupStaticAddress_007134C0(DWORD index)",
+  "summary": "Maps an index 0..3 to one of four static addresses; any other index yields a fallback address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:16:46Z"
+}

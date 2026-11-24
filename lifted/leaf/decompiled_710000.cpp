@@ -1096,3 +1096,22 @@ extern void __fastcall fn_0071C870(void* self, int edx_unused, unsigned int valu
     }
 }
 } // namespace lift_0071C870
+
+// [0x007134C0]
+namespace lift_007134C0 {
+// @name LookupStaticAddress_007134C0
+// @summary Maps an index 0..3 to one of four static addresses; any other index yields a fallback address.
+// @field none (no class; no struct fields accessed)
+
+// Returns a static VA selected by the single stack argument (stdcall, one arg).
+// Indices 0..3 index a jump table at 0x007134F8; indices above 3 take the default path.
+DWORD __stdcall LookupStaticAddress_007134C0(DWORD index) {
+    switch (index) {
+    case 0:  return 0x00AAC194u;
+    case 1:  return 0x00AAC198u;
+    case 2:  return 0x00AAC19Cu;
+    case 3:  return 0x00AAC1C0u;
+    default: return 0x00AAC03Cu;
+    }
+}
+} // namespace lift_007134C0
