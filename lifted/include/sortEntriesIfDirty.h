@@ -8,8 +8,8 @@
 // Recovered field layout for sortEntriesIfDirty:
 namespace lifted_layout {
 struct sortEntriesIfDirty_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x007847B0)
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x007847B0)
-    // +0x10  uint8_t                  field_0x10  (evidence: 0x007847B0)
+    // +0x0   void*                    field_0x00  (evidence: 0x007847B0, 0x00788E50)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x007847B0, 0x00788E50)
+    // +0x10  uint8_t                  field_0x10  (evidence: 0x007847B0, 0x00788E50)
 };
 } // namespace lifted_layout

@@ -4,11 +4,311 @@
   "orig_symbol": "sub_00788E50",
   "src_path": "src/leaf/decompiled_780000.cpp",
   "lifted_path": "lifted/leaf/decompiled_780000.cpp",
-  "name": "TextConverter::convertWideToUtf8Field",
-  "class": "TextConverter",
-  "signature": "void* fn_00788E50(void* self)",
-  "summary": "Converts the NUL-terminated UTF-16 string at +0x30 into UTF-8 in the 0x400-byte buffer at +0x254 (CP 65001), and returns a pointer to that buffer.",
+  "name": "UnknownClass::destroyField04",
+  "class": "UnknownClass",
+  "signature": "void __thiscall fn_00780250(void* self)",
+  "summary": "Passes field_0x04 to thunk_MFC80_ord_764.",
   "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x10",
+      "type": "BYTE",
+      "name": "field_0x10"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x11",
+      "type": "BYTE",
+      "name": "field_0x11"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "inner"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t openFlag",
+      "name": "(inner+0x04)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "FILE* file",
+      "name": "(inner+0x00)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "next_or_head"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "DWORD",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (pointer to holder",
+      "name": "object)"
+    },
+    {
+      "class": "Holder",
+      "offset": "+0x0",
+      "type": "FILE* field_0x00 (stream handle passed to",
+      "name": "fgets)"
+    },
+    {
+      "class": "Holder",
+      "offset": "+0x4",
+      "type": "uint8_t field_0x04 (enabled flag; zero means no",
+      "name": "read)"
+    },
+    {
+      "class": "FileStream",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "FileStream",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "owner"
+    },
+    {
+      "class": "FileStream",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "stream_handle"
+    },
+    {
+      "class": "StreamReader",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ConstructRecord4",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "ConstructRecord4",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ConstructRecord4",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "ConstructRecord4",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "ConstructRecord4",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "ConstructRecord4",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x0",
+      "type": "Node*",
+      "name": "next"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "counter_08"
+    },
+    {
+      "class": "Node",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "counter_0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "buffer"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "IndexListNode",
+      "offset": "+0x0",
+      "type": "IndexListNode*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "IndexListNode",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "IndexListNode",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "UnknownStruct",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (pointer to inner",
+      "name": "object)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (FILE* stream passed to",
+      "name": "fwrite)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t field_0x04 (enable flag on inner",
+      "name": "object)"
+    },
+    {
+      "class": "InlineBufferHeader",
+      "offset": "+0x14",
+      "type": "uint32_t field_0x14 (set to self+0x10, the address of inline",
+      "name": "storage)"
+    },
+    {
+      "class": "InlineBufferHeader",
+      "offset": "+0x18",
+      "type": "uint32_t field_0x18 (cleared to",
+      "name": "0)"
+    },
+    {
+      "class": "sortEntriesIfDirty",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "sortEntriesIfDirty",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "sortEntriesIfDirty",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "FileFindCursor",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "hFind"
+    },
+    {
+      "class": "FileFindCursor",
+      "offset": "+0x654",
+      "type": "uint8_t",
+      "name": "field_0x654"
+    },
     {
       "class": "TextConverter",
       "offset": "+0x30",
@@ -24,5 +324,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T14:26:19Z"
+  "lifted_at": "2026-11-24T14:26:25Z"
 }

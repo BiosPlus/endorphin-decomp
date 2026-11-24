@@ -47436,10 +47436,10 @@
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
   "0x00788E50": {
-    "name": "TextConverter::convertWideToUtf8Field",
-    "class": "TextConverter",
-    "signature": "void* fn_00788E50(void* self)",
-    "summary": "Converts the NUL-terminated UTF-16 string at +0x30 into UTF-8 in the 0x400-byte buffer at +0x254 (CP 65001), and returns a pointer to that buffer.",
+    "name": "UnknownClass::destroyField04",
+    "class": "UnknownClass",
+    "signature": "void __thiscall fn_00780250(void* self)",
+    "summary": "Passes field_0x04 to thunk_MFC80_ord_764.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
   "0x00789260": {

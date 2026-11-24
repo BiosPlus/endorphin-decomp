@@ -8,7 +8,7 @@
 // Recovered field layout for Holder:
 namespace lifted_layout {
 struct Holder_Fields {
-    // +0x0   FILE* field_0x00 (stream handle passed to fgets)  (evidence: 0x00783440)
-    // +0x4   uint8_t field_0x04 (enabled flag; zero means no read)  (evidence: 0x00783440)
+    // +0x0   FILE* field_0x00 (stream handle passed to fgets)  (evidence: 0x00783440, 0x00788E50)
+    // +0x4   uint8_t field_0x04 (enabled flag; zero means no read)  (evidence: 0x00783440, 0x00788E50)
 };
 } // namespace lifted_layout

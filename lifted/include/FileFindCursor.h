@@ -8,7 +8,7 @@
 // Recovered field layout for FileFindCursor:
 namespace lifted_layout {
 struct FileFindCursor_Fields {
-    // +0x0   void*                    hFind  (evidence: 0x00788E20)
-    // +0x654 uint8_t                  field_0x654  (evidence: 0x00788E20)
+    // +0x0   void*                    hFind  (evidence: 0x00788E20, 0x00788E50)
+    // +0x654 uint8_t                  field_0x654  (evidence: 0x00788E20, 0x00788E50)
 };
 } // namespace lifted_layout

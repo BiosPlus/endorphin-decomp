@@ -8,8 +8,8 @@
 // Recovered field layout for IndexListNode:
 namespace lifted_layout {
 struct IndexListNode_Fields {
-    // +0x0   IndexListNode*           field_0x00  (evidence: 0x007837D0)
-    // +0x8   int32_t                  field_0x08  (evidence: 0x007837D0)
-    // +0xC   int32_t                  field_0x0C  (evidence: 0x007837D0)
+    // +0x0   IndexListNode*           field_0x00  (evidence: 0x007837D0, 0x00788E50)
+    // +0x8   int32_t                  field_0x08  (evidence: 0x007837D0, 0x00788E50)
+    // +0xC   int32_t                  field_0x0C  (evidence: 0x007837D0, 0x00788E50)
 };
 } // namespace lifted_layout

@@ -8,11 +8,11 @@
 // Recovered field layout for ConstructRecord4:
 namespace lifted_layout {
 struct ConstructRecord4_Fields {
-    // +0x0   uint32_t                 vtable  (evidence: 0x00789260)
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00789260)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x00789260)
-    // +0xC   uint32_t                 field_0x0C  (evidence: 0x00789260)
-    // +0x10  uint8_t                  field_0x10  (evidence: 0x00789260)
-    // +0x14  uint32_t                 field_0x14  (evidence: 0x00789260)
+    // +0x0   uint32_t                 vtable  (evidence: 0x00788E50, 0x00789260)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00788E50, 0x00789260)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00788E50, 0x00789260)
+    // +0xC   uint32_t                 field_0x0C  (evidence: 0x00788E50, 0x00789260)
+    // +0x10  uint8_t                  field_0x10  (evidence: 0x00788E50, 0x00789260)
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x00788E50, 0x00789260)
 };
 } // namespace lifted_layout

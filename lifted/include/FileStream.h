@@ -8,8 +8,8 @@
 // Recovered field layout for FileStream:
 namespace lifted_layout {
 struct FileStream_Fields {
-    // +0x0   uint32_t                 stream_handle  (evidence: 0x00783410)
-    // +0x4   void*                    field_0x04  (evidence: 0x007836D0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    owner  (evidence: 0x00783410) // CONFLICT: multiple definitions at +0x4
+    // +0x0   uint32_t                 stream_handle  (evidence: 0x00783410, 0x00788E50)
+    // +0x4   void*                    field_0x04  (evidence: 0x007836D0, 0x00788E50) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    owner  (evidence: 0x00783410, 0x00788E50) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout
