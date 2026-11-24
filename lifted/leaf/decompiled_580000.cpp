@@ -182,3 +182,29 @@ float fn_0058AB30(void* self) {
     return lift_field<float>(result, 0x30);
 }
 } // namespace lift_0058AB30
+
+// [0x0058AB60] sub_0058AB60 (44 bytes)
+namespace lift_0058AB60 {
+extern int mem_00B40644;
+
+// @name ReadFloatViaVirtualSlot4
+// @class UnknownClass
+// @summary Calls virtual slot 4 on the object held at self+4 into a 0x40-byte local result, then returns the float at result+0x34.
+// @field UnknownClass +0x04 void* field_0x04
+// @field UnknownClass +0xF0 uint32_t field_0xF0
+
+// Callee convention (from the x86 call site): this = self+4, then pushed args
+// in order (out, self->+0xF0, mem_00B40644). Modeled here as a plain C++ call.
+typedef void (*VirtualSlot4Fn)(void* self, void* out, uint32_t arg0, int32_t arg1);
+
+float fn_0058AB60(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void* obj = lift_field<void*>(base, 0x04);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    VirtualSlot4Fn fn = reinterpret_cast<VirtualSlot4Fn>(vtbl[4]);
+
+    uint8_t out[0x40] = {};
+    fn(base + 0x04, out, lift_field<uint32_t>(base, 0xF0), mem_00B40644);
+    return lift_field<float>(out, 0x34);
+}
+} // namespace lift_0058AB60

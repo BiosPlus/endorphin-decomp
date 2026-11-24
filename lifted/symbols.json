@@ -17236,6 +17236,13 @@
     "summary": "Calls a function pointer stored at this-\u003efield_0x04 + 0x10, passing a 0x40-byte result buffer, this-\u003efield_0xF0 and mem_00B40644; returns the float at the result's +0x30.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x0058AB60": {
+    "name": "ReadFloatViaVirtualSlot4",
+    "class": "UnknownClass",
+    "signature": "float fn_0058AB60(void* self)",
+    "summary": "Calls virtual slot 4 on the object held at self+4 into a 0x40-byte local result, then returns the float at result+0x34.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x0058B6A0": {
     "name": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0\u003e",

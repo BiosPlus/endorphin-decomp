@@ -1,0 +1,28 @@
+{
+  "va": "0x0058AB60",
+  "size": 44,
+  "orig_symbol": "sub_0058AB60",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "ReadFloatViaVirtualSlot4",
+  "class": "UnknownClass",
+  "signature": "float fn_0058AB60(void* self)",
+  "summary": "Calls virtual slot 4 on the object held at self+4 into a 0x40-byte local result, then returns the float at result+0x34.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0xF0",
+      "type": "uint32_t",
+      "name": "field_0xF0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:03:33Z"
+}
