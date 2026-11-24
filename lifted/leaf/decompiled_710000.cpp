@@ -106,3 +106,44 @@ extern double __fastcall fn_00711BB0(void* self) {
 }
 } // namespace lift_00711BA0
 } // namespace lift_00711BB0
+
+// [0x00711FD0]
+namespace lift_00711FD0 {
+// @name getSubobjectField_0x40_0x08
+// @summary Calls fn_0071E680(self) and returns the 32-bit value at offset +0x08 of the returned pointer.
+// @field Subobject +0x08 uint32_t field_0x08
+
+
+extern void* __fastcall ext_0071E680(void* self);
+
+extern uint32_t __fastcall fn_00711FD0(void* self) {
+    uint8_t* subobj = static_cast<uint8_t*>(ext_0071E680(self));
+    return *reinterpret_cast<const uint32_t*>(subobj + 0x08);
+}
+} // namespace lift_00711FD0
+
+// [0x00711DB0]
+namespace lift_00711DB0 {
+extern void* __fastcall ext_0071E680(void* self);
+
+// @name getSubobjectField28
+// @summary Calls ext_0071E680 on self and returns the 32-bit field at offset +0x28 of the returned pointer.
+extern uint32_t __fastcall fn_00711DB0(void* self) {
+    uint8_t* subobj = static_cast<uint8_t*>(ext_0071E680(self));
+    return *reinterpret_cast<const uint32_t*>(subobj + 0x28);
+}
+} // namespace lift_00711DB0
+
+// [0x00712000]
+namespace lift_00712000 {
+// @name getSubobjectField_00712000
+// @summary Calls fn_0071E680(self) and returns the uint32_t at offset +0x4 of the returned subobject.
+// @field Subobject +0x04 uint32_t field_0x04
+
+extern void* __fastcall ext_0071E680(void* self);
+
+extern uint32_t __fastcall fn_00712000(void* self) {
+    uint8_t* subobj = static_cast<uint8_t*>(ext_0071E680(self));
+    return *reinterpret_cast<uint32_t*>(subobj + 0x4);
+}
+} // namespace lift_00712000

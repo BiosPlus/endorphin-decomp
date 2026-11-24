@@ -34947,6 +34947,24 @@
     "summary": "Auto-lifted identical-shape clone of 0x00711BA0 (getSubobjectField_0x18).",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00711DB0": {
+    "name": "getSubobjectField28",
+    "signature": "extern \"C\" uint32_t __fastcall fn_00711DB0(void* self)",
+    "summary": "Calls ext_0071E680 on self and returns the 32-bit field at offset +0x28 of the returned pointer.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
+  "0x00711FD0": {
+    "name": "getSubobjectField_0x40_0x08",
+    "signature": "extern \"C\" uint32_t __fastcall fn_00711FD0(void* self)",
+    "summary": "Calls fn_0071E680(self) and returns the 32-bit value at offset +0x08 of the returned pointer.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
+  "0x00712000": {
+    "name": "getSubobjectField_00712000",
+    "signature": "extern \"C\" uint32_t __fastcall fn_00712000(void* self)",
+    "summary": "Calls fn_0071E680(self) and returns the uint32_t at offset +0x4 of the returned subobject.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00712520": {
     "name": "sub_00712520",
     "signature": "extern \"C\" int32_t __cdecl fn_00712520(void)",

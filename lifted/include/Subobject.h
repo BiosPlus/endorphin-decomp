@@ -8,6 +8,8 @@
 // Recovered field layout for Subobject:
 namespace lifted_layout {
 struct Subobject_Fields {
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00712000)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00711FD0)
     // +0x18  double                   field_0x18  (evidence: 0x00711BA0, 0x00711BB0)
 };
 } // namespace lifted_layout
