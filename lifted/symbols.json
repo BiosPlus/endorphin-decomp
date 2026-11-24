@@ -39724,6 +39724,13 @@
     "summary": "Returns true if any bit of the argument mask is set in the object's field at +0x78.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00705D70": {
+    "name": "Unknown::InitThenDispatchVirtual33",
+    "class": "Unknown",
+    "signature": "extern \"C\" void fn_00705D70(Unknown* a, Unknown* b)",
+    "summary": "Calls ext_006B9960 on the second argument (result discarded), then if the first argument is non-null tail-dispatches its vtable slot 33 (+0x84).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00706AF0": {
     "name": "Unknown::CallWithFieldOrDefault",
     "class": "Unknown",

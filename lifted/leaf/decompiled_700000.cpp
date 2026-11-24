@@ -196,3 +196,26 @@ extern int32_t __fastcall fn_00705190(void* self) {
     return ext_006E7460(adjusted);
 }
 } // namespace lift_00705190
+
+// [0x00705D70]
+namespace lift_00705D70 {
+// @name Unknown::InitThenDispatchVirtual33
+// @class Unknown
+// @summary Calls ext_006B9960 on the second argument (result discarded), then if the first argument is non-null tail-dispatches its vtable slot 33 (+0x84).
+// @field Unknown +0x00 void* vtable
+
+struct Unknown;
+
+extern Unknown* ext_006B9960(Unknown* ecx);
+
+extern void fn_00705D70(Unknown* a, Unknown* b) {
+    ext_006B9960(b);
+    if (a == nullptr) {
+        return;
+    }
+    void** vtable = lift_field<void**>(a, 0x00);
+    using VirtualFn = void (*)(Unknown* self);
+    VirtualFn slot = reinterpret_cast<VirtualFn>(vtable[0x84 / sizeof(void*)]);
+    slot(a);
+}
+} // namespace lift_00705D70
