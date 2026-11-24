@@ -3,6 +3,7 @@
 extern "C" void __fastcall ext_007AD590(void* self);
 extern "C" void __cdecl ext_006A5C5C(void* ptr);
 #include <cstdint>
+#include <cstring>
 
 // [0x007AD5C0] sub_007AD5C0 (32 bytes)
 // @name sub_007AD5C0
@@ -161,3 +162,28 @@ void sub_007AEFD0(uint8_t* p) {
     p[0] = second;
 }
 } // namespace lift_007AEFD0
+
+// [0x007AB720] sub_007AB720 (32 bytes)
+namespace lift_007AB720 {
+extern void ext_007857F0(void* self);
+
+// @name ResetDoubleAndClearFlag_78
+// @summary Sets the double at +0x78 to 1.0, clears the byte flag at +0x84, then tail-jumps to ext_007857F0 with the same this pointer.
+// @field <Unknown> +0x78 double scale
+// @field <Unknown> +0x84 BOOLEAN flag
+void fn_007AB720(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+
+    // xor eax, eax / mov [ecx+0x78], eax : low dword of the double = 0
+    // mov [ecx+0x7c], 0x3ff00000        : high dword = 0x3FF00000 -> IEEE-754 1.0
+    const double one = 1.0;
+    std::memcpy(base + 0x78, &one, sizeof(one));
+
+    // mov [ecx+0x84], al : al is 0 (from the xor above)
+    const BOOLEAN flag = 0;
+    std::memcpy(base + 0x84, &flag, sizeof(flag));
+
+    // jmp 0x7857f0 : tail call; the original also leaves eax = 0 at the jump.
+    ext_007857F0(self);
+}
+} // namespace lift_007AB720

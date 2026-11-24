@@ -43247,6 +43247,12 @@
     "summary": "Destructor tail-call: restores vtable mem_00998398 and tail-calls base destructor sub_00785430.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AB720": {
+    "name": "ResetDoubleAndClearFlag_78",
+    "signature": "void fn_007AB720(void* self)",
+    "summary": "Sets the double at +0x78 to 1.0, clears the byte flag at +0x84, then tail-jumps to ext_007857F0 with the same this pointer.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007ABBE0": {
     "name": "sub_007ABBE0",
     "signature": "void* __thiscall sub_007ABBE0(void* self)",
