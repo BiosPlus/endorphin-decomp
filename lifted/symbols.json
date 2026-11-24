@@ -19397,6 +19397,12 @@
     "summary": "Updates the joint's child object via ext_00587450, preserving and restoring its transform matrix when the parent state counter is below mem_009849A8.",
     "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
   },
+  "0x005E2770": {
+    "name": "descriptiveName_005E2770",
+    "signature": "float fn_005E2770(void* self)",
+    "summary": "Calls vtable slot 0x11C on the object at self+0x17C, then returns float index 0 of the result's +0x08 sub-object array.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E29F0": {
     "name": "NMData::FixedPathJointData::vfunc_14",
     "class": "NMData::FixedPathJointData",

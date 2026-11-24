@@ -1,0 +1,21 @@
+{
+  "va": "0x005E2770",
+  "size": 27,
+  "orig_symbol": "sub_005E2770",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "descriptiveName_005E2770",
+  "signature": "float fn_005E2770(void* self)",
+  "summary": "Calls vtable slot 0x11C on the object at self+0x17C, then returns float index 0 of the result's +0x08 sub-object array.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x17C",
+      "type": "void*",
+      "name": "field_0x17c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:03:54Z"
+}
