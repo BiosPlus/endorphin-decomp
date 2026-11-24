@@ -1,0 +1,13 @@
+{
+  "va": "0x006F6E40",
+  "size": 16,
+  "orig_symbol": "sub_006F6E40",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "sub_006F6E40",
+  "signature": "const char* fn_006F6E40(DWORD selector)",
+  "summary": "Auto-lifted identical-shape clone of 0x006F6B40 (GetRigidNameStdcall).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:46:42Z"
+}
