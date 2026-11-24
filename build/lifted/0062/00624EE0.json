@@ -1,0 +1,13 @@
+{
+  "va": "0x00624EE0",
+  "size": 42,
+  "orig_symbol": "sub_00624EE0",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "CompareDwordPairIsGreater",
+  "signature": "int fn_00624EE0(const void* a, const void* b)",
+  "summary": "Returns 1 if the second 64-bit (hi:lo dword pair) operand is strictly greater than the first, else 0 (__stdcall, 2 args, ret 8).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:58:51Z"
+}

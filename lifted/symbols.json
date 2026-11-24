@@ -24710,6 +24710,12 @@
     "summary": "Writes the unsigned min of (a, b) to out[0] and the unsigned max to out[1].",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
+  "0x00624EE0": {
+    "name": "CompareDwordPairIsGreater",
+    "signature": "int fn_00624EE0(const void* a, const void* b)",
+    "summary": "Returns 1 if the second 64-bit (hi:lo dword pair) operand is strictly greater than the first, else 0 (__stdcall, 2 args, ret 8).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00625060": {
     "name": "ExprParser::ReadMethodType\u003cSensorIsCollidingWith\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e",

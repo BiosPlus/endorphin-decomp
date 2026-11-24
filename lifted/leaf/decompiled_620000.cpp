@@ -239,3 +239,23 @@ void fn_00627450(void* self) {
     }
 }
 } // namespace lift_00627450
+
+// [0x00624EE0] sub_00624EE0 (42 bytes)
+namespace lift_00624EE0 {
+// @name CompareDwordPairIsGreater
+// @summary Returns 1 if the second 64-bit (hi:lo dword pair) operand is strictly greater than the first, else 0 (__stdcall, 2 args, ret 8).
+// Reads: arg1[0], arg1[1], arg2[0], arg2[1] as unsigned dwords; arg1[0] is compared first, then arg1[1].
+int fn_00624EE0(const void* a, const void* b) {
+    const uint32_t a0 = lift_field<uint32_t>(a, 0);
+    const uint32_t b0 = lift_field<uint32_t>(b, 0);
+    if (b0 > a0) {
+        return 1;
+    }
+    if (b0 < a0) {
+        return 0;
+    }
+    const uint32_t a1 = lift_field<uint32_t>(a, 4);
+    const uint32_t b1 = lift_field<uint32_t>(b, 4);
+    return (a1 < b1) ? 1 : 0;
+}
+} // namespace lift_00624EE0
