@@ -11042,6 +11042,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005180D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005184B0": {
+    "name": "ComputeScaledPairOut",
+    "signature": "void fn_005184B0(void* out, uint32_t a, uint32_t b)",
+    "summary": "Stores a*b*b and b as two consecutive dwords at the output pointer (ecx); callee pops 8 bytes of args.",
+    "lifted_path": "lifted/leaf/tiny_510000.cpp"
+  },
   "0x00519CE0": {
     "name": "std::basic_string\u003cchar\u003e::~basic_string (vtable-stamping thunk)",
     "class": "\u003cunknown\u003e (this is in ecx; owning class not yet recovered)",

@@ -101,3 +101,14 @@ void fn_0051DDB0(void* self) {
     }
 }
 } // namespace lift_0051DDB0
+
+// [0x005184B0] sub_005184B0 (22 bytes)
+namespace lift_005184B0 {
+// @name ComputeScaledPairOut
+// @summary Stores a*b*b and b as two consecutive dwords at the output pointer (ecx); callee pops 8 bytes of args.
+void fn_005184B0(void* out, uint32_t a, uint32_t b) {
+    uint32_t r = a * b * b;
+    lift_field<uint32_t>(out, 0x0) = r;
+    lift_field<uint32_t>(out, 0x4) = b;
+}
+} // namespace lift_005184B0

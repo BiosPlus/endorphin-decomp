@@ -1,0 +1,13 @@
+{
+  "va": "0x005184B0",
+  "size": 22,
+  "orig_symbol": "sub_005184B0",
+  "src_path": "src/leaf/tiny_510000.cpp",
+  "lifted_path": "lifted/leaf/tiny_510000.cpp",
+  "name": "ComputeScaledPairOut",
+  "signature": "void fn_005184B0(void* out, uint32_t a, uint32_t b)",
+  "summary": "Stores a*b*b and b as two consecutive dwords at the output pointer (ecx); callee pops 8 bytes of args.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:29:08Z"
+}
