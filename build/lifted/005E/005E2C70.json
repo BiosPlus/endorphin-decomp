@@ -1,0 +1,27 @@
+{
+  "va": "0x005E2C70",
+  "size": 29,
+  "orig_symbol": "sub_005E2C70",
+  "src_path": "src/leaf/tiny_5E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5E0000.cpp",
+  "name": "descriptiveName: storeWordThenCopyBlock16",
+  "signature": "uint32_t* fn_005E2C70(uint32_t* out, uint32_t value, LiftBlock16 block)",
+  "summary": "Writes a dword to out[0], then copies a 16-dword by-value block (cdecl stack args) into out[1..16]; returns out.",
+  "fields": [
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "first"
+    },
+    {
+      "class": "\u003cnone\u003e",
+      "offset": "+0x4",
+      "type": "uint32_t block[16] (bytes",
+      "name": "+0x04..+0x43)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:13:02Z"
+}

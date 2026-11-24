@@ -222,3 +222,23 @@ void* fn_005E0AE0(void* a) {
 }
 } // namespace lift_005AC820
 } // namespace lift_005E0AE0
+
+// [0x005E2C70] sub_005E2C70 (29 bytes)
+namespace lift_005E2C70 {
+// @name descriptiveName: storeWordThenCopyBlock16
+// @summary Writes a dword to out[0], then copies a 16-dword by-value block (cdecl stack args) into out[1..16]; returns out.
+// @field <none> +0x00 uint32_t first
+// @field <none> +0x04 uint32_t block[16] (bytes +0x04..+0x43)
+
+struct LiftBlock16 {
+    uint32_t d[16];
+};
+
+uint32_t* fn_005E2C70(uint32_t* out, uint32_t value, LiftBlock16 block) {
+    out[0] = value;
+    for (int i = 0; i < 16; ++i) {
+        out[1 + i] = block.d[i];
+    }
+    return out;
+}
+} // namespace lift_005E2C70

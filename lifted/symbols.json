@@ -19927,6 +19927,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005C32B0 (NMData::FluidObjectData::vfunc_15).",
     "lifted_path": "lifted/NMData/HingeData.cpp"
   },
+  "0x005E2C70": {
+    "name": "descriptiveName: storeWordThenCopyBlock16",
+    "signature": "uint32_t* fn_005E2C70(uint32_t* out, uint32_t value, LiftBlock16 block)",
+    "summary": "Writes a dword to out[0], then copies a 16-dword by-value block (cdecl stack args) into out[1..16]; returns out.",
+    "lifted_path": "lifted/leaf/tiny_5E0000.cpp"
+  },
   "0x005E3350": {
     "name": "ExprParser::ReadMethodType\u003cNMData::RelationshipData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::RelationshipData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0\u003e",
