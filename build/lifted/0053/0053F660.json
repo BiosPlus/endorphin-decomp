@@ -1,0 +1,22 @@
+{
+  "va": "0x0053F660",
+  "size": 37,
+  "orig_symbol": "SelectionTool::vfunc_22",
+  "src_path": "src/classes/SelectionTool.cpp",
+  "lifted_path": "lifted/classes/SelectionTool.cpp",
+  "name": "SelectionTool::vfunc_22",
+  "class": "SelectionTool",
+  "signature": "BOOL SelectionTool_vfunc_22(void* self, DWORD arg0, DWORD flags)",
+  "summary": "Forwards a call through the object at +0x88 (vtable slot 16) unless the object is null or the flags argument has bits 0x11 set; always returns TRUE.",
+  "fields": [
+    {
+      "class": "SelectionTool",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:04:26Z"
+}

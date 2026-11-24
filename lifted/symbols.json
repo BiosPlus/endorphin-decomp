@@ -2073,6 +2073,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00551A10 (NMCamera::Orthogonal::vfunc_5).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004329A0": {
+    "name": "init_and_update_field_0x11c",
+    "signature": "extern \"C\" void __thiscall fn_004329A0(uintptr_t self)",
+    "summary": "Calls get_global_field_0x58, invokes ext_00469040 on the result, then calls thunk_MFC80_ord_6081 with field_0x11c, 1, and 0.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00433290": {
     "name": "Unknown::forwardToChildAt154",
     "class": "Unknown",
@@ -4372,6 +4378,12 @@
     "signature": "extern \"C\" void* __cdecl fn_00460980(void)",
     "summary": "Returns address of global mem_00938428.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00460990": {
+    "name": "confirmAndTriggerAction",
+    "signature": "extern \"C\" void __cdecl fn_00460990(void)",
+    "summary": "Prompts the user with a Yes/No message box and, if Yes (6) is chosen, invokes ext_00666120 on the object from ext_00665870.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
   "0x00460CE0": {
     "name": "UndoHistoryDialog::vfunc_0_off_74",
@@ -14591,6 +14603,13 @@
     "signature": "extern \"C\" void* __fastcall fn_0053F5D0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00532B90 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x0053F660": {
+    "name": "SelectionTool::vfunc_22",
+    "class": "SelectionTool",
+    "signature": "BOOL SelectionTool_vfunc_22(void* self, DWORD arg0, DWORD flags)",
+    "summary": "Forwards a call through the object at +0x88 (vtable slot 16) unless the object is null or the flags argument has bits 0x11 set; always returns TRUE.",
+    "lifted_path": "lifted/classes/SelectionTool.cpp"
   },
   "0x0053F690": {
     "name": "sub_0053F690",
