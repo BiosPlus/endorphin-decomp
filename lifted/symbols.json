@@ -34225,6 +34225,12 @@
     "summary": "Getter returning int32_t field at offset +0xB8.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006DD930": {
+    "name": "CopyDoubleFromPointerGlobal",
+    "signature": "void sub_006DD930()",
+    "summary": "Loads the 8-byte value pointed to by mem_00925284 and stores its two dwords into mem_00B5DC18 / mem_00B5DC1C.",
+    "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
   "0x006DD960": {
     "name": "fn_006DD960 (MSVCR _HUGE negated into global)",
     "signature": "void fn_006DD960(void)",

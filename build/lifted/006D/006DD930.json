@@ -1,0 +1,13 @@
+{
+  "va": "0x006DD930",
+  "size": 23,
+  "orig_symbol": "sub_006DD930",
+  "src_path": "src/leaf/tiny_6D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6D0000.cpp",
+  "name": "CopyDoubleFromPointerGlobal",
+  "signature": "void sub_006DD930()",
+  "summary": "Loads the 8-byte value pointed to by mem_00925284 and stores its two dwords into mem_00B5DC18 / mem_00B5DC1C.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:34:08Z"
+}

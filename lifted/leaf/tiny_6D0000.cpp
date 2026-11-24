@@ -477,3 +477,21 @@ uint32_t fn_006DEEB0(void* self) {
     return v & 0x40u;
 }
 } // namespace lift_006DEEB0
+
+// [0x006DD930]
+namespace lift_006DD930 {
+// @name CopyDoubleFromPointerGlobal
+// @summary Loads the 8-byte value pointed to by mem_00925284 and stores its two dwords into mem_00B5DC18 / mem_00B5DC1C.
+
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5DC18;
+extern uint32_t mem_00B5DC1C;
+
+void sub_006DD930() {
+    const uint32_t* src = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    uint32_t lo = src[0];
+    uint32_t hi = src[1];
+    mem_00B5DC18 = lo;
+    mem_00B5DC1C = hi;
+}
+} // namespace lift_006DD930
