@@ -748,3 +748,21 @@ void fn_00714530(void) {
 }
 } // namespace lift_007AE0F0
 } // namespace lift_00714530
+
+// [0x007105E0]
+namespace lift_007105E0 {
+// @name sub_007105E0
+// @summary Load the double pointed to by mem_00925284, negate it, and store the result to three globals.
+
+extern uint32_t mem_00925284;
+extern double mem_00B5F090;
+extern double mem_00B5F098;
+extern double mem_00B5F0A0;
+
+void sub_007105E0(void) {
+    double* src = reinterpret_cast<double*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5F090 = -(*src);
+    mem_00B5F098 = -(*src);
+    mem_00B5F0A0 = -(*src);
+}
+} // namespace lift_007105E0

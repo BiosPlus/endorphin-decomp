@@ -40796,6 +40796,12 @@
     "summary": "Getter returning int32_t field at offset +0x154.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x007105E0": {
+    "name": "sub_007105E0",
+    "signature": "void sub_007105E0(void)",
+    "summary": "Load the double pointed to by mem_00925284, negate it, and store the result to three globals.",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x007110B0": {
     "name": "isNotDoubleQuote",
     "signature": "uint8_t __stdcall sub_007110B0(uint8_t ch)",

@@ -1,0 +1,13 @@
+{
+  "va": "0x007105E0",
+  "size": 36,
+  "orig_symbol": "sub_007105E0",
+  "src_path": "src/clones/auto_clones_710000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_710000.cpp",
+  "name": "sub_007105E0",
+  "signature": "void sub_007105E0(void)",
+  "summary": "Load the double pointed to by mem_00925284, negate it, and store the result to three globals.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:00:08Z"
+}
