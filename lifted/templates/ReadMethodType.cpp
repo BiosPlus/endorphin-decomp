@@ -41030,3 +41030,33 @@ int32_t __stdcall fn_00674950(void* arg) {
     return ext_006A6DE0(rounded);
 }
 } // namespace lift_00674950
+
+// [0x0068F0D0] ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>::vfunc_3 (111 bytes)
+namespace lift_0068F0D0 {
+extern void* ext_0068EE60(uint32_t index);
+
+// @name ExprParser::ReadMethodType<UnitsWithProperties>::vfunc_3
+// @class ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>
+// @summary Looks up the string for the record index stored in the holder chain and returns 1 if it equals "true" or "TRUE", else 0; throws if the holder is null.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x0c uint32_t field_0x0c
+int fn_0068F0D0(void* arg) {
+    auto* holder = *static_cast<std::uint8_t**>(arg);
+    if (holder == nullptr) {
+        throw std::runtime_error("ReadMethodType<UnitsWithProperties>::vfunc_3: null holder");
+    }
+
+    auto* record = *reinterpret_cast<std::uint8_t**>(holder + 0x04);
+    const auto index = *reinterpret_cast<const std::uint32_t*>(record + 0x0c);
+
+    const auto* str = static_cast<const std::string*>(ext_0068EE60(index));
+    if (*str == "true") {
+        return 1;
+    }
+    if (*str == "TRUE") {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_0068F0D0
