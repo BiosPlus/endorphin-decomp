@@ -519,3 +519,28 @@ int fn_00412CA0(void* arg1, void* arg2) {
     return s == 0 ? 1 : 0;
 }
 } // namespace lift_00412CA0
+
+// [0x0041D330] sub_0041D330 (30 bytes)
+namespace lift_0041D330 {
+// IAT slot 0x0092561C resolves to thunk 0x006287CC, which forwards to USER32!IsWindow.
+extern int __stdcall ext_006287CC(void* hwnd);
+
+// @name Unknown::hasLiveWindow
+// @class Unknown
+// @summary Returns 1 if the window handle at this->+0x0C->+0x20 is still a valid window (USER32 IsWindow), else 0.
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0x0C->+0x20 void* field_0x20 (window handle passed to IsWindow)
+int fn_0041D330(void* self) {
+    unsigned char* base = static_cast<unsigned char*>(self);
+
+    void* sub = nullptr;
+    std::memcpy(&sub, base + 0x0C, sizeof(sub));
+    if (sub == nullptr) {
+        return 0;
+    }
+
+    void* hwnd = nullptr;
+    std::memcpy(&hwnd, static_cast<unsigned char*>(sub) + 0x20, sizeof(hwnd));
+    return ext_006287CC(hwnd) != 0 ? 1 : 0;
+}
+} // namespace lift_0041D330
