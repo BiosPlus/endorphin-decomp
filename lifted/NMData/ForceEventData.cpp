@@ -138,3 +138,42 @@ void __thiscall fn_004C4FA0(void* self, const float* delta) {
     ext_00586D00(base);
 }
 } // namespace lift_004C4FA0
+
+// [0x004C60D0] NMData::ForceEventData::vfunc_14 (91 bytes)
+namespace lift_004C60D0 {
+// Known callee 0x004C2070: NMData::SeverEventData::vfunc_14 (thiscall, 2 stack args, callee-cleaned)
+extern void* ext_004C2070(void* self, void* arg1, uint32_t arg2);
+// Callee 0x004C5FE0: signature not recovered; assumed uint32_t(uint32_t), callee-cleaned
+extern uint32_t ext_004C5FE0(uint32_t arg);
+// Known callee 0x0055DA20: initDwordPair (stores two stack DWORDs into ECX object, returns it)
+extern void* ext_0055DA20(void* self, uint32_t a, uint32_t b);
+// Known callee 0x007D8700: identity on its first stack argument
+extern uint32_t ext_007D8700(uint32_t arg0);
+extern uint32_t mem_00B40640;
+
+// @name NMData::ForceEventData::vfunc_14
+// @class NMData::ForceEventData
+// @summary If id != 0x94, forwards to SeverEventData::vfunc_14 and returns arg1; if id == 0x94, calls TransformInterface vfunc[3] on the global, post-processes the result, and returns the id as the object pointer.
+// @field ForceEventData +0x04 void** TransformInterface_vptr
+void* fn_004C60D0(void* self, void* arg1, uint32_t id) {
+    if (id != 0x94) {
+        ext_004C2070(self, arg1, id);
+        return arg1;
+    }
+
+    // TransformInterface subobject lives at this+4; its vptr is at +0x4.
+    char* tif = static_cast<char*>(self) + 0x4;
+    void** vtbl = *reinterpret_cast<void***>(tif);
+    using VFunc3 = uint32_t (*)(void* thisPtr, uint32_t arg);
+    uint32_t v = reinterpret_cast<VFunc3>(vtbl[3])(tif, mem_00B40640);
+
+    uint32_t r = ext_004C5FE0(ext_007D8700(v));
+
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(id));
+    // NOTE: the original passes the caller's saved ESI as the second stack
+    // argument (a prologue save-slot artifact). It is not recoverable in
+    // portable C++, so 0 is passed here.
+    ext_0055DA20(obj, r, 0);
+    return obj;
+}
+} // namespace lift_004C60D0

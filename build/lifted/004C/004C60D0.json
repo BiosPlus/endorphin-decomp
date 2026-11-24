@@ -1,0 +1,22 @@
+{
+  "va": "0x004C60D0",
+  "size": 91,
+  "orig_symbol": "NMData::ForceEventData::vfunc_14",
+  "src_path": "src/NMData/ForceEventData.cpp",
+  "lifted_path": "lifted/NMData/ForceEventData.cpp",
+  "name": "NMData::ForceEventData::vfunc_14",
+  "class": "NMData::ForceEventData",
+  "signature": "void* fn_004C60D0(void* self, void* arg1, uint32_t id)",
+  "summary": "If id != 0x94, forwards to SeverEventData::vfunc_14 and returns arg1; if id == 0x94, calls TransformInterface vfunc[3] on the global, post-processes the result, and returns the id as the object pointer.",
+  "fields": [
+    {
+      "class": "ForceEventData",
+      "offset": "+0x4",
+      "type": "void**",
+      "name": "TransformInterface_vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:34:19Z"
+}
