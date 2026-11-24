@@ -95,7 +95,7 @@ struct Unknown_Fields {
     // +0x20  BYTE field_0x20 (base of byte array indexed by first argument)  (evidence: 0x0071E660) // CONFLICT: multiple definitions at +0x20
     // +0x20  DWORD                    field_0x20  (evidence: 0x00642010, 0x0078C230, 0x0078C3A0) // CONFLICT: multiple definitions at +0x20
     // +0x20  HMODULE                  field_0x20  (evidence: 0x004474D0, 0x0044B6A0) // CONFLICT: multiple definitions at +0x20
-    // +0x20  HWND                     field_0x20  (evidence: 0x00407850) // CONFLICT: multiple definitions at +0x20
+    // +0x20  HWND                     field_0x20  (evidence: 0x00407850, 0x0043CD80) // CONFLICT: multiple definitions at +0x20
     // +0x20  double                   field_0x20  (evidence: 0x00507F50, 0x00507F60, 0x0050E350) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint32_t                 field_0x20  (evidence: 0x0046E450, 0x0046EA50, 0x004A25E0, 0x004B1A70, 0x00633240, 0x00641FE0, 0x00641FF0) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint8_t                  field_0x20  (evidence: 0x006E8610, 0x006E87A0) // CONFLICT: multiple definitions at +0x20
@@ -152,7 +152,8 @@ struct Unknown_Fields {
     // +0x100 void*                    field_0x100  (evidence: 0x00430310)
     // +0x12C uint8_t                  field_0x12C  (evidence: 0x004646A0, 0x0046F910) // CONFLICT: multiple definitions at +0x12C
     // +0x12C void*                    field_0x12C  (evidence: 0x0049ABC0, 0x00666CC0) // CONFLICT: multiple definitions at +0x12C
-    // +0x138 float                    field_0x138  (evidence: 0x004646A0, 0x0046C110, 0x00594700)
+    // +0x138 UINT                     field_0x138  (evidence: 0x0043CD80) // CONFLICT: multiple definitions at +0x138
+    // +0x138 float                    field_0x138  (evidence: 0x004646A0, 0x0046C110, 0x00594700) // CONFLICT: multiple definitions at +0x138
     // +0x158 DWORD                    field_0x158  (evidence: 0x0042FC20, 0x0042FEC0, 0x0048ABF0, 0x004CCAF0, 0x004CCB00, 0x0050AD20, 0x0050F180, 0x005B72E0, 0x005C3170, 0x005CE910, 0x005CE920, 0x00726690)
     // +0x160 double                   field_0x160  (evidence: 0x006D9060)
     // +0x184 int32_t                  field_0x184  (evidence: 0x005B64D0)

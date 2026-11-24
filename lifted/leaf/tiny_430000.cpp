@@ -100,3 +100,22 @@ void fn_00430EE0(void* self) {
     fn(obj, 1);
 }
 } // namespace lift_00430EE0
+
+// [0x0043CD80] sub_0043CD80 (18 bytes)
+namespace lift_0043CD80 {
+// IAT slot holding the address of USER32!KillTimer (.rdata 0x00925660).
+extern uint32_t mem_00925660;
+
+// @name KillOwnerTimer
+// @summary Kills the timer whose ID is stored at self+0x138, owned by the window handle at self+0x20.
+// @field Unknown +0x20 HWND field_0x20
+// @field Unknown +0x138 UINT field_0x138
+void fn_0043CD80(void* self) {
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+    UINT timerId = lift_field<UINT>(self, 0x138);
+
+    using KillTimerFn = BOOL(__stdcall*)(HWND, UINT_PTR);
+    auto killTimer = reinterpret_cast<KillTimerFn>(static_cast<uintptr_t>(mem_00925660));
+    killTimer(hwnd, static_cast<UINT_PTR>(timerId));
+}
+} // namespace lift_0043CD80

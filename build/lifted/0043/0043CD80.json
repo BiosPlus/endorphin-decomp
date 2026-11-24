@@ -1,0 +1,27 @@
+{
+  "va": "0x0043CD80",
+  "size": 18,
+  "orig_symbol": "sub_0043CD80",
+  "src_path": "src/leaf/tiny_430000.cpp",
+  "lifted_path": "lifted/leaf/tiny_430000.cpp",
+  "name": "KillOwnerTimer",
+  "signature": "void fn_0043CD80(void* self)",
+  "summary": "Kills the timer whose ID is stored at self+0x138, owned by the window handle at self+0x20.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x138",
+      "type": "UINT",
+      "name": "field_0x138"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:56:53Z"
+}

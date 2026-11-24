@@ -1698,6 +1698,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0043C620 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x0043CD80": {
+    "name": "KillOwnerTimer",
+    "signature": "void fn_0043CD80(void* self)",
+    "summary": "Kills the timer whose ID is stored at self+0x138, owned by the window handle at self+0x20.",
+    "lifted_path": "lifted/leaf/tiny_430000.cpp"
+  },
   "0x0043CEE0": {
     "name": "MultiTrackView::View::vfunc_81",
     "class": "MultiTrackView::View",
