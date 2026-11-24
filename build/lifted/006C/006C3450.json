@@ -1,0 +1,22 @@
+{
+  "va": "0x006C3450",
+  "size": 32,
+  "orig_symbol": "sub_006C3450",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::GetEntryAddress",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint32_t __fastcall fn_006C3450(void* self, int edx_unused, int32_t idx)",
+  "summary": "Returns the 32-bit address of entry idx in a 496-byte-stride table at this-\u003efield_0xF0 + 0x1D18.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "uint32_t",
+      "name": "field_0xF0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:33:03Z"
+}

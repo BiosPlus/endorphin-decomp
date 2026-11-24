@@ -35806,6 +35806,13 @@
     "summary": "Getter returning int32_t field at offset +0x158.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C3450": {
+    "name": "Unknown::GetEntryAddress",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t __fastcall fn_006C3450(void* self, int edx_unused, int32_t idx)",
+    "summary": "Returns the 32-bit address of entry idx in a 496-byte-stride table at this-\u003efield_0xF0 + 0x1D18.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C59E0": {
     "name": "sub_006C59E0",
     "signature": "extern \"C\" int32_t __fastcall fn_006C59E0(void* self)",
