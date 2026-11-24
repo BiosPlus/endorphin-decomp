@@ -42118,6 +42118,13 @@
     "summary": "Passes self-\u003efield_0x58 to fn_006E7460, or the address of mem_00B5D268 when that field is zero.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00706CD0": {
+    "name": "LookupTable::findValueByIndexAndKey",
+    "class": "LookupTable",
+    "signature": "uint32_t __thiscall fn_00706CD0(void* self, uint32_t arg)",
+    "summary": "Reads the 12-byte entry at (index + arg); if its linked node is non-null and the node's key matches the entry's key, returns the node's value, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00706EF0": {
     "name": "Unknown::CallWithField5COrDefault",
     "class": "Unknown",

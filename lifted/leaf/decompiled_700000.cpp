@@ -808,3 +808,26 @@ void __thiscall sub_00705760(uintptr_t self) {
     mem_w32(self + 0xdc, 0);
 }
 } // namespace lift_00705760
+
+// [0x00706CD0] sub_00706CD0 (45 bytes)
+namespace lift_00706CD0 {
+// @name LookupTable::findValueByIndexAndKey
+// @class LookupTable
+// @summary Reads the 12-byte entry at (index + arg); if its linked node is non-null and the node's key matches the entry's key, returns the node's value, else 0.
+// @field LookupTable +0x00 void* entries
+// @field LookupTable +0x04 int32_t index
+uint32_t __thiscall fn_00706CD0(void* self, uint32_t arg) {
+    // 32-bit wrapping index math, matching the original lea sequence.
+    const uint32_t index = static_cast<uint32_t>(lift_field<int32_t>(self, 0x04)) + arg;
+    uint8_t* entry = lift_field<uint8_t*>(self, 0x00) + static_cast<ptrdiff_t>(index * 12u);
+
+    uint8_t* node = lift_field<uint8_t*>(entry, 0x04);
+    if (node == nullptr) {
+        return 0;
+    }
+    if (lift_field<uint32_t>(node, 0x00) != lift_field<uint32_t>(entry, 0x00)) {
+        return 0;
+    }
+    return lift_field<uint32_t>(node, 0x04);
+}
+} // namespace lift_00706CD0
