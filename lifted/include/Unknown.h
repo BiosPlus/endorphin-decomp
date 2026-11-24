@@ -34,7 +34,7 @@ struct Unknown_Fields {
     // +0x0   void* field_0x00 (pointer to inner object whose vtable slot 8 is invoked)  (evidence: 0x006616F0, 0x00661950) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vtable (written with mem_009326EC)  (evidence: 0x00442C40, 0x00443700) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    object  (evidence: 0x00493EA0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void* field_0x00 (pointer to the array-owning object)  (evidence: 0x0077FF70) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void* field_0x00 (pointer to the array-owning object)  (evidence: 0x0077FF70, 0x0077FFB0) // CONFLICT: multiple definitions at +0x0
     // +0x0   double[] array (base pointer in ecx; element i at byte offset 8*i, dynamic index so no fixed offset)  (evidence: 0x006D2400) // CONFLICT: multiple definitions at +0x0
     // +0x0   void** vtable (sub-object's vtable pointer)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    ptr_0x00  (evidence: 0x006E86E0, 0x006E8790) // CONFLICT: multiple definitions at +0x0
@@ -73,7 +73,7 @@ struct Unknown_Fields {
     // +0x4   std::string              field_04  (evidence: 0x0057BB20) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_04  (evidence: 0x006B9950) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_04  (evidence: 0x005C3130, 0x005F5140) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void* field_0x04 (base pointer of the 16-byte element array, on the object at field_0x00)  (evidence: 0x0077FF70) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void* field_0x04 (base pointer of the 16-byte element array, on the object at field_0x00)  (evidence: 0x0077FF70, 0x0077FFB0) // CONFLICT: multiple definitions at +0x4
     // +0x4   BYTE                     field_0x04  (evidence: 0x004E9BB0, 0x007148C0, 0x0071F070) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD                    field_0x04  (evidence: 0x004F9800, 0x00528BB0, 0x005D1480, 0x0078C230, 0x0078C3A0, 0x008102B0, 0x00810440, 0x0086B200) // CONFLICT: multiple definitions at +0x4
     // +0x4   float                    field_0x04  (evidence: 0x0043B3E0, 0x0052EF50, 0x00535610, 0x00545B80, 0x00553A10, 0x00622750, 0x00669E60, 0x0066A310, 0x0066A330, 0x006C9A90, 0x007C9C90, 0x007FC290) // CONFLICT: multiple definitions at +0x4

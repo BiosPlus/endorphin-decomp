@@ -33,3 +33,20 @@ DWORD fn_0077FF70(void* self, DWORD index) {
     return *reinterpret_cast<DWORD*>(base + offset);
 }
 } // namespace lift_0077FF70
+
+// [0x0077FFB0] sub_0077FFB0 (32 bytes)
+namespace lift_0077FFB0 {
+// @name Unknown::GetDoubleElement16
+// @class Unknown
+// @summary Returns the double at element index (16-byte stride, +8 within element) of the array referenced via self->field_0x00->field_0x04. Callee pops 8 bytes (ret 0x8); second stack arg is unused.
+// @field Unknown +0x00 void* field_0x00 (pointer to the array-owning object)
+// @field Unknown +0x04 void* field_0x04 (base pointer of the 16-byte element array, on the object at field_0x00)
+namespace lift_0077FFB0 {
+double fn_0077FFB0(void* self, DWORD index) {
+    uint8_t* owner = *reinterpret_cast<uint8_t**>(self);
+    uint8_t* base = *reinterpret_cast<uint8_t**>(owner + 0x04);
+    DWORD offset = index << 4;
+    return *reinterpret_cast<double*>(base + offset + 0x08);
+}
+} // namespace lift_0077FFB0
+} // namespace lift_0077FFB0
