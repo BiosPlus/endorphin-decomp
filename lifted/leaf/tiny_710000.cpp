@@ -2621,3 +2621,17 @@ uint8_t __fastcall sub_0071C3A0(uint32_t self) {
     return mem_read8(obj + 0x15A8);
 }
 } // namespace lift_0071C3A0
+
+// [0x0071C4E0]
+namespace lift_0071C4E0 {
+extern uint32_t mem_r32(uintptr_t addr);
+extern uint8_t mem_r8(uintptr_t addr);
+
+// @name get_field_0x10e0
+// @summary Reads a byte at offset 0x10e0 from the object pointed to by field_0x0c.
+// @field Self +0x0c uint32_t field_0x0c
+uint8_t __thiscall sub_0071C4E0(uintptr_t ecx) {
+    uint32_t eax = mem_r32(ecx + 0xc);
+    return mem_r8(eax + 0x10e0);
+}
+} // namespace lift_0071C4E0
