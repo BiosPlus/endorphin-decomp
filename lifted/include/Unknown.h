@@ -423,7 +423,8 @@ struct Unknown_Fields {
     // +0xFC  void* field_0xFC (pointer to holder struct; owner class not established)  (evidence: 0x006D7380)
     // +0x100 void* field_0x100 (tail-call target passed to ext_0044B780)  (evidence: 0x00430DA0, 0x004332B0, 0x004332D0, 0x00648940) // CONFLICT: multiple definitions at +0x100
     // +0x100 void*                    field_0x100  (evidence: 0x00430260, 0x00430310, 0x00430DA0) // CONFLICT: multiple definitions at +0x100
-    // +0x104 void**                   childArray  (evidence: 0x006C1BB0, 0x006C59C0)
+    // +0x104 void**                   childArray  (evidence: 0x006C1BB0, 0x006C59C0) // CONFLICT: multiple definitions at +0x104
+    // +0x104 uint32_t                 field_0x104  (evidence: 0x00431330) // CONFLICT: multiple definitions at +0x104
     // +0x108 void* field_0x108 (argument passed to ext_0043C8F0)  (evidence: 0x00430DA0, 0x004332B0, 0x004332D0, 0x00648940)
     // +0x110 void*                    field_0x110  (evidence: 0x004352B0)
     // +0x114 void*                    sub114  (evidence: 0x006305A0)
