@@ -31589,6 +31589,13 @@
     "summary": "Forwards its first stack argument to the virtual method at vtable offset +0x140 on the object in ECX, then returns 0 and pops 8 bytes of arguments.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006A7AE0": {
+    "name": "UnknownClass::CallVfunc144Bool",
+    "class": "UnknownClass",
+    "signature": "uint32_t fn_006A7AE0(void* self, uint32_t arg, uint32_t unused)",
+    "summary": "Calls the virtual method at vtable offset 0x144 on self, forwarding arg, and returns its result zero-extended to 32 bits.",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006A7F30": {
     "name": "Unknown::ForwardArgToVirtualSlot85",
     "class": "Unknown",

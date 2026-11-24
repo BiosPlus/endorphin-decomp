@@ -395,3 +395,18 @@ extern DWORD __thiscall fn_006A7F90(void* self, DWORD arg) {
     return 0;
 }
 } // namespace lift_006A7F90
+
+// [0x006A7AE0] sub_006A7AE0 (21 bytes)
+namespace lift_006A7AE0 {
+// @name UnknownClass::CallVfunc144Bool
+// @class UnknownClass
+// @summary Calls the virtual method at vtable offset 0x144 on self, forwarding arg, and returns its result zero-extended to 32 bits.
+// @field UnknownClass +0x00 void* vtable
+uint32_t fn_006A7AE0(void* self, uint32_t arg, uint32_t unused) {
+    (void)unused; // second stack argument is popped by the caller (ret 8) but not read
+    using VirtFn = uint8_t (*)(void* self, uint32_t arg);
+    void* vtable = *reinterpret_cast<void**>(self);
+    VirtFn fn = *reinterpret_cast<VirtFn*>(reinterpret_cast<uint8_t*>(vtable) + 0x144);
+    return static_cast<uint32_t>(fn(self, arg));
+}
+} // namespace lift_006A7AE0
