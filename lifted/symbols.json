@@ -49841,6 +49841,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0070A1F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x0070A2A0": {
+    "name": "initHugeVectorGlobals",
+    "signature": "void sub_0070A2A0()",
+    "summary": "Initializes three 64-bit globals (likely a 3D double vector) from MSVCR80!_HUGE.",
+    "lifted_path": "lifted/clones/auto_clones_700000.cpp"
+  },
   "0x0070AAD0": {
     "name": "isKnownGlobalHandle",
     "signature": "bool __stdcall sub_0070AAD0(uint32_t arg0)",
@@ -49945,6 +49951,12 @@
     "signature": "extern \"C\" void fn_0070C3A0(void)",
     "summary": "Pure jump thunk forwarding to sub_0070BF00.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x0070C8E0": {
+    "name": "initHugeBounds",
+    "signature": "void sub_0070C8E0()",
+    "summary": "Initializes three 64-bit global values from MSVCR80.dll!_HUGE.",
+    "lifted_path": "lifted/clones/auto_clones_700000.cpp"
   },
   "0x0070CD10": {
     "name": "sub_0070CD10",
@@ -50197,6 +50209,12 @@
     "signature": "void fn_006DD960(void)",
     "summary": "Auto-lifted identical-shape clone of 0x006DD960 (fn_006DD960 (MSVCR _HUGE negated into global)).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x0070F780": {
+    "name": "initHugeDoubleGlobals",
+    "signature": "void sub_0070F780()",
+    "summary": "Initializes three 64-bit globals from MSVCR80!_HUGE",
+    "lifted_path": "lifted/clones/auto_clones_700000.cpp"
   },
   "0x0070FB60": {
     "name": "sub_0070FB60",
