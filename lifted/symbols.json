@@ -34623,6 +34623,13 @@
     "summary": "Returns address of global mem_009931A4.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B95F0": {
+    "name": "Unknown::initVtableAndSizeFields",
+    "class": "Unknown",
+    "signature": "void fn_006B95F0(void* self)",
+    "summary": "Calls an MFC80 import, installs vtable 0x0099304C at offset 0, sets fields +0x54/+0x58 to 0x10, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B9610": {
     "name": "CFontStyleListBox::vfunc_1",
     "class": "CFontStyleListBox",

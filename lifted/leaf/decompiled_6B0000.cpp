@@ -162,3 +162,23 @@ void fn_006B6270(void* self, DWORD value) {
 }
 } // namespace lift_00454BE0
 } // namespace lift_006B6270
+
+// [0x006B95F0] sub_006B95F0 (29 bytes)
+namespace lift_006B95F0 {
+// Known callee 0x006A5C6E: thunk_MFC80_ord_572 (IAT jump thunk forwarding to MFC80!ord_572.)
+extern void ext_006A5C6E();
+
+// @name Unknown::initVtableAndSizeFields
+// @class Unknown
+// @summary Calls an MFC80 import, installs vtable 0x0099304C at offset 0, sets fields +0x54/+0x58 to 0x10, and returns this.
+// @field Unknown +0x00 DWORD vfptr
+// @field Unknown +0x54 DWORD field_0x54
+// @field Unknown +0x58 DWORD field_0x58
+void fn_006B95F0(void* self) {
+    ext_006A5C6E();
+    lift_field<DWORD>(self, 0x00) = 0x0099304C;
+    lift_field<DWORD>(self, 0x54) = 0x10;
+    lift_field<DWORD>(self, 0x58) = 0x10;
+    (void)self;
+}
+} // namespace lift_006B95F0
