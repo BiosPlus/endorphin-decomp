@@ -2390,6 +2390,12 @@
     "summary": "Pure jump thunk forwarding to sub_0043D710.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0043E3A0": {
+    "name": "destroyRange_0043E3A0",
+    "signature": "void __stdcall sub_0043E3A0(uint32_t begin, uint32_t end)",
+    "summary": "Calls MFC80!ord_578 on each 4-byte element in [begin, end)",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043EA80": {
     "name": "MultiTrackView::View::vfunc_82",
     "class": "MultiTrackView::View",
@@ -27390,6 +27396,13 @@
     "signature": "void fn_006569A0(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00658910": {
+    "name": "RelationshipHinge::vfunc_10",
+    "class": "RelationshipHinge",
+    "signature": "void fn_00658910(void* self, uint32_t out)",
+    "summary": "Copies three floats from the element at index 0 of the buffer referenced by this+0x64 into the caller-supplied output.",
+    "lifted_path": "lifted/classes/RelationshipHinge.cpp"
   },
   "0x006595B0": {
     "name": "RelationshipRPROJoint::vfunc_49",
