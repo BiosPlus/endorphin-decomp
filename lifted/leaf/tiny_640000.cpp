@@ -937,3 +937,25 @@ void fn_00648400(void* self) {
     lift_field<uint32_t>(self, 0x58) = 0;
 }
 } // namespace lift_00648400
+
+// [0x006455B0] sub_006455B0 (31 bytes)
+namespace lift_006455B0 {
+// @name Unknown::GetElementCountFromRange
+// @class Unknown
+// @summary Returns (end - begin) / 6 for a range stored at +4 (begin) and +8 (end); 0 if begin is null.
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x08 int32_t field_0x08
+int32_t fn_006455B0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    int32_t begin;
+    int32_t end;
+    std::memcpy(&begin, base + 0x04, sizeof(begin));
+    if (begin == 0) {
+        return 0;
+    }
+    std::memcpy(&end, base + 0x08, sizeof(end));
+    // Signed division by 6 (element size), truncating toward zero.
+    int32_t diff = end - begin;
+    return diff / 6;
+}
+} // namespace lift_006455B0
