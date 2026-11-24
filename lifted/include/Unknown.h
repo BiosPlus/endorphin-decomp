@@ -361,7 +361,8 @@ struct Unknown_Fields {
     // +0x138 uint8_t                  field_0x138  (evidence: 0x007AA930) // CONFLICT: multiple definitions at +0x138
     // +0x13C std::string              field_0x13c  (evidence: 0x00455AD0, 0x004584C0)
     // +0x148 void*                    subObject  (evidence: 0x0070E3B0, 0x0070EC50)
-    // +0x14C BYTE field_0x14C[] (indexed by arg index; byte store target)  (evidence: 0x006D74E0)
+    // +0x14C int32_t field_0x14C (indexed array base; element stride 4, indices 1..17)  (evidence: 0x007AA950) // CONFLICT: multiple definitions at +0x14C
+    // +0x14C BYTE field_0x14C[] (indexed by arg index; byte store target)  (evidence: 0x006D74E0) // CONFLICT: multiple definitions at +0x14C
     // +0x150 uint32_t                 field_0x150  (evidence: 0x00687230, 0x00687260)
     // +0x154 DWORD                    child  (evidence: 0x00433290, 0x005B6780, 0x005B7040, 0x005B7240, 0x005B7280, 0x005B72C0, 0x005C30F0, 0x005CE8F0)
     // +0x158 void* field_0x158 (sub-object base; +0x30 pointer, +0x24 argument address)  (evidence: 0x005B7040) // CONFLICT: multiple definitions at +0x158

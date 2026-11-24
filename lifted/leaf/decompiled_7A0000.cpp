@@ -117,3 +117,16 @@ void fn_007AA970(void* self, LONG index, DWORD value) {
     }
 }
 } // namespace lift_007AA970
+
+// [0x007AA950] sub_007AA950 (32 bytes)
+namespace lift_007AA950 {
+// @name Unknown::SetIndexedDwordIfInRange_14C
+// @class Unknown
+// @summary Stores a dword into this->field_0x14C[index] when 0 < index < 0x12; otherwise does nothing. Callee pops 8 bytes (ret 8).
+// @field Unknown +0x14C int32_t field_0x14C (indexed array base; element stride 4, indices 1..17)
+void Unknown_SetIndexedDwordIfInRange_14C(uint8_t* self, int32_t index, uint32_t value) {
+    if (index > 0 && index < 0x12) {
+        __builtin_memcpy(self + 0x14C + static_cast<uintptr_t>(index) * 4, &value, sizeof(value));
+    }
+}
+} // namespace lift_007AA950

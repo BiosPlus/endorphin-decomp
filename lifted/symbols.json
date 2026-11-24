@@ -43214,6 +43214,13 @@
     "summary": "Stores a byte at this-\u003efield_0x138[index] for 1 \u003c= index \u003c 0x12; other indices are ignored.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AA950": {
+    "name": "Unknown::SetIndexedDwordIfInRange_14C",
+    "class": "Unknown",
+    "signature": "void Unknown_SetIndexedDwordIfInRange_14C(uint8_t* self, int32_t index, uint32_t value)",
+    "summary": "Stores a dword into this-\u003efield_0x14C[index] when 0 \u003c index \u003c 0x12; otherwise does nothing. Callee pops 8 bytes (ret 8).",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AA970": {
     "name": "Unknown::SetIndexedDwordSlot194",
     "class": "Unknown",
