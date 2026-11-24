@@ -12974,6 +12974,12 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xA4 and tail-calls sub_005DC420.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00548220": {
+    "name": "ReadSubobjectFloatOrOne",
+    "signature": "float fn_00548220(void* self)",
+    "summary": "Returns float at subobject(+0xA0)+0x204, or 1.0f when the subobject pointer is null.",
+    "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
   "0x00548260": {
     "name": "sub_00548260",
     "class": "\u003cClassName\u003e (unknown; receiver type not yet identified)",

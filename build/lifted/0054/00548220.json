@@ -1,0 +1,21 @@
+{
+  "va": "0x00548220",
+  "size": 20,
+  "orig_symbol": "sub_00548220",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "ReadSubobjectFloatOrOne",
+  "signature": "float fn_00548220(void* self)",
+  "summary": "Returns float at subobject(+0xA0)+0x204, or 1.0f when the subobject pointer is null.",
+  "fields": [
+    {
+      "class": "field_0xA0",
+      "offset": "+0xA0",
+      "type": "uint32_t field_0xA0 (subobject pointer, 32-bit guest",
+      "name": "address)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:06:50Z"
+}

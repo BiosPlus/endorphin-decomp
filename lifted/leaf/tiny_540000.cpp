@@ -190,3 +190,19 @@ void __thiscall fn_00543900(uint8_t* self) {
     *(sub + 0x04) = (flag == 0) ? 1 : 0;
 }
 } // namespace lift_00543900
+
+// [0x00548220] sub_00548220 (20 bytes)
+namespace lift_00548220 {
+// @name ReadSubobjectFloatOrOne
+// @summary Returns float at subobject(+0xA0)+0x204, or 1.0f when the subobject pointer is null.
+// @field field_0xA0 +0xA0 uint32_t field_0xA0 (subobject pointer, 32-bit guest address)
+// @field field_0xA0->+0x204 float field_0x204 (read through subobject pointer)
+float fn_00548220(void* self) {
+    const uint32_t sub = lift_field<uint32_t>(self, 0xA0);
+    if (sub == 0) {
+        return 1.0f;
+    }
+    const void* subobj = reinterpret_cast<const void*>(static_cast<uintptr_t>(sub));
+    return lift_field<float>(subobj, 0x204);
+}
+} // namespace lift_00548220
