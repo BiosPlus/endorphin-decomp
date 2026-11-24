@@ -1,0 +1,33 @@
+{
+  "va": "0x0062A590",
+  "size": 57,
+  "orig_symbol": "sub_0062A590",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "getAverageValue",
+  "signature": "float __thiscall sub_0062A590(uint32_t self)",
+  "summary": "Computes the vtable[0x44] float value divided by the 4-byte element count at +0x34..+0x38.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:20:39Z"
+}

@@ -553,3 +553,28 @@ void fn_006203B0(void* self) {
     lift_field<void*>(self, 0x00) = static_cast<void*>(mem_00976C34);
 }
 } // namespace lift_006203B0
+
+// [0x0062A590]
+namespace lift_0062A590 {
+// @name getAverageValue
+// @summary Computes the vtable[0x44] float value divided by the 4-byte element count at +0x34..+0x38.
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0x34 uint32_t field_0x34
+// @field Unknown +0x38 uint32_t field_0x38
+
+
+float __thiscall sub_0062A590(uint32_t self) {
+    uint32_t begin = *(const uint32_t*)(self + 0x34);
+    uint32_t count = 0;
+    if (begin != 0) {
+        uint32_t end = *(const uint32_t*)(self + 0x38);
+        count = (uint32_t)(((int32_t)(end - begin)) >> 2);
+    }
+
+    uintptr_t vtable = *(const uintptr_t*)self;
+    auto vfn = *(float (__thiscall**)(uint32_t))(vtable + 0x44);
+    float total = vfn(self);
+
+    return (float)((double)total / (double)count);
+}
+} // namespace lift_0062A590
