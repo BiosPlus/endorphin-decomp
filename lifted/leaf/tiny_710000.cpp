@@ -2545,3 +2545,13 @@ extern uint32_t __fastcall fn_0071C9A0(void* self) {
 }
 } // namespace lift_006DE3E0
 } // namespace lift_0071C9A0
+
+// [0x007110B0]
+namespace lift_007110B0 {
+// @name isNotDoubleQuote
+// @summary Returns 1 if the given byte is not a double-quote character (0x22), 0 otherwise.
+
+uint8_t __stdcall sub_007110B0(uint8_t ch) {
+    return ch != 0x22 ? 1 : 0;
+}
+} // namespace lift_007110B0

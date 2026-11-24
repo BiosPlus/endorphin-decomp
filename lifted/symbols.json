@@ -34701,6 +34701,12 @@
     "summary": "Returns true if any bit of the argument mask is set in the object's field at +0x78.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00707960": {
+    "name": "get_field_0xd0_item",
+    "signature": "uint32_t __thiscall sub_00707960(uint32_t self, uint32_t index)",
+    "summary": "Returns the 32-bit element at the given index from the array at +0xd0",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x0070A1D0": {
     "name": "sub_0070A1D0",
     "signature": "extern \"C\" void* __fastcall fn_0070A1D0(void* self, int edx_unused, unsigned int flags)",
