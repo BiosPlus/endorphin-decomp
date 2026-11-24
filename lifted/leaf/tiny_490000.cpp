@@ -644,3 +644,19 @@ int32_t fn_00492520(void* self, int32_t selector) {
     return 0;
 }
 } // namespace lift_00492520
+
+// [0x004928A0] sub_004928A0 (30 bytes)
+namespace lift_004928A0 {
+// @name fn_004928A0 (null-checked byte flag test: returns 1 if self != nullptr && self->field_0x179 == 0)
+// @summary Returns 1 when the object pointer is non-null and its byte at +0x179 is zero, else 0.
+// @field Unknown +0x179 uint8_t field_0x179
+int fn_004928A0(void* self) {
+    if (self == nullptr) {
+        return 0;
+    }
+    if (lift_field<uint8_t>(self, 0x179) != 0) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_004928A0

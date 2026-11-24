@@ -1,0 +1,21 @@
+{
+  "va": "0x004928A0",
+  "size": 30,
+  "orig_symbol": "sub_004928A0",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "fn_004928A0 (null-checked byte flag test: returns 1 if self != nullptr \u0026\u0026 self-\u003efield_0x179 == 0)",
+  "signature": "int fn_004928A0(void* self)",
+  "summary": "Returns 1 when the object pointer is non-null and its byte at +0x179 is zero, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x179",
+      "type": "uint8_t",
+      "name": "field_0x179"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:17:08Z"
+}
