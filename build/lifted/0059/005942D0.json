@@ -1,0 +1,27 @@
+{
+  "va": "0x005942D0",
+  "size": 31,
+  "orig_symbol": "sub_005942D0",
+  "src_path": "src/leaf/tiny_590000.cpp",
+  "lifted_path": "lifted/leaf/tiny_590000.cpp",
+  "name": "FindFirstFlaggedAncestor",
+  "signature": "void* fn_005942D0(void* self)",
+  "summary": "Walks the +0x08 link chain from self until it reaches a node whose byte at +0xB9 is nonzero; returns the node just before that flagged node (self if the first link is already flagged).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "parent"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB9",
+      "type": "uint8_t",
+      "name": "flag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:25:43Z"
+}

@@ -330,3 +330,25 @@ void fn_004442C0(void* self) {
 }
 } // namespace lift_004442C0
 } // namespace lift_00594810
+
+// [0x005942D0] sub_005942D0 (31 bytes)
+namespace lift_005942D0 {
+// @name FindFirstFlaggedAncestor
+// @summary Walks the +0x08 link chain from self until it reaches a node whose byte at +0xB9 is nonzero; returns the node just before that flagged node (self if the first link is already flagged).
+// @field Unknown +0x08 void* parent
+// @field Unknown +0xB9 uint8_t flag
+void* fn_005942D0(void* self) {
+    void* eax = self;
+    void* ecx = lift_field<void*>(eax, 0x08);
+    if (lift_field<uint8_t>(ecx, 0xB9) != 0) {
+        return eax;
+    }
+    for (;;) {
+        eax = ecx;
+        ecx = lift_field<void*>(eax, 0x08);
+        if (lift_field<uint8_t>(ecx, 0xB9) != 0) {
+            return eax;
+        }
+    }
+}
+} // namespace lift_005942D0

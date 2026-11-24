@@ -16283,6 +16283,12 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xF8 and tail-calls sub_006425C0.",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
+  "0x005942D0": {
+    "name": "FindFirstFlaggedAncestor",
+    "signature": "void* fn_005942D0(void* self)",
+    "summary": "Walks the +0x08 link chain from self until it reaches a node whose byte at +0xB9 is nonzero; returns the node just before that flagged node (self if the first link is already flagged).",
+    "lifted_path": "lifted/leaf/tiny_590000.cpp"
+  },
   "0x005942F0": {
     "name": "findLastBeforeFlaggedLink",
     "class": "UnknownNode",
