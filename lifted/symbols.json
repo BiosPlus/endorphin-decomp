@@ -52467,6 +52467,13 @@
     "summary": "Frees the owned buffer at +0x00 (if non-null), then zeroes the buffer pointer, +0x04, +0x08 and the flag byte at +0x10.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00784750": {
+    "name": "EntryTable::getEntryValue",
+    "class": "EntryTable",
+    "signature": "int32_t EntryTable_getEntryValue(EntryTable* self, int32_t idx, uint32_t* outKey)",
+    "summary": "Sorts the entry table if dirty, optionally writes entry[idx].key to *outKey, and returns entry[idx].value (0 if idx is out of range).",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00784790": {
     "name": "compareUint32Ptr",
     "signature": "int32_t __cdecl sub_00784790(const uint32_t* a, const uint32_t* b)",

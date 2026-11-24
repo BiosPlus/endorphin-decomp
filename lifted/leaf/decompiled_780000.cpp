@@ -890,3 +890,30 @@ uint8_t* __thiscall fn_0078D4E0(void* self, uint32_t a, uint32_t b, uint32_t c) 
     return lift_ptr(base + 16u * c);
 }
 } // namespace lift_0078D4E0
+
+// [0x00784750]
+namespace lift_00784750 {
+// @name EntryTable::getEntryValue
+// @class EntryTable
+// @summary Sorts the entry table if dirty, optionally writes entry[idx].key to *outKey, and returns entry[idx].value (0 if idx is out of range).
+// @field EntryTable +0x00 uint32_t* entries
+// @field EntryTable +0x04 int32_t count
+
+extern int32_t ext_007847B0(void* self);
+
+struct EntryTable {
+    uint32_t* entries;   // +0x00: array of {key, value} pairs, 8 bytes each
+    int32_t   count;     // +0x04
+};
+
+int32_t EntryTable_getEntryValue(EntryTable* self, int32_t idx, uint32_t* outKey) {
+    if (idx < 0 || idx >= self->count) {
+        return 0;
+    }
+    ext_007847B0(self);
+    if (outKey != nullptr) {
+        *outKey = self->entries[idx * 2];
+    }
+    return static_cast<int32_t>(self->entries[idx * 2 + 1]);
+}
+} // namespace lift_00784750
