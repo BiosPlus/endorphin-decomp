@@ -300,3 +300,17 @@ void fn_0086F020(const DWORD* src, DWORD* dst) {
     }
 }
 } // namespace lift_0086F020
+
+// [0x0086AF50]
+namespace lift_0086AF50 {
+// @name TrimTrailingZeroDwords
+// @summary Returns the length of the `count` DWORD array at `data` after stripping trailing zero DWORDs (0 if all are zero).
+// (free function, no @class)
+
+extern uint32_t __cdecl fn_0086AF50(const uint32_t* data, uint32_t count) {
+    while (count != 0 && data[count - 1] == 0) {
+        --count;
+    }
+    return count;
+}
+} // namespace lift_0086AF50

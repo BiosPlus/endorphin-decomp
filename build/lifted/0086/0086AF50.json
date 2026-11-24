@@ -1,0 +1,13 @@
+{
+  "va": "0x0086AF50",
+  "size": 48,
+  "orig_symbol": "sub_0086AF50",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "TrimTrailingZeroDwords",
+  "signature": "extern \"C\" uint32_t __cdecl fn_0086AF50(const uint32_t* data, uint32_t count)",
+  "summary": "Returns the length of the `count` DWORD array at `data` after stripping trailing zero DWORDs (0 if all are zero).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:29:29Z"
+}
