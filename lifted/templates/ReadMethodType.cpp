@@ -31067,3 +31067,30 @@ void* fn_0046E8C0(void* dst, const void* const* src) {
     return nullptr;
 }
 } // namespace lift_0046E8C0
+
+// [0x00471440] ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_00471440 {
+// getNumTicksToRun thunk-target: __thiscall RuntimeEngine::getNumTicksToRun, this = engine.
+extern int ext_0046F7C0(void* engine);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0046C500(void* out, int flag);
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, getNumTicksToRun, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Reads the engine pointer from the ValuePtr argument; throws if null, otherwise calls getNumTicksToRun on the engine, stores the result via ext_0046C500 into the argument, and returns the argument.
+// @field ExprParser::ValuePtrType +0x00 uint32_t field_0x00
+void* fn_00471440(void* out, void* unused_arg) {
+    (void)unused_arg;
+
+    // The 32-bit guest engine pointer stored at offset 0 of the argument.
+    const uint32_t engine = lift_field<uint32_t>(out, 0);
+    if (engine == 0) {
+        // Original throws an MSVC exception object built by sub_0046C3C0; its exact type is not recovered.
+        throw std::runtime_error("ReadMethodType::vfunc_4: null engine pointer");
+    }
+
+    const int ticks = ext_0046F7C0(reinterpret_cast<void*>(static_cast<uintptr_t>(engine)));
+    ext_0046C500(out, ticks);
+    return out;
+}
+} // namespace lift_00471440
