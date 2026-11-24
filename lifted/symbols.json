@@ -40,6 +40,12 @@
     "summary": "Pure jump thunk forwarding to sub_00401840.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00401930": {
+    "name": "CallFirstFieldIfNonNull",
+    "signature": "uint32_t fn_00401930(void* self)",
+    "summary": "If the dword at offset 0 is non-zero, tail-dispatch to it with the same this; otherwise return 0.",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x00401970": {
     "name": "sub_00401970",
     "signature": "void __thiscall sub_00401970(void* self)",

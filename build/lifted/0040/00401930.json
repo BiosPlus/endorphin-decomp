@@ -1,0 +1,21 @@
+{
+  "va": "0x00401930",
+  "size": 13,
+  "orig_symbol": "sub_00401930",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "CallFirstFieldIfNonNull",
+  "signature": "uint32_t fn_00401930(void* self)",
+  "summary": "If the dword at offset 0 is non-zero, tail-dispatch to it with the same this; otherwise return 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:17:54Z"
+}

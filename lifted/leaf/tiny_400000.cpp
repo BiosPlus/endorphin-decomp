@@ -193,3 +193,18 @@ void __thiscall sub_00401970(void* self) {
     }
 }
 } // namespace lift_00401970
+
+// [0x00401930] sub_00401930 (13 bytes)
+namespace lift_00401930 {
+// @name CallFirstFieldIfNonNull
+// @summary If the dword at offset 0 is non-zero, tail-dispatch to it with the same this; otherwise return 0.
+// @field Unknown +0x00 uint32_t field_0x00
+uint32_t fn_00401930(void* self) {
+    const uint32_t target = lift_field<uint32_t>(self, 0);
+    if (target == 0) {
+        return 0;
+    }
+    using Target = uint32_t (*)(void* self);
+    return reinterpret_cast<Target>(static_cast<uintptr_t>(target))(self);
+}
+} // namespace lift_00401930
