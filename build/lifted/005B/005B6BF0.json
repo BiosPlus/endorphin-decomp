@@ -1,0 +1,22 @@
+{
+  "va": "0x005B6BF0",
+  "size": 33,
+  "orig_symbol": "sub_005B6BF0",
+  "src_path": "src/leaf/decompiled_5B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5B0000.cpp",
+  "name": "Unknown::forwardToSubobject158",
+  "class": "Unknown",
+  "signature": "void fn_005B6BF0(void* self)",
+  "summary": "If the pointer at +0x158 is non-null, forwards this+0x1dc to ext_005CE9F0 using that pointer as self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "void*",
+      "name": "field_0x158"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:53:40Z"
+}
