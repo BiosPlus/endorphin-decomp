@@ -296,3 +296,24 @@ extern DWORD __fastcall fn_006D7490(void* self, int edx_unused, DWORD arg) {
 }
 } // namespace lift_0070EC30
 } // namespace lift_006D7490
+
+// [0x006D75C0] sub_006D75C0 (36 bytes)
+namespace lift_006D75C0 {
+// @name sub_006D75C0
+// @summary Auto-lifted identical-shape clone of 0x007747B0 (initNegatedHugeGlobals).
+namespace lift_007747B0 {
+extern uint32_t mem_00925284;  // holds address of MSVCR80 _HUGE (double)
+extern double mem_00B5D7A0;
+extern double mem_00B5D7A8;
+extern double mem_00B5D7B0;
+
+// @name initNegatedHugeGlobals
+// @summary Stores -_HUGE into three global doubles.
+void fn_006D75C0(void) {
+    const double huge = *reinterpret_cast<const double*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5D7A0 = -huge;
+    mem_00B5D7A8 = -huge;
+    mem_00B5D7B0 = -huge;
+}
+} // namespace lift_007747B0
+} // namespace lift_006D75C0

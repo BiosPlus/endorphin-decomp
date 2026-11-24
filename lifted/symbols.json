@@ -36041,6 +36041,12 @@
     "summary": "Returns the pointer-sized word at vtable offset 0x24 (slot 9) of the object's vtable.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006BBA00": {
+    "name": "sub_006BBA00",
+    "signature": "void fn_006BBA00(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007747B0 (initNegatedHugeGlobals).",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BC0D0": {
     "name": "Unknown::ForwardSetValueThroughChild",
     "class": "Unknown",
@@ -37326,6 +37332,12 @@
     "summary": "Stores one byte into the byte array at this+0x14C, indexed by the first stack argument (ret 8).",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D75C0": {
+    "name": "sub_006D75C0",
+    "signature": "void fn_006D75C0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007747B0 (initNegatedHugeGlobals).",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D78F0": {
     "name": "sub_006D78F0",
     "signature": "extern \"C\" void* __fastcall fn_006D78F0(void* self, int edx_unused, unsigned int flags)",
@@ -37606,6 +37618,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x4C and tail-calls sub_006E7460.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E6410": {
+    "name": "sub_006E6410",
+    "signature": "void fn_006E6410(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007747B0 (initNegatedHugeGlobals).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E67C0": {
     "name": "Unknown::InitFields0x0C",
     "class": "Unknown",
@@ -37855,6 +37873,12 @@
     "class": "Unknown",
     "signature": "int64_t fn_006E9AE0(void* self)",
     "summary": "Reads the child pointer at +0x04, derives a value from it via helper calls, and returns that float truncated to int64.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
+  "0x006E9D00": {
+    "name": "sub_006E9D00",
+    "signature": "void fn_006E9D00(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007747B0 (initNegatedHugeGlobals).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006EA090": {
@@ -43599,6 +43623,12 @@
     "signature": "extern \"C\" void __fastcall fn_0079BA90(void* self)",
     "summary": "Destructor tail-call: restores vtable mem_00997530 and tail-calls base destructor sub_00705450.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
+  "0x0079BBD0": {
+    "name": "sub_0079BBD0",
+    "signature": "void fn_0079BBD0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x007747B0 (initNegatedHugeGlobals).",
+    "lifted_path": "lifted/clones/auto_clones_790000.cpp"
   },
   "0x0079C1F0": {
     "name": "Unknown::callSubobjectSlot0",

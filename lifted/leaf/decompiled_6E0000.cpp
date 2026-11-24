@@ -180,3 +180,45 @@ void fn_006EA410(void) {
     mem_00B5E0F8 = -huge;
 }
 } // namespace lift_006EA410
+
+// [0x006E6410] sub_006E6410 (36 bytes)
+namespace lift_006E6410 {
+// @name sub_006E6410
+// @summary Auto-lifted identical-shape clone of 0x007747B0 (initNegatedHugeGlobals).
+namespace lift_007747B0 {
+extern uint32_t mem_00925284;  // holds address of MSVCR80 _HUGE (double)
+extern double mem_00B5DDB8;
+extern double mem_00B5DDC0;
+extern double mem_00B5DDC8;
+
+// @name initNegatedHugeGlobals
+// @summary Stores -_HUGE into three global doubles.
+void fn_006E6410(void) {
+    const double huge = *reinterpret_cast<const double*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5DDB8 = -huge;
+    mem_00B5DDC0 = -huge;
+    mem_00B5DDC8 = -huge;
+}
+} // namespace lift_007747B0
+} // namespace lift_006E6410
+
+// [0x006E9D00] sub_006E9D00 (36 bytes)
+namespace lift_006E9D00 {
+// @name sub_006E9D00
+// @summary Auto-lifted identical-shape clone of 0x007747B0 (initNegatedHugeGlobals).
+namespace lift_007747B0 {
+extern uint32_t mem_00925284;  // holds address of MSVCR80 _HUGE (double)
+extern double mem_00B5DF50;
+extern double mem_00B5DF58;
+extern double mem_00B5DF60;
+
+// @name initNegatedHugeGlobals
+// @summary Stores -_HUGE into three global doubles.
+void fn_006E9D00(void) {
+    const double huge = *reinterpret_cast<const double*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5DF50 = -huge;
+    mem_00B5DF58 = -huge;
+    mem_00B5DF60 = -huge;
+}
+} // namespace lift_007747B0
+} // namespace lift_006E9D00

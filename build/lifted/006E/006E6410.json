@@ -1,0 +1,13 @@
+{
+  "va": "0x006E6410",
+  "size": 36,
+  "orig_symbol": "sub_006E6410",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "sub_006E6410",
+  "signature": "void fn_006E6410(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x007747B0 (initNegatedHugeGlobals).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T13:00:56Z"
+}
