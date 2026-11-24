@@ -359,3 +359,16 @@ DWORD fn_007AEEB0(void* self) {
     return 0;
 }
 } // namespace lift_007AEEB0
+
+// [0x007AE130]
+namespace lift_007AE130 {
+// @name get_global_B61758_value
+// @summary Passes the address of global mem_00B61758 in ECX to fn_006E7460 (tail-jump thunk) and returns its result.
+
+extern int32_t __fastcall fn_006E7460(void* self);
+extern uint8_t mem_00B61758[];
+
+extern int32_t __fastcall fn_007AE130(void) {
+    return fn_006E7460(static_cast<void*>(mem_00B61758));
+}
+} // namespace lift_007AE130
