@@ -6656,3 +6656,23 @@ void fn_00489440(void* self) {
     std::memcpy(out + 0x04, &addr, sizeof(addr));
 }
 } // namespace lift_00489440
+
+// [0x00489680] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setStrengthFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_00489680 {
+extern void ext_0067A670(void* self);
+extern uint32_t mem_00AD9E68; // one-time-init guard flags (bit 0 = initialized)
+extern uint32_t mem_00AD9E64; // function-local static object storage (first dword = vtable)
+
+// @name ExprParser::WriteMethodType_DesiredPoseEventData_setStrengthFromFSM::vfunc_40
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setStrengthFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Lazily constructs a static object once (guarded by a flag bit) and stores its address at +0x04 of the output object.
+// @field <out-object> +0x04 uint32_t field_0x04
+void fn_00489680(void* out) {
+    if ((mem_00AD9E68 & 1u) == 0u) {
+        mem_00AD9E68 |= 1u;
+        ext_0067A670(&mem_00AD9E64);
+        mem_00AD9E64 = 0x0093D85Cu; // vtable pointer for the static object
+    }
+    lift_field<uint32_t>(out, 4) = 0x00AD9E64u;
+}
+} // namespace lift_00489680

@@ -7277,6 +7277,13 @@
     "summary": "Lazily constructs a guarded static object (once, via a bit in mem_00AD9E60) and stores its address into the +0x04 slot of the argument.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00489680": {
+    "name": "ExprParser::WriteMethodType_DesiredPoseEventData_setStrengthFromFSM::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setStrengthFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "extern \"C\" uint32_t mem_00AD9E68; // one-time-init guard flags (bit 0 = initialized) extern \"C\" uint32_t mem_00AD9E64; // function-local static object storage (first dword = vtable) void fn_00489680(void* out)",
+    "summary": "Lazily constructs a static object once (guarded by a flag bit) and stores its address at +0x04 of the output object.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00489880": {
     "name": "CallChildVtableSlot1EIfPresent",
     "signature": "void* fn_00489880(void* self)",
