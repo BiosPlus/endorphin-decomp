@@ -1076,3 +1076,21 @@ DWORD fn_00709C90(void* self) {
     return lift_field<DWORD>(nodePtr, 0x04);
 }
 } // namespace lift_00709C90
+
+// [0x0070FBD0]
+namespace lift_0070FBD0 {
+// @name sub_0070FBD0
+// @summary Calls virtual method at vtable +0x10 on this, then invokes scalar deleting destructor at vtable +0x8 with flag 1.
+// @field Unknown +0x00 uint32_t* vtable
+void __thiscall sub_0070FBD0(void* self, uint32_t /*unused*/) {
+    uint32_t* vtable = *reinterpret_cast<uint32_t**>(self);
+    using Fn10 = void(__thiscall*)(void*);
+    reinterpret_cast<Fn10>(vtable[4])(self);
+
+    if (self != nullptr) {
+        vtable = *reinterpret_cast<uint32_t**>(self);
+        using Fn08 = void(__thiscall*)(void*, uint32_t);
+        reinterpret_cast<Fn08>(vtable[2])(self, 1);
+    }
+}
+} // namespace lift_0070FBD0

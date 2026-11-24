@@ -1,0 +1,21 @@
+{
+  "va": "0x0070FBD0",
+  "size": 25,
+  "orig_symbol": "sub_0070FBD0",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "sub_0070FBD0",
+  "signature": "void __thiscall sub_0070FBD0(void* self, uint32_t /*unused*/)",
+  "summary": "Calls virtual method at vtable +0x10 on this, then invokes scalar deleting destructor at vtable +0x8 with flag 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T11:52:17Z"
+}
