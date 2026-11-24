@@ -5861,6 +5861,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x8 and tail-calls NMData::Transition::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00499B70": {
+    "name": "GuiBaseElement::vfunc_2",
+    "class": "GuiBaseElement",
+    "signature": "void fn_00499B70(void* self)",
+    "summary": "Stores the default rectangle/quad {0.0f, 0.0f, 1.0f, 1.0f} into the four-float block pointed to by the first argument.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00499B90": {
     "name": "NMData::Transition::vfunc_11",
     "class": "NMData::Transition",

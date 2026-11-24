@@ -1,0 +1,40 @@
+{
+  "va": "0x00499B70",
+  "size": 22,
+  "orig_symbol": "GuiBaseElement::vfunc_2",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "GuiBaseElement::vfunc_2",
+  "class": "GuiBaseElement",
+  "signature": "void fn_00499B70(void* self)",
+  "summary": "Stores the default rectangle/quad {0.0f, 0.0f, 1.0f, 1.0f} into the four-float block pointed to by the first argument.",
+  "fields": [
+    {
+      "class": "GuiBaseElement",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "GuiBaseElement",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "GuiBaseElement",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "GuiBaseElement",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:28:17Z"
+}

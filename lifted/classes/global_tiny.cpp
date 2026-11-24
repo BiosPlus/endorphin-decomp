@@ -6183,3 +6183,21 @@ float fn_00659630(void* self, uint32_t index) {
     return 1.0f;
 }
 } // namespace lift_00659630
+
+// [0x00499B70] GuiBaseElement::vfunc_2 (22 bytes)
+namespace lift_00499B70 {
+// @name GuiBaseElement::vfunc_2
+// @class GuiBaseElement
+// @summary Stores the default rectangle/quad {0.0f, 0.0f, 1.0f, 1.0f} into the four-float block pointed to by the first argument.
+// @field GuiBaseElement +0x00 float field_0x00
+// @field GuiBaseElement +0x04 float field_0x04
+// @field GuiBaseElement +0x08 float field_0x08
+// @field GuiBaseElement +0x0C float field_0x0C
+void fn_00499B70(void* self) {
+    float* out = static_cast<float*>(self);
+    out[0] = 0.0f;
+    out[1] = 0.0f;
+    out[2] = 1.0f;
+    out[3] = 1.0f;
+}
+} // namespace lift_00499B70
