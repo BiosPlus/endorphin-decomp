@@ -1,0 +1,28 @@
+{
+  "va": "0x007B2E20",
+  "size": 48,
+  "orig_symbol": "sub_007B2E20",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "UnknownClass::appendToList",
+  "class": "UnknownClass",
+  "signature": "void fn_007B2E20(void* self, void* value)",
+  "summary": "Stores value in the head slot if empty, otherwise appends it to the tail of the +0x10 linked list headed at +0x14.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "listHead"
+    },
+    {
+      "class": "UnknownNode",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "next"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:28:24Z"
+}

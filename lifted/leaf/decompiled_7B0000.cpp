@@ -266,3 +266,26 @@ void fn_007B2DF0(uint32_t head, uint32_t key, uint32_t* out) {
     *out = found;
 }
 } // namespace lift_007B2DF0
+
+// [0x007B2E20] sub_007B2E20 (48 bytes)
+namespace lift_007B2E20 {
+// @name UnknownClass::appendToList
+// @class UnknownClass
+// @summary Stores value in the head slot if empty, otherwise appends it to the tail of the +0x10 linked list headed at +0x14.
+// @field UnknownClass +0x14 void* listHead
+// @field UnknownNode +0x10 void* next
+void fn_007B2E20(void* self, void* value) {
+    void* head = lift_field<void*>(self, 0x14);
+    if (head == nullptr) {
+        lift_field<void*>(self, 0x14) = value;
+        return;
+    }
+
+    void* node = head;
+    for (void* next = lift_field<void*>(node, 0x10); next != nullptr;
+         next = lift_field<void*>(node, 0x10)) {
+        node = next;
+    }
+    lift_field<void*>(node, 0x10) = value;
+}
+} // namespace lift_007B2E20
