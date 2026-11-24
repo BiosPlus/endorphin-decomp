@@ -317,3 +317,51 @@ BOOL fn_0067AEB0(void* self, INT index) {
     return mem_00924260(hEvent);
 }
 } // namespace lift_0067AEB0
+
+// [0x0067AEF0] sub_0067AEF0 (56 bytes)
+namespace lift_0067AEF0 {
+// Known callee 0x0067AF28: cleanup_epilogue_pop_edi_stdcall4 (Stdcall (ret 4) epilogue fragment: restores the saved edi register and drops one stack argument; no other effect.)
+extern void __stdcall ext_0067AF28(void* arg);
+// Import KERNEL32!ResetEvent (IAT slot mem_0092428C).
+extern BOOL __stdcall ResetEvent(HANDLE hEvent);
+
+// @name EventTable::ResetEventAt
+// @class EventTable
+// @summary Resets the Win32 event whose handle is stored at the given index of the table's handle array; out-of-range or empty array aborts.
+// @field EventTable +0x0C uint32_t slots
+// @field EventSlotVec +0x04 uint32_t begin
+// @field EventSlotVec +0x08 uint32_t end
+
+// Guest-address layout of the handle vector reached through EventTable+0x0C.
+struct EventSlotVec {
+    uint32_t field_0x00;
+    uint32_t begin;  // +0x04: first handle slot (guest address)
+    uint32_t end;    // +0x08: one past last handle slot (guest address)
+};
+
+struct EventTable {
+    uint8_t  field_0x00[0x0C];
+    uint32_t slots;  // +0x0C: guest address of EventSlotVec
+};
+
+extern BOOL __thiscall fn_0067AEF0(void* self, int index) {
+    auto* table = static_cast<EventTable*>(self);
+
+    if (index < 0) {
+        // Negative index: fragment restores state and returns without touching the event.
+        ext_0067AF28(nullptr);
+        return FALSE;
+    }
+
+    auto* vec = reinterpret_cast<EventSlotVec*>(static_cast<uintptr_t>(table->slots));
+    if (vec->begin == 0 ||
+        static_cast<uint32_t>(index) >= (vec->end - vec->begin) / 4u) {
+        // Original calls _invalid_parameter_noinfo here (does not return).
+        std::abort();
+    }
+
+    auto* handles = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(vec->begin));
+    HANDLE hEvent = reinterpret_cast<HANDLE>(static_cast<uintptr_t>(handles[index]));
+    return ResetEvent(hEvent);
+}
+} // namespace lift_0067AEF0

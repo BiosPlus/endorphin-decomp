@@ -36149,6 +36149,13 @@
     "summary": "Pops the return address into edi and returns, releasing 4 bytes of stack arguments.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x0067AEF0": {
+    "name": "EventTable::ResetEventAt",
+    "class": "EventTable",
+    "signature": "extern \"C\" BOOL __thiscall fn_0067AEF0(void* self, int index)",
+    "summary": "Resets the Win32 event whose handle is stored at the given index of the table's handle array; out-of-range or empty array aborts.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067AF28": {
     "name": "cleanup_epilogue_pop_edi_stdcall4",
     "signature": "extern \"C\" void __stdcall fn_0067AF28(void* arg)",
