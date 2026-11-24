@@ -153,3 +153,20 @@ void sub_0067ADD0(std::uint32_t dwMilliseconds) {
     fn(dwMilliseconds);
 }
 } // namespace lift_0067ADD0
+
+// [0x00679A40]
+namespace lift_00679A40 {
+// @name sub_00679A40 (QueryPerformanceCounter into *(this) + 8)
+// @summary Reads a pointer-sized value from the object at ecx, offsets it by 8, and passes the result to QueryPerformanceCounter.
+
+// Imported KERNEL32!QueryPerformanceCounter (IAT slot at 0x0092427C).
+extern uint32_t mem_0092427C;
+extern BOOL(__stdcall* ext_QueryPerformanceCounter)(void* lpPerformanceCount);
+
+__declspec(noinline) void __thiscall sub_00679A40(void* self) {
+    // mov eax, [ecx]; add eax, 8; push eax; call [QueryPerformanceCounter]; ret
+    uint32_t base = lift_field<uint32_t>(self, 0);
+    uintptr_t target = static_cast<uintptr_t>(base) + 8u;
+    (void)ext_QueryPerformanceCounter(reinterpret_cast<void*>(target));
+}
+} // namespace lift_00679A40

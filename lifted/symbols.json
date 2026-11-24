@@ -23844,6 +23844,12 @@
     "summary": "Calls KERNEL32!QueryPerformanceCounter with the pointer stored at [ecx]",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00679A40": {
+    "name": "sub_00679A40 (QueryPerformanceCounter into *(this) + 8)",
+    "signature": "__declspec(noinline) void __thiscall sub_00679A40(void* self)",
+    "summary": "Reads a pointer-sized value from the object at ecx, offsets it by 8, and passes the result to QueryPerformanceCounter.",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
   "0x00679A50": {
     "name": "sub_00679A50",
     "signature": "extern \"C\" void __fastcall fn_00679A50(void* self)",
