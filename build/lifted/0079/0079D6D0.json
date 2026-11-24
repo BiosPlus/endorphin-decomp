@@ -1,0 +1,21 @@
+{
+  "va": "0x0079D6D0",
+  "size": 27,
+  "orig_symbol": "sub_0079D6D0",
+  "src_path": "src/leaf/tiny_790000.cpp",
+  "lifted_path": "lifted/leaf/tiny_790000.cpp",
+  "name": "ReadByteAtF88",
+  "signature": "uint8_t fn_0079D6D0(void* self)",
+  "summary": "Returns the byte stored at this+0xF88 (thiscall; this in ECX, result in AL).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF88",
+      "type": "uint8_t",
+      "name": "field_0xF88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:06:40Z"
+}

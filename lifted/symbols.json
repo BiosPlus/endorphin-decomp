@@ -52345,6 +52345,12 @@
     "summary": "Setter storing uint8_t argument into field at offset +0xF88.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x0079D6D0": {
+    "name": "ReadByteAtF88",
+    "signature": "uint8_t fn_0079D6D0(void* self)",
+    "summary": "Returns the byte stored at this+0xF88 (thiscall; this in ECX, result in AL).",
+    "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
   "0x0079D6F0": {
     "name": "sub_0079D6F0",
     "signature": "extern \"C\" void __fastcall fn_0079D6F0(void* self)",

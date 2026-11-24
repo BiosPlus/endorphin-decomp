@@ -505,3 +505,13 @@ extern void __cdecl fn_0079B010(void* dst, const void* src, uint32_t count) {
     }
 }
 } // namespace lift_0079B010
+
+// [0x0079D6D0]
+namespace lift_0079D6D0 {
+// @name ReadByteAtF88
+// @summary Returns the byte stored at this+0xF88 (thiscall; this in ECX, result in AL).
+// @field Unknown +0xF88 uint8_t field_0xF88
+uint8_t fn_0079D6D0(void* self) {
+    return lift_field<uint8_t>(self, 0xF88);
+}
+} // namespace lift_0079D6D0
