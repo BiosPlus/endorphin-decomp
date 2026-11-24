@@ -527,3 +527,47 @@ uint32_t __fastcall sub_006C30F0(uint32_t this_ptr, uint32_t /*edx*/) {
     return 0;
 }
 } // namespace lift_006C30F0
+
+// [0x006C3070]
+namespace lift_006C3070 {
+// @name sub_006C3070
+// @class UnknownClass
+// @summary Returns field_0x158 if non-null and its vtable[0]() returns 2, else 0.
+// @field UnknownClass +0x158 uint32_t field_0x158
+uint32_t __thiscall sub_006C3070(uintptr_t self) {
+    uint32_t obj = *reinterpret_cast<uint32_t*>(self + 0x158);
+    if (obj != 0) {
+        uint32_t vtable = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(obj));
+        using vfn0_t = uint32_t(__thiscall*)(uintptr_t);
+        auto vfn0 = reinterpret_cast<vfn0_t>(static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(vtable))));
+        if (vfn0(static_cast<uintptr_t>(obj)) == 2) {
+            return *reinterpret_cast<uint32_t*>(self + 0x158);
+        }
+    }
+    return 0;
+}
+} // namespace lift_006C3070
+
+// [0x006C3120]
+namespace lift_006C3120 {
+// @name sub_006C3120
+// @summary Returns field_0x158 if non-null and its vtable[0]() returns 5, otherwise 0.
+// @field unknown +0x158 uint32_t field_0x158
+
+
+uint32_t mem_u32(uint32_t);
+
+uint32_t __thiscall sub_006C3120(uint32_t this_ptr) {
+    uint32_t obj = mem_u32(this_ptr + 0x158);
+    if (obj == 0) {
+        return 0;
+    }
+    uint32_t vtable = mem_u32(obj);
+    uint32_t vfn = mem_u32(vtable);
+    using Vfn0 = uint32_t(__thiscall*)(uint32_t);
+    if (reinterpret_cast<Vfn0>(vfn)(obj) == 5) {
+        return mem_u32(this_ptr + 0x158);
+    }
+    return 0;
+}
+} // namespace lift_006C3120
