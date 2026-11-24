@@ -1,0 +1,22 @@
+{
+  "va": "0x004CB500",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::addMetaBodyFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cMetaBodyConstraintData\u003e::vfunc_40 (addMetaBodyFromFSM)",
+  "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::addMetaBodyFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+  "signature": "extern \"C\" uint32_t mem_00AE44DC;   // one-time-init guard flags (bit 0 = initialized) extern \"C\" char mem_00AE44D8[];     // static storage object (first dword = vtable) void fn_004CB500(uint8_t* holder)",
+  "summary": "Lazily constructs the shared static object on first use (guarded by mem_00AE44DC bit 0), then stores its address into the caller-supplied holder at +0x04.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:47:40Z"
+}

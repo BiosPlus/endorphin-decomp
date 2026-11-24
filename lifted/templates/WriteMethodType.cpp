@@ -6778,3 +6778,26 @@ void fn_005956F0(void* self) {
     lift_field<uint32_t>(self, 0x04) = 0x00B413BC;
 }
 } // namespace lift_005956F0
+
+// [0x004CB500] ExprParser::WriteMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::MetaBodyConstraintData::addMetaBodyFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_004CB500 {
+extern void ext_0067A670(void* self, uint32_t arg);
+extern uint32_t mem_00AE44DC;   // one-time-init guard flags (bit 0 = initialized)
+extern char mem_00AE44D8[];     // static storage object (first dword = vtable)
+
+// @name ExprParser::WriteMethodType<MetaBodyConstraintData>::vfunc_40 (addMetaBodyFromFSM)
+// @class ExprParser::WriteMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::MetaBodyConstraintData::addMetaBodyFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Lazily constructs the shared static object on first use (guarded by mem_00AE44DC bit 0), then stores its address into the caller-supplied holder at +0x04.
+// @field ValuePtrType +0x04 void* field_0x04
+void fn_004CB500(uint8_t* holder) {
+    void* const obj = mem_00AE44D8;
+
+    if ((mem_00AE44DC & 1u) == 0) {
+        mem_00AE44DC |= 1u;
+        ext_0067A670(obj, 0u);
+        lift_field<uint32_t>(obj, 0) = 0x00946904u;  // vtable pointer
+    }
+
+    lift_field<void*>(holder, 4) = obj;
+}
+} // namespace lift_004CB500

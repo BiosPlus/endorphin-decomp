@@ -11091,6 +11091,13 @@
     "summary": "Loads the held object pointer at self+0 and forwards the call to its vtable slot +0x160 via ext_004CA560.",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x004CB500": {
+    "name": "ExprParser::WriteMethodType\u003cMetaBodyConstraintData\u003e::vfunc_40 (addMetaBodyFromFSM)",
+    "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::addMetaBodyFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "extern \"C\" uint32_t mem_00AE44DC;   // one-time-init guard flags (bit 0 = initialized) extern \"C\" char mem_00AE44D8[];     // static storage object (first dword = vtable) void fn_004CB500(uint8_t* holder)",
+    "summary": "Lazily constructs the shared static object on first use (guarded by mem_00AE44DC bit 0), then stores its address into the caller-supplied holder at +0x04.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x004CB5E0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0\u003e",
