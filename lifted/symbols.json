@@ -38501,6 +38501,13 @@
     "summary": "Returns the child object at +0x158 if non-null and its vtable[0]() returns 1, else 0.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C33C0": {
+    "name": "Unknown::loadRecordDwordByIndex",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_006C33C0(void* self, uint32_t index, uint32_t* out)",
+    "summary": "Computes index * 496 (index*31*16), adds the base pointer stored at +0xF0 and the constant 0x1E78, loads a dword from that address, and writes it through the out-pointer.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C33F0": {
     "name": "Unknown::setTableEntryByte",
     "class": "Unknown",

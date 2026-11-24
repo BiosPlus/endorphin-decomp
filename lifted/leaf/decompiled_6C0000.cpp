@@ -489,3 +489,18 @@ uint32_t sub_006C3040(uint32_t self) {
     return 0;
 }
 } // namespace lift_006C3040
+
+// [0x006C33C0]
+namespace lift_006C33C0 {
+// @name Unknown::loadRecordDwordByIndex
+// @class Unknown
+// @summary Computes index * 496 (index*31*16), adds the base pointer stored at +0xF0 and the constant 0x1E78, loads a dword from that address, and writes it through the out-pointer.
+// @field Unknown +0xf0 uint32_t field_0xf0
+void __thiscall fn_006C33C0(void* self, uint32_t index, uint32_t* out) {
+    uint32_t scaled = index * 496u;                                   // (index << 5) - index, then << 4
+    uint32_t base = lift_field<uint32_t>(self, 0xf0);
+    uint32_t addr = base + scaled + 0x1E78u;
+    uint32_t value = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(addr));
+    *out = value;
+}
+} // namespace lift_006C33C0

@@ -1,0 +1,22 @@
+{
+  "va": "0x006C33C0",
+  "size": 48,
+  "orig_symbol": "sub_006C33C0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::loadRecordDwordByIndex",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_006C33C0(void* self, uint32_t index, uint32_t* out)",
+  "summary": "Computes index * 496 (index*31*16), adds the base pointer stored at +0xF0 and the constant 0x1E78, loads a dword from that address, and writes it through the out-pointer.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "uint32_t",
+      "name": "field_0xf0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:22:30Z"
+}
