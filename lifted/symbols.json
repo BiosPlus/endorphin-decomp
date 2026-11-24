@@ -33900,6 +33900,13 @@
     "summary": "Returns constant 0.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x007057D0": {
+    "name": "Unknown::sub_007057D0",
+    "class": "Unknown",
+    "signature": "bool Unknown_sub_007057D0(const void* self, uint32_t arg)",
+    "summary": "Returns true when (arg \u0026 this-\u003efield_0x74) is nonzero (thiscall, one stack arg, ret 4).",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x007057E0": {
     "name": "Unknown::sub_007057E0",
     "class": "Unknown",

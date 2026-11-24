@@ -655,3 +655,20 @@ bool fn_007057E0(void* self, uint32_t mask) {
     return (mask & flags) != 0;
 }
 } // namespace lift_007057E0
+
+// [0x007057D0]
+namespace lift_007057D0 {
+namespace lift_007057D0 {
+// @name Unknown::sub_007057D0
+// @class Unknown
+// @summary Returns true when (arg & this->field_0x74) is nonzero (thiscall, one stack arg, ret 4).
+// @field Unknown +0x74 uint32_t field_0x74
+
+// thiscall: `this` in ECX, one argument on the stack, callee cleans 4 bytes.
+bool Unknown_sub_007057D0(const void* self, uint32_t arg) {
+    const uint8_t* base = static_cast<const uint8_t*>(self);
+    uint32_t field_0x74 = *reinterpret_cast<const uint32_t*>(base + 0x74);
+    return (arg & field_0x74) != 0;
+}
+} // namespace lift_007057D0
+} // namespace lift_007057D0
