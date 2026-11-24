@@ -39547,6 +39547,13 @@
     "summary": "Reads a 32-bit value at offset 0x518 from the object pointed to by field_0x268.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00702F60": {
+    "name": "sub_00702F60",
+    "class": "Unknown",
+    "signature": "void* fn_00702F60(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0071B020 (Unknown::CallArgWithSubObjectAddr0x10).",
+    "lifted_path": "lifted/clones/auto_clones_700000.cpp"
+  },
   "0x00703B50": {
     "name": "sub_00703B50",
     "signature": "extern \"C\" void* __fastcall fn_00703B50(void* self)",
@@ -39954,6 +39961,13 @@
     "signature": "extern \"C\" void* __fastcall fn_0070E6F0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0070E710 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x0070EA90": {
+    "name": "sub_0070EA90",
+    "class": "Unknown",
+    "signature": "void* fn_0070EA90(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0071B020 (Unknown::CallArgWithSubObjectAddr0x10).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x0070EAF0": {
     "name": "sub_0070EAF0",
@@ -41003,6 +41017,13 @@
     "summary": "Calls 0x006D2390 with arg as this and (self + 0x08) as its stack argument, then returns arg.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00714950": {
+    "name": "sub_00714950",
+    "class": "Unknown",
+    "signature": "void* fn_00714950(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0071B020 (Unknown::CallArgWithSubObjectAddr0x10).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00714970": {
     "name": "sub_00714970",
     "signature": "extern \"C\" void __fastcall fn_00714970(void* self, int edx_unused, uint8_t value)",
@@ -41300,6 +41321,13 @@
     "class": "Unknown",
     "signature": "void* fn_0071B020(void* self, void* arg)",
     "summary": "Calls 0x006D2390 with arg as this and (self + 0x10) as its stack argument, then returns arg.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
+  "0x0071B050": {
+    "name": "sub_0071B050",
+    "class": "Unknown",
+    "signature": "void* fn_0071B050(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0071B020 (Unknown::CallArgWithSubObjectAddr0x10).",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x0071B0F0": {
@@ -42079,6 +42107,13 @@
     "signature": "extern \"C\" void __fastcall fn_0072C050(void* self, int edx_unused, uint8_t value)",
     "summary": "Setter storing uint8_t argument into field at offset +0x14.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
+  },
+  "0x0072CB00": {
+    "name": "sub_0072CB00",
+    "class": "Unknown",
+    "signature": "void* fn_0072CB00(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0071B020 (Unknown::CallArgWithSubObjectAddr0x10).",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
   "0x0072CCD0": {
     "name": "sub_0072CCD0",

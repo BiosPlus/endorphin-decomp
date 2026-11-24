@@ -1,0 +1,22 @@
+{
+  "va": "0x0070EA90",
+  "size": 32,
+  "orig_symbol": "sub_0070EA90",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "sub_0070EA90",
+  "class": "Unknown",
+  "signature": "void* fn_0070EA90(void* self, void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x0071B020 (Unknown::CallArgWithSubObjectAddr0x10).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "BYTE",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:41:28Z"
+}

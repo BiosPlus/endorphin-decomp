@@ -1,0 +1,22 @@
+{
+  "va": "0x00702F60",
+  "size": 35,
+  "orig_symbol": "sub_00702F60",
+  "src_path": "src/clones/auto_clones_700000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_700000.cpp",
+  "name": "sub_00702F60",
+  "class": "Unknown",
+  "signature": "void* fn_00702F60(void* self, void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x0071B020 (Unknown::CallArgWithSubObjectAddr0x10).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "BYTE",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:41:28Z"
+}
