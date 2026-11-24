@@ -141,7 +141,7 @@ struct Unknown_Fields {
     // +0x10  uint32_t                 field_0x10  (evidence: 0x0040F290, 0x00454E70, 0x00458DF0, 0x0045BBE0, 0x00532B60, 0x006C9C30, 0x006C9CD0, 0x006C9D20, 0x006C9F60, 0x006D2A90, 0x006D59B0, 0x006FC7E0, 0x00715660, 0x008703B0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t                  field_0x10  (evidence: 0x00468710, 0x00468730, 0x00468770, 0x0046F7D0, 0x00642660, 0x006B2590, 0x006C9A90) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    field_0x10  (evidence: 0x00468730, 0x0046F8F0, 0x005304A0, 0x006C78B0, 0x007008C0, 0x00700910, 0x00700930, 0x00700950, 0x00715650, 0x0071B900, 0x0071C390, 0x0071C4D0, 0x0071C4F0, 0x0071C510, 0x0071C540, 0x0071C550, 0x0071C590, 0x0071C5B0, 0x0071C730, 0x0071C8C0, 0x0071C950, 0x0071C980, 0x007D8470, 0x007DB760) // CONFLICT: multiple definitions at +0x10
-    // +0x10  uint32_t                 flags  (evidence: 0x006C9CE0, 0x006C9D60) // CONFLICT: multiple definitions at +0x10
+    // +0x10  uint32_t                 flags  (evidence: 0x006C9CE0, 0x006C9D60, 0x006C9DA0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t table_ptr (pointer to array of entry pointers)  (evidence: 0x006FC6E0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t field_0x10 (bit 16 read)  (evidence: 0x006C9F50) // CONFLICT: multiple definitions at +0x10
     // +0x11  uint8_t                  appendedNewline  (evidence: 0x00640940)

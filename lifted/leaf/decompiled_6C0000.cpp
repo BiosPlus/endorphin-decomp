@@ -177,3 +177,23 @@ uint8_t* sub_006C9A90(uint8_t* ecx) {
     return self;
 }
 } // namespace lift_006C9A90
+
+// [0x006C9DA0]
+namespace lift_006C9DA0 {
+// @name Unknown::SetFlags0x300000
+// @class Unknown
+// @summary Copies bits 20-21 (0x300000) of the stack argument into the same bits of the dword at this+0x10; other bits are preserved.
+// @field Unknown +0x10 uint32_t flags
+
+struct Unknown {
+    uint8_t pad_0x00[0x10];
+    uint32_t flags; // +0x10
+};
+
+void Unknown_SetFlags0x300000(Unknown* self, uint32_t arg) {
+    uint32_t f = self->flags;
+    // ((f ^ arg) & 0x300000) ^ f  ==  f with bits 20-21 replaced by those of arg
+    uint32_t edx = ((f ^ arg) & 0x300000u) ^ f;
+    self->flags = edx;
+}
+} // namespace lift_006C9DA0

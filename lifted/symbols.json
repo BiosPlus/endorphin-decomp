@@ -36496,6 +36496,13 @@
     "summary": "Returns the bits 28-29 (mask 0x30000000) of the dword at this+0x10.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C9DA0": {
+    "name": "Unknown::SetFlags0x300000",
+    "class": "Unknown",
+    "signature": "void Unknown_SetFlags0x300000(Unknown* self, uint32_t arg)",
+    "summary": "Copies bits 20-21 (0x300000) of the stack argument into the same bits of the dword at this+0x10; other bits are preserved.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C9E60": {
     "name": "Unknown::GetFloatAt",
     "class": "Unknown",
