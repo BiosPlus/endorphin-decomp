@@ -1,0 +1,14 @@
+{
+  "va": "0x006B32D0",
+  "size": 38,
+  "orig_symbol": "GWCPropertyCheckboxLook::vfunc_2",
+  "src_path": "src/classes/GWCPropertyCheckboxLook.cpp",
+  "lifted_path": "lifted/classes/GWCPropertyCheckboxLook.cpp",
+  "name": "GWCPropertyCheckboxLook::vfunc_2",
+  "class": "GWCPropertyCheckboxLook",
+  "signature": "void* __thiscall fn_006B32D0(void* /*this_ptr*/, void* sret, uint32_t /*arg2*/, uint32_t /*arg3*/, const void* src_rect)",
+  "summary": "Copies a 16-byte rect from arg4 to sret (arg1), sets right = left, and returns sret.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:56:37Z"
+}
