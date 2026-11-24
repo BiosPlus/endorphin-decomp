@@ -29089,6 +29089,13 @@
     "summary": "Returns the 32-bit field at offset 0x20, or 0 if self is null.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006AD170": {
+    "name": "storeThroughPointerField_006AD170",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_006AD170(void* self, uint32_t value)",
+    "summary": "Stores the stack argument (32-bit) through the pointer held at this+0x04 (__thiscall, ret 4).",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006AD180": {
     "name": "getDerefField0x4",
     "signature": "uint32_t __thiscall sub_006AD180(void* self)",

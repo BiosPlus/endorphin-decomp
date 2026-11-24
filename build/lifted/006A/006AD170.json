@@ -1,0 +1,22 @@
+{
+  "va": "0x006AD170",
+  "size": 12,
+  "orig_symbol": "sub_006AD170",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "storeThroughPointerField_006AD170",
+  "class": "\u003cunknown\u003e",
+  "signature": "void fn_006AD170(void* self, uint32_t value)",
+  "summary": "Stores the stack argument (32-bit) through the pointer held at this+0x04 (__thiscall, ret 4).",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x4",
+      "type": "uint32_t*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:16:19Z"
+}

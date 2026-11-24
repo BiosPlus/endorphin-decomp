@@ -180,3 +180,15 @@ uint32_t fn_006A2B10(uint32_t index) {
     return mem_00AA4B08[index];
 }
 } // namespace lift_006A2B10
+
+// [0x006AD170] sub_006AD170 (12 bytes)
+namespace lift_006AD170 {
+// @name storeThroughPointerField_006AD170
+// @class <unknown>
+// @summary Stores the stack argument (32-bit) through the pointer held at this+0x04 (__thiscall, ret 4).
+// @field <unknown> +0x04 uint32_t* field_0x04
+void fn_006AD170(void* self, uint32_t value) {
+    uint32_t* target = lift_field<uint32_t*>(self, 0x04);
+    *target = value;
+}
+} // namespace lift_006AD170
