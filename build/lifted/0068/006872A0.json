@@ -1,0 +1,21 @@
+{
+  "va": "0x006872A0",
+  "size": 25,
+  "orig_symbol": "sub_006872A0",
+  "src_path": "src/leaf/tiny_680000.cpp",
+  "lifted_path": "lifted/leaf/tiny_680000.cpp",
+  "name": "writeByteIfFlagClear",
+  "signature": "void __thiscall sub_006872A0(uint8_t* self, uint8_t val, uint8_t* out, uint32_t mask)",
+  "summary": "Conditionally writes a byte to an output pointer if a bitmask at offset 0x150 is clear",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x150",
+      "type": "uint32_t",
+      "name": "field_0x150"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T11:54:56Z"
+}

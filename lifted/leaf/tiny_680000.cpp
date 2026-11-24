@@ -215,3 +215,17 @@ void __thiscall sub_00687280(void* this_ptr, uint32_t val, uint32_t* out, uint32
     }
 }
 } // namespace lift_00687280
+
+// [0x006872A0]
+namespace lift_006872A0 {
+// @name writeByteIfFlagClear
+// @summary Conditionally writes a byte to an output pointer if a bitmask at offset 0x150 is clear
+// @field unknown +0x150 uint32_t field_0x150
+
+
+void __thiscall sub_006872A0(uint8_t* self, uint8_t val, uint8_t* out, uint32_t mask) {
+    if ((*reinterpret_cast<const uint32_t*>(self + 0x150) & mask) == 0) {
+        *out = val;
+    }
+}
+} // namespace lift_006872A0
