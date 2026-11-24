@@ -62,3 +62,21 @@ extern uint32_t __thiscall fn_00593680(void* self) {
     return lift_field<uint32_t>(self, 0xE0);
 }
 } // namespace lift_00593680
+
+// [0x0058A550] AnimatableTransform::vfunc_1_off_8 (45 bytes)
+namespace lift_0058A550 {
+// @name AnimatableTransform::vfunc_1_off_8
+// @class AnimatableTransform
+// @summary Calls virtual slot 0 on self four times (indices 3..6), passing (arg1, index, arg2) each time.
+// @field AnimatableTransform +0x0 void* vtable
+
+void __thiscall fn_0058A550(void* self, uint32_t arg1, uint32_t arg2) {
+    void* vtable = lift_field<void*>(self, 0x0);
+    auto slot0 = reinterpret_cast<void (__thiscall*)(void*, uint32_t, uint32_t, uint32_t)>(
+        reinterpret_cast<void* const*>(vtable)[0]);
+
+    for (uint32_t i = 3; i < 7; ++i) {
+        slot0(self, arg1, i, arg2);
+    }
+}
+} // namespace lift_0058A550

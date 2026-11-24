@@ -1,0 +1,22 @@
+{
+  "va": "0x0058A550",
+  "size": 45,
+  "orig_symbol": "AnimatableTransform::vfunc_1_off_8",
+  "src_path": "src/classes/AnimatableTransform.cpp",
+  "lifted_path": "lifted/classes/AnimatableTransform.cpp",
+  "name": "AnimatableTransform::vfunc_1_off_8",
+  "class": "AnimatableTransform",
+  "signature": "void __thiscall fn_0058A550(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Calls virtual slot 0 on self four times (indices 3..6), passing (arg1, index, arg2) each time.",
+  "fields": [
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:07:02Z"
+}

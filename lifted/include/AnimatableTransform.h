@@ -10,7 +10,8 @@
 // Recovered field layout for AnimatableTransform:
 namespace lifted_layout {
 struct AnimatableTransform_Fields {
-    // +0x0   uint32_t                 vtable  (evidence: 0x00402060, 0x00535610, 0x00545B80, 0x00593680, 0x005A9ED0, 0x005FF1C0)
+    // +0x0   uint32_t                 vtable  (evidence: 0x00402060, 0x00535610, 0x00545B80, 0x00593680, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vtable  (evidence: 0x0058A550) // CONFLICT: multiple definitions at +0x0
     // +0x4   void*                    child  (evidence: 0x00528C10) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x004020E0, 0x00528C50, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    subobject  (evidence: 0x00528C30, 0x00535610) // CONFLICT: multiple definitions at +0x4

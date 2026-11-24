@@ -17358,6 +17358,13 @@
     "summary": "Initializes a std::string at arg1 with the global C-string at mem_00A9F3AC and returns arg1",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
+  "0x0058A550": {
+    "name": "AnimatableTransform::vfunc_1_off_8",
+    "class": "AnimatableTransform",
+    "signature": "void __thiscall fn_0058A550(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Calls virtual slot 0 on self four times (indices 3..6), passing (arg1, index, arg2) each time.",
+    "lifted_path": "lifted/classes/AnimatableTransform.cpp"
+  },
   "0x0058AB30": {
     "name": "QueryFloatViaMemberCallback",
     "signature": "float fn_0058AB30(void* self)",
