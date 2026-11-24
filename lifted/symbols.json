@@ -45717,6 +45717,13 @@
     "summary": "Appends one zero-initialized 20-byte entry to a dynamic array header (base ptr, count) and increments count.",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
+  "0x007F1480": {
+    "name": "CPU::hasSSE",
+    "class": "CPU",
+    "signature": "DWORD fn_007F1480(void)",
+    "summary": "Returns 0x02000000 if the CPU reports SSE support (CPUID leaf 1, EDX bit 25), otherwise 0.",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
   "0x007F2AC0": {
     "name": "MdtArthur::arthurSolver_vanilla::vfunc_0",
     "class": "MdtArthur::arthurSolver_vanilla",

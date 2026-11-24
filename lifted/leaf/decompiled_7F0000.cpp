@@ -29,3 +29,18 @@ void fn_007F0B60(void* self) {
     hdr[1] = count + 1u;
 }
 } // namespace lift_007F0B60
+
+// [0x007F1480] sub_007F1480 (36 bytes)
+namespace lift_007F1480 {
+// @name CPU::hasSSE
+// @class CPU
+// @summary Returns 0x02000000 if the CPU reports SSE support (CPUID leaf 1, EDX bit 25), otherwise 0.
+// @field CPU +0x00 DWORD (none) (no fields accessed)
+DWORD fn_007F1480(void) {
+#if defined(__GNUC__) || defined(__clang__)
+    return __builtin_cpu_supports("sse") ? 0x02000000u : 0u;
+#else
+    return 0u;
+#endif
+}
+} // namespace lift_007F1480

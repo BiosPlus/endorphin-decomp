@@ -1,0 +1,22 @@
+{
+  "va": "0x007F1480",
+  "size": 36,
+  "orig_symbol": "sub_007F1480",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "CPU::hasSSE",
+  "class": "CPU",
+  "signature": "DWORD fn_007F1480(void)",
+  "summary": "Returns 0x02000000 if the CPU reports SSE support (CPUID leaf 1, EDX bit 25), otherwise 0.",
+  "fields": [
+    {
+      "class": "CPU",
+      "offset": "+0x0",
+      "type": "DWORD (none) (no fields",
+      "name": "accessed)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:01:27Z"
+}
