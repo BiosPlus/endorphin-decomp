@@ -1,0 +1,34 @@
+{
+  "va": "0x00553A30",
+  "size": 20,
+  "orig_symbol": "sub_00553A30",
+  "src_path": "src/leaf/tiny_550000.cpp",
+  "lifted_path": "lifted/leaf/tiny_550000.cpp",
+  "name": "SetIndexedSlot (descriptive; owning class not yet identified)",
+  "class": "Unknown",
+  "signature": "void fn_00553A30(void* self, uint32_t index, uint32_t value)",
+  "summary": "Stores a 32-bit value into one of three slots (indices 0..2) at this+0x0C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t field_0x0C",
+      "name": "(slot[0])"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t field_0x10",
+      "name": "(slot[1])"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t field_0x14",
+      "name": "(slot[2])"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:07:23Z"
+}

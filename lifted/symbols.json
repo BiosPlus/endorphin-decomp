@@ -13263,6 +13263,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x24 and forwards through mem_00924FDC.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x00553A30": {
+    "name": "SetIndexedSlot (descriptive; owning class not yet identified)",
+    "class": "Unknown",
+    "signature": "void fn_00553A30(void* self, uint32_t index, uint32_t value)",
+    "summary": "Stores a 32-bit value into one of three slots (indices 0..2) at this+0x0C.",
+    "lifted_path": "lifted/leaf/tiny_550000.cpp"
+  },
   "0x00553E40": {
     "name": "sub_00553E40",
     "signature": "int32_t fn_00553E40(void* self)",

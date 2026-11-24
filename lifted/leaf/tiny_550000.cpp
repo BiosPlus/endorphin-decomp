@@ -110,3 +110,19 @@ void fn_0055DA20(DWORD* self, DWORD a, DWORD b) {
     self[1] = b;
 }
 } // namespace lift_0055DA20
+
+// [0x00553A30] sub_00553A30 (20 bytes)
+namespace lift_00553A30 {
+// @name SetIndexedSlot (descriptive; owning class not yet identified)
+// @class Unknown
+// @summary Stores a 32-bit value into one of three slots (indices 0..2) at this+0x0C.
+// @field Unknown +0x0C uint32_t field_0x0C (slot[0])
+// @field Unknown +0x10 uint32_t field_0x10 (slot[1])
+// @field Unknown +0x14 uint32_t field_0x14 (slot[2])
+void fn_00553A30(void* self, uint32_t index, uint32_t value) {
+    // Unsigned compare: indices above 2 are ignored.
+    if (index <= 2) {
+        lift_field<uint32_t>(self, 0x0C + static_cast<ptrdiff_t>(index) * 4) = value;
+    }
+}
+} // namespace lift_00553A30
