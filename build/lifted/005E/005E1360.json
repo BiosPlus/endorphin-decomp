@@ -1,0 +1,21 @@
+{
+  "va": "0x005E1360",
+  "size": 13,
+  "orig_symbol": "sub_005E1360",
+  "src_path": "src/leaf/tiny_5E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5E0000.cpp",
+  "name": "sub_005E1360_forwardVirtualSlot1Field234",
+  "signature": "static inline T mem_(const void* base, uintptr_t offset)",
+  "summary": "Loads the pointer at this+0x234 and tail-dispatches its vtable slot 1 with that pointer as `this`, returning the callee's result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x234",
+      "type": "void*",
+      "name": "field_0x234"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:21:40Z"
+}

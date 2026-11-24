@@ -16470,6 +16470,12 @@
     "summary": "Constructs a std::string from the literal at 0x0096B92C in the caller's sret buffer and returns that buffer.",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
+  "0x005E1360": {
+    "name": "sub_005E1360_forwardVirtualSlot1Field234",
+    "signature": "static inline T mem_(const void* base, uintptr_t offset)",
+    "summary": "Loads the pointer at this+0x234 and tail-dispatches its vtable slot 1 with that pointer as `this`, returning the callee's result.",
+    "lifted_path": "lifted/leaf/tiny_5E0000.cpp"
+  },
   "0x005E20F0": {
     "name": "NMData::SkeletalJointData::isAxisUnlocked",
     "class": "NMData::SkeletalJointData",
