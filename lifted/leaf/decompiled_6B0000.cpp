@@ -21,6 +21,7 @@ Unknown* fn_006B9D10(Unknown* ecx) {
     return esi;
 }
 } // namespace lift_006B9D10
+#include <cstring>
 
 // [0x006B9960] sub_006B9960 (16 bytes)
 namespace lift_006B9960 {
@@ -533,3 +534,64 @@ void fn_006B8190(void* self, DWORD unused, DWORD arg2, DWORD arg3) {
     ext_006A5E4E(reinterpret_cast<void*>(child), self, 0, 0, arg2, arg3, 0x214);
 }
 } // namespace lift_006B8190
+
+// [0x006BA2C0]
+namespace lift_006BA2C0 {
+extern uint8_t mem_00B5D2B4[];
+
+// @name StringBuffer::getCharPtrAt
+// @class StringBuffer
+// @summary Returns a pointer to the character at the given index if in bounds, otherwise clears and returns a fallback empty byte buffer.
+// @field StringBuffer +0x00 uint32_t data
+// @field StringBuffer +0x04 uint32_t size
+uint32_t __thiscall sub_006BA2C0(void* self, uint32_t index) {
+    uint32_t size = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x04);
+    if (index < size) {
+        uint32_t data = *reinterpret_cast<uint32_t*>(self);
+        return data + index;
+    }
+    mem_00B5D2B4[0] = 0;
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00B5D2B4));
+}
+} // namespace lift_006BA2C0
+
+// [0x006BA2F0]
+namespace lift_006BA2F0 {
+// @name String::reverseFind
+// @class String
+// @summary Finds the last occurrence of a character in the string and returns its index, or -1 if not found.
+// @field String +0x00 const char* m_data
+
+int32_t __thiscall sub_006BA2F0(void* self, char ch) {
+    const char* str = *reinterpret_cast<const char* const*>(self);
+    const char* found = std::strrchr(str, static_cast<int>(ch));
+    if (!found) {
+        return -1;
+    }
+    return static_cast<int32_t>(found - str);
+}
+} // namespace lift_006BA2F0
+
+// [0x006B9990]
+namespace lift_006B9990 {
+extern uint8_t mem_00B5D2B8[];
+extern uint8_t mem_00B5D2BC[];
+extern void __thiscall ext_006B9910(void* ecx);
+
+// @name Unknown::detachBuffer
+// @class Unknown
+// @summary Detaches the heap buffer into out if it is not a static sentinel or inline buffer, then resets the object.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x0C uint8_t field_0x0C
+void __thiscall sub_006B9990(void* ecx, uint32_t* out) {
+    *out = 0;
+    uint32_t val = *reinterpret_cast<uint32_t*>(ecx);
+    uint32_t inline_buf = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(ecx) + 0xC);
+    if (val != static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00B5D2B8)) &&
+        val != static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00B5D2BC)) &&
+        val != inline_buf) {
+        *out = val;
+    }
+    ext_006B9910(ecx);
+}
+} // namespace lift_006B9990
