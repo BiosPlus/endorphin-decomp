@@ -125,3 +125,35 @@ uint8_t fn_005E1310(void* self) {
     return target(sub);
 }
 } // namespace lift_005E1310
+
+// [0x005E1740] sub_005E1740 (23 bytes)
+namespace lift_005E1740 {
+// @name QueryChildVirtualOrTrue
+// @class <unknown> (object type not identified; only offset +0x234 is known)
+// @summary Forwards a virtual query (vtable slot 54) to the object at +0x234 if present, otherwise returns 1.
+// @field <unknown> +0x234 uint32_t field_0x234
+// (vtable slot at +0xD8 used on the child object; no fields accessed on the child itself)
+uint32_t fn_005E1740(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+
+    uint32_t child_addr = 0;
+    std::memcpy(&child_addr, obj + 0x234, sizeof(child_addr));
+
+    if (child_addr == 0) {
+        return 1;
+    }
+
+    uint8_t* child = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(child_addr));
+
+    uint32_t vtbl_addr = 0;
+    std::memcpy(&vtbl_addr, child, sizeof(vtbl_addr));
+    uint8_t* vtbl = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(vtbl_addr));
+
+    uint32_t method_addr = 0;
+    std::memcpy(&method_addr, vtbl + 0xD8, sizeof(method_addr));
+
+    using VirtualFn = uint32_t(__thiscall*)(void*);
+    auto fn = reinterpret_cast<VirtualFn>(static_cast<uintptr_t>(method_addr));
+    return fn(child);
+}
+} // namespace lift_005E1740

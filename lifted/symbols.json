@@ -18602,6 +18602,13 @@
     "summary": "Loads the pointer at this+0x234 and tail-dispatches its vtable slot 1 with that pointer as `this`, returning the callee's result.",
     "lifted_path": "lifted/leaf/tiny_5E0000.cpp"
   },
+  "0x005E1740": {
+    "name": "QueryChildVirtualOrTrue",
+    "class": "\u003cunknown\u003e (object type not identified; only offset +0x234 is known)",
+    "signature": "uint32_t fn_005E1740(void* self)",
+    "summary": "Forwards a virtual query (vtable slot 54) to the object at +0x234 if present, otherwise returns 1.",
+    "lifted_path": "lifted/leaf/tiny_5E0000.cpp"
+  },
   "0x005E20F0": {
     "name": "NMData::SkeletalJointData::isAxisUnlocked",
     "class": "NMData::SkeletalJointData",
