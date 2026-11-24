@@ -34,3 +34,22 @@ extern unsigned char fn_007AEF70(void) {
     return 0;
 }
 } // namespace lift_007AEF70
+
+// [0x007AA8F0]
+namespace lift_007AA8F0 {
+// @name Unknown::SetIndexedDwordIfInRange
+// @class Unknown
+// @summary Stores a dword into this->field_0xF0[index] when 0 < index < 0x12; otherwise does nothing. Callee pops 8 bytes (__thiscall-style, stdcall-like ret 8).
+// @field Unknown +0xF0 int32_t field_0xF0 (indexed array base; element stride 4, indices 1..17)
+
+struct Unknown {
+    uint8_t pad_0000[0xF0];
+    int32_t field_0xF0[18];
+};
+
+void Unknown_SetIndexedDwordIfInRange(Unknown* self, int32_t index, int32_t value) {
+    if (index > 0 && index < 0x12) {
+        self->field_0xF0[index] = value;
+    }
+}
+} // namespace lift_007AA8F0

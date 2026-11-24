@@ -1,0 +1,22 @@
+{
+  "va": "0x007AA8F0",
+  "size": 32,
+  "orig_symbol": "sub_007AA8F0",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "Unknown::SetIndexedDwordIfInRange",
+  "class": "Unknown",
+  "signature": "void Unknown_SetIndexedDwordIfInRange(Unknown* self, int32_t index, int32_t value)",
+  "summary": "Stores a dword into this-\u003efield_0xF0[index] when 0 \u003c index \u003c 0x12; otherwise does nothing. Callee pops 8 bytes (__thiscall-style, stdcall-like ret 8).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF0",
+      "type": "int32_t field_0xF0 (indexed array base; element stride 4, indices",
+      "name": "1..17)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:46:55Z"
+}
