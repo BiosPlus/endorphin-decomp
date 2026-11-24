@@ -1,0 +1,13 @@
+{
+  "va": "0x0071E070",
+  "size": 57,
+  "orig_symbol": "sub_0071E070",
+  "src_path": "src/clones/auto_clones_710000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_710000.cpp",
+  "name": "initHugeVector",
+  "signature": "void sub_0071E070()",
+  "summary": "Initializes three 64-bit values from MSVCR80!_HUGE",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:25:11Z"
+}
