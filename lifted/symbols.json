@@ -39907,6 +39907,13 @@
     "summary": "Initializes a 16-byte object: stores arg2 at +0x00, zeroes +0x04 and +0x08, stores arg1 at +0x0C (thiscall, ret 8).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E6850": {
+    "name": "ForwardFlagThenNotifySecondary",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __thiscall fn_006E6850(void* self, uint32_t flags)",
+    "summary": "Thiscall: forwards the low byte of flags to vtable slot 30 (offset 0x78) of the object at +0x00, then calls vtable slot 74 (offset 0x128) of the object at +0x04 passing this; each step is skipped when its pointer is null.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E6970": {
     "name": "ForwardToSubobjectsVfunc",
     "signature": "void fn_006E6970(void* self, void* arg)",

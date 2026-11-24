@@ -1,0 +1,28 @@
+{
+  "va": "0x006E6850",
+  "size": 48,
+  "orig_symbol": "sub_006E6850",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "ForwardFlagThenNotifySecondary",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __thiscall fn_006E6850(void* self, uint32_t flags)",
+  "summary": "Thiscall: forwards the low byte of flags to vtable slot 30 (offset 0x78) of the object at +0x00, then calls vtable slot 74 (offset 0x128) of the object at +0x04 passing this; each step is skipped when its pointer is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:20:37Z"
+}

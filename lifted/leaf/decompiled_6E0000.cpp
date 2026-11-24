@@ -568,3 +568,34 @@ void fn_006E6970(void* self, void* arg) {
     }
 }
 } // namespace lift_006E6970
+
+// [0x006E6850] sub_006E6850 (48 bytes)
+namespace lift_006E6850 {
+// @name ForwardFlagThenNotifySecondary
+// @class Unknown
+// @summary Thiscall: forwards the low byte of flags to vtable slot 30 (offset 0x78) of the object at +0x00, then calls vtable slot 74 (offset 0x128) of the object at +0x04 passing this; each step is skipped when its pointer is null.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+extern void __thiscall fn_006E6850(void* self, uint32_t flags) {
+    // Target is 32-bit: fields and vtable slots are 4-byte entries.
+    uint32_t* fields = static_cast<uint32_t*>(self);
+
+    uint32_t first = fields[0x00 / 4];
+    if (first != 0) {
+        uint32_t* obj = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(first));
+        uint32_t* vtable = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(obj[0]));
+        using FirstFn = void (*)(void* thisPtr, uint32_t arg);
+        auto fn = reinterpret_cast<FirstFn>(static_cast<uintptr_t>(vtable[0x78 / 4]));
+        fn(obj, flags & 0xFFu);
+    }
+
+    uint32_t second = fields[0x04 / 4];
+    if (second != 0) {
+        uint32_t* obj = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(second));
+        uint32_t* vtable = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(obj[0]));
+        using SecondFn = void (*)(void* thisPtr, void* arg);
+        auto fn = reinterpret_cast<SecondFn>(static_cast<uintptr_t>(vtable[0x128 / 4]));
+        fn(obj, self);
+    }
+}
+} // namespace lift_006E6850
