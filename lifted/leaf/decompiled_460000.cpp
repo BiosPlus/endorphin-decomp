@@ -731,3 +731,26 @@ uint32_t __thiscall sub_00469570(uint8_t* self, uint32_t index) {
     return begin_after[index];
 }
 } // namespace lift_00469570
+
+// [0x0046A510]
+namespace lift_0046A510 {
+// @name std::_Tree::_Erase
+// @summary Recursively frees all non-nil nodes in a red-black tree subtree
+// @field TreeNode +0x00 uint32_t left
+// @field TreeNode +0x08 uint32_t right
+// @field TreeNode +0x11 uint8_t is_nil
+
+
+extern uint8_t mem_u8(uint32_t addr);
+extern uint32_t mem_u32(uint32_t addr);
+extern void ext_006A5C5C(uint32_t ptr);
+
+void __thiscall fn_0046A510(uint32_t self, uint32_t node) {
+    while (mem_u8(node + 0x11) == 0) {
+        fn_0046A510(self, mem_u32(node + 0x08));
+        uint32_t left = mem_u32(node + 0x00);
+        ext_006A5C5C(node);
+        node = left;
+    }
+}
+} // namespace lift_0046A510
