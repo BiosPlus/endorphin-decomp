@@ -5,6 +5,13 @@
     "summary": "Calls callback once per element of a stride-spaced array, passing each element's address as self; runs `count` times when count \u003e 0, otherwise does nothing.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00401080": {
+    "name": "CWnd::SetFont",
+    "class": "CWnd",
+    "signature": "uint32_t __thiscall sub_00401080(void* this_ptr, void* font, uint32_t redraw)",
+    "summary": "Sends WM_SETFONT to the window handle with the font handle (or 0 if null) and redraw flag.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x004010C0": {
     "name": "AddCharacterDialog::vfunc_64",
     "class": "AddCharacterDialog",
