@@ -24581,6 +24581,18 @@
     "summary": "Sets flag bit 0x8 in the dword at +0x20 to the given byte value, toggling it only when its current state differs.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x006423F0": {
+    "name": "sub_006423F0",
+    "signature": "void fn_006423F0(void* self, uint8_t want)",
+    "summary": "Auto-lifted identical-shape clone of 0x00642390 (ToggleFlagBit0IfMismatch).",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
+  "0x00642410": {
+    "name": "sub_00642410",
+    "signature": "void fn_00642410(void* self, uint8_t want)",
+    "summary": "Auto-lifted identical-shape clone of 0x00642390 (ToggleFlagBit0IfMismatch).",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
   "0x00642500": {
     "name": "MainPhysicsAdapter::vfunc_0_off_8",
     "class": "MainPhysicsAdapter",

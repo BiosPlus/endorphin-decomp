@@ -1,0 +1,21 @@
+{
+  "va": "0x00642410",
+  "size": 29,
+  "orig_symbol": "sub_00642410",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "sub_00642410",
+  "signature": "void fn_00642410(void* self, uint8_t want)",
+  "summary": "Auto-lifted identical-shape clone of 0x00642390 (ToggleFlagBit0IfMismatch).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:13:40Z"
+}

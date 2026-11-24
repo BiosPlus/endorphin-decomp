@@ -872,3 +872,43 @@ void __thiscall fn_006423D0(void* self, uint8_t want) {
     }
 }
 } // namespace lift_006423D0
+
+// [0x006423F0] sub_006423F0 (29 bytes)
+namespace lift_006423F0 {
+// @name sub_006423F0
+// @summary Auto-lifted identical-shape clone of 0x00642390 (ToggleFlagBit0IfMismatch).
+namespace lift_00642390 {
+// @name ToggleFlagBit0IfMismatch
+// @summary If bit 0 of the dword at self+0x20 differs from the byte argument, flip bit 0 and store back.
+// @field Unknown +0x20 uint32_t field_0x20
+void fn_006423F0(void* self, uint8_t want) {
+    auto* flags = reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x20);
+    uint32_t v = *flags;
+    uint8_t cur = static_cast<uint8_t>((v & 16u) == 16u);
+    if (cur != want) {
+        v ^= 16u;
+        *flags = v;
+    }
+}
+} // namespace lift_00642390
+} // namespace lift_006423F0
+
+// [0x00642410] sub_00642410 (29 bytes)
+namespace lift_00642410 {
+// @name sub_00642410
+// @summary Auto-lifted identical-shape clone of 0x00642390 (ToggleFlagBit0IfMismatch).
+namespace lift_00642390 {
+// @name ToggleFlagBit0IfMismatch
+// @summary If bit 0 of the dword at self+0x20 differs from the byte argument, flip bit 0 and store back.
+// @field Unknown +0x20 uint32_t field_0x20
+void fn_00642410(void* self, uint8_t want) {
+    auto* flags = reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x20);
+    uint32_t v = *flags;
+    uint8_t cur = static_cast<uint8_t>((v & 32u) == 32u);
+    if (cur != want) {
+        v ^= 32u;
+        *flags = v;
+    }
+}
+} // namespace lift_00642390
+} // namespace lift_00642410
