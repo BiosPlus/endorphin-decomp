@@ -1,0 +1,22 @@
+{
+  "va": "0x006829E0",
+  "size": 20,
+  "orig_symbol": "sub_006829E0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "VTableDispatch::GetTableEntry28ViaSlot30",
+  "class": "VTableDispatch",
+  "signature": "void* fn_006829E0(void* self)",
+  "summary": "Loads the object at this+0x28, calls its vtable slot at +0x30 to obtain an index, and returns GetTableEntry28Address(index).",
+  "fields": [
+    {
+      "class": "VTableDispatch",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "target"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:25:30Z"
+}

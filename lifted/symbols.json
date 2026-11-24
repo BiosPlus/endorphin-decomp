@@ -26155,6 +26155,13 @@
     "summary": "Stores the 32-bit argument into global mem_00B5ACC8.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
+  "0x006829E0": {
+    "name": "VTableDispatch::GetTableEntry28ViaSlot30",
+    "class": "VTableDispatch",
+    "signature": "void* fn_006829E0(void* self)",
+    "summary": "Loads the object at this+0x28, calls its vtable slot at +0x30 to obtain an index, and returns GetTableEntry28Address(index).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00682C20": {
     "name": "NMData::ValuePtrData::vfunc_19",
     "class": "NMData::ValuePtrData",
