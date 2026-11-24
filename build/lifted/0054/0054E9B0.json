@@ -1,0 +1,40 @@
+{
+  "va": "0x0054E9B0",
+  "size": 30,
+  "orig_symbol": "OptimizedMatrixStackManager::vfunc_5",
+  "src_path": "src/classes/OptimizedMatrixStackManager.cpp",
+  "lifted_path": "lifted/classes/OptimizedMatrixStackManager.cpp",
+  "name": "OptimizedMatrixStackManager::vfunc_5",
+  "class": "OptimizedMatrixStackManager",
+  "signature": "uint32_t fn_0054E9B0(void* self)",
+  "summary": "Compares the int at +0x4 against the int at +0x8; if less, tail-dispatches vtable slot 5 of the object at +0x20 with this = self+0x20, otherwise does the same via the object at +0xC with this = self+0xC. Returns the callee's result.",
+  "fields": [
+    {
+      "class": "OptimizedMatrixStackManager",
+      "offset": "+0x4",
+      "type": "int32_t field_0x04 (current index, signed",
+      "name": "compare)"
+    },
+    {
+      "class": "OptimizedMatrixStackManager",
+      "offset": "+0x8",
+      "type": "int32_t field_0x08 (limit, signed",
+      "name": "compare)"
+    },
+    {
+      "class": "OptimizedMatrixStackManager",
+      "offset": "+0xC",
+      "type": "void* field_0x0c (sub-object pointer; its vtable slot 5 is called when index \u003e=",
+      "name": "limit)"
+    },
+    {
+      "class": "OptimizedMatrixStackManager",
+      "offset": "+0x20",
+      "type": "void* field_0x20 (sub-object pointer; its vtable slot 5 is called when index \u003c",
+      "name": "limit)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:17:56Z"
+}

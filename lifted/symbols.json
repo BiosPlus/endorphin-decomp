@@ -14530,6 +14530,13 @@
     "summary": "IAT jump thunk forwarding to OPENGL32!glPopMatrix.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0054E9B0": {
+    "name": "OptimizedMatrixStackManager::vfunc_5",
+    "class": "OptimizedMatrixStackManager",
+    "signature": "uint32_t fn_0054E9B0(void* self)",
+    "summary": "Compares the int at +0x4 against the int at +0x8; if less, tail-dispatches vtable slot 5 of the object at +0x20 with this = self+0x20, otherwise does the same via the object at +0xC with this = self+0xC. Returns the callee's result.",
+    "lifted_path": "lifted/classes/OptimizedMatrixStackManager.cpp"
+  },
   "0x0054E9D0": {
     "name": "OptimizedMatrixStackManager::vfunc_7",
     "class": "OptimizedMatrixStackManager",
