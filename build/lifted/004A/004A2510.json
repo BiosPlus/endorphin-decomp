@@ -1,0 +1,28 @@
+{
+  "va": "0x004A2510",
+  "size": 17,
+  "orig_symbol": "sub_004A2510",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "Unknown::setFlag4AndForwardToSlot1",
+  "class": "Unknown",
+  "signature": "uint32_t fn_004A2510(void* self)",
+  "summary": "Sets byte +0x04 of the object at self+0x14, then tail-calls vtable slot 1 of the object at self+0x1C (passing it as this) and returns that result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:52:14Z"
+}

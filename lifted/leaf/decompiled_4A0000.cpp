@@ -21,3 +21,21 @@ void fn_004AEC60(void* self) {
     target(static_cast<uint8_t*>(sub) + 0x08);
 }
 } // namespace lift_004AEC60
+
+// [0x004A2510] sub_004A2510 (17 bytes)
+namespace lift_004A2510 {
+// @name Unknown::setFlag4AndForwardToSlot1
+// @class Unknown
+// @summary Sets byte +0x04 of the object at self+0x14, then tail-calls vtable slot 1 of the object at self+0x1C (passing it as this) and returns that result.
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x1C void* field_0x1C
+uint32_t fn_004A2510(void* self) {
+    void* flagOwner = lift_field<void*>(self, 0x14);
+    lift_field<uint8_t>(flagOwner, 0x04) = 1;
+
+    void* target = lift_field<void*>(self, 0x1C);
+    void** vtable = *reinterpret_cast<void***>(target);
+    using Slot1Fn = uint32_t (*)(void* self);
+    return reinterpret_cast<Slot1Fn>(vtable[1])(target);
+}
+} // namespace lift_004A2510
