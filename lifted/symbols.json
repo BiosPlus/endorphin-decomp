@@ -8562,6 +8562,13 @@
     "summary": "Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0049CB10": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4",
+    "class": "ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e",
+    "signature": "extern \"C\" void* __thiscall fn_0049CB10(void* self, void* out_str, void** target_ptr)",
+    "summary": "Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0049CCC0": {
     "name": "NMData::NameTableLoader::vfunc_1",
     "class": "NMData::NameTableLoader",

@@ -32845,3 +32845,27 @@ void* __thiscall fn_00471E20(void* self, void* out_str, void** obj_ptr) {
     return out_str;
 }
 } // namespace lift_00471E20
+
+// [0x0049CB10]
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_0049AA20(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_0049CB10(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_0049AA20(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
