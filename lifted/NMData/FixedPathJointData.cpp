@@ -213,3 +213,70 @@ void fn_005ECB10(void* self, uint32_t arg0) {
     }
 }
 } // namespace lift_005ECB10
+
+// [0x005E4850] NMData::FixedPathJointData::vfunc_68 (140 bytes)
+namespace lift_005E4850 {
+// Known callee 0x005E12F0: Unknown::forwardToChildSlot7 (If the child pointer at +0x234 is non-null, tail-calls its vtable slot at byte offset 0x1C with the child as this; otherwise returns.)
+extern void ext_005E12F0(void* self);
+// Known callee 0x006622D0 (24B): takes ecx = arg2 and one stack argument (this+0x154).
+extern void ext_006622D0(void* ecx, void* stack0);
+
+// @name NMData::FixedPathJointData::vfunc_68
+// @class NMData::FixedPathJointData
+// @summary Steps the state byte at +0x194 (1..6) down to the requested level arg1, calling the forward/notify helpers when leaving level 5.
+// @field NMData::FixedPathJointData +0x154 void* field_0x154
+// @field NMData::FixedPathJointData +0x194 int32_t field_0x194
+extern void __fastcall fn_005E4850(void* self, int edx_unused, int arg1, void* arg2) {
+    (void)edx_unused;
+    int32_t& state = lift_field<int32_t>(self, 0x194);
+
+    const uint32_t idx = static_cast<uint32_t>(state) - 1u;
+    if (idx > 5u) {
+        return;
+    }
+
+    switch (idx) {
+        case 0: goto set0;
+        case 1: goto set1;
+        case 2: goto set2;
+        case 3: goto set3;
+        case 4: goto set4;
+        default: goto set5;
+    }
+
+set5:
+    state = 5;
+    if (arg1 == 5) {
+        return;
+    }
+    ext_005E12F0(self);
+    ext_006622D0(arg2, static_cast<char*>(self) + 0x154);
+
+set4:
+    state = 4;
+    if (arg1 == 4) {
+        return;
+    }
+
+set3:
+    state = 3;
+    if (arg1 == 3) {
+        return;
+    }
+
+set2:
+    state = 2;
+    if (arg1 == 2) {
+        return;
+    }
+
+set1:
+    state = 1;
+    if (arg1 == 1) {
+        return;
+    }
+
+set0:
+    state = 0;
+}
+} // namespace lift_005E4850

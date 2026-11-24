@@ -17,11 +17,13 @@ struct NMData_FixedPathJointData_Fields {
     // +0xB0  void*                    field_0xB0  (evidence: 0x005E09B0)
     // +0xE0  void* field_0xe0 (object pointer; its vtable slot at +0xAC is called)  (evidence: 0x005E0E70, 0x005E1060, 0x005ECCF0)
     // +0x140 int32_t field_0x140 (non-zero disables the function)  (evidence: 0x005E0E70, 0x005E1060, 0x005ECCF0)
+    // +0x154 void*                    field_0x154  (evidence: 0x005E4850)
     // +0x178 void*                    field_0x178  (evidence: 0x005E1060)
     // +0x17C uint32_t field_0x17c (non-zero selects the tail call for codes 0x40/0x137)  (evidence: 0x005E1060, 0x005E29F0, 0x005ECCF0)
     // +0x180 uint32_t field_0x180 (non-zero selects the tail call for codes 0x40/0x137/0x158)  (evidence: 0x005E1060, 0x005E29F0, 0x005ECCF0)
     // +0x184 void*                    field_0x184  (evidence: 0x005E02D0)
     // +0x18C void*                    field_0x18C  (evidence: 0x005E09B0)
+    // +0x194 int32_t                  field_0x194  (evidence: 0x005E4850)
     // +0x1F8 void**                   childBegin  (evidence: 0x005ECB10)
     // +0x1FC void**                   childEnd  (evidence: 0x005ECB10)
 };

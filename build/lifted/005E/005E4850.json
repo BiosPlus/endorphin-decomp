@@ -1,0 +1,28 @@
+{
+  "va": "0x005E4850",
+  "size": 140,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_68",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_68",
+  "class": "NMData::FixedPathJointData",
+  "signature": "extern \"C\" void __fastcall fn_005E4850(void* self, int edx_unused, int arg1, void* arg2)",
+  "summary": "Steps the state byte at +0x194 (1..6) down to the requested level arg1, calling the forward/notify helpers when leaving level 5.",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x154",
+      "type": "void*",
+      "name": "field_0x154"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x194",
+      "type": "int32_t",
+      "name": "field_0x194"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:36:11Z"
+}

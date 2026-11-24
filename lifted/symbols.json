@@ -22873,6 +22873,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x005E4850": {
+    "name": "NMData::FixedPathJointData::vfunc_68",
+    "class": "NMData::FixedPathJointData",
+    "signature": "extern \"C\" void __fastcall fn_005E4850(void* self, int edx_unused, int arg1, void* arg2)",
+    "summary": "Steps the state byte at +0x194 (1..6) down to the requested level arg1, calling the forward/notify helpers when leaving level 5.",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005E4E90": {
     "name": "ExprParser::ReadMethodType\u003cNMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cNMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0\u003e",
