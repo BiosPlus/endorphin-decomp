@@ -240,3 +240,19 @@ int fn_005B67A0(void* self) {
     return ext_00647FD0(reinterpret_cast<void*>(next));
 }
 } // namespace lift_005B67A0
+
+// [0x005B2130] sub_005B2130 (23 bytes)
+namespace lift_005B2130 {
+// @name Unknown::ForwardArgToSubobjectVfunc5
+// @class Unknown
+// @summary Forwards its single stack argument, together with self, to virtual slot 5 of the object stored at +0x0C; returns that call's result.
+// @field Unknown +0x0C void* field_0x0c
+DWORD fn_005B2130(void* self, DWORD arg) {
+    using SlotFn = DWORD(__thiscall*)(void* obj, void* ctx, DWORD value);
+
+    void* obj = lift_field<void*>(self, 0x0C);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    SlotFn slot5 = reinterpret_cast<SlotFn>(vtbl[5]);
+    return slot5(obj, self, arg);
+}
+} // namespace lift_005B2130

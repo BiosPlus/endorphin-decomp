@@ -91,7 +91,7 @@ struct Unknown_Fields {
     // +0xC   uint8_t                  field_0x0C  (evidence: 0x00790D60, 0x0079ADA0, 0x0079DCE0, 0x0079EB70) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0x0C  (evidence: 0x006D9060, 0x0071C960, 0x007DFDC0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0x0c  (evidence: 0x00783790, 0x00790D60, 0x0079ADA0, 0x0079DCE0) // CONFLICT: multiple definitions at +0xC
-    // +0xC   void*                    field_0x0c  (evidence: 0x0071C740, 0x0071C8D0, 0x0071C970) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    field_0x0c  (evidence: 0x005B2130, 0x0071C740, 0x0071C8D0, 0x0071C970) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0xc  (evidence: 0x007D4B20) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0C (sub-object that receives the value via vfunc_8)  (evidence: 0x005853E0) // CONFLICT: multiple definitions at +0xC
     // +0x10  uint32_t field_0x10      (slot[1])  (evidence: 0x00553A30) // CONFLICT: multiple definitions at +0x10

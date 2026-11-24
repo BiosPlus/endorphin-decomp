@@ -15982,6 +15982,13 @@
     "summary": "Returns s2 * pi * m^2 where m = (s1 + s0) / 2 (rounded to float) and s_k = ext_005B11E0(k); the float argument is overwritten before being read, so it is unused.",
     "lifted_path": "lifted/Geometry/FrustumType.cpp"
   },
+  "0x005B2130": {
+    "name": "Unknown::ForwardArgToSubobjectVfunc5",
+    "class": "Unknown",
+    "signature": "DWORD fn_005B2130(void* self, DWORD arg)",
+    "summary": "Forwards its single stack argument, together with self, to virtual slot 5 of the object stored at +0x0C; returns that call's result.",
+    "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
+  },
   "0x005B2150": {
     "name": "ExprParser::ReadMethodType\u003cGeometry,getParam0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam0(void) const, 0\u003e",
