@@ -225,3 +225,34 @@ uint32_t sub_00596330() {
     return val - 1;
 }
 } // namespace lift_00596330
+
+// [0x00596370]
+namespace lift_00596370 {
+// @name getGlobalListFrontMinusOne
+// @summary Validates a global list iterator at [0xB40644]+8 and returns its node value minus one (or 0 if zero)
+
+
+extern uint32_t mem_00B40644;
+extern uint32_t mem_00925134;
+
+uint32_t sub_00596370() {
+    auto esi = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00B40644) + 8);
+    auto invalid_param = reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134));
+
+    if (esi[0] == 0) {
+        invalid_param();
+    }
+
+    const auto* proxy = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(esi[0]));
+    if (esi[1] == proxy[1]) {
+        invalid_param();
+    }
+
+    const auto* current_node = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(esi[1]));
+    uint32_t val = current_node[2];
+    if (val != 0) {
+        return val - 1;
+    }
+    return 0;
+}
+} // namespace lift_00596370

@@ -1,0 +1,13 @@
+{
+  "va": "0x00596370",
+  "size": 53,
+  "orig_symbol": "sub_00596370",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "getGlobalListFrontMinusOne",
+  "signature": "uint32_t sub_00596370()",
+  "summary": "Validates a global list iterator at [0xB40644]+8 and returns its node value minus one (or 0 if zero)",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:15:43Z"
+}
