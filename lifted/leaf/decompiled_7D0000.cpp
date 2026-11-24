@@ -74,3 +74,28 @@ void fn_007D5C80(uint32_t arg0, uint32_t arg1) {
     target(arg0 + 0x6C, arg1);
 }
 } // namespace lift_007D5C80
+
+// [0x007DC8C0] sub_007DC8C0 (37 bytes)
+namespace lift_007DC8C0 {
+// @name SearchKeyedTable16
+// @class <none>
+// @summary Scans a 12-byte-stride table of 16-bit keys (terminated by 0x24) from `p`
+//          and returns the first entry whose key matches `key`, or the terminator entry.
+// @field <none>
+uint8_t* fn_007DC8C0(uint8_t* p, int32_t key) {
+    uint16_t k = *reinterpret_cast<uint16_t*>(p);
+    if (k == 0x24) {
+        return p;
+    }
+    for (;;) {
+        if (static_cast<int32_t>(static_cast<int16_t>(k)) == key) {
+            return p;
+        }
+        p += 12;
+        k = *reinterpret_cast<uint16_t*>(p);
+        if (k == 0x24) {
+            return p;
+        }
+    }
+}
+} // namespace lift_007DC8C0

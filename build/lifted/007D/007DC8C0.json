@@ -1,0 +1,14 @@
+{
+  "va": "0x007DC8C0",
+  "size": 37,
+  "orig_symbol": "sub_007DC8C0",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "SearchKeyedTable16",
+  "class": "\u003cnone\u003e",
+  "signature": "uint8_t* fn_007DC8C0(uint8_t* p, int32_t key)",
+  "summary": "Scans a 12-byte-stride table of 16-bit keys (terminated by 0x24) from `p`",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:48:02Z"
+}
