@@ -4877,6 +4877,13 @@
     "summary": "Loads the object pointer stored at *self; if non-null, calls its vtable slot 1 with that object as this (tail call).",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00494050": {
+    "name": "ResetStateToMinusOne",
+    "class": "\u003cClassName\u003e (unknown; no class recovered yet)",
+    "signature": "void fn_00494050(void* self)",
+    "summary": "Sets the first dword of the object to -1 and clears the next two dwords to 0.",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
   "0x00494060": {
     "name": "sub_00494060",
     "signature": "void __thiscall sub_00494060(void* self, uint32_t mask)",

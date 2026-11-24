@@ -242,3 +242,18 @@ void fn_00493E90(void* self) {
     target(obj);
 }
 } // namespace lift_00493E90
+
+// [0x00494050] sub_00494050 (15 bytes)
+namespace lift_00494050 {
+// @name ResetStateToMinusOne
+// @class <ClassName> (unknown; no class recovered yet)
+// @summary Sets the first dword of the object to -1 and clears the next two dwords to 0.
+// @field <ClassName> +0x00 int32_t field_0x00
+// @field <ClassName> +0x04 uint32_t field_0x04
+// @field <ClassName> +0x08 uint32_t field_0x08
+void fn_00494050(void* self) {
+    lift_field<int32_t>(self, 0x00) = -1;
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+}
+} // namespace lift_00494050

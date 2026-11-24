@@ -1,0 +1,34 @@
+{
+  "va": "0x00494050",
+  "size": 15,
+  "orig_symbol": "sub_00494050",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "ResetStateToMinusOne",
+  "class": "\u003cClassName\u003e (unknown; no class recovered yet)",
+  "signature": "void fn_00494050(void* self)",
+  "summary": "Sets the first dword of the object to -1 and clears the next two dwords to 0.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:29:07Z"
+}
