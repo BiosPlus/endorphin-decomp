@@ -4,11 +4,55 @@
   "orig_symbol": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}\u003e::vfunc_40",
   "src_path": "src/templates/Method0Type.cpp",
   "lifted_path": "lifted/templates/Method0Type.cpp",
-  "name": "Method0Type\u003cMetaBodyConstraintData, fireDisable\u003e::vfunc_40",
-  "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}\u003e",
-  "signature": "void fn_004CA850(void* self)",
-  "summary": "One-time initializes the static function-object at 0x00AE4490 (guarded by bit 0 of 0x00AE4494), then points self+0x04 at it.",
+  "name": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2",
+  "class": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}\u003e",
+  "signature": "int fn_0060A070(void* self)",
+  "summary": "Forwards the object's first dword to ext_00493D90 and returns 0 (stdcall, one arg).",
+  "fields": [
+    {
+      "class": "ExprParser::Method0Type",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "std::string",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ExprParser::Method0Type",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "valuePtr"
+    },
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "valuePtr"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T14:45:56Z"
+  "lifted_at": "2026-11-24T14:46:03Z"
 }
