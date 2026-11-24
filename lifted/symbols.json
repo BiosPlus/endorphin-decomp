@@ -11442,6 +11442,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00544A00": {
+    "name": "ReshapeTool::vfunc_15",
+    "class": "ReshapeTool",
+    "signature": "void fn_00544A00(void* self)",
+    "summary": "Thunk: adjusts this by +0x9C to the ToolClient base, then tail-dispatches vtable slot 15 (+0x3C).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00544A90": {
     "name": "ReshapeTool::vfunc_31",
     "class": "ReshapeTool",

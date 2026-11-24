@@ -5109,3 +5109,18 @@ int32_t fn_00546860(void* self) {
     return lift_field<int32_t>(self, 0xA8) == 4 ? 1 : 0;
 }
 } // namespace lift_00546860
+
+// [0x00544A00] ReshapeTool::vfunc_15 (13 bytes)
+namespace lift_00544A00 {
+// @name ReshapeTool::vfunc_15
+// @class ReshapeTool
+// @summary Thunk: adjusts this by +0x9C to the ToolClient base, then tail-dispatches vtable slot 15 (+0x3C).
+// @field ReshapeTool +0x9C uint32_t* field_0x9C
+void fn_00544A00(void* self) {
+    // Thunk for ToolClient base: this += 0x9C, then vtable[0x3C] called with adjusted this.
+    uint8_t* adjusted = static_cast<uint8_t*>(self) + 0x9C;
+    uint8_t* vtbl = *reinterpret_cast<uint8_t**>(adjusted);
+    void* target = *reinterpret_cast<void**>(vtbl + 0x3C);
+    (void)target;
+}
+} // namespace lift_00544A00

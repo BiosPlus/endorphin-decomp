@@ -1,0 +1,22 @@
+{
+  "va": "0x00544A00",
+  "size": 13,
+  "orig_symbol": "ReshapeTool::vfunc_15",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ReshapeTool::vfunc_15",
+  "class": "ReshapeTool",
+  "signature": "void fn_00544A00(void* self)",
+  "summary": "Thunk: adjusts this by +0x9C to the ToolClient base, then tail-dispatches vtable slot 15 (+0x3C).",
+  "fields": [
+    {
+      "class": "ReshapeTool",
+      "offset": "+0x9C",
+      "type": "uint32_t*",
+      "name": "field_0x9C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:21:04Z"
+}
