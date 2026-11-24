@@ -4,61 +4,24 @@
   "orig_symbol": "sub_006E86E0",
   "src_path": "src/leaf/tiny_6E0000.cpp",
   "lifted_path": "lifted/leaf/tiny_6E0000.cpp",
-  "name": "sub_006E6340",
-  "class": "Unknown",
-  "signature": "extern \"C\" void __fastcall fn_006E6340(void* self)",
-  "summary": "This-adjustor thunk: adjusts `this` by +0x4C and tail-calls sub_006E7460.",
+  "name": "sub_006E86E0",
+  "signature": "double sub_006E86E0(void* self)",
+  "summary": "Returns the double at offset 0x60 of the object pointed to by this+0x00.",
   "fields": [
     {
       "class": "Unknown",
-      "offset": "+0x8",
-      "type": "DWORD",
-      "name": "field_0x08"
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "ptr_0x00"
     },
     {
       "class": "Unknown",
-      "offset": "+0x0",
-      "type": "uint32_t vtable",
-      "name": "(vptr)"
-    },
-    {
-      "class": "Unknown",
-      "offset": "+0x68",
-      "type": "int32_t",
-      "name": "field_0x68"
-    },
-    {
-      "class": "Unknown",
-      "offset": "+0x0",
-      "type": "uint32_t",
-      "name": "field_0x00"
-    },
-    {
-      "class": "Unknown",
-      "offset": "+0x0",
-      "type": "uint32_t field_0x00 (vtable pointer, dereferenced to read slot",
-      "name": "+0x80)"
-    },
-    {
-      "class": "this",
-      "offset": "+0x0",
-      "type": "pointer",
-      "name": "field_0x00"
-    },
-    {
-      "class": "field_0x00",
       "offset": "+0x60",
       "type": "double",
       "name": "field_0x60"
-    },
-    {
-      "class": "Unknown",
-      "offset": "+0x58",
-      "type": "double",
-      "name": "field_0x58"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T01:41:07Z"
+  "lifted_at": "2026-11-24T01:41:20Z"
 }
