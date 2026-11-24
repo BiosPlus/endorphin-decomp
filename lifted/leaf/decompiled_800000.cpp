@@ -270,3 +270,25 @@ void fn_0080F830(void* self, uint8_t value) {
     *counterB += 1;
 }
 } // namespace lift_0080F830
+
+// [0x0080EBD0]
+namespace lift_0080EBD0 {
+extern uint8_t mem_read8(uint32_t addr);
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name isCharInLookupTable
+// @summary Checks whether a signed byte character maps to a truthy jump-table entry.
+
+extern uint32_t sub_0080EBD0(int8_t ch) {
+    uint32_t idx = static_cast<uint32_t>(static_cast<int32_t>(ch) - 0x20);
+    if (idx > 0x5A) {
+        return 0;
+    }
+    uint8_t entry = mem_read8(0x0080EC00u + idx);
+    uint32_t target = mem_read32(0x0080EBF8u + static_cast<uint32_t>(entry) * 4u);
+    if (target == 0x0080EBECu) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_0080EBD0
