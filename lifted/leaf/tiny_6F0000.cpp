@@ -2907,3 +2907,21 @@ uint32_t fn_006F2330(void* self, uint32_t arg1, uint32_t arg2) {
     return target(subobject, arg1, arg2);
 }
 } // namespace lift_006F2330
+
+// [0x006F23A0]
+namespace lift_006F23A0 {
+// @name Unknown::ForwardToSubobjectVirtual0xB8_Sub67A8
+// @class Unknown
+// @summary Forwards its two stack arguments unchanged and in order to vtable slot 0xB8 of the embedded subobject at this+0x67A8, returning that call's result.
+// @field Unknown +0x67A8 void* field_0x67A8
+DWORD fn_006F23A0(void* self, DWORD arg1, DWORD arg2) {
+    // Embedded subobject begins at self+0x67A8; its first dword is its vtable pointer.
+    uint8_t* sub = static_cast<uint8_t*>(self) + 0x67A8;
+    void** vtable = lift_field<void**>(self, 0x67A8);
+
+    // Virtual slot at byte offset 0xB8 of the vtable, called with the subobject as `this`.
+    using SlotFn = DWORD (*)(void*, DWORD, DWORD);
+    SlotFn slot = reinterpret_cast<SlotFn>(lift_field<void*>(vtable, 0xB8));
+    return slot(sub, arg1, arg2);
+}
+} // namespace lift_006F23A0

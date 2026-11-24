@@ -378,5 +378,6 @@ struct Unknown_Fields {
     // +0x1B78 void*                    subobjVtbl  (evidence: 0x006C12D0)
     // +0x6688 void*                    subobjVtbl  (evidence: 0x006F22C0)
     // +0x6718 void*                    field_0x6718  (evidence: 0x006F2330)
+    // +0x67A8 void*                    field_0x67A8  (evidence: 0x006F23A0)
 };
 } // namespace lifted_layout

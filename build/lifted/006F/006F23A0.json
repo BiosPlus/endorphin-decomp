@@ -1,0 +1,22 @@
+{
+  "va": "0x006F23A0",
+  "size": 31,
+  "orig_symbol": "sub_006F23A0",
+  "src_path": "src/leaf/tiny_6F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6F0000.cpp",
+  "name": "Unknown::ForwardToSubobjectVirtual0xB8_Sub67A8",
+  "class": "Unknown",
+  "signature": "DWORD fn_006F23A0(void* self, DWORD arg1, DWORD arg2)",
+  "summary": "Forwards its two stack arguments unchanged and in order to vtable slot 0xB8 of the embedded subobject at this+0x67A8, returning that call's result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x67A8",
+      "type": "void*",
+      "name": "field_0x67A8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:27:38Z"
+}
