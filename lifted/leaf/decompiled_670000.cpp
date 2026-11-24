@@ -100,3 +100,23 @@ int fn_0067EC70(void* self, char* buffer, int size) {
     return std::snprintf(buffer, static_cast<size_t>(size), kFormat, field_0x04, field_0x00);
 }
 } // namespace lift_0067EC70
+
+// [0x0067ED10]
+namespace lift_0067ED10 {
+// @name parseHexFromString
+// @summary Parses a hexadecimal integer from a std::string and stores it at offset 0 of self
+// @field Unknown +0x00 uint32_t field_0x00
+
+extern uint32_t mem_00924FFC;
+extern uint32_t mem_0092530C;
+
+uint32_t __thiscall fn_0067ED10(void* self, const void* str) {
+    using StringIndexFn = const char* (__thiscall*)(const void*, uint32_t);
+    using StrtoulFn = uint32_t(__cdecl*)(const char*, char**, int);
+
+    const char* ptr = reinterpret_cast<StringIndexFn>(mem_00924FFC)(str, 0);
+    uint32_t val = reinterpret_cast<StrtoulFn>(mem_0092530C)(ptr, nullptr, 16);
+    *reinterpret_cast<uint32_t*>(self) = val;
+    return val;
+}
+} // namespace lift_0067ED10

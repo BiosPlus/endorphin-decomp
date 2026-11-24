@@ -30060,6 +30060,12 @@
     "summary": "Initializes three 32-bit fields of the object in ecx: stores the constant 0x0098FAC4 at +0x00, clears +0x04 and +0x08.",
     "lifted_path": "lifted/leaf/tiny_690000.cpp"
   },
+  "0x006991F0": {
+    "name": "setOwnedObject_006991F0",
+    "signature": "void __thiscall sub_006991F0(uint32_t self, uint32_t newPtr)",
+    "summary": "Replaces an owned object pointer at +0x8, invoking its virtual deleting destructor if non-null and different",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00699220": {
     "name": "ExprParser::ExpressionContainerType::vfunc_29",
     "class": "ExprParser::ExpressionContainerType",
@@ -40277,6 +40283,12 @@
     "signature": "void fn_00705740(void* self)",
     "summary": "Calls virtual slot 0xE8 once per index, from (count-1) down to 0, where count is the int at +0xC0.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x00705760": {
+    "name": "sub_00705760",
+    "signature": "void __thiscall sub_00705760(uintptr_t self)",
+    "summary": "Clears bit 0 of field_0x84, invokes vtable+0xbc with the masked value, and zeroes field_0xdc.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x007057C0": {
     "name": "sub_007057C0",
