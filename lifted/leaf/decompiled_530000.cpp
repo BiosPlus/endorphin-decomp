@@ -179,3 +179,34 @@ void fn_0053F6A0(void* self, DWORD arg0, DWORD value) {
     fn_00533D40(child, 0x93A444u, value);
 }
 } // namespace lift_0053F6A0
+
+// [0x00533D50] sub_00533D50 (33 bytes)
+namespace lift_00533D50 {
+// Known callee 0x00532B40: Unknown::dtor_00532B40 (Sets vtable to 0x009543E4 and unlinks peer at +0x08 if it points back to this at +0x04.)
+extern void ext_00532B40(void* self);
+extern uint32_t mem_009253E8; // IAT slot holding glDeleteLists
+extern uint32_t mem_009547FC; // .rdata constant (unused by this body; vtable is written as an immediate)
+
+// @name Unknown::dtor_00533D50
+// @class Unknown
+// @summary Sets vtable to 0x009547FC, deletes the display list at +0x30 if present, then chains to the base dtor 0x00532B40.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x30 GLuint displayList
+void fn_00533D50(void* self) {
+    // [0x00533D50] mov [esi], 0x9547fc
+    lift_field<uint32_t>(self, 0x00) = 0x009547FCu;
+
+    // [0x00533D53] mov eax, [esi+0x30]; test eax, eax; je ...
+    GLuint displayList = lift_field<GLuint>(self, 0x30);
+    if (displayList != 0) {
+        // [0x00533D60] push 1; push eax; call [0x9253e8] ; glDeleteLists(list, 1)
+        using glDeleteLists_t = void (*)(GLuint, GLsizei);
+        auto glDeleteLists = reinterpret_cast<glDeleteLists_t>(
+            static_cast<uintptr_t>(mem_009253E8));
+        glDeleteLists(displayList, 1);
+    }
+
+    // [0x00533D69] mov ecx, esi; pop esi; jmp 0x532b40  (tail call with this = self)
+    ext_00532B40(self);
+}
+} // namespace lift_00533D50

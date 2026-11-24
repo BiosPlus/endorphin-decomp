@@ -13417,6 +13417,13 @@
     "summary": "Stores the second stack argument (DWORD) into this+0x498 and returns, popping 8 bytes of arguments.",
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
   },
+  "0x00533D50": {
+    "name": "Unknown::dtor_00533D50",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t mem_009547FC; // .rdata constant (unused by this body; vtable is written as an immediate) void fn_00533D50(void* self)",
+    "summary": "Sets vtable to 0x009547FC, deletes the display list at +0x30 if present, then chains to the base dtor 0x00532B40.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00533DE0": {
     "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_3",
     "class": "ManagedDisplayList\u003cRenderableList\u003e",
