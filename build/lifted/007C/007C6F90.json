@@ -1,0 +1,21 @@
+{
+  "va": "0x007C6F90",
+  "size": 12,
+  "orig_symbol": "sub_007C6F90",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "sub_007C6F90",
+  "signature": "void __cdecl sub_007C6F90(void* self, DWORD value)",
+  "summary": "Stores the second stack argument into the first argument's dword at +0x10.",
+  "fields": [
+    {
+      "class": "field_0x10",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:16:50Z"
+}

@@ -426,3 +426,14 @@ void sub_007C6FB0(uint8_t* self, uint32_t value) {
     *reinterpret_cast<uint32_t*>(self + 0x14) = value;
 }
 } // namespace lift_007C6FB0
+
+// [0x007C6F90]
+namespace lift_007C6F90 {
+// @name sub_007C6F90
+// @summary Stores the second stack argument into the first argument's dword at +0x10.
+// @field field_0x10 +0x10 DWORD field_0x10
+
+void __cdecl sub_007C6F90(void* self, DWORD value) {
+    lift_field<DWORD>(self, 0x10) = value;
+}
+} // namespace lift_007C6F90
