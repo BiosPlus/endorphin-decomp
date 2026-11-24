@@ -260,3 +260,25 @@ uint32_t fn_00798840(uint8_t* self) {
     return eax >> 3;
 }
 } // namespace lift_00798840
+
+// [0x0079E620] sub_0079E620 (41 bytes)
+namespace lift_0079E620 {
+// Known callee 0x00783860: InitInlineBufferHeader (Runs the 0x006D2130 initializer with count 0x10 and element size 4, then points +0x14 at the inline buffer at +0x10 and clears +0x18.)
+extern uint32_t __thiscall ext_00783860(uint32_t self);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+// @name SubobjectInitVtables
+// @class SubobjectInitVtables
+// @summary Stamps two vtable pointers into self (+0x00, then +0x04), initializes the sub-object at self+0x08 via InitInlineBufferHeader, then re-stamps the vtable pointers at +0x00 and +0x04 and returns self.
+// @field SubobjectInitVtables +0x00 uint32_t field_0x00 (vtable pointer; written 0x0099773C at the end)
+// @field SubobjectInitVtables +0x04 uint32_t field_0x04 (vtable pointer; written 0x0099772C at the end)
+// @field SubobjectInitVtables +0x08 uint8_t field_0x08[0x14] (embedded sub-object passed as this to ext_00783860)
+uint32_t fn_0079E620(uint32_t self) {
+    mem_write32(self + 0x00, 0x00995080);
+    mem_write32(self + 0x04, 0x00995080);
+    ext_00783860(self + 0x08);
+    mem_write32(self + 0x00, 0x0099773C);
+    mem_write32(self + 0x04, 0x0099772C);
+    return self;
+}
+} // namespace lift_0079E620

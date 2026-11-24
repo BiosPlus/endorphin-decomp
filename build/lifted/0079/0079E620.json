@@ -1,0 +1,34 @@
+{
+  "va": "0x0079E620",
+  "size": 41,
+  "orig_symbol": "sub_0079E620",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "SubobjectInitVtables",
+  "class": "SubobjectInitVtables",
+  "signature": "uint32_t fn_0079E620(uint32_t self)",
+  "summary": "Stamps two vtable pointers into self (+0x00, then +0x04), initializes the sub-object at self+0x08 via InitInlineBufferHeader, then re-stamps the vtable pointers at +0x00 and +0x04 and returns self.",
+  "fields": [
+    {
+      "class": "SubobjectInitVtables",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (vtable pointer; written 0x0099773C at the",
+      "name": "end)"
+    },
+    {
+      "class": "SubobjectInitVtables",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04 (vtable pointer; written 0x0099772C at the",
+      "name": "end)"
+    },
+    {
+      "class": "SubobjectInitVtables",
+      "offset": "+0x8",
+      "type": "uint8_t field_0x08[0x14] (embedded sub-object passed as this to",
+      "name": "ext_00783860)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:27:20Z"
+}

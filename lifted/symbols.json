@@ -47885,6 +47885,13 @@
     "summary": "If the object pointer is non-null, invokes its vtable slot 2 with argument 1; the single stack argument is popped by the callee (ret 4).",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x0079E620": {
+    "name": "SubobjectInitVtables",
+    "class": "SubobjectInitVtables",
+    "signature": "uint32_t fn_0079E620(uint32_t self)",
+    "summary": "Stamps two vtable pointers into self (+0x00, then +0x04), initializes the sub-object at self+0x08 via InitInlineBufferHeader, then re-stamps the vtable pointers at +0x00 and +0x04 and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079E650": {
     "name": "sub_0079E650",
     "signature": "extern \"C\" void* __fastcall fn_0079E650(void* self, int edx_unused, unsigned int flags)",
