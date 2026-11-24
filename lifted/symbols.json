@@ -39697,6 +39697,12 @@
     "summary": "Copies 16 dwords (64 bytes) from src to dst, equivalent to rep movsd with ecx=16.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CA260": {
+    "name": "memcpy_16dwords_forward",
+    "signature": "void fn_007CA260(const void* src, void* dst)",
+    "summary": "Copies 16 DWORDs (64 bytes) forward from src to dst (cdecl, rep movsd semantics).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007CA820": {
     "name": "sub_007CA820",
     "signature": "extern \"C\" void fn_007CA820(void)",

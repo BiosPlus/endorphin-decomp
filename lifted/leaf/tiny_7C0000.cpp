@@ -1115,3 +1115,20 @@ void fn_007CA240(void* dst, const void* src) {
     std::memcpy(dst, src, 16 * sizeof(uint32_t));
 }
 } // namespace lift_007CA240
+
+// [0x007CA260] sub_007CA260 (20 bytes)
+namespace lift_007CA260 {
+// @name memcpy_16dwords_forward
+// @summary Copies 16 DWORDs (64 bytes) forward from src to dst (cdecl, rep movsd semantics).
+// @field none
+void fn_007CA260(const void* src, void* dst) {
+    // Forward dword-by-dword copy, matching `rep movsd` (not memmove/memcpy overlap semantics).
+    const uint8_t* s = static_cast<const uint8_t*>(src);
+    uint8_t* d = static_cast<uint8_t*>(dst);
+    for (int i = 0; i < 16; ++i) {
+        uint32_t v;
+        std::memcpy(&v, s + i * 4, sizeof(v));
+        std::memcpy(d + i * 4, &v, sizeof(v));
+    }
+}
+} // namespace lift_007CA260
