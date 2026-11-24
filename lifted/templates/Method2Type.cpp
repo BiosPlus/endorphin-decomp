@@ -950,3 +950,29 @@ void fn_0066D4B0(void* out) {
     *slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B596B0));
 }
 } // namespace lift_0066D4B0
+
+// [0x0066D430] ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, NM::Vector3 const &, &public: void __thiscall NM::Vector3::orientationTwistSwingAtoB(class NM::Vector3 const &, NM::Vector3 const &)>::vfunc_40 (122 bytes)
+namespace lift_0066D430 {
+extern void ext_0067A670(uint32_t this_ecx); // ctor for mem_00B596A8, called with ecx = this
+extern uint32_t mem_00B596A8;                // static object storage (first dword = vtable)
+extern uint32_t mem_00B596AC;                // one-time-init guard word (bit 0 = initialized)
+
+// @name ExprParser::Method2Type::vfunc_40 (orientationTwistSwingAtoB)
+// @class ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, NM::Vector3 const &, &public: void __thiscall NM::Vector3::orientationTwistSwingAtoB(class NM::Vector3 const &, NM::Vector3 const &)>
+// @summary Lazily constructs the static object at mem_00B596A8 once (guarded by bit 0 of mem_00B596AC), then stores its address into the out-pointer's +0x04 slot.
+// @field ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, NM::Vector3 const &, &public: void __thiscall NM::Vector3::orientationTwistSwingAtoB(class NM::Vector3 const &, NM::Vector3 const &)> +0x04 uint32_t field_0x04
+//
+// Notes:
+//   - Original is __stdcall with one stack argument (ret 4); arg is the object whose +0x04 receives the static's address.
+//   - The fs:[0] SEH frame setup/teardown is compiler scaffolding and is omitted.
+//   - On first call: set guard bit, run the constructor (ext_0067A670), then store vtable 0x009889DC at mem_00B596A8.
+void fn_0066D430(void* arg) {
+    if ((mem_00B596AC & 1u) == 0u) {
+        mem_00B596AC |= 1u;
+        ext_0067A670(0x00B596A8u);
+        mem_00B596A8 = 0x009889DCu;
+    }
+    auto* slot = reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(arg) + 0x04);
+    *slot = 0x00B596A8u;
+}
+} // namespace lift_0066D430
