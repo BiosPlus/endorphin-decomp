@@ -843,7 +843,7 @@ void __thiscall ext_00711A70(void* self, uint32_t flag);
 // @summary Forwards two stack args plus constant 0x006F7A80 and 0 to ext_00711D40 on the embedded subobject at self+0x4488, then calls ext_00711A70 with flag 1 on the same subobject.
 // @field Unknown +0x4488 uint8_t field_0x4488 (embedded subobject; only its address is taken and passed as `this` to ext_00711D40 and ext_00711A70)
 void __thiscall fn_006F1120(void* self, uint32_t arg1, void* arg2) {
-    void* sub = static_cast<uint8_t*>(self) + 0x4488;
+    uint8_t* sub = static_cast<uint8_t*>(self) + 0x4488;
     ext_00711D40(sub, arg1, arg2, 0x006F7A80u, 0u);
     ext_00711A70(sub, 1u);
 }
