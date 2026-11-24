@@ -1,0 +1,22 @@
+{
+  "va": "0x0044CF30",
+  "size": 13,
+  "orig_symbol": "sub_0044CF30",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "ForwardFieldToSubobject_0044CF30",
+  "class": "\u003cunknown\u003e",
+  "signature": "void fn_0044CF30(void* self)",
+  "summary": "Reads this-\u003efield_0x74 and forwards it as a stack argument to ext_00494300, invoked on the subobject at this+0x78 (callee pops its argument).",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x74",
+      "type": "DWORD",
+      "name": "field_0x74"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:18:18Z"
+}

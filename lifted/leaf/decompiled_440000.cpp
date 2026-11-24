@@ -186,3 +186,18 @@ void fn_0044C9A0() {
 }
 } // namespace lift_00437DE0
 } // namespace lift_0044C9A0
+
+// [0x0044CF30] sub_0044CF30 (13 bytes)
+namespace lift_0044CF30 {
+extern void __thiscall ext_00494300(void* self, DWORD arg);
+
+// @name ForwardFieldToSubobject_0044CF30
+// @class <unknown>
+// @summary Reads this->field_0x74 and forwards it as a stack argument to ext_00494300, invoked on the subobject at this+0x78 (callee pops its argument).
+// @field <unknown> +0x74 DWORD field_0x74
+void fn_0044CF30(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    DWORD arg = *reinterpret_cast<DWORD*>(base + 0x74);
+    ext_00494300(base + 0x78, arg);
+}
+} // namespace lift_0044CF30
