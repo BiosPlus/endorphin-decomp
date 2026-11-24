@@ -1178,3 +1178,25 @@ DWORD* __thiscall fn_0043E7D0(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_0043E7D0
+
+// [0x004304F0]
+namespace lift_004304F0 {
+// @name updateObjStateFromGlobalCharIO
+// @summary Queries Acclaim2CharacterIO::vfunc_23 on global field +0x58 and passes (res == 1) to obj->vfunc_1.
+// @field Object +0x00 uint32_t* vtable
+
+
+extern int32_t __cdecl ext_00465B30(void);
+extern int32_t __thiscall ext_00528530(uintptr_t ecx_this);
+
+extern int32_t __stdcall fn_004304F0(uintptr_t obj) {
+    uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(obj);
+    int32_t char_io = ext_00465B30();
+    int32_t state = ext_00528530(static_cast<uintptr_t>(static_cast<uint32_t>(char_io)));
+    int32_t is_one = (state == 1) ? 1 : 0;
+
+    using VFunc1 = int32_t(__thiscall*)(uintptr_t, int32_t);
+    auto vfunc1 = reinterpret_cast<VFunc1>(vtable[1]);
+    return vfunc1(obj, is_one);
+}
+} // namespace lift_004304F0
