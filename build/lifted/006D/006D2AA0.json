@@ -1,0 +1,22 @@
+{
+  "va": "0x006D2AA0",
+  "size": 48,
+  "orig_symbol": "sub_006D2AA0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "ForwardIndexedElementToCallee",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_006D2AA0(void* self, void* obj, uint32_t index)",
+  "summary": "Computes the address of element `index` (32-byte stride) in the table at self+0x10, forwards it to ext_006D2390 on obj, and returns obj.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:19:44Z"
+}

@@ -615,3 +615,21 @@ int32_t fn_006D8520(void* self) {
     return lift_field<int32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(raw))), 0x18);
 }
 } // namespace lift_006D8520
+
+// [0x006D2AA0] sub_006D2AA0 (48 bytes)
+namespace lift_006D2AA0 {
+// Known callee 0x006D2390: ForwardArgToCalleeReturnThis (Forwards its single stack argument to sub_007873F0 with the same this pointer, then returns this.)
+extern void* __thiscall ext_006D2390(void* self, uint32_t arg1);
+
+// @name ForwardIndexedElementToCallee
+// @class Unknown
+// @summary Computes the address of element `index` (32-byte stride) in the table at self+0x10, forwards it to ext_006D2390 on obj, and returns obj.
+// @field Unknown +0x10 uint32_t field_0x10
+void* __thiscall fn_006D2AA0(void* self, void* obj, uint32_t index) {
+    const uint32_t table = *reinterpret_cast<const uint32_t*>(static_cast<const char*>(self) + 0x10);
+    const uint32_t element = table + (index << 5);
+
+    ext_006D2390(obj, element);
+    return obj;
+}
+} // namespace lift_006D2AA0

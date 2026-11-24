@@ -14999,6 +14999,13 @@
     "summary": "Calls virtual slot 2 on the object at +0x14 (if non-null), then tail-calls virtual slot 2 on the object at +0x18 with this+0x18 as the receiver.",
     "lifted_path": "lifted/classes/CompoundRenderable.cpp"
   },
+  "0x00537D00": {
+    "name": "CompoundRenderable::vfunc_11",
+    "class": "CompoundRenderable",
+    "signature": "void __thiscall fn_00537D00(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Forwards vfunc_11(arg1, arg2) to optional child renderable at +0x14 and embedded object at +0x18.",
+    "lifted_path": "lifted/classes/CompoundRenderable.cpp"
+  },
   "0x00537D60": {
     "name": "CompoundRenderable::vfunc_24",
     "class": "CompoundRenderable",
@@ -39338,6 +39345,13 @@
     "signature": "uint32_t Unknown_sub_006D2A90(const void* self, uint32_t arg)",
     "summary": "Returns (arg \u003c\u003c 5) + this-\u003efield_0x10 (thiscall, one stack arg, ret 4).",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
+  "0x006D2AA0": {
+    "name": "ForwardIndexedElementToCallee",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_006D2AA0(void* self, void* obj, uint32_t index)",
+    "summary": "Computes the address of element `index` (32-byte stride) in the table at self+0x10, forwards it to ext_006D2390 on obj, and returns obj.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006D2C80": {
     "name": "sub_006D2C80",
