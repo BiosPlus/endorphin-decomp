@@ -39727,6 +39727,13 @@
     "summary": "Returns the DWORD at +0x60 when the DWORD at +0x58 is nonzero; otherwise returns 0.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AEEC0": {
+    "name": "SetValueIfWithinMax",
+    "class": "(none; free function taking `this` in ecx, one stack argument)",
+    "signature": "void fn_007AEEC0(void* self, int32_t value)",
+    "summary": "If the enable flag at +0x58 is nonzero and the argument is \u003c= the limit at +0x5C (signed), store the argument at +0x60.",
+    "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
+  },
   "0x007AEEE0": {
     "name": "sub_007AEEE0",
     "class": "UnknownClass",

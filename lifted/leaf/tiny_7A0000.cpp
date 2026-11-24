@@ -420,3 +420,22 @@ int fn_007AEEF0(void* self) {
     return value >= limit ? 1 : 0;
 }
 } // namespace lift_007AEEF0
+
+// [0x007AEEC0] sub_007AEEC0 (24 bytes)
+namespace lift_007AEEC0 {
+// @name SetValueIfWithinMax
+// @class (none; free function taking `this` in ecx, one stack argument)
+// @summary If the enable flag at +0x58 is nonzero and the argument is <= the limit at +0x5C (signed), store the argument at +0x60.
+// @field <ClassName> +0x58 int32_t enableFlag
+// @field <ClassName> +0x5C int32_t maxLimit
+// @field <ClassName> +0x60 int32_t value
+void fn_007AEEC0(void* self, int32_t value) {
+    if (lift_field<int32_t>(self, 0x58) == 0) {
+        return;
+    }
+    if (value > lift_field<int32_t>(self, 0x5C)) {
+        return;
+    }
+    lift_field<int32_t>(self, 0x60) = value;
+}
+} // namespace lift_007AEEC0

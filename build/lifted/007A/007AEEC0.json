@@ -1,0 +1,34 @@
+{
+  "va": "0x007AEEC0",
+  "size": 24,
+  "orig_symbol": "sub_007AEEC0",
+  "src_path": "src/leaf/tiny_7A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7A0000.cpp",
+  "name": "SetValueIfWithinMax",
+  "class": "(none; free function taking `this` in ecx, one stack argument)",
+  "signature": "void fn_007AEEC0(void* self, int32_t value)",
+  "summary": "If the enable flag at +0x58 is nonzero and the argument is \u003c= the limit at +0x5C (signed), store the argument at +0x60.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x58",
+      "type": "int32_t",
+      "name": "enableFlag"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x5C",
+      "type": "int32_t",
+      "name": "maxLimit"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x60",
+      "type": "int32_t",
+      "name": "value"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:38:49Z"
+}
