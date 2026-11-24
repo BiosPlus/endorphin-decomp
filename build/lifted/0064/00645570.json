@@ -1,0 +1,28 @@
+{
+  "va": "0x00645570",
+  "size": 49,
+  "orig_symbol": "NullRelationship::vfunc_43",
+  "src_path": "src/classes/NullRelationship.cpp",
+  "lifted_path": "lifted/classes/NullRelationship.cpp",
+  "name": "NullRelationship::vfunc_43",
+  "class": "NullRelationship",
+  "signature": "void fn_00645570(void* self, const uint32_t* src)",
+  "summary": "Copies 16 dwords from src into this+0x6c, then if this+0x68 is non-null, passes it to ext_00647F00 and forwards the result to ext_0067E990 on the copied block.",
+  "fields": [
+    {
+      "class": "NullRelationship",
+      "offset": "+0x68",
+      "type": "uint32_t",
+      "name": "field_0x68"
+    },
+    {
+      "class": "NullRelationship",
+      "offset": "+0x6C",
+      "type": "uint32_t",
+      "name": "field_0x6c[16]"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:31:11Z"
+}

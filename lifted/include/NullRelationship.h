@@ -11,5 +11,7 @@
 namespace lifted_layout {
 struct NullRelationship_Fields {
     // +0x0   uint32_t                 vtable  (evidence: 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0, 0x00646220)
+    // +0x68  uint32_t                 field_0x68  (evidence: 0x00645570)
+    // +0x6C  uint32_t                 field_0x6c[16]  (evidence: 0x00645570)
 };
 } // namespace lifted_layout
