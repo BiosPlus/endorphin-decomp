@@ -798,3 +798,27 @@ void fn_00487E30(void* self) {
     lift_field<uint32_t>(self, 0x04) = 0x00AD9DE4u;
 }
 } // namespace lift_00487E30
+
+// [0x004CA7D0]
+namespace lift_004CA7D0 {
+extern void ext_0067A670(void* self, uint32_t flag);
+extern uint32_t mem_00AE448C;
+extern uint32_t mem_00AE4488;
+
+// @name ExprParser::Method0Type<NMData::MetaBodyConstraintData, fireEnable>::vfunc_40
+// @class ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}>
+// @summary One-time lazy init of the static fireEnable value-pointer object, then stores its address into the argument's +0x04 slot.
+// @field ExprParser::ValuePtrType +0x04 void* valuePtr
+void fn_004CA7D0(void* out) {
+    uint8_t* out_bytes = static_cast<uint8_t*>(out);
+
+    if ((mem_00AE448C & 1u) == 0) {
+        mem_00AE448C |= 1u;
+        ext_0067A670(&mem_00AE4488, 0);
+        mem_00AE4488 = 0x009463F4u;  // vtable for the static object
+    }
+
+    const uint32_t addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE4488));
+    std::memcpy(out_bytes + 0x04, &addr, sizeof(addr));
+}
+} // namespace lift_004CA7D0

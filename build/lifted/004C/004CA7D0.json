@@ -1,0 +1,22 @@
+{
+  "va": "0x004CA7D0",
+  "size": 122,
+  "orig_symbol": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/Method0Type.cpp",
+  "lifted_path": "lifted/templates/Method0Type.cpp",
+  "name": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, fireEnable\u003e::vfunc_40",
+  "class": "ExprParser::Method0Type\u003cNMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}\u003e",
+  "signature": "void fn_004CA7D0(void* out)",
+  "summary": "One-time lazy init of the static fireEnable value-pointer object, then stores its address into the argument's +0x04 slot.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "valuePtr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:45:55Z"
+}
