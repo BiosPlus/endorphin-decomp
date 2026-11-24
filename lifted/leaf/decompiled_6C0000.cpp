@@ -363,3 +363,24 @@ const char* fn_006C1BB0(uint32_t selector) {
     }
 }
 } // namespace lift_006C1BB0
+
+// [0x006C0470]
+namespace lift_006C0470 {
+// @name isKnownGlobalHandle
+// @summary Checks whether the given 32-bit value matches one of three global values.
+
+
+extern uint32_t mem_00B5F060;
+extern uint32_t mem_00B5EB78;
+extern uint32_t mem_00B5E400;
+
+uint8_t __stdcall sub_006C0470(uint32_t arg0) {
+    if (arg0 == mem_00B5F060) {
+        return 1;
+    }
+    if (arg0 == mem_00B5EB78) {
+        return 1;
+    }
+    return (arg0 == mem_00B5E400) ? 1 : 0;
+}
+} // namespace lift_006C0470
