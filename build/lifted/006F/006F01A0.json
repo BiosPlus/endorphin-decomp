@@ -1,0 +1,22 @@
+{
+  "va": "0x006F01A0",
+  "size": 34,
+  "orig_symbol": "sub_006F01A0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::forwardArgsToSubobject2398",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_006F01A0(void* self, uint32_t arg1, void* arg2)",
+  "summary": "Forwards its two stack arguments, plus two constants, to the storeArgsAndNotifyChild callee using the subobject at this+0x2398.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x2398",
+      "type": "void* subobject2398 (address only; passed as self to the",
+      "name": "callee)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:14:16Z"
+}

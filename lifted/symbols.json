@@ -40143,6 +40143,13 @@
     "summary": "Forwards its two arguments, plus two constant tokens, to the subobject at this+0x2310 via ext_00711D40.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006F01A0": {
+    "name": "Unknown::forwardArgsToSubobject2398",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_006F01A0(void* self, uint32_t arg1, void* arg2)",
+    "summary": "Forwards its two stack arguments, plus two constants, to the storeArgsAndNotifyChild callee using the subobject at this+0x2398.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F01E0": {
     "name": "ForwardArgsToSubobject2420",
     "class": "Unknown",

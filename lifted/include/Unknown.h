@@ -587,6 +587,7 @@ struct Unknown_Fields {
     // +0x2200 uint8_t                  field_0x2200  (evidence: 0x006F00E0, 0x006F0120)
     // +0x2288 uint8_t                  field_0x2288  (evidence: 0x006F0120)
     // +0x2310 (subobject) not dereferenced here; only its address is passed as self to ext_00711D40.  (evidence: 0x006F0160)
+    // +0x2398 void* subobject2398 (address only; passed as self to the callee)  (evidence: 0x006F01A0)
     // +0x2420 uint8_t field_0x2420 (address only; subobject is passed as `this`, not dereferenced here)  (evidence: 0x006F01E0)
     // +0x6688 void*                    subobjVtbl  (evidence: 0x006F22C0)
     // +0x6718 void*                    field_0x6718  (evidence: 0x006F2330)
