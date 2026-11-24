@@ -41657,6 +41657,13 @@
     "summary": "Returns address of global mem_0099E074.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D8450": {
+    "name": "CopyVec3FromOffset40",
+    "class": "\u003cnone\u003e",
+    "signature": "void fn_007D8450(const void* self, void* out)",
+    "summary": "Copies three consecutive floats from self+0x40..+0x48 into out[0..2].",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D8490": {
     "name": "getFloatAt0x58",
     "signature": "float sub_007D8490(uint32_t obj)",

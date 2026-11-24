@@ -1,0 +1,34 @@
+{
+  "va": "0x007D8450",
+  "size": 26,
+  "orig_symbol": "sub_007D8450",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "CopyVec3FromOffset40",
+  "class": "\u003cnone\u003e",
+  "signature": "void fn_007D8450(const void* self, void* out)",
+  "summary": "Copies three consecutive floats from self+0x40..+0x48 into out[0..2].",
+  "fields": [
+    {
+      "class": "self",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "field_0x40"
+    },
+    {
+      "class": "self",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    },
+    {
+      "class": "self",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:58:14Z"
+}

@@ -497,3 +497,26 @@ void fn_007DD020(void* self) {
     reinterpret_cast<SlotFn>(static_cast<uintptr_t>(slot))(sub, 0, arg);
 }
 } // namespace lift_007DD020
+
+// [0x007D8450] sub_007D8450 (26 bytes)
+namespace lift_007D8450 {
+// @name CopyVec3FromOffset40
+// @class <none>
+// @summary Copies three consecutive floats from self+0x40..+0x48 into out[0..2].
+// @field self +0x40 float field_0x40
+// @field self +0x44 float field_0x44
+// @field self +0x48 float field_0x48
+void fn_007D8450(const void* self, void* out) {
+    const uint8_t* src = static_cast<const uint8_t*>(self);
+    uint8_t* dst = static_cast<uint8_t*>(out);
+
+    float v0, v1, v2;
+    std::memcpy(&v0, src + 0x40, sizeof(float));
+    std::memcpy(&v1, src + 0x44, sizeof(float));
+    std::memcpy(&v2, src + 0x48, sizeof(float));
+
+    std::memcpy(dst + 0x0, &v0, sizeof(float));
+    std::memcpy(dst + 0x4, &v1, sizeof(float));
+    std::memcpy(dst + 0x8, &v2, sizeof(float));
+}
+} // namespace lift_007D8450
