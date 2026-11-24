@@ -87,3 +87,19 @@ void fn_005DA130(void* self, uint32_t value) {
     }
 }
 } // namespace lift_005DA130
+
+// [0x005DA150] sub_005DA150 (17 bytes)
+namespace lift_005DA150 {
+// @name Unknown::setChildField64
+// @class Unknown
+// @summary Stores the float argument into field +0x64 of the child object at this+0x04, if that child pointer is non-null.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x64 float field_0x64
+extern void __thiscall fn_005DA150(void* self, int edx_unused, float value) {
+    (void)edx_unused;
+    void* child = lift_field<void*>(self, 0x04);
+    if (child != nullptr) {
+        lift_field<float>(child, 0x64) = value;
+    }
+}
+} // namespace lift_005DA150
