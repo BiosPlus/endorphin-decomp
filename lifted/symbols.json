@@ -1573,6 +1573,12 @@
     "summary": "Stdcall (callee pops 4): compares the std::string passed on the stack against the global C-string at mem_00ACD9E0 via operator!=, returning the bool result.",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
   },
+  "0x00427370": {
+    "name": "findLastBeforeFlaggedChild",
+    "signature": "uintptr_t sub_00427370(uintptr_t node)",
+    "summary": "Walks +0x08 pointers until the next node has a non-zero byte at +0x59, returning the preceding node.",
+    "lifted_path": "lifted/leaf/tiny_420000.cpp"
+  },
   "0x00428FE0": {
     "name": "sub_00428FE0",
     "signature": "extern \"C\" void fn_00428FE0(void)",

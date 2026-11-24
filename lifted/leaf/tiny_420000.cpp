@@ -200,3 +200,23 @@ int32_t __thiscall sub_00422E00(void* self, uint32_t lParam, uint32_t wParam) {
     return fn(hWnd, 0x1102u, wParam, lParam);
 }
 } // namespace lift_00422E00
+
+// [0x00427370]
+namespace lift_00427370 {
+uint8_t mem_read8(uintptr_t addr);
+uint32_t mem_read32(uintptr_t addr);
+
+// @name findLastBeforeFlaggedChild
+// @summary Walks +0x08 pointers until the next node has a non-zero byte at +0x59, returning the preceding node.
+// @field Node +0x08 uintptr_t field_0x08
+// @field Node +0x59 uint8_t field_0x59
+uintptr_t sub_00427370(uintptr_t node) {
+    uintptr_t cur = node;
+    uintptr_t next = mem_read32(cur + 0x08);
+    while (mem_read8(next + 0x59) == 0) {
+        cur = next;
+        next = mem_read32(cur + 0x08);
+    }
+    return cur;
+}
+} // namespace lift_00427370
