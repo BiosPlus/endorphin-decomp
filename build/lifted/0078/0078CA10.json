@@ -1,0 +1,12 @@
+{
+  "va": "0x0078CA10",
+  "size": 32,
+  "orig_symbol": "sub_0078CA10",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "SwitchIndexByteTable_0078CA10",
+  "summary": "Byte lookup table (17 entries) used as switch-case index map; not executable code.",
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-24T12:47:01Z"
+}

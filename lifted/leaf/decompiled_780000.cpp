@@ -240,3 +240,14 @@ DWORD fn_00789650(void* self) {
     return reinterpret_cast<ThisCallVirtual>(vtbl[14])(obj14);
 }
 } // namespace lift_00789650
+
+// [0x0078CA10]
+namespace lift_0078CA10 {
+// @name SwitchIndexByteTable_0078CA10
+// @summary Byte lookup table (17 entries) used as switch-case index map; not executable code.
+
+extern const unsigned char sub_0078CA10[17] = {
+    0x00, 0x01, 0x05, 0x02, 0x05, 0x05, 0x02, 0x05, 0x05,
+    0x01, 0x05, 0x05, 0x05, 0x05, 0x05, 0x03, 0x04
+};
+} // namespace lift_0078CA10

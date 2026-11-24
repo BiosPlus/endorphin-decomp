@@ -42833,6 +42833,11 @@
     "summary": "Returns the dword at +0x28 if the dword at +0x20 is nonzero, otherwise the dword at +0x04.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x0078CA10": {
+    "name": "SwitchIndexByteTable_0078CA10",
+    "summary": "Byte lookup table (17 entries) used as switch-case index map; not executable code.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078CB70": {
     "name": "getIndexedDword",
     "signature": "uint32_t getIndexedDword(void* ecx, uint32_t index)",
