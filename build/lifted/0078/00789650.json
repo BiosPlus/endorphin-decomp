@@ -1,0 +1,28 @@
+{
+  "va": "0x00789650",
+  "size": 32,
+  "orig_symbol": "sub_00789650",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "Unknown::ForwardVirtualByField08OrField14",
+  "class": "Unknown",
+  "signature": "DWORD fn_00789650(void* self)",
+  "summary": "Forwards to a virtual method on the object at +0x08 if set, otherwise to a virtual method on the object at +0x14.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:45:49Z"
+}

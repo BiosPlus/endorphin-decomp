@@ -42750,6 +42750,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007892B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00789650": {
+    "name": "Unknown::ForwardVirtualByField08OrField14",
+    "class": "Unknown",
+    "signature": "DWORD fn_00789650(void* self)",
+    "summary": "Forwards to a virtual method on the object at +0x08 if set, otherwise to a virtual method on the object at +0x14.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00789880": {
     "name": "sub_00789880",
     "signature": "extern \"C\" void* __fastcall fn_00789880(void* self, int edx_unused, unsigned int flags)",

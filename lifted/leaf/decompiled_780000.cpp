@@ -214,3 +214,29 @@ void fn_0078C240(void* self, uint32_t arg) {
     ext_0078C230(self);
 }
 } // namespace lift_0078C240
+
+// [0x00789650] sub_00789650 (32 bytes)
+namespace lift_00789650 {
+// @name Unknown::ForwardVirtualByField08OrField14
+// @class Unknown
+// @summary Forwards to a virtual method on the object at +0x08 if set, otherwise to a virtual method on the object at +0x14.
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x14 void* field_0x14
+using ThisCallVirtual = DWORD(__thiscall*)(void* self);
+
+DWORD fn_00789650(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    void* obj08 = *reinterpret_cast<void**>(base + 0x08);
+    if (obj08 != nullptr) {
+        // vtable slot at byte offset 0x24 in a 32-bit vtable = index 9
+        void** vtbl = *reinterpret_cast<void***>(obj08);
+        return reinterpret_cast<ThisCallVirtual>(vtbl[9])(obj08);
+    }
+
+    void* obj14 = *reinterpret_cast<void**>(base + 0x14);
+    // vtable slot at byte offset 0x38 in a 32-bit vtable = index 14
+    void** vtbl = *reinterpret_cast<void***>(obj14);
+    return reinterpret_cast<ThisCallVirtual>(vtbl[14])(obj14);
+}
+} // namespace lift_00789650
