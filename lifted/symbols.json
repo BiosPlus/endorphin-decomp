@@ -1945,6 +1945,13 @@
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_4544.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00430DE0": {
+    "name": "sub_00430DE0",
+    "class": "// @summary Calls two helpers; if the second returns false, shows a message box with a fixed string resource.",
+    "signature": "extern \"C\" void fn_00430DE0(void)",
+    "summary": "Calls two helpers; if the second returns false, shows a message box with a fixed string resource.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430E00": {
     "name": "callVtable0WithGlobalField60Is1",
     "signature": "uint32_t __stdcall fn_00430E00(void* obj)",

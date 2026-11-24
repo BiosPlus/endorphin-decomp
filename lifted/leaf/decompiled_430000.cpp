@@ -492,3 +492,23 @@ void fn_0043C620(void* self) {
 }
 } // namespace lift_0041CCA0
 } // namespace lift_0043C620
+
+// [0x00430DE0]
+namespace lift_00430DE0 {
+// @name sub_00430DE0
+// @class
+// @summary Calls two helpers; if the second returns false, shows a message box with a fixed string resource.
+
+extern int32_t fn_00465B30(void);
+extern uint8_t fn_00469C60(void);
+extern int32_t fn_006A5E60(uint32_t text, uint32_t type, uint32_t help_id);
+
+extern void fn_00430DE0(void) {
+    (void)fn_00465B30();
+    uint8_t ok = fn_00469C60();
+    if (ok != 0) {
+        return;
+    }
+    (void)fn_006A5E60(0x0092F8B8u, 0x30u, 0u);
+}
+} // namespace lift_00430DE0
