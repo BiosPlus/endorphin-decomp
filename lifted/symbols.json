@@ -39703,6 +39703,13 @@
     "summary": "Returns true if any bit of the argument mask is set in the object's field at +0x78.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00706AF0": {
+    "name": "Unknown::CallWithFieldOrDefault",
+    "class": "Unknown",
+    "signature": "extern \"C\" int32_t __fastcall fn_00706AF0(void* self)",
+    "summary": "Passes self-\u003efield_0x58 to fn_006E7460, or the address of mem_00B5D268 when that field is zero.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00707960": {
     "name": "get_field_0xd0_item",
     "signature": "uint32_t __thiscall sub_00707960(uint32_t self, uint32_t index)",

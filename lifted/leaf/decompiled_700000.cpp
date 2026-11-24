@@ -131,3 +131,23 @@ float fn_00700A20(void* self) {
 }
 } // namespace lift_007009E0
 } // namespace lift_00700A20
+
+// [0x00706AF0]
+namespace lift_00706AF0 {
+// @name Unknown::CallWithFieldOrDefault
+// @class Unknown
+// @summary Passes self->field_0x58 to fn_006E7460, or the address of mem_00B5D268 when that field is zero.
+// @field Unknown +0x58 int32_t field_0x58
+
+extern int32_t __fastcall ext_006E7460(void* self);
+extern uint8_t mem_00B5D268[];
+
+// [0x00706AF0]
+extern int32_t __fastcall fn_00706AF0(void* self) {
+    int32_t v = *reinterpret_cast<int32_t*>(reinterpret_cast<uintptr_t>(self) + 0x58);
+    if (v == 0) {
+        v = static_cast<int32_t>(reinterpret_cast<uintptr_t>(mem_00B5D268));
+    }
+    return ext_006E7460(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(v))));
+}
+} // namespace lift_00706AF0
