@@ -2620,6 +2620,13 @@
     "summary": "Records the current cursor position into the state, starts the owner's capture-based resize.",
     "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/ResizeLeftState.cpp"
   },
+  "0x00443700": {
+    "name": "Unknown::InitP3DTaggedAltVtable",
+    "class": "Unknown",
+    "signature": "void* fn_00443700(void* self, uint32_t arg, uint32_t unused_arg)",
+    "summary": "Runs Unknown::InitP3DTagged with the two stack arguments, then overwrites the vtable pointer at +0x00 with the mem_0093279C rdata address; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x004442C0": {
     "name": "descriptiveName: fn_004442C0 (walk first-link chain until flag at +0xC1 is set)",
     "signature": "void fn_004442C0(void* self)",

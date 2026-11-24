@@ -678,3 +678,20 @@ void* fn_004436B0(void* self, uint32_t arg, uint32_t unused_arg) {
     return self;
 }
 } // namespace lift_004436B0
+
+// [0x00443700] sub_00443700 (32 bytes)
+namespace lift_00443700 {
+// Known callee 0x004436B0: Unknown::InitP3DTagged (Runs Unknown::InitWithTag with the first stack argument, then sets the vtable pointer at +0x00 to the "p3D" rdata string; returns self.)
+extern void* ext_004436B0(void* self, uint32_t arg, uint32_t unused_arg);
+extern int mem_0093279C;
+
+// @name Unknown::InitP3DTaggedAltVtable
+// @class Unknown
+// @summary Runs Unknown::InitP3DTagged with the two stack arguments, then overwrites the vtable pointer at +0x00 with the mem_0093279C rdata address; returns self.
+// @field Unknown +0x00 void* vtable
+void* fn_00443700(void* self, uint32_t arg, uint32_t unused_arg) {
+    ext_004436B0(self, arg, unused_arg);
+    lift_field<uintptr_t>(self, 0) = reinterpret_cast<uintptr_t>(&mem_0093279C);
+    return self;
+}
+} // namespace lift_00443700
