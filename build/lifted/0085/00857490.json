@@ -1,0 +1,21 @@
+{
+  "va": "0x00857490",
+  "size": 19,
+  "orig_symbol": "sub_00857490",
+  "src_path": "src/leaf/tiny_850000.cpp",
+  "lifted_path": "lifted/leaf/tiny_850000.cpp",
+  "name": "CallGlobalObjectSlot10IfSet",
+  "signature": "void fn_00857490(uint32_t arg)",
+  "summary": "If the global object pointer mem_00AB86EC is non-null, forward the single stack argument to its vtable slot at +0x10.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:05:09Z"
+}

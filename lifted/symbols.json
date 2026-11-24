@@ -39885,6 +39885,12 @@
     "summary": "Copies a 32-bit value from a source pointer to a destination pointer and returns 0.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x00857490": {
+    "name": "CallGlobalObjectSlot10IfSet",
+    "signature": "void fn_00857490(uint32_t arg)",
+    "summary": "If the global object pointer mem_00AB86EC is non-null, forward the single stack argument to its vtable slot at +0x10.",
+    "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
   "0x008596E0": {
     "name": "sub_008596E0",
     "signature": "uint32_t __cdecl fn_008596E0(uint32_t size)",

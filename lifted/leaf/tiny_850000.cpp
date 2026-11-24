@@ -165,3 +165,25 @@ uint8_t fn_0085F740(void* self) {
     return lift_field<uint8_t>(self, 0x01);
 }
 } // namespace lift_0085F740
+
+// [0x00857490] sub_00857490 (19 bytes)
+namespace lift_00857490 {
+extern int mem_00AB86EC;
+
+// @name CallGlobalObjectSlot10IfSet
+// @summary If the global object pointer mem_00AB86EC is non-null, forward the single stack argument to its vtable slot at +0x10.
+// @field Unknown +0x00 void* field_0x00
+void fn_00857490(uint32_t arg) {
+    // Load global object pointer (32-bit game address).
+    const uintptr_t obj = static_cast<uintptr_t>(static_cast<uint32_t>(mem_00AB86EC));
+    if (obj == 0) {
+        return;
+    }
+
+    // obj->vtbl; slot at +0x10 (index 4 with 4-byte entries).
+    using Slot = void (*)(uint32_t);
+    const uintptr_t vtbl = *reinterpret_cast<const uintptr_t*>(obj);
+    Slot fn = *reinterpret_cast<const Slot*>(vtbl + 0x10);
+    fn(arg);
+}
+} // namespace lift_00857490
