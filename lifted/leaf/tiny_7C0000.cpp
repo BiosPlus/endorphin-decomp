@@ -391,3 +391,14 @@ void sub_007CC9D0(uint32_t* ptr)
     *ptr += 0x100u;
 }
 } // namespace lift_007CC9D0
+
+// [0x007CC9E0] sub_007CC9E0 (11 bytes)
+namespace lift_007CC9E0 {
+// @name fn_007CC9E0
+// @summary Subtracts 0x100 from the 32-bit value that the pointer argument refers to (cdecl, returns nothing).
+// @field Unknown +0x00 uint32_t field_0x00
+void fn_007CC9E0(uint32_t* p) {
+    // add dword ptr [eax], 0xffffff00  ==  *p -= 0x100 (mod 2^32)
+    *p += 0xFFFFFF00u;
+}
+} // namespace lift_007CC9E0

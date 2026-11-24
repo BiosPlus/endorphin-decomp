@@ -1,0 +1,21 @@
+{
+  "va": "0x007CC9E0",
+  "size": 11,
+  "orig_symbol": "sub_007CC9E0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "fn_007CC9E0",
+  "signature": "void fn_007CC9E0(uint32_t* p)",
+  "summary": "Subtracts 0x100 from the 32-bit value that the pointer argument refers to (cdecl, returns nothing).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:14:25Z"
+}

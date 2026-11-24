@@ -35340,6 +35340,12 @@
     "summary": "Adds 0x100 to the 32-bit value pointed to by the first argument.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CC9E0": {
+    "name": "fn_007CC9E0",
+    "signature": "void fn_007CC9E0(uint32_t* p)",
+    "summary": "Subtracts 0x100 from the 32-bit value that the pointer argument refers to (cdecl, returns nothing).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007CC9F0": {
     "name": "getField0x0C",
     "signature": "uint32_t sub_007CC9F0(uintptr_t arg0)",
