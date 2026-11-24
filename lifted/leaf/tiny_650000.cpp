@@ -156,3 +156,15 @@ void* fn_0065B120(void* a) {
 }
 } // namespace lift_005AC820
 } // namespace lift_0065B120
+
+// [0x0065D0C0]
+namespace lift_0065D0C0 {
+// @name SetFieldAt0x130NonZero
+// @summary Stores the argument at this+0x130, substituting 1 when the argument is zero (thiscall, one stack arg, ret 4).
+// @field <unknown> +0x130 DWORD field_0x130
+
+void __thiscall fn_0065D0C0(void* ecx, DWORD value) {
+    DWORD& field_0x130 = lift_field<DWORD>(ecx, 0x130);
+    field_0x130 = (value != 0) ? value : 1;
+}
+} // namespace lift_0065D0C0

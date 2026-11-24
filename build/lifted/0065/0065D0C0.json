@@ -1,0 +1,21 @@
+{
+  "va": "0x0065D0C0",
+  "size": 30,
+  "orig_symbol": "sub_0065D0C0",
+  "src_path": "src/leaf/tiny_650000.cpp",
+  "lifted_path": "lifted/leaf/tiny_650000.cpp",
+  "name": "SetFieldAt0x130NonZero",
+  "signature": "void __thiscall fn_0065D0C0(void* ecx, DWORD value)",
+  "summary": "Stores the argument at this+0x130, substituting 1 when the argument is zero (thiscall, one stack arg, ret 4).",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x130",
+      "type": "DWORD",
+      "name": "field_0x130"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:18:54Z"
+}
