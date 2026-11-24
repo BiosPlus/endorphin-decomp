@@ -1,0 +1,22 @@
+{
+  "va": "0x0068F240",
+  "size": 80,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cUnitsWithProperties\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cUnitsWithProperties\u003e",
+  "signature": "void* __stdcall fn_0068F240(void* dst, void* const* obj_ptr)",
+  "summary": "Reads the angle unit name string from a UnitsWithProperties pointer and copy-constructs it into dst, or throws on null.",
+  "fields": [
+    {
+      "class": "UnitsWithProperties",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:42:47Z"
+}
