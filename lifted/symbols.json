@@ -6690,6 +6690,12 @@
     "summary": "Fills a range [first, last) of 64-byte elements by copying from a source 64-byte element.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00480DD0": {
+    "name": "copyRange64",
+    "signature": "extern \"C\" uint32_t sub_00480DD0(uint32_t first, uint32_t last, uint32_t dst)",
+    "summary": "Copies 64-byte elements from [first, last) to dst (skipping writes if dst is null) and returns the advanced dst pointer.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x004816E0": {
     "name": "Commands::BufferTransformsCommand::vfunc_1",
     "class": "Commands::BufferTransformsCommand",
