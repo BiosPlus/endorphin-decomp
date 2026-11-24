@@ -22085,6 +22085,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x5C and tail-calls sub_0065B000.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00648480": {
+    "name": "GetIndirectField_0x5c_0x00",
+    "class": "Unknown",
+    "signature": "uint32_t fn_00648480(void* self)",
+    "summary": "Loads the object pointer at self+0x5C, reads the dword it points to, and returns GetField_0x44Thunk applied to that value.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00648490": {
     "name": "sub_00648490",
     "signature": "extern \"C\" void __fastcall fn_00648490(void* self)",

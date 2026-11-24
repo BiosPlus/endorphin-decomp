@@ -1,0 +1,28 @@
+{
+  "va": "0x00648480",
+  "size": 15,
+  "orig_symbol": "sub_00648480",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "GetIndirectField_0x5c_0x00",
+  "class": "Unknown",
+  "signature": "uint32_t fn_00648480(void* self)",
+  "summary": "Loads the object pointer at self+0x5C, reads the dword it points to, and returns GetField_0x44Thunk applied to that value.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:47:40Z"
+}
