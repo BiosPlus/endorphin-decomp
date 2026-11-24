@@ -1,0 +1,13 @@
+{
+  "va": "0x006F87B0",
+  "size": 36,
+  "orig_symbol": "sub_006F87B0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "sub_006F87B0",
+  "signature": "extern uint32_t mem_00925284;  // .rdata u32 0x0062D360 (pointer to _HUGE double) extern double mem_00B5E280;    // global extern double mem_00B5E288;    // global extern double mem_00B5E290;    // global void sub_006F87B0()",
+  "summary": "Stores the negation of the double pointed to by the _HUGE pointer into three globals.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:00:09Z"
+}

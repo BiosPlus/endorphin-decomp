@@ -222,3 +222,22 @@ void fn_006F9FD0(void* self) {
     mem_00B5E3FC = zero;
 }
 } // namespace lift_006F9FD0
+
+// [0x006F87B0]
+namespace lift_006F87B0 {
+// @name sub_006F87B0
+// @summary Stores the negation of the double pointed to by the _HUGE pointer into three globals.
+
+extern uint32_t mem_00925284;  // .rdata u32 0x0062D360 (pointer to _HUGE double)
+extern double mem_00B5E280;    // global
+extern double mem_00B5E288;    // global
+extern double mem_00B5E290;    // global
+
+void sub_006F87B0() {
+    const double huge = *reinterpret_cast<const double*>(static_cast<uintptr_t>(mem_00925284));
+
+    mem_00B5E280 = -huge;
+    mem_00B5E288 = -huge;
+    mem_00B5E290 = -huge;
+}
+} // namespace lift_006F87B0
