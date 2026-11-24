@@ -1,0 +1,33 @@
+{
+  "va": "0x007C5B70",
+  "size": 35,
+  "orig_symbol": "sub_007C5B70",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "setVec3_0x160",
+  "signature": "void __cdecl sub_007C5B70(uint32_t dst, uint32_t src)",
+  "summary": "Copies a 3-float vector from src into dst offsets +0x160, +0x164, and +0x168.",
+  "fields": [
+    {
+      "class": "Obj",
+      "offset": "+0x160",
+      "type": "float",
+      "name": "field_0x160"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x164",
+      "type": "float",
+      "name": "field_0x164"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x168",
+      "type": "float",
+      "name": "field_0x168"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:00:31Z"
+}
