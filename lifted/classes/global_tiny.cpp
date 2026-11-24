@@ -6599,3 +6599,31 @@ uint32_t __thiscall fn_004636C0(void* self, uint32_t pos) {
     return send_message(hwnd, 0x402, pos, 0);
 }
 } // namespace lift_004636C0
+
+// [0x00482420] ToolEngine::vfunc_3 (30 bytes)
+namespace lift_00482420 {
+// @name ToolEngine::vfunc_3
+// @class ToolEngine
+// @summary Stores the byte argument at +0x36C, then invokes vtable slot 2 of the object at +0x218 with this = self+0x218.
+// @field ToolEngine +0x218 void* field_0x218
+// @field ToolEngine +0x36C uint8_t field_0x36C
+
+namespace {
+// Callee signature: thiscall-style, takes only `this` (no stack args in the original).
+using DelegateSlot2Fn = void (*)(void* thisptr);
+} // namespace
+
+void fn_00482420(void* self, uint8_t value) {
+    // mov byte ptr [ecx + 0x36c], al
+    lift_field<uint8_t>(self, 0x36C) = value;
+
+    // mov edx, [ecx + 0x218]; mov eax, [edx + 8]
+    void* delegate = lift_field<void*>(self, 0x218);
+    void** vtable = *reinterpret_cast<void***>(delegate);
+    auto target = reinterpret_cast<DelegateSlot2Fn>(vtable[2]);
+
+    // add ecx, 0x218; call eax
+    target(static_cast<uint8_t*>(self) + 0x218);
+    // ret 4: the single stack argument (`value`) is consumed by the callee epilogue.
+}
+} // namespace lift_00482420

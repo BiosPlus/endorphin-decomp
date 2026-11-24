@@ -1,0 +1,28 @@
+{
+  "va": "0x00482420",
+  "size": 30,
+  "orig_symbol": "ToolEngine::vfunc_3",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ToolEngine::vfunc_3",
+  "class": "ToolEngine",
+  "signature": "void fn_00482420(void* self, uint8_t value)",
+  "summary": "Stores the byte argument at +0x36C, then invokes vtable slot 2 of the object at +0x218 with this = self+0x218.",
+  "fields": [
+    {
+      "class": "ToolEngine",
+      "offset": "+0x218",
+      "type": "void*",
+      "name": "field_0x218"
+    },
+    {
+      "class": "ToolEngine",
+      "offset": "+0x36C",
+      "type": "uint8_t",
+      "name": "field_0x36C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:16:51Z"
+}

@@ -5553,6 +5553,13 @@
     "summary": "Stores the single stack argument at offset 0, zeroes the 4-byte slots at +0x08/+0x0C/+0x10, returns this.",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x00482420": {
+    "name": "ToolEngine::vfunc_3",
+    "class": "ToolEngine",
+    "signature": "void fn_00482420(void* self, uint8_t value)",
+    "summary": "Stores the byte argument at +0x36C, then invokes vtable slot 2 of the object at +0x218 with this = self+0x218.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00482480": {
     "name": "ToolEngine::vfunc_8",
     "class": "ToolEngine",
