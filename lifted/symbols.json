@@ -18006,6 +18006,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00629B00 (CompoundSensor::vfunc_19).",
     "lifted_path": "lifted/leaf/tiny_610000.cpp"
   },
+  "0x00611160": {
+    "name": "readFloatAtIndex3",
+    "signature": "float fn_00611160(uint32_t ecx)",
+    "summary": "Returns element 3 of the float array held by the sub-object at this+0x08.",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
   "0x00611270": {
     "name": "NMData::Constraint::vfunc_22",
     "class": "NMData::Constraint",

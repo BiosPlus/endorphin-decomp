@@ -1,0 +1,21 @@
+{
+  "va": "0x00611160",
+  "size": 11,
+  "orig_symbol": "sub_00611160",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "readFloatAtIndex3",
+  "signature": "float fn_00611160(uint32_t ecx)",
+  "summary": "Returns element 3 of the float array held by the sub-object at this+0x08.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:14:32Z"
+}
