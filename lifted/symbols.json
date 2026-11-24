@@ -2626,6 +2626,13 @@
     "summary": "Forwards its four stack arguments (in original order) and self to the virtual method at vtable slot 0x154 (index 85) of self, returning its result.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043CA00": {
+    "name": "CWindow::trackMouseLeave",
+    "class": "CWindow",
+    "signature": "uint32_t __thiscall fn_0043CA00(uint32_t this_ptr)",
+    "summary": "Registers the window to receive a WM_MOUSELEAVE notification via TrackMouseEvent.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043CAA0": {
     "name": "sub_0043CAA0",
     "signature": "extern \"C\" void __fastcall fn_0043CAA0(void* self)",
@@ -3774,6 +3781,24 @@
     "signature": "void fn_0044B7C0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00675D60 (Unknown::forwardToChildVfunc14).",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
+  "0x0044B9A0": {
+    "name": "sub_0044B9A0",
+    "signature": "int __thiscall fn_0044B9A0(void* self, void* arg0)",
+    "summary": "Checks if field_0x68's string equals global string at 0x00A2FFD4 and passes the boolean result to arg0's vtable+0x04 method.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044B9D0": {
+    "name": "checkFieldAndNotify",
+    "signature": "int __thiscall fn_0044B9D0(void* self, void* arg1)",
+    "summary": "Checks if a string property on field_0x68 equals a global string and passes the boolean result to arg1's vtable+4 method.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044BA00": {
+    "name": "sub_0044BA00",
+    "signature": "int __thiscall fn_0044BA00(void* self, void* arg1)",
+    "summary": "Compares a property string against a global string and passes the boolean result to arg1's vtable[1]",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
   "0x0044BC40": {
     "name": "sub_0044BC40",

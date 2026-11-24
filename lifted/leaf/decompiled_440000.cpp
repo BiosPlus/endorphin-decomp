@@ -1217,3 +1217,77 @@ uint32_t __stdcall sub_00441A90(uint32_t dst, uint32_t src) {
     return dst;
 }
 } // namespace lift_00441A90
+
+// [0x0044B9A0]
+namespace lift_0044B9A0 {
+// @name sub_0044B9A0
+// @summary Checks if field_0x68's string equals global string at 0x00A2FFD4 and passes the boolean result to arg0's vtable+0x04 method.
+// @field self +0x68 void* field_0x68
+
+extern uint32_t mem_00A2FFD4;
+extern uint32_t mem_00924FC0;
+extern int __thiscall ext_00530690(void* self);
+
+int __thiscall fn_0044B9A0(void* self, void* arg0) {
+    uint32_t global_str = mem_00A2FFD4;
+    void* obj = *(void**)((uint8_t*)self + 0x68);
+    void** vtable = *(void***)arg0;
+    int str_ptr = ext_00530690(obj);
+    using eq_fn_t = uint8_t(__cdecl*)(int, uint32_t);
+    uint8_t eq = ((eq_fn_t)(uintptr_t)mem_00924FC0)(str_ptr, global_str);
+    using vfunc_t = int(__thiscall*)(void*, uint32_t);
+    return ((vfunc_t)vtable[1])(arg0, (uint32_t)eq);
+}
+} // namespace lift_0044B9A0
+
+// [0x0044B9D0]
+namespace lift_0044B9D0 {
+// @name checkFieldAndNotify
+// @summary Checks if a string property on field_0x68 equals a global string and passes the boolean result to arg1's vtable+4 method.
+// @field Unknown +0x68 void* field_0x68
+
+
+extern uint32_t mem_00A2FFD8;
+extern uint32_t mem_00924FC0;
+extern int __thiscall ext_00530690(void* self);
+
+typedef uint8_t (__cdecl *StrEqCStrFn)(int str_ref, uint32_t cstr);
+typedef int (__thiscall *VtableNotifyFn)(void* self, uint32_t flag);
+
+int __thiscall fn_0044B9D0(void* self, void* arg1) {
+    uint32_t cstr = mem_00A2FFD8;
+    void* obj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x68);
+    int str_ref = ext_00530690(obj);
+    uint8_t eq = reinterpret_cast<StrEqCStrFn>(mem_00924FC0)(str_ref, cstr);
+    void** vtable = *reinterpret_cast<void***>(arg1);
+    VtableNotifyFn notify = reinterpret_cast<VtableNotifyFn>(vtable[1]);
+    return notify(arg1, static_cast<uint32_t>(eq));
+}
+} // namespace lift_0044B9D0
+
+// [0x0044BA00]
+namespace lift_0044BA00 {
+// @name sub_0044BA00
+// @summary Compares a property string against a global string and passes the boolean result to arg1's vtable[1]
+// @field unknown +0x68 void* field_0x68
+
+
+extern uint32_t mem_00A2FFDC;
+extern uint32_t mem_00924FC0;
+extern int __thiscall ext_00530690(void* self);
+
+int __thiscall fn_0044BA00(void* self, void* arg1) {
+    uint32_t target_str = mem_00A2FFDC;
+    void* obj = *(void**)((uint8_t*)self + 0x68);
+    int prop_str = ext_00530690(obj);
+
+    using OpEqFn = uint8_t (__cdecl*)(int, uint32_t);
+    auto op_eq = (OpEqFn)(uintptr_t)mem_00924FC0;
+    uint8_t eq = op_eq(prop_str, target_str);
+
+    void** vtable = *(void***)arg1;
+    using CallbackFn = int (__thiscall*)(void*, uint32_t);
+    auto cb = (CallbackFn)vtable[1];
+    return cb(arg1, (uint32_t)eq);
+}
+} // namespace lift_0044BA00
