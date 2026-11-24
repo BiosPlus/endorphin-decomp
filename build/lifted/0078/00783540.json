@@ -1,0 +1,33 @@
+{
+  "va": "0x00783540",
+  "size": 48,
+  "orig_symbol": "sub_00783540",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "writeIfEnabled (sub_00783540)",
+  "signature": "UINT fn_00783540(void* self, const void* buf, UINT count)",
+  "summary": "Writes count bytes from buf to the stream held by self's inner object, unless that object's flag byte at +0x04 is zero; returns fwrite's result or 0 when disabled.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (pointer to inner",
+      "name": "object)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (FILE* stream passed to",
+      "name": "fwrite)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t field_0x04 (enable flag on inner",
+      "name": "object)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:25:50Z"
+}
