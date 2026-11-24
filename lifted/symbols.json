@@ -3373,6 +3373,12 @@
     "summary": "If self is non-null, calls virtual slot 0 on self with argument 1 (flag value 1, typically a scalar deleting destructor).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00458DF0": {
+    "name": "descriptiveName: initObjectWithVtableAndZeroedTail",
+    "signature": "void fn_00458DF0(void* self)",
+    "summary": "Stores a vtable pointer at +0x00, a global value at +0x14, and zeroes +0x18 and +0x1c.",
+    "lifted_path": "lifted/leaf/tiny_450000.cpp"
+  },
   "0x00458E10": {
     "name": "SendMessageToFieldWindow",
     "signature": "int32_t fn_00458E10(void* self)",

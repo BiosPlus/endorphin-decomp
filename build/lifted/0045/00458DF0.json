@@ -1,0 +1,13 @@
+{
+  "va": "0x00458DF0",
+  "size": 26,
+  "orig_symbol": "sub_00458DF0",
+  "src_path": "src/leaf/tiny_450000.cpp",
+  "lifted_path": "lifted/leaf/tiny_450000.cpp",
+  "name": "descriptiveName: initObjectWithVtableAndZeroedTail",
+  "signature": "void fn_00458DF0(void* self)",
+  "summary": "Stores a vtable pointer at +0x00, a global value at +0x14, and zeroes +0x18 and +0x1c.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:55:25Z"
+}

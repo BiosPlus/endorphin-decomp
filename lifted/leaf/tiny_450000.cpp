@@ -358,3 +358,22 @@ void fn_004586A0(void* self, UINT_PTR nIDEvent, UINT uElapse) {
     (void)ext_006286D0(ownerHwnd, nIDEvent, uElapse, nullptr);
 }
 } // namespace lift_004586A0
+
+// [0x00458DF0] sub_00458DF0 (26 bytes)
+namespace lift_00458DF0 {
+extern int mem_009255BC;
+extern int mem_0093785C;
+
+// @name descriptiveName: initObjectWithVtableAndZeroedTail
+// @summary Stores a vtable pointer at +0x00, a global value at +0x14, and zeroes +0x18 and +0x1c.
+// @field field_0x00 uint32_t vtable pointer (0x0093785C)
+// @field field_0x14 uint32_t copied from mem_009255BC
+// @field field_0x18 uint32_t zeroed
+// @field field_0x1c uint32_t zeroed
+void fn_00458DF0(void* self) {
+    lift_field<uint32_t>(self, 0x14) = static_cast<uint32_t>(mem_009255BC);
+    lift_field<uint32_t>(self, 0x00) = 0x0093785Cu;
+    lift_field<uint32_t>(self, 0x18) = 0u;
+    lift_field<uint32_t>(self, 0x1c) = 0u;
+}
+} // namespace lift_00458DF0
