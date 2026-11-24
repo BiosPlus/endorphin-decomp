@@ -40,7 +40,7 @@ struct Unknown_Fields {
     // +0x0   void*                    field_0x00  (evidence: 0x00430260, 0x00430CA0, 0x00430DA0, 0x00430EE0, 0x00442960, 0x00443700, 0x00468580, 0x00468730, 0x0046E140, 0x0046E450, 0x0046E570, 0x00486AD0, 0x00493DC0, 0x00493E00, 0x00493E10, 0x00493E50, 0x00493E60, 0x00493E70, 0x00493E80, 0x00493E90, 0x00494050, 0x0049AD40, 0x004A25E0, 0x004F28C0, 0x0055E180, 0x0059F8D0, 0x005B3680, 0x005C5E50, 0x00633240, 0x00644F00, 0x00661840, 0x00661860, 0x0066B560, 0x006719C0, 0x006BC0D0, 0x006C0440, 0x006E6AD0, 0x006E7190, 0x006E8610, 0x006E8670, 0x006E8740, 0x006E87A0, 0x006E8800, 0x006EFEA0, 0x0071F070, 0x0072B180, 0x0072B220, 0x0072B250, 0x0077F520, 0x00783610, 0x007AC670, 0x0080FAC0, 0x00857490, 0x00871860) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   field_0x00  (evidence: 0x00434610, 0x0072DC50) // CONFLICT: multiple definitions at +0x0
     // +0x0   BYTE                     flag  (evidence: 0x006619D0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint8_t                  flags  (evidence: 0x00640940) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint8_t                  flags  (evidence: 0x00640940, 0x00640CB0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (FILE* stream passed to fwrite)  (evidence: 0x00783540, 0x00788E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    heldPtr  (evidence: 0x00401DE0, 0x0040A910, 0x004693D0, 0x004693F0, 0x0046F7D0, 0x00480750, 0x004A5BE0, 0x004AECE0, 0x004D2C70, 0x004DA800, 0x00594790, 0x005C4780, 0x005CEA30, 0x00648200, 0x00648510) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (object kind word; low byte used as index)  (evidence: 0x007D5B30) // CONFLICT: multiple definitions at +0x0
@@ -184,6 +184,7 @@ struct Unknown_Fields {
     // +0xC   uint32_t field_0x0C      (slot[0])  (evidence: 0x00553A30) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* handler (handler pointer at table[kind*40 + 0x0C])  (evidence: 0x007D5B30) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  count  (evidence: 0x006408F0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t                 counter  (evidence: 0x00640CB0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 entry_value  (evidence: 0x006FC6E0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t field_0x0C (accessed on the subobject returned by ext_0071E680)  (evidence: 0x00711DC0, 0x0071F070) // CONFLICT: multiple definitions at +0xC
     // +0xC   DWORD                    field_0x0C  (evidence: 0x005539F0, 0x006619D0, 0x006C1BB0, 0x006C9F00, 0x0071C8A0, 0x0071F070, 0x00783610, 0x0086B200) // CONFLICT: multiple definitions at +0xC
@@ -227,6 +228,7 @@ struct Unknown_Fields {
     // +0x10  DWORD                    flags  (evidence: 0x006C1BB0, 0x006C9CE0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 flags  (evidence: 0x006C1BB0, 0x006C9D60, 0x006C9DA0) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    forwardTarget  (evidence: 0x004586E0) // CONFLICT: multiple definitions at +0x10
+    // +0x10  uint8_t                  oneShot  (evidence: 0x00640CB0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t table_ptr (pointer to array of entry pointers)  (evidence: 0x006FC6E0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t field_0x10 (bit 16 read)  (evidence: 0x006C9F50) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t field_0x10 (on subobject returned by ext_0071E680, i.e. self+0x40)  (evidence: 0x00711D40) // CONFLICT: multiple definitions at +0x10

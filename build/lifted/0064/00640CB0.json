@@ -1,0 +1,34 @@
+{
+  "va": "0x00640CB0",
+  "size": 30,
+  "orig_symbol": "sub_00640CB0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "Unknown::IncrementAndFlushOnce",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __thiscall fn_00640CB0(void* ecx)",
+  "summary": "Increments the counter at +0x0C; if flag bit 0 at +0x00 is clear, runs the newline helper and the flush helper, then clears the one-shot byte at +0x10.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint8_t",
+      "name": "flags"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "counter"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "oneShot"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:31:53Z"
+}

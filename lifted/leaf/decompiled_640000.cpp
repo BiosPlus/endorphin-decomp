@@ -555,3 +555,26 @@ void fn_00649010(void* self, float x) {
     }
 }
 } // namespace lift_00649010
+
+// [0x00640CB0]
+namespace lift_00640CB0 {
+// @name Unknown::IncrementAndFlushOnce
+// @class Unknown
+// @summary Increments the counter at +0x0C; if flag bit 0 at +0x00 is clear, runs the newline helper and the flush helper, then clears the one-shot byte at +0x10.
+// @field Unknown +0x00 uint8_t flags
+// @field Unknown +0x0C uint32_t counter
+// @field Unknown +0x10 uint8_t oneShot
+
+extern void __thiscall ext_00640940(void* self);
+extern void __thiscall ext_006408F0(void* self);
+
+extern void __thiscall fn_00640CB0(void* ecx) {
+    lift_field<uint32_t>(ecx, 0x0C) += 1;
+
+    if ((lift_field<uint8_t>(ecx, 0x00) & 0x1) == 0) {
+        ext_00640940(ecx);
+        ext_006408F0(ecx);
+        lift_field<uint8_t>(ecx, 0x10) = 0;
+    }
+}
+} // namespace lift_00640CB0

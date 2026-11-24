@@ -27385,6 +27385,13 @@
     "summary": "If flag bit 0 is clear and the one-shot byte at +0x11 is clear, appends '\\n' to the std::string referenced at +0x08 and sets +0x11.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00640CB0": {
+    "name": "Unknown::IncrementAndFlushOnce",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __thiscall fn_00640CB0(void* ecx)",
+    "summary": "Increments the counter at +0x0C; if flag bit 0 at +0x00 is clear, runs the newline helper and the flush helper, then clears the one-shot byte at +0x10.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00641FD0": {
     "name": "IsFlagBit0AtOffset20",
     "class": "\u003cClassName\u003e (optional)",
