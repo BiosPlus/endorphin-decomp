@@ -371,3 +371,19 @@ void fn_00454C00(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
     ext_006A5EA8(self);
 }
 } // namespace lift_00454C00
+
+// [0x00455410]
+namespace lift_00455410 {
+// @name sub_00455410
+// @summary Calls virtual method +0x148 on embedded subobject at +0xc8 and stores boolean result at +0x158
+// @field Unknown +0xc8 void* field_0xc8
+// @field Unknown +0x158 uint8_t field_0x158
+void sub_00455410(uintptr_t self) {
+    uintptr_t subobj = self + 0xc8;
+    uintptr_t vtable = *reinterpret_cast<uintptr_t*>(subobj);
+    using VMethod = uint32_t(__thiscall*)(uintptr_t);
+    auto fn = *reinterpret_cast<VMethod*>(vtable + 0x148);
+    uint32_t res = fn(subobj);
+    *reinterpret_cast<uint8_t*>(self + 0x158) = (res != 0) ? 1 : 0;
+}
+} // namespace lift_00455410

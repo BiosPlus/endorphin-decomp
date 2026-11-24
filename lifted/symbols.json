@@ -45381,6 +45381,13 @@
     "summary": "Copies three 32-bit floats from src to this and returns this.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CA790": {
+    "name": "Vec3::dot",
+    "class": "Vec3",
+    "signature": "float __thiscall sub_007CA790(uintptr_t self, uintptr_t other)",
+    "summary": "Computes the 3D dot product of this vector with another vector.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CA820": {
     "name": "sub_007CA820",
     "signature": "extern \"C\" void fn_007CA820(void)",
