@@ -1,0 +1,28 @@
+{
+  "va": "0x00584BD0",
+  "size": 34,
+  "orig_symbol": "sub_00584BD0",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "Unknown::getStrPtrOrFallback",
+  "class": "Unknown",
+  "signature": "void* fn_00584BD0(void* self)",
+  "summary": "Returns a pointer to the std::string at +0x4C if it differs from a fixed literal, else a pointer to the std::string at +0x14.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "std::string field_0x14 (returned address when the +0x4C string equals the",
+      "name": "literal)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "std::string field_0x4C (compared against the literal; returned when it",
+      "name": "differs)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:55:06Z"
+}

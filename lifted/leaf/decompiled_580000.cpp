@@ -92,3 +92,25 @@ void* fn_00584A10(void* self) {
     return at14;
 }
 } // namespace lift_00584A10
+
+// [0x00584BD0] sub_00584BD0 (34 bytes)
+namespace lift_00584BD0 {
+// Literal string compared against the std::string at this+0x4C (.rdata 0x928B5D).
+extern const char mem_00928B5D[];
+// MSVCP80 std::operator!=(const std::string&, const char*) reached through the IAT slot mem_00924FC8.
+extern bool ext_00924FC8(const void* lhs, const char* rhs);
+
+// @name Unknown::getStrPtrOrFallback
+// @class Unknown
+// @summary Returns a pointer to the std::string at +0x4C if it differs from a fixed literal, else a pointer to the std::string at +0x14.
+// @field Unknown +0x14 std::string field_0x14 (returned address when the +0x4C string equals the literal)
+// @field Unknown +0x4C std::string field_0x4C (compared against the literal; returned when it differs)
+void* fn_00584BD0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    void* primary = base + 0x4C;
+    if (ext_00924FC8(primary, mem_00928B5D)) {
+        return primary;
+    }
+    return base + 0x14;
+}
+} // namespace lift_00584BD0

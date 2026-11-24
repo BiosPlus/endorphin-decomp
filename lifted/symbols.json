@@ -15976,6 +15976,13 @@
     "summary": "Pure jump thunk forwarding to sub_005B5AF0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00584BD0": {
+    "name": "Unknown::getStrPtrOrFallback",
+    "class": "Unknown",
+    "signature": "void* fn_00584BD0(void* self)",
+    "summary": "Returns a pointer to the std::string at +0x4C if it differs from a fixed literal, else a pointer to the std::string at +0x14.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x00584F50": {
     "name": "NMData::RPROMagnetData::vfunc_59",
     "class": "NMData::RPROMagnetData",
