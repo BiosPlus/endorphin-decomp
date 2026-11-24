@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_800000.cpp
 #include "lift_compat.h"
+#include <cstdint>
 
 // [0x0080FC40]
 namespace lift_0080FC40 {
@@ -181,3 +182,27 @@ uint32_t fn_0080FAF0(uint32_t* self) {
     return previous;
 }
 } // namespace lift_0080FAF0
+
+// [0x0080ABA0] sub_0080ABA0 (32 bytes)
+namespace lift_0080ABA0 {
+// Known callee 0x0080ABE0: InitCriticalSectionAndSetReadyFlag (Initializes the critical section at 0x00B73C58 and sets the flag at 0x00B73C80 to 1.)
+extern void ext_0080ABE0();
+extern int mem_00B73C80;
+extern int mem_009242E0;
+extern int mem_00B73C58;
+
+// @name EnsureCriticalSectionInitializedAndEnter
+// @summary If the ready flag at 0x00B73C80 is zero, initialize the global critical section; then enter it via KERNEL32 EnterCriticalSection (through the import slot at 0x009242E0).
+void fn_0080ABA0(void) {
+    // Ready flag not yet set: run the one-time initializer.
+    if (mem_00B73C80 == 0) {
+        ext_0080ABE0();
+    }
+
+    // EnterCriticalSection(&mem_00B73C58), called through its import pointer.
+    using EnterCriticalSectionFn = void (*)(void*);
+    auto enter = reinterpret_cast<EnterCriticalSectionFn>(
+        static_cast<std::uintptr_t>(static_cast<std::uint32_t>(mem_009242E0)));
+    enter(reinterpret_cast<void*>(&mem_00B73C58));
+}
+} // namespace lift_0080ABA0

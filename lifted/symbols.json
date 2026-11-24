@@ -45052,6 +45052,12 @@
     "summary": "Ensures the global critical section is initialized, then enters it via the imported EnterCriticalSection.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x0080ABA0": {
+    "name": "EnsureCriticalSectionInitializedAndEnter",
+    "signature": "void fn_0080ABA0(void)",
+    "summary": "If the ready flag at 0x00B73C80 is zero, initialize the global critical section; then enter it via KERNEL32 EnterCriticalSection (through the import slot at 0x009242E0).",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080ABC0": {
     "name": "LeaveGlobalCriticalSection",
     "signature": "void fn_0080ABC0(void)",
