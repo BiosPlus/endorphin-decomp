@@ -9055,6 +9055,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004ABE70": {
+    "name": "BehaviourData::vfunc_8_off_C",
+    "class": "NMData::BehaviourData",
+    "signature": "void fn_004ABE70(void* self, uint8_t flag)",
+    "summary": "Stores a flag byte at +0x5C, calls vtable slot 0x20 with that flag on every pointer in the list at +0x3D0..+0x3D4 (each element's subobject at +0xC), then dispatches to the object at (global + 0x258).",
+    "lifted_path": "lifted/NMData/BehaviourData.cpp"
+  },
   "0x004AC240": {
     "name": "NMData::BehaviourData::vfunc_0_off_158",
     "class": "NMData::BehaviourData",
