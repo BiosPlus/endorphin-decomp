@@ -9946,9 +9946,9 @@
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
   "0x00515840": {
-    "name": "getChannelCountAt0xA4",
-    "signature": "extern \"C\" int __thiscall fn_00515840(void* self)",
-    "summary": "Loads the pointer at this+0x04 and tail-calls ext_00508BA0 with (that pointer + 0xA4) as this; returns its result.",
+    "name": "sub_00511290",
+    "signature": "extern \"C\" void __fastcall fn_00511290(void* self, int edx_unused, float value)",
+    "summary": "Setter storing float argument into field at offset +0x40.",
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
   "0x00515850": {
