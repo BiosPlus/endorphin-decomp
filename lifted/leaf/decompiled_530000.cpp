@@ -88,3 +88,19 @@ void __fastcall fn_00537EC0(uint32_t ecx, uint32_t edx) {
     ext_0063E006(quadric);
 }
 } // namespace lift_00537EC0
+
+// [0x0053C8F0]
+namespace lift_0053C8F0 {
+// @name Unknown::initDerivedVtable
+// @class Unknown
+// @summary Runs the base initializer on self, then installs the derived vtable at +0x00 and returns self.
+// @field Unknown +0x00 uint32_t vtable
+
+void fn_00532B60(void* self);
+
+void* fn_0053C8F0(void* self) {
+    fn_00532B60(self);
+    *reinterpret_cast<uint32_t*>(self) = 0x00955B6Cu;
+    return self;
+}
+} // namespace lift_0053C8F0

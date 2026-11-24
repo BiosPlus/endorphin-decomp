@@ -12853,6 +12853,13 @@
     "summary": "Resets the base animation state, then releases and clears the owned object at +0x3C.",
     "lifted_path": "lifted/Primitives/Sensor.cpp"
   },
+  "0x0053C8F0": {
+    "name": "Unknown::initDerivedVtable",
+    "class": "Unknown",
+    "signature": "void* fn_0053C8F0(void* self)",
+    "summary": "Runs the base initializer on self, then installs the derived vtable at +0x00 and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x0053C970": {
     "name": "Primitives::Sensor2::vfunc_13",
     "class": "Primitives::Sensor2",
