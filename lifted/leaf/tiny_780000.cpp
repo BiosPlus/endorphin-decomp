@@ -471,3 +471,24 @@ DWORD fn_00783610(void* self) {
     return flags & 0x20;
 }
 } // namespace lift_00783610
+
+// [0x00783650]
+namespace lift_00783650 {
+uint32_t mem_u32(uintptr_t);
+uint8_t mem_u8(uintptr_t);
+
+// @name sub_00783650
+// @summary Checks whether bit 4 of an inner object's flags at +0xc is set when the wrapper at +0x4 is active.
+// @field Self +0x04 uint32_t field_0x04
+
+bool __thiscall sub_00783650(uintptr_t ecx) {
+    uint32_t eax = mem_u32(ecx + 0x4);
+    uint8_t cl = mem_u8(eax + 0x4);
+    if (cl == 0) {
+        return false;
+    }
+    uint32_t inner = mem_u32(eax);
+    uint32_t flags = mem_u32(inner + 0xc);
+    return ((flags >> 4) & 0x1) != 0;
+}
+} // namespace lift_00783650

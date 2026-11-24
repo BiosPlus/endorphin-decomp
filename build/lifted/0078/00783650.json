@@ -1,0 +1,21 @@
+{
+  "va": "0x00783650",
+  "size": 25,
+  "orig_symbol": "sub_00783650",
+  "src_path": "src/leaf/tiny_780000.cpp",
+  "lifted_path": "lifted/leaf/tiny_780000.cpp",
+  "name": "sub_00783650",
+  "signature": "bool __thiscall sub_00783650(uintptr_t ecx)",
+  "summary": "Checks whether bit 4 of an inner object's flags at +0xc is set when the wrapper at +0x4 is active.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T11:52:40Z"
+}
