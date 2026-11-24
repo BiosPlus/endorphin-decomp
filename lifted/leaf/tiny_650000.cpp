@@ -168,3 +168,17 @@ void __thiscall fn_0065D0C0(void* ecx, DWORD value) {
     field_0x130 = (value != 0) ? value : 1;
 }
 } // namespace lift_0065D0C0
+
+// [0x0065D0A0]
+namespace lift_0065D0A0 {
+// @name SetFieldAt0x138PositiveOrNaNelseOne
+// @summary Stores the float argument at this+0x138 if it is greater than zero or NaN, otherwise stores 1.0f (thiscall, one stack arg, ret 4).
+// @field <unknown> +0x138 FLOAT field_0x138
+
+void __thiscall fn_0065D0A0(void* ecx, FLOAT value) {
+    FLOAT& field_0x138 = lift_field<FLOAT>(ecx, 0x138);
+    // x87 fcom + test ah,0x41 + jp: jump (keep value) when value > 0 or unordered (NaN);
+    // otherwise (value <= 0) fall through and store 1.0.
+    field_0x138 = (value > 0.0f || std::isnan(value)) ? value : 1.0f;
+}
+} // namespace lift_0065D0A0

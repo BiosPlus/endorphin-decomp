@@ -26606,6 +26606,12 @@
     "summary": "Destructor tail-call: restores vtable mem_009849C8 and tail-calls base destructor sub_00401BB0.",
     "lifted_path": "lifted/leaf/tiny_650000.cpp"
   },
+  "0x0065D0A0": {
+    "name": "SetFieldAt0x138PositiveOrNaNelseOne",
+    "signature": "void __thiscall fn_0065D0A0(void* ecx, FLOAT value)",
+    "summary": "Stores the float argument at this+0x138 if it is greater than zero or NaN, otherwise stores 1.0f (thiscall, one stack arg, ret 4).",
+    "lifted_path": "lifted/leaf/tiny_650000.cpp"
+  },
   "0x0065D0C0": {
     "name": "SetFieldAt0x130NonZero",
     "signature": "void __thiscall fn_0065D0C0(void* ecx, DWORD value)",
