@@ -26,6 +26,7 @@ struct ExprParser_ValuePtrType_Fields {
     // +0x0   void*                    statePtr  (evidence: 0x004983A0, 0x0049CA80, 0x005B3680, 0x006749C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   EffectorSkeletal*        target  (evidence: 0x004886F0, 0x004A2AD0, 0x0051D310, 0x0058C010, 0x005F5F50, 0x00633240, 0x00635740) // CONFLICT: multiple definitions at +0x0
     // +0x0   NMData::DesiredPoseEventData* target  (evidence: 0x0046E570, 0x004983A0, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x005B3680, 0x006749C0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   NMData::EngineData*      target  (evidence: 0x004B89A0) // CONFLICT: multiple definitions at +0x0
     // +0x0   NMData::State*           target  (evidence: 0x004886F0, 0x0049BF20, 0x004A25E0, 0x004A2AD0, 0x00633240) // CONFLICT: multiple definitions at +0x0
     // +0x0   NMData::VideoPlaneData*  target  (evidence: 0x0046E570, 0x004983A0, 0x004986A0, 0x004B1FF0, 0x004B8920, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x00508EE0, 0x005B2D00, 0x005B3680, 0x005D2860, 0x005D2C50, 0x0066F700, 0x006749C0, 0x0068DE60) // CONFLICT: multiple definitions at +0x0
     // +0x0   double*                  target  (evidence: 0x0046E450, 0x0046EA50, 0x004886F0, 0x004A25E0, 0x004A2AD0, 0x00633240, 0x0066EBA0, 0x00695620) // CONFLICT: multiple definitions at +0x0

@@ -10340,6 +10340,13 @@
     "summary": "Reads the target pointer held at +0x00 of the single stack argument and returns the float at target+0x48; if the target pointer is null, raises a C++ exception via ext_006A6DD2 (CxxThrowException).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B89A0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, getUnitMass, 0\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0\u003e",
+    "signature": "extern \"C\" const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info) void fn_004B89A0(void* self)",
+    "summary": "Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B8A00": {
     "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitMass, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026NMData::EngineData::getUnitMass, 0\u003e",

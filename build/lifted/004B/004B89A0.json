@@ -1,0 +1,28 @@
+{
+  "va": "0x004B89A0",
+  "size": 94,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, getUnitMass, 0\u003e::vfunc_2",
+  "class": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0\u003e",
+  "signature": "extern \"C\" const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info) void fn_004B89A0(void* self)",
+  "summary": "Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "NMData::EngineData*",
+      "name": "target"
+    },
+    {
+      "class": "NMData::EngineData",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:50:36Z"
+}

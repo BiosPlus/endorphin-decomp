@@ -34056,3 +34056,65 @@ void* __thiscall fn_005B3B70(void* self, void* out_str, void** obj_ptr) {
     return out_str;
 }
 } // namespace lift_005B3B70
+
+// [0x00604DF0]
+namespace lift_00604DF0 {
+// @name ExprParser::ReadMethodType<Effector, float, &Effector::getPoseRawDesiredDisplacement, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Effector, float, &Effector::getPoseRawDesiredDisplacement, 1>
+// @summary Evaluates whether an Effector's virtual method at vtable+0x38 returns a float >= 1e-6, throwing if the object pointer is null.
+// @field Effector +0x00 void** vtable
+
+
+extern void ext_0046C3C0(void* exc);
+extern void ext_006A6DD2(void* exc, const void* throw_info);
+extern const double mem_0096F810;
+extern const uint32_t mem_009DEC1C;
+
+uint32_t fn_00604DF0(uint32_t arg0) {
+    uint32_t obj = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(arg0));
+    if (obj == 0) {
+        uint8_t exc[0x28]{};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    using VFunc38 = float* (__thiscall*)(void* self, float* out);
+    void* obj_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(obj));
+    uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(obj_ptr);
+    auto vfunc = reinterpret_cast<VFunc38>(vtable[0x38 / sizeof(uintptr_t)]);
+
+    float tmp = 0.0f;
+    float* res = vfunc(obj_ptr, &tmp);
+    return (static_cast<double>(*res) < mem_0096F810) ? 0u : 1u;
+}
+} // namespace lift_00604DF0
+
+// [0x004B89A0] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_004B89A0(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0x48);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
