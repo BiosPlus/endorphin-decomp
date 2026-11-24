@@ -182,3 +182,19 @@ void fn_00642720(void* self, float value) {
 }
 } // namespace lift_00642630
 } // namespace lift_00642720
+
+// [0x00647BF0] sub_00647BF0 (20 bytes)
+namespace lift_00647BF0 {
+extern void __thiscall ext_0065AA30(void* self, void* outer, float value);
+
+// @name Unknown::ForwardFloat68ToSubobjectA4
+// @class Unknown
+// @summary Loads float at this+0x68, then calls sub_0065AA30 on the subobject at this+0xA4 passing (this, float) as stack args (thiscall, callee pops 8).
+// @field Unknown +0x68 float field_0x68
+// @field Unknown +0xA4 void* field_0xA4
+extern void __thiscall fn_00647BF0(void* self) {
+    float value = lift_field<float>(self, 0x68);
+    void* subobject = lift_field<void*>(self, 0xA4);
+    ext_0065AA30(subobject, self, value);
+}
+} // namespace lift_00647BF0
