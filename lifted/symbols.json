@@ -12964,6 +12964,13 @@
     "summary": "If the +0x14 child is set, forward to its vtable slot 15 with the child as this; otherwise return the byte at +0x0C.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00537E00": {
+    "name": "CompoundRenderable::vfunc_6",
+    "class": "CompoundRenderable",
+    "signature": "inline void* load_ptr(const void* base, std::size_t off)",
+    "summary": "If the argument matches the stored key at +0x14, forward the call to the child at +0x10 via its vtable slot 6, passing this as the argument; otherwise return the argument unchanged.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00537E20": {
     "name": "CompoundRenderable::vfunc_0",
     "class": "CompoundRenderable",

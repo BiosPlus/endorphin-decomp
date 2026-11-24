@@ -6547,3 +6547,36 @@ intptr_t fn_00533C50(uint8_t* self, intptr_t arg) {
     return fn(sub, arg, 0);
 }
 } // namespace lift_00533C50
+
+// [0x00537E00] CompoundRenderable::vfunc_6 (28 bytes)
+namespace lift_00537E00 {
+// @name CompoundRenderable::vfunc_6
+// @class CompoundRenderable
+// @summary If the argument matches the stored key at +0x14, forward the call to the child at +0x10 via its vtable slot 6, passing this as the argument; otherwise return the argument unchanged.
+// @field CompoundRenderable +0x10 void* field_0x10
+// @field CompoundRenderable +0x14 void* field_0x14
+
+
+namespace {
+
+// Signature of the forwarded virtual call (thiscall-style: self in ECX, one arg on stack).
+using ForwardFn = int (*)(void* self, void* arg);
+
+inline void* load_ptr(const void* base, std::size_t off) {
+    return *reinterpret_cast<void* const*>(static_cast<const std::uint8_t*>(base) + off);
+}
+
+} // namespace
+
+int fn_00537E00(void* self, void* arg) {
+    void* key = load_ptr(self, 0x14);
+    if (arg != key) {
+        return static_cast<int>(reinterpret_cast<std::intptr_t>(arg));
+    }
+
+    void* child = load_ptr(self, 0x10);
+    void* vtbl = load_ptr(child, 0);
+    ForwardFn fn = reinterpret_cast<ForwardFn>(load_ptr(vtbl, 0x18));
+    return fn(child, self);
+}
+} // namespace lift_00537E00

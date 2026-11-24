@@ -1,0 +1,28 @@
+{
+  "va": "0x00537E00",
+  "size": 28,
+  "orig_symbol": "CompoundRenderable::vfunc_6",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CompoundRenderable::vfunc_6",
+  "class": "CompoundRenderable",
+  "signature": "inline void* load_ptr(const void* base, std::size_t off)",
+  "summary": "If the argument matches the stored key at +0x14, forward the call to the child at +0x10 via its vtable slot 6, passing this as the argument; otherwise return the argument unchanged.",
+  "fields": [
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:08:07Z"
+}
