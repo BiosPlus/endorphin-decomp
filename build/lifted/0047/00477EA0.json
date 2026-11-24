@@ -1,0 +1,28 @@
+{
+  "va": "0x00477EA0",
+  "size": 31,
+  "orig_symbol": "EvolvedIndividual::vfunc_8",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "EvolvedIndividual::vfunc_8",
+  "class": "EvolvedIndividual",
+  "signature": "void fn_00477EA0(void* self, void* str)",
+  "summary": "Auto-lifted identical-shape clone of 0x00401D00 (AVIIO::vfunc_7).",
+  "fields": [
+    {
+      "class": "EvolvedIndividual",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "AVIIO",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:21:23Z"
+}

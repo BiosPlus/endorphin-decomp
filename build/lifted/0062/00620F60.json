@@ -1,0 +1,28 @@
+{
+  "va": "0x00620F60",
+  "size": 31,
+  "orig_symbol": "sub_00620F60",
+  "src_path": "src/leaf/tiny_620000.cpp",
+  "lifted_path": "lifted/leaf/tiny_620000.cpp",
+  "name": "sub_00620F60",
+  "class": "Unknown",
+  "signature": "int32_t fn_00620F60(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00404D50 (ElementCountFromRange).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:21:23Z"
+}

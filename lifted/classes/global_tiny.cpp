@@ -6686,3 +6686,41 @@ void fn_00401D00(void* self, void* str) {
     target(self, text);
 }
 } // namespace lift_00401D00
+
+// [0x00477EA0] EvolvedIndividual::vfunc_8 (31 bytes)
+namespace lift_00477EA0 {
+extern uintptr_t mem_00924FF0;
+
+// @name EvolvedIndividual::vfunc_8
+// @class EvolvedIndividual
+// @summary Auto-lifted identical-shape clone of 0x00401D00 (AVIIO::vfunc_7).
+// @field EvolvedIndividual +0x0 void* vtable
+namespace lift_00401D00 {
+extern int mem_00924FF0;
+
+// @name AVIIO::vfunc_7
+// @class AVIIO
+// @summary Passes the C string of a std::string argument to the object's vtable slot +0x20.
+// @field AVIIO +0x00 void* vtable
+
+namespace {
+
+// Thunk for std::string::c_str (imported via IAT slot at 0x924FF0).
+using CStrFn = const char* (*)(void* str);
+
+// Virtual method at vtable +0x20 (slot 8): takes the object and a C string.
+using VirtualStrFn = void (*)(void* self, const char* text);
+
+}  // namespace
+
+void fn_00477EA0(void* self, void* str) {
+    CStrFn c_str = reinterpret_cast<CStrFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF0)));
+    const char* text = c_str(str);
+
+    void** vtbl = *static_cast<void***>(self);
+    VirtualStrFn target = reinterpret_cast<VirtualStrFn>(vtbl[0x28 / sizeof(void*)]);
+    target(self, text);
+}
+} // namespace lift_00401D00
+} // namespace lift_00477EA0

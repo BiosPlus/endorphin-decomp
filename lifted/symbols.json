@@ -5381,6 +5381,13 @@
     "summary": "Stores the float at *value into every 4-byte slot in [first, last); no-op if first == last.",
     "lifted_path": "lifted/leaf/tiny_470000.cpp"
   },
+  "0x00477EA0": {
+    "name": "EvolvedIndividual::vfunc_8",
+    "class": "EvolvedIndividual",
+    "signature": "void fn_00477EA0(void* self, void* str)",
+    "summary": "Auto-lifted identical-shape clone of 0x00401D00 (AVIIO::vfunc_7).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x0047D9E0": {
     "name": "sub_0047D9E0",
     "signature": "extern \"C\" void fn_0047D9E0(void)",
@@ -11320,6 +11327,13 @@
     "summary": "IAT jump thunk forwarding to MSVCP80!??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00504A80": {
+    "name": "sub_00504A80",
+    "class": "Unknown",
+    "signature": "int32_t fn_00504A80(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00404D50 (ElementCountFromRange).",
+    "lifted_path": "lifted/leaf/tiny_500000.cpp"
+  },
   "0x00504D70": {
     "name": "ExprParser::ReadMethodType\u003cInterpreter\u003e::vfunc_2 (Interpreter::bogus)",
     "class": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e",
@@ -14788,6 +14802,13 @@
     "name": "sub_00553E40",
     "signature": "int32_t fn_00553E40(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0051C7A0 (NMData::QuatChannel::vfunc_9).",
+    "lifted_path": "lifted/leaf/tiny_550000.cpp"
+  },
+  "0x00553E60": {
+    "name": "sub_00553E60",
+    "class": "Unknown",
+    "signature": "int32_t fn_00553E60(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00404D50 (ElementCountFromRange).",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
   "0x00553E80": {
@@ -23085,6 +23106,13 @@
     "signature": "void* fn_00620EF0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x004D3070 (NMData::TransitionEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/classes/IdentityNode.cpp"
+  },
+  "0x00620F60": {
+    "name": "sub_00620F60",
+    "class": "Unknown",
+    "signature": "int32_t fn_00620F60(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00404D50 (ElementCountFromRange).",
+    "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
   "0x00621720": {
     "name": "sub_00621720",
