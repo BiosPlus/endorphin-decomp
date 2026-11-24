@@ -114,9 +114,13 @@ namespace lift_00493E50 {
 using VtableSlotFn = uintptr_t (*)(void* thisPtr);
 
 uintptr_t fn_00493E50(void* self) {
+    // mov ecx, [ecx]          ; inner = *self
     void* inner = *reinterpret_cast<void**>(self);
+    // mov eax, [ecx]          ; vtable = *inner
     void** vtable = *reinterpret_cast<void***>(inner);
-    auto target = reinterpret_cast<VtableSlotFn>(vtable[0x18C / sizeof(void*)]);
+    // mov eax, [eax+0x18c]    ; target = vtable[0x18C] (byte offset)
+    auto target = reinterpret_cast<VtableSlotFn>(lift_field<void*>(vtable, 0x18C));
+    // jmp eax                 ; tail-call with ecx == inner
     return target(inner);
 }
 } // namespace lift_00493E50
