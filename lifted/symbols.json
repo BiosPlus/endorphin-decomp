@@ -42542,6 +42542,12 @@
     "summary": "Maps a mode selector (0 = \"Relative\", 1 = \"Absolute\") to a static label string; returns nullptr for other values.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00782CB0": {
+    "name": "GetRigidName",
+    "signature": "const char* fn_00782CB0(DWORD selector)",
+    "summary": "Returns the \"World Rigid\" (0) or \"Body Rigid\" (1) label string; NULL for any other selector.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00782D20": {
     "name": "sub_00782D20",
     "signature": "extern \"C\" void fn_00782D20(void)",

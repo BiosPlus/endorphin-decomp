@@ -1,0 +1,13 @@
+{
+  "va": "0x00782CB0",
+  "size": 32,
+  "orig_symbol": "sub_00782CB0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "GetRigidName",
+  "signature": "const char* fn_00782CB0(DWORD selector)",
+  "summary": "Returns the \"World Rigid\" (0) or \"Body Rigid\" (1) label string; NULL for any other selector.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:44:46Z"
+}

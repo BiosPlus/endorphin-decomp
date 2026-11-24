@@ -74,3 +74,23 @@ const char* sub_00782B80(DWORD mode) {
     }
 }
 } // namespace lift_00782B80
+
+// [0x00782CB0] sub_00782CB0 (32 bytes)
+namespace lift_00782CB0 {
+extern const char mem_00AAF348[];
+extern const char mem_00AAF354[];
+
+// @name GetRigidName
+// @summary Returns the "World Rigid" (0) or "Body Rigid" (1) label string; NULL for any other selector.
+// @field none
+const char* fn_00782CB0(DWORD selector) {
+    switch (selector) {
+        case 0:
+            return mem_00AAF348;
+        case 1:
+            return mem_00AAF354;
+        default:
+            return nullptr;
+    }
+}
+} // namespace lift_00782CB0
