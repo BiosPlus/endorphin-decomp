@@ -1,0 +1,13 @@
+{
+  "va": "0x0058A8F0",
+  "size": 48,
+  "orig_symbol": "sub_0058A8F0",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "getTranslationX",
+  "signature": "float __thiscall sub_0058A8F0(uintptr_t this_ptr)",
+  "summary": "Gets the X component of row 3 from a transform matrix retrieved via vtable on this+0x4.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:20:25Z"
+}

@@ -240,3 +240,28 @@ float fn_0058AB90(uint8_t* self) {
     return result;
 }
 } // namespace lift_0058AB90
+
+// [0x0058A8F0]
+namespace lift_0058A8F0 {
+// @name getTranslationX
+// @summary Gets the X component of row 3 from a transform matrix retrieved via vtable on this+0x4.
+// @field field_0x04 void* vtable_obj
+
+extern uint8_t mem_00A85D54;
+extern uint32_t __thiscall ext_00552130(uintptr_t this_ptr, uintptr_t out_ptr, uint32_t index);
+
+float __thiscall sub_0058A8F0(uintptr_t this_ptr) {
+    uintptr_t sub_obj = this_ptr + 0x4;
+    uintptr_t vtable = *reinterpret_cast<const uint32_t*>(sub_obj);
+    uint32_t fn_addr = (mem_00A85D54 != 0)
+        ? *reinterpret_cast<const uint32_t*>(vtable + 0x30)
+        : *reinterpret_cast<const uint32_t*>(vtable + 0x28);
+
+    using GetMatrixFn = uintptr_t(__thiscall*)(uintptr_t);
+    uintptr_t matrix_ptr = reinterpret_cast<GetMatrixFn>(static_cast<uintptr_t>(fn_addr))(sub_obj);
+
+    float row[4]{};
+    uintptr_t out_ptr = ext_00552130(matrix_ptr, reinterpret_cast<uintptr_t>(row), 3);
+    return *reinterpret_cast<const float*>(out_ptr);
+}
+} // namespace lift_0058A8F0
