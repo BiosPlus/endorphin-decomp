@@ -1207,10 +1207,10 @@
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x00422CE0": {
-    "name": "SetFieldAndOffsetField78",
+    "name": "sub_00421AB0",
     "class": "Unknown",
-    "signature": "void fn_00422CE0(void* self, DWORD value)",
-    "summary": "Stores the argument at this+0x74 and stores argument + 0x5C at this+0x78 (__thiscall, ret 4).",
+    "signature": "extern \"C\" int* fn_00421AB0()",
+    "summary": "Returns the address of the global constant mem_0092E4B8 (initialised to 0x006A5FCE).",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
   },
   "0x004248D0": {

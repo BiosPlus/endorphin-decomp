@@ -4,10 +4,10 @@
   "orig_symbol": "sub_00422CE0",
   "src_path": "src/leaf/tiny_420000.cpp",
   "lifted_path": "lifted/leaf/tiny_420000.cpp",
-  "name": "SetFieldAndOffsetField78",
+  "name": "sub_00421AB0",
   "class": "Unknown",
-  "signature": "void fn_00422CE0(void* self, DWORD value)",
-  "summary": "Stores the argument at this+0x74 and stores argument + 0x5C at this+0x78 (__thiscall, ret 4).",
+  "signature": "extern \"C\" int* fn_00421AB0()",
+  "summary": "Returns the address of the global constant mem_0092E4B8 (initialised to 0x006A5FCE).",
   "fields": [
     {
       "class": "Unknown",
@@ -24,5 +24,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T01:33:38Z"
+  "lifted_at": "2026-11-24T01:33:50Z"
 }
