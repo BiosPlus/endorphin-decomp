@@ -39378,6 +39378,13 @@
     "summary": "Loads the pointer at +0x04, passes it through GetValueIfCountPositive and sub_006C9500, then tail-returns the float from sub_006C9F70.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x00700A20": {
+    "name": "sub_00700A20",
+    "class": "Unknown",
+    "signature": "float fn_00700A20(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007009E0 (Unknown::GetChainedFloat).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x007010B0": {
     "name": "CopyHugeConstantToGlobals",
     "signature": "extern uint32_t mem_00925284; // .rdata u32 0x0062D360 (pointer to _HUGE) extern uint32_t mem_00B5E7D0; // global, low dword extern uint32_t mem_00B5E7D4; // global, high dword void CopyHugeConstantToGlobals()",
@@ -41098,6 +41105,13 @@
     "signature": "double fn_0071C100(uint32_t self)",
     "summary": "Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C330": {
+    "name": "sub_0071C330",
+    "class": "Unknown",
+    "signature": "int32_t fn_0071C330(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007008F0 (Unknown::GetSubObjectValue).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x0071C350": {
     "name": "sub_0071C350",

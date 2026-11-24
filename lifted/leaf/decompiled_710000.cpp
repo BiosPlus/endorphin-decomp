@@ -174,3 +174,27 @@ extern uint32_t __fastcall fn_00712240(void* self) {
     return mem_00AABF1C[index];
 }
 } // namespace lift_00712240
+
+// [0x0071C330] sub_0071C330 (32 bytes)
+namespace lift_0071C330 {
+// @name sub_0071C330
+// @summary Auto-lifted identical-shape clone of 0x007008F0 (Unknown::GetSubObjectValue).
+namespace lift_007008F0 {
+// Known callee 0x006B9950: sub_006B9950 (returns a bool-like flag in al; takes this in ecx)
+extern uint8_t ext_006B9950(void* self);
+// Known callee 0x006E7460: sub_006E7460 (Getter returning int32_t field at offset +0x0.)
+extern int32_t ext_006E7460(void* self);
+
+// @name Unknown::GetSubObjectValue
+// @class Unknown
+// @summary Passes the embedded sub-object at +0x10 to a flag check; returns 0 if the flag is set, otherwise the sub-object's int32 getter value.
+// @field Unknown +0x10 <embedded object> field_0x10
+int32_t fn_0071C330(void* self) {
+    uint8_t* sub = static_cast<uint8_t*>(self) + 0x50;
+    if (ext_006B9950(sub) != 0) {
+        return 0;
+    }
+    return ext_006E7460(sub);
+}
+} // namespace lift_007008F0
+} // namespace lift_0071C330

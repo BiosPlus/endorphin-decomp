@@ -106,3 +106,28 @@ float __fastcall fn_00700A00(void* self) {
     return ext_006C9F70(reinterpret_cast<void*>(static_cast<uintptr_t>(v2)));
 }
 } // namespace lift_00700A00
+
+// [0x00700A20] sub_00700A20 (32 bytes)
+namespace lift_00700A20 {
+// @name sub_00700A20
+// @summary Auto-lifted identical-shape clone of 0x007009E0 (Unknown::GetChainedFloat).
+namespace lift_007009E0 {
+// Known callee 0x006DC460: Unknown::GetValueIfCountPositive (returns *(this->field_0xC8) when this->field_0xB8 > 0, otherwise 0).
+extern int32_t ext_006DC460(void* self);
+// Callee 0x006C94F0 (sub_006C94F0, 15B): takes its argument in ecx, returns in eax. Signature not yet verified.
+extern uint32_t ext_006C9510(uint32_t self);
+// Known callee 0x006C9F70: sub_006C9F70 (getter returning float field at offset +0x14).
+extern float ext_006C9F70(void* self);
+
+// @name Unknown::GetChainedFloat
+// @class Unknown
+// @summary Reads the object at +0x04, passes it through GetValueIfCountPositive and sub_006C94F0, then returns the float from the resulting object via sub_006C9F70.
+// @field Unknown +0x04 void* field_0x04
+float fn_00700A20(void* self) {
+    void* child = lift_field<void*>(self, 0x04);
+    int32_t value = ext_006DC460(child);
+    uint32_t next = ext_006C9510(static_cast<uint32_t>(value));
+    return ext_006C9F70(reinterpret_cast<void*>(static_cast<uintptr_t>(next)));
+}
+} // namespace lift_007009E0
+} // namespace lift_00700A20

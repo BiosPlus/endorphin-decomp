@@ -1,0 +1,22 @@
+{
+  "va": "0x00700A20",
+  "size": 32,
+  "orig_symbol": "sub_00700A20",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "sub_00700A20",
+  "class": "Unknown",
+  "signature": "float fn_00700A20(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x007009E0 (Unknown::GetChainedFloat).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:37:48Z"
+}

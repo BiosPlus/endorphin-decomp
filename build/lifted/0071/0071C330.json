@@ -1,0 +1,22 @@
+{
+  "va": "0x0071C330",
+  "size": 32,
+  "orig_symbol": "sub_0071C330",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "sub_0071C330",
+  "class": "Unknown",
+  "signature": "int32_t fn_0071C330(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x007008F0 (Unknown::GetSubObjectValue).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "\u003cembedded object\u003e",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:37:48Z"
+}
