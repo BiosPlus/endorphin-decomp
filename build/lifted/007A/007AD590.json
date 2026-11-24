@@ -1,0 +1,22 @@
+{
+  "va": "0x007AD590",
+  "size": 48,
+  "orig_symbol": "sub_007AD590",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "UnknownClass::initVtable",
+  "class": "UnknownClass",
+  "signature": "void fn_007AD590(void* self)",
+  "summary": "Stores vtable pointer 0x009989F0 into the object's first dword (thiscall, no args, no return value).",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:27:45Z"
+}

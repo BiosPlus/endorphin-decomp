@@ -260,3 +260,15 @@ void fn_007AF010(uint8_t* buffer, uint32_t count) {
     }
 }
 } // namespace lift_007AF010
+
+// [0x007AD590] sub_007AD590 (48 bytes)
+namespace lift_007AD590 {
+// @name UnknownClass::initVtable
+// @class UnknownClass
+// @summary Stores vtable pointer 0x009989F0 into the object's first dword (thiscall, no args, no return value).
+// @field UnknownClass +0x00 uint32_t field_0x00
+void fn_007AD590(void* self) {
+    // Single store of the vtable pointer at offset 0, then return.
+    lift_field<uint32_t>(self, 0) = 0x009989F0u;
+}
+} // namespace lift_007AD590
