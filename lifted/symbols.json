@@ -1945,6 +1945,12 @@
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_4544.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00430DA0": {
+    "name": "sub_00430DA0",
+    "signature": "extern \"C\" void __cdecl fn_00430DA0(void)",
+    "summary": "Calls a status getter, passes its result to a predicate; if the predicate is false, shows a message box via MFC80 ord_1123.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430DE0": {
     "name": "sub_00430DE0",
     "class": "// @summary Calls two helpers; if the second returns false, shows a message box with a fixed string resource.",

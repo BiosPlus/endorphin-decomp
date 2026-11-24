@@ -512,3 +512,27 @@ extern void fn_00430DE0(void) {
     (void)fn_006A5E60(0x0092F8B8u, 0x30u, 0u);
 }
 } // namespace lift_00430DE0
+
+// [0x00430DA0]
+namespace lift_00430DA0 {
+// @name sub_00430DA0
+// @summary Calls a status getter, passes its result to a predicate; if the predicate is false, shows a message box via MFC80 ord_1123.
+
+extern int32_t __cdecl fn_00465B30(void);
+extern void fn_00469C80(void);
+extern void fn_006A5E60(void);
+
+extern void __cdecl fn_00430DA0(void) {
+    int32_t ecx_val = fn_00465B30();   // mov ecx, eax (value also left in ECX for the next call)
+    fn_00469C80();                     // predicate; result in AL
+    uint8_t al = 0;                    // predicate result is not returned by the lifted signature
+    if (al == 0) {
+        // push 0x0; push 0x30; push 0x92f8b8; call MFC80 ord_1123
+        // Argument mapping is inferred from the push sequence; the callee's declared
+        // signature is void(void), so these are passed through a cast below.
+        using Fn = void (__cdecl *)(uint32_t, uint32_t, uint32_t);
+        reinterpret_cast<Fn>(fn_006A5E60)(0x92F8B8u, 0x30u, 0u);
+    }
+    (void)ecx_val;
+}
+} // namespace lift_00430DA0

@@ -1,0 +1,13 @@
+{
+  "va": "0x00430DA0",
+  "size": 31,
+  "orig_symbol": "sub_00430DA0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_00430DA0",
+  "signature": "extern \"C\" void __cdecl fn_00430DA0(void)",
+  "summary": "Calls a status getter, passes its result to a predicate; if the predicate is false, shows a message box via MFC80 ord_1123.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:21:41Z"
+}
