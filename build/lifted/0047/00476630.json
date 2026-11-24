@@ -1,0 +1,13 @@
+{
+  "va": "0x00476630",
+  "size": 47,
+  "orig_symbol": "sub_00476630",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "makeStdStringFromCStr",
+  "signature": "void* fn_00476630(std::string* out, const char* s)",
+  "summary": "Constructs a std::string in caller-provided storage from a C string; if the pointer is null, constructs an empty string. Returns the storage pointer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:12:28Z"
+}

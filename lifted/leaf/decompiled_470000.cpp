@@ -36,3 +36,18 @@ float* __stdcall sub_00479A90(float* dst, uint32_t count, const float* value) {
     return dst + count;
 }
 } // namespace lift_00479A90
+
+// [0x00476630] sub_00476630 (47 bytes)
+namespace lift_00476630 {
+// @name makeStdStringFromCStr
+// @summary Constructs a std::string in caller-provided storage from a C string; if the pointer is null, constructs an empty string. Returns the storage pointer.
+void* fn_00476630(std::string* out, const char* s)
+{
+    if (s != nullptr) {
+        ::new (static_cast<void*>(out)) std::string(s);
+    } else {
+        ::new (static_cast<void*>(out)) std::string();
+    }
+    return out;
+}
+} // namespace lift_00476630
