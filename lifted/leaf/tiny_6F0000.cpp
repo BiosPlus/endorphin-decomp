@@ -2831,3 +2831,26 @@ bool fn_006FA920(void* self) {
     return true;
 }
 } // namespace lift_006FA920
+
+// [0x006FC7E0]
+namespace lift_006FC7E0 {
+// @name Unknown::initVtableAndClearFields
+// @class Unknown
+// @summary Writes vtable pointer 0x00995180 to +0x00 and zeroes the six dwords at +0x04..+0x18.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+void fn_006FC7E0(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x00995180u;
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<uint32_t>(self, 0x14) = 0;
+    lift_field<uint32_t>(self, 0x18) = 0;
+}
+} // namespace lift_006FC7E0

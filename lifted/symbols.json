@@ -38061,6 +38061,13 @@
     "summary": "Returns address of global mem_00B608B8.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006FC7E0": {
+    "name": "Unknown::initVtableAndClearFields",
+    "class": "Unknown",
+    "signature": "void fn_006FC7E0(void* self)",
+    "summary": "Writes vtable pointer 0x00995180 to +0x00 and zeroes the six dwords at +0x04..+0x18.",
+    "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
+  },
   "0x006FC800": {
     "name": "sub_006FC800",
     "signature": "extern \"C\" void* __fastcall fn_006FC800(void* self, int edx_unused, unsigned int flags)",
