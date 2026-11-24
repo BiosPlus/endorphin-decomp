@@ -600,3 +600,18 @@ void* fn_0070E3B0(void* self, void* receiver) {
     return ext_0070E390(receiver, reinterpret_cast<uint8_t*>(self) + 0xD0);
 }
 } // namespace lift_0070E3B0
+
+// [0x0070EC50] sub_0070EC50 (32 bytes)
+namespace lift_0070EC50 {
+// Known callee 0x007873F0: sub_007873F0 (takes the sub-object in ecx as this and one stack argument).
+extern DWORD __thiscall ext_007873F0(void* self, DWORD arg);
+
+// @name Unknown::ForwardSubObjectAt0x148
+// @class Unknown
+// @summary Forwards its single argument to ext_007873F0 on the sub-object at this+0x148 and returns that result.
+// @field Unknown +0x148 void* subObject
+extern DWORD __thiscall fn_0070EC50(void* self, DWORD arg) {
+    void* subObject = static_cast<unsigned char*>(self) + 0x148;
+    return ext_007873F0(subObject, arg);
+}
+} // namespace lift_0070EC50

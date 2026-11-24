@@ -39901,10 +39901,10 @@
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x0070E3B0": {
-    "name": "Unknown::ForwardSubObjectAt0xD0",
+    "name": "sub_0070A1D0",
     "class": "Unknown",
-    "signature": "void* fn_0070E3B0(void* self, void* receiver)",
-    "summary": "Forwards the call to ext_0070E390 using the sub-object at this+0xD0 as its argument; receiver is the second argument.",
+    "signature": "extern \"C\" void* __fastcall fn_0070A1D0(void* self, int edx_unused, unsigned int flags)",
+    "summary": "MSVC scalar deleting destructor: calls sub_0070A1F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x0070E6F0": {
@@ -39930,6 +39930,13 @@
     "class": "Unknown",
     "signature": "extern \"C\" DWORD __fastcall fn_0070EC30(void* self, int edx_unused, DWORD arg)",
     "summary": "Forwards its stack argument to sub_007873F0 using the sub-object at this+0x168 as the receiver; returns the callee's result.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x0070EC50": {
+    "name": "Unknown::ForwardSubObjectAt0x148",
+    "class": "Unknown",
+    "signature": "extern \"C\" DWORD __thiscall fn_0070EC50(void* self, DWORD arg)",
+    "summary": "Forwards its single argument to ext_007873F0 on the sub-object at this+0x148 and returns that result.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x0070EC70": {
