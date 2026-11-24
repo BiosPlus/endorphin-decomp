@@ -1,0 +1,28 @@
+{
+  "va": "0x00460CE0",
+  "size": 22,
+  "orig_symbol": "UndoHistoryDialog::vfunc_0_off_74",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "UndoHistoryDialog::vfunc_0_off_74",
+  "class": "UndoHistoryDialog",
+  "signature": "void fn_00460CE0(void* self)",
+  "summary": "Marks the dialog's flag at +0x280 as dirty and invalidates its window (USER32!InvalidateRect with erase).",
+  "fields": [
+    {
+      "class": "UndoHistoryDialog",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    },
+    {
+      "class": "UndoHistoryDialog",
+      "offset": "+0x280",
+      "type": "uint8_t",
+      "name": "field_0x280"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:28:18Z"
+}

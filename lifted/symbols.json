@@ -3457,6 +3457,13 @@
     "summary": "Returns address of global mem_00938428.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00460CE0": {
+    "name": "UndoHistoryDialog::vfunc_0_off_74",
+    "class": "UndoHistoryDialog",
+    "signature": "void fn_00460CE0(void* self)",
+    "summary": "Marks the dialog's flag at +0x280 as dirty and invalidates its window (USER32!InvalidateRect with erase).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00461170": {
     "name": "UndoHistoryDialog::vfunc_1",
     "class": "UndoHistoryDialog",

@@ -6201,3 +6201,27 @@ void fn_00499B70(void* self) {
     out[3] = 1.0f;
 }
 } // namespace lift_00499B70
+
+// [0x00460CE0] UndoHistoryDialog::vfunc_0_off_74 (22 bytes)
+namespace lift_00460CE0 {
+extern uint32_t mem_00925688;
+
+// @name UndoHistoryDialog::vfunc_0_off_74
+// @class UndoHistoryDialog
+// @summary Marks the dialog's flag at +0x280 as dirty and invalidates its window (USER32!InvalidateRect with erase).
+// @field UndoHistoryDialog +0x20 void* field_0x20
+// @field UndoHistoryDialog +0x280 uint8_t field_0x280
+void fn_00460CE0(void* self) {
+    // `self` is the CommandHistoryChangedListener subobject at dialog +0x74.
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    // Dialog +0x20 (window handle), reached via self - 0x54.
+    void* hwnd = lift_field<void*>(base, -0x54);
+
+    // Dialog +0x280 flag, reached via self + 0x20c.
+    lift_field<uint8_t>(base, 0x20c) = 1;
+
+    using InvalidateRectFn = int32_t(__stdcall*)(void*, const void*, int32_t);
+    reinterpret_cast<InvalidateRectFn>(static_cast<uintptr_t>(mem_00925688))(hwnd, nullptr, 1);
+}
+} // namespace lift_00460CE0
