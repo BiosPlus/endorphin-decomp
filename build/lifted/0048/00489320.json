@@ -1,0 +1,28 @@
+{
+  "va": "0x00489320",
+  "size": 42,
+  "orig_symbol": "sub_00489320",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "validatedRangeOut",
+  "class": "\u003cClassName\u003e (unknown; ecx-passed object)",
+  "signature": "void* fn_00489320(void* self, void* out)",
+  "summary": "Writes {self, self-\u003e+0x04} into the hidden out slot, asserting begin \u003c= end first; returns out.",
+  "fields": [
+    {
+      "class": "ThisObject",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ThisObject",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:58:30Z"
+}

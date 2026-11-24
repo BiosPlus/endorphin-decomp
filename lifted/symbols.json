@@ -6465,6 +6465,13 @@
     "summary": "Returns 1 if the DesiredPoseEventData's entry blend period is at least 1e-6 (and not NaN), else 0; throws if the target pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00489320": {
+    "name": "validatedRangeOut",
+    "class": "\u003cClassName\u003e (unknown; ecx-passed object)",
+    "signature": "void* fn_00489320(void* self, void* out)",
+    "summary": "Writes {self, self-\u003e+0x04} into the hidden out slot, asserting begin \u003c= end first; returns out.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00489540": {
     "name": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList\u003e::vfunc_2",
     "class": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}\u003e",

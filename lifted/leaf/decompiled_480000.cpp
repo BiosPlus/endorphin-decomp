@@ -130,3 +130,26 @@ void fn_004805A0(void* self, uint32_t arg) {
     lift_field<uint32_t>(target, 0x2AC) = arg;
 }
 } // namespace lift_004805A0
+
+// [0x00489320] sub_00489320 (42 bytes)
+namespace lift_00489320 {
+extern void ext_invalid_parameter_noinfo(void);
+
+// @name validatedRangeOut
+// @class <ClassName> (unknown; ecx-passed object)
+// @summary Writes {self, self->+0x04} into the hidden out slot, asserting begin <= end first; returns out.
+// @field ThisObject +0x04 uint32_t field_0x04
+// @field ThisObject +0x08 uint32_t field_0x08
+void* fn_00489320(void* self, void* out) {
+    uint32_t begin = lift_field<uint32_t>(self, 0x04);
+    uint32_t end = lift_field<uint32_t>(self, 0x08);
+
+    lift_field<uint32_t>(out, 0x00) = 0;
+    if (begin > end) {
+        ext_invalid_parameter_noinfo();
+    }
+    lift_field<uint32_t>(out, 0x00) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    lift_field<uint32_t>(out, 0x04) = begin;
+    return out;
+}
+} // namespace lift_00489320
