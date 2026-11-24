@@ -1,0 +1,28 @@
+{
+  "va": "0x0044B5B0",
+  "size": 16,
+  "orig_symbol": "sub_0044B5B0",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "GetNestedFieldOrZero (sub_0044B5B0)",
+  "class": "Unknown",
+  "signature": "int sub_0044B5B0(unsigned char* self)",
+  "summary": "If this+0x64 is nonzero, returns dword at (this+0x68)-\u003e+0x38; otherwise returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "int",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "field_0x68"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:34:13Z"
+}

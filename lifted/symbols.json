@@ -2224,6 +2224,13 @@
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_1964.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0044B5B0": {
+    "name": "GetNestedFieldOrZero (sub_0044B5B0)",
+    "class": "Unknown",
+    "signature": "int sub_0044B5B0(unsigned char* self)",
+    "summary": "If this+0x64 is nonzero, returns dword at (this+0x68)-\u003e+0x38; otherwise returns 0.",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x0044B6A0": {
     "name": "GetStringLiteral_00440680",
     "class": "(none)",

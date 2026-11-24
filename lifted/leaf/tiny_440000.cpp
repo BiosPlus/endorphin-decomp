@@ -469,3 +469,21 @@ void fn_0044B6A0(void* self) {
     }
 }
 } // namespace lift_0044B6A0
+
+// [0x0044B5B0]
+namespace lift_0044B5B0 {
+// @name GetNestedFieldOrZero (sub_0044B5B0)
+// @class Unknown
+// @summary If this+0x64 is nonzero, returns dword at (this+0x68)->+0x38; otherwise returns 0.
+// @field Unknown +0x64 int field_0x64
+// @field Unknown +0x68 void* field_0x68
+
+int sub_0044B5B0(unsigned char* self) {
+    int flag = *reinterpret_cast<int*>(self + 0x64);
+    if (flag == 0) {
+        return 0;
+    }
+    unsigned char* obj = *reinterpret_cast<unsigned char**>(self + 0x68);
+    return *reinterpret_cast<int*>(obj + 0x38);
+}
+} // namespace lift_0044B5B0
