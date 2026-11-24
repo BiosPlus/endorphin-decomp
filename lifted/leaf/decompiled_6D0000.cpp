@@ -744,3 +744,29 @@ void* __thiscall sub_006D24A0(void* this_, double scale) {
     return this_;
 }
 } // namespace lift_006D24A0
+
+// [0x006DE6E0] sub_006DE6E0 (55 bytes)
+namespace lift_006DE6E0 {
+// @name FindIndexByValue
+// @class <Unknown> (object exposes a vtable; slot 6 returns an element for an index)
+// @summary Scans indices 0..count-1 via vtable slot 6 and returns the first index whose element equals target, or -1.
+// @field <Unknown> +0x00 void** vtable
+// @field <Unknown> +0x20 int32_t count
+int32_t fn_006DE6E0(void* self, int32_t target) {
+    using GetElementFn = int32_t(__thiscall*)(void*, int32_t);
+
+    auto* base = static_cast<uint8_t*>(self);
+    int32_t i = 0;
+    if (*reinterpret_cast<int32_t*>(base + 0x20) > 0) {
+        void** vtbl = *reinterpret_cast<void***>(base);
+        auto getElement = reinterpret_cast<GetElementFn>(vtbl[6]);
+        do {
+            if (getElement(self, i) == target) {
+                return i;
+            }
+            ++i;
+        } while (i < *reinterpret_cast<int32_t*>(base + 0x20));
+    }
+    return -1;
+}
+} // namespace lift_006DE6E0

@@ -45061,6 +45061,13 @@
     "summary": "Returns the 32-bit element at the given index if within [0, count), or 0 otherwise.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006DE6E0": {
+    "name": "FindIndexByValue",
+    "class": "\u003cUnknown\u003e (object exposes a vtable; slot 6 returns an element for an index)",
+    "signature": "int32_t fn_006DE6E0(void* self, int32_t target)",
+    "summary": "Scans indices 0..count-1 via vtable slot 6 and returns the first index whose element equals target, or -1.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006DECA0": {
     "name": "findNodeByKey",
     "signature": "void* fn_006DECA0(void* self, int32_t key)",

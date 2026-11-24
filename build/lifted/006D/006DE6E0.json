@@ -1,0 +1,28 @@
+{
+  "va": "0x006DE6E0",
+  "size": 55,
+  "orig_symbol": "sub_006DE6E0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "FindIndexByValue",
+  "class": "\u003cUnknown\u003e (object exposes a vtable; slot 6 returns an element for an index)",
+  "signature": "int32_t fn_006DE6E0(void* self, int32_t target)",
+  "summary": "Scans indices 0..count-1 via vtable slot 6 and returns the first index whose element equals target, or -1.",
+  "fields": [
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "count"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:14:06Z"
+}
