@@ -1,0 +1,14 @@
+{
+  "va": "0x004499B0",
+  "size": 25,
+  "orig_symbol": "RegistrationDialog::vfunc_87",
+  "src_path": "src/classes/RegistrationDialog.cpp",
+  "lifted_path": "lifted/classes/RegistrationDialog.cpp",
+  "name": "RegistrationDialog::vfunc_87",
+  "class": "RegistrationDialog",
+  "signature": "void fn_004499B0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0040FDA0 (CColorCheck::vfunc_22).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T11:28:51Z"
+}

@@ -2332,6 +2332,13 @@
     "summary": "Returns the address of the global data slot mem_009337B4 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004499B0": {
+    "name": "RegistrationDialog::vfunc_87",
+    "class": "RegistrationDialog",
+    "signature": "void fn_004499B0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0040FDA0 (CColorCheck::vfunc_22).",
+    "lifted_path": "lifted/classes/RegistrationDialog.cpp"
+  },
   "0x00449C60": {
     "name": "RegistrationDialog::vfunc_1",
     "class": "RegistrationDialog",
@@ -3704,6 +3711,13 @@
     "class": "Unknown",
     "signature": "void fn_00464780(void* self)",
     "summary": "Stores 8 into self+0xB4, then tail-forwards the int32 result of ext_004658C0 (as ECX) to ext_00467380.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
+  "0x004647A0": {
+    "name": "sub_004647A0",
+    "class": "Unknown",
+    "signature": "void fn_004647A0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00464780 (SetField0xB4ThenForwardResult).",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
   "0x004647C0": {
