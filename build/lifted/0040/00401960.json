@@ -4,18 +4,55 @@
   "orig_symbol": "sub_00401960",
   "src_path": "src/leaf/tiny_400000.cpp",
   "lifted_path": "lifted/leaf/tiny_400000.cpp",
-  "name": "ForwardToHandlerOrZero",
-  "signature": "uint32_t fn_00401960(void* self, uint32_t arg)",
-  "summary": "If this-\u003efield_0x0c is non-null, tail-forward to it (passing the stack arg and returning its result); otherwise return 0.",
+  "name": "GetConstant_00409060",
+  "class": "(none)",
+  "signature": "extern \"C\" int* __cdecl fn_00404C40()",
+  "summary": "Returns the address of the constant u32 0x006A60A6 stored in .rdata at mem_0092A510.",
   "fields": [
+    {
+      "class": "Class",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "void* vptr (vtable pointer, dereferenced to find slot",
+      "name": "0x148)"
+    },
+    {
+      "class": "PoseTool",
+      "offset": "+0xA0",
+      "type": "void*",
+      "name": "field_0xa0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
     {
       "class": "ForwardToHandlerOrZero",
       "offset": "+0xC",
       "type": "void*",
       "name": "field_0x0c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T01:23:20Z"
+  "lifted_at": "2026-11-24T01:23:29Z"
 }

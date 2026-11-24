@@ -11,7 +11,7 @@ struct Class_Fields {
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00447500) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x08  (evidence: 0x0050EA10) // CONFLICT: multiple definitions at +0x8
     // +0x10  uint32_t                 field_0x10  (evidence: 0x004584B0)
-    // +0x14  void*                    field_0x14  (evidence: 0x00401970)
+    // +0x14  void*                    field_0x14  (evidence: 0x00401960, 0x00401970)
     // +0xF4  uint32_t                 field_0xf4  (evidence: 0x007101E0)
 };
 } // namespace lifted_layout

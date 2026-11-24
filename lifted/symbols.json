@@ -68,9 +68,10 @@
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
   "0x00401960": {
-    "name": "ForwardToHandlerOrZero",
-    "signature": "uint32_t fn_00401960(void* self, uint32_t arg)",
-    "summary": "If this-\u003efield_0x0c is non-null, tail-forward to it (passing the stack arg and returning its result); otherwise return 0.",
+    "name": "GetConstant_00409060",
+    "class": "(none)",
+    "signature": "extern \"C\" int* __cdecl fn_00404C40()",
+    "summary": "Returns the address of the constant u32 0x006A60A6 stored in .rdata at mem_0092A510.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
   "0x00401970": {
