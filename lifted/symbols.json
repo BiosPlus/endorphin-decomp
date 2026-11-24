@@ -230,6 +230,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0xFFFFFEB0 and tail-calls sub_0058AF80.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00402110": {
+    "name": "HelperGraphic::vfunc_3_off_150",
+    "class": "HelperGraphic",
+    "signature": "void fn_00402110(void* self)",
+    "summary": "Forwards a call through the TransformInterface subobject's vtable slot 5, passing the global mem_00B40640 as the argument.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00402130": {
     "name": "HelperGraphic::vfunc_2_off_150",
     "class": "HelperGraphic",

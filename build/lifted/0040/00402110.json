@@ -1,0 +1,22 @@
+{
+  "va": "0x00402110",
+  "size": 25,
+  "orig_symbol": "HelperGraphic::vfunc_3_off_150",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "HelperGraphic::vfunc_3_off_150",
+  "class": "HelperGraphic",
+  "signature": "void fn_00402110(void* self)",
+  "summary": "Forwards a call through the TransformInterface subobject's vtable slot 5, passing the global mem_00B40640 as the argument.",
+  "fields": [
+    {
+      "class": "HelperGraphic",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "vptr_TransformInterface"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:47:16Z"
+}

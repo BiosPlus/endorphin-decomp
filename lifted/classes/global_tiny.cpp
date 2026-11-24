@@ -6351,3 +6351,23 @@ uint32_t __thiscall fn_004E7370(void* self, uint32_t a, uint32_t b) {
     return target(self, a, 3u, b, 1u);
 }
 } // namespace lift_004E7370
+
+// [0x00402110] HelperGraphic::vfunc_3_off_150 (25 bytes)
+namespace lift_00402110 {
+extern int mem_00B40640;
+
+// Thiscall function pointer type: `this` in ECX, one stack argument, callee pops it (ret 4).
+using TransformInterfaceSlot5 = void(__thiscall*)(void* self, int arg);
+
+// @name HelperGraphic::vfunc_3_off_150
+// @class HelperGraphic
+// @summary Forwards a call through the TransformInterface subobject's vtable slot 5, passing the global mem_00B40640 as the argument.
+// @field HelperGraphic +0x04 void* vptr_TransformInterface
+void fn_00402110(void* self) {
+    // self is the HasBufferedTM subobject (HelperGraphic+0x150); TransformInterface sits at HelperGraphic+0x4.
+    void* transformInterface = static_cast<uint8_t*>(self) - 0x14C;
+    void* vptr = lift_field<void*>(transformInterface, 0);
+    auto slot5 = reinterpret_cast<TransformInterfaceSlot5>(lift_field<void*>(vptr, 0x14));
+    slot5(transformInterface, mem_00B40640);
+}
+} // namespace lift_00402110
