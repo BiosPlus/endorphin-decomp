@@ -1,0 +1,22 @@
+{
+  "va": "0x00493E40",
+  "size": 12,
+  "orig_symbol": "sub_00493E40",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "forwardVtableSlot194",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "uintptr_t fn_00493E40(void* self)",
+  "summary": "Dereferences a pointer-to-pointer held in self, then tail-jumps to the",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x0",
+      "type": "\u003ctype\u003e",
+      "name": "\u003cfieldName\u003e"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:14:25Z"
+}

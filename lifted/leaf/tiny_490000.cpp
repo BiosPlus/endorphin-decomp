@@ -120,3 +120,23 @@ uintptr_t fn_00493E50(void* self) {
     return target(inner);
 }
 } // namespace lift_00493E50
+
+// [0x00493E40] sub_00493E40 (12 bytes)
+namespace lift_00493E40 {
+// @name forwardVtableSlot194
+// @class <ClassName> (optional)
+// @summary Dereferences a pointer-to-pointer held in self, then tail-jumps to the
+//          object's vtable slot at byte offset 0x194 (index 101), passing that object as this.
+// @field <ClassName> +0x00 <type> <fieldName>
+uintptr_t fn_00493E40(void* self) {
+    // mov ecx, [ecx]          ; obj = *self
+    void* obj = *reinterpret_cast<void**>(self);
+    // mov eax, [ecx]          ; vtbl = *obj
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    // mov eax, [eax+0x194]    ; target = vtbl[0x194]
+    auto target = reinterpret_cast<uintptr_t (*)(void*)>(
+        lift_field<void*>(vtbl, 0x194));
+    // jmp eax                 ; tail-call with ecx == obj
+    return target(obj);
+}
+} // namespace lift_00493E40
