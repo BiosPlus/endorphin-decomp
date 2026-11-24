@@ -17608,6 +17608,13 @@
     "summary": "Returns the address of the global data slot mem_0092CE00 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005AA020": {
+    "name": "CharacterReloader::vfunc_10",
+    "class": "CharacterReloader",
+    "signature": "std::string* fn_005AA020(void* self, std::string* out, const uint8_t* src)",
+    "summary": "Copy-constructs a std::string into the caller's return slot from the string at +0x04 of the source argument; returns the slot.",
+    "lifted_path": "lifted/classes/CharacterReloader.cpp"
+  },
   "0x005AA050": {
     "name": "CharacterUpgrader::vfunc_0",
     "class": "CharacterUpgrader",
