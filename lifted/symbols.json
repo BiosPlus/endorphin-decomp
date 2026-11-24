@@ -48471,6 +48471,12 @@
     "summary": "Getter returning int32_t field at offset +0x18.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006FC950": {
+    "name": "GetDwordByIndex",
+    "signature": "DWORD fn_006FC950(void* self, DWORD index)",
+    "summary": "Returns the DWORD at this+0x04..+0x18 (step 4) selected by a 1-based index; returns 0 for index outside 1..6.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FC9B0": {
     "name": "sub_006FC9B0",
     "signature": "extern \"C\" void __fastcall fn_006FC9B0(void* self, int edx_unused, int32_t value)",

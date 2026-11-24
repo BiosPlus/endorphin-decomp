@@ -1137,3 +1137,23 @@ bool __fastcall fn_006FC610(void* self, int edx_unused, void* other) {
     return other_field == self_field;
 }
 } // namespace lift_006FC610
+
+// [0x006FC950] sub_006FC950 (55 bytes)
+namespace lift_006FC950 {
+// @name GetDwordByIndex
+// @summary Returns the DWORD at this+0x04..+0x18 (step 4) selected by a 1-based index; returns 0 for index outside 1..6.
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+// @field Unknown +0x0C DWORD field_0x0C
+// @field Unknown +0x10 DWORD field_0x10
+// @field Unknown +0x14 DWORD field_0x14
+// @field Unknown +0x18 DWORD field_0x18
+DWORD fn_006FC950(void* self, DWORD index) {
+    DWORD idx = index - 1;
+    if (idx > 5) {
+        return 0;
+    }
+    // Offset for index k (1..6) is 4 * k.
+    return lift_field<DWORD>(self, static_cast<ptrdiff_t>(4 * (idx + 1)));
+}
+} // namespace lift_006FC950
