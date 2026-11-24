@@ -36811,6 +36811,12 @@
     "summary": "Getter returning int32_t field at offset +0x2F8.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x0070F730": {
+    "name": "CopyHugeValueToGlobals",
+    "signature": "void fn_0070F730(void* self)",
+    "summary": "Reads the pointer stored in mem_00925284 (the MSVCRT _HUGE slot), copies the 8 bytes it points to into mem_00B5EED8/mem_00B5EEDC, then returns.",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x0070F760": {
     "name": "sub_0070F760",
     "signature": "void fn_006DD960(void)",

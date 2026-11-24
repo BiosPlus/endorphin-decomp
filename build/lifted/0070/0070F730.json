@@ -1,0 +1,13 @@
+{
+  "va": "0x0070F730",
+  "size": 23,
+  "orig_symbol": "sub_0070F730",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "CopyHugeValueToGlobals",
+  "signature": "void fn_0070F730(void* self)",
+  "summary": "Reads the pointer stored in mem_00925284 (the MSVCRT _HUGE slot), copies the 8 bytes it points to into mem_00B5EED8/mem_00B5EEDC, then returns.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:34:14Z"
+}

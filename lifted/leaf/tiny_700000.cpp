@@ -1008,3 +1008,26 @@ void CopyHugeConstantToGlobals() {
     mem_00B5E7D4 = hi;
 }
 } // namespace lift_007010B0
+
+// [0x0070F730] sub_0070F730 (23 bytes)
+namespace lift_0070F730 {
+extern int mem_00925284;
+extern int mem_00B5EED8;
+extern int mem_00B5EEDC;
+
+// @name CopyHugeValueToGlobals
+// @summary Reads the pointer stored in mem_00925284 (the MSVCRT _HUGE slot), copies the 8 bytes it points to into mem_00B5EED8/mem_00B5EEDC, then returns.
+void fn_0070F730(void* self) {
+    (void)self;
+
+    // Pointer held in the .rdata slot mem_00925284 (MSVCRT _HUGE).
+    const uintptr_t src_addr = static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925284));
+    const auto* src = reinterpret_cast<const uint32_t*>(src_addr);
+
+    // Copy the two dwords at [src] and [src+4] into the globals.
+    const uint32_t lo = src[0];
+    const uint32_t hi = src[1];
+    mem_00B5EED8 = static_cast<int>(lo);
+    mem_00B5EEDC = static_cast<int>(hi);
+}
+} // namespace lift_0070F730
