@@ -1,0 +1,13 @@
+{
+  "va": "0x0048CC30",
+  "size": 55,
+  "orig_symbol": "sub_0048CC30",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "sub_0048CC30",
+  "signature": "__stdcall std::uint8_t* fn_0048CC30(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
+  "summary": "Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T15:15:05Z"
+}

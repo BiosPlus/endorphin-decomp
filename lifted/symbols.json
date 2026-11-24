@@ -451,6 +451,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x004064D0": {
+    "name": "sub_004064D0",
+    "signature": "__stdcall std::uint8_t* fn_004064D0(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00406610": {
     "name": "sub_00406610",
     "signature": "DWORD* __thiscall fn_00406610(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -7824,6 +7830,12 @@
     "summary": "If the handle at +0x34 is non-null, release it via ext_006A5C5C, zero +0x34/+0x38/+0x3C, then destroy the string object at +0x04.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x0048CC30": {
+    "name": "sub_0048CC30",
+    "signature": "__stdcall std::uint8_t* fn_0048CC30(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048CCA0": {
     "name": "sub_0048CCA0",
     "class": "(none)",
@@ -8077,6 +8089,12 @@
     "class": "(none)",
     "signature": "void fn_00491870(void* self, int edx_unused, int a1, int a2)",
     "summary": "Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
+  "0x00491890": {
+    "name": "sub_00491890",
+    "signature": "__stdcall std::uint8_t* fn_00491890(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
   "0x00491980": {
@@ -15053,6 +15071,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00506090 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00506810": {
+    "name": "sub_00506810",
+    "signature": "__stdcall std::uint8_t* fn_00506810(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00506D10": {
     "name": "sub_00506D10",
     "signature": "DWORD* __thiscall fn_00506D10(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -16127,6 +16151,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00520420(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0051FBB0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/StateMachine/auto_tiny.cpp"
+  },
+  "0x00520740": {
+    "name": "sub_00520740",
+    "signature": "__stdcall std::uint8_t* fn_00520740(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
   "0x00520AB0": {
     "name": "sub_00520AB0",
@@ -19955,6 +19985,12 @@
     "summary": "Writes the byte at *src into every byte in [dst, dstEnd); does nothing if dst == dstEnd. The source pointer is not advanced.",
     "lifted_path": "lifted/leaf/tiny_570000.cpp"
   },
+  "0x00577AA0": {
+    "name": "sub_00577AA0",
+    "signature": "__stdcall std::uint8_t* fn_00577AA0(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00577AE0": {
     "name": "FillBytesFromSource",
     "signature": "extern \"C\" uint8_t* __stdcall fn_00577AE0(uint8_t* dst, uint32_t count, const uint8_t* src)",
@@ -19996,6 +20032,12 @@
     "name": "sub_0057CF50",
     "signature": "DWORD* __thiscall fn_0057CF50(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057E7D0": {
+    "name": "sub_0057E7D0",
+    "signature": "__stdcall std::uint8_t* fn_0057E7D0(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x0057E840": {
@@ -36381,6 +36423,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00686740": {
+    "name": "sub_00686740",
+    "signature": "__stdcall std::uint8_t* fn_00686740(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00686800": {
     "name": "sub_00686800",
     "signature": "DWORD* __thiscall fn_00686800(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -36480,6 +36528,12 @@
     "name": "DestroyStringRange",
     "signature": "void __stdcall fn_00688B20(uint8_t* begin, uint8_t* end)",
     "summary": "Destroys the std::string at +0x10 of each 44-byte element in [begin, end) (__stdcall, ret 8).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x00688BA0": {
+    "name": "sub_00688BA0",
+    "signature": "__stdcall std::uint8_t* fn_00688BA0(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x00688BE0": {
@@ -37160,6 +37214,12 @@
     "signature": "extern \"C\" int __thiscall fn_00699930(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).",
     "lifted_path": "lifted/leaf/tiny_690000.cpp"
+  },
+  "0x0069A0F0": {
+    "name": "sub_0069A0F0",
+    "signature": "__stdcall std::uint8_t* fn_0069A0F0(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x0069A1C0": {
     "name": "sub_0069A1C0",

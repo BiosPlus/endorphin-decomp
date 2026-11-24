@@ -351,3 +351,53 @@ void __stdcall sub_005749F0(uint32_t obj, uint32_t arg2) {
   }
 }
 } // namespace lift_005749F0
+
+// [0x00577AA0] sub_00577AA0 (55 bytes)
+namespace lift_00577AA0 {
+// @name sub_00577AA0
+// @summary Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).
+namespace lift_0054F2C0 {
+extern void ext_00576E50(std::uintptr_t a0, std::uint32_t a1, std::uint32_t a2,
+                             std::uint32_t a3, std::uint32_t a4, std::uint32_t a5);
+
+// @name ComputeRecordAddress
+// @summary Calls helper sub_0054F1E0 with the arguments and a zeroed flag word, then returns base + index * 0x68.
+// (no direct struct field accesses in this function)
+__stdcall std::uint8_t* fn_00577AA0(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2) {
+    // The original stores 0 into the low byte of a stack slot that previously held ECX,
+    // so the dword passed on is ECX with its low byte cleared. ECX at entry is not
+    // recoverable from the stdcall signature; it is modelled as a placeholder here.
+    std::uint32_t ecx_in = 0;
+    std::uint32_t flag_slot = ecx_in & 0xFFFFFF00u;
+
+    ext_00576E50(reinterpret_cast<std::uintptr_t>(base), index, arg2, ecx_in, arg2, flag_slot);
+
+    return base + static_cast<std::size_t>(index) * 0x54u;
+}
+} // namespace lift_0054F2C0
+} // namespace lift_00577AA0
+
+// [0x0057E7D0] sub_0057E7D0 (55 bytes)
+namespace lift_0057E7D0 {
+// @name sub_0057E7D0
+// @summary Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).
+namespace lift_0054F2C0 {
+extern void ext_0057E060(std::uintptr_t a0, std::uint32_t a1, std::uint32_t a2,
+                             std::uint32_t a3, std::uint32_t a4, std::uint32_t a5);
+
+// @name ComputeRecordAddress
+// @summary Calls helper sub_0054F1E0 with the arguments and a zeroed flag word, then returns base + index * 0x68.
+// (no direct struct field accesses in this function)
+__stdcall std::uint8_t* fn_0057E7D0(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2) {
+    // The original stores 0 into the low byte of a stack slot that previously held ECX,
+    // so the dword passed on is ECX with its low byte cleared. ECX at entry is not
+    // recoverable from the stdcall signature; it is modelled as a placeholder here.
+    std::uint32_t ecx_in = 0;
+    std::uint32_t flag_slot = ecx_in & 0xFFFFFF00u;
+
+    ext_0057E060(reinterpret_cast<std::uintptr_t>(base), index, arg2, ecx_in, arg2, flag_slot);
+
+    return base + static_cast<std::size_t>(index) * 0x2Cu;
+}
+} // namespace lift_0054F2C0
+} // namespace lift_0057E7D0
