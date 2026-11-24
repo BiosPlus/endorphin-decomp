@@ -717,3 +717,24 @@ const void* sub_0071A850(uint32_t selector) {
     return nullptr;
 }
 } // namespace lift_0071A850
+
+// [0x00713F30]
+namespace lift_00713F30 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name sub_00713F30
+// @summary Maps an index (0..3) via jump table to one of three constant addresses, defaulting to 0x00AAC03C.
+uint32_t __stdcall sub_00713F30(uint32_t arg0) {
+    if (arg0 > 3u) {
+        return 0x00AAC03Cu;
+    }
+    switch (mem_read32(0x00713F58u + arg0 * 4u)) {
+    case 0x00713F40u:
+        return 0x00AAC224u;
+    case 0x00713F48u:
+        return 0x00AAC220u;
+    default:
+        return 0x00AAC03Cu;
+    }
+}
+} // namespace lift_00713F30

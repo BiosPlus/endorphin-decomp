@@ -16200,6 +16200,12 @@
     "summary": "Returns 1 if the pointer argument is non-null and ext_00584C10 returns false for it; otherwise 0.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00553980": {
+    "name": "sub_00553980",
+    "signature": "void* __thiscall sub_00553980(void* self)",
+    "summary": "Zero-initializes float vector, dword, and byte fields of a 0x1B+ byte object and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x005539B0": {
     "name": "GetByteTableEntryOrZero",
     "signature": "uint8_t GetByteTableEntryOrZero(void* self, uint32_t index)",
@@ -16696,6 +16702,12 @@
     "signature": "bool fn_0056B8C0(void* self)",
     "summary": "Returns true when the float at +0x46c is ordered and \u003e= 2.0 and the std::string at +0xac equals \"all\".",
     "lifted_path": "lifted/classes/Acclaim2CharacterIO.cpp"
+  },
+  "0x0056B900": {
+    "name": "hasMultipleElements",
+    "signature": "uint32_t __fastcall sub_0056B900(uint32_t ecx, uint32_t edx)",
+    "summary": "Returns 1 if the 4-byte-element vector at +0x28..+0x2C has more than 1 element, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
   "0x0056D860": {
     "name": "NMCIO::vfunc_10",
@@ -42755,6 +42767,12 @@
     "signature": "extern void fn_00713F20(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x00713F30": {
+    "name": "sub_00713F30",
+    "signature": "uint32_t __stdcall sub_00713F30(uint32_t arg0)",
+    "summary": "Maps an index (0..3) via jump table to one of three constant addresses, defaulting to 0x00AAC03C.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x00714020": {
     "name": "sub_00714020",
