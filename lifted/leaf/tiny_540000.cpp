@@ -175,3 +175,18 @@ void fn_0054C7F0() {
     mem_009253E8(static_cast<GLuint>(mem_00AF657C), 0x60);
 }
 } // namespace lift_0054C7F0
+
+// [0x00543900] sub_00543900 (17 bytes)
+namespace lift_00543900 {
+// @name sub_00543900
+// @class <Unknown>
+// @summary Toggles a byte flag (at sub-object +0x04) to its logical NOT; sub-object pointer lives at self+0x84.
+// @field <Unknown> +0x84 uint8_t* field_0x84
+void __thiscall fn_00543900(uint8_t* self) {
+    // mov eax, [ecx+0x84]
+    uint8_t* sub = *reinterpret_cast<uint8_t**>(self + 0x84);
+    // cmp byte [eax+4], 0 ; sete cl ; mov byte [eax+4], cl
+    uint8_t flag = *(sub + 0x04);
+    *(sub + 0x04) = (flag == 0) ? 1 : 0;
+}
+} // namespace lift_00543900

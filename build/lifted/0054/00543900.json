@@ -1,0 +1,22 @@
+{
+  "va": "0x00543900",
+  "size": 17,
+  "orig_symbol": "sub_00543900",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "sub_00543900",
+  "class": "\u003cUnknown\u003e",
+  "signature": "void __thiscall fn_00543900(uint8_t* self)",
+  "summary": "Toggles a byte flag (at sub-object +0x04) to its logical NOT; sub-object pointer lives at self+0x84.",
+  "fields": [
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x84",
+      "type": "uint8_t*",
+      "name": "field_0x84"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:53:18Z"
+}

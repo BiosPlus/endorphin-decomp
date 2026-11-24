@@ -12273,6 +12273,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x84 and tail-calls sub_00541AB0.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00543900": {
+    "name": "sub_00543900",
+    "class": "\u003cUnknown\u003e",
+    "signature": "void __thiscall fn_00543900(uint8_t* self)",
+    "summary": "Toggles a byte flag (at sub-object +0x04) to its logical NOT; sub-object pointer lives at self+0x84.",
+    "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
   "0x00544220": {
     "name": "ForceApplicationTool::vfunc_1",
     "class": "ForceApplicationTool",
