@@ -34954,6 +34954,11 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007B22B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
   },
+  "0x007B7084": {
+    "name": "SwitchCaseIndexTable_007B7084",
+    "summary": "12-byte byte-index table indexed by (eax) and used by a jump table dispatch at 0x007B6xxx (mov cl, [eax+0x7B7084]; jmp [ecx*4+0x7B7074]); this is data, not code.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007C5610": {
     "name": "thunk_XSIFtk-3.6.2.1_?GetPrimitiveType@CSLModel@@QAE?AW4ETemplateType@CSLTemplate@@XZ",
     "signature": "extern \"C\" void fn_007C5610(void)",
