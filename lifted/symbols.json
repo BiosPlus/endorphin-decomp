@@ -38779,6 +38779,18 @@
     "summary": "Forwards its single stack argument to the GlobalFree wrapper and returns the result.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x0080B670": {
+    "name": "sub_0080B670",
+    "signature": "uint32_t fn_0080B670(uint32_t size)",
+    "summary": "Auto-lifted identical-shape clone of 0x0080FC40 (GlobalAllocZeroWrapper).",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
+  "0x0080C690": {
+    "name": "sub_0080C690",
+    "signature": "uint32_t __cdecl fn_0080C690(uint32_t hMem)",
+    "summary": "Auto-lifted identical-shape clone of 0x0085BFE0 (GlobalFreeForwarder_0085BFE0).",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080CA10": {
     "name": "GlobalFreeForwarder",
     "signature": "void* fn_0080CA10(void* hMem)",

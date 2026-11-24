@@ -48,3 +48,35 @@ void* fn_0080B560(void* hMem) {
     return ext_00859730(hMem);
 }
 } // namespace lift_0080B560
+
+// [0x0080B670] sub_0080B670 (16 bytes)
+namespace lift_0080B670 {
+// @name sub_0080B670
+// @summary Auto-lifted identical-shape clone of 0x0080FC40 (GlobalAllocZeroWrapper).
+namespace lift_0080FC40 {
+extern uint32_t ext_008599F0(uint32_t size);
+
+// @name GlobalAllocZeroWrapper
+// @summary Forwards its single uint32_t size argument to ext_008596E0 (GlobalAllocZeroFlags clone) and returns the result.
+uint32_t fn_0080B670(uint32_t size) {
+    return ext_008599F0(size);
+}
+} // namespace lift_0080FC40
+} // namespace lift_0080B670
+
+// [0x0080C690] sub_0080C690 (16 bytes)
+namespace lift_0080C690 {
+// @name sub_0080C690
+// @summary Auto-lifted identical-shape clone of 0x0085BFE0 (GlobalFreeForwarder_0085BFE0).
+namespace lift_0085BFE0 {
+// @name GlobalFreeForwarder_0085BFE0
+// @summary Forwards its single stack argument (an HGLOBAL) to ext_00859730 (GlobalFree wrapper) and returns the result.
+
+extern HGLOBAL ext_0085A650(HGLOBAL hMem);
+
+uint32_t __cdecl fn_0080C690(uint32_t hMem) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(
+        ext_0085A650(reinterpret_cast<HGLOBAL>(static_cast<uintptr_t>(hMem)))));
+}
+} // namespace lift_0085BFE0
+} // namespace lift_0080C690
