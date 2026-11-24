@@ -37062,6 +37062,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x4C and tail-calls sub_006E7460.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E7390": {
+    "name": "sub_006E7390",
+    "signature": "void* fn_006E7390(void* self, uint32_t arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x006D2390 (ForwardArgToCalleeReturnThis).",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E7460": {
     "name": "sub_006E7460",
     "signature": "extern \"C\" int32_t __fastcall fn_006E7460(void* self)",
@@ -41801,6 +41807,12 @@
     "signature": "void* fn_0077FAB0(void* self)",
     "summary": "Zeroes four consecutive 32-bit fields (offsets 0x00, 0x04, 0x08, 0x0C) of the object and returns it.",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
+  },
+  "0x0077FAC0": {
+    "name": "sub_0077FAC0",
+    "signature": "void* fn_0077FAC0(void* self, uint32_t arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x006D2390 (ForwardArgToCalleeReturnThis).",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
   },
   "0x0077FAE0": {
     "name": "Unknown::getDoubleByIndex",

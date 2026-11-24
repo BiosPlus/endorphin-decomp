@@ -1,0 +1,13 @@
+{
+  "va": "0x006E7390",
+  "size": 32,
+  "orig_symbol": "sub_006E7390",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "sub_006E7390",
+  "signature": "void* fn_006E7390(void* self, uint32_t arg1)",
+  "summary": "Auto-lifted identical-shape clone of 0x006D2390 (ForwardArgToCalleeReturnThis).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:35:38Z"
+}
