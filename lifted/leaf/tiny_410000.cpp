@@ -455,3 +455,22 @@ void sub_004160A0(uint32_t arg0, uint32_t arg1) {
     mem_00AC9CD8 = arg1;
 }
 } // namespace lift_004160A0
+
+// [0x00410370] sub_00410370 (27 bytes)
+namespace lift_00410370 {
+// @name Unknown::AnyFlag8C8D
+// @class Unknown
+// @summary Returns 1 if the byte at +0x8C or the byte at +0x8D is nonzero, else 0.
+// @field Unknown +0x8C uint8_t field_0x8C
+// @field Unknown +0x8D uint8_t field_0x8D
+int fn_00410370(void* self) {
+    const auto* base = static_cast<const uint8_t*>(self);
+    if (base[0x8C] != 0) {
+        return 1;
+    }
+    if (base[0x8D] != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_00410370

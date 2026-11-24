@@ -1,0 +1,28 @@
+{
+  "va": "0x00410370",
+  "size": 27,
+  "orig_symbol": "sub_00410370",
+  "src_path": "src/leaf/tiny_410000.cpp",
+  "lifted_path": "lifted/leaf/tiny_410000.cpp",
+  "name": "Unknown::AnyFlag8C8D",
+  "class": "Unknown",
+  "signature": "int fn_00410370(void* self)",
+  "summary": "Returns 1 if the byte at +0x8C or the byte at +0x8D is nonzero, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8C",
+      "type": "uint8_t",
+      "name": "field_0x8C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8D",
+      "type": "uint8_t",
+      "name": "field_0x8D"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:59:31Z"
+}
