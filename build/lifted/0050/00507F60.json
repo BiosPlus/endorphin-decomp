@@ -1,0 +1,28 @@
+{
+  "va": "0x00507F60",
+  "size": 14,
+  "orig_symbol": "sub_00507F60",
+  "src_path": "src/leaf/tiny_500000.cpp",
+  "lifted_path": "lifted/leaf/tiny_500000.cpp",
+  "name": "SetDoubleValueAndClearFlag",
+  "class": "Unknown",
+  "signature": "void fn_00507F60(void* self, double value)",
+  "summary": "Stores a double argument at self+0x20 and clears the byte flag at self+0x28 to 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "double",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint8_t",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:25:08Z"
+}

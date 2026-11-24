@@ -9486,6 +9486,13 @@
     "summary": "Stores a double argument at self+0x20 and sets the byte flag at self+0x28 to 1.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x00507F60": {
+    "name": "SetDoubleValueAndClearFlag",
+    "class": "Unknown",
+    "signature": "void fn_00507F60(void* self, double value)",
+    "summary": "Stores a double argument at self+0x20 and clears the byte flag at self+0x28 to 0.",
+    "lifted_path": "lifted/leaf/tiny_500000.cpp"
+  },
   "0x00507F70": {
     "name": "EvolvedIndividual::vfunc_0_off_C",
     "class": "EvolvedIndividual",
