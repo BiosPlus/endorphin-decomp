@@ -120,3 +120,25 @@ uint32_t __thiscall fn_0067ED10(void* self, const void* str) {
     return val;
 }
 } // namespace lift_0067ED10
+
+// [0x0067AE20]
+namespace lift_0067AE20 {
+// @name sub_0067AE20
+// @summary Checks under a critical section lock whether a pointer's field at +0x10 is non-zero.
+// @field Self +0x08 void* lock
+// @field Self +0x0C void* field_0x0C
+
+
+extern void __thiscall ext_0065C640(void* self);
+extern void __thiscall ext_0065C650(void* self);
+
+extern bool __thiscall sub_0067AE20(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void* lock = base + 0x8;
+    ext_0065C640(lock);
+    uint8_t* ptr = *reinterpret_cast<uint8_t**>(base + 0xC);
+    bool result = (*reinterpret_cast<uint32_t*>(ptr + 0x10) != 0);
+    ext_0065C650(lock);
+    return result;
+}
+} // namespace lift_0067AE20

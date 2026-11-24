@@ -28187,6 +28187,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005F0D40 (NMData::MagnetJointData::vfunc_59).",
     "lifted_path": "lifted/classes/SymbolResolver.cpp"
   },
+  "0x006601E0": {
+    "name": "sub_006601E0_dtor",
+    "signature": "void __thiscall sub_006601E0(void* self)",
+    "summary": "Sets vtable pointer to 0x00987730 and pops an element from the global vector at 0x00B59080 if non-empty",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00660260": {
     "name": "SymbolResolver::vfunc_4",
     "class": "SymbolResolver",
@@ -29959,6 +29965,12 @@
     "signature": "void __thiscall sub_0067AE00(uint32_t self, uint32_t mode)",
     "summary": "Sets the thread priority to lowest (-2) when the argument equals 2.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
+  "0x0067AE20": {
+    "name": "sub_0067AE20",
+    "signature": "extern \"C\" bool __thiscall sub_0067AE20(void* self)",
+    "summary": "Checks under a critical section lock whether a pointer's field at +0x10 is non-zero.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x0067AEE8": {
     "name": "sub_0067AEE8",
@@ -36218,6 +36230,13 @@
     "signature": "extern \"C\" void* __fastcall fn_006B2EC0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006B2BC0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x006B32D0": {
+    "name": "GWCPropertyCheckboxLook::vfunc_2",
+    "class": "GWCPropertyCheckboxLook",
+    "signature": "void* __thiscall fn_006B32D0(void* /*this_ptr*/, void* sret, uint32_t /*arg2*/, uint32_t /*arg3*/, const void* src_rect)",
+    "summary": "Copies a 16-byte rect from arg4 to sret (arg1), sets right = left, and returns sret.",
+    "lifted_path": "lifted/classes/GWCPropertyCheckboxLook.cpp"
   },
   "0x006B3300": {
     "name": "sub_006B3300",
