@@ -45479,6 +45479,12 @@
     "summary": "Returns the float at offset 0x8c from the given object pointer.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C8820": {
+    "name": "checkArrayEntryNonZero",
+    "signature": "uint32_t sub_007C8820(uint32_t obj, int32_t index)",
+    "summary": "Checks if index is in bounds [0, count) and the 40-byte entry's field at +0x24 is non-zero.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C8880": {
     "name": "get_field_0xa8",
     "signature": "uint32_t sub_007C8880(uint32_t a1)",
@@ -45872,6 +45878,13 @@
     "signature": "uint32_t sub_007D48B0(uint32_t arg0)",
     "summary": "Computes the difference between the 32-bit fields at +0x0C and +0x04 of a struct.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
+  "0x007D48C0": {
+    "name": "TreeNode::rotateLeft",
+    "class": "TreeNode",
+    "signature": "void sub_007D48C0(uint32_t eax)",
+    "summary": "Performs a left rotation on a binary tree node with parent pointers.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
   "0x007D4AE0": {
     "name": "setFlag30_007D4AE0",

@@ -318,3 +318,25 @@ void fn_007C97C0(void* self, uint32_t val94, uint32_t val98) {
     *reinterpret_cast<uint32_t*>(base + 0x98) = val98;
 }
 } // namespace lift_007C97C0
+
+// [0x007C8820]
+namespace lift_007C8820 {
+uint32_t mem_read32(uint32_t addr);
+
+// @name checkArrayEntryNonZero
+// @summary Checks if index is in bounds [0, count) and the 40-byte entry's field at +0x24 is non-zero.
+// @field Obj +0x00 int32_t field_0x00
+// @field Obj +0x20 uint32_t field_0x20
+uint32_t sub_007C8820(uint32_t obj, int32_t index) {
+    if (index < 0) {
+        return 0;
+    }
+    int32_t count = static_cast<int32_t>(mem_read32(obj));
+    if (index >= count) {
+        return 0;
+    }
+    uint32_t base = mem_read32(obj + 0x20);
+    uint32_t val = mem_read32(base + static_cast<uint32_t>(index) * 40u + 0x24u);
+    return (val != 0) ? 1u : 0u;
+}
+} // namespace lift_007C8820
