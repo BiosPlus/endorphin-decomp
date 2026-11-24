@@ -1,0 +1,14 @@
+{
+  "va": "0x00630C80",
+  "size": 13,
+  "orig_symbol": "EffectorSkeletal::vfunc_20",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "EffectorSkeletal::vfunc_20",
+  "class": "EffectorSkeletal",
+  "signature": "void fn_00630C80(void* self, int32_t /*unused*/)",
+  "summary": "Tail-forwards to the shared worker at 0x00630370 with mode argument 7.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:22:14Z"
+}

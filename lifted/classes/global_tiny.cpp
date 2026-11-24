@@ -5222,3 +5222,16 @@ void fn_00603000(void* self, float factor) {
     value = value * factor;
 }
 } // namespace lift_00603000
+
+// [0x00630C80] EffectorSkeletal::vfunc_20 (13 bytes)
+namespace lift_00630C80 {
+// Forwards to ext_00630370 with the first stack argument forced to 7.
+void ext_00630370(void* self, int32_t mode);
+
+// @name EffectorSkeletal::vfunc_20
+// @class EffectorSkeletal
+// @summary Tail-forwards to the shared worker at 0x00630370 with mode argument 7.
+void fn_00630C80(void* self, int32_t /*unused*/) {
+    ext_00630370(self, 7);
+}
+} // namespace lift_00630C80

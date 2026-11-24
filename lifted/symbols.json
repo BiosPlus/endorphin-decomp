@@ -19962,6 +19962,13 @@
     "summary": "Takes the positions of the first two child sensors, builds a cross-product frame from them and a reference offset, and stores the derived plane terms (doubles at +0x58..+0x70) plus the cached positions (+0x78, +0x84).",
     "lifted_path": "lifted/Sensors/CompoundSensorHorizontalPlane.cpp"
   },
+  "0x00630C80": {
+    "name": "EffectorSkeletal::vfunc_20",
+    "class": "EffectorSkeletal",
+    "signature": "void fn_00630C80(void* self, int32_t /*unused*/)",
+    "summary": "Tail-forwards to the shared worker at 0x00630370 with mode argument 7.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00630C90": {
     "name": "EffectorSkeletal::vfunc_31",
     "class": "EffectorSkeletal",
