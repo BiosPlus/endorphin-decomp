@@ -29,6 +29,7 @@ struct Unknown_Fields {
     // +0x4   void* field_0x04 (sub-object pointer read from the NM::Vector3 const & argument)  (evidence: 0x005B80A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066BB70) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066AF60, 0x0066AFC0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   DWORD                    field_04  (evidence: 0x006B9950) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD                    field_0x04  (evidence: 0x0078C230, 0x0078C3A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  field_0x04  (evidence: 0x005B4BA0, 0x007CD040) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x004474F0, 0x0044B6A0, 0x00454E70, 0x0045BBE0, 0x00515830, 0x00515840, 0x005D0AF0, 0x006A0670, 0x006B9910, 0x0078C220, 0x0078C230, 0x007DA8D0) // CONFLICT: multiple definitions at +0x4

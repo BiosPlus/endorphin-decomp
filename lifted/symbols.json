@@ -31032,6 +31032,13 @@
     "summary": "Zero-initializes two dword fields and sets the vtable pointer to mem_00B5D2B8.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B9950": {
+    "name": "Unknown::IsField04Zero",
+    "class": "Unknown",
+    "signature": "int fn_006B9950(void* self)",
+    "summary": "Thiscall predicate: returns 1 if the DWORD at this+0x04 is zero, else 0.",
+    "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
   "0x006B99C0": {
     "name": "sub_006B99C0",
     "signature": "extern \"C\" int32_t __fastcall fn_006B99C0(void* self)",

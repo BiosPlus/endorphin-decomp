@@ -1,0 +1,22 @@
+{
+  "va": "0x006B9950",
+  "size": 16,
+  "orig_symbol": "sub_006B9950",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "Unknown::IsField04Zero",
+  "class": "Unknown",
+  "signature": "int fn_006B9950(void* self)",
+  "summary": "Thiscall predicate: returns 1 if the DWORD at this+0x04 is zero, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:36:48Z"
+}

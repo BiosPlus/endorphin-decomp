@@ -599,3 +599,15 @@ void sub_006B9910(Unknown* ecx) {
     ecx->field_0x08 = 0;
 }
 } // namespace lift_006B9910
+
+// [0x006B9950] sub_006B9950 (16 bytes)
+namespace lift_006B9950 {
+// @name Unknown::IsField04Zero
+// @class Unknown
+// @summary Thiscall predicate: returns 1 if the DWORD at this+0x04 is zero, else 0.
+// @field Unknown +0x04 DWORD field_04
+int fn_006B9950(void* self) {
+    DWORD v = lift_field<DWORD>(self, 0x04);
+    return v == 0 ? 1 : 0;
+}
+} // namespace lift_006B9950
