@@ -1,0 +1,27 @@
+{
+  "va": "0x004A57F0",
+  "size": 19,
+  "orig_symbol": "sub_004A57F0",
+  "src_path": "src/leaf/tiny_4A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4A0000.cpp",
+  "name": "descriptiveName_004A57F0 (storeArgToFields204And210)",
+  "signature": "extern \"C\" void __fastcall fn_004A57F0(void* self, int edx_unused, DWORD value)",
+  "summary": "Stores the single stack argument into two DWORD fields of self (+0x204 and +0x210); callee pops 4 bytes.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x204",
+      "type": "DWORD",
+      "name": "field_0x204"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x210",
+      "type": "DWORD",
+      "name": "field_0x210"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:01:17Z"
+}

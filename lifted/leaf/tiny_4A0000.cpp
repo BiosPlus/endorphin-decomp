@@ -117,3 +117,17 @@ void fn_004A24A0(uint32_t value) {
     // ret 4                -> stdcall epilogue; handled by the calling convention
 }
 } // namespace lift_004A24A0
+
+// [0x004A57F0] sub_004A57F0 (19 bytes)
+namespace lift_004A57F0 {
+// @name descriptiveName_004A57F0 (storeArgToFields204And210)
+// @summary Stores the single stack argument into two DWORD fields of self (+0x204 and +0x210); callee pops 4 bytes.
+// @field Unknown +0x204 DWORD field_0x204
+// @field Unknown +0x210 DWORD field_0x210
+extern void __fastcall fn_004A57F0(void* self, int edx_unused, DWORD value) {
+    (void)edx_unused;
+    auto* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<DWORD*>(base + 0x204) = value;
+    *reinterpret_cast<DWORD*>(base + 0x210) = value;
+}
+} // namespace lift_004A57F0
