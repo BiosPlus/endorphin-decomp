@@ -1,0 +1,28 @@
+{
+  "va": "0x0079DCE0",
+  "size": 18,
+  "orig_symbol": "sub_0079DCE0",
+  "src_path": "src/leaf/tiny_790000.cpp",
+  "lifted_path": "lifted/leaf/tiny_790000.cpp",
+  "name": "descriptiveName_0079DCE0",
+  "class": "(none: this-pointer class not identified)",
+  "signature": "void __thiscall descriptiveName_0079DCE0(void* self, const uint32_t* src)",
+  "summary": "thiscall: copies two dwords from *(arg1) into this+0x78 and this+0x7c, returns with 4 bytes of args popped.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x78",
+      "type": "uint32_t",
+      "name": "field_0x78"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x7C",
+      "type": "uint32_t",
+      "name": "field_0x7c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:58:57Z"
+}

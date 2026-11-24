@@ -397,3 +397,20 @@ void fn_0079C1F0(void* self) {
     fn(subThis, 1);
 }
 } // namespace lift_0079C1F0
+
+// [0x0079DCE0]
+namespace lift_0079DCE0 {
+// @name descriptiveName_0079DCE0
+// @class (none: this-pointer class not identified)
+// @summary thiscall: copies two dwords from *(arg1) into this+0x78 and this+0x7c, returns with 4 bytes of args popped.
+// @field <unknown> +0x78 uint32_t field_0x78
+// @field <unknown> +0x7c uint32_t field_0x7c
+
+uint32_t ext_arg_src_dummy_unused = 0;
+
+void __thiscall descriptiveName_0079DCE0(void* self, const uint32_t* src) {
+    uint32_t* dst = reinterpret_cast<uint32_t*>(self);
+    dst[0x78 / 4] = src[0];
+    dst[0x7c / 4] = src[1];
+}
+} // namespace lift_0079DCE0

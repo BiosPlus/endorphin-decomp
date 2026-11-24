@@ -37923,6 +37923,13 @@
     "summary": "Destructor tail-call: restores vtable mem_009976F8 and tail-calls base destructor sub_00785430.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x0079DCE0": {
+    "name": "descriptiveName_0079DCE0",
+    "class": "(none: this-pointer class not identified)",
+    "signature": "void __thiscall descriptiveName_0079DCE0(void* self, const uint32_t* src)",
+    "summary": "thiscall: copies two dwords from *(arg1) into this+0x78 and this+0x7c, returns with 4 bytes of args popped.",
+    "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
   "0x0079DD10": {
     "name": "sub_0079DD10",
     "signature": "void fn_0079DD10(void* self, uint32_t a0, uint32_t a1)",
