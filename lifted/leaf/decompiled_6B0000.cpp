@@ -619,3 +619,21 @@ uint8_t __stdcall sub_006B9CE0(uint8_t ch, uintptr_t str) {
   return 0;
 }
 } // namespace lift_006B9CE0
+
+// [0x006BD210]
+namespace lift_006BD210 {
+// @name Pair::equals
+// @class Pair
+// @summary Compares two 32-bit fields at offsets +0x00 and +0x04 for equality.
+// @field Pair +0x00 uint32_t field_0x00
+// @field Pair +0x04 uint32_t field_0x04
+uint32_t __thiscall sub_006BD210(uint32_t* self, const uint32_t* other) {
+    if (other[0] != self[0]) {
+        return 0;
+    }
+    if (other[1] != self[1]) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_006BD210
