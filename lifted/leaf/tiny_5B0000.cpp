@@ -256,3 +256,23 @@ DWORD fn_005B2130(void* self, DWORD arg) {
     return slot5(obj, self, arg);
 }
 } // namespace lift_005B2130
+
+// [0x005B6980] sub_005B6980 (24 bytes)
+namespace lift_005B6980 {
+extern uint32_t mem_read32(uint32_t addr);
+extern uint32_t ext_00647F80(uint32_t self, uint32_t stack_arg);
+
+// @name Unknown::ForwardToSubobjectField0xAC
+// @class Unknown
+// @summary If the pointer at +0x158 is non-null, tail-forwards to ext_00647F80 with the child pointer's +0xAC value as `this`; otherwise returns 0.
+// @field Unknown +0x158 uint32_t field_0x158 (child pointer; non-null selects the forward path)
+// @field Unknown +0xAC uint32_t field_0xac (read from the child at +0x158; becomes `this` for the forward)
+uint32_t fn_005B6980(uint32_t self, uint32_t stack_arg) {
+    const uint32_t child = mem_read32(self + 0x158);
+    if (child == 0) {
+        return 0;
+    }
+    const uint32_t next_self = mem_read32(child + 0xAC);
+    return ext_00647F80(next_self, stack_arg);
+}
+} // namespace lift_005B6980

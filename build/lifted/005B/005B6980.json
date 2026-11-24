@@ -1,0 +1,28 @@
+{
+  "va": "0x005B6980",
+  "size": 24,
+  "orig_symbol": "sub_005B6980",
+  "src_path": "src/leaf/tiny_5B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5B0000.cpp",
+  "name": "Unknown::ForwardToSubobjectField0xAC",
+  "class": "Unknown",
+  "signature": "uint32_t fn_005B6980(uint32_t self, uint32_t stack_arg)",
+  "summary": "If the pointer at +0x158 is non-null, tail-forwards to ext_00647F80 with the child pointer's +0xAC value as `this`; otherwise returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "uint32_t field_0x158 (child pointer; non-null selects the forward",
+      "name": "path)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "uint32_t field_0xac (read from the child at +0x158; becomes `this` for the",
+      "name": "forward)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:37:06Z"
+}

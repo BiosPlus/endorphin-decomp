@@ -16357,6 +16357,13 @@
     "summary": "Calls sub_005B6930 and returns the float at offset +0x04 of the returned object.",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005B6980": {
+    "name": "Unknown::ForwardToSubobjectField0xAC",
+    "class": "Unknown",
+    "signature": "uint32_t fn_005B6980(uint32_t self, uint32_t stack_arg)",
+    "summary": "If the pointer at +0x158 is non-null, tail-forwards to ext_00647F80 with the child pointer's +0xAC value as `this`; otherwise returns 0.",
+    "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
+  },
   "0x005B6E70": {
     "name": "NMData::MetaBodyData::vfunc_36",
     "class": "NMData::MetaBodyData",
