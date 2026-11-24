@@ -4944,3 +4944,25 @@ uint32_t fn_004023C0(void* self) {
     return lift_field<uint32_t>(inner_ptr, 0xD8);
 }
 } // namespace lift_004023C0
+
+// [0x00458DE0] CMessageReflector::vfunc_2 (13 bytes)
+namespace lift_00458DE0 {
+// @name CMessageReflector::vfunc_2
+// @class CMessageReflector
+// @summary If self is non-null, calls virtual slot 0 on self with argument 1 (flag value 1, typically a scalar deleting destructor).
+// @field CMessageReflector +0x00 void* vtable
+
+// Virtual slot signature: the original passes `self` in ecx (thiscall) and one
+// stack argument. Portable model: the receiver is an explicit first parameter.
+typedef void (*VSlotFn_Int)(void* self, int flag);
+
+void fn_00458DE0(void* self) {
+    if (self == nullptr) {
+        return;
+    }
+    // Vtable pointer is the first word of the object.
+    void** vtable = *reinterpret_cast<void***>(self);
+    VSlotFn_Int slot0 = reinterpret_cast<VSlotFn_Int>(vtable[0]);
+    slot0(self, 1);
+}
+} // namespace lift_00458DE0

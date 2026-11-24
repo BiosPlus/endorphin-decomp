@@ -2518,6 +2518,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00458A00 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00458DE0": {
+    "name": "CMessageReflector::vfunc_2",
+    "class": "CMessageReflector",
+    "signature": "void fn_00458DE0(void* self)",
+    "summary": "If self is non-null, calls virtual slot 0 on self with argument 1 (flag value 1, typically a scalar deleting destructor).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x004590E0": {
     "name": "CMessageReflector::vfunc_0",
     "class": "CMessageReflector",

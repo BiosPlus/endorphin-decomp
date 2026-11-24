@@ -1,0 +1,22 @@
+{
+  "va": "0x00458DE0",
+  "size": 13,
+  "orig_symbol": "CMessageReflector::vfunc_2",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CMessageReflector::vfunc_2",
+  "class": "CMessageReflector",
+  "signature": "void fn_00458DE0(void* self)",
+  "summary": "If self is non-null, calls virtual slot 0 on self with argument 1 (flag value 1, typically a scalar deleting destructor).",
+  "fields": [
+    {
+      "class": "CMessageReflector",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:18:55Z"
+}
