@@ -574,6 +574,7 @@ struct Unknown_Fields {
     // +0x1AE8 void*                    field_0x1ae8  (evidence: 0x006C1290) // CONFLICT: multiple definitions at +0x1AE8
     // +0x1AE8 void*                    field_1AE8  (evidence: 0x006C12B0, 0x006C12F0, 0x006F22E0, 0x006F2350, 0x006F23C0, 0x006F2430, 0x006F24A0, 0x00700570, 0x00701BC0, 0x0070FDA0, 0x0070FDE0) // CONFLICT: multiple definitions at +0x1AE8
     // +0x1B78 void*                    subobjVtbl  (evidence: 0x006C12D0, 0x006F2410, 0x006F2480, 0x00700550, 0x00701BA0, 0x0070FD80, 0x0070FDC0)
+    // +0x1CB0 void* field_1CB0 (address computed as this + 0x1CB0 and passed on; not dereferenced here)  (evidence: 0x006EFDC0)
     // +0x1D38 uint8_t field_1D38 (address taken only; passed as `this` to ext_00711D40)  (evidence: 0x006EFE00)
     // +0x1E48 void*                    field_0x1e48  (evidence: 0x006EFEA0)
     // +0x20F0 void*                    field_20F0  (evidence: 0x006F0040)
