@@ -1719,3 +1719,24 @@ void fn_004AA0C0(void* out) {
         static_cast<void*>(&mem_00ADF9E0);
 }
 } // namespace lift_004AA0C0
+
+// [0x004B7460] ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_40 (122 bytes)
+namespace lift_004B7460 {
+extern void ext_0067A670(void* self, int flag);
+extern uint32_t mem_00AE1618;  // one-time initialization guard (bit 0)
+extern uint32_t mem_00AE1614;  // static object; first dword holds its vtable (0x009434CC)
+
+// @name ExprParser::DynamicEnumType<NMData::MaterialPair>::vfunc_40
+// @class ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>
+// @summary Lazily constructs the shared static object on first use, then stores its address into the out argument at +0x04.
+// @field ExprParser::ValuePtrType +0x04 void** field_0x04
+void fn_004B7460(void* out) {
+    if ((mem_00AE1618 & 1u) == 0) {
+        mem_00AE1618 |= 1u;
+        ext_0067A670(&mem_00AE1614, 0);
+        mem_00AE1614 = 0x009434CCu;
+    }
+    *reinterpret_cast<uint32_t*>(static_cast<char*>(out) + 0x04) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE1614));
+}
+} // namespace lift_004B7460
