@@ -1,0 +1,13 @@
+{
+  "va": "0x00528CA0",
+  "size": 19,
+  "orig_symbol": "sub_00528CA0",
+  "src_path": "src/leaf/tiny_520000.cpp",
+  "lifted_path": "lifted/leaf/tiny_520000.cpp",
+  "name": "descriptiveName_00528CA0 (freeIfNonNull)",
+  "signature": "void __stdcall fn_00528CA0(void* p)",
+  "summary": "Frees the pointer argument via the CRT free import if it is non-null; pops its one stack argument (ret 4).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:01:42Z"
+}

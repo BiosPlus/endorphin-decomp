@@ -11211,6 +11211,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00528AE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00528CA0": {
+    "name": "descriptiveName_00528CA0 (freeIfNonNull)",
+    "signature": "void __stdcall fn_00528CA0(void* p)",
+    "summary": "Frees the pointer argument via the CRT free import if it is non-null; pops its one stack argument (ret 4).",
+    "lifted_path": "lifted/leaf/tiny_520000.cpp"
+  },
   "0x00528CC0": {
     "name": "bswap16",
     "signature": "uint16_t bswap16(uint16_t val)",
