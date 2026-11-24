@@ -2635,3 +2635,23 @@ uint8_t __thiscall sub_0071C4E0(uintptr_t ecx) {
     return mem_r8(eax + 0x10e0);
 }
 } // namespace lift_0071C4E0
+
+// [0x0071F100]
+namespace lift_0071F100 {
+// @name zeroTwoDwords
+// @class Unknown
+// @summary Zeroes the two dwords at offsets +0x00 and +0x04 of the object pointed to by ecx and returns that pointer in eax.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+
+struct Unknown {
+    uint32_t field_0x00;
+    uint32_t field_0x04;
+};
+
+Unknown* zeroTwoDwords(Unknown* self) {
+    self->field_0x00 = 0;
+    self->field_0x04 = 0;
+    return self;
+}
+} // namespace lift_0071F100
