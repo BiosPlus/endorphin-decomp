@@ -1,0 +1,22 @@
+{
+  "va": "0x0062A250",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSensors::SensorMetaBodyRelativeTime, float, \u0026public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSensorMetaBodyRelativeTime, float\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cSensors::SensorMetaBodyRelativeTime, float, \u0026public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)\u003e",
+  "signature": "extern \"C\" void ext_0067A670();     // constructor for the function-local static object (ecx = \u0026mem_00B515CC) extern \"C\" uint32_t mem_00B515D0;   // one-time init guard (bit 0) extern \"C\" uint32_t mem_00B515CC;   // function-local static object; first dword is its vtable pointer void fn_0062A250(void* obj)",
+  "summary": "Lazily constructs the function-local static object at 0x00B515CC once, then stores its address into the output object's +0x04 slot.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:57:03Z"
+}

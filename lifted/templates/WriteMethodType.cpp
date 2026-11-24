@@ -7666,3 +7666,25 @@ void fn_0062A750(void* self) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B51C24));
 }
 } // namespace lift_0062A750
+
+// [0x0062A250] ExprParser::WriteMethodType<Sensors::SensorMetaBodyRelativeTime, float, &public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)>::vfunc_40 (122 bytes)
+namespace lift_0062A250 {
+extern void ext_0067A670();     // constructor for the function-local static object (ecx = &mem_00B515CC)
+extern uint32_t mem_00B515D0;   // one-time init guard (bit 0)
+extern uint32_t mem_00B515CC;   // function-local static object; first dword is its vtable pointer
+
+// @name ExprParser::WriteMethodType<SensorMetaBodyRelativeTime, float>::vfunc_40
+// @class ExprParser::WriteMethodType<Sensors::SensorMetaBodyRelativeTime, float, &public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)>
+// @summary Lazily constructs the function-local static object at 0x00B515CC once, then stores its address into the output object's +0x04 slot.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+void fn_0062A250(void* obj) {
+    // The original's SEH frame (fs:[0] push/pop, state -1/0) is Windows-only
+    // bookkeeping with no effect on the portable logic, so it is dropped here.
+    if (!(mem_00B515D0 & 1u)) {
+        mem_00B515D0 |= 1u;
+        ext_0067A670();
+        mem_00B515CC = 0x00978954u;
+    }
+    lift_field<uint32_t>(obj, 4) = 0x00B515CCu;
+}
+} // namespace lift_0062A250

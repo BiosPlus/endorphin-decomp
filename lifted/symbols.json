@@ -29069,6 +29069,13 @@
     "summary": "One-time guarded init of the shared static object at 0x00B515C4, then stores its address into the object's +0x04 slot.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0062A250": {
+    "name": "ExprParser::WriteMethodType\u003cSensorMetaBodyRelativeTime, float\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cSensors::SensorMetaBodyRelativeTime, float, \u0026public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)\u003e",
+    "signature": "extern \"C\" void ext_0067A670();     // constructor for the function-local static object (ecx = \u0026mem_00B515CC) extern \"C\" uint32_t mem_00B515D0;   // one-time init guard (bit 0) extern \"C\" uint32_t mem_00B515CC;   // function-local static object; first dword is its vtable pointer void fn_0062A250(void* obj)",
+    "summary": "Lazily constructs the function-local static object at 0x00B515CC once, then stores its address into the output object's +0x04 slot.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0062A560": {
     "name": "ExprParser::ROWriteMethodType::vfunc_16 (Sensors::SensorIntegral::insert)",
     "class": "ExprParser::ROWriteMethodType\u003cSensors::SensorIntegral, float, \u0026public: void __thiscall Sensors::SensorIntegral::insert(float)\u003e",
