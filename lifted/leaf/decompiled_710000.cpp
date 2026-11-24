@@ -490,21 +490,6 @@ uint8_t fn_00711A50(void* self) {
 } // namespace lift_00711A50
 } // namespace lift_00711A50
 
-// [0x0071C3B0] sub_0071C3B0 (32 bytes)
-namespace lift_0071C3B0 {
-// @name Unknown::SetSubObjectPair1520
-// @class Unknown
-// @summary Loads the sub-object at this+0x0C and stores two stack arguments into its +0x1520/+0x1524 slots.
-// @field Unknown +0x0C void* field_0x0C
-// @field Unknown +0x1520 DWORD field_0x1520
-// @field Unknown +0x1524 DWORD field_0x1524
-void fn_0071C3B0(void* self, DWORD arg1, DWORD arg2) {
-    void* sub = lift_field<void*>(self, 0x0C);
-    lift_field<DWORD>(sub, 0x1520) = arg1;
-    lift_field<DWORD>(sub, 0x1524) = arg2;
-}
-} // namespace lift_0071C3B0
-
 // [0x0071C0E0] sub_0071C0E0 (32 bytes)
 namespace lift_0071C0E0 {
 // @name Unknown::StoreArgPairIntoSubObject
@@ -534,3 +519,18 @@ void __thiscall fn_0071C480(void* self, uint32_t arg1, uint32_t arg2) {
     *reinterpret_cast<uint32_t*>(obj + 0xFD4) = arg2;
 }
 } // namespace lift_0071C480
+
+// [0x0071C3B0] sub_0071C3B0 (32 bytes)
+namespace lift_0071C3B0 {
+// @name Unknown::SetSubObjectPair1520
+// @class Unknown
+// @summary Loads the sub-object at this+0x0C and stores two stack arguments into its +0x1520/+0x1524 slots.
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0x1520 DWORD field_0x1520
+// @field Unknown +0x1524 DWORD field_0x1524
+void fn_0071C3B0(void* self, DWORD arg1, DWORD arg2) {
+    void* sub = lift_field<void*>(self, 0x0C);
+    lift_field<DWORD>(sub, 0x1520) = arg1;
+    lift_field<DWORD>(sub, 0x1524) = arg2;
+}
+} // namespace lift_0071C3B0
