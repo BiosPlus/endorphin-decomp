@@ -331,3 +331,24 @@ uint8_t __thiscall sub_0041C600(void* self, uint32_t arg1, uint32_t arg2, uint32
     return fn(reinterpret_cast<void*>(static_cast<uintptr_t>(target)), arg1, arg2, arg3);
 }
 } // namespace lift_0041C600
+
+// [0x0041C570]
+namespace lift_0041C570 {
+// @name forward_0x10_3args
+// @summary Forwards a 3-argument virtual call at vtable +0x10 to field_0x08 if non-null, otherwise returns 0
+// @field Self +0x08 uint32_t field_0x08
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+uint8_t sub_0041C570(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    uint32_t target = mem_read32(self + 0x08);
+    if (target == 0) {
+        return 0;
+    }
+    uint32_t vtable = mem_read32(target);
+    uint32_t fn_addr = mem_read32(vtable + 0x10);
+    using Fn = uint8_t(*)(uint32_t, uint32_t, uint32_t, uint32_t);
+    return reinterpret_cast<Fn>(static_cast<uintptr_t>(fn_addr))(target, arg1, arg2, arg3);
+}
+} // namespace lift_0041C570

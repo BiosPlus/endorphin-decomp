@@ -1,0 +1,21 @@
+{
+  "va": "0x0041C570",
+  "size": 39,
+  "orig_symbol": "sub_0041C570",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "forward_0x10_3args",
+  "signature": "uint8_t sub_0041C570(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Forwards a 3-argument virtual call at vtable +0x10 to field_0x08 if non-null, otherwise returns 0",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:51:01Z"
+}
