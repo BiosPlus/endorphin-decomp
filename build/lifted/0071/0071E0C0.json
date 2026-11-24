@@ -1,0 +1,13 @@
+{
+  "va": "0x0071E0C0",
+  "size": 36,
+  "orig_symbol": "sub_0071E0C0",
+  "src_path": "src/clones/auto_clones_710000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_710000.cpp",
+  "name": "NegateHugeIntoGlobals",
+  "signature": "void fn_0071E0C0()",
+  "summary": "Loads the double pointed to by _HUGE and stores its negation into three globals.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:00:10Z"
+}

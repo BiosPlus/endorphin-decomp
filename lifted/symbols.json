@@ -42510,6 +42510,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071E0C0": {
+    "name": "NegateHugeIntoGlobals",
+    "signature": "void fn_0071E0C0()",
+    "summary": "Loads the double pointed to by _HUGE and stores its negation into three globals.",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x0071E4F0": {
     "name": "sub_0071E4F0",
     "signature": "extern \"C\" void* __fastcall fn_0071E4F0(void* self, int edx_unused, unsigned int flags)",

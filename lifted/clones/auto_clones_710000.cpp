@@ -766,3 +766,21 @@ void sub_007105E0(void) {
     mem_00B5F0A0 = -(*src);
 }
 } // namespace lift_007105E0
+
+// [0x0071E0C0]
+namespace lift_0071E0C0 {
+// @name NegateHugeIntoGlobals
+// @summary Loads the double pointed to by _HUGE and stores its negation into three globals.
+
+extern uint32_t mem_00925284;  // .rdata pointer to _HUGE (0x0062D360)
+extern double mem_00B5FE60;
+extern double mem_00B5FE68;
+extern double mem_00B5FE70;
+
+void fn_0071E0C0() {
+    const double huge = *reinterpret_cast<const double*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5FE60 = -huge;
+    mem_00B5FE68 = -huge;
+    mem_00B5FE70 = -huge;
+}
+} // namespace lift_0071E0C0
