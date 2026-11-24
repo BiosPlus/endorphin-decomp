@@ -291,3 +291,26 @@ float __thiscall sub_0068BED0(void* self) {
     return static_cast<float>(res);
 }
 } // namespace lift_0068BED0
+
+// [0x0068BB30] sub_0068BB30 (45 bytes)
+namespace lift_0068BB30 {
+extern void ext_0065C770(void* self, void* arg1, int value, void* extra);
+void* fn_00687510(void* self, void* arg1);
+
+// Opaque C++ exception payload. The original throws a 0x34-byte object built
+// in the frame at [ebp-0x64]; that bound comes from the distance to [ebp-0x30].
+struct ThrowObject {
+    alignas(8) unsigned char bytes[0x34];
+};
+
+// @name Lift_0068BB30_throwFromContext
+// @summary Builds a 7-tagged exception object from arg1 and a context-derived value, then throws it.
+void fn_0068BB30(void* arg1, void* ctx) {
+    unsigned char scratch[0x1C];  // frame slot [ebp-0x30], bounded by [ebp-0x14]
+    void* derived = fn_00687510(ctx, scratch);
+
+    ThrowObject exc{};
+    ext_0065C770(&exc, arg1, 7, derived);
+    throw exc;
+}
+} // namespace lift_0068BB30

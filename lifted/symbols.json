@@ -31146,6 +31146,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006895E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0068BB30": {
+    "name": "Lift_0068BB30_throwFromContext",
+    "signature": "void fn_0068BB30(void* arg1, void* ctx)",
+    "summary": "Builds a 7-tagged exception object from arg1 and a context-derived value, then throws it.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x0068BBF0": {
     "name": "sub_0068BBF0",
     "signature": "extern \"C\" void __fastcall fn_0068BBF0(void* self)",
