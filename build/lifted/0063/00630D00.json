@@ -1,0 +1,40 @@
+{
+  "va": "0x00630D00",
+  "size": 58,
+  "orig_symbol": "EffectorSkeletal::vfunc_18",
+  "src_path": "src/classes/EffectorSkeletal.cpp",
+  "lifted_path": "lifted/classes/EffectorSkeletal.cpp",
+  "name": "EffectorSkeletal::vfunc_18",
+  "class": "EffectorSkeletal",
+  "signature": "void* fn_00630D00(void* self)",
+  "summary": "Calls two helpers on sub-objects at +0x2C/+0x90, pushes the float at +0xF0 to a helper, then tail-dispatches vtable slot 0x74 on self.",
+  "fields": [
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0x2C",
+      "type": "void*",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0x90",
+      "type": "void*",
+      "name": "field_0x90"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0xF0",
+      "type": "float",
+      "name": "field_0xF0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:24:21Z"
+}

@@ -31073,6 +31073,13 @@
     "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x00630D00": {
+    "name": "EffectorSkeletal::vfunc_18",
+    "class": "EffectorSkeletal",
+    "signature": "void* fn_00630D00(void* self)",
+    "summary": "Calls two helpers on sub-objects at +0x2C/+0x90, pushes the float at +0xF0 to a helper, then tail-dispatches vtable slot 0x74 on self.",
+    "lifted_path": "lifted/classes/EffectorSkeletal.cpp"
+  },
   "0x00630E60": {
     "name": "Unknown::NotifyAndReturnSubobjectF8",
     "class": "Unknown",

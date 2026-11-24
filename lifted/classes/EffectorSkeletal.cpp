@@ -32,3 +32,39 @@ uint32_t __thiscall fn_006310F0(uint32_t self) {
     return ext_00630DD0(self);
 }
 } // namespace lift_006310F0
+
+// [0x00630D00] EffectorSkeletal::vfunc_18 (58 bytes)
+namespace lift_00630D00 {
+// @name EffectorSkeletal::vfunc_18
+// @class EffectorSkeletal
+// @summary Calls two helpers on sub-objects at +0x2C/+0x90, pushes the float at +0xF0 to a helper, then tail-dispatches vtable slot 0x74 on self.
+// @field EffectorSkeletal +0x00 void* field_0x00
+// @field EffectorSkeletal +0x2C void* field_0x2C
+// @field EffectorSkeletal +0x90 void* field_0x90
+// @field EffectorSkeletal +0xF0 float field_0xF0
+
+// Callee conventions: __thiscall (ecx = this), stack args callee-cleaned.
+extern void* __thiscall ext_006035D0(void* self, void* arg);
+extern void __thiscall ext_00630CB0(void* self, float value);
+extern void* __thiscall ext_006305A0(void* self);
+extern void __thiscall ext_006304B0(void* self, const void* value);
+
+void* fn_00630D00(void* self) {
+    unsigned char* base = static_cast<unsigned char*>(self);
+
+    // ecx = this+0x90, arg = this+0x2C
+    ext_006035D0(base + 0x90, base + 0x2C);
+
+    float v = *reinterpret_cast<float*>(base + 0xF0);
+    ext_00630CB0(self, v);
+
+    void* p = ext_006305A0(self);
+    ext_006304B0(self, p);
+
+    // Tail-dispatch: jmp [[self] + 0x74] with ecx = self.
+    void* vptr = *reinterpret_cast<void**>(base);
+    void* target = *reinterpret_cast<void**>(static_cast<unsigned char*>(vptr) + 0x74);
+    using Slot = void* (__thiscall*)(void* self_);
+    return reinterpret_cast<Slot>(target)(self);
+}
+} // namespace lift_00630D00
