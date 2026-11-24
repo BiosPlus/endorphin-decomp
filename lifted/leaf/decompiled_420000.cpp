@@ -286,3 +286,26 @@ void* fn_0042FE70() {
     return fn(self);                                   // mov ecx, eax; jmp edx (tail call)
 }
 } // namespace lift_0042FE70
+
+// [0x0042FDD0] sub_0042FDD0 (21 bytes)
+namespace lift_0042FDD0 {
+// Known callee 0x00465B30: get_global_field_0x58 (Calls ext_004658C0 and returns the int32_t field at offset +0x58.)
+extern int32_t ext_00465B30(void);
+// Known callee 0x00468660: getNestedField_0x18_0xc (Reads a 32-bit value at offset 0xc of the object pointed to by this+0x18)
+extern uint32_t ext_00468660(uint32_t this_ptr);
+
+// @name Dispatch::ForwardSlot14
+// @class Dispatch
+// @summary Fetches an object via ext_00465B30/ext_00468660 and tail-dispatches its vtable slot at +0x14 (index 5).
+// @field Unknown +0x00 void** vtable
+uint32_t fn_0042FDD0(void) {
+    const uint32_t global = static_cast<uint32_t>(ext_00465B30());
+    const uint32_t obj_addr = ext_00468660(global);
+
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(obj_addr));
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    using SlotFn = uint32_t (*)(void*);
+    SlotFn slot = reinterpret_cast<SlotFn>(vtbl[5]); // +0x14 / sizeof(void*) on 32-bit
+    return slot(obj);
+}
+} // namespace lift_0042FDD0
