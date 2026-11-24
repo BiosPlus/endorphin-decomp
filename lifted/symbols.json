@@ -42128,6 +42128,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00704780 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00704BB0": {
+    "name": "getStorageTypeName",
+    "signature": "const char* __stdcall sub_00704BB0(uint32_t mode)",
+    "summary": "Returns the string name for a storage mode enum (0=Disk, 1=Memory, 2=Disk Async), or nullptr.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00704BE0": {
     "name": "sub_00704BE0",
     "signature": "void fn_00704BE0(void)",
