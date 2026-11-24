@@ -1,0 +1,22 @@
+{
+  "va": "0x00442BF0",
+  "size": 16,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState::vfunc_1",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/SelectOrMoveState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/SelectOrMoveState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState::vfunc_1",
+  "class": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState",
+  "signature": "void fn_00442BF0(void* self)",
+  "summary": "Starts the delegate's timer using the interval stored at delegate+0x170.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "delegate_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:37:44Z"
+}

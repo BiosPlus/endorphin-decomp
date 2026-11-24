@@ -3096,6 +3096,13 @@
     "summary": "Calls the base init helper with the two stack arguments, then installs the vtable pointer mem_00932694 at offset 0 and returns self.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x00442BF0": {
+    "name": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState::vfunc_1",
+    "class": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState",
+    "signature": "void fn_00442BF0(void* self)",
+    "summary": "Starts the delegate's timer using the interval stored at delegate+0x170.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/SelectOrMoveState.cpp"
+  },
   "0x00442C00": {
     "name": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState::vfunc_2",
     "class": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState",
