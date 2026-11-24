@@ -2236,6 +2236,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00551A10 (NMCamera::Orthogonal::vfunc_5).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00431330": {
+    "name": "sub_00431330",
+    "signature": "extern \"C\" void __thiscall fn_00431330(uint32_t self)",
+    "summary": "Calls vtable+0x15c(0) on field_0x104 and passes its negated boolean result to MFC80_ord_6081",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004329A0": {
     "name": "init_and_update_field_0x11c",
     "signature": "extern \"C\" void __thiscall fn_004329A0(uintptr_t self)",
@@ -12770,6 +12776,13 @@
     "signature": "extern \"C\" void __fastcall fn_0050F990(void* self)",
     "summary": "Stores address of mem_00950A74 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
+  },
+  "0x0050E360": {
+    "name": "ArrayView::elementPtr",
+    "class": "ArrayView",
+    "signature": "void* fn_0050E360(void* self, uint32_t index)",
+    "summary": "Returns a pointer to element `index` of a pointer-range array (begin at +0x04, end at +0x08), raising the CRT invalid-parameter handler when the index is out of range or the array is empty.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x0050E4C0": {
     "name": "NMData::PopulationData::vfunc_0",

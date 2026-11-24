@@ -186,3 +186,32 @@ void* fn_00503D00(void* dst, uint32_t count, const void* src) {
     return out;
 }
 } // namespace lift_00503D00
+
+// [0x0050E360] sub_0050E360 (44 bytes)
+namespace lift_0050E360 {
+extern void ext__invalid_parameter_noinfo(void);
+
+// @name ArrayView::elementPtr
+// @class ArrayView
+// @summary Returns a pointer to element `index` of a pointer-range array (begin at +0x04, end at +0x08), raising the CRT invalid-parameter handler when the index is out of range or the array is empty.
+// @field ArrayView +0x04 void* field_0x04
+// @field ArrayView +0x08 void* field_0x08
+// Original convention: __thiscall (this in ECX), one stack argument, `ret 4`.
+void* fn_0050E360(void* self, uint32_t index) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint8_t* begin = *reinterpret_cast<uint8_t**>(base + 0x04);
+    uint8_t* end = *reinterpret_cast<uint8_t**>(base + 0x08);
+
+    bool valid = false;
+    if (begin != nullptr) {
+        // (end - begin) >> 2 is the element count (4-byte elements).
+        const auto count = static_cast<uint32_t>((end - begin) >> 2);
+        valid = index < count;
+    }
+    if (!valid) {
+        ext__invalid_parameter_noinfo();
+    }
+
+    return begin + 4u * index;
+}
+} // namespace lift_0050E360
