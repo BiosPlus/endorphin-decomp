@@ -8101,6 +8101,13 @@
     "summary": "Reads the Transition condition string through the wrapped pointer and returns it parsed as a float (atof); throws if the pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00497F60": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::Transition\u003e::vfunc_4 (NMData::Transition::getCondition)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::Transition, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::Transition::getCondition(void) const, 0}, 0\u003e",
+    "signature": "void* fn_00497F60(void* dst, void* const* holder)",
+    "summary": "Reads the held Transition pointer; throws if it is null, otherwise copy-constructs the condition string into dst and returns dst.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004982E0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::Transition,getResultantStateID\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::Transition, std::string const \u0026, \u0026NMData::Transition::getResultantStateID, 0\u003e",

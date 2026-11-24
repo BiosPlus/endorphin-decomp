@@ -16,6 +16,7 @@ void* fn_00617340(void* self) {
 }
 #include <cstring>
 #include <cmath>
+#include <new>
 
 // [0x006178B0] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getLowerDamping(void) const, 0>::vfunc_16 (30 bytes)
 // @name ExprParser::ReadMethodType<NMData::HingeLimit>::vfunc_16 (NMData::HingeLimit::getLowerDamping)
@@ -31124,3 +31125,24 @@ void* __stdcall fn_0049B5F0(void* dst, void* const* holder) {
     return dst;
 }
 } // namespace lift_0049B5F0
+
+// [0x00497F60] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_00497F60 {
+// Known callee 0x00496F20 (4 bytes): accessor returning a pointer to the Transition's condition string.
+// The original passes the object in ecx (thiscall); the lifted form takes it as an explicit argument.
+extern const std::string* ext_00496F20(void* self);
+
+// @name ExprParser::ReadMethodType<NMData::Transition>::vfunc_4 (NMData::Transition::getCondition)
+// @class ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>
+// @summary Reads the held Transition pointer; throws if it is null, otherwise copy-constructs the condition string into dst and returns dst.
+// No object fields are accessed directly here; the condition string offset lives inside ext_00496F20.
+void* fn_00497F60(void* dst, void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::Transition>: null value pointer");
+    }
+    const std::string* src = ext_00496F20(obj);
+    ::new (dst) std::string(*src);
+    return dst;
+}
+} // namespace lift_00497F60
