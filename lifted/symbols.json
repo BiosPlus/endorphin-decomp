@@ -32419,10 +32419,10 @@
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
   "0x006E7F90": {
-    "name": "Unknown::GetIndirectInt32Plus8",
+    "name": "sub_006E6340",
     "class": "Unknown",
-    "signature": "__declspec(noinline) extern \"C\" int32_t __fastcall fn_006E7F90(void* self)",
-    "summary": "Loads the pointer stored at +0x00 of self, offsets it by 8, and tail-calls the int32 getter at 0x006E7460 on that sub-object.",
+    "signature": "extern \"C\" void __fastcall fn_006E6340(void* self)",
+    "summary": "This-adjustor thunk: adjusts `this` by +0x4C and tail-calls sub_006E7460.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
   "0x006E7FA0": {
