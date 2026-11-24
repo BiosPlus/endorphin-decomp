@@ -1,0 +1,22 @@
+{
+  "va": "0x00533C70",
+  "size": 27,
+  "orig_symbol": "OglRenderer::vfunc_82",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "OglRenderer::vfunc_82",
+  "class": "OglRenderer",
+  "signature": "void fn_00533C70(void* self, uint32_t arg)",
+  "summary": "Forwards arg to the virtual slot 8 (+0x20) of the embedded subobject at +0x9C, passing a trailing 0.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x9C",
+      "type": "void* field_0x9C (embedded subobject; its first dword is the vtable",
+      "name": "pointer)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:02:49Z"
+}

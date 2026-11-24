@@ -6505,3 +6505,25 @@ int32_t fn_00547040(void* self) {
     return 0;
 }
 } // namespace lift_00547040
+
+// [0x00533C70] OglRenderer::vfunc_82 (27 bytes)
+namespace lift_00533C70 {
+// @name OglRenderer::vfunc_82
+// @class OglRenderer
+// @summary Forwards arg to the virtual slot 8 (+0x20) of the embedded subobject at +0x9C, passing a trailing 0.
+// @field OglRenderer +0x9C void* field_0x9C (embedded subobject; its first dword is the vtable pointer)
+// Calling convention: __thiscall with one stack argument (ret 4), so self is the implicit ecx.
+typedef void(__thiscall* VFnSlot8)(void* self, uint32_t a, uint32_t b);
+
+void fn_00533C70(void* self, uint32_t arg) {
+    // Embedded subobject lives at this+0x9C.
+    void* sub = reinterpret_cast<uint8_t*>(self) + 0x9C;
+
+    // Load its vtable pointer, then the function at slot 8 (offset 0x20).
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    VFnSlot8 fn = reinterpret_cast<VFnSlot8>(vtbl[8]);
+
+    // Original pushes 0 then arg, so the callee sees (arg, 0).
+    fn(sub, arg, 0);
+}
+} // namespace lift_00533C70
