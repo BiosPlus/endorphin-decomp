@@ -1145,3 +1145,17 @@ void fn_007C76B0(void* self, float value) {
     *reinterpret_cast<float*>(base + 0x208) = value;
 }
 } // namespace lift_007C76B0
+
+// [0x007C58E0] sub_007C58E0 (22 bytes)
+namespace lift_007C58E0 {
+// @name ReturnSelfIfFieldB0IsNine
+// @class Unknown
+// @summary Returns self if the uint32 at +0xB0 equals 9, otherwise returns NULL (cdecl, one arg).
+// @field Unknown +0xB0 uint32_t field_0xB0
+void* fn_007C58E0(void* self) {
+    // Equivalent to: return (*(uint32_t*)(self + 0xB0) == 9) ? self : nullptr;
+    const uint32_t field = lift_field<uint32_t>(self, 0xB0);
+    const uintptr_t mask = (field == 9u) ? ~static_cast<uintptr_t>(0) : static_cast<uintptr_t>(0);
+    return reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) & mask);
+}
+} // namespace lift_007C58E0

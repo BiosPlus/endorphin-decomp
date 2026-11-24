@@ -1,0 +1,22 @@
+{
+  "va": "0x007C58E0",
+  "size": 22,
+  "orig_symbol": "sub_007C58E0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "ReturnSelfIfFieldB0IsNine",
+  "class": "Unknown",
+  "signature": "void* fn_007C58E0(void* self)",
+  "summary": "Returns self if the uint32 at +0xB0 equals 9, otherwise returns NULL (cdecl, one arg).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xB0",
+      "type": "uint32_t",
+      "name": "field_0xB0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:30:51Z"
+}

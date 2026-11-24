@@ -39683,6 +39683,13 @@
     "summary": "IAT jump thunk forwarding to XSIFtk-3.6.2.1!?CreateScene@CSLScene@@SAPAV1@XZ.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x007C58E0": {
+    "name": "ReturnSelfIfFieldB0IsNine",
+    "class": "Unknown",
+    "signature": "void* fn_007C58E0(void* self)",
+    "summary": "Returns self if the uint32 at +0xB0 equals 9, otherwise returns NULL (cdecl, one arg).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C5900": {
     "name": "getField0x1A4",
     "signature": "extern \"C\" uint32_t sub_007C5900(uint32_t obj)",
