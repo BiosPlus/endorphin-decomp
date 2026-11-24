@@ -24680,6 +24680,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CE810 (Unknown::GetRecordByIndex).",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
   },
+  "0x005CFE10": {
+    "name": "sub_005CFE10",
+    "signature": "void __thiscall sub_005CFE10(uint32_t self, uint32_t arg)",
+    "summary": "Forwards a byte/flag to child object at +0x2C4 via vtable[1] if present, and stores it at +0x1F2.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005CFE50": {
     "name": "ForwardToChildOrReadFlag",
     "class": "UnknownObject",
@@ -53785,6 +53791,13 @@
     "class": "(none)",
     "signature": "void fn_007B617C(void* self)",
     "summary": "12-byte byte-index table indexed by (eax) and used by a jump table dispatch at 0x007B6xxx (mov cl, [eax+0x7B7084]; jmp [ecx*4+0x7B7074]); this is data, not code.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
+  "0x007BD9E0": {
+    "name": "UnknownObject::GetOrForwardByKey",
+    "class": "UnknownObject",
+    "signature": "int __cdecl fn_007BD9E0(void* self, uint32_t key, void* out)",
+    "summary": "If key == 0x10015, stores the dword at sub-object+0x68 through the out pointer and returns 1; otherwise forwards (self, key, out) to the function pointer at sub-object+0x70.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
   "0x007BDA20": {

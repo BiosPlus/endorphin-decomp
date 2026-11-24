@@ -459,3 +459,23 @@ uint32_t __cdecl DispatchOrStoreIndirect(uint32_t self, uint32_t id, uint32_t ar
     return fn(self, id, arg3);
 }
 } // namespace lift_007BD4A0
+
+// [0x007BD9E0] sub_007BD9E0 (55 bytes)
+namespace lift_007BD9E0 {
+// @name UnknownObject::GetOrForwardByKey
+// @class UnknownObject
+// @summary If key == 0x10015, stores the dword at sub-object+0x68 through the out pointer and returns 1; otherwise forwards (self, key, out) to the function pointer at sub-object+0x70.
+// @field UnknownObject +0x1cc void* field_0x1cc
+int __cdecl fn_007BD9E0(void* self, uint32_t key, void* out) {
+    void* sub = lift_field<void*>(self, 0x1cc);
+    if (key == 0x10015u) {
+        uint32_t value = lift_field<uint32_t>(sub, 0x68);
+        void* target = *static_cast<void**>(out);
+        lift_field<uint32_t>(target, 0x0) = value;
+        return 1;
+    }
+    using ForwardFn = int(__cdecl*)(void*, uint32_t, void*);
+    ForwardFn forward = reinterpret_cast<ForwardFn>(lift_field<uintptr_t>(sub, 0x70));
+    return forward(self, key, out);
+}
+} // namespace lift_007BD9E0
