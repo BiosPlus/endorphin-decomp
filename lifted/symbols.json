@@ -31964,6 +31964,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00642630 (SubObjectHolder::forwardSetField8Float).",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x006426F0": {
+    "name": "Unknown::ForwardFloat3ToChildIndirectField",
+    "class": "Unknown",
+    "signature": "uint32_t __thiscall fn_006426F0(void* self, float a1, float a2, float a3)",
+    "summary": "Forwards three float arguments to ext_00648A20 using the object at self+0x0C as this.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00642720": {
     "name": "sub_00642720",
     "class": "SubObjectHolder",

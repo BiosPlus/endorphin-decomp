@@ -1,0 +1,22 @@
+{
+  "va": "0x006426F0",
+  "size": 36,
+  "orig_symbol": "sub_006426F0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "Unknown::ForwardFloat3ToChildIndirectField",
+  "class": "Unknown",
+  "signature": "uint32_t __thiscall fn_006426F0(void* self, float a1, float a2, float a3)",
+  "summary": "Forwards three float arguments to ext_00648A20 using the object at self+0x0C as this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:15:43Z"
+}

@@ -624,3 +624,17 @@ void __thiscall fn_00648A20(void* self, float a, float b, float c) {
     }
 }
 } // namespace lift_00648A20
+
+// [0x006426F0] sub_006426F0 (36 bytes)
+namespace lift_006426F0 {
+// @name Unknown::ForwardFloat3ToChildIndirectField
+// @summary Forwards three float arguments to ext_00648A20 using the object at self+0x0C as this.
+// @field Unknown +0x0C void* field_0x0C
+
+extern uint32_t __thiscall ext_00648A20(void* self, float a1, float a2, float a3);
+
+uint32_t __thiscall fn_006426F0(void* self, float a1, float a2, float a3) {
+    void* child = *reinterpret_cast<void**>(static_cast<char*>(self) + 0x0C);
+    return ext_00648A20(child, a1, a2, a3);
+}
+} // namespace lift_006426F0
