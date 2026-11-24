@@ -1,0 +1,28 @@
+{
+  "va": "0x007C9DF0",
+  "size": 19,
+  "orig_symbol": "sub_007C9DF0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "addFloatFields_0x24_0x14",
+  "class": "\u003cunknown\u003e (free function; single pointer argument on stack)",
+  "signature": "float addFloatFields_0x24_0x14(const unsigned char* self)",
+  "summary": "Returns the float at +0x24 plus the float at +0x14 of the argument object (result in ST(0)).",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x24",
+      "type": "float",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:04:06Z"
+}

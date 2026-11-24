@@ -1076,3 +1076,19 @@ float fn_007CB9C0(void* self) {
     return value + value;
 }
 } // namespace lift_007CB9C0
+
+// [0x007C9DF0]
+namespace lift_007C9DF0 {
+// @name addFloatFields_0x24_0x14
+// @class <unknown> (free function; single pointer argument on stack)
+// @summary Returns the float at +0x24 plus the float at +0x14 of the argument object (result in ST(0)).
+// @field <unknown> +0x14 float field_0x14
+// @field <unknown> +0x24 float field_0x24
+
+float addFloatFields_0x24_0x14(const unsigned char* self)
+{
+    const float a = *reinterpret_cast<const float*>(self + 0x24);
+    const float b = *reinterpret_cast<const float*>(self + 0x14);
+    return a + b;
+}
+} // namespace lift_007C9DF0

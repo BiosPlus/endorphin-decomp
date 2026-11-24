@@ -39377,6 +39377,13 @@
     "summary": "Adds 0x40 to the first 32-bit argument and returns the result.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C9DF0": {
+    "name": "addFloatFields_0x24_0x14",
+    "class": "\u003cunknown\u003e (free function; single pointer argument on stack)",
+    "signature": "float addFloatFields_0x24_0x14(const unsigned char* self)",
+    "summary": "Returns the float at +0x24 plus the float at +0x14 of the argument object (result in ST(0)).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C9E10": {
     "name": "SetField24FromArgMinusField14",
     "class": "Unknown",
