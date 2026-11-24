@@ -1,0 +1,27 @@
+{
+  "va": "0x007BD340",
+  "size": 54,
+  "orig_symbol": "sub_007BD340",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "ReleaseOwnedHandlePair",
+  "signature": "inline void* load_ptr(const void* base, std::size_t off)",
+  "summary": "Frees the handle stored at self+0x1cc (and its inner handle at +0xc, if set), then clears the slot.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1CC",
+      "type": "void* field_0x1cc (pointer to a handle-holder object; freed via",
+      "name": "GlobalFree)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "HGLOBAL field_0x0c (inner handle of the holder object; freed via GlobalFree if",
+      "name": "non-null)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:12:51Z"
+}

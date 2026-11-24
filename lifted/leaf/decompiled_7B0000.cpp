@@ -1,8 +1,10 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_7B0000.cpp
 #include "lift_compat.h"
 #include <cstdint>
+#include <cstddef>
+#include <cstring>
 
-// [0x007B7084] sub_007B7084 (12 bytes)
+#include <cstring>
 namespace lift_007B7084 {
 // @name SwitchCaseIndexTable_007B7084
 // @summary 12-byte byte-index table indexed by (eax) and used by a jump table dispatch at 0x007B6xxx (mov cl, [eax+0x7B7084]; jmp [ecx*4+0x7B7074]); this is data, not code.
@@ -392,3 +394,39 @@ int32_t fn_007BF4A0(void* self, int32_t scale) {
     return 1;
 }
 } // namespace lift_007BF4A0
+
+// [0x007BD340]
+namespace lift_007BD340 {
+// @name ReleaseOwnedHandlePair
+// @summary Frees the handle stored at self+0x1cc (and its inner handle at +0xc, if set), then clears the slot.
+// @field Unknown +0x1cc void* field_0x1cc (pointer to a handle-holder object; freed via GlobalFree)
+// @field Unknown +0x0c HGLOBAL field_0x0c (inner handle of the holder object; freed via GlobalFree if non-null)
+
+HGLOBAL ext_0079AF50(HGLOBAL hMem);
+
+namespace {
+
+inline void* load_ptr(const void* base, std::size_t off) {
+    void* p;
+    std::memcpy(&p, static_cast<const std::uint8_t*>(base) + off, sizeof p);
+    return p;
+}
+
+inline void store_ptr(void* base, std::size_t off, void* v) {
+    std::memcpy(static_cast<std::uint8_t*>(base) + off, &v, sizeof v);
+}
+
+}  // namespace
+
+void ReleaseOwnedHandlePair(void* self) {
+    void* holder = load_ptr(self, 0x1cc);
+    if (holder != nullptr) {
+        void* inner = load_ptr(holder, 0x0c);
+        if (inner != nullptr) {
+            ext_0079AF50(static_cast<HGLOBAL>(inner));
+        }
+        ext_0079AF50(static_cast<HGLOBAL>(holder));
+        store_ptr(self, 0x1cc, nullptr);
+    }
+}
+} // namespace lift_007BD340

@@ -53500,6 +53500,12 @@
     "summary": "Sets +0x40 to 0x10, +0x42 to 2, and +0x4e to 1 if +0x46 == 0x804c else 3.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BD340": {
+    "name": "ReleaseOwnedHandlePair",
+    "signature": "inline void* load_ptr(const void* base, std::size_t off)",
+    "summary": "Frees the handle stored at self+0x1cc (and its inner handle at +0xc, if set), then clears the slot.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BD640": {
     "name": "SwitchCaseIndexTable_007B7084",
     "class": "(none)",
