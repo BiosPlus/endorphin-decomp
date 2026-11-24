@@ -1,0 +1,33 @@
+{
+  "va": "0x00454E70",
+  "size": 13,
+  "orig_symbol": "sub_00454E70",
+  "src_path": "src/leaf/tiny_450000.cpp",
+  "lifted_path": "lifted/leaf/tiny_450000.cpp",
+  "name": "ZeroThreeDwordFields_00454E70",
+  "signature": "void* fn_00454E70(void* self)",
+  "summary": "Zeroes the dwords at self+0x0, self+0x4 and self+0x10 and returns self (thiscall, self in ECX).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:18:51Z"
+}

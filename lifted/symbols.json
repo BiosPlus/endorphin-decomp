@@ -2302,6 +2302,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00454BA0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00454E70": {
+    "name": "ZeroThreeDwordFields_00454E70",
+    "signature": "void* fn_00454E70(void* self)",
+    "summary": "Zeroes the dwords at self+0x0, self+0x4 and self+0x10 and returns self (thiscall, self in ECX).",
+    "lifted_path": "lifted/leaf/tiny_450000.cpp"
+  },
   "0x00455060": {
     "name": "CSizingControlBarCF::vfunc_107",
     "class": "CSizingControlBarCF",

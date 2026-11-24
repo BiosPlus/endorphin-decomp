@@ -234,3 +234,18 @@ void sub_004584A0(uint32_t self) {
     reinterpret_cast<Fn>(static_cast<uintptr_t>(fn))(inner);
 }
 } // namespace lift_004584A0
+
+// [0x00454E70] sub_00454E70 (13 bytes)
+namespace lift_00454E70 {
+// @name ZeroThreeDwordFields_00454E70
+// @summary Zeroes the dwords at self+0x0, self+0x4 and self+0x10 and returns self (thiscall, self in ECX).
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x10 uint32_t field_0x10
+void* fn_00454E70(void* self) {
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x00) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    return self;
+}
+} // namespace lift_00454E70
