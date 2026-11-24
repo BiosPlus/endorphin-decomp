@@ -17865,6 +17865,13 @@
     "summary": "Forwards the constant transform pointer at +0x4 with the output buffer to copyVec3WithZeroW and returns the output buffer.",
     "lifted_path": "lifted/classes/HasConstantTMPtr.cpp"
   },
+  "0x0053A6C0": {
+    "name": "HasConstantTMPtr::vfunc_3",
+    "class": "HasConstantTMPtr",
+    "signature": "float* HasConstantTMPtr_vfunc_3(void* self, float* out)",
+    "summary": "Writes an identity 3x3 float matrix to the output, calls sub_0067DAD0 on the object at this+0x04 with it, and returns the output.",
+    "lifted_path": "lifted/classes/HasConstantTMPtr.cpp"
+  },
   "0x0053A710": {
     "name": "HasCustomBufferedTMPtr::vfunc_5",
     "class": "HasCustomBufferedTMPtr",

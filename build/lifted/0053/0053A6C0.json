@@ -1,0 +1,22 @@
+{
+  "va": "0x0053A6C0",
+  "size": 58,
+  "orig_symbol": "HasConstantTMPtr::vfunc_3",
+  "src_path": "src/classes/HasConstantTMPtr.cpp",
+  "lifted_path": "lifted/classes/HasConstantTMPtr.cpp",
+  "name": "HasConstantTMPtr::vfunc_3",
+  "class": "HasConstantTMPtr",
+  "signature": "float* HasConstantTMPtr_vfunc_3(void* self, float* out)",
+  "summary": "Writes an identity 3x3 float matrix to the output, calls sub_0067DAD0 on the object at this+0x04 with it, and returns the output.",
+  "fields": [
+    {
+      "class": "HasConstantTMPtr",
+      "offset": "+0x4",
+      "type": "const float*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-24T15:23:25Z"
+}
