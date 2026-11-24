@@ -3159,6 +3159,12 @@
     "summary": "If self is non-null, calls virtual slot 0 on self with argument 1 (flag value 1, typically a scalar deleting destructor).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00458E10": {
+    "name": "SendMessageToFieldWindow",
+    "signature": "int32_t fn_00458E10(void* self)",
+    "summary": "Sends the global message id to the window handle stored in self+0x1c, passing self as lParam and 0 as wParam; returns the LRESULT.",
+    "lifted_path": "lifted/leaf/tiny_450000.cpp"
+  },
   "0x004590E0": {
     "name": "CMessageReflector::vfunc_0",
     "class": "CMessageReflector",

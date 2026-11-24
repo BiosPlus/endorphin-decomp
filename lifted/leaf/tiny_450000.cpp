@@ -282,3 +282,24 @@ BOOL fn_004586C0(void* self, UINT_PTR timerId) {
     return killTimer(hwnd, timerId);
 }
 } // namespace lift_004586C0
+
+// [0x00458E10] sub_00458E10 (21 bytes)
+namespace lift_00458E10 {
+extern int mem_00AD3E2C;
+extern int mem_00925694;
+
+// Win32 SendMessageA(HWND, UINT, WPARAM, LPARAM) imported via USER32.
+extern int32_t ext_SendMessageA(uint32_t hWnd, uint32_t msg, uint32_t wParam, uint32_t lParam);
+
+// @name SendMessageToFieldWindow
+// @summary Sends the global message id to the window handle stored in self+0x1c, passing self as lParam and 0 as wParam; returns the LRESULT.
+// @field Unknown +0x1c HWND field_0x1c
+int32_t fn_00458E10(void* self) {
+    const auto base = static_cast<const unsigned char*>(self);
+    uint32_t hwnd = 0;
+    std::memcpy(&hwnd, base + 0x1c, sizeof hwnd);
+    const auto msg = static_cast<uint32_t>(mem_00AD3E2C);
+    const auto lParam = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    return ext_SendMessageA(hwnd, msg, 0u, lParam);
+}
+} // namespace lift_00458E10
