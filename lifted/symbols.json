@@ -13938,8 +13938,8 @@
   },
   "0x005481E0": {
     "name": "sub_005481E0",
-    "signature": "uint8_t sub_005481E0(uint8_t* self)",
-    "summary": "Returns true (al=1) if this-\u003efield_0xA0 is non-null and its field_0x208 is non-zero; otherwise false.",
+    "signature": "BYTE sub_005481E0(BYTE* self)",
+    "summary": "Returns 1 if this-\u003e+0xA0 is non-null and that object's +0x208 dword is non-zero; otherwise 0.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
   "0x00548200": {

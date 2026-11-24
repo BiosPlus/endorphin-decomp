@@ -39,6 +39,7 @@ struct Object_Fields {
     // +0x58  float                    field_0x58  (evidence: 0x007D8470, 0x007D8490)
     // +0x7C  uint32_t                 field_0x7c  (evidence: 0x007C2E50, 0x007C6FF0)
     // +0x8C  float                    field_0x8c  (evidence: 0x007C2E50, 0x007C8810)
+    // +0xA0  void*                    ptr_a0  (evidence: 0x005481E0)
     // +0xA8  uint32_t                 field_0xa8  (evidence: 0x007C2E50, 0x007C8880)
     // +0x178 uint32_t                 field_0x178  (evidence: 0x007D8470, 0x007D8740)
     // +0x1A4 uint32_t                 field_0x1A4  (evidence: 0x007C2E50, 0x007C5900)
@@ -46,6 +47,7 @@ struct Object_Fields {
     // +0x1D0 float                    field_0x1d0  (evidence: 0x007C2E50, 0x007C6120)
     // +0x1E4 uint32_t                 field_0x1e4  (evidence: 0x007C5C30)
     // +0x1F4 uint32_t                 field_0x1f4  (evidence: 0x007C5C30)
+    // +0x208 DWORD                    field_208  (evidence: 0x005481E0)
     // +0x214 float                    field_0x214  (evidence: 0x007C2E50, 0x007C7690)
     // +0x268 uint32_t                 field_0x268  (evidence: 0x00702790)
 };

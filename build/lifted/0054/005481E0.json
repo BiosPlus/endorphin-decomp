@@ -5,9 +5,23 @@
   "src_path": "src/leaf/tiny_540000.cpp",
   "lifted_path": "lifted/leaf/tiny_540000.cpp",
   "name": "sub_005481E0",
-  "signature": "uint8_t sub_005481E0(uint8_t* self)",
-  "summary": "Returns true (al=1) if this-\u003efield_0xA0 is non-null and its field_0x208 is non-zero; otherwise false.",
+  "signature": "BYTE sub_005481E0(BYTE* self)",
+  "summary": "Returns 1 if this-\u003e+0xA0 is non-null and that object's +0x208 dword is non-zero; otherwise 0.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0xA0",
+      "type": "void*",
+      "name": "ptr_a0"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x208",
+      "type": "DWORD",
+      "name": "field_208"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:03:02Z"
+  "lifted_at": "2026-11-24T12:03:13Z"
 }
