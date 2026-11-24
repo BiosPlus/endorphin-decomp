@@ -313,3 +313,21 @@ bool __thiscall sub_0041C5A0(uint32_t self, uint32_t arg1, uint32_t arg2, uint32
     return reinterpret_cast<FnType>(static_cast<uintptr_t>(fn_addr))(target, arg1, arg2, arg3);
 }
 } // namespace lift_0041C5A0
+
+// [0x0041C600]
+namespace lift_0041C600 {
+// @name forwardVtableCall7
+// @summary Forwards a 3-argument virtual call at vtable offset 0x1C on field_0x8 if non-null, returning false otherwise.
+// @field Unknown +0x08 uint32_t field_0x08
+uint8_t __thiscall sub_0041C600(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    uint32_t target = *reinterpret_cast<const uint32_t*>(static_cast<const uint8_t*>(self) + 0x08);
+    if (target == 0) {
+        return 0;
+    }
+    uint32_t vtable = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(target));
+    uint32_t fn_addr = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(vtable) + 0x1C);
+    using VFunc = uint8_t(__thiscall*)(void*, uint32_t, uint32_t, uint32_t);
+    auto fn = reinterpret_cast<VFunc>(static_cast<uintptr_t>(fn_addr));
+    return fn(reinterpret_cast<void*>(static_cast<uintptr_t>(target)), arg1, arg2, arg3);
+}
+} // namespace lift_0041C600
