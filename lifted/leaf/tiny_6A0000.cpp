@@ -465,3 +465,17 @@ uint32_t __thiscall sub_006A8160(void* self, uint32_t lParam) {
     return fn(hwnd, 0x41au, 0u, lParam);
 }
 } // namespace lift_006A8160
+
+// [0x006A7F70]
+namespace lift_006A7F70 {
+// @name sub_006A7F70
+// @summary Forwards two arguments to virtual method at vtable+0x15c and returns 0
+// @field unknown +0x00 uint32_t* vtable
+int32_t __thiscall sub_006A7F70(void* self, uint32_t arg0, uint32_t arg1) {
+    using VMethod = void(__thiscall*)(void*, uint32_t, uint32_t);
+    auto* vtable = *reinterpret_cast<uintptr_t**>(self);
+    auto fn = reinterpret_cast<VMethod>(vtable[0x15c / sizeof(uintptr_t)]);
+    fn(self, arg0, arg1);
+    return 0;
+}
+} // namespace lift_006A7F70
