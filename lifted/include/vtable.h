@@ -9,5 +9,6 @@
 namespace lifted_layout {
 struct vtable_Fields {
     // +0x18C void* slot0x18C (call target, dispatched via jmp)  (evidence: 0x00493E50)
+    // +0x198 void* field_0x198 (call target, dispatched via jmp)  (evidence: 0x00493E70)
 };
 } // namespace lifted_layout

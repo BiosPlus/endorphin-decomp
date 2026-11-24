@@ -4426,6 +4426,13 @@
     "summary": "Forwards the call to vtable slot +0x188 of the object pointed to by this+0x00 (tail call, no extra work).",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00493E70": {
+    "name": "forwardVtable198_viaFirstField",
+    "class": "(none)",
+    "signature": "uintptr_t fn_00493E70(void* self)",
+    "summary": "Loads the object pointed to by self's first field, then tail-dispatches to that object's vtable slot at +0x198 with it as this.",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
   "0x00493E80": {
     "name": "forwardVtableSlot19C",
     "signature": "uintptr_t fn_00493E80(void* self)",

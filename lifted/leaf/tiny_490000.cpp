@@ -182,3 +182,27 @@ uintptr_t fn_00493E80(void* self) {
     return target(inner);
 }
 } // namespace lift_00493E80
+
+// [0x00493E70] sub_00493E70 (12 bytes)
+namespace lift_00493E70 {
+// @name forwardVtable198_viaFirstField
+// @class (none)
+// @summary Loads the object pointed to by self's first field, then tail-dispatches to that object's vtable slot at +0x198 with it as this.
+// @field Unknown +0x00 void* field_0x00
+// @field vtable +0x198 void* field_0x198 (call target, dispatched via jmp)
+//
+// Portable approximation: the original tail-jumps, so the callee sees the caller's
+// stack arguments unchanged. This C++ cannot forward an unknown argument list, so the
+// callee is invoked with only `this` and its return value is returned.
+uintptr_t fn_00493E70(void* self) {
+    // mov ecx, [ecx]          ; obj = *self
+    void* obj = *reinterpret_cast<void**>(self);
+    // mov eax, [ecx]          ; vtable = *obj
+    void** vtable = *reinterpret_cast<void***>(obj);
+    // mov eax, [eax+0x198]    ; target = vtable[0x198]
+    auto target = reinterpret_cast<uintptr_t (*)(void*)>(
+        lift_field<void*>(vtable, 0x198));
+    // jmp eax                 ; tail-call with ecx == obj
+    return target(obj);
+}
+} // namespace lift_00493E70
