@@ -6729,3 +6729,27 @@ void fn_00489800(void* self) {
     lift_field<uint32_t>(self, 0x04) = kStaticObjectVa;
 }
 } // namespace lift_00489800
+
+// [0x00489780] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::addJointWithChildren(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_00489780 {
+extern void ext_0067A670(void* self, int arg);
+extern int mem_00AD9E78;
+extern int mem_00AD9E74;
+
+// @name ExprParser::WriteMethodType_DesiredPoseEventData_addJointWithChildren::vfunc_40
+// @class ExprParser::WriteMethodType_DesiredPoseEventData_addJointWithChildren
+// @summary Returns (via out-param +4) the address of a function-local static object, constructing it once under a guard bit.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_00489780(void* out) {
+    constexpr int kGuardBit = 1;
+    constexpr int kVtable = 0x0093DA0C;
+
+    if ((mem_00AD9E78 & kGuardBit) == 0) {
+        mem_00AD9E78 |= kGuardBit;
+        ext_0067A670(&mem_00AD9E74, 0);
+        mem_00AD9E74 = kVtable;
+    }
+
+    lift_field<uintptr_t>(out, 4) = reinterpret_cast<uintptr_t>(&mem_00AD9E74);
+}
+} // namespace lift_00489780

@@ -7298,6 +7298,13 @@
     "summary": "Lazily initializes the static object at mem_00AD9E6C (once, guarded by bit 0 of mem_00AD9E70) and stores its address at self+0x04.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00489780": {
+    "name": "ExprParser::WriteMethodType_DesiredPoseEventData_addJointWithChildren::vfunc_40",
+    "class": "ExprParser::WriteMethodType_DesiredPoseEventData_addJointWithChildren",
+    "signature": "void fn_00489780(void* out)",
+    "summary": "Returns (via out-param +4) the address of a function-local static object, constructing it once under a guard bit.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00489800": {
     "name": "ExprParser::WriteMethodType_DesiredPoseEventData_setEntryBlendPeriodFromFSM::vfunc_40",
     "class": "ExprParser::WriteMethodType_DesiredPoseEventData_setEntryBlendPeriodFromFSM",
@@ -8197,6 +8204,13 @@
     "class": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e",
     "signature": "extern uint32_t mem_00924FDC; // std::string::operator=(const std::string\u0026) extern uint32_t mem_00924FF4; // std::string::~basic_string() void __stdcall fn_00497A60(uint32_t* arg0, uint32_t arg1)",
     "summary": "Converts/copies arg1 via sub_00497860 into a temporary std::string and assigns it to *arg0.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
+  "0x00497AD0": {
+    "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_10",
+    "class": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e",
+    "signature": "void __stdcall fn_00497AD0(uint32_t* dst_ptr, const void* src_str)",
+    "summary": "Copies/transforms a std::string via sub_00497890 and assigns it to *arg1.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
   "0x00497B50": {

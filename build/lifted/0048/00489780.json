@@ -1,0 +1,22 @@
+{
+  "va": "0x00489780",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::addJointWithChildren(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType_DesiredPoseEventData_addJointWithChildren::vfunc_40",
+  "class": "ExprParser::WriteMethodType_DesiredPoseEventData_addJointWithChildren",
+  "signature": "void fn_00489780(void* out)",
+  "summary": "Returns (via out-param +4) the address of a function-local static object, constructing it once under a guard bit.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:46:06Z"
+}
