@@ -325,3 +325,19 @@ void __fastcall fn_00538CF0(void* self, void* /*edx, unused*/, float arg1, float
     // ret 0xc: stdcall-style stack cleanup is implied by the __fastcall parameter list
 }
 } // namespace lift_00538CF0
+
+// [0x00538550] sub_00538550 (24 bytes)
+namespace lift_00538550 {
+// @name Unknown::SetFloatAndFlagBytes
+// @class Unknown
+// @summary Stores a float at +0x14 and two byte values at +0x18 and +0x19 of self (thiscall, callee pops 12 bytes).
+// @field Unknown +0x14 float field_0x14
+// @field Unknown +0x18 uint8_t field_0x18
+// @field Unknown +0x19 uint8_t field_0x19
+void fn_00538550(void* self, float value, uint8_t byteA, uint8_t byteB) {
+    auto* base = static_cast<uint8_t*>(self);
+    std::memcpy(base + 0x14, &value, sizeof(float));
+    base[0x19] = byteA;
+    base[0x18] = byteB;
+}
+} // namespace lift_00538550

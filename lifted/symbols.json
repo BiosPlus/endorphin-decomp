@@ -12402,6 +12402,13 @@
     "summary": "Deletes the GLU quadric object stored at offset +0x00.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x00538550": {
+    "name": "Unknown::SetFloatAndFlagBytes",
+    "class": "Unknown",
+    "signature": "void fn_00538550(void* self, float value, uint8_t byteA, uint8_t byteB)",
+    "summary": "Stores a float at +0x14 and two byte values at +0x18 and +0x19 of self (thiscall, callee pops 12 bytes).",
+    "lifted_path": "lifted/leaf/tiny_530000.cpp"
+  },
   "0x00538CF0": {
     "name": "Unknown::SetFloatsFields18_1C_20",
     "class": "Unknown",
