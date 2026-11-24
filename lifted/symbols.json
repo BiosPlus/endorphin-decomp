@@ -37984,6 +37984,12 @@
     "summary": "Zeroes the two dwords at offsets +0x00 and +0x04 of the object pointed to by ecx and returns that pointer in eax.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00722000": {
+    "name": "sub_00722000",
+    "signature": "void fn_00722000(void* self)",
+    "summary": "Stores two constant DWORDs into globals mem_00B5FFB8 and mem_00B5FFBC.",
+    "lifted_path": "lifted/leaf/tiny_720000.cpp"
+  },
   "0x00722170": {
     "name": "sub_00722170",
     "signature": "double fn_00722170(void)",

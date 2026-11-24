@@ -1,0 +1,13 @@
+{
+  "va": "0x00722000",
+  "size": 21,
+  "orig_symbol": "sub_00722000",
+  "src_path": "src/leaf/tiny_720000.cpp",
+  "lifted_path": "lifted/leaf/tiny_720000.cpp",
+  "name": "sub_00722000",
+  "signature": "void fn_00722000(void* self)",
+  "summary": "Stores two constant DWORDs into globals mem_00B5FFB8 and mem_00B5FFBC.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:26:49Z"
+}

@@ -398,3 +398,17 @@ DWORD __thiscall fn_0072DC60(void* self, DWORD arg1, DWORD arg2) {
     return slot(self, arg1, arg2, 0);
 }
 } // namespace lift_0072DC60
+
+// [0x00722000] sub_00722000 (21 bytes)
+namespace lift_00722000 {
+extern int mem_00B5FFB8;
+extern int mem_00B5FFBC;
+
+// @name sub_00722000
+// @summary Stores two constant DWORDs into globals mem_00B5FFB8 and mem_00B5FFBC.
+void fn_00722000(void* self) {
+    (void)self;
+    mem_00B5FFB8 = 0x5bc37ea8;
+    mem_00B5FFBC = 0;
+}
+} // namespace lift_00722000
