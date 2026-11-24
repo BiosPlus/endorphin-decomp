@@ -11997,6 +11997,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x005478F0": {
+    "name": "sub_005478F0",
+    "class": "\u003cunknown\u003e (this is in ecx; owning class not yet recovered)",
+    "signature": "void fn_005478F0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00519CE0 (std::basic_string\u003cchar\u003e::~basic_string (vtable-stamping thunk)).",
+    "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
   "0x00547D00": {
     "name": "sub_00547D00",
     "signature": "extern \"C\" void __fastcall fn_00547D00(void* self)",
@@ -12050,6 +12057,13 @@
     "signature": "extern \"C\" void* __fastcall fn_0054C6C0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0054C5E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x0054C760": {
+    "name": "sub_0054C760",
+    "class": "\u003cunknown\u003e (this is in ecx; owning class not yet recovered)",
+    "signature": "void fn_0054C760(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00519CE0 (std::basic_string\u003cchar\u003e::~basic_string (vtable-stamping thunk)).",
+    "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
   "0x0054C870": {
     "name": "Font::vfunc_0",
@@ -21105,6 +21119,13 @@
     "signature": "extern \"C\" void fn_0063E048(void)",
     "summary": "IAT jump thunk forwarding to GLU32!gluPerspective.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x0063E0F0": {
+    "name": "sub_0063E0F0",
+    "class": "\u003cunknown\u003e (this is in ecx; owning class not yet recovered)",
+    "signature": "void fn_0063E0F0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00519CE0 (std::basic_string\u003cchar\u003e::~basic_string (vtable-stamping thunk)).",
+    "lifted_path": "lifted/leaf/tiny_630000.cpp"
   },
   "0x0063E210": {
     "name": "AdvXMLParser::Text::vfunc_4",

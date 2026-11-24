@@ -127,3 +127,39 @@ uint8_t fn_00543630() {
     return static_cast<uint8_t>((state >> 15) & 0x01u);
 }
 } // namespace lift_00543630
+
+// [0x005478F0] sub_005478F0 (15 bytes)
+namespace lift_005478F0 {
+// @name sub_005478F0
+// @summary Auto-lifted identical-shape clone of 0x00519CE0 (std::basic_string<char>::~basic_string (vtable-stamping thunk)).
+namespace lift_00519CE0 {
+extern void __thiscall ext_00628FF0(void* self);
+
+// @name std::basic_string<char>::~basic_string (vtable-stamping thunk)
+// @class <unknown> (this is in ecx; owning class not yet recovered)
+// @summary Stamps the object's vtable pointer (0x0095219C) into its first dword, then tail-jumps to the MSVCP80 basic_string destructor on this+4.
+// @field <unknown> +0x00 uint32_t field_0x00
+void fn_005478F0(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x956C2Cu;   // mov dword ptr [ecx], 0x95219c
+    ext_00628FF0(static_cast<uint8_t*>(self) + 8);    // add ecx, 4 ; jmp [0x924ff4] (MSVCP80 ~basic_string)
+}
+} // namespace lift_00519CE0
+} // namespace lift_005478F0
+
+// [0x0054C760] sub_0054C760 (15 bytes)
+namespace lift_0054C760 {
+// @name sub_0054C760
+// @summary Auto-lifted identical-shape clone of 0x00519CE0 (std::basic_string<char>::~basic_string (vtable-stamping thunk)).
+namespace lift_00519CE0 {
+extern void __thiscall ext_00628FF0(void* self);
+
+// @name std::basic_string<char>::~basic_string (vtable-stamping thunk)
+// @class <unknown> (this is in ecx; owning class not yet recovered)
+// @summary Stamps the object's vtable pointer (0x0095219C) into its first dword, then tail-jumps to the MSVCP80 basic_string destructor on this+4.
+// @field <unknown> +0x00 uint32_t field_0x00
+void fn_0054C760(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x956DFCu;   // mov dword ptr [ecx], 0x95219c
+    ext_00628FF0(static_cast<uint8_t*>(self) + 8);    // add ecx, 4 ; jmp [0x924ff4] (MSVCP80 ~basic_string)
+}
+} // namespace lift_00519CE0
+} // namespace lift_0054C760
