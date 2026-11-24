@@ -583,3 +583,20 @@ extern DWORD __fastcall fn_0070EC30(void* self, int edx_unused, DWORD arg) {
     return ext_007873F0(sub, 0, arg);
 }
 } // namespace lift_0070EC30
+
+// [0x0070E3B0] sub_0070E3B0 (32 bytes)
+namespace lift_0070E3B0 {
+// Known callee 0x0070E390: sub_0070A1D0 (MSVC scalar deleting destructor: calls sub_0070A1F0 and frees memory when (flags & 1) is set.)
+// Called as thiscall: receiver in ECX, one stack argument (the sub-object pointer at +0xD0).
+extern void* ext_0070E390(void* self, void* subObject);
+
+// @name Unknown::ForwardSubObjectAt0xD0
+// @class Unknown
+// @summary Forwards the call to ext_0070E390 using the sub-object at this+0xD0 as its argument; receiver is the second argument.
+// @field Unknown +0xD0 void* field_0xD0
+void* fn_0070E3B0(void* self, void* receiver) {
+    void* subObject = lift_field<void*>(self, 0xD0);
+    (void)subObject;
+    return ext_0070E390(receiver, reinterpret_cast<uint8_t*>(self) + 0xD0);
+}
+} // namespace lift_0070E3B0

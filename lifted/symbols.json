@@ -39900,6 +39900,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0070A1F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x0070E3B0": {
+    "name": "Unknown::ForwardSubObjectAt0xD0",
+    "class": "Unknown",
+    "signature": "void* fn_0070E3B0(void* self, void* receiver)",
+    "summary": "Forwards the call to ext_0070E390 using the sub-object at this+0xD0 as its argument; receiver is the second argument.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070E6F0": {
     "name": "sub_0070E6F0",
     "signature": "extern \"C\" void* __fastcall fn_0070E6F0(void* self, int edx_unused, unsigned int flags)",
