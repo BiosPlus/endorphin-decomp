@@ -1,0 +1,13 @@
+{
+  "va": "0x00596330",
+  "size": 53,
+  "orig_symbol": "sub_00596330",
+  "src_path": "src/leaf/decompiled_590000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_590000.cpp",
+  "name": "getGlobalListHeadPrevCount",
+  "signature": "uint32_t sub_00596330()",
+  "summary": "Validates a checked iterator in global object +0x8 and returns node+0x8 decremented by 1 if non-zero.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:15:31Z"
+}

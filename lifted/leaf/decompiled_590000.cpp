@@ -192,3 +192,36 @@ extern void __fastcall fn_0059DC60(void* self, uint32_t arg0) {
     *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(self) + 0x61Cu) = r;
 }
 } // namespace lift_0059DC60
+
+// [0x00596330]
+namespace lift_00596330 {
+// @name getGlobalListHeadPrevCount
+// @summary Validates a checked iterator in global object +0x8 and returns node+0x8 decremented by 1 if non-zero.
+
+extern uint32_t mem_00B40640;
+extern uint32_t mem_00925134;
+
+uint32_t sub_00596330() {
+    uint8_t* iter = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(mem_00B40640)) + 8;
+    auto invalid_param = reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134));
+
+    uint32_t container_addr = *reinterpret_cast<uint32_t*>(iter);
+    if (container_addr == 0) {
+        invalid_param();
+        container_addr = *reinterpret_cast<uint32_t*>(iter);
+    }
+
+    uint32_t node_addr = *reinterpret_cast<uint32_t*>(iter + 4);
+    uint32_t head_addr = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(container_addr) + 4);
+    if (node_addr == head_addr) {
+        invalid_param();
+        node_addr = *reinterpret_cast<uint32_t*>(iter + 4);
+    }
+
+    uint32_t val = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(node_addr) + 8);
+    if (val == 0) {
+        return 0;
+    }
+    return val - 1;
+}
+} // namespace lift_00596330
