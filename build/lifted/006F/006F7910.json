@@ -1,0 +1,14 @@
+{
+  "va": "0x006F7910",
+  "size": 32,
+  "orig_symbol": "sub_006F7910",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::setFieldFromConstant2",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __thiscall fn_006F7910(void* self, uint32_t unused)",
+  "summary": "Calls sub_00712A20 to obtain the constant 2 and passes it to Subobject::setField28 on this; the caller's stack argument is unused.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:23:31Z"
+}

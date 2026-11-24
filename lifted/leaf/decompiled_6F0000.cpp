@@ -1046,3 +1046,19 @@ void fn_006FA400(void* self) {
     }
 }
 } // namespace lift_006FA400
+
+// [0x006F7910] sub_006F7910 (32 bytes)
+namespace lift_006F7910 {
+// Known callee 0x00712A20: sub_00712A20 (Returns constant 0x2.)
+extern int32_t __cdecl ext_00712A20(void);
+// Known callee 0x00711DA0: Subobject::setField28 (Stores value at +0x28 of the subobject at self+0x40.)
+extern void __thiscall ext_00711DA0(void* self, uint32_t value);
+
+// @name Unknown::setFieldFromConstant2
+// @summary Calls sub_00712A20 to obtain the constant 2 and passes it to Subobject::setField28 on this; the caller's stack argument is unused.
+extern void __thiscall fn_006F7910(void* self, uint32_t unused) {
+    (void)unused;
+    const int32_t value = ext_00712A20();
+    ext_00711DA0(self, static_cast<uint32_t>(value));
+}
+} // namespace lift_006F7910
