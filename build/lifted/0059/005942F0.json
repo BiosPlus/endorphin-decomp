@@ -1,0 +1,28 @@
+{
+  "va": "0x005942F0",
+  "size": 28,
+  "orig_symbol": "sub_005942F0",
+  "src_path": "src/leaf/tiny_590000.cpp",
+  "lifted_path": "lifted/leaf/tiny_590000.cpp",
+  "name": "findLastBeforeFlaggedLink",
+  "class": "UnknownNode",
+  "signature": "void* fn_005942F0(void* self)",
+  "summary": "Follows the +0x08 link chain from a node and returns the last node whose +0x08 link points at a node with a nonzero byte at +0x31.",
+  "fields": [
+    {
+      "class": "UnknownNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownNode",
+      "offset": "+0x31",
+      "type": "uint8_t",
+      "name": "field_0x31"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:08:07Z"
+}

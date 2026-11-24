@@ -15668,6 +15668,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xF8 and tail-calls sub_006425C0.",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
+  "0x005942F0": {
+    "name": "findLastBeforeFlaggedLink",
+    "class": "UnknownNode",
+    "signature": "void* fn_005942F0(void* self)",
+    "summary": "Follows the +0x08 link chain from a node and returns the last node whose +0x08 link points at a node with a nonzero byte at +0x31.",
+    "lifted_path": "lifted/leaf/tiny_590000.cpp"
+  },
   "0x00594310": {
     "name": "sub_00594310",
     "signature": "void* fn_00594310(void* arg)",

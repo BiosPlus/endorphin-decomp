@@ -287,3 +287,21 @@ void fn_00594600(void* self) {
     slot1(child, 0);
 }
 } // namespace lift_00594600
+
+// [0x005942F0] sub_005942F0 (28 bytes)
+namespace lift_005942F0 {
+// @name findLastBeforeFlaggedLink
+// @class UnknownNode
+// @summary Follows the +0x08 link chain from a node and returns the last node whose +0x08 link points at a node with a nonzero byte at +0x31.
+// @field UnknownNode +0x08 void* field_0x08
+// @field UnknownNode +0x31 uint8_t field_0x31
+void* fn_005942F0(void* self) {
+    uint8_t* cur = static_cast<uint8_t*>(self);
+    uint8_t* next = *reinterpret_cast<uint8_t**>(cur + 0x08);
+    while (next[0x31] == 0) {
+        cur = next;
+        next = *reinterpret_cast<uint8_t**>(cur + 0x08);
+    }
+    return cur;
+}
+} // namespace lift_005942F0
