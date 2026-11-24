@@ -3682,6 +3682,12 @@
     "summary": "Tail-forwards to virtual slot +0xAC of the object at this-\u003e+0x18-\u003e+0xC, returning its result.",
     "lifted_path": "lifted/classes/VMCSEngine.cpp"
   },
+  "0x00468750": {
+    "name": "guardedForwardToChild",
+    "signature": "uint8_t fn_00468750(void* self)",
+    "summary": "If the flag byte at self+0x10 is set, tail-forward to ext_0046FE50 with the pointer at self+0x14; otherwise return 0.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00468A30": {
     "name": "GetEnabledChildField28OrZero",
     "signature": "DWORD fn_00468A30(void* self)",

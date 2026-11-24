@@ -221,3 +221,23 @@ extern void* fn_00464760() {
 }
 } // namespace lift_0042FB40
 } // namespace lift_00464760
+
+// [0x00468750] sub_00468750 (17 bytes)
+namespace lift_00468750 {
+// Known callee 0x0046FE50: sub_0046FE50 (Auto-lifted identical-shape clone of 0x005355B0 (OglRenderer::vfunc_71).)
+extern uint8_t ext_0046FE50(void* self);
+
+// @name guardedForwardToChild
+// @summary If the flag byte at self+0x10 is set, tail-forward to ext_0046FE50 with the pointer at self+0x14; otherwise return 0.
+// @field self +0x10 uint8_t field_0x10
+// @field self +0x14 uint32_t field_0x14
+uint8_t fn_00468750(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    if (base[0x10] == 0) {
+        return 0;
+    }
+    uint32_t child = 0;
+    std::memcpy(&child, base + 0x14, sizeof(child));
+    return ext_0046FE50(reinterpret_cast<void*>(static_cast<uintptr_t>(child)));
+}
+} // namespace lift_00468750
