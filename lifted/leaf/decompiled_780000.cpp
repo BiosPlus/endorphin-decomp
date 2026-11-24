@@ -816,3 +816,33 @@ uint8_t fn_0078C410(const void* self, int32_t index) {
     return str[len - 1];
 }
 } // namespace lift_0078C410
+
+// [0x0078AAC0] sub_0078AAC0 (48 bytes)
+namespace lift_0078AAC0 {
+// @name dataTable_0078AAC0
+// @summary 48-byte constant byte table at 0x0078AAC0; disassembles as junk, so it is data, not code.
+//
+// The bytes at this address do not form a meaningful function: they decode to
+// `add [ebx], al` / `add eax, [ebx]` pairs followed by a run of 0x90 values.
+// Recovered here as a constant byte table so the content is preserved.
+// No entry point with behavior is recovered; fn_0078AAC0 is a no-op kept for
+// signature compatibility with the lift pipeline.
+
+namespace {
+
+inline constexpr uint8_t kDataTable_0078AAC0[48] = {
+    0x00, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03,
+    0x03, 0x03, 0x03, 0x03, 0x00, 0x03, 0x03, 0x03,
+    0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03,
+    0x03, 0x03, 0x01, 0x03, 0x03, 0x03, 0x03, 0x03,
+    0x02, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90,
+    0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90,
+};
+
+} // namespace
+
+void fn_0078AAC0(void* self) {
+    (void)self;
+    (void)kDataTable_0078AAC0;
+}
+} // namespace lift_0078AAC0

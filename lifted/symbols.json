@@ -47487,6 +47487,12 @@
     "summary": "Setter storing int32_t argument into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x0078AAC0": {
+    "name": "dataTable_0078AAC0",
+    "signature": "void fn_0078AAC0(void* self)",
+    "summary": "48-byte constant byte table at 0x0078AAC0; disassembles as junk, so it is data, not code.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078BB10": {
     "name": "sub_0078BB10",
     "signature": "extern \"C\" void* __fastcall fn_0078BB10(void* self, int edx_unused, unsigned int flags)",
