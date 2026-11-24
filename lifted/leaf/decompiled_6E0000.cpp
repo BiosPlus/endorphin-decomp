@@ -386,3 +386,28 @@ void fn_006EFF00(void* self, uint32_t arg1, void* arg2) {
                  static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_006C8BD0)));
 }
 } // namespace lift_006EFF00
+
+// [0x006E0090] sub_006E0090 (48 bytes)
+namespace lift_006E0090 {
+// @name negateVec3dCopyPair
+// @summary Copies a 32-byte record from src to dst, negating three doubles at +0x00/+0x08/+0x10 and copying two 32-bit words at +0x18/+0x1C unchanged.
+// @field Unknown +0x00 double field_0x00
+// @field Unknown +0x08 double field_0x08
+// @field Unknown +0x10 double field_0x10
+// @field Unknown +0x18 int32_t field_0x18
+// @field Unknown +0x1C int32_t field_0x1c
+void fn_006E0090(void* dst, const void* src) {
+    auto* d = static_cast<unsigned char*>(dst);
+    const auto* s = static_cast<const unsigned char*>(src);
+
+    for (std::size_t off = 0; off < 3 * sizeof(double); off += sizeof(double)) {
+        double v;
+        std::memcpy(&v, s + off, sizeof(double));
+        v = -v;
+        std::memcpy(d + off, &v, sizeof(double));
+    }
+
+    std::memcpy(d + 0x18, s + 0x18, sizeof(std::int32_t));
+    std::memcpy(d + 0x1C, s + 0x1C, sizeof(std::int32_t));
+}
+} // namespace lift_006E0090

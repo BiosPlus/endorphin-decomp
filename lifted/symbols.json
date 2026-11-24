@@ -6704,6 +6704,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00419E20 (FolderDialog::vfunc_79).",
     "lifted_path": "lifted/Commands/BufferTransformsCommand.cpp"
   },
+  "0x00481770": {
+    "name": "fillStructArray64",
+    "signature": "void sub_00481770(uint32_t dst, uint32_t count, uint32_t src)",
+    "summary": "Copies a 64-byte template structure into count consecutive 64-byte slots starting at dst, skipping null dst.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00481BB0": {
     "name": "InitValueAndZeroTail",
     "class": "\u003cunknown\u003e (member, thiscall; 'this' passed in ECX)",
@@ -39724,6 +39730,12 @@
     "signature": "extern \"C\" int32_t __fastcall fn_006DEEC0(void* self)",
     "summary": "Getter returning int32_t field at offset +0x38.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
+  "0x006E0090": {
+    "name": "negateVec3dCopyPair",
+    "signature": "void fn_006E0090(void* dst, const void* src)",
+    "summary": "Copies a 32-byte record from src to dst, negating three doubles at +0x00/+0x08/+0x10 and copying two 32-bit words at +0x18/+0x1C unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006E3A40": {
     "name": "Unknown::IsField68Equal2",
