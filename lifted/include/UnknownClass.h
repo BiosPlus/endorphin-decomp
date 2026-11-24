@@ -30,7 +30,8 @@ struct UnknownClass_Fields {
     // +0x3C  void*                    field_0x3c  (evidence: 0x00413C40)
     // +0x44  CRITICAL_SECTION         field_0x44  (evidence: 0x00413C40)
     // +0x58  uint32_t                 field_0x58  (evidence: 0x007AEEE0)
-    // +0x64  void*                    field_0x64  (evidence: 0x0044B700)
+    // +0x64  uint32_t                 field_0x64  (evidence: 0x0044B390) // CONFLICT: multiple definitions at +0x64
+    // +0x64  void*                    field_0x64  (evidence: 0x0044B700) // CONFLICT: multiple definitions at +0x64
     // +0x88  void*                    subobject  (evidence: 0x00454C00)
     // +0x92  uint8_t                  field_0x92  (evidence: 0x005435F0)
     // +0x95  uint8_t                  field_0x95  (evidence: 0x005435F0)

@@ -1067,3 +1067,26 @@ DWORD* __thiscall fn_0044C4D0(void* self, const DWORD* first, const DWORD* last,
     return ext_0044C2A0(first, last, out);
 }
 } // namespace lift_0044C4D0
+
+// [0x0044B390]
+namespace lift_0044B390 {
+extern uint32_t mem_r32(uint32_t addr);
+
+// @name sub_0044B390_queryAndNotify
+// @summary If field_0x64 is non-null, calls its vtable[0xC0] method and passes the boolean result to arg1->vtable[0x4].
+// @field UnknownClass +0x64 uint32_t field_0x64
+void __thiscall sub_0044B390(uint32_t this_ptr, uint32_t arg1) {
+    uint32_t obj = mem_r32(this_ptr + 0x64);
+    if (obj == 0) {
+        return;
+    }
+
+    uint32_t obj_vtable = mem_r32(obj);
+    using FnQuery = uint8_t(__thiscall*)(uint32_t);
+    uint8_t result = reinterpret_cast<FnQuery>(mem_r32(obj_vtable + 0xc0))(obj);
+
+    uint32_t arg1_vtable = mem_r32(arg1);
+    using FnNotify = void(__thiscall*)(uint32_t, uint32_t);
+    reinterpret_cast<FnNotify>(mem_r32(arg1_vtable + 0x4))(arg1, static_cast<uint32_t>(result));
+}
+} // namespace lift_0044B390
