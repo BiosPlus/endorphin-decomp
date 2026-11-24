@@ -28418,6 +28418,13 @@
     "summary": "Virtual method that returns its second stack argument.",
     "lifted_path": "lifted/Properties/auto_tiny.cpp"
   },
+  "0x00681B30": {
+    "name": "Properties::PropertyIteratorTypes::ConstStringType::vfunc_9",
+    "class": "Properties::PropertyIteratorTypes::ConstStringType",
+    "signature": "void* fn_00681B30(void* self, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t)",
+    "summary": "Forwards its first argument to ext_0046F7D0 with a zero second argument and returns the first argument unchanged.",
+    "lifted_path": "lifted/Properties/PropertyIteratorTypes/ConstStringType.cpp"
+  },
   "0x00681C10": {
     "name": "Properties::PropertyIteratorTypes::PropertySourceType::vfunc_8",
     "class": "Properties::PropertyIteratorTypes::PropertySourceType",
