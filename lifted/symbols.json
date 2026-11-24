@@ -18276,6 +18276,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x00540D20": {
+    "name": "StringMatchesKnownTableEntry",
+    "signature": "static bool ext_string_eq_cstr(const void* str, const char* cstr)",
+    "summary": "Returns true if the string argument equals any of the 7 const char* entries in the table at mem_00A44BB8.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00540E10": {
     "name": "Unknown::setValueAndNotifyExtent",
     "class": "Unknown",

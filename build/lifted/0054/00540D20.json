@@ -1,0 +1,13 @@
+{
+  "va": "0x00540D20",
+  "size": 56,
+  "orig_symbol": "sub_00540D20",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "StringMatchesKnownTableEntry",
+  "signature": "static bool ext_string_eq_cstr(const void* str, const char* cstr)",
+  "summary": "Returns true if the string argument equals any of the 7 const char* entries in the table at mem_00A44BB8.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:16:54Z"
+}

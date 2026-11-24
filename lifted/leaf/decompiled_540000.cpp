@@ -537,3 +537,31 @@ __stdcall std::uint8_t* fn_0054F2C0(std::uint8_t* base, std::uint32_t index, std
     return base + static_cast<std::size_t>(index) * 0x68u;
 }
 } // namespace lift_0054F2C0
+
+// [0x00540D20]
+namespace lift_00540D20 {
+// @name StringMatchesKnownTableEntry
+// @summary Returns true if the string argument equals any of the 7 const char* entries in the table at mem_00A44BB8.
+
+// IAT slot for MSVCP80 std::operator==(const std::string&, const char*); holds the function address.
+extern uint32_t mem_00924FC0;
+// Table of 7 const char* pointers (0x00A44BB8 .. 0x00A44BD0 inclusive).
+extern uint32_t mem_00A44BB8[7];
+
+static bool ext_string_eq_cstr(const void* str, const char* cstr) {
+    auto fn = reinterpret_cast<bool (__cdecl*)(const void*, const char*)>(
+        static_cast<uintptr_t>(mem_00924FC0));
+    return fn(str, cstr);
+}
+
+bool __stdcall sub_00540D20(const void* str) {
+    for (size_t i = 0; i < 7; ++i) {
+        const char* entry = reinterpret_cast<const char*>(
+            static_cast<uintptr_t>(mem_00A44BB8[i]));
+        if (ext_string_eq_cstr(str, entry)) {
+            return true;
+        }
+    }
+    return false;
+}
+} // namespace lift_00540D20
