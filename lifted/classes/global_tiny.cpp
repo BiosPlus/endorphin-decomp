@@ -4915,3 +4915,17 @@ void fn_004010D0(void* self) {
     ext_EnableWindow(hWnd, TRUE);
 }
 } // namespace lift_004010D0
+
+// [0x004010C0] AddCharacterDialog::vfunc_64 (13 bytes)
+namespace lift_004010C0 {
+extern BOOL ext_EnableWindow(HWND hWnd, BOOL bEnable);
+
+// @name AddCharacterDialog::vfunc_64
+// @class AddCharacterDialog
+// @summary Disables the dialog's stored window handle (EnableWindow(hwnd, FALSE)).
+// @field AddCharacterDialog +0x20 HWND field_0x20
+void fn_004010C0(void* self) {
+    HWND hWnd = lift_field<HWND>(self, 0x20);
+    ext_EnableWindow(hWnd, FALSE);
+}
+} // namespace lift_004010C0

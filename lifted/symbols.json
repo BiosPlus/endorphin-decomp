@@ -1,4 +1,11 @@
 {
+  "0x004010C0": {
+    "name": "AddCharacterDialog::vfunc_64",
+    "class": "AddCharacterDialog",
+    "signature": "void fn_004010C0(void* self)",
+    "summary": "Disables the dialog's stored window handle (EnableWindow(hwnd, FALSE)).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x004010D0": {
     "name": "AddCharacterDialog::vfunc_65",
     "class": "AddCharacterDialog",
