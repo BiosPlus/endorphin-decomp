@@ -36272,6 +36272,12 @@
     "summary": "Zeroes two adjacent global 32-bit values at 0x00B5D760 and 0x00B5D764.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006CA0C0": {
+    "name": "AllocZeroedAndAdvanceTotal",
+    "signature": "extern \"C\" void* __cdecl fn_006CA0C0(int32_t n)",
+    "summary": "Adds n to the global running total at mem_00B5D768, then returns calloc(n, 1).",
+    "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
+  },
   "0x006CA230": {
     "name": "sub_006CA230",
     "signature": "extern \"C\" void* __fastcall fn_006CA230(void* self, int edx_unused, unsigned int flags)",

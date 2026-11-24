@@ -1529,3 +1529,18 @@ extern uint8_t __stdcall fn_006C03A0(DWORD value) {
     return static_cast<uint8_t>(value == static_cast<DWORD>(mem_00B5E400));
 }
 } // namespace lift_006C03A0
+
+// [0x006CA0C0] sub_006CA0C0 (31 bytes)
+namespace lift_006CA0C0 {
+// Global running total (VA 0x00B5D768), advanced by each allocation size.
+extern int32_t mem_00B5D768;
+// Import slot for MSVCR80!calloc (VA 0x0092522C).
+extern void* (*mem_0092522C)(size_t count, size_t size);
+
+// @name AllocZeroedAndAdvanceTotal
+// @summary Adds n to the global running total at mem_00B5D768, then returns calloc(n, 1).
+extern void* __cdecl fn_006CA0C0(int32_t n) {
+    mem_00B5D768 = mem_00B5D768 + n;
+    return mem_0092522C(static_cast<size_t>(n), 1);
+}
+} // namespace lift_006CA0C0

@@ -1,0 +1,13 @@
+{
+  "va": "0x006CA0C0",
+  "size": 31,
+  "orig_symbol": "sub_006CA0C0",
+  "src_path": "src/leaf/tiny_6C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6C0000.cpp",
+  "name": "AllocZeroedAndAdvanceTotal",
+  "signature": "extern \"C\" void* __cdecl fn_006CA0C0(int32_t n)",
+  "summary": "Adds n to the global running total at mem_00B5D768, then returns calloc(n, 1).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:26:47Z"
+}
