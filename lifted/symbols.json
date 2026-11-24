@@ -21975,11 +21975,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005B7E00": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, addImpulse\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, addImpulse\u003e",
+    "signature": "void __thiscall fn_005B7E00(void* self, void* arg0)",
+    "summary": "Lazily initializes a static type descriptor at 0x00B43C7C and stores its pointer at arg0 + 0x4.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005B7E80": {
     "name": "ExprParser::Method2Type::vfunc_49",
     "class": "ExprParser::Method2Type",
     "signature": "uint32_t callSlot5(uint32_t obj, uint32_t a, uint32_t b)",
     "summary": "Calls virtual slot 5 twice on the object held by arg4 (first with 0, then with the first result), forwards the second result to the child at *arg2, zeroes the out buffer at arg2, and returns arg2.",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
+  "0x005B7ED0": {
+    "name": "ExprParser::Method2Type\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, NM::Vector3 const \u0026, addForceAtPostion\u003e::vfunc_40",
+    "class": "ExprParser::Method2Type",
+    "signature": "void __thiscall fn_005B7ED0(void* self, void* arg1)",
+    "summary": "Lazily initializes a static/global object at 0x00B43C84 and stores its address at offset +0x4 of the output argument.",
     "lifted_path": "lifted/templates/Method2Type.cpp"
   },
   "0x005B7F50": {
@@ -21988,6 +22002,13 @@
     "signature": "extern \"C\" uintptr_t __stdcall fn_005B7F50(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3, uintptr_t arg4)",
     "summary": "Calls two virtual slot-5 methods on the argument objects, forwards the results to ext_005B72A0 on *arg2, then zeroes the out-buffer at arg2 via ext_00671F30 and returns arg2.",
     "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
+  "0x005B8020": {
+    "name": "ExprParser::Method0Type\u003cNMData::MetaBodyData, resetForcesAndImpulses\u003e::vfunc_40",
+    "class": "ExprParser::Method0Type",
+    "signature": "void __thiscall fn_005B8020(void* self, void* arg0)",
+    "summary": "Lazily initializes a static helper object and stores its address into arg0 + 0x4.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
   },
   "0x005B80A0": {
     "name": "ExprParser::FunctionType::vfunc_48 (getDistanceToPoint wrapper)",

@@ -7043,3 +7043,28 @@ void fn_005B7CE0(uint8_t* self) {
     std::memcpy(self + 0x04, &addr, sizeof(addr));
 }
 } // namespace lift_005B7CE0
+
+// [0x005B7E00]
+namespace lift_005B7E00 {
+// @name ExprParser::WriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, addImpulse>::vfunc_40
+// @class ExprParser::WriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, addImpulse>
+// @summary Lazily initializes a static type descriptor at 0x00B43C7C and stores its pointer at arg0 + 0x4.
+
+
+extern uint32_t mem_00B43C80;
+extern uint32_t mem_00B43C7C;
+
+extern void __thiscall ext_0067A670(void* self);
+
+void __thiscall fn_005B7E00(void* self, void* arg0)
+{
+    (void)self;
+    if ((mem_00B43C80 & 1u) == 0)
+    {
+        mem_00B43C80 |= 1u;
+        ext_0067A670(&mem_00B43C7C);
+        mem_00B43C7C = 0x009617ACu;
+    }
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(arg0) + 4) = 0x00B43C7Cu;
+}
+} // namespace lift_005B7E00
