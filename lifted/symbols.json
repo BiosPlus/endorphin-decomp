@@ -148,6 +148,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x3C and forwards through mem_00924FDC.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00401FD0": {
+    "name": "ZeroFloat4Out",
+    "signature": "void fn_00401FD0(void* arg0)",
+    "summary": "Zeroes four consecutive floats (+0x0, +0x4, +0x8, +0xC) of the pointer argument; stdcall, ret 4.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00401FF0": {
     "name": "AnimatableTransform::vfunc_23",
     "class": "AnimatableTransform",

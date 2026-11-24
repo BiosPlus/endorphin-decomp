@@ -6094,3 +6094,21 @@ uint32_t fn_00545660(void* self) {
     return fn(target); // original: tail jmp, return value passed through in eax
 }
 } // namespace lift_00545660
+
+// [0x00401FD0] AnimatableTransform::vfunc_6_off_C (20 bytes)
+namespace lift_00401FD0 {
+// @name ZeroFloat4Out
+// @summary Zeroes four consecutive floats (+0x0, +0x4, +0x8, +0xC) of the pointer argument; stdcall, ret 4.
+// @field Float4 +0x00 float field_0x00
+// @field Float4 +0x04 float field_0x04
+// @field Float4 +0x08 float field_0x08
+// @field Float4 +0x0C float field_0x0C
+void fn_00401FD0(void* arg0) {
+    const float zero = 0.0f;
+    auto* base = static_cast<unsigned char*>(arg0);
+    std::memcpy(base + 0x0C, &zero, sizeof zero);
+    std::memcpy(base + 0x08, &zero, sizeof zero);
+    std::memcpy(base + 0x04, &zero, sizeof zero);
+    std::memcpy(base + 0x00, &zero, sizeof zero);
+}
+} // namespace lift_00401FD0

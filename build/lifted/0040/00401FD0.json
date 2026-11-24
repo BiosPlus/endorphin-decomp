@@ -1,0 +1,39 @@
+{
+  "va": "0x00401FD0",
+  "size": 20,
+  "orig_symbol": "AnimatableTransform::vfunc_6_off_C",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ZeroFloat4Out",
+  "signature": "void fn_00401FD0(void* arg0)",
+  "summary": "Zeroes four consecutive floats (+0x0, +0x4, +0x8, +0xC) of the pointer argument; stdcall, ret 4.",
+  "fields": [
+    {
+      "class": "Float4",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Float4",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Float4",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Float4",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:05:10Z"
+}
