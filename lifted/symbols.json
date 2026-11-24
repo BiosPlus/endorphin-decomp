@@ -40400,6 +40400,12 @@
     "summary": "Reads and returns the 32-bit field at offset 0xA8 from the given object pointer.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C8A50": {
+    "name": "SetEntryDwordAtIndex",
+    "signature": "void fn_007C8A50(void* self, uint32_t index, uint32_t value)",
+    "summary": "Stores a 32-bit value at offset 0x1c of entry[index] (40-byte stride) in the table pointed to by self+0x20.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C8A70": {
     "name": "sub_007C8A70",
     "class": "\u003cunknown\u003e",

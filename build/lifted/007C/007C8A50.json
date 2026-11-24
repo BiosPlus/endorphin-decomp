@@ -1,0 +1,21 @@
+{
+  "va": "0x007C8A50",
+  "size": 23,
+  "orig_symbol": "sub_007C8A50",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "SetEntryDwordAtIndex",
+  "signature": "void fn_007C8A50(void* self, uint32_t index, uint32_t value)",
+  "summary": "Stores a 32-bit value at offset 0x1c of entry[index] (40-byte stride) in the table pointed to by self+0x20.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:34:50Z"
+}

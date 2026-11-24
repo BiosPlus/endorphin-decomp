@@ -1159,3 +1159,15 @@ void* fn_007C58E0(void* self) {
     return reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) & mask);
 }
 } // namespace lift_007C58E0
+
+// [0x007C8A50] sub_007C8A50 (23 bytes)
+namespace lift_007C8A50 {
+// @name SetEntryDwordAtIndex
+// @summary Stores a 32-bit value at offset 0x1c of entry[index] (40-byte stride) in the table pointed to by self+0x20.
+// @field Unknown +0x20 void* field_0x20
+void fn_007C8A50(void* self, uint32_t index, uint32_t value) {
+    uint8_t* table = lift_field<uint8_t*>(self, 0x20);
+    uint32_t offset = (index * 5u) * 8u + 0x1c;
+    lift_field<uint32_t>(table, static_cast<ptrdiff_t>(offset)) = value;
+}
+} // namespace lift_007C8A50
