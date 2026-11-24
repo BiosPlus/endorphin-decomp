@@ -30708,3 +30708,29 @@ void* fn_004EA380(void* out, void* const* objRef) {
     return ext_0046C460(out, flag);
 }
 } // namespace lift_004EA380
+
+// [0x004B1E00] ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>::vfunc_4 (72 bytes)
+namespace lift_004B1E00 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData>::vfunc_4 (NMData::GraphEntryData::isActive)
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>
+// @summary Reads the GraphEntryData object through the value pointer, formats its byte flag at +0x01 into out via ext_0046C460 (makeBoolString), and returns out; throws if the object pointer is null.
+// @field NMData::GraphEntryData +0x01 uint8_t field_0x01
+
+extern void* ext_0046C460(void* out_str, uint8_t flag);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc_obj, const void* type_info);
+extern uint8_t mem_009DEC1C;
+
+void* fn_004B1E00(void* out, void** src) {
+    void* obj = *src;
+    if (obj != nullptr) {
+        uint8_t flag = *(static_cast<uint8_t*>(obj) + 0x01);
+        ext_0046C460(out, flag);
+        return out;
+    }
+    uint32_t exc = 0;
+    ext_0046C3C0(&exc);
+    ext_006A6DD2(&exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B1E00
