@@ -12429,6 +12429,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00552850 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005528D0": {
+    "name": "HandleGraphic::vfunc_1",
+    "class": "HandleGraphic",
+    "signature": "extern \"C\" void __fastcall fn_005528D0(void* self)",
+    "summary": "Sets the floats at +0x04 and +0x08 to 1.0f, then tail-calls SubObject::resetScaleAndIndex on the same object.",
+    "lifted_path": "lifted/classes/HandleGraphic.cpp"
+  },
   "0x00553720": {
     "name": "NMFileIO::vfunc_3",
     "class": "NMFileIO",
