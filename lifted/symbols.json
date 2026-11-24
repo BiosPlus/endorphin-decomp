@@ -35828,6 +35828,13 @@
     "summary": "Returns true if field_0x58 is non-zero",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AEF70": {
+    "name": "sub_007AEF70",
+    "class": "none",
+    "signature": "extern \"C\" unsigned char fn_007AEF70(void)",
+    "summary": "Thiscall-style thunk: passes the address of its stack argument block (esp+4) in ecx to fn_006B9D70, then returns 0 (al = 0) and pops 0x54 bytes of arguments.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007B1E80": {
     "name": "sub_007B1E80",
     "signature": "void fn_007B1E80()",

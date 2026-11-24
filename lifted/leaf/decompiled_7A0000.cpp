@@ -14,3 +14,23 @@ extern "C" void* __fastcall fn_007AD5C0(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+
+// [0x007AEF70]
+namespace lift_007AEF70 {
+// @name sub_007AEF70
+// @summary Thiscall-style thunk: passes the address of its stack argument block (esp+4) in ecx to fn_006B9D70, then returns 0 (al = 0) and pops 0x54 bytes of arguments.
+// @class none
+//
+// Notes:
+//   lea ecx, [esp+4]   ; ecx = address of first stack argument
+//   call sub_006B9D70  ; forwards to sub_006B9970
+//   xor al, al         ; return value = 0
+//   ret 0x54           ; callee cleans 0x54 bytes of stack args
+
+extern void fn_006B9D70(void);
+
+extern unsigned char fn_007AEF70(void) {
+    fn_006B9D70();
+    return 0;
+}
+} // namespace lift_007AEF70
