@@ -117,3 +117,20 @@ void fn_0062C0E0(void* self, int edx_unused, int a1, int a2) {
 }
 } // namespace lift_005694F0
 } // namespace lift_0062C0E0
+
+// [0x00627510]
+namespace lift_00627510 {
+extern void __fastcall ext_00647F20(void* self, void* edx_unused, void* arg);
+
+// @name forwardSubobjectWithOffset54
+// @summary Forwards pointer at +0x28 -> +0x158 -> +0xAC with &self[0x54] to sub_00647F20.
+// @field Self +0x28 void* field_0x28
+// @field Self +0x54 uint8_t field_0x54
+extern void __fastcall fn_00627510(void* self) {
+    void* arg = static_cast<uint8_t*>(self) + 0x54;
+    void* p1 = *reinterpret_cast<void**>(static_cast<uint8_t*>(self) + 0x28);
+    void* p2 = *reinterpret_cast<void**>(static_cast<uint8_t*>(p1) + 0x158);
+    void* target = *reinterpret_cast<void**>(static_cast<uint8_t*>(p2) + 0xAC);
+    ext_00647F20(target, nullptr, arg);
+}
+} // namespace lift_00627510

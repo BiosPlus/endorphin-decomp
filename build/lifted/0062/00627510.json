@@ -1,0 +1,27 @@
+{
+  "va": "0x00627510",
+  "size": 27,
+  "orig_symbol": "sub_00627510",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "forwardSubobjectWithOffset54",
+  "signature": "extern \"C\" void __fastcall fn_00627510(void* self)",
+  "summary": "Forwards pointer at +0x28 -\u003e +0x158 -\u003e +0xAC with \u0026self[0x54] to sub_00647F20.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x54",
+      "type": "uint8_t",
+      "name": "field_0x54"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:05:43Z"
+}
