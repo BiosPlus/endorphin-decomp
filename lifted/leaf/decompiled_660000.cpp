@@ -227,3 +227,27 @@ bool fn_00664B20(const std::string& haystack, const std::string& needle) {
     return std::strstr(haystack.c_str(), needle.c_str()) != nullptr;
 }
 } // namespace lift_00664B20
+
+// [0x00662F50]
+namespace lift_00662F50 {
+// @name showFatalErrorAndExit
+// @summary Logs/initializes via sub_00662F20, displays a fatal error MessageBoxA from a std::string, and exits with -1.
+
+extern void ext_00662F20();
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009255E0;
+extern uint32_t mem_00925258;
+
+void sub_00662F50(uint32_t arg0) {
+    ext_00662F20();
+
+    using CStrFn = uint32_t(__thiscall*)(uint32_t);
+    uint32_t text = reinterpret_cast<CStrFn>(mem_00924FF0)(arg0);
+
+    using MessageBoxAFn = int32_t(__stdcall*)(uint32_t, uint32_t, uint32_t, uint32_t);
+    reinterpret_cast<MessageBoxAFn>(mem_009255E0)(0, text, 0x009877D8u, 0x10u);
+
+    using ExitFn = void(__cdecl*)(int32_t);
+    reinterpret_cast<ExitFn>(mem_00925258)(-1);
+}
+} // namespace lift_00662F50

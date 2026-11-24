@@ -1,0 +1,13 @@
+{
+  "va": "0x00662F50",
+  "size": 39,
+  "orig_symbol": "sub_00662F50",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "showFatalErrorAndExit",
+  "signature": "void sub_00662F50(uint32_t arg0)",
+  "summary": "Logs/initializes via sub_00662F20, displays a fatal error MessageBoxA from a std::string, and exits with -1.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:55:02Z"
+}
