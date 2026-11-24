@@ -39,3 +39,21 @@ void fn_0079B8F0(void* self) {
     mem_00B60F54 = 0u;
 }
 } // namespace lift_0079B8F0
+
+// [0x0079F1D0]
+namespace lift_0079F1D0 {
+// @name setGlobalsInit_0079F1D0
+// @summary Stores four initial values into globals mem_00B61158, mem_00B61160, mem_00B6115C and mem_00B61164.
+
+extern uint32_t mem_00B61158;
+extern uint32_t mem_00B61160;
+extern uint32_t mem_00B6115C;
+extern uint32_t mem_00B61164;
+
+void setGlobalsInit_0079F1D0(void) {
+    mem_00B61158 = 0x00B61168u;
+    mem_00B61160 = 0x00AAFF80u;
+    mem_00B6115C = 0x00B61220u;
+    mem_00B61164 = 0x00000000u;
+}
+} // namespace lift_0079F1D0

@@ -44471,6 +44471,12 @@
     "summary": "Reads bytes from a file handle using ReadFile and returns the number of bytes read, or 0 on failure.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079AD20": {
+    "name": "writeFileBytes",
+    "signature": "uint32_t __cdecl sub_0079AD20(uint32_t hFile, uint32_t lpBuffer, uint32_t nNumberOfBytesToWrite)",
+    "summary": "Calls WriteFile and returns bytes written on success or 0 on failure.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079ADA0": {
     "name": "sub_007928E0",
     "class": "Unknown",
@@ -44693,6 +44699,12 @@
     "signature": "void fn_0079EED0(int32_t offset)",
     "summary": "Seeks the global stream (from GetGlobalIndirectInt32) to the given offset from its start via fseek(stream, offset, SEEK_SET).",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
+  "0x0079F1D0": {
+    "name": "setGlobalsInit_0079F1D0",
+    "signature": "void setGlobalsInit_0079F1D0(void)",
+    "summary": "Stores four initial values into globals mem_00B61158, mem_00B61160, mem_00B6115C and mem_00B61164.",
+    "lifted_path": "lifted/clones/auto_clones_790000.cpp"
   },
   "0x0079F330": {
     "name": "sub_0079F330",

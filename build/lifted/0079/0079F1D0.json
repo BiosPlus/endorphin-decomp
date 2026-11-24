@@ -1,0 +1,13 @@
+{
+  "va": "0x0079F1D0",
+  "size": 41,
+  "orig_symbol": "sub_0079F1D0",
+  "src_path": "src/clones/auto_clones_790000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_790000.cpp",
+  "name": "setGlobalsInit_0079F1D0",
+  "signature": "void setGlobalsInit_0079F1D0(void)",
+  "summary": "Stores four initial values into globals mem_00B61158, mem_00B61160, mem_00B6115C and mem_00B61164.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:57:31Z"
+}
