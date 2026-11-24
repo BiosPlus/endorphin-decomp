@@ -8,6 +8,7 @@
 // Recovered field layout for <this>:
 namespace lifted_layout {
 struct _this__Fields {
-    // +0x0   pointer field_0x00 (pointer to inner object, dereferenced)  (evidence: 0x00728DE0, 0x0072B1B0)
+    // +0x0   pointer field_0x00 (pointer to inner object, dereferenced)  (evidence: 0x00728DE0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   pointer field_0x00 (pointer to inner object)  (evidence: 0x0072B1B0) // CONFLICT: multiple definitions at +0x0
 };
 } // namespace lifted_layout

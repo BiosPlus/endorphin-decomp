@@ -4,16 +4,15 @@
   "orig_symbol": "sub_0072B1B0",
   "src_path": "src/leaf/tiny_720000.cpp",
   "lifted_path": "lifted/leaf/tiny_720000.cpp",
-  "name": "sub_0072B1B0",
-  "class": "(none)",
-  "signature": "uint32_t sub_0072B1B0(uint32_t* this_)",
-  "summary": "Loads the pointer at [this], then returns the dword at [that pointer] (double dereference of the first field).",
+  "name": "getInnerDword",
+  "signature": "uint32_t getInnerDword(uint32_t* this_)",
+  "summary": "Reads the pointer stored at offset 0 of this, then returns the dword at offset 0 of that pointed-to object.",
   "fields": [
     {
       "class": "\u003cthis\u003e",
       "offset": "+0x0",
-      "type": "pointer field_0x00 (pointer to inner object,",
-      "name": "dereferenced)"
+      "type": "pointer field_0x00 (pointer to inner",
+      "name": "object)"
     },
     {
       "class": "\u003cinner\u003e",
@@ -24,5 +23,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T01:44:40Z"
+  "lifted_at": "2026-11-24T01:44:51Z"
 }

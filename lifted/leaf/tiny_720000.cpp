@@ -326,21 +326,6 @@ double fn_00722170(void) {
 } // namespace lift_006D9020
 } // namespace lift_00722170
 
-// [0x0072B1B0]
-namespace lift_0072B1B0 {
-// @name sub_0072B1B0
-// @class (none)
-// @summary Loads the pointer at [this], then returns the dword at [that pointer] (double dereference of the first field).
-// @field <this> +0x00 pointer field_0x00 (pointer to inner object, dereferenced)
-// @field <inner> +0x00 uint32 field_0x00 (returned value)
-
-uint32_t sub_0072B1B0(uint32_t* this_) {
-    uint32_t inner = *this_;
-    uint32_t value = *reinterpret_cast<uint32_t*>(inner);
-    return value;
-}
-} // namespace lift_0072B1B0
-
 // [0x00728DE0] sub_00728DE0 (16 bytes)
 namespace lift_00728DE0 {
 // @name storeDwordThroughThis
@@ -351,3 +336,17 @@ void* fn_00728DE0(void* self, uint32_t value) {
     return self;
 }
 } // namespace lift_00728DE0
+
+// [0x0072B1B0]
+namespace lift_0072B1B0 {
+// @name getInnerDword
+// @summary Reads the pointer stored at offset 0 of this, then returns the dword at offset 0 of that pointed-to object.
+// @field <this> +0x00 pointer field_0x00 (pointer to inner object)
+// @field <inner> +0x00 uint32 field_0x00 (returned value)
+
+uint32_t getInnerDword(uint32_t* this_) {
+    uint32_t inner = *this_;
+    uint32_t value = *reinterpret_cast<uint32_t*>(inner);
+    return value;
+}
+} // namespace lift_0072B1B0
