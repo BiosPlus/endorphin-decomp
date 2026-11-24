@@ -1,0 +1,28 @@
+{
+  "va": "0x00788E20",
+  "size": 48,
+  "orig_symbol": "sub_00788E20",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "FileFindCursor::closeFind",
+  "class": "FileFindCursor",
+  "signature": "void fn_00788E20(void* self)",
+  "summary": "Closes the find handle at +0x00 via FindClose with SetErrorMode(1) around it, then clears the handle and the flag at +0x654.",
+  "fields": [
+    {
+      "class": "FileFindCursor",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "hFind"
+    },
+    {
+      "class": "FileFindCursor",
+      "offset": "+0x654",
+      "type": "uint8_t",
+      "name": "field_0x654"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:26:13Z"
+}

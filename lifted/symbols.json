@@ -47428,6 +47428,13 @@
     "summary": "Calls FindNextFileW on the handle at +0x00 with the WIN32_FIND_DATAW buffer at +0x04, wrapped in SetErrorMode(1)/SetErrorMode(0); returns true if an entry was found.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00788E20": {
+    "name": "FileFindCursor::closeFind",
+    "class": "FileFindCursor",
+    "signature": "void fn_00788E20(void* self)",
+    "summary": "Closes the find handle at +0x00 via FindClose with SetErrorMode(1) around it, then clears the handle and the flag at +0x654.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00789260": {
     "name": "ConstructRecord4",
     "signature": "void* fn_00789260(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint8_t a4)",

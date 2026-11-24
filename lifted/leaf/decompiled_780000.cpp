@@ -685,3 +685,36 @@ bool FileFindCursor::findNextRaw()
     return found;
 }
 } // namespace lift_00788DF0
+
+// [0x00788E20]
+namespace lift_00788E20 {
+extern uint32_t mem_0092416C; // .rdata u32 0x0062D568 -> KERNEL32!SetErrorMode
+    extern uint32_t mem_009241CC; // .rdata u32 0x00628198 -> KERNEL32!FindClose
+
+struct FileFindCursor {
+    void* hFind;             // +0x00
+    uint8_t findData[0x23C]; // +0x04 WIN32_FIND_DATAW
+    uint8_t field_0x240[0x654 - 0x240]; // +0x240 unknown
+    uint8_t field_0x654;     // +0x654 (cleared on close)
+};
+
+using SetErrorMode_fn = unsigned int (__stdcall*)(unsigned int);
+using FindClose_fn = int (__stdcall*)(void*);
+
+// @name FileFindCursor::closeFind
+// @class FileFindCursor
+// @summary Closes the find handle at +0x00 via FindClose with SetErrorMode(1) around it, then clears the handle and the flag at +0x654.
+// @field FileFindCursor +0x00 void* hFind
+// @field FileFindCursor +0x654 uint8_t field_0x654
+void fn_00788E20(void* self) {
+    auto* cursor = static_cast<FileFindCursor*>(self);
+    auto setErrorMode = reinterpret_cast<SetErrorMode_fn>(mem_0092416C);
+    auto findClose = reinterpret_cast<FindClose_fn>(mem_009241CC);
+
+    setErrorMode(1);
+    findClose(cursor->hFind);
+    cursor->hFind = nullptr;
+    setErrorMode(0);
+    cursor->field_0x654 = 0;
+}
+} // namespace lift_00788E20
