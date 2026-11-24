@@ -1,0 +1,21 @@
+{
+  "va": "0x0043D1D0",
+  "size": 41,
+  "orig_symbol": "sub_0043D1D0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_0043D1D0",
+  "signature": "void __thiscall fn_0043D1D0(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Forwards a 3-argument call to field_0x64 via sub_0041C5A0, falling back to MFC80_ord_1903 on false.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:59:35Z"
+}
