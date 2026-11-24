@@ -245,3 +245,20 @@ BOOL fn_0079AE40(void* /*unused*/, const void* lpBaseAddress) {
     return unmap(lpBaseAddress);
 }
 } // namespace lift_0079AE40
+
+// [0x0079E610] sub_0079E610 (14 bytes)
+namespace lift_0079E610 {
+// @name Unknown::callVirtualSlot2IfNonNull
+// @class Unknown
+// @summary If the object pointer is non-null, invokes its vtable slot 2 with argument 1; the single stack argument is popped by the callee (ret 4).
+// @field Unknown +0x00 void** vtable
+void fn_0079E610(void* self, int32_t /*stackArg, popped by callee*/) {
+    if (self == nullptr) {
+        return;
+    }
+    void** vtable = *reinterpret_cast<void***>(self);
+    using VirtualFn = void (*)(void* self, int32_t arg);
+    VirtualFn slot2 = reinterpret_cast<VirtualFn>(vtable[2]);
+    slot2(self, 1);
+}
+} // namespace lift_0079E610
