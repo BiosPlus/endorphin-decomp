@@ -16965,6 +16965,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x2D4 and tail-calls sub_0054C640.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00533090": {
+    "name": "OglRenderer::vfunc_116",
+    "class": "OglRenderer",
+    "signature": "void fn_00533090(void* self)",
+    "summary": "Acquires the object's lock (via vtable slot +0x1D8), records the current thread id, and makes the GL context current.",
+    "lifted_path": "lifted/classes/OglRenderer.cpp"
+  },
   "0x005330D0": {
     "name": "OglRenderer::vfunc_117",
     "class": "OglRenderer",

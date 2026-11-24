@@ -197,3 +197,39 @@ void __thiscall OglRenderer_vfunc_17(uint32_t self, uint32_t arg0) {
     ((vfn_t)(uintptr_t)vfn)(self);
 }
 } // namespace lift_005333C0
+
+// [0x00533090] OglRenderer::vfunc_116 (55 bytes)
+namespace lift_00533090 {
+// Known callee 0x0065C640: CriticalSectionLock::enter (Enters the critical section referenced at offset 0x00 of the object.)
+extern void ext_0065C640(void* self);
+// Known callee 0x0065C650: CriticalSectionLock::leave (Releases the critical section pointed to by the first field)
+extern void ext_0065C650(void* self);
+// IAT slot for KERNEL32!GetCurrentThreadId
+extern DWORD(__stdcall* mem_00924244)();
+// IAT slot for OPENGL32!wglMakeCurrent
+extern BOOL(__stdcall* mem_009253E0)(HDC hdc, HGLRC hglrc);
+
+// @name OglRenderer::vfunc_116
+// @class OglRenderer
+// @summary Acquires the object's lock (via vtable slot +0x1D8), records the current thread id, and makes the GL context current.
+// @field OglRenderer +0x24 HDC field_0x24
+// @field OglRenderer +0x28 HGLRC field_0x28
+// @field OglRenderer +0x30 uint32_t field_0x30
+void fn_00533090(void* self) {
+    // Vtable slot at byte offset 0x1D8 (index 118) returns the lock object.
+    void* vtable = lift_field<void*>(self, 0);
+    using GetLockFn = void* (*)(void*);
+    GetLockFn getLock = reinterpret_cast<GetLockFn>(reinterpret_cast<void* const*>(vtable)[0x1D8 / sizeof(void*)]);
+    void* lock = getLock(self);
+
+    ext_0065C640(lock);
+
+    lift_field<DWORD>(self, 0x30) = mem_00924244();
+
+    HDC hdc = lift_field<HDC>(self, 0x24);
+    HGLRC hglrc = lift_field<HGLRC>(self, 0x28);
+    mem_009253E0(hdc, hglrc);
+
+    ext_0065C650(lock);
+}
+} // namespace lift_00533090

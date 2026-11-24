@@ -1,0 +1,34 @@
+{
+  "va": "0x00533090",
+  "size": 55,
+  "orig_symbol": "OglRenderer::vfunc_116",
+  "src_path": "src/classes/OglRenderer.cpp",
+  "lifted_path": "lifted/classes/OglRenderer.cpp",
+  "name": "OglRenderer::vfunc_116",
+  "class": "OglRenderer",
+  "signature": "void fn_00533090(void* self)",
+  "summary": "Acquires the object's lock (via vtable slot +0x1D8), records the current thread id, and makes the GL context current.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x24",
+      "type": "HDC",
+      "name": "field_0x24"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x28",
+      "type": "HGLRC",
+      "name": "field_0x28"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:14:11Z"
+}
