@@ -1,0 +1,13 @@
+{
+  "va": "0x0072B3D0",
+  "size": 57,
+  "orig_symbol": "sub_0072B3D0",
+  "src_path": "src/clones/auto_clones_720000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_720000.cpp",
+  "name": "initHugeVectorGlobals",
+  "signature": "void sub_0072B3D0()",
+  "summary": "Initializes three 64-bit global values from MSVCR80!_HUGE.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:25:34Z"
+}
