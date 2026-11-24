@@ -503,3 +503,18 @@ void __thiscall sub_004046E0(void* self, uint32_t value) {
     }
 }
 } // namespace lift_004046E0
+
+// [0x004090C0] sub_004090C0 (29 bytes)
+namespace lift_004090C0 {
+// @name sub_004090C0
+// @class (none)
+// @summary Returns 1 if the int at self+0xF4 equals 0xE81C or 0xE81D, otherwise 0.
+// @field Unknown +0xF4 int field_0xF4
+extern int __fastcall fn_004090C0(void* self) {
+    const int v = lift_field<int>(self, 0xF4);
+    if (v == 0xE81C || v == 0xE81D) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004090C0

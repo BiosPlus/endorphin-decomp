@@ -504,6 +504,13 @@
     "summary": "Pure jump thunk forwarding to GetConstant_00409060.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004090C0": {
+    "name": "sub_004090C0",
+    "class": "(none)",
+    "signature": "extern \"C\" int __fastcall fn_004090C0(void* self)",
+    "summary": "Returns 1 if the int at self+0xF4 equals 0xE81C or 0xE81D, otherwise 0.",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x004090E0": {
     "name": "sub_004090E0",
     "signature": "extern \"C\" void __fastcall fn_004090E0(void* self)",
