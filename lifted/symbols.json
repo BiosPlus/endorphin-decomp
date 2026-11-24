@@ -3585,6 +3585,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x2C and tail-calls sub_004AEC90.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x004691C0": {
+    "name": "fn_004691C0 (descriptiveName: ForwardFieldAt26CFromGlobalResult)",
+    "class": "(none)",
+    "signature": "extern \"C\" int32_t fn_004691C0(void)",
+    "summary": "Calls ext_00594000 to obtain an int32 handle, reads the dword at handle+0x26C, and tail-forwards that value to ext_00477380.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00469C50": {
     "name": "sub_00469C50",
     "signature": "void fn_00469C50()",

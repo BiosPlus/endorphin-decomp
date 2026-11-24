@@ -98,6 +98,7 @@ struct Unknown_Fields {
     // +0x1C4 uint32_t                 field_0x1C4  (evidence: 0x007C6780)
     // +0x1C8 float                    field_0x1c8  (evidence: 0x007C5F90)
     // +0x234 void*                    field_0x234  (evidence: 0x005E1360)
+    // +0x26C int32_t                  field_0x26C  (evidence: 0x004691C0)
     // +0x4E2 uint8_t                  field_0x4E2  (evidence: 0x004104E0)
 };
 } // namespace lifted_layout

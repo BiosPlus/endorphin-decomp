@@ -177,3 +177,21 @@ extern void __cdecl fn_00465B40(void) {
 }
 } // namespace lift_00430360
 } // namespace lift_00465B40
+
+// [0x004691C0]
+namespace lift_004691C0 {
+// @name fn_004691C0 (descriptiveName: ForwardFieldAt26CFromGlobalResult)
+// @class (none)
+// @summary Calls ext_00594000 to obtain an int32 handle, reads the dword at handle+0x26C, and tail-forwards that value to ext_00477380.
+// @field Unknown +0x26C int32_t field_0x26C
+
+extern int32_t ext_00594000(void);
+extern int32_t ext_00477380(int32_t ecx);
+
+extern int32_t fn_004691C0(void) {
+    const int32_t eax = ext_00594000();
+    void* const base = reinterpret_cast<void*>(static_cast<intptr_t>(eax));
+    const int32_t ecx = lift_field<int32_t>(base, 0x26C);
+    return ext_00477380(ecx);
+}
+} // namespace lift_004691C0
