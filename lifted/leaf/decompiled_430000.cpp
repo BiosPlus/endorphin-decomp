@@ -1220,3 +1220,45 @@ extern void __thiscall fn_00431330(uint32_t self) {
     fn_006A651A(self, obj, flag);
 }
 } // namespace lift_00431330
+
+// [0x004313D0]
+namespace lift_004313D0 {
+// @name sub_004313D0
+// @summary Toggles or updates a child object state via virtual call at +0x15c and forwards to MFC80_ord_6081
+// @field Unknown +0xe0 void* field_0xe0
+
+
+extern void __thiscall ext_006A651A(void* self, void* arg1, uint32_t arg2);
+
+void __thiscall fn_004313D0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    void* esi = *reinterpret_cast<void**>(obj + 0xe0);
+    void** vtable = *reinterpret_cast<void***>(esi);
+    using VFn = uint32_t(__thiscall*)(void*, uint32_t);
+    VFn fn = reinterpret_cast<VFn>(vtable[0x15c / sizeof(void*)]);
+    uint32_t res = fn(esi, 0);
+    uint32_t flag = (res == 0) ? 1u : 0u;
+    ext_006A651A(self, esi, flag);
+}
+} // namespace lift_004313D0
+
+// [0x004313A0]
+namespace lift_004313A0 {
+// @name sub_004313A0
+// @summary Calls vtable+0x15c on field_0x11c with 0 and forwards its negated result to MFC80_ord_6081.
+// @field Unknown +0x11c uint32_t field_0x11c
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern void ext_006A651A(uint32_t ecx, uint32_t arg0, uint32_t arg1);
+
+void fn_004313A0(uint32_t ecx) {
+    uint32_t obj = mem_read32(ecx + 0x11c);
+    uint32_t vtable = mem_read32(obj);
+    uint32_t vfunc = mem_read32(vtable + 0x15c);
+    using VFunc = uint32_t (*)(uint32_t, uint32_t);
+    uint32_t res = reinterpret_cast<VFunc>(static_cast<uintptr_t>(vfunc))(obj, 0);
+    uint32_t flag = (res == 0) ? 1u : 0u;
+    ext_006A651A(ecx, obj, flag);
+}
+} // namespace lift_004313A0

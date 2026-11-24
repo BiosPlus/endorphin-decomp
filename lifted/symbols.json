@@ -2242,6 +2242,18 @@
     "summary": "Calls vtable+0x15c(0) on field_0x104 and passes its negated boolean result to MFC80_ord_6081",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004313A0": {
+    "name": "sub_004313A0",
+    "signature": "void fn_004313A0(uint32_t ecx)",
+    "summary": "Calls vtable+0x15c on field_0x11c with 0 and forwards its negated result to MFC80_ord_6081.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x004313D0": {
+    "name": "sub_004313D0",
+    "signature": "void __thiscall fn_004313D0(void* self)",
+    "summary": "Toggles or updates a child object state via virtual call at +0x15c and forwards to MFC80_ord_6081",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004329A0": {
     "name": "init_and_update_field_0x11c",
     "signature": "extern \"C\" void __thiscall fn_004329A0(uintptr_t self)",

@@ -1,0 +1,21 @@
+{
+  "va": "0x004313D0",
+  "size": 43,
+  "orig_symbol": "sub_004313D0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_004313D0",
+  "signature": "void __thiscall fn_004313D0(void* self)",
+  "summary": "Toggles or updates a child object state via virtual call at +0x15c and forwards to MFC80_ord_6081",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xE0",
+      "type": "void*",
+      "name": "field_0xe0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:03:40Z"
+}
