@@ -6904,6 +6904,13 @@
     "summary": "Writes 1.0f/0.0f constants into the float block at ecx (diagonal-style init).",
     "lifted_path": "lifted/leaf/tiny_470000.cpp"
   },
+  "0x00480060": {
+    "name": "ToolEngine::vfunc_17",
+    "class": "ToolEngine",
+    "signature": "uint32_t fn_00480060(void* self, uint32_t arg1)",
+    "summary": "Initializes a 3-DWORD tuple (-1, 0, 0) and invokes vfunc at +0x60 on subobject +0x10",
+    "lifted_path": "lifted/classes/ToolEngine.cpp"
+  },
   "0x004800A0": {
     "name": "Unknown::setField3E0FromInvertedArgBit0",
     "class": "Unknown",
@@ -27295,6 +27302,13 @@
     "class": "(none)",
     "signature": "void fn_005FEFD0(LiftElem005FEFD0* begin, LiftElem005FEFD0* end, const LiftElem005FEFD0* src)",
     "summary": "Assigns every element in [begin, end) from *src (string at +0x00 and dword at +0x1C); no-op when begin == end.",
+    "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
+  },
+  "0x005FF040": {
+    "name": "ResourceHolder::ReleaseAndReset",
+    "class": "ResourceHolder",
+    "signature": "extern \"C\" void __fastcall fn_005FF040(void* self)",
+    "summary": "Sets the vtable, releases the handle at +0x08 via thunk_MFC80_ord_764 if non-null, zeroes +0x08/+0x0C/+0x10, then tail-calls base cleanup fn_0065F440(this).",
     "lifted_path": "lifted/leaf/decompiled_5F0000.cpp"
   },
   "0x005FF0E0": {
