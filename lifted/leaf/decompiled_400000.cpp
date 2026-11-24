@@ -270,3 +270,24 @@ extern void fn_0040FE70(uint8_t* self) {
     invalidateRect(hwnd, nullptr, 1);
 }
 } // namespace lift_0040FE70
+
+// [0x0040C300] sub_0040C300 (37 bytes)
+namespace lift_0040C300 {
+// Known callee 0x0042EE50: sub_0042EE50 (Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).)
+extern void ext_0042EE50(uint8_t* self);
+extern int mem_00925694;
+
+using SendMessageAFn = uint32_t(__stdcall*)(uint32_t hWnd, uint32_t Msg, uint32_t wParam, uint32_t lParam);
+
+// @name Unknown::notifyWindowThenClear
+// @class Unknown
+// @summary Sends message 0x184 (wParam=0, lParam=0) to the window handle at +0xA4, then tail-calls the clear routine on the sub-object at +0x84.
+// @field Unknown +0x84 uint8_t[] field_0x84
+// @field Unknown +0xA4 uint32_t hwnd
+void fn_0040C300(uint8_t* self) {
+    auto sendMessage = reinterpret_cast<SendMessageAFn>(mem_00925694);
+    uint32_t hwnd = *reinterpret_cast<uint32_t*>(self + 0xA4);
+    sendMessage(hwnd, 0x184, 0, 0);
+    ext_0042EE50(self + 0x84);
+}
+} // namespace lift_0040C300

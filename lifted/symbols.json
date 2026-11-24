@@ -617,6 +617,13 @@
     "summary": "Sends message 0x18B with zero wParam/lParam to the window handle stored in this-\u003e+0x20.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x0040C300": {
+    "name": "Unknown::notifyWindowThenClear",
+    "class": "Unknown",
+    "signature": "void fn_0040C300(uint8_t* self)",
+    "summary": "Sends message 0x184 (wParam=0, lParam=0) to the window handle at +0xA4, then tail-calls the clear routine on the sub-object at +0x84.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040CDF0": {
     "name": "NewCharacterDialog::vfunc_92",
     "class": "NewCharacterDialog",
