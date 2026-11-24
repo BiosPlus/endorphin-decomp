@@ -33236,6 +33236,12 @@
     "summary": "Zeroes two global DWORD variables at 0x00B5EB44 and 0x00B5EB40.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00705270": {
+    "name": "sub_00705270",
+    "signature": "void fn_00705270(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00705250 (ClearGlobalDwordPair).",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x00705400": {
     "name": "sub_00705400",
     "signature": "extern \"C\" int32_t __cdecl fn_00705400(void)",
@@ -34888,6 +34894,24 @@
     "name": "sub_007835F0",
     "signature": "uint8_t __fastcall sub_007835F0(uint32_t ecx)",
     "summary": "Reads a byte at offset +0x4 from the pointer stored at this+0x4",
+    "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
+  "0x00784510": {
+    "name": "sub_00784510",
+    "signature": "void fn_00784510(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00705250 (ClearGlobalDwordPair).",
+    "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
+  "0x00784530": {
+    "name": "sub_00784530",
+    "signature": "void fn_00784530(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00705250 (ClearGlobalDwordPair).",
+    "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
+  "0x00784550": {
+    "name": "sub_00784550",
+    "signature": "void fn_00784550(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00705250 (ClearGlobalDwordPair).",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
   "0x00784640": {

@@ -260,3 +260,57 @@ extern void fn_00780290(void) {
 }
 } // namespace lift_007AE0A0
 } // namespace lift_00780290
+
+// [0x00784510] sub_00784510 (13 bytes)
+namespace lift_00784510 {
+// @name sub_00784510
+// @summary Auto-lifted identical-shape clone of 0x00705250 (ClearGlobalDwordPair).
+namespace lift_00705250 {
+extern int mem_00B608F4;
+extern int mem_00B608F0;
+
+// @name ClearGlobalDwordPair
+// @summary Zeroes two global DWORD variables at 0x00B5EB44 and 0x00B5EB40.
+void fn_00784510(void* self) {
+    (void)self;
+    mem_00B608F4 = 0;
+    mem_00B608F0 = 0;
+}
+} // namespace lift_00705250
+} // namespace lift_00784510
+
+// [0x00784530] sub_00784530 (13 bytes)
+namespace lift_00784530 {
+// @name sub_00784530
+// @summary Auto-lifted identical-shape clone of 0x00705250 (ClearGlobalDwordPair).
+namespace lift_00705250 {
+extern int mem_00B608FC;
+extern int mem_00B608F8;
+
+// @name ClearGlobalDwordPair
+// @summary Zeroes two global DWORD variables at 0x00B5EB44 and 0x00B5EB40.
+void fn_00784530(void* self) {
+    (void)self;
+    mem_00B608FC = 0;
+    mem_00B608F8 = 0;
+}
+} // namespace lift_00705250
+} // namespace lift_00784530
+
+// [0x00784550] sub_00784550 (13 bytes)
+namespace lift_00784550 {
+// @name sub_00784550
+// @summary Auto-lifted identical-shape clone of 0x00705250 (ClearGlobalDwordPair).
+namespace lift_00705250 {
+extern int mem_00B60904;
+extern int mem_00B60900;
+
+// @name ClearGlobalDwordPair
+// @summary Zeroes two global DWORD variables at 0x00B5EB44 and 0x00B5EB40.
+void fn_00784550(void* self) {
+    (void)self;
+    mem_00B60904 = 0;
+    mem_00B60900 = 0;
+}
+} // namespace lift_00705250
+} // namespace lift_00784550

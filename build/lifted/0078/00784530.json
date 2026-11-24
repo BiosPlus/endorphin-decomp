@@ -1,0 +1,13 @@
+{
+  "va": "0x00784530",
+  "size": 13,
+  "orig_symbol": "sub_00784530",
+  "src_path": "src/leaf/tiny_780000.cpp",
+  "lifted_path": "lifted/leaf/tiny_780000.cpp",
+  "name": "sub_00784530",
+  "signature": "void fn_00784530(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00705250 (ClearGlobalDwordPair).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:22:57Z"
+}
