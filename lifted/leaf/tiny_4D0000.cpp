@@ -61,3 +61,15 @@ void* fn_004D0B60(uint32_t index) {
     return reinterpret_cast<void*>(kTableBase + static_cast<uintptr_t>(index) * 28u);
 }
 } // namespace lift_004D0B60
+
+// [0x004D0AF0] sub_004D0AF0 (23 bytes)
+namespace lift_004D0AF0 {
+// @name Unknown::IndexedTableAddress
+// @class Unknown
+// @summary Returns 0xAE5C68 + 28 * self->field_0x190 (address of a 28-byte entry in a global table).
+// @field Unknown +0x190 DWORD field_0x190
+extern DWORD __fastcall fn_004D0AF0(void* self) {
+    DWORD index = lift_field<DWORD>(self, 0x190);
+    return 0x00AE5C68u + 28u * index;
+}
+} // namespace lift_004D0AF0

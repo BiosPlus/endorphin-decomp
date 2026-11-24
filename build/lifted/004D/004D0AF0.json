@@ -1,0 +1,22 @@
+{
+  "va": "0x004D0AF0",
+  "size": 23,
+  "orig_symbol": "sub_004D0AF0",
+  "src_path": "src/leaf/tiny_4D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4D0000.cpp",
+  "name": "Unknown::IndexedTableAddress",
+  "class": "Unknown",
+  "signature": "extern \"C\" DWORD __fastcall fn_004D0AF0(void* self)",
+  "summary": "Returns 0xAE5C68 + 28 * self-\u003efield_0x190 (address of a 28-byte entry in a global table).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x190",
+      "type": "DWORD",
+      "name": "field_0x190"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:32:02Z"
+}

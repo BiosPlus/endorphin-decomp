@@ -8534,6 +8534,13 @@
     "summary": "Setter storing float argument into field at offset +0x194.",
     "lifted_path": "lifted/leaf/tiny_4D0000.cpp"
   },
+  "0x004D0AF0": {
+    "name": "Unknown::IndexedTableAddress",
+    "class": "Unknown",
+    "signature": "extern \"C\" DWORD __fastcall fn_004D0AF0(void* self)",
+    "summary": "Returns 0xAE5C68 + 28 * self-\u003efield_0x190 (address of a 28-byte entry in a global table).",
+    "lifted_path": "lifted/leaf/tiny_4D0000.cpp"
+  },
   "0x004D0B60": {
     "name": "GetTableEntry28Address",
     "class": "(none)",
