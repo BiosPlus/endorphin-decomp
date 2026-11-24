@@ -16925,6 +16925,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x300 and tail-calls sub_0052EB20.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00533340": {
+    "name": "OglRenderer::vfunc_15",
+    "class": "OglRenderer",
+    "signature": "void OglRenderer_vfunc_15(void* self, float value)",
+    "summary": "Sets a float property on OglRenderer (selecting +0x38c or +0x37c based on +0x379), stores it at +0x454, sets +0x430 to 1, and invokes vfunc at +0x154.",
+    "lifted_path": "lifted/classes/OglRenderer.cpp"
+  },
   "0x00533380": {
     "name": "OglRenderer::vfunc_16",
     "class": "OglRenderer",
