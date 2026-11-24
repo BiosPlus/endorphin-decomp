@@ -51,6 +51,7 @@ extern "C" void __fastcall ext_007AA880(void* self);
 extern "C" int32_t __cdecl fn_0079BA50(void) {
     return mem_00B60FB8;
 }
+#include <cstdint>
 
 // [0x0079BA60] sub_0079BA60 (6 bytes)
 // @name sub_0079BA60
@@ -347,3 +348,17 @@ void fn_00790D40(void* self, uint32_t arg) {
     std::memcpy(base + 0x08, &arg, sizeof(arg));
 }
 } // namespace lift_00790D40
+
+// [0x00790D60] sub_00790D60 (17 bytes)
+namespace lift_00790D60 {
+// @name Unknown::setFieldOc
+// @class Unknown
+// @summary Stores a value into field +0x0C and clears field +0x2C (thiscall, one stack arg).
+// @field Unknown +0x0c uint32_t field_0x0c
+// @field Unknown +0x2c uint32_t field_0x2c
+void fn_00790D60(void* self, std::uint32_t value) {
+    auto* base = static_cast<unsigned char*>(self);
+    *reinterpret_cast<std::uint32_t*>(base + 0x2c) = 0;
+    *reinterpret_cast<std::uint32_t*>(base + 0x0c) = value;
+}
+} // namespace lift_00790D60

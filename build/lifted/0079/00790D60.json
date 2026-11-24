@@ -1,0 +1,28 @@
+{
+  "va": "0x00790D60",
+  "size": 17,
+  "orig_symbol": "sub_00790D60",
+  "src_path": "src/leaf/tiny_790000.cpp",
+  "lifted_path": "lifted/leaf/tiny_790000.cpp",
+  "name": "Unknown::setFieldOc",
+  "class": "Unknown",
+  "signature": "void fn_00790D60(void* self, std::uint32_t value)",
+  "summary": "Stores a value into field +0x0C and clears field +0x2C (thiscall, one stack arg).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:54:24Z"
+}
