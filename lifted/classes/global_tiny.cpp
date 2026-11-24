@@ -6112,3 +6112,20 @@ void fn_00401FD0(void* arg0) {
     std::memcpy(base + 0x00, &zero, sizeof zero);
 }
 } // namespace lift_00401FD0
+
+// [0x00534570] NullRenderer::vfunc_77 (20 bytes)
+namespace lift_00534570 {
+extern int mem_0093A444;
+
+// @name NullRenderer::vfunc_77
+// @class NullRenderer
+// @summary Stores the NullRenderer vtable address and clears the following dword in the target object (stdcall, one pointer arg, ret 4).
+// @field NullRenderer +0x00 void* vftable
+// @field NullRenderer +0x04 int32_t field_0x04
+void fn_00534570(void* self) {
+    // Object layout: word 0 = vtable pointer, word 1 = zeroed field.
+    auto* words = static_cast<uint32_t*>(self);
+    words[0] = 0x0093A444u;
+    words[1] = 0u;
+}
+} // namespace lift_00534570

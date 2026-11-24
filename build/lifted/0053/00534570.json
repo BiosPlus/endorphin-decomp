@@ -1,0 +1,28 @@
+{
+  "va": "0x00534570",
+  "size": 20,
+  "orig_symbol": "NullRenderer::vfunc_77",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "NullRenderer::vfunc_77",
+  "class": "NullRenderer",
+  "signature": "void fn_00534570(void* self)",
+  "summary": "Stores the NullRenderer vtable address and clears the following dword in the target object (stdcall, one pointer arg, ret 4).",
+  "fields": [
+    {
+      "class": "NullRenderer",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vftable"
+    },
+    {
+      "class": "NullRenderer",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:06:45Z"
+}

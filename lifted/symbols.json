@@ -11798,6 +11798,13 @@
     "summary": "Pure jump thunk forwarding to sub_0054C640.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00534570": {
+    "name": "NullRenderer::vfunc_77",
+    "class": "NullRenderer",
+    "signature": "void fn_00534570(void* self)",
+    "summary": "Stores the NullRenderer vtable address and clears the following dword in the target object (stdcall, one pointer arg, ret 4).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00534640": {
     "name": "Light::vfunc_0",
     "class": "Light",
