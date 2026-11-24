@@ -17729,6 +17729,12 @@
     "summary": "Calls virtual slot 0 on self four times (indices 3..6), passing (arg1, index, arg2) each time.",
     "lifted_path": "lifted/classes/AnimatableTransform.cpp"
   },
+  "0x0058A8F0": {
+    "name": "getTranslationX",
+    "signature": "float __thiscall sub_0058A8F0(uintptr_t this_ptr)",
+    "summary": "Gets the X component of row 3 from a transform matrix retrieved via vtable on this+0x4.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x0058AB30": {
     "name": "QueryFloatViaMemberCallback",
     "signature": "float fn_0058AB30(void* self)",
@@ -39826,6 +39832,12 @@
     "name": "vec4d_add",
     "signature": "void sub_006E3660(double* out, const double* a, const double* b)",
     "summary": "Component-wise add of two 4-element double vectors: out = a + b.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
+  "0x006E3760": {
+    "name": "VecAddDoubles",
+    "signature": "void fn_006E3760(double* dst, const double* a, const double* b, uint32_t count)",
+    "summary": "Element-wise sum of two double arrays: dst[i] = a[i] + b[i] for i in [0, count).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006E3790": {

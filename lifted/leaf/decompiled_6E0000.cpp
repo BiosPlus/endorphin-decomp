@@ -451,3 +451,14 @@ void fn_006E3790(double* dst, const double* src, double scale, uint32_t count) {
     }
 }
 } // namespace lift_006E3790
+
+// [0x006E3760] sub_006E3760 (48 bytes)
+namespace lift_006E3760 {
+// @name VecAddDoubles
+// @summary Element-wise sum of two double arrays: dst[i] = a[i] + b[i] for i in [0, count).
+void fn_006E3760(double* dst, const double* a, const double* b, uint32_t count) {
+    for (uint32_t i = 0; i < count; ++i) {
+        dst[i] = a[i] + b[i];
+    }
+}
+} // namespace lift_006E3760

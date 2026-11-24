@@ -1,0 +1,13 @@
+{
+  "va": "0x006E3760",
+  "size": 48,
+  "orig_symbol": "sub_006E3760",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "VecAddDoubles",
+  "signature": "void fn_006E3760(double* dst, const double* a, const double* b, uint32_t count)",
+  "summary": "Element-wise sum of two double arrays: dst[i] = a[i] + b[i] for i in [0, count).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:20:26Z"
+}
