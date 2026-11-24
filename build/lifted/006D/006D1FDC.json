@@ -1,0 +1,14 @@
+{
+  "va": "0x006D1FDC",
+  "size": 36,
+  "orig_symbol": "sub_006D1FDC",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "GetByteTable006D1FDC",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "const uint8_t* fn_006D1FDC()",
+  "summary": "Returns a constant 36-byte lookup table (data, not code) found at 0x006D1FDC; bytes are 00 01, fifteen 02 pairs, 00 01, 8b ff.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:47:01Z"
+}

@@ -317,3 +317,24 @@ void fn_006D75C0(void) {
 }
 } // namespace lift_007747B0
 } // namespace lift_006D75C0
+
+// [0x006D1FDC] sub_006D1FDC (36 bytes)
+namespace lift_006D1FDC {
+// @name GetByteTable006D1FDC
+// @class <ClassName> (optional)
+// @summary Returns a constant 36-byte lookup table (data, not code) found at 0x006D1FDC; bytes are 00 01, fifteen 02 pairs, 00 01, 8b ff.
+// (no @field: function does not access any struct offsets)
+static const uint8_t kTable_006D1FDC[36] = {
+    0x00, 0x01,
+    0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02,
+    0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02,
+    0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02,
+    0x02, 0x02, 0x02, 0x02, 0x02,
+    0x00, 0x01,
+    0x8b, 0xff,
+};
+
+const uint8_t* fn_006D1FDC() {
+    return kTable_006D1FDC;
+}
+} // namespace lift_006D1FDC

@@ -37508,6 +37508,13 @@
     "summary": "Performs a sequence of byte and dword additions on [ecx], [esp+eax], [ecx+eax], and eax/al.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D1FDC": {
+    "name": "GetByteTable006D1FDC",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "const uint8_t* fn_006D1FDC()",
+    "summary": "Returns a constant 36-byte lookup table (data, not code) found at 0x006D1FDC; bytes are 00 01, fifteen 02 pairs, 00 01, 8b ff.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D2064": {
     "name": "DataTable_006D2064",
     "signature": "void fn_006D2064(void* self)",
