@@ -436,3 +436,21 @@ void __fastcall sub_00547B70(uint8_t* self, uint32_t /*edx*/) {
     }
 }
 } // namespace lift_00547B70
+
+// [0x00540572]
+namespace lift_00540572 {
+// @name glSetupDefaultCulling
+// @summary Configure default OpenGL polygon fill mode, CCW front face, and back-face culling.
+
+void __stdcall glPolygonMode(uint32_t face, uint32_t mode);
+void __stdcall glFrontFace(uint32_t mode);
+void __stdcall glCullFace(uint32_t mode);
+void __stdcall glEnable(uint32_t cap);
+
+void __stdcall sub_00540572(uint32_t /*unused*/) {
+    glPolygonMode(0x0408u, 0x1B02u); // GL_FRONT_AND_BACK, GL_FILL
+    glFrontFace(0x0901u);            // GL_CCW
+    glCullFace(0x0405u);             // GL_BACK
+    glEnable(0x0B44u);               // GL_CULL_FACE
+}
+} // namespace lift_00540572
