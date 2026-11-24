@@ -1,0 +1,22 @@
+{
+  "va": "0x006C9CE0",
+  "size": 32,
+  "orig_symbol": "sub_006C9CE0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::SetFlag0x100",
+  "class": "Unknown",
+  "signature": "void Unknown_SetFlag0x100(Unknown* self, uint32_t arg)",
+  "summary": "Copies bit 8 of the stack argument into bit 8 (0x100) of the dword at this+0x10; other bits are preserved.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "flags"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:33:34Z"
+}
