@@ -2903,6 +2903,13 @@
     "summary": "Returns the address of the read-only string constant at 0x0093209C (.rdata \"`KE\").",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x0043D370": {
+    "name": "std::_Uninitialized_copy (4-byte elements, MFC80 copy-ctor loop)",
+    "class": "std",
+    "signature": "extern \"C\" void* __cdecl fn_0043D370(const uint8_t* first, const uint8_t* last, uint8_t* dest)",
+    "summary": "Copy-constructs each 4-byte element of [first, last) into dest via ext_MFC80_ord781; returns dest + element count.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043D3B0": {
     "name": "fillCStringRange",
     "signature": "void sub_0043D3B0(uint32_t* begin, uint32_t* end, uint32_t value)",

@@ -1856,3 +1856,22 @@ extern void* __thiscall fn_00434AB0(void* self, void* out, uint32_t popped_arg) 
     return out;
 }
 } // namespace lift_00434AB0
+
+// [0x0043D370] sub_0043D370 (56 bytes)
+namespace lift_0043D370 {
+// Per-element copy-construct thunk imported from MFC80 (ordinal 781).
+// Called as __thiscall: ecx = destination element, one stack arg = source element.
+extern void __thiscall ext_MFC80_ord781(void* dest_elem, const void* src_elem);
+
+// @name std::_Uninitialized_copy (4-byte elements, MFC80 copy-ctor loop)
+// @summary Copy-constructs each 4-byte element of [first, last) into dest via ext_MFC80_ord781; returns dest + element count.
+extern void* __cdecl fn_0043D370(const uint8_t* first, const uint8_t* last, uint8_t* dest) {
+    uint8_t* result = dest + 4 * (((last - first) >> 2));
+    if (first != last) {
+        for (const uint8_t* src = first; src != last; src += 4) {
+            ext_MFC80_ord781(dest + (src - first), src);
+        }
+    }
+    return result;
+}
+} // namespace lift_0043D370
