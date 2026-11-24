@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_560000.cpp
 #include "lift_compat.h"
+#include <string>
 
 // [0x005694F0] sub_005694F0 (27 bytes)
 namespace lift_005694F0 {
@@ -13,3 +14,23 @@ void fn_005694F0(void* self, int edx_unused, int a1, int a2) {
     ext_005693E0(a1, a2, self, a2);
 }
 } // namespace lift_005694F0
+
+// [0x005649D0] sub_005649D0 (34 bytes)
+namespace lift_005649D0 {
+// Known callee 0x007C569A: thunk_XSIFtk-3.6.2.1_?Open@CSLScene@@QAEHPAD@Z
+// (IAT jump thunk forwarding to XSIFtk-3.6.2.1!?Open@CSLScene@@QAEHPAD@Z).
+// Original is a thiscall (this in ecx, one stack arg) returning BOOL-like int.
+extern int ext_007C569A(void* scene, const char* path);
+
+// @name Unknown::openSceneFromString
+// @class Unknown
+// @summary Opens the scene stored at this+0x494 using the C string of a std::string argument; returns true on failure (sete of Open's zero-check).
+// @field Unknown +0x494 void* field_0x494
+bool fn_005649D0(void* self, const std::string* path) {
+    // Original: c_str() via MSVCP80 IAT slot (mem_00924FF0), then CSLScene::Open(path).
+    // Portable form: path->c_str(); the IAT indirection is just the import for c_str.
+    void* scene = lift_field<void*>(self, 0x494);
+    int result = ext_007C569A(scene, path->c_str());
+    return result == 0;
+}
+} // namespace lift_005649D0

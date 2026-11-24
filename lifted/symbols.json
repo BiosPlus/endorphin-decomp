@@ -15693,6 +15693,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00563630 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005649D0": {
+    "name": "Unknown::openSceneFromString",
+    "class": "Unknown",
+    "signature": "bool fn_005649D0(void* self, const std::string* path)",
+    "summary": "Opens the scene stored at this+0x494 using the C string of a std::string argument; returns true on failure (sete of Open's zero-check).",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x00566FE0": {
     "name": "setField00AndReturnThis",
     "signature": "uint32_t __thiscall sub_00566FE0(void* this_ptr, uint32_t value)",

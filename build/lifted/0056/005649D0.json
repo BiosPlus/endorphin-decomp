@@ -1,0 +1,22 @@
+{
+  "va": "0x005649D0",
+  "size": 34,
+  "orig_symbol": "sub_005649D0",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "Unknown::openSceneFromString",
+  "class": "Unknown",
+  "signature": "bool fn_005649D0(void* self, const std::string* path)",
+  "summary": "Opens the scene stored at this+0x494 using the C string of a std::string argument; returns true on failure (sete of Open's zero-check).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x494",
+      "type": "void*",
+      "name": "field_0x494"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:55:04Z"
+}
