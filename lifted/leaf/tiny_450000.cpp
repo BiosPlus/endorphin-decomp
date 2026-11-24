@@ -64,6 +64,7 @@ extern "C" int mem_00937FC8;
 extern "C" void __fastcall ext_0045E700(void* self);
 extern "C" void __fastcall ext_0045E690(void* self);
 #include <cstdint>
+#include <string>
 
 // [0x00455BE0] sub_00455BE0 (6 bytes)
 // @name sub_00455BE0
@@ -326,3 +327,19 @@ extern int32_t __fastcall fn_00458FE0(void* self) {
     return ext_00458E10(self);
 }
 } // namespace lift_00458FE0
+
+// [0x00455260] sub_00455260 (25 bytes)
+namespace lift_00455260 {
+extern int mem_00924EB0;
+
+// @name std::string::assign(const char*, size_t) wrapper
+// @class std::string
+// @summary Assigns the first n bytes of src into the std::string at self; returns 0 (stdcall, callee pops 16 bytes).
+// @field std::string +0x00 std::string (whole object, accessed via std::string::assign)
+extern int __stdcall fn_00455260(void* self, const char* src, size_t n, void* unused) {
+    (void)unused;
+    auto* str = reinterpret_cast<std::string*>(self);
+    str->assign(src, n);
+    return 0;
+}
+} // namespace lift_00455260

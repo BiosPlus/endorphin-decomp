@@ -8,6 +8,7 @@
 // Recovered field layout for std::string:
 namespace lifted_layout {
 struct std_string_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x00489540, 0x0048B060, 0x004CB440, 0x005C61F0, 0x0060A090, 0x0066DD10)
+    // +0x0   void*                    field_0x00  (evidence: 0x00489540, 0x0048B060, 0x004CB440, 0x005C61F0, 0x0060A090, 0x0066DD10) // CONFLICT: multiple definitions at +0x0
+    // +0x0   std::string (whole object, accessed via std::string::assign)  (evidence: 0x00455260) // CONFLICT: multiple definitions at +0x0
 };
 } // namespace lifted_layout

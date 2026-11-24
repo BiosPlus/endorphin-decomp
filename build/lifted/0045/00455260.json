@@ -1,0 +1,22 @@
+{
+  "va": "0x00455260",
+  "size": 25,
+  "orig_symbol": "sub_00455260",
+  "src_path": "src/leaf/tiny_450000.cpp",
+  "lifted_path": "lifted/leaf/tiny_450000.cpp",
+  "name": "std::string::assign(const char*, size_t) wrapper",
+  "class": "std::string",
+  "signature": "extern \"C\" int __stdcall fn_00455260(void* self, const char* src, size_t n, void* unused)",
+  "summary": "Assigns the first n bytes of src into the std::string at self; returns 0 (stdcall, callee pops 16 bytes).",
+  "fields": [
+    {
+      "class": "std::string",
+      "offset": "+0x0",
+      "type": "std::string (whole object, accessed via",
+      "name": "std::string::assign)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:47:11Z"
+}
