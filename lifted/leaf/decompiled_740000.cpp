@@ -69,3 +69,14 @@ void* __thiscall fn_0074B080(void* self) {
     return self;
 }
 } // namespace lift_0074B080
+
+// [0x0074F680] sub_0074F680 (48 bytes)
+namespace lift_0074F680 {
+// @name divModCombine
+// @summary Returns (a / b) + (a % b) * c using signed 32-bit division; stdcall, 3 args (a, c, b).
+int32_t __stdcall fn_0074F680(int32_t a, int32_t c, int32_t b) {
+    const int32_t quotient = a / b;
+    const int32_t remainder = a % b;
+    return quotient + remainder * c;
+}
+} // namespace lift_0074F680

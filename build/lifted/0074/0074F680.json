@@ -1,0 +1,13 @@
+{
+  "va": "0x0074F680",
+  "size": 48,
+  "orig_symbol": "sub_0074F680",
+  "src_path": "src/leaf/decompiled_740000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_740000.cpp",
+  "name": "divModCombine",
+  "signature": "int32_t __stdcall fn_0074F680(int32_t a, int32_t c, int32_t b)",
+  "summary": "Returns (a / b) + (a % b) * c using signed 32-bit division; stdcall, 3 args (a, c, b).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:24:35Z"
+}

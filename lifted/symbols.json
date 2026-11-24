@@ -39509,6 +39509,13 @@
     "summary": "Pure jump thunk forwarding to sub_006D2250.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D2250": {
+    "name": "Buffer::release",
+    "class": "Buffer",
+    "signature": "void __thiscall sub_006D2250(void* self)",
+    "summary": "Frees the buffer at +0x10 if non-null and resets fields at +0x00, +0x04, and +0x10 to zero.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D2390": {
     "name": "ForwardArgToCalleeReturnThis",
     "signature": "void* fn_006D2390(void* self, uint32_t arg1)",
@@ -46768,6 +46775,12 @@
     "summary": "Stdcall(a, n): if a is in (-n, 0) returns a + n; if a is in (0, n] returns a - 1; otherwise returns -1.",
     "lifted_path": "lifted/leaf/decompiled_740000.cpp"
   },
+  "0x0074F680": {
+    "name": "divModCombine",
+    "signature": "int32_t __stdcall fn_0074F680(int32_t a, int32_t c, int32_t b)",
+    "summary": "Returns (a / b) + (a % b) * c using signed 32-bit division; stdcall, 3 args (a, c, b).",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
+  },
   "0x0074F820": {
     "name": "sub_0074F820",
     "class": "Unknown",
@@ -50021,6 +50034,12 @@
     "name": "sub_0080B670",
     "signature": "uint32_t fn_0080B670(uint32_t size)",
     "summary": "Auto-lifted identical-shape clone of 0x0080FC40 (GlobalAllocZeroWrapper).",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
+  "0x0080B680": {
+    "name": "strcat_wrapper",
+    "signature": "uint32_t sub_0080B680(uint32_t dst_addr, uint32_t src_addr)",
+    "summary": "Forwards destination and source string pointers to strcat_impl (sub_00859A20) and returns the destination pointer.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
   "0x0080C690": {
