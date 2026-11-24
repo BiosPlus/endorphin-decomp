@@ -391,3 +391,17 @@ extern void* __fastcall fn_00783790(void* self, int edx_unused) {
     return self;
 }
 } // namespace lift_00783790
+
+// [0x00788D00] sub_00788D00 (16 bytes)
+namespace lift_00788D00 {
+// @name Unknown::resetCounters
+// @class Unknown
+// @summary Zeroes a dword at offset 0x00 and a byte flag at offset 0x654 of the object.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x654 uint8_t field_0x654
+void fn_00788D00(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0u;
+    base[0x654] = 0u;
+}
+} // namespace lift_00788D00

@@ -1,0 +1,28 @@
+{
+  "va": "0x00788D00",
+  "size": 16,
+  "orig_symbol": "sub_00788D00",
+  "src_path": "src/leaf/tiny_780000.cpp",
+  "lifted_path": "lifted/leaf/tiny_780000.cpp",
+  "name": "Unknown::resetCounters",
+  "class": "Unknown",
+  "signature": "void fn_00788D00(void* self)",
+  "summary": "Zeroes a dword at offset 0x00 and a byte flag at offset 0x654 of the object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x654",
+      "type": "uint8_t",
+      "name": "field_0x654"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:45:06Z"
+}
