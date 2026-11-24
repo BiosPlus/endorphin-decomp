@@ -310,3 +310,37 @@ uint32_t __thiscall sub_0069B640(uint32_t ecx, uint32_t arg1, uint32_t arg2, uin
     return arg1 + 8u * arg2;
 }
 } // namespace lift_0069B640
+
+// [0x006968D0] read_line_until_newline_or_eof (58 bytes)
+namespace lift_006968D0 {
+// MSVCP80 imports used by this function (called through IAT slots 0x9250BC / 0x9250C0).
+// basic_istream<char>::get(char&) -- thiscall, returns istream&.
+extern void* __thiscall ext_MSVCP80_istream_get_char(void* self, char* out);
+// basic_ios::operator!() const -- thiscall, returns true when the stream is in a failed state.
+extern bool __thiscall ext_MSVCP80_ios_base_not(const void* self);
+
+// @name readLineUntilNewlineOrEof
+// @summary Reads chars from an istream until '\n' or 0xFF is read; returns false if the stream fails first, true otherwise.
+// (No direct class field offsets are accessed; the only offsets used are the istream vbtable displacement at vptr+4, which is not a class field.)
+bool fn_006968D0(void* stream) {
+    for (;;) {
+        char c = 0;
+        // get(c) on the stream
+        void* in = ext_MSVCP80_istream_get_char(stream, &c);
+
+        // Locate the basic_ios subobject via the virtual base displacement stored in the vtable at +4.
+        const void* vptr = lift_field<const void*>(in, 0);
+        ptrdiff_t disp = lift_field<int32_t>(vptr, 4);
+        void* ios = reinterpret_cast<uint8_t*>(in) + disp;
+
+        if (ext_MSVCP80_ios_base_not(ios)) {
+            return false;
+        }
+
+        const unsigned char uc = static_cast<unsigned char>(c);
+        if (uc == 0x0A || uc == 0xFF) {
+            return true;
+        }
+    }
+}
+} // namespace lift_006968D0

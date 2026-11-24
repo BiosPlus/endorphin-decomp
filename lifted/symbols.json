@@ -37526,6 +37526,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051AED0 (NMData::RealChannel::vfunc_8).",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x006968D0": {
+    "name": "readLineUntilNewlineOrEof",
+    "signature": "bool fn_006968D0(void* stream)",
+    "summary": "Reads chars from an istream until '\\n' or 0xFF is read; returns false if the stream fails first, true otherwise.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00696D90": {
     "name": "initStruct_00696D90",
     "signature": "uint32_t __thiscall sub_00696D90(uint32_t this_ptr)",

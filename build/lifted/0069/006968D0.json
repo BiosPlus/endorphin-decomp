@@ -1,0 +1,13 @@
+{
+  "va": "0x006968D0",
+  "size": 58,
+  "orig_symbol": "sub_006968D0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "readLineUntilNewlineOrEof",
+  "signature": "bool fn_006968D0(void* stream)",
+  "summary": "Reads chars from an istream until '\\n' or 0xFF is read; returns false if the stream fails first, true otherwise.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:24:07Z"
+}
