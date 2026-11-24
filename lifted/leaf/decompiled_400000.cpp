@@ -80,3 +80,22 @@ void fn_00401DE0(void* self) {
 }
 } // namespace lift_00594790
 } // namespace lift_00401DE0
+
+// [0x00401B60]
+namespace lift_00401B60 {
+extern int mem_00928ECC;
+
+extern void ext_MSVCP80_basic_string_char_dtor(void* self);
+extern void ext_MSVCR80_exception_dtor(void* self);
+
+// @name Unknown::~Unknown (std::exception-derived, std::string member at +0x0C)
+// @class Unknown
+// @summary Destructor: installs derived vtable, destroys the std::string member at +0x0C, then tail-calls the std::exception base destructor.
+// @field Unknown +0x00 void* vfptr
+// @field Unknown +0x0C std::string field_0x0C
+void fn_00401B60(void* self) {
+    lift_field<const void*>(self, 0x00) = reinterpret_cast<const void*>(&mem_00928ECC);
+    ext_MSVCP80_basic_string_char_dtor(static_cast<uint8_t*>(self) + 0x0C);
+    ext_MSVCR80_exception_dtor(self);
+}
+} // namespace lift_00401B60

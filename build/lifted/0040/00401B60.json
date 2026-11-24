@@ -1,0 +1,28 @@
+{
+  "va": "0x00401B60",
+  "size": 27,
+  "orig_symbol": "sub_00401B60",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "Unknown::~Unknown (std::exception-derived, std::string member at +0x0C)",
+  "class": "Unknown",
+  "signature": "void fn_00401B60(void* self)",
+  "summary": "Destructor: installs derived vtable, destroys the std::string member at +0x0C, then tail-calls the std::exception base destructor.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vfptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:59:30Z"
+}
