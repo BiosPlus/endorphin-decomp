@@ -789,3 +789,22 @@ void* fn_0070EA90(void* self, void* arg) {
 }
 } // namespace lift_0071B020
 } // namespace lift_0070EA90
+
+// [0x00705760]
+namespace lift_00705760 {
+uint32_t mem_r32(uintptr_t addr);
+void mem_w32(uintptr_t addr, uint32_t val);
+
+// @name sub_00705760
+// @summary Clears bit 0 of field_0x84, invokes vtable+0xbc with the masked value, and zeroes field_0xdc.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x84 uint32_t field_0x84
+// @field Unknown +0xdc uint32_t field_0xdc
+void __thiscall sub_00705760(uintptr_t self) {
+    uint32_t masked = mem_r32(self + 0x84) & ~1u;
+    uintptr_t vtable = mem_r32(self);
+    auto vfn = reinterpret_cast<void(__thiscall*)(uintptr_t, uint32_t)>(mem_r32(vtable + 0xbc));
+    vfn(self, masked);
+    mem_w32(self + 0xdc, 0);
+}
+} // namespace lift_00705760

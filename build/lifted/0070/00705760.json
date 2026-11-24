@@ -1,0 +1,33 @@
+{
+  "va": "0x00705760",
+  "size": 35,
+  "orig_symbol": "sub_00705760",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "sub_00705760",
+  "signature": "void __thiscall sub_00705760(uintptr_t self)",
+  "summary": "Clears bit 0 of field_0x84, invokes vtable+0xbc with the masked value, and zeroes field_0xdc.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "uint32_t",
+      "name": "field_0x84"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xDC",
+      "type": "uint32_t",
+      "name": "field_0xdc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:00:03Z"
+}
