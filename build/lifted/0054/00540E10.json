@@ -1,0 +1,46 @@
+{
+  "va": "0x00540E10",
+  "size": 34,
+  "orig_symbol": "sub_00540E10",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::setValueAndNotifyExtent",
+  "class": "Unknown",
+  "signature": "void fn_00540E10(void* self, int32_t value)",
+  "summary": "Stores the argument at self+0; if it is nonzero, passes the (bottom-top, right-left) extent of the 16-byte block at self+4..self+0x10 to ext_00548110.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:54:50Z"
+}

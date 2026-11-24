@@ -209,3 +209,25 @@ double fn_005481C0(void* self) {
     return lift_field<double>(self, 0xD0);
 }
 } // namespace lift_005481C0
+
+// [0x00540E10] sub_00540E10 (34 bytes)
+namespace lift_00540E10 {
+extern void ext_00548110(int32_t height, int32_t width);
+
+// @name Unknown::setValueAndNotifyExtent
+// @class Unknown
+// @summary Stores the argument at self+0; if it is nonzero, passes the (bottom-top, right-left) extent of the 16-byte block at self+4..self+0x10 to ext_00548110.
+// @field Unknown +0x00 int32_t field_0x00
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x08 int32_t field_0x08
+// @field Unknown +0x0C int32_t field_0x0C
+// @field Unknown +0x10 int32_t field_0x10
+void fn_00540E10(void* self, int32_t value) {
+    lift_field<int32_t>(self, 0x00) = value;
+    if (value != 0) {
+        const int32_t width  = lift_field<int32_t>(self, 0x10) - lift_field<int32_t>(self, 0x08);
+        const int32_t height = lift_field<int32_t>(self, 0x0C) - lift_field<int32_t>(self, 0x04);
+        ext_00548110(height, width);
+    }
+}
+} // namespace lift_00540E10
