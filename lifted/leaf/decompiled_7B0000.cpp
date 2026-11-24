@@ -245,3 +245,24 @@ uint8_t* fn_007B1FA0(uint8_t* self) {
     return self;
 }
 } // namespace lift_007B1FA0
+
+// [0x007B2DF0]
+namespace lift_007B2DF0 {
+// @name ListFindFirstByKey
+// @class ListNode
+// @summary Walks a singly linked list from head and stores the first node whose dword key matches, or 0 if none.
+// @field ListNode +0x00 uint32_t key
+// @field ListNode +0x10 uint32_t next
+void fn_007B2DF0(uint32_t head, uint32_t key, uint32_t* out) {
+    uint32_t found = 0;
+    uint32_t node = head;
+    while (node != 0 && found == 0) {
+        void* n = reinterpret_cast<void*>(static_cast<uintptr_t>(node));
+        if (lift_field<uint32_t>(n, 0x00) == key) {
+            found = node;
+        }
+        node = lift_field<uint32_t>(n, 0x10);
+    }
+    *out = found;
+}
+} // namespace lift_007B2DF0

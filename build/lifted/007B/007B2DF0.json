@@ -1,0 +1,28 @@
+{
+  "va": "0x007B2DF0",
+  "size": 48,
+  "orig_symbol": "sub_007B2DF0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "ListFindFirstByKey",
+  "class": "ListNode",
+  "signature": "void fn_007B2DF0(uint32_t head, uint32_t key, uint32_t* out)",
+  "summary": "Walks a singly linked list from head and stores the first node whose dword key matches, or 0 if none.",
+  "fields": [
+    {
+      "class": "ListNode",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "key"
+    },
+    {
+      "class": "ListNode",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "next"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:27:48Z"
+}
