@@ -208,3 +208,35 @@ float fn_0058AB60(void* self) {
     return lift_field<float>(out, 0x34);
 }
 } // namespace lift_0058AB60
+
+// [0x0058AB90] sub_0058AB90 (44 bytes)
+namespace lift_0058AB90 {
+extern uint32_t mem_00B40644;
+
+// @name ForwardCallbackReturnFloat38
+// @class this (unnamed class; receiver is the object at this+0x04 for the call)
+// @summary Calls the function pointer stored at *(this+0x04)+0x10, passing &this->field_0x04, a scratch buffer, this->field_0xf0 and mem_00B40644; returns the float at the returned object's +0x38.
+// @field this +0x04 uint8_t* field_0x04
+// @field this +0xF0 uint32_t field_0xf0
+float fn_0058AB90(uint8_t* self) {
+    using CallbackFn = void* (*)(void* thisPtr, void* outBuf, uint32_t a, uint32_t b);
+
+    // obj = *(this+0x04); callee = *(obj+0x10)
+    const uint32_t objAddr = *reinterpret_cast<const uint32_t*>(self + 0x04);
+    const uint32_t fnAddr =
+        *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(objAddr) + 0x10);
+    const auto callee = reinterpret_cast<CallbackFn>(static_cast<uintptr_t>(fnAddr));
+
+    const uint32_t arg = *reinterpret_cast<const uint32_t*>(self + 0xF0);
+    const uint32_t global = mem_00B40644;
+
+    alignas(8) uint8_t outBuf[0x40];
+    // The callee receives `this` = self + 0x04 (ecx in the original).
+    void* ret = callee(self + 0x04, outBuf, arg, global);
+
+    // Returned object's float at +0x38 is the result (x87 st0 in the original).
+    float result = 0.0f;
+    std::memcpy(&result, static_cast<const uint8_t*>(ret) + 0x38, sizeof(result));
+    return result;
+}
+} // namespace lift_0058AB90

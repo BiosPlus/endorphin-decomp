@@ -1,0 +1,28 @@
+{
+  "va": "0x0058AB90",
+  "size": 44,
+  "orig_symbol": "sub_0058AB90",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "ForwardCallbackReturnFloat38",
+  "class": "this (unnamed class; receiver is the object at this+0x04 for the call)",
+  "signature": "float fn_0058AB90(uint8_t* self)",
+  "summary": "Calls the function pointer stored at *(this+0x04)+0x10, passing \u0026this-\u003efield_0x04, a scratch buffer, this-\u003efield_0xf0 and mem_00B40644; returns the float at the returned object's +0x38.",
+  "fields": [
+    {
+      "class": "this",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "this",
+      "offset": "+0xF0",
+      "type": "uint32_t",
+      "name": "field_0xf0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:03:38Z"
+}

@@ -9,10 +9,12 @@
 namespace lifted_layout {
 struct this_Fields {
     // +0x0   uint32_t                 vtable  (evidence: 0x006AFDC0)
+    // +0x4   uint8_t*                 field_0x04  (evidence: 0x0058AB90)
     // +0x8   struct                   field_0x08  (evidence: 0x006111A0)
     // +0xC   uint32_t                 field_0x0c  (evidence: 0x0071C5C0)
     // +0x54  uint32_t*                field_0x54  (evidence: 0x006AF8E0)
     // +0x58  int32_t                  field_0x58  (evidence: 0x006AF8E0)
+    // +0xF0  uint32_t                 field_0xf0  (evidence: 0x0058AB90)
     // +0x114 void*                    child  (evidence: 0x00430260, 0x00430DA0, 0x00433B70)
 };
 } // namespace lifted_layout
