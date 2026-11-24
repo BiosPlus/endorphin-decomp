@@ -48,7 +48,7 @@ struct Unknown_Fields {
     // +0x4   void* field_0x04 (arg2: sub-object pointer read at +0x4)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (inner object of the context argument)  (evidence: 0x005853E0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (sub-object pointer read from the NM::Vector3 const & argument)  (evidence: 0x005B80A0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    child  (evidence: 0x005DA150, 0x005DA170) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    child  (evidence: 0x005DA150, 0x005DA170, 0x006305A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer to subobject, dereferenced)  (evidence: 0x00661A40) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066BB70) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066AF60, 0x0066AFC0) // CONFLICT: multiple definitions at +0x4
@@ -244,6 +244,7 @@ struct Unknown_Fields {
     // +0x100 void* field_0x100 (tail-call target passed to ext_0044B780)  (evidence: 0x004332B0, 0x004332D0, 0x00648940) // CONFLICT: multiple definitions at +0x100
     // +0x100 void*                    field_0x100  (evidence: 0x00430260, 0x00430310) // CONFLICT: multiple definitions at +0x100
     // +0x108 void* field_0x108 (argument passed to ext_0043C8F0)  (evidence: 0x004332B0, 0x004332D0, 0x00648940)
+    // +0x114 void*                    sub114  (evidence: 0x006305A0)
     // +0x128 DWORD                    field_0x128  (evidence: 0x0043C900)
     // +0x12C embedded_object          field_0x12C  (evidence: 0x004137F0) // CONFLICT: multiple definitions at +0x12C
     // +0x12C uint8_t                  field_0x12C  (evidence: 0x004646A0, 0x00468730, 0x0046F910) // CONFLICT: multiple definitions at +0x12C

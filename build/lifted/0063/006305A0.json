@@ -1,0 +1,27 @@
+{
+  "va": "0x006305A0",
+  "size": 26,
+  "orig_symbol": "sub_006305A0",
+  "src_path": "src/leaf/tiny_630000.cpp",
+  "lifted_path": "lifted/leaf/tiny_630000.cpp",
+  "name": "fn_006305A0_ForwardSlot30AndReturnSub114",
+  "signature": "void* fn_006305A0(void* self)",
+  "summary": "Calls virtual slot 0x30 on the object at self+0x04 with (self+0x114, 1); returns self+0x114.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "child"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x114",
+      "type": "void*",
+      "name": "sub114"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:56:41Z"
+}

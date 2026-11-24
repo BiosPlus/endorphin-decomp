@@ -139,3 +139,28 @@ void* fn_00630580(void* self) {
     return sub;
 }
 } // namespace lift_00630580
+
+// [0x006305A0] sub_006305A0 (26 bytes)
+namespace lift_006305A0 {
+// @name fn_006305A0_ForwardSlot30AndReturnSub114
+// @summary Calls virtual slot 0x30 on the object at self+0x04 with (self+0x114, 1); returns self+0x114.
+// @field Unknown +0x04 void* child
+// @field Unknown +0x114 void* sub114
+//
+// Calling convention (from asm): self arrives in ECX (thiscall), no stack cleanup
+// by the caller. Virtual call args are pushed as (sub114, 1), so the callee receives
+// (this = child, sub114, 1) with the callee popping its own arguments.
+using ForwardSlotFn = void(__thiscall*)(void* self, void* arg, int flag);
+
+void* fn_006305A0(void* self) {
+    void* sub114 = static_cast<uint8_t*>(self) + 0x114;
+    void* child = lift_field<void*>(self, 0x04);
+
+    // vtable = *(child); slot at +0x30 = vtable[0x30 / sizeof(void*)] on 32-bit
+    auto* vtable = *reinterpret_cast<void* const* const*>(child);
+    auto slot = reinterpret_cast<ForwardSlotFn>(const_cast<void*>(vtable[0x30 / 4]));
+
+    slot(child, sub114, 1);
+    return sub114;
+}
+} // namespace lift_006305A0
