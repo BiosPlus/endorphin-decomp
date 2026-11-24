@@ -1510,3 +1510,25 @@ int PostKeyMessageToWindow(void* self, uint32_t msg, uint16_t a2, uint16_t a3) {
     return ext_PostMessageA(hwnd, 0x100, static_cast<WPARAM>(msg), static_cast<LPARAM>(lparam));
 }
 } // namespace lift_004489A0
+
+// [0x0044C420]
+namespace lift_0044C420 {
+// @name ArrayDwordElementAddr
+// @summary Calls sub_0044C330 with six stack arguments, then returns the address a1 + 4*a2 (dword element a2 of array a1).
+
+// Callee ext_0044C330 (sub_0044C330): cdecl, six stack arguments, result unused here.
+extern uint32_t __cdecl ext_0044C330(uint32_t a0, uint32_t a1, uint32_t a2,
+                                         uint32_t a3, uint32_t a4, uint32_t a5);
+
+// Stdcall (ret 0xc) with three stack arguments. The original also reads the
+// incoming ECX register: it is saved, its low byte is zeroed in a local slot,
+// and the resulting value is passed to the callee. ecx_in carries that
+// incoming ECX value and must be supplied by the lifted caller.
+uint32_t __stdcall ArrayDwordElementAddr(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t ecx_in) {
+    uint32_t local = ecx_in & 0xFFFFFF00u;  // low byte of the saved-ECX slot set to 0
+
+    (void)ext_0044C330(a1, a2, a3, ecx_in, a3, local);
+
+    return a1 + 4u * a2;  // lea eax, [edi + 4*esi]
+}
+} // namespace lift_0044C420

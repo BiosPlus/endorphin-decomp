@@ -4005,6 +4005,12 @@
     "summary": "Copies DWORDs from [first, last) to out (skipping stores when out is null); returns out + count.",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044C420": {
+    "name": "ArrayDwordElementAddr",
+    "signature": "uint32_t __stdcall ArrayDwordElementAddr(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t ecx_in)",
+    "summary": "Calls sub_0044C330 with six stack arguments, then returns the address a1 + 4*a2 (dword element a2 of array a1).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044C4D0": {
     "name": "DWORD_RangeCopy_thiscall",
     "signature": "DWORD* __thiscall fn_0044C4D0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",

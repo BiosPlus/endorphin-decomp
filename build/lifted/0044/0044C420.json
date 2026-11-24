@@ -1,0 +1,13 @@
+{
+  "va": "0x0044C420",
+  "size": 51,
+  "orig_symbol": "sub_0044C420",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "ArrayDwordElementAddr",
+  "signature": "uint32_t __stdcall ArrayDwordElementAddr(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t ecx_in)",
+  "summary": "Calls sub_0044C330 with six stack arguments, then returns the address a1 + 4*a2 (dword element a2 of array a1).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:07:21Z"
+}
