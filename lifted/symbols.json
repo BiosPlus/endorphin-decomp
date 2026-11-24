@@ -35592,6 +35592,12 @@
     "summary": "Dereference a 32-bit pointer and return its uint32_t value.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D5BA0": {
+    "name": "setField04_007D5BA0",
+    "signature": "void fn_007D5BA0(void* self, uint32_t value)",
+    "summary": "Stores the second stack argument as a 32-bit value at offset 0x04 of the object pointed to by the first argument.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D5BC0": {
     "name": "getField0x20",
     "signature": "extern \"C\" uint32_t sub_007D5BC0(uint32_t arg0)",

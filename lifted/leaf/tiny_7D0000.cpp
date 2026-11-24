@@ -205,3 +205,14 @@ void sub_007D4AE0(void* self) {
     *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(p) + 0x30) = 1u;
 }
 } // namespace lift_007D4AE0
+
+// [0x007D5BA0] sub_007D5BA0 (12 bytes)
+namespace lift_007D5BA0 {
+// @name setField04_007D5BA0
+// @summary Stores the second stack argument as a 32-bit value at offset 0x04 of the object pointed to by the first argument.
+// @field <unknown> +0x04 uint32_t field_0x04
+void fn_007D5BA0(void* self, uint32_t value) {
+    auto* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x04) = value;
+}
+} // namespace lift_007D5BA0
