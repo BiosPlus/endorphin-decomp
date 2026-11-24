@@ -34123,6 +34123,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x2B8.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006F8AC0": {
+    "name": "Unknown::InitZeroAndDelegate",
+    "class": "Unknown",
+    "signature": "void* fn_006F8AC0(void* ecx)",
+    "summary": "Zeroes the first dword of this and tail-calls fn_006B9960 on this + 4.",
+    "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
+  },
   "0x006F8E00": {
     "name": "sub_006F8E00",
     "signature": "extern \"C\" void __fastcall fn_006F8E00(void* self, int edx_unused, uint8_t value)",
@@ -34391,6 +34398,12 @@
     "name": "sub_00700820",
     "signature": "extern \"C\" void* __fastcall fn_00700820(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00700840 and frees memory when (flags \u0026 1) is set.",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x007008B0": {
+    "name": "get_field_0x1e8",
+    "signature": "uint8_t __thiscall sub_007008B0(uint32_t self)",
+    "summary": "Reads byte at offset 0x1e8 from the object pointed to at [ecx + 0xc].",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
   "0x007008C0": {
