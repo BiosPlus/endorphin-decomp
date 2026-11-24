@@ -405,3 +405,32 @@ extern void fn_007D8890(void* self, uint32_t a1, uint32_t a2) {
     ext_007D8860(result, a1, a2);
 }
 } // namespace lift_007D8890
+
+// [0x007DB9E0]
+namespace lift_007DB9E0 {
+// @name buildSkewSymmetricMatrix
+// @summary Builds a 3x3 skew-symmetric (cross-product) matrix in [eax] from a 3D vector in [ecx]
+// @field Vec3 +0x00 float x
+// @field Vec3 +0x04 float y
+// @field Vec3 +0x08 float z
+
+
+float mem_read_f32(uint32_t addr);
+void mem_write_f32(uint32_t addr, float val);
+
+void sub_007DB9E0(uint32_t eax, uint32_t ecx) {
+    float x = mem_read_f32(ecx + 0x0);
+    float y = mem_read_f32(ecx + 0x4);
+    float z = mem_read_f32(ecx + 0x8);
+
+    mem_write_f32(eax + 0x20, 0.0f);
+    mem_write_f32(eax + 0x10, 0.0f);
+    mem_write_f32(eax + 0x00, 0.0f);
+    mem_write_f32(eax + 0x04, z);
+    mem_write_f32(eax + 0x0c, -z);
+    mem_write_f32(eax + 0x08, -y);
+    mem_write_f32(eax + 0x18, y);
+    mem_write_f32(eax + 0x14, x);
+    mem_write_f32(eax + 0x1c, -x);
+}
+} // namespace lift_007DB9E0

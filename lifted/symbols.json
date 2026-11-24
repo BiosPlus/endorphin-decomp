@@ -1064,6 +1064,12 @@
     "summary": "Forwards two MFC80 ord_2902/ord_876 results from arg3 along with arg1 and arg2 to vtable+0x64",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x004142A0": {
+    "name": "sub_004142A0",
+    "signature": "uint32_t __thiscall sub_004142A0(void* self, void* arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Calls MFC80!ord_2902 and MFC80!ord_876 on arg1, then dispatches result to this-\u003evtable+0x70",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00414510": {
     "name": "std::operator+ (basic_string\u003cchar\u003e forwarder)",
     "class": "std",
@@ -54749,6 +54755,12 @@
     "signature": "void* GetIndexedEntryChecked(void* self, int32_t index)",
     "summary": "Returns pointer to entry `index` (64-byte stride) of the object's entry array, or nullptr if index \u003e= count.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
+  "0x007DB9E0": {
+    "name": "buildSkewSymmetricMatrix",
+    "signature": "void sub_007DB9E0(uint32_t eax, uint32_t ecx)",
+    "summary": "Builds a 3x3 skew-symmetric (cross-product) matrix in [eax] from a 3D vector in [ecx]",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
   "0x007DC8C0": {
     "name": "SearchKeyedTable16",
