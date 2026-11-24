@@ -737,3 +737,17 @@ void fn_00440970(void* self) {
     lift_field<uint8_t>(self, 0x88) = 1;
 }
 } // namespace lift_00440970
+
+// [0x00440990] sub_00440990 (26 bytes)
+namespace lift_00440990 {
+// @name clearByte88IfByte8eSet
+// @summary If both byte flags at +0x88 and +0x8e are nonzero, clear the +0x88 flag.
+// @field object +0x88 uint8_t field_0x88
+// @field object +0x8e uint8_t field_0x8e
+void fn_00440990(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    if (base[0x88] != 0 && base[0x8e] != 0) {
+        base[0x88] = 0;
+    }
+}
+} // namespace lift_00440990

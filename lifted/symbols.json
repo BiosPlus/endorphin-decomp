@@ -2015,6 +2015,12 @@
     "summary": "If byte +0x88 is clear and byte +0x8e is set, set byte +0x88 to 1.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x00440990": {
+    "name": "clearByte88IfByte8eSet",
+    "signature": "void fn_00440990(void* self)",
+    "summary": "If both byte flags at +0x88 and +0x8e are nonzero, clear the +0x88 flag.",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x004409D0": {
     "name": "sub_004409D0",
     "signature": "uint32_t fn_004409D0(void* self)",
@@ -27027,6 +27033,13 @@
     "class": "SubObject",
     "signature": "uint8_t fn_0067ADE0(void* self)",
     "summary": "Returns 1 if the calling thread matches the owner thread id stored in the object at this+0x0C, else 0.",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
+  "0x0067AE00": {
+    "name": "ThreadController::setLowestPriorityIfMode2",
+    "class": "ThreadController",
+    "signature": "void __thiscall sub_0067AE00(uint32_t self, uint32_t mode)",
+    "summary": "Sets the thread priority to lowest (-2) when the argument equals 2.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
   "0x0067AEE8": {
