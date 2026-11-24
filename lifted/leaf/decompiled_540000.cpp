@@ -516,3 +516,24 @@ void __thiscall fn_00543E00(void* self, float delta) {
     }
 }
 } // namespace lift_00543E00
+
+// [0x0054F2C0] sub_0054F2C0 (55 bytes)
+namespace lift_0054F2C0 {
+extern void ext_0054F1E0(std::uintptr_t a0, std::uint32_t a1, std::uint32_t a2,
+                             std::uint32_t a3, std::uint32_t a4, std::uint32_t a5);
+
+// @name ComputeRecordAddress
+// @summary Calls helper sub_0054F1E0 with the arguments and a zeroed flag word, then returns base + index * 0x68.
+// (no direct struct field accesses in this function)
+__stdcall std::uint8_t* fn_0054F2C0(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2) {
+    // The original stores 0 into the low byte of a stack slot that previously held ECX,
+    // so the dword passed on is ECX with its low byte cleared. ECX at entry is not
+    // recoverable from the stdcall signature; it is modelled as a placeholder here.
+    std::uint32_t ecx_in = 0;
+    std::uint32_t flag_slot = ecx_in & 0xFFFFFF00u;
+
+    ext_0054F1E0(reinterpret_cast<std::uintptr_t>(base), index, arg2, ecx_in, arg2, flag_slot);
+
+    return base + static_cast<std::size_t>(index) * 0x68u;
+}
+} // namespace lift_0054F2C0

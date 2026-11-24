@@ -19033,6 +19033,12 @@
     "summary": "Invokes sub_0054F030 on each 0x68-byte element in [begin, end) with arg.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x0054F2C0": {
+    "name": "ComputeRecordAddress",
+    "signature": "__stdcall std::uint8_t* fn_0054F2C0(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2)",
+    "summary": "Calls helper sub_0054F1E0 with the arguments and a zeroed flag word, then returns base + index * 0x68.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054F370": {
     "name": "sub_0054F370",
     "signature": "DWORD* __thiscall fn_0054F370(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
