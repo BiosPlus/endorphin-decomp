@@ -39068,6 +39068,13 @@
     "summary": "Reads the 32-bit signed integer at offset 0x34 and arithmetic-shifts it right by 27 bits.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006FA3E0": {
+    "name": "Unknown::CallWithShiftedFieldPlusOne",
+    "class": "Self",
+    "signature": "void fn_006FA3E0(uintptr_t self)",
+    "summary": "Passes (getField34Shifted27(self) + 1) to sub_006FA3C0 using the same self.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FA520": {
     "name": "sub_006FA520",
     "signature": "void fn_006FA520(uint32_t arg)",

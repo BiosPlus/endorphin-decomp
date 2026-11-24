@@ -84,3 +84,21 @@ uint32_t fn_006F7930(void* self, uint32_t& value) {
     return slot(self, &value, 0u, 0u, 0u);
 }
 } // namespace lift_006F7930
+
+// [0x006FA3E0] sub_006FA3E0 (32 bytes)
+namespace lift_006FA3E0 {
+// Known callee 0x006FA3B0: getField34Shifted27 (Reads the 32-bit signed integer at offset 0x34 and arithmetic-shifts it right by 27 bits.)
+int32_t sub_006FA3B0(uintptr_t self);
+// Unlifted callee 0x006FA3C0 (32B): single stack argument, self in ecx.
+void sub_006FA3C0(uintptr_t self, int32_t value);
+
+// @name Unknown::CallWithShiftedFieldPlusOne
+// @class Self
+// @summary Passes (getField34Shifted27(self) + 1) to sub_006FA3C0 using the same self.
+// @field Self +0x34 int32_t field_0x34
+void fn_006FA3E0(uintptr_t self) {
+    int32_t v = sub_006FA3B0(self);
+    v = static_cast<int32_t>(static_cast<uint32_t>(v) + 1u);
+    sub_006FA3C0(self, v);
+}
+} // namespace lift_006FA3E0
