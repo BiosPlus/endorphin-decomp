@@ -163,27 +163,6 @@ void fn_006294F0(void* self) {
 }
 } // namespace lift_006294F0
 
-// [0x00629EE0] sub_00629EE0 (36 bytes)
-namespace lift_00629EE0 {
-// @name ComputeDeltaFromSource
-// @summary Stores a float from a source provider at +0x30 and writes (value - +0x38) to +0x34.
-// @field <unknown> +0x30 float field_0x30
-// @field <unknown> +0x34 float field_0x34
-// @field <unknown> +0x38 float field_0x38
-
-extern int32_t __cdecl ext_00594000(void);
-extern float __fastcall ext_00594010(void* self);
-
-void fn_00629EE0(void* self) {
-    const int32_t src = ext_00594000();
-    void* const provider = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(src)));
-    const float value = ext_00594010(provider);
-
-    lift_field<float>(self, 0x30) = value;
-    lift_field<float>(self, 0x34) = value - lift_field<float>(self, 0x38);
-}
-} // namespace lift_00629EE0
-
 // [0x00629E80] sub_00629E80 (36 bytes)
 namespace lift_00629E80 {
 // Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
@@ -214,3 +193,24 @@ void fn_00629E80(void* self) {
     std::memcpy(base + 0x2C, &delta, sizeof(float));
 }
 } // namespace lift_00629E80
+
+// [0x00629EE0] sub_00629EE0 (36 bytes)
+namespace lift_00629EE0 {
+// @name ComputeDeltaFromSource
+// @summary Stores a float from a source provider at +0x30 and writes (value - +0x38) to +0x34.
+// @field <unknown> +0x30 float field_0x30
+// @field <unknown> +0x34 float field_0x34
+// @field <unknown> +0x38 float field_0x38
+
+extern int32_t __cdecl ext_00594000(void);
+extern float __fastcall ext_00594010(void* self);
+
+void fn_00629EE0(void* self) {
+    const int32_t src = ext_00594000();
+    void* const provider = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(src)));
+    const float value = ext_00594010(provider);
+
+    lift_field<float>(self, 0x30) = value;
+    lift_field<float>(self, 0x34) = value - lift_field<float>(self, 0x38);
+}
+} // namespace lift_00629EE0
