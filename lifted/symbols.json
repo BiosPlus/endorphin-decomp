@@ -29885,6 +29885,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
     "lifted_path": "lifted/NMData/GraphicData.cpp"
   },
+  "0x006203B0": {
+    "name": "Unknown::Unknown_006203B0",
+    "class": "Unknown",
+    "signature": "void fn_006203B0(void* self)",
+    "summary": "Constructor-style init: sets vtable to mem_00976C34 and zeroes three dwords at +0x08..+0x10 (SEH guard frame omitted).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x006204A0": {
     "name": "Sensors::SensorAbsoluteTime::vfunc_0",
     "class": "Sensors::SensorAbsoluteTime",

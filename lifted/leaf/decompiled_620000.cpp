@@ -532,3 +532,24 @@ uint32_t __stdcall fn_0062C0A0(uint32_t dst, uint32_t count, uint32_t src) {
 }
 } // namespace lift_00481DE0
 } // namespace lift_0062C0A0
+
+// [0x006203B0] sub_006203B0 (56 bytes)
+namespace lift_006203B0 {
+extern uint8_t mem_00976C34[];
+
+// @name Unknown::Unknown_006203B0
+// @class Unknown
+// @summary Constructor-style init: sets vtable to mem_00976C34 and zeroes three dwords at +0x08..+0x10 (SEH guard frame omitted).
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+void fn_006203B0(void* self) {
+    // The original MSVC EH frame (fs:[0] push/restore, handler 0x8A6088)
+    // guards no user code here, so only the field writes are lifted.
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+    lift_field<void*>(self, 0x00) = static_cast<void*>(mem_00976C34);
+}
+} // namespace lift_006203B0
