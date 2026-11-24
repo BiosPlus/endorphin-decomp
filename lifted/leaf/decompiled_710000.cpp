@@ -553,3 +553,60 @@ int __thiscall sub_0071C8A0(void* self) {
     return flag == 0 ? 1 : 0;
 }
 } // namespace lift_0071C8A0
+
+// [0x0071C8E0] sub_0071C8E0 (32 bytes)
+namespace lift_0071C8E0 {
+// @name sub_0071C8E0
+// @summary Auto-lifted identical-shape clone of 0x0071C3B0 (Unknown::SetSubObjectPair1520).
+namespace lift_0071C3B0 {
+// @name Unknown::SetSubObjectPair1520
+// @class Unknown
+// @summary Loads the sub-object at this+0x0C and stores two stack arguments into its +0x1520/+0x1524 slots.
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0x1520 DWORD field_0x1520
+// @field Unknown +0x1524 DWORD field_0x1524
+void fn_0071C8E0(void* self, DWORD arg1, DWORD arg2) {
+    void* sub = lift_field<void*>(self, 0x0C);
+    lift_field<DWORD>(sub, 0x1C08) = arg1;
+    lift_field<DWORD>(sub, 0x1C0C) = arg2;
+}
+} // namespace lift_0071C3B0
+} // namespace lift_0071C8E0
+
+// [0x0071C9B0] sub_0071C9B0 (32 bytes)
+namespace lift_0071C9B0 {
+// @name sub_0071C9B0
+// @summary Auto-lifted identical-shape clone of 0x0071C3B0 (Unknown::SetSubObjectPair1520).
+namespace lift_0071C3B0 {
+// @name Unknown::SetSubObjectPair1520
+// @class Unknown
+// @summary Loads the sub-object at this+0x0C and stores two stack arguments into its +0x1520/+0x1524 slots.
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0x1520 DWORD field_0x1520
+// @field Unknown +0x1524 DWORD field_0x1524
+void fn_0071C9B0(void* self, DWORD arg1, DWORD arg2) {
+    void* sub = lift_field<void*>(self, 0x0C);
+    lift_field<DWORD>(sub, 0x1AF8) = arg1;
+    lift_field<DWORD>(sub, 0x1AFC) = arg2;
+}
+} // namespace lift_0071C3B0
+} // namespace lift_0071C9B0
+
+// [0x0071C9E0] sub_0071C9E0 (32 bytes)
+namespace lift_0071C9E0 {
+// @name sub_0071C9E0
+// @summary Auto-lifted identical-shape clone of 0x0071C3B0 (Unknown::SetSubObjectPair1520).
+namespace lift_0071C3B0 {
+// @name Unknown::SetSubObjectPair1520
+// @class Unknown
+// @summary Loads the sub-object at this+0x0C and stores two stack arguments into its +0x1520/+0x1524 slots.
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0x1520 DWORD field_0x1520
+// @field Unknown +0x1524 DWORD field_0x1524
+void fn_0071C9E0(void* self, DWORD arg1, DWORD arg2) {
+    void* sub = lift_field<void*>(self, 0x0C);
+    lift_field<DWORD>(sub, 0x1A70) = arg1;
+    lift_field<DWORD>(sub, 0x1A74) = arg2;
+}
+} // namespace lift_0071C3B0
+} // namespace lift_0071C9E0

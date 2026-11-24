@@ -324,3 +324,20 @@ int fn_006CE0A0(void* self) {
     return 1;
 }
 } // namespace lift_006CE0A0
+
+// [0x006CA4F0] sub_006CA4F0 (16 bytes)
+namespace lift_006CA4F0 {
+// @name sub_006CA4F0
+// @summary Auto-lifted identical-shape clone of 0x00711A90 (Unknown::TestFlag0x08At0x78).
+namespace lift_00711A90 {
+// Known callee 0x00711D20: Unknown::TestMaskedFieldAt0x78 (Returns true when (this->field_0x78 & mask) is nonzero, else false.)
+extern bool ext_006D0370(void* self, DWORD mask);
+
+// @name Unknown::TestFlag0x08At0x78
+// @class Unknown
+// @summary Tests bit 0x08 of the flags word at this+0x78 by tail-forwarding to TestMaskedFieldAt0x78 and returns its result.
+bool fn_006CA4F0(void* self) {
+    return ext_006D0370(self, 0x0u);
+}
+} // namespace lift_00711A90
+} // namespace lift_006CA4F0

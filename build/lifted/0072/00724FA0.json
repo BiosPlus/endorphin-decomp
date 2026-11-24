@@ -1,0 +1,14 @@
+{
+  "va": "0x00724FA0",
+  "size": 16,
+  "orig_symbol": "sub_00724FA0",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "sub_00724FA0",
+  "class": "Unknown",
+  "signature": "bool fn_00724FA0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00711A90 (Unknown::TestFlag0x08At0x78).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:42:45Z"
+}

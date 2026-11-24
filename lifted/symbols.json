@@ -36614,6 +36614,13 @@
     "summary": "If src is non-null, copy three 32-bit words from *src into self+0x08 (thiscall, one stack arg, ret 4).",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006CA4F0": {
+    "name": "sub_006CA4F0",
+    "class": "Unknown",
+    "signature": "bool fn_006CA4F0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00711A90 (Unknown::TestFlag0x08At0x78).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006CA6A0": {
     "name": "sub_006CA6A0",
     "signature": "extern \"C\" int32_t __fastcall fn_006CA6A0(void* self)",
@@ -41777,6 +41784,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0071C970 (Unknown::getByteViaPtr0x0C_0x1960).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C8E0": {
+    "name": "sub_0071C8E0",
+    "class": "Unknown",
+    "signature": "void fn_0071C8E0(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0071C3B0 (Unknown::SetSubObjectPair1520).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071C900": {
     "name": "sub_0071C900",
     "class": "Unknown",
@@ -41852,12 +41866,26 @@
     "summary": "Auto-lifted identical-shape clone of 0x006DE3E0 (Unknown::GetIndirectUInt32At98).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C9B0": {
+    "name": "sub_0071C9B0",
+    "class": "Unknown",
+    "signature": "void fn_0071C9B0(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0071C3B0 (Unknown::SetSubObjectPair1520).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071C9D0": {
     "name": "sub_0071C9D0",
     "class": "Unknown",
     "signature": "double fn_0071C9D0(uint32_t self)",
     "summary": "Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C9E0": {
+    "name": "sub_0071C9E0",
+    "class": "Unknown",
+    "signature": "void fn_0071C9E0(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x0071C3B0 (Unknown::SetSubObjectPair1520).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x0071CA00": {
     "name": "sub_0071CA00",
@@ -42030,6 +42058,13 @@
     "signature": "extern \"C\" void fn_00723A30(void)",
     "summary": "Pure jump thunk forwarding to sub_007892B0.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
+  },
+  "0x00724FA0": {
+    "name": "sub_00724FA0",
+    "class": "Unknown",
+    "signature": "bool fn_00724FA0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00711A90 (Unknown::TestFlag0x08At0x78).",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
   "0x00726690": {
     "name": "sub_00726690",
