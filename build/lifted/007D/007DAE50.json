@@ -1,0 +1,21 @@
+{
+  "va": "0x007DAE50",
+  "size": 43,
+  "orig_symbol": "sub_007DAE50",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "allocAndInit_007DAE50",
+  "signature": "uint32_t fn_007DAE50(uint32_t a1)",
+  "summary": "Allocates a 32-byte (16-byte aligned) block via context-\u003efield_0xb0 and initializes it with sub_007DAD50.",
+  "fields": [
+    {
+      "class": "Context",
+      "offset": "+0xB0",
+      "type": "uint32_t",
+      "name": "field_0xb0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:08:23Z"
+}
