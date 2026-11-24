@@ -1,0 +1,28 @@
+{
+  "va": "0x005C3130",
+  "size": 22,
+  "orig_symbol": "sub_005C3130",
+  "src_path": "src/leaf/tiny_5C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5C0000.cpp",
+  "name": "ForwardGlobalArgAndAdd16",
+  "class": "Unknown",
+  "signature": "int fn_005C3130(void* self)",
+  "summary": "Calls the callback stored at obj-\u003efield_14 (obj = this-\u003efield_04), passing this+4 and a global, then returns its result + 0x10.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:29:14Z"
+}
