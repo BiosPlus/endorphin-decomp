@@ -4587,6 +4587,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0041CCA0 (ReleaseSubobjectAndChainDestructor).",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x004552A0": {
+    "name": "SceneNotesFrame::vfunc_108",
+    "class": "SceneNotesFrame",
+    "signature": "void fn_004552A0(void* self, uint32_t a0, uint32_t a1, uint32_t a2)",
+    "summary": "Forwards three stack arguments to the child-window helper, then calls the MFC80 thunk with this-\u003e+0x144 as the receiver.",
+    "lifted_path": "lifted/classes/SceneNotesFrame.cpp"
+  },
   "0x004552E0": {
     "name": "SceneNotesEditor::vfunc_0",
     "class": "SceneNotesEditor",
