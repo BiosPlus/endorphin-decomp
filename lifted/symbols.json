@@ -11641,7 +11641,7 @@
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, bool, mustKeepOffset, bool, setMustKeepOffset\u003e::vfunc_40",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, bool, ...\u003e",
     "signature": "void lifted_004CAEE0(void* self_out)",
-    "summary": "Function-local static init guard that constructs the MetaBodyConstraintData mustKeepOffset read/write method-type record once and binds its vtable.",
+    "summary": "Function-local static init guard that constructs the MetaBodyConstraintData mustKeepOffset read/write method-type record once, sets its vtable, and hands its address to the caller's slot at +4.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x004CAF60": {
