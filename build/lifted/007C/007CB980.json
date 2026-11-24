@@ -1,0 +1,22 @@
+{
+  "va": "0x007CB980",
+  "size": 55,
+  "orig_symbol": "sub_007CB980",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "ObjectField::SetHalfOrZeroFloat14",
+  "class": "ObjectField",
+  "signature": "void sub_007CB980(uint8_t* self, float x)",
+  "summary": "Stores x*0.5 at self+0x14 as float, or 0.0f when x \u003c 0 (NaN takes the x*0.5 path).",
+  "fields": [
+    {
+      "class": "ObjectField",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:15:28Z"
+}

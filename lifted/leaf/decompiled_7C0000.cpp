@@ -581,3 +581,23 @@ void __cdecl sub_007CC930(uint32_t node) {
     mem_i32(list + 0x1C) = mem_i32(list + 0x1C) - 1;
 }
 } // namespace lift_007CC930
+
+// [0x007CB980]
+namespace lift_007CB980 {
+extern const double mem_00993828;
+
+// @name ObjectField::SetHalfOrZeroFloat14
+// @class ObjectField
+// @summary Stores x*0.5 at self+0x14 as float, or 0.0f when x < 0 (NaN takes the x*0.5 path).
+// @field ObjectField +0x14 float field_0x14
+
+void sub_007CB980(uint8_t* self, float x) {
+    float v;
+    if (x < 0.0f) {
+        v = 0.0f;
+    } else {
+        v = (float)((double)x * mem_00993828);
+    }
+    *reinterpret_cast<float*>(self + 0x14) = v;
+}
+} // namespace lift_007CB980

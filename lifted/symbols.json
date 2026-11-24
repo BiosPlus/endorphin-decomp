@@ -55007,6 +55007,13 @@
     "summary": "Reads a 32-bit float from offset 0x10 of the passed struct pointer.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CB980": {
+    "name": "ObjectField::SetHalfOrZeroFloat14",
+    "class": "ObjectField",
+    "signature": "void sub_007CB980(uint8_t* self, float x)",
+    "summary": "Stores x*0.5 at self+0x14 as float, or 0.0f when x \u003c 0 (NaN takes the x*0.5 path).",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CB9C0": {
     "name": "descriptiveName_007CB9C0 (doubleFloatField14)",
     "signature": "float fn_007CB9C0(void* self)",
