@@ -39319,6 +39319,13 @@
     "summary": "Copies the two DWORDs at this+0x08 and this+0x0C into the caller-supplied out buffer and returns it (thiscall, hidden out pointer, ret 4).",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C9F20": {
+    "name": "Unknown::setBits16to19Field10",
+    "class": "Unknown",
+    "signature": "void fn_006C9F20(void* self, uint8_t flag)",
+    "summary": "Sets the 4-bit value at bits 16..19 of field +0x10 to 1 if flag is nonzero, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C9F50": {
     "name": "Unknown::GetFlagBit16",
     "class": "Unknown",

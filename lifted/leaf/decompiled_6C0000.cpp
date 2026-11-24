@@ -665,3 +665,19 @@ void Unknown_mergeMaskedBitsField10(Unknown* self, uint32_t value, uint32_t mask
     self->field_0x10 = kept | incoming;
 }
 } // namespace lift_006C9D70
+
+// [0x006C9F20]
+namespace lift_006C9F20 {
+// @name Unknown::setBits16to19Field10
+// @class Unknown
+// @summary Sets the 4-bit value at bits 16..19 of field +0x10 to 1 if flag is nonzero, else 0.
+// @field Unknown +0x10 uint32_t field_0x10
+void fn_006C9F20(void* self, uint8_t flag) {
+    uint32_t& field = lift_field<uint32_t>(self, 0x10);
+    if (flag != 0) {
+        field = (field & ~0x000E0000u) | 0x00010000u;
+    } else {
+        field = field & ~0x000F0000u;
+    }
+}
+} // namespace lift_006C9F20

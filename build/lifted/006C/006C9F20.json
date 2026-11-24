@@ -1,0 +1,22 @@
+{
+  "va": "0x006C9F20",
+  "size": 48,
+  "orig_symbol": "sub_006C9F20",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::setBits16to19Field10",
+  "class": "Unknown",
+  "signature": "void fn_006C9F20(void* self, uint8_t flag)",
+  "summary": "Sets the 4-bit value at bits 16..19 of field +0x10 to 1 if flag is nonzero, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:23:29Z"
+}
