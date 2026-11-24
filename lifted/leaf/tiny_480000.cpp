@@ -99,3 +99,25 @@ float __thiscall sub_0048FB10(void* self) {
     return static_cast<float>(*reinterpret_cast<const double*>(reinterpret_cast<const uint8_t*>(self) + 0x58));
 }
 } // namespace lift_0048FB10
+
+// [0x0048FB20]
+namespace lift_0048FB20 {
+// @name Unknown::setField60IfChanged
+// @class Unknown
+// @summary Stores the argument into this+0x60 only when it differs from the current value.
+// @field Unknown +0x60 uint32_t field_0x60
+
+class Unknown {
+public:
+    void setField60IfChanged(uint32_t value);
+
+    uint8_t pad_0000[0x60];
+    uint32_t field_0x60;
+};
+
+void Unknown::setField60IfChanged(uint32_t value) {
+    if (value != field_0x60) {
+        field_0x60 = value;
+    }
+}
+} // namespace lift_0048FB20

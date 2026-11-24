@@ -4738,6 +4738,13 @@
     "summary": "Loads a double from offset +0x58 of this and returns it as a float",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x0048FB20": {
+    "name": "Unknown::setField60IfChanged",
+    "class": "Unknown",
+    "signature": "void Unknown::setField60IfChanged(uint32_t value)",
+    "summary": "Stores the argument into this+0x60 only when it differs from the current value.",
+    "lifted_path": "lifted/leaf/tiny_480000.cpp"
+  },
   "0x0048FB60": {
     "name": "sub_0048FB60",
     "signature": "extern \"C\" int __thiscall fn_0048FB60(void* self)",

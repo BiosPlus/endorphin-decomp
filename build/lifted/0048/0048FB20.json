@@ -1,0 +1,22 @@
+{
+  "va": "0x0048FB20",
+  "size": 15,
+  "orig_symbol": "sub_0048FB20",
+  "src_path": "src/leaf/tiny_480000.cpp",
+  "lifted_path": "lifted/leaf/tiny_480000.cpp",
+  "name": "Unknown::setField60IfChanged",
+  "class": "Unknown",
+  "signature": "void Unknown::setField60IfChanged(uint32_t value)",
+  "summary": "Stores the argument into this+0x60 only when it differs from the current value.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:28:48Z"
+}
