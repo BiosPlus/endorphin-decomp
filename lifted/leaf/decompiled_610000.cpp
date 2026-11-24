@@ -73,3 +73,53 @@ extern void __thiscall fn_00610CB0(uint32_t ecx) {
     ext_00678130(static_cast<uint32_t>(base) + 0x2e0, val);
 }
 } // namespace lift_00610CB0
+
+// [0x00611170]
+namespace lift_00611170 {
+extern float __thiscall ext_005B11E0(uint32_t ecx, uint32_t index);
+extern int32_t __cdecl ext_00594000(void);
+extern void __thiscall ext_00678130(uint32_t ecx, float value);
+
+// @name sub_00611170
+// @summary Fetches float at index 0 from (this + 0x8) and passes it to ext_00678130 on (ext_00594000() + 0x2e0)
+// @field unknown +0x08 uint32_t field_0x08
+extern void __thiscall sub_00611170(uint32_t ecx) {
+    float val = ext_005B11E0(ecx + 0x8, 0);
+    int32_t obj = ext_00594000();
+    ext_00678130(static_cast<uint32_t>(obj) + 0x2e0, val);
+}
+} // namespace lift_00611170
+
+// [0x006111D0]
+namespace lift_006111D0 {
+extern float __thiscall ext_005B11E0(uint32_t ecx, uint32_t index);
+extern int32_t __cdecl ext_00594000(void);
+extern void __thiscall ext_00678130(uint32_t ecx, float value);
+
+// @name sub_006111D0
+// @summary Fetches a float at index 2 from this+0x8 and passes it to sub_00678130 on global+0x2E0
+// @field unknown +0x08 uint32_t field_0x08
+extern void __thiscall fn_006111D0(uint32_t ecx) {
+    float val = ext_005B11E0(ecx + 0x8, 2);
+    int32_t obj = ext_00594000();
+    ext_00678130(static_cast<uint32_t>(obj) + 0x2E0, val);
+}
+} // namespace lift_006111D0
+
+// [0x006111A0]
+namespace lift_006111A0 {
+// @name sub_006111A0
+// @summary Gets float at index 1 from this+0x8 and passes it to global object at +0x2E0
+// @field this +0x08 struct field_0x08
+
+
+extern float __thiscall ext_005B11E0(uint32_t ecx, uint32_t index);
+extern int32_t __cdecl ext_00594000(void);
+extern void __thiscall ext_00678130(uint32_t ecx, float value);
+
+extern void __thiscall sub_006111A0(uint32_t ecx) {
+    float val = ext_005B11E0(ecx + 0x8, 1);
+    int32_t obj = ext_00594000();
+    ext_00678130(static_cast<uint32_t>(obj) + 0x2E0, val);
+}
+} // namespace lift_006111A0
