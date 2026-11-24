@@ -3,6 +3,7 @@
 extern "C" unsigned char __fastcall ext_00546520(void* self, void* edx_unused, void* arg);
 extern "C" unsigned char __fastcall ext_00551960(void* self, void* edx_unused, void* arg);
 extern "C" void ext_005480D0(uint32_t arg);
+#include <string>
 
 // [0x00551AF0] NMCamera::Orthogonal::vfunc_8 (88 bytes)
 // @name NMCamera::Orthogonal::vfunc_8
@@ -144,3 +145,31 @@ void fn_00551C30(void* self, const int32_t* xy, const float* p, float* out) {
     out[3] = 1.0f;
 }
 } // namespace lift_00551C30
+
+// [0x00551B50] NMCamera::Orthogonal::vfunc_7 (182 bytes)
+namespace lift_00551B50 {
+// Known callee 0x00547AB0: Camera::vfunc_7 (If Camera+0xA0 is non-null, tail-dispatch vtable slot 9 on that object; otherwise return &Camera+0x08.)
+extern void* ext_00547AB0(void* self);
+// String literals referenced from .rdata (contents not recovered; supplied by the image).
+extern const char mem_00957430[];
+extern const char mem_0093BF0C[];
+
+// @name NMCamera::Orthogonal::vfunc_7
+// @class NMCamera::Orthogonal
+// @summary Returns either the camera's name-source result, or rebuilds the cached name string at +0xF8 as prefix + camera string + suffix and returns it.
+// @field Orthogonal +0xF8 std::string field_0xf8
+void* fn_00551B50(void* self) {
+    // vtable slot 8 (offset 0x20) is a predicate on self.
+    void** vtbl = *reinterpret_cast<void***>(self);
+    bool useCamera = reinterpret_cast<bool (*)(void*)>(vtbl[8])(self);
+
+    if (useCamera) {
+        return ext_00547AB0(self);
+    }
+
+    void* cameraStr = ext_00547AB0(self);
+    std::string& name = *reinterpret_cast<std::string*>(static_cast<char*>(self) + 0xF8);
+    name = std::string(mem_00957430) + *static_cast<std::string*>(cameraStr) + std::string(mem_0093BF0C);
+    return &name;
+}
+} // namespace lift_00551B50

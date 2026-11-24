@@ -16900,6 +16900,13 @@
     "summary": "Returns 1 if the flag at +0xA0 is set, otherwise 1 only when both sub-checks pass and two float pairs are equal.",
     "lifted_path": "lifted/NMCamera/Orthogonal.cpp"
   },
+  "0x00551B50": {
+    "name": "NMCamera::Orthogonal::vfunc_7",
+    "class": "NMCamera::Orthogonal",
+    "signature": "void* fn_00551B50(void* self)",
+    "summary": "Returns either the camera's name-source result, or rebuilds the cached name string at +0xF8 as prefix + camera string + suffix and returns it.",
+    "lifted_path": "lifted/NMCamera/Orthogonal.cpp"
+  },
   "0x00551C10": {
     "name": "NMCamera::Orthogonal::vfunc_6",
     "class": "NMCamera::Orthogonal",

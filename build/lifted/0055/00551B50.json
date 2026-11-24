@@ -1,0 +1,22 @@
+{
+  "va": "0x00551B50",
+  "size": 182,
+  "orig_symbol": "NMCamera::Orthogonal::vfunc_7",
+  "src_path": "src/NMCamera/Orthogonal.cpp",
+  "lifted_path": "lifted/NMCamera/Orthogonal.cpp",
+  "name": "NMCamera::Orthogonal::vfunc_7",
+  "class": "NMCamera::Orthogonal",
+  "signature": "void* fn_00551B50(void* self)",
+  "summary": "Returns either the camera's name-source result, or rebuilds the cached name string at +0xF8 as prefix + camera string + suffix and returns it.",
+  "fields": [
+    {
+      "class": "Orthogonal",
+      "offset": "+0xF8",
+      "type": "std::string",
+      "name": "field_0xf8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:37:57Z"
+}
