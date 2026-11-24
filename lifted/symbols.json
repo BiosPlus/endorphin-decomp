@@ -41611,6 +41611,12 @@
     "summary": "Maps selector 0 to the \"Relative to Interest\" string address, 1 to \"Relative to Camera\", and any other value to 0.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x0071A7F0": {
+    "name": "SafeAreaName",
+    "signature": "void* fn_0071A7F0(int shape)",
+    "summary": "Maps a safe-area shape id (0 = round, 1 = square) to its display-name string; returns null for other ids.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071A820": {
     "name": "sub_0071A820 (projectionModeToString)",
     "signature": "const char* sub_0071A820(uint32_t mode)",

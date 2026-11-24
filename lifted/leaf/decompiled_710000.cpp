@@ -677,3 +677,22 @@ uint32_t __stdcall fn_0071A790(uint32_t selector) {
     }
 }
 } // namespace lift_0071A790
+
+// [0x0071A7F0] sub_0071A7F0 (33 bytes)
+namespace lift_0071A7F0 {
+extern int mem_00AACA54;
+extern int mem_00AACA64;
+
+// @name SafeAreaName
+// @summary Maps a safe-area shape id (0 = round, 1 = square) to its display-name string; returns null for other ids.
+void* fn_0071A7F0(int shape) {
+    switch (shape) {
+    case 0:
+        return reinterpret_cast<void*>(&mem_00AACA54); // "Round Safe Area"
+    case 1:
+        return reinterpret_cast<void*>(&mem_00AACA64); // "Square Safe Area"
+    default:
+        return nullptr;
+    }
+}
+} // namespace lift_0071A7F0
