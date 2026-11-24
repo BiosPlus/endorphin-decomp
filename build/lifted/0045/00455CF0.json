@@ -1,0 +1,14 @@
+{
+  "va": "0x00455CF0",
+  "size": 25,
+  "orig_symbol": "sub_00455CF0",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "Unknown::stackTempsCallMfcOrd501ThenOrd709",
+  "class": "Unknown",
+  "signature": "void fn_00455CF0(void* ecx_in)",
+  "summary": "Saves the incoming this pointer, runs MFC80 ord_501 on a 0x54-byte stack temp, then MFC80 ord_709 on the saved pointer slot.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:47:51Z"
+}

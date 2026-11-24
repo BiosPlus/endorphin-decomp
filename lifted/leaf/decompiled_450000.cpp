@@ -68,3 +68,27 @@ void fn_00458C80(DWORD hr) {
     fn_006A6304(hr);
 }
 } // namespace lift_00458C80
+
+// [0x00455CF0] sub_00455CF0 (25 bytes)
+namespace lift_00455CF0 {
+// Known callee 0x006A5EBA: thunk_MFC80_ord_709 (IAT jump thunk forwarding to MFC80!ord_709.)
+extern void __fastcall ext_006A5EBA(void* self);
+// Known callee 0x006A5ECC: thunk_MFC80_ord_501 (IAT jump thunk forwarding to MFC80!ord_501.)
+extern void __fastcall ext_006A5ECC(void* self);
+
+// @name Unknown::stackTempsCallMfcOrd501ThenOrd709
+// @summary Saves the incoming this pointer, runs MFC80 ord_501 on a 0x54-byte stack temp, then MFC80 ord_709 on the saved pointer slot.
+// @field none (no direct member offsets accessed; only stack temporaries are used)
+void fn_00455CF0(void* ecx_in) {
+    // push ecx: the incoming this pointer is spilled into a stack slot.
+    void* saved_ecx = ecx_in;
+    // sub esp, 0x54: 0x54-byte stack temporary object.
+    alignas(8) uint8_t temp[0x54] = {};
+
+    // lea ecx, [esp+4] ; call ord_501 -> this = temp object.
+    ext_006A5ECC(temp);
+    // lea ecx, [esp] ; call ord_709 -> this = address of the spilled slot.
+    ext_006A5EBA(&saved_ecx);
+    // add esp, 0x54 / ret: stack temporaries released on return.
+}
+} // namespace lift_00455CF0

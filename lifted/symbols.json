@@ -3156,6 +3156,13 @@
     "summary": "Returns address of global mem_00936D1C.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00455CF0": {
+    "name": "Unknown::stackTempsCallMfcOrd501ThenOrd709",
+    "class": "Unknown",
+    "signature": "void fn_00455CF0(void* ecx_in)",
+    "summary": "Saves the incoming this pointer, runs MFC80 ord_501 on a 0x54-byte stack temp, then MFC80 ord_709 on the saved pointer slot.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00456CC0": {
     "name": "CSizingControlBar::vfunc_1",
     "class": "CSizingControlBar",
