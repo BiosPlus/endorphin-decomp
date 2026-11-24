@@ -1,0 +1,22 @@
+{
+  "va": "0x0041FEF0",
+  "size": 31,
+  "orig_symbol": "sub_0041FEF0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "SendUserMessage_WM_USER_17_ForwardArg",
+  "class": "\u003cnone\u003e (uses this as a plain pointer; see field below)",
+  "signature": "void fn_0041FEF0(void* self, DWORD arg)",
+  "summary": "Sends WM_USER+0x17 with the stack argument as LPARAM to the window at this+0x20, then tail-forwards to ext_006A5E00.",
+  "fields": [
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:21:02Z"
+}

@@ -196,3 +196,29 @@ void fn_0041CCA0(void* self) {
     ext_00454BA0(self);
 }
 } // namespace lift_0041CCA0
+
+// [0x0041FEF0] sub_0041FEF0 (31 bytes)
+namespace lift_0041FEF0 {
+// Known callee 0x006A5E00: thunk_MFC80_ord_2372 (IAT jump thunk forwarding to MFC80!ord_2372.)
+extern void ext_006A5E00();
+// IAT slot 0x00925694 holding USER32!SendMessageA (value is a function address at runtime).
+extern int mem_00925694;
+
+// @name SendUserMessage_WM_USER_17_ForwardArg
+// @class <none> (uses this as a plain pointer; see field below)
+// @summary Sends WM_USER+0x17 with the stack argument as LPARAM to the window at this+0x20, then tail-forwards to ext_006A5E00.
+// @field <Unknown> +0x20 HWND hwnd
+void fn_0041FEF0(void* self, DWORD arg) {
+    // SendMessageA(hwnd, WM_USER + 0x17, 0, arg)
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+    using SendMessageAFn = LRESULT(__stdcall*)(HWND, UINT, WPARAM, LPARAM);
+    auto send = reinterpret_cast<SendMessageAFn>(
+        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925694)));
+    LRESULT result = send(hwnd, 0x1017u, 0, static_cast<LPARAM>(arg));
+    // Original code overwrites the stack argument slot with the result, then jmp's to
+    // ext_006A5E00, so the tail callee observes the SendMessageA result as its argument.
+    // Portable form cannot express the raw stack-slot hand-off; the tail call is preserved.
+    (void)result;
+    ext_006A5E00();
+}
+} // namespace lift_0041FEF0
