@@ -39307,6 +39307,13 @@
     "summary": "Stores the stack argument into +0x1C, sets +0x5C to 1 and clears +0x2C.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x00790E20": {
+    "name": "Unknown::initFieldsStoreArg",
+    "class": "Unknown",
+    "signature": "void fn_00790E20(uint8_t* self, uint32_t arg)",
+    "summary": "Thiscall setter: sets +0x5C to 1, stores the stack argument at +0x24, and clears +0x2C; callee pops 4 bytes.",
+    "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
   "0x007928E0": {
     "name": "sub_007928E0",
     "signature": "extern \"C\" void* __fastcall fn_007928E0(void* self, int edx_unused, unsigned int flags)",

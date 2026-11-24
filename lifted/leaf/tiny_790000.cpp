@@ -464,3 +464,18 @@ void fn_00790DC0(void* self, uint32_t value) {
     lift_field<uint32_t>(self, 0x28) = 0;
 }
 } // namespace lift_00790DC0
+
+// [0x00790E20]
+namespace lift_00790E20 {
+// @name Unknown::initFieldsStoreArg
+// @class Unknown
+// @summary Thiscall setter: sets +0x5C to 1, stores the stack argument at +0x24, and clears +0x2C; callee pops 4 bytes.
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x2C uint32_t field_0x2C
+// @field Unknown +0x5C uint32_t field_0x5C
+void fn_00790E20(uint8_t* self, uint32_t arg) {
+    *reinterpret_cast<uint32_t*>(self + 0x5C) = 1u;
+    *reinterpret_cast<uint32_t*>(self + 0x24) = arg;
+    *reinterpret_cast<uint32_t*>(self + 0x2C) = 0u;
+}
+} // namespace lift_00790E20
