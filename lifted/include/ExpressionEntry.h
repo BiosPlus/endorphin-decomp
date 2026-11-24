@@ -8,7 +8,7 @@
 // Recovered field layout for ExpressionEntry:
 namespace lifted_layout {
 struct ExpressionEntry_Fields {
-    // +0x1C  std::string              expression  (evidence: 0x0046E570, 0x004983A0, 0x004986A0, 0x004B7D80, 0x004B8920, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x00512A00, 0x005B2D00, 0x005B3680, 0x00604D80, 0x0066F700, 0x006749C0, 0x00674C90, 0x00674CE0) // CONFLICT: multiple definitions at +0x1C
-    // +0x1C  std::string              field_0x1c  (evidence: 0x004983A0, 0x004B7D80, 0x00512A00, 0x00604D80, 0x00674950, 0x006749C0) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  std::string              expression  (evidence: 0x0046E570, 0x004983A0, 0x004986A0, 0x004B7D80, 0x004B8920, 0x004C0800, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x00512A00, 0x005B2D00, 0x005B3680, 0x00604D80, 0x0066F700, 0x006749C0, 0x00674C90, 0x00674CE0) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  std::string              field_0x1c  (evidence: 0x004983A0, 0x004B7D80, 0x004C0800, 0x00512A00, 0x00604D80, 0x00674950, 0x006749C0) // CONFLICT: multiple definitions at +0x1C
 };
 } // namespace lifted_layout

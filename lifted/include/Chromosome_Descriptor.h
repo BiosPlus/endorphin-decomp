@@ -10,8 +10,8 @@
 // Recovered field layout for Chromosome::Descriptor:
 namespace lifted_layout {
 struct Chromosome_Descriptor_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x00512BA0)
-    // +0x4   void*                    field_0x04  (evidence: 0x0059F650, 0x00604D80) // CONFLICT: multiple definitions at +0x4
-    // +0x4   std::string              value_subobject  (evidence: 0x0046E570, 0x004983A0, 0x004B7D80, 0x00512A00, 0x0059F600, 0x005B3680, 0x00604D80, 0x006749C0) // CONFLICT: multiple definitions at +0x4
+    // +0x0   void*                    field_0x00  (evidence: 0x004C0800, 0x00512BA0)
+    // +0x4   void*                    field_0x04  (evidence: 0x004C0800, 0x0059F650, 0x00604D80) // CONFLICT: multiple definitions at +0x4
+    // +0x4   std::string              value_subobject  (evidence: 0x0046E570, 0x004983A0, 0x004B7D80, 0x004C0800, 0x00512A00, 0x0059F600, 0x005B3680, 0x00604D80, 0x006749C0) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout
