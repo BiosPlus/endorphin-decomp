@@ -280,3 +280,31 @@ DWORD* __thiscall fn_0055F800(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_0055F800
+
+// [0x00553980]
+namespace lift_00553980 {
+// @name sub_00553980
+// @summary Zero-initializes float vector, dword, and byte fields of a 0x1B+ byte object and returns this.
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0c uint32_t field_0x0c
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint8_t field_0x18
+// @field Unknown +0x19 uint8_t field_0x19
+// @field Unknown +0x1a uint8_t field_0x1a
+void* __thiscall sub_00553980(void* self) {
+    uint8_t* p = static_cast<uint8_t*>(self);
+    *reinterpret_cast<float*>(p + 0x00) = 0.0f;
+    *reinterpret_cast<float*>(p + 0x04) = 0.0f;
+    *reinterpret_cast<float*>(p + 0x08) = 0.0f;
+    *reinterpret_cast<uint32_t*>(p + 0x0c) = 0;
+    *reinterpret_cast<uint32_t*>(p + 0x10) = 0;
+    *reinterpret_cast<uint32_t*>(p + 0x14) = 0;
+    p[0x18] = 0;
+    p[0x19] = 0;
+    p[0x1a] = 0;
+    return self;
+}
+} // namespace lift_00553980
