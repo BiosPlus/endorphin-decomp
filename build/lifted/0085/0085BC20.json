@@ -1,0 +1,21 @@
+{
+  "va": "0x0085BC20",
+  "size": 16,
+  "orig_symbol": "sub_0085BC20",
+  "src_path": "src/leaf/tiny_850000.cpp",
+  "lifted_path": "lifted/leaf/tiny_850000.cpp",
+  "name": "GetField08",
+  "signature": "uint32_t GetField08(uint32_t self_ptr)",
+  "summary": "Returns the 32-bit value at offset +0x08 of the object pointed to by the first stack argument.",
+  "fields": [
+    {
+      "class": "field_0x08",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:49:00Z"
+}

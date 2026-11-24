@@ -38845,6 +38845,12 @@
     "summary": "Follows an indirection when flag 0x4 is set at +0x14, then returns the pointer at +0x4.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x0085BC20": {
+    "name": "GetField08",
+    "signature": "uint32_t GetField08(uint32_t self_ptr)",
+    "summary": "Returns the 32-bit value at offset +0x08 of the object pointed to by the first stack argument.",
+    "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
   "0x0085D504": {
     "name": "sub_0085D504",
     "signature": "void fn_0085D504(void)",

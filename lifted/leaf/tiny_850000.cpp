@@ -131,3 +131,15 @@ uint32_t sub_00859D30(uint32_t arg0) {
     return eax;
 }
 } // namespace lift_00859D30
+
+// [0x0085BC20]
+namespace lift_0085BC20 {
+// @name GetField08
+// @summary Returns the 32-bit value at offset +0x08 of the object pointed to by the first stack argument.
+// @field field_0x08 +0x08 uint32_t field_0x08
+// @field ...
+
+uint32_t GetField08(uint32_t self_ptr) {
+    return *reinterpret_cast<uint32_t*>(self_ptr + 0x08);
+}
+} // namespace lift_0085BC20
