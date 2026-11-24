@@ -15741,6 +15741,13 @@
     "summary": "Mode-switched forwarder: mode 1 tail-calls vslot 0x9c, mode 2 tail-calls vslot 0xa0 on the object at this-0x10; passes the two stack args through unchanged.",
     "lifted_path": "lifted/classes/PoseTool.cpp"
   },
+  "0x00545440": {
+    "name": "PoseTool::vfunc_19_off_98",
+    "class": "PoseTool",
+    "signature": "void __thiscall fn_00545440(void* self, uint32_t arg0)",
+    "summary": "Thunk for the ToolClient sub-object (this+0x98 of PoseTool): forwards arg0 to vtable slot 45 of the object at PoseTool+0x88, then calls vtable slot 33 on the owning PoseTool.",
+    "lifted_path": "lifted/classes/PoseTool.cpp"
+  },
   "0x005455F0": {
     "name": "PoseTool::vfunc_28",
     "class": "PoseTool",
