@@ -270,3 +270,22 @@ uint32_t fn_00864F30(uint32_t /*arg0*/, uint32_t /*arg1*/, uint32_t /*arg2*/, ui
     return 0;
 }
 } // namespace lift_00864F30
+
+// [0x0086AF00]
+namespace lift_0086AF00 {
+// @name AllDwordsZero
+// @summary Returns 1 if all `count` DWORDs starting at `data` are zero (or count is zero), otherwise 0.
+// (free function, no @class)
+
+extern uint32_t __cdecl fn_0086AF00(const uint32_t* data, uint32_t count) {
+    if (count == 0) {
+        return 1;
+    }
+    for (uint32_t i = 0; i < count; ++i) {
+        if (data[i] != 0) {
+            return 0;
+        }
+    }
+    return 1;
+}
+} // namespace lift_0086AF00
