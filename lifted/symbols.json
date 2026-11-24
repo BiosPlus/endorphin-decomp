@@ -25847,6 +25847,13 @@
     "summary": "Passes its first argument to ext_00671F30 (zero first dword, store global into second) and returns the argument.",
     "lifted_path": "lifted/classes/AnimatableTransform.cpp"
   },
+  "0x005DF270": {
+    "name": "Tree_eraseSubtree",
+    "class": "Tree",
+    "signature": "extern \"C\" void __thiscall fn_005DF270(void* self, uint32_t node)",
+    "summary": "Recursively erases and frees all non-nil nodes in a red-black tree subtree",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005E0160": {
     "name": "CalibrationManager::vfunc_0",
     "class": "CalibrationManager",
