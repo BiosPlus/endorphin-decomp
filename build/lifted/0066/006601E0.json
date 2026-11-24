@@ -1,0 +1,21 @@
+{
+  "va": "0x006601E0",
+  "size": 38,
+  "orig_symbol": "sub_006601E0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "sub_006601E0_dtor",
+  "signature": "void __thiscall sub_006601E0(void* self)",
+  "summary": "Sets vtable pointer to 0x00987730 and pops an element from the global vector at 0x00B59080 if non-empty",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:56:34Z"
+}

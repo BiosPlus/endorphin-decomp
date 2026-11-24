@@ -251,3 +251,25 @@ void sub_00662F50(uint32_t arg0) {
     reinterpret_cast<ExitFn>(mem_00925258)(-1);
 }
 } // namespace lift_00662F50
+
+// [0x006601E0]
+namespace lift_006601E0 {
+// @name sub_006601E0_dtor
+// @summary Sets vtable pointer to 0x00987730 and pops an element from the global vector at 0x00B59080 if non-empty
+// @field Object +0x00 uint32_t vtable
+
+
+extern uint32_t mem_00B59080;
+extern uint32_t mem_00B59084;
+
+void __thiscall sub_006601E0(void* self) {
+    *reinterpret_cast<uint32_t*>(self) = 0x00987730u;
+    uint32_t begin = mem_00B59080;
+    if (begin != 0) {
+        int32_t count = static_cast<int32_t>(mem_00B59084 - begin) >> 2;
+        if (count != 0) {
+            mem_00B59084 -= 4;
+        }
+    }
+}
+} // namespace lift_006601E0
