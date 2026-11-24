@@ -46457,6 +46457,12 @@
     "summary": "Setter storing int32_t argument into field at offset +0x1C8.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072B180": {
+    "name": "getPackedStateBits",
+    "signature": "DWORD fn_0072B180(void* self)",
+    "summary": "Returns (ptr != 0 ? 4 : 3) shifted by 12 or 14 depending on the second field's value (0x40 / 0x80), else 0.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072B1B0": {
     "name": "getInnerDword",
     "signature": "uint32_t getInnerDword(uint32_t* this_)",

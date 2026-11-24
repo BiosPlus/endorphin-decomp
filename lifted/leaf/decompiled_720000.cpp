@@ -193,3 +193,24 @@ void sub_00725E10(uint8_t* buf, const uint8_t* end) {
     }
 }
 } // namespace lift_00725E10
+
+// [0x0072B180] sub_0072B180 (48 bytes)
+namespace lift_0072B180 {
+// @name getPackedStateBits
+// @summary Returns (ptr != 0 ? 4 : 3) shifted by 12 or 14 depending on the second field's value (0x40 / 0x80), else 0.
+// @field field_0x00 DWORD
+// @field field_0x04 DWORD
+DWORD fn_0072B180(void* self) {
+    const DWORD* f = static_cast<const DWORD*>(self);
+    const DWORD a = f[0];
+    const DWORD b = f[1];
+    const DWORD v = (a != 0 ? 1u : 0u) + 3u;
+    if (b == 0x40) {
+        return v << 12;
+    }
+    if (b == 0x80) {
+        return v << 14;
+    }
+    return 0;
+}
+} // namespace lift_0072B180
