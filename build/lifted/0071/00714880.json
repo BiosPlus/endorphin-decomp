@@ -1,0 +1,13 @@
+{
+  "va": "0x00714880",
+  "size": 32,
+  "orig_symbol": "sub_00714880",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "CopyFirstThreeBytesOut",
+  "signature": "void fn_00714880(const BYTE* src /* ecx */, BYTE* dst0 /* [esp+4] */, BYTE* dst1 /* [esp+8] */, BYTE* dst2 /* [esp+0xC] */)",
+  "summary": "Copies the first three bytes at src (ecx) to three caller-supplied byte destinations (stdcall, ret 0xC).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:40:30Z"
+}

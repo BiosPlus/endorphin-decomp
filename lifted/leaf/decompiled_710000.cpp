@@ -234,3 +234,14 @@ extern DWORD __fastcall fn_0071C6E0(void* self, int edx_unused, DWORD arg) {
 }
 } // namespace lift_0070EC30
 } // namespace lift_0071C6E0
+
+// [0x00714880] sub_00714880 (32 bytes)
+namespace lift_00714880 {
+// @name CopyFirstThreeBytesOut
+// @summary Copies the first three bytes at src (ecx) to three caller-supplied byte destinations (stdcall, ret 0xC).
+void fn_00714880(const BYTE* src /* ecx */, BYTE* dst0 /* [esp+4] */, BYTE* dst1 /* [esp+8] */, BYTE* dst2 /* [esp+0xC] */) {
+    dst0[0] = src[0];
+    dst1[0] = src[1];
+    dst2[0] = src[2];
+}
+} // namespace lift_00714880

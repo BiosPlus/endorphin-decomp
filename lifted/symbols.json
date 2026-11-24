@@ -40948,6 +40948,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006B9D10 (Unknown::InitAndReturnSelf).",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00714880": {
+    "name": "CopyFirstThreeBytesOut",
+    "signature": "void fn_00714880(const BYTE* src /* ecx */, BYTE* dst0 /* [esp+4] */, BYTE* dst1 /* [esp+8] */, BYTE* dst2 /* [esp+0xC] */)",
+    "summary": "Copies the first three bytes at src (ecx) to three caller-supplied byte destinations (stdcall, ret 0xC).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00714970": {
     "name": "sub_00714970",
     "signature": "extern \"C\" void __fastcall fn_00714970(void* self, int edx_unused, uint8_t value)",
