@@ -1,0 +1,22 @@
+{
+  "va": "0x0044BF40",
+  "size": 33,
+  "orig_symbol": "RenderView::vfunc_28",
+  "src_path": "src/classes/RenderView.cpp",
+  "lifted_path": "lifted/classes/RenderView.cpp",
+  "name": "RenderView::vfunc_28",
+  "class": "RenderView",
+  "signature": "BOOL fn_0044BF40(void* self, RECT* rect, DWORD /*unused*/)",
+  "summary": "Gets the window rect of the global view's window into the caller's RECT when the RenderView's flag at +0x6C is set.",
+  "fields": [
+    {
+      "class": "RenderView",
+      "offset": "+0x6C",
+      "type": "uint8_t",
+      "name": "field_0x6c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:52:48Z"
+}

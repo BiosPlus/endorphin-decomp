@@ -3252,6 +3252,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0044B080 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0044BF40": {
+    "name": "RenderView::vfunc_28",
+    "class": "RenderView",
+    "signature": "BOOL fn_0044BF40(void* self, RECT* rect, DWORD /*unused*/)",
+    "summary": "Gets the window rect of the global view's window into the caller's RECT when the RenderView's flag at +0x6C is set.",
+    "lifted_path": "lifted/classes/RenderView.cpp"
+  },
   "0x0044BF61": {
     "name": "sub_0044BF61",
     "signature": "extern \"C\" void fn_0044BF61(void)",
