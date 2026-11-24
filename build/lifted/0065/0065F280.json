@@ -4,10 +4,55 @@
   "orig_symbol": "sub_0065F280",
   "src_path": "src/leaf/tiny_650000.cpp",
   "lifted_path": "lifted/leaf/tiny_650000.cpp",
-  "name": "CopyDwords16FromIndirectSrcToIndirectDst",
-  "signature": "void fn_0065F280(void** dst_holder, const void* const* src_holder)",
-  "summary": "Copies 16 DWORDs (64 bytes) from *src into *dst; dst comes in ECX, src is the single stack argument (ret 4).",
+  "name": "sub_0065ACB0",
+  "class": "CriticalSectionLock",
+  "signature": "extern \"C\" void __fastcall fn_0065ACB0(void* self)",
+  "summary": "This-adjustor thunk: adjusts `this` by +0x4 and tail-calls sub_0065F2A0.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "CriticalSectionLock",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "criticalSection"
+    },
+    {
+      "class": "Space",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Space",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Space",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Space",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t[16]",
+      "name": "field_0x0C"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T11:37:37Z"
+  "lifted_at": "2026-11-24T11:37:50Z"
 }

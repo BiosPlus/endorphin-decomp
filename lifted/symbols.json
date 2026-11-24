@@ -25102,9 +25102,10 @@
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
   "0x0065F280": {
-    "name": "CopyDwords16FromIndirectSrcToIndirectDst",
-    "signature": "void fn_0065F280(void** dst_holder, const void* const* src_holder)",
-    "summary": "Copies 16 DWORDs (64 bytes) from *src into *dst; dst comes in ECX, src is the single stack argument (ret 4).",
+    "name": "sub_0065ACB0",
+    "class": "CriticalSectionLock",
+    "signature": "extern \"C\" void __fastcall fn_0065ACB0(void* self)",
+    "summary": "This-adjustor thunk: adjusts `this` by +0x4 and tail-calls sub_0065F2A0.",
     "lifted_path": "lifted/leaf/tiny_650000.cpp"
   },
   "0x0065F440": {

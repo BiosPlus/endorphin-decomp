@@ -10,9 +10,9 @@
 // Recovered field layout for Space:
 namespace lifted_layout {
 struct Space_Fields {
-    // +0x0   uint32_t                 vtable  (evidence: 0x0065BD80)
-    // +0xC   float                    field_0x0C  (evidence: 0x0065BD80)
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x0065BD80)
-    // +0x18  uint32_t                 field_0x18  (evidence: 0x0065BD80)
+    // +0x0   uint32_t                 vtable  (evidence: 0x0065BD80, 0x0065F280)
+    // +0xC   float                    field_0x0C  (evidence: 0x0065BD80, 0x0065F280)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x0065BD80, 0x0065F280)
+    // +0x18  uint32_t                 field_0x18  (evidence: 0x0065BD80, 0x0065F280)
 };
 } // namespace lifted_layout
