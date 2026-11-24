@@ -1,0 +1,21 @@
+{
+  "va": "0x006489F0",
+  "size": 38,
+  "orig_symbol": "sub_006489F0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "updateField0x28IfGreater",
+  "signature": "void __thiscall sub_006489F0(void* this_ptr, float value)",
+  "summary": "Calls ext_0065BF00 on the object at +0x28 with value if ext_006488F0(this) \u003e ext_00648930(this).",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:56:12Z"
+}

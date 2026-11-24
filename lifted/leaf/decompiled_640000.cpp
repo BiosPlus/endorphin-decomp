@@ -424,3 +424,43 @@ uint32_t __thiscall sub_00648370(void* self, uint32_t arg1, uint32_t arg2) {
     return ext_00647AE0(self, arg1, arg2);
 }
 } // namespace lift_00648370
+
+// [0x00648A60]
+namespace lift_00648A60 {
+// @name call_0x65B040_if_0x04_lt_0x08
+// @summary Calls sub_0065B040 on field_0x30 with the float argument if field_0x28+0x04 < field_0x28+0x08.
+// @field Self +0x30 void* field_0x30
+
+
+extern float __thiscall ext_006488F0(const void* self);
+extern float __thiscall ext_00648930(void* self);
+extern void __thiscall ext_0065B040(void* self, float arg);
+
+void __thiscall sub_00648A60(void* self, float arg) {
+    float v04 = ext_00648930(self);
+    float v08 = ext_006488F0(self);
+    if (v08 > v04) {
+        void* child = *reinterpret_cast<void* const*>(reinterpret_cast<const char*>(self) + 0x30);
+        ext_0065B040(child, arg);
+    }
+}
+} // namespace lift_00648A60
+
+// [0x006489F0]
+namespace lift_006489F0 {
+extern float __thiscall ext_006488F0(const void* self);
+extern float __thiscall ext_00648930(void* this_ptr);
+extern void __thiscall ext_0065BF00(void* self, float value);
+
+// @name updateField0x28IfGreater
+// @summary Calls ext_0065BF00 on the object at +0x28 with value if ext_006488F0(this) > ext_00648930(this).
+// @field unknown +0x28 void* field_0x28
+void __thiscall sub_006489F0(void* this_ptr, float value) {
+    float v1 = ext_00648930(this_ptr);
+    float v2 = ext_006488F0(this_ptr);
+    if (v2 > v1) {
+        void* obj = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(this_ptr) + 0x28);
+        ext_0065BF00(obj, value);
+    }
+}
+} // namespace lift_006489F0
