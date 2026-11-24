@@ -1,0 +1,22 @@
+{
+  "va": "0x00604DF0",
+  "size": 82,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cEffector, float, \u0026Effector::getPoseRawDesiredDisplacement, 1\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026Effector::getPoseRawDesiredDisplacement, 1\u003e",
+  "signature": "uint32_t fn_00604DF0(uint32_t arg0)",
+  "summary": "Evaluates whether an Effector's virtual method at vtable+0x38 returns a float \u003e= 1e-6, throwing if the object pointer is null.",
+  "fields": [
+    {
+      "class": "Effector",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:50:32Z"
+}
