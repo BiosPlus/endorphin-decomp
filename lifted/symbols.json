@@ -38406,6 +38406,13 @@
     "summary": "Reads a byte at offset +0x4 from the pointer stored at this+0x4",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00783630": {
+    "name": "ClearInnerStreamErrorIfFlagged",
+    "class": "UnknownClass",
+    "signature": "void __fastcall fn_00783630(void* self)",
+    "summary": "If the inner object's byte flag at +0x4 is nonzero, call the imported clearerr on its stream pointer at +0x0.",
+    "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
   "0x00783790": {
     "name": "Unknown::zeroFourDwords",
     "class": "Unknown",

@@ -1,0 +1,34 @@
+{
+  "va": "0x00783630",
+  "size": 21,
+  "orig_symbol": "sub_00783630",
+  "src_path": "src/leaf/tiny_780000.cpp",
+  "lifted_path": "lifted/leaf/tiny_780000.cpp",
+  "name": "ClearInnerStreamErrorIfFlagged",
+  "class": "UnknownClass",
+  "signature": "void __fastcall fn_00783630(void* self)",
+  "summary": "If the inner object's byte flag at +0x4 is nonzero, call the imported clearerr on its stream pointer at +0x0.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownInner",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownInner",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:27:16Z"
+}

@@ -431,3 +431,24 @@ void zeroTwoDwordsAt18(uint8_t* this_) {
     *reinterpret_cast<uint32_t*>(this_ + 0x1c) = 0;
 }
 } // namespace lift_0078CB80
+
+// [0x00783630] sub_00783630 (21 bytes)
+namespace lift_00783630 {
+extern int mem_00925194;
+extern void __cdecl ext_0062D47C(void* stream);
+
+// @name ClearInnerStreamErrorIfFlagged
+// @class UnknownClass
+// @summary If the inner object's byte flag at +0x4 is nonzero, call the imported clearerr on its stream pointer at +0x0.
+// @field UnknownClass +0x04 void* field_0x04
+// @field UnknownInner +0x00 void* field_0x00
+// @field UnknownInner +0x04 uint8_t field_0x04
+void __fastcall fn_00783630(void* self) {
+    void* inner = lift_field<void*>(self, 0x04);
+    uint8_t flag = lift_field<uint8_t>(inner, 0x04);
+    if (flag != 0) {
+        void* stream = lift_field<void*>(inner, 0x00);
+        ext_0062D47C(stream);
+    }
+}
+} // namespace lift_00783630
