@@ -576,6 +576,7 @@ struct Unknown_Fields {
     // +0x1B78 void*                    subobjVtbl  (evidence: 0x006C12D0, 0x006F2410, 0x006F2480, 0x00700550, 0x00701BA0, 0x0070FD80, 0x0070FDC0)
     // +0x1D38 uint8_t field_1D38 (address taken only; passed as `this` to ext_00711D40)  (evidence: 0x006EFE00)
     // +0x1E48 void*                    field_0x1e48  (evidence: 0x006EFEA0)
+    // +0x20F0 void*                    field_20F0  (evidence: 0x006F0040)
     // +0x2200 uint8_t                  field_0x2200  (evidence: 0x006F00E0)
     // +0x6688 void*                    subobjVtbl  (evidence: 0x006F22C0)
     // +0x6718 void*                    field_0x6718  (evidence: 0x006F2330)
