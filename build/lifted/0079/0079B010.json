@@ -1,0 +1,13 @@
+{
+  "va": "0x0079B010",
+  "size": 31,
+  "orig_symbol": "sub_0079B010",
+  "src_path": "src/leaf/tiny_790000.cpp",
+  "lifted_path": "lifted/leaf/tiny_790000.cpp",
+  "name": "CopyMemoryForward",
+  "signature": "extern \"C\" void __cdecl fn_0079B010(void* dst, const void* src, uint32_t count)",
+  "summary": "Forward copy of n bytes from src to dst (cdecl, 3 stack args, ret 0): copies n/4 dwords, then the n%4 trailing bytes (rep movsd + rep movsb).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:28:26Z"
+}

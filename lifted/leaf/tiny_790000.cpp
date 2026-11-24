@@ -52,6 +52,7 @@ extern "C" int32_t __cdecl fn_0079BA50(void) {
     return mem_00B60FB8;
 }
 #include <cstdint>
+#include <cstring>
 
 // [0x0079BA60] sub_0079BA60 (6 bytes)
 // @name sub_0079BA60
@@ -479,3 +480,28 @@ void fn_00790E20(uint8_t* self, uint32_t arg) {
     *reinterpret_cast<uint32_t*>(self + 0x2C) = 0u;
 }
 } // namespace lift_00790E20
+
+// [0x0079B010] sub_0079B010 (31 bytes)
+namespace lift_0079B010 {
+// @name CopyMemoryForward
+// @summary Forward copy of n bytes from src to dst (cdecl, 3 stack args, ret 0): copies n/4 dwords, then the n%4 trailing bytes (rep movsd + rep movsb).
+// @field none no object fields accessed; all three arguments are stack parameters (dst, src, count).
+extern void __cdecl fn_0079B010(void* dst, const void* src, uint32_t count) {
+    uint8_t* d = static_cast<uint8_t*>(dst);
+    const uint8_t* s = static_cast<const uint8_t*>(src);
+
+    // rep movsd: count >> 2 dwords, forward.
+    const uint32_t dwords = count >> 2;
+    for (uint32_t i = 0; i < dwords; ++i) {
+        std::memcpy(d, s, sizeof(uint32_t));
+        d += sizeof(uint32_t);
+        s += sizeof(uint32_t);
+    }
+
+    // rep movsb: count & 3 trailing bytes, forward.
+    const uint32_t tail = count & 3u;
+    for (uint32_t i = 0; i < tail; ++i) {
+        *d++ = *s++;
+    }
+}
+} // namespace lift_0079B010

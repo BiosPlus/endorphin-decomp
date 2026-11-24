@@ -41772,6 +41772,12 @@
     "summary": "Frees a global memory handle via KERNEL32!GlobalFree and returns its result.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x0079B010": {
+    "name": "CopyMemoryForward",
+    "signature": "extern \"C\" void __cdecl fn_0079B010(void* dst, const void* src, uint32_t count)",
+    "summary": "Forward copy of n bytes from src to dst (cdecl, 3 stack args, ret 0): copies n/4 dwords, then the n%4 trailing bytes (rep movsd + rep movsb).",
+    "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
   "0x0079BA40": {
     "name": "sub_0079BA40",
     "signature": "extern \"C\" int32_t __cdecl fn_0079BA40(void)",
