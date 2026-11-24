@@ -203,3 +203,24 @@ void* fn_0040AB30(void* self, void* arg1) {
 }
 } // namespace lift_0040A910
 } // namespace lift_0040AB30
+
+// [0x0040A8E0]
+namespace lift_0040A8E0 {
+// @name lockCriticalSectionFromResult
+// @class Unknown
+// @summary Calls the vtable slot at +0x1d8 on the object referenced by arg, stores the returned pointer in self->field_0x00, then enters the critical section it points to. Returns self.
+// @field Unknown +0x00 void* field_0x00 (pointer written from vtable call result; later passed to CriticalSectionLock::enter)
+
+void ext_0065C640(void* self);
+
+void* sub_0040A8E0(void* self, void** arg) {
+    void* obj = *arg;
+    void** vtable = *reinterpret_cast<void***>(obj);
+    using GetFn = void* (*)(void*);
+    GetFn get = reinterpret_cast<GetFn>(vtable[0x1d8 / sizeof(void*)]);
+    void* result = get(obj);
+    *reinterpret_cast<void**>(self) = result;
+    ext_0065C640(result);
+    return self;
+}
+} // namespace lift_0040A8E0

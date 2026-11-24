@@ -1,0 +1,22 @@
+{
+  "va": "0x0040A8E0",
+  "size": 34,
+  "orig_symbol": "sub_0040A8E0",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "lockCriticalSectionFromResult",
+  "class": "Unknown",
+  "signature": "void* sub_0040A8E0(void* self, void** arg)",
+  "summary": "Calls the vtable slot at +0x1d8 on the object referenced by arg, stores the returned pointer in self-\u003efield_0x00, then enters the critical section it points to. Returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (pointer written from vtable call result; later passed to",
+      "name": "CriticalSectionLock::enter)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:54:27Z"
+}
