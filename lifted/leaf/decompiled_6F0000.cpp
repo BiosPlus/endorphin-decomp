@@ -1157,3 +1157,27 @@ DWORD fn_006FC950(void* self, DWORD index) {
     return lift_field<DWORD>(self, static_cast<ptrdiff_t>(4 * (idx + 1)));
 }
 } // namespace lift_006FC950
+
+// [0x006F95E0]
+namespace lift_006F95E0 {
+// @name isKnownGlobalId
+// @summary Checks whether the given 32-bit value matches any of four global values.
+
+extern uint32_t mem_00B5E240;
+extern uint32_t mem_00B5F060;
+extern uint32_t mem_00B5EB78;
+extern uint32_t mem_00B5E400;
+
+uint8_t __stdcall sub_006F95E0(uint32_t value) {
+    if (value == mem_00B5E240) {
+        return 1;
+    }
+    if (value == mem_00B5F060) {
+        return 1;
+    }
+    if (value == mem_00B5EB78) {
+        return 1;
+    }
+    return value == mem_00B5E400 ? 1 : 0;
+}
+} // namespace lift_006F95E0

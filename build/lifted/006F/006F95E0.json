@@ -1,0 +1,13 @@
+{
+  "va": "0x006F95E0",
+  "size": 57,
+  "orig_symbol": "sub_006F95E0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "isKnownGlobalId",
+  "signature": "uint8_t __stdcall sub_006F95E0(uint32_t value)",
+  "summary": "Checks whether the given 32-bit value matches any of four global values.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:22:34Z"
+}
