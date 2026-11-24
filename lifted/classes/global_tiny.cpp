@@ -5210,3 +5210,15 @@ void Effector_vfunc_26(Effector* self, float scale) {
     *field = *field * scale;
 }
 } // namespace lift_00602FF0
+
+// [0x00603000] Effector::vfunc_27 (13 bytes)
+namespace lift_00603000 {
+// @name Effector::vfunc_27
+// @class Effector
+// @summary Multiplies the float at +0x4C by the float argument (scales the gradient in place).
+// @field Effector +0x4C float field_0x4c
+void fn_00603000(void* self, float factor) {
+    float& value = lift_field<float>(self, 0x4C);
+    value = value * factor;
+}
+} // namespace lift_00603000

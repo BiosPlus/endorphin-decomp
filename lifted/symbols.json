@@ -17780,6 +17780,13 @@
     "summary": "Multiplies the float at this+0x50 by the float argument and stores the product back to this+0x50.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00603000": {
+    "name": "Effector::vfunc_27",
+    "class": "Effector",
+    "signature": "void fn_00603000(void* self, float factor)",
+    "summary": "Multiplies the float at +0x4C by the float argument (scales the gradient in place).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00603010": {
     "name": "Effector::vfunc_29",
     "class": "Effector",

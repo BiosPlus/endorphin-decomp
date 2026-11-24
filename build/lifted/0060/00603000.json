@@ -1,0 +1,22 @@
+{
+  "va": "0x00603000",
+  "size": 13,
+  "orig_symbol": "Effector::vfunc_27",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "Effector::vfunc_27",
+  "class": "Effector",
+  "signature": "void fn_00603000(void* self, float factor)",
+  "summary": "Multiplies the float at +0x4C by the float argument (scales the gradient in place).",
+  "fields": [
+    {
+      "class": "Effector",
+      "offset": "+0x4C",
+      "type": "float",
+      "name": "field_0x4c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:22:13Z"
+}
