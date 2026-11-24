@@ -2038,6 +2038,13 @@
     "summary": "If child at +0x100 is non-null, queries its state via ext_0044B660 and passes it to target's vtable+0x4 method.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430AE0": {
+    "name": "Object::callVirtualWithBoolResult",
+    "class": "Object",
+    "signature": "static inline void* vtableSlot(void* obj, uintptr_t byteOffset)",
+    "summary": "Gets a global object, queries a virtual getter (slot +0x1a0) for a bool, and passes it to slot 0 of the argument object.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430CA0": {
     "name": "Unknown::forwardVirtual0WithArg1",
     "class": "Unknown",

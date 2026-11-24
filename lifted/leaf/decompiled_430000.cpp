@@ -927,3 +927,29 @@ extern uint32_t __thiscall fn_00433080(void* self, void* arg0) {
     return is_esc ? 1u : 0u;
 }
 } // namespace lift_00433080
+
+// [0x00430AE0] sub_00430AE0 (40 bytes)
+namespace lift_00430AE0 {
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430360 (getGlobalField0x58AndCall00469040).)
+// Returns the object pointer that the original leaves in eax.
+extern void* ext_00465B40();
+
+// Read a vtable slot at a raw byte offset (the original uses offsets like +0x1a0).
+static inline void* vtableSlot(void* obj, uintptr_t byteOffset) {
+    void** vt = *reinterpret_cast<void***>(obj);
+    return *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vt) + byteOffset);
+}
+
+// @name Object::callVirtualWithBoolResult
+// @class Object
+// @summary Gets a global object, queries a virtual getter (slot +0x1a0) for a bool, and passes it to slot 0 of the argument object.
+// @field Object +0x00 void* vptr
+void fn_00430AE0(void* self) {
+    void* obj = ext_00465B40();              // eax
+    uint8_t flag = reinterpret_cast<uint8_t (*)(void*)>(
+        vtableSlot(obj, 0x1a0))(obj);        // movzx of al
+    void* arg = self;                        // esi = [esp+0x0c]
+    reinterpret_cast<void (*)(void*, uint8_t)>(
+        vtableSlot(arg, 0x00))(arg, flag);   // call [vptr+0] with ecx=arg
+}
+} // namespace lift_00430AE0
