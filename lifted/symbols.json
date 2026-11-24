@@ -8161,6 +8161,13 @@
     "summary": "Validates that self-\u003e+0x0 is non-null, then returns the index at self-\u003e+0x4 after checking it is below the uint32 at (self-\u003e+0x0)-\u003e+0x8; calls the CRT invalid-parameter handler on either failure.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x00492CC0": {
+    "name": "fn_00492CC0 (allocate and zero small record)",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* fn_00492CC0(void)",
+    "summary": "Calls ext_006A5C62(0x24) to get a 0x24-byte record, zeroes the dwords at +0x00, +0x04 and +0x08 (each guarded by a non-zero address test), sets byte +0x20 to 1 and byte +0x21 to 0, then returns the record pointer.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00493330": {
     "name": "TreeErase",
     "signature": "void __thiscall fn_00493330(void* self, uint32_t node)",

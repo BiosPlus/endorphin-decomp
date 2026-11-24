@@ -366,3 +366,39 @@ void __thiscall fn_00493330(void* self, uint32_t node) {
     }
 }
 } // namespace lift_00493330
+
+// [0x00492CC0]
+namespace lift_00492CC0 {
+// Import thunk forwarding to MFC80!ord_762 (cdecl, one stack argument, returns a pointer in eax).
+extern void* ext_006A5C62(uint32_t size);
+
+// @name fn_00492CC0 (allocate and zero small record)
+// @class Unknown
+// @summary Calls ext_006A5C62(0x24) to get a 0x24-byte record, zeroes the dwords at +0x00, +0x04 and +0x08 (each guarded by a non-zero address test), sets byte +0x20 to 1 and byte +0x21 to 0, then returns the record pointer.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x20 uint8_t field_0x20
+// @field Unknown +0x21 uint8_t field_0x21
+extern void* fn_00492CC0(void) {
+    void* eax = ext_006A5C62(0x24);
+
+    if (eax != nullptr) {
+        lift_field<uint32_t>(eax, 0x00) = 0;
+    }
+
+    uintptr_t ecx = reinterpret_cast<uintptr_t>(eax) + 0x04;
+    if (ecx != 0) {
+        *reinterpret_cast<uint32_t*>(ecx) = 0;
+    }
+
+    ecx = reinterpret_cast<uintptr_t>(eax) + 0x08;
+    if (ecx != 0) {
+        *reinterpret_cast<uint32_t*>(ecx) = 0;
+    }
+
+    lift_field<uint8_t>(eax, 0x20) = 0x01;
+    lift_field<uint8_t>(eax, 0x21) = 0x00;
+    return eax;
+}
+} // namespace lift_00492CC0
