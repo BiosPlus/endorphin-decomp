@@ -1,0 +1,22 @@
+{
+  "va": "0x00642630",
+  "size": 19,
+  "orig_symbol": "sub_00642630",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "SubObjectHolder::forwardSetField8Float",
+  "class": "SubObjectHolder",
+  "signature": "void fn_00642630(void* self, float value)",
+  "summary": "Forwards a float argument to the sub-object held at this+0x0C by calling setField8Float on it; the float is passed through unchanged.",
+  "fields": [
+    {
+      "class": "SubObjectHolder",
+      "offset": "+0xC",
+      "type": "pointer",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:03:45Z"
+}

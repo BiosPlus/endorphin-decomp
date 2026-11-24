@@ -111,3 +111,24 @@ uint32_t fn_006481E0(void* self) {
 }
 } // namespace lift_00648480
 } // namespace lift_006481E0
+
+// [0x00642630] sub_00642630 (19 bytes)
+namespace lift_00642630 {
+// Known callee 0x00648900: SubObject::setField8Float (Stores a float argument into the float at +0x08 of the object pointed to by +0x28.)
+extern void ext_00648900(void* self, float value);
+
+// @name SubObjectHolder::forwardSetField8Float
+// @class SubObjectHolder
+// @summary Forwards a float argument to the sub-object held at this+0x0C by calling setField8Float on it; the float is passed through unchanged.
+// @field SubObjectHolder +0x0C pointer field_0x0C
+void fn_00642630(void* self, float value) {
+    // fld dword [esp+4]        ; value is the float argument (already in 'value')
+    // push ecx                 ; save ecx (stack slot reused as the float argument below)
+    // mov ecx, [ecx+0xc]       ; ecx = self->field_0x0C (becomes 'this' for the callee)
+    void* sub = lift_field<void*>(self, 0x0C);
+    // fstp dword [esp]         ; push float as argument to callee
+    // call 0x648900           ; sub_00648900(this=ecx, value)
+    ext_00648900(sub, value);
+    // ret 4                    ; caller cleans the float argument (handled by the portable signature)
+}
+} // namespace lift_00642630

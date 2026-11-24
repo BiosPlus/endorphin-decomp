@@ -22465,6 +22465,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xC and tail-calls sub_006488F0.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00642630": {
+    "name": "SubObjectHolder::forwardSetField8Float",
+    "class": "SubObjectHolder",
+    "signature": "void fn_00642630(void* self, float value)",
+    "summary": "Forwards a float argument to the sub-object held at this+0x0C by calling setField8Float on it; the float is passed through unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00642650": {
     "name": "sub_00642650",
     "signature": "extern void fn_00642650(void)",
