@@ -8,6 +8,7 @@
 // Recovered field layout for this:
 namespace lifted_layout {
 struct this_Fields {
-    // +0x0   uint32_t                 vtable  (evidence: 0x006AFDC0)
+    // +0x0   pointer                  field_0x00  (evidence: 0x006E86E0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vtable  (evidence: 0x006AFDC0) // CONFLICT: multiple definitions at +0x0
 };
 } // namespace lifted_layout

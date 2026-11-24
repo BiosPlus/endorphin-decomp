@@ -562,3 +562,16 @@ __declspec(noinline) extern int32_t __fastcall fn_006E8900(void* self) {
 }
 } // namespace lift_006E7F90
 } // namespace lift_006E8900
+
+// [0x006E86E0]
+namespace lift_006E86E0 {
+// @name sub_006E86E0
+// @summary Returns the double at offset 0x60 of the object referenced by the first field of this.
+// @field this +0x00 pointer field_0x00
+// @field field_0x00 +0x60 double field_0x60
+
+double sub_006E86E0(void* self) {
+    auto* inner = *reinterpret_cast<uint8_t**>(self);
+    return *reinterpret_cast<double*>(inner + 0x60);
+}
+} // namespace lift_006E86E0

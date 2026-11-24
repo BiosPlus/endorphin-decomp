@@ -32544,6 +32544,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E86E0": {
+    "name": "sub_006E86E0",
+    "signature": "double sub_006E86E0(void* self)",
+    "summary": "Returns the double at offset 0x60 of the object referenced by the first field of this.",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
   "0x006E8810": {
     "name": "sub_006E8810",
     "class": "Unknown",

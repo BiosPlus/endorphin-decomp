@@ -1,0 +1,27 @@
+{
+  "va": "0x006E86E0",
+  "size": 16,
+  "orig_symbol": "sub_006E86E0",
+  "src_path": "src/leaf/tiny_6E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6E0000.cpp",
+  "name": "sub_006E86E0",
+  "signature": "double sub_006E86E0(void* self)",
+  "summary": "Returns the double at offset 0x60 of the object referenced by the first field of this.",
+  "fields": [
+    {
+      "class": "this",
+      "offset": "+0x0",
+      "type": "pointer",
+      "name": "field_0x00"
+    },
+    {
+      "class": "field_0x00",
+      "offset": "+0x60",
+      "type": "double",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:41:01Z"
+}
