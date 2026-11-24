@@ -31827,6 +31827,13 @@
     "summary": "Returns the 32-bit field at offset 0x1C if the object pointer is non-null, otherwise 0.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006ACFE0": {
+    "name": "SetFieldAndStoreCallResult",
+    "class": "Unknown",
+    "signature": "void fn_006ACFE0(void* self, DWORD arg)",
+    "summary": "Stores the stack argument at +0x14, calls ext_006A7D50 with it, and stores the result at +0x48.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006AD000": {
     "name": "sub_006AD000",
     "signature": "extern \"C\" void __fastcall fn_006AD000(void* self)",

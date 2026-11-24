@@ -39,3 +39,20 @@ uint32_t fn_006AD150(uint32_t self) {
     }
 }
 } // namespace lift_006AD150
+
+// [0x006ACFE0] sub_006ACFE0 (22 bytes)
+namespace lift_006ACFE0 {
+// Callee takes its single argument in ecx and returns the result in eax.
+extern DWORD ext_006A7D50(DWORD arg);
+
+// @name SetFieldAndStoreCallResult
+// @class Unknown
+// @summary Stores the stack argument at +0x14, calls ext_006A7D50 with it, and stores the result at +0x48.
+// @field Unknown +0x14 DWORD field_0x14
+// @field Unknown +0x48 DWORD field_0x48
+void fn_006ACFE0(void* self, DWORD arg) {
+    lift_field<DWORD>(self, 0x14) = arg;
+    DWORD result = ext_006A7D50(arg);
+    lift_field<DWORD>(self, 0x48) = result;
+}
+} // namespace lift_006ACFE0

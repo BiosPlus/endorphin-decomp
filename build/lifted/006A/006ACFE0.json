@@ -1,0 +1,28 @@
+{
+  "va": "0x006ACFE0",
+  "size": 22,
+  "orig_symbol": "sub_006ACFE0",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "SetFieldAndStoreCallResult",
+  "class": "Unknown",
+  "signature": "void fn_006ACFE0(void* self, DWORD arg)",
+  "summary": "Stores the stack argument at +0x14, calls ext_006A7D50 with it, and stores the result at +0x48.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "DWORD",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:30:27Z"
+}

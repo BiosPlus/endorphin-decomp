@@ -100,7 +100,7 @@ struct Unknown_Fields {
     // +0x10  uint32_t                 flags  (evidence: 0x006C9D60) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t field_0x10 (bit 16 read)  (evidence: 0x006C9F50) // CONFLICT: multiple definitions at +0x10
     // +0x14  uint32_t field_0x14      (slot[2])  (evidence: 0x00553A30) // CONFLICT: multiple definitions at +0x14
-    // +0x14  DWORD                    field_0x14  (evidence: 0x00468730, 0x00468AC0, 0x005539F0) // CONFLICT: multiple definitions at +0x14
+    // +0x14  DWORD                    field_0x14  (evidence: 0x00468730, 0x00468AC0, 0x005539F0, 0x006ACFE0) // CONFLICT: multiple definitions at +0x14
     // +0x14  float                    field_0x14  (evidence: 0x006C9E60, 0x007C2E50, 0x007C9E10) // CONFLICT: multiple definitions at +0x14
     // +0x14  int32_t                  field_0x14  (evidence: 0x00672490, 0x0067B070) // CONFLICT: multiple definitions at +0x14
     // +0x14  u8                       field_0x14  (evidence: 0x00859D30) // CONFLICT: multiple definitions at +0x14
@@ -139,7 +139,8 @@ struct Unknown_Fields {
     // +0x38  int32_t                  field_0x38  (evidence: 0x006AD960)
     // +0x44  float                    field_0x44  (evidence: 0x0054E340) // CONFLICT: multiple definitions at +0x44
     // +0x44  void*                    field_0x44  (evidence: 0x005D0AF0, 0x005DA150) // CONFLICT: multiple definitions at +0x44
-    // +0x48  void*                    field_0x48  (evidence: 0x004FDC80)
+    // +0x48  DWORD                    field_0x48  (evidence: 0x006ACFE0) // CONFLICT: multiple definitions at +0x48
+    // +0x48  void*                    field_0x48  (evidence: 0x004FDC80) // CONFLICT: multiple definitions at +0x48
     // +0x4C  void*                    field_0x4c  (evidence: 0x0044B5C0)
     // +0x50  double                   field_0x50  (evidence: 0x006E8740, 0x006E8800) // CONFLICT: multiple definitions at +0x50
     // +0x50  void*                    field_0x50  (evidence: 0x004AEC60, 0x005E09B0, 0x00609730) // CONFLICT: multiple definitions at +0x50
