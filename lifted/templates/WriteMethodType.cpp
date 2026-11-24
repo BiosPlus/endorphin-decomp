@@ -7390,3 +7390,25 @@ void __thiscall fn_005F3AF0(void* self, void* out) {
     *(uint32_t*)((uint8_t*)out + 0x4) = (uint32_t)(uintptr_t)&mem_00B46834;
 }
 } // namespace lift_005F3AF0
+
+// [0x005F3B70]
+namespace lift_005F3B70 {
+// @name ExprParser::WriteMethodType<EffectorGroup, float, EffectorGroup::setGradients>::vfunc_40
+// @class ExprParser::WriteMethodType<EffectorGroup, float, EffectorGroup::setGradients>
+// @summary Lazily initializes static type descriptor mem_00B4683C and stores its pointer at arg0 + 0x4.
+
+extern uint32_t mem_00B46840;
+extern uint32_t mem_00B4683C;
+
+extern void __thiscall ext_0067A670(void* self);
+
+void __thiscall fn_005F3B70(void* self, void* arg0) {
+    (void)self;
+    if ((mem_00B46840 & 1u) == 0u) {
+        mem_00B46840 |= 1u;
+        ext_0067A670(&mem_00B4683C);
+        mem_00B4683C = 0x0096C704u;
+    }
+    *(uint32_t*)((uint8_t*)arg0 + 4) = (uint32_t)(uintptr_t)&mem_00B4683C;
+}
+} // namespace lift_005F3B70

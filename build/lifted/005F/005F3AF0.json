@@ -1,0 +1,14 @@
+{
+  "va": "0x005F3AF0",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setGradientCaps(float)\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026EffectorGroup::setGradientCaps(float)\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026EffectorGroup::setGradientCaps(float)\u003e",
+  "signature": "void __thiscall fn_005F3AF0(void* self, void* out)",
+  "summary": "Lazily initializes a static type/value descriptor at 0x00B46834 and stores its pointer into out+0x4.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:56:06Z"
+}
