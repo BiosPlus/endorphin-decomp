@@ -45487,6 +45487,12 @@
     "summary": "Forward byte-by-byte copy of `count` bytes from src to dst; no-op when count is zero.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x00869F30": {
+    "name": "ZeroDwordRange",
+    "signature": "void ZeroDwordRange(uint32_t* dst, uint32_t count)",
+    "summary": "Zeroes `count` consecutive 32-bit words starting at `dst`; does nothing when count is 0.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086B200": {
     "name": "ZeroDwordArray5",
     "signature": "void fn_0086B200(void* self)",

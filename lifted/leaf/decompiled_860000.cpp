@@ -115,3 +115,14 @@ extern void __cdecl fn_008692F0(uint8_t* dst, uint32_t value, uint32_t count) {
     }
 }
 } // namespace lift_008692F0
+
+// [0x00869F30] sub_00869F30 (32 bytes)
+namespace lift_00869F30 {
+// @name ZeroDwordRange
+// @summary Zeroes `count` consecutive 32-bit words starting at `dst`; does nothing when count is 0.
+void ZeroDwordRange(uint32_t* dst, uint32_t count) {
+    for (uint32_t i = 0; i < count; ++i) {
+        dst[i] = 0;
+    }
+}
+} // namespace lift_00869F30
