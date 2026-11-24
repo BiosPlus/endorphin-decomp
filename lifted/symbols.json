@@ -25608,6 +25608,13 @@
     "summary": "Lazily constructs the static object at 0xB4685C (once, guarded by bit 0 of 0xB46860) and stores its address into out+4.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005F3DF0": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}\u003e",
+    "signature": "void fn_005F3DF0(void* self)",
+    "summary": "Lazily initializes a static EffectorGroup-related object once (guard bit 0 in mem_00B46868), then stores its address at self+0x04.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005F4930": {
     "name": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setForceCaps(float)\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setForceCaps(float)\u003e",

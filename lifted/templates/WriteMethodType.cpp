@@ -7136,3 +7136,26 @@ void fn_005F3D70(uint8_t* out) {
     std::memcpy(out + 4, &addr, sizeof addr);
 }
 } // namespace lift_005F3D70
+
+// [0x005F3DF0] ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}>::vfunc_40 (122 bytes)
+namespace lift_005F3DF0 {
+extern void ext_0067A670();
+extern int mem_00B46868;
+extern int mem_00B46864;
+
+// @name ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}>::vfunc_40
+// @class ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}>
+// @summary Lazily initializes a static EffectorGroup-related object once (guard bit 0 in mem_00B46868), then stores its address at self+0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_005F3DF0(void* self) {
+    // Guard: construct the static object exactly once.
+    if (!(mem_00B46868 & 1)) {
+        mem_00B46868 |= 1;
+        ext_0067A670();
+        mem_00B46864 = 0x0096CB3C; // vtable pointer of the static object
+    }
+    // Store the address of the static object into the output slot.
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x04) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B46864));
+}
+} // namespace lift_005F3DF0
