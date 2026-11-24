@@ -579,3 +579,31 @@ int32_t fn_007D4720(void* self) {
     return tail(table, secondArg);
 }
 } // namespace lift_007D4720
+
+// [0x007DB4C0]
+namespace lift_007DB4C0 {
+// @name QueryFunctionThenForward_007DB4C0
+// @summary Calls the function pointer at (self->+0xB0)->+0x08 with (0x4C, 0x10); if it returns nonzero, forwards (result, self, a1, a2) to sub_007DAE80, otherwise returns 0.
+// @field Unknown +0xb0 void* field_0xb0
+// @field Unknown +0x08 void* field_0x08
+
+// Original: callee is sub_007DAE80 (80 bytes); cdecl, args pushed as (eax, esi, edx, float).
+DWORD ext_007DAE80(DWORD result, void* self, DWORD a1, float a2);
+
+DWORD fn_007DB4C0(void* self, DWORD a1, float a2) {
+    // Original: eax = [esi + 0xb0]; ecx = [eax + 0x08];
+    void* obj = lift_field<void*>(self, 0xb0);
+    auto query = reinterpret_cast<DWORD (*)(DWORD, DWORD)>(lift_field<void*>(obj, 0x08));
+
+    // Original: push 0x10; push 0x4c; call ecx  (first param is 0x4c).
+    DWORD result = query(0x4C, 0x10);
+
+    // Original: test eax, eax; je -> xor eax, eax; ret
+    if (result == 0) {
+        return 0;
+    }
+
+    // Original: push ecx (overwritten by fstp with a2); push edx (a1); push esi (self); push eax (result); call sub_007DAE80.
+    return ext_007DAE80(result, self, a1, a2);
+}
+} // namespace lift_007DB4C0

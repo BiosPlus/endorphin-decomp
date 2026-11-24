@@ -55652,6 +55652,12 @@
     "summary": "Allocates a 32-byte (16-byte aligned) block via context-\u003efield_0xb0 and initializes it with sub_007DAD50.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007DB4C0": {
+    "name": "QueryFunctionThenForward_007DB4C0",
+    "signature": "DWORD fn_007DB4C0(void* self, DWORD a1, float a2)",
+    "summary": "Calls the function pointer at (self-\u003e+0xB0)-\u003e+0x08 with (0x4C, 0x10); if it returns nonzero, forwards (result, self, a1, a2) to sub_007DAE80, otherwise returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DB720": {
     "name": "getField0x18",
     "signature": "uint32_t sub_007DB720(uint32_t obj)",
