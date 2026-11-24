@@ -47256,6 +47256,12 @@
     "summary": "Zeroes the +0x04 word of the owner and of every node in its +0x00 singly linked chain.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00783860": {
+    "name": "InitInlineBufferHeader",
+    "signature": "uint32_t fn_00783860(uint32_t self)",
+    "summary": "Runs the 0x006D2130 initializer with count 0x10 and element size 4, then points +0x14 at the inline buffer at +0x10 and clears +0x18.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00784430": {
     "name": "initGlobals_B60918",
     "signature": "void fn_00784430(void)",

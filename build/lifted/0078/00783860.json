@@ -1,0 +1,27 @@
+{
+  "va": "0x00783860",
+  "size": 32,
+  "orig_symbol": "sub_00783860",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "InitInlineBufferHeader",
+  "signature": "uint32_t fn_00783860(uint32_t self)",
+  "summary": "Runs the 0x006D2130 initializer with count 0x10 and element size 4, then points +0x14 at the inline buffer at +0x10 and clears +0x18.",
+  "fields": [
+    {
+      "class": "InlineBufferHeader",
+      "offset": "+0x14",
+      "type": "uint32_t field_0x14 (set to self+0x10, the address of inline",
+      "name": "storage)"
+    },
+    {
+      "class": "InlineBufferHeader",
+      "offset": "+0x18",
+      "type": "uint32_t field_0x18 (cleared to",
+      "name": "0)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:25:58Z"
+}

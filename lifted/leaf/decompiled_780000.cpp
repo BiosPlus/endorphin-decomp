@@ -606,3 +606,21 @@ UINT fn_00783540(void* self, const void* buf, UINT count) {
     return static_cast<UINT>(ext_fwrite(buf, 1, count, static_cast<FILE*>(stream)));
 }
 } // namespace lift_00783540
+
+// [0x00783860] sub_00783860 (32 bytes)
+namespace lift_00783860 {
+// Known callee 0x006D2130: sub_006D2130 (Initializes a 20-byte struct with zeroed fields, a clamped minimum-1 count at +0x08, and arg2 at +0x0C, returning this.)
+extern uint32_t __thiscall ext_006D2130(uint32_t self, int32_t arg1, uint32_t arg2);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+// @name InitInlineBufferHeader
+// @summary Runs the 0x006D2130 initializer with count 0x10 and element size 4, then points +0x14 at the inline buffer at +0x10 and clears +0x18.
+// @field InlineBufferHeader +0x14 uint32_t field_0x14 (set to self+0x10, the address of inline storage)
+// @field InlineBufferHeader +0x18 uint32_t field_0x18 (cleared to 0)
+uint32_t fn_00783860(uint32_t self) {
+    ext_006D2130(self, 0x10, 4);
+    mem_write32(self + 0x18, 0);
+    mem_write32(self + 0x14, self + 0x10);
+    return self;
+}
+} // namespace lift_00783860
