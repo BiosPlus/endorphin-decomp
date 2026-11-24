@@ -1,0 +1,28 @@
+{
+  "va": "0x0077FF70",
+  "size": 32,
+  "orig_symbol": "sub_0077FF70",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "Unknown::GetDwordElement16",
+  "class": "Unknown",
+  "signature": "DWORD fn_0077FF70(void* self, DWORD index)",
+  "summary": "Returns the DWORD at element index (16-byte stride) of the array referenced via self-\u003efield_0x00-\u003efield_0x04.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void* field_0x00 (pointer to the array-owning",
+      "name": "object)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (base pointer of the 16-byte element array, on the object at",
+      "name": "field_0x00)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:43:50Z"
+}

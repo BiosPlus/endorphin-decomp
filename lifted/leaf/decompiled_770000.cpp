@@ -18,3 +18,18 @@ void* fn_0077FAC0(void* self, uint32_t arg1) {
 }
 } // namespace lift_006D2390
 } // namespace lift_0077FAC0
+
+// [0x0077FF70] sub_0077FF70 (32 bytes)
+namespace lift_0077FF70 {
+// @name Unknown::GetDwordElement16
+// @class Unknown
+// @summary Returns the DWORD at element index (16-byte stride) of the array referenced via self->field_0x00->field_0x04.
+// @field Unknown +0x00 void* field_0x00 (pointer to the array-owning object)
+// @field Unknown +0x04 void* field_0x04 (base pointer of the 16-byte element array, on the object at field_0x00)
+DWORD fn_0077FF70(void* self, DWORD index) {
+    uint8_t* owner = *reinterpret_cast<uint8_t**>(self);
+    uint8_t* base = *reinterpret_cast<uint8_t**>(owner + 0x04);
+    DWORD offset = index << 4;
+    return *reinterpret_cast<DWORD*>(base + offset);
+}
+} // namespace lift_0077FF70
