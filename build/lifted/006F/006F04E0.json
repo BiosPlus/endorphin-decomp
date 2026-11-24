@@ -1,0 +1,22 @@
+{
+  "va": "0x006F04E0",
+  "size": 44,
+  "orig_symbol": "sub_006F04E0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::forwardArgsToSubobjectAt2A80",
+  "class": "Unknown",
+  "signature": "void fn_006F04E0(void* self, uint32_t arg1, void* arg2)",
+  "summary": "Forwards two stack arguments to the embedded subobject at this+0x2A80 via storeArgsAndNotifyChild, passing the 0x006F7CD0 thunk address and 0 as extra values, then calls ext_00711A70 with 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x2A80",
+      "type": "uint8_t[] field_0x2a80 (embedded subobject; its address is computed, not dereferenced",
+      "name": "here)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:15:22Z"
+}
