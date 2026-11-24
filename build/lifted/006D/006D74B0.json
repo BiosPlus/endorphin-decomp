@@ -1,0 +1,22 @@
+{
+  "va": "0x006D74B0",
+  "size": 48,
+  "orig_symbol": "sub_006D74B0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "setFlagWordFromArg",
+  "class": "Unknown",
+  "signature": "void fn_006D74B0(void* self, uint8_t flag)",
+  "summary": "Writes 0 to the dword pointed to by this-\u003efield_0xFC if the byte argument is nonzero, otherwise writes 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xFC",
+      "type": "uint32_t*",
+      "name": "field_0xFC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:19:18Z"
+}

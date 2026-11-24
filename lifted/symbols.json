@@ -12767,6 +12767,12 @@
     "summary": "Installs vtable 0x0094F074 at +0x00, zeroes the dword/byte fields, and sets the double at +0x28 to 0.0.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00503CD0": {
+    "name": "fn_00503CD0",
+    "signature": "void __thiscall fn_00503CD0(void* self)",
+    "summary": "Sets vtable to 0x0094F074, frees buffer at +0x14 if non-null, and zeroes fields at +0x14, +0x18, +0x1C.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00503D00": {
     "name": "fillDoublesFromSource",
     "signature": "void* fn_00503D00(void* dst, uint32_t count, const void* src)",
@@ -39407,6 +39413,13 @@
     "class": "Unknown",
     "signature": "extern DWORD __fastcall fn_006D7490(void* self, int edx_unused, DWORD arg)",
     "summary": "Auto-lifted identical-shape clone of 0x0070EC30 (Unknown::ForwardSubObjectAt0x168).",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
+  "0x006D74B0": {
+    "name": "setFlagWordFromArg",
+    "class": "Unknown",
+    "signature": "void fn_006D74B0(void* self, uint8_t flag)",
+    "summary": "Writes 0 to the dword pointed to by this-\u003efield_0xFC if the byte argument is nonzero, otherwise writes 1.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006D74E0": {

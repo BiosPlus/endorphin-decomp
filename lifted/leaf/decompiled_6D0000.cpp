@@ -479,3 +479,16 @@ void vec4d_divScalar(double divisor, double* self) {
     self[3] = self[3] / divisor;
 }
 } // namespace lift_006D24D0
+
+// [0x006D74B0] sub_006D74B0 (48 bytes)
+namespace lift_006D74B0 {
+// @name setFlagWordFromArg
+// @class Unknown
+// @summary Writes 0 to the dword pointed to by this->field_0xFC if the byte argument is nonzero, otherwise writes 1.
+// @field Unknown +0xFC uint32_t* field_0xFC
+void fn_006D74B0(void* self, uint8_t flag) {
+    auto* base = static_cast<uint8_t*>(self);
+    auto* target = *reinterpret_cast<uint32_t**>(base + 0xFC);
+    *target = (flag != 0) ? 0u : 1u;
+}
+} // namespace lift_006D74B0
