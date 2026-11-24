@@ -1,0 +1,27 @@
+{
+  "va": "0x00810370",
+  "size": 42,
+  "orig_symbol": "sub_00810370",
+  "src_path": "src/leaf/decompiled_810000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_810000.cpp",
+  "name": "set_or_clear_flag_0x8000_on_subobject",
+  "signature": "void fn_00810370(void* arg0, uint32_t flag)",
+  "summary": "If flag is nonzero, sets bit 0x8000 in the dword at sub-\u003e+0x4; otherwise clears it. sub = arg0-\u003e+0x4.",
+  "fields": [
+    {
+      "class": "arg0",
+      "offset": "+0x4",
+      "type": "void* sub (pointer to",
+      "name": "sub-object)"
+    },
+    {
+      "class": "sub",
+      "offset": "+0x4",
+      "type": "uint32_t flags (bit 0x8000",
+      "name": "toggled)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:59:39Z"
+}

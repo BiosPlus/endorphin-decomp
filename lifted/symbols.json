@@ -47204,6 +47204,12 @@
     "summary": "Returns bit 15 of the uint32 at arg0-\u003e+0x4-\u003e+0x4 (as 0 or 1).",
     "lifted_path": "lifted/leaf/tiny_810000.cpp"
   },
+  "0x00810370": {
+    "name": "set_or_clear_flag_0x8000_on_subobject",
+    "signature": "void fn_00810370(void* arg0, uint32_t flag)",
+    "summary": "If flag is nonzero, sets bit 0x8000 in the dword at sub-\u003e+0x4; otherwise clears it. sub = arg0-\u003e+0x4.",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
   "0x008103A0": {
     "name": "getNestedFlagBit12",
     "signature": "uint32_t fn_008103A0(uint8_t* self)",

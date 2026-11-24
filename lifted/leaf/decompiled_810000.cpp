@@ -142,3 +142,20 @@ void fn_00810410(void* self, uint32_t flag) {
     }
 }
 } // namespace lift_00810410
+
+// [0x00810370] sub_00810370 (42 bytes)
+namespace lift_00810370 {
+// @name set_or_clear_flag_0x8000_on_subobject
+// @summary If flag is nonzero, sets bit 0x8000 in the dword at sub->+0x4; otherwise clears it. sub = arg0->+0x4.
+// @field arg0 +0x04 void* sub (pointer to sub-object)
+// @field sub +0x04 uint32_t flags (bit 0x8000 toggled)
+void fn_00810370(void* arg0, uint32_t flag) {
+    uint8_t* sub = *reinterpret_cast<uint8_t**>(reinterpret_cast<uint8_t*>(arg0) + 0x4);
+    uint32_t* flags = reinterpret_cast<uint32_t*>(sub + 0x4);
+    if (flag != 0) {
+        *flags |= 0x00008000u;
+    } else {
+        *flags &= ~0x00008000u;
+    }
+}
+} // namespace lift_00810370
