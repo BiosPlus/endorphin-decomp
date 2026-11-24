@@ -4,18 +4,193 @@
   "orig_symbol": "sub_00441020",
   "src_path": "src/leaf/tiny_440000.cpp",
   "lifted_path": "lifted/leaf/tiny_440000.cpp",
-  "name": "descriptiveName: fn_00441020 (round-biased field to int32)",
-  "signature": "int fn_00441020(void* self)",
-  "summary": "Returns (int32)round_to_nearest(this-\u003efield_0x50 + mem_0092BD70), with x87 fistp overflow/NaN giving INT32_MIN.",
+  "name": "GetStringLiteral_00440680",
+  "class": "(none)",
+  "signature": "extern \"C\" const char* __cdecl fn_00440680()",
+  "summary": "Returns the address of the read-only string \"$aj\" in .rdata.",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "uint32_t",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Class",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "struct_0",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x44",
+      "type": "void*",
+      "name": "field_0x44"
+    },
+    {
+      "class": "void",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HMODULE",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "int32_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "int",
+      "name": "field_0x64"
+    },
+    {
+      "class": "self",
+      "offset": "+0x50",
+      "type": "double",
+      "name": "field_0x50"
+    },
+    {
+      "class": "self",
+      "offset": "+0x58",
+      "type": "double",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "child"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "child"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "uint32_t",
+      "name": "field_0x70"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "uint8_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "void*",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x88",
+      "type": "uint8_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x8E",
+      "type": "uint8_t",
+      "name": "field_0x8e"
+    },
+    {
+      "class": "object",
+      "offset": "+0x88",
+      "type": "uint8_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "object",
+      "offset": "+0x8E",
+      "type": "uint8_t",
+      "name": "field_0x8e"
+    },
     {
       "class": "\u003cunknown\u003e",
       "offset": "+0x50",
       "type": "double",
       "name": "field_0x50"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "double",
+      "name": "field_0x58"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:15:37Z"
+  "lifted_at": "2026-11-24T12:15:43Z"
 }

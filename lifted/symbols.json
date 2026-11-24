@@ -2331,9 +2331,10 @@
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
   "0x00441020": {
-    "name": "descriptiveName: fn_00441020 (round-biased field to int32)",
-    "signature": "int fn_00441020(void* self)",
-    "summary": "Returns (int32)round_to_nearest(this-\u003efield_0x50 + mem_0092BD70), with x87 fistp overflow/NaN giving INT32_MIN.",
+    "name": "GetStringLiteral_00440680",
+    "class": "(none)",
+    "signature": "extern \"C\" const char* __cdecl fn_00440680()",
+    "summary": "Returns the address of the read-only string \"$aj\" in .rdata.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
   "0x00441040": {

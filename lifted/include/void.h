@@ -8,6 +8,6 @@
 // Recovered field layout for void:
 namespace lifted_layout {
 struct void_Fields {
-    // +0x10  DWORD                    field_0x10  (evidence: 0x0041D350, 0x004407B0, 0x0044B6A0, 0x00548260)
+    // +0x10  DWORD                    field_0x10  (evidence: 0x0041D350, 0x004407B0, 0x00441020, 0x0044B6A0, 0x00548260)
 };
 } // namespace lifted_layout

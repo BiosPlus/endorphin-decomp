@@ -9,7 +9,7 @@
 namespace lifted_layout {
 struct object_Fields {
     // +0x0   void* vtable (read via global mem_00AEED24)  (evidence: 0x00532B80)
-    // +0x88  uint8_t                  field_0x88  (evidence: 0x00440990)
-    // +0x8E  uint8_t                  field_0x8e  (evidence: 0x00440990)
+    // +0x88  uint8_t                  field_0x88  (evidence: 0x00440990, 0x00441020)
+    // +0x8E  uint8_t                  field_0x8e  (evidence: 0x00440990, 0x00441020)
 };
 } // namespace lifted_layout
