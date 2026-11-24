@@ -428,3 +428,21 @@ extern void __stdcall fn_00430CC0(void* obj) {
     fn(obj, static_cast<uint32_t>(flag));
 }
 } // namespace lift_00430CC0
+
+// [0x00430E00]
+namespace lift_00430E00 {
+// @name callVtable0WithGlobalField60Is1
+// @summary Calls vtable[0] on the passed object with the result of ext_00430380() as its argument.
+
+
+extern uint8_t ext_00430380(void);
+
+typedef uint32_t (__thiscall *Vtable0Fn)(void* self, uint32_t arg);
+
+uint32_t __stdcall fn_00430E00(void* obj) {
+    uint32_t* vtable = *reinterpret_cast<uint32_t**>(obj);
+    uint8_t flag = ext_00430380();
+    Vtable0Fn fn = reinterpret_cast<Vtable0Fn>(static_cast<uintptr_t>(vtable[0]));
+    return fn(obj, static_cast<uint32_t>(flag));
+}
+} // namespace lift_00430E00
