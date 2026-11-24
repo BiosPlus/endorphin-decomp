@@ -30937,3 +30937,29 @@ void* fn_00638EA0(void* out_str, void* const* value_ptr) {
 }
 } // namespace lift_005D2470
 } // namespace lift_00638EA0
+
+// [0x0046F250] ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_0046F250 {
+extern void* ext_0046C090(void* obj);
+// Known callee 0x0046C500: sub_0046C500 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void ext_0046C500(void* self, void* value);
+extern void ext_0046C3C0(void* buf);
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageWidth, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0>
+// @summary Reads the wrapped ImageExporter object pointer from the value holder and forwards it to the getImageWidth read path; throws if the holder is empty.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* fn_0046F250(void* out, void* self) {
+    (void)out;
+    void* obj = *static_cast<void**>(self);
+    if (obj == nullptr) {
+        // Original path: build a temporary via ext_0046C3C0, then throw (0x006A6DD2).
+        unsigned char buf[16] = {};
+        ext_0046C3C0(buf);
+        throw std::runtime_error("ExprParser: null ImageExporter in ReadMethodType");
+    }
+    void* result = ext_0046C090(obj);
+    ext_0046C500(self, result);
+    return self;
+}
+} // namespace lift_0046F250
