@@ -230,3 +230,21 @@ void fn_00869380(void* self) {
     lift_field<uint32_t>(self, 0x0C) = 0x10325476u;
 }
 } // namespace lift_00869380
+
+// [0x0086EFD0] sub_0086EFD0 (48 bytes)
+namespace lift_0086EFD0 {
+// @name SetFiveSlotsInvalidAndClearTopBits
+// @summary Fills five 32-bit slots with 0xFFFFFFFF, then clears bits 30..31 of slot 0.
+// @field field_0x00 uint32_t [0] (slot 0, cleared to 0x3FFFFFFF after fill)
+// @field field_0x04 uint32_t [1]
+// @field field_0x08 uint32_t [2]
+// @field field_0x0C uint32_t [3]
+// @field field_0x10 uint32_t [4]
+void fn_0086EFD0(void* self) {
+    uint32_t* slots = static_cast<uint32_t*>(self);
+    for (int i = 0; i < 5; ++i) {
+        slots[i] = 0xFFFFFFFFu;
+    }
+    slots[0] &= 0x3FFFFFFFu;
+}
+} // namespace lift_0086EFD0
