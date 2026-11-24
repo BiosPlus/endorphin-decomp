@@ -16310,6 +16310,13 @@
     "summary": "Opens the scene stored at this+0x494 using the C string of a std::string argument; returns true on failure (sete of Open's zero-check).",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
+  "0x005650F0": {
+    "name": "writeAndCloseXSIScene",
+    "class": "UnknownClass",
+    "signature": "extern \"C\" int __thiscall fn_005650F0(void* self)",
+    "summary": "Writes the XSI scene using the filename at +0x478 and closes the CSLScene at +0x494.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x00566FE0": {
     "name": "setField00AndReturnThis",
     "signature": "uint32_t __thiscall sub_00566FE0(void* this_ptr, uint32_t value)",
@@ -23412,6 +23419,12 @@
     "class": "Unknown",
     "signature": "extern \"C\" void __thiscall fn_00610B40(void* self, float value)",
     "summary": "Gets an int32 handle from ext_00594000, calls ext_006781B0 on the object at (handle + 0x2E0) with the float argument, and stores the float result into this+0x08; thiscall, callee pops 4 bytes.",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x00610CB0": {
+    "name": "sub_00610CB0",
+    "signature": "extern \"C\" void __thiscall fn_00610CB0(uint32_t ecx)",
+    "summary": "Gets float at index 0 from this+0x20 and passes it to ext_00678130 on (ext_00594000() + 0x2e0)",
     "lifted_path": "lifted/leaf/decompiled_610000.cpp"
   },
   "0x00611160": {
@@ -44213,6 +44226,12 @@
     "signature": "extern \"C\" void* __fastcall fn_007928E0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00792900 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
+  "0x0079A16C": {
+    "name": "fn_0079A16C_byteLookupTable",
+    "signature": "void fn_0079A16C(void* self)",
+    "summary": "Static 37-byte lookup table (values 0x00-0x14, 0x14 used as filler); trailing 3 bytes are padding/lea not part of the table.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
   "0x0079ABA0": {
     "name": "sub_0079ABA0",

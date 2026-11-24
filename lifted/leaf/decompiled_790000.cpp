@@ -128,3 +128,26 @@ void sub_0079ABA0(uint32_t eax, uint32_t ebx, uint32_t ecx, uint32_t edx) {
     (void)dl;
 }
 } // namespace lift_0079ABA0
+
+// [0x0079A16C] sub_0079A16C (40 bytes)
+namespace lift_0079A16C {
+// @name fn_0079A16C_byteLookupTable
+// @summary Static 37-byte lookup table (values 0x00-0x14, 0x14 used as filler); trailing 3 bytes are padding/lea not part of the table.
+// @field <ClassName> +0x00 <type> <fieldName>
+
+namespace {
+
+// Raw bytes at 0x0079A16C..0x0079A190 (37 entries). 0x14 is the repeated filler value.
+[[maybe_unused]] constexpr uint8_t kTable_0079A16C[37] = {
+    0x00, 0x01, 0x14, 0x14, 0x14, 0x14, 0x14, 0x14, 0x14, 0x14, 0x02, 0x03, 0x14, 0x04, 0x05, 0x06,
+    0x07, 0x08, 0x09, 0x14, 0x14, 0x14, 0x14, 0x14, 0x14, 0x0A, 0x14, 0x0B, 0x0C, 0x0D, 0x14, 0x0E,
+    0x0F, 0x10, 0x11, 0x12, 0x13,
+};
+
+} // namespace
+
+void fn_0079A16C(void* self) {
+    // Data-only region: no executable logic. `self` is unused.
+    (void)self;
+}
+} // namespace lift_0079A16C
