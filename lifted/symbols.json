@@ -11553,6 +11553,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00545A70 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00546860": {
+    "name": "RotateTool::vfunc_7",
+    "class": "RotateTool",
+    "signature": "int32_t fn_00546860(void* self)",
+    "summary": "Returns 1 if the int at RotateTool+0xA8 equals 4, otherwise 0.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00547060": {
     "name": "RotateTool::vfunc_1",
     "class": "RotateTool",

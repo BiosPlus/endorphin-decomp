@@ -5098,3 +5098,14 @@ void fn_005353F0(void* self, uint32_t value) {
 }
 } // namespace lift_004F9840
 } // namespace lift_005353F0
+
+// [0x00546860] RotateTool::vfunc_7 (13 bytes)
+namespace lift_00546860 {
+// @name RotateTool::vfunc_7
+// @class RotateTool
+// @summary Returns 1 if the int at RotateTool+0xA8 equals 4, otherwise 0.
+// @field RotateTool +0xA8 int32_t field_0xA8
+int32_t fn_00546860(void* self) {
+    return lift_field<int32_t>(self, 0xA8) == 4 ? 1 : 0;
+}
+} // namespace lift_00546860
