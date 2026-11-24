@@ -50652,6 +50652,12 @@
     "summary": "Returns constant 0x11.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00712BA0": {
+    "name": "initHugeBounds",
+    "signature": "void sub_00712BA0(void)",
+    "summary": "Initializes three 64-bit global values from MSVCR80!_HUGE.",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00712F40": {
     "name": "sub_00712F40",
     "signature": "extern \"C\" void* __fastcall fn_00712F40(void* self, int edx_unused, unsigned int flags)",
@@ -51306,6 +51312,12 @@
     "summary": "Getter returning uint8_t field at offset +0xDE.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00714B50": {
+    "name": "initHugeVec3Globals",
+    "signature": "void sub_00714B50()",
+    "summary": "Initializes three 64-bit double globals from MSVCR80.dll!_HUGE.",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
   "0x00715130": {
     "name": "isKnownGlobalValue",
     "signature": "uint8_t __stdcall sub_00715130(uint32_t val)",
@@ -51479,6 +51491,12 @@
     "signature": "extern \"C\" uint8_t __fastcall fn_007180F0(void* self)",
     "summary": "Getter returning uint8_t field at offset +0x1DD.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x007182A0": {
+    "name": "initHugeVectorGlobals",
+    "signature": "void sub_007182A0(void)",
+    "summary": "Initializes three 64-bit double globals from MSVCR80!_HUGE.",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x007182F0": {
     "name": "InitNegatedHugeGlobals",
@@ -52252,6 +52270,12 @@
     "signature": "double fn_0071DEA0(uint32_t self)",
     "summary": "Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071E070": {
+    "name": "initHugeVector",
+    "signature": "void sub_0071E070()",
+    "summary": "Initializes three 64-bit values from MSVCR80!_HUGE",
+    "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
   "0x0071E0C0": {
     "name": "NegateHugeIntoGlobals",
