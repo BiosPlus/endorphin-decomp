@@ -237,3 +237,46 @@ extern uint32_t __cdecl fn_00519C40(void* str) {
 }
 } // namespace lift_00519C40
 } // namespace lift_00519C40
+
+// [0x0051AE90] sub_0051AE90 (57 bytes)
+namespace lift_0051AE90 {
+// @name sub_0051AE90
+// @summary Auto-lifted identical-shape clone of 0x0051AEF0 (GetFloatFromSubobjectAndForward_0051AEF0).
+namespace lift_0051AEF0 {
+// Known callee 0x0051AD40: sub_0051AD40 (thiscall taking one float argument; signature inferred from the call site, 127 bytes).
+extern void ext_0051AC30(void* self, float value);
+
+// Global data referenced by this function.
+// mem_00AECC08: pointer to a fallback object used when self->+0x24 is null.
+extern void* mem_00AECC08;
+// mem_00AECC04: address of a static object passed as the vtable-call argument in the fallback path.
+extern uint8_t mem_00AECC04[];
+
+// Calls vtable slot 1 (byte offset +4) on obj, passing arg; returns the float result.
+static float call_vslot1_float(void* obj, void* arg) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    auto fn = reinterpret_cast<float (*)(void*, void*)>(vtbl[1]);
+    return fn(obj, arg);
+}
+
+// @name GetFloatFromSubobjectAndForward_0051AEF0
+// @summary Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.
+// @field Unknown +0x24 void* subobject
+// @field Subobject +0x04 void* object
+void fn_0051AE90(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    void* sub = lift_field<void*>(base, 0x24);
+
+    float value;
+    if (sub != nullptr) {
+        void* obj = lift_field<void*>(sub, 0x04);
+        value = call_vslot1_float(obj, sub);
+    } else {
+        void* obj = mem_00AECC08;
+        value = call_vslot1_float(obj, static_cast<void*>(mem_00AECC04));
+    }
+
+    ext_0051AC30(self, value);
+}
+} // namespace lift_0051AEF0
+} // namespace lift_0051AE90

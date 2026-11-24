@@ -1,0 +1,22 @@
+{
+  "va": "0x00611980",
+  "size": 57,
+  "orig_symbol": "sub_00611980",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "sub_00611980",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00611980(void* self, float value)",
+  "summary": "Auto-lifted identical-shape clone of 0x00611910 (Unknown::forwardFloatThroughChildAndVirtualF0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T15:20:17Z"
+}

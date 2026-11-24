@@ -2283,6 +2283,34 @@
     "summary": "Returns 1 if the int32 at +0x60 of the object returned by ext_004658C0 equals 1, else 0.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004303B0": {
+    "name": "sub_004303B0",
+    "class": "Unknown",
+    "signature": "extern INT __cdecl fn_004303B0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x004E9D70 (Unknown::DispatchIndex5ToSelector).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x004303D0": {
+    "name": "sub_004303D0",
+    "class": "Unknown",
+    "signature": "extern INT __cdecl fn_004303D0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x004E9D70 (Unknown::DispatchIndex5ToSelector).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x004303F0": {
+    "name": "sub_004303F0",
+    "class": "Unknown",
+    "signature": "extern INT __cdecl fn_004303F0(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x004E9D70 (Unknown::DispatchIndex5ToSelector).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x00430410": {
+    "name": "sub_00430410",
+    "class": "Unknown",
+    "signature": "extern INT __cdecl fn_00430410(void)",
+    "summary": "Auto-lifted identical-shape clone of 0x004E9D70 (Unknown::DispatchIndex5ToSelector).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430430": {
     "name": "Unknown::ForwardFlagToVirtual1",
     "class": "Unknown",
@@ -16093,6 +16121,12 @@
     "summary": "Returns the first float (time) of the last 20-byte keyframe in [begin, end), or 0.0f if the range is empty.",
     "lifted_path": "lifted/NMData/QuatChannel.cpp"
   },
+  "0x0051AE90": {
+    "name": "sub_0051AE90",
+    "signature": "static float call_vslot1_float(void* obj, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051AEF0 (GetFloatFromSubobjectAndForward_0051AEF0).",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x0051AED0": {
     "name": "NMData::RealChannel::vfunc_8",
     "class": "NMData::RealChannel",
@@ -29022,6 +29056,13 @@
     "name": "sub_00611950",
     "signature": "extern \"C\" void __thiscall fn_00611950(void* this_ptr)",
     "summary": "Calls vtable[0x10c](2) to get a float, then passes it to ext_00678130 on (ext_00594000() + 0x2e0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
+  "0x00611980": {
+    "name": "sub_00611980",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_00611980(void* self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x00611910 (Unknown::forwardFloatThroughChildAndVirtualF0).",
     "lifted_path": "lifted/leaf/decompiled_610000.cpp"
   },
   "0x00611B80": {

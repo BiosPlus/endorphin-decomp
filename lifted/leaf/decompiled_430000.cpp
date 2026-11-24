@@ -1893,3 +1893,83 @@ void __thiscall fn_0043C640(void* self, uint32_t arg0, uint32_t arg1, uint32_t a
     ext_004564A0(self, arg0, arg1, arg2);
 }
 } // namespace lift_0043C640
+
+// [0x004303B0] sub_004303B0 (17 bytes)
+namespace lift_004303B0 {
+// @name sub_004303B0
+// @summary Auto-lifted identical-shape clone of 0x004E9D70 (Unknown::DispatchIndex5ToSelector).
+namespace lift_004E9D70 {
+// Known callee 0x00468180: sub_00468180 (Returns global int32 value from mem_00AD7CD8.)
+extern INT __cdecl ext_00468180(void);
+// Known callee 0x00469530: Unknown::DispatchToIndexedChild (Bounds-checks index against the pointer array at +0x54..+0x58, then calls vtable slot 1 of the selected element with arg and returns its result.)
+extern INT __thiscall ext_0046B010(void* self, INT index, INT arg);
+
+// @name Unknown::DispatchIndex5ToSelector
+// @class Unknown
+// @summary Fetches a global int32 as the receiver and dispatches index 5 (arg 0) to its indexed child.
+extern INT __cdecl fn_004303B0(void) {
+    INT self = ext_00468180();
+    return ext_0046B010(reinterpret_cast<void*>(static_cast<intptr_t>(self)), 0, 1);
+}
+} // namespace lift_004E9D70
+} // namespace lift_004303B0
+
+// [0x004303D0] sub_004303D0 (17 bytes)
+namespace lift_004303D0 {
+// @name sub_004303D0
+// @summary Auto-lifted identical-shape clone of 0x004E9D70 (Unknown::DispatchIndex5ToSelector).
+namespace lift_004E9D70 {
+// Known callee 0x00468180: sub_00468180 (Returns global int32 value from mem_00AD7CD8.)
+extern INT __cdecl ext_00468180(void);
+// Known callee 0x00469530: Unknown::DispatchToIndexedChild (Bounds-checks index against the pointer array at +0x54..+0x58, then calls vtable slot 1 of the selected element with arg and returns its result.)
+extern INT __thiscall ext_0046B010(void* self, INT index, INT arg);
+
+// @name Unknown::DispatchIndex5ToSelector
+// @class Unknown
+// @summary Fetches a global int32 as the receiver and dispatches index 5 (arg 0) to its indexed child.
+extern INT __cdecl fn_004303D0(void) {
+    INT self = ext_00468180();
+    return ext_0046B010(reinterpret_cast<void*>(static_cast<intptr_t>(self)), 1, 1);
+}
+} // namespace lift_004E9D70
+} // namespace lift_004303D0
+
+// [0x004303F0] sub_004303F0 (17 bytes)
+namespace lift_004303F0 {
+// @name sub_004303F0
+// @summary Auto-lifted identical-shape clone of 0x004E9D70 (Unknown::DispatchIndex5ToSelector).
+namespace lift_004E9D70 {
+// Known callee 0x00468180: sub_00468180 (Returns global int32 value from mem_00AD7CD8.)
+extern INT __cdecl ext_00468180(void);
+// Known callee 0x00469530: Unknown::DispatchToIndexedChild (Bounds-checks index against the pointer array at +0x54..+0x58, then calls vtable slot 1 of the selected element with arg and returns its result.)
+extern INT __thiscall ext_0046B010(void* self, INT index, INT arg);
+
+// @name Unknown::DispatchIndex5ToSelector
+// @class Unknown
+// @summary Fetches a global int32 as the receiver and dispatches index 5 (arg 0) to its indexed child.
+extern INT __cdecl fn_004303F0(void) {
+    INT self = ext_00468180();
+    return ext_0046B010(reinterpret_cast<void*>(static_cast<intptr_t>(self)), 0, 0);
+}
+} // namespace lift_004E9D70
+} // namespace lift_004303F0
+
+// [0x00430410] sub_00430410 (17 bytes)
+namespace lift_00430410 {
+// @name sub_00430410
+// @summary Auto-lifted identical-shape clone of 0x004E9D70 (Unknown::DispatchIndex5ToSelector).
+namespace lift_004E9D70 {
+// Known callee 0x00468180: sub_00468180 (Returns global int32 value from mem_00AD7CD8.)
+extern INT __cdecl ext_00468180(void);
+// Known callee 0x00469530: Unknown::DispatchToIndexedChild (Bounds-checks index against the pointer array at +0x54..+0x58, then calls vtable slot 1 of the selected element with arg and returns its result.)
+extern INT __thiscall ext_0046B010(void* self, INT index, INT arg);
+
+// @name Unknown::DispatchIndex5ToSelector
+// @class Unknown
+// @summary Fetches a global int32 as the receiver and dispatches index 5 (arg 0) to its indexed child.
+extern INT __cdecl fn_00430410(void) {
+    INT self = ext_00468180();
+    return ext_0046B010(reinterpret_cast<void*>(static_cast<intptr_t>(self)), 1, 0);
+}
+} // namespace lift_004E9D70
+} // namespace lift_00430410

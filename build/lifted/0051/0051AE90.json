@@ -1,0 +1,27 @@
+{
+  "va": "0x0051AE90",
+  "size": 57,
+  "orig_symbol": "sub_0051AE90",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "sub_0051AE90",
+  "signature": "static float call_vslot1_float(void* obj, void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x0051AEF0 (GetFloatFromSubobjectAndForward_0051AEF0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "subobject"
+    },
+    {
+      "class": "Subobject",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "object"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T15:20:17Z"
+}
