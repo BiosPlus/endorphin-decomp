@@ -637,3 +637,15 @@ uint32_t __thiscall sub_006BD210(uint32_t* self, const uint32_t* other) {
     return 1;
 }
 } // namespace lift_006BD210
+
+// [0x006B8B10]
+namespace lift_006B8B10 {
+// Known callee 0x006A5EA8: thunk_MFC80_ord_1903 (IAT jump thunk forwarding to MFC80!ord_1903.)
+extern void ext_006A5EA8();
+
+// @name thunk_forwardToMFC80Ord1903
+// @summary Thin wrapper that forwards to the MFC80 ord_1903 import thunk and returns (ret 0xc).
+void fn_006B8B10(void) {
+    ext_006A5EA8();
+}
+} // namespace lift_006B8B10
