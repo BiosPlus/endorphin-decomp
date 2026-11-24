@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 extern "C" void __fastcall ext_00712F60(void* self);
 extern "C" void __cdecl ext_006A5C5C(void* ptr);
+#include <cstdint>
 
 // [0x00712F40] sub_00712F40 (32 bytes)
 // @name sub_00712F40
@@ -71,3 +72,18 @@ Unknown* fn_00714570(Unknown* ecx) {
 }
 } // namespace lift_006B9D10
 } // namespace lift_00714570
+
+// [0x00711BA0]
+namespace lift_00711BA0 {
+// @name getSubobjectField_0x18
+// @summary Calls fn_0071E680 on self and returns the double at offset +0x18 of the returned subobject.
+// @field Subobject +0x18 double field_0x18
+
+
+extern void* __fastcall fn_0071E680(void* self);
+
+extern double __fastcall fn_00711BA0(void* self) {
+    void* sub = fn_0071E680(self);
+    return *reinterpret_cast<const double*>(static_cast<const uint8_t*>(sub) + 0x18);
+}
+} // namespace lift_00711BA0
