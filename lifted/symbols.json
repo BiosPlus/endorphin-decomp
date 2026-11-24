@@ -36432,6 +36432,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007D85D0 (setField58_007D85D0).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C6780": {
+    "name": "getFlag1C4Bit0",
+    "signature": "extern \"C\" int fn_007C6780(void* self)",
+    "summary": "Returns bit 0 of the dword at offset +0x1C4 of the object (cdecl, one stack argument).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C6C10": {
     "name": "setFlag0x4At0x0C",
     "signature": "void sub_007C6C10(uint32_t arg0)",

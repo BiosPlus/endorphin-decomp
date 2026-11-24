@@ -891,3 +891,13 @@ uint32_t fn_007C9260(void* self) {
     return lift_field<uint32_t>(self, 0x9C) & 1u;
 }
 } // namespace lift_007C9260
+
+// [0x007C6780] sub_007C6780 (14 bytes)
+namespace lift_007C6780 {
+// @name getFlag1C4Bit0
+// @summary Returns bit 0 of the dword at offset +0x1C4 of the object (cdecl, one stack argument).
+// @field Unknown +0x1C4 uint32_t field_0x1C4
+extern int fn_007C6780(void* self) {
+    return static_cast<int>(lift_field<uint32_t>(self, 0x1C4) & 0x1u);
+}
+} // namespace lift_007C6780

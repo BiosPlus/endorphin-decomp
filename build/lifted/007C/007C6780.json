@@ -1,0 +1,21 @@
+{
+  "va": "0x007C6780",
+  "size": 14,
+  "orig_symbol": "sub_007C6780",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "getFlag1C4Bit0",
+  "signature": "extern \"C\" int fn_007C6780(void* self)",
+  "summary": "Returns bit 0 of the dword at offset +0x1C4 of the object (cdecl, one stack argument).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C4",
+      "type": "uint32_t",
+      "name": "field_0x1C4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:27:55Z"
+}

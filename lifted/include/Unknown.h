@@ -72,6 +72,7 @@ struct Unknown_Fields {
     // +0x12C uint8_t                  field_0x12C  (evidence: 0x0046F910)
     // +0x138 float                    field_0x138  (evidence: 0x0046C110, 0x00594700)
     // +0x184 int32_t                  field_0x184  (evidence: 0x005B64D0)
+    // +0x1C4 uint32_t                 field_0x1C4  (evidence: 0x007C6780)
     // +0x1C8 float                    field_0x1c8  (evidence: 0x007C5F90)
     // +0x234 void*                    field_0x234  (evidence: 0x005E1360)
     // +0x4E2 uint8_t                  field_0x4E2  (evidence: 0x004104E0)
