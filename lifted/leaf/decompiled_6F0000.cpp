@@ -1062,3 +1062,20 @@ extern void __thiscall fn_006F7910(void* self, uint32_t unused) {
     ext_00711DA0(self, static_cast<uint32_t>(value));
 }
 } // namespace lift_006F7910
+
+// [0x006F7950] sub_006F7950 (32 bytes)
+namespace lift_006F7950 {
+// Known callee 0x006D7E50: sub_006D7E50 (Returns constant 0x4; the pushed argument is ignored.)
+extern int32_t __cdecl ext_006D7E50(uint32_t unused);
+// Known callee 0x00711DA0: Subobject::setField28 (Resolves the subobject at self+0x40 via fn_0071E680 and stores the stack argument at its +0x28 field.)
+extern void __thiscall ext_00711DA0(void* self, uint32_t value);
+
+// @name setSubobjectField28FromConstant
+// @class Unknown
+// @summary Obtains the constant 4 from sub_006D7E50 and stores it into the field28 of the subobject at self+0x40 via Subobject::setField28.
+extern void __thiscall fn_006F7950(void* self, uint32_t arg) {
+    (void)arg; // Caller-pushed stack argument is never read; the callee cleans it up (ret 4).
+    uint32_t value = static_cast<uint32_t>(ext_006D7E50(0u));
+    ext_00711DA0(self, value);
+}
+} // namespace lift_006F7950

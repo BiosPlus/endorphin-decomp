@@ -1,0 +1,14 @@
+{
+  "va": "0x006F7950",
+  "size": 32,
+  "orig_symbol": "sub_006F7950",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "setSubobjectField28FromConstant",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __thiscall fn_006F7950(void* self, uint32_t arg)",
+  "summary": "Obtains the constant 4 from sub_006D7E50 and stores it into the field28 of the subobject at self+0x40 via Subobject::setField28.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:23:36Z"
+}
