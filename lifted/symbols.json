@@ -26748,6 +26748,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B7D80 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006077D0": {
+    "name": "WriteMethodType\u003cEffectorBase, bool, vcall68\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}\u003e",
+    "signature": "void fn_006077D0(void* self, void* arg)",
+    "summary": "Lazily initializes a static EffectorBase-related object (guarded by bit 0 of 0x00B477A0), then stores its address into the +0x04 field of the argument.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00608160": {
     "name": "EffectorWithModes::vfunc_0",
     "class": "EffectorWithModes",

@@ -7159,3 +7159,30 @@ void fn_005F3DF0(void* self) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B46864));
 }
 } // namespace lift_005F3DF0
+
+// [0x006077D0] ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>::vfunc_40 (122 bytes)
+namespace lift_006077D0 {
+// Callee 0x0067A670: sub_0067A670 (26B), thiscall taking one stack argument (constructor-style init of the static object).
+extern void ext_0067A670(void* self, uint32_t arg);
+
+// Guard word for the function-local static (bit 0 = initialized/entered).
+extern uint32_t mem_00B477A0;
+// Static object storage at 0x00B4779C; its first dword is the vtable pointer (0x009705DC).
+extern uint32_t mem_00B4779C;
+
+// @name WriteMethodType<EffectorBase, bool, vcall68>::vfunc_40
+// @class ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>
+// @summary Lazily initializes a static EffectorBase-related object (guarded by bit 0 of 0x00B477A0), then stores its address into the +0x04 field of the argument.
+// @field ExprParser::WriteMethodType +0x04 uint32_t staticObjectPtr
+void fn_006077D0(void* self, void* arg) {
+    (void)self;
+    if ((mem_00B477A0 & 1u) == 0) {
+        // First entry: mark guard as taken, construct the static object, install its vtable.
+        mem_00B477A0 |= 1u;
+        ext_0067A670(reinterpret_cast<void*>(static_cast<uintptr_t>(0xB4779Cu)), 0u);
+        mem_00B4779C = 0x009705DCu;
+    }
+    // Both paths: publish the static object's address into arg+4.
+    lift_field<uint32_t>(arg, 0x04) = 0x00B4779Cu;
+}
+} // namespace lift_006077D0

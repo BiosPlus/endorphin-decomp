@@ -1,0 +1,22 @@
+{
+  "va": "0x006077D0",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "WriteMethodType\u003cEffectorBase, bool, vcall68\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}\u003e",
+  "signature": "void fn_006077D0(void* self, void* arg)",
+  "summary": "Lazily initializes a static EffectorBase-related object (guarded by bit 0 of 0x00B477A0), then stores its address into the +0x04 field of the argument.",
+  "fields": [
+    {
+      "class": "ExprParser::WriteMethodType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "staticObjectPtr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:54:33Z"
+}
