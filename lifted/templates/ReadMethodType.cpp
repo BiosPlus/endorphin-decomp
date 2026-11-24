@@ -40901,3 +40901,33 @@ void* fn_004D8620(void* unused, void* self) {
     return self;
 }
 } // namespace lift_004D8620
+
+// [0x005B37A0] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_3 (109 bytes)
+namespace lift_005B37A0 {
+// @name ExprParser::ReadMethodType<Geometry>::vfunc_3 (Geometry::getFileName bool check)
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>
+// @summary Calls the object's virtual slot 8 for a string and returns true when that string equals "true" or "TRUE".
+// @field ValuePtrType +0x0C void* field_0x0C
+bool fn_005B37A0(void* self) {
+    // self points at a slot holding the target object pointer.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser: null value pointer");
+    }
+
+    // Sub-object at +0x0C; call its vtable slot at +0x20 (index 8).
+    void* sub = lift_field<void*>(obj, 0x0C);
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    using GetStringFn = const std::string* (*)(void* this_);
+    auto getString = reinterpret_cast<GetStringFn>(vtbl[8]);
+    const std::string* s = getString(sub);
+
+    if (*s == "true") {
+        return true;
+    }
+    if (*s == "TRUE") {
+        return true;
+    }
+    return false;
+}
+} // namespace lift_005B37A0
