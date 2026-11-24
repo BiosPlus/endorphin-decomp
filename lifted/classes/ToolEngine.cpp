@@ -35,3 +35,33 @@ void __thiscall fn_00480100(void* self, float val) {
     vfunc_25(self, vec);
 }
 } // namespace lift_00480100
+
+// [0x004809E0]
+namespace lift_004809E0 {
+// @name ToolEngine::vfunc_7
+// @class ToolEngine
+// @summary Checks whether the ToolEngine has an empty vector at +0x18/+0x1C or a non-zero flag at +0x30.
+// @field ToolEngine +0x18 uint32_t field_0x18
+// @field ToolEngine +0x1C uint32_t field_0x1C
+// @field ToolEngine +0x30 uint8_t field_0x30
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern uint8_t mem_read8(uint32_t addr);
+
+uint32_t fn_004809E0(uint32_t self) {
+    uint32_t begin = mem_read32(self + 0x18);
+    if (begin == 0) {
+        return 1;
+    }
+    uint32_t end = mem_read32(self + 0x1C);
+    int32_t count = static_cast<int32_t>(end - begin) >> 2;
+    if (count == 0) {
+        return 1;
+    }
+    if (mem_read8(self + 0x30) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004809E0

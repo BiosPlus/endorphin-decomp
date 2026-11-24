@@ -5905,6 +5905,13 @@
     "summary": "Returns 1 if vector at +0x08/+0x0C is null/empty or flag at +0x20 is non-zero, else 0.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x004809E0": {
+    "name": "ToolEngine::vfunc_7",
+    "class": "ToolEngine",
+    "signature": "uint32_t fn_004809E0(uint32_t self)",
+    "summary": "Checks whether the ToolEngine has an empty vector at +0x18/+0x1C or a non-zero flag at +0x30.",
+    "lifted_path": "lifted/classes/ToolEngine.cpp"
+  },
   "0x004816E0": {
     "name": "Commands::BufferTransformsCommand::vfunc_1",
     "class": "Commands::BufferTransformsCommand",
@@ -8108,6 +8115,12 @@
     "class": "Unknown",
     "signature": "void fn_004AECE0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
+  "0x004AEF30": {
+    "name": "destroyRange_8byte",
+    "signature": "extern \"C\" void __stdcall sub_004AEF30(uint32_t begin, uint32_t end)",
+    "summary": "Iterates over a range of 8-byte objects [begin, end) and calls ext_00493D90 on each element.",
     "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
   },
   "0x004AF040": {
