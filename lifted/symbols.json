@@ -46868,6 +46868,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007642D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_760000.cpp"
   },
+  "0x00766210": {
+    "name": "scaleDoubleBlock16",
+    "signature": "void __stdcall fn_00766210(void* self, double scale)",
+    "summary": "Multiplies 16 consecutive doubles (128 bytes) in the block returned by ext_006D2A30(self) by a scale factor.",
+    "lifted_path": "lifted/leaf/decompiled_760000.cpp"
+  },
   "0x00766710": {
     "name": "sub_00766710",
     "signature": "extern \"C\" void* __fastcall fn_00766710(void* self, int edx_unused, unsigned int flags)",

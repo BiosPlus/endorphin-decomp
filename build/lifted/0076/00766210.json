@@ -1,0 +1,13 @@
+{
+  "va": "0x00766210",
+  "size": 48,
+  "orig_symbol": "sub_00766210",
+  "src_path": "src/leaf/decompiled_760000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_760000.cpp",
+  "name": "scaleDoubleBlock16",
+  "signature": "void __stdcall fn_00766210(void* self, double scale)",
+  "summary": "Multiplies 16 consecutive doubles (128 bytes) in the block returned by ext_006D2A30(self) by a scale factor.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:24:47Z"
+}
