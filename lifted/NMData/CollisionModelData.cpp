@@ -291,3 +291,37 @@ void __thiscall fn_005C38B0(void* self, uint32_t arg1) {
     std::memcpy(dst, src, 64);
 }
 } // namespace lift_005C38B0
+
+// [0x005C37E0]
+namespace lift_005C37E0 {
+extern void __fastcall ext_005B1B60(void* self, void* /*edx*/, const void* src);
+
+// @name NMData::CollisionModelData::vfunc_5_off_C
+// @class NMData::CollisionModelData
+// @summary Copies a 4-float vector into the subobject at +0x150 and forwards a 3-float vector (with w=0) to vfunc +0x34 on the subobject at +0x04.
+// @field NMData::CollisionModelData +0x04 void* field_0x04
+// @field NMData::CollisionModelData +0x150 void* field_0x150
+extern void __fastcall fn_005C37E0(void* self, void* /*edx*/, const float* vec) {
+    auto* bytes = static_cast<uint8_t*>(self);
+    void* sub150 = *reinterpret_cast<void**>(bytes + 0x150);
+    if (!sub150) {
+        return;
+    }
+
+    ext_005B1B60(sub150, nullptr, vec);
+
+    float localVec[4];
+    localVec[0] = vec[0];
+    localVec[1] = vec[1];
+    localVec[2] = vec[2];
+    localVec[3] = 0.0f;
+
+    void* sub04 = *reinterpret_cast<void**>(bytes + 0x04);
+    if (sub04) {
+        void** vtable = *reinterpret_cast<void***>(sub04);
+        using VFunc = void(__fastcall*)(void*, void*, const float*);
+        auto fn = reinterpret_cast<VFunc>(vtable[0x34 / 4]);
+        fn(sub04, nullptr, localVec);
+    }
+}
+} // namespace lift_005C37E0
