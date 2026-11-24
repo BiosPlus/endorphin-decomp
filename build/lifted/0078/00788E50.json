@@ -1,0 +1,28 @@
+{
+  "va": "0x00788E50",
+  "size": 48,
+  "orig_symbol": "sub_00788E50",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "TextConverter::convertWideToUtf8Field",
+  "class": "TextConverter",
+  "signature": "void* fn_00788E50(void* self)",
+  "summary": "Converts the NUL-terminated UTF-16 string at +0x30 into UTF-8 in the 0x400-byte buffer at +0x254 (CP 65001), and returns a pointer to that buffer.",
+  "fields": [
+    {
+      "class": "TextConverter",
+      "offset": "+0x30",
+      "type": "wchar_t[]",
+      "name": "wideText"
+    },
+    {
+      "class": "TextConverter",
+      "offset": "+0x254",
+      "type": "char[0x400]",
+      "name": "utf8Text"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:26:19Z"
+}

@@ -47435,6 +47435,13 @@
     "summary": "Closes the find handle at +0x00 via FindClose with SetErrorMode(1) around it, then clears the handle and the flag at +0x654.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00788E50": {
+    "name": "TextConverter::convertWideToUtf8Field",
+    "class": "TextConverter",
+    "signature": "void* fn_00788E50(void* self)",
+    "summary": "Converts the NUL-terminated UTF-16 string at +0x30 into UTF-8 in the 0x400-byte buffer at +0x254 (CP 65001), and returns a pointer to that buffer.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00789260": {
     "name": "ConstructRecord4",
     "signature": "void* fn_00789260(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint8_t a4)",
