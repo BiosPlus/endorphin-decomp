@@ -1,0 +1,14 @@
+{
+  "va": "0x007C8C70",
+  "size": 18,
+  "orig_symbol": "sub_007C8C70",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "descriptiveName_007C8C70",
+  "class": "none (free function; the argument's pointee type is not identified)",
+  "signature": "uint32_t* descriptiveName_007C8C70(uint32_t* p)",
+  "summary": "Zeroes the two dwords at the pointer argument and returns that pointer (cdecl, one stack arg, no class).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:59:03Z"
+}

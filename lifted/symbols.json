@@ -39044,6 +39044,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C8C70": {
+    "name": "descriptiveName_007C8C70",
+    "class": "none (free function; the argument's pointee type is not identified)",
+    "signature": "uint32_t* descriptiveName_007C8C70(uint32_t* p)",
+    "summary": "Zeroes the two dwords at the pointer argument and returns that pointer (cdecl, one stack arg, no class).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C8D70": {
     "name": "thunk_MSVCR80_malloc",
     "signature": "extern \"C\" void fn_007C8D70(void)",
