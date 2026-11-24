@@ -1,0 +1,21 @@
+{
+  "va": "0x00407850",
+  "size": 17,
+  "orig_symbol": "sub_00407850",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "getParentWrapper",
+  "signature": "void* fn_00407850(void* self)",
+  "summary": "Gets the parent of the window handle stored at this+0x20 and passes it to the MFC80 wrapper lookup (ord_2372); returns that result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:50:12Z"
+}

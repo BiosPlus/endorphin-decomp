@@ -19,3 +19,20 @@ void fn_00407830(void* self) {
     reinterpret_cast<ForwardFn>(&ext_006A6004)(hdc);
 }
 } // namespace lift_00407830
+
+// [0x00407850] sub_00407850 (17 bytes)
+namespace lift_00407850 {
+// Known callee 0x006A5E00: thunk_MFC80_ord_2372 (IAT jump thunk forwarding to MFC80!ord_2372.)
+extern void* ext_006A5E00(void* wnd);
+// IAT slot for USER32!GetParent
+extern void* (__stdcall* mem_00925650)(void* hWnd);
+
+// @name getParentWrapper
+// @summary Gets the parent of the window handle stored at this+0x20 and passes it to the MFC80 wrapper lookup (ord_2372); returns that result.
+// @field Unknown +0x20 HWND field_0x20
+void* fn_00407850(void* self) {
+    void* hwnd = *reinterpret_cast<void**>(static_cast<unsigned char*>(self) + 0x20);
+    void* parent = mem_00925650(hwnd);
+    return ext_006A5E00(parent);
+}
+} // namespace lift_00407850
