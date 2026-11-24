@@ -1,0 +1,33 @@
+{
+  "va": "0x0041C630",
+  "size": 45,
+  "orig_symbol": "sub_0041C630",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "sub_0041C630",
+  "signature": "uint8_t __thiscall sub_0041C630(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Stores two 32-bit values at +0x14 and +0x18 and forwards the call to child-\u003evtable[0x30] if child (+0x08) is non-null.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:12:47Z"
+}
