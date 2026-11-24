@@ -2363,6 +2363,13 @@
     "summary": "Calls global getter, queries mode via Acclaim2CharacterIO::vfunc_23, and invokes vtable+0x4 on arg1 with (mode == 3).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430780": {
+    "name": "sub_00430780",
+    "class": "Unknown",
+    "signature": "void __thiscall sub_00430780(void* self, void* cmdUI)",
+    "summary": "Enables a command UI object and, if field_0x100 is non-null, sets its check state based on whether ext_0044B5B0(field_0x100) equals 4.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430900": {
     "name": "forwardChildStateToTarget",
     "signature": "void __thiscall fn_00430900(void* self, void* target)",
@@ -52760,6 +52767,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0072CFB0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072D210": {
+    "name": "initHugeVec3",
+    "signature": "void sub_0072D210()",
+    "summary": "Initializes three 64-bit values from MSVCR80!_HUGE into globals at 0x00B602B0..0x00B602C4.",
+    "lifted_path": "lifted/clones/auto_clones_720000.cpp"
+  },
   "0x0072D620": {
     "name": "sub_0072D620",
     "signature": "extern \"C\" void* __fastcall fn_0072D620(void* self, int edx_unused, unsigned int flags)",
@@ -52866,6 +52879,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x8 and tail-calls sub_00755000.",
     "lifted_path": "lifted/leaf/tiny_750000.cpp"
   },
+  "0x007551E0": {
+    "name": "initHugeBounds",
+    "signature": "void sub_007551E0()",
+    "summary": "Initializes three 64-bit global doubles from MSVCR80!_HUGE",
+    "lifted_path": "lifted/clones/auto_clones_750000.cpp"
+  },
   "0x00755590": {
     "name": "sub_00755590",
     "signature": "extern \"C\" void* __fastcall fn_00755590(void* self, int edx_unused, unsigned int flags)",
@@ -52931,6 +52950,12 @@
     "signature": "extern \"C\" void* __fastcall fn_007720D0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_007720F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
+  },
+  "0x00774760": {
+    "name": "initHugeVectorGlobals",
+    "signature": "void __cdecl sub_00774760()",
+    "summary": "Initializes three 64-bit global values from MSVCR80!_HUGE.",
+    "lifted_path": "lifted/clones/auto_clones_770000.cpp"
   },
   "0x007747B0": {
     "name": "initNegatedHugeGlobals",
