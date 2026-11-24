@@ -62,3 +62,25 @@ void fn_005E12D0(void* self) {
     fn(child);
 }
 } // namespace lift_005E12D0
+
+// [0x005E0AB0] sub_005E0AB0 (18 bytes)
+namespace lift_005E0AB0 {
+// @name forwardToChildVfunc0
+// @summary If this->field_0x00 is non-null, calls vtable slot 0 of the object at field_0x00->field_0x08 with ecx = &field_0x00->field_0x08 and arg 1.
+// @field <unknown> +0x00 void* field_0x00
+// @field <unknown> +0x08 void* field_0x08
+void fn_005E0AB0(void* self) {
+    void* p = lift_field<void*>(self, 0x00);
+    if (p == nullptr) {
+        return;
+    }
+
+    // Address of p->field_0x08 is passed as `this` to the virtual call (ecx).
+    void* thisArg = reinterpret_cast<uint8_t*>(p) + 0x08;
+    void* obj = lift_field<void*>(p, 0x08);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+
+    using VFn0 = void (__thiscall*)(void* thisArg, int arg);
+    reinterpret_cast<VFn0>(vtbl[0])(thisArg, 1);
+}
+} // namespace lift_005E0AB0

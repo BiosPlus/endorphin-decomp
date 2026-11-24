@@ -1,0 +1,27 @@
+{
+  "va": "0x005E0AB0",
+  "size": 18,
+  "orig_symbol": "sub_005E0AB0",
+  "src_path": "src/leaf/tiny_5E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5E0000.cpp",
+  "name": "forwardToChildVfunc0",
+  "signature": "void fn_005E0AB0(void* self)",
+  "summary": "If this-\u003efield_0x00 is non-null, calls vtable slot 0 of the object at field_0x00-\u003efield_0x08 with ecx = \u0026field_0x00-\u003efield_0x08 and arg 1.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:58:39Z"
+}

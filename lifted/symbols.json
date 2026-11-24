@@ -17749,6 +17749,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004AEC60 (thunk_004AEC60).",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
+  "0x005E0AB0": {
+    "name": "forwardToChildVfunc0",
+    "signature": "void fn_005E0AB0(void* self)",
+    "summary": "If this-\u003efield_0x00 is non-null, calls vtable slot 0 of the object at field_0x00-\u003efield_0x08 with ecx = \u0026field_0x00-\u003efield_0x08 and arg 1.",
+    "lifted_path": "lifted/leaf/tiny_5E0000.cpp"
+  },
   "0x005E0E70": {
     "name": "NMData::FixedPathJointData::vfunc_0_off_154",
     "class": "NMData::FixedPathJointData",
