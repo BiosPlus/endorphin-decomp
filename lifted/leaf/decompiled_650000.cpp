@@ -209,3 +209,31 @@ extern int __cdecl fn_00519C00(const void* str) {
     return 1;
 }
 } // namespace lift_00519C00
+
+// [0x00519C40] sub_00519C40 (57 bytes)
+namespace lift_00519C40 {
+extern int mem_00924FC0;  // MSVCP80 operator==(const std::string&, const char*) IAT slot
+extern int mem_00AECC44;  // .data table of two const char* keys (2 x uint32_t)
+
+// @name MatchStringAgainstKeyTable
+// @summary Compares a std::string argument against the two key strings in the table at mem_00AECC44 and returns the index of the first match (0 or 1), or 3 if neither matches.
+namespace lift_00519C40 {
+// Original behavior (cdecl; caller cleans up the two pushed args):
+//   for i in 0..1:
+//       if (operator==(*str, table[i])) return i;
+//   return 3;
+extern uint32_t __cdecl fn_00519C40(void* str) {
+    using StringEqualsCStrFn = bool (__cdecl*)(const void* lhs, const char* rhs);
+    auto string_equals = reinterpret_cast<StringEqualsCStrFn>(static_cast<uintptr_t>(mem_00924FC0));
+    const uint32_t* keys = reinterpret_cast<const uint32_t*>(&mem_00AECC44);
+
+    for (uint32_t i = 0; i < 2; ++i) {
+        const char* key = reinterpret_cast<const char*>(static_cast<uintptr_t>(keys[i]));
+        if (string_equals(str, key)) {
+            return i;
+        }
+    }
+    return 3;
+}
+} // namespace lift_00519C40
+} // namespace lift_00519C40

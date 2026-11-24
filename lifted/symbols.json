@@ -16019,6 +16019,12 @@
     "summary": "Compares a std::string against the 3 C-string table entries; returns the matching index (0..2), or 1 if none match.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00519C40": {
+    "name": "MatchStringAgainstKeyTable",
+    "signature": "extern \"C\" int mem_00924FC0;  // MSVCP80 operator==(const std::string\u0026, const char*) IAT slot extern \"C\" int mem_00AECC44;  // .data table of two const char* keys (2 x uint32_t) namespace lift_00519C40",
+    "summary": "Compares a std::string argument against the two key strings in the table at mem_00AECC44 and returns the index of the first match (0 or 1), or 3 if neither matches.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00519C80": {
     "name": "sub_005136C0",
     "signature": "void* fn_005136C0(void* self, void* pair, DWORD b)",
