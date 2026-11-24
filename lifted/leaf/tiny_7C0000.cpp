@@ -971,23 +971,6 @@ void fn_007C70C0(void* self, DWORD value) {
 }
 } // namespace lift_007C70C0
 
-// [0x007C6F80]
-namespace lift_007C6F80 {
-namespace lift_007C6F80 {
-// @name sub_007C6F80_setField48Thunk
-// @class
-// @summary Adds 0x44 to the first argument and tail-calls ext_007D5BA0 (setField04) with the adjusted pointer, so the 32-bit value lands at object offset +0x48.
-
-void __cdecl ext_007D5BA0(void* self, uint32_t value);
-
-void __cdecl sub_007C6F80(void* self, uint32_t value) {
-    // mov ecx, [esp+4]; add ecx, 0x44; mov [esp+4], ecx; jmp ext_007D5BA0
-    uint8_t* adjusted = static_cast<uint8_t*>(self) + 0x44;
-    ext_007D5BA0(adjusted, value);
-}
-} // namespace lift_007C6F80
-} // namespace lift_007C6F80
-
 // [0x007C7000]
 namespace lift_007C7000 {
 // Known callee 0x007D5AE0: derefDword (Dereference a 32-bit pointer and return its uint32_t value.)
@@ -1027,3 +1010,19 @@ uint32_t sub_007C9300_getIndexedField94(const void* self, uint32_t idx) {
     return *reinterpret_cast<const uint32_t*>(base + 0x94 + 4u * idx);
 }
 } // namespace lift_007C9300
+
+// [0x007C6F80]
+namespace lift_007C6F80 {
+namespace lift_007C6F80 {
+// @name sub_007C6F80_setField48Thunk
+// @summary Adds 0x44 to the first argument and tail-calls ext_007D5BA0 (setField04) with the adjusted pointer, so the 32-bit value lands at object offset +0x48.
+
+void __cdecl ext_007D5BA0(void* self, uint32_t value);
+
+void __cdecl sub_007C6F80(void* self, uint32_t value) {
+    // mov ecx, [esp+4]; add ecx, 0x44; mov [esp+4], ecx; jmp ext_007D5BA0
+    uint8_t* adjusted = static_cast<uint8_t*>(self) + 0x44;
+    ext_007D5BA0(adjusted, value);
+}
+} // namespace lift_007C6F80
+} // namespace lift_007C6F80
