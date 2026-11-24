@@ -24948,6 +24948,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006737B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x00673B60": {
+    "name": "SubObject::getInlineOrDelegate",
+    "class": "SubObject",
+    "signature": "void* fn_00673B60(void* self)",
+    "summary": "If the dword at +0x2C is nonzero, returns the address of the inline subobject at +0x18; otherwise tail-calls getActiveSubobject on the pointer stored at +0x00.",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
   "0x00673B80": {
     "name": "SetIntValueAndSetFlag",
     "class": "Unknown",

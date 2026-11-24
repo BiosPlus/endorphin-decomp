@@ -262,3 +262,23 @@ void fn_00672060(void* self) {
 }
 } // namespace lift_0052EF20
 } // namespace lift_00672060
+
+// [0x00673B60] sub_00673B60 (17 bytes)
+namespace lift_00673B60 {
+// Known callee 0x00687250: SubObject::getActiveSubobject (Returns the address of the +0x10 subobject when the flag at +0x68 is zero, otherwise the +0x54 subobject.)
+extern void* ext_00687250(void* self);
+
+// @name SubObject::getInlineOrDelegate
+// @class SubObject
+// @summary If the dword at +0x2C is nonzero, returns the address of the inline subobject at +0x18; otherwise tail-calls getActiveSubobject on the pointer stored at +0x00.
+// @field SubObject +0x00 void* field_0x00
+// @field SubObject +0x2C int32_t field_0x2c
+void* fn_00673B60(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    if (*reinterpret_cast<int32_t*>(base + 0x2C) != 0) {
+        return base + 0x18;
+    }
+    void* inner = *reinterpret_cast<void**>(base + 0x00);
+    return ext_00687250(inner);
+}
+} // namespace lift_00673B60

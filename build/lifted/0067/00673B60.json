@@ -1,0 +1,28 @@
+{
+  "va": "0x00673B60",
+  "size": 17,
+  "orig_symbol": "sub_00673B60",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "SubObject::getInlineOrDelegate",
+  "class": "SubObject",
+  "signature": "void* fn_00673B60(void* self)",
+  "summary": "If the dword at +0x2C is nonzero, returns the address of the inline subobject at +0x18; otherwise tail-calls getActiveSubobject on the pointer stored at +0x00.",
+  "fields": [
+    {
+      "class": "SubObject",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "SubObject",
+      "offset": "+0x2C",
+      "type": "int32_t",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:53:40Z"
+}
