@@ -13135,6 +13135,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00537C30 (CompoundRenderable::forwardSlot8ToField14).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00537CA0": {
+    "name": "CompoundRenderable::vfunc_2",
+    "class": "CompoundRenderable",
+    "signature": "extern \"C\" void CompoundRenderable_vfunc_2(void* self)",
+    "summary": "Calls virtual slot 2 on the object at +0x14 (if non-null), then tail-calls virtual slot 2 on the object at +0x18 with this+0x18 as the receiver.",
+    "lifted_path": "lifted/classes/CompoundRenderable.cpp"
+  },
   "0x00537DE0": {
     "name": "CompoundRenderable::vfunc_15",
     "class": "CompoundRenderable",

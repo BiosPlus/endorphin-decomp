@@ -1,0 +1,28 @@
+{
+  "va": "0x00537CA0",
+  "size": 29,
+  "orig_symbol": "CompoundRenderable::vfunc_2",
+  "src_path": "src/classes/CompoundRenderable.cpp",
+  "lifted_path": "lifted/classes/CompoundRenderable.cpp",
+  "name": "CompoundRenderable::vfunc_2",
+  "class": "CompoundRenderable",
+  "signature": "extern \"C\" void CompoundRenderable_vfunc_2(void* self)",
+  "summary": "Calls virtual slot 2 on the object at +0x14 (if non-null), then tail-calls virtual slot 2 on the object at +0x18 with this+0x18 as the receiver.",
+  "fields": [
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x18",
+      "type": "uint32_t*",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:11:45Z"
+}
