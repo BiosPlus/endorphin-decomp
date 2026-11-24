@@ -1,0 +1,13 @@
+{
+  "va": "0x0045BBE0",
+  "size": 15,
+  "orig_symbol": "sub_0045BBE0",
+  "src_path": "src/leaf/tiny_450000.cpp",
+  "lifted_path": "lifted/leaf/tiny_450000.cpp",
+  "name": "isVkControlDown",
+  "signature": "uint32_t fn_0045BBE0()",
+  "summary": "Returns 1 if the Ctrl virtual key (VK_CONTROL, 0x11) is currently held down, else 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:28:52Z"
+}

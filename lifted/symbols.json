@@ -2862,6 +2862,12 @@
     "summary": "Destructor tail-call: restores vtable mem_00937D4C and tail-calls base destructor thunk_MFC80_ord_754.",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x0045BBE0": {
+    "name": "isVkControlDown",
+    "signature": "uint32_t fn_0045BBE0()",
+    "summary": "Returns 1 if the Ctrl virtual key (VK_CONTROL, 0x11) is currently held down, else 0.",
+    "lifted_path": "lifted/leaf/tiny_450000.cpp"
+  },
   "0x0045BC10": {
     "name": "TransformNodeViewCtrl::vfunc_1",
     "class": "TransformNodeViewCtrl",

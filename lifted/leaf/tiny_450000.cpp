@@ -249,3 +249,18 @@ void* fn_00454E70(void* self) {
     return self;
 }
 } // namespace lift_00454E70
+
+// [0x0045BBE0]
+namespace lift_0045BBE0 {
+extern int16_t ext_GetKeyState(int32_t nVirtKey);
+extern uint32_t mem_009255F4;
+
+// @name isVkControlDown
+// @summary Returns 1 if the Ctrl virtual key (VK_CONTROL, 0x11) is currently held down, else 0.
+// (no class / field accesses)
+uint32_t fn_0045BBE0() {
+    // GetKeyState(VK_CONTROL); the high bit of the returned SHORT is the "key down" flag.
+    const uint16_t state = static_cast<uint16_t>(ext_GetKeyState(0x11));
+    return static_cast<uint32_t>(state) >> 15;
+}
+} // namespace lift_0045BBE0
