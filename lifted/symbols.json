@@ -10029,6 +10029,13 @@
     "summary": "Lazily initializes a static type/descriptor object at 0x00AE0CF8 and stores its pointer at arg0 + 0x4.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004B1990": {
+    "name": "ExprParser::ReadMethodType\u003cInterpreter, ...\u003e::vfunc_2",
+    "class": "Interpreter",
+    "signature": "extern const char* ext_MSVCP80_c_str(const void* str_obj);       // std::string::c_str (MSVCP80 import) extern uint32_t ext_006A6DE0(double rounded);                    // sub_006A6DE0: consumes rounded value, result passed through in eax extern void ext_0046C3C0(void* exc_obj);                         // sub_0046C3C0: constructs the exception object in place [[noreturn]] void ext_006A6DD2(void* exc_obj, const void* type_info); // _CxxThrowException thunk extern const double mem_00993828;   // .rdata double 0.5 extern const void* mem_009DEC1C;    // .rdata u32 0x00000000: exception type info slot namespace lift_004B1990",
+    "summary": "Parses the object's string value as a float, rounds it half away from zero, and forwards it to ext_006A6DE0; throws if the value pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B1A00": {
     "name": "ExprParser::ReadMethodType\u003cInterpreter, std::string const \u0026, \u0026Interpreter::getType, 0\u003e::vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cInterpreter, std::string const \u0026, \u0026Interpreter::getType, 0\u003e",

@@ -41122,3 +41122,47 @@ void* fn_00513020(void* ret_slot, void* self) {
     return self;
 }
 } // namespace lift_00513020
+
+// [0x004B1990] sub_004B1990 (110 bytes)
+namespace lift_004B1990 {
+// Externals reached from this function.
+extern const char* ext_MSVCP80_c_str(const void* str_obj);       // std::string::c_str (MSVCP80 import)
+extern uint32_t ext_006A6DE0(double rounded);                    // sub_006A6DE0: consumes rounded value, result passed through in eax
+extern void ext_0046C3C0(void* exc_obj);                         // sub_0046C3C0: constructs the exception object in place
+[[noreturn]] void ext_006A6DD2(void* exc_obj, const void* type_info); // _CxxThrowException thunk
+extern const double mem_00993828;   // .rdata double 0.5
+extern const void* mem_009DEC1C;    // .rdata u32 0x00000000: exception type info slot
+
+namespace lift_004B1990 {
+// @name ExprParser::ReadMethodType<Interpreter, ...>::vfunc_2
+// @class Interpreter
+// @summary Parses the object's string value as a float, rounds it half away from zero, and forwards it to ext_006A6DE0; throws if the value pointer is null.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 std::string field_0x04
+
+// Reads a pointer at *self_ref. If it is null, constructs an exception object and throws it.
+// Otherwise takes the object's string at +0x04, converts it with atof to a float f,
+// and computes r = (f < 0) ? f - 0.5 : f + 0.5 (NaN takes the negative branch, matching the
+// x87 fcom/jne sequence). r is passed to ext_006A6DE0, whose result is returned.
+extern uint32_t fn_004B1990(void* self_ref) {
+    uint8_t* obj = *reinterpret_cast<uint8_t**>(self_ref);
+    if (obj == nullptr) {
+        alignas(8) uint8_t exc_obj[0x28];
+        ext_0046C3C0(exc_obj);
+        ext_006A6DD2(exc_obj, mem_009DEC1C);
+    }
+
+    const void* str_obj = obj + 0x04;
+    const char* s = ext_MSVCP80_c_str(str_obj);
+    float f = static_cast<float>(std::atof(s));
+
+    double r;
+    if (!(f >= 0.0f)) {
+        r = static_cast<double>(f) - mem_00993828;
+    } else {
+        r = static_cast<double>(f) + mem_00993828;
+    }
+    return ext_006A6DE0(r);
+}
+} // namespace lift_004B1990
+} // namespace lift_004B1990
