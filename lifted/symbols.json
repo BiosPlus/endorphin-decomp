@@ -2038,6 +2038,12 @@
     "summary": "If child at +0x100 is non-null, queries its state via ext_0044B660 and passes it to target's vtable+0x4 method.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430A30": {
+    "name": "dispatchWithGlobalFlag",
+    "signature": "void fn_00430A30(void* arg)",
+    "summary": "Queries a byte flag from the global object (vtable slot 0x130) and forwards it to the callback stored at the first word of *arg.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430AE0": {
     "name": "Object::callVirtualWithBoolResult",
     "class": "Object",

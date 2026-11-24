@@ -981,3 +981,25 @@ void fn_00430B10(void* arg) {
     target(arg, static_cast<uint32_t>(flag));
 }
 } // namespace lift_00430B10
+
+// [0x00430A30] sub_00430A30 (40 bytes)
+namespace lift_00430A30 {
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430360 (getGlobalField0x58AndCall00469040).)
+extern void* ext_00465B40();
+
+// @name dispatchWithGlobalFlag
+// @summary Queries a byte flag from the global object (vtable slot 0x130) and forwards it to the callback stored at the first word of *arg.
+void fn_00430A30(void* arg) {
+    void* global = ext_00465B40();
+
+    // global->vtbl[0x130]() -> flag (byte)
+    void* globalVtbl = lift_field<void*>(global, 0);
+    auto queryFlag = reinterpret_cast<uint8_t (*)(void*)>(lift_field<void*>(globalVtbl, 0x130));
+    uint8_t flag = queryFlag(global);
+
+    // obj = *arg; obj->word0(arg, flag)
+    void* obj = lift_field<void*>(arg, 0);
+    void* callback = lift_field<void*>(obj, 0);
+    reinterpret_cast<void (*)(void*, uint8_t)>(callback)(arg, flag);
+}
+} // namespace lift_00430A30
