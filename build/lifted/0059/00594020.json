@@ -1,0 +1,22 @@
+{
+  "va": "0x00594020",
+  "size": 21,
+  "orig_symbol": "sub_00594020",
+  "src_path": "src/leaf/tiny_590000.cpp",
+  "lifted_path": "lifted/leaf/tiny_590000.cpp",
+  "name": "RaiseFieldF4ToValue",
+  "class": "\u003cClassName\u003e (unknown; no class name recovered, field accessed via self)",
+  "signature": "void fn_00594020(void* self, int32_t value)",
+  "summary": "Stores value into self+0xF4 if it is greater than the current value (running max); thiscall, one stack arg, callee pops 4.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0xF4",
+      "type": "int32_t",
+      "name": "field_0xF4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:25:51Z"
+}

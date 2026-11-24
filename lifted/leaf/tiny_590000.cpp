@@ -173,3 +173,17 @@ extern int __thiscall fn_005946C0(void* self) {
 }
 } // namespace lift_00515840
 } // namespace lift_005946C0
+
+// [0x00594020] sub_00594020 (21 bytes)
+namespace lift_00594020 {
+// @name RaiseFieldF4ToValue
+// @class <ClassName> (unknown; no class name recovered, field accessed via self)
+// @summary Stores value into self+0xF4 if it is greater than the current value (running max); thiscall, one stack arg, callee pops 4.
+// @field <ClassName> +0xF4 int32_t field_0xF4
+void fn_00594020(void* self, int32_t value) {
+    int32_t& field_0xF4 = lift_field<int32_t>(self, 0xF4);
+    if (field_0xF4 < value) {
+        field_0xF4 = value;
+    }
+}
+} // namespace lift_00594020

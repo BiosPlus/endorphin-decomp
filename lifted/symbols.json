@@ -14603,6 +14603,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xF8 and tail-calls sub_00642650.",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
+  "0x00594020": {
+    "name": "RaiseFieldF4ToValue",
+    "class": "\u003cClassName\u003e (unknown; no class name recovered, field accessed via self)",
+    "signature": "void fn_00594020(void* self, int32_t value)",
+    "summary": "Stores value into self+0xF4 if it is greater than the current value (running max); thiscall, one stack arg, callee pops 4.",
+    "lifted_path": "lifted/leaf/tiny_590000.cpp"
+  },
   "0x00594070": {
     "name": "sub_00594070",
     "signature": "extern \"C\" void __fastcall fn_00594070(void* self)",
