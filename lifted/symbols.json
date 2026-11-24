@@ -26879,6 +26879,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00551A10 (NMCamera::Orthogonal::vfunc_5).",
     "lifted_path": "lifted/AdvXMLParser/Document.cpp"
   },
+  "0x006408C0": {
+    "name": "initRecord_ptrDefaultsWord0C",
+    "class": "Unknown",
+    "signature": "void fn_006408C0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
+    "summary": "Initializes a 18-byte record at self: stores arg2 at +0x00, arg1 at +0x04 (defaulting to \u0026mem_0092F67C when zero), arg0 at +0x08, zeroes +0x0C and the two flag bytes at +0x10/+0x11. Callee-cleans 12 bytes.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00640930": {
     "name": "sub_00640930",
     "signature": "void __thiscall sub_00640930(void* self)",

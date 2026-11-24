@@ -1,0 +1,52 @@
+{
+  "va": "0x006408C0",
+  "size": 45,
+  "orig_symbol": "sub_006408C0",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "initRecord_ptrDefaultsWord0C",
+  "class": "Unknown",
+  "signature": "void fn_006408C0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2)",
+  "summary": "Initializes a 18-byte record at self: stores arg2 at +0x00, arg1 at +0x04 (defaulting to \u0026mem_0092F67C when zero), arg0 at +0x08, zeroes +0x0C and the two flag bytes at +0x10/+0x11. Callee-cleans 12 bytes.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x11",
+      "type": "uint8_t",
+      "name": "field_0x11"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:07:30Z"
+}

@@ -481,3 +481,28 @@ DWORD* __thiscall fn_0064CC60(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_0064CC60
+
+// [0x006408C0] sub_006408C0 (45 bytes)
+namespace lift_006408C0 {
+extern int mem_0092F67C;
+
+// @name initRecord_ptrDefaultsWord0C
+// @class Unknown
+// @summary Initializes a 18-byte record at self: stores arg2 at +0x00, arg1 at +0x04 (defaulting to &mem_0092F67C when zero), arg0 at +0x08, zeroes +0x0C and the two flag bytes at +0x10/+0x11. Callee-cleans 12 bytes.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint8_t field_0x10
+// @field Unknown +0x11 uint8_t field_0x11
+void fn_006408C0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2) {
+    lift_field<uint32_t>(self, 0x00) = arg2;
+    lift_field<uint32_t>(self, 0x04) = (arg1 != 0)
+        ? arg1
+        : static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_0092F67C));
+    lift_field<uint32_t>(self, 0x08) = arg0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint8_t>(self, 0x10) = 0;
+    lift_field<uint8_t>(self, 0x11) = 0;
+}
+} // namespace lift_006408C0
