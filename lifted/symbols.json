@@ -51643,6 +51643,13 @@
     "summary": "No-op: `add eax, 0` (opcode 05 with imm32 0), which leaves eax unchanged; only flags are touched.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x008702F0": {
+    "name": "NMData::State::vfunc_1_off_18",
+    "class": "NMData::State",
+    "signature": "void fn_008702F0(void* self)",
+    "summary": "Forwards self to ReleaseHandleAtOffset88, which releases the handle at +0x88 if valid.",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
   "0x00870320": {
     "name": "initPairWithMemberLookup",
     "signature": "DWORD* fn_00870320(void* self, DWORD* outPair)",

@@ -1,0 +1,14 @@
+{
+  "va": "0x008702F0",
+  "size": 12,
+  "orig_symbol": "NMData::State::vfunc_1_off_18",
+  "src_path": "src/NMData/State.cpp",
+  "lifted_path": "lifted/NMData/State.cpp",
+  "name": "NMData::State::vfunc_1_off_18",
+  "class": "NMData::State",
+  "signature": "void fn_008702F0(void* self)",
+  "summary": "Forwards self to ReleaseHandleAtOffset88, which releases the handle at +0x88 if valid.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:37:43Z"
+}

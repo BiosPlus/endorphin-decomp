@@ -175,3 +175,16 @@ DWORD fn_0049DF50(void* self, DWORD arg1, DWORD arg2) {
     return arg1;
 }
 } // namespace lift_0049DF50
+
+// [0x008702F0] NMData::State::vfunc_1_off_18 (12 bytes)
+namespace lift_008702F0 {
+// Known callee 0x006829A0: ReleaseHandleAtOffset88 (If the int32 at +0x88 is valid (not -1) and the global at 0x00B5ACC8 is nonzero, releases that handle via ext_0065D3F0 and resets it to -1.)
+extern void ext_006829A0(void* self);
+
+// @name NMData::State::vfunc_1_off_18
+// @class NMData::State
+// @summary Forwards self to ReleaseHandleAtOffset88, which releases the handle at +0x88 if valid.
+void fn_008702F0(void* self) {
+    ext_006829A0(self);
+}
+} // namespace lift_008702F0
