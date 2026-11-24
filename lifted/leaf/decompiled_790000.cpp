@@ -206,3 +206,15 @@ uint32_t __thiscall sub_007911E0(uint8_t* self, uint32_t arg1, uint32_t arg2, ui
     return 0;
 }
 } // namespace lift_007911E0
+
+// [0x0079A0EC]
+namespace lift_0079A0EC {
+// @name sub_0079A0EC
+// @summary Data table at 0x0079A0EC (43 bytes) misidentified as code; lifted as no-op/stub
+
+
+void sub_0079A0EC() {
+    // Bytes 00 19 01 02 03 04 19 19 05 06 19 19 07 19 19 08 09 0a 0b 19 0c 19 19 0d 0e 19 0f 10 11 12 13 14 15 16 19...17
+    // represent a static lookup table rather than executable instructions.
+}
+} // namespace lift_0079A0EC

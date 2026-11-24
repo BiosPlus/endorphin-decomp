@@ -1,0 +1,13 @@
+{
+  "va": "0x0079A0EC",
+  "size": 43,
+  "orig_symbol": "sub_0079A0EC",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "sub_0079A0EC",
+  "signature": "void sub_0079A0EC()",
+  "summary": "Data table at 0x0079A0EC (43 bytes) misidentified as code; lifted as no-op/stub",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:06:56Z"
+}
