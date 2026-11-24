@@ -26207,6 +26207,13 @@
     "summary": "Virtual method that returns its second stack argument.",
     "lifted_path": "lifted/Properties/auto_tiny.cpp"
   },
+  "0x00681C10": {
+    "name": "Properties::PropertyIteratorTypes::PropertySourceType::vfunc_8",
+    "class": "Properties::PropertyIteratorTypes::PropertySourceType",
+    "signature": "uint32_t fn_00681C10(void* holder, uint32_t arg)",
+    "summary": "Forwards arg2 to virtual slot 19 (+0x4C) of the object pointed to by arg1's first word, and returns its result.",
+    "lifted_path": "lifted/Properties/auto_tiny.cpp"
+  },
   "0x00681FE0": {
     "name": "sub_00681FE0",
     "signature": "void* fn_00681FE0(void* self)",

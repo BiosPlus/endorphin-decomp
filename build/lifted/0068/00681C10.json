@@ -1,0 +1,28 @@
+{
+  "va": "0x00681C10",
+  "size": 21,
+  "orig_symbol": "Properties::PropertyIteratorTypes::PropertySourceType::vfunc_8",
+  "src_path": "src/Properties/auto_tiny.cpp",
+  "lifted_path": "lifted/Properties/auto_tiny.cpp",
+  "name": "Properties::PropertyIteratorTypes::PropertySourceType::vfunc_8",
+  "class": "Properties::PropertyIteratorTypes::PropertySourceType",
+  "signature": "uint32_t fn_00681C10(void* holder, uint32_t arg)",
+  "summary": "Forwards arg2 to virtual slot 19 (+0x4C) of the object pointed to by arg1's first word, and returns its result.",
+  "fields": [
+    {
+      "class": "arg1",
+      "offset": "+0x0",
+      "type": "pointer field_0x00 (pointer to object whose first word is a vtable-bearing",
+      "name": "object)"
+    },
+    {
+      "class": "Properties::PropertyIteratorTypes::PropertySourceType",
+      "offset": "+0x4C",
+      "type": "vtable slot 19 (virtual call",
+      "name": "target)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:26:36Z"
+}

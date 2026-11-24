@@ -183,3 +183,20 @@ DWORD fn_004F0510(const void* self) {
     return *reinterpret_cast<const DWORD*>(static_cast<const BYTE*>(self) + 0x40);
 }
 } // namespace lift_004F0510
+
+// [0x00681C10]
+namespace lift_00681C10 {
+// @name Properties::PropertyIteratorTypes::PropertySourceType::vfunc_8
+// @class Properties::PropertyIteratorTypes::PropertySourceType
+// @summary Forwards arg2 to virtual slot 19 (+0x4C) of the object pointed to by arg1's first word, and returns its result.
+// @field arg1 +0x00 pointer field_0x00 (pointer to object whose first word is a vtable-bearing object)
+// @field Properties::PropertyIteratorTypes::PropertySourceType +0x4C vtable slot 19 (virtual call target)
+typedef uint32_t(__thiscall* PropertySourceVfn19)(void* self, uint32_t arg);
+
+uint32_t fn_00681C10(void* holder, uint32_t arg) {
+    void* inner = *reinterpret_cast<void**>(holder);
+    void** vtable = *reinterpret_cast<void***>(inner);
+    PropertySourceVfn19 target = reinterpret_cast<PropertySourceVfn19>(vtable[19]);
+    return target(inner, arg);
+}
+} // namespace lift_00681C10
