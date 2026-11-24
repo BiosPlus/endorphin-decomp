@@ -42,3 +42,22 @@ void sub_005F3590() {
     mem_00B46790 = 0;
 }
 } // namespace lift_005F3590
+
+// [0x005F5190] sub_005F5190 (19 bytes)
+namespace lift_005F5190 {
+extern int mem_00B40640;
+
+// @name forwardToSubobjectCallback
+// @class Unknown
+// @summary Loads the pointer at self+0x04, reads a function pointer at its +0x08, and calls it with (self+0x04) as this and the global mem_00B40640 as its single argument.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x08 void (*)(void*, int) field_0x08
+using SubobjectCallback = void (*)(void* self, int arg);
+
+void fn_005F5190(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    void* sub = *reinterpret_cast<void**>(base + 0x04);
+    auto fn = *reinterpret_cast<SubobjectCallback*>(static_cast<unsigned char*>(sub) + 0x08);
+    fn(base + 0x04, mem_00B40640);
+}
+} // namespace lift_005F5190

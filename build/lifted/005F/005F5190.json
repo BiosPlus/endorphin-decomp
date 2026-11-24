@@ -1,0 +1,28 @@
+{
+  "va": "0x005F5190",
+  "size": 19,
+  "orig_symbol": "sub_005F5190",
+  "src_path": "src/leaf/tiny_5F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5F0000.cpp",
+  "name": "forwardToSubobjectCallback",
+  "class": "Unknown",
+  "signature": "void fn_005F5190(void* self)",
+  "summary": "Loads the pointer at self+0x04, reads a function pointer at its +0x08, and calls it with (self+0x04) as this and the global mem_00B40640 as its single argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void (*)(void*, int)",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:03:41Z"
+}
