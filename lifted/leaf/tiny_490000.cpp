@@ -527,3 +527,21 @@ int fn_00492570(void* self) {
     return 1;
 }
 } // namespace lift_00492570
+
+// [0x00492590] sub_00492590 (20 bytes)
+namespace lift_00492590 {
+// @name HasNonZeroField0AndField8
+// @class <ClassName> (optional)
+// @summary Returns 1 if both the dword at +0x00 and the dword at +0x08 are nonzero, else 0.
+// @field <ClassName> +0x00 uint32_t field_0x00
+// @field <ClassName> +0x08 uint32_t field_0x08
+int fn_00492590(void* self) {
+    if (lift_field<uint32_t>(self, 0x00) == 0) {
+        return 0;
+    }
+    if (lift_field<uint32_t>(self, 0x08) == 0) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_00492590

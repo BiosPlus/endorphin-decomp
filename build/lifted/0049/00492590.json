@@ -1,0 +1,28 @@
+{
+  "va": "0x00492590",
+  "size": 20,
+  "orig_symbol": "sub_00492590",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "HasNonZeroField0AndField8",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "int fn_00492590(void* self)",
+  "summary": "Returns 1 if both the dword at +0x00 and the dword at +0x08 are nonzero, else 0.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:06:18Z"
+}

@@ -5295,6 +5295,13 @@
     "summary": "Returns TRUE when the object's state dword at +0x00 equals 2 and the dword at +0x08 is nonzero; otherwise FALSE.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00492590": {
+    "name": "HasNonZeroField0AndField8",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "int fn_00492590(void* self)",
+    "summary": "Returns 1 if both the dword at +0x00 and the dword at +0x08 are nonzero, else 0.",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
   "0x00493D80": {
     "name": "ZeroHeaderFields",
     "class": "UnknownClass",
