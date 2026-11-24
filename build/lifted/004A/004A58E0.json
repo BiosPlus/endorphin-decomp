@@ -4,65 +4,11 @@
   "orig_symbol": "sub_004A58E0",
   "src_path": "src/leaf/tiny_4A0000.cpp",
   "lifted_path": "lifted/leaf/tiny_4A0000.cpp",
-  "name": "VirtualSlot8Thunk",
-  "class": "VTable",
-  "signature": "void fn_004AA580(void* self)",
-  "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 8 (offset +0x20) with the same this pointer.",
+  "name": "Unknown::FindFirstFlaggedNextLink",
+  "class": "Unknown",
+  "signature": "void sub_004A58E0(Node* arg)",
+  "summary": "Starting at arg-\u003e+0x08, follows +0x08 links until a node whose byte at +0xAD is nonzero is found.",
   "fields": [
-    {
-      "class": "VTable",
-      "offset": "+0x20",
-      "type": "void*",
-      "name": "slot8"
-    },
-    {
-      "class": "Unknown",
-      "offset": "+0x8",
-      "type": "uint32_t",
-      "name": "field_0x08"
-    },
-    {
-      "class": "unknown",
-      "offset": "+0x4",
-      "type": "void**",
-      "name": "vtable"
-    },
-    {
-      "class": "Unknown",
-      "offset": "+0x204",
-      "type": "DWORD",
-      "name": "field_0x204"
-    },
-    {
-      "class": "Unknown",
-      "offset": "+0x210",
-      "type": "DWORD",
-      "name": "field_0x210"
-    },
-    {
-      "class": "Unknown",
-      "offset": "+0x8",
-      "type": "void*",
-      "name": "subobject"
-    },
-    {
-      "class": "Subobject",
-      "offset": "+0x24",
-      "type": "uint32_t",
-      "name": "begin"
-    },
-    {
-      "class": "Subobject",
-      "offset": "+0x28",
-      "type": "uint32_t",
-      "name": "end"
-    },
-    {
-      "class": "field_0xC1",
-      "offset": "+0xC1",
-      "type": "uint8_t",
-      "name": "flag"
-    },
     {
       "class": "Node",
       "offset": "+0x8",
@@ -78,5 +24,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:23:15Z"
+  "lifted_at": "2026-11-24T12:23:29Z"
 }
