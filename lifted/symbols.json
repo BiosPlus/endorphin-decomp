@@ -1859,6 +1859,13 @@
     "summary": "Looks up a cursor handle in the object's DWORD table at +0x128 by index and passes it to SetCursor.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x0043C9B0": {
+    "name": "Unknown::forwardVirtual150WithSubobject80",
+    "class": "Unknown",
+    "signature": "uintptr_t fn_0043C9B0(void* self, void* arg)",
+    "summary": "Forwards its argument to virtual slot 0x150 on self, passing self+0x80 as the second argument, and returns the result.",
+    "lifted_path": "lifted/leaf/tiny_430000.cpp"
+  },
   "0x0043CAA0": {
     "name": "sub_0043CAA0",
     "signature": "extern \"C\" void __fastcall fn_0043CAA0(void* self)",

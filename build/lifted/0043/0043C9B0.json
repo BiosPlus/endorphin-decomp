@@ -1,0 +1,22 @@
+{
+  "va": "0x0043C9B0",
+  "size": 25,
+  "orig_symbol": "sub_0043C9B0",
+  "src_path": "src/leaf/tiny_430000.cpp",
+  "lifted_path": "lifted/leaf/tiny_430000.cpp",
+  "name": "Unknown::forwardVirtual150WithSubobject80",
+  "class": "Unknown",
+  "signature": "uintptr_t fn_0043C9B0(void* self, void* arg)",
+  "summary": "Forwards its argument to virtual slot 0x150 on self, passing self+0x80 as the second argument, and returns the result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:47:15Z"
+}

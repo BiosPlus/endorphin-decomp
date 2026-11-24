@@ -156,3 +156,22 @@ void* fn_0043C900(void* self, DWORD index) {
     return ext_006289B6(reinterpret_cast<void*>(static_cast<uintptr_t>(cursor)));
 }
 } // namespace lift_0043C900
+
+// [0x0043C9B0] sub_0043C9B0 (25 bytes)
+namespace lift_0043C9B0 {
+// @name Unknown::forwardVirtual150WithSubobject80
+// @class Unknown
+// @summary Forwards its argument to virtual slot 0x150 on self, passing self+0x80 as the second argument, and returns the result.
+// @field Unknown +0x00 void* vptr
+
+// Virtual-call slot at vtable+0x150 (index 0x54). Thiscall is modelled as a
+// leading `self` parameter, which is portable across compilers.
+typedef uintptr_t (*VirtualSlot150Fn)(void* self, void* arg, void* subobject80);
+
+uintptr_t fn_0043C9B0(void* self, void* arg) {
+    uint8_t* vptr = lift_field<uint8_t*>(self, 0x00);
+    VirtualSlot150Fn fn = reinterpret_cast<VirtualSlot150Fn>(
+        lift_field<void*>(vptr, 0x150));
+    return fn(self, arg, static_cast<uint8_t*>(self) + 0x80);
+}
+} // namespace lift_0043C9B0
