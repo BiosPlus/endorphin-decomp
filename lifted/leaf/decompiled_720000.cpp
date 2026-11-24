@@ -272,3 +272,20 @@ uint32_t fn_0072BC70(void* self, int32_t index) {
     return elements[index];
 }
 } // namespace lift_0072BC70
+
+// [0x0072BDD0] sub_0072BDD0 (32 bytes)
+namespace lift_0072BDD0 {
+// Known callee 0x0072BC70: Unknown::getIndexedDword (Returns the uint32 at index from the array at +0x160, or 0 if index is negative or >= count at +0x150.)
+extern uint32_t __thiscall ext_0072BC70(void* self, int32_t index);
+
+// @name Unknown::getIndexedDwordOffset50
+// @class Unknown
+// @summary Fetches the indexed dword via ext_0072BC70; if it is non-zero returns it plus 0x50, otherwise returns the constant 0xB60020.
+uint32_t fn_0072BDD0(void* self, int32_t index) {
+    const uint32_t value = ext_0072BC70(self, index);
+    if (value != 0) {
+        return value + 0x50u;
+    }
+    return 0x00B60020u;
+}
+} // namespace lift_0072BDD0
