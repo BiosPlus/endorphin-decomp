@@ -94,3 +94,20 @@ void fn_00480530(void* self) {
     ext_004A5860(next);
 }
 } // namespace lift_00480530
+
+// [0x00480280] sub_00480280 (37 bytes)
+namespace lift_00480280 {
+// @name IsEmptyDwordRange_00480280
+// @summary Returns true if the range pointer at +0x04 is null, or the byte span [+0x04, +0x08) has fewer than one 4-byte element (signed (end - begin) >> 2 == 0).
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+BOOLEAN fn_00480280(void* self) {
+    const DWORD begin = lift_field<DWORD>(self, 0x04);
+    if (begin == 0) {
+        return 1;
+    }
+    const DWORD end = lift_field<DWORD>(self, 0x08);
+    const auto diff = static_cast<int32_t>(end - begin);  // signed, like sar
+    return (diff >> 2) == 0 ? 1 : 0;
+}
+} // namespace lift_00480280

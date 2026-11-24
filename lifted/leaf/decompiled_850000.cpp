@@ -190,3 +190,20 @@ void fn_0085D530(uint8_t* dst, const uint8_t* src, uint32_t count) {
     }
 }
 } // namespace lift_0085D530
+
+// [0x008573F0]
+namespace lift_008573F0 {
+extern uint32_t mem_00AB86EC;
+
+// @name dispatchCallback0x4
+// @summary Dispatches a 3-argument cdecl callback at offset +0x4 of the global table mem_00AB86EC, or returns -1 if null.
+int32_t sub_008573F0(uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    uint32_t table = mem_00AB86EC;
+    if (table == 0) {
+        return -1;
+    }
+    using Fn = int32_t(__cdecl*)(uint32_t, uint32_t, uint32_t);
+    Fn fn = reinterpret_cast<Fn>(*reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(table) + 0x4));
+    return fn(arg1, arg2, arg3);
+}
+} // namespace lift_008573F0

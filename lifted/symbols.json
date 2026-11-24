@@ -3770,6 +3770,12 @@
     "summary": "Returns the address of the global data slot mem_0093675C (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00455410": {
+    "name": "sub_00455410",
+    "signature": "void sub_00455410(uintptr_t self)",
+    "summary": "Calls virtual method +0x148 on embedded subobject at +0xc8 and stores boolean result at +0x158",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00455450": {
     "name": "sub_00455450",
     "signature": "extern \"C\" void __fastcall fn_00455450(void* self)",
@@ -5848,6 +5854,12 @@
     "signature": "void* __thiscall fn_00480250(void* self, void* out)",
     "summary": "Auto-lifted identical-shape clone of 0x005F0D40 (NMData::MagnetJointData::vfunc_59).",
     "lifted_path": "lifted/Commands/ReshapeCommand.cpp"
+  },
+  "0x00480280": {
+    "name": "IsEmptyDwordRange_00480280",
+    "signature": "BOOLEAN fn_00480280(void* self)",
+    "summary": "Returns true if the range pointer at +0x04 is null, or the byte span [+0x04, +0x08) has fewer than one 4-byte element (signed (end - begin) \u003e\u003e 2 == 0).",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
   "0x00480530": {
     "name": "ReleaseSubobjectsThenForwardToTail",

@@ -1,0 +1,13 @@
+{
+  "va": "0x008573F0",
+  "size": 35,
+  "orig_symbol": "sub_008573F0",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "dispatchCallback0x4",
+  "signature": "int32_t sub_008573F0(uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Dispatches a 3-argument cdecl callback at offset +0x4 of the global table mem_00AB86EC, or returns -1 if null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:02:37Z"
+}
