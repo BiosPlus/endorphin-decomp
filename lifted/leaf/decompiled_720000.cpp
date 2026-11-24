@@ -101,3 +101,18 @@ void Unknown_SetArray1B8Element(uint8_t* self, int32_t index, int32_t value) {
     slots[index] = value;
 }
 } // namespace lift_0072CEB0
+
+// [0x0072CED0]
+namespace lift_0072CED0 {
+// @name Unknown::GetArrayEntry1B8
+// @class Unknown
+// @summary Returns entry idx (0..5) of the int32 array at this+0x1B8, or 0 if idx is out of range.
+// @field Unknown +0x1B8 int32_t[6] field_0x1B8
+
+int32_t Unknown_GetArrayEntry1B8(const uint8_t* self, int32_t idx) {
+    if (idx < 0 || idx >= 6) {
+        return 0;
+    }
+    return *reinterpret_cast<const int32_t*>(self + 0x1B8 + 4 * static_cast<uintptr_t>(idx));
+}
+} // namespace lift_0072CED0

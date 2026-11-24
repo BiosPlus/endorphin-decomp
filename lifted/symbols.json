@@ -42251,6 +42251,13 @@
     "summary": "Stores a 32-bit value into slot [index] of a 6-entry int array at this+0x1B8; out-of-range indices are ignored.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x0072CED0": {
+    "name": "Unknown::GetArrayEntry1B8",
+    "class": "Unknown",
+    "signature": "int32_t Unknown_GetArrayEntry1B8(const uint8_t* self, int32_t idx)",
+    "summary": "Returns entry idx (0..5) of the int32 array at this+0x1B8, or 0 if idx is out of range.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072CF90": {
     "name": "sub_0072CF90",
     "signature": "extern \"C\" void* __fastcall fn_0072CF90(void* self, int edx_unused, unsigned int flags)",
