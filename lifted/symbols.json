@@ -41238,6 +41238,12 @@
     "summary": "Copies a 32-bit value from a source pointer to a destination pointer and returns 0.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x008573D0": {
+    "name": "SafeDispatchFirstSlot",
+    "signature": "int32_t fn_008573D0(int32_t arg)",
+    "summary": "If global object pointer mem_00AB86EC is non-null, call the function pointer in its first slot with the argument and return the result; otherwise return -1.",
+    "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
   "0x00857490": {
     "name": "CallGlobalObjectSlot10IfSet",
     "signature": "void fn_00857490(uint32_t arg)",

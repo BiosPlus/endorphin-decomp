@@ -1,0 +1,13 @@
+{
+  "va": "0x008573D0",
+  "size": 24,
+  "orig_symbol": "sub_008573D0",
+  "src_path": "src/leaf/tiny_850000.cpp",
+  "lifted_path": "lifted/leaf/tiny_850000.cpp",
+  "name": "SafeDispatchFirstSlot",
+  "signature": "int32_t fn_008573D0(int32_t arg)",
+  "summary": "If global object pointer mem_00AB86EC is non-null, call the function pointer in its first slot with the argument and return the result; otherwise return -1.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:39:15Z"
+}

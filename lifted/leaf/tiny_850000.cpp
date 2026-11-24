@@ -207,3 +207,21 @@ void fn_008574B0(uint32_t arg) {
     slot(arg);
 }
 } // namespace lift_008574B0
+
+// [0x008573D0]
+namespace lift_008573D0 {
+// @name SafeDispatchFirstSlot
+// @summary If global object pointer mem_00AB86EC is non-null, call the function pointer in its first slot with the argument and return the result; otherwise return -1.
+
+extern uint32_t mem_00AB86EC;
+
+int32_t fn_008573D0(int32_t arg) {
+    uint32_t obj = mem_00AB86EC;
+    if (obj == 0) {
+        return -1;
+    }
+    using Slot0Fn = int32_t (*)(int32_t);
+    Slot0Fn fn = *reinterpret_cast<Slot0Fn *>(static_cast<uintptr_t>(obj));
+    return fn(arg);
+}
+} // namespace lift_008573D0
