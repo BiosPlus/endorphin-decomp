@@ -1,0 +1,14 @@
+{
+  "va": "0x004BBBF0",
+  "size": 38,
+  "orig_symbol": "Properties::TerminalParentType\u003cNMData::MaterialInteraction\u003e::vfunc_0",
+  "src_path": "src/templates/TerminalParentType.cpp",
+  "lifted_path": "lifted/templates/TerminalParentType.cpp",
+  "name": "Properties::TerminalParentType\u003cNMData::MaterialInteraction\u003e::vfunc_0",
+  "class": "Properties::TerminalParentType\u003cNMData::MaterialInteraction\u003e",
+  "signature": "uint32_t fn_004BBBF0(uint32_t self, uint32_t src_ptr, uint32_t arg3)",
+  "summary": "Auto-lifted identical-shape clone of 0x00511930 (Properties::TerminalParentType\u003cDoubleWithProperties\u003e::vfunc_0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T13:48:47Z"
+}

@@ -8623,6 +8623,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004B5610 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004B6530": {
+    "name": "Properties::TerminalParentType\u003cNMData::GraphEntryData\u003e::vfunc_0",
+    "class": "Properties::TerminalParentType\u003cNMData::GraphEntryData\u003e",
+    "signature": "uint32_t fn_004B6530(uint32_t self, uint32_t src_ptr, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x00511930 (Properties::TerminalParentType\u003cDoubleWithProperties\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/TerminalParentType.cpp"
+  },
   "0x004B67C0": {
     "name": "ModeManager\u003cVMCSMode\u003e::vfunc_0",
     "class": "ModeManager\u003cVMCSMode\u003e",
@@ -8933,6 +8940,13 @@
     "signature": "void* fn_004BA920(void* arg1, DWORD arg2)",
     "summary": "Forwards (arg1, arg2) to ext_004BA230 (result discarded) and returns arg1 unchanged.",
     "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
+  "0x004BBBF0": {
+    "name": "Properties::TerminalParentType\u003cNMData::MaterialInteraction\u003e::vfunc_0",
+    "class": "Properties::TerminalParentType\u003cNMData::MaterialInteraction\u003e",
+    "signature": "uint32_t fn_004BBBF0(uint32_t self, uint32_t src_ptr, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x00511930 (Properties::TerminalParentType\u003cDoubleWithProperties\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/TerminalParentType.cpp"
   },
   "0x004BBF50": {
     "name": "sub_004BBF50",
@@ -9254,6 +9268,13 @@
     "signature": "void* __thiscall fn_004C5350(void* self, float* out_vec)",
     "summary": "Computes a 4D vector with x=y=z from a subobject's float property and w=0.0f.",
     "lifted_path": "lifted/NMData/ForceEventData.cpp"
+  },
+  "0x004C5560": {
+    "name": "Properties::TerminalParentType\u003cMatrixWithProperties\u003e::vfunc_0",
+    "class": "Properties::TerminalParentType\u003cMatrixWithProperties\u003e",
+    "signature": "uint32_t fn_004C5560(uint32_t self, uint32_t src_ptr, uint32_t arg3)",
+    "summary": "Auto-lifted identical-shape clone of 0x00511930 (Properties::TerminalParentType\u003cDoubleWithProperties\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/TerminalParentType.cpp"
   },
   "0x004C5590": {
     "name": "ExprParser::ReadMethodType\u003cNMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0\u003e::vfunc_1",
