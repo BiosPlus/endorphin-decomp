@@ -830,3 +830,31 @@ void fn_0046F830(void* self) {
     ext_0067B050(base + 0x128);
 }
 } // namespace lift_0046F830
+
+// [0x00469530] sub_00469530 (56 bytes)
+namespace lift_00469530 {
+// @name Unknown::DispatchToIndexedChild
+// @class Unknown
+// @summary Bounds-checks index against the pointer array at +0x54..+0x58, then calls vtable slot 1 of the selected element with arg and returns its result.
+// @field Unknown +0x54 void** field_0x54
+// @field Unknown +0x58 void** field_0x58
+INT fn_00469530(void* self, INT index, INT arg) {
+    void** begin = lift_field<void**>(self, 0x54);
+    void** end = lift_field<void**>(self, 0x58);
+
+    // Original: null-begin or unsigned index >= element count calls _invalid_parameter_noinfo.
+    // That CRT path does not return in practice, so it is modeled as a trap.
+    if (begin == nullptr) {
+        std::abort();
+    }
+    const auto count = static_cast<INT>(end - begin);
+    if (static_cast<UINT>(index) >= static_cast<UINT>(count)) {
+        std::abort();
+    }
+
+    void* element = begin[index];
+    void** vtable = *reinterpret_cast<void***>(element);
+    auto slot1 = reinterpret_cast<INT (*)(void*, INT)>(vtable[1]);
+    return slot1(element, arg);
+}
+} // namespace lift_00469530

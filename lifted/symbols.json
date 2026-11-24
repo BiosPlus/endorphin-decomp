@@ -5961,6 +5961,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x00469530": {
+    "name": "Unknown::DispatchToIndexedChild",
+    "class": "Unknown",
+    "signature": "INT fn_00469530(void* self, INT index, INT arg)",
+    "summary": "Bounds-checks index against the pointer array at +0x54..+0x58, then calls vtable slot 1 of the selected element with arg and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00469570": {
     "name": "getVectorElementAt",
     "signature": "uint32_t __thiscall sub_00469570(uint8_t* self, uint32_t index)",
@@ -55357,6 +55364,12 @@
     "summary": "Clears the pointer-sized slot at +0x18, and if it was non-null, passes it through ext_007D8700 and tail-dispatches the result to ext_007C9930; otherwise returns.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CDBC0": {
+    "name": "clearIndexedSlots",
+    "signature": "void sub_007CDBC0(uint32_t arg0)",
+    "summary": "Zeroes three indexed 32-bit array elements referenced by pointer/index pairs in the struct.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007D4720": {
     "name": "Unknown::InvokeSlotThenForward",
     "class": "Unknown",
@@ -56682,6 +56695,12 @@
     "signature": "void fn_0086B200(void* self)",
     "summary": "Zeroes five consecutive DWORD slots starting at the target buffer.",
     "lifted_path": "lifted/leaf/tiny_860000.cpp"
+  },
+  "0x0086BF40": {
+    "name": "checkEmptySlotsAndState",
+    "signature": "uint16_t __cdecl sub_0086BF40(uint32_t self)",
+    "summary": "Checks that field_0x4c \u003c= 1 and all 19 uint32_t entries at offset 0x00..0x48 are zero, returning 1 if field_0x4c == 1 else 0",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
   "0x0086C014": {
     "name": "sub_0086C014",

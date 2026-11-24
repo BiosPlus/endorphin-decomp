@@ -1,0 +1,28 @@
+{
+  "va": "0x00469530",
+  "size": 56,
+  "orig_symbol": "sub_00469530",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "Unknown::DispatchToIndexedChild",
+  "class": "Unknown",
+  "signature": "INT fn_00469530(void* self, INT index, INT arg)",
+  "summary": "Bounds-checks index against the pointer array at +0x54..+0x58, then calls vtable slot 1 of the selected element with arg and returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "void**",
+      "name": "field_0x54"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "void**",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:18:14Z"
+}
