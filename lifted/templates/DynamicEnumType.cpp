@@ -2037,3 +2037,24 @@ void fn_00515C90(void* out) {
     lift_field<uint32_t>(out, 4) = 0x00AEBEA0u;
 }
 } // namespace lift_00515C90
+
+// [0x005C47F0]
+namespace lift_005C47F0 {
+// @name ExprParser::DynamicEnumType<NMData::CollisionModelDataBase>::vfunc_40
+// @class ExprParser::DynamicEnumType<NMData::CollisionModelDataBase>
+// @summary Lazily initializes a static helper object and stores its pointer at arg0 + 0x4.
+
+extern uint32_t mem_00B44424;
+extern uint32_t mem_00B44420;
+void __thiscall ext_0067A670(void* self);
+
+void __thiscall fn_005C47F0(void* self, uint32_t arg0) {
+    (void)self;
+    if ((mem_00B44424 & 1u) == 0u) {
+        mem_00B44424 |= 1u;
+        ext_0067A670(&mem_00B44420);
+        mem_00B44420 = 0x00964324u;
+    }
+    *(uint32_t*)((uintptr_t)arg0 + 4) = (uint32_t)(uintptr_t)&mem_00B44420;
+}
+} // namespace lift_005C47F0
