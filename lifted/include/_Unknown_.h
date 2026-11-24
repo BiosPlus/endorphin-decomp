@@ -28,5 +28,8 @@ struct _Unknown__Fields {
     // +0x88  uint8_t                  field_0x88  (evidence: 0x00440970, 0x00441020)
     // +0x8E  uint8_t                  field_0x8e  (evidence: 0x00440970, 0x00441020)
     // +0xF5  BYTE                     field_0xF5  (evidence: 0x00430450, 0x00430DA0)
+    // +0x3B4 void*                    field_0x3b4  (evidence: 0x00480530)
+    // +0x3DC <embedded>               field_0x3dc  (evidence: 0x00480530)
+    // +0x3E8 <embedded>               field_0x3e8  (evidence: 0x00480530)
 };
 } // namespace lifted_layout

@@ -70,3 +70,27 @@ uint32_t __thiscall sub_004809B0(uint32_t self) {
     return 0;
 }
 } // namespace lift_004809B0
+
+// [0x00480530] sub_00480530 (37 bytes)
+namespace lift_00480530 {
+// Known callee 0x00494050: sub_00491FC0 (MSVC scalar deleting destructor: calls sub_00491A90 and frees memory when (flags & 1) is set.)
+extern void ext_00494050(void* self);
+extern void ext_004A5860(void* self);
+
+// @name ReleaseSubobjectsThenForwardToTail
+// @class <Unknown> (owner class not identified)
+// @summary Runs the scalar deleting destructor on two embedded subobjects at +0x3DC and +0x3E8, then tail-jumps to 0x004A5860 with the pointer stored at +0x3B4 as ecx.
+// @field <Unknown> +0x3B4 void* field_0x3b4
+// @field <Unknown> +0x3DC <embedded> field_0x3dc
+// @field <Unknown> +0x3E8 <embedded> field_0x3e8
+void fn_00480530(void* self) {
+    // push esi; mov esi, ecx
+    // lea ecx, [esi+0x3dc]; call 0x494050
+    ext_00494050(static_cast<unsigned char*>(self) + 0x3DC);
+    // lea ecx, [esi+0x3e8]; call 0x494050
+    ext_00494050(static_cast<unsigned char*>(self) + 0x3E8);
+    // mov ecx, [esi+0x3b4]; pop esi; jmp 0x4A5860
+    void* next = *reinterpret_cast<void**>(static_cast<unsigned char*>(self) + 0x3B4);
+    ext_004A5860(next);
+}
+} // namespace lift_00480530
