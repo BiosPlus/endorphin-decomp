@@ -17930,6 +17930,12 @@
     "summary": "Sets OpenGL polygon mode to wireframe, cull face to back, and disables face culling.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x00540572": {
+    "name": "glSetupDefaultCulling",
+    "signature": "void __stdcall sub_00540572(uint32_t /*unused*/)",
+    "summary": "Configure default OpenGL polygon fill mode, CCW front face, and back-face culling.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x005405B0": {
     "name": "sub_005405B0",
     "signature": "extern \"C\" void __fastcall fn_005405B0(void* self)",
@@ -18258,6 +18264,13 @@
     "class": "PoseTool",
     "signature": "void fn_005451B0(uint32_t self)",
     "summary": "Invokes vtable slots +0xA4 and +0xA8 on field_0x88, then tail-calls PoseTool::vfunc_32 (+0x80).",
+    "lifted_path": "lifted/classes/PoseTool.cpp"
+  },
+  "0x00545370": {
+    "name": "PoseTool::vfunc_21",
+    "class": "PoseTool",
+    "signature": "uint32_t __thiscall fn_00545370(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Sets state fields and delegates to subobject vfunc at +0x44, returning 1.",
     "lifted_path": "lifted/classes/PoseTool.cpp"
   },
   "0x005453B0": {

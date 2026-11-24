@@ -1,0 +1,28 @@
+{
+  "va": "0x005245D0",
+  "size": 52,
+  "orig_symbol": "sub_005245D0",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "DoubleVector::operator[]",
+  "class": "DoubleVector",
+  "signature": "double __thiscall sub_005245D0(void* self, uint32_t index)",
+  "summary": "Bounds-checked subscript access on a std::vector\u003cdouble\u003e-like container",
+  "fields": [
+    {
+      "class": "DoubleVector",
+      "offset": "+0x8",
+      "type": "double*",
+      "name": "begin"
+    },
+    {
+      "class": "DoubleVector",
+      "offset": "+0xC",
+      "type": "double*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:09:27Z"
+}

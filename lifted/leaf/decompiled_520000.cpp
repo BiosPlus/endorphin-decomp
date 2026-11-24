@@ -278,3 +278,32 @@ void __cdecl sub_00520D90(uint32_t begin, uint32_t end, uint32_t arg) {
     }
 }
 } // namespace lift_00520D90
+
+// [0x005245D0]
+namespace lift_005245D0 {
+// @name DoubleVector::operator[]
+// @class DoubleVector
+// @summary Bounds-checked subscript access on a std::vector<double>-like container
+// @field DoubleVector +0x08 double* begin
+// @field DoubleVector +0x0c double* end
+
+extern void (__cdecl *mem_00925134)();
+
+double __thiscall sub_005245D0(void* self, uint32_t index) {
+    auto* base = *reinterpret_cast<double**>(reinterpret_cast<uint8_t*>(self) + 0x8);
+    if (base == nullptr) {
+        mem_00925134();
+        base = *reinterpret_cast<double**>(reinterpret_cast<uint8_t*>(self) + 0x8);
+        return base[index];
+    }
+    auto* end = *reinterpret_cast<double**>(reinterpret_cast<uint8_t*>(self) + 0xc);
+    uint32_t count = static_cast<uint32_t>(
+        (static_cast<int32_t>(reinterpret_cast<uintptr_t>(end) - reinterpret_cast<uintptr_t>(base))) >> 3
+    );
+    if (index >= count) {
+        mem_00925134();
+        base = *reinterpret_cast<double**>(reinterpret_cast<uint8_t*>(self) + 0x8);
+    }
+    return base[index];
+}
+} // namespace lift_005245D0
