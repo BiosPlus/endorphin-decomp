@@ -218,6 +218,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0xFFFFFEB0 and tail-calls sub_0058AF80.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00402150": {
+    "name": "HelperGraphic::vfunc_1_off_150",
+    "class": "HelperGraphic",
+    "signature": "void fn_00402150(void* self)",
+    "summary": "Non-virtual-base thunk: rebases this by -0x14c, then tail-dispatches vtable slot 11 (+0x2c) of the adjusted object.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00402170": {
     "name": "sub_00402170",
     "signature": "extern \"C\" void fn_00402170(void)",

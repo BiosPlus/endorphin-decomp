@@ -1,0 +1,22 @@
+{
+  "va": "0x00402150",
+  "size": 17,
+  "orig_symbol": "HelperGraphic::vfunc_1_off_150",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "HelperGraphic::vfunc_1_off_150",
+  "class": "HelperGraphic",
+  "signature": "void fn_00402150(void* self)",
+  "summary": "Non-virtual-base thunk: rebases this by -0x14c, then tail-dispatches vtable slot 11 (+0x2c) of the adjusted object.",
+  "fields": [
+    {
+      "class": "HelperGraphic",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "vfptr_TransformInterface"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:49:54Z"
+}

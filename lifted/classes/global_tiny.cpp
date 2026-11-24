@@ -5525,3 +5525,22 @@ uint32_t __thiscall fn_005272B0(void* ecx, uint32_t arg0, uint32_t arg1) {
     return fn(self, 0);
 }
 } // namespace lift_005272B0
+
+// [0x00402150] HelperGraphic::vfunc_1_off_150 (17 bytes)
+namespace lift_00402150 {
+// @name HelperGraphic::vfunc_1_off_150
+// @class HelperGraphic
+// @summary Non-virtual-base thunk: rebases this by -0x14c, then tail-dispatches vtable slot 11 (+0x2c) of the adjusted object.
+// @field HelperGraphic +0x04 void* vfptr_TransformInterface
+void fn_00402150(void* self) {
+    // ecx-0x14c: rebase from the HasBufferedTM subobject (+0x150) to the TransformInterface subobject (+0x04).
+    uint8_t* adj = reinterpret_cast<uint8_t*>(self) - 0x14c;
+    // mov eax, [adj]  -> vptr of the adjusted subobject
+    uint8_t* vtbl = *reinterpret_cast<uint8_t**>(adj);
+    // mov edx, [eax+0x2c] -> vtable slot 11
+    using VSlot = uintptr_t (*)(void*);
+    VSlot target = *reinterpret_cast<VSlot*>(vtbl + 0x2c);
+    // jmp edx (tail call with ecx = adj); result passes through unchanged
+    (void)target(adj);
+}
+} // namespace lift_00402150
