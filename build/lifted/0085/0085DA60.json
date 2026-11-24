@@ -1,0 +1,13 @@
+{
+  "va": "0x0085DA60",
+  "size": 29,
+  "orig_symbol": "sub_0085DA60",
+  "src_path": "src/leaf/tiny_850000.cpp",
+  "lifted_path": "lifted/leaf/tiny_850000.cpp",
+  "name": "checkRangeAllZeroStride20",
+  "signature": "int fn_0085DA60(void* self)",
+  "summary": "Scans 32-bit words in [mem_00ABB380, mem_00AC018C] at a 0x14-byte stride; returns 0 on the first nonzero word, else 1.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:15:09Z"
+}

@@ -244,3 +244,26 @@ extern char* sub_0085E030(char* dst, const char* src) {
     return out;
 }
 } // namespace lift_0085E030
+
+// [0x0085DA60] sub_0085DA60 (29 bytes)
+namespace lift_0085DA60 {
+extern int mem_00ABB380;
+extern int mem_00AC018C;
+
+// @name checkRangeAllZeroStride20
+// @summary Scans 32-bit words in [mem_00ABB380, mem_00AC018C] at a 0x14-byte stride; returns 0 on the first nonzero word, else 1.
+int fn_0085DA60(void* self) {
+    (void)self;
+    uintptr_t p = reinterpret_cast<uintptr_t>(&mem_00ABB380);
+    const uintptr_t end = reinterpret_cast<uintptr_t>(&mem_00AC018C);
+    for (;;) {
+        if (*reinterpret_cast<const DWORD*>(p) != 0) {
+            return 0;
+        }
+        p += 0x14;
+        if (p > end) {
+            return 1;
+        }
+    }
+}
+} // namespace lift_0085DA60
