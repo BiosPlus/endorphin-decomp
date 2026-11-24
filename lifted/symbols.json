@@ -34918,6 +34918,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006B2420 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B2590": {
+    "name": "Unknown::InitWithFlagAndVtable",
+    "class": "Unknown",
+    "signature": "uintptr_t fn_006B2590(void* self, uint32_t arg0, uint32_t /*arg1: unused, stdcall ret 8 pops it*/)",
+    "summary": "Runs the base constructor with arg0, then sets the derived vtable to 0x00991810 and stores the low byte of arg0 at field_0x10.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B25B0": {
     "name": "sub_006B25B0",
     "signature": "extern \"C\" void __fastcall fn_006B25B0(void* self)",

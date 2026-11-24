@@ -268,3 +268,21 @@ __thiscall void* fn_006B4060(void* self, DWORD arg1, DWORD arg2) {
 }
 } // namespace lift_004F27E0
 } // namespace lift_006B4060
+
+// [0x006B2590] sub_006B2590 (32 bytes)
+namespace lift_006B2590 {
+// Known callee 0x006B0C40: sub_006B0C40 (Constructor that initializes vtable to 0x00991348, clears field_0x04, and stores arg0 at field_0x0c.)
+extern uint32_t ext_006B0C40(void* self, uint32_t arg0);
+
+// @name Unknown::InitWithFlagAndVtable
+// @class Unknown
+// @summary Runs the base constructor with arg0, then sets the derived vtable to 0x00991810 and stores the low byte of arg0 at field_0x10.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x10 uint8_t field_0x10
+uintptr_t fn_006B2590(void* self, uint32_t arg0, uint32_t /*arg1: unused, stdcall ret 8 pops it*/) {
+    ext_006B0C40(self, arg0);
+    lift_field<uint32_t>(self, 0x00) = 0x00991810;
+    lift_field<uint8_t>(self, 0x10) = static_cast<uint8_t>(arg0);
+    return reinterpret_cast<uintptr_t>(self);
+}
+} // namespace lift_006B2590
