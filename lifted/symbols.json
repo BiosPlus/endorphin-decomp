@@ -34651,6 +34651,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0062E430 (ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, getVertAxis, 1\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00674950": {
+    "name": "ExprParser::ReadMethodType\u003cExpressionEntry\u003e::vfunc_2 (ExpressionEntry::getExpression)",
+    "class": "ExprParser::ReadMethodType\u003cExpressionEntry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ExpressionEntry::getExpression(void) const, 0\u003e",
+    "signature": "int32_t __stdcall fn_00674950(void* arg)",
+    "summary": "Parses the expression string of the ExpressionEntry referenced by *arg as a float, rounds half away from zero, and returns it as int32 via ext_006A6DE0; throws if the entry pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x006749C0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)",
     "class": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getDamping(void) const, 0\u003e",

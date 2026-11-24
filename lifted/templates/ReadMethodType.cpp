@@ -41007,3 +41007,26 @@ void* fn_00512980(const uint32_t* src, void* out) {
     return out;
 }
 } // namespace lift_00512980
+
+// [0x00674950] ExprParser::ReadMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, 0>::vfunc_2 (110 bytes)
+namespace lift_00674950 {
+extern int32_t ext_006A6DE0(double value);
+extern double mem_00993828;
+
+// @name ExprParser::ReadMethodType<ExpressionEntry>::vfunc_2 (ExpressionEntry::getExpression)
+// @class ExprParser::ReadMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, 0>
+// @summary Parses the expression string of the ExpressionEntry referenced by *arg as a float, rounds half away from zero, and returns it as int32 via ext_006A6DE0; throws if the entry pointer is null.
+// @field ExpressionEntry +0x1c std::string field_0x1c
+int32_t __stdcall fn_00674950(void* arg) {
+    void* entry = *static_cast<void* const*>(arg);
+    if (entry == nullptr) {
+        throw std::runtime_error("ExpressionEntry: null entry pointer");
+    }
+    const std::string* text = reinterpret_cast<const std::string*>(static_cast<uint8_t*>(entry) + 0x1c);
+    const float val = static_cast<float>(std::atof(text->c_str()));
+    const double rounded = (val >= 0.0f)
+        ? static_cast<double>(val) + mem_00993828
+        : static_cast<double>(val) - mem_00993828;
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_00674950
