@@ -746,3 +746,23 @@ void fn_00465EF0(DWORD stackArg) {
     ext_00433290(self, stackArg);
 }
 } // namespace lift_00465EF0
+
+// [0x0046FDA0] sub_0046FDA0 (25 bytes)
+namespace lift_0046FDA0 {
+// @name Unknown::setSubobject1E0Value
+// @class Unknown
+// @summary Stores the single stack argument into field +0x1E0 of the object reached via self->+0xCC->+0x26C (thiscall, ret 4).
+// @field Unknown +0xCC void* field_0xcc
+// @field Unknown +0x26C void* field_0x26c
+// @field Unknown +0x1E0 int32_t field_0x1e0
+void fn_0046FDA0(void* self, int32_t value) {
+    // mov eax, [ecx + 0xcc]      ; eax = self->field_0xcc
+    void* sub = lift_field<void*>(self, 0xCC);
+    // mov ecx, [eax + 0x26c]     ; ecx = sub->field_0x26c
+    void* target = lift_field<void*>(sub, 0x26C);
+    // mov edx, [esp + 4]         ; edx = value (first stack argument)
+    // mov [ecx + 0x1e0], edx     ; target->field_0x1e0 = value
+    lift_field<int32_t>(target, 0x1E0) = value;
+    // ret 4                      ; callee pops the one stack argument
+}
+} // namespace lift_0046FDA0

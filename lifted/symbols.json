@@ -4556,6 +4556,13 @@
     "summary": "Loads the 32-bit value at [ecx+0x00] and passes it to thunk_MFC80_ord_764.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046FDA0": {
+    "name": "Unknown::setSubobject1E0Value",
+    "class": "Unknown",
+    "signature": "void fn_0046FDA0(void* self, int32_t value)",
+    "summary": "Stores the single stack argument into field +0x1E0 of the object reached via self-\u003e+0xCC-\u003e+0x26C (thiscall, ret 4).",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x0046FE10": {
     "name": "sub_0046FE10",
     "class": "OglRenderer",
