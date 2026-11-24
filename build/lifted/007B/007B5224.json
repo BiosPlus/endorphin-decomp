@@ -1,0 +1,12 @@
+{
+  "va": "0x007B5224",
+  "size": 16,
+  "orig_symbol": "sub_007B5224",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "Table_007B5224_Bytes16",
+  "summary": "16-byte constant lookup table of values 0..3 (data, not executable code)",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:46:59Z"
+}
