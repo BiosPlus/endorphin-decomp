@@ -30963,3 +30963,24 @@ void* fn_0046F250(void* out, void* self) {
     return self;
 }
 } // namespace lift_0046F250
+
+// [0x0049B910] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_4 (73 bytes)
+namespace lift_0049B910 {
+// Known callee 0x004C0310: CharacterSelection::vfunc_9 (4 bytes, thiscall). Returns a pointer to the source string.
+extern const std::string* ext_004C0310(void* self);
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getPropertySourceDescription)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Reads the ValuePtrType target; if non-null returns a copy of the state's property source description string, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* target
+std::string fn_0049B910(const void* holder) {
+    void* target = *static_cast<void* const*>(holder);
+    if (target == nullptr) {
+        // Original builds an MSVC exception object (ext_0046C3C0) and throws it via ext_006A6DD2.
+        // Its layout and message are not recovered, so a portable std exception stands in for it.
+        throw std::runtime_error("ReadMethodType<NMData::State>::vfunc_4: null target");
+    }
+    const std::string* src = ext_004C0310(target);
+    return *src;
+}
+} // namespace lift_0049B910
