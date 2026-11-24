@@ -1490,3 +1490,23 @@ bool Unknown::matchesGlobalNameIfSlot28Clear() {
     return ext_string_equal(lift_field<std::string>(self, 0x458), mem_00B41B80);
 }
 } // namespace lift_0044CCF0
+
+// [0x004489A0]
+namespace lift_004489A0 {
+// @name PostKeyMessageToWindow
+// @summary Posts message 0x100 to this->hwnd with wParam=msg and lParam=(a3<<16)|a2, unless msg is 9 or 13 (then returns msg unchanged).
+// @field Unknown +0x7C HWND hwnd
+
+extern BOOL ext_PostMessageA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+extern const uint32_t mem_00925618; // IAT slot address of USER32!PostMessageA (unused in portable form)
+
+// Original: thiscall-style (ecx = self), stdcall-style stack args, ret 0xC.
+int PostKeyMessageToWindow(void* self, uint32_t msg, uint16_t a2, uint16_t a3) {
+    if (msg == 0x0D || msg == 0x09) {
+        return static_cast<int>(msg);
+    }
+    const uint32_t lparam = (static_cast<uint32_t>(a3) << 16) | static_cast<uint32_t>(a2);
+    HWND hwnd = lift_field<HWND>(self, 0x7C);
+    return ext_PostMessageA(hwnd, 0x100, static_cast<WPARAM>(msg), static_cast<LPARAM>(lparam));
+}
+} // namespace lift_004489A0

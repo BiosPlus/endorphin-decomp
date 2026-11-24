@@ -3477,6 +3477,12 @@
     "summary": "Handles WM_KEYDOWN (0x100) by updating arg1+0x0 from this+0x7c before forwarding to MFC80!ord_5214.",
     "lifted_path": "lifted/Properties/PropInPlaceSpinbuttonEdit.cpp"
   },
+  "0x004489A0": {
+    "name": "PostKeyMessageToWindow",
+    "signature": "extern const uint32_t mem_00925618; // IAT slot address of USER32!PostMessageA (unused in portable form) int PostKeyMessageToWindow(void* self, uint32_t msg, uint16_t a2, uint16_t a3)",
+    "summary": "Posts message 0x100 to this-\u003ehwnd with wParam=msg and lParam=(a3\u003c\u003c16)|a2, unless msg is 9 or 13 (then returns msg unchanged).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x004489E0": {
     "name": "Unknown::sendUserMessageToTargetWnd",
     "class": "Unknown",
