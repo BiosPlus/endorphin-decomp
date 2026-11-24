@@ -462,3 +462,23 @@ uint32_t fn_008599F0(const void* s) {
     return static_cast<uint32_t>(std::strlen(static_cast<const char*>(s)));
 }
 } // namespace lift_008599F0
+
+// [0x0085E9E0] sub_0085E9E0 (48 bytes)
+namespace lift_0085E9E0 {
+// @name strcat
+// @summary Appends the NUL-terminated string src to the end of dst (strcat-equivalent); returns dst.
+char* fn_0085E9E0(char* dst, const char* src) {
+    char* end = dst;
+    while (*end != '\0') {
+        ++end;
+    }
+    char* out = end;
+    const char* in = src;
+    char c;
+    do {
+        c = *in++;
+        *out++ = c;
+    } while (c != '\0');
+    return dst;
+}
+} // namespace lift_0085E9E0

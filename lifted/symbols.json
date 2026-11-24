@@ -50806,6 +50806,12 @@
     "summary": "Converts an ASCII lowercase letter (a-z) to uppercase; other values are returned unchanged. Result is in AL.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x0085E9E0": {
+    "name": "strcat",
+    "signature": "char* fn_0085E9E0(char* dst, const char* src)",
+    "summary": "Appends the NUL-terminated string src to the end of dst (strcat-equivalent); returns dst.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085F730": {
     "name": "sub_0085F730",
     "signature": "extern \"C\" void __cdecl fn_0085F730(void)",
