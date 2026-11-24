@@ -1,0 +1,22 @@
+{
+  "va": "0x00480160",
+  "size": 54,
+  "orig_symbol": "ToolEngine::vfunc_27",
+  "src_path": "src/classes/ToolEngine.cpp",
+  "lifted_path": "lifted/classes/ToolEngine.cpp",
+  "name": "ToolEngine::vfunc_27",
+  "class": "ToolEngine",
+  "signature": "static inline void* lift_vtable_slot_b4(void* obj)",
+  "summary": "If the engine's tool at +0x3B0 reports success via vtable slot 0xB4, marks the result object at +0x86 as set.",
+  "fields": [
+    {
+      "class": "ToolEngine",
+      "offset": "+0x3B0",
+      "type": "void*",
+      "name": "field_0x3B0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:10:26Z"
+}

@@ -6894,6 +6894,13 @@
     "summary": "Queries subobject vtable+0x54 or falls back to field_0x240, then invokes vtable+0x4(1) on the non-null object.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00480160": {
+    "name": "ToolEngine::vfunc_27",
+    "class": "ToolEngine",
+    "signature": "static inline void* lift_vtable_slot_b4(void* obj)",
+    "summary": "If the engine's tool at +0x3B0 reports success via vtable slot 0xB4, marks the result object at +0x86 as set.",
+    "lifted_path": "lifted/classes/ToolEngine.cpp"
+  },
   "0x004801A0": {
     "name": "ToolEngine::vfunc_23",
     "class": "ToolEngine",

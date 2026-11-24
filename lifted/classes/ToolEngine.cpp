@@ -65,3 +65,40 @@ uint32_t fn_004809E0(uint32_t self) {
     return 0;
 }
 } // namespace lift_004809E0
+
+// [0x00480160] ToolEngine::vfunc_27 (54 bytes)
+namespace lift_00480160 {
+// @name ToolEngine::vfunc_27
+// @class ToolEngine
+// @summary If the engine's tool at +0x3B0 reports success via vtable slot 0xB4, marks the result object at +0x86 as set.
+// @field ToolEngine +0x3B0 void* field_0x3B0
+
+// Thiscall-style virtual method taking only `this`; returns a 32-bit value.
+typedef uint32_t (__thiscall* LiftVMethodU32)(void* self);
+// Thiscall-style virtual method taking only `this`; returns an object pointer.
+typedef void* (__thiscall* LiftVMethodPtr)(void* self);
+
+// Calls the virtual method at byte offset 0xB4 of the object's vtable.
+static inline void* lift_vtable_slot_b4(void* obj) {
+    void** vtable = *reinterpret_cast<void***>(obj);
+    return *reinterpret_cast<void* const*>(reinterpret_cast<const uint8_t*>(vtable) + 0xB4);
+}
+
+void fn_00480160(void* self) {
+    // Object pointer stored at this+0x3B0.
+    void* first = lift_field<void*>(self, 0x3B0);
+    // Sub-object at first+0x30 (its own vtable dispatches slot 0xB4).
+    void* firstSub = lift_field<void*>(first, 0x30);
+    auto firstCheck = reinterpret_cast<LiftVMethodU32>(lift_vtable_slot_b4(firstSub));
+    if (firstCheck(firstSub) == 0) {
+        return;
+    }
+
+    // Same chain again, this time keeping the pointer from this+0x3B0.
+    void* second = lift_field<void*>(self, 0x3B0);
+    void* secondSub = lift_field<void*>(second, 0x30);
+    auto secondGet = reinterpret_cast<LiftVMethodPtr>(lift_vtable_slot_b4(secondSub));
+    void* result = secondGet(secondSub);
+    lift_field<uint8_t>(result, 0x86) = 1;
+}
+} // namespace lift_00480160
