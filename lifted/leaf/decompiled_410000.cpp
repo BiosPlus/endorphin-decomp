@@ -718,3 +718,30 @@ uint32_t __thiscall sub_004142A0(void* self, void* arg1, uint32_t arg2, uint32_t
     return vfn(self, r2);
 }
 } // namespace lift_004142A0
+
+// [0x0041CB40]
+namespace lift_0041CB40 {
+// @name dynamicCastSubobject0x10
+// @summary Dereferences an object wrapper, forwards virtual call at +0x10, and dynamic_casts the result.
+
+
+uint32_t __thiscall ext_006AD180(void* self);
+void* __thiscall ext_006616C0(void* self);
+void* __cdecl ext_006A6E9E(void* inptr, int32_t vfDelta, void* srcType, void* targetType, int32_t isReference);
+
+void* __stdcall fn_0041CB40(void* arg0) {
+    if (!arg0) {
+        return nullptr;
+    }
+
+    uint32_t obj = ext_006AD180(arg0);
+    void* res = ext_006616C0(reinterpret_cast<void*>(obj + 0x10));
+    return ext_006A6E9E(
+        res,
+        0,
+        reinterpret_cast<void*>(0x00A2E2D8),
+        reinterpret_cast<void*>(0x00A2EFEC),
+        0
+    );
+}
+} // namespace lift_0041CB40
