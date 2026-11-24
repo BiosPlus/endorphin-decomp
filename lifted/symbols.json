@@ -32810,6 +32810,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x006706A0": {
+    "name": "ExprParser::ReadMethodType\u003cNM::Vector3,float,getX,0\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3,float,getX,0\u003e",
+    "signature": "int32_t __stdcall fn_006706A0(void* arg0)",
+    "summary": "Dereferences a Vector3 pointer, reads its X float, rounds to nearest int, or throws on null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00670700": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3\u003e::vfunc_3 (NM::Vector3::getX)",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getX(void) const, 0\u003e",

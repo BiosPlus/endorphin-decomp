@@ -35395,3 +35395,32 @@ float __thiscall fn_00625000(void* self, void** arg0) {
     return 0.0f;
 }
 } // namespace lift_00625000
+
+// [0x006706A0]
+namespace lift_006706A0 {
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, const void* pThrowInfo);
+extern int32_t ext_006A6DE0(double val);
+
+extern const double mem_00993828;
+extern const uint8_t mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NM::Vector3,float,getX,0>::vfunc_2
+// @class ExprParser::ReadMethodType<NM::Vector3,float,getX,0>
+// @summary Dereferences a Vector3 pointer, reads its X float, rounds to nearest int, or throws on null.
+// @field NM::Vector3 +0x0 float x
+int32_t __stdcall fn_006706A0(void* arg0) {
+    uint8_t exception_buf[0x28];
+    void* ptr = *reinterpret_cast<void**>(arg0);
+    if (!ptr) {
+        ext_0046C3C0(exception_buf);
+        ext_006A6DD2(exception_buf, mem_009DEC1C);
+    }
+    float val = *reinterpret_cast<const float*>(ptr);
+    if (val >= 0.0f) {
+        return ext_006A6DE0(static_cast<double>(val) + mem_00993828);
+    } else {
+        return ext_006A6DE0(static_cast<double>(val) - mem_00993828);
+    }
+}
+} // namespace lift_006706A0
