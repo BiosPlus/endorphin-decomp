@@ -956,3 +956,18 @@ void* fn_00715BE0(void* dst, const void* src) {
     return dst;
 }
 } // namespace lift_00715BE0
+
+// [0x00711DA0] sub_00711DA0 (15 bytes)
+namespace lift_00711DA0 {
+// Known callee 0x0071E680: sub_0071E680 (Returns pointer to subobject/field at offset +0x40.)
+extern void* __fastcall fn_0071E680(void* self);
+
+// @name Subobject::setField28
+// @class Subobject
+// @summary Resolves the subobject at self+0x40 via fn_0071E680 and stores the stack argument at its +0x28 field.
+// @field Subobject +0x28 uint32_t field_0x28
+extern void __thiscall fn_00711DA0(void* self, uint32_t value) {
+    void* sub = fn_0071E680(self);
+    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(sub) + 0x28) = value;
+}
+} // namespace lift_00711DA0

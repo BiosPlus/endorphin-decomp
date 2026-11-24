@@ -13,7 +13,7 @@ struct Subobject_Fields {
     // +0x18  double                   field_0x18  (evidence: 0x00711BA0, 0x00711BB0, 0x0071F070)
     // +0x24  uint32_t                 begin  (evidence: 0x004AECC0)
     // +0x28  uint32_t                 end  (evidence: 0x004AECC0) // CONFLICT: multiple definitions at +0x28
-    // +0x28  uint32_t                 field_0x28  (evidence: 0x00711D70) // CONFLICT: multiple definitions at +0x28
+    // +0x28  uint32_t                 field_0x28  (evidence: 0x00711D70, 0x00711DA0) // CONFLICT: multiple definitions at +0x28
     // +0x138 float field_0x138 (divisor read through the pointer at self+0x04)  (evidence: 0x00661A40)
 };
 } // namespace lifted_layout

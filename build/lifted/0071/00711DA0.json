@@ -1,0 +1,22 @@
+{
+  "va": "0x00711DA0",
+  "size": 15,
+  "orig_symbol": "sub_00711DA0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Subobject::setField28",
+  "class": "Subobject",
+  "signature": "extern \"C\" void __thiscall fn_00711DA0(void* self, uint32_t value)",
+  "summary": "Resolves the subobject at self+0x40 via fn_0071E680 and stores the stack argument at its +0x28 field.",
+  "fields": [
+    {
+      "class": "Subobject",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:22:30Z"
+}

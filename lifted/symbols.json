@@ -44456,6 +44456,13 @@
     "summary": "Stores arg1 at Subobject +0x04 and arg2 at Subobject +0x28, both reached via ext_0071E680(self).",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00711DA0": {
+    "name": "Subobject::setField28",
+    "class": "Subobject",
+    "signature": "extern \"C\" void __thiscall fn_00711DA0(void* self, uint32_t value)",
+    "summary": "Resolves the subobject at self+0x40 via fn_0071E680 and stores the stack argument at its +0x28 field.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00711DB0": {
     "name": "getSubobjectField28",
     "signature": "extern \"C\" uint32_t __fastcall fn_00711DB0(void* self)",
