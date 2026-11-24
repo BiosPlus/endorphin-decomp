@@ -11824,6 +11824,12 @@
     "summary": "Loads the target object pointer from the proxy's first dword and forwards it to the shared method-invoke helper (randomizeNow path); pops 8 bytes of stack args.",
     "lifted_path": "lifted/templates/WriteOnlyMethod0Type.cpp"
   },
+  "0x0050F970": {
+    "name": "InitZeroedStateWithVTable",
+    "signature": "void fn_0050F970(void* self)",
+    "summary": "Sets the vtable pointer to 0x00950A74 and zeroes the double, dword, and byte state fields.",
+    "lifted_path": "lifted/leaf/tiny_500000.cpp"
+  },
   "0x0050F990": {
     "name": "sub_0050F990",
     "signature": "extern \"C\" void __fastcall fn_0050F990(void* self)",
