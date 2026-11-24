@@ -31945,6 +31945,12 @@
     "summary": "Getter returning int32_t field at offset +0x4C.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C9C30": {
+    "name": "sub_006C9C30",
+    "signature": "uint32_t sub_006C9C30(uint8_t* ecx)",
+    "summary": "Returns the low-nibble flag bits (mask 0x0E) of the dword at this+0x10.",
+    "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
+  },
   "0x006C9E70": {
     "name": "Unknown::sub_006C9E70",
     "class": "Unknown",

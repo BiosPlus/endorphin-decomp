@@ -1300,3 +1300,15 @@ void __thiscall fn_006C78B0(Unknown* self, uint8_t value) {
 }
 } // namespace lift_005304A0
 } // namespace lift_006C78B0
+
+// [0x006C9C30]
+namespace lift_006C9C30 {
+// @name sub_006C9C30
+// @summary Returns the low-nibble flag bits (mask 0x0E) of the dword at this+0x10.
+// @field Unknown +0x10 uint32_t field_0x10
+uint32_t sub_006C9C30(uint8_t* ecx) {
+    uint32_t eax = *reinterpret_cast<uint32_t*>(ecx + 0x10);
+    eax &= 0x0E;
+    return eax;
+}
+} // namespace lift_006C9C30
