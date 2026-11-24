@@ -14745,6 +14745,20 @@
     "summary": "Forwards to the sub-object at +0x88 via its vtable slot 34, then tail-calls this's vtable slot 26.",
     "lifted_path": "lifted/classes/PoseTool.cpp"
   },
+  "0x00545140": {
+    "name": "PoseTool::vfunc_24",
+    "class": "PoseTool",
+    "signature": "void __thiscall fn_00545140(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00544070 (ForceApplicationTool::vfunc_24).",
+    "lifted_path": "lifted/classes/PoseTool.cpp"
+  },
+  "0x00545170": {
+    "name": "PoseTool::vfunc_25",
+    "class": "PoseTool",
+    "signature": "void __thiscall fn_00545170(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00544070 (ForceApplicationTool::vfunc_24).",
+    "lifted_path": "lifted/classes/PoseTool.cpp"
+  },
   "0x005451A0": {
     "name": "PoseTool::vfunc_30",
     "class": "PoseTool",

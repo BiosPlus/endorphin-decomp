@@ -1,0 +1,28 @@
+{
+  "va": "0x00545140",
+  "size": 38,
+  "orig_symbol": "PoseTool::vfunc_24",
+  "src_path": "src/classes/PoseTool.cpp",
+  "lifted_path": "lifted/classes/PoseTool.cpp",
+  "name": "PoseTool::vfunc_24",
+  "class": "PoseTool",
+  "signature": "void __thiscall fn_00545140(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00544070 (ForceApplicationTool::vfunc_24).",
+  "fields": [
+    {
+      "class": "PoseTool",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "ForceApplicationTool",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:59:22Z"
+}
