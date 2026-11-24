@@ -1,0 +1,13 @@
+{
+  "va": "0x0077F720",
+  "size": 36,
+  "orig_symbol": "sub_0077F720",
+  "src_path": "src/clones/auto_clones_770000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_770000.cpp",
+  "name": "NegateHugeIntoGlobals",
+  "signature": "void fn_0077F720()",
+  "summary": "Stores -_HUGE (negated CRT HUGE_VAL) into three global doubles.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:00:16Z"
+}

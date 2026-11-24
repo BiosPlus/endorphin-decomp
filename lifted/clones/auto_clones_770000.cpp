@@ -17,3 +17,21 @@ void fn_007747B0(void) {
     mem_00B605D8 = -huge;
 }
 } // namespace lift_007747B0
+
+// [0x0077F720] sub_0077F720 (36 bytes)
+namespace lift_0077F720 {
+extern uint32_t mem_00925284;   // holds address of the CRT _HUGE double (.rdata pointer)
+extern double mem_00B60748;
+extern double mem_00B60750;
+extern double mem_00B60758;
+
+// @name NegateHugeIntoGlobals
+// @summary Stores -_HUGE (negated CRT HUGE_VAL) into three global doubles.
+void fn_0077F720() {
+    const double huge =
+        *reinterpret_cast<const double*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B60748 = -huge;
+    mem_00B60750 = -huge;
+    mem_00B60758 = -huge;
+}
+} // namespace lift_0077F720

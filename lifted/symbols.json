@@ -43030,6 +43030,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0072DC60 (Unknown::ForwardArgsToVirtualSlot8).",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
   },
+  "0x0077F720": {
+    "name": "NegateHugeIntoGlobals",
+    "signature": "void fn_0077F720()",
+    "summary": "Stores -_HUGE (negated CRT HUGE_VAL) into three global doubles.",
+    "lifted_path": "lifted/clones/auto_clones_770000.cpp"
+  },
   "0x0077F9E0": {
     "name": "sub_0077F9E0",
     "signature": "uint32_t __thiscall sub_0077F9E0(uint32_t self, uint32_t arg1)",
@@ -44001,6 +44007,12 @@
     "signature": "extern \"C\" void* __fastcall fn_007AEBC0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_007AEBE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
+  },
+  "0x007AEC30": {
+    "name": "sub_007AEC30",
+    "signature": "bool __thiscall sub_007AEC30(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Sets two 32-bit fields at +0x58 and +0x5C and clears +0x60 if the first argument is non-null.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
   "0x007AEC60": {
     "name": "sub_007AEC60",
