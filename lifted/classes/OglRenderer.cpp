@@ -61,3 +61,26 @@ void OglRenderer_vfunc_12(void* self) {
     lift_field<uint8_t>(self, 0x464) = 1;
 }
 } // namespace lift_00536D00
+
+// [0x00533D10] sub_00533D10 (44 bytes)
+namespace lift_00533D10 {
+// Callee: setFieldsFromArg (stores one stack argument into four dword fields of the object at ECX).
+void ext_00540F60(void* self, DWORD unused_arg0, DWORD value);
+
+// @name OglRenderer::vfunc_40
+// @class OglRenderer
+// @summary Forwards the second stack argument into the embedded subobject at +0x9C via ext_00540F60 and caches it at +0x498.
+// @field OglRenderer +0x498 uint32_t field_0x498
+// @field OglRenderer +0x9C void* field_0x9C
+void fn_00533D10(void* self, DWORD arg0, DWORD arg1) {
+    (void)arg0; // Original never reads the first stack argument.
+
+    // Embedded subobject at +0x9C is passed by address only.
+    void* subobject = static_cast<uint8_t*>(self) + 0x9C;
+
+    // Helper receives a fixed tag constant (0x93A444) as its unused first stack argument, then arg1.
+    ext_00540F60(subobject, 0x93A444u, arg1);
+
+    lift_field<DWORD>(self, 0x498) = arg1;
+}
+} // namespace lift_00533D10

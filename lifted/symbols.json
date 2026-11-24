@@ -14249,6 +14249,13 @@
     "summary": "Loads this-\u003efield_0x194 as an index i, then copies the DWORD at this+0xdc+4*(i*15) into this-\u003efield_0x498.",
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
   },
+  "0x00533D10": {
+    "name": "OglRenderer::vfunc_40",
+    "class": "OglRenderer",
+    "signature": "void fn_00533D10(void* self, DWORD arg0, DWORD arg1)",
+    "summary": "Forwards the second stack argument into the embedded subobject at +0x9C via ext_00540F60 and caches it at +0x498.",
+    "lifted_path": "lifted/classes/OglRenderer.cpp"
+  },
   "0x00533D40": {
     "name": "SetField498",
     "class": "\u003cClassName\u003e (unknown; `this` is passed in ECX)",

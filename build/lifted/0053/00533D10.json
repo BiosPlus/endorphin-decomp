@@ -1,0 +1,28 @@
+{
+  "va": "0x00533D10",
+  "size": 44,
+  "orig_symbol": "OglRenderer::vfunc_40",
+  "src_path": "src/classes/OglRenderer.cpp",
+  "lifted_path": "lifted/classes/OglRenderer.cpp",
+  "name": "OglRenderer::vfunc_40",
+  "class": "OglRenderer",
+  "signature": "void fn_00533D10(void* self, DWORD arg0, DWORD arg1)",
+  "summary": "Forwards the second stack argument into the embedded subobject at +0x9C via ext_00540F60 and caches it at +0x498.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x498",
+      "type": "uint32_t",
+      "name": "field_0x498"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x9C",
+      "type": "void*",
+      "name": "field_0x9C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:03:17Z"
+}
