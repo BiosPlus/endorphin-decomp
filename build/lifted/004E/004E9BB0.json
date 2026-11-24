@@ -1,0 +1,52 @@
+{
+  "va": "0x004E9BB0",
+  "size": 23,
+  "orig_symbol": "sub_004E9BB0",
+  "src_path": "src/leaf/tiny_4E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4E0000.cpp",
+  "name": "Unknown::InitFlagBytes",
+  "class": "Unknown",
+  "signature": "void fn_004E9BB0(void* self)",
+  "summary": "Sets byte flags at +0x04 and +0x05 to 1, and clears bytes +0x06 through +0x09.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "BYTE",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5",
+      "type": "BYTE",
+      "name": "field_0x05"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x6",
+      "type": "BYTE",
+      "name": "field_0x06"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x7",
+      "type": "BYTE",
+      "name": "field_0x07"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "BYTE",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x9",
+      "type": "BYTE",
+      "name": "field_0x09"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:31:56Z"
+}

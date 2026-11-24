@@ -25,3 +25,24 @@ void fn_004EB9B0(void* self) {
     lift_field<uint8_t>(self, 0x05) = 0x01;
 }
 } // namespace lift_004EB9B0
+
+// [0x004E9BB0] sub_004E9BB0 (23 bytes)
+namespace lift_004E9BB0 {
+// @name Unknown::InitFlagBytes
+// @class Unknown
+// @summary Sets byte flags at +0x04 and +0x05 to 1, and clears bytes +0x06 through +0x09.
+// @field Unknown +0x04 BYTE field_0x04
+// @field Unknown +0x05 BYTE field_0x05
+// @field Unknown +0x06 BYTE field_0x06
+// @field Unknown +0x07 BYTE field_0x07
+// @field Unknown +0x08 BYTE field_0x08
+// @field Unknown +0x09 BYTE field_0x09
+void fn_004E9BB0(void* self) {
+    lift_field<BYTE>(self, 0x04) = 1;
+    lift_field<BYTE>(self, 0x05) = 1;
+    lift_field<BYTE>(self, 0x06) = 0;
+    lift_field<BYTE>(self, 0x08) = 0;
+    lift_field<BYTE>(self, 0x09) = 0;
+    lift_field<BYTE>(self, 0x07) = 0;
+}
+} // namespace lift_004E9BB0

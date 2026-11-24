@@ -9562,6 +9562,13 @@
     "summary": "Pure jump thunk forwarding to sub_004E96C0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004E9BB0": {
+    "name": "Unknown::InitFlagBytes",
+    "class": "Unknown",
+    "signature": "void fn_004E9BB0(void* self)",
+    "summary": "Sets byte flags at +0x04 and +0x05 to 1, and clears bytes +0x06 through +0x09.",
+    "lifted_path": "lifted/leaf/tiny_4E0000.cpp"
+  },
   "0x004EA030": {
     "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, isCollisionEnabled, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0\u003e",
