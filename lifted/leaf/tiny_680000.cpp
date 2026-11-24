@@ -4,8 +4,10 @@ extern "C" uintptr_t mem_00924FDC;
 extern "C" void __fastcall ext_00682FD0(void* self);
 extern "C" uintptr_t mem_00924FF4;
 extern "C" void __fastcall ext_00508680(void* self);
+#include <cstring>
+#include <cstdint>
 
-// [0x00682ED0] sub_00682ED0 (5 bytes)
+#include <cstdint>
 // @name VirtualSlot9Thunk
 // @class Object (unidentified; receiver is passed in ecx)
 // @summary Virtual dispatch thunk: loads the vtable pointer from the receiver and returns the code address stored at vtable byte offset 0x24 (slot 9 on x86). The original tail-jumps to that address with the same this; this lift returns the target so the caller performs the call.
@@ -150,3 +152,34 @@ void* fn_00681FE0(void* self) {
 }
 } // namespace lift_005B1830
 } // namespace lift_00681FE0
+
+// [0x00682DE0] sub_00682DE0 (19 bytes)
+namespace lift_00682DE0 {
+// @name sub_00682DE0
+// @summary Auto-lifted identical-shape clone of 0x0041C710 (descriptiveName_0041C710 (delegateToChildVirtual19)).
+namespace lift_0041C710 {
+// @name descriptiveName_0041C710 (delegateToChildVirtual19)
+// @summary If the pointer at +0x08 is null return 0; otherwise tail-call virtual slot 19 (vtable +0x4C) of that child object and return its result.
+// @field Unknown +0x08 void* child
+
+namespace {
+// Callee signature for the child's virtual slot; result is returned in the low byte.
+using ChildVirtual19 = uint8_t (*)(void* self);
+}
+
+uint8_t fn_00682DE0(void* self) {
+    // cmp dword ptr [ecx+8], 0 / je -> return 0
+    void* child = lift_field<void*>(self, 0x28);
+    if (child == nullptr) {
+        return 0;
+    }
+
+    // mov ecx, [ecx+8]; mov eax, [ecx]; mov edx, [eax+0x4c]; jmp edx
+    // Vtable is read using the original 32-bit layout (slot at +0x4C).
+    void* vtbl = lift_field<void*>(child, 0x00);
+    const uintptr_t target = static_cast<uintptr_t>(lift_field<uint32_t>(vtbl, 0x58));
+    auto fn = reinterpret_cast<ChildVirtual19>(target);
+    return fn(child);
+}
+} // namespace lift_0041C710
+} // namespace lift_00682DE0

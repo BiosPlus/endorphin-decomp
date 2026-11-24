@@ -55,6 +55,7 @@ extern "C" void __fastcall ext_00530690(void* self);
 extern "C" uintptr_t mem_00924FDC;
 #include <cstdint>
 #include <cstddef>
+#include <cstring>
 
 // [0x00448F20] sub_00448F20 (6 bytes)
 // @name GetStringLiteral_00448F20
@@ -579,3 +580,96 @@ void fn_0044B7C0(void* self) {
 }
 } // namespace lift_00675D60
 } // namespace lift_0044B7C0
+
+// [0x0044B660] sub_0044B660 (22 bytes)
+namespace lift_0044B660 {
+// @name sub_0044B660
+// @summary Auto-lifted identical-shape clone of 0x0041C710 (descriptiveName_0041C710 (delegateToChildVirtual19)).
+namespace lift_0041C710 {
+// @name descriptiveName_0041C710 (delegateToChildVirtual19)
+// @summary If the pointer at +0x08 is null return 0; otherwise tail-call virtual slot 19 (vtable +0x4C) of that child object and return its result.
+// @field Unknown +0x08 void* child
+
+namespace {
+// Callee signature for the child's virtual slot; result is returned in the low byte.
+using ChildVirtual19 = uint8_t (*)(void* self);
+}
+
+uint8_t fn_0044B660(void* self) {
+    // cmp dword ptr [ecx+8], 0 / je -> return 0
+    void* child = lift_field<void*>(self, 0x64);
+    if (child == nullptr) {
+        return 0;
+    }
+
+    // mov ecx, [ecx+8]; mov eax, [ecx]; mov edx, [eax+0x4c]; jmp edx
+    // Vtable is read using the original 32-bit layout (slot at +0x4C).
+    void* vtbl = lift_field<void*>(child, 0x00);
+    const uintptr_t target = static_cast<uintptr_t>(lift_field<uint32_t>(vtbl, 0x164));
+    auto fn = reinterpret_cast<ChildVirtual19>(target);
+    return fn(child);
+}
+} // namespace lift_0041C710
+} // namespace lift_0044B660
+
+// [0x0044B680] sub_0044B680 (22 bytes)
+namespace lift_0044B680 {
+// @name sub_0044B680
+// @summary Auto-lifted identical-shape clone of 0x0041C710 (descriptiveName_0041C710 (delegateToChildVirtual19)).
+namespace lift_0041C710 {
+// @name descriptiveName_0041C710 (delegateToChildVirtual19)
+// @summary If the pointer at +0x08 is null return 0; otherwise tail-call virtual slot 19 (vtable +0x4C) of that child object and return its result.
+// @field Unknown +0x08 void* child
+
+namespace {
+// Callee signature for the child's virtual slot; result is returned in the low byte.
+using ChildVirtual19 = uint8_t (*)(void* self);
+}
+
+uint8_t fn_0044B680(void* self) {
+    // cmp dword ptr [ecx+8], 0 / je -> return 0
+    void* child = lift_field<void*>(self, 0x64);
+    if (child == nullptr) {
+        return 0;
+    }
+
+    // mov ecx, [ecx+8]; mov eax, [ecx]; mov edx, [eax+0x4c]; jmp edx
+    // Vtable is read using the original 32-bit layout (slot at +0x4C).
+    void* vtbl = lift_field<void*>(child, 0x00);
+    const uintptr_t target = static_cast<uintptr_t>(lift_field<uint32_t>(vtbl, 0xC4));
+    auto fn = reinterpret_cast<ChildVirtual19>(target);
+    return fn(child);
+}
+} // namespace lift_0041C710
+} // namespace lift_0044B680
+
+// [0x0044B760] sub_0044B760 (22 bytes)
+namespace lift_0044B760 {
+// @name sub_0044B760
+// @summary Auto-lifted identical-shape clone of 0x0041C710 (descriptiveName_0041C710 (delegateToChildVirtual19)).
+namespace lift_0041C710 {
+// @name descriptiveName_0041C710 (delegateToChildVirtual19)
+// @summary If the pointer at +0x08 is null return 0; otherwise tail-call virtual slot 19 (vtable +0x4C) of that child object and return its result.
+// @field Unknown +0x08 void* child
+
+namespace {
+// Callee signature for the child's virtual slot; result is returned in the low byte.
+using ChildVirtual19 = uint8_t (*)(void* self);
+}
+
+uint8_t fn_0044B760(void* self) {
+    // cmp dword ptr [ecx+8], 0 / je -> return 0
+    void* child = lift_field<void*>(self, 0x64);
+    if (child == nullptr) {
+        return 0;
+    }
+
+    // mov ecx, [ecx+8]; mov eax, [ecx]; mov edx, [eax+0x4c]; jmp edx
+    // Vtable is read using the original 32-bit layout (slot at +0x4C).
+    void* vtbl = lift_field<void*>(child, 0x00);
+    const uintptr_t target = static_cast<uintptr_t>(lift_field<uint32_t>(vtbl, 0x170));
+    auto fn = reinterpret_cast<ChildVirtual19>(target);
+    return fn(child);
+}
+} // namespace lift_0041C710
+} // namespace lift_0044B760

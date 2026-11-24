@@ -1,0 +1,21 @@
+{
+  "va": "0x0044B680",
+  "size": 22,
+  "orig_symbol": "sub_0044B680",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "sub_0044B680",
+  "signature": "uint8_t fn_0044B680(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0041C710 (descriptiveName_0041C710 (delegateToChildVirtual19)).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "child"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T02:00:52Z"
+}

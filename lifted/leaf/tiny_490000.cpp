@@ -417,3 +417,81 @@ DWORD dispatchThroughSlot0xCC_00493DE0(void* ecxSlot, DWORD a1, DWORD a2) {
     return reinterpret_cast<Slot0CCFn>(target)(obj, a1, a2);
 }
 } // namespace lift_00493DE0
+
+// [0x00493F20] sub_00493F20 (19 bytes)
+namespace lift_00493F20 {
+// @name sub_00493F20
+// @summary Auto-lifted identical-shape clone of 0x00493DA0 (descriptiveName_00493DA0 (forwardVirtual0x150IfNonNull)).
+namespace lift_00493DA0 {
+// @name descriptiveName_00493DA0 (forwardVirtual0x150IfNonNull)
+// @summary Dereferences the pointer stored at *self; if non-null, tail-jumps to vtable slot 0x150 of that object (passing the one stack arg through), else returns 4-byte stack cleanup.
+// @field field_0x00 <void*> object (pointer loaded from *self; object's first DWORD is its vtable)
+// @field field_0x00 <void**> vtable (object+0x00 vtable pointer; slot at +0x150 is the forward target)
+uint32_t fn_00493F20(void** self, uint32_t arg) {
+    // ecx = *self; if (ecx == 0) ret 4;
+    // eax = [ecx]; jmp [eax + 0x150]  (ecx = object, stack arg untouched)
+    void* object = *self;
+    if (object == nullptr) {
+        // Original path only pops the stack arg; eax is left unchanged there.
+        return 0;
+    }
+    uint32_t vtable = lift_field<uint32_t>(object, 0x00);
+    uint32_t target = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(vtable)), 0x1BC);
+    using Slot = uint32_t(__thiscall*)(void* thisPtr, uint32_t arg);
+    auto fn = reinterpret_cast<Slot>(static_cast<uintptr_t>(target));
+    return fn(object, arg);
+}
+} // namespace lift_00493DA0
+} // namespace lift_00493F20
+
+// [0x00493F40] sub_00493F40 (19 bytes)
+namespace lift_00493F40 {
+// @name sub_00493F40
+// @summary Auto-lifted identical-shape clone of 0x00493DA0 (descriptiveName_00493DA0 (forwardVirtual0x150IfNonNull)).
+namespace lift_00493DA0 {
+// @name descriptiveName_00493DA0 (forwardVirtual0x150IfNonNull)
+// @summary Dereferences the pointer stored at *self; if non-null, tail-jumps to vtable slot 0x150 of that object (passing the one stack arg through), else returns 4-byte stack cleanup.
+// @field field_0x00 <void*> object (pointer loaded from *self; object's first DWORD is its vtable)
+// @field field_0x00 <void**> vtable (object+0x00 vtable pointer; slot at +0x150 is the forward target)
+uint32_t fn_00493F40(void** self, uint32_t arg) {
+    // ecx = *self; if (ecx == 0) ret 4;
+    // eax = [ecx]; jmp [eax + 0x150]  (ecx = object, stack arg untouched)
+    void* object = *self;
+    if (object == nullptr) {
+        // Original path only pops the stack arg; eax is left unchanged there.
+        return 0;
+    }
+    uint32_t vtable = lift_field<uint32_t>(object, 0x00);
+    uint32_t target = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(vtable)), 0x1C0);
+    using Slot = uint32_t(__thiscall*)(void* thisPtr, uint32_t arg);
+    auto fn = reinterpret_cast<Slot>(static_cast<uintptr_t>(target));
+    return fn(object, arg);
+}
+} // namespace lift_00493DA0
+} // namespace lift_00493F40
+
+// [0x00493F60] sub_00493F60 (19 bytes)
+namespace lift_00493F60 {
+// @name sub_00493F60
+// @summary Auto-lifted identical-shape clone of 0x00493DA0 (descriptiveName_00493DA0 (forwardVirtual0x150IfNonNull)).
+namespace lift_00493DA0 {
+// @name descriptiveName_00493DA0 (forwardVirtual0x150IfNonNull)
+// @summary Dereferences the pointer stored at *self; if non-null, tail-jumps to vtable slot 0x150 of that object (passing the one stack arg through), else returns 4-byte stack cleanup.
+// @field field_0x00 <void*> object (pointer loaded from *self; object's first DWORD is its vtable)
+// @field field_0x00 <void**> vtable (object+0x00 vtable pointer; slot at +0x150 is the forward target)
+uint32_t fn_00493F60(void** self, uint32_t arg) {
+    // ecx = *self; if (ecx == 0) ret 4;
+    // eax = [ecx]; jmp [eax + 0x150]  (ecx = object, stack arg untouched)
+    void* object = *self;
+    if (object == nullptr) {
+        // Original path only pops the stack arg; eax is left unchanged there.
+        return 0;
+    }
+    uint32_t vtable = lift_field<uint32_t>(object, 0x00);
+    uint32_t target = lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(vtable)), 0xA4);
+    using Slot = uint32_t(__thiscall*)(void* thisPtr, uint32_t arg);
+    auto fn = reinterpret_cast<Slot>(static_cast<uintptr_t>(target));
+    return fn(object, arg);
+}
+} // namespace lift_00493DA0
+} // namespace lift_00493F60

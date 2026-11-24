@@ -2452,11 +2452,29 @@
     "summary": "If this+0x64 is nonzero, returns dword at (this+0x68)-\u003e+0x38; otherwise returns 0.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x0044B660": {
+    "name": "sub_0044B660",
+    "signature": "uint8_t fn_0044B660(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0041C710 (descriptiveName_0041C710 (delegateToChildVirtual19)).",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
+  "0x0044B680": {
+    "name": "sub_0044B680",
+    "signature": "uint8_t fn_0044B680(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0041C710 (descriptiveName_0041C710 (delegateToChildVirtual19)).",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x0044B6A0": {
     "name": "GetStringLiteral_00440680",
     "class": "(none)",
     "signature": "extern \"C\" const char* __cdecl fn_00440680()",
     "summary": "Returns the address of the read-only string \"$aj\" in .rdata.",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
+  "0x0044B760": {
+    "name": "sub_0044B760",
+    "signature": "uint8_t fn_0044B760(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0041C710 (descriptiveName_0041C710 (delegateToChildVirtual19)).",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
   "0x0044B780": {
@@ -5296,6 +5314,24 @@
     "class": "(none; object type not recovered)",
     "signature": "void* fn_00493EE0(void* ecx)",
     "summary": "Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
+  "0x00493F20": {
+    "name": "sub_00493F20",
+    "signature": "uint32_t fn_00493F20(void** self, uint32_t arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00493DA0 (descriptiveName_00493DA0 (forwardVirtual0x150IfNonNull)).",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
+  "0x00493F40": {
+    "name": "sub_00493F40",
+    "signature": "uint32_t fn_00493F40(void** self, uint32_t arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00493DA0 (descriptiveName_00493DA0 (forwardVirtual0x150IfNonNull)).",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
+  "0x00493F60": {
+    "name": "sub_00493F60",
+    "signature": "uint32_t fn_00493F60(void** self, uint32_t arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00493DA0 (descriptiveName_00493DA0 (forwardVirtual0x150IfNonNull)).",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
   "0x00493FF0": {
@@ -25597,6 +25633,12 @@
     "signature": "uint32_t fn_00682DC0(void* self)",
     "summary": "Returns cached dword at +0x88; if zero, forwards to the object at +0x24 via vtable slot 18, passing (this - 4) as the adjusted base.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x00682DE0": {
+    "name": "sub_00682DE0",
+    "signature": "uint8_t fn_00682DE0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0041C710 (descriptiveName_0041C710 (delegateToChildVirtual19)).",
+    "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
   "0x00682E00": {
     "name": "sub_00682E00",
