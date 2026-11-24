@@ -347,3 +347,20 @@ void fn_00672490(void* self) {
     fn(child, arg);
 }
 } // namespace lift_00672490
+
+// [0x0067ADE0] sub_0067ADE0 (22 bytes)
+namespace lift_0067ADE0 {
+extern DWORD ext_GetCurrentThreadId(void);
+
+// @name SubObject::IsCurrentThreadOwner
+// @class SubObject
+// @summary Returns 1 if the calling thread matches the owner thread id stored in the object at this+0x0C, else 0.
+// @field SubObject +0x0C void* field_0x0C
+// @field ThreadOwner +0x14 DWORD field_0x14
+uint8_t fn_0067ADE0(void* self) {
+    void* owner = lift_field<void*>(self, 0x0C);
+    DWORD current = ext_GetCurrentThreadId();
+    DWORD ownerThread = lift_field<DWORD>(owner, 0x14);
+    return current == ownerThread ? 1 : 0;
+}
+} // namespace lift_0067ADE0
