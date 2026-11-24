@@ -38076,6 +38076,12 @@
     "summary": "Getter returning int32_t field at offset +0x4.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B9CE0": {
+    "name": "strContainsChar",
+    "signature": "uint8_t __stdcall sub_006B9CE0(uint8_t ch, uintptr_t str)",
+    "summary": "Checks whether a null-terminated string contains a given byte character.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B9D10": {
     "name": "Unknown::InitAndReturnSelf",
     "class": "Unknown",
@@ -43070,6 +43076,13 @@
     "signature": "extern \"C\" BYTE __thiscall fn_006FAF10(void* self, DWORD a1, DWORD a2)",
     "summary": "Thiscall forwarder: if this-\u003efield_0x08 is null returns 0, otherwise tail-calls the subobject's vtable slot 12 with the two arguments.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
+  },
+  "0x006FB520": {
+    "name": "Unknown::loadPairViaPointer",
+    "class": "Unknown",
+    "signature": "void fn_006FB520(uint32_t self, uint32_t src)",
+    "summary": "Copies an 8-byte pair into self; field +4 is the source's pointer, field +0 is the value it points to (zeroed if source is null).",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
   "0x006FC1C0": {
     "name": "sub_006FC1C0",

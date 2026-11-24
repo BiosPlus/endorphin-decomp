@@ -1,0 +1,28 @@
+{
+  "va": "0x006FB520",
+  "size": 48,
+  "orig_symbol": "sub_006FB520",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::loadPairViaPointer",
+  "class": "Unknown",
+  "signature": "void fn_006FB520(uint32_t self, uint32_t src)",
+  "summary": "Copies an 8-byte pair into self; field +4 is the source's pointer, field +0 is the value it points to (zeroed if source is null).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:21:42Z"
+}

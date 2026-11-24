@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 extern "C" void __fastcall ext_006FD420(void* self);
 extern "C" void __cdecl ext_006A5C5C(void* ptr);
+#include <cstdint>
 
 // [0x006FD400] sub_006FD400 (32 bytes)
 // @name sub_006FD400
@@ -996,3 +997,27 @@ BOOL fn_006FA990(void* self, DWORD arg, DWORD unused) {
     return fn(sub, arg) ? TRUE : FALSE;
 }
 } // namespace lift_006FA990
+
+// [0x006FB520] sub_006FB520 (48 bytes)
+namespace lift_006FB520 {
+// @name Unknown::loadPairViaPointer
+// @class Unknown
+// @summary Copies an 8-byte pair into self; field +4 is the source's pointer, field +0 is the value it points to (zeroed if source is null).
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+
+
+// Guest memory base; all 32-bit guest addresses are offsets from mem_.
+extern uint8_t* mem_;
+
+void fn_006FB520(uint32_t self, uint32_t src) {
+    if (src == 0) {
+        lift_field<uint32_t>(mem_, self + 0x0) = 0;
+        lift_field<uint32_t>(mem_, self + 0x4) = 0;
+        return;
+    }
+    uint32_t p = lift_field<uint32_t>(mem_, src + 0x4);
+    lift_field<uint32_t>(mem_, self + 0x4) = p;
+    lift_field<uint32_t>(mem_, self + 0x0) = lift_field<uint32_t>(mem_, p);
+}
+} // namespace lift_006FB520
