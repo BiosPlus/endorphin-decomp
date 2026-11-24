@@ -3787,6 +3787,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0047DBC0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004800C0": {
+    "name": "ToolEngine::vfunc_16",
+    "class": "ToolEngine",
+    "signature": "float fn_004800C0(uint32_t ecx)",
+    "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
+    "lifted_path": "lifted/classes/ToolEngine.cpp"
+  },
   "0x004801F0": {
     "name": "Commands::BufferTransformsCommand::vfunc_3",
     "class": "Commands::BufferTransformsCommand",
@@ -10333,6 +10340,12 @@
     "summary": "Returns global int32 value from mem_00A44B84.",
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
   },
+  "0x00530650": {
+    "name": "sub_00530650",
+    "signature": "void fn_00530650(uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A24A0 (setGlobalU32FromArg).",
+    "lifted_path": "lifted/leaf/tiny_530000.cpp"
+  },
   "0x005314C0": {
     "name": "getNestedField_0x10_0x1b0",
     "signature": "uint32_t __thiscall sub_005314C0(uint32_t this_ptr)",
@@ -11312,6 +11325,24 @@
     "signature": "extern \"C\" void* __fastcall fn_005472C0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00544BE0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x005478B0": {
+    "name": "sub_005478B0",
+    "signature": "float fn_005478B0(uint32_t ecx)",
+    "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
+  "0x005478C0": {
+    "name": "sub_005478C0",
+    "signature": "float fn_005478C0(uint32_t ecx)",
+    "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
+  "0x005478D0": {
+    "name": "sub_005478D0",
+    "signature": "float fn_005478D0(uint32_t ecx)",
+    "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
   "0x00547D00": {
     "name": "sub_00547D00",
@@ -15293,12 +15324,24 @@
     "summary": "Clears the global byte flag at 0x00B3F200 to 0.",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
   },
+  "0x005CF930": {
+    "name": "sub_005CF930",
+    "signature": "float fn_005CF930(uint32_t ecx)",
+    "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005CFC20": {
     "name": "NMData::CameraData::vfunc_14",
     "class": "NMData::CameraData",
     "signature": "void* __thiscall fn_005CFC20(void* self, void* arg1, uint32_t arg2)",
     "summary": "Handles property/message 0x1b9 on CameraData by calling sub_00661650 or sub_0046F7D0, otherwise delegates to NMData::AxisDefineSensorData::vfunc_14.",
     "lifted_path": "lifted/NMData/CameraData.cpp"
+  },
+  "0x005D06D0": {
+    "name": "sub_005D06D0",
+    "signature": "float fn_005D06D0(uint32_t ecx)",
+    "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
   },
   "0x005D06E0": {
     "name": "NMData::CameraData::vfunc_57",
@@ -20933,6 +20976,12 @@
     "name": "sub_00648500",
     "signature": "extern \"C\" void __fastcall fn_00648500(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0x5C and tail-calls sub_0065AEC0.",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
+  "0x00648850": {
+    "name": "sub_00648850",
+    "signature": "void fn_00648850(uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x004A24A0 (setGlobalU32FromArg).",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
   "0x006488F0": {

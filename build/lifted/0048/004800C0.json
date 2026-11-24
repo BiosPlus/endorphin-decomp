@@ -1,0 +1,22 @@
+{
+  "va": "0x004800C0",
+  "size": 11,
+  "orig_symbol": "ToolEngine::vfunc_16",
+  "src_path": "src/classes/ToolEngine.cpp",
+  "lifted_path": "lifted/classes/ToolEngine.cpp",
+  "name": "ToolEngine::vfunc_16",
+  "class": "ToolEngine",
+  "signature": "float fn_004800C0(uint32_t ecx)",
+  "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:15:35Z"
+}

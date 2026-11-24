@@ -1,0 +1,13 @@
+{
+  "va": "0x00530650",
+  "size": 12,
+  "orig_symbol": "sub_00530650",
+  "src_path": "src/leaf/tiny_530000.cpp",
+  "lifted_path": "lifted/leaf/tiny_530000.cpp",
+  "name": "sub_00530650",
+  "signature": "void fn_00530650(uint32_t value)",
+  "summary": "Auto-lifted identical-shape clone of 0x004A24A0 (setGlobalU32FromArg).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:15:35Z"
+}

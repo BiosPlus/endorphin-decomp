@@ -693,3 +693,23 @@ void __thiscall sub_006452D0(void* self) {
     reinterpret_cast<void(__thiscall*)(uint32_t)>(target)(delegate);
 }
 } // namespace lift_006452D0
+
+// [0x00648850] sub_00648850 (12 bytes)
+namespace lift_00648850 {
+extern int32_t mem_00B5574C;
+
+// @name sub_00648850
+// @summary Auto-lifted identical-shape clone of 0x004A24A0 (setGlobalU32FromArg).
+namespace lift_004A24A0 {
+extern uint32_t mem_00B5574C;
+
+// @name setGlobalU32FromArg
+// @summary Stores its single stack argument (stdcall, callee pops 4 bytes) into the global mem_00A35B7C.
+void fn_00648850(uint32_t value) {
+    // mov eax, [esp+4]     -> eax = first argument
+    // mov [0xa35b7c], eax  -> mem_00A35B7C = eax
+    mem_00B5574C = value;
+    // ret 4                -> stdcall epilogue; handled by the calling convention
+}
+} // namespace lift_004A24A0
+} // namespace lift_00648850

@@ -1,0 +1,21 @@
+{
+  "va": "0x005478B0",
+  "size": 14,
+  "orig_symbol": "sub_005478B0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "sub_005478B0",
+  "signature": "float fn_005478B0(uint32_t ecx)",
+  "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:15:35Z"
+}
