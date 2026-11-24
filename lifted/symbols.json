@@ -9119,6 +9119,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x8 and tail-calls NMData::ValuePtrData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0049BEE0": {
+    "name": "FindFirstMatchInList",
+    "signature": "void* fn_0049BEE0(void* out, uint32_t value, void* head, uint32_t unused, void* sentinel, uint32_t arg)",
+    "summary": "Walks a sentinel-terminated linked list and stops at the first node whose embedded object's virtual predicate (vtable slot 10) accepts arg; writes {value, node} to out and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049BF20": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::State\u003e::vfunc_41 (NMData::State::setIsDeactivated)",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, bool, {public: void __thiscall NMData::State::setIsDeactivated(bool), 0}\u003e",

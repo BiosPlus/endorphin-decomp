@@ -427,3 +427,36 @@ __stdcall std::uint8_t* fn_00491890(std::uint8_t* base, std::uint32_t index, std
 }
 } // namespace lift_0054F2C0
 } // namespace lift_00491890
+
+// [0x0049BEE0] sub_0049BEE0 (57 bytes)
+namespace lift_0049BEE0 {
+// @name FindFirstMatchInList
+// @summary Walks a sentinel-terminated linked list and stops at the first node whose embedded object's virtual predicate (vtable slot 10) accepts arg; writes {value, node} to out and returns out.
+// @field ListNode +0x00 void* next
+// @field ListNode +0x08 void* payload (object; vptr at offset 0, predicate in vtable slot 10 at +0x28)
+// @field FindResult +0x00 uint32_t value
+// @field FindResult +0x04 void* node
+
+namespace {
+using PredicateFn = bool (*)(void* self, uint32_t arg);
+}
+
+void* fn_0049BEE0(void* out, uint32_t value, void* head, uint32_t unused, void* sentinel, uint32_t arg) {
+    (void)unused;
+
+    uint8_t* node = static_cast<uint8_t*>(head);
+    while (node != sentinel) {
+        // node+0x08 holds an object whose first word is its vtable pointer.
+        void** vtable = lift_field<void**>(node, 8);
+        auto pred = reinterpret_cast<PredicateFn>(vtable[10]); // vtable +0x28
+        if (pred(node + 8, arg)) {
+            break;
+        }
+        node = lift_field<uint8_t*>(node, 0); // node->next
+    }
+
+    lift_field<uint32_t>(out, 0) = value;
+    lift_field<void*>(out, 4) = node;
+    return out;
+}
+} // namespace lift_0049BEE0

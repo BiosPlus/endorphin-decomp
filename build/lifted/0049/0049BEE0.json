@@ -1,0 +1,39 @@
+{
+  "va": "0x0049BEE0",
+  "size": 57,
+  "orig_symbol": "sub_0049BEE0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "FindFirstMatchInList",
+  "signature": "void* fn_0049BEE0(void* out, uint32_t value, void* head, uint32_t unused, void* sentinel, uint32_t arg)",
+  "summary": "Walks a sentinel-terminated linked list and stops at the first node whose embedded object's virtual predicate (vtable slot 10) accepts arg; writes {value, node} to out and returns out.",
+  "fields": [
+    {
+      "class": "ListNode",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "next"
+    },
+    {
+      "class": "ListNode",
+      "offset": "+0x8",
+      "type": "void* payload (object; vptr at offset 0, predicate in vtable slot 10 at",
+      "name": "+0x28)"
+    },
+    {
+      "class": "FindResult",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "value"
+    },
+    {
+      "class": "FindResult",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "node"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:18:19Z"
+}
