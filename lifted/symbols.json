@@ -41566,6 +41566,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C480": {
+    "name": "Unknown::SetPairAtC_0xFD0",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0071C480(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Thiscall with two stack args: stores arg1 and arg2 into the object at this-\u003efield_0x0C at offsets +0xFD0 and +0xFD4 (callee-cleans, ret 8).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071C4A0": {
     "name": "sub_0071C4A0",
     "class": "Unknown",

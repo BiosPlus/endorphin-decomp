@@ -519,3 +519,18 @@ void fn_0071C0E0(uint8_t* self, DWORD arg0, DWORD arg1) {
     *reinterpret_cast<DWORD*>(sub + 0x2FC) = arg1;
 }
 } // namespace lift_0071C0E0
+
+// [0x0071C480] sub_0071C480 (32 bytes)
+namespace lift_0071C480 {
+// @name Unknown::SetPairAtC_0xFD0
+// @class Unknown
+// @summary Thiscall with two stack args: stores arg1 and arg2 into the object at this->field_0x0C at offsets +0xFD0 and +0xFD4 (callee-cleans, ret 8).
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0xFD0 uint32_t field_0xFD0 (on the object pointed to by +0x0C)
+// @field Unknown +0xFD4 uint32_t field_0xFD4 (on the object pointed to by +0x0C)
+void __thiscall fn_0071C480(void* self, uint32_t arg1, uint32_t arg2) {
+    auto* obj = *reinterpret_cast<uint8_t**>(static_cast<uint8_t*>(self) + 0x0C);
+    *reinterpret_cast<uint32_t*>(obj + 0xFD0) = arg1;
+    *reinterpret_cast<uint32_t*>(obj + 0xFD4) = arg2;
+}
+} // namespace lift_0071C480

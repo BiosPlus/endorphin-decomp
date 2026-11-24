@@ -1,0 +1,34 @@
+{
+  "va": "0x0071C480",
+  "size": 32,
+  "orig_symbol": "sub_0071C480",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::SetPairAtC_0xFD0",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_0071C480(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Thiscall with two stack args: stores arg1 and arg2 into the object at this-\u003efield_0x0C at offsets +0xFD0 and +0xFD4 (callee-cleans, ret 8).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xFD0",
+      "type": "uint32_t field_0xFD0 (on the object pointed to by",
+      "name": "+0x0C)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xFD4",
+      "type": "uint32_t field_0xFD4 (on the object pointed to by",
+      "name": "+0x0C)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:42:15Z"
+}
