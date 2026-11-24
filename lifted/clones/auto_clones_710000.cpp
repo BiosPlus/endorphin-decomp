@@ -838,3 +838,18 @@ bool __stdcall sub_007124F0(uint32_t value) {
   return value == mem_00B5F220 || value == mem_00B5F1F8 || value == mem_00B5E400;
 }
 } // namespace lift_007124F0
+
+// [0x00715130]
+namespace lift_00715130 {
+extern uint32_t mem_00B5FA80;
+extern uint32_t mem_00B5EB78;
+extern uint32_t mem_00B5E400;
+
+// @name isKnownGlobalValue
+// @summary Returns 1 if the 32-bit argument matches any of three global values, otherwise 0.
+uint8_t __stdcall sub_00715130(uint32_t val) {
+    if (val == mem_00B5FA80) return 1;
+    if (val == mem_00B5EB78) return 1;
+    return val == mem_00B5E400 ? 1 : 0;
+}
+} // namespace lift_00715130

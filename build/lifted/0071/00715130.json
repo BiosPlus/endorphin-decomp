@@ -1,0 +1,13 @@
+{
+  "va": "0x00715130",
+  "size": 44,
+  "orig_symbol": "sub_00715130",
+  "src_path": "src/clones/auto_clones_710000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_710000.cpp",
+  "name": "isKnownGlobalValue",
+  "signature": "uint8_t __stdcall sub_00715130(uint32_t val)",
+  "summary": "Returns 1 if the 32-bit argument matches any of three global values, otherwise 0.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:11:10Z"
+}
