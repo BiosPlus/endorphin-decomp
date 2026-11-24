@@ -9,5 +9,6 @@
 namespace lifted_layout {
 struct this_Fields {
     // +0x0   uint32_t                 vtable  (evidence: 0x006AFDC0)
+    // +0xC   uint32_t                 field_0x0c  (evidence: 0x0071C5C0)
 };
 } // namespace lifted_layout
