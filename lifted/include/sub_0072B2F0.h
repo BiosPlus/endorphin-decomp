@@ -8,6 +8,6 @@
 // Recovered field layout for sub_0072B2F0:
 namespace lifted_layout {
 struct sub_0072B2F0_Fields {
-    // +0x0   uint32_t                 vtable  (evidence: 0x0072B2F0)
+    // +0x0   uint32_t                 vtable  (evidence: 0x0072B180, 0x0072B2F0)
 };
 } // namespace lifted_layout
