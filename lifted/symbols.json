@@ -7375,6 +7375,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType\u003cImageExporter, float, getFrameRate\u003e::vfunc_2).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00488B80": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData\u003e::vfunc_2",
+    "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0\u003e",
+    "signature": "int32_t fn_00488B80(void* self)",
+    "summary": "Reads the object's character name string, parses it with atof, and returns it rounded half away from zero as int32 (throws if the object pointer is null).",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00488DE0": {
     "name": "ReadMethodType_DesiredPoseEventData_getEntryBlendPeriod_vfunc_3",
     "class": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e",

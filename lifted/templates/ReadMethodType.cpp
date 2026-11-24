@@ -41224,3 +41224,38 @@ int32_t fn_0046D230(void* self) {
     return ext_006A6DE0(rounded);
 }
 } // namespace lift_0046D230
+
+// [0x00488B80] ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>::vfunc_2 (114 bytes)
+namespace lift_00488B80 {
+// Known callee 0x00486C90: GetChildOrGlobalViaSlot9 (If this->field_0x168 is null, return &mem_00B59400; otherwise tail-dispatch)
+extern void* ext_00486C90(void* self);
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>
+// @summary Reads the object's character name string, parses it with atof, and returns it rounded half away from zero as int32 (throws if the object pointer is null).
+// @field ExprParser::ReadMethodType<NMData::AnimationEventData> +0x00 void* field_0x00
+int32_t fn_00488B80(void* self) {
+    // Argument is a pointer to a slot holding the object pointer.
+    void* obj = *static_cast<void**>(self);
+    if (obj == nullptr) {
+        throw std::runtime_error("ReadMethodType::vfunc_2: null object");
+    }
+
+    // Name string (std::string const&) from the object's child/global lookup.
+    const std::string* name = static_cast<const std::string*>(ext_00486C90(obj));
+    // The original stores atof's result as a 32-bit float before rounding.
+    float x = static_cast<float>(std::atof(name->c_str()));
+
+    // Round half away from zero. The original branches on (x < 0) with fcom,
+    // which also takes the "subtract" path for NaN; `!(x >= 0)` matches that.
+    double r = (!(x >= 0.0f)) ? static_cast<double>(x) - 0.5
+                              : static_cast<double>(x) + 0.5;
+
+    // Truncate toward zero. Out-of-range or NaN yields INT32_MIN, matching
+    // x86 cvttsd2si "integer indefinite" behavior used by the 0x6A6DE0 helper.
+    if (!(r >= -2147483648.0 && r < 2147483648.0)) {
+        return INT32_MIN;
+    }
+    return static_cast<int32_t>(r);
+}
+} // namespace lift_00488B80
