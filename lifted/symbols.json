@@ -33581,6 +33581,13 @@
     "summary": "Fetches float[4] from the source operand and the destination operand via their vtable slot 6, then forwards both plus the \"Vector4Value\" name to ext_004D02B0; stdcall, cleans 16 bytes.",
     "lifted_path": "lifted/ExprParser/Vector4Type.cpp"
   },
+  "0x0066D230": {
+    "name": "ExprParser::Method2Type::vfunc_40 (lazy static descriptor init)",
+    "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_TS(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e",
+    "signature": "void __thiscall fn_0066D230(void* self, void* arg1)",
+    "summary": "Lazily initializes the static descriptor object at 0x00B59688 (once, guarded by bit 0 of 0x00B5968C) and stores its address at offset +0x4 of the output argument.",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
   "0x0066DCB0": {
     "name": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e::vfunc_0",
     "class": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",

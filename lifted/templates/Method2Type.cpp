@@ -799,3 +799,26 @@ void __thiscall fn_005B7FA0(uint32_t self, uint32_t arg0) {
     *reinterpret_cast<uint32_t*>(arg0 + 4u) = 0x00B43C8Cu;
 }
 } // namespace lift_005B7FA0
+
+// [0x0066D230] ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, NM::Vector3 const &, &public: void __thiscall NM::Vector3::cartesianAtoB_TS(class NM::Vector3 const &, NM::Vector3 const &)>::vfunc_40 (122 bytes)
+namespace lift_0066D230 {
+// @name ExprParser::Method2Type::vfunc_40 (lazy static descriptor init)
+// @class ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, NM::Vector3 const &, &public: void __thiscall NM::Vector3::cartesianAtoB_TS(class NM::Vector3 const &, NM::Vector3 const &)>
+// @summary Lazily initializes the static descriptor object at 0x00B59688 (once, guarded by bit 0 of 0x00B5968C) and stores its address at offset +0x4 of the output argument.
+// @field Unknown +0x04 uint32_t field_0x04
+
+extern void ext_0067A670(void* self);
+extern int mem_00B5968C;
+extern int mem_00B59688;
+
+void __thiscall fn_0066D230(void* self, void* arg1) {
+    (void)self;
+    if ((static_cast<uint32_t>(mem_00B5968C) & 1u) == 0u) {
+        mem_00B5968C = static_cast<int>(static_cast<uint32_t>(mem_00B5968C) | 1u);
+        ext_0067A670(&mem_00B59688);
+        mem_00B59688 = static_cast<int>(0x0098831Cu);
+    }
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(arg1) + 0x4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B59688));
+}
+} // namespace lift_0066D230

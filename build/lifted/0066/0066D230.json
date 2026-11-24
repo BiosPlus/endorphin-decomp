@@ -1,0 +1,22 @@
+{
+  "va": "0x0066D230",
+  "size": 122,
+  "orig_symbol": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_TS(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_40",
+  "src_path": "src/templates/Method2Type.cpp",
+  "lifted_path": "lifted/templates/Method2Type.cpp",
+  "name": "ExprParser::Method2Type::vfunc_40 (lazy static descriptor init)",
+  "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_TS(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e",
+  "signature": "void __thiscall fn_0066D230(void* self, void* arg1)",
+  "summary": "Lazily initializes the static descriptor object at 0x00B59688 (once, guarded by bit 0 of 0x00B5968C) and stores its address at offset +0x4 of the output argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:54:30Z"
+}
