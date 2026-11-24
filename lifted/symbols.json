@@ -39333,6 +39333,12 @@
     "summary": "Single-argument forwarding wrapper; passes its one stack argument to sub_007D8420 and returns that result unchanged.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007D95F0": {
+    "name": "appendDwordToArray_007D95F0",
+    "signature": "void sub_007D95F0(void* arg)",
+    "summary": "Appends the dword at arg+0x00 to a dynamic array stored in arg (count at +0x08, elements from +0x0C, 4 bytes each), then increments the count.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007DA8D0": {
     "name": "ZeroThreeDwords",
     "class": "Unknown",

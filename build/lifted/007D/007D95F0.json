@@ -1,0 +1,13 @@
+{
+  "va": "0x007D95F0",
+  "size": 18,
+  "orig_symbol": "sub_007D95F0",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "appendDwordToArray_007D95F0",
+  "signature": "void sub_007D95F0(void* arg)",
+  "summary": "Appends the dword at arg+0x00 to a dynamic array stored in arg (count at +0x08, elements from +0x0C, 4 bytes each), then increments the count.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:59:37Z"
+}

@@ -331,3 +331,17 @@ uint32_t fn_007D4B20(uint32_t arg, void* obj) {
     return reinterpret_cast<Target>(target)(obj, arg);
 }
 } // namespace lift_007D4B20
+
+// [0x007D95F0]
+namespace lift_007D95F0 {
+// @name appendDwordToArray_007D95F0
+// @summary Appends the dword at arg+0x00 to a dynamic array stored in arg (count at +0x08, elements from +0x0C, 4 bytes each), then increments the count.
+
+void sub_007D95F0(void* arg) {
+    auto* base = static_cast<uint8_t*>(arg);
+    const uint32_t value = *reinterpret_cast<uint32_t*>(base + 0x00);
+    const uint32_t count = *reinterpret_cast<uint32_t*>(base + 0x08);
+    *reinterpret_cast<uint32_t*>(base + 0x0C + 4u * count) = value;
+    *reinterpret_cast<uint32_t*>(base + 0x08) = count + 1u;
+}
+} // namespace lift_007D95F0
