@@ -1,0 +1,28 @@
+{
+  "va": "0x006FC6E0",
+  "size": 31,
+  "orig_symbol": "sub_006FC6E0",
+  "src_path": "src/leaf/tiny_6F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6F0000.cpp",
+  "name": "Unknown::GetEntryFieldC_ByIndex",
+  "class": "Unknown",
+  "signature": "uint32_t sub_006FC6E0(uint32_t index)",
+  "summary": "Returns field +0x0C of the entry at index arg1 in the table pointed to by mem_00B5E434-\u003e+0x10, or 0 if the table, entry, or index slot is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t table_ptr (pointer to array of entry",
+      "name": "pointers)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "entry_value"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:28:19Z"
+}

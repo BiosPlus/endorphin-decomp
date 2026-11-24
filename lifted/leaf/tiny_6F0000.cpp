@@ -2997,3 +2997,27 @@ extern uint8_t __stdcall fn_006FC680(DWORD value) {
 }
 } // namespace lift_006C03A0
 } // namespace lift_006FC680
+
+// [0x006FC6E0]
+namespace lift_006FC6E0 {
+// @name Unknown::GetEntryFieldC_ByIndex
+// @class Unknown
+// @summary Returns field +0x0C of the entry at index arg1 in the table pointed to by mem_00B5E434->+0x10, or 0 if the table, entry, or index slot is null.
+// @field Unknown +0x10 uint32_t table_ptr (pointer to array of entry pointers)
+// @field Unknown +0x0C uint32_t entry_value
+
+extern uint32_t mem_00B5E434;
+
+uint32_t sub_006FC6E0(uint32_t index) {
+    uint32_t root = mem_00B5E434;
+    if (root == 0) {
+        return 0;
+    }
+    uint32_t table = *reinterpret_cast<uint32_t*>(root + 0x10);
+    uint32_t entry = *reinterpret_cast<uint32_t*>(table + 4 * index + 0x4);
+    if (entry == 0) {
+        return 0;
+    }
+    return *reinterpret_cast<uint32_t*>(entry + 0xC);
+}
+} // namespace lift_006FC6E0
