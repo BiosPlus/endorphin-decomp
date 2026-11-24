@@ -223,3 +223,14 @@ float GetFloatViaIndirectOrInline(void* self) {
     return lift_field<float>(self, 0x70);
 }
 } // namespace lift_005480D0
+
+// [0x0054E340] sub_0054E340 (21 bytes)
+namespace lift_0054E340 {
+// @name IsFloatFieldAt44Zero
+// @summary Returns 1 if the float at this+0x44 compares equal to 0.0 (NaN yields 0), else 0.
+// @field Unknown +0x44 float field_0x44
+int fn_0054E340(const void* self) {
+    const float value = lift_field<float>(self, 0x44);
+    return (value == 0.0f) ? 1 : 0;
+}
+} // namespace lift_0054E340

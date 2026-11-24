@@ -1,0 +1,21 @@
+{
+  "va": "0x0054E340",
+  "size": 21,
+  "orig_symbol": "sub_0054E340",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "IsFloatFieldAt44Zero",
+  "signature": "int fn_0054E340(const void* self)",
+  "summary": "Returns 1 if the float at this+0x44 compares equal to 0.0 (NaN yields 0), else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:25:26Z"
+}
