@@ -777,3 +777,24 @@ void __stdcall lift_00487CB0(void* out) {
     lift_field<uint32_t>(out, 0x4) = 0x00AD9DCCu;
 }
 } // namespace lift_00487CB0
+
+// [0x00487E30] ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}>::vfunc_40 (122 bytes)
+namespace lift_00487E30 {
+extern void ext_0067A670(void* self, int arg0);
+extern int mem_00AD9DE8;
+extern int mem_00AD9DE4;
+
+// @name ExprParser::Method0Type<NMData::DesiredPoseEventData, endEvent>::vfunc_40
+// @class ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}>
+// @summary One-time guarded init of the static object at mem_00AD9DE4 (vtable 0x0093CC8C, via ext_0067A670), then stores its address at self+0x04.
+// @field ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}> +0x04 void* field_0x04
+void fn_00487E30(void* self) {
+    uint32_t& guard = lift_field<uint32_t>(&mem_00AD9DE8, 0);
+    if ((guard & 1u) == 0) {
+        guard |= 1u;
+        ext_0067A670(&mem_00AD9DE4, 0);
+        lift_field<uint32_t>(&mem_00AD9DE4, 0) = 0x0093CC8Cu;
+    }
+    lift_field<uint32_t>(self, 0x04) = 0x00AD9DE4u;
+}
+} // namespace lift_00487E30

@@ -1,0 +1,14 @@
+{
+  "va": "0x00487E30",
+  "size": 122,
+  "orig_symbol": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/Method0Type.cpp",
+  "lifted_path": "lifted/templates/Method0Type.cpp",
+  "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, endEvent\u003e::vfunc_40",
+  "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}\u003e",
+  "signature": "void fn_00487E30(void* self)",
+  "summary": "One-time guarded init of the static object at mem_00AD9DE4 (vtable 0x0093CC8C, via ext_0067A670), then stores its address at self+0x04.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:45:08Z"
+}

@@ -7173,6 +7173,13 @@
     "summary": "Lazily constructs a function-local static object (guarded by bit 0 of mem_00AD9DE0) and stores its address into this+0x04.",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x00487E30": {
+    "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, endEvent\u003e::vfunc_40",
+    "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}\u003e",
+    "signature": "void fn_00487E30(void* self)",
+    "summary": "One-time guarded init of the static object at mem_00AD9DE4 (vtable 0x0093CC8C, via ext_0067A670), then stores its address at self+0x04.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x00487EB0": {
     "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData\u003e::vfunc_16",
     "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}\u003e",
