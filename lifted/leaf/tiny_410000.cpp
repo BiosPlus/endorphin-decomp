@@ -211,3 +211,20 @@ DWORD fn_00415FF6(void* self, int /*ignored stack arg, overwritten with 0xF*/) {
     return ext_GetSysColor(15);
 }
 } // namespace lift_00415FF6
+
+// [0x00417630] sub_00417630 (18 bytes)
+namespace lift_00417630 {
+// @name sub_00417630
+// @summary Auto-lifted identical-shape clone of 0x00422CE0 (sub_00421AB0).
+namespace lift_00422CE0 {
+// @name SetFieldAndOffsetField78
+// @class Unknown
+// @summary Stores the argument at this+0x74 and stores argument + 0x5C at this+0x78 (__thiscall, ret 4).
+// @field Unknown +0x74 DWORD field_0x74
+// @field Unknown +0x78 DWORD field_0x78
+void fn_00417630(void* self, DWORD value) {
+    lift_field<DWORD>(self, 0x74) = value;
+    lift_field<DWORD>(self, 0x78) = value + 0x16C;
+}
+} // namespace lift_00422CE0
+} // namespace lift_00417630

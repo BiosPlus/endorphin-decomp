@@ -1,0 +1,28 @@
+{
+  "va": "0x00417630",
+  "size": 18,
+  "orig_symbol": "sub_00417630",
+  "src_path": "src/leaf/tiny_410000.cpp",
+  "lifted_path": "lifted/leaf/tiny_410000.cpp",
+  "name": "sub_00417630",
+  "class": "Unknown",
+  "signature": "void fn_00417630(void* self, DWORD value)",
+  "summary": "Auto-lifted identical-shape clone of 0x00422CE0 (sub_00421AB0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "DWORD",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "DWORD",
+      "name": "field_0x78"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:34:00Z"
+}

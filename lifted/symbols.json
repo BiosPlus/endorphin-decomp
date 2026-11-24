@@ -867,6 +867,13 @@
     "summary": "Returns the address of the global data slot mem_0092CE00 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00417630": {
+    "name": "sub_00417630",
+    "class": "Unknown",
+    "signature": "void fn_00417630(void* self, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x00422CE0 (sub_00421AB0).",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x00418350": {
     "name": "ExportDialog::vfunc_86",
     "class": "ExportDialog",
