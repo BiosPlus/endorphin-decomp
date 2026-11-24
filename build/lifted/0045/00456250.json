@@ -1,0 +1,28 @@
+{
+  "va": "0x00456250",
+  "size": 33,
+  "orig_symbol": "sub_00456250",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "CWrapper::forwardToSubobjectVtable2OrMfcThunk",
+  "class": "CWrapper",
+  "signature": "void fn_00456250(void* self, DWORD a1, DWORD a2, DWORD a3)",
+  "summary": "If the subobject at +0x90 is set (+0x8C nonzero), forward the call with the same three stack args through its vtable slot 2; otherwise tail-call the MFC80 ord_1903 thunk.",
+  "fields": [
+    {
+      "class": "CWrapper",
+      "offset": "+0x8C",
+      "type": "DWORD",
+      "name": "field_0x8C"
+    },
+    {
+      "class": "CWrapper",
+      "offset": "+0x90",
+      "type": "void*",
+      "name": "field_0x90"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:52:34Z"
+}

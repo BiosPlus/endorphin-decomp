@@ -311,3 +311,26 @@ void fn_004562C0(void* self) {
     ext_006A5EA8();
 }
 } // namespace lift_004562C0
+
+// [0x00456250] sub_00456250 (33 bytes)
+namespace lift_00456250 {
+// Known callee 0x006A5EA8: thunk_MFC80_ord_1903 (IAT jump thunk forwarding to MFC80!ord_1903.)
+extern void ext_006A5EA8();
+
+// @name CWrapper::forwardToSubobjectVtable2OrMfcThunk
+// @class CWrapper
+// @summary If the subobject at +0x90 is set (+0x8C nonzero), forward the call with the same three stack args through its vtable slot 2; otherwise tail-call the MFC80 ord_1903 thunk.
+// @field CWrapper +0x8C DWORD field_0x8C
+// @field CWrapper +0x90 void* field_0x90
+void fn_00456250(void* self, DWORD a1, DWORD a2, DWORD a3) {
+    if (lift_field<DWORD>(self, 0x8C) == 0) {
+        ext_006A5EA8();
+        return;
+    }
+
+    void* obj = lift_field<void*>(self, 0x90);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    auto slot2 = reinterpret_cast<void(__thiscall*)(void*, DWORD, DWORD, DWORD)>(vtbl[2]);
+    slot2(obj, a1, a2, a3);
+}
+} // namespace lift_00456250
