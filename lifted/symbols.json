@@ -16013,6 +16013,12 @@
     "summary": "Wraps a signed int into [0, b) style range using the modulus at +0x04: negative values get b added, values \u003e= b get b subtracted.",
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
+  "0x00519C00": {
+    "name": "StringFindInTable3_00519C00",
+    "signature": "extern \"C\" int __cdecl fn_00519C00(const void* str)",
+    "summary": "Compares a std::string against the 3 C-string table entries; returns the matching index (0..2), or 1 if none match.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00519C80": {
     "name": "sub_005136C0",
     "signature": "void* fn_005136C0(void* self, void* pair, DWORD b)",

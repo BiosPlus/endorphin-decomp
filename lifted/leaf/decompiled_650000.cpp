@@ -190,3 +190,22 @@ void fn_0051AEF0(void* self) {
     ext_0051AD40(self, value);
 }
 } // namespace lift_0051AEF0
+
+// [0x00519C00] sub_00519C00 (57 bytes)
+namespace lift_00519C00 {
+// std::operator==(const std::string&, const char*) resolved via import slot.
+extern bool (*mem_00924FC0)(const void* str, const char* s);
+// Table of three const char* entries.
+extern const char* const mem_00A430F4[3];
+
+// @name StringFindInTable3_00519C00
+// @summary Compares a std::string against the 3 C-string table entries; returns the matching index (0..2), or 1 if none match.
+extern int __cdecl fn_00519C00(const void* str) {
+    for (int i = 0; i < 3; ++i) {
+        if (mem_00924FC0(str, mem_00A430F4[i])) {
+            return i;
+        }
+    }
+    return 1;
+}
+} // namespace lift_00519C00
