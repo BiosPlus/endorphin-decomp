@@ -99,3 +99,25 @@ uint8_t* fn_007DC8C0(uint8_t* p, int32_t key) {
     }
 }
 } // namespace lift_007DC8C0
+
+// [0x007D6260]
+namespace lift_007D6260 {
+extern uint32_t mem_read_u32(uint32_t addr);
+extern void mem_write_u32(uint32_t addr, uint32_t val);
+
+// @name freeBuffer
+// @summary Frees a buffer via an allocator callback at +0x1c/+0x10 and clears +0x00 and +0x04.
+// @field Buffer +0x00 uint32_t field_0x00
+// @field Buffer +0x04 uint32_t field_0x04
+// @field Buffer +0x1c uint32_t field_0x1c
+void sub_007D6260(uint32_t arg0) {
+    uint32_t ptr = mem_read_u32(arg0);
+    if (ptr != 0) {
+        uint32_t alloc = mem_read_u32(arg0 + 0x1c);
+        uint32_t free_fn = mem_read_u32(alloc + 0x10);
+        reinterpret_cast<void (*)(uint32_t)>(static_cast<uintptr_t>(free_fn))(ptr);
+        mem_write_u32(arg0, 0);
+        mem_write_u32(arg0 + 0x04, 0);
+    }
+}
+} // namespace lift_007D6260

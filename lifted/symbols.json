@@ -45600,6 +45600,13 @@
     "summary": "Sets the 32-bit field at +0x44 if bit 0 of +0x9C is clear.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C97C0": {
+    "name": "Unknown::setFields94And98IfUnlocked",
+    "class": "Unknown",
+    "signature": "void fn_007C97C0(void* self, uint32_t val94, uint32_t val98)",
+    "summary": "Sets 32-bit fields at +0x94 and +0x98 if bit 0 of field +0x9C is clear.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C9930": {
     "name": "Unknown::CallHelperThenDispatchAt15C",
     "class": "Unknown",
@@ -45927,6 +45934,12 @@
     "class": "Unknown (no member access; pointer arithmetic only)",
     "signature": "void fn_007D5C80(uint32_t arg0, uint32_t arg1)",
     "summary": "Calls ext_007D5A00(arg0, arg1), then calls the function pointer at mem_00AB28C8 with (arg0 + 0x6C, arg1).",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
+  "0x007D6260": {
+    "name": "freeBuffer",
+    "signature": "void sub_007D6260(uint32_t arg0)",
+    "summary": "Frees a buffer via an allocator callback at +0x1c/+0x10 and clears +0x00 and +0x04.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
   "0x007D7A20": {
