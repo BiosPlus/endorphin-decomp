@@ -6824,3 +6824,76 @@ void fn_00595770(void* out) {
     std::memcpy(static_cast<unsigned char*>(out) + 4, &handle, sizeof handle);
 }
 } // namespace lift_00595770
+
+// [0x00603480]
+namespace lift_00603480 {
+// @name ExprParser::WriteMethodType<EffectorBase, bool, &EffectorBase::setEnabled>::vfunc_48
+// @class ExprParser::WriteMethodType<EffectorBase, bool, &EffectorBase::setEnabled>
+// @summary Evaluates a boolean expression argument, invokes the enable/disable virtual method on the target, and returns the resulting value pair.
+// @field ExprParser::Value +0x0 void* field_0x0
+// @field ExprParser::Value +0x4 void* type
+// @field EffectorBasePtr +0x4 void* target
+
+struct ValuePair {
+    uint32_t value;
+    void* type;
+};
+
+ValuePair* __thiscall fn_00603480(void* self, ValuePair* out, void** arg2, ValuePair* arg3) {
+    (void)self;
+    void* type = arg3->type;
+    void** vtable = *reinterpret_cast<void***>(type);
+    using VFunc3 = bool(__thiscall*)(void*, ValuePair*);
+    bool cond = reinterpret_cast<VFunc3>(vtable[3])(type, arg3);
+
+    void* obj = *arg2;
+    void* target = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(obj) + 4);
+    void** target_vt = *reinterpret_cast<void***>(target);
+    using VFunc0 = void(__thiscall*)(void*);
+    if (cond) {
+        reinterpret_cast<VFunc0>(target_vt[6])(target);
+    } else {
+        reinterpret_cast<VFunc0>(target_vt[7])(target);
+    }
+
+    uint32_t scratch = 0;
+    if (arg3->type != nullptr) {
+        void* t = arg3->type;
+        void** t_vt = *reinterpret_cast<void***>(t);
+        using VFunc28 = uint32_t*(__thiscall*)(void*, uint32_t*, ValuePair*);
+        uint32_t* res = reinterpret_cast<VFunc28>(t_vt[28])(t, &scratch, arg3);
+        out->value = *res;
+        out->type = arg3->type;
+    } else {
+        out->value = 0;
+        out->type = arg3->type;
+    }
+    return out;
+}
+} // namespace lift_00603480
+
+// [0x004CB480]
+namespace lift_004CB480 {
+// Guard-flag word and static instance slot used by the lazily-initialized
+// ExprParser::WriteMethodType<MetaBodyConstraintData, ...> singleton.
+extern uint32_t mem_00AE44D4;
+extern uint32_t mem_00AE44D0;
+
+// One-time constructor for the static instance at 0x00AE44D0.
+void __thiscall ext_0067A670(void* self);
+
+// @name ExprParser::WriteMethodType<NMData::MetaBodyConstraintData, setLockTypeString>::vfunc_40
+// @class ExprParser::WriteMethodType<NMData::MetaBodyConstraintData, setLockTypeString>
+// @summary Lazily initializes the static method-type instance (guarded by bit 0 of mem_00AE44D4) and publishes its address into the argument's +0x4 slot.
+void __thiscall fn_004CB480(void* self, void* out) {
+    (void)self;
+
+    if ((mem_00AE44D4 & 1u) == 0) {
+        mem_00AE44D4 |= 1u;
+        ext_0067A670(reinterpret_cast<void*>(static_cast<uintptr_t>(0x00AE44D0u)));
+        mem_00AE44D0 = 0x0094682Cu;
+    }
+
+    lift_field<uint32_t>(out, 4) = 0x00AE44D0u;
+}
+} // namespace lift_004CB480

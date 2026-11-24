@@ -11098,6 +11098,13 @@
     "summary": "Loads the held object pointer at self+0 and forwards the call to its vtable slot +0x160 via ext_004CA560.",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x004CB480": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, setLockTypeString\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, setLockTypeString\u003e",
+    "signature": "void __thiscall fn_004CB480(void* self, void* out)",
+    "summary": "Lazily initializes the static method-type instance (guarded by bit 0 of mem_00AE44D4) and publishes its address into the argument's +0x4 slot.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x004CB500": {
     "name": "ExprParser::WriteMethodType\u003cMetaBodyConstraintData\u003e::vfunc_40 (addMetaBodyFromFSM)",
     "class": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::addMetaBodyFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
@@ -25252,6 +25259,13 @@
     "class": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026public: void __thiscall EffectorBase::setEnabled(bool)\u003e",
     "signature": "void __stdcall fn_00603440(void* a1, void* a2)",
     "summary": "Evaluates a bool from a2's sub-object via vtable slot 3, then dispatches to vtable slot 6 (true) or slot 7 (false) on the target's sub-object at +0x04.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x00603480": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026EffectorBase::setEnabled\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026EffectorBase::setEnabled\u003e",
+    "signature": "ValuePair* __thiscall fn_00603480(void* self, ValuePair* out, void** arg2, ValuePair* arg3)",
+    "summary": "Evaluates a boolean expression argument, invokes the enable/disable virtual method on the target, and returns the resulting value pair.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
   "0x00603500": {
