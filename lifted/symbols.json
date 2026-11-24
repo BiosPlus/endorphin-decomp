@@ -2084,6 +2084,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00435270 (Unknown::updateSubobjectsAndGlobal_00435270).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004352B0": {
+    "name": "SubObject110_CallPair",
+    "class": "Unknown",
+    "signature": "void fn_004352B0(void* self)",
+    "summary": "Passes the object at this+0x110 as `this` to MFC80 ord_1395(0) and then ord_6090(5).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00435360": {
     "name": "sub_00435360",
     "signature": "extern \"C\" void* __fastcall fn_00435360(void* self, int edx_unused, unsigned int flags)",

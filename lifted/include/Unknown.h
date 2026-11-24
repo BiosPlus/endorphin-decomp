@@ -290,6 +290,7 @@ struct Unknown_Fields {
     // +0x100 void* field_0x100 (tail-call target passed to ext_0044B780)  (evidence: 0x00430DA0, 0x004332B0, 0x004332D0, 0x00648940) // CONFLICT: multiple definitions at +0x100
     // +0x100 void*                    field_0x100  (evidence: 0x00430260, 0x00430310, 0x00430DA0) // CONFLICT: multiple definitions at +0x100
     // +0x108 void* field_0x108 (argument passed to ext_0043C8F0)  (evidence: 0x00430DA0, 0x004332B0, 0x004332D0, 0x00648940)
+    // +0x110 void*                    field_0x110  (evidence: 0x004352B0)
     // +0x114 void*                    sub114  (evidence: 0x006305A0)
     // +0x120 DWORD                    field_0x120  (evidence: 0x00454BE0, 0x006B6270)
     // +0x128 DWORD                    field_0x128  (evidence: 0x0043C900)

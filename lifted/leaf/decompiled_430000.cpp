@@ -559,3 +559,26 @@ void fn_00430D80(void) {
     }
 }
 } // namespace lift_00430D80
+
+// [0x004352B0] sub_004352B0 (31 bytes)
+namespace lift_004352B0 {
+// Known callee 0x006A5E72: thunk_MFC80_ord_6090 (IAT jump thunk forwarding to MFC80!ord_6090.)
+extern void __thiscall ext_006A5E72(void* self, int arg);
+// Known callee 0x006A6454: thunk_MFC80_ord_1395 (IAT jump thunk forwarding to MFC80!ord_1395.)
+extern void __thiscall ext_006A6454(void* self, int arg);
+
+// @name SubObject110_CallPair
+// @class Unknown
+// @summary Passes the object at this+0x110 as `this` to MFC80 ord_1395(0) and then ord_6090(5).
+// @field Unknown +0x110 void* field_0x110
+void fn_004352B0(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+
+    void* sub = *reinterpret_cast<void**>(base + 0x110);
+    ext_006A6454(sub, 0);
+
+    // The original reloads this+0x110 before the second call.
+    sub = *reinterpret_cast<void**>(base + 0x110);
+    ext_006A5E72(sub, 5);
+}
+} // namespace lift_004352B0
