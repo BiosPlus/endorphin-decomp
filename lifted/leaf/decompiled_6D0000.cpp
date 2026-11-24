@@ -406,3 +406,22 @@ void sub_006D8AB0() {
     mem_00B5D90C = 0u;
 }
 } // namespace lift_006D8AB0
+
+// [0x006D8CA0]
+namespace lift_006D8CA0 {
+extern uint32_t mem_00B5D8F8;
+extern uint32_t mem_00B5EB78;
+extern uint32_t mem_00B5E400;
+
+// @name isKnownGlobalValue
+// @summary Checks whether the given 32-bit value matches any of three global constants.
+uint8_t __stdcall sub_006D8CA0(uint32_t val) {
+    if (val == mem_00B5D8F8) {
+        return 1;
+    }
+    if (val == mem_00B5EB78) {
+        return 1;
+    }
+    return val == mem_00B5E400 ? 1 : 0;
+}
+} // namespace lift_006D8CA0
