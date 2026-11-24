@@ -1,0 +1,22 @@
+{
+  "va": "0x00442B80",
+  "size": 32,
+  "orig_symbol": "sub_00442B80",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::InitWithTagAndVtable",
+  "class": "Unknown",
+  "signature": "void* fn_00442B80(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Runs InitWithTag(arg1, arg2) on self, then sets the vtable pointer to mem_009325E4; returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:31:02Z"
+}
