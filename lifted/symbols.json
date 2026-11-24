@@ -11539,6 +11539,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0042FAA0 (Unknown::toggleFlagF5).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00536CE0": {
+    "name": "OglRenderer::vfunc_91",
+    "class": "OglRenderer",
+    "signature": "void fn_00536CE0(void* self)",
+    "summary": "Forwards the call to virtual slot +0x3C of the object held at this+0x27C, passing this+0x27C as the receiver.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00536D70": {
     "name": "OglRenderer::vfunc_7",
     "class": "OglRenderer",

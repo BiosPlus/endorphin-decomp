@@ -5631,3 +5631,18 @@ void fn_0052EF50(void* out) {
     lift_field<float>(out, 0x08) = 0.0f;
 }
 } // namespace lift_0052EF50
+
+// [0x00536CE0] OglRenderer::vfunc_91 (17 bytes)
+namespace lift_00536CE0 {
+// @name OglRenderer::vfunc_91
+// @class OglRenderer
+// @summary Forwards the call to virtual slot +0x3C of the object held at this+0x27C, passing this+0x27C as the receiver.
+// @field OglRenderer +0x27C void* field_0x27C
+void fn_00536CE0(void* self) {
+    // Load the forwarded sub-object pointer, then its vtable entry at byte offset 0x3C.
+    void* sub = lift_field<void*>(self, 0x27C);
+    void* vfn = lift_field<void*>(*reinterpret_cast<void**>(sub), 0x3C);
+    // Tail-call (jmp) in the original; here a direct call with the sub-object as receiver.
+    reinterpret_cast<void (*)(void*)>(vfn)(sub);
+}
+} // namespace lift_00536CE0

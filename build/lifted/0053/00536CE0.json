@@ -1,0 +1,22 @@
+{
+  "va": "0x00536CE0",
+  "size": 17,
+  "orig_symbol": "OglRenderer::vfunc_91",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "OglRenderer::vfunc_91",
+  "class": "OglRenderer",
+  "signature": "void fn_00536CE0(void* self)",
+  "summary": "Forwards the call to virtual slot +0x3C of the object held at this+0x27C, passing this+0x27C as the receiver.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x27C",
+      "type": "void*",
+      "name": "field_0x27C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:52:36Z"
+}
