@@ -175,3 +175,20 @@ extern int __fastcall fn_00455CD0(void* self) {
     return ext_004090C0(self);
 }
 } // namespace lift_00455CD0
+
+// [0x00454BE0] sub_00454BE0 (25 bytes)
+namespace lift_00454BE0 {
+// Callee 0x00454BB0 (sub_00454BB0, 10B): reached by tail jump.
+// Assumed ABI: this in ecx -> first parameter, stack argument -> second parameter.
+extern void ext_00454BB0(void* self, DWORD value);
+
+// @name sub_00454BE0_storeArgAndTailCallSubobject
+// @class Unknown
+// @summary Stores its stack argument at self+0x120, then tail-forwards the same argument to sub_00454BB0 on the subobject at self+0x10C.
+// @field Unknown +0x120 DWORD field_0x120
+void fn_00454BE0(void* self, DWORD value) {
+    BYTE* obj = static_cast<BYTE*>(self);
+    *reinterpret_cast<DWORD*>(obj + 0x120) = value;
+    ext_00454BB0(obj + 0x10C, value);
+}
+} // namespace lift_00454BE0
