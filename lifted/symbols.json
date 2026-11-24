@@ -37334,6 +37334,13 @@
     "summary": "Returns constant 0x8.",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E9AE0": {
+    "name": "Unknown::GetChildFloatAsInt64",
+    "class": "Unknown",
+    "signature": "int64_t fn_006E9AE0(void* self)",
+    "summary": "Reads the child pointer at +0x04, derives a value from it via helper calls, and returns that float truncated to int64.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006EA090": {
     "name": "sub_006EA090",
     "signature": "extern \"C\" int32_t __cdecl fn_006EA090(void)",

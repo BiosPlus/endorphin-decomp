@@ -132,3 +132,32 @@ extern void __stdcall fn_006E6AD0(void* self, double* out) {
     *out = value;
 }
 } // namespace lift_006E6AD0
+
+// [0x006E9AE0] sub_006E9AE0 (32 bytes)
+namespace lift_006E9AE0 {
+// Callee 0x006DC460: Unknown::GetValueIfCountPositive (returns *(this->field_0xC8) when this->field_0xB8 > 0, otherwise 0).
+extern int32_t ext_006DC460(uint32_t self);
+// Callee 0x006C95F0: sub_006C95F0 (15 bytes, not yet lifted; takes ecx, returns eax).
+extern uint32_t ext_006C95F0(uint32_t self);
+// Callee 0x006C9F70: sub_006C9F70 (getter returning float field at offset +0x14).
+extern float ext_006C9F70(uint32_t self);
+// Callee 0x00872828: thunk_MSVCR80__ftol (IAT jump thunk forwarding to MSVCR80!_ftol; float -> int64 in edx:eax).
+extern int64_t ext_00872828(float value);
+
+// @name Unknown::GetChildFloatAsInt64
+// @class Unknown
+// @summary Reads the child pointer at +0x04, derives a value from it via helper calls, and returns that float truncated to int64.
+// @field Unknown +0x04 uint32_t field_0x04
+int64_t fn_006E9AE0(void* self) {
+    // mov ecx, [ecx+4]
+    uint32_t child = lift_field<uint32_t>(self, 0x04);
+    // call ext_006DC460 (ecx = child); mov ecx, eax
+    int32_t count_value = ext_006DC460(child);
+    // call ext_006C95F0 (ecx = count_value); mov ecx, eax
+    uint32_t mid = ext_006C95F0(static_cast<uint32_t>(count_value));
+    // call ext_006C9F70 (ecx = mid); result float left on the x87 stack
+    float f = ext_006C9F70(mid);
+    // jmp ext_00872828: tail call, its int64 result is the return value
+    return ext_00872828(f);
+}
+} // namespace lift_006E9AE0

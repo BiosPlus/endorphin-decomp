@@ -1,0 +1,22 @@
+{
+  "va": "0x006E9AE0",
+  "size": 32,
+  "orig_symbol": "sub_006E9AE0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::GetChildFloatAsInt64",
+  "class": "Unknown",
+  "signature": "int64_t fn_006E9AE0(void* self)",
+  "summary": "Reads the child pointer at +0x04, derives a value from it via helper calls, and returns that float truncated to int64.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:37:00Z"
+}
