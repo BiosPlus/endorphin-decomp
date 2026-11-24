@@ -5121,6 +5121,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
     "lifted_path": "lifted/classes/ToolEngine.cpp"
   },
+  "0x004801A0": {
+    "name": "ToolEngine::vfunc_23",
+    "class": "ToolEngine",
+    "signature": "void fn_004801A0(void* self)",
+    "summary": "Gets child object at this+0x3B0 -\u003e +0x30, calls its vtable slot 0xB4, and sets byte +0x86 of the returned object to 1.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x004801F0": {
     "name": "Commands::BufferTransformsCommand::vfunc_3",
     "class": "Commands::BufferTransformsCommand",

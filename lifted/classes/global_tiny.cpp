@@ -6447,3 +6447,25 @@ int32_t AnimatableTransform_vfunc_7_off_4(void* self) {
     return 1;
 }
 } // namespace lift_004020A0
+
+// [0x004801A0] ToolEngine::vfunc_23 (27 bytes)
+namespace lift_004801A0 {
+// @name ToolEngine::vfunc_23
+// @class ToolEngine
+// @summary Gets child object at this+0x3B0 -> +0x30, calls its vtable slot 0xB4, and sets byte +0x86 of the returned object to 1.
+// @field ToolEngine +0x3B0 void* field_0x3B0
+void fn_004801A0(void* self) {
+    // ecx = this->field_0x3B0; ecx = ecx->field_0x30 (object with vtable).
+    void* child = lift_field<void*>(self, 0x3B0);
+    void* obj = lift_field<void*>(child, 0x30);
+
+    // eax = obj->vptr; edx = vtable[0xB4]; call edx (this = obj). Result in eax.
+    void* vtable = lift_field<void*>(obj, 0x0);
+    using SlotFn = void* (*)(void*);
+    SlotFn slot = reinterpret_cast<SlotFn>(lift_field<void*>(vtable, 0xB4));
+    void* result = slot(obj);
+
+    // byte ptr [eax + 0x86] = 1
+    lift_field<uint8_t>(result, 0x86) = 1;
+}
+} // namespace lift_004801A0
