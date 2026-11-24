@@ -1,0 +1,34 @@
+{
+  "va": "0x005498E0",
+  "size": 35,
+  "orig_symbol": "sub_005498E0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "QuadricRenderer::destroy",
+  "class": "QuadricRenderer",
+  "signature": "extern \"C\" void __fastcall fn_005498E0(void* self)",
+  "summary": "Destroys two GLU quadrics and delegates to base destructor.",
+  "fields": [
+    {
+      "class": "QuadricRenderer",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vftable"
+    },
+    {
+      "class": "QuadricRenderer",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "quadric1"
+    },
+    {
+      "class": "QuadricRenderer",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "quadric2"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:58:37Z"
+}

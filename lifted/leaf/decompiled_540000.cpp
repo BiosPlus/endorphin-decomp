@@ -231,3 +231,28 @@ void fn_00540E10(void* self, int32_t value) {
     }
 }
 } // namespace lift_00540E10
+
+// [0x005498E0]
+namespace lift_005498E0 {
+// @name QuadricRenderer::destroy
+// @class QuadricRenderer
+// @summary Destroys two GLU quadrics and delegates to base destructor.
+// @field QuadricRenderer +0x00 void* vftable
+// @field QuadricRenderer +0x18 void* quadric1
+// @field QuadricRenderer +0x1C void* quadric2
+
+
+extern uint8_t mem_00956CE4[];
+extern void __stdcall ext_0063E006(void* quad);
+extern void __fastcall ext_00552850(void* self);
+
+extern void __fastcall fn_005498E0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    void* quad1 = *reinterpret_cast<void**>(obj + 0x18);
+    *reinterpret_cast<void**>(obj + 0x0) = mem_00956CE4;
+    ext_0063E006(quad1);
+    void* quad2 = *reinterpret_cast<void**>(obj + 0x1C);
+    ext_0063E006(quad2);
+    ext_00552850(self);
+}
+} // namespace lift_005498E0
