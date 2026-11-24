@@ -34,3 +34,20 @@ bool fn_005649D0(void* self, const std::string* path) {
     return result == 0;
 }
 } // namespace lift_005649D0
+
+// [0x005631F0]
+namespace lift_005631F0 {
+// @name isMeshOrNurbsPrimitive
+// @summary Checks whether a CSLModel pointer is non-null and has primitive type 0x1b or 0x1c.
+
+
+extern uint32_t __thiscall ext_007C5610(void* self);
+
+extern bool __stdcall fn_005631F0(void* model) {
+    if (!model) {
+        return false;
+    }
+    uint32_t prim_type = ext_007C5610(model);
+    return prim_type == 0x1b || prim_type == 0x1c;
+}
+} // namespace lift_005631F0

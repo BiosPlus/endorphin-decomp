@@ -1,0 +1,13 @@
+{
+  "va": "0x005631F0",
+  "size": 35,
+  "orig_symbol": "sub_005631F0",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "isMeshOrNurbsPrimitive",
+  "signature": "extern \"C\" bool __stdcall fn_005631F0(void* model)",
+  "summary": "Checks whether a CSLModel pointer is non-null and has primitive type 0x1b or 0x1c.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:58:33Z"
+}
