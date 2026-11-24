@@ -34179,3 +34179,32 @@ void* __thiscall fn_00604CE0(void* self, void* out, void* objPtrPtr) {
     return out;
 }
 } // namespace lift_00604CE0
+
+// [0x0059F7C0]
+namespace lift_0059F7C0 {
+extern float __fastcall fn_0059DEB0(void* self);
+extern void __fastcall sub_00672080(void* self, void* edx_unused, float value);
+extern void __fastcall sub_0046C3C0(void* self);
+extern void fn_006A6DD2(void* exc, const void* throw_info);
+extern const uint32_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::CharacterData, float, vcall128>::vfunc_0
+// @class ExprParser::ReadMethodType
+// @summary Reads a float via virtual method at +0x80 on CharacterData+0x4 and stores it into out_val, or throws on null.
+// @field NMData::CharacterData +0x4 uint8_t field_0x04
+extern void* __fastcall fn_0059F7C0(void* self, void* edx_unused, void* out_val, void** obj_ptr) {
+    (void)self;
+    (void)edx_unused;
+    void* obj = *obj_ptr;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        sub_0046C3C0(exc);
+        fn_006A6DD2(exc, &mem_009DEC1C);
+        return out_val;
+    }
+
+    float val = fn_0059DEB0(static_cast<uint8_t*>(obj) + 0x4);
+    sub_00672080(out_val, nullptr, val);
+    return out_val;
+}
+} // namespace lift_0059F7C0
