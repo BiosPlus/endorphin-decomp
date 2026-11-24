@@ -2589,3 +2589,35 @@ uint8_t sub_0071B910(uint32_t self) {
     return mem_read8(ptr + 0x1168);
 }
 } // namespace lift_0071B910
+
+// [0x00715660]
+namespace lift_00715660 {
+// @name sub_00715660
+// @summary Reads a byte at offset 0x310 from the object pointed to by this+0x10.
+// @field Unknown +0x10 uint32_t field_0x10
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern uint8_t mem_read8(uintptr_t addr);
+
+uint8_t __thiscall sub_00715660(uint32_t self) {
+    uint32_t ptr = mem_read32(self + 0x10);
+    return mem_read8(ptr + 0x310);
+}
+} // namespace lift_00715660
+
+// [0x0071C3A0]
+namespace lift_0071C3A0 {
+// @name sub_0071C3A0
+// @summary Reads a byte flag at offset 0x15A8 from the object pointed to by this+0xC.
+// @field unknown +0x0C uint32_t field_0xC
+// @field unknown +0x15A8 uint8_t field_0x15A8
+
+extern uint32_t mem_read32(uint32_t addr);
+extern uint8_t mem_read8(uint32_t addr);
+
+uint8_t __fastcall sub_0071C3A0(uint32_t self) {
+    uint32_t obj = mem_read32(self + 0xC);
+    return mem_read8(obj + 0x15A8);
+}
+} // namespace lift_0071C3A0

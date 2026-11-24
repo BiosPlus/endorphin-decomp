@@ -1,0 +1,21 @@
+{
+  "va": "0x00715660",
+  "size": 16,
+  "orig_symbol": "sub_00715660",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "sub_00715660",
+  "signature": "uint8_t __thiscall sub_00715660(uint32_t self)",
+  "summary": "Reads a byte at offset 0x310 from the object pointed to by this+0x10.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T01:45:03Z"
+}
