@@ -1,0 +1,27 @@
+{
+  "va": "0x007B8E30",
+  "size": 48,
+  "orig_symbol": "sub_007B8E30",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "ListRenumberByKey",
+  "signature": "extern DWORD mem_00B61DB8;       // list head pointer (global) extern const WORD mem_009998FE;  // u16 key (low half of .rdata u32 0x0008FFFF) static inline void* lift_ptr(DWORD addr)",
+  "summary": "If any node in the global list has its leading u16 equal to the key, renumber all nodes 0..N-1 from the head.",
+  "fields": [
+    {
+      "class": "ListNode",
+      "offset": "+0x0",
+      "type": "WORD",
+      "name": "index"
+    },
+    {
+      "class": "ListNode",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "next"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:28:31Z"
+}

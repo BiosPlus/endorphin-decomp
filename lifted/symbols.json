@@ -48524,6 +48524,12 @@
     "summary": "24-byte constant table of byte pairs (not executable code): nine {0x00,0x02} pairs followed by {0x01,0x02}, {0x01,0x01}, {0x01,0x02}.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B8E30": {
+    "name": "ListRenumberByKey",
+    "signature": "extern DWORD mem_00B61DB8;       // list head pointer (global) extern const WORD mem_009998FE;  // u16 key (low half of .rdata u32 0x0008FFFF) static inline void* lift_ptr(DWORD addr)",
+    "summary": "If any node in the global list has its leading u16 equal to the key, renumber all nodes 0..N-1 from the head.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B9050": {
     "name": "FindNodeByWordKey",
     "signature": "uint32_t fn_007B9050(uint16_t key)",

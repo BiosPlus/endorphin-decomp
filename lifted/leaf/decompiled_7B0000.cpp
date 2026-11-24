@@ -336,3 +336,43 @@ uint8_t fn_007B501C(uint32_t index) {
     return index < 48 ? mem_007B501C[index] : 0;
 }
 } // namespace lift_007B501C
+
+// [0x007B8E30] sub_007B8E30 (48 bytes)
+namespace lift_007B8E30 {
+extern DWORD mem_00B61DB8;       // list head pointer (global)
+extern const WORD mem_009998FE;  // u16 key (low half of .rdata u32 0x0008FFFF)
+
+static inline void* lift_ptr(DWORD addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+// @name ListRenumberByKey
+// @summary If any node in the global list has its leading u16 equal to the key, renumber all nodes 0..N-1 from the head.
+// @field ListNode +0x00 WORD index
+// @field ListNode +0x14 DWORD next
+void fn_007B8E30(void* self) {
+    (void)self;
+    DWORD head = mem_00B61DB8;
+    if (head == 0) {
+        return;
+    }
+
+    WORD key = mem_009998FE;
+    DWORD node = head;
+    for (;;) {
+        if (lift_field<WORD>(lift_ptr(node), 0x00) == key) {
+            break;
+        }
+        node = lift_field<DWORD>(lift_ptr(node), 0x14);
+        if (node == 0) {
+            return;
+        }
+    }
+
+    WORD i = 0;
+    for (DWORD p = head; p != 0; p = lift_field<DWORD>(lift_ptr(p), 0x14)) {
+        lift_field<WORD>(lift_ptr(p), 0x00) = i;
+        ++i;
+    }
+}
+} // namespace lift_007B8E30
