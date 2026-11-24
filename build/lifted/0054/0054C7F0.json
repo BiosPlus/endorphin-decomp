@@ -1,0 +1,13 @@
+{
+  "va": "0x0054C7F0",
+  "size": 15,
+  "orig_symbol": "sub_0054C7F0",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "DeleteGlobalDisplayListRange",
+  "signature": "extern void (*mem_009253E8)(GLuint list, GLsizei range);            // glDeleteLists (IAT slot) void fn_0054C7F0()",
+  "summary": "Deletes the 0x60-entry block of GL display lists starting at the global base list id.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:30:15Z"
+}

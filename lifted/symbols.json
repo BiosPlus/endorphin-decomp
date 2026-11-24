@@ -12079,6 +12079,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00519CE0 (std::basic_string\u003cchar\u003e::~basic_string (vtable-stamping thunk)).",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x0054C7F0": {
+    "name": "DeleteGlobalDisplayListRange",
+    "signature": "extern void (*mem_009253E8)(GLuint list, GLsizei range);            // glDeleteLists (IAT slot) void fn_0054C7F0()",
+    "summary": "Deletes the 0x60-entry block of GL display lists starting at the global base list id.",
+    "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
   "0x0054C870": {
     "name": "Font::vfunc_0",
     "class": "Font",

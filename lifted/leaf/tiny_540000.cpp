@@ -163,3 +163,15 @@ void fn_0054C760(void* self) {
 }
 } // namespace lift_00519CE0
 } // namespace lift_0054C760
+
+// [0x0054C7F0] sub_0054C7F0 (15 bytes)
+namespace lift_0054C7F0 {
+extern DWORD mem_00AF657C;                                      // global display-list base
+extern void (*mem_009253E8)(GLuint list, GLsizei range);            // glDeleteLists (IAT slot)
+
+// @name DeleteGlobalDisplayListRange
+// @summary Deletes the 0x60-entry block of GL display lists starting at the global base list id.
+void fn_0054C7F0() {
+    mem_009253E8(static_cast<GLuint>(mem_00AF657C), 0x60);
+}
+} // namespace lift_0054C7F0
