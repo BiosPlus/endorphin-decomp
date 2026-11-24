@@ -1,0 +1,22 @@
+{
+  "va": "0x00687250",
+  "size": 13,
+  "orig_symbol": "sub_00687250",
+  "src_path": "src/leaf/tiny_680000.cpp",
+  "lifted_path": "lifted/leaf/tiny_680000.cpp",
+  "name": "SubObject::getActiveSubobject",
+  "class": "SubObject",
+  "signature": "void* fn_00687250(void* self)",
+  "summary": "Returns the address of the +0x10 subobject when the flag at +0x68 is zero, otherwise the +0x54 subobject.",
+  "fields": [
+    {
+      "class": "SubObject",
+      "offset": "+0x68",
+      "type": "DWORD",
+      "name": "field_0x68"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:22:30Z"
+}

@@ -9,5 +9,6 @@
 namespace lifted_layout {
 struct SubObject_Fields {
     // +0x28  pointer                  field_0x28  (evidence: 0x00648900)
+    // +0x68  DWORD                    field_0x68  (evidence: 0x00687250)
 };
 } // namespace lifted_layout

@@ -116,3 +116,18 @@ uint8_t __thiscall sub_006872D0(uint32_t self) {
     return mem_read8(index + 0x00AA2FC8);
 }
 } // namespace lift_006872D0
+
+// [0x00687250] sub_00687250 (13 bytes)
+namespace lift_00687250 {
+// @name SubObject::getActiveSubobject
+// @class SubObject
+// @summary Returns the address of the +0x10 subobject when the flag at +0x68 is zero, otherwise the +0x54 subobject.
+// @field SubObject +0x68 DWORD field_0x68
+void* fn_00687250(void* self) {
+    // cmp dword ptr [self+0x68], 0 ; lea eax,[self+0x10] ; je ret ; lea eax,[self+0x54]
+    if (lift_field<DWORD>(self, 0x68) == 0) {
+        return reinterpret_cast<uint8_t*>(self) + 0x10;
+    }
+    return reinterpret_cast<uint8_t*>(self) + 0x54;
+}
+} // namespace lift_00687250
