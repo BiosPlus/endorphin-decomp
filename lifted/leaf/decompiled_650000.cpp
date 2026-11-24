@@ -111,3 +111,23 @@ void* fn_00519CB0(void* self, const void* name) {
     return self;
 }
 } // namespace lift_00519CB0
+
+// [0x00519D10]
+namespace lift_00519D10 {
+// @name checkStringMatchIndex
+// @summary Returns 0 if the string matches the first global string, 1 if it matches the second, or 0 otherwise.
+
+extern uint32_t mem_00924FC4;
+extern uint8_t mem_00AECC0C[];
+extern uint8_t mem_00AECC28[];
+
+using StringEqFn = uint8_t(__cdecl*)(const void*, const void*);
+
+uint32_t __cdecl sub_00519D10(const void* str) {
+    auto eq = reinterpret_cast<StringEqFn>(static_cast<uintptr_t>(mem_00924FC4));
+    if (eq(str, mem_00AECC0C) != 0) {
+        return 0;
+    }
+    return eq(str, mem_00AECC28) != 0 ? 1u : 0u;
+}
+} // namespace lift_00519D10

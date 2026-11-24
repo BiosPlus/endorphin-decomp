@@ -15682,6 +15682,12 @@
     "summary": "Stamps the object's vtable pointer (0x0095219C) into its first dword, then tail-jumps to the MSVCP80 basic_string destructor on this+4.",
     "lifted_path": "lifted/leaf/tiny_510000.cpp"
   },
+  "0x00519D10": {
+    "name": "checkStringMatchIndex",
+    "signature": "uint32_t __cdecl sub_00519D10(const void* str)",
+    "summary": "Returns 0 if the string matches the first global string, 1 if it matches the second, or 0 otherwise.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00519EA0": {
     "name": "NMData::Channel::vfunc_0",
     "class": "NMData::Channel",
