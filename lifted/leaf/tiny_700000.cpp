@@ -593,3 +593,17 @@ void fn_00700980(void* self, uint32_t value) {
 }
 } // namespace lift_004F9840
 } // namespace lift_00700980
+
+// [0x00705250] sub_00705250 (13 bytes)
+namespace lift_00705250 {
+extern int mem_00B5EB44;
+extern int mem_00B5EB40;
+
+// @name ClearGlobalDwordPair
+// @summary Zeroes two global DWORD variables at 0x00B5EB44 and 0x00B5EB40.
+void fn_00705250(void* self) {
+    (void)self;
+    mem_00B5EB44 = 0;
+    mem_00B5EB40 = 0;
+}
+} // namespace lift_00705250
