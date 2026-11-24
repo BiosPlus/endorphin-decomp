@@ -1,0 +1,46 @@
+{
+  "va": "0x00533340",
+  "size": 53,
+  "orig_symbol": "OglRenderer::vfunc_15",
+  "src_path": "src/classes/OglRenderer.cpp",
+  "lifted_path": "lifted/classes/OglRenderer.cpp",
+  "name": "OglRenderer::vfunc_15",
+  "class": "OglRenderer",
+  "signature": "void OglRenderer_vfunc_15(void* self, float value)",
+  "summary": "Sets a float property on OglRenderer (selecting +0x38c or +0x37c based on +0x379), stores it at +0x454, sets +0x430 to 1, and invokes vfunc at +0x154.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x379",
+      "type": "uint8_t",
+      "name": "field_0x379"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x37C",
+      "type": "float",
+      "name": "field_0x37c"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x38C",
+      "type": "float",
+      "name": "field_0x38c"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x430",
+      "type": "uint8_t",
+      "name": "field_0x430"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x454",
+      "type": "float",
+      "name": "field_0x454"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:12:57Z"
+}
