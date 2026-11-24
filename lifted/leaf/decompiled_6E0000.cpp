@@ -488,3 +488,29 @@ void fn_006E85D0(void* self, void* dst) {
     std::memcpy(dst, src, 8 * sizeof(DWORD));
 }
 } // namespace lift_006E85D0
+
+// [0x006E8750] sub_006E8750 (48 bytes)
+namespace lift_006E8750 {
+// @name Unknown::storeDoubleAgainstLimit
+// @class Unknown
+// @summary Compares a double argument against the double at +0x50; if the argument is below it (or unordered), copies the +0x50 bits into +0x58, otherwise stores the argument bits into +0x58.
+// @field Unknown +0x50 double limit
+// @field Unknown +0x54 uint32_t limitHi
+// @field Unknown +0x58 uint32_t result
+// @field Unknown +0x5c uint32_t resultHi
+void fn_006E8750(void** self, double value) {
+    void* obj = *self;
+    double limit = lift_field<double>(obj, 0x50);
+
+    // Matches fcomp + test ah,1 (C0 set): taken when value < limit or unordered (NaN).
+    if (!(value >= limit)) {
+        lift_field<uint32_t>(obj, 0x58) = lift_field<uint32_t>(obj, 0x50);
+        lift_field<uint32_t>(obj, 0x5c) = lift_field<uint32_t>(obj, 0x54);
+    } else {
+        uint64_t bits;
+        std::memcpy(&bits, &value, sizeof(bits));
+        lift_field<uint32_t>(obj, 0x58) = static_cast<uint32_t>(bits);
+        lift_field<uint32_t>(obj, 0x5c) = static_cast<uint32_t>(bits >> 32);
+    }
+}
+} // namespace lift_006E8750
