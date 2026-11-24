@@ -1,0 +1,34 @@
+{
+  "va": "0x00783610",
+  "size": 22,
+  "orig_symbol": "sub_00783610",
+  "src_path": "src/leaf/tiny_780000.cpp",
+  "lifted_path": "lifted/leaf/tiny_780000.cpp",
+  "name": "descriptiveName: ReturnFlag20IfSubFlag4Set",
+  "class": "Unknown",
+  "signature": "DWORD fn_00783610(void* self)",
+  "summary": "Reads a pointer at this+0x04; if that object's byte at +0x04 is nonzero, returns (object-\u003evtbl-ish dword at +0x00)-\u003edword+0x0C \u0026 0x20, otherwise returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:30:50Z"
+}

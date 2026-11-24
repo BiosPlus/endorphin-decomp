@@ -452,3 +452,22 @@ void __fastcall fn_00783630(void* self) {
     }
 }
 } // namespace lift_00783630
+
+// [0x00783610] sub_00783610 (22 bytes)
+namespace lift_00783610 {
+// @name descriptiveName: ReturnFlag20IfSubFlag4Set
+// @class Unknown
+// @summary Reads a pointer at this+0x04; if that object's byte at +0x04 is nonzero, returns (object->vtbl-ish dword at +0x00)->dword+0x0C & 0x20, otherwise returns 0.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x0C DWORD field_0x0C
+DWORD fn_00783610(void* self) {
+    void* sub = lift_field<void*>(self, 0x04);
+    if (lift_field<uint8_t>(sub, 0x04) == 0) {
+        return 0;
+    }
+    void* inner = lift_field<void*>(sub, 0x00);
+    DWORD flags = lift_field<DWORD>(inner, 0x0C);
+    return flags & 0x20;
+}
+} // namespace lift_00783610

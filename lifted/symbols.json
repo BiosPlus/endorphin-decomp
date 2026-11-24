@@ -38570,6 +38570,13 @@
     "summary": "Reads a byte at offset +0x4 from the pointer stored at this+0x4",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00783610": {
+    "name": "descriptiveName: ReturnFlag20IfSubFlag4Set",
+    "class": "Unknown",
+    "signature": "DWORD fn_00783610(void* self)",
+    "summary": "Reads a pointer at this+0x04; if that object's byte at +0x04 is nonzero, returns (object-\u003evtbl-ish dword at +0x00)-\u003edword+0x0C \u0026 0x20, otherwise returns 0.",
+    "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
   "0x00783630": {
     "name": "ClearInnerStreamErrorIfFlagged",
     "class": "UnknownClass",
