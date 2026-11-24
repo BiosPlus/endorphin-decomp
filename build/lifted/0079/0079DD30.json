@@ -1,0 +1,33 @@
+{
+  "va": "0x0079DD30",
+  "size": 32,
+  "orig_symbol": "sub_0079DD30",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "InitValueWithUnitDouble",
+  "signature": "void* fn_0079DD30(void* self, uint32_t value)",
+  "summary": "thiscall: stores one DWORD argument at +0x00, writes 0 to +0x08 and 0x3FF00000 to +0x0C (double 1.0 at +0x08), returns this.",
+  "fields": [
+    {
+      "class": "InitValueWithUnitDouble",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "InitValueWithUnitDouble",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "InitValueWithUnitDouble",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:46:08Z"
+}
