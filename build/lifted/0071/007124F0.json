@@ -1,0 +1,13 @@
+{
+  "va": "0x007124F0",
+  "size": 44,
+  "orig_symbol": "sub_007124F0",
+  "src_path": "src/clones/auto_clones_710000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_710000.cpp",
+  "name": "isKnownGlobalHandle",
+  "signature": "bool __stdcall sub_007124F0(uint32_t value)",
+  "summary": "Checks whether the given 32-bit value matches any of three global values",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:10:50Z"
+}

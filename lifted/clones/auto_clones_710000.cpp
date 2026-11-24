@@ -802,3 +802,39 @@ void sub_007182F0() {
     mem_00B5FCD8 = -*eax;
 }
 } // namespace lift_007182F0
+
+// [0x00719A60]
+namespace lift_00719A60 {
+// @name isKnownGlobalHandle
+// @summary Checks whether the given 32-bit value matches one of three global handles.
+
+
+extern uint32_t mem_00B5FC88;
+extern uint32_t mem_00B5EB78;
+extern uint32_t mem_00B5E400;
+
+uint8_t __stdcall sub_00719A60(uint32_t a1) {
+    if (a1 == mem_00B5FC88) {
+        return 1;
+    }
+    if (a1 == mem_00B5EB78) {
+        return 1;
+    }
+    return a1 == mem_00B5E400 ? 1 : 0;
+}
+} // namespace lift_00719A60
+
+// [0x007124F0]
+namespace lift_007124F0 {
+// @name isKnownGlobalHandle
+// @summary Checks whether the given 32-bit value matches any of three global values
+
+
+extern uint32_t mem_00B5F220;
+extern uint32_t mem_00B5F1F8;
+extern uint32_t mem_00B5E400;
+
+bool __stdcall sub_007124F0(uint32_t value) {
+  return value == mem_00B5F220 || value == mem_00B5F1F8 || value == mem_00B5E400;
+}
+} // namespace lift_007124F0
