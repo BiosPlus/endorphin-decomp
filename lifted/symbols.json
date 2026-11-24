@@ -36222,11 +36222,23 @@
     "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C5A0": {
+    "name": "sub_0071C5A0",
+    "signature": "extern \"C\" uint8_t __thiscall sub_0071C5A0(uint32_t ecx)",
+    "summary": "Reads a byte at offset 0x9f8 from the object pointed to by this-\u003efield_0xc.",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x0071C5B0": {
     "name": "sub_0071C5B0",
     "class": "Unknown",
     "signature": "void __thiscall fn_0071C5B0(Unknown* self, uint8_t value)",
     "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C5C0": {
+    "name": "get_field_0x1630_via_0x0c",
+    "signature": "uint8_t __fastcall sub_0071C5C0(uint32_t ecx, uint32_t edx)",
+    "summary": "Reads byte at offset 0x1630 from the object pointed to by this+0x0c.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
   "0x0071C5D0": {
