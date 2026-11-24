@@ -9,5 +9,5 @@
   "summary": "Stores its stack argument into global mem_00AC9CD8, or 0 if the argument is null.",
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T11:47:03Z"
+  "lifted_at": "2026-11-24T11:47:36Z"
 }
