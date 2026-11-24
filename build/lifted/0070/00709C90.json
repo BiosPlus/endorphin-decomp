@@ -1,0 +1,27 @@
+{
+  "va": "0x00709C90",
+  "size": 24,
+  "orig_symbol": "sub_00709C90",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "ChainedNodeValueIfKeyMatches",
+  "signature": "DWORD fn_00709C90(void* self)",
+  "summary": "Returns the value at this-\u003e+0x04-\u003e+0x04 when this-\u003e+0x04 is non-null and its +0x00 key equals this-\u003e+0x00; otherwise returns 0.",
+  "fields": [
+    {
+      "class": "ChainedNode",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ChainedNode",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:38:15Z"
+}

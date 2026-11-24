@@ -1051,3 +1051,28 @@ void fn_007046E0(void* self, DWORD* out) {
     std::memcpy(&out[1], &hi, sizeof(DWORD));
 }
 } // namespace lift_007046E0
+
+// [0x00709C90]
+namespace lift_00709C90 {
+// @name ChainedNodeValueIfKeyMatches
+// @summary Returns the value at this->+0x04->+0x04 when this->+0x04 is non-null and its +0x00 key equals this->+0x00; otherwise returns 0.
+// @field ChainedNode +0x00 DWORD field_0x00
+// @field ChainedNode +0x04 DWORD field_0x04
+DWORD fn_00709C90(void* self) {
+    // Load the linked-node pointer stored at self+0x04.
+    DWORD node = lift_field<DWORD>(self, 0x04);
+    if (node == 0) {
+        return 0;
+    }
+
+    // Dereference the linked node (address stored as a 32-bit value in the game).
+    void* nodePtr = reinterpret_cast<void*>(static_cast<uintptr_t>(node));
+    DWORD nodeKey = lift_field<DWORD>(nodePtr, 0x00);
+    DWORD selfKey = lift_field<DWORD>(self, 0x00);
+    if (nodeKey != selfKey) {
+        return 0;
+    }
+
+    return lift_field<DWORD>(nodePtr, 0x04);
+}
+} // namespace lift_00709C90

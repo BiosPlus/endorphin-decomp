@@ -36849,6 +36849,12 @@
     "summary": "Returns the 32-bit element at the given index from the array at +0xd0",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00709C90": {
+    "name": "ChainedNodeValueIfKeyMatches",
+    "signature": "DWORD fn_00709C90(void* self)",
+    "summary": "Returns the value at this-\u003e+0x04-\u003e+0x04 when this-\u003e+0x04 is non-null and its +0x00 key equals this-\u003e+0x00; otherwise returns 0.",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x0070A1D0": {
     "name": "sub_0070A1D0",
     "signature": "extern \"C\" void* __fastcall fn_0070A1D0(void* self, int edx_unused, unsigned int flags)",
