@@ -24976,6 +24976,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006A02B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/Commands/auto_tiny.cpp"
   },
+  "0x006A0670": {
+    "name": "Unknown::zeroFields4_8_C",
+    "class": "Unknown",
+    "signature": "Unknown* zeroFields4_8_C(Unknown* self)",
+    "summary": "Zeroes the dwords at this+0x4, this+0x8 and this+0xC, and returns this.",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006A07D0": {
     "name": "ExprParser::Operators::Equals::evalAndNotifyOperand",
     "class": "ExprParser::Operators::Equals",

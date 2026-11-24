@@ -192,3 +192,28 @@ void fn_006AD170(void* self, uint32_t value) {
     *target = value;
 }
 } // namespace lift_006AD170
+
+// [0x006A0670]
+namespace lift_006A0670 {
+// @name Unknown::zeroFields4_8_C
+// @class Unknown
+// @summary Zeroes the dwords at this+0x4, this+0x8 and this+0xC, and returns this.
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+
+struct Unknown {
+    uint8_t pad_00[0x04];
+    uint32_t field_0x04;
+    uint32_t field_0x08;
+    uint32_t field_0x0C;
+};
+
+// Thiscall-style: `this` arrives in ECX and is returned in EAX.
+Unknown* zeroFields4_8_C(Unknown* self) {
+    self->field_0x04 = 0;
+    self->field_0x08 = 0;
+    self->field_0x0C = 0;
+    return self;
+}
+} // namespace lift_006A0670
