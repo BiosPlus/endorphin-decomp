@@ -114,3 +114,12 @@ extern void fn_007B2080(void) {
 }
 } // namespace lift_007AE0A0
 } // namespace lift_007B2080
+
+// [0x007B2310]
+namespace lift_007B2310 {
+// @name sub_007B2310
+// @summary Returns ecx when the first stack argument equals 2, otherwise 0; callee pops 8 bytes of arguments.
+uint32_t sub_007B2310(uint32_t ecx_in, uint32_t arg0, uint32_t /*arg1*/) {
+    return (arg0 - 2u) == 0u ? ecx_in : 0u;
+}
+} // namespace lift_007B2310

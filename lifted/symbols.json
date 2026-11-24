@@ -37567,6 +37567,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_007B22B0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
   },
+  "0x007B2310": {
+    "name": "sub_007B2310",
+    "signature": "uint32_t sub_007B2310(uint32_t ecx_in, uint32_t arg0, uint32_t /*arg1*/)",
+    "summary": "Returns ecx when the first stack argument equals 2, otherwise 0; callee pops 8 bytes of arguments.",
+    "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
+  },
   "0x007B7084": {
     "name": "SwitchCaseIndexTable_007B7084",
     "summary": "12-byte byte-index table indexed by (eax) and used by a jump table dispatch at 0x007B6xxx (mov cl, [eax+0x7B7084]; jmp [ecx*4+0x7B7074]); this is data, not code.",

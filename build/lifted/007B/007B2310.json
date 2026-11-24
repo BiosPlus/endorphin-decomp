@@ -1,0 +1,13 @@
+{
+  "va": "0x007B2310",
+  "size": 16,
+  "orig_symbol": "sub_007B2310",
+  "src_path": "src/leaf/tiny_7B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7B0000.cpp",
+  "name": "sub_007B2310",
+  "signature": "uint32_t sub_007B2310(uint32_t ecx_in, uint32_t arg0, uint32_t /*arg1*/)",
+  "summary": "Returns ecx when the first stack argument equals 2, otherwise 0; callee pops 8 bytes of arguments.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:46:32Z"
+}
