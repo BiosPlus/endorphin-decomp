@@ -1,0 +1,22 @@
+{
+  "va": "0x0049D530",
+  "size": 76,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::State\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cNMData::State\u003e",
+  "signature": "void* __thiscall fn_0049D530(void* self, void* out_str, void** obj_ptr_ptr)",
+  "summary": "Invokes virtual slot 1 at +0x8 on a non-null NMData::State to copy-construct a std::string result, or throws on null.",
+  "fields": [
+    {
+      "class": "NMData::State",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:50:24Z"
+}
