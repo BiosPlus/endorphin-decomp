@@ -1,0 +1,13 @@
+{
+  "va": "0x0079ADA0",
+  "size": 19,
+  "orig_symbol": "sub_0079ADA0",
+  "src_path": "src/leaf/tiny_790000.cpp",
+  "lifted_path": "lifted/leaf/tiny_790000.cpp",
+  "name": "CloseHandleResultToStatus",
+  "signature": "static inline int32_t closeHandleToStatus(uint32_t handle)",
+  "summary": "Closes the handle in arg0 via KERNEL32 CloseHandle and returns 0 on success, -1 on failure.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:04:05Z"
+}

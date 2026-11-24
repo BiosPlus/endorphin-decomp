@@ -414,3 +414,22 @@ void __thiscall descriptiveName_0079DCE0(void* self, const uint32_t* src) {
     dst[0x7c / 4] = src[1];
 }
 } // namespace lift_0079DCE0
+
+// [0x0079ADA0]
+namespace lift_0079ADA0 {
+// @name CloseHandleResultToStatus
+// @summary Closes the handle in arg0 via KERNEL32 CloseHandle and returns 0 on success, -1 on failure.
+
+// IAT slot holding KERNEL32!CloseHandle
+extern void* mem_009241E0;
+
+// @field none (free function, no class)
+
+static inline int32_t closeHandleToStatus(uint32_t handle)
+{
+    using CloseHandleFn = int32_t(__stdcall*)(uint32_t);
+    int32_t ok = reinterpret_cast<CloseHandleFn>(mem_009241E0)(handle);
+    // neg/sbb/neg/dec sequence: (ok != 0) ? 0 : -1
+    return ok != 0 ? 0 : -1;
+}
+} // namespace lift_0079ADA0
