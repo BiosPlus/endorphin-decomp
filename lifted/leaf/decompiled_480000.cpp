@@ -256,3 +256,19 @@ void __thiscall sub_00480130(void* this_) {
     reinterpret_cast<fn1_t>(fn1)(obj, 1);
 }
 } // namespace lift_00480130
+
+// [0x00486850]
+namespace lift_00486850 {
+// @name Vec4::dot
+// @class Vec4
+// @summary Computes the 4D dot product of two 4-component float vectors.
+// @field Vec4 +0x00 float x
+// @field Vec4 +0x04 float y
+// @field Vec4 +0x08 float z
+// @field Vec4 +0x0C float w
+float __thiscall sub_00486850(const void* thisPtr, const void* other) {
+    const float* a = static_cast<const float*>(thisPtr);
+    const float* b = static_cast<const float*>(other);
+    return b[1] * a[1] + b[0] * a[0] + b[2] * a[2] + b[3] * a[3];
+}
+} // namespace lift_00486850
