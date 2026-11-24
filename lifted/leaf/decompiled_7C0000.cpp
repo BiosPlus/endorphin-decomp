@@ -154,3 +154,33 @@ void sub_007C9CD0(void* dst, float val) {
     *reinterpret_cast<float*>(reinterpret_cast<uint8_t*>(dst) + 0x4) = abs_val;
 }
 } // namespace lift_007C9CD0
+
+// [0x007C9310]
+namespace lift_007C9310 {
+extern uint32_t mem_read_u32(uint32_t addr);
+extern void mem_write_u32(uint32_t addr, uint32_t val);
+
+// @name copyVec3AtStride32
+// @summary Copies 3 floats from base + index * 32 to out.
+void __cdecl sub_007C9310(uint32_t base, uint32_t index, uint32_t out) {
+    uint32_t src = base + (index << 5);
+    mem_write_u32(out + 0x0, mem_read_u32(src + 0x0));
+    mem_write_u32(out + 0x4, mem_read_u32(src + 0x4));
+    mem_write_u32(out + 0x8, mem_read_u32(src + 0x8));
+}
+} // namespace lift_007C9310
+
+// [0x007C62B0]
+namespace lift_007C62B0 {
+// @name set_vec3_0xb0
+// @summary Store three float values into object fields at offsets 0xb0, 0xb4, and 0xb8
+// @field Object +0xb0 float field_0xb0
+// @field Object +0xb4 float field_0xb4
+// @field Object +0xb8 float field_0xb8
+
+void sub_007C62B0(uintptr_t obj, float a1, float a2, float a3) {
+    *reinterpret_cast<float*>(obj + 0xb0) = a1;
+    *reinterpret_cast<float*>(obj + 0xb4) = a2;
+    *reinterpret_cast<float*>(obj + 0xb8) = a3;
+}
+} // namespace lift_007C62B0
