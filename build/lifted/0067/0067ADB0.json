@@ -1,0 +1,22 @@
+{
+  "va": "0x0067ADB0",
+  "size": 29,
+  "orig_symbol": "sub_0067ADB0",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "Unknown::invokeVirtualSlots1And2",
+  "class": "Unknown",
+  "signature": "int __stdcall fn_0067ADB0(void* self)",
+  "summary": "Calls virtual slots 1 and 2 on the given object (thiscall, stdcall-style single stack arg), then returns 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:14:14Z"
+}

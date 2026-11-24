@@ -538,3 +538,20 @@ void sub_00671F30(uint32_t* out) {
     out[1] = mem_00B599BC;
 }
 } // namespace lift_00671F30
+
+// [0x0067ADB0] sub_0067ADB0 (29 bytes)
+namespace lift_0067ADB0 {
+// @name Unknown::invokeVirtualSlots1And2
+// @class Unknown
+// @summary Calls virtual slots 1 and 2 on the given object (thiscall, stdcall-style single stack arg), then returns 0.
+// @field Unknown +0x00 void** vtable
+int __stdcall fn_0067ADB0(void* self) {
+    void** vtbl = *reinterpret_cast<void***>(self);
+    reinterpret_cast<void (*)(void*)>(vtbl[1])(self);
+
+    vtbl = *reinterpret_cast<void***>(self);
+    reinterpret_cast<void (*)(void*)>(vtbl[2])(self);
+
+    return 0;
+}
+} // namespace lift_0067ADB0
