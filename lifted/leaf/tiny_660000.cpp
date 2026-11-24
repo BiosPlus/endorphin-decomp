@@ -452,3 +452,23 @@ int sub_006649B0_isWhitespace(unsigned char c) {
     }
 }
 } // namespace lift_006649B0
+
+// [0x00669E60]
+namespace lift_00669E60 {
+// @name Unknown::copyFloat4From
+// @class Unknown
+// @summary Copies four consecutive 32-bit floats from the source pointer (stack arg) into this object (ECX).
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0C float field_0x0C
+
+// __thiscall: ECX = this (destination), [esp+4] = source pointer; callee pops 4 bytes (ret 4).
+void __thiscall copyFloat4From(void* self, const void* src) {
+    const float* s = reinterpret_cast<const float*>(src);
+    lift_field<float>(self, 0x00) = s[0];
+    lift_field<float>(self, 0x04) = s[1];
+    lift_field<float>(self, 0x08) = s[2];
+    lift_field<float>(self, 0x0C) = s[3];
+}
+} // namespace lift_00669E60
