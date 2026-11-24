@@ -514,3 +514,32 @@ void fn_006E8750(void** self, double value) {
     }
 }
 } // namespace lift_006E8750
+
+// [0x006E7190] sub_006E7190 (48 bytes)
+namespace lift_006E7190 {
+// Known callee 0x00711BB0: sub_00711BB0 (Auto-lifted identical-shape clone of 0x00711BA0 (getSubobjectField_0x18).)
+extern double ext_00711BB0(void* self);
+// RDATA constant 0x00925284: holds the address of the HUGE_VAL double (0x0062D360).
+extern DWORD mem_00925284;
+
+// @name Unknown::getDoubleOrHuge
+// @class Unknown
+// @summary Returns the double at self->+0xA8 (via self->+8) or delegates to ext_00711BB0 when self->+0 is set; returns HUGE_VAL when self->+8 is null.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0xA8 double field_0xA8
+double fn_006E7190(void* self) {
+    const double huge = *reinterpret_cast<const double*>(static_cast<uintptr_t>(mem_00925284));
+
+    void* first = lift_field<void*>(self, 0x00);
+    if (first != nullptr) {
+        return ext_00711BB0(first);
+    }
+
+    void* sub = lift_field<void*>(self, 0x08);
+    if (sub == nullptr) {
+        return huge;
+    }
+    return lift_field<double>(sub, 0xA8);
+}
+} // namespace lift_006E7190

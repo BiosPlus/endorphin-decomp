@@ -1,0 +1,34 @@
+{
+  "va": "0x006E7190",
+  "size": 48,
+  "orig_symbol": "sub_006E7190",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Unknown::getDoubleOrHuge",
+  "class": "Unknown",
+  "signature": "double fn_006E7190(void* self)",
+  "summary": "Returns the double at self-\u003e+0xA8 (via self-\u003e+8) or delegates to ext_00711BB0 when self-\u003e+0 is set; returns HUGE_VAL when self-\u003e+8 is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA8",
+      "type": "double",
+      "name": "field_0xA8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:20:31Z"
+}

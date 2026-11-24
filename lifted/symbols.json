@@ -39914,6 +39914,13 @@
     "summary": "If self-\u003e+0x00 is nonzero, tail-returns ext_00711BA0(self); otherwise returns *(double*)(self-\u003e+0x08 + 0xA0), or -_HUGE if that pointer is null.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E7190": {
+    "name": "Unknown::getDoubleOrHuge",
+    "class": "Unknown",
+    "signature": "double fn_006E7190(void* self)",
+    "summary": "Returns the double at self-\u003e+0xA8 (via self-\u003e+8) or delegates to ext_00711BB0 when self-\u003e+0 is set; returns HUGE_VAL when self-\u003e+8 is null.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E7390": {
     "name": "sub_006E7390",
     "signature": "void* fn_006E7390(void* self, uint32_t arg1)",
