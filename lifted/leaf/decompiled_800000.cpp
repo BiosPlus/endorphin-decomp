@@ -221,3 +221,22 @@ void fn_0080FAE0(void* hMem) {
     }
 }
 } // namespace lift_0080FAE0
+
+// [0x0080FAC0] sub_0080FAC0 (32 bytes)
+namespace lift_0080FAC0 {
+// Known callee 0x0080FAE0: GlobalFreeIfNonNull (If the stack argument is non-null, forwards it to ext_00859730 (GlobalFree wrapper); result discarded.)
+extern void ext_0080FAE0(void* hMem);
+// Known callee 0x00859730: sub_00859730 (Auto-lifted identical-shape clone of 0x0079AF50 (GlobalFreeWrapper).)
+extern void ext_00859730(void* hMem);
+
+// @name GlobalFreeIfNonNullWithOwnedHandle
+// @summary If the argument pointer is non-null, releases the handle stored at its first dword via ext_0080FAE0, then frees the argument itself via GlobalFree wrapper ext_00859730.
+// @field Unknown +0x00 void* field_0x00
+void fn_0080FAC0(void* self) {
+    if (self != nullptr) {
+        void* inner = *static_cast<void**>(self);
+        ext_0080FAE0(inner);
+        ext_00859730(self);
+    }
+}
+} // namespace lift_0080FAC0

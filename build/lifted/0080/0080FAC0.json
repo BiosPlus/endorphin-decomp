@@ -1,0 +1,21 @@
+{
+  "va": "0x0080FAC0",
+  "size": 32,
+  "orig_symbol": "sub_0080FAC0",
+  "src_path": "src/leaf/decompiled_800000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_800000.cpp",
+  "name": "GlobalFreeIfNonNullWithOwnedHandle",
+  "signature": "void fn_0080FAC0(void* self)",
+  "summary": "If the argument pointer is non-null, releases the handle stored at its first dword via ext_0080FAE0, then frees the argument itself via GlobalFree wrapper ext_00859730.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:51:33Z"
+}
