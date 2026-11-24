@@ -45764,6 +45764,13 @@
     "summary": "If self-\u003efield_0x210 points to an object whose +0x28 back-links to self, clear both links.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007CD550": {
+    "name": "Unknown::TakeField18ThenDispatchAt15C",
+    "class": "Unknown",
+    "signature": "void fn_007CD550(void* self)",
+    "summary": "Clears the pointer-sized slot at +0x18, and if it was non-null, passes it through ext_007D8700 and tail-dispatches the result to ext_007C9930; otherwise returns.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007D4760": {
     "name": "IndexedPointerArray::nextPointer",
     "class": "IndexedPointerArray",

@@ -1,0 +1,22 @@
+{
+  "va": "0x007CD550",
+  "size": 37,
+  "orig_symbol": "sub_007CD550",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "Unknown::TakeField18ThenDispatchAt15C",
+  "class": "Unknown",
+  "signature": "void fn_007CD550(void* self)",
+  "summary": "Clears the pointer-sized slot at +0x18, and if it was non-null, passes it through ext_007D8700 and tail-dispatches the result to ext_007C9930; otherwise returns.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:48:05Z"
+}

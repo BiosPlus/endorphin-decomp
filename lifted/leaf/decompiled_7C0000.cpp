@@ -273,3 +273,27 @@ void scaleVec3Store(float* dst, float s, const float* src) {
     dst[2] = src[2] * s;
 }
 } // namespace lift_007CA310
+
+// [0x007CD550] sub_007CD550 (37 bytes)
+namespace lift_007CD550 {
+extern uint32_t ext_007D8700(uint32_t arg0);
+extern void ext_007C9930(void* self);
+
+// @name Unknown::TakeField18ThenDispatchAt15C
+// @class Unknown
+// @summary Clears the pointer-sized slot at +0x18, and if it was non-null, passes it through ext_007D8700 and tail-dispatches the result to ext_007C9930; otherwise returns.
+// @field Unknown +0x18 uint32_t field_0x18
+void fn_007CD550(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint32_t* slot = reinterpret_cast<uint32_t*>(base + 0x18);
+
+    const uint32_t value = *slot;
+    *slot = 0;
+    if (value == 0) {
+        return;
+    }
+
+    const uint32_t resolved = ext_007D8700(value);
+    ext_007C9930(reinterpret_cast<void*>(static_cast<uintptr_t>(resolved)));
+}
+} // namespace lift_007CD550
