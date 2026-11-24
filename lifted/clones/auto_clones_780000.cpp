@@ -141,3 +141,26 @@ void fn_00784430(void) {
     mem_00B60924 = 0x00000000;
 }
 } // namespace lift_00784430
+
+// [0x007874D0]
+namespace lift_007874D0 {
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B60B40;
+extern uint32_t mem_00B60B44;
+extern uint32_t mem_00B60B48;
+extern uint32_t mem_00B60B4C;
+extern uint32_t mem_00B60B50;
+extern uint32_t mem_00B60B54;
+
+// @name initGlobalHugeTriple
+// @summary Initializes three 64-bit globals from MSVCR80.dll!_HUGE.
+void sub_007874D0() {
+    const uint32_t* huge = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B60B40 = huge[0];
+    mem_00B60B44 = huge[1];
+    mem_00B60B48 = huge[0];
+    mem_00B60B4C = huge[1];
+    mem_00B60B50 = huge[0];
+    mem_00B60B54 = huge[1];
+}
+} // namespace lift_007874D0
