@@ -151,3 +151,19 @@ void fn_0079A16C(void* self) {
     (void)self;
 }
 } // namespace lift_0079A16C
+
+// [0x0079ACF0]
+namespace lift_0079ACF0 {
+// @name readFileBytes
+// @summary Reads bytes from a file handle using ReadFile and returns the number of bytes read, or 0 on failure.
+
+extern uint32_t __stdcall ext_ReadFile(uint32_t hFile, uint32_t lpBuffer, uint32_t nNumberOfBytesToRead, uint32_t* lpNumberOfBytesRead, uint32_t lpOverlapped);
+
+uint32_t sub_0079ACF0(uint32_t hFile, uint32_t lpBuffer, uint32_t nNumberOfBytesToRead) {
+    uint32_t bytesRead = nNumberOfBytesToRead;
+    if (ext_ReadFile(hFile, lpBuffer, nNumberOfBytesToRead, &bytesRead, 0) != 0) {
+        return bytesRead;
+    }
+    return 0;
+}
+} // namespace lift_0079ACF0

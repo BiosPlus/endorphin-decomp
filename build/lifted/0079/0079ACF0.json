@@ -1,0 +1,13 @@
+{
+  "va": "0x0079ACF0",
+  "size": 39,
+  "orig_symbol": "sub_0079ACF0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "readFileBytes",
+  "signature": "uint32_t sub_0079ACF0(uint32_t hFile, uint32_t lpBuffer, uint32_t nNumberOfBytesToRead)",
+  "summary": "Reads bytes from a file handle using ReadFile and returns the number of bytes read, or 0 on failure.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:57:22Z"
+}
