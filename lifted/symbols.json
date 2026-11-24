@@ -2248,6 +2248,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0043C620 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x0043CD60": {
+    "name": "CWndDerived::startTimer",
+    "class": "CWndDerived",
+    "signature": "void fn_0043CD60(void* self, UINT uElapse)",
+    "summary": "Starts a 1-ID timer on the window at +0x20 with the given interval (ms) and stores the returned timer ID at +0x138.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043CD80": {
     "name": "KillOwnerTimer",
     "signature": "void fn_0043CD80(void* self)",

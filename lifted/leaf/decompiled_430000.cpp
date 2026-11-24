@@ -626,3 +626,21 @@ void fn_0043C930(void* arg0, const DWORD* arg1) {
         arg0, 0x102u, first, second, 0u, 0u);
 }
 } // namespace lift_0043C930
+
+// [0x0043CD60] sub_0043CD60 (32 bytes)
+namespace lift_0043CD60 {
+// USER32!SetTimer through IAT slot mem_00925664
+extern UINT_PTR __stdcall ext_SetTimer(HWND hWnd, UINT_PTR nIDEvent, UINT uElapse, void* lpTimerFunc);
+
+// @name CWndDerived::startTimer
+// @class CWndDerived
+// @summary Starts a 1-ID timer on the window at +0x20 with the given interval (ms) and stores the returned timer ID at +0x138.
+// @field CWndDerived +0x020 HWND hWnd
+// @field CWndDerived +0x138 UINT timerId
+void fn_0043CD60(void* self, UINT uElapse) {
+    auto* base = static_cast<unsigned char*>(self);
+    HWND hWnd = *reinterpret_cast<HWND*>(base + 0x20);
+    UINT_PTR id = ext_SetTimer(hWnd, 1, uElapse, nullptr);
+    *reinterpret_cast<UINT*>(base + 0x138) = static_cast<UINT>(id);
+}
+} // namespace lift_0043CD60
