@@ -1,0 +1,13 @@
+{
+  "va": "0x00698A40",
+  "size": 40,
+  "orig_symbol": "sub_00698A40",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "copyByteRangeForward",
+  "signature": "uint32_t fn_00698A40(uint32_t a1, uint32_t first, uint32_t a3, uint32_t last, uint32_t dest)",
+  "summary": "Forward byte-by-byte copy of [first, last) to dest (no overlap handling, loop runs while cursor != last); returns dest + (last - first).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:53:44Z"
+}

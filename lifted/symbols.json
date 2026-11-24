@@ -30673,6 +30673,12 @@
     "summary": "Copies bytes from [first, last) to dst; returns dst advanced past the copied bytes. Null dst skips stores but still advances the count.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
+  "0x00698A40": {
+    "name": "copyByteRangeForward",
+    "signature": "uint32_t fn_00698A40(uint32_t a1, uint32_t first, uint32_t a3, uint32_t last, uint32_t dest)",
+    "summary": "Forward byte-by-byte copy of [first, last) to dest (no overlap handling, loop runs while cursor != last); returns dest + (last - first).",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00699040": {
     "name": "sub_00699040",
     "signature": "extern \"C\" void __fastcall fn_00699040(void* self)",

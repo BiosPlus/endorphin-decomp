@@ -92,3 +92,21 @@ uint8_t* CopyBytesRange(const uint8_t* first, const uint8_t* last, uint8_t* dst)
     return out;
 }
 } // namespace lift_006989B0
+
+// [0x00698A40]
+namespace lift_00698A40 {
+// @name copyByteRangeForward
+// @summary Forward byte-by-byte copy of [first, last) to dest (no overlap handling, loop runs while cursor != last); returns dest + (last - first).
+// Stack args (read from the entry stack): a1 is unused, first, a3 is unused, last, dest.
+uint32_t fn_00698A40(uint32_t a1, uint32_t first, uint32_t a3, uint32_t last, uint32_t dest) {
+    (void)a1;
+    (void)a3;
+    const uint32_t delta = dest - first;    // edx = dest - src
+    const uint32_t result = delta + last;   // edi = dest + (last - first)
+    for (uint32_t cur = first; cur != last; ++cur) {
+        uint8_t b = *reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(cur));
+        *reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(cur + delta)) = b;
+    }
+    return result;
+}
+} // namespace lift_00698A40
