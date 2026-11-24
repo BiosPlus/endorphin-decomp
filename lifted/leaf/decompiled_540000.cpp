@@ -152,3 +152,21 @@ DWORD fn_00540D00(void* self) {
     return target(child);
 }
 } // namespace lift_00540D00
+
+// [0x005434C0]
+namespace lift_005434C0 {
+// @name sub_005434C0
+// @summary Returns 1 if this->field_0x88 is null; otherwise tail-dispatches vtable slot 8 (+0x20) on the object at field_0x88 and returns its result.
+// @field Unknown +0x88 ptr field_0x88 (pointer to child object; owner class not identified)
+
+uint8_t sub_005434C0(void* self) {
+    auto* child = lift_field<unsigned char*>(self, 0x88);
+    if (child == nullptr) {
+        return 1;
+    }
+    using VSlot8Fn = uint8_t (__thiscall*)(void*);
+    auto* vtable = *reinterpret_cast<void***>(child);
+    auto fn = reinterpret_cast<VSlot8Fn>(vtable[8]);
+    return fn(child);
+}
+} // namespace lift_005434C0

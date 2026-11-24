@@ -13190,6 +13190,12 @@
     "summary": "Stores address of mem_009560E4 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x005434C0": {
+    "name": "sub_005434C0",
+    "signature": "uint8_t sub_005434C0(void* self)",
+    "summary": "Returns 1 if this-\u003efield_0x88 is null; otherwise tail-dispatches vtable slot 8 (+0x20) on the object at field_0x88 and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00543530": {
     "name": "VTableDispatch::ClearFlagsAndTailCallSlot16",
     "class": "VTableDispatch",

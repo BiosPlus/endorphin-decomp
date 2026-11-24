@@ -1,0 +1,21 @@
+{
+  "va": "0x005434C0",
+  "size": 25,
+  "orig_symbol": "sub_005434C0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "sub_005434C0",
+  "signature": "uint8_t sub_005434C0(void* self)",
+  "summary": "Returns 1 if this-\u003efield_0x88 is null; otherwise tail-dispatches vtable slot 8 (+0x20) on the object at field_0x88 and returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "ptr field_0x88 (pointer to child object; owner class not",
+      "name": "identified)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:49:36Z"
+}
