@@ -9144,3 +9144,88 @@ void __thiscall fn_004AABE0(void* self, void* arg0) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00ADF9F8));
 }
 } // namespace lift_004AABE0
+
+// [0x004B1F70]
+namespace lift_004B1F70 {
+// @name ExprParser::ReadWriteMethodType<NMData::GraphEngineData,float,getXMin,float,setXMin>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::GraphEngineData,float,getXMin,float,setXMin>
+// @summary Lazily initializes a singleton object at 0x00AE0D10 and stores its address at arg0 + 4.
+// @field OutStruct +0x04 uint32_t* field_0x04
+
+
+extern uint32_t mem_00AE0D14;
+extern uint8_t mem_00AE0D10[];
+extern void __thiscall ext_0067A670(void* self);
+
+void __thiscall fn_004B1F70(void* /*self*/, uint8_t* out) {
+    if ((mem_00AE0D14 & 1u) == 0u) {
+        mem_00AE0D14 |= 1u;
+        ext_0067A670(mem_00AE0D10);
+        *reinterpret_cast<uint32_t*>(mem_00AE0D10) = 0x009427A4u;
+    }
+    *reinterpret_cast<uint32_t*>(out + 4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00AE0D10));
+}
+} // namespace lift_004B1F70
+
+// [0x004B2760]
+namespace lift_004B2760 {
+extern uint32_t mem_00AE0D2C;
+extern uint32_t mem_00AE0D28;
+void __thiscall ext_0067A670(void* self);
+
+// @name ExprParser::ReadWriteMethodType<NMData::GraphEngineData,float,getYMax,float,setYMax>::vfunc_40
+// @class ExprParser::ReadWriteMethodType
+// @summary Lazily initializes a static Type instance and stores its pointer at arg1 + 0x4.
+// @field ArgStruct +0x04 uint32_t field_0x04
+void __thiscall fn_004B2760(void* /*this*/, uint8_t* arg1) {
+    if ((mem_00AE0D2C & 1u) == 0u) {
+        mem_00AE0D2C |= 1u;
+        ext_0067A670(&mem_00AE0D28);
+        mem_00AE0D28 = 0x00942CB4u;
+    }
+    *reinterpret_cast<uint32_t*>(arg1 + 4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE0D28));
+}
+} // namespace lift_004B2760
+
+// [0x004B23C0]
+namespace lift_004B23C0 {
+extern uint32_t mem_00AE0D24;
+extern uint32_t mem_00AE0D20;
+extern void __thiscall ext_0067A670(void* self);
+
+// @name ExprParser::ReadWriteMethodType<NMData::GraphEngineData, float, getYMin, float, setYMin>::vfunc_40
+// @class ExprParser::ReadWriteMethodType
+// @summary Lazily initializes a static object at 0x00AE0D20 and stores its address at arg1 + 0x4.
+// @field ExprParser::ReadWriteMethodType +0x4 uint32_t field_0x04
+void __thiscall fn_004B23C0(void* self, void* out) {
+    (void)self;
+    if ((mem_00AE0D24 & 1u) == 0) {
+        mem_00AE0D24 |= 1u;
+        ext_0067A670(&mem_00AE0D20);
+        mem_00AE0D20 = 0x00942B04u;
+    }
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(out) + 0x4) = 0x00AE0D20u;
+}
+} // namespace lift_004B23C0
+
+// [0x004B2070]
+namespace lift_004B2070 {
+extern uint32_t mem_00AE0D1C;
+extern uint32_t mem_00AE0D18;
+extern void __thiscall ext_0067A670(void* self);
+
+// @name ExprParser::ReadWriteMethodType<NMData::GraphEngineData,float,getXMax,float,setXMax>::vfunc_40
+// @class ExprParser::ReadWriteMethodType
+// @summary Lazily initializes static singleton at 0x00AE0D18 and stores its pointer at arg1 + 0x4
+// @field Arg1 +0x04 uint32_t field_0x04
+void __thiscall fn_004B2070(void* self, uint32_t arg1) {
+    (void)self;
+    if ((mem_00AE0D1C & 1u) == 0) {
+        mem_00AE0D1C |= 1u;
+        ext_0067A670(&mem_00AE0D18);
+        mem_00AE0D18 = 0x00942954u;
+    }
+    *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(arg1) + 0x4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE0D18));
+}
+} // namespace lift_004B2070

@@ -10029,6 +10029,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004B1F70": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData,float,getXMin,float,setXMin\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData,float,getXMin,float,setXMin\u003e",
+    "signature": "void __thiscall fn_004B1F70(void* /*self*/, uint8_t* out)",
+    "summary": "Lazily initializes a singleton object at 0x00AE0D10 and stores its address at arg0 + 4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004B1FF0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)",
     "class": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getDamping(void) const, 0\u003e",
@@ -10041,6 +10048,13 @@
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setXMax(float), 0}\u003e",
     "signature": "extern void __stdcall fn_004B2020(void** targetPtr, void* valueArg)",
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x004B2070": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData,float,getXMax,float,setXMax\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType",
+    "signature": "void __thiscall fn_004B2070(void* self, uint32_t arg1)",
+    "summary": "Lazily initializes static singleton at 0x00AE0D18 and stores its pointer at arg1 + 0x4",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x004B20F0": {
@@ -10064,6 +10078,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004B23C0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, float, getYMin, float, setYMin\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType",
+    "signature": "void __thiscall fn_004B23C0(void* self, void* out)",
+    "summary": "Lazily initializes a static object at 0x00AE0D20 and stores its address at arg1 + 0x4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004B2440": {
     "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getYMin, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, 0\u003e",
@@ -10083,6 +10104,13 @@
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setYMax(float), 0}\u003e",
     "signature": "extern void __stdcall fn_004B2710(void** targetPtr, void* valueArg)",
     "summary": "Auto-lifted identical-shape clone of 0x004DE890 (ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, getStrength, float, setStrength\u003e::vfunc_41).",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
+  "0x004B2760": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData,float,getYMax,float,setYMax\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType",
+    "signature": "void __thiscall fn_004B2760(void* /*this*/, uint8_t* arg1)",
+    "summary": "Lazily initializes a static Type instance and stores its pointer at arg1 + 0x4.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x004B27E0": {
