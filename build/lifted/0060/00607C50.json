@@ -1,0 +1,22 @@
+{
+  "va": "0x00607C50",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall Effector::`vcall'{100, {flat}}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffector, float, \u0026Effector::vcall{100}\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cEffector, float, \u0026Effector::vcall{100}\u003e",
+  "signature": "extern void __thiscall fn_00607C50(void* ecx_unused, void* arg)",
+  "summary": "Lazily initializes a static object (guarded by bit 0 of a flag word) and stores its address into the argument's +0x04 slot.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:57:03Z"
+}

@@ -7599,3 +7599,46 @@ void fn_00607CD0(void* self) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B477EC));
 }
 } // namespace lift_00607CD0
+
+// [0x00607C50] sub_00607C50 (122 bytes)
+namespace lift_00607C50 {
+namespace lift_00607C50 {
+
+// Known callee 0x0067A670 (sub_0067A670, 26 bytes): one-time initializer, invoked with
+// ecx = 0x00B477E4 (the guarded static object) and a single stack argument of 0.
+extern void ext_0067A670(uint32_t ecx_obj, uint32_t arg0);
+
+// Guard word and static object that the thunk initializes on first use.
+extern uint32_t mem_00B477E8; // guard word; bit 0 means "already initialized"
+extern uint32_t mem_00B477E4; // static object; first dword receives the vtable pointer
+
+// @name ExprParser::WriteMethodType<Effector, float, &Effector::vcall{100}>::vfunc_40
+// @class ExprParser::WriteMethodType<Effector, float, &Effector::vcall{100}>
+// @summary Lazily initializes a static object (guarded by bit 0 of a flag word) and stores its address into the argument's +0x04 slot.
+// @field ValuePtrType +0x04 uint32_t field_0x04
+
+// Behavior (from disassembly):
+//   if (guard & 1) == 0:
+//       guard |= 1
+//       ext_0067A670(0x00B477E4, 0)         // one-time init of the static object
+//       *(uint32_t*)0x00B477E4 = 0x00970D74 // vtable pointer for the static object
+//   *(uint32_t*)(arg + 4) = 0x00B477E4
+//
+// The original SEH frame setup/teardown on fs:[0] is an exception-handling
+// artifact of the compiler and has no observable effect here, so it is omitted.
+// The incoming ecx is not read (it is overwritten before use), so it is ignored.
+// Original calling convention: thiscall-style with one stack argument, callee-cleanup (ret 4).
+extern void __thiscall fn_00607C50(void* ecx_unused, void* arg) {
+    (void)ecx_unused;
+
+    if ((mem_00B477E8 & 1u) == 0u) {
+        mem_00B477E8 |= 1u;
+        ext_0067A670(0x00B477E4u, 0u);
+        mem_00B477E4 = 0x00970D74u;
+    }
+
+    lift_field<uint32_t>(arg, 4) = 0x00B477E4u;
+}
+
+} // namespace lift_00607C50
+} // namespace lift_00607C50
