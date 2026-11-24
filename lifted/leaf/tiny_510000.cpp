@@ -71,3 +71,17 @@ extern int __thiscall fn_00515840(void* self) {
     return ext_00508BA0(static_cast<uint8_t*>(inner) + 0xA4);
 }
 } // namespace lift_00515840
+
+// [0x00519CE0] sub_00519CE0 (15 bytes)
+namespace lift_00519CE0 {
+extern void __thiscall ext_00628FF0(void* self);
+
+// @name std::basic_string<char>::~basic_string (vtable-stamping thunk)
+// @class <unknown> (this is in ecx; owning class not yet recovered)
+// @summary Stamps the object's vtable pointer (0x0095219C) into its first dword, then tail-jumps to the MSVCP80 basic_string destructor on this+4.
+// @field <unknown> +0x00 uint32_t field_0x00
+void fn_00519CE0(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x0095219Cu;   // mov dword ptr [ecx], 0x95219c
+    ext_00628FF0(static_cast<uint8_t*>(self) + 4);    // add ecx, 4 ; jmp [0x924ff4] (MSVCP80 ~basic_string)
+}
+} // namespace lift_00519CE0

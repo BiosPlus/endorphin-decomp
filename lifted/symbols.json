@@ -10159,6 +10159,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005180D0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00519CE0": {
+    "name": "std::basic_string\u003cchar\u003e::~basic_string (vtable-stamping thunk)",
+    "class": "\u003cunknown\u003e (this is in ecx; owning class not yet recovered)",
+    "signature": "void fn_00519CE0(void* self)",
+    "summary": "Stamps the object's vtable pointer (0x0095219C) into its first dword, then tail-jumps to the MSVCP80 basic_string destructor on this+4.",
+    "lifted_path": "lifted/leaf/tiny_510000.cpp"
+  },
   "0x00519EA0": {
     "name": "NMData::Channel::vfunc_0",
     "class": "NMData::Channel",
