@@ -15006,6 +15006,13 @@
     "summary": "Forwards vfunc_11(arg1, arg2) to optional child renderable at +0x14 and embedded object at +0x18.",
     "lifted_path": "lifted/classes/CompoundRenderable.cpp"
   },
+  "0x00537D30": {
+    "name": "CompoundRenderable::vfunc_14",
+    "class": "CompoundRenderable",
+    "signature": "void __thiscall fn_00537D30(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Forwards vfunc_14 to field_0x14 if non-null, then to the embedded subobject at +0x18.",
+    "lifted_path": "lifted/classes/CompoundRenderable.cpp"
+  },
   "0x00537D60": {
     "name": "CompoundRenderable::vfunc_24",
     "class": "CompoundRenderable",
@@ -41337,6 +41344,13 @@
     "signature": "void fn_006F2220(void* self, uint32_t arg1, uint32_t arg2)",
     "summary": "Auto-lifted identical-shape clone of 0x006F00E0 (Unknown::forwardToSubobject2200).",
     "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
+  "0x006F2260": {
+    "name": "Unknown::forwardArgsToSubobjectAt6600",
+    "class": "Unknown",
+    "signature": "void fn_006F2260(void* self, uint32_t arg1, void* arg2)",
+    "summary": "Forwards two stack arguments plus two constants to storeArgsAndNotifyChild on the subobject at this+0x6600.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
   "0x006F2290": {
     "name": "sub_006F2290",
