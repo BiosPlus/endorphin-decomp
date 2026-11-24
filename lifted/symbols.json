@@ -3800,6 +3800,30 @@
     "summary": "Compares a property string against a global string and passes the boolean result to arg1's vtable[1]",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044BA30": {
+    "name": "sub_0044BA30",
+    "signature": "int __thiscall fn_0044BA30(void* self, void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044B9D0 (checkFieldAndNotify).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044BBB0": {
+    "name": "sub_0044BBB0",
+    "signature": "int __thiscall fn_0044BBB0(void* self, void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044B9D0 (checkFieldAndNotify).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044BBE0": {
+    "name": "sub_0044BBE0",
+    "signature": "int __thiscall fn_0044BBE0(void* self, void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044B9D0 (checkFieldAndNotify).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
+  "0x0044BC10": {
+    "name": "sub_0044BC10",
+    "signature": "int __thiscall fn_0044BC10(void* self, void* arg1)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044B9D0 (checkFieldAndNotify).",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044BC40": {
     "name": "sub_0044BC40",
     "signature": "extern \"C\" void __fastcall fn_0044BC40(void* self)",

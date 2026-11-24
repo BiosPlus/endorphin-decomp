@@ -1,0 +1,21 @@
+{
+  "va": "0x0044BBB0",
+  "size": 48,
+  "orig_symbol": "sub_0044BBB0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "sub_0044BBB0",
+  "signature": "int __thiscall fn_0044BBB0(void* self, void* arg1)",
+  "summary": "Auto-lifted identical-shape clone of 0x0044B9D0 (checkFieldAndNotify).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "void*",
+      "name": "field_0x68"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T14:18:55Z"
+}

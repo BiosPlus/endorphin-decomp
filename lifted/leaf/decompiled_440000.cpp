@@ -1291,3 +1291,119 @@ int __thiscall fn_0044BA00(void* self, void* arg1) {
     return cb(arg1, (uint32_t)eq);
 }
 } // namespace lift_0044BA00
+
+// [0x0044BA30] sub_0044BA30 (48 bytes)
+namespace lift_0044BA30 {
+// @name sub_0044BA30
+// @summary Auto-lifted identical-shape clone of 0x0044B9D0 (checkFieldAndNotify).
+namespace lift_0044B9D0 {
+// @name checkFieldAndNotify
+// @summary Checks if a string property on field_0x68 equals a global string and passes the boolean result to arg1's vtable+4 method.
+// @field Unknown +0x68 void* field_0x68
+
+
+extern uint32_t mem_00A2FFE0;
+extern uint32_t mem_00924FC0;
+extern int __thiscall ext_00530690(void* self);
+
+typedef uint8_t (__cdecl *StrEqCStrFn)(int str_ref, uint32_t cstr);
+typedef int (__thiscall *VtableNotifyFn)(void* self, uint32_t flag);
+
+int __thiscall fn_0044BA30(void* self, void* arg1) {
+    uint32_t cstr = mem_00A2FFE0;
+    void* obj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x68);
+    int str_ref = ext_00530690(obj);
+    uint8_t eq = reinterpret_cast<StrEqCStrFn>(mem_00924FC0)(str_ref, cstr);
+    void** vtable = *reinterpret_cast<void***>(arg1);
+    VtableNotifyFn notify = reinterpret_cast<VtableNotifyFn>(vtable[1]);
+    return notify(arg1, static_cast<uint32_t>(eq));
+}
+} // namespace lift_0044B9D0
+} // namespace lift_0044BA30
+
+// [0x0044BBB0] sub_0044BBB0 (48 bytes)
+namespace lift_0044BBB0 {
+// @name sub_0044BBB0
+// @summary Auto-lifted identical-shape clone of 0x0044B9D0 (checkFieldAndNotify).
+namespace lift_0044B9D0 {
+// @name checkFieldAndNotify
+// @summary Checks if a string property on field_0x68 equals a global string and passes the boolean result to arg1's vtable+4 method.
+// @field Unknown +0x68 void* field_0x68
+
+
+extern uint32_t mem_00A2FFE4;
+extern uint32_t mem_00924FC0;
+extern int __thiscall ext_00530690(void* self);
+
+typedef uint8_t (__cdecl *StrEqCStrFn)(int str_ref, uint32_t cstr);
+typedef int (__thiscall *VtableNotifyFn)(void* self, uint32_t flag);
+
+int __thiscall fn_0044BBB0(void* self, void* arg1) {
+    uint32_t cstr = mem_00A2FFE4;
+    void* obj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x68);
+    int str_ref = ext_00530690(obj);
+    uint8_t eq = reinterpret_cast<StrEqCStrFn>(mem_00924FC0)(str_ref, cstr);
+    void** vtable = *reinterpret_cast<void***>(arg1);
+    VtableNotifyFn notify = reinterpret_cast<VtableNotifyFn>(vtable[1]);
+    return notify(arg1, static_cast<uint32_t>(eq));
+}
+} // namespace lift_0044B9D0
+} // namespace lift_0044BBB0
+
+// [0x0044BBE0] sub_0044BBE0 (48 bytes)
+namespace lift_0044BBE0 {
+// @name sub_0044BBE0
+// @summary Auto-lifted identical-shape clone of 0x0044B9D0 (checkFieldAndNotify).
+namespace lift_0044B9D0 {
+// @name checkFieldAndNotify
+// @summary Checks if a string property on field_0x68 equals a global string and passes the boolean result to arg1's vtable+4 method.
+// @field Unknown +0x68 void* field_0x68
+
+
+extern uint32_t mem_00A2FFE8;
+extern uint32_t mem_00924FC0;
+extern int __thiscall ext_00530690(void* self);
+
+typedef uint8_t (__cdecl *StrEqCStrFn)(int str_ref, uint32_t cstr);
+typedef int (__thiscall *VtableNotifyFn)(void* self, uint32_t flag);
+
+int __thiscall fn_0044BBE0(void* self, void* arg1) {
+    uint32_t cstr = mem_00A2FFE8;
+    void* obj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x68);
+    int str_ref = ext_00530690(obj);
+    uint8_t eq = reinterpret_cast<StrEqCStrFn>(mem_00924FC0)(str_ref, cstr);
+    void** vtable = *reinterpret_cast<void***>(arg1);
+    VtableNotifyFn notify = reinterpret_cast<VtableNotifyFn>(vtable[1]);
+    return notify(arg1, static_cast<uint32_t>(eq));
+}
+} // namespace lift_0044B9D0
+} // namespace lift_0044BBE0
+
+// [0x0044BC10] sub_0044BC10 (48 bytes)
+namespace lift_0044BC10 {
+// @name sub_0044BC10
+// @summary Auto-lifted identical-shape clone of 0x0044B9D0 (checkFieldAndNotify).
+namespace lift_0044B9D0 {
+// @name checkFieldAndNotify
+// @summary Checks if a string property on field_0x68 equals a global string and passes the boolean result to arg1's vtable+4 method.
+// @field Unknown +0x68 void* field_0x68
+
+
+extern uint32_t mem_00A2FFEC;
+extern uint32_t mem_00924FC0;
+extern int __thiscall ext_00530690(void* self);
+
+typedef uint8_t (__cdecl *StrEqCStrFn)(int str_ref, uint32_t cstr);
+typedef int (__thiscall *VtableNotifyFn)(void* self, uint32_t flag);
+
+int __thiscall fn_0044BC10(void* self, void* arg1) {
+    uint32_t cstr = mem_00A2FFEC;
+    void* obj = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x68);
+    int str_ref = ext_00530690(obj);
+    uint8_t eq = reinterpret_cast<StrEqCStrFn>(mem_00924FC0)(str_ref, cstr);
+    void** vtable = *reinterpret_cast<void***>(arg1);
+    VtableNotifyFn notify = reinterpret_cast<VtableNotifyFn>(vtable[1]);
+    return notify(arg1, static_cast<uint32_t>(eq));
+}
+} // namespace lift_0044B9D0
+} // namespace lift_0044BC10
