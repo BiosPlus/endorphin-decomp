@@ -1648,6 +1648,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0066AC80 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0041CDE0": {
+    "name": "CopyEntryRangeForward",
+    "signature": "void* fn_0041CDE0(const void* first, const void* last, void* dest)",
+    "summary": "Copies each 0x20-byte entry in [first,last) to dest by assigning its leading std::string and copying the DWORD at +0x1c; returns dest end, or dest itself when the range is empty.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041CEB0": {
     "name": "UnknownClass::forwardToSubobjectSlot4",
     "class": "UnknownClass",

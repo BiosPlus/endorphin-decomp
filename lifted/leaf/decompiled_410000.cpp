@@ -780,3 +780,38 @@ extern void __fastcall fn_00411590(void* self) {
 }
 } // namespace lift_005FF040
 } // namespace lift_00411590
+
+// [0x0041CDE0] sub_0041CDE0 (57 bytes)
+namespace lift_0041CDE0 {
+// MSVC 2005 std::basic_string<char>::operator=(const basic_string&), reached via
+// the import slot at 0x00924FDC. Thiscall: self in ECX, rhs on the stack.
+extern void* ext_std_string_assign(void* self, const void* rhs);
+
+namespace {
+constexpr std::size_t kEntrySize = 0x20;
+constexpr std::ptrdiff_t kEntryValueOffset = 0x1c;
+}
+
+// @name CopyEntryRangeForward
+// @summary Copies each 0x20-byte entry in [first,last) to dest by assigning its leading std::string and copying the DWORD at +0x1c; returns dest end, or dest itself when the range is empty.
+// @field Entry +0x1c uint32_t value
+void* fn_0041CDE0(const void* first, const void* last, void* dest) {
+    if (first == last) {
+        return dest;
+    }
+
+    const auto* src = static_cast<const uint8_t*>(first);
+    const auto* end = static_cast<const uint8_t*>(last);
+    auto* out = static_cast<uint8_t*>(dest);
+
+    do {
+        ext_std_string_assign(out, src);
+        lift_field<uint32_t>(out, kEntryValueOffset) =
+            lift_field<uint32_t>(src, kEntryValueOffset);
+        src += kEntrySize;
+        out += kEntrySize;
+    } while (src != end);
+
+    return out;
+}
+} // namespace lift_0041CDE0
