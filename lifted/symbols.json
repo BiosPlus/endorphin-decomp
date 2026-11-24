@@ -15038,6 +15038,13 @@
     "summary": "Forwards a single-argument call to vtable slot 22 of the object held at +0x14 (if non-null) and of the embedded subobject at +0x18.",
     "lifted_path": "lifted/classes/CompoundRenderable.cpp"
   },
+  "0x00537BB0": {
+    "name": "CompoundRenderable::vfunc_17",
+    "class": "CompoundRenderable",
+    "signature": "int32_t fn_00537BB0(void* self)",
+    "summary": "If the object at +0x14 is non-null and its slot 0x3C returns true, returns slot 0x44 of the embedded object at +0x18 plus 1; otherwise returns slot 0x44 of that object directly.",
+    "lifted_path": "lifted/classes/CompoundRenderable.cpp"
+  },
   "0x00537BF0": {
     "name": "CompoundRenderable::vfunc_18",
     "class": "CompoundRenderable",

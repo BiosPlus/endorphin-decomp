@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/classes/CompoundRenderable.cpp
 #include "lift_compat.h"
+#include <cstdint>
 
 // [0x00537CA0]
 namespace lift_00537CA0 {
@@ -155,3 +156,31 @@ void __thiscall fn_00537D30(void* self, uint32_t arg1, uint32_t arg2) {
     fn2(embedded, arg1, arg2);
 }
 } // namespace lift_00537D30
+
+// [0x00537BB0]
+namespace lift_00537BB0 {
+// Known callees (virtual dispatch through embedded/owned objects):
+//   ext_vcall_0x3C: calls vtable slot 0x3C (index 15) of the object at `obj`, passing `obj` as this; returns al.
+//   ext_vcall_0x44: reads the vtable pointer stored at `thisp` (the embedded object at self+0x18),
+//                   calls its vtable slot 0x44 (index 17) with ecx = thisp; returns eax.
+extern uint8_t ext_vcall_0x3C(void* obj);
+extern int32_t ext_vcall_0x44(void* thisp);
+
+// @name CompoundRenderable::vfunc_17
+// @class CompoundRenderable
+// @summary If the object at +0x14 is non-null and its slot 0x3C returns true, returns slot 0x44 of the embedded object at +0x18 plus 1; otherwise returns slot 0x44 of that object directly.
+// @field CompoundRenderable +0x14 void* field_0x14
+// @field CompoundRenderable +0x18 void* field_0x18
+
+namespace lift_00537BB0 {
+int32_t fn_00537BB0(void* self) {
+    void* obj = lift_field<void*>(self, 0x14);
+    void* thisp = reinterpret_cast<uint8_t*>(self) + 0x18;
+
+    if (obj != nullptr && ext_vcall_0x3C(obj) != 0) {
+        return ext_vcall_0x44(thisp) + 1;
+    }
+    return ext_vcall_0x44(thisp);
+}
+} // namespace lift_00537BB0
+} // namespace lift_00537BB0

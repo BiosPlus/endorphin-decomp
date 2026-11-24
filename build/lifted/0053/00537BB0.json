@@ -1,0 +1,28 @@
+{
+  "va": "0x00537BB0",
+  "size": 49,
+  "orig_symbol": "CompoundRenderable::vfunc_17",
+  "src_path": "src/classes/CompoundRenderable.cpp",
+  "lifted_path": "lifted/classes/CompoundRenderable.cpp",
+  "name": "CompoundRenderable::vfunc_17",
+  "class": "CompoundRenderable",
+  "signature": "int32_t fn_00537BB0(void* self)",
+  "summary": "If the object at +0x14 is non-null and its slot 0x3C returns true, returns slot 0x44 of the embedded object at +0x18 plus 1; otherwise returns slot 0x44 of that object directly.",
+  "fields": [
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:30:53Z"
+}
