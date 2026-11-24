@@ -8887,6 +8887,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_004BA170 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/templates/auto_tiny.cpp"
   },
+  "0x004BA920": {
+    "name": "initDwordPairFromLookup_passthrough",
+    "signature": "void* fn_004BA920(void* arg1, DWORD arg2)",
+    "summary": "Forwards (arg1, arg2) to ext_004BA230 (result discarded) and returns arg1 unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BBF50": {
     "name": "sub_004BBF50",
     "signature": "extern \"C\" void __fastcall fn_004BBF50(void* self)",

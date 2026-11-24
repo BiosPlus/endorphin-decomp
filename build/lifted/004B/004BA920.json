@@ -1,0 +1,13 @@
+{
+  "va": "0x004BA920",
+  "size": 35,
+  "orig_symbol": "sub_004BA920",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "initDwordPairFromLookup_passthrough",
+  "signature": "void* fn_004BA920(void* arg1, DWORD arg2)",
+  "summary": "Forwards (arg1, arg2) to ext_004BA230 (result discarded) and returns arg1 unchanged.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:45:29Z"
+}

@@ -159,3 +159,16 @@ void* fn_004BA230(void* arg1, DWORD arg2) {
 }
 } // namespace lift_004BA230
 } // namespace lift_004BA230
+
+// [0x004BA920] sub_004BA920 (35 bytes)
+namespace lift_004BA920 {
+// Known callee 0x004BA230: initDwordPairFromLookup (Calls ext_004B7980 on arg2, then initialises arg1 with its result and arg2 via ext_0055DA20; returns arg1.)
+extern void* ext_004BA230(void* arg1, DWORD arg2);
+
+// @name initDwordPairFromLookup_passthrough
+// @summary Forwards (arg1, arg2) to ext_004BA230 (result discarded) and returns arg1 unchanged.
+void* fn_004BA920(void* arg1, DWORD arg2) {
+    ext_004BA230(arg1, arg2);
+    return arg1;
+}
+} // namespace lift_004BA920
