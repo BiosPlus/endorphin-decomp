@@ -22806,6 +22806,13 @@
     "summary": "Lazily initializes a static type descriptor at 0x00B44430 and stores its pointer at arg0 + 0x4.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x005C6030": {
+    "name": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, addImpulse\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, addImpulse\u003e",
+    "signature": "void __thiscall fn_005C6030(void* self, void* out)",
+    "summary": "Lazily initializes static singleton at 0x00B44438 and stores its address into out+0x4.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x005C61B0": {
     "name": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e::vfunc_0",
     "class": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e",
@@ -33624,10 +33631,10 @@
     "lifted_path": "lifted/templates/Method2Type.cpp"
   },
   "0x0066D2B0": {
-    "name": "ExprParser::Method2Type::vfunc_40 (cartesianAtoB_TSA)",
-    "class": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_TSA(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e",
-    "signature": "extern \"C\" uint32_t mem_00B59694; // one-time init guard word (bit 0 = initialized) extern \"C\" uint32_t mem_00B59690; // function-local static object storage void fn_0066D2B0(void* self)",
-    "summary": "Lazily initializes the function-local static object at mem_00B59690 once, then stores its address at +0x04 of the argument.",
+    "name": "ExprParser::Method2Type::vfunc_49",
+    "class": "ExprParser::Method2Type",
+    "signature": "uint32_t callSlot5(uint32_t obj, uint32_t a, uint32_t b)",
+    "summary": "Calls virtual slot 5 twice on the object held by arg4 (first with 0, then with the first result), forwards the second result to the child at *arg2, zeroes the out buffer at arg2, and returns arg2.",
     "lifted_path": "lifted/templates/Method2Type.cpp"
   },
   "0x0066DCB0": {
