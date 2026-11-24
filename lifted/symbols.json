@@ -38063,6 +38063,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006B9D10 (Unknown::InitAndReturnSelf).",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B9990": {
+    "name": "Unknown::detachBuffer",
+    "class": "Unknown",
+    "signature": "void __thiscall sub_006B9990(void* ecx, uint32_t* out)",
+    "summary": "Detaches the heap buffer into out if it is not a static sentinel or inline buffer, then resets the object.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B99C0": {
     "name": "sub_006B99C0",
     "signature": "extern \"C\" int32_t __fastcall fn_006B99C0(void* self)",
@@ -38081,6 +38088,20 @@
     "signature": "extern \"C\" void fn_006B9D70(void)",
     "summary": "Pure jump thunk forwarding to sub_006B9970.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
+  "0x006BA2C0": {
+    "name": "StringBuffer::getCharPtrAt",
+    "class": "StringBuffer",
+    "signature": "uint32_t __thiscall sub_006BA2C0(void* self, uint32_t index)",
+    "summary": "Returns a pointer to the character at the given index if in bounds, otherwise clears and returns a fallback empty byte buffer.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
+  "0x006BA2F0": {
+    "name": "String::reverseFind",
+    "class": "String",
+    "signature": "int32_t __thiscall sub_006BA2F0(void* self, char ch)",
+    "summary": "Finds the last occurrence of a character in the string and returns its index, or -1 if not found.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
   "0x006BAC00": {
     "name": "sub_006BAC00",
@@ -44222,6 +44243,13 @@
     "signature": "void sub_007105E0(void)",
     "summary": "Load the double pointed to by mem_00925284, negate it, and store the result to three globals.",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x00710F50": {
+    "name": "ReleaseOwnedBuffers",
+    "class": "\u003cunknown\u003e",
+    "signature": "void fn_00710F50(void* self)",
+    "summary": "Frees the optional buffer at +0x04 (when flag 0x20 in byte +0x00 is set and it is non-null), then always frees the buffer at +0x08.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x00710F80": {
     "name": "UnknownBitfield::setOrClearBits",

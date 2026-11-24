@@ -872,3 +872,30 @@ void setOrClearBits(DWORD* target, DWORD mask, BOOLEAN flag) {
     }
 }
 } // namespace lift_00710F80
+
+// [0x00710F50] sub_00710F50 (48 bytes)
+namespace lift_00710F50 {
+// Imported CRT free() function pointer slot (MSVCR80!free).
+extern void* mem_009251D8;
+
+// @name ReleaseOwnedBuffers
+// @class <unknown>
+// @summary Frees the optional buffer at +0x04 (when flag 0x20 in byte +0x00 is set and it is non-null), then always frees the buffer at +0x08.
+// @field <unknown> +0x00 uint8_t field_0x00
+// @field <unknown> +0x04 void* field_0x04
+// @field <unknown> +0x08 void* field_0x08
+void fn_00710F50(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    auto free_fn = reinterpret_cast<void (*)(void*)>(mem_009251D8);
+
+    if (base[0x00] & 0x20) {
+        void* first = *reinterpret_cast<void**>(base + 0x04);
+        if (first != nullptr) {
+            free_fn(first);
+        }
+    }
+
+    void* second = *reinterpret_cast<void**>(base + 0x08);
+    free_fn(second);
+}
+} // namespace lift_00710F50
