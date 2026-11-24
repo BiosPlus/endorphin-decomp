@@ -33180,6 +33180,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
   },
+  "0x00713750": {
+    "name": "sub_00713750",
+    "signature": "uint32_t fn_00713750()",
+    "summary": "Auto-lifted identical-shape clone of 0x006D2CA0 (forwardMem006D2CB0_006D2CA0).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00713760": {
     "name": "sub_00713760",
     "signature": "extern void fn_00713760(void)",
@@ -33215,6 +33221,12 @@
     "signature": "void fn_007137F0(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/clones/auto_clones_710000.cpp"
+  },
+  "0x00713810": {
+    "name": "sub_00713810",
+    "signature": "uint32_t fn_00713810()",
+    "summary": "Auto-lifted identical-shape clone of 0x006D2CA0 (forwardMem006D2CB0_006D2CA0).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x00713820": {
     "name": "initGlobal_00B5F708",

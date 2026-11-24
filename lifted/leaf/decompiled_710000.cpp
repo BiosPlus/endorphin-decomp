@@ -14,3 +14,37 @@ extern "C" void* __fastcall fn_00712F40(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+
+// [0x00713750] sub_00713750 (12 bytes)
+namespace lift_00713750 {
+// @name sub_00713750
+// @summary Auto-lifted identical-shape clone of 0x006D2CA0 (forwardMem006D2CB0_006D2CA0).
+namespace lift_006D2CA0 {
+extern uint32_t ext_006A6C87(uint32_t arg);
+extern int mem_00713760;
+
+// @name forwardMem006D2CB0_006D2CA0
+// @summary Pushes the address of mem_006D2CB0 as a single cdecl argument, calls sub_006A6C87, and returns its result unchanged.
+uint32_t fn_00713750() {
+    const uint32_t arg = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00713760));
+    return ext_006A6C87(arg);
+}
+} // namespace lift_006D2CA0
+} // namespace lift_00713750
+
+// [0x00713810] sub_00713810 (12 bytes)
+namespace lift_00713810 {
+// @name sub_00713810
+// @summary Auto-lifted identical-shape clone of 0x006D2CA0 (forwardMem006D2CB0_006D2CA0).
+namespace lift_006D2CA0 {
+extern uint32_t ext_006A6C87(uint32_t arg);
+extern int mem_00713820;
+
+// @name forwardMem006D2CB0_006D2CA0
+// @summary Pushes the address of mem_006D2CB0 as a single cdecl argument, calls sub_006A6C87, and returns its result unchanged.
+uint32_t fn_00713810() {
+    const uint32_t arg = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00713820));
+    return ext_006A6C87(arg);
+}
+} // namespace lift_006D2CA0
+} // namespace lift_00713810

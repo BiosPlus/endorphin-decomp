@@ -1,0 +1,13 @@
+{
+  "va": "0x00713750",
+  "size": 12,
+  "orig_symbol": "sub_00713750",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "sub_00713750",
+  "signature": "uint32_t fn_00713750()",
+  "summary": "Auto-lifted identical-shape clone of 0x006D2CA0 (forwardMem006D2CB0_006D2CA0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:16:35Z"
+}
