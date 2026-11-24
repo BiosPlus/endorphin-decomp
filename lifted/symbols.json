@@ -42714,6 +42714,12 @@
     "summary": "Projected Gauss-Seidel / LCP iterative solver step for MdtArthur::arthurSolver_sse",
     "lifted_path": "lifted/MdtArthur/arthurSolver_sse.cpp"
   },
+  "0x007F6810": {
+    "name": "allocFromFreeList",
+    "signature": "void allocFromFreeList(uint8_t* self, uint32_t value)",
+    "summary": "Pops the head node off a free list, stores a value in the node, and increments the list count.",
+    "lifted_path": "lifted/leaf/tiny_7F0000.cpp"
+  },
   "0x007F6830": {
     "name": "insertListNodeAfter",
     "signature": "void sub_007F6830(uint32_t nodeAddr, uint32_t newNodeAddr)",

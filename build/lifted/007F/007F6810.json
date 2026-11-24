@@ -1,0 +1,39 @@
+{
+  "va": "0x007F6810",
+  "size": 28,
+  "orig_symbol": "sub_007F6810",
+  "src_path": "src/leaf/tiny_7F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7F0000.cpp",
+  "name": "allocFromFreeList",
+  "signature": "void allocFromFreeList(uint8_t* self, uint32_t value)",
+  "summary": "Pops the head node off a free list, stores a value in the node, and increments the list count.",
+  "fields": [
+    {
+      "class": "FreeList",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "FreeList",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "FreeNode",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "FreeNode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:10:16Z"
+}

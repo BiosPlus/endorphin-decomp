@@ -33,3 +33,23 @@ void sub_007F6830(uint32_t nodeAddr, uint32_t newNodeAddr) {
     mem_write32(nodeAddr + 0x8, newNodeAddr);
 }
 } // namespace lift_007F6830
+
+// [0x007F6810]
+namespace lift_007F6810 {
+// @name allocFromFreeList
+// @summary Pops the head node off a free list, stores a value in the node, and increments the list count.
+// @field FreeList +0x08 void* field_0x08
+// @field FreeList +0x0C uint32_t field_0x0C
+// @field FreeNode +0x00 uint32_t field_0x00
+// @field FreeNode +0x08 void* field_0x08
+
+void allocFromFreeList(uint8_t* self, uint32_t value) {
+    uint8_t* head = *reinterpret_cast<uint8_t**>(self + 0x08);
+    if (head == nullptr) {
+        return;
+    }
+    *reinterpret_cast<uint8_t**>(self + 0x08) = *reinterpret_cast<uint8_t**>(head + 0x08);
+    *reinterpret_cast<uint32_t*>(head) = value;
+    ++*reinterpret_cast<uint32_t*>(self + 0x0C);
+}
+} // namespace lift_007F6810
