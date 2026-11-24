@@ -9749,3 +9749,30 @@ void fn_004CEE70(void* out) {
     slot[1] = objAddr;
 }
 } // namespace lift_004CEE70
+
+// [0x004D1710]
+namespace lift_004D1710 {
+// @name ExprParser::ReadWriteMethodType<NMData::TransitionEventData>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::TransitionEventData>
+// @summary One-time guarded initialisation of the static window-type-name accessor binding; afterwards stores its address into the caller-supplied object at +0x04.
+// @field ExprParser::ValuePtrType +0x04 DWORD field_0x04
+
+
+extern DWORD mem_00AE55A0; // one-time init guard flags (bit 0 = initialised / in progress)
+extern DWORD mem_00AE559C; // static binding object (first dword receives its vtable)
+
+void ext_0067A670(void* self, DWORD arg);
+
+// __stdcall, one stack argument (ret 4): pointer to the object whose +0x04 receives the binding address.
+void __stdcall ReadWriteMethodType_TransitionEventData_vfunc_40(void* obj) {
+    if (mem_00AE55A0 & 1u) {
+        lift_field<DWORD>(obj, 4) = 0x00AE559Cu;
+        return;
+    }
+
+    mem_00AE55A0 |= 1u;
+    ext_0067A670(&mem_00AE559C, 0u);
+    mem_00AE559C = 0x00947BE4u;
+    lift_field<DWORD>(obj, 4) = 0x00AE559Cu;
+}
+} // namespace lift_004D1710
