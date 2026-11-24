@@ -449,3 +449,18 @@ void fn_00790DE0(void* self, DWORD value) {
     *reinterpret_cast<DWORD*>(base + 0x2C) = 0;
 }
 } // namespace lift_00790DE0
+
+// [0x00790DC0] sub_00790DC0 (24 bytes)
+namespace lift_00790DC0 {
+// @name Unknown::InitValueAndClearFlags
+// @class Unknown
+// @summary Stores a 32-bit argument at +0x18, sets the flag word at +0x5C to 1, and clears the word at +0x28.
+// @field Unknown +0x18 uint32_t value
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x5C uint32_t field_0x5C
+void fn_00790DC0(void* self, uint32_t value) {
+    lift_field<uint32_t>(self, 0x5C) = 1;
+    lift_field<uint32_t>(self, 0x18) = value;
+    lift_field<uint32_t>(self, 0x28) = 0;
+}
+} // namespace lift_00790DC0

@@ -39293,6 +39293,13 @@
     "summary": "Stores the stack argument into this+0x14 and zeroes this+0x2c (thiscall, callee pops 4 bytes).",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x00790DC0": {
+    "name": "Unknown::InitValueAndClearFlags",
+    "class": "Unknown",
+    "signature": "void fn_00790DC0(void* self, uint32_t value)",
+    "summary": "Stores a 32-bit argument at +0x18, sets the flag word at +0x5C to 1, and clears the word at +0x28.",
+    "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
   "0x00790DE0": {
     "name": "ResetStateAndSetField1C",
     "class": "\u003cUnknown\u003e",
