@@ -493,3 +493,23 @@ uint32_t __thiscall sub_006A7F50(void* self, uint32_t arg1, uint32_t arg2) {
     return 0;
 }
 } // namespace lift_006A7F50
+
+// [0x006ACEE0] sub_006ACEE0 (29 bytes)
+namespace lift_006ACEE0 {
+// @name Unknown::setFlagAndForwardByte
+// @class Unknown
+// @summary Stores the flag at +0x38; if non-zero, stores the pointer argument at +0x3C and copies the byte it points to into the byte at +0x04 of the object referenced by self->+0x04.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x38 uint8_t field_0x38
+// @field Unknown +0x3C void* field_0x3C
+extern void fn_006ACEE0(void* self, uint8_t flag, const uint8_t* src) {
+    lift_field<uint8_t>(self, 0x38) = flag;
+    if (flag == 0) {
+        return;
+    }
+
+    lift_field<const uint8_t*>(self, 0x3C) = src;
+    void* target = lift_field<void*>(self, 0x04);
+    lift_field<uint8_t>(target, 0x04) = *src;
+}
+} // namespace lift_006ACEE0
