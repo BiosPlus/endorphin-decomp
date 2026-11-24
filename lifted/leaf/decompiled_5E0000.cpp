@@ -59,3 +59,30 @@ float fn_005E28B0(void* self) {
     return ext_005B11E0(lift_field<void*>(child, 0) == nullptr ? nullptr : static_cast<uint8_t*>(child) + 0x8, 0u);
 }
 } // namespace lift_005E28B0
+
+// [0x005E2860] sub_005E2860 (27 bytes)
+namespace lift_005E2860 {
+// Known callee 0x005B11E0: getFloatAt (Returns a float from a 32-bit float array at offset +0x10 indexed by the argument)
+// Signature: float __thiscall(this = ecx, index on stack)
+extern float ext_005B11E0(uintptr_t ecx, uint32_t index);
+
+// @name getChildSubobjectFloat3_005E2860
+// @summary Fetches child object at +0x17C, calls its vtable slot +0x11C to get a sub-object, and returns float index 3 from that sub-object's array.
+// @field Unknown +0x17C void* field_0x17c
+float fn_005E2860(void* self) {
+    // mov ecx, [self+0x17c]
+    void* child = lift_field<void*>(self, 0x17c);
+
+    // mov eax, [ecx]            ; vtable pointer
+    // mov edx, [eax+0x11c]      ; vtable slot at byte offset 0x11C
+    // call edx                  ; thiscall, this = child, result in eax
+    void** vtbl = *reinterpret_cast<void***>(child);
+    using VSlotFn = void* (*)(void*);
+    VSlotFn slot = reinterpret_cast<VSlotFn>(
+        *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtbl) + 0x11c));
+    void* sub = slot(child);
+
+    // lea ecx, [eax+0x8]; push 3; call getFloatAt   ; this = sub+8, index = 3
+    return ext_005B11E0(reinterpret_cast<uintptr_t>(sub) + 0x8, 3);
+}
+} // namespace lift_005E2860

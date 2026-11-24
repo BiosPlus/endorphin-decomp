@@ -19422,6 +19422,12 @@
     "summary": "Calls vtable slot 0x11C on the object at self+0x17C, then returns float index 2 of the result's +0x08 sub-object array.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005E2860": {
+    "name": "getChildSubobjectFloat3_005E2860",
+    "signature": "float fn_005E2860(void* self)",
+    "summary": "Fetches child object at +0x17C, calls its vtable slot +0x11C to get a sub-object, and returns float index 3 from that sub-object's array.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E28B0": {
     "name": "getFloatFromSubobject_005E28B0",
     "signature": "float fn_005E28B0(void* self)",

@@ -1,0 +1,21 @@
+{
+  "va": "0x005E2860",
+  "size": 27,
+  "orig_symbol": "sub_005E2860",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "getChildSubobjectFloat3_005E2860",
+  "signature": "float fn_005E2860(void* self)",
+  "summary": "Fetches child object at +0x17C, calls its vtable slot +0x11C to get a sub-object, and returns float index 3 from that sub-object's array.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x17C",
+      "type": "void*",
+      "name": "field_0x17c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:04:32Z"
+}
