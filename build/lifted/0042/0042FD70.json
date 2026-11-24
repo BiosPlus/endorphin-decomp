@@ -1,0 +1,33 @@
+{
+  "va": "0x0042FD70",
+  "size": 54,
+  "orig_symbol": "sub_0042FD70",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "DispatchPairedVirtualCalls",
+  "signature": "void fn_0042FD70()",
+  "summary": "Fetches two objects via ext_00465B40, calls vtable slot +0x9C on the first (args 0,0), then passes its result to vtable slot +0xE0 of the second.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x9C",
+      "type": "void* vtable slot (called with two zero",
+      "name": "args)"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xE0",
+      "type": "void* embedded-object vptr slot (called with this=second",
+      "name": "object)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:10:36Z"
+}

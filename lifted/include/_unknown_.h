@@ -17,7 +17,7 @@ struct _unknown__Fields {
     // +0x0   void* vtable (set to&    mem_00991348)  (evidence: 0x006B0C60) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD                    typeTag  (evidence: 0x007D47D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vftable  (evidence: 0x0063E0C0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    vptr  (evidence: 0x00610A60) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vptr  (evidence: 0x0042FD70, 0x00610A60) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable  (evidence: 0x006B2400) // CONFLICT: multiple definitions at +0x0
     // +0x4   void* field_0x04 (child object; slot 1 invoked with arg 1)  (evidence: 0x006B0C60) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD                    field_0x04  (evidence: 0x00782D00, 0x00784620, 0x00788E50) // CONFLICT: multiple definitions at +0x4
@@ -81,8 +81,10 @@ struct _unknown__Fields {
     // +0x74  HWND                     field_0x74  (evidence: 0x006B67E0) // CONFLICT: multiple definitions at +0x74
     // +0x78  uint32_t                 field_0x78  (evidence: 0x0079ADA0, 0x0079DCE0)
     // +0x7C  uint32_t                 field_0x7c  (evidence: 0x0079ADA0, 0x0079DCE0)
+    // +0x9C  void* vtable slot (called with two zero args)  (evidence: 0x0042FD70)
     // +0xA0  void*                    field_0xA0  (evidence: 0x005480D0) // CONFLICT: multiple definitions at +0xA0
     // +0xA0  void*                    field_0xa0  (evidence: 0x00548240) // CONFLICT: multiple definitions at +0xA0
+    // +0xE0  void* embedded-object vptr slot (called with this=second object)  (evidence: 0x0042FD70)
     // +0xF0  uint32_t field_0xF0 (indexed array base, slots 0x00..0x11 at +0xF0..+0x128; index 0 never read)  (evidence: 0x007AA910, 0x007AC670)
     // +0x130 DWORD                    field_0x130  (evidence: 0x0065D0C0)
     // +0x138 FLOAT                    field_0x138  (evidence: 0x0065D0A0)

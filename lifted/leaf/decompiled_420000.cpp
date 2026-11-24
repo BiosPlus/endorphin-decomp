@@ -515,3 +515,33 @@ void* fn_0042FD30() {
     return second_slot(second, 3, first_result);
 }
 } // namespace lift_0042FD30
+
+// [0x0042FD70] sub_0042FD70 (54 bytes)
+namespace lift_0042FD70 {
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430360 (getGlobalField0x58AndCall00469040).)
+// Returns an object pointer in eax.
+extern void* ext_00465B40();
+
+// @name DispatchPairedVirtualCalls
+// @summary Fetches two objects via ext_00465B40, calls vtable slot +0x9C on the first (args 0,0), then passes its result to vtable slot +0xE0 of the second.
+// @field <unknown> +0x00 void* vptr
+// @field <unknown> +0x9C void* vtable slot (called with two zero args)
+// @field <unknown> +0xE0 void* embedded-object vptr slot (called with this=second object)
+void fn_0042FD70() {
+    // Calling-convention notes: both targets are invoked through a function pointer
+    // with `this` as the first parameter. The original code does not pop arguments
+    // after the calls, so the callees are assumed to clean the stack.
+    using VirtualFn = uint32_t (*)(void* self, uint32_t p1, uint32_t p2);
+
+    void* first  = ext_00465B40();   // edi
+    void* second = ext_00465B40();   // ebx
+
+    void** firstVtbl = lift_field<void**>(first, 0);
+    VirtualFn firstFn = reinterpret_cast<VirtualFn>(lift_field<void*>(firstVtbl, 0x9C));
+    uint32_t result = firstFn(first, 0, 0);
+
+    void** secondVtbl = lift_field<void**>(second, 0);
+    VirtualFn secondFn = reinterpret_cast<VirtualFn>(lift_field<void*>(secondVtbl, 0xE0));
+    (void)secondFn(second, 0, result);
+}
+} // namespace lift_0042FD70
