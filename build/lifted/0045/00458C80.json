@@ -1,0 +1,13 @@
+{
+  "va": "0x00458C80",
+  "size": 22,
+  "orig_symbol": "sub_00458C80",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "ThrowIfFailedHResult",
+  "signature": "extern \"C\" void fn_006A60F4(void); // thunk_MFC80_ord_1187 (no-arg throw helper) extern \"C\" void fn_006A6304(DWORD hr); // thunk_MFC80_ord_1191 (HRESULT throw helper) void fn_00458C80(DWORD hr)",
+  "summary": "If hr == E_OUTOFMEMORY (0x8007000E) raise the MFC memory exception, then raise an OLE exception with hr.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:27:57Z"
+}

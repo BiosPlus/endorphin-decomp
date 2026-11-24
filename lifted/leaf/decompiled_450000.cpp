@@ -52,3 +52,19 @@ void fn_00452100(void* self, DWORD arg) {
     ext_00451CE0(field74, arg);
 }
 } // namespace lift_00452100
+
+// [0x00458C80] sub_00458C80 (22 bytes)
+namespace lift_00458C80 {
+// Callee thunks (IAT forwarders to MFC80).
+extern void fn_006A60F4(void); // thunk_MFC80_ord_1187 (no-arg throw helper)
+extern void fn_006A6304(DWORD hr); // thunk_MFC80_ord_1191 (HRESULT throw helper)
+
+// @name ThrowIfFailedHResult
+// @summary If hr == E_OUTOFMEMORY (0x8007000E) raise the MFC memory exception, then raise an OLE exception with hr.
+void fn_00458C80(DWORD hr) {
+    if (hr == 0x8007000Eu) {
+        fn_006A60F4();
+    }
+    fn_006A6304(hr);
+}
+} // namespace lift_00458C80
