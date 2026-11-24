@@ -1371,3 +1371,20 @@ void fn_007C8A30(uint8_t* self, int32_t base, int32_t stride, uint32_t value) {
     *reinterpret_cast<uint32_t*>(records + static_cast<intptr_t>(index) * 24 + 0x14) = value;
 }
 } // namespace lift_007C8A30
+
+// [0x007C5440] sub_007C5440 (31 bytes)
+namespace lift_007C5440 {
+// @name BitReverseLowBits
+// @summary Returns the low n bits of x in reversed order (bit 0 -> bit n-1); n <= 0 is treated as one pass.
+// Cdecl: x at [esp+4], n at [esp+8]; result in eax.
+uint32_t fn_007C5440(uint32_t x, int32_t n) {
+    uint32_t result = 0;
+    do {
+        result |= x & 1u;
+        result <<= 1;
+        x >>= 1;
+    } while (--n > 0);
+    result >>= 1;
+    return result;
+}
+} // namespace lift_007C5440

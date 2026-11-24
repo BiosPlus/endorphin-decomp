@@ -1,0 +1,13 @@
+{
+  "va": "0x007C5440",
+  "size": 31,
+  "orig_symbol": "sub_007C5440",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "BitReverseLowBits",
+  "signature": "uint32_t fn_007C5440(uint32_t x, int32_t n)",
+  "summary": "Returns the low n bits of x in reversed order (bit 0 -\u003e bit n-1); n \u003c= 0 is treated as one pass.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:28:28Z"
+}

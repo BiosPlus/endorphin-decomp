@@ -42334,6 +42334,12 @@
     "summary": "Cdecl wrapper that forwards its single pointer argument to the CRT free() via an indirect IAT call.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C5440": {
+    "name": "BitReverseLowBits",
+    "signature": "uint32_t fn_007C5440(uint32_t x, int32_t n)",
+    "summary": "Returns the low n bits of x in reversed order (bit 0 -\u003e bit n-1); n \u003c= 0 is treated as one pass.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C5610": {
     "name": "thunk_XSIFtk-3.6.2.1_?GetPrimitiveType@CSLModel@@QAE?AW4ETemplateType@CSLTemplate@@XZ",
     "signature": "extern \"C\" void fn_007C5610(void)",
