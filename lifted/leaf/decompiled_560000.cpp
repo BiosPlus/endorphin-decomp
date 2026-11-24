@@ -117,3 +117,23 @@ DWORD* __thiscall fn_00569440(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_00569440
+
+// [0x0056B900]
+namespace lift_0056B900 {
+extern uint32_t mem_read32(uint32_t addr);
+
+// @name hasMultipleElements
+// @summary Returns 1 if the 4-byte-element vector at +0x28..+0x2C has more than 1 element, else 0.
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x2c uint32_t field_0x2c
+uint32_t __fastcall sub_0056B900(uint32_t ecx, uint32_t edx) {
+    (void)edx;
+    uint32_t begin = mem_read32(ecx + 0x28);
+    if (begin == 0) {
+        return 0;
+    }
+    uint32_t end = mem_read32(ecx + 0x2c);
+    uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(end - begin) >> 2);
+    return (count > 1u) ? 1u : 0u;
+}
+} // namespace lift_0056B900

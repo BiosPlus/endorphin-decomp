@@ -1,0 +1,27 @@
+{
+  "va": "0x0056B900",
+  "size": 41,
+  "orig_symbol": "sub_0056B900",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "hasMultipleElements",
+  "signature": "uint32_t __fastcall sub_0056B900(uint32_t ecx, uint32_t edx)",
+  "summary": "Returns 1 if the 4-byte-element vector at +0x28..+0x2C has more than 1 element, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:01:30Z"
+}
