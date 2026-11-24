@@ -276,3 +276,30 @@ void fn_006CA6B0(void* dst, void* self) {
     std::memcpy(dst, src, 10 * sizeof(uint32_t));
 }
 } // namespace lift_006CA6B0
+
+// [0x006CE080] sub_006CE080 (32 bytes)
+namespace lift_006CE080 {
+namespace lift_006CE080 {
+// @name Unknown::SetValues0x48
+// @class Unknown
+// @summary Stores two dwords and one double-as-float into this at +0x48, +0x4C, +0x50; returns 0 (ret 0x10).
+// @field Unknown +0x48 uint32_t field_0x48
+// @field Unknown +0x4C uint32_t field_0x4C
+// @field Unknown +0x50 float field_0x50
+
+// Guest calling convention: thiscall (this in ecx), 16 bytes of stack args (ret 0x10):
+//   arg1 = [esp+4]  (uint32)
+//   arg2 = [esp+8]  (uint32)
+//   arg3 = [esp+12] (double, 8 bytes; loaded with fld qword and stored with fstp dword,
+//                    i.e. narrowed to float32)
+// Returns 0 in eax.
+extern uint32_t __thiscall fn_006CE080(void* self, uint32_t arg1, uint32_t arg2, double arg3) {
+    uint8_t* p = static_cast<uint8_t*>(self);
+    std::memcpy(p + 0x48, &arg1, sizeof(uint32_t));
+    std::memcpy(p + 0x4C, &arg2, sizeof(uint32_t));
+    float f = static_cast<float>(arg3);
+    std::memcpy(p + 0x50, &f, sizeof(float));
+    return 0;
+}
+} // namespace lift_006CE080
+} // namespace lift_006CE080

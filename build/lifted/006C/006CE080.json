@@ -1,0 +1,34 @@
+{
+  "va": "0x006CE080",
+  "size": 32,
+  "orig_symbol": "sub_006CE080",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::SetValues0x48",
+  "class": "Unknown",
+  "signature": "extern uint32_t __thiscall fn_006CE080(void* self, uint32_t arg1, uint32_t arg2, double arg3)",
+  "summary": "Stores two dwords and one double-as-float into this at +0x48, +0x4C, +0x50; returns 0 (ret 0x10).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "uint32_t",
+      "name": "field_0x4C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "float",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:34:11Z"
+}

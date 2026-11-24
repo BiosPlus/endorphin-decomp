@@ -36639,6 +36639,13 @@
     "summary": "Getter returning int32_t field at offset +0x40.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006CE080": {
+    "name": "Unknown::SetValues0x48",
+    "class": "Unknown",
+    "signature": "extern uint32_t __thiscall fn_006CE080(void* self, uint32_t arg1, uint32_t arg2, double arg3)",
+    "summary": "Stores two dwords and one double-as-float into this at +0x48, +0x4C, +0x50; returns 0 (ret 0x10).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006D03D0": {
     "name": "sub_006D03D0",
     "signature": "extern \"C\" void __fastcall fn_006D03D0(void* self)",
