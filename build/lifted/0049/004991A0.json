@@ -4,11 +4,41 @@
   "orig_symbol": "NMData::Transition::vfunc_15_off_8",
   "src_path": "src/NMData/Transition.cpp",
   "lifted_path": "lifted/NMData/Transition.cpp",
-  "name": "NMData::Transition::vfunc_15_off_8",
+  "name": "NMData::Transition::vfunc_4_off_8",
   "class": "NMData::Transition",
-  "signature": "uint32_t* fn_004991A0(void* self, uint32_t* out, int32_t kind)",
-  "summary": "If kind == 2, initialises out via ext_00671F30; otherwise forwards this+0x60 and out to ext_00499130. Returns out.",
+  "signature": "uint32_t fn_00496FE0(void* self)",
+  "summary": "Forwards to ext_004871D0 when +0xB0 is null; otherwise calls vtable slot 1 of the object at +0xB0+0x10 and returns its result.",
   "fields": [
+    {
+      "class": "NMData::Transition",
+      "offset": "+0xB0",
+      "type": "void*",
+      "name": "field_0xB0"
+    },
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x8C",
+      "type": "void*",
+      "name": "field_0x8C"
+    },
+    {
+      "class": "NMData::Transition",
+      "offset": "+0xB8",
+      "type": "void*",
+      "name": "field_0xB8"
+    },
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x84",
+      "type": "void*",
+      "name": "field_0x84"
+    },
     {
       "class": "NMData::Transition",
       "offset": "+0x60",
@@ -18,5 +48,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T14:39:43Z"
+  "lifted_at": "2026-11-24T14:39:49Z"
 }
