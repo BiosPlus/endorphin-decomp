@@ -34663,6 +34663,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00454BE0 (sub_00454BE0_storeArgAndTailCallSubobject).",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
+  "0x006B67E0": {
+    "name": "SendUserMessage_WM_USER_6F",
+    "class": "\u003cunknown\u003e",
+    "signature": "int __thiscall fn_006B67E0(void* self, WPARAM a1, LPARAM a2)",
+    "summary": "Forwards two stack arguments to the window at this+0x74 via SendMessageA(WM_USER+0x6F) and returns 0.",
+    "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
   "0x006B6940": {
     "name": "GWCPropInPlaceSpinEdit::vfunc_1",
     "class": "GWCPropInPlaceSpinEdit",

@@ -801,3 +801,19 @@ void __thiscall sub_006B7DC0(uint8_t* self, uint32_t packed) {
     *reinterpret_cast<uint32_t*>(self + 0x84) = packed >> 16;
 }
 } // namespace lift_006B7DC0
+
+// [0x006B67E0] sub_006B67E0 (30 bytes)
+namespace lift_006B67E0 {
+// USER32!SendMessageA (imported through IAT slot at 0x00925694)
+extern LRESULT ext_SendMessageA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+
+// @name SendUserMessage_WM_USER_6F
+// @class <unknown>
+// @summary Forwards two stack arguments to the window at this+0x74 via SendMessageA(WM_USER+0x6F) and returns 0.
+// @field <unknown> +0x74 HWND field_0x74
+int __thiscall fn_006B67E0(void* self, WPARAM a1, LPARAM a2) {
+    HWND hwnd = lift_field<HWND>(self, 0x74);
+    ext_SendMessageA(hwnd, 0x46F, a1, a2);
+    return 0;
+}
+} // namespace lift_006B67E0
