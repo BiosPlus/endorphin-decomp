@@ -25538,6 +25538,13 @@
     "summary": "IAT jump thunk forwarding to GLU32!gluPerspective.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0063E0C0": {
+    "name": "Unknown::Unknown(uint32_t, const std::string\u0026) (string-copy ctor stub)",
+    "class": "\u003cunknown\u003e (this is in ecx; owning class not yet recovered)",
+    "signature": "void* __thiscall fn_0063E0C0(void* self, uint32_t arg0, const void* name)",
+    "summary": "Stamps vtable 0x0097CB4C at +0x00, copy-constructs a std::string from the second argument into this+0x04, stores the first argument at +0x20, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063E0F0": {
     "name": "sub_0063E0F0",
     "class": "\u003cunknown\u003e (this is in ecx; owning class not yet recovered)",

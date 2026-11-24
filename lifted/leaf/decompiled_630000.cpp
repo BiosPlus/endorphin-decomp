@@ -82,3 +82,25 @@ BOOLEAN fn_0063EA50(void* self) {
 }
 } // namespace lift_00480280
 } // namespace lift_0063EA50
+
+// [0x0063E0C0] sub_0063E0C0 (36 bytes)
+namespace lift_0063E0C0 {
+// MSVCP80 std::basic_string<char> copy-constructor import (IAT slot 0x00924FE0).
+extern int mem_00924FE0;
+
+// Import thunk for the MSVCP80 basic_string copy-constructor (called via mem_00924FE0).
+extern void __thiscall ext_00924FE0(void* self, const void* other);
+
+// @name Unknown::Unknown(uint32_t, const std::string&) (string-copy ctor stub)
+// @class <unknown> (this is in ecx; owning class not yet recovered)
+// @summary Stamps vtable 0x0097CB4C at +0x00, copy-constructs a std::string from the second argument into this+0x04, stores the first argument at +0x20, and returns this.
+// @field <unknown> +0x00 uint32_t vftable
+// @field <unknown> +0x04 uint8_t field_0x04[0x1C]
+// @field <unknown> +0x20 uint32_t field_0x20
+void* __thiscall fn_0063E0C0(void* self, uint32_t arg0, const void* name) {
+    lift_field<uint32_t>(self, 0x00) = 0x97CB4Cu;                 // mov dword ptr [esi], 0x97cb4c
+    ext_00924FE0(static_cast<uint8_t*>(self) + 4, name);          // lea ecx,[esi+4]; call [0x924fe0] (basic_string copy ctor)
+    lift_field<uint32_t>(self, 0x20) = arg0;                      // mov [esi+0x20], ecx (ecx = first arg)
+    return self;                                                  // mov eax, esi
+}
+} // namespace lift_0063E0C0
