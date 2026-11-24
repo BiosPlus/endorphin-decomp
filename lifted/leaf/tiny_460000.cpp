@@ -433,3 +433,39 @@ uint8_t fn_0046F910(void* self) {
     return lift_field<uint8_t>(inner, 0x12C);
 }
 } // namespace lift_0046F910
+
+// [0x0046FE50] sub_0046FE50 (19 bytes)
+namespace lift_0046FE50 {
+// @name sub_0046FE50
+// @summary Auto-lifted identical-shape clone of 0x005355B0 (OglRenderer::vfunc_71).
+namespace lift_005355B0 {
+// @name OglRenderer::vfunc_71
+// @class OglRenderer
+// @summary Returns the byte flag at delegate_0x38->field_0x64->+0xC4.
+// @field OglRenderer +0x38 void* delegate_0x38
+uint8_t fn_0046FE50(void* self) {
+    char* renderer = static_cast<char*>(self);
+    char* delegate = *reinterpret_cast<char**>(renderer + 0xCC);
+    char* inner = *reinterpret_cast<char**>(delegate + 0x26C);
+    return *reinterpret_cast<uint8_t*>(inner + 0x1F0);
+}
+} // namespace lift_005355B0
+} // namespace lift_0046FE50
+
+// [0x0046FE70] sub_0046FE70 (19 bytes)
+namespace lift_0046FE70 {
+// @name sub_0046FE70
+// @summary Auto-lifted identical-shape clone of 0x005355B0 (OglRenderer::vfunc_71).
+namespace lift_005355B0 {
+// @name OglRenderer::vfunc_71
+// @class OglRenderer
+// @summary Returns the byte flag at delegate_0x38->field_0x64->+0xC4.
+// @field OglRenderer +0x38 void* delegate_0x38
+uint8_t fn_0046FE70(void* self) {
+    char* renderer = static_cast<char*>(self);
+    char* delegate = *reinterpret_cast<char**>(renderer + 0xCC);
+    char* inner = *reinterpret_cast<char**>(delegate + 0x26C);
+    return *reinterpret_cast<uint8_t*>(inner + 0x1F1);
+}
+} // namespace lift_005355B0
+} // namespace lift_0046FE70

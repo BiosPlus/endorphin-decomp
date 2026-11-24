@@ -1,0 +1,28 @@
+{
+  "va": "0x0071B100",
+  "size": 16,
+  "orig_symbol": "sub_0071B100",
+  "src_path": "src/leaf/tiny_710000.cpp",
+  "lifted_path": "lifted/leaf/tiny_710000.cpp",
+  "name": "sub_0071B100",
+  "class": "VMCSModes::DefaultImplementation",
+  "signature": "void fn_0071B100(void* self, uint32_t value)",
+  "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+  "fields": [
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "delegate_0x8"
+    },
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:20:47Z"
+}

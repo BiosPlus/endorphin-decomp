@@ -1,0 +1,40 @@
+{
+  "va": "0x004023A0",
+  "size": 19,
+  "orig_symbol": "AVIIO::vfunc_22",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "AVIIO::vfunc_22",
+  "class": "AVIIO",
+  "signature": "void fn_004023A0(void* self, uint32_t value)",
+  "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+  "fields": [
+    {
+      "class": "AVIIO",
+      "offset": "+0x470",
+      "type": "void*",
+      "name": "field_0x470"
+    },
+    {
+      "class": "AVIIO",
+      "offset": "+0xD4",
+      "type": "uint32_t",
+      "name": "field_0xD4"
+    },
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "delegate_0x8"
+    },
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:20:47Z"
+}

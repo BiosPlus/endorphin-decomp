@@ -5038,3 +5038,63 @@ float fn_005355D0(void* self) {
     return *reinterpret_cast<float*>(inner + 0xB8);
 }
 } // namespace lift_005355D0
+
+// [0x00402380] AVIIO::vfunc_21 (19 bytes)
+namespace lift_00402380 {
+// @name AVIIO::vfunc_21
+// @class AVIIO
+// @summary Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).
+// @field AVIIO +0x470 void* field_0x470
+// @field AVIIO +0xD0 uint32_t field_0xD0
+namespace lift_004F9840 {
+// @name VMCSModes::DefaultImplementation::vfunc_16
+// @class VMCSModes::DefaultImplementation
+// @summary Stores the argument into the field at +0x3c of the object referenced by this->+0x8.
+// @field VMCSModes::DefaultImplementation +0x08 void* delegate_0x8
+// @field VMCSModes::DefaultImplementation +0x3c uint32_t field_0x3c
+void fn_00402380(void* self, uint32_t value) {
+    void* target = lift_field<void*>(self, 0x470);
+    lift_field<uint32_t>(target, 0xD0) = value;
+}
+} // namespace lift_004F9840
+} // namespace lift_00402380
+
+// [0x004023A0] AVIIO::vfunc_22 (19 bytes)
+namespace lift_004023A0 {
+// @name AVIIO::vfunc_22
+// @class AVIIO
+// @summary Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).
+// @field AVIIO +0x470 void* field_0x470
+// @field AVIIO +0xD4 uint32_t field_0xD4
+namespace lift_004F9840 {
+// @name VMCSModes::DefaultImplementation::vfunc_16
+// @class VMCSModes::DefaultImplementation
+// @summary Stores the argument into the field at +0x3c of the object referenced by this->+0x8.
+// @field VMCSModes::DefaultImplementation +0x08 void* delegate_0x8
+// @field VMCSModes::DefaultImplementation +0x3c uint32_t field_0x3c
+void fn_004023A0(void* self, uint32_t value) {
+    void* target = lift_field<void*>(self, 0x470);
+    lift_field<uint32_t>(target, 0xD4) = value;
+}
+} // namespace lift_004F9840
+} // namespace lift_004023A0
+
+// [0x005353F0] OglRenderer::vfunc_11 (16 bytes)
+namespace lift_005353F0 {
+// @name OglRenderer::vfunc_11
+// @class OglRenderer
+// @summary Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).
+// @field OglRenderer +0x38 void* field_0x38
+// @field OglRenderer +0x80 uint32_t field_0x80
+namespace lift_004F9840 {
+// @name VMCSModes::DefaultImplementation::vfunc_16
+// @class VMCSModes::DefaultImplementation
+// @summary Stores the argument into the field at +0x3c of the object referenced by this->+0x8.
+// @field VMCSModes::DefaultImplementation +0x08 void* delegate_0x8
+// @field VMCSModes::DefaultImplementation +0x3c uint32_t field_0x3c
+void fn_005353F0(void* self, uint32_t value) {
+    void* target = lift_field<void*>(self, 0x38);
+    lift_field<uint32_t>(target, 0x80) = value;
+}
+} // namespace lift_004F9840
+} // namespace lift_005353F0

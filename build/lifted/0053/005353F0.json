@@ -1,0 +1,40 @@
+{
+  "va": "0x005353F0",
+  "size": 16,
+  "orig_symbol": "OglRenderer::vfunc_11",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "OglRenderer::vfunc_11",
+  "class": "OglRenderer",
+  "signature": "void fn_005353F0(void* self, uint32_t value)",
+  "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x80",
+      "type": "uint32_t",
+      "name": "field_0x80"
+    },
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "delegate_0x8"
+    },
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:20:47Z"
+}

@@ -1541,3 +1541,156 @@ void __fastcall sub_007101E0(uint32_t ecx, uint32_t edx) {
     reinterpret_cast<void(__fastcall *)(uint32_t, uint32_t)>(static_cast<uintptr_t>(fn))(obj, edx);
 }
 } // namespace lift_007101E0
+
+// [0x00715560] sub_00715560 (16 bytes)
+namespace lift_00715560 {
+// @name sub_00715560
+// @summary Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).
+namespace lift_004F9840 {
+// @name VMCSModes::DefaultImplementation::vfunc_16
+// @class VMCSModes::DefaultImplementation
+// @summary Stores the argument into the field at +0x3c of the object referenced by this->+0x8.
+// @field VMCSModes::DefaultImplementation +0x08 void* delegate_0x8
+// @field VMCSModes::DefaultImplementation +0x3c uint32_t field_0x3c
+void fn_00715560(void* self, uint32_t value) {
+    void* target = lift_field<void*>(self, 0x10);
+    lift_field<uint32_t>(target, 0x160) = value;
+}
+} // namespace lift_004F9840
+} // namespace lift_00715560
+
+// [0x0071B100] sub_0071B100 (16 bytes)
+namespace lift_0071B100 {
+// @name sub_0071B100
+// @summary Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).
+namespace lift_004F9840 {
+// @name VMCSModes::DefaultImplementation::vfunc_16
+// @class VMCSModes::DefaultImplementation
+// @summary Stores the argument into the field at +0x3c of the object referenced by this->+0x8.
+// @field VMCSModes::DefaultImplementation +0x08 void* delegate_0x8
+// @field VMCSModes::DefaultImplementation +0x3c uint32_t field_0x3c
+void fn_0071B100(void* self, uint32_t value) {
+    void* target = lift_field<void*>(self, 0xC);
+    lift_field<uint32_t>(target, 0x1850) = value;
+}
+} // namespace lift_004F9840
+} // namespace lift_0071B100
+
+// [0x0071BFB0] sub_0071BFB0 (16 bytes)
+namespace lift_0071BFB0 {
+// @name sub_0071BFB0
+// @summary Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).
+namespace lift_004F9840 {
+// @name VMCSModes::DefaultImplementation::vfunc_16
+// @class VMCSModes::DefaultImplementation
+// @summary Stores the argument into the field at +0x3c of the object referenced by this->+0x8.
+// @field VMCSModes::DefaultImplementation +0x08 void* delegate_0x8
+// @field VMCSModes::DefaultImplementation +0x3c uint32_t field_0x3c
+void fn_0071BFB0(void* self, uint32_t value) {
+    void* target = lift_field<void*>(self, 0xC);
+    lift_field<uint32_t>(target, 0x408) = value;
+}
+} // namespace lift_004F9840
+} // namespace lift_0071BFB0
+
+// [0x0071C350] sub_0071C350 (16 bytes)
+namespace lift_0071C350 {
+// @name sub_0071C350
+// @summary Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).
+namespace lift_004F9840 {
+// @name VMCSModes::DefaultImplementation::vfunc_16
+// @class VMCSModes::DefaultImplementation
+// @summary Stores the argument into the field at +0x3c of the object referenced by this->+0x8.
+// @field VMCSModes::DefaultImplementation +0x08 void* delegate_0x8
+// @field VMCSModes::DefaultImplementation +0x3c uint32_t field_0x3c
+void fn_0071C350(void* self, uint32_t value) {
+    void* target = lift_field<void*>(self, 0xC);
+    lift_field<uint32_t>(target, 0xF48) = value;
+}
+} // namespace lift_004F9840
+} // namespace lift_0071C350
+
+// [0x0071C370] sub_0071C370 (16 bytes)
+namespace lift_0071C370 {
+// @name sub_0071C370
+// @summary Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).
+namespace lift_004F9840 {
+// @name VMCSModes::DefaultImplementation::vfunc_16
+// @class VMCSModes::DefaultImplementation
+// @summary Stores the argument into the field at +0x3c of the object referenced by this->+0x8.
+// @field VMCSModes::DefaultImplementation +0x08 void* delegate_0x8
+// @field VMCSModes::DefaultImplementation +0x3c uint32_t field_0x3c
+void fn_0071C370(void* self, uint32_t value) {
+    void* target = lift_field<void*>(self, 0xC);
+    lift_field<uint32_t>(target, 0x1498) = value;
+}
+} // namespace lift_004F9840
+} // namespace lift_0071C370
+
+// [0x0071C4B0] sub_0071C4B0 (16 bytes)
+namespace lift_0071C4B0 {
+// @name sub_0071C4B0
+// @summary Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).
+namespace lift_004F9840 {
+// @name VMCSModes::DefaultImplementation::vfunc_16
+// @class VMCSModes::DefaultImplementation
+// @summary Stores the argument into the field at +0x3c of the object referenced by this->+0x8.
+// @field VMCSModes::DefaultImplementation +0x08 void* delegate_0x8
+// @field VMCSModes::DefaultImplementation +0x3c uint32_t field_0x3c
+void fn_0071C4B0(void* self, uint32_t value) {
+    void* target = lift_field<void*>(self, 0xC);
+    lift_field<uint32_t>(target, 0x1058) = value;
+}
+} // namespace lift_004F9840
+} // namespace lift_0071C4B0
+
+// [0x0071C5F0] sub_0071C5F0 (16 bytes)
+namespace lift_0071C5F0 {
+// @name sub_0071C5F0
+// @summary Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).
+namespace lift_004F9840 {
+// @name VMCSModes::DefaultImplementation::vfunc_16
+// @class VMCSModes::DefaultImplementation
+// @summary Stores the argument into the field at +0x3c of the object referenced by this->+0x8.
+// @field VMCSModes::DefaultImplementation +0x08 void* delegate_0x8
+// @field VMCSModes::DefaultImplementation +0x3c uint32_t field_0x3c
+void fn_0071C5F0(void* self, uint32_t value) {
+    void* target = lift_field<void*>(self, 0xC);
+    lift_field<uint32_t>(target, 0x16B8) = value;
+}
+} // namespace lift_004F9840
+} // namespace lift_0071C5F0
+
+// [0x0071C930] sub_0071C930 (16 bytes)
+namespace lift_0071C930 {
+// @name sub_0071C930
+// @summary Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).
+namespace lift_004F9840 {
+// @name VMCSModes::DefaultImplementation::vfunc_16
+// @class VMCSModes::DefaultImplementation
+// @summary Stores the argument into the field at +0x3c of the object referenced by this->+0x8.
+// @field VMCSModes::DefaultImplementation +0x08 void* delegate_0x8
+// @field VMCSModes::DefaultImplementation +0x3c uint32_t field_0x3c
+void fn_0071C930(void* self, uint32_t value) {
+    void* target = lift_field<void*>(self, 0xC);
+    lift_field<uint32_t>(target, 0x1D18) = value;
+}
+} // namespace lift_004F9840
+} // namespace lift_0071C930
+
+// [0x0071C990] sub_0071C990 (16 bytes)
+namespace lift_0071C990 {
+// @name sub_0071C990
+// @summary Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).
+namespace lift_004F9840 {
+// @name VMCSModes::DefaultImplementation::vfunc_16
+// @class VMCSModes::DefaultImplementation
+// @summary Stores the argument into the field at +0x3c of the object referenced by this->+0x8.
+// @field VMCSModes::DefaultImplementation +0x08 void* delegate_0x8
+// @field VMCSModes::DefaultImplementation +0x3c uint32_t field_0x3c
+void fn_0071C990(void* self, uint32_t value) {
+    void* target = lift_field<void*>(self, 0xC);
+    lift_field<uint32_t>(target, 0x19E8) = value;
+}
+} // namespace lift_004F9840
+} // namespace lift_0071C990

@@ -182,6 +182,20 @@
     "summary": "Pure jump thunk forwarding to sub_00401D20.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00402380": {
+    "name": "AVIIO::vfunc_21",
+    "class": "AVIIO",
+    "signature": "void fn_00402380(void* self, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x004023A0": {
+    "name": "AVIIO::vfunc_22",
+    "class": "AVIIO",
+    "signature": "void fn_004023A0(void* self, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x004023C0": {
     "name": "AVIIO::vfunc_23",
     "class": "AVIIO",
@@ -3610,6 +3624,20 @@
     "signature": "void __thiscall fn_0046FAC0(void* self)",
     "summary": "Loads the 32-bit value at [ecx+0x00] and passes it to thunk_MFC80_ord_764.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
+  "0x0046FE50": {
+    "name": "sub_0046FE50",
+    "class": "OglRenderer",
+    "signature": "uint8_t fn_0046FE50(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005355B0 (OglRenderer::vfunc_71).",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
+  "0x0046FE70": {
+    "name": "sub_0046FE70",
+    "class": "OglRenderer",
+    "signature": "uint8_t fn_0046FE70(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005355B0 (OglRenderer::vfunc_71).",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
   "0x0046FF70": {
     "name": "RuntimeEngine::AdvanceVisibleFrameTicker::vfunc_0",
@@ -10657,6 +10685,13 @@
     "class": "Light",
     "signature": "extern \"C\" void* __fastcall fn_00534640(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_0054E360 and frees memory when (flags \u0026 1) is set.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x005353F0": {
+    "name": "OglRenderer::vfunc_11",
+    "class": "OglRenderer",
+    "signature": "void fn_005353F0(void* self, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
   "0x005355B0": {
@@ -32883,6 +32918,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00700840 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00700980": {
+    "name": "sub_00700980",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "void fn_00700980(void* self, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x007019D0": {
     "name": "sub_007019D0",
     "signature": "extern \"C\" int32_t __cdecl fn_007019D0(void)",
@@ -33999,6 +34041,13 @@
     "summary": "Getter returning int32_t field at offset +0xC.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x00715560": {
+    "name": "sub_00715560",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "void fn_00715560(void* self, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x00717D40": {
     "name": "sub_00717D40",
     "signature": "extern \"C\" void* __fastcall fn_00717D40(void* self, int edx_unused, unsigned int flags)",
@@ -34179,6 +34228,41 @@
     "summary": "Returns constant 0x7.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071B100": {
+    "name": "sub_0071B100",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "void fn_0071B100(void* self, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071BFB0": {
+    "name": "sub_0071BFB0",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "void fn_0071BFB0(void* self, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C350": {
+    "name": "sub_0071C350",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "void fn_0071C350(void* self, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C370": {
+    "name": "sub_0071C370",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "void fn_0071C370(void* self, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C4B0": {
+    "name": "sub_0071C4B0",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "void fn_0071C4B0(void* self, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x0071C570": {
     "name": "sub_0071C570",
     "signature": "extern \"C\" void __fastcall fn_0071C570(void* self, int edx_unused, uint8_t value)",
@@ -34203,6 +34287,13 @@
     "summary": "Getter returning uint8_t field at offset +0xE9.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C5F0": {
+    "name": "sub_0071C5F0",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "void fn_0071C5F0(void* self, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x0071C610": {
     "name": "sub_0071C610",
     "signature": "extern \"C\" void __fastcall fn_0071C610(void* self, int edx_unused, uint8_t value)",
@@ -34225,6 +34316,20 @@
     "name": "sub_0071C920",
     "signature": "extern \"C\" int32_t __fastcall fn_0071C920(void* self)",
     "summary": "Getter returning int32_t field at offset +0x110.",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C930": {
+    "name": "sub_0071C930",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "void fn_0071C930(void* self, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C990": {
+    "name": "sub_0071C990",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "void fn_0071C990(void* self, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
   "0x0071DCB0": {

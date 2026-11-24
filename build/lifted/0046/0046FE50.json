@@ -1,0 +1,22 @@
+{
+  "va": "0x0046FE50",
+  "size": 19,
+  "orig_symbol": "sub_0046FE50",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "sub_0046FE50",
+  "class": "OglRenderer",
+  "signature": "uint8_t fn_0046FE50(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x005355B0 (OglRenderer::vfunc_71).",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "delegate_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:20:47Z"
+}
