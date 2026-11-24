@@ -1,0 +1,13 @@
+{
+  "va": "0x00719A60",
+  "size": 44,
+  "orig_symbol": "sub_00719A60",
+  "src_path": "src/clones/auto_clones_710000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_710000.cpp",
+  "name": "isKnownGlobalHandle",
+  "signature": "uint8_t __stdcall sub_00719A60(uint32_t a1)",
+  "summary": "Checks whether the given 32-bit value matches one of three global handles.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:10:50Z"
+}
