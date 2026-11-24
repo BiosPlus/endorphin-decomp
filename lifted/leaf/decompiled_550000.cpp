@@ -34,3 +34,16 @@ uint8_t descriptiveName_00553960(void* arg) {
     return 1;
 }
 } // namespace lift_00553960
+
+// [0x00554CE0] sub_00554CE0 (27 bytes)
+namespace lift_00554CE0 {
+extern float ext_005530B0(float x);
+
+// @name descriptiveName_00554CE0
+// @summary Returns the argument passed through ext_005530B0, scaled by the float at self+0x20.
+// @field (unknown) +0x20 float field_0x20
+float fn_00554CE0(void* self, float x) {
+    const float scale = *reinterpret_cast<float*>(reinterpret_cast<uint8_t*>(self) + 0x20);
+    return ext_005530B0(x) * scale;
+}
+} // namespace lift_00554CE0

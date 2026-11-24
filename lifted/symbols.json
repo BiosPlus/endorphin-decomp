@@ -14304,6 +14304,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051C7A0 (NMData::QuatChannel::vfunc_9).",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x00554CE0": {
+    "name": "descriptiveName_00554CE0",
+    "signature": "float fn_00554CE0(void* self, float x)",
+    "summary": "Returns the argument passed through ext_005530B0, scaled by the float at self+0x20.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00557260": {
     "name": "sub_00557260",
     "signature": "extern \"C\" void __fastcall fn_00557260(void* self)",
