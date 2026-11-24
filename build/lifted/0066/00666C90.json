@@ -1,0 +1,28 @@
+{
+  "va": "0x00666C90",
+  "size": 31,
+  "orig_symbol": "sub_00666C90",
+  "src_path": "src/leaf/tiny_660000.cpp",
+  "lifted_path": "lifted/leaf/tiny_660000.cpp",
+  "name": "Unknown::FindParentOfFirstFlaggedChild",
+  "class": "Unknown",
+  "signature": "void* fn_00666C90(void* self)",
+  "summary": "Walks the +0x08 link chain starting at the child of self; returns the node whose +0x08 child is the first node with byte +0xC1 != 0 (returns self if its own child is already flagged). Ret 4 (one stack arg).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC1",
+      "type": "uint8_t",
+      "name": "field_0xC1"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:26:11Z"
+}

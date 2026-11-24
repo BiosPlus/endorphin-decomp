@@ -27153,6 +27153,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x0 and tail-calls sub_006667A0.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x00666C90": {
+    "name": "Unknown::FindParentOfFirstFlaggedChild",
+    "class": "Unknown",
+    "signature": "void* fn_00666C90(void* self)",
+    "summary": "Walks the +0x08 link chain starting at the child of self; returns the node whose +0x08 child is the first node with byte +0xC1 != 0 (returns self if its own child is already flagged). Ret 4 (one stack arg).",
+    "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
   "0x00666CB0": {
     "name": "Unknown::sub_00666CB0",
     "class": "Unknown",

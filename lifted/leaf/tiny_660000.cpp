@@ -507,3 +507,24 @@ int fn_006616D0(void* self, const void* other) {
     return a1 == b1 ? 1 : 0;
 }
 } // namespace lift_006616D0
+
+// [0x00666C90]
+namespace lift_00666C90 {
+// @name Unknown::FindParentOfFirstFlaggedChild
+// @class Unknown
+// @summary Walks the +0x08 link chain starting at the child of self; returns the node whose +0x08 child is the first node with byte +0xC1 != 0 (returns self if its own child is already flagged). Ret 4 (one stack arg).
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0xC1 uint8_t field_0xC1
+void* fn_00666C90(void* self) {
+    void* eax = self;
+    void* ecx = lift_field<void*>(eax, 0x08);
+    if (lift_field<uint8_t>(ecx, 0xC1) != 0) {
+        return eax;
+    }
+    do {
+        eax = ecx;
+        ecx = lift_field<void*>(eax, 0x08);
+    } while (lift_field<uint8_t>(ecx, 0xC1) == 0);
+    return eax;
+}
+} // namespace lift_00666C90
