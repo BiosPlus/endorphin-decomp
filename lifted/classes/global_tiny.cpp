@@ -5970,3 +5970,16 @@ void fn_00535610(void* self, uint8_t value) {
     lift_field<uint8_t>(b, 0xC4) = value;
 }
 } // namespace lift_00535610
+
+// [0x00535630] OglRenderer::vfunc_35 (19 bytes)
+namespace lift_00535630 {
+// @name OglRenderer::vfunc_35
+// @class OglRenderer
+// @summary Stores a float argument into the float slot at +0xB4 of the object referenced by this->+0x38->+0x64.
+// @field OglRenderer +0x38 void* field_0x38
+void fn_00535630(void* self, float value) {
+    uint8_t* a = *reinterpret_cast<uint8_t**>(static_cast<uint8_t*>(self) + 0x38);
+    uint8_t* b = *reinterpret_cast<uint8_t**>(a + 0x64);
+    *reinterpret_cast<float*>(b + 0xB4) = value;
+}
+} // namespace lift_00535630

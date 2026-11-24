@@ -1,0 +1,22 @@
+{
+  "va": "0x00535630",
+  "size": 19,
+  "orig_symbol": "OglRenderer::vfunc_35",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "OglRenderer::vfunc_35",
+  "class": "OglRenderer",
+  "signature": "void fn_00535630(void* self, float value)",
+  "summary": "Stores a float argument into the float slot at +0xB4 of the object referenced by this-\u003e+0x38-\u003e+0x64.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:02:30Z"
+}

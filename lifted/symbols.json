@@ -11765,6 +11765,13 @@
     "summary": "Returns the address of the global data slot mem_0092CE00 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00535630": {
+    "name": "OglRenderer::vfunc_35",
+    "class": "OglRenderer",
+    "signature": "void fn_00535630(void* self, float value)",
+    "summary": "Stores a float argument into the float slot at +0xB4 of the object referenced by this-\u003e+0x38-\u003e+0x64.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x005356B0": {
     "name": "OglRenderer::vfunc_39",
     "class": "OglRenderer",
