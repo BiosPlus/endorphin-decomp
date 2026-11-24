@@ -347,3 +347,30 @@ void __thiscall fn_005B18E0(void* self, const void* src_string) {
     base[0x04] = 1;
 }
 } // namespace lift_005B18E0
+
+// [0x005B7040] sub_005B7040 (28 bytes)
+namespace lift_005B7040 {
+// @name Unknown::forwardToSubobjectVfunc3_005B7040
+// @class Unknown
+// @summary If self->field_0x158 is null return 0.0f; otherwise call vtable slot 3 of
+//          the object at field_0x158->field_0x30, passing (field_0x158 + 0x24) as argument.
+// @field Unknown +0x158 void* field_0x158
+// @field Unknown +0x158 void* field_0x158  (sub-object base; +0x30 pointer, +0x24 argument address)
+float fn_005B7040(void* self) {
+    // mov eax, [ecx+0x158]
+    void* eax = lift_field<void*>(self, 0x158);
+    // test eax, eax ; je -> return 0.0f (fldz)
+    if (eax == nullptr) {
+        return 0.0f;
+    }
+    // mov ecx, [eax+0x30] ; mov edx, [ecx]  (vtable of the sub-object)
+    void* ecx = lift_field<void*>(eax, 0x30);
+    void** vtable = lift_field<void**>(ecx, 0);
+    // lea eax, [eax+0x24] ; push eax  (argument)
+    void* arg = static_cast<uint8_t*>(eax) + 0x24;
+    // mov eax, [edx+0xc] ; call eax  (vtable slot 3, thiscall-style: this = ecx)
+    using VFn3 = float (*)(void* thisPtr, void* arg);
+    auto fn = reinterpret_cast<VFn3>(vtable[3]);
+    return fn(ecx, arg);
+}
+} // namespace lift_005B7040

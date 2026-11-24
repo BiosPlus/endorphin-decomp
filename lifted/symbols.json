@@ -17267,6 +17267,13 @@
     "summary": "If self+0x158 holds a sub-object pointer, tail-forwards to fn_006481E0 on that sub-object (passing its +0xAC pointer); otherwise yields zero.",
     "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
   },
+  "0x005B7040": {
+    "name": "Unknown::forwardToSubobjectVfunc3_005B7040",
+    "class": "Unknown",
+    "signature": "float fn_005B7040(void* self)",
+    "summary": "If self-\u003efield_0x158 is null return 0.0f; otherwise call vtable slot 3 of",
+    "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
+  },
   "0x005B7240": {
     "name": "sub_005B7240",
     "class": "Unknown",
