@@ -36448,6 +36448,13 @@
     "summary": "Getter returning int32_t field at offset +0x4C.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C9A90": {
+    "name": "Unknown::InitDefaults",
+    "class": "Unknown",
+    "signature": "uint8_t* sub_006C9A90(uint8_t* ecx)",
+    "summary": "Zeroes the 0x18-byte state block at this, stores 0.33333334f at +0x04, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C9C30": {
     "name": "sub_006C9C30",
     "signature": "uint32_t sub_006C9C30(uint8_t* ecx)",

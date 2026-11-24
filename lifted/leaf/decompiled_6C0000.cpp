@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_6C0000.cpp
 #include "lift_compat.h"
+#include <cstdint>
+#include <cstring>
 
-// [0x006CA060] sub_006CA060 (13 bytes)
+#include <cstring>
 namespace lift_006CA060 {
 // @name sub_006CA060
 // @summary Auto-lifted identical-shape clone of 0x00707980 (Unknown::NotifySlot17IfSelfLinkedWrapper).
@@ -144,3 +146,34 @@ void Unknown_SetFlag0x100(Unknown* self, uint32_t arg) {
     self->flags = edx;
 }
 } // namespace lift_006C9CE0
+
+// [0x006C9A90]
+namespace lift_006C9A90 {
+// @name Unknown::InitDefaults
+// @class Unknown
+// @summary Zeroes the 0x18-byte state block at this, stores 0.33333334f at +0x04, and returns this.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 uint8_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint8_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+
+uint8_t* sub_006C9A90(uint8_t* ecx) {
+    uint8_t* self = ecx;
+
+    const uint32_t zero = 0;
+    const uint32_t third_bits = 0x3eaaaaabu;
+    float third;
+    std::memcpy(&third, &third_bits, sizeof(third));
+
+    std::memcpy(self + 0x00, &zero, sizeof(zero));
+    std::memcpy(self + 0x04, &third, sizeof(third));
+    self[0x08] = 0;
+    std::memcpy(self + 0x0C, &zero, sizeof(zero));
+    self[0x10] = 0;
+    std::memcpy(self + 0x14, &zero, sizeof(zero));
+
+    return self;
+}
+} // namespace lift_006C9A90
