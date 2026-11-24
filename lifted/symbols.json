@@ -45511,6 +45511,12 @@
     "summary": "No-op stub (add eax, 0).",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086CCC0": {
+    "name": "ReturnSelfOrChainedPtrIfCheckPasses",
+    "signature": "extern \"C\" void* __cdecl fn_0086CCC0(void* self)",
+    "summary": "Calls ext_0086CCE0(self); if it returns 1, returns the pointer stored at self+0x04, otherwise returns self.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086D600": {
     "name": "CopyQwordField1050To1048",
     "class": "(unknown owner)",

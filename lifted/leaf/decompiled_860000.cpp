@@ -126,3 +126,20 @@ void ZeroDwordRange(uint32_t* dst, uint32_t count) {
     }
 }
 } // namespace lift_00869F30
+
+// [0x0086CCC0] sub_0086CCC0 (32 bytes)
+namespace lift_0086CCC0 {
+extern uint8_t __cdecl ext_0086CCE0(void* arg);
+
+// @name ReturnSelfOrChainedPtrIfCheckPasses
+// @summary Calls ext_0086CCE0(self); if it returns 1, returns the pointer stored at self+0x04, otherwise returns self.
+// @field field_0x04 +0x04 uint32_t field_0x04 (pointer-sized value loaded when the check passes)
+extern void* __cdecl fn_0086CCC0(void* self) {
+    uint8_t ok = ext_0086CCE0(self);
+    if (ok == 1) {
+        uint32_t next = *reinterpret_cast<const uint32_t*>(static_cast<const uint8_t*>(self) + 0x04);
+        return reinterpret_cast<void*>(static_cast<uintptr_t>(next));
+    }
+    return self;
+}
+} // namespace lift_0086CCC0

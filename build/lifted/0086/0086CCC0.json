@@ -1,0 +1,21 @@
+{
+  "va": "0x0086CCC0",
+  "size": 32,
+  "orig_symbol": "sub_0086CCC0",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "ReturnSelfOrChainedPtrIfCheckPasses",
+  "signature": "extern \"C\" void* __cdecl fn_0086CCC0(void* self)",
+  "summary": "Calls ext_0086CCE0(self); if it returns 1, returns the pointer stored at self+0x04, otherwise returns self.",
+  "fields": [
+    {
+      "class": "field_0x04",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04 (pointer-sized value loaded when the check",
+      "name": "passes)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:50:34Z"
+}
