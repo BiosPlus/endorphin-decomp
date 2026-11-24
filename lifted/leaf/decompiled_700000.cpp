@@ -238,3 +238,19 @@ int32_t __fastcall fn_00706EF0(void* self) {
     return ext_006E7460(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(v))));
 }
 } // namespace lift_00706EF0
+
+// [0x0070E390] sub_0070E390 (32 bytes)
+namespace lift_0070E390 {
+// Known callee 0x00717720: sub_00717720 (160 bytes). Called with ecx = other, one stack arg = self + 0xD0.
+extern void ext_00717720(void* self, void* arg);
+
+// @name Unknown::ForwardSubObjectAt0xD0
+// @class Unknown
+// @summary Passes the address of self+0xD0 and the other object to ext_00717720, then returns the other object.
+// (No dereferenced fields: only the address self+0xD0 is taken, so no @field lines.)
+void* fn_0070E390(void* self, void* other) {
+    void* sub = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) + 0xD0);
+    ext_00717720(other, sub);
+    return other;
+}
+} // namespace lift_0070E390

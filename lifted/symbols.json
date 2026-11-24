@@ -39879,6 +39879,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0xD0 and tail-calls sub_00714580.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x0070E390": {
+    "name": "Unknown::ForwardSubObjectAt0xD0",
+    "class": "Unknown",
+    "signature": "void* fn_0070E390(void* self, void* other)",
+    "summary": "Passes the address of self+0xD0 and the other object to ext_00717720, then returns the other object.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070E6F0": {
     "name": "sub_0070E6F0",
     "signature": "extern \"C\" void* __fastcall fn_0070E6F0(void* self, int edx_unused, unsigned int flags)",
