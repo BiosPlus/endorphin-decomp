@@ -463,3 +463,34 @@ extern void fn_007DA8E0(void* out_stats, void* obj) {
     }
 }
 } // namespace lift_007DA8E0
+
+// [0x007D6290]
+namespace lift_007D6290 {
+extern uint32_t mem_r32(uint32_t addr);
+extern void mem_w32(uint32_t addr, uint32_t val);
+
+// @name setOwnedState
+// @summary Updates state at +0x10 and invokes callback at +0x1c/+0x10 on pointer at +0x00 when transitioning from 1 with +0x14 == 0.
+// @field struct +0x00 uint32_t field_0x00
+// @field struct +0x10 uint32_t field_0x10
+// @field struct +0x14 uint32_t field_0x14
+// @field struct +0x1c uint32_t field_0x1c
+
+void sub_007D6290(uint32_t arg0, uint32_t arg1) {
+    uint32_t old_val = mem_r32(arg0 + 0x10);
+    if (old_val == arg1) {
+        return;
+    }
+
+    if (mem_r32(arg0 + 0x14) == 0 && old_val == 1) {
+        uint32_t ptr = mem_r32(arg0);
+        if (ptr != 0) {
+            uint32_t ctx = mem_r32(arg0 + 0x1c);
+            uint32_t fn = mem_r32(ctx + 0x10);
+            reinterpret_cast<void (*)(uint32_t)>(static_cast<uintptr_t>(fn))(ptr);
+        }
+    }
+
+    mem_w32(arg0 + 0x10, arg1);
+}
+} // namespace lift_007D6290

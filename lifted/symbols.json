@@ -54726,6 +54726,12 @@
     "summary": "Frees a buffer via an allocator callback at +0x1c/+0x10 and clears +0x00 and +0x04.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007D6290": {
+    "name": "setOwnedState",
+    "signature": "void sub_007D6290(uint32_t arg0, uint32_t arg1)",
+    "summary": "Updates state at +0x10 and invokes callback at +0x1c/+0x10 on pointer at +0x00 when transitioning from 1 with +0x14 == 0.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D7A20": {
     "name": "sub_007D7A20",
     "signature": "extern \"C\" void* __cdecl fn_007D7A20(void)",
