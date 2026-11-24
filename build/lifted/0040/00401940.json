@@ -1,0 +1,22 @@
+{
+  "va": "0x00401940",
+  "size": 14,
+  "orig_symbol": "sub_00401940",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "Dispatch::ForwardToField4",
+  "class": "Dispatch",
+  "signature": "DWORD fn_00401940(void* self, DWORD arg)",
+  "summary": "If the pointer at this+0x04 is non-null, forward the call (this, arg) to it and return its result; otherwise return 0. Thiscall with one 4-byte stack arg (callee pops, ret 4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:23:20Z"
+}

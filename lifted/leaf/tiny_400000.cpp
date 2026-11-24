@@ -248,3 +248,24 @@ uintptr_t fn_00401730(void* self) {
 }
 } // namespace lift_00545610
 } // namespace lift_00401730
+
+// [0x00401940] sub_00401940 (14 bytes)
+namespace lift_00401940 {
+// @name Dispatch::ForwardToField4
+// @class Dispatch
+// @summary If the pointer at this+0x04 is non-null, forward the call (this, arg) to it and return its result; otherwise return 0. Thiscall with one 4-byte stack arg (callee pops, ret 4).
+// @field Unknown +0x04 void* field_0x04
+
+// Portable form of the original tail-jump: the target is invoked as a
+// thiscall taking the object pointer and the forwarded argument.
+// Returns the target's result, or 0 when the pointer is null.
+// Not a true tail call (no frame reuse); the returned value is preserved.
+DWORD fn_00401940(void* self, DWORD arg) {
+    using target_fn = DWORD(__thiscall*)(void* self, DWORD arg);
+    void* target = lift_field<void*>(self, 0x04);
+    if (target == nullptr) {
+        return 0;
+    }
+    return reinterpret_cast<target_fn>(target)(self, arg);
+}
+} // namespace lift_00401940

@@ -53,6 +53,13 @@
     "summary": "If the dword at offset 0 is non-zero, tail-dispatch to it with the same this; otherwise return 0.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x00401940": {
+    "name": "Dispatch::ForwardToField4",
+    "class": "Dispatch",
+    "signature": "DWORD fn_00401940(void* self, DWORD arg)",
+    "summary": "If the pointer at this+0x04 is non-null, forward the call (this, arg) to it and return its result; otherwise return 0. Thiscall with one 4-byte stack arg (callee pops, ret 4).",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x00401970": {
     "name": "sub_00401970",
     "signature": "void __thiscall sub_00401970(void* self)",
