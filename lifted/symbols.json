@@ -24178,6 +24178,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0064DC80": {
+    "name": "ForwardScaledFieldToCallee",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t __thiscall fn_0064DC80(void* self, float arg)",
+    "summary": "Forwards this-\u003efield_0x64 and the float argument to ext_007C5A90 and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x0064EA80": {
     "name": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const \u0026), 0}\u003e",

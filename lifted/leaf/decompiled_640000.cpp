@@ -258,3 +258,18 @@ extern void __thiscall fn_00647C50(void* self) {
 }
 } // namespace lift_00647BF0
 } // namespace lift_00647C50
+
+// [0x0064DC80] sub_0064DC80 (23 bytes)
+namespace lift_0064DC80 {
+extern uint32_t ext_007C5A90(uint32_t value, float scale);
+
+// @name ForwardScaledFieldToCallee
+// @class Unknown
+// @summary Forwards this->field_0x64 and the float argument to ext_007C5A90 and returns its result.
+// @field Unknown +0x64 uint32_t field_0x64
+extern uint32_t __thiscall fn_0064DC80(void* self, float arg) {
+    auto* base = static_cast<uint8_t*>(self);
+    uint32_t value = *reinterpret_cast<uint32_t*>(base + 0x64);
+    return ext_007C5A90(value, arg);
+}
+} // namespace lift_0064DC80

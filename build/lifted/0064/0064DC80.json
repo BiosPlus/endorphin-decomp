@@ -1,0 +1,22 @@
+{
+  "va": "0x0064DC80",
+  "size": 23,
+  "orig_symbol": "sub_0064DC80",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "ForwardScaledFieldToCallee",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint32_t __thiscall fn_0064DC80(void* self, float arg)",
+  "summary": "Forwards this-\u003efield_0x64 and the float argument to ext_007C5A90 and returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:33:47Z"
+}
