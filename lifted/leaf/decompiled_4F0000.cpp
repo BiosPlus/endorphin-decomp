@@ -21,3 +21,19 @@ void fn_004F28C0(void* self) {
     ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
 }
 } // namespace lift_004F28C0
+
+// [0x004F27E0]
+namespace lift_004F27E0 {
+// @name descriptiveName_004F27E0
+// @summary Thiscall initializer: calls ext_004F4D20(this, arg1, arg2), stores the @MO vtable at +0x00, returns this.
+// @field Unknown +0x00 DWORD vtable
+
+extern void ext_004F4D20(void* self, DWORD arg1, DWORD arg2);
+extern const char mem_0094C42C[];
+
+__thiscall void* fn_004F27E0(void* self, DWORD arg1, DWORD arg2) {
+    ext_004F4D20(self, arg1, arg2);
+    *reinterpret_cast<DWORD*>(self) = static_cast<DWORD>(reinterpret_cast<uintptr_t>(mem_0094C42C));
+    return self;
+}
+} // namespace lift_004F27E0

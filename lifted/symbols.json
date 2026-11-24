@@ -10813,6 +10813,12 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x8 and tail-calls sub_00469150.",
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
   },
+  "0x004F27E0": {
+    "name": "descriptiveName_004F27E0",
+    "signature": "__thiscall void* fn_004F27E0(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Thiscall initializer: calls ext_004F4D20(this, arg1, arg2), stores the @MO vtable at +0x00, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F2830": {
     "name": "VMCSMode::vfunc_141",
     "class": "VMCSMode",

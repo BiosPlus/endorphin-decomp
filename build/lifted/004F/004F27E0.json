@@ -1,0 +1,21 @@
+{
+  "va": "0x004F27E0",
+  "size": 32,
+  "orig_symbol": "sub_004F27E0",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "descriptiveName_004F27E0",
+  "signature": "__thiscall void* fn_004F27E0(void* self, DWORD arg1, DWORD arg2)",
+  "summary": "Thiscall initializer: calls ext_004F4D20(this, arg1, arg2), stores the @MO vtable at +0x00, returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:29:34Z"
+}
