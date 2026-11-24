@@ -1,0 +1,14 @@
+{
+  "va": "0x00642DF0",
+  "size": 81,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0\u003e",
+  "signature": "extern void* __thiscall fn_00642DF0(void* self, void* out_str, void** target_ptr)",
+  "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T14:43:42Z"
+}

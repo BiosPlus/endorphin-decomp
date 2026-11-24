@@ -32869,3 +32869,1047 @@ extern void* __thiscall fn_0049CB10(void* self, void* out_str, void** target_ptr
     return out_str;
 }
 } // namespace lift_0049CB10
+
+// [0x004A28D0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_004A28D0 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_0049AA60(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_004A28D0(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_0049AA60(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_004A28D0
+
+// [0x004A2BC0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_004A2BC0 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_0049AA50(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_004A2BC0(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_0049AA50(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_004A2BC0
+
+// [0x004A3200] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_004A3200 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_00496F30(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_004A3200(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_00496F30(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_004A3200
+
+// [0x004A3570] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_004A3570 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_00496F40(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_004A3570(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_00496F40(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_004A3570
+
+// [0x004AA3C0] ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_004AA3C0 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_004A9A60(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_004AA3C0(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_004A9A60(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_004AA3C0
+
+// [0x004AB030] ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_004AB030 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_004A9A50(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_004AB030(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_004A9A50(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_004AB030
+
+// [0x004B4500] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_004B4500 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_0048FAF0(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_004B4500(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_0048FAF0(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_004B4500
+
+// [0x004CAFD0] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_004CAFD0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_004CA2F0(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_004CAFD0(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_004CA2F0(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_004CAFD0
+
+// [0x004D57C0] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_004D57C0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_004D39B0(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_004D57C0(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_004D39B0(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_004D57C0
+
+// [0x004D5AD0] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_004D5AD0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_004D39C0(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_004D5AD0(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_004D39C0(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_004D5AD0
+
+// [0x004D7D30] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_004D7D30 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_004D3C10(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_004D7D30(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_004D3C10(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_004D7D30
+
+// [0x004D8070] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_004D8070 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_004D39F0(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_004D8070(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_004D39F0(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_004D8070
+
+// [0x004D8420] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_004D8420 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_004D3A00(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_004D8420(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_004D3A00(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_004D8420
+
+// [0x004DED10] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_004DED10 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_004DDE60(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_004DED10(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_004DDE60(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_004DED10
+
+// [0x004DF090] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_004DF090 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_004DDE50(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_004DF090(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_004DDE50(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_004DF090
+
+// [0x004DFDF0] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_004DFDF0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_004DE320(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_004DFDF0(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_004DE320(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_004DFDF0
+
+// [0x004EE870] ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>::vfunc_4 (81 bytes)
+namespace lift_004EE870 {
+// @name ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_004EDE20(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_004EE870(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_004EDE20(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_004EE870
+
+// [0x00585720] ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_00585720 {
+// @name ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_00584C00(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_00585720(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_00584C00(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_00585720
+
+// [0x005B7620] ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>::vfunc_4 (81 bytes)
+namespace lift_005B7620 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_005B64D0(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_005B7620(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_005B64D0(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_005B7620
+
+// [0x005C74E0] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_005C74E0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_005B6490(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_005C74E0(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_005B6490(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_005C74E0
+
+// [0x005C77F0] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_005C77F0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_005B6470(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_005C77F0(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_005B6470(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_005C77F0
+
+// [0x005C7A90] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_005C7A90 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_005B6480(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_005C7A90(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_005B6480(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_005C7A90
+
+// [0x005CB4F0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>::vfunc_4 (81 bytes)
+namespace lift_005CB4F0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_005C3650(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_005CB4F0(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_005C3650(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_005CB4F0
+
+// [0x005CBA30] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_005CBA30 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_005C3640(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_005CBA30(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_005C3640(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_005CBA30
+
+// [0x005D9670] ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_005D9670 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_005CF940(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_005D9670(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_005CF940(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_005D9670
+
+// [0x005D9A60] ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_005D9A60 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_005CFE50(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_005D9A60(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_005CFE50(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_005D9A60
+
+// [0x005D9CF0] ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_005D9CF0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_005CF950(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_005D9CF0(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_005CF950(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_005D9CF0
+
+// [0x005F7430] ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_005F7430 {
+// @name ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_005F51B0(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_005F7430(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_005F51B0(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_005F7430
+
+// [0x0061C700] ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_0061C700 {
+// @name ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_00610A80(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_0061C700(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_00610A80(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_0061C700
+
+// [0x0061CA30] ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_0061CA30 {
+// @name ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_00610A90(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_0061CA30(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_00610A90(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_0061CA30
+
+// [0x0061CE40] ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_0061CE40 {
+// @name ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_00610AA0(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_0061CE40(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_00610AA0(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_0061CE40
+
+// [0x00642AB0] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_00642AB0 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_00641FD0(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_00642AB0(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_00641FD0(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_00642AB0
+
+// [0x00642DF0] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_00642DF0 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_00641FE0(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_00642DF0(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_00641FE0(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_00642DF0
+
+// [0x00643130] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_00643130 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_00641FF0(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_00643130(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_00641FF0(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_00643130
+
+// [0x00643470] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_00643470 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_00642000(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_00643470(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_00642000(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_00643470
+
+// [0x00644710] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>::vfunc_4 (81 bytes)
+namespace lift_00644710 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4).
+namespace lift_0049CB10 {
+extern uint8_t __thiscall ext_00642010(void* self);
+extern void* __cdecl ext_0046C460(void* out_str, uint32_t flag);
+extern void __thiscall ext_0046C3C0(void* exc);
+extern void __stdcall ext_006A6DD2(void* exc, uint32_t throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated and formats the boolean result as a string, throwing if the target pointer is null.
+extern void* __thiscall fn_00644710(void* self, void* out_str, void** target_ptr) {
+    (void)self;
+    void* state = *target_ptr;
+    if (!state) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+    uint8_t flag = ext_00642010(state);
+    ext_0046C460(out_str, static_cast<uint32_t>(flag));
+    return out_str;
+}
+} // namespace lift_0049CB10
+} // namespace lift_00644710
