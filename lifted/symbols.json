@@ -3746,6 +3746,12 @@
     "summary": "Stores address of mem_00937394 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x00458650": {
+    "name": "ForwardField54ThenMfcThunk",
+    "signature": "void fn_00458650(void* self, uint32_t firstArg, void* trailingArgs)",
+    "summary": "Calls ext_00458470 with this+0x54 as the receiver, forwarding the first argument and a pointer to the trailing stack arguments, then invokes the MFC80 thunk on self.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00458670": {
     "name": "Unknown::forwardToSubobjectSlot5",
     "class": "Unknown",

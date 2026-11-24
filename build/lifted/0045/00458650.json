@@ -1,0 +1,21 @@
+{
+  "va": "0x00458650",
+  "size": 32,
+  "orig_symbol": "sub_00458650",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "ForwardField54ThenMfcThunk",
+  "signature": "void fn_00458650(void* self, uint32_t firstArg, void* trailingArgs)",
+  "summary": "Calls ext_00458470 with this+0x54 as the receiver, forwarding the first argument and a pointer to the trailing stack arguments, then invokes the MFC80 thunk on self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "void*",
+      "name": "field_0x54"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:29:48Z"
+}

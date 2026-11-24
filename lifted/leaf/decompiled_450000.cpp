@@ -250,3 +250,20 @@ DWORD fn_00458290(void* self, DWORD a1, DWORD a2, DWORD a3) {
     return ext_00456210(a1, a2, a3);
 }
 } // namespace lift_00458290
+
+// [0x00458650] sub_00458650 (32 bytes)
+namespace lift_00458650 {
+// Callee 0x00458470 (sub_00458470): thiscall, receives (this = [self+0x54], p1 = pointer to trailing args, p2 = first arg).
+extern void ext_00458470(void* self, void* trailingArgs, uint32_t firstArg);
+// Known callee 0x006A5EA8: thunk_MFC80_ord_1903 (IAT jump thunk forwarding to MFC80!ord_1903.)
+extern void ext_006A5EA8(void* self);
+
+// @name ForwardField54ThenMfcThunk
+// @summary Calls ext_00458470 with this+0x54 as the receiver, forwarding the first argument and a pointer to the trailing stack arguments, then invokes the MFC80 thunk on self.
+// @field Unknown +0x54 void* field_0x54
+void fn_00458650(void* self, uint32_t firstArg, void* trailingArgs) {
+    void* child = lift_field<void*>(self, 0x54);
+    ext_00458470(child, trailingArgs, firstArg);
+    ext_006A5EA8(self);
+}
+} // namespace lift_00458650
