@@ -1,0 +1,27 @@
+{
+  "va": "0x0051AEF0",
+  "size": 57,
+  "orig_symbol": "sub_0051AEF0",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "GetFloatFromSubobjectAndForward_0051AEF0",
+  "signature": "static float call_vslot1_float(void* obj, void* arg)",
+  "summary": "Queries a float from the object at self-\u003e+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "void*",
+      "name": "subobject"
+    },
+    {
+      "class": "Subobject",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "object"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:19:26Z"
+}

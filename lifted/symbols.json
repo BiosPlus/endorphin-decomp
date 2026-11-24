@@ -16081,6 +16081,12 @@
     "summary": "Forwards self and the entry ecx value to ext_0051AE20, then returns self.",
     "lifted_path": "lifted/NMData/RealChannel.cpp"
   },
+  "0x0051AEF0": {
+    "name": "GetFloatFromSubobjectAndForward_0051AEF0",
+    "signature": "static float call_vslot1_float(void* obj, void* arg)",
+    "summary": "Queries a float from the object at self-\u003e+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x0051AF30": {
     "name": "ComputeStride20Address",
     "signature": "uint32_t fn_0051AF30(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3)",
