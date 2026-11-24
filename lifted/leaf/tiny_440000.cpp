@@ -765,3 +765,15 @@ int sub_0044CF40(int arg) {
     return 0;
 }
 } // namespace lift_0044CF40
+
+// [0x0044CF60]
+namespace lift_0044CF60 {
+// @name IsValueTwoOrThree
+// @summary Returns 1 if the stdcall argument is 2 or 3, otherwise 0. Callee pops 4 bytes.
+extern int __stdcall IsValueTwoOrThree(int value) {
+    if (value == 2 || value == 3) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_0044CF60

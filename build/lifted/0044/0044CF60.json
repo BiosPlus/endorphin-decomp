@@ -1,0 +1,13 @@
+{
+  "va": "0x0044CF60",
+  "size": 27,
+  "orig_symbol": "sub_0044CF60",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "IsValueTwoOrThree",
+  "signature": "extern \"C\" int __stdcall IsValueTwoOrThree(int value)",
+  "summary": "Returns 1 if the stdcall argument is 2 or 3, otherwise 0. Callee pops 4 bytes.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:00:50Z"
+}

@@ -2976,6 +2976,12 @@
     "summary": "Returns 1 if the argument is 1 or 3, otherwise 0 (stdcall, one arg, callee pops 4 bytes).",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x0044CF60": {
+    "name": "IsValueTwoOrThree",
+    "signature": "extern \"C\" int __stdcall IsValueTwoOrThree(int value)",
+    "summary": "Returns 1 if the stdcall argument is 2 or 3, otherwise 0. Callee pops 4 bytes.",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
   "0x0044CF80": {
     "name": "hasField0x74",
     "signature": "uint32_t __thiscall sub_0044CF80(uint32_t self)",
