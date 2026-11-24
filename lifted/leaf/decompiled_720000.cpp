@@ -289,3 +289,23 @@ uint32_t fn_0072BDD0(void* self, int32_t index) {
     return 0x00B60020u;
 }
 } // namespace lift_0072BDD0
+
+// [0x0072BDB0] sub_0072BDB0 (32 bytes)
+namespace lift_0072BDB0 {
+// Known callee 0x0072BC70: Unknown::getIndexedDword (thiscall, one stack arg: index).
+extern uint32_t __thiscall ext_0072BC70(void* self, int32_t index);
+// Known callee 0x006E7460: sub_006E7460 (thiscall getter, returns int32 at +0x0).
+extern int32_t __thiscall ext_006E7460(void* self);
+
+// @name Unknown::getIndexedDwordOrDefault
+// @class Unknown
+// @summary Looks up the dword at index via getIndexedDword; if it is 0, substitutes the global object at 0x00B600B8, then returns the int32 read by sub_006E7460 from that object.
+// (No fields accessed directly in this function; field offsets belong to the callees.)
+int32_t __thiscall fn_0072BDB0(void* self, int32_t index) {
+    const uint32_t entry = ext_0072BC70(self, index);
+    void* target = entry != 0
+        ? reinterpret_cast<void*>(static_cast<uintptr_t>(entry))
+        : reinterpret_cast<void*>(static_cast<uintptr_t>(0x00B600B8u));
+    return ext_006E7460(target);
+}
+} // namespace lift_0072BDB0

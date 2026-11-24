@@ -46641,6 +46641,13 @@
     "summary": "Returns the uint32 at index from the array at +0x160, or 0 if index is negative or \u003e= count at +0x150.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x0072BDB0": {
+    "name": "Unknown::getIndexedDwordOrDefault",
+    "class": "Unknown",
+    "signature": "int32_t __thiscall fn_0072BDB0(void* self, int32_t index)",
+    "summary": "Looks up the dword at index via getIndexedDword; if it is 0, substitutes the global object at 0x00B600B8, then returns the int32 read by sub_006E7460 from that object.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072BDD0": {
     "name": "Unknown::getIndexedDwordOffset50",
     "class": "Unknown",
