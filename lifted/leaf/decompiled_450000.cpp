@@ -350,3 +350,24 @@ void fn_00455D10(void* self, DWORD arg1, DWORD arg2) {
     *reinterpret_cast<DWORD*>(static_cast<uint8_t*>(self) + 0xE8) = 0;
 }
 } // namespace lift_00455D10
+
+// [0x00454C00]
+namespace lift_00454C00 {
+// @name UnknownClass::conditionalForwardThenSelf
+// @class UnknownClass
+// @summary If arg1 == 0x14, forward (self, 0, 0) to the subobject at self+0x88; then always call ext_006A5EA8(self). Callee cleans 3 stack args (ret 0xC).
+// @field UnknownClass +0x88 void* subobject
+
+extern void ext_006A651A(void* thisObj, void* a0, uint32_t a1, uint32_t a2);
+extern void ext_006A5EA8(void* thisObj);
+
+void fn_00454C00(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    (void)arg2;
+    (void)arg3;
+    if (arg1 == 0x14) {
+        void* sub = lift_field<void*>(self, 0x88);
+        ext_006A651A(sub, self, 0, 0);
+    }
+    ext_006A5EA8(self);
+}
+} // namespace lift_00454C00

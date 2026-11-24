@@ -1,0 +1,22 @@
+{
+  "va": "0x00454C00",
+  "size": 37,
+  "orig_symbol": "sub_00454C00",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "UnknownClass::conditionalForwardThenSelf",
+  "class": "UnknownClass",
+  "signature": "void fn_00454C00(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "If arg1 == 0x14, forward (self, 0, 0) to the subobject at self+0x88; then always call ext_006A5EA8(self). Callee cleans 3 stack args (ret 0xC).",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "subobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:01:48Z"
+}

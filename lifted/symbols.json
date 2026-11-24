@@ -3711,6 +3711,13 @@
     "summary": "Stores its stack argument at self+0x120, then tail-forwards the same argument to sub_00454BB0 on the subobject at self+0x10C.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x00454C00": {
+    "name": "UnknownClass::conditionalForwardThenSelf",
+    "class": "UnknownClass",
+    "signature": "void fn_00454C00(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "If arg1 == 0x14, forward (self, 0, 0) to the subobject at self+0x88; then always call ext_006A5EA8(self). Callee cleans 3 stack args (ret 0xC).",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00454E70": {
     "name": "ZeroThreeDwordFields_00454E70",
     "signature": "void* fn_00454E70(void* self)",
