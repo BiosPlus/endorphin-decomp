@@ -4986,6 +4986,12 @@
     "summary": "Loads the object pointer stored at *self; if non-null, calls its vtable slot 1 with that object as this (tail call).",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00493FF0": {
+    "name": "sub_00493FF0",
+    "signature": "int32_t sub_00493FF0(void** slot)",
+    "summary": "Reads an object pointer through its argument; if non-null, tail-calls the object's vtable slot at +0x38 with the object as the argument, otherwise returns 0 (original does ret 4).",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
   "0x00494050": {
     "name": "sub_00491FC0",
     "class": "(none)",
@@ -9456,6 +9462,13 @@
     "signature": "uint32_t __thiscall fn_004F9BE0(uint32_t self)",
     "summary": "Forwards vfunc_34 to sub_0046F8A0 on the object at delegate_0x8 + 0x14",
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
+  },
+  "0x004F9E50": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_133",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uintptr_t fn_004F9E50(void* self)",
+    "summary": "Forwards the call to virtual slot 7 (+0x1c) of the object at this-\u003e+0x8-\u003e+0x14-\u003e+0x34 and returns its result.",
+    "lifted_path": "lifted/VMCSModes/DefaultImplementation.cpp"
   },
   "0x004FD800": {
     "name": "StringBuffer::clear",
