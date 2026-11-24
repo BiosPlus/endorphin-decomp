@@ -28693,6 +28693,12 @@
     "summary": "Forwards (this+4, arg) to vfunc slot 8 (vtable +0x20) of the object pointed to by the first member.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x00661710": {
+    "name": "sub_00661710",
+    "signature": "uint32_t __thiscall sub_00661710(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Delegates to vtable[0] of field_0x0 with (arg1, \u0026field_0x4, arg2) and returns arg1.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00661840": {
     "name": "Unknown::CallSubobjectVirtualSlot2",
     "class": "Unknown",
@@ -31285,6 +31291,12 @@
     "name": "copyByteRangeForward",
     "signature": "uint32_t fn_00698A40(uint32_t a1, uint32_t first, uint32_t a3, uint32_t last, uint32_t dest)",
     "summary": "Forward byte-by-byte copy of [first, last) to dest (no overlap handling, loop runs while cursor != last); returns dest + (last - first).",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
+  "0x00698B90": {
+    "name": "CopyBytesRangeStdcallAdapter",
+    "signature": "extern \"C\" uint8_t* __stdcall fn_00698B90(uint32_t /*arg0*/, const uint8_t* first, uint32_t /*arg2*/, const uint8_t* last, uint8_t* dst)",
+    "summary": "__stdcall adapter that forwards arg1, arg3, and arg4 to CopyBytesRange.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x00699040": {

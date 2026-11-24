@@ -293,3 +293,22 @@ extern void* __thiscall fn_0066EDB0(void* self, uint32_t flags) {
     return self;
 }
 } // namespace lift_0066EDB0
+
+// [0x00661710]
+namespace lift_00661710 {
+// @name sub_00661710
+// @summary Delegates to vtable[0] of field_0x0 with (arg1, &field_0x4, arg2) and returns arg1.
+// @field Class +0x00 void* field_0x0
+// @field Class +0x04 uint32_t field_0x4
+
+
+uint32_t __thiscall sub_00661710(void* self, uint32_t arg1, uint32_t arg2) {
+    uintptr_t base = reinterpret_cast<uintptr_t>(self);
+    uintptr_t obj = *reinterpret_cast<uint32_t*>(base);
+    uintptr_t vtbl = *reinterpret_cast<uint32_t*>(obj);
+    uintptr_t fn = *reinterpret_cast<uint32_t*>(vtbl);
+    using fn_t = void(__thiscall*)(uintptr_t, uint32_t, uintptr_t, uint32_t);
+    reinterpret_cast<fn_t>(fn)(obj, arg1, base + 0x4, arg2);
+    return arg1;
+}
+} // namespace lift_00661710

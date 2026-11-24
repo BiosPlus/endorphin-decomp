@@ -1,0 +1,27 @@
+{
+  "va": "0x00661710",
+  "size": 41,
+  "orig_symbol": "sub_00661710",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "sub_00661710",
+  "signature": "uint32_t __thiscall sub_00661710(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Delegates to vtable[0] of field_0x0 with (arg1, \u0026field_0x4, arg2) and returns arg1.",
+  "fields": [
+    {
+      "class": "Class",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x0"
+    },
+    {
+      "class": "Class",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:02:30Z"
+}
