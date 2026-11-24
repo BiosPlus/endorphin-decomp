@@ -1,0 +1,13 @@
+{
+  "va": "0x0045C090",
+  "size": 43,
+  "orig_symbol": "sub_0045C090",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "WalkAndNotifyItems",
+  "signature": "extern \"C\" void __thiscall fn_0045C090(void* self, uint32_t item)",
+  "summary": "Iteratively calls MFC80_ord_2867 and sub_0045BF30 on a node chain until null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:05:04Z"
+}

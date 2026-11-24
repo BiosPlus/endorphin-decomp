@@ -462,3 +462,20 @@ uint32_t __stdcall fn_0045B6C0(uint32_t arg1, uint32_t arg2) {
     return arg1;
 }
 } // namespace lift_0045B6C0
+
+// [0x0045C090]
+namespace lift_0045C090 {
+// @name WalkAndNotifyItems
+// @summary Iteratively calls MFC80_ord_2867 and sub_0045BF30 on a node chain until null.
+
+
+extern void __thiscall ext_006A6820(void* self, uint32_t item);
+extern uint32_t __thiscall ext_0045BF30(void* self, uint32_t item);
+
+extern void __thiscall fn_0045C090(void* self, uint32_t item) {
+    while (item != 0) {
+        ext_006A6820(self, item);
+        item = ext_0045BF30(self, item);
+    }
+}
+} // namespace lift_0045C090
