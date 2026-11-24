@@ -1189,3 +1189,20 @@ void fn_007C9ED0(void* self) {
     lift_field<int32_t>(self, 0x0C) = 0;
 }
 } // namespace lift_007C9ED0
+
+// [0x007C89F0]
+namespace lift_007C89F0 {
+// @name getGridElementPtr
+// @summary Computes pointer to a 24-byte element in a 2D array at (col, row)
+// @field struct +0x00 uint32_t field_0x00
+// @field struct +0x28 uint32_t field_0x28
+
+extern uint32_t mem_r32(uint32_t addr);
+
+uint32_t sub_007C89F0(uint32_t self, int32_t col, int32_t row) {
+    int32_t stride = static_cast<int32_t>(mem_r32(self));
+    int32_t idx = stride * row + col;
+    uint32_t base = mem_r32(self + 0x28);
+    return base + static_cast<uint32_t>(idx * 24);
+}
+} // namespace lift_007C89F0

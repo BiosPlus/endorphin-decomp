@@ -8,6 +8,8 @@
 // Recovered field layout for struct:
 namespace lifted_layout {
 struct struct_Fields {
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x007C89F0)
     // +0x10  uint32_t                 field_0x10  (evidence: 0x007C2E50, 0x007C6FA0)
+    // +0x28  uint32_t                 field_0x28  (evidence: 0x007C89F0)
 };
 } // namespace lifted_layout

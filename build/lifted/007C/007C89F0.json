@@ -1,0 +1,27 @@
+{
+  "va": "0x007C89F0",
+  "size": 25,
+  "orig_symbol": "sub_007C89F0",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "getGridElementPtr",
+  "signature": "uint32_t sub_007C89F0(uint32_t self, int32_t col, int32_t row)",
+  "summary": "Computes pointer to a 24-byte element in a 2D array at (col, row)",
+  "fields": [
+    {
+      "class": "struct",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "struct",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T11:53:09Z"
+}
