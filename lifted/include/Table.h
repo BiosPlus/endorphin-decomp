@@ -8,7 +8,7 @@
 // Recovered field layout for Table:
 namespace lifted_layout {
 struct Table_Fields {
-    // +0x0   uint32_t                 count  (evidence: 0x0085BF40)
-    // +0x4   uint32_t                 entriesPtr  (evidence: 0x0085BF40)
+    // +0x0   uint32_t                 count  (evidence: 0x008597B0, 0x0085BF40)
+    // +0x4   uint32_t                 entriesPtr  (evidence: 0x008597B0, 0x0085BF40)
 };
 } // namespace lifted_layout

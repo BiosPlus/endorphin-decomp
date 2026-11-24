@@ -12,7 +12,7 @@ struct UnknownObject_Fields {
     // +0x0   void* vptr (argument object; vtable slot 0 invoked with the flag)  (evidence: 0x00430B10) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* vptr (global object returned by ext_00465B40; vtable slot +0x1A4 read)  (evidence: 0x00430B10) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x0043CB70) // CONFLICT: multiple definitions at +0x0
-    // +0xC   void*                    field_0x0C  (evidence: 0x00857470)
+    // +0xC   void*                    field_0x0C  (evidence: 0x00857470, 0x008597B0)
     // +0x14  void*                    field_0x14  (evidence: 0x00468B10)
     // +0x1C  int32_t                  field_0x1c  (evidence: 0x0078C230, 0x0078CBD0)
     // +0x24  uint32_t                 field_0x24  (evidence: 0x00468B10)
