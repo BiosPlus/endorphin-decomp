@@ -1,0 +1,39 @@
+{
+  "va": "0x007C9E50",
+  "size": 43,
+  "orig_symbol": "sub_007C9E50",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "updateFlagIfAnySet",
+  "signature": "void sub_007C9E50(uint32_t arg0, uint32_t arg1)",
+  "summary": "Sets field at +0x04 to 1 if arg1 or any of fields +0x00, +0x1C, +0x50 are non-zero, else 0.",
+  "fields": [
+    {
+      "class": "Obj",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Obj",
+      "offset": "+0x50",
+      "type": "uint32_t",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:07:31Z"
+}

@@ -362,3 +362,23 @@ uint32_t fn_007C8850(uint32_t obj, int32_t index) {
     return lift_field<uint32_t>(array, static_cast<ptrdiff_t>(entry_offset));
 }
 } // namespace lift_007C8850
+
+// [0x007C9E50]
+namespace lift_007C9E50 {
+uint32_t mem_read32(uint32_t addr);
+void mem_write32(uint32_t addr, uint32_t val);
+
+// @name updateFlagIfAnySet
+// @summary Sets field at +0x04 to 1 if arg1 or any of fields +0x00, +0x1C, +0x50 are non-zero, else 0.
+// @field Obj +0x00 uint32_t field_0x00
+// @field Obj +0x04 uint32_t field_0x04
+// @field Obj +0x1C uint32_t field_0x1C
+// @field Obj +0x50 uint32_t field_0x50
+void sub_007C9E50(uint32_t arg0, uint32_t arg1) {
+    uint32_t val = (arg1 != 0 ||
+                    mem_read32(arg0 + 0x00) != 0 ||
+                    mem_read32(arg0 + 0x50) != 0 ||
+                    mem_read32(arg0 + 0x1C) != 0) ? 1u : 0u;
+    mem_write32(arg0 + 0x04, val);
+}
+} // namespace lift_007C9E50
