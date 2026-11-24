@@ -1,0 +1,22 @@
+{
+  "va": "0x006BA2F0",
+  "size": 48,
+  "orig_symbol": "sub_006BA2F0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "String::reverseFind",
+  "class": "String",
+  "signature": "int32_t __thiscall sub_006BA2F0(void* self, char ch)",
+  "summary": "Finds the last occurrence of a character in the string and returns its index, or -1 if not found.",
+  "fields": [
+    {
+      "class": "String",
+      "offset": "+0x0",
+      "type": "const char*",
+      "name": "m_data"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:21:30Z"
+}
