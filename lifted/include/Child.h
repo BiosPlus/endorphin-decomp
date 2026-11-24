@@ -8,6 +8,6 @@
 // Recovered field layout for Child:
 namespace lifted_layout {
 struct Child_Fields {
-    // +0x28  DWORD                    field_0x28  (evidence: 0x00468A30)
+    // +0x28  DWORD                    field_0x28  (evidence: 0x00468730, 0x00468A30)
 };
 } // namespace lifted_layout

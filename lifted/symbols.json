@@ -3832,9 +3832,10 @@
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
   "0x00468730": {
-    "name": "forwardToLinkedIfFlagged",
-    "signature": "void __thiscall fn_00468730(void* self, uint8_t value)",
-    "summary": "If the flag byte at +0x10 is set, forward (value) to the object at +0x14; otherwise do nothing.",
+    "name": "VirtualSlot1Thunk",
+    "class": "Unknown",
+    "signature": "void fn_0046A470(void* self)",
+    "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 1 (offset +0x4) with the same this pointer.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
   "0x00468750": {

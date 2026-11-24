@@ -8,8 +8,8 @@
 // Recovered field layout for VTable:
 namespace lifted_layout {
 struct VTable_Fields {
-    // +0x4   void*                    slot1  (evidence: 0x004646A0, 0x0046A470)
-    // +0x8   void*                    slot2  (evidence: 0x004646A0, 0x0046A480)
+    // +0x4   void*                    slot1  (evidence: 0x004646A0, 0x00468730, 0x0046A470)
+    // +0x8   void*                    slot2  (evidence: 0x004646A0, 0x00468730, 0x0046A480)
     // +0x20  void*                    slot8  (evidence: 0x004AA580)
     // +0x3C  void*                    slot15  (evidence: 0x00603670)
     // +0x40  void*                    slot16  (evidence: 0x00603690)

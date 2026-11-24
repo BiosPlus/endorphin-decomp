@@ -4,10 +4,163 @@
   "orig_symbol": "sub_00468730",
   "src_path": "src/leaf/tiny_460000.cpp",
   "lifted_path": "lifted/leaf/tiny_460000.cpp",
-  "name": "forwardToLinkedIfFlagged",
-  "signature": "void __thiscall fn_00468730(void* self, uint8_t value)",
-  "summary": "If the flag byte at +0x10 is set, forward (value) to the object at +0x14; otherwise do nothing.",
+  "name": "VirtualSlot1Thunk",
+  "class": "Unknown",
+  "signature": "void fn_0046A470(void* self)",
+  "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 1 (offset +0x4) with the same this pointer.",
+  "fields": [
+    {
+      "class": "VTable",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "slot1"
+    },
+    {
+      "class": "VTable",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "slot2"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF8",
+      "type": "void*",
+      "name": "field_0xF8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x138",
+      "type": "float",
+      "name": "field_0x138"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x12C",
+      "type": "uint8_t",
+      "name": "field_0x12C"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "delegate_0x38"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x10",
+      "type": "BYTE",
+      "name": "enabledFlag"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "child"
+    },
+    {
+      "class": "Child",
+      "offset": "+0x28",
+      "type": "DWORD",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "BYTE",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "DWORD",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1D8",
+      "type": "uint8_t",
+      "name": "field_0x1D8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    },
+    {
+      "class": "field_0x38",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "field_0x64"
+    },
+    {
+      "class": "field_0x64",
+      "offset": "+0xC4",
+      "type": "uint8_t",
+      "name": "field_0xC4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T02:02:34Z"
+  "lifted_at": "2026-11-24T02:02:44Z"
 }
