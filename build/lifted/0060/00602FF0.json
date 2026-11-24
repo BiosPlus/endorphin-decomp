@@ -1,0 +1,22 @@
+{
+  "va": "0x00602FF0",
+  "size": 13,
+  "orig_symbol": "Effector::vfunc_26",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "Effector::vfunc_26",
+  "class": "Effector",
+  "signature": "void Effector_vfunc_26(Effector* self, float scale)",
+  "summary": "Multiplies the float at this+0x50 by the float argument and stores the product back to this+0x50.",
+  "fields": [
+    {
+      "class": "Effector",
+      "offset": "+0x50",
+      "type": "float",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:22:11Z"
+}

@@ -17773,6 +17773,13 @@
     "summary": "Destructor tail-call: restores vtable mem_0096F81C and tail-calls base destructor sub_0065F440.",
     "lifted_path": "lifted/leaf/tiny_600000.cpp"
   },
+  "0x00602FF0": {
+    "name": "Effector::vfunc_26",
+    "class": "Effector",
+    "signature": "void Effector_vfunc_26(Effector* self, float scale)",
+    "summary": "Multiplies the float at this+0x50 by the float argument and stores the product back to this+0x50.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00603010": {
     "name": "Effector::vfunc_29",
     "class": "Effector",

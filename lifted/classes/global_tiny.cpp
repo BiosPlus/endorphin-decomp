@@ -5194,3 +5194,19 @@ void Effector_vfunc_25(void* self, float scale)
     *field54 = *field54 * scale;
 }
 } // namespace lift_00602EB0
+
+// [0x00602FF0]
+namespace lift_00602FF0 {
+// @name Effector::vfunc_26
+// @class Effector
+// @summary Multiplies the float at this+0x50 by the float argument and stores the product back to this+0x50.
+// @field Effector +0x50 float field_0x50
+
+struct Effector;
+
+// Effector::vfunc_26(float scale): thiscall, one stack argument (ret 4).
+void Effector_vfunc_26(Effector* self, float scale) {
+    float* field = reinterpret_cast<float*>(reinterpret_cast<char*>(self) + 0x50);
+    *field = *field * scale;
+}
+} // namespace lift_00602FF0
