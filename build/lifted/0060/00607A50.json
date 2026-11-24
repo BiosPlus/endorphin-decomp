@@ -1,0 +1,14 @@
+{
+  "va": "0x00607A50",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}\u003e",
+  "signature": "void fn_00607A50(void* out)",
+  "summary": "Lazily constructs the shared static instance at 0x00B477C4 (guarded by bit 0 of 0x00B477C8), then stores a pointer to it at out+0x04.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:55:54Z"
+}

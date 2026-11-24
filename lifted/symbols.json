@@ -26804,6 +26804,13 @@
     "summary": "Lazily initializes a static type descriptor at 0x00B477A4 and stores its address at arg0 + 0x4.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00607A50": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}\u003e",
+    "signature": "void fn_00607A50(void* out)",
+    "summary": "Lazily constructs the shared static instance at 0x00B477C4 (guarded by bit 0 of 0x00B477C8), then stores a pointer to it at out+0x04.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00608160": {
     "name": "EffectorWithModes::vfunc_0",
     "class": "EffectorWithModes",

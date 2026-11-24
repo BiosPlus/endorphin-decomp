@@ -7259,3 +7259,25 @@ void __thiscall fn_00607850(void* self, void* arg0) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B477A4));
 }
 } // namespace lift_00607850
+
+// [0x00607A50] ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}>::vfunc_40 (122 bytes)
+namespace lift_00607A50 {
+extern void ext_0067A670(void* this_ptr, uint32_t arg0);
+extern uint32_t mem_00B477C8;
+extern uint32_t mem_00B477C4;
+
+// @name ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}>::vfunc_40
+// @class ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}>
+// @summary Lazily constructs the shared static instance at 0x00B477C4 (guarded by bit 0 of 0x00B477C8), then stores a pointer to it at out+0x04.
+// @field ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}> +0x04 uint32_t field_0x04
+void fn_00607A50(void* out) {
+    // One-time guarded init of the static object at mem_00B477C4.
+    if ((mem_00B477C8 & 1u) == 0) {
+        mem_00B477C8 |= 1u;
+        ext_0067A670(&mem_00B477C4, 0u);
+        mem_00B477C4 = 0x00970A14u;
+    }
+    // Publish the address of the static object to the caller's slot.
+    *reinterpret_cast<uint32_t*>(static_cast<unsigned char*>(out) + 0x04) = 0x00B477C4u;
+}
+} // namespace lift_00607A50
