@@ -30751,6 +30751,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B9910": {
+    "name": "Unknown::sub_006B9910",
+    "class": "Unknown",
+    "signature": "void sub_006B9910(Unknown* ecx)",
+    "summary": "Zero-initializes two dword fields and sets the vtable pointer to mem_00B5D2B8.",
+    "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
   "0x006B99C0": {
     "name": "sub_006B99C0",
     "signature": "extern \"C\" int32_t __fastcall fn_006B99C0(void* self)",

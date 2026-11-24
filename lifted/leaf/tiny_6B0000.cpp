@@ -575,3 +575,27 @@ int32_t fn_006B4090(void* self) {
 }
 } // namespace lift_00546860
 } // namespace lift_006B4090
+
+// [0x006B9910]
+namespace lift_006B9910 {
+// @name Unknown::sub_006B9910
+// @class Unknown
+// @summary Zero-initializes two dword fields and sets the vtable pointer to mem_00B5D2B8.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+
+extern uint32_t mem_00B5D2B8;
+
+struct Unknown {
+    uint32_t field_0x00;
+    uint32_t field_0x04;
+    uint32_t field_0x08;
+};
+
+void sub_006B9910(Unknown* ecx) {
+    ecx->field_0x00 = (uint32_t)(uintptr_t)&mem_00B5D2B8;
+    ecx->field_0x04 = 0;
+    ecx->field_0x08 = 0;
+}
+} // namespace lift_006B9910
