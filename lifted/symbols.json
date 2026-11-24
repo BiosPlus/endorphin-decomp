@@ -34336,6 +34336,13 @@
     "summary": "Reads an ExpressionEntry's expression string and converts it to float via atof, throwing an exception if the entry pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00674CE0": {
+    "name": "ExprParser::ReadMethodType\u003cExpressionEntry\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType\u003cExpressionEntry\u003e",
+    "signature": "extern \"C\" uint32_t __thiscall fn_00674CE0(void* /*self*/, uint32_t* entry_ptr)",
+    "summary": "Checks if ExpressionEntry::getExpression() matches either of two string literals, throwing if the entry pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00675100": {
     "name": "sub_00675100",
     "signature": "extern \"C\" void fn_00675100(void)",

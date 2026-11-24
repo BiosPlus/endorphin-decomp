@@ -39506,3 +39506,37 @@ uint8_t fn_004885E0(void* self, void* arg1) {
     return 0;
 }
 } // namespace lift_004885E0
+
+// [0x00674CE0]
+namespace lift_00674CE0 {
+// @name ExprParser::ReadMethodType<ExpressionEntry>::vfunc_3
+// @class ExprParser::ReadMethodType<ExpressionEntry>
+// @summary Checks if ExpressionEntry::getExpression() matches either of two string literals, throwing if the entry pointer is null.
+// @field ExpressionEntry +0x1c std::string expression
+
+
+extern void __thiscall ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, uint32_t throw_info);
+extern uint32_t mem_00924FC0;
+
+using std_string_eq_cstr_fn = uint8_t (__cdecl*)(uint32_t str_addr, uint32_t cstr_addr);
+
+extern uint32_t __thiscall fn_00674CE0(void* /*self*/, uint32_t* entry_ptr) {
+    uint32_t entry = *entry_ptr;
+    if (entry == 0) {
+        alignas(16) uint8_t exc_buf[0x28];
+        ext_0046C3C0(exc_buf);
+        ext_006A6DD2(exc_buf, 0x009DEC1Cu);
+    }
+
+    auto str_eq = reinterpret_cast<std_string_eq_cstr_fn>(static_cast<uintptr_t>(mem_00924FC0));
+    uint32_t expr_addr = entry + 0x1Cu;
+    if (str_eq(expr_addr, 0x0092F10Cu) != 0) {
+        return 1;
+    }
+    if (str_eq(expr_addr, 0x0093A810u) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_00674CE0

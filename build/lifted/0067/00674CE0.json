@@ -1,0 +1,22 @@
+{
+  "va": "0x00674CE0",
+  "size": 100,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cExpressionEntry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ExpressionEntry::getExpression(void) const, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cExpressionEntry\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cExpressionEntry\u003e",
+  "signature": "extern \"C\" uint32_t __thiscall fn_00674CE0(void* /*self*/, uint32_t* entry_ptr)",
+  "summary": "Checks if ExpressionEntry::getExpression() matches either of two string literals, throwing if the entry pointer is null.",
+  "fields": [
+    {
+      "class": "ExpressionEntry",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "expression"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:57:33Z"
+}
