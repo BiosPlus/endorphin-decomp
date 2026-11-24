@@ -6580,3 +6580,22 @@ int fn_00537E00(void* self, void* arg) {
     return fn(child, self);
 }
 } // namespace lift_00537E00
+
+// [0x004636C0]
+namespace lift_004636C0 {
+// @name VideoGeneratorDialog::vfunc_1_off_74
+// @class VideoGeneratorDialog
+// @summary Sends PBM_SETPOS (0x402) with the given position to the progress bar HWND
+// @field VideoGeneratorDialog +0x120 uint32_t m_hProgressWnd
+
+
+extern uint32_t mem_00925694;
+
+using SendMessageA_t = uint32_t(__stdcall*)(uint32_t hWnd, uint32_t Msg, uint32_t wParam, uint32_t lParam);
+
+uint32_t __thiscall fn_004636C0(void* self, uint32_t pos) {
+    uint32_t hwnd = *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(self) + 0x120);
+    auto send_message = reinterpret_cast<SendMessageA_t>(static_cast<uintptr_t>(mem_00925694));
+    return send_message(hwnd, 0x402, pos, 0);
+}
+} // namespace lift_004636C0

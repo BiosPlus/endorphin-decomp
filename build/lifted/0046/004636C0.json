@@ -1,0 +1,22 @@
+{
+  "va": "0x004636C0",
+  "size": 28,
+  "orig_symbol": "VideoGeneratorDialog::vfunc_1_off_74",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "VideoGeneratorDialog::vfunc_1_off_74",
+  "class": "VideoGeneratorDialog",
+  "signature": "uint32_t __thiscall fn_004636C0(void* self, uint32_t pos)",
+  "summary": "Sends PBM_SETPOS (0x402) with the given position to the progress bar HWND",
+  "fields": [
+    {
+      "class": "VideoGeneratorDialog",
+      "offset": "+0x120",
+      "type": "uint32_t",
+      "name": "m_hProgressWnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:09:17Z"
+}
