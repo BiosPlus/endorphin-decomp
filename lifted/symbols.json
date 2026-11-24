@@ -47519,6 +47519,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
     "lifted_path": "lifted/clones/auto_clones_780000.cpp"
   },
+  "0x0078D720": {
+    "name": "initSelfRefAt14",
+    "signature": "uint32_t fn_0078D720(void* self, int32_t arg1)",
+    "summary": "Initializes the object via ext_006D2130(self, arg1, 4), then stores a pointer to self+0x10 at self+0x14; returns self.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078D830": {
     "name": "sub_0078D830",
     "signature": "extern \"C\" void* __fastcall fn_0078D830(void* self, int edx_unused, unsigned int flags)",

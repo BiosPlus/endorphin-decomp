@@ -570,3 +570,19 @@ void IndexListNode_shiftIndicesAfterRemove(void* self, int32_t removedIndex) {
     }
 }
 } // namespace lift_007837D0
+
+// [0x0078D720] sub_0078D720 (32 bytes)
+namespace lift_0078D720 {
+// Known callee 0x006D2130: sub_006D2130 (Initializes a 20-byte struct with zeroed fields, a clamped minimum-1 count at +0x08, and arg2 at +0x0C, returning this.)
+extern uint32_t __thiscall ext_006D2130(void* self, int32_t arg1, uint32_t arg2);
+
+// @name initSelfRefAt14
+// @summary Initializes the object via ext_006D2130(self, arg1, 4), then stores a pointer to self+0x10 at self+0x14; returns self.
+// @field UnknownStruct +0x14 void* field_0x14
+uint32_t fn_0078D720(void* self, int32_t arg1) {
+    ext_006D2130(self, arg1, 4);
+    void* inner = static_cast<uint8_t*>(self) + 0x10;
+    lift_field<void*>(self, 0x14) = inner;
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+}
+} // namespace lift_0078D720
