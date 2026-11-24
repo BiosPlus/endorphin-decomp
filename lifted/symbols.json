@@ -46482,6 +46482,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x0 and tail-calls sub_0072B180.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072B220": {
+    "name": "Unknown::allocZeroedBlock12",
+    "class": "Unknown",
+    "signature": "void* fn_0072B220(void* self)",
+    "summary": "Allocates a 12-byte zeroed block, stores its pointer at [this+0x00] (null on failure), and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072B2A0": {
     "name": "sub_0072B2A0",
     "signature": "extern \"C\" void* __fastcall fn_0072B2A0(void* self, int edx_unused, unsigned int flags)",

@@ -3,6 +3,7 @@
 extern "C" void __fastcall ext_0072D640(void* self);
 extern "C" void __cdecl ext_006A5C5C(void* ptr);
 #include <cstdint>
+#include <cstring>
 
 // [0x0072D620] sub_0072D620 (32 bytes)
 // @name sub_0072D620
@@ -214,3 +215,23 @@ DWORD fn_0072B180(void* self) {
     return 0;
 }
 } // namespace lift_0072B180
+
+// [0x0072B220] sub_0072B220 (48 bytes)
+namespace lift_0072B220 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Called cdecl with one 4-byte argument (12); returns allocated pointer in eax.
+extern void* ext_006A5C62(unsigned int size);
+
+// @name Unknown::allocZeroedBlock12
+// @class Unknown
+// @summary Allocates a 12-byte zeroed block, stores its pointer at [this+0x00] (null on failure), and returns this.
+// @field Unknown +0x00 void* field_0x00
+void* fn_0072B220(void* self) {
+    void* block = ext_006A5C62(12);
+    if (block != nullptr) {
+        std::memset(block, 0, 12);
+    }
+    *static_cast<void**>(self) = block;
+    return self;
+}
+} // namespace lift_0072B220
