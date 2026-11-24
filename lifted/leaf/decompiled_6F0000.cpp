@@ -102,3 +102,18 @@ void fn_006FA3E0(uintptr_t self) {
     sub_006FA3C0(self, v);
 }
 } // namespace lift_006FA3E0
+
+// [0x006F6B40] sub_006F6B40 (16 bytes)
+namespace lift_006F6B40 {
+// Known callee 0x00782CB0: GetRigidName (Returns the "World Rigid" (0) or "Body Rigid" (1) label string; NULL for any other selector.)
+const char* ext_00782CB0(DWORD selector);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C();
+
+// @name GetRigidNameStdcall
+// @summary Stdcall wrapper that forwards its single DWORD selector to GetRigidName and returns the label string.
+const char* fn_006F6B40(DWORD selector) {
+    // Callee is __stdcall with one argument; this stub pops the argument on return (ret 4).
+    return ext_00782CB0(selector);
+}
+} // namespace lift_006F6B40
