@@ -704,3 +704,22 @@ void __thiscall fn_00468730(void* self, uint8_t value) {
     ext_0046FE30(linked, value);
 }
 } // namespace lift_00468730
+
+// [0x00463950] sub_00463950 (23 bytes)
+namespace lift_00463950 {
+// @name sub_00463950
+// @summary Auto-lifted identical-shape clone of 0x0040BEE0 (Window::sendMessage_0x18B).
+namespace lift_0040BEE0 {
+extern int mem_00925694;
+extern int32_t __stdcall ext_SendMessageA(uint32_t hWnd, uint32_t msg, uint32_t wParam, uint32_t lParam);
+
+// @name Window::sendMessage_0x18B
+// @class Window
+// @summary Sends message 0x18B with zero wParam/lParam to the window handle stored in this->+0x20.
+// @field Window +0x20 uint32_t hWnd
+void fn_00463950(void* self) {
+    const uint32_t hWnd = lift_field<uint32_t>(self, 0x2E4);
+    ext_SendMessageA(hWnd, 0x1009, 0, 0);
+}
+} // namespace lift_0040BEE0
+} // namespace lift_00463950

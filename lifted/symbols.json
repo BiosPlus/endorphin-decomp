@@ -3541,6 +3541,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x15C.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00463950": {
+    "name": "sub_00463950",
+    "class": "Window",
+    "signature": "void fn_00463950(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0040BEE0 (Window::sendMessage_0x18B).",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00463EE0": {
     "name": "VideoGeneratorDialog::vfunc_1",
     "class": "VideoGeneratorDialog",

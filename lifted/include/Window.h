@@ -8,6 +8,6 @@
 // Recovered field layout for Window:
 namespace lifted_layout {
 struct Window_Fields {
-    // +0x20  uint32_t                 hWnd  (evidence: 0x0040BEE0)
+    // +0x20  uint32_t                 hWnd  (evidence: 0x0040BEE0, 0x00463950)
 };
 } // namespace lifted_layout
