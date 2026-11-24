@@ -72,3 +72,60 @@ float fn_007C5950(void* self) {
     return r;
 }
 } // namespace lift_007C5950
+
+// [0x007C5B70]
+namespace lift_007C5B70 {
+template <typename T>
+T mem_read(uint32_t addr);
+
+template <typename T>
+void mem_write(uint32_t addr, T val);
+
+// @name setVec3_0x160
+// @summary Copies a 3-float vector from src into dst offsets +0x160, +0x164, and +0x168.
+// @field Obj +0x160 float field_0x160
+// @field Obj +0x164 float field_0x164
+// @field Obj +0x168 float field_0x168
+void __cdecl sub_007C5B70(uint32_t dst, uint32_t src)
+{
+    mem_write<float>(dst + 0x160u, mem_read<float>(src));
+    mem_write<float>(dst + 0x164u, mem_read<float>(src + 0x4u));
+    mem_write<float>(dst + 0x168u, mem_read<float>(src + 0x8u));
+}
+} // namespace lift_007C5B70
+
+// [0x007C5C00]
+namespace lift_007C5C00 {
+// @name copyVec3ToOffset0x190
+// @summary Copies a 3-float vector from the second argument into fields at +0x190..+0x198 of the first argument
+// @field Unknown +0x190 float field_0x190
+// @field Unknown +0x194 float field_0x194
+// @field Unknown +0x198 float field_0x198
+
+
+uint32_t mem_read32(uint32_t addr);
+void mem_write32(uint32_t addr, uint32_t val);
+
+void sub_007C5C00(uint32_t self, uint32_t vec) {
+    mem_write32(self + 0x190, mem_read32(vec + 0x0));
+    mem_write32(self + 0x194, mem_read32(vec + 0x4));
+    mem_write32(self + 0x198, mem_read32(vec + 0x8));
+}
+} // namespace lift_007C5C00
+
+// [0x007C5FA0]
+namespace lift_007C5FA0 {
+template <typename T> T mem_read(uint32_t addr);
+template <typename T> void mem_write(uint32_t addr, T val);
+
+// @name getVec3_0x140
+// @summary Copies a 3D float vector from offset 0x140 of the source object into the destination buffer
+// @field Object +0x140 float field_0x140
+// @field Object +0x144 float field_0x144
+// @field Object +0x148 float field_0x148
+void sub_007C5FA0(uint32_t src, uint32_t dst) {
+    mem_write<float>(dst + 0x0, mem_read<float>(src + 0x140));
+    mem_write<float>(dst + 0x4, mem_read<float>(src + 0x144));
+    mem_write<float>(dst + 0x8, mem_read<float>(src + 0x148));
+}
+} // namespace lift_007C5FA0

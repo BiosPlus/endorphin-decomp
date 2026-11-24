@@ -1,0 +1,33 @@
+{
+  "va": "0x007C5C00",
+  "size": 35,
+  "orig_symbol": "sub_007C5C00",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "copyVec3ToOffset0x190",
+  "signature": "void sub_007C5C00(uint32_t self, uint32_t vec)",
+  "summary": "Copies a 3-float vector from the second argument into fields at +0x190..+0x198 of the first argument",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x190",
+      "type": "float",
+      "name": "field_0x190"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x194",
+      "type": "float",
+      "name": "field_0x194"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x198",
+      "type": "float",
+      "name": "field_0x198"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:00:33Z"
+}

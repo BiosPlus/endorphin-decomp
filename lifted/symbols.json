@@ -44680,6 +44680,12 @@
     "summary": "Copies a 3-float vector from src into dst offsets +0x160, +0x164, and +0x168.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C5C00": {
+    "name": "copyVec3ToOffset0x190",
+    "signature": "void sub_007C5C00(uint32_t self, uint32_t vec)",
+    "summary": "Copies a 3-float vector from the second argument into fields at +0x190..+0x198 of the first argument",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C5C30": {
     "name": "setFields_0x1e4_0x1f4",
     "signature": "void sub_007C5C30(void* self, uint32_t val1, uint32_t val2)",
@@ -44774,6 +44780,12 @@
     "signature": "float sub_007C5F90(uint32_t arg0)",
     "summary": "Loads and returns the float at offset 0x1c8 from the first argument.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5FA0": {
+    "name": "getVec3_0x140",
+    "signature": "void sub_007C5FA0(uint32_t src, uint32_t dst)",
+    "summary": "Copies a 3D float vector from offset 0x140 of the source object into the destination buffer",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007C6060": {
     "name": "addOffset0xB0",
