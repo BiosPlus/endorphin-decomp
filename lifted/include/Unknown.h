@@ -622,6 +622,7 @@ struct Unknown_Fields {
     // +0x3E0 uint32_t                 field_0x3e0  (evidence: 0x004800A0)
     // +0x420 void*                    field_0x420  (evidence: 0x00553760)
     // +0x428 void*                    field_0x428  (evidence: 0x0040B860, 0x0040B880)
+    // +0x458 std::string              field_0x458  (evidence: 0x0044CCF0)
     // +0x494 void*                    field_0x494  (evidence: 0x005649D0) // CONFLICT: multiple definitions at +0x494
     // +0x494 void*                    scene  (evidence: 0x00564FE0) // CONFLICT: multiple definitions at +0x494
     // +0x4E2 uint8_t                  field_0x4E2  (evidence: 0x004104E0)

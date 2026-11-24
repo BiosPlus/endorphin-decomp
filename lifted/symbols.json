@@ -4045,6 +4045,13 @@
     "summary": "Zeroes three consecutive floats at this+0x00, +0x04, +0x08 and returns this (eax).",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x0044CCF0": {
+    "name": "Unknown::matchesGlobalNameIfSlot28Clear",
+    "class": "Unknown",
+    "signature": "bool Unknown::matchesGlobalNameIfSlot28Clear()",
+    "summary": "Returns false if virtual slot 0x28 returns true; otherwise returns whether the string at +0x458 equals global mem_00B41B80.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044CD70": {
     "name": "RigEditor::vfunc_0",
     "class": "RigEditor",

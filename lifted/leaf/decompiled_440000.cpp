@@ -1465,3 +1465,28 @@ void fn_0044B560(void* self) {
     lift_field<uint32_t>(self, 0x64) = 0u;
 }
 } // namespace lift_0044B560
+
+// [0x0044CCF0]
+namespace lift_0044CCF0 {
+// @name Unknown::matchesGlobalNameIfSlot28Clear
+// @class Unknown
+// @summary Returns false if virtual slot 0x28 returns true; otherwise returns whether the string at +0x458 equals global mem_00B41B80.
+// @field Unknown +0x458 std::string field_0x458
+
+extern std::string mem_00B41B80;
+bool ext_string_equal(const std::string& lhs, const std::string& rhs);
+
+struct Unknown {
+    bool matchesGlobalNameIfSlot28Clear();
+};
+
+bool Unknown::matchesGlobalNameIfSlot28Clear() {
+    void* self = this;
+    void* vtbl = lift_field<void*>(self, 0);
+    auto slot28 = lift_field<bool (*)(void*)>(vtbl, 0x28);
+    if (slot28(self)) {
+        return false;
+    }
+    return ext_string_equal(lift_field<std::string>(self, 0x458), mem_00B41B80);
+}
+} // namespace lift_0044CCF0

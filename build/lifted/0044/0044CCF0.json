@@ -1,0 +1,22 @@
+{
+  "va": "0x0044CCF0",
+  "size": 50,
+  "orig_symbol": "sub_0044CCF0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::matchesGlobalNameIfSlot28Clear",
+  "class": "Unknown",
+  "signature": "bool Unknown::matchesGlobalNameIfSlot28Clear()",
+  "summary": "Returns false if virtual slot 0x28 returns true; otherwise returns whether the string at +0x458 equals global mem_00B41B80.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x458",
+      "type": "std::string",
+      "name": "field_0x458"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:32:24Z"
+}
