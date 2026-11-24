@@ -1,0 +1,21 @@
+{
+  "va": "0x007C9CD0",
+  "size": 35,
+  "orig_symbol": "sub_007C9CD0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "setAbsField04",
+  "signature": "void sub_007C9CD0(void* dst, float val)",
+  "summary": "Stores the absolute value of a float argument into offset +0x04 of the target struct.",
+  "fields": [
+    {
+      "class": "Target",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:01:20Z"
+}

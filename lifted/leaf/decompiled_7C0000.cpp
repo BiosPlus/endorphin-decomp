@@ -141,3 +141,16 @@ void fn_007C9340(const void* base, UINT idx, FLOAT* out) {
     out[2] = lift_field<FLOAT>(element, 0x18);
 }
 } // namespace lift_007C9340
+
+// [0x007C9CD0]
+namespace lift_007C9CD0 {
+// @name setAbsField04
+// @summary Stores the absolute value of a float argument into offset +0x04 of the target struct.
+// @field Target +0x04 float field_0x04
+
+
+void sub_007C9CD0(void* dst, float val) {
+    float abs_val = (val < 0.0f) ? -val : val;
+    *reinterpret_cast<float*>(reinterpret_cast<uint8_t*>(dst) + 0x4) = abs_val;
+}
+} // namespace lift_007C9CD0

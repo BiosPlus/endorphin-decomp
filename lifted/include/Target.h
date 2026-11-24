@@ -9,5 +9,6 @@
 namespace lifted_layout {
 struct Target_Fields {
     // +0x0   uint32_t                 field_0x00  (evidence: 0x007C2E50, 0x007CC9D0)
+    // +0x4   float                    field_0x04  (evidence: 0x007C9CD0)
 };
 } // namespace lifted_layout
