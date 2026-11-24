@@ -41295,6 +41295,13 @@
     "summary": "Adjusts the this pointer by +0x10 and forwards the argument to sub_007873F0.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x0071B020": {
+    "name": "Unknown::CallArgWithSubObjectAddr0x10",
+    "class": "Unknown",
+    "signature": "void* fn_0071B020(void* self, void* arg)",
+    "summary": "Calls 0x006D2390 with arg as this and (self + 0x10) as its stack argument, then returns arg.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071B0F0": {
     "name": "sub_0071B0F0",
     "class": "Unknown",
