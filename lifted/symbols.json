@@ -94,6 +94,12 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x8.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00401AF0": {
+    "name": "FindPredecessorOfFlagged",
+    "signature": "void* fn_00401AF0(void* arg)",
+    "summary": "Walks the first-word link chain from arg and returns the node just before the first node whose byte at +0x15 is nonzero (returns arg if arg-\u003enext is already flagged).",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x00401B10": {
     "name": "sub_00401B10",
     "signature": "extern \"C\" void __fastcall fn_00401B10(void* self)",

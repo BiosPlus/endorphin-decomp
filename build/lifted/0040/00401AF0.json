@@ -1,0 +1,27 @@
+{
+  "va": "0x00401AF0",
+  "size": 27,
+  "orig_symbol": "sub_00401AF0",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "FindPredecessorOfFlagged",
+  "signature": "void* fn_00401AF0(void* arg)",
+  "summary": "Walks the first-word link chain from arg and returns the node just before the first node whose byte at +0x15 is nonzero (returns arg if arg-\u003enext is already flagged).",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x15",
+      "type": "uint8_t",
+      "name": "field_0x15"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:59:13Z"
+}
