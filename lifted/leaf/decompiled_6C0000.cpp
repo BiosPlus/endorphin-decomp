@@ -218,3 +218,18 @@ void Unknown_SetBits0F00(Unknown* self, uint32_t arg) {
     self->field_0x10 = edx;
 }
 } // namespace lift_006C9D00
+
+// [0x006C59C0] sub_006C59C0 (32 bytes)
+namespace lift_006C59C0 {
+// Known callee 0x006E7460: sub_006E7460 (Getter returning int32_t field at offset +0x0.)
+extern int32_t __fastcall ext_006E7460(void* self);
+
+// @name Unknown::GetChildByIndex
+// @class Unknown
+// @summary Returns the int32_t result of ext_006E7460 applied to the child pointer at index in the array stored at self+0x104.
+// @field Unknown +0x104 void** childArray
+int32_t fn_006C59C0(void* self, uint32_t index) {
+    void** children = *reinterpret_cast<void***>(static_cast<uint8_t*>(self) + 0x104);
+    return ext_006E7460(children[index]);
+}
+} // namespace lift_006C59C0

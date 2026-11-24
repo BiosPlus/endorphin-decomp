@@ -35841,6 +35841,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006C3470 (Unknown::GetEntryAddressAlt).",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C59C0": {
+    "name": "Unknown::GetChildByIndex",
+    "class": "Unknown",
+    "signature": "int32_t fn_006C59C0(void* self, uint32_t index)",
+    "summary": "Returns the int32_t result of ext_006E7460 applied to the child pointer at index in the array stored at self+0x104.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C59E0": {
     "name": "sub_006C59E0",
     "signature": "extern \"C\" int32_t __fastcall fn_006C59E0(void* self)",
