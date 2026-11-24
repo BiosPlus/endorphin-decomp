@@ -1368,6 +1368,13 @@
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_4544.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00430EE0": {
+    "name": "SubobjectReleaseSlot1",
+    "class": "Unknown",
+    "signature": "void fn_00430EE0(void* self)",
+    "summary": "If the object pointed to by the slot at *self is non-null, invoke its virtual slot 1 with argument 1.",
+    "lifted_path": "lifted/leaf/tiny_430000.cpp"
+  },
   "0x00430F9E": {
     "name": "sub_00430F9E",
     "signature": "void fn_00430F9E()",

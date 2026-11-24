@@ -1,0 +1,22 @@
+{
+  "va": "0x00430EE0",
+  "size": 16,
+  "orig_symbol": "sub_00430EE0",
+  "src_path": "src/leaf/tiny_430000.cpp",
+  "lifted_path": "lifted/leaf/tiny_430000.cpp",
+  "name": "SubobjectReleaseSlot1",
+  "class": "Unknown",
+  "signature": "void fn_00430EE0(void* self)",
+  "summary": "If the object pointed to by the slot at *self is non-null, invoke its virtual slot 1 with argument 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:34:21Z"
+}

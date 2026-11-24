@@ -78,3 +78,25 @@ extern "C" void* __fastcall fn_00435360(void* self, int edx_unused, unsigned int
 extern "C" void __fastcall fn_0043CAA0(void* self) {
     ext_0041C730(static_cast<char*>(self) + 0x64);
 }
+
+// [0x00430EE0] sub_00430EE0 (16 bytes)
+namespace lift_00430EE0 {
+// @name SubobjectReleaseSlot1
+// @class Unknown
+// @summary If the object pointed to by the slot at *self is non-null, invoke its virtual slot 1 with argument 1.
+// @field Unknown +0x00 void* field_0x00
+void fn_00430EE0(void* self) {
+    // mov ecx, [ecx]: load object pointer from the slot.
+    void* obj = lift_field<void*>(self, 0);
+    // test ecx, ecx / je: nothing to do for a null object.
+    if (obj == nullptr) {
+        return;
+    }
+    // mov eax, [ecx]; mov edx, [eax+4]: fetch vtable slot 1.
+    void** vtable = lift_field<void**>(obj, 0);
+    using SlotFn = void (*)(void* self_, int arg);
+    SlotFn fn = reinterpret_cast<SlotFn>(vtable[1]);
+    // push 1; call edx: invoke with ecx = obj and one argument.
+    fn(obj, 1);
+}
+} // namespace lift_00430EE0
