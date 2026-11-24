@@ -5526,6 +5526,24 @@ uint32_t __thiscall fn_005272B0(void* ecx, uint32_t arg0, uint32_t arg1) {
 }
 } // namespace lift_005272B0
 
+// [0x00402130] HelperGraphic::vfunc_2_off_150 (17 bytes)
+namespace lift_00402130 {
+// @name HelperGraphic::vfunc_2_off_150
+// @class HelperGraphic
+// @summary Non-virtual-base thunk: rebases this by -0x14c, then tail-dispatches vtable slot 12 (+0x30) of the adjusted object.
+// @field HelperGraphic +0x04 void* vptr_TransformInterface
+void* fn_00402130(void* self) {
+    // mov eax, [ecx - 0x14c]  -> vtable pointer of the object at self - 0x14c
+    void* vtbl = *reinterpret_cast<void**>(static_cast<char*>(self) - 0x14c);
+    // mov edx, [eax + 0x30]   -> slot 12 of that vtable (32-bit slot width)
+    void* target = *reinterpret_cast<void**>(static_cast<char*>(vtbl) + 0x30);
+    // add ecx, -0x14c ; jmp edx -> tail call with adjusted this; result passes through eax
+    void* adjusted = static_cast<char*>(self) - 0x14c;
+    using thunk_target_t = void* (*)(void*);
+    return reinterpret_cast<thunk_target_t>(target)(adjusted);
+}
+} // namespace lift_00402130
+
 // [0x00402150] HelperGraphic::vfunc_1_off_150 (17 bytes)
 namespace lift_00402150 {
 // @name HelperGraphic::vfunc_1_off_150
@@ -5544,21 +5562,3 @@ void fn_00402150(void* self) {
     (void)target(adj);
 }
 } // namespace lift_00402150
-
-// [0x00402130] HelperGraphic::vfunc_2_off_150 (17 bytes)
-namespace lift_00402130 {
-// @name HelperGraphic::vfunc_2_off_150
-// @class HelperGraphic
-// @summary Non-virtual-base thunk: rebases this by -0x14c, then tail-dispatches vtable slot 12 (+0x30) of the adjusted object.
-// @field HelperGraphic +0x04 void* vptr_TransformInterface
-void* fn_00402130(void* self) {
-    // mov eax, [ecx - 0x14c]  -> vtable pointer of the object at self - 0x14c
-    void* vtbl = *reinterpret_cast<void**>(static_cast<char*>(self) - 0x14c);
-    // mov edx, [eax + 0x30]   -> slot 12 of that vtable (32-bit slot width)
-    void* target = *reinterpret_cast<void**>(static_cast<char*>(vtbl) + 0x30);
-    // add ecx, -0x14c ; jmp edx -> tail call with adjusted this; result passes through eax
-    void* adjusted = static_cast<char*>(self) - 0x14c;
-    using thunk_target_t = void* (*)(void*);
-    return reinterpret_cast<thunk_target_t>(target)(adjusted);
-}
-} // namespace lift_00402130
