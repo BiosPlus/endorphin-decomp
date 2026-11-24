@@ -1,0 +1,22 @@
+{
+  "va": "0x00465B20",
+  "size": 16,
+  "orig_symbol": "sub_00465B20",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "Unknown::ReleaseOrNotifyChild",
+  "class": "UnknownClass",
+  "signature": "void fn_00465B20(void* self)",
+  "summary": "If the pointer stored at self+0x00 is non-null, calls its vtable slot 2 with argument 1.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:34:22Z"
+}

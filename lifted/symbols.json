@@ -3395,6 +3395,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0041B3B0 (callGlobalThunk00430D40).",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00465B20": {
+    "name": "Unknown::ReleaseOrNotifyChild",
+    "class": "UnknownClass",
+    "signature": "void fn_00465B20(void* self)",
+    "summary": "If the pointer stored at self+0x00 is non-null, calls its vtable slot 2 with argument 1.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00465B30": {
     "name": "get_global_field_0x58",
     "signature": "extern \"C\" int32_t __cdecl fn_00465B30(void)",

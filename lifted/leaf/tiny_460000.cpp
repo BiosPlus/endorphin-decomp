@@ -488,3 +488,20 @@ uint8_t fn_004646A0() {
     return static_cast<uint8_t>(state < 0);
 }
 } // namespace lift_004646A0
+
+// [0x00465B20] sub_00465B20 (16 bytes)
+namespace lift_00465B20 {
+// @name Unknown::ReleaseOrNotifyChild
+// @class UnknownClass
+// @summary If the pointer stored at self+0x00 is non-null, calls its vtable slot 2 with argument 1.
+// @field UnknownClass +0x00 void* field_0x00
+void fn_00465B20(void* self) {
+    void* obj = *static_cast<void**>(self);
+    if (obj == nullptr) {
+        return;
+    }
+    void** vtable = *static_cast<void***>(obj);
+    auto fn = reinterpret_cast<void (*)(void*, int)>(vtable[2]);
+    fn(obj, 1);
+}
+} // namespace lift_00465B20
