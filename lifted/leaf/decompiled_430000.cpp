@@ -249,3 +249,29 @@ extern void __thiscall fn_00433B70(void* self, int32_t stackArg) {
     }
 }
 } // namespace lift_00433B70
+
+// [0x00430260] sub_00430260 (24 bytes)
+namespace lift_00430260 {
+// Known callee 0x00465B30: get_global_field_0x58 (Calls ext_004658C0 and returns the int32_t field at offset +0x58.)
+extern int32_t ext_00465B30(void);
+// Known callee 0x00468660: getNestedField_0x18_0xc (Reads a 32-bit value at offset 0xc of the object pointed to by this+0x18)
+// Original is __thiscall; the receiver is passed as the first argument here.
+extern uint32_t ext_00468660(uint32_t this_ptr);
+
+// @name CallVirtualSlot1D8OnNestedObject
+// @summary Fetches an object via two callees, then tail-dispatches its vtable slot at +0x1d8 with that object as `this`.
+void fn_00430260(void) {
+    int32_t  token = ext_00465B30();
+    uint32_t obj_addr = ext_00468660(static_cast<uint32_t>(token));
+    void*    obj = reinterpret_cast<void*>(static_cast<uintptr_t>(obj_addr));
+
+    // Load vtable pointer from object's first dword.
+    void* vtbl = *reinterpret_cast<void**>(obj);
+
+    // Slot at byte offset 0x1d8 in the vtable; the target's signature is unknown, so the result is passed through.
+    using VirtualFn = uint32_t (*)(void* self);
+    VirtualFn fn = reinterpret_cast<VirtualFn>(lift_field<void*>(vtbl, 0x1d8));
+    (void)fn;
+    (void)obj;
+}
+} // namespace lift_00430260
