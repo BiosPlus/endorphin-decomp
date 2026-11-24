@@ -6841,6 +6841,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00401D00 (AVIIO::vfunc_7).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00478C20": {
+    "name": "FillTriplesAndAdvance",
+    "signature": "__stdcall DWORD* fn_00478C20(DWORD* dst, DWORD count, const DWORD* src)",
+    "summary": "Fills `count` consecutive 12-byte slots at dst with the triple at src, then returns the pointer one past the last slot.",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x00479A90": {
     "name": "fill_n_float",
     "signature": "float* __stdcall sub_00479A90(float* dst, uint32_t count, const float* value)",

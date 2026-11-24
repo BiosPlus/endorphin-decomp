@@ -1,0 +1,13 @@
+{
+  "va": "0x00478C20",
+  "size": 54,
+  "orig_symbol": "sub_00478C20",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "FillTriplesAndAdvance",
+  "signature": "__stdcall DWORD* fn_00478C20(DWORD* dst, DWORD count, const DWORD* src)",
+  "summary": "Fills `count` consecutive 12-byte slots at dst with the triple at src, then returns the pointer one past the last slot.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:10:37Z"
+}

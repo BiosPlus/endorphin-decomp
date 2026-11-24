@@ -72,3 +72,15 @@ void fn_00477E60(DWORD* dst, DWORD count, const DWORD* src) {
     } while (count != 0);
 }
 } // namespace lift_00477E60
+
+// [0x00478C20]
+namespace lift_00478C20 {
+// @name FillTriplesAndAdvance
+// @summary Fills `count` consecutive 12-byte slots at dst with the triple at src, then returns the pointer one past the last slot.
+extern void ext_00477E60(DWORD* dst, DWORD count, const DWORD* src);
+
+__stdcall DWORD* fn_00478C20(DWORD* dst, DWORD count, const DWORD* src) {
+    ext_00477E60(dst, count, src);
+    return dst + 3 * count;
+}
+} // namespace lift_00478C20
