@@ -47067,6 +47067,12 @@
     "summary": "Pure jump thunk forwarding to 0x008728E2.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x008727FB": {
+    "name": "initAppLocaleAndFlags",
+    "signature": "extern \"C\" int __stdcall fn_008727FB(uint32_t arg1, uint32_t arg2)",
+    "summary": "Sets app state fields from arguments, optionally resets multibyte codepage to -3, and returns 1",
+    "lifted_path": "lifted/leaf/decompiled_870000.cpp"
+  },
   "0x00872822": {
     "name": "thunk_MSVCR80___CxxFrameHandler",
     "signature": "extern \"C\" void fn_00872822(void)",

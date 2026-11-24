@@ -1,0 +1,27 @@
+{
+  "va": "0x008727FB",
+  "size": 38,
+  "orig_symbol": "sub_008727FB",
+  "src_path": "src/leaf/decompiled_870000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_870000.cpp",
+  "name": "initAppLocaleAndFlags",
+  "signature": "extern \"C\" int __stdcall fn_008727FB(uint32_t arg1, uint32_t arg2)",
+  "summary": "Sets app state fields from arguments, optionally resets multibyte codepage to -3, and returns 1",
+  "fields": [
+    {
+      "class": "AppState",
+      "offset": "+0x14",
+      "type": "uint8_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "AppState",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:49:46Z"
+}
