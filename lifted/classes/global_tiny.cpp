@@ -5866,3 +5866,17 @@ BOOL fn_0041B6C0(void* self, const RECT* lprc) {
     return mem_009240F0(hdc, lprc);
 }
 } // namespace lift_0041B6C0
+
+// [0x004EC6E0]
+namespace lift_004EC6E0 {
+// @name CharacterSelection::vfunc_19
+// @class CharacterSelection
+// @summary Returns 0x15E, plus 1 when the argument equals 0x67 (thiscall, one stack arg, callee pops 4).
+
+int CharacterSelection_vfunc_19(int value) {
+    int eax = 0;
+    eax = (value == 0x67) ? 1 : 0;
+    eax += 0x15E;
+    return eax;
+}
+} // namespace lift_004EC6E0

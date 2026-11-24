@@ -1,0 +1,14 @@
+{
+  "va": "0x004EC6E0",
+  "size": 18,
+  "orig_symbol": "CharacterSelection::vfunc_19",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CharacterSelection::vfunc_19",
+  "class": "CharacterSelection",
+  "signature": "int CharacterSelection_vfunc_19(int value)",
+  "summary": "Returns 0x15E, plus 1 when the argument equals 0x67 (thiscall, one stack arg, callee pops 4).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:57:26Z"
+}
