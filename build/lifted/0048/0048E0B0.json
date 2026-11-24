@@ -1,0 +1,28 @@
+{
+  "va": "0x0048E0B0",
+  "size": 13,
+  "orig_symbol": "Commands::SetSaveStartFrameCommand::vfunc_1",
+  "src_path": "src/Commands/SetSaveStartFrameCommand.cpp",
+  "lifted_path": "lifted/Commands/SetSaveStartFrameCommand.cpp",
+  "name": "Commands::SetSaveStartFrameCommand::vfunc_1",
+  "class": "Commands::SetSaveStartFrameCommand",
+  "signature": "void fn_0048E0B0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0048E070 (Commands::SetPlaybackStartFrameCommand::vfunc_1).",
+  "fields": [
+    {
+      "class": "SetPlaybackStartFrameCommand",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "SetPlaybackStartFrameCommand",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:19:47Z"
+}

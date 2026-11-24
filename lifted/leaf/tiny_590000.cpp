@@ -10,8 +10,10 @@ extern "C" void __fastcall ext_0047A580(void* self);
 extern "C" void __fastcall ext_004969D0(void* self);
 extern "C" void __fastcall ext_00496D00(void* self);
 extern "C" void __fastcall ext_006750B0(void* self);
+#include <cstring>
+#include <cstdint>
 
-// [0x00594000] sub_00594000 (6 bytes)
+#include <cstdint>
 // @name sub_00594000
 // @summary Returns global int32 value from mem_00B40D08.
 extern "C" int32_t __cdecl fn_00594000(void) {
@@ -135,3 +137,21 @@ extern "C" void __fastcall fn_0059DED0(void* self) {
     void* delegate_obj = lift_field<void*>(self, 0x5FC);
     ext_006750B0(delegate_obj);
 }
+
+// [0x00594700] sub_00594700 (13 bytes)
+namespace lift_00594700 {
+// @name sub_00594700
+// @summary Auto-lifted identical-shape clone of 0x0046C110 (Unknown::GetFieldF138ViaF8).
+namespace lift_0046C110 {
+// @name Unknown::GetFieldF138ViaF8
+// @class Unknown
+// @summary Returns the float at +0x138 of the sub-object pointed to by self+0xF8.
+// @field Unknown +0xF8 void* field_0xF8
+// @field Unknown +0x138 float field_0x138
+float fn_00594700(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    auto* sub = *reinterpret_cast<unsigned char**>(base + 0x26C);
+    return *reinterpret_cast<float*>(sub + 0x1D0);
+}
+} // namespace lift_0046C110
+} // namespace lift_00594700

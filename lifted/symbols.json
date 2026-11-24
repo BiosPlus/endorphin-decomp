@@ -4404,6 +4404,34 @@
     "summary": "Forwards this-\u003efield_0x18 as an argument to ext_004736B0, using this-\u003efield_0x10 as the receiver.",
     "lifted_path": "lifted/Commands/SetPlaybackEndFrameCommand.cpp"
   },
+  "0x0048E0B0": {
+    "name": "Commands::SetSaveStartFrameCommand::vfunc_1",
+    "class": "Commands::SetSaveStartFrameCommand",
+    "signature": "void fn_0048E0B0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0048E070 (Commands::SetPlaybackStartFrameCommand::vfunc_1).",
+    "lifted_path": "lifted/Commands/SetSaveStartFrameCommand.cpp"
+  },
+  "0x0048E0C0": {
+    "name": "Commands::SetSaveStartFrameCommand::vfunc_2",
+    "class": "Commands::SetSaveStartFrameCommand",
+    "signature": "void fn_0048E0C0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0048E070 (Commands::SetPlaybackStartFrameCommand::vfunc_1).",
+    "lifted_path": "lifted/Commands/SetSaveStartFrameCommand.cpp"
+  },
+  "0x0048E0D0": {
+    "name": "Commands::SetSaveEndFrameCommand::vfunc_1",
+    "class": "Commands::SetSaveEndFrameCommand",
+    "signature": "void fn_0048E0D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0048E070 (Commands::SetPlaybackStartFrameCommand::vfunc_1).",
+    "lifted_path": "lifted/Commands/SetSaveEndFrameCommand.cpp"
+  },
+  "0x0048E0E0": {
+    "name": "Commands::SetSaveEndFrameCommand::vfunc_2",
+    "class": "Commands::SetSaveEndFrameCommand",
+    "signature": "void fn_0048E0E0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0048E070 (Commands::SetPlaybackStartFrameCommand::vfunc_1).",
+    "lifted_path": "lifted/Commands/SetSaveEndFrameCommand.cpp"
+  },
   "0x0048E0F0": {
     "name": "Commands::CreateTriggeredEventCommand::vfunc_3",
     "class": "Commands::CreateTriggeredEventCommand",
@@ -12889,6 +12917,13 @@
     "name": "sub_00594640",
     "signature": "extern \"C\" void __fastcall fn_00594640(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0x26C and tail-calls sub_0047A580.",
+    "lifted_path": "lifted/leaf/tiny_590000.cpp"
+  },
+  "0x00594700": {
+    "name": "sub_00594700",
+    "class": "Unknown",
+    "signature": "float fn_00594700(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046C110 (Unknown::GetFieldF138ViaF8).",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
   "0x00594BA0": {
