@@ -494,3 +494,33 @@ void sub_007D6290(uint32_t arg0, uint32_t arg1) {
     mem_w32(arg0 + 0x10, arg1);
 }
 } // namespace lift_007D6290
+
+// [0x007D4860] sub_007D4860 (54 bytes)
+namespace lift_007D4860 {
+// @name Dispatcher::SubmitValueAndDecrementCount
+// @class Dispatcher
+// @summary If value is nonzero, forward it to a handler slot chosen by field +0x10, then decrement the counter at +0x04 if positive.
+// @field Dispatcher +0x04 int32_t field_0x04
+// @field Dispatcher +0x10 int32_t field_0x10
+// @field Dispatcher +0x1c void* field_0x1c
+void fn_007D4860(void* self, int32_t value) {
+    if (value == 0) {
+        return;
+    }
+
+    auto* base = static_cast<uint8_t*>(self);
+    const int32_t selector = *reinterpret_cast<int32_t*>(base + 0x10);
+    auto* handler = static_cast<uint8_t*>(*reinterpret_cast<void**>(base + 0x1c));
+
+    // Slot +0x10 when selector != 0, otherwise slot +0x0c.
+    const std::size_t slot_offset = (selector != 0) ? 0x10 : 0x0c;
+    auto fn = reinterpret_cast<void (__cdecl*)(int32_t)>(
+        *reinterpret_cast<void**>(handler + slot_offset));
+    fn(value);
+
+    const int32_t count = *reinterpret_cast<int32_t*>(base + 0x04);
+    if (count > 0) {
+        *reinterpret_cast<int32_t*>(base + 0x04) = count - 1;
+    }
+}
+} // namespace lift_007D4860

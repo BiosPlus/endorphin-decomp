@@ -54817,6 +54817,13 @@
     "summary": "If the object's +0x04 field is non-zero, forwards it with the +0x1c field and a constant to ext_007D5950.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007D4860": {
+    "name": "Dispatcher::SubmitValueAndDecrementCount",
+    "class": "Dispatcher",
+    "signature": "void fn_007D4860(void* self, int32_t value)",
+    "summary": "If value is nonzero, forward it to a handler slot chosen by field +0x10, then decrement the counter at +0x04 if positive.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007D48A0": {
     "name": "getField_0x04",
     "signature": "uint32_t sub_007D48A0(uint32_t arg0)",

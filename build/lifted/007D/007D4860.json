@@ -1,0 +1,34 @@
+{
+  "va": "0x007D4860",
+  "size": 54,
+  "orig_symbol": "sub_007D4860",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "Dispatcher::SubmitValueAndDecrementCount",
+  "class": "Dispatcher",
+  "signature": "void fn_007D4860(void* self, int32_t value)",
+  "summary": "If value is nonzero, forward it to a handler slot chosen by field +0x10, then decrement the counter at +0x04 if positive.",
+  "fields": [
+    {
+      "class": "Dispatcher",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Dispatcher",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Dispatcher",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:12:59Z"
+}
