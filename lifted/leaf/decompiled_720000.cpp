@@ -255,3 +255,20 @@ void fn_0072B250(void* self) {
     ext_006A5C5C(obj);
 }
 } // namespace lift_0072B250
+
+// [0x0072BC70] sub_0072BC70 (48 bytes)
+namespace lift_0072BC70 {
+// @name Unknown::getIndexedDword
+// @class Unknown
+// @summary Returns the uint32 at index from the array at +0x160, or 0 if index is negative or >= count at +0x150.
+// @field Unknown +0x150 int32_t field_0x150
+// @field Unknown +0x160 uint32_t* field_0x160
+uint32_t fn_0072BC70(void* self, int32_t index) {
+    const int32_t count = lift_field<int32_t>(self, 0x150);
+    if (index < 0 || index >= count) {
+        return 0;
+    }
+    const uint32_t* elements = lift_field<uint32_t*>(self, 0x160);
+    return elements[index];
+}
+} // namespace lift_0072BC70

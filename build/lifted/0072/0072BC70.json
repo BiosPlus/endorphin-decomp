@@ -1,0 +1,28 @@
+{
+  "va": "0x0072BC70",
+  "size": 48,
+  "orig_symbol": "sub_0072BC70",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "Unknown::getIndexedDword",
+  "class": "Unknown",
+  "signature": "uint32_t fn_0072BC70(void* self, int32_t index)",
+  "summary": "Returns the uint32 at index from the array at +0x160, or 0 if index is negative or \u003e= count at +0x150.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x150",
+      "type": "int32_t",
+      "name": "field_0x150"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x160",
+      "type": "uint32_t*",
+      "name": "field_0x160"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:23:49Z"
+}

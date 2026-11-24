@@ -46621,6 +46621,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0072B990 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x0072BC70": {
+    "name": "Unknown::getIndexedDword",
+    "class": "Unknown",
+    "signature": "uint32_t fn_0072BC70(void* self, int32_t index)",
+    "summary": "Returns the uint32 at index from the array at +0x160, or 0 if index is negative or \u003e= count at +0x150.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x0072C050": {
     "name": "sub_0072C050",
     "signature": "extern \"C\" void __fastcall fn_0072C050(void* self, int edx_unused, uint8_t value)",
