@@ -141,3 +141,16 @@ void fn_0048ABF0(void* self) {
 }
 } // namespace lift_005B72E0
 } // namespace lift_0048ABF0
+
+// [0x004800A0] sub_004800A0 (21 bytes)
+namespace lift_004800A0 {
+// @name Unknown::setField3E0FromInvertedArgBit0
+// @class Unknown
+// @summary Stores the inverted low bit of the byte argument into this+0x3E0 as a dword (thiscall, ret 4).
+// @field Unknown +0x3e0 uint32_t field_0x3e0
+void fn_004800A0(void* self, uint8_t arg) {
+    const uint8_t inverted = static_cast<uint8_t>(~arg);
+    const uint32_t bit0 = static_cast<uint32_t>(inverted) & 1u;
+    lift_field<uint32_t>(self, 0x3e0) = bit0;
+}
+} // namespace lift_004800A0

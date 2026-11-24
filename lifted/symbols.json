@@ -4652,6 +4652,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0047DBC0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004800A0": {
+    "name": "Unknown::setField3E0FromInvertedArgBit0",
+    "class": "Unknown",
+    "signature": "void fn_004800A0(void* self, uint8_t arg)",
+    "summary": "Stores the inverted low bit of the byte argument into this+0x3E0 as a dword (thiscall, ret 4).",
+    "lifted_path": "lifted/leaf/tiny_480000.cpp"
+  },
   "0x004800C0": {
     "name": "ToolEngine::vfunc_16",
     "class": "ToolEngine",

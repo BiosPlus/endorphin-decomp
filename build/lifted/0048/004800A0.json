@@ -1,0 +1,22 @@
+{
+  "va": "0x004800A0",
+  "size": 21,
+  "orig_symbol": "sub_004800A0",
+  "src_path": "src/leaf/tiny_480000.cpp",
+  "lifted_path": "lifted/leaf/tiny_480000.cpp",
+  "name": "Unknown::setField3E0FromInvertedArgBit0",
+  "class": "Unknown",
+  "signature": "void fn_004800A0(void* self, uint8_t arg)",
+  "summary": "Stores the inverted low bit of the byte argument into this+0x3E0 as a dword (thiscall, ret 4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x3E0",
+      "type": "uint32_t",
+      "name": "field_0x3e0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:11:58Z"
+}
