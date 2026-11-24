@@ -1,0 +1,28 @@
+{
+  "va": "0x004CB400",
+  "size": 21,
+  "orig_symbol": "sub_004CB400",
+  "src_path": "src/leaf/tiny_4C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4C0000.cpp",
+  "name": "Unknown::ResolveFieldOrOffset",
+  "class": "Unknown",
+  "signature": "void* fn_004CB400(void* self)",
+  "summary": "Returns this+0x180 pointer advanced by 0x24 if non-null, else the address of this+0x194.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x180",
+      "type": "void*",
+      "name": "field_0x180"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x194",
+      "type": "void*",
+      "name": "field_0x194"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:12:04Z"
+}

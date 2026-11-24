@@ -8037,6 +8037,13 @@
     "summary": "Returns (cached field at +0x180) + 0x18 if non-null; otherwise returns the address of the embedded slot at +0x188.",
     "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
   },
+  "0x004CB400": {
+    "name": "Unknown::ResolveFieldOrOffset",
+    "class": "Unknown",
+    "signature": "void* fn_004CB400(void* self)",
+    "summary": "Returns this+0x180 pointer advanced by 0x24 if non-null, else the address of this+0x194.",
+    "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
+  },
   "0x004CB440": {
     "name": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData\u003e::vfunc_4",
     "class": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}\u003e",

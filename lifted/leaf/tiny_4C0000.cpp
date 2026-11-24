@@ -173,3 +173,19 @@ DWORD fn_004CB3E0(void* self) {
     return static_cast<DWORD>(reinterpret_cast<uintptr_t>(self) + 0x188);
 }
 } // namespace lift_004CB3E0
+
+// [0x004CB400] sub_004CB400 (21 bytes)
+namespace lift_004CB400 {
+// @name Unknown::ResolveFieldOrOffset
+// @class Unknown
+// @summary Returns this+0x180 pointer advanced by 0x24 if non-null, else the address of this+0x194.
+// @field Unknown +0x180 void* field_0x180
+// @field Unknown +0x194 void* field_0x194
+void* fn_004CB400(void* self) {
+    void* p = lift_field<void*>(self, 0x180);
+    if (p != nullptr) {
+        return static_cast<uint8_t*>(p) + 0x24;
+    }
+    return static_cast<uint8_t*>(self) + 0x194;
+}
+} // namespace lift_004CB400
