@@ -462,3 +462,25 @@ void* fn_00401AF0(void* arg) {
     return prev;
 }
 } // namespace lift_00401AF0
+
+// [0x00404700]
+namespace lift_00404700 {
+// @name setValueAndInvalidate
+// @summary Sets field_0x58 and invalidates the associated window if non-null.
+// @field Window +0x20 uint32_t hwnd
+// @field Window +0x58 uint32_t field_0x58
+
+
+extern uint32_t mem_00925688; // USER32!InvalidateRect
+
+using InvalidateRect_t = int32_t (__stdcall *)(uint32_t hWnd, uint32_t lpRect, int32_t bErase);
+
+void __thiscall sub_00404700(void* self, uint32_t value) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(obj + 0x58) = value;
+    uint32_t hwnd = *reinterpret_cast<uint32_t*>(obj + 0x20);
+    if (hwnd != 0) {
+        reinterpret_cast<InvalidateRect_t>(mem_00925688)(hwnd, 0, 1);
+    }
+}
+} // namespace lift_00404700

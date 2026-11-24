@@ -1,0 +1,27 @@
+{
+  "va": "0x00404700",
+  "size": 28,
+  "orig_symbol": "sub_00404700",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "setValueAndInvalidate",
+  "signature": "void __thiscall sub_00404700(void* self, uint32_t value)",
+  "summary": "Sets field_0x58 and invalidates the associated window if non-null.",
+  "fields": [
+    {
+      "class": "Window",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "hwnd"
+    },
+    {
+      "class": "Window",
+      "offset": "+0x58",
+      "type": "uint32_t",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:06:36Z"
+}
