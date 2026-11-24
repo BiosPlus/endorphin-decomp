@@ -1,0 +1,13 @@
+{
+  "va": "0x004276B0",
+  "size": 32,
+  "orig_symbol": "sub_004276B0",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "StdStringCopyConstruct",
+  "signature": "void* fn_004276B0(void* dst, const void* src)",
+  "summary": "Copy-constructs a std::string at dst from src via the MSVCP80 copy constructor; returns dst.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:29:01Z"
+}

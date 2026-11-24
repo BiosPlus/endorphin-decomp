@@ -426,3 +426,22 @@ extern uint32_t __cdecl fn_0042FB20(void) {
     return slot(obj, 3);
 }
 } // namespace lift_0042FB20
+
+// [0x004276B0] sub_004276B0 (32 bytes)
+namespace lift_004276B0 {
+extern int mem_00924FE0;
+
+// Thiscall function pointer type for MSVCP80 std::basic_string<char> copy constructor:
+// this in ecx, one stack argument (const string&), callee cleans the stack.
+using StringCopyCtorFn = void(__thiscall*)(void* self, const void* src);
+
+// @name StdStringCopyConstruct
+// @summary Copy-constructs a std::string at dst from src via the MSVCP80 copy constructor; returns dst.
+// Cdecl: dst at [esp+4], src at [esp+8]; result (dst) in eax.
+// No fields accessed: dst is treated as opaque std::string storage.
+void* fn_004276B0(void* dst, const void* src) {
+    auto copy_ctor = *reinterpret_cast<StringCopyCtorFn*>(&mem_00924FE0);
+    copy_ctor(dst, src);
+    return dst;
+}
+} // namespace lift_004276B0
