@@ -17256,6 +17256,13 @@
     "summary": "If this-\u003efield_0x04 is non-null, store the argument at ptr-\u003efield_0x5C.",
     "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
   },
+  "0x005DA130": {
+    "name": "Unknown::SetChildField60",
+    "class": "Unknown",
+    "signature": "void fn_005DA130(void* self, uint32_t value)",
+    "summary": "If this-\u003efield_0x04 is non-null, store the stack argument at child-\u003efield_0x60 (thiscall, ret 4).",
+    "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
+  },
   "0x005DA190": {
     "name": "sub_005DA190",
     "class": "CompoundRenderable",

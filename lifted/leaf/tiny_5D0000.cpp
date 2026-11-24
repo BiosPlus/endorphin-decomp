@@ -72,3 +72,18 @@ void sub_005DA110(std::uint8_t* self, std::uint32_t arg) {
     }
 }
 } // namespace lift_005DA110
+
+// [0x005DA130]
+namespace lift_005DA130 {
+// @name Unknown::SetChildField60
+// @class Unknown
+// @summary If this->field_0x04 is non-null, store the stack argument at child->field_0x60 (thiscall, ret 4).
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x60 uint32_t field_0x60
+void fn_005DA130(void* self, uint32_t value) {
+    void* child = lift_field<void*>(self, 0x04);
+    if (child != nullptr) {
+        lift_field<uint32_t>(child, 0x60) = value;
+    }
+}
+} // namespace lift_005DA130
