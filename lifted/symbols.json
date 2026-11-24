@@ -13477,10 +13477,10 @@
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
   "0x00538530": {
-    "name": "sub_00530070",
-    "class": "QuadricWrapper",
-    "signature": "void* fn_00530070()",
-    "summary": "Auto-lifted identical-shape clone of 0x0061EA10 (HingeSecondaryConstraint::AllocAndConstruct).",
+    "name": "Unknown::InitWithVTableAndDefaults",
+    "class": "Unknown",
+    "signature": "void* fn_00538530(void* self)",
+    "summary": "Base-initializes this object, then sets vtable to 0x95501c, a float at +0x14 to 1.0, and flag bytes at +0x18 and +0x19 to 1; returns this.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
   "0x00538550": {

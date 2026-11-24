@@ -143,7 +143,7 @@ void* fn_00538530(void* self) {
     *reinterpret_cast<float*>(p + 0x14) = 1.0f;
     p[0x18] = 1;
     p[0x19] = 1;
-    *reinterpret_cast<const void**>(p) = reinterpret_cast<const void*>(static_cast<uintptr_t>(0x95501cu));
+    *reinterpret_cast<const void**>(p) = reinterpret_cast<const void*>(static_cast<std::uintptr_t>(0x95501cu));
     return self;
 }
 } // namespace lift_00538530
