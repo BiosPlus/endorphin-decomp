@@ -11,5 +11,6 @@
 namespace lifted_layout {
 struct SnapTranslateTool_Fields {
     // +0x88  uint32_t                 field_0x88  (evidence: 0x00535610, 0x00544E10, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
+    // +0x9C  void*                    field_0x9C  (evidence: 0x00544D80)
 };
 } // namespace lifted_layout

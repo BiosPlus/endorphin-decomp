@@ -14313,6 +14313,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00536CE0 (OglRenderer::vfunc_91).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00544D80": {
+    "name": "SnapTranslateTool::vfunc_26",
+    "class": "SnapTranslateTool",
+    "signature": "void fn_00544D80(void* self)",
+    "summary": "Calls virtual slot 32 on self, then tail-dispatches virtual slot 26 on the object stored at +0x9C, passing \u0026field_0x9C as this.",
+    "lifted_path": "lifted/classes/SnapTranslateTool.cpp"
+  },
   "0x00544E00": {
     "name": "ReshapeTool::vfunc_8_off_98",
     "class": "ReshapeTool",
