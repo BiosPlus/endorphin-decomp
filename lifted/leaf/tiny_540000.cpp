@@ -6,6 +6,7 @@ extern "C" void __fastcall ext_00541AB0(void* self);
 extern "C" void __fastcall ext_005DC420(void* self);
 extern "C" int mem_00956F94;
 #include <cstdint>
+#include <cstring>
 
 // [0x00548FBB] sub_00548FBB (5 bytes)
 // @name sub_00548FBB
@@ -263,3 +264,30 @@ void fn_0054E400(void* self, uint8_t flag) {
     lift_field<float>(self, 0x44) = (flag == 0) ? 1.0f : 0.0f;
 }
 } // namespace lift_0054E400
+
+// [0x00543300] sub_00543300 (23 bytes)
+namespace lift_00543300 {
+// @name ResetHeaderFields
+// @class <unknown>
+// @summary Stores 10 in the first DWORD of the object and zeroes four DWORDs at +0x08..+0x14; returns self.
+// @field <unknown> +0x00 DWORD field_0x00
+// @field <unknown> +0x08 DWORD field_0x08
+// @field <unknown> +0x0C DWORD field_0x0C
+// @field <unknown> +0x10 DWORD field_0x10
+// @field <unknown> +0x14 DWORD field_0x14
+void* fn_00543300(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    auto store = [base](std::size_t off, DWORD value) {
+        std::memcpy(base + off, &value, sizeof(value));
+    };
+
+    const DWORD zero = 0;
+    store(0x08, zero);
+    store(0x0C, zero);
+    store(0x10, zero);
+    store(0x14, zero);
+    store(0x00, 0x0A);
+
+    return self;
+}
+} // namespace lift_00543300

@@ -1,0 +1,46 @@
+{
+  "va": "0x00543300",
+  "size": 23,
+  "orig_symbol": "sub_00543300",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "ResetHeaderFields",
+  "class": "\u003cunknown\u003e",
+  "signature": "void* fn_00543300(void* self)",
+  "summary": "Stores 10 in the first DWORD of the object and zeroes four DWORDs at +0x08..+0x14; returns self.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x14",
+      "type": "DWORD",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:32:37Z"
+}
