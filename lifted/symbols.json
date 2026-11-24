@@ -14196,6 +14196,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0041C750 (sub_0041C750).",
     "lifted_path": "lifted/leaf/tiny_570000.cpp"
   },
+  "0x0057BB20": {
+    "name": "Unknown::StoreValueAndInitString",
+    "class": "Unknown",
+    "signature": "void* fn_0057BB20(void* self, DWORD value)",
+    "summary": "Stores the DWORD argument at offset 0, then default-constructs an std::string at offset 4; returns self.",
+    "lifted_path": "lifted/leaf/tiny_570000.cpp"
+  },
   "0x00582B60": {
     "name": "Acclaim2MotionIO::vfunc_3",
     "class": "Acclaim2MotionIO",

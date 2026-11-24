@@ -1,0 +1,28 @@
+{
+  "va": "0x0057BB20",
+  "size": 24,
+  "orig_symbol": "sub_0057BB20",
+  "src_path": "src/leaf/tiny_570000.cpp",
+  "lifted_path": "lifted/leaf/tiny_570000.cpp",
+  "name": "Unknown::StoreValueAndInitString",
+  "class": "Unknown",
+  "signature": "void* fn_0057BB20(void* self, DWORD value)",
+  "summary": "Stores the DWORD argument at offset 0, then default-constructs an std::string at offset 4; returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:36:50Z"
+}

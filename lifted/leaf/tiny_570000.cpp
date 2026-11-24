@@ -33,3 +33,26 @@ extern void __fastcall fn_005760E0(void* self, int edx_unused, uint32_t arg) {
 }
 } // namespace lift_0041C750
 } // namespace lift_005760E0
+
+// [0x0057BB20] sub_0057BB20 (24 bytes)
+namespace lift_0057BB20 {
+// IAT slot holding the MSVCP80 std::basic_string<char> default constructor.
+extern int mem_00924FE8;
+
+// @name Unknown::StoreValueAndInitString
+// @class Unknown
+// @summary Stores the DWORD argument at offset 0, then default-constructs an std::string at offset 4; returns self.
+// @field Unknown +0x00 DWORD field_00
+// @field Unknown +0x04 std::string field_04
+void* fn_0057BB20(void* self, DWORD value) {
+    auto* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<DWORD*>(base + 0x00) = value;
+
+    // Indirect thiscall to the std::string default constructor with this = self + 4.
+    using StringCtor = void (*)(void*);
+    auto ctor = *reinterpret_cast<StringCtor*>(&mem_00924FE8);
+    ctor(base + 0x04);
+
+    return self;
+}
+} // namespace lift_0057BB20
