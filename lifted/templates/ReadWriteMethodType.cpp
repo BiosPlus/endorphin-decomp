@@ -8416,3 +8416,28 @@ void fn_004882C0(void* ret) {
     std::memcpy(out + 0x04, &addr, sizeof(addr));
 }
 } // namespace lift_004882C0
+
+// [0x00488510] ExprParser::ReadWriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getCharacterName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{324, {flat}}, 0}>::vfunc_40 (122 bytes)
+namespace lift_00488510 {
+// Callee 0x0067A670: thiscall(ecx = object address) with one stack argument.
+extern void ext_0067A670(uint32_t ecx_this, int32_t arg0);
+// Guest-global one-time-init guard flag and static instance (32-bit guest addresses).
+extern uint32_t mem_00AD9E38;
+extern uint32_t mem_00AD9E34;
+
+// @name ExprParser::ReadWriteMethodType<NMData::DesiredPoseEventData, getCharacterName/setCharacterName>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getCharacterName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{324, {flat}}, 0}>
+// @summary Lazily initializes the function-local static object at 0x00AD9E34 (guarded by bit 0 of 0x00AD9E38), then stores its address into the caller-supplied ValuePtr at +0x4.
+// @field ExprParser::ValuePtrType +0x04 uint32_t valuePtr
+void fn_00488510(void* self) {
+    // One-time initialization guard for the static object at 0x00AD9E34.
+    if ((mem_00AD9E38 & 1u) == 0u) {
+        mem_00AD9E38 |= 1u;
+        ext_0067A670(0x00AD9E34u, 0);   // constructor call for the static object (ecx = 0x00AD9E34)
+        mem_00AD9E34 = 0x0093DE44u;     // vtable pointer of the static object
+    }
+
+    // self->valuePtr = &static_object
+    lift_field<uint32_t>(self, 0x04) = 0x00AD9E34u;
+}
+} // namespace lift_00488510

@@ -7207,6 +7207,13 @@
     "summary": "Lazily constructs a function-local static accessor object and stores its address into the caller-supplied result slot at +0x04.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x00488510": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::DesiredPoseEventData, getCharacterName/setCharacterName\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::DesiredPoseEventData::getCharacterName(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{324, {flat}}, 0}\u003e",
+    "signature": "void fn_00488510(void* self)",
+    "summary": "Lazily initializes the function-local static object at 0x00AD9E34 (guarded by bit 0 of 0x00AD9E38), then stores its address into the caller-supplied ValuePtr at +0x4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x00488590": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0\u003e",
