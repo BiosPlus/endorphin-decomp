@@ -29925,6 +29925,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x10 and tail-calls sub_00508680.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
+  "0x0068BC00": {
+    "name": "DecrementAndForwardAt0x10",
+    "signature": "DWORD fn_0068BC00(void* self, DWORD count)",
+    "summary": "If the count argument is nonzero, decrement it and forward the decremented count (by pointer) to ext_005111E0 on this+0x10; otherwise return 0.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x0068BC60": {
     "name": "ExprParser::WriteMethodType\u003cRandomizer, int, {public: void __thiscall Randomizer::setSeed(int), 0}\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cRandomizer, int, {public: void __thiscall Randomizer::setSeed(int), 0}\u003e",

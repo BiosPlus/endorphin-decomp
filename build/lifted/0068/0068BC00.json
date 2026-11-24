@@ -1,0 +1,21 @@
+{
+  "va": "0x0068BC00",
+  "size": 36,
+  "orig_symbol": "sub_0068BC00",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "DecrementAndForwardAt0x10",
+  "signature": "DWORD fn_0068BC00(void* self, DWORD count)",
+  "summary": "If the count argument is nonzero, decrement it and forward the decremented count (by pointer) to ext_005111E0 on this+0x10; otherwise return 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void* field_0x10 (address only; this+0x10 passed as the this-pointer to",
+      "name": "ext_005111E0)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:46:17Z"
+}

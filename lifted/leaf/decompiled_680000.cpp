@@ -83,3 +83,19 @@ int32_t fn_00682E20(void* self) {
     return static_cast<int32_t>(t + static_cast<int32_t>(static_cast<uint32_t>(t) >> 31));
 }
 } // namespace lift_00682E20
+
+// [0x0068BC00] sub_0068BC00 (36 bytes)
+namespace lift_0068BC00 {
+extern DWORD ext_005111E0(void* self, DWORD* count);
+
+// @name DecrementAndForwardAt0x10
+// @summary If the count argument is nonzero, decrement it and forward the decremented count (by pointer) to ext_005111E0 on this+0x10; otherwise return 0.
+// @field Unknown +0x10 void* field_0x10 (address only; this+0x10 passed as the this-pointer to ext_005111E0)
+DWORD fn_0068BC00(void* self, DWORD count) {
+    if (count == 0) {
+        return 0;
+    }
+    count -= 1;
+    return ext_005111E0(static_cast<uint8_t*>(self) + 0x10, &count);
+}
+} // namespace lift_0068BC00

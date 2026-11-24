@@ -165,6 +165,7 @@ struct Unknown_Fields {
     // +0xC   void* field_0x0C (sub-object that receives the value via vfunc_8)  (evidence: 0x005853E0) // CONFLICT: multiple definitions at +0xC
     // +0x10  uint32_t field_0x10      (slot[1])  (evidence: 0x00553A30) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    child  (evidence: 0x00441020, 0x0044B780, 0x0044B7A0, 0x0044B7C0, 0x006722B0, 0x00672490, 0x00675D60) // CONFLICT: multiple definitions at +0x10
+    // +0x10  void* field_0x10 (address only; this+0x10 passed as the this-pointer to ext_005111E0)  (evidence: 0x0068BC00) // CONFLICT: multiple definitions at +0x10
     // +0x10  <embedded object>        field_0x10  (evidence: 0x007008F0, 0x0070E390, 0x0070E3B0, 0x0070EC70, 0x0071C330, 0x0071F070) // CONFLICT: multiple definitions at +0x10
     // +0x10  BYTE                     field_0x10  (evidence: 0x00468730, 0x00468AC0, 0x00702F60, 0x0070EA90, 0x00714950, 0x0071B020, 0x0071B050, 0x0071F070, 0x0072CB00) // CONFLICT: multiple definitions at +0x10
     // +0x10  DWORD                    field_0x10  (evidence: 0x005539F0, 0x006C9CC0, 0x0086B200) // CONFLICT: multiple definitions at +0x10
