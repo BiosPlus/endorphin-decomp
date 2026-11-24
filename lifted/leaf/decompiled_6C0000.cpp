@@ -197,3 +197,24 @@ void Unknown_SetFlags0x300000(Unknown* self, uint32_t arg) {
     self->flags = edx;
 }
 } // namespace lift_006C9DA0
+
+// [0x006C9D00]
+namespace lift_006C9D00 {
+// @name Unknown::SetBits0F00
+// @class Unknown
+// @summary Replaces bits 8-11 (mask 0xF00) of the dword at this+0x10 with the same bits of the stack argument; all other bits are preserved.
+// @field Unknown +0x10 uint32_t field_0x10
+
+struct Unknown {
+    uint8_t pad_0x00[0x10];
+    uint32_t field_0x10; // +0x10
+};
+
+// Convention: this in ECX, one stack argument, callee pops 4 bytes (ret 4).
+void Unknown_SetBits0F00(Unknown* self, uint32_t arg) {
+    uint32_t eax = self->field_0x10;
+    // ((eax ^ arg) & 0xF00) ^ eax == eax with bits 8-11 taken from arg
+    uint32_t edx = ((eax ^ arg) & 0x00000F00u) ^ eax;
+    self->field_0x10 = edx;
+}
+} // namespace lift_006C9D00

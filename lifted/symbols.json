@@ -36482,6 +36482,13 @@
     "summary": "Copies bit 8 of the stack argument into bit 8 (0x100) of the dword at this+0x10; other bits are preserved.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C9D00": {
+    "name": "Unknown::SetBits0F00",
+    "class": "Unknown",
+    "signature": "void Unknown_SetBits0F00(Unknown* self, uint32_t arg)",
+    "summary": "Replaces bits 8-11 (mask 0xF00) of the dword at this+0x10 with the same bits of the stack argument; all other bits are preserved.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C9D20": {
     "name": "Unknown::GetMaskedFlags18",
     "class": "Unknown",
