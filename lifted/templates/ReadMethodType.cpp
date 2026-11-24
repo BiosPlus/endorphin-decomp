@@ -39568,3 +39568,960 @@ uint32_t fn_004D1090(void* const* holder) {
     return 0;
 }
 } // namespace lift_004D1090
+
+// [0x00497EF0] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_00497EF0 {
+// @name ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_00496F20(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_00497EF0(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_00496F20(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_00497EF0
+
+// [0x00498330] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_00498330 {
+// @name ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_00496F10(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_00498330(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_00496F10(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_00498330
+
+// [0x0049B8A0] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_3 (104 bytes)
+namespace lift_0049B8A0 {
+// @name ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_004C0310(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_0049B8A0(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_004C0310(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_0049B8A0
+
+// [0x0049C2F0] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_0049C2F0 {
+// @name ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_0049AA10(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_0049C2F0(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_0049AA10(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_0049C2F0
+
+// [0x004AA6E0] ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_004AA6E0 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_004A9A40(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_004AA6E0(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_004A9A40(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_004AA6E0
+
+// [0x004C7500] ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_004C7500 {
+// @name ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_00486960(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_004C7500(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_00486960(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_004C7500
+
+// [0x004CB700] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_004CB700 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_004CA5E0(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_004CB700(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_004CA5E0(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_004CB700
+
+// [0x004CF5D0] ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_004CF5D0 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_004CEA30(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_004CF5D0(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_004CEA30(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_004CF5D0
+
+// [0x004D2090] ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_004D2090 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_004D0E00(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_004D2090(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_004D0E00(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_004D2090
+
+// [0x004D90F0] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_004D90F0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_004D3FD0(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_004D90F0(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_004D3FD0(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_004D90F0
+
+// [0x00521950] ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_00521950 {
+// @name ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_00687090(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_00521950(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_00687090(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_00521950
+
+// [0x00585E90] ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>::vfunc_3 (104 bytes)
+namespace lift_00585E90 {
+// @name ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_00682ED0(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_00585E90(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_00682ED0(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_00585E90
+
+// [0x0059F130] ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_0059F130 {
+// @name ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_0042F750(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_0059F130(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_0042F750(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_0059F130
+
+// [0x005AAF20] ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005AAF20 {
+// @name ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_005AA9E0(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_005AAF20(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_005AA9E0(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_005AAF20
+
+// [0x005AB780] ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005AB780 {
+// @name ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_0044CCD0(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_005AB780(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_0044CCD0(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_005AB780
+
+// [0x005C8150] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005C8150 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_005C2F40(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_005C8150(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_005C2F40(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_005C8150
+
+// [0x005DADB0] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005DADB0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_005D07E0(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_005DADB0(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_005D07E0(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_005DADB0
+
+// [0x005DB2E0] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005DB2E0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_005D0810(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_005DB2E0(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_005D0810(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_005DB2E0
+
+// [0x005DBD50] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005DBD50 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_005D07F0(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_005DBD50(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_005D07F0(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_005DBD50
+
+// [0x005E2D10] ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005E2D10 {
+// @name ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_005E02A0(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_005E2D10(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_005E02A0(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_005E2D10
+
+// [0x005E3050] ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005E3050 {
+// @name ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_0044CCE0(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_005E3050(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_0044CCE0(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_005E3050
+
+// [0x005E5960] ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005E5960 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_005E0E40(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_005E5960(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_005E0E40(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_005E5960
+
+// [0x005F64F0] ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005F64F0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_005F5120(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_005F64F0(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_005F5120(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_005F64F0
+
+// [0x005F70E0] ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005F70E0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_005F5280(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_005F70E0(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_005F5280(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_005F70E0
+
+// [0x00609B90] ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_3 (104 bytes)
+namespace lift_00609B90 {
+// @name ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_00609730(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_00609B90(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_00609730(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_00609B90
+
+// [0x00684240] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_00684240 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_0049A9F0(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_00684240(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_0049A9F0(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_00684240
+
+// [0x00684890] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_00684890 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_006829E0(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_00684890(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_006829E0(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_00684890
+
+// [0x00684D70] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_00684D70 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_00682E10(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_00684D70(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_00682E10(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_00684D70
+
+// [0x006853E0] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_006853E0 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D1090 (ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)).
+namespace lift_004D1090 {
+// Known callee 0x004D0AF0: Unknown::IndexedTableAddress (Returns 0xAE5C68 + 28 * self->field_0x190, the address of a 28-byte std::string entry in a global table).
+extern const std::string* ext_00672400(void* self);
+// String literals referenced by the original code (contents not recovered here).
+extern const char ext_0092F10C[];
+extern const char ext_0093A810[];
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData>::vfunc_3 (NMData::TransitionEventData::getRequiredPhysicsLevelName)
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Reads the TransitionEventData object held by *holder, fetches its required physics level name via ext_004D0AF0, and returns 1 if that name equals either of two constant strings, else 0. Throws std::runtime_error if the holder's object is null.
+// The object's own fields are not accessed directly here; field_0x190 is read only inside ext_004D0AF0.
+uint32_t fn_006853E0(void* const* holder) {
+    void* obj = holder ? *holder : nullptr;
+    if (obj == nullptr) {
+        throw std::runtime_error("ExprParser::ReadMethodType<NMData::TransitionEventData>: null value pointer");
+    }
+    const std::string* name = ext_00672400(obj);
+    if (std::strcmp(name->c_str(), ext_0092F10C) == 0) {
+        return 1;
+    }
+    if (std::strcmp(name->c_str(), ext_0093A810) == 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004D1090
+} // namespace lift_006853E0
