@@ -1,0 +1,40 @@
+{
+  "va": "0x00540F60",
+  "size": 25,
+  "orig_symbol": "sub_00540F60",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "Unknown::setFieldsFromArg (descriptive; owner class not identified)",
+  "class": "Unknown",
+  "signature": "void fn_00540F60(void* self, DWORD /*unused_arg0*/, DWORD value)",
+  "summary": "Stores one stack argument into four dword fields of the object at ECX.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "DWORD",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x7C",
+      "type": "DWORD",
+      "name": "field_0x7C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB8",
+      "type": "DWORD",
+      "name": "field_0xB8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF4",
+      "type": "DWORD",
+      "name": "field_0xF4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:49:02Z"
+}

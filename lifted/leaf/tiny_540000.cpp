@@ -336,3 +336,21 @@ void __thiscall fn_00549A10(void* self, const float* src) {
     lift_field<float>(self, 0x20) = src[2];
 }
 } // namespace lift_00549A10
+
+// [0x00540F60] sub_00540F60 (25 bytes)
+namespace lift_00540F60 {
+// @name Unknown::setFieldsFromArg (descriptive; owner class not identified)
+// @class Unknown
+// @summary Stores one stack argument into four dword fields of the object at ECX.
+// @field Unknown +0x40 DWORD field_0x40
+// @field Unknown +0x7C DWORD field_0x7C
+// @field Unknown +0xB8 DWORD field_0xB8
+// @field Unknown +0xF4 DWORD field_0xF4
+void fn_00540F60(void* self, DWORD /*unused_arg0*/, DWORD value) {
+    auto* base = static_cast<unsigned char*>(self);
+    *reinterpret_cast<DWORD*>(base + 0x40) = value;
+    *reinterpret_cast<DWORD*>(base + 0x7C) = value;
+    *reinterpret_cast<DWORD*>(base + 0xB8) = value;
+    *reinterpret_cast<DWORD*>(base + 0xF4) = value;
+}
+} // namespace lift_00540F60
