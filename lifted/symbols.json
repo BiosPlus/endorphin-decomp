@@ -11074,6 +11074,13 @@
     "summary": "Thunk: forwards to slot 0 of the embedded SelectionVariable::Listener at +0x180, passing that subobject as this.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004D3D50": {
+    "name": "NMData::RigEventData::vfunc_0_off_154",
+    "class": "NMData::RigEventData",
+    "signature": "void fn_004D3D50(void* self, uint32_t* a1, uint32_t* a2, uint32_t* a3, uint32_t* a4)",
+    "summary": "Builds a 3-dword record via setDwordTriple, applies two mask toggles to arg1, copies it to arg2, and stores 6 into arg3 and arg4.",
+    "lifted_path": "lifted/NMData/RigEventData.cpp"
+  },
   "0x004D3E20": {
     "name": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e::vfunc_16",
     "class": "ExprParser::DynamicEnumType\u003cNMData::RigEventData\u003e",

@@ -104,3 +104,37 @@ uint8_t __thiscall fn_004D4730(void* self) {
     return result;
 }
 } // namespace lift_004D4730
+
+// [0x004D3D50] NMData::RigEventData::vfunc_0_off_154 (121 bytes)
+namespace lift_004D3D50 {
+// Known callee 0x00494000: sub_00494000 (setDwordTriple: stores three args into the first three DWORDs of the object and returns it.)
+extern void* ext_00494000(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+// Known callee 0x004940E0: sub_004940E0 (Unknown::ToggleMaskIfTestMismatch: XORs mask into the dword at [this] when the bit test differs from flag.)
+extern void ext_004940E0(void* self, uint32_t mask, uint8_t flag);
+
+// @name NMData::RigEventData::vfunc_0_off_154
+// @class NMData::RigEventData
+// @summary Builds a 3-dword record via setDwordTriple, applies two mask toggles to arg1, copies it to arg2, and stores 6 into arg3 and arg4.
+void fn_004D3D50(void* self, uint32_t* a1, uint32_t* a2, uint32_t* a3, uint32_t* a4) {
+    (void)self; // ECX is overwritten before use in the original.
+
+    uint32_t tmp[3];
+    uint32_t* r = static_cast<uint32_t*>(ext_00494000(tmp, 0, 0, 0x40));
+
+    a1[0] = r[0];
+    a1[1] = r[1];
+    a1[2] = r[2];
+
+    ext_004940E0(a1, 0x1000, 1);
+    ext_004940E0(a1, 0x2000, 1);
+
+    a1[1] = 2;
+
+    a2[0] = a1[0];
+    a2[1] = a1[1];
+    a2[2] = a1[2];
+
+    *a3 = 6;
+    *a4 = 6;
+}
+} // namespace lift_004D3D50
