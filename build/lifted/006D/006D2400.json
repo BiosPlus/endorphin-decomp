@@ -1,0 +1,22 @@
+{
+  "va": "0x006D2400",
+  "size": 16,
+  "orig_symbol": "sub_006D2400",
+  "src_path": "src/leaf/tiny_6D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6D0000.cpp",
+  "name": "Unknown::SetDoubleAt",
+  "class": "Unknown",
+  "signature": "void fn_006D2400(void* self, int32_t index, double value)",
+  "summary": "Stores a double into an 8-byte-stride array at ecx, indexed by the first stack argument (ret 0xc: callee pops index + value).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "double[] array (base pointer in ecx; element i at byte offset 8*i, dynamic index so no fixed",
+      "name": "offset)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:39:01Z"
+}

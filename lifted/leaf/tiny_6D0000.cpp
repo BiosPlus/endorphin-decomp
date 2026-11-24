@@ -310,3 +310,15 @@ uint32_t Unknown_sub_006D2A90(const void* self, uint32_t arg) {
     return (arg << 5) + field_0x10;
 }
 } // namespace lift_006D2A90
+
+// [0x006D2400] sub_006D2400 (16 bytes)
+namespace lift_006D2400 {
+// @name Unknown::SetDoubleAt
+// @class Unknown
+// @summary Stores a double into an 8-byte-stride array at ecx, indexed by the first stack argument (ret 0xc: callee pops index + value).
+// @field Unknown +0x00 double[] array (base pointer in ecx; element i at byte offset 8*i, dynamic index so no fixed offset)
+void fn_006D2400(void* self, int32_t index, double value) {
+    double* base = static_cast<double*>(self);
+    base[index] = value;
+}
+} // namespace lift_006D2400

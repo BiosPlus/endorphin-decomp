@@ -32099,6 +32099,13 @@
     "summary": "Pure jump thunk forwarding to sub_006D2250.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D2400": {
+    "name": "Unknown::SetDoubleAt",
+    "class": "Unknown",
+    "signature": "void fn_006D2400(void* self, int32_t index, double value)",
+    "summary": "Stores a double into an 8-byte-stride array at ecx, indexed by the first stack argument (ret 0xc: callee pops index + value).",
+    "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
   "0x006D2A30": {
     "name": "sub_006D2A30",
     "signature": "extern \"C\" void* __fastcall fn_006D2A30(void* self)",

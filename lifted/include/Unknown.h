@@ -18,6 +18,7 @@ struct Unknown_Fields {
     // +0x0   void*                    field_0x00  (evidence: 0x00430EE0, 0x0046E140, 0x0046E450, 0x0046E570, 0x00493E00, 0x00493E50, 0x00493E60, 0x00493E70, 0x00493E80, 0x00493E90, 0x00494050, 0x004A25E0, 0x0059F8D0, 0x005B3680, 0x005C5E50, 0x00633240, 0x0066B560, 0x006719C0, 0x00871860) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   field_0x00  (evidence: 0x0072DC50) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    inner  (evidence: 0x006616B0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   double[] array (base pointer in ecx; element i at byte offset 8*i, dynamic index so no fixed offset)  (evidence: 0x006D2400) // CONFLICT: multiple definitions at +0x0
     // +0x0   void** vtable (sub-object's vtable pointer)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    subobject  (evidence: 0x006616C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer to a sub-object; dereferenced to reach the target)  (evidence: 0x006BB780) // CONFLICT: multiple definitions at +0x0
