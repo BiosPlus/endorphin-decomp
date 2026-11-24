@@ -7177,6 +7177,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005B0D90 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0048C860": {
+    "name": "resetHandleAndDestroyStringAt4",
+    "signature": "void fn_0048C860(void* self)",
+    "summary": "If the handle at +0x34 is non-null, release it via ext_006A5C5C, zero +0x34/+0x38/+0x3C, then destroy the string object at +0x04.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048CCA0": {
     "name": "sub_0048CCA0",
     "class": "(none)",

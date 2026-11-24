@@ -1,0 +1,33 @@
+{
+  "va": "0x0048C860",
+  "size": 49,
+  "orig_symbol": "sub_0048C860",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "resetHandleAndDestroyStringAt4",
+  "signature": "void fn_0048C860(void* self)",
+  "summary": "If the handle at +0x34 is non-null, release it via ext_006A5C5C, zero +0x34/+0x38/+0x3C, then destroy the string object at +0x04.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x34",
+      "type": "void*",
+      "name": "handle"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:30:42Z"
+}

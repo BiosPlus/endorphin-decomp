@@ -425,3 +425,29 @@ extern uint32_t sub_00480DD0(uint32_t first, uint32_t last, uint32_t dst) {
     return eax;
 }
 } // namespace lift_00480DD0
+
+// [0x0048C860] sub_0048C860 (49 bytes)
+namespace lift_0048C860 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void __cdecl ext_006A5C5C(void* ptr);
+// Known callee 0x00519CE0: std::basic_string<char>::~basic_string (vtable-stamping thunk)
+// Takes the object in ecx (thiscall); called here with the string object at self+4.
+extern void __cdecl ext_00519CE0(void* self);
+
+// @name resetHandleAndDestroyStringAt4
+// @summary If the handle at +0x34 is non-null, release it via ext_006A5C5C, zero +0x34/+0x38/+0x3C, then destroy the string object at +0x04.
+// @field  <unknown> +0x34 void* handle
+// @field  <unknown> +0x38 uint32_t field_0x38
+// @field  <unknown> +0x3C uint32_t field_0x3C
+void fn_0048C860(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    auto** handle = reinterpret_cast<void**>(base + 0x34);
+    if (*handle != nullptr) {
+        ext_006A5C5C(*handle);
+    }
+    *reinterpret_cast<uint32_t*>(base + 0x34) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x38) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x3C) = 0;
+    ext_00519CE0(base + 4);
+}
+} // namespace lift_0048C860
