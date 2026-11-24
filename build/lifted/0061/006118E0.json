@@ -1,0 +1,21 @@
+{
+  "va": "0x006118E0",
+  "size": 41,
+  "orig_symbol": "sub_006118E0",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "invokeVFunc10CAndForwardTo00678130",
+  "signature": "extern \"C\" void __thiscall fn_006118E0(void* self)",
+  "summary": "Calls virtual method at +0x10C with arg 1, then passes the float result to ext_00678130 on ext_00594000() + 0x2E0.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:01:56Z"
+}

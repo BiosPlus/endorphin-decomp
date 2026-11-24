@@ -123,3 +123,22 @@ extern void __thiscall sub_006111A0(uint32_t ecx) {
     ext_00678130(static_cast<uint32_t>(obj) + 0x2E0, val);
 }
 } // namespace lift_006111A0
+
+// [0x006118E0]
+namespace lift_006118E0 {
+// @name invokeVFunc10CAndForwardTo00678130
+// @summary Calls virtual method at +0x10C with arg 1, then passes the float result to ext_00678130 on ext_00594000() + 0x2E0.
+// @field Self +0x000 void* vtable
+
+extern int32_t __cdecl ext_00594000(void);
+extern void __thiscall ext_00678130(void* self, float value);
+
+extern void __thiscall fn_006118E0(void* self) {
+    uint32_t* vtable = *reinterpret_cast<uint32_t**>(self);
+    using VFunc10C = float(__thiscall*)(void*, int32_t);
+    auto vfunc = reinterpret_cast<VFunc10C>(vtable[0x10C / 4]);
+    float val = vfunc(self, 1);
+    uintptr_t obj = static_cast<uintptr_t>(static_cast<uint32_t>(ext_00594000()));
+    ext_00678130(reinterpret_cast<void*>(obj + 0x2E0), val);
+}
+} // namespace lift_006118E0

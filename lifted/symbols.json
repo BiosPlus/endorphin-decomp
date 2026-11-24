@@ -23951,6 +23951,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0058F6B0 (NMData::AxisDefineSensorData::vfunc_14).",
     "lifted_path": "lifted/NMData/SecondaryTwistAndSwingConstraint.cpp"
   },
+  "0x006118E0": {
+    "name": "invokeVFunc10CAndForwardTo00678130",
+    "signature": "extern \"C\" void __thiscall fn_006118E0(void* self)",
+    "summary": "Calls virtual method at +0x10C with arg 1, then passes the float result to ext_00678130 on ext_00594000() + 0x2E0.",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
   "0x00611B80": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_69",
     "class": "NMData::PrimaryTwistAndSwingConstraint",
@@ -24893,6 +24899,12 @@
     "name": "sub_006217A0",
     "signature": "DWORD* __thiscall fn_006217A0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
+  "0x00622290": {
+    "name": "sub_00622290",
+    "signature": "void* __thiscall sub_00622290(void* self)",
+    "summary": "Constructor-like initialization setting vtable to 0x00976FC4 and zeroing 10 float fields (0x04..0x28).",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x00622320": {
