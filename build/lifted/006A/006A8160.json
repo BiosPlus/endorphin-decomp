@@ -1,0 +1,22 @@
+{
+  "va": "0x006A8160",
+  "size": 25,
+  "orig_symbol": "sub_006A8160",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "Control::sendMessage0x41A",
+  "class": "Control",
+  "signature": "uint32_t __thiscall sub_006A8160(void* self, uint32_t lParam)",
+  "summary": "Sends Windows message 0x41A with wParam=0 and lParam=arg0 to the control's window handle.",
+  "fields": [
+    {
+      "class": "Control",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T11:51:57Z"
+}
