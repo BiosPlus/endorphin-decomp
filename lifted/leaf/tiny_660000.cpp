@@ -239,3 +239,20 @@ void sub_00666CB0(uint8_t* ecx) {
     }
 }
 } // namespace lift_00666CB0
+
+// [0x006616C0] sub_006616C0 (16 bytes)
+namespace lift_006616C0 {
+// @name Unknown::ForwardToSubobject7
+// @class Unknown
+// @summary Forwards a call to virtual slot 7 of the object stored at +0x00, passing the address of this+0x04 as the single argument.
+// @field Unknown +0x00 void* subobject
+void fn_006616C0(void* self) {
+    // Sub-object pointer lives at self+0x00; its vtable slot 7 (offset 0x1c) is invoked
+    // with the sub-object as `this` and (self + 0x04) as the one stack argument.
+    void* subobject = *reinterpret_cast<void**>(self);
+    void** vtbl = *reinterpret_cast<void***>(subobject);
+    using SlotFn = void (*)(void* thisPtr, void* arg);
+    auto fn = reinterpret_cast<SlotFn>(vtbl[7]);
+    fn(subobject, reinterpret_cast<uint8_t*>(self) + 0x04);
+}
+} // namespace lift_006616C0

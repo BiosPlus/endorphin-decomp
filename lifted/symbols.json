@@ -23334,6 +23334,13 @@
     "summary": "Tail-calls vtable slot +0x18 on the object pointed to by this+0x00.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x006616C0": {
+    "name": "Unknown::ForwardToSubobject7",
+    "class": "Unknown",
+    "signature": "void fn_006616C0(void* self)",
+    "summary": "Forwards a call to virtual slot 7 of the object stored at +0x00, passing the address of this+0x04 as the single argument.",
+    "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
   "0x00661880": {
     "name": "sub_00661880",
     "signature": "void sub_00661880(uint32_t ecx)",

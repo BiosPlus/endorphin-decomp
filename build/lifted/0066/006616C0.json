@@ -1,0 +1,22 @@
+{
+  "va": "0x006616C0",
+  "size": 16,
+  "orig_symbol": "sub_006616C0",
+  "src_path": "src/leaf/tiny_660000.cpp",
+  "lifted_path": "lifted/leaf/tiny_660000.cpp",
+  "name": "Unknown::ForwardToSubobject7",
+  "class": "Unknown",
+  "signature": "void fn_006616C0(void* self)",
+  "summary": "Forwards a call to virtual slot 7 of the object stored at +0x00, passing the address of this+0x04 as the single argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "subobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:36:50Z"
+}
