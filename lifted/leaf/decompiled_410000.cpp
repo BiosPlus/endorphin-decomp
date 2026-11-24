@@ -471,3 +471,22 @@ uint32_t __thiscall sub_00414EC0(
     return ext_004148F0(a2, a4, a5, self, a5, 0);
 }
 } // namespace lift_00414EC0
+
+// [0x0041FEC0]
+namespace lift_0041FEC0 {
+// @name ListView::getNextSelectedItem
+// @class ListView
+// @summary Queries the next selected list-view item via SendMessageA(LVM_GETNEXTITEM), updates the cursor, and returns the 0-based index.
+// @field ListView +0x20 uint32_t hwnd
+
+
+extern uint32_t (__stdcall *mem_00925694)(uint32_t hWnd, uint32_t Msg, uint32_t wParam, uint32_t lParam);
+
+uint32_t __thiscall sub_0041FEC0(void* this_ptr, int32_t* pIndex) {
+    uint32_t hwnd = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(this_ptr) + 0x20);
+    int32_t prev = *pIndex - 1;
+    uint32_t next = mem_00925694(hwnd, 0x100c, static_cast<uint32_t>(prev), 2);
+    *pIndex = static_cast<int32_t>(next) + 1;
+    return static_cast<uint32_t>(prev);
+}
+} // namespace lift_0041FEC0
