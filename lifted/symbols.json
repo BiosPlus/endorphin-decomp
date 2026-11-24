@@ -20070,6 +20070,13 @@
     "summary": "Forwards a1 and the address of the embedded subobject at this+0x154 to ext_00610730, then returns a1.",
     "lifted_path": "lifted/NMData/CompoundSensorData.cpp"
   },
+  "0x00610A60": {
+    "name": "VirtualSlot66Forward",
+    "class": "\u003cunknown\u003e (vtable dispatcher; receiver class not identified)",
+    "signature": "uint32_t fn_00610A60(void* self, uint32_t arg)",
+    "summary": "Forwards its one argument to virtual slot 0x108 (index 66) of the receiver's vtable, passing 0 as the first argument; returns the callee's result.",
+    "lifted_path": "lifted/leaf/tiny_610000.cpp"
+  },
   "0x00610A80": {
     "name": "sub_00610A80",
     "class": "CompoundSensor",

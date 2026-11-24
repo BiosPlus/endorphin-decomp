@@ -61,3 +61,20 @@ uint32_t __thiscall fn_00610AA0(void* self) {
 }
 } // namespace lift_00629B00
 } // namespace lift_00610AA0
+
+// [0x00610A60] sub_00610A60 (20 bytes)
+namespace lift_00610A60 {
+// @name VirtualSlot66Forward
+// @class <unknown> (vtable dispatcher; receiver class not identified)
+// @summary Forwards its one argument to virtual slot 0x108 (index 66) of the receiver's vtable, passing 0 as the first argument; returns the callee's result.
+// @field <unknown> +0x00 void* vptr
+uint32_t fn_00610A60(void* self, uint32_t arg) {
+    // Load the vtable pointer stored at offset 0 of the receiver.
+    void* vtbl = lift_field<void*>(self, 0x00);
+    // Slot at byte offset 0x108 in the vtable (index 66 with 4-byte entries).
+    using SlotFn = uint32_t (*)(void* self, uint32_t zero, uint32_t value);
+    SlotFn target = reinterpret_cast<SlotFn>(
+        lift_field<void*>(vtbl, 0x108));
+    return target(self, 0u, arg);
+}
+} // namespace lift_00610A60
