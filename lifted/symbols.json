@@ -7200,6 +7200,13 @@
     "summary": "Evaluates a float expression value and writes it to DesiredPoseEventData::setEntryBlendPeriod, or throws an exception if the target pointer is null.",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004882C0": {
+    "name": "ReadWriteMethodType\u003cDesiredPoseEventData, getStrength/setStrength\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setStrength(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e",
+    "signature": "extern \"C\" uint32_t mem_00AD9E30; // function-local static guard word (bit 0 = initialized) extern \"C\" uint32_t mem_00AD9E2C; // function-local static object storage (vptr in first dword) void fn_004882C0(void* ret)",
+    "summary": "Lazily constructs a function-local static accessor object and stores its address into the caller-supplied result slot at +0x04.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x00488590": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0\u003e",
@@ -33853,6 +33860,13 @@
     "signature": "float __stdcall fn_006A1540(void* num, void* den)",
     "summary": "Evaluates den (second arg) via its child's vfn1; if that is zero or NaN, returns child_of_num.vfn7(num, den_value); otherwise divides num's child vfn1 result by den_value before the same vfn7 call.",
     "lifted_path": "lifted/ExprParser/Operators/Divide.cpp"
+  },
+  "0x006A15B0": {
+    "name": "ExprParser::Operators::Function1::vfunc_3",
+    "class": "ExprParser::Operators::Function1",
+    "signature": "void __stdcall fn_006A15B0(void* arg1, uint32_t arg2)",
+    "summary": "Evaluates Function1 by invoking vfunc +0xc0 on field_0x04 and passing the result to sub_0041CF50",
+    "lifted_path": "lifted/ExprParser/Operators/Function1.cpp"
   },
   "0x006A16B0": {
     "name": "ExprParser::Operators::Not::vfunc_3",

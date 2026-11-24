@@ -2,6 +2,7 @@
 #include "lift_compat.h"
 #include <stdexcept>
 #include <cstdint>
+#include <cstring>
 
 // [0x00695620] ExprParser::ReadWriteMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, float, &public: void __thiscall DoubleWithProperties::setValue(float)>::vfunc_41 (62 bytes)
 namespace lift_00695620 {
@@ -8388,3 +8389,30 @@ extern void __stdcall fn_00633140(uint32_t* targetPtr, uint32_t* valueArg) {
     *reinterpret_cast<float*>(dst + 0xB0) = vec[2];
 }
 } // namespace lift_00633140
+
+// [0x004882C0] ExprParser::ReadWriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setStrength(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_004882C0 {
+extern void ext_0067A670(void* self, int arg);
+extern uint32_t mem_00AD9E30; // function-local static guard word (bit 0 = initialized)
+extern uint32_t mem_00AD9E2C; // function-local static object storage (vptr in first dword)
+
+// @name ReadWriteMethodType<DesiredPoseEventData, getStrength/setStrength>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setStrength(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Lazily constructs a function-local static accessor object and stores its address into the caller-supplied result slot at +0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_004882C0(void* ret) {
+    // Guarded one-time construction of the static object at mem_00AD9E2C.
+    // The original MSVC EH frame (fs:[0] push/pop) is omitted; it only supports
+    // unwinding out of the constructor and has no effect on the result.
+    if ((mem_00AD9E30 & 1u) == 0u) {
+        mem_00AD9E30 |= 1u;
+        ext_0067A670(&mem_00AD9E2C, 0);
+        mem_00AD9E2C = 0x0093DC94u; // vftable for the constructed object
+    }
+
+    // Store the object's address (0x00AD9E2C) at offset +0x04 of the result slot.
+    const uint32_t addr = 0x00AD9E2Cu;
+    unsigned char* out = static_cast<unsigned char*>(ret);
+    std::memcpy(out + 0x04, &addr, sizeof(addr));
+}
+} // namespace lift_004882C0
