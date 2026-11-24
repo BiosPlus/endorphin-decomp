@@ -40525,3 +40525,33 @@ uint32_t fn_006853E0(void* const* holder) {
 }
 } // namespace lift_004D1090
 } // namespace lift_006853E0
+
+// [0x0066FA70] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>::vfunc_3 (105 bytes)
+namespace lift_0066FA70 {
+// @name ReadMethodType<NM::Vector3>::vfunc_3 (NM::Vector3::calcNorm)
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>
+// @summary Reads the Vector3 pointer held in the argument slot and returns 1 if its length is at least 1e-6, else 0; throws if the pointer is null.
+// @field ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1> +0x00 NM::Vector3* value
+// @field NM::Vector3 +0x00 float x
+// @field NM::Vector3 +0x04 float y
+// @field NM::Vector3 +0x08 float z
+
+struct Vec3 {
+    float x;
+    float y;
+    float z;
+};
+
+int fn_0066FA70(void* self) {
+    // Original: vec = *(Vec3**)self; null -> throw; else len = sqrt(x*x + y*y + z*z) stored as float,
+    // compared against double 1e-6. NaN compares false and yields 0, as in the x87 original.
+    const Vec3* vec = *static_cast<const Vec3* const*>(self);
+    if (vec == nullptr) {
+        throw std::runtime_error("NM::Vector3::calcNorm: null Vector3 pointer");
+    }
+
+    const float sumSq = vec->x * vec->x + vec->y * vec->y + vec->z * vec->z;
+    const float len = std::sqrt(sumSq);
+    return (static_cast<double>(len) >= 1e-6) ? 1 : 0;
+}
+} // namespace lift_0066FA70

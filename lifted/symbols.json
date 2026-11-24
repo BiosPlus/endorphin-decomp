@@ -34224,6 +34224,13 @@
     "summary": "Evaluates NM::Vector3::calcNorm on a dereferenced Vector3 pointer, or throws if null",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0066FA70": {
+    "name": "ReadMethodType\u003cNM::Vector3\u003e::vfunc_3 (NM::Vector3::calcNorm)",
+    "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e",
+    "signature": "int fn_0066FA70(void* self)",
+    "summary": "Reads the Vector3 pointer held in the argument slot and returns 1 if its length is at least 1e-6, else 0; throws if the pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00670090": {
     "name": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1\u003e",
