@@ -121,3 +121,32 @@ void sub_007D6260(uint32_t arg0) {
     }
 }
 } // namespace lift_007D6260
+
+// [0x007D48C0]
+namespace lift_007D48C0 {
+uint32_t mem_read32(uint32_t addr);
+void mem_write32(uint32_t addr, uint32_t val);
+
+// @name TreeNode::rotateLeft
+// @class TreeNode
+// @summary Performs a left rotation on a binary tree node with parent pointers.
+// @field TreeNode +0x00 uint32_t left
+// @field TreeNode +0x04 uint32_t right
+// @field TreeNode +0x08 uint32_t parent
+
+void sub_007D48C0(uint32_t eax) {
+    uint32_t ecx = mem_read32(eax + 0x4);
+    uint32_t edx = mem_read32(ecx);
+    mem_write32(eax + 0x4, edx);
+    mem_write32(edx + 0x8, eax);
+    edx = mem_read32(eax + 0x8);
+    mem_write32(ecx + 0x8, edx);
+    if (eax == mem_read32(edx)) {
+        mem_write32(edx, ecx);
+    } else {
+        mem_write32(edx + 0x4, ecx);
+    }
+    mem_write32(ecx, eax);
+    mem_write32(eax + 0x8, ecx);
+}
+} // namespace lift_007D48C0
