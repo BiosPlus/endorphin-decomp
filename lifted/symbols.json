@@ -35177,6 +35177,13 @@
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_663.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006A7A60": {
+    "name": "GWCPropertiesCtrl::vfunc_22",
+    "class": "GWCPropertiesCtrl",
+    "signature": "void fn_006A7A60(void* self)",
+    "summary": "Calls two MFC helpers on this (the second with args 0, 0x02000000, 0), then tail-dispatches to the virtual at vtable slot +0x174 (index 93) with this.",
+    "lifted_path": "lifted/classes/GWCPropertiesCtrl.cpp"
+  },
   "0x006A7A90": {
     "name": "CheckEscapeOrTabHeld",
     "signature": "int sub_006A7A90()",

@@ -1,0 +1,22 @@
+{
+  "va": "0x006A7A60",
+  "size": 37,
+  "orig_symbol": "GWCPropertiesCtrl::vfunc_22",
+  "src_path": "src/classes/GWCPropertiesCtrl.cpp",
+  "lifted_path": "lifted/classes/GWCPropertiesCtrl.cpp",
+  "name": "GWCPropertiesCtrl::vfunc_22",
+  "class": "GWCPropertiesCtrl",
+  "signature": "void fn_006A7A60(void* self)",
+  "summary": "Calls two MFC helpers on this (the second with args 0, 0x02000000, 0), then tail-dispatches to the virtual at vtable slot +0x174 (index 93) with this.",
+  "fields": [
+    {
+      "class": "GWCPropertiesCtrl",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:47:20Z"
+}
