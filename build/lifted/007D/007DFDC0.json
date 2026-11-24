@@ -1,0 +1,21 @@
+{
+  "va": "0x007DFDC0",
+  "size": 18,
+  "orig_symbol": "sub_007DFDC0",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "dispatchThroughSlot0C_007DFDC0",
+  "signature": "extern \"C\" uint32_t __cdecl fn_007DFDC0(void* arg1, void* arg2)",
+  "summary": "Loads the dword pointed to by arg1, then calls the function pointer stored at arg2+0x0C with that dword as its single argument and returns the result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:59:51Z"
+}

@@ -39409,6 +39409,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007D4AE0 (setFlag30_007D4AE0).",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007DFDC0": {
+    "name": "dispatchThroughSlot0C_007DFDC0",
+    "signature": "extern \"C\" uint32_t __cdecl fn_007DFDC0(void* arg1, void* arg2)",
+    "summary": "Loads the dword pointed to by arg1, then calls the function pointer stored at arg2+0x0C with that dword as its single argument and returns the result.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007EFED0": {
     "name": "clearFlag_00AB2BD0",
     "signature": "void sub_007EFED0()",

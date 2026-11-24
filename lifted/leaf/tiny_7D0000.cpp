@@ -357,3 +357,16 @@ void initPairMinusOne_007DD000(void* target) {
     lift_field<int32_t>(target, 0x04) = 0;
 }
 } // namespace lift_007DD000
+
+// [0x007DFDC0] sub_007DFDC0 (18 bytes)
+namespace lift_007DFDC0 {
+// @name dispatchThroughSlot0C_007DFDC0
+// @summary Loads the dword pointed to by arg1, then calls the function pointer stored at arg2+0x0C with that dword as its single argument and returns the result.
+// @field Unknown +0x0C void* field_0x0C
+extern uint32_t __cdecl fn_007DFDC0(void* arg1, void* arg2) {
+    const uint32_t value = *static_cast<uint32_t*>(arg1);
+    void* target = lift_field<void*>(arg2, 0x0C);
+    auto fn = reinterpret_cast<uint32_t(__cdecl*)(uint32_t)>(target);
+    return fn(value);
+}
+} // namespace lift_007DFDC0
