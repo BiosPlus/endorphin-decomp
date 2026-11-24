@@ -184,3 +184,48 @@ void fn_004970A0(void* self) {
     assign(str_field, src);
 }
 } // namespace lift_004970A0
+
+// [0x00492A50] UnknownClass::checkIndexAgainstCount (40 bytes)
+namespace lift_00492A50 {
+extern void (*mem_00925134)();   // MSVCR80!_invalid_parameter_noinfo IAT slot
+
+// @name UnknownClass::checkIndexAgainstCount
+// @class UnknownClass
+// @summary Validates that self->+0x0 is non-null, then returns the index at self->+0x4 after checking it is below the uint32 at (self->+0x0)->+0x8; calls the CRT invalid-parameter handler on either failure.
+// @field UnknownClass +0x00 void* field_0x00
+// @field UnknownClass +0x04 uint32_t field_0x04
+
+namespace {
+
+// Original tail-called the CRT invalid-parameter handler through its IAT slot.
+void invalid_parameter() {
+#if defined(_MSC_VER) && defined(_M_IX86)
+    mem_00925134();
+#else
+    (void)mem_00925134;
+#endif
+}
+
+}  // namespace
+
+// Original: thiscall, `this` in ecx.
+uint32_t fn_00492A50(void* self) {
+    // Guard: the pointer at +0x0 must be non-null.
+    void* target = lift_field<void*>(self, 0x0);
+    if (target == nullptr) {
+        invalid_parameter();
+    }
+
+    // Original reads +0x0 again (eax) and +0x4 (ecx) after the guard.
+    target = lift_field<void*>(self, 0x0);
+    const uint32_t index = lift_field<uint32_t>(self, 0x4);
+    const uint32_t bound = lift_field<uint32_t>(target, 0x8);
+
+    // Guard: index must be below the bound. The original calls the handler
+    // on failure and still returns the index in both paths.
+    if (index >= bound) {
+        invalid_parameter();
+    }
+    return index;
+}
+} // namespace lift_00492A50

@@ -1,0 +1,28 @@
+{
+  "va": "0x00492A50",
+  "size": 40,
+  "orig_symbol": "sub_00492A50",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "UnknownClass::checkIndexAgainstCount",
+  "class": "UnknownClass",
+  "signature": "extern \"C\" void (*mem_00925134)();   // MSVCR80!_invalid_parameter_noinfo IAT slot namespace",
+  "summary": "Validates that self-\u003e+0x0 is non-null, then returns the index at self-\u003e+0x4 after checking it is below the uint32 at (self-\u003e+0x0)-\u003e+0x8; calls the CRT invalid-parameter handler on either failure.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:52:34Z"
+}

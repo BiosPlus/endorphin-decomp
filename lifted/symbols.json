@@ -6870,6 +6870,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00492A50": {
+    "name": "UnknownClass::checkIndexAgainstCount",
+    "class": "UnknownClass",
+    "signature": "extern \"C\" void (*mem_00925134)();   // MSVCR80!_invalid_parameter_noinfo IAT slot namespace",
+    "summary": "Validates that self-\u003e+0x0 is non-null, then returns the index at self-\u003e+0x4 after checking it is below the uint32 at (self-\u003e+0x0)-\u003e+0x8; calls the CRT invalid-parameter handler on either failure.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00493D80": {
     "name": "ZeroHeaderFields",
     "class": "UnknownClass",
