@@ -444,3 +444,21 @@ extern void __thiscall fn_00456340(void* self, void* arg1) {
     fn_006A5EA8();
 }
 } // namespace lift_00456340
+
+// [0x0045B6C0]
+namespace lift_0045B6C0 {
+// @name initFromMFC80Ord2867
+// @summary Calls MFC80_ord_2867 with arg2, invokes vtable+0xc on the returned object with arg1, and returns arg1.
+
+
+extern uint32_t __stdcall ext_006A6820(uint32_t arg);
+
+uint32_t __stdcall fn_0045B6C0(uint32_t arg1, uint32_t arg2) {
+    uint32_t obj = ext_006A6820(arg2);
+    uint32_t* vtable = *reinterpret_cast<uint32_t**>(static_cast<uintptr_t>(obj));
+    using VFunc = void(__thiscall*)(uint32_t, uint32_t);
+    VFunc fn = reinterpret_cast<VFunc>(static_cast<uintptr_t>(vtable[3]));
+    fn(obj, arg1);
+    return arg1;
+}
+} // namespace lift_0045B6C0
