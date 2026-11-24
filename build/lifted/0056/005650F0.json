@@ -1,0 +1,28 @@
+{
+  "va": "0x005650F0",
+  "size": 39,
+  "orig_symbol": "sub_005650F0",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "writeAndCloseXSIScene",
+  "class": "UnknownClass",
+  "signature": "extern \"C\" int __thiscall fn_005650F0(void* self)",
+  "summary": "Writes the XSI scene using the filename at +0x478 and closes the CSLScene at +0x494.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x478",
+      "type": "std::string",
+      "name": "field_0x478"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x494",
+      "type": "void*",
+      "name": "field_0x494"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:53:33Z"
+}

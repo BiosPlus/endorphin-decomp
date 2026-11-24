@@ -40,5 +40,7 @@ struct UnknownClass_Fields {
     // +0x160 int32_t                  field_0x160  (evidence: 0x004C1AC0)
     // +0x3B4 void*                    field_0x3B4  (evidence: 0x004805A0)
     // +0x3B8 uint32_t                 field_0x3B8  (evidence: 0x004805A0)
+    // +0x478 std::string              field_0x478  (evidence: 0x005650F0)
+    // +0x494 void*                    field_0x494  (evidence: 0x005650F0)
 };
 } // namespace lifted_layout

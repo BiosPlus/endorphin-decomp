@@ -51,3 +51,51 @@ extern bool __stdcall fn_005631F0(void* model) {
     return prim_type == 0x1b || prim_type == 0x1c;
 }
 } // namespace lift_005631F0
+
+// [0x005650F0]
+namespace lift_005650F0 {
+// @name writeAndCloseXSIScene
+// @class UnknownClass
+// @summary Writes the XSI scene using the filename at +0x478 and closes the CSLScene at +0x494.
+// @field UnknownClass +0x478 std::string field_0x478
+// @field UnknownClass +0x494 void* field_0x494
+
+
+extern uint32_t mem_00924FF0;
+extern int __thiscall ext_007C5712(void* self, const char* filename);
+extern int __thiscall ext_007C570C(void* self);
+
+extern int __thiscall fn_005650F0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    using c_str_fn = const char* (__thiscall*)(const void*);
+    const char* filename = reinterpret_cast<c_str_fn>(static_cast<uintptr_t>(mem_00924FF0))(base + 0x478);
+
+    void* scene = *reinterpret_cast<void**>(base + 0x494);
+    ext_007C5712(scene, filename);
+    return ext_007C570C(scene);
+}
+} // namespace lift_005650F0
+
+// [0x00564FE0]
+namespace lift_00564FE0 {
+// @name setSceneFileOriginator
+// @summary Sets the originator on the scene's CSLFileInfo from a global std::string if FileInfo is non-null.
+// @field Unknown +0x494 void* scene
+
+
+extern void* __thiscall ext_007C56E8(void* scene);
+extern void __thiscall ext_007C56E2(void* fileInfo, const char* originator);
+
+extern uint32_t mem_00924FF0;
+extern uint8_t mem_00B39FA0[];
+
+extern void __thiscall fn_00564FE0(void* self) {
+    void* scene = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x494);
+    void* fileInfo = ext_007C56E8(scene);
+    if (fileInfo != nullptr) {
+        using CStrFn = const char* (__thiscall*)(void*);
+        const char* originator = reinterpret_cast<CStrFn>(mem_00924FF0)(mem_00B39FA0);
+        ext_007C56E2(fileInfo, originator);
+    }
+}
+} // namespace lift_00564FE0
