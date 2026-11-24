@@ -44532,6 +44532,12 @@
     "summary": "Stores three constant addresses and a zero into four DWORD globals (static init).",
     "lifted_path": "lifted/clones/auto_clones_790000.cpp"
   },
+  "0x0079B960": {
+    "name": "sub_0079B960_initGlobalQuad",
+    "signature": "void sub_0079B960_initGlobalQuad()",
+    "summary": "Stores four constant 32-bit values into the mem_00B60FB0..FBC global block.",
+    "lifted_path": "lifted/clones/auto_clones_790000.cpp"
+  },
   "0x0079BA40": {
     "name": "sub_0079BA40",
     "signature": "extern \"C\" int32_t __cdecl fn_0079BA40(void)",
