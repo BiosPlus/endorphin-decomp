@@ -71,3 +71,24 @@ void fn_006D2064(void* self) {
     (void)kTable_006D2064;
 }
 } // namespace lift_006D2064
+
+// [0x006D1FB4]
+namespace lift_006D1FB4 {
+extern uint8_t& mem_u8(uint32_t addr);
+extern uint32_t& mem_u32(uint32_t addr);
+
+// @name sub_006D1FB4
+// @summary Performs a sequence of byte and dword additions on [ecx], [esp+eax], [ecx+eax], and eax/al.
+void sub_006D1FB4(uint32_t eax, uint32_t ecx, uint32_t esp) {
+    mem_u8(ecx) += static_cast<uint8_t>(eax);
+    mem_u8(esp + eax) += static_cast<uint8_t>(eax);
+    eax = (eax & ~0xFFu) | ((eax + 4u) & 0xFFu);
+    mem_u32(ecx) += eax;
+    eax = (eax & ~0xFFu) | ((eax + 4u) & 0xFFu);
+    eax = (eax & ~0xFFu) | ((eax + mem_u8(esp + eax)) & 0xFFu);
+    mem_u32(esp + eax) += eax;
+    mem_u32(ecx + eax) += eax;
+    eax += mem_u32(esp + eax);
+    eax = (eax & ~0xFFu) | ((eax + 4u) & 0xFFu);
+}
+} // namespace lift_006D1FB4
