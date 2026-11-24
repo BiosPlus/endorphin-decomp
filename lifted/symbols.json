@@ -28713,6 +28713,13 @@
     "summary": "Zeroes the dwords at this+0x4, this+0x8 and this+0xC, and returns this.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006A07B0": {
+    "name": "ExprParser::Operators::CopyValuePtr::vfunc_3",
+    "class": "ExprParser::Operators::CopyValuePtr",
+    "signature": "int __stdcall fn_006A07B0(void* self, int arg)",
+    "summary": "Forwards to two subobject helpers: first with self, then with self and the second stack argument; returns the second helper's result.",
+    "lifted_path": "lifted/ExprParser/Operators/CopyValuePtr.cpp"
+  },
   "0x006A07D0": {
     "name": "ExprParser::Operators::Equals::evalAndNotifyOperand",
     "class": "ExprParser::Operators::Equals",

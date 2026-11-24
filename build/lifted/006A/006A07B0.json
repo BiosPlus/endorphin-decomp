@@ -1,0 +1,14 @@
+{
+  "va": "0x006A07B0",
+  "size": 28,
+  "orig_symbol": "ExprParser::Operators::CopyValuePtr::vfunc_3",
+  "src_path": "src/ExprParser/Operators/CopyValuePtr.cpp",
+  "lifted_path": "lifted/ExprParser/Operators/CopyValuePtr.cpp",
+  "name": "ExprParser::Operators::CopyValuePtr::vfunc_3",
+  "class": "ExprParser::Operators::CopyValuePtr",
+  "signature": "int __stdcall fn_006A07B0(void* self, int arg)",
+  "summary": "Forwards to two subobject helpers: first with self, then with self and the second stack argument; returns the second helper's result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:09:44Z"
+}
