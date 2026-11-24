@@ -1,0 +1,45 @@
+{
+  "va": "0x00696D90",
+  "size": 27,
+  "orig_symbol": "sub_00696D90",
+  "src_path": "src/leaf/tiny_690000.cpp",
+  "lifted_path": "lifted/leaf/tiny_690000.cpp",
+  "name": "initStruct_00696D90",
+  "signature": "uint32_t __thiscall sub_00696D90(uint32_t this_ptr)",
+  "summary": "Initializes a 20-byte struct with 0x19 at +0x00, zeros at +0x04..+0x0C, and 1 at +0x10, returning this.",
+  "fields": [
+    {
+      "class": "Struct",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Struct",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Struct",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Struct",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Struct",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:05:39Z"
+}

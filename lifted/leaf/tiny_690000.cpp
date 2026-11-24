@@ -83,3 +83,26 @@ void __thiscall sub_00696DB0(void* self) {
     fields[4] = 1;
 }
 } // namespace lift_00696DB0
+
+// [0x00696D90]
+namespace lift_00696D90 {
+// @name initStruct_00696D90
+// @summary Initializes a 20-byte struct with 0x19 at +0x00, zeros at +0x04..+0x0C, and 1 at +0x10, returning this.
+// @field Struct +0x00 uint32_t field_0x00
+// @field Struct +0x04 uint32_t field_0x04
+// @field Struct +0x08 uint32_t field_0x08
+// @field Struct +0x0C uint32_t field_0x0C
+// @field Struct +0x10 uint32_t field_0x10
+
+
+void mem_write32(uint32_t addr, uint32_t val);
+
+uint32_t __thiscall sub_00696D90(uint32_t this_ptr) {
+    mem_write32(this_ptr + 0x00, 0x19);
+    mem_write32(this_ptr + 0x04, 0);
+    mem_write32(this_ptr + 0x08, 0);
+    mem_write32(this_ptr + 0x0C, 0);
+    mem_write32(this_ptr + 0x10, 1);
+    return this_ptr;
+}
+} // namespace lift_00696D90

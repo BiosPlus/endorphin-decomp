@@ -22787,6 +22787,12 @@
     "summary": "Returns self after a dynamic_cast-style RTTI check to the ROWriteMethodType type; identity for valid objects.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x00627510": {
+    "name": "forwardSubobjectWithOffset54",
+    "signature": "extern \"C\" void __fastcall fn_00627510(void* self)",
+    "summary": "Forwards pointer at +0x28 -\u003e +0x158 -\u003e +0xAC with \u0026self[0x54] to sub_00647F20.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00627720": {
     "name": "ExprParser::WriteMethodType\u003cSensors::SensorAbsoluteOrientation, int, \u0026public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)\u003e::vfunc_48",
     "class": "ExprParser::WriteMethodType\u003cSensors::SensorAbsoluteOrientation, int, \u0026public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)\u003e",
