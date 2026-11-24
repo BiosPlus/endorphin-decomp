@@ -1,0 +1,22 @@
+{
+  "va": "0x006116E0",
+  "size": 81,
+  "orig_symbol": "NMData::HingeConstraint::vfunc_61",
+  "src_path": "src/NMData/HingeConstraint.cpp",
+  "lifted_path": "lifted/NMData/HingeConstraint.cpp",
+  "name": "NMData::HingeConstraint::vfunc_61",
+  "class": "NMData::HingeConstraint",
+  "signature": "void __thiscall fn_006116E0(void* this_ptr, const float* angle)",
+  "summary": "Negates the input float into a local X-axis vector, invokes TransformInterface vfunc at +0xC, calls ext_0067E410, and dispatches on the global object if non-null.",
+  "fields": [
+    {
+      "class": "NMData::HingeConstraint",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "TransformInterface_vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:44:05Z"
+}

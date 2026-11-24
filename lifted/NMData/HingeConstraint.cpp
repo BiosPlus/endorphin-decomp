@@ -109,3 +109,37 @@ void* __thiscall fn_006115F0(void* self, void* arg1, uint32_t arg2) {
     return arg1;
 }
 } // namespace lift_006115F0
+
+// [0x006116E0]
+namespace lift_006116E0 {
+// @name NMData::HingeConstraint::vfunc_61
+// @class NMData::HingeConstraint
+// @summary Negates the input float into a local X-axis vector, invokes TransformInterface vfunc at +0xC, calls ext_0067E410, and dispatches on the global object if non-null.
+// @field NMData::HingeConstraint +0x4 void* TransformInterface_vtable
+
+extern uint32_t mem_00B40640;
+
+extern void __fastcall ext_0067E410(void* ecx);
+extern int32_t __cdecl ext_00594000(void);
+extern void* __fastcall ext_00493EE0(void* ecx);
+
+void __thiscall fn_006116E0(void* this_ptr, const float* angle) {
+    float vec[3];
+    vec[0] = -(*angle);
+    vec[1] = 0.0f;
+    vec[2] = 0.0f;
+
+    uint8_t* ti = static_cast<uint8_t*>(this_ptr) + 0x4;
+    void** vtable = *reinterpret_cast<void***>(ti);
+    using VFunc = void* (__thiscall*)(void*, uint32_t, uint32_t, float*);
+    VFunc fn = reinterpret_cast<VFunc>(vtable[3]);
+
+    void* res = fn(ti, mem_00B40640, 0, vec);
+    ext_0067E410(res);
+
+    int32_t obj = ext_00594000();
+    if (obj != 0) {
+        ext_00493EE0(reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(static_cast<uint32_t>(obj))) + 0x258);
+    }
+}
+} // namespace lift_006116E0
