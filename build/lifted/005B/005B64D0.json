@@ -1,0 +1,21 @@
+{
+  "va": "0x005B64D0",
+  "size": 13,
+  "orig_symbol": "sub_005B64D0",
+  "src_path": "src/leaf/tiny_5B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5B0000.cpp",
+  "name": "sub_005B64D0_IsField184Equal6",
+  "signature": "bool sub_005B64D0(const unsigned char* self)",
+  "summary": "Returns true if the int32 at this+0x184 equals 6, otherwise false (thiscall, this in ECX).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x184",
+      "type": "int32_t",
+      "name": "field_0x184"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:21:28Z"
+}

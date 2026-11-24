@@ -14304,6 +14304,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005C32B0 (NMData::FluidObjectData::vfunc_15).",
     "lifted_path": "lifted/NMData/MetaBodyData.cpp"
   },
+  "0x005B64D0": {
+    "name": "sub_005B64D0_IsField184Equal6",
+    "signature": "bool sub_005B64D0(const unsigned char* self)",
+    "summary": "Returns true if the int32 at this+0x184 equals 6, otherwise false (thiscall, this in ECX).",
+    "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
+  },
   "0x005B65E0": {
     "name": "ExprParser::BoolType::vfunc_5",
     "class": "ExprParser::BoolType",

@@ -45,3 +45,15 @@ float __thiscall sub_005B11E0(uint32_t ecx, uint32_t index) {
     return mem_read_f32(ecx + 4 * index + 0x10);
 }
 } // namespace lift_005B11E0
+
+// [0x005B64D0]
+namespace lift_005B64D0 {
+// @name sub_005B64D0_IsField184Equal6
+// @summary Returns true if the int32 at this+0x184 equals 6, otherwise false (thiscall, this in ECX).
+// @field Unknown +0x184 int32_t field_0x184
+
+bool sub_005B64D0(const unsigned char* self) {
+    const int32_t value = *reinterpret_cast<const int32_t*>(self + 0x184);
+    return value == 6;
+}
+} // namespace lift_005B64D0
