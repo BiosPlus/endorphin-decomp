@@ -411,3 +411,20 @@ void fn_006E0090(void* dst, const void* src) {
     std::memcpy(d + 0x1C, s + 0x1C, sizeof(std::int32_t));
 }
 } // namespace lift_006E0090
+
+// [0x006E00C0] sub_006E00C0 (48 bytes)
+namespace lift_006E00C0 {
+// @name Vec4d::scaleCopy
+// @class Vec4d
+// @summary Writes out[i] = src[i] * scale for the four doubles of a Vec4d (scale passed by value).
+// @field Vec4d +0x00 double x
+// @field Vec4d +0x08 double y
+// @field Vec4d +0x10 double z
+// @field Vec4d +0x18 double w
+void fn_006E00C0(void* out, const void* src, double scale) {
+    lift_field<double>(out, 0x00) = scale * lift_field<const double>(src, 0x00);
+    lift_field<double>(out, 0x08) = scale * lift_field<const double>(src, 0x08);
+    lift_field<double>(out, 0x10) = scale * lift_field<const double>(src, 0x10);
+    lift_field<double>(out, 0x18) = scale * lift_field<const double>(src, 0x18);
+}
+} // namespace lift_006E00C0

@@ -1,0 +1,40 @@
+{
+  "va": "0x006E00C0",
+  "size": 48,
+  "orig_symbol": "sub_006E00C0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "Vec4d::scaleCopy",
+  "class": "Vec4d",
+  "signature": "void fn_006E00C0(void* out, const void* src, double scale)",
+  "summary": "Writes out[i] = src[i] * scale for the four doubles of a Vec4d (scale passed by value).",
+  "fields": [
+    {
+      "class": "Vec4d",
+      "offset": "+0x0",
+      "type": "double",
+      "name": "x"
+    },
+    {
+      "class": "Vec4d",
+      "offset": "+0x8",
+      "type": "double",
+      "name": "y"
+    },
+    {
+      "class": "Vec4d",
+      "offset": "+0x10",
+      "type": "double",
+      "name": "z"
+    },
+    {
+      "class": "Vec4d",
+      "offset": "+0x18",
+      "type": "double",
+      "name": "w"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:19:42Z"
+}
