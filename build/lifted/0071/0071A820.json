@@ -1,0 +1,13 @@
+{
+  "va": "0x0071A820",
+  "size": 33,
+  "orig_symbol": "sub_0071A820",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "sub_0071A820 (projectionModeToString)",
+  "signature": "const char* sub_0071A820(uint32_t mode)",
+  "summary": "Maps a projection mode index (0 or 1) to its name string; returns null for other values.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:53:50Z"
+}

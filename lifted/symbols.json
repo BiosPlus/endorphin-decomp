@@ -41605,6 +41605,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0071A1F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071A820": {
+    "name": "sub_0071A820 (projectionModeToString)",
+    "signature": "const char* sub_0071A820(uint32_t mode)",
+    "summary": "Maps a projection mode index (0 or 1) to its name string; returns null for other values.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071A950": {
     "name": "sub_0071A950",
     "signature": "extern \"C\" void* __fastcall fn_0071A950(void* self, int edx_unused, unsigned int flags)",

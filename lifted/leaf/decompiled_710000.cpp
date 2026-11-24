@@ -633,3 +633,24 @@ uint8_t* fn_0071F070(uint8_t* ecx, uint32_t arg) {
     return self + 0x08;
 }
 } // namespace lift_0071F070
+
+// [0x0071A820]
+namespace lift_0071A820 {
+// @name sub_0071A820 (projectionModeToString)
+// @summary Maps a projection mode index (0 or 1) to its name string; returns null for other values.
+// @field none
+
+extern const char mem_00AACA78[];  // "Perspective"
+extern const char mem_00AACA84[];  // "Orthographic"
+
+// stdcall, one stack argument (ret 4)
+const char* sub_0071A820(uint32_t mode) {
+    if (mode == 0) {
+        return mem_00AACA78;
+    }
+    if (mode == 1) {
+        return mem_00AACA84;
+    }
+    return nullptr;
+}
+} // namespace lift_0071A820
