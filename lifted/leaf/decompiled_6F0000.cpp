@@ -1095,3 +1095,20 @@ void* fn_006FCF10(void* self, int32_t arg1) {
     return self;
 }
 } // namespace lift_006FCF10
+
+// [0x006FCF80] sub_006FCF80 (32 bytes)
+namespace lift_006FCF80 {
+// Known callee 0x006D2130: sub_006D2130 (Initializes a 20-byte struct with zeroed fields, a clamped minimum-1 count at +0x08, and arg2 at +0x0C, returning this.)
+extern uint32_t ext_006D2130(void* self, int32_t arg1, uint32_t arg2);
+
+// @name initWithInlineBuffer
+// @class <unknown>
+// @summary Initializes this as a 20-byte struct with count (clamped to >= 1) and element size 0x20, then points +0x14 at the inline storage at +0x10; returns this.
+// @field <unknown> +0x14 uint32_t field_0x14
+void* fn_006FCF80(void* self, int32_t count) {
+    ext_006D2130(self, count, 0x20);
+    lift_field<uint32_t>(self, 0x14) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self) + 0x10);
+    return self;
+}
+} // namespace lift_006FCF80

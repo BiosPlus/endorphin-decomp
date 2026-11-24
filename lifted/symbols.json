@@ -43428,6 +43428,13 @@
     "summary": "Initializes the object via sub_006D2130 with arg1 and count 0x10, stores a pointer to self+0x10 at +0x14, and returns self.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006FCF80": {
+    "name": "initWithInlineBuffer",
+    "class": "\u003cunknown\u003e",
+    "signature": "void* fn_006FCF80(void* self, int32_t count)",
+    "summary": "Initializes this as a 20-byte struct with count (clamped to \u003e= 1) and element size 0x20, then points +0x14 at the inline storage at +0x10; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FD400": {
     "name": "sub_006FD400",
     "signature": "extern \"C\" void* __fastcall fn_006FD400(void* self, int edx_unused, unsigned int flags)",

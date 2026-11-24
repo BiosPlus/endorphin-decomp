@@ -1,0 +1,22 @@
+{
+  "va": "0x006FCF80",
+  "size": 32,
+  "orig_symbol": "sub_006FCF80",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "initWithInlineBuffer",
+  "class": "\u003cunknown\u003e",
+  "signature": "void* fn_006FCF80(void* self, int32_t count)",
+  "summary": "Initializes this as a 20-byte struct with count (clamped to \u003e= 1) and element size 0x20, then points +0x14 at the inline storage at +0x10; returns this.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:25:46Z"
+}
