@@ -42622,3 +42622,29 @@ void* fn_00683930(void* dst, const void* self) {
     return dst;
 }
 } // namespace lift_00683930
+
+// [0x004D87A0] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_4 (115 bytes)
+namespace lift_004D87A0 {
+// Known callee 0x004276B0: StdStringCopyConstruct (Copy-constructs a std::string at dst from src via the MSVCP80 copy constructor; returns dst.)
+extern void* ext_004276B0(void* dst, const void* src);
+// Known callee 0x004D5560: sub_004D5560 (stdcall; fills the std::string out-param tmp from obj and returns a pointer to the source string.)
+extern void* ext_004D5560(void* tmp, const void* obj);
+// Destructor thunk for std::string (MSVCP80 ~basic_string, thiscall); target of mem_00924FF4 (0x00628FF0).
+extern void ext_00628FF0(void* self);
+
+// @name ExprParser::ReadMethodType<NMData::RigEventData>::vfunc_4 (NMData::RigEventData::getUserRetargetRefFrame)
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>
+// @summary Stdcall (ret 8): reads the object pointer held in *slot, copies its user-retarget reference-frame std::string into a temporary via sub_004D5560, copy-constructs that into slot, destroys the temporary, and returns slot.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* fn_004D87A0(void** slot, const void* unused) {
+    (void)unused;
+    // Temporary std::string (MSVC x86 layout, 0x1C bytes).
+    alignas(8) unsigned char tmp[0x1C];
+
+    void* obj = *slot;
+    const void* src = ext_004D5560(tmp, obj);
+    ext_004276B0(slot, src);
+    ext_00628FF0(tmp);
+    return slot;
+}
+} // namespace lift_004D87A0
