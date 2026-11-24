@@ -31720,6 +31720,12 @@
     "summary": "Returns the 32-bit field at offset 0x20, or 0 if self is null.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006AD150": {
+    "name": "ChainLengthViaField1C",
+    "signature": "uint32_t fn_006AD150(uint32_t self)",
+    "summary": "Counts how many links are in a chain by following the 32-bit field at offset 0x1C from self until it reads as zero; returns that count (0 if self's field is already zero).",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006AD170": {
     "name": "storeThroughPointerField_006AD170",
     "class": "\u003cunknown\u003e",

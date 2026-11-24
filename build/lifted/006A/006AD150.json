@@ -1,0 +1,21 @@
+{
+  "va": "0x006AD150",
+  "size": 21,
+  "orig_symbol": "sub_006AD150",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "ChainLengthViaField1C",
+  "signature": "uint32_t fn_006AD150(uint32_t self)",
+  "summary": "Counts how many links are in a chain by following the 32-bit field at offset 0x1C from self until it reads as zero; returns that count (0 if self's field is already zero).",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:26:35Z"
+}
