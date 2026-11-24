@@ -6699,3 +6699,33 @@ void fn_00489700(void* self) {
     lift_field<uint32_t>(self, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AD9E6C));
 }
 } // namespace lift_00489700
+
+// [0x00489800] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriodFromFSM(float), 0}>::vfunc_40 (122 bytes)
+namespace lift_00489800 {
+// Callee: constructs the function-local static object (thiscall with ecx = object,
+// one stack argument = 0). Modeled here as taking the object VA and the flag.
+extern void ext_0067A670(uint32_t object_va, uint32_t flag);
+
+// Function-local static guard byte and the static object's storage.
+extern uint32_t mem_00AD9E80; // guard flag (bit 0 = initialized/in progress)
+extern uint32_t mem_00AD9E7C; // static object; first dword is its vtable pointer
+
+// @name ExprParser::WriteMethodType_DesiredPoseEventData_setEntryBlendPeriodFromFSM::vfunc_40
+// @class ExprParser::WriteMethodType_DesiredPoseEventData_setEntryBlendPeriodFromFSM
+// @summary Lazily initializes a function-local static object once, then stores its address into the output object at +0x04.
+// @field ExprParser::WriteMethodType_DesiredPoseEventData_setEntryBlendPeriodFromFSM +0x04 uint32_t field_0x04
+void fn_00489800(void* self) {
+    constexpr uint32_t kStaticObjectVa = 0x00AD9E7C;
+    constexpr uint32_t kVtableVa       = 0x0093DAE4;
+
+    // Guard check: if already initialized, just publish the object address.
+    if ((mem_00AD9E80 & 1u) == 0) {
+        // Mark initialized before constructing (matches original ordering).
+        mem_00AD9E80 |= 1u;
+        ext_0067A670(kStaticObjectVa, 0);
+        mem_00AD9E7C = kVtableVa;
+    }
+
+    lift_field<uint32_t>(self, 0x04) = kStaticObjectVa;
+}
+} // namespace lift_00489800

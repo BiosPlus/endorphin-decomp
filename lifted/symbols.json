@@ -7291,6 +7291,13 @@
     "summary": "Lazily initializes the static object at mem_00AD9E6C (once, guarded by bit 0 of mem_00AD9E70) and stores its address at self+0x04.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00489800": {
+    "name": "ExprParser::WriteMethodType_DesiredPoseEventData_setEntryBlendPeriodFromFSM::vfunc_40",
+    "class": "ExprParser::WriteMethodType_DesiredPoseEventData_setEntryBlendPeriodFromFSM",
+    "signature": "extern \"C\" uint32_t mem_00AD9E80; // guard flag (bit 0 = initialized/in progress) extern \"C\" uint32_t mem_00AD9E7C; // static object; first dword is its vtable pointer void fn_00489800(void* self)",
+    "summary": "Lazily initializes a function-local static object once, then stores its address into the output object at +0x04.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00489880": {
     "name": "CallChildVtableSlot1EIfPresent",
     "signature": "void* fn_00489880(void* self)",
