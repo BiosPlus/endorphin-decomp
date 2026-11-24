@@ -40271,6 +40271,13 @@
     "summary": "Returns 1 if the stack argument differs from the first DWORD of the subobject at self+0x40, else 0.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00711A40": {
+    "name": "Unknown::CompareArgWithConst8",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint8_t __thiscall fn_00711A40(void* self)",
+    "summary": "Compares the constant 8 against the subobject at self+0x40 via ext_00711A20 and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00711A60": {
     "name": "Unknown::CompareOneWithSubObjectField",
     "class": "Unknown",

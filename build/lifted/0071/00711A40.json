@@ -1,0 +1,22 @@
+{
+  "va": "0x00711A40",
+  "size": 16,
+  "orig_symbol": "sub_00711A40",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::CompareArgWithConst8",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint8_t __thiscall fn_00711A40(void* self)",
+  "summary": "Compares the constant 8 against the subobject at self+0x40 via ext_00711A20 and returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "void*",
+      "name": "subObject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:41:50Z"
+}
