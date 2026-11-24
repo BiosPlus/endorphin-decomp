@@ -912,3 +912,22 @@ extern void __fastcall fn_006F6910(void* self, int32_t value) {
     ext_0077FF90(reinterpret_cast<void*>(static_cast<intptr_t>(target)), 0, d);
 }
 } // namespace lift_006F6910
+
+// [0x006FF730]
+namespace lift_006FF730 {
+// @name FindU16InZeroTerminatedList
+// @summary Returns true if key appears in a zero-terminated uint16 array before the terminator; false otherwise (including null list).
+bool FindU16InZeroTerminatedList(uint16_t key, const uint16_t* list)
+{
+    if (list == nullptr)
+        return false;
+
+    for (const uint16_t* p = list; *p != 0; ++p)
+    {
+        if (*p == key)
+            return true;
+    }
+
+    return false;
+}
+} // namespace lift_006FF730
