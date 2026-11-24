@@ -93,3 +93,34 @@ uint32_t __thiscall sub_006B1AA0(uint32_t self, uint32_t arg0) {
     return self;
 }
 } // namespace lift_006B1AA0
+
+// [0x006B20A0]
+namespace lift_006B20A0 {
+extern uint32_t __thiscall ext_006B0C40(uint32_t self, uint32_t arg0);
+
+// @name sub_006B20A0
+// @summary Derived constructor that calls base sub_006B0C40 and sets vtable to 0x009917BC.
+// @field +0x00 uint32_t vtable
+uint32_t __thiscall sub_006B20A0(uint32_t self, uint32_t arg0) {
+    ext_006B0C40(self, arg0);
+    *(uint32_t*)(uintptr_t)self = 0x009917BCu;
+    return self;
+}
+} // namespace lift_006B20A0
+
+// [0x006B1E60]
+namespace lift_006B1E60 {
+// @name sub_006B1E60
+// @summary Derived constructor that calls base sub_006B0C40 and sets vtable to 0x009917A0.
+// @field Unknown +0x00 uint32_t vtable
+
+
+extern uint32_t __thiscall ext_006B0C40(uint32_t self, uint32_t arg0);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+uint32_t __thiscall sub_006B1E60(uint32_t self, uint32_t arg0) {
+    ext_006B0C40(self, arg0);
+    mem_write32(self, 0x009917A0u);
+    return self;
+}
+} // namespace lift_006B1E60
