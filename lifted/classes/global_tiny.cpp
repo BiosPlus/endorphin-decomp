@@ -5849,3 +5849,20 @@ void __thiscall fn_0053A750(void* self, uint32_t arg0, uint32_t arg1) {
     fields[2] = arg1; // +0x08
 }
 } // namespace lift_0053A750
+
+// [0x0041B6C0]
+namespace lift_0041B6C0 {
+// Indirect slot for GDI32!RectVisible (IAT entry at 0x009240F0).
+// Callee takes (HDC, const RECT*) and returns BOOL.
+extern BOOL (*mem_009240F0)(HDC, const RECT*);
+
+// @name CMemDC::vfunc_24
+// @class CMemDC
+// @summary Returns whether the given rect is visible in the memory DC's HDC (GDI32!RectVisible).
+// @field CMemDC +0x04 HDC field_0x04
+// Thiscall: this in ecx, single stack argument (LPCRECT), callee pops 4 bytes.
+BOOL fn_0041B6C0(void* self, const RECT* lprc) {
+    HDC hdc = lift_field<HDC>(self, 0x04);
+    return mem_009240F0(hdc, lprc);
+}
+} // namespace lift_0041B6C0

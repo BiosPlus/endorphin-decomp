@@ -1024,6 +1024,13 @@
     "summary": "Pure jump thunk forwarding to sub_0041B580.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0041B6C0": {
+    "name": "CMemDC::vfunc_24",
+    "class": "CMemDC",
+    "signature": "BOOL fn_0041B6C0(void* self, const RECT* lprc)",
+    "summary": "Returns whether the given rect is visible in the memory DC's HDC (GDI32!RectVisible).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x0041B930": {
     "name": "CMemDC::vfunc_1",
     "class": "CMemDC",

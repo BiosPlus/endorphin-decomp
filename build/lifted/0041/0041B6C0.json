@@ -1,0 +1,22 @@
+{
+  "va": "0x0041B6C0",
+  "size": 18,
+  "orig_symbol": "CMemDC::vfunc_24",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CMemDC::vfunc_24",
+  "class": "CMemDC",
+  "signature": "BOOL fn_0041B6C0(void* self, const RECT* lprc)",
+  "summary": "Returns whether the given rect is visible in the memory DC's HDC (GDI32!RectVisible).",
+  "fields": [
+    {
+      "class": "CMemDC",
+      "offset": "+0x4",
+      "type": "HDC",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:55:49Z"
+}
