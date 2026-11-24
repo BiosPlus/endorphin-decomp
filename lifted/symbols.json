@@ -19416,6 +19416,12 @@
     "summary": "Calls vtable slot 0x11C on the object at self+0x17C, then returns float index 0 of the result's +0x08 sub-object array.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005E2810": {
+    "name": "descriptiveName_005E2810",
+    "signature": "float fn_005E2810(void* self)",
+    "summary": "Calls vtable slot 0x11C on the object at self+0x17C, then returns float index 2 of the result's +0x08 sub-object array.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E29F0": {
     "name": "NMData::FixedPathJointData::vfunc_14",
     "class": "NMData::FixedPathJointData",
