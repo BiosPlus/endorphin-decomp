@@ -40285,6 +40285,13 @@
     "summary": "Forwards the constant 1 to CompareArgWithSubObjectField and returns its result.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00711A80": {
+    "name": "Unknown::CompareSubObjectWith0x40",
+    "class": "Unknown",
+    "signature": "uint8_t fn_00711A80(void* self)",
+    "summary": "Forwards the constant 0x40 as the argument to CompareArgWithSubObjectField and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00711A90": {
     "name": "Unknown::TestFlag0x08At0x78",
     "class": "Unknown",

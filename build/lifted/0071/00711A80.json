@@ -1,0 +1,14 @@
+{
+  "va": "0x00711A80",
+  "size": 16,
+  "orig_symbol": "sub_00711A80",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::CompareSubObjectWith0x40",
+  "class": "Unknown",
+  "signature": "uint8_t fn_00711A80(void* self)",
+  "summary": "Forwards the constant 0x40 as the argument to CompareArgWithSubObjectField and returns its result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:41:50Z"
+}

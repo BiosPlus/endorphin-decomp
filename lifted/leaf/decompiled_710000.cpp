@@ -458,3 +458,16 @@ bool fn_00711A90(void* self) {
     return ext_00711D20(self, 0x8u);
 }
 } // namespace lift_00711A90
+
+// [0x00711A80] sub_00711A80 (16 bytes)
+namespace lift_00711A80 {
+// Known callee 0x00711A20: Unknown::CompareArgWithSubObjectField (Returns 1 if the stack argument differs from the first DWORD of the subobject at self+0x40, else 0.)
+extern uint8_t ext_00711A20(void* self, uint32_t arg);
+
+// @name Unknown::CompareSubObjectWith0x40
+// @class Unknown
+// @summary Forwards the constant 0x40 as the argument to CompareArgWithSubObjectField and returns its result.
+uint8_t fn_00711A80(void* self) {
+    return ext_00711A20(self, 0x40);
+}
+} // namespace lift_00711A80
