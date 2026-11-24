@@ -1,0 +1,21 @@
+{
+  "va": "0x00401960",
+  "size": 14,
+  "orig_symbol": "sub_00401960",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "ForwardToHandlerOrZero",
+  "signature": "uint32_t fn_00401960(void* self, uint32_t arg)",
+  "summary": "If this-\u003efield_0x0c is non-null, tail-forward to it (passing the stack arg and returning its result); otherwise return 0.",
+  "fields": [
+    {
+      "class": "ForwardToHandlerOrZero",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:23:20Z"
+}

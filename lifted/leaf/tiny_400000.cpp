@@ -269,3 +269,25 @@ DWORD fn_00401940(void* self, DWORD arg) {
     return reinterpret_cast<target_fn>(target)(self, arg);
 }
 } // namespace lift_00401940
+
+// [0x00401960] sub_00401960 (14 bytes)
+namespace lift_00401960 {
+// @name ForwardToHandlerOrZero
+// @summary If this->field_0x0c is non-null, tail-forward to it (passing the stack arg and returning its result); otherwise return 0.
+// @field ForwardToHandlerOrZero +0x0c void* field_0x0c
+//
+// Original: thiscall-style (this in ecx) with one stack argument, `ret 4`.
+// The tail `jmp eax` is modelled as a direct call whose result is returned;
+// portable C++ cannot reproduce the stack-frame reuse of the jump itself.
+// Note: `xor al, al` only clears the low byte, so the upper bits of eax are
+// not guaranteed zero on the fallback path; the return type is 32-bit to match eax.
+using HandlerFn = uint32_t (*)(void* self, uint32_t arg);
+
+uint32_t fn_00401960(void* self, uint32_t arg) {
+    void* handler = lift_field<void*>(self, 0x0c);
+    if (handler != nullptr) {
+        return reinterpret_cast<HandlerFn>(handler)(self, arg);
+    }
+    return 0;
+}
+} // namespace lift_00401960
