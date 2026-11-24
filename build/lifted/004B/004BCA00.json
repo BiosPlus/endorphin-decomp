@@ -1,0 +1,22 @@
+{
+  "va": "0x004BCA00",
+  "size": 113,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::MaterialPair, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::MaterialPair\u003e::vfunc_0",
+  "class": "ExprParser::ValuePtrType",
+  "signature": "void* fn_004BCA00(void* unused, void* self)",
+  "summary": "Builds a temporary std::string from the value's first pointer field via sub_004BC770, passes the result to sub_006720E0 on self, then destroys the temporary and returns self.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:01:50Z"
+}

@@ -40959,3 +40959,34 @@ void* fn_0058FA60(void* self, void* unused_arg) {
     return self;
 }
 } // namespace lift_0058FA60
+
+// [0x004BCA00] ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>::vfunc_0 (113 bytes)
+namespace lift_004BCA00 {
+// @name ExprParser::ReadMethodType<NMData::MaterialPair>::vfunc_0
+// @class ExprParser::ValuePtrType
+// @summary Builds a temporary std::string from the value's first pointer field via sub_004BC770, passes the result to sub_006720E0 on self, then destroys the temporary and returns self.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+
+// Callee 0x004BC770 (138 bytes): stdcall-style helper, takes (string out, void* value), returns a pointer-sized result.
+extern void* ext_004BC770(void* out, void* value);
+// Callee 0x006720E0 (43 bytes): thiscall on self with one pointer-sized argument.
+extern void ext_006720E0(void* self, void* arg);
+// IAT slot holding the MSVCP80 std::string destructor pointer.
+extern void* mem_00924FF4;
+
+void* fn_004BCA00(void* unused, void* self) {
+    (void)unused;
+    // Temporary std::string storage (MSVC x86 layout, 0x18 bytes; padded).
+    alignas(8) unsigned char tmp[0x20] = {};
+
+    void* value = *static_cast<void**>(self);
+    void* result = ext_004BC770(tmp, value);
+    ext_006720E0(self, result);
+
+    // Destroy the temporary through the IAT-resolved destructor.
+    auto dtor = *reinterpret_cast<void (**)(void*)>(&mem_00924FF4);
+    dtor(tmp);
+
+    return self;
+}
+} // namespace lift_004BCA00
