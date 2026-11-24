@@ -1,0 +1,28 @@
+{
+  "va": "0x004F9840",
+  "size": 13,
+  "orig_symbol": "VMCSModes::DefaultImplementation::vfunc_16",
+  "src_path": "src/VMCSModes/auto_tiny.cpp",
+  "lifted_path": "lifted/VMCSModes/auto_tiny.cpp",
+  "name": "VMCSModes::DefaultImplementation::vfunc_16",
+  "class": "VMCSModes::DefaultImplementation",
+  "signature": "void fn_004F9840(void* self, uint32_t value)",
+  "summary": "Stores the argument into the field at +0x3c of the object referenced by this-\u003e+0x8.",
+  "fields": [
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "delegate_0x8"
+    },
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:20:00Z"
+}

@@ -163,3 +163,16 @@ uint32_t __thiscall fn_004F2890(void* this_ptr) {
 }
 } // namespace lift_004F9BD0
 } // namespace lift_004F2890
+
+// [0x004F9840] VMCSModes::DefaultImplementation::vfunc_16 (13 bytes)
+namespace lift_004F9840 {
+// @name VMCSModes::DefaultImplementation::vfunc_16
+// @class VMCSModes::DefaultImplementation
+// @summary Stores the argument into the field at +0x3c of the object referenced by this->+0x8.
+// @field VMCSModes::DefaultImplementation +0x08 void* delegate_0x8
+// @field VMCSModes::DefaultImplementation +0x3c uint32_t field_0x3c
+void fn_004F9840(void* self, uint32_t value) {
+    void* target = lift_field<void*>(self, 0x8);
+    lift_field<uint32_t>(target, 0x3c) = value;
+}
+} // namespace lift_004F9840

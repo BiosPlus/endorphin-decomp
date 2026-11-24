@@ -8954,6 +8954,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x8 and tail-calls sub_00469130.",
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
   },
+  "0x004F9840": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_16",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "void fn_004F9840(void* self, uint32_t value)",
+    "summary": "Stores the argument into the field at +0x3c of the object referenced by this-\u003e+0x8.",
+    "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
+  },
   "0x004F98C0": {
     "name": "VMCSModes::DefaultImplementation::vfunc_28",
     "class": "VMCSModes::DefaultImplementation",
