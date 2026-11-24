@@ -22,6 +22,7 @@ void* fn_005136C0(void* self, void* pair, DWORD b) {
 }
 } // namespace lift_00500310
 } // namespace lift_005136C0
+#include <cstring>
 
 // [0x005142F0] sub_005142F0 (35 bytes)
 namespace lift_005142F0 {
@@ -79,3 +80,33 @@ DWORD* __thiscall fn_0051E7D0(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_0051E7D0
+
+// [0x00519CB0] sub_00519CB0 (44 bytes)
+namespace lift_00519CB0 {
+// Import thunk reached via indirect call through IAT slot 0x00924FE0
+// (its .rdata value is 0x0062916E). Annotated as the MSVCP80
+// basic_string copy constructor: basic_string(const basic_string&).
+extern void ext_0062916E(void* self, const void* src);
+
+static inline void store_u32(unsigned char* base, std::size_t off, std::uint32_t v) {
+    std::memcpy(base + off, &v, sizeof v);
+}
+
+// @name ctorFromStdString
+// @class Unknown (vtable 0x0095219C)
+// @summary Constructor: writes vtable 0x0095219C, copy-constructs a std::string at +0x04 from the argument, sets +0x20 = 1, zeroes +0x24 and +0x28, returns this.
+// @field Unknown +0x00 const void* vptr
+// @field Unknown +0x04 MSVCP80_basic_string field_0x04
+// @field Unknown +0x20 std::uint32_t field_0x20
+// @field Unknown +0x24 std::uint32_t field_0x24
+// @field Unknown +0x28 std::uint32_t field_0x28
+void* fn_00519CB0(void* self, const void* name) {
+    auto* obj = static_cast<unsigned char*>(self);
+    store_u32(obj, 0x00, 0x0095219Cu);
+    ext_0062916E(obj + 0x04, name);
+    store_u32(obj, 0x24, 0u);
+    store_u32(obj, 0x28, 0u);
+    store_u32(obj, 0x20, 1u);
+    return self;
+}
+} // namespace lift_00519CB0

@@ -13151,6 +13151,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00500310 (DwordPairInitFromCall_00500310).",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00519CB0": {
+    "name": "ctorFromStdString",
+    "class": "Unknown (vtable 0x0095219C)",
+    "signature": "static inline void store_u32(unsigned char* base, std::size_t off, std::uint32_t v)",
+    "summary": "Constructor: writes vtable 0x0095219C, copy-constructs a std::string at +0x04 from the argument, sets +0x20 = 1, zeroes +0x24 and +0x28, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00519CE0": {
     "name": "std::basic_string\u003cchar\u003e::~basic_string (vtable-stamping thunk)",
     "class": "\u003cunknown\u003e (this is in ecx; owning class not yet recovered)",
