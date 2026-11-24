@@ -1,0 +1,27 @@
+{
+  "va": "0x00480130",
+  "size": 41,
+  "orig_symbol": "sub_00480130",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "sub_00480130",
+  "signature": "void __thiscall sub_00480130(void* this_)",
+  "summary": "Queries subobject vtable+0x54 or falls back to field_0x240, then invokes vtable+0x4(1) on the non-null object.",
+  "fields": [
+    {
+      "class": "Class",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Class",
+      "offset": "+0x240",
+      "type": "void*",
+      "name": "field_0x240"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:00:58Z"
+}

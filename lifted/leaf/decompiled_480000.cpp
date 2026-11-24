@@ -206,3 +206,53 @@ DWORD* __thiscall fn_0048CDB0(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_0048CDB0
+
+// [0x00480C70]
+namespace lift_00480C70 {
+// @name fillRange64
+// @summary Fills a range [first, last) of 64-byte elements by copying from a source 64-byte element.
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+void __cdecl sub_00480C70(uint32_t first, uint32_t last, uint32_t value_ptr) {
+    if (first == last) {
+        return;
+    }
+
+    uint32_t cur = first;
+    do {
+        for (uint32_t i = 0; i < 16; ++i) {
+            mem_write32(cur + i * 4, mem_read32(value_ptr + i * 4));
+        }
+        cur += 0x40;
+    } while (cur != last);
+}
+} // namespace lift_00480C70
+
+// [0x00480130]
+namespace lift_00480130 {
+// @name sub_00480130
+// @summary Queries subobject vtable+0x54 or falls back to field_0x240, then invokes vtable+0x4(1) on the non-null object.
+// @field Class +0x10 void* field_0x10
+// @field Class +0x240 void* field_0x240
+void __thiscall sub_00480130(void* this_) {
+    uint8_t* self = reinterpret_cast<uint8_t*>(this_);
+    void* subobj = self + 0x10;
+    uintptr_t vtable0 = *reinterpret_cast<const uint32_t*>(subobj);
+    uintptr_t fn0 = *reinterpret_cast<const uint32_t*>(vtable0 + 0x54);
+    using fn0_t = void* (__thiscall*)(void*);
+    void* obj = reinterpret_cast<fn0_t>(fn0)(subobj);
+    if (!obj) {
+        obj = reinterpret_cast<void*>(static_cast<uintptr_t>(*reinterpret_cast<const uint32_t*>(self + 0x240)));
+        if (!obj) {
+            return;
+        }
+    }
+    uintptr_t vtable1 = *reinterpret_cast<const uint32_t*>(obj);
+    uintptr_t fn1 = *reinterpret_cast<const uint32_t*>(vtable1 + 0x4);
+    using fn1_t = void (__thiscall*)(void*, uint32_t);
+    reinterpret_cast<fn1_t>(fn1)(obj, 1);
+}
+} // namespace lift_00480130
