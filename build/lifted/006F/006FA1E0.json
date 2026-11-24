@@ -1,0 +1,34 @@
+{
+  "va": "0x006FA1E0",
+  "size": 41,
+  "orig_symbol": "sub_006FA1E0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Buffer::releaseStorage",
+  "class": "Buffer",
+  "signature": "void fn_006FA1E0(void* self)",
+  "summary": "Frees the heap block at +0x00 if present, then clears the three-dword header (ptr, +0x04, +0x08).",
+  "fields": [
+    {
+      "class": "Buffer",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "data"
+    },
+    {
+      "class": "Buffer",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Buffer",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:57:21Z"
+}

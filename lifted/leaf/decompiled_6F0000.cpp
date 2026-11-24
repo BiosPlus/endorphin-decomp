@@ -279,3 +279,31 @@ void fn_006F9380(void* self) {
     mem_00B5E254 = 0x00000000u;
 }
 } // namespace lift_006F9380
+
+// [0x006FA1E0] sub_006FA1E0 (41 bytes)
+namespace lift_006FA1E0 {
+// @name Buffer::releaseStorage
+// @class Buffer
+// @summary Frees the heap block at +0x00 if present, then clears the three-dword header (ptr, +0x04, +0x08).
+// @field Buffer +0x00 void* data
+// @field Buffer +0x04 uint32_t field_0x04
+// @field Buffer +0x08 uint32_t field_0x08
+void fn_006FA1E0(void* self) {
+    // __thiscall: `self` is the value that arrived in ECX.
+    struct Header {
+        void*    data;       // +0x00
+        uint32_t field_0x04; // +0x04
+        uint32_t field_0x08; // +0x08
+    };
+    auto* h = static_cast<Header*>(self);
+
+    if (h->data == nullptr) {
+        return; // original jumps straight to epilogue; +0x04/+0x08 untouched
+    }
+
+    std::free(h->data);
+    h->data = nullptr;
+    h->field_0x04 = 0;
+    h->field_0x08 = 0;
+}
+} // namespace lift_006FA1E0
