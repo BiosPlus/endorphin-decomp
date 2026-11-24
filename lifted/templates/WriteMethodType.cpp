@@ -7458,3 +7458,31 @@ void __stdcall fn_005F3C70(void* arg0) {
     *reinterpret_cast<uintptr_t*>(static_cast<uint8_t*>(arg0) + 4) = reinterpret_cast<uintptr_t>(&mem_00B4684C);
 }
 } // namespace lift_005F3C70
+
+// [0x0062A7D0]
+namespace lift_0062A7D0 {
+// @name ExprParser::WriteMethodType<Sensors::SensorIntegral, float, &Sensors::SensorIntegral::insert>::vfunc_40
+// @class ExprParser::WriteMethodType<Sensors::SensorIntegral, float, &public: void __thiscall Sensors::SensorIntegral::insert(float)>
+// @summary One-time guarded init of a static type-descriptor object, then stores its address into the object's +0x04 slot.
+// @field ExprParser::WriteMethodType<Sensors::SensorIntegral, float, &public: void __thiscall Sensors::SensorIntegral::insert(float)> +0x04 uint32_t field_0x04
+
+// Externals
+extern void __thiscall ext_0067A670(void* self, uint32_t arg); // sub_0067A670
+
+// Globals (RDATA / .data)
+extern uint32_t mem_00B51C30; // init guard flag
+extern uint32_t mem_00B51C2C; // static object storage (vptr at +0)
+
+static constexpr uint32_t kStaticVptr = 0x00978E8Cu;
+
+void __stdcall lift_0062A7D0(void* obj) {
+    // Original guarded by an SEH frame (fs:[0], handler 0x008AD66E); not reproduced.
+    if ((mem_00B51C30 & 1u) == 0u) {
+        mem_00B51C30 |= 1u;
+        ext_0067A670(&mem_00B51C2C, 0u);
+        mem_00B51C2C = kStaticVptr;
+    }
+    lift_field<uint32_t>(obj, 0x4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B51C2C));
+}
+} // namespace lift_0062A7D0

@@ -1,0 +1,14 @@
+{
+  "va": "0x0062A7D0",
+  "size": 122,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, float, \u0026public: void __thiscall Sensors::SensorIntegral::insert(float)\u003e::vfunc_40",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, float, \u0026Sensors::SensorIntegral::insert\u003e::vfunc_40",
+  "class": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, float, \u0026public: void __thiscall Sensors::SensorIntegral::insert(float)\u003e",
+  "signature": "void __stdcall lift_0062A7D0(void* obj)",
+  "summary": "One-time guarded init of a static type-descriptor object, then stores its address into the object's +0x04 slot.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:56:56Z"
+}
