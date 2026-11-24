@@ -165,7 +165,8 @@ namespace lift_00810460 {
 // @name SetOrClearFlag0x400ViaIndirect4
 // @class Unknown
 // @summary If arg2 != 0, set 0x400 in the dword at (*(self+0x04))+0x04; otherwise clear it.
-// @field Unknown +0x04 void* field_0x04 (pointer to inner object; inner +0x04 is the flags dword)
+// @field Unknown +0x04 void* field_0x04 (pointer to inner object)
+// @field Unknown +0x04 uint32_t flags (on inner object; bit 0x400 set/cleared)
 void fn_00810460(void* self, int enable) {
     auto* outer = reinterpret_cast<uint8_t*>(self);
     auto* inner = *reinterpret_cast<uint8_t**>(outer + 0x04);

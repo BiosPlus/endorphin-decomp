@@ -12,11 +12,17 @@
     {
       "class": "Unknown",
       "offset": "+0x4",
-      "type": "void* field_0x04 (pointer to inner object; inner +0x04 is the flags",
-      "name": "dword)"
+      "type": "void* field_0x04 (pointer to inner",
+      "name": "object)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t flags (on inner object; bit 0x400",
+      "name": "set/cleared)"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T13:59:56Z"
+  "lifted_at": "2026-11-24T14:00:05Z"
 }
