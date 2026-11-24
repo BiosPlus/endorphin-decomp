@@ -492,3 +492,19 @@ bool __thiscall sub_00783650(uintptr_t ecx) {
     return ((flags >> 4) & 0x1) != 0;
 }
 } // namespace lift_00783650
+
+// [0x00784790]
+namespace lift_00784790 {
+// @name compareUint32Ptr
+// @summary Three-way unsigned 32-bit integer comparator for pointer arguments (returns -1, 0, or 1).
+
+
+int32_t __cdecl sub_00784790(const uint32_t* a, const uint32_t* b) {
+    uint32_t va = *a;
+    uint32_t vb = *b;
+    if (va < vb) {
+        return -1;
+    }
+    return (va > vb) ? 1 : 0;
+}
+} // namespace lift_00784790

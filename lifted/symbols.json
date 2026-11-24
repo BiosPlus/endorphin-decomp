@@ -39467,6 +39467,12 @@
     "summary": "Pure jump thunk forwarding to sub_00784720.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00784790": {
+    "name": "compareUint32Ptr",
+    "signature": "int32_t __cdecl sub_00784790(const uint32_t* a, const uint32_t* b)",
+    "summary": "Three-way unsigned 32-bit integer comparator for pointer arguments (returns -1, 0, or 1).",
+    "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
   "0x00784820": {
     "name": "sub_00784820",
     "signature": "void sub_00784820()",
@@ -40969,6 +40975,12 @@
     "name": "get_field_0xa8",
     "signature": "uint32_t sub_007C8880(uint32_t a1)",
     "summary": "Reads and returns the 32-bit field at offset 0xA8 from the given object pointer.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C89F0": {
+    "name": "getGridElementPtr",
+    "signature": "uint32_t sub_007C89F0(uint32_t self, int32_t col, int32_t row)",
+    "summary": "Computes pointer to a 24-byte element in a 2D array at (col, row)",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
   "0x007C8A50": {

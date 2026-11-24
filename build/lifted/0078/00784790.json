@@ -1,0 +1,13 @@
+{
+  "va": "0x00784790",
+  "size": 25,
+  "orig_symbol": "sub_00784790",
+  "src_path": "src/leaf/tiny_780000.cpp",
+  "lifted_path": "lifted/leaf/tiny_780000.cpp",
+  "name": "compareUint32Ptr",
+  "signature": "int32_t __cdecl sub_00784790(const uint32_t* a, const uint32_t* b)",
+  "summary": "Three-way unsigned 32-bit integer comparator for pointer arguments (returns -1, 0, or 1).",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T11:53:07Z"
+}
