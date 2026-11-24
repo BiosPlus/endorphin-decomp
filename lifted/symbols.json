@@ -19219,6 +19219,13 @@
     "summary": "Setter storing float argument into field at offset +0x17C.",
     "lifted_path": "lifted/leaf/tiny_5F0000.cpp"
   },
+  "0x005F5140": {
+    "name": "Unknown::ForwardSubobjectVirtualPlus30",
+    "class": "Unknown",
+    "signature": "int fn_005F5140(void* self)",
+    "summary": "Calls virtual slot 2 of the object at this+0x04 with (this+0x04, mem_00B40640) and returns the result + 0x30.",
+    "lifted_path": "lifted/leaf/tiny_5F0000.cpp"
+  },
   "0x005F5190": {
     "name": "forwardToSubobjectCallback",
     "class": "Unknown",

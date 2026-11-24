@@ -47,7 +47,7 @@ struct Unknown_Fields {
     // +0x4   uint32_t field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066BB70) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066AF60, 0x0066AFC0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_04  (evidence: 0x006B9950) // CONFLICT: multiple definitions at +0x4
-    // +0x4   void*                    field_04  (evidence: 0x005C3130) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_04  (evidence: 0x005C3130, 0x005F5140) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD                    field_0x04  (evidence: 0x00528BB0, 0x005D1480, 0x0078C230, 0x0078C3A0, 0x008102B0, 0x00810440) // CONFLICT: multiple definitions at +0x4
     // +0x4   float                    field_0x04  (evidence: 0x0052EF50, 0x00535610, 0x00545B80, 0x00622750, 0x0066A310, 0x007FC290) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  field_0x04  (evidence: 0x004BF680, 0x005B4BA0, 0x00672490, 0x0067B070, 0x007C2E50, 0x007CD040, 0x007DD000) // CONFLICT: multiple definitions at +0x4

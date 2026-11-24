@@ -61,3 +61,27 @@ void fn_005F5190(void* self) {
     fn(base + 0x04, mem_00B40640);
 }
 } // namespace lift_005F5190
+
+// [0x005F5140] sub_005F5140 (22 bytes)
+namespace lift_005F5140 {
+extern int mem_00B40640;
+
+// @name Unknown::ForwardSubobjectVirtualPlus30
+// @class Unknown
+// @summary Calls virtual slot 2 of the object at this+0x04 with (this+0x04, mem_00B40640) and returns the result + 0x30.
+// @field Unknown +0x04 void* field_04
+
+// Callee convention: thiscall-style (this in ECX, one stack arg), callee-cleans.
+// Portable approximation: first parameter carries the ECX value.
+typedef int (*SubobjectMethod)(void* self, int arg);
+
+int fn_005F5140(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void* sub = *reinterpret_cast<void**>(base + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    auto method = reinterpret_cast<SubobjectMethod>(vtbl[2]);
+    int arg = mem_00B40640;
+    int result = method(base + 0x04, arg);
+    return result + 0x30;
+}
+} // namespace lift_005F5140
