@@ -27730,6 +27730,12 @@
     "summary": "Pure jump thunk forwarding to sub_00671C70.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00671F30": {
+    "name": "sub_00671F30",
+    "signature": "void sub_00671F30(uint32_t* out)",
+    "summary": "Zeroes the first dword of the output buffer and stores the global mem_00B599BC into the second dword.",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
   "0x00672020": {
     "name": "sub_00672020",
     "class": "CompoundRenderable",

@@ -1,0 +1,27 @@
+{
+  "va": "0x00671F30",
+  "size": 29,
+  "orig_symbol": "sub_00671F30",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "sub_00671F30",
+  "signature": "void sub_00671F30(uint32_t* out)",
+  "summary": "Zeroes the first dword of the output buffer and stores the global mem_00B599BC into the second dword.",
+  "fields": [
+    {
+      "class": "arg0",
+      "offset": "+0x0",
+      "type": "uint32_t field_0x00 (written with",
+      "name": "0)"
+    },
+    {
+      "class": "arg0",
+      "offset": "+0x4",
+      "type": "uint32_t field_0x04 (written with",
+      "name": "mem_00B599BC)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:13:54Z"
+}

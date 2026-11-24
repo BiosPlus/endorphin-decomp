@@ -523,3 +523,18 @@ void fn_0067B2F0(void* self, double a, double b) {
     std::memcpy(base + 0x18, &zero, sizeof zero);
 }
 } // namespace lift_0067B2F0
+
+// [0x00671F30]
+namespace lift_00671F30 {
+// @name sub_00671F30
+// @summary Zeroes the first dword of the output buffer and stores the global mem_00B599BC into the second dword.
+// @field arg0 +0x00 uint32_t field_0x00 (written with 0)
+// @field arg0 +0x04 uint32_t field_0x04 (written with mem_00B599BC)
+
+extern uint32_t mem_00B599BC;
+
+void sub_00671F30(uint32_t* out) {
+    out[0] = 0;
+    out[1] = mem_00B599BC;
+}
+} // namespace lift_00671F30
