@@ -1312,3 +1312,15 @@ uint32_t sub_006C9C30(uint8_t* ecx) {
     return eax;
 }
 } // namespace lift_006C9C30
+
+// [0x006C9CC0]
+namespace lift_006C9CC0 {
+// @name Unknown::GetFlag100
+// @class Unknown
+// @summary Returns the 0x100 bit of the dword at +0x10 of this object.
+// @field Unknown +0x10 DWORD field_0x10
+DWORD fn_006C9CC0(void* self) {
+    DWORD v = *reinterpret_cast<DWORD*>(static_cast<uint8_t*>(self) + 0x10);
+    return v & 0x100u;
+}
+} // namespace lift_006C9CC0

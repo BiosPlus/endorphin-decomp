@@ -1,0 +1,22 @@
+{
+  "va": "0x006C9CC0",
+  "size": 16,
+  "orig_symbol": "sub_006C9CC0",
+  "src_path": "src/leaf/tiny_6C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6C0000.cpp",
+  "name": "Unknown::GetFlag100",
+  "class": "Unknown",
+  "signature": "DWORD fn_006C9CC0(void* self)",
+  "summary": "Returns the 0x100 bit of the dword at +0x10 of this object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:38:02Z"
+}

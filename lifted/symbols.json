@@ -31951,6 +31951,13 @@
     "summary": "Returns the low-nibble flag bits (mask 0x0E) of the dword at this+0x10.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C9CC0": {
+    "name": "Unknown::GetFlag100",
+    "class": "Unknown",
+    "signature": "DWORD fn_006C9CC0(void* self)",
+    "summary": "Returns the 0x100 bit of the dword at +0x10 of this object.",
+    "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
+  },
   "0x006C9E70": {
     "name": "Unknown::sub_006C9E70",
     "class": "Unknown",
