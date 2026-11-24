@@ -1,0 +1,13 @@
+{
+  "va": "0x00576240",
+  "size": 30,
+  "orig_symbol": "sub_00576240",
+  "src_path": "src/leaf/tiny_570000.cpp",
+  "lifted_path": "lifted/leaf/tiny_570000.cpp",
+  "name": "fillBytesFromSource",
+  "signature": "void fn_00576240(uint8_t* dst, uint8_t* dstEnd, const uint8_t* src)",
+  "summary": "Writes the byte at *src into every byte in [dst, dstEnd); does nothing if dst == dstEnd. The source pointer is not advanced.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:18:11Z"
+}

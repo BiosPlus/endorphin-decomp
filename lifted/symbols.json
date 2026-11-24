@@ -15286,6 +15286,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0041C750 (sub_0041C750).",
     "lifted_path": "lifted/leaf/tiny_570000.cpp"
   },
+  "0x00576240": {
+    "name": "fillBytesFromSource",
+    "signature": "void fn_00576240(uint8_t* dst, uint8_t* dstEnd, const uint8_t* src)",
+    "summary": "Writes the byte at *src into every byte in [dst, dstEnd); does nothing if dst == dstEnd. The source pointer is not advanced.",
+    "lifted_path": "lifted/leaf/tiny_570000.cpp"
+  },
   "0x0057BB20": {
     "name": "Unknown::StoreValueAndInitString",
     "class": "Unknown",

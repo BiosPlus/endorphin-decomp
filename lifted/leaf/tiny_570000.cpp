@@ -56,3 +56,19 @@ void* fn_0057BB20(void* self, DWORD value) {
     return self;
 }
 } // namespace lift_0057BB20
+
+// [0x00576240] sub_00576240 (30 bytes)
+namespace lift_00576240 {
+// @name fillBytesFromSource
+// @summary Writes the byte at *src into every byte in [dst, dstEnd); does nothing if dst == dstEnd. The source pointer is not advanced.
+void fn_00576240(uint8_t* dst, uint8_t* dstEnd, const uint8_t* src) {
+    if (dst == dstEnd) {
+        return;
+    }
+    // The original re-reads the source byte on every iteration.
+    do {
+        *dst = *src;
+        ++dst;
+    } while (dst != dstEnd);
+}
+} // namespace lift_00576240
