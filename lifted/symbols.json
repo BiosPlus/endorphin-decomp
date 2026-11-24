@@ -12574,6 +12574,13 @@
     "summary": "Returns 1 if the signed 32-bit value at this+0xAC is non-negative, else 0.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00545B80": {
+    "name": "ResizeTool::vfunc_16",
+    "class": "ResizeTool",
+    "signature": "uint32_t fn_00545B80(void* self, uint32_t arg0, uint32_t arg1)",
+    "summary": "Forwards a call to the object at self+0x88 via its vtable slot at +0x70, then returns 0.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00545CA0": {
     "name": "ResizeTool::vfunc_1",
     "class": "ResizeTool",

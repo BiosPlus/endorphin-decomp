@@ -1,0 +1,22 @@
+{
+  "va": "0x00545B80",
+  "size": 18,
+  "orig_symbol": "ResizeTool::vfunc_16",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "ResizeTool::vfunc_16",
+  "class": "ResizeTool",
+  "signature": "uint32_t fn_00545B80(void* self, uint32_t arg0, uint32_t arg1)",
+  "summary": "Forwards a call to the object at self+0x88 via its vtable slot at +0x70, then returns 0.",
+  "fields": [
+    {
+      "class": "ResizeTool",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:57:33Z"
+}

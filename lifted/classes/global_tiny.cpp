@@ -5892,3 +5892,22 @@ int32_t PoseTool_vfunc_22(uint8_t* self, uint32_t /*arg1*/, uint32_t /*arg2*/) {
     return 1;
 }
 } // namespace lift_005453B0
+
+// [0x00545B80] ResizeTool::vfunc_16 (18 bytes)
+namespace lift_00545B80 {
+// @name ResizeTool::vfunc_16
+// @class ResizeTool
+// @summary Forwards a call to the object at self+0x88 via its vtable slot at +0x70, then returns 0.
+// @field ResizeTool +0x88 void* field_0x88
+uint32_t fn_00545B80(void* self, uint32_t arg0, uint32_t arg1) {
+    using VFn = void(__thiscall*)(void*);
+
+    // self->field_0x88 is the child object; its vtable slot at +0x70 (index 28) is invoked with no args.
+    void* child = lift_field<void*>(self, 0x88);
+    void** vtbl = *static_cast<void***>(child);
+    auto target = reinterpret_cast<VFn>(vtbl[0x70 / sizeof(void*)]);
+    target(child);
+
+    return 0;
+}
+} // namespace lift_00545B80
