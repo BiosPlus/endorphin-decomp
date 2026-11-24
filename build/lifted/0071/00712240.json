@@ -1,0 +1,13 @@
+{
+  "va": "0x00712240",
+  "size": 16,
+  "orig_symbol": "sub_00712240",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "getTableEntryBySubobjectField28",
+  "signature": "extern \"C\" uint32_t __fastcall fn_00712240(void* self)",
+  "summary": "Returns mem_00AABF1C[getSubobjectField28(self)].",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:44:49Z"
+}

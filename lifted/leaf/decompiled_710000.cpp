@@ -147,3 +147,30 @@ extern uint32_t __fastcall fn_00712000(void* self) {
     return *reinterpret_cast<uint32_t*>(subobj + 0x4);
 }
 } // namespace lift_00712000
+
+// [0x0071B010]
+namespace lift_0071B010 {
+extern uint32_t __thiscall ext_007873F0(void* self, uint32_t arg1);
+
+// @name adjustThisAndForward_0071B010
+// @summary Adjusts the this pointer by +0x10 and forwards the argument to sub_007873F0.
+// @field unknown +0x10 uint8_t[] field_0x10
+uint32_t __thiscall sub_0071B010(void* self, uint32_t arg1) {
+    return ext_007873F0(reinterpret_cast<uint8_t*>(self) + 0x10, arg1);
+}
+} // namespace lift_0071B010
+
+// [0x00712240] sub_00712240 (16 bytes)
+namespace lift_00712240 {
+// Known callee 0x00711DB0: getSubobjectField28 (Calls ext_0071E680 on self and returns the 32-bit field at offset +0x28 of the returned pointer.)
+extern uint32_t __fastcall ext_00711DB0(void* self);
+// Lookup table of u32 entries at 0x00AABF1C (first entry 0x00AAC034).
+extern const uint32_t mem_00AABF1C[];
+
+// @name getTableEntryBySubobjectField28
+// @summary Returns mem_00AABF1C[getSubobjectField28(self)].
+extern uint32_t __fastcall fn_00712240(void* self) {
+    uint32_t index = ext_00711DB0(self);
+    return mem_00AABF1C[index];
+}
+} // namespace lift_00712240

@@ -34996,6 +34996,12 @@
     "summary": "Calls fn_0071E680(self) and returns the uint32_t at offset +0x4 of the returned subobject.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00712240": {
+    "name": "getTableEntryBySubobjectField28",
+    "signature": "extern \"C\" uint32_t __fastcall fn_00712240(void* self)",
+    "summary": "Returns mem_00AABF1C[getSubobjectField28(self)].",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00712520": {
     "name": "sub_00712520",
     "signature": "extern \"C\" int32_t __cdecl fn_00712520(void)",
@@ -35925,6 +35931,12 @@
     "signature": "extern \"C\" int32_t __cdecl fn_0071AA10(void)",
     "summary": "Returns constant 0x7.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071B010": {
+    "name": "adjustThisAndForward_0071B010",
+    "signature": "uint32_t __thiscall sub_0071B010(void* self, uint32_t arg1)",
+    "summary": "Adjusts the this pointer by +0x10 and forwards the argument to sub_007873F0.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x0071B0F0": {
     "name": "sub_0071B0F0",
