@@ -509,3 +509,20 @@ void fn_006D9030(void* self, DWORD arg1, DWORD arg2) {
     lift_field<BYTE>(self, 0x15) = 1;
 }
 } // namespace lift_006D9030
+
+// [0x006D26D0] sub_006D26D0 (48 bytes)
+namespace lift_006D26D0 {
+// @name Vec4d::addAssign
+// @class Vec4d
+// @summary Adds a source array of four doubles (src, stack arg) element-wise into this (ecx), then returns 4 bytes popped.
+// @field Vec4d +0x00 double field_0x00
+// @field Vec4d +0x08 double field_0x08
+// @field Vec4d +0x10 double field_0x10
+// @field Vec4d +0x18 double field_0x18
+void fn_006D26D0(double* self, const double* src) {
+    self[0] += src[0];
+    self[1] += src[1];
+    self[2] += src[2];
+    self[3] += src[3];
+}
+} // namespace lift_006D26D0

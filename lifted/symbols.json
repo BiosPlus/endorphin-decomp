@@ -39300,6 +39300,13 @@
     "summary": "Divides four consecutive doubles at this+0x00..+0x18 by a scalar double argument (stdcall-style, ret 8).",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D26D0": {
+    "name": "Vec4d::addAssign",
+    "class": "Vec4d",
+    "signature": "void fn_006D26D0(double* self, const double* src)",
+    "summary": "Adds a source array of four doubles (src, stack arg) element-wise into this (ecx), then returns 4 bytes popped.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D2700": {
     "name": "Vec3d::Dot",
     "class": "Vec3d",

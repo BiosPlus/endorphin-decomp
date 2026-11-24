@@ -8,9 +8,9 @@
 // Recovered field layout for Vec4d:
 namespace lifted_layout {
 struct Vec4d_Fields {
-    // +0x0   double                   field_0x00  (evidence: 0x006D24D0)
-    // +0x8   double                   field_0x08  (evidence: 0x006D24D0)
-    // +0x10  double                   field_0x10  (evidence: 0x006D24D0)
-    // +0x18  double                   field_0x18  (evidence: 0x006D24D0)
+    // +0x0   double                   field_0x00  (evidence: 0x006D24D0, 0x006D26D0)
+    // +0x8   double                   field_0x08  (evidence: 0x006D24D0, 0x006D26D0)
+    // +0x10  double                   field_0x10  (evidence: 0x006D24D0, 0x006D26D0)
+    // +0x18  double                   field_0x18  (evidence: 0x006D24D0, 0x006D26D0)
 };
 } // namespace lifted_layout
