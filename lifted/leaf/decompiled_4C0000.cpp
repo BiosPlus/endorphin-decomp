@@ -143,3 +143,40 @@ void sub_004CCC30(uint8_t* self) {
     store_f32(self, 0x2C, zero);
 }
 } // namespace lift_004CCC30
+
+// [0x004C72D0] sub_004C72D0 (57 bytes)
+namespace lift_004C72D0 {
+namespace lift_004C72D0 {
+// Known callee: IAT slot mem_00924FDC -> MSVCP80 basic_string<char>::operator=(const basic_string&).
+// Element is copy-assigned via thiscall (this = dst string, arg = src string).
+extern void ext_00924FDC(void* dst_string, const void* src_string);
+
+// @name CopyRangeBackward_004C72D0
+// @summary Copies [first,last) of 0x20-byte elements backward so they end at d_last; returns the new begin of the destination range (d_last - count), or d_last when the range is empty.
+// @field Element +0x00 uint8_t field_0x00[0x1C]
+// @field Element +0x1C int32_t field_0x1C
+
+// Element layout (stride 0x20): std::string at +0x00 (0x1C bytes), int32 at +0x1C.
+// Equivalent to std::copy_backward over the 32-byte elements:
+//   if (first == last) return d_last;
+//   do { --last; --d_last; *d_last = *last; } while (last != first);
+//   return d_last;
+// Note: the original 'copy' compares after the copy, so the loop body runs at least once.
+extern uint8_t* __cdecl fn_004C72D0(uint8_t* first, uint8_t* last, uint8_t* d_last) {
+    if (first == last) {
+        return d_last;
+    }
+
+    uint8_t* src = last;
+    uint8_t* dst = d_last;
+    do {
+        src -= 0x20;
+        dst -= 0x20;
+        ext_00924FDC(dst, src);
+        lift_field<int32_t>(dst, 0x1C) = lift_field<int32_t>(src, 0x1C);
+    } while (src != first);
+
+    return dst;
+}
+} // namespace lift_004C72D0
+} // namespace lift_004C72D0
