@@ -155,3 +155,21 @@ DWORD* __thiscall fn_0057EB80(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_0057EB80
+
+// [0x00577AE0] sub_00577AE0 (46 bytes)
+namespace lift_00577AE0 {
+// @name FillBytesFromSource
+// @summary Writes the byte at *src into count consecutive bytes starting at dst (src is not advanced, so it is re-read each iteration); returns dst + count. stdcall, callee pops 12 bytes.
+extern uint8_t* __stdcall fn_00577AE0(uint8_t* dst, uint32_t count, const uint8_t* src) {
+    uint8_t* const end = dst + count;
+    if (count == 0) {
+        return end;
+    }
+    uint8_t* out = dst;
+    for (uint32_t remaining = count; remaining != 0; --remaining) {
+        *out = *src;
+        ++out;
+    }
+    return end;
+}
+} // namespace lift_00577AE0

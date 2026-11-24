@@ -1,0 +1,13 @@
+{
+  "va": "0x00577AE0",
+  "size": 46,
+  "orig_symbol": "sub_00577AE0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "FillBytesFromSource",
+  "signature": "extern \"C\" uint8_t* __stdcall fn_00577AE0(uint8_t* dst, uint32_t count, const uint8_t* src)",
+  "summary": "Writes the byte at *src into count consecutive bytes starting at dst (src is not advanced, so it is re-read each iteration); returns dst + count. stdcall, callee pops 12 bytes.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:09:52Z"
+}

@@ -17146,6 +17146,12 @@
     "summary": "Writes the byte at *src into every byte in [dst, dstEnd); does nothing if dst == dstEnd. The source pointer is not advanced.",
     "lifted_path": "lifted/leaf/tiny_570000.cpp"
   },
+  "0x00577AE0": {
+    "name": "FillBytesFromSource",
+    "signature": "extern \"C\" uint8_t* __stdcall fn_00577AE0(uint8_t* dst, uint32_t count, const uint8_t* src)",
+    "summary": "Writes the byte at *src into count consecutive bytes starting at dst (src is not advanced, so it is re-read each iteration); returns dst + count. stdcall, callee pops 12 bytes.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00578020": {
     "name": "sub_00578020",
     "signature": "DWORD* __thiscall fn_00578020(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
