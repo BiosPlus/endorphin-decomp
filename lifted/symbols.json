@@ -39364,6 +39364,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x007009E0": {
+    "name": "Unknown::GetChainedFloat",
+    "class": "Unknown",
+    "signature": "float fn_007009E0(void* self)",
+    "summary": "Reads the object at +0x04, passes it through GetValueIfCountPositive and sub_006C94F0, then returns the float from the resulting object via sub_006C9F70.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x007010B0": {
     "name": "CopyHugeConstantToGlobals",
     "signature": "extern uint32_t mem_00925284; // .rdata u32 0x0062D360 (pointer to _HUGE) extern uint32_t mem_00B5E7D0; // global, low dword extern uint32_t mem_00B5E7D4; // global, high dword void CopyHugeConstantToGlobals()",

@@ -1,0 +1,22 @@
+{
+  "va": "0x007009E0",
+  "size": 32,
+  "orig_symbol": "sub_007009E0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::GetChainedFloat",
+  "class": "Unknown",
+  "signature": "float fn_007009E0(void* self)",
+  "summary": "Reads the object at +0x04, passes it through GetValueIfCountPositive and sub_006C94F0, then returns the float from the resulting object via sub_006C9F70.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:37:21Z"
+}
