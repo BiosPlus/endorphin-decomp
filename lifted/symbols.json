@@ -19709,6 +19709,13 @@
     "summary": "Returns (end - begin) / 12 for a 12-byte element array, or 0 when begin is null.",
     "lifted_path": "lifted/leaf/tiny_570000.cpp"
   },
+  "0x00573250": {
+    "name": "StringIter::checkedPosition",
+    "class": "StringIter",
+    "signature": "uint32_t __thiscall fn_00573250(uint32_t self)",
+    "summary": "Returns the iterator's position; sentinel -2 (end) returns the position directly, otherwise asserts the position lies within the owning string's data range.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00573A10": {
     "name": "sub_00573A10",
     "signature": "DWORD* __thiscall fn_00573A10(void* self, const DWORD* first, const DWORD* last, DWORD* out)",

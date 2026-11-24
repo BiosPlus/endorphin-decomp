@@ -1,0 +1,34 @@
+{
+  "va": "0x00573250",
+  "size": 54,
+  "orig_symbol": "sub_00573250",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "StringIter::checkedPosition",
+  "class": "StringIter",
+  "signature": "uint32_t __thiscall fn_00573250(uint32_t self)",
+  "summary": "Returns the iterator's position; sentinel -2 (end) returns the position directly, otherwise asserts the position lies within the owning string's data range.",
+  "fields": [
+    {
+      "class": "StringIter",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "owner"
+    },
+    {
+      "class": "StringIter",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "pos"
+    },
+    {
+      "class": "BasicString",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:11:47Z"
+}

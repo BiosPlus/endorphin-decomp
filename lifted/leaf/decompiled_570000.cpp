@@ -293,3 +293,33 @@ bool __stdcall sub_00570380(void* stream) {
 }
 } // namespace lift_00570380
 } // namespace lift_00570380
+
+// [0x00573250]
+namespace lift_00573250 {
+// @name StringIter::checkedPosition
+// @class StringIter
+// @summary Returns the iterator's position; sentinel -2 (end) returns the position directly, otherwise asserts the position lies within the owning string's data range.
+// @field StringIter +0x00 uint32_t owner
+// @field StringIter +0x04 uint32_t pos
+// @field BasicString +0x14 uint32_t field_0x14
+
+extern void ext_invalid_parameter_noinfo(void);
+extern uint32_t ext_basic_string_Myptr(uint32_t self);
+extern uint32_t mem_read32(uint32_t addr);
+
+uint32_t __thiscall fn_00573250(uint32_t self) {
+    uint32_t owner = mem_read32(self);
+    if (owner == 0xFFFFFFFEu) {
+        return mem_read32(self + 0x04);
+    }
+    if (owner == 0) {
+        ext_invalid_parameter_noinfo();
+    }
+    uint32_t data = ext_basic_string_Myptr(owner);
+    uint32_t end = data + mem_read32(owner + 0x14);
+    if (!(mem_read32(self + 0x04) < end)) {
+        ext_invalid_parameter_noinfo();
+    }
+    return mem_read32(self + 0x04);
+}
+} // namespace lift_00573250
