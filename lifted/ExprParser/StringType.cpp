@@ -240,3 +240,32 @@ bool fn_0066B410([[maybe_unused]] void* self, void* arg1, void* arg2) {
     return lhs == rhs;
 }
 } // namespace lift_0066B410
+
+// [0x0066B350] ExprParser::StringType::vfunc_25 (188 bytes)
+namespace lift_0066B350 {
+// Known callee 0x0041CEB0: UnknownClass::forwardToSubobjectSlot4 (Calls vtable slot 4 of the subobject at +0x04 with (arg1, self, 0, 0), then returns arg1.)
+extern void ext_0041CEB0();
+extern void ext_006720E0();
+extern int mem_00924FE4;
+extern int mem_00924FD0;
+extern int mem_00924ECC;
+extern int mem_00924FF4;
+
+// @name ExprParser::StringType::vfunc_25
+// @class ExprParser::StringType
+// @summary Concatenates a string obtained via forwardToSubobjectSlot4 with two literal fragments and stores the result in the output buffer.
+// @field ExprParser::StringType +0x00 void* field_0x00
+void fn_0066B350(void* self, std::string* result) {
+    // forwardToSubobjectSlot4(self, &tmp) returns &tmp, so the forwarded
+    // string is the caller-visible temporary populated by the subobject.
+    std::string tmp;
+    std::string* forwarded = &tmp;
+
+    std::string head;
+    std::string combined = head + *forwarded;
+    std::string tail;
+    *result = combined + tail;
+
+    (void)self;
+}
+} // namespace lift_0066B350

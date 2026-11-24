@@ -1,0 +1,22 @@
+{
+  "va": "0x0066B350",
+  "size": 188,
+  "orig_symbol": "ExprParser::StringType::vfunc_25",
+  "src_path": "src/ExprParser/StringType.cpp",
+  "lifted_path": "lifted/ExprParser/StringType.cpp",
+  "name": "ExprParser::StringType::vfunc_25",
+  "class": "ExprParser::StringType",
+  "signature": "void fn_0066B350(void* self, std::string* result)",
+  "summary": "Concatenates a string obtained via forwardToSubobjectSlot4 with two literal fragments and stores the result in the output buffer.",
+  "fields": [
+    {
+      "class": "ExprParser::StringType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:38:16Z"
+}

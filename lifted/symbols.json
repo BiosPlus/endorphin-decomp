@@ -30382,6 +30382,13 @@
     "summary": "Calls ext_006720E0(self, \u0026arg2-\u003e+0x2C, 0) and returns self; arguments 3-5 are unused.",
     "lifted_path": "lifted/ExprParser/StringType.cpp"
   },
+  "0x0066B350": {
+    "name": "ExprParser::StringType::vfunc_25",
+    "class": "ExprParser::StringType",
+    "signature": "void fn_0066B350(void* self, std::string* result)",
+    "summary": "Concatenates a string obtained via forwardToSubobjectSlot4 with two literal fragments and stores the result in the output buffer.",
+    "lifted_path": "lifted/ExprParser/StringType.cpp"
+  },
   "0x0066B410": {
     "name": "ExprParser::StringType::vfunc_42",
     "class": "ExprParser::StringType",
