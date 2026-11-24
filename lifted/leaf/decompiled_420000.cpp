@@ -378,3 +378,30 @@ void DispatchVirtualSlotDC_Arg2(void) {
     fn(obj, 2);
 }
 } // namespace lift_0042FAE0
+
+// [0x0042FB00] sub_0042FB00 (27 bytes)
+namespace lift_0042FB00 {
+// Known callee 0x00465B30: get_global_field_0x58 (Calls ext_004658C0 and returns the int32_t field at offset +0x58.)
+extern int32_t ext_00465B30();
+// Known callee 0x00468660: getNestedField_0x18_0xc (Reads a 32-bit value at offset 0xc of the object pointed to by this+0x18)
+extern uint32_t ext_00468660(uint32_t this_ptr);
+
+// Virtual slot 0xDC is invoked with (this, 1) and its return value is forwarded.
+using VirtualFn = uint32_t (__thiscall*)(void* self, uint32_t arg);
+
+// @name dispatchNestedObjectVirtual_0xDC
+// @summary Fetches the nested object from the global, then calls its vtable slot 0xDC with arg 1 and returns the result.
+// @field Unknown +0x00 uint32_t vtable
+uint32_t fn_0042FB00(void) {
+    const uint32_t obj_addr = ext_00468660(static_cast<uint32_t>(ext_00465B30()));
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(obj_addr));
+
+    const uint32_t vtbl_addr = lift_field<uint32_t>(obj, 0);
+    void* vtbl = reinterpret_cast<void*>(static_cast<uintptr_t>(vtbl_addr));
+
+    const uint32_t slot_addr = lift_field<uint32_t>(vtbl, 0xDC);
+    auto slot = reinterpret_cast<VirtualFn>(static_cast<uintptr_t>(slot_addr));
+
+    return slot(obj, 1);
+}
+} // namespace lift_0042FB00

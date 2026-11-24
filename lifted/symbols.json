@@ -1622,6 +1622,12 @@
     "summary": "Gets an object via ext_00465B30/ext_00468660, then calls its vtable slot at +0xDC with argument 2.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x0042FB00": {
+    "name": "dispatchNestedObjectVirtual_0xDC",
+    "signature": "uint32_t fn_0042FB00(void)",
+    "summary": "Fetches the nested object from the global, then calls its vtable slot 0xDC with arg 1 and returns the result.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x0042FB40": {
     "name": "thunkGetterVirtualSlot54",
     "signature": "extern \"C\" void* fn_0042FB40()",
