@@ -1,0 +1,27 @@
+{
+  "va": "0x007BDC00",
+  "size": 27,
+  "orig_symbol": "sub_007BDC00",
+  "src_path": "src/leaf/tiny_7B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7B0000.cpp",
+  "name": "initField1A0And1A8",
+  "signature": "uint32_t sub_007BDC00(uint8_t* obj)",
+  "summary": "Sets fields at +0x1A0 and +0x1A8 to mem_007BDC20 and returns 1.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x1A0",
+      "type": "uint32_t",
+      "name": "field_0x1A0"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x1A8",
+      "type": "uint32_t",
+      "name": "field_0x1A8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:05:59Z"
+}

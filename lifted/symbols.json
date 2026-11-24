@@ -42679,6 +42679,12 @@
     "summary": "No-op stub (add eax, 0).",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085E030": {
+    "name": "strcpy_impl",
+    "signature": "extern \"C\" char* sub_0085E030(char* dst, const char* src)",
+    "summary": "Copies a null-terminated C string from src to dst and returns dst.",
+    "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
   "0x0085E04B": {
     "name": "sub_0085E04B",
     "signature": "void fn_0085E04B(void)",
