@@ -1,0 +1,13 @@
+{
+  "va": "0x006DD960",
+  "size": 16,
+  "orig_symbol": "sub_006DD960",
+  "src_path": "src/leaf/tiny_6D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6D0000.cpp",
+  "name": "fn_006DD960 (MSVCR _HUGE negated into global)",
+  "signature": "void fn_006DD960(void)",
+  "summary": "Loads *_HUGE (double), negates it, and stores the result into mem_00B5DC10.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:39:50Z"
+}

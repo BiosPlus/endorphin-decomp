@@ -32334,6 +32334,12 @@
     "summary": "Getter returning int32_t field at offset +0xB8.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006DD960": {
+    "name": "fn_006DD960 (MSVCR _HUGE negated into global)",
+    "signature": "void fn_006DD960(void)",
+    "summary": "Loads *_HUGE (double), negates it, and stores the result into mem_00B5DC10.",
+    "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
   "0x006DDEE0": {
     "name": "sub_006DDEE0",
     "signature": "extern \"C\" void* __fastcall fn_006DDEE0(void* self, int edx_unused, unsigned int flags)",
