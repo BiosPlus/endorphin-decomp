@@ -23342,6 +23342,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005C32B0 (NMData::FluidObjectData::vfunc_15).",
     "lifted_path": "lifted/NMData/CollisionModelDataBase.cpp"
   },
+  "0x005C3030": {
+    "name": "Unknown::forwardToChildWithOffset30",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __thiscall fn_005C3030(void* self, DWORD arg0)",
+    "summary": "If the child pointer at +0x164 is non-null, queries the subobject at +0x4 via its vtable slot +0x14 using the global mem_00B40640, then forwards arg0 and (result + 0x30) to the child via ext_005B7260.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005C3070": {
     "name": "sub_005C3070",
     "class": "Unknown",

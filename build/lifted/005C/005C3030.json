@@ -1,0 +1,28 @@
+{
+  "va": "0x005C3030",
+  "size": 54,
+  "orig_symbol": "sub_005C3030",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "Unknown::forwardToChildWithOffset30",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __thiscall fn_005C3030(void* self, DWORD arg0)",
+  "summary": "If the child pointer at +0x164 is non-null, queries the subobject at +0x4 via its vtable slot +0x14 using the global mem_00B40640, then forwards arg0 and (result + 0x30) to the child via ext_005B7260.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x164",
+      "type": "void*",
+      "name": "field_0x164"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:11:49Z"
+}

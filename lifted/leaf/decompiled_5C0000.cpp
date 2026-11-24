@@ -171,3 +171,28 @@ void fn_005C3090(void* self, uintptr_t arg) {
     ext_005B72A0(sub, nullptr, arg, result + 0x30);
 }
 } // namespace lift_005C3090
+
+// [0x005C3030] sub_005C3030 (54 bytes)
+namespace lift_005C3030 {
+// Known callee 0x005B7260: Unknown::forwardIfChild (Forwards the call to ext_005CE970 when the pointer at +0x158 is non-null; otherwise returns, popping 8 bytes of stack arguments.)
+extern void ext_005B7260(void* self, DWORD stackArg0, DWORD stackArg1);
+extern int mem_00B40640;
+
+// @name Unknown::forwardToChildWithOffset30
+// @class Unknown
+// @summary If the child pointer at +0x164 is non-null, queries the subobject at +0x4 via its vtable slot +0x14 using the global mem_00B40640, then forwards arg0 and (result + 0x30) to the child via ext_005B7260.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x164 void* field_0x164
+typedef DWORD (__thiscall* SubobjectQueryFn)(void* self, DWORD arg);
+
+extern void __thiscall fn_005C3030(void* self, DWORD arg0) {
+    if (lift_field<void*>(self, 0x164) == nullptr) {
+        return;
+    }
+    void* subobject = static_cast<char*>(self) + 0x4;
+    void* vtable = lift_field<void*>(self, 0x4);
+    SubobjectQueryFn query = lift_field<SubobjectQueryFn>(vtable, 0x14);
+    DWORD result = query(subobject, static_cast<DWORD>(mem_00B40640));
+    ext_005B7260(lift_field<void*>(self, 0x164), arg0, result + 0x30);
+}
+} // namespace lift_005C3030
