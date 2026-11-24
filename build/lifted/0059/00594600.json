@@ -1,0 +1,21 @@
+{
+  "va": "0x00594600",
+  "size": 28,
+  "orig_symbol": "sub_00594600",
+  "src_path": "src/leaf/tiny_590000.cpp",
+  "lifted_path": "lifted/leaf/tiny_590000.cpp",
+  "name": "descriptiveName: forwardToChildSlot1Zero",
+  "signature": "void fn_00594600(void* self)",
+  "summary": "Forwards a call with argument 0 to the child object at +0x2DC via its vtable slot 1; returns immediately if no child.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x2DC",
+      "type": "void*",
+      "name": "field_0x2dc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:08:01Z"
+}

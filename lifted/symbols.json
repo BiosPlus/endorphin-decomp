@@ -15702,6 +15702,12 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x15C.",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
+  "0x00594600": {
+    "name": "descriptiveName: forwardToChildSlot1Zero",
+    "signature": "void fn_00594600(void* self)",
+    "summary": "Forwards a call with argument 0 to the child object at +0x2DC via its vtable slot 1; returns immediately if no child.",
+    "lifted_path": "lifted/leaf/tiny_590000.cpp"
+  },
   "0x00594620": {
     "name": "sub_00594620",
     "signature": "extern \"C\" void __fastcall fn_00594620(void* self)",

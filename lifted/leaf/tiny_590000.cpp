@@ -266,3 +266,24 @@ void* fn_0059DE00(void* arg) {
 }
 } // namespace lift_00401AF0
 } // namespace lift_0059DE00
+
+// [0x00594600] sub_00594600 (28 bytes)
+namespace lift_00594600 {
+// @name descriptiveName: forwardToChildSlot1Zero
+// @summary Forwards a call with argument 0 to the child object at +0x2DC via its vtable slot 1; returns immediately if no child.
+// @field Unknown +0x2DC void* field_0x2dc
+
+// Original is a tail-jump (stdcall, `ret 4`): when the child at self+0x2DC is
+// null, it returns and pops its one stack argument; otherwise it overwrites that
+// argument with 0 and jumps to child->vtable[1] (the callee then pops the argument).
+// Expressed here as a direct call with argument 0.
+void fn_00594600(void* self) {
+    void* child = lift_field<void*>(self, 0x2DC);
+    if (child == nullptr) {
+        return;
+    }
+    void** vtable = *reinterpret_cast<void***>(child);
+    auto slot1 = reinterpret_cast<void (__thiscall*)(void*, int)>(vtable[1]);
+    slot1(child, 0);
+}
+} // namespace lift_00594600
