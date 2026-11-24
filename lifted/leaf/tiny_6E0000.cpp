@@ -587,3 +587,17 @@ double fn_006E8780(void* self) {
     return lift_field<double>(inner, 0x58);
 }
 } // namespace lift_006E8780
+
+// [0x006E8610] sub_006E8610 (16 bytes)
+namespace lift_006E8610 {
+// @name Unknown::GetByteAtIndirect20
+// @class Unknown
+// @summary Loads the pointer at this+0x00 and returns the byte at that pointer's +0x20 offset.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x20 uint8_t field_0x20
+uint8_t fn_006E8610(void* self) {
+    // Thiscall: self (ecx) points at an object whose first dword is a pointer.
+    unsigned char* obj = *reinterpret_cast<unsigned char**>(self);
+    return *reinterpret_cast<uint8_t*>(obj + 0x20);
+}
+} // namespace lift_006E8610

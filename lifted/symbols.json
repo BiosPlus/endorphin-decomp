@@ -32530,6 +32530,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006E8050 (Unknown::GetVtableSlot80).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E8610": {
+    "name": "Unknown::GetByteAtIndirect20",
+    "class": "Unknown",
+    "signature": "uint8_t fn_006E8610(void* self)",
+    "summary": "Loads the pointer at this+0x00 and returns the byte at that pointer's +0x20 offset.",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
   "0x006E86A0": {
     "name": "sub_006E86A0",
     "class": "Unknown",

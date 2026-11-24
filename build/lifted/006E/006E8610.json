@@ -1,0 +1,28 @@
+{
+  "va": "0x006E8610",
+  "size": 16,
+  "orig_symbol": "sub_006E8610",
+  "src_path": "src/leaf/tiny_6E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6E0000.cpp",
+  "name": "Unknown::GetByteAtIndirect20",
+  "class": "Unknown",
+  "signature": "uint8_t fn_006E8610(void* self)",
+  "summary": "Loads the pointer at this+0x00 and returns the byte at that pointer's +0x20 offset.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint8_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:41:08Z"
+}
