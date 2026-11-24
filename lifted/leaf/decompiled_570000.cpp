@@ -2,8 +2,10 @@
 #include "lift_compat.h"
 #include <new>
 #include <string>
+#include <cstring>
+#include <cstdint>
 
-// [0x00573A10] sub_00573A10 (41 bytes)
+#include <cstdint>
 namespace lift_00573A10 {
 // @name sub_00573A10
 // @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
@@ -205,3 +207,51 @@ void __thiscall fn_00572680(void* self) {
     string_dtor(self);
 }
 } // namespace lift_00572680
+
+// [0x0057A730] sub_0057A730 (54 bytes)
+namespace lift_0057A730 {
+// @name sub_0057A730
+// @summary Auto-lifted identical-shape clone of 0x0051AF30 (ComputeStride20Address).
+namespace lift_0051AF30 {
+extern void ext_0057A280(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t self, uint32_t a3Copy, uint32_t flagArg);
+
+// @name ComputeStride20Address
+// @summary Forwards three stack args plus self to ext_0051AA60, then returns a1 + 20 * a2 (a 20-byte-stride element address).
+// (no direct field accesses on self: ecx is only forwarded to the callee, so no @field lines)
+uint32_t fn_0057A730(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3) {
+    // The original stores a bool local into a stack slot that still holds the
+    // pushed ecx; only the low byte is overwritten, so the pushed dword is
+    // self with its low byte cleared.
+    const uint32_t flagArg = self & 0xFFFFFF00u;
+
+    ext_0057A280(a1, a2, a3, self, a3, flagArg);
+
+    // lea ecx,[esi+4*esi] => 5*a2 ; lea eax,[edi+4*ecx] => a1 + 20*a2
+    return a1 + 20u * a2;
+}
+} // namespace lift_0051AF30
+} // namespace lift_0057A730
+
+// [0x0057E8E0] sub_0057E8E0 (54 bytes)
+namespace lift_0057E8E0 {
+// @name sub_0057E8E0
+// @summary Auto-lifted identical-shape clone of 0x0051AF30 (ComputeStride20Address).
+namespace lift_0051AF30 {
+extern void ext_0057E5F0(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t self, uint32_t a3Copy, uint32_t flagArg);
+
+// @name ComputeStride20Address
+// @summary Forwards three stack args plus self to ext_0051AA60, then returns a1 + 20 * a2 (a 20-byte-stride element address).
+// (no direct field accesses on self: ecx is only forwarded to the callee, so no @field lines)
+uint32_t fn_0057E8E0(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3) {
+    // The original stores a bool local into a stack slot that still holds the
+    // pushed ecx; only the low byte is overwritten, so the pushed dword is
+    // self with its low byte cleared.
+    const uint32_t flagArg = self & 0xFFFFFF00u;
+
+    ext_0057E5F0(a1, a2, a3, self, a3, flagArg);
+
+    // lea ecx,[esi+4*esi] => 5*a2 ; lea eax,[edi+4*ecx] => a1 + 20*a2
+    return a1 + 20u * a2;
+}
+} // namespace lift_0051AF30
+} // namespace lift_0057E8E0

@@ -1,0 +1,13 @@
+{
+  "va": "0x0057E8E0",
+  "size": 54,
+  "orig_symbol": "sub_0057E8E0",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "sub_0057E8E0",
+  "signature": "uint32_t fn_0057E8E0(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3)",
+  "summary": "Auto-lifted identical-shape clone of 0x0051AF30 (ComputeStride20Address).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T15:11:09Z"
+}

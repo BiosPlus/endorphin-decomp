@@ -23,6 +23,7 @@ extern void __fastcall fn_00629DF0(void* self) {
     lift_field<float>(self, 0x30) = value;
 }
 } // namespace lift_00629DF0
+#include <cstring>
 
 // [0x006271D0] sub_006271D0 (25 bytes)
 namespace lift_006271D0 {
@@ -356,3 +357,27 @@ void* __thiscall sub_00622290(void* self) {
     return self;
 }
 } // namespace lift_00622290
+
+// [0x006233B0] sub_006233B0 (54 bytes)
+namespace lift_006233B0 {
+// @name sub_006233B0
+// @summary Auto-lifted identical-shape clone of 0x0051AF30 (ComputeStride20Address).
+namespace lift_0051AF30 {
+extern void ext_00622D30(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t self, uint32_t a3Copy, uint32_t flagArg);
+
+// @name ComputeStride20Address
+// @summary Forwards three stack args plus self to ext_0051AA60, then returns a1 + 20 * a2 (a 20-byte-stride element address).
+// (no direct field accesses on self: ecx is only forwarded to the callee, so no @field lines)
+uint32_t fn_006233B0(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3) {
+    // The original stores a bool local into a stack slot that still holds the
+    // pushed ecx; only the low byte is overwritten, so the pushed dword is
+    // self with its low byte cleared.
+    const uint32_t flagArg = self & 0xFFFFFF00u;
+
+    ext_00622D30(a1, a2, a3, self, a3, flagArg);
+
+    // lea ecx,[esi+4*esi] => 5*a2 ; lea eax,[edi+4*ecx] => a1 + 20*a2
+    return a1 + 20u * a2;
+}
+} // namespace lift_0051AF30
+} // namespace lift_006233B0

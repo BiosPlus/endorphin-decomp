@@ -1,0 +1,40 @@
+{
+  "va": "0x00533ED0",
+  "size": 54,
+  "orig_symbol": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_0",
+  "src_path": "src/templates/ManagedDisplayList.cpp",
+  "lifted_path": "lifted/templates/ManagedDisplayList.cpp",
+  "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_0",
+  "class": "ManagedDisplayList\u003cRenderableList\u003e",
+  "signature": "void* fn_00533ED0(void* self, uint32_t flags)",
+  "summary": "Auto-lifted identical-shape clone of 0x00533E90 (ManagedDisplayList\u003cUtilityGraphics::Grid\u003e::vfunc_0).",
+  "fields": [
+    {
+      "class": "ManagedDisplayList\u003cRenderableList\u003e",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "ManagedDisplayList\u003cRenderableList\u003e",
+      "offset": "+0x2C",
+      "type": "GLuint",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e",
+      "offset": "+0x30",
+      "type": "GLuint",
+      "name": "displayList"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T15:11:09Z"
+}

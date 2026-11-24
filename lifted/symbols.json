@@ -16976,6 +16976,13 @@
     "summary": "Scalar deleting destructor: releases the GL display list, runs the base dtor, optionally frees the object, and returns this.",
     "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
   },
+  "0x00533ED0": {
+    "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_0",
+    "class": "ManagedDisplayList\u003cRenderableList\u003e",
+    "signature": "void* fn_00533ED0(void* self, uint32_t flags)",
+    "summary": "Auto-lifted identical-shape clone of 0x00533E90 (ManagedDisplayList\u003cUtilityGraphics::Grid\u003e::vfunc_0).",
+    "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
+  },
   "0x00533FB0": {
     "name": "sub_00533FB0",
     "signature": "void* __thiscall sub_00533FB0(void* self, void* out)",
@@ -19740,6 +19747,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057A730": {
+    "name": "sub_0057A730",
+    "signature": "uint32_t fn_0057A730(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051AF30 (ComputeStride20Address).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057A7D0": {
     "name": "sub_0057A7D0",
     "signature": "DWORD* __thiscall fn_0057A7D0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -19763,6 +19776,12 @@
     "name": "sub_0057E840",
     "signature": "DWORD* __thiscall fn_0057E840(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057E8E0": {
+    "name": "sub_0057E8E0",
+    "signature": "uint32_t fn_0057E8E0(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051AF30 (ComputeStride20Address).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x0057EB20": {
@@ -29591,6 +29610,12 @@
     "signature": "void __thiscall fn_00622940(void* self, void* serializer, uint32_t arg1, uint32_t arg2)",
     "summary": "Serializes or compares three float calibration fields via vtable calls and sub_00487A30.",
     "lifted_path": "lifted/NMData/HingeCalibrationVariables.cpp"
+  },
+  "0x006233B0": {
+    "name": "sub_006233B0",
+    "signature": "uint32_t fn_006233B0(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051AF30 (ComputeStride20Address).",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x00623D80": {
     "name": "sub_00623D80",
