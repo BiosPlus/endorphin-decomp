@@ -40278,6 +40278,13 @@
     "summary": "Compares the constant 8 against the subobject at self+0x40 via ext_00711A20 and returns its result.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x00711A50": {
+    "name": "Unknown::CompareArgWithTwo",
+    "class": "Unknown",
+    "signature": "uint8_t fn_00711A50(void* self)",
+    "summary": "Calls 0x00711A20 with self as this and the constant 2 as its stack argument, returning that result.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00711A60": {
     "name": "Unknown::CompareOneWithSubObjectField",
     "class": "Unknown",
