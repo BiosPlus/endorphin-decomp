@@ -151,3 +151,25 @@ void fn_004997E0(void* self, const DWORD* src, DWORD index) {
     ext_004996E0(self);
 }
 } // namespace lift_004997E0
+
+// [0x004991A0] NMData::Transition::vfunc_15_off_8 (59 bytes)
+namespace lift_004991A0 {
+// Known callee 0x00499130: sub_00499130 (87B, not yet lifted). Called cdecl with (this+0x60, out).
+extern void ext_00499130(void* sub, uint32_t* out);
+// Known callee 0x00671F30: sub_00671F30 (Zeroes the first dword of the output buffer and stores the global mem_00B599BC into the second dword.)
+extern void ext_00671F30(uint32_t* out);
+
+// @name NMData::Transition::vfunc_15_off_8
+// @class NMData::Transition
+// @summary If kind == 2, initialises out via ext_00671F30; otherwise forwards this+0x60 and out to ext_00499130. Returns out.
+// @field NMData::Transition +0x60 uint8_t field_0x60
+uint32_t* fn_004991A0(void* self, uint32_t* out, int32_t kind) {
+    // The original's local slot (saved ecx) is zeroed and never read; ecx is not part of the result.
+    if (kind == 2) {
+        ext_00671F30(out);
+    } else {
+        ext_00499130(static_cast<uint8_t*>(self) + 0x60, out);
+    }
+    return out;
+}
+} // namespace lift_004991A0

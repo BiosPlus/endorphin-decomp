@@ -1,0 +1,22 @@
+{
+  "va": "0x004991A0",
+  "size": 59,
+  "orig_symbol": "NMData::Transition::vfunc_15_off_8",
+  "src_path": "src/NMData/Transition.cpp",
+  "lifted_path": "lifted/NMData/Transition.cpp",
+  "name": "NMData::Transition::vfunc_15_off_8",
+  "class": "NMData::Transition",
+  "signature": "uint32_t* fn_004991A0(void* self, uint32_t* out, int32_t kind)",
+  "summary": "If kind == 2, initialises out via ext_00671F30; otherwise forwards this+0x60 and out to ext_00499130. Returns out.",
+  "fields": [
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x60",
+      "type": "uint8_t",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:39:43Z"
+}

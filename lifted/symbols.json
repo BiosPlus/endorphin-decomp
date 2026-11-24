@@ -8094,6 +8094,13 @@
     "summary": "Calls ext_00498F90 and stores its 32-bit result into self+0x04; takes one stack argument (self) and returns with ret 4.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x004991A0": {
+    "name": "NMData::Transition::vfunc_15_off_8",
+    "class": "NMData::Transition",
+    "signature": "uint32_t* fn_004991A0(void* self, uint32_t* out, int32_t kind)",
+    "summary": "If kind == 2, initialises out via ext_00671F30; otherwise forwards this+0x60 and out to ext_00499130. Returns out.",
+    "lifted_path": "lifted/NMData/Transition.cpp"
+  },
   "0x004997E0": {
     "name": "NMData::Transition::vfunc_26",
     "class": "NMData::Transition",
