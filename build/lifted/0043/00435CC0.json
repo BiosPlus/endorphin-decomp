@@ -1,0 +1,13 @@
+{
+  "va": "0x00435CC0",
+  "size": 51,
+  "orig_symbol": "sub_00435CC0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "AllocTriple",
+  "signature": "void* fn_00435CC0(DWORD a1, DWORD a2, const DWORD* a3)",
+  "summary": "Allocates a 12-byte block and fills it with two dwords and the dword that a3 points to; returns the block or null.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:06:45Z"
+}

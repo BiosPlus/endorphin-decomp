@@ -1727,3 +1727,21 @@ uint32_t fn_0043CEF0(uint32_t self) {
     return (r == self) ? 1u : 0u;
 }
 } // namespace lift_0043CEF0
+
+// [0x00435CC0]
+namespace lift_00435CC0 {
+extern void* ext_006A5C62(size_t size);
+
+// @name AllocTriple
+// @summary Allocates a 12-byte block and fills it with two dwords and the dword that a3 points to; returns the block or null.
+void* fn_00435CC0(DWORD a1, DWORD a2, const DWORD* a3) {
+    auto* p = static_cast<DWORD*>(ext_006A5C62(12));
+    if (p == nullptr) {
+        return nullptr;
+    }
+    p[0] = a1;
+    p[1] = a2;
+    p[2] = *a3;
+    return p;
+}
+} // namespace lift_00435CC0

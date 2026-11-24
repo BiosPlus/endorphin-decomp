@@ -2563,6 +2563,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00433320 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x00435CC0": {
+    "name": "AllocTriple",
+    "signature": "void* fn_00435CC0(DWORD a1, DWORD a2, const DWORD* a3)",
+    "summary": "Allocates a 12-byte block and fills it with two dwords and the dword that a3 points to; returns the block or null.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00436A20": {
     "name": "findU32Iterator",
     "signature": "U32IterPair* __cdecl sub_00436A20( U32IterPair* out, uint32_t tag, uint32_t* first, uint32_t /*unused_arg4*/, uint32_t* last, const uint32_t* val_ptr)",
