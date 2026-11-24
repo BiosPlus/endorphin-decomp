@@ -292,3 +292,24 @@ int32_t fn_00414880(void* self, void* other) {
     return delta >> 3; // arithmetic shift, elements are 8 bytes
 }
 } // namespace lift_00414880
+
+// [0x0041C5A0]
+namespace lift_0041C5A0 {
+// @name sub_0041C5A0
+// @summary Forwards a 3-argument virtual call (vtable +0x14) to field_0x8 if non-null, returning false otherwise.
+// @field Unknown +0x08 uint32_t field_0x08
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+bool __thiscall sub_0041C5A0(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    uint32_t target = mem_read32(self + 0x8);
+    if (target == 0) {
+        return false;
+    }
+    uint32_t vtable = mem_read32(target);
+    uint32_t fn_addr = mem_read32(vtable + 0x14);
+    using FnType = bool(__thiscall*)(uint32_t, uint32_t, uint32_t, uint32_t);
+    return reinterpret_cast<FnType>(static_cast<uintptr_t>(fn_addr))(target, arg1, arg2, arg3);
+}
+} // namespace lift_0041C5A0

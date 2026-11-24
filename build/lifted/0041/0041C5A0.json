@@ -1,0 +1,21 @@
+{
+  "va": "0x0041C5A0",
+  "size": 39,
+  "orig_symbol": "sub_0041C5A0",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "sub_0041C5A0",
+  "signature": "bool __thiscall sub_0041C5A0(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+  "summary": "Forwards a 3-argument virtual call (vtable +0x14) to field_0x8 if non-null, returning false otherwise.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:50:31Z"
+}
