@@ -833,3 +833,36 @@ void fn_004345B0(void* obj) {
     reinterpret_cast<Slot0Fn>(vtbl[0])(obj, static_cast<uint32_t>(flag));
 }
 } // namespace lift_004345B0
+
+// [0x004345E0] sub_004345E0 (38 bytes)
+namespace lift_004345E0 {
+// Known callee 0x00468180: sub_00468180 (Returns global int32 value from mem_00AD7CD8.)
+extern int32_t __cdecl ext_00468180(void);
+// Known callee 0x006658B0: sub_006658B0_hasField24 (Returns true if the 32-bit field at offset +0x24 is non-zero.)
+extern bool __fastcall ext_006658B0(uint32_t ecx, uint32_t edx);
+
+// Global holding the owner object pointer, read by ext_00468180.
+extern int32_t mem_00AD7CD8;
+
+template <typename T>
+T mem_read(uint32_t addr);
+
+// @name Dispatch::ForwardFieldFlagToSlot0
+// @class Dispatch
+// @summary Gets the owner object, tests its +0x38 subobject's +0x24 flag, and forwards that flag as a bool to virtual slot 0 of the argument object.
+// @field Dispatch +0x00 void** vtable
+// @field unknown +0x38 uint32_t field_0x38
+extern void __stdcall fn_004345E0(void* self) {
+    // Owner object pointer from the global.
+    uint32_t owner = static_cast<uint32_t>(ext_00468180());
+    // Subobject at owner+0x38, then its +0x24 flag via the callee.
+    uint32_t sub = mem_read<uint32_t>(owner + 0x38);
+    uint32_t flag = ext_006658B0(sub, 0) ? 1u : 0u;
+
+    // Virtual slot 0 of self, invoked thiscall(self, flag).
+    uint32_t vtbl = mem_read<uint32_t>(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)));
+    uint32_t slot0 = mem_read<uint32_t>(vtbl);
+    using VSlot0 = void(__thiscall*)(void* self, uint32_t flag);
+    reinterpret_cast<VSlot0>(static_cast<uintptr_t>(slot0))(self, flag);
+}
+} // namespace lift_004345E0

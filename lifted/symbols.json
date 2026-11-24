@@ -2134,6 +2134,13 @@
     "summary": "Reads the object at global root+0x38, computes its hasField0x18 flag, and calls vtable slot 0 of the argument with that flag.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004345E0": {
+    "name": "Dispatch::ForwardFieldFlagToSlot0",
+    "class": "Dispatch",
+    "signature": "extern \"C\" void __stdcall fn_004345E0(void* self)",
+    "summary": "Gets the owner object, tests its +0x38 subobject's +0x24 flag, and forwards that flag as a bool to virtual slot 0 of the argument object.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004348F0": {
     "name": "sub_004348F0",
     "class": "(none)",
