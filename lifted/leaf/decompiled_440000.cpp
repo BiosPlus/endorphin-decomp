@@ -589,3 +589,20 @@ void* fn_00442C40(void* self, uint32_t arg, uint32_t unused_arg) {
     return self;
 }
 } // namespace lift_00442C40
+
+// [0x00442BD0] sub_00442BD0 (32 bytes)
+namespace lift_00442BD0 {
+// Known callee 0x00442960: Unknown::InitWithTag (Runs the base init helper with arg, then overwrites the vtable slot with mem_009324DC and stores arg at +0x8; returns self.)
+extern void* ext_00442960(void* self, uint32_t arg, uint32_t unused_arg);
+extern int mem_00932694;
+
+// @name Unknown::InitWithVtable
+// @class Unknown
+// @summary Calls the base init helper with the two stack arguments, then installs the vtable pointer mem_00932694 at offset 0 and returns self.
+// @field Unknown +0x00 void* vtable
+__thiscall void* fn_00442BD0(void* self, uint32_t arg, uint32_t unused_arg) {
+    ext_00442960(self, arg, unused_arg);
+    *reinterpret_cast<uintptr_t*>(self) = reinterpret_cast<uintptr_t>(&mem_00932694);
+    return self;
+}
+} // namespace lift_00442BD0

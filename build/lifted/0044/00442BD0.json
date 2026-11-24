@@ -1,0 +1,22 @@
+{
+  "va": "0x00442BD0",
+  "size": 32,
+  "orig_symbol": "sub_00442BD0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::InitWithVtable",
+  "class": "Unknown",
+  "signature": "__thiscall void* fn_00442BD0(void* self, uint32_t arg, uint32_t unused_arg)",
+  "summary": "Calls the base init helper with the two stack arguments, then installs the vtable pointer mem_00932694 at offset 0 and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:30:59Z"
+}
