@@ -36783,6 +36783,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006D5D60 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D6AD0": {
+    "name": "sub_006D6AD0",
+    "class": "Unknown",
+    "signature": "extern DWORD __fastcall fn_006D6AD0(void* self, int edx_unused, DWORD arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070EC30 (Unknown::ForwardSubObjectAt0x168).",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D6AF0": {
     "name": "Unknown::SetByteAtIndex0x1B8",
     "class": "Unknown",
@@ -36801,6 +36808,13 @@
     "class": "Unknown",
     "signature": "void fn_006D7380(void* self)",
     "summary": "Releases the object held at this-\u003efield_0xFC-\u003efield_0x04 via its vtable slot 0 (deleting dtor, flag 1), then nulls that pointer.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
+  "0x006D7490": {
+    "name": "sub_006D7490",
+    "class": "Unknown",
+    "signature": "extern DWORD __fastcall fn_006D7490(void* self, int edx_unused, DWORD arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070EC30 (Unknown::ForwardSubObjectAt0x168).",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
   "0x006D74E0": {
@@ -39539,11 +39553,32 @@
     "summary": "Returns pointer to subobject/field at offset +0x1AC.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00703B60": {
+    "name": "sub_00703B60",
+    "class": "Unknown",
+    "signature": "extern DWORD __fastcall fn_00703B60(void* self, int edx_unused, DWORD arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070EC30 (Unknown::ForwardSubObjectAt0x168).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x00703B80": {
+    "name": "sub_00703B80",
+    "class": "Unknown",
+    "signature": "extern DWORD __fastcall fn_00703B80(void* self, int edx_unused, DWORD arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070EC30 (Unknown::ForwardSubObjectAt0x168).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00703BA0": {
     "name": "sub_00703BA0",
     "signature": "extern \"C\" void* __fastcall fn_00703BA0(void* self)",
     "summary": "Returns pointer to subobject/field at offset +0x258.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x00703BB0": {
+    "name": "sub_00703BB0",
+    "class": "Unknown",
+    "signature": "extern DWORD __fastcall fn_00703BB0(void* self, int edx_unused, DWORD arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070EC30 (Unknown::ForwardSubObjectAt0x168).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x00703BD0": {
     "name": "sub_00703BD0",
@@ -39831,6 +39866,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0070B040 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x0070BB60": {
+    "name": "sub_0070BB60",
+    "class": "Unknown",
+    "signature": "extern DWORD __fastcall fn_0070BB60(void* self, int edx_unused, DWORD arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070EC30 (Unknown::ForwardSubObjectAt0x168).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070BE80": {
     "name": "Unknown::GetFloatAtChainedValue",
     "class": "Unknown",
@@ -39979,6 +40021,13 @@
     "class": "Unknown",
     "signature": "void fn_0070ED10(void* self, DWORD arg)",
     "summary": "Forwards its single stack argument to ext_007873F0 using the sub-object at this+0x208 as the receiver.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
+  "0x0070ED30": {
+    "name": "sub_0070ED30",
+    "class": "Unknown",
+    "signature": "extern DWORD __fastcall fn_0070ED30(void* self, int edx_unused, DWORD arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070EC30 (Unknown::ForwardSubObjectAt0x168).",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x0070ED50": {
@@ -41316,6 +41365,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C2E0": {
+    "name": "sub_0071C2E0",
+    "class": "Unknown",
+    "signature": "extern DWORD __fastcall fn_0071C2E0(void* self, int edx_unused, DWORD arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070EC30 (Unknown::ForwardSubObjectAt0x168).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071C330": {
     "name": "sub_0071C330",
     "class": "Unknown",
@@ -41532,6 +41588,13 @@
     "signature": "extern \"C\" uint8_t __fastcall fn_0071C620(void* self)",
     "summary": "Getter returning uint8_t field at offset +0xEA.",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C6E0": {
+    "name": "sub_0071C6E0",
+    "class": "Unknown",
+    "signature": "extern DWORD __fastcall fn_0071C6E0(void* self, int edx_unused, DWORD arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x0070EC30 (Unknown::ForwardSubObjectAt0x168).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
   "0x0071C730": {
     "name": "sub_0071C730",

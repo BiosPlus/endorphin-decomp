@@ -677,3 +677,93 @@ void fn_0070ED10(void* self, DWORD arg) {
     ext_007873F0(sub, arg);
 }
 } // namespace lift_0070ED10
+
+// [0x00703B60] sub_00703B60 (32 bytes)
+namespace lift_00703B60 {
+// @name sub_00703B60
+// @summary Auto-lifted identical-shape clone of 0x0070EC30 (Unknown::ForwardSubObjectAt0x168).
+namespace lift_0070EC30 {
+extern DWORD __fastcall ext_006B9EC0(void* self, int edx_unused, DWORD arg);
+
+// @name Unknown::ForwardSubObjectAt0x168
+// @class Unknown
+// @summary Forwards its stack argument to sub_007873F0 using the sub-object at this+0x168 as the receiver; returns the callee's result.
+extern DWORD __fastcall fn_00703B60(void* self, int edx_unused, DWORD arg) {
+    (void)edx_unused;
+    uint8_t* sub = static_cast<uint8_t*>(self) + 0x1AC;
+    return ext_006B9EC0(sub, 0, arg);
+}
+} // namespace lift_0070EC30
+} // namespace lift_00703B60
+
+// [0x00703B80] sub_00703B80 (32 bytes)
+namespace lift_00703B80 {
+// @name sub_00703B80
+// @summary Auto-lifted identical-shape clone of 0x0070EC30 (Unknown::ForwardSubObjectAt0x168).
+namespace lift_0070EC30 {
+extern DWORD __fastcall ext_0074AE20(void* self, int edx_unused, DWORD arg);
+
+// @name Unknown::ForwardSubObjectAt0x168
+// @class Unknown
+// @summary Forwards its stack argument to sub_007873F0 using the sub-object at this+0x168 as the receiver; returns the callee's result.
+extern DWORD __fastcall fn_00703B80(void* self, int edx_unused, DWORD arg) {
+    (void)edx_unused;
+    uint8_t* sub = static_cast<uint8_t*>(self) + 0x258;
+    return ext_0074AE20(sub, 0, arg);
+}
+} // namespace lift_0070EC30
+} // namespace lift_00703B80
+
+// [0x00703BB0] sub_00703BB0 (32 bytes)
+namespace lift_00703BB0 {
+// @name sub_00703BB0
+// @summary Auto-lifted identical-shape clone of 0x0070EC30 (Unknown::ForwardSubObjectAt0x168).
+namespace lift_0070EC30 {
+extern DWORD __fastcall ext_0074AE20(void* self, int edx_unused, DWORD arg);
+
+// @name Unknown::ForwardSubObjectAt0x168
+// @class Unknown
+// @summary Forwards its stack argument to sub_007873F0 using the sub-object at this+0x168 as the receiver; returns the callee's result.
+extern DWORD __fastcall fn_00703BB0(void* self, int edx_unused, DWORD arg) {
+    (void)edx_unused;
+    uint8_t* sub = static_cast<uint8_t*>(self) + 0x248;
+    return ext_0074AE20(sub, 0, arg);
+}
+} // namespace lift_0070EC30
+} // namespace lift_00703BB0
+
+// [0x0070BB60] sub_0070BB60 (32 bytes)
+namespace lift_0070BB60 {
+// @name sub_0070BB60
+// @summary Auto-lifted identical-shape clone of 0x0070EC30 (Unknown::ForwardSubObjectAt0x168).
+namespace lift_0070EC30 {
+extern DWORD __fastcall ext_006B9EC0(void* self, int edx_unused, DWORD arg);
+
+// @name Unknown::ForwardSubObjectAt0x168
+// @class Unknown
+// @summary Forwards its stack argument to sub_007873F0 using the sub-object at this+0x168 as the receiver; returns the callee's result.
+extern DWORD __fastcall fn_0070BB60(void* self, int edx_unused, DWORD arg) {
+    (void)edx_unused;
+    uint8_t* sub = static_cast<uint8_t*>(self) + 0xF4;
+    return ext_006B9EC0(sub, 0, arg);
+}
+} // namespace lift_0070EC30
+} // namespace lift_0070BB60
+
+// [0x0070ED30] sub_0070ED30 (32 bytes)
+namespace lift_0070ED30 {
+// @name sub_0070ED30
+// @summary Auto-lifted identical-shape clone of 0x0070EC30 (Unknown::ForwardSubObjectAt0x168).
+namespace lift_0070EC30 {
+extern DWORD __fastcall ext_007873F0(void* self, int edx_unused, DWORD arg);
+
+// @name Unknown::ForwardSubObjectAt0x168
+// @class Unknown
+// @summary Forwards its stack argument to sub_007873F0 using the sub-object at this+0x168 as the receiver; returns the callee's result.
+extern DWORD __fastcall fn_0070ED30(void* self, int edx_unused, DWORD arg) {
+    (void)edx_unused;
+    uint8_t* sub = static_cast<uint8_t*>(self) + 0x248;
+    return ext_007873F0(sub, 0, arg);
+}
+} // namespace lift_0070EC30
+} // namespace lift_0070ED30
