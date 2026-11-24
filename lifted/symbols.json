@@ -2382,6 +2382,12 @@
     "summary": "Computes r = !obj-\u003evtable[0x220](obj) \u0026\u0026 CheckFieldAt60IsZero(), where obj = ext_00465B40(), then tail-dispatches arg-\u003evtable[0] with arg as this and r (0 or 1) as the argument.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430AA0": {
+    "name": "ForwardGlobalCheckToSink",
+    "signature": "void fn_00430AA0(void* self, void* sink)",
+    "summary": "Tests a global object via its vtable slot at byte offset 0x168, then ext_00430370 if that passes; forwards the 0/1 result by tail-calling sink's vtable slot 0.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430AE0": {
     "name": "Object::callVirtualWithBoolResult",
     "class": "Object",

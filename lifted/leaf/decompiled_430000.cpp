@@ -2005,3 +2005,36 @@ void __thiscall fn_00430A60(void* self, void* dispatch_target) {
     sink(dispatch_target, result);
 }
 } // namespace lift_00430A60
+
+// [0x00430AA0] sub_00430AA0 (59 bytes)
+namespace lift_00430AA0 {
+// Known callee 0x00430370: CheckFieldAt60IsZero (Calls sub_004658C0 to get an object pointer, returns 1 if its int32 at +0x60 is zero, else 0.)
+extern uint8_t ext_00430370(void);
+// Known callee 0x00465B40: sub_00465B40 (Auto-lifted identical-shape clone of 0x00430360 (getGlobalField0x58AndCall00469040).)
+// Returns the object pointer in eax.
+extern void* ext_00465B40(void);
+
+// @name ForwardGlobalCheckToSink
+// @summary Tests a global object via its vtable slot at byte offset 0x168, then ext_00430370 if that passes; forwards the 0/1 result by tail-calling sink's vtable slot 0.
+// Note: the 0x168 offset is a vtable byte offset (32-bit layout), not an object field, so no @field lines are emitted.
+// Note: ECX (self) is passed through to ext_00430370 in the original, but that callee's lifted signature takes no arguments, so self is unused here.
+void fn_00430AA0(void* self, void* sink) {
+    (void)self;
+
+    void* obj = ext_00465B40();
+    void** obj_vt = *reinterpret_cast<void***>(obj);
+    auto vslot_0x168 = reinterpret_cast<uint8_t (*)(void*)>(
+        *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(obj_vt) + 0x168));
+    uint8_t ok = vslot_0x168(obj);
+
+    uint32_t result = 0;
+    if (ok != 0 && ext_00430370() != 0) {
+        result = 1;
+    }
+
+    // Tail call: sink->vtbl[0](sink, result)
+    void** sink_vt = *reinterpret_cast<void***>(sink);
+    auto sink_slot0 = reinterpret_cast<void (*)(void*, uint32_t)>(sink_vt[0]);
+    sink_slot0(sink, result);
+}
+} // namespace lift_00430AA0
