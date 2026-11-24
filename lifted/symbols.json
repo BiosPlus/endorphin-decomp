@@ -45367,6 +45367,12 @@
     "summary": "Five-byte no-op: `add eax, 0` (opcode 05 with imm32 0), which leaves the register value unchanged; no observable effect beyond flags.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085E1F0": {
+    "name": "strlen",
+    "signature": "uint32_t fn_0085E1F0(const char* str)",
+    "summary": "Returns the length of a NUL-terminated byte string (equivalent to C strlen).",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085E210": {
     "name": "sub_0085E210",
     "signature": "extern \"C\" void __cdecl fn_0085E210(void)",

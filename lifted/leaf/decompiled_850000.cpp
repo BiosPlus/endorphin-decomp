@@ -165,3 +165,17 @@ void fn_0085DA40(void* self) {
     (void)self;
 }
 } // namespace lift_0085DA40
+
+// [0x0085E1F0] sub_0085E1F0 (32 bytes)
+namespace lift_0085E1F0 {
+// @name strlen
+// @summary Returns the length of a NUL-terminated byte string (equivalent to C strlen).
+// (No struct fields are accessed; the argument is a plain character pointer.)
+uint32_t fn_0085E1F0(const char* str) {
+    const char* p = str;
+    while (*p != '\0') {
+        ++p;
+    }
+    return static_cast<uint32_t>(p - str);
+}
+} // namespace lift_0085E1F0
