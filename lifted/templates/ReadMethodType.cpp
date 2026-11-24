@@ -31032,3 +31032,38 @@ void* fn_004983A0(void* dst) {
     return ext_004276B0(dst, src);
 }
 } // namespace lift_004983A0
+
+// [0x0046E8C0] ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_0046E8C0 {
+// Callee 0x0042F6E0 (4 bytes): returns this + constant (member address getter).
+extern void* ext_0042F6E0(void* self);
+// Known callee 0x004276B0: StdStringCopyConstruct (copy-constructs a std::string at dst from src; returns dst).
+extern void* fn_004276B0(void* dst, const void* src);
+// Callee 0x0046C3C0 (105 bytes): thiscall, default-constructs the std::string at self.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (forwards to _CxxThrowException(object, throwInfo)).
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<ImageExporter>::vfunc_4 (ImageExporter::getDestination reader)
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Copies the destination string of the ImageExporter referenced by *src into dst; throws if the exporter pointer is null.
+// Original is stdcall (ret 0x8) returning dst. No @field lines: this function accesses no offset
+// directly; the destination address comes from the 0x0042F6E0 callee.
+void* fn_0046E8C0(void* dst, const void* const* src) {
+    // src points at a slot holding the ImageExporter pointer.
+    void* exporter = const_cast<void*>(*src);
+    if (exporter != nullptr) {
+        // Address of the exporter's destination std::string.
+        void* destination = ext_0042F6E0(exporter);
+        fn_004276B0(dst, destination);
+        return dst;
+    }
+
+    // Null exporter: build a temporary std::string and throw it.
+    // 0x18 is the MSVC 2005 sizeof(std::string) used by the original stack temporary.
+    alignas(8) unsigned char temp[0x18];
+    ext_0046C3C0(temp);
+    ext_006A6DD2(temp, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+    return nullptr;
+}
+} // namespace lift_0046E8C0

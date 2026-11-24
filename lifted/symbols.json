@@ -6072,6 +6072,13 @@
     "summary": "Calls virtual slot 4 on self with two forwarded args and a zero arg; returns the first arg.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046E8C0": {
+    "name": "ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_4 (ImageExporter::getDestination reader)",
+    "class": "ExprParser::ReadMethodType\u003cImageExporter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ImageExporter::getDestination(void) const, 0}, 0\u003e",
+    "signature": "void* fn_0046E8C0(void* dst, const void* const* src)",
+    "summary": "Copies the destination string of the ImageExporter referenced by *src into dst; throws if the exporter pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0046EA50": {
     "name": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)",
     "class": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, float, \u0026public: void __thiscall DoubleWithProperties::setValue(float)\u003e",
