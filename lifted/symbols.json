@@ -5073,6 +5073,13 @@
     "summary": "Forwards the literal \"\u003cScene/\u003e\" to vtable slot 2 (inherited XML loader) with two zero arguments and returns its result; the incoming stack argument is ignored.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004773B0": {
+    "name": "Unknown::SetByteAndAssignString",
+    "class": "Unknown",
+    "signature": "void fn_004773B0(void* self, uint8_t flag, const void* rhs)",
+    "summary": "Stores a flag byte into the owner object at self-\u003e+0x28 (+0x1C), then assigns the string argument to that owner via std::string::operator=.",
+    "lifted_path": "lifted/leaf/tiny_470000.cpp"
+  },
   "0x00477450": {
     "name": "NMData::MaterialPair::vfunc_0",
     "class": "NMData::MaterialPair",

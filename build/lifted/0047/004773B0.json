@@ -1,0 +1,28 @@
+{
+  "va": "0x004773B0",
+  "size": 27,
+  "orig_symbol": "sub_004773B0",
+  "src_path": "src/leaf/tiny_470000.cpp",
+  "lifted_path": "lifted/leaf/tiny_470000.cpp",
+  "name": "Unknown::SetByteAndAssignString",
+  "class": "Unknown",
+  "signature": "void fn_004773B0(void* self, uint8_t flag, const void* rhs)",
+  "summary": "Stores a flag byte into the owner object at self-\u003e+0x28 (+0x1C), then assigns the string argument to that owner via std::string::operator=.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "uint8_t",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:01:35Z"
+}
