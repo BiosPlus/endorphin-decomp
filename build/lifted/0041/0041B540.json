@@ -1,0 +1,27 @@
+{
+  "va": "0x0041B540",
+  "size": 54,
+  "orig_symbol": "sub_0041B540",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "fn_0041B540",
+  "signature": "uint32_t __thiscall fn_0041B540(void* pThis, void* pDC, void* pWnd, uint32_t nCtlColor)",
+  "summary": "Sets transparent background mode and white text color on a CDC, then returns a brush handle from this+0x114",
+  "fields": [
+    {
+      "class": "this",
+      "offset": "+0x114",
+      "type": "uint32_t",
+      "name": "field_0x114"
+    },
+    {
+      "class": "this",
+      "offset": "+0x118",
+      "type": "uint32_t",
+      "name": "field_0x118"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:18:23Z"
+}
