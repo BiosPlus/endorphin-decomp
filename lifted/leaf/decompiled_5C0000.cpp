@@ -105,3 +105,23 @@ void fn_005CEA30(void* self) {
 }
 } // namespace lift_00594790
 } // namespace lift_005CEA30
+
+// [0x005CFC80] sub_005CFC80 (37 bytes)
+namespace lift_005CFC80 {
+// Known callee 0x00530730: sub_00530730 (Auto-lifted identical-shape clone of 0x00515840 (sub_00511290).)
+extern int ext_00530730(void* arg);
+
+// @name ReleaseHandleAt154IfSet
+// @class <ClassName> (unknown; omitted)
+// @summary If the dword at this+0x158 is nonzero, passes the dword at this+0x154 to ext_00530730 and then clears this+0x154.
+// @field unknown +0x154 uint32_t field_0x154
+// @field unknown +0x158 uint32_t field_0x158
+void __thiscall fn_005CFC80(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    if (*reinterpret_cast<uint32_t*>(base + 0x158) != 0) {
+        uint32_t handle = *reinterpret_cast<uint32_t*>(base + 0x154);
+        ext_00530730(reinterpret_cast<void*>(static_cast<uintptr_t>(handle)));
+        *reinterpret_cast<uint32_t*>(base + 0x154) = 0;
+    }
+}
+} // namespace lift_005CFC80

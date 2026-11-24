@@ -19973,6 +19973,13 @@
     "summary": "Handles property/message 0x1b9 on CameraData by calling sub_00661650 or sub_0046F7D0, otherwise delegates to NMData::AxisDefineSensorData::vfunc_14.",
     "lifted_path": "lifted/NMData/CameraData.cpp"
   },
+  "0x005CFC80": {
+    "name": "ReleaseHandleAt154IfSet",
+    "class": "\u003cClassName\u003e (unknown; omitted)",
+    "signature": "void __thiscall fn_005CFC80(void* self)",
+    "summary": "If the dword at this+0x158 is nonzero, passes the dword at this+0x154 to ext_00530730 and then clears this+0x154.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005CFCC0": {
     "name": "sub_005CFCC0",
     "signature": "void* __stdcall fn_005CFCC0(uint32_t index)",

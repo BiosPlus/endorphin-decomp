@@ -1,0 +1,28 @@
+{
+  "va": "0x005CFC80",
+  "size": 37,
+  "orig_symbol": "sub_005CFC80",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "ReleaseHandleAt154IfSet",
+  "class": "\u003cClassName\u003e (unknown; omitted)",
+  "signature": "void __thiscall fn_005CFC80(void* self)",
+  "summary": "If the dword at this+0x158 is nonzero, passes the dword at this+0x154 to ext_00530730 and then clears this+0x154.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x154",
+      "type": "uint32_t",
+      "name": "field_0x154"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x158",
+      "type": "uint32_t",
+      "name": "field_0x158"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:04:27Z"
+}
