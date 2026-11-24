@@ -10124,6 +10124,13 @@
     "summary": "Runtime type check: dynamic-casts self to the type at mem_00A402C4 (source type mem_00A2E2F8) and returns the result or NULL.",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x004FDC80": {
+    "name": "Unknown::ForwardFloatToSubobjectSlot1",
+    "class": "Unknown",
+    "signature": "void fn_004FDC80(void* self, float value)",
+    "summary": "Loads the object pointer at this+0x48 and invokes its vtable slot 1 (thiscall, ecx=object) with the float argument.",
+    "lifted_path": "lifted/leaf/tiny_4F0000.cpp"
+  },
   "0x004FDD60": {
     "name": "sub_004FDD60",
     "signature": "extern \"C\" void __fastcall fn_004FDD60(void* self)",

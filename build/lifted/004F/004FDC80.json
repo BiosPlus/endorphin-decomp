@@ -1,0 +1,22 @@
+{
+  "va": "0x004FDC80",
+  "size": 21,
+  "orig_symbol": "sub_004FDC80",
+  "src_path": "src/leaf/tiny_4F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4F0000.cpp",
+  "name": "Unknown::ForwardFloatToSubobjectSlot1",
+  "class": "Unknown",
+  "signature": "void fn_004FDC80(void* self, float value)",
+  "summary": "Loads the object pointer at this+0x48 and invokes its vtable slot 1 (thiscall, ecx=object) with the float argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "void*",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:12:39Z"
+}

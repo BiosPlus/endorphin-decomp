@@ -91,3 +91,17 @@ void __fastcall sub_004FD800(uint32_t ecx, uint32_t edx)
     mem_write8(ptr, 0);
 }
 } // namespace lift_004FD800
+
+// [0x004FDC80] sub_004FDC80 (21 bytes)
+namespace lift_004FDC80 {
+// @name Unknown::ForwardFloatToSubobjectSlot1
+// @class Unknown
+// @summary Loads the object pointer at this+0x48 and invokes its vtable slot 1 (thiscall, ecx=object) with the float argument.
+// @field Unknown +0x48 void* field_0x48
+void fn_004FDC80(void* self, float value) {
+    void* obj = lift_field<void*>(self, 0x48);
+    void** vtbl = *static_cast<void***>(obj);
+    auto slot1 = reinterpret_cast<void (*)(void*, float)>(vtbl[1]);
+    slot1(obj, value);
+}
+} // namespace lift_004FDC80
