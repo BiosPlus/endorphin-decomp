@@ -314,3 +314,37 @@ void fn_0068BB30(void* arg1, void* ctx) {
     throw exc;
 }
 } // namespace lift_0068BB30
+
+// [0x00689570] sub_00689570 (47 bytes)
+namespace lift_00689570 {
+// @name initDefaultState
+// @summary Zeroes a state block and sets default double values (0.0 at +0x10/+0x18, 1.0 at +0x30).
+// @field field_0x00 BYTE flag0
+// @field field_0x01 BYTE flag1
+// @field field_0x02 BYTE flag2
+// @field field_0x03 BYTE flag3
+// @field field_0x04 DWORD value04
+// @field field_0x08 DWORD value08
+// @field field_0x0C DWORD value0C
+// @field field_0x10 DOUBLE value10
+// @field field_0x18 DOUBLE value18
+// @field field_0x24 DWORD value24
+// @field field_0x28 DWORD value28
+// @field field_0x2C DWORD value2C
+// @field field_0x30 DOUBLE value30
+void fn_00689570(void* self) {
+    lift_field<DOUBLE>(self, 0x10) = 0.0;
+    lift_field<DOUBLE>(self, 0x18) = 0.0;
+    lift_field<BYTE>(self, 0x00) = 0;
+    lift_field<BYTE>(self, 0x01) = 0;
+    lift_field<BYTE>(self, 0x02) = 0;
+    lift_field<BYTE>(self, 0x03) = 0;
+    lift_field<DWORD>(self, 0x04) = 0;
+    lift_field<DWORD>(self, 0x08) = 0;
+    lift_field<DWORD>(self, 0x0C) = 0;
+    lift_field<DWORD>(self, 0x24) = 0;
+    lift_field<DWORD>(self, 0x28) = 0;
+    lift_field<DWORD>(self, 0x2C) = 0;
+    lift_field<DOUBLE>(self, 0x30) = 1.0;
+}
+} // namespace lift_00689570

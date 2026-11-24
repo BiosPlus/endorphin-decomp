@@ -1,0 +1,13 @@
+{
+  "va": "0x00689570",
+  "size": 47,
+  "orig_symbol": "sub_00689570",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "initDefaultState",
+  "signature": "void fn_00689570(void* self)",
+  "summary": "Zeroes a state block and sets default double values (0.0 at +0x10/+0x18, 1.0 at +0x30).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:12:16Z"
+}
