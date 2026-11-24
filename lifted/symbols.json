@@ -42259,10 +42259,10 @@
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
   "0x0072CED0": {
-    "name": "Unknown::GetArrayEntry1B8",
+    "name": "sub_0072D620",
     "class": "Unknown",
-    "signature": "int32_t Unknown_GetArrayEntry1B8(const uint8_t* self, int32_t idx)",
-    "summary": "Returns entry idx (0..5) of the int32 array at this+0x1B8, or 0 if idx is out of range.",
+    "signature": "extern \"C\" void* __fastcall fn_0072D620(void* self, int edx_unused, unsigned int flags)",
+    "summary": "MSVC scalar deleting destructor: calls sub_0072D640 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
   "0x0072CF90": {

@@ -4,19 +4,49 @@
   "orig_symbol": "sub_0072CED0",
   "src_path": "src/leaf/decompiled_720000.cpp",
   "lifted_path": "lifted/leaf/decompiled_720000.cpp",
-  "name": "Unknown::GetArrayEntry1B8",
+  "name": "sub_0072D620",
   "class": "Unknown",
-  "signature": "int32_t Unknown_GetArrayEntry1B8(const uint8_t* self, int32_t idx)",
-  "summary": "Returns entry idx (0..5) of the int32 array at this+0x1B8, or 0 if idx is out of range.",
+  "signature": "extern \"C\" void* __fastcall fn_0072D620(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_0072D640 and frees memory when (flags \u0026 1) is set.",
   "fields": [
+    {
+      "class": "sub_0072B2F0",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "BYTE",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x194",
+      "type": "int32_t",
+      "name": "field_0x194"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1B8",
+      "type": "int32_t field_0x1B8 (int32_t[6] array, indexed",
+      "name": "0..5)"
+    },
     {
       "class": "Unknown",
       "offset": "+0x1B8",
       "type": "int32_t[6]",
       "name": "field_0x1B8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x250",
+      "type": "int32_t",
+      "name": "field_0x250"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T12:43:00Z"
+  "lifted_at": "2026-11-24T12:43:06Z"
 }
