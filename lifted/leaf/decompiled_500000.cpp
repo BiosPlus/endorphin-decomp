@@ -215,3 +215,24 @@ void* fn_0050E360(void* self, uint32_t index) {
     return begin + 4u * index;
 }
 } // namespace lift_0050E360
+
+// [0x0050F9A0]
+namespace lift_0050F9A0 {
+extern uint32_t mem_00924FC0;
+
+// @name sub_0050F9A0
+// @summary Stores arg0 at this+0xC, compares string at *arg0+0x3C with 0x950A80, and stores boolean result at this+0x8.
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+
+uint32_t __thiscall sub_0050F9A0(void* self, uint32_t arg0) {
+    uint8_t* self_bytes = reinterpret_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(self_bytes + 0x0C) = arg0;
+    uint32_t inner = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(arg0));
+    using EqFn = uint8_t(__cdecl*)(uint32_t, uint32_t);
+    uint8_t eq = reinterpret_cast<EqFn>(static_cast<uintptr_t>(mem_00924FC0))(inner + 0x3C, 0x00950A80u);
+    uint32_t res = (eq != 0) ? 1u : 0u;
+    *reinterpret_cast<uint32_t*>(self_bytes + 0x08) = res;
+    return res;
+}
+} // namespace lift_0050F9A0
