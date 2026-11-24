@@ -1,0 +1,22 @@
+{
+  "va": "0x004B23C0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setYMin(float), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, float, getYMin, float, setYMin\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType",
+  "signature": "void __thiscall fn_004B23C0(void* self, void* out)",
+  "summary": "Lazily initializes a static object at 0x00AE0D20 and stores its address at arg1 + 0x4.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadWriteMethodType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:53:32Z"
+}
