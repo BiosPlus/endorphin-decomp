@@ -1,0 +1,22 @@
+{
+  "va": "0x006C9D30",
+  "size": 48,
+  "orig_symbol": "sub_006C9D30",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::setMaskedBitsField10",
+  "class": "Unknown",
+  "signature": "uint32_t Unknown_setMaskedBitsField10(Unknown* self, uint32_t value, uint32_t flags)",
+  "summary": "Replaces the bits of this+0x10 selected by (arg2 \u0026 0x3000000) with the same bits of arg1; other bits are kept.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:22:51Z"
+}

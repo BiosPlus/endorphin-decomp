@@ -39251,6 +39251,13 @@
     "summary": "Returns the bits 0x03000000 of the DWORD at this+0x10.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C9D30": {
+    "name": "Unknown::setMaskedBitsField10",
+    "class": "Unknown",
+    "signature": "uint32_t Unknown_setMaskedBitsField10(Unknown* self, uint32_t value, uint32_t flags)",
+    "summary": "Replaces the bits of this+0x10 selected by (arg2 \u0026 0x3000000) with the same bits of arg1; other bits are kept.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C9D60": {
     "name": "Unknown::GetMaskedFlags30",
     "class": "Unknown",

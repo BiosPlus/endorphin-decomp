@@ -586,3 +586,24 @@ void fn_006C3EE0(double* out, const double* in, double scalar) {
     out[2] = scalar * in[2];
 }
 } // namespace lift_006C3EE0
+
+// [0x006C9D30]
+namespace lift_006C9D30 {
+// @name Unknown::setMaskedBitsField10
+// @class Unknown
+// @summary Replaces the bits of this+0x10 selected by (arg2 & 0x3000000) with the same bits of arg1; other bits are kept.
+// @field Unknown +0x10 uint32_t field_0x10
+
+
+struct Unknown;
+
+// thiscall-style: ecx = this, two stack args, ret 8
+uint32_t Unknown_setMaskedBitsField10(Unknown* self, uint32_t value, uint32_t flags) {
+    const uint32_t mask = flags & 0x3000000u;
+    uint32_t* field = reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(self) + 0x10);
+    uint32_t cur = *field;
+    uint32_t result = (cur & ~mask) | (value & mask);
+    *field = result;
+    return result;
+}
+} // namespace lift_006C9D30
