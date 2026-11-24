@@ -1083,6 +1083,12 @@
     "summary": "Returns the address of the read-only string constant \",bj\" stored in .rdata (mem_0092DA8C).",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x0041C380": {
+    "name": "JumpToEsiTrampoline",
+    "signature": "void fn_0041C380(uintptr_t esi)",
+    "summary": "Trampoline: push esi; ret. Pops ESI as a return address, i.e. an indirect jump to the address held in ESI. The jump target is passed in as esi; the transfer itself cannot be expressed in portable C++ and is not performed here.",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x0041C510": {
     "name": "GridPropertyPage::vfunc_1",
     "class": "GridPropertyPage",

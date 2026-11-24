@@ -300,3 +300,15 @@ void* fn_00419940(void* self, uint32_t arg) {
     return self;
 }
 } // namespace lift_00419940
+
+// [0x0041C380] sub_0041C380 (20 bytes)
+namespace lift_0041C380 {
+// @name JumpToEsiTrampoline
+// @summary Trampoline: push esi; ret. Pops ESI as a return address, i.e. an indirect jump to the address held in ESI. The jump target is passed in as esi; the transfer itself cannot be expressed in portable C++ and is not performed here.
+// @field none (no memory or object fields accessed)
+void fn_0041C380(uintptr_t esi) {
+    // Models only the stack effect of `push esi`; the subsequent `ret`
+    // transfers control to `esi`, which portable C++ cannot express.
+    (void)esi;
+}
+} // namespace lift_0041C380
