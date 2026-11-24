@@ -14,3 +14,21 @@ float sub_005B6970() {
     return *reinterpret_cast<const float*>(static_cast<uintptr_t>(ptr) + 0x4);
 }
 } // namespace lift_005B6970
+
+// [0x005B67C0] sub_005B67C0 (32 bytes)
+namespace lift_005B67C0 {
+void __thiscall ext_00647F50(void* self, float value);
+
+// @name ForwardFloatToNestedAc
+// @summary If self+0x158 is non-null, forwards the float argument to the object at (self+0x158)->+0xAC via 0x00647F50.
+// @field Unknown +0x158 void* field_0x158
+// @field Unknown +0xAC void* field_0xAC
+void __thiscall fn_005B67C0(uint8_t* self, float value) {
+    uint8_t* sub = *reinterpret_cast<uint8_t**>(self + 0x158);
+    if (sub == nullptr) {
+        return;
+    }
+    uint8_t* target = *reinterpret_cast<uint8_t**>(sub + 0xAC);
+    ext_00647F50(target, value);
+}
+} // namespace lift_005B67C0

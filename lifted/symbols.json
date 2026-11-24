@@ -17852,6 +17852,12 @@
     "summary": "Reads the pointer at this+0x158; if non-null, tail-forwards to ext_00647FD0 with the pointer's +0xAC field as `this`, otherwise returns 0.",
     "lifted_path": "lifted/leaf/tiny_5B0000.cpp"
   },
+  "0x005B67C0": {
+    "name": "ForwardFloatToNestedAc",
+    "signature": "void __thiscall fn_005B67C0(uint8_t* self, float value)",
+    "summary": "If self+0x158 is non-null, forwards the float argument to the object at (self+0x158)-\u003e+0xAC via 0x00647F50.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B6880": {
     "name": "NMData::MetaBodyData::vfunc_6_off_C",
     "class": "NMData::MetaBodyData",
