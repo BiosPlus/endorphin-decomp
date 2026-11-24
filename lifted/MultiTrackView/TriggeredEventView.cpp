@@ -71,3 +71,47 @@ uint32_t fn_0043CAB0(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t
     return reinterpret_cast<ForwardFn>(ext_006A5DB2)(self, a1, a2, a3, a4);
 }
 } // namespace lift_0043CAB0
+
+// [0x0045DAC0] MultiTrackView::TriggeredEventView::vfunc_85 (51 bytes)
+namespace lift_0045DAC0 {
+// Global-value lookup: returns the int32 stored in mem_00AD7CD8.
+extern int32_t ext_00468180(void);
+// Nested-field lookup: returns a 32-bit object pointer (this+0x18 -> +0xC chain).
+extern uint32_t ext_00468660(uint32_t this_ptr);
+// Forwarding call: thiscall on the object from ext_00468180(), one int32 stack arg.
+extern void ext_004686A0(void* this_ptr, int32_t value);
+
+// @name MultiTrackView::TriggeredEventView::vfunc_85
+// @class MultiTrackView::TriggeredEventView
+// @summary Queries an object's virtual slot, adds a signed 16-bit argument, clamps the sum at zero, and forwards it to another global-derived object.
+void fn_0045DAC0(void* self, int32_t arg0, int32_t arg1, int32_t arg2, int32_t arg3) {
+    (void)self;
+    (void)arg0;
+    (void)arg2;
+    (void)arg3;
+
+    // ecx = ext_00468180(); obj = ext_00468660(ecx)
+    const uint32_t global_val = static_cast<uint32_t>(ext_00468180());
+    const uint32_t obj_addr = ext_00468660(global_val);
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(obj_addr));
+
+    // Virtual call through vtable slot at byte offset 0x9C (32-bit vtable => index 39).
+    void** vtable = *reinterpret_cast<void***>(obj);
+    constexpr std::size_t kSlotIndex = 0x9C / 4;
+    using QueryFn = int32_t (*)(void*);
+    const int32_t queried = reinterpret_cast<QueryFn>(vtable[kSlotIndex])(obj);
+
+    // Sign-extend the low 16 bits of the second stack argument and add (wrapping add).
+    const int32_t delta = static_cast<int32_t>(static_cast<int16_t>(arg1));
+    int32_t sum = static_cast<int32_t>(static_cast<uint32_t>(queried) + static_cast<uint32_t>(delta));
+
+    // Clamp negative results to zero.
+    if (sum < 0) {
+        sum = 0;
+    }
+
+    // Forward to the object returned by a second ext_00468180() call.
+    const uint32_t target_addr = static_cast<uint32_t>(ext_00468180());
+    ext_004686A0(reinterpret_cast<void*>(static_cast<uintptr_t>(target_addr)), sum);
+}
+} // namespace lift_0045DAC0

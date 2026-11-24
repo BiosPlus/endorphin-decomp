@@ -1,0 +1,14 @@
+{
+  "va": "0x0045DAC0",
+  "size": 51,
+  "orig_symbol": "MultiTrackView::TriggeredEventView::vfunc_85",
+  "src_path": "src/MultiTrackView/TriggeredEventView.cpp",
+  "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp",
+  "name": "MultiTrackView::TriggeredEventView::vfunc_85",
+  "class": "MultiTrackView::TriggeredEventView",
+  "signature": "void fn_0045DAC0(void* self, int32_t arg0, int32_t arg1, int32_t arg2, int32_t arg3)",
+  "summary": "Queries an object's virtual slot, adds a signed 16-bit argument, clamps the sum at zero, and forwards it to another global-derived object.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:38:34Z"
+}
