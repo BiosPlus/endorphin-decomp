@@ -20903,6 +20903,13 @@
     "summary": "Destructor tail-call: restores vtable mem_0097215C and tail-calls base destructor sub_0060BA10.",
     "lifted_path": "lifted/leaf/tiny_600000.cpp"
   },
+  "0x0060BCD0": {
+    "name": "descriptiveName (unknown class; initializes a 0x11-byte record)",
+    "class": "(unknown)",
+    "signature": "void sub_0060BCD0(void* ecx)",
+    "summary": "Sets floats at +0x0 (1.0), +0x4 (1.0), +0x8 (mem_009518E0 = 10.0), +0xC (0.0) and byte at +0x10 (1); thiscall, this in ecx.",
+    "lifted_path": "lifted/leaf/tiny_600000.cpp"
+  },
   "0x0060BEA0": {
     "name": "NMData::EffectorData::vfunc_18",
     "class": "NMData::EffectorData",

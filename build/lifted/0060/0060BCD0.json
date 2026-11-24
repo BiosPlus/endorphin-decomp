@@ -1,0 +1,46 @@
+{
+  "va": "0x0060BCD0",
+  "size": 26,
+  "orig_symbol": "sub_0060BCD0",
+  "src_path": "src/leaf/tiny_600000.cpp",
+  "lifted_path": "lifted/leaf/tiny_600000.cpp",
+  "name": "descriptiveName (unknown class; initializes a 0x11-byte record)",
+  "class": "(unknown)",
+  "signature": "void sub_0060BCD0(void* ecx)",
+  "summary": "Sets floats at +0x0 (1.0), +0x4 (1.0), +0x8 (mem_009518E0 = 10.0), +0xC (0.0) and byte at +0x10 (1); thiscall, this in ecx.",
+  "fields": [
+    {
+      "class": "(unknown)",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:56:28Z"
+}

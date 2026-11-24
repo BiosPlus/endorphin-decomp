@@ -140,3 +140,26 @@ void* fn_00602F20(void* self) {
 }
 } // namespace lift_00602F00
 } // namespace lift_00602F20
+
+// [0x0060BCD0]
+namespace lift_0060BCD0 {
+// @name descriptiveName (unknown class; initializes a 0x11-byte record)
+// @class (unknown)
+// @summary Sets floats at +0x0 (1.0), +0x4 (1.0), +0x8 (mem_009518E0 = 10.0), +0xC (0.0) and byte at +0x10 (1); thiscall, this in ecx.
+// @field (unknown) +0x00 float field_0x00
+// @field (unknown) +0x04 float field_0x04
+// @field (unknown) +0x08 float field_0x08
+// @field (unknown) +0x0C float field_0x0C
+// @field (unknown) +0x10 uint8_t field_0x10
+
+extern const float mem_009518E0;
+
+void sub_0060BCD0(void* ecx) {
+    auto* self = static_cast<unsigned char*>(ecx);
+    *reinterpret_cast<float*>(self + 0x0C) = 0.0f;
+    *reinterpret_cast<unsigned char*>(self + 0x10) = 1;
+    *reinterpret_cast<float*>(self + 0x00) = 1.0f;
+    *reinterpret_cast<float*>(self + 0x04) = 1.0f;
+    *reinterpret_cast<float*>(self + 0x08) = mem_009518E0;
+}
+} // namespace lift_0060BCD0
