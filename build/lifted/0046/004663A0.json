@@ -1,0 +1,21 @@
+{
+  "va": "0x004663A0",
+  "size": 47,
+  "orig_symbol": "sub_004663A0",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "sub_004663A0",
+  "signature": "bool fn_004663A0(void* self)",
+  "summary": "Returns true if self+0x60 is nonzero; otherwise queries a helper object's vfunc at +0x84 and, if it returns true, invokes ext_006A5E60 and returns false.",
+  "fields": [
+    {
+      "class": "UnknownObject",
+      "offset": "+0x60",
+      "type": "uint32_t",
+      "name": "field_0x60"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:11:26Z"
+}

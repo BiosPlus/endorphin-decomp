@@ -5295,6 +5295,12 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x58 and tail-calls sub_00468B30.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x004663A0": {
+    "name": "sub_004663A0",
+    "signature": "bool fn_004663A0(void* self)",
+    "summary": "Returns true if self+0x60 is nonzero; otherwise queries a helper object's vfunc at +0x84 and, if it returns true, invokes ext_006A5E60 and returns false.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00466430": {
     "name": "VMCActionDoc::vfunc_1",
     "class": "VMCActionDoc",

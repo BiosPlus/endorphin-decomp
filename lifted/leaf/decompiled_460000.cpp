@@ -673,3 +673,37 @@ void* fn_0046C500(void* out_str, uint8_t flag) {
 }
 } // namespace lift_00497860
 } // namespace lift_0046C500
+
+// [0x004663A0] sub_004663A0 (47 bytes)
+namespace lift_004663A0 {
+// Known callee 0x00465B40: sub_00465B40 (auto-lifted clone of 0x00430360).
+// Takes `self` in ECX and returns an object pointer in EAX.
+extern void* ext_00465B40(void* self);
+// Known callee 0x006A5E60: thunk_MFC80_ord_1123 (IAT jump thunk to MFC80!ord_1123).
+// Caller pushes three dwords and does not clean the stack, so the callee pops them.
+extern void ext_006A5E60(uint32_t a, uint32_t b, uint32_t str);
+
+// @name sub_004663A0
+// @summary Returns true if self+0x60 is nonzero; otherwise queries a helper object's vfunc at +0x84 and, if it returns true, invokes ext_006A5E60 and returns false.
+// @field UnknownObject +0x60 uint32_t field_0x60
+bool fn_004663A0(void* self) {
+    auto* selfBytes = static_cast<uint8_t*>(self);
+    const uint32_t flag = *reinterpret_cast<uint32_t*>(selfBytes + 0x60);
+    if (flag != 0) {
+        return true;
+    }
+
+    auto* obj = static_cast<uint8_t*>(ext_00465B40(self));
+    // Virtual slot at byte offset 0x84 of the vtable (32-bit layout).
+    uint8_t* vtable = *reinterpret_cast<uint8_t**>(obj);
+    using VFn = uint8_t (*)(void*);
+    VFn vfunc = *reinterpret_cast<VFn*>(vtable + 0x84);
+    const uint8_t result = vfunc(obj);
+    if (result == 0) {
+        return true;
+    }
+
+    ext_006A5E60(0u, 0u, 0x00939C7Cu);
+    return false;
+}
+} // namespace lift_004663A0
