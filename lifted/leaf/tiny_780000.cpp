@@ -314,3 +314,15 @@ void fn_00784550(void* self) {
 }
 } // namespace lift_00705250
 } // namespace lift_00784550
+
+// [0x0078C220] sub_0078C220 (15 bytes)
+namespace lift_0078C220 {
+// @name Unknown::GetScaledDeltaFromField4
+// @class Unknown
+// @summary Returns (arg - this->field_0x04) >> 4 as an unsigned value (thiscall, callee pops 4).
+// @field Unknown +0x04 uint32_t field_0x04
+uint32_t fn_0078C220(void* self, uint32_t arg) {
+    const uint32_t base = lift_field<uint32_t>(self, 0x04);
+    return (arg - base) >> 4;
+}
+} // namespace lift_0078C220

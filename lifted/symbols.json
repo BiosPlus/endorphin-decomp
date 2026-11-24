@@ -35678,6 +35678,13 @@
     "summary": "Destructor tail-call: restores vtable mem_00997028 and tail-calls base destructor sub_007892B0.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x0078C220": {
+    "name": "Unknown::GetScaledDeltaFromField4",
+    "class": "Unknown",
+    "signature": "uint32_t fn_0078C220(void* self, uint32_t arg)",
+    "summary": "Returns (arg - this-\u003efield_0x04) \u003e\u003e 4 as an unsigned value (thiscall, callee pops 4).",
+    "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
   "0x0078CBD0": {
     "name": "sub_0078CBD0",
     "class": "UnknownObject",

@@ -1,0 +1,22 @@
+{
+  "va": "0x0078C220",
+  "size": 15,
+  "orig_symbol": "sub_0078C220",
+  "src_path": "src/leaf/tiny_780000.cpp",
+  "lifted_path": "lifted/leaf/tiny_780000.cpp",
+  "name": "Unknown::GetScaledDeltaFromField4",
+  "class": "Unknown",
+  "signature": "uint32_t fn_0078C220(void* self, uint32_t arg)",
+  "summary": "Returns (arg - this-\u003efield_0x04) \u003e\u003e 4 as an unsigned value (thiscall, callee pops 4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:32:36Z"
+}
