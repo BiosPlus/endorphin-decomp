@@ -7370,3 +7370,23 @@ void fn_006078D0(void* self) {
     lift_field<uint32_t>(self, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B477AC));
 }
 } // namespace lift_006078D0
+
+// [0x005F3AF0]
+namespace lift_005F3AF0 {
+extern uint32_t mem_00B46838;
+extern uint32_t mem_00B46834;
+extern void __thiscall ext_0067A670(void* self);
+
+// @name ExprParser::WriteMethodType<EffectorGroup, float, &EffectorGroup::setGradientCaps(float)>::vfunc_40
+// @class ExprParser::WriteMethodType<EffectorGroup, float, &EffectorGroup::setGradientCaps(float)>
+// @summary Lazily initializes a static type/value descriptor at 0x00B46834 and stores its pointer into out+0x4.
+void __thiscall fn_005F3AF0(void* self, void* out) {
+    (void)self;
+    if ((mem_00B46838 & 1) == 0) {
+        mem_00B46838 |= 1;
+        ext_0067A670(&mem_00B46834);
+        mem_00B46834 = 0x0096C62C;
+    }
+    *(uint32_t*)((uint8_t*)out + 0x4) = (uint32_t)(uintptr_t)&mem_00B46834;
+}
+} // namespace lift_005F3AF0
