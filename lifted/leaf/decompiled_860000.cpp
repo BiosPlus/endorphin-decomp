@@ -314,3 +314,27 @@ extern uint32_t __cdecl fn_0086AF50(const uint32_t* data, uint32_t count) {
     return count;
 }
 } // namespace lift_0086AF50
+
+// [0x0086BF40]
+namespace lift_0086BF40 {
+// @name checkEmptySlotsAndState
+// @summary Checks that field_0x4c <= 1 and all 19 uint32_t entries at offset 0x00..0x48 are zero, returning 1 if field_0x4c == 1 else 0
+// @field struct_0 +0x00 uint32_t[19] field_0x00
+// @field struct_0 +0x4c uint32_t field_0x4c
+
+
+extern uint32_t mem_u32(uint32_t addr);
+
+uint16_t __cdecl sub_0086BF40(uint32_t self) {
+    uint32_t state = mem_u32(self + 0x4c);
+    if (state > 1) {
+        return 0;
+    }
+    for (int16_t i = 0; static_cast<uint32_t>(static_cast<int32_t>(i)) < 0x13; ++i) {
+        if (mem_u32(self + static_cast<int32_t>(i) * 4) != 0) {
+            return 0;
+        }
+    }
+    return state == 1 ? 1 : 0;
+}
+} // namespace lift_0086BF40

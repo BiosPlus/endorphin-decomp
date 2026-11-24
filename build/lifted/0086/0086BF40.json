@@ -1,0 +1,27 @@
+{
+  "va": "0x0086BF40",
+  "size": 53,
+  "orig_symbol": "sub_0086BF40",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "checkEmptySlotsAndState",
+  "signature": "uint16_t __cdecl sub_0086BF40(uint32_t self)",
+  "summary": "Checks that field_0x4c \u003c= 1 and all 19 uint32_t entries at offset 0x00..0x48 are zero, returning 1 if field_0x4c == 1 else 0",
+  "fields": [
+    {
+      "class": "struct_0",
+      "offset": "+0x0",
+      "type": "uint32_t[19]",
+      "name": "field_0x00"
+    },
+    {
+      "class": "struct_0",
+      "offset": "+0x4C",
+      "type": "uint32_t",
+      "name": "field_0x4c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:18:13Z"
+}
