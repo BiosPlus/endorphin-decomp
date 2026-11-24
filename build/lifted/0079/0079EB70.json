@@ -1,0 +1,22 @@
+{
+  "va": "0x0079EB70",
+  "size": 16,
+  "orig_symbol": "sub_0079EB70",
+  "src_path": "src/leaf/tiny_790000.cpp",
+  "lifted_path": "lifted/leaf/tiny_790000.cpp",
+  "name": "Unknown::getByteViaGlobalPtr0x0C",
+  "class": "Unknown",
+  "signature": "uint8_t fn_0079EB70(void)",
+  "summary": "Returns the byte at offset 0x0C of the object whose pointer is stored in global mem_00B61148.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:45:59Z"
+}

@@ -306,3 +306,17 @@ uint32_t __cdecl fn_0079AF40(uint32_t size) {
     return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(ext_GlobalAlloc(0, static_cast<SIZE_T>(size))));
 }
 } // namespace lift_0079AF40
+
+// [0x0079EB70] sub_0079EB70 (16 bytes)
+namespace lift_0079EB70 {
+extern uint32_t mem_00B61148;
+
+// @name Unknown::getByteViaGlobalPtr0x0C
+// @class Unknown
+// @summary Returns the byte at offset 0x0C of the object whose pointer is stored in global mem_00B61148.
+// @field Unknown +0x0C uint8_t field_0x0C
+uint8_t fn_0079EB70(void) {
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(mem_00B61148));
+    return lift_field<uint8_t>(obj, 0x0C);
+}
+} // namespace lift_0079EB70
