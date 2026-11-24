@@ -35,3 +35,30 @@ uint32_t __stdcall fn_005DF1F0(uint32_t self, uint32_t arg2) {
     return self;
 }
 } // namespace lift_005DF1F0
+
+// [0x00593680]
+namespace lift_00593680 {
+// @name AnimatableTransform::vfunc_9_off_4
+// @class AnimatableTransform
+// @summary Calls virtual slot 7 on self; if it returns true, forwards field +0xE4 to ext_00661A60 using global mem_00B40640, otherwise returns field +0xE0.
+// @field AnimatableTransform +0x0 uint32_t vtable
+// @field AnimatableTransform +0xE0 uint32_t field_0xE0
+// @field AnimatableTransform +0xE4 uint32_t field_0xE4
+
+extern void __fastcall ext_00661A60(void* self, uint32_t arg);
+
+extern uint32_t mem_00B40640;
+
+extern uint32_t __thiscall fn_00593680(void* self) {
+    void* vtable = lift_field<void*>(self, 0x0);
+    auto slot = reinterpret_cast<uint8_t (__thiscall*)(void*)>(
+        reinterpret_cast<void* const*>(vtable)[0x1c / sizeof(void*)]);
+
+    if (slot(self) != 0) {
+        uint32_t arg = lift_field<uint32_t>(self, 0xE4);
+        ext_00661A60(reinterpret_cast<void*>(static_cast<uintptr_t>(mem_00B40640)), arg);
+        return 0;
+    }
+    return lift_field<uint32_t>(self, 0xE0);
+}
+} // namespace lift_00593680

@@ -924,6 +924,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x00410D10": {
+    "name": "makeRangeFromBounds",
+    "class": "(none)",
+    "signature": "void* fn_00410D10(void* self, void* out)",
+    "summary": "Writes {this, this-\u003e+0x08} into the out-pointer after checking this-\u003e+0x04 \u003c= this-\u003e+0x08; returns out (thiscall, callee pops 4).",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00411660": {
     "name": "MultiTrackView::CompositeEventTrack::vfunc_0",
     "class": "MultiTrackView::CompositeEventTrack",
@@ -17262,6 +17269,13 @@
     "signature": "__stdcall int32_t fn_00592560(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x00593680": {
+    "name": "AnimatableTransform::vfunc_9_off_4",
+    "class": "AnimatableTransform",
+    "signature": "extern \"C\" uint32_t __thiscall fn_00593680(void* self)",
+    "summary": "Calls virtual slot 7 on self; if it returns true, forwards field +0xE4 to ext_00661A60 using global mem_00B40640, otherwise returns field +0xE0.",
+    "lifted_path": "lifted/classes/AnimatableTransform.cpp"
   },
   "0x00593870": {
     "name": "AnimatableTransform::vfunc_17_off_C",
