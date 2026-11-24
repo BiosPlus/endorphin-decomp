@@ -1,0 +1,14 @@
+{
+  "va": "0x0041B3C0",
+  "size": 16,
+  "orig_symbol": "GettingStartedDialog::vfunc_71",
+  "src_path": "src/classes/GettingStartedDialog.cpp",
+  "lifted_path": "lifted/classes/GettingStartedDialog.cpp",
+  "name": "GettingStartedDialog::vfunc_71",
+  "class": "GettingStartedDialog",
+  "signature": "void fn_0041B3C0(void* self)",
+  "summary": "Calls the MFC80 thunk, then tail-calls sub_004349D0 with the global at 0x00ACDB40 as its ECX argument.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:33:37Z"
+}
