@@ -1,0 +1,22 @@
+{
+  "va": "0x00544070",
+  "size": 35,
+  "orig_symbol": "ForceApplicationTool::vfunc_24",
+  "src_path": "src/classes/ForceApplicationTool.cpp",
+  "lifted_path": "lifted/classes/ForceApplicationTool.cpp",
+  "name": "ForceApplicationTool::vfunc_24",
+  "class": "ForceApplicationTool",
+  "signature": "void __thiscall fn_00544070(void* self)",
+  "summary": "Calls virtual method at +0x74 on this and tail-calls virtual method at +0x3c on field_0x88 if non-null",
+  "fields": [
+    {
+      "class": "ForceApplicationTool",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:58:35Z"
+}

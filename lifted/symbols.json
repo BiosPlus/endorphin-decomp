@@ -14605,6 +14605,13 @@
     "summary": "Toggles a byte flag (at sub-object +0x04) to its logical NOT; sub-object pointer lives at self+0x84.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00544070": {
+    "name": "ForceApplicationTool::vfunc_24",
+    "class": "ForceApplicationTool",
+    "signature": "void __thiscall fn_00544070(void* self)",
+    "summary": "Calls virtual method at +0x74 on this and tail-calls virtual method at +0x3c on field_0x88 if non-null",
+    "lifted_path": "lifted/classes/ForceApplicationTool.cpp"
+  },
   "0x00544220": {
     "name": "ForceApplicationTool::vfunc_1",
     "class": "ForceApplicationTool",
@@ -15015,6 +15022,13 @@
     "signature": "void fn_00548FBB(void* self)",
     "summary": "Epilogue fragment: pops saved esi and releases 0x30 bytes of stack locals; no portable C++ equivalent for the stack unwind, so the body is empty.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
+  "0x005498E0": {
+    "name": "QuadricRenderer::destroy",
+    "class": "QuadricRenderer",
+    "signature": "extern \"C\" void __fastcall fn_005498E0(void* self)",
+    "summary": "Destroys two GLU quadrics and delegates to base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
   "0x00549A10": {
     "name": "Unknown::CopyFloat3FromPtrTo18_1C_20",
@@ -15752,6 +15766,12 @@
     "summary": "Imports an FBX file via the FBX scene/IO helpers, updates UI/status callbacks, and throws on import failure.",
     "lifted_path": "lifted/classes/FBXIO.cpp"
   },
+  "0x005631F0": {
+    "name": "isMeshOrNurbsPrimitive",
+    "signature": "extern \"C\" bool __stdcall fn_005631F0(void* model)",
+    "summary": "Checks whether a CSLModel pointer is non-null and has primitive type 0x1b or 0x1c.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x00563600": {
     "name": "XSIIO::vfunc_3",
     "class": "XSIIO",
@@ -16201,6 +16221,12 @@
     "signature": "extern \"C\" void __fastcall fn_00587FC0(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::Marker::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x0058A170": {
+    "name": "initDefaultString",
+    "signature": "uint32_t __stdcall sub_0058A170(uint32_t arg1, uint32_t arg2)",
+    "summary": "Initializes a std::string at arg1 with the global C-string at mem_00A9F3AC and returns arg1",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
   "0x0058B6A0": {
     "name": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0\u003e::vfunc_0",
