@@ -8740,3 +8740,30 @@ void fn_0049C270(void* self) {
     *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x04) = 0x00ADD7FCu;
 }
 } // namespace lift_0049C270
+
+// [0x0049C610]
+namespace lift_0049C610 {
+// @name ExprParser::ReadWriteMethodType<NMData::State, bool, isDeactivated, bool, setIsDeactivated>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, bool, {public: void __thiscall NMData::State::setIsDeactivated(bool), 0}>
+// @summary One-time guarded setup: on first call, runs the static initializer ext_0067A670 on mem_00ADD804 and sets its vtable word to 0x93FE74; every call binds the out-object's +4 slot to the static at 0x00ADD804 and returns (stdcall, 1 arg).
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+
+extern void __thiscall ext_0067A670(void* self, uint32_t arg);
+
+extern uint32_t mem_00ADD808; // init-guard flags (bit 0 = initialized/initializing)
+extern uint32_t mem_00ADD804; // static object; first word holds vtable 0x0093FE74
+
+static constexpr uint32_t kStaticGuestVA = 0x00ADD804u;
+static constexpr uint32_t kVtableGuestVA = 0x0093FE74u;
+
+// stdcall, one stack argument (ret 4): out object whose +4 slot is bound.
+void __stdcall fn_0049C610(void* out) {
+    if ((mem_00ADD808 & 1u) == 0) {
+        mem_00ADD808 |= 1u;
+        ext_0067A670(&mem_00ADD804, 0u);
+        mem_00ADD804 = kVtableGuestVA;
+    }
+    uint32_t bound = kStaticGuestVA;
+    std::memcpy(static_cast<uint8_t*>(out) + 4, &bound, sizeof(bound));
+}
+} // namespace lift_0049C610
