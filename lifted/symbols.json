@@ -32502,6 +32502,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006BB7D0 (GetVtableSlot3).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
   },
+  "0x006E8050": {
+    "name": "Unknown::GetVtableSlot80",
+    "class": "Unknown",
+    "signature": "uint32_t fn_006E8050(void* self)",
+    "summary": "Returns the 32-bit value stored at vtable offset +0x80 of the object's vtable.",
+    "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
   "0x006E86A0": {
     "name": "sub_006E86A0",
     "class": "Unknown",

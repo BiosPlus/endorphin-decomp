@@ -480,3 +480,15 @@ __declspec(noinline) extern int32_t __fastcall fn_006E7F90(void* self) {
     return ext_006E7460(sub);
 }
 } // namespace lift_006E7F90
+
+// [0x006E8050] sub_006E8050 (16 bytes)
+namespace lift_006E8050 {
+// @name Unknown::GetVtableSlot80
+// @class Unknown
+// @summary Returns the 32-bit value stored at vtable offset +0x80 of the object's vtable.
+// @field Unknown +0x00 uint32_t field_0x00 (vtable pointer, dereferenced to read slot +0x80)
+uint32_t fn_006E8050(void* self) {
+    uint32_t vtbl = lift_field<uint32_t>(self, 0x00);
+    return lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(vtbl)), 0x80);
+}
+} // namespace lift_006E8050
