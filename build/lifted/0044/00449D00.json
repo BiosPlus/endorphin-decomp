@@ -1,0 +1,34 @@
+{
+  "va": "0x00449D00",
+  "size": 35,
+  "orig_symbol": "sub_00449D00",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::resetVptrAndReleaseSubobjects",
+  "class": "Unknown",
+  "signature": "void fn_00449D00(void* self)",
+  "summary": "Stamp vtable 0x00933A64 into self, invoke MFC80 ord_578 on subobjects at +0x78 and +0x74, then tail-forward to ord_605 thunk.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "void",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "void",
+      "name": "field_0x78"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:56:33Z"
+}

@@ -809,3 +809,35 @@ void* sub_00440770(void* self) {
     return base + 0x0c;
 }
 } // namespace lift_00440770
+
+// [0x00449D00] sub_00449D00 (35 bytes)
+namespace lift_00449D00 {
+// Known callee 0x006A5F6E: thunk_MFC80_ord_605 (IAT jump thunk forwarding to MFC80!ord_605.)
+extern void ext_006A5F6E();
+// MFC80!ord_578 import slot (IAT entry, called indirectly with thiscall).
+extern uintptr_t mem_009242F4;
+
+// @name Unknown::resetVptrAndReleaseSubobjects
+// @class Unknown
+// @summary Stamp vtable 0x00933A64 into self, invoke MFC80 ord_578 on subobjects at +0x78 and +0x74, then tail-forward to ord_605 thunk.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x74 void field_0x74
+// @field Unknown +0x78 void field_0x78
+void fn_00449D00(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // mov dword ptr [esi], 0x933a64
+    *reinterpret_cast<uint32_t*>(base) = 0x00933A64u;
+
+    // call dword ptr [mem_009242F4] on &self->field_0x78 (thiscall, ecx = this)
+    using ThisFn = void (__thiscall*)(void*);
+    reinterpret_cast<ThisFn>(static_cast<uintptr_t>(mem_009242F4))(base + 0x78);
+
+    // call dword ptr [mem_009242F4] on &self->field_0x74
+    reinterpret_cast<ThisFn>(static_cast<uintptr_t>(mem_009242F4))(base + 0x74);
+
+    // mov ecx, esi ; pop esi ; jmp ext_006A5F6E
+    // The original tail-jumps with ecx = this; the portable form calls the thunk.
+    ext_006A5F6E();
+}
+} // namespace lift_00449D00

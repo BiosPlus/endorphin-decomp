@@ -3021,6 +3021,13 @@
     "summary": "Returns the address of the global data slot mem_00933A38 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00449D00": {
+    "name": "Unknown::resetVptrAndReleaseSubobjects",
+    "class": "Unknown",
+    "signature": "void fn_00449D00(void* self)",
+    "summary": "Stamp vtable 0x00933A64 into self, invoke MFC80 ord_578 on subobjects at +0x78 and +0x74, then tail-forward to ord_605 thunk.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00449F60": {
     "name": "ReloadCharacterDialog::vfunc_1",
     "class": "ReloadCharacterDialog",
