@@ -276,3 +276,26 @@ uint32_t fn_005B6980(uint32_t self, uint32_t stack_arg) {
     return ext_00647F80(next_self, stack_arg);
 }
 } // namespace lift_005B6980
+
+// [0x005B6FE0] sub_005B6FE0 (24 bytes)
+namespace lift_005B6FE0 {
+// Known callee 0x006481E0: sub_006481E0 (Auto-lifted identical-shape clone of 0x00648480 (GetIndirectField_0x5c_0x00).)
+extern uint32_t ext_006481E0(void* self);
+
+// @name Unknown::ForwardToSubobjectField0x158
+// @class Unknown
+// @summary If self+0x158 holds a sub-object pointer, tail-forwards to fn_006481E0 on that sub-object (passing its +0xAC pointer); otherwise yields zero.
+// @field Unknown +0x158 uint32_t field_0x158
+// @field Unknown +0xAC uint32_t field_0xac (read from the sub-object at self+0x158, not from self)
+uint32_t fn_005B6FE0(void* self) {
+    const uint32_t sub = lift_field<uint32_t>(self, 0x158);
+    if (sub == 0) {
+        // Original leaves 0.0f on the x87 stack (fldz); bit pattern is 0.
+        return 0;
+    }
+    void* sub_obj = reinterpret_cast<void*>(static_cast<uintptr_t>(sub));
+    const uint32_t next = lift_field<uint32_t>(sub_obj, 0xAC);
+    void* next_obj = reinterpret_cast<void*>(static_cast<uintptr_t>(next));
+    return ext_006481E0(next_obj);
+}
+} // namespace lift_005B6FE0
