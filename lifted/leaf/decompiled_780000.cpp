@@ -735,8 +735,9 @@ using WideCharToMultiByte_fn = int (__stdcall*)(
 // @field TextConverter +0x30 wchar_t[] wideText
 // @field TextConverter +0x254 char[0x400] utf8Text
 void* fn_00788E50(void* self) {
-    auto* wide = reinterpret_cast<const wchar_t*>(static_cast<uint8_t*>(self) + 0x30);
-    auto* utf8 = static_cast<char*>(self) + 0x254;
+    auto* base = static_cast<uint8_t*>(self);
+    auto* wide = reinterpret_cast<const wchar_t*>(base + 0x30);
+    auto* utf8 = reinterpret_cast<char*>(base + 0x254);
     auto convert = reinterpret_cast<WideCharToMultiByte_fn>(static_cast<uintptr_t>(mem_009241F8));
 
     convert(65001 /* CP_UTF8 */, 0, wide, -1, utf8, 0x400, nullptr, nullptr);
