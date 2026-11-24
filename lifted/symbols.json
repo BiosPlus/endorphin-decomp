@@ -2094,6 +2094,12 @@
     "summary": "If a1 == 0x2A3 and the sub-object at +0x64 passes ext_0041C710, return 1; otherwise forward all four args to the MFC80 base handler.",
     "lifted_path": "lifted/MultiTrackView/TriggeredEventView.cpp"
   },
+  "0x0043CB50": {
+    "name": "TreeNode_max",
+    "signature": "extern \"C\" uint32_t sub_0043CB50(uint32_t node)",
+    "summary": "Return the rightmost non-nil descendant of a red-black tree node",
+    "lifted_path": "lifted/leaf/tiny_430000.cpp"
+  },
   "0x0043CB70": {
     "name": "sub_0043CB70",
     "signature": "void fn_0043CB70(void* self)",

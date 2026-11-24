@@ -192,3 +192,22 @@ void fn_00433990(void* self, int mode) {
     reinterpret_cast<ThisFn>(target)(static_cast<uint8_t*>(self) + 0x168);
 }
 } // namespace lift_00433990
+
+// [0x0043CB50]
+namespace lift_0043CB50 {
+extern uint32_t mem_r32(uint32_t addr);
+extern uint8_t mem_r8(uint32_t addr);
+
+// @name TreeNode_max
+// @summary Return the rightmost non-nil descendant of a red-black tree node
+// @field TreeNode +0x08 uint32_t right
+// @field TreeNode +0x15 uint8_t isNil
+extern uint32_t sub_0043CB50(uint32_t node) {
+    uint32_t right = mem_r32(node + 0x08);
+    while (mem_r8(right + 0x15) == 0) {
+        node = right;
+        right = mem_r32(node + 0x08);
+    }
+    return node;
+}
+} // namespace lift_0043CB50
