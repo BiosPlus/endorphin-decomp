@@ -35424,3 +35424,31 @@ int32_t __stdcall fn_006706A0(void* arg0) {
     }
 }
 } // namespace lift_006706A0
+
+// [0x006956E0]
+namespace lift_006956E0 {
+// @name ExprParser::ReadMethodType<DoubleWithProperties, float, &DoubleWithProperties::getValue, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<DoubleWithProperties, float, &DoubleWithProperties::getValue, 0>
+// @summary Rounds a dereferenced double-to-float value to integer via half-away-from-zero, or throws if null.
+
+
+    int32_t ext_006A6DE0(double val);
+    void ext_0046C3C0(void* self);
+    [[noreturn]] void ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+    extern const double mem_00993828;
+
+int32_t __thiscall fn_006956E0(void* /*this*/, const double* const* arg0) {
+    const double* ptr = *arg0;
+    if (ptr == nullptr) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1Cu);
+    }
+
+    float fval = static_cast<float>(*ptr);
+    double adjusted = (fval < 0.0f)
+        ? (static_cast<double>(fval) - mem_00993828)
+        : (static_cast<double>(fval) + mem_00993828);
+    return ext_006A6DE0(adjusted);
+}
+} // namespace lift_006956E0
