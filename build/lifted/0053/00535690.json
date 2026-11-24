@@ -1,0 +1,34 @@
+{
+  "va": "0x00535690",
+  "size": 19,
+  "orig_symbol": "OglRenderer::vfunc_38",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "OglRenderer::vfunc_38",
+  "class": "OglRenderer",
+  "signature": "void fn_00535690(void* self, float value)",
+  "summary": "Stores the float argument into field +0xC0 of the object referenced by OglRenderer's +0x38 pointer's +0x64 pointer.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC0",
+      "type": "float",
+      "name": "field_0xC0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:02:58Z"
+}

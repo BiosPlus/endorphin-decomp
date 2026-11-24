@@ -6020,3 +6020,18 @@ void fn_00535650(void* self, float value) {
     lift_field<float>(b, 0xB8) = value;
 }
 } // namespace lift_00535650
+
+// [0x00535690] OglRenderer::vfunc_38 (19 bytes)
+namespace lift_00535690 {
+// @name OglRenderer::vfunc_38
+// @class OglRenderer
+// @summary Stores the float argument into field +0xC0 of the object referenced by OglRenderer's +0x38 pointer's +0x64 pointer.
+// @field OglRenderer +0x38 void* field_0x38
+// @field Unknown +0x64 void* field_0x64
+// @field Unknown +0xC0 float field_0xC0
+void fn_00535690(void* self, float value) {
+    void* delegate = lift_field<void*>(self, 0x38);
+    void* target = lift_field<void*>(delegate, 0x64);
+    lift_field<float>(target, 0xC0) = value;
+}
+} // namespace lift_00535690
