@@ -11319,6 +11319,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x80.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005472B0": {
+    "name": "TranslateTool::vfunc_14",
+    "class": "TranslateTool",
+    "signature": "int32_t TranslateTool_vfunc_14(const uint8_t* self)",
+    "summary": "Returns 1 if the signed 32-bit field at +0xA8 is non-negative, else 0.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x005472C0": {
     "name": "TranslateTool::vfunc_1",
     "class": "TranslateTool",

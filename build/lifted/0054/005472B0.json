@@ -1,0 +1,22 @@
+{
+  "va": "0x005472B0",
+  "size": 12,
+  "orig_symbol": "TranslateTool::vfunc_14",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "TranslateTool::vfunc_14",
+  "class": "TranslateTool",
+  "signature": "int32_t TranslateTool_vfunc_14(const uint8_t* self)",
+  "summary": "Returns 1 if the signed 32-bit field at +0xA8 is non-negative, else 0.",
+  "fields": [
+    {
+      "class": "TranslateTool",
+      "offset": "+0xA8",
+      "type": "int32_t",
+      "name": "field_0xA8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:15:47Z"
+}

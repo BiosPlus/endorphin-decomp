@@ -4875,3 +4875,16 @@ void __thiscall HasConstantTMPtr_vfunc_11(void* self) {
     mem_009253C8(m);
 }
 } // namespace lift_005321A0
+
+// [0x005472B0]
+namespace lift_005472B0 {
+// @name TranslateTool::vfunc_14
+// @class TranslateTool
+// @summary Returns 1 if the signed 32-bit field at +0xA8 is non-negative, else 0.
+// @field TranslateTool +0xA8 int32_t field_0xA8
+
+int32_t TranslateTool_vfunc_14(const uint8_t* self) {
+    const int32_t value = *reinterpret_cast<const int32_t*>(self + 0xA8);
+    return value >= 0 ? 1 : 0;
+}
+} // namespace lift_005472B0
