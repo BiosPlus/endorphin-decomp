@@ -1,0 +1,34 @@
+{
+  "va": "0x00790DE0",
+  "size": 24,
+  "orig_symbol": "sub_00790DE0",
+  "src_path": "src/leaf/tiny_790000.cpp",
+  "lifted_path": "lifted/leaf/tiny_790000.cpp",
+  "name": "ResetStateAndSetField1C",
+  "class": "\u003cUnknown\u003e",
+  "signature": "void fn_00790DE0(void* self, DWORD value)",
+  "summary": "Stores the stack argument into +0x1C, sets +0x5C to 1 and clears +0x2C.",
+  "fields": [
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x1C",
+      "type": "DWORD",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x2C",
+      "type": "DWORD",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "\u003cUnknown\u003e",
+      "offset": "+0x5C",
+      "type": "DWORD",
+      "name": "field_0x5C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:38:50Z"
+}

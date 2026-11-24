@@ -39293,6 +39293,13 @@
     "summary": "Stores the stack argument into this+0x14 and zeroes this+0x2c (thiscall, callee pops 4 bytes).",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x00790DE0": {
+    "name": "ResetStateAndSetField1C",
+    "class": "\u003cUnknown\u003e",
+    "signature": "void fn_00790DE0(void* self, DWORD value)",
+    "summary": "Stores the stack argument into +0x1C, sets +0x5C to 1 and clears +0x2C.",
+    "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
   "0x007928E0": {
     "name": "sub_007928E0",
     "signature": "extern \"C\" void* __fastcall fn_007928E0(void* self, int edx_unused, unsigned int flags)",

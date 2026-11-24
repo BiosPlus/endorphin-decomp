@@ -433,3 +433,19 @@ static inline int32_t closeHandleToStatus(uint32_t handle)
     return ok != 0 ? 0 : -1;
 }
 } // namespace lift_0079ADA0
+
+// [0x00790DE0] sub_00790DE0 (24 bytes)
+namespace lift_00790DE0 {
+// @name ResetStateAndSetField1C
+// @class <Unknown>
+// @summary Stores the stack argument into +0x1C, sets +0x5C to 1 and clears +0x2C.
+// @field <Unknown> +0x1C DWORD field_0x1C
+// @field <Unknown> +0x2C DWORD field_0x2C
+// @field <Unknown> +0x5C DWORD field_0x5C
+void fn_00790DE0(void* self, DWORD value) {
+    auto* base = static_cast<unsigned char*>(self);
+    *reinterpret_cast<DWORD*>(base + 0x5C) = 1;
+    *reinterpret_cast<DWORD*>(base + 0x1C) = value;
+    *reinterpret_cast<DWORD*>(base + 0x2C) = 0;
+}
+} // namespace lift_00790DE0
