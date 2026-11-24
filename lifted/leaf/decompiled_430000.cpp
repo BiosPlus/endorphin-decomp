@@ -1745,3 +1745,16 @@ void* fn_00435CC0(DWORD a1, DWORD a2, const DWORD* a3) {
     return p;
 }
 } // namespace lift_00435CC0
+
+// [0x0043B6E0] sub_0043B6E0 (51 bytes)
+namespace lift_0043B6E0 {
+// @name CopyDwordRange
+// @summary Memmoves the dwords in [first, last) to d_first and returns d_first + count (count may be <= 0, in which case nothing is copied).
+uint32_t* CopyDwordRange(const uint32_t* first, const uint32_t* last, uint32_t* d_first) {
+    const std::ptrdiff_t count = last - first;
+    if (count > 0) {
+        std::memmove(d_first, first, static_cast<std::size_t>(count) * sizeof(uint32_t));
+    }
+    return d_first + count;
+}
+} // namespace lift_0043B6E0

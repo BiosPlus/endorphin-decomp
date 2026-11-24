@@ -2647,6 +2647,12 @@
     "summary": "Copies four 32-bit floats (16 bytes) from the source block into self and returns self.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x0043B6E0": {
+    "name": "CopyDwordRange",
+    "signature": "uint32_t* CopyDwordRange(const uint32_t* first, const uint32_t* last, uint32_t* d_first)",
+    "summary": "Memmoves the dwords in [first, last) to d_first and returns d_first + count (count may be \u003c= 0, in which case nothing is copied).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043BEE0": {
     "name": "MultiTrackView::MarkerTrack::vfunc_0",
     "class": "MultiTrackView::MarkerTrack",
