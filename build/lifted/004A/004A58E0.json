@@ -1,0 +1,28 @@
+{
+  "va": "0x004A58E0",
+  "size": 31,
+  "orig_symbol": "sub_004A58E0",
+  "src_path": "src/leaf/tiny_4A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4A0000.cpp",
+  "name": "Unknown::FindFirstFlaggedNextLink",
+  "class": "Unknown",
+  "signature": "void sub_004A58E0(Node* arg)",
+  "summary": "Starting at arg-\u003e+0x08, follows +0x08 links until a node whose byte at +0xAD is nonzero is found.",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x8",
+      "type": "Node*",
+      "name": "next"
+    },
+    {
+      "class": "Node",
+      "offset": "+0xAD",
+      "type": "uint8_t",
+      "name": "flag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:23:09Z"
+}

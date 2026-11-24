@@ -185,3 +185,28 @@ void fn_004442C0(void* self) {
 }
 } // namespace lift_004442C0
 } // namespace lift_004A5900
+
+// [0x004A58E0]
+namespace lift_004A58E0 {
+// @name Unknown::FindFirstFlaggedNextLink
+// @summary Starting at arg->+0x08, follows +0x08 links until a node whose byte at +0xAD is nonzero is found.
+// @field Node +0x08 Node* next
+// @field Node +0xAD uint8_t flag
+
+struct Node {
+    uint8_t field_0x00[0x08];
+    Node* next;          // +0x08
+    uint8_t field_0x0C[0xAD - 0x0C];
+    uint8_t flag;        // +0xAD
+};
+
+void sub_004A58E0(Node* arg) {
+    Node* p = arg->next;
+    if (p->flag != 0) {
+        return;
+    }
+    do {
+        p = p->next;
+    } while (p->flag == 0);
+}
+} // namespace lift_004A58E0
