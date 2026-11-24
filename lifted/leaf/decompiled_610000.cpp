@@ -207,3 +207,27 @@ void __thiscall fn_00611910(void* self, float value) {
     slot(self, 1, result);
 }
 } // namespace lift_00611910
+
+// [0x006118A0] sub_006118A0 (57 bytes)
+namespace lift_006118A0 {
+// Known callee 0x00594000: sub_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000(void);
+// Callee 0x006781B0: sub_006781B0 (63B, not yet lifted). thiscall: ecx = this, one float stack arg, float result in st0.
+extern float ext_006781B0(void* self, float value);
+
+// @name Unknown::ForwardFloatThroughGlobalSubobjectToVtblSlot60
+// @class Unknown
+// @summary Gets a global int32 via ext_00594000, passes this+0x2E0 of that value and the float arg to ext_006781B0, then calls this->vtbl[0xF0/4] with (result, 0).
+// @field Unknown +0x00 void* vptr
+void fn_006118A0(void* self, float value) {
+    uint32_t global = static_cast<uint32_t>(ext_00594000());   // call 0x594000; eax = global
+    uintptr_t subobject = static_cast<uintptr_t>(global + 0x2E0); // lea ecx, [eax + 0x2e0]
+    float result = ext_006781B0(reinterpret_cast<void*>(subobject), value); // fstp [esp+8] overwrites arg with result
+
+    void* vptr = lift_field<void*>(self, 0x00);                // mov eax, [esi]
+    void* slot = lift_field<void*>(vptr, 0xF0);                // mov edx, [eax + 0xf0]
+    using SlotFn = void (*)(void* thisPtr, float arg, int32_t zero);
+    SlotFn fn = reinterpret_cast<SlotFn>(slot);
+    fn(self, result, 0);                                       // push result; push 0; mov ecx, esi; call edx
+}
+} // namespace lift_006118A0

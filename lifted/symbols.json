@@ -28998,6 +28998,13 @@
     "summary": "Calls vtable+0x10c(0) on self to get a float and passes it to ext_00678130 on ext_00594000() + 0x2e0.",
     "lifted_path": "lifted/leaf/decompiled_610000.cpp"
   },
+  "0x006118A0": {
+    "name": "Unknown::ForwardFloatThroughGlobalSubobjectToVtblSlot60",
+    "class": "Unknown",
+    "signature": "void fn_006118A0(void* self, float value)",
+    "summary": "Gets a global int32 via ext_00594000, passes this+0x2E0 of that value and the float arg to ext_006781B0, then calls this-\u003evtbl[0xF0/4] with (result, 0).",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
   "0x006118E0": {
     "name": "invokeVFunc10CAndForwardTo00678130",
     "signature": "extern \"C\" void __thiscall fn_006118E0(void* self)",

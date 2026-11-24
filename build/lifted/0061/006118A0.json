@@ -1,0 +1,22 @@
+{
+  "va": "0x006118A0",
+  "size": 57,
+  "orig_symbol": "sub_006118A0",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "Unknown::ForwardFloatThroughGlobalSubobjectToVtblSlot60",
+  "class": "Unknown",
+  "signature": "void fn_006118A0(void* self, float value)",
+  "summary": "Gets a global int32 via ext_00594000, passes this+0x2E0 of that value and the float arg to ext_006781B0, then calls this-\u003evtbl[0xF0/4] with (result, 0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:20:03Z"
+}
