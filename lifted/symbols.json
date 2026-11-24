@@ -3110,6 +3110,13 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x8 and tail-calls sub_0043CD80.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x00442C10": {
+    "name": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState::vfunc_20",
+    "class": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState",
+    "signature": "bool __thiscall fn_00442C10(void* self, uint32_t a1)",
+    "summary": "If the cursor is over the delegate's window, calls ext_0041C880(+0x04, 6); otherwise calls it with 0. Always returns true; the stack argument is ignored.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/SelectOrMoveState.cpp"
+  },
   "0x00442C40": {
     "name": "Unknown::InitWithTagAndVtable",
     "class": "Unknown",
