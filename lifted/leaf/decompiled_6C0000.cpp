@@ -765,3 +765,28 @@ uint32_t sub_006C31E0(uint32_t ecx) {
     return *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(ecx + 0x158));
 }
 } // namespace lift_006C31E0
+
+// [0x006C3180]
+namespace lift_006C3180 {
+// @name getTypedChild_0x158
+// @summary Returns the sub-object at +0x158 if non-null and its vtable[0] returns 7, otherwise 0.
+// @field Unknown +0x158 uint32_t field_0x158
+
+
+extern uint32_t mem_read32(uintptr_t addr);
+
+uint32_t __thiscall fn_006C3180(void* self) {
+    uintptr_t base = reinterpret_cast<uintptr_t>(self);
+    uint32_t obj = mem_read32(base + 0x158);
+    if (obj != 0) {
+        uint32_t vtbl = mem_read32(obj);
+        uint32_t fn_addr = mem_read32(vtbl);
+        using vfn0_t = uint32_t(__thiscall*)(uint32_t);
+        uint32_t res = reinterpret_cast<vfn0_t>(static_cast<uintptr_t>(fn_addr))(obj);
+        if (res == 7) {
+            return mem_read32(base + 0x158);
+        }
+    }
+    return 0;
+}
+} // namespace lift_006C3180
