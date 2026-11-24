@@ -133,3 +133,17 @@ void sub_007BAE20(uint32_t *src, uint32_t *dst)
     *dst = *src;
 }
 } // namespace lift_007BAE20
+
+// [0x007B1F40] sub_007B1F40 (21 bytes)
+namespace lift_007B1F40 {
+// @name FilterByModeZeroOrTwo
+// @summary Returns the ECX input unchanged when the first stack argument is 0 or 2; otherwise returns 0. Stdcall-style (ret 8).
+// @field none (no class member accessed)
+DWORD fn_007B1F40(DWORD ecx_in, DWORD arg0, DWORD arg1) {
+    (void)arg1;
+    if (arg0 == 0 || arg0 == 2) {
+        return ecx_in;
+    }
+    return 0;
+}
+} // namespace lift_007B1F40

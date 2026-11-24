@@ -39093,6 +39093,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
   },
+  "0x007B1F40": {
+    "name": "FilterByModeZeroOrTwo",
+    "signature": "DWORD fn_007B1F40(DWORD ecx_in, DWORD arg0, DWORD arg1)",
+    "summary": "Returns the ECX input unchanged when the first stack argument is 0 or 2; otherwise returns 0. Stdcall-style (ret 8).",
+    "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
+  },
   "0x007B1F60": {
     "name": "initAndDispatch_007B1F60",
     "signature": "void fn_007B1F60(void)",
