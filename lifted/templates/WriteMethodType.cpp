@@ -7642,3 +7642,27 @@ extern void __thiscall fn_00607C50(void* ecx_unused, void* arg) {
 
 } // namespace lift_00607C50
 } // namespace lift_00607C50
+
+// [0x0062A750] ExprParser::WriteMethodType<Sensors::SensorIntegral, int, &public: void __thiscall Sensors::SensorIntegral::resize(int)>::vfunc_40 (122 bytes)
+namespace lift_0062A750 {
+extern void ext_0067A670(void* self, int arg);
+extern uint32_t mem_00B51C28;
+extern uint32_t mem_00B51C24;
+
+// @name ExprParser::WriteMethodType<Sensors::SensorIntegral, int, &Sensors::SensorIntegral::resize>::vfunc_40
+// @class ExprParser::WriteMethodType<Sensors::SensorIntegral, int, &Sensors::SensorIntegral::resize>
+// @summary Lazily constructs a static helper object guarded by a flag bit, then stores its address into the argument at +0x04.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_0062A750(void* self) {
+    // One-time initialization guard (bit 0 of mem_00B51C28).
+    if ((mem_00B51C28 & 1u) == 0) {
+        mem_00B51C28 |= 1u;
+        ext_0067A670(&mem_00B51C24, 0);
+        mem_00B51C24 = 0x978DB4u;
+    }
+
+    // Store the address of the static object into self+0x04 (32-bit layout).
+    lift_field<uint32_t>(self, 4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B51C24));
+}
+} // namespace lift_0062A750

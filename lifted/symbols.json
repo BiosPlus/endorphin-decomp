@@ -29076,6 +29076,13 @@
     "summary": "Virtual dispatch thunk: loads the vtable pointer from the receiver and returns the code address stored at vtable byte offset 0x44 (slot 17 on x86). The original tail-jumps to that address; this lift returns it so the caller can perform the call.",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
+  "0x0062A750": {
+    "name": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, int, \u0026Sensors::SensorIntegral::resize\u003e::vfunc_40",
+    "class": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, int, \u0026Sensors::SensorIntegral::resize\u003e",
+    "signature": "void fn_0062A750(void* self)",
+    "summary": "Lazily constructs a static helper object guarded by a flag bit, then stores its address into the argument at +0x04.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x0062A7D0": {
     "name": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, float, \u0026Sensors::SensorIntegral::insert\u003e::vfunc_40",
     "class": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, float, \u0026public: void __thiscall Sensors::SensorIntegral::insert(float)\u003e",
