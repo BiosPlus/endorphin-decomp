@@ -40738,3 +40738,43 @@ void* fn_0066F930(void* self, void*) {
     return self;
 }
 } // namespace lift_0066F930
+
+// [0x004C0660] ExprParser::ReadMethodType<NMData::TriggeredEventData, ...getPropertySourceDescription...>::vfunc_1 (109 bytes)
+namespace lift_004C0660 {
+// Callee: sub_004C0280 (stack args: out-string buffer, then the held value; callee cleans; returns pointer to the std::string it filled).
+extern void* ext_004C0280(void* out, uint32_t value);
+// Import slots (IAT entries): MSVCP80 basic_string::c_str, MSVCP80 basic_string::~basic_string, MSVCR80 atof.
+extern void* mem_00924FF0;
+extern void* mem_00924FF4;
+extern void* mem_009251F0;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Fetches the property-source description string for the held value via ext_004C0280, converts it with atof, and returns it as float.
+// @field ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1> +0x00 uint32_t field_0x00
+float fn_004C0660(void* self) {
+    using CStrFn = const char* (*)(void* str);
+    using DtorFn = void (*)(void* str);
+    using AtofFn = double (*)(const char* s);
+
+    // Local std::string storage filled by ext_004C0280 (original frame base; 0x1C bytes).
+    alignas(8) unsigned char strBuf[0x1C] = {};
+
+    // arg = this->field_0x00
+    uint32_t arg = lift_field<uint32_t>(self, 0x00);
+
+    // str = ext_004C0280(strBuf, arg); returns the populated string object.
+    void* str = ext_004C0280(strBuf, arg);
+
+    // cstr = str->c_str()
+    const char* cstr = reinterpret_cast<CStrFn>(mem_00924FF0)(str);
+
+    // result = (float)atof(cstr)
+    float result = static_cast<float>(reinterpret_cast<AtofFn>(mem_009251F0)(cstr));
+
+    // str->~basic_string()
+    reinterpret_cast<DtorFn>(mem_00924FF4)(str);
+
+    return result;
+}
+} // namespace lift_004C0660

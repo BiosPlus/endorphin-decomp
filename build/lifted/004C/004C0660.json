@@ -1,0 +1,14 @@
+{
+  "va": "0x004C0660",
+  "size": 109,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1\u003e",
+  "signature": "float fn_004C0660(void* self)",
+  "summary": "Fetches the property-source description string for the held value via ext_004C0280, converts it with atof, and returns it as float.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:58:53Z"
+}
