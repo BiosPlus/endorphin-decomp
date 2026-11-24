@@ -36431,6 +36431,12 @@
     "summary": "Projected Gauss-Seidel / LCP iterative solver step for MdtArthur::arthurSolver_sse",
     "lifted_path": "lifted/MdtArthur/arthurSolver_sse.cpp"
   },
+  "0x00803980": {
+    "name": "descriptiveName: fn_00803980 (returns **a - *b)",
+    "signature": "extern \"C++\" int32_t fn_00803980(int32_t** a, const int32_t* b)",
+    "summary": "Returns the difference between the int32 value behind a double pointer (arg0) and the int32 value behind a pointer (arg1).",
+    "lifted_path": "lifted/leaf/tiny_800000.cpp"
+  },
   "0x0080EFC0": {
     "name": "sub_0080EFC0",
     "signature": "extern \"C\" void* __cdecl fn_0080EFC0(void)",
