@@ -14599,6 +14599,13 @@
     "summary": "Sets the 32-bit field at offset 0x00 of the object and returns this.",
     "lifted_path": "lifted/leaf/tiny_560000.cpp"
   },
+  "0x005694F0": {
+    "name": "DestroyRangeForward_005694F0",
+    "class": "(none)",
+    "signature": "void fn_005694F0(void* self, int edx_unused, int a1, int a2)",
+    "summary": "Forwards two stack arguments plus the incoming ECX value to ext_005693E0 (range destroy helper).",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x00569FC0": {
     "name": "ASFData::Bone::vfunc_0",
     "class": "ASFData::Bone",
