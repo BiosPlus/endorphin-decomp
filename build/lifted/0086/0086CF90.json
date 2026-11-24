@@ -1,0 +1,13 @@
+{
+  "va": "0x0086CF90",
+  "size": 32,
+  "orig_symbol": "sub_0086CF90",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "AllocZeroedProduct",
+  "signature": "void* fn_0086CF90(uint32_t count, uint32_t size)",
+  "summary": "Allocates a zero-initialised block of count*size bytes via LocalAlloc(LMEM_ZEROINIT, count*size).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:50:34Z"
+}

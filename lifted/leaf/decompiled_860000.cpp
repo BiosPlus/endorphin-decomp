@@ -143,3 +143,18 @@ extern void* __cdecl fn_0086CCC0(void* self) {
     return self;
 }
 } // namespace lift_0086CCC0
+
+// [0x0086CF90] sub_0086CF90 (32 bytes)
+namespace lift_0086CF90 {
+extern uint32_t mem_00924214;
+
+// @name AllocZeroedProduct
+// @summary Allocates a zero-initialised block of count*size bytes via LocalAlloc(LMEM_ZEROINIT, count*size).
+// @field none
+void* fn_0086CF90(uint32_t count, uint32_t size) {
+    using LocalAllocFn = void* (*)(uint32_t flags, uint32_t bytes);
+    const uint32_t kLmemZeroinit = 0x40;
+    auto local_alloc = reinterpret_cast<LocalAllocFn>(static_cast<uintptr_t>(mem_00924214));
+    return local_alloc(kLmemZeroinit, count * size);
+}
+} // namespace lift_0086CF90

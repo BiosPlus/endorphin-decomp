@@ -45517,6 +45517,12 @@
     "summary": "Calls ext_0086CCE0(self); if it returns 1, returns the pointer stored at self+0x04, otherwise returns self.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086CF90": {
+    "name": "AllocZeroedProduct",
+    "signature": "void* fn_0086CF90(uint32_t count, uint32_t size)",
+    "summary": "Allocates a zero-initialised block of count*size bytes via LocalAlloc(LMEM_ZEROINIT, count*size).",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086D600": {
     "name": "CopyQwordField1050To1048",
     "class": "(unknown owner)",
