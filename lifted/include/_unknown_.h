@@ -14,6 +14,8 @@ struct _unknown__Fields {
     // +0x4   void*                    field_0x04  (evidence: 0x00515B90) // CONFLICT: multiple definitions at +0x4
     // +0xC   int                      field_0x0C  (evidence: 0x00515E80, 0x00516550) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  field_0x0C  (evidence: 0x00515B90) // CONFLICT: multiple definitions at +0xC
+    // +0xC   float                    field_0x0c  (evidence: 0x005528A0) // CONFLICT: multiple definitions at +0xC
+    // +0x10  int32_t                  field_0x10  (evidence: 0x005528A0)
     // +0x20  DWORD                    field_20  (evidence: 0x007C5A20, 0x007C5A30, 0x007C5AB0, 0x007C5C50, 0x007C5C60, 0x007C76D0, 0x007C8A70, 0x007D5BB0, 0x007D86F0, 0x007DCFF0)
     // +0x30  uint32_t                 field_0x30  (evidence: 0x007D4AE0, 0x007DFDB0)
     // +0x58  float                    field_0x58  (evidence: 0x007C5A40, 0x007C5AC0, 0x007C5B30, 0x007C5B40, 0x007C5B50, 0x007C5B60, 0x007C5C70, 0x007C5C80, 0x007C5C90, 0x007C5CA0, 0x007C5CB0, 0x007C5CC0, 0x007C5CD0, 0x007C5CE0, 0x007C5CF0, 0x007C6310, 0x007C6320, 0x007C76A0, 0x007D85D0)

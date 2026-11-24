@@ -84,3 +84,15 @@ int32_t fn_00553E40(void* self) {
     return span / 20;
 }
 } // namespace lift_00553E40
+
+// [0x005528A0] sub_005528A0 (13 bytes)
+namespace lift_005528A0 {
+// @name SubObject::resetScaleAndIndex
+// @summary Sets the float at +0x0C to 1.0f and the int32 at +0x10 to -1 on the object passed in ecx.
+// @field <unknown> +0x0C float field_0x0c
+// @field <unknown> +0x10 int32_t field_0x10
+void fn_005528A0(void* self) {
+    lift_field<int32_t>(self, 0x10) = -1;
+    lift_field<float>(self, 0x0C) = 1.0f;
+}
+} // namespace lift_005528A0

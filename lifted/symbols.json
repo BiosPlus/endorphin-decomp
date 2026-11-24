@@ -11856,6 +11856,13 @@
     "summary": "Stores address of mem_00957534 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x005528A0": {
+    "name": "SubObject::resetScaleAndIndex",
+    "class": "SubObject",
+    "signature": "void fn_005528A0(void* self)",
+    "summary": "Sets the float at +0x0C to 1.0f and the int32 at +0x10 to -1 on the object passed in ecx.",
+    "lifted_path": "lifted/leaf/tiny_550000.cpp"
+  },
   "0x005528B0": {
     "name": "HandleGraphic::vfunc_0",
     "class": "HandleGraphic",

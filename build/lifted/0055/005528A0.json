@@ -1,0 +1,28 @@
+{
+  "va": "0x005528A0",
+  "size": 13,
+  "orig_symbol": "sub_005528A0",
+  "src_path": "src/leaf/tiny_550000.cpp",
+  "lifted_path": "lifted/leaf/tiny_550000.cpp",
+  "name": "SubObject::resetScaleAndIndex",
+  "class": "SubObject",
+  "signature": "void fn_005528A0(void* self)",
+  "summary": "Sets the float at +0x0C to 1.0f and the int32 at +0x10 to -1 on the object passed in ecx.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:21:31Z"
+}
