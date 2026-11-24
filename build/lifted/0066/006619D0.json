@@ -1,0 +1,40 @@
+{
+  "va": "0x006619D0",
+  "size": 34,
+  "orig_symbol": "sub_006619D0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "Unknown::copyFieldsFrom",
+  "class": "Unknown",
+  "signature": "void* fn_006619D0(void* self, const void* src)",
+  "summary": "Copy-assigns the three DWORD fields from src into self (skipping self-assignment) and sets the flag byte at +0x00 to 1; returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "BYTE",
+      "name": "flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:55:45Z"
+}

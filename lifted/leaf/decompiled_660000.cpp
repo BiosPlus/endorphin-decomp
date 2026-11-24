@@ -110,3 +110,36 @@ void showInfoMessageBox(const std::string* caption, const std::string* text) {
     ext_MessageBoxA(nullptr, textCStr, captionCStr, kMbIconInformation);
 }
 } // namespace lift_00662F80
+
+// [0x006619D0] sub_006619D0 (34 bytes)
+namespace lift_006619D0 {
+// @name Unknown::copyFieldsFrom
+// @class Unknown
+// @summary Copy-assigns the three DWORD fields from src into self (skipping self-assignment) and sets the flag byte at +0x00 to 1; returns self.
+// @field Unknown +0x00 BYTE flag
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+// @field Unknown +0x0C DWORD field_0x0C
+void* fn_006619D0(void* self, const void* src) {
+    if (self == src) {
+        return self;
+    }
+
+    auto* dst = static_cast<uint8_t*>(self);
+    const auto* from = static_cast<const uint8_t*>(src);
+
+    DWORD v4;
+    DWORD v8;
+    DWORD vc;
+    std::memcpy(&v4, from + 0x04, sizeof(DWORD));
+    std::memcpy(&v8, from + 0x08, sizeof(DWORD));
+    std::memcpy(&vc, from + 0x0C, sizeof(DWORD));
+
+    std::memcpy(dst + 0x04, &v4, sizeof(DWORD));
+    std::memcpy(dst + 0x08, &v8, sizeof(DWORD));
+    std::memcpy(dst + 0x0C, &vc, sizeof(DWORD));
+
+    dst[0x00] = 1;
+    return self;
+}
+} // namespace lift_006619D0
