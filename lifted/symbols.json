@@ -35112,6 +35112,12 @@
     "summary": "Pure jump thunk forwarding to thunk_MFC80_ord_663.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006A7A90": {
+    "name": "CheckEscapeOrTabHeld",
+    "signature": "int sub_006A7A90()",
+    "summary": "Returns 0 if VK_ESCAPE or VK_TAB is currently held down, otherwise 4.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006A7AC0": {
     "name": "Unknown::ForwardArgToVirtualSlot140",
     "class": "Unknown",

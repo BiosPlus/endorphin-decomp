@@ -122,3 +122,29 @@ void* fn_006AD010(void* self, void* arg1) {
 }
 } // namespace lift_0040A910
 } // namespace lift_006AD010
+
+// [0x006A7A90]
+namespace lift_006A7A90 {
+// @name CheckEscapeOrTabHeld
+// @summary Returns 0 if VK_ESCAPE or VK_TAB is currently held down, otherwise 4.
+// @field none
+
+extern uint32_t mem_009255F4;
+
+namespace {
+// GetKeyState returns SHORT; high bit set means the key is down.
+using GetKeyStateFn = short (*)(int);
+}
+
+// [0x006A7A90]
+int sub_006A7A90() {
+    auto getKeyState = reinterpret_cast<GetKeyStateFn>(static_cast<uintptr_t>(mem_009255F4));
+    if (getKeyState(0x1B) < 0) {   // VK_ESCAPE
+        return 0;
+    }
+    if (getKeyState(0x09) < 0) {   // VK_TAB
+        return 0;
+    }
+    return 4;
+}
+} // namespace lift_006A7A90
