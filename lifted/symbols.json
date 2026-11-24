@@ -17663,6 +17663,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00599E70": {
+    "name": "GetNestedDwordAt38C",
+    "signature": "uint32_t __thiscall fn_00599E70(void* self)",
+    "summary": "Follows self-\u003e+0x26C -\u003e P; returns 0 if P-\u003e+0x20 is zero. Otherwise walks P-\u003e+0x1C -\u003e Q -\u003e R (Q-\u003e+0x00), and returns R-\u003e+0x28 -\u003e S's dword at +0x38C.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x0059C7E0": {
     "name": "World::vfunc_33",
     "class": "World",
