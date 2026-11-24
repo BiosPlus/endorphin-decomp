@@ -35,3 +35,20 @@ extern void __cdecl sub_007C9930(void* self) {
     target(arg, self, self);
 }
 } // namespace lift_007C9930
+
+// [0x007C9370] sub_007C9370 (34 bytes)
+namespace lift_007C9370 {
+// Known callee 0x007CA120: sub_007CA120 (121 bytes), cdecl, 4 stack args.
+extern uint32_t ext_007CA120(void* a0, void* a1, uint32_t a2, uint32_t a3);
+
+// @name Unknown::forwardWithSubobject
+// @class Unknown
+// @summary Calls ext_007CA120 with this->+0x98 as first argument, this+0x12C as second, 0 as third, and arg2 as fourth; returns its result.
+// @field Unknown +0x98 void* field_0x98
+// @field Unknown +0x12C void* field_0x12C
+uint32_t fn_007C9370(void* self, uint32_t arg2) {
+    void* handle = lift_field<void*>(self, 0x98);
+    void* sub = reinterpret_cast<uint8_t*>(self) + 0x12C;
+    return ext_007CA120(handle, sub, 0, arg2);
+}
+} // namespace lift_007C9370

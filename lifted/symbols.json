@@ -44823,6 +44823,13 @@
     "summary": "Returns the 32-bit entry at index `idx` of the 4-byte array stored at +0x94 in the object.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C9370": {
+    "name": "Unknown::forwardWithSubobject",
+    "class": "Unknown",
+    "signature": "uint32_t fn_007C9370(void* self, uint32_t arg2)",
+    "summary": "Calls ext_007CA120 with this-\u003e+0x98 as first argument, this+0x12C as second, 0 as third, and arg2 as fourth; returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C9480": {
     "name": "sub_007C9480_virtualSlot0xA8Thunk",
     "signature": "uint32_t fn_007C9480(void* self)",

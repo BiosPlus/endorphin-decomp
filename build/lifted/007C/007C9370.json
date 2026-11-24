@@ -1,0 +1,28 @@
+{
+  "va": "0x007C9370",
+  "size": 34,
+  "orig_symbol": "sub_007C9370",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "Unknown::forwardWithSubobject",
+  "class": "Unknown",
+  "signature": "uint32_t fn_007C9370(void* self, uint32_t arg2)",
+  "summary": "Calls ext_007CA120 with this-\u003e+0x98 as first argument, this+0x12C as second, 0 as third, and arg2 as fourth; returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x98",
+      "type": "void*",
+      "name": "field_0x98"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x12C",
+      "type": "void*",
+      "name": "field_0x12C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:55:53Z"
+}
