@@ -2409,6 +2409,13 @@
     "summary": "Calls vtable slot 0 of the argument object with flag 1, queries owner+0x104 via vtable slot 0x57, then passes that result to the argument object's vtable slot 1.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00434340": {
+    "name": "Unknown::notifyThenForwardField11c",
+    "class": "Unknown",
+    "signature": "inline void* vtableSlot(void* obj, ptrdiff_t byteOffset)",
+    "summary": "Calls obj vslot0(1), then passes the result of field_0x11c's vslot 0x15c to obj vslot1.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00434380": {
     "name": "Unknown::notifyObjectWithQueryResult",
     "class": "Unknown",

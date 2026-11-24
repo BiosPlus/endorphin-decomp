@@ -1556,3 +1556,40 @@ void fn_004342A0(void* self, void* obj) {
     reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(vt[1])(obj, result);
 }
 } // namespace lift_004342A0
+
+// [0x00434340] sub_00434340 (49 bytes)
+namespace lift_00434340 {
+// @name Unknown::notifyThenForwardField11c
+// @class Unknown
+// @summary Calls obj vslot0(1), then passes the result of field_0x11c's vslot 0x15c to obj vslot1.
+// @field Unknown +0x11C void* field_0x11c
+
+namespace {
+
+// Virtual slot helper: reads the vtable pointer at obj+0 and returns the
+// entry at the given byte offset within the vtable.
+inline void* vtableSlot(void* obj, ptrdiff_t byteOffset) {
+    void* vtbl = lift_field<void*>(obj, 0);
+    return lift_field<void*>(vtbl, byteOffset);
+}
+
+using VoidIntFn = void (*)(void* self, int arg);
+using DwordFromSelfFn = DWORD (*)(void* self);
+using VoidDwordFn = void (*)(void* self, DWORD arg);
+
+}  // namespace
+
+// `self` is the object whose field_0x11c is read (ECX in the original).
+// `obj` is the single stack argument, popped by the callee (ret 4).
+void fn_00434340(void* self, void* obj) {
+    // obj->vtbl[0](1)
+    reinterpret_cast<VoidIntFn>(vtableSlot(obj, 0))(obj, 1);
+
+    // b = self->field_0x11c; r = b->vtbl[0x15c](b)
+    void* b = lift_field<void*>(self, 0x11c);
+    DWORD result = reinterpret_cast<DwordFromSelfFn>(vtableSlot(b, 0x15c))(b);
+
+    // obj->vtbl[1](result)
+    reinterpret_cast<VoidDwordFn>(vtableSlot(obj, 4))(obj, result);
+}
+} // namespace lift_00434340
