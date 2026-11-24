@@ -201,3 +201,24 @@ const char* fn_006F6E40(DWORD selector) {
 }
 } // namespace lift_006F6B40
 } // namespace lift_006F6E40
+
+// [0x006F9FD0] sub_006F9FD0 (33 bytes)
+namespace lift_006F9FD0 {
+extern DWORD mem_00B5E3F0;
+extern DWORD mem_00B5E3F4;
+extern DWORD mem_00B5E3F8;
+extern DWORD mem_00B5E3FC;
+extern DWORD mem_00B5E400;
+extern DWORD mem_00AAB918;
+
+// @name initKPlugGlobals
+// @summary Zeroes two global DWORDs and points two others at the "KPlug" string and a nearby global.
+void fn_006F9FD0(void* self) {
+    (void)self;
+    DWORD zero = 0;
+    mem_00B5E3F0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00B5E400));
+    mem_00B5E3F8 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AAB918));
+    mem_00B5E3F4 = zero;
+    mem_00B5E3FC = zero;
+}
+} // namespace lift_006F9FD0

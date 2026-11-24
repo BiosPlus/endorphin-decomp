@@ -1,0 +1,13 @@
+{
+  "va": "0x006F9FD0",
+  "size": 33,
+  "orig_symbol": "sub_006F9FD0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "initKPlugGlobals",
+  "signature": "void fn_006F9FD0(void* self)",
+  "summary": "Zeroes two global DWORDs and points two others at the \"KPlug\" string and a nearby global.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:53:37Z"
+}
