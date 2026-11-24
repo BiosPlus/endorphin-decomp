@@ -29310,6 +29310,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x10 and tail-calls AddCharacterDialog::vfunc_3.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00675D30": {
+    "name": "Properties::PropertyManager::vfunc_7",
+    "class": "Properties::PropertyManager",
+    "signature": "void fn_00675D30(void* self)",
+    "summary": "Walks the chain of nodes linked via +0x0C from the argument; at the last node, forwards to the subobject at +0x10 via ext_006616C0.",
+    "lifted_path": "lifted/Properties/PropertyManager.cpp"
+  },
   "0x00675D60": {
     "name": "Unknown::forwardToChildVfunc14",
     "class": "Unknown",

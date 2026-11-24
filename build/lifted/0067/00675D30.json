@@ -1,0 +1,22 @@
+{
+  "va": "0x00675D30",
+  "size": 37,
+  "orig_symbol": "Properties::PropertyManager::vfunc_7",
+  "src_path": "src/Properties/PropertyManager.cpp",
+  "lifted_path": "lifted/Properties/PropertyManager.cpp",
+  "name": "Properties::PropertyManager::vfunc_7",
+  "class": "Properties::PropertyManager",
+  "signature": "void fn_00675D30(void* self)",
+  "summary": "Walks the chain of nodes linked via +0x0C from the argument; at the last node, forwards to the subobject at +0x10 via ext_006616C0.",
+  "fields": [
+    {
+      "class": "Properties::PropertyManager",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:46:57Z"
+}
