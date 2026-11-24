@@ -1,0 +1,22 @@
+{
+  "va": "0x00430430",
+  "size": 24,
+  "orig_symbol": "sub_00430430",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::ForwardFlagToVirtual1",
+  "class": "Unknown",
+  "signature": "void* fn_00430430(void* self, void* other)",
+  "summary": "Reads the byte at this+0xF4 and tail-calls virtual slot 1 of the object passed in on the stack, forwarding that byte as its argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF4",
+      "type": "uint8_t",
+      "name": "field_0xf4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:34:53Z"
+}

@@ -1656,6 +1656,13 @@
     "summary": "Returns 1 if the int32 at +0x60 of the object returned by ext_004658C0 equals 1, else 0.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430430": {
+    "name": "Unknown::ForwardFlagToVirtual1",
+    "class": "Unknown",
+    "signature": "void* fn_00430430(void* self, void* other)",
+    "summary": "Reads the byte at this+0xF4 and tail-calls virtual slot 1 of the object passed in on the stack, forwarding that byte as its argument.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430CA0": {
     "name": "Unknown::forwardVirtual0WithArg1",
     "class": "Unknown",

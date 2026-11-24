@@ -275,3 +275,17 @@ void fn_00430260(void) {
     (void)obj;
 }
 } // namespace lift_00430260
+
+// [0x00430430] sub_00430430 (24 bytes)
+namespace lift_00430430 {
+// @name Unknown::ForwardFlagToVirtual1
+// @class Unknown
+// @summary Reads the byte at this+0xF4 and tail-calls virtual slot 1 of the object passed in on the stack, forwarding that byte as its argument.
+// @field Unknown +0xf4 uint8_t field_0xf4
+void* fn_00430430(void* self, void* other) {
+    const uint32_t flag = lift_field<uint8_t>(self, 0xf4);
+    void** vtbl = *reinterpret_cast<void***>(other);
+    auto slot = reinterpret_cast<uint32_t (*)(void*, uint32_t)>(vtbl[1]);
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(slot(other, flag)));
+}
+} // namespace lift_00430430
