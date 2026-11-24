@@ -1,0 +1,22 @@
+{
+  "va": "0x00433290",
+  "size": 18,
+  "orig_symbol": "sub_00433290",
+  "src_path": "src/leaf/tiny_430000.cpp",
+  "lifted_path": "lifted/leaf/tiny_430000.cpp",
+  "name": "Unknown::forwardToChildAt154",
+  "class": "Unknown",
+  "signature": "void fn_00433290(void* self, DWORD stackArg)",
+  "summary": "Forwards the call to the child object at +0x154 via sub_0044E160; does nothing when the child is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x154",
+      "type": "DWORD",
+      "name": "child"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:56:53Z"
+}

@@ -119,3 +119,22 @@ void fn_0043CD80(void* self) {
     killTimer(hwnd, static_cast<UINT_PTR>(timerId));
 }
 } // namespace lift_0043CD80
+
+// [0x00433290] sub_00433290 (18 bytes)
+namespace lift_00433290 {
+// Known callee 0x0044E160: sub_0044E160 (36 bytes). Receives the child object as `this`
+// and the caller's stack argument unchanged (the original code tail-jumps into it).
+extern void ext_0044E160(void* self, DWORD stackArg);
+
+// @name Unknown::forwardToChildAt154
+// @class Unknown
+// @summary Forwards the call to the child object at +0x154 via sub_0044E160; does nothing when the child is null.
+// @field Unknown +0x154 DWORD child
+void fn_00433290(void* self, DWORD stackArg) {
+    const DWORD child =
+        *reinterpret_cast<const DWORD*>(static_cast<const uint8_t*>(self) + 0x154);
+    if (child != 0) {
+        ext_0044E160(reinterpret_cast<void*>(static_cast<uintptr_t>(child)), stackArg);
+    }
+}
+} // namespace lift_00433290

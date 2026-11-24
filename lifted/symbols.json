@@ -1544,6 +1544,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00551A10 (NMCamera::Orthogonal::vfunc_5).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00433290": {
+    "name": "Unknown::forwardToChildAt154",
+    "class": "Unknown",
+    "signature": "void fn_00433290(void* self, DWORD stackArg)",
+    "summary": "Forwards the call to the child object at +0x154 via sub_0044E160; does nothing when the child is null.",
+    "lifted_path": "lifted/leaf/tiny_430000.cpp"
+  },
   "0x00433B70": {
     "name": "forwardToChildAt114IfPresent",
     "signature": "extern \"C\" void __thiscall fn_00433B70(void* self, int32_t stackArg)",
