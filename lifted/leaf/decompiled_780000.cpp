@@ -411,3 +411,17 @@ void* fn_00789260(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint8_t a4)
     return self;
 }
 } // namespace lift_00789260
+
+// [0x00782BA0]
+namespace lift_00782BA0 {
+// @name sub_00782BA0
+// @summary Maps a selector argument (0, 1, 2) to one of three constant addresses (0x00AAF2BC, 0x00AAF2E4, 0x00AAF2EC); any other value returns 0.
+uint32_t sub_00782BA0(uint32_t selector) {
+    switch (selector) {
+        case 0:  return 0x00AAF2BCu;
+        case 1:  return 0x00AAF2E4u;
+        case 2:  return 0x00AAF2ECu;
+        default: return 0u;
+    }
+}
+} // namespace lift_00782BA0

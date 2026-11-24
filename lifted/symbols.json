@@ -47066,6 +47066,12 @@
     "summary": "Maps a mode selector (0 = \"Relative\", 1 = \"Absolute\") to a static label string; returns nullptr for other values.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00782BA0": {
+    "name": "sub_00782BA0",
+    "signature": "uint32_t sub_00782BA0(uint32_t selector)",
+    "summary": "Maps a selector argument (0, 1, 2) to one of three constant addresses (0x00AAF2BC, 0x00AAF2E4, 0x00AAF2EC); any other value returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00782CB0": {
     "name": "GetRigidName",
     "signature": "const char* fn_00782CB0(DWORD selector)",

@@ -1,0 +1,13 @@
+{
+  "va": "0x00782BA0",
+  "size": 48,
+  "orig_symbol": "sub_00782BA0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "sub_00782BA0",
+  "signature": "uint32_t sub_00782BA0(uint32_t selector)",
+  "summary": "Maps a selector argument (0, 1, 2) to one of three constant addresses (0x00AAF2BC, 0x00AAF2E4, 0x00AAF2EC); any other value returns 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:24:55Z"
+}
