@@ -463,3 +463,32 @@ extern int32_t __thiscall fn_006B4D30(void* self, uint32_t /*unused_arg*/) {
     return 0;
 }
 } // namespace lift_006B4D30
+
+// [0x006B8B20]
+namespace lift_006B8B20 {
+// @name Unknown::setObjectAndValidateWindow
+// @class Unknown
+// @summary Stores the object pointer from *arg1 into field_0x5C, clears it if the object's window handle (+0x20) fails IsWindow, then tail-calls the base handler ext_006A5EA8.
+// @field Unknown +0x5C uint32_t field_0x5C
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t value);
+extern void ext_006A5EA8(uint32_t ecx);
+
+// thiscall (ecx = this), stdcall-style single stack argument (ret 4).
+void fn_006B8B20(uint32_t ecx, uint32_t arg0) {
+    uint32_t obj = mem_read32(arg0);
+    mem_write32(ecx + 0x5c, obj);
+    if (obj != 0) {
+        uint32_t hwnd = mem_read32(obj + 0x20);
+        using IsWindowFn = uint32_t (*)(uint32_t);
+        uint32_t target = mem_read32(0x0092561C);
+        uint32_t ok = reinterpret_cast<IsWindowFn>(static_cast<uintptr_t>(target))(hwnd);
+        if (ok == 0) {
+            mem_write32(ecx + 0x5c, 0u);
+        }
+    }
+    ext_006A5EA8(ecx);
+}
+} // namespace lift_006B8B20
