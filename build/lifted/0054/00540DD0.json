@@ -1,0 +1,46 @@
+{
+  "va": "0x00540DD0",
+  "size": 56,
+  "orig_symbol": "sub_00540DD0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "SetRectAndCallSize",
+  "class": "Unknown",
+  "signature": "void fn_00540DD0(void* self, const int32_t* src)",
+  "summary": "If self's flag at +0x00 is nonzero, copies the 4-dword rect src into self+0x04..+0x10 and calls sub_00548110 with (right-left, bottom-top).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "rectLeft"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "rectTop"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "rectRight"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "rectBottom"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:16:55Z"
+}

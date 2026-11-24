@@ -18282,6 +18282,13 @@
     "summary": "Returns true if the string argument equals any of the 7 const char* entries in the table at mem_00A44BB8.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x00540DD0": {
+    "name": "SetRectAndCallSize",
+    "class": "Unknown",
+    "signature": "void fn_00540DD0(void* self, const int32_t* src)",
+    "summary": "If self's flag at +0x00 is nonzero, copies the 4-dword rect src into self+0x04..+0x10 and calls sub_00548110 with (right-left, bottom-top).",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00540E10": {
     "name": "Unknown::setValueAndNotifyExtent",
     "class": "Unknown",

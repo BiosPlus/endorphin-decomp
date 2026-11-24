@@ -565,3 +565,31 @@ bool __stdcall sub_00540D20(const void* str) {
     return false;
 }
 } // namespace lift_00540D20
+
+// [0x00540DD0] sub_00540DD0 (56 bytes)
+namespace lift_00540DD0 {
+extern void ext_00548110(int32_t width, int32_t height);
+
+// @name SetRectAndCallSize
+// @class Unknown
+// @summary If self's flag at +0x00 is nonzero, copies the 4-dword rect src into self+0x04..+0x10 and calls sub_00548110 with (right-left, bottom-top).
+// @field Unknown +0x00 int32_t field_0x00
+// @field Unknown +0x04 int32_t rectLeft
+// @field Unknown +0x08 int32_t rectTop
+// @field Unknown +0x0C int32_t rectRight
+// @field Unknown +0x10 int32_t rectBottom
+void fn_00540DD0(void* self, const int32_t* src) {
+    if (lift_field<int32_t>(self, 0x00) == 0) {
+        return;
+    }
+
+    lift_field<int32_t>(self, 0x04) = src[0];
+    lift_field<int32_t>(self, 0x08) = src[1];
+    lift_field<int32_t>(self, 0x0C) = src[2];
+    lift_field<int32_t>(self, 0x10) = src[3];
+
+    const int32_t width  = lift_field<int32_t>(self, 0x0C) - lift_field<int32_t>(self, 0x04);
+    const int32_t height = lift_field<int32_t>(self, 0x10) - lift_field<int32_t>(self, 0x08);
+    ext_00548110(width, height);
+}
+} // namespace lift_00540DD0
