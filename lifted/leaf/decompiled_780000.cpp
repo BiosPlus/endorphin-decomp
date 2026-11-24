@@ -917,3 +917,28 @@ int32_t EntryTable_getEntryValue(EntryTable* self, int32_t idx, uint32_t* outKey
     return static_cast<int32_t>(self->entries[idx * 2 + 1]);
 }
 } // namespace lift_00784750
+
+// [0x007847E0]
+namespace lift_007847E0 {
+// @name SortedArray::find
+// @class SortedArray
+// @summary Binary-searches an 8-byte-element sorted array for a matching key, returning the element pointer or null.
+// @field SortedArray +0x00 void* data
+// @field SortedArray +0x04 int32_t count
+
+
+extern uint32_t mem_0092529C;
+extern int __cdecl ext_00784790(const void* a, const void* b);
+
+void* __thiscall sub_007847E0(void* self, uint32_t key_val) {
+    int32_t count = *reinterpret_cast<const int32_t*>(reinterpret_cast<const uint8_t*>(self) + 0x04);
+    if (count <= 0) {
+        return nullptr;
+    }
+
+    uint32_t key[2] = { key_val, 0 };
+    void* base = *reinterpret_cast<void* const*>(self);
+    auto bsearch_fn = reinterpret_cast<void* (__cdecl*)(const void*, const void*, size_t, size_t, int (__cdecl*)(const void*, const void*))>(mem_0092529C);
+    return bsearch_fn(key, base, static_cast<size_t>(count), 8, ext_00784790);
+}
+} // namespace lift_007847E0

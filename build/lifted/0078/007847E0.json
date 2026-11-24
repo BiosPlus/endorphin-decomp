@@ -1,0 +1,28 @@
+{
+  "va": "0x007847E0",
+  "size": 57,
+  "orig_symbol": "sub_007847E0",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "SortedArray::find",
+  "class": "SortedArray",
+  "signature": "void* __thiscall sub_007847E0(void* self, uint32_t key_val)",
+  "summary": "Binary-searches an 8-byte-element sorted array for a matching key, returning the element pointer or null.",
+  "fields": [
+    {
+      "class": "SortedArray",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "data"
+    },
+    {
+      "class": "SortedArray",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "count"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:26:30Z"
+}
