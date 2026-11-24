@@ -129,3 +129,29 @@ void __thiscall fn_00537D00(void* self, uint32_t arg1, uint32_t arg2) {
     embedded_fn(embedded, arg1, arg2);
 }
 } // namespace lift_00537D00
+
+// [0x00537D30]
+namespace lift_00537D30 {
+// @name CompoundRenderable::vfunc_14
+// @class CompoundRenderable
+// @summary Forwards vfunc_14 to field_0x14 if non-null, then to the embedded subobject at +0x18.
+// @field CompoundRenderable +0x14 void* field_0x14
+// @field CompoundRenderable +0x18 void* field_0x18
+
+
+void __thiscall fn_00537D30(void* self, uint32_t arg1, uint32_t arg2) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    void* child = *reinterpret_cast<void**>(base + 0x14);
+    if (child != nullptr) {
+        auto* vtable = *reinterpret_cast<uint32_t**>(child);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*, uint32_t, uint32_t)>(vtable[0x38 / 4]);
+        fn(child, arg1, arg2);
+    }
+
+    void* embedded = base + 0x18;
+    auto* vtable2 = *reinterpret_cast<uint32_t**>(embedded);
+    auto fn2 = reinterpret_cast<void(__thiscall*)(void*, uint32_t, uint32_t)>(vtable2[0x38 / 4]);
+    fn2(embedded, arg1, arg2);
+}
+} // namespace lift_00537D30

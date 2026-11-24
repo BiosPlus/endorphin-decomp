@@ -1,0 +1,28 @@
+{
+  "va": "0x00537D30",
+  "size": 48,
+  "orig_symbol": "CompoundRenderable::vfunc_14",
+  "src_path": "src/classes/CompoundRenderable.cpp",
+  "lifted_path": "lifted/classes/CompoundRenderable.cpp",
+  "name": "CompoundRenderable::vfunc_14",
+  "class": "CompoundRenderable",
+  "signature": "void __thiscall fn_00537D30(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Forwards vfunc_14 to field_0x14 if non-null, then to the embedded subobject at +0x18.",
+  "fields": [
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    },
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:20:42Z"
+}
