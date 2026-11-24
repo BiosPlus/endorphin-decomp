@@ -406,3 +406,21 @@ extern void fn_00644F30(void* self) {
     slot0(embedded, 1);
 }
 } // namespace lift_00644F30
+
+// [0x00648370]
+namespace lift_00648370 {
+// @name sub_00648370
+// @summary Calls ext_0065A8C0 on field_0xa4 and forwards two arguments to ext_00647AE0 on this.
+// @field Unknown +0xa4 uint32_t field_0xa4
+
+
+void __thiscall ext_0065A8C0(void* self);
+uint32_t __thiscall ext_00647AE0(void* self, uint32_t arg1, uint32_t arg2);
+
+uint32_t __thiscall sub_00648370(void* self, uint32_t arg1, uint32_t arg2) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void* field_0xa4 = *reinterpret_cast<void**>(base + 0xa4);
+    ext_0065A8C0(field_0xa4);
+    return ext_00647AE0(self, arg1, arg2);
+}
+} // namespace lift_00648370

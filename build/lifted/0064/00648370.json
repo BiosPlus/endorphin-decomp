@@ -1,0 +1,21 @@
+{
+  "va": "0x00648370",
+  "size": 35,
+  "orig_symbol": "sub_00648370",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "sub_00648370",
+  "signature": "uint32_t __thiscall sub_00648370(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Calls ext_0065A8C0 on field_0xa4 and forwards two arguments to ext_00647AE0 on this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xA4",
+      "type": "uint32_t",
+      "name": "field_0xa4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:58:57Z"
+}

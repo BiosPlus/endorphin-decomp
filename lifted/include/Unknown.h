@@ -331,6 +331,7 @@ struct Unknown_Fields {
     // +0xA0  void*                    field_0xA0  (evidence: 0x005481C0)
     // +0xA4  uint32_t                 field_0xA4  (evidence: 0x006A9340) // CONFLICT: multiple definitions at +0xA4
     // +0xA4  void*                    field_0xA4  (evidence: 0x00647BF0, 0x00647C10, 0x00647C30, 0x00647C50) // CONFLICT: multiple definitions at +0xA4
+    // +0xA4  uint32_t                 field_0xa4  (evidence: 0x00648370) // CONFLICT: multiple definitions at +0xA4
     // +0xA4  ptr field_0xA4 (pointer to sub-object; owner class not identified)  (evidence: 0x00547CE0) // CONFLICT: multiple definitions at +0xA4
     // +0xA8  int32                    field_0xA8  (evidence: 0x00687230) // CONFLICT: multiple definitions at +0xA8
     // +0xA8  void*                    field_0xa8  (evidence: 0x007C2E50, 0x007C9480) // CONFLICT: multiple definitions at +0xA8

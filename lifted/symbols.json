@@ -26120,6 +26120,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00648370": {
+    "name": "sub_00648370",
+    "signature": "uint32_t __thiscall sub_00648370(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Calls ext_0065A8C0 on field_0xa4 and forwards two arguments to ext_00647AE0 on this.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00648400": {
     "name": "resetStateBytesAndField58",
     "class": "\u003cClassName\u003e (optional)",
@@ -27641,6 +27647,12 @@
     "signature": "extern \"C\" void __fastcall fn_00661AD0(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0x4 and tail-calls sub_0065D300.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
+  },
+  "0x006629B0": {
+    "name": "fileExists",
+    "signature": "uint32_t __cdecl sub_006629B0(uint32_t path_str)",
+    "summary": "Checks whether a file exists by calling _stat64i32 on std::string::c_str()",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
   "0x006629E0": {
     "name": "thunk_MSVCR80_remove",
