@@ -23348,6 +23348,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0041B3B0 (callGlobalThunk00430D40).",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00642660": {
+    "name": "Unknown::ForwardToSubobjectField0xC",
+    "class": "Unknown",
+    "signature": "void fn_00642660(void* self, uint32_t arg0)",
+    "summary": "Forwards its one stack argument to the subobject at +0x0C via ext_00648860, then sets the byte flag at +0x10 to 1.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00642680": {
     "name": "sub_00642680",
     "signature": "extern \"C\" void __fastcall fn_00642680(void* self)",

@@ -273,3 +273,20 @@ extern uint32_t __thiscall fn_0064DC80(void* self, float arg) {
     return ext_007C5A90(value, arg);
 }
 } // namespace lift_0064DC80
+
+// [0x00642660] sub_00642660 (24 bytes)
+namespace lift_00642660 {
+// Callee sub_00642660 is at 0x00648860: receives the subobject in ecx and one stack argument.
+extern void ext_00648860(void* subobject, uint32_t arg);
+
+// @name Unknown::ForwardToSubobjectField0xC
+// @class Unknown
+// @summary Forwards its one stack argument to the subobject at +0x0C via ext_00648860, then sets the byte flag at +0x10 to 1.
+// @field Unknown +0x0C void* field_0x0C
+// @field Unknown +0x10 uint8_t field_0x10
+void fn_00642660(void* self, uint32_t arg0) {
+    void* subobject = lift_field<void*>(self, 0x0C);
+    ext_00648860(subobject, arg0);
+    lift_field<uint8_t>(self, 0x10) = 1;
+}
+} // namespace lift_00642660
