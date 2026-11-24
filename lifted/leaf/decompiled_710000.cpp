@@ -416,3 +416,18 @@ void* fn_0071B050(void* self, void* arg) {
 }
 } // namespace lift_0071B020
 } // namespace lift_0071B050
+
+// [0x00711A60] sub_00711A60 (16 bytes)
+namespace lift_00711A60 {
+// Known callee 0x00711A20: Unknown::CompareArgWithSubObjectField (Returns 1 if the stack argument differs from the first DWORD of the subobject at self+0x40, else 0.)
+extern uint8_t ext_00711A20(void* self, uint32_t arg);
+
+// @name Unknown::CompareOneWithSubObjectField
+// @class Unknown
+// @summary Forwards the constant 1 to CompareArgWithSubObjectField and returns its result.
+uint8_t fn_00711A60(void* self) {
+    // push 1; call 0x00711A20; ret  -- callee cleans its stack argument (thiscall),
+    // so the caller's stack is unchanged and AL carries the callee's result.
+    return ext_00711A20(self, 1u);
+}
+} // namespace lift_00711A60
