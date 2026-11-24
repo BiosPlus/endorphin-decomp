@@ -279,3 +279,24 @@ float fn_0070BFD0(void* self) {
     return ext_006C9F70(lift_reg_to_ptr(second));
 }
 } // namespace lift_0070BFD0
+
+// [0x0070BE80] sub_0070BE80 (32 bytes)
+namespace lift_0070BE80 {
+// Known callee 0x006DC460: Unknown::GetValueIfCountPositive (Returns *(this->field_0xC8) when this->field_0xB8 > 0, otherwise 0.)
+extern int32_t ext_006DC460(void* self);
+// Unlifted callee 0x006C98D0 (15 bytes): takes self in ecx, returns a 32-bit value in eax.
+extern uint32_t ext_006C98D0(void* self);
+// Known callee 0x006C9F70: sub_006C9F70 (Getter returning float field at offset +0x14.)
+extern float ext_006C9F70(void* self);
+
+// @name Unknown::GetFloatAtChainedValue
+// @class Unknown
+// @summary Chains GetValueIfCountPositive -> sub_006C98D0 and tail-returns the float getter sub_006C9F70 applied to the final value.
+float fn_0070BE80(void* self) {
+    const int32_t first = ext_006DC460(self);
+    const uint32_t second = ext_006C98D0(
+        reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(first))));
+    return ext_006C9F70(
+        reinterpret_cast<void*>(static_cast<uintptr_t>(second)));
+}
+} // namespace lift_0070BE80

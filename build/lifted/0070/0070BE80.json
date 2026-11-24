@@ -1,0 +1,14 @@
+{
+  "va": "0x0070BE80",
+  "size": 32,
+  "orig_symbol": "sub_0070BE80",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::GetFloatAtChainedValue",
+  "class": "Unknown",
+  "signature": "float fn_0070BE80(void* self)",
+  "summary": "Chains GetValueIfCountPositive -\u003e sub_006C98D0 and tail-returns the float getter sub_006C9F70 applied to the final value.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:38:42Z"
+}
