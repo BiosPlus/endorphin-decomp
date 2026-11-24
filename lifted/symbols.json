@@ -43888,6 +43888,13 @@
     "summary": "If the inner handle's open flag (+0x04) is set, clear it and fclose the FILE* at inner+0x00.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00783440": {
+    "name": "readLineFromHolderStream",
+    "class": "Unknown",
+    "signature": "char* fn_00783440(void* self, char* buf, int n)",
+    "summary": "Reads a line into buf from the FILE* held by the holder object; returns buf, or NULL when the holder's flag byte is zero.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x007835F0": {
     "name": "sub_007835F0",
     "signature": "uint8_t __fastcall sub_007835F0(uint32_t ecx)",

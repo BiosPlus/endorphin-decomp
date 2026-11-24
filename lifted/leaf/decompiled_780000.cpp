@@ -281,3 +281,22 @@ DWORD fn_0078BEC0(void* self) {
     return *reinterpret_cast<DWORD*>(bytes + 0x1c);
 }
 } // namespace lift_0078BEC0
+
+// [0x00783440] sub_00783440 (40 bytes)
+namespace lift_00783440 {
+// @name readLineFromHolderStream
+// @class Unknown
+// @summary Reads a line into buf from the FILE* held by the holder object; returns buf, or NULL when the holder's flag byte is zero.
+// @field Unknown +0x04 void* field_0x04 (pointer to holder object)
+// @field Holder +0x00 FILE* field_0x00 (stream handle passed to fgets)
+// @field Holder +0x04 uint8_t field_0x04 (enabled flag; zero means no read)
+char* fn_00783440(void* self, char* buf, int n) {
+    auto* base = static_cast<unsigned char*>(self);
+    auto* holder = *reinterpret_cast<unsigned char**>(base + 0x04);
+    if (holder[0x04] == 0) {
+        return nullptr;
+    }
+    FILE* stream = *reinterpret_cast<FILE**>(holder + 0x00);
+    return std::fgets(buf, n, stream);
+}
+} // namespace lift_00783440
