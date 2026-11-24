@@ -3497,6 +3497,13 @@
     "summary": "Saves the incoming this pointer, runs MFC80 ord_501 on a 0x54-byte stack temp, then MFC80 ord_709 on the saved pointer slot.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x00455F40": {
+    "name": "Unknown::returnTrueIfNeitherCheckMatches_00455F40",
+    "class": "Unknown",
+    "signature": "extern \"C\" int __fastcall sub_00455F40(void* self)",
+    "summary": "Returns 1 only if both ext_00455CB0 and ext_004090C0 return 0 for self; otherwise returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00456CC0": {
     "name": "CSizingControlBar::vfunc_1",
     "class": "CSizingControlBar",

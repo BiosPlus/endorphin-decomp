@@ -135,3 +135,24 @@ void fn_00455280(void* self) {
 }
 } // namespace lift_0041CCA0
 } // namespace lift_00455280
+
+// [0x00455F40]
+namespace lift_00455F40 {
+// @name Unknown::returnTrueIfNeitherCheckMatches_00455F40
+// @class Unknown
+// @summary Returns 1 only if both ext_00455CB0 and ext_004090C0 return 0 for self; otherwise returns 0.
+// @field Unknown +0xF4 int field_0xF4 (read indirectly via callees; not accessed directly here)
+
+extern int __fastcall ext_00455CB0(void* self);
+extern int __fastcall ext_004090C0(void* self);
+
+extern int __fastcall sub_00455F40(void* self) {
+    if (ext_00455CB0(self) != 0) {
+        return 0;
+    }
+    if (ext_004090C0(self) != 0) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_00455F40
