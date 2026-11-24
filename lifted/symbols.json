@@ -46358,6 +46358,13 @@
     "summary": "Returns zero in the low 16 bits of the result register (xor ax, ax; ret).",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007DAD70": {
+    "name": "Unknown::forwardSlot3Field0xB0Passthrough",
+    "class": "Unknown",
+    "signature": "uint32_t fn_007DAD70(uint32_t self_ptr)",
+    "summary": "Reads the object's vtable slot 3, takes the pointer stored there, reads its +0xB0 dword, and tail-forwards it with a constant to ext_007D5950.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DADA0": {
     "name": "Unknown::forwardToInnerWithConstant",
     "class": "Unknown",

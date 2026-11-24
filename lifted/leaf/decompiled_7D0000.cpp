@@ -202,3 +202,24 @@ void fn_007DEC80(void* eax, void* ecx, uint16_t dx, float f) {
     lift_field<uint32_t>(out, 0x0C) = lift_field<uint32_t>(src, 0x04);
 }
 } // namespace lift_007DEC80
+
+// [0x007DAD70]
+namespace lift_007DAD70 {
+// Memory and external helpers used by this lift (32-bit guest address space).
+extern uint32_t mem_read_u32(uint32_t addr);
+extern uint32_t ext_007D5950(uint32_t a1, uint32_t a2, uint32_t a3);
+
+// @name Unknown::forwardSlot3Field0xB0Passthrough
+// @class Unknown
+// @summary Reads the object's vtable slot 3, takes the pointer stored there, reads its +0xB0 dword, and tail-forwards it with a constant to ext_007D5950.
+// @field Unknown +0x00 uint32_t vtable (object's vtable pointer)
+// @field Unknown +0x0c uint32_t slot3 (vtable entry 3, read as a pointer)
+// @field Unknown +0xb0 uint32_t field_0xb0 (dword inside the object referenced by slot3)
+uint32_t fn_007DAD70(uint32_t self_ptr) {
+    uint32_t vtable = mem_read_u32(self_ptr + 0x00);
+    uint32_t slot3  = mem_read_u32(vtable + 0x0c);
+    uint32_t value  = mem_read_u32(slot3 + 0xb0);
+    // Original: push 0x99e1e0 / push value / push 0 ; jmp sub_007D5950 (tail call)
+    return ext_007D5950(0u, value, 0x0099E1E0u);
+}
+} // namespace lift_007DAD70

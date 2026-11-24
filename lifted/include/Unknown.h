@@ -47,6 +47,7 @@ struct Unknown_Fields {
     // +0x0   double[] array (base pointer in ecx; element i at byte offset 8*i, dynamic index so no fixed offset)  (evidence: 0x006D2400) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD field_0x00 (first dword; compared for equality against other)  (evidence: 0x00414880, 0x0041A070) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 owner  (evidence: 0x0066BA00) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t vtable (object's vtable pointer)  (evidence: 0x007DAD70) // CONFLICT: multiple definitions at +0x0
     // +0x0   void** vtable (sub-object's vtable pointer)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD                    ptrAt00  (evidence: 0x00859E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 ptrToSrcPlus8  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0x0
@@ -170,6 +171,7 @@ struct Unknown_Fields {
     // +0xC   uint32_t                 field_0x0c  (evidence: 0x004A5A50, 0x006B0C40, 0x00783790, 0x00783800, 0x00790D60, 0x0079ADA0, 0x0079DCE0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0x0c  (evidence: 0x005B2130, 0x005B7040, 0x0071C740, 0x0071C8D0, 0x0071C970) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0xc  (evidence: 0x007D4B20, 0x007D8470) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t slot3 (vtable entry 3, read as a pointer)  (evidence: 0x007DAD70) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0c (address taken only; no type information recovered)  (evidence: 0x00440770) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 srcField4  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0C (sub-object that receives the value via vfunc_8)  (evidence: 0x005853E0) // CONFLICT: multiple definitions at +0xC
@@ -370,6 +372,7 @@ struct Unknown_Fields {
     // +0xAC  uint32_t field_0xac (read from the sub-object at self+0x158, not from self)  (evidence: 0x005B6FE0, 0x005B7040) // CONFLICT: multiple definitions at +0xAC
     // +0xB0  uint32_t                 field_0xB0  (evidence: 0x007C58E0, 0x007D8470, 0x007D8710, 0x007DADA0, 0x007DEC80) // CONFLICT: multiple definitions at +0xB0
     // +0xB0  uint8                    field_0xB0  (evidence: 0x00687230) // CONFLICT: multiple definitions at +0xB0
+    // +0xB0  uint32_t field_0xb0 (dword inside the object referenced by slot3)  (evidence: 0x007DAD70) // CONFLICT: multiple definitions at +0xB0
     // +0xB4  float                    field_0xB4  (evidence: 0x00630510) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  int32_t                  field_0xB4  (evidence: 0x00464780, 0x004647A0, 0x0046F7D0) // CONFLICT: multiple definitions at +0xB4
     // +0xB4  void*                    field_0xB4  (evidence: 0x0053F6A0) // CONFLICT: multiple definitions at +0xB4
