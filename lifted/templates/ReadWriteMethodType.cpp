@@ -8655,3 +8655,63 @@ void __thiscall fn_0046F0D0(void* /*self*/, void* out) {
     *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(out) + 4) = mem_00AD833C;
 }
 } // namespace lift_0046F0D0
+
+// [0x0046EAA0]
+namespace lift_0046EAA0 {
+// @name ExprParser::ReadWriteMethodType<ImageExporter, int, getEndFrame, int, setEndFrame>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, getEndFrame, int, setEndFrame>
+// @summary Initializes a static type descriptor if needed and assigns it to arg0+0x4.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+
+
+extern uint32_t mem_00AD8330;
+extern uint32_t mem_00AD832C;
+extern void __thiscall ext_0067A670(void* self);
+
+void __thiscall fn_0046EAA0(void* self, uint32_t arg0) {
+    (void)self;
+    if ((mem_00AD8330 & 1u) == 0) {
+        mem_00AD8330 |= 1u;
+        ext_0067A670(&mem_00AD832C);
+        mem_00AD832C = 0x0093AFC4u;
+    }
+    *(uint32_t*)((uintptr_t)arg0 + 0x4) = (uint32_t)(uintptr_t)&mem_00AD832C;
+}
+} // namespace lift_0046EAA0
+
+// [0x004A2790] ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, bool, ...drawVariables, bool, ...setDrawVariables>::vfunc_40 (122 bytes)
+namespace lift_004A2790 {
+// Originally: MSVC EH frame push/pop around a function-local static initializer.
+// The frame bookkeeping (fs:[0] push/pop, EH state -1) has no portable equivalent and is omitted.
+
+// Callee 0x0067A670: constructor of the function-local static accessor object (thiscall, object in ecx, one stack arg 0).
+extern void ext_0067A670();
+
+// Init-guard byte/dword at 0x00ADE0D8 (bit 0 = "accessor constructed").
+extern unsigned char mem_00ADE0D8;
+// Storage of the static accessor object at 0x00ADE0D4; its first dword is the vtable pointer 0x00940834.
+extern unsigned char mem_00ADE0D4[8];
+
+namespace lift_004A2790 {
+constexpr std::uintptr_t kAccessorVtable = 0x00940834;
+
+// @name ExprParser::ReadWriteMethodType<FSMEditView>::vfunc_40 (FSMEditView drawVariables accessor binding)
+// @class ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawVariables(bool), 0}>
+// @summary Lazily constructs the static drawVariables accessor object once, then stores a pointer to it into the output slot's +0x04 field.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_004A2790(void* out) {
+    std::uint32_t& guard = *reinterpret_cast<std::uint32_t*>(&mem_00ADE0D8);
+
+    if ((guard & 1u) == 0) {
+        // First call: mark constructed, run the static object's constructor, then install its vtable.
+        guard |= 1u;
+        ext_0067A670();
+        *reinterpret_cast<std::uintptr_t*>(mem_00ADE0D4) = kAccessorVtable;
+    }
+
+    // out +0x04 = address of the static accessor object.
+    *reinterpret_cast<void**>(static_cast<std::uint8_t*>(out) + 0x04) =
+        static_cast<void*>(mem_00ADE0D4);
+}
+} // namespace lift_004A2790
+} // namespace lift_004A2790
