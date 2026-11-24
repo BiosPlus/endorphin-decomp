@@ -1037,6 +1037,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x00412E20": {
+    "name": "VectorFirstElementOrZero",
+    "class": "Unknown",
+    "signature": "uint32_t fn_00412E20(void* self)",
+    "summary": "Returns the first 32-bit element of the owner's [begin,end) array, or 0 if empty.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x004136E0": {
     "name": "MultiTrackView::CompositeMarkerTrack::vfunc_0",
     "class": "MultiTrackView::CompositeMarkerTrack",

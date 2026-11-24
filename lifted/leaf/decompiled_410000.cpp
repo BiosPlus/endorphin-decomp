@@ -815,3 +815,45 @@ void* fn_0041CDE0(const void* first, const void* last, void* dest) {
     return out;
 }
 } // namespace lift_0041CDE0
+
+// [0x00412E20] sub_00412E20 (57 bytes)
+namespace lift_00412E20 {
+// Imported CRT handler called via the pointer at 0x00925134 (_invalid_parameter_noinfo).
+extern void ext_invalid_parameter_noinfo(void);
+
+// @name VectorFirstElementOrZero
+// @class Unknown
+// @summary Returns the first 32-bit element of the owner's [begin,end) array, or 0 if empty.
+// @field Unknown +0x08 uint32_t begin
+// @field Unknown +0x0C uint32_t end
+uint32_t fn_00412E20(void* self) {
+    const auto* owner = static_cast<const unsigned char*>(self);
+
+    // Raw 32-bit slots: begin at +0x08, end at +0x0C.
+    uint32_t begin = 0;
+    uint32_t end = 0;
+    std::memcpy(&begin, owner + 0x08, sizeof(begin));
+    std::memcpy(&end, owner + 0x0C, sizeof(end));
+
+    if (begin == 0) {
+        return 0;
+    }
+
+    // Element count is (end - begin) >> 2; an empty array returns 0.
+    if (static_cast<int32_t>(end - begin) >> 2 == 0) {
+        return 0;
+    }
+
+    // Validity checks mirror the original: a failed check invokes the CRT
+    // handler and then continues (the handler is expected to return here).
+    if (begin > end) {
+        ext_invalid_parameter_noinfo();
+    }
+    if (begin >= end) {
+        ext_invalid_parameter_noinfo();
+    }
+
+    const auto* first = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(begin));
+    return *first;
+}
+} // namespace lift_00412E20
