@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/leaf/tiny_7D0000.cpp
 #include "lift_compat.h"
 extern "C" int mem_0099E074;
+#include <cstdint>
 
 // [0x007DAD40] sub_007DAD40 (4 bytes)
 // @name ReturnZeroWord
@@ -299,3 +300,21 @@ int sub_007D4B10(int /*unused*/, void* obj) {
     return fn(0x18);
 }
 } // namespace lift_007D4B10
+
+// [0x007DA8D0]
+namespace lift_007DA8D0 {
+// @name ZeroThreeDwords
+// @class Unknown
+// @summary Zeroes the dword at offsets +0x00, +0x04 and +0x08 of the object pointed to by the first argument.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+
+
+void ZeroThreeDwords(void* self) {
+    auto* base = static_cast<std::uint8_t*>(self);
+    *reinterpret_cast<std::uint32_t*>(base + 0x04) = 0;
+    *reinterpret_cast<std::uint32_t*>(base + 0x08) = 0;
+    *reinterpret_cast<std::uint32_t*>(base + 0x00) = 0;
+}
+} // namespace lift_007DA8D0

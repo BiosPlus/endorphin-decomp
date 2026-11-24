@@ -37095,6 +37095,13 @@
     "summary": "Single-argument forwarding wrapper; passes its one stack argument to sub_007D8420 and returns that result unchanged.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007DA8D0": {
+    "name": "ZeroThreeDwords",
+    "class": "Unknown",
+    "signature": "void ZeroThreeDwords(void* self)",
+    "summary": "Zeroes the dword at offsets +0x00, +0x04 and +0x08 of the object pointed to by the first argument.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007DAD40": {
     "name": "ReturnZeroWord",
     "signature": "uint16_t ReturnZeroWord()",
