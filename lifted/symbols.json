@@ -16057,6 +16057,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x005245D0": {
+    "name": "DoubleVector::operator[]",
+    "class": "DoubleVector",
+    "signature": "double __thiscall sub_005245D0(void* self, uint32_t index)",
+    "summary": "Bounds-checked subscript access on a std::vector\u003cdouble\u003e-like container",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00524DA0": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::VariableValue, float, \u0026public: float __thiscall NMData::VariableValue::getInitialValue(void) const, float, \u0026public: void __thiscall NMData::VariableValue::setInitialValue(float)\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::VariableValue, float, \u0026public: float __thiscall NMData::VariableValue::getInitialValue(void) const, float, \u0026public: void __thiscall NMData::VariableValue::setInitialValue(float)\u003e",
