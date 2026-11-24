@@ -38495,6 +38495,12 @@
     "summary": "Getter returning int32_t field at offset +0x158.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C3040": {
+    "name": "getValidatedChild0x158",
+    "signature": "uint32_t sub_006C3040(uint32_t self)",
+    "summary": "Returns the child object at +0x158 if non-null and its vtable[0]() returns 1, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C33F0": {
     "name": "Unknown::setTableEntryByte",
     "class": "Unknown",
