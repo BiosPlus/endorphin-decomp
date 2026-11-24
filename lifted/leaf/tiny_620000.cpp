@@ -112,3 +112,19 @@ void* fn_00624CF0(void* a) {
 }
 } // namespace lift_005AC820
 } // namespace lift_00624CF0
+
+// [0x00624E80] sub_00624E80 (28 bytes)
+namespace lift_00624E80 {
+// @name UnsignedOrderedPair_store
+// @summary Writes the unsigned min of (a, b) to out[0] and the unsigned max to out[1].
+// (no class: free function, cdecl; out pointer is the first argument)
+void fn_00624E80(uint32_t* out, uint32_t a, uint32_t b) {
+    if (a < b) {
+        out[0] = a;
+        out[1] = b;
+    } else {
+        out[0] = b;
+        out[1] = a;
+    }
+}
+} // namespace lift_00624E80

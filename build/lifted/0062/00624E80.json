@@ -1,0 +1,13 @@
+{
+  "va": "0x00624E80",
+  "size": 28,
+  "orig_symbol": "sub_00624E80",
+  "src_path": "src/leaf/tiny_620000.cpp",
+  "lifted_path": "lifted/leaf/tiny_620000.cpp",
+  "name": "UnsignedOrderedPair_store",
+  "signature": "void fn_00624E80(uint32_t* out, uint32_t a, uint32_t b)",
+  "summary": "Writes the unsigned min of (a, b) to out[0] and the unsigned max to out[1].",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:09:14Z"
+}

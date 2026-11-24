@@ -22841,6 +22841,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
+  "0x00624E80": {
+    "name": "UnsignedOrderedPair_store",
+    "signature": "void fn_00624E80(uint32_t* out, uint32_t a, uint32_t b)",
+    "summary": "Writes the unsigned min of (a, b) to out[0] and the unsigned max to out[1].",
+    "lifted_path": "lifted/leaf/tiny_620000.cpp"
+  },
   "0x00625060": {
     "name": "ExprParser::ReadMethodType\u003cSensorIsCollidingWith\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e",
