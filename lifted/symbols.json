@@ -30742,6 +30742,12 @@
     "summary": "Virtual dispatch thunk: loads the vtable pointer from the receiver and returns the code address stored at vtable byte offset 0x44 (slot 17 on x86). The original tail-jumps to that address; this lift returns it so the caller can perform the call.",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
+  "0x0062A590": {
+    "name": "getAverageValue",
+    "signature": "float __thiscall sub_0062A590(uint32_t self)",
+    "summary": "Computes the vtable[0x44] float value divided by the 4-byte element count at +0x34..+0x38.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x0062A750": {
     "name": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, int, \u0026Sensors::SensorIntegral::resize\u003e::vfunc_40",
     "class": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, int, \u0026Sensors::SensorIntegral::resize\u003e",
@@ -43792,6 +43798,12 @@
     "summary": "Returns the pointer-sized word at vtable offset 0x24 (slot 9) of the object's vtable.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006BB9B0": {
+    "name": "initHugeVectorGlobals",
+    "signature": "void sub_006BB9B0(void)",
+    "summary": "Initializes three 64-bit global values from MSVCR80.dll!_HUGE.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BBA00": {
     "name": "sub_006BBA00",
     "signature": "void fn_006BBA00(void)",
@@ -43883,6 +43895,12 @@
     "class": "Unknown",
     "signature": "BOOL fn_006BDAF0(void* self)",
     "summary": "Returns TRUE if the object's linked pointer at +0x04 is non-null and its first dword equals the object's own first dword at +0x00.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
+  "0x006BE950": {
+    "name": "initHugeBounds",
+    "signature": "void sub_006BE950()",
+    "summary": "Initializes three 64-bit globals with the double value from MSVCR80.dll!_HUGE",
     "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
   "0x006BEC70": {

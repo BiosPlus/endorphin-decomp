@@ -1,0 +1,13 @@
+{
+  "va": "0x006BE950",
+  "size": 57,
+  "orig_symbol": "sub_006BE950",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "initHugeBounds",
+  "signature": "void sub_006BE950()",
+  "summary": "Initializes three 64-bit globals with the double value from MSVCR80.dll!_HUGE",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:20:37Z"
+}

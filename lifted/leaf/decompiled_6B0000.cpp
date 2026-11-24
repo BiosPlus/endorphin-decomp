@@ -741,3 +741,55 @@ uint32_t __thiscall fn_006B2230(uint32_t self, uint32_t arg0, uint8_t arg1, uint
     return self;
 }
 } // namespace lift_006B2230
+
+// [0x006BE950]
+namespace lift_006BE950 {
+// @name initHugeBounds
+// @summary Initializes three 64-bit globals with the double value from MSVCR80.dll!_HUGE
+
+
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5D470;
+extern uint32_t mem_00B5D474;
+extern uint32_t mem_00B5D478;
+extern uint32_t mem_00B5D47C;
+extern uint32_t mem_00B5D480;
+extern uint32_t mem_00B5D484;
+
+void sub_006BE950() {
+    const uint32_t* huge_ptr = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    uint32_t lo = huge_ptr[0];
+    uint32_t hi = huge_ptr[1];
+    mem_00B5D470 = lo;
+    mem_00B5D474 = hi;
+    mem_00B5D478 = lo;
+    mem_00B5D47C = hi;
+    mem_00B5D480 = lo;
+    mem_00B5D484 = hi;
+}
+} // namespace lift_006BE950
+
+// [0x006BB9B0]
+namespace lift_006BB9B0 {
+// @name initHugeVectorGlobals
+// @summary Initializes three 64-bit global values from MSVCR80.dll!_HUGE.
+
+
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5D2D8;
+extern uint32_t mem_00B5D2DC;
+extern uint32_t mem_00B5D2E0;
+extern uint32_t mem_00B5D2E4;
+extern uint32_t mem_00B5D2E8;
+extern uint32_t mem_00B5D2EC;
+
+void sub_006BB9B0(void) {
+    uint32_t* huge_ptr = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B5D2D8 = huge_ptr[0];
+    mem_00B5D2DC = huge_ptr[1];
+    mem_00B5D2E0 = huge_ptr[0];
+    mem_00B5D2E4 = huge_ptr[1];
+    mem_00B5D2E8 = huge_ptr[0];
+    mem_00B5D2EC = huge_ptr[1];
+}
+} // namespace lift_006BB9B0
