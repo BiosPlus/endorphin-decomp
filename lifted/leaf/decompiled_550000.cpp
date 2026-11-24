@@ -308,3 +308,27 @@ void* __thiscall sub_00553980(void* self) {
     return self;
 }
 } // namespace lift_00553980
+
+// [0x00556610]
+namespace lift_00556610 {
+extern uint32_t mem_00925124;
+
+// @name std::vector<char>::_Tidy
+// @class std::vector<char>
+// @summary Deallocates the vector buffer if non-null and resets begin, end, and capacity pointers to zero.
+// @field std::vector<char> +0x04 uint32_t _Myfirst
+// @field std::vector<char> +0x08 uint32_t _Mylast
+// @field std::vector<char> +0x0c uint32_t _Myend
+void __thiscall sub_00556610(void* self) {
+    uint32_t first = *(uint32_t*)((uint8_t*)self + 0x4);
+    if (first != 0) {
+        uint32_t end = *(uint32_t*)((uint8_t*)self + 0xc);
+        uint32_t count = end - first;
+        using DeallocateFn = void(__thiscall*)(void*, uint32_t, uint32_t);
+        ((DeallocateFn)(uintptr_t)mem_00925124)(self, first, count);
+    }
+    *(uint32_t*)((uint8_t*)self + 0x4) = 0;
+    *(uint32_t*)((uint8_t*)self + 0x8) = 0;
+    *(uint32_t*)((uint8_t*)self + 0xc) = 0;
+}
+} // namespace lift_00556610
