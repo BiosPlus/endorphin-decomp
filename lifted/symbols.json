@@ -27403,6 +27403,12 @@
     "summary": "Returns 1 if the std::string path is relative (PathIsRelativeA == TRUE), else 0.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x00662F80": {
+    "name": "showInfoMessageBox",
+    "signature": "void showInfoMessageBox(const std::string* caption, const std::string* text)",
+    "summary": "Shows an information message box: arg1 is the caption, arg2 is the message text, no owner window.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x006633A0": {
     "name": "sub_006633A0",
     "signature": "extern \"C\" void fn_006633A0(void)",

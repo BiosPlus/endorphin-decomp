@@ -89,3 +89,24 @@ void* fn_00661860(void* self, void* arg1, void* arg2) {
     return arg1;
 }
 } // namespace lift_00661860
+
+// [0x00662F80]
+namespace lift_00662F80 {
+// @name showInfoMessageBox
+// @summary Shows an information message box: arg1 is the caption, arg2 is the message text, no owner window.
+// (free function, no @class)
+
+// MSVCP80 std::string::c_str (thiscall import thunk at mem_00924FF0)
+// USER32!MessageBoxA (import thunk at mem_009255E0)
+extern int __stdcall ext_MessageBoxA(void* hWnd, const char* lpText, const char* lpCaption, unsigned int uType);
+
+namespace {
+constexpr unsigned int kMbIconInformation = 0x40u;
+}
+
+void showInfoMessageBox(const std::string* caption, const std::string* text) {
+    const char* captionCStr = caption->c_str();
+    const char* textCStr = text->c_str();
+    ext_MessageBoxA(nullptr, textCStr, captionCStr, kMbIconInformation);
+}
+} // namespace lift_00662F80

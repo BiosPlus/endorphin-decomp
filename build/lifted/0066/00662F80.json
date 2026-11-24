@@ -1,0 +1,13 @@
+{
+  "va": "0x00662F80",
+  "size": 33,
+  "orig_symbol": "sub_00662F80",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "showInfoMessageBox",
+  "signature": "void showInfoMessageBox(const std::string* caption, const std::string* text)",
+  "summary": "Shows an information message box: arg1 is the caption, arg2 is the message text, no owner window.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:53:35Z"
+}
