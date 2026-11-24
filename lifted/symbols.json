@@ -10718,6 +10718,13 @@
     "summary": "Forwards to virtual slot 24 (vtable +0x60) with arguments (a, 3, b, 1) and returns its result.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004E7E90": {
+    "name": "Unknown::initDefaults",
+    "class": "Unknown",
+    "signature": "void fn_004E7E90(void* self)",
+    "summary": "Zeroes the state words at +0x04..+0x10 and the flag byte at +0x1C, then sets +0x14 to 1 and +0x18 to 2.",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004E81C0": {
     "name": "sub_004E81C0",
     "signature": "extern \"C\" void fn_004E81C0(void)",
