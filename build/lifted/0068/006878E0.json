@@ -1,0 +1,33 @@
+{
+  "va": "0x006878E0",
+  "size": 55,
+  "orig_symbol": "sub_006878E0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "fn_006878E0 (fill range with copies of one record)",
+  "signature": "void fn_006878E0(void* dst, void* end, const void* src)",
+  "summary": "Copy-assigns one 36-byte record (u32, u8, string) from src into every slot of [dst, end).",
+  "fields": [
+    {
+      "class": "Record36",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "value"
+    },
+    {
+      "class": "Record36",
+      "offset": "+0x4",
+      "type": "BYTE",
+      "name": "flag"
+    },
+    {
+      "class": "Record36",
+      "offset": "+0x8",
+      "type": "std_string",
+      "name": "str"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:14:19Z"
+}

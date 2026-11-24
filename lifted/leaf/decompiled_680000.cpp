@@ -431,3 +431,30 @@ uint32_t __stdcall fn_006813D0(uint32_t dst, uint32_t count, uint32_t src) {
 }
 } // namespace lift_00481DE0
 } // namespace lift_006813D0
+
+// [0x006878E0]
+namespace lift_006878E0 {
+// @name fn_006878E0 (fill range with copies of one record)
+// @summary Copy-assigns one 36-byte record (u32, u8, string) from src into every slot of [dst, end).
+// @field Record36 +0x00 DWORD value
+// @field Record36 +0x04 BYTE flag
+// @field Record36 +0x08 std_string str
+
+// MSVCP80 std::basic_string<char>::operator=(const basic_string&), thiscall.
+// Resolved through the IAT slot mem_00924FDC (.rdata value 0x006291BE).
+extern const DWORD mem_00924FDC;
+void* ext_std_string_assign(void* self, const void* rhs);
+
+void fn_006878E0(void* dst, void* end, const void* src) {
+    if (dst == end) {
+        return;
+    }
+    do {
+        lift_field<DWORD>(dst, 0x00) = lift_field<DWORD>(src, 0x00);
+        lift_field<BYTE>(dst, 0x04) = lift_field<BYTE>(src, 0x04);
+        ext_std_string_assign(static_cast<uint8_t*>(dst) + 0x08,
+                              static_cast<const uint8_t*>(src) + 0x08);
+        dst = static_cast<uint8_t*>(dst) + 0x24;
+    } while (dst != end);
+}
+} // namespace lift_006878E0

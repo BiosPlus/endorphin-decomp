@@ -36438,6 +36438,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0040A910 (sub_00407830).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x006878E0": {
+    "name": "fn_006878E0 (fill range with copies of one record)",
+    "signature": "void fn_006878E0(void* dst, void* end, const void* src)",
+    "summary": "Copy-assigns one 36-byte record (u32, u8, string) from src into every slot of [dst, end).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00688AF0": {
     "name": "sub_00688AF0",
     "signature": "DWORD* __thiscall fn_00688AF0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
