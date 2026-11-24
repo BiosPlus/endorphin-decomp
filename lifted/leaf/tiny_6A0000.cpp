@@ -410,3 +410,25 @@ uint32_t fn_006A7AE0(void* self, uint32_t arg, uint32_t unused) {
     return static_cast<uint32_t>(fn(self, arg));
 }
 } // namespace lift_006A7AE0
+
+// [0x006A95C0] sub_006A95C0 (22 bytes)
+namespace lift_006A95C0 {
+// IAT slot for USER32!LockWindowUpdate (called indirectly through this slot).
+extern uint32_t mem_00925584;
+
+// @name SubObject::SetWindowUpdateLocked
+// @class SubObject
+// @summary Locks or unlocks redraw of this object's window via LockWindowUpdate and sets the locked flag at +0x198.
+// @field SubObject +0x20 HWND hwnd
+// @field SubObject +0x198 BYTE windowUpdateLocked
+void fn_006A95C0(void* self) {
+    using LockWindowUpdateFn = BOOL(__stdcall*)(HWND);
+
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+    auto lockWindowUpdate = reinterpret_cast<LockWindowUpdateFn>(
+        static_cast<uintptr_t>(mem_00925584));
+    lockWindowUpdate(hwnd);
+
+    lift_field<BYTE>(self, 0x198) = 1;
+}
+} // namespace lift_006A95C0

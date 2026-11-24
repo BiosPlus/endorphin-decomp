@@ -1,0 +1,28 @@
+{
+  "va": "0x006A95C0",
+  "size": 22,
+  "orig_symbol": "sub_006A95C0",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "SubObject::SetWindowUpdateLocked",
+  "class": "SubObject",
+  "signature": "void fn_006A95C0(void* self)",
+  "summary": "Locks or unlocks redraw of this object's window via LockWindowUpdate and sets the locked flag at +0x198.",
+  "fields": [
+    {
+      "class": "SubObject",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "SubObject",
+      "offset": "+0x198",
+      "type": "BYTE",
+      "name": "windowUpdateLocked"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:30:25Z"
+}

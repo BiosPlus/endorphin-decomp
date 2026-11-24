@@ -31768,6 +31768,13 @@
     "summary": "MSVC scalar deleting destructor: calls thunk_MFC80_ord_663 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/templates/auto_tiny.cpp"
   },
+  "0x006A95C0": {
+    "name": "SubObject::SetWindowUpdateLocked",
+    "class": "SubObject",
+    "signature": "void fn_006A95C0(void* self)",
+    "summary": "Locks or unlocks redraw of this object's window via LockWindowUpdate and sets the locked flag at +0x198.",
+    "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
+  },
   "0x006AC340": {
     "name": "GWCPropertiesCtrl::vfunc_1",
     "class": "GWCPropertiesCtrl",
