@@ -9126,6 +9126,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004A34B0": {
+    "name": "ReadWriteMethodType\u003cFSMEditView,bool,drawConditionNumber,bool,setDrawConditionNumber\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawConditionNumber(bool), 0}\u003e",
+    "signature": "void fn_004A34B0(void* self)",
+    "summary": "Lazily initializes the function-local static type descriptor for the FSMEditView drawConditionNumber accessor and stores its address into the caller-supplied slot at +4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004A3530": {
     "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0\u003e",

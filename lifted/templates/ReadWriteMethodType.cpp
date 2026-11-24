@@ -8886,3 +8886,27 @@ void fn_004A3BA0(void* out) {
     *slot = instance;
 }
 } // namespace lift_004A3BA0
+
+// [0x004A34B0] ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawConditionNumber(bool), 0}>::vfunc_40 (122 bytes)
+namespace lift_004A34B0 {
+extern void ext_0067A670();
+extern int mem_00ADE0F8;
+extern int mem_00ADE0F4;
+
+// @name ReadWriteMethodType<FSMEditView,bool,drawConditionNumber,bool,setDrawConditionNumber>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawConditionNumber(bool), 0}>
+// @summary Lazily initializes the function-local static type descriptor for the FSMEditView drawConditionNumber accessor and stores its address into the caller-supplied slot at +4.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+void fn_004A34B0(void* self) {
+    // One-time initialization guard: bit 0 of mem_00ADE0F8 marks the descriptor as built.
+    if ((mem_00ADE0F8 & 1) == 0) {
+        mem_00ADE0F8 |= 1;
+        ext_0067A670();
+        // Descriptor vtable pointer (first dword of the static object at 0x00ADE0F4).
+        mem_00ADE0F4 = 0x00940EF4;
+    }
+    // Publish the descriptor address into the object's +4 slot.
+    lift_field<uint32_t>(self, 4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00ADE0F4));
+}
+} // namespace lift_004A34B0
