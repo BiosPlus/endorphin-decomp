@@ -5155,6 +5155,13 @@
     "summary": "Loads the object pointer stored at *self, and if non-null tail-calls its vtable slot at +0x1C8 with that object as this; returns null otherwise.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00493EE0": {
+    "name": "dispatchVirtualSlot154OfPointedObject",
+    "class": "(none; object type not recovered)",
+    "signature": "void* fn_00493EE0(void* ecx)",
+    "summary": "Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
   "0x00493FF0": {
     "name": "sub_00493FF0",
     "signature": "int32_t sub_00493FF0(void** slot)",

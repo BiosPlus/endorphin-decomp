@@ -1,0 +1,28 @@
+{
+  "va": "0x00493EE0",
+  "size": 17,
+  "orig_symbol": "sub_00493EE0",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "dispatchVirtualSlot154OfPointedObject",
+  "class": "(none; object type not recovered)",
+  "signature": "void* fn_00493EE0(void* ecx)",
+  "summary": "Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "self"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:51:33Z"
+}

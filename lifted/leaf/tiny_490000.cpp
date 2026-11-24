@@ -297,3 +297,24 @@ void* fn_00493EA0(void* self) {
     return fn(obj);                                    // jmp edx (tail call, ecx = obj as this)
 }
 } // namespace lift_00493EA0
+
+// [0x00493EE0] sub_00493EE0 (17 bytes)
+namespace lift_00493EE0 {
+// @name dispatchVirtualSlot154OfPointedObject
+// @class (none; object type not recovered)
+// @summary Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).
+// @field Unknown +0x00 void* self
+// @field Unknown +0x00 void* vptr
+void* fn_00493EE0(void* ecx) {
+    void* self = lift_field<void*>(ecx, 0x00);         // mov ecx, [ecx]
+    if (self == nullptr) {                             // test ecx, ecx; je -> ret
+        // Original path returns with eax unchanged from the caller; no value is defined here.
+        return nullptr;
+    }
+    void* vptr = lift_field<void*>(self, 0x00);        // mov eax, [ecx]
+    void* slot = lift_field<void*>(vptr, 0x154);       // mov edx, [eax + 0x154]
+    using SlotFn = void* (*)(void* thisPtr);
+    SlotFn fn = reinterpret_cast<SlotFn>(slot);
+    return fn(self);                                   // jmp edx (tail call, ecx = self)
+}
+} // namespace lift_00493EE0
