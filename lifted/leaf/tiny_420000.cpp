@@ -220,3 +220,21 @@ uintptr_t sub_00427370(uintptr_t node) {
     return cur;
 }
 } // namespace lift_00427370
+
+// [0x00425DA0] sub_00425DA0 (29 bytes)
+namespace lift_00425DA0 {
+extern int mem_00AD7BD8;
+extern int mem_00ACD714;
+
+// std::string::operator=(const std::string&) imported from MSVCP80.
+extern void* ext_MSVCP80_string_assign(void* dst, const void* src);
+
+// @name ResetDwordAndAssignGlobalString
+// @summary Zeroes the DWORD at *self, assigns the global string at mem_00ACD714 from mem_00AD7BD8, and returns self.
+void* fn_00425DA0(void* self) {
+    lift_field<DWORD>(self, 0) = 0;
+    ext_MSVCP80_string_assign(reinterpret_cast<void*>(&mem_00ACD714),
+                              reinterpret_cast<const void*>(&mem_00AD7BD8));
+    return self;
+}
+} // namespace lift_00425DA0
