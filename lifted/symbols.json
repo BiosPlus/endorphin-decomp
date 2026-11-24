@@ -16192,6 +16192,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00520B90": {
+    "name": "initArrayRangeReverse_00520B90",
+    "signature": "uint32_t __cdecl fn_00520B90(uint32_t first, uint32_t last, uint32_t dst)",
+    "summary": "Walks [first, last) backward in 0x168-byte steps, calling ext_00520AE0(dst slot, element) for each; returns the final dst cursor (dst itself if the range is empty)",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00520D90": {
     "name": "initArrayRange_00520D90",
     "signature": "void __cdecl sub_00520D90(uint32_t begin, uint32_t end, uint32_t arg)",

@@ -1,0 +1,13 @@
+{
+  "va": "0x00520B90",
+  "size": 56,
+  "orig_symbol": "sub_00520B90",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "initArrayRangeReverse_00520B90",
+  "signature": "uint32_t __cdecl fn_00520B90(uint32_t first, uint32_t last, uint32_t dst)",
+  "summary": "Walks [first, last) backward in 0x168-byte steps, calling ext_00520AE0(dst slot, element) for each; returns the final dst cursor (dst itself if the range is empty)",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:16:02Z"
+}
