@@ -379,7 +379,7 @@ struct Unknown_Fields {
     // +0x158 void* field_0x158 (sub-object base; +0x30 pointer, +0x24 argument address)  (evidence: 0x005B7040) // CONFLICT: multiple definitions at +0x158
     // +0x158 DWORD                    field_0x158  (evidence: 0x004275C0, 0x0042FC20, 0x0042FEC0, 0x0048ABF0, 0x004CCAF0, 0x004CCB00, 0x0050AD20, 0x0050F180, 0x005B7040, 0x005B72E0, 0x005C3170, 0x005CE910, 0x005CE920, 0x00726690) // CONFLICT: multiple definitions at +0x158
     // +0x158 uint32_t                 field_0x158  (evidence: 0x005B6FC0, 0x005B6FE0, 0x005B7040) // CONFLICT: multiple definitions at +0x158
-    // +0x158 void*                    field_0x158  (evidence: 0x005B67A0, 0x005B67C0, 0x005B6C20, 0x005B6C50, 0x005B7000, 0x005B7020, 0x005B7040, 0x005B7260, 0x005B72A0, 0x005C3070, 0x005C30D0) // CONFLICT: multiple definitions at +0x158
+    // +0x158 void*                    field_0x158  (evidence: 0x005B67A0, 0x005B67C0, 0x005B6B60, 0x005B6C20, 0x005B6C50, 0x005B7000, 0x005B7020, 0x005B7040, 0x005B7260, 0x005B72A0, 0x005C3070, 0x005C30D0) // CONFLICT: multiple definitions at +0x158
     // +0x158 void*                    field_158  (evidence: 0x005B6BC0) // CONFLICT: multiple definitions at +0x158
     // +0x158 uint32_t field_0x158 (child pointer; non-null selects the forward path)  (evidence: 0x005B6980, 0x005B7040) // CONFLICT: multiple definitions at +0x158
     // +0x15C void*                    field_0x15c  (evidence: 0x005C3C00)
@@ -407,6 +407,7 @@ struct Unknown_Fields {
     // +0x1A9 uint8_t[13]              byte1A9Array  (evidence: 0x0072CF10) // CONFLICT: multiple definitions at +0x1A9
     // +0x1B8 int32_t field_0x1B8 (int32_t[6] array, indexed 0..5)  (evidence: 0x0072CEB0) // CONFLICT: multiple definitions at +0x1B8
     // +0x1B8 int32_t[6]               field_0x1B8  (evidence: 0x0072CED0) // CONFLICT: multiple definitions at +0x1B8
+    // +0x1B8 void*                    field_0x1b8  (evidence: 0x005B6B60) // CONFLICT: multiple definitions at +0x1B8
     // +0x1B8 BYTE field_0x1B8[] (indexed by arg index; byte store target)  (evidence: 0x006D6AF0) // CONFLICT: multiple definitions at +0x1B8
     // +0x1C2 uint8_t                  field_0x1C2  (evidence: 0x006D7CC0)
     // +0x1C3 uint8_t                  field_0x1C3  (evidence: 0x006D7CC0)
