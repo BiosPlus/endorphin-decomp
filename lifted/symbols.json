@@ -36576,10 +36576,10 @@
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
   "0x006C1BB0": {
-    "name": "SelectRrSsOrRrsString",
-    "class": "\u003cClassName\u003e (optional)",
-    "signature": "const char* fn_006C1BB0(uint32_t selector)",
-    "summary": "Maps selector 0/1 to \"RrSs\", 2 to \"Rrs\", and anything else to null.",
+    "name": "sub_006CA060",
+    "class": "Unknown",
+    "signature": "bool fn_006CA060(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00707980 (Unknown::NotifySlot17IfSelfLinkedWrapper).",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
   "0x006C1DB0": {
