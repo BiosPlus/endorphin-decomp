@@ -10,6 +10,6 @@
 // Recovered field layout for VMCSModes::RunEvolutionMode:
 namespace lifted_layout {
 struct VMCSModes_RunEvolutionMode_Fields {
-    // +0x8   void*                    delegate_0x8  (evidence: 0x004F27C0, 0x004F27D0)
+    // +0x8   void*                    delegate_0x8  (evidence: 0x004F27C0, 0x004F27D0, 0x004F9880)
 };
 } // namespace lifted_layout

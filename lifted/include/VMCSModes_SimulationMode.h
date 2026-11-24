@@ -10,6 +10,6 @@
 // Recovered field layout for VMCSModes::SimulationMode:
 namespace lifted_layout {
 struct VMCSModes_SimulationMode_Fields {
-    // +0x8   void*                    delegate_0x8  (evidence: 0x004F2890)
+    // +0x8   void*                    delegate_0x8  (evidence: 0x004F2890, 0x004F9880)
 };
 } // namespace lifted_layout

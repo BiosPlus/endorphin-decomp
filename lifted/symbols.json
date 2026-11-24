@@ -10028,10 +10028,10 @@
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
   },
   "0x004F9880": {
-    "name": "VMCSModes::DefaultImplementation::vfunc_94",
-    "class": "VMCSModes::DefaultImplementation",
-    "signature": "uint8_t fn_004F9880(void* self)",
-    "summary": "Calls the vtable slot at +0xA0 on self and returns (result \u003e 1) as a byte.",
+    "name": "VMCSModes::RunEvolutionMode::vfunc_17",
+    "class": "VMCSModes::RunEvolutionMode",
+    "signature": "extern \"C\" void __fastcall fn_004F27C0(void* self)",
+    "summary": "Member forwarding thunk: loads subobject pointer at +0x8 and tail-calls sub_004690F0.",
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
   },
   "0x004F98C0": {

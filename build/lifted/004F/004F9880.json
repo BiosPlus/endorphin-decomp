@@ -4,19 +4,49 @@
   "orig_symbol": "VMCSModes::DefaultImplementation::vfunc_94",
   "src_path": "src/VMCSModes/auto_tiny.cpp",
   "lifted_path": "lifted/VMCSModes/auto_tiny.cpp",
-  "name": "VMCSModes::DefaultImplementation::vfunc_94",
-  "class": "VMCSModes::DefaultImplementation",
-  "signature": "uint8_t fn_004F9880(void* self)",
-  "summary": "Calls the vtable slot at +0xA0 on self and returns (result \u003e 1) as a byte.",
+  "name": "VMCSModes::RunEvolutionMode::vfunc_17",
+  "class": "VMCSModes::RunEvolutionMode",
+  "signature": "extern \"C\" void __fastcall fn_004F27C0(void* self)",
+  "summary": "Member forwarding thunk: loads subobject pointer at +0x8 and tail-calls sub_004690F0.",
   "fields": [
+    {
+      "class": "VMCSModes::RunEvolutionMode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "delegate_0x8"
+    },
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "delegate_0x8"
+    },
     {
       "class": "VMCSModes::DefaultImplementation",
       "offset": "+0x0",
       "type": "void*",
       "name": "vtable"
+    },
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "delegate_0x8"
+    },
+    {
+      "class": "VMCSModes::SimulationMode",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "delegate_0x8"
+    },
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3c"
     }
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T02:12:39Z"
+  "lifted_at": "2026-11-24T02:12:53Z"
 }
