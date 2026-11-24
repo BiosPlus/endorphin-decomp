@@ -1,0 +1,14 @@
+{
+  "va": "0x00435270",
+  "size": 28,
+  "orig_symbol": "sub_00435270",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::updateSubobjectsAndGlobal_00435270",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00435270(void* self)",
+  "summary": "Calls ext_004332B0 on self, calls ext_00468C80 on the object returned by ext_00465B30, then tail-calls ext_004332D0 on self.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:08:02Z"
+}
