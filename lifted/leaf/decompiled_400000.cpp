@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_400000.cpp
 #include "lift_compat.h"
+#include <cstdint>
 
 // [0x00407830] sub_00407830 (17 bytes)
 namespace lift_00407830 {
@@ -245,3 +246,27 @@ extern void fn_0040EFF0(unsigned int selector) {
     ext_006A60F4();
 }
 } // namespace lift_0040EFF0
+
+// [0x0040FE70]
+namespace lift_0040FE70 {
+extern void ext_006A5EA8(void);
+extern uint32_t mem_00925688;
+
+// @name ToggleFlag54AndInvalidate
+// @class Unknown
+// @summary Sets this+0x54 to 1 if it was 0 (else 0), calls ext_006A5EA8, then InvalidateRect(this+0x20, NULL, TRUE).
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x54 uint32_t field_0x54
+
+extern void fn_0040FE70(uint8_t* self) {
+    uint32_t prev = *reinterpret_cast<uint32_t*>(self + 0x54);
+    *reinterpret_cast<uint32_t*>(self + 0x54) = (prev == 0) ? 1u : 0u;
+
+    ext_006A5EA8();
+
+    uint32_t hwnd = *reinterpret_cast<uint32_t*>(self + 0x20);
+    using InvalidateRect_t = int(__stdcall*)(uint32_t, const void*, int);
+    auto invalidateRect = reinterpret_cast<InvalidateRect_t>(mem_00925688);
+    invalidateRect(hwnd, nullptr, 1);
+}
+} // namespace lift_0040FE70
