@@ -5983,3 +5983,22 @@ void fn_00535630(void* self, float value) {
     *reinterpret_cast<float*>(b + 0xB4) = value;
 }
 } // namespace lift_00535630
+
+// [0x00535650] OglRenderer::vfunc_36 (19 bytes)
+namespace lift_00535650 {
+// @name OglRenderer::vfunc_36
+// @class OglRenderer
+// @summary Stores a float argument into the target object's +0xB8 slot, reached via this->+0x38->+0x64.
+// @field OglRenderer +0x38 void* field_0x38
+
+namespace {
+// Layout of the object at this->+0x38 and its +0x64 sub-object is not recovered.
+// Only the float slot at +0xB8 of the innermost object is accessed here.
+}
+
+void fn_00535650(void* self, float value) {
+    void* a = lift_field<void*>(self, 0x38);
+    void* b = lift_field<void*>(a, 0x64);
+    lift_field<float>(b, 0xB8) = value;
+}
+} // namespace lift_00535650
