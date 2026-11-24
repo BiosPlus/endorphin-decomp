@@ -1,0 +1,22 @@
+{
+  "va": "0x00546760",
+  "size": 31,
+  "orig_symbol": "RotateTool::vfunc_29",
+  "src_path": "src/classes/RotateTool.cpp",
+  "lifted_path": "lifted/classes/RotateTool.cpp",
+  "name": "RotateTool::vfunc_29",
+  "class": "RotateTool",
+  "signature": "void fn_00546760(void* self)",
+  "summary": "Resets the sub-object selected by the byte flag at +0xE4 (offset +0xB8 if set, else +0x98).",
+  "fields": [
+    {
+      "class": "RotateTool",
+      "offset": "+0xE4",
+      "type": "uint8_t",
+      "name": "field_0xE4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:24:43Z"
+}
