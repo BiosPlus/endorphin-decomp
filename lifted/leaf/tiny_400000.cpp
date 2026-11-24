@@ -375,3 +375,25 @@ void fn_00401CC0(void* self) {
     fn(childPtr, self);
 }
 } // namespace lift_00401CC0
+
+// [0x0040F290] sub_0040F290 (23 bytes)
+namespace lift_0040F290 {
+// @name Unknown::ResetFieldsAndSetVtable
+// @class Unknown
+// @summary Installs the vtable pointer (0x0092B954) at offset 0 and zeroes the four dword fields at +0x04, +0x08, +0x0C, +0x10.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+void fn_0040F290(void* self) {
+    // Original game VA of the vtable that is written into the object header.
+    constexpr uint32_t kVtable = 0x0092B954u;
+
+    lift_field<uint32_t>(self, 0x00) = kVtable;
+    lift_field<uint32_t>(self, 0x04) = 0u;
+    lift_field<uint32_t>(self, 0x10) = 0u;
+    lift_field<uint32_t>(self, 0x0C) = 0u;
+    lift_field<uint32_t>(self, 0x08) = 0u;
+}
+} // namespace lift_0040F290

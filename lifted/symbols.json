@@ -597,6 +597,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0040EF90 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0040F290": {
+    "name": "Unknown::ResetFieldsAndSetVtable",
+    "class": "Unknown",
+    "signature": "void fn_0040F290(void* self)",
+    "summary": "Installs the vtable pointer (0x0092B954) at offset 0 and zeroes the four dword fields at +0x04, +0x08, +0x0C, +0x10.",
+    "lifted_path": "lifted/leaf/tiny_400000.cpp"
+  },
   "0x0040F5C0": {
     "name": "sub_0040F5C0",
     "signature": "extern \"C\" const void* fn_0040F5C0()",
