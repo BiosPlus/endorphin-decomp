@@ -1,0 +1,21 @@
+{
+  "va": "0x007D85E0",
+  "size": 26,
+  "orig_symbol": "sub_007D85E0",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "CopyDwords19ToOffset84",
+  "signature": "void sub_007D85E0(void* dst, const void* src)",
+  "summary": "Copies 0x13 dwords from src into dst starting at dst+0x84 (cdecl, two pointer args).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "uint32_t[19] field_0x84 (destination block, written by",
+      "name": "copy)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:59:03Z"
+}

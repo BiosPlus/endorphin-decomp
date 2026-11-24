@@ -549,3 +549,18 @@ void SetVec3Offset40(unsigned char* self, float x, float y, float z) {
     *reinterpret_cast<float*>(self + 0x48) = z;
 }
 } // namespace lift_007D8590
+
+// [0x007D85E0]
+namespace lift_007D85E0 {
+// @name CopyDwords19ToOffset84
+// @summary Copies 0x13 dwords from src into dst starting at dst+0x84 (cdecl, two pointer args).
+// @field Unknown +0x84 uint32_t[19] field_0x84 (destination block, written by copy)
+
+void sub_007D85E0(void* dst, const void* src) {
+    auto* d = reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(dst) + 0x84);
+    const auto* s = reinterpret_cast<const uint32_t*>(src);
+    for (uint32_t i = 0; i < 0x13; ++i) {
+        d[i] = s[i];
+    }
+}
+} // namespace lift_007D85E0

@@ -41690,6 +41690,12 @@
     "summary": "Stores a float argument into the object's +0x58 float slot.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D85E0": {
+    "name": "CopyDwords19ToOffset84",
+    "signature": "void sub_007D85E0(void* dst, const void* src)",
+    "summary": "Copies 0x13 dwords from src into dst starting at dst+0x84 (cdecl, two pointer args).",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D86F0": {
     "name": "sub_007D86F0",
     "class": "\u003cunknown\u003e",
