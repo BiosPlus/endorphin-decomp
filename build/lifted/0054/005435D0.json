@@ -1,0 +1,34 @@
+{
+  "va": "0x005435D0",
+  "size": 21,
+  "orig_symbol": "sub_005435D0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "sub_005435D0",
+  "class": "VTableDispatch",
+  "signature": "uint32_t fn_005435D0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00543530 (VTableDispatch::ClearFlagsAndTailCallSlot16).",
+  "fields": [
+    {
+      "class": "VTableDispatch",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable_ptr"
+    },
+    {
+      "class": "VTableDispatch",
+      "offset": "+0x90",
+      "type": "uint8_t",
+      "name": "flag_0x90"
+    },
+    {
+      "class": "VTableDispatch",
+      "offset": "+0x93",
+      "type": "uint8_t",
+      "name": "flag_0x93"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T11:24:50Z"
+}

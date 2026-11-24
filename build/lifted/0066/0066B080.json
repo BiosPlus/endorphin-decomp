@@ -1,0 +1,14 @@
+{
+  "va": "0x0066B080",
+  "size": 21,
+  "orig_symbol": "sub_0066B080",
+  "src_path": "src/leaf/tiny_660000.cpp",
+  "lifted_path": "lifted/leaf/tiny_660000.cpp",
+  "name": "sub_0066B080",
+  "class": "(none)",
+  "signature": "void* fn_0066B080(uint32_t index)",
+  "summary": "Auto-lifted identical-shape clone of 0x004D0B60 (GetTableEntry28Address).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T11:24:50Z"
+}

@@ -12793,6 +12793,20 @@
     "summary": "Sets the byte flags at +0x90 to 1 and +0x93 to 0, then tail-jumps through vtable slot at byte offset 0x40 (index 16) with the same this pointer.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x00543580": {
+    "name": "sub_00543580",
+    "class": "VTableDispatch",
+    "signature": "uint32_t fn_00543580(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00543530 (VTableDispatch::ClearFlagsAndTailCallSlot16).",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
+  "0x005435D0": {
+    "name": "sub_005435D0",
+    "class": "VTableDispatch",
+    "signature": "uint32_t fn_005435D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00543530 (VTableDispatch::ClearFlagsAndTailCallSlot16).",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00543620": {
     "name": "sub_00543620",
     "class": "GWCCategoryWithButtonsItem",
@@ -24852,6 +24866,13 @@
     "signature": "void* ExprParser_ExtROType_vfunc_6(void* self)",
     "summary": "Tail-forwards to vtable slot 6 of the object at (*this)-\u003e+0x04, passing (*this) as the this/arg.",
     "lifted_path": "lifted/ExprParser/ExtROType.cpp"
+  },
+  "0x0066B080": {
+    "name": "sub_0066B080",
+    "class": "(none)",
+    "signature": "void* fn_0066B080(uint32_t index)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D0B60 (GetTableEntry28Address).",
+    "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
   "0x0066B0A0": {
     "name": "ExprParser::RealType::vfunc_7",

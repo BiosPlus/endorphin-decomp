@@ -292,3 +292,18 @@ void fn_0066A310(void* self) {
     lift_field<float>(self, 0x0C) = 1.0f;
 }
 } // namespace lift_0066A310
+
+// [0x0066B080] sub_0066B080 (21 bytes)
+namespace lift_0066B080 {
+// @name sub_0066B080
+// @summary Auto-lifted identical-shape clone of 0x004D0B60 (GetTableEntry28Address).
+namespace lift_004D0B60 {
+// @name GetTableEntry28Address
+// @class (none)
+// @summary Returns the address of entry `index` in a 28-byte-stride table based at 0x00AE5C10 (0xAE5C10 + index * 28).
+void* fn_0066B080(uint32_t index) {
+    constexpr uintptr_t kTableBase = 0xB599C0u;
+    return reinterpret_cast<void*>(kTableBase + static_cast<uintptr_t>(index) * 28u);
+}
+} // namespace lift_004D0B60
+} // namespace lift_0066B080

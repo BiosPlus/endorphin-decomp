@@ -74,3 +74,57 @@ uint32_t fn_00543530(void* self) {
     return reinterpret_cast<Thiscall>(static_cast<uintptr_t>(target))(self);
 }
 } // namespace lift_00543530
+
+// [0x00543580] sub_00543580 (21 bytes)
+namespace lift_00543580 {
+// @name sub_00543580
+// @summary Auto-lifted identical-shape clone of 0x00543530 (VTableDispatch::ClearFlagsAndTailCallSlot16).
+namespace lift_00543530 {
+// @name VTableDispatch::ClearFlagsAndTailCallSlot16
+// @class VTableDispatch
+// @summary Sets the byte flags at +0x90 to 1 and +0x93 to 0, then tail-jumps through vtable slot at byte offset 0x40 (index 16) with the same this pointer.
+// @field VTableDispatch +0x00 uint32_t vtable_ptr // object's vtable pointer (dereferenced via [ecx])
+// @field VTableDispatch +0x90 uint8_t flag_0x90
+// @field VTableDispatch +0x93 uint8_t flag_0x93
+uint32_t fn_00543580(void* self) {
+    // mov eax,[ecx]            ; eax = vtable
+    const uint32_t vtable = lift_field<uint32_t>(self, 0x00);
+    // mov byte [ecx+0x90],1
+    lift_field<uint8_t>(self, 0x91) = 1;
+    // mov byte [ecx+0x93],0
+    lift_field<uint8_t>(self, 0x94) = 0;
+    // mov eax,[eax+0x40]       ; eax = vtable[16]
+    const uint32_t target = lift_field<uint32_t>(reinterpret_cast<const void*>(static_cast<uintptr_t>(vtable)), 0x4C);
+    // jmp eax                  ; tail call (modelled as call + return of its result)
+    using Thiscall = uint32_t (*)(void*);
+    return reinterpret_cast<Thiscall>(static_cast<uintptr_t>(target))(self);
+}
+} // namespace lift_00543530
+} // namespace lift_00543580
+
+// [0x005435D0] sub_005435D0 (21 bytes)
+namespace lift_005435D0 {
+// @name sub_005435D0
+// @summary Auto-lifted identical-shape clone of 0x00543530 (VTableDispatch::ClearFlagsAndTailCallSlot16).
+namespace lift_00543530 {
+// @name VTableDispatch::ClearFlagsAndTailCallSlot16
+// @class VTableDispatch
+// @summary Sets the byte flags at +0x90 to 1 and +0x93 to 0, then tail-jumps through vtable slot at byte offset 0x40 (index 16) with the same this pointer.
+// @field VTableDispatch +0x00 uint32_t vtable_ptr // object's vtable pointer (dereferenced via [ecx])
+// @field VTableDispatch +0x90 uint8_t flag_0x90
+// @field VTableDispatch +0x93 uint8_t flag_0x93
+uint32_t fn_005435D0(void* self) {
+    // mov eax,[ecx]            ; eax = vtable
+    const uint32_t vtable = lift_field<uint32_t>(self, 0x00);
+    // mov byte [ecx+0x90],1
+    lift_field<uint8_t>(self, 0x92) = 1;
+    // mov byte [ecx+0x93],0
+    lift_field<uint8_t>(self, 0x95) = 0;
+    // mov eax,[eax+0x40]       ; eax = vtable[16]
+    const uint32_t target = lift_field<uint32_t>(reinterpret_cast<const void*>(static_cast<uintptr_t>(vtable)), 0x54);
+    // jmp eax                  ; tail call (modelled as call + return of its result)
+    using Thiscall = uint32_t (*)(void*);
+    return reinterpret_cast<Thiscall>(static_cast<uintptr_t>(target))(self);
+}
+} // namespace lift_00543530
+} // namespace lift_005435D0

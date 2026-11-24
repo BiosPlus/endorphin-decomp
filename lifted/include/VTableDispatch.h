@@ -8,8 +8,8 @@
 // Recovered field layout for VTableDispatch:
 namespace lifted_layout {
 struct VTableDispatch_Fields {
-    // +0x0   uint32_t                 vtable_ptr  (evidence: 0x00543530)
-    // +0x90  uint8_t                  flag_0x90  (evidence: 0x00543530)
-    // +0x93  uint8_t                  flag_0x93  (evidence: 0x00543530)
+    // +0x0   uint32_t                 vtable_ptr  (evidence: 0x00543530, 0x00543580, 0x005435D0)
+    // +0x90  uint8_t                  flag_0x90  (evidence: 0x00543530, 0x00543580, 0x005435D0)
+    // +0x93  uint8_t                  flag_0x93  (evidence: 0x00543530, 0x00543580, 0x005435D0)
 };
 } // namespace lifted_layout
