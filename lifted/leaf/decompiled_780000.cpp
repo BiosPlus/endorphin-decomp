@@ -137,3 +137,25 @@ void fn_007833F0(void* self) {
     fclose(file);
 }
 } // namespace lift_007833F0
+
+// [0x00783800] sub_00783800 (32 bytes)
+namespace lift_00783800 {
+// @name ResetNodeChain (descriptive label inferred from behavior; no class name recovered)
+// @class Unknown
+// @summary Zeroes the +0x08/+0x0C words of the owner and of every node in its +0x00 singly linked chain.
+// @field Unknown +0x00 uint32_t next_or_head
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0c
+void fn_00783800(void* self) {
+    uint32_t node = lift_field<uint32_t>(self, 0x00);
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+
+    while (node != 0) {
+        void* n = reinterpret_cast<void*>(static_cast<uintptr_t>(node));
+        lift_field<uint32_t>(n, 0x08) = 0;
+        lift_field<uint32_t>(n, 0x0C) = 0;
+        node = lift_field<uint32_t>(n, 0x00);
+    }
+}
+} // namespace lift_00783800

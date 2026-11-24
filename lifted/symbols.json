@@ -42607,6 +42607,13 @@
     "summary": "Zeroes four consecutive uint32_t fields at offsets +0x00..+0x0C and returns this.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00783800": {
+    "name": "ResetNodeChain (descriptive label inferred from behavior; no class name recovered)",
+    "class": "Unknown",
+    "signature": "void fn_00783800(void* self)",
+    "summary": "Zeroes the +0x08/+0x0C words of the owner and of every node in its +0x00 singly linked chain.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00784510": {
     "name": "sub_00784510",
     "signature": "void fn_00784510(void* self)",
