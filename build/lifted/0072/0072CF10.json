@@ -1,0 +1,22 @@
+{
+  "va": "0x0072CF10",
+  "size": 32,
+  "orig_symbol": "sub_0072CF10",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "Unknown::GetByte1A9Checked",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint8_t __fastcall fn_0072CF10(void* self, int edx_unused, int index)",
+  "summary": "Returns byte at this+0x1A9+index for index in [0,13); returns 0 for out-of-range index.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1A9",
+      "type": "uint8_t[13]",
+      "name": "byte1A9Array"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:43:24Z"
+}

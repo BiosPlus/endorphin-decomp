@@ -148,3 +148,18 @@ void fn_0072CEF0(uint8_t* self, int32_t index, uint8_t value) {
     self[0x1A9 + index] = value;
 }
 } // namespace lift_0072CEF0
+
+// [0x0072CF10] sub_0072CF10 (32 bytes)
+namespace lift_0072CF10 {
+// @name Unknown::GetByte1A9Checked
+// @class Unknown
+// @summary Returns byte at this+0x1A9+index for index in [0,13); returns 0 for out-of-range index.
+// @field Unknown +0x1A9 uint8_t[13] byte1A9Array
+extern uint8_t __fastcall fn_0072CF10(void* self, int edx_unused, int index) {
+    (void)edx_unused;
+    if (index < 0 || index >= 13) {
+        return 0;
+    }
+    return lift_field<uint8_t>(self, 0x1A9 + static_cast<uintptr_t>(index));
+}
+} // namespace lift_0072CF10
