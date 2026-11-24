@@ -2191,10 +2191,10 @@
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
   "0x0044B6A0": {
-    "name": "Unknown::forwardToChildIfFlagSet",
-    "class": "Unknown",
-    "signature": "void fn_0044B6A0(void* self)",
-    "summary": "If field_0x64 is nonzero, forwards the call to ext_005303F0 with field_0x68 as the receiver; otherwise does nothing.",
+    "name": "GetStringLiteral_00440680",
+    "class": "(none)",
+    "signature": "extern \"C\" const char* __cdecl fn_00440680()",
+    "summary": "Returns the address of the read-only string \"$aj\" in .rdata.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
   "0x0044BC40": {

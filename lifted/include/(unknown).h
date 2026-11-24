@@ -8,9 +8,9 @@
 // Recovered field layout for (unknown):
 namespace lifted_layout {
 struct (unknown)_Fields {
-    // +0x0   float                    field_0x00  (evidence: 0x0044CCC0)
-    // +0x4   float                    field_0x04  (evidence: 0x0044CCC0)
-    // +0x8   float                    field_0x08  (evidence: 0x0044CCC0)
+    // +0x0   float                    field_0x00  (evidence: 0x0044B6A0, 0x0044CCC0)
+    // +0x4   float                    field_0x04  (evidence: 0x0044B6A0, 0x0044CCC0)
+    // +0x8   float                    field_0x08  (evidence: 0x0044B6A0, 0x0044CCC0)
     // +0x20  uint32_t                 field_0x20  (evidence: 0x006AD070)
     // +0x40  uint8_t                  field_0x40  (evidence: 0x006ACF90)
 };

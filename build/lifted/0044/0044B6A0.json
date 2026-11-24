@@ -4,11 +4,89 @@
   "orig_symbol": "sub_0044B6A0",
   "src_path": "src/leaf/tiny_440000.cpp",
   "lifted_path": "lifted/leaf/tiny_440000.cpp",
-  "name": "Unknown::forwardToChildIfFlagSet",
-  "class": "Unknown",
-  "signature": "void fn_0044B6A0(void* self)",
-  "summary": "If field_0x64 is nonzero, forwards the call to ext_005303F0 with field_0x68 as the receiver; otherwise does nothing.",
+  "name": "GetStringLiteral_00440680",
+  "class": "(none)",
+  "signature": "extern \"C\" const char* __cdecl fn_00440680()",
+  "summary": "Returns the address of the read-only string \"$aj\" in .rdata.",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "uint32_t",
+      "name": "field_0x74"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Class",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "struct_0",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "(unknown)",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x44",
+      "type": "void*",
+      "name": "field_0x44"
+    },
+    {
+      "class": "void",
+      "offset": "+0x10",
+      "type": "DWORD",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HMODULE",
+      "name": "field_0x20"
+    },
     {
       "class": "Unknown",
       "offset": "+0x64",
@@ -24,5 +102,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T01:28:51Z"
+  "lifted_at": "2026-11-24T01:29:01Z"
 }
