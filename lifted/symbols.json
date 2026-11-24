@@ -3831,6 +3831,12 @@
     "summary": "If the byte flag at +0x10 is set, forward the call and value to the object pointer stored at +0x14; otherwise return.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x00468730": {
+    "name": "forwardToLinkedIfFlagged",
+    "signature": "void __thiscall fn_00468730(void* self, uint8_t value)",
+    "summary": "If the flag byte at +0x10 is set, forward (value) to the object at +0x14; otherwise do nothing.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00468750": {
     "name": "guardedForwardToChild",
     "signature": "uint8_t fn_00468750(void* self)",

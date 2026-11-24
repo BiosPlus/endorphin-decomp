@@ -684,3 +684,23 @@ void fn_00468710(void* self, uint8_t value) {
     ext_0046FE10(reinterpret_cast<void*>(static_cast<uintptr_t>(next)), value);
 }
 } // namespace lift_00468710
+
+// [0x00468730] sub_00468730 (17 bytes)
+namespace lift_00468730 {
+// Known callee 0x0046FE30: sub_0046FE30 (Auto-lifted identical-shape clone of 0x00535610 (ExportDialog::vfunc_0).)
+extern void __thiscall ext_0046FE30(void* self, uint8_t value);
+
+// @name forwardToLinkedIfFlagged
+// @summary If the flag byte at +0x10 is set, forward (value) to the object at +0x14; otherwise do nothing.
+// @field field_0x10 uint8_t flag
+// @field field_0x14 void* linked
+// Calling convention: thiscall (ecx = self), one stack argument, callee pops 4 (ret 4).
+void __thiscall fn_00468730(void* self, uint8_t value) {
+    auto* base = static_cast<uint8_t*>(self);
+    if (*(base + 0x10) == 0) {
+        return;
+    }
+    void* linked = *reinterpret_cast<void**>(base + 0x14);
+    ext_0046FE30(linked, value);
+}
+} // namespace lift_00468730

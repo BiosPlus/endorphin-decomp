@@ -1,0 +1,13 @@
+{
+  "va": "0x00468730",
+  "size": 17,
+  "orig_symbol": "sub_00468730",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "forwardToLinkedIfFlagged",
+  "signature": "void __thiscall fn_00468730(void* self, uint8_t value)",
+  "summary": "If the flag byte at +0x10 is set, forward (value) to the object at +0x14; otherwise do nothing.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:02:34Z"
+}
