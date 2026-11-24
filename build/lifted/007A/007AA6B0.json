@@ -1,0 +1,13 @@
+{
+  "va": "0x007AA6B0",
+  "size": 41,
+  "orig_symbol": "sub_007AA6B0",
+  "src_path": "src/clones/auto_clones_7A0000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_7A0000.cpp",
+  "name": "sub_007AA6B0_initGlobalPtrs",
+  "signature": "void sub_007AA6B0(void)",
+  "summary": "Stores four constant words into globals mem_00B61220, mem_00B61224, mem_00B61228, mem_00B6122C.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T13:57:34Z"
+}

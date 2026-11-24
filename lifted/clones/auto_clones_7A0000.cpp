@@ -41,3 +41,21 @@ void fn_007AE0F0(void) {
     ext_007AE110();
 }
 } // namespace lift_007AE0F0
+
+// [0x007AA6B0]
+namespace lift_007AA6B0 {
+// @name sub_007AA6B0_initGlobalPtrs
+// @summary Stores four constant words into globals mem_00B61220, mem_00B61224, mem_00B61228, mem_00B6122C.
+
+extern uint32_t mem_00B61220;
+extern uint32_t mem_00B61224;
+extern uint32_t mem_00B61228;
+extern uint32_t mem_00B6122C;
+
+void sub_007AA6B0(void) {
+    mem_00B61220 = 0x00B61230u;
+    mem_00B61228 = 0x00AB0798u;
+    mem_00B61224 = 0x00B60FB0u;
+    mem_00B6122C = 0x00000000u;
+}
+} // namespace lift_007AA6B0
