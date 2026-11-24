@@ -10,7 +10,7 @@ namespace lifted_layout {
 struct Object_Fields {
     // +0x0   void* vptr (vtable pointer, dereferenced to find slot 0x148)  (evidence: 0x00401960, 0x0040FD90) // CONFLICT: multiple definitions at +0x0
     // +0x0   double                   field_0x00  (evidence: 0x006722B0, 0x00672490, 0x00679A40, 0x0067ADD0, 0x0067EC60) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x00492540, 0x00493E50, 0x00493E60, 0x00494050, 0x00566FE0, 0x00644F20, 0x0065A8B0, 0x0065F280, 0x006A4CD0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x00492540, 0x00493E50, 0x00493E60, 0x00494050, 0x00566FE0, 0x00644F20, 0x0065A8B0, 0x0065F280, 0x006A4CD0, 0x00859330) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x00661890) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vftable  (evidence: 0x0053F550, 0x0063E960) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vptr  (evidence: 0x006B0040, 0x006B9950, 0x007ABBE0) // CONFLICT: multiple definitions at +0x0
@@ -35,7 +35,7 @@ struct Object_Fields {
     // +0x10  uint32_t                 field_0x10  (evidence: 0x00602EC0) // CONFLICT: multiple definitions at +0x10
     // +0x14  void*                    child  (evidence: 0x00468730, 0x00468A30) // CONFLICT: multiple definitions at +0x14
     // +0x14  float                    field_0x14  (evidence: 0x00533FB0, 0x00602EC0) // CONFLICT: multiple definitions at +0x14
-    // +0x14  uint32_t                 field_0x14  (evidence: 0x00790DA0, 0x0079ADA0, 0x0079DCE0, 0x007C2E50, 0x007C6FC0, 0x0085C260) // CONFLICT: multiple definitions at +0x14
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x00790DA0, 0x0079ADA0, 0x0079DCE0, 0x007C2E50, 0x007C6FC0, 0x00859330, 0x0085C260) // CONFLICT: multiple definitions at +0x14
     // +0x18  float                    field_0x18  (evidence: 0x00602EC0) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 field_0x18  (evidence: 0x007D8470, 0x007DB720) // CONFLICT: multiple definitions at +0x18
     // +0x1C  float                    field_0x1C  (evidence: 0x007C2E50, 0x007C6F30) // CONFLICT: multiple definitions at +0x1C

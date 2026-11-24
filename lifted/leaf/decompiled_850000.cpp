@@ -421,3 +421,25 @@ uint32_t fn_00859300(void* obj, uint32_t key) {
     return 0;
 }
 } // namespace lift_00859300
+
+// [0x00859330]
+namespace lift_00859330 {
+// @name markFlagBit0AndGetHeadDword
+// @summary If flag 0x04 at +0x14 is set, follow the pointer at +0x00; if bit 0 of the flag byte at +0x14 is clear, set it and return the dword at +0x00, otherwise return 0.
+// @field Object +0x00 uint32_t field_0x00
+// @field Object +0x14 uint32_t field_0x14
+uint32_t fn_00859330(void* self) {
+    void* obj = self;
+
+    if (lift_field<uint8_t>(obj, 0x14) & 0x04) {
+        obj = reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(obj, 0x00)));
+    }
+
+    if (lift_field<uint8_t>(obj, 0x14) & 0x01) {
+        return 0;
+    }
+
+    lift_field<uint32_t>(obj, 0x14) |= 0x01u;
+    return lift_field<uint32_t>(obj, 0x00);
+}
+} // namespace lift_00859330

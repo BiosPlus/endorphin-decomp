@@ -1,0 +1,27 @@
+{
+  "va": "0x00859330",
+  "size": 48,
+  "orig_symbol": "sub_00859330",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "markFlagBit0AndGetHeadDword",
+  "signature": "uint32_t fn_00859330(void* self)",
+  "summary": "If flag 0x04 at +0x14 is set, follow the pointer at +0x00; if bit 0 of the flag byte at +0x14 is clear, set it and return the dword at +0x00, otherwise return 0.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:28:31Z"
+}
