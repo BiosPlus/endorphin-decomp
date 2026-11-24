@@ -74,3 +74,14 @@ uint32_t __cdecl fn_0085BFE0(uint32_t hMem) {
         ext_00859730(reinterpret_cast<HGLOBAL>(static_cast<uintptr_t>(hMem)))));
 }
 } // namespace lift_0085BFE0
+
+// [0x0085D560] sub_0085D560 (16 bytes)
+namespace lift_0085D560 {
+extern void* ext_LocalAlloc(UINT uFlags, SIZE_T uBytes);
+
+// @name LocalAllocZeroFlags
+// @summary Allocates uBytes via LocalAlloc with uFlags = 0 and returns the handle.
+void* fn_0085D560(SIZE_T uBytes) {
+    return ext_LocalAlloc(0, uBytes);
+}
+} // namespace lift_0085D560

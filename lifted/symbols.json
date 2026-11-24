@@ -38887,6 +38887,12 @@
     "summary": "No-op stub (add eax, 0).",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
+  "0x0085D560": {
+    "name": "LocalAllocZeroFlags",
+    "signature": "void* fn_0085D560(SIZE_T uBytes)",
+    "summary": "Allocates uBytes via LocalAlloc with uFlags = 0 and returns the handle.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085D85B": {
     "name": "sub_0085D85B",
     "signature": "void fn_0085D85B(void)",

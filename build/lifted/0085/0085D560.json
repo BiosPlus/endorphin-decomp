@@ -1,0 +1,13 @@
+{
+  "va": "0x0085D560",
+  "size": 16,
+  "orig_symbol": "sub_0085D560",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "LocalAllocZeroFlags",
+  "signature": "void* fn_0085D560(SIZE_T uBytes)",
+  "summary": "Allocates uBytes via LocalAlloc with uFlags = 0 and returns the handle.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:49:51Z"
+}
