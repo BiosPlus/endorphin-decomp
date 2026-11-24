@@ -899,3 +899,25 @@ void fn_00710F50(void* self) {
     free_fn(second);
 }
 } // namespace lift_00710F50
+
+// [0x007148E0] sub_007148E0 (48 bytes)
+namespace lift_007148E0 {
+// @name HasAnyNonZeroByteInFirst6
+// @class Unknown
+// @summary Returns 1 if any of the six bytes at self[0..5] is nonzero, otherwise 0.
+// @field Unknown +0x00 uint8_t field_0x00
+// @field Unknown +0x01 uint8_t field_0x01
+// @field Unknown +0x02 uint8_t field_0x02
+// @field Unknown +0x03 uint8_t field_0x03
+// @field Unknown +0x04 uint8_t field_0x04
+// @field Unknown +0x05 uint8_t field_0x05
+uint8_t fn_007148E0(void* self) {
+    const uint8_t* bytes = static_cast<const uint8_t*>(self);
+    for (ptrdiff_t i = 0; i < 6; ++i) {
+        if (lift_field<uint8_t>(bytes, i) != 0) {
+            return 1;
+        }
+    }
+    return 0;
+}
+} // namespace lift_007148E0

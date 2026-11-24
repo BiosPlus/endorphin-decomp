@@ -45124,6 +45124,13 @@
     "summary": "Copies object bytes +0x03, +0x04, +0x05 to three caller-supplied BYTE* out-pointers (thiscall, ret 0xC).",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x007148E0": {
+    "name": "HasAnyNonZeroByteInFirst6",
+    "class": "Unknown",
+    "signature": "uint8_t fn_007148E0(void* self)",
+    "summary": "Returns 1 if any of the six bytes at self[0..5] is nonzero, otherwise 0.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x00714920": {
     "name": "Unknown::CallArgWithSubObjectAddr",
     "class": "Unknown",

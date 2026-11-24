@@ -1,0 +1,52 @@
+{
+  "va": "0x007148E0",
+  "size": 48,
+  "orig_symbol": "sub_007148E0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "HasAnyNonZeroByteInFirst6",
+  "class": "Unknown",
+  "signature": "uint8_t fn_007148E0(void* self)",
+  "summary": "Returns 1 if any of the six bytes at self[0..5] is nonzero, otherwise 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint8_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1",
+      "type": "uint8_t",
+      "name": "field_0x01"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2",
+      "type": "uint8_t",
+      "name": "field_0x02"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3",
+      "type": "uint8_t",
+      "name": "field_0x03"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5",
+      "type": "uint8_t",
+      "name": "field_0x05"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:21:49Z"
+}
