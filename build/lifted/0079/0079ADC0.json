@@ -1,0 +1,13 @@
+{
+  "va": "0x0079ADC0",
+  "size": 14,
+  "orig_symbol": "sub_0079ADC0",
+  "src_path": "src/leaf/tiny_790000.cpp",
+  "lifted_path": "lifted/leaf/tiny_790000.cpp",
+  "name": "GetFileSizeLow",
+  "signature": "extern \"C\" DWORD __cdecl fn_0079ADC0(DWORD hFile)",
+  "summary": "Returns the low 32 bits of the file size for the handle passed on the stack (GetFileSize(hFile, NULL)).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:27:08Z"
+}

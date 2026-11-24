@@ -262,3 +262,18 @@ void fn_0079E610(void* self, int32_t /*stackArg, popped by callee*/) {
     slot2(self, 1);
 }
 } // namespace lift_0079E610
+
+// [0x0079ADC0] sub_0079ADC0 (14 bytes)
+namespace lift_0079ADC0 {
+// KERNEL32!GetFileSize import slot (IAT entry at 0x0092426C, .rdata constant 0x00628496).
+extern DWORD mem_0092426C;
+
+typedef DWORD(__stdcall* GetFileSize_fn)(DWORD hFile, DWORD* lpFileSizeHigh);
+
+// @name GetFileSizeLow
+// @summary Returns the low 32 bits of the file size for the handle passed on the stack (GetFileSize(hFile, NULL)).
+extern DWORD __cdecl fn_0079ADC0(DWORD hFile) {
+    GetFileSize_fn getFileSize = reinterpret_cast<GetFileSize_fn>(static_cast<uintptr_t>(mem_0092426C));
+    return getFileSize(hFile, nullptr);
+}
+} // namespace lift_0079ADC0
