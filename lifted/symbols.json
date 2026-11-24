@@ -31053,10 +31053,10 @@
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
   "0x006B9950": {
-    "name": "Unknown::IsField04Zero",
-    "class": "Unknown",
-    "signature": "int fn_006B9950(void* self)",
-    "summary": "Thiscall predicate: returns 1 if the DWORD at this+0x04 is zero, else 0.",
+    "name": "sub_006B0050",
+    "class": "RotateTool",
+    "signature": "extern \"C\" void __fastcall fn_006B0050(void* self)",
+    "summary": "Stores address of mem_00991168 into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
   "0x006B99C0": {
