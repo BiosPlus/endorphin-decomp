@@ -885,3 +885,30 @@ extern void __fastcall fn_006F69C0(void* self, int32_t value) {
     ext_0077FF90(reinterpret_cast<void*>(static_cast<intptr_t>(result)), 0, static_cast<double>(value));
 }
 } // namespace lift_006F69C0
+
+// [0x006F6910]
+namespace lift_006F6910 {
+// @name Unknown::storeIntAsDouble
+// @class Unknown
+// @summary Stores the int32 argument at self+0x3270, then writes it as a double into element 0 of the array held at self+0x6958 via a getter-selected inner object.
+// @field Unknown +0x3270 int32_t field_0x3270
+// @field Unknown +0x6958 void* field_0x6958
+
+extern int32_t __fastcall ext_006F76F0(void* self);
+extern void __fastcall ext_0077FF90(void* self, int32_t index, double value);
+
+extern void __fastcall fn_006F6910(void* self, int32_t value) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    *reinterpret_cast<int32_t*>(base + 0x3270) = value;
+
+    void* inner = *reinterpret_cast<void**>(base + 0x6958);
+    double d = static_cast<double>(value);
+
+    // The original pushes 0xA8 as an extra stack argument to the getter;
+    // the declared getter signature takes only self, so it is not passed here.
+    int32_t target = ext_006F76F0(inner);
+
+    ext_0077FF90(reinterpret_cast<void*>(static_cast<intptr_t>(target)), 0, d);
+}
+} // namespace lift_006F6910

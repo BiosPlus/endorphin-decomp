@@ -612,6 +612,7 @@ struct Unknown_Fields {
     // +0x2A78 int32_t                  intField_2a78  (evidence: 0x006F69C0)
     // +0x2A80 uint8_t[] field_0x2a80 (embedded subobject; its address is computed, not dereferenced here)  (evidence: 0x006F04E0, 0x006F08E0, 0x006F1120)
     // +0x2B08 uint8_t                  field_0x2B08  (evidence: 0x006F0520, 0x006F1120)
+    // +0x3270 int32_t                  field_0x3270  (evidence: 0x006F6910)
     // +0x3278 uint8_t                  field_0x3278  (evidence: 0x006F08A0, 0x006F08E0, 0x006F1120)
     // +0x3300 uint8_t field_0x3300[] (embedded subobject, used by address only)  (evidence: 0x006F08E0, 0x006F1120)
     // +0x40D0 void*                    field_0x40D0  (evidence: 0x006F08E0, 0x006F0F60, 0x006F1120)
@@ -629,6 +630,7 @@ struct Unknown_Fields {
     // +0x6688 void*                    subobjVtbl  (evidence: 0x006F22C0)
     // +0x6718 void*                    field_0x6718  (evidence: 0x006F2330)
     // +0x67A8 void*                    field_0x67A8  (evidence: 0x006F23A0)
-    // +0x6958 void*                    ptr_6958  (evidence: 0x006F69C0)
+    // +0x6958 void*                    field_0x6958  (evidence: 0x006F6910) // CONFLICT: multiple definitions at +0x6958
+    // +0x6958 void*                    ptr_6958  (evidence: 0x006F69C0) // CONFLICT: multiple definitions at +0x6958
 };
 } // namespace lifted_layout

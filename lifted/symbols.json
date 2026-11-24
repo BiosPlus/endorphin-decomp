@@ -41476,6 +41476,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006F6B40 (GetRigidNameStdcall).",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006F6910": {
+    "name": "Unknown::storeIntAsDouble",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_006F6910(void* self, int32_t value)",
+    "summary": "Stores the int32 argument at self+0x3270, then writes it as a double into element 0 of the array held at self+0x6958 via a getter-selected inner object.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F6940": {
     "name": "sub_006F6940",
     "signature": "const char* fn_006F6940(DWORD selector)",
