@@ -121,3 +121,22 @@ void* fn_004B0F50(void* self) {
     return self;
 }
 } // namespace lift_004B0F50
+
+// [0x004B4740] sub_004B4740 (37 bytes)
+namespace lift_004B4740 {
+namespace lift_004B4740 {
+// Known callee 0x004B18E0: sub_004B18E0 (35 bytes, stdcall: callee pops its 3 args).
+// Arg 2 is the caller's saved ESI slot in the original code (no meaningful value); passed as 0.
+extern DWORD __stdcall ext_004B18E0(DWORD a, DWORD b, DWORD c);
+// Known callee 0x0055DA20: initDwordPair (Stores two stack-passed DWORDs into the object at ECX and returns that object pointer (callee pops 8 bytes).)
+extern void __stdcall ext_0055DA20(void* self, DWORD a, DWORD b);
+
+// @name sub_004B4740
+// @summary Calls ext_004B18E0 on arg2, then initialises arg1 with its result and arg2 via ext_0055DA20; returns arg1.
+void* fn_004B4740(void* arg1, DWORD arg2) {
+    DWORD result = ext_004B18E0(arg2, 0, 0);
+    ext_0055DA20(arg1, result, arg2);
+    return arg1;
+}
+} // namespace lift_004B4740
+} // namespace lift_004B4740

@@ -8524,6 +8524,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B4740": {
+    "name": "sub_004B4740",
+    "signature": "void* fn_004B4740(void* arg1, DWORD arg2)",
+    "summary": "Calls ext_004B18E0 on arg2, then initialises arg1 with its result and arg2 via ext_0055DA20; returns arg1.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B48E0": {
     "name": "NMData::GraphEngineData::vfunc_13",
     "class": "NMData::GraphEngineData",
