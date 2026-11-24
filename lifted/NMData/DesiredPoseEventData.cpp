@@ -81,3 +81,25 @@ extern void __thiscall fn_0048DE30(void* self) {
 }
 } // namespace lift_004CD090
 } // namespace lift_0048DE30
+
+// [0x00486A70] NMData::DesiredPoseEventData::vfunc_74 (35 bytes)
+namespace lift_00486A70 {
+// Callee 0x005A3DF0 (thiscall: ecx = object at +0x168; stack args: subobject at +0x19c, then global value).
+extern void ext_005A3DF0(void* self, void* subobject, int value);
+// Known callee 0x004C0340: SetGlobalObjectFlag4IfPresent (If the global object pointer mem_00AE29D0 is non-null, set the byte at its +0x04 offset to 1.)
+extern void ext_004C0340(void* self);
+extern int mem_00B40640;
+
+// @name NMData::DesiredPoseEventData::vfunc_74
+// @class NMData::DesiredPoseEventData
+// @summary Forwards the global mem_00B40640 and the +0x19c subobject to the object at +0x168, then calls SetGlobalObjectFlag4IfPresent.
+// @field NMData::DesiredPoseEventData +0x168 void* field_0x168
+// @field NMData::DesiredPoseEventData +0x19c uint8_t field_0x19c (address only, not read or written)
+void fn_00486A70(void* self) {
+    void* target = lift_field<void*>(self, 0x168);
+    uint8_t* subobject = static_cast<uint8_t*>(self) + 0x19c;
+
+    ext_005A3DF0(target, subobject, mem_00B40640);
+    ext_004C0340(self);
+}
+} // namespace lift_00486A70

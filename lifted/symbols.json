@@ -6916,6 +6916,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004DDED0 (NMData::AnimationEventData::vfunc_59).",
     "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp"
   },
+  "0x00486A70": {
+    "name": "NMData::DesiredPoseEventData::vfunc_74",
+    "class": "NMData::DesiredPoseEventData",
+    "signature": "void fn_00486A70(void* self)",
+    "summary": "Forwards the global mem_00B40640 and the +0x19c subobject to the object at +0x168, then calls SetGlobalObjectFlag4IfPresent.",
+    "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp"
+  },
   "0x00486AD0": {
     "name": "Unknown::storeValueMaybeNotify",
     "class": "Unknown",

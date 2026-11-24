@@ -1,0 +1,28 @@
+{
+  "va": "0x00486A70",
+  "size": 35,
+  "orig_symbol": "NMData::DesiredPoseEventData::vfunc_74",
+  "src_path": "src/NMData/DesiredPoseEventData.cpp",
+  "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp",
+  "name": "NMData::DesiredPoseEventData::vfunc_74",
+  "class": "NMData::DesiredPoseEventData",
+  "signature": "void fn_00486A70(void* self)",
+  "summary": "Forwards the global mem_00B40640 and the +0x19c subobject to the object at +0x168, then calls SetGlobalObjectFlag4IfPresent.",
+  "fields": [
+    {
+      "class": "NMData::DesiredPoseEventData",
+      "offset": "+0x168",
+      "type": "void*",
+      "name": "field_0x168"
+    },
+    {
+      "class": "NMData::DesiredPoseEventData",
+      "offset": "+0x19C",
+      "type": "uint8_t field_0x19c (address only, not read or",
+      "name": "written)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:37:50Z"
+}
