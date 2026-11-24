@@ -9280,6 +9280,13 @@
     "summary": "Stores the argument into the field at +0x3c of the object referenced by this-\u003e+0x8.",
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
   },
+  "0x004F9850": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_37",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "extern \"C\" uint8_t __fastcall fn_004F9850(void* self)",
+    "summary": "Calls the virtual method at vtable slot +0x98 on this with argument 4, discards its result, and returns 0.",
+    "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
+  },
   "0x004F98C0": {
     "name": "VMCSModes::DefaultImplementation::vfunc_28",
     "class": "VMCSModes::DefaultImplementation",

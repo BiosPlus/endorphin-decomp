@@ -176,3 +176,18 @@ void fn_004F9840(void* self, uint32_t value) {
     lift_field<uint32_t>(target, 0x3c) = value;
 }
 } // namespace lift_004F9840
+
+// [0x004F9850] VMCSModes::DefaultImplementation::vfunc_37 (15 bytes)
+namespace lift_004F9850 {
+// @name VMCSModes::DefaultImplementation::vfunc_37
+// @class VMCSModes::DefaultImplementation
+// @summary Calls the virtual method at vtable slot +0x98 on this with argument 4, discards its result, and returns 0.
+// @field VMCSModes::DefaultImplementation +0x0 void* vtable
+extern uint8_t __fastcall fn_004F9850(void* self) {
+    typedef void (__thiscall* VFunc)(void* self, uint32_t arg);
+    void* vtable = lift_field<void*>(self, 0x0);
+    VFunc target = lift_field<VFunc>(vtable, 0x98);
+    target(self, 4u);
+    return 0; // xor al, al
+}
+} // namespace lift_004F9850

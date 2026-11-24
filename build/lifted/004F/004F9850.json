@@ -1,0 +1,22 @@
+{
+  "va": "0x004F9850",
+  "size": 15,
+  "orig_symbol": "VMCSModes::DefaultImplementation::vfunc_37",
+  "src_path": "src/VMCSModes/auto_tiny.cpp",
+  "lifted_path": "lifted/VMCSModes/auto_tiny.cpp",
+  "name": "VMCSModes::DefaultImplementation::vfunc_37",
+  "class": "VMCSModes::DefaultImplementation",
+  "signature": "extern \"C\" uint8_t __fastcall fn_004F9850(void* self)",
+  "summary": "Calls the virtual method at vtable slot +0x98 on this with argument 4, discards its result, and returns 0.",
+  "fields": [
+    {
+      "class": "VMCSModes::DefaultImplementation",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:29:19Z"
+}
