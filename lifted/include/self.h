@@ -13,8 +13,8 @@ struct self_Fields {
     // +0x0   void* innerObject (pointer loaded from *self; passed as the new this)  (evidence: 0x00493E50, 0x00493E60, 0x00494050) // CONFLICT: multiple definitions at +0x0
     // +0x4   int32_t                  field_0x04  (evidence: 0x0041CEE0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer; the pointee's byte at +0x04 is set to 1 when non-null)  (evidence: 0x00528C70) // CONFLICT: multiple definitions at +0x4
-    // +0x10  uint8_t                  field_0x10  (evidence: 0x00468750)
-    // +0x14  uint32_t                 field_0x14  (evidence: 0x00468750)
+    // +0x10  uint8_t                  field_0x10  (evidence: 0x00468750, 0x0046F7D0)
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x00468750, 0x0046F7D0)
     // +0x50  double                   field_0x50  (evidence: 0x004408E0, 0x00440900)
     // +0x58  double                   field_0x58  (evidence: 0x004408E0, 0x00440900)
     // +0x15C int32_t                  field_0x15c  (evidence: 0x004DE160)

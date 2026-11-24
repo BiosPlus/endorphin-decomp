@@ -4576,9 +4576,10 @@
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x0046F7D0": {
-    "name": "CallInitWithZeroAndReturnArg",
-    "signature": "uint32_t __stdcall sub_0046F7D0(uint32_t arg0)",
-    "summary": "Calls sub_00661620 with the argument as this (ecx) and 0 as its stack argument, then returns the argument.",
+    "name": "sub_00467320",
+    "class": "(none)",
+    "signature": "void fn_00467320()",
+    "summary": "Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
   "0x0046F7F0": {
