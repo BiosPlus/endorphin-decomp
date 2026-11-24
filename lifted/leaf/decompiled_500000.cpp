@@ -262,3 +262,20 @@ void __thiscall fn_00503CD0(void* self) {
     *reinterpret_cast<uint32_t*>(obj + 0x1c) = 0;
 }
 } // namespace lift_00503CD0
+
+// [0x00503C20] sub_00503C20 (49 bytes)
+namespace lift_00503C20 {
+// @name CopyRangeToDest
+// @summary Copies the 8-byte-element range [first, last) to dest and returns dest plus the copied byte count.
+uint32_t fn_00503C20(uint32_t first, uint32_t last, uint32_t dest) {
+    const int32_t count = static_cast<int32_t>(last - first) >> 3;
+    const uint32_t bytes = static_cast<uint32_t>(count) * 8u;
+    const uint32_t end = dest + bytes;
+    if (count != 0) {
+        std::memmove(reinterpret_cast<void*>(static_cast<uintptr_t>(dest)),
+                     reinterpret_cast<const void*>(static_cast<uintptr_t>(first)),
+                     bytes);
+    }
+    return end;
+}
+} // namespace lift_00503C20

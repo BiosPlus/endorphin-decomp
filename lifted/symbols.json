@@ -12847,6 +12847,12 @@
     "summary": "Stores the double at *value into every 8-byte slot in [first, last); no-op if first == last.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x00503C20": {
+    "name": "CopyRangeToDest",
+    "signature": "uint32_t fn_00503C20(uint32_t first, uint32_t last, uint32_t dest)",
+    "summary": "Copies the 8-byte-element range [first, last) to dest and returns dest plus the copied byte count.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00503CA0": {
     "name": "initZeroState",
     "signature": "void fn_00503CA0(void* self)",
