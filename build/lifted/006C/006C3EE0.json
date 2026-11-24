@@ -1,0 +1,33 @@
+{
+  "va": "0x006C3EE0",
+  "size": 48,
+  "orig_symbol": "sub_006C3EE0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "scaleVec3ToOut",
+  "signature": "void fn_006C3EE0(double* out, const double* in, double scalar)",
+  "summary": "out[i] = in[i] * scalar for i in 0..2 (three doubles); cdecl, args: out, in, scalar",
+  "fields": [
+    {
+      "class": "Vec3d",
+      "offset": "+0x0",
+      "type": "double",
+      "name": "x"
+    },
+    {
+      "class": "Vec3d",
+      "offset": "+0x8",
+      "type": "double",
+      "name": "y"
+    },
+    {
+      "class": "Vec3d",
+      "offset": "+0x10",
+      "type": "double",
+      "name": "z"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:22:43Z"
+}

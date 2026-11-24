@@ -38576,6 +38576,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006C3470 (Unknown::GetEntryAddressAlt).",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C3EE0": {
+    "name": "scaleVec3ToOut",
+    "signature": "void fn_006C3EE0(double* out, const double* in, double scalar)",
+    "summary": "out[i] = in[i] * scalar for i in 0..2 (three doubles); cdecl, args: out, in, scalar",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C59C0": {
     "name": "Unknown::GetChildByIndex",
     "class": "Unknown",

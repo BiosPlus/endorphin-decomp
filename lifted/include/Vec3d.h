@@ -8,8 +8,8 @@
 // Recovered field layout for Vec3d:
 namespace lifted_layout {
 struct Vec3d_Fields {
-    // +0x0   double                   x  (evidence: 0x006D2700)
-    // +0x8   double                   y  (evidence: 0x006D2700)
-    // +0x10  double                   z  (evidence: 0x006D2700)
+    // +0x0   double                   x  (evidence: 0x006C3EE0, 0x006D2700)
+    // +0x8   double                   y  (evidence: 0x006C3EE0, 0x006D2700)
+    // +0x10  double                   z  (evidence: 0x006C3EE0, 0x006D2700)
 };
 } // namespace lifted_layout

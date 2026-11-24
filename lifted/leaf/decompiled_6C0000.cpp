@@ -571,3 +571,18 @@ uint32_t __thiscall sub_006C3120(uint32_t this_ptr) {
     return 0;
 }
 } // namespace lift_006C3120
+
+// [0x006C3EE0]
+namespace lift_006C3EE0 {
+// @name scaleVec3ToOut
+// @summary out[i] = in[i] * scalar for i in 0..2 (three doubles); cdecl, args: out, in, scalar
+// @field Vec3d +0x00 double x
+// @field Vec3d +0x08 double y
+// @field Vec3d +0x10 double z
+
+void fn_006C3EE0(double* out, const double* in, double scalar) {
+    out[0] = scalar * in[0];
+    out[1] = scalar * in[1];
+    out[2] = scalar * in[2];
+}
+} // namespace lift_006C3EE0
