@@ -9,6 +9,8 @@
 namespace lifted_layout {
 struct ListNode_Fields {
     // +0x0   ListNode*                next  (evidence: 0x0049FCF0)
+    // +0x8   uint32_t                 next  (evidence: 0x007F6830)
+    // +0xC   uint32_t                 prev  (evidence: 0x007F6830)
     // +0x10  void*                    embedded_obj  (evidence: 0x0049FCF0)
     // +0x6D  uint8_t                  skip_flag  (evidence: 0x0049FCF0)
 };
