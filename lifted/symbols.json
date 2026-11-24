@@ -1609,6 +1609,13 @@
     "summary": "Logically negates the byte flag at this+0xF5 in place (sets it to 1 if it was 0, otherwise 0).",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
   },
+  "0x0042FAC0": {
+    "name": "callNestedVirtual_0xDC_arg4",
+    "class": "Unknown",
+    "signature": "void fn_0042FAC0(void* self)",
+    "summary": "Gets a nested object via two helper calls, then invokes its vtable slot at +0xDC with argument 4.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x0042FB40": {
     "name": "thunkGetterVirtualSlot54",
     "signature": "extern \"C\" void* fn_0042FB40()",

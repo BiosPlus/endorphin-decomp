@@ -309,3 +309,43 @@ uint32_t fn_0042FDD0(void) {
     return slot(obj);
 }
 } // namespace lift_0042FDD0
+
+// [0x0042FAC0] sub_0042FAC0 (27 bytes)
+namespace lift_0042FAC0 {
+// Known callee 0x00465B30: get_global_field_0x58 (Calls ext_004658C0 and returns the int32_t field at offset +0x58.)
+extern int32_t ext_00465B30();
+// Known callee 0x00468660: getNestedField_0x18_0xc (thiscall in original; this_ptr is passed in ECX.
+// Returns the pointer-sized value read from this+0x18 chain, used as the object for the virtual call.)
+extern uint32_t ext_00468660(uint32_t this_ptr);
+
+// @name callNestedVirtual_0xDC_arg4
+// @class Unknown
+// @summary Gets a nested object via two helper calls, then invokes its vtable slot at +0xDC with argument 4.
+// @field Unknown +0x00 void* vptr
+
+// Virtual method signature: thiscall-style slot taking one int32 argument.
+// Portable stand-in: the object pointer is passed as the first parameter.
+using VirtualSlot4 = void (*)(void* self, int32_t arg);
+
+void fn_0042FAC0(void* self) {
+    (void)self; // original ignores the incoming this pointer
+
+    // call ext_00465B30 ; result (eax) is forwarded as the next call's this_ptr
+    const uint32_t g = static_cast<uint32_t>(ext_00465B30());
+
+    // call ext_00468660 ; eax = object pointer
+    const uint32_t obj_addr = ext_00468660(g);
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(obj_addr));
+
+    // mov edx, [eax]          -> vtable pointer at object +0x00
+    const uint32_t vtbl_addr = lift_field<uint32_t>(obj, 0x00);
+    void* vtbl = reinterpret_cast<void*>(static_cast<uintptr_t>(vtbl_addr));
+
+    // mov eax, [edx + 0xDC]   -> slot function pointer
+    const uint32_t fn_addr = lift_field<uint32_t>(vtbl, 0xDC);
+
+    // push 4 ; call eax       -> virtual call with this = obj, arg = 4
+    auto fn = reinterpret_cast<VirtualSlot4>(static_cast<uintptr_t>(fn_addr));
+    fn(obj, 4);
+}
+} // namespace lift_0042FAC0

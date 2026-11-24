@@ -1,0 +1,22 @@
+{
+  "va": "0x0042FAC0",
+  "size": 27,
+  "orig_symbol": "sub_0042FAC0",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "callNestedVirtual_0xDC_arg4",
+  "class": "Unknown",
+  "signature": "void fn_0042FAC0(void* self)",
+  "summary": "Gets a nested object via two helper calls, then invokes its vtable slot at +0xDC with argument 4.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:00:16Z"
+}
