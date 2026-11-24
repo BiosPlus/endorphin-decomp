@@ -4,10 +4,55 @@
   "orig_symbol": "sub_00430260",
   "src_path": "src/leaf/decompiled_430000.cpp",
   "lifted_path": "lifted/leaf/decompiled_430000.cpp",
-  "name": "CallVirtualSlot1D8OnNestedObject",
-  "signature": "void fn_00430260(void)",
-  "summary": "Fetches an object via two callees, then tail-dispatches its vtable slot at +0x1d8 with that object as `this`.",
+  "name": "sub_00431310",
+  "class": "CBase",
+  "signature": "void fn_00431310(uint32_t arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x00551A10 (NMCamera::Orthogonal::vfunc_5).",
+  "fields": [
+    {
+      "class": "CBase",
+      "offset": "+0x2D0",
+      "type": "void*",
+      "name": "field_0x2D0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "int32_t",
+      "name": "field_0x60"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x26C",
+      "type": "int32_t",
+      "name": "field_0x26C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x100",
+      "type": "void*",
+      "name": "field_0x100"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "this",
+      "offset": "+0x114",
+      "type": "void*",
+      "name": "child"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF4",
+      "type": "uint8_t",
+      "name": "field_0xf4"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T11:34:51Z"
+  "lifted_at": "2026-11-24T11:35:05Z"
 }

@@ -260,7 +260,7 @@ extern uint32_t ext_00468660(uint32_t this_ptr);
 
 // @name CallVirtualSlot1D8OnNestedObject
 // @summary Fetches an object via two callees, then tail-dispatches its vtable slot at +0x1d8 with that object as `this`.
-void fn_00430260(void) {
+uint32_t fn_00430260(void) {
     int32_t  token = ext_00465B30();
     uint32_t obj_addr = ext_00468660(static_cast<uint32_t>(token));
     void*    obj = reinterpret_cast<void*>(static_cast<uintptr_t>(obj_addr));
@@ -271,8 +271,7 @@ void fn_00430260(void) {
     // Slot at byte offset 0x1d8 in the vtable; the target's signature is unknown, so the result is passed through.
     using VirtualFn = uint32_t (*)(void* self);
     VirtualFn fn = reinterpret_cast<VirtualFn>(lift_field<void*>(vtbl, 0x1d8));
-    (void)fn;
-    (void)obj;
+    return fn(obj);
 }
 } // namespace lift_00430260
 
