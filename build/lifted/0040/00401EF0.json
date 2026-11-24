@@ -1,0 +1,22 @@
+{
+  "va": "0x00401EF0",
+  "size": 26,
+  "orig_symbol": "sub_00401EF0",
+  "src_path": "src/leaf/tiny_400000.cpp",
+  "lifted_path": "lifted/leaf/tiny_400000.cpp",
+  "name": "ExceptionCopyCtor",
+  "class": "Exception",
+  "signature": "void* __thiscall sub_00401EF0(void* self, const void* other)",
+  "summary": "Copy-constructs a std::exception subclass and sets its vtable pointer.",
+  "fields": [
+    {
+      "class": "Exception",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vftable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T11:55:25Z"
+}

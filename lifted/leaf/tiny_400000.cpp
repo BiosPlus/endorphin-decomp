@@ -427,3 +427,21 @@ bool fn_0040B860(void* self) {
 }
 } // namespace lift_0040B880
 } // namespace lift_0040B860
+
+// [0x00401EF0]
+namespace lift_00401EF0 {
+// @name ExceptionCopyCtor
+// @class Exception
+// @summary Copy-constructs a std::exception subclass and sets its vtable pointer.
+// @field Exception +0x00 uint32_t vftable
+
+extern void* mem_009251C8;
+
+using StdExceptionCopyCtor = void(__thiscall*)(void* self, const void* other);
+
+void* __thiscall sub_00401EF0(void* self, const void* other) {
+    reinterpret_cast<StdExceptionCopyCtor>(mem_009251C8)(self, other);
+    *reinterpret_cast<uint32_t*>(self) = 0x00928EC0u;
+    return self;
+}
+} // namespace lift_00401EF0
