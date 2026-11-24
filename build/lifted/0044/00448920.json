@@ -1,0 +1,28 @@
+{
+  "va": "0x00448920",
+  "size": 45,
+  "orig_symbol": "Properties::PropInPlaceSpinbuttonEdit::vfunc_66",
+  "src_path": "src/Properties/PropInPlaceSpinbuttonEdit.cpp",
+  "lifted_path": "lifted/Properties/PropInPlaceSpinbuttonEdit.cpp",
+  "name": "Properties::PropInPlaceSpinbuttonEdit::vfunc_66",
+  "class": "Properties::PropInPlaceSpinbuttonEdit",
+  "signature": "void __thiscall fn_00448920(void* self, uint32_t* arg1)",
+  "summary": "Handles WM_KEYDOWN (0x100) by updating arg1+0x0 from this+0x7c before forwarding to MFC80!ord_5214.",
+  "fields": [
+    {
+      "class": "Properties::PropInPlaceSpinbuttonEdit",
+      "offset": "+0x5C",
+      "type": "uint32_t",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Properties::PropInPlaceSpinbuttonEdit",
+      "offset": "+0x7C",
+      "type": "uint32_t",
+      "name": "field_0x7c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:13:59Z"
+}
