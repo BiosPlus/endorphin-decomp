@@ -92,3 +92,22 @@ void fn_00455CF0(void* ecx_in) {
     // add esp, 0x54 / ret: stack temporaries released on return.
 }
 } // namespace lift_00455CF0
+
+// [0x00455AD0]
+namespace lift_00455AD0 {
+// @name sub_00455AD0
+// @summary Clears the std::string field at +0x13c and tail-calls sub_00455820.
+// @field Unknown +0x13c std::string field_0x13c
+
+extern uint32_t mem_00928B5D;
+extern uint32_t mem_00924FD4;
+
+void ext_00455820(void* self);
+
+void fn_00455AD0(void* self) {
+    using StringAssignFn = void*(__thiscall*)(void*, const char*);
+    auto assign_fn = reinterpret_cast<StringAssignFn>(static_cast<uintptr_t>(mem_00924FD4));
+    assign_fn(static_cast<uint8_t*>(self) + 0x13c, reinterpret_cast<const char*>(&mem_00928B5D));
+    ext_00455820(self);
+}
+} // namespace lift_00455AD0

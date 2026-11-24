@@ -1,0 +1,21 @@
+{
+  "va": "0x00455AD0",
+  "size": 28,
+  "orig_symbol": "sub_00455AD0",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "sub_00455AD0",
+  "signature": "void fn_00455AD0(void* self)",
+  "summary": "Clears the std::string field at +0x13c and tail-calls sub_00455820.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x13C",
+      "type": "std::string",
+      "name": "field_0x13c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:09:17Z"
+}
