@@ -50910,6 +50910,13 @@
     "summary": "Multi-byte alignment NOP padding (lea ecx, [ecx]; lea esp, [esp])",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x00864F30": {
+    "name": "Unknown::initRecordHeader",
+    "class": "Unknown",
+    "signature": "uint32_t fn_00864F30(uint32_t /*arg0*/, uint32_t /*arg1*/, uint32_t /*arg2*/, uint32_t /*arg3*/, uint8_t* record)",
+    "summary": "Writes tag 0xCF into the first u16 of the record at the 5th stack argument, zeroes the next three u16 fields, clears mem_00AB98EC, and returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x008665CC": {
     "name": "DataBytes_008665CC",
     "signature": "void fn_008665CC(void* self)",

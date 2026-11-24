@@ -248,3 +248,25 @@ void fn_0086EFD0(void* self) {
     slots[0] &= 0x3FFFFFFFu;
 }
 } // namespace lift_0086EFD0
+
+// [0x00864F30]
+namespace lift_00864F30 {
+// @name Unknown::initRecordHeader
+// @summary Writes tag 0xCF into the first u16 of the record at the 5th stack argument, zeroes the next three u16 fields, clears mem_00AB98EC, and returns 0.
+// @field Record +0x00 uint16_t tag
+// @field Record +0x02 uint16_t field_0x02
+// @field Record +0x04 uint16_t field_0x04
+// @field Record +0x06 uint16_t field_0x06
+
+extern uint32_t mem_00AB98EC;
+
+uint32_t fn_00864F30(uint32_t /*arg0*/, uint32_t /*arg1*/, uint32_t /*arg2*/, uint32_t /*arg3*/, uint8_t* record) {
+    uint16_t* w = reinterpret_cast<uint16_t*>(record);
+    w[0] = 0x00CF;
+    w[1] = 0x0000;
+    w[2] = 0x0000;
+    w[3] = 0x0000;
+    mem_00AB98EC = 0;
+    return 0;
+}
+} // namespace lift_00864F30
