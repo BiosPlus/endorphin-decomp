@@ -11032,6 +11032,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x004C1040": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::TriggeredEventData\u003e::vfunc_40 (NMData::TriggeredEventData::getStartFrameNumber)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getStartFrameNumber(void) const, 0}, int, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{276, {flat}}, 0}\u003e",
+    "signature": "void* fn_004C1040(void* out)",
+    "summary": "Lazily initializes a static ValuePtr-style object (once, guarded by bit 0 of mem_00AE3018) and stores its address in out-\u003e+0x04; returns out.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004C10C0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0\u003e",

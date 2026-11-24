@@ -9512,3 +9512,28 @@ void fn_004CB1D0(void* out) {
         reinterpret_cast<uintptr_t>(&mem_00AE44B8);
 }
 } // namespace lift_004CB1D0
+
+// [0x004C1040] ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getStartFrameNumber(void) const, 0}, int, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{276, {flat}}, 0}>::vfunc_40 (122 bytes)
+namespace lift_004C1040 {
+// Constructor-style helper that initializes the function-local static at mem_00AE3014.
+extern void ext_0067A670(void* self, int arg);
+// One-time initialization guard (bit 0) and the static object storage.
+extern int mem_00AE3018;
+extern int mem_00AE3014;
+
+// @name ExprParser::ReadWriteMethodType<NMData::TriggeredEventData>::vfunc_40 (NMData::TriggeredEventData::getStartFrameNumber)
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getStartFrameNumber(void) const, 0}, int, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{276, {flat}}, 0}>
+// @summary Lazily initializes a static ValuePtr-style object (once, guarded by bit 0 of mem_00AE3018) and stores its address in out->+0x04; returns out.
+// @field ValuePtrType +0x04 void* field_0x04
+// The original's SEH frame (fs:[0] push/restore around the call) has no portable equivalent and is dropped;
+// the guard is set before the helper call, as in the original, to prevent re-entry.
+void* fn_004C1040(void* out) {
+    if ((mem_00AE3018 & 1) == 0) {
+        mem_00AE3018 |= 1;
+        ext_0067A670(&mem_00AE3014, 0);
+        mem_00AE3014 = 0x009449CC; // vtable pointer for the static object
+    }
+    lift_field<uint32_t>(out, 4) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE3014));
+    return out;
+}
+} // namespace lift_004C1040
