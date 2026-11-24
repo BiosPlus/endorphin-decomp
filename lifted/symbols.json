@@ -18087,6 +18087,13 @@
     "summary": "Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005B6B90": {
+    "name": "Unknown::forwardToSubobject158",
+    "class": "Unknown",
+    "signature": "void fn_005B6B90(void* self)",
+    "summary": "If the pointer at +0x158 is non-null, forwards this+0x1C4 to ext_005CE9D0 on that pointer.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B6BC0": {
     "name": "Unknown::forwardToSubobjectAt1D0IfSet",
     "class": "Unknown",
