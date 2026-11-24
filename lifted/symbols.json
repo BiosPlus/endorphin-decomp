@@ -278,6 +278,13 @@
     "summary": "Returns GetSysColor(COLOR_BTNFACE); the incoming stack argument is discarded.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00404670": {
+    "name": "CBaseTabCtrl::vfunc_85",
+    "class": "CBaseTabCtrl",
+    "signature": "DWORD fn_00404670(void* self)",
+    "summary": "Returns GetSysColor(COLOR_BTNFACE); the incoming stack argument is overwritten with 8 before tail-jumping to USER32!GetSysColor.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x004046C0": {
     "name": "CBaseTabCtrl::vfunc_1",
     "class": "CBaseTabCtrl",

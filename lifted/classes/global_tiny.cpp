@@ -5265,3 +5265,18 @@ DWORD fn_00404660(void* self, int /*ignored stack arg, overwritten with 0xF*/) {
     return ext_GetSysColor(15);
 }
 } // namespace lift_00404660
+
+// [0x00404670] CBaseTabCtrl::vfunc_85 (14 bytes)
+namespace lift_00404670 {
+// USER32!GetSysColor, reached through the IAT slot at mem_00925680.
+extern DWORD ext_GetSysColor(int nIndex);
+extern int mem_00925680;
+
+// @name CBaseTabCtrl::vfunc_85
+// @class CBaseTabCtrl
+// @summary Returns GetSysColor(COLOR_BTNFACE); the incoming stack argument is overwritten with 8 before tail-jumping to USER32!GetSysColor.
+DWORD fn_00404670(void* self) {
+    (void)self;
+    return ext_GetSysColor(8);
+}
+} // namespace lift_00404670
