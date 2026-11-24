@@ -210,3 +210,24 @@ void fn_00533D50(void* self) {
     ext_00532B40(self);
 }
 } // namespace lift_00533D50
+
+// [0x00533FB0]
+namespace lift_00533FB0 {
+// @name sub_00533FB0
+// @summary Copy four floats from +0x08..+0x14 into output buffer and return it
+// @field Object +0x08 float field_0x08
+// @field Object +0x0c float field_0x0c
+// @field Object +0x10 float field_0x10
+// @field Object +0x14 float field_0x14
+
+
+void* __thiscall sub_00533FB0(void* self, void* out) {
+    float* dst = reinterpret_cast<float*>(out);
+    const uint8_t* src = reinterpret_cast<const uint8_t*>(self);
+    dst[0] = *reinterpret_cast<const float*>(src + 0x08);
+    dst[1] = *reinterpret_cast<const float*>(src + 0x0c);
+    dst[2] = *reinterpret_cast<const float*>(src + 0x10);
+    dst[3] = *reinterpret_cast<const float*>(src + 0x14);
+    return out;
+}
+} // namespace lift_00533FB0

@@ -1,0 +1,39 @@
+{
+  "va": "0x00533FB0",
+  "size": 39,
+  "orig_symbol": "sub_00533FB0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "sub_00533FB0",
+  "signature": "void* __thiscall sub_00533FB0(void* self, void* out)",
+  "summary": "Copy four floats from +0x08..+0x14 into output buffer and return it",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Object",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:52:50Z"
+}
