@@ -350,3 +350,34 @@ void* fn_00728DE0(void* self, uint32_t value) {
     return self;
 }
 } // namespace lift_00728DE0
+
+// [0x00722190]
+namespace lift_00722190 {
+// @name getGlobalFlag00AACAF0
+// @summary Reads and returns the byte flag at 0x00AACAF0.
+extern uint8_t mem_00AACAF0;
+
+uint8_t __cdecl sub_00722190() {
+    return mem_00AACAF0;
+}
+} // namespace lift_00722190
+
+// [0x00722180]
+namespace lift_00722180 {
+extern uint8_t mem_00B5FFC4;
+
+// @name getGlobalFlag_00B5FFC4
+// @summary Reads and returns the byte value at global address 0x00B5FFC4.
+uint8_t sub_00722180() {
+    return mem_00B5FFC4;
+}
+} // namespace lift_00722180
+
+// [0x00722720]
+namespace lift_00722720 {
+// @name mulSquareDouble
+// @summary Computes (a * a) * b for two double-precision arguments.
+double sub_00722720(double a, double b) {
+    return (a * a) * b;
+}
+} // namespace lift_00722720

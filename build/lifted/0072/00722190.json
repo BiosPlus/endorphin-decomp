@@ -1,0 +1,13 @@
+{
+  "va": "0x00722190",
+  "size": 16,
+  "orig_symbol": "sub_00722190",
+  "src_path": "src/leaf/tiny_720000.cpp",
+  "lifted_path": "lifted/leaf/tiny_720000.cpp",
+  "name": "getGlobalFlag00AACAF0",
+  "signature": "uint8_t __cdecl sub_00722190()",
+  "summary": "Reads and returns the byte flag at 0x00AACAF0.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T01:46:34Z"
+}
