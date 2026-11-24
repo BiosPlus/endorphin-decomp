@@ -1,0 +1,21 @@
+{
+  "va": "0x004C0340",
+  "size": 14,
+  "orig_symbol": "sub_004C0340",
+  "src_path": "src/leaf/tiny_4C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_4C0000.cpp",
+  "name": "SetGlobalObjectFlag4IfPresent",
+  "signature": "void fn_004C0340()",
+  "summary": "If the global object pointer mem_00AE29D0 is non-null, set the byte at its +0x04 offset to 1.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:24:56Z"
+}

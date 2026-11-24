@@ -6686,6 +6686,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls CharacterSelection::vfunc_0.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004C0340": {
+    "name": "SetGlobalObjectFlag4IfPresent",
+    "signature": "void fn_004C0340()",
+    "summary": "If the global object pointer mem_00AE29D0 is non-null, set the byte at its +0x04 offset to 1.",
+    "lifted_path": "lifted/leaf/tiny_4C0000.cpp"
+  },
   "0x004C0380": {
     "name": "ExprParser::ReadMethodType\u003cNMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0\u003e",

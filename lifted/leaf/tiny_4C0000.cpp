@@ -99,3 +99,20 @@ void __thiscall fn_004CA300(uint32_t ecx) {
 }
 } // namespace lift_006B0480
 } // namespace lift_004CA300
+
+// [0x004C0340]
+namespace lift_004C0340 {
+// @name SetGlobalObjectFlag4IfPresent
+// @summary If the global object pointer mem_00AE29D0 is non-null, set the byte at its +0x04 offset to 1.
+
+extern uint8_t* mem_00AE29D0;
+
+// @field Unknown +0x04 uint8_t field_0x04
+
+void fn_004C0340() {
+    uint8_t* obj = mem_00AE29D0;
+    if (obj != nullptr) {
+        obj[0x04] = 1;
+    }
+}
+} // namespace lift_004C0340
