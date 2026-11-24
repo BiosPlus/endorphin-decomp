@@ -2495,6 +2495,13 @@
     "summary": "Forwards this-\u003efield_0x04 to ext_0041C880 with flag 0 and returns true.",
     "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/PanState.cpp"
   },
+  "0x00442BB0": {
+    "name": "Unknown::InitWithTagAndVtable",
+    "class": "Unknown",
+    "signature": "void* fn_00442BB0(void* self, uint32_t arg, uint32_t unused_arg)",
+    "summary": "Runs the base init helper with the first argument, sets the object's vtable slot to the 0x0093263C constant, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00442BD0": {
     "name": "Unknown::InitWithVtable",
     "class": "Unknown",

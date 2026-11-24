@@ -625,3 +625,21 @@ void* fn_00442B60(void* self, uint32_t arg1, uint32_t arg2) {
     return self;
 }
 } // namespace lift_00442B60
+
+// [0x00442BB0] sub_00442BB0 (32 bytes)
+namespace lift_00442BB0 {
+// Known callee 0x00442960: Unknown::InitWithTag (Runs the base init helper with arg, then overwrites the vtable slot with mem_009324DC and stores arg at +0x8; returns self.)
+extern void* ext_00442960(void* self, uint32_t arg, uint32_t unused_arg);
+// Rdata string "p3D" at 0x0093263C; its address value is stored into the vtable slot below.
+extern const char mem_0093263C[];
+
+// @name Unknown::InitWithTagAndVtable
+// @class Unknown
+// @summary Runs the base init helper with the first argument, sets the object's vtable slot to the 0x0093263C constant, and returns self.
+// @field Unknown +0x00 void* vtable
+void* fn_00442BB0(void* self, uint32_t arg, uint32_t unused_arg) {
+    ext_00442960(self, arg, unused_arg);
+    *reinterpret_cast<uint32_t*>(self) = 0x0093263Cu;
+    return self;
+}
+} // namespace lift_00442BB0
