@@ -32300,6 +32300,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006B06A0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B0C60": {
+    "name": "ReleaseOwnedChildVirtual",
+    "class": "\u003cunknown\u003e (vtable-owning object; class not yet identified)",
+    "signature": "void fn_006B0C60(void* self)",
+    "summary": "Installs this object's vtable, then calls virtual slot 1 (deleting-style, arg 1) on the child at +0x04 if non-null.",
+    "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
   "0x006B0C80": {
     "name": "GWCPropertyFeel::vfunc_1",
     "class": "GWCPropertyFeel",

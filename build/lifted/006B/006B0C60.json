@@ -1,0 +1,28 @@
+{
+  "va": "0x006B0C60",
+  "size": 23,
+  "orig_symbol": "sub_006B0C60",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "ReleaseOwnedChildVirtual",
+  "class": "\u003cunknown\u003e (vtable-owning object; class not yet identified)",
+  "signature": "void fn_006B0C60(void* self)",
+  "summary": "Installs this object's vtable, then calls virtual slot 1 (deleting-style, arg 1) on the child at +0x04 if non-null.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x0",
+      "type": "void* vtable (set to\u0026",
+      "name": "mem_00991348)"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (child object; slot 1 invoked with arg",
+      "name": "1)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:34:06Z"
+}

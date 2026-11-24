@@ -730,3 +730,28 @@ uint32_t fn_006B4FD0() {
     return eax;                                  // ret
 }
 } // namespace lift_006B4FD0
+
+// [0x006B0C60] sub_006B0C60 (23 bytes)
+namespace lift_006B0C60 {
+extern int mem_00991348;
+
+// @name ReleaseOwnedChildVirtual
+// @class <unknown> (vtable-owning object; class not yet identified)
+// @summary Installs this object's vtable, then calls virtual slot 1 (deleting-style, arg 1) on the child at +0x04 if non-null.
+// @field <unknown> +0x00 void* vtable (set to &mem_00991348)
+// @field <unknown> +0x04 void* field_0x04 (child object; slot 1 invoked with arg 1)
+void fn_006B0C60(void* self) {
+    // Store vtable pointer at offset 0.
+    lift_field<uint32_t>(self, 0) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00991348));
+
+    // Load child at offset 4.
+    void* child = lift_field<void*>(self, 4);
+    if (child != nullptr) {
+        // Virtual call: slot 1 of child's vtable, thiscall(child, 1).
+        void** vtbl = *reinterpret_cast<void***>(child);
+        using SlotFn = void(__thiscall*)(void*, int);
+        auto fn = reinterpret_cast<SlotFn>(vtbl[1]);
+        fn(child, 1);
+    }
+}
+} // namespace lift_006B0C60
