@@ -1,0 +1,28 @@
+{
+  "va": "0x005304E0",
+  "size": 50,
+  "orig_symbol": "sub_005304E0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::DispatchUnlessGated",
+  "class": "Unknown",
+  "signature": "extern uint32_t ext_vcall_slot14(void* obj);   // vtable +0x38 extern uint32_t ext_vcall_slot49(void* obj);   // vtable +0xC4 extern uint32_t ext_vcall_slot32(void* obj);   // vtable +0x80 uint32_t fn_005304E0(void* self)",
+  "summary": "Returns early if the +0x4C object's vtable slot 14 or the +0x10 object's vtable slot 49 reports true; otherwise tail-dispatches the +0x4C object's vtable slot 32.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "void*",
+      "name": "field_0x4C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:32:37Z"
+}

@@ -14548,6 +14548,13 @@
     "summary": "Stores a byte argument into the sub-object at this-\u003e+0x10 at offset +0x1D8.",
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
   },
+  "0x005304E0": {
+    "name": "Unknown::DispatchUnlessGated",
+    "class": "Unknown",
+    "signature": "extern uint32_t ext_vcall_slot14(void* obj);   // vtable +0x38 extern uint32_t ext_vcall_slot49(void* obj);   // vtable +0xC4 extern uint32_t ext_vcall_slot32(void* obj);   // vtable +0x80 uint32_t fn_005304E0(void* self)",
+    "summary": "Returns early if the +0x4C object's vtable slot 14 or the +0x10 object's vtable slot 49 reports true; otherwise tail-dispatches the +0x4C object's vtable slot 32.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00530640": {
     "name": "sub_00530640",
     "signature": "extern \"C\" int32_t __cdecl fn_00530640(void)",

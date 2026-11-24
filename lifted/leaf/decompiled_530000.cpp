@@ -364,3 +364,44 @@ void __cdecl fn_00539800(const void* src_begin, const void* src_end, void* dst) 
 }
 } // namespace lift_00539800
 } // namespace lift_00539800
+
+// [0x005304E0] sub_005304E0 (50 bytes)
+namespace lift_005304E0 {
+// @name Unknown::DispatchUnlessGated
+// @class Unknown
+// @summary Returns early if the +0x4C object's vtable slot 14 or the +0x10 object's vtable slot 49 reports true; otherwise tail-dispatches the +0x4C object's vtable slot 32.
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x4C void* field_0x4C
+
+namespace lift_005304E0 {
+
+// Virtual dispatch helpers: call vtable slot N (byte offset N*4 in the guest
+// vtable) on `obj`, with `obj` as the only argument. Result is eax, kept whole.
+extern uint32_t ext_vcall_slot14(void* obj);   // vtable +0x38
+extern uint32_t ext_vcall_slot49(void* obj);   // vtable +0xC4
+extern uint32_t ext_vcall_slot32(void* obj);   // vtable +0x80
+
+uint32_t fn_005304E0(void* self) {
+    unsigned char* base = static_cast<unsigned char*>(self);
+
+    void* a = *reinterpret_cast<void**>(base + 0x4C);
+    uint32_t r = ext_vcall_slot14(a);
+    if (static_cast<uint8_t>(r) != 0) {
+        return r;
+    }
+
+    void* b = *reinterpret_cast<void**>(base + 0x10);
+    r = ext_vcall_slot49(b);
+    if (static_cast<uint8_t>(r) != 0) {
+        return r;
+    }
+
+    // Original is a tail jump (pop esi; jmp edx), so the callee sees this
+    // function's own stack arguments. Those are not modelled; this forwards
+    // with `this` only.
+    a = *reinterpret_cast<void**>(base + 0x4C);
+    return ext_vcall_slot32(a);
+}
+
+} // namespace lift_005304E0
+} // namespace lift_005304E0
