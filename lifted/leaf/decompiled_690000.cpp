@@ -191,3 +191,32 @@ extern uint8_t* __stdcall fn_00698B90(uint32_t /*arg0*/, const uint8_t* first, u
     return ext_006989B0(first, last, dst);
 }
 } // namespace lift_00698B90
+
+// [0x00698810] sub_00698810 (47 bytes)
+namespace lift_00698810 {
+// @name cstrCompareStep2
+// @summary Case-sensitive string compare (strcmp-style, unsigned bytes) that steps two bytes per iteration; returns -1/0/1. Takes the string pointer from *self and the other string as its one argument.
+// @field (unknown) +0x00 const char* string (self dereferenced; owning class not yet identified)
+int cstrCompareStep2(const char* const* self, const char* other) {
+    const unsigned char* a = reinterpret_cast<const unsigned char*>(*self);
+    const unsigned char* b = reinterpret_cast<const unsigned char*>(other);
+    for (;;) {
+        unsigned char c = a[0];
+        if (c != b[0]) {
+            return c < b[0] ? -1 : 1;
+        }
+        if (c == 0) {
+            return 0;
+        }
+        c = a[1];
+        if (c != b[1]) {
+            return c < b[1] ? -1 : 1;
+        }
+        a += 2;
+        b += 2;
+        if (c == 0) {
+            return 0;
+        }
+    }
+}
+} // namespace lift_00698810

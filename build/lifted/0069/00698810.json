@@ -1,0 +1,21 @@
+{
+  "va": "0x00698810",
+  "size": 47,
+  "orig_symbol": "sub_00698810",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "cstrCompareStep2",
+  "signature": "int cstrCompareStep2(const char* const* self, const char* other)",
+  "summary": "Case-sensitive string compare (strcmp-style, unsigned bytes) that steps two bytes per iteration; returns -1/0/1. Takes the string pointer from *self and the other string as its one argument.",
+  "fields": [
+    {
+      "class": "(unknown)",
+      "offset": "+0x0",
+      "type": "const char* string (self dereferenced; owning class not yet",
+      "name": "identified)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:12:21Z"
+}
