@@ -16925,6 +16925,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x300 and tail-calls sub_0052EB20.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00533380": {
+    "name": "OglRenderer::vfunc_16",
+    "class": "OglRenderer",
+    "signature": "void __thiscall fn_00533380(void* self, float value)",
+    "summary": "Sets a float property on OglRenderer (selecting +0x390 or +0x380 based on +0x379) and +0x458, marks +0x430 dirty, and invokes vtable +0x154",
+    "lifted_path": "lifted/classes/OglRenderer.cpp"
+  },
   "0x00533780": {
     "name": "OglRenderer::vfunc_111",
     "class": "OglRenderer",
@@ -55276,6 +55283,12 @@
     "signature": "void __stdcall fn_007F44C0(void* self_ptr, void* arg1_ptr, const uint32_t* arg2_dwords)",
     "summary": "Projected Gauss-Seidel / LCP iterative solver step for MdtArthur::arthurSolver_sse",
     "lifted_path": "lifted/MdtArthur/arthurSolver_sse.cpp"
+  },
+  "0x007F6690": {
+    "name": "CallLookupResultWithOutParam",
+    "signature": "void fn_007F6690(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t* out)",
+    "summary": "Stores arg0 through out-pointer arg3, looks up a handler from arg0, and if found calls it with (arg0, arg1, arg2, out); otherwise returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
   "0x007F6810": {
     "name": "allocFromFreeList",

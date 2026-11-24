@@ -105,3 +105,25 @@ uint32_t __fastcall sub_007F0B00(uint32_t ecx, uint32_t edx, uint32_t edi) {
     return bucket;
 }
 } // namespace lift_007F0B00
+
+// [0x007F6690] sub_007F6690 (54 bytes)
+namespace lift_007F6690 {
+// Known callee 0x007C7000: sub_007C7000_derefDwordAt44Thunk (adds +0x44 to arg and tail-forwards to derefDword, returning the dword read there.)
+extern uint32_t ext_007C7000(uint32_t self);
+// Known callee 0x007CCA00: getIndexedField_007CCA00 (reads a 32-bit value from a 40-byte-strided table by index.)
+extern uint32_t ext_007CCA00(uint32_t arg0);
+
+// @name CallLookupResultWithOutParam
+// @summary Stores arg0 through out-pointer arg3, looks up a handler from arg0, and if found calls it with (arg0, arg1, arg2, out); otherwise returns 0.
+void fn_007F6690(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t* out) {
+    *out = arg0;
+    uint32_t key = ext_007C7000(arg0);
+    uint32_t handler = ext_007CCA00(key);
+    if (handler == 0) {
+        return;
+    }
+    using Handler = uint32_t (*)(uint32_t, uint32_t, uint32_t, uint32_t*);
+    auto fn = reinterpret_cast<Handler>(static_cast<uintptr_t>(handler));
+    (void)fn(arg0, arg1, arg2, out);
+}
+} // namespace lift_007F6690
