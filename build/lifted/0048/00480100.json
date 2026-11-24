@@ -1,0 +1,22 @@
+{
+  "va": "0x00480100",
+  "size": 35,
+  "orig_symbol": "ToolEngine::vfunc_26",
+  "src_path": "src/classes/ToolEngine.cpp",
+  "lifted_path": "lifted/classes/ToolEngine.cpp",
+  "name": "ToolEngine::vfunc_26",
+  "class": "ToolEngine",
+  "signature": "void __thiscall fn_00480100(void* self, float val)",
+  "summary": "Broadcasts a scalar float to a 3-element float vector and forwards it to vfunc_25 (vtable +0x64).",
+  "fields": [
+    {
+      "class": "ToolEngine",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T12:57:21Z"
+}

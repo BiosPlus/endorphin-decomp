@@ -18,3 +18,20 @@ float fn_004800C0(uint32_t ecx) {
 }
 } // namespace lift_00611160
 } // namespace lift_004800C0
+
+// [0x00480100]
+namespace lift_00480100 {
+// @name ToolEngine::vfunc_26
+// @class ToolEngine
+// @summary Broadcasts a scalar float to a 3-element float vector and forwards it to vfunc_25 (vtable +0x64).
+// @field ToolEngine +0x00 void* vptr
+
+
+void __thiscall fn_00480100(void* self, float val) {
+    float vec[3] = { val, val, val };
+    void** vtable = *reinterpret_cast<void***>(self);
+    using VFunc25 = void(__thiscall*)(void*, const float*);
+    auto vfunc_25 = reinterpret_cast<VFunc25>(vtable[0x64 / sizeof(void*)]);
+    vfunc_25(self, vec);
+}
+} // namespace lift_00480100

@@ -5754,6 +5754,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
     "lifted_path": "lifted/classes/ToolEngine.cpp"
   },
+  "0x00480100": {
+    "name": "ToolEngine::vfunc_26",
+    "class": "ToolEngine",
+    "signature": "void __thiscall fn_00480100(void* self, float val)",
+    "summary": "Broadcasts a scalar float to a 3-element float vector and forwards it to vfunc_25 (vtable +0x64).",
+    "lifted_path": "lifted/classes/ToolEngine.cpp"
+  },
   "0x004801A0": {
     "name": "ToolEngine::vfunc_23",
     "class": "ToolEngine",
@@ -6777,6 +6784,12 @@
     "signature": "bool fn_00494D50(void* self)",
     "summary": "Returns true if the bound pointer (self-\u003eptr) is non-null and the helper 0x006AD970 on it returns nonzero; throws std::runtime_error when the pointer is null.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
+  },
+  "0x00494FF0": {
+    "name": "initWithOneAndArg",
+    "signature": "uint32_t __stdcall sub_00494FF0(uint32_t arg1, uint32_t arg2)",
+    "summary": "Calls ext_00661680 on arg1 with (1, arg2) and returns arg1.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
   "0x00495020": {
     "name": "ExprParser::DynamicEnumType\u003cRigManager\u003e::vfunc_26",
