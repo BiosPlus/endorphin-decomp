@@ -26,3 +26,17 @@ struct Unknown;
 
 extern uint32_t sub_008103F0(Unknown* arg);
 } // namespace lift_008103F0
+
+// [0x00810350]
+namespace lift_00810350 {
+// @name getNestedFlagBit15
+// @summary Returns bit 15 of the uint32 at arg0->+0x4->+0x4 (as 0 or 1).
+// @field field_0x04 +0x04 uint32_t inner (pointer loaded from arg0->+0x4)
+// @field field_0x04 +0x04 uint32_t flags (dword read from inner->+0x4)
+
+uint32_t sub_00810350(const uint8_t* arg0) {
+    const uint8_t* inner = *reinterpret_cast<const uint8_t* const*>(arg0 + 0x4);
+    uint32_t flags = *reinterpret_cast<const uint32_t*>(inner + 0x4);
+    return (flags >> 15) & 1u;
+}
+} // namespace lift_00810350

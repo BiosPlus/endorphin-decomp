@@ -1,0 +1,27 @@
+{
+  "va": "0x00810350",
+  "size": 17,
+  "orig_symbol": "sub_00810350",
+  "src_path": "src/leaf/tiny_810000.cpp",
+  "lifted_path": "lifted/leaf/tiny_810000.cpp",
+  "name": "getNestedFlagBit15",
+  "signature": "uint32_t sub_00810350(const uint8_t* arg0)",
+  "summary": "Returns bit 15 of the uint32 at arg0-\u003e+0x4-\u003e+0x4 (as 0 or 1).",
+  "fields": [
+    {
+      "class": "field_0x04",
+      "offset": "+0x4",
+      "type": "uint32_t inner (pointer loaded from",
+      "name": "arg0-\u003e+0x4)"
+    },
+    {
+      "class": "field_0x04",
+      "offset": "+0x4",
+      "type": "uint32_t flags (dword read from",
+      "name": "inner-\u003e+0x4)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:55:21Z"
+}
