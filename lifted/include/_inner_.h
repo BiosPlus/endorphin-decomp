@@ -8,6 +8,6 @@
 // Recovered field layout for <inner>:
 namespace lifted_layout {
 struct _inner__Fields {
-    // +0x0   uint32 field_0x00 (returned value)  (evidence: 0x00728DE0, 0x0072B1B0)
+    // +0x0   uint32 field_0x00 (returned value)  (evidence: 0x0072B1B0)
 };
 } // namespace lifted_layout

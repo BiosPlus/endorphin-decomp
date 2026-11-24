@@ -2766,3 +2766,37 @@ uint8_t __fastcall sub_0071C5C0(uint32_t ecx, uint32_t edx) {
     return mem_read8(obj + 0x1630);
 }
 } // namespace lift_0071C5C0
+
+// [0x0071C740] sub_0071C740 (16 bytes)
+namespace lift_0071C740 {
+// @name sub_0071C740
+// @summary Auto-lifted identical-shape clone of 0x0071C970 (Unknown::getByteViaPtr0x0C_0x1960).
+namespace lift_0071C970 {
+// @name Unknown::getByteViaPtr0x0C_0x1960
+// @class Unknown
+// @summary Loads the pointer at self+0x0C and returns the byte at offset 0x1960 within the pointed-to object.
+// @field Unknown +0x0C void* field_0x0c
+// @field Unknown +0x1960 uint8_t field_0x1960
+uint8_t __thiscall fn_0071C740(uint8_t* self) {
+    uint8_t* inner = *reinterpret_cast<uint8_t**>(self + 0x0C);
+    return inner[0x6B0];
+}
+} // namespace lift_0071C970
+} // namespace lift_0071C740
+
+// [0x0071C8D0] sub_0071C8D0 (16 bytes)
+namespace lift_0071C8D0 {
+// @name sub_0071C8D0
+// @summary Auto-lifted identical-shape clone of 0x0071C970 (Unknown::getByteViaPtr0x0C_0x1960).
+namespace lift_0071C970 {
+// @name Unknown::getByteViaPtr0x0C_0x1960
+// @class Unknown
+// @summary Loads the pointer at self+0x0C and returns the byte at offset 0x1960 within the pointed-to object.
+// @field Unknown +0x0C void* field_0x0c
+// @field Unknown +0x1960 uint8_t field_0x1960
+uint8_t __thiscall fn_0071C8D0(uint8_t* self) {
+    uint8_t* inner = *reinterpret_cast<uint8_t**>(self + 0x0C);
+    return inner[0x1B80];
+}
+} // namespace lift_0071C970
+} // namespace lift_0071C8D0

@@ -36286,11 +36286,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C740": {
+    "name": "sub_0071C740",
+    "class": "Unknown",
+    "signature": "uint8_t __thiscall fn_0071C740(uint8_t* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0071C970 (Unknown::getByteViaPtr0x0C_0x1960).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
   "0x0071C8C0": {
     "name": "sub_0071C8C0",
     "class": "Unknown",
     "signature": "void __thiscall fn_0071C8C0(Unknown* self, uint8_t value)",
     "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
+    "lifted_path": "lifted/leaf/tiny_710000.cpp"
+  },
+  "0x0071C8D0": {
+    "name": "sub_0071C8D0",
+    "class": "Unknown",
+    "signature": "uint8_t __thiscall fn_0071C8D0(uint8_t* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0071C970 (Unknown::getByteViaPtr0x0C_0x1960).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
   "0x0071C900": {
@@ -38614,6 +38628,18 @@
     "name": "sub_00856FE0",
     "signature": "uint32_t sub_00856FE0(uint32_t* dst, const uint32_t* src)",
     "summary": "Copies a 32-bit value from a source pointer to a destination pointer and returns 0.",
+    "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
+  "0x008596E0": {
+    "name": "sub_008596E0",
+    "signature": "uint32_t __cdecl fn_008596E0(uint32_t size)",
+    "summary": "Auto-lifted identical-shape clone of 0x0079AF40 (GlobalAllocZeroFlags).",
+    "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
+  "0x00859730": {
+    "name": "sub_00859730",
+    "signature": "HGLOBAL fn_00859730(HGLOBAL hMem)",
+    "summary": "Auto-lifted identical-shape clone of 0x0079AF50 (GlobalFreeWrapper).",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
   "0x0085D504": {

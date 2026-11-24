@@ -1,0 +1,13 @@
+{
+  "va": "0x00859730",
+  "size": 16,
+  "orig_symbol": "sub_00859730",
+  "src_path": "src/leaf/tiny_850000.cpp",
+  "lifted_path": "lifted/leaf/tiny_850000.cpp",
+  "name": "sub_00859730",
+  "signature": "HGLOBAL fn_00859730(HGLOBAL hMem)",
+  "summary": "Auto-lifted identical-shape clone of 0x0079AF50 (GlobalFreeWrapper).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:46:17Z"
+}
