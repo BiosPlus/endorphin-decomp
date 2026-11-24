@@ -1,0 +1,27 @@
+{
+  "va": "0x00492520",
+  "size": 30,
+  "orig_symbol": "sub_00492520",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "fn_00492520 (select field by selector: 0 -\u003e +0x0C, 1 -\u003e +0x10, else 0)",
+  "signature": "int32_t fn_00492520(void* self, int32_t selector)",
+  "summary": "Returns one of two 32-bit fields of self based on a selector argument; returns 0 for other selectors.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:17:00Z"
+}

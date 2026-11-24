@@ -626,3 +626,21 @@ void* fn_004928C0(void* a) {
 }
 } // namespace lift_005AC820
 } // namespace lift_004928C0
+
+// [0x00492520] sub_00492520 (30 bytes)
+namespace lift_00492520 {
+// @name fn_00492520 (select field by selector: 0 -> +0x0C, 1 -> +0x10, else 0)
+// @summary Returns one of two 32-bit fields of self based on a selector argument; returns 0 for other selectors.
+// @field Unknown +0x0C int32_t field_0x0C
+// @field Unknown +0x10 int32_t field_0x10
+int32_t fn_00492520(void* self, int32_t selector) {
+    auto* base = static_cast<unsigned char*>(self);
+    if (selector == 0) {
+        return *reinterpret_cast<int32_t*>(base + 0x0C);
+    }
+    if (selector == 1) {
+        return *reinterpret_cast<int32_t*>(base + 0x10);
+    }
+    return 0;
+}
+} // namespace lift_00492520
