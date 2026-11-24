@@ -6562,3 +6562,23 @@ PoseResult* fn_00604AF0(PoseResult* out, void* arg2, void* arg3) {
 }
 } // namespace lift_00487000
 } // namespace lift_00604AF0
+
+// [0x004894C0] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseImport(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_40 (122 bytes)
+namespace lift_004894C0 {
+extern void ext_0067A670();
+extern int mem_00AD9E50;
+extern int mem_00AD9E4C;
+
+// @name WriteMethodType_DesiredPoseEventData_loadPoseImport::vfunc_40
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseImport(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>
+// @summary Lazily constructs the shared static object at mem_00AD9E4C (once, guarded by bit 0 of mem_00AD9E50) and stores its address at self+0x04.
+// @field ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseImport(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}> +0x04 void* field_0x04
+void fn_004894C0(void* self) {
+    if ((mem_00AD9E50 & 1) == 0) {
+        mem_00AD9E50 |= 1;
+        ext_0067A670();                       // constructor of the shared static object
+        mem_00AD9E4C = 0x0093D5D4;            // vtable pointer for that object
+    }
+    lift_field<uintptr_t>(self, 4) = reinterpret_cast<uintptr_t>(&mem_00AD9E4C);
+}
+} // namespace lift_004894C0
