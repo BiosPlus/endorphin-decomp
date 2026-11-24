@@ -1,0 +1,27 @@
+{
+  "va": "0x00455280",
+  "size": 29,
+  "orig_symbol": "sub_00455280",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "sub_00455280",
+  "signature": "void fn_00455280(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0041CCA0 (ReleaseSubobjectAndChainDestructor).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "u32",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x12C",
+      "type": "u8",
+      "name": "field_0x12c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:11:12Z"
+}

@@ -111,3 +111,27 @@ void fn_00455AD0(void* self) {
     ext_00455820(self);
 }
 } // namespace lift_00455AD0
+
+// [0x00455280] sub_00455280 (29 bytes)
+namespace lift_00455280 {
+// @name sub_00455280
+// @summary Auto-lifted identical-shape clone of 0x0041CCA0 (ReleaseSubobjectAndChainDestructor).
+namespace lift_0041CCA0 {
+extern void __fastcall ext_00454BA0(void* self);
+extern uint32_t mem_009242F4; // .rdata IAT slot holding MFC80 ord_578
+
+// @name ReleaseSubobjectAndChainDestructor
+// @summary Sets the object vtable, calls MFC80 ord_578 on the subobject at +0x12c, then tail-calls the base destructor.
+// @field Unknown +0x00 u32 field_0x00
+// @field Unknown +0x12c u8 field_0x12c
+void fn_00455280(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x9367A4u;
+
+    auto release = reinterpret_cast<void (__thiscall*)(void*)>(
+        static_cast<uintptr_t>(mem_009242F4));
+    release(static_cast<uint8_t*>(self) + 0x12c);
+
+    ext_00454BA0(self);
+}
+} // namespace lift_0041CCA0
+} // namespace lift_00455280

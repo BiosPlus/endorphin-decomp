@@ -2106,6 +2106,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0043BBD0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/MultiTrackView/auto_tiny.cpp"
   },
+  "0x0043C620": {
+    "name": "sub_0043C620",
+    "signature": "void fn_0043C620(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0041CCA0 (ReleaseSubobjectAndChainDestructor).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043C900": {
     "name": "Unknown::SetCursorFromTable",
     "class": "Unknown",
@@ -3380,6 +3386,12 @@
     "summary": "Assigns the first n bytes of src into the std::string at self; returns 0 (stdcall, callee pops 16 bytes).",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x00455280": {
+    "name": "sub_00455280",
+    "signature": "void fn_00455280(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0041CCA0 (ReleaseSubobjectAndChainDestructor).",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x004552E0": {
     "name": "SceneNotesEditor::vfunc_0",
     "class": "SceneNotesEditor",
@@ -3470,6 +3482,13 @@
     "signature": "extern \"C\" void* __cdecl fn_00455C20(void)",
     "summary": "Returns address of global mem_00936D1C.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00455CB0": {
+    "name": "sub_00455CB0",
+    "class": "(none)",
+    "signature": "extern int __fastcall fn_00455CB0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004090C0 (sub_004090C0).",
+    "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
   "0x00455CF0": {
     "name": "Unknown::stackTempsCallMfcOrd501ThenOrd709",

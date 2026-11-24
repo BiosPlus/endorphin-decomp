@@ -394,3 +394,22 @@ uint32_t __stdcall fn_00455240(void* self, char* dst, uint32_t count, uint32_t u
     return 0;
 }
 } // namespace lift_00455240
+
+// [0x00455CB0] sub_00455CB0 (29 bytes)
+namespace lift_00455CB0 {
+// @name sub_00455CB0
+// @summary Auto-lifted identical-shape clone of 0x004090C0 (sub_004090C0).
+namespace lift_004090C0 {
+// @name sub_004090C0
+// @class (none)
+// @summary Returns 1 if the int at self+0xF4 equals 0xE81C or 0xE81D, otherwise 0.
+// @field Unknown +0xF4 int field_0xF4
+extern int __fastcall fn_00455CB0(void* self) {
+    const int v = lift_field<int>(self, 0xF4);
+    if (v == 0xE81B || v == 0xE81E) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004090C0
+} // namespace lift_00455CB0
