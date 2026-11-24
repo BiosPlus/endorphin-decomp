@@ -1,0 +1,14 @@
+{
+  "va": "0x00782B80",
+  "size": 32,
+  "orig_symbol": "sub_00782B80",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "descriptiveName: sub_00782B80 (selects \"Relative\"/\"Absolute\" label)",
+  "class": "(none; free function)",
+  "signature": "const char* sub_00782B80(DWORD mode)",
+  "summary": "Maps a mode selector (0 = \"Relative\", 1 = \"Absolute\") to a static label string; returns nullptr for other values.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:44:31Z"
+}

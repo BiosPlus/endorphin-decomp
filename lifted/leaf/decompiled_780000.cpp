@@ -54,3 +54,23 @@ const char* sub_00782B60(uint32_t selector) {
     return nullptr;
 }
 } // namespace lift_00782B60
+
+// [0x00782B80] sub_00782B80 (32 bytes)
+namespace lift_00782B80 {
+extern const char mem_00AAF2CC[];
+extern const char mem_00AAF2D8[];
+
+// @name descriptiveName: sub_00782B80 (selects "Relative"/"Absolute" label)
+// @class (none; free function)
+// @summary Maps a mode selector (0 = "Relative", 1 = "Absolute") to a static label string; returns nullptr for other values.
+const char* sub_00782B80(DWORD mode) {
+    switch (mode) {
+    case 0:
+        return mem_00AAF2CC;
+    case 1:
+        return mem_00AAF2D8;
+    default:
+        return nullptr;
+    }
+}
+} // namespace lift_00782B80

@@ -42521,6 +42521,13 @@
     "summary": "Returns \"Auto\" for selector 0, \"User\" for selector 1, otherwise nullptr.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00782B80": {
+    "name": "descriptiveName: sub_00782B80 (selects \"Relative\"/\"Absolute\" label)",
+    "class": "(none; free function)",
+    "signature": "const char* sub_00782B80(DWORD mode)",
+    "summary": "Maps a mode selector (0 = \"Relative\", 1 = \"Absolute\") to a static label string; returns nullptr for other values.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00782D20": {
     "name": "sub_00782D20",
     "signature": "extern \"C\" void fn_00782D20(void)",
