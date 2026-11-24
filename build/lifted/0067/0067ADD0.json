@@ -4,10 +4,25 @@
   "orig_symbol": "sub_0067ADD0",
   "src_path": "src/leaf/tiny_670000.cpp",
   "lifted_path": "lifted/leaf/tiny_670000.cpp",
-  "name": "sleepMs",
-  "signature": "void sub_0067ADD0(std::uint32_t dwMilliseconds)",
-  "summary": "Forwards its single stack argument to KERNEL32 Sleep via the import slot at mem_00924248.",
+  "name": "sub_0067AEE8",
+  "class": "Unknown (no class recovered; receiver is passed in ecx)",
+  "signature": "extern \"C\" void __stdcall fn_0067AEE8()",
+  "summary": "Pops the return address into edi and returns, releasing 4 bytes of stack arguments.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "double",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T01:15:47Z"
+  "lifted_at": "2026-11-24T01:15:52Z"
 }
