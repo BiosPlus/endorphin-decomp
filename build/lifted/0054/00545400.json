@@ -1,0 +1,22 @@
+{
+  "va": "0x00545400",
+  "size": 58,
+  "orig_symbol": "PoseTool::vfunc_22_off_98",
+  "src_path": "src/classes/PoseTool.cpp",
+  "lifted_path": "lifted/classes/PoseTool.cpp",
+  "name": "PoseTool::vfunc_22_off_98",
+  "class": "PoseTool",
+  "signature": "void __thiscall fn_00545400(void* self, uint32_t arg0, uint32_t arg1, float arg2)",
+  "summary": "ToolClient thunk: forwards its three stack args to vtable slot 0xB8 of the object at PoseTool+0x88, then calls vtable slot 0x84 on the owning PoseTool.",
+  "fields": [
+    {
+      "class": "PoseTool",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:24:08Z"
+}

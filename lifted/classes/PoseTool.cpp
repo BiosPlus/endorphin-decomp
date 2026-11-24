@@ -181,3 +181,25 @@ uint32_t __thiscall fn_00545370(void* self, uint32_t arg1, uint32_t arg2) {
     return 1;
 }
 } // namespace lift_00545370
+
+// [0x00545400] PoseTool::vfunc_22_off_98 (58 bytes)
+namespace lift_00545400 {
+// @name PoseTool::vfunc_22_off_98
+// @class PoseTool
+// @summary ToolClient thunk: forwards its three stack args to vtable slot 0xB8 of the object at PoseTool+0x88, then calls vtable slot 0x84 on the owning PoseTool.
+// @field PoseTool +0x88 void* field_0x88
+void __thiscall fn_00545400(void* self, uint32_t arg0, uint32_t arg1, float arg2) {
+    // `self` is the ToolClient sub-object at PoseTool+0x98; the object at self-0x10 is PoseTool+0x88.
+    void* owner = lift_field<void*>(self, -0x10);
+    void** ownerVtable = *reinterpret_cast<void***>(owner);
+    auto slot46 = reinterpret_cast<void(__thiscall*)(void*, uint32_t, uint32_t, float)>(
+        ownerVtable[0xB8 / sizeof(void*)]);
+    slot46(owner, arg0, arg1, arg2);
+
+    // Owning PoseTool (self-0x98): primary vtable slot 0x84 (index 33), no arguments.
+    uint8_t* poseTool = static_cast<uint8_t*>(self) - 0x98;
+    void** poseVtable = *reinterpret_cast<void***>(poseTool);
+    auto slot33 = reinterpret_cast<void(__thiscall*)(void*)>(poseVtable[0x84 / sizeof(void*)]);
+    slot33(poseTool);
+}
+} // namespace lift_00545400
