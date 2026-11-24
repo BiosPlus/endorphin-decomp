@@ -1,0 +1,22 @@
+{
+  "va": "0x006D2A90",
+  "size": 15,
+  "orig_symbol": "sub_006D2A90",
+  "src_path": "src/leaf/tiny_6D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6D0000.cpp",
+  "name": "Unknown::sub_006D2A90",
+  "class": "Unknown",
+  "signature": "uint32_t Unknown_sub_006D2A90(const void* self, uint32_t arg)",
+  "summary": "Returns (arg \u003c\u003c 5) + this-\u003efield_0x10 (thiscall, one stack arg, ret 4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:32:15Z"
+}

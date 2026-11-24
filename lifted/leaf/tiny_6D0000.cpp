@@ -295,3 +295,18 @@ extern "C" void __fastcall fn_006DECE0(void* self, int edx_unused, int32_t value
 extern "C" int32_t __fastcall fn_006DEEC0(void* self) {
     return static_cast<int32_t>(lift_field<int32_t>(self, 0x38));
 }
+
+// [0x006D2A90]
+namespace lift_006D2A90 {
+// @name Unknown::sub_006D2A90
+// @class Unknown
+// @summary Returns (arg << 5) + this->field_0x10 (thiscall, one stack arg, ret 4).
+// @field Unknown +0x10 uint32_t field_0x10
+
+// thiscall: `this` in ECX, one argument on the stack, callee cleans 4 bytes.
+uint32_t Unknown_sub_006D2A90(const void* self, uint32_t arg) {
+    const uint8_t* base = static_cast<const uint8_t*>(self);
+    uint32_t field_0x10 = *reinterpret_cast<const uint32_t*>(base + 0x10);
+    return (arg << 5) + field_0x10;
+}
+} // namespace lift_006D2A90
