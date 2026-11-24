@@ -29,3 +29,24 @@ uint32_t sub_006F90D0(int32_t idx) {
     return mem_00AAB3EC[idx];
 }
 } // namespace lift_006F90D0
+
+// [0x006F8AF0] sub_006F8AF0 (32 bytes)
+namespace lift_006F8AF0 {
+// @name Unknown::ResetHeaderState
+// @class Unknown
+// @summary Zeroes the leading dword, sets byte +0x04 to 1, and clears bytes +0x05..+0x08.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint8_t field_0x04
+// @field Unknown +0x05 uint8_t field_0x05
+// @field Unknown +0x06 uint8_t field_0x06
+// @field Unknown +0x07 uint8_t field_0x07
+// @field Unknown +0x08 uint8_t field_0x08
+void fn_006F8AF0(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0;
+    lift_field<uint8_t>(self, 0x04) = 1;
+    lift_field<uint8_t>(self, 0x05) = 0;
+    lift_field<uint8_t>(self, 0x06) = 0;
+    lift_field<uint8_t>(self, 0x07) = 0;
+    lift_field<uint8_t>(self, 0x08) = 0;
+}
+} // namespace lift_006F8AF0

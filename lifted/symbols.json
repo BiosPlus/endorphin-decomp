@@ -38912,6 +38912,13 @@
     "summary": "Zeroes the first dword of this and tail-calls fn_006B9960 on this + 4.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006F8AF0": {
+    "name": "Unknown::ResetHeaderState",
+    "class": "Unknown",
+    "signature": "void fn_006F8AF0(void* self)",
+    "summary": "Zeroes the leading dword, sets byte +0x04 to 1, and clears bytes +0x05..+0x08.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006F8E00": {
     "name": "sub_006F8E00",
     "signature": "extern \"C\" void __fastcall fn_006F8E00(void* self, int edx_unused, uint8_t value)",
