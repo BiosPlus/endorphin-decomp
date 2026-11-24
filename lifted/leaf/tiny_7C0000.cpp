@@ -1259,3 +1259,31 @@ uint32_t __cdecl sub_007CCA00(uint32_t arg0) {
     return mem_read32(table + index * 40u + 0x1cu);
 }
 } // namespace lift_007CCA00
+
+// [0x007C9C90]
+namespace lift_007C9C90 {
+// @name Unknown::InitFloat4ZeroMaxMaxOne
+// @class Unknown
+// @summary Writes {0.0f, FLT_MAX, FLT_MAX, 1.0f} into the float[4] at the given output pointer.
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0C float field_0x0C
+
+extern const uint32_t mem_0099D148; // .rdata u32 0x7F7FFFFF (FLT_MAX)
+
+struct Float4Out {
+    float field_0x00;
+    float field_0x04;
+    float field_0x08;
+    float field_0x0C;
+};
+
+void sub_007C9C90(Float4Out* out) {
+    const float maxValue = std::bit_cast<float>(mem_0099D148);
+    out->field_0x00 = 0.0f;
+    out->field_0x0C = 1.0f;
+    out->field_0x04 = maxValue;
+    out->field_0x08 = maxValue;
+}
+} // namespace lift_007C9C90

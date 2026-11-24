@@ -1,0 +1,40 @@
+{
+  "va": "0x007C9C90",
+  "size": 26,
+  "orig_symbol": "sub_007C9C90",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "Unknown::InitFloat4ZeroMaxMaxOne",
+  "class": "Unknown",
+  "signature": "extern const uint32_t mem_0099D148; // .rdata u32 0x7F7FFFFF (FLT_MAX) struct Float4Out",
+  "summary": "Writes {0.0f, FLT_MAX, FLT_MAX, 1.0f} into the float[4] at the given output pointer.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:57:48Z"
+}

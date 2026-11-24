@@ -41387,6 +41387,13 @@
     "summary": "Returns the first argument plus 0x160.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C9C90": {
+    "name": "Unknown::InitFloat4ZeroMaxMaxOne",
+    "class": "Unknown",
+    "signature": "extern const uint32_t mem_0099D148; // .rdata u32 0x7F7FFFFF (FLT_MAX) struct Float4Out",
+    "summary": "Writes {0.0f, FLT_MAX, FLT_MAX, 1.0f} into the float[4] at the given output pointer.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C9CB0": {
     "name": "readFloatPtr",
     "signature": "float sub_007C9CB0(const float* ptr)",
