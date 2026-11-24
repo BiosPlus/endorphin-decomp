@@ -31140,6 +31140,13 @@
     "summary": "Loads the pointer stored at this+0 and writes the single stack argument to its +0x08 slot.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006BB7C0": {
+    "name": "Unknown::GetVtableSlot2",
+    "class": "Unknown",
+    "signature": "void* fn_006BB7C0(void* self)",
+    "summary": "Returns the function pointer stored in vtable slot 2 (offset +0x08) of the object's vtable.",
+    "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
   "0x006BB7D0": {
     "name": "GetVtableSlot3",
     "class": "Unknown",

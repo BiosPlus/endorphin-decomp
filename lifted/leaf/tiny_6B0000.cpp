@@ -696,3 +696,16 @@ uint32_t fn_006BB7D0(void* self) {
     return lift_field<uint32_t>(vtable_ptr, 0x0C);
 }
 } // namespace lift_006BB7D0
+
+// [0x006BB7C0]
+namespace lift_006BB7C0 {
+// @name Unknown::GetVtableSlot2
+// @class Unknown
+// @summary Returns the function pointer stored in vtable slot 2 (offset +0x08) of the object's vtable.
+// @field Unknown +0x00 void** vtbl
+void* fn_006BB7C0(void* self) {
+    void** const* obj = static_cast<void** const*>(self);
+    void** vtbl = *obj;
+    return vtbl[2];
+}
+} // namespace lift_006BB7C0
