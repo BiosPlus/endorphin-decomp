@@ -1,0 +1,21 @@
+{
+  "va": "0x00594810",
+  "size": 30,
+  "orig_symbol": "sub_00594810",
+  "src_path": "src/leaf/tiny_590000.cpp",
+  "lifted_path": "lifted/leaf/tiny_590000.cpp",
+  "name": "sub_00594810",
+  "signature": "void fn_004442C0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004442C0 (descriptiveName: fn_004442C0 (walk first-link chain until flag at +0xC1 is set)).",
+  "fields": [
+    {
+      "class": "field_0xC1",
+      "offset": "+0xC1",
+      "type": "uint8_t",
+      "name": "flag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:17:27Z"
+}

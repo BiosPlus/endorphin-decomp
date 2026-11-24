@@ -19,6 +19,7 @@ extern "C" void __fastcall ext_006750B0(void* self);
 extern "C" int32_t __cdecl fn_00594000(void) {
     return mem_00B40D08;
 }
+#include <cstddef>
 
 // [0x00594010] sub_00594010 (11 bytes)
 // @name sub_00594010
@@ -305,3 +306,27 @@ void* fn_005942F0(void* self) {
     return cur;
 }
 } // namespace lift_005942F0
+
+// [0x00594810] sub_00594810 (30 bytes)
+namespace lift_00594810 {
+// @name sub_00594810
+// @summary Auto-lifted identical-shape clone of 0x004442C0 (descriptiveName: fn_004442C0 (walk first-link chain until flag at +0xC1 is set)).
+namespace lift_004442C0 {
+// @name descriptiveName: fn_00594810 (walk first-link chain until flag at +0xC1 is set)
+// @summary Starting from the object at arg, follows the dword at offset 0 of each node (linked chain) until it reaches a node whose byte at +0xC1 is nonzero; returns the node preceding that node (or arg itself if the first node already matches).
+// @field field_0xC1 +0xC1 uint8_t flag
+void fn_004442C0(void* self) {
+    // Mirrors the 32-bit original: nodes are addressed by 32-bit pointers stored at offset 0.
+    DWORD eax = (DWORD)(uintptr_t)self;
+    DWORD ecx = *reinterpret_cast<const DWORD*>(static_cast<uintptr_t>(eax));
+    if (*reinterpret_cast<const BYTE*>(static_cast<uintptr_t>(ecx + 0xB9)) != 0) {
+        return;
+    }
+    do {
+        eax = ecx;
+        ecx = *reinterpret_cast<const DWORD*>(static_cast<uintptr_t>(eax));
+    } while (*reinterpret_cast<const BYTE*>(static_cast<uintptr_t>(ecx + 0xB9)) == 0);
+    (void)eax;
+}
+} // namespace lift_004442C0
+} // namespace lift_00594810
