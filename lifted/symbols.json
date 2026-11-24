@@ -1065,6 +1065,13 @@
     "summary": "Pure jump thunk forwarding to GetStringConstant_0041BFA0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0041C750": {
+    "name": "sub_0041C750",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_0041C750(void* self, int edx_unused, uint32_t arg)",
+    "summary": "Constructor-style init: stores vtable mem_0092DB1C at +0x0 and the single stack argument at +0x4.",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x0041C790": {
     "name": "sub_0041C790",
     "signature": "extern \"C\" void __fastcall fn_0041C790(void* self)",

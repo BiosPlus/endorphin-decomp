@@ -242,3 +242,18 @@ void fn_0041CEE0(void* self) {
     lift_field<int32_t>(self, 0x04) = static_cast<int32_t>(mem_00B599BC);
 }
 } // namespace lift_0041CEE0
+
+// [0x0041C750] sub_0041C750 (18 bytes)
+namespace lift_0041C750 {
+extern int mem_0092DB1C;
+
+// @name sub_0041C750
+// @class Unknown
+// @summary Constructor-style init: stores vtable mem_0092DB1C at +0x0 and the single stack argument at +0x4.
+// @field Unknown +0x00 void* vptr
+// @field Unknown +0x04 uint32_t field_0x04
+extern void __fastcall fn_0041C750(void* self, int edx_unused, uint32_t arg) {
+    lift_field<void*>(self, 0x0) = &mem_0092DB1C;
+    lift_field<uint32_t>(self, 0x4) = arg;
+}
+} // namespace lift_0041C750
