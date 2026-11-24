@@ -254,3 +254,28 @@ void* fn_0070E390(void* self, void* other) {
     return other;
 }
 } // namespace lift_0070E390
+
+// [0x0070BFD0] sub_0070BFD0 (32 bytes)
+namespace lift_0070BFD0 {
+// Known callee 0x006DC460: Unknown::GetValueIfCountPositive (Returns *(this->field_0xC8) when this->field_0xB8 > 0, otherwise 0.)
+extern int32_t ext_006DC460(void* self);
+// Callee 0x006C98E0: sub_006C98E0 (unlifted; takes its argument in ecx, returns in eax)
+extern int32_t ext_006C98E0(void* self);
+// Known callee 0x006C9F70: sub_006C9F70 (Getter returning float field at offset +0x14.)
+extern float ext_006C9F70(void* self);
+
+// Reinterpret a 32-bit register value as a pointer-sized `this`/argument.
+static inline void* lift_reg_to_ptr(int32_t value) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(value)));
+}
+
+// @name Unknown::GetFloatViaChainedLookup
+// @class Unknown
+// @summary Passes self through GetValueIfCountPositive, feeds that result into sub_006C98E0, and returns the float from sub_006C9F70 on the final result.
+// (No direct field accesses in this function; all field use happens in callees.)
+float fn_0070BFD0(void* self) {
+    const int32_t first = ext_006DC460(self);
+    const int32_t second = ext_006C98E0(lift_reg_to_ptr(first));
+    return ext_006C9F70(lift_reg_to_ptr(second));
+}
+} // namespace lift_0070BFD0

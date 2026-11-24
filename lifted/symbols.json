@@ -39831,6 +39831,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0070B040 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x0070BFD0": {
+    "name": "Unknown::GetFloatViaChainedLookup",
+    "class": "Unknown",
+    "signature": "static inline void* lift_reg_to_ptr(int32_t value)",
+    "summary": "Passes self through GetValueIfCountPositive, feeds that result into sub_006C98E0, and returns the float from sub_006C9F70 on the final result.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070BFF0": {
     "name": "sub_0070BFF0",
     "signature": "extern \"C\" void __fastcall fn_0070BFF0(void* self, int edx_unused, uint8_t value)",

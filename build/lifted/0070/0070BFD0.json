@@ -1,0 +1,14 @@
+{
+  "va": "0x0070BFD0",
+  "size": 32,
+  "orig_symbol": "sub_0070BFD0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::GetFloatViaChainedLookup",
+  "class": "Unknown",
+  "signature": "static inline void* lift_reg_to_ptr(int32_t value)",
+  "summary": "Passes self through GetValueIfCountPositive, feeds that result into sub_006C98E0, and returns the float from sub_006C9F70 on the final result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:38:41Z"
+}
