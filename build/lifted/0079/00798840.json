@@ -1,0 +1,40 @@
+{
+  "va": "0x00798840",
+  "size": 48,
+  "orig_symbol": "sub_00798840",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "UnknownClass::computeRowByteSize",
+  "class": "UnknownClass",
+  "signature": "uint32_t fn_00798840(uint8_t* self)",
+  "summary": "Returns the byte size of a row: (u16 +0x40 * u32 +0x24, times u16 +0x4e when word +0x72 == 1), rounded up to whole bytes.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x40",
+      "type": "uint16_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4E",
+      "type": "uint16_t",
+      "name": "field_0x4e"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x72",
+      "type": "uint16_t",
+      "name": "field_0x72"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:27:19Z"
+}

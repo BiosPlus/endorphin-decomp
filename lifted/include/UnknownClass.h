@@ -32,12 +32,16 @@ struct UnknownClass_Fields {
     // +0x14  void*                    field_0x14  (evidence: 0x00789590) // CONFLICT: multiple definitions at +0x14
     // +0x1C  int32_t                  field_0x1C  (evidence: 0x0078CBE0)
     // +0x20  uint32_t                 field_0x20  (evidence: 0x004B0F50, 0x004B10D0)
+    // +0x24  uint32_t                 field_0x24  (evidence: 0x00798840)
     // +0x30  std::string              field_0x30  (evidence: 0x004970A0, 0x0049AD40)
     // +0x3C  void*                    field_0x3c  (evidence: 0x00413C40)
+    // +0x40  uint16_t                 field_0x40  (evidence: 0x00798840)
     // +0x44  CRITICAL_SECTION         field_0x44  (evidence: 0x00413C40)
+    // +0x4E  uint16_t                 field_0x4e  (evidence: 0x00798840)
     // +0x58  uint32_t                 field_0x58  (evidence: 0x007AEEE0)
     // +0x64  uint32_t                 field_0x64  (evidence: 0x0044B390) // CONFLICT: multiple definitions at +0x64
     // +0x64  void*                    field_0x64  (evidence: 0x0044B700) // CONFLICT: multiple definitions at +0x64
+    // +0x72  uint16_t                 field_0x72  (evidence: 0x00798840)
     // +0x88  void*                    subobject  (evidence: 0x00454C00)
     // +0x92  uint8_t                  field_0x92  (evidence: 0x005435F0)
     // +0x95  uint8_t                  field_0x95  (evidence: 0x005435F0)

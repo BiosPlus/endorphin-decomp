@@ -239,3 +239,24 @@ void fn_00798C98(void* self) {
     (void)kLookup_00798C98;
 }
 } // namespace lift_00798C98
+
+// [0x00798840] sub_00798840 (48 bytes)
+namespace lift_00798840 {
+// @name UnknownClass::computeRowByteSize
+// @class UnknownClass
+// @summary Returns the byte size of a row: (u16 +0x40 * u32 +0x24, times u16 +0x4e when word +0x72 == 1), rounded up to whole bytes.
+// @field UnknownClass +0x24 uint32_t field_0x24
+// @field UnknownClass +0x40 uint16_t field_0x40
+// @field UnknownClass +0x4e uint16_t field_0x4e
+// @field UnknownClass +0x72 uint16_t field_0x72
+uint32_t fn_00798840(uint8_t* self) {
+    uint32_t eax = *reinterpret_cast<uint16_t*>(self + 0x40);
+    eax *= *reinterpret_cast<uint32_t*>(self + 0x24);
+    if (*reinterpret_cast<uint16_t*>(self + 0x72) == 1) {
+        uint32_t ecx = *reinterpret_cast<uint16_t*>(self + 0x4e);
+        eax *= ecx;
+    }
+    eax += 7;
+    return eax >> 3;
+}
+} // namespace lift_00798840
