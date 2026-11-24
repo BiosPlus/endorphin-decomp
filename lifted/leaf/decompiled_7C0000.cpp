@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_7C0000.cpp
 #include "lift_compat.h"
 #include <cstdint>
+#include <cmath>
 
 // [0x007C97A0]
 namespace lift_007C97A0 {
@@ -414,3 +415,43 @@ void sub_007CB940(void* self, float value) {
     *reinterpret_cast<float*>(reinterpret_cast<uintptr_t>(self) + 0x10) = clamped;
 }
 } // namespace lift_007CB940
+
+// [0x007CA8A0]
+namespace lift_007CA8A0 {
+extern const double mem_0092C510;
+
+// @name getDoubledVec3
+// @summary Reads three floats at offsets +0x10, +0x14, +0x18, multiplies each by 2.0, and writes them to three output pointers.
+// @field unknown +0x10 float field_0x10
+// @field unknown +0x14 float field_0x14
+// @field unknown +0x18 float field_0x18
+
+void __cdecl sub_007CA8A0(const void* self, float* outX, float* outY, float* outZ) {
+    const auto* base = static_cast<const uint8_t*>(self);
+    const double scale = mem_0092C510;
+    *outX = static_cast<float>(static_cast<double>(*reinterpret_cast<const float*>(base + 0x10)) * scale);
+    *outY = static_cast<float>(static_cast<double>(*reinterpret_cast<const float*>(base + 0x14)) * scale);
+    *outZ = static_cast<float>(scale * static_cast<double>(*reinterpret_cast<const float*>(base + 0x18)));
+}
+} // namespace lift_007CA8A0
+
+// [0x007CCC00]
+namespace lift_007CCC00 {
+extern uint32_t mem_0094CE80;
+
+// @name setFloatAndUpdateFlag
+// @summary Stores a float at +0x1c and sets or clears bit 0x8 at +0xc based on its magnitude.
+// @field struct +0xc uint32_t field_0xc
+// @field struct +0x1c float field_0x1c
+void sub_007CCC00(uintptr_t ecx_ptr, float value) {
+    *reinterpret_cast<float*>(ecx_ptr + 0x1c) = value;
+    float abs_val = std::fabs(value);
+    float threshold = *reinterpret_cast<const float*>(&mem_0094CE80);
+    uint32_t* flags = reinterpret_cast<uint32_t*>(ecx_ptr + 0xc);
+    if (abs_val <= threshold) {
+        *flags &= ~0x8u;
+    } else {
+        *flags |= 0x8u;
+    }
+}
+} // namespace lift_007CCC00
