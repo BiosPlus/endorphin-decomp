@@ -1331,6 +1331,12 @@
     "summary": "Sends message 0x100C (WM_USER+12) to the handle at +0x20 with wParam=-1, lParam=2, and returns the result plus one.",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x0041FF10": {
+    "name": "fn_0041FF10_sendMsg1018ThenForward",
+    "signature": "void fn_0041FF10(void* self)",
+    "summary": "Sends message 0x1018 (wParam=0, lParam=0) to the handle stored at self+0x20, then forwards the SendMessageA result to ext_006A5E00.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00420190": {
     "name": "HotkeyDialog::vfunc_1",
     "class": "HotkeyDialog",
@@ -24070,6 +24076,12 @@
     "signature": "extern \"C\" void __fastcall fn_00647CA0(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0xA4 and tail-calls sub_0065A8E0.",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
+  "0x00647E80": {
+    "name": "sub_00647E80",
+    "signature": "uint32_t __thiscall sub_00647E80(void* self, uint32_t arg0)",
+    "summary": "Forwards the argument and the dereferenced field at +0xa4 to ext_007C60E0",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
   "0x00647F00": {
     "name": "sub_00647F00",

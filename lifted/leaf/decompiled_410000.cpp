@@ -67,3 +67,23 @@ void fn_004137F0(void* self) {
     ext_00454BA0(self);
 }
 } // namespace lift_004137F0
+
+// [0x0041FF10] sub_0041FF10 (26 bytes)
+namespace lift_0041FF10 {
+// Known callee 0x006A5E00: thunk_MFC80_ord_2372 (IAT jump thunk forwarding to MFC80!ord_2372.)
+// Takes one argument (the SendMessageA result), pushed before the call.
+extern void ext_006A5E00(LRESULT result);
+// IAT slot for USER32!SendMessageA (value at 0x00925694).
+extern uintptr_t mem_00925694;
+
+// @name fn_0041FF10_sendMsg1018ThenForward
+// @summary Sends message 0x1018 (wParam=0, lParam=0) to the handle stored at self+0x20, then forwards the SendMessageA result to ext_006A5E00.
+// @field Unknown +0x20 HWND hwnd
+void fn_0041FF10(void* self) {
+    HWND hwnd = *reinterpret_cast<HWND*>(static_cast<uint8_t*>(self) + 0x20);
+    using SendMessageAFn = LRESULT(__stdcall*)(HWND, UINT, WPARAM, LPARAM);
+    auto sendMessageA = reinterpret_cast<SendMessageAFn>(mem_00925694);
+    LRESULT result = sendMessageA(hwnd, 0x1018, 0, 0);
+    ext_006A5E00(result);
+}
+} // namespace lift_0041FF10
