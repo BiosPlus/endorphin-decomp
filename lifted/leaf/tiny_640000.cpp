@@ -726,3 +726,15 @@ void sub_00648900_setField8Float(void* self, float value) {
     lift_field<float>(inner, 0x08) = value;
 }
 } // namespace lift_00648900
+
+// [0x00642000] sub_00642000 (15 bytes)
+namespace lift_00642000 {
+// @name FlagsTest_Bit10
+// @class unknown (this-pointer accessor; owning class not identified)
+// @summary Returns 1 if bit 0x10 is set in the byte at this+0x20, otherwise 0.
+// @field unknown +0x20 uint8_t field_0x20
+uint8_t FlagsTest_Bit10(void* self) {
+    const uint8_t flags = *reinterpret_cast<const uint8_t*>(static_cast<const char*>(self) + 0x20);
+    return (flags & 0x10u) == 0x10u ? 1u : 0u;
+}
+} // namespace lift_00642000

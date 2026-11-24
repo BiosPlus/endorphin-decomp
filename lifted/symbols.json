@@ -21323,6 +21323,13 @@
     "summary": "Decrements dword at +0xc and sets byte at +0x10 to 1",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00642000": {
+    "name": "FlagsTest_Bit10",
+    "class": "unknown (this-pointer accessor; owning class not identified)",
+    "signature": "uint8_t FlagsTest_Bit10(void* self)",
+    "summary": "Returns 1 if bit 0x10 is set in the byte at this+0x20, otherwise 0.",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
   "0x00642040": {
     "name": "ExprParser::ReadWriteMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDebugDrawEnabled(bool), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDebugDrawEnabled(bool), 0}\u003e",

@@ -1,0 +1,22 @@
+{
+  "va": "0x00642000",
+  "size": 15,
+  "orig_symbol": "sub_00642000",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "FlagsTest_Bit10",
+  "class": "unknown (this-pointer accessor; owning class not identified)",
+  "signature": "uint8_t FlagsTest_Bit10(void* self)",
+  "summary": "Returns 1 if bit 0x10 is set in the byte at this+0x20, otherwise 0.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x20",
+      "type": "uint8_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:31:24Z"
+}
