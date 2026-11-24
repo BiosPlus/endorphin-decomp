@@ -30357,6 +30357,13 @@
     "summary": "Returns 1 if the second 64-bit (hi:lo dword pair) operand is strictly greater than the first, else 0 (__stdcall, 2 args, ret 8).",
     "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
+  "0x00624F10": {
+    "name": "RBTree::lowerBoundU32Pair",
+    "class": "RBTree",
+    "signature": "uint32_t __thiscall sub_00624F10(void* self, const uint32_t* key)",
+    "summary": "Finds the lower_bound node in an MSVC RB-tree keyed by a pair of uint32_t values.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
+  },
   "0x00624FA0": {
     "name": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026Sensors::SensorIsCollidingWith::getBool, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026Sensors::SensorIsCollidingWith::getBool, 1\u003e",

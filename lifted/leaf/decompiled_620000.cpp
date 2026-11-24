@@ -578,3 +578,47 @@ float __thiscall sub_0062A590(uint32_t self) {
     return (float)((double)total / (double)count);
 }
 } // namespace lift_0062A590
+
+// [0x00624F10]
+namespace lift_00624F10 {
+extern uint32_t mem_read32(uintptr_t addr);
+extern uint8_t mem_read8(uintptr_t addr);
+
+// @name RBTree::lowerBoundU32Pair
+// @class RBTree
+// @summary Finds the lower_bound node in an MSVC RB-tree keyed by a pair of uint32_t values.
+// @field RBTree +0x04 void* head
+// @field RBTreeNode +0x00 void* left
+// @field RBTreeNode +0x04 void* parent
+// @field RBTreeNode +0x08 void* right
+// @field RBTreeNode +0x0C uint32_t key0
+// @field RBTreeNode +0x10 uint32_t key1
+// @field RBTreeNode +0x19 uint8_t isNil
+
+uint32_t __thiscall sub_00624F10(void* self, const uint32_t* key) {
+    uint32_t head = mem_read32(reinterpret_cast<uintptr_t>(self) + 0x04);
+    uint32_t node = mem_read32(head + 0x04);
+    uint32_t result = head;
+
+    if (mem_read8(node + 0x19) != 0) {
+        return result;
+    }
+
+    uint32_t key0 = key[0];
+    uint32_t key1 = key[1];
+
+    do {
+        uint32_t node_key0 = mem_read32(node + 0x0C);
+        if (key0 > node_key0) {
+            node = mem_read32(node + 0x08);
+        } else if (key0 < node_key0 || mem_read32(node + 0x10) >= key1) {
+            result = node;
+            node = mem_read32(node + 0x00);
+        } else {
+            node = mem_read32(node + 0x08);
+        }
+    } while (mem_read8(node + 0x19) == 0);
+
+    return result;
+}
+} // namespace lift_00624F10
