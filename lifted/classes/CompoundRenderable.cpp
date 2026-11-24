@@ -10,10 +10,8 @@ namespace lift_00537CA0 {
 // @field CompoundRenderable +0x18 uint32_t* field_0x18
 
 extern void CompoundRenderable_vfunc_2(void* self) {
-    auto* base = reinterpret_cast<uint8_t*>(self);
-
     // mov ecx, [esi+0x14]; if (ecx) ecx->vtbl[2]();
-    void* obj14 = *reinterpret_cast<void**>(base + 0x14);
+    void* obj14 = lift_field<void*>(self, 0x14);
     if (obj14 != nullptr) {
         void** vtbl = *reinterpret_cast<void***>(obj14);
         using Fn = void (*)(void*);
@@ -21,9 +19,9 @@ extern void CompoundRenderable_vfunc_2(void* self) {
     }
 
     // eax = [esi+0x18]; edx = eax->vtbl[2]; ecx = esi+0x18; jmp edx
-    void* obj18 = *reinterpret_cast<void**>(base + 0x18);
+    void* obj18 = lift_field<void*>(self, 0x18);
     void** vtbl18 = *reinterpret_cast<void***>(obj18);
     using Fn = void (*)(void*);
-    reinterpret_cast<Fn>(vtbl18[2])(base + 0x18);
+    reinterpret_cast<Fn>(vtbl18[2])(&lift_field<void*>(self, 0x18));
 }
 } // namespace lift_00537CA0
