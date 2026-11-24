@@ -9770,6 +9770,13 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x178.",
     "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
   },
+  "0x004F9930": {
+    "name": "VMCSModes::DefaultImplementation::vfunc_90",
+    "class": "VMCSModes::DefaultImplementation",
+    "signature": "uint32_t fn_004F9930(void* self)",
+    "summary": "Calls vmethod at vtable+0x84 on self and returns 1 if its low byte is zero, else 0.",
+    "lifted_path": "lifted/VMCSModes/auto_tiny.cpp"
+  },
   "0x004F9BD0": {
     "name": "VMCSModes::DefaultImplementation::vfunc_33",
     "class": "VMCSModes::DefaultImplementation",

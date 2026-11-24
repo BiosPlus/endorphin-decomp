@@ -191,3 +191,19 @@ extern uint8_t __fastcall fn_004F9850(void* self) {
     return 0; // xor al, al
 }
 } // namespace lift_004F9850
+
+// [0x004F9930] VMCSModes::DefaultImplementation::vfunc_90 (18 bytes)
+namespace lift_004F9930 {
+// @name VMCSModes::DefaultImplementation::vfunc_90
+// @class VMCSModes::DefaultImplementation
+// @summary Calls vmethod at vtable+0x84 on self and returns 1 if its low byte is zero, else 0.
+// @field VMCSModes::DefaultImplementation +0x00 void* vtable
+uint32_t fn_004F9930(void* self) {
+    // Byte offsets are used for the vtable lookup so the 32-bit slot layout holds on any host.
+    void* vtable = *reinterpret_cast<void**>(self);
+    using VMethodFn = uint8_t (*)(void*);
+    VMethodFn method = *reinterpret_cast<VMethodFn*>(reinterpret_cast<char*>(vtable) + 0x84);
+    uint8_t lowByte = method(self);
+    return lowByte == 0 ? 1u : 0u;
+}
+} // namespace lift_004F9930
