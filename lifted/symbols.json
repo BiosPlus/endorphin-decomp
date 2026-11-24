@@ -30317,9 +30317,10 @@
     "lifted_path": "lifted/leaf/tiny_690000.cpp"
   },
   "0x006989B0": {
-    "name": "CopyBytesRange",
-    "signature": "uint8_t* CopyBytesRange(const uint8_t* first, const uint8_t* last, uint8_t* dst)",
-    "summary": "Copies bytes from [first, last) to dst; returns dst advanced past the copied bytes. Null dst skips stores but still advances the count.",
+    "name": "sub_00692D90",
+    "class": "NMData::RealChannel",
+    "signature": "void __thiscall fn_00692D90(uint8_t* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x00699040": {
