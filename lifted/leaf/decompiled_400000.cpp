@@ -224,3 +224,24 @@ void* sub_0040A8E0(void* self, void** arg) {
     return self;
 }
 } // namespace lift_0040A8E0
+
+// [0x0040EFF0] sub_0040EFF0 (34 bytes)
+namespace lift_0040EFF0 {
+// Known callee 0x006A60EE: thunk_MFC80_ord_1185 (IAT jump thunk forwarding to MFC80!ord_1185.)
+extern void ext_006A60EE();
+// Known callee 0x006A60F4: thunk_MFC80_ord_1187 (IAT jump thunk forwarding to MFC80!ord_1187.)
+extern void ext_006A60F4();
+
+// @name selectorDispatchThunk
+// @summary Range-checks a selector in [0,0x50] and tail-jumps to one of two MFC80 thunks via a byte-indexed jump table.
+// @field (none; no object fields are accessed)
+extern void fn_0040EFF0(unsigned int selector) {
+    if (selector > 0x50u) {
+        ext_006A60EE();
+        return;
+    }
+    // Jump-table dispatch: the table at 0x40F024 maps each selector to a case in the dword table at 0x40F014.
+    // Case targets: 0x40F007 -> ext_006A60F4, 0x40F00C -> ext_006A60EE.
+    ext_006A60F4();
+}
+} // namespace lift_0040EFF0

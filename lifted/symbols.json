@@ -717,6 +717,12 @@
     "summary": "Destructor tail-call: restores vtable mem_0092B7F4 and tail-calls base destructor thunk_MFC80_ord_587.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x0040EFF0": {
+    "name": "selectorDispatchThunk",
+    "signature": "extern \"C\" void fn_0040EFF0(unsigned int selector)",
+    "summary": "Range-checks a selector in [0,0x50] and tail-jumps to one of two MFC80 thunks via a byte-indexed jump table.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040F0B0": {
     "name": "Unknown::initVtableAndInit",
     "class": "Unknown",
