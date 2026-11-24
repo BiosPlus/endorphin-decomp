@@ -1,0 +1,21 @@
+{
+  "va": "0x00431360",
+  "size": 52,
+  "orig_symbol": "sub_00431360",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_00431360",
+  "signature": "extern \"C\" void __thiscall fn_00431360(void* self)",
+  "summary": "If field_0x10c is non-null, calls its vfunc at +0x15c(0) and passes it with inverted result to thunk_MFC80_ord_6081.",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x10C",
+      "type": "void*",
+      "name": "field_0x10c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:09:03Z"
+}

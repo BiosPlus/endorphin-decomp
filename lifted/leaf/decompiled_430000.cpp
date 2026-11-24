@@ -1758,3 +1758,29 @@ uint32_t* CopyDwordRange(const uint32_t* first, const uint32_t* last, uint32_t* 
     return d_first + count;
 }
 } // namespace lift_0043B6E0
+
+// [0x00431360]
+namespace lift_00431360 {
+// @name sub_00431360
+// @summary If field_0x10c is non-null, calls its vfunc at +0x15c(0) and passes it with inverted result to thunk_MFC80_ord_6081.
+// @field unknown +0x10c void* field_0x10c
+
+
+extern void ext_006A651A(void);
+
+extern void __thiscall fn_00431360(void* self) {
+    uint32_t obj = *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(self) + 0x10c);
+    if (obj == 0) {
+        return;
+    }
+    uint32_t vtable = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(obj));
+    uint32_t vfunc_addr = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(vtable) + 0x15c);
+    using vfunc_t = uint32_t(__thiscall*)(void*, uint32_t);
+    uint32_t res = reinterpret_cast<vfunc_t>(static_cast<uintptr_t>(vfunc_addr))(
+        reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), 0);
+    uint32_t flag = (res == 0) ? 1u : 0u;
+    using mfc_t = void(__thiscall*)(void*, void*, uint32_t);
+    reinterpret_cast<mfc_t>(&ext_006A651A)(
+        self, reinterpret_cast<void*>(static_cast<uintptr_t>(obj)), flag);
+}
+} // namespace lift_00431360
