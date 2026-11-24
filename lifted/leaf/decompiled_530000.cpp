@@ -269,3 +269,19 @@ DWORD* __thiscall fn_00539B00(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_00539B00
+
+// [0x00538D10]
+namespace lift_00538D10 {
+// @name Unknown::SetFloatsAndField24
+// @class Unknown
+// @summary Forwards three floats to fn_00538CF0 and stores a 32-bit value at this+0x24.
+// @field Unknown +0x24 uint32_t field_0x24
+
+extern void mem_write32(uintptr_t addr, uint32_t val);
+extern void __fastcall ext_00538CF0(void* self, void* edx, float arg1, float arg2, float arg3);
+
+void __fastcall fn_00538D10(void* self, void* /*edx, unused*/, float arg1, float arg2, float arg3, uint32_t arg4) {
+    ext_00538CF0(self, nullptr, arg1, arg2, arg3);
+    mem_write32(reinterpret_cast<uintptr_t>(self) + 0x24, arg4);
+}
+} // namespace lift_00538D10

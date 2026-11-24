@@ -6188,6 +6188,12 @@
     "summary": "Broadcasts a scalar float to a 3-element float vector and forwards it to vfunc_25 (vtable +0x64).",
     "lifted_path": "lifted/classes/ToolEngine.cpp"
   },
+  "0x00480130": {
+    "name": "sub_00480130",
+    "signature": "void __thiscall sub_00480130(void* this_)",
+    "summary": "Queries subobject vtable+0x54 or falls back to field_0x240, then invokes vtable+0x4(1) on the non-null object.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x004801A0": {
     "name": "ToolEngine::vfunc_23",
     "class": "ToolEngine",
@@ -6358,6 +6364,12 @@
     "signature": "uint32_t fn_004809E0(uint32_t self)",
     "summary": "Checks whether the ToolEngine has an empty vector at +0x18/+0x1C or a non-zero flag at +0x30.",
     "lifted_path": "lifted/classes/ToolEngine.cpp"
+  },
+  "0x00480C70": {
+    "name": "fillRange64",
+    "signature": "void __cdecl sub_00480C70(uint32_t first, uint32_t last, uint32_t value_ptr)",
+    "summary": "Fills a range [first, last) of 64-byte elements by copying from a source 64-byte element.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
   "0x004816E0": {
     "name": "Commands::BufferTransformsCommand::vfunc_1",
@@ -14585,6 +14597,13 @@
     "signature": "void __fastcall fn_00538CF0(void* self, void* /*edx, unused*/, float arg1, float arg2, float arg3)",
     "summary": "Stores three stack float arguments into this+0x20, this+0x18 and this+0x1C (callee-cleans 12 bytes).",
     "lifted_path": "lifted/leaf/tiny_530000.cpp"
+  },
+  "0x00538D10": {
+    "name": "Unknown::SetFloatsAndField24",
+    "class": "Unknown",
+    "signature": "void __fastcall fn_00538D10(void* self, void* /*edx, unused*/, float arg1, float arg2, float arg3, uint32_t arg4)",
+    "summary": "Forwards three floats to fn_00538CF0 and stores a 32-bit value at this+0x24.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
   "0x00538FA0": {
     "name": "SetFloatPairAndDwordPair",
