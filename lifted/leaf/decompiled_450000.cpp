@@ -421,3 +421,26 @@ uint32_t __thiscall sub_004545A0(uint32_t this_, uint32_t child) {
     return mem_009256BC(parent_hwnd, child_hwnd);
 }
 } // namespace lift_004545A0
+
+// [0x00456340]
+namespace lift_00456340 {
+// @name sub_00456340
+// @summary Conditionally invokes vtable+0x188 on this before calling MFC80!ord_1903
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0xdc uint32_t field_0xdc
+
+
+extern void fn_006A5EA8(void);
+
+extern void __thiscall fn_00456340(void* self, void* arg1) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    uint32_t flag = *reinterpret_cast<uint32_t*>(base + 0xdc);
+    if (flag != 0 && arg1 != self) {
+        void** vtable = *reinterpret_cast<void***>(self);
+        using Vfn0 = void(__thiscall*)(void*);
+        Vfn0 fn = reinterpret_cast<Vfn0>(vtable[0x188 / sizeof(void*)]);
+        fn(self);
+    }
+    fn_006A5EA8();
+}
+} // namespace lift_00456340
