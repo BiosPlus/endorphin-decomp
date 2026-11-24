@@ -53,3 +53,23 @@ void allocFromFreeList(uint8_t* self, uint32_t value) {
     ++*reinterpret_cast<uint32_t*>(self + 0x0C);
 }
 } // namespace lift_007F6810
+
+// [0x007FC2B0] sub_007FC2B0 (29 bytes)
+namespace lift_007FC2B0 {
+// @name Vec3Dot
+// @class (none)
+// @summary Returns the 3-component dot product of two float vectors (y and x terms summed first, then z).
+// @field Unknown +0x00 float field_0x00 (read via both pointer args: ecx and eax)
+// @field Unknown +0x04 float field_0x04 (read via both pointer args: ecx and eax)
+// @field Unknown +0x08 float field_0x08 (read via both pointer args: ecx and eax)
+float fn_007FC2B0(const float* a, const float* b) {
+    // The original uses x87 extended-precision accumulation and rounds only on the final store.
+    // Products of two floats are exact in double, so accumulating in double and rounding once
+    // at the end matches that behavior closely.
+    const double yy = static_cast<double>(a[1]) * static_cast<double>(b[1]);
+    const double xx = static_cast<double>(a[0]) * static_cast<double>(b[0]);
+    const double zz = static_cast<double>(a[2]) * static_cast<double>(b[2]);
+    const double sum = (yy + xx) + zz;
+    return static_cast<float>(sum);
+}
+} // namespace lift_007FC2B0

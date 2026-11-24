@@ -14,6 +14,7 @@ struct Unknown_Fields {
     // +0x0   void** vtable vtable pointer (slot 0 called with arg 1)  (evidence: 0x006DE130) // CONFLICT: multiple definitions at +0x0
     // +0x0   float* field_0x00 (arg1: dereferenced to get dst Vector4*)  (evidence: 0x0066B860) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (target object pointer;* arg1)  (evidence: 0x005853E0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   float field_0x00 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD                    field_00  (evidence: 0x0057BB20) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD                    field_0x00  (evidence: 0x00468730, 0x0046FA80, 0x0046FAA0, 0x005D1480, 0x00728DE0, 0x007C8A10, 0x0086B200) // CONFLICT: multiple definitions at +0x0
     // +0x0   float                    field_0x00  (evidence: 0x0052EF50, 0x00535610, 0x00545B80, 0x00553A10, 0x00669E60, 0x0066A310, 0x006C9E90, 0x007C9C90, 0x007FC290) // CONFLICT: multiple definitions at +0x0
@@ -53,6 +54,7 @@ struct Unknown_Fields {
     // +0x4   void* field_0x04 (sub-object pointer read from the NM::Vector3 const & argument)  (evidence: 0x005B80A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    child  (evidence: 0x005DA150, 0x005DA170, 0x006305A0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer to subobject, dereferenced)  (evidence: 0x00661A40) // CONFLICT: multiple definitions at +0x4
+    // +0x4   float field_0x04 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066BB70) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (accessed on the inner object; owning class not yet established)  (evidence: 0x0066AF60, 0x0066AFC0) // CONFLICT: multiple definitions at +0x4
     // +0x4   std::string              field_04  (evidence: 0x0057BB20) // CONFLICT: multiple definitions at +0x4
@@ -83,6 +85,7 @@ struct Unknown_Fields {
     // +0x8   void* field_0x08 (child pointer table base; element i at +0x08 + 60*i)  (evidence: 0x00540D00) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    child  (evidence: 0x0041C710, 0x0044B660, 0x0044B680, 0x0044B760, 0x00682DE0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 count  (evidence: 0x007D8470, 0x007D9610) // CONFLICT: multiple definitions at +0x8
+    // +0x8   float field_0x08 (read via both pointer args: ecx and eax)  (evidence: 0x007FC2B0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 elements[]  (evidence: 0x007D8470, 0x007D9610) // CONFLICT: multiple definitions at +0x8
     // +0x8   BYTE                     field_0x08  (evidence: 0x004E9BB0) // CONFLICT: multiple definitions at +0x8
     // +0x8   DWORD                    field_0x08  (evidence: 0x004F9800, 0x006BB7B0, 0x006E7F90, 0x006E7FA0, 0x006E86A0, 0x0086B200) // CONFLICT: multiple definitions at +0x8

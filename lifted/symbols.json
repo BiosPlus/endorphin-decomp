@@ -42997,6 +42997,13 @@
     "summary": "Copies three consecutive 32-bit floats (offsets 0x00, 0x04, 0x08) from src to dst.",
     "lifted_path": "lifted/leaf/tiny_7F0000.cpp"
   },
+  "0x007FC2B0": {
+    "name": "Vec3Dot",
+    "class": "(none)",
+    "signature": "float fn_007FC2B0(const float* a, const float* b)",
+    "summary": "Returns the 3-component dot product of two float vectors (y and x terms summed first, then z).",
+    "lifted_path": "lifted/leaf/tiny_7F0000.cpp"
+  },
   "0x00803980": {
     "name": "fn_00803980 (returns **a - *b)",
     "signature": "int32_t fn_00803980(int32_t** a, const int32_t* b)",
