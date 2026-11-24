@@ -34201,6 +34201,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006B06A0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B0C10": {
+    "name": "GWCPropertyFeel::vfunc_5",
+    "class": "GWCPropertyFeel",
+    "signature": "DWORD fn_006B0C10(void* self)",
+    "summary": "Returns the field at +0x04; if it is non-zero, first calls ext_006A5E72(5) and then re-reads the field.",
+    "lifted_path": "lifted/classes/GWCPropertyFeel.cpp"
+  },
   "0x006B0C40": {
     "name": "sub_006B0C40",
     "signature": "uint32_t __thiscall sub_006B0C40(uint32_t self, uint32_t arg0)",

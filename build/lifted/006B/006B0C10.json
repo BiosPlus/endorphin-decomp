@@ -1,0 +1,22 @@
+{
+  "va": "0x006B0C10",
+  "size": 30,
+  "orig_symbol": "GWCPropertyFeel::vfunc_5",
+  "src_path": "src/classes/GWCPropertyFeel.cpp",
+  "lifted_path": "lifted/classes/GWCPropertyFeel.cpp",
+  "name": "GWCPropertyFeel::vfunc_5",
+  "class": "GWCPropertyFeel",
+  "signature": "DWORD fn_006B0C10(void* self)",
+  "summary": "Returns the field at +0x04; if it is non-zero, first calls ext_006A5E72(5) and then re-reads the field.",
+  "fields": [
+    {
+      "class": "GWCPropertyFeel",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:19:30Z"
+}
