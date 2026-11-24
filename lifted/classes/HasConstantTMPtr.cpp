@@ -17,3 +17,19 @@ uint32_t __thiscall fn_005321E0(void* self, void* other) {
     return target(other, arg);
 }
 } // namespace lift_005321E0
+
+// [0x0053A6A0]
+namespace lift_0053A6A0 {
+// @name HasConstantTMPtr::vfunc_1
+// @class HasConstantTMPtr
+// @summary Forwards the constant transform pointer at +0x4 with the output buffer to copyVec3WithZeroW and returns the output buffer.
+// @field HasConstantTMPtr +0x04 const float* field_0x04
+
+void ext_004F9950(void* self, float* out);
+
+float* fn_0053A6A0(void* self, float* out) {
+    const float* tm = *reinterpret_cast<const float* const*>(reinterpret_cast<const char*>(self) + 0x4);
+    ext_004F9950(const_cast<float*>(tm), out);
+    return out;
+}
+} // namespace lift_0053A6A0
