@@ -1003,3 +1003,44 @@ extern uint32_t __stdcall sub_00701E80(uint32_t index) {
     }
 }
 } // namespace lift_00701E80
+
+// [0x00701990]
+namespace lift_00701990 {
+extern uint32_t mem_00B5E75C;
+extern uint32_t mem_00B5F060;
+extern uint32_t mem_00B5EB78;
+extern uint32_t mem_00B5E400;
+
+// @name isKnownGlobalHandle
+// @summary Checks whether the given 32-bit value matches any of four global values.
+uint8_t __stdcall sub_00701990(uint32_t value) {
+    return (value == mem_00B5E75C ||
+            value == mem_00B5F060 ||
+            value == mem_00B5EB78 ||
+            value == mem_00B5E400) ? 1 : 0;
+}
+} // namespace lift_00701990
+
+// [0x007045A0]
+namespace lift_007045A0 {
+// @name isKnownGlobalHandle
+// @summary Returns true if the argument matches any of four global 32-bit values.
+
+extern uint32_t mem_00B5E9B8;
+extern uint32_t mem_00B5F060;
+extern uint32_t mem_00B5EB78;
+extern uint32_t mem_00B5E400;
+
+uint8_t __stdcall sub_007045A0(uint32_t value) {
+    if (value == mem_00B5E9B8) {
+        return 1;
+    }
+    if (value == mem_00B5F060) {
+        return 1;
+    }
+    if (value == mem_00B5EB78) {
+        return 1;
+    }
+    return value == mem_00B5E400 ? 1 : 0;
+}
+} // namespace lift_007045A0

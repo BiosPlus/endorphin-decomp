@@ -49356,6 +49356,12 @@
     "summary": "Initializes three 64-bit globals from the MSVCR80 _HUGE double pointer.",
     "lifted_path": "lifted/clones/auto_clones_700000.cpp"
   },
+  "0x00701990": {
+    "name": "isKnownGlobalHandle",
+    "signature": "uint8_t __stdcall sub_00701990(uint32_t value)",
+    "summary": "Checks whether the given 32-bit value matches any of four global values.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x007019D0": {
     "name": "sub_007019D0",
     "signature": "extern \"C\" int32_t __cdecl fn_007019D0(void)",
@@ -49550,6 +49556,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00703BD0(void* self)",
     "summary": "Returns pointer to subobject/field at offset +0x248.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x007045A0": {
+    "name": "isKnownGlobalHandle",
+    "signature": "uint8_t __stdcall sub_007045A0(uint32_t value)",
+    "summary": "Returns true if the argument matches any of four global 32-bit values.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x007045E0": {
     "name": "sub_007045E0",

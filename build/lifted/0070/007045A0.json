@@ -1,0 +1,13 @@
+{
+  "va": "0x007045A0",
+  "size": 57,
+  "orig_symbol": "sub_007045A0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "isKnownGlobalHandle",
+  "signature": "uint8_t __stdcall sub_007045A0(uint32_t value)",
+  "summary": "Returns true if the argument matches any of four global 32-bit values.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:22:52Z"
+}
