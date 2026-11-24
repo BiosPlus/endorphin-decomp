@@ -14418,6 +14418,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00611160 (readFloatAtIndex3).",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x00540E10": {
+    "name": "Unknown::setValueAndNotifyExtent",
+    "class": "Unknown",
+    "signature": "void fn_00540E10(void* self, int32_t value)",
+    "summary": "Stores the argument at self+0; if it is nonzero, passes the (bottom-top, right-left) extent of the 16-byte block at self+4..self+0x10 to ext_00548110.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00540F60": {
     "name": "Unknown::setFieldsFromArg (descriptive; owner class not identified)",
     "class": "Unknown",
