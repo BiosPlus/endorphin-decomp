@@ -681,3 +681,18 @@ uintptr_t fn_006BB820(void* self) {
     return lift_field<uintptr_t>(vptr, 0x24);
 }
 } // namespace lift_006BB820
+
+// [0x006BB7D0] sub_006BB7D0 (16 bytes)
+namespace lift_006BB7D0 {
+// @name GetVtableSlot3
+// @class Unknown
+// @summary Returns the function pointer stored at vtable offset +0x0C (slot 3) of the object's vtable.
+// @field Unknown +0x00 uint32_t vtable (vptr)
+uint32_t fn_006BB7D0(void* self) {
+    // mov eax, [ecx]        -> vtable = *(uint32_t*)self
+    uint32_t vtable = lift_field<uint32_t>(self, 0x00);
+    // mov eax, [eax + 0xc]  -> return *(uint32_t*)(vtable + 0x0C)
+    void* vtable_ptr = reinterpret_cast<void*>(static_cast<uintptr_t>(vtable));
+    return lift_field<uint32_t>(vtable_ptr, 0x0C);
+}
+} // namespace lift_006BB7D0

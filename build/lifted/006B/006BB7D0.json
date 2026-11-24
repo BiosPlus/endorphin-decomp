@@ -1,0 +1,22 @@
+{
+  "va": "0x006BB7D0",
+  "size": 16,
+  "orig_symbol": "sub_006BB7D0",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "GetVtableSlot3",
+  "class": "Unknown",
+  "signature": "uint32_t fn_006BB7D0(void* self)",
+  "summary": "Returns the function pointer stored at vtable offset +0x0C (slot 3) of the object's vtable.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t vtable",
+      "name": "(vptr)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:38:08Z"
+}
