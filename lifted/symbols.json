@@ -549,6 +549,12 @@
     "summary": "Pure jump thunk forwarding to GetConstant_00409060.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00409080": {
+    "name": "sub_00409080",
+    "signature": "extern \"C\" uint32_t __thiscall fn_00409080(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Calls sub_00407730 with two arguments and, if non-zero, calls thunk_MFC80_ord_6236(this, 0), returning 1 if both succeed or 0 otherwise.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x004090C0": {
     "name": "sub_004090C0",
     "class": "(none)",

@@ -471,3 +471,23 @@ void fn_00401000(void* base, std::int32_t stride, std::int32_t count, void (*cal
     }
 }
 } // namespace lift_00401000
+
+// [0x00409080]
+namespace lift_00409080 {
+// @name sub_00409080
+// @summary Calls sub_00407730 with two arguments and, if non-zero, calls thunk_MFC80_ord_6236(this, 0), returning 1 if both succeed or 0 otherwise.
+
+
+extern uint32_t __thiscall ext_00407730(void* self, uint32_t arg1, uint32_t arg2);
+extern uint32_t __thiscall ext_006A608E(void* self, uint32_t arg1);
+
+extern uint32_t __thiscall fn_00409080(void* self, uint32_t arg1, uint32_t arg2) {
+    if (ext_00407730(self, arg1, arg2) == 0) {
+        return 0;
+    }
+    if (ext_006A608E(self, 0) == 0) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_00409080

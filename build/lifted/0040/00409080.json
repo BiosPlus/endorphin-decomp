@@ -1,0 +1,13 @@
+{
+  "va": "0x00409080",
+  "size": 52,
+  "orig_symbol": "sub_00409080",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "sub_00409080",
+  "signature": "extern \"C\" uint32_t __thiscall fn_00409080(void* self, uint32_t arg1, uint32_t arg2)",
+  "summary": "Calls sub_00407730 with two arguments and, if non-zero, calls thunk_MFC80_ord_6236(this, 0), returning 1 if both succeed or 0 otherwise.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T15:08:20Z"
+}
