@@ -114,3 +114,14 @@ double fn_006D2700(const void* self, const void* other) {
     return t;
 }
 } // namespace lift_006D2700
+
+// [0x006D6AF0]
+namespace lift_006D6AF0 {
+// @name Unknown::SetByteAtIndex0x1B8
+// @class Unknown
+// @summary Stores one byte into the byte array at this+0x1B8, indexed by the first stack argument.
+// @field Unknown +0x1B8 BYTE field_0x1B8[] (indexed by arg index; byte store target)
+void fn_006D6AF0(void* self, DWORD index, BYTE value) {
+    lift_field<BYTE>(self, static_cast<ptrdiff_t>(0x1B8) + static_cast<ptrdiff_t>(index)) = value;
+}
+} // namespace lift_006D6AF0

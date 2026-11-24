@@ -1,0 +1,22 @@
+{
+  "va": "0x006D6AF0",
+  "size": 32,
+  "orig_symbol": "sub_006D6AF0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::SetByteAtIndex0x1B8",
+  "class": "Unknown",
+  "signature": "void fn_006D6AF0(void* self, DWORD index, BYTE value)",
+  "summary": "Stores one byte into the byte array at this+0x1B8, indexed by the first stack argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1B8",
+      "type": "BYTE field_0x1B8[] (indexed by arg index; byte store",
+      "name": "target)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:34:53Z"
+}
