@@ -39468,3 +39468,41 @@ uint32_t __thiscall fn_0046D2B0(void* self, uint32_t* arg0) {
     return 0;
 }
 } // namespace lift_0046D2B0
+
+// [0x004885E0]
+namespace lift_004885E0 {
+extern void* ext_00486C90(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_004885E0(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_00486C90(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0

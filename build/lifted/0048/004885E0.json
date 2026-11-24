@@ -1,0 +1,14 @@
+{
+  "va": "0x004885E0",
+  "size": 104,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData,getCharacterName\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType",
+  "signature": "uint8_t fn_004885E0(void* self, void* arg1)",
+  "summary": "Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:57:26Z"
+}

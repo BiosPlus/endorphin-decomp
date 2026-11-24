@@ -7333,6 +7333,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType\u003cImageExporter, int, ImageExporter::getEndFrame, 0\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004885E0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData,getCharacterName\u003e::vfunc_3",
+    "class": "ExprParser::ReadMethodType",
+    "signature": "uint8_t fn_004885E0(void* self, void* arg1)",
+    "summary": "Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004886F0": {
     "name": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)",
     "class": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, float, \u0026public: void __thiscall DoubleWithProperties::setValue(float)\u003e",
