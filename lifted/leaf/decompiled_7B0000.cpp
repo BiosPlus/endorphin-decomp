@@ -228,3 +228,20 @@ uint32_t sub_007BFC60(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4
     return reinterpret_cast<fn4_t>(mem_read32(vtable + 0x10))(arg1, arg2, arg3, arg4);
 }
 } // namespace lift_007BFC60
+
+// [0x007B1FA0] sub_007B1FA0 (22 bytes)
+namespace lift_007B1FA0 {
+// Known callee 0x006D2130: sub_006D2130 (Initializes a 20-byte struct with zeroed fields, a clamped minimum-1 count at +0x08, and arg2 at +0x0C, returning this.)
+extern uint32_t ext_006D2130(uint32_t self, int32_t arg1, uint32_t arg2);
+
+// @name initWithTailPointer
+// @class Self
+// @summary Calls ext_006D2130(this, 0x10, 4), stores this+0x10 at this+0x14, and returns this.
+// @field Self +0x14 void* field_0x14
+uint8_t* fn_007B1FA0(uint8_t* self) {
+    ext_006D2130(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)), 0x10, 4);
+    *reinterpret_cast<uint32_t*>(self + 0x14) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self + 0x10));
+    return self;
+}
+} // namespace lift_007B1FA0

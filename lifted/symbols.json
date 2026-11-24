@@ -47176,6 +47176,12 @@
     "summary": "Reads a single byte from the underlying FILE stream if open, returning the byte read or 0.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00783540": {
+    "name": "writeIfEnabled (sub_00783540)",
+    "signature": "UINT fn_00783540(void* self, const void* buf, UINT count)",
+    "summary": "Writes count bytes from buf to the stream held by self's inner object, unless that object's flag byte at +0x04 is zero; returns fwrite's result or 0 when disabled.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x007835F0": {
     "name": "sub_007835F0",
     "signature": "uint8_t __fastcall sub_007835F0(uint32_t ecx)",
@@ -48307,6 +48313,13 @@
     "signature": "extern void fn_007B1F90(void)",
     "summary": "Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).",
     "lifted_path": "lifted/leaf/tiny_7B0000.cpp"
+  },
+  "0x007B1FA0": {
+    "name": "initWithTailPointer",
+    "class": "Self",
+    "signature": "uint8_t* fn_007B1FA0(uint8_t* self)",
+    "summary": "Calls ext_006D2130(this, 0x10, 4), stores this+0x10 at this+0x14, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
   "0x007B2080": {
     "name": "sub_007B2080",

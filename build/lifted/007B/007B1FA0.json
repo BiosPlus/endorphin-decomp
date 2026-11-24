@@ -1,0 +1,22 @@
+{
+  "va": "0x007B1FA0",
+  "size": 22,
+  "orig_symbol": "sub_007B1FA0",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "initWithTailPointer",
+  "class": "Self",
+  "signature": "uint8_t* fn_007B1FA0(uint8_t* self)",
+  "summary": "Calls ext_006D2130(this, 0x10, 4), stores this+0x10 at this+0x14, and returns this.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:25:50Z"
+}
