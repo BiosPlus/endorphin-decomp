@@ -37122,11 +37122,25 @@
     "summary": "Auto-lifted identical-shape clone of 0x006C12B0 (Unknown::ForwardArgToSubobjectSlotB0).",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006F2410": {
+    "name": "sub_006F2410",
+    "class": "Unknown",
+    "signature": "DWORD fn_006F2410(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C12D0 (Unknown::ForwardToSubobjectVirtual0xB8).",
+    "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
+  },
   "0x006F2430": {
     "name": "sub_006F2430",
     "class": "Unknown",
     "signature": "extern int __fastcall fn_006F2430(void* self, int edx_unused, int arg)",
     "summary": "Auto-lifted identical-shape clone of 0x006C12B0 (Unknown::ForwardArgToSubobjectSlotB0).",
+    "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
+  },
+  "0x006F2480": {
+    "name": "sub_006F2480",
+    "class": "Unknown",
+    "signature": "DWORD fn_006F2480(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C12D0 (Unknown::ForwardToSubobjectVirtual0xB8).",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
   "0x006F24A0": {
@@ -38646,6 +38660,12 @@
     "summary": "Destructor tail-call: restores vtable mem_00995104 and tail-calls base destructor sub_006FA230.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006FC680": {
+    "name": "sub_006FC680",
+    "signature": "extern uint8_t __stdcall fn_006FC680(DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C03A0 (IsValueOneOfGlobalSentinels).",
+    "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
+  },
   "0x006FC6A0": {
     "name": "sub_006FC6A0",
     "signature": "extern \"C\" int32_t __cdecl fn_006FC6A0(void)",
@@ -38741,6 +38761,13 @@
     "name": "sub_00700510",
     "signature": "extern \"C\" void* __cdecl fn_00700510(void)",
     "summary": "Returns address of global mem_00B5E5C8.",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x00700550": {
+    "name": "sub_00700550",
+    "class": "Unknown",
+    "signature": "DWORD fn_00700550(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C12D0 (Unknown::ForwardToSubobjectVirtual0xB8).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
   "0x00700570": {
@@ -38850,6 +38877,13 @@
     "name": "sub_007019E0",
     "signature": "extern \"C\" void* __cdecl fn_007019E0(void)",
     "summary": "Returns address of global mem_00B5E760.",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x00701BA0": {
+    "name": "sub_00701BA0",
+    "class": "Unknown",
+    "signature": "DWORD fn_00701BA0(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C12D0 (Unknown::ForwardToSubobjectVirtual0xB8).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
   "0x00701BC0": {
@@ -39074,6 +39108,12 @@
     "name": "sub_00705270",
     "signature": "void fn_00705270(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00705250 (ClearGlobalDwordPair).",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x007053E0": {
+    "name": "sub_007053E0",
+    "signature": "extern uint8_t __stdcall fn_007053E0(DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C03A0 (IsValueOneOfGlobalSentinels).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
   "0x00705400": {
@@ -39338,11 +39378,25 @@
     "summary": "Returns address of global mem_00AA87B0.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x0070FD80": {
+    "name": "sub_0070FD80",
+    "class": "Unknown",
+    "signature": "DWORD fn_0070FD80(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C12D0 (Unknown::ForwardToSubobjectVirtual0xB8).",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x0070FDA0": {
     "name": "sub_0070FDA0",
     "class": "Unknown",
     "signature": "extern int __fastcall fn_0070FDA0(void* self, int edx_unused, int arg)",
     "summary": "Auto-lifted identical-shape clone of 0x006C12B0 (Unknown::ForwardArgToSubobjectSlotB0).",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x0070FDC0": {
+    "name": "sub_0070FDC0",
+    "class": "Unknown",
+    "signature": "DWORD fn_0070FDC0(void* self, DWORD arg1, DWORD arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006C12D0 (Unknown::ForwardToSubobjectVirtual0xB8).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
   "0x0070FDE0": {

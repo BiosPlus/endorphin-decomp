@@ -1,0 +1,13 @@
+{
+  "va": "0x006FC680",
+  "size": 31,
+  "orig_symbol": "sub_006FC680",
+  "src_path": "src/leaf/tiny_6F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6F0000.cpp",
+  "name": "sub_006FC680",
+  "signature": "extern uint8_t __stdcall fn_006FC680(DWORD value)",
+  "summary": "Auto-lifted identical-shape clone of 0x006C03A0 (IsValueOneOfGlobalSentinels).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:28:05Z"
+}

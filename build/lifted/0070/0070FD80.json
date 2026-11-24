@@ -1,0 +1,22 @@
+{
+  "va": "0x0070FD80",
+  "size": 31,
+  "orig_symbol": "sub_0070FD80",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "sub_0070FD80",
+  "class": "Unknown",
+  "signature": "DWORD fn_0070FD80(void* self, DWORD arg1, DWORD arg2)",
+  "summary": "Auto-lifted identical-shape clone of 0x006C12D0 (Unknown::ForwardToSubobjectVirtual0xB8).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1B78",
+      "type": "void*",
+      "name": "subobjVtbl"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T12:28:05Z"
+}

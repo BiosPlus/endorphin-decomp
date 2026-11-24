@@ -2925,3 +2925,75 @@ DWORD fn_006F23A0(void* self, DWORD arg1, DWORD arg2) {
     return slot(sub, arg1, arg2);
 }
 } // namespace lift_006F23A0
+
+// [0x006F2410] sub_006F2410 (31 bytes)
+namespace lift_006F2410 {
+// @name sub_006F2410
+// @summary Auto-lifted identical-shape clone of 0x006C12D0 (Unknown::ForwardToSubobjectVirtual0xB8).
+namespace lift_006C12D0 {
+// @name Unknown::ForwardToSubobjectVirtual0xB8
+// @class Unknown
+// @summary Forwards two stack arguments (in original order) to virtual slot 0xB8 of the embedded sub-object at +0x1B78 and returns its result.
+// @field Unknown +0x1B78 void* subobjVtbl
+
+// Original: thiscall-style, two stack args, callee cleans up (ret 8).
+DWORD fn_006F2410(void* self, DWORD arg1, DWORD arg2) {
+    // Embedded sub-object at self + 0x1B78; its first dword is its vtable pointer.
+    uint8_t* sub = reinterpret_cast<uint8_t*>(self) + 0x6838;
+    uintptr_t vtbl = static_cast<uintptr_t>(lift_field<DWORD>(sub, 0));
+
+    // Slot 0xB8 is a byte offset into the vtable (32-bit layout).
+    using VirtualFn = DWORD (*)(void* thisPtr, DWORD a, DWORD b);
+    uintptr_t slot = static_cast<uintptr_t>(lift_field<DWORD>(reinterpret_cast<void*>(vtbl), 0xB8));
+    VirtualFn fn = reinterpret_cast<VirtualFn>(slot);
+    return fn(sub, arg1, arg2);
+}
+} // namespace lift_006C12D0
+} // namespace lift_006F2410
+
+// [0x006F2480] sub_006F2480 (31 bytes)
+namespace lift_006F2480 {
+// @name sub_006F2480
+// @summary Auto-lifted identical-shape clone of 0x006C12D0 (Unknown::ForwardToSubobjectVirtual0xB8).
+namespace lift_006C12D0 {
+// @name Unknown::ForwardToSubobjectVirtual0xB8
+// @class Unknown
+// @summary Forwards two stack arguments (in original order) to virtual slot 0xB8 of the embedded sub-object at +0x1B78 and returns its result.
+// @field Unknown +0x1B78 void* subobjVtbl
+
+// Original: thiscall-style, two stack args, callee cleans up (ret 8).
+DWORD fn_006F2480(void* self, DWORD arg1, DWORD arg2) {
+    // Embedded sub-object at self + 0x1B78; its first dword is its vtable pointer.
+    uint8_t* sub = reinterpret_cast<uint8_t*>(self) + 0x68C8;
+    uintptr_t vtbl = static_cast<uintptr_t>(lift_field<DWORD>(sub, 0));
+
+    // Slot 0xB8 is a byte offset into the vtable (32-bit layout).
+    using VirtualFn = DWORD (*)(void* thisPtr, DWORD a, DWORD b);
+    uintptr_t slot = static_cast<uintptr_t>(lift_field<DWORD>(reinterpret_cast<void*>(vtbl), 0xB8));
+    VirtualFn fn = reinterpret_cast<VirtualFn>(slot);
+    return fn(sub, arg1, arg2);
+}
+} // namespace lift_006C12D0
+} // namespace lift_006F2480
+
+// [0x006FC680] sub_006FC680 (31 bytes)
+namespace lift_006FC680 {
+extern int32_t mem_00B608B4;
+
+// @name sub_006FC680
+// @summary Auto-lifted identical-shape clone of 0x006C03A0 (IsValueOneOfGlobalSentinels).
+namespace lift_006C03A0 {
+extern int mem_00B608B4;
+extern int mem_00B5E400;
+
+// @name IsValueOneOfGlobalSentinels
+// @summary Returns 1 if the stack argument equals mem_00B5F1F8; otherwise returns 1 only if it equals mem_00B5E400. Callee cleans 4 bytes (ret 4).
+// @field none (no struct member accesses; operates on globals only)
+extern uint8_t __stdcall fn_006FC680(DWORD value) {
+    if (value == static_cast<DWORD>(mem_00B608B4)) {
+        return 1;
+    }
+    return static_cast<uint8_t>(value == static_cast<DWORD>(mem_00B5E400));
+}
+} // namespace lift_006C03A0
+} // namespace lift_006FC680
