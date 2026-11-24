@@ -1,0 +1,46 @@
+{
+  "va": "0x0053F990",
+  "size": 56,
+  "orig_symbol": "sub_0053F990",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::UpdateRangeStreakCounter",
+  "class": "Unknown",
+  "signature": "void fn_0053F990(void* self)",
+  "summary": "If the pairs at +0xD0/+0xD8 and +0xD4/+0xDC are equal and RangeExceedsThreshold reports no overflow, increment the counter at +0xE0; otherwise reset it to 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xD0",
+      "type": "int32_t",
+      "name": "field_0xd0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD4",
+      "type": "int32_t",
+      "name": "field_0xd4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD8",
+      "type": "int32_t",
+      "name": "field_0xd8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xDC",
+      "type": "int32_t",
+      "name": "field_0xdc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xE0",
+      "type": "uint32_t",
+      "name": "counter_0xe0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:16:07Z"
+}

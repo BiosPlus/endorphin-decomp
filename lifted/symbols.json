@@ -18223,6 +18223,13 @@
     "summary": "Returns 1 if either of the two (+0xC4 - +0xBC) or (+0xC8 - +0xC0) spans exceeds mem_00A44B84, else 0.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x0053F990": {
+    "name": "Unknown::UpdateRangeStreakCounter",
+    "class": "Unknown",
+    "signature": "void fn_0053F990(void* self)",
+    "summary": "If the pairs at +0xD0/+0xD8 and +0xD4/+0xDC are equal and RangeExceedsThreshold reports no overflow, increment the counter at +0xE0; otherwise reset it to 0.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00540100": {
     "name": "CameraTool::vfunc_24",
     "class": "CameraTool",
@@ -26784,6 +26791,12 @@
     "signature": "void* __thiscall fn_005EFF60(void* self, void* out)",
     "summary": "Constructs a std::string from the literal at 0x0096B92C in the caller's sret buffer and returns that buffer.",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
+  "0x005ED330": {
+    "name": "std_Tree_Erase",
+    "signature": "void __thiscall fn_005ED330(uint32_t self, uint32_t node)",
+    "summary": "Recursively erases a red-black tree subtree in post-order (right child recursively, then left spine iteratively).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
   "0x005EF8A0": {
     "name": "NMData::HingeData::vfunc_59",

@@ -475,3 +475,38 @@ extern void* __stdcall fn_005398C0(uint32_t arg1, uint32_t arg2, uint32_t arg3) 
     return reinterpret_cast<void*>(base + offset);
 }
 } // namespace lift_005398C0
+
+// [0x0053F990] sub_0053F990 (56 bytes)
+namespace lift_0053F990 {
+// Known callee 0x0053F960: RangeExceedsThreshold (Returns 1 if either of the two (+0xC4 - +0xBC) or (+0xC8 - +0xC0) spans exceeds mem_00A44B84, else 0.)
+extern int32_t ext_0053F960(void* self);
+
+// @name Unknown::UpdateRangeStreakCounter
+// @class Unknown
+// @summary If the pairs at +0xD0/+0xD8 and +0xD4/+0xDC are equal and RangeExceedsThreshold reports no overflow, increment the counter at +0xE0; otherwise reset it to 0.
+// @field Unknown +0xd0 int32_t field_0xd0
+// @field Unknown +0xd4 int32_t field_0xd4
+// @field Unknown +0xd8 int32_t field_0xd8
+// @field Unknown +0xdc int32_t field_0xdc
+// @field Unknown +0xe0 uint32_t counter_0xe0
+void fn_0053F990(void* self) {
+    auto readU32 = [self](size_t off) {
+        uint32_t v;
+        std::memcpy(&v, static_cast<uint8_t*>(self) + off, sizeof v);
+        return v;
+    };
+    auto writeU32 = [self](size_t off, uint32_t v) {
+        std::memcpy(static_cast<uint8_t*>(self) + off, &v, sizeof v);
+    };
+
+    const bool pairA = readU32(0xd0) == readU32(0xd8);
+    const bool pairB = pairA && readU32(0xd4) == readU32(0xdc);
+    const bool rangeOk = pairB && static_cast<uint8_t>(ext_0053F960(self)) == 0;
+
+    if (rangeOk) {
+        writeU32(0xe0, readU32(0xe0) + 1u);
+    } else {
+        writeU32(0xe0, 0u);
+    }
+}
+} // namespace lift_0053F990
