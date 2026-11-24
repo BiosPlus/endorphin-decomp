@@ -1,0 +1,22 @@
+{
+  "va": "0x006B4090",
+  "size": 13,
+  "orig_symbol": "sub_006B4090",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "sub_006B4090",
+  "class": "RotateTool",
+  "signature": "int32_t fn_006B4090(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00546860 (RotateTool::vfunc_7).",
+  "fields": [
+    {
+      "class": "RotateTool",
+      "offset": "+0xA8",
+      "type": "int32_t",
+      "name": "field_0xA8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:21:57Z"
+}

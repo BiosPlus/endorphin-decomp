@@ -11,6 +11,6 @@
 namespace lifted_layout {
 struct RotateTool_Fields {
     // +0x0   void*                    vtable  (evidence: 0x005471D0)
-    // +0xA8  int32_t                  field_0xA8  (evidence: 0x00546860)
+    // +0xA8  int32_t                  field_0xA8  (evidence: 0x00546860, 0x006B4090)
 };
 } // namespace lifted_layout

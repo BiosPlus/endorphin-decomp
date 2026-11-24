@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/tiny_5E0000.cpp
 #include "lift_compat.h"
+#include <cstdint>
 
 // [0x005E1360] sub_005E1360 (13 bytes)
 namespace lift_005E1360 {
@@ -22,3 +23,24 @@ uint32_t fn_005E1360(void* self) {
     return reinterpret_cast<VSlot1Fn>(vtbl[1])(sub);
 }
 } // namespace lift_005E1360
+
+// [0x005E1350] sub_005E1350 (16 bytes)
+namespace lift_005E1350 {
+// @name sub_005E1350
+// @summary Auto-lifted identical-shape clone of 0x00545610 (PoseTool::vfunc_14).
+namespace lift_00545610 {
+// @name PoseTool::vfunc_14
+// @class PoseTool
+// @summary Forwards the call to the virtual method at vtable slot 14 (offset 0x38) of the object stored at this+0xA0, passing that object as `this`, and returns its result.
+// @field PoseTool +0xA0 void* field_0xa0
+
+typedef uintptr_t (*lift_vfn_t)(void* self);
+
+uintptr_t fn_005E1350(void* self) {
+    void* target = lift_field<void*>(self, 0x234);
+    void* vtable = lift_field<void*>(target, 0);
+    lift_vfn_t fn = reinterpret_cast<lift_vfn_t>(lift_field<void*>(vtable, 0xD4));
+    return fn(target);
+}
+} // namespace lift_00545610
+} // namespace lift_005E1350

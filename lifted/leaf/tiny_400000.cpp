@@ -79,6 +79,7 @@ int* fn_0040D4D0(void) {
     return &mem_0092B0F4;
 }
 extern "C" int mem_0092B9D4;
+#include <cstdint>
 
 // [0x0040F5C0] sub_0040F5C0 (6 bytes)
 // @name sub_0040F5C0
@@ -226,3 +227,24 @@ void fn_0040FD90(void* self, DWORD /*discarded_arg0*/, DWORD /*discarded_arg1*/)
     // ret 0x8                 -> caller's 8 bytes of args are dropped (handled by signature)
 }
 } // namespace lift_0040FD90
+
+// [0x00401730] sub_00401730 (16 bytes)
+namespace lift_00401730 {
+// @name sub_00401730
+// @summary Auto-lifted identical-shape clone of 0x00545610 (PoseTool::vfunc_14).
+namespace lift_00545610 {
+// @name PoseTool::vfunc_14
+// @class PoseTool
+// @summary Forwards the call to the virtual method at vtable slot 14 (offset 0x38) of the object stored at this+0xA0, passing that object as `this`, and returns its result.
+// @field PoseTool +0xA0 void* field_0xa0
+
+typedef uintptr_t (*lift_vfn_t)(void* self);
+
+uintptr_t fn_00401730(void* self) {
+    void* target = lift_field<void*>(self, 0xAC);
+    void* vtable = lift_field<void*>(target, 0);
+    lift_vfn_t fn = reinterpret_cast<lift_vfn_t>(lift_field<void*>(vtable, 0x16C));
+    return fn(target);
+}
+} // namespace lift_00545610
+} // namespace lift_00401730

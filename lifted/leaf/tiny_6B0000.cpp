@@ -128,6 +128,7 @@ extern "C" void __fastcall ext_006C9330(void* self);
 extern "C" void __fastcall ext_006BB540(void* self);
 extern "C" void __fastcall ext_006E7460(void* self);
 extern "C" void __fastcall ext_006E9420(void* self);
+#include <cstdint>
 
 // [0x006B2270] sub_006B2270 (11 bytes)
 // @name sub_006B2270
@@ -559,3 +560,18 @@ extern void fn_006B9900(void) {
 }
 } // namespace lift_007AE0A0
 } // namespace lift_006B9900
+
+// [0x006B4090] sub_006B4090 (13 bytes)
+namespace lift_006B4090 {
+// @name sub_006B4090
+// @summary Auto-lifted identical-shape clone of 0x00546860 (RotateTool::vfunc_7).
+namespace lift_00546860 {
+// @name RotateTool::vfunc_7
+// @class RotateTool
+// @summary Returns 1 if the int at RotateTool+0xA8 equals 4, otherwise 0.
+// @field RotateTool +0xA8 int32_t field_0xA8
+int32_t fn_006B4090(void* self) {
+    return lift_field<int32_t>(self, 0x4) == 210 ? 1 : 0;
+}
+} // namespace lift_00546860
+} // namespace lift_006B4090
