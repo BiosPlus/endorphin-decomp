@@ -10,14 +10,14 @@ namespace lifted_layout {
 struct UnknownClass_Fields {
     // +0x0   uint32_t                 field_0x00  (evidence: 0x00493D80, 0x00494050) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint8_t                  field_0x00  (evidence: 0x004B0F50) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    field_0x00  (evidence: 0x00465B20, 0x00468730, 0x00492A50) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    field_0x00  (evidence: 0x00465B20, 0x00468730, 0x00492A50, 0x0049AD40) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vptr  (evidence: 0x00413C40) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x006A7AE0) // CONFLICT: multiple definitions at +0x0
     // +0x1   uint8_t                  field_0x01  (evidence: 0x004B0F50)
     // +0x2   uint8_t                  field_0x02  (evidence: 0x004B0F50)
     // +0x3   uint8_t                  field_0x03  (evidence: 0x004B0F50)
     // +0x4   std::string              field_0x04  (evidence: 0x004B0F50) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00492A50, 0x00493D80, 0x00494050, 0x00780250) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00492A50, 0x00493D80, 0x00494050, 0x0049AD40, 0x00780250) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x00414880, 0x0041CEB0, 0x00602F00, 0x00602F20, 0x00630560, 0x006305C0, 0x006305E0, 0x00783630) // CONFLICT: multiple definitions at +0x4
     // +0x6   uint8_t                  field_0x06  (evidence: 0x007A9BD0)
     // +0x8   uint32_t                 field_0x08  (evidence: 0x006722B0, 0x00672490) // CONFLICT: multiple definitions at +0x8
@@ -26,7 +26,7 @@ struct UnknownClass_Fields {
     // +0x10  uint32_t[]               field_0x10  (evidence: 0x005B11D0, 0x005B7040)
     // +0x14  uint32_t                 field_0x14  (evidence: 0x007C2E50, 0x007C6FB0)
     // +0x20  uint32_t                 field_0x20  (evidence: 0x004B0F50)
-    // +0x30  std::string              field_0x30  (evidence: 0x004970A0)
+    // +0x30  std::string              field_0x30  (evidence: 0x004970A0, 0x0049AD40)
     // +0x3C  void*                    field_0x3c  (evidence: 0x00413C40)
     // +0x44  CRITICAL_SECTION         field_0x44  (evidence: 0x00413C40)
     // +0x58  uint32_t                 field_0x58  (evidence: 0x007AEEE0)
@@ -34,7 +34,7 @@ struct UnknownClass_Fields {
     // +0x88  void*                    subobject  (evidence: 0x00454C00)
     // +0x92  uint8_t                  field_0x92  (evidence: 0x005435F0)
     // +0x95  uint8_t                  field_0x95  (evidence: 0x005435F0)
-    // +0xBC  void*                    field_0xBC  (evidence: 0x004970A0)
+    // +0xBC  void*                    field_0xBC  (evidence: 0x004970A0, 0x0049AD40)
     // +0xF4  int32_t                  field_0xF4  (evidence: 0x00594040, 0x0059DE20)
     // +0x15C int32_t                  field_0x15c  (evidence: 0x004C1AC0)
     // +0x160 int32_t                  field_0x160  (evidence: 0x004C1AC0)
