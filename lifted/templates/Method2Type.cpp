@@ -639,3 +639,32 @@ extern uint32_t __stdcall fn_00692380(void* self, uint32_t a1, uint32_t a2, uint
     return target;
 }
 } // namespace lift_00692380
+
+// [0x0066CCD0]
+namespace lift_0066CCD0 {
+// @name ExprParser::Method2Type_Vector3_radArbitraryRotateE::vfunc_49
+// @class ExprParser::Method2Type
+// @summary Evaluates two arguments (Vector3 const& and float), calls radArbitraryRotateE on the target Vector3, and initializes the void return value.
+
+extern void __cdecl ext_00671F30(uint32_t* out);
+extern void __thiscall ext_0067C6B0(void* self, const void* vec, float angle);
+
+uint32_t* __thiscall sub_0066CCD0(void* self, uint32_t* out, uint32_t* targetPtr, void* argVec, void* argAngle) {
+    (void)self;
+    void* vecObj = reinterpret_cast<void*>(*targetPtr);
+
+    void* angleType = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(argAngle) + 4);
+    auto angleVtable = *reinterpret_cast<uintptr_t**>(angleType);
+    using GetFloatFn = float(__thiscall*)(void*, void*);
+    float angle = reinterpret_cast<GetFloatFn>(angleVtable[1])(angleType, argAngle);
+
+    void* vecType = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(argVec) + 4);
+    auto vecVtable = *reinterpret_cast<uintptr_t**>(vecType);
+    using GetVecFn = const void*(__thiscall*)(void*, void*);
+    const void* vec = reinterpret_cast<GetVecFn>(vecVtable[5])(vecType, argVec);
+
+    ext_0067C6B0(vecObj, vec, angle);
+    ext_00671F30(out);
+    return out;
+}
+} // namespace lift_0066CCD0

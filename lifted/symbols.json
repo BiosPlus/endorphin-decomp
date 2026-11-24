@@ -25740,6 +25740,13 @@
     "summary": "When index \u003c 1, forwards the vector (value, 0, 0) to virtual slot 61 (offset 0xF4) on self.",
     "lifted_path": "lifted/NMData/HingeConstraint.cpp"
   },
+  "0x006116E0": {
+    "name": "NMData::HingeConstraint::vfunc_61",
+    "class": "NMData::HingeConstraint",
+    "signature": "void __thiscall fn_006116E0(void* this_ptr, const float* angle)",
+    "summary": "Negates the input float into a local X-axis vector, invokes TransformInterface vfunc at +0xC, calls ext_0067E410, and dispatches on the global object if non-null.",
+    "lifted_path": "lifted/NMData/HingeConstraint.cpp"
+  },
   "0x00611740": {
     "name": "NMData::HingeConstraint::getValueAtIndex",
     "class": "NMData::HingeConstraint",
@@ -31732,6 +31739,13 @@
     "signature": "extern void __stdcall fn_0066CBF0(uint32_t* out, void* b, void* c)",
     "summary": "Auto-lifted identical-shape clone of 0x0064F7C0 (ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, SkeletalJoint::setDriveAngularVel\u003e::vfunc_48).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
+  "0x0066CCD0": {
+    "name": "ExprParser::Method2Type_Vector3_radArbitraryRotateE::vfunc_49",
+    "class": "ExprParser::Method2Type",
+    "signature": "uint32_t* __thiscall sub_0066CCD0(void* self, uint32_t* out, uint32_t* targetPtr, void* argVec, void* argAngle)",
+    "summary": "Evaluates two arguments (Vector3 const\u0026 and float), calls radArbitraryRotateE on the target Vector3, and initializes the void return value.",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
   },
   "0x0066CDF0": {
     "name": "ExprParser::ExtROType::vfunc_0",
