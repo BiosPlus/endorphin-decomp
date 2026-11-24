@@ -164,3 +164,26 @@ void sub_007874D0() {
     mem_00B60B54 = huge[1];
 }
 } // namespace lift_007874D0
+
+// [0x00785F60]
+namespace lift_00785F60 {
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B609C0;
+extern uint32_t mem_00B609C4;
+extern uint32_t mem_00B609C8;
+extern uint32_t mem_00B609CC;
+extern uint32_t mem_00B609D0;
+extern uint32_t mem_00B609D4;
+
+// @name initHugeBounds
+// @summary Initializes three 64-bit global values from MSVCR80.dll!_HUGE.
+void sub_00785F60() {
+    const uint32_t* huge = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    mem_00B609C0 = huge[0];
+    mem_00B609C4 = huge[1];
+    mem_00B609C8 = huge[0];
+    mem_00B609CC = huge[1];
+    mem_00B609D0 = huge[0];
+    mem_00B609D4 = huge[1];
+}
+} // namespace lift_00785F60
