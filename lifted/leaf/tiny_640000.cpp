@@ -738,3 +738,17 @@ uint8_t FlagsTest_Bit10(void* self) {
     return (flags & 0x10u) == 0x10u ? 1u : 0u;
 }
 } // namespace lift_00642000
+
+// [0x00641FD0] sub_00641FD0 (15 bytes)
+namespace lift_00641FD0 {
+// @name IsFlagBit0AtOffset20
+// @class <ClassName> (optional)
+// @summary Returns bit 0 of the DWORD at this+0x20 as 0 or 1 (x86 sequence: and al,1 / sub / neg / sbb / add 1).
+// @field <ClassName> +0x20 DWORD field_0x20
+DWORD IsFlagBit0AtOffset20(const void* self) {
+    const auto* base = static_cast<const unsigned char*>(self);
+    DWORD value;
+    std::memcpy(&value, base + 0x20, sizeof(value));
+    return value & 1u;
+}
+} // namespace lift_00641FD0

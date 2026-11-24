@@ -21323,6 +21323,13 @@
     "summary": "Decrements dword at +0xc and sets byte at +0x10 to 1",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00641FD0": {
+    "name": "IsFlagBit0AtOffset20",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "DWORD IsFlagBit0AtOffset20(const void* self)",
+    "summary": "Returns bit 0 of the DWORD at this+0x20 as 0 or 1 (x86 sequence: and al,1 / sub / neg / sbb / add 1).",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
   "0x00642000": {
     "name": "FlagsTest_Bit10",
     "class": "unknown (this-pointer accessor; owning class not identified)",
