@@ -44108,6 +44108,13 @@
     "summary": "Checks whether bit 4 of an inner object's flags at +0xc is set when the wrapper at +0x4 is active.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x007836D0": {
+    "name": "FileStream::setSize",
+    "class": "FileStream",
+    "signature": "int32_t __thiscall fn_007836D0(void* this_ptr, int32_t size)",
+    "summary": "Resizes the underlying file descriptor via _chsize if the stream is open.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00783790": {
     "name": "Unknown::zeroFourDwords",
     "class": "Unknown",
