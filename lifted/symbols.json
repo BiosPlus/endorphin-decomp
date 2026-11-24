@@ -45530,6 +45530,12 @@
     "summary": "Copies the two dword halves of the 64-bit field at +0x1050 into +0x1048.",
     "lifted_path": "lifted/leaf/tiny_860000.cpp"
   },
+  "0x0086F000": {
+    "name": "ZeroDwordArray20",
+    "signature": "void fn_0086F000(DWORD* dst)",
+    "summary": "Zeroes the 20 DWORD entries (indices 0..19) of the array passed by pointer, highest index first.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086F15B": {
     "name": "sub_0086F15B",
     "signature": "void fn_0086F15B(void)",
