@@ -12749,6 +12749,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00544E00 (ReshapeTool::vfunc_8_off_98).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00545660": {
+    "name": "PoseTool::vfunc_11_off_98",
+    "class": "PoseTool",
+    "signature": "uint32_t fn_00545660(void* self)",
+    "summary": "Secondary-base thunk (ToolClient at +0x98): if the forwarding object at +0x88 is set, tail-dispatches its vtable slot 11 with the same this-pointer; otherwise returns 0.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00545790": {
     "name": "PoseTool::vfunc_1",
     "class": "PoseTool",

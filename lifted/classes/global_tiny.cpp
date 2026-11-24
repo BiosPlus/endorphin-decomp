@@ -6074,3 +6074,23 @@ void fn_00544C30(void* self, uint32_t arg) {
     fn(target, arg); // original: tail jmp, argument forwarded unchanged
 }
 } // namespace lift_00544C30
+
+// [0x00545660] PoseTool::vfunc_11_off_98 (19 bytes)
+namespace lift_00545660 {
+// @name PoseTool::vfunc_11_off_98
+// @class PoseTool
+// @summary Secondary-base thunk (ToolClient at +0x98): if the forwarding object at +0x88 is set, tail-dispatches its vtable slot 11 with the same this-pointer; otherwise returns 0.
+// @field PoseTool +0x88 void* field_0x88
+uint32_t fn_00545660(void* self) {
+    // self is the ToolClient subobject (PoseTool + 0x98); PoseTool +0x88 is self - 0x10.
+    void* target = lift_field<void*>(self, -0x10);
+    if (target == nullptr) {
+        return 0; // original: xor al, al; ret
+    }
+    // Vtable slot 11 (byte offset 0x2c) of the target object; tail-called with target as this.
+    using SlotFn = uint32_t (*)(void*);
+    void** vtbl = *reinterpret_cast<void***>(target);
+    auto fn = reinterpret_cast<SlotFn>(vtbl[11]);
+    return fn(target); // original: tail jmp, return value passed through in eax
+}
+} // namespace lift_00545660
