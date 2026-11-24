@@ -1,0 +1,21 @@
+{
+  "va": "0x00493E90",
+  "size": 14,
+  "orig_symbol": "sub_00493E90",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "ForwardVfunc1IfNonNull",
+  "signature": "void fn_00493E90(void* self)",
+  "summary": "Loads the object pointer stored at *self; if non-null, calls its vtable slot 1 with that object as this (tail call).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:24:51Z"
+}

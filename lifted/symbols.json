@@ -4711,6 +4711,12 @@
     "summary": "Tail-forwards the call to vtable slot 0x19C of the object referenced by self's first field.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00493E90": {
+    "name": "ForwardVfunc1IfNonNull",
+    "signature": "void fn_00493E90(void* self)",
+    "summary": "Loads the object pointer stored at *self; if non-null, calls its vtable slot 1 with that object as this (tail call).",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
   "0x00494060": {
     "name": "sub_00494060",
     "signature": "void __thiscall sub_00494060(void* self, uint32_t mask)",

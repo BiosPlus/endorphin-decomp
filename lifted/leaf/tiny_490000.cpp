@@ -222,3 +222,23 @@ void* fn_00493D80(void* self) {
     return self;
 }
 } // namespace lift_00493D80
+
+// [0x00493E90] sub_00493E90 (14 bytes)
+namespace lift_00493E90 {
+// @name ForwardVfunc1IfNonNull
+// @summary Loads the object pointer stored at *self; if non-null, calls its vtable slot 1 with that object as this (tail call).
+// @field Unknown +0x00 void* field_0x00
+void fn_00493E90(void* self) {
+    // self points at a slot that holds a pointer to a polymorphic object.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj == nullptr) {
+        return;
+    }
+
+    // obj->vtable (first word of object); slot 1 is the second entry.
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    using VfnThis = void (*)(void*);
+    VfnThis target = reinterpret_cast<VfnThis>(vtbl[1]);
+    target(obj);
+}
+} // namespace lift_00493E90
