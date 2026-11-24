@@ -656,3 +656,15 @@ void __thiscall fn_006BB780(void* self, uint32_t value) {
     lift_field<uint32_t>(target, 0x04) = value;
 }
 } // namespace lift_006BB780
+
+// [0x006BB7B0] sub_006BB7B0 (16 bytes)
+namespace lift_006BB7B0 {
+// @name Unknown::SetField08
+// @class Unknown
+// @summary Loads the pointer stored at this+0 and writes the single stack argument to its +0x08 slot.
+// @field Unknown +0x08 DWORD field_0x08
+void fn_006BB7B0(void* self, DWORD value) {
+    void* target = lift_field<void*>(self, 0x00);
+    lift_field<DWORD>(target, 0x08) = value;
+}
+} // namespace lift_006BB7B0

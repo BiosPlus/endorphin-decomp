@@ -1,0 +1,22 @@
+{
+  "va": "0x006BB7B0",
+  "size": 16,
+  "orig_symbol": "sub_006BB7B0",
+  "src_path": "src/leaf/tiny_6B0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6B0000.cpp",
+  "name": "Unknown::SetField08",
+  "class": "Unknown",
+  "signature": "void fn_006BB7B0(void* self, DWORD value)",
+  "summary": "Loads the pointer stored at this+0 and writes the single stack argument to its +0x08 slot.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:37:23Z"
+}
