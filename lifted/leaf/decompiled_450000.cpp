@@ -566,3 +566,27 @@ void fn_00458840(void* self, uint32_t arg1, uint32_t pairLo, uint32_t pairHi) {
     ext_004586E0(inner, key, reinterpret_cast<void*>(static_cast<uintptr_t>(arg1)));
 }
 } // namespace lift_00458840
+
+// [0x0045B4F0]
+namespace lift_0045B4F0 {
+// USER32!SendMessageA import slot (IAT entry at 0x00925694).
+extern LRESULT (*mem_00925694)(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+
+// @name Unknown::queryCheckStateAndNotify
+// @class Unknown
+// @summary Sends BM_GETCHECK to the control handle at +0x1A8, then calls virtual slot 0x88 on the object at +0x88 with whether the control is checked.
+// @field Unknown +0x88 void* field_0x88
+// @field Unknown +0x1A8 HWND field_0x1A8
+void fn_0045B4F0(void* self) {
+    constexpr UINT kBmGetCheck = 0x00F0;   // BM_GETCHECK
+    constexpr LRESULT kBstChecked = 1;     // BST_CHECKED
+
+    HWND hwnd = lift_field<HWND>(self, 0x1A8);
+    LRESULT state = mem_00925694(hwnd, kBmGetCheck, 0, 0);
+
+    void* target = lift_field<void*>(self, 0x88);
+    void* vtable = lift_field<void*>(target, 0);
+    void (*slot)(void*, BOOL) = lift_field<void (*)(void*, BOOL)>(vtable, 0x88);
+    slot(target, state == kBstChecked ? TRUE : FALSE);
+}
+} // namespace lift_0045B4F0

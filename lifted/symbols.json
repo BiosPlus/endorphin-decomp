@@ -4841,6 +4841,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0045AD80 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0045B4F0": {
+    "name": "Unknown::queryCheckStateAndNotify",
+    "class": "Unknown",
+    "signature": "void fn_0045B4F0(void* self)",
+    "summary": "Sends BM_GETCHECK to the control handle at +0x1A8, then calls virtual slot 0x88 on the object at +0x88 with whether the control is checked.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045B670": {
     "name": "sub_0045B670",
     "signature": "extern \"C\" void* __cdecl fn_0045B670(void)",
