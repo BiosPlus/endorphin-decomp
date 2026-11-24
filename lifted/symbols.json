@@ -16659,6 +16659,13 @@
     "summary": "Forwards to virtual slot 5 (+0x14) of the object stored at +0x04, passing this+4 as this and the global mem_00B40640 as the single stack argument; returns the callee's result.",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
   },
+  "0x005C3130": {
+    "name": "ForwardGlobalArgAndAdd16",
+    "class": "Unknown",
+    "signature": "int fn_005C3130(void* self)",
+    "summary": "Calls the callback stored at obj-\u003efield_14 (obj = this-\u003efield_04), passing this+4 and a global, then returns its result + 0x10.",
+    "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
+  },
   "0x005C3170": {
     "name": "sub_005C3170",
     "class": "Unknown",
