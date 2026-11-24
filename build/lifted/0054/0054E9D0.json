@@ -1,0 +1,40 @@
+{
+  "va": "0x0054E9D0",
+  "size": 30,
+  "orig_symbol": "OptimizedMatrixStackManager::vfunc_7",
+  "src_path": "src/classes/OptimizedMatrixStackManager.cpp",
+  "lifted_path": "lifted/classes/OptimizedMatrixStackManager.cpp",
+  "name": "OptimizedMatrixStackManager::vfunc_7",
+  "class": "OptimizedMatrixStackManager",
+  "signature": "static inline int32_t call_vslot7(void* obj)",
+  "summary": "Virtual slot 7 dispatcher: forwards slot 7 to child at +0x20 if field_04 \u003c field_08, else to child at +0x0C; passes the callee's result through.",
+  "fields": [
+    {
+      "class": "OptimizedMatrixStackManager",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "OptimizedMatrixStackManager",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "OptimizedMatrixStackManager",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "OptimizedMatrixStackManager",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:17:49Z"
+}

@@ -14530,6 +14530,13 @@
     "summary": "IAT jump thunk forwarding to OPENGL32!glPopMatrix.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0054E9D0": {
+    "name": "OptimizedMatrixStackManager::vfunc_7",
+    "class": "OptimizedMatrixStackManager",
+    "signature": "static inline int32_t call_vslot7(void* obj)",
+    "summary": "Virtual slot 7 dispatcher: forwards slot 7 to child at +0x20 if field_04 \u003c field_08, else to child at +0x0C; passes the callee's result through.",
+    "lifted_path": "lifted/classes/OptimizedMatrixStackManager.cpp"
+  },
   "0x0054EE60": {
     "name": "NMMatrixStackManager::vfunc_0",
     "class": "NMMatrixStackManager",
