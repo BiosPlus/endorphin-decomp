@@ -1,0 +1,21 @@
+{
+  "va": "0x004313A0",
+  "size": 43,
+  "orig_symbol": "sub_004313A0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_004313A0",
+  "signature": "void fn_004313A0(uint32_t ecx)",
+  "summary": "Calls vtable+0x15c on field_0x11c with 0 and forwards its negated result to MFC80_ord_6081.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x11C",
+      "type": "uint32_t",
+      "name": "field_0x11c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:03:44Z"
+}
