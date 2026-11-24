@@ -1,0 +1,13 @@
+{
+  "va": "0x006E3660",
+  "size": 48,
+  "orig_symbol": "sub_006E3660",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "vec4d_add",
+  "signature": "void sub_006E3660(double* out, const double* a, const double* b)",
+  "summary": "Component-wise add of two 4-element double vectors: out = a + b.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:20:18Z"
+}

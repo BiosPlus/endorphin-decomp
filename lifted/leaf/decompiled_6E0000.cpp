@@ -428,3 +428,15 @@ void fn_006E00C0(void* out, const void* src, double scale) {
     lift_field<double>(out, 0x18) = scale * lift_field<const double>(src, 0x18);
 }
 } // namespace lift_006E00C0
+
+// [0x006E3660]
+namespace lift_006E3660 {
+// @name vec4d_add
+// @summary Component-wise add of two 4-element double vectors: out = a + b.
+void sub_006E3660(double* out, const double* a, const double* b) {
+    out[0] = a[0] + b[0];
+    out[1] = a[1] + b[1];
+    out[2] = a[2] + b[2];
+    out[3] = a[3] + b[3];
+}
+} // namespace lift_006E3660

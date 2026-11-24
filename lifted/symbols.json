@@ -39822,6 +39822,12 @@
     "summary": "Writes out[i] = src[i] * scale for the four doubles of a Vec4d (scale passed by value).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E3660": {
+    "name": "vec4d_add",
+    "signature": "void sub_006E3660(double* out, const double* a, const double* b)",
+    "summary": "Component-wise add of two 4-element double vectors: out = a + b.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E3A40": {
     "name": "Unknown::IsField68Equal2",
     "class": "Unknown",
