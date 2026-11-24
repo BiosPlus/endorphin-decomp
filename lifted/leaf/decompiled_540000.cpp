@@ -189,3 +189,23 @@ float fn_00548240(void* self) {
     return ext_005B11E0(sub, 5);
 }
 } // namespace lift_00548240
+
+// [0x005481C0] Unknown::GetFloatFromChildOrDouble (31 bytes)
+namespace lift_005481C0 {
+// Callee: sub_005B11E0 (getFloatAt) — float __thiscall(this, uint32_t index)
+float ext_005B11E0(void* self, uint32_t index);
+
+// @name Unknown::GetFloatFromChildOrDouble
+// @class Unknown
+// @summary If the pointer at +0xA0 is set, return child float [3] (child at +0x210); otherwise return the double at +0xD0.
+// @field Unknown +0xA0 void* field_0xA0
+// @field Unknown +0xD0 double field_0xD0
+double fn_005481C0(void* self) {
+    void* child = lift_field<void*>(self, 0xA0);
+    if (child != nullptr) {
+        void* sub = reinterpret_cast<uint8_t*>(child) + 0x210;
+        return static_cast<double>(ext_005B11E0(sub, 3));
+    }
+    return lift_field<double>(self, 0xD0);
+}
+} // namespace lift_005481C0

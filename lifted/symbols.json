@@ -14580,6 +14580,13 @@
     "summary": "Returns float at this+0x1F4 of the object pointed to by this+0xA0 if non-null, else float at this+0x70.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x005481C0": {
+    "name": "Unknown::GetFloatFromChildOrDouble",
+    "class": "Unknown",
+    "signature": "double fn_005481C0(void* self)",
+    "summary": "If the pointer at +0xA0 is set, return child float [3] (child at +0x210); otherwise return the double at +0xD0.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x005481E0": {
     "name": "sub_005481E0",
     "signature": "BYTE sub_005481E0(BYTE* self)",
