@@ -95,3 +95,14 @@ void* fn_0077FAB0(void* self) {
     return self;
 }
 } // namespace lift_0077FAB0
+
+// [0x0077FAE0] sub_0077FAE0 (16 bytes)
+namespace lift_0077FAE0 {
+// @name Unknown::getDoubleByIndex
+// @class Unknown
+// @summary Returns the double stored at element index (stride 8) of the object's table, thiscall, callee pops 4 bytes.
+// @field Unknown +0x00 double field_0x00[] (indexed by arg, stride 8; element type inferred from fld qword)
+double fn_0077FAE0(void* self, int32_t index) {
+    return lift_field<double>(self, static_cast<ptrdiff_t>(index) * 8);
+}
+} // namespace lift_0077FAE0

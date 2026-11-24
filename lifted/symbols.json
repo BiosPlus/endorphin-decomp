@@ -36741,6 +36741,13 @@
     "summary": "Zeroes four consecutive 32-bit fields (offsets 0x00, 0x04, 0x08, 0x0C) of the object and returns it.",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
   },
+  "0x0077FAE0": {
+    "name": "Unknown::getDoubleByIndex",
+    "class": "Unknown",
+    "signature": "double fn_0077FAE0(void* self, int32_t index)",
+    "summary": "Returns the double stored at element index (stride 8) of the object's table, thiscall, callee pops 4 bytes.",
+    "lifted_path": "lifted/leaf/tiny_770000.cpp"
+  },
   "0x0077FE40": {
     "name": "sub_0077FE40",
     "signature": "extern \"C\" int32_t __cdecl fn_0077FE40(void)",
