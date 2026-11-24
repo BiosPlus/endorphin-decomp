@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_780000.cpp
 #include "lift_compat.h"
+#include <cstdio>
 
 // [0x00780250]
 namespace lift_00780250 {
@@ -116,3 +117,23 @@ void fn_00782D00(void* self, DWORD arg) {
     *reinterpret_cast<BYTE*>(obj + 0x10) = 0;
 }
 } // namespace lift_00782D00
+
+// [0x007833F0] sub_007833F0 (32 bytes)
+namespace lift_007833F0 {
+// @name CloseOwnedFileIfOpen
+// @class Unknown
+// @summary If the inner handle's open flag (+0x04) is set, clear it and fclose the FILE* at inner+0x00.
+// @field Unknown +0x04 void* inner
+// @field Unknown +0x04 uint8_t openFlag (inner+0x04)
+// @field Unknown +0x00 FILE* file (inner+0x00)
+void fn_007833F0(void* self) {
+    void* inner = lift_field<void*>(self, 0x04);
+    if (lift_field<uint8_t>(inner, 0x04) == 0) {
+        return;
+    }
+    lift_field<uint8_t>(inner, 0x04) = 0;
+    inner = lift_field<void*>(self, 0x04);
+    FILE* file = lift_field<FILE*>(inner, 0x00);
+    fclose(file);
+}
+} // namespace lift_007833F0

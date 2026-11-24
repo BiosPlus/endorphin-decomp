@@ -42567,6 +42567,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00783270 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x007833F0": {
+    "name": "CloseOwnedFileIfOpen",
+    "class": "Unknown",
+    "signature": "void fn_007833F0(void* self)",
+    "summary": "If the inner handle's open flag (+0x04) is set, clear it and fclose the FILE* at inner+0x00.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x007835F0": {
     "name": "sub_007835F0",
     "signature": "uint8_t __fastcall sub_007835F0(uint32_t ecx)",

@@ -9,6 +9,7 @@
 namespace lifted_layout {
 struct Unknown_Fields {
     // +0x0   void* field_0x00 (arg1: loaded to obtain the forwarding "this")  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   FILE* file               (inner+0x00)  (evidence: 0x007833F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t vtable          (vptr)  (evidence: 0x006BB7D0, 0x006E7F90, 0x006E7FB0, 0x006E7FC0, 0x006E7FD0, 0x006E7FE0, 0x006E7FF0, 0x006E8000, 0x006E8010, 0x006E8020, 0x006E8030, 0x006E8040, 0x006E86B0, 0x006E8810, 0x0072B1C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (vtable pointer, dereferenced to read slot +0x80)  (evidence: 0x006E7F90, 0x006E8050, 0x006E8060, 0x006E8070, 0x006E8080) // CONFLICT: multiple definitions at +0x0
     // +0x0   void** vtable vtable pointer (slot 0 called with arg 1)  (evidence: 0x006DE130) // CONFLICT: multiple definitions at +0x0
@@ -62,6 +63,7 @@ struct Unknown_Fields {
     // +0x3   BYTE                     field_0x03  (evidence: 0x007148C0, 0x0071F070) // CONFLICT: multiple definitions at +0x3
     // +0x3   uint8_t                  field_0x03  (evidence: 0x007148A0, 0x0071F070) // CONFLICT: multiple definitions at +0x3
     // +0x4   uint32_t field_0x04      (begin)  (evidence: 0x0051DE50) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint8_t openFlag         (inner+0x04)  (evidence: 0x007833F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (arg2: sub-object pointer read at +0x4)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t field_0x04 (type code read from inner struct; compared against 2)  (evidence: 0x006BB790) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (inner object of the context argument)  (evidence: 0x005853E0) // CONFLICT: multiple definitions at +0x4
@@ -86,6 +88,7 @@ struct Unknown_Fields {
     // +0x4   uint32_t                 flags  (evidence: 0x008103A0, 0x008103F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (destination operand holder; inner object's vtable slot 6 returns float* to 4 floats)  (evidence: 0x0066D190) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (sub-component object returned by vfunc_0; its class is not identified)  (evidence: 0x0066BDB0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    inner  (evidence: 0x007833F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    linked  (evidence: 0x006BDAF0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t*                 next  (evidence: 0x008103A0, 0x008103F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    peer  (evidence: 0x00528B90) // CONFLICT: multiple definitions at +0x4
