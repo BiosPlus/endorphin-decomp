@@ -101,3 +101,22 @@ uint32_t ResolveDwordThroughFlaggedIndirection(void* self) {
     return value;
 }
 } // namespace lift_00859E50
+
+// [0x00857470] sub_00857470 (32 bytes)
+namespace lift_00857470 {
+extern uintptr_t mem_00AB86EC;
+
+// @name dispatchThroughGlobalObjectSlot0C
+// @summary If the global object pointer is set, call its +0x0C function pointer with one 32-bit argument.
+// @field UnknownObject +0x0C void* field_0x0C
+using ObjSlot0CFn = void(__cdecl*)(uint32_t);
+
+void fn_00857470(uint32_t arg) {
+    uint8_t* obj = reinterpret_cast<uint8_t*>(mem_00AB86EC);
+    if (obj == nullptr) {
+        return;
+    }
+    ObjSlot0CFn fn = lift_field<ObjSlot0CFn>(obj, 0x0C);
+    fn(arg);
+}
+} // namespace lift_00857470

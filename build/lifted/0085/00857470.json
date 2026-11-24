@@ -1,0 +1,21 @@
+{
+  "va": "0x00857470",
+  "size": 32,
+  "orig_symbol": "sub_00857470",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "dispatchThroughGlobalObjectSlot0C",
+  "signature": "void fn_00857470(uint32_t arg)",
+  "summary": "If the global object pointer is set, call its +0x0C function pointer with one 32-bit argument.",
+  "fields": [
+    {
+      "class": "UnknownObject",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:49:36Z"
+}
