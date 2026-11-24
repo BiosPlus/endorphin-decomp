@@ -1,0 +1,28 @@
+{
+  "va": "0x004435D0",
+  "size": 90,
+  "orig_symbol": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState::vfunc_4",
+  "src_path": "src/MultiTrackView/MultiTrackViewStates/SelectOrMoveState.cpp",
+  "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/SelectOrMoveState.cpp",
+  "name": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState::vfunc_4",
+  "class": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState",
+  "signature": "uint8_t fn_004435D0(void* self, uintptr_t arg0, uintptr_t /*arg1*/, uintptr_t /*arg2*/)",
+  "summary": "Kills owner timer, updates selection/move state if active, invalidates view, and notifies field_0x04.",
+  "fields": [
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "delegate_0x8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:44:40Z"
+}

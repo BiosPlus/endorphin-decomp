@@ -3200,6 +3200,13 @@
     "summary": "Notifies the MFC helper with the argument, builds a unit Vector4 and an int4 snapshot from the state at +0x04, invokes the child update routines, and returns false.",
     "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/DragSelectState.cpp"
   },
+  "0x004435D0": {
+    "name": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState::vfunc_4",
+    "class": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState",
+    "signature": "uint8_t fn_004435D0(void* self, uintptr_t arg0, uintptr_t /*arg1*/, uintptr_t /*arg2*/)",
+    "summary": "Kills owner timer, updates selection/move state if active, invalidates view, and notifies field_0x04.",
+    "lifted_path": "lifted/MultiTrackView/MultiTrackViewStates/SelectOrMoveState.cpp"
+  },
   "0x00443650": {
     "name": "MultiTrackView::MultiTrackViewStates::MoveState::vfunc_7",
     "class": "MultiTrackView::MultiTrackViewStates::MoveState",
@@ -31759,6 +31766,20 @@
     "class": "ExprParser::Method2Type",
     "signature": "uint32_t* __thiscall sub_0066CCD0(void* self, uint32_t* out, uint32_t* targetPtr, void* argVec, void* argAngle)",
     "summary": "Evaluates two arguments (Vector3 const\u0026 and float), calls radArbitraryRotateE on the target Vector3, and initializes the void return value.",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
+  "0x0066CD30": {
+    "name": "ExprParser::Method2Type_NM_Vector3_radArbitraryRotateTS::vfunc_49",
+    "class": "ExprParser::Method2Type",
+    "signature": "void* __thiscall fn_0066CD30(void* self, uint32_t* out, void** targetPtr, uint32_t* argAxis, uint32_t* argAngle)",
+    "summary": "Invokes NM::Vector3::radArbitraryRotateTS on the target vector with evaluated axis and angle arguments, then initializes the output expression value.",
+    "lifted_path": "lifted/templates/Method2Type.cpp"
+  },
+  "0x0066CD90": {
+    "name": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, float, \u0026NM::Vector3::radArbitraryRotateTSA\u003e::vfunc_49",
+    "class": "ExprParser::Method2Type",
+    "signature": "uint32_t* __thiscall fn_0066CD90(void* self, uint32_t* out, void** target, void* vecArg, void* angleArg)",
+    "summary": "Invokes NM::Vector3::radArbitraryRotateTSA with a Vector3 and float extracted from expression arguments, then initializes the output value.",
     "lifted_path": "lifted/templates/Method2Type.cpp"
   },
   "0x0066CDF0": {
