@@ -298,3 +298,24 @@ void fn_00486AD0(void* self, uint32_t value, uint8_t notify) {
     // ret 8: both stack arguments are consumed by the callee epilogue.
 }
 } // namespace lift_00486AD0
+
+// [0x00486C90] sub_00486C90 (31 bytes)
+namespace lift_00486C90 {
+extern int mem_00B59400;
+
+// @name GetChildOrGlobalViaSlot9
+// @class Unknown
+// @summary If this->field_0x168 is null, return &mem_00B59400; otherwise tail-dispatch
+//          vtable slot 9 (+0x24) of the object at (field_0x168 + 4), passing that object as `this`.
+// @field Unknown +0x168 void* field_0x168
+void* fn_00486C90(void* self) {
+    void* child = lift_field<void*>(self, 0x168);
+    if (child == nullptr) {
+        return &mem_00B59400;
+    }
+    void* iface = static_cast<uint8_t*>(child) + 4;
+    void** vtbl = *static_cast<void***>(iface);
+    using Slot9Fn = void* (*)(void*);
+    return reinterpret_cast<Slot9Fn>(vtbl[9])(iface);
+}
+} // namespace lift_00486C90

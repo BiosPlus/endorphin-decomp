@@ -1,0 +1,22 @@
+{
+  "va": "0x00486C90",
+  "size": 31,
+  "orig_symbol": "sub_00486C90",
+  "src_path": "src/leaf/tiny_480000.cpp",
+  "lifted_path": "lifted/leaf/tiny_480000.cpp",
+  "name": "GetChildOrGlobalViaSlot9",
+  "class": "Unknown",
+  "signature": "void* fn_00486C90(void* self)",
+  "summary": "If this-\u003efield_0x168 is null, return \u0026mem_00B59400; otherwise tail-dispatch",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x168",
+      "type": "void*",
+      "name": "field_0x168"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:23:14Z"
+}
