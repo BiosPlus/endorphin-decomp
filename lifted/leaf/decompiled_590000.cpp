@@ -102,3 +102,26 @@ DWORD* __thiscall fn_00599C10(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_00599C10
+
+// [0x00596A30] sub_00596A30 (51 bytes)
+namespace lift_00596A30 {
+// Callback type: the original calls through a register-passed (ECX) single-argument
+// function pointer; the result is ignored. Modelled here as a plain one-argument callable.
+using OffsetCallback = void (*)(uint32_t value);
+
+// @name CallForEachOffsetPlusBase
+// @summary For each DWORD in [begin, end), calls cb(*entry + base); then writes (cb, base) to out[0], out[1].
+void fn_00596A30(uint32_t* out,
+                 uint32_t /*stack slot +0x08, unused*/,
+                 const uint32_t* begin,
+                 uint32_t /*stack slot +0x10, unused*/,
+                 const uint32_t* end,
+                 OffsetCallback cb,
+                 uint32_t base) {
+    for (const uint32_t* p = begin; p != end; ++p) {
+        cb(*p + base);
+    }
+    out[0] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(cb));
+    out[1] = base;
+}
+} // namespace lift_00596A30

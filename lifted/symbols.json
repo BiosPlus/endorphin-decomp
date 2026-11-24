@@ -20825,6 +20825,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00596A30": {
+    "name": "CallForEachOffsetPlusBase",
+    "signature": "void fn_00596A30(uint32_t* out, uint32_t /*stack slot +0x08, unused*/, const uint32_t* begin, uint32_t /*stack slot +0x10, unused*/, const uint32_t* end, OffsetCallback cb, uint32_t base)",
+    "summary": "For each DWORD in [begin, end), calls cb(*entry + base); then writes (cb, base) to out[0], out[1].",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00597DA0": {
     "name": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1\u003e",
