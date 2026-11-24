@@ -1,0 +1,27 @@
+{
+  "va": "0x0063EA50",
+  "size": 37,
+  "orig_symbol": "sub_0063EA50",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "sub_0063EA50",
+  "signature": "BOOLEAN fn_0063EA50(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00480280 (IsEmptyDwordRange_00480280).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "DWORD",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T13:04:00Z"
+}

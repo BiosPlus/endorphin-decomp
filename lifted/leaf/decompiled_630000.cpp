@@ -61,3 +61,24 @@ __thiscall void* fn_0063F600(void* self, DWORD arg1, DWORD arg2) {
 }
 } // namespace lift_004F27E0
 } // namespace lift_0063F600
+
+// [0x0063EA50] sub_0063EA50 (37 bytes)
+namespace lift_0063EA50 {
+// @name sub_0063EA50
+// @summary Auto-lifted identical-shape clone of 0x00480280 (IsEmptyDwordRange_00480280).
+namespace lift_00480280 {
+// @name IsEmptyDwordRange_00480280
+// @summary Returns true if the range pointer at +0x04 is null, or the byte span [+0x04, +0x08) has fewer than one 4-byte element (signed (end - begin) >> 2 == 0).
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+BOOLEAN fn_0063EA50(void* self) {
+    const DWORD begin = lift_field<DWORD>(self, 0x28);
+    if (begin == 0) {
+        return 1;
+    }
+    const DWORD end = lift_field<DWORD>(self, 0x2C);
+    const auto diff = static_cast<int32_t>(end - begin);  // signed, like sar
+    return (diff >> 2) == 0 ? 1 : 0;
+}
+} // namespace lift_00480280
+} // namespace lift_0063EA50
