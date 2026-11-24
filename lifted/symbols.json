@@ -25163,6 +25163,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0052EF20 (CompoundRenderable::vfunc_7).",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x006721B0": {
+    "name": "storeArgIntoFirstDword_006721B0",
+    "signature": "DWORD fn_006721B0(void* self, DWORD value)",
+    "summary": "Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00672EB0": {
     "name": "sub_00672EB0",
     "signature": "extern \"C\" void fn_00672EB0(void)",

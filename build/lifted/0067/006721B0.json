@@ -1,0 +1,13 @@
+{
+  "va": "0x006721B0",
+  "size": 18,
+  "orig_symbol": "sub_006721B0",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "storeArgIntoFirstDword_006721B0",
+  "signature": "DWORD fn_006721B0(void* self, DWORD value)",
+  "summary": "Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:58:58Z"
+}
