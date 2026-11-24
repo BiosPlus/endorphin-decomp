@@ -1,0 +1,14 @@
+{
+  "va": "0x004C4EA0",
+  "size": 141,
+  "orig_symbol": "NMData::ForceEventData::vfunc_0_off_154",
+  "src_path": "src/NMData/ForceEventData.cpp",
+  "lifted_path": "lifted/NMData/ForceEventData.cpp",
+  "name": "NMData::ForceEventData::vfunc_0_off_154",
+  "class": "NMData::ForceEventData",
+  "signature": "void fn_004C4EA0(void* self, uint32_t* a1, uint32_t* a2, uint32_t* a3, uint32_t* a4)",
+  "summary": "Fills out-record a1 and a2 with a 3-dword triple (8,0,0) from setDwordTriple, applies mask toggles to each (a1: 0x1000 and 0x2000, a2: 0x1000), and writes 6 to the dwords at a3 and a4.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:35:40Z"
+}

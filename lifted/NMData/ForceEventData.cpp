@@ -32,6 +32,7 @@ extern "C" void __thiscall fn_004C4DD0(void* self, void* a) {
     void** vt = *reinterpret_cast<void***>(self);
     reinterpret_cast<VFn>(vt[22])(self, r);
 }
+#include <cstdint>
 
 // [0x004C4E40] NMData::ForceEventData::vfunc_60 (34 bytes)
 // @name NMData::ForceEventData::NotifyEvent0x266
@@ -177,3 +178,37 @@ void* fn_004C60D0(void* self, void* arg1, uint32_t id) {
     return obj;
 }
 } // namespace lift_004C60D0
+
+// [0x004C4EA0]
+namespace lift_004C4EA0 {
+// @name NMData::ForceEventData::vfunc_0_off_154
+// @class NMData::ForceEventData
+// @summary Fills out-record a1 and a2 with a 3-dword triple (8,0,0) from setDwordTriple, applies mask toggles to each (a1: 0x1000 and 0x2000, a2: 0x1000), and writes 6 to the dwords at a3 and a4.
+
+extern void* ext_00494000(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3);
+extern void ext_004940E0(void* self, uint32_t mask, uint8_t flag);
+
+void fn_004C4EA0(void* self, uint32_t* a1, uint32_t* a2, uint32_t* a3, uint32_t* a4) {
+    (void)self; // ECX is overwritten before any use; no this-relative fields are accessed.
+
+    // First record: a1 <- (8, 0, 0), then toggle masks 0x1000 and 0x2000.
+    uint32_t tmp1[3] = {0, 0, 0};
+    uint32_t* t1 = static_cast<uint32_t*>(ext_00494000(tmp1, 8, 0, 0));
+    a1[0] = t1[0];
+    a1[1] = t1[1];
+    a1[2] = t1[2];
+    ext_004940E0(a1, 0x1000, 1);
+    ext_004940E0(a1, 0x2000, 1);
+
+    // Second record: a2 <- (8, 0, 0), then toggle mask 0x1000.
+    uint32_t tmp2[3] = {0, 0, 0};
+    uint32_t* t2 = static_cast<uint32_t*>(ext_00494000(tmp2, 8, 0, 0));
+    a2[0] = t2[0];
+    a2[1] = t2[1];
+    a2[2] = t2[2];
+    ext_004940E0(a2, 0x1000, 1);
+
+    *a3 = 6;
+    *a4 = 6;
+}
+} // namespace lift_004C4EA0
