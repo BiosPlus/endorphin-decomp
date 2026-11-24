@@ -33776,6 +33776,13 @@
     "summary": "Evaluates UnitsWithProperties::getAngleUnitName() and converts the resulting string to float via atof, or throws if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0068F1F0": {
+    "name": "ExprParser::ReadMethodType_getAngleUnitName::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::string const \u0026, \u0026UnitsWithProperties::getAngleUnitName, 0\u003e",
+    "signature": "void* __thiscall fn_0068F1F0(void* self, void* out_val, void** target_ptr)",
+    "summary": "Reads the angle unit name from the target object into the output value, or throws if null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0068F240": {
     "name": "ExprParser::ReadMethodType\u003cUnitsWithProperties\u003e::vfunc_4",
     "class": "ExprParser::ReadMethodType\u003cUnitsWithProperties\u003e",

@@ -33913,3 +33913,29 @@ extern void* __thiscall fn_00644710(void* self, void* out_str, void** target_ptr
 }
 } // namespace lift_0049CB10
 } // namespace lift_00644710
+
+// [0x0068F1F0]
+namespace lift_0068F1F0 {
+extern void* __stdcall ext_0068EE60(uint32_t index);
+extern void __thiscall ext_006720E0(void* self, void* arg);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+// @name ExprParser::ReadMethodType_getAngleUnitName::vfunc_0
+// @class ExprParser::ReadMethodType<UnitsWithProperties, std::string const &, &UnitsWithProperties::getAngleUnitName, 0>
+// @summary Reads the angle unit name from the target object into the output value, or throws if null.
+void* __thiscall fn_0068F1F0(void* self, void* out_val, void** target_ptr) {
+    (void)self;
+    uint8_t* ecx = reinterpret_cast<uint8_t*>(*target_ptr);
+    if (ecx == nullptr) {
+        alignas(4) uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<void*>(0x009DEC1C));
+    }
+    uint8_t* edx = *reinterpret_cast<uint8_t**>(ecx + 0x4);
+    uint32_t index = *reinterpret_cast<uint32_t*>(edx + 0xC);
+    void* val = ext_0068EE60(index);
+    ext_006720E0(out_val, val);
+    return out_val;
+}
+} // namespace lift_0068F1F0
