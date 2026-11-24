@@ -39377,6 +39377,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007D5BB0 (setField20_007D5BB0).",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007DD000": {
+    "name": "initPairMinusOne_007DD000",
+    "signature": "void initPairMinusOne_007DD000(void* target)",
+    "summary": "Sets the first dword of the target to -1 and the second dword to 0.",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007DE020": {
     "name": "CxSmallSort::vfunc_0",
     "class": "CxSmallSort",

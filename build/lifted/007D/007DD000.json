@@ -1,0 +1,27 @@
+{
+  "va": "0x007DD000",
+  "size": 18,
+  "orig_symbol": "sub_007DD000",
+  "src_path": "src/leaf/tiny_7D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7D0000.cpp",
+  "name": "initPairMinusOne_007DD000",
+  "signature": "void initPairMinusOne_007DD000(void* target)",
+  "summary": "Sets the first dword of the target to -1 and the second dword to 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:59:38Z"
+}

@@ -345,3 +345,15 @@ void sub_007D95F0(void* arg) {
     *reinterpret_cast<uint32_t*>(base + 0x08) = count + 1u;
 }
 } // namespace lift_007D95F0
+
+// [0x007DD000] sub_007DD000 (18 bytes)
+namespace lift_007DD000 {
+// @name initPairMinusOne_007DD000
+// @summary Sets the first dword of the target to -1 and the second dword to 0.
+// @field Unknown +0x00 int32_t field_0x00
+// @field Unknown +0x04 int32_t field_0x04
+void initPairMinusOne_007DD000(void* target) {
+    lift_field<int32_t>(target, 0x00) = -1;
+    lift_field<int32_t>(target, 0x04) = 0;
+}
+} // namespace lift_007DD000
