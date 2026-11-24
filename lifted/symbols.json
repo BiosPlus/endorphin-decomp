@@ -36568,6 +36568,13 @@
     "summary": "Returns global int32 value from mem_00AA91C4.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006DADE0": {
+    "name": "DivideQwordByConstant",
+    "class": "Unknown",
+    "signature": "extern \"C\" double __fastcall fn_006DADE0(void* self)",
+    "summary": "Loads int64 at *self, divides by constant 0x0000000AC0E8D7B0, returns quotient as double (x87 ST0).",
+    "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
+  },
   "0x006DC2A0": {
     "name": "sub_006DC2A0",
     "signature": "extern \"C\" void* __fastcall fn_006DC2A0(void* self, int edx_unused, unsigned int flags)",

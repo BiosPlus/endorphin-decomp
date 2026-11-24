@@ -1,0 +1,22 @@
+{
+  "va": "0x006DADE0",
+  "size": 31,
+  "orig_symbol": "sub_006DADE0",
+  "src_path": "src/leaf/tiny_6D0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6D0000.cpp",
+  "name": "DivideQwordByConstant",
+  "class": "Unknown",
+  "signature": "extern \"C\" double __fastcall fn_006DADE0(void* self)",
+  "summary": "Loads int64 at *self, divides by constant 0x0000000AC0E8D7B0, returns quotient as double (x87 ST0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int64_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:27:11Z"
+}

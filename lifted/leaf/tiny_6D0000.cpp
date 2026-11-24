@@ -512,3 +512,18 @@ uint32_t __thiscall sub_006D5620(uint32_t self, int32_t index) {
     return mem_read32(table + static_cast<uint32_t>(index) * 4);
 }
 } // namespace lift_006D5620
+
+// [0x006DADE0] sub_006DADE0 (31 bytes)
+namespace lift_006DADE0 {
+// @name DivideQwordByConstant
+// @class Unknown
+// @summary Loads int64 at *self, divides by constant 0x0000000AC0E8D7B0, returns quotient as double (x87 ST0).
+// @field Unknown +0x00 int64_t field_0x00
+
+// Original: fild qword [ecx]; push int64 0x0000000AC0E8D7B0; fild; fdivp st(1), st; ret
+extern double __fastcall fn_006DADE0(void* self) {
+    const int64_t value = *static_cast<const int64_t*>(self);
+    const int64_t divisor = INT64_C(0x0000000AC0E8D7B0);
+    return static_cast<double>(value) / static_cast<double>(divisor);
+}
+} // namespace lift_006DADE0
