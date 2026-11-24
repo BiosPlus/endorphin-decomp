@@ -2455,6 +2455,13 @@
     "summary": "Adds the double constant at mem_0092BD70 to the double at this+0x58 and returns the result converted to a 32-bit int (round-to-nearest, INT32_MIN on overflow).",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x00441090": {
+    "name": "MemberToInt32RoundedOffsetField98",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "int fn_00441090(void* self)",
+    "summary": "Returns (int32) round-to-nearest of (this-\u003efield_0x98 + mem_0092BD70), x87 fistp semantics.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x004410C0": {
     "name": "descriptiveName: fn_004410C0 (difference of two rounded fields)",
     "signature": "int32_t fn_004410C0(void* self)",

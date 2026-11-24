@@ -1,0 +1,22 @@
+{
+  "va": "0x00441090",
+  "size": 33,
+  "orig_symbol": "sub_00441090",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "MemberToInt32RoundedOffsetField98",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "int fn_00441090(void* self)",
+  "summary": "Returns (int32) round-to-nearest of (this-\u003efield_0x98 + mem_0092BD70), x87 fistp semantics.",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x98",
+      "type": "double",
+      "name": "field_0x98"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:52:29Z"
+}
