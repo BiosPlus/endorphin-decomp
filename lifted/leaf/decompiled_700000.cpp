@@ -1074,3 +1074,22 @@ void __thiscall sub_00704A20(void* self, uint32_t /*unused*/)
     }
 }
 } // namespace lift_00704A20
+
+// [0x0070AAD0]
+namespace lift_0070AAD0 {
+// @name isKnownGlobalHandle
+// @summary Returns true if the argument matches one of four known global 32-bit values.
+
+
+extern uint32_t mem_00B5EBA0;
+extern uint32_t mem_00B5F060;
+extern uint32_t mem_00B5EB78;
+extern uint32_t mem_00B5E400;
+
+bool __stdcall sub_0070AAD0(uint32_t arg0) {
+    return arg0 == mem_00B5EBA0
+        || arg0 == mem_00B5F060
+        || arg0 == mem_00B5EB78
+        || arg0 == mem_00B5E400;
+}
+} // namespace lift_0070AAD0
