@@ -1,0 +1,14 @@
+{
+  "va": "0x0040FDA0",
+  "size": 22,
+  "orig_symbol": "CColorCheck::vfunc_22",
+  "src_path": "src/classes/CColorCheck.cpp",
+  "lifted_path": "lifted/classes/CColorCheck.cpp",
+  "name": "CColorCheck::vfunc_22",
+  "class": "CColorCheck",
+  "signature": "void fn_0040FDA0(void* self)",
+  "summary": "Forwards to MFC80 ord_4115 with fixed arguments (0x1f, 0x0b, 0x20), then tail-calls MFC80 ord_5200 on the same object.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:27:57Z"
+}
