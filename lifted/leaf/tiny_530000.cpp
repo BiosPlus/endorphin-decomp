@@ -6,6 +6,7 @@ extern "C" int mem_00954474;
 extern "C" void __fastcall ext_00532B40(void* self);
 extern "C" void __fastcall ext_00541000(void* self);
 extern "C" void __fastcall ext_00533CF0(void* self);
+#include <cstdint>
 
 // [0x0053F894] sub_0053F894 (5 bytes)
 // @name sub_0053F894
@@ -221,3 +222,87 @@ void __thiscall fn_005304A0(Unknown* self, uint8_t value) {
     sub[0x1D8] = value;
 }
 } // namespace lift_005304A0
+
+// [0x00532DB0] sub_00532DB0 (26 bytes)
+namespace lift_00532DB0 {
+// @name sub_00532DB0
+// @summary Auto-lifted identical-shape clone of 0x00537A00 (CompoundRenderable::vfunc_3).
+namespace lift_00537A00 {
+extern void ext_0054C6E0(void* self, void* arg);
+
+// @name CompoundRenderable::vfunc_3
+// @class CompoundRenderable
+// @summary If arg is non-null, forward it to ext_0054C6E0 on the subobject at this+0x18; otherwise do nothing.
+// @field CompoundRenderable +0x18 uint32_t* field_0x18 (address only: this+0x18 is passed on, not dereferenced here)
+void fn_00532DB0(void* self, void* arg) {
+    if (arg == nullptr) {
+        return;
+    }
+    // Original is a tail jump (jmp) to ext_0054C6E0 with ecx = self + 0x18 and the same stack argument.
+    ext_0054C6E0(static_cast<char*>(self) + 0x224, arg);
+}
+} // namespace lift_00537A00
+} // namespace lift_00532DB0
+
+// [0x00532E00] sub_00532E00 (26 bytes)
+namespace lift_00532E00 {
+// @name sub_00532E00
+// @summary Auto-lifted identical-shape clone of 0x00537A00 (CompoundRenderable::vfunc_3).
+namespace lift_00537A00 {
+extern void ext_0054C6E0(void* self, void* arg);
+
+// @name CompoundRenderable::vfunc_3
+// @class CompoundRenderable
+// @summary If arg is non-null, forward it to ext_0054C6E0 on the subobject at this+0x18; otherwise do nothing.
+// @field CompoundRenderable +0x18 uint32_t* field_0x18 (address only: this+0x18 is passed on, not dereferenced here)
+void fn_00532E00(void* self, void* arg) {
+    if (arg == nullptr) {
+        return;
+    }
+    // Original is a tail jump (jmp) to ext_0054C6E0 with ecx = self + 0x18 and the same stack argument.
+    ext_0054C6E0(static_cast<char*>(self) + 0x250, arg);
+}
+} // namespace lift_00537A00
+} // namespace lift_00532E00
+
+// [0x00532E20] sub_00532E20 (26 bytes)
+namespace lift_00532E20 {
+// @name sub_00532E20
+// @summary Auto-lifted identical-shape clone of 0x00537A00 (CompoundRenderable::vfunc_3).
+namespace lift_00537A00 {
+extern void ext_0054C6E0(void* self, void* arg);
+
+// @name CompoundRenderable::vfunc_3
+// @class CompoundRenderable
+// @summary If arg is non-null, forward it to ext_0054C6E0 on the subobject at this+0x18; otherwise do nothing.
+// @field CompoundRenderable +0x18 uint32_t* field_0x18 (address only: this+0x18 is passed on, not dereferenced here)
+void fn_00532E20(void* self, void* arg) {
+    if (arg == nullptr) {
+        return;
+    }
+    // Original is a tail jump (jmp) to ext_0054C6E0 with ecx = self + 0x18 and the same stack argument.
+    ext_0054C6E0(static_cast<char*>(self) + 0x27C, arg);
+}
+} // namespace lift_00537A00
+} // namespace lift_00532E20
+
+// [0x00532E40] sub_00532E40 (26 bytes)
+namespace lift_00532E40 {
+// @name sub_00532E40
+// @summary Auto-lifted identical-shape clone of 0x00537A00 (CompoundRenderable::vfunc_3).
+namespace lift_00537A00 {
+extern void ext_0054C6E0(void* self, void* arg);
+
+// @name CompoundRenderable::vfunc_3
+// @class CompoundRenderable
+// @summary If arg is non-null, forward it to ext_0054C6E0 on the subobject at this+0x18; otherwise do nothing.
+// @field CompoundRenderable +0x18 uint32_t* field_0x18 (address only: this+0x18 is passed on, not dereferenced here)
+void fn_00532E40(void* self, void* arg) {
+    if (arg == nullptr) {
+        return;
+    }
+    // Original is a tail jump (jmp) to ext_0054C6E0 with ecx = self + 0x18 and the same stack argument.
+    ext_0054C6E0(static_cast<char*>(self) + 0x2A8, arg);
+}
+} // namespace lift_00537A00
+} // namespace lift_00532E40

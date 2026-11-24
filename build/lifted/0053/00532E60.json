@@ -1,0 +1,28 @@
+{
+  "va": "0x00532E60",
+  "size": 26,
+  "orig_symbol": "OglRenderer::vfunc_105",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "OglRenderer::vfunc_105",
+  "class": "OglRenderer",
+  "signature": "void fn_00532E60(void* self, void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x00537A00 (CompoundRenderable::vfunc_3).",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x2D4",
+      "type": "uint32_t* field_0x18 (address only: this+0x18 is passed on, not dereferenced",
+      "name": "field_0x2D4"
+    },
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x18",
+      "type": "uint32_t* field_0x18 (address only: this+0x18 is passed on, not dereferenced",
+      "name": "here)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T11:32:17Z"
+}

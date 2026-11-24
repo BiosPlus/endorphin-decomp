@@ -1,0 +1,22 @@
+{
+  "va": "0x005AA9E0",
+  "size": 23,
+  "orig_symbol": "sub_005AA9E0",
+  "src_path": "src/leaf/tiny_5A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_5A0000.cpp",
+  "name": "sub_005AA9E0",
+  "class": "Unknown",
+  "signature": "extern DWORD __fastcall fn_005AA9E0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004D0AF0 (Unknown::IndexedTableAddress).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x190",
+      "type": "DWORD",
+      "name": "field_0x190"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T11:32:17Z"
+}

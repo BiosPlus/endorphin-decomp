@@ -6260,3 +6260,26 @@ void fn_00537A00(void* self, void* arg) {
     ext_0054C6E0(static_cast<char*>(self) + 0x18, arg);
 }
 } // namespace lift_00537A00
+
+// [0x00532E60] OglRenderer::vfunc_105 (26 bytes)
+namespace lift_00532E60 {
+// @name OglRenderer::vfunc_105
+// @class OglRenderer
+// @summary Auto-lifted identical-shape clone of 0x00537A00 (CompoundRenderable::vfunc_3).
+// @field OglRenderer +0x2D4 uint32_t* field_0x18 (address only: this+0x18 is passed on, not dereferenced field_0x2D4
+namespace lift_00537A00 {
+extern void ext_0054C6E0(void* self, void* arg);
+
+// @name CompoundRenderable::vfunc_3
+// @class CompoundRenderable
+// @summary If arg is non-null, forward it to ext_0054C6E0 on the subobject at this+0x18; otherwise do nothing.
+// @field CompoundRenderable +0x18 uint32_t* field_0x18 (address only: this+0x18 is passed on, not dereferenced here)
+void fn_00532E60(void* self, void* arg) {
+    if (arg == nullptr) {
+        return;
+    }
+    // Original is a tail jump (jmp) to ext_0054C6E0 with ecx = self + 0x18 and the same stack argument.
+    ext_0054C6E0(static_cast<char*>(self) + 0x2D4, arg);
+}
+} // namespace lift_00537A00
+} // namespace lift_00532E60

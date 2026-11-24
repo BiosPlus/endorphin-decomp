@@ -16,6 +16,7 @@ extern "C" void __fastcall ext_00647E80(void* self);
 extern "C" void __fastcall ext_00647EA0(void* self);
 extern "C" void __fastcall ext_00647EC0(void* self);
 extern "C" void __fastcall ext_00647EE0(void* self);
+#include <cstdint>
 
 // [0x005C3640] sub_005C3640 (5 bytes)
 // @name VirtualSlot27Thunk
@@ -423,3 +424,21 @@ uint32_t fn_005C3150(void* self) {
     return result + 0x20;
 }
 } // namespace lift_005C3150
+
+// [0x005CFCC0] sub_005CFCC0 (23 bytes)
+namespace lift_005CFCC0 {
+// @name sub_005CFCC0
+// @summary Auto-lifted identical-shape clone of 0x004CE810 (Unknown::GetRecordByIndex).
+namespace lift_004CE810 {
+// Table of 28-byte records at 0x00AE5290.
+extern uint8_t mem_00B45854[];
+
+// @name Unknown::GetRecordByIndex
+// @summary Returns the address of record `index` in the 28-byte-stride table at 0x00AE5290 (stdcall, ret 4).
+// (no @class / @field: the function touches no struct fields)
+void* __stdcall fn_005CFCC0(uint32_t index) {
+    // ecx = 8*eax - eax = 7*index; eax = 4*ecx + 0xAE5290 = 28*index + 0xAE5290
+    return mem_00B45854 + static_cast<size_t>(index) * 28u;
+}
+} // namespace lift_004CE810
+} // namespace lift_005CFCC0

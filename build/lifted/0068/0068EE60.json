@@ -1,0 +1,13 @@
+{
+  "va": "0x0068EE60",
+  "size": 23,
+  "orig_symbol": "sub_0068EE60",
+  "src_path": "src/leaf/tiny_680000.cpp",
+  "lifted_path": "lifted/leaf/tiny_680000.cpp",
+  "name": "sub_0068EE60",
+  "signature": "void* __stdcall fn_0068EE60(uint32_t index)",
+  "summary": "Auto-lifted identical-shape clone of 0x004CE810 (Unknown::GetRecordByIndex).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T11:32:17Z"
+}

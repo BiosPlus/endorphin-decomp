@@ -85,3 +85,19 @@ int fn_005F5140(void* self) {
     return result + 0x30;
 }
 } // namespace lift_005F5140
+
+// [0x005F5280] sub_005F5280 (23 bytes)
+namespace lift_005F5280 {
+// @name sub_005F5280
+// @summary Auto-lifted identical-shape clone of 0x004D0AF0 (Unknown::IndexedTableAddress).
+namespace lift_004D0AF0 {
+// @name Unknown::IndexedTableAddress
+// @class Unknown
+// @summary Returns 0xAE5C68 + 28 * self->field_0x190 (address of a 28-byte entry in a global table).
+// @field Unknown +0x190 DWORD field_0x190
+extern DWORD __fastcall fn_005F5280(void* self) {
+    DWORD index = lift_field<DWORD>(self, 0x210);
+    return 0xB46F80u + 28u * index;
+}
+} // namespace lift_004D0AF0
+} // namespace lift_005F5280

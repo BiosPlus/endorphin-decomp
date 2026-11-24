@@ -11983,6 +11983,41 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x80 and forwards through mem_00924FDC.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00532DB0": {
+    "name": "sub_00532DB0",
+    "class": "CompoundRenderable",
+    "signature": "void fn_00532DB0(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00537A00 (CompoundRenderable::vfunc_3).",
+    "lifted_path": "lifted/leaf/tiny_530000.cpp"
+  },
+  "0x00532E00": {
+    "name": "sub_00532E00",
+    "class": "CompoundRenderable",
+    "signature": "void fn_00532E00(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00537A00 (CompoundRenderable::vfunc_3).",
+    "lifted_path": "lifted/leaf/tiny_530000.cpp"
+  },
+  "0x00532E20": {
+    "name": "sub_00532E20",
+    "class": "CompoundRenderable",
+    "signature": "void fn_00532E20(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00537A00 (CompoundRenderable::vfunc_3).",
+    "lifted_path": "lifted/leaf/tiny_530000.cpp"
+  },
+  "0x00532E40": {
+    "name": "sub_00532E40",
+    "class": "CompoundRenderable",
+    "signature": "void fn_00532E40(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00537A00 (CompoundRenderable::vfunc_3).",
+    "lifted_path": "lifted/leaf/tiny_530000.cpp"
+  },
+  "0x00532E60": {
+    "name": "OglRenderer::vfunc_105",
+    "class": "OglRenderer",
+    "signature": "void fn_00532E60(void* self, void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00537A00 (CompoundRenderable::vfunc_3).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00532E80": {
     "name": "OglRenderer::vfunc_106",
     "class": "OglRenderer",
@@ -15378,6 +15413,13 @@
     "summary": "Destructor tail-call: restores vtable mem_0095EEF4 and tail-calls base destructor sub_0065C660.",
     "lifted_path": "lifted/leaf/tiny_5A0000.cpp"
   },
+  "0x005AA9E0": {
+    "name": "sub_005AA9E0",
+    "class": "Unknown",
+    "signature": "extern DWORD __fastcall fn_005AA9E0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D0AF0 (Unknown::IndexedTableAddress).",
+    "lifted_path": "lifted/leaf/tiny_5A0000.cpp"
+  },
   "0x005AAA40": {
     "name": "NMData::RigRoot::vfunc_22",
     "class": "NMData::RigRoot",
@@ -17597,6 +17639,12 @@
     "summary": "Handles property/message 0x1b9 on CameraData by calling sub_00661650 or sub_0046F7D0, otherwise delegates to NMData::AxisDefineSensorData::vfunc_14.",
     "lifted_path": "lifted/NMData/CameraData.cpp"
   },
+  "0x005CFCC0": {
+    "name": "sub_005CFCC0",
+    "signature": "void* __stdcall fn_005CFCC0(uint32_t index)",
+    "summary": "Auto-lifted identical-shape clone of 0x004CE810 (Unknown::GetRecordByIndex).",
+    "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
+  },
   "0x005D06D0": {
     "name": "sub_005D06D0",
     "signature": "float fn_005D06D0(uint32_t ecx)",
@@ -17609,6 +17657,20 @@
     "signature": "void* __thiscall fn_005D06E0(void* self, uint32_t arg)",
     "summary": "Classifies the argument via 0x005CFD60; if the result is 3, forwards to AnimatableTransform::vfunc_57, otherwise returns a pointer into the 8-byte-stride table at this+0x264 indexed by the result.",
     "lifted_path": "lifted/NMData/CameraData.cpp"
+  },
+  "0x005D07F0": {
+    "name": "sub_005D07F0",
+    "class": "Unknown",
+    "signature": "extern DWORD __fastcall fn_005D07F0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D0AF0 (Unknown::IndexedTableAddress).",
+    "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
+  },
+  "0x005D0810": {
+    "name": "sub_005D0810",
+    "class": "Unknown",
+    "signature": "extern DWORD __fastcall fn_005D0810(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D0AF0 (Unknown::IndexedTableAddress).",
+    "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
   },
   "0x005D0AF0": {
     "name": "sub_005D0AF0",
@@ -19292,6 +19354,13 @@
     "class": "Unknown",
     "signature": "void fn_005F5190(void* self)",
     "summary": "Loads the pointer at self+0x04, reads a function pointer at its +0x08, and calls it with (self+0x04) as this and the global mem_00B40640 as its single argument.",
+    "lifted_path": "lifted/leaf/tiny_5F0000.cpp"
+  },
+  "0x005F5280": {
+    "name": "sub_005F5280",
+    "class": "Unknown",
+    "signature": "extern DWORD __fastcall fn_005F5280(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x004D0AF0 (Unknown::IndexedTableAddress).",
     "lifted_path": "lifted/leaf/tiny_5F0000.cpp"
   },
   "0x005F57E0": {
@@ -26854,6 +26923,12 @@
     "signature": "void fn_0068E190(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
+  "0x0068EE60": {
+    "name": "sub_0068EE60",
+    "signature": "void* __stdcall fn_0068EE60(uint32_t index)",
+    "summary": "Auto-lifted identical-shape clone of 0x004CE810 (Unknown::GetRecordByIndex).",
+    "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
   "0x00692000": {
     "name": "lookupTableEntry00B5AE98",

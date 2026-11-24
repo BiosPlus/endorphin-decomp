@@ -131,3 +131,35 @@ void* fn_005D1480(void* self, DWORD arg) {
     return self;  // eax = this
 }
 } // namespace lift_005D1480
+
+// [0x005D07F0] sub_005D07F0 (23 bytes)
+namespace lift_005D07F0 {
+// @name sub_005D07F0
+// @summary Auto-lifted identical-shape clone of 0x004D0AF0 (Unknown::IndexedTableAddress).
+namespace lift_004D0AF0 {
+// @name Unknown::IndexedTableAddress
+// @class Unknown
+// @summary Returns 0xAE5C68 + 28 * self->field_0x190 (address of a 28-byte entry in a global table).
+// @field Unknown +0x190 DWORD field_0x190
+extern DWORD __fastcall fn_005D07F0(void* self) {
+    DWORD index = lift_field<DWORD>(self, 0x25C);
+    return 0xB45890u + 28u * index;
+}
+} // namespace lift_004D0AF0
+} // namespace lift_005D07F0
+
+// [0x005D0810] sub_005D0810 (23 bytes)
+namespace lift_005D0810 {
+// @name sub_005D0810
+// @summary Auto-lifted identical-shape clone of 0x004D0AF0 (Unknown::IndexedTableAddress).
+namespace lift_004D0AF0 {
+// @name Unknown::IndexedTableAddress
+// @class Unknown
+// @summary Returns 0xAE5C68 + 28 * self->field_0x190 (address of a 28-byte entry in a global table).
+// @field Unknown +0x190 DWORD field_0x190
+extern DWORD __fastcall fn_005D0810(void* self) {
+    DWORD index = lift_field<DWORD>(self, 0x208);
+    return 0xB45938u + 28u * index;
+}
+} // namespace lift_004D0AF0
+} // namespace lift_005D0810

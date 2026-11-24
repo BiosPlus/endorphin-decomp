@@ -183,3 +183,21 @@ uint8_t fn_00682DE0(void* self) {
 }
 } // namespace lift_0041C710
 } // namespace lift_00682DE0
+
+// [0x0068EE60] sub_0068EE60 (23 bytes)
+namespace lift_0068EE60 {
+// @name sub_0068EE60
+// @summary Auto-lifted identical-shape clone of 0x004CE810 (Unknown::GetRecordByIndex).
+namespace lift_004CE810 {
+// Table of 28-byte records at 0x00AE5290.
+extern uint8_t mem_00B5AE40[];
+
+// @name Unknown::GetRecordByIndex
+// @summary Returns the address of record `index` in the 28-byte-stride table at 0x00AE5290 (stdcall, ret 4).
+// (no @class / @field: the function touches no struct fields)
+void* __stdcall fn_0068EE60(uint32_t index) {
+    // ecx = 8*eax - eax = 7*index; eax = 4*ecx + 0xAE5290 = 28*index + 0xAE5290
+    return mem_00B5AE40 + static_cast<size_t>(index) * 28u;
+}
+} // namespace lift_004CE810
+} // namespace lift_0068EE60
