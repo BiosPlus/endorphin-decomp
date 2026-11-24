@@ -23,6 +23,7 @@ extern "C" void __fastcall ext_00584A10(void* self);
 extern "C" int* fn_00422C60() {
     return &mem_0092EA38;
 }
+#include <cstdint>
 
 // [0x00425D80] sub_00425D80 (6 bytes)
 // @name sub_00425D80
@@ -162,3 +163,24 @@ extern bool __stdcall fn_004271F0(const void* str) {
     return ext_operator_ne_string_cstr(str, mem_00ACD9E0);
 }
 } // namespace lift_004271F0
+
+// [0x00420590] sub_00420590 (27 bytes)
+namespace lift_00420590 {
+// @name sub_00420590
+// @summary Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).
+namespace lift_00401AF0 {
+// @name FindPredecessorOfFlagged
+// @summary Walks the first-word link chain from arg and returns the node just before the first node whose byte at +0x15 is nonzero (returns arg if arg->next is already flagged).
+// @field Node +0x00 void* field_0x00
+// @field Node +0x15 uint8_t field_0x15
+void* fn_00420590(void* arg) {
+    void* prev = arg;
+    void* cur = lift_field<void*>(arg, 0x00);
+    while (lift_field<uint8_t>(cur, 0x59) == 0) {
+        prev = cur;
+        cur = lift_field<void*>(cur, 0x00);
+    }
+    return prev;
+}
+} // namespace lift_00401AF0
+} // namespace lift_00420590

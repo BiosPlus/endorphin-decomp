@@ -18,6 +18,7 @@ extern "C" void* __fastcall fn_00491FC0(void* self, int edx_unused, unsigned int
 }
 extern "C" uintptr_t mem_00924FDC;
 extern "C" void __fastcall ext_0049EB50(void* self);
+#include <cstdint>
 
 // [0x004947D0] sub_004947D0 (11 bytes)
 // @name sub_004947D0
@@ -561,3 +562,24 @@ void* fn_00494000(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
     return self;
 }
 } // namespace lift_00494000
+
+// [0x004928E0] sub_004928E0 (27 bytes)
+namespace lift_004928E0 {
+// @name sub_004928E0
+// @summary Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).
+namespace lift_00401AF0 {
+// @name FindPredecessorOfFlagged
+// @summary Walks the first-word link chain from arg and returns the node just before the first node whose byte at +0x15 is nonzero (returns arg if arg->next is already flagged).
+// @field Node +0x00 void* field_0x00
+// @field Node +0x15 uint8_t field_0x15
+void* fn_004928E0(void* arg) {
+    void* prev = arg;
+    void* cur = lift_field<void*>(arg, 0x00);
+    while (lift_field<uint8_t>(cur, 0x21) == 0) {
+        prev = cur;
+        cur = lift_field<void*>(cur, 0x00);
+    }
+    return prev;
+}
+} // namespace lift_00401AF0
+} // namespace lift_004928E0

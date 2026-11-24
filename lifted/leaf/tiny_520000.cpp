@@ -164,3 +164,24 @@ uint32_t fn_00528BD0(void* self) {
 }
 } // namespace lift_0041C6D0
 } // namespace lift_00528BD0
+
+// [0x0052A070] sub_0052A070 (27 bytes)
+namespace lift_0052A070 {
+// @name sub_0052A070
+// @summary Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).
+namespace lift_00401AF0 {
+// @name FindPredecessorOfFlagged
+// @summary Walks the first-word link chain from arg and returns the node just before the first node whose byte at +0x15 is nonzero (returns arg if arg->next is already flagged).
+// @field Node +0x00 void* field_0x00
+// @field Node +0x15 uint8_t field_0x15
+void* fn_0052A070(void* arg) {
+    void* prev = arg;
+    void* cur = lift_field<void*>(arg, 0x00);
+    while (lift_field<uint8_t>(cur, 0x61) == 0) {
+        prev = cur;
+        cur = lift_field<void*>(cur, 0x00);
+    }
+    return prev;
+}
+} // namespace lift_00401AF0
+} // namespace lift_0052A070

@@ -1390,6 +1390,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0041FC70 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00420590": {
+    "name": "sub_00420590",
+    "signature": "void* fn_00420590(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
+    "lifted_path": "lifted/leaf/tiny_420000.cpp"
+  },
   "0x00420660": {
     "name": "ExprParser::ExpressionException::vfunc_0",
     "class": "ExprParser::ExpressionException",
@@ -4702,6 +4708,12 @@
     "summary": "Loads the 32-bit value at [ecx+0x00] and passes it to thunk_MFC80_ord_764.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046FBA0": {
+    "name": "sub_0046FBA0",
+    "signature": "void* fn_0046FBA0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x0046FDA0": {
     "name": "Unknown::setSubobject1E0Value",
     "class": "Unknown",
@@ -5251,6 +5263,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0061FF40 (NMData::GraphicData::vfunc_14).",
     "lifted_path": "lifted/NMData/DesiredPoseEventData.cpp"
   },
+  "0x00486D60": {
+    "name": "sub_00486D60",
+    "signature": "void* fn_00486D60(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
+    "lifted_path": "lifted/leaf/tiny_480000.cpp"
+  },
   "0x00486F00": {
     "name": "ExprParser::ROMethod0Type::vfunc_0 (NM::Vector3::normalize2)",
     "class": "ExprParser::ROMethod0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e",
@@ -5738,6 +5756,12 @@
     "class": "\u003cClassName\u003e (optional)",
     "signature": "int fn_00492590(void* self)",
     "summary": "Returns 1 if both the dword at +0x00 and the dword at +0x08 are nonzero, else 0.",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
+  "0x004928E0": {
+    "name": "sub_004928E0",
+    "signature": "void* fn_004928E0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
   "0x00493D80": {
@@ -10743,6 +10767,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051EBB0 (StateMachine::State::vfunc_2).",
     "lifted_path": "lifted/classes/EvolveEngine.cpp"
   },
+  "0x005014B0": {
+    "name": "sub_005014B0",
+    "signature": "void* fn_005014B0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
+    "lifted_path": "lifted/leaf/tiny_500000.cpp"
+  },
   "0x00501EC0": {
     "name": "EvolveEngine::vfunc_0_off_10",
     "class": "EvolveEngine",
@@ -11931,6 +11961,12 @@
     "name": "bswap16",
     "signature": "uint16_t bswap16(uint16_t val)",
     "summary": "Byte-swaps a 16-bit unsigned integer (endianness swap).",
+    "lifted_path": "lifted/leaf/tiny_520000.cpp"
+  },
+  "0x0052A070": {
+    "name": "sub_0052A070",
+    "signature": "void* fn_0052A070(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_520000.cpp"
   },
   "0x0052ED00": {
@@ -14317,6 +14353,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005EF450 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0055E8C0": {
+    "name": "sub_0055E8C0",
+    "signature": "void* fn_0055E8C0(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
+    "lifted_path": "lifted/leaf/tiny_550000.cpp"
+  },
   "0x0055F830": {
     "name": "FBXIO::vfunc_0",
     "class": "FBXIO",
@@ -15268,6 +15310,12 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0xF8 and tail-calls sub_006425C0.",
     "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
+  "0x00594310": {
+    "name": "sub_00594310",
+    "signature": "void* fn_00594310(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
+    "lifted_path": "lifted/leaf/tiny_590000.cpp"
+  },
   "0x00594440": {
     "name": "ExprParser::Function2Type\u003cRandomizer\u003e::vfunc_16",
     "class": "ExprParser::Function2Type\u003cSelectionVariable, bool, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026, {public: bool __thiscall SelectionVariable::getMethodForEachChild(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026), 0}\u003e",
@@ -15593,6 +15641,12 @@
     "signature": "std::string* fn_005A98F0(void* self, std::string* out)",
     "summary": "Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9ED98; this is unused.",
     "lifted_path": "lifted/NMData/BackGroundData.cpp"
+  },
+  "0x0059DE00": {
+    "name": "sub_0059DE00",
+    "signature": "void* fn_0059DE00(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
+    "lifted_path": "lifted/leaf/tiny_590000.cpp"
   },
   "0x0059DE20": {
     "name": "sub_00594000",
@@ -16026,6 +16080,12 @@
     "signature": "void* __thiscall fn_005AC7F0(void* self, void* out)",
     "summary": "Auto-lifted identical-shape clone of 0x005F0D40 (NMData::MagnetJointData::vfunc_59).",
     "lifted_path": "lifted/Commands/RemoveFluidObjectCommand.cpp"
+  },
+  "0x005AC840": {
+    "name": "sub_005AC840",
+    "signature": "void* fn_005AC840(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
+    "lifted_path": "lifted/leaf/tiny_5A0000.cpp"
   },
   "0x005ACAE0": {
     "name": "Command::vfunc_0",
@@ -19064,6 +19124,12 @@
     "name": "forwardToChildVfunc0",
     "signature": "void fn_005E0AB0(void* self)",
     "summary": "If this-\u003efield_0x00 is non-null, calls vtable slot 0 of the object at field_0x00-\u003efield_0x08 with ecx = \u0026field_0x00-\u003efield_0x08 and arg 1.",
+    "lifted_path": "lifted/leaf/tiny_5E0000.cpp"
+  },
+  "0x005E0B00": {
+    "name": "sub_005E0B00",
+    "signature": "void* fn_005E0B00(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_5E0000.cpp"
   },
   "0x005E0E70": {
@@ -22247,6 +22313,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00624C70(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00624B70 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x00624D10": {
+    "name": "sub_00624D10",
+    "signature": "void* fn_00624D10(void* arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
+    "lifted_path": "lifted/leaf/tiny_620000.cpp"
   },
   "0x00625060": {
     "name": "ExprParser::ReadMethodType\u003cSensorIsCollidingWith\u003e::vfunc_2",
@@ -34745,6 +34817,13 @@
     "summary": "Getter returning int32_t field at offset +0x34.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006CA060": {
+    "name": "sub_006CA060",
+    "class": "Unknown",
+    "signature": "bool fn_006CA060(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00707980 (Unknown::NotifySlot17IfSelfLinkedWrapper).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006CA080": {
     "name": "ClearGlobalDwordPair",
     "signature": "void ClearGlobalDwordPair()",
@@ -37537,6 +37616,13 @@
     "signature": "uint32_t __thiscall sub_00707960(uint32_t self, uint32_t index)",
     "summary": "Returns the 32-bit element at the given index from the array at +0xd0",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
+  "0x00707970": {
+    "name": "sub_00707970",
+    "class": "Unknown",
+    "signature": "bool fn_00707970(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00707980 (Unknown::NotifySlot17IfSelfLinkedWrapper).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x00707980": {
     "name": "Unknown::NotifySlot17IfSelfLinkedWrapper",

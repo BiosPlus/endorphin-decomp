@@ -23,6 +23,7 @@ void* fn_0062A580(void* self) {
     const unsigned char* vtable = receiver[0];
     return *reinterpret_cast<void* const*>(vtable + 0x44);
 }
+#include <cstdint>
 
 // [0x006244C0] sub_006244C0 (8 bytes)
 // @name sub_006244C0
@@ -64,3 +65,24 @@ void* InitTaggedZeroFloatTriple(void* self) {
     return self;
 }
 } // namespace lift_00622750
+
+// [0x00624D10] sub_00624D10 (27 bytes)
+namespace lift_00624D10 {
+// @name sub_00624D10
+// @summary Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).
+namespace lift_00401AF0 {
+// @name FindPredecessorOfFlagged
+// @summary Walks the first-word link chain from arg and returns the node just before the first node whose byte at +0x15 is nonzero (returns arg if arg->next is already flagged).
+// @field Node +0x00 void* field_0x00
+// @field Node +0x15 uint8_t field_0x15
+void* fn_00624D10(void* arg) {
+    void* prev = arg;
+    void* cur = lift_field<void*>(arg, 0x00);
+    while (lift_field<uint8_t>(cur, 0x19) == 0) {
+        prev = cur;
+        cur = lift_field<void*>(cur, 0x00);
+    }
+    return prev;
+}
+} // namespace lift_00401AF0
+} // namespace lift_00624D10

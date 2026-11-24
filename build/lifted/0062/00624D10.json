@@ -1,0 +1,27 @@
+{
+  "va": "0x00624D10",
+  "size": 27,
+  "orig_symbol": "sub_00624D10",
+  "src_path": "src/leaf/tiny_620000.cpp",
+  "lifted_path": "lifted/leaf/tiny_620000.cpp",
+  "name": "sub_00624D10",
+  "signature": "void* fn_00624D10(void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x15",
+      "type": "uint8_t",
+      "name": "field_0x15"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T11:59:49Z"
+}

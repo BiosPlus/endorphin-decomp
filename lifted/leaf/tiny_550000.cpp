@@ -194,3 +194,24 @@ void fn_00553A10(void* self, DWORD index, float value) {
     base[0x18 + index] = 1;
 }
 } // namespace lift_00553A10
+
+// [0x0055E8C0] sub_0055E8C0 (27 bytes)
+namespace lift_0055E8C0 {
+// @name sub_0055E8C0
+// @summary Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).
+namespace lift_00401AF0 {
+// @name FindPredecessorOfFlagged
+// @summary Walks the first-word link chain from arg and returns the node just before the first node whose byte at +0x15 is nonzero (returns arg if arg->next is already flagged).
+// @field Node +0x00 void* field_0x00
+// @field Node +0x15 uint8_t field_0x15
+void* fn_0055E8C0(void* arg) {
+    void* prev = arg;
+    void* cur = lift_field<void*>(arg, 0x00);
+    while (lift_field<uint8_t>(cur, 0x2D) == 0) {
+        prev = cur;
+        cur = lift_field<void*>(cur, 0x00);
+    }
+    return prev;
+}
+} // namespace lift_00401AF0
+} // namespace lift_0055E8C0

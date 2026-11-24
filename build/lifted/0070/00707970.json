@@ -1,0 +1,14 @@
+{
+  "va": "0x00707970",
+  "size": 13,
+  "orig_symbol": "sub_00707970",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "sub_00707970",
+  "class": "Unknown",
+  "signature": "bool fn_00707970(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00707980 (Unknown::NotifySlot17IfSelfLinkedWrapper).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T11:59:49Z"
+}

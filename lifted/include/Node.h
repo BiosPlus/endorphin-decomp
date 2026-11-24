@@ -9,7 +9,7 @@
 // Recovered field layout for Node:
 namespace lifted_layout {
 struct Node_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x00401AF0)
-    // +0x15  uint8_t                  field_0x15  (evidence: 0x00401AF0)
+    // +0x0   void*                    field_0x00  (evidence: 0x00401AF0, 0x00420590, 0x0046FBA0, 0x00486D60, 0x004928E0, 0x005014B0, 0x0052A070, 0x0055E8C0, 0x00594310, 0x0059DE00, 0x005AC840, 0x005E0B00, 0x00624D10)
+    // +0x15  uint8_t                  field_0x15  (evidence: 0x00401AF0, 0x00420590, 0x0046FBA0, 0x00486D60, 0x004928E0, 0x005014B0, 0x0052A070, 0x0055E8C0, 0x00594310, 0x0059DE00, 0x005AC840, 0x005E0B00, 0x00624D10)
 };
 } // namespace lifted_layout

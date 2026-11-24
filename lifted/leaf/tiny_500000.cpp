@@ -205,3 +205,24 @@ void __stdcall fn_00508C10(DWORD arg) {
     // Out-of-range: plain stdcall return (callee pops 4 bytes, handled by convention).
 }
 } // namespace lift_00508C10
+
+// [0x005014B0] sub_005014B0 (27 bytes)
+namespace lift_005014B0 {
+// @name sub_005014B0
+// @summary Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).
+namespace lift_00401AF0 {
+// @name FindPredecessorOfFlagged
+// @summary Walks the first-word link chain from arg and returns the node just before the first node whose byte at +0x15 is nonzero (returns arg if arg->next is already flagged).
+// @field Node +0x00 void* field_0x00
+// @field Node +0x15 uint8_t field_0x15
+void* fn_005014B0(void* arg) {
+    void* prev = arg;
+    void* cur = lift_field<void*>(arg, 0x00);
+    while (lift_field<uint8_t>(cur, 0x11) == 0) {
+        prev = cur;
+        cur = lift_field<void*>(cur, 0x00);
+    }
+    return prev;
+}
+} // namespace lift_00401AF0
+} // namespace lift_005014B0
