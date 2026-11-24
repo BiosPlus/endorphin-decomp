@@ -1,0 +1,21 @@
+{
+  "va": "0x00528BF0",
+  "size": 19,
+  "orig_symbol": "sub_00528BF0",
+  "src_path": "src/leaf/tiny_520000.cpp",
+  "lifted_path": "lifted/leaf/tiny_520000.cpp",
+  "name": "forwardVirtual0x30IfNonNull",
+  "signature": "extern \"C\" void __thiscall fn_00528BF0(void* self, uint32_t a0, uint32_t a1, uint32_t a2)",
+  "summary": "If this-\u003efield_0x04 is non-null, tail-calls its vtable slot 12 (+0x30) with the same stack arguments; otherwise returns popping 0xC bytes.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:01:18Z"
+}

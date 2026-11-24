@@ -11178,6 +11178,12 @@
     "summary": "If this-\u003efield_0x04 is non-null, tail-dispatch virtual slot 0x2C/4 on it with the same args; otherwise return 0 (callee pops 8 bytes).",
     "lifted_path": "lifted/leaf/tiny_520000.cpp"
   },
+  "0x00528BF0": {
+    "name": "forwardVirtual0x30IfNonNull",
+    "signature": "extern \"C\" void __thiscall fn_00528BF0(void* self, uint32_t a0, uint32_t a1, uint32_t a2)",
+    "summary": "If this-\u003efield_0x04 is non-null, tail-calls its vtable slot 12 (+0x30) with the same stack arguments; otherwise returns popping 0xC bytes.",
+    "lifted_path": "lifted/leaf/tiny_520000.cpp"
+  },
   "0x00528C70": {
     "name": "setFlagOnPointedObject",
     "signature": "void fn_00528C70(void* self)",

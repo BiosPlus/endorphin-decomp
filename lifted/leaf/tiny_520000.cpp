@@ -75,3 +75,23 @@ DWORD fn_00528BB0(void* self, DWORD arg0, DWORD arg1) {
     return fn(childPtr, arg0, arg1);
 }
 } // namespace lift_00528BB0
+
+// [0x00528BF0] sub_00528BF0 (19 bytes)
+namespace lift_00528BF0 {
+// @name forwardVirtual0x30IfNonNull
+// @summary If this->field_0x04 is non-null, tail-calls its vtable slot 12 (+0x30) with the same stack arguments; otherwise returns popping 0xC bytes.
+// @field Unknown +0x04 void* field_0x04
+
+// Stack-argument count is inferred from the `ret 0xC` epilogue (3 dwords).
+typedef void (__thiscall *VirtualSlot30Fn)(void* self, uint32_t a0, uint32_t a1, uint32_t a2);
+
+extern void __thiscall fn_00528BF0(void* self, uint32_t a0, uint32_t a1, uint32_t a2) {
+    void* child = lift_field<void*>(self, 0x04);
+    if (child == nullptr) {
+        return;
+    }
+    void** vtable = *reinterpret_cast<void***>(child);
+    auto target = reinterpret_cast<VirtualSlot30Fn>(vtable[0x30 / sizeof(void*)]);
+    target(child, a0, a1, a2);
+}
+} // namespace lift_00528BF0
