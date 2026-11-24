@@ -6436,6 +6436,13 @@
     "summary": "Pure jump thunk forwarding to sub_0067B1F0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0046F830": {
+    "name": "Unknown::ClearFlagSignalEventAndDispatch",
+    "class": "Unknown",
+    "signature": "void fn_0046F830(void* self)",
+    "summary": "Clears the byte at +0x12C, signals event index +0x148 on the subobject at +0x160, then tail-dispatches the subobject at +0x128.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046F8B0": {
     "name": "Unknown::IsReadyAndFlagSet",
     "class": "Unknown",

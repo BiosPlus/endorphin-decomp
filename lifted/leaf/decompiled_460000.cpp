@@ -796,3 +796,37 @@ void fn_00465960(void* self) {
     lift_field<std::string>(self, 0xBC) = mem_00928B5D;
 }
 } // namespace lift_00465960
+
+// [0x0046F830] sub_0046F830 (40 bytes)
+namespace lift_0046F830 {
+// Known callee 0x0067AEB0: Unknown::SetEventAtIndex
+// Signals the event handle stored at the given index of the vector referenced by this+0x0C; invalid index returns FALSE.
+// Original is thiscall: self in ecx (this+0x160), index pushed on the stack.
+extern BOOL ext_0067AEB0(void* self, INT index);
+
+// Known callee 0x0067B050: SubObject::ClearFlagThenVirtualSlot2
+// Clears the byte flag at +0x04, calls ext_0067AE50 on self, then dispatches virtual slot 2 on self's vtable (tail jump in original).
+// Original is thiscall: self in ecx (this+0x128).
+extern void ext_0067B050(void* self);
+
+// @name Unknown::ClearFlagSignalEventAndDispatch
+// @class Unknown
+// @summary Clears the byte at +0x12C, signals event index +0x148 on the subobject at +0x160, then tail-dispatches the subobject at +0x128.
+// @field Unknown +0x12C uint8_t field_0x12C
+// @field Unknown +0x148 int32_t field_0x148
+void fn_0046F830(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    // Index read from this+0x148 (pushed as the argument to ext_0067AEB0).
+    INT index = lift_field<INT>(base, 0x148);
+
+    // Clear the flag byte at this+0x12C.
+    lift_field<uint8_t>(base, 0x12C) = 0;
+
+    // Signal the event at `index` on the subobject at this+0x160 (result ignored, as in the original).
+    (void)ext_0067AEB0(base + 0x160, index);
+
+    // Tail-dispatch on the subobject at this+0x128 (original was `jmp ext_0067B050`).
+    ext_0067B050(base + 0x128);
+}
+} // namespace lift_0046F830

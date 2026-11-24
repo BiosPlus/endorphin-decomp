@@ -1,0 +1,28 @@
+{
+  "va": "0x0046F830",
+  "size": 40,
+  "orig_symbol": "sub_0046F830",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "Unknown::ClearFlagSignalEventAndDispatch",
+  "class": "Unknown",
+  "signature": "void fn_0046F830(void* self)",
+  "summary": "Clears the byte at +0x12C, signals event index +0x148 on the subobject at +0x160, then tail-dispatches the subobject at +0x128.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x12C",
+      "type": "uint8_t",
+      "name": "field_0x12C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x148",
+      "type": "int32_t",
+      "name": "field_0x148"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T15:18:05Z"
+}

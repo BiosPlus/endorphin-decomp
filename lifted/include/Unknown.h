@@ -558,14 +558,15 @@ struct Unknown_Fields {
     // +0x128 BYTE                     field_0x128  (evidence: 0x00458290, 0x004582B0, 0x004584C0) // CONFLICT: multiple definitions at +0x128
     // +0x128 DWORD                    field_0x128  (evidence: 0x0043C900) // CONFLICT: multiple definitions at +0x128
     // +0x12C embedded_object          field_0x12C  (evidence: 0x004137F0, 0x00414880) // CONFLICT: multiple definitions at +0x12C
-    // +0x12C uint8_t                  field_0x12C  (evidence: 0x004646A0, 0x00468730, 0x0046F910) // CONFLICT: multiple definitions at +0x12C
+    // +0x12C uint8_t                  field_0x12C  (evidence: 0x004646A0, 0x00468730, 0x0046F830, 0x0046F910) // CONFLICT: multiple definitions at +0x12C
     // +0x12C void*                    field_0x12C  (evidence: 0x0049ABC0, 0x00666CC0, 0x007C9370) // CONFLICT: multiple definitions at +0x12C
     // +0x12C u8                       field_0x12c  (evidence: 0x00414880, 0x0041CCA0, 0x00430DA0, 0x0043C620, 0x00455280, 0x004584C0) // CONFLICT: multiple definitions at +0x12C
     // +0x138 UINT                     field_0x138  (evidence: 0x0043CD80) // CONFLICT: multiple definitions at +0x138
     // +0x138 float                    field_0x138  (evidence: 0x004646A0, 0x00468730, 0x0046C110, 0x00594700, 0x0059DE20) // CONFLICT: multiple definitions at +0x138
     // +0x138 uint8_t                  field_0x138  (evidence: 0x007AA930, 0x007AC670) // CONFLICT: multiple definitions at +0x138
     // +0x13C std::string              field_0x13c  (evidence: 0x00455AD0, 0x004584C0)
-    // +0x148 void*                    subObject  (evidence: 0x0070E3B0, 0x0070EC50)
+    // +0x148 int32_t                  field_0x148  (evidence: 0x0046F830) // CONFLICT: multiple definitions at +0x148
+    // +0x148 void*                    subObject  (evidence: 0x0070E3B0, 0x0070EC50) // CONFLICT: multiple definitions at +0x148
     // +0x14C int32_t field_0x14C (indexed array base; element stride 4, indices 1..17)  (evidence: 0x007AA950, 0x007AC670) // CONFLICT: multiple definitions at +0x14C
     // +0x14C BYTE field_0x14C[] (indexed by arg index; byte store target)  (evidence: 0x006D74E0) // CONFLICT: multiple definitions at +0x14C
     // +0x150 int32_t                  field_0x150  (evidence: 0x0072BC70) // CONFLICT: multiple definitions at +0x150
