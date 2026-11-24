@@ -1,0 +1,22 @@
+{
+  "va": "0x0060A160",
+  "size": 122,
+  "orig_symbol": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::removeSelectedCollisionModels(void), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/Method0Type.cpp",
+  "lifted_path": "lifted/templates/Method0Type.cpp",
+  "name": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, removeSelectedCollisionModels\u003e::vfunc_40",
+  "class": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::removeSelectedCollisionModels(void), 0}\u003e",
+  "signature": "void fn_0060A160(void* self)",
+  "summary": "Lazily constructs a function-local static object (guarded by bit 0 of mem_00B478C8) and stores its address into this+0x04.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:54:31Z"
+}

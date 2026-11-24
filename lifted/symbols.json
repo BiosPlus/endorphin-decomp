@@ -26825,6 +26825,13 @@
     "summary": "Forwards the object's vtable pointer to AddCharacterDialog::vfunc_3 (ext_00493D90) and returns 0.0f.",
     "lifted_path": "lifted/templates/Method0Type.cpp"
   },
+  "0x0060A160": {
+    "name": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, removeSelectedCollisionModels\u003e::vfunc_40",
+    "class": "ExprParser::Method0Type\u003cNMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::removeSelectedCollisionModels(void), 0}\u003e",
+    "signature": "void fn_0060A160(void* self)",
+    "summary": "Lazily constructs a function-local static object (guarded by bit 0 of mem_00B478C8) and stores its address into this+0x04.",
+    "lifted_path": "lifted/templates/Method0Type.cpp"
+  },
   "0x0060A640": {
     "name": "NMData::DisabledCollisionPairList::vfunc_13",
     "class": "NMData::DisabledCollisionPairList",

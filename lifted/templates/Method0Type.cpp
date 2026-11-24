@@ -915,3 +915,30 @@ void __thiscall fn_005B8020(void* self, void* arg0) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B43C94));
 }
 } // namespace lift_005B8020
+
+// [0x0060A160] ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::removeSelectedCollisionModels(void), 0}>::vfunc_40 (122 bytes)
+namespace lift_0060A160 {
+// Callee 0x0067A670: thiscall (ecx = object address) with one stack argument (0).
+extern void ext_0067A670(uint32_t ecx_this, int32_t arg0);
+// One-time-init guard flag (bit 0) and static object storage at 0x00B478C4.
+extern uint32_t mem_00B478C8;
+extern uint32_t mem_00B478C4;
+
+// @name ExprParser::Method0Type<NMData::DisabledCollisionPairList, removeSelectedCollisionModels>::vfunc_40
+// @class ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::removeSelectedCollisionModels(void), 0}>
+// @summary Lazily constructs a function-local static object (guarded by bit 0 of mem_00B478C8) and stores its address into this+0x04.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+void fn_0060A160(void* self) {
+    // The original fs:[0] SEH frame setup/teardown has no semantic effect in the portable lift.
+
+    // One-time initialization guard for the static object at 0x00B478C4.
+    if ((mem_00B478C8 & 1u) == 0u) {
+        mem_00B478C8 |= 1u;
+        ext_0067A670(0x00B478C4u, 0);   // constructor call for the static object (ecx = 0x00B478C4)
+        mem_00B478C4 = 0x00971DE4u;     // vtable pointer of the static object
+    }
+
+    // this->field_0x04 = &static_object
+    lift_field<uint32_t>(self, 0x04) = 0x00B478C4u;
+}
+} // namespace lift_0060A160
