@@ -46425,6 +46425,12 @@
     "summary": "Follows two pointer hops (self+0x4, then +0x4) and returns bit 24 of the final dword as 0 or 1.",
     "lifted_path": "lifted/leaf/tiny_810000.cpp"
   },
+  "0x00810320": {
+    "name": "set_flag_bit_24",
+    "signature": "void sub_00810320(uint32_t arg1, uint32_t arg2)",
+    "summary": "Sets or clears bit 24 (0x01000000) in a nested struct's flags field at +0x04",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
   "0x00810350": {
     "name": "getNestedFlagBit15",
     "signature": "uint32_t sub_00810350(const uint8_t* arg0)",

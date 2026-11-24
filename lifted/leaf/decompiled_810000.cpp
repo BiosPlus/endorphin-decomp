@@ -59,3 +59,23 @@ const std::uint8_t* fn_0081150C(void* self) {
     return kByteTable_0081150C;
 }
 } // namespace lift_0081150C
+
+// [0x00810320]
+namespace lift_00810320 {
+// @name set_flag_bit_24
+// @summary Sets or clears bit 24 (0x01000000) in a nested struct's flags field at +0x04
+// @field unknown +0x04 uint32_t field_0x04
+
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+void sub_00810320(uint32_t arg1, uint32_t arg2) {
+    uint32_t inner = mem_read32(arg1 + 0x4);
+    uint32_t flags = mem_read32(inner + 0x4);
+    if (arg2 != 0) {
+        mem_write32(inner + 0x4, flags | 0x01000000u);
+    } else {
+        mem_write32(inner + 0x4, flags & 0xFEFFFFFFu);
+    }
+}
+} // namespace lift_00810320
