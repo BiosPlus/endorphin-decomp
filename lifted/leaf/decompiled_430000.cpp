@@ -308,3 +308,25 @@ DWORD fn_00430450(void* self, void* obj) {
     return target(obj, flag);
 }
 } // namespace lift_00430450
+
+// [0x00430470] sub_00430470 (24 bytes)
+namespace lift_00430470 {
+// @name Unknown::ForwardByteF6ToVirtual1
+// @class Unknown
+// @summary Reads byte field +0xF6 of this and tail-forwards it as the argument to vtable slot 1 of the object passed on the stack.
+// @field Unknown +0xF6 uint8_t field_0xF6
+// Thiscall-style virtual slot 1 taking one byte argument, returning in EAX.
+typedef uint32_t(__thiscall* VirtualSlot1Fn)(void* self, uint8_t arg);
+
+uint32_t fn_00430470(void* self, void* target) {
+    // mov eax, ecx ; movzx eax, byte ptr [eax+0xF6]
+    uint8_t flag = lift_field<uint8_t>(self, 0xF6);
+
+    // mov edx, [ecx] ; mov edx, [edx+4]
+    void** vtbl = lift_field<void**>(target, 0);
+    VirtualSlot1Fn slot1 = reinterpret_cast<VirtualSlot1Fn>(vtbl[1]);
+
+    // mov [esp+4], eax ; jmp edx  (tail call: target is ecx, flag is the argument)
+    return slot1(target, flag);
+}
+} // namespace lift_00430470

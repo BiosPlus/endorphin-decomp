@@ -1671,6 +1671,13 @@
     "summary": "Reads a byte flag from self, then tail-dispatches obj's vtable slot 1 with obj as this and the flag as the single argument.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430470": {
+    "name": "Unknown::ForwardByteF6ToVirtual1",
+    "class": "Unknown",
+    "signature": "uint32_t fn_00430470(void* self, void* target)",
+    "summary": "Reads byte field +0xF6 of this and tail-forwards it as the argument to vtable slot 1 of the object passed on the stack.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430CA0": {
     "name": "Unknown::forwardVirtual0WithArg1",
     "class": "Unknown",

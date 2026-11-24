@@ -200,6 +200,7 @@ struct Unknown_Fields {
     // +0xF0  void*                    field_0xf0  (evidence: 0x006C2070)
     // +0xF4  uint8_t                  field_0xf4  (evidence: 0x00430260, 0x00430430)
     // +0xF5  uint8_t                  field_0xF5  (evidence: 0x0042FAA0, 0x005331F0, 0x00535610, 0x00536CC0, 0x00536D70, 0x00545B80)
+    // +0xF6  uint8_t                  field_0xF6  (evidence: 0x00430470)
     // +0xF8  void*                    field_0xF8  (evidence: 0x004646A0, 0x00468730, 0x0046C110, 0x0046F910, 0x00594700)
     // +0x100 void*                    field_0x100  (evidence: 0x00430260, 0x00430310)
     // +0x128 DWORD                    field_0x128  (evidence: 0x0043C900)
