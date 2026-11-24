@@ -784,3 +784,27 @@ const char* __stdcall sub_0071A7C0(uint32_t mode) {
     }
 }
 } // namespace lift_0071A7C0
+
+// [0x0071A5E0]
+namespace lift_0071A5E0 {
+// @name getOrientationString
+// @summary Maps an orientation enum value (0..2) to its display string or nullptr.
+
+
+extern const char mem_00AAC8B4[];
+extern const char mem_00AAC8CC[];
+extern const char mem_00AAC8D8[];
+
+const char* __stdcall sub_0071A5E0(int32_t orientation) {
+    switch (orientation) {
+        case 0:
+            return mem_00AAC8B4;
+        case 1:
+            return mem_00AAC8CC;
+        case 2:
+            return mem_00AAC8D8;
+        default:
+            return nullptr;
+    }
+}
+} // namespace lift_0071A5E0

@@ -1,0 +1,13 @@
+{
+  "va": "0x0071A5E0",
+  "size": 44,
+  "orig_symbol": "sub_0071A5E0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "getOrientationString",
+  "signature": "const char* __stdcall sub_0071A5E0(int32_t orientation)",
+  "summary": "Maps an orientation enum value (0..2) to its display string or nullptr.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:10:50Z"
+}
