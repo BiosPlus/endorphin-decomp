@@ -22,9 +22,9 @@ struct _Unknown__Fields {
     // +0x20  HWND                     hwnd  (evidence: 0x0041FEF0)
     // +0x2C  DWORD                    field_0x2C  (evidence: 0x00790DE0)
     // +0x5C  DWORD                    field_0x5C  (evidence: 0x00790DE0)
-    // +0x78  double                   scale  (evidence: 0x007AB720)
+    // +0x78  double                   scale  (evidence: 0x007AB720, 0x007AC670)
     // +0x84  uint8_t*                 field_0x84  (evidence: 0x00543900) // CONFLICT: multiple definitions at +0x84
-    // +0x84  BOOLEAN                  flag  (evidence: 0x007AB720) // CONFLICT: multiple definitions at +0x84
+    // +0x84  BOOLEAN                  flag  (evidence: 0x007AB720, 0x007AC670) // CONFLICT: multiple definitions at +0x84
     // +0x88  uint8_t                  field_0x88  (evidence: 0x00440970, 0x00441020)
     // +0x8E  uint8_t                  field_0x8e  (evidence: 0x00440970, 0x00441020)
     // +0xF5  BYTE                     field_0xF5  (evidence: 0x00430450, 0x00430DA0)
