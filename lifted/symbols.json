@@ -17760,6 +17760,13 @@
     "summary": "Calls the base sensor update, then copies the 3-float vector at +0x60 to +0x70.",
     "lifted_path": "lifted/Sensors/SensorTreeCentreOfMassVelocity.cpp"
   },
+  "0x00602EB0": {
+    "name": "Effector::vfunc_25",
+    "class": "Effector",
+    "signature": "void Effector_vfunc_25(void* self, float scale)",
+    "summary": "Scales the float at this+0x54 in place by the single float argument (thiscall, callee pops 4 bytes).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00602EF0": {
     "name": "sub_00602EF0",
     "signature": "extern \"C\" void __fastcall fn_00602EF0(void* self)",

@@ -1,0 +1,22 @@
+{
+  "va": "0x00602EB0",
+  "size": 13,
+  "orig_symbol": "Effector::vfunc_25",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "Effector::vfunc_25",
+  "class": "Effector",
+  "signature": "void Effector_vfunc_25(void* self, float scale)",
+  "summary": "Scales the float at this+0x54 in place by the single float argument (thiscall, callee pops 4 bytes).",
+  "fields": [
+    {
+      "class": "Effector",
+      "offset": "+0x54",
+      "type": "float",
+      "name": "field_0x54"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:22:10Z"
+}

@@ -5178,3 +5178,19 @@ uintptr_t fn_00545610(void* self) {
     return fn(target);
 }
 } // namespace lift_00545610
+
+// [0x00602EB0]
+namespace lift_00602EB0 {
+// @name Effector::vfunc_25
+// @class Effector
+// @summary Scales the float at this+0x54 in place by the single float argument (thiscall, callee pops 4 bytes).
+// @field Effector +0x54 float field_0x54
+
+// Original: fld [esp+4]; fmul [ecx+0x54]; fstp [ecx+0x54]; ret 4
+// ECX = this, one float argument on the stack.
+void Effector_vfunc_25(void* self, float scale)
+{
+    float* field54 = reinterpret_cast<float*>(reinterpret_cast<char*>(self) + 0x54);
+    *field54 = *field54 * scale;
+}
+} // namespace lift_00602EB0
