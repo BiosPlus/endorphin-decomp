@@ -14258,6 +14258,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x24 and forwards through mem_00924FDC.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x00553960": {
+    "name": "descriptiveName_00553960",
+    "signature": "uint8_t descriptiveName_00553960(void* arg)",
+    "summary": "Returns 1 if the pointer argument is non-null and ext_00584C10 returns false for it; otherwise 0.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x005539B0": {
     "name": "GetByteTableEntryOrZero",
     "signature": "uint8_t GetByteTableEntryOrZero(void* self, uint32_t index)",

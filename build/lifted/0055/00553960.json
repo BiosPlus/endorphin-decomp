@@ -1,0 +1,13 @@
+{
+  "va": "0x00553960",
+  "size": 27,
+  "orig_symbol": "sub_00553960",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "descriptiveName_00553960",
+  "signature": "uint8_t descriptiveName_00553960(void* arg)",
+  "summary": "Returns 1 if the pointer argument is non-null and ext_00584C10 returns false for it; otherwise 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:03:11Z"
+}

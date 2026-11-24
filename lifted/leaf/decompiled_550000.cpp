@@ -15,3 +15,22 @@ void* fn_005528E0(void* self) {
     return self;
 }
 } // namespace lift_005528E0
+
+// [0x00553960] sub_00553960 (27 bytes)
+namespace lift_00553960 {
+// Known callee 0x00584C10: sub_00584C10 (takes the pointer in ecx, returns a bool in al)
+extern uint8_t ext_00584C10(void* arg);
+
+// @name descriptiveName_00553960
+// @summary Returns 1 if the pointer argument is non-null and ext_00584C10 returns false for it; otherwise 0.
+// @field none (no direct field accesses; the argument is only passed through to ext_00584C10)
+uint8_t descriptiveName_00553960(void* arg) {
+    if (arg == nullptr) {
+        return 0;
+    }
+    if (ext_00584C10(arg) != 0) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_00553960
