@@ -1,0 +1,22 @@
+{
+  "va": "0x0052EF20",
+  "size": 14,
+  "orig_symbol": "CompoundRenderable::vfunc_7",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CompoundRenderable::vfunc_7",
+  "class": "CompoundRenderable",
+  "signature": "void fn_0052EF20(void* self)",
+  "summary": "Forwards to vtable slot 6 of the object at this+0x10, passing this as the single argument.",
+  "fields": [
+    {
+      "class": "CompoundRenderable",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:25:45Z"
+}
