@@ -40,7 +40,8 @@ struct unknown_Fields {
     // +0x58  uint32_t                 field_0x58  (evidence: 0x007AEC30)
     // +0x5C  uint32_t                 field_0x5C  (evidence: 0x007AEC30)
     // +0x60  uint32_t                 field_0x60  (evidence: 0x007AEC30)
-    // +0x64  void*                    field_0x64  (evidence: 0x0044B730)
+    // +0x64  uint32_t                 field_0x64  (evidence: 0x0043D1D0) // CONFLICT: multiple definitions at +0x64
+    // +0x64  void*                    field_0x64  (evidence: 0x0044B730) // CONFLICT: multiple definitions at +0x64
     // +0x80  uint32_t                 field_0x80  (evidence: 0x007129A0)
     // +0x84  uint32_t                 field_0x84  (evidence: 0x007129A0)
     // +0xF0  uint32_t                 field_0xf0  (evidence: 0x00705160)
@@ -51,7 +52,9 @@ struct unknown_Fields {
     // +0x154 uint32_t                 field_0x154  (evidence: 0x005CFC80)
     // +0x158 uint32_t                 field_0x158  (evidence: 0x005CFC80)
     // +0x168 uint32_t                 field_0x168  (evidence: 0x007D8470, 0x007D8730)
+    // +0x1C4 std::string              field_0x1c4  (evidence: 0x004499D0)
     // +0x1CC float                    field_0x1cc  (evidence: 0x007C2E50, 0x007C6110)
+    // +0x1E0 std::string              field_0x1e0  (evidence: 0x004499D0)
     // +0x15A8 uint8_t                  field_0x15A8  (evidence: 0x0071C3A0)
 };
 } // namespace lifted_layout

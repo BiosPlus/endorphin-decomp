@@ -1038,3 +1038,32 @@ void fn_004429C0(void* self) {
     ext_0043CD60(owner, interval);
 }
 } // namespace lift_004429C0
+
+// [0x004499D0]
+namespace lift_004499D0 {
+// @name getStringPair
+// @summary Copies two std::string fields (+0x1c4 and +0x1e0) into the provided output strings
+// @field unknown +0x1c4 std::string field_0x1c4
+// @field unknown +0x1e0 std::string field_0x1e0
+
+extern void* (__thiscall *mem_00924EB8)(void* dst, const void* src);
+
+void __thiscall sub_004499D0(void* this_ptr, void* out_str1, void* out_str2) {
+    const uint8_t* self = static_cast<const uint8_t*>(this_ptr);
+    mem_00924EB8(out_str1, self + 0x1c4);
+    mem_00924EB8(out_str2, self + 0x1e0);
+}
+} // namespace lift_004499D0
+
+// [0x0044C4D0]
+namespace lift_0044C4D0 {
+// @name DWORD_RangeCopy_thiscall
+// @summary Copies DWORDs from [first, last) to out via ext_0044C2A0 and returns out + count.
+
+extern DWORD* ext_0044C2A0(const DWORD* first, const DWORD* last, DWORD* out);
+
+DWORD* __thiscall fn_0044C4D0(void* self, const DWORD* first, const DWORD* last, DWORD* out) {
+    (void)self;
+    return ext_0044C2A0(first, last, out);
+}
+} // namespace lift_0044C4D0

@@ -1,0 +1,27 @@
+{
+  "va": "0x004499D0",
+  "size": 41,
+  "orig_symbol": "sub_004499D0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "getStringPair",
+  "signature": "void __thiscall sub_004499D0(void* this_ptr, void* out_str1, void* out_str2)",
+  "summary": "Copies two std::string fields (+0x1c4 and +0x1e0) into the provided output strings",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x1C4",
+      "type": "std::string",
+      "name": "field_0x1c4"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x1E0",
+      "type": "std::string",
+      "name": "field_0x1e0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T13:59:31Z"
+}
