@@ -766,6 +766,13 @@
     "summary": "Destructor tail-call: restores vtable mem_0092C764 and tail-calls base destructor sub_00404650.",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x0041603E": {
+    "name": "sub_0041603E",
+    "class": "CBaseTabCtrl",
+    "signature": "DWORD fn_0041603E(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x00404670 (CBaseTabCtrl::vfunc_85).",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x00416190": {
     "name": "CEnTabCtrl::vfunc_1",
     "class": "CEnTabCtrl",
@@ -1774,6 +1781,20 @@
     "name": "invokeCallback0x10",
     "signature": "void __thiscall sub_00447520(void* self, uint32_t arg1, uint32_t arg2)",
     "summary": "Tail-calls the 2-arg __thiscall function pointer at this+0x10 if non-null",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
+  "0x00447530": {
+    "name": "sub_00447530",
+    "class": "Unknown",
+    "signature": "extern DWORD __thiscall fn_00447530(void* self, DWORD arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00401950 (ForwardToCallbackOrZero).",
+    "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
+  "0x00447540": {
+    "name": "sub_00447540",
+    "class": "Unknown",
+    "signature": "extern DWORD __thiscall fn_00447540(void* self, DWORD arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00401950 (ForwardToCallbackOrZero).",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
   "0x00447580": {

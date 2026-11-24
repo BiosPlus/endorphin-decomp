@@ -1,0 +1,22 @@
+{
+  "va": "0x00447540",
+  "size": 14,
+  "orig_symbol": "sub_00447540",
+  "src_path": "src/leaf/tiny_440000.cpp",
+  "lifted_path": "lifted/leaf/tiny_440000.cpp",
+  "name": "sub_00447540",
+  "class": "Unknown",
+  "signature": "extern DWORD __thiscall fn_00447540(void* self, DWORD arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x00401950 (ForwardToCallbackOrZero).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-24T01:24:23Z"
+}

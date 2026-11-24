@@ -177,3 +177,22 @@ extern void fn_0041B3B0(void) {
     ext_00430D40();
 }
 } // namespace lift_0041B3B0
+
+// [0x0041603E] sub_0041603E (14 bytes)
+namespace lift_0041603E {
+// @name sub_0041603E
+// @summary Auto-lifted identical-shape clone of 0x00404670 (CBaseTabCtrl::vfunc_85).
+namespace lift_00404670 {
+// USER32!GetSysColor, reached through the IAT slot at mem_00925680.
+extern DWORD ext_GetSysColor(int nIndex);
+extern int mem_00925680;
+
+// @name CBaseTabCtrl::vfunc_85
+// @class CBaseTabCtrl
+// @summary Returns GetSysColor(COLOR_BTNFACE); the incoming stack argument is overwritten with 8 before tail-jumping to USER32!GetSysColor.
+DWORD fn_0041603E(void* self) {
+    (void)self;
+    return ext_GetSysColor(15);
+}
+} // namespace lift_00404670
+} // namespace lift_0041603E

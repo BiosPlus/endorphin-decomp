@@ -53,6 +53,7 @@ extern "C" void __fastcall ext_006A5FFE(void* self);
 extern "C" void __fastcall ext_00530720(void* self);
 extern "C" void __fastcall ext_00530690(void* self);
 extern "C" uintptr_t mem_00924FDC;
+#include <cstdint>
 
 // [0x00448F20] sub_00448F20 (6 bytes)
 // @name GetStringLiteral_00448F20
@@ -365,3 +366,57 @@ void* fn_0044CCC0(void* self) {
     return self;
 }
 } // namespace lift_0044CCC0
+
+// [0x00447530] sub_00447530 (14 bytes)
+namespace lift_00447530 {
+// @name sub_00447530
+// @summary Auto-lifted identical-shape clone of 0x00401950 (ForwardToCallbackOrZero).
+namespace lift_00401950 {
+// @name ForwardToCallbackOrZero
+// @class Unknown
+// @summary Tail-forwards the single stack argument to the function pointer at this+0x08; returns 0 if that pointer is null.
+// @field Unknown +0x08 void* field_0x08
+
+// Original: mov eax,[ecx+8]; test eax,eax; je +2; jmp eax; xor al,al; ret 4
+// The original tail-jumps with the caller's stack frame intact; this portable
+// form performs an ordinary call and returns its result, which is equivalent
+// in observable behavior for a normal (non-stack-manipulating) callee.
+using Fn_00401950_Callback = DWORD(__thiscall*)(void* self, DWORD arg);
+
+extern DWORD __thiscall fn_00447530(void* self, DWORD arg) {
+    const auto target = *reinterpret_cast<Fn_00401950_Callback*>(
+        reinterpret_cast<unsigned char*>(self) + 0x14);
+    if (target == nullptr) {
+        return 0;
+    }
+    return target(self, arg);
+}
+} // namespace lift_00401950
+} // namespace lift_00447530
+
+// [0x00447540] sub_00447540 (14 bytes)
+namespace lift_00447540 {
+// @name sub_00447540
+// @summary Auto-lifted identical-shape clone of 0x00401950 (ForwardToCallbackOrZero).
+namespace lift_00401950 {
+// @name ForwardToCallbackOrZero
+// @class Unknown
+// @summary Tail-forwards the single stack argument to the function pointer at this+0x08; returns 0 if that pointer is null.
+// @field Unknown +0x08 void* field_0x08
+
+// Original: mov eax,[ecx+8]; test eax,eax; je +2; jmp eax; xor al,al; ret 4
+// The original tail-jumps with the caller's stack frame intact; this portable
+// form performs an ordinary call and returns its result, which is equivalent
+// in observable behavior for a normal (non-stack-manipulating) callee.
+using Fn_00401950_Callback = DWORD(__thiscall*)(void* self, DWORD arg);
+
+extern DWORD __thiscall fn_00447540(void* self, DWORD arg) {
+    const auto target = *reinterpret_cast<Fn_00401950_Callback*>(
+        reinterpret_cast<unsigned char*>(self) + 0x18);
+    if (target == nullptr) {
+        return 0;
+    }
+    return target(self, arg);
+}
+} // namespace lift_00401950
+} // namespace lift_00447540
