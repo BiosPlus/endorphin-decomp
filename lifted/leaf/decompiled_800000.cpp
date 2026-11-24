@@ -24,3 +24,15 @@ extern uint32_t fn_0080B530(uint32_t size) {
     return ext_008596E0(size);
 }
 } // namespace lift_0080B530
+
+// [0x0080CA10] sub_0080CA10 (16 bytes)
+namespace lift_0080CA10 {
+// Known callee 0x00859730: sub_00859730 (Auto-lifted identical-shape clone of 0x0079AF50 (GlobalFreeWrapper).)
+extern void* ext_00859730(void* hMem);
+
+// @name GlobalFreeForwarder
+// @summary Forwards its single stack argument to ext_00859730 (GlobalFreeWrapper) and returns the callee's result unchanged.
+void* fn_0080CA10(void* hMem) {
+    return ext_00859730(hMem);
+}
+} // namespace lift_0080CA10
