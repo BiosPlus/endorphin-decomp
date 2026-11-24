@@ -1325,3 +1325,16 @@ DWORD fn_007C8A10(void* self, DWORD x, DWORD y) {
     return *reinterpret_cast<const DWORD*>(table + static_cast<size_t>(index) * 24 + 0x14);
 }
 } // namespace lift_007C8A10
+
+// [0x007C9F40]
+namespace lift_007C9F40 {
+// @name CompareIntSign
+// @summary Three-way signed int compare: returns -1 if a < b, 1 if a > b, else 0.
+
+extern int __cdecl CompareIntSign(int a, int b) {
+    if (a < b) {
+        return -1;
+    }
+    return (a > b) ? 1 : 0;
+}
+} // namespace lift_007C9F40

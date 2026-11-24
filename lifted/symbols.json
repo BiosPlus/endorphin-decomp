@@ -41466,6 +41466,12 @@
     "summary": "Zeroes three float fields (+0x10, +0x14, +0x20) and two int fields (+0x08, +0x0C) of the target object.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C9F40": {
+    "name": "CompareIntSign",
+    "signature": "extern \"C\" int __cdecl CompareIntSign(int a, int b)",
+    "summary": "Three-way signed int compare: returns -1 if a \u003c b, 1 if a \u003e b, else 0.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007CA110": {
     "name": "sub_007CA110",
     "signature": "extern \"C\" void fn_007CA110(void)",

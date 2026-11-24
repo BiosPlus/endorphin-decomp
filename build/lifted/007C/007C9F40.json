@@ -1,0 +1,13 @@
+{
+  "va": "0x007C9F40",
+  "size": 26,
+  "orig_symbol": "sub_007C9F40",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "CompareIntSign",
+  "signature": "extern \"C\" int __cdecl CompareIntSign(int a, int b)",
+  "summary": "Three-way signed int compare: returns -1 if a \u003c b, 1 if a \u003e b, else 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T11:58:08Z"
+}
