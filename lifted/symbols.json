@@ -5540,6 +5540,13 @@
     "summary": "Returns 0x20 when arg0 == 0x1B3 and the float at +0xEC has zero bit pattern; otherwise returns arg0 unchanged. Trailing stack args are ignored.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x0049ABC0": {
+    "name": "Unknown::getByteAt09OfPtr12C",
+    "class": "Unknown",
+    "signature": "uint8_t fn_0049ABC0(void* self)",
+    "summary": "Returns byte +0x09 of the pointer stored at +0x12C, or 0 if that pointer is null.",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
   "0x0049AE80": {
     "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_3",
     "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",

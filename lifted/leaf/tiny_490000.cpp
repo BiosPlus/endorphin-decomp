@@ -339,3 +339,18 @@ void fn_00493EC0(void* self) {
     method(child);
 }
 } // namespace lift_00493EC0
+
+// [0x0049ABC0] sub_0049ABC0 (17 bytes)
+namespace lift_0049ABC0 {
+// @name Unknown::getByteAt09OfPtr12C
+// @class Unknown
+// @summary Returns byte +0x09 of the pointer stored at +0x12C, or 0 if that pointer is null.
+// @field Unknown +0x12C void* field_0x12C
+uint8_t fn_0049ABC0(void* self) {
+    void* ptr = lift_field<void*>(self, 0x12C);
+    if (ptr == nullptr) {
+        return 0;
+    }
+    return lift_field<uint8_t>(ptr, 0x09);
+}
+} // namespace lift_0049ABC0

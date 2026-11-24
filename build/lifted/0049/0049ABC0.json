@@ -1,0 +1,22 @@
+{
+  "va": "0x0049ABC0",
+  "size": 17,
+  "orig_symbol": "sub_0049ABC0",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "Unknown::getByteAt09OfPtr12C",
+  "class": "Unknown",
+  "signature": "uint8_t fn_0049ABC0(void* self)",
+  "summary": "Returns byte +0x09 of the pointer stored at +0x12C, or 0 if that pointer is null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x12C",
+      "type": "void*",
+      "name": "field_0x12C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T01:52:09Z"
+}
