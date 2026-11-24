@@ -36468,9 +36468,10 @@
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
   "0x00728DE0": {
-    "name": "storeDwordThroughThis",
-    "signature": "void* fn_00728DE0(void* self, uint32_t value)",
-    "summary": "Stores the single stack argument into the DWORD at *this and returns this (thiscall, ret 4).",
+    "name": "sub_00722F60",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __fastcall fn_00722F60(void* self, int edx_unused, unsigned int flags)",
+    "summary": "MSVC scalar deleting destructor: calls sub_00722F80 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
   "0x0072B120": {

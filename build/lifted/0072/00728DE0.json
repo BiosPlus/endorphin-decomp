@@ -4,10 +4,49 @@
   "orig_symbol": "sub_00728DE0",
   "src_path": "src/leaf/tiny_720000.cpp",
   "lifted_path": "lifted/leaf/tiny_720000.cpp",
-  "name": "storeDwordThroughThis",
-  "signature": "void* fn_00728DE0(void* self, uint32_t value)",
-  "summary": "Stores the single stack argument into the DWORD at *this and returns this (thiscall, ret 4).",
+  "name": "sub_00722F60",
+  "class": "Unknown",
+  "signature": "extern \"C\" void* __fastcall fn_00722F60(void* self, int edx_unused, unsigned int flags)",
+  "summary": "MSVC scalar deleting destructor: calls sub_00722F80 and frees memory when (flags \u0026 1) is set.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xAC",
+      "type": "uint32_t",
+      "name": "field_0xAC"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x158",
+      "type": "DWORD",
+      "name": "field_0x158"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t vtable",
+      "name": "(vptr)"
+    },
+    {
+      "class": "\u003cthis\u003e",
+      "offset": "+0x0",
+      "type": "pointer field_0x00 (pointer to inner object,",
+      "name": "dereferenced)"
+    },
+    {
+      "class": "\u003cinner\u003e",
+      "offset": "+0x0",
+      "type": "uint32 field_0x00 (returned",
+      "name": "value)"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-24T01:44:44Z"
+  "lifted_at": "2026-11-24T01:44:50Z"
 }

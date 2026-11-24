@@ -9,7 +9,7 @@
 namespace lifted_layout {
 struct Unknown_Fields {
     // +0x0   void* field_0x00 (arg1: loaded to obtain the forwarding "this")  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t vtable          (vptr)  (evidence: 0x006BB7D0, 0x006E7F90, 0x006E7FB0, 0x006E7FC0, 0x006E7FD0, 0x006E7FE0, 0x006E7FF0, 0x006E8000, 0x006E8010, 0x006E8020, 0x006E8030, 0x006E8040, 0x006E86B0, 0x006E8810, 0x0072B1C0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t vtable          (vptr)  (evidence: 0x006BB7D0, 0x006E7F90, 0x006E7FB0, 0x006E7FC0, 0x006E7FD0, 0x006E7FE0, 0x006E7FF0, 0x006E8000, 0x006E8010, 0x006E8020, 0x006E8030, 0x006E8040, 0x006E86B0, 0x006E8810, 0x00728DE0, 0x0072B1C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t field_0x00 (vtable pointer, dereferenced to read slot +0x80)  (evidence: 0x006E7F90, 0x006E8050, 0x006E8060, 0x006E8070, 0x006E8080) // CONFLICT: multiple definitions at +0x0
     // +0x0   void** vtable vtable pointer (slot 0 called with arg 1)  (evidence: 0x006DE130) // CONFLICT: multiple definitions at +0x0
     // +0x0   float* field_0x00 (arg1: dereferenced to get dst Vector4*)  (evidence: 0x0066B860) // CONFLICT: multiple definitions at +0x0
@@ -19,7 +19,7 @@ struct Unknown_Fields {
     // +0x0   float*                   field_0x00  (evidence: 0x004B7A10, 0x0066B680, 0x0066B6B0, 0x006719C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x00401930, 0x00401960, 0x004474E0, 0x0044B6A0, 0x00454E70, 0x0045BBE0, 0x0046E570, 0x00493E30, 0x00493E50, 0x00493E60, 0x00494050, 0x004986A0, 0x004AAAC0, 0x004B1FF0, 0x004B8920, 0x004C5630, 0x004C7690, 0x004CEBF0, 0x00508EE0, 0x0053F894, 0x005B2D00, 0x005B3680, 0x00661980, 0x0066F700, 0x00679A30, 0x00679A40, 0x0067A700, 0x0067ADD0, 0x0067F5A0, 0x0068DE60, 0x006B9910, 0x006B9940, 0x006B9950, 0x006C9F60, 0x006E7F90, 0x006E8900, 0x006F8AC0, 0x0071F060, 0x0077FAB0, 0x00785430, 0x007CC9E0, 0x007DA8D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x00430EE0, 0x0046E140, 0x0046E450, 0x0046E570, 0x00493E00, 0x00493E50, 0x00493E60, 0x00493E70, 0x00493E80, 0x00493E90, 0x00494050, 0x004A25E0, 0x0059F8D0, 0x005B3680, 0x005C5E50, 0x00633240, 0x0066B560, 0x006719C0, 0x006E8610, 0x006E8740, 0x006E87A0, 0x006E8800, 0x00871860) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void**                   field_0x00  (evidence: 0x0072DC50) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void**                   field_0x00  (evidence: 0x00728DE0, 0x0072DC50) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    inner  (evidence: 0x006616B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   double[] array (base pointer in ecx; element i at byte offset 8*i, dynamic index so no fixed offset)  (evidence: 0x006D2400) // CONFLICT: multiple definitions at +0x0
     // +0x0   void** vtable (sub-object's vtable pointer)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x0
@@ -112,13 +112,13 @@ struct Unknown_Fields {
     // +0x98  uint32_t                 field_0x98  (evidence: 0x006DE3E0, 0x00700970, 0x00715570, 0x0071B0F0, 0x0071B4F0, 0x0071B6C0, 0x0071BF90, 0x0071BFA0, 0x0071C360, 0x0071C380, 0x0071C4C0, 0x0071C600, 0x0071C940, 0x0071C9A0)
     // +0x9C  std::string              field_0x9c  (evidence: 0x0053DAA0) // CONFLICT: multiple definitions at +0x9C
     // +0x9C  uint32_t                 field_0x9c  (evidence: 0x007C9260) // CONFLICT: multiple definitions at +0x9C
-    // +0xAC  uint32_t                 field_0xAC  (evidence: 0x0072DB80)
+    // +0xAC  uint32_t                 field_0xAC  (evidence: 0x00728DE0, 0x0072DB80)
     // +0xD8  uint32_t                 field_0xD8  (evidence: 0x004023C0, 0x005A9ED0, 0x005FF1C0)
     // +0xF0  void*                    field_0xf0  (evidence: 0x006C2070)
     // +0xF8  void*                    field_0xF8  (evidence: 0x004646A0, 0x0046C110, 0x0046F910, 0x00594700)
     // +0x12C uint8_t                  field_0x12C  (evidence: 0x004646A0, 0x0046F910)
     // +0x138 float                    field_0x138  (evidence: 0x004646A0, 0x0046C110, 0x00594700)
-    // +0x158 DWORD                    field_0x158  (evidence: 0x0042FC20, 0x0042FEC0, 0x0048ABF0, 0x004CCAF0, 0x004CCB00, 0x0050AD20, 0x0050F180, 0x005B72E0, 0x005C3170, 0x005CE910, 0x005CE920, 0x00726690)
+    // +0x158 DWORD                    field_0x158  (evidence: 0x0042FC20, 0x0042FEC0, 0x0048ABF0, 0x004CCAF0, 0x004CCB00, 0x0050AD20, 0x0050F180, 0x005B72E0, 0x005C3170, 0x005CE910, 0x005CE920, 0x00726690, 0x00728DE0)
     // +0x160 double                   field_0x160  (evidence: 0x006D9060)
     // +0x184 int32_t                  field_0x184  (evidence: 0x005B64D0)
     // +0x1C4 uint32_t                 field_0x1C4  (evidence: 0x007C6780)
