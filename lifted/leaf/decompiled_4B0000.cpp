@@ -41,3 +41,23 @@ void sub_004B6CF0(uint8_t* ecx) {
     *reinterpret_cast<float*>(ecx + 0x30) = 0.0f;
 }
 } // namespace lift_004B6CF0
+
+// [0x004B7030]
+namespace lift_004B7030 {
+// RDATA constants
+extern float mem_00A3849C; // 0.1230123f
+extern float mem_00A384A0; // 0.23480123f
+extern float mem_00A384A4; // 0.1343947f
+
+// @name sub_004B7030
+// @summary Writes three RDATA float constants into the 3-float structure pointed to by the single stack argument.
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+void sub_004B7030(float *out)
+{
+    out[0] = mem_00A3849C;
+    out[1] = mem_00A384A0;
+    out[2] = mem_00A384A4;
+}
+} // namespace lift_004B7030

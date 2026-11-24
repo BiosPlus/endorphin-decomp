@@ -1,0 +1,33 @@
+{
+  "va": "0x004B7030",
+  "size": 33,
+  "orig_symbol": "sub_004B7030",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "sub_004B7030",
+  "signature": "void sub_004B7030(float *out)",
+  "summary": "Writes three RDATA float constants into the 3-float structure pointed to by the single stack argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:52:51Z"
+}
