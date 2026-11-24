@@ -753,3 +753,26 @@ void* __thiscall fn_0066CD30(void* self, uint32_t* out, void** targetPtr, uint32
     return out;
 }
 } // namespace lift_0066CD30
+
+// [0x005B7ED0]
+namespace lift_005B7ED0 {
+// @name ExprParser::Method2Type<NMData::MetaBodyData, NM::Vector3 const &, NM::Vector3 const &, addForceAtPostion>::vfunc_40
+// @class ExprParser::Method2Type
+// @summary Lazily initializes a static/global object at 0x00B43C84 and stores its address at offset +0x4 of the output argument.
+// @field OutArg +0x4 uint32_t* field_0x4
+
+extern void __thiscall ext_0067A670(void* self);
+extern uint32_t mem_00B43C84;
+extern uint32_t mem_00B43C88;
+
+void __thiscall fn_005B7ED0(void* self, void* arg1) {
+    (void)self;
+    if ((mem_00B43C88 & 1u) == 0) {
+        mem_00B43C88 |= 1u;
+        ext_0067A670(&mem_00B43C84);
+        mem_00B43C84 = 0x00961B0Cu;
+    }
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(arg1) + 0x4) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B43C84));
+}
+} // namespace lift_005B7ED0

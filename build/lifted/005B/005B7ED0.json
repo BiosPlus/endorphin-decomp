@@ -1,0 +1,22 @@
+{
+  "va": "0x005B7ED0",
+  "size": 122,
+  "orig_symbol": "ExprParser::Method2Type\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::addForceAtPostion(class NM::Vector3 const \u0026, NM::Vector3 const \u0026), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/Method2Type.cpp",
+  "lifted_path": "lifted/templates/Method2Type.cpp",
+  "name": "ExprParser::Method2Type\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, NM::Vector3 const \u0026, addForceAtPostion\u003e::vfunc_40",
+  "class": "ExprParser::Method2Type",
+  "signature": "void __thiscall fn_005B7ED0(void* self, void* arg1)",
+  "summary": "Lazily initializes a static/global object at 0x00B43C84 and stores its address at offset +0x4 of the output argument.",
+  "fields": [
+    {
+      "class": "OutArg",
+      "offset": "+0x4",
+      "type": "uint32_t*",
+      "name": "field_0x4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:54:01Z"
+}
