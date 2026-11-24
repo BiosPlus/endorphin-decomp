@@ -36621,10 +36621,9 @@
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
   "0x006CA6B0": {
-    "name": "sub_006CA060",
-    "class": "Unknown",
-    "signature": "bool fn_006CA060(void* self)",
-    "summary": "Auto-lifted identical-shape clone of 0x00707980 (Unknown::NotifySlot17IfSelfLinkedWrapper).",
+    "name": "CopyTenDwordsFromResolved",
+    "signature": "void fn_006CA6B0(void* dst, void* self)",
+    "summary": "Resolve a source block via ext_006CA060(arg2), then copy 10 dwords (40 bytes) into arg1 (stdcall, ret 8).",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
   "0x006CD310": {
