@@ -14,3 +14,20 @@ extern "C" void* __fastcall fn_0072D620(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+
+// [0x0072B2F0]
+namespace lift_0072B2F0 {
+// @name sub_0072B2F0
+// @summary Constructor calling base constructor sub_0077F9E0 and setting vtable to 0x00996834
+// @field sub_0072B2F0 +0x00 uint32_t vtable
+
+
+extern uint32_t __thiscall ext_0077F9E0(uint32_t self, uint32_t arg1);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+uint32_t __thiscall sub_0072B2F0(uint32_t self, uint32_t arg1) {
+    ext_0077F9E0(self, arg1);
+    mem_write32(self, 0x00996834u);
+    return self;
+}
+} // namespace lift_0072B2F0
