@@ -85,3 +85,19 @@ void fn_00519CE0(void* self) {
     ext_00628FF0(static_cast<uint8_t*>(self) + 4);    // add ecx, 4 ; jmp [0x924ff4] (MSVCP80 ~basic_string)
 }
 } // namespace lift_00519CE0
+
+// [0x0051DDB0] sub_0051DDB0 (17 bytes)
+namespace lift_0051DDB0 {
+// @name Unknown::linkBackPointerAtField0xBC
+// @class Unknown
+// @summary If the object's field at +0xBC is non-null, store `this` into that child's +0xC4 field.
+// @field Unknown +0xBC uint32_t field_0xbc
+// @field Unknown +0xC4 uint32_t field_0xc4
+void fn_0051DDB0(void* self) {
+    uint32_t child = lift_field<uint32_t>(self, 0xBC);
+    if (child != 0) {
+        lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(child)), 0xC4) =
+            static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    }
+}
+} // namespace lift_0051DDB0

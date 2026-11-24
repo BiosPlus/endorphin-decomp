@@ -10691,6 +10691,13 @@
     "summary": "Calls ext_0051AE40 with this, arg1 and a zero word, then returns arg1 unchanged.",
     "lifted_path": "lifted/NMData/QuatChannel.cpp"
   },
+  "0x0051DDB0": {
+    "name": "Unknown::linkBackPointerAtField0xBC",
+    "class": "Unknown",
+    "signature": "void fn_0051DDB0(void* self)",
+    "summary": "If the object's field at +0xBC is non-null, store `this` into that child's +0xC4 field.",
+    "lifted_path": "lifted/leaf/tiny_510000.cpp"
+  },
   "0x0051DDD0": {
     "name": "sub_0051DDD0",
     "signature": "extern \"C\" void __fastcall fn_0051DDD0(void* self)",
