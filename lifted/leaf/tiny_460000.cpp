@@ -916,3 +916,19 @@ void fn_00465ED0(void* self) {
     ext_00433FF0(self);
 }
 } // namespace lift_00465ED0
+
+// [0x0046FF50] sub_0046FF50 (31 bytes)
+namespace lift_0046FF50 {
+// @name Unknown::SetValueAndForwardToChild
+// @class Unknown
+// @summary Stores the 32-bit stack argument at this+0x174, then also stores it at this->+0xcc->+0x26c->+0x1fc.
+// @field Unknown +0xcc void* field_0xcc
+// @field Unknown +0x174 uint32_t field_0x174
+// Nested accesses (object type not recovered): (this+0xcc)+0x26c is a pointer; its +0x1fc is a uint32_t.
+void fn_0046FF50(void* self, uint32_t value) {
+    lift_field<uint32_t>(self, 0x174) = value;
+    void* inner = lift_field<void*>(self, 0xcc);
+    void* target = lift_field<void*>(inner, 0x26c);
+    lift_field<uint32_t>(target, 0x1fc) = value;
+}
+} // namespace lift_0046FF50

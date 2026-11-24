@@ -1,0 +1,28 @@
+{
+  "va": "0x0046FF50",
+  "size": 31,
+  "orig_symbol": "sub_0046FF50",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "Unknown::SetValueAndForwardToChild",
+  "class": "Unknown",
+  "signature": "void fn_0046FF50(void* self, uint32_t value)",
+  "summary": "Stores the 32-bit stack argument at this+0x174, then also stores it at this-\u003e+0xcc-\u003e+0x26c-\u003e+0x1fc.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xCC",
+      "type": "void*",
+      "name": "field_0xcc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x174",
+      "type": "uint32_t",
+      "name": "field_0x174"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T12:23:18Z"
+}
