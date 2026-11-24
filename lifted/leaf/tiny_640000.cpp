@@ -765,3 +765,14 @@ uint8_t fn_00641FF0(void* self) {
     return (flags & 0x08u) == 0x08u ? 1u : 0u;
 }
 } // namespace lift_00641FF0
+
+// [0x00641FE0] sub_00641FE0 (15 bytes)
+namespace lift_00641FE0 {
+// @name descriptiveName: FlagBit1IsSetAt20
+// @summary Returns 1 if bit 1 of the dword at offset 0x20 is set, else 0 (bool-valued getter).
+// @field Unknown +0x20 uint32_t field_0x20
+uint8_t fn_00641FE0(void* self) {
+    const uint32_t flags = lift_field<uint32_t>(self, 0x20);
+    return (flags & 0x2u) == 0x2u ? 1 : 0;
+}
+} // namespace lift_00641FE0

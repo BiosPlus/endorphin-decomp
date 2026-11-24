@@ -21330,6 +21330,12 @@
     "summary": "Returns bit 0 of the DWORD at this+0x20 as 0 or 1 (x86 sequence: and al,1 / sub / neg / sbb / add 1).",
     "lifted_path": "lifted/leaf/tiny_640000.cpp"
   },
+  "0x00641FE0": {
+    "name": "descriptiveName: FlagBit1IsSetAt20",
+    "signature": "uint8_t fn_00641FE0(void* self)",
+    "summary": "Returns 1 if bit 1 of the dword at offset 0x20 is set, else 0 (bool-valued getter).",
+    "lifted_path": "lifted/leaf/tiny_640000.cpp"
+  },
   "0x00641FF0": {
     "name": "IsFlag08Set",
     "class": "Unknown",
