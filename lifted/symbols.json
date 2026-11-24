@@ -16811,6 +16811,13 @@
     "summary": "Returns the argument passed through ext_005530B0, scaled by the float at self+0x20.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00556610": {
+    "name": "std::vector\u003cchar\u003e::_Tidy",
+    "class": "std::vector\u003cchar\u003e",
+    "signature": "void __thiscall sub_00556610(void* self)",
+    "summary": "Deallocates the vector buffer if non-null and resets begin, end, and capacity pointers to zero.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00556AB0": {
     "name": "sub_00556AB0",
     "signature": "DWORD* __thiscall fn_00556AB0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -40023,6 +40030,12 @@
     "signature": "uint32_t fn_006E8080(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x006E8050 (Unknown::GetVtableSlot80).",
     "lifted_path": "lifted/leaf/tiny_6E0000.cpp"
+  },
+  "0x006E85D0": {
+    "name": "copyBlockFromPointerField",
+    "signature": "void fn_006E85D0(void* self, void* dst)",
+    "summary": "Copies a 32-byte (8 x DWORD) block from the address stored at this+0x00 into the caller-supplied destination buffer.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
   "0x006E8600": {
     "name": "sub_006E8600",

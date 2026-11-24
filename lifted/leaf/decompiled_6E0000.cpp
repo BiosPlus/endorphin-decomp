@@ -477,3 +477,14 @@ void* fn_006E8670(void* self, void* dest) {
     return dest;
 }
 } // namespace lift_006E8670
+
+// [0x006E85D0] sub_006E85D0 (48 bytes)
+namespace lift_006E85D0 {
+// @name copyBlockFromPointerField
+// @summary Copies a 32-byte (8 x DWORD) block from the address stored at this+0x00 into the caller-supplied destination buffer.
+// @field Unknown +0x00 DWORD* field_0x00
+void fn_006E85D0(void* self, void* dst) {
+    const DWORD* src = *reinterpret_cast<DWORD* const*>(self);
+    std::memcpy(dst, src, 8 * sizeof(DWORD));
+}
+} // namespace lift_006E85D0

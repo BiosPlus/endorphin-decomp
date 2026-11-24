@@ -1,0 +1,21 @@
+{
+  "va": "0x006E85D0",
+  "size": 48,
+  "orig_symbol": "sub_006E85D0",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "copyBlockFromPointerField",
+  "signature": "void fn_006E85D0(void* self, void* dst)",
+  "summary": "Copies a 32-byte (8 x DWORD) block from the address stored at this+0x00 into the caller-supplied destination buffer.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T14:20:27Z"
+}
