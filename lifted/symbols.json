@@ -39046,9 +39046,8 @@
   },
   "0x007C8C70": {
     "name": "descriptiveName_007C8C70",
-    "class": "none (free function; the argument's pointee type is not identified)",
-    "signature": "uint32_t* descriptiveName_007C8C70(uint32_t* p)",
-    "summary": "Zeroes the two dwords at the pointer argument and returns that pointer (cdecl, one stack arg, no class).",
+    "signature": "uint32_t* descriptiveName_007C8C70(uint32_t /*arg0_unused*/, uint32_t* p)",
+    "summary": "Zeroes the two dwords at the second stack argument and returns that pointer (cdecl, no class).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
   "0x007C8D70": {

@@ -1054,12 +1054,11 @@ void* fn_007C8D80(uint32_t size) {
 // [0x007C8C70]
 namespace lift_007C8C70 {
 // @name descriptiveName_007C8C70
-// @summary Zeroes the two dwords at the pointer argument and returns that pointer (cdecl, one stack arg, no class).
-// @class none (free function; the argument's pointee type is not identified)
+// @summary Zeroes the two dwords at the second stack argument and returns that pointer (cdecl, no class).
 
-// Stack arg at [esp+4] on entry: pointer to two dwords.
-// Body: mov eax,[esp+8] (pointer, after return address shift) ; zero [eax] ; zero [eax+4] ; ret
-uint32_t* descriptiveName_007C8C70(uint32_t* p) {
+// Entry stack: [esp]=return addr, [esp+4]=arg0 (unused), [esp+8]=arg1 (pointer).
+// mov eax,[esp+8]; mov [eax],0; mov [eax+4],0; ret  (cdecl: no stack cleanup)
+uint32_t* descriptiveName_007C8C70(uint32_t /*arg0_unused*/, uint32_t* p) {
     p[0] = 0;  // mov dword ptr [eax], 0x0
     p[1] = 0;  // mov dword ptr [eax+0x4], 0x0
     return p;  // eax still holds the pointer
