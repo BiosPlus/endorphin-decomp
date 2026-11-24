@@ -1,0 +1,13 @@
+{
+  "va": "0x00508C10",
+  "size": 21,
+  "orig_symbol": "sub_00508C10",
+  "src_path": "src/leaf/tiny_500000.cpp",
+  "lifted_path": "lifted/leaf/tiny_500000.cpp",
+  "name": "ForwardArgIfAtMost2",
+  "signature": "void __stdcall fn_00508C10(DWORD arg)",
+  "summary": "Forwards its single stdcall argument to sub_005087F0 (tail call) when the argument is \u003c= 2 unsigned; otherwise returns immediately, popping the 4-byte argument.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-24T02:12:35Z"
+}

@@ -188,3 +188,20 @@ double fn_0050FA20(void* self) {
     return mem_00950A60;
 }
 } // namespace lift_0050FA20
+
+// [0x00508C10] sub_00508C10 (21 bytes)
+namespace lift_00508C10 {
+// Known callee 0x005087F0: sub_005087F0 (10 bytes). Tail-jumped to with the
+// (possibly rewritten) stack argument still in place.
+extern void __stdcall ext_005087F0(DWORD arg);
+
+// @name ForwardArgIfAtMost2
+// @summary Forwards its single stdcall argument to sub_005087F0 (tail call) when the argument is <= 2 unsigned; otherwise returns immediately, popping the 4-byte argument.
+void __stdcall fn_00508C10(DWORD arg) {
+    if (arg <= 2u) {
+        ext_005087F0(arg);
+        return;
+    }
+    // Out-of-range: plain stdcall return (callee pops 4 bytes, handled by convention).
+}
+} // namespace lift_00508C10
