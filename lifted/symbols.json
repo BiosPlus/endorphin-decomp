@@ -50526,6 +50526,13 @@
     "summary": "Rotates a 3D vector around the Y axis by the given angle in radians.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067C4D0": {
+    "name": "Vec2::rotate",
+    "class": "Vec2",
+    "signature": "extern \"C\" void __thiscall fn_0067C4D0(void* this_ptr, float angle)",
+    "summary": "Rotates a 2D vector in-place by the given angle in radians.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067DB90": {
     "name": "SetRotationYMatrix",
     "signature": "void SetRotationYMatrix(void* self, float angle)",

@@ -1879,3 +1879,41 @@ extern uint32_t mem_00924FE0;
     __builtin_unreachable();
 }
 } // namespace lift_0067F5B0
+
+// [0x0067C450]
+namespace lift_0067C450 {
+// @name Vec3::rotateY
+// @class Vec3
+// @summary Rotates a 3D vector around the Y axis by the given angle in radians.
+// @field Vec3 +0x00 float x
+// @field Vec3 +0x08 float z
+void __thiscall fn_0067C450(void* self, float angle) {
+    float c = std::cos(angle);
+    float s = std::sin(angle);
+    auto* v = static_cast<float*>(self);
+    float x = v[0];
+    float z = v[2];
+    v[0] = x * c + z * s;
+    v[2] = z * c - x * s;
+}
+} // namespace lift_0067C450
+
+// [0x0067C4D0]
+namespace lift_0067C4D0 {
+// @name Vec2::rotate
+// @class Vec2
+// @summary Rotates a 2D vector in-place by the given angle in radians.
+// @field Vec2 +0x00 float x
+// @field Vec2 +0x04 float y
+
+
+extern void __thiscall fn_0067C4D0(void* this_ptr, float angle) {
+    float c = std::cos(angle);
+    float s = std::sin(angle);
+    float* vec = static_cast<float*>(this_ptr);
+    float x = vec[0];
+    float y = vec[1];
+    vec[0] = x * c - y * s;
+    vec[1] = x * s + y * c;
+}
+} // namespace lift_0067C4D0
