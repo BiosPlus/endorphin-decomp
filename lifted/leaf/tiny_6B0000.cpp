@@ -808,3 +808,27 @@ uint32_t sub_006B4FD0() {
     return eax;
 }
 } // namespace lift_006B4FD0
+
+// [0x006B8170] sub_006B8170 (24 bytes)
+namespace lift_006B8170 {
+// Known callee 0x006B7D90: CObjectBase::UpdateSubobjects (Calls the thunk on the embedded subobject at +0x88 (passing +0x74 as the argument), then invokes vtable slot 0 of the object at +0x1A4 if it is set.)
+// Takes `self` in ECX in the original; the tail jump preserves it, so it is passed explicitly here.
+extern void ext_006B7D90(void* self);
+
+// @name CObjectBase::UpdateSubobjectsIfReady
+// @class CObjectBase
+// @summary If the byte flag at +0x1A8 is set and the pointer at +0x1A4 is non-null, tail-calls UpdateSubobjects; otherwise returns.
+// @field CObjectBase +0x1A4 uint32_t field_0x1A4 (non-zero check; tested as dword, used as a pointer by the callee)
+// @field CObjectBase +0x1A8 uint8_t field_0x1A8 (enable flag)
+void fn_006B8170(void* self) {
+    const uint8_t flag = lift_field<uint8_t>(self, 0x1A8);
+    if (flag == 0) {
+        return;
+    }
+    const uint32_t target = lift_field<uint32_t>(self, 0x1A4);
+    if (target == 0) {
+        return;
+    }
+    ext_006B7D90(self);
+}
+} // namespace lift_006B8170

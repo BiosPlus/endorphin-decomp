@@ -10,6 +10,8 @@ namespace lifted_layout {
 struct CObjectBase_Fields {
     // +0x74  void*                    field_0x74  (evidence: 0x006B7D90, 0x006BA780)
     // +0x88  void*                    field_0x88  (evidence: 0x006B7D90, 0x006BA780)
-    // +0x1A4 void*                    field_0x1A4  (evidence: 0x006B7D90, 0x006BA780)
+    // +0x1A4 uint32_t field_0x1A4 (non-zero check; tested as dword, used as a pointer by the callee)  (evidence: 0x006B8170) // CONFLICT: multiple definitions at +0x1A4
+    // +0x1A4 void*                    field_0x1A4  (evidence: 0x006B7D90, 0x006BA780) // CONFLICT: multiple definitions at +0x1A4
+    // +0x1A8 uint8_t field_0x1A8 (enable flag)  (evidence: 0x006B8170)
 };
 } // namespace lifted_layout

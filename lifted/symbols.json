@@ -53093,6 +53093,13 @@
     "summary": "Pure jump thunk forwarding to sub_006B7D90.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x006B8170": {
+    "name": "CObjectBase::UpdateSubobjectsIfReady",
+    "class": "CObjectBase",
+    "signature": "void fn_006B8170(void* self)",
+    "summary": "If the byte flag at +0x1A8 is set and the pointer at +0x1A4 is non-null, tail-calls UpdateSubobjects; otherwise returns.",
+    "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
+  },
   "0x006B8190": {
     "name": "CallChildAt88Forward",
     "class": "Self",
