@@ -1262,3 +1262,23 @@ void* fn_004663D0(void* self) {
 }
 } // namespace lift_006B28A0
 } // namespace lift_004663D0
+
+// [0x004616F0]
+namespace lift_004616F0 {
+// MSVCP80!std::basic_string<char>::basic_string(const basic_string&)
+extern void(__thiscall* mem_00924FE0)(void* self, const void* other);
+
+// @name NamedStringPair::NamedStringPair
+// @class NamedStringPair
+// @summary Constructs an object with two std::string fields and a 32-bit value
+// @field NamedStringPair +0x00 std::string field_0x00
+// @field NamedStringPair +0x1c std::string field_0x1c
+// @field NamedStringPair +0x38 uint32_t field_0x38
+void* __thiscall sub_004616F0(void* self, const void* arg1, const void* arg2, uint32_t arg3) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    mem_00924FE0(obj, arg1);
+    mem_00924FE0(obj + 0x1c, arg2);
+    *reinterpret_cast<uint32_t*>(obj + 0x38) = arg3;
+    return self;
+}
+} // namespace lift_004616F0
