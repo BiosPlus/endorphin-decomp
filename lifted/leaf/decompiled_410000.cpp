@@ -1131,3 +1131,24 @@ uint8_t __thiscall fn_0041C660(void* self, int32_t arg1, int16_t arg2, int32_t a
     return fn(target, arg1, scaled, arg3, arg4);
 }
 } // namespace lift_0041C660
+
+// [0x0041CD10]
+namespace lift_0041CD10 {
+// @name Unknown::elementAt
+// @class Unknown
+// @summary Returns a pointer to the index-th 56-byte element of a [begin, end) range.
+// @field Unknown +0x04 uint8_t* begin
+// @field Unknown +0x08 uint8_t* end
+void* fn_0041CD10(void* self, uint32_t index) {
+    constexpr std::ptrdiff_t kElementSize = 56;
+
+    uint8_t* begin = lift_field<uint8_t*>(self, 0x04);
+    uint8_t* end = lift_field<uint8_t*>(self, 0x08);
+
+    // The original performs a bounds check (begin != null && index < (end - begin) / 56)
+    // and calls _invalid_parameter_noinfo on failure, then still computes the address.
+    // The portable version keeps the same address computation; the failure path
+    // has no portable equivalent and is treated as a no-op.
+    return begin + static_cast<std::ptrdiff_t>(index) * kElementSize;
+}
+} // namespace lift_0041CD10
