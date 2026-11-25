@@ -312,3 +312,23 @@ void fn_004D2710(DWORD* dst, DWORD value) {
     dst[1] = addr;
 }
 } // namespace lift_004D2710
+
+// [0x004DE720] sub_004DE720 (87 bytes)
+namespace lift_004DE720 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: self in ECX, one stack argument; stores value into self[0] and returns it).
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AE6418;
+extern DWORD mem_00AE6414;
+
+// @name getStaticObjectAddr_004DE720
+// @summary One-time initializes the global object at 0x00AE6414 (guarded by the flag bit at 0x00AE6418) and returns its address.
+// @field StaticObject_00AE6414 +0x00 DWORD field_0x00
+void* fn_004DE720() {
+    if ((mem_00AE6418 & 1u) == 0) {
+        mem_00AE6418 |= 1u;
+        ext_0067A670(&mem_00AE6414, 0);
+        mem_00AE6414 = 0x00949DACu;
+    }
+    return &mem_00AE6414;
+}
+} // namespace lift_004DE720

@@ -1,0 +1,21 @@
+{
+  "va": "0x004DE720",
+  "size": 87,
+  "orig_symbol": "sub_004DE720",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "getStaticObjectAddr_004DE720",
+  "signature": "void* fn_004DE720()",
+  "summary": "One-time initializes the global object at 0x00AE6414 (guarded by the flag bit at 0x00AE6418) and returns its address.",
+  "fields": [
+    {
+      "class": "StaticObject_00AE6414",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:34:33Z"
+}
