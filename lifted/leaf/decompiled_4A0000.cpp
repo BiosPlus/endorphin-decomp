@@ -501,3 +501,51 @@ void fn_004A5890(void* self) {
 }
 } // namespace lift_004757F0
 } // namespace lift_004A5890
+
+// [0x004AFE50]
+namespace lift_004AFE50 {
+// @name Unknown::releaseAndClearSlots_004AFE50
+// @class Unknown
+// @summary Releases three pointer slots (+0x18, +0x38, +0x58) via ext_006A5C5C when non-null, zeroes them and their adjacent companion fields, then tail-calls fn_00665810(self).
+
+extern void ext_006A5C5C(void* p);
+extern void __fastcall fn_00665810(void* self);
+
+// @field Unknown +0x18 void* field_0x18
+// @field Unknown +0x1C uint32_t field_0x1c
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x38 void* field_0x38
+// @field Unknown +0x3C uint32_t field_0x3c
+// @field Unknown +0x40 uint32_t field_0x40
+// @field Unknown +0x58 void* field_0x58
+// @field Unknown +0x5C uint32_t field_0x5c
+// @field Unknown +0x60 uint32_t field_0x60
+extern void __fastcall fn_004AFE50(void* self) {
+    auto& p18 = lift_field<void*>(self, 0x18);
+    auto& p38 = lift_field<void*>(self, 0x38);
+    auto& p58 = lift_field<void*>(self, 0x58);
+
+    if (p58 != nullptr) {
+        ext_006A5C5C(p58);
+    }
+    p58 = nullptr;
+    lift_field<uint32_t>(self, 0x5C) = 0;
+    lift_field<uint32_t>(self, 0x60) = 0;
+
+    if (p38 != nullptr) {
+        ext_006A5C5C(p38);
+    }
+    p38 = nullptr;
+    lift_field<uint32_t>(self, 0x3C) = 0;
+    lift_field<uint32_t>(self, 0x40) = 0;
+
+    if (p18 != nullptr) {
+        ext_006A5C5C(p18);
+    }
+    p18 = nullptr;
+    lift_field<uint32_t>(self, 0x1C) = 0;
+    lift_field<uint32_t>(self, 0x20) = 0;
+
+    fn_00665810(self);
+}
+} // namespace lift_004AFE50

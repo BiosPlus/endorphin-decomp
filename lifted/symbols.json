@@ -11669,6 +11669,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005F0D40 (NMData::MagnetJointData::vfunc_59).",
     "lifted_path": "lifted/classes/ChangeSecondarySelectionCommand.cpp"
   },
+  "0x004AFE50": {
+    "name": "Unknown::releaseAndClearSlots_004AFE50",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_004AFE50(void* self)",
+    "summary": "Releases three pointer slots (+0x18, +0x38, +0x58) via ext_006A5C5C when non-null, zeroes them and their adjacent companion fields, then tail-calls fn_00665810(self).",
+    "lifted_path": "lifted/leaf/decompiled_4A0000.cpp"
+  },
   "0x004B00E0": {
     "name": "ChangePrimarySelectionCommand::vfunc_3",
     "class": "ChangePrimarySelectionCommand",
@@ -40225,6 +40232,12 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x0 and tail-calls sub_00679990.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x00679EB0": {
+    "name": "lowerBoundByStringField10",
+    "signature": "uint32_t* sub_00679EB0(uint32_t* first, uint32_t* last, uint32_t key)",
+    "summary": "Binary searches a pointer range [first, last) for the first element whose std::string at +0x10 is not less than key.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067A0F0": {
     "name": "sub_0067A0F0",
     "signature": "extern \"C\" void __fastcall fn_0067A0F0(void* self)",
@@ -41184,6 +41197,12 @@
     "summary": "Builds a 7-tagged exception object from arg1 and a context-derived value, then throws it.",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x0068BB60": {
+    "name": "sub_0068BB60_dtor",
+    "signature": "extern \"C\" void __fastcall fn_0068BB60(void* self)",
+    "summary": "Destructor that resets vtables at +0x0 and +0x4, then calls subobject and base destructors",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x0068BBF0": {
     "name": "sub_0068BBF0",
     "signature": "extern \"C\" void __fastcall fn_0068BBF0(void* self)",
@@ -41751,6 +41770,12 @@
     "name": "readTokenSkippingBlanks",
     "signature": "bool fn_00696B70(void* stream, void* str)",
     "summary": "Skips spaces and tabs on an istream; on EOF or newline returns false, otherwise puts the",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
+  "0x00696BD0": {
+    "name": "readLineFromStream",
+    "signature": "uint8_t __cdecl sub_00696BD0(void* stream, void* str)",
+    "summary": "Reads characters from an istream into a std::string until '\\n', '\\r', or EOF (-1), returning true.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x00696D90": {
