@@ -66098,6 +66098,12 @@
     "summary": "Looks up a 16-bit key in the node list first, then the static table; returns the match or null.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007B04A8": {
+    "name": "DataTable_007B04A8",
+    "signature": "const uint8_t* fn_007B04A8()",
+    "summary": "Static 24-byte byte table at 0x007B04A8 (not executable code); returns a pointer to it.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B04C0": {
     "name": "AllocZeroOrNotifyHook",
     "signature": "uint32_t fn_007B04C0(uint32_t* out, uint32_t size, uint32_t arg3)",

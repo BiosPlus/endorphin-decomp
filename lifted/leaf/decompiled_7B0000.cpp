@@ -1341,3 +1341,22 @@ void fn_007B617C(void* self) {
     return;
 }
 } // namespace lift_007B617C
+
+// [0x007B04A8] sub_007B04A8 (24 bytes)
+namespace lift_007B04A8 {
+// @name DataTable_007B04A8
+// @summary Static 24-byte byte table at 0x007B04A8 (not executable code); returns a pointer to it.
+//
+// The bytes are data, not instructions: 00 01 04 04 04 04 04 04 04 04 04 04 02 04 04 03,
+// followed by eight 0x90 bytes (matching the 0x90 fill seen in the original listing).
+// No ext_/mem_ references exist in the original bytes.
+static const uint8_t kDataTable_007B04A8[24] = {
+    0x00, 0x01, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04,
+    0x04, 0x04, 0x04, 0x04, 0x02, 0x04, 0x04, 0x03,
+    0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90,
+};
+
+const uint8_t* fn_007B04A8() {
+    return kDataTable_007B04A8;
+}
+} // namespace lift_007B04A8

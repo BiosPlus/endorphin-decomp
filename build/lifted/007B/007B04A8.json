@@ -1,0 +1,13 @@
+{
+  "va": "0x007B04A8",
+  "size": 24,
+  "orig_symbol": "sub_007B04A8",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "DataTable_007B04A8",
+  "signature": "const uint8_t* fn_007B04A8()",
+  "summary": "Static 24-byte byte table at 0x007B04A8 (not executable code); returns a pointer to it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:24:17Z"
+}
