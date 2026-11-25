@@ -56620,6 +56620,13 @@
     "summary": "Pure jump thunk forwarding to sub_007892B0.",
     "lifted_path": "lifted/leaf/tiny_720000.cpp"
   },
+  "0x00724E30": {
+    "name": "Unknown::CopyStridedQuadFromSubobject",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_00724E30(void* self, int edx_unused, uint8_t* out)",
+    "summary": "Fetches a 160-byte block from this-\u003efield_0x10 via vtable slot 5, then copies four unaligned dwords (at +0x26, +0x2A, +0x2E, +0x32) into the caller's 16-byte output.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x00724FA0": {
     "name": "sub_00724FA0",
     "class": "Unknown",

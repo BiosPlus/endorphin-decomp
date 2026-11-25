@@ -527,3 +527,34 @@ void fn_0072B130(void* self) {
     lift_field<DWORD>(self, 0x1C8) = 0;
 }
 } // namespace lift_0072B130
+
+// [0x00724E30]
+namespace lift_00724E30 {
+// @name Unknown::CopyStridedQuadFromSubobject
+// @class Unknown
+// @summary Fetches a 160-byte block from this->field_0x10 via vtable slot 5, then copies four unaligned dwords (at +0x26, +0x2A, +0x2E, +0x32) into the caller's 16-byte output.
+// @field Unknown +0x10 void* field_0x10
+
+extern void __fastcall fn_00724E30(void* self, int edx_unused, uint8_t* out) {
+    (void)edx_unused;
+
+    // Sub-object at this->field_0x10; slot 5 (offset 0x14) fills a 0xA0-byte buffer.
+    void* sub = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x10);
+    uint8_t buf[0xA0];
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    using FillFn = void (*)(void* self_, uint8_t* dst, uint32_t size);
+    FillFn fill = reinterpret_cast<FillFn>(vtbl[5]);
+    fill(sub, buf, 0xA0u);
+
+    // Four unaligned 32-bit reads from the buffer, stored consecutively into out.
+    uint32_t v0, v1, v2, v3;
+    std::memcpy(&v0, buf + 0x26, sizeof(v0));
+    std::memcpy(&v1, buf + 0x2A, sizeof(v1));
+    std::memcpy(&v2, buf + 0x2E, sizeof(v2));
+    std::memcpy(&v3, buf + 0x32, sizeof(v3));
+    std::memcpy(out + 0x0, &v0, sizeof(v0));
+    std::memcpy(out + 0x4, &v1, sizeof(v1));
+    std::memcpy(out + 0x8, &v2, sizeof(v2));
+    std::memcpy(out + 0xC, &v3, sizeof(v3));
+}
+} // namespace lift_00724E30

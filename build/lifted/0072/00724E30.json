@@ -1,0 +1,22 @@
+{
+  "va": "0x00724E30",
+  "size": 80,
+  "orig_symbol": "sub_00724E30",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "Unknown::CopyStridedQuadFromSubobject",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __fastcall fn_00724E30(void* self, int edx_unused, uint8_t* out)",
+  "summary": "Fetches a 160-byte block from this-\u003efield_0x10 via vtable slot 5, then copies four unaligned dwords (at +0x26, +0x2A, +0x2E, +0x32) into the caller's 16-byte output.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:53:07Z"
+}
