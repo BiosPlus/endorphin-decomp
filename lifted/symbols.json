@@ -8946,6 +8946,12 @@
     "summary": "Formats an int with a fixed .rdata format into a 50-byte buffer and constructs a std::string in the caller-provided slot.",
     "lifted_path": "lifted/leaf/decompiled_470000.cpp"
   },
+  "0x00476770": {
+    "name": "ReleaseStringMembers_00476770",
+    "signature": "void fn_00476770(void* self)",
+    "summary": "Destroys four std::string members of the object at self, in reverse layout order (+0x54, +0x38, +0x1c, +0x00).",
+    "lifted_path": "lifted/leaf/decompiled_470000.cpp"
+  },
   "0x004769D0": {
     "name": "NMData::SceneData::vfunc_7",
     "class": "NMData::SceneData",

@@ -870,3 +870,19 @@ void fn_00474FF0(void* self) {
 }
 } // namespace lift_005E0B20
 } // namespace lift_00474FF0
+
+// [0x00476770] sub_00476770 (106 bytes)
+namespace lift_00476770 {
+// @name ReleaseStringMembers_00476770
+// @summary Destroys four std::string members of the object at self, in reverse layout order (+0x54, +0x38, +0x1c, +0x00).
+// @field Object +0x00 std::string field_0x00
+// @field Object +0x1c std::string field_0x1C
+// @field Object +0x38 std::string field_0x38
+// @field Object +0x54 std::string field_0x54
+void fn_00476770(void* self) {
+    lift_field<std::string>(self, 0x54).~basic_string();
+    lift_field<std::string>(self, 0x38).~basic_string();
+    lift_field<std::string>(self, 0x1C).~basic_string();
+    lift_field<std::string>(self, 0x00).~basic_string();
+}
+} // namespace lift_00476770

@@ -1,0 +1,39 @@
+{
+  "va": "0x00476770",
+  "size": 106,
+  "orig_symbol": "sub_00476770",
+  "src_path": "src/leaf/decompiled_470000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_470000.cpp",
+  "name": "ReleaseStringMembers_00476770",
+  "signature": "void fn_00476770(void* self)",
+  "summary": "Destroys four std::string members of the object at self, in reverse layout order (+0x54, +0x38, +0x1c, +0x00).",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x38",
+      "type": "std::string",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x54",
+      "type": "std::string",
+      "name": "field_0x54"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T05:02:09Z"
+}
