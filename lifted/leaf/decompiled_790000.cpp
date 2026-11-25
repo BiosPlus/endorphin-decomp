@@ -1004,3 +1004,29 @@ void fn_0079EED0(int32_t offset) {
     fseek_ptr(stream, static_cast<long>(offset), SEEK_SET);
 }
 } // namespace lift_0079EED0
+
+// [0x0079EAC0]
+namespace lift_0079EAC0 {
+extern uint8_t mem_00B61150;
+extern uint32_t mem_00B6114C;
+extern uint32_t mem_00925184;
+extern void __cdecl ext_0079B140(uint32_t, uint32_t, uint32_t);
+extern uint32_t __cdecl ext_007AF580(uint32_t, uint32_t, uint32_t);
+extern int32_t __cdecl ext_0079EBE0(void);
+
+// @name lookupEntryByByteIndex
+// @summary Returns the 32-bit entry at index (a1 & 0xFF) from mem_00B6114C if (a1 & 0xFF) < mem_00B61150, otherwise 0.
+
+extern uint32_t __cdecl fn_0079EAC0(uint32_t a1) {
+    (void)ext_0079B140;
+    (void)ext_007AF580;
+    (void)ext_0079EBE0;
+    (void)mem_00925184;
+    uint8_t idx = static_cast<uint8_t>(a1 & 0xFFu);
+    if (idx >= mem_00B61150) {
+        return 0;
+    }
+    const uint32_t* table = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00B6114C));
+    return table[idx];
+}
+} // namespace lift_0079EAC0

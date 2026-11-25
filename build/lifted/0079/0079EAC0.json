@@ -1,0 +1,13 @@
+{
+  "va": "0x0079EAC0",
+  "size": 32,
+  "orig_symbol": "sub_0079EAC0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "lookupEntryByByteIndex",
+  "signature": "extern \"C\" uint32_t __cdecl fn_0079EAC0(uint32_t a1)",
+  "summary": "Returns the 32-bit entry at index (a1 \u0026 0xFF) from mem_00B6114C if (a1 \u0026 0xFF) \u003c mem_00B61150, otherwise 0.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T12:46:55Z"
+}

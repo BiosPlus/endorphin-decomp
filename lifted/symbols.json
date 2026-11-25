@@ -65883,6 +65883,12 @@
     "summary": "If the object's slot in the table (indexed by its byte at +0x0C) points to it, clear the slot and set the object's +0x0C byte to the sentinel from mem_009977EC.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079EAC0": {
+    "name": "lookupEntryByByteIndex",
+    "signature": "extern \"C\" uint32_t __cdecl fn_0079EAC0(uint32_t a1)",
+    "summary": "Returns the 32-bit entry at index (a1 \u0026 0xFF) from mem_00B6114C if (a1 \u0026 0xFF) \u003c mem_00B61150, otherwise 0.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079EB70": {
     "name": "Unknown::getByteViaGlobalPtr0x0C",
     "class": "Unknown",
