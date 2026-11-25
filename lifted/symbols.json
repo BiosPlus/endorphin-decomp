@@ -59698,6 +59698,12 @@
     "summary": "Returns the dword at +0x490 of the object pointed to by this-\u003e+0x268.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00702790": {
+    "name": "GetSubobjectField518",
+    "signature": "DWORD fn_00702790(void* self)",
+    "summary": "Returns the DWORD at +0x518 of the object pointed to by this+0x268.",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x007027C0": {
     "name": "Unknown::forwardVcall88ToSubobjectAt80",
     "class": "Unknown",

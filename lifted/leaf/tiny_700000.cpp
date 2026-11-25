@@ -1315,3 +1315,15 @@ DWORD fn_00702780(void* self) {
     return lift_field<DWORD>(sub, 0x490);
 }
 } // namespace lift_00702780
+
+// [0x00702790] sub_00702790 (16 bytes)
+namespace lift_00702790 {
+// @name GetSubobjectField518
+// @summary Returns the DWORD at +0x518 of the object pointed to by this+0x268.
+// @field Unknown +0x268 void* field_0x268
+// @field Unknown +0x518 DWORD field_0x518
+DWORD fn_00702790(void* self) {
+    void* sub = lift_field<void*>(self, 0x268);
+    return lift_field<DWORD>(sub, 0x518);
+}
+} // namespace lift_00702790
