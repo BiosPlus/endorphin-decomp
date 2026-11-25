@@ -1998,3 +1998,41 @@ extern bool __thiscall fn_00648640(void* self, DWORD value) {
     return cur != last;
 }
 } // namespace lift_00648640
+
+// [0x00648790] sub_00648790 (103 bytes)
+namespace lift_00648790 {
+// Known callee 0x0065ACB0: sub_0065ACB0 (This-adjustor thunk: adjusts `this` by +0x4 and tail-calls sub_0065F2A0.)
+extern void ext_0065ACB0(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* p);
+
+// @name Unknown::ReleaseOwnedPointers
+// @class Unknown
+// @summary Releases the pointers at +0x5C (via sub_0065ACB0 then ord_764) and +0x4C (via ord_764), then nulls +0x4C, +0x50 and +0x54.
+// @field Unknown +0x4C void* ownedPtrA
+// @field Unknown +0x50 field_0x50 field_0x50
+// @field Unknown +0x54 field_0x54 field_0x54
+// @field Unknown +0x5C void* ownedPtrB
+void fn_00648790(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    void** ptrA = reinterpret_cast<void**>(base + 0x4C);
+    void** ptrB = reinterpret_cast<void**>(base + 0x5C);
+    void** field50 = reinterpret_cast<void**>(base + 0x50);
+    void** field54 = reinterpret_cast<void**>(base + 0x54);
+
+    void* b = *ptrB;
+    if (b != nullptr) {
+        ext_0065ACB0(b);
+        ext_006A5C5C(b);
+    }
+
+    void* a = *ptrA;
+    if (a != nullptr) {
+        ext_006A5C5C(a);
+    }
+
+    *ptrA = nullptr;
+    *field50 = nullptr;
+    *field54 = nullptr;
+}
+} // namespace lift_00648790

@@ -40983,6 +40983,13 @@
     "summary": "Linear search of a guest DWORD range [field_0x4c, field_0x50) for a value; returns true if found before the end.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00648790": {
+    "name": "Unknown::ReleaseOwnedPointers",
+    "class": "Unknown",
+    "signature": "void fn_00648790(void* self)",
+    "summary": "Releases the pointers at +0x5C (via sub_0065ACB0 then ord_764) and +0x4C (via ord_764), then nulls +0x4C, +0x50 and +0x54.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00648800": {
     "name": "Unknown::fn_00648800 (range-erase helper; descriptive name pending class identification)",
     "class": "Unknown",
@@ -64110,6 +64117,12 @@
     "name": "sub_00761710",
     "signature": "extern void* fn_00761710(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x007B2210 (Unknown::initAndReturnArg).",
+    "lifted_path": "lifted/leaf/decompiled_760000.cpp"
+  },
+  "0x00763E40": {
+    "name": "freeEntryTables",
+    "signature": "static void freeEntryTable(uint8_t* table, uint32_t count)",
+    "summary": "Frees all entries in two EntryTable members at +0xc4 and +0xd8 using MFC80!ord_764 (operator delete).",
     "lifted_path": "lifted/leaf/decompiled_760000.cpp"
   },
   "0x007641C0": {
