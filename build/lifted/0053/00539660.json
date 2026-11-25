@@ -1,0 +1,28 @@
+{
+  "va": "0x00539660",
+  "size": 88,
+  "orig_symbol": "sub_00539660",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "QuadricRenderer::ctor",
+  "class": "QuadricRenderer",
+  "signature": "void* __thiscall fn_00539660(void* self)",
+  "summary": "Initializes base object, sets vtable and float parameters, and creates/configures a GLU quadric.",
+  "fields": [
+    {
+      "class": "QuadricRenderer",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "QuadricRenderer",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "quadric"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:16:37Z"
+}

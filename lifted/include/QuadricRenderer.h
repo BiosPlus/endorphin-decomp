@@ -8,7 +8,9 @@
 // Recovered field layout for QuadricRenderer:
 namespace lifted_layout {
 struct QuadricRenderer_Fields {
-    // +0x0   void*                    vftable  (evidence: 0x005457B0, 0x005498E0)
+    // +0x0   void*                    vftable  (evidence: 0x005457B0, 0x005498E0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vtable  (evidence: 0x00539660) // CONFLICT: multiple definitions at +0x0
+    // +0x14  void*                    quadric  (evidence: 0x00539660)
     // +0x18  void*                    quadric1  (evidence: 0x005457B0, 0x005498E0)
     // +0x1C  void*                    quadric2  (evidence: 0x005457B0, 0x005498E0)
 };
