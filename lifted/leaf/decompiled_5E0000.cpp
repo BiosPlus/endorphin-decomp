@@ -686,3 +686,25 @@ void* fn_005EB120() {
     return &mem_00B45F40;
 }
 } // namespace lift_005EB120
+
+// [0x005EB180] sub_005EB180 (87 bytes)
+namespace lift_005EB180 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00B45F4C;
+extern int mem_00B45F48;
+
+// @name getOrInitStaticObject_005EB180
+// @summary Lazily initializes the static object at 0xB45F48 once (guarded by a flag bit at 0xB45F4C) and returns its address.
+void* fn_005EB180() {
+    if ((mem_00B45F4C & 1) == 0) {
+        // Set the init flag before running the constructor so re-entry is blocked.
+        mem_00B45F4C |= 1;
+        // Original passes the object in ECX and a stack argument; that stored value
+        // is overwritten by the vtable store below, so 0 yields the same final state.
+        ext_0067A670(&mem_00B45F48, 0);
+        mem_00B45F48 = 0x969ab4;
+    }
+    return &mem_00B45F48;
+}
+} // namespace lift_005EB180

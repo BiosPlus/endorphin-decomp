@@ -1,0 +1,13 @@
+{
+  "va": "0x005EB180",
+  "size": 87,
+  "orig_symbol": "sub_005EB180",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "getOrInitStaticObject_005EB180",
+  "signature": "void* fn_005EB180()",
+  "summary": "Lazily initializes the static object at 0xB45F48 once (guarded by a flag bit at 0xB45F4C) and returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:12:06Z"
+}
