@@ -19395,6 +19395,12 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x44 and tail-calls sub_0050F0B0.",
     "lifted_path": "lifted/leaf/tiny_4F0000.cpp"
   },
+  "0x004FDAA0": {
+    "name": "sub_004FDAA0",
+    "signature": "uint32_t __thiscall sub_004FDAA0(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Constructor-like initialization: copies a std::string at +0x00, queries vtable+0x70 on arg2-\u003e+0x04 if non-null, and stores results at +0x1C and +0x20",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004FDB20": {
     "name": "ExprParser::ROWriteMethodType\u003cNMData::CharacterData\u003e::vfunc_16",
     "class": "ExprParser::ROWriteMethodType\u003cEvolveEngine, float, {private: void __thiscall EvolveEngine::stopWithFitness(float), 0}\u003e",

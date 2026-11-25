@@ -1,0 +1,22 @@
+{
+  "va": "0x005171B0",
+  "size": 114,
+  "orig_symbol": "EvolvedIndividual::vfunc_13_off_C",
+  "src_path": "src/classes/EvolvedIndividual.cpp",
+  "lifted_path": "lifted/classes/EvolvedIndividual.cpp",
+  "name": "EvolvedIndividual::vfunc_13_off_C",
+  "class": "EvolvedIndividual",
+  "signature": "uint32_t __thiscall fn_005171B0(uint32_t self, uint32_t out_ptr, uint32_t name_str)",
+  "summary": "Looks up a property/symbol by name, returning a descriptor pair if matched or an empty descriptor otherwise.",
+  "fields": [
+    {
+      "class": "EvolvedIndividual",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:39:25Z"
+}
