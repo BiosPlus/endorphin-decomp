@@ -1,0 +1,64 @@
+{
+  "va": "0x00685890",
+  "size": 109,
+  "orig_symbol": "sub_00685890",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "Unknown::assignFields_00685890",
+  "class": "Unknown",
+  "signature": "void* fn_00685890(void* self, void* other)",
+  "summary": "Copy-assigns the string, integer, and subobject fields of other into self and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "int32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "std::string",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "subobject",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "std::string",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x6C",
+      "type": "std::string",
+      "name": "field_0x6C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "int32_t",
+      "name": "field_0x88"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8C",
+      "type": "int32_t",
+      "name": "field_0x8C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:02:54Z"
+}

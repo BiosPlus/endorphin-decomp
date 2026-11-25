@@ -46778,6 +46778,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00685890": {
+    "name": "Unknown::assignFields_00685890",
+    "class": "Unknown",
+    "signature": "void* fn_00685890(void* self, void* other)",
+    "summary": "Copy-assigns the string, integer, and subobject fields of other into self and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00685BA0": {
     "name": "sub_00685BA0",
     "signature": "DWORD ext_006850E0();  // ConstructOnce_0046F580 DWORD* fn_00685BA0(DWORD* dst, DWORD value)",

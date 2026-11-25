@@ -2132,3 +2132,32 @@ void fn_00688C50(void* self, void* out, uint8_t* first, uint8_t* expected, uint8
     lift_field<uint8_t*>(out, 0x04) = resultSecond;
 }
 } // namespace lift_00688C50
+
+// [0x00685890] sub_00685890 (109 bytes)
+namespace lift_00685890 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy of the subobject at +0x04; returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+
+// @name Unknown::assignFields_00685890
+// @class Unknown
+// @summary Copy-assigns the string, integer, and subobject fields of other into self and returns self.
+// @field Unknown +0x0C std::string field_0x0C
+// @field Unknown +0x28 int32_t field_0x28
+// @field Unknown +0x2C std::string field_0x2C
+// @field Unknown +0x48 subobject field_0x48
+// @field Unknown +0x50 std::string field_0x50
+// @field Unknown +0x6C std::string field_0x6C
+// @field Unknown +0x88 int32_t field_0x88
+// @field Unknown +0x8C int32_t field_0x8C
+void* fn_00685890(void* self, void* other) {
+    lift_field<std::string>(self, 0x0C) = lift_field<std::string>(other, 0x0C);
+    lift_field<int32_t>(self, 0x28) = lift_field<int32_t>(other, 0x28);
+    lift_field<std::string>(self, 0x2C) = lift_field<std::string>(other, 0x2C);
+    ext_0041CF50(static_cast<uint8_t*>(self) + 0x48, static_cast<uint8_t*>(other) + 0x48);
+    lift_field<std::string>(self, 0x50) = lift_field<std::string>(other, 0x50);
+    lift_field<std::string>(self, 0x6C) = lift_field<std::string>(other, 0x6C);
+    lift_field<int32_t>(self, 0x88) = lift_field<int32_t>(other, 0x88);
+    lift_field<int32_t>(self, 0x8C) = lift_field<int32_t>(other, 0x8C);
+    return self;
+}
+} // namespace lift_00685890
