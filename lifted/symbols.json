@@ -5242,6 +5242,12 @@
     "summary": "If this+0xDC is non-null, invoke vtable slot 0x188 on this; then forward to ext_006A5EA8 with ecx=this.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x004562F0": {
+    "name": "ClientPointToScreenAndNotify",
+    "signature": "void fn_004562F0(void* self, int /*unused*/, int x, int y)",
+    "summary": "Converts a client-space point to screen coordinates when field_0xdc is set, passes it to a virtual handler at vtable slot 0x18c, then tail-forwards to the MFC thunk.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00456340": {
     "name": "sub_00456340",
     "signature": "extern \"C\" void __thiscall fn_00456340(void* self, void* arg1)",

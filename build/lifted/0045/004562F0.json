@@ -1,0 +1,27 @@
+{
+  "va": "0x004562F0",
+  "size": 77,
+  "orig_symbol": "sub_004562F0",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "ClientPointToScreenAndNotify",
+  "signature": "void fn_004562F0(void* self, int /*unused*/, int x, int y)",
+  "summary": "Converts a client-space point to screen coordinates when field_0xdc is set, passes it to a virtual handler at vtable slot 0x18c, then tail-forwards to the MFC thunk.",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xDC",
+      "type": "int",
+      "name": "field_0xdc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:41:01Z"
+}

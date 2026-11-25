@@ -888,3 +888,41 @@ void fn_00454AD0(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
     }
 }
 } // namespace lift_00454AD0
+
+// [0x004562F0] sub_004562F0 (77 bytes)
+namespace lift_004562F0 {
+// Known callee 0x006A5EA8: thunk_MFC80_ord_1903 (IAT jump thunk forwarding to MFC80!ord_1903.)
+extern void ext_006A5EA8();
+extern int mem_00925630;
+
+struct LiftPoint {
+    LONG x;
+    LONG y;
+};
+
+// @name ClientPointToScreenAndNotify
+// @summary Converts a client-space point to screen coordinates when field_0xdc is set, passes it to a virtual handler at vtable slot 0x18c, then tail-forwards to the MFC thunk.
+// @field <unknown> +0x20 void* field_0x20
+// @field <unknown> +0xdc int field_0xdc
+void fn_004562F0(void* self, int /*unused*/, int x, int y) {
+    auto* base = static_cast<unsigned char*>(self);
+
+    if (*reinterpret_cast<int*>(base + 0xdc) != 0) {
+        LiftPoint pt{x, y};
+
+        // ClientToScreen(hwnd, &pt) via the USER32 IAT slot (stdcall).
+        auto client_to_screen = reinterpret_cast<int(__stdcall*)(void*, LiftPoint*)>(
+            static_cast<uintptr_t>(static_cast<unsigned int>(mem_00925630)));
+        client_to_screen(*reinterpret_cast<void**>(base + 0x20), &pt);
+
+        // Virtual call: vtable[0x18c] (thiscall, one pointer argument).
+        void** vtbl = *reinterpret_cast<void***>(self);
+        auto handler = reinterpret_cast<void(__thiscall*)(void*, LiftPoint*)>(
+            *reinterpret_cast<void**>(reinterpret_cast<unsigned char*>(vtbl) + 0x18c));
+        handler(self, &pt);
+    }
+
+    // Tail call to MFC80!ord_1903 with this in ecx.
+    ext_006A5EA8();
+}
+} // namespace lift_004562F0

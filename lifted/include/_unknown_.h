@@ -60,6 +60,7 @@ struct _unknown__Fields {
     // +0x1C  uint32_t                 field_0x1C  (evidence: 0x00710F10) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 field_0x1c  (evidence: 0x0054EFF0) // CONFLICT: multiple definitions at +0x1C
     // +0x20  uint32_t                 field_0x20  (evidence: 0x0054EFF0, 0x0063D970, 0x0063DDF0, 0x0063E0C0, 0x00710F10, 0x007D59C0) // CONFLICT: multiple definitions at +0x20
+    // +0x20  void*                    field_0x20  (evidence: 0x004562F0) // CONFLICT: multiple definitions at +0x20
     // +0x20  DWORD                    field_20  (evidence: 0x007C2E50, 0x007C5A20, 0x007C5A30, 0x007C5AB0, 0x007C5C50, 0x007C5C60, 0x007C76D0, 0x007C8A70, 0x007D5BB0, 0x007D8470, 0x007D86F0, 0x007DCFF0) // CONFLICT: multiple definitions at +0x20
     // +0x24  float                    field_0x24  (evidence: 0x007C2E50, 0x007C9DF0) // CONFLICT: multiple definitions at +0x24
     // +0x24  uint32_t                 field_0x24  (evidence: 0x00710F10, 0x007D59C0) // CONFLICT: multiple definitions at +0x24
@@ -99,6 +100,7 @@ struct _unknown__Fields {
     // +0x9C  void* vtable slot (called with two zero args)  (evidence: 0x0042FD70)
     // +0xA0  void*                    field_0xA0  (evidence: 0x005480D0) // CONFLICT: multiple definitions at +0xA0
     // +0xA0  void*                    field_0xa0  (evidence: 0x00548240) // CONFLICT: multiple definitions at +0xA0
+    // +0xDC  int                      field_0xdc  (evidence: 0x004562F0)
     // +0xE0  void* embedded-object vptr slot (called with this=second object)  (evidence: 0x0042FD70)
     // +0xF0  uint32_t field_0xF0 (indexed array base, slots 0x00..0x11 at +0xF0..+0x128; index 0 never read)  (evidence: 0x007AA7F0, 0x007AA910, 0x007AC670)
     // +0x130 DWORD                    field_0x130  (evidence: 0x0065D0C0)
