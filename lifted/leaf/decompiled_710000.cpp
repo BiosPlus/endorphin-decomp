@@ -1834,3 +1834,15 @@ extern void __fastcall fn_00715450(void* self) {
     ext_0077FA20(self);
 }
 } // namespace lift_00715450
+
+// [0x0071B780]
+namespace lift_0071B780 {
+// @name scaleByClampedRatio
+// @summary Divides a double by the ratio of two unsigned 32-bit integers clamped to at least 1.
+double __stdcall sub_0071B780(uint32_t num, uint32_t den, double value) {
+    uint32_t clampedNum = (num >= 1u) ? num : 1u;
+    uint32_t clampedDen = (den >= 1u) ? den : 1u;
+    double ratio = static_cast<double>(clampedNum) / static_cast<double>(clampedDen);
+    return value / ratio;
+}
+} // namespace lift_0071B780

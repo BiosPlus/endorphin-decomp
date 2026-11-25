@@ -1,0 +1,13 @@
+{
+  "va": "0x0071B780",
+  "size": 96,
+  "orig_symbol": "sub_0071B780",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "scaleByClampedRatio",
+  "signature": "double __stdcall sub_0071B780(uint32_t num, uint32_t den, double value)",
+  "summary": "Divides a double by the ratio of two unsigned 32-bit integers clamped to at least 1.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:45:16Z"
+}
