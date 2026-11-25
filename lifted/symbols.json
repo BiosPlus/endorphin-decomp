@@ -9308,6 +9308,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).",
     "lifted_path": "lifted/leaf/tiny_480000.cpp"
   },
+  "0x0048FB80": {
+    "name": "allocArrayOf0x7C",
+    "signature": "void* fn_0048FB80(unsigned int count)",
+    "summary": "Allocates count * 0x7C bytes via MFC80 ord_762; throws std::exception(\"l{b\") when the size would overflow.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048FE80": {
     "name": "ExprParser::ReadMethodType\u003cGraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cGraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1\u003e",

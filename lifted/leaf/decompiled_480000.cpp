@@ -30,8 +30,10 @@ void fn_00480750(void* self) {
 #include <cstdint>
 #include <cstring>
 #include <utility>
+#include <cstddef>
+#include <stdexcept>
 
-// [0x0048CCA0] sub_0048CCA0 (27 bytes)
+#include <stdexcept>
 namespace lift_0048CCA0 {
 // @name sub_0048CCA0
 // @summary Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).
@@ -1280,3 +1282,29 @@ void fn_004890D0(std::string& a, std::string& b, std::string& c) {
     }
 }
 } // namespace lift_004890D0
+
+// [0x0048FB80] sub_0048FB80 (87 bytes)
+namespace lift_0048FB80 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void ext_006A5C62();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_00925130;
+
+// @name allocArrayOf0x7C
+// @summary Allocates count * 0x7C bytes via MFC80 ord_762; throws std::exception("l{b") when the size would overflow.
+void* fn_0048FB80(unsigned int count) {
+    using AllocFn = void* (*)(std::size_t);
+
+    std::size_t size = 0;
+    if (count != 0) {
+        // Overflow guard: if UINT_MAX / count < 0x7C, count * 0x7C does not fit.
+        const unsigned int limit = 0xFFFFFFFFu / count;
+        if (limit < 0x7Cu) {
+            throw std::length_error("l{b");
+        }
+        size = static_cast<std::size_t>(count) * 0x7Cu;
+    }
+    return reinterpret_cast<AllocFn>(ext_006A5C62)(size);
+}
+} // namespace lift_0048FB80
