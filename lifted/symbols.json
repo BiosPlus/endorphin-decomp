@@ -10513,6 +10513,13 @@
     "summary": "One-time guarded initializer for the static DWORD at mem_00ADAB74; returns its address.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x00490640": {
+    "name": "Unknown::initElementRange8_00490640",
+    "class": "Unknown",
+    "signature": "bool fn_00490640(void* self, uint32_t count)",
+    "summary": "Resets the three range pointers of an 8-byte element buffer and allocates `count` elements; returns false when count is 0.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00490920": {
     "name": "sub_00490920",
     "class": "Vector",

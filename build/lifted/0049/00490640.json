@@ -1,0 +1,34 @@
+{
+  "va": "0x00490640",
+  "size": 72,
+  "orig_symbol": "sub_00490640",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "Unknown::initElementRange8_00490640",
+  "class": "Unknown",
+  "signature": "bool fn_00490640(void* self, uint32_t count)",
+  "summary": "Resets the three range pointers of an 8-byte element buffer and allocates `count` elements; returns false when count is 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:06:37Z"
+}

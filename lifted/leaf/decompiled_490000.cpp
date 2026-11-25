@@ -1406,3 +1406,37 @@ void fn_004939B0(void* self) {
     dtor(base + 0x14);
 }
 } // namespace lift_004939B0
+
+// [0x00490640] sub_00490640 (72 bytes)
+namespace lift_00490640 {
+// Known callee 0x00405FB0: throwPreparedStringError_00405FB0 (Builds a std::string from the literal at 0x00928F30 and throws it inside an std::exception-derived object.)
+extern void ext_00405FB0();
+// Known callee 0x00519D50: AllocateElements8 (Allocates storage for `count` 8-byte elements; throws std::length_error if count*8 would overflow.)
+// The disassembly pushes a second zero argument before `count`; it is passed through unchanged here.
+extern void* ext_00519D50(uint32_t count, uint32_t zero_arg);
+
+// @name Unknown::initElementRange8_00490640
+// @class Unknown
+// @summary Resets the three range pointers of an 8-byte element buffer and allocates `count` elements; returns false when count is 0.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x0C void* field_0x0C
+bool fn_00490640(void* self, uint32_t count) {
+    lift_field<void*>(self, 4) = nullptr;
+    lift_field<void*>(self, 8) = nullptr;
+    lift_field<void*>(self, 12) = nullptr;
+
+    if (count == 0) {
+        return false;
+    }
+    if (count > 0x1FFFFFFFu) {
+        ext_00405FB0();
+    }
+
+    void* storage = ext_00519D50(count, 0);
+    lift_field<void*>(self, 4) = storage;
+    lift_field<void*>(self, 8) = storage;
+    lift_field<void*>(self, 12) = static_cast<uint8_t*>(storage) + static_cast<size_t>(count) * 8;
+    return true;
+}
+} // namespace lift_00490640
