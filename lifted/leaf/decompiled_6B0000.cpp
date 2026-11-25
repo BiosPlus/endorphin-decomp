@@ -1362,3 +1362,66 @@ void* __thiscall fn_006B1AA0(void* self, uint32_t arg0) {
     return self;
 }
 } // namespace lift_006B1AA0
+
+// [0x006B1C00] sub_006B1C00 (25 bytes)
+namespace lift_006B1C00 {
+// @name sub_006B1C00
+// @summary Auto-lifted identical-shape clone of 0x006B1AA0 (ctor_vtbl_00991768_with_arg).
+namespace lift_006B1AA0 {
+// @name ctor_vtbl_00991768_with_arg
+// @class Unknown
+// @summary Runs base constructor sub_006B0C40 on this with arg0, then overwrites the vtable pointer with 0x00991768 and returns this.
+// @field Unknown +0x00 uint32_t vtable
+
+// Known callee 0x006B0C40: sub_006B0C40 (Constructor that initializes vtable to 0x00991348, clears field_0x04, and stores arg0 at field_0x0c.)
+extern uint32_t __thiscall ext_006B0C40(void* self, uint32_t arg0);
+
+void* __thiscall fn_006B1C00(void* self, uint32_t arg0) {
+    ext_006B0C40(self, arg0);
+    lift_field<uint32_t>(self, 0x00) = 0x991784u;
+    return self;
+}
+} // namespace lift_006B1AA0
+} // namespace lift_006B1C00
+
+// [0x006B1E60] sub_006B1E60 (25 bytes)
+namespace lift_006B1E60 {
+// @name sub_006B1E60
+// @summary Auto-lifted identical-shape clone of 0x006B1AA0 (ctor_vtbl_00991768_with_arg).
+namespace lift_006B1AA0 {
+// @name ctor_vtbl_00991768_with_arg
+// @class Unknown
+// @summary Runs base constructor sub_006B0C40 on this with arg0, then overwrites the vtable pointer with 0x00991768 and returns this.
+// @field Unknown +0x00 uint32_t vtable
+
+// Known callee 0x006B0C40: sub_006B0C40 (Constructor that initializes vtable to 0x00991348, clears field_0x04, and stores arg0 at field_0x0c.)
+extern uint32_t __thiscall ext_006B0C40(void* self, uint32_t arg0);
+
+void* __thiscall fn_006B1E60(void* self, uint32_t arg0) {
+    ext_006B0C40(self, arg0);
+    lift_field<uint32_t>(self, 0x00) = 0x9917A0u;
+    return self;
+}
+} // namespace lift_006B1AA0
+} // namespace lift_006B1E60
+
+// [0x006B2400] sub_006B2400 (25 bytes)
+namespace lift_006B2400 {
+// @name sub_006B2400
+// @summary Auto-lifted identical-shape clone of 0x006B1AA0 (ctor_vtbl_00991768_with_arg).
+namespace lift_006B1AA0 {
+// @name ctor_vtbl_00991768_with_arg
+// @class Unknown
+// @summary Runs base constructor sub_006B0C40 on this with arg0, then overwrites the vtable pointer with 0x00991768 and returns this.
+// @field Unknown +0x00 uint32_t vtable
+
+// Known callee 0x006B0C40: sub_006B0C40 (Constructor that initializes vtable to 0x00991348, clears field_0x04, and stores arg0 at field_0x0c.)
+extern uint32_t __thiscall ext_006B0C40(void* self, uint32_t arg0);
+
+void* __thiscall fn_006B2400(void* self, uint32_t arg0) {
+    ext_006B0C40(self, arg0);
+    lift_field<uint32_t>(self, 0x00) = 0x9917F4u;
+    return self;
+}
+} // namespace lift_006B1AA0
+} // namespace lift_006B2400

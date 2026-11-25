@@ -52621,6 +52621,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006B1AC0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B1C00": {
+    "name": "sub_006B1C00",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_006B1C00(void* self, uint32_t arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B1AA0 (ctor_vtbl_00991768_with_arg).",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B1C20": {
     "name": "sub_006B1C20",
     "signature": "extern \"C\" void __fastcall fn_006B1C20(void* self)",
@@ -52633,6 +52640,13 @@
     "signature": "extern \"C\" void* __fastcall fn_006B1C30(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006B1C20 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x006B1E60": {
+    "name": "sub_006B1E60",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_006B1E60(void* self, uint32_t arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B1AA0 (ctor_vtbl_00991768_with_arg).",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
   "0x006B1E80": {
     "name": "sub_006B1E80",
@@ -52678,6 +52692,13 @@
     "signature": "extern \"C\" void* __fastcall fn_006B2280(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_006B2270 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x006B2400": {
+    "name": "sub_006B2400",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_006B2400(void* self, uint32_t arg0)",
+    "summary": "Auto-lifted identical-shape clone of 0x006B1AA0 (ctor_vtbl_00991768_with_arg).",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
   },
   "0x006B2420": {
     "name": "sub_006B2420",
