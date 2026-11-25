@@ -25067,6 +25067,13 @@
     "summary": "Calls virtual slot 0 on self four times (indices 3..6), passing (arg1, index, arg2) each time.",
     "lifted_path": "lifted/classes/AnimatableTransform.cpp"
   },
+  "0x0058A670": {
+    "name": "AnimatableTransform::vfunc_12_off_8",
+    "class": "AnimatableTransform",
+    "signature": "void fn_0058A670(void* self, uint32_t index, uint32_t arg2, uint32_t arg3)",
+    "summary": "Assigns a two-dword value into the 8-byte slot at this+0xEC[index], then, if the value's first dword is non-null, invokes its vtable slot 30 (+0x78) with \u0026index.",
+    "lifted_path": "lifted/classes/AnimatableTransform.cpp"
+  },
   "0x0058A8F0": {
     "name": "getTranslationX",
     "signature": "float __thiscall sub_0058A8F0(uintptr_t this_ptr)",

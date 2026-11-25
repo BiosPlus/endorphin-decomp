@@ -176,3 +176,31 @@ void fn_005936B0(void* self) {
     lift_field<float>(dst, 0x3C) = 1.0f;
 }
 } // namespace lift_005936B0
+
+// [0x0058A670] AnimatableTransform::vfunc_12_off_8 (94 bytes)
+namespace lift_0058A670 {
+// Known callee 0x0041CF50: Unknown::assignFromOther_0041CF50 (Self-assignment guarded copy: if other differs, releases the current field_0x04 via vtable slot 0x78, copies other's field_0x04, then sets field_0x00 to the value written by other's field_0x04 vtable slot 0x70 (0 when that pointer is null). Returns self.)
+extern void* ext_0041CF50(void* self, void* other);
+
+// @name AnimatableTransform::vfunc_12_off_8
+// @class AnimatableTransform
+// @summary Assigns a two-dword value into the 8-byte slot at this+0xEC[index], then, if the value's first dword is non-null, invokes its vtable slot 30 (+0x78) with &index.
+// @field AnimatableTransform +0xEC uint8_t field_0xEC // base of 8-byte element array indexed by arg1
+void fn_0058A670(void* self, uint32_t index, uint32_t arg2, uint32_t arg3) {
+    using VSlot30 = void (__thiscall*)(void* obj, uint32_t* idx);
+
+    auto* base = static_cast<uint8_t*>(self);
+    uint32_t value[2] = { arg2, arg3 };
+
+    void* element = base + 0xEC + static_cast<size_t>(index) * 8u;
+    ext_0041CF50(element, value);
+
+    auto* target = reinterpret_cast<void*>(static_cast<uintptr_t>(value[0]));
+    if (target != nullptr) {
+        void** vtable = *static_cast<void***>(target);
+        auto fn = reinterpret_cast<VSlot30>(vtable[0x78 / sizeof(void*)]);
+        uint32_t idx = index;
+        fn(target, &idx);
+    }
+}
+} // namespace lift_0058A670

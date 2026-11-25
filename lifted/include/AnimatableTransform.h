@@ -21,5 +21,6 @@ struct AnimatableTransform_Fields {
     // +0x10  void* subobject_0x10 (sub-object pointer read from field_0x04 + 0x10; class unknown)  (evidence: 0x00528C50)
     // +0xE0  uint32_t                 field_0xE0  (evidence: 0x00593680, 0x00593D00)
     // +0xE4  uint32_t                 field_0xE4  (evidence: 0x004020A0, 0x00593680, 0x00593D00)
+    // +0xEC  uint8_t                  field_0xEC  (evidence: 0x0058A670)
 };
 } // namespace lifted_layout
