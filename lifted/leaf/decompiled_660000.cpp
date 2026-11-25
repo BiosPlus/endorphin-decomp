@@ -2338,3 +2338,27 @@ void fn_00661920(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
     lift_vcall<void, 11>(sub, arg0, a1, a2, a3); // vtable +0x2C
 }
 } // namespace lift_00661920
+
+// [0x006629B0] sub_006629B0 (35 bytes)
+namespace lift_006629B0 {
+// IAT slots: mem_00924FF0 -> std::string::c_str, mem_009252E8 -> _stat64i32 (MSVCR80).
+extern int mem_00924FF0;
+extern int mem_009252E8;
+
+// @name fileExistsFromString
+// @summary Returns 1 if _stat64i32(c_str(*self), buf) succeeds (returns 0), else 0.
+int fn_006629B0(void* self) {
+    using CStrFn = const char* (__thiscall*)(void*);
+    using StatFn = int (__cdecl*)(const char*, void*);
+
+    // Call through the IAT slots exactly as the original does.
+    CStrFn c_str = *reinterpret_cast<CStrFn*>(&mem_00924FF0);
+    StatFn stat_fn = *reinterpret_cast<StatFn*>(&mem_009252E8);
+
+    unsigned char statbuf[0x30]; // original reserves 0x30 bytes of stack for the stat buffer
+
+    int r = stat_fn(c_str(self), statbuf);
+    // neg/sbb/add sequence: returns 1 when r == 0 (success), 0 otherwise.
+    return r == 0 ? 1 : 0;
+}
+} // namespace lift_006629B0

@@ -1,0 +1,13 @@
+{
+  "va": "0x006629B0",
+  "size": 35,
+  "orig_symbol": "sub_006629B0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "fileExistsFromString",
+  "signature": "int fn_006629B0(void* self)",
+  "summary": "Returns 1 if _stat64i32(c_str(*self), buf) succeeds (returns 0), else 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:15:34Z"
+}

@@ -44997,6 +44997,12 @@
     "summary": "Checks if a checked iterator points to the first element of its container",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x006629B0": {
+    "name": "fileExistsFromString",
+    "signature": "int fn_006629B0(void* self)",
+    "summary": "Returns 1 if _stat64i32(c_str(*self), buf) succeeds (returns 0), else 0.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x006629E0": {
     "name": "thunk_MSVCR80_remove",
     "signature": "extern \"C\" void fn_006629E0(void)",
