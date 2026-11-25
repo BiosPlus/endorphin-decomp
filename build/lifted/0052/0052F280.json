@@ -1,0 +1,27 @@
+{
+  "va": "0x0052F280",
+  "size": 87,
+  "orig_symbol": "sub_0052F280",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "allocAndInitAnimationDerived_0052F280",
+  "signature": "extern \"C\" void* fn_0052F280(void)",
+  "summary": "Allocates a 0x44-byte object, base-initializes it via ext_0053B240, then installs two vtable pointers; returns the object or null on allocation failure.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:01:18Z"
+}

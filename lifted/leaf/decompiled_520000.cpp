@@ -22,6 +22,7 @@ void* fn_0052EFC0() {
 } // namespace lift_0052EFC0
 #include <cstdint>
 #include <cstddef>
+#include <cstring>
 
 // [0x0052F020] sub_0052F020 (86 bytes)
 namespace lift_0052F020 {
@@ -1518,3 +1519,34 @@ void fn_0052F3C0(void* self) {
     ext_00539660(static_cast<uint8_t*>(self) + 0x3C);
 }
 } // namespace lift_0052F3C0
+
+// [0x0052F280] sub_0052F280 (87 bytes)
+namespace lift_0052F280 {
+// Known callee 0x0053B240: Unknown::initAnimationDerived_0053B240 (Base-initializes self, installs three 32-bit vtable pointers (+0x00, +0x14, +0x18), zeroes +0x1C/+0x20/+0x34/+0x38, then calls Animation::vfunc_29 to reset state; returns self.)
+extern void* __fastcall ext_0053B240(void* self);
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Disassembly shows one cdecl stack argument (0x44) and an EAX result, so it is
+// declared here as an allocator taking a byte count.
+extern void* __cdecl ext_006A5C62(uint32_t size);
+
+// @name allocAndInitAnimationDerived_0052F280
+// @summary Allocates a 0x44-byte object, base-initializes it via ext_0053B240, then installs two vtable pointers; returns the object or null on allocation failure.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x14 void* field_0x14
+extern void* fn_0052F280(void) {
+    void* obj = ext_006A5C62(0x44u);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+
+    ext_0053B240(obj);
+
+    const uint32_t vtbl_primary = 0x00953C64u;
+    const uint32_t vtbl_secondary = 0x00953C5Cu;
+    auto* base = static_cast<unsigned char*>(obj);
+    std::memcpy(base + 0x00, &vtbl_primary, sizeof(vtbl_primary));
+    std::memcpy(base + 0x14, &vtbl_secondary, sizeof(vtbl_secondary));
+
+    return obj;
+}
+} // namespace lift_0052F280
