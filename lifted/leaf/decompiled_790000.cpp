@@ -1030,3 +1030,23 @@ extern uint32_t __cdecl fn_0079EAC0(uint32_t a1) {
     return table[idx];
 }
 } // namespace lift_0079EAC0
+
+// [0x007911E0]
+namespace lift_007911E0 {
+// @name initFields
+// @summary Initializes six 32-bit fields on the object from three arguments and constants
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x2c uint32_t field_0x2c
+// @field Unknown +0x48 uint32_t field_0x48
+// @field Unknown +0x4c uint32_t field_0x4c
+// @field Unknown +0x50 uint32_t field_0x50
+// @field Unknown +0x60 uint32_t field_0x60
+void __thiscall sub_007911E0(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
+    lift_field<uint32_t>(self, 0x50) = a1;
+    lift_field<uint32_t>(self, 0x4c) = a3;
+    lift_field<uint32_t>(self, 0x48) = a2;
+    lift_field<uint32_t>(self, 0x60) = 1;
+    lift_field<uint32_t>(self, 0x28) = 0;
+    lift_field<uint32_t>(self, 0x2c) = 0;
+}
+} // namespace lift_007911E0
