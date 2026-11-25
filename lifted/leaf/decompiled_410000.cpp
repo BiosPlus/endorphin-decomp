@@ -2417,3 +2417,35 @@ uint8_t __thiscall fn_0041C880(uint32_t self, uint32_t index) {
     return 1;
 }
 } // namespace lift_0041C880
+
+// [0x00419840]
+namespace lift_00419840 {
+// @name Destructor_00419840
+// @summary Destructor restoring primary/secondary vtables and tearing down member subobjects and base class.
+// @field UnknownClass +0x00 uint32_t vtable_0x00
+// @field UnknownClass +0x74 uint32_t vtable_0x74
+// @field UnknownClass +0x114 uint32_t field_0x114
+// @field UnknownClass +0x11c uint8_t field_0x11c
+
+
+extern uint32_t mem_0092D1D4;
+extern uint32_t mem_0092D1A4;
+extern uint32_t mem_0092A23C;
+
+extern void __fastcall ext_0040EF90(void* self);
+extern void __fastcall ext_006A5FF2(void* self);
+extern void __fastcall ext_006A624A(void* self);
+
+extern void __fastcall fn_00419840(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x00) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_0092D1D4));
+    *reinterpret_cast<uint32_t*>(base + 0x74) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_0092D1A4));
+
+    ext_0040EF90(base + 0x11c);
+
+    *reinterpret_cast<uint32_t*>(base + 0x114) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_0092A23C));
+    ext_006A5FF2(base + 0x114);
+
+    ext_006A624A(self);
+}
+} // namespace lift_00419840
