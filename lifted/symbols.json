@@ -68912,6 +68912,13 @@
     "summary": "Runs the 0x007CC8E0 setup with the second argument and count 2, then stores the (a,x,y) vector and half its length into out; returns out.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CAF70": {
+    "name": "SceneNode::allocateAndStoreHalfLengthVector",
+    "class": "SceneNode",
+    "signature": "void fn_007CAF70(void* self, float a, float x, float y)",
+    "summary": "Requests a 0x20-byte block (count 0x10) through the allocator function stored at obj+0x08, where obj = self+0xB0; on success stores (a,x,y) and its half-length into it and returns it, else returns null.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CAFC0": {
     "name": "getField0x14Float",
     "signature": "float sub_007CAFC0(uint32_t obj)",
