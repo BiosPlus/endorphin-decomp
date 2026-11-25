@@ -17777,6 +17777,13 @@
     "summary": "Thunk for the PointainerWithUndo::Owner base at +0x38: recovers the InitialVariableValues this (ecx-0x38) and tail-dispatches vtable slot 23 (+0x5c) with argument 0, popping 8 bytes of args.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005272C0": {
+    "name": "InitialVariableValues::vfunc_25",
+    "class": "InitialVariableValues",
+    "signature": "std::string* fn_005272C0(void* self, std::string* out, void* /*unused*/, std::uint32_t index)",
+    "summary": "Returns a copy of the string reported by the element at the given index (vtable slot 9).",
+    "lifted_path": "lifted/classes/InitialVariableValues.cpp"
+  },
   "0x00527AF0": {
     "name": "vectorBackPtr",
     "signature": "uint32_t __thiscall sub_00527AF0(void* self)",

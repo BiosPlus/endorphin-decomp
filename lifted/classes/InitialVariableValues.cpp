@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/classes/InitialVariableValues.cpp
 #include "lift_compat.h"
+#include <new>
+#include <string>
 
-// [0x00507450] InitialVariableValues::vfunc_15 (57 bytes)
+#include <string>
 namespace lift_00507450 {
 // @name InitialVariableValues::vfunc_15
 // @class InitialVariableValues
@@ -27,3 +29,31 @@ uint32_t* fn_00507450(void* self, uint32_t* out, uint32_t key) {
 }
 } // namespace lift_0050AA70
 } // namespace lift_00507450
+
+// [0x005272C0] InitialVariableValues::vfunc_25 (76 bytes)
+namespace lift_005272C0 {
+// @name InitialVariableValues::vfunc_25
+// @class InitialVariableValues
+// @summary Returns a copy of the string reported by the element at the given index (vtable slot 9).
+// @field InitialVariableValues +0x40 void** elemsBegin
+// @field InitialVariableValues +0x44 void** elemsEnd
+std::string* fn_005272C0(void* self, std::string* out, void* /*unused*/, std::uint32_t index) {
+    using StringGetter = const std::string* (*)(void*);
+
+    const std::uintptr_t begin = lift_field<std::uint32_t>(self, 0x40);
+    const std::uintptr_t end   = lift_field<std::uint32_t>(self, 0x44);
+
+    // Original: null storage or index past the end -> _invalid_parameter_noinfo (no return).
+    if (begin == 0 || index >= (end - begin) / sizeof(void*)) {
+        std::abort();
+    }
+
+    void* elem = reinterpret_cast<void**>(begin)[index];
+    void** vtable = *reinterpret_cast<void***>(elem);
+    auto getter = reinterpret_cast<StringGetter>(vtable[0x24 / sizeof(void*)]);
+    const std::string* src = getter(elem);
+
+    new (out) std::string(*src);
+    return out;
+}
+} // namespace lift_005272C0
