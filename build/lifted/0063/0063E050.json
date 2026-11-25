@@ -1,0 +1,34 @@
+{
+  "va": "0x0063E050",
+  "size": 102,
+  "orig_symbol": "sub_0063E050",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "CharRangeView::copyTrimmedTail",
+  "class": "CharRangeView",
+  "signature": "void fn_0063E050(void* self, std::string\u0026 out, int skip)",
+  "summary": "Assigns to out the bytes from this view's begin pointer up to the owner's end pointer, minus skip bytes.",
+  "fields": [
+    {
+      "class": "CharRangeView",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "owner"
+    },
+    {
+      "class": "CharRangeView",
+      "offset": "+0x4",
+      "type": "const char*",
+      "name": "begin"
+    },
+    {
+      "class": "TextBuffer",
+      "offset": "+0x8",
+      "type": "const char*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:45:30Z"
+}

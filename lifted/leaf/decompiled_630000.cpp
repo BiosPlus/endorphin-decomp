@@ -24,8 +24,10 @@ void* fn_00630E60(void* self) {
     return subobject;
 }
 } // namespace lift_00630E60
+#include <cstddef>
+#include <cstdint>
 
-// [0x0063E240] sub_0063E240 (32 bytes)
+#include <cstdint>
 namespace lift_0063E240 {
 // @name sub_0063E240
 // @summary Auto-lifted identical-shape clone of 0x004F27E0 (descriptiveName_004F27E0).
@@ -999,3 +1001,21 @@ void* __thiscall fn_0063E5B0(void* self, const void* arg0, const void* arg1) {
     return self;
 }
 } // namespace lift_0063E5B0
+
+// [0x0063E050] sub_0063E050 (102 bytes)
+namespace lift_0063E050 {
+// @name CharRangeView::copyTrimmedTail
+// @class CharRangeView
+// @summary Assigns to out the bytes from this view's begin pointer up to the owner's end pointer, minus skip bytes.
+// @field CharRangeView +0x00 void* owner
+// @field CharRangeView +0x04 const char* begin
+// @field TextBuffer +0x08 const char* end
+void fn_0063E050(void* self, std::string& out, int skip) {
+    const char* begin = lift_field<const char*>(self, 4);
+    void* owner = lift_field<void*>(self, 0);
+    const char* end = lift_field<const char*>(owner, 8);
+
+    const auto count = static_cast<uint32_t>(end - begin) - static_cast<uint32_t>(skip);
+    out = std::string(begin, count);
+}
+} // namespace lift_0063E050

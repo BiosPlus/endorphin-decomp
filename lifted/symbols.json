@@ -39635,6 +39635,13 @@
     "summary": "IAT jump thunk forwarding to GLU32!gluPerspective.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0063E050": {
+    "name": "CharRangeView::copyTrimmedTail",
+    "class": "CharRangeView",
+    "signature": "void fn_0063E050(void* self, std::string\u0026 out, int skip)",
+    "summary": "Assigns to out the bytes from this view's begin pointer up to the owner's end pointer, minus skip bytes.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063E0C0": {
     "name": "Unknown::Unknown(uint32_t, const std::string\u0026) (string-copy ctor stub)",
     "class": "\u003cunknown\u003e (this is in ecx; owning class not yet recovered)",
