@@ -1,0 +1,13 @@
+{
+  "va": "0x006D97C0",
+  "size": 64,
+  "orig_symbol": "sub_006D97C0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "LookupValueByKey",
+  "signature": "uint32_t fn_006D97C0(uint32_t key)",
+  "summary": "Scans a 12-entry table (32-byte stride, base 0x00B5D91C) for an entry whose dword key matches the argument and whose flag byte is nonzero; returns that entry's dword value, else 6.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:07:12Z"
+}

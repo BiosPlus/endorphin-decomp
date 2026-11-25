@@ -46645,6 +46645,12 @@
     "summary": "Virtual dispatch thunk: forwards to vtable slot at +0x12C.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D97C0": {
+    "name": "LookupValueByKey",
+    "signature": "uint32_t fn_006D97C0(uint32_t key)",
+    "summary": "Scans a 12-entry table (32-byte stride, base 0x00B5D91C) for an entry whose dword key matches the argument and whose flag byte is nonzero; returns that entry's dword value, else 6.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D98D0": {
     "name": "sub_006D98D0",
     "signature": "extern \"C\" int32_t __cdecl fn_006D98D0(void)",

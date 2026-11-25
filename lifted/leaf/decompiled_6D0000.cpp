@@ -1072,3 +1072,26 @@ int fn_006D8FD0(void* self, uint32_t a1, uint32_t a2) {
     return 1;
 }
 } // namespace lift_006D8FD0
+
+// [0x006D97C0] sub_006D97C0 (64 bytes)
+namespace lift_006D97C0 {
+extern uint8_t& mem_u8(uint32_t addr);
+extern uint32_t& mem_u32(uint32_t addr);
+
+// @name LookupValueByKey
+// @summary Scans a 12-entry table (32-byte stride, base 0x00B5D91C) for an entry whose dword key matches the argument and whose flag byte is nonzero; returns that entry's dword value, else 6.
+uint32_t fn_006D97C0(uint32_t key) {
+    constexpr uint32_t kBase = 0x00B5D91C;
+    constexpr uint32_t kStride = 0x20;
+    constexpr uint32_t kCount = 0x0C;
+    constexpr uint32_t kDefault = 0x6;
+
+    for (uint32_t i = 0; i < kCount; ++i) {
+        const uint32_t entry = kBase + i * kStride;
+        if (mem_u32(entry + 0x04) == key && mem_u8(entry + 0x0D) != 0) {
+            return mem_u32(entry);
+        }
+    }
+    return kDefault;
+}
+} // namespace lift_006D97C0
