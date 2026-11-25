@@ -1,0 +1,13 @@
+{
+  "va": "0x004A6060",
+  "size": 90,
+  "orig_symbol": "sub_004A6060",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "lowerBoundProjected",
+  "signature": "uint32_t* fn_004A6060(uint32_t* first, uint32_t* last, uint32_t key)",
+  "summary": "std::lower_bound-style binary search over a 32-bit element array, comparing projected element against key; returns first index not less than key.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:18:17Z"
+}

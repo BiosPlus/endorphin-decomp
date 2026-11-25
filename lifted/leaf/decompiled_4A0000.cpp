@@ -549,3 +549,33 @@ extern void __fastcall fn_004AFE50(void* self) {
     fn_00665810(self);
 }
 } // namespace lift_004AFE50
+
+// [0x004A6060] sub_004A6060 (90 bytes)
+namespace lift_004A6060 {
+// Known callee 0x00644F20: forwardVCall24 (Dereferences the inner object at +0x00 and tail-calls its vtable slot +0x24)
+extern uint32_t ext_00644F20(uint32_t obj, uint32_t key);
+// Import slot for an MSVCP80 std::string operator< (const string&, const string&) -> bool
+extern int mem_00924EF4;
+
+using StringLessFn = bool (*)(uint32_t, uint32_t);
+
+// @name lowerBoundProjected
+// @summary std::lower_bound-style binary search over a 32-bit element array, comparing projected element against key; returns first index not less than key.
+// (no struct field offsets accessed)
+uint32_t* fn_004A6060(uint32_t* first, uint32_t* last, uint32_t key) {
+    const StringLessFn less = reinterpret_cast<StringLessFn>(static_cast<uintptr_t>(mem_00924EF4));
+    ptrdiff_t count = last - first;
+    while (count > 0) {
+        const ptrdiff_t half = count / 2;
+        uint32_t* mid = first + half;
+        const uint32_t projected = ext_00644F20(*mid, key);
+        if (less(projected, key)) {
+            first = mid + 1;
+            count -= half + 1;
+        } else {
+            count = half;
+        }
+    }
+    return first;
+}
+} // namespace lift_004A6060
