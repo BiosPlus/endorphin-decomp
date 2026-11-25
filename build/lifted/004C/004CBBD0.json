@@ -1,0 +1,22 @@
+{
+  "va": "0x004CBBD0",
+  "size": 60,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData\u003e::getPositionStrengthFromFSM_vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0\u003e",
+  "signature": "void fn_004CBBD0(void* arg1, void* arg2)",
+  "summary": "Reads the slot at arg2; if it is non-null, resolves the field address via ext_004CB3E0 and reports it through ext_0046C4E0; then always constructs a DerivedException and throws it.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData\u003e",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T05:00:10Z"
+}

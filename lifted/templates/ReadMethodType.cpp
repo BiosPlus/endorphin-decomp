@@ -56406,3 +56406,34 @@ void fn_0062E4B0(void* arg1, void** arg2) {
     ext_006A6DD2(exception, reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
 }
 } // namespace lift_0062E4B0
+
+// [0x004CBBD0] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0>::vfunc_4 (60 bytes)
+namespace lift_004CBBD0 {
+// Known callee 0x004CB3E0: Unknown::GetFieldOr0x188Address (Returns (cached field at +0x180) + 0x18 if non-null; otherwise returns the address of the embedded slot at +0x188.)
+extern DWORD ext_004CB3E0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Call site pushes two stack arguments (value from ext_004CB3E0, then arg1); the table signature lists none, so both are declared here to match the call site.
+extern void ext_0046C4E0(DWORD value, void* ctx);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw-info / type descriptor referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData>::getPositionStrengthFromFSM_vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0>
+// @summary Reads the slot at arg2; if it is non-null, resolves the field address via ext_004CB3E0 and reports it through ext_0046C4E0; then always constructs a DerivedException and throws it.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyConstraintData> +0x00 DWORD field_0x00
+void fn_004CBBD0(void* arg1, void* arg2) {
+    DWORD first = *static_cast<DWORD*>(arg2);
+    if (first != 0) {
+        DWORD resolved = ext_004CB3E0(arg2);
+        ext_0046C4E0(resolved, arg1);
+    }
+
+    alignas(8) unsigned char exception_object[0x28];
+    ext_0046C3C0(exception_object);
+    ext_006A6DD2(exception_object, mem_009DEC1C);
+}
+} // namespace lift_004CBBD0
