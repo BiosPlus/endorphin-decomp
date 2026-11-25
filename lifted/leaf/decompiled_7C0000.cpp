@@ -1490,7 +1490,7 @@ extern const char mem_0099D228[];
 extern const char mem_009548E8[];
 
 // @name DestroyGeometryList
-// @summary Walks the circular node list at self+0x0C, releasing each node whose flag bits are clear; reports an error if the list does not drain within 101 passes.
+// @summary Walks the linked node list at self+0x0C, releasing each node whose flag bits are clear; reports an error if the list does not drain within about 101 passes.
 // @field Unknown +0x0C void* field_0x0C
 // @field Unknown +0xB0 uint32_t field_0xB0
 // @field ListNode +0x08 void* field_0x08
