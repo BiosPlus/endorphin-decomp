@@ -2183,3 +2183,26 @@ void sub_00641F10(uint32_t str_ptr) {
     }
 }
 } // namespace lift_00641F10
+
+// [0x00640740]
+namespace lift_00640740 {
+// @name sub_00640740
+// @summary Allocates a 0x3C-byte object, constructs it with arg0 and (self + 0x04), registers it via ext_006406D0, and returns it.
+// @field unknown +0x04 uint8_t field_0x04
+
+
+extern void* __cdecl ext_006A5C62(uint32_t size);
+extern void* __thiscall ext_0063F600(void* self, uint32_t arg1, uint32_t arg2);
+extern void __thiscall ext_006406D0(void* self, uint32_t arg0);
+
+void* __thiscall fn_00640740(void* self, uint32_t arg0) {
+    void* mem = ext_006A5C62(0x3C);
+    void* obj = nullptr;
+    if (mem != nullptr) {
+        uint32_t field_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(static_cast<uint8_t*>(self) + 0x04));
+        obj = ext_0063F600(mem, arg0, field_ptr);
+    }
+    ext_006406D0(self, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj)));
+    return obj;
+}
+} // namespace lift_00640740

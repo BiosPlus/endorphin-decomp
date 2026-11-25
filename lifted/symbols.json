@@ -44616,6 +44616,12 @@
     "summary": "Iterates over vector of objects at +0x24, calls vtable+0x10 on each with arg0, and passes result to ext_00640240.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00640740": {
+    "name": "sub_00640740",
+    "signature": "void* __thiscall fn_00640740(void* self, uint32_t arg0)",
+    "summary": "Allocates a 0x3C-byte object, constructs it with arg0 and (self + 0x04), registers it via ext_006406D0, and returns it.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x006407B0": {
     "name": "AdvXMLParser::Attribute::vfunc_4",
     "class": "AdvXMLParser::Attribute",
