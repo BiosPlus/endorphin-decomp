@@ -55535,6 +55535,13 @@
     "summary": "Stores -(*_HUGE) into four consecutive double globals.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D7880": {
+    "name": "Unknown::ConstructWithEmbeddedBuffer",
+    "class": "Unknown",
+    "signature": "void* fn_006D7880(void* self, uint32_t arg1)",
+    "summary": "Constructs the object: runs the base constructor, initializes the 20-byte sub-object at +0x28 (count 0x100, element size 0x20), points its +0x14 field at its own embedded buffer at +0x38, sets the vtable, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D78F0": {
     "name": "sub_006D78F0",
     "signature": "extern \"C\" void* __fastcall fn_006D78F0(void* self, int edx_unused, unsigned int flags)",

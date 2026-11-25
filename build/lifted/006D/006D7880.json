@@ -1,0 +1,34 @@
+{
+  "va": "0x006D7880",
+  "size": 98,
+  "orig_symbol": "sub_006D7880",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "Unknown::ConstructWithEmbeddedBuffer",
+  "class": "Unknown",
+  "signature": "void* fn_006D7880(void* self, uint32_t arg1)",
+  "summary": "Constructs the object: runs the base constructor, initializes the 20-byte sub-object at +0x28 (count 0x100, element size 0x20), points its +0x14 field at its own embedded buffer at +0x38, sets the vtable, and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "struct_006D2130",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "embeddedBufferPtr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:47:30Z"
+}

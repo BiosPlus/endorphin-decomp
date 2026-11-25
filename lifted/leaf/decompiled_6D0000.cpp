@@ -1743,3 +1743,32 @@ void* __thiscall fn_006D48D0(void* self) {
 }
 } // namespace lift_006D4140
 } // namespace lift_006D48D0
+
+// [0x006D7880] sub_006D7880 (98 bytes)
+namespace lift_006D7880 {
+// Known callee 0x006FD3A0: sub_006FD3A0 (Constructor calling base constructor, zeroing +0x0C, initializing embedded array/buffer at +0x10, and setting vtable.)
+extern uint32_t __thiscall ext_006FD3A0(void* self, uint32_t arg1);
+// Known callee 0x006D2130: sub_006D2130 (Initializes a 20-byte struct with zeroed fields, a clamped minimum-1 count at +0x08, and arg2 at +0x0C, returning this.)
+extern uint32_t __thiscall ext_006D2130(void* self, int32_t arg1, uint32_t arg2);
+
+// @name Unknown::ConstructWithEmbeddedBuffer
+// @class Unknown
+// @summary Constructs the object: runs the base constructor, initializes the 20-byte sub-object at +0x28 (count 0x100, element size 0x20), points its +0x14 field at its own embedded buffer at +0x38, sets the vtable, and returns this.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x28 struct_006D2130 field_0x28
+// @field Unknown +0x3C uint32_t embeddedBufferPtr
+void* fn_006D7880(void* self, uint32_t arg1) {
+    ext_006FD3A0(self, arg1);
+
+    // Sub-object at this+0x28, initialized as 0x100 elements of size 0x20.
+    void* sub = static_cast<uint8_t*>(self) + 0x28;
+    ext_006D2130(sub, 0x100, 0x20);
+
+    // Self-pointer to the embedded buffer at sub+0x10 (this+0x38), stored at this+0x3C.
+    lift_field<uint32_t>(self, 0x3C) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(static_cast<uint8_t*>(self) + 0x38));
+
+    lift_field<uint32_t>(self, 0x00) = 0x0099396C;
+    return self;
+}
+} // namespace lift_006D7880
