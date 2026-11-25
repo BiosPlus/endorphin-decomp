@@ -546,3 +546,38 @@ extern uint32_t fn_0080F440(int32_t arg) {
     return remaining == 0 ? 1u : 0u;
 }
 } // namespace lift_0080F440
+
+// [0x0080EC60] sub_0080EC60 (64 bytes)
+namespace lift_0080EC60 {
+// Known callee 0x0080EBB0: sub_0080EBB0 (Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).)
+extern void* ext_0080EBB0(void* dst, const void* src, size_t n);
+
+// @name ConsumeDollarPrefixedOffset
+// @summary Reads a 32-bit base-relative offset at cursor, calls ext_0080EBB0 to copy 10 bytes to base+offset; if the byte at cursor is '$', advances the cursor past it and returns (copy result - 1), else returns -1.
+extern int32_t __cdecl fn_0080EC60(uint32_t base, uint32_t cursor) {
+    // Guest-style 32-bit addresses; memory accessed through host pointers.
+    uint8_t* const base_ptr = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(base));
+    uint32_t cursor_arg = cursor;
+
+    // Dword stored at the cursor, relative to base.
+    uint32_t offset = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(cursor_arg));
+    uint32_t dst_addr = offset + base;
+
+    // The callee receives the address of the cursor argument slot as its source.
+    void* ret = ext_0080EBB0(reinterpret_cast<void*>(static_cast<uintptr_t>(dst_addr)),
+                             static_cast<const void*>(&cursor_arg),
+                             10u);
+    uint32_t result = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(ret));
+
+    if (result != 0u) {
+        uint32_t rel = cursor_arg - base;
+        if (base_ptr[rel] == 0x24u) {  // '$'
+            uint32_t next = rel + 1u;
+            result -= 1u;
+            *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(cursor_arg)) = next;
+            return static_cast<int32_t>(result);
+        }
+    }
+    return -1;
+}
+} // namespace lift_0080EC60
