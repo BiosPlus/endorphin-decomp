@@ -2397,3 +2397,42 @@ void fn_0050FD30(const uint8_t** arr, int32_t hole, int32_t top, const uint8_t* 
     ext_0050FA40(arr, h, origHole, val);
 }
 } // namespace lift_0050FD30
+
+// [0x005053D0]
+namespace lift_005053D0 {
+// @name reserveRecordArray_005053D0
+// @class Unknown
+// @summary Clears three pointer slots of the object, then if count is nonzero allocates count records of 0x68 bytes and stores begin/end/capacity; returns true on success.
+// @field Unknown +0x04 void* field_0x04 (begin)
+// @field Unknown +0x08 void* field_0x08 (end)
+// @field Unknown +0x0C void* field_0x0C (capacity end)
+
+[[noreturn]] void ext_00405FB0();
+void* ext_00486EA0(uint32_t count);
+
+bool fn_005053D0(uint8_t* self, uint32_t count) {
+    void** field_0x04 = reinterpret_cast<void**>(self + 0x04);
+    void** field_0x08 = reinterpret_cast<void**>(self + 0x08);
+    void** field_0x0C = reinterpret_cast<void**>(self + 0x0C);
+
+    *field_0x04 = nullptr;
+    *field_0x08 = nullptr;
+    *field_0x0C = nullptr;
+
+    if (count == 0) {
+        return false;
+    }
+
+    if (count > 0x2762762u) {
+        ext_00405FB0();
+    }
+
+    uint8_t* base = static_cast<uint8_t*>(ext_00486EA0(count));
+    uint8_t* stop = base + static_cast<uint32_t>(count * 0x68u);
+
+    *field_0x04 = base;
+    *field_0x08 = base;
+    *field_0x0C = stop;
+    return true;
+}
+} // namespace lift_005053D0

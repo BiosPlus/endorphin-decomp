@@ -136,6 +136,7 @@ struct Unknown_Fields {
     // +0x3   uint8_t                  field_0x03  (evidence: 0x007148A0, 0x007148E0, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x3
     // +0x4   std::string field_0x04 (token string read after ':')  (evidence: 0x00566F70) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04      (begin)  (evidence: 0x0051DE50) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void* field_0x04         (begin)  (evidence: 0x005053D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t openFlag         (inner+0x04)  (evidence: 0x007833F0, 0x00788E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (arg2: sub-object pointer read at +0x4)  (evidence: 0x005F35D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (array begin pointer; element stride 0x68)  (evidence: 0x00503BC0, 0x00505D00, 0x0050C4D0) // CONFLICT: multiple definitions at +0x4
@@ -238,6 +239,7 @@ struct Unknown_Fields {
     // +0x7   BYTE                     field_0x07  (evidence: 0x004E9BB0, 0x006F8B30, 0x006FC200) // CONFLICT: multiple definitions at +0x7
     // +0x7   uint8_t                  field_0x07  (evidence: 0x006F0120, 0x006F01A0, 0x006F0220, 0x006F08E0, 0x006F1120, 0x006F8AF0, 0x006FC200) // CONFLICT: multiple definitions at +0x7
     // +0x8   uint32_t field_0x08      (end)  (evidence: 0x0051DE50) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void* field_0x08         (end)  (evidence: 0x005053D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void* field_0x08 (child pointer table base; element i at +0x08 + 60*i)  (evidence: 0x00540D00, 0x005457B0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 arg  (evidence: 0x004F0A90) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 begin  (evidence: 0x00412E20) // CONFLICT: multiple definitions at +0x8
@@ -317,6 +319,7 @@ struct Unknown_Fields {
     // +0xC   uint32_t                 embedded_array_base  (evidence: 0x006E99C0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 end  (evidence: 0x00412E20) // CONFLICT: multiple definitions at +0xC
     // +0xC   void**                   end  (evidence: 0x005432A0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void* field_0x0C (capacity end)  (evidence: 0x005053D0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint8_t*                 entriesCapacity  (evidence: 0x00688B50, 0x0068BDF0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 entry_value  (evidence: 0x006FC6E0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t field_0x0C (accessed on the subobject returned by ext_0071E680)  (evidence: 0x00711DC0, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0xC

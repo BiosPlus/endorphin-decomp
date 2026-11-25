@@ -18860,6 +18860,13 @@
     "summary": "Copy assignment operator copying a string, two 32-bit fields, and ten floats",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x005053D0": {
+    "name": "reserveRecordArray_005053D0",
+    "class": "Unknown",
+    "signature": "bool fn_005053D0(uint8_t* self, uint32_t count)",
+    "summary": "Clears three pointer slots of the object, then if count is nonzero allocates count records of 0x68 bytes and stores begin/end/capacity; returns true on success.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00505510": {
     "name": "ExprParser::ReadMethodType\u003cInterpreter\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e",
