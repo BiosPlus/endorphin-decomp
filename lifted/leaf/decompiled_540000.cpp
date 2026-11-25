@@ -1118,3 +1118,29 @@ void __thiscall sub_00545BE0(void* self, float* out, int32_t index, float value)
     out[index - 3] = 1.0f;
 }
 } // namespace lift_00545BE0
+
+// [0x00545940] sub_00545940 (103 bytes)
+namespace lift_00545940 {
+// Known callee 0x005436B0: sub_005436B0 (base-class style initializer; takes this + two stack args, callee-cleans).
+extern void* ext_005436B0(void* self, uint32_t a1, uint32_t a2);
+// Known callee 0x00537E50: sub_00537E50 (initializes the subobject at this+0x9c).
+extern void ext_00537E50(void* self);
+// Known callee 0x00545840: sub_00545840 (pure jump thunk forwarding to sub_00543350).
+extern void ext_00545840(void* self);
+// Vtable address stored at object +0x00.
+extern int mem_00956944;
+
+// @name Unknown::InitWithArgsAndSubobject9C
+// @class Unknown
+// @summary Constructor-style init: runs base init with two args, initializes subobject at +0x9C, sets vtable at +0x00, runs sub_00545840, and returns this.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x9C uint8_t field_0x9c
+void* fn_00545940(void* self, uint32_t a1, uint32_t a2) {
+    ext_005436B0(self, a1, a2);
+    void* sub = static_cast<uint8_t*>(self) + 0x9C;
+    *reinterpret_cast<void**>(self) = static_cast<void*>(&mem_00956944);
+    ext_00537E50(sub);
+    ext_00545840(self);
+    return self;
+}
+} // namespace lift_00545940

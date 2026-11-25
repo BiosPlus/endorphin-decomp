@@ -1,0 +1,28 @@
+{
+  "va": "0x00545940",
+  "size": 103,
+  "orig_symbol": "sub_00545940",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::InitWithArgsAndSubobject9C",
+  "class": "Unknown",
+  "signature": "void* fn_00545940(void* self, uint32_t a1, uint32_t a2)",
+  "summary": "Constructor-style init: runs base init with two args, initializes subobject at +0x9C, sets vtable at +0x00, runs sub_00545840, and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x9C",
+      "type": "uint8_t",
+      "name": "field_0x9c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:47:09Z"
+}

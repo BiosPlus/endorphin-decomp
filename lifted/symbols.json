@@ -23172,6 +23172,13 @@
     "summary": "Pure jump thunk forwarding to sub_00543350.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00545940": {
+    "name": "Unknown::InitWithArgsAndSubobject9C",
+    "class": "Unknown",
+    "signature": "void* fn_00545940(void* self, uint32_t a1, uint32_t a2)",
+    "summary": "Constructor-style init: runs base init with two args, initializes subobject at +0x9C, sets vtable at +0x00, runs sub_00545840, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x005459B0": {
     "name": "JointTool::vfunc_1",
     "class": "JointTool",
