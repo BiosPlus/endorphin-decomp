@@ -2535,3 +2535,25 @@ void* fn_00620F80(void* self, const void* src) {
     return self;
 }
 } // namespace lift_00620F80
+
+// [0x00621130] sub_00621130 (95 bytes)
+namespace lift_00621130 {
+extern void* __cdecl ext_00621090(void* first, void* last, void* dst_last);
+
+// @name RebaseAfterCopyBackward_00621130
+// @summary Backward-copies records [first, last) via sub_00621090, then returns dst_last minus the record-aligned byte span (0x48-byte records).
+
+extern void* __cdecl fn_00621130(void* first, void* last, void* dst_last) {
+    ext_00621090(first, last, dst_last);
+
+    const std::uintptr_t first_u = reinterpret_cast<std::uintptr_t>(first);
+    const std::uintptr_t last_u = reinterpret_cast<std::uintptr_t>(last);
+    const std::uintptr_t dst_u = reinterpret_cast<std::uintptr_t>(dst_last);
+
+    // Signed 32-bit byte span; truncating division by the 0x48-byte record size.
+    const std::int32_t span = static_cast<std::int32_t>(last_u - first_u);
+    const std::int32_t record_bytes = (span / 72) * 72;
+
+    return reinterpret_cast<void*>(dst_u - static_cast<std::uintptr_t>(static_cast<std::int64_t>(record_bytes)));
+}
+} // namespace lift_00621130
