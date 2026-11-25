@@ -1,0 +1,28 @@
+{
+  "va": "0x0050BE20",
+  "size": 90,
+  "orig_symbol": "sub_0050BE20",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "Vector_eraseTailChecked",
+  "class": "Vector",
+  "signature": "void fn_0050BE20(void* self)",
+  "summary": "Validates the vector's begin/end/bound pointers, deletes the owned elements through ext_00536230, then erases the tail range via ext_00596660.",
+  "fields": [
+    {
+      "class": "Vector",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Vector",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:18:31Z"
+}

@@ -8,7 +8,9 @@
 // Recovered field layout for Vector:
 namespace lifted_layout {
 struct Vector_Fields {
-    // +0x4   uint32_t                 begin  (evidence: 0x00527AF0)
-    // +0x8   uint32_t                 end  (evidence: 0x00527AF0, 0x00596660)
+    // +0x4   uint32_t                 begin  (evidence: 0x00527AF0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x0050BE20) // CONFLICT: multiple definitions at +0x4
+    // +0x8   uint32_t                 end  (evidence: 0x00527AF0, 0x00596660) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x0050BE20) // CONFLICT: multiple definitions at +0x8
 };
 } // namespace lifted_layout

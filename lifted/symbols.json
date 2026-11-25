@@ -18293,6 +18293,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0054F290 (Unknown::RelocateRangeBackwardWrapper_0054F290).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x0050BE20": {
+    "name": "Vector_eraseTailChecked",
+    "class": "Vector",
+    "signature": "void fn_0050BE20(void* self)",
+    "summary": "Validates the vector's begin/end/bound pointers, deletes the owned elements through ext_00536230, then erases the tail range via ext_00596660.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050BFE0": {
     "name": "sub_0050BFE0",
     "signature": "extern \"C\" void fn_0050BFE0(void)",
