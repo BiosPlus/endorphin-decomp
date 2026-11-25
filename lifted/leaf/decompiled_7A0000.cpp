@@ -1191,3 +1191,29 @@ extern void __fastcall fn_007AE3C0(void* self, void* /*edx*/, void* container, i
     processIds(self, buf, count);
 }
 } // namespace lift_007AE3C0
+
+// [0x007AEBA0]
+namespace lift_007AEBA0 {
+// @name Unknown_007AEBA0::Unknown_007AEBA0
+// @class Unknown_007AEBA0
+// @summary Constructor: runs the embedded-subobject init via ext_007831E0, sets the vtable to 0x00998A30, zeroes the fields at +0x58/+0x5C/+0x60, and returns this.
+// @field Unknown_007AEBA0 +0x00 void* __vftable vtable
+// @field Unknown_007AEBA0 +0x58 uint32_t field_0x58
+// @field Unknown_007AEBA0 +0x5C uint32_t field_0x5C
+// @field Unknown_007AEBA0 +0x60 uint32_t field_0x60
+
+
+extern void* __fastcall ext_007831E0(void* ecx);
+
+extern void* __fastcall fn_007AEBA0(void* ecx) {
+    uint8_t* self = static_cast<uint8_t*>(ecx);
+    ext_007831E0(ecx);
+
+    uint32_t zero = 0;
+    *reinterpret_cast<uint32_t*>(self + 0x00) = 0x00998A30;
+    *reinterpret_cast<uint32_t*>(self + 0x58) = zero;
+    *reinterpret_cast<uint32_t*>(self + 0x5C) = zero;
+    *reinterpret_cast<uint32_t*>(self + 0x60) = zero;
+    return self;
+}
+} // namespace lift_007AEBA0

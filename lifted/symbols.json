@@ -66890,6 +66890,13 @@
     "summary": "Collects int32_t values from elements of a container via vtable calls and forwards the array to self's vtable+0x14 method.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AEBA0": {
+    "name": "Unknown_007AEBA0::Unknown_007AEBA0",
+    "class": "Unknown_007AEBA0",
+    "signature": "extern \"C\" void* __fastcall fn_007AEBA0(void* ecx)",
+    "summary": "Constructor: runs the embedded-subobject init via ext_007831E0, sets the vtable to 0x00998A30, zeroes the fields at +0x58/+0x5C/+0x60, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AEBC0": {
     "name": "sub_007AEBC0",
     "signature": "extern \"C\" void* __fastcall fn_007AEBC0(void* self, int edx_unused, unsigned int flags)",
