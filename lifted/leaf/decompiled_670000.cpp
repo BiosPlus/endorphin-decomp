@@ -1224,3 +1224,26 @@ void* fn_00674EC0() {
 }
 } // namespace lift_004CAE30
 } // namespace lift_00674EC0
+
+// [0x00670FD0]
+namespace lift_00670FD0 {
+// @name Unknown::ctor_00670FD0
+// @class Unknown
+// @summary Initializes base object, sets vtable pointers at +0x0 and +0x4, constructs subobject at +0x8, and returns self.
+// @field Unknown +0x00 uint32_t vptr_0x00
+// @field Unknown +0x04 uint32_t vptr_0x04
+// @field Unknown +0x08 uint8_t subobject_0x08
+
+
+extern void ext_0067A670(void* self);
+extern void* ext_00670EC0(void* self);
+
+void* fn_00670FD0(void* self) {
+    uint8_t* p = static_cast<uint8_t*>(self);
+    ext_0067A670(self);
+    *reinterpret_cast<uint32_t*>(p + 0x0) = 0x0098B9FCu;
+    *reinterpret_cast<uint32_t*>(p + 0x4) = 0x0098B9C8u;
+    ext_00670EC0(p + 0x8);
+    return self;
+}
+} // namespace lift_00670FD0
