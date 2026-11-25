@@ -56356,6 +56356,13 @@
     "summary": "Configures the subobject at +0x4620 with args, callback 0x006F7F60, and 0, then calls sub_00711A70(1).",
     "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
   },
+  "0x006F1220": {
+    "name": "sub_006F1220",
+    "class": "Unknown",
+    "signature": "void fn_006F1220(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F14E0 (sub_006F14E0).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
+  },
   "0x006F1260": {
     "name": "sub_006F1260",
     "class": "Unknown",
@@ -56924,6 +56931,13 @@
     "signature": "extern int __fastcall fn_006F2430(void* self, int edx_unused, int arg)",
     "summary": "Auto-lifted identical-shape clone of 0x006C12B0 (Unknown::ForwardArgToSubobjectSlotB0).",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
+  },
+  "0x006F2450": {
+    "name": "sub_006F2450",
+    "class": "Unknown",
+    "signature": "void fn_006F2450(void* self, uint32_t arg1, uint32_t arg2)",
+    "summary": "Auto-lifted identical-shape clone of 0x006F1D20 (sub_006F1D20).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
   },
   "0x006F2480": {
     "name": "sub_006F2480",
@@ -58532,6 +58546,12 @@
     "signature": "void fn_006FA460(void* self, int32_t value)",
     "summary": "Scans the int32 DynamicArray embedded at +0x1C for the given value and removes the first match.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
+  "0x006FA520": {
+    "name": "sub_006FA520",
+    "signature": "void fn_006FA520(uint32_t arg)",
+    "summary": "Auto-lifted identical-shape clone of 0x00551A10 (NMCamera::Orthogonal::vfunc_5).",
+    "lifted_path": "lifted/clones/auto_clones_6F0000.cpp"
   },
   "0x006FA830": {
     "name": "Unknown::removeEntriesAndReleaseFlagged",
@@ -66009,12 +66029,30 @@
     "summary": "Returns self if the uint32 at +0xB0 equals 9, otherwise returns NULL (cdecl, one arg).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C5900": {
+    "name": "sub_007C5900",
+    "signature": "uint32_t fn_007C5900(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007CC9F0 (readDwordAt0x0C).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C5910": {
+    "name": "sub_007C5910",
+    "signature": "float fn_007C5910(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007CB970 (readFloatAt10).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C5950": {
     "name": "Unknown::doubleAcosOfField1B0",
     "class": "Unknown",
     "signature": "float fn_007C5950(void* self)",
     "summary": "Returns 2 * acos(field at +0x1B0), with float rounding at each intermediate step.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
+  "0x007C59B0": {
+    "name": "sub_007C59B0",
+    "signature": "uint32_t fn_007C59B0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007CC9F0 (readDwordAt0x0C).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
   "0x007C5A20": {
     "name": "sub_007C5A20",
@@ -66168,6 +66206,12 @@
     "summary": "Returns the input pointer or value offset by 0x110 bytes.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C5F90": {
+    "name": "sub_007C5F90",
+    "signature": "float fn_007C5F90(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007CB970 (readFloatAt10).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C5FA0": {
     "name": "sub_007C5FA0",
     "class": "\u003cnone\u003e",
@@ -66191,6 +66235,12 @@
     "name": "get_field_0x1cc_f32",
     "signature": "float sub_007C6110(uint32_t arg0)",
     "summary": "Returns the 32-bit float at offset 0x1CC of the given struct pointer.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C6120": {
+    "name": "sub_007C6120",
+    "signature": "float fn_007C6120(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007CB970 (readFloatAt10).",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
   "0x007C6130": {
@@ -66390,6 +66440,12 @@
     "signature": "uint32_t fn_007C8850(uint32_t obj, int32_t index)",
     "summary": "Returns the dword at +0x20 of the 40-byte entry at index in the array held at obj+0x20, if the entry is valid; otherwise returns the constant 0x0099D280.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
+  "0x007C8880": {
+    "name": "sub_007C8880",
+    "signature": "uint32_t fn_007C8880(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007CC9F0 (readDwordAt0x0C).",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
   "0x007C8A10": {
     "name": "Unknown::LookupTableEntry24Dword",
@@ -67094,6 +67150,12 @@
     "summary": "Stores a 32-bit value (second stack arg) into the object's +0x20 field.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D5BC0": {
+    "name": "sub_007D5BC0",
+    "signature": "uint32_t fn_007D5BC0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007CC9F0 (readDwordAt0x0C).",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D5C60": {
     "name": "ExtentBounds::TryInitFromSub",
     "class": "ExtentBounds",
@@ -67141,6 +67203,12 @@
     "summary": "Returns zero in the low 16 bits of the result register (xor ax, ax; ret).",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007D8490": {
+    "name": "sub_007D8490",
+    "signature": "float fn_007D8490(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007CB970 (readFloatAt10).",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
   "0x007D8590": {
     "name": "SetVec3Offset40",
     "signature": "void SetVec3Offset40(unsigned char* self, float x, float y, float z)",
@@ -67185,6 +67253,18 @@
     "class": "Unknown",
     "signature": "void* fn_007D8710(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x007C58E0 (ReturnSelfIfFieldB0IsNine).",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
+  "0x007D8730": {
+    "name": "sub_007D8730",
+    "signature": "uint32_t fn_007D8730(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007CC9F0 (readDwordAt0x0C).",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
+  "0x007D8740": {
+    "name": "sub_007D8740",
+    "signature": "uint32_t fn_007D8740(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007CC9F0 (readDwordAt0x0C).",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
   "0x007D8750": {
@@ -67280,6 +67360,18 @@
     "signature": "DWORD fn_007DB4C0(void* self, DWORD a1, float a2)",
     "summary": "Calls the function pointer at (self-\u003e+0xB0)-\u003e+0x08 with (0x4C, 0x10); if it returns nonzero, forwards (result, self, a1, a2) to sub_007DAE80, otherwise returns 0.",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
+  "0x007DB720": {
+    "name": "sub_007DB720",
+    "signature": "uint32_t fn_007DB720(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007CC9F0 (readDwordAt0x0C).",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
+  },
+  "0x007DB730": {
+    "name": "sub_007DB730",
+    "signature": "uint32_t fn_007DB730(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x007CC9F0 (readDwordAt0x0C).",
+    "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
   "0x007DB740": {
     "name": "GetIndexedEntryOrZero",

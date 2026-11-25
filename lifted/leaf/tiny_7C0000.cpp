@@ -1245,3 +1245,87 @@ uint32_t fn_007CC9F0(void* self) {
     return lift_field<uint32_t>(self, 0x0C);
 }
 } // namespace lift_007CC9F0
+
+// [0x007C5900] sub_007C5900 (11 bytes)
+namespace lift_007C5900 {
+// @name sub_007C5900
+// @summary Auto-lifted identical-shape clone of 0x007CC9F0 (readDwordAt0x0C).
+namespace lift_007CC9F0 {
+// @name readDwordAt0x0C
+// @summary Returns the 32-bit value stored at offset 0x0C of the object passed as the first argument.
+// @field Unknown +0x0C uint32_t field_0x0C
+uint32_t fn_007C5900(void* self) {
+    return lift_field<uint32_t>(self, 0x1A4);
+}
+} // namespace lift_007CC9F0
+} // namespace lift_007C5900
+
+// [0x007C5910] sub_007C5910 (11 bytes)
+namespace lift_007C5910 {
+// @name sub_007C5910
+// @summary Auto-lifted identical-shape clone of 0x007CB970 (readFloatAt10).
+namespace lift_007CB970 {
+// @name readFloatAt10
+// @summary Returns the float stored at offset 0x10 of the object passed as the first argument.
+// @field self +0x10 float field_0x10
+float fn_007C5910(void* self) {
+    return lift_field<float>(self, 0x1A8);
+}
+} // namespace lift_007CB970
+} // namespace lift_007C5910
+
+// [0x007C59B0] sub_007C59B0 (11 bytes)
+namespace lift_007C59B0 {
+// @name sub_007C59B0
+// @summary Auto-lifted identical-shape clone of 0x007CC9F0 (readDwordAt0x0C).
+namespace lift_007CC9F0 {
+// @name readDwordAt0x0C
+// @summary Returns the 32-bit value stored at offset 0x0C of the object passed as the first argument.
+// @field Unknown +0x0C uint32_t field_0x0C
+uint32_t fn_007C59B0(void* self) {
+    return lift_field<uint32_t>(self, 0x1B8);
+}
+} // namespace lift_007CC9F0
+} // namespace lift_007C59B0
+
+// [0x007C5F90] sub_007C5F90 (11 bytes)
+namespace lift_007C5F90 {
+// @name sub_007C5F90
+// @summary Auto-lifted identical-shape clone of 0x007CB970 (readFloatAt10).
+namespace lift_007CB970 {
+// @name readFloatAt10
+// @summary Returns the float stored at offset 0x10 of the object passed as the first argument.
+// @field self +0x10 float field_0x10
+float fn_007C5F90(void* self) {
+    return lift_field<float>(self, 0x1C8);
+}
+} // namespace lift_007CB970
+} // namespace lift_007C5F90
+
+// [0x007C6120] sub_007C6120 (11 bytes)
+namespace lift_007C6120 {
+// @name sub_007C6120
+// @summary Auto-lifted identical-shape clone of 0x007CB970 (readFloatAt10).
+namespace lift_007CB970 {
+// @name readFloatAt10
+// @summary Returns the float stored at offset 0x10 of the object passed as the first argument.
+// @field self +0x10 float field_0x10
+float fn_007C6120(void* self) {
+    return lift_field<float>(self, 0x1D0);
+}
+} // namespace lift_007CB970
+} // namespace lift_007C6120
+
+// [0x007C8880] sub_007C8880 (11 bytes)
+namespace lift_007C8880 {
+// @name sub_007C8880
+// @summary Auto-lifted identical-shape clone of 0x007CC9F0 (readDwordAt0x0C).
+namespace lift_007CC9F0 {
+// @name readDwordAt0x0C
+// @summary Returns the 32-bit value stored at offset 0x0C of the object passed as the first argument.
+// @field Unknown +0x0C uint32_t field_0x0C
+uint32_t fn_007C8880(void* self) {
+    return lift_field<uint32_t>(self, 0xA8);
+}
+} // namespace lift_007CC9F0
+} // namespace lift_007C8880

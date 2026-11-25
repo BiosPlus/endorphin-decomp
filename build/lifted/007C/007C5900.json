@@ -1,0 +1,21 @@
+{
+  "va": "0x007C5900",
+  "size": 11,
+  "orig_symbol": "sub_007C5900",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "sub_007C5900",
+  "signature": "uint32_t fn_007C5900(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x007CC9F0 (readDwordAt0x0C).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:15:38Z"
+}
