@@ -147,3 +147,37 @@ extern void* fn_00761710(void* arg) {
 }
 } // namespace lift_007B2210
 } // namespace lift_00761710
+
+// [0x00763E40]
+namespace lift_00763E40 {
+// @name freeEntryTables
+// @summary Frees all entries in two EntryTable members at +0xc4 and +0xd8 using MFC80!ord_764 (operator delete).
+// @field Unknown +0xc4 EntryTable field_0xc4
+// @field Unknown +0xc8 uint32_t field_0xc8
+// @field Unknown +0xd8 EntryTable field_0xd8
+// @field Unknown +0xdc uint32_t field_0xdc
+
+
+extern void __cdecl ext_006A5C5C(int32_t ptr);
+extern int32_t __thiscall ext_00784750(void* self, int32_t idx, uint32_t* outKey);
+
+static void freeEntryTable(uint8_t* table, uint32_t count) {
+    while (count != 0) {
+        --count;
+        int32_t val = ext_00784750(table, static_cast<int32_t>(count), nullptr);
+        ext_006A5C5C(val);
+    }
+}
+
+extern void __thiscall fn_00763E40(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint32_t count1 = *reinterpret_cast<uint32_t*>(base + 0xc8);
+    if (count1 != 0) {
+        freeEntryTable(base + 0xc4, count1);
+    }
+    uint32_t count2 = *reinterpret_cast<uint32_t*>(base + 0xdc);
+    if (count2 != 0) {
+        freeEntryTable(base + 0xd8, count2);
+    }
+}
+} // namespace lift_00763E40
