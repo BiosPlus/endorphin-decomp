@@ -56679,3 +56679,31 @@ float __stdcall fn_006959E0(void* self) {
     return 0.0f;
 }
 } // namespace lift_006959E0
+
+// [0x00604D40]
+namespace lift_00604D40 {
+// @name ExprParser::ReadMethodType<Effector, float, &Effector::getPoseRawDesiredDisplacement, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Effector, float, &Effector::getPoseRawDesiredDisplacement, 1>
+// @summary Reads the pose-raw desired displacement float from the held Effector via vtable slot 14, or throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+
+void* ext_0046C3C0(void* self);
+[[noreturn]] void ext_006A6DD2(void* exception_object, void* throw_info);
+extern char mem_009DEC1C[];
+
+float __stdcall fn_00604D40(void* self) {
+    uint8_t frame[0x38];
+
+    void* target = lift_field<void*>(self, 0x00);
+    if (target != nullptr) {
+        void* vtbl = lift_field<void*>(target, 0x00);
+        void* slot = lift_field<void*>(vtbl, 0x38);
+        auto vfn = reinterpret_cast<void* (*)(void*, void*)>(slot);
+        void* result = vfn(target, frame);
+        return lift_field<float>(result, 0x00);
+    }
+
+    ext_0046C3C0(frame + 0x10);
+    ext_006A6DD2(frame + 0x10, mem_009DEC1C);
+}
+} // namespace lift_00604D40
