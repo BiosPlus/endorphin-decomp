@@ -1,0 +1,33 @@
+{
+  "va": "0x007DAD70",
+  "size": 40,
+  "orig_symbol": "sub_007DAD70",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "sub_007DAD70",
+  "signature": "uint32_t sub_007DAD70(void* arg0)",
+  "summary": "Tail-calls ext_007D5950 with a nested field at +0xc -\u003e +0xb0 and constant 0x0099e1e0",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0xc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB0",
+      "type": "uint32_t",
+      "name": "field_0xb0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T14:30:36Z"
+}

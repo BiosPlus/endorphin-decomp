@@ -1036,3 +1036,22 @@ void sub_007D48F0(void* node) {
     lift_field<void*>(node, 0x8) = left;
 }
 } // namespace lift_007D48F0
+
+// [0x007DAD70]
+namespace lift_007DAD70 {
+// @name sub_007DAD70
+// @summary Tail-calls ext_007D5950 with a nested field at +0xc -> +0xb0 and constant 0x0099e1e0
+// @field Unknown +0x0 void* field_0x0
+// @field Unknown +0xc void* field_0xc
+// @field Unknown +0xb0 uint32_t field_0xb0
+
+
+extern uint32_t ext_007D5950(uint32_t a0, uint32_t a1, uint32_t a2);
+
+uint32_t sub_007DAD70(void* arg0) {
+    void* v0 = lift_field<void*>(arg0, 0x0);
+    void* v1 = lift_field<void*>(v0, 0xc);
+    uint32_t v2 = lift_field<uint32_t>(v1, 0xb0);
+    return ext_007D5950(0, v2, 0x0099e1e0);
+}
+} // namespace lift_007DAD70
