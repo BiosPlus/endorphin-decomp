@@ -1,0 +1,46 @@
+{
+  "va": "0x004585B0",
+  "size": 113,
+  "orig_symbol": "SpinButtonStates::DragSpinState::vfunc_8",
+  "src_path": "src/SpinButtonStates/DragSpinState.cpp",
+  "lifted_path": "lifted/SpinButtonStates/DragSpinState.cpp",
+  "name": "SpinButtonStates::DragSpinState::vfunc_8",
+  "class": "SpinButtonStates::DragSpinState",
+  "signature": "extern \"C\" void __thiscall fn_004585B0(void* self, void* arg1, uint32_t arg2)",
+  "summary": "Handles mouse drag movement on a spin button, stepping value up/down and resetting cursor position.",
+  "fields": [
+    {
+      "class": "SpinButtonStates::DragSpinState",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "SpinButtonStates::DragSpinState",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "SpinButtonStates::DragSpinState",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "SpinButtonStates::DragSpinState",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "SpinButtonStates::DragSpinState",
+      "offset": "+0x14",
+      "type": "uint8_t",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:36:30Z"
+}
