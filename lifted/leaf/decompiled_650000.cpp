@@ -1698,3 +1698,51 @@ extern void fn_00517FC0(double* out) {
     mem_00924FF4(local_str);
 }
 } // namespace lift_00517FC0
+
+// [0x0051C730] sub_0051C730 (110 bytes)
+namespace lift_0051C730 {
+// Known callee 0x00519CB0: Channel base constructor (takes a std::string; writes the Channel vtable 0x0095219C and the name at +0x04).
+extern void ext_00519CB0(void* self, const void* name);
+// .rdata float constant 0x7F7FFFFF (FLT_MAX).
+extern int mem_00952174;
+
+// @name QuatChannel::QuatChannel
+// @class QuatChannel
+// @summary Constructs a QuatChannel from a name: runs the Channel base constructor, installs the QuatChannel vtable, and initialises its fields (FLT_MAX at +0x3C, zero elsewhere).
+// @field QuatChannel +0x00 void* vtable
+// @field QuatChannel +0x30 uint32_t field_0x30
+// @field QuatChannel +0x34 uint32_t field_0x34
+// @field QuatChannel +0x38 uint32_t field_0x38
+// @field QuatChannel +0x3C float field_0x3C
+// @field QuatChannel +0x40 float field_0x40
+// @field QuatChannel +0x44 float field_0x44
+// @field QuatChannel +0x48 float field_0x48
+// @field QuatChannel +0x4C float field_0x4C
+// @field QuatChannel +0x50 float field_0x50
+// @field QuatChannel +0x54 float field_0x54
+// @field QuatChannel +0x58 float field_0x58
+// @field QuatChannel +0x5C void* field_0x5C
+// @field QuatChannel +0x60 int32_t field_0x60
+void fn_0051C730(void* self, const void* name) {
+    ext_00519CB0(self, name);
+
+    lift_field<uint32_t>(self, 0x00) = 0x009525CCu;
+
+    const float max_f = std::bit_cast<float>(static_cast<uint32_t>(mem_00952174));
+    const float zero_f = 0.0f;
+
+    lift_field<uint32_t>(self, 0x30) = 0u;
+    lift_field<uint32_t>(self, 0x34) = 0u;
+    lift_field<uint32_t>(self, 0x38) = 0u;
+    lift_field<float>(self, 0x3C) = max_f;
+    lift_field<float>(self, 0x40) = zero_f;
+    lift_field<float>(self, 0x44) = zero_f;
+    lift_field<float>(self, 0x48) = zero_f;
+    lift_field<float>(self, 0x4C) = zero_f;
+    lift_field<float>(self, 0x50) = zero_f;
+    lift_field<float>(self, 0x54) = zero_f;
+    lift_field<float>(self, 0x58) = zero_f;
+    lift_field<void*>(self, 0x5C) = nullptr;
+    lift_field<int32_t>(self, 0x60) = 0;
+}
+} // namespace lift_0051C730
