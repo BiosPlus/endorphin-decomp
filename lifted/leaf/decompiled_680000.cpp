@@ -621,3 +621,29 @@ uint8_t* __cdecl sub_00687380(uint8_t* first, uint8_t* last, uint8_t* dest) {
     return dest;
 }
 } // namespace lift_00687380
+
+// [0x00681250] sub_00681250 (67 bytes)
+namespace lift_00681250 {
+// Guest memory accessors (32-bit guest addresses).
+extern uint32_t mem_read32(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t value);
+
+// @name swapBackwardElementTails16
+// @summary Walks two 16-byte-stride ranges backward from their end pointers, swapping the 12 bytes at offsets +4..+15 of each element pair; returns the adjusted destination end pointer.
+uint32_t fn_00681250(uint32_t first, uint32_t last, uint32_t destEnd) {
+    if (first == last) {
+        return destEnd;
+    }
+    do {
+        last -= 0x10;
+        destEnd -= 0x10;
+        for (uint32_t off = 4; off < 0x10; off += 4) {
+            const uint32_t src = mem_read32(last + off);
+            const uint32_t dst = mem_read32(destEnd + off);
+            mem_write32(destEnd + off, src);
+            mem_write32(last + off, dst);
+        }
+    } while (last != first);
+    return destEnd;
+}
+} // namespace lift_00681250

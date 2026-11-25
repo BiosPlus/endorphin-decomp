@@ -37883,6 +37883,12 @@
     "summary": "Notifies the last 8-byte element of the range at +0x04..+0x08 via ext_0048A120, then shrinks the range end by one element.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x00681250": {
+    "name": "swapBackwardElementTails16",
+    "signature": "uint32_t fn_00681250(uint32_t first, uint32_t last, uint32_t destEnd)",
+    "summary": "Walks two 16-byte-stride ranges backward from their end pointers, swapping the 12 bytes at offsets +4..+15 of each element pair; returns the adjusted destination end pointer.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x006812A0": {
     "name": "clearBufferRange",
     "signature": "void fn_006812A0(uint32_t first, uint32_t last)",
@@ -59023,6 +59029,12 @@
     "name": "strcat_impl",
     "signature": "uint32_t sub_00859A20(uint32_t dst_addr, uint32_t src_addr)",
     "summary": "Appends a null-terminated source string to the end of a destination string and returns the destination pointer.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
+  "0x00859A50": {
+    "name": "strncat",
+    "signature": "uint32_t sub_00859A50(uint32_t dst, uint32_t src, uint32_t count)",
+    "summary": "Appends at most count characters from src to null-terminated dst, always null-terminating, and returns dst.",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
   "0x00859D30": {
