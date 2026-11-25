@@ -6598,6 +6598,13 @@
     "summary": "Binary-search-tree equal_range on a dword key: writes {self, lower_bound, self, upper_bound} to the out pair.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x0045E700": {
+    "name": "Unknown::FindOrDefault",
+    "class": "Unknown",
+    "signature": "static inline uint32_t read_u32(uint32_t addr, ptrdiff_t off)",
+    "summary": "Looks up a 32-bit unsigned key in a tree map and returns the node's value or a default at +0x1c.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045E920": {
     "name": "sub_0045E920",
     "signature": "extern \"C\" void __fastcall fn_0045E920(void* self)",

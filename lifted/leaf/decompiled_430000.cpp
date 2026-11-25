@@ -3271,3 +3271,58 @@ void* fn_0043D800(void* out, uint32_t /*unused_arg2*/, void* container, uint32_t
     return out;
 }
 } // namespace lift_0043D800
+
+// [0x004360C0]
+namespace lift_004360C0 {
+// @name dispatchFirstRendererItem
+// @summary Gets the first non-null item from the OglRenderer's vfunc_118 vector and dispatches it via ext_0042FE70.
+
+
+    uintptr_t __cdecl ext_00465B30(void);
+    void* __thiscall ext_005B11F0(void* self);
+    void __thiscall ext_0042FE70(void* self, void* item);
+    extern void (__cdecl *mem_00925134)(void);
+
+struct VectorHeader {
+    uint32_t pad_00;
+    uintptr_t* begin;
+    uintptr_t* end;
+};
+
+void __thiscall fn_004360C0(void* self) {
+    uintptr_t obj = ext_00465B30();
+    uintptr_t inner = *reinterpret_cast<uintptr_t*>(obj + 0x14);
+    void* renderer = *reinterpret_cast<void**>(inner + 0x34);
+
+    void* rsi = ext_005B11F0(renderer);
+    using GetVecFn = VectorHeader* (__thiscall*)(void*);
+
+    auto vtable = *reinterpret_cast<uintptr_t**>(rsi);
+    auto get_vec = reinterpret_cast<GetVecFn>(vtable[0x1C / 4]);
+    VectorHeader* vec = get_vec(rsi);
+
+    if (!vec->begin) {
+        return;
+    }
+    if ((reinterpret_cast<intptr_t>(vec->end) - reinterpret_cast<intptr_t>(vec->begin)) >> 2 == 0) {
+        return;
+    }
+
+    vtable = *reinterpret_cast<uintptr_t**>(rsi);
+    get_vec = reinterpret_cast<GetVecFn>(vtable[0x1C / 4]);
+    vec = get_vec(rsi);
+
+    uintptr_t* begin = vec->begin;
+    if (begin > vec->end) {
+        mem_00925134();
+    }
+    if (begin >= vec->end) {
+        mem_00925134();
+    }
+
+    void* first_item = reinterpret_cast<void*>(*begin);
+    if (first_item) {
+        ext_0042FE70(self, first_item);
+    }
+}
+} // namespace lift_004360C0
