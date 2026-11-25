@@ -630,3 +630,26 @@ void fn_00672D10(void* self) {
 }
 } // namespace lift_004026E0
 } // namespace lift_00672D10
+
+// [0x00670EC0] sub_00670EC0 (72 bytes)
+namespace lift_00670EC0 {
+extern void ext_0065C5F0(void* self);
+
+// @name Unknown::InitSubobjectAndZeroFields
+// @class Unknown
+// @summary Clears the header words of self, runs ext_0065C5F0 on the subobject at +0x14, and returns self.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint8_t field_0x14
+void* fn_00670EC0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<void**>(base + 0x00) = nullptr;
+    *reinterpret_cast<uint32_t*>(base + 0x08) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x0C) = 0;
+    *reinterpret_cast<uint32_t*>(base + 0x10) = 0;
+    ext_0065C5F0(base + 0x14);
+    return self;
+}
+} // namespace lift_00670EC0
