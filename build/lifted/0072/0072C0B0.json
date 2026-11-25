@@ -1,0 +1,27 @@
+{
+  "va": "0x0072C0B0",
+  "size": 96,
+  "orig_symbol": "sub_0072C0B0",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "sub_0072C0B0_ctor",
+  "signature": "void* __thiscall fn_0072C0B0(void* self, uint32_t arg0)",
+  "summary": "Initializes field_0x04 with arg0, allocates a 0x14-byte object via ext_006A5C62, initializes it with ext_00782D00, stores it at field_0x00, and returns self.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:48:16Z"
+}
