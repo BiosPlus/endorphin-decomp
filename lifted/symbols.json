@@ -25190,6 +25190,13 @@
     "summary": "Returns 1 if the dword at this+0x1DC is \u003e= 1, otherwise 0.",
     "lifted_path": "lifted/ASFData/auto_tiny.cpp"
   },
+  "0x00569FD0": {
+    "name": "ASFData::Bone::vfunc_1",
+    "class": "ASFData::Bone",
+    "signature": "uint32_t __thiscall fn_00569FD0(void* self)",
+    "summary": "Checks whether field_0x1E0 is zero and the pointer range [0x28, 0x2C) is empty.",
+    "lifted_path": "lifted/ASFData/Bone.cpp"
+  },
   "0x0056B8C0": {
     "name": "Acclaim2CharacterIO::vfunc_48",
     "class": "Acclaim2CharacterIO",
@@ -69782,6 +69789,12 @@
     "signature": "float sub_007C8810(const void* obj)",
     "summary": "Returns the float at offset 0x8c from the given object pointer.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
+  "0x007C8820": {
+    "name": "hasItemAtIndex",
+    "signature": "uint32_t __cdecl fn_007C8820(void* self, int32_t index)",
+    "summary": "Checks whether the item at the given index has a non-zero field at offset 0x24.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007C8850": {
     "name": "GetArrayEntryFieldIfValid",
