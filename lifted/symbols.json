@@ -3820,6 +3820,12 @@
     "summary": "Kills the timer whose ID is stored at self+0x138, owned by the window handle at self+0x20.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x0043CDD0": {
+    "name": "lerpByClientWidth",
+    "signature": "double __thiscall fn_0043CDD0(void* self, int arg)",
+    "summary": "Maps integer arg against the client rect's horizontal span [field_0xFC, client.right] onto the double range [field_0xE8, field_0xF0] (linear, centered), clamped to be non-negative; returns result (stdcall-style single int arg, ret 4).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043CEE0": {
     "name": "MultiTrackView::View::vfunc_81",
     "class": "MultiTrackView::View",

@@ -1,0 +1,39 @@
+{
+  "va": "0x0043CDD0",
+  "size": 109,
+  "orig_symbol": "sub_0043CDD0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "lerpByClientWidth",
+  "signature": "double __thiscall fn_0043CDD0(void* self, int arg)",
+  "summary": "Maps integer arg against the client rect's horizontal span [field_0xFC, client.right] onto the double range [field_0xE8, field_0xF0] (linear, centered), clamped to be non-negative; returns result (stdcall-style single int arg, ret 4).",
+  "fields": [
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xE8",
+      "type": "double",
+      "name": "field_0xE8"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xF0",
+      "type": "double",
+      "name": "field_0xF0"
+    },
+    {
+      "class": "\u003cunknown\u003e",
+      "offset": "+0xFC",
+      "type": "int",
+      "name": "field_0xFC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:57:56Z"
+}

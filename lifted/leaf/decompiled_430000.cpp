@@ -3175,3 +3175,32 @@ void fn_00434A00(void* self) {
     }
 }
 } // namespace lift_00434A00
+
+// [0x0043CDD0] sub_0043CDD0 (109 bytes)
+namespace lift_0043CDD0 {
+extern BOOL GetClientRect(HWND hWnd, RECT* lpRect);
+
+// @name lerpByClientWidth
+// @summary Maps integer arg against the client rect's horizontal span [field_0xFC, client.right] onto the double range [field_0xE8, field_0xF0] (linear, centered), clamped to be non-negative; returns result (stdcall-style single int arg, ret 4).
+// @field <unknown> +0x20 HWND hwnd
+// @field <unknown> +0xE8 double field_0xE8
+// @field <unknown> +0xF0 double field_0xF0
+// @field <unknown> +0xFC int field_0xFC
+double __thiscall fn_0043CDD0(void* self, int arg) {
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+    RECT rc{};
+    GetClientRect(hwnd, &rc);
+
+    const double a = static_cast<double>(lift_field<int>(self, 0xFC));
+    const double r = static_cast<double>(rc.right);
+    const double d8 = lift_field<double>(self, 0xE8);
+    const double d0 = lift_field<double>(self, 0xF0);
+
+    const double q = (d0 - d8) / (r - a);
+    const double y = static_cast<double>(arg) - 0.5 * (r + a);
+    const double v = y * q + 0.5 * (d0 + d8);
+
+    // Original: fldz; fcom; if (0 <= v || unordered) return v; else return 0.
+    return v < 0.0 ? 0.0 : v;
+}
+} // namespace lift_0043CDD0
