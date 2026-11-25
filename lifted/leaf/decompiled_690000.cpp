@@ -367,3 +367,31 @@ void* fn_006999B0(void* self) {
     return &mem_00B5C99C;
 }
 } // namespace lift_006999B0
+
+// [0x00699360] sub_00699360 (60 bytes)
+namespace lift_00699360 {
+extern void ext_invalid_parameter_noinfo(void);
+
+// @name VectorLike::checkedBegin
+// @class VectorLike
+// @summary Returns the begin pointer when the range holds at least one 32-byte element, else a static sentinel; asserts begin is inside [begin, end).
+// @field VectorLike +0x08 uint32_t field_0x08
+// @field VectorLike +0x0C uint32_t field_0x0C
+uint32_t fn_00699360(void* self) {
+    const uint32_t begin = lift_field<uint32_t>(self, 0x08);
+    if (begin != 0) {
+        const uint32_t end = lift_field<uint32_t>(self, 0x0C);
+        const int32_t count = static_cast<int32_t>(end - begin) >> 5;
+        if (count != 0) {
+            if (begin > end) {
+                ext_invalid_parameter_noinfo();
+            }
+            if (!(begin < end)) {
+                ext_invalid_parameter_noinfo();
+            }
+            return begin;
+        }
+    }
+    return 0x00B59400u;
+}
+} // namespace lift_00699360

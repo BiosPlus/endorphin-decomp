@@ -37908,6 +37908,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006991A0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x00699360": {
+    "name": "VectorLike::checkedBegin",
+    "class": "VectorLike",
+    "signature": "uint32_t fn_00699360(void* self)",
+    "summary": "Returns the begin pointer when the range holds at least one 32-byte element, else a static sentinel; asserts begin is inside [begin, end).",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x006997E0": {
     "name": "getTypedObjectViaVfunc60",
     "signature": "void* __thiscall fn_006997E0(void* self, uint32_t arg1)",
