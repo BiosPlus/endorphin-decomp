@@ -1,0 +1,22 @@
+{
+  "va": "0x004D0D40",
+  "size": 97,
+  "orig_symbol": "sub_004D0D40",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "FindNameIndexInTable",
+  "class": "Unknown",
+  "signature": "void fn_004D0D40(void* self, const void* name)",
+  "summary": "Scans a 5-entry static string table for the given name; stores the matching index (or 0) at self+0x190.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x190",
+      "type": "int32_t",
+      "name": "field_0x190"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:38:07Z"
+}

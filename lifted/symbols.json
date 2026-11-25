@@ -15063,6 +15063,13 @@
     "summary": "Caches the global-derived object at +0x168; if it is non-null and its vtable slot 10 returns true, notifies the child at +0x198 with value 0; then runs the global flag helper.",
     "lifted_path": "lifted/NMData/TransitionEventData.cpp"
   },
+  "0x004D0D40": {
+    "name": "FindNameIndexInTable",
+    "class": "Unknown",
+    "signature": "void fn_004D0D40(void* self, const void* name)",
+    "summary": "Scans a 5-entry static string table for the given name; stores the matching index (or 0) at self+0x190.",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004D0E00": {
     "name": "GetTableEntryForSelfIndex",
     "class": "(none)",

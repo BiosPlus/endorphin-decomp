@@ -376,3 +376,39 @@ void fn_004DE370(void* begin, void* end, void* src) {
     }
 }
 } // namespace lift_004DE370
+
+// [0x004D0D40] sub_004D0D40 (97 bytes)
+namespace lift_004D0D40 {
+// Callee at [0x924FC4]: std::operator==(const std::string&, const std::string&) (MSVCP80, __cdecl).
+// Stored as a function-pointer slot; holds the thunk address 0x00629432.
+extern uint32_t mem_00924FC4;
+// Static table of 5 std::string entries (28 bytes each), 0x00AE5C68 .. 0x00AE5CF4.
+extern uint8_t mem_00AE5C68[];
+
+// @name FindNameIndexInTable
+// @class Unknown
+// @summary Scans a 5-entry static string table for the given name; stores the matching index (or 0) at self+0x190.
+// @field Unknown +0x190 int32_t field_0x190
+void fn_004D0D40(void* self, const void* name) {
+    using StrEqFn = bool (*)(const void* lhs, const void* rhs);
+    constexpr uint32_t kEntrySize = 0x1C;
+    constexpr uint32_t kEntryCount = (0x00AE5CF4u - 0x00AE5C68u) / kEntrySize; // 5
+
+    auto strEq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC4));
+    int32_t result = 0;
+    bool found = false;
+    for (uint32_t i = 0; i < kEntryCount; ++i) {
+        const void* entry = mem_00AE5C68 + i * kEntrySize;
+        // Original pushes (entry, name); __cdecl call with name as first argument.
+        if (strEq(name, entry)) {
+            result = static_cast<int32_t>(i);
+            found = true;
+            break;
+        }
+    }
+    if (!found) {
+        result = 0;
+    }
+    *reinterpret_cast<int32_t*>(reinterpret_cast<uint8_t*>(self) + 0x190) = result;
+}
+} // namespace lift_004D0D40
