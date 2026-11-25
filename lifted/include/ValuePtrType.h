@@ -24,5 +24,6 @@ struct ValuePtrType_Fields {
     // +0x4   void*                    ptr  (evidence: 0x004B86C0, 0x004CB250) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    target  (evidence: 0x00487000, 0x005B7BC0, 0x0064F2F0) // CONFLICT: multiple definitions at +0x4
     // +0xC   void*                    field_0x0C  (evidence: 0x004C0800, 0x005B37A0)
+    // +0x28  int32_t                  field_0x28  (evidence: 0x005D6630)
 };
 } // namespace lifted_layout

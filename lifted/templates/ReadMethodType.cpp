@@ -42829,3 +42829,29 @@ void fn_004EA790(void* self) {
     ext_006A6DD2(exception, throwInfo);
 }
 } // namespace lift_004EA790
+
+// [0x005D6630] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_5 (45 bytes)
+namespace lift_005D6630 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(int32_t message_code);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData>::vfunc_5 (NMData::VideoPlaneData::getFrameOffset)
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>
+// @summary Reads the wrapped object pointer; if non-null, throws via ext_0046C4E0 with the object's field at +0x28, otherwise constructs a fixed-message exception and throws it.
+// @field ValuePtrType +0x28 int32_t field_0x28
+void fn_005D6630(void* self) {
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        int32_t code = *reinterpret_cast<int32_t*>(static_cast<char*>(obj) + 0x28);
+        ext_0046C4E0(code);
+    }
+    // Exception object storage (original frame reserves 0x28 bytes for it).
+    alignas(8) unsigned char exception_object[0x28];
+    ext_0046C3C0(exception_object);
+    ext_006A6DD2(exception_object, reinterpret_cast<const void*>(0x009DEC1C));
+}
+} // namespace lift_005D6630

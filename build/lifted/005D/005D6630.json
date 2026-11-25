@@ -1,0 +1,22 @@
+{
+  "va": "0x005D6630",
+  "size": 45,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData\u003e::vfunc_5 (NMData::VideoPlaneData::getFrameOffset)",
+  "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0\u003e",
+  "signature": "void fn_005D6630(void* self)",
+  "summary": "Reads the wrapped object pointer; if non-null, throws via ext_0046C4E0 with the object's field at +0x28, otherwise constructs a fixed-message exception and throws it.",
+  "fields": [
+    {
+      "class": "ValuePtrType",
+      "offset": "+0x28",
+      "type": "int32_t",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:08:05Z"
+}

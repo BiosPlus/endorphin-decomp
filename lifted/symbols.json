@@ -32920,6 +32920,13 @@
     "summary": "Reads the held VideoPlaneData pointer; throws if null, otherwise returns whether its +0x28 field is nonzero.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D6630": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData\u003e::vfunc_5 (NMData::VideoPlaneData::getFrameOffset)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0\u003e",
+    "signature": "void fn_005D6630(void* self)",
+    "summary": "Reads the wrapped object pointer; if non-null, throws via ext_0046C4E0 with the object's field at +0x28, otherwise constructs a fixed-message exception and throws it.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D6980": {
     "name": "ExprParser::ReadMethodType\u003cEffector\u003e::vfunc_1 (Effector::getScaledDesiredDisplacement)",
     "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0\u003e",
