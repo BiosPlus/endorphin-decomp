@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_7D0000.cpp
 #include "lift_compat.h"
 #include <cstdint>
+#include <cfenv>
 
 // [0x007D8850]
 namespace lift_007D8850 {
@@ -994,3 +995,16 @@ void sub_007D48C0(void* node) {
     lift_field<void*>(node, 0x8) = right;
 }
 } // namespace lift_007D48C0
+
+// [0x007D5DA0]
+namespace lift_007D5DA0 {
+// @name setFpuPrecision
+// @summary Sets the x87 FPU precision control bits while preserving exception masks and clearing exceptions.
+
+
+uint32_t __cdecl sub_007D5DA0(uint32_t precision) {
+    // Original x87: fnstcw, mask (cw & 0x7f) | ((precision & 3) << 8), fnclex, fldcw.
+    std::feclearexcept(FE_ALL_EXCEPT);
+    return ((precision & 0x3u) << 8) | 0x7fu;
+}
+} // namespace lift_007D5DA0

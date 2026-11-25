@@ -1,0 +1,13 @@
+{
+  "va": "0x007D5DA0",
+  "size": 39,
+  "orig_symbol": "sub_007D5DA0",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "setFpuPrecision",
+  "signature": "uint32_t __cdecl sub_007D5DA0(uint32_t precision)",
+  "summary": "Sets the x87 FPU precision control bits while preserving exception masks and clearing exceptions.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T14:28:56Z"
+}
