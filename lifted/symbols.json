@@ -68895,6 +68895,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0079E670 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x0079E670": {
+    "name": "sub_0079E670",
+    "class": "Unknown",
+    "signature": "void fn_0079E670(void* self)",
+    "summary": "Stores two rdata vtable-like pointers into this+0x00/+0x04, advances this by 8, and tail-calls DestroyEntriesAndBase.",
+    "lifted_path": "lifted/leaf/tiny_790000.cpp"
+  },
   "0x0079E7F0": {
     "name": "sub_0079E7F0",
     "signature": "extern \"C\" void __fastcall fn_0079E7F0(void* self)",

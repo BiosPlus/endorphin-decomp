@@ -515,3 +515,22 @@ uint8_t fn_0079D6D0(void* self) {
     return lift_field<uint8_t>(self, 0xF88);
 }
 } // namespace lift_0079D6D0
+
+// [0x0079E670] sub_0079E670 (21 bytes)
+namespace lift_0079E670 {
+// Known callee 0x00783880: DestroyEntriesAndBase (Releases entries via sub_007839B0, resets the +0x18 chain if non-null, and calls sub_006D2160.)
+extern void ext_00783880(void* self);
+extern int mem_0099773C;
+extern int mem_0099772C;
+
+// @name sub_0079E670
+// @class Unknown
+// @summary Stores two rdata vtable-like pointers into this+0x00/+0x04, advances this by 8, and tail-calls DestroyEntriesAndBase.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+void fn_0079E670(void* self) {
+    lift_field<uint32_t>(self, 0x00) = 0x0099773Cu;
+    lift_field<uint32_t>(self, 0x04) = 0x0099772Cu;
+    ext_00783880(static_cast<uint8_t*>(self) + 0x08);
+}
+} // namespace lift_0079E670
