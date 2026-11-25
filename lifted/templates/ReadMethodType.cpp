@@ -56465,3 +56465,16 @@ void fn_005B9AE0(void* arg) {
     ext_006A6DD2();
 }
 } // namespace lift_005B9AE0
+
+// [0x0051B270] ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>::vfunc_4 (60 bytes)
+namespace lift_0051B270 {
+// @name ExprParser::ReadMethodType<NMData::QuatChannel>::vfunc_4 (NMData::QuatChannel::getValue)
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary Always throws: the original reads *arg, optionally queries a float via ext_0051AEF0 and then throws a default-message ExceptionWithMessage, or throws DerivedException when *arg is NULL. No success path exists.
+// No QuatChannel field offsets are accessed directly. The non-null path only dereferences arg once (to pass *arg to ext_0051AEF0), and both paths then throw; the portable version throws a runtime_error in place of the MSVC exception objects (message text at 0x009DEC1C is not recovered).
+void fn_0051B270(void* self, void* arg) {
+    (void)self;
+    (void)arg;
+    throw std::runtime_error("ExprParser::ReadMethodType<NMData::QuatChannel>::vfunc_4: getValue unavailable");
+}
+} // namespace lift_0051B270
