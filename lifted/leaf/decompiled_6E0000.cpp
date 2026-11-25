@@ -1143,3 +1143,26 @@ extern void fn_006E67E0(void* ecx) {
     }
 }
 } // namespace lift_006E67E0
+
+// [0x006E86F0]
+namespace lift_006E86F0 {
+// @name clampValueToRange
+// @summary Clamps a double argument to [0.0, obj->field_0x58] and stores it in obj->field_0x50 via dereferenced this pointer
+// @field Self +0x00 void* field_0x00
+// @field Inner +0x50 double field_0x50
+// @field Inner +0x58 double field_0x58
+
+
+void __thiscall sub_006E86F0(void* self, double value) {
+    uint8_t* obj = *reinterpret_cast<uint8_t**>(self);
+    double max_val = *reinterpret_cast<const double*>(obj + 0x58);
+
+    if (value > max_val) {
+        *reinterpret_cast<double*>(obj + 0x50) = max_val;
+    } else if (value < 0.0) {
+        *reinterpret_cast<double*>(obj + 0x50) = 0.0;
+    } else {
+        *reinterpret_cast<double*>(obj + 0x50) = value;
+    }
+}
+} // namespace lift_006E86F0
