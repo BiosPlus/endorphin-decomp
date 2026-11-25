@@ -10580,6 +10580,13 @@
     "summary": "Recursively erases a red-black tree subtree starting from the given node.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x004939B0": {
+    "name": "Unknown::initSubobjects_004939B0",
+    "class": "Unknown",
+    "signature": "void fn_004939B0(void* self)",
+    "summary": "Initializes two sub-objects at +0x50 and +0x30, then destroys the std::string at +0x14.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00493D80": {
     "name": "ZeroHeaderFields",
     "class": "UnknownClass",

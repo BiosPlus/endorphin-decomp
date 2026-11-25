@@ -1379,3 +1379,30 @@ void fn_00490B80(void* self) {
 }
 } // namespace lift_0044C500
 } // namespace lift_00490B80
+
+// [0x004939B0] sub_004939B0 (111 bytes)
+namespace lift_004939B0 {
+extern void ext_006A6D5C(void* obj, uint32_t a, uint32_t b, uintptr_t cb);
+extern uintptr_t mem_00924FF4;
+
+// @name Unknown::initSubobjects_004939B0
+// @class Unknown
+// @summary Initializes two sub-objects at +0x50 and +0x30, then destroys the std::string at +0x14.
+// @field Unknown +0x14 std::string field_0x14
+// @field Unknown +0x30 uint8_t[16] field_0x30
+// @field Unknown +0x50 uint8_t[12] field_0x50
+void fn_004939B0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // First sub-object init at this+0x50 (args: 0xc, 2, handler 0x493970).
+    ext_006A6D5C(base + 0x50, 0x0c, 0x02, 0x00493970u);
+
+    // Second sub-object init at this+0x30 (args: 0x10, 2, handler 0x436F30).
+    ext_006A6D5C(base + 0x30, 0x10, 0x02, 0x00436F30u);
+
+    // Destroy the std::string member at this+0x14 via the imported destructor.
+    using DtorFn = void (*)(void*);
+    auto dtor = reinterpret_cast<DtorFn>(mem_00924FF4);
+    dtor(base + 0x14);
+}
+} // namespace lift_004939B0

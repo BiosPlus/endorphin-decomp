@@ -1,0 +1,34 @@
+{
+  "va": "0x004939B0",
+  "size": 111,
+  "orig_symbol": "sub_004939B0",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "Unknown::initSubobjects_004939B0",
+  "class": "Unknown",
+  "signature": "void fn_004939B0(void* self)",
+  "summary": "Initializes two sub-objects at +0x50 and +0x30, then destroys the std::string at +0x14.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "std::string",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "uint8_t[16]",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "uint8_t[12]",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:04:53Z"
+}
