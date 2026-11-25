@@ -43722,6 +43722,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0x6C and forwards through mem_00924FD4.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006AF890": {
+    "name": "GWCCategoryItem::vfunc_6",
+    "class": "GWCCategoryItem",
+    "signature": "void fn_006AF890(void* self, uint8_t flag)",
+    "summary": "Stores flag into the byte at this-\u003efield_0x04 + 4, then calls virtual slot 8 of each child in the field_0x54 array (count field_0x58) passing flag.",
+    "lifted_path": "lifted/classes/GWCCategoryItem.cpp"
+  },
   "0x006AF8E0": {
     "name": "getArrayElement",
     "signature": "uint32_t __thiscall fn_006AF8E0(uint8_t* self, int32_t index)",

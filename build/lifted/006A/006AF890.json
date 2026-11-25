@@ -1,0 +1,34 @@
+{
+  "va": "0x006AF890",
+  "size": 64,
+  "orig_symbol": "GWCCategoryItem::vfunc_6",
+  "src_path": "src/classes/GWCCategoryItem.cpp",
+  "lifted_path": "lifted/classes/GWCCategoryItem.cpp",
+  "name": "GWCCategoryItem::vfunc_6",
+  "class": "GWCCategoryItem",
+  "signature": "void fn_006AF890(void* self, uint8_t flag)",
+  "summary": "Stores flag into the byte at this-\u003efield_0x04 + 4, then calls virtual slot 8 of each child in the field_0x54 array (count field_0x58) passing flag.",
+  "fields": [
+    {
+      "class": "GWCCategoryItem",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "GWCCategoryItem",
+      "offset": "+0x54",
+      "type": "void**",
+      "name": "field_0x54"
+    },
+    {
+      "class": "GWCCategoryItem",
+      "offset": "+0x58",
+      "type": "int32_t",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:05:09Z"
+}
