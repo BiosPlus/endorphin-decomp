@@ -1,0 +1,13 @@
+{
+  "va": "0x0057BD80",
+  "size": 97,
+  "orig_symbol": "sub_0057BD80",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "copyBackwardStruct3CResultIter",
+  "signature": "uint32_t fn_0057BD80(uint32_t first, uint32_t last, uint32_t d_last)",
+  "summary": "Runs copyBackwardStruct3C over [first, last) into d_last and returns d_last minus the element count (in 0x3C-byte units), i.e. the iterator one past the copy's destination start.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:38:17Z"
+}

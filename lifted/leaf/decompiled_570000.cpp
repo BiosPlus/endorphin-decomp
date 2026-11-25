@@ -1641,3 +1641,21 @@ extern void __thiscall fn_00575350(void* self, const float* axis, float angle) {
     q[3] = axis[2] * s;
 }
 } // namespace lift_00575350
+
+// [0x0057BD80] sub_0057BD80 (97 bytes)
+namespace lift_0057BD80 {
+// Known callee 0x0057BB90: copyBackwardStruct3C (Copies a range of 0x3C-byte structs backward, assigning two embedded std::strings.)
+extern uint32_t ext_0057BB90(uint32_t first, uint32_t last, uint32_t d_last);
+
+// @name copyBackwardStruct3CResultIter
+// @summary Runs copyBackwardStruct3C over [first, last) into d_last and returns d_last minus the element count (in 0x3C-byte units), i.e. the iterator one past the copy's destination start.
+// (No direct struct field accesses in this function; only pointer arithmetic on 0x3C-byte elements.)
+uint32_t fn_0057BD80(uint32_t first, uint32_t last, uint32_t d_last) {
+    ext_0057BB90(first, last, d_last);
+
+    // Element count = (last - first) / sizeof(0x3C struct), signed division.
+    const int32_t diff = static_cast<int32_t>(last - first);
+    const int32_t count = diff / 60;
+    return d_last - static_cast<uint32_t>(count * 60);
+}
+} // namespace lift_0057BD80

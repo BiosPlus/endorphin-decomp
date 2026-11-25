@@ -25053,6 +25053,12 @@
     "summary": "Lazily initializes the static object at mem_00B3D718 on first call (guarded by bit 0 of mem_00B3D734) and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057BD80": {
+    "name": "copyBackwardStruct3CResultIter",
+    "signature": "uint32_t fn_0057BD80(uint32_t first, uint32_t last, uint32_t d_last)",
+    "summary": "Runs copyBackwardStruct3C over [first, last) into d_last and returns d_last minus the element count (in 0x3C-byte units), i.e. the iterator one past the copy's destination start.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057BEC0": {
     "name": "CopyRecordRangeWrapper_0057BEC0",
     "signature": "void* __cdecl sub_0057BEC0(const void* first, const void* last, void* dest)",
