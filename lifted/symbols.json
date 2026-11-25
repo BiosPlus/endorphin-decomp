@@ -7573,6 +7573,12 @@
     "summary": "One-time guarded initializer for the global object at 0x00AD8374: runs the base init on first call, then sets its vtable-like first DWORD to 0x0093B24C and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046F660": {
+    "name": "fillStaticPair_0046F660",
+    "signature": "void fillStaticPair_0046F660(uint32_t* out, uint32_t value)",
+    "summary": "Stores a dword value and the address of the guarded static object into a two-slot output buffer.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046F7D0": {
     "name": "sub_00467320",
     "class": "(none)",

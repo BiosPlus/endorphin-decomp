@@ -1,0 +1,13 @@
+{
+  "va": "0x0046F660",
+  "size": 30,
+  "orig_symbol": "sub_0046F660",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "fillStaticPair_0046F660",
+  "signature": "void fillStaticPair_0046F660(uint32_t* out, uint32_t value)",
+  "summary": "Stores a dword value and the address of the guarded static object into a two-slot output buffer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:28:40Z"
+}

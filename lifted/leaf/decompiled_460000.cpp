@@ -1454,3 +1454,17 @@ void* fn_0046F4C0() {
     return reinterpret_cast<void*>(&mem_00AD8364);
 }
 } // namespace lift_0046F4C0
+
+// [0x0046F660]
+namespace lift_0046F660 {
+// @name fillStaticPair_0046F660
+// @summary Stores a dword value and the address of the guarded static object into a two-slot output buffer.
+
+void* ext_0046F4C0();
+
+void fillStaticPair_0046F660(uint32_t* out, uint32_t value) {
+    void* obj = ext_0046F4C0();
+    out[0] = value;
+    out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_0046F660
