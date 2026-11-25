@@ -21740,6 +21740,13 @@
     "summary": "Forwards two args to virtual slot +0x58 on self, then clears byte flags at +0x92 and +0x95.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x00543620": {
+    "name": "VirtualDispatch::slot18_thiscall",
+    "class": "VirtualDispatch",
+    "signature": "uint32_t fn_00543620(void* self)",
+    "summary": "Forwards a thiscall to the object's vtable slot at byte offset 0x48 (index 18) and returns its result.",
+    "lifted_path": "lifted/leaf/tiny_540000.cpp"
+  },
   "0x00543630": {
     "name": "IsAltKeyDown",
     "signature": "uint8_t fn_00543630()",

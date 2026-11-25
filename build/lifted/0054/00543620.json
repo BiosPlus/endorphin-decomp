@@ -1,0 +1,22 @@
+{
+  "va": "0x00543620",
+  "size": 7,
+  "orig_symbol": "sub_00543620",
+  "src_path": "src/leaf/tiny_540000.cpp",
+  "lifted_path": "lifted/leaf/tiny_540000.cpp",
+  "name": "VirtualDispatch::slot18_thiscall",
+  "class": "VirtualDispatch",
+  "signature": "uint32_t fn_00543620(void* self)",
+  "summary": "Forwards a thiscall to the object's vtable slot at byte offset 0x48 (index 18) and returns its result.",
+  "fields": [
+    {
+      "class": "VirtualDispatch",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:12:14Z"
+}

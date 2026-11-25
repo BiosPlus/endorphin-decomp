@@ -342,3 +342,19 @@ void* fn_00543210(void* self) {
 }
 } // namespace lift_005455F0
 } // namespace lift_00543210
+
+// [0x00543620] sub_00543620 (7 bytes)
+namespace lift_00543620 {
+// @name VirtualDispatch::slot18_thiscall
+// @class VirtualDispatch
+// @summary Forwards a thiscall to the object's vtable slot at byte offset 0x48 (index 18) and returns its result.
+// @field VirtualDispatch +0x00 void* vtable
+uint32_t fn_00543620(void* self) {
+    // mov eax, [ecx]        ; eax = vtable = *(void**)self
+    void* vtable = lift_field<void*>(self, 0x00);
+    // mov eax, [eax+0x48]   ; eax = vtable[0x48]
+    void* target = lift_field<void*>(vtable, 0x48);
+    // jmp eax               ; tail-call with the caller's stack/ecx untouched
+    return reinterpret_cast<uint32_t(__thiscall*)(void*)>(target)(self);
+}
+} // namespace lift_00543620
