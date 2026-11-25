@@ -55941,6 +55941,13 @@
     "summary": "Unpacks the low four bits of a 32-bit argument into four byte flags in the sub-object at self+0x0C.",
     "lifted_path": "lifted/leaf/decompiled_710000.cpp"
   },
+  "0x0071C430": {
+    "name": "Unknown::GetFlagBits4",
+    "class": "Unknown",
+    "signature": "uint32_t fn_0071C430(void* self)",
+    "summary": "Packs four byte-flags from a sub-object at self+0x0C into a 4-bit value (bit3..bit0).",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071C480": {
     "name": "Unknown::SetPairAtC_0xFD0",
     "class": "Unknown",

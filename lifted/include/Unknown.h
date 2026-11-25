@@ -289,6 +289,7 @@ struct Unknown_Fields {
     // +0xC   DWORD                    flags  (evidence: 0x007CCC80) // CONFLICT: multiple definitions at +0xC
     // +0xC   u32                      flags  (evidence: 0x007CCC30) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 index  (evidence: 0x00810C30) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    inner  (evidence: 0x0071C430) // CONFLICT: multiple definitions at +0xC
     // +0xC   float                    m03  (evidence: 0x00480010) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    m_capacity  (evidence: 0x00505DC0, 0x0050C4D0, 0x00518030, 0x0051E560) // CONFLICT: multiple definitions at +0xC
     // +0xC   std::string              name  (evidence: 0x005A2BD0) // CONFLICT: multiple definitions at +0xC
@@ -1065,10 +1066,14 @@ struct Unknown_Fields {
     // +0x104C uint32_t                 field_0x104c  (evidence: 0x0086D600)
     // +0x1050 uint32_t                 field_0x1050  (evidence: 0x0086D600)
     // +0x1054 uint32_t                 field_0x1054  (evidence: 0x0086D600)
-    // +0x1278 uint8_t flag0 (sub-object-relative: *(self+0x0C) + 0x1278)  (evidence: 0x0071C3E0)
-    // +0x1300 uint8_t flag3 (sub-object-relative: *(self+0x0C) + 0x1300)  (evidence: 0x0071C3E0)
-    // +0x1388 uint8_t flag1 (sub-object-relative: *(self+0x0C) + 0x1388)  (evidence: 0x0071C3E0)
-    // +0x1410 uint8_t flag2 (sub-object-relative: *(self+0x0C) + 0x1410)  (evidence: 0x0071C3E0)
+    // +0x1278 uint8_t flag0 (sub-object-relative: *(self+0x0C) + 0x1278)  (evidence: 0x0071C3E0) // CONFLICT: multiple definitions at +0x1278
+    // +0x1278 uint8_t                  field_0x1278  (evidence: 0x0071C430) // CONFLICT: multiple definitions at +0x1278
+    // +0x1300 uint8_t flag3 (sub-object-relative: *(self+0x0C) + 0x1300)  (evidence: 0x0071C3E0) // CONFLICT: multiple definitions at +0x1300
+    // +0x1300 uint8_t                  field_0x1300  (evidence: 0x0071C430) // CONFLICT: multiple definitions at +0x1300
+    // +0x1388 uint8_t flag1 (sub-object-relative: *(self+0x0C) + 0x1388)  (evidence: 0x0071C3E0) // CONFLICT: multiple definitions at +0x1388
+    // +0x1388 uint8_t                  field_0x1388  (evidence: 0x0071C430) // CONFLICT: multiple definitions at +0x1388
+    // +0x1410 uint8_t flag2 (sub-object-relative: *(self+0x0C) + 0x1410)  (evidence: 0x0071C3E0) // CONFLICT: multiple definitions at +0x1410
+    // +0x1410 uint8_t                  field_0x1410  (evidence: 0x0071C430) // CONFLICT: multiple definitions at +0x1410
     // +0x1520 DWORD                    field_0x1520  (evidence: 0x0071C3B0, 0x0071C8E0, 0x0071C9B0, 0x0071C9E0, 0x0071F070)
     // +0x1524 DWORD                    field_0x1524  (evidence: 0x0071C3B0, 0x0071C8E0, 0x0071C9B0, 0x0071C9E0, 0x0071F070)
     // +0x18D8 BYTE                     field_0x18D8  (evidence: 0x0071C8A0, 0x0071F070)

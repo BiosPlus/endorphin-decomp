@@ -1,0 +1,46 @@
+{
+  "va": "0x0071C430",
+  "size": 80,
+  "orig_symbol": "sub_0071C430",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "Unknown::GetFlagBits4",
+  "class": "Unknown",
+  "signature": "uint32_t fn_0071C430(void* self)",
+  "summary": "Packs four byte-flags from a sub-object at self+0x0C into a 4-bit value (bit3..bit0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "inner"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1278",
+      "type": "uint8_t",
+      "name": "field_0x1278"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1300",
+      "type": "uint8_t",
+      "name": "field_0x1300"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1388",
+      "type": "uint8_t",
+      "name": "field_0x1388"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1410",
+      "type": "uint8_t",
+      "name": "field_0x1410"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:51:45Z"
+}

@@ -1361,3 +1361,25 @@ void fn_0071C3E0(void* self, uint32_t flags) {
     lift_field<uint8_t>(sub, 0x1300) = static_cast<uint8_t>((flags >> 3) & 1u);
 }
 } // namespace lift_0071C3E0
+
+// [0x0071C430] sub_0071C430 (80 bytes)
+namespace lift_0071C430 {
+// @name Unknown::GetFlagBits4
+// @class Unknown
+// @summary Packs four byte-flags from a sub-object at self+0x0C into a 4-bit value (bit3..bit0).
+// @field Unknown +0x0C void* inner
+// @field Unknown +0x1278 uint8_t field_0x1278
+// @field Unknown +0x1300 uint8_t field_0x1300
+// @field Unknown +0x1388 uint8_t field_0x1388
+// @field Unknown +0x1410 uint8_t field_0x1410
+uint32_t fn_0071C430(void* self) {
+    void* inner = lift_field<void*>(self, 0x0C);
+
+    uint32_t result = 0;
+    result |= (lift_field<uint8_t>(inner, 0x1300) != 0) ? 8u : 0u;
+    result |= (lift_field<uint8_t>(inner, 0x1410) != 0) ? 4u : 0u;
+    result |= (lift_field<uint8_t>(inner, 0x1388) != 0) ? 2u : 0u;
+    result |= (lift_field<uint8_t>(inner, 0x1278) != 0) ? 1u : 0u;
+    return result;
+}
+} // namespace lift_0071C430
