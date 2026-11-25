@@ -1,0 +1,14 @@
+{
+  "va": "0x006C9EA0",
+  "size": 96,
+  "orig_symbol": "sub_006C9EA0",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "Unknown::ScaleFirstTwoValues",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __thiscall fn_006C9EA0(void* self, float scale)",
+  "summary": "Scales the first two float parameters by a given factor when flag bits match 0x8 and 0x400/0xC00.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:29:53Z"
+}

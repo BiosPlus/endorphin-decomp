@@ -60233,6 +60233,13 @@
     "summary": "Multiplies the float at [this+0x00] by the float argument and stores it back in place.",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C9EA0": {
+    "name": "Unknown::ScaleFirstTwoValues",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __thiscall fn_006C9EA0(void* self, float scale)",
+    "summary": "Scales the first two float parameters by a given factor when flag bits match 0x8 and 0x400/0xC00.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C9F00": {
     "name": "Unknown::GetField0x08Pair",
     "class": "Unknown",
@@ -70343,6 +70350,12 @@
     "summary": "Passes each pointer in the +0x10 array (count at +0x00) to the MFC thunk, releases the buffer, then resets the chain at +0x18 if present.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00783A80": {
+    "name": "getOrInitSingleton_00783A80",
+    "signature": "void* fn_00783A80(void)",
+    "summary": "Lazily allocates and initializes a 0x14-byte singleton at mem_00B608DC if mem_00AAF3B1 is non-zero.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00783D00": {
     "name": "findLastSetBit",
     "class": "BitSet",
@@ -70494,6 +70507,12 @@
     "signature": "extern \"C\" void __fastcall fn_00785890(void* self)",
     "summary": "Destructor tail-call: restores vtable mem_00996F00 and tail-calls base destructor sub_00785430.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
+  "0x00785E00": {
+    "name": "initDefaultParameters",
+    "signature": "extern \"C\" void __thiscall sub_00785E00(void* self)",
+    "summary": "Initializes six 64-bit fields and two byte flags on the object, then tail-calls ext_007857F0.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
   "0x00785F60": {
     "name": "initHugeBounds",

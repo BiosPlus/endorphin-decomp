@@ -2129,3 +2129,31 @@ extern void __thiscall fn_006C9DF0(void* self, int32_t index, float value) {
     *reinterpret_cast<uint16_t*>(base + 0x18 + 2 * index) = static_cast<uint16_t>(scaled);
 }
 } // namespace lift_006C9DF0
+
+// [0x006C9EA0]
+namespace lift_006C9EA0 {
+extern uint32_t __thiscall ext_006C9C30(void* self);
+extern uint32_t __thiscall ext_006C9CD0(void* self);
+extern float __thiscall ext_006C9DC0(void* self, int32_t idx);
+extern void __thiscall ext_006C9DF0(void* self, int32_t index, float value);
+
+// @name Unknown::ScaleFirstTwoValues
+// @class Unknown
+// @summary Scales the first two float parameters by a given factor when flag bits match 0x8 and 0x400/0xC00.
+extern void __thiscall fn_006C9EA0(void* self, float scale) {
+    if (ext_006C9C30(self) != 8) {
+        return;
+    }
+
+    uint32_t flags = ext_006C9CD0(self);
+    if (flags != 0x400 && flags != 0xC00) {
+        return;
+    }
+
+    float val0 = ext_006C9DC0(self, 0);
+    ext_006C9DF0(self, 0, val0 * scale);
+
+    float val1 = ext_006C9DC0(self, 1);
+    ext_006C9DF0(self, 1, val1 * scale);
+}
+} // namespace lift_006C9EA0
