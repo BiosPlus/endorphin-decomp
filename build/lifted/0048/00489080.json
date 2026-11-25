@@ -1,0 +1,13 @@
+{
+  "va": "0x00489080",
+  "size": 71,
+  "orig_symbol": "sub_00489080",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "CopyFloat5Range",
+  "signature": "void* fn_00489080(const void* first, const void* last, void* out)",
+  "summary": "Copies a range of 20-byte (5 x float) records from [first, last) to out; returns the output end pointer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:26:39Z"
+}

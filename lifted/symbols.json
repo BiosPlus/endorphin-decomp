@@ -8190,6 +8190,12 @@
     "summary": "Returns 1 if the DesiredPoseEventData's entry blend period is at least 1e-6 (and not NaN), else 0; throws if the target pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00489080": {
+    "name": "CopyFloat5Range",
+    "signature": "void* fn_00489080(const void* first, const void* last, void* out)",
+    "summary": "Copies a range of 20-byte (5 x float) records from [first, last) to out; returns the output end pointer.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00489320": {
     "name": "validatedRangeOut",
     "class": "\u003cClassName\u003e (unknown; ecx-passed object)",

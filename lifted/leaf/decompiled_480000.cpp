@@ -966,3 +966,24 @@ void fn_00481BD0(void* self, uint32_t value) {
     }
 }
 } // namespace lift_00481BD0
+
+// [0x00489080] sub_00489080 (71 bytes)
+namespace lift_00489080 {
+// @name CopyFloat5Range
+// @summary Copies a range of 20-byte (5 x float) records from [first, last) to out; returns the output end pointer.
+// (No @class/@field: the 20-byte element type is not a named struct in the recovered layout, so no field names are guessed.)
+void* fn_00489080(const void* first, const void* last, void* out) {
+    constexpr size_t kStride = 5 * sizeof(float); // 0x14
+
+    auto src = static_cast<const uint8_t*>(first);
+    auto end = static_cast<const uint8_t*>(last);
+    auto dst = static_cast<uint8_t*>(out);
+
+    while (src != end) {
+        std::memcpy(dst, src, kStride);
+        src += kStride;
+        dst += kStride;
+    }
+    return dst;
+}
+} // namespace lift_00489080
