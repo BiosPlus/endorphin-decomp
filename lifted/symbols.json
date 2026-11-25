@@ -55778,6 +55778,12 @@
     "summary": "Static 12-byte lookup table (00 01 04 04 04 04 04 04 02 04 04 03) followed by 12 bytes of 0x90 padding; not executable code.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B04C0": {
+    "name": "AllocZeroOrNotifyHook",
+    "signature": "uint32_t fn_007B04C0(uint32_t* out, uint32_t size, uint32_t arg3)",
+    "summary": "Allocates a zeroed global block of the given size; on failure, dispatches (*out, 0x00AB13D8, arg3) to the optional hook and returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B0680": {
     "name": "DispatchSelfFirstDwordWithTag",
     "class": "\u003cnone\u003e",

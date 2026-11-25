@@ -603,3 +603,20 @@ void fn_007B79B0(uint32_t count, uint8_t* buf) {
     }
 }
 } // namespace lift_007B79B0
+
+// [0x007B04C0]
+namespace lift_007B04C0 {
+// @name AllocZeroOrNotifyHook
+// @summary Allocates a zeroed global block of the given size; on failure, dispatches (*out, 0x00AB13D8, arg3) to the optional hook and returns 0.
+
+uint32_t ext_0079AF40(uint32_t size);
+void ext_0079B140(uint32_t a1, uint32_t a2, uint32_t a3);
+
+uint32_t fn_007B04C0(uint32_t* out, uint32_t size, uint32_t arg3) {
+    uint32_t handle = ext_0079AF40(size);
+    if (handle == 0) {
+        ext_0079B140(*out, 0x00AB13D8u, arg3);
+    }
+    return handle;
+}
+} // namespace lift_007B04C0
