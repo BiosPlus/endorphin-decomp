@@ -160,6 +160,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00584FD0 (NMData::RPROJointData::vfunc_59).",
     "lifted_path": "lifted/classes/AVIIO.cpp"
   },
+  "0x00401C60": {
+    "name": "std::logic_error::logic_error",
+    "class": "std::logic_error",
+    "signature": "void* __thiscall sub_00401C60(void* self, const void* other)",
+    "summary": "Copy constructor for std::logic_error (or derived exception with std::string at +0xc).",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00401CC0": {
     "name": "FwdChildVfunc_78",
     "signature": "void fn_00401CC0(void* self)",
@@ -18157,6 +18164,12 @@
     "signature": "uint8_t* fn_0051DF60(uint8_t* begin, uint8_t* end, uint32_t key)",
     "summary": "Scans entries from begin to end (stride 0x168) and returns the first entry whose subobject's virtual method result matches key, or end if none match.",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
+  "0x0051E070": {
+    "name": "offsetByWholeTurns360",
+    "signature": "int32_t fn_0051E070(int32_t a, int32_t b, int32_t c)",
+    "summary": "Calls ext_0051DFC0 (result unused), then returns c + (b - a) with the delta truncated toward zero to a multiple of 360.",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
   },
   "0x0051E170": {
     "name": "sub_0051E170",

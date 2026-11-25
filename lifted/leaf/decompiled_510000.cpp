@@ -94,3 +94,23 @@ extern uint32_t fn_0051F540(uint32_t first, uint32_t last, uint32_t dest) {
 }
 } // namespace lift_00406290
 } // namespace lift_0051F540
+
+// [0x0051E070] sub_0051E070 (90 bytes)
+namespace lift_0051E070 {
+extern int32_t ext_0051DFC0(int32_t a, int32_t b, int32_t c, int32_t d, int32_t e, int32_t f);
+
+// @name offsetByWholeTurns360
+// @summary Calls ext_0051DFC0 (result unused), then returns c + (b - a) with the delta truncated toward zero to a multiple of 360.
+int32_t fn_0051E070(int32_t a, int32_t b, int32_t c) {
+    // Stack args a/b/c are the three cdecl params; the two byte-sized flags
+    // passed to the callee are zero-initialised locals in the original.
+    ext_0051DFC0(a, b, c, c, 0, 0);
+
+    // Wrapping subtraction (matches 32-bit machine arithmetic).
+    const int32_t delta = static_cast<int32_t>(static_cast<uint32_t>(b) - static_cast<uint32_t>(a));
+    // Signed division by 360 (compiler emits the same magic-multiply sequence).
+    const int32_t turns = delta / 360;
+    // Wrapping add, as the original 32-bit add does.
+    return static_cast<int32_t>(static_cast<uint32_t>(c) + static_cast<uint32_t>(turns * 360));
+}
+} // namespace lift_0051E070
