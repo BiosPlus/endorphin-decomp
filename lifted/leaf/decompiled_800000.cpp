@@ -951,3 +951,19 @@ void fn_0080ABE0(void) {
     mem_00B73C80 = 1;
 }
 } // namespace lift_0080ABE0
+
+// [0x0080AD90]
+namespace lift_0080AD90 {
+// @name InitCriticalSection_0080AD90
+// @summary Calls KERNEL32!InitializeCriticalSection on the global CRITICAL_SECTION at mem_00B73C40, then sets the global flag mem_00B73C84 to 1.
+
+
+extern void (*mem_009241C0)(void* lpCriticalSection); // KERNEL32!InitializeCriticalSection (IAT slot)
+extern uint8_t mem_00B73C40[24];                      // global CRITICAL_SECTION
+extern uint32_t mem_00B73C84;                         // global init flag
+
+void fn_0080AD90(void) {
+    mem_009241C0(static_cast<void*>(mem_00B73C40));
+    mem_00B73C84 = 1;
+}
+} // namespace lift_0080AD90
