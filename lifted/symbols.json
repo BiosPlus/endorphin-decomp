@@ -27589,6 +27589,13 @@
     "summary": "Pure jump thunk forwarding to NMData::CollisionModelDataBase::vfunc_21.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x005AAAB0": {
+    "name": "NMData::SourceRigNode::vfunc_59",
+    "class": "NMData::SourceRigNode",
+    "signature": "void __stdcall fn_005AAAB0(void* self)",
+    "summary": "Builds a temporary std::string from a fixed .rdata literal and copy-assigns it into the target object via AssignStringAndSetFlag; self is read from the first stack argument.",
+    "lifted_path": "lifted/NMData/SourceRigNode.cpp"
+  },
   "0x005AAD10": {
     "name": "ObjectWithChild::SetValueFromStringKey",
     "class": "ObjectWithChild",

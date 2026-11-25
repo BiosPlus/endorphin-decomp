@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/NMData/SourceRigNode.cpp
 #include "lift_compat.h"
 #include <string>
+#include <cstdint>
 
 // [0x005ABF30]
 namespace lift_005ABF30 {
@@ -38,3 +39,37 @@ void* fn_005ABF30(void* self) {
     return obj;
 }
 } // namespace lift_005ABF30
+
+// [0x005AAAB0] NMData::SourceRigNode::vfunc_59 (94 bytes)
+namespace lift_005AAAB0 {
+// Known callee 0x005B18E0: AssignStringAndSetFlag (copy-assigns the std::string argument into this+0x28 and sets the byte flag at this+0x04 to 1).
+extern void __thiscall ext_005B18E0(void* self, const std::string& src);
+// Import slot 0x00924FE4 holds MSVCP80 std::basic_string<char>::basic_string(const char*); read via its address below.
+extern int mem_00924FE4;
+// Import slot 0x00924FF4 holds MSVCP80 std::basic_string<char>::~basic_string(); read via its address below.
+extern int mem_00924FF4;
+
+namespace lift_005AAAB0 {
+// @name NMData::SourceRigNode::vfunc_59
+// @class NMData::SourceRigNode
+// @summary Builds a temporary std::string from a fixed .rdata literal and copy-assigns it into the target object via AssignStringAndSetFlag; self is read from the first stack argument.
+void __stdcall fn_005AAAB0(void* self) {
+    using StrCtorFn = void(__thiscall*)(void* this_str, const char* s);
+    using StrDtorFn = void(__thiscall*)(void* this_str);
+
+    // Original: 28-byte std::string temporary at [esp] (SEH frame setup/teardown omitted; C++ unwinding covers it).
+    alignas(8) unsigned char tmp[0x1C];
+
+    // Original: std::string tmp("<literal @ 0x00934904>") via import slot 0x924FE4.
+    const auto str_ctor = *reinterpret_cast<StrCtorFn*>(static_cast<uintptr_t>(0x00924FE4));
+    str_ctor(tmp, reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00934904)));
+
+    // Original: ext_005B18E0(self /*ecx*/, &tmp /*pushed*/).
+    ext_005B18E0(self, *reinterpret_cast<const std::string*>(tmp));
+
+    // Original: ~std::string(&tmp) via import slot 0x924FF4.
+    const auto str_dtor = *reinterpret_cast<StrDtorFn*>(static_cast<uintptr_t>(0x00924FF4));
+    str_dtor(tmp);
+}
+} // namespace lift_005AAAB0
+} // namespace lift_005AAAB0

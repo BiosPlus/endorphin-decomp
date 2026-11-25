@@ -1,0 +1,14 @@
+{
+  "va": "0x005AAAB0",
+  "size": 94,
+  "orig_symbol": "NMData::SourceRigNode::vfunc_59",
+  "src_path": "src/NMData/SourceRigNode.cpp",
+  "lifted_path": "lifted/NMData/SourceRigNode.cpp",
+  "name": "NMData::SourceRigNode::vfunc_59",
+  "class": "NMData::SourceRigNode",
+  "signature": "void __stdcall fn_005AAAB0(void* self)",
+  "summary": "Builds a temporary std::string from a fixed .rdata literal and copy-assigns it into the target object via AssignStringAndSetFlag; self is read from the first stack argument.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-25T13:19:41Z"
+}
