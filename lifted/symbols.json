@@ -3261,10 +3261,28 @@
     "summary": "Queries bit flag 5 on the global sub-object and passes it to the object's vtable slot +0x4.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004308D0": {
+    "name": "updateObjectFlagFromGlobal",
+    "signature": "void __stdcall fn_004308D0(void* obj)",
+    "summary": "Checks bit flag 0xb on the global sub-object and passes the result to the target object's vtable+0x4 method.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430900": {
     "name": "forwardChildStateToTarget",
     "signature": "void __thiscall fn_00430900(void* self, void* target)",
     "summary": "If child at +0x100 is non-null, queries its state via ext_0044B660 and passes it to target's vtable+0x4 method.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x004309A0": {
+    "name": "syncObjectFlagFromGlobal",
+    "signature": "int32_t __stdcall fn_004309A0(void* obj)",
+    "summary": "Queries bit flag 4 on the global sub-object and passes it to the target object's vtable+0x04 method.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x004309D0": {
+    "name": "updateObjectFlagFromGlobal",
+    "signature": "void __stdcall fn_004309D0(void* obj)",
+    "summary": "Checks bit flag 0xc on the global sub-object and passes the result to the object's vtable+0x4 method.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
   "0x00430A30": {

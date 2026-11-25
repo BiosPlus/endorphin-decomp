@@ -3647,3 +3647,58 @@ extern int32_t __stdcall fn_00430810(void* obj) {
     return vfunc(obj, static_cast<uint32_t>(flag));
 }
 } // namespace lift_00430810
+
+// [0x004308D0]
+namespace lift_004308D0 {
+extern int32_t __cdecl ext_00465B30(void);
+extern bool __thiscall ext_004694E0(void* self, uint32_t index);
+
+// @name updateObjectFlagFromGlobal
+// @summary Checks bit flag 0xb on the global sub-object and passes the result to the target object's vtable+0x4 method.
+// @field Object +0x00 void** vtable
+void __stdcall fn_004308D0(void* obj) {
+    void** vtable = *reinterpret_cast<void***>(obj);
+    int32_t globalObj = ext_00465B30();
+    bool flag = ext_004694E0(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(globalObj))), 0xbu);
+    using Vfn = void(__thiscall*)(void*, uint32_t);
+    reinterpret_cast<Vfn>(vtable[1])(obj, flag ? 1u : 0u);
+}
+} // namespace lift_004308D0
+
+// [0x004309A0]
+namespace lift_004309A0 {
+extern int32_t __cdecl ext_00465B30(void);
+bool __thiscall ext_004694E0(void* self, uint32_t index);
+
+// @name syncObjectFlagFromGlobal
+// @summary Queries bit flag 4 on the global sub-object and passes it to the target object's vtable+0x04 method.
+// @field Object +0x00 void** vtable
+int32_t __stdcall fn_004309A0(void* obj) {
+    void** vtable = *reinterpret_cast<void***>(obj);
+    void* globalObj = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(ext_00465B30())));
+    bool flag = ext_004694E0(globalObj, 4);
+    using VMethod = int32_t(__thiscall*)(void*, uint32_t);
+    auto method = reinterpret_cast<VMethod>(vtable[1]);
+    return method(obj, static_cast<uint32_t>(flag));
+}
+} // namespace lift_004309A0
+
+// [0x004309D0]
+namespace lift_004309D0 {
+// @name updateObjectFlagFromGlobal
+// @summary Checks bit flag 0xc on the global sub-object and passes the result to the object's vtable+0x4 method.
+
+
+extern int32_t __cdecl ext_00465B30(void);
+extern bool __thiscall ext_004694E0(void* self, uint32_t index);
+
+void __stdcall fn_004309D0(void* obj) {
+    uint32_t* vtable = *reinterpret_cast<uint32_t**>(obj);
+    void* globalObj = reinterpret_cast<void*>(static_cast<uintptr_t>(ext_00465B30()));
+    bool flag = ext_004694E0(globalObj, 0xc);
+
+    using VtableFn = void(__thiscall*)(void*, uint32_t);
+    VtableFn fn = reinterpret_cast<VtableFn>(static_cast<uintptr_t>(vtable[1]));
+    fn(obj, static_cast<uint32_t>(flag ? 1 : 0));
+}
+} // namespace lift_004309D0
