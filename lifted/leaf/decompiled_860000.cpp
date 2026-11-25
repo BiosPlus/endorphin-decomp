@@ -426,3 +426,32 @@ void fn_0086F160(const DWORD* a, const DWORD* b, DWORD* out) {
     ext_0086F120(a, negated, out);
 }
 } // namespace lift_0086F160
+
+// [0x0086B180] sub_0086B180 (63 bytes)
+namespace lift_0086B180 {
+// @name Unknown::ShiftLeft5DwordsCarryBit29
+// @class Unknown
+// @summary Shifts a 5-DWORD value at self left by one bit (word 4 is LSB end, word 0 is MSB end), feeding bit 29 of word 0 into word 4, then clears bits 30-31 of word 0.
+// @field Unknown +0x00 DWORD field_0x00
+// @field Unknown +0x04 DWORD field_0x04
+// @field Unknown +0x08 DWORD field_0x08
+// @field Unknown +0x0C DWORD field_0x0C
+// @field Unknown +0x10 DWORD field_0x10
+void fn_0086B180(void* self) {
+    DWORD* w = static_cast<DWORD*>(self);
+
+    // Carry-in is bit 29 of word 0, taken before any modification.
+    DWORD carry = (w[0] >> 29) & 1u;
+
+    // Process words 4, 3, 2, 1, 0 in that order, propagating the top bit upward.
+    for (int i = 4; i >= 0; --i) {
+        DWORD v = w[i];
+        DWORD next_carry = v >> 31;
+        w[i] = (v << 1) | carry;
+        carry = next_carry;
+    }
+
+    // Clear bits 30 and 31 of word 0.
+    w[0] &= 0x3FFFFFFFu;
+}
+} // namespace lift_0086B180
