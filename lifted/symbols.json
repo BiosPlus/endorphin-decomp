@@ -685,6 +685,13 @@
     "summary": "Sends message 0x18B with zero wParam/lParam to the window handle stored in this-\u003e+0x20.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x0040C010": {
+    "name": "CArray::GetAt",
+    "class": "CArray",
+    "signature": "uint32_t fn_0040C010(void* self, uint32_t index)",
+    "summary": "Returns the uint32 element at index from a 32-bit begin/end-pointer array; calls _invalid_parameter_noinfo when out of range or unset.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040C300": {
     "name": "Unknown::notifyWindowThenClear",
     "class": "Unknown",

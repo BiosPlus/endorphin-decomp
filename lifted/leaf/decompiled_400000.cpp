@@ -597,3 +597,31 @@ extern uint32_t __thiscall fn_00408050(void* self, void* ctrl, uint32_t unused2,
     return 0;
 }
 } // namespace lift_00408050
+
+// [0x0040C010] sub_0040C010 (61 bytes)
+namespace lift_0040C010 {
+extern void (*mem_00925134)(void);
+
+// @name CArray::GetAt
+// @class CArray
+// @summary Returns the uint32 element at index from a 32-bit begin/end-pointer array; calls _invalid_parameter_noinfo when out of range or unset.
+// @field CArray +0x23C uint32_t* field_0x23C
+// @field CArray +0x240 uint32_t* field_0x240
+uint32_t fn_0040C010(void* self, uint32_t index) {
+    const auto base = reinterpret_cast<const uint8_t*>(self);
+    const uint32_t begin = *reinterpret_cast<const uint32_t*>(base + 0x23C);
+    const uint32_t end = *reinterpret_cast<const uint32_t*>(base + 0x240);
+
+    if (begin != 0) {
+        const int32_t count = static_cast<int32_t>(end - begin) >> 2;
+        if (index < static_cast<uint32_t>(count)) {
+            return reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(begin))[index];
+        }
+    }
+
+    mem_00925134();
+
+    const uint32_t begin_again = *reinterpret_cast<const uint32_t*>(base + 0x23C);
+    return reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(begin_again))[index];
+}
+} // namespace lift_0040C010

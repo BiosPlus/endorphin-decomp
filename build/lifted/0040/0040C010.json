@@ -1,0 +1,28 @@
+{
+  "va": "0x0040C010",
+  "size": 61,
+  "orig_symbol": "sub_0040C010",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "CArray::GetAt",
+  "class": "CArray",
+  "signature": "uint32_t fn_0040C010(void* self, uint32_t index)",
+  "summary": "Returns the uint32 element at index from a 32-bit begin/end-pointer array; calls _invalid_parameter_noinfo when out of range or unset.",
+  "fields": [
+    {
+      "class": "CArray",
+      "offset": "+0x23C",
+      "type": "uint32_t*",
+      "name": "field_0x23C"
+    },
+    {
+      "class": "CArray",
+      "offset": "+0x240",
+      "type": "uint32_t*",
+      "name": "field_0x240"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:56:19Z"
+}
