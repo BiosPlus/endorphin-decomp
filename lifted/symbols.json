@@ -49624,6 +49624,13 @@
     "summary": "Initializes a 16-byte object: stores arg2 at +0x00, zeroes +0x04 and +0x08, stores arg1 at +0x0C (thiscall, ret 8).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E67E0": {
+    "name": "Unknown::releaseSubobjectAt08",
+    "class": "Unknown",
+    "signature": "extern \"C\" void fn_006E67E0(void* ecx)",
+    "summary": "Destroys the object pointed to by this+0x08 (if non-null) and then frees its storage.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E6800": {
     "name": "destroyPairMembers",
     "signature": "extern \"C\" void fn_006E6800(void* self)",

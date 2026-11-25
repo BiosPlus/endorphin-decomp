@@ -1125,3 +1125,21 @@ extern void __fastcall fn_006E7730(void* self) {
     ext_006B9D70(base + 0x8);
 }
 } // namespace lift_006E7730
+
+// [0x006E67E0]
+namespace lift_006E67E0 {
+// @name Unknown::releaseSubobjectAt08
+// @summary Destroys the object pointed to by this+0x08 (if non-null) and then frees its storage.
+// @field Unknown +0x08 void* field_0x08
+
+extern void ext_006E6800(void* self);
+extern void ext_006A5C5C(void* p);
+
+extern void fn_006E67E0(void* ecx) {
+    void* esi = *reinterpret_cast<void**>(reinterpret_cast<char*>(ecx) + 0x08);
+    if (esi != nullptr) {
+        ext_006E6800(esi);
+        ext_006A5C5C(esi);
+    }
+}
+} // namespace lift_006E67E0
