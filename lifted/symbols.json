@@ -2074,6 +2074,13 @@
     "summary": "Sends message 0x1018 (wParam=0, lParam=0) to the handle stored at self+0x20, then forwards the SendMessageA result to ext_006A5E00.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00420070": {
+    "name": "Unknown::destructor_00420070",
+    "class": "Unknown",
+    "signature": "void fn_00420070(void* self)",
+    "summary": "Destroys the std::string at +0x28, then chains to the DIBException base destructor.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00420190": {
     "name": "HotkeyDialog::vfunc_1",
     "class": "HotkeyDialog",

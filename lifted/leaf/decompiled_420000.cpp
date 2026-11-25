@@ -888,3 +888,22 @@ void fn_00427480(std::uint8_t* first, std::uint8_t* last, const std::uint8_t* tm
     }
 }
 } // namespace lift_00427480
+
+// [0x00420070] sub_00420070 (77 bytes)
+namespace lift_00420070 {
+// Known callee 0x00401BB0: DIBException::~DIBException (base destructor: installs DIBException vtable, destroys the std::string at +0x0C, then destroys the std::exception base).
+extern void ext_00401BB0(void* self);
+
+// std::basic_string<char>::~basic_string, called through an import thunk slot.
+extern void (*mem_00924FF4)(void* self);
+
+// @name Unknown::destructor_00420070
+// @class Unknown
+// @summary Destroys the std::string at +0x28, then chains to the DIBException base destructor.
+// @field Unknown +0x28 std::string field_0x28
+void fn_00420070(void* self) {
+    void* str = static_cast<uint8_t*>(self) + 0x28;
+    mem_00924FF4(str);
+    ext_00401BB0(self);
+}
+} // namespace lift_00420070

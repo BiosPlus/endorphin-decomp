@@ -1,0 +1,22 @@
+{
+  "va": "0x00420070",
+  "size": 77,
+  "orig_symbol": "sub_00420070",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "Unknown::destructor_00420070",
+  "class": "Unknown",
+  "signature": "void fn_00420070(void* self)",
+  "summary": "Destroys the std::string at +0x28, then chains to the DIBException base destructor.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "std::string",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:06:49Z"
+}
