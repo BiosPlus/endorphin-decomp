@@ -1342,3 +1342,22 @@ uint8_t fn_00712780(void* self, uint32_t arg1, uint32_t arg2) {
     return static_cast<uint8_t>(result & 0xFF);
 }
 } // namespace lift_00712780
+
+// [0x0071C3E0] sub_0071C3E0 (80 bytes)
+namespace lift_0071C3E0 {
+// @name Unknown::SetPackedFlags
+// @class Unknown
+// @summary Unpacks the low four bits of a 32-bit argument into four byte flags in the sub-object at self+0x0C.
+// @field Unknown +0x0C void* subObject
+// @field Unknown +0x1278 uint8_t flag0 (sub-object-relative: *(self+0x0C) + 0x1278)
+// @field Unknown +0x1388 uint8_t flag1 (sub-object-relative: *(self+0x0C) + 0x1388)
+// @field Unknown +0x1410 uint8_t flag2 (sub-object-relative: *(self+0x0C) + 0x1410)
+// @field Unknown +0x1300 uint8_t flag3 (sub-object-relative: *(self+0x0C) + 0x1300)
+void fn_0071C3E0(void* self, uint32_t flags) {
+    void* sub = lift_field<void*>(self, 0x0C);
+    lift_field<uint8_t>(sub, 0x1278) = static_cast<uint8_t>(flags & 1u);
+    lift_field<uint8_t>(sub, 0x1388) = static_cast<uint8_t>((flags >> 1) & 1u);
+    lift_field<uint8_t>(sub, 0x1410) = static_cast<uint8_t>((flags >> 2) & 1u);
+    lift_field<uint8_t>(sub, 0x1300) = static_cast<uint8_t>((flags >> 3) & 1u);
+}
+} // namespace lift_0071C3E0

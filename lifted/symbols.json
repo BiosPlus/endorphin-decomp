@@ -55934,6 +55934,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x006D9010 (Unknown::GetInnerDouble).",
     "lifted_path": "lifted/leaf/tiny_710000.cpp"
   },
+  "0x0071C3E0": {
+    "name": "Unknown::SetPackedFlags",
+    "class": "Unknown",
+    "signature": "void fn_0071C3E0(void* self, uint32_t flags)",
+    "summary": "Unpacks the low four bits of a 32-bit argument into four byte flags in the sub-object at self+0x0C.",
+    "lifted_path": "lifted/leaf/decompiled_710000.cpp"
+  },
   "0x0071C480": {
     "name": "Unknown::SetPairAtC_0xFD0",
     "class": "Unknown",

@@ -301,6 +301,7 @@ struct Unknown_Fields {
     // +0xC   int32_t                  rectRight  (evidence: 0x00540DD0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint8_t                  result  (evidence: 0x0053A5E0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 srcField4  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    subObject  (evidence: 0x0071C3E0) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  tag  (evidence: 0x00715710) // CONFLICT: multiple definitions at +0xC
     // +0xC   pointer                  vecHolder  (evidence: 0x0067AEB0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0C (sub-object that receives the value via vfunc_8)  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x005853E0) // CONFLICT: multiple definitions at +0xC
@@ -1064,6 +1065,10 @@ struct Unknown_Fields {
     // +0x104C uint32_t                 field_0x104c  (evidence: 0x0086D600)
     // +0x1050 uint32_t                 field_0x1050  (evidence: 0x0086D600)
     // +0x1054 uint32_t                 field_0x1054  (evidence: 0x0086D600)
+    // +0x1278 uint8_t flag0 (sub-object-relative: *(self+0x0C) + 0x1278)  (evidence: 0x0071C3E0)
+    // +0x1300 uint8_t flag3 (sub-object-relative: *(self+0x0C) + 0x1300)  (evidence: 0x0071C3E0)
+    // +0x1388 uint8_t flag1 (sub-object-relative: *(self+0x0C) + 0x1388)  (evidence: 0x0071C3E0)
+    // +0x1410 uint8_t flag2 (sub-object-relative: *(self+0x0C) + 0x1410)  (evidence: 0x0071C3E0)
     // +0x1520 DWORD                    field_0x1520  (evidence: 0x0071C3B0, 0x0071C8E0, 0x0071C9B0, 0x0071C9E0, 0x0071F070)
     // +0x1524 DWORD                    field_0x1524  (evidence: 0x0071C3B0, 0x0071C8E0, 0x0071C9B0, 0x0071C9E0, 0x0071F070)
     // +0x18D8 BYTE                     field_0x18D8  (evidence: 0x0071C8A0, 0x0071F070)
