@@ -912,3 +912,36 @@ void* fn_005B6A80(void* self) {
     return subobject;
 }
 } // namespace lift_005B6A80
+
+// [0x005B6A10] sub_005B6A10 (99 bytes)
+namespace lift_005B6A10 {
+// Known callee 0x00647F20: sub_00647F20 (Member forwarding thunk: loads subobject pointer at +0xA4 and tail-calls sub_0065A980.)
+extern void __fastcall ext_00647F20(void* self, void* edx_unused, void* arg);
+// Known callee 0x00694840: sub_00694840 (51 bytes), __fastcall(this=ecx, stack arg), callee-cleanup.
+extern void __fastcall ext_00694840(void* self, void* edx_unused, void* arg);
+
+// @name Unknown::refreshChildWithIdentity
+// @class Unknown
+// @summary If the pointer at +0x158 is set, passes its subobject (+0xAC) and a 3x3 identity float matrix to ext_00647F20, then calls ext_00694840 with the matrix and this+0x194; returns this+0x194.
+// @field Unknown +0x158 void* field_0x158
+// @field Unknown +0x194 uint8_t field_0x194
+void* fn_005B6A10(void* self) {
+    uint8_t* esi = static_cast<uint8_t*>(self);
+
+    void* child = lift_field<void*>(esi, 0x158);
+    if (child != nullptr) {
+        // Local 3x3 identity matrix (9 floats, row-major): 1,0,0, 0,1,0, 0,0,1.
+        float m[9] = {1.0f, 0.0f, 0.0f,
+                      0.0f, 1.0f, 0.0f,
+                      0.0f, 0.0f, 1.0f};
+
+        // Subobject at child+0xAC (class not yet recovered).
+        void* subobject = lift_field<void*>(child, 0xAC);
+        ext_00647F20(subobject, nullptr, m);
+
+        ext_00694840(m, nullptr, esi + 0x194);
+    }
+
+    return esi + 0x194;
+}
+} // namespace lift_005B6A10
