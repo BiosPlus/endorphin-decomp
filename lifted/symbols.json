@@ -39517,6 +39517,13 @@
     "summary": "Calls ext_00630580 on self, passes its result to ext_00693F40 on the subobject at self+0xF8, and returns that subobject's address.",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
+  "0x0063D990": {
+    "name": "Unknown::ComputeFirstTwoElementDeltaF",
+    "class": "Unknown",
+    "signature": "void fn_0063D990(void* self)",
+    "summary": "Stores (elem[0]-\u003evslot0x44() - elem[1]-\u003evslot0x44()) as float at +0x38, where elem[] is the 4-byte-element array at +0x2c.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063DAB0": {
     "name": "sub_0063DAB0_init",
     "class": "\u003cClassName\u003e (unknown)",

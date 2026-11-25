@@ -1,0 +1,34 @@
+{
+  "va": "0x0063D990",
+  "size": 101,
+  "orig_symbol": "sub_0063D990",
+  "src_path": "src/leaf/decompiled_630000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_630000.cpp",
+  "name": "Unknown::ComputeFirstTwoElementDeltaF",
+  "class": "Unknown",
+  "signature": "void fn_0063D990(void* self)",
+  "summary": "Stores (elem[0]-\u003evslot0x44() - elem[1]-\u003evslot0x44()) as float at +0x38, where elem[] is the 4-byte-element array at +0x2c.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "uint32_t",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:45:34Z"
+}

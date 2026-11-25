@@ -1019,3 +1019,59 @@ void fn_0063E050(void* self, std::string& out, int skip) {
     out = std::string(begin, count);
 }
 } // namespace lift_0063E050
+
+// [0x0063D990] sub_0063D990 (101 bytes)
+namespace lift_0063D990 {
+extern void (*mem_00925134)(void);
+
+// @name Unknown::ComputeFirstTwoElementDeltaF
+// @class Unknown
+// @summary Stores (elem[0]->vslot0x44() - elem[1]->vslot0x44()) as float at +0x38, where elem[] is the 4-byte-element array at +0x2c.
+// @field Unknown +0x2c uint32_t field_0x2c
+// @field Unknown +0x30 uint32_t field_0x30
+// @field Unknown +0x38 float field_0x38
+void fn_0063D990(void* self) {
+    // Guest-pointer helpers: stored pointers are 32-bit values.
+    auto guest_ptr = [](uint32_t v) -> void* {
+        return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+    };
+    using GetterFn = double (*)(void*);
+
+    // Checks: begin must be non-null and element count (end - begin) / 4 must be > 1.
+    // Each failing check invokes the invalid-parameter handler, matching the original flow.
+    uint32_t begin_raw = lift_field<uint32_t>(self, 0x2c);
+    if (begin_raw == 0) {
+        mem_00925134();
+    } else {
+        int32_t count = static_cast<int32_t>(lift_field<uint32_t>(self, 0x30) - begin_raw) >> 2;
+        if (count == 0) {
+            mem_00925134();
+        }
+    }
+
+    begin_raw = lift_field<uint32_t>(self, 0x2c);
+    if (begin_raw == 0) {
+        mem_00925134();
+    } else {
+        int32_t count = static_cast<int32_t>(lift_field<uint32_t>(self, 0x30) - begin_raw) >> 2;
+        if (static_cast<uint32_t>(count) <= 1) {
+            mem_00925134();
+        }
+    }
+
+    // Element 0: virtual getter at vtable+0x44 returning double.
+    void* begin = guest_ptr(begin_raw);
+    void* elem0 = guest_ptr(lift_field<uint32_t>(begin, 0));
+    void* vt0 = guest_ptr(lift_field<uint32_t>(elem0, 0));
+    GetterFn get0 = reinterpret_cast<GetterFn>(guest_ptr(lift_field<uint32_t>(vt0, 0x44)));
+    double a = get0(elem0);
+
+    // Element 1: same virtual slot.
+    void* elem1 = guest_ptr(lift_field<uint32_t>(begin, 4));
+    void* vt1 = guest_ptr(lift_field<uint32_t>(elem1, 0));
+    GetterFn get1 = reinterpret_cast<GetterFn>(guest_ptr(lift_field<uint32_t>(vt1, 0x44)));
+    double b = get1(elem1);
+
+    lift_field<float>(self, 0x38) = static_cast<float>(a - b);
+}
+} // namespace lift_0063D990
