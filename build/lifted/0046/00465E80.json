@@ -1,0 +1,22 @@
+{
+  "va": "0x00465E80",
+  "size": 22,
+  "orig_symbol": "sub_00465E80",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "CheckedForwardEraseTail",
+  "class": "Unknown",
+  "signature": "void fn_00465E80(void* self)",
+  "summary": "If the global object pointer is non-null and its +0x20 field is nonzero, tail-forward to sub_00435B30; otherwise return.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "int32_t",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:19:14Z"
+}

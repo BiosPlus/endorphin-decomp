@@ -950,3 +950,22 @@ void fn_0046FE90(void* self)
     }
 }
 } // namespace lift_0046FE90
+
+// [0x00465E80] sub_00465E80 (22 bytes)
+namespace lift_00465E80 {
+// Known callee 0x00435B30: sub_00435B30 (Auto-lifted identical-shape clone of 0x00642600 (forwardEraseTailRange).)
+extern void ext_00435B30(void* self);
+// Global pointer at 0x00ACDB40; dereferenced when non-null.
+extern void* mem_00ACDB40;
+
+// @name CheckedForwardEraseTail
+// @class Unknown
+// @summary If the global object pointer is non-null and its +0x20 field is nonzero, tail-forward to sub_00435B30; otherwise return.
+// @field Unknown +0x20 int32_t field_0x20
+void fn_00465E80(void* self) {
+    if (mem_00ACDB40 != nullptr &&
+        lift_field<int32_t>(mem_00ACDB40, 0x20) != 0) {
+        ext_00435B30(self);
+    }
+}
+} // namespace lift_00465E80
