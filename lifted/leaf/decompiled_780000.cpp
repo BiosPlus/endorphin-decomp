@@ -1080,3 +1080,42 @@ void fn_007892B0(void* self) {
     }
 }
 } // namespace lift_007892B0
+
+// [0x0078D510] sub_0078D510 (64 bytes)
+namespace lift_0078D510 {
+// @name Unknown::FindKeyIndexInSubtable
+// @class Unknown
+// @summary Looks up subtable [group][sub] (32-bit pointer chain) and returns the index of the first 16-byte record whose leading DWORD equals key, or -1 if absent.
+// @field Unknown +0x10 DWORD group_table_entries (24-byte stride; each entry's first DWORD is a pointer to a subtable array)
+// @field Unknown +0x00 DWORD subtable_count (signed; read from the container pointed to by a group-table pointer)
+// @field Unknown +0x10 DWORD subtable_records (pointer to 16-byte records; first DWORD of each record is the key)
+
+static inline uint32_t ReadU32(uintptr_t addr) {
+    uint32_t value;
+    std::memcpy(&value, reinterpret_cast<const void*>(addr), sizeof(value));
+    return value;
+}
+
+int32_t __thiscall fn_0078D510(void* self, int32_t group, int32_t sub, int32_t key) {
+    const uintptr_t base = reinterpret_cast<uintptr_t>(self);
+
+    // ecx = *(self + 0x10 + 24*group)
+    const uint32_t table = ReadU32(base + 0x10u + 24u * static_cast<uint32_t>(group));
+    // edx = *(table + 4*sub)
+    const uint32_t container = ReadU32(table + 4u * static_cast<uint32_t>(sub));
+
+    const int32_t count = static_cast<int32_t>(ReadU32(container));
+    if (count <= 0) {
+        return -1;
+    }
+
+    uint32_t record = ReadU32(container + 0x10u);
+    for (int32_t i = 0; i < count; ++i) {
+        if (static_cast<int32_t>(ReadU32(record)) == key) {
+            return i;
+        }
+        record += 0x10u;
+    }
+    return -1;
+}
+} // namespace lift_0078D510

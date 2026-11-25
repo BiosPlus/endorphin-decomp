@@ -61,6 +61,7 @@ struct Unknown_Fields {
     // +0x0   double[] array (base pointer in ecx; element i at byte offset 8*i, dynamic index so no fixed offset)  (evidence: 0x006D2400) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD field_0x00 (first dword; compared for equality against other)  (evidence: 0x00414880, 0x0041A070) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 owner  (evidence: 0x0066BA00) // CONFLICT: multiple definitions at +0x0
+    // +0x0   DWORD subtable_count (signed; read from the container pointed to by a group-table pointer)  (evidence: 0x0078D510) // CONFLICT: multiple definitions at +0x0
     // +0x0   FILE* field_0x00 (inner object: stream pointer)  (evidence: 0x00783570) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t vtable (object's vtable pointer)  (evidence: 0x007DAD70) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (arg1 -> object pointer)  (evidence: 0x007D5B30) // CONFLICT: multiple definitions at +0x0
@@ -251,6 +252,7 @@ struct Unknown_Fields {
     // +0xC   void* field_0x0C (sub-object that receives the value via vfunc_8)  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x005853E0) // CONFLICT: multiple definitions at +0xC
     // +0xD   uint8_t                  field_0x0d  (evidence: 0x004429C0)
     // +0x10  uint32_t field_0x10      (slot[1])  (evidence: 0x00553A30) // CONFLICT: multiple definitions at +0x10
+    // +0x10  DWORD group_table_entries (24-byte stride; each entry's first DWORD is a pointer to a subtable array)  (evidence: 0x0078D510) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t field_0x10 (one-shot byte)  (evidence: 0x00640CD0, 0x00648A20) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    child  (evidence: 0x00441020, 0x0044B780, 0x0044B7A0, 0x0044B7C0, 0x006722B0, 0x00672490, 0x00675D60) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t field_0x10 (table base address; entries are 32 bytes each)  (evidence: 0x0077F620) // CONFLICT: multiple definitions at +0x10
@@ -271,6 +273,7 @@ struct Unknown_Fields {
     // +0x10  DWORD                    flags  (evidence: 0x006C1BB0, 0x006C9CE0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 flags  (evidence: 0x006C1BB0, 0x006C9D60, 0x006C9DA0) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    forwardTarget  (evidence: 0x004586E0) // CONFLICT: multiple definitions at +0x10
+    // +0x10  DWORD subtable_records (pointer to 16-byte records; first DWORD of each record is the key)  (evidence: 0x0078D510) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t                  oneShot  (evidence: 0x00640CB0, 0x00648A20) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t                  ownsObjectA  (evidence: 0x007892B0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t table_ptr (pointer to array of entry pointers)  (evidence: 0x006FC6E0) // CONFLICT: multiple definitions at +0x10

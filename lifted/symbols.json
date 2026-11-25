@@ -54902,6 +54902,13 @@
     "summary": "Thiscall lookup: resolves self[a] (24-byte stride) -\u003e table[b] -\u003e entry, returns entry+0x10 + c*16.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078D510": {
+    "name": "Unknown::FindKeyIndexInSubtable",
+    "class": "Unknown",
+    "signature": "static inline uint32_t ReadU32(uintptr_t addr)",
+    "summary": "Looks up subtable [group][sub] (32-bit pointer chain) and returns the index of the first 16-byte record whose leading DWORD equals key, or -1 if absent.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078D720": {
     "name": "initSelfRefAt14",
     "signature": "uint32_t fn_0078D720(void* self, int32_t arg1)",
