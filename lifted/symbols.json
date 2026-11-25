@@ -27223,6 +27223,13 @@
     "summary": "Lazily constructs the static accessor object at 0xB414B4 once (guarded by bit 0 of 0xB414B8), then stores its address into the argument's +4 slot.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0059F7C0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, thunk, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",
+    "signature": "void* __thiscall fn_0059F7C0(void* self, void* arg1, void** arg2)",
+    "summary": "Reads a float from the CharacterData behind the target pointer via a vcall (slot +0x80), forwards it to the target's setter sub_00672080, and returns the target; throws if the target is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0059F820": {
     "name": "ExprParser::ReadMethodType\u003cNMData::CharacterData\u003e::vfunc_1 (CharacterData vcall-128 accessor)",
     "class": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e",

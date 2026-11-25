@@ -58972,3 +58972,37 @@ float __stdcall fn_0068EFF0(void* argp) {
     return static_cast<float>(value);
 }
 } // namespace lift_0068EFF0
+
+// [0x0059F7C0]
+namespace lift_0059F7C0 {
+// @name ExprParser::ReadMethodType<NMData::CharacterData, float, thunk, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0>
+// @summary Reads a float from the CharacterData behind the target pointer via a vcall (slot +0x80), forwards it to the target's setter sub_00672080, and returns the target; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+
+extern float __fastcall ext_0059DEB0(void* self);
+extern void __fastcall ext_00672080(void* self, float value);
+extern void* __fastcall ext_0046C3C0(void* self);
+extern void __cdecl ext_006A6DD2(void* exception_object, const void* throw_info);
+extern char mem_009DEC1C[];
+
+void* __thiscall fn_0059F7C0(void* self, void* arg1, void** arg2) {
+    (void)self;
+    (void)arg1;
+
+    void** holder = arg2;                 // esi
+    char* target = (char*)*holder;        // eax = [arg2]
+
+    if (target == nullptr) {
+        // Build a local exception object in the frame and throw it.
+        alignas(8) unsigned char exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return nullptr; // not reached
+    }
+
+    float value = ext_0059DEB0(target + 4);
+    ext_00672080(holder, value);
+    return holder;
+}
+} // namespace lift_0059F7C0
