@@ -1,0 +1,13 @@
+{
+  "va": "0x006FA3E0",
+  "size": 32,
+  "orig_symbol": "sub_006FA3E0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "CallWithField34Shifted27Plus1",
+  "signature": "void fn_006FA3E0(void* self)",
+  "summary": "Calls ext_006FA3C0(self, getField34Shifted27(self) + 1).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:41:36Z"
+}

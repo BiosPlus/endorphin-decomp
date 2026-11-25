@@ -1789,3 +1789,18 @@ extern const char* __stdcall sub_006F6B40(DWORD selector)
     return ext_00782CB0(selector);
 }
 } // namespace lift_006F6B40
+
+// [0x006FA3E0] sub_006FA3E0 (32 bytes)
+namespace lift_006FA3E0 {
+// Known callee 0x006FA3B0: getField34Shifted27 (Reads the 32-bit signed integer at offset 0x34 and arithmetic-shifts it right by 27 bits.)
+extern int32_t __thiscall ext_006FA3B0(void* self);
+// Callee 0x006FA3C0 (32B): __thiscall, one int32 stack argument, callee-cleans.
+extern void __thiscall ext_006FA3C0(void* self, int32_t arg);
+
+// @name CallWithField34Shifted27Plus1
+// @summary Calls ext_006FA3C0(self, getField34Shifted27(self) + 1).
+void fn_006FA3E0(void* self) {
+    const int32_t shifted = ext_006FA3B0(self);
+    ext_006FA3C0(self, static_cast<int32_t>(static_cast<uint32_t>(shifted) + 1u));
+}
+} // namespace lift_006FA3E0
