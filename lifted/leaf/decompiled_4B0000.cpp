@@ -1316,3 +1316,17 @@ void __fastcall fn_004BE680(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_004BE680
+
+// [0x004B08A0]
+namespace lift_004B08A0 {
+extern uint32_t ext_0052F540(uint32_t index);
+
+// @name hasBitFlag
+// @summary Checks whether the bit flag corresponding to the given index is set in the object's flags field at +0x10.
+// @field Object +0x10 uint32_t field_0x10
+bool __thiscall fn_004B08A0(void* self, uint32_t index) {
+    uint32_t flag = ext_0052F540(index);
+    uint32_t flags = *reinterpret_cast<const uint32_t*>(reinterpret_cast<const uint8_t*>(self) + 0x10);
+    return (flags & flag) == flag;
+}
+} // namespace lift_004B08A0

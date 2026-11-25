@@ -1,0 +1,21 @@
+{
+  "va": "0x004B08A0",
+  "size": 34,
+  "orig_symbol": "sub_004B08A0",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "hasBitFlag",
+  "signature": "bool __thiscall fn_004B08A0(void* self, uint32_t index)",
+  "summary": "Checks whether the bit flag corresponding to the given index is set in the object's flags field at +0x10.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:06:43Z"
+}

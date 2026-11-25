@@ -981,6 +981,12 @@
     "summary": "Sends message 0x18B with zero wParam/lParam to the window handle stored in this-\u003e+0x20.",
     "lifted_path": "lifted/leaf/tiny_400000.cpp"
   },
+  "0x0040BF00": {
+    "name": "sub_0040BF00",
+    "signature": "extern \"C\" void* __thiscall fn_0040BF00(void* self)",
+    "summary": "Calls MFC80_ord_1084, passes [eax+4] to MFC80_ord_1308, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x0040C010": {
     "name": "CArray::GetAt",
     "class": "CArray",
@@ -13469,6 +13475,12 @@
     "signature": "extern \"C\" void* __fastcall fn_004B0880(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_004B0840 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
+  "0x004B08A0": {
+    "name": "hasBitFlag",
+    "signature": "bool __thiscall fn_004B08A0(void* self, uint32_t index)",
+    "summary": "Checks whether the bit flag corresponding to the given index is set in the object's flags field at +0x10.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
   },
   "0x004B0EC0": {
     "name": "sub_004B0EC0",
