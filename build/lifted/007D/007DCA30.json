@@ -1,0 +1,33 @@
+{
+  "va": "0x007DCA30",
+  "size": 106,
+  "orig_symbol": "sub_007DCA30",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "allocTaggedPow2Array",
+  "signature": "TaggedArray* fn_007DCA30(uint32_t tag, int32_t count, void* allocator)",
+  "summary": "Allocates a 12-byte header and a zeroed uint32 array whose capacity is the largest power of two \u003c= count (minimum 1), using the allocator's function pointer at offset 0.",
+  "fields": [
+    {
+      "class": "TaggedArray",
+      "offset": "+0x0",
+      "type": "uint32_t*",
+      "name": "data"
+    },
+    {
+      "class": "TaggedArray",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "tag"
+    },
+    {
+      "class": "TaggedArray",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "capacity"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:54:20Z"
+}

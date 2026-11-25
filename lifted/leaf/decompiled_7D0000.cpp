@@ -1134,3 +1134,45 @@ void sub_007DB6C0(uint32_t node) {
     ext_007CC930(node);
 }
 } // namespace lift_007DB6C0
+
+// [0x007DCA30] sub_007DCA30 (106 bytes)
+namespace lift_007DCA30 {
+// @name allocTaggedPow2Array
+// @summary Allocates a 12-byte header and a zeroed uint32 array whose capacity is the largest power of two <= count (minimum 1), using the allocator's function pointer at offset 0.
+// @field TaggedArray +0x00 uint32_t* data
+// @field TaggedArray +0x04 uint32_t tag
+// @field TaggedArray +0x08 uint32_t capacity
+
+typedef void* (*AllocFn)(uint32_t size);
+
+struct TaggedArray {
+    uint32_t* data;      // +0x00
+    uint32_t  tag;       // +0x04
+    uint32_t  capacity;  // +0x08
+};
+
+TaggedArray* fn_007DCA30(uint32_t tag, int32_t count, void* allocator) {
+    AllocFn alloc = *reinterpret_cast<AllocFn*>(allocator);
+
+    TaggedArray* arr = static_cast<TaggedArray*>(alloc(12));
+    arr->tag = tag;
+    arr->capacity = 1;
+
+    if (count > 1) {
+        // Largest power of two <= count.
+        uint32_t cap = 1;
+        int32_t n = count;
+        do {
+            n >>= 1;
+            cap <<= 1;
+        } while (n > 1);
+        arr->capacity = cap;
+    }
+
+    arr->data = static_cast<uint32_t*>(alloc(arr->capacity * 4));
+    for (uint32_t i = 0; i < arr->capacity; ++i) {
+        arr->data[i] = 0;
+    }
+    return arr;
+}
+} // namespace lift_007DCA30

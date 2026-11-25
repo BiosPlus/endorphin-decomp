@@ -69010,6 +69010,12 @@
     "summary": "Scans a 12-byte-stride table of 16-bit keys (terminated by 0x24) from `p`",
     "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
   },
+  "0x007DCA30": {
+    "name": "allocTaggedPow2Array",
+    "signature": "TaggedArray* fn_007DCA30(uint32_t tag, int32_t count, void* allocator)",
+    "summary": "Allocates a 12-byte header and a zeroed uint32 array whose capacity is the largest power of two \u003c= count (minimum 1), using the allocator's function pointer at offset 0.",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DCAA0": {
     "name": "sub_007DCAA0",
     "signature": "void __cdecl sub_007DCAA0(void* a1, void* a2)",
