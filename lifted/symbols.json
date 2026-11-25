@@ -19460,6 +19460,12 @@
     "summary": "Forwards its argument to shared dispatcher sub_00671100 with selector 8 (dispatcher not yet lifted).",
     "lifted_path": "lifted/templates/ROWriteMethodType.cpp"
   },
+  "0x0051A560": {
+    "name": "GetOnceInitString_0051A560",
+    "signature": "extern uint32_t mem_00AEC778;   // once-init guard flag (bit 0) extern uint8_t mem_00AEC75C[];  // static object storage (size not recovered) void* fn_0051A560(void)",
+    "summary": "One-time guarded initializer for the global at 0x00AEC75C; on first call builds it via ext_0066AD10 and registers its teardown (0x0091A000) via ext_006A6C87; later calls only return its address.",
+    "lifted_path": "lifted/leaf/decompiled_510000.cpp"
+  },
   "0x0051A670": {
     "name": "std::lower_bound over std::string elements (32-byte stride)",
     "class": "std::lower_bound over std",

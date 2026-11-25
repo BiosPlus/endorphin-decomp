@@ -299,3 +299,30 @@ void* fn_0051A270(void) {
     return &mem_00AEC72C;
 }
 } // namespace lift_0051A270
+
+// [0x0051A560] sub_0051A560 (95 bytes)
+namespace lift_0051A560 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out, uint32_t arg);
+// Known callee 0x006A6C87: sub_006A6C87 (18B) - registers a teardown routine.
+extern void ext_006A6C87(void (*teardown)(void));
+// Teardown routine whose address is pushed to 0x006A6C87.
+extern void ext_0091A000(void);
+extern uint32_t mem_00AEC778;   // once-init guard flag (bit 0)
+extern uint8_t mem_00AEC75C[];  // static object storage (size not recovered)
+
+// @name GetOnceInitString_0051A560
+// @summary One-time guarded initializer for the global at 0x00AEC75C; on first call builds it via ext_0066AD10 and registers its teardown (0x0091A000) via ext_006A6C87; later calls only return its address.
+void* fn_0051A560(void) {
+    // Guard bit 0 of mem_00AEC778. The original MSVC SEH frame (fs:[0] push/pop, try-state
+    // slot) is an exception-unwind detail and is not reproduced here.
+    if ((mem_00AEC778 & 1u) == 0u) {
+        mem_00AEC778 |= 1u;
+        // Original pushes the operand 0x00A43418 as the second argument.
+        ext_0066AD10(mem_00AEC75C, 0x00A43418u);
+        // Original pushes 0x0091A000 as the teardown address for 0x006A6C87.
+        ext_006A6C87(ext_0091A000);
+    }
+    return mem_00AEC75C;
+}
+} // namespace lift_0051A560
