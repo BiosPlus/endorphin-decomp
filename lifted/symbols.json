@@ -10882,6 +10882,12 @@
     "summary": "Reads a bool from the source proxy (via its vtable slot 3) and stores it through this proxy's value pointer.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x0049B340": {
+    "name": "InitOnceGlobalString_0049B340",
+    "signature": "void* fn_0049B340()",
+    "summary": "One-time guarded initializer for the global string at 0x00ADD7C4; registers its teardown via ext_006A6C87 and returns the global's address.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049B3A0": {
     "name": "initStaticObjectOnce_0049B3A0",
     "signature": "void* fn_0049B3A0()",
