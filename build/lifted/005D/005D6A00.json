@@ -1,0 +1,22 @@
+{
+  "va": "0x005D6A00",
+  "size": 48,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cEffector,getScaledDesiredDisplacement\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cEffector, float, \u0026Effector::getScaledDesiredDisplacement, 0\u003e",
+  "signature": "void fn_005D6A00(void** self_ref)",
+  "summary": "Reads the Effector pointer from the first argument; if non-null, calls ext_0046C4E0 (default-message throw helper), then builds a DerivedException on the stack and throws it.",
+  "fields": [
+    {
+      "class": "Effector",
+      "offset": "+0x2C",
+      "type": "float",
+      "name": "field_0x2c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:09:29Z"
+}

@@ -47069,3 +47069,38 @@ extern void fn_006925B0(int* arg) {
 }
 } // namespace lift_004D51B0
 } // namespace lift_006925B0
+
+// [0x005D6A00]
+namespace lift_005D6A00 {
+// @name ExprParser::ReadMethodType<Effector,getScaledDesiredDisplacement>::vfunc_5
+// @class ExprParser::ReadMethodType<Effector, float, &Effector::getScaledDesiredDisplacement, 0>
+// @summary Reads the Effector pointer from the first argument; if non-null, calls ext_0046C4E0 (default-message throw helper), then builds a DerivedException on the stack and throws it.
+// @field Effector +0x2c float field_0x2c
+
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// Throw type info referenced by the original code (0x009DEC1C).
+extern const void* mem_009DEC1C;
+
+void fn_005D6A00(void** self_ref)
+{
+    // Original: eax = *(this_arg); used for the float read at +0x2c.
+    void* effector = *self_ref;
+
+    if (effector != nullptr) {
+        // Original loads float at effector+0x2c (field_0x2c) onto the FPU stack
+        // and stores it into a temp slot before calling ext_0046C4E0. The callee
+        // takes no declared arguments, so the value is not forwarded here.
+        volatile float tmp = *reinterpret_cast<float*>(static_cast<char*>(effector) + 0x2c);
+        (void)tmp;
+        ext_0046C4E0();
+    }
+
+    // Exception object lives in the local frame; size is not recovered here.
+    alignas(8) unsigned char exc_storage[64];
+    ext_0046C3C0(exc_storage);
+    ext_006A6DD2(exc_storage, mem_009DEC1C);
+}
+} // namespace lift_005D6A00
