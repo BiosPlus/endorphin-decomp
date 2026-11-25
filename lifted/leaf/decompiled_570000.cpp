@@ -547,3 +547,22 @@ extern void* __thiscall fn_0057FD10(void* self) {
     return self;
 }
 } // namespace lift_0057FD10
+
+// [0x0057BB40] sub_0057BB40 (70 bytes)
+namespace lift_0057BB40 {
+// Indirect call through IAT slot mem_00924FE8 (MSVCP80 basic_string<char> default ctor).
+// Resolved target in the binary: 0x006290D8.
+extern void ext_006290D8(void* self);
+
+// @name Object::initStrings
+// @class Object
+// @summary Default-constructs two std::string members (at +0x00 and +0x1C) and returns this.
+// @field Object +0x00 std::string field_0x00
+// @field Object +0x1C std::string field_0x1c
+void* fn_0057BB40(void* self) {
+    // Compiler-generated SEH frame setup/teardown from the original is omitted.
+    ext_006290D8(self);
+    ext_006290D8(static_cast<unsigned char*>(self) + 0x1c);
+    return self;
+}
+} // namespace lift_0057BB40

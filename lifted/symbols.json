@@ -21278,6 +21278,13 @@
     "summary": "Stores the DWORD argument at offset 0, then default-constructs an std::string at offset 4; returns self.",
     "lifted_path": "lifted/leaf/tiny_570000.cpp"
   },
+  "0x0057BB40": {
+    "name": "Object::initStrings",
+    "class": "Object",
+    "signature": "void* fn_0057BB40(void* self)",
+    "summary": "Default-constructs two std::string members (at +0x00 and +0x1C) and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057BBE0": {
     "name": "sub_00573A10",
     "class": "Unknown",

@@ -10,6 +10,7 @@ namespace lifted_layout {
 struct Object_Fields {
     // +0x0   void* vptr (vtable pointer, dereferenced to find slot 0x148)  (evidence: 0x00401960, 0x0040FD90) // CONFLICT: multiple definitions at +0x0
     // +0x0   double                   field_0x00  (evidence: 0x006722B0, 0x00672490, 0x00679A40, 0x0067ADD0, 0x0067EC60) // CONFLICT: multiple definitions at +0x0
+    // +0x0   std::string              field_0x00  (evidence: 0x0057BB40) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 field_0x00  (evidence: 0x00492540, 0x00493E50, 0x00493E60, 0x00494050, 0x00566FE0, 0x00644F20, 0x0065A8B0, 0x0065F280, 0x006A4CD0, 0x00859330) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x00661890) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vftable  (evidence: 0x0053F550, 0x0063E960) // CONFLICT: multiple definitions at +0x0
@@ -46,6 +47,7 @@ struct Object_Fields {
     // +0x1C  float                    field_0x1C  (evidence: 0x007C2E50, 0x007C6F30) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 field_0x1C  (evidence: 0x006ACFD0, 0x006AD150, 0x007D8470, 0x007DB730) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  float                    field_0x1c  (evidence: 0x00602EC0) // CONFLICT: multiple definitions at +0x1C
+    // +0x1C  std::string              field_0x1c  (evidence: 0x0057BB40) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  uint32_t                 field_0x1c  (evidence: 0x007D4800, 0x007DEC80) // CONFLICT: multiple definitions at +0x1C
     // +0x20  float                    field_0x20  (evidence: 0x00602EC0) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint32_t                 field_0x20  (evidence: 0x004564A0, 0x006AD120) // CONFLICT: multiple definitions at +0x20
