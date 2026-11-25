@@ -8,6 +8,6 @@
 // Recovered field layout for UnknownSource:
 namespace lifted_layout {
 struct UnknownSource_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x004E9F60)
+    // +0x4   void*                    field_0x04  (evidence: 0x004E9F60, 0x004EA260)
 };
 } // namespace lifted_layout

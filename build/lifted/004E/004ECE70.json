@@ -1,0 +1,22 @@
+{
+  "va": "0x004ECE70",
+  "size": 53,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cSelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0\u003e::vfunc_3",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cSelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0\u003e::vfunc_3",
+  "class": "ExprParser::ReadMethodType\u003cSelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0\u003e",
+  "signature": "extern int __fastcall ext_00536F00(void* self);  // SelectionBuffer::vfunc_21 extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor) int fn_004ECE70(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType\u003cImageExporter, int, getImageHeight, 0\u003e::vfunc_3).",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

@@ -1,0 +1,88 @@
+{
+  "va": "0x0048F920",
+  "size": 86,
+  "orig_symbol": "Commands::SetTriggeredEventFrameRangeCommand::vfunc_0",
+  "src_path": "src/Commands/SetTriggeredEventFrameRangeCommand.cpp",
+  "lifted_path": "lifted/Commands/SetTriggeredEventFrameRangeCommand.cpp",
+  "name": "Commands::SetTriggeredEventFrameRangeCommand::vfunc_0",
+  "class": "Commands::SetTriggeredEventFrameRangeCommand",
+  "signature": "void* fn_0048F920(void* self, uint8_t flags)",
+  "summary": "Auto-lifted identical-shape clone of 0x004B0130 (ChangePrimarySelectionCommand::vfunc_0).",
+  "fields": [
+    {
+      "class": "Commands::SetTriggeredEventFrameRangeCommand",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Commands::SetTriggeredEventFrameRangeCommand",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Commands::SetTriggeredEventFrameRangeCommand",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Commands::SetTriggeredEventFrameRangeCommand",
+      "offset": "+0x40",
+      "type": "void*",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Commands::SetTriggeredEventFrameRangeCommand",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Commands::SetTriggeredEventFrameRangeCommand",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "ChangePrimarySelectionCommand",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    },
+    {
+      "class": "ChangePrimarySelectionCommand",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "ChangePrimarySelectionCommand",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "ChangePrimarySelectionCommand",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    },
+    {
+      "class": "ChangePrimarySelectionCommand",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "ChangePrimarySelectionCommand",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

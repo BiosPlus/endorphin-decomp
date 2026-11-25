@@ -1748,3 +1748,30 @@ void __thiscall sub_006F74E0(uint32_t self, uint32_t mode, uint32_t target) {
     *(uint32_t*)(uintptr_t)(self + 0x19c) = 0;
 }
 } // namespace lift_006F74E0
+
+// [0x006F0160] sub_006F0160 (34 bytes)
+namespace lift_006F0160 {
+// @name sub_006F0160
+// @summary Auto-lifted identical-shape clone of 0x006F23E0 (sub_006F23E0).
+namespace lift_006F23E0 {
+// @name sub_006F23E0
+// @summary Auto-lifted identical-shape clone of 0x006F00E0 (Unknown::forwardToSubobject2200).
+namespace lift_006F00E0 {
+// Known callee 0x00711D40: Unknown::storeArgsAndNotifyChild (Gets the subobject at self+0x40, calls vtable[0x50] on arg2 passing self, then stores arg1, arg3 and arg4 into the subobject at +0x04, +0x10 and +0x14.)
+extern void ext_00711D40(void* self, uint32_t arg1, void* arg2, uint32_t arg3, uint32_t arg4);
+
+// @name Unknown::forwardToSubobject2200
+// @class Unknown
+// @summary Forwards two stack arguments, plus two constant tail values, to ext_00711D40 on the subobject at self+0x2200.
+// @field Unknown +0x2200 uint8_t field_0x2200
+void fn_006F0160(void* self, uint32_t arg1, uint32_t arg2) {
+    void* subobject = reinterpret_cast<uint8_t*>(self) + 0x2310;
+    ext_00711D40(subobject,
+                 arg1,
+                 reinterpret_cast<void*>(static_cast<uintptr_t>(arg2)),
+                 0x6F8540u,
+                 0x6F8390u);
+}
+} // namespace lift_006F00E0
+} // namespace lift_006F23E0
+} // namespace lift_006F0160

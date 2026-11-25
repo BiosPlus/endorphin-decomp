@@ -151,3 +151,18 @@ void __thiscall fn_0065D0A0(void* ecx, FLOAT value) {
     field_0x138 = (value > 0.0f || std::isnan(value)) ? value : 1.0f;
 }
 } // namespace lift_0065D0A0
+
+// [0x0065A8B0] sub_0065A8B0 (9 bytes)
+namespace lift_0065A8B0 {
+// @name sub_0065A8B0
+// @summary Auto-lifted identical-shape clone of 0x00661980 (setVtable_0093BFB4).
+namespace lift_00661980 {
+// @name setVtable_0093BFB4
+// @summary Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).
+// @field Unknown +0x00 uint32_t field_0x00
+
+void fn_0065A8B0(void* self) {
+    *static_cast<uint32_t*>(self) = 0x0u;
+}
+} // namespace lift_00661980
+} // namespace lift_0065A8B0

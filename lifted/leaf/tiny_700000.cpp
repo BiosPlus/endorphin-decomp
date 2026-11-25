@@ -1194,3 +1194,75 @@ void fn_00704C20(void* self) {
     ext_007641C0(static_cast<void*>(&mem_00B5E948));
 }
 } // namespace lift_00704C20
+
+// [0x0070F340] sub_0070F340 (16 bytes)
+namespace lift_0070F340 {
+// @name sub_0070F340
+// @summary Getter returning int32_t field at offset +0x2F8.
+extern int32_t __fastcall fn_0070F340(void* self) {
+    return static_cast<int32_t>(lift_field<int32_t>(self, 0x2F8));
+}
+} // namespace lift_0070F340
+
+// [0x007008B0] sub_007008B0 (16 bytes)
+namespace lift_007008B0 {
+// @name sub_007008B0
+// @summary Auto-lifted identical-shape clone of 0x0071C8D0 (sub_0071C8D0).
+namespace lift_0071C8D0 {
+// @name sub_0071C8D0
+// @summary Auto-lifted identical-shape clone of 0x0071C970 (Unknown::getByteViaPtr0x0C_0x1960).
+namespace lift_0071C970 {
+// @name Unknown::getByteViaPtr0x0C_0x1960
+// @class Unknown
+// @summary Loads the pointer at self+0x0C and returns the byte at offset 0x1960 within the pointed-to object.
+// @field Unknown +0x0C void* field_0x0c
+// @field Unknown +0x1960 uint8_t field_0x1960
+uint8_t __thiscall fn_007008B0(uint8_t* self) {
+    uint8_t* inner = *reinterpret_cast<uint8_t**>(self + 0x0C);
+    return inner[0x1E8];
+}
+} // namespace lift_0071C970
+} // namespace lift_0071C8D0
+} // namespace lift_007008B0
+
+// [0x00700920] sub_00700920 (16 bytes)
+namespace lift_00700920 {
+// @name sub_00700920
+// @summary Auto-lifted identical-shape clone of 0x0071C8D0 (sub_0071C8D0).
+namespace lift_0071C8D0 {
+// @name sub_0071C8D0
+// @summary Auto-lifted identical-shape clone of 0x0071C970 (Unknown::getByteViaPtr0x0C_0x1960).
+namespace lift_0071C970 {
+// @name Unknown::getByteViaPtr0x0C_0x1960
+// @class Unknown
+// @summary Loads the pointer at self+0x0C and returns the byte at offset 0x1960 within the pointed-to object.
+// @field Unknown +0x0C void* field_0x0c
+// @field Unknown +0x1960 uint8_t field_0x1960
+uint8_t __thiscall fn_00700920(uint8_t* self) {
+    uint8_t* inner = *reinterpret_cast<uint8_t**>(self + 0x0C);
+    return inner[0x2F8];
+}
+} // namespace lift_0071C970
+} // namespace lift_0071C8D0
+} // namespace lift_00700920
+
+// [0x00700960] sub_00700960 (16 bytes)
+namespace lift_00700960 {
+// @name sub_00700960
+// @summary Auto-lifted identical-shape clone of 0x0071C8D0 (sub_0071C8D0).
+namespace lift_0071C8D0 {
+// @name sub_0071C8D0
+// @summary Auto-lifted identical-shape clone of 0x0071C970 (Unknown::getByteViaPtr0x0C_0x1960).
+namespace lift_0071C970 {
+// @name Unknown::getByteViaPtr0x0C_0x1960
+// @class Unknown
+// @summary Loads the pointer at self+0x0C and returns the byte at offset 0x1960 within the pointed-to object.
+// @field Unknown +0x0C void* field_0x0c
+// @field Unknown +0x1960 uint8_t field_0x1960
+uint8_t __thiscall fn_00700960(uint8_t* self) {
+    uint8_t* inner = *reinterpret_cast<uint8_t**>(self + 0x0C);
+    return inner[0x380];
+}
+} // namespace lift_0071C970
+} // namespace lift_0071C8D0
+} // namespace lift_00700960

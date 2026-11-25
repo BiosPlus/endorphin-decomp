@@ -1,0 +1,14 @@
+{
+  "va": "0x00620EF0",
+  "size": 99,
+  "orig_symbol": "IdentityNode::vfunc_17_off_C",
+  "src_path": "src/classes/IdentityNode.cpp",
+  "lifted_path": "lifted/classes/IdentityNode.cpp",
+  "name": "IdentityNode::vfunc_17_off_C",
+  "class": "IdentityNode",
+  "signature": "void* fn_00620EF0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

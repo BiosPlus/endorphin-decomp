@@ -1,0 +1,13 @@
+{
+  "va": "0x00787520",
+  "size": 36,
+  "orig_symbol": "sub_00787520",
+  "src_path": "src/clones/auto_clones_780000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_780000.cpp",
+  "name": "sub_00787520",
+  "signature": "void fn_00787520()",
+  "summary": "Auto-lifted identical-shape clone of 0x006FFEE0 (SetNegHugeGlobals_006FFEE0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x0068BD10",
+  "size": 30,
+  "orig_symbol": "ExprParser::Function2Type\u003cRandomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}\u003e::vfunc_16",
+  "src_path": "src/templates/Function2Type.cpp",
+  "lifted_path": "lifted/templates/Function2Type.cpp",
+  "name": "ExprParser::Function2Type\u003cRandomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}\u003e::vfunc_16",
+  "class": "ExprParser::Function2Type\u003cRandomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}\u003e",
+  "signature": "void* fn_0068BD10(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0064F1F0 (ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

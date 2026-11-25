@@ -8,6 +8,6 @@
 // Recovered field layout for StringVector:
 namespace lifted_layout {
 struct StringVector_Fields {
-    // +0x8   uint8_t*                 end_ptr  (evidence: 0x00660870)
+    // +0x8   uint8_t*                 end_ptr  (evidence: 0x0043E5D0, 0x00660870)
 };
 } // namespace lifted_layout

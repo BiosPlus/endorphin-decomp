@@ -1,0 +1,28 @@
+{
+  "va": "0x0043CB50",
+  "size": 28,
+  "orig_symbol": "sub_0043CB50",
+  "src_path": "src/leaf/tiny_430000.cpp",
+  "lifted_path": "lifted/leaf/tiny_430000.cpp",
+  "name": "sub_0043CB50",
+  "class": "Unknown",
+  "signature": "void* fn_0043CB50(void* a)",
+  "summary": "Auto-lifted identical-shape clone of 0x00476B80 (sub_00476B80).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void* field_0x08 (next link",
+      "name": "pointer)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x29",
+      "type": "uint8_t field_0x29 (flag",
+      "name": "byte)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

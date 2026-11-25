@@ -283,3 +283,20 @@ void* fn_00486C90(void* self) {
     return reinterpret_cast<Slot9Fn>(vtbl[9])(iface);
 }
 } // namespace lift_00486C90
+
+// [0x0048FB00] sub_0048FB00 (7 bytes)
+namespace lift_0048FB00 {
+// @name sub_0048FB00
+// @summary Auto-lifted identical-shape clone of 0x0046F910 (Unknown::ReadF8ObjectByte12C).
+namespace lift_0046F910 {
+// @name Unknown::ReadF8ObjectByte12C
+// @class Unknown
+// @summary Returns the low byte at +0x12C of the object referenced by this+0xF8.
+// @field Unknown +0xF8 void* field_0xF8
+// @field Unknown +0x12C uint8_t field_0x12C
+uint8_t fn_0048FB00(void* self) {
+    void* inner = lift_field<void*>(self, 0x4);
+    return lift_field<uint8_t>(inner, 0x1);
+}
+} // namespace lift_0046F910
+} // namespace lift_0048FB00

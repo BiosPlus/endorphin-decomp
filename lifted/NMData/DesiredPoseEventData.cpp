@@ -90,3 +90,21 @@ void fn_00486A70(void* self) {
     ext_004C0340(self);
 }
 } // namespace lift_00486A70
+
+// [0x0048DD30] NMData::DesiredPoseEventData::vfunc_17_off_C (99 bytes)
+namespace lift_0048DD30 {
+extern void* ext_006A5C62(size_t size);
+extern void* ext_0048DB80(void* self, void* owner);
+
+// @name NMData::DesiredPoseEventData::vfunc_17_off_C
+// @class NMData::DesiredPoseEventData
+// @summary Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).
+void* fn_0048DD30(void* self) {
+    void* mem = ext_006A5C62(0x238);
+    if (mem == nullptr) {
+        return nullptr;
+    }
+    void* owner = static_cast<unsigned char*>(self) - 0xC;
+    return ext_0048DB80(mem, owner);
+}
+} // namespace lift_0048DD30

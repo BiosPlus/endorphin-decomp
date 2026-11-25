@@ -343,6 +343,7 @@ extern "C" int mem_009931A4;
 extern "C" void __fastcall ext_006B95D0(void* self);
 extern "C" void __fastcall ext_007DD020(void* self);
 #include <cstdint>
+#include <cstring>
 
 // [0x00419720] ExportUnavailableDialog::vfunc_0 (6 bytes)
 // @name ExportUnavailableDialog::vfunc_0
@@ -6425,3 +6426,136 @@ int32_t fn_00547200(void* self, int32_t /*arg0*/, int32_t /*arg1*/) {
     return 0;
 }
 } // namespace lift_00547200
+
+// [0x0044CFB0] RigEditorAddRenameDialog::vfunc_0 (6 bytes)
+namespace lift_0044CFB0 {
+extern int mem_00935594;
+
+// @name RigEditorAddRenameDialog::vfunc_0
+// @class RigEditorAddRenameDialog
+// @summary Returns address of global mem_00935594.
+extern void* __cdecl fn_0044CFB0(void) {
+    return &mem_00935594;
+}
+} // namespace lift_0044CFB0
+
+// [0x00437E70] BaseEventDispatcher::vfunc_2 (10 bytes)
+namespace lift_00437E70 {
+// @name BaseEventDispatcher::vfunc_2
+// @class BaseEventDispatcher
+// @summary Auto-lifted identical-shape clone of 0x00648ED0 (sub_00648ED0).
+// @field BaseEventDispatcher +0x0 void** vtable
+namespace lift_00648ED0 {
+// @name sub_00648ED0
+// @summary Auto-lifted identical-shape clone of 0x00629B00 (CompoundSensor::vfunc_19).
+namespace lift_00629B00 {
+// @name CompoundSensor::vfunc_19
+// @class CompoundSensor
+// @summary Calls vtable slot 16 (offset 0x40) on this with argument 1
+// @field CompoundSensor +0x0 void** vtable
+
+
+uint32_t __thiscall fn_00437E70(void* self) {
+    uint32_t vtable = *reinterpret_cast<const uint32_t*>(self);
+    uint32_t fn_addr = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(vtable + 0x4));
+    using vfunc_t = uint32_t(__thiscall*)(void*, uint32_t);
+    return reinterpret_cast<vfunc_t>(static_cast<uintptr_t>(fn_addr))(self, 0);
+}
+} // namespace lift_00629B00
+} // namespace lift_00648ED0
+} // namespace lift_00437E70
+
+// [0x00544B00] ReshapeTool::vfunc_19_off_98 (10 bytes)
+namespace lift_00544B00 {
+// @name ReshapeTool::vfunc_19_off_98
+// @class ReshapeTool
+// @summary Auto-lifted identical-shape clone of 0x00544B10 (ForceApplicationTool::vfunc_18_off_98).
+// @field ReshapeTool +0x88 void* field_0x88
+namespace lift_00544B10 {
+// @name ForceApplicationTool::vfunc_18_off_98
+// @class ForceApplicationTool
+// @summary Thunk that loads the delegate object at -0x10 from ToolClient subobject (+0x88) and tail-calls its vtable slot +0x48 (vfunc 18).
+// @field ForceApplicationTool +0x88 void* field_0x88
+
+
+void __thiscall fn_00544B00(void* self) {
+    void* obj = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(self) - 0x10);
+    uintptr_t vtable = *reinterpret_cast<uintptr_t*>(obj);
+    using Vfunc18 = void (__thiscall*)(void*);
+    Vfunc18 fn = *reinterpret_cast<Vfunc18*>(vtable + 0x7C);
+    fn(obj);
+}
+} // namespace lift_00544B10
+} // namespace lift_00544B00
+
+// [0x00544B20] ReshapeTool::vfunc_50_off_98 (13 bytes)
+namespace lift_00544B20 {
+// @name ReshapeTool::vfunc_50_off_98
+// @class ReshapeTool
+// @summary Auto-lifted identical-shape clone of 0x00544B10 (ForceApplicationTool::vfunc_18_off_98).
+// @field ReshapeTool +0x88 void* field_0x88
+namespace lift_00544B10 {
+// @name ForceApplicationTool::vfunc_18_off_98
+// @class ForceApplicationTool
+// @summary Thunk that loads the delegate object at -0x10 from ToolClient subobject (+0x88) and tail-calls its vtable slot +0x48 (vfunc 18).
+// @field ForceApplicationTool +0x88 void* field_0x88
+
+
+void __thiscall fn_00544B20(void* self) {
+    void* obj = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(self) - 0x10);
+    uintptr_t vtable = *reinterpret_cast<uintptr_t*>(obj);
+    using Vfunc18 = void (__thiscall*)(void*);
+    Vfunc18 fn = *reinterpret_cast<Vfunc18*>(vtable + 0xC8);
+    fn(obj);
+}
+} // namespace lift_00544B10
+} // namespace lift_00544B20
+
+// [0x00544E10] SnapTranslateTool::vfunc_19_off_98 (10 bytes)
+namespace lift_00544E10 {
+// @name SnapTranslateTool::vfunc_19_off_98
+// @class SnapTranslateTool
+// @summary Auto-lifted identical-shape clone of 0x00544B10 (ForceApplicationTool::vfunc_18_off_98).
+// @field SnapTranslateTool +0x88 void* field_0x88
+namespace lift_00544B10 {
+// @name ForceApplicationTool::vfunc_18_off_98
+// @class ForceApplicationTool
+// @summary Thunk that loads the delegate object at -0x10 from ToolClient subobject (+0x88) and tail-calls its vtable slot +0x48 (vfunc 18).
+// @field ForceApplicationTool +0x88 void* field_0x88
+
+
+void __thiscall fn_00544E10(void* self) {
+    void* obj = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(self) - 0x10);
+    uintptr_t vtable = *reinterpret_cast<uintptr_t*>(obj);
+    using Vfunc18 = void (__thiscall*)(void*);
+    Vfunc18 fn = *reinterpret_cast<Vfunc18*>(vtable + 0x4C);
+    fn(obj);
+}
+} // namespace lift_00544B10
+} // namespace lift_00544E10
+
+// [0x00627270] CompoundSensor::vfunc_18 (10 bytes)
+namespace lift_00627270 {
+// @name CompoundSensor::vfunc_18
+// @class CompoundSensor
+// @summary Auto-lifted identical-shape clone of 0x00648ED0 (sub_00648ED0).
+// @field CompoundSensor +0x0 void** vtable
+namespace lift_00648ED0 {
+// @name sub_00648ED0
+// @summary Auto-lifted identical-shape clone of 0x00629B00 (CompoundSensor::vfunc_19).
+namespace lift_00629B00 {
+// @name CompoundSensor::vfunc_19
+// @class CompoundSensor
+// @summary Calls vtable slot 16 (offset 0x40) on this with argument 1
+// @field CompoundSensor +0x0 void** vtable
+
+
+uint32_t __thiscall fn_00627270(void* self) {
+    uint32_t vtable = *reinterpret_cast<const uint32_t*>(self);
+    uint32_t fn_addr = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(vtable + 0x40));
+    using vfunc_t = uint32_t(__thiscall*)(void*, uint32_t);
+    return reinterpret_cast<vfunc_t>(static_cast<uintptr_t>(fn_addr))(self, 0);
+}
+} // namespace lift_00629B00
+} // namespace lift_00648ED0
+} // namespace lift_00627270

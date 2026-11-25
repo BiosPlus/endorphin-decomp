@@ -1,0 +1,13 @@
+{
+  "va": "0x0072B860",
+  "size": 10,
+  "orig_symbol": "sub_0072B860",
+  "src_path": "src/leaf/tiny_720000.cpp",
+  "lifted_path": "lifted/leaf/tiny_720000.cpp",
+  "name": "sub_0072B860",
+  "signature": "extern void fn_0072B860(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x007142C0 (sub_007142C0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

@@ -1,0 +1,21 @@
+{
+  "va": "0x0070EBF0",
+  "size": 48,
+  "orig_symbol": "sub_0070EBF0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "sub_0070EBF0",
+  "signature": "void* fn_0070EBF0(void* self, void* arg1)",
+  "summary": "Auto-lifted identical-shape clone of 0x006C2CB0 (ForwardOffsetFieldToCalleeReturnArg).",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x118",
+      "type": "uint8_t",
+      "name": "field_0x118"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

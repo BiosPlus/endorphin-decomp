@@ -1,0 +1,22 @@
+{
+  "va": "0x004DE1B0",
+  "size": 34,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_60",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_60",
+  "class": "NMData::AnimationEventData",
+  "signature": "void* fn_004DE1B0(void* self, void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x004C4E40 (NMData::ForceEventData::NotifyEvent0x266).",
+  "fields": [
+    {
+      "class": "NMData::AnimationEventData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

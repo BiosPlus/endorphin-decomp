@@ -28,8 +28,10 @@ void fn_00437DC0(void* arg) {
 }
 } // namespace lift_00437DC0
 #include <cstdlib>
+#include <cmath>
+#include <cstddef>
 
-// [0x00437DE0]
+#include <cstddef>
 namespace lift_00437DE0 {
 // @name callSub00437DC0WithOne
 // @summary Calls ext_00437DC0 with argument 1.
@@ -3014,3 +3016,280 @@ extern void __stdcall fn_00430960(void* obj) {
     reinterpret_cast<VtableFn>(vtable[1])(obj, static_cast<uint32_t>(flag1));
 }
 } // namespace lift_00430960
+
+// [0x00430310] sub_00430310 (18 bytes)
+namespace lift_00430310 {
+// @name sub_00430310
+// @summary Auto-lifted identical-shape clone of 0x00433B70 (forwardToChildAt114IfPresent).
+namespace lift_00433B70 {
+extern void __fastcall ext_0044B7C0(void* self);
+
+// @name forwardToChildAt114IfPresent
+// @summary If the pointer at this+0x114 is non-null, forward this pointer to ext_004444B0; then return (ret 4 pops one stack argument).
+// @field this +0x114 void* child
+extern void __thiscall fn_00430310(void* self, int32_t stackArg) {
+    (void)stackArg;
+    void* child = *reinterpret_cast<void**>(static_cast<uint8_t*>(self) + 0x100);
+    if (child != nullptr) {
+        ext_0044B7C0(child);
+    }
+}
+} // namespace lift_00433B70
+} // namespace lift_00430310
+
+// [0x00430410] sub_00430410 (17 bytes)
+namespace lift_00430410 {
+// @name sub_00430410
+// @summary Auto-lifted identical-shape clone of 0x004E9D70 (Unknown::DispatchIndex5ToSelector).
+namespace lift_004E9D70 {
+// Known callee 0x00468180: sub_00468180 (Returns global int32 value from mem_00AD7CD8.)
+extern INT __cdecl ext_00468180(void);
+// Known callee 0x00469530: Unknown::DispatchToIndexedChild (Bounds-checks index against the pointer array at +0x54..+0x58, then calls vtable slot 1 of the selected element with arg and returns its result.)
+extern INT __thiscall ext_0046B010(void* self, INT index, INT arg);
+
+// @name Unknown::DispatchIndex5ToSelector
+// @class Unknown
+// @summary Fetches a global int32 as the receiver and dispatches index 5 (arg 0) to its indexed child.
+extern INT __cdecl fn_00430410(void) {
+    INT self = ext_00468180();
+    return ext_0046B010(reinterpret_cast<void*>(static_cast<intptr_t>(self)), 1, 0);
+}
+} // namespace lift_004E9D70
+} // namespace lift_00430410
+
+// [0x00430DA0] sub_00430DA0 (31 bytes)
+namespace lift_00430DA0 {
+// @name sub_00430DA0
+// @summary Auto-lifted identical-shape clone of 0x00430D80 (CheckGlobalField58Ok).
+namespace lift_00430D80 {
+// Known callee 0x00465B30: get_global_field_0x58 (Calls ext_004658C0 and returns the int32_t field at offset +0x58.)
+extern int32_t __cdecl ext_00465B30(void);
+// Known callee 0x00469C50: sub_00469C50 (Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).)
+// Takes its argument in ECX and reports a boolean result in AL.
+extern uint8_t __fastcall ext_00469C80(int32_t ecx);
+// Known callee 0x006A5E60: thunk_MFC80_ord_1123 (IAT jump thunk forwarding to MFC80!ord_1123.)
+// Called with three cdecl arguments (pushed right-to-left).
+extern int32_t __cdecl ext_006A5E60(uint32_t arg0, uint32_t arg1, uint32_t arg2);
+
+// @name CheckGlobalField58Ok
+// @class (none)
+// @summary Queries the global +0x58 value, passes it to a predicate, and on failure raises a message via MFC ordinal 1123 with resource 0x92F8B8.
+void fn_00430DA0(void) {
+    const int32_t value = ext_00465B30();
+    const uint8_t ok = ext_00469C80(value);
+    if (ok == 0) {
+        ext_006A5E60(0x0092F8B8u, 0x30u, 0u);
+    }
+}
+} // namespace lift_00430D80
+} // namespace lift_00430DA0
+
+// [0x00430DE0] sub_00430DE0 (31 bytes)
+namespace lift_00430DE0 {
+// @name sub_00430DE0
+// @summary Auto-lifted identical-shape clone of 0x00430D80 (CheckGlobalField58Ok).
+namespace lift_00430D80 {
+// Known callee 0x00465B30: get_global_field_0x58 (Calls ext_004658C0 and returns the int32_t field at offset +0x58.)
+extern int32_t __cdecl ext_00465B30(void);
+// Known callee 0x00469C50: sub_00469C50 (Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).)
+// Takes its argument in ECX and reports a boolean result in AL.
+extern uint8_t __fastcall ext_00469C60(int32_t ecx);
+// Known callee 0x006A5E60: thunk_MFC80_ord_1123 (IAT jump thunk forwarding to MFC80!ord_1123.)
+// Called with three cdecl arguments (pushed right-to-left).
+extern int32_t __cdecl ext_006A5E60(uint32_t arg0, uint32_t arg1, uint32_t arg2);
+
+// @name CheckGlobalField58Ok
+// @class (none)
+// @summary Queries the global +0x58 value, passes it to a predicate, and on failure raises a message via MFC ordinal 1123 with resource 0x92F8B8.
+void fn_00430DE0(void) {
+    const int32_t value = ext_00465B30();
+    const uint8_t ok = ext_00469C60(value);
+    if (ok == 0) {
+        ext_006A5E60(0x0092F8B8u, 0x30u, 0u);
+    }
+}
+} // namespace lift_00430D80
+} // namespace lift_00430DE0
+
+// [0x00431330] sub_00431330 (43 bytes)
+namespace lift_00431330 {
+// @name sub_00431330
+// @summary Auto-lifted identical-shape clone of 0x004313D0 (sub_004313D0).
+namespace lift_004313D0 {
+// @name sub_004313D0
+// @summary Toggles or updates a child object state via virtual call at +0x15c and forwards to MFC80_ord_6081
+// @field Unknown +0xe0 void* field_0xe0
+
+
+extern void __thiscall ext_006A651A(void* self, void* arg1, uint32_t arg2);
+
+void __thiscall fn_00431330(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    void* esi = *reinterpret_cast<void**>(obj + 0x104);
+    void** vtable = *reinterpret_cast<void***>(esi);
+    using VFn = uint32_t(__thiscall*)(void*, uint32_t);
+    VFn fn = reinterpret_cast<VFn>(vtable[0x15c / sizeof(void*)]);
+    uint32_t res = fn(esi, 0);
+    uint32_t flag = (res == 0) ? 1u : 0u;
+    ext_006A651A(self, esi, flag);
+}
+} // namespace lift_004313D0
+} // namespace lift_00431330
+
+// [0x004313A0] sub_004313A0 (43 bytes)
+namespace lift_004313A0 {
+// @name sub_004313A0
+// @summary Auto-lifted identical-shape clone of 0x004313D0 (sub_004313D0).
+namespace lift_004313D0 {
+// @name sub_004313D0
+// @summary Toggles or updates a child object state via virtual call at +0x15c and forwards to MFC80_ord_6081
+// @field Unknown +0xe0 void* field_0xe0
+
+
+extern void __thiscall ext_006A651A(void* self, void* arg1, uint32_t arg2);
+
+void __thiscall fn_004313A0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    void* esi = *reinterpret_cast<void**>(obj + 0x11C);
+    void** vtable = *reinterpret_cast<void***>(esi);
+    using VFn = uint32_t(__thiscall*)(void*, uint32_t);
+    VFn fn = reinterpret_cast<VFn>(vtable[0x15c / sizeof(void*)]);
+    uint32_t res = fn(esi, 0);
+    uint32_t flag = (res == 0) ? 1u : 0u;
+    ext_006A651A(self, esi, flag);
+}
+} // namespace lift_004313D0
+} // namespace lift_004313A0
+
+// [0x00433260] sub_00433260 (43 bytes)
+namespace lift_00433260 {
+// @name sub_00433260
+// @summary Auto-lifted identical-shape clone of 0x004313D0 (sub_004313D0).
+namespace lift_004313D0 {
+// @name sub_004313D0
+// @summary Toggles or updates a child object state via virtual call at +0x15c and forwards to MFC80_ord_6081
+// @field Unknown +0xe0 void* field_0xe0
+
+
+extern void __thiscall ext_006A651A(void* self, void* arg1, uint32_t arg2);
+
+void __thiscall fn_00433260(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    void* esi = *reinterpret_cast<void**>(obj + 0x150);
+    void** vtable = *reinterpret_cast<void***>(esi);
+    using VFn = uint32_t(__thiscall*)(void*, uint32_t);
+    VFn fn = reinterpret_cast<VFn>(vtable[0x15c / sizeof(void*)]);
+    uint32_t res = fn(esi, 0);
+    uint32_t flag = (res == 0) ? 1u : 0u;
+    ext_006A651A(self, esi, flag);
+}
+} // namespace lift_004313D0
+} // namespace lift_00433260
+
+// [0x004345E0] sub_004345E0 (38 bytes)
+namespace lift_004345E0 {
+// @name sub_004345E0
+// @summary Auto-lifted identical-shape clone of 0x004345B0 (CallVtbl0WithField18Flag).
+namespace lift_004345B0 {
+// Known callee 0x00468180: sub_00468180 (Returns global int32 value from mem_00AD7CD8.)
+extern int32_t __cdecl ext_00468180(void);
+// Known callee 0x006658A0: hasField0x18 (Returns 1 if the 32-bit field at offset 0x18 is non-zero, otherwise 0.)
+extern uint32_t __thiscall ext_006658B0(void* self);
+
+// @name CallVtbl0WithField18Flag
+// @class Unknown
+// @summary Reads the object at global root+0x38, computes its hasField0x18 flag, and calls vtable slot 0 of the argument with that flag.
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0x38 void* field_0x38
+void fn_004345E0(void* obj) {
+    // Root object is the 32-bit value returned by the global accessor.
+    const uintptr_t root = static_cast<uintptr_t>(static_cast<uint32_t>(ext_00468180()));
+    void* inner = lift_field<void*>(reinterpret_cast<void*>(root), 0x38);
+
+    // Only the low byte (al) of the callee result is used.
+    const uint8_t flag = static_cast<uint8_t>(ext_006658B0(inner));
+
+    // Virtual dispatch on obj: slot 0 receives (this = obj, flag zero-extended to 32 bits).
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    using Slot0Fn = void (*)(void* self, uint32_t arg);
+    reinterpret_cast<Slot0Fn>(vtbl[0])(obj, static_cast<uint32_t>(flag));
+}
+} // namespace lift_004345B0
+} // namespace lift_004345E0
+
+// [0x00434900] sub_00434900 (43 bytes)
+namespace lift_00434900 {
+// @name sub_00434900
+// @summary Auto-lifted identical-shape clone of 0x004313D0 (sub_004313D0).
+namespace lift_004313D0 {
+// @name sub_004313D0
+// @summary Toggles or updates a child object state via virtual call at +0x15c and forwards to MFC80_ord_6081
+// @field Unknown +0xe0 void* field_0xe0
+
+
+extern void __thiscall ext_006A651A(void* self, void* arg1, uint32_t arg2);
+
+void __thiscall fn_00434900(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    void* esi = *reinterpret_cast<void**>(obj + 0x158);
+    void** vtable = *reinterpret_cast<void***>(esi);
+    using VFn = uint32_t(__thiscall*)(void*, uint32_t);
+    VFn fn = reinterpret_cast<VFn>(vtable[0x15c / sizeof(void*)]);
+    uint32_t res = fn(esi, 0);
+    uint32_t flag = (res == 0) ? 1u : 0u;
+    ext_006A651A(self, esi, flag);
+}
+} // namespace lift_004313D0
+} // namespace lift_00434900
+
+// [0x0043E5D0] sub_0043E5D0 (106 bytes)
+namespace lift_0043E5D0 {
+// @name sub_0043E5D0
+// @summary Auto-lifted identical-shape clone of 0x00660870 (StringVector::erase).
+namespace lift_00660870 {
+// @name StringVector::erase
+// @class StringVector
+// @summary Erases a checked-iterator range [first, last) from a vector of 0x20-byte string elements, destroying trailing elements and returning the updated iterator.
+// @field StringVector +0x08 uint8_t* end_ptr
+
+extern void* ext_0043D370(const void* first, const void* last, void* dest);
+extern void (*mem_00925134)();
+extern void (__thiscall *mem_009242F4)(void* self);
+
+struct CheckedIterator {
+    void* container;
+    uint8_t* ptr;
+};
+
+struct StringVector {
+    uint8_t pad_00[0x08];
+    uint8_t* end_ptr;
+};
+
+extern CheckedIterator* __thiscall fn_0043E5D0(
+    StringVector* self,
+    CheckedIterator* out_iter,
+    void* first_container,
+    uint8_t* first_ptr,
+    void* last_container,
+    uint8_t* last_ptr)
+{
+    if (!first_container || first_container != last_container) {
+        mem_00925134();
+    }
+
+    if (first_ptr != last_ptr) {
+        uint8_t* new_end = static_cast<uint8_t*>(ext_0043D370(last_ptr, self->end_ptr, first_ptr));
+        uint8_t* old_end = self->end_ptr;
+        for (uint8_t* it = new_end; it != old_end; it += 0x4) {
+            mem_009242F4(it);
+        }
+        self->end_ptr = new_end;
+    }
+
+    out_iter->container = last_container;
+    out_iter->ptr = last_ptr;
+    return out_iter;
+}
+} // namespace lift_00660870
+} // namespace lift_0043E5D0

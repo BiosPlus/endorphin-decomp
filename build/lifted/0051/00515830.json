@@ -1,0 +1,28 @@
+{
+  "va": "0x00515830",
+  "size": 7,
+  "orig_symbol": "sub_00515830",
+  "src_path": "src/leaf/tiny_510000.cpp",
+  "lifted_path": "lifted/leaf/tiny_510000.cpp",
+  "name": "sub_00515830",
+  "class": "AVIIO",
+  "signature": "uint32_t fn_00515830(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004023C0 (AVIIO::vfunc_23).",
+  "fields": [
+    {
+      "class": "AVIIO",
+      "offset": "+0x470",
+      "type": "uint32_t",
+      "name": "field_0x470"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xD8",
+      "type": "uint32_t",
+      "name": "field_0xD8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

@@ -1,0 +1,28 @@
+{
+  "va": "0x0045B620",
+  "size": 65,
+  "orig_symbol": "sub_0045B620",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "sub_0045B620",
+  "class": "Unknown",
+  "signature": "void fn_0045B620(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0045B580 (Unknown::forwardWindowTextFloat_0045B580).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x88",
+      "type": "void* field_0x88 (object pointer; vtable slot +0x90 is invoked with the",
+      "name": "float)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x230",
+      "type": "void* field_0x230 (embedded CWnd passed to",
+      "name": "getWindowTextAsFloat)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

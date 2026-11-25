@@ -6936,3 +6936,201 @@ void fn_00627A20(void* self) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00B4D7C4));
 }
 } // namespace lift_00627A20
+
+// [0x00487450] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriodFromFSM(float), 0}>::vfunc_48 (113 bytes)
+namespace lift_00487450 {
+extern void ext_00486C10(void* self, float value);
+
+// @name ExprParser::WriteMethodType<NMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriodFromFSM(float), 0}>::vfunc_48
+// @class ExprParser::WriteMethodType<NMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriodFromFSM(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x005F4A10 (ExprParser::WriteMethodType<EffectorGroup, float, &public: void __thiscall EffectorGroup::setGradientCaps(float)>::vfunc_48).
+namespace lift_005F4A10 {
+extern void ext_00486C10(void* self, float value);
+
+// @name ExprParser::WriteMethodType<EffectorGroup, float, &public: void __thiscall EffectorGroup::setGradientCaps(float)>::vfunc_48
+// @class ExprParser::WriteMethodType<EffectorGroup, float, &public: void __thiscall EffectorGroup::setGradientCaps(float)>
+// @summary Auto-lifted identical-shape clone of 0x006492B0 (WriteMethodType<EffectorBase, Vector4 const&>::vfunc_41).
+namespace lift_006492B0 {
+// Known callee 0x00648E50: sub_00648E50 (Setter storing float argument into field at offset +0x7C.)
+extern void __fastcall ext_00486C10(void* self, int edx_unused, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY>::vfunc_48
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionY(float), 0}>
+// @summary Reads a float from the wrapped value source, forwards it to the Y setter on the target object, then writes a (value, source) pair to the out-parameter (zeroed when the source is null).
+// @field ExprParser::WriteMethodType<RelationshipRPROMagnet, float, setCachedDesiredPositionY> +0x04 void* field_0x04
+extern void __stdcall fn_00487450(void* out, void* const* targetRef, void* self) {
+    void* source = lift_field<void*>(self, 0x04);
+
+    // Getter: vtable slot +0x04 on the source; produces the float to forward.
+    using GetFloatFn = float (*)(void* thisp, void* scratch);
+    void** srcVtable = *reinterpret_cast<void***>(source);
+    auto getFloat = reinterpret_cast<GetFloatFn>(srcVtable[0x04 / sizeof(void*)]);
+    float value = getFloat(source, nullptr);
+
+    // Setter on the object referenced by *targetRef (stores into field +0x7C).
+    void* target = *targetRef;
+    ext_00486C10(target, 0, value);
+
+    if (source != nullptr) {
+        // Vtable slot +0x70 on the source returns a pointer to a two-dword result.
+        using GetPairFn = void* (*)(void* thisp, void* scratch);
+        void** vt = *reinterpret_cast<void***>(source);
+        auto getPair = reinterpret_cast<GetPairFn>(vt[0x70 / sizeof(void*)]);
+        void* scratch = nullptr;
+        void* pair = getPair(source, &scratch);
+        uint32_t first = *static_cast<uint32_t*>(pair);
+        lift_field<uint32_t>(out, 0x0) = first;
+        lift_field<void*>(out, 0x4) = lift_field<void*>(self, 0x04);
+    } else {
+        lift_field<uint32_t>(out, 0x0) = 0;
+        lift_field<void*>(out, 0x4) = source;
+    }
+}
+} // namespace lift_006492B0
+} // namespace lift_005F4A10
+} // namespace lift_00487450
+
+// [0x00594470] ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setGravity(float), 0}>::vfunc_41 (37 bytes)
+namespace lift_00594470 {
+extern void ext_00594080(void* self, float value);
+
+// @name ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setGravity(float), 0}>::vfunc_41
+// @class ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setGravity(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x00649BF0 (ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisY(float), 0}>::vfunc_41).
+void __stdcall fn_00594470(void* a1, void* a2) {
+    void* target = lift_field<void*>(a1, 0x00);
+    void* reader = lift_field<void*>(a2, 0x04);
+    void* vtbl = lift_field<void*>(reader, 0x00);
+    using GetFloatFn = float (*)(void* self, void* arg);
+    auto getFloat = reinterpret_cast<GetFloatFn>(lift_field<void*>(vtbl, 0x04));
+    float value = getFloat(reader, a2);
+    ext_00594080(target, value);
+}
+} // namespace lift_00594470
+
+// [0x00594520] ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setFriction(float), 0}>::vfunc_41 (37 bytes)
+namespace lift_00594520 {
+extern void ext_005940A0(void* self, float value);
+
+// @name ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setFriction(float), 0}>::vfunc_41
+// @class ExprParser::WriteMethodType<World, float, {private: void __thiscall World::setFriction(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x00649BF0 (ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisY(float), 0}>::vfunc_41).
+void __stdcall fn_00594520(void* a1, void* a2) {
+    void* target = lift_field<void*>(a1, 0x00);
+    void* reader = lift_field<void*>(a2, 0x04);
+    void* vtbl = lift_field<void*>(reader, 0x00);
+    using GetFloatFn = float (*)(void* self, void* arg);
+    auto getFloat = reinterpret_cast<GetFloatFn>(lift_field<void*>(vtbl, 0x04));
+    float value = getFloat(reader, a2);
+    ext_005940A0(target, value);
+}
+} // namespace lift_00594520
+
+// [0x00649CA0] ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisZ(float), 0}>::vfunc_41 (37 bytes)
+namespace lift_00649CA0 {
+extern void ext_00648E20(void* self, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisZ(float), 0}>::vfunc_41
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisZ(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x00649BF0 (ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisY(float), 0}>::vfunc_41).
+void __stdcall fn_00649CA0(void* a1, void* a2) {
+    void* target = lift_field<void*>(a1, 0x00);
+    void* reader = lift_field<void*>(a2, 0x04);
+    void* vtbl = lift_field<void*>(reader, 0x00);
+    using GetFloatFn = float (*)(void* self, void* arg);
+    auto getFloat = reinterpret_cast<GetFloatFn>(lift_field<void*>(vtbl, 0x04));
+    float value = getFloat(reader, a2);
+    ext_00648E20(target, value);
+}
+} // namespace lift_00649CA0
+
+// [0x0064CA50] ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundAxis(float), 0}>::vfunc_41 (37 bytes)
+namespace lift_0064CA50 {
+extern void ext_0064C950(void* self, float value);
+
+// @name ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundAxis(float), 0}>::vfunc_41
+// @class ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::rotateAroundAxis(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x00649BF0 (ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisY(float), 0}>::vfunc_41).
+void __stdcall fn_0064CA50(void* a1, void* a2) {
+    void* target = lift_field<void*>(a1, 0x00);
+    void* reader = lift_field<void*>(a2, 0x04);
+    void* vtbl = lift_field<void*>(reader, 0x00);
+    using GetFloatFn = float (*)(void* self, void* arg);
+    auto getFloat = reinterpret_cast<GetFloatFn>(lift_field<void*>(vtbl, 0x04));
+    float value = getFloat(reader, a2);
+    ext_0064C950(target, value);
+}
+} // namespace lift_0064CA50
+
+// [0x0064EDD0] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitRadius(float), 0}>::vfunc_41 (37 bytes)
+namespace lift_0064EDD0 {
+extern void ext_0064DC20(void* self, float value);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitRadius(float), 0}>::vfunc_41
+// @class ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitRadius(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x00649BF0 (ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisY(float), 0}>::vfunc_41).
+void __stdcall fn_0064EDD0(void* a1, void* a2) {
+    void* target = lift_field<void*>(a1, 0x00);
+    void* reader = lift_field<void*>(a2, 0x04);
+    void* vtbl = lift_field<void*>(reader, 0x00);
+    using GetFloatFn = float (*)(void* self, void* arg);
+    auto getFloat = reinterpret_cast<GetFloatFn>(lift_field<void*>(vtbl, 0x04));
+    float value = getFloat(reader, a2);
+    ext_0064DC20(target, value);
+}
+} // namespace lift_0064EDD0
+
+// [0x0064F790] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>::vfunc_41 (34 bytes)
+namespace lift_0064F790 {
+extern void ext_0064DDE0(void* self, uint32_t value);
+
+// @name ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>::vfunc_41
+// @class ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0064ED30 (ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwing(class NM::Vector3 const &), 0}>::vfunc_41).
+void __thiscall fn_0064F790(void* self, void* targetPtr, void* valuePtr) {
+    (void)self;
+    void* target = lift_field<void*>(targetPtr, 0x00);
+    void* typeObj = lift_field<void*>(valuePtr, 0x04);
+    void** vtable = lift_field<void**>(typeObj, 0x00);
+    using GetVec3Fn = uint32_t(__thiscall*)(void* typeSelf, void* expr);
+    auto getVec3 = reinterpret_cast<GetVec3Fn>(vtable[0x14 / sizeof(void*)]);
+    uint32_t value = getVec3(typeObj, valuePtr);
+    ext_0064DDE0(target, value);
+}
+} // namespace lift_0064F790
+
+// [0x00651250] ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{96, {flat}}>::vfunc_41 (37 bytes)
+namespace lift_00651250 {
+extern void ext_0064F8F0(void* self, float value);
+
+// @name ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{96, {flat}}>::vfunc_41
+// @class ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{96, {flat}}>
+// @summary Auto-lifted identical-shape clone of 0x00649BF0 (ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisY(float), 0}>::vfunc_41).
+void __stdcall fn_00651250(void* a1, void* a2) {
+    void* target = lift_field<void*>(a1, 0x00);
+    void* reader = lift_field<void*>(a2, 0x04);
+    void* vtbl = lift_field<void*>(reader, 0x00);
+    using GetFloatFn = float (*)(void* self, void* arg);
+    auto getFloat = reinterpret_cast<GetFloatFn>(lift_field<void*>(vtbl, 0x04));
+    float value = getFloat(reader, a2);
+    ext_0064F8F0(target, value);
+}
+} // namespace lift_00651250
+
+// [0x00651280] ExprParser::WriteMethodType<EffectorBase, float, &[thunk]: __thiscall EffectorBase::`vcall'{120, {flat}}>::vfunc_41 (37 bytes)
+namespace lift_00651280 {
+extern void ext_0064F940(void* self, float value);
+
+// @name ExprParser::WriteMethodType<EffectorBase, float, &[thunk]: __thiscall EffectorBase::`vcall'{120, {flat}}>::vfunc_41
+// @class ExprParser::WriteMethodType<EffectorBase, float, &[thunk]: __thiscall EffectorBase::`vcall'{120, {flat}}>
+// @summary Auto-lifted identical-shape clone of 0x00649BF0 (ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisY(float), 0}>::vfunc_41).
+void __stdcall fn_00651280(void* a1, void* a2) {
+    void* target = lift_field<void*>(a1, 0x00);
+    void* reader = lift_field<void*>(a2, 0x04);
+    void* vtbl = lift_field<void*>(reader, 0x00);
+    using GetFloatFn = float (*)(void* self, void* arg);
+    auto getFloat = reinterpret_cast<GetFloatFn>(lift_field<void*>(vtbl, 0x04));
+    float value = getFloat(reader, a2);
+    ext_0064F940(target, value);
+}
+} // namespace lift_00651280

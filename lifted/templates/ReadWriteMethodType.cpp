@@ -8891,3 +8891,970 @@ extern void __stdcall fn_004EA400(void** slot, void* arg) {
     ext_004E9D70();
 }
 } // namespace lift_004EA400
+
+// [0x0046EDA0] ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, int, {public: void __thiscall ImageExporter::setImageHeight(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_0046EDA0 {
+// @name ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, int, {public: void __thiscall ImageExporter::setImageHeight(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, int, {public: void __thiscall ImageExporter::setImageHeight(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C1C70 (ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::TriggeredEventData::setEndFrameNumber(int), 0}>::vfunc_41).
+namespace lift_004C1C70 {
+// @name ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::TriggeredEventData::setEndFrameNumber(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::TriggeredEventData::setEndFrameNumber(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_0046C050();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_0046EDA0(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_0046C050)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_004C1C70
+} // namespace lift_0046EDA0
+
+// [0x0049BF20] ExprParser::ReadWriteMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, bool, {public: void __thiscall NMData::State::setIsDeactivated(bool), 0}>::vfunc_41 (68 bytes)
+namespace lift_0049BF20 {
+// @name ExprParser::ReadWriteMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, bool, {public: void __thiscall NMData::State::setIsDeactivated(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, bool, {public: void __thiscall NMData::State::setIsDeactivated(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004DE7D0 (ExprParser::ReadWriteMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, bool, {public: void __thiscall NMData::AnimationEventData::setIsPassiveAnimationEnabled(bool), 0}>::vfunc_41).
+namespace lift_004DE7D0 {
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, bool, {public: void __thiscall NMData::AnimationEventData::setIsPassiveAnimationEnabled(bool), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, bool, {public: void __thiscall NMData::AnimationEventData::setIsPassiveAnimationEnabled(bool), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046E450 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046E450 {
+extern void ext_0049AA00();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType<ImageExporter,bool,getUseRenderer,bool,setUseRenderer>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}>
+// @summary Forwards arg2's sub-object result into the target held by arg1; throws if arg1's target is null.
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, bool, {public: void __thiscall ImageExporter::setUseRenderer(bool), 0}> +0x04 void* field_0x04
+void fn_0049BF20(void* arg1, void* arg2) {
+    // arg1 is a pointer to a slot whose value is the target object pointer.
+    void* target = *static_cast<void**>(arg1);
+    if (target == nullptr) {
+        // Null target: construct the exception in place at &arg1 and throw it.
+        using InitFn = void (*)(void*);
+        reinterpret_cast<InitFn>(&ext_0046C3C0)(&arg1);
+        using ThrowFn = void (*)(void*, void*);
+        reinterpret_cast<ThrowFn>(&ext_006A6DD2)(&arg1, &mem_009DEC1C);
+        return;
+    }
+
+    // sub = arg2->field_0x04; r = sub->vtable[0x0c](sub, arg2)
+    void* sub = lift_field<void*>(arg2, 0x04);
+    void* vt = lift_field<void*>(sub, 0x00);
+    using VFn = uint32_t (*)(void* self, void* arg);
+    VFn vcall = reinterpret_cast<VFn>(lift_field<void*>(vt, 0x0c));
+    uint32_t r = vcall(sub, arg2);
+
+    // sub_0046C2D0(target, r)
+    using SetFn = void (*)(void* self, uint32_t value);
+    reinterpret_cast<SetFn>(&ext_0049AA00)(target, r);
+}
+} // namespace lift_0046E450
+} // namespace lift_004DE7D0
+} // namespace lift_0049BF20
+
+// [0x004A25E0] ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawDepth(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_004A25E0 {
+// @name ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawDepth(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawDepth(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C1C70 (ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::TriggeredEventData::setEndFrameNumber(int), 0}>::vfunc_41).
+namespace lift_004C1C70 {
+// @name ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::TriggeredEventData::setEndFrameNumber(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::TriggeredEventData::setEndFrameNumber(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_004A24D0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_004A25E0(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_004A24D0)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_004C1C70
+} // namespace lift_004A25E0
+
+// [0x004A26F0] ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setFontSize(int), 0}>::vfunc_41 (68 bytes)
+namespace lift_004A26F0 {
+// @name ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setFontSize(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setFontSize(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x004C1C70 (ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::TriggeredEventData::setEndFrameNumber(int), 0}>::vfunc_41).
+namespace lift_004C1C70 {
+// @name ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::TriggeredEventData::setEndFrameNumber(int), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::TriggeredEventData::setEndFrameNumber(int), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType<DoubleWithProperties>::vfunc_41 (DoubleWithProperties::getValue)).
+namespace lift_0046EA50 {
+extern void ext_004A2500();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+extern int mem_009DEC1C;
+
+// @name ReadWriteMethodType_ImageExporter_EndFrame_vfunc_41
+// @class ExprParser::ReadWriteMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, int, {public: void __thiscall ImageExporter::setEndFrame(int), 0}>
+// @summary Reads an int from the context via its virtual getter (slot 2 of the sub-object vtable) and forwards it to the bound target's setter; throws if the target is null.
+// @field ValuePtrType +0x00 void* field_0x00
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+struct ValuePtrTypeLite {
+    void* field_0x00; // target object (set via ecx in ReadWriteMethodType setter)
+};
+
+// Callee signatures (both thiscall in the original binary; modeled as plain C functions here).
+using SetterFn = void (*)(void* self, int value);
+using VirtualGetFn = int (*)(void* self, void* ctx);
+
+void fn_004A26F0(ValuePtrTypeLite* self, void* ctx) {
+    void* target = self->field_0x00;
+    if (target != nullptr) {
+        // ctx+0x04 is the sub-object whose vtable slot 2 produces the value.
+        void** subObj = reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(ctx) + 0x04);
+        void* sub = *subObj;
+        void** vtbl = *reinterpret_cast<void***>(sub);
+        auto getter = reinterpret_cast<VirtualGetFn>(vtbl[2]);
+        int value = getter(sub, ctx);
+        reinterpret_cast<SetterFn>(ext_004A2500)(target, value);
+        return;
+    }
+    // Null target: construct exception via helper and throw through the CRT thunk.
+    reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(&self);
+    (void)mem_009DEC1C;
+    ext_006A6DD2();
+}
+} // namespace lift_0046EA50
+} // namespace lift_004C1C70
+} // namespace lift_004A26F0
+
+// [0x004B7C10] ExprParser::ReadWriteMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, float, &public: void __thiscall NMData::EngineData::setUnitLength(float)>::vfunc_41 (70 bytes)
+namespace lift_004B7C10 {
+// @name ExprParser::ReadWriteMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, float, &public: void __thiscall NMData::EngineData::setUnitLength(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, float, &public: void __thiscall NMData::EngineData::setUnitLength(float)>
+// @summary Auto-lifted identical-shape clone of 0x004B7C60 (ExprParser::ReadWriteMethodType<NMData::EngineData,float>::vfunc_41).
+namespace lift_004B7C60 {
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+// @name ExprParser::ReadWriteMethodType<NMData::EngineData,float>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::EngineData,float>
+// @summary Evaluates a float expression and sets NMData::EngineData unitMass (+0x48) and dirty flag (+0x84), or throws on null object.
+// @field NMData::EngineData +0x48 float unitMass
+// @field NMData::EngineData +0x84 uint8_t field_0x84
+void __stdcall fn_004B7C10(uint32_t* pObjPtr, uint32_t* pExpr) {
+    uint8_t* obj = reinterpret_cast<uint8_t*>(*pObjPtr);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, 0x009DEC1C);
+        return;
+    }
+
+    typedef float (__thiscall *EvalFloatFn)(void* self, void* arg);
+    void* target = reinterpret_cast<void*>(pExpr[1]);
+    void** vtable = *reinterpret_cast<void***>(target);
+    EvalFloatFn evalFn = reinterpret_cast<EvalFloatFn>(vtable[1]);
+
+    float val = evalFn(target, pExpr);
+    *reinterpret_cast<float*>(obj + 0x44) = val;
+    *(obj + 0x84) = 1;
+}
+} // namespace lift_004B7C60
+} // namespace lift_004B7C10
+
+// [0x004CCB90] ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyConstraintData::setPositionStrengthFromFSM(class NM::Vector3 const &), 0}>::vfunc_41 (68 bytes)
+namespace lift_004CCB90 {
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyConstraintData::setPositionStrengthFromFSM(class NM::Vector3 const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyConstraintData::setPositionStrengthFromFSM(class NM::Vector3 const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x005F5DC0 (ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)).
+namespace lift_005F5DC0 {
+// Callee 0x005F5670: thiscall HelperGraphic::setPosition(const Vector3&) (self in ecx, one stack arg).
+extern void ext_004CCB10();
+// Callee 0x0046C3C0: builds the MSVC exception object in place.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+typedef void (*SetPositionFn)(void* self, const void* position);
+typedef const void* (*GetPositionVFunc)(void* self, void* arg);
+
+// @name ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setPosition(class NM::Vector3 const &), 0}>
+// @summary Reads a position via the source's inner getter (vtable slot 5) and writes it into the HelperGraphic held in the target slot; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType +0x04 void* inner
+void fn_004CCB90(void** target, void* src) {
+    void* helper = *target;
+    if (helper != nullptr) {
+        // src +0x04: inner accessor object; its vtable slot 5 (+0x14) yields the position pointer.
+        void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        GetPositionVFunc getter = reinterpret_cast<GetPositionVFunc>(vtbl[5]);
+        const void* position = getter(inner, src);
+
+        SetPositionFn setter = reinterpret_cast<SetPositionFn>(reinterpret_cast<void*>(ext_004CCB10));
+        setter(helper, position);
+        return;
+    }
+    // Null target: build and throw the MSVC exception, as the original does.
+    ext_0046C3C0(target);
+    ext_006A6DD2(target, 0x009DEC1Cu);
+}
+} // namespace lift_005F5DC0
+} // namespace lift_004CCB90
+
+// [0x004CCBE0] ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyConstraintData::setAngularStrengthFromFSM(class NM::Vector3 const &), 0}>::vfunc_41 (68 bytes)
+namespace lift_004CCBE0 {
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyConstraintData::setAngularStrengthFromFSM(class NM::Vector3 const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyConstraintData::setAngularStrengthFromFSM(class NM::Vector3 const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x005F5DC0 (ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)).
+namespace lift_005F5DC0 {
+// Callee 0x005F5670: thiscall HelperGraphic::setPosition(const Vector3&) (self in ecx, one stack arg).
+extern void ext_004CCB50();
+// Callee 0x0046C3C0: builds the MSVC exception object in place.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+typedef void (*SetPositionFn)(void* self, const void* position);
+typedef const void* (*GetPositionVFunc)(void* self, void* arg);
+
+// @name ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setPosition(class NM::Vector3 const &), 0}>
+// @summary Reads a position via the source's inner getter (vtable slot 5) and writes it into the HelperGraphic held in the target slot; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType +0x04 void* inner
+void fn_004CCBE0(void** target, void* src) {
+    void* helper = *target;
+    if (helper != nullptr) {
+        // src +0x04: inner accessor object; its vtable slot 5 (+0x14) yields the position pointer.
+        void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        GetPositionVFunc getter = reinterpret_cast<GetPositionVFunc>(vtbl[5]);
+        const void* position = getter(inner, src);
+
+        SetPositionFn setter = reinterpret_cast<SetPositionFn>(reinterpret_cast<void*>(ext_004CCB50));
+        setter(helper, position);
+        return;
+    }
+    // Null target: build and throw the MSVC exception, as the original does.
+    ext_0046C3C0(target);
+    ext_006A6DD2(target, 0x009DEC1Cu);
+}
+} // namespace lift_005F5DC0
+} // namespace lift_004CCBE0
+
+// [0x004EA260] ExprParser::ReadWriteMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, bool, &public: void __thiscall NMData::PoseToolOptions::setGravityEnabled(bool)>::vfunc_41 (70 bytes)
+namespace lift_004EA260 {
+// @name ExprParser::ReadWriteMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, bool, &public: void __thiscall NMData::PoseToolOptions::setGravityEnabled(bool)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, bool, &public: void __thiscall NMData::PoseToolOptions::setGravityEnabled(bool)>
+// @summary Auto-lifted identical-shape clone of 0x004E9F60 (ExprParser::ReadWriteMethodType::vfunc_41).
+namespace lift_004E9F60 {
+// Known callee 0x004E9D70: Unknown::DispatchIndex5ToSelector (Fetches a global int32 as the receiver and dispatches index 5 (arg 0) to its indexed child.)
+extern void ext_004E9D70();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, bool, &public: void __thiscall NMData::PoseToolOptions::setCollisionEnabled(bool)>
+// @summary Stores a bool from a value object into the target's +0x05 byte, throwing if the target pointer is null, then triggers the index-5 dispatch.
+// @field UnknownTarget +0x00 void* field_0x00
+// @field UnknownTarget +0x05 uint8_t field_0x05
+// @field UnknownSource +0x04 void* field_0x04
+void fn_004EA260(void** target, void* source) {
+    void* obj = *target;
+    if (obj == nullptr) {
+        // Original builds an exception object on the stack and throws it.
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return;
+    }
+
+    // Virtual call: source->+4 is a sub-object; its vtable slot 3 is invoked with source as argument.
+    void* sub = lift_field<void*>(source, 4);
+    using ReadFn = uint8_t (*)(void* self, void* arg);
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    ReadFn read = reinterpret_cast<ReadFn>(vtbl[3]);
+    uint8_t value = read(sub, source);
+
+    lift_field<uint8_t>(obj, 6) = value;
+    ext_004E9D70();
+}
+} // namespace lift_004E9F60
+} // namespace lift_004EA260
+
+// [0x005B8680] ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setPosition(class NM::Vector3 const &), 0}>::vfunc_41 (68 bytes)
+namespace lift_005B8680 {
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setPosition(class NM::Vector3 const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setPosition(class NM::Vector3 const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x005F5DC0 (ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)).
+namespace lift_005F5DC0 {
+// Callee 0x005F5670: thiscall HelperGraphic::setPosition(const Vector3&) (self in ecx, one stack arg).
+extern void ext_005B6980();
+// Callee 0x0046C3C0: builds the MSVC exception object in place.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+typedef void (*SetPositionFn)(void* self, const void* position);
+typedef const void* (*GetPositionVFunc)(void* self, void* arg);
+
+// @name ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setPosition(class NM::Vector3 const &), 0}>
+// @summary Reads a position via the source's inner getter (vtable slot 5) and writes it into the HelperGraphic held in the target slot; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType +0x04 void* inner
+void fn_005B8680(void** target, void* src) {
+    void* helper = *target;
+    if (helper != nullptr) {
+        // src +0x04: inner accessor object; its vtable slot 5 (+0x14) yields the position pointer.
+        void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        GetPositionVFunc getter = reinterpret_cast<GetPositionVFunc>(vtbl[5]);
+        const void* position = getter(inner, src);
+
+        SetPositionFn setter = reinterpret_cast<SetPositionFn>(reinterpret_cast<void*>(ext_005B6980));
+        setter(helper, position);
+        return;
+    }
+    // Null target: build and throw the MSVC exception, as the original does.
+    ext_0046C3C0(target);
+    ext_006A6DD2(target, 0x009DEC1Cu);
+}
+} // namespace lift_005F5DC0
+} // namespace lift_005B8680
+
+// [0x005B8750] ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientationTS(class NM::Vector3 const &), 0}>::vfunc_41 (68 bytes)
+namespace lift_005B8750 {
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientationTS(class NM::Vector3 const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientationTS(class NM::Vector3 const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x005F5DC0 (ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)).
+namespace lift_005F5DC0 {
+// Callee 0x005F5670: thiscall HelperGraphic::setPosition(const Vector3&) (self in ecx, one stack arg).
+extern void ext_005B6D20();
+// Callee 0x0046C3C0: builds the MSVC exception object in place.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+typedef void (*SetPositionFn)(void* self, const void* position);
+typedef const void* (*GetPositionVFunc)(void* self, void* arg);
+
+// @name ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setPosition(class NM::Vector3 const &), 0}>
+// @summary Reads a position via the source's inner getter (vtable slot 5) and writes it into the HelperGraphic held in the target slot; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType +0x04 void* inner
+void fn_005B8750(void** target, void* src) {
+    void* helper = *target;
+    if (helper != nullptr) {
+        // src +0x04: inner accessor object; its vtable slot 5 (+0x14) yields the position pointer.
+        void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        GetPositionVFunc getter = reinterpret_cast<GetPositionVFunc>(vtbl[5]);
+        const void* position = getter(inner, src);
+
+        SetPositionFn setter = reinterpret_cast<SetPositionFn>(reinterpret_cast<void*>(ext_005B6D20));
+        setter(helper, position);
+        return;
+    }
+    // Null target: build and throw the MSVC exception, as the original does.
+    ext_0046C3C0(target);
+    ext_006A6DD2(target, 0x009DEC1Cu);
+}
+} // namespace lift_005F5DC0
+} // namespace lift_005B8750
+
+// [0x005B8820] ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientationTSA(class NM::Vector3 const &), 0}>::vfunc_41 (68 bytes)
+namespace lift_005B8820 {
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientationTSA(class NM::Vector3 const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientationTSA(class NM::Vector3 const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x005F5DC0 (ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)).
+namespace lift_005F5DC0 {
+// Callee 0x005F5670: thiscall HelperGraphic::setPosition(const Vector3&) (self in ecx, one stack arg).
+extern void ext_005B6D90();
+// Callee 0x0046C3C0: builds the MSVC exception object in place.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+typedef void (*SetPositionFn)(void* self, const void* position);
+typedef const void* (*GetPositionVFunc)(void* self, void* arg);
+
+// @name ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setPosition(class NM::Vector3 const &), 0}>
+// @summary Reads a position via the source's inner getter (vtable slot 5) and writes it into the HelperGraphic held in the target slot; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType +0x04 void* inner
+void fn_005B8820(void** target, void* src) {
+    void* helper = *target;
+    if (helper != nullptr) {
+        // src +0x04: inner accessor object; its vtable slot 5 (+0x14) yields the position pointer.
+        void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        GetPositionVFunc getter = reinterpret_cast<GetPositionVFunc>(vtbl[5]);
+        const void* position = getter(inner, src);
+
+        SetPositionFn setter = reinterpret_cast<SetPositionFn>(reinterpret_cast<void*>(ext_005B6D90));
+        setter(helper, position);
+        return;
+    }
+    // Null target: build and throw the MSVC exception, as the original does.
+    ext_0046C3C0(target);
+    ext_006A6DD2(target, 0x009DEC1Cu);
+}
+} // namespace lift_005F5DC0
+} // namespace lift_005B8820
+
+// [0x005B88F0] ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientationSE(class NM::Vector3 const &), 0}>::vfunc_41 (68 bytes)
+namespace lift_005B88F0 {
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientationSE(class NM::Vector3 const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientationSE(class NM::Vector3 const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x005F5DC0 (ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)).
+namespace lift_005F5DC0 {
+// Callee 0x005F5670: thiscall HelperGraphic::setPosition(const Vector3&) (self in ecx, one stack arg).
+extern void ext_005B6E00();
+// Callee 0x0046C3C0: builds the MSVC exception object in place.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+typedef void (*SetPositionFn)(void* self, const void* position);
+typedef const void* (*GetPositionVFunc)(void* self, void* arg);
+
+// @name ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setPosition(class NM::Vector3 const &), 0}>
+// @summary Reads a position via the source's inner getter (vtable slot 5) and writes it into the HelperGraphic held in the target slot; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType +0x04 void* inner
+void fn_005B88F0(void** target, void* src) {
+    void* helper = *target;
+    if (helper != nullptr) {
+        // src +0x04: inner accessor object; its vtable slot 5 (+0x14) yields the position pointer.
+        void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        GetPositionVFunc getter = reinterpret_cast<GetPositionVFunc>(vtbl[5]);
+        const void* position = getter(inner, src);
+
+        SetPositionFn setter = reinterpret_cast<SetPositionFn>(reinterpret_cast<void*>(ext_005B6E00));
+        setter(helper, position);
+        return;
+    }
+    // Null target: build and throw the MSVC exception, as the original does.
+    ext_0046C3C0(target);
+    ext_006A6DD2(target, 0x009DEC1Cu);
+}
+} // namespace lift_005F5DC0
+} // namespace lift_005B88F0
+
+// [0x005B89C0] ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientation(class NM::Vector3 const &), 0}>::vfunc_41 (68 bytes)
+namespace lift_005B89C0 {
+// @name ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientation(class NM::Vector3 const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::setOrientation(class NM::Vector3 const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x005F5DC0 (ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)).
+namespace lift_005F5DC0 {
+// Callee 0x005F5670: thiscall HelperGraphic::setPosition(const Vector3&) (self in ecx, one stack arg).
+extern void ext_005B6CB0();
+// Callee 0x0046C3C0: builds the MSVC exception object in place.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+typedef void (*SetPositionFn)(void* self, const void* position);
+typedef const void* (*GetPositionVFunc)(void* self, void* arg);
+
+// @name ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setPosition(class NM::Vector3 const &), 0}>
+// @summary Reads a position via the source's inner getter (vtable slot 5) and writes it into the HelperGraphic held in the target slot; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType +0x04 void* inner
+void fn_005B89C0(void** target, void* src) {
+    void* helper = *target;
+    if (helper != nullptr) {
+        // src +0x04: inner accessor object; its vtable slot 5 (+0x14) yields the position pointer.
+        void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        GetPositionVFunc getter = reinterpret_cast<GetPositionVFunc>(vtbl[5]);
+        const void* position = getter(inner, src);
+
+        SetPositionFn setter = reinterpret_cast<SetPositionFn>(reinterpret_cast<void*>(ext_005B6CB0));
+        setter(helper, position);
+        return;
+    }
+    // Null target: build and throw the MSVC exception, as the original does.
+    ext_0046C3C0(target);
+    ext_006A6DD2(target, 0x009DEC1Cu);
+}
+} // namespace lift_005F5DC0
+} // namespace lift_005B89C0
+
+// [0x005F5E10] ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTS(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setOrientationTS(class NM::Vector3 const &), 0}>::vfunc_41 (68 bytes)
+namespace lift_005F5E10 {
+// @name ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTS(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setOrientationTS(class NM::Vector3 const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTS(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setOrientationTS(class NM::Vector3 const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x005F5DC0 (ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)).
+namespace lift_005F5DC0 {
+// Callee 0x005F5670: thiscall HelperGraphic::setPosition(const Vector3&) (self in ecx, one stack arg).
+extern void ext_005F56A0();
+// Callee 0x0046C3C0: builds the MSVC exception object in place.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+typedef void (*SetPositionFn)(void* self, const void* position);
+typedef const void* (*GetPositionVFunc)(void* self, void* arg);
+
+// @name ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setPosition(class NM::Vector3 const &), 0}>
+// @summary Reads a position via the source's inner getter (vtable slot 5) and writes it into the HelperGraphic held in the target slot; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType +0x04 void* inner
+void fn_005F5E10(void** target, void* src) {
+    void* helper = *target;
+    if (helper != nullptr) {
+        // src +0x04: inner accessor object; its vtable slot 5 (+0x14) yields the position pointer.
+        void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        GetPositionVFunc getter = reinterpret_cast<GetPositionVFunc>(vtbl[5]);
+        const void* position = getter(inner, src);
+
+        SetPositionFn setter = reinterpret_cast<SetPositionFn>(reinterpret_cast<void*>(ext_005F56A0));
+        setter(helper, position);
+        return;
+    }
+    // Null target: build and throw the MSVC exception, as the original does.
+    ext_0046C3C0(target);
+    ext_006A6DD2(target, 0x009DEC1Cu);
+}
+} // namespace lift_005F5DC0
+} // namespace lift_005F5E10
+
+// [0x005F5E60] ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setOrientationTSA(class NM::Vector3 const &), 0}>::vfunc_41 (68 bytes)
+namespace lift_005F5E60 {
+// @name ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setOrientationTSA(class NM::Vector3 const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setOrientationTSA(class NM::Vector3 const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x005F5DC0 (ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)).
+namespace lift_005F5DC0 {
+// Callee 0x005F5670: thiscall HelperGraphic::setPosition(const Vector3&) (self in ecx, one stack arg).
+extern void ext_005F56C0();
+// Callee 0x0046C3C0: builds the MSVC exception object in place.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+typedef void (*SetPositionFn)(void* self, const void* position);
+typedef const void* (*GetPositionVFunc)(void* self, void* arg);
+
+// @name ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setPosition(class NM::Vector3 const &), 0}>
+// @summary Reads a position via the source's inner getter (vtable slot 5) and writes it into the HelperGraphic held in the target slot; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType +0x04 void* inner
+void fn_005F5E60(void** target, void* src) {
+    void* helper = *target;
+    if (helper != nullptr) {
+        // src +0x04: inner accessor object; its vtable slot 5 (+0x14) yields the position pointer.
+        void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        GetPositionVFunc getter = reinterpret_cast<GetPositionVFunc>(vtbl[5]);
+        const void* position = getter(inner, src);
+
+        SetPositionFn setter = reinterpret_cast<SetPositionFn>(reinterpret_cast<void*>(ext_005F56C0));
+        setter(helper, position);
+        return;
+    }
+    // Null target: build and throw the MSVC exception, as the original does.
+    ext_0046C3C0(target);
+    ext_006A6DD2(target, 0x009DEC1Cu);
+}
+} // namespace lift_005F5DC0
+} // namespace lift_005F5E60
+
+// [0x005F5EB0] ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationSE(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setOrientationSE(class NM::Vector3 const &), 0}>::vfunc_41 (68 bytes)
+namespace lift_005F5EB0 {
+// @name ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationSE(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setOrientationSE(class NM::Vector3 const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationSE(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setOrientationSE(class NM::Vector3 const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x005F5DC0 (ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)).
+namespace lift_005F5DC0 {
+// Callee 0x005F5670: thiscall HelperGraphic::setPosition(const Vector3&) (self in ecx, one stack arg).
+extern void ext_005F56E0();
+// Callee 0x0046C3C0: builds the MSVC exception object in place.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+typedef void (*SetPositionFn)(void* self, const void* position);
+typedef const void* (*GetPositionVFunc)(void* self, void* arg);
+
+// @name ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setPosition(class NM::Vector3 const &), 0}>
+// @summary Reads a position via the source's inner getter (vtable slot 5) and writes it into the HelperGraphic held in the target slot; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType +0x04 void* inner
+void fn_005F5EB0(void** target, void* src) {
+    void* helper = *target;
+    if (helper != nullptr) {
+        // src +0x04: inner accessor object; its vtable slot 5 (+0x14) yields the position pointer.
+        void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        GetPositionVFunc getter = reinterpret_cast<GetPositionVFunc>(vtbl[5]);
+        const void* position = getter(inner, src);
+
+        SetPositionFn setter = reinterpret_cast<SetPositionFn>(reinterpret_cast<void*>(ext_005F56E0));
+        setter(helper, position);
+        return;
+    }
+    // Null target: build and throw the MSVC exception, as the original does.
+    ext_0046C3C0(target);
+    ext_006A6DD2(target, 0x009DEC1Cu);
+}
+} // namespace lift_005F5DC0
+} // namespace lift_005F5EB0
+
+// [0x005F5F00] ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationE(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setOrientationE(class NM::Vector3 const &), 0}>::vfunc_41 (68 bytes)
+namespace lift_005F5F00 {
+// @name ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationE(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setOrientationE(class NM::Vector3 const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationE(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setOrientationE(class NM::Vector3 const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x005F5DC0 (ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)).
+namespace lift_005F5DC0 {
+// Callee 0x005F5670: thiscall HelperGraphic::setPosition(const Vector3&) (self in ecx, one stack arg).
+extern void ext_005F5700();
+// Callee 0x0046C3C0: builds the MSVC exception object in place.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+typedef void (*SetPositionFn)(void* self, const void* position);
+typedef const void* (*GetPositionVFunc)(void* self, void* arg);
+
+// @name ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setPosition(class NM::Vector3 const &), 0}>
+// @summary Reads a position via the source's inner getter (vtable slot 5) and writes it into the HelperGraphic held in the target slot; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType +0x04 void* inner
+void fn_005F5F00(void** target, void* src) {
+    void* helper = *target;
+    if (helper != nullptr) {
+        // src +0x04: inner accessor object; its vtable slot 5 (+0x14) yields the position pointer.
+        void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        GetPositionVFunc getter = reinterpret_cast<GetPositionVFunc>(vtbl[5]);
+        const void* position = getter(inner, src);
+
+        SetPositionFn setter = reinterpret_cast<SetPositionFn>(reinterpret_cast<void*>(ext_005F5700));
+        setter(helper, position);
+        return;
+    }
+    // Null target: build and throw the MSVC exception, as the original does.
+    ext_0046C3C0(target);
+    ext_006A6DD2(target, 0x009DEC1Cu);
+}
+} // namespace lift_005F5DC0
+} // namespace lift_005F5F00
+
+// [0x005F8030] ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setOrientationXVector(class NM::Vector3 const &), 0}>::vfunc_41 (68 bytes)
+namespace lift_005F8030 {
+// @name ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setOrientationXVector(class NM::Vector3 const &), 0}>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setOrientationXVector(class NM::Vector3 const &), 0}>
+// @summary Auto-lifted identical-shape clone of 0x005F5DC0 (ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)).
+namespace lift_005F5DC0 {
+// Callee 0x005F5670: thiscall HelperGraphic::setPosition(const Vector3&) (self in ecx, one stack arg).
+extern void ext_005F59B0();
+// Callee 0x0046C3C0: builds the MSVC exception object in place.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+typedef void (*SetPositionFn)(void* self, const void* position);
+typedef const void* (*GetPositionVFunc)(void* self, void* arg);
+
+// @name ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setPosition(class NM::Vector3 const &), 0}>
+// @summary Reads a position via the source's inner getter (vtable slot 5) and writes it into the HelperGraphic held in the target slot; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType +0x04 void* inner
+void fn_005F8030(void** target, void* src) {
+    void* helper = *target;
+    if (helper != nullptr) {
+        // src +0x04: inner accessor object; its vtable slot 5 (+0x14) yields the position pointer.
+        void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        GetPositionVFunc getter = reinterpret_cast<GetPositionVFunc>(vtbl[5]);
+        const void* position = getter(inner, src);
+
+        SetPositionFn setter = reinterpret_cast<SetPositionFn>(reinterpret_cast<void*>(ext_005F59B0));
+        setter(helper, position);
+        return;
+    }
+    // Null target: build and throw the MSVC exception, as the original does.
+    ext_0046C3C0(target);
+    ext_006A6DD2(target, 0x009DEC1Cu);
+}
+} // namespace lift_005F5DC0
+} // namespace lift_005F8030
+
+// [0x00618010] ExprParser::ReadWriteMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getZ(void) const, float, &public: void __thiscall NM::Vector3::setZ(float)>::vfunc_41 (63 bytes)
+namespace lift_00618010 {
+// @name ExprParser::ReadWriteMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getZ(void) const, float, &public: void __thiscall NM::Vector3::setZ(float)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getZ(void) const, float, &public: void __thiscall NM::Vector3::setZ(float)>
+// @summary Auto-lifted identical-shape clone of 0x006059A0 (ExprParser::ReadWriteMethodType<Effector,float,getGradient,setGradient>::vfunc_41).
+namespace lift_006059A0 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// Virtual slot 1 of the object at ctx+0x04: float (this, ctx).
+typedef float (*ReadMethodSlot1Fn)(void* self, void* ctx);
+
+// @name ExprParser::ReadWriteMethodType<Effector,float,getGradient,setGradient>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<Effector, float, &public: float __thiscall Effector::getGradient(void) const, float, &public: void __thiscall Effector::setGradient(float)>
+// @summary Reads a float from the wrapped expression object and stores it into Effector::gradient; throws if the target Effector is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field Effector +0x4c float gradient
+// @field field_0x04 void* object (ctx+0x04; vtable slot 1 is invoked with ctx as argument)
+void fn_00618010(void* self, void* ctx) {
+    uint8_t* effector = *reinterpret_cast<uint8_t**>(self);
+    if (effector == nullptr) {
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return;
+    }
+
+    uint8_t* obj = *reinterpret_cast<uint8_t**>(static_cast<uint8_t*>(ctx) + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    ReadMethodSlot1Fn read = reinterpret_cast<ReadMethodSlot1Fn>(vtbl[1]);
+    float value = read(obj, ctx);
+
+    *reinterpret_cast<float*>(effector + 0x8) = value;
+}
+} // namespace lift_006059A0
+} // namespace lift_00618010
+
+// [0x006331A0] ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredPositionNormalized(class NM::Vector3 const &)>::vfunc_41 (68 bytes)
+namespace lift_006331A0 {
+// @name ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredPositionNormalized(class NM::Vector3 const &)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredPositionNormalized(class NM::Vector3 const &)>
+// @summary Auto-lifted identical-shape clone of 0x005F5DC0 (ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)).
+namespace lift_005F5DC0 {
+// Callee 0x005F5670: thiscall HelperGraphic::setPosition(const Vector3&) (self in ecx, one stack arg).
+extern void ext_00630390();
+// Callee 0x0046C3C0: builds the MSVC exception object in place.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+typedef void (*SetPositionFn)(void* self, const void* position);
+typedef const void* (*GetPositionVFunc)(void* self, void* arg);
+
+// @name ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setPosition(class NM::Vector3 const &), 0}>
+// @summary Reads a position via the source's inner getter (vtable slot 5) and writes it into the HelperGraphic held in the target slot; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType +0x04 void* inner
+void fn_006331A0(void** target, void* src) {
+    void* helper = *target;
+    if (helper != nullptr) {
+        // src +0x04: inner accessor object; its vtable slot 5 (+0x14) yields the position pointer.
+        void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        GetPositionVFunc getter = reinterpret_cast<GetPositionVFunc>(vtbl[5]);
+        const void* position = getter(inner, src);
+
+        SetPositionFn setter = reinterpret_cast<SetPositionFn>(reinterpret_cast<void*>(ext_00630390));
+        setter(helper, position);
+        return;
+    }
+    // Null target: build and throw the MSVC exception, as the original does.
+    ext_0046C3C0(target);
+    ext_006A6DD2(target, 0x009DEC1Cu);
+}
+} // namespace lift_005F5DC0
+} // namespace lift_006331A0
+
+// [0x00633290] ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingNormalized(class NM::Vector3 const &)>::vfunc_41 (68 bytes)
+namespace lift_00633290 {
+// @name ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingNormalized(class NM::Vector3 const &)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingNormalized(class NM::Vector3 const &)>
+// @summary Auto-lifted identical-shape clone of 0x005F5DC0 (ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)).
+namespace lift_005F5DC0 {
+// Callee 0x005F5670: thiscall HelperGraphic::setPosition(const Vector3&) (self in ecx, one stack arg).
+extern void ext_00630600();
+// Callee 0x0046C3C0: builds the MSVC exception object in place.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+typedef void (*SetPositionFn)(void* self, const void* position);
+typedef const void* (*GetPositionVFunc)(void* self, void* arg);
+
+// @name ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setPosition(class NM::Vector3 const &), 0}>
+// @summary Reads a position via the source's inner getter (vtable slot 5) and writes it into the HelperGraphic held in the target slot; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType +0x04 void* inner
+void fn_00633290(void** target, void* src) {
+    void* helper = *target;
+    if (helper != nullptr) {
+        // src +0x04: inner accessor object; its vtable slot 5 (+0x14) yields the position pointer.
+        void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        GetPositionVFunc getter = reinterpret_cast<GetPositionVFunc>(vtbl[5]);
+        const void* position = getter(inner, src);
+
+        SetPositionFn setter = reinterpret_cast<SetPositionFn>(reinterpret_cast<void*>(ext_00630600));
+        setter(helper, position);
+        return;
+    }
+    // Null target: build and throw the MSVC exception, as the original does.
+    ext_0046C3C0(target);
+    ext_006A6DD2(target, 0x009DEC1Cu);
+}
+} // namespace lift_005F5DC0
+} // namespace lift_00633290
+
+// [0x00633330] ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingVelocityRaw(class NM::Vector3 const &)>::vfunc_41 (68 bytes)
+namespace lift_00633330 {
+// @name ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingVelocityRaw(class NM::Vector3 const &)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingVelocityRaw(class NM::Vector3 const &)>
+// @summary Auto-lifted identical-shape clone of 0x005F5DC0 (ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)).
+namespace lift_005F5DC0 {
+// Callee 0x005F5670: thiscall HelperGraphic::setPosition(const Vector3&) (self in ecx, one stack arg).
+extern void ext_00630510();
+// Callee 0x0046C3C0: builds the MSVC exception object in place.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+typedef void (*SetPositionFn)(void* self, const void* position);
+typedef const void* (*GetPositionVFunc)(void* self, void* arg);
+
+// @name ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setPosition(class NM::Vector3 const &), 0}>
+// @summary Reads a position via the source's inner getter (vtable slot 5) and writes it into the HelperGraphic held in the target slot; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType +0x04 void* inner
+void fn_00633330(void** target, void* src) {
+    void* helper = *target;
+    if (helper != nullptr) {
+        // src +0x04: inner accessor object; its vtable slot 5 (+0x14) yields the position pointer.
+        void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        GetPositionVFunc getter = reinterpret_cast<GetPositionVFunc>(vtbl[5]);
+        const void* position = getter(inner, src);
+
+        SetPositionFn setter = reinterpret_cast<SetPositionFn>(reinterpret_cast<void*>(ext_00630510));
+        setter(helper, position);
+        return;
+    }
+    // Null target: build and throw the MSVC exception, as the original does.
+    ext_0046C3C0(target);
+    ext_006A6DD2(target, 0x009DEC1Cu);
+}
+} // namespace lift_005F5DC0
+} // namespace lift_00633330
+
+// [0x006362D0] ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwing(class NM::Vector3 const &)>::vfunc_41 (68 bytes)
+namespace lift_006362D0 {
+// @name ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwing(class NM::Vector3 const &)>::vfunc_41
+// @class ExprParser::ReadWriteMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, NM::Vector3 const &, &public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwing(class NM::Vector3 const &)>
+// @summary Auto-lifted identical-shape clone of 0x005F5DC0 (ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)).
+namespace lift_005F5DC0 {
+// Callee 0x005F5670: thiscall HelperGraphic::setPosition(const Vector3&) (self in ecx, one stack arg).
+extern void ext_00630E10();
+// Callee 0x0046C3C0: builds the MSVC exception object in place.
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+typedef void (*SetPositionFn)(void* self, const void* position);
+typedef const void* (*GetPositionVFunc)(void* self, void* arg);
+
+// @name ExprParser::ReadWriteMethodType<HelperGraphic>::vfunc_41 (HelperGraphic::getPosition -> setPosition)
+// @class ExprParser::ReadWriteMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, NM::Vector3 const &, {public: void __thiscall HelperGraphic::setPosition(class NM::Vector3 const &), 0}>
+// @summary Reads a position via the source's inner getter (vtable slot 5) and writes it into the HelperGraphic held in the target slot; throws if the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+// @field ExprParser::ReadMethodType +0x04 void* inner
+void fn_006362D0(void** target, void* src) {
+    void* helper = *target;
+    if (helper != nullptr) {
+        // src +0x04: inner accessor object; its vtable slot 5 (+0x14) yields the position pointer.
+        void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(src) + 0x04);
+        void** vtbl = *reinterpret_cast<void***>(inner);
+        GetPositionVFunc getter = reinterpret_cast<GetPositionVFunc>(vtbl[5]);
+        const void* position = getter(inner, src);
+
+        SetPositionFn setter = reinterpret_cast<SetPositionFn>(reinterpret_cast<void*>(ext_00630E10));
+        setter(helper, position);
+        return;
+    }
+    // Null target: build and throw the MSVC exception, as the original does.
+    ext_0046C3C0(target);
+    ext_006A6DD2(target, 0x009DEC1Cu);
+}
+} // namespace lift_005F5DC0
+} // namespace lift_006362D0

@@ -1,0 +1,13 @@
+{
+  "va": "0x007AE0F0",
+  "size": 10,
+  "orig_symbol": "sub_007AE0F0",
+  "src_path": "src/clones/auto_clones_7A0000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_7A0000.cpp",
+  "name": "sub_007AE0F0",
+  "signature": "void fn_007AE0F0(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x00713CD0 (sub_00713CD0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

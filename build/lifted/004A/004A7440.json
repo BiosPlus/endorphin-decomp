@@ -1,0 +1,22 @@
+{
+  "va": "0x004A7440",
+  "size": 105,
+  "orig_symbol": "sub_004A7440",
+  "src_path": "src/leaf/decompiled_4A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4A0000.cpp",
+  "name": "sub_004A7440",
+  "class": "TreeMap",
+  "signature": "void* fn_004A7440(void* self, void* out_iter, const void* key)",
+  "summary": "Auto-lifted identical-shape clone of 0x0059B2E0 (TreeMap::find).",
+  "fields": [
+    {
+      "class": "TreeMap",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

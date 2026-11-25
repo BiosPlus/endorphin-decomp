@@ -1,0 +1,21 @@
+{
+  "va": "0x0065A8B0",
+  "size": 9,
+  "orig_symbol": "sub_0065A8B0",
+  "src_path": "src/leaf/tiny_650000.cpp",
+  "lifted_path": "lifted/leaf/tiny_650000.cpp",
+  "name": "sub_0065A8B0",
+  "signature": "void fn_0065A8B0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00661980 (setVtable_0093BFB4).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

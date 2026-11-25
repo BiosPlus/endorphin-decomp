@@ -1,0 +1,22 @@
+{
+  "va": "0x00658910",
+  "size": 31,
+  "orig_symbol": "RelationshipHinge::vfunc_10",
+  "src_path": "src/classes/RelationshipHinge.cpp",
+  "lifted_path": "lifted/classes/RelationshipHinge.cpp",
+  "name": "RelationshipHinge::vfunc_10",
+  "class": "RelationshipHinge",
+  "signature": "void fn_00658910(void* self, FLOAT* out)",
+  "summary": "Auto-lifted identical-shape clone of 0x006588F0 (RelationshipHinge::vfunc_9).",
+  "fields": [
+    {
+      "class": "RelationshipHinge",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

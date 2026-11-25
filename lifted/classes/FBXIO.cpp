@@ -284,3 +284,21 @@ void __thiscall fn_00562F80(void* self, const void* filename_str) {
     str_dtor(&combined_str);
     str_dtor(&str_b392cc);
 }
+
+// [0x0055DE50] FBXIO::vfunc_3 (38 bytes)
+namespace lift_0055DE50 {
+extern void* ext_00553720(void* self, void* arg);
+extern void* ext_00640390(void* self, uint32_t value, uint32_t flags);
+extern uint32_t mem_00A9EED4;
+
+// @name FBXIO::vfunc_3
+// @class FBXIO
+// @summary Auto-lifted identical-shape clone of 0x00582B60 (Acclaim2MotionIO::vfunc_3).
+// @field FBXIO +0x0 void* vtable (no direct field access in this function; self is only passed through to ext_00553720)
+void* fn_0055DE50(void* self, void* arg) {
+    const uint32_t value = mem_00A9EED4;
+    void* result = ext_00640390(arg, value, 0);
+    ext_00553720(self, result);
+    return arg;
+}
+} // namespace lift_0055DE50

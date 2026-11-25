@@ -1,0 +1,28 @@
+{
+  "va": "0x007008B0",
+  "size": 16,
+  "orig_symbol": "sub_007008B0",
+  "src_path": "src/leaf/tiny_700000.cpp",
+  "lifted_path": "lifted/leaf/tiny_700000.cpp",
+  "name": "sub_007008B0",
+  "class": "Unknown",
+  "signature": "uint8_t __thiscall fn_007008B0(uint8_t* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0071C8D0 (sub_0071C8D0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1960",
+      "type": "uint8_t",
+      "name": "field_0x1960"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

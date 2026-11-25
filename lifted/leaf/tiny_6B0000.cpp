@@ -773,3 +773,14 @@ void __thiscall sub_006B7DC0(uint8_t* self, uint32_t packed) {
     *reinterpret_cast<uint32_t*>(self + 0x84) = packed >> 16;
 }
 } // namespace lift_006B7DC0
+
+// [0x006BC960] sub_006BC960 (16 bytes)
+namespace lift_006BC960 {
+extern void __fastcall ext_006E7460(void* self);
+
+// @name sub_006BC960
+// @summary This-adjustor thunk: adjusts `this` by +0x78 and tail-calls sub_006E7460.
+extern void __fastcall fn_006BC960(void* self) {
+    ext_006E7460(static_cast<char*>(self) + 0x78);
+}
+} // namespace lift_006BC960

@@ -278,3 +278,21 @@ void fn_0052EF80(void* self, uint32_t arg) {
     auto fn = *reinterpret_cast<Animation_VirtualSlot12Fn*>(vtable + 0x30);
     fn(self, 0x20u, arg, static_cast<uint32_t>(mem_00AEE8A8));
 }
+
+// [0x0053D260] Primitives::RadiusLimit::vfunc_0 (30 bytes)
+namespace lift_0053D260 {
+extern void __fastcall ext_0053C060(void* self);
+extern void __cdecl ext_006A5C5C(void* ptr);
+
+// @name Primitives::RadiusLimit::vfunc_0
+// @class Primitives::RadiusLimit
+// @summary MSVC scalar deleting destructor: calls sub_0053C060 and frees memory when (flags & 1) is set.
+extern void* __fastcall fn_0053D260(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_0053C060(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+} // namespace lift_0053D260

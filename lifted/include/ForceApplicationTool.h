@@ -10,7 +10,7 @@
 // Recovered field layout for ForceApplicationTool:
 namespace lifted_layout {
 struct ForceApplicationTool_Fields {
-    // +0x88  void*                    field_0x88  (evidence: 0x00535610, 0x00544070, 0x005441C0, 0x00544B10, 0x00545140, 0x00545170, 0x00545B80, 0x005FF1C0)
+    // +0x88  void*                    field_0x88  (evidence: 0x00535610, 0x00544070, 0x005441C0, 0x00544B00, 0x00544B10, 0x00544B20, 0x00544E10, 0x00545140, 0x00545170, 0x00545B80, 0x005FF1C0)
     // +0xA8  void*                    field_0xA8  (evidence: 0x005441C0)
     // +0xB0  uint8_t                  field_0xB0[0]  (evidence: 0x005441C0)
 };

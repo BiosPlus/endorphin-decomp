@@ -1,0 +1,13 @@
+{
+  "va": "0x007558C0",
+  "size": 8,
+  "orig_symbol": "sub_007558C0",
+  "src_path": "src/clones/auto_clones_750000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_750000.cpp",
+  "name": "sub_007558C0",
+  "signature": "void fn_007558C0(uint32_t arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x00551A10 (NMCamera::Orthogonal::vfunc_5).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

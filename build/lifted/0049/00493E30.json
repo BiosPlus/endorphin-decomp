@@ -1,0 +1,21 @@
+{
+  "va": "0x00493E30",
+  "size": 12,
+  "orig_symbol": "sub_00493E30",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "sub_00493E30",
+  "signature": "uintptr_t fn_00493E30(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00493E80 (forwardVtableSlot19C).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

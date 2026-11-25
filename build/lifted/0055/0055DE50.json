@@ -1,0 +1,22 @@
+{
+  "va": "0x0055DE50",
+  "size": 38,
+  "orig_symbol": "FBXIO::vfunc_3",
+  "src_path": "src/classes/FBXIO.cpp",
+  "lifted_path": "lifted/classes/FBXIO.cpp",
+  "name": "FBXIO::vfunc_3",
+  "class": "FBXIO",
+  "signature": "void* fn_0055DE50(void* self, void* arg)",
+  "summary": "Auto-lifted identical-shape clone of 0x00582B60 (Acclaim2MotionIO::vfunc_3).",
+  "fields": [
+    {
+      "class": "FBXIO",
+      "offset": "+0x0",
+      "type": "void* vtable (no direct field access in this function; self is only passed through to",
+      "name": "ext_00553720)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

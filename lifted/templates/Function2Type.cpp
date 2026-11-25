@@ -73,3 +73,18 @@ void* __thiscall fn_0068C120(void* self, void* arg0, void* arg1, void* arg2, voi
     return arg0;
 }
 } // namespace lift_0068C120
+
+// [0x0068BD10] ExprParser::Function2Type<Randomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}>::vfunc_16 (30 bytes)
+namespace lift_0068BD10 {
+extern void* ext_006A6E9E(void* inptr, long vfDelta, const void* srcType, const void* targetType, int isReference);
+extern int mem_00A2E2F8;
+extern int mem_00AA3000;
+
+// @name ExprParser::Function2Type<Randomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}>::vfunc_16
+// @class ExprParser::Function2Type<Randomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0064F1F0 (ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)).
+void* fn_0068BD10(void* self) {
+    return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
+                        reinterpret_cast<const void*>(&mem_00AA3000), 0);
+}
+} // namespace lift_0068BD10

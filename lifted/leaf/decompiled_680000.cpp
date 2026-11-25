@@ -65,6 +65,7 @@ void* fn_00687510(void* self, void* arg1) {
 }
 } // namespace lift_0040A910
 } // namespace lift_00687510
+#include <exception>
 
 // [0x00682E20] sub_00682E20 (33 bytes)
 namespace lift_00682E20 {
@@ -1564,3 +1565,127 @@ void* uniqueStringPairRange_00687820(void* first, void* last) {
     return dst + kElemSize;
 }
 } // namespace lift_00687820
+
+// [0x006823B0] sub_006823B0 (104 bytes)
+namespace lift_006823B0 {
+// @name sub_006823B0
+// @summary Auto-lifted identical-shape clone of 0x00660280 (VectorBack).
+namespace lift_00660280 {
+extern uint32_t mem_00B5ACB4;
+extern uint32_t mem_00B5ACB8;
+extern uint32_t mem_00B5ACBC;
+extern uint32_t mem_00925134;
+
+// Debug-checked "back()" on an MSVC-style vector whose storage is [mem_00B59080, mem_00B59084).
+// Invalid-parameter handler is reached through the IAT slot at mem_00925134.
+static void invalid_parameter_noinfo() {
+    reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+}
+
+// @name VectorBack
+// @summary Returns the last element of the global vector at mem_00B59080..mem_00B59084, or 0 if empty; validates iterator range first.
+// @class Unknown
+// @field Unknown +0x08 uint32_t field_0x08
+uint32_t fn_006823B0() {
+    const uint32_t begin = mem_00B5ACB8;
+    const uint32_t end = mem_00B5ACBC;
+
+    if (begin == 0) {
+        return 0;
+    }
+    // Element count = (end - begin) / 4 (arithmetic shift); empty -> 0.
+    const int32_t count = static_cast<int32_t>(end - begin) >> 2;
+    if (count == 0) {
+        return 0;
+    }
+    if (begin > end) {
+        invalid_parameter_noinfo();
+    }
+
+    const uint32_t last = end - 4;
+    if (last > end || last < begin) {
+        invalid_parameter_noinfo();
+    }
+
+    const uint32_t cursor = last;
+    if (cursor >= lift_field<uint32_t>(&mem_00B5ACB4, 0x08)) {
+        invalid_parameter_noinfo();
+    }
+
+    return *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(cursor));
+}
+} // namespace lift_00660280
+} // namespace lift_006823B0
+
+// [0x00686740] sub_00686740 (58 bytes)
+namespace lift_00686740 {
+// @name sub_00686740
+// @summary Auto-lifted identical-shape clone of 0x004064D0 (sub_004064D0).
+namespace lift_004064D0 {
+// @name sub_004064D0
+// @summary Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).
+namespace lift_0054F2C0 {
+extern void ext_006861C0(std::uintptr_t a0, std::uint32_t a1, std::uint32_t a2,
+                             std::uint32_t a3, std::uint32_t a4, std::uint32_t a5);
+
+// @name ComputeRecordAddress
+// @summary Calls helper sub_0054F1E0 with the arguments and a zeroed flag word, then returns base + index * 0x68.
+// (no direct struct field accesses in this function)
+__stdcall std::uint8_t* fn_00686740(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2) {
+    // The original stores 0 into the low byte of a stack slot that previously held ECX,
+    // so the dword passed on is ECX with its low byte cleared. ECX at entry is not
+    // recoverable from the stdcall signature; it is modelled as a placeholder here.
+    std::uint32_t ecx_in = 0;
+    std::uint32_t flag_slot = ecx_in & 0xFFFFFF00u;
+
+    ext_006861C0(reinterpret_cast<std::uintptr_t>(base), index, arg2, ecx_in, arg2, flag_slot);
+
+    return base + static_cast<std::size_t>(index) * 0x94u;
+}
+} // namespace lift_0054F2C0
+} // namespace lift_004064D0
+} // namespace lift_00686740
+
+// [0x0068C400] sub_0068C400 (87 bytes)
+namespace lift_0068C400 {
+// @name sub_0068C400
+// @summary Auto-lifted identical-shape clone of 0x005FD150 (sub_005FD150).
+namespace lift_005FD150 {
+// @name sub_005FD150
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B5ADE8;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B5ADE4;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0068C400() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8B5C0Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B5ADE8 & 1u) == 0) {
+        mem_00B5ADE8 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B5ADE4, frame[0]);
+        mem_00B5ADE4 = 0x98E354u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B5ADE4;
+}
+} // namespace lift_004CAE30
+} // namespace lift_005FD150
+} // namespace lift_0068C400

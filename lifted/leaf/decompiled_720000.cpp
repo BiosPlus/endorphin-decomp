@@ -670,3 +670,46 @@ extern bool __thiscall fn_007267D0(void* self, uint32_t key, int32_t index) {
     return true;
 }
 } // namespace lift_007267D0
+
+// [0x0072B2F0] sub_0072B2F0 (25 bytes)
+namespace lift_0072B2F0 {
+// @name sub_0072B2F0
+// @summary Auto-lifted identical-shape clone of 0x0072B280 (ConstructEmbeddedBufferAndSetVtable).
+namespace lift_0072B280 {
+// @name ConstructEmbeddedBufferAndSetVtable
+// @summary Runs fn_006D7880 on this with arg1, then writes the vtable pointer 0x00996810 at +0x00 and returns this.
+
+extern void* __thiscall ext_0077F9E0(void* self, uint32_t arg1);
+
+extern void* __thiscall fn_0072B2F0(void* self, uint32_t arg1) {
+    ext_0077F9E0(self, arg1);
+    *reinterpret_cast<uint32_t*>(self) = 0x996834u;
+    return self;
+}
+} // namespace lift_0072B280
+} // namespace lift_0072B2F0
+
+// [0x0072CB00] sub_0072CB00 (32 bytes)
+namespace lift_0072CB00 {
+// @name sub_0072CB00
+// @summary Auto-lifted identical-shape clone of 0x00702F60 (sub_00702F60).
+namespace lift_00702F60 {
+// @name sub_00702F60
+// @summary Auto-lifted identical-shape clone of 0x0071B020 (Unknown::CallArgWithSubObjectAddr0x10).
+namespace lift_0071B020 {
+// Known callee 0x006D2390: ForwardArgToCalleeReturnThis (Forwards its single stack argument to sub_007873F0 with the same this pointer, then returns this.)
+extern void* ext_006B9D20(void* self, uint32_t arg1);
+
+// @name Unknown::CallArgWithSubObjectAddr0x10
+// @class Unknown
+// @summary Calls 0x006D2390 with arg as this and (self + 0x10) as its stack argument, then returns arg.
+// @field Unknown +0x10 BYTE field_0x10
+void* fn_0072CB00(void* self, void* arg) {
+    const uint32_t sub_addr =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self) + 0x18);
+    ext_006B9D20(arg, sub_addr);
+    return arg;
+}
+} // namespace lift_0071B020
+} // namespace lift_00702F60
+} // namespace lift_0072CB00

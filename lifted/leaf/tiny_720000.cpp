@@ -376,3 +376,65 @@ void fn_00722000(void* self) {
     mem_00B5FFBC = 0;
 }
 } // namespace lift_00722000
+
+// [0x0072C050] sub_0072C050 (16 bytes)
+namespace lift_0072C050 {
+// @name sub_0072C050
+// @summary Setter storing uint8_t argument into field at offset +0x14.
+extern void __fastcall fn_0072C050(void* self, int edx_unused, uint8_t value) {
+    (void)edx_unused;
+    lift_field<uint8_t>(self, 0x14) = value;
+}
+} // namespace lift_0072C050
+
+// [0x0072B860] sub_0072B860 (10 bytes)
+namespace lift_0072B860 {
+extern void __fastcall ext_00714570(void* self);
+
+// @name sub_0072B860
+// @summary Auto-lifted identical-shape clone of 0x007142C0 (sub_007142C0).
+namespace lift_007142C0 {
+// @name sub_007142C0
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_00714570(void);
+
+extern uint8_t mem_00B60020[];
+
+extern void fn_0072B860(void) {
+    (void)mem_00B60020;
+    ext_00714570();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_007142C0
+} // namespace lift_0072B860
+
+// [0x0072B880] sub_0072B880 (10 bytes)
+namespace lift_0072B880 {
+extern void __fastcall ext_006D80A0(void* self);
+
+// @name sub_0072B880
+// @summary Auto-lifted identical-shape clone of 0x007142C0 (sub_007142C0).
+namespace lift_007142C0 {
+// @name sub_007142C0
+// @summary Auto-lifted identical-shape clone of 0x007AE0A0 (sub_007AE0A0).
+namespace lift_007AE0A0 {
+// @name sub_007AE0A0
+// @summary Sets ECX to global mem_00B616B8 and tail-calls ext_006B9D70.
+
+
+void ext_006D80A0(void);
+
+extern uint8_t mem_00B60020[];
+
+extern void fn_0072B880(void) {
+    (void)mem_00B60020;
+    ext_006D80A0();
+}
+} // namespace lift_007AE0A0
+} // namespace lift_007142C0
+} // namespace lift_0072B880

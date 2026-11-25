@@ -1,0 +1,14 @@
+{
+  "va": "0x00430DA0",
+  "size": 31,
+  "orig_symbol": "sub_00430DA0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_00430DA0",
+  "class": "(none)",
+  "signature": "void fn_00430DA0(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x00430D80 (CheckGlobalField58Ok).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

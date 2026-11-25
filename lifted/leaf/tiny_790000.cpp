@@ -492,3 +492,16 @@ void fn_0079E670(void* self) {
     ext_00783880(static_cast<uint8_t*>(self) + 0x08);
 }
 } // namespace lift_0079E670
+
+// [0x0079F380] sub_0079F380 (16 bytes)
+namespace lift_0079F380 {
+extern int mem_009977F0;
+extern void __fastcall ext_007AA880(void* self);
+
+// @name sub_0079F380
+// @summary Destructor tail-call: restores vtable mem_009977F0 and tail-calls base destructor sub_007AA880.
+extern void __fastcall fn_0079F380(void* self) {
+    lift_field<void*>(self, 0x0) = &mem_009977F0;
+    ext_007AA880(self);
+}
+} // namespace lift_0079F380

@@ -1,0 +1,34 @@
+{
+  "va": "0x00672590",
+  "size": 89,
+  "orig_symbol": "sub_00672590",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "sub_00672590",
+  "class": "Unknown",
+  "signature": "void __thiscall fn_00672590(uint8_t* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x005940E0 (Unknown::destructorBody_005940E0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "child"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

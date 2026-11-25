@@ -1,0 +1,22 @@
+{
+  "va": "0x006823B0",
+  "size": 104,
+  "orig_symbol": "sub_006823B0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "sub_006823B0",
+  "class": "Unknown",
+  "signature": "static void invalid_parameter_noinfo()",
+  "summary": "Auto-lifted identical-shape clone of 0x00660280 (VectorBack).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

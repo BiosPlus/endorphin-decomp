@@ -140,3 +140,12 @@ uint32_t __thiscall sub_0077F9E0(uint32_t self, uint32_t arg1) {
     return self;
 }
 } // namespace lift_0077F9E0
+
+// [0x0077FE40] sub_0077FE40 (16 bytes)
+namespace lift_0077FE40 {
+// @name sub_0077FE40
+// @summary Returns constant 0xB1.
+extern int32_t __cdecl fn_0077FE40(void) {
+    return 0xB1;
+}
+} // namespace lift_0077FE40

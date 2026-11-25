@@ -219,3 +219,37 @@ void fn_00687230(void* self) {
     lift_field<uint8_t>(self, 0xB0) = 1;
 }
 } // namespace lift_00687230
+
+// [0x006872C0] sub_006872C0 (10 bytes)
+namespace lift_006872C0 {
+// @name sub_006872C0
+// @summary Auto-lifted identical-shape clone of 0x0046F910 (Unknown::ReadF8ObjectByte12C).
+namespace lift_0046F910 {
+// @name Unknown::ReadF8ObjectByte12C
+// @class Unknown
+// @summary Returns the low byte at +0x12C of the object referenced by this+0xF8.
+// @field Unknown +0xF8 void* field_0xF8
+// @field Unknown +0x12C uint8_t field_0x12C
+uint8_t fn_006872C0(void* self) {
+    void* inner = lift_field<void*>(self, 0x48);
+    return lift_field<uint8_t>(inner, 0xAA2FAC);
+}
+} // namespace lift_0046F910
+} // namespace lift_006872C0
+
+// [0x006872D0] sub_006872D0 (10 bytes)
+namespace lift_006872D0 {
+// @name sub_006872D0
+// @summary Auto-lifted identical-shape clone of 0x0046F910 (Unknown::ReadF8ObjectByte12C).
+namespace lift_0046F910 {
+// @name Unknown::ReadF8ObjectByte12C
+// @class Unknown
+// @summary Returns the low byte at +0x12C of the object referenced by this+0xF8.
+// @field Unknown +0xF8 void* field_0xF8
+// @field Unknown +0x12C uint8_t field_0x12C
+uint8_t fn_006872D0(void* self) {
+    void* inner = lift_field<void*>(self, 0x48);
+    return lift_field<uint8_t>(inner, 0xAA2FC8);
+}
+} // namespace lift_0046F910
+} // namespace lift_006872D0

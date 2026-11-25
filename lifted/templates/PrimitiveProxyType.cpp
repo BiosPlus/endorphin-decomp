@@ -557,3 +557,35 @@ void __stdcall fn_00497AD0(uint32_t* dst_ptr, const void* src_str) {
     reinterpret_cast<MsvcStringDtor>(mem_00924FF4)(&temp_out);
 }
 } // namespace lift_00497AD0
+
+// [0x0049CFE0] ExprParser::PrimitiveProxyType<bool>::vfunc_37 (15 bytes)
+namespace lift_0049CFE0 {
+extern uint32_t ext_0049B3A0();
+
+// @name ExprParser::PrimitiveProxyType<bool>::vfunc_37
+// @class ExprParser::PrimitiveProxyType<bool>
+// @summary Auto-lifted identical-shape clone of 0x0049E2E0 (ExprParser::PrimitiveProxyType<bool>::vfunc_38).
+// @field ExprParser::PrimitiveProxyType<bool> +0x4 uint32_t field_0x04
+extern uint32_t __cdecl ext_0049CFF0(void);
+
+extern void __stdcall fn_0049CFE0(void* self) {
+    uint32_t eax = ext_0049B3A0();
+    lift_field<uint32_t>(self, 0x04) = eax;
+}
+} // namespace lift_0049CFE0
+
+// [0x0049DA30] ExprParser::PrimitiveProxyType<int>::vfunc_37 (15 bytes)
+namespace lift_0049DA30 {
+extern uint32_t ext_0049CC60();
+
+// @name ExprParser::PrimitiveProxyType<int>::vfunc_37
+// @class ExprParser::PrimitiveProxyType<int>
+// @summary Auto-lifted identical-shape clone of 0x0049E2E0 (ExprParser::PrimitiveProxyType<bool>::vfunc_38).
+// @field ExprParser::PrimitiveProxyType<int> +0x4 uint32_t field_0x04
+extern uint32_t __cdecl ext_0049CFF0(void);
+
+extern void __stdcall fn_0049DA30(void* self) {
+    uint32_t eax = ext_0049CC60();
+    lift_field<uint32_t>(self, 0x04) = eax;
+}
+} // namespace lift_0049DA30

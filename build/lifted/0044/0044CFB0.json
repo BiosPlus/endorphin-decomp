@@ -1,0 +1,14 @@
+{
+  "va": "0x0044CFB0",
+  "size": 6,
+  "orig_symbol": "RigEditorAddRenameDialog::vfunc_0",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "RigEditorAddRenameDialog::vfunc_0",
+  "class": "RigEditorAddRenameDialog",
+  "signature": "extern \"C\" void* __cdecl fn_0044CFB0(void)",
+  "summary": "Returns address of global mem_00935594.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

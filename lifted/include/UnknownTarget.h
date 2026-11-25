@@ -8,7 +8,7 @@
 // Recovered field layout for UnknownTarget:
 namespace lifted_layout {
 struct UnknownTarget_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x004E9F60)
-    // +0x5   uint8_t                  field_0x05  (evidence: 0x004E9F60)
+    // +0x0   void*                    field_0x00  (evidence: 0x004E9F60, 0x004EA260)
+    // +0x5   uint8_t                  field_0x05  (evidence: 0x004E9F60, 0x004EA260)
 };
 } // namespace lifted_layout

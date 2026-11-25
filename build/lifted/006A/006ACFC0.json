@@ -1,0 +1,28 @@
+{
+  "va": "0x006ACFC0",
+  "size": 7,
+  "orig_symbol": "sub_006ACFC0",
+  "src_path": "src/leaf/tiny_6A0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6A0000.cpp",
+  "name": "sub_006ACFC0",
+  "class": "Unknown",
+  "signature": "uint8_t fn_006ACFC0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0046F910 (Unknown::ReadF8ObjectByte12C).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF8",
+      "type": "void*",
+      "name": "field_0xF8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x12C",
+      "type": "uint8_t",
+      "name": "field_0x12C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

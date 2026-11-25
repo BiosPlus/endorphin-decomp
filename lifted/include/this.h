@@ -19,7 +19,7 @@ struct this_Fields {
     // +0x58  int32_t                  field_0x58  (evidence: 0x006AF8E0)
     // +0xF0  uint32_t                 field_0xf0  (evidence: 0x0058AB90)
     // +0x108 uint32_t                 field_0x108  (evidence: 0x00434040)
-    // +0x114 void*                    child  (evidence: 0x00430260, 0x00433B70) // CONFLICT: multiple definitions at +0x114
+    // +0x114 void*                    child  (evidence: 0x00430260, 0x00430310, 0x00433B70) // CONFLICT: multiple definitions at +0x114
     // +0x114 uint32_t                 field_0x114  (evidence: 0x0041B540) // CONFLICT: multiple definitions at +0x114
     // +0x118 uint32_t                 field_0x118  (evidence: 0x0041B540)
 };

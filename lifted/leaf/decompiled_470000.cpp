@@ -4,8 +4,10 @@
 #include <string>
 #include <cstdint>
 #include <cstddef>
+#include <cmath>
+#include <cstdlib>
 
-// [0x0047A010] sub_0047A010 (41 bytes)
+#include <cstdlib>
 namespace lift_0047A010 {
 // @name sub_0047A010
 // @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
@@ -763,3 +765,32 @@ extern void __cdecl sub_00477190(uint32_t* arr, int32_t holeIndex, int32_t botto
     ext_00476CA0(arr, holeIndex, topIndex, val, pred);
 }
 } // namespace lift_00477190
+
+// [0x004757F0] sub_004757F0 (77 bytes)
+namespace lift_004757F0 {
+// @name sub_004757F0
+// @summary Auto-lifted identical-shape clone of 0x004AD970 (Unknown::DestroyStringAndArray).
+namespace lift_004AD970 {
+// Known callee 0x004026E0: StringArray::ReleaseElements (Destroys each 28-byte string element in the array, frees its buffer, and nulls the begin/end/capacity pointers.)
+extern void ext_00672D10(void* self);
+// Import slot for MSVCP80 std::basic_string<char>::~basic_string (IAT entry, bound at load time).
+extern int mem_00924FF4;
+
+// @name Unknown::DestroyStringAndArray
+// @class Unknown
+// @summary Releases the StringArray at +0x1c, then runs the std::string destructor on the object itself.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1c StringArray field_0x1c
+void fn_004757F0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Destroy the string elements held in the array at +0x1c.
+    ext_00672D10(base + 0x1c);
+
+    // Destroy the std::string at offset 0 via the imported MSVC destructor (thiscall).
+    using StringDtorFn = void(__thiscall*)(void*);
+    auto dtor = reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+    dtor(self);
+}
+} // namespace lift_004AD970
+} // namespace lift_004757F0

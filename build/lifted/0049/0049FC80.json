@@ -1,0 +1,40 @@
+{
+  "va": "0x0049FC80",
+  "size": 111,
+  "orig_symbol": "NMData::State::vfunc_7_off_10",
+  "src_path": "src/NMData/State.cpp",
+  "lifted_path": "lifted/NMData/State.cpp",
+  "name": "NMData::State::vfunc_7_off_10",
+  "class": "NMData::State",
+  "signature": "void __thiscall fn_0049FC80(void* self, void* arg1)",
+  "summary": "Auto-lifted identical-shape clone of 0x005C0E00 (NMData::MetaBodyData::vfunc_6).",
+  "fields": [
+    {
+      "class": "NMData::State",
+      "offset": "+0x80",
+      "type": "uint32_t*",
+      "name": "field_0x80"
+    },
+    {
+      "class": "NMData::State",
+      "offset": "+0x84",
+      "type": "uint32_t*",
+      "name": "field_0x84"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x80",
+      "type": "uint32_t*",
+      "name": "field_0x80"
+    },
+    {
+      "class": "NMData::MetaBodyData",
+      "offset": "+0x84",
+      "type": "uint32_t*",
+      "name": "field_0x84"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

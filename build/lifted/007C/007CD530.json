@@ -1,0 +1,28 @@
+{
+  "va": "0x007CD530",
+  "size": 31,
+  "orig_symbol": "sub_007CD530",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "sub_007CD530",
+  "class": "Unknown",
+  "signature": "void fn_007CD530(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x007CD510 (Unknown::ClearOwnerBackref).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x210",
+      "type": "uint32_t",
+      "name": "field_0x210"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

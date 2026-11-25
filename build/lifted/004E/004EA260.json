@@ -1,0 +1,34 @@
+{
+  "va": "0x004EA260",
+  "size": 70,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, bool, \u0026public: void __thiscall NMData::PoseToolOptions::setGravityEnabled(bool)\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, bool, \u0026public: void __thiscall NMData::PoseToolOptions::setGravityEnabled(bool)\u003e::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, bool, \u0026public: void __thiscall NMData::PoseToolOptions::setGravityEnabled(bool)\u003e",
+  "signature": "void fn_004EA260(void** target, void* source)",
+  "summary": "Auto-lifted identical-shape clone of 0x004E9F60 (ExprParser::ReadWriteMethodType::vfunc_41).",
+  "fields": [
+    {
+      "class": "UnknownTarget",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "UnknownTarget",
+      "offset": "+0x5",
+      "type": "uint8_t",
+      "name": "field_0x05"
+    },
+    {
+      "class": "UnknownSource",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

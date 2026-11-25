@@ -1,0 +1,14 @@
+{
+  "va": "0x004DFDB0",
+  "size": 53,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0\u003e::vfunc_2",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0\u003e::vfunc_2",
+  "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0\u003e",
+  "signature": "extern uint32_t __stdcall fn_004DFDB0(void** statePtr)",
+  "summary": "Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_2).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

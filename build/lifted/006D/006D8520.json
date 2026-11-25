@@ -1,0 +1,22 @@
+{
+  "va": "0x006D8520",
+  "size": 48,
+  "orig_symbol": "sub_006D8520",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "sub_006D8520",
+  "class": "\u003cUnknown\u003e",
+  "signature": "extern int32_t __fastcall fn_006D8520(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x006D8550 (queryIntAt08ViaSubobject).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

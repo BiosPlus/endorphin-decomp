@@ -1,0 +1,28 @@
+{
+  "va": "0x0054C030",
+  "size": 96,
+  "orig_symbol": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_16",
+  "src_path": "src/templates/ManagedDisplayList.cpp",
+  "lifted_path": "lifted/templates/ManagedDisplayList.cpp",
+  "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_16",
+  "class": "ManagedDisplayList\u003cRenderableList\u003e",
+  "signature": "uint32_t __thiscall fn_0054C030(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0054C090 (ManagedDisplayList\u003cRenderableList\u003e::vfunc_17).",
+  "fields": [
+    {
+      "class": "ManagedDisplayList\u003cRenderableList\u003e",
+      "offset": "+0x18",
+      "type": "void**",
+      "name": "field_0x18"
+    },
+    {
+      "class": "ManagedDisplayList\u003cRenderableList\u003e",
+      "offset": "+0x1C",
+      "type": "void**",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

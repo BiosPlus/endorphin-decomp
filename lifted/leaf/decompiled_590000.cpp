@@ -1265,3 +1265,139 @@ float __thiscall fn_005971D0(void* self) {
     return static_cast<float>(static_cast<double>(recip) * total_d);
 }
 } // namespace lift_005971D0
+
+// [0x00594140] sub_00594140 (77 bytes)
+namespace lift_00594140 {
+// @name sub_00594140
+// @summary Auto-lifted identical-shape clone of 0x004AD970 (Unknown::DestroyStringAndArray).
+namespace lift_004AD970 {
+// Known callee 0x004026E0: StringArray::ReleaseElements (Destroys each 28-byte string element in the array, frees its buffer, and nulls the begin/end/capacity pointers.)
+extern void ext_00682FD0(void* self);
+// Import slot for MSVCP80 std::basic_string<char>::~basic_string (IAT entry, bound at load time).
+extern int mem_00924FF4;
+
+// @name Unknown::DestroyStringAndArray
+// @class Unknown
+// @summary Releases the StringArray at +0x1c, then runs the std::string destructor on the object itself.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1c StringArray field_0x1c
+void fn_00594140(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Destroy the string elements held in the array at +0x1c.
+    ext_00682FD0(base + 0x1c);
+
+    // Destroy the std::string at offset 0 via the imported MSVC destructor (thiscall).
+    using StringDtorFn = void(__thiscall*)(void*);
+    auto dtor = reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+    dtor(self);
+}
+} // namespace lift_004AD970
+} // namespace lift_00594140
+
+// [0x005943D0] sub_005943D0 (108 bytes)
+namespace lift_005943D0 {
+// @name sub_005943D0
+// @summary Auto-lifted identical-shape clone of 0x00667030 (advanceCursorSkipFlagged).
+namespace lift_00667030 {
+// Import slot 0x00925134 holds the address of MSVCR80!_invalid_parameter_noinfo.
+// The raw .rdata label is "P{b", but the code loads a function pointer from it.
+extern void (*mem_00925134)();
+
+// @name advanceCursorSkipFlagged
+// @summary Advances the cursor at self+0x04 past nodes whose byte at +0x39 is set, using the +0x04 and +0x08 links; calls the invalid-parameter handler when self+0x00 is null or the cursor node is flagged on entry.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 void* cursor
+// @field UnknownNode +0x00 void* field_0x00
+// @field UnknownNode +0x04 void* field_0x04
+// @field UnknownNode +0x08 void* field_0x08
+// @field UnknownNode +0x39 uint8_t flag
+void fn_005943D0(void* self) {
+    if (lift_field<void*>(self, 0x00) == nullptr) {
+        mem_00925134();
+    }
+
+    void* eax = lift_field<void*>(self, 0x04);
+    if (lift_field<uint8_t>(eax, 0x31) != 0) {
+        mem_00925134();
+        return;
+    }
+
+    void* ecx = lift_field<void*>(eax, 0x08);
+    if (lift_field<uint8_t>(ecx, 0x31) == 0) {
+        // Walk the +0x00 chain from ecx until a node with flag set is found.
+        void* n = lift_field<void*>(ecx, 0x00);
+        if (lift_field<uint8_t>(n, 0x31) == 0) {
+            do {
+                ecx = n;
+                n = lift_field<void*>(ecx, 0x00);
+            } while (lift_field<uint8_t>(n, 0x31) == 0);
+        }
+        lift_field<void*>(self, 0x04) = ecx;
+        return;
+    }
+
+    // ecx (eax+0x08) is flagged: step to eax+0x04 and skip forward.
+    eax = lift_field<void*>(eax, 0x04);
+    if (lift_field<uint8_t>(eax, 0x31) == 0) {
+        for (;;) {
+            void* cur = lift_field<void*>(self, 0x04);
+            if (cur != lift_field<void*>(eax, 0x08)) {
+                break;
+            }
+            lift_field<void*>(self, 0x04) = eax;
+            void* edx = eax;
+            eax = lift_field<void*>(edx, 0x04);
+            if (lift_field<uint8_t>(eax, 0x31) != 0) {
+                break;
+            }
+        }
+    }
+    lift_field<void*>(self, 0x04) = eax;
+}
+} // namespace lift_00667030
+} // namespace lift_005943D0
+
+// [0x0059B290] sub_0059B290 (70 bytes)
+namespace lift_0059B290 {
+// @name sub_0059B290
+// @summary Auto-lifted identical-shape clone of 0x00472730 (Tree::lowerBound).
+namespace lift_00472730 {
+// Imported string less-than comparator (function address stored in .rdata).
+extern uint32_t mem_00924EF4;
+
+using KeyLess = bool (__cdecl*)(const void* a, const void* b);
+
+// @name Tree::lowerBound
+// @class Tree
+// @summary MSVC-style std::_Tree lower_bound: walks from the root to the first node whose key is not less than the argument; returns the head (end) sentinel if none.
+// @field Tree +0x04 void* head
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x04 void* parent_or_root
+// @field TreeNode +0x08 void* right
+// @field TreeNode +0x0C std::string key
+// @field TreeNode +0x39 uint8_t is_nil
+void* __thiscall fn_0059B290(void* self, const void* key) {
+    void* head = lift_field<void*>(self, 0x4);
+    void* node = lift_field<void*>(head, 0x4);  // root
+    void* result = head;                         // end() if nothing qualifies
+
+    if (lift_field<uint8_t>(node, 0x31) != 0) {
+        return head;
+    }
+
+    KeyLess less = reinterpret_cast<KeyLess>(static_cast<uintptr_t>(mem_00924EF4));
+    while (lift_field<uint8_t>(node, 0x31) == 0) {
+        if (less(static_cast<char*>(node) + 0xC, key)) {
+            // node.key < key: answer lies in the right subtree.
+            node = lift_field<void*>(node, 0x8);
+        } else {
+            // node.key >= key: candidate; keep searching left.
+            result = node;
+            node = lift_field<void*>(node, 0x0);
+        }
+    }
+    return result;
+}
+} // namespace lift_00472730
+} // namespace lift_0059B290

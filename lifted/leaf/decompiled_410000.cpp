@@ -1688,3 +1688,68 @@ extern void __fastcall fn_00419840(void* self) {
     ext_006A624A(self);
 }
 } // namespace lift_00419840
+
+// [0x00413990] sub_00413990 (40 bytes)
+namespace lift_00413990 {
+// @name sub_00413990
+// @summary Auto-lifted identical-shape clone of 0x00413C40 (UnknownClass::teardown_00413C40).
+namespace lift_00413C40 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// cdecl, one argument (pushed from [this+0x3c]).
+extern void ext_006A5C5C(void* arg);
+extern int mem_00924F9C;  // IAT slot: MSVCP80 basic_streambuf dtor (base-class tail jump)
+extern int mem_009242E4;  // IAT slot: KERNEL32!DeleteCriticalSection (stdcall)
+
+// @name UnknownClass::teardown_00413C40
+// @class UnknownClass
+// @summary Destructor-style teardown: resets vptr to 0x92c230, deletes the CRITICAL_SECTION at +0x44, calls ext_006A5C5C(+0x3c), then tail-jumps to the MSVCP80 basic_streambuf dtor with the same this.
+// @field UnknownClass +0x00 uint32_t vptr
+// @field UnknownClass +0x3c void* field_0x3c
+// @field UnknownClass +0x44 CRITICAL_SECTION field_0x44
+extern void __thiscall fn_00413990(void* self) {
+    using StdcallVoidFn = void(__stdcall*)(void*);
+    using ThiscallVoidFn = void(__thiscall*)(void*);
+
+    // mov dword ptr [esi], 0x92c230
+    lift_field<uint32_t>(self, 0x00) = 0x92C1F4u;
+
+    // push (this+0x44); call [KERNEL32!DeleteCriticalSection]
+    auto deleteCriticalSection = reinterpret_cast<StdcallVoidFn>(mem_009242E4);
+    deleteCriticalSection(&lift_field<uint8_t>(self, 0x44));
+
+    // push [this+0x3c]; call thunk_MFC80_ord_764; add esp, 4
+    ext_006A5C5C(lift_field<void*>(self, 0x3c));
+
+    // mov ecx, esi; pop esi; jmp [MSVCP80 basic_streambuf dtor]
+    auto baseDtor = reinterpret_cast<ThiscallVoidFn>(mem_00924F9C);
+    baseDtor(self);
+}
+} // namespace lift_00413C40
+} // namespace lift_00413990
+
+// [0x0041FD70] sub_0041FD70 (42 bytes)
+namespace lift_0041FD70 {
+// @name sub_0041FD70
+// @summary Auto-lifted identical-shape clone of 0x006A7FF0 (Unknown::GetOrResolveProcAddress).
+namespace lift_006A7FF0 {
+// Known callee 0x0041FD20: Unknown::GetOrLoadModule (Returns cached module handle at +0x4; otherwise resolves it by name via GetModuleHandleA, falling back to LoadLibraryA (sets +0x8 flag on load path).)
+extern HMODULE ext_0041FD20(void* self);
+
+// Known .rdata slot 0x009241D8: KERNEL32!GetProcAddress (IAT entry)
+typedef void* (__stdcall *GetProcAddressFn)(HMODULE, LPCSTR);
+extern GetProcAddressFn mem_009241D8;
+
+// @name Unknown::GetOrResolveProcAddress
+// @class Unknown
+// @summary Returns the cached GetProcAddress result at +0x3C, resolving it from the loaded module (name at 0x00990980) on first use; result is written through out.
+// @field Unknown +0x3C void* cachedProc
+void fn_0041FD70(void* self, void** out) {
+    if (lift_field<void*>(self, 0x2C) == nullptr) {
+        HMODULE mod = ext_0041FD20(self);
+        LPCSTR procName = reinterpret_cast<LPCSTR>(static_cast<uintptr_t>(0x92E180u));
+        lift_field<void*>(self, 0x2C) = mem_009241D8(mod, procName);
+    }
+    *out = lift_field<void*>(self, 0x2C);
+}
+} // namespace lift_006A7FF0
+} // namespace lift_0041FD70

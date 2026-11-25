@@ -1,0 +1,22 @@
+{
+  "va": "0x00444360",
+  "size": 42,
+  "orig_symbol": "sub_00444360",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "sub_00444360",
+  "class": "Unknown",
+  "signature": "void fn_00444360(void* self, void** out)",
+  "summary": "Auto-lifted identical-shape clone of 0x006A7FF0 (Unknown::GetOrResolveProcAddress).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "void*",
+      "name": "cachedProc"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

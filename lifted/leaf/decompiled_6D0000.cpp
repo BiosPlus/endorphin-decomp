@@ -1458,3 +1458,56 @@ void __thiscall fn_006DD2B0(void* self) {
     } while (*reinterpret_cast<uint32_t*>(arrayPtr) != 0);
 }
 } // namespace lift_006DD2B0
+
+// [0x006D4140] sub_006D4140 (96 bytes)
+namespace lift_006D4140 {
+// @name sub_006D4140
+// @summary Auto-lifted identical-shape clone of 0x006D48D0 (sub_006D48D0).
+namespace lift_006D48D0 {
+// @name sub_006D48D0
+// @summary Auto-lifted identical-shape clone of 0x006D4140 (allocateAndConstruct_006D7AE0).
+namespace lift_006D4140 {
+extern void* ext_006A5C62(uint32_t size);
+extern void* __thiscall ext_006D7AE0(void* self, void* arg);
+
+// @name allocateAndConstruct_006D7AE0
+// @summary Allocates 0x1d0 bytes and constructs an object via sub_006D7AE0, returning nullptr on allocation failure.
+
+void* __thiscall fn_006D4140(void* self) {
+    void* obj = ext_006A5C62(0x1D0);
+    if (!obj) {
+        return nullptr;
+    }
+    return ext_006D7AE0(obj, self);
+}
+} // namespace lift_006D4140
+} // namespace lift_006D48D0
+} // namespace lift_006D4140
+
+// [0x006D8520] sub_006D8520 (48 bytes)
+namespace lift_006D8520 {
+// @name sub_006D8520
+// @summary Auto-lifted identical-shape clone of 0x006D8550 (queryIntAt08ViaSubobject).
+namespace lift_006D8550 {
+extern void* __thiscall ext_006FDF70(void* self, int32_t arg);
+extern int32_t __fastcall ext_006FC930(void* self);
+
+// @name queryIntAt08ViaSubobject
+// @class <Unknown>
+// @summary Resolves a sub-object via two ext_006FDF70 calls and ext_006FC930; returns the int32 at +0x08 of the result, or 0 if any step is null.
+// @field Unknown +0x08 int32_t field_0x08
+extern int32_t __fastcall fn_006D8520(void* self) {
+    if (ext_006FDF70(self, 0) == nullptr) {
+        return 0;
+    }
+    void* sub = ext_006FDF70(self, 0);
+    uint32_t obj = static_cast<uint32_t>(ext_006FC930(sub));
+    if (obj == 0) {
+        return 0;
+    }
+    int32_t value = 0;
+    std::memcpy(&value, reinterpret_cast<const void*>(static_cast<uintptr_t>(obj) + 0x18), sizeof value);
+    return value;
+}
+} // namespace lift_006D8550
+} // namespace lift_006D8520

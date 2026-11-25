@@ -1,0 +1,28 @@
+{
+  "va": "0x0060C040",
+  "size": 44,
+  "orig_symbol": "NMData::EffectorBaseData::vfunc_2",
+  "src_path": "src/NMData/EffectorBaseData.cpp",
+  "lifted_path": "lifted/NMData/EffectorBaseData.cpp",
+  "name": "NMData::EffectorBaseData::vfunc_2",
+  "class": "NMData::EffectorBaseData",
+  "signature": "void* fn_0060C040(void* self, void* arg1, uint32_t arg2)",
+  "summary": "Auto-lifted identical-shape clone of 0x0060E7B0 (NMData::AxisDefineSensorData::vfunc_2).",
+  "fields": [
+    {
+      "class": "NMData::EffectorBaseData",
+      "offset": "+0x40",
+      "type": "void*",
+      "name": "field_0x40"
+    },
+    {
+      "class": "NMData::AxisDefineSensorData",
+      "offset": "+0x170",
+      "type": "void*",
+      "name": "field_0x170"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

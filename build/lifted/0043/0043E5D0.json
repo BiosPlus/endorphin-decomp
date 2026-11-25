@@ -1,0 +1,22 @@
+{
+  "va": "0x0043E5D0",
+  "size": 106,
+  "orig_symbol": "sub_0043E5D0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_0043E5D0",
+  "class": "StringVector",
+  "signature": "extern CheckedIterator* __thiscall fn_0043E5D0( StringVector* self, CheckedIterator* out_iter, void* first_container, uint8_t* first_ptr, void* last_container, uint8_t* last_ptr)",
+  "summary": "Auto-lifted identical-shape clone of 0x00660870 (StringVector::erase).",
+  "fields": [
+    {
+      "class": "StringVector",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "end_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

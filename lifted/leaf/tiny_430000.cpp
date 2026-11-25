@@ -15,6 +15,7 @@ extern "C" void __cdecl ext_006A5C5C(void* ptr);
 void fn_00430F9E() {
 }
 extern "C" void __fastcall ext_0041C730(void* self);
+#include <cstdint>
 
 // [0x0043CB70] sub_0043CB70 (4 bytes)
 // @name sub_0043CB70
@@ -190,3 +191,33 @@ void* fn_0043B3E0(void* self, const void* src) {
     return self;
 }
 } // namespace lift_0043B3E0
+
+// [0x0043CB50] sub_0043CB50 (28 bytes)
+namespace lift_0043CB50 {
+// @name sub_0043CB50
+// @summary Auto-lifted identical-shape clone of 0x00476B80 (sub_00476B80).
+namespace lift_00476B80 {
+// @name sub_00476B80
+// @summary Auto-lifted identical-shape clone of 0x005AC820 (Unknown::walkLinkUntilFlagSet_005AC820).
+namespace lift_005AC820 {
+// @name Unknown::walkLinkUntilFlagSet_005AC820
+// @class Unknown
+// @summary Follow the +0x08 link chain from arg until a node with byte +0x29 set is reached; returns the node whose +0x08 link leads to it (or arg itself if the first link already matches).
+// @field Unknown +0x08 void* field_0x08 (next link pointer)
+// @field Unknown +0x29 uint8_t field_0x29 (flag byte)
+
+void* fn_0043CB50(void* a) {
+    void* eax = a;
+    void* ecx = lift_field<void*>(eax, 0x08);
+    if (lift_field<uint8_t>(ecx, 0x15) != 0) {
+        return eax;
+    }
+    do {
+        eax = ecx;
+        ecx = lift_field<void*>(eax, 0x08);
+    } while (lift_field<uint8_t>(ecx, 0x15) == 0);
+    return eax;
+}
+} // namespace lift_005AC820
+} // namespace lift_00476B80
+} // namespace lift_0043CB50

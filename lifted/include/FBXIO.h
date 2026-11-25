@@ -10,6 +10,7 @@
 // Recovered field layout for FBXIO:
 namespace lifted_layout {
 struct FBXIO_Fields {
+    // +0x0   void* vtable (no direct field access in this function; self is only passed through to ext_00553720)  (evidence: 0x0055DE50)
     // +0x40  uint8_t[4]               field_0x40  (evidence: 0x00560300)
     // +0x90  uint8_t                  field_0x90  (evidence: 0x00560300)
     // +0x94  uint8_t[4]               field_0x94  (evidence: 0x00560300)

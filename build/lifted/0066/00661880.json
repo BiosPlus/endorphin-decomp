@@ -1,0 +1,21 @@
+{
+  "va": "0x00661880",
+  "size": 9,
+  "orig_symbol": "sub_00661880",
+  "src_path": "src/leaf/tiny_660000.cpp",
+  "lifted_path": "lifted/leaf/tiny_660000.cpp",
+  "name": "sub_00661880",
+  "signature": "intptr_t fn_00661880(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00493E00 (forwardVtable0B4_viaFirstField).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

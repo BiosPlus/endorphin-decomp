@@ -1,0 +1,13 @@
+{
+  "va": "0x006EF800",
+  "size": 16,
+  "orig_symbol": "sub_006EF800",
+  "src_path": "src/leaf/tiny_6E0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6E0000.cpp",
+  "name": "sub_006EF800",
+  "signature": "extern \"C\" void __fastcall fn_006EF800(void* self, int edx_unused, int32_t value)",
+  "summary": "Setter storing int32_t argument into field at offset +0xC.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

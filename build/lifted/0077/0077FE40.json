@@ -1,0 +1,13 @@
+{
+  "va": "0x0077FE40",
+  "size": 16,
+  "orig_symbol": "sub_0077FE40",
+  "src_path": "src/leaf/tiny_770000.cpp",
+  "lifted_path": "lifted/leaf/tiny_770000.cpp",
+  "name": "sub_0077FE40",
+  "signature": "extern \"C\" int32_t __cdecl fn_0077FE40(void)",
+  "summary": "Returns constant 0xB1.",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

@@ -2008,3 +2008,85 @@ void* fn_005082B0(void* self, uint32_t arg1) {
     return self;
 }
 } // namespace lift_005082B0
+
+// [0x005067A0] sub_005067A0 (108 bytes)
+namespace lift_005067A0 {
+// @name sub_005067A0
+// @summary Auto-lifted identical-shape clone of 0x0050BFF0 (Unknown::replaceRecordRange_0050BFF0).
+namespace lift_0050BFF0 {
+// Known callee 0x0050B060: Unknown::copyRecordRangeAndAdvance_0050B060.
+// Call order below follows the machine code's push order: (a5, dest, a3).
+extern void* ext_00506740(const void* arg1, void* arg2, const void* arg3);
+extern void (*mem_00925134)();
+
+// @name Unknown::replaceRecordRange_0050BFF0
+// @class Unknown
+// @summary Copies a 0x24-byte record range into the member buffer, destroys the previous tail records, and reports the (begin, first) pair through out.
+// @field Unknown +0x08 void* field_0x08
+void fn_005067A0(void* self, void** out, const void* begin, const void* first,
+                 const void* begin_check, const void* last) {
+    // Argument validation: begin must be non-null and equal begin_check.
+    if (begin == nullptr || begin != begin_check) {
+        mem_00925134();
+    }
+
+    void** slot = reinterpret_cast<void**>(static_cast<uint8_t*>(self) + 0x08);
+
+    if (first != last) {
+        void* const dest = *slot;
+        void* const newEnd = ext_00506740(last, dest, first);
+        void* const oldEnd = *slot;
+
+        // Destroy the old records in [newEnd, oldEnd) via vtable slot 0 with flag 0.
+        for (uint8_t* p = static_cast<uint8_t*>(newEnd); static_cast<void*>(p) != oldEnd; p += 0x68) {
+            void** vtbl = *reinterpret_cast<void***>(p);
+            auto dtor = reinterpret_cast<void (*)(void*, int)>(vtbl[0]);
+            dtor(static_cast<void*>(p), 0);
+        }
+
+        *slot = newEnd;
+    }
+
+    out[0] = const_cast<void*>(begin);
+    out[1] = const_cast<void*>(first);
+}
+} // namespace lift_0050BFF0
+} // namespace lift_005067A0
+
+// [0x005086E0] sub_005086E0 (83 bytes)
+namespace lift_005086E0 {
+extern uintptr_t mem_00924FF4;
+
+// @name sub_005086E0
+// @summary Auto-lifted identical-shape clone of 0x00508790 (ClassName::~ClassName).
+namespace lift_00508790 {
+// Known callee 0x0065F440: sub_0065F440 (Stores address of mem_0093BF24 into field at offset +0x0.)
+extern void ext_0065F440(void* self);
+// Address of the MSVC basic_string<char> destructor, stored in .rdata.
+extern uint32_t mem_00924FF4;
+// Vtable for this class (value 0x0094F92C in the original image).
+extern uint32_t mem_0094F8D4;
+
+// @name ClassName::~ClassName
+// @class ClassName
+// @summary Destructor: resets vtable, destroys the std::string member at +0x04, then runs base cleanup via ext_0065F440.
+// @field ClassName +0x00 void* field_0x00
+// @field ClassName +0x04 std::string field_0x04
+void fn_005086E0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Vtable pointer is set to this class's vtable.
+    *reinterpret_cast<uint32_t*>(base + 0x00) = mem_0094F8D4;
+
+    // Destroy the string member at +0x04.
+    using StrDtor = void (*)(void*);
+    auto strDtor = reinterpret_cast<StrDtor>(static_cast<uintptr_t>(mem_00924FF4));
+    if (strDtor) {
+        strDtor(base + 0x04);
+    }
+
+    // Run the base-level cleanup on the same object.
+    ext_0065F440(self);
+}
+} // namespace lift_00508790
+} // namespace lift_005086E0

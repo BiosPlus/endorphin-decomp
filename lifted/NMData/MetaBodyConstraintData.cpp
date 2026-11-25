@@ -14,6 +14,7 @@ extern "C" void __thiscall fn_004CA380(void* self, void* a) {
     void** vt = *reinterpret_cast<void***>(self);
     reinterpret_cast<VFn>(vt[22])(self, r);
 }
+#include <new>
 
 // [0x004CCFB0]
 // @name NMData::MetaBodyConstraintData::assignFrom
@@ -92,3 +93,21 @@ extern void* __thiscall fn_004CA310(void* self, void* out, uint32_t id) {
     return out;
 }
 } // namespace lift_004CA310
+
+// [0x004CD020] NMData::MetaBodyConstraintData::vfunc_17_off_C (99 bytes)
+namespace lift_004CD020 {
+extern void* ext_006A5C62(size_t size);
+extern void* ext_004CCE20(void* self, void* owner);
+
+// @name NMData::MetaBodyConstraintData::vfunc_17_off_C
+// @class NMData::MetaBodyConstraintData
+// @summary Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).
+void* fn_004CD020(void* self) {
+    void* mem = ext_006A5C62(0x1A4);
+    if (mem == nullptr) {
+        return nullptr;
+    }
+    void* owner = static_cast<unsigned char*>(self) - 0xC;
+    return ext_004CCE20(mem, owner);
+}
+} // namespace lift_004CD020

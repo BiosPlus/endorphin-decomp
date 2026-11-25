@@ -1421,3 +1421,137 @@ void __thiscall fn_0067C3D0(void* this_ptr, float angle) {
     *reinterpret_cast<float*>(base + 0x8) = y * s + z * c;
 }
 } // namespace lift_0067C3D0
+
+// [0x00672590] sub_00672590 (89 bytes)
+namespace lift_00672590 {
+// @name sub_00672590
+// @summary Auto-lifted identical-shape clone of 0x005940E0 (Unknown::destructorBody_005940E0).
+namespace lift_005940E0 {
+// Import thunk pointer: MSVCP80 std::basic_string<char>::~basic_string (0x00628FF0).
+extern uint32_t mem_00924FF4;
+
+// @name Unknown::destructorBody_005940E0
+// @class Unknown
+// @summary Releases an optional child object at +0x20 through its vtable slot 0x78 (passing &field_0x1c), then destroys the std::string at offset 0.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1C void* field_0x1c
+// @field Unknown +0x20 void* child
+void __thiscall fn_00672590(uint8_t* self) {
+    // Optional virtual notification on the child object at +0x20.
+    uint8_t* child = *reinterpret_cast<uint8_t**>(self + 0x28);
+    if (child != nullptr) {
+        uint8_t* arg = self + 0x24;
+        uint8_t* vtbl = *reinterpret_cast<uint8_t**>(child);
+        uintptr_t slot = *reinterpret_cast<uintptr_t*>(vtbl + 0x78);
+        using VirtualFn = void(__thiscall*)(void* obj, void* arg);
+        reinterpret_cast<VirtualFn>(slot)(child, arg);
+    }
+
+    // Destroy the std::string stored at offset 0 of this object.
+    using StringDtorFn = void(__thiscall*)(void* obj);
+    reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(mem_00924FF4))(self);
+}
+} // namespace lift_005940E0
+} // namespace lift_00672590
+
+// [0x00673C20] sub_00673C20 (108 bytes)
+namespace lift_00673C20 {
+// @name sub_00673C20
+// @summary Auto-lifted identical-shape clone of 0x00667030 (advanceCursorSkipFlagged).
+namespace lift_00667030 {
+// Import slot 0x00925134 holds the address of MSVCR80!_invalid_parameter_noinfo.
+// The raw .rdata label is "P{b", but the code loads a function pointer from it.
+extern void (*mem_00925134)();
+
+// @name advanceCursorSkipFlagged
+// @summary Advances the cursor at self+0x04 past nodes whose byte at +0x39 is set, using the +0x04 and +0x08 links; calls the invalid-parameter handler when self+0x00 is null or the cursor node is flagged on entry.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 void* cursor
+// @field UnknownNode +0x00 void* field_0x00
+// @field UnknownNode +0x04 void* field_0x04
+// @field UnknownNode +0x08 void* field_0x08
+// @field UnknownNode +0x39 uint8_t flag
+void fn_00673C20(void* self) {
+    if (lift_field<void*>(self, 0x00) == nullptr) {
+        mem_00925134();
+    }
+
+    void* eax = lift_field<void*>(self, 0x04);
+    if (lift_field<uint8_t>(eax, 0x2D) != 0) {
+        mem_00925134();
+        return;
+    }
+
+    void* ecx = lift_field<void*>(eax, 0x08);
+    if (lift_field<uint8_t>(ecx, 0x2D) == 0) {
+        // Walk the +0x00 chain from ecx until a node with flag set is found.
+        void* n = lift_field<void*>(ecx, 0x00);
+        if (lift_field<uint8_t>(n, 0x2D) == 0) {
+            do {
+                ecx = n;
+                n = lift_field<void*>(ecx, 0x00);
+            } while (lift_field<uint8_t>(n, 0x2D) == 0);
+        }
+        lift_field<void*>(self, 0x04) = ecx;
+        return;
+    }
+
+    // ecx (eax+0x08) is flagged: step to eax+0x04 and skip forward.
+    eax = lift_field<void*>(eax, 0x04);
+    if (lift_field<uint8_t>(eax, 0x2D) == 0) {
+        for (;;) {
+            void* cur = lift_field<void*>(self, 0x04);
+            if (cur != lift_field<void*>(eax, 0x08)) {
+                break;
+            }
+            lift_field<void*>(self, 0x04) = eax;
+            void* edx = eax;
+            eax = lift_field<void*>(edx, 0x04);
+            if (lift_field<uint8_t>(eax, 0x2D) != 0) {
+                break;
+            }
+        }
+    }
+    lift_field<void*>(self, 0x04) = eax;
+}
+} // namespace lift_00667030
+} // namespace lift_00673C20
+
+// [0x0067AEF0] sub_0067AEF0 (56 bytes)
+namespace lift_0067AEF0 {
+// @name sub_0067AEF0
+// @summary Auto-lifted identical-shape clone of 0x0067AEB0 (Unknown::SetEventAtIndex).
+namespace lift_0067AEB0 {
+extern void ext_0067AF28(void);
+extern void (*mem_00925134)(void);
+extern BOOL (*mem_0092428C)(HANDLE hEvent);
+
+// @name Unknown::SetEventAtIndex
+// @class Unknown
+// @summary Signals the event handle stored at the given index of the vector referenced by this+0x0C; invalid index returns FALSE.
+// @field Unknown +0x0C pointer vecHolder
+// @field Unknown +0x04 uint32_t field_0x04 (vector begin, via holder)
+// @field Unknown +0x08 uint32_t field_0x08 (vector end, via holder)
+BOOL fn_0067AEF0(void* self, INT index) {
+    if (index < 0) {
+        ext_0067AF28();
+        return FALSE;
+    }
+
+    uint32_t vecAddr = lift_field<uint32_t>(self, 0x0C);
+    void* vec = reinterpret_cast<void*>(static_cast<uintptr_t>(vecAddr));
+    uint32_t begin = lift_field<uint32_t>(vec, 0x04);
+    uint32_t end = lift_field<uint32_t>(vec, 0x08);
+
+    if (begin == 0 || static_cast<uint32_t>(index) >= ((end - begin) >> 2)) {
+        mem_00925134();
+        return FALSE;
+    }
+
+    void* elems = reinterpret_cast<void*>(static_cast<uintptr_t>(begin));
+    uint32_t handleValue = lift_field<uint32_t>(elems, static_cast<ptrdiff_t>(index) * 4);
+    HANDLE hEvent = reinterpret_cast<HANDLE>(static_cast<uintptr_t>(handleValue));
+    return mem_0092428C(hEvent);
+}
+} // namespace lift_0067AEB0
+} // namespace lift_0067AEF0

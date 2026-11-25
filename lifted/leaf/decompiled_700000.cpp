@@ -19,8 +19,10 @@ extern "C" void* __fastcall fn_0070A1D0(void* self, int edx_unused, unsigned int
     return self;
 }
 #include <cstdlib>
+#include <cstdio>
+#include <cstddef>
 
-// [0x00707980] sub_00707980 (13 bytes)
+#include <cstddef>
 namespace lift_00707980 {
 // Known callee 0x006FA920: Unknown::NotifySlot17IfSelfLinked (If the object's field at +0x08 points back to the object itself, calls virtual slot 17 with arg 0 and returns true; otherwise returns false.)
 extern bool ext_006FA920(void* self);
@@ -2014,3 +2016,105 @@ extern void __fastcall fn_00700840(void* self) {
     ext_0077FA20(self);
 }
 } // namespace lift_00700840
+
+// [0x00702A00] sub_00702A00 (80 bytes)
+namespace lift_00702A00 {
+// @name sub_00702A00
+// @summary Auto-lifted identical-shape clone of 0x0070BC70 (Unknown::FillValueTriple).
+namespace lift_0070BC70 {
+// Callees (32-bit ABI: `this`/first arg arrives in ecx, values are 32-bit).
+extern int32_t ext_006DC460(void* self);            // Unknown::GetValueIfCountPositive
+extern int32_t ext_006C9620(int32_t self);          // sub_006C9810 (returns sub-object handle)
+extern int32_t ext_006C9640(int32_t self);          // sub_006C9830 (returns sub-object handle)
+extern int32_t ext_006C9660(int32_t self);          // sub_006C9850 (returns sub-object handle)
+// Known callee 0x006C9F70: sub_006C9F70 (Getter returning float field at offset +0x14.)
+extern float ext_006C9F70(int32_t self);
+
+// @name Unknown::FillValueTriple
+// @class Unknown
+// @summary Fills out[0..2] with three float getter results (as doubles) read from sub-objects of the value returned by GetValueIfCountPositive; returns out.
+// (No @field lines: self is only passed to callees; out[] offsets 0x00/0x08/0x10 are output slots, not class fields.)
+double* fn_00702A00(void* self, double* out) {
+    int32_t base = ext_006DC460(self);
+
+    int32_t h0 = ext_006C9620(base);
+    out[0] = static_cast<double>(ext_006C9F70(h0));
+
+    int32_t h1 = ext_006C9640(base);
+    out[1] = static_cast<double>(ext_006C9F70(h1));
+
+    int32_t h2 = ext_006C9660(base);
+    out[2] = static_cast<double>(ext_006C9F70(h2));
+
+    return out;
+}
+} // namespace lift_0070BC70
+} // namespace lift_00702A00
+
+// [0x00706AF0] sub_00706AF0 (32 bytes)
+namespace lift_00706AF0 {
+// @name sub_00706AF0
+// @summary Auto-lifted identical-shape clone of 0x00706EF0 (Unknown::CallWithField5COrDefault).
+namespace lift_00706EF0 {
+// Known callee 0x006E7460: sub_006E7460 (Getter returning int32_t field at offset +0x0.)
+extern int32_t __fastcall ext_006E7460(void* self);
+extern uint8_t mem_00B5D268[];
+
+// @name Unknown::CallWithField5COrDefault
+// @class Unknown
+// @summary Passes self->field_0x5C to fn_006E7460, or the address of mem_00B5D268 when that field is zero.
+// @field Unknown +0x5C int32_t field_0x5C
+int32_t __fastcall fn_00706AF0(void* self) {
+    int32_t v = *reinterpret_cast<int32_t*>(reinterpret_cast<uintptr_t>(self) + 0x58);
+    if (v == 0) {
+        v = static_cast<int32_t>(reinterpret_cast<uintptr_t>(mem_00B5D268));
+    }
+    return ext_006E7460(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(v))));
+}
+} // namespace lift_00706EF0
+} // namespace lift_00706AF0
+
+// [0x0070EA90] sub_0070EA90 (32 bytes)
+namespace lift_0070EA90 {
+// @name sub_0070EA90
+// @summary Auto-lifted identical-shape clone of 0x00702F60 (sub_00702F60).
+namespace lift_00702F60 {
+// @name sub_00702F60
+// @summary Auto-lifted identical-shape clone of 0x0071B020 (Unknown::CallArgWithSubObjectAddr0x10).
+namespace lift_0071B020 {
+// Known callee 0x006D2390: ForwardArgToCalleeReturnThis (Forwards its single stack argument to sub_007873F0 with the same this pointer, then returns this.)
+extern void* ext_006B9D20(void* self, uint32_t arg1);
+
+// @name Unknown::CallArgWithSubObjectAddr0x10
+// @class Unknown
+// @summary Calls 0x006D2390 with arg as this and (self + 0x10) as its stack argument, then returns arg.
+// @field Unknown +0x10 BYTE field_0x10
+void* fn_0070EA90(void* self, void* arg) {
+    const uint32_t sub_addr =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self) + 0xC);
+    ext_006B9D20(arg, sub_addr);
+    return arg;
+}
+} // namespace lift_0071B020
+} // namespace lift_00702F60
+} // namespace lift_0070EA90
+
+// [0x0070EBF0] sub_0070EBF0 (48 bytes)
+namespace lift_0070EBF0 {
+// @name sub_0070EBF0
+// @summary Auto-lifted identical-shape clone of 0x006C2CB0 (ForwardOffsetFieldToCalleeReturnArg).
+namespace lift_006C2CB0 {
+// @name ForwardOffsetFieldToCalleeReturnArg
+// @summary Passes (self + 0x118) to ext_006D2390 with arg1 as its this pointer, then returns arg1.
+// @field unknown +0x118 uint8_t field_0x118
+
+
+extern void* ext_006B9D20(void* self, uint32_t arg1);
+
+void* fn_0070EBF0(void* self, void* arg1) {
+    uint32_t field_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(static_cast<uint8_t*>(self) + 0xF8));
+    ext_006B9D20(arg1, field_ptr);
+    return arg1;
+}
+} // namespace lift_006C2CB0
+} // namespace lift_0070EBF0

@@ -406,3 +406,22 @@ void fn_00538FA0(void* self, float f0, float f1, DWORD d0, DWORD d1) {
     lift_field<DWORD>(self, 0x24) = d1;
 }
 } // namespace lift_00538FA0
+
+// [0x005314C0] sub_005314C0 (10 bytes)
+namespace lift_005314C0 {
+// @name sub_005314C0
+// @summary Auto-lifted identical-shape clone of 0x004023C0 (AVIIO::vfunc_23).
+namespace lift_004023C0 {
+// @name AVIIO::vfunc_23
+// @class AVIIO
+// @summary Returns the dword at offset 0xD8 of the object referenced by this->+0x470.
+// @field AVIIO +0x470 uint32_t field_0x470
+// @field Unknown +0xD8 uint32_t field_0xD8
+uint32_t fn_005314C0(void* self) {
+    // Pointer at +0x470 is a 32-bit guest address; widen via uintptr_t for host-side typing.
+    const uint32_t inner = lift_field<uint32_t>(self, 0x10);
+    const void* inner_ptr = reinterpret_cast<const void*>(static_cast<uintptr_t>(inner));
+    return lift_field<uint32_t>(inner_ptr, 0x1B0);
+}
+} // namespace lift_004023C0
+} // namespace lift_005314C0

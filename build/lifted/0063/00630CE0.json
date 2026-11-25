@@ -1,0 +1,14 @@
+{
+  "va": "0x00630CE0",
+  "size": 30,
+  "orig_symbol": "ExprParser::ROWriteMethodType\u003cEffectorSkeletal, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorSkeletal::`vcall'{60, {flat}}\u003e::vfunc_16",
+  "src_path": "src/templates/ROWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ROWriteMethodType.cpp",
+  "name": "ExprParser::ROWriteMethodType\u003cEffectorSkeletal, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorSkeletal::`vcall'{60, {flat}}\u003e::vfunc_16",
+  "class": "ExprParser::ROWriteMethodType\u003cEffectorSkeletal, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorSkeletal::`vcall'{60, {flat}}\u003e",
+  "signature": "void* fn_00630CE0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0064F1F0 (ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

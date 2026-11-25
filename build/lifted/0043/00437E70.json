@@ -1,0 +1,28 @@
+{
+  "va": "0x00437E70",
+  "size": 10,
+  "orig_symbol": "BaseEventDispatcher::vfunc_2",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "BaseEventDispatcher::vfunc_2",
+  "class": "BaseEventDispatcher",
+  "signature": "uint32_t __thiscall fn_00437E70(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00648ED0 (sub_00648ED0).",
+  "fields": [
+    {
+      "class": "BaseEventDispatcher",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    },
+    {
+      "class": "CompoundSensor",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

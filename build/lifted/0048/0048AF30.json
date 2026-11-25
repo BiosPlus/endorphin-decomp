@@ -1,0 +1,14 @@
+{
+  "va": "0x0048AF30",
+  "size": 112,
+  "orig_symbol": "NMData::AnimationEventData::vfunc_1_off_154",
+  "src_path": "src/NMData/AnimationEventData.cpp",
+  "lifted_path": "lifted/NMData/AnimationEventData.cpp",
+  "name": "NMData::AnimationEventData::vfunc_1_off_154",
+  "class": "NMData::AnimationEventData",
+  "signature": "void __thiscall fn_0048AF30(void* self, void* arg0)",
+  "summary": "Auto-lifted identical-shape clone of 0x004C8440 (NMData::BehaviourData::vfunc_1_off_154).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

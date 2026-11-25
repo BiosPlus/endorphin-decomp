@@ -1573,3 +1573,12 @@ DWORD fn_006C12D0(void* self, DWORD arg1, DWORD arg2) {
     return fn(sub, arg1, arg2);
 }
 } // namespace lift_006C12D0
+
+// [0x006CD320] sub_006CD320 (16 bytes)
+namespace lift_006CD320 {
+// @name sub_006CD320
+// @summary Getter returning int32_t field at offset +0x40.
+extern int32_t __fastcall fn_006CD320(void* self) {
+    return static_cast<int32_t>(lift_field<int32_t>(self, 0x40));
+}
+} // namespace lift_006CD320

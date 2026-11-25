@@ -1,0 +1,14 @@
+{
+  "va": "0x005B65E0",
+  "size": 26,
+  "orig_symbol": "ExprParser::BoolType::vfunc_5",
+  "src_path": "src/ExprParser/BoolType.cpp",
+  "lifted_path": "lifted/ExprParser/BoolType.cpp",
+  "name": "ExprParser::BoolType::vfunc_5",
+  "class": "ExprParser::BoolType",
+  "signature": "void fn_005B65E0(void)",
+  "summary": "Auto-lifted identical-shape clone of 0x0046C4E0 (ExceptionWithMessage::throwDefaultMessage_0046C4E0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

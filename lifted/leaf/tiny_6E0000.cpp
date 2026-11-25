@@ -666,3 +666,13 @@ void __thiscall sub_006E8600(void* this_ptr, uint8_t value) {
     inner[0x20] = value;
 }
 } // namespace lift_006E8600
+
+// [0x006EF800] sub_006EF800 (16 bytes)
+namespace lift_006EF800 {
+// @name sub_006EF800
+// @summary Setter storing int32_t argument into field at offset +0xC.
+extern void __fastcall fn_006EF800(void* self, int edx_unused, int32_t value) {
+    (void)edx_unused;
+    lift_field<int32_t>(self, 0xC) = value;
+}
+} // namespace lift_006EF800

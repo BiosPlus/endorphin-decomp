@@ -321,3 +321,24 @@ BYTE sub_005481E0(BYTE* self) {
     return v != 0 ? 1 : 0;
 }
 } // namespace lift_005481E0
+
+// [0x00543210] sub_00543210 (10 bytes)
+namespace lift_00543210 {
+// @name sub_00543210
+// @summary Auto-lifted identical-shape clone of 0x005455F0 (PoseTool::vfunc_28).
+namespace lift_005455F0 {
+// @name PoseTool::vfunc_28
+// @class PoseTool
+// @summary Forwards the call to virtual slot +0x70 of the object held at PoseTool +0xA0, returning its result.
+// @field PoseTool +0xA0 void* field_0xA0
+void* fn_00543210(void* self) {
+    // mov ecx, [self+0xA0]; mov eax, [ecx]; mov eax, [eax+0x70]; jmp eax
+    // Tail-call: the callee's return value (eax) is passed straight through.
+    void* obj = lift_field<void*>(self, 0x14);
+    void* vtbl = lift_field<void*>(obj, 0);
+    using VFn = void* (*)(void* self);
+    VFn target = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0x6C));
+    return target(obj);
+}
+} // namespace lift_005455F0
+} // namespace lift_00543210

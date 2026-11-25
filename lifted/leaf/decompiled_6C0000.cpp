@@ -1936,3 +1936,44 @@ float __cdecl sub_006CD650(float t, float target, float c2, float c3) {
     return static_cast<float>((left + right) - static_cast<double>(target));
 }
 } // namespace lift_006CD650
+
+// [0x006C3490] sub_006C3490 (112 bytes)
+namespace lift_006C3490 {
+// @name sub_006C3490
+// @summary Auto-lifted identical-shape clone of 0x006C3520 (sub_006C3520).
+namespace lift_006C3520 {
+// @name sub_006C3520
+// @summary Computes element pointer at *(this + 0xF0) + index * 0x1F0 + 0x1D98 and calls ext_007873F0 with &arg2
+// @field Unknown +0xF0 uint32_t field_0xF0
+
+
+extern void __thiscall ext_007873F0(void* self, void* arg);
+extern void __cdecl ext_006D80A0(void);
+
+extern void __thiscall fn_006C3490(
+    void* self,
+    uint32_t index,
+    uint32_t arg2,
+    uint32_t arg3,
+    uint32_t arg4,
+    uint32_t arg5,
+    uint32_t arg6,
+    uint32_t arg7,
+    uint32_t arg8,
+    uint32_t arg9)
+{
+    (void)arg3;
+    (void)arg4;
+    (void)arg5;
+    (void)arg6;
+    (void)arg7;
+    (void)arg8;
+    (void)arg9;
+
+    uint32_t base = *(uint32_t*)((uint8_t*)self + 0xF0);
+    void* target = (void*)(uintptr_t)(base + index * 0x1F0u + 0x1D78u);
+    ext_007873F0(target, &arg2);
+    ext_006D80A0();
+}
+} // namespace lift_006C3520
+} // namespace lift_006C3490

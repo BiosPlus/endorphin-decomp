@@ -309,3 +309,45 @@ extern int __fastcall fn_00455CB0(void* self) {
 }
 } // namespace lift_004090C0
 } // namespace lift_00455CB0
+
+// [0x004584A0] sub_004584A0 (10 bytes)
+namespace lift_004584A0 {
+// @name sub_004584A0
+// @summary Auto-lifted identical-shape clone of 0x005455F0 (PoseTool::vfunc_28).
+namespace lift_005455F0 {
+// @name PoseTool::vfunc_28
+// @class PoseTool
+// @summary Forwards the call to virtual slot +0x70 of the object held at PoseTool +0xA0, returning its result.
+// @field PoseTool +0xA0 void* field_0xA0
+void* fn_004584A0(void* self) {
+    // mov ecx, [self+0xA0]; mov eax, [ecx]; mov eax, [eax+0x70]; jmp eax
+    // Tail-call: the callee's return value (eax) is passed straight through.
+    void* obj = lift_field<void*>(self, 0x10);
+    void* vtbl = lift_field<void*>(obj, 0);
+    using VFn = void* (*)(void* self);
+    VFn target = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0x14));
+    return target(obj);
+}
+} // namespace lift_005455F0
+} // namespace lift_004584A0
+
+// [0x004584B0] sub_004584B0 (10 bytes)
+namespace lift_004584B0 {
+// @name sub_004584B0
+// @summary Auto-lifted identical-shape clone of 0x005455F0 (PoseTool::vfunc_28).
+namespace lift_005455F0 {
+// @name PoseTool::vfunc_28
+// @class PoseTool
+// @summary Forwards the call to virtual slot +0x70 of the object held at PoseTool +0xA0, returning its result.
+// @field PoseTool +0xA0 void* field_0xA0
+void* fn_004584B0(void* self) {
+    // mov ecx, [self+0xA0]; mov eax, [ecx]; mov eax, [eax+0x70]; jmp eax
+    // Tail-call: the callee's return value (eax) is passed straight through.
+    void* obj = lift_field<void*>(self, 0x10);
+    void* vtbl = lift_field<void*>(obj, 0);
+    using VFn = void* (*)(void* self);
+    VFn target = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0xC));
+    return target(obj);
+}
+} // namespace lift_005455F0
+} // namespace lift_004584B0

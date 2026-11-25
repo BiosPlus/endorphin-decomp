@@ -65,6 +65,7 @@ extern "C" bool __thiscall fn_004BFC20(void* self, const void* unused) {
     return true;
 }
 #include <new>
+#include <cstdint>
 
 // [0x004DDED0] NMData::AnimationEventData::vfunc_59 (34 bytes)
 // @name NMData::AnimationEventData::vfunc_59
@@ -150,3 +151,53 @@ void __thiscall fn_004E2700(uint8_t* self) {
     *reinterpret_cast<uint32_t*>(self + 0x9C0) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(vec));
 }
 } // namespace lift_004E2700
+
+// [0x0048AF30] NMData::AnimationEventData::vfunc_1_off_154 (112 bytes)
+namespace lift_0048AF30 {
+// @name NMData::AnimationEventData::vfunc_1_off_154
+// @class NMData::AnimationEventData
+// @summary Auto-lifted identical-shape clone of 0x004C8440 (NMData::BehaviourData::vfunc_1_off_154).
+namespace lift_004C8440 {
+extern void __thiscall ext_004026E0(void* self);
+extern void __thiscall ext_004C28C0(void* self, void* arg);
+
+// @name NMData::BehaviourData::vfunc_1_off_154
+// @class NMData::BehaviourData
+// @summary Thunk at +0x154 (HasDependentSelection) that queries arg0->vfunc_0x34 into a local buffer, passes it to ext_004C28C0 on BehaviourData, and destroys the buffer
+void __thiscall fn_0048AF30(void* self, void* arg0) {
+    struct LocalBuf {
+        uint32_t f0;
+        uint32_t f4;
+        uint32_t f8;
+        uint32_t fC;
+    } local_buf;
+    local_buf.f4 = 0;
+    local_buf.f8 = 0;
+    local_buf.fC = 0;
+
+    using VFunc34 = void(__thiscall*)(void*, void*);
+    void** vtbl = *reinterpret_cast<void***>(arg0);
+    reinterpret_cast<VFunc34>(vtbl[0x38 / 4])(arg0, &local_buf);
+
+    void* behaviour_data = reinterpret_cast<uint8_t*>(self) - 0x154;
+    ext_004C28C0(behaviour_data, &local_buf);
+
+    ext_004026E0(&local_buf);
+}
+} // namespace lift_004C8440
+} // namespace lift_0048AF30
+
+// [0x004DE1B0] NMData::AnimationEventData::vfunc_60 (34 bytes)
+namespace lift_004DE1B0 {
+// @name NMData::AnimationEventData::vfunc_60
+// @class NMData::AnimationEventData
+// @summary Auto-lifted identical-shape clone of 0x004C4E40 (NMData::ForceEventData::NotifyEvent0x266).
+// @field NMData::AnimationEventData +0x0 void** vtable
+void* fn_004DE1B0(void* self, void* arg) {
+    void** vtbl = lift_field<void**>(self, 0x00);
+    using Slot15 = void (*)(void* self, void* arg, uint32_t id, uint32_t flags);
+    Slot15 slot = reinterpret_cast<Slot15>(vtbl[15]);
+    slot(self, arg, 0x334u, 0u);
+    return arg;
+}
+} // namespace lift_004DE1B0

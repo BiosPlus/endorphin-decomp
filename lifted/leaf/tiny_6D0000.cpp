@@ -503,3 +503,12 @@ extern double __fastcall fn_006DADE0(void* self) {
     return static_cast<double>(value) / static_cast<double>(divisor);
 }
 } // namespace lift_006DADE0
+
+// [0x006DEEC0] sub_006DEEC0 (16 bytes)
+namespace lift_006DEEC0 {
+// @name sub_006DEEC0
+// @summary Getter returning int32_t field at offset +0x38.
+extern int32_t __fastcall fn_006DEEC0(void* self) {
+    return static_cast<int32_t>(lift_field<int32_t>(self, 0x38));
+}
+} // namespace lift_006DEEC0

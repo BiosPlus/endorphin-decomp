@@ -108,3 +108,16 @@ extern void __thiscall fn_004CFE90(void* self) {
     ext_004CFCE0(new_obj, self);
 }
 } // namespace lift_004CFE90
+
+// [0x004CE830] NMData::IncarnationEventData::vfunc_14 (32 bytes)
+namespace lift_004CE830 {
+extern void __thiscall ext_004C2070(void* self, void* a, void* b);
+
+// @name NMData::IncarnationEventData::vfunc_14
+// @class NMData::IncarnationEventData
+// @summary Auto-lifted identical-shape clone of 0x005E2A90 (NMData::HingeData::vfunc_14).
+void* __thiscall fn_004CE830(void* self, void* a, void* b) {
+    ext_004C2070(self, a, b);
+    return a;
+}
+} // namespace lift_004CE830

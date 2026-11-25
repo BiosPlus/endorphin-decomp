@@ -17,8 +17,10 @@ void fn_007AE070(void) {
     ext_007AE090();
 }
 } // namespace lift_007AE070
+#include <new>
+#include <string>
 
-// [0x007AE0B0]
+#include <string>
 namespace lift_007AE0B0 {
 extern void ext_007AE0C0(void);
 extern void ext_007AE0D0(void);
@@ -153,3 +155,24 @@ void fn_007ADFC0(void) {
 }
 } // namespace lift_006EA820
 } // namespace lift_007ADFC0
+
+// [0x007AE0F0] sub_007AE0F0 (10 bytes)
+namespace lift_007AE0F0 {
+// @name sub_007AE0F0
+// @summary Auto-lifted identical-shape clone of 0x00713CD0 (sub_00713CD0).
+namespace lift_00713CD0 {
+// @name sub_00713CD0
+// @summary Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).
+namespace lift_007AE0F0 {
+extern void ext_007AE100(void);
+extern void ext_007AE110(void);
+
+// @name sub_007AE0F0
+// @summary Calls ext_007AE100 and tail-calls ext_007AE110.
+void fn_007AE0F0(void) {
+    ext_007AE100();
+    ext_007AE110();
+}
+} // namespace lift_007AE0F0
+} // namespace lift_00713CD0
+} // namespace lift_007AE0F0

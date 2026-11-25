@@ -1,0 +1,22 @@
+{
+  "va": "0x00627270",
+  "size": 10,
+  "orig_symbol": "CompoundSensor::vfunc_18",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "CompoundSensor::vfunc_18",
+  "class": "CompoundSensor",
+  "signature": "uint32_t __thiscall fn_00627270(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00648ED0 (sub_00648ED0).",
+  "fields": [
+    {
+      "class": "CompoundSensor",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

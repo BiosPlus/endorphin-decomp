@@ -6,6 +6,7 @@
 #include <cstdint>
 #include <cstddef>
 #include <cstdlib>
+#include <cmath>
 
 // [0x0066A760] sub_0066A760 (10 bytes)
 namespace lift_0066A760 {
@@ -2250,3 +2251,48 @@ extern CheckedIterator* __thiscall fn_00660870(
     return out_iter;
 }
 } // namespace lift_00660870
+
+// [0x00664C30] sub_00664C30 (33 bytes)
+namespace lift_00664C30 {
+// @name sub_00664C30
+// @summary Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).
+namespace lift_00497860 {
+extern void ext_00664910(void* self, uint8_t flag);
+
+// @name forwardMakeBoolString
+// @summary Forwards out_str and flag to makeBoolString (0x0046C460) and returns out_str.
+void* fn_00664C30(void* out_str, uint8_t flag) {
+    ext_00664910(out_str, flag);
+    return out_str;
+}
+} // namespace lift_00497860
+} // namespace lift_00664C30
+
+// [0x00666930] sub_00666930 (77 bytes)
+namespace lift_00666930 {
+// @name sub_00666930
+// @summary Auto-lifted identical-shape clone of 0x004AD970 (Unknown::DestroyStringAndArray).
+namespace lift_004AD970 {
+// Known callee 0x004026E0: StringArray::ReleaseElements (Destroys each 28-byte string element in the array, frees its buffer, and nulls the begin/end/capacity pointers.)
+extern void ext_006668B0(void* self);
+// Import slot for MSVCP80 std::basic_string<char>::~basic_string (IAT entry, bound at load time).
+extern int mem_00924FF4;
+
+// @name Unknown::DestroyStringAndArray
+// @class Unknown
+// @summary Releases the StringArray at +0x1c, then runs the std::string destructor on the object itself.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1c StringArray field_0x1c
+void fn_00666930(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Destroy the string elements held in the array at +0x1c.
+    ext_006668B0(base + 0x1c);
+
+    // Destroy the std::string at offset 0 via the imported MSVC destructor (thiscall).
+    using StringDtorFn = void(__thiscall*)(void*);
+    auto dtor = reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+    dtor(self);
+}
+} // namespace lift_004AD970
+} // namespace lift_00666930

@@ -13,7 +13,7 @@ struct AVIIO_Fields {
     // +0x0   void*                    vtable  (evidence: 0x00401D00, 0x00477EA0)
     // +0xD0  uint32_t                 field_0xD0  (evidence: 0x00402380, 0x00535610, 0x00545B80, 0x005FF1C0)
     // +0xD4  uint32_t                 field_0xD4  (evidence: 0x004023A0, 0x00535610, 0x00545B80, 0x005FF1C0)
-    // +0x470 uint32_t                 field_0x470  (evidence: 0x004023C0, 0x00535610, 0x00545B80, 0x005FF1C0) // CONFLICT: multiple definitions at +0x470
+    // +0x470 uint32_t                 field_0x470  (evidence: 0x004023C0, 0x00468660, 0x00515830, 0x005314C0, 0x00535610, 0x00545B80, 0x005FF1C0, 0x00648910, 0x00648920) // CONFLICT: multiple definitions at +0x470
     // +0x470 void*                    field_0x470  (evidence: 0x00402380, 0x004023A0, 0x00535610, 0x00545B80, 0x005FF1C0) // CONFLICT: multiple definitions at +0x470
 };
 } // namespace lifted_layout

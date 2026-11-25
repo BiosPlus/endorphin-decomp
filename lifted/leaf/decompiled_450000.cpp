@@ -1252,3 +1252,56 @@ extern void fn_00453EB0(void* self) {
     reinterpret_cast<void(__thiscall*)(void*)>(mem_009242F4)(&local_str);
 }
 } // namespace lift_00453EB0
+
+// [0x0045B620] sub_0045B620 (65 bytes)
+namespace lift_0045B620 {
+// @name sub_0045B620
+// @summary Auto-lifted identical-shape clone of 0x0045B580 (Unknown::forwardWindowTextFloat_0045B580).
+namespace lift_0045B580 {
+// Known callee 0x0045AEE0: getWindowTextAsFloat (Reads the window text of a CWnd into a string and parses it as a float using atof.)
+extern float ext_0045AEE0(void* wnd);
+
+// @name Unknown::forwardWindowTextFloat_0045B580
+// @class Unknown
+// @summary Reads a float from the embedded window at +0x230; if it is strictly positive, forwards it to the virtual method at vtable+0x90 of the object at +0x88.
+// @field Unknown +0x88 void* field_0x88 (object pointer; vtable slot +0x90 is invoked with the float)
+// @field Unknown +0x230 void* field_0x230 (embedded CWnd passed to getWindowTextAsFloat)
+void fn_0045B620(void* self) {
+    const float value = ext_0045AEE0(static_cast<uint8_t*>(self) + 0x2D8);
+    if (value > 0.0f) {
+        void* target = lift_field<void*>(self, 0x88);
+        void** vtable = *reinterpret_cast<void***>(target);
+        auto method = *reinterpret_cast<void (**)(void*, float)>(
+            reinterpret_cast<uint8_t*>(vtable) + 0x98);
+        method(target, value);
+    }
+}
+} // namespace lift_0045B580
+} // namespace lift_0045B620
+
+// [0x0045E4C0] sub_0045E4C0 (61 bytes)
+namespace lift_0045E4C0 {
+// @name sub_0045E4C0
+// @summary Auto-lifted identical-shape clone of 0x0046A4D0 (advanceIteratorCounted).
+namespace lift_0046A4D0 {
+// Known callee 0x00474FF0: sub_00474FF0 (Auto-lifted identical-shape clone of 0x005E0B20 (TreeIterator::increment).)
+extern void ext_00419F50(void* self);
+// IAT slot holding MSVCR80!_invalid_parameter_noinfo (called with no arguments).
+extern void (*mem_00925134)();
+
+// @name advanceIteratorCounted
+// @summary Advances an iterator with TreeIterator::increment until it equals `last`, incrementing `*counter` once per step; asserts the iterator is non-null and equal to `guard` before each step.
+void fn_0045E4C0(void* it, void* last, void* guard, void* end, int32_t* counter) {
+    for (;;) {
+        if (it == nullptr || it != guard) {
+            mem_00925134();
+        }
+        if (last == end) {
+            return;
+        }
+        ++*counter;
+        ext_00419F50(&it);
+    }
+}
+} // namespace lift_0046A4D0
+} // namespace lift_0045E4C0

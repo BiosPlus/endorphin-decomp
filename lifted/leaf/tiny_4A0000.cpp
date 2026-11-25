@@ -193,3 +193,28 @@ void sub_004A58E0(Node* arg) {
     } while (p->flag == 0);
 }
 } // namespace lift_004A58E0
+
+// [0x004A5880] sub_004A5880 (11 bytes)
+namespace lift_004A5880 {
+// @name sub_004A5880
+// @summary Auto-lifted identical-shape clone of 0x00544C50 (ReshapeTool::vfunc_23).
+namespace lift_00544C50 {
+// @name ReshapeTool::vfunc_23
+// @class ReshapeTool
+// @summary Auto-lifted identical-shape clone of 0x00536CE0 (OglRenderer::vfunc_91).
+// @field ReshapeTool +0x9C void* field_0x9C
+namespace lift_00536CE0 {
+// @name OglRenderer::vfunc_91
+// @class OglRenderer
+// @summary Forwards the call to virtual slot +0x3C of the object held at this+0x27C, passing this+0x27C as the receiver.
+// @field OglRenderer +0x27C void* field_0x27C
+void fn_004A5880(void* self) {
+    // Load the forwarded sub-object pointer, then its vtable entry at byte offset 0x3C.
+    void* sub = lift_field<void*>(self, 0x4);
+    void* vfn = lift_field<void*>(*reinterpret_cast<void**>(sub), 0xC);
+    // Tail-call (jmp) in the original; here a direct call with the sub-object as receiver.
+    reinterpret_cast<void (*)(void*)>(vfn)(sub);
+}
+} // namespace lift_00536CE0
+} // namespace lift_00544C50
+} // namespace lift_004A5880

@@ -1,0 +1,14 @@
+{
+  "va": "0x0051C6D0",
+  "size": 93,
+  "orig_symbol": "NMData::RealChannel::vfunc_4",
+  "src_path": "src/NMData/RealChannel.cpp",
+  "lifted_path": "lifted/NMData/RealChannel.cpp",
+  "name": "NMData::RealChannel::vfunc_4",
+  "class": "NMData::RealChannel",
+  "signature": "void* __thiscall fn_0051C6D0(const void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0051CDE0 (NMData::QuatChannel::clone).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

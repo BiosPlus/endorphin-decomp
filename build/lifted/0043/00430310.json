@@ -1,0 +1,21 @@
+{
+  "va": "0x00430310",
+  "size": 18,
+  "orig_symbol": "sub_00430310",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "sub_00430310",
+  "signature": "extern void __thiscall fn_00430310(void* self, int32_t stackArg)",
+  "summary": "Auto-lifted identical-shape clone of 0x00433B70 (forwardToChildAt114IfPresent).",
+  "fields": [
+    {
+      "class": "this",
+      "offset": "+0x114",
+      "type": "void*",
+      "name": "child"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

@@ -21,8 +21,11 @@ void fn_00467320() {
 } // namespace lift_00437DE0
 } // namespace lift_00467320
 #include <cstdlib>
+#include <cstddef>
+#include <cstring>
+#include <stdexcept>
 
-// [0x00467330] sub_00467330 (8 bytes)
+#include <stdexcept>
 namespace lift_00467330 {
 // @name sub_00467330
 // @summary Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).
@@ -1122,3 +1125,148 @@ extern void __fastcall fn_004615B0(void* self) {
     ext_006A624A();
 }
 } // namespace lift_004615B0
+
+// [0x00464760] sub_00464760 (17 bytes)
+namespace lift_00464760 {
+// @name sub_00464760
+// @summary Auto-lifted identical-shape clone of 0x0042FBC0 (sub_0042FBC0).
+namespace lift_0042FBC0 {
+// @name sub_0042FBC0
+// @summary Auto-lifted identical-shape clone of 0x0042FB40 (thunkGetterVirtualSlot54).
+namespace lift_0042FB40 {
+// @name thunkGetterVirtualSlot54
+// @summary Calls the global getter ext_00465B40 to obtain an object, then tail-dispatches its vtable slot at +0xD8 (virtual index 54) with that object as this.
+
+extern void* ext_004658C0();
+
+// call ext_00465B40; obj = eax
+// mov edx, [eax]        ; vtable = obj->vptr
+// mov ecx, eax          ; this = obj
+// mov eax, [edx+0xD8]   ; target = vtable[54]
+// jmp eax               ; tail call, result returned unchanged
+extern void* fn_00464760() {
+    void* obj = ext_004658C0();
+    void* vtable = *reinterpret_cast<void**>(obj);
+    using VirtFn = void* (*)(void*);
+    VirtFn target = reinterpret_cast<VirtFn>(
+        *reinterpret_cast<void**>(static_cast<char*>(vtable) + 0xA4));
+    return target(obj);
+}
+} // namespace lift_0042FB40
+} // namespace lift_0042FBC0
+} // namespace lift_00464760
+
+// [0x00465B40] sub_00465B40 (12 bytes)
+namespace lift_00465B40 {
+// @name sub_00465B40
+// @summary Auto-lifted identical-shape clone of 0x00430330 (sub_00430330).
+namespace lift_00430330 {
+// @name sub_00430330
+// @summary Auto-lifted identical-shape clone of 0x00430360 (getGlobalField0x58AndCall00469040).
+namespace lift_00430360 {
+// @name getGlobalField0x58AndCall00469040
+// @summary Calls get_global_field_0x58 and tail-calls ext_00469040 with the returned pointer in ECX.
+
+
+extern int32_t __cdecl ext_00465B30(void);
+extern void __thiscall ext_00468660(int32_t self);
+
+extern void __cdecl fn_00465B40(void) {
+    int32_t obj = ext_00465B30();
+    ext_00468660(obj);
+}
+} // namespace lift_00430360
+} // namespace lift_00430330
+} // namespace lift_00465B40
+
+// [0x004663D0] sub_004663D0 (89 bytes)
+namespace lift_004663D0 {
+// @name sub_004663D0
+// @summary Auto-lifted identical-shape clone of 0x0044C2D0 (sub_0044C2D0).
+namespace lift_0044C2D0 {
+// @name sub_0044C2D0
+// @summary Auto-lifted identical-shape clone of 0x006B28A0 (GWCPropertyEditFeel::vfunc_6).
+namespace lift_006B28A0 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (allocator; takes byte size, returns block or null).
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x006B0CA0: sub_006B0CA0 (thiscall initializer for the new object; its eax result is returned).
+extern void* ext_00465B60(void* self);
+
+// @name GWCPropertyEditFeel::vfunc_6
+// @class GWCPropertyEditFeel
+// @summary Allocates a 0x6C-byte object and initializes it; returns the result, or null if allocation fails.
+void* fn_004663D0(void* self) {
+    (void)self;
+    void* obj = ext_006A5C62(0xDC);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+    return ext_00465B60(obj);
+}
+} // namespace lift_006B28A0
+} // namespace lift_0044C2D0
+} // namespace lift_004663D0
+
+// [0x00469C80] sub_00469C80 (8 bytes)
+namespace lift_00469C80 {
+// @name sub_00469C80
+// @summary Auto-lifted identical-shape clone of 0x0044C9A0 (sub_0044C9A0).
+namespace lift_0044C9A0 {
+// @name sub_0044C9A0
+// @summary Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).
+namespace lift_00437DE0 {
+// @name callSub00437DC0WithOne
+// @summary Calls ext_00437DC0 with argument 1.
+
+extern void ext_00469200(void* arg);
+
+void fn_00469C80() {
+    ext_00469200(reinterpret_cast<void*>(static_cast<uintptr_t>(1)));
+}
+} // namespace lift_00437DE0
+} // namespace lift_0044C9A0
+} // namespace lift_00469C80
+
+// [0x0046F520] sub_0046F520 (87 bytes)
+namespace lift_0046F520 {
+// @name sub_0046F520
+// @summary Auto-lifted identical-shape clone of 0x005FD150 (sub_005FD150).
+namespace lift_005FD150 {
+// @name sub_005FD150
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00AD8370;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00AD836C;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_0046F520() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x882ABEu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00AD8370 & 1u) == 0) {
+        mem_00AD8370 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00AD836C, frame[0]);
+        mem_00AD836C = 0x93B09Cu;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00AD836C;
+}
+} // namespace lift_004CAE30
+} // namespace lift_005FD150
+} // namespace lift_0046F520

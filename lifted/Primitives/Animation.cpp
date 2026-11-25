@@ -17,13 +17,20 @@ void fn_0053AE20(void* self, uint32_t mask, uint8_t set) {
         lift_field<uint32_t>(self, 0x1C) = flags;
     }
 }
+#include <cstring>
+#include <new>
+#include <string>
+#include <cstdint>
+#include <stdexcept>
+#include <cstddef>
+#include <cstdlib>
 
-// [0x0053E240] Primitives::Animation::vfunc_25 (65 bytes)
-// @name Primitives::Animation::vfunc_25
-// @class Primitives::Animation
-// @summary Forwards its three arguments to Cuboid::vfunc_25, stores the result of virtual slot +0x2C on arg1's +0x0C object into +0x9C, and sets flag bit 0x02000000 in +0x1C.
-// @field Primitives::Animation +0x1C uint32_t field_0x1C
-// @field Primitives::Animation +0x9C uint32_t field_0x9C
+#include <new>
+#include <string>
+#include <cstdint>
+#include <stdexcept>
+#include <cstddef>
+#include <cstdlib>
 // @field ArgObject +0x0C void* field_0x0C
 // The vtable call at slot +0x2C is made portably as a function pointer taking the object as its first argument.
 void fn_0053E240(void* self, void* arg1, uint32_t arg2, uint32_t arg3) {
@@ -296,3 +303,25 @@ void fn_0053F410(void* self, void* arg0) {
     ext_00466910(guard);
 }
 } // namespace lift_0053F410
+
+// [0x0053AE20] Primitives::Animation::vfunc_11 (32 bytes)
+namespace lift_0053AE20 {
+// @name Primitives::Animation::vfunc_11
+// @class Primitives::Animation
+// @summary Auto-lifted identical-shape clone of 0x0053ACF0 (SetMaskBitsToMatchFlag).
+// @field Primitives::Animation +0x1C uint32_t field_0x1C
+namespace lift_0053ACF0 {
+// @name SetMaskBitsToMatchFlag
+// @class Unknown
+// @summary Tests whether all bits in mask are set in this+0x04; if that result differs from flag, toggles those mask bits in this+0x04.
+// @field Unknown +0x04 uint32_t field_0x04
+void fn_0053AE20(void* self, uint32_t mask, uint8_t flag) {
+    uint32_t bits = lift_field<uint32_t>(self, 0x1C);
+    uint8_t allSet = ((bits & mask) == mask) ? 1 : 0;
+    if (allSet != flag) {
+        bits ^= mask;
+        lift_field<uint32_t>(self, 0x1C) = bits;
+    }
+}
+} // namespace lift_0053ACF0
+} // namespace lift_0053AE20

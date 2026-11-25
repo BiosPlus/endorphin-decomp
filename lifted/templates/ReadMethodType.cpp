@@ -41413,3 +41413,14956 @@ float fn_0066FB50(void* self) {
     return 0.0f;
 }
 } // namespace lift_0066FB50
+
+// [0x0046CAE0] ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_0046CAE0 {
+// @name ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_0046C070(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_0046CAE0(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_0046C070(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_0046CAE0
+
+// [0x0046CE20] ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_0046CE20 {
+// @name ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_0046C2E0(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_0046CE20(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_0046C2E0(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_0046CE20
+
+// [0x0046D190] ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_0046D190 {
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CB5E0 (ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_0).
+namespace lift_004CB5E0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_0042F6E0(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_0046D190(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_0042F6E0(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004CB5E0
+} // namespace lift_0046D190
+
+// [0x0046D1E0] ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_0046D1E0 {
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_0042F6E0(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_0046D1E0(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_0042F6E0(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_0046D1E0
+
+// [0x0046D660] ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_0046D660 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_006ACFB0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_0046D660(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_006ACFB0(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_0046D660
+
+// [0x0046D920] ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_0046D920 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00603F00 (ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5).
+namespace lift_00603F00 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_006AD1C0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_0046D920(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_006AD1C0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00603F00
+} // namespace lift_0046D920
+
+// [0x0046D990] ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_0046D990 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_006AD1C0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_0046D990(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_006AD1C0(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_0046D990
+
+// [0x0046E210] ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_0046E210 {
+// @name ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_0046C070(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_0046E210(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_0046C070(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_0046E210
+
+// [0x0046E8C0] ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_0046E8C0 {
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_0042F6E0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_0046E8C0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_0042F6E0(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_0046E8C0
+
+// [0x0046EB50] ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_0046EB50 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_006ACFB0(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_0046EB50(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_006ACFB0(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_0046EB50
+
+// [0x0046F210] ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_0046F210 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_0046C090(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_0046F210(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_0046C090(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_0046F210
+
+// [0x00470370] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>::vfunc_2 (96 bytes)
+namespace lift_00470370 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x005D5130 (ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>::vfunc_2).
+namespace lift_005D5130 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046C880 (ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2).
+namespace lift_0046C880 {
+// @name ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>::vfunc_2
+// @class ExprParser::ReadMethodType<ImageExporter, float, getFrameRate>
+// @summary Evaluates getFrameRate on an ImageExporter pointer and rounds to int, throwing on null.
+
+
+    float __thiscall ext_0046C110(void *self);
+    int32_t __cdecl ext_006A6DE0(double val);
+    void __thiscall ext_0046C3C0(void *exc);
+    void __stdcall ext_006A6DD2(void *pExceptionObject, void *pThrowInfo);
+    extern uint32_t mem_009DEC1C;
+
+int32_t __thiscall fn_00470370(void *self, void **arg) {
+    (void)self;
+    void *obj = *arg;
+    if (obj == nullptr) {
+        uint8_t exc[40];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+    float val = ext_0046C110(obj);
+    double rounded = (val >= 0.0f) ? (static_cast<double>(val) + 0.5) : (static_cast<double>(val) - 0.5);
+    return ext_006A6DE0(rounded);
+}
+} // namespace lift_0046C880
+} // namespace lift_005D5130
+} // namespace lift_00470370
+
+// [0x004703E0] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_004703E0 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0046C110(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0093B418;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_004703E0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0046C110(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0093B418) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_004703E0
+
+// [0x004707F0] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_004707F0 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00407700(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0093B418;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_004707F0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00407700(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0093B418) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_004707F0
+
+// [0x00470C20] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_00470C20 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0058E560 (ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>::vfunc_5).
+namespace lift_0058E560 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B21D0 (ExprParser::ReadMethodType<NMData::JointLimit>::vfunc_16 (NMData::JointLimit::getDamping)).
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0046F860();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_00470C20(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0046F860();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
+} // namespace lift_0058E560
+} // namespace lift_00470C20
+
+// [0x00471050] ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_00471050 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_0046F910(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_00471050(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_0046F910(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_00471050
+
+// [0x004713D0] ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_004713D0 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00603F00 (ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5).
+namespace lift_00603F00 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0046F7C0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004713D0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0046F7C0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00603F00
+} // namespace lift_004713D0
+
+// [0x00471400] ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_00471400 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_0046F7C0(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_00471400(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_0046F7C0(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_00471400
+
+// [0x00471440] ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_00471440 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_0046F7C0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_00471440(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_0046F7C0(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_00471440
+
+// [0x00471920] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_00471920 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00603F00 (ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5).
+namespace lift_00603F00 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00407700();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00471920(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00407700();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00603F00
+} // namespace lift_00471920
+
+// [0x00471BC0] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_00471BC0 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00603F00 (ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5).
+namespace lift_00603F00 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0046F860();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_00471BC0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0046F860();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00603F00
+} // namespace lift_00471BC0
+
+// [0x00471DB0] ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_00471DB0 {
+// @name ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_0046F910(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_00471DB0(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_0046F910(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_00471DB0
+
+// [0x00488DE0] ExprParser::ReadMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_00488DE0 {
+// @name ExprParser::ReadMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00486970(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0093C668;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00488DE0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00486970(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0093C668) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00488DE0
+
+// [0x0048FF80] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_0048FF80 {
+// @name ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0048FB10(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0093E7D8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0048FF80(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0048FB10(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0093E7D8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0048FF80
+
+// [0x00497DD0] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_00497DD0 {
+// @name ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CB5E0 (ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_0).
+namespace lift_004CB5E0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_00496F20(void* self);
+extern void __thiscall ext_006720E0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_00497DD0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_00496F20(obj);
+        ext_006720E0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004CB5E0
+} // namespace lift_00497DD0
+
+// [0x00497EF0] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_00497EF0 {
+// @name ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_00496F20(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_00497EF0(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_00496F20(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_00497EF0
+
+// [0x00497F60] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_00497F60 {
+// @name ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_00496F20(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_00497F60(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_00496F20(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_00497F60
+
+// [0x00498330] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_00498330 {
+// @name ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_00496F10(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_00498330(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_00496F10(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_00498330
+
+// [0x004983A0] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004983A0 {
+// @name ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_00496F10(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004983A0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_00496F10(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004983A0
+
+// [0x004986A0] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_004986A0 {
+// @name ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_00496F10(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_004986A0(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_00496F10(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_004986A0
+
+// [0x0049B520] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_0049B520 {
+// @name ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_0049AA10(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_0049B520(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_0049AA10(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_0049B520
+
+// [0x0049B7D0] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_1 (73 bytes)
+namespace lift_0049B7D0 {
+// @name ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_004C0310(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_0049B7D0(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_004C0310(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_0049B7D0
+
+// [0x0049B8A0] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_3 (104 bytes)
+namespace lift_0049B8A0 {
+// @name ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_004C0310(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_0049B8A0(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_004C0310(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_0049B8A0
+
+// [0x0049B910] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_4 (73 bytes)
+namespace lift_0049B910 {
+// @name ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_004C0310(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_0049B910(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_004C0310(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_0049B910
+
+// [0x0049C2F0] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_0049C2F0 {
+// @name ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_0049AA10(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_0049C2F0(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_0049AA10(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_0049C2F0
+
+// [0x0049CA80] ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_0049CA80 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_0049AA20(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_0049CA80(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_0049AA20(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_0049CA80
+
+// [0x004A2810] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004A2810 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_0049AA60(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_004A2810(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_0049AA60(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_004A2810
+
+// [0x004A2860] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004A2860 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_0049AA60(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_004A2860(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_0049AA60(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_004A2860
+
+// [0x004A28A0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_004A28A0 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00603F00 (ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5).
+namespace lift_00603F00 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0049AA60();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004A28A0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0049AA60();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00603F00
+} // namespace lift_004A28A0
+
+// [0x004A2B50] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004A2B50 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_0049AA50(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_004A2B50(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_0049AA50(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_004A2B50
+
+// [0x004A2FB0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004A2FB0 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_0049AA40(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004A2FB0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_0049AA40(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004A2FB0
+
+// [0x004A31C0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004A31C0 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_00496F30(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_004A31C0(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_00496F30(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_004A31C0
+
+// [0x004A3530] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004A3530 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_00496F40(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_004A3530(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_00496F40(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_004A3530
+
+// [0x004A38A0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_0 (71 bytes)
+namespace lift_004A38A0 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CB5E0 (ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_0).
+namespace lift_004CB5E0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D5D0 (ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0).
+namespace lift_0046D5D0 {
+// @name ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<ImageExporter, int, ImageExporter::getEndFrame, 0>
+// @summary Reads ImageExporter::getEndFrame() via ValuePtrType::vfunc_0 or throws if the object pointer is null.
+
+
+extern int __thiscall ext_006658C0(void* self);
+extern void __thiscall ext_006720C0(void* self, int value);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern void* __thiscall fn_004A38A0(void* self, void* out_val, void** obj_ptr) {
+    (void)self;
+    void* obj = *obj_ptr;
+    if (obj != nullptr) {
+        int val = ext_006658C0(obj);
+        ext_006720C0(out_val, val);
+        return out_val;
+    }
+
+    uint8_t exc_buf[40];
+    ext_0046C3C0(exc_buf);
+    ext_006A6DD2(exc_buf, reinterpret_cast<void*>(0x009DEC1C));
+    return nullptr;
+}
+} // namespace lift_0046D5D0
+} // namespace lift_004CB5E0
+} // namespace lift_004A38A0
+
+// [0x004A3930] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004A3930 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_006658C0(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_004A3930(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_006658C0(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_004A3930
+
+// [0x004A3970] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004A3970 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_006658C0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004A3970(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_006658C0(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004A3970
+
+// [0x004A3C70] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_004A3C70 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00603F00 (ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5).
+namespace lift_00603F00 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004A2490();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004A3C70(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004A2490();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00603F00
+} // namespace lift_004A3C70
+
+// [0x004A3CA0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004A3CA0 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_004A2490(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004A3CA0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_004A2490(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004A3CA0
+
+// [0x004A4560] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004A4560 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_0049AA40(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_004A4560(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_0049AA40(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_004A4560
+
+// [0x004A48F0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_004A48F0 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00603F00 (ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5).
+namespace lift_00603F00 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_00496F30();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004A48F0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_00496F30();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00603F00
+} // namespace lift_004A48F0
+
+// [0x004A4B80] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004A4B80 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditionNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_00496F40(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_004A4B80(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_00496F40(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_004A4B80
+
+// [0x004A5050] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_1 (55 bytes)
+namespace lift_004A5050 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004DEA00 (ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_1).
+namespace lift_004DEA00 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).
+namespace lift_004D50B0 {
+// @name DynamicEnumType::vfunc_1
+// @class ExprParser::DynamicEnumType
+// @summary Reads the tweak name index from RigEventData and returns it as a double, or throws if null.
+
+extern int __thiscall ext_004A2490(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+double __stdcall fn_004A5050(uint32_t* arg0) {
+    uint32_t obj = *arg0;
+    if (obj != 0) {
+        int val = ext_004A2490(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D50B0
+} // namespace lift_004DEA00
+} // namespace lift_004A5050
+
+// [0x004A5090] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004A5090 {
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_004A2490(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_004A5090(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_004A2490(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_004A5090
+
+// [0x004AA140] ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_004AA140 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_004A9A40(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_004AA140(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_004A9A40(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_004AA140
+
+// [0x004AA6E0] ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_004AA6E0 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_004A9A40(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_004AA6E0(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_004A9A40(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_004AA6E0
+
+// [0x004AA750] ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004AA750 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_004A9A40(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004AA750(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_004A9A40(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004AA750
+
+// [0x004AAA80] ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004AAA80 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_004A9A60(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_004AAA80(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_004A9A60(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_004AAA80
+
+// [0x004AAAC0] ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_004AAAC0 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00603F00 (ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5).
+namespace lift_00603F00 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004A9A60();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004AAAC0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004A9A60();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00603F00
+} // namespace lift_004AAAC0
+
+// [0x004AACB0] ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004AACB0 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_004A9A50(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_004AACB0(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_004A9A50(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_004AACB0
+
+// [0x004AAD00] ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004AAD00 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_004A9A50(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_004AAD00(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_004A9A50(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_004AAD00
+
+// [0x004AAD40] ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_004AAD40 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::getVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00603F00 (ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5).
+namespace lift_00603F00 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004A9A50();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004AAD40(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004A9A50();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00603F00
+} // namespace lift_004AAD40
+
+// [0x004B2470] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_004B2470 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00622310(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00942058;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_004B2470(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00622310(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00942058) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_004B2470
+
+// [0x004B27E0] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_004B27E0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00603F00 (ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5).
+namespace lift_00603F00 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_0048FAD0();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004B27E0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_0048FAD0();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00603F00
+} // namespace lift_004B27E0
+
+// [0x004B2E60] ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004B2E60 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_006AD190(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_004B2E60(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_006AD190(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_004B2E60
+
+// [0x004B3110] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMin(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_004B3110 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMin(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMin(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0046C080(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00942058;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_004B3110(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0046C080(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00942058) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_004B3110
+
+// [0x004B33D0] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>::vfunc_0 (82 bytes)
+namespace lift_004B33D0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0062AA90 (ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>::vfunc_0).
+namespace lift_0062AA90 {
+// @name ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B2B30 (ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)).
+namespace lift_004B2B30 {
+extern float ext_0048FAC0(void* self);
+extern void ext_00672080(void* self, float value);
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::vfunc_0 (NMData::GraphEngineData::getMaxAutoWidth)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>
+// @summary Reads the max auto width from the GraphEngineData held in targetPtr and stores it into the slot at targetPtr; throws if the held pointer is null.
+// @field ValuePtrType +0x00 void* field_0x00 (held GraphEngineData* read from targetPtr; class inferred, not confirmed)
+void* fn_004B33D0(void* unused, void** targetPtr) {
+    (void)unused;
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        float width = ext_0048FAC0(obj);
+        ext_00672080(targetPtr, width);
+        return targetPtr;
+    }
+
+    uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B2B30
+} // namespace lift_0062AA90
+} // namespace lift_004B33D0
+
+// [0x004B4190] ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>::vfunc_1 (55 bytes)
+namespace lift_004B4190 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004DEA00 (ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_1).
+namespace lift_004DEA00 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).
+namespace lift_004D50B0 {
+// @name DynamicEnumType::vfunc_1
+// @class ExprParser::DynamicEnumType
+// @summary Reads the tweak name index from RigEventData and returns it as a double, or throws if null.
+
+extern int __thiscall ext_006AD190(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+
+double __stdcall fn_004B4190(uint32_t* arg0) {
+    uint32_t obj = *arg0;
+    if (obj != 0) {
+        int val = ext_006AD190(reinterpret_cast<void*>(static_cast<uintptr_t>(obj)));
+        return static_cast<double>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0;
+}
+} // namespace lift_004D50B0
+} // namespace lift_004DEA00
+} // namespace lift_004B4190
+
+// [0x004B4200] ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004B4200 {
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_006AD190(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004B4200(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_006AD190(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004B4200
+
+// [0x004B7D80] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_004B7D80 {
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_004B7D80(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0x1C);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_004B7D80
+
+// [0x004B8420] ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>::vfunc_4 (75 bytes)
+namespace lift_004B8420 {
+// @name ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1E00 (ExprParser::ReadMethodType<NMData::GraphEntryData>::vfunc_4 (NMData::GraphEntryData::isActive)).
+namespace lift_004B1E00 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData>::vfunc_4 (NMData::GraphEntryData::isActive)
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>
+// @summary Reads the GraphEntryData object through the value pointer, formats its byte flag at +0x01 into out via ext_0046C460 (makeBoolString), and returns out; throws if the object pointer is null.
+// @field NMData::GraphEntryData +0x01 uint8_t field_0x01
+
+extern void* ext_0046C460(void* out_str, uint8_t flag);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc_obj, const void* type_info);
+extern uint8_t mem_009DEC1C;
+
+void* fn_004B8420(void* out, void** src) {
+    void* obj = *src;
+    if (obj != nullptr) {
+        uint8_t flag = *(static_cast<uint8_t*>(obj) + 0x83);
+        ext_0046C460(out, flag);
+        return out;
+    }
+    uint32_t exc = 0;
+    ext_0046C3C0(&exc);
+    ext_006A6DD2(&exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B1E00
+} // namespace lift_004B8420
+
+// [0x004B9080] ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>::vfunc_0 (73 bytes)
+namespace lift_004B9080 {
+// @name ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004EA030 (ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, isCollisionEnabled, 0>::vfunc_0).
+namespace lift_004EA030 {
+extern void ext_006720A0(void* self, uint32_t flag);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, isCollisionEnabled, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>
+// @summary Reads the source value through a pointer; if non-null, forwards its byte at +0x05 to ext_006720A0 and returns self, otherwise throws a C++ exception.
+// @field ExprParser::ValuePtrType +0x05 uint8_t field_0x05
+void* fn_004B9080(void* self, void* const* src) {
+    void* obj = *src;
+    if (obj == nullptr) {
+        alignas(8) unsigned char exception_obj[0x28];
+        ext_0046C3C0(exception_obj);
+        ext_006A6DD2(exception_obj, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return nullptr; // _CxxThrowException does not return
+    }
+    uint32_t flag = lift_field<uint8_t>(obj, 131);
+    ext_006720A0(self, flag);
+    return self;
+}
+} // namespace lift_004EA030
+} // namespace lift_004B9080
+
+// [0x004B93A0] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_004B93A0 {
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_004B93A0(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0x44);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_004B93A0
+
+// [0x004BCA80] ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>::vfunc_1 (109 bytes)
+namespace lift_004BCA80 {
+// @name ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004C0660 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_1).
+namespace lift_004C0660 {
+// Callee: sub_004C0280 (stack args: out-string buffer, then the held value; callee cleans; returns pointer to the std::string it filled).
+extern void* ext_004BC770(void* out, uint32_t value);
+// Import slots (IAT entries): MSVCP80 basic_string::c_str, MSVCP80 basic_string::~basic_string, MSVCR80 atof.
+extern void* mem_00924FF0;
+extern void* mem_00924FF4;
+extern void* mem_009251F0;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Fetches the property-source description string for the held value via ext_004C0280, converts it with atof, and returns it as float.
+// @field ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1> +0x00 uint32_t field_0x00
+float fn_004BCA80(void* self) {
+    using CStrFn = const char* (*)(void* str);
+    using DtorFn = void (*)(void* str);
+    using AtofFn = double (*)(const char* s);
+
+    // Local std::string storage filled by ext_004C0280 (original frame base; 0x1C bytes).
+    alignas(8) unsigned char strBuf[0x1C] = {};
+
+    // arg = this->field_0x00
+    uint32_t arg = lift_field<uint32_t>(self, 0x00);
+
+    // str = ext_004C0280(strBuf, arg); returns the populated string object.
+    void* str = ext_004BC770(strBuf, arg);
+
+    // cstr = str->c_str()
+    const char* cstr = reinterpret_cast<CStrFn>(mem_00924FF0)(str);
+
+    // result = (float)atof(cstr)
+    float result = static_cast<float>(reinterpret_cast<AtofFn>(mem_009251F0)(cstr));
+
+    // str->~basic_string()
+    reinterpret_cast<DtorFn>(mem_00924FF4)(str);
+
+    return result;
+}
+} // namespace lift_004C0660
+} // namespace lift_004BCA80
+
+// [0x004BCC20] ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>::vfunc_4 (115 bytes)
+namespace lift_004BCC20 {
+// @name ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x00683930 (ExprParser::ReadMethodType<NMData::ValuePtrData>::vfunc_4 (NMData::ValuePtrData::getPropertyDescription)).
+namespace lift_00683930 {
+// Known callee 0x004276B0: StdStringCopyConstruct (copy-constructs a std::string at dst from src; returns dst).
+// Known callee 0x00683100: sub_00683100 (138B, stdcall). Takes a 28-byte std::string scratch buffer and a 32-bit key;
+// returns a pointer to the string it produced.
+// mem_00924FF4: .rdata slot holding the MSVCP80 std::string destructor (~basic_string), called on the scratch buffer.
+extern void* ext_004276B0(void* dst, const void* src);
+extern void* ext_004BC770(void* scratch, uint32_t key);
+extern void (*mem_00924FF4)(void* self);
+
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData>::vfunc_4 (NMData::ValuePtrData::getPropertyDescription)
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Returns a std::string (via hidden return slot) built from the 32-bit word at self+0x00 through sub_00683100, then copies it into dst and destroys the temporary.
+// @field NMData::ValuePtrData +0x00 uint32_t field_0x00
+void* fn_004BCC20(void* dst, const void* self) {
+    // MSVC std::string is 28 bytes (0x1C) on this target; the scratch buffer mirrors the original stack temporary.
+    alignas(8) unsigned char scratch[28];
+    const uint32_t key = *static_cast<const uint32_t*>(self);
+    void* produced = ext_004BC770(scratch, key);
+    ext_004276B0(dst, produced);
+    mem_00924FF4(scratch);
+    return dst;
+}
+} // namespace lift_00683930
+} // namespace lift_004BCC20
+
+// [0x004C0800] ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>::vfunc_4 (115 bytes)
+namespace lift_004C0800 {
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00683930 (ExprParser::ReadMethodType<NMData::ValuePtrData>::vfunc_4 (NMData::ValuePtrData::getPropertyDescription)).
+namespace lift_00683930 {
+// Known callee 0x004276B0: StdStringCopyConstruct (copy-constructs a std::string at dst from src; returns dst).
+// Known callee 0x00683100: sub_00683100 (138B, stdcall). Takes a 28-byte std::string scratch buffer and a 32-bit key;
+// returns a pointer to the string it produced.
+// mem_00924FF4: .rdata slot holding the MSVCP80 std::string destructor (~basic_string), called on the scratch buffer.
+extern void* ext_004276B0(void* dst, const void* src);
+extern void* ext_004C0280(void* scratch, uint32_t key);
+extern void (*mem_00924FF4)(void* self);
+
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData>::vfunc_4 (NMData::ValuePtrData::getPropertyDescription)
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Returns a std::string (via hidden return slot) built from the 32-bit word at self+0x00 through sub_00683100, then copies it into dst and destroys the temporary.
+// @field NMData::ValuePtrData +0x00 uint32_t field_0x00
+void* fn_004C0800(void* dst, const void* self) {
+    // MSVC std::string is 28 bytes (0x1C) on this target; the scratch buffer mirrors the original stack temporary.
+    alignas(8) unsigned char scratch[28];
+    const uint32_t key = *static_cast<const uint32_t*>(self);
+    void* produced = ext_004C0280(scratch, key);
+    ext_004276B0(dst, produced);
+    mem_00924FF4(scratch);
+    return dst;
+}
+} // namespace lift_00683930
+} // namespace lift_004C0800
+
+// [0x004C1110] ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004C1110 {
+// @name ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_005C84B0(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_004C1110(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_005C84B0(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_004C1110
+
+// [0x004C1150] ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004C1150 {
+// @name ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_005C84B0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004C1150(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_005C84B0(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004C1150
+
+// [0x004C1400] ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004C1400 {
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_00410450(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_004C1400(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_00410450(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_004C1400
+
+// [0x004C1440] ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004C1440 {
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_00410450(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004C1440(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_00410450(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004C1440
+
+// [0x004C1980] ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004C1980 {
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_004A9A60(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_004C1980(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_004A9A60(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_004C1980
+
+// [0x004C1C20] ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>::vfunc_1 (73 bytes)
+namespace lift_004C1C20 {
+// @name ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_00682ED0(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_004C1C20(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_00682ED0(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_004C1C20
+
+// [0x004C5630] ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_004C5630 {
+// @name ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_004C4DB0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_009453C8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_004C5630(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_004C4DB0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_009453C8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_004C5630
+
+// [0x004C7500] ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_004C7500 {
+// @name ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_00486960(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_004C7500(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_00486960(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_004C7500
+
+// [0x004C7690] ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_004C7690 {
+// @name ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_00486960(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_004C7690(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_00486960(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_004C7690
+
+// [0x004C76E0] ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004C76E0 {
+// @name ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_00486960(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004C76E0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_00486960(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004C76E0
+
+// [0x004CAAC0] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004CAAC0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_004CA2F0(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_004CAAC0(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_004CA2F0(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_004CAAC0
+
+// [0x004CAF60] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004CAF60 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_004CA2F0(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_004CAF60(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_004CA2F0(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_004CAF60
+
+// [0x004CB630] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_004CB630 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_004CA5E0(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_004CB630(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_004CA5E0(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_004CB630
+
+// [0x004CB700] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_004CB700 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_004CA5E0(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_004CB700(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_004CA5E0(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_004CB700
+
+// [0x004CB8B0] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004CB8B0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_004CA5E0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004CB8B0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_004CA5E0(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004CB8B0
+
+// [0x004CBEA0] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0>::vfunc_4 (60 bytes)
+namespace lift_004CBEA0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00627B60 (ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>::vfunc_4).
+namespace lift_00627B60 {
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_004CB400(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_004CBEA0(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_004CB400(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_00627B60
+} // namespace lift_004CBEA0
+
+// [0x004CEBF0] ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_004CEBF0 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_004CE580(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_009473B8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_004CEBF0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_004CE580(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_009473B8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_004CEBF0
+
+// [0x004CEFC0] ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_1 (47 bytes)
+namespace lift_004CEFC0 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00603F00 (ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5).
+namespace lift_00603F00 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004CE580();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004CEFC0(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004CE580();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00603F00
+} // namespace lift_004CEFC0
+
+// [0x004CF5D0] ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_004CF5D0 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_004CEA30(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_004CF5D0(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_004CEA30(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_004CF5D0
+
+// [0x004CF640] ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004CF640 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_004CEA30(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004CF640(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_004CEA30(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004CF640
+
+// [0x004D1090] ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_004D1090 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_004D0AF0(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_004D1090(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_004D0AF0(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_004D1090
+
+// [0x004D1910] ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_004D1910 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_004D0AF0(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_004D1910(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_004D0AF0(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_004D1910
+
+// [0x004D1960] ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004D1960 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_004D0AF0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004D1960(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_004D0AF0(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004D1960
+
+// [0x004D1FC0] ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_004D1FC0 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_004D0E00(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_004D1FC0(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_004D0E00(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_004D1FC0
+
+// [0x004D2090] ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_004D2090 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_004D0E00(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_004D2090(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_004D0E00(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_004D2090
+
+// [0x004D2100] ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004D2100 {
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_004D0E00(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004D2100(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_004D0E00(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004D2100
+
+// [0x004D5740] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004D5740 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_004D39B0(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_004D5740(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_004D39B0(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_004D5740
+
+// [0x004D5A50] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004D5A50 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_004D39C0(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_004D5A50(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_004D39C0(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_004D5A50
+
+// [0x004D5E40] ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004D5E40 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_004D39E0(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_004D5E40(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_004D39E0(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_004D5E40
+
+// [0x004D63A0] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004D63A0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_004D39F0(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_004D63A0(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_004D39F0(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_004D63A0
+
+// [0x004D6600] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004D6600 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_004D3A00(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_004D6600(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_004D3A00(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_004D6600
+
+// [0x004D6650] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004D6650 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_004D3A00(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_004D6650(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_004D3A00(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_004D6650
+
+// [0x004D6690] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_3 (47 bytes)
+namespace lift_004D6690 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00603F00 (ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5).
+namespace lift_00603F00 {
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType<FSMEditView>::vfunc_3).
+namespace lift_004A2B90 {
+extern void ext_004D3A00();
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<FSMEditView>::vfunc_3
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0>
+// @summary Reads the pointer at arg+0; if non-null releases it via ext_0049AA50, otherwise raises a C++ exception.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawActions(void) const, 0}, 0> +0x00 void* field_0x00
+void fn_004D6690(void* arg) {
+    // Callee pops its single 4-byte argument (ret 4).
+    void* const* slot = static_cast<void* const*>(arg);
+    if (slot[0] != nullptr) {
+        ext_004D3A00();
+        return;
+    }
+    // Null path: build a local error object (ext_0046C3C0) and throw it.
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004A2B90
+} // namespace lift_00603F00
+} // namespace lift_004D6690
+
+// [0x004D6E20] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004D6E20 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isInitTargetPoseEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_004D39B0(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_004D6E20(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_004D39B0(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_004D6E20
+
+// [0x004D7160] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004D7160 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_004D39C0(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_004D7160(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_004D39C0(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_004D7160
+
+// [0x004D7550] ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004D7550 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_004D39D0(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_004D7550(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_004D39D0(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_004D7550
+
+// [0x004D7590] ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004D7590 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_004D39D0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004D7590(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_004D39D0(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004D7590
+
+// [0x004D79F0] ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004D79F0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_004D39E0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004D79F0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_004D39E0(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004D79F0
+
+// [0x004D7C70] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004D7C70 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_004D3C10(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_004D7C70(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_004D3C10(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_004D7C70
+
+// [0x004D7CC0] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004D7CC0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isVisible(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_004D3C10(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_004D7CC0(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_004D3C10(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_004D7CC0
+
+// [0x004D8030] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004D8030 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_004D39F0(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_004D8030(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_004D39F0(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_004D8030
+
+// [0x004D8620] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_0 (113 bytes)
+namespace lift_004D8620 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B2510 (ExprParser::ReadMethodType<Geometry>::vfunc_0 (Geometry::getTypeNameNonConst)).
+namespace lift_005B2510 {
+// sub_005B1220 (138B): builds a std::string into `out` from the object's vtable pointer; returns `out`.
+extern void* ext_004D5560(void* out, void* vtbl);
+// sub_006720E0 (43B): thiscall helper on `self`, receives the string returned above.
+extern void ext_006720E0(void* self, void* str);
+// Import slot for std::string::~basic_string (the value is the destructor's address).
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<Geometry>::vfunc_0 (Geometry::getTypeNameNonConst)
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>
+// @summary Builds the Geometry type-name string from the object's vtable, forwards it to a helper, destroys the temporary, and returns self.
+// @field ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0> +0x00 void* vftable
+void* fn_004D8620(void* self, void* /*second stack arg, unused (ret 0x8)*/) {
+    // Temporary std::string storage (MSVC 8.0 std::string is 0x1C bytes).
+    alignas(8) unsigned char str_buf[0x1C] = {};
+
+    void* vtbl = lift_field<void*>(self, 0x00);
+    void* str = ext_004D5560(str_buf, vtbl);
+    ext_006720E0(self, str);
+
+    using StrDtor = void (*)(void*);
+    reinterpret_cast<StrDtor>(static_cast<uintptr_t>(mem_00924FF4))(str_buf);
+
+    return self;
+}
+} // namespace lift_005B2510
+} // namespace lift_004D8620
+
+// [0x004D86A0] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_1 (109 bytes)
+namespace lift_004D86A0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004C0660 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_1).
+namespace lift_004C0660 {
+// Callee: sub_004C0280 (stack args: out-string buffer, then the held value; callee cleans; returns pointer to the std::string it filled).
+extern void* ext_004D5560(void* out, uint32_t value);
+// Import slots (IAT entries): MSVCP80 basic_string::c_str, MSVCP80 basic_string::~basic_string, MSVCR80 atof.
+extern void* mem_00924FF0;
+extern void* mem_00924FF4;
+extern void* mem_009251F0;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Fetches the property-source description string for the held value via ext_004C0280, converts it with atof, and returns it as float.
+// @field ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1> +0x00 uint32_t field_0x00
+float fn_004D86A0(void* self) {
+    using CStrFn = const char* (*)(void* str);
+    using DtorFn = void (*)(void* str);
+    using AtofFn = double (*)(const char* s);
+
+    // Local std::string storage filled by ext_004C0280 (original frame base; 0x1C bytes).
+    alignas(8) unsigned char strBuf[0x1C] = {};
+
+    // arg = this->field_0x00
+    uint32_t arg = lift_field<uint32_t>(self, 0x00);
+
+    // str = ext_004C0280(strBuf, arg); returns the populated string object.
+    void* str = ext_004D5560(strBuf, arg);
+
+    // cstr = str->c_str()
+    const char* cstr = reinterpret_cast<CStrFn>(mem_00924FF0)(str);
+
+    // result = (float)atof(cstr)
+    float result = static_cast<float>(reinterpret_cast<AtofFn>(mem_009251F0)(cstr));
+
+    // str->~basic_string()
+    reinterpret_cast<DtorFn>(mem_00924FF4)(str);
+
+    return result;
+}
+} // namespace lift_004C0660
+} // namespace lift_004D86A0
+
+// [0x004D87A0] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_4 (115 bytes)
+namespace lift_004D87A0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00683930 (ExprParser::ReadMethodType<NMData::ValuePtrData>::vfunc_4 (NMData::ValuePtrData::getPropertyDescription)).
+namespace lift_00683930 {
+// Known callee 0x004276B0: StdStringCopyConstruct (copy-constructs a std::string at dst from src; returns dst).
+// Known callee 0x00683100: sub_00683100 (138B, stdcall). Takes a 28-byte std::string scratch buffer and a 32-bit key;
+// returns a pointer to the string it produced.
+// mem_00924FF4: .rdata slot holding the MSVCP80 std::string destructor (~basic_string), called on the scratch buffer.
+extern void* ext_004276B0(void* dst, const void* src);
+extern void* ext_004D5560(void* scratch, uint32_t key);
+extern void (*mem_00924FF4)(void* self);
+
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData>::vfunc_4 (NMData::ValuePtrData::getPropertyDescription)
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Returns a std::string (via hidden return slot) built from the 32-bit word at self+0x00 through sub_00683100, then copies it into dst and destroys the temporary.
+// @field NMData::ValuePtrData +0x00 uint32_t field_0x00
+void* fn_004D87A0(void* dst, const void* self) {
+    // MSVC std::string is 28 bytes (0x1C) on this target; the scratch buffer mirrors the original stack temporary.
+    alignas(8) unsigned char scratch[28];
+    const uint32_t key = *static_cast<const uint32_t*>(self);
+    void* produced = ext_004D5560(scratch, key);
+    ext_004276B0(dst, produced);
+    mem_00924FF4(scratch);
+    return dst;
+}
+} // namespace lift_00683930
+} // namespace lift_004D87A0
+
+// [0x004D8EB0] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_004D8EB0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_004D3FD0(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_004D8EB0(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_004D3FD0(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_004D8EB0
+
+// [0x004D8F80] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004D8F80 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_004D3FD0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004D8F80(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_004D3FD0(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004D8F80
+
+// [0x004D90F0] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_004D90F0 {
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_004D3FD0(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_004D90F0(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_004D3FD0(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_004D90F0
+
+// [0x004DE4B0] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004DE4B0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_00528530(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_004DE4B0(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_00528530(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_004DE4B0
+
+// [0x004DE4F0] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004DE4F0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_00528530(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004DE4F0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_00528530(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004DE4F0
+
+// [0x004DEB60] ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_004DEB60 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_00486C90(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_004DEB60(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_00486C90(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_004DEB60
+
+// [0x004DEBB0] ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004DEBB0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_00486C90(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004DEBB0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_00486C90(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004DEBB0
+
+// [0x004DEC80] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004DEC80 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_004DDE60(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_004DEC80(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_004DDE60(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_004DEC80
+
+// [0x004DECD0] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004DECD0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_004DDE60(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_004DECD0(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_004DDE60(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_004DECD0
+
+// [0x004DF000] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004DF000 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_004DDE50(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_004DF000(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_004DDE50(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_004DF000
+
+// [0x004DF050] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004DF050 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_004DDE50(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_004DF050(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_004DDE50(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_004DF050
+
+// [0x004DF8C0] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004DF8C0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_004DE160(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004DF8C0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_004DE160(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004DF8C0
+
+// [0x004DFD60] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_004DFD60 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_004DE320(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_004DFD60(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_004DE320(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_004DFD60
+
+// [0x004DFDB0] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_004DFDB0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_004DE320(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_004DFDB0(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_004DE320(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_004DFDB0
+
+// [0x004E0B90] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004E0B90 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_004DE160(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_004E0B90(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_004DE160(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_004E0B90
+
+// [0x004E15D0] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004E15D0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_004DE440(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_004E15D0(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_004DE440(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_004E15D0
+
+// [0x004E1610] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004E1610 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_004DE440(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004E1610(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_004DE440(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004E1610
+
+// [0x004E20C0] ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_004E20C0 {
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_004E1980(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00949D50;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_004E20C0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_004E1980(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00949D50) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_004E20C0
+
+// [0x004EA330] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>::vfunc_0 (70 bytes)
+namespace lift_004EA330 {
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004EA030 (ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, isCollisionEnabled, 0>::vfunc_0).
+namespace lift_004EA030 {
+extern void ext_006720A0(void* self, uint32_t flag);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, isCollisionEnabled, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>
+// @summary Reads the source value through a pointer; if non-null, forwards its byte at +0x05 to ext_006720A0 and returns self, otherwise throws a C++ exception.
+// @field ExprParser::ValuePtrType +0x05 uint8_t field_0x05
+void* fn_004EA330(void* self, void* const* src) {
+    void* obj = *src;
+    if (obj == nullptr) {
+        alignas(8) unsigned char exception_obj[0x28];
+        ext_0046C3C0(exception_obj);
+        ext_006A6DD2(exception_obj, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return nullptr; // _CxxThrowException does not return
+    }
+    uint32_t flag = lift_field<uint8_t>(obj, 6);
+    ext_006720A0(self, flag);
+    return self;
+}
+} // namespace lift_004EA030
+} // namespace lift_004EA330
+
+// [0x004EA380] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>::vfunc_4 (72 bytes)
+namespace lift_004EA380 {
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1E00 (ExprParser::ReadMethodType<NMData::GraphEntryData>::vfunc_4 (NMData::GraphEntryData::isActive)).
+namespace lift_004B1E00 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData>::vfunc_4 (NMData::GraphEntryData::isActive)
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>
+// @summary Reads the GraphEntryData object through the value pointer, formats its byte flag at +0x01 into out via ext_0046C460 (makeBoolString), and returns out; throws if the object pointer is null.
+// @field NMData::GraphEntryData +0x01 uint8_t field_0x01
+
+extern void* ext_0046C460(void* out_str, uint8_t flag);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc_obj, const void* type_info);
+extern uint8_t mem_009DEC1C;
+
+void* fn_004EA380(void* out, void** src) {
+    void* obj = *src;
+    if (obj != nullptr) {
+        uint8_t flag = *(static_cast<uint8_t*>(obj) + 0x6);
+        ext_0046C460(out, flag);
+        return out;
+    }
+    uint32_t exc = 0;
+    ext_0046C3C0(&exc);
+    ext_006A6DD2(&exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B1E00
+} // namespace lift_004EA380
+
+// [0x004EA5B0] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0>::vfunc_4 (72 bytes)
+namespace lift_004EA5B0 {
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1E00 (ExprParser::ReadMethodType<NMData::GraphEntryData>::vfunc_4 (NMData::GraphEntryData::isActive)).
+namespace lift_004B1E00 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData>::vfunc_4 (NMData::GraphEntryData::isActive)
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>
+// @summary Reads the GraphEntryData object through the value pointer, formats its byte flag at +0x01 into out via ext_0046C460 (makeBoolString), and returns out; throws if the object pointer is null.
+// @field NMData::GraphEntryData +0x01 uint8_t field_0x01
+
+extern void* ext_0046C460(void* out_str, uint8_t flag);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc_obj, const void* type_info);
+extern uint8_t mem_009DEC1C;
+
+void* fn_004EA5B0(void* out, void** src) {
+    void* obj = *src;
+    if (obj != nullptr) {
+        uint8_t flag = *(static_cast<uint8_t*>(obj) + 0x9);
+        ext_0046C460(out, flag);
+        return out;
+    }
+    uint32_t exc = 0;
+    ext_0046C3C0(&exc);
+    ext_006A6DD2(&exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B1E00
+} // namespace lift_004EA5B0
+
+// [0x004EA6B0] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0>::vfunc_0 (70 bytes)
+namespace lift_004EA6B0 {
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004EA030 (ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, isCollisionEnabled, 0>::vfunc_0).
+namespace lift_004EA030 {
+extern void ext_006720A0(void* self, uint32_t flag);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, isCollisionEnabled, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>
+// @summary Reads the source value through a pointer; if non-null, forwards its byte at +0x05 to ext_006720A0 and returns self, otherwise throws a C++ exception.
+// @field ExprParser::ValuePtrType +0x05 uint8_t field_0x05
+void* fn_004EA6B0(void* self, void* const* src) {
+    void* obj = *src;
+    if (obj == nullptr) {
+        alignas(8) unsigned char exception_obj[0x28];
+        ext_0046C3C0(exception_obj);
+        ext_006A6DD2(exception_obj, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return nullptr; // _CxxThrowException does not return
+    }
+    uint32_t flag = lift_field<uint8_t>(obj, 4);
+    ext_006720A0(self, flag);
+    return self;
+}
+} // namespace lift_004EA030
+} // namespace lift_004EA6B0
+
+// [0x004EA740] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0>::vfunc_4 (72 bytes)
+namespace lift_004EA740 {
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1E00 (ExprParser::ReadMethodType<NMData::GraphEntryData>::vfunc_4 (NMData::GraphEntryData::isActive)).
+namespace lift_004B1E00 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData>::vfunc_4 (NMData::GraphEntryData::isActive)
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>
+// @summary Reads the GraphEntryData object through the value pointer, formats its byte flag at +0x01 into out via ext_0046C460 (makeBoolString), and returns out; throws if the object pointer is null.
+// @field NMData::GraphEntryData +0x01 uint8_t field_0x01
+
+extern void* ext_0046C460(void* out_str, uint8_t flag);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc_obj, const void* type_info);
+extern uint8_t mem_009DEC1C;
+
+void* fn_004EA740(void* out, void** src) {
+    void* obj = *src;
+    if (obj != nullptr) {
+        uint8_t flag = *(static_cast<uint8_t*>(obj) + 0x4);
+        ext_0046C460(out, flag);
+        return out;
+    }
+    uint32_t exc = 0;
+    ext_0046C3C0(&exc);
+    ext_006A6DD2(&exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B1E00
+} // namespace lift_004EA740
+
+// [0x004EAA40] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>::vfunc_4 (72 bytes)
+namespace lift_004EAA40 {
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1E00 (ExprParser::ReadMethodType<NMData::GraphEntryData>::vfunc_4 (NMData::GraphEntryData::isActive)).
+namespace lift_004B1E00 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData>::vfunc_4 (NMData::GraphEntryData::isActive)
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>
+// @summary Reads the GraphEntryData object through the value pointer, formats its byte flag at +0x01 into out via ext_0046C460 (makeBoolString), and returns out; throws if the object pointer is null.
+// @field NMData::GraphEntryData +0x01 uint8_t field_0x01
+
+extern void* ext_0046C460(void* out_str, uint8_t flag);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc_obj, const void* type_info);
+extern uint8_t mem_009DEC1C;
+
+void* fn_004EAA40(void* out, void** src) {
+    void* obj = *src;
+    if (obj != nullptr) {
+        uint8_t flag = *(static_cast<uint8_t*>(obj) + 0x5);
+        ext_0046C460(out, flag);
+        return out;
+    }
+    uint32_t exc = 0;
+    ext_0046C3C0(&exc);
+    ext_006A6DD2(&exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B1E00
+} // namespace lift_004EAA40
+
+// [0x004EADA0] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>::vfunc_2 (52 bytes)
+namespace lift_004EADA0 {
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004EA9D0 (ExprParser::ReadMethodType<PoseToolOptions>::isCollisionEnabled_vfunc_2).
+// @field ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0> +0x6 bool field_0x6
+namespace lift_004EA9D0 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<PoseToolOptions>::isCollisionEnabled_vfunc_2
+// @class NMData::PoseToolOptions
+// @summary Reads the isCollisionEnabled flag from the PoseToolOptions pointed to by the holder; throws if the target pointer is null.
+// @field NMData::PoseToolOptions +0x05 bool isCollisionEnabled
+bool fn_004EADA0(void** holder) {
+    void* target = *holder;
+    if (target == nullptr) {
+        // Original builds an exception object on the stack and throws it.
+        ext_0046C3C0();
+        ext_006A6DD2();
+        return false;
+    }
+    return lift_field<uint8_t>(target, 0x6) != 0;
+}
+} // namespace lift_004EA9D0
+} // namespace lift_004EADA0
+
+// [0x004ECE70] ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_004ECE70 {
+// @name ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_00536F00(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_004ECE70(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_00536F00(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_004ECE70
+
+// [0x004ED0D0] ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_004ED0D0 {
+// @name ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_00536F00(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004ED0D0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_00536F00(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004ED0D0
+
+// [0x004EE7B0] ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>::vfunc_1 (77 bytes)
+namespace lift_004EE7B0 {
+// @name ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_004EDE20(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_004EE7B0(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_004EDE20(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_004EE7B0
+
+// [0x004EE800] ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>::vfunc_2 (53 bytes)
+namespace lift_004EE800 {
+// @name ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<SelectionVariable, bool, {protected: bool __thiscall SelectionVariable::hasValidSymbols(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_004EDE20(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_004EE800(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_004EDE20(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_004EE800
+
+// [0x004F6740] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getX(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_004F6740 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getX(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getX(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_004F4DD0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0094CE78;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_004F6740(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_004F4DD0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0094CE78) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_004F6740
+
+// [0x004F6E60] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_004F6E60 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_004F4DF0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0094CE78;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_004F6E60(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_004F4DF0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0094CE78) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_004F6E60
+
+// [0x004F7340] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_004F7340 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getMagnitude(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_004F4EA0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0094CE78;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_004F7340(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_004F4EA0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0094CE78) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_004F7340
+
+// [0x004F7C80] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_004F7C80 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getBeta(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_004F4F80(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0094CE78;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_004F7C80(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_004F4F80(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0094CE78) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_004F7C80
+
+// [0x004F7F30] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_004F7F30 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_004F4FE0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0094CE78;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_004F7F30(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_004F4FE0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0094CE78) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_004F7F30
+
+// [0x004F8620] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_004F8620 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getTheta(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_004F4F00(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0094CE78;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_004F8620(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_004F4F00(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0094CE78) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_004F8620
+
+// [0x004F8A80] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_004F8A80 {
+// @name ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_004F4F20(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0094CE78;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_004F8A80(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_004F4F20(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0094CE78) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_004F8A80
+
+// [0x004FE270] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_004FE270 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_004FD810(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0094E1B8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_004FE270(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_004FD810(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0094E1B8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_004FE270
+
+// [0x004FE880] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_004FE880 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_004FD830(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0094E1B8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_004FE880(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_004FD830(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0094E1B8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_004FE880
+
+// [0x004FEE90] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_004FEE90 {
+// @name ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getWorstFitness(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_004FD850(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0094E1B8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_004FEE90(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_004FD850(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0094E1B8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_004FEE90
+
+// [0x004FF460] ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>::vfunc_3 (53 bytes)
+namespace lift_004FF460 {
+// @name ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_006A7C10(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_004FF460(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_006A7C10(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_004FF460
+
+// [0x004FF4A0] ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>::vfunc_4 (73 bytes)
+namespace lift_004FF4A0 {
+// @name ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_006A7C10(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_004FF4A0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_006A7C10(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_004FF4A0
+
+// [0x00505510] ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>::vfunc_1 (69 bytes)
+namespace lift_00505510 {
+// @name ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00674C90 (ExprParser::ReadMethodType_ExpressionEntry_getExpression::vfunc_1).
+namespace lift_00674C90 {
+// @name ExprParser::ReadMethodType_ExpressionEntry_getExpression::vfunc_1
+// @class ExprParser::ReadMethodType_ExpressionEntry_getExpression
+// @summary Reads an ExpressionEntry's expression string and converts it to float via atof, throwing an exception if the entry pointer is null.
+// @field ExpressionEntry +0x1c std::string expression
+
+
+    void ext_0046C3C0(void* self);
+    void ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
+    extern uint32_t mem_00924FF0;
+    extern uint32_t mem_009251F0;
+
+float __thiscall fn_00505510(void* /*this*/, void* arg0) {
+    uint32_t entry = *reinterpret_cast<uint32_t*>(arg0);
+    if (entry != 0) {
+        using c_str_fn = const char* (__thiscall*)(void*);
+        using atof_fn = double (__cdecl*)(const char*);
+        const char* str = reinterpret_cast<c_str_fn>(mem_00924FF0)(reinterpret_cast<void*>(entry + 0x4));
+        double val = reinterpret_cast<atof_fn>(mem_009251F0)(str);
+        return static_cast<float>(val);
+    }
+
+    uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, 0x009DEC1Cu);
+    return 0.0f;
+}
+} // namespace lift_00674C90
+} // namespace lift_00505510
+
+// [0x00508E30] ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_0 (69 bytes)
+namespace lift_00508E30 {
+// @name ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x005DA9C0 (ExprParser::ReadMethodType<NMData::VideoPlaneData, int, getEndFrame>::vfunc_0).
+namespace lift_005DA9C0 {
+// Thiscall-style external: `self` is the out ValueType, `value` the int read from the object.
+extern void ext_006720C0(void* self, int value);
+// Exception-object constructor (thiscall; `self` is the storage for the exception object).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo for the exception thrown on a null handle (VA 0x009DEC1C).
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, getEndFrame>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>
+// @summary Reads VideoPlaneData::endFrame (+0x24) from the handle's object into the out value; throws if the handle is null.
+// @field NMData::VideoPlaneData +0x24 int field_0x24
+void* fn_00508E30(void* self, void* out, void* const* in) {
+    (void)self;  // `this` (ecx) is unused by the original code.
+
+    void* obj = *in;
+    if (obj == nullptr) {
+        // Original builds an exception object in the frame and throws it.
+        // Storage size is not recovered; 64 bytes is a conservative placeholder.
+        alignas(16) unsigned char exception[64] = {};
+        ext_0046C3C0(exception);
+        ext_006A6DD2(exception, mem_009DEC1C);
+        return out;  // not reached: the throw above does not return
+    }
+
+    ext_006720C0(out, lift_field<int>(obj, 0x14));
+    return out;
+}
+} // namespace lift_005DA9C0
+} // namespace lift_00508E30
+
+// [0x00508F20] ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_4 (71 bytes)
+namespace lift_00508F20 {
+// @name ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004B12D0 (ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_4).
+namespace lift_004B12D0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>
+// @summary Reads through a pointer-to-object; formats the object's +0x20 field into out via ext_0046C500 and returns out, or throws if the object pointer is null.
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+
+extern void* ext_0046C500(void* out_str, uint8_t flag);
+extern void ext_0046C3C0(void* self);
+[[noreturn]] extern void ext_006A6DD2(void* exc_obj, const void* type_info);
+extern uint8_t mem_009DEC1C;
+
+void* fn_00508F20(void* out, void** src) {
+    void* obj = *src;
+    if (obj != nullptr) {
+        uint32_t flag = *reinterpret_cast<uint32_t*>(static_cast<char*>(obj) + 0x14);
+        ext_0046C500(out, static_cast<uint8_t>(flag));
+        return out;
+    }
+    uint32_t exc = 0;
+    ext_0046C3C0(&exc);
+    ext_006A6DD2(&exc, &mem_009DEC1C);
+}
+} // namespace lift_004B12D0
+} // namespace lift_00508F20
+
+// [0x00509700] ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_00509700 {
+// @name ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_00503A00(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_00509700(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_00503A00(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_00509700
+
+// [0x00509870] ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_00509870 {
+// @name ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_00503A00(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_00509870(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_00503A00(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_00509870
+
+// [0x0050A260] ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>::vfunc_3 (53 bytes)
+namespace lift_0050A260 {
+// @name ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_00508BA0(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_0050A260(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_00508BA0(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_0050A260
+
+// [0x0050A2A0] ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>::vfunc_4 (73 bytes)
+namespace lift_0050A2A0 {
+// @name ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_00508BA0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_0050A2A0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_00508BA0(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_0050A2A0
+
+// [0x00512190] ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_00512190 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00511270(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00950AE0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00512190(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00511270(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00950AE0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00512190
+
+// [0x00512980] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_0 (113 bytes)
+namespace lift_00512980 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B2510 (ExprParser::ReadMethodType<Geometry>::vfunc_0 (Geometry::getTypeNameNonConst)).
+namespace lift_005B2510 {
+// sub_005B1220 (138B): builds a std::string into `out` from the object's vtable pointer; returns `out`.
+extern void* ext_00511960(void* out, void* vtbl);
+// sub_006720E0 (43B): thiscall helper on `self`, receives the string returned above.
+extern void ext_006720E0(void* self, void* str);
+// Import slot for std::string::~basic_string (the value is the destructor's address).
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<Geometry>::vfunc_0 (Geometry::getTypeNameNonConst)
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>
+// @summary Builds the Geometry type-name string from the object's vtable, forwards it to a helper, destroys the temporary, and returns self.
+// @field ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0> +0x00 void* vftable
+void* fn_00512980(void* self, void* /*second stack arg, unused (ret 0x8)*/) {
+    // Temporary std::string storage (MSVC 8.0 std::string is 0x1C bytes).
+    alignas(8) unsigned char str_buf[0x1C] = {};
+
+    void* vtbl = lift_field<void*>(self, 0x00);
+    void* str = ext_00511960(str_buf, vtbl);
+    ext_006720E0(self, str);
+
+    using StrDtor = void (*)(void*);
+    reinterpret_cast<StrDtor>(static_cast<uintptr_t>(mem_00924FF4))(str_buf);
+
+    return self;
+}
+} // namespace lift_005B2510
+} // namespace lift_00512980
+
+// [0x00512A00] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_1 (109 bytes)
+namespace lift_00512A00 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004C0660 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_1).
+namespace lift_004C0660 {
+// Callee: sub_004C0280 (stack args: out-string buffer, then the held value; callee cleans; returns pointer to the std::string it filled).
+extern void* ext_00511960(void* out, uint32_t value);
+// Import slots (IAT entries): MSVCP80 basic_string::c_str, MSVCP80 basic_string::~basic_string, MSVCR80 atof.
+extern void* mem_00924FF0;
+extern void* mem_00924FF4;
+extern void* mem_009251F0;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Fetches the property-source description string for the held value via ext_004C0280, converts it with atof, and returns it as float.
+// @field ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1> +0x00 uint32_t field_0x00
+float fn_00512A00(void* self) {
+    using CStrFn = const char* (*)(void* str);
+    using DtorFn = void (*)(void* str);
+    using AtofFn = double (*)(const char* s);
+
+    // Local std::string storage filled by ext_004C0280 (original frame base; 0x1C bytes).
+    alignas(8) unsigned char strBuf[0x1C] = {};
+
+    // arg = this->field_0x00
+    uint32_t arg = lift_field<uint32_t>(self, 0x00);
+
+    // str = ext_004C0280(strBuf, arg); returns the populated string object.
+    void* str = ext_00511960(strBuf, arg);
+
+    // cstr = str->c_str()
+    const char* cstr = reinterpret_cast<CStrFn>(mem_00924FF0)(str);
+
+    // result = (float)atof(cstr)
+    float result = static_cast<float>(reinterpret_cast<AtofFn>(mem_009251F0)(cstr));
+
+    // str->~basic_string()
+    reinterpret_cast<DtorFn>(mem_00924FF4)(str);
+
+    return result;
+}
+} // namespace lift_004C0660
+} // namespace lift_00512A00
+
+// [0x005130A0] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_1 (109 bytes)
+namespace lift_005130A0 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004C0660 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_1).
+namespace lift_004C0660 {
+// Callee: sub_004C0280 (stack args: out-string buffer, then the held value; callee cleans; returns pointer to the std::string it filled).
+extern void* ext_005119F0(void* out, uint32_t value);
+// Import slots (IAT entries): MSVCP80 basic_string::c_str, MSVCP80 basic_string::~basic_string, MSVCR80 atof.
+extern void* mem_00924FF0;
+extern void* mem_00924FF4;
+extern void* mem_009251F0;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Fetches the property-source description string for the held value via ext_004C0280, converts it with atof, and returns it as float.
+// @field ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1> +0x00 uint32_t field_0x00
+float fn_005130A0(void* self) {
+    using CStrFn = const char* (*)(void* str);
+    using DtorFn = void (*)(void* str);
+    using AtofFn = double (*)(const char* s);
+
+    // Local std::string storage filled by ext_004C0280 (original frame base; 0x1C bytes).
+    alignas(8) unsigned char strBuf[0x1C] = {};
+
+    // arg = this->field_0x00
+    uint32_t arg = lift_field<uint32_t>(self, 0x00);
+
+    // str = ext_004C0280(strBuf, arg); returns the populated string object.
+    void* str = ext_005119F0(strBuf, arg);
+
+    // cstr = str->c_str()
+    const char* cstr = reinterpret_cast<CStrFn>(mem_00924FF0)(str);
+
+    // result = (float)atof(cstr)
+    float result = static_cast<float>(reinterpret_cast<AtofFn>(mem_009251F0)(cstr));
+
+    // str->~basic_string()
+    reinterpret_cast<DtorFn>(mem_00924FF4)(str);
+
+    return result;
+}
+} // namespace lift_004C0660
+} // namespace lift_005130A0
+
+// [0x00513240] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_4 (115 bytes)
+namespace lift_00513240 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00683930 (ExprParser::ReadMethodType<NMData::ValuePtrData>::vfunc_4 (NMData::ValuePtrData::getPropertyDescription)).
+namespace lift_00683930 {
+// Known callee 0x004276B0: StdStringCopyConstruct (copy-constructs a std::string at dst from src; returns dst).
+// Known callee 0x00683100: sub_00683100 (138B, stdcall). Takes a 28-byte std::string scratch buffer and a 32-bit key;
+// returns a pointer to the string it produced.
+// mem_00924FF4: .rdata slot holding the MSVCP80 std::string destructor (~basic_string), called on the scratch buffer.
+extern void* ext_004276B0(void* dst, const void* src);
+extern void* ext_005119F0(void* scratch, uint32_t key);
+extern void (*mem_00924FF4)(void* self);
+
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData>::vfunc_4 (NMData::ValuePtrData::getPropertyDescription)
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Returns a std::string (via hidden return slot) built from the 32-bit word at self+0x00 through sub_00683100, then copies it into dst and destroys the temporary.
+// @field NMData::ValuePtrData +0x00 uint32_t field_0x00
+void* fn_00513240(void* dst, const void* self) {
+    // MSVC std::string is 28 bytes (0x1C) on this target; the scratch buffer mirrors the original stack temporary.
+    alignas(8) unsigned char scratch[28];
+    const uint32_t key = *static_cast<const uint32_t*>(self);
+    void* produced = ext_005119F0(scratch, key);
+    ext_004276B0(dst, produced);
+    mem_00924FF4(scratch);
+    return dst;
+}
+} // namespace lift_00683930
+} // namespace lift_00513240
+
+// [0x00513CB0] ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_00513CB0 {
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getUpperLimit(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00511280(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00950AE0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00513CB0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00511280(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00950AE0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00513CB0
+
+// [0x0051B010] ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_0051B010 {
+// @name ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0051AE90(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00952190;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0051B010(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0051AE90(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00952190) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0051B010
+
+// [0x0051B270] ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>::vfunc_4 (60 bytes)
+namespace lift_0051B270 {
+// @name ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00627B60 (ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>::vfunc_4).
+namespace lift_00627B60 {
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B95F0 (ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4).
+namespace lift_005B95F0 {
+// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
+extern void* ext_0051AEF0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* a, void* r);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* obj, const void* info);
+
+// @name ReadMethodType<NMData::MetaBodyData,getLinearVelocity>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Unsupported-read stub: if the object's first pointer is set, forwards it and throws a default-message exception; always throws a DerivedException and never returns.
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x00 void* field_0x00
+[[noreturn]] void fn_0051B270(void* a, void** b) {
+    void* sub = b[0];
+    if (sub != nullptr) {
+        void* r = ext_0051AEF0(sub);
+        ext_0046C4E0(a, r);
+    }
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(0x009DEC1Cu));
+    for (;;) {}
+}
+} // namespace lift_005B95F0
+} // namespace lift_00627B60
+} // namespace lift_0051B270
+
+// [0x00521530] ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_00521530 {
+// @name ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_00687090(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_00521530(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_00687090(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_00521530
+
+// [0x00521880] ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_00521880 {
+// @name ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_00687090(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_00521880(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_00687090(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_00521880
+
+// [0x00521950] ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_00521950 {
+// @name ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_00687090(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_00521950(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_00687090(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_00521950
+
+// [0x00522330] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_00522330 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005DA9C0 (ExprParser::ReadMethodType<NMData::VideoPlaneData, int, getEndFrame>::vfunc_0).
+namespace lift_005DA9C0 {
+// Thiscall-style external: `self` is the out ValueType, `value` the int read from the object.
+extern void ext_006720C0(void* self, int value);
+// Exception-object constructor (thiscall; `self` is the storage for the exception object).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo for the exception thrown on a null handle (VA 0x009DEC1C).
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, getEndFrame>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>
+// @summary Reads VideoPlaneData::endFrame (+0x24) from the handle's object into the out value; throws if the handle is null.
+// @field NMData::VideoPlaneData +0x24 int field_0x24
+void* fn_00522330(void* self, void* out, void* const* in) {
+    (void)self;  // `this` (ecx) is unused by the original code.
+
+    void* obj = *in;
+    if (obj == nullptr) {
+        // Original builds an exception object in the frame and throws it.
+        // Storage size is not recovered; 64 bytes is a conservative placeholder.
+        alignas(16) unsigned char exception[64] = {};
+        ext_0046C3C0(exception);
+        ext_006A6DD2(exception, mem_009DEC1C);
+        return out;  // not reached: the throw above does not return
+    }
+
+    ext_006720C0(out, lift_field<int>(obj, 0xC4));
+    return out;
+}
+} // namespace lift_005DA9C0
+} // namespace lift_00522330
+
+// [0x005225B0] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_4 (74 bytes)
+namespace lift_005225B0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B12D0 (ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_4).
+namespace lift_004B12D0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>
+// @summary Reads through a pointer-to-object; formats the object's +0x20 field into out via ext_0046C500 and returns out, or throws if the object pointer is null.
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+
+extern void* ext_0046C500(void* out_str, uint8_t flag);
+extern void ext_0046C3C0(void* self);
+[[noreturn]] extern void ext_006A6DD2(void* exc_obj, const void* type_info);
+extern uint8_t mem_009DEC1C;
+
+void* fn_005225B0(void* out, void** src) {
+    void* obj = *src;
+    if (obj != nullptr) {
+        uint32_t flag = *reinterpret_cast<uint32_t*>(static_cast<char*>(obj) + 0xC4);
+        ext_0046C500(out, static_cast<uint8_t>(flag));
+        return out;
+    }
+    uint32_t exc = 0;
+    ext_0046C3C0(&exc);
+    ext_006A6DD2(&exc, &mem_009DEC1C);
+}
+} // namespace lift_004B12D0
+} // namespace lift_005225B0
+
+// [0x005250B0] ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_005250B0 {
+// @name ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getInitialValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00524A60(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00952C28;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005250B0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00524A60(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00952C28) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005250B0
+
+// [0x00525510] ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_00525510 {
+// @name ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00524AE0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00952C28;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00525510(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00524AE0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00952C28) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00525510
+
+// [0x00526450] ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>::vfunc_3 (73 bytes)
+namespace lift_00526450 {
+// @name ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::NetworkConnectorData, float, &public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00525E70(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00952C28;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00526450(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00525E70(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00952C28) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00526450
+
+// [0x00585660] ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_00585660 {
+// @name ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_00584C00(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_00585660(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_00584C00(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_00585660
+
+// [0x005856B0] ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_005856B0 {
+// @name ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_00584C00(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_005856B0(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_00584C00(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_005856B0
+
+// [0x00585E90] ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>::vfunc_3 (104 bytes)
+namespace lift_00585E90 {
+// @name ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_00682ED0(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_00585E90(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_00682ED0(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_00585E90
+
+// [0x00585F00] ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>::vfunc_4 (73 bytes)
+namespace lift_00585F00 {
+// @name ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_00682ED0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_00585F00(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_00682ED0(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_00585F00
+
+// [0x0058B770] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_0058B770 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0058A8F0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0095B338;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0058B770(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0058A8F0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0095B338) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0058B770
+
+// [0x0058BA50] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_0058BA50 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0058A920(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0095B338;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0058BA50(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0058A920(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0095B338) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0058BA50
+
+// [0x0058CBF0] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_0058CBF0 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0058A960(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0095B338;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0058CBF0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0058A960(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0095B338) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0058CBF0
+
+// [0x0058D9D0] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_0058D9D0 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0058CFB0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0095B338;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0058D9D0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0058CFB0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0095B338) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0058D9D0
+
+// [0x0058DD60] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_0058DD60 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0058CFC0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0095B338;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0058DD60(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0058CFC0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0095B338) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0058DD60
+
+// [0x0058E010] ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_0058E010 {
+// @name ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0058CFD0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0095B338;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0058E010(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0058CFD0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0095B338) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0058E010
+
+// [0x0058FA60] ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_0 (113 bytes)
+namespace lift_0058FA60 {
+// @name ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B2510 (ExprParser::ReadMethodType<Geometry>::vfunc_0 (Geometry::getTypeNameNonConst)).
+namespace lift_005B2510 {
+// sub_005B1220 (138B): builds a std::string into `out` from the object's vtable pointer; returns `out`.
+extern void* ext_0058F770(void* out, void* vtbl);
+// sub_006720E0 (43B): thiscall helper on `self`, receives the string returned above.
+extern void ext_006720E0(void* self, void* str);
+// Import slot for std::string::~basic_string (the value is the destructor's address).
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<Geometry>::vfunc_0 (Geometry::getTypeNameNonConst)
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>
+// @summary Builds the Geometry type-name string from the object's vtable, forwards it to a helper, destroys the temporary, and returns self.
+// @field ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0> +0x00 void* vftable
+void* fn_0058FA60(void* self, void* /*second stack arg, unused (ret 0x8)*/) {
+    // Temporary std::string storage (MSVC 8.0 std::string is 0x1C bytes).
+    alignas(8) unsigned char str_buf[0x1C] = {};
+
+    void* vtbl = lift_field<void*>(self, 0x00);
+    void* str = ext_0058F770(str_buf, vtbl);
+    ext_006720E0(self, str);
+
+    using StrDtor = void (*)(void*);
+    reinterpret_cast<StrDtor>(static_cast<uintptr_t>(mem_00924FF4))(str_buf);
+
+    return self;
+}
+} // namespace lift_005B2510
+} // namespace lift_0058FA60
+
+// [0x0058FF10] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_0058FF10 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0058F5A0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0095C100;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0058FF10(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0058F5A0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0095C100) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0058FF10
+
+// [0x00590280] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_00590280 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0058F5B0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0095C100;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00590280(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0058F5B0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0095C100) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00590280
+
+// [0x00590850] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_00590850 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0058F5D0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0095C100;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00590850(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0058F5D0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0095C100) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00590850
+
+// [0x005911A0] ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_1 (109 bytes)
+namespace lift_005911A0 {
+// @name ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004C0660 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_1).
+namespace lift_004C0660 {
+// Callee: sub_004C0280 (stack args: out-string buffer, then the held value; callee cleans; returns pointer to the std::string it filled).
+extern void* ext_0058F770(void* out, uint32_t value);
+// Import slots (IAT entries): MSVCP80 basic_string::c_str, MSVCP80 basic_string::~basic_string, MSVCR80 atof.
+extern void* mem_00924FF0;
+extern void* mem_00924FF4;
+extern void* mem_009251F0;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Fetches the property-source description string for the held value via ext_004C0280, converts it with atof, and returns it as float.
+// @field ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1> +0x00 uint32_t field_0x00
+float fn_005911A0(void* self) {
+    using CStrFn = const char* (*)(void* str);
+    using DtorFn = void (*)(void* str);
+    using AtofFn = double (*)(const char* s);
+
+    // Local std::string storage filled by ext_004C0280 (original frame base; 0x1C bytes).
+    alignas(8) unsigned char strBuf[0x1C] = {};
+
+    // arg = this->field_0x00
+    uint32_t arg = lift_field<uint32_t>(self, 0x00);
+
+    // str = ext_004C0280(strBuf, arg); returns the populated string object.
+    void* str = ext_0058F770(strBuf, arg);
+
+    // cstr = str->c_str()
+    const char* cstr = reinterpret_cast<CStrFn>(mem_00924FF0)(str);
+
+    // result = (float)atof(cstr)
+    float result = static_cast<float>(reinterpret_cast<AtofFn>(mem_009251F0)(cstr));
+
+    // str->~basic_string()
+    reinterpret_cast<DtorFn>(mem_00924FF4)(str);
+
+    return result;
+}
+} // namespace lift_004C0660
+} // namespace lift_005911A0
+
+// [0x00591BD0] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_00591BD0 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserEulerZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0058F5C0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0095C100;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00591BD0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0058F5C0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0095C100) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00591BD0
+
+// [0x005922A0] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005922A0 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0058F5E0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0095C100;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005922A0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0058F5E0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0095C100) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005922A0
+
+// [0x00592560] ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_00592560 {
+// @name ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<TransformNode, float, {public: float __thiscall TransformNode::getUserTZ(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0058F5F0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0095C100;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00592560(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0058F5F0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0095C100) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00592560
+
+// [0x00594C60] ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>::vfunc_3 (53 bytes)
+namespace lift_00594C60 {
+// @name ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_00594060(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_00594C60(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_00594060(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_00594C60
+
+// [0x00594CA0] ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>::vfunc_4 (73 bytes)
+namespace lift_00594CA0 {
+// @name ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_00594060(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_00594CA0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_00594060(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_00594CA0
+
+// [0x005951E0] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_005951E0 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00594070(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0095D040;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005951E0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00594070(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0095D040) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005951E0
+
+// [0x00595DF0] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_00595DF0 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameRate(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00594700(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0095D040;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00595DF0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00594700(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0095D040) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00595DF0
+
+// [0x00597E60] ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>::vfunc_3 (53 bytes)
+namespace lift_00597E60 {
+// @name ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_00596330(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_00597E60(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_00596330(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_00597E60
+
+// [0x00597EA0] ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>::vfunc_4 (73 bytes)
+namespace lift_00597EA0 {
+// @name ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_00596330(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_00597EA0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_00596330(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_00597EA0
+
+// [0x005983E0] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_005983E0 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getSimulationFrameTime(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005963B0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0095D040;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005983E0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005963B0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0095D040) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005983E0
+
+// [0x005996C0] ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_005996C0 {
+// @name ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<World, float, {public: float __thiscall World::getChannelFrameTimeWithOffset(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005971D0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0095D040;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005996C0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005971D0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0095D040) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005996C0
+
+// [0x0059E4A0] ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_0059E4A0 {
+// @name ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CharacterData, float, {public: float __thiscall NMData::CharacterData::getTotalMass(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0059D580(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0095DD18;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0059E4A0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0059D580(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0095DD18) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0059E4A0
+
+// [0x0059EC70] ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_0059EC70 {
+// @name ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_0042F750(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_0059EC70(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_0042F750(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_0059EC70
+
+// [0x0059F060] ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_0059F060 {
+// @name ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_0042F750(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_0059F060(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_0042F750(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_0059F060
+
+// [0x0059F130] ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_0059F130 {
+// @name ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_0042F750(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_0059F130(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_0042F750(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_0059F130
+
+// [0x005AAE50] ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005AAE50 {
+// @name ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_005AA9E0(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_005AAE50(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_005AA9E0(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_005AAE50
+
+// [0x005AAF20] ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005AAF20 {
+// @name ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_005AA9E0(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_005AAF20(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_005AA9E0(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_005AAF20
+
+// [0x005AB220] ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005AB220 {
+// @name ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_0044CCD0(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_005AB220(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_0044CCD0(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_005AB220
+
+// [0x005AB2F0] ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005AB2F0 {
+// @name ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_0044CCD0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_005AB2F0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_0044CCD0(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_005AB2F0
+
+// [0x005AB500] ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005AB500 {
+// @name ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_005AA9E0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_005AB500(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_005AA9E0(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_005AB500
+
+// [0x005AB780] ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005AB780 {
+// @name ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_0044CCD0(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_005AB780(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_0044CCD0(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_005AB780
+
+// [0x005B2150] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0>::vfunc_1 (45 bytes)
+namespace lift_005B2150 {
+// @name ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00633AE0 (ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0>::vfunc_1).
+namespace lift_00633AE0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B8970 (ExprParser::ReadMethodType<NMData::EngineData>::vfunc_1 (NMData::EngineData::getUnitMass)).
+namespace lift_004B8970 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::EngineData>::vfunc_1 (NMData::EngineData::getUnitMass)
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the target pointer held at +0x00 of the single stack argument and returns the float at target+0x48; if the target pointer is null, raises a C++ exception via ext_006A6DD2 (CxxThrowException).
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x48 float field_0x48
+// The original builds a local exception object (sub_0046C3C0) before throwing; the argument's own type is not identified, so only its pointer at +0x00 is accessed.
+float fn_005B2150(void* self) {
+    auto* holder = static_cast<uint8_t*>(self);
+    auto* target = *reinterpret_cast<uint8_t**>(holder);
+    if (target != nullptr) {
+        return lift_field<float>(target, 0x10);
+    }
+    ext_0046C3C0();
+    ext_006A6DD2();
+    return 0.0f;
+}
+} // namespace lift_004B8970
+} // namespace lift_00633AE0
+} // namespace lift_005B2150
+
+// [0x005B2180] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_005B2180 {
+// @name ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_005B2180(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0x10);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_005B2180
+
+// [0x005B2D00] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, 0>::vfunc_3 (71 bytes)
+namespace lift_005B2D00 {
+// @name ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00637F60 (ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingForceLimit(void) const, 0>::vfunc_3).
+namespace lift_00637F60 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingForceLimit(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingForceLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9400 (ExprParser::ReadMethodType<NMData::EngineData, float, &NMData::EngineData::getUnitLength, 0>::vfunc_3).
+namespace lift_004B9400 {
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+extern const double mem_0095F7E0;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, &NMData::EngineData::getUnitLength, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &NMData::EngineData::getUnitLength, 0>
+// @summary Returns 1 if the EngineData float at +0x44 is >= 1e-6 (false for NaN); throws if the EngineData pointer is null.
+// @field NMData::EngineData +0x44 float field_0x44
+int fn_005B2D00(void* self, void* arg) {
+    (void)self;
+
+    // arg points at a slot holding the NMData::EngineData pointer.
+    auto* engine = *static_cast<unsigned char**>(arg);
+    if (engine == nullptr) {
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(uintptr_t{0x009DEC1C}));
+    }
+
+    float value;
+    std::memcpy(&value, engine + 0x14, sizeof value);
+    const double threshold = mem_0095F7E0;
+    return (static_cast<double>(value) >= threshold) ? 1 : 0;
+}
+} // namespace lift_004B9400
+} // namespace lift_00637F60
+} // namespace lift_005B2D00
+
+// [0x005B2F00] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_005B2F00 {
+// @name ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam2(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_005B2F00(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0x18);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_005B2F00
+
+// [0x005B31F0] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_1 (109 bytes)
+namespace lift_005B31F0 {
+// @name ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004C0660 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_1).
+namespace lift_004C0660 {
+// Callee: sub_004C0280 (stack args: out-string buffer, then the held value; callee cleans; returns pointer to the std::string it filled).
+extern void* ext_005B1220(void* out, uint32_t value);
+// Import slots (IAT entries): MSVCP80 basic_string::c_str, MSVCP80 basic_string::~basic_string, MSVCR80 atof.
+extern void* mem_00924FF0;
+extern void* mem_00924FF4;
+extern void* mem_009251F0;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Fetches the property-source description string for the held value via ext_004C0280, converts it with atof, and returns it as float.
+// @field ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1> +0x00 uint32_t field_0x00
+float fn_005B31F0(void* self) {
+    using CStrFn = const char* (*)(void* str);
+    using DtorFn = void (*)(void* str);
+    using AtofFn = double (*)(const char* s);
+
+    // Local std::string storage filled by ext_004C0280 (original frame base; 0x1C bytes).
+    alignas(8) unsigned char strBuf[0x1C] = {};
+
+    // arg = this->field_0x00
+    uint32_t arg = lift_field<uint32_t>(self, 0x00);
+
+    // str = ext_004C0280(strBuf, arg); returns the populated string object.
+    void* str = ext_005B1220(strBuf, arg);
+
+    // cstr = str->c_str()
+    const char* cstr = reinterpret_cast<CStrFn>(mem_00924FF0)(str);
+
+    // result = (float)atof(cstr)
+    float result = static_cast<float>(reinterpret_cast<AtofFn>(mem_009251F0)(cstr));
+
+    // str->~basic_string()
+    reinterpret_cast<DtorFn>(mem_00924FF4)(str);
+
+    return result;
+}
+} // namespace lift_004C0660
+} // namespace lift_005B31F0
+
+// [0x005B7560] ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>::vfunc_1 (77 bytes)
+namespace lift_005B7560 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_005B64D0(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_005B7560(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_005B64D0(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_005B7560
+
+// [0x005B75B0] ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>::vfunc_2 (53 bytes)
+namespace lift_005B75B0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, bool, {public: bool __thiscall NMData::MetaBodyData::isInFullPhysics(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_005B64D0(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_005B75B0(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_005B64D0(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_005B75B0
+
+// [0x005B9020] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_005B9020 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005B6970(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00960938;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005B9020(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005B6970(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00960938) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005B9020
+
+// [0x005B9580] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>::vfunc_1 (49 bytes)
+namespace lift_005B9580 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x005C5360 (ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1>::vfunc_1).
+namespace lift_005C5360 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0051B200 (ReadMethodType<NMData::QuatChannel>::vfunc_1).
+namespace lift_0051B200 {
+// Known callee 0x0051AEF0: GetFloatFromSubobjectAndForward_0051AEF0 (Queries a float from the object at self->+0x24 (or a global fallback object) via vtable slot 1, then forwards that float to sub_0051AD40 on self.)
+extern float ext_005B6B60(void* obj);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc_object, const void* throw_info);
+
+// Throw-info descriptor for the DerivedException type (VA 0x009DEC1C).
+extern const unsigned char g_derivedExceptionThrowInfo[];
+
+// @name ReadMethodType<NMData::QuatChannel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary If the first pointer field is non-null, query a float via ext_0051AEF0 and throw a default-message exception; otherwise always throw a DerivedException.
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x00 void* field_0x00
+void fn_005B9580(void* self) {
+    void* const subobject = *static_cast<void**>(self);
+    if (subobject != nullptr) {
+        (void)ext_005B6B60(subobject);
+        ext_0046C4E0();  // throws; does not return
+    }
+
+    unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, g_derivedExceptionThrowInfo);
+}
+} // namespace lift_0051B200
+} // namespace lift_005C5360
+} // namespace lift_005B9580
+
+// [0x005BB470] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_005BB470 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getVolume(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005B7040(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00960938;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005BB470(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005B7040(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00960938) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005BB470
+
+// [0x005BC3F0] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005BC3F0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getMass(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005B68F0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00960938;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005BC3F0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005B68F0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00960938) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005BC3F0
+
+// [0x005BC7A0] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005BC7A0 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getLinearVelocityDamping(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005B6FE0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00960938;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005BC7A0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005B6FE0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00960938) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005BC7A0
+
+// [0x005BCB30] ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005BCB30 {
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAngularVelocityDamping(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005B6FC0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00960938;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005BCB30(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005B6FC0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00960938) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005BCB30
+
+// [0x005C5900] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_005C5900 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {protected: float __thiscall NMData::CollisionModelDataBase::getMass(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005C2FF0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00963228;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005C5900(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005C2FF0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00963228) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005C5900
+
+// [0x005C6320] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_005C6320 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_005B6490(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_005C6320(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_005B6490(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_005C6320
+
+// [0x005C6680] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_005C6680 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_005B6470(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_005C6680(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_005B6470(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_005C6680
+
+// [0x005C7470] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_005C7470 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_005B6490(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_005C7470(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_005B6490(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_005C7470
+
+// [0x005C77B0] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_005C77B0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithParent(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_005B6470(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_005C77B0(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_005B6470(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_005C77B0
+
+// [0x005C79D0] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_005C79D0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_005B6480(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_005C79D0(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_005B6480(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_005C79D0
+
+// [0x005C7A20] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_005C7A20 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithSiblings(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_005B6480(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_005C7A20(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_005B6480(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_005C7A20
+
+// [0x005C7E00] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005C7E00 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_005C2F40(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_005C7E00(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_005C2F40(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_005C7E00
+
+// [0x005C7E50] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005C7E50 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_005C2F40(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_005C7E50(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_005C2F40(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_005C7E50
+
+// [0x005C8150] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005C8150 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_005C2F40(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_005C8150(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_005C2F40(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_005C8150
+
+// [0x005C9500] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_005C9500 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005C3AA0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00963228;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005C9500(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005C3AA0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00963228) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005C9500
+
+// [0x005CAED0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_005CAED0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005C3C00(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00963228;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005CAED0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005C3C00(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00963228) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005CAED0
+
+// [0x005CB430] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>::vfunc_1 (77 bytes)
+namespace lift_005CB430 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_005C3650(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_005CB430(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_005C3650(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_005CB430
+
+// [0x005CB480] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>::vfunc_2 (53 bytes)
+namespace lift_005CB480 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, bool, {[thunk]: __thiscall NMData::CollisionModelDataBase::`vcall'{244, {flat}}, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_005C3650(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_005CB480(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_005C3650(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_005CB480
+
+// [0x005CBBF0] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_005CBBF0 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_005C3640(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_005CBBF0(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_005C3640(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_005CBBF0
+
+// [0x005CBC40] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_005CBC40 {
+// @name ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_005C3640(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_005CBC40(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_005C3640(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_005CBC40
+
+// [0x005CEAF0] ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005CEAF0 {
+// @name ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005CE4E0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00965AB8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005CEAF0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005CE4E0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00965AB8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005CEAF0
+
+// [0x005D1DD0] ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D1DD0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFocalLength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005D06D0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00965CF0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005D1DD0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005D06D0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00965CF0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005D1DD0
+
+// [0x005D2470] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_4 (71 bytes)
+namespace lift_005D2470 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B12D0 (ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_4).
+namespace lift_004B12D0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>
+// @summary Reads through a pointer-to-object; formats the object's +0x20 field into out via ext_0046C500 and returns out, or throws if the object pointer is null.
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+
+extern void* ext_0046C500(void* out_str, uint8_t flag);
+extern void ext_0046C3C0(void* self);
+[[noreturn]] extern void ext_006A6DD2(void* exc_obj, const void* type_info);
+extern uint8_t mem_009DEC1C;
+
+void* fn_005D2470(void* out, void** src) {
+    void* obj = *src;
+    if (obj != nullptr) {
+        uint32_t flag = *reinterpret_cast<uint32_t*>(static_cast<char*>(obj) + 0x28);
+        ext_0046C500(out, static_cast<uint8_t>(flag));
+        return out;
+    }
+    uint32_t exc = 0;
+    ext_0046C3C0(&exc);
+    ext_006A6DD2(&exc, &mem_009DEC1C);
+}
+} // namespace lift_004B12D0
+} // namespace lift_005D2470
+
+// [0x005D25E0] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_005D25E0 {
+// @name ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_005D25E0(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0x2C);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_005D25E0
+
+// [0x005D27C0] ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>::vfunc_0 (70 bytes)
+namespace lift_005D27C0 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004EA030 (ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, isCollisionEnabled, 0>::vfunc_0).
+namespace lift_004EA030 {
+extern void ext_006720A0(void* self, uint32_t flag);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* object, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, isCollisionEnabled, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>
+// @summary Reads the source value through a pointer; if non-null, forwards its byte at +0x05 to ext_006720A0 and returns self, otherwise throws a C++ exception.
+// @field ExprParser::ValuePtrType +0x05 uint8_t field_0x05
+void* fn_005D27C0(void* self, void* const* src) {
+    void* obj = *src;
+    if (obj == nullptr) {
+        alignas(8) unsigned char exception_obj[0x28];
+        ext_0046C3C0(exception_obj);
+        ext_006A6DD2(exception_obj, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+        return nullptr; // _CxxThrowException does not return
+    }
+    uint32_t flag = lift_field<uint8_t>(obj, 48);
+    ext_006720A0(self, flag);
+    return self;
+}
+} // namespace lift_004EA030
+} // namespace lift_005D27C0
+
+// [0x005D2A20] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_005D2A20 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_005D2A20(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0x34);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_005D2A20
+
+// [0x005D2C80] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0>::vfunc_5 (48 bytes)
+namespace lift_005D2C80 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005B2230 (ExprParser::ReadMethodType<Geometry, float, getParam0, 0>::vfunc_5).
+namespace lift_005B2230 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Caller passes one float (the Geometry param0 value) in its outgoing argument slot.
+extern void ext_0046C4E0(float param0);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Caller passes (exception object pointer, throw-info pointer 0x009DEC1C).
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<Geometry, float, getParam0, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0>
+// @summary Reads Geometry::getParam0 via the holder's target pointer; always throws (float value if target is set, default exception otherwise).
+// @field ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0> +0x00 void* field_0x00
+// @field Geometry +0x10 float field_0x10
+[[noreturn]] void fn_005D2C80(void* self) {
+    // self points at a holder whose first dword is the Geometry target pointer.
+    void* target = *static_cast<void**>(self);
+    if (target != nullptr) {
+        float param0 = *reinterpret_cast<float*>(static_cast<unsigned char*>(target) + 0x38);
+        ext_0046C4E0(param0);
+    }
+    void* exc = nullptr;
+    ext_0046C3C0(&exc);
+    ext_006A6DD2(&exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+    std::abort();
+}
+} // namespace lift_005B2230
+} // namespace lift_005D2C80
+
+// [0x005D39A0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D39A0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getCentreOfInterest(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005478A0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00965CF0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005D39A0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005478A0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00965CF0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005D39A0
+
+// [0x005D46F0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D46F0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureY(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00552160(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00965CF0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005D46F0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00552160(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00965CF0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005D46F0
+
+// [0x005D4EC0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D4EC0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getPictureRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005D0710(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00965CF0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005D4EC0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005D0710(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00965CF0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005D4EC0
+
+// [0x005D5780] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D5780 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005478D0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00965CF0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005D5780(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005478D0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00965CF0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005D5780
+
+// [0x005D6980] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0>::vfunc_1 (45 bytes)
+namespace lift_005D6980 {
+// @name ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getScaledDesiredDisplacement(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00633AE0 (ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0>::vfunc_1).
+namespace lift_00633AE0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B8970 (ExprParser::ReadMethodType<NMData::EngineData>::vfunc_1 (NMData::EngineData::getUnitMass)).
+namespace lift_004B8970 {
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::EngineData>::vfunc_1 (NMData::EngineData::getUnitMass)
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the target pointer held at +0x00 of the single stack argument and returns the float at target+0x48; if the target pointer is null, raises a C++ exception via ext_006A6DD2 (CxxThrowException).
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x48 float field_0x48
+// The original builds a local exception object (sub_0046C3C0) before throwing; the argument's own type is not identified, so only its pointer at +0x00 is accessed.
+float fn_005D6980(void* self) {
+    auto* holder = static_cast<uint8_t*>(self);
+    auto* target = *reinterpret_cast<uint8_t**>(holder);
+    if (target != nullptr) {
+        return lift_field<float>(target, 0x2C);
+    }
+    ext_0046C3C0();
+    ext_006A6DD2();
+    return 0.0f;
+}
+} // namespace lift_004B8970
+} // namespace lift_00633AE0
+} // namespace lift_005D6980
+
+// [0x005D6BE0] ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>::vfunc_4 (72 bytes)
+namespace lift_005D6BE0 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B1E00 (ExprParser::ReadMethodType<NMData::GraphEntryData>::vfunc_4 (NMData::GraphEntryData::isActive)).
+namespace lift_004B1E00 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData>::vfunc_4 (NMData::GraphEntryData::isActive)
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>
+// @summary Reads the GraphEntryData object through the value pointer, formats its byte flag at +0x01 into out via ext_0046C460 (makeBoolString), and returns out; throws if the object pointer is null.
+// @field NMData::GraphEntryData +0x01 uint8_t field_0x01
+
+extern void* ext_0046C460(void* out_str, uint8_t flag);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc_obj, const void* type_info);
+extern uint8_t mem_009DEC1C;
+
+void* fn_005D6BE0(void* out, void** src) {
+    void* obj = *src;
+    if (obj != nullptr) {
+        uint8_t flag = *(static_cast<uint8_t*>(obj) + 0x30);
+        ext_0046C460(out, flag);
+        return out;
+    }
+    uint32_t exc = 0;
+    ext_0046C3C0(&exc);
+    ext_006A6DD2(&exc, &mem_009DEC1C);
+    return nullptr;
+}
+} // namespace lift_004B1E00
+} // namespace lift_005D6BE0
+
+// [0x005D6FA0] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_005D6FA0 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXScale(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00635500 (ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>::vfunc_0).
+namespace lift_00635500 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_005D6FA0(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0x34);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_00635500
+} // namespace lift_005D6FA0
+
+// [0x005D73F0] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_005D73F0 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYScale(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_005D73F0(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0x38);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_005D73F0
+
+// [0x005D7650] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_005D7650 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_005D7650(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0x3C);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_005D7650
+
+// [0x005D7920] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_005D7920 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getYOffset(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_005D7920(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0x40);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_005D7920
+
+// [0x005D7DF0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D7DF0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFocalLength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005D0670(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00965CF0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005D7DF0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005D0670(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00965CF0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005D7DF0
+
+// [0x005D80C0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D80C0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getApertureX(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005CF930(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00965CF0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005D80C0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005CF930(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00965CF0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005D80C0
+
+// [0x005D8490] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D8490 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getSqueezeRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005478B0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00965CF0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005D8490(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005478B0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00965CF0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005D8490
+
+// [0x005D8BF0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D8BF0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getOverscanRatio(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005478E0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00965CF0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005D8BF0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005478E0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00965CF0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005D8BF0
+
+// [0x005D8FD0] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005D8FD0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005478C0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00965CF0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005D8FD0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005478C0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00965CF0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005D8FD0
+
+// [0x005D95E0] ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_005D95E0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_005CF940(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_005D95E0(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_005CF940(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_005D95E0
+
+// [0x005D9630] ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_005D9630 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isVideoPlaneEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_005CF940(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_005D9630(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_005CF940(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_005D9630
+
+// [0x005D99D0] ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_005D99D0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_005CFE50(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_005D99D0(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_005CFE50(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_005D99D0
+
+// [0x005D9A20] ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_005D9A20 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_005CFE50(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_005D9A20(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_005CFE50(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_005D9A20
+
+// [0x005D9C60] ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_005D9C60 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_005CF950(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_005D9C60(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_005CF950(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_005D9C60
+
+// [0x005D9CB0] ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_005D9CB0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CameraData, bool, {public: bool __thiscall NMData::CameraData::isSettingsLocked(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_005CF950(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_005D9CB0(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_005CF950(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_005D9CB0
+
+// [0x005DA450] ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005DA450 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005D12A0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00965CF0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005DA450(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005D12A0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00965CF0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005DA450
+
+// [0x005DACE0] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005DACE0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_005D07E0(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_005DACE0(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_005D07E0(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_005DACE0
+
+// [0x005DADB0] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005DADB0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_005D07E0(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_005DADB0(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_005D07E0(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_005DADB0
+
+// [0x005DAE20] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005DAE20 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_005D07E0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_005DAE20(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_005D07E0(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_005DAE20
+
+// [0x005DB210] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005DB210 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_005D0810(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_005DB210(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_005D0810(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_005DB210
+
+// [0x005DB2E0] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005DB2E0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_005D0810(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_005DB2E0(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_005D0810(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_005DB2E0
+
+// [0x005DB350] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005DB350 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_005D0810(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_005DB350(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_005D0810(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_005DB350
+
+// [0x005DB700] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_4 (71 bytes)
+namespace lift_005DB700 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B12D0 (ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_4).
+namespace lift_004B12D0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>
+// @summary Reads through a pointer-to-object; formats the object's +0x20 field into out via ext_0046C500 and returns out, or throws if the object pointer is null.
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+
+extern void* ext_0046C500(void* out_str, uint8_t flag);
+extern void ext_0046C3C0(void* self);
+[[noreturn]] extern void ext_006A6DD2(void* exc_obj, const void* type_info);
+extern uint8_t mem_009DEC1C;
+
+void* fn_005DB700(void* out, void** src) {
+    void* obj = *src;
+    if (obj != nullptr) {
+        uint32_t flag = *reinterpret_cast<uint32_t*>(static_cast<char*>(obj) + 0x24);
+        ext_0046C500(out, static_cast<uint8_t>(flag));
+        return out;
+    }
+    uint32_t exc = 0;
+    ext_0046C3C0(&exc);
+    ext_006A6DD2(&exc, &mem_009DEC1C);
+}
+} // namespace lift_004B12D0
+} // namespace lift_005DB700
+
+// [0x005DBD00] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005DBD00 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_005D07F0(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_005DBD00(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_005D07F0(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_005DBD00
+
+// [0x005DBD50] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005DBD50 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_005D07F0(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_005DBD50(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_005D07F0(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_005DBD50
+
+// [0x005DBDC0] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005DBDC0 {
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_005D07F0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_005DBDC0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_005D07F0(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_005DBDC0
+
+// [0x005E2D10] ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005E2D10 {
+// @name ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_005E02A0(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_005E2D10(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_005E02A0(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_005E2D10
+
+// [0x005E2D80] ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005E2D80 {
+// @name ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_005E02A0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_005E2D80(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_005E02A0(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_005E2D80
+
+// [0x005E3050] ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005E3050 {
+// @name ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_0044CCE0(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_005E3050(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_0044CCE0(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_005E3050
+
+// [0x005E33A0] ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005E33A0 {
+// @name ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_005E02A0(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_005E33A0(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_005E02A0(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_005E33A0
+
+// [0x005E3650] ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005E3650 {
+// @name ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_0044CCE0(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_005E3650(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_0044CCE0(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_005E3650
+
+// [0x005E3720] ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005E3720 {
+// @name ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_0044CCE0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_005E3720(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_0044CCE0(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_005E3720
+
+// [0x005E4E90] ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E4E90 {
+// @name ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005E25B0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00968EA0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005E4E90(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005E25B0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00968EA0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005E4E90
+
+// [0x005E5890] ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005E5890 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_005E0E40(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_005E5890(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_005E0E40(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_005E5890
+
+// [0x005E5960] ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005E5960 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_005E0E40(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_005E5960(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_005E0E40(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_005E5960
+
+// [0x005E5BB0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E5BB0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitTwistSizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005E2770(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00968EA0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005E5BB0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005E2770(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00968EA0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005E5BB0
+
+// [0x005E60E0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E60E0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitRadiusForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005E2860(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00968EA0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005E60E0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005E2860(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00968EA0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005E60E0
+
+// [0x005E62C0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E62C0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitTwistSizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005E28B0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00968EA0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005E62C0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005E28B0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00968EA0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005E62C0
+
+// [0x005E68F0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E68F0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005E2950(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00968EA0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005E68F0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005E2950(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00968EA0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005E68F0
+
+// [0x005E6AC0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E6AC0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitRadiusForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005E29A0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00968EA0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005E6AC0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005E29A0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00968EA0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005E6AC0
+
+// [0x005E6EC0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E6EC0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005E1EE0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00968EA0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005E6EC0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005E1EE0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00968EA0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005E6EC0
+
+// [0x005E7A90] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E7A90 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005E2620(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00968EA0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005E7A90(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005E2620(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00968EA0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005E7A90
+
+// [0x005E7E70] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E7E70 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005E2690(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00968EA0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005E7E70(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005E2690(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00968EA0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005E7E70
+
+// [0x005E81F0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E81F0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getUserCurrentSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005E2700(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00968EA0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005E81F0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005E2700(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00968EA0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005E81F0
+
+// [0x005E8500] ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005E8500 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_005E0E40(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_005E8500(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_005E0E40(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_005E8500
+
+// [0x005E8CD0] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E8CD0 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing1SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005E27C0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00968EA0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005E8CD0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005E27C0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00968EA0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005E8CD0
+
+// [0x005E9040] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E9040 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getHardLimitSwing2SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005E2810(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00968EA0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005E9040(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005E2810(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00968EA0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005E9040
+
+// [0x005E9C60] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005E9C60 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005E2900(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00968EA0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005E9C60(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005E2900(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00968EA0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005E9C60
+
+// [0x005EA900] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005EA900 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005E1F10(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00968EA0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005EA900(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005E1F10(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00968EA0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005EA900
+
+// [0x005EAB30] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005EAB30 {
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getCurrentSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005E1F40(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00968EA0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005EAB30(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005E1F40(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00968EA0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005EAB30
+
+// [0x005F60A0] ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005F60A0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMScale(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005F51C0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0096CCC0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005F60A0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005F51C0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0096CCC0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005F60A0
+
+// [0x005F64F0] ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005F64F0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_005F5120(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_005F64F0(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_005F5120(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_005F64F0
+
+// [0x005F6B90] ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_005F6B90 {
+// @name ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<HelperGraphic, float, {public: float __thiscall HelperGraphic::getFSMAlpha(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005F5130(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0096CCC0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005F6B90(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005F5130(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0096CCC0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005F6B90
+
+// [0x005F7010] ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005F7010 {
+// @name ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_005F5280(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_005F7010(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_005F5280(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_005F7010
+
+// [0x005F70E0] ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_005F70E0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_005F5280(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_005F70E0(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_005F5280(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_005F70E0
+
+// [0x005F7150] ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005F7150 {
+// @name ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_005F5280(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_005F7150(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_005F5280(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_005F7150
+
+// [0x005F8580] ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_005F8580 {
+// @name ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_005F5120(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_005F8580(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_005F5120(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_005F8580
+
+// [0x005F85D0] ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_005F85D0 {
+// @name ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_005F5120(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_005F85D0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_005F5120(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_005F85D0
+
+// [0x005F8F20] ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_005F8F20 {
+// @name ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_005F51B0(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_005F8F20(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_005F51B0(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_005F8F20
+
+// [0x005F8F70] ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_005F8F70 {
+// @name ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<HelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_005F51B0(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_005F8F70(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_005F51B0(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_005F8F70
+
+// [0x005FD470] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>::vfunc_3 (73 bytes)
+namespace lift_005FD470 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0064F8F0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0096E5D0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005FD470(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0064F8F0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0096E5D0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005FD470
+
+// [0x005FDA50] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>::vfunc_3 (73 bytes)
+namespace lift_005FDA50 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{68, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0062A580(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0096E5D0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005FDA50(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0062A580(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0096E5D0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005FDA50
+
+// [0x005FDEA0] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>::vfunc_3 (73 bytes)
+namespace lift_005FDEA0 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_005FCB30(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0096E5D0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005FDEA0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_005FCB30(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0096E5D0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005FDEA0
+
+// [0x005FE4B0] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>::vfunc_3 (73 bytes)
+namespace lift_005FE4B0 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{76, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00603680(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0096E5D0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005FE4B0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00603680(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0096E5D0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005FE4B0
+
+// [0x005FEAC0] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>::vfunc_3 (73 bytes)
+namespace lift_005FEAC0 {
+// @name ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{80, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_006036A0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0096E5D0;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_005FEAC0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_006036A0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0096E5D0) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_005FEAC0
+
+// [0x00604420] ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>::vfunc_3 (73 bytes)
+namespace lift_00604420 {
+// @name ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<EffectorBase, float, &public: float __thiscall EffectorBase::getTorqueZ(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00602F40(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0096F810;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00604420(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00602F40(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0096F810) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00604420
+
+// [0x00605BF0] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getForceBaseCap(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_00605BF0 {
+// @name ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getForceBaseCap(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getForceBaseCap(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_00605BF0(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0x54);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_00605BF0
+
+// [0x00606670] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getRawDesiredDisplacement(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_00606670 {
+// @name ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getRawDesiredDisplacement(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getRawDesiredDisplacement(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_00606670(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0x58);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_00606670
+
+// [0x00606FE0] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradient(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_00606FE0 {
+// @name ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradient(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradient(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_00606FE0(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0x4C);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_00606FE0
+
+// [0x006071E0] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradientCap(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_006071E0 {
+// @name ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradientCap(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradientCap(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00635500 (ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>::vfunc_0).
+namespace lift_00635500 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_006071E0(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0x50);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_00635500
+} // namespace lift_006071E0
+
+// [0x00607260] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradientCap(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_00607260 {
+// @name ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradientCap(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradientCap(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_00607260(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0x50);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_00607260
+
+// [0x00609AC0] ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_1 (73 bytes)
+namespace lift_00609AC0 {
+// @name ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_00609730(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_00609AC0(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_00609730(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_00609AC0
+
+// [0x00609B90] ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_3 (104 bytes)
+namespace lift_00609B90 {
+// @name ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_00609730(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_00609B90(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_00609730(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_00609B90
+
+// [0x00609C00] ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_4 (73 bytes)
+namespace lift_00609C00 {
+// @name ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_00609730(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_00609C00(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_00609730(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_00609C00
+
+// [0x00612F40] ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_00612F40 {
+// @name ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00610B20(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00972CC8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00612F40(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00610B20(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00972CC8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00612F40
+
+// [0x00613990] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_00613990 {
+// @name ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserLowerLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00610CB0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00972CC8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00613990(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00610CB0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00972CC8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00613990
+
+// [0x00613B80] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getZ(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_00613B80 {
+// @name ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getZ(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getZ(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_00613B80(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0x8);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_00613B80
+
+// [0x006142C0] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_006142C0 {
+// @name ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_006142C0(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0x14);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_006142C0
+
+// [0x00614410] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_00614410 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserTwistSize(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00611170(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00972CC8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00614410(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00611170(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00972CC8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00614410
+
+// [0x006146F0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_006146F0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing1Size(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_006111A0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00972CC8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_006146F0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_006111A0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00972CC8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_006146F0
+
+// [0x00614CD0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_00614CD0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserRadiusSize(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00611160(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00972CC8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00614CD0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00611160(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00972CC8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00614CD0
+
+// [0x00614E60] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getTwistStiffness(void) const, 0>::vfunc_2 (97 bytes)
+namespace lift_00614E60 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getTwistStiffness(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getTwistStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_00614E60(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0xA0);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_00614E60
+
+// [0x00615610] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearStiffness(void) const, 0>::vfunc_2 (97 bytes)
+namespace lift_00615610 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearStiffness(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_00615610(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0xA8);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_00615610
+
+// [0x006164D0] ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_006164D0 {
+// @name ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00611950(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00972CC8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_006164D0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00611950(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00972CC8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_006164D0
+
+// [0x006168D0] ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_006168D0 {
+// @name ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_00610A80(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_006168D0(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_00610A80(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_006168D0
+
+// [0x00616A20] ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_00616A20 {
+// @name ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_00610A90(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_00616A20(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_00610A90(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_00616A20
+
+// [0x00616CB0] ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_00616CB0 {
+// @name ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_00610AA0(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_00616CB0(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_00610AA0(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_00616CB0
+
+// [0x00617340] ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getDamping(void) const, 0>::vfunc_16 (30 bytes)
+namespace lift_00617340 {
+extern void* ext_006A6E9E(void* inptr, long vfDelta, const void* srcType, const void* targetType, int isReference);
+extern int mem_00A2E2F8;
+extern int mem_00A8558C;
+
+// @name ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getDamping(void) const, 0>::vfunc_16
+// @class ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0064F1F0 (ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)).
+void* fn_00617340(void* self) {
+    return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
+                        reinterpret_cast<const void*>(&mem_00A8558C), 0);
+}
+} // namespace lift_00617340
+
+// [0x00617420] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUpperStiffness(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_00617420 {
+// @name ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUpperStiffness(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUpperStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_00617420(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0xC);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_00617420
+
+// [0x006178B0] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getLowerDamping(void) const, 0>::vfunc_16 (30 bytes)
+namespace lift_006178B0 {
+extern void* ext_006A6E9E(void* inptr, long vfDelta, const void* srcType, const void* targetType, int isReference);
+extern int mem_00A2E2F8;
+extern int mem_00A9531C;
+
+// @name ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getLowerDamping(void) const, 0>::vfunc_16
+// @class ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getLowerDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0064F1F0 (ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)).
+void* fn_006178B0(void* self) {
+    return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
+                        reinterpret_cast<const void*>(&mem_00A9531C), 0);
+}
+} // namespace lift_006178B0
+
+// [0x00617AA0] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_00617AA0 {
+// @name ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUserUpperLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00610CE0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00972CC8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00617AA0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00610CE0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00972CC8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00617AA0
+
+// [0x00618C70] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_00618C70 {
+// @name ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00635500 (ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>::vfunc_0).
+namespace lift_00635500 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_00618C70(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0x14);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_00635500
+} // namespace lift_00618C70
+
+// [0x006196D0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>::vfunc_3 (73 bytes)
+namespace lift_006196D0 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_006111D0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00972CC8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_006196D0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_006111D0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00972CC8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_006196D0
+
+// [0x0061A330] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getSwingStiffness(void) const, 0>::vfunc_2 (97 bytes)
+namespace lift_0061A330 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getSwingStiffness(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getSwingStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_0061A330(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0xA4);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_0061A330
+
+// [0x0061A530] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0>::vfunc_16 (30 bytes)
+namespace lift_0061A530 {
+extern void* ext_006A6E9E(void* inptr, long vfDelta, const void* srcType, const void* targetType, int isReference);
+extern int mem_00A2E2F8;
+extern int mem_00A95670;
+
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0>::vfunc_16
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0064F1F0 (ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)).
+void* fn_0061A530(void* self) {
+    return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
+                        reinterpret_cast<const void*>(&mem_00A95670), 0);
+}
+} // namespace lift_0061A530
+
+// [0x0061A930] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getSwingDamping(void) const, 0>::vfunc_2 (97 bytes)
+namespace lift_0061A930 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getSwingDamping(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getSwingDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_0061A930(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0xB0);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_0061A930
+
+// [0x0061AF70] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getTwistDamping(void) const, 0>::vfunc_2 (97 bytes)
+namespace lift_0061AF70 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getTwistDamping(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getTwistDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_0061AF70(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0xAC);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_0061AF70
+
+// [0x0061B410] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0>::vfunc_2 (97 bytes)
+namespace lift_0061B410 {
+// @name ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_0061B410(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0xB4);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_0061B410
+
+// [0x0061B700] ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_0061B700 {
+// @name ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00611870(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00972CC8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0061B700(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00611870(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00972CC8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0061B700
+
+// [0x0061B960] ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>::vfunc_16 (30 bytes)
+namespace lift_0061B960 {
+extern void* ext_006A6E9E(void* inptr, long vfDelta, const void* srcType, const void* targetType, int isReference);
+extern int mem_00A2E2F8;
+extern int mem_00A95ADC;
+
+// @name ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>::vfunc_16
+// @class ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0064F1F0 (ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)).
+void* fn_0061B960(void* self) {
+    return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
+                        reinterpret_cast<const void*>(&mem_00A95ADC), 0);
+}
+} // namespace lift_0061B960
+
+// [0x0061BA00] ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_0061BA00 {
+// @name ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::HingeConstraint, bool, {private: bool __thiscall NMData::HingeConstraint::isEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_00610A80(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_0061BA00(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_00610A80(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_0061BA00
+
+// [0x0061BE80] ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>::vfunc_16 (30 bytes)
+namespace lift_0061BE80 {
+extern void* ext_006A6E9E(void* inptr, long vfDelta, const void* srcType, const void* targetType, int isReference);
+extern int mem_00A2E2F8;
+extern int mem_00A95BEC;
+
+// @name ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>::vfunc_16
+// @class ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0064F1F0 (ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)).
+void* fn_0061BE80(void* self) {
+    return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
+                        reinterpret_cast<const void*>(&mem_00A95BEC), 0);
+}
+} // namespace lift_0061BE80
+
+// [0x0061BF90] ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>::vfunc_3 (73 bytes)
+namespace lift_0061BF90 {
+// @name ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_006118E0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00972CC8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0061BF90(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_006118E0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00972CC8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0061BF90
+
+// [0x0061C910] ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_16 (30 bytes)
+namespace lift_0061C910 {
+extern void* ext_006A6E9E(void* inptr, long vfDelta, const void* srcType, const void* targetType, int isReference);
+extern int mem_00A2E2F8;
+extern int mem_00A91240;
+
+// @name ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_16
+// @class ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0064F1F0 (ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)).
+void* fn_0061C910(void* self) {
+    return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
+                        reinterpret_cast<const void*>(&mem_00A91240), 0);
+}
+} // namespace lift_0061C910
+
+// [0x0061C9B0] ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_0061C9B0 {
+// @name ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isSwingEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_00610A90(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_0061C9B0(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_00610A90(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_0061C9B0
+
+// [0x0061CDC0] ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_0061CDC0 {
+// @name ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_00610AA0(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_0061CDC0(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_00610AA0(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_0061CDC0
+
+// [0x0062A880] ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &[thunk]: __thiscall Sensors::SensorIntegral::`vcall'{68, {flat}}, 1>::vfunc_3 (73 bytes)
+namespace lift_0062A880 {
+// @name ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &[thunk]: __thiscall Sensors::SensorIntegral::`vcall'{68, {flat}}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &[thunk]: __thiscall Sensors::SensorIntegral::`vcall'{68, {flat}}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0062A580(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00978A48;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0062A880(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0062A580(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00978A48) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0062A880
+
+// [0x0062AB90] ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>::vfunc_3 (73 bytes)
+namespace lift_0062AB90 {
+// @name ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Sensors::SensorIntegral, float, &public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0062A590(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00978A48;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0062AB90(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0062A590(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00978A48) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0062AB90
+
+// [0x0062E480] ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>::vfunc_1 (47 bytes)
+namespace lift_0062E480 {
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x006399F0 (ExprParser::ReadMethodType<EffectorSkeletal>::vfunc_1).
+namespace lift_006399F0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* target);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// RTTI ThrowInfo for the DerivedException thrown below.
+extern const unsigned char mem_009DEC1C[];
+
+// Portable stand-in for _CxxThrowException(object, throwInfo).
+[[noreturn]] void lift_cxx_throw(void* object, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<EffectorSkeletal>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>
+// @summary Always throws; if the held EffectorSkeletal pointer is non-null, first reports via ext_0046C4E0 at (ptr + 0xA8), then throws a DerivedException.
+// @field ExprParser::ReadMethodType<EffectorSkeletal> +0x00 void* m_pObject
+// @field EffectorSkeletal +0xA8 void* field_0xA8
+void fn_0062E480(void* self) {
+    void* object = *static_cast<void**>(self);
+    if (object != nullptr) {
+        ext_0046C4E0(static_cast<unsigned char*>(object) + 0x78);
+    }
+    // The exception object is constructed in-place on the stack by ext_0046C3C0.
+    alignas(16) unsigned char exception[64];
+    ext_0046C3C0(exception);
+    lift_cxx_throw(exception, mem_009DEC1C);
+}
+} // namespace lift_006399F0
+} // namespace lift_0062E480
+
+// [0x00633740] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearDamping(void) const, 0>::vfunc_2 (97 bytes)
+namespace lift_00633740 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearDamping(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_00633740(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0xD0);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_00633740
+
+// [0x006343E0] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingForceLimit(void) const, 0>::vfunc_2 (97 bytes)
+namespace lift_006343E0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingForceLimit(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingForceLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_006343E0(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0xE4);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_006343E0
+
+// [0x00634A30] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistDamping(void) const, 0>::vfunc_2 (97 bytes)
+namespace lift_00634A30 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistDamping(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_00634A30(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0xE0);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_00634A30
+
+// [0x00636470] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>::vfunc_1 (49 bytes)
+namespace lift_00636470 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x006399F0 (ExprParser::ReadMethodType<EffectorSkeletal>::vfunc_1).
+namespace lift_006399F0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(void* target);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// RTTI ThrowInfo for the DerivedException thrown below.
+extern const unsigned char mem_009DEC1C[];
+
+// Portable stand-in for _CxxThrowException(object, throwInfo).
+[[noreturn]] void lift_cxx_throw(void* object, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<EffectorSkeletal>::vfunc_1
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>
+// @summary Always throws; if the held EffectorSkeletal pointer is non-null, first reports via ext_0046C4E0 at (ptr + 0xA8), then throws a DerivedException.
+// @field ExprParser::ReadMethodType<EffectorSkeletal> +0x00 void* m_pObject
+// @field EffectorSkeletal +0xA8 void* field_0xA8
+void fn_00636470(void* self) {
+    void* object = *static_cast<void**>(self);
+    if (object != nullptr) {
+        ext_0046C4E0(static_cast<unsigned char*>(object) + 0x90);
+    }
+    // The exception object is constructed in-place on the stack by ext_0046C3C0.
+    alignas(16) unsigned char exception[64];
+    ext_0046C3C0(exception);
+    lift_cxx_throw(exception, mem_009DEC1C);
+}
+} // namespace lift_006399F0
+} // namespace lift_00636470
+
+// [0x00636EC0] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearStiffness(void) const, 0>::vfunc_2 (97 bytes)
+namespace lift_00636EC0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearStiffness(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_00636EC0(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0xCC);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_00636EC0
+
+// [0x006374A0] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0>::vfunc_2 (97 bytes)
+namespace lift_006374A0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_006374A0(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0xEC);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_006374A0
+
+// [0x00637840] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingStiffness(void) const, 0>::vfunc_2 (97 bytes)
+namespace lift_00637840 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingStiffness(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_00637840(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0xD4);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_00637840
+
+// [0x00637B50] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingDamping(void) const, 0>::vfunc_2 (97 bytes)
+namespace lift_00637B50 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingDamping(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getSwingDamping(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_00637B50(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0xDC);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_00637B50
+
+// [0x00638350] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistStiffness(void) const, 0>::vfunc_2 (97 bytes)
+namespace lift_00638350 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistStiffness(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistStiffness(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_00638350(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0xD8);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_00638350
+
+// [0x00638940] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistForceLimit(void) const, 0>::vfunc_2 (97 bytes)
+namespace lift_00638940 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistForceLimit(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTwistForceLimit(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_00638940(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0xE8);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_00638940
+
+// [0x00638E50] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_00638E50 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x005DA9C0 (ExprParser::ReadMethodType<NMData::VideoPlaneData, int, getEndFrame>::vfunc_0).
+namespace lift_005DA9C0 {
+// Thiscall-style external: `self` is the out ValueType, `value` the int read from the object.
+extern void ext_006720C0(void* self, int value);
+// Exception-object constructor (thiscall; `self` is the storage for the exception object).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// RTTI ThrowInfo for the exception thrown on a null handle (VA 0x009DEC1C).
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, int, getEndFrame>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>
+// @summary Reads VideoPlaneData::endFrame (+0x24) from the handle's object into the out value; throws if the handle is null.
+// @field NMData::VideoPlaneData +0x24 int field_0x24
+void* fn_00638E50(void* self, void* out, void* const* in) {
+    (void)self;  // `this` (ecx) is unused by the original code.
+
+    void* obj = *in;
+    if (obj == nullptr) {
+        // Original builds an exception object in the frame and throws it.
+        // Storage size is not recovered; 64 bytes is a conservative placeholder.
+        alignas(16) unsigned char exception[64] = {};
+        ext_0046C3C0(exception);
+        ext_006A6DD2(exception, mem_009DEC1C);
+        return out;  // not reached: the throw above does not return
+    }
+
+    ext_006720C0(out, lift_field<int>(obj, 0xC0));
+    return out;
+}
+} // namespace lift_005DA9C0
+} // namespace lift_00638E50
+
+// [0x00638EA0] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_4 (74 bytes)
+namespace lift_00638EA0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B12D0 (ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_4).
+namespace lift_004B12D0 {
+// @name ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, int, &NMData::GraphEntryData::getColor, 0>
+// @summary Reads through a pointer-to-object; formats the object's +0x20 field into out via ext_0046C500 and returns out, or throws if the object pointer is null.
+// @field NMData::GraphEntryData +0x20 uint32_t field_0x20
+
+extern void* ext_0046C500(void* out_str, uint8_t flag);
+extern void ext_0046C3C0(void* self);
+[[noreturn]] extern void ext_006A6DD2(void* exc_obj, const void* type_info);
+extern uint8_t mem_009DEC1C;
+
+void* fn_00638EA0(void* out, void** src) {
+    void* obj = *src;
+    if (obj != nullptr) {
+        uint32_t flag = *reinterpret_cast<uint32_t*>(static_cast<char*>(obj) + 0xC0);
+        ext_0046C500(out, static_cast<uint8_t>(flag));
+        return out;
+    }
+    uint32_t exc = 0;
+    ext_0046C3C0(&exc);
+    ext_006A6DD2(&exc, &mem_009DEC1C);
+}
+} // namespace lift_004B12D0
+} // namespace lift_00638EA0
+
+// [0x006390D0] ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>::vfunc_2 (97 bytes)
+namespace lift_006390D0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_006390D0(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0xF0);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_006390D0
+
+// [0x00642750] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_00642750 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_0048FAF0(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_00642750(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_0048FAF0(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_00642750
+
+// [0x00642A30] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_00642A30 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_00641FD0(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_00642A30(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_00641FD0(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_00642A30
+
+// [0x00642D70] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_00642D70 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_00641FE0(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_00642D70(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_00641FE0(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_00642D70
+
+// [0x00643960] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_00643960 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_0048FAF0(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_00643960(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_0048FAF0(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_00643960
+
+// [0x00643AA0] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_00643AA0 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_00641FD0(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_00643AA0(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_00641FD0(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_00643AA0
+
+// [0x00643D80] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_00643D80 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_00641FE0(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_00643D80(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_00641FE0(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_00643D80
+
+// [0x00644010] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_00644010 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_00641FF0(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_00644010(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_00641FF0(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_00644010
+
+// [0x00644060] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_00644060 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawAABBSEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_00641FF0(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_00644060(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_00641FF0(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_00644060
+
+// [0x006442F0] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_006442F0 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_00642000(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_006442F0(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_00642000(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_006442F0
+
+// [0x00644340] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_00644340 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_00642000(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_00644340(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_00642000(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_00644340
+
+// [0x00644680] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>::vfunc_1 (77 bytes)
+namespace lift_00644680 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004A48A0 (ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1).
+namespace lift_004A48A0 {
+// Callees and data referenced by 0x004A48A0.
+extern BOOLEAN __thiscall ext_00642010(void* self);       // sub_00496F30 (4B), receives the FSMEditView* in ecx
+extern void __thiscall ext_0046C3C0(void* self);          // sub_0046C3C0 (105B), constructs an exception object in place
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info) [[noreturn]];
+extern const char mem_009DEC1C;                           // ThrowInfo descriptor passed to _CxxThrowException
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawConditions, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0>
+// @summary Reads the FSMEditView pointer held at +0x00 of the method-type object, throws if it is null, and returns 1.0f when the view's predicate (sub_00496F30) is true, else 0.0f.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, 0> +0x00 void* field_0x00
+float fn_00644680(void* self) {
+    void* view = *static_cast<void**>(self);   // mov ecx, [eax]
+    if (view == nullptr) {
+        // Build a local exception object and throw it (original: lea ecx,[esp]; call sub_0046C3C0; push ThrowInfo; _CxxThrowException).
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    return ext_00642010(view) ? 1.0f : 0.0f;   // al != 0 -> fld1, else fldz
+}
+} // namespace lift_004A48A0
+} // namespace lift_00644680
+
+// [0x006446D0] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+namespace lift_006446D0 {
+// @name ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawEnabledOnlyEnabled(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049CAD0 (ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2).
+namespace lift_0049CAD0 {
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::State, bool, isDeactivated>
+// @summary Evaluates NMData::State::isDeactivated on a dereferenced state pointer, throwing if null.
+
+
+extern uint8_t __thiscall ext_00642010(void* self);
+extern void __thiscall ext_0046C3C0(void* self);
+extern void __stdcall ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t __stdcall fn_006446D0(void** statePtr) {
+    void* state = *statePtr;
+    if (state != nullptr) {
+        uint8_t result = ext_00642010(state);
+        return result != 0 ? 1u : 0u;
+    }
+
+    uint8_t exceptionObj[0x28];
+    ext_0046C3C0(exceptionObj);
+    ext_006A6DD2(exceptionObj, reinterpret_cast<void*>(0x009DEC1C));
+    return 0;
+}
+} // namespace lift_0049CAD0
+} // namespace lift_006446D0
+
+// [0x00649F70] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_00649F70 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentAlpha(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00648EC0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0097E3D8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00649F70(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00648EC0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0097E3D8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00649F70
+
+// [0x0064A580] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_0064A580 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentBeta(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00648ED0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0097E3D8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0064A580(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00648ED0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0097E3D8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0064A580
+
+// [0x0064AB90] ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_0064AB90 {
+// @name ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<RelationshipRPROMagnet, float, {public: float __thiscall RelationshipRPROMagnet::getCurrentGamma(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_00648EE0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0097E3D8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0064AB90(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_00648EE0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0097E3D8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0064AB90
+
+// [0x00651580] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_00651580 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitTwistAngle(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0064EA20(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_009802E8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00651580(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0064EA20(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_009802E8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00651580
+
+// [0x00651B90] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_00651B90 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle1(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0064EA30(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_009802E8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00651B90(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0064EA30(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_009802E8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00651B90
+
+// [0x006521A0] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_006521A0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getSoftLimitSwingAngle2(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0064EA40(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_009802E8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_006521A0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0064EA40(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_009802E8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_006521A0
+
+// [0x006527B0] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_006527B0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0064EA50(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_009802E8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_006527B0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0064EA50(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_009802E8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_006527B0
+
+// [0x00652DC0] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_00652DC0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle1(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0064EA60(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_009802E8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00652DC0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0064EA60(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_009802E8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00652DC0
+
+// [0x006533D0] ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_006533D0 {
+// @name ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<SkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitSwingAngle2(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0064EA70(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_009802E8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_006533D0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0064EA70(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_009802E8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_006533D0
+
+// [0x0066F2D0] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getY(void) const, 0>::vfunc_0 (72 bytes)
+namespace lift_0066F2D0 {
+// @name ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getY(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getY(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00635500 (ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>::vfunc_0).
+namespace lift_00635500 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<EffectorSkeletal, float, &public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B9320 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0).
+namespace lift_004B9320 {
+// Known callee 0x00672080: sub_00672080 (18B). thiscall on out-object, one float stack arg.
+extern void ext_00672080(void* self, float value);
+// Known callee 0x0046C3C0: sub_0046C3C0 (105B). thiscall on a local object (exception-path setup).
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// Type-info address pushed before the throw (RTTI for the thrown exception).
+static constexpr uintptr_t kThrowInfo_009DEC1C = 0x009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitLength, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitLength(void) const, 0>
+// @summary Reads the EngineData pointer from the source ValuePtr; if present, wraps its unitLength float into the out ValuePtr, otherwise throws.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+// @field NMData::EngineData +0x44 float unitLength
+void* fn_0066F2D0(void* out, void* const* src) {
+    // Original: eax = *src; if (eax) { push float [eax+0x44]; sub_00672080(out, value); return out; }
+    void* engine = src ? *src : nullptr;
+    if (engine != nullptr) {
+        float unit_length = lift_field<float>(engine, 0x4);
+        ext_00672080(out, unit_length);
+        return out;
+    }
+
+    // Null path: build a local object and throw it.
+    alignas(8) unsigned char local[16] = {};
+    ext_0046C3C0(local);
+    ext_006A6DD2(local, reinterpret_cast<const void*>(kThrowInfo_009DEC1C));
+    return out;
+}
+} // namespace lift_004B9320
+} // namespace lift_00635500
+} // namespace lift_0066F2D0
+
+// [0x0066F350] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getY(void) const, 0>::vfunc_2 (94 bytes)
+namespace lift_0066F350 {
+// @name ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getY(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getY(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004B89A0 (ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2).
+namespace lift_004B89A0 {
+extern void ext_006A6DE0(double value);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* type_info);
+extern const double mem_00993828;   // .rdata double 0.5
+extern const uint32_t mem_009DEC1C; // .rdata u32 0x00000000 (throw type info)
+
+// @name ExprParser::ReadMethodType<NMData::EngineData, float, getUnitMass, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>
+// @summary Reads the EngineData target's float at +0x48, rounds it half away from zero, and passes it to ext_006A6DE0; throws if the target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 NMData::EngineData* target
+// @field NMData::EngineData +0x48 float field_0x48
+void fn_0066F350(void* self) {
+    const auto* target = *lift_field<unsigned char* const*>(self, 0x00);
+    if (target == nullptr) {
+        alignas(8) unsigned char exception_object[16] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+    }
+    const float x = *reinterpret_cast<const float*>(target + 0x4);
+    const double adjusted = (!(x >= 0.0f))
+                                ? static_cast<double>(x) - mem_00993828
+                                : static_cast<double>(x) + mem_00993828;
+    ext_006A6DE0(adjusted);
+}
+} // namespace lift_004B89A0
+} // namespace lift_0066F350
+
+// [0x00670190] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>::vfunc_3 (73 bytes)
+namespace lift_00670190 {
+// @name ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0067C550(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_00987B78;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_00670190(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0067C550(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_00987B78) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_00670190
+
+// [0x00683710] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_0 (113 bytes)
+namespace lift_00683710 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x005B2510 (ExprParser::ReadMethodType<Geometry>::vfunc_0 (Geometry::getTypeNameNonConst)).
+namespace lift_005B2510 {
+// sub_005B1220 (138B): builds a std::string into `out` from the object's vtable pointer; returns `out`.
+extern void* ext_00683100(void* out, void* vtbl);
+// sub_006720E0 (43B): thiscall helper on `self`, receives the string returned above.
+extern void ext_006720E0(void* self, void* str);
+// Import slot for std::string::~basic_string (the value is the destructor's address).
+extern int mem_00924FF4;
+
+// @name ExprParser::ReadMethodType<Geometry>::vfunc_0 (Geometry::getTypeNameNonConst)
+// @class ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0>
+// @summary Builds the Geometry type-name string from the object's vtable, forwards it to a helper, destroys the temporary, and returns self.
+// @field ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Geometry::getTypeNameNonConst(void) const, 0> +0x00 void* vftable
+void* fn_00683710(void* self, void* /*second stack arg, unused (ret 0x8)*/) {
+    // Temporary std::string storage (MSVC 8.0 std::string is 0x1C bytes).
+    alignas(8) unsigned char str_buf[0x1C] = {};
+
+    void* vtbl = lift_field<void*>(self, 0x00);
+    void* str = ext_00683100(str_buf, vtbl);
+    ext_006720E0(self, str);
+
+    using StrDtor = void (*)(void*);
+    reinterpret_cast<StrDtor>(static_cast<uintptr_t>(mem_00924FF4))(str_buf);
+
+    return self;
+}
+} // namespace lift_005B2510
+} // namespace lift_00683710
+
+// [0x00683790] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_1 (109 bytes)
+namespace lift_00683790 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004C0660 (ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_1).
+namespace lift_004C0660 {
+// Callee: sub_004C0280 (stack args: out-string buffer, then the held value; callee cleans; returns pointer to the std::string it filled).
+extern void* ext_00683100(void* out, uint32_t value);
+// Import slots (IAT entries): MSVCP80 basic_string::c_str, MSVCP80 basic_string::~basic_string, MSVCR80 atof.
+extern void* mem_00924FF0;
+extern void* mem_00924FF4;
+extern void* mem_009251F0;
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Fetches the property-source description string for the held value via ext_004C0280, converts it with atof, and returns it as float.
+// @field ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1> +0x00 uint32_t field_0x00
+float fn_00683790(void* self) {
+    using CStrFn = const char* (*)(void* str);
+    using DtorFn = void (*)(void* str);
+    using AtofFn = double (*)(const char* s);
+
+    // Local std::string storage filled by ext_004C0280 (original frame base; 0x1C bytes).
+    alignas(8) unsigned char strBuf[0x1C] = {};
+
+    // arg = this->field_0x00
+    uint32_t arg = lift_field<uint32_t>(self, 0x00);
+
+    // str = ext_004C0280(strBuf, arg); returns the populated string object.
+    void* str = ext_00683100(strBuf, arg);
+
+    // cstr = str->c_str()
+    const char* cstr = reinterpret_cast<CStrFn>(mem_00924FF0)(str);
+
+    // result = (float)atof(cstr)
+    float result = static_cast<float>(reinterpret_cast<AtofFn>(mem_009251F0)(cstr));
+
+    // str->~basic_string()
+    reinterpret_cast<DtorFn>(mem_00924FF4)(str);
+
+    return result;
+}
+} // namespace lift_004C0660
+} // namespace lift_00683790
+
+// [0x00683E50] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_00683E50 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_006829E0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_00683E50(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_006829E0(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_00683E50
+
+// [0x00684170] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_00684170 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_0049A9F0(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_00684170(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_0049A9F0(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_00684170
+
+// [0x00684240] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_00684240 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_0049A9F0(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_00684240(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_0049A9F0(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_00684240
+
+// [0x006842B0] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_006842B0 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_0049A9F0(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_006842B0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_0049A9F0(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_006842B0
+
+// [0x006847C0] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_006847C0 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_006829E0(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_006847C0(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_006829E0(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_006847C0
+
+// [0x00684890] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_00684890 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_006829E0(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_00684890(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_006829E0(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_00684890
+
+// [0x00684D20] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_00684D20 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_00682E10(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_00684D20(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_00682E10(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_00684D20
+
+// [0x00684D70] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_00684D70 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_00682E10(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_00684D70(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_00682E10(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_00684D70
+
+// [0x00684DE0] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_00684DE0 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_00682E10(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_00684DE0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_00682E10(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_00684DE0
+
+// [0x00685310] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>::vfunc_1 (73 bytes)
+namespace lift_00685310 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004CF340 (ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1).
+namespace lift_004CF340 {
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>::vfunc_1
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::string const&, getPhysicsLevel>
+// @summary Reads the physics level string from an IncarnationEventData pointer and converts it to float, throwing on null.
+
+
+void* __thiscall ext_00672400(void* self);
+void __thiscall ext_0046C3C0(void* self);
+[[noreturn]] void __stdcall ext_006A6DD2(void* exceptionObject, uint32_t throwInfo);
+
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009251F0;
+
+using StdStringCStrFn = const char* (__thiscall*)(void* self);
+using AtofFn = double(__cdecl*)(const char* str);
+
+float __stdcall fn_00685310(void** targetPtr) {
+    void* obj = *targetPtr;
+    if (obj != nullptr) {
+        void* strPtr = ext_00672400(obj);
+        auto cstrFn = reinterpret_cast<StdStringCStrFn>(static_cast<uintptr_t>(mem_00924FF0));
+        const char* cstr = cstrFn(strPtr);
+        auto atofFn = reinterpret_cast<AtofFn>(static_cast<uintptr_t>(mem_009251F0));
+        double val = atofFn(cstr);
+        return static_cast<float>(val);
+    }
+
+    uint8_t excBuf[0x28];
+    ext_0046C3C0(excBuf);
+    ext_006A6DD2(excBuf, 0x009DEC1Cu);
+}
+} // namespace lift_004CF340
+} // namespace lift_00685310
+
+// [0x006853E0] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>::vfunc_3 (104 bytes)
+namespace lift_006853E0 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004885E0 (ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3).
+namespace lift_004885E0 {
+extern void* ext_00672400(void* self);
+extern void ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* pExceptionObject, void* pThrowInfo);
+
+extern uint32_t mem_00924FC0;
+extern uint8_t mem_0092F10C;
+extern uint8_t mem_0093A810;
+extern uint8_t mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData,getCharacterName>::vfunc_3
+// @class ExprParser::ReadMethodType
+// @summary Checks whether the AnimationEventData character name matches either of two expected strings, throwing if the target pointer is null.
+uint8_t fn_006853E0(void* self, void* arg1) {
+    (void)self;
+    void* obj = *reinterpret_cast<void**>(arg1);
+    if (!obj) {
+        uint8_t exc[0x28];
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, &mem_009DEC1C);
+        return 0;
+    }
+
+    void* str = ext_00672400(obj);
+    using StrEqFn = uint8_t(__cdecl*)(void*, void*);
+    auto str_eq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC0));
+
+    if (str_eq(str, &mem_0092F10C) != 0) {
+        return 1;
+    }
+    if (str_eq(str, &mem_0093A810) != 0) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004885E0
+} // namespace lift_006853E0
+
+// [0x00685450] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_00685450 {
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_00672400(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_004276B0(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_00685450(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_00672400(obj);
+    ext_004276B0(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_00685450
+
+// [0x0068C690] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_0068C690 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0068BDC0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0098DCD8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0068C690(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0068BDC0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0098DCD8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0068C690
+
+// [0x0068CCA0] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_0068CCA0 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0068BED0(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0098DCD8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0068CCA0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0068BED0(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0098DCD8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0068CCA0
+
+// [0x0068D2B0] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_0068D2B0 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randExc(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0068BE70(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0098DCD8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0068D2B0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0068BE70(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0098DCD8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0068D2B0
+
+// [0x0068D8C0] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>::vfunc_3 (73 bytes)
+namespace lift_0068D8C0 {
+// @name ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>::vfunc_3
+// @class ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::gaussian(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x00471C60 (ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3).
+namespace lift_00471C60 {
+extern float ext_0068BC30(void* self);
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+// Throw info blob referenced by the original push 0x009DEC1C.
+extern char mem_009DEC1C;
+// Double constant 1e-06 at 0x0093B418.
+extern const double mem_0098DCD8;
+
+// @name ReadMethodType_RuntimeEngine_getSimulationFrameRate_vfunc_3
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0>
+// @summary Returns 1 if RuntimeEngine::getSimulationFrameRate() is at least 1e-6 (NaN yields 0); throws if the engine pointer is null.
+// @field ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0> +0x00 void* field_0x00
+int fn_0068D8C0(void* self) {
+    void* engine = lift_field<void*>(self, 0x00);
+    if (engine == nullptr) {
+        // Original builds a local exception object in the frame and throws it.
+        alignas(8) uint8_t exception_object[0x28] = {};
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object, &mem_009DEC1C);
+        return 0;
+    }
+
+    float rate = ext_0068BC30(engine);
+    // Original: fcomp against 1e-6; C0 set (below or unordered) -> 0, else 1.
+    return (static_cast<double>(rate) >= mem_0098DCD8) ? 1 : 0;
+}
+} // namespace lift_00471C60
+} // namespace lift_0068D8C0
+
+// [0x0068DEA0] ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_0068DEA0 {
+// @name ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_0052F600(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_0068DEA0(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_0052F600(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_0068DEA0
+
+// [0x0068E1C0] ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_0068E1C0 {
+// @name ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_0052F600(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_0068E1C0(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_0052F600(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_0068E1C0
+
+// [0x00692570] ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>::vfunc_3 (53 bytes)
+namespace lift_00692570 {
+// @name ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0046D950 (ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3).
+namespace lift_0046D950 {
+// __fastcall matches the original __thiscall ABI for a single pointer argument
+// passed in ECX, with no stack arguments to clean up.
+extern int __fastcall ext_00692210(void* self);  // SelectionBuffer::vfunc_21
+extern void __fastcall ext_0046C3C0(void* self); // sub_0046C3C0 (exception-helper ctor)
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, getImageHeight, 0>::vfunc_3
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Returns 1 if the wrapped target is non-null and SelectionBuffer::vfunc_21 on it returns nonzero, else 0; throws when the target is null.
+// @field ExprParser::ValuePtrType +0x00 void* target
+int fn_00692570(void* self) {
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Original constructs a local exception object via sub_0046C3C0 and throws it
+        // (MSVC throw type 0x009DEC1C). The exact exception type is not recoverable
+        // portably, so a std::runtime_error is thrown in its place.
+        unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        throw std::runtime_error("ReadMethodType<ImageExporter>::vfunc_3: null target");
+    }
+
+    int result = ext_00692210(target);
+    return result != 0 ? 1 : 0;
+}
+} // namespace lift_0046D950
+} // namespace lift_00692570
+
+// [0x00692850] ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>::vfunc_4 (73 bytes)
+namespace lift_00692850 {
+// @name ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>::vfunc_4
+// @class ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x0049B5F0 (ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)).
+namespace lift_0049B5F0 {
+// Known callees, declared with the signatures implied by their call sites in this function.
+extern const void* ext_00692210(void* self);                  // sub_0049AA10 (thiscall, ecx = object); yields the state's file-name string
+extern void* ext_0046C500(void* dst, const void* src);        // StdStringCopyConstruct: copy-constructs std::string at dst from src
+extern void ext_0046C3C0(void* self);                         // sub_0046C3C0 (thiscall, ecx = exception object); constructs it
+extern void ext_006A6DD2(void* exc, const void* throwInfo);   // thunk_MSVCR80__CxxThrowException
+
+// Address of the RTTI ThrowInfo descriptor passed to the throw helper.
+static constexpr uintptr_t kThrowInfoVA = 0x009DEC1CU;
+
+// @name ExprParser::ReadMethodType<NMData::State>::vfunc_4 (NMData::State::getFileName)
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Copy-constructs the State's file name into dst (returned) when holder's object is non-null; otherwise throws.
+// (No @field lines: the function reads only the holder's first dword and never touches this class's own fields.)
+void* __stdcall fn_00692850(void* dst, void* const* holder) {
+    void* obj = *holder;
+    if (obj == nullptr) {
+        // Throw path: build a local exception object and throw it.
+        alignas(8) unsigned char exc[0x28] = {};
+        ext_0046C3C0(exc);
+        ext_006A6DD2(exc, reinterpret_cast<const void*>(kThrowInfoVA));
+        return dst; // not reached: the throw helper does not return
+    }
+    const void* name = ext_00692210(obj);
+    ext_0046C500(dst, name);
+    return dst;
+}
+} // namespace lift_0049B5F0
+} // namespace lift_00692850

@@ -1,0 +1,14 @@
+{
+  "va": "0x00419770",
+  "size": 40,
+  "orig_symbol": "ExportUnavailableDialog::vfunc_7_off_74",
+  "src_path": "src/classes/ExportUnavailableDialog.cpp",
+  "lifted_path": "lifted/classes/ExportUnavailableDialog.cpp",
+  "name": "ExportUnavailableDialog::vfunc_7_off_74",
+  "class": "ExportUnavailableDialog",
+  "signature": "void* fn_00419770(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00464670 (CAboutDlg::vfunc_7_off_74).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

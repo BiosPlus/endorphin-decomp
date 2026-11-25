@@ -1,0 +1,28 @@
+{
+  "va": "0x00648930",
+  "size": 7,
+  "orig_symbol": "sub_00648930",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "sub_00648930",
+  "class": "Unknown",
+  "signature": "float fn_00648930(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0046C110 (Unknown::GetFieldF138ViaF8).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xF8",
+      "type": "void*",
+      "name": "field_0xF8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x138",
+      "type": "float",
+      "name": "field_0x138"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

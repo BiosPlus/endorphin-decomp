@@ -1979,3 +1979,37 @@ void* fn_00714540() {
 }
 } // namespace lift_00780270
 } // namespace lift_00714540
+
+// [0x00710620] sub_00710620 (74 bytes)
+namespace lift_00710620 {
+// @name sub_00710620
+// @summary Auto-lifted identical-shape clone of 0x007747F0 (CopyHugeValueToGlobals_007747F0).
+namespace lift_007747F0 {
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B5F0A8;
+extern uint32_t mem_00B5F0AC;
+extern uint32_t mem_00B5F0B0;
+extern uint32_t mem_00B5F0B4;
+extern uint32_t mem_00B5F0B8;
+extern uint32_t mem_00B5F0BC;
+extern uint32_t mem_00B5F0C0;
+extern uint32_t mem_00B5F0C4;
+
+// @name CopyHugeValueToGlobals_007747F0
+// @summary Copies the 8-byte value pointed to by the _HUGE pointer into four consecutive 8-byte globals (0xB605E0..0xB605FC).
+void fn_00710620() {
+    // mem_00925284 holds the address of the MSVCR _HUGE double.
+    const auto* src = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+
+    // Four 8-byte copies, each re-reading the source as the original did.
+    mem_00B5F0A8 = src[0];
+    mem_00B5F0AC = src[1];
+    mem_00B5F0B0 = src[0];
+    mem_00B5F0B4 = src[1];
+    mem_00B5F0B8 = src[0];
+    mem_00B5F0BC = src[1];
+    mem_00B5F0C0 = src[0];
+    mem_00B5F0C4 = src[1];
+}
+} // namespace lift_007747F0
+} // namespace lift_00710620

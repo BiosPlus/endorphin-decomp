@@ -1130,3 +1130,32 @@ bool fn_007C8BB0(void* self, void* cur, void* out) {
     return ext_007DCC20(map, cur, out);
 }
 } // namespace lift_007C8BB0
+
+// [0x007CD530] sub_007CD530 (31 bytes)
+namespace lift_007CD530 {
+// @name sub_007CD530
+// @summary Auto-lifted identical-shape clone of 0x007CD510 (Unknown::ClearOwnerBackref).
+namespace lift_007CD510 {
+// @name Unknown::ClearOwnerBackref
+// @class Unknown
+// @summary If self's owner (self+0x28) points back to self (owner+0x210), clear both links.
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x210 uint32_t field_0x210
+void fn_007CD530(void* self) {
+    // Guest 32-bit addresses are stored as uint32_t fields.
+    const uint32_t self_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    const uint32_t owner_addr = lift_field<uint32_t>(self, 0x210);
+    if (owner_addr == 0) {
+        return;
+    }
+
+    void* owner = reinterpret_cast<void*>(static_cast<uintptr_t>(owner_addr));
+    if (lift_field<uint32_t>(owner, 0x28) != self_addr) {
+        return;
+    }
+
+    lift_field<uint32_t>(owner, 0x28) = 0;
+    lift_field<uint32_t>(self, 0x210) = 0;
+}
+} // namespace lift_007CD510
+} // namespace lift_007CD530

@@ -21,6 +21,7 @@ extern "C" void __fastcall fn_005112A0(void* self, int edx_unused, float value) 
     lift_field<float>(self, 0x44) = value;
 }
 extern "C" void __fastcall ext_00680800(void* self);
+#include <cstdint>
 
 // [0x00515820] sub_00515820 (11 bytes)
 // @name sub_00515820
@@ -126,3 +127,22 @@ void fn_005184D0(void* self, int32_t* value) {
     }
 }
 } // namespace lift_005184D0
+
+// [0x00515830] sub_00515830 (7 bytes)
+namespace lift_00515830 {
+// @name sub_00515830
+// @summary Auto-lifted identical-shape clone of 0x004023C0 (AVIIO::vfunc_23).
+namespace lift_004023C0 {
+// @name AVIIO::vfunc_23
+// @class AVIIO
+// @summary Returns the dword at offset 0xD8 of the object referenced by this->+0x470.
+// @field AVIIO +0x470 uint32_t field_0x470
+// @field Unknown +0xD8 uint32_t field_0xD8
+uint32_t fn_00515830(void* self) {
+    // Pointer at +0x470 is a 32-bit guest address; widen via uintptr_t for host-side typing.
+    const uint32_t inner = lift_field<uint32_t>(self, 0x4);
+    const void* inner_ptr = reinterpret_cast<const void*>(static_cast<uintptr_t>(inner));
+    return lift_field<uint32_t>(inner_ptr, 0x30);
+}
+} // namespace lift_004023C0
+} // namespace lift_00515830

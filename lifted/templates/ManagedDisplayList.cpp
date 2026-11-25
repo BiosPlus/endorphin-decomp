@@ -127,3 +127,54 @@ uint32_t __thiscall fn_0054C090(void* self) {
     return sum;
 }
 } // namespace lift_0054C090
+
+// [0x0054C030] ManagedDisplayList<RenderableList>::vfunc_16 (96 bytes)
+namespace lift_0054C030 {
+// @name ManagedDisplayList<RenderableList>::vfunc_16
+// @class ManagedDisplayList<RenderableList>
+// @summary Auto-lifted identical-shape clone of 0x0054C090 (ManagedDisplayList<RenderableList>::vfunc_17).
+// @field ManagedDisplayList<RenderableList> +0x18 void** field_0x18
+// @field ManagedDisplayList<RenderableList> +0x1C void** field_0x1C
+namespace lift_0054C090 {
+extern void (*mem_00925134)();
+
+// @name ManagedDisplayList<RenderableList>::vfunc_17
+// @class ManagedDisplayList<RenderableList>
+// @summary Sums vfunc_17() across all elements in the RenderableList vector
+// @field ManagedDisplayList<RenderableList> +0x18 void** field_0x18
+// @field ManagedDisplayList<RenderableList> +0x1C void** field_0x1C
+uint32_t __thiscall fn_0054C030(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    uint8_t* vec = obj + 0x14;
+    void** it = *reinterpret_cast<void***>(vec + 0x4);
+    uint32_t sum = 0;
+
+    if (it > *reinterpret_cast<void***>(vec + 0x8)) {
+        mem_00925134();
+    }
+
+    for (;;) {
+        void** end = *reinterpret_cast<void***>(vec + 0x8);
+        if (*reinterpret_cast<void***>(vec + 0x4) > end) {
+            mem_00925134();
+        }
+        if (it == end) {
+            break;
+        }
+        if (it >= *reinterpret_cast<void***>(vec + 0x8)) {
+            mem_00925134();
+        }
+        void* elem = *it;
+        void** vtable = *reinterpret_cast<void***>(elem);
+        auto vfunc_17 = reinterpret_cast<uint32_t(__thiscall*)(void*)>(vtable[0x40 / 4]);
+        sum += vfunc_17(elem);
+        if (it >= *reinterpret_cast<void***>(vec + 0x8)) {
+            mem_00925134();
+        }
+        ++it;
+    }
+
+    return sum;
+}
+} // namespace lift_0054C090
+} // namespace lift_0054C030

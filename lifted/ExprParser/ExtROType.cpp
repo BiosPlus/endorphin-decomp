@@ -255,3 +255,60 @@ uint32_t ExprParser_ExtROType_vfunc_45(void* self, void* arg2) {
     // push arg2; push self; call eax (this = inner)
     return target(inner, self, arg2);
 }
+
+// [0x0066AFC0] ExprParser::ExtROType::vfunc_1 (20 bytes)
+namespace lift_0066AFC0 {
+// @name ExprParser::ExtROType::vfunc_1
+// @class ExprParser::ExtROType
+// @summary Auto-lifted identical-shape clone of 0x0066AF80 (ExprParser::ExtROType::vfunc_15).
+// @field ExprParser::ExtROType +0x0 void* field_0x00
+uint32_t fn_0066AFC0(void* self) {
+    using VFn = uint32_t(__thiscall*)(void* self, void* arg);
+
+    // p = this->field_0x00 (pointer held by ExtROType)
+    void* p = lift_field<void*>(self, 0x00);
+    // obj = p->+0x04 (object whose virtual slot 15 is invoked)
+    void* obj = lift_field<void*>(p, 0x04);
+    // vtbl = obj->vptr; target = vtbl[15] (offset 0x3C)
+    void** vtbl = lift_field<void**>(obj, 0x00);
+    VFn target = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0x4));
+
+    // Tail call: callee's argument slot receives p; result stays in eax.
+    return target(obj, p);
+}
+} // namespace lift_0066AFC0
+
+// [0x0066AFE0] ExprParser::ExtROType::vfunc_2 (20 bytes)
+namespace lift_0066AFE0 {
+// @name ExprParser::ExtROType::vfunc_2
+// @class ExprParser::ExtROType
+// @summary Auto-lifted identical-shape clone of 0x0066AF80 (ExprParser::ExtROType::vfunc_15).
+// @field ExprParser::ExtROType +0x0 void* field_0x00
+uint32_t fn_0066AFE0(void* self) {
+    using VFn = uint32_t(__thiscall*)(void* self, void* arg);
+
+    // p = this->field_0x00 (pointer held by ExtROType)
+    void* p = lift_field<void*>(self, 0x00);
+    // obj = p->+0x04 (object whose virtual slot 15 is invoked)
+    void* obj = lift_field<void*>(p, 0x04);
+    // vtbl = obj->vptr; target = vtbl[15] (offset 0x3C)
+    void** vtbl = lift_field<void**>(obj, 0x00);
+    VFn target = reinterpret_cast<VFn>(lift_field<void*>(vtbl, 0x8));
+
+    // Tail call: callee's argument slot receives p; result stays in eax.
+    return target(obj, p);
+}
+} // namespace lift_0066AFE0
+
+// [0x0066B000] ExprParser::ExtROType::vfunc_4 (33 bytes)
+namespace lift_0066B000 {
+extern void ext_0041CEB0(void* obj, int flag);
+
+// @name ExprParser::ExtROType::vfunc_4
+// @class ExprParser::ExtROType
+// @summary Auto-lifted identical-shape clone of 0x0066CDF0 (ExprParser::ExtROType::vfunc_0).
+void* fn_0066B000(void* self, void* /*arg2*/) {
+    ext_0041CEB0(self, 0);
+    return self;
+}
+} // namespace lift_0066B000

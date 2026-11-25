@@ -13,6 +13,8 @@ extern "C" int mem_00987A04;
 extern "C" int32_t mem_00B59420;
 extern "C" void __fastcall ext_006667A0(void* self);
 extern "C" int mem_0092DF34;
+#include <cstdint>
+#include <cstring>
 
 // [0x00661A00] sub_00661A00 (8 bytes)
 // @name sub_00661A00
@@ -453,3 +455,67 @@ void* fn_00666C90(void* self) {
     return eax;
 }
 } // namespace lift_00666C90
+
+// [0x006616B0] sub_006616B0 (9 bytes)
+namespace lift_006616B0 {
+// @name sub_006616B0
+// @summary Auto-lifted identical-shape clone of 0x00493E00 (forwardVtable0B4_viaFirstField).
+namespace lift_00493E00 {
+// @name forwardVtable0B4_viaFirstField
+// @summary Thunk: loads the object pointed to by self's first field, then tail-calls its vtable slot at +0xB4 with that object as this.
+// @field Unknown +0x00 void* field_0x00
+
+// Original: mov ecx,[ecx]; mov eax,[ecx]; mov edx,[eax+0xB4]; jmp edx
+// Tail call: the callee's return value (eax) is returned unchanged.
+intptr_t fn_006616B0(void* self) {
+    using VirtualFn = intptr_t (*)(void* thisPtr);
+
+    void* obj = *reinterpret_cast<void**>(self);                       // mov ecx,[ecx]
+    void** vtable = *reinterpret_cast<void***>(obj);                   // mov eax,[ecx]
+    VirtualFn target = reinterpret_cast<VirtualFn>(
+        vtable[0x18 / sizeof(void*)]);                                 // mov edx,[eax+0xB4]
+    return target(obj);                                                // jmp edx
+}
+} // namespace lift_00493E00
+} // namespace lift_006616B0
+
+// [0x00661880] sub_00661880 (9 bytes)
+namespace lift_00661880 {
+// @name sub_00661880
+// @summary Auto-lifted identical-shape clone of 0x00493E00 (forwardVtable0B4_viaFirstField).
+namespace lift_00493E00 {
+// @name forwardVtable0B4_viaFirstField
+// @summary Thunk: loads the object pointed to by self's first field, then tail-calls its vtable slot at +0xB4 with that object as this.
+// @field Unknown +0x00 void* field_0x00
+
+// Original: mov ecx,[ecx]; mov eax,[ecx]; mov edx,[eax+0xB4]; jmp edx
+// Tail call: the callee's return value (eax) is returned unchanged.
+intptr_t fn_00661880(void* self) {
+    using VirtualFn = intptr_t (*)(void* thisPtr);
+
+    void* obj = *reinterpret_cast<void**>(self);                       // mov ecx,[ecx]
+    void** vtable = *reinterpret_cast<void***>(obj);                   // mov eax,[ecx]
+    VirtualFn target = reinterpret_cast<VirtualFn>(
+        vtable[0x10 / sizeof(void*)]);                                 // mov edx,[eax+0xB4]
+    return target(obj);                                                // jmp edx
+}
+} // namespace lift_00493E00
+} // namespace lift_00661880
+
+// [0x00661A30] sub_00661A30 (10 bytes)
+namespace lift_00661A30 {
+// @name sub_00661A30
+// @summary Auto-lifted identical-shape clone of 0x0046C110 (Unknown::GetFieldF138ViaF8).
+namespace lift_0046C110 {
+// @name Unknown::GetFieldF138ViaF8
+// @class Unknown
+// @summary Returns the float at +0x138 of the sub-object pointed to by self+0xF8.
+// @field Unknown +0xF8 void* field_0xF8
+// @field Unknown +0x138 float field_0x138
+float fn_00661A30(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    auto* sub = *reinterpret_cast<unsigned char**>(base + 0x4);
+    return *reinterpret_cast<float*>(sub + 0x138);
+}
+} // namespace lift_0046C110
+} // namespace lift_00661A30

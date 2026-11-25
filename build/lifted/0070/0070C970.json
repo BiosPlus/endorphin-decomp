@@ -1,0 +1,13 @@
+{
+  "va": "0x0070C970",
+  "size": 74,
+  "orig_symbol": "sub_0070C970",
+  "src_path": "src/clones/auto_clones_700000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_700000.cpp",
+  "name": "sub_0070C970",
+  "signature": "void fn_0070C970()",
+  "summary": "Auto-lifted identical-shape clone of 0x007747F0 (CopyHugeValueToGlobals_007747F0).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

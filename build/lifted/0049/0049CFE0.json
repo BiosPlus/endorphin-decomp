@@ -1,0 +1,22 @@
+{
+  "va": "0x0049CFE0",
+  "size": 15,
+  "orig_symbol": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_37",
+  "src_path": "src/templates/PrimitiveProxyType.cpp",
+  "lifted_path": "lifted/templates/PrimitiveProxyType.cpp",
+  "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_37",
+  "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+  "signature": "extern \"C\" void __stdcall fn_0049CFE0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0049E2E0 (ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_38).",
+  "fields": [
+    {
+      "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

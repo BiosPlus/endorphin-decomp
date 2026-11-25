@@ -18,7 +18,7 @@ struct EffectorSkeletal_Fields {
     // +0xA0  float                    desiredPosition_y  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x006330E0)
     // +0xA4  float                    desiredPosition_z  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x006330E0)
     // +0xA8  float                    desiredLinearVelocity_x  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x00633140) // CONFLICT: multiple definitions at +0xA8
-    // +0xA8  void*                    field_0xA8  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x006399F0, 0x00695740) // CONFLICT: multiple definitions at +0xA8
+    // +0xA8  void*                    field_0xA8  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x0062E480, 0x00636470, 0x00639730, 0x006399F0, 0x00695740) // CONFLICT: multiple definitions at +0xA8
     // +0xAC  float                    desiredLinearVelocity_y  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x00633140)
     // +0xB0  float                    desiredLinearVelocity_z  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x00633140)
     // +0xF0  float                    field_0xF0  (evidence: 0x00630D00, 0x00630D40)

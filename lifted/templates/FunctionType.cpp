@@ -284,3 +284,57 @@ uint32_t __thiscall fn_0068C1E0(uint32_t self, uint32_t arg1, uint32_t arg2, uin
     return arg1;
 }
 } // namespace lift_0068C1E0
+
+// [0x0068C190] ExprParser::FunctionType<Randomizer, float, float, {public: float __thiscall Randomizer::randDblExcN(float), 0}>::vfunc_48 (80 bytes)
+namespace lift_0068C190 {
+// @name ExprParser::FunctionType<Randomizer, float, float, {public: float __thiscall Randomizer::randDblExcN(float), 0}>::vfunc_48
+// @class ExprParser::FunctionType<Randomizer, float, float, {public: float __thiscall Randomizer::randDblExcN(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0068C1E0 (ExprParser::FunctionType<Randomizer, float, float, {public: float __thiscall Randomizer::randExcN(float), 0}>::vfunc_48).
+namespace lift_0068C1E0 {
+float __thiscall ext_0068BF00(uint32_t self, float val);
+void __thiscall ext_00672080(uint32_t self, float val);
+
+// @name ExprParser::FunctionType<Randomizer, float, float, {public: float __thiscall Randomizer::randExcN(float), 0}>::vfunc_48
+// @class ExprParser::FunctionType<Randomizer, float, float, {public: float __thiscall Randomizer::randExcN(float), 0}>
+// @summary Evaluates an argument expression, invokes Randomizer::randExcN(float), and stores the float result into the output value.
+// @field ExprParser::ValuePtrType +0x4 uint32_t field_0x4
+uint32_t __thiscall fn_0068C190(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    (void)self;
+    uint32_t randomizer = *reinterpret_cast<uint32_t*>(arg2);
+    uint32_t expr = *reinterpret_cast<uint32_t*>(arg3 + 0x4);
+    uint32_t vtable = *reinterpret_cast<uint32_t*>(expr);
+    auto eval_fn = reinterpret_cast<float(__thiscall*)(uint32_t, uint32_t)>(*reinterpret_cast<uint32_t*>(vtable + 0x4));
+    float input = eval_fn(expr, arg3);
+    float result = ext_0068BF00(randomizer, input);
+    ext_00672080(arg1, result);
+    return arg1;
+}
+} // namespace lift_0068C1E0
+} // namespace lift_0068C190
+
+// [0x0068C230] ExprParser::FunctionType<Randomizer, float, float, {public: float __thiscall Randomizer::randN(float), 0}>::vfunc_48 (80 bytes)
+namespace lift_0068C230 {
+// @name ExprParser::FunctionType<Randomizer, float, float, {public: float __thiscall Randomizer::randN(float), 0}>::vfunc_48
+// @class ExprParser::FunctionType<Randomizer, float, float, {public: float __thiscall Randomizer::randN(float), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0068C1E0 (ExprParser::FunctionType<Randomizer, float, float, {public: float __thiscall Randomizer::randExcN(float), 0}>::vfunc_48).
+namespace lift_0068C1E0 {
+float __thiscall ext_0068BE40(uint32_t self, float val);
+void __thiscall ext_00672080(uint32_t self, float val);
+
+// @name ExprParser::FunctionType<Randomizer, float, float, {public: float __thiscall Randomizer::randExcN(float), 0}>::vfunc_48
+// @class ExprParser::FunctionType<Randomizer, float, float, {public: float __thiscall Randomizer::randExcN(float), 0}>
+// @summary Evaluates an argument expression, invokes Randomizer::randExcN(float), and stores the float result into the output value.
+// @field ExprParser::ValuePtrType +0x4 uint32_t field_0x4
+uint32_t __thiscall fn_0068C230(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    (void)self;
+    uint32_t randomizer = *reinterpret_cast<uint32_t*>(arg2);
+    uint32_t expr = *reinterpret_cast<uint32_t*>(arg3 + 0x4);
+    uint32_t vtable = *reinterpret_cast<uint32_t*>(expr);
+    auto eval_fn = reinterpret_cast<float(__thiscall*)(uint32_t, uint32_t)>(*reinterpret_cast<uint32_t*>(vtable + 0x4));
+    float input = eval_fn(expr, arg3);
+    float result = ext_0068BE40(randomizer, input);
+    ext_00672080(arg1, result);
+    return arg1;
+}
+} // namespace lift_0068C1E0
+} // namespace lift_0068C230

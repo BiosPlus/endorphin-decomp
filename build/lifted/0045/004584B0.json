@@ -1,0 +1,22 @@
+{
+  "va": "0x004584B0",
+  "size": 10,
+  "orig_symbol": "sub_004584B0",
+  "src_path": "src/leaf/tiny_450000.cpp",
+  "lifted_path": "lifted/leaf/tiny_450000.cpp",
+  "name": "sub_004584B0",
+  "class": "PoseTool",
+  "signature": "void* fn_004584B0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x005455F0 (PoseTool::vfunc_28).",
+  "fields": [
+    {
+      "class": "PoseTool",
+      "offset": "+0xA0",
+      "type": "void*",
+      "name": "field_0xA0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

@@ -16,6 +16,7 @@ extern "C" int mem_00990D38;
 extern "C" uintptr_t mem_009244D4;
 extern "C" uintptr_t mem_009242F8;
 #include <cstdint>
+#include <cstring>
 
 // [0x006A2C20] sub_006A2C20 (11 bytes)
 // @name sub_006A2C20
@@ -455,3 +456,67 @@ extern void fn_006ACEE0(void* self, uint8_t flag, const uint8_t* src) {
     lift_field<uint8_t>(target, 0x04) = *src;
 }
 } // namespace lift_006ACEE0
+
+// [0x006A4CD0] sub_006A4CD0 (9 bytes)
+namespace lift_006A4CD0 {
+// @name sub_006A4CD0
+// @summary Auto-lifted identical-shape clone of 0x00661980 (setVtable_0093BFB4).
+namespace lift_00661980 {
+// @name setVtable_0093BFB4
+// @summary Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).
+// @field Unknown +0x00 uint32_t field_0x00
+
+void fn_006A4CD0(void* self) {
+    *static_cast<uint32_t*>(self) = 0x1u;
+}
+} // namespace lift_00661980
+} // namespace lift_006A4CD0
+
+// [0x006ACFC0] sub_006ACFC0 (7 bytes)
+namespace lift_006ACFC0 {
+// @name sub_006ACFC0
+// @summary Auto-lifted identical-shape clone of 0x0046F910 (Unknown::ReadF8ObjectByte12C).
+namespace lift_0046F910 {
+// @name Unknown::ReadF8ObjectByte12C
+// @class Unknown
+// @summary Returns the low byte at +0x12C of the object referenced by this+0xF8.
+// @field Unknown +0xF8 void* field_0xF8
+// @field Unknown +0x12C uint8_t field_0x12C
+uint8_t fn_006ACFC0(void* self) {
+    void* inner = lift_field<void*>(self, 0x4);
+    return lift_field<uint8_t>(inner, 0x4);
+}
+} // namespace lift_0046F910
+} // namespace lift_006ACFC0
+
+// [0x006AD090] sub_006AD090 (7 bytes)
+namespace lift_006AD090 {
+// @name sub_006AD090
+// @summary Auto-lifted identical-shape clone of 0x0046F910 (Unknown::ReadF8ObjectByte12C).
+namespace lift_0046F910 {
+// @name Unknown::ReadF8ObjectByte12C
+// @class Unknown
+// @summary Returns the low byte at +0x12C of the object referenced by this+0xF8.
+// @field Unknown +0xF8 void* field_0xF8
+// @field Unknown +0x12C uint8_t field_0x12C
+uint8_t fn_006AD090(void* self) {
+    void* inner = lift_field<void*>(self, 0x4);
+    return lift_field<uint8_t>(inner, 0x5);
+}
+} // namespace lift_0046F910
+} // namespace lift_006AD090
+
+// [0x006AFDC0] sub_006AFDC0 (9 bytes)
+namespace lift_006AFDC0 {
+// @name sub_006AFDC0
+// @summary Auto-lifted identical-shape clone of 0x00661980 (setVtable_0093BFB4).
+namespace lift_00661980 {
+// @name setVtable_0093BFB4
+// @summary Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).
+// @field Unknown +0x00 uint32_t field_0x00
+
+void fn_006AFDC0(void* self) {
+    *static_cast<uint32_t*>(self) = 0x991178u;
+}
+} // namespace lift_00661980
+} // namespace lift_006AFDC0

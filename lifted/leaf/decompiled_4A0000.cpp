@@ -45,6 +45,7 @@ uint32_t fn_004A2510(void* self) {
     return reinterpret_cast<Slot1Fn>(vtable[1])(target);
 }
 } // namespace lift_004A2510
+#include <cstring>
 
 // [0x004A5BE0] sub_004A5BE0 (25 bytes)
 namespace lift_004A5BE0 {
@@ -617,3 +618,68 @@ uint32_t __cdecl sub_004A2410() {
     return 0x00ADDA7Cu;
 }
 } // namespace lift_004A2410
+
+// [0x004A5890] sub_004A5890 (77 bytes)
+namespace lift_004A5890 {
+// @name sub_004A5890
+// @summary Auto-lifted identical-shape clone of 0x004AD970 (Unknown::DestroyStringAndArray).
+namespace lift_004AD970 {
+// Known callee 0x004026E0: StringArray::ReleaseElements (Destroys each 28-byte string element in the array, frees its buffer, and nulls the begin/end/capacity pointers.)
+extern void ext_005B0D90(void* self);
+// Import slot for MSVCP80 std::basic_string<char>::~basic_string (IAT entry, bound at load time).
+extern int mem_00924FF4;
+
+// @name Unknown::DestroyStringAndArray
+// @class Unknown
+// @summary Releases the StringArray at +0x1c, then runs the std::string destructor on the object itself.
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1c StringArray field_0x1c
+void fn_004A5890(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Destroy the string elements held in the array at +0x1c.
+    ext_005B0D90(base + 0x1c);
+
+    // Destroy the std::string at offset 0 via the imported MSVC destructor (thiscall).
+    using StringDtorFn = void(__thiscall*)(void*);
+    auto dtor = reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(mem_00924FF4));
+    dtor(self);
+}
+} // namespace lift_004AD970
+} // namespace lift_004A5890
+
+// [0x004A7440] sub_004A7440 (105 bytes)
+namespace lift_004A7440 {
+// @name sub_004A7440
+// @summary Auto-lifted identical-shape clone of 0x0059B2E0 (TreeMap::find).
+namespace lift_0059B2E0 {
+// @name TreeMap::find
+// @class TreeMap
+// @summary Finds a string key in the red-black tree map and writes an iterator pair (map, node) to out_iter.
+// @field TreeMap +0x04 void* head
+
+
+extern void* ext_004A73F0(void* self, const void* key);
+extern void (*mem_00925134)(void);
+extern uint8_t (*mem_00924EF4)(const void* lhs, const void* rhs);
+
+void* fn_004A7440(void* self, void* out_iter, const void* key) {
+    void* node = ext_004A73F0(self, key);
+    if (!self) {
+        mem_00925134();
+    }
+    void* head = *reinterpret_cast<void**>(reinterpret_cast<uintptr_t>(self) + 0x4);
+    void* result_node = head;
+    if (node != head) {
+        const void* node_key = reinterpret_cast<const void*>(reinterpret_cast<uintptr_t>(node) + 0xc);
+        if (!mem_00924EF4(key, node_key)) {
+            result_node = node;
+        }
+    }
+    void** iter = reinterpret_cast<void**>(out_iter);
+    iter[0] = self;
+    iter[1] = result_node;
+    return out_iter;
+}
+} // namespace lift_0059B2E0
+} // namespace lift_004A7440

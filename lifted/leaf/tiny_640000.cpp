@@ -889,3 +889,109 @@ extern void __thiscall fn_00640940(void* self) {
     base[0x11] = 1;
 }
 } // namespace lift_00640940
+
+// [0x006452C0] sub_006452C0 (10 bytes)
+namespace lift_006452C0 {
+// @name sub_006452C0
+// @summary Auto-lifted identical-shape clone of 0x00401730 (sub_00401730).
+namespace lift_00401730 {
+// @name sub_00401730
+// @summary Auto-lifted identical-shape clone of 0x00545610 (PoseTool::vfunc_14).
+namespace lift_00545610 {
+// @name PoseTool::vfunc_14
+// @class PoseTool
+// @summary Forwards the call to the virtual method at vtable slot 14 (offset 0x38) of the object stored at this+0xA0, passing that object as `this`, and returns its result.
+// @field PoseTool +0xA0 void* field_0xa0
+
+typedef uintptr_t (*lift_vfn_t)(void* self);
+
+uintptr_t fn_006452C0(void* self) {
+    void* target = lift_field<void*>(self, 0x4);
+    void* vtable = lift_field<void*>(target, 0);
+    lift_vfn_t fn = reinterpret_cast<lift_vfn_t>(lift_field<void*>(vtable, 0x18));
+    return fn(target);
+}
+} // namespace lift_00545610
+} // namespace lift_00401730
+} // namespace lift_006452C0
+
+// [0x006452D0] sub_006452D0 (10 bytes)
+namespace lift_006452D0 {
+// @name sub_006452D0
+// @summary Auto-lifted identical-shape clone of 0x00401730 (sub_00401730).
+namespace lift_00401730 {
+// @name sub_00401730
+// @summary Auto-lifted identical-shape clone of 0x00545610 (PoseTool::vfunc_14).
+namespace lift_00545610 {
+// @name PoseTool::vfunc_14
+// @class PoseTool
+// @summary Forwards the call to the virtual method at vtable slot 14 (offset 0x38) of the object stored at this+0xA0, passing that object as `this`, and returns its result.
+// @field PoseTool +0xA0 void* field_0xa0
+
+typedef uintptr_t (*lift_vfn_t)(void* self);
+
+uintptr_t fn_006452D0(void* self) {
+    void* target = lift_field<void*>(self, 0x4);
+    void* vtable = lift_field<void*>(target, 0);
+    lift_vfn_t fn = reinterpret_cast<lift_vfn_t>(lift_field<void*>(vtable, 0x1C));
+    return fn(target);
+}
+} // namespace lift_00545610
+} // namespace lift_00401730
+} // namespace lift_006452D0
+
+// [0x00648910] sub_00648910 (7 bytes)
+namespace lift_00648910 {
+// @name sub_00648910
+// @summary Auto-lifted identical-shape clone of 0x004023C0 (AVIIO::vfunc_23).
+namespace lift_004023C0 {
+// @name AVIIO::vfunc_23
+// @class AVIIO
+// @summary Returns the dword at offset 0xD8 of the object referenced by this->+0x470.
+// @field AVIIO +0x470 uint32_t field_0x470
+// @field Unknown +0xD8 uint32_t field_0xD8
+uint32_t fn_00648910(void* self) {
+    // Pointer at +0x470 is a 32-bit guest address; widen via uintptr_t for host-side typing.
+    const uint32_t inner = lift_field<uint32_t>(self, 0x28);
+    const void* inner_ptr = reinterpret_cast<const void*>(static_cast<uintptr_t>(inner));
+    return lift_field<uint32_t>(inner_ptr, 0xC);
+}
+} // namespace lift_004023C0
+} // namespace lift_00648910
+
+// [0x00648920] sub_00648920 (7 bytes)
+namespace lift_00648920 {
+// @name sub_00648920
+// @summary Auto-lifted identical-shape clone of 0x004023C0 (AVIIO::vfunc_23).
+namespace lift_004023C0 {
+// @name AVIIO::vfunc_23
+// @class AVIIO
+// @summary Returns the dword at offset 0xD8 of the object referenced by this->+0x470.
+// @field AVIIO +0x470 uint32_t field_0x470
+// @field Unknown +0xD8 uint32_t field_0xD8
+uint32_t fn_00648920(void* self) {
+    // Pointer at +0x470 is a 32-bit guest address; widen via uintptr_t for host-side typing.
+    const uint32_t inner = lift_field<uint32_t>(self, 0x2C);
+    const void* inner_ptr = reinterpret_cast<const void*>(static_cast<uintptr_t>(inner));
+    return lift_field<uint32_t>(inner_ptr, 0x4);
+}
+} // namespace lift_004023C0
+} // namespace lift_00648920
+
+// [0x00648930] sub_00648930 (7 bytes)
+namespace lift_00648930 {
+// @name sub_00648930
+// @summary Auto-lifted identical-shape clone of 0x0046C110 (Unknown::GetFieldF138ViaF8).
+namespace lift_0046C110 {
+// @name Unknown::GetFieldF138ViaF8
+// @class Unknown
+// @summary Returns the float at +0x138 of the sub-object pointed to by self+0xF8.
+// @field Unknown +0xF8 void* field_0xF8
+// @field Unknown +0x138 float field_0x138
+float fn_00648930(void* self) {
+    auto* base = static_cast<unsigned char*>(self);
+    auto* sub = *reinterpret_cast<unsigned char**>(base + 0x28);
+    return *reinterpret_cast<float*>(sub + 0x4);
+}
+} // namespace lift_0046C110
+} // namespace lift_00648930

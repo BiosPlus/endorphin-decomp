@@ -1,0 +1,22 @@
+{
+  "va": "0x006452C0",
+  "size": 10,
+  "orig_symbol": "sub_006452C0",
+  "src_path": "src/leaf/tiny_640000.cpp",
+  "lifted_path": "lifted/leaf/tiny_640000.cpp",
+  "name": "sub_006452C0",
+  "class": "PoseTool",
+  "signature": "uintptr_t fn_006452C0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x00401730 (sub_00401730).",
+  "fields": [
+    {
+      "class": "PoseTool",
+      "offset": "+0xA0",
+      "type": "void*",
+      "name": "field_0xa0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

@@ -3,6 +3,7 @@
 #include <new>
 #include <string>
 #include <cstring>
+#include <cstdint>
 
 // [0x00784820]
 namespace lift_00784820 {
@@ -181,3 +182,91 @@ void fn_006BBA40(void) {
 }
 } // namespace lift_006BBA40
 } // namespace lift_00787560
+
+// [0x00780270] sub_00780270 (16 bytes)
+namespace lift_00780270 {
+// @name sub_00780270
+// @summary Auto-lifted identical-shape clone of 0x007140F0 (sub_007140F0).
+namespace lift_007140F0 {
+// @name sub_007140F0
+// @summary Auto-lifted identical-shape clone of 0x00780270 (initGlobalArray_00B608A0).
+namespace lift_00780270 {
+// @name initGlobalArray_00B608A0
+// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
+
+
+extern uint8_t mem_00B608A0;
+extern void* __thiscall ext_00780030(void* self_ptr, int32_t count);
+
+void* fn_00780270() {
+    return ext_00780030(&mem_00B608A0, 0xB1);
+}
+} // namespace lift_00780270
+} // namespace lift_007140F0
+} // namespace lift_00780270
+
+// [0x007844A0] sub_007844A0 (41 bytes)
+namespace lift_007844A0 {
+// @name sub_007844A0
+// @summary Auto-lifted identical-shape clone of 0x006F9380 (sub_006F9380_initGlobals).
+namespace lift_006F9380 {
+extern uint32_t mem_00B60908;
+extern uint32_t mem_00B60910;
+extern uint32_t mem_00B6090C;
+extern uint32_t mem_00B60914;
+
+// @name sub_006F9380_initGlobals
+// @summary Stores four constant words into globals mem_00B5E248/250/24C/254 (no class context).
+void fn_007844A0(void* self) {
+    (void)self;
+    mem_00B60908 = 0xB608ECu;
+    mem_00B60910 = 0xAAF3C0u;
+    mem_00B6090C = 0xB5EB68u;
+    mem_00B60914 = 0x00000000u;
+}
+} // namespace lift_006F9380
+} // namespace lift_007844A0
+
+// [0x00787520] sub_00787520 (36 bytes)
+namespace lift_00787520 {
+// @name sub_00787520
+// @summary Auto-lifted identical-shape clone of 0x006FFEE0 (SetNegHugeGlobals_006FFEE0).
+namespace lift_006FFEE0 {
+namespace lift_006FFEE0 {
+// mem_00925284 holds the address of MSVCR80 _HUGE (a double, +inf); loaded indirectly.
+extern const double* mem_00925284;
+extern double mem_00B60B58;
+extern double mem_00B60B60;
+extern double mem_00B60B68;
+
+// @name SetNegHugeGlobals_006FFEE0
+// @summary Sets three global doubles to -_HUGE (negative infinity), loading _HUGE through the pointer stored at mem_00925284.
+void fn_00787520() {
+    const double* huge = mem_00925284;
+    mem_00B60B58 = -*huge;
+    mem_00B60B68 = -*huge;
+    mem_00B60B60 = -*huge;
+}
+} // namespace lift_006FFEE0
+} // namespace lift_006FFEE0
+} // namespace lift_00787520
+
+// [0x0078D2C0] sub_0078D2C0 (8 bytes)
+namespace lift_0078D2C0 {
+// @name sub_0078D2C0
+// @summary Auto-lifted identical-shape clone of 0x0044C9A0 (sub_0044C9A0).
+namespace lift_0044C9A0 {
+// @name sub_0044C9A0
+// @summary Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).
+namespace lift_00437DE0 {
+// @name callSub00437DC0WithOne
+// @summary Calls ext_00437DC0 with argument 1.
+
+extern void ext_0078D720(void* arg);
+
+void fn_0078D2C0() {
+    ext_0078D720(reinterpret_cast<void*>(static_cast<uintptr_t>(16)));
+}
+} // namespace lift_00437DE0
+} // namespace lift_0044C9A0
+} // namespace lift_0078D2C0

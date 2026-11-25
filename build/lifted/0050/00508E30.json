@@ -1,0 +1,22 @@
+{
+  "va": "0x00508E30",
+  "size": 69,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e",
+  "signature": "void* fn_00508E30(void* self, void* out, void* const* in)",
+  "summary": "Auto-lifted identical-shape clone of 0x005DA9C0 (ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, getEndFrame\u003e::vfunc_0).",
+  "fields": [
+    {
+      "class": "NMData::VideoPlaneData",
+      "offset": "+0x24",
+      "type": "int",
+      "name": "field_0x24"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

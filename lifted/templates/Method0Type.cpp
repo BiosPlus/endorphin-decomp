@@ -799,3 +799,37 @@ void __thiscall fn_005C6250(void* self, void* arg0) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(mem_00B44450));
 }
 } // namespace lift_005C6250
+
+// [0x004CD7C0] ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::clearMetaBodiesFromFSM(void), 0}>::vfunc_41 (14 bytes)
+namespace lift_004CD7C0 {
+extern void ext_004CCDE0(void* self);
+extern void __fastcall ext_004CCDE0(void* self);
+
+// @name ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::clearMetaBodiesFromFSM(void), 0}>::vfunc_41
+// @class ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::clearMetaBodiesFromFSM(void), 0}>
+// @summary Auto-lifted identical-shape clone of 0x0048B150 (ExprParser::Method0Type<NMData::DesiredPoseEventData, fire>::vfunc_41).
+void fn_004CD7C0(void* proxy, void* unused) {
+    (void)unused;
+    void* target = *static_cast<void**>(proxy);
+    ext_004CCDE0(target);
+}
+} // namespace lift_004CD7C0
+
+// [0x0066DCB0] ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>::vfunc_0 (41 bytes)
+namespace lift_0066DCB0 {
+extern void __fastcall ext_0067B860(void* self);
+extern void ext_0067B860(void* self);
+extern void ext_006720C0(void* self, int flag);
+extern void __thiscall ext_0067B860(void* self);
+
+// @name ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>::vfunc_0
+// @class ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>
+// @summary Auto-lifted identical-shape clone of 0x0068BF80 (ExprParser::Method0Type<Randomizer, {public: void __thiscall Randomizer::applySeed(void), 0}>::vfunc_0).
+void* fn_0066DCB0(void* unused, void* out) {
+    (void)unused;
+    void* target = lift_field<void*>(out, 0x00);
+    ext_0067B860(target);
+    ext_006720C0(out, 0);
+    return out;
+}
+} // namespace lift_0066DCB0

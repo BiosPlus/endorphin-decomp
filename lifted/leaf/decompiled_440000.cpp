@@ -1902,3 +1902,30 @@ extern void __thiscall fn_0044B4E0(uint8_t* self) {
     ext_006A5EBA(local_obj);
 }
 } // namespace lift_0044B4E0
+
+// [0x00444360] sub_00444360 (42 bytes)
+namespace lift_00444360 {
+// @name sub_00444360
+// @summary Auto-lifted identical-shape clone of 0x006A7FF0 (Unknown::GetOrResolveProcAddress).
+namespace lift_006A7FF0 {
+// Known callee 0x0041FD20: Unknown::GetOrLoadModule (Returns cached module handle at +0x4; otherwise resolves it by name via GetModuleHandleA, falling back to LoadLibraryA (sets +0x8 flag on load path).)
+extern HMODULE ext_0041FD20(void* self);
+
+// Known .rdata slot 0x009241D8: KERNEL32!GetProcAddress (IAT entry)
+typedef void* (__stdcall *GetProcAddressFn)(HMODULE, LPCSTR);
+extern GetProcAddressFn mem_009241D8;
+
+// @name Unknown::GetOrResolveProcAddress
+// @class Unknown
+// @summary Returns the cached GetProcAddress result at +0x3C, resolving it from the loaded module (name at 0x00990980) on first use; result is written through out.
+// @field Unknown +0x3C void* cachedProc
+void fn_00444360(void* self, void** out) {
+    if (lift_field<void*>(self, 0x44) == nullptr) {
+        HMODULE mod = ext_0041FD20(self);
+        LPCSTR procName = reinterpret_cast<LPCSTR>(static_cast<uintptr_t>(0x9328A0u));
+        lift_field<void*>(self, 0x44) = mem_009241D8(mod, procName);
+    }
+    *out = lift_field<void*>(self, 0x44);
+}
+} // namespace lift_006A7FF0
+} // namespace lift_00444360

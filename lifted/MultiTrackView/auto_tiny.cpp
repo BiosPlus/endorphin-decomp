@@ -303,3 +303,21 @@ void fn_004554C0(void* self) {
         ext_006A60D0();
     }
 }
+
+// [0x00460450] MultiTrackView::TriggeredEventView::vfunc_1 (30 bytes)
+namespace lift_00460450 {
+extern void __fastcall ext_00460310(void* self);
+extern void __cdecl ext_006A5C5C(void* ptr);
+
+// @name MultiTrackView::TriggeredEventView::vfunc_1
+// @class MultiTrackView::TriggeredEventView
+// @summary MSVC scalar deleting destructor: calls sub_00460310 and frees memory when (flags & 1) is set.
+extern void* __fastcall fn_00460450(void* self, int edx_unused, unsigned int flags) {
+    (void)edx_unused;
+    ext_00460310(self);
+    if ((flags & 1u) != 0) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
+} // namespace lift_00460450

@@ -1195,3 +1195,68 @@ bool fn_00555680(void* self, uint32_t count) {
     return true;
 }
 } // namespace lift_00555680
+
+// [0x00559620] sub_00559620 (27 bytes)
+namespace lift_00559620 {
+// @name sub_00559620
+// @summary Auto-lifted identical-shape clone of 0x0049F2E0 (sub_0049F2E0).
+namespace lift_0049F2E0 {
+// @name sub_0049F2E0
+// @summary Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).
+namespace lift_005694F0 {
+extern void __cdecl ext_00558F20(int a1, int a2, void* self, int a4);
+
+// @name DestroyRangeForward_005694F0
+// @class (none)
+// @summary Forwards two stack arguments plus the incoming ECX value to ext_005693E0 (range destroy helper).
+void fn_00559620(void* self, int edx_unused, int a1, int a2) {
+    // Original: push a2, push ecx, push a2, push a1, call ext_005693E0(a1, a2, self, a2).
+    ext_00558F20(a1, a2, self, a2);
+}
+} // namespace lift_005694F0
+} // namespace lift_0049F2E0
+} // namespace lift_00559620
+
+// [0x0055C490] sub_0055C490 (70 bytes)
+namespace lift_0055C490 {
+// @name sub_0055C490
+// @summary Auto-lifted identical-shape clone of 0x00472730 (Tree::lowerBound).
+namespace lift_00472730 {
+// Imported string less-than comparator (function address stored in .rdata).
+extern uint32_t mem_00924EF4;
+
+using KeyLess = bool (__cdecl*)(const void* a, const void* b);
+
+// @name Tree::lowerBound
+// @class Tree
+// @summary MSVC-style std::_Tree lower_bound: walks from the root to the first node whose key is not less than the argument; returns the head (end) sentinel if none.
+// @field Tree +0x04 void* head
+// @field TreeNode +0x00 void* left
+// @field TreeNode +0x04 void* parent_or_root
+// @field TreeNode +0x08 void* right
+// @field TreeNode +0x0C std::string key
+// @field TreeNode +0x39 uint8_t is_nil
+void* __thiscall fn_0055C490(void* self, const void* key) {
+    void* head = lift_field<void*>(self, 0x4);
+    void* node = lift_field<void*>(head, 0x4);  // root
+    void* result = head;                         // end() if nothing qualifies
+
+    if (lift_field<uint8_t>(node, 0x2D) != 0) {
+        return head;
+    }
+
+    KeyLess less = reinterpret_cast<KeyLess>(static_cast<uintptr_t>(mem_00924EF4));
+    while (lift_field<uint8_t>(node, 0x2D) == 0) {
+        if (less(static_cast<char*>(node) + 0xC, key)) {
+            // node.key < key: answer lies in the right subtree.
+            node = lift_field<void*>(node, 0x8);
+        } else {
+            // node.key >= key: candidate; keep searching left.
+            result = node;
+            node = lift_field<void*>(node, 0x0);
+        }
+    }
+    return result;
+}
+} // namespace lift_00472730
+} // namespace lift_0055C490

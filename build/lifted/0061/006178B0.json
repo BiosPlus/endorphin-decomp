@@ -1,0 +1,14 @@
+{
+  "va": "0x006178B0",
+  "size": 30,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getLowerDamping(void) const, 0\u003e::vfunc_16",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getLowerDamping(void) const, 0\u003e::vfunc_16",
+  "class": "ExprParser::ReadMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getLowerDamping(void) const, 0\u003e",
+  "signature": "void* fn_006178B0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0064F1F0 (ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

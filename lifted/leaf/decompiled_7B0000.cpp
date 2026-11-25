@@ -1267,3 +1267,37 @@ void __cdecl sub_007BF930(void* a1, int16_t* buf, int32_t byteCount) {
     }
 }
 } // namespace lift_007BF930
+
+// [0x007BBB40] sub_007BBB40 (70 bytes)
+namespace lift_007BBB40 {
+// @name sub_007BBB40
+// @summary Auto-lifted identical-shape clone of 0x007BBB90 (Unknown::ForEachRow).
+namespace lift_007BBB90 {
+// Known callee 0x007AF200: Unknown::ComputeRowByteCount (Returns byte count (bits rounded up to bytes) of a row from fields at +0x30/+0x40, optionally scaled by +0x4e when the mode at +0x72 equals 1; returns 0 if +0x34 or +0x30 is zero.)
+extern uint32_t ext_00798840(const void* self);
+
+// @name Unknown::ForEachRow
+// @class Unknown
+// @summary Walks a byte span in row-sized steps, invoking the callback at +0x1a0 per row; returns 1 if the span was fully consumed.
+// @field Unknown +0x1a0 RowFn callback
+uint32_t fn_007BBB40(void* self, uint32_t cursor, uint32_t remaining, uint32_t arg4) {
+    using RowFn = uint32_t (*)(void* self, uint32_t cursor, uint32_t rowBytes, uint32_t arg4);
+
+    const uint32_t rowBytes = ext_00798840(self);
+    if (remaining != 0) {
+        const RowFn callback = lift_field<RowFn>(self, 0x1a0);
+        for (;;) {
+            if (callback(self, cursor, rowBytes, arg4) == 0) {
+                break;
+            }
+            cursor += rowBytes;
+            remaining -= rowBytes;
+            if (remaining == 0) {
+                break;
+            }
+        }
+    }
+    return remaining == 0 ? 1u : 0u;
+}
+} // namespace lift_007BBB90
+} // namespace lift_007BBB40

@@ -201,3 +201,123 @@ void fn_0059E9B0(void* arg) {
 void fn_0064F830(void* arg) {
     ext_00671100(4, arg);
 }
+
+// [0x005F35A0] ExprParser::ROWriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}>::vfunc_16 (30 bytes)
+namespace lift_005F35A0 {
+extern void* ext_006A6E9E(void* inptr, long vfDelta, const void* srcType, const void* targetType, int isReference);
+extern int mem_00A2E2F8;
+extern int mem_00A912F8;
+
+// @name ExprParser::ROWriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}>::vfunc_16
+// @class ExprParser::ROWriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{84, {flat}}>
+// @summary Auto-lifted identical-shape clone of 0x0064F1F0 (ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)).
+void* fn_005F35A0(void* self) {
+    return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
+                        reinterpret_cast<const void*>(&mem_00A912F8), 0);
+}
+} // namespace lift_005F35A0
+
+// [0x00603420] ExprParser::ROWriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>::vfunc_16 (30 bytes)
+namespace lift_00603420 {
+extern void* ext_006A6E9E(void* inptr, long vfDelta, const void* srcType, const void* targetType, int isReference);
+extern int mem_00A2E2F8;
+extern int mem_00A93714;
+
+// @name ExprParser::ROWriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>::vfunc_16
+// @class ExprParser::ROWriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>
+// @summary Auto-lifted identical-shape clone of 0x0064F1F0 (ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)).
+void* fn_00603420(void* self) {
+    return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
+                        reinterpret_cast<const void*>(&mem_00A93714), 0);
+}
+} // namespace lift_00603420
+
+// [0x006035B0] ExprParser::ROWriteMethodType<Effector, float, &[thunk]: __thiscall Effector::`vcall'{100, {flat}}>::vfunc_16 (30 bytes)
+namespace lift_006035B0 {
+extern void* ext_006A6E9E(void* inptr, long vfDelta, const void* srcType, const void* targetType, int isReference);
+extern int mem_00A2E2F8;
+extern int mem_00A93750;
+
+// @name ExprParser::ROWriteMethodType<Effector, float, &[thunk]: __thiscall Effector::`vcall'{100, {flat}}>::vfunc_16
+// @class ExprParser::ROWriteMethodType<Effector, float, &[thunk]: __thiscall Effector::`vcall'{100, {flat}}>
+// @summary Auto-lifted identical-shape clone of 0x0064F1F0 (ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)).
+void* fn_006035B0(void* self) {
+    return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
+                        reinterpret_cast<const void*>(&mem_00A93750), 0);
+}
+} // namespace lift_006035B0
+
+// [0x006274D0] ExprParser::ROWriteMethodType<Sensors::SensorAbsoluteOrientation, int, &public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)>::vfunc_16 (30 bytes)
+namespace lift_006274D0 {
+extern void* ext_006A6E9E(void* inptr, long vfDelta, const void* srcType, const void* targetType, int isReference);
+extern int mem_00A2E2F8;
+extern int mem_00A93424;
+
+// @name ExprParser::ROWriteMethodType<Sensors::SensorAbsoluteOrientation, int, &public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)>::vfunc_16
+// @class ExprParser::ROWriteMethodType<Sensors::SensorAbsoluteOrientation, int, &public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)>
+// @summary Auto-lifted identical-shape clone of 0x0064F1F0 (ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)).
+void* fn_006274D0(void* self) {
+    return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
+                        reinterpret_cast<const void*>(&mem_00A93424), 0);
+}
+} // namespace lift_006274D0
+
+// [0x0062A0A0] ExprParser::ROWriteMethodType<Sensors::SensorMetaBodyRelativeTime, float, &public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)>::vfunc_16 (30 bytes)
+namespace lift_0062A0A0 {
+extern void* ext_006A6E9E(void* inptr, long vfDelta, const void* srcType, const void* targetType, int isReference);
+extern int mem_00A2E2F8;
+extern int mem_00A93644;
+
+// @name ExprParser::ROWriteMethodType<Sensors::SensorMetaBodyRelativeTime, float, &public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)>::vfunc_16
+// @class ExprParser::ROWriteMethodType<Sensors::SensorMetaBodyRelativeTime, float, &public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)>
+// @summary Auto-lifted identical-shape clone of 0x0064F1F0 (ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)).
+void* fn_0062A0A0(void* self) {
+    return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
+                        reinterpret_cast<const void*>(&mem_00A93644), 0);
+}
+} // namespace lift_0062A0A0
+
+// [0x0062A0F0] ExprParser::ROWriteMethodType<Sensors::SensorRelativeTime, float, &public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)>::vfunc_16 (30 bytes)
+namespace lift_0062A0F0 {
+extern void* ext_006A6E9E(void* inptr, long vfDelta, const void* srcType, const void* targetType, int isReference);
+extern int mem_00A2E2F8;
+extern int mem_00A97CF8;
+
+// @name ExprParser::ROWriteMethodType<Sensors::SensorRelativeTime, float, &public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)>::vfunc_16
+// @class ExprParser::ROWriteMethodType<Sensors::SensorRelativeTime, float, &public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)>
+// @summary Auto-lifted identical-shape clone of 0x0064F1F0 (ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)).
+void* fn_0062A0F0(void* self) {
+    return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
+                        reinterpret_cast<const void*>(&mem_00A97CF8), 0);
+}
+} // namespace lift_0062A0F0
+
+// [0x0062A560] ExprParser::ROWriteMethodType<Sensors::SensorIntegral, float, &public: void __thiscall Sensors::SensorIntegral::insert(float)>::vfunc_16 (30 bytes)
+namespace lift_0062A560 {
+extern void* ext_006A6E9E(void* inptr, long vfDelta, const void* srcType, const void* targetType, int isReference);
+extern int mem_00A2E2F8;
+extern int mem_00A93678;
+
+// @name ExprParser::ROWriteMethodType<Sensors::SensorIntegral, float, &public: void __thiscall Sensors::SensorIntegral::insert(float)>::vfunc_16
+// @class ExprParser::ROWriteMethodType<Sensors::SensorIntegral, float, &public: void __thiscall Sensors::SensorIntegral::insert(float)>
+// @summary Auto-lifted identical-shape clone of 0x0064F1F0 (ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)).
+void* fn_0062A560(void* self) {
+    return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
+                        reinterpret_cast<const void*>(&mem_00A93678), 0);
+}
+} // namespace lift_0062A560
+
+// [0x00630CE0] ExprParser::ROWriteMethodType<EffectorSkeletal, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall EffectorSkeletal::`vcall'{60, {flat}}>::vfunc_16 (30 bytes)
+namespace lift_00630CE0 {
+extern void* ext_006A6E9E(void* inptr, long vfDelta, const void* srcType, const void* targetType, int isReference);
+extern int mem_00A2E2F8;
+extern int mem_00A947D0;
+
+// @name ExprParser::ROWriteMethodType<EffectorSkeletal, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall EffectorSkeletal::`vcall'{60, {flat}}>::vfunc_16
+// @class ExprParser::ROWriteMethodType<EffectorSkeletal, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall EffectorSkeletal::`vcall'{60, {flat}}>
+// @summary Auto-lifted identical-shape clone of 0x0064F1F0 (ExprParser::ROWriteMethodType::vfunc_16 (SkeletalJoint vcall 132)).
+void* fn_00630CE0(void* self) {
+    return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
+                        reinterpret_cast<const void*>(&mem_00A947D0), 0);
+}
+} // namespace lift_00630CE0

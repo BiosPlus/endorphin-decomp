@@ -26,8 +26,10 @@ extern "C" void __fastcall ext_00723A30(void* self);
 extern "C" void __fastcall ext_0078BB30(void* self);
 extern "C" int mem_00997028;
 extern "C" void __fastcall ext_0078D850(void* self);
+#include <cstring>
+#include <cstdint>
 
-// [0x00782D20] sub_00782D20 (16 bytes)
+#include <cstdint>
 // @name sub_00782D20
 // @summary Pure jump thunk forwarding to sub_00782D30.
 extern "C" void fn_00782D20(void) {
@@ -467,3 +469,20 @@ void fn_00788D10(void* self) {
     ext_00788E20(self);
 }
 } // namespace lift_00788D10
+
+// [0x007835F0] sub_007835F0 (7 bytes)
+namespace lift_007835F0 {
+// @name sub_007835F0
+// @summary Auto-lifted identical-shape clone of 0x0046F910 (Unknown::ReadF8ObjectByte12C).
+namespace lift_0046F910 {
+// @name Unknown::ReadF8ObjectByte12C
+// @class Unknown
+// @summary Returns the low byte at +0x12C of the object referenced by this+0xF8.
+// @field Unknown +0xF8 void* field_0xF8
+// @field Unknown +0x12C uint8_t field_0x12C
+uint8_t fn_007835F0(void* self) {
+    void* inner = lift_field<void*>(self, 0x4);
+    return lift_field<uint8_t>(inner, 0x4);
+}
+} // namespace lift_0046F910
+} // namespace lift_007835F0

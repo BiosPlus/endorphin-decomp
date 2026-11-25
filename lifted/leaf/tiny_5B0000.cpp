@@ -1,6 +1,7 @@
 // Lifted C++ translation unit: lifted/leaf/tiny_5B0000.cpp
 #include "lift_compat.h"
 extern "C" int mem_0095F7EC;
+#include <cstdint>
 
 // [0x005B1140] sub_005B1140 (7 bytes)
 // @name sub_005B1140
@@ -300,3 +301,31 @@ float fn_005B7040(void* self) {
     return fn(ecx, arg);
 }
 } // namespace lift_005B7040
+
+// [0x005B72A0] sub_005B72A0 (18 bytes)
+namespace lift_005B72A0 {
+// @name sub_005B72A0
+// @summary Auto-lifted identical-shape clone of 0x005C3070 (sub_005C3070).
+namespace lift_005C3070 {
+// @name sub_005C3070
+// @summary Auto-lifted identical-shape clone of 0x005B7260 (Unknown::forwardIfChild).
+namespace lift_005B7260 {
+// Known callee 0x005CE970: sub_005CE970 (Member forwarding thunk: loads subobject pointer at +0xAC and tail-calls sub_00647CE0.)
+extern void ext_005CE990(void* self);
+
+// @name Unknown::forwardIfChild
+// @class Unknown
+// @summary Forwards the call to ext_005CE970 when the pointer at +0x158 is non-null; otherwise returns, popping 8 bytes of stack arguments.
+// @field Unknown +0x158 void* field_0x158
+extern void fn_005B72A0(void* self, DWORD stackArg0, DWORD stackArg1) {
+    (void)stackArg0;
+    (void)stackArg1;
+    auto* child = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x158);
+    if (child != nullptr) {
+        ext_005CE990(child);
+        return;
+    }
+}
+} // namespace lift_005B7260
+} // namespace lift_005C3070
+} // namespace lift_005B72A0

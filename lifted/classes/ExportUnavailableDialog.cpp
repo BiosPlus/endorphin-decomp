@@ -16,3 +16,35 @@ void fn_00461630(void* self, uint32_t arg) {
     const uint32_t subobject = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self) + 0x11c);
     ext_006A5F44(arg, 1, subobject);
 }
+
+// [0x00419770] ExportUnavailableDialog::vfunc_7_off_74 (40 bytes)
+namespace lift_00419770 {
+// @name ExportUnavailableDialog::vfunc_7_off_74
+// @class ExportUnavailableDialog
+// @summary Auto-lifted identical-shape clone of 0x00464670 (CAboutDlg::vfunc_7_off_74).
+namespace lift_00464670 {
+// @name CAboutDlg::vfunc_7_off_74
+// @class CAboutDlg
+// @summary Auto-lifted identical-shape clone of 0x00449A00 (RegistrationDialog::initOnceAndGetCounter).
+namespace lift_00449A00 {
+extern uint32_t mem_00ACB004;
+extern uint32_t mem_00A2ECDC;
+extern uint32_t mem_00A2ECE0;
+extern uint32_t mem_00A2ECD0;
+
+// @name RegistrationDialog::initOnceAndGetCounter
+// @class RegistrationDialog
+// @summary On first call, sets init bit 0 in mem_00AD08E4 and clears two globals; always returns &mem_00A2FE84.
+// @field (none: function does not access this-relative fields; self is unused)
+void* fn_00419770(void* self) {
+    (void)self;
+    if ((mem_00ACB004 & 1u) == 0u) {
+        mem_00ACB004 |= 1u;
+        mem_00A2ECDC = 0u;
+        mem_00A2ECE0 = 0u;
+    }
+    return &mem_00A2ECD0;
+}
+} // namespace lift_00449A00
+} // namespace lift_00464670
+} // namespace lift_00419770

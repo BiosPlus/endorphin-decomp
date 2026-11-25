@@ -35,3 +35,14 @@ extern "C" void* __fastcall fn_00766710(void* self, int edx_unused, unsigned int
     }
     return self;
 }
+
+// [0x007641C0] sub_007641C0 (16 bytes)
+namespace lift_007641C0 {
+extern void __fastcall ext_006B9D70(void* self);
+
+// @name sub_007641C0
+// @summary This-adjustor thunk: adjusts `this` by +0x8 and tail-calls sub_006B9D70.
+extern void __fastcall fn_007641C0(void* self) {
+    ext_006B9D70(static_cast<char*>(self) + 0x8);
+}
+} // namespace lift_007641C0

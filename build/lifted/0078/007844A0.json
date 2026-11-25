@@ -1,0 +1,13 @@
+{
+  "va": "0x007844A0",
+  "size": 41,
+  "orig_symbol": "sub_007844A0",
+  "src_path": "src/clones/auto_clones_780000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_780000.cpp",
+  "name": "sub_007844A0",
+  "signature": "void fn_007844A0(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x006F9380 (sub_006F9380_initGlobals).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

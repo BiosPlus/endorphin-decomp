@@ -22,6 +22,7 @@ uint32_t __stdcall fn_005B1050(uint32_t first, uint32_t second) {
     // ret 8             -> callee-cleans-two-arguments (stdcall)
     return ext_00648490(first, second);
 }
+#include <cstdint>
 
 // [0x005B1740]
 // @name Geometry::CylinderType::vfunc_5
@@ -115,3 +116,20 @@ float __stdcall fn_005B19F0(int32_t unused) {
     return static_cast<float>(t);
 }
 } // namespace lift_005B19F0
+
+// [0x005B1050] Geometry::CylinderType::vfunc_2 (17 bytes)
+namespace lift_005B1050 {
+extern uint32_t __thiscall ext_00648490(uint32_t self, uint32_t arg);
+
+// @name Geometry::CylinderType::vfunc_2
+// @class Geometry::CylinderType
+// @summary Auto-lifted identical-shape clone of 0x005B10B0 (Geometry::FrustumType::vfunc_2).
+uint32_t __stdcall fn_005B1050(uint32_t first, uint32_t second) {
+    // mov ecx, [esp+4]  -> this for the callee = first stack argument
+    // mov eax, [esp+8]  -> second stack argument
+    // push eax          -> argument pushed for the callee
+    // call ext_006720C0 -> result left in eax
+    // ret 8             -> callee-cleans-two-arguments (stdcall)
+    return ext_00648490(first, second);
+}
+} // namespace lift_005B1050

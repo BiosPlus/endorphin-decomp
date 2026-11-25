@@ -2,8 +2,10 @@
 #include "lift_compat.h"
 #include <cstdint>
 #include <cmath>
+#include <bit>
+#include <cstring>
 
-// [0x007C97A0]
+#include <cstring>
 namespace lift_007C97A0 {
 // @name Unknown::setField44IfBit0Clear
 // @class Unknown
@@ -1397,3 +1399,30 @@ bool fn_007C8C50(void* first, void* second) {
     return ext_007DD160(table, idA, idB);
 }
 } // namespace lift_007C8C50
+
+// [0x007C5FA0] sub_007C5FA0 (35 bytes)
+namespace lift_007C5FA0 {
+// @name sub_007C5FA0
+// @summary Auto-lifted identical-shape clone of 0x007D8450 (CopyVec3FromOffset40).
+namespace lift_007D8450 {
+// @name CopyVec3FromOffset40
+// @class <none>
+// @summary Copies three consecutive floats from self+0x40..+0x48 into out[0..2].
+// @field self +0x40 float field_0x40
+// @field self +0x44 float field_0x44
+// @field self +0x48 float field_0x48
+void fn_007C5FA0(const void* self, void* out) {
+    const uint8_t* src = static_cast<const uint8_t*>(self);
+    uint8_t* dst = static_cast<uint8_t*>(out);
+
+    float v0, v1, v2;
+    std::memcpy(&v0, src + 0x140, sizeof(float));
+    std::memcpy(&v1, src + 0x144, sizeof(float));
+    std::memcpy(&v2, src + 0x148, sizeof(float));
+
+    std::memcpy(dst + 0x0, &v0, sizeof(float));
+    std::memcpy(dst + 0x4, &v1, sizeof(float));
+    std::memcpy(dst + 0x8, &v2, sizeof(float));
+}
+} // namespace lift_007D8450
+} // namespace lift_007C5FA0

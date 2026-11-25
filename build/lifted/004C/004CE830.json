@@ -1,0 +1,14 @@
+{
+  "va": "0x004CE830",
+  "size": 32,
+  "orig_symbol": "NMData::IncarnationEventData::vfunc_14",
+  "src_path": "src/NMData/IncarnationEventData.cpp",
+  "lifted_path": "lifted/NMData/IncarnationEventData.cpp",
+  "name": "NMData::IncarnationEventData::vfunc_14",
+  "class": "NMData::IncarnationEventData",
+  "signature": "void* __thiscall fn_004CE830(void* self, void* a, void* b)",
+  "summary": "Auto-lifted identical-shape clone of 0x005E2A90 (NMData::HingeData::vfunc_14).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T07:11:31Z"
+}

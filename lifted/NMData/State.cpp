@@ -91,3 +91,57 @@ DWORD fn_0049DF50(void* self, DWORD arg1, DWORD arg2) {
     return arg1;
 }
 } // namespace lift_0049DF50
+
+// [0x0049FC80] NMData::State::vfunc_7_off_10 (111 bytes)
+namespace lift_0049FC80 {
+// @name NMData::State::vfunc_7_off_10
+// @class NMData::State
+// @summary Auto-lifted identical-shape clone of 0x005C0E00 (NMData::MetaBodyData::vfunc_6).
+// @field NMData::State +0x80 uint32_t* field_0x80
+// @field NMData::State +0x84 uint32_t* field_0x84
+namespace lift_005C0E00 {
+// @name NMData::MetaBodyData::vfunc_6
+// @class NMData::MetaBodyData
+// @summary Iterates over elements in vector at +0x7C, calls vtable+0x24 on each, and passes the result to sub_0040ECB0
+// @field NMData::MetaBodyData +0x80 uint32_t* field_0x80
+// @field NMData::MetaBodyData +0x84 uint32_t* field_0x84
+
+
+extern uint32_t mem_00925134;
+extern void __thiscall ext_0040ECB0(void* self, uint32_t arg);
+
+void __thiscall fn_0049FC80(void* self, void* arg1) {
+    uint8_t* esi = static_cast<uint8_t*>(self) + 0x10C;
+    auto invalid_param = reinterpret_cast<void(__cdecl*)()>(mem_00925134);
+
+    uint32_t* edi = *reinterpret_cast<uint32_t**>(esi + 0x04);
+    if (edi > *reinterpret_cast<uint32_t**>(esi + 0x08)) {
+        invalid_param();
+    }
+
+    for (;;) {
+        uint32_t* ebx = *reinterpret_cast<uint32_t**>(esi + 0x08);
+        if (*reinterpret_cast<uint32_t**>(esi + 0x04) > ebx) {
+            invalid_param();
+        }
+        if (edi == ebx) {
+            break;
+        }
+        if (edi >= *reinterpret_cast<uint32_t**>(esi + 0x08)) {
+            invalid_param();
+        }
+
+        void* elem = reinterpret_cast<void*>(*edi);
+        void** vtable = *reinterpret_cast<void***>(elem);
+        auto vfunc = reinterpret_cast<uint32_t(__thiscall*)(void*)>(vtable[0x24 / 4]);
+        uint32_t res = vfunc(elem);
+        ext_0040ECB0(arg1, res);
+
+        if (edi >= *reinterpret_cast<uint32_t**>(esi + 0x08)) {
+            invalid_param();
+        }
+        ++edi;
+    }
+}
+} // namespace lift_005C0E00
+} // namespace lift_0049FC80

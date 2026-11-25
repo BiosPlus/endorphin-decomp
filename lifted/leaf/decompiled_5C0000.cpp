@@ -1412,3 +1412,39 @@ float fn_005C3AA0(void* self) {
     return v[1];
 }
 } // namespace lift_005C3AA0
+
+// [0x005C38F0] sub_005C38F0 (60 bytes)
+namespace lift_005C38F0 {
+// @name sub_005C38F0
+// @summary Auto-lifted identical-shape clone of 0x005C3970 (Unknown::getDefaultZeroVec3).
+namespace lift_005C3970 {
+// @name Unknown::getDefaultZeroVec3
+// @class Unknown
+// @summary If the pointer at +0x164 is set, tail-forwards to ext_005B6BC0 with it; otherwise lazily zeroes a static 3-float block (once, guarded by a flag bit) and returns its address.
+// @field Unknown +0x164 void* field_0x164
+
+// Known callee 0x005B6BC0: Unknown::forwardToSubobjectAt1D0IfSet
+// Tail-called with the value of [self+0x164] as its receiver.
+extern void* ext_005B6B60(void* self);
+
+extern uint32_t mem_00AE5598; // init flag word (bit 0 = initialized)
+extern float    mem_00AE558C; // static float[0]
+extern float    mem_00AE5590; // static float[1]
+extern float    mem_00AE5594; // static float[2]
+
+void* fn_005C38F0(void* self) {
+    void* subobject = *reinterpret_cast<void**>(static_cast<char*>(self) + 0x164);
+    if (subobject != nullptr) {
+        return ext_005B6B60(subobject);
+    }
+
+    if ((mem_00AE5598 & 1u) == 0) {
+        mem_00AE558C = 0.0f;
+        mem_00AE5590 = 0.0f;
+        mem_00AE5594 = 0.0f;
+        mem_00AE5598 |= 1u;
+    }
+    return &mem_00AE558C;
+}
+} // namespace lift_005C3970
+} // namespace lift_005C38F0
