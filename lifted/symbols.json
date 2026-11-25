@@ -5922,6 +5922,13 @@
     "summary": "Sends WM_USER-range message 0x110B (wParam 9) twice and then 0x1114 (wParam 0) to the window handle at this+0x20, all with the given lParam.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x0045BED0": {
+    "name": "Unknown::resolveStringViaWindowMessage_0045BED0",
+    "class": "Unknown",
+    "signature": "std::string* fn_0045BED0(void* self, std::string* out)",
+    "summary": "Constructs *out from a global string when ext_0045BCF0 succeeds; otherwise sends window message 0x110A to the owning HWND and forwards the result to ext_0045B6C0. Always returns out.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045C090": {
     "name": "WalkAndNotifyItems",
     "signature": "extern \"C\" void __thiscall fn_0045C090(void* self, uint32_t item)",

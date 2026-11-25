@@ -1,0 +1,22 @@
+{
+  "va": "0x0045BED0",
+  "size": 87,
+  "orig_symbol": "sub_0045BED0",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "Unknown::resolveStringViaWindowMessage_0045BED0",
+  "class": "Unknown",
+  "signature": "std::string* fn_0045BED0(void* self, std::string* out)",
+  "summary": "Constructs *out from a global string when ext_0045BCF0 succeeds; otherwise sends window message 0x110A to the owning HWND and forwards the result to ext_0045B6C0. Always returns out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:13:53Z"
+}

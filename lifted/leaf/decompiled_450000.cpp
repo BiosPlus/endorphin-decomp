@@ -1030,3 +1030,32 @@ void* fn_00454B20(void* self, void* arg1, void* arg2) {
     return result;
 }
 } // namespace lift_00454B20
+
+// [0x0045BED0] sub_0045BED0 (87 bytes)
+namespace lift_0045BED0 {
+extern bool ext_0045BCF0(void* self);
+// Known callee 0x0045B6C0: initFromMFC80Ord2867 (Calls MFC80_ord_2867 with arg2, invokes vtable+0xc on the returned object with arg1, and returns arg1.)
+extern uint32_t ext_0045B6C0(void* self, uint32_t arg1, uint32_t arg2);
+extern uint32_t mem_00A9F414;   // .data: address of a const char* string literal
+
+extern LRESULT __stdcall SendMessageA(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
+// @name Unknown::resolveStringViaWindowMessage_0045BED0
+// @class Unknown
+// @summary Constructs *out from a global string when ext_0045BCF0 succeeds; otherwise sends window message 0x110A to the owning HWND and forwards the result to ext_0045B6C0. Always returns out.
+// @field Unknown +0x20 HWND hwnd
+std::string* fn_0045BED0(void* self, std::string* out) {
+    // The original's zeroed stack local is not passed to ext_0045BCF0 (no argument is pushed), so it has no observable effect and is omitted.
+    if (ext_0045BCF0(self)) {
+        const char* literal = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9F414));
+        new (out) std::string(literal);
+        return out;
+    }
+
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+    LRESULT result = SendMessageA(hwnd, 0x110A, 9, 0);
+    ext_0045B6C0(self, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(out)),
+                 static_cast<uint32_t>(result));
+    return out;
+}
+} // namespace lift_0045BED0
