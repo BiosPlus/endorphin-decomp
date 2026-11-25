@@ -61716,6 +61716,12 @@
     "summary": "Inserts a doubly-linked list node after the given node.",
     "lifted_path": "lifted/leaf/tiny_7F0000.cpp"
   },
+  "0x007F7FA0": {
+    "name": "Vec3DifferenceLength",
+    "signature": "float Vec3DifferenceLength(const float* a, const float* b)",
+    "summary": "Returns the Euclidean length of (a - b) for two 3-float vectors (ecx = a, eax = b).",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
   "0x007F8500": {
     "name": "compareFloatAt0x10",
     "signature": "int32_t sub_007F8500(const void* a, const void* b)",

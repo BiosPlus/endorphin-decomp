@@ -330,3 +330,22 @@ void sub_007FC440(uint32_t eax, uint32_t ecx, uint32_t edx) {
     lift_store_f32(out + 0x8, z);
 }
 } // namespace lift_007FC440
+
+// [0x007F7FA0]
+namespace lift_007F7FA0 {
+// @name Vec3DifferenceLength
+// @summary Returns the Euclidean length of (a - b) for two 3-float vectors (ecx = a, eax = b).
+
+// IAT thunk to MSVCR80!_CIsqrt: square root of a single float.
+extern float ext_006A7250(float value);
+
+float Vec3DifferenceLength(const float* a, const float* b) {
+    float d[3];
+    d[0] = a[0] - b[0];
+    d[1] = a[1] - b[1];
+    d[2] = a[2] - b[2];
+
+    float sumSquares = d[0] * d[0] + d[1] * d[1] + d[2] * d[2];
+    return ext_006A7250(sumSquares);
+}
+} // namespace lift_007F7FA0
