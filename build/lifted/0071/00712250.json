@@ -1,0 +1,13 @@
+{
+  "va": "0x00712250",
+  "size": 96,
+  "orig_symbol": "sub_00712250",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "findStringIndex",
+  "signature": "int __cdecl sub_00712250(const char* str)",
+  "summary": "Searches a 19-entry string table at 0x00aabf1c and returns the matching index, or 0 if not found.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:44:36Z"
+}
