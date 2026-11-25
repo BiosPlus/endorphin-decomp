@@ -336,3 +336,27 @@ void* fn_00771F60() {
     return ext_00771B90(obj);
 }
 } // namespace lift_00771F60
+
+// [0x007721F0] sub_007721F0 (90 bytes)
+namespace lift_007721F0 {
+// @name sub_007721F0
+// @summary Auto-lifted identical-shape clone of 0x00771F60 (allocAndConstructObject).
+namespace lift_00771F60 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Cdecl, one argument (0x34 pushed by caller), returns an allocated block or NULL.
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x00771B90: sub_00771B90 (Constructor that initializes base via sub_007ABC20, initializes a 20-byte member at +0x1C, sets inline pointer at +0x30, and sets vtable mem_00996C88.)
+// __thiscall: object pointer in ecx, returns the object pointer.
+extern void* ext_007AC1C0(void* self);
+
+// @name allocAndConstructObject
+// @summary Allocates a 0x34-byte object; if allocation succeeds, runs its constructor and returns it, otherwise returns NULL.
+void* fn_007721F0() {
+    void* obj = ext_006A5C62(0x7D8);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+    return ext_007AC1C0(obj);
+}
+} // namespace lift_00771F60
+} // namespace lift_007721F0

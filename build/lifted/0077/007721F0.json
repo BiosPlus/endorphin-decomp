@@ -1,0 +1,13 @@
+{
+  "va": "0x007721F0",
+  "size": 90,
+  "orig_symbol": "sub_007721F0",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "sub_007721F0",
+  "signature": "void* fn_007721F0()",
+  "summary": "Auto-lifted identical-shape clone of 0x00771F60 (allocAndConstructObject).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T02:28:21Z"
+}

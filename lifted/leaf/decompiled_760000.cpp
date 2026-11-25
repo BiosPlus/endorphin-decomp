@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_760000.cpp
 #include "lift_compat.h"
+#include <cstring>
+#include <cstddef>
 
-// [0x00766210] sub_00766210 (48 bytes)
+#include <cstddef>
 namespace lift_00766210 {
 // Known callee 0x006D2A30: sub_006D2A30 (Returns `this` pointer unchanged.)
 extern void* __fastcall ext_006D2A30(void* self);
@@ -104,3 +106,27 @@ extern bool __stdcall fn_00764620(void* self) {
     return call_slot0() == 6;
 }
 } // namespace lift_00764620
+
+// [0x00764400] sub_00764400 (90 bytes)
+namespace lift_00764400 {
+// @name sub_00764400
+// @summary Auto-lifted identical-shape clone of 0x00771F60 (allocAndConstructObject).
+namespace lift_00771F60 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Cdecl, one argument (0x34 pushed by caller), returns an allocated block or NULL.
+extern void* ext_006A5C62(size_t size);
+// Known callee 0x00771B90: sub_00771B90 (Constructor that initializes base via sub_007ABC20, initializes a 20-byte member at +0x1C, sets inline pointer at +0x30, and sets vtable mem_00996C88.)
+// __thiscall: object pointer in ecx, returns the object pointer.
+extern void* ext_007ABF40(void* self);
+
+// @name allocAndConstructObject
+// @summary Allocates a 0x34-byte object; if allocation succeeds, runs its constructor and returns it, otherwise returns NULL.
+void* fn_00764400() {
+    void* obj = ext_006A5C62(0x7D4);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+    return ext_007ABF40(obj);
+}
+} // namespace lift_00771F60
+} // namespace lift_00764400
