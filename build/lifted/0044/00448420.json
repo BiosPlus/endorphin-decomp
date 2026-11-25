@@ -1,0 +1,40 @@
+{
+  "va": "0x00448420",
+  "size": 55,
+  "orig_symbol": "sub_00448420",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "Unknown::SetSelectionAndCacheState_00448420",
+  "class": "Unknown",
+  "signature": "static inline void* dword_to_ptr(DWORD v)",
+  "summary": "Stores arg at +0xc8, runs 0x006B0DE0 on the subobject at +0x5c, then caches vfunc_21's result at +0xcc and its +0x19c value at +0xec.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "void*",
+      "name": "field_0x5c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC8",
+      "type": "DWORD",
+      "name": "selectionBuffer"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xCC",
+      "type": "DWORD",
+      "name": "field_0xcc"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xEC",
+      "type": "DWORD",
+      "name": "field_0xec"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:42:02Z"
+}

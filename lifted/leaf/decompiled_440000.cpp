@@ -1878,3 +1878,45 @@ LRESULT fn_0044DA40(void* self) {
     return send(hwnd, 0x199, static_cast<WPARAM>(second), 0);
 }
 } // namespace lift_0044DA40
+
+// [0x00448420] sub_00448420 (55 bytes)
+namespace lift_00448420 {
+// SelectionBuffer::vfunc_21 (0x006AD1C0). Returns an object pointer in eax; the caller reads +0x19c from it.
+extern void* ext_006AD1C0(void* self);
+// Unknown::CacheSelectionAndInvoke_006B0DE0 (0x006B0DE0). Thiscall with one stack argument (callee cleans).
+extern void ext_006B0DE0(void* self, DWORD arg);
+
+static inline void* dword_to_ptr(DWORD v) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(v));
+}
+
+static inline DWORD ptr_to_dword(const void* p) {
+    return static_cast<DWORD>(reinterpret_cast<uintptr_t>(p));
+}
+
+// @name Unknown::SetSelectionAndCacheState_00448420
+// @class Unknown
+// @summary Stores arg at +0xc8, runs 0x006B0DE0 on the subobject at +0x5c, then caches vfunc_21's result at +0xcc and its +0x19c value at +0xec.
+// @field Unknown +0x5c void* field_0x5c
+// @field Unknown +0xc8 DWORD selectionBuffer
+// @field Unknown +0xcc DWORD field_0xcc
+// @field Unknown +0xec DWORD field_0xec
+void fn_00448420(void* self, DWORD arg) {
+    // mov [esi+0xc8], eax
+    lift_field<DWORD>(self, 0xc8) = arg;
+
+    // call 0x6b0de0 with ecx = this+0x5c, arg pushed
+    void* subobject = static_cast<uint8_t*>(self) + 0x5c;
+    ext_006B0DE0(subobject, arg);
+
+    // ecx = [this+0xc8]; call SelectionBuffer::vfunc_21
+    void* selBuf = dword_to_ptr(lift_field<DWORD>(self, 0xc8));
+    void* result = ext_006AD1C0(selBuf);
+
+    // mov [this+0xcc], eax
+    lift_field<DWORD>(self, 0xcc) = ptr_to_dword(result);
+
+    // eax = [eax+0x19c]; mov [this+0xec], eax
+    lift_field<DWORD>(self, 0xec) = lift_field<DWORD>(result, 0x19c);
+}
+} // namespace lift_00448420

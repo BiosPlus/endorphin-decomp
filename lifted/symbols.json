@@ -4017,6 +4017,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by +0xD8 and tail-calls thunk_MFC80_ord_1280.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x00448420": {
+    "name": "Unknown::SetSelectionAndCacheState_00448420",
+    "class": "Unknown",
+    "signature": "static inline void* dword_to_ptr(DWORD v)",
+    "summary": "Stores arg at +0xc8, runs 0x006B0DE0 on the subobject at +0x5c, then caches vfunc_21's result at +0xcc and its +0x19c value at +0xec.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00448920": {
     "name": "Properties::PropInPlaceSpinbuttonEdit::vfunc_66",
     "class": "Properties::PropInPlaceSpinbuttonEdit",
