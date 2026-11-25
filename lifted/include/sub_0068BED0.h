@@ -8,6 +8,6 @@
 // Recovered field layout for sub_0068BED0:
 namespace lifted_layout {
 struct sub_0068BED0_Fields {
-    // +0x10  uint8_t                  field_0x10  (evidence: 0x00688B50, 0x00689570, 0x0068BED0)
+    // +0x10  uint8_t                  field_0x10  (evidence: 0x00688B50, 0x00689570, 0x0068BDF0, 0x0068BED0)
 };
 } // namespace lifted_layout

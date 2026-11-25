@@ -8,8 +8,8 @@
 // Recovered field layout for Record36:
 namespace lifted_layout {
 struct Record36_Fields {
-    // +0x0   DWORD                    value  (evidence: 0x006878E0, 0x00688B50)
-    // +0x4   BYTE                     flag  (evidence: 0x006878E0, 0x00688B50)
-    // +0x8   std_string               str  (evidence: 0x006878E0, 0x00688B50)
+    // +0x0   DWORD                    value  (evidence: 0x006878E0, 0x00688B50, 0x0068BDF0)
+    // +0x4   BYTE                     flag  (evidence: 0x006878E0, 0x00688B50, 0x0068BDF0)
+    // +0x8   std_string               str  (evidence: 0x006878E0, 0x00688B50, 0x0068BDF0)
 };
 } // namespace lifted_layout

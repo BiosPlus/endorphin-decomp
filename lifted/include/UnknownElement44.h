@@ -8,10 +8,10 @@
 // Recovered field layout for UnknownElement44:
 namespace lifted_layout {
 struct UnknownElement44_Fields {
-    // +0x0   u32                      field_0x00  (evidence: 0x00687890, 0x00688B50)
-    // +0x4   u32                      field_0x04  (evidence: 0x00687890, 0x00688B50)
-    // +0x8   u32                      field_0x08  (evidence: 0x00687890, 0x00688B50)
-    // +0xC   u32                      field_0x0C  (evidence: 0x00687890, 0x00688B50)
-    // +0x10  std::string              field_0x10  (evidence: 0x00687890, 0x00688B50)
+    // +0x0   u32                      field_0x00  (evidence: 0x00687890, 0x00688B50, 0x0068BDF0)
+    // +0x4   u32                      field_0x04  (evidence: 0x00687890, 0x00688B50, 0x0068BDF0)
+    // +0x8   u32                      field_0x08  (evidence: 0x00687890, 0x00688B50, 0x0068BDF0)
+    // +0xC   u32                      field_0x0C  (evidence: 0x00687890, 0x00688B50, 0x0068BDF0)
+    // +0x10  std::string              field_0x10  (evidence: 0x00687890, 0x00688B50, 0x0068BDF0)
 };
 } // namespace lifted_layout
