@@ -1,0 +1,22 @@
+{
+  "va": "0x0044B2C0",
+  "size": 58,
+  "orig_symbol": "sub_0044B2C0",
+  "src_path": "src/leaf/decompiled_440000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_440000.cpp",
+  "name": "sub_0044B2C0",
+  "class": "UnknownClass",
+  "signature": "void fn_0044B2C0(void* self)",
+  "summary": "If child object at +0x64 is set, query it, forward inverted result to its slot 9, then tail-call its slot 85.",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x64",
+      "type": "void*",
+      "name": "childObject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:52:50Z"
+}

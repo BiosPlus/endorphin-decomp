@@ -1588,3 +1588,42 @@ int32_t fn_0044F740(void) {
     return 0;
 }
 } // namespace lift_0044F740
+
+// [0x0044B2C0] sub_0044B2C0 (58 bytes)
+namespace lift_0044B2C0 {
+// Target binary is 32-bit x86; vtable slots are addressed by byte offset.
+// Slot 0xB8 (index 46): int  Query()          -> result in eax
+// Slot 0x24 (index 9):  void Set(int flag)    -> arg pushed on stack
+// Slot 0x154 (index 85): void Tail()          -> reached via tail jmp, no args
+
+namespace {
+
+using VSlotQuery = int (*)(void* self);
+using VSlotSetFlag = void (*)(void* self, int flag);
+using VSlotVoid = void (*)(void* self);
+
+} // namespace
+
+// @name sub_0044B2C0
+// @class UnknownClass
+// @summary If child object at +0x64 is set, query it, forward inverted result to its slot 9, then tail-call its slot 85.
+// @field UnknownClass +0x64 void* childObject
+void fn_0044B2C0(void* self) {
+    void* obj = lift_field<void*>(self, 0x64);
+    if (obj == nullptr) {
+        return;
+    }
+
+    void* vt = lift_field<void*>(obj, 0);
+    auto query = lift_field<VSlotQuery>(vt, 0xB8);
+    const int result = query(obj);
+
+    vt = lift_field<void*>(obj, 0);
+    auto setFlag = lift_field<VSlotSetFlag>(vt, 0x24);
+    setFlag(obj, result == 0 ? 1 : 0);
+
+    vt = lift_field<void*>(obj, 0);
+    auto tail = lift_field<VSlotVoid>(vt, 0x154);
+    tail(obj);
+}
+} // namespace lift_0044B2C0

@@ -4029,6 +4029,13 @@
     "summary": "If the child at +0x64 is set, query it via vtable slot 0x2E and call vtable slot 1 on arg with (result == 0).",
     "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
+  "0x0044B2C0": {
+    "name": "sub_0044B2C0",
+    "class": "UnknownClass",
+    "signature": "void fn_0044B2C0(void* self)",
+    "summary": "If child object at +0x64 is set, query it, forward inverted result to its slot 9, then tail-call its slot 85.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x0044B360": {
     "name": "sub_0044B360",
     "signature": "void __thiscall sub_0044B360(void* self)",

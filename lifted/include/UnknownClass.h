@@ -48,6 +48,7 @@ struct UnknownClass_Fields {
     // +0x44  CRITICAL_SECTION         field_0x44  (evidence: 0x00413C40)
     // +0x4E  uint16_t                 field_0x4e  (evidence: 0x00798840)
     // +0x58  uint32_t                 field_0x58  (evidence: 0x007AEEE0)
+    // +0x64  void*                    childObject  (evidence: 0x0044B2C0) // CONFLICT: multiple definitions at +0x64
     // +0x64  uint32_t                 field_0x64  (evidence: 0x0044B390) // CONFLICT: multiple definitions at +0x64
     // +0x64  void*                    field_0x64  (evidence: 0x0044B700) // CONFLICT: multiple definitions at +0x64
     // +0x72  uint16_t                 field_0x72  (evidence: 0x00798840)
