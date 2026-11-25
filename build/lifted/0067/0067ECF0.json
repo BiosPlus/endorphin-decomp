@@ -1,0 +1,21 @@
+{
+  "va": "0x0067ECF0",
+  "size": 30,
+  "orig_symbol": "sub_0067ECF0",
+  "src_path": "src/leaf/tiny_670000.cpp",
+  "lifted_path": "lifted/leaf/tiny_670000.cpp",
+  "name": "formatDwordHex",
+  "signature": "int fn_0067ECF0(void* self, char* buf, int size)",
+  "summary": "Formats the DWORD pointed to by self as \"%08x\" into buf (max size bytes) via _snprintf; returns its result.",
+  "fields": [
+    {
+      "class": "Owner",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:39:45Z"
+}

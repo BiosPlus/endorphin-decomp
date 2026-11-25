@@ -629,3 +629,20 @@ extern BOOLEAN __fastcall fn_0067ADE0(void* self) {
 }
 } // namespace lift_0067ADE0
 } // namespace lift_0067ADE0
+
+// [0x0067ECF0] sub_0067ECF0 (30 bytes)
+namespace lift_0067ECF0 {
+extern uint32_t mem_0098C7CC; // .rdata "%08x"
+extern uint32_t mem_009251E0; // IAT slot holding MSVCR80!_snprintf
+
+// @name formatDwordHex
+// @summary Formats the DWORD pointed to by self as "%08x" into buf (max size bytes) via _snprintf; returns its result.
+// @field Owner +0x00 DWORD field_0x00
+int fn_0067ECF0(void* self, char* buf, int size) {
+    uint32_t value = lift_field<uint32_t>(self, 0x00);
+    using SnprintfFn = int(__cdecl*)(char*, size_t, const char*, ...);
+    auto snprintf_ = reinterpret_cast<SnprintfFn>(static_cast<uintptr_t>(mem_009251E0));
+    auto fmt = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_0098C7CC));
+    return snprintf_(buf, static_cast<size_t>(size), fmt, static_cast<unsigned int>(value));
+}
+} // namespace lift_0067ECF0

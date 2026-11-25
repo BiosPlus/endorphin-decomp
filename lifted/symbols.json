@@ -45756,6 +45756,12 @@
     "summary": "Parses two 16-based unsigned longs from a string at offsets 0 and 9 into fields +0x04 and +0x00.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x0067ECF0": {
+    "name": "formatDwordHex",
+    "signature": "int fn_0067ECF0(void* self, char* buf, int size)",
+    "summary": "Formats the DWORD pointed to by self as \"%08x\" into buf (max size bytes) via _snprintf; returns its result.",
+    "lifted_path": "lifted/leaf/tiny_670000.cpp"
+  },
   "0x0067F5A0": {
     "name": "lookupTableByIndexField",
     "class": "Unknown (no class recovered; receiver is passed in ecx)",
