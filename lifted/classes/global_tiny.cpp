@@ -6731,3 +6731,17 @@ void __thiscall AddCharacterDialog_vfunc_64(void* self) {
     mem_00925684(hwnd, FALSE);
 }
 } // namespace lift_004010C0
+
+// [0x004010D0] AddCharacterDialog::vfunc_65 (13 bytes)
+namespace lift_004010D0 {
+extern uint32_t (__stdcall *mem_00925684)(uint32_t hWnd, uint32_t enable); // IAT slot for USER32!EnableWindow
+
+// @name AddCharacterDialog::vfunc_65
+// @class AddCharacterDialog
+// @summary Enables the dialog's window: calls USER32!EnableWindow(hwnd, TRUE) on the HWND stored at +0x20.
+// @field AddCharacterDialog +0x20 HWND field_0x20
+void fn_004010D0(void* self) {
+    uint32_t hwnd = lift_field<uint32_t>(self, 0x20);
+    mem_00925684(hwnd, 1);
+}
+} // namespace lift_004010D0

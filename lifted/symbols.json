@@ -19,6 +19,13 @@
     "summary": "Disables the dialog's HWND (field +0x20) via USER32!EnableWindow(hwnd, FALSE).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004010D0": {
+    "name": "AddCharacterDialog::vfunc_65",
+    "class": "AddCharacterDialog",
+    "signature": "extern uint32_t (__stdcall *mem_00925684)(uint32_t hWnd, uint32_t enable); // IAT slot for USER32!EnableWindow void fn_004010D0(void* self)",
+    "summary": "Enables the dialog's window: calls USER32!EnableWindow(hwnd, TRUE) on the HWND stored at +0x20.",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00401670": {
     "name": "AdvRenderOptions::vfunc_1",
     "class": "AdvRenderOptions",
