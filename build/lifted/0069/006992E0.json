@@ -1,0 +1,28 @@
+{
+  "va": "0x006992E0",
+  "size": 89,
+  "orig_symbol": "sub_006992E0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "Unknown::initOutPairAndSetOwnedFromArg2",
+  "class": "Unknown",
+  "signature": "uint32_t __thiscall fn_006992E0(void* self, void* out, uint32_t arg2)",
+  "summary": "Zeroes out[0], stores self in out[1], calls the virtual method at vtable+0x74 with out, then calls setOwnedObject_006991F0(out[0], arg2); returns out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x74",
+      "type": "void* vfn_74 (virtual method invoked with out",
+      "name": "pointer)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:17:15Z"
+}

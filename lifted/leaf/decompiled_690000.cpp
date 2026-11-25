@@ -789,3 +789,35 @@ extern void* fn_00699810(uint32_t count) {
     return fn_006A5C62(count * 0x2Cu);
 }
 } // namespace lift_00699810
+
+// [0x006992E0] sub_006992E0 (89 bytes)
+namespace lift_006992E0 {
+// Known callee 0x006991F0: setOwnedObject_006991F0 (Replaces an owned object pointer at +0x8, invoking its virtual deleting destructor if non-null and different)
+namespace lift_006992E0 {
+extern void __thiscall ext_006991F0(uint32_t self, uint32_t newPtr);
+
+// @name Unknown::initOutPairAndSetOwnedFromArg2
+// @class Unknown
+// @summary Zeroes out[0], stores self in out[1], calls the virtual method at vtable+0x74 with out, then calls setOwnedObject_006991F0(out[0], arg2); returns out.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x74 void* vfn_74 (virtual method invoked with out pointer)
+uint32_t __thiscall fn_006992E0(void* self, void* out, uint32_t arg2) {
+    // mov dword ptr [esi], 0 ; mov dword ptr [esi+4], ecx
+    lift_field<uint32_t>(out, 0x00) = 0;
+    lift_field<uint32_t>(out, 0x04) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+
+    // mov edx, [[ecx]+0x74] ; push esi ; call edx   (thiscall, callee pops its one argument)
+    void* vtable = lift_field<void*>(self, 0x00);
+    uintptr_t slot = lift_field<uintptr_t>(vtable, 0x74);
+    using VirtualFn = void(__thiscall*)(void* self_, void* out_);
+    reinterpret_cast<VirtualFn>(slot)(self, out);
+
+    // mov ecx, [esi] ; push arg2 ; call setOwnedObject_006991F0
+    const uint32_t owned = lift_field<uint32_t>(out, 0x00);
+    ext_006991F0(owned, arg2);
+
+    // mov eax, esi  (return out)
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(out));
+}
+} // namespace lift_006992E0
+} // namespace lift_006992E0

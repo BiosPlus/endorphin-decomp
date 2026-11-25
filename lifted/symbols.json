@@ -41816,6 +41816,13 @@
     "summary": "Reads the object's vtable pointer and returns the function pointer in vtable slot 2 (+0x08).",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x006992E0": {
+    "name": "Unknown::initOutPairAndSetOwnedFromArg2",
+    "class": "Unknown",
+    "signature": "uint32_t __thiscall fn_006992E0(void* self, void* out, uint32_t arg2)",
+    "summary": "Zeroes out[0], stores self in out[1], calls the virtual method at vtable+0x74 with out, then calls setOwnedObject_006991F0(out[0], arg2); returns out.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00699340": {
     "name": "ExprParser::ObjectContainer::vfunc_0",
     "class": "ExprParser::ObjectContainer",
