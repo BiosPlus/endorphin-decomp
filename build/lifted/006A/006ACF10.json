@@ -1,0 +1,22 @@
+{
+  "va": "0x006ACF10",
+  "size": 68,
+  "orig_symbol": "sub_006ACF10",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "TransformRefNode::fillAdjustedRecord",
+  "class": "TransformRefNode",
+  "signature": "AdjustedRecord* fn_006ACF10(void* self, AdjustedRecord* out, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)",
+  "summary": "Writes a 16-byte result record to the caller-supplied return buffer: field0 = a2 + ext_00626440(obj) + ext_006A7C40(obj) + 2, field1..3 = a3, a4, a5 (a4 and a5 copied in the order stored); returns the buffer pointer.",
+  "fields": [
+    {
+      "class": "TransformRefNode",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:20:19Z"
+}

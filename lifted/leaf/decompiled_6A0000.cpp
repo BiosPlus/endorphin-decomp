@@ -376,3 +376,34 @@ uint8_t __thiscall fn_006AF840(uint32_t self) {
     return 0;
 }
 } // namespace lift_006AF840
+
+// [0x006ACF10] sub_006ACF10 (68 bytes)
+namespace lift_006ACF10 {
+// Known callee 0x00626440: TransformRefNode::vfunc_6_off_4 (called on the object at this+0x14; returns a 32-bit value in eax).
+extern uint32_t ext_00626440(void* obj);
+// Known callee 0x006A7C40: sub_006A7C40 (called on the object at this+0x14; returns a 32-bit value in eax).
+extern uint32_t ext_006A7C40(void* obj);
+
+// @name TransformRefNode::fillAdjustedRecord
+// @class TransformRefNode
+// @summary Writes a 16-byte result record to the caller-supplied return buffer: field0 = a2 + ext_00626440(obj) + ext_006A7C40(obj) + 2, field1..3 = a3, a4, a5 (a4 and a5 copied in the order stored); returns the buffer pointer.
+// @field TransformRefNode +0x14 void* field_0x14
+struct AdjustedRecord {
+    uint32_t f0;
+    uint32_t f4;
+    uint32_t f8;
+    uint32_t fc;
+};
+
+AdjustedRecord* fn_006ACF10(void* self, AdjustedRecord* out, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5) {
+    out->f0 = a2;
+    out->f4 = a3;
+    out->f8 = a4;
+    out->fc = a5;
+
+    uint32_t r1 = ext_00626440(lift_field<void*>(self, 0x14));
+    uint32_t r2 = ext_006A7C40(lift_field<void*>(self, 0x14));
+    out->f0 += r1 + r2 + 2;
+    return out;
+}
+} // namespace lift_006ACF10
