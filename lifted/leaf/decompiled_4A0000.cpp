@@ -770,3 +770,51 @@ void* fn_004A5C00(void) {
     return mem_00ADEBC4;
 }
 } // namespace lift_004A5C00
+
+// [0x004A5F70] sub_004A5F70 (98 bytes)
+namespace lift_004A5F70 {
+// Known callee 0x00644F30: Unknown::invokeNestedVirtualSlot0 (extern void fn_00644F30(void* self))
+extern void ext_00644F30(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764; called with one pointer argument)
+extern void ext_006A5C5C(void* p);
+// IAT slot 0x00925134 holding MSVCR80!_invalid_parameter_noinfo (called on failed range/owner checks)
+extern void (*mem_00925134)(void);
+
+struct OwnedPointerRange {
+    uint8_t  field_0x00[0x08];
+    void**   field_0x08; // upper bound for valid slot addresses
+};
+
+static inline void invalidParameterIf(bool bad) {
+    if (bad) {
+        mem_00925134();
+    }
+}
+
+// @name OwnedPointerRange::destroyPointerRange
+// @class OwnedPointerRange
+// @summary Walks slots in [first, last) of an owning range, and for each non-null pointer calls ext_00644F30 then frees it via ext_006A5C5C.
+// @field OwnedPointerRange +0x08 void** field_0x08
+extern void fn_004A5F70(OwnedPointerRange* owner, void** first, OwnedPointerRange* ownerCheck, void** last) {
+    void** cur = first;
+    for (;;) {
+        invalidParameterIf(owner == nullptr || owner != ownerCheck);
+        if (cur == last) {
+            return;
+        }
+
+        void** slot = cur;
+        invalidParameterIf(!(owner != nullptr && slot < owner->field_0x08));
+        cur = slot + 1;
+        invalidParameterIf(!(owner != nullptr && cur - 1 < owner->field_0x08));
+
+        void* obj = *slot;
+        if (obj == nullptr) {
+            continue;
+        }
+
+        ext_00644F30(obj);
+        ext_006A5C5C(obj);
+    }
+}
+} // namespace lift_004A5F70
