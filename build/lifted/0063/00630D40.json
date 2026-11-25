@@ -1,0 +1,34 @@
+{
+  "va": "0x00630D40",
+  "size": 75,
+  "orig_symbol": "EffectorSkeletal::vfunc_12",
+  "src_path": "src/classes/EffectorSkeletal.cpp",
+  "lifted_path": "lifted/classes/EffectorSkeletal.cpp",
+  "name": "EffectorSkeletal::vfunc_12",
+  "class": "EffectorSkeletal",
+  "signature": "void fn_00630D40(void* self, void* arg)",
+  "summary": "Dynamic-casts its argument to the type at mem_00A94E98 (+0x44 offset), feeds that pointer through sub_006035D0 on this+0x90, then that result through sub_006035D0 on this+0x2C, and finally calls sub_00630CB0 with this and the float at this+0xF0.",
+  "fields": [
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0x2C",
+      "type": "void*",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0x90",
+      "type": "void*",
+      "name": "field_0x90"
+    },
+    {
+      "class": "EffectorSkeletal",
+      "offset": "+0xF0",
+      "type": "float",
+      "name": "field_0xF0"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:36:35Z"
+}

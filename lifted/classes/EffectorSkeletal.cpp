@@ -68,3 +68,35 @@ void* fn_00630D00(void* self) {
     return reinterpret_cast<Slot>(target)(self);
 }
 } // namespace lift_00630D00
+
+// [0x00630D40] sub_00630D40 (75 bytes)
+namespace lift_00630D40 {
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast.)
+// cdecl, 5 stack arguments (caller pops).
+extern void* ext_006A6E9E(void* obj, int32_t vfDelta, void* srcType, void* targetType, int32_t isReference);
+// Known callee 0x006035D0: sub_006035D0 (157B). Original calling convention: ecx = object, one stack argument; returns pointer in eax.
+extern void* ext_006035D0(void* ecx_obj, void* stack_arg);
+// Known callee 0x00630CB0: sub_00630CB0 (43B). Original calling convention: ecx = object, one float stack argument.
+extern void ext_00630CB0(void* ecx_obj, float stack_arg);
+
+// RTTI TypeDescriptor addresses used by the dynamic cast (image data, not dereferenced here).
+extern char mem_00A93768[];
+extern char mem_00A94E98[];
+
+// @name EffectorSkeletal::vfunc_12
+// @class EffectorSkeletal
+// @summary Dynamic-casts its argument to the type at mem_00A94E98 (+0x44 offset), feeds that pointer through sub_006035D0 on this+0x90, then that result through sub_006035D0 on this+0x2C, and finally calls sub_00630CB0 with this and the float at this+0xF0.
+// @field EffectorSkeletal +0x2C void* field_0x2C
+// @field EffectorSkeletal +0x90 void* field_0x90
+// @field EffectorSkeletal +0xF0 float field_0xF0
+// Note: the original pushes ecx (garbage) as the float argument slot, then overwrites it with fstp of +0xF0; the value passed is the float at +0xF0.
+// The eax result of the second sub_006035D0 call is discarded (not passed on to sub_00630CB0).
+void fn_00630D40(void* self, void* arg) {
+    void* casted = ext_006A6E9E(arg, 0, mem_00A93768, mem_00A94E98, 1);
+    void* adjusted = static_cast<char*>(casted) + 0x44;
+    void* x = ext_006035D0(static_cast<char*>(self) + 0x90, adjusted);
+    ext_006035D0(static_cast<char*>(self) + 0x2C, x);
+    float f0 = *reinterpret_cast<float*>(static_cast<char*>(self) + 0xF0);
+    ext_00630CB0(self, f0);
+}
+} // namespace lift_00630D40

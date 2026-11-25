@@ -33153,6 +33153,13 @@
     "summary": "Calls two helpers on sub-objects at +0x2C/+0x90, pushes the float at +0xF0 to a helper, then tail-dispatches vtable slot 0x74 on self.",
     "lifted_path": "lifted/classes/EffectorSkeletal.cpp"
   },
+  "0x00630D40": {
+    "name": "EffectorSkeletal::vfunc_12",
+    "class": "EffectorSkeletal",
+    "signature": "void fn_00630D40(void* self, void* arg)",
+    "summary": "Dynamic-casts its argument to the type at mem_00A94E98 (+0x44 offset), feeds that pointer through sub_006035D0 on this+0x90, then that result through sub_006035D0 on this+0x2C, and finally calls sub_00630CB0 with this and the float at this+0xF0.",
+    "lifted_path": "lifted/classes/EffectorSkeletal.cpp"
+  },
   "0x00630E60": {
     "name": "Unknown::NotifyAndReturnSubobjectF8",
     "class": "Unknown",
