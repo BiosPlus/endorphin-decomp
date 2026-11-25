@@ -1345,3 +1345,26 @@ void __thiscall sub_00533F50(void* self, int32_t index) {
     *reinterpret_cast<int32_t*>(base + 0xfc) = index;
 }
 } // namespace lift_00533F50
+
+// [0x005397A0] sub_005397A0 (95 bytes)
+namespace lift_005397A0 {
+// @name Unknown::CopyRangeBackward12_005397A0
+// @summary Copies a range of 12-byte (3-float) elements [begin, end) backwards so it ends at dest_end; returns dest_end minus the copied byte count (the new beginning of the destination).
+// @field Elem12 +0x00 float field_0x00
+// @field Elem12 +0x04 float field_0x04
+// @field Elem12 +0x08 float field_0x08
+uint32_t fn_005397A0(uint32_t begin, uint32_t end, uint32_t dest_end) {
+    const int32_t byte_diff = static_cast<int32_t>(end - begin);
+    const int32_t count = byte_diff / 12;
+
+    if (count > 0) {
+        for (int32_t k = count; k-- > 0;) {
+            const uintptr_t src = static_cast<uintptr_t>(begin) + static_cast<uintptr_t>(k) * 12u;
+            const uintptr_t dst = static_cast<uintptr_t>(dest_end) - static_cast<uintptr_t>(count - k) * 12u;
+            std::memmove(reinterpret_cast<void*>(dst), reinterpret_cast<const void*>(src), 12);
+        }
+    }
+
+    return static_cast<uint32_t>(dest_end - static_cast<uint32_t>(count) * 12u);
+}
+} // namespace lift_005397A0

@@ -21521,6 +21521,13 @@
     "summary": "Copies a range of 12-byte (3 x float) elements from [begin, end) to dst and returns dst advanced by the element count.",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
   },
+  "0x005397A0": {
+    "name": "Unknown::CopyRangeBackward12_005397A0",
+    "class": "Unknown",
+    "signature": "uint32_t fn_005397A0(uint32_t begin, uint32_t end, uint32_t dest_end)",
+    "summary": "Copies a range of 12-byte (3-float) elements [begin, end) backwards so it ends at dest_end; returns dest_end minus the copied byte count (the new beginning of the destination).",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00539800": {
     "name": "sub_00539800",
     "signature": "void __cdecl fn_00539800(const void* src_begin, const void* src_end, void* dst)",

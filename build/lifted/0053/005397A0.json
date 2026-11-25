@@ -1,0 +1,34 @@
+{
+  "va": "0x005397A0",
+  "size": 95,
+  "orig_symbol": "sub_005397A0",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::CopyRangeBackward12_005397A0",
+  "class": "Unknown",
+  "signature": "uint32_t fn_005397A0(uint32_t begin, uint32_t end, uint32_t dest_end)",
+  "summary": "Copies a range of 12-byte (3-float) elements [begin, end) backwards so it ends at dest_end; returns dest_end minus the copied byte count (the new beginning of the destination).",
+  "fields": [
+    {
+      "class": "Elem12",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Elem12",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Elem12",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:31:10Z"
+}
