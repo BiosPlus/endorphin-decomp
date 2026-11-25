@@ -1,0 +1,13 @@
+{
+  "va": "0x005CFD60",
+  "size": 67,
+  "orig_symbol": "sub_005CFD60",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "findNamedEntryIndex",
+  "signature": "uint32_t __stdcall findNamedEntryIndex(const void* arg)",
+  "summary": "Compares arg with the 2 string entries at 0x00B45900 (stride 0x1C) using std::string operator==; returns the matching index, or 3 if none match.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:17:28Z"
+}

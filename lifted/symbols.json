@@ -25957,6 +25957,12 @@
     "summary": "Returns the index of the first table string equal to key; returns 0 when no entry matches.",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
+  "0x005CFD60": {
+    "name": "findNamedEntryIndex",
+    "signature": "uint32_t __stdcall findNamedEntryIndex(const void* arg)",
+    "summary": "Compares arg with the 2 string entries at 0x00B45900 (stride 0x1C) using std::string operator==; returns the matching index, or 3 if none match.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
   "0x005CFE10": {
     "name": "sub_005CFE10",
     "signature": "void __thiscall sub_005CFE10(uint32_t self, uint32_t arg)",

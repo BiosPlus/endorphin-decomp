@@ -459,3 +459,24 @@ int __stdcall fn_005CFCE0(const void* key) {
     return 0;
 }
 } // namespace lift_005CFCE0
+
+// [0x005CFD60]
+namespace lift_005CFD60 {
+// @name findNamedEntryIndex
+// @summary Compares arg with the 2 string entries at 0x00B45900 (stride 0x1C) using std::string operator==; returns the matching index, or 3 if none match.
+
+extern uint32_t mem_00924FC4; // IAT slot: MSVCP80 std::operator==(basic_string<char> const&, basic_string<char> const&)
+
+typedef bool(__cdecl* StrEqFn)(const void*, const void*);
+
+uint32_t __stdcall findNamedEntryIndex(const void* arg) {
+    StrEqFn strEq = reinterpret_cast<StrEqFn>(static_cast<uintptr_t>(mem_00924FC4));
+    uint32_t idx = 0;
+    for (uintptr_t entry = 0x00B45900; entry < 0x00B45938; entry += 0x1C, ++idx) {
+        if (strEq(arg, reinterpret_cast<const void*>(entry))) {
+            return idx;
+        }
+    }
+    return 3;
+}
+} // namespace lift_005CFD60
