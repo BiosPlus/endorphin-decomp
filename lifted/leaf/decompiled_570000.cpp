@@ -981,3 +981,23 @@ bool CheckStreamHeaderNotVHash(std::istream& in) {
     return !(first[0] == 'V' && first[1] == '#');
 }
 } // namespace lift_00575C80
+
+// [0x00574D30] sub_00574D30 (84 bytes)
+namespace lift_00574D30 {
+// IAT slot [0x00924FE8] -> MSVCP80 std::basic_string<char> default constructor (??0...QAE@XZ).
+extern void ext_MSVCP80_string_ctor(void* self);
+extern int mem_00924FE8;
+
+// @name Unknown::initThreeStrings_00574D30
+// @class Unknown
+// @summary Default-constructs three std::string members at +0x00, +0x1C and +0x38 and returns self.
+// @field Unknown +0x00 std::string str0
+// @field Unknown +0x1C std::string str1
+// @field Unknown +0x38 std::string str2
+void* fn_00574D30(void* self) {
+    ext_MSVCP80_string_ctor(self);                                             // +0x00
+    ext_MSVCP80_string_ctor(static_cast<uint8_t*>(self) + 0x1C);               // +0x1C
+    ext_MSVCP80_string_ctor(static_cast<uint8_t*>(self) + 0x38);               // +0x38
+    return self;
+}
+} // namespace lift_00574D30
