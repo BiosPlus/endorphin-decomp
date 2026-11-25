@@ -1,0 +1,14 @@
+{
+  "va": "0x00611B80",
+  "size": 98,
+  "orig_symbol": "NMData::PrimaryTwistAndSwingConstraint::vfunc_69",
+  "src_path": "src/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp",
+  "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_69",
+  "class": "NMData::PrimaryTwistAndSwingConstraint",
+  "signature": "extern \"C\" uint32_t mem_00924FE4;      // import thunk: MSVCP80 basic_string\u003cchar\u003e::basic_string(const char*) void* __stdcall fn_00611B80(void* out, uint32_t mode)",
+  "summary": "Selects a C-string constant by mode (0, 1, or other), constructs the std::string at out from it via the MSVCP80 ctor, and returns out. The this pointer (ecx) is unused.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:18:23Z"
+}

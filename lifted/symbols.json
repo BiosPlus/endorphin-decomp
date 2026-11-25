@@ -36691,6 +36691,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00611910 (Unknown::forwardFloatThroughChildAndVirtualF0).",
     "lifted_path": "lifted/leaf/decompiled_610000.cpp"
   },
+  "0x00611B80": {
+    "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_69",
+    "class": "NMData::PrimaryTwistAndSwingConstraint",
+    "signature": "extern \"C\" uint32_t mem_00924FE4;      // import thunk: MSVCP80 basic_string\u003cchar\u003e::basic_string(const char*) void* __stdcall fn_00611B80(void* out, uint32_t mode)",
+    "summary": "Selects a C-string constant by mode (0, 1, or other), constructs the std::string at out from it via the MSVCP80 ctor, and returns out. The this pointer (ecx) is unused.",
+    "lifted_path": "lifted/NMData/PrimaryTwistAndSwingConstraint.cpp"
+  },
   "0x00611BF0": {
     "name": "NMData::PrimaryTwistAndSwingConstraint::vfunc_14",
     "class": "NMData::PrimaryTwistAndSwingConstraint",

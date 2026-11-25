@@ -247,3 +247,32 @@ void* fn_0061FDB0(void* self, DWORD arg2) {
     return self;
 }
 } // namespace lift_0061FDB0
+
+// [0x00611B80] NMData::PrimaryTwistAndSwingConstraint::vfunc_69 (98 bytes)
+namespace lift_00611B80 {
+// Data/import references from the original asm (differentially tested against endorphin.exe).
+extern uint32_t mem_00A9F294;      // .data: 32-bit pointer to C string used for mode == 0
+extern uint32_t mem_00A9EF94;      // .data: 32-bit pointer to C string used for mode == 1
+extern const char mem_00928B5D[]; // .rdata: C string used for all other modes
+extern uint32_t mem_00924FE4;      // import thunk: MSVCP80 basic_string<char>::basic_string(const char*)
+
+// @name NMData::PrimaryTwistAndSwingConstraint::vfunc_69
+// @class NMData::PrimaryTwistAndSwingConstraint
+// @summary Selects a C-string constant by mode (0, 1, or other), constructs the std::string at out from it via the MSVCP80 ctor, and returns out. The this pointer (ecx) is unused.
+void* __stdcall fn_00611B80(void* out, uint32_t mode) {
+    using StringCtorFromCStr = void(__thiscall*)(void* self, const char* s);
+
+    const char* s;
+    if (mode == 0) {
+        s = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9F294));
+    } else if (mode == 1) {
+        s = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9EF94));
+    } else {
+        s = mem_00928B5D;
+    }
+
+    auto ctor = reinterpret_cast<StringCtorFromCStr>(static_cast<uintptr_t>(mem_00924FE4));
+    ctor(out, s);
+    return out;
+}
+} // namespace lift_00611B80
