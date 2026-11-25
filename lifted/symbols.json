@@ -2043,6 +2043,12 @@
     "summary": "Member forwarding thunk: loads subobject pointer at +0x1A0 and tail-calls sub_0041CB80.",
     "lifted_path": "lifted/Properties/auto_tiny.cpp"
   },
+  "0x0041D330": {
+    "name": "isSubobjectWindowValid",
+    "signature": "int fn_0041D330(void* self)",
+    "summary": "Returns 1 if the window handle stored at self-\u003e+0x0C-\u003e+0x20 is a valid window, else 0.",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x0041D350": {
     "name": "Properties::GWCPropertiesControlDriver::vfunc_9",
     "class": "Properties::GWCPropertiesControlDriver",

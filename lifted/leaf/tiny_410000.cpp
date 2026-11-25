@@ -522,3 +522,23 @@ extern int __cdecl fn_00412CA0(void* a1, void* a2) {
     return s == 0u ? 1 : 0;
 }
 } // namespace lift_00412CA0
+
+// [0x0041D330] sub_0041D330 (30 bytes)
+namespace lift_0041D330 {
+extern uint32_t mem_0092561C; // IAT slot holding USER32!IsWindow
+
+// @name isSubobjectWindowValid
+// @summary Returns 1 if the window handle stored at self->+0x0C->+0x20 is a valid window, else 0.
+// @field Object +0x0C void* field_0x0C
+// @field SubObject +0x20 HWND field_0x20
+int fn_0041D330(void* self) {
+    void* sub = lift_field<void*>(self, 0x0C);
+    if (sub == nullptr) {
+        return 0;
+    }
+    uintptr_t hwnd = lift_field<uintptr_t>(sub, 0x20);
+    using IsWindowFn = int(__stdcall*)(uintptr_t);
+    auto isWindow = reinterpret_cast<IsWindowFn>(static_cast<uintptr_t>(mem_0092561C));
+    return isWindow(hwnd) != 0 ? 1 : 0;
+}
+} // namespace lift_0041D330

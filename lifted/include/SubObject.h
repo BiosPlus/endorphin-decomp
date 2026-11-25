@@ -11,7 +11,8 @@ struct SubObject_Fields {
     // +0x0   void*                    field_0x00  (evidence: 0x006722B0, 0x00672490, 0x00673B60)
     // +0xC   void*                    field_0x0C  (evidence: 0x006722B0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0x0c  (evidence: 0x0058A9E0) // CONFLICT: multiple definitions at +0xC
-    // +0x20  HWND                     hwnd  (evidence: 0x006A95C0)
+    // +0x20  HWND                     field_0x20  (evidence: 0x0041D330) // CONFLICT: multiple definitions at +0x20
+    // +0x20  HWND                     hwnd  (evidence: 0x006A95C0) // CONFLICT: multiple definitions at +0x20
     // +0x24  void*                    embeddedAt24  (evidence: 0x005B68F0) // CONFLICT: multiple definitions at +0x24
     // +0x24  void*                    field_0x24  (evidence: 0x0058A9E0) // CONFLICT: multiple definitions at +0x24
     // +0x28  pointer                  field_0x28  (evidence: 0x00648900)
