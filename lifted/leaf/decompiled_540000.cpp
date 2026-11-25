@@ -1143,3 +1143,22 @@ uint32_t __thiscall sub_005435A0(void* self, uint32_t arg1, uint32_t arg2) {
     return res;
 }
 } // namespace lift_005435A0
+
+// [0x00547B70] sub_00547B70 (43 bytes)
+namespace lift_00547B70 {
+// OPENGL32!glRotatef IAT slot (stdcall: angle, x, y, z).
+extern void (*mem_009254CC)(float angle, float x, float y, float z);
+// rdata float -90.0f (u32 0xC2B40000).
+extern const float mem_00955D14;
+
+// @name Unknown::applyXRotation_00547B70
+// @class Unknown
+// @summary If the byte at the pointer stored in +0x24 is zero, issues glRotatef(-90, 1, 0, 0).
+// @field Unknown +0x24 uint8_t* field_0x24
+void fn_00547B70(void* self) {
+    const uint8_t* flag = lift_field<const uint8_t*>(self, 0x24);
+    if (*flag == 0) {
+        mem_009254CC(mem_00955D14, 1.0f, 0.0f, 0.0f);
+    }
+}
+} // namespace lift_00547B70

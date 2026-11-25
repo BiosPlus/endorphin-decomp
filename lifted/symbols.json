@@ -24007,6 +24007,13 @@
     "summary": "Looks up a global key via virtual slot 7 and compares the resulting std::string against that same key.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x00547B70": {
+    "name": "Unknown::applyXRotation_00547B70",
+    "class": "Unknown",
+    "signature": "void fn_00547B70(void* self)",
+    "summary": "If the byte at the pointer stored in +0x24 is zero, issues glRotatef(-90, 1, 0, 0).",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00547CE0": {
     "name": "sub_00547CE0",
     "signature": "int sub_00547CE0(void* self)",
