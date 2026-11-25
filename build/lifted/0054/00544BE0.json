@@ -1,0 +1,21 @@
+{
+  "va": "0x00544BE0",
+  "size": 79,
+  "orig_symbol": "sub_00544BE0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "ResetSubobjectAndFinalize_00544BE0",
+  "signature": "void fn_00544BE0(void* self)",
+  "summary": "Calls the helper on the subobject at this+0x98 with state 0, then calls the helper on this with state -1.",
+  "fields": [
+    {
+      "class": "ResetSubobjectAndFinalize_00544BE0",
+      "offset": "+0x98",
+      "type": "uint8_t",
+      "name": "field_0x98"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:46:42Z"
+}

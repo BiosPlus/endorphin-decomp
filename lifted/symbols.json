@@ -20231,6 +20231,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00544920 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x00544BE0": {
+    "name": "ResetSubobjectAndFinalize_00544BE0",
+    "signature": "void fn_00544BE0(void* self)",
+    "summary": "Calls the helper on the subobject at this+0x98 with state 0, then calls the helper on this with state -1.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00544C30": {
     "name": "ReshapeTool::vfunc_14_off_98",
     "class": "ReshapeTool",

@@ -775,3 +775,21 @@ void fn_00540130(void* self) {
     ext_00543320(self);
 }
 } // namespace lift_00540130
+
+// [0x00544BE0] sub_00544BE0 (79 bytes)
+namespace lift_00544BE0 {
+extern void __fastcall ext_00549920(void* self);
+// Known callee 0x00543320: sub_00543320 (Stores address of mem_009560E4 into field at offset +0x0.)
+extern void __fastcall ext_00543320(void* self);
+
+// @name ResetSubobjectAndFinalize_00544BE0
+// @summary Calls the helper on the subobject at this+0x98 with state 0, then calls the helper on this with state -1.
+// @field ResetSubobjectAndFinalize_00544BE0 +0x98 uint8_t field_0x98
+void fn_00544BE0(void* self) {
+    // Original code wraps the two calls in an MSVC SEH frame (state 0 / -1
+    // bookkeeping). That frame only exists for unwinding and has no effect on
+    // the portable behavior, so it is omitted here.
+    ext_00549920(&lift_field<uint8_t>(self, 0x98));
+    ext_00543320(self);
+}
+} // namespace lift_00544BE0
