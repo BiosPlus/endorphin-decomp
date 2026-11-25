@@ -535,3 +535,30 @@ extern uint32_t fn_00593D40(uint32_t* p, uint32_t a2, uint32_t a3, uint32_t a4) 
     }
 }
 } // namespace lift_00593D40
+
+// [0x00593EB0]
+namespace lift_00593EB0 {
+// @name Unknown::assignGlobalFromLocal_00593EB0
+// @summary Assigns the global Unknown at 0x00AECC04 from a local temporary, then invokes the temporary's field_0x04 vtable slot 0x78 (passing the temporary) when that pointer is non-null.
+// @field Unknown +0x04 void* field_0x04
+
+extern void* __thiscall ext_0041CF50(void* self, void* other);
+extern uint8_t mem_00AECC04[];
+
+extern void fn_00593EB0(void) {
+    // Structured-exception frame setup/teardown from the original prologue/epilogue is omitted;
+    // it only tracks exception state and has no effect on the data flow below.
+    alignas(8) uint8_t tmp[8] = {};
+
+    void* self = mem_00AECC04;
+    ext_0041CF50(self, tmp);
+
+    void* p = lift_field<void*>(tmp, 0x04);
+    if (p != nullptr) {
+        void* vtbl = lift_field<void*>(p, 0x00);
+        void* slot = lift_field<void*>(vtbl, 0x78);
+        auto fn = reinterpret_cast<void (*)(void*, void*)>(slot);
+        fn(p, tmp);
+    }
+}
+} // namespace lift_00593EB0

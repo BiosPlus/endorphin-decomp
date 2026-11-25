@@ -23822,6 +23822,13 @@
     "summary": "Switch on the dword at *p: 1 returns a3, 2 returns a2, 3 recurses with the key forced to 2 (yielding a2), anything else returns a4. Stdcall, callee pops 0x10.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x00593EB0": {
+    "name": "Unknown::assignGlobalFromLocal_00593EB0",
+    "class": "Unknown",
+    "signature": "extern \"C\" void fn_00593EB0(void)",
+    "summary": "Assigns the global Unknown at 0x00AECC04 from a local temporary, then invokes the temporary's field_0x04 vtable slot 0x78 (passing the temporary) when that pointer is non-null.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x00593F10": {
     "name": "sub_00593F10",
     "signature": "extern \"C\" void fn_00593F10(void)",
