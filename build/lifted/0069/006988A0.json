@@ -1,0 +1,28 @@
+{
+  "va": "0x006988A0",
+  "size": 87,
+  "orig_symbol": "sub_006988A0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "String::findFirstNotOf",
+  "class": "String",
+  "signature": "int32_t __thiscall sub_006988A0(void* self, const char* chars, int32_t startIndex)",
+  "summary": "Find index of first character not in the given C-string starting at startIndex, or -1 if none.",
+  "fields": [
+    {
+      "class": "String",
+      "offset": "+0x0",
+      "type": "const char*",
+      "name": "data"
+    },
+    {
+      "class": "String",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "length"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:14:30Z"
+}
