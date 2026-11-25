@@ -1,0 +1,13 @@
+{
+  "va": "0x00579F40",
+  "size": 86,
+  "orig_symbol": "sub_00579F40",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "sub_00579F40",
+  "signature": "void* fn_00579F40(const void* first, const void* last, void* out)",
+  "summary": "Auto-lifted identical-shape clone of 0x00489A80 (CopyFloat5RangeAndAdvance).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T02:11:00Z"
+}

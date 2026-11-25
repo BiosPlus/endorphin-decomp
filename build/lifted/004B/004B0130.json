@@ -1,0 +1,88 @@
+{
+  "va": "0x004B0130",
+  "size": 86,
+  "orig_symbol": "ChangePrimarySelectionCommand::vfunc_0",
+  "src_path": "src/classes/ChangePrimarySelectionCommand.cpp",
+  "lifted_path": "lifted/classes/ChangePrimarySelectionCommand.cpp",
+  "name": "ChangePrimarySelectionCommand::vfunc_0",
+  "class": "ChangePrimarySelectionCommand",
+  "signature": "void* fn_004B0130(void* self, uint8_t flags)",
+  "summary": "Auto-lifted identical-shape clone of 0x0048F920 (SetTriggeredEventFrameRangeCommand::scalarDeletingDtor).",
+  "fields": [
+    {
+      "class": "ChangePrimarySelectionCommand",
+      "offset": "+0x18",
+      "type": "void*",
+      "name": "field_0x18"
+    },
+    {
+      "class": "ChangePrimarySelectionCommand",
+      "offset": "+0x1C",
+      "type": "uint32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "ChangePrimarySelectionCommand",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "ChangePrimarySelectionCommand",
+      "offset": "+0x38",
+      "type": "void*",
+      "name": "field_0x38"
+    },
+    {
+      "class": "ChangePrimarySelectionCommand",
+      "offset": "+0x3C",
+      "type": "uint32_t",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "ChangePrimarySelectionCommand",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Commands::SetTriggeredEventFrameRangeCommand",
+      "offset": "+0x30",
+      "type": "void*",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Commands::SetTriggeredEventFrameRangeCommand",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Commands::SetTriggeredEventFrameRangeCommand",
+      "offset": "+0x38",
+      "type": "uint32_t",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Commands::SetTriggeredEventFrameRangeCommand",
+      "offset": "+0x40",
+      "type": "void*",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Commands::SetTriggeredEventFrameRangeCommand",
+      "offset": "+0x44",
+      "type": "uint32_t",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Commands::SetTriggeredEventFrameRangeCommand",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T02:11:00Z"
+}

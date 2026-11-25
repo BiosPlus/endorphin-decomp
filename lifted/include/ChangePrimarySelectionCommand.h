@@ -12,5 +12,11 @@ namespace lifted_layout {
 struct ChangePrimarySelectionCommand_Fields {
     // +0x8   void*                    field_0x08  (evidence: 0x00665820)
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x00665820)
+    // +0x18  void*                    field_0x18  (evidence: 0x004B0130)
+    // +0x1C  uint32_t                 field_0x1C  (evidence: 0x004B0130)
+    // +0x20  uint32_t                 field_0x20  (evidence: 0x004B0130)
+    // +0x38  void*                    field_0x38  (evidence: 0x004B0130)
+    // +0x3C  uint32_t                 field_0x3C  (evidence: 0x004B0130)
+    // +0x40  uint32_t                 field_0x40  (evidence: 0x004B0130)
 };
 } // namespace lifted_layout

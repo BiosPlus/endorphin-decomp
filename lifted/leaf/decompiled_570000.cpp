@@ -1019,3 +1019,76 @@ void* fn_005761E0(uint8_t* first, uint8_t* last, uint8_t* dest) {
     return dest + count * kStride;
 }
 } // namespace lift_005761E0
+
+// [0x00579F40] sub_00579F40 (86 bytes)
+namespace lift_00579F40 {
+// @name sub_00579F40
+// @summary Auto-lifted identical-shape clone of 0x00489A80 (CopyFloat5RangeAndAdvance).
+namespace lift_00489A80 {
+// Known callee 0x00489080: CopyFloat5Range (Copies a range of 20-byte (5 x float) records from [first, last) to out; returns the output end pointer.)
+extern void* ext_00579080(const void* first, const void* last, void* out);
+
+// @name CopyFloat5RangeAndAdvance
+// @summary Copies a [first, last) range of 20-byte records to out and returns out advanced by the record count.
+void* fn_00579F40(const void* first, const void* last, void* out) {
+    ext_00579080(first, last, out);
+
+    // Record count = byte span / 20 (truncating toward zero, as signed division).
+    const std::ptrdiff_t byteSpan =
+        reinterpret_cast<const char*>(last) - reinterpret_cast<const char*>(first);
+    const std::ptrdiff_t recordCount = byteSpan / 20;
+
+    return static_cast<char*>(out) + recordCount * 20;
+}
+} // namespace lift_00489A80
+} // namespace lift_00579F40
+
+// [0x0057E2C0] sub_0057E2C0 (86 bytes)
+namespace lift_0057E2C0 {
+// @name sub_0057E2C0
+// @summary Auto-lifted identical-shape clone of 0x00489A80 (CopyFloat5RangeAndAdvance).
+namespace lift_00489A80 {
+// Known callee 0x00489080: CopyFloat5Range (Copies a range of 20-byte (5 x float) records from [first, last) to out; returns the output end pointer.)
+extern void* ext_0057DA80(const void* first, const void* last, void* out);
+
+// @name CopyFloat5RangeAndAdvance
+// @summary Copies a [first, last) range of 20-byte records to out and returns out advanced by the record count.
+void* fn_0057E2C0(const void* first, const void* last, void* out) {
+    ext_0057DA80(first, last, out);
+
+    // Record count = byte span / 20 (truncating toward zero, as signed division).
+    const std::ptrdiff_t byteSpan =
+        reinterpret_cast<const char*>(last) - reinterpret_cast<const char*>(first);
+    const std::ptrdiff_t recordCount = byteSpan / 20;
+
+    return static_cast<char*>(out) + recordCount * 20;
+}
+} // namespace lift_00489A80
+} // namespace lift_0057E2C0
+
+// [0x0057E320] sub_0057E320 (85 bytes)
+namespace lift_0057E320 {
+// @name sub_0057E320
+// @summary Auto-lifted identical-shape clone of 0x00687E50 (copyStringRecordRangeAdvance_00687E50).
+namespace lift_00687E50 {
+// Known callee 0x00687330: Unknown::CopyStringRecordRange_00687330 (copies each 0x2C-byte StringRecord in [first, last) to dest and returns the end of the written range; the caller's return value is discarded here).
+extern void* ext_0057DCA0(const void* first, const void* last, void* dest);
+
+// @name copyStringRecordRangeAdvance_00687E50
+// @summary Copies the StringRecord range [first, last) to dest, then returns dest advanced by the record count times 0x2C (sizeof StringRecord).
+void* fn_0057E320(const void* first, const void* last, void* dest) {
+    // Copy the records; the callee's return value is not used by this function.
+    ext_0057DCA0(first, last, dest);
+
+    // Record count = (last - first) / 0x2C, computed as a signed 32-bit division
+    // (matches the original magic-multiply sequence, which truncates toward zero).
+    const auto* f = static_cast<const uint8_t*>(first);
+    const auto* l = static_cast<const uint8_t*>(last);
+    const int32_t diff = static_cast<int32_t>(l - f);
+    const int32_t count = diff / 0x2C;
+
+    auto* out = static_cast<uint8_t*>(dest);
+    return out + static_cast<ptrdiff_t>(count) * 0x2C;
+}
+} // namespace lift_00687E50
+} // namespace lift_0057E320

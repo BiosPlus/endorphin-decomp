@@ -10,11 +10,11 @@
 // Recovered field layout for Commands::SetTriggeredEventFrameRangeCommand:
 namespace lifted_layout {
 struct Commands_SetTriggeredEventFrameRangeCommand_Fields {
-    // +0x30  void*                    field_0x30  (evidence: 0x0048F920)
-    // +0x34  uint32_t                 field_0x34  (evidence: 0x0048F920)
-    // +0x38  uint32_t                 field_0x38  (evidence: 0x0048F920)
-    // +0x40  void*                    field_0x40  (evidence: 0x0048F920)
-    // +0x44  uint32_t                 field_0x44  (evidence: 0x0048F920)
-    // +0x48  uint32_t                 field_0x48  (evidence: 0x0048F920)
+    // +0x30  void*                    field_0x30  (evidence: 0x0048F920, 0x004B0130)
+    // +0x34  uint32_t                 field_0x34  (evidence: 0x0048F920, 0x004B0130)
+    // +0x38  uint32_t                 field_0x38  (evidence: 0x0048F920, 0x004B0130)
+    // +0x40  void*                    field_0x40  (evidence: 0x0048F920, 0x004B0130)
+    // +0x44  uint32_t                 field_0x44  (evidence: 0x0048F920, 0x004B0130)
+    // +0x48  uint32_t                 field_0x48  (evidence: 0x0048F920, 0x004B0130)
 };
 } // namespace lifted_layout

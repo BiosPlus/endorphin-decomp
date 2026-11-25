@@ -11545,6 +11545,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005F0D40 (NMData::MagnetJointData::vfunc_59).",
     "lifted_path": "lifted/classes/ChangePrimarySelectionCommand.cpp"
   },
+  "0x004B0130": {
+    "name": "ChangePrimarySelectionCommand::vfunc_0",
+    "class": "ChangePrimarySelectionCommand",
+    "signature": "void* fn_004B0130(void* self, uint8_t flags)",
+    "summary": "Auto-lifted identical-shape clone of 0x0048F920 (SetTriggeredEventFrameRangeCommand::scalarDeletingDtor).",
+    "lifted_path": "lifted/classes/ChangePrimarySelectionCommand.cpp"
+  },
   "0x004B0190": {
     "name": "ChangeSecondarySelectionCommand::vfunc_0",
     "class": "ChangeSecondarySelectionCommand",
@@ -22638,6 +22645,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00579F40": {
+    "name": "sub_00579F40",
+    "signature": "void* fn_00579F40(const void* first, const void* last, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x00489A80 (CopyFloat5RangeAndAdvance).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057A250": {
     "name": "sub_0057A250",
     "signature": "uint32_t fn_0057A250(uint32_t begin, uint32_t end, uint32_t value)",
@@ -22713,6 +22726,18 @@
     "class": "Unknown",
     "signature": "void* fn_0057D7F0(void* self)",
     "summary": "Initializes three float fields to 0.0, default-constructs a std::string at +0x0C, zeroes three dwords at +0x2C/+0x30/+0x34, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057E2C0": {
+    "name": "sub_0057E2C0",
+    "signature": "void* fn_0057E2C0(const void* first, const void* last, void* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x00489A80 (CopyFloat5RangeAndAdvance).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057E320": {
+    "name": "sub_0057E320",
+    "signature": "void* fn_0057E320(const void* first, const void* last, void* dest)",
+    "summary": "Auto-lifted identical-shape clone of 0x00687E50 (copyStringRecordRangeAdvance_00687E50).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x0057E560": {
@@ -41457,6 +41482,12 @@
     "name": "initOnceGetSlotAddress",
     "signature": "void* fn_006999B0(void* self)",
     "summary": "One-time init guard: if bit 0 of the flag byte at mem_00B5C9A4 is clear, sets it, zeroes mem_00B5C99C, copies mem_00B599BC into mem_00B5C9A0, calls ext_006A6C87(0x921FE0); always returns \u0026mem_00B5C99C.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
+  "0x0069A090": {
+    "name": "sub_0069A090",
+    "signature": "void* fn_0069A090(const void* first, const void* last, void* dest)",
+    "summary": "Auto-lifted identical-shape clone of 0x00687E50 (copyStringRecordRangeAdvance_00687E50).",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x0069A0F0": {
