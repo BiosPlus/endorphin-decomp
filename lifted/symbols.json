@@ -47919,6 +47919,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006B4E20 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006B4F20": {
+    "name": "GWCPropInPlaceDateTime::PreTranslateMessage",
+    "class": "GWCPropInPlaceDateTime",
+    "signature": "extern \"C\" int32_t __thiscall fn_006B4F20(void* self, void* pMsg)",
+    "summary": "Intercepts Return and Escape keydown messages, removes them from the queue, and moves focus to the parent window.",
+    "lifted_path": "lifted/classes/GWCPropInPlaceDateTime.cpp"
+  },
   "0x006B4F80": {
     "name": "sub_006B4F80",
     "signature": "extern \"C\" void* __cdecl fn_006B4F80(void)",
