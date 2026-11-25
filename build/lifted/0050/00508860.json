@@ -1,0 +1,21 @@
+{
+  "va": "0x00508860",
+  "size": 65,
+  "orig_symbol": "sub_00508860",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "findElementByName",
+  "signature": "uint32_t __cdecl sub_00508860(uint32_t first, uint32_t last, uint32_t target)",
+  "summary": "Linearly searches a range of 0x24-byte elements for one whose std::string at +0x04 equals the target string.",
+  "fields": [
+    {
+      "class": "Element",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "name"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:12:47Z"
+}

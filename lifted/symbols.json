@@ -2739,6 +2739,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00434380 (Unknown::notifyObjectWithQueryResult).",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00434760": {
+    "name": "CheckStateAndFieldThenNotify",
+    "signature": "int32_t __thiscall fn_00434760(void* self, void* arg1)",
+    "summary": "Checks global state and object field at +0x60, then tail-calls arg1's vtable[0] with the boolean result.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x004348F0": {
     "name": "sub_004348F0",
     "class": "(none)",
@@ -15694,6 +15700,12 @@
     "name": "FindMatchingNameIndex",
     "signature": "extern \"C\" bool fn_00508800(void* self, const void* str)",
     "summary": "Compares the string argument against a 3-entry name table; on match stores the index at self+0x0C and returns true.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
+  "0x00508860": {
+    "name": "findElementByName",
+    "signature": "uint32_t __cdecl sub_00508860(uint32_t first, uint32_t last, uint32_t target)",
+    "summary": "Linearly searches a range of 0x24-byte elements for one whose std::string at +0x04 equals the target string.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
   "0x00508930": {

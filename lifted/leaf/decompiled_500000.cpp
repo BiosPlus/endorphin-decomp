@@ -478,3 +478,25 @@ void* fn_00509C50(void* first, void* last, void* d_last) {
     return dst;
 }
 } // namespace lift_00509C50
+
+// [0x00508860]
+namespace lift_00508860 {
+extern uint32_t mem_00924FC4;
+
+// @name findElementByName
+// @summary Linearly searches a range of 0x24-byte elements for one whose std::string at +0x04 equals the target string.
+// @field Element +0x04 std::string name
+uint32_t __cdecl sub_00508860(uint32_t first, uint32_t last, uint32_t target) {
+    using StringEqFn = uint8_t (__cdecl*)(uint32_t lhs, uint32_t rhs);
+    auto string_eq = reinterpret_cast<StringEqFn>(mem_00924FC4);
+
+    uint32_t cur = first;
+    while (cur != last) {
+        if (string_eq(cur + 0x4, target) != 0) {
+            return cur;
+        }
+        cur += 0x24;
+    }
+    return cur;
+}
+} // namespace lift_00508860
