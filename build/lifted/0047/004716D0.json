@@ -1,0 +1,22 @@
+{
+  "va": "0x004716D0",
+  "size": 58,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, getPosBufferFrameRate, 0\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0\u003e",
+  "signature": "float fn_004716D0(void* self)",
+  "summary": "Reads the RuntimeEngine pointer from the value object; if non-null, queries the float at +0x138 of its +0xF8 sub-object, then always throws an exception.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:58:09Z"
+}

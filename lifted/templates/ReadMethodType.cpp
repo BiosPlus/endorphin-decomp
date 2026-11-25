@@ -52159,3 +52159,34 @@ void fn_00695740(void* self) {
     ext_006A6DD2(exception_storage, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
 }
 } // namespace lift_00695740
+
+// [0x004716D0] ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_004716D0 {
+// Known callee 0x0046C110: Unknown::GetFieldF138ViaF8 (Returns the float at +0x138 of the sub-object pointed to by self+0xF8.)
+extern float ext_0046C110(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Disassembly pushes a float and a pointer before the call; declared with those arguments here.
+extern void ext_0046C4E0(float value, void* self);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0(void* exc);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+// Throw-info data referenced by the 0x009DEC1C push.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, float, getPosBufferFrameRate, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0>
+// @summary Reads the RuntimeEngine pointer from the value object; if non-null, queries the float at +0x138 of its +0xF8 sub-object, then always throws an exception.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+float fn_004716D0(void* self) {
+    void* p = *static_cast<void**>(self);
+    if (p != nullptr) {
+        float v = ext_0046C110(p);
+        ext_0046C4E0(v, p);
+    }
+    alignas(8) unsigned char exc[32] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+    return 0.0f;
+}
+} // namespace lift_004716D0

@@ -8745,6 +8745,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004A2B90 (ExprParser::ReadMethodType\u003cFSMEditView\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004716D0": {
+    "name": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, getPosBufferFrameRate, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0\u003e",
+    "signature": "float fn_004716D0(void* self)",
+    "summary": "Reads the RuntimeEngine pointer from the value object; if non-null, queries the float at +0x138 of its +0xF8 sub-object, then always throws an exception.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x00471920": {
     "name": "ExprParser::ReadMethodType\u003cRuntimeEngine\u003e::getTimeZoomFactor",
     "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0\u003e",
