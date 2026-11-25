@@ -1707,3 +1707,53 @@ void* fn_0052FFD0(void) {
     return obj;
 }
 } // namespace lift_0052FFD0
+
+// [0x00524A60]
+namespace lift_00524A60 {
+// @name sub_00524A60
+// @summary Returns a float value from a nested vector element indexed by this+0x8, or 0.0f if null.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+
+
+extern void (*mem_00925134)(void);
+
+float __thiscall fn_00524A60(void* self) {
+    uint8_t* obj = *reinterpret_cast<uint8_t**>(static_cast<uint8_t*>(self) + 0x04);
+    if (!obj) {
+        return 0.0f;
+    }
+
+    auto invalid_param = mem_00925134;
+    uint8_t* outer_begin = *reinterpret_cast<uint8_t**>(obj + 0x24);
+    if (!outer_begin) {
+        invalid_param();
+    } else {
+        uint8_t* outer_end = *reinterpret_cast<uint8_t**>(obj + 0x28);
+        int32_t count = static_cast<int32_t>(outer_end - outer_begin) / 104;
+        if (count == 0) {
+            invalid_param();
+        }
+    }
+
+    uint8_t* elem = *reinterpret_cast<uint8_t**>(obj + 0x24);
+    uint8_t* inner_vec = elem + 0x04;
+    double* inner_begin = *reinterpret_cast<double**>(inner_vec + 0x04);
+    uint32_t idx = *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x08);
+
+    if (!inner_begin) {
+        invalid_param();
+    } else {
+        double* inner_end = *reinterpret_cast<double**>(inner_vec + 0x08);
+        uint32_t inner_count = static_cast<uint32_t>(
+            static_cast<int32_t>(reinterpret_cast<uintptr_t>(inner_end) - reinterpret_cast<uintptr_t>(inner_begin)) >> 3
+        );
+        if (idx >= inner_count) {
+            invalid_param();
+        }
+    }
+
+    double* data = *reinterpret_cast<double**>(inner_vec + 0x04);
+    return static_cast<float>(data[idx]);
+}
+} // namespace lift_00524A60

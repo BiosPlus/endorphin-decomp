@@ -1,0 +1,27 @@
+{
+  "va": "0x00524A60",
+  "size": 114,
+  "orig_symbol": "sub_00524A60",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "sub_00524A60",
+  "signature": "float __thiscall fn_00524A60(void* self)",
+  "summary": "Returns a float value from a nested vector element indexed by this+0x8, or 0.0f if null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:39:39Z"
+}

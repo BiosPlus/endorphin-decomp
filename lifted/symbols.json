@@ -22239,6 +22239,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00524A60": {
+    "name": "sub_00524A60",
+    "signature": "float __thiscall fn_00524A60(void* self)",
+    "summary": "Returns a float value from a nested vector element indexed by this+0x8, or 0.0f if null.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00524AE0": {
     "name": "Unknown::GetTableDoubleAsFloat",
     "class": "Unknown",
