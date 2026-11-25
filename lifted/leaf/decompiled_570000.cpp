@@ -43,8 +43,10 @@ DWORD* __thiscall fn_00578020(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_00578020
+#include <utility>
+#include <stdexcept>
 
-// [0x00578050] sub_00578050 (41 bytes)
+#include <stdexcept>
 namespace lift_00578050 {
 // @name sub_00578050
 // @summary Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).
@@ -1526,3 +1528,24 @@ extern void* fn_0057DEE0(void* first, void* last, void* destEnd) {
 }
 } // namespace lift_0051A6D0
 } // namespace lift_0057DEE0
+
+// [0x0057DDF0] sub_0057DDF0 (94 bytes)
+namespace lift_0057DDF0 {
+// @name sub_0057DDF0
+// @summary Auto-lifted identical-shape clone of 0x0062BA00 (CopyStringPairRangeReturnEnd_0062BA00).
+namespace lift_0062BA00 {
+// Known callee 0x0062B8B0: CopyStringPairRange (Copy-assigns each 0x38-byte record in [first, last) to consecutive records starting at dest (both std::string members per record); returns one past the last destination record.)
+extern char* ext_0057DB10(char* first, char* last, char* dest);
+
+// @name CopyStringPairRangeReturnEnd_0062BA00
+// @summary Copies a 0x38-byte record range via sub_0062B8B0, then returns dest advanced by the record count times 0x38.
+extern char* __cdecl fn_0057DDF0(char* first, char* last, char* dest) {
+    ext_0057DB10(first, last, dest);
+
+    // Record count = (last - first) / 0x38, signed truncating division.
+    const ptrdiff_t bytes = last - first;
+    const ptrdiff_t count = bytes / 56;
+    return dest + count * 56;
+}
+} // namespace lift_0062BA00
+} // namespace lift_0057DDF0

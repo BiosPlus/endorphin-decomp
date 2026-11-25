@@ -24614,6 +24614,12 @@
     "summary": "Initializes three float fields to 0.0, default-constructs a std::string at +0x0C, zeroes three dwords at +0x2C/+0x30/+0x34, and returns this.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x0057DDF0": {
+    "name": "sub_0057DDF0",
+    "signature": "extern char* __cdecl fn_0057DDF0(char* first, char* last, char* dest)",
+    "summary": "Auto-lifted identical-shape clone of 0x0062BA00 (CopyStringPairRangeReturnEnd_0062BA00).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x0057DEE0": {
     "name": "sub_0057DEE0",
     "signature": "extern void* fn_0057DEE0(void* first, void* last, void* destEnd)",
