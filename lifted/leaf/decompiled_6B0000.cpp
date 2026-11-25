@@ -1005,3 +1005,34 @@ int fn_006B8B70(void* self) {
     return 1;
 }
 } // namespace lift_006B8B70
+
+// [0x006BBA40] sub_006BBA40 (74 bytes)
+namespace lift_006BBA40 {
+extern uint32_t mem_00B5D308;
+extern uint32_t mem_00B5D30C;
+extern uint32_t mem_00B5D310;
+extern uint32_t mem_00B5D314;
+extern uint32_t mem_00B5D318;
+extern uint32_t mem_00B5D31C;
+extern uint32_t mem_00B5D320;
+extern uint32_t mem_00B5D324;
+extern uint32_t mem_00925284;
+
+// @name fn_006BBA40 (copyHugeDoubleToGlobals)
+// @summary Copies the 8-byte double pointed to by the _HUGE pointer into four consecutive 8-byte globals.
+void fn_006BBA40(void) {
+    // mem_00925284 holds the address of _HUGE (a double); read its two 32-bit halves.
+    const auto* src = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+    const uint32_t lo = src[0];
+    const uint32_t hi = src[1];
+
+    mem_00B5D308 = lo;
+    mem_00B5D30C = hi;
+    mem_00B5D310 = lo;
+    mem_00B5D314 = hi;
+    mem_00B5D318 = lo;
+    mem_00B5D31C = hi;
+    mem_00B5D320 = lo;
+    mem_00B5D324 = hi;
+}
+} // namespace lift_006BBA40
