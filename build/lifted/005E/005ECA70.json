@@ -1,0 +1,13 @@
+{
+  "va": "0x005ECA70",
+  "size": 30,
+  "orig_symbol": "sub_005ECA70",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "sub_005ECA70",
+  "signature": "void fn_005ECA70(DWORD* dst, DWORD value)",
+  "summary": "Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T03:14:57Z"
+}

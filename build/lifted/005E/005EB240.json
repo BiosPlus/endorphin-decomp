@@ -1,0 +1,21 @@
+{
+  "va": "0x005EB240",
+  "size": 87,
+  "orig_symbol": "sub_005EB240",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "sub_005EB240",
+  "signature": "void* fn_005EB240()",
+  "summary": "Auto-lifted identical-shape clone of 0x006058A0 (sub_006058A0).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T03:14:57Z"
+}

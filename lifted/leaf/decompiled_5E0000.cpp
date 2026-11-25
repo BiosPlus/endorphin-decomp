@@ -1,7 +1,9 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_5E0000.cpp
 #include "lift_compat.h"
+#include <new>
+#include <string>
 
-// [0x005E2770] sub_005E2770 (27 bytes)
+#include <string>
 namespace lift_005E2770 {
 // Known callee 0x005B11E0: getFloatAt (Returns a float from a 32-bit float array at offset +0x10 indexed by the argument)
 extern float ext_005B11E0(uint32_t ecx, uint32_t index);
@@ -956,3 +958,335 @@ void* fn_005EB540() {
     return &mem_00B45F98;
 }
 } // namespace lift_005EB540
+
+// [0x005EB240] sub_005EB240 (87 bytes)
+namespace lift_005EB240 {
+// @name sub_005EB240
+// @summary Auto-lifted identical-shape clone of 0x006058A0 (sub_006058A0).
+namespace lift_006058A0 {
+// @name sub_006058A0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B45F5C;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B45F58;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_005EB240() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A659Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B45F5C & 1u) == 0) {
+        mem_00B45F5C |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B45F58, frame[0]);
+        mem_00B45F58 = 0x969E14u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B45F58;
+}
+} // namespace lift_004CAE30
+} // namespace lift_006058A0
+} // namespace lift_005EB240
+
+// [0x005EB2A0] sub_005EB2A0 (87 bytes)
+namespace lift_005EB2A0 {
+// @name sub_005EB2A0
+// @summary Auto-lifted identical-shape clone of 0x006058A0 (sub_006058A0).
+namespace lift_006058A0 {
+// @name sub_006058A0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B45F64;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B45F60;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_005EB2A0() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A65BEu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B45F64 & 1u) == 0) {
+        mem_00B45F64 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B45F60, frame[0]);
+        mem_00B45F60 = 0x969FC4u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B45F60;
+}
+} // namespace lift_004CAE30
+} // namespace lift_006058A0
+} // namespace lift_005EB2A0
+
+// [0x005EB300] sub_005EB300 (87 bytes)
+namespace lift_005EB300 {
+// @name sub_005EB300
+// @summary Auto-lifted identical-shape clone of 0x006058A0 (sub_006058A0).
+namespace lift_006058A0 {
+// @name sub_006058A0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B45F6C;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B45F68;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_005EB300() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A65DEu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B45F6C & 1u) == 0) {
+        mem_00B45F6C |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B45F68, frame[0]);
+        mem_00B45F68 = 0x96A174u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B45F68;
+}
+} // namespace lift_004CAE30
+} // namespace lift_006058A0
+} // namespace lift_005EB300
+
+// [0x005EC990] sub_005EC990 (30 bytes)
+namespace lift_005EC990 {
+// @name sub_005EC990
+// @summary Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).
+namespace lift_005EC8D0 {
+// Known callee 0x005EAEE0: lazyInitStaticVtableObject_005EAEE0 (One-time lazy init of the static object at 0x00B45F10 (guard bit 0 of 0x00B45F14); sets its first DWORD to 0x00968EE4 and returns its address.)
+extern void* ext_005EB120();
+
+// @name storeValueAndStaticObject
+// @summary Stores a DWORD value into dst[0] and the lazily-initialized static object's address into dst[1].
+// @field  +0x00 DWORD field_0x00
+// @field  +0x04 DWORD field_0x04
+void fn_005EC990(DWORD* dst, DWORD value) {
+    void* obj = ext_005EB120();
+    dst[0] = value;
+    dst[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_005EC8D0
+} // namespace lift_005EC990
+
+// [0x005EC9F0] sub_005EC9F0 (30 bytes)
+namespace lift_005EC9F0 {
+// @name sub_005EC9F0
+// @summary Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).
+namespace lift_005EC8D0 {
+// Known callee 0x005EAEE0: lazyInitStaticVtableObject_005EAEE0 (One-time lazy init of the static object at 0x00B45F10 (guard bit 0 of 0x00B45F14); sets its first DWORD to 0x00968EE4 and returns its address.)
+extern void* ext_005EB240();
+
+// @name storeValueAndStaticObject
+// @summary Stores a DWORD value into dst[0] and the lazily-initialized static object's address into dst[1].
+// @field  +0x00 DWORD field_0x00
+// @field  +0x04 DWORD field_0x04
+void fn_005EC9F0(DWORD* dst, DWORD value) {
+    void* obj = ext_005EB240();
+    dst[0] = value;
+    dst[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_005EC8D0
+} // namespace lift_005EC9F0
+
+// [0x005ECA10] sub_005ECA10 (30 bytes)
+namespace lift_005ECA10 {
+// @name sub_005ECA10
+// @summary Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).
+namespace lift_005EC8D0 {
+// Known callee 0x005EAEE0: lazyInitStaticVtableObject_005EAEE0 (One-time lazy init of the static object at 0x00B45F10 (guard bit 0 of 0x00B45F14); sets its first DWORD to 0x00968EE4 and returns its address.)
+extern void* ext_005EB2A0();
+
+// @name storeValueAndStaticObject
+// @summary Stores a DWORD value into dst[0] and the lazily-initialized static object's address into dst[1].
+// @field  +0x00 DWORD field_0x00
+// @field  +0x04 DWORD field_0x04
+void fn_005ECA10(DWORD* dst, DWORD value) {
+    void* obj = ext_005EB2A0();
+    dst[0] = value;
+    dst[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_005EC8D0
+} // namespace lift_005ECA10
+
+// [0x005ECA30] sub_005ECA30 (30 bytes)
+namespace lift_005ECA30 {
+// @name sub_005ECA30
+// @summary Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).
+namespace lift_005EC8D0 {
+// Known callee 0x005EAEE0: lazyInitStaticVtableObject_005EAEE0 (One-time lazy init of the static object at 0x00B45F10 (guard bit 0 of 0x00B45F14); sets its first DWORD to 0x00968EE4 and returns its address.)
+extern void* ext_005EB300();
+
+// @name storeValueAndStaticObject
+// @summary Stores a DWORD value into dst[0] and the lazily-initialized static object's address into dst[1].
+// @field  +0x00 DWORD field_0x00
+// @field  +0x04 DWORD field_0x04
+void fn_005ECA30(DWORD* dst, DWORD value) {
+    void* obj = ext_005EB300();
+    dst[0] = value;
+    dst[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_005EC8D0
+} // namespace lift_005ECA30
+
+// [0x005ECA50] sub_005ECA50 (30 bytes)
+namespace lift_005ECA50 {
+// @name sub_005ECA50
+// @summary Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).
+namespace lift_005EC8D0 {
+// Known callee 0x005EAEE0: lazyInitStaticVtableObject_005EAEE0 (One-time lazy init of the static object at 0x00B45F10 (guard bit 0 of 0x00B45F14); sets its first DWORD to 0x00968EE4 and returns its address.)
+extern void* ext_005EB360();
+
+// @name storeValueAndStaticObject
+// @summary Stores a DWORD value into dst[0] and the lazily-initialized static object's address into dst[1].
+// @field  +0x00 DWORD field_0x00
+// @field  +0x04 DWORD field_0x04
+void fn_005ECA50(DWORD* dst, DWORD value) {
+    void* obj = ext_005EB360();
+    dst[0] = value;
+    dst[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_005EC8D0
+} // namespace lift_005ECA50
+
+// [0x005ECA70] sub_005ECA70 (30 bytes)
+namespace lift_005ECA70 {
+// @name sub_005ECA70
+// @summary Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).
+namespace lift_005EC8D0 {
+// Known callee 0x005EAEE0: lazyInitStaticVtableObject_005EAEE0 (One-time lazy init of the static object at 0x00B45F10 (guard bit 0 of 0x00B45F14); sets its first DWORD to 0x00968EE4 and returns its address.)
+extern void* ext_005EB3C0();
+
+// @name storeValueAndStaticObject
+// @summary Stores a DWORD value into dst[0] and the lazily-initialized static object's address into dst[1].
+// @field  +0x00 DWORD field_0x00
+// @field  +0x04 DWORD field_0x04
+void fn_005ECA70(DWORD* dst, DWORD value) {
+    void* obj = ext_005EB3C0();
+    dst[0] = value;
+    dst[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_005EC8D0
+} // namespace lift_005ECA70
+
+// [0x005ECA90] sub_005ECA90 (30 bytes)
+namespace lift_005ECA90 {
+// @name sub_005ECA90
+// @summary Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).
+namespace lift_005EC8D0 {
+// Known callee 0x005EAEE0: lazyInitStaticVtableObject_005EAEE0 (One-time lazy init of the static object at 0x00B45F10 (guard bit 0 of 0x00B45F14); sets its first DWORD to 0x00968EE4 and returns its address.)
+extern void* ext_005EB420();
+
+// @name storeValueAndStaticObject
+// @summary Stores a DWORD value into dst[0] and the lazily-initialized static object's address into dst[1].
+// @field  +0x00 DWORD field_0x00
+// @field  +0x04 DWORD field_0x04
+void fn_005ECA90(DWORD* dst, DWORD value) {
+    void* obj = ext_005EB420();
+    dst[0] = value;
+    dst[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_005EC8D0
+} // namespace lift_005ECA90
+
+// [0x005ECAB0] sub_005ECAB0 (30 bytes)
+namespace lift_005ECAB0 {
+// @name sub_005ECAB0
+// @summary Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).
+namespace lift_005EC8D0 {
+// Known callee 0x005EAEE0: lazyInitStaticVtableObject_005EAEE0 (One-time lazy init of the static object at 0x00B45F10 (guard bit 0 of 0x00B45F14); sets its first DWORD to 0x00968EE4 and returns its address.)
+extern void* ext_005EB480();
+
+// @name storeValueAndStaticObject
+// @summary Stores a DWORD value into dst[0] and the lazily-initialized static object's address into dst[1].
+// @field  +0x00 DWORD field_0x00
+// @field  +0x04 DWORD field_0x04
+void fn_005ECAB0(DWORD* dst, DWORD value) {
+    void* obj = ext_005EB480();
+    dst[0] = value;
+    dst[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_005EC8D0
+} // namespace lift_005ECAB0
+
+// [0x005ECAD0] sub_005ECAD0 (30 bytes)
+namespace lift_005ECAD0 {
+// @name sub_005ECAD0
+// @summary Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).
+namespace lift_005EC8D0 {
+// Known callee 0x005EAEE0: lazyInitStaticVtableObject_005EAEE0 (One-time lazy init of the static object at 0x00B45F10 (guard bit 0 of 0x00B45F14); sets its first DWORD to 0x00968EE4 and returns its address.)
+extern void* ext_005EB4E0();
+
+// @name storeValueAndStaticObject
+// @summary Stores a DWORD value into dst[0] and the lazily-initialized static object's address into dst[1].
+// @field  +0x00 DWORD field_0x00
+// @field  +0x04 DWORD field_0x04
+void fn_005ECAD0(DWORD* dst, DWORD value) {
+    void* obj = ext_005EB4E0();
+    dst[0] = value;
+    dst[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_005EC8D0
+} // namespace lift_005ECAD0
+
+// [0x005ECAF0] sub_005ECAF0 (30 bytes)
+namespace lift_005ECAF0 {
+// @name sub_005ECAF0
+// @summary Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).
+namespace lift_005EC8D0 {
+// Known callee 0x005EAEE0: lazyInitStaticVtableObject_005EAEE0 (One-time lazy init of the static object at 0x00B45F10 (guard bit 0 of 0x00B45F14); sets its first DWORD to 0x00968EE4 and returns its address.)
+extern void* ext_005EB540();
+
+// @name storeValueAndStaticObject
+// @summary Stores a DWORD value into dst[0] and the lazily-initialized static object's address into dst[1].
+// @field  +0x00 DWORD field_0x00
+// @field  +0x04 DWORD field_0x04
+void fn_005ECAF0(DWORD* dst, DWORD value) {
+    void* obj = ext_005EB540();
+    dst[0] = value;
+    dst[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_005EC8D0
+} // namespace lift_005ECAF0

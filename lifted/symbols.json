@@ -32126,6 +32126,24 @@
     "summary": "One-time lazy init of the static object at mem_00B45F50 (vtable 0x969C64); guarded by bit 0 of mem_00B45F54; returns the object's address.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005EB240": {
+    "name": "sub_005EB240",
+    "signature": "void* fn_005EB240()",
+    "summary": "Auto-lifted identical-shape clone of 0x006058A0 (sub_006058A0).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005EB2A0": {
+    "name": "sub_005EB2A0",
+    "signature": "void* fn_005EB2A0()",
+    "summary": "Auto-lifted identical-shape clone of 0x006058A0 (sub_006058A0).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005EB300": {
+    "name": "sub_005EB300",
+    "signature": "void* fn_005EB300()",
+    "summary": "Auto-lifted identical-shape clone of 0x006058A0 (sub_006058A0).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005EB360": {
     "name": "getSingleton_005EB360",
     "signature": "void* fn_005EB360()",
@@ -32255,6 +32273,12 @@
     "summary": "Stores a value into dst[0] and the static object address (from the one-time initializer) into dst[1].",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005EC990": {
+    "name": "sub_005EC990",
+    "signature": "void fn_005EC990(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005EC9B0": {
     "name": "fillValueAndStaticObject_005EC9B0",
     "signature": "void fn_005EC9B0(uint32_t* dst, uint32_t value)",
@@ -32265,6 +32289,60 @@
     "name": "storeValueAndLazyStaticObject_005EC9D0",
     "signature": "void fn_005EC9D0(uint32_t* dst, uint32_t value)",
     "summary": "Stores a value into dst[0] and the lazily-initialized static object's address into dst[1].",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005EC9F0": {
+    "name": "sub_005EC9F0",
+    "signature": "void fn_005EC9F0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005ECA10": {
+    "name": "sub_005ECA10",
+    "signature": "void fn_005ECA10(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005ECA30": {
+    "name": "sub_005ECA30",
+    "signature": "void fn_005ECA30(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005ECA50": {
+    "name": "sub_005ECA50",
+    "signature": "void fn_005ECA50(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005ECA70": {
+    "name": "sub_005ECA70",
+    "signature": "void fn_005ECA70(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005ECA90": {
+    "name": "sub_005ECA90",
+    "signature": "void fn_005ECA90(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005ECAB0": {
+    "name": "sub_005ECAB0",
+    "signature": "void fn_005ECAB0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005ECAD0": {
+    "name": "sub_005ECAD0",
+    "signature": "void fn_005ECAD0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005ECAF0": {
+    "name": "sub_005ECAF0",
+    "signature": "void fn_005ECAF0(DWORD* dst, DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005EC8D0 (storeValueAndStaticObject).",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
   "0x005ECB10": {
