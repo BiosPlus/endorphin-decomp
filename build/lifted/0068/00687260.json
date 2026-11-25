@@ -1,0 +1,21 @@
+{
+  "va": "0x00687260",
+  "size": 30,
+  "orig_symbol": "sub_00687260",
+  "src_path": "src/leaf/tiny_680000.cpp",
+  "lifted_path": "lifted/leaf/tiny_680000.cpp",
+  "name": "copyStringUnlessFlagged",
+  "signature": "void fn_00687260(void* self, const std::string* src, std::string* dst, uint32_t mask)",
+  "summary": "Assigns *dst = *src unless (self-\u003efield_0x150 \u0026 mask) is nonzero.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x150",
+      "type": "uint32_t",
+      "name": "field_0x150"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:39:57Z"
+}

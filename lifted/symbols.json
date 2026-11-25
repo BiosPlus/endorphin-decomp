@@ -46269,6 +46269,12 @@
     "summary": "Returns the address of the +0x10 subobject when the flag at +0x68 is zero, otherwise the +0x54 subobject.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
+  "0x00687260": {
+    "name": "copyStringUnlessFlagged",
+    "signature": "void fn_00687260(void* self, const std::string* src, std::string* dst, uint32_t mask)",
+    "summary": "Assigns *dst = *src unless (self-\u003efield_0x150 \u0026 mask) is nonzero.",
+    "lifted_path": "lifted/leaf/tiny_680000.cpp"
+  },
   "0x00687280": {
     "name": "writeIfFlagClear",
     "signature": "void __thiscall sub_00687280(void* this_ptr, uint32_t val, uint32_t* out, uint32_t mask)",

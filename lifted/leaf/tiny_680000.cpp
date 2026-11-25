@@ -27,6 +27,7 @@ void* fn_00682ED0(void* self) {
         *reinterpret_cast<void**>(reinterpret_cast<char*>(vtable) + 0x24));
     return target(self);
 }
+#include <string>
 
 // [0x00682990] sub_00682990 (9 bytes)
 // @name sub_00682990
@@ -253,3 +254,19 @@ uint8_t fn_006872D0(void* self) {
 }
 } // namespace lift_0046F910
 } // namespace lift_006872D0
+
+// [0x00687260] sub_00687260 (30 bytes)
+namespace lift_00687260 {
+// Import slot for MSVCP80 std::string::operator= (replaced by std::string assignment below).
+extern int mem_00924FDC;
+
+// @name copyStringUnlessFlagged
+// @summary Assigns *dst = *src unless (self->field_0x150 & mask) is nonzero.
+// @field Self +0x150 uint32_t field_0x150
+void fn_00687260(void* self, const std::string* src, std::string* dst, uint32_t mask) {
+    (void)&mem_00924FDC;  // keep original import-slot reference for differential tests
+    if ((lift_field<uint32_t>(self, 0x150) & mask) == 0) {
+        *dst = *src;
+    }
+}
+} // namespace lift_00687260
