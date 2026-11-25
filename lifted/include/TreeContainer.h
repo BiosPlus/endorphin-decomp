@@ -8,6 +8,8 @@
 // Recovered field layout for TreeContainer:
 namespace lifted_layout {
 struct TreeContainer_Fields {
-    // +0x4   void*                    field_0x04  (evidence: 0x00596B20, 0x0059FDE0)
+    // +0x4   void*                    field_0x04  (evidence: 0x00596B20, 0x0059FDE0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    head  (evidence: 0x004C4650) // CONFLICT: multiple definitions at +0x4
+    // +0xC   uint32_t                 value  (evidence: 0x004C4650)
 };
 } // namespace lifted_layout

@@ -858,3 +858,49 @@ void* __thiscall ExceptionWithStrings_copy_ctor(void* self, const void* other) {
     return self;
 }
 } // namespace lift_004C7200
+
+// [0x004C4650]
+namespace lift_004C4650 {
+// @name setTreeNodesField
+// @summary Iterates through a red-black tree and sets field_0x24 on each node's value object to the given value.
+// @field TreeContainer +0x04 void* head
+// @field TreeContainer +0x0C uint32_t value
+
+void __fastcall ext_00673C20(void* iter);
+extern void(__cdecl* mem_00925134)();
+
+struct TreeIterator {
+    void* container;
+    uint8_t* node;
+};
+
+void __thiscall sub_004C4650(uint8_t* self, uint32_t val) {
+    uint8_t* head = *reinterpret_cast<uint8_t**>(self + 0x04);
+    *reinterpret_cast<uint32_t*>(self + 0x0C) = val;
+    uint8_t* node = *reinterpret_cast<uint8_t**>(head);
+
+    TreeIterator it{self, node};
+
+    for (;;) {
+        uint8_t* end_node = *reinterpret_cast<uint8_t**>(self + 0x04);
+        if (it.container == nullptr || it.container != self) {
+            mem_00925134();
+        }
+        if (it.node == end_node) {
+            break;
+        }
+        if (it.container == nullptr) {
+            mem_00925134();
+        }
+        if (it.node == *reinterpret_cast<uint8_t**>(reinterpret_cast<uint8_t*>(it.container) + 0x04)) {
+            mem_00925134();
+        }
+
+        uint8_t* obj = *reinterpret_cast<uint8_t**>(it.node + 0x28);
+        uint32_t stored_val = *reinterpret_cast<uint32_t*>(self + 0x0C);
+        *reinterpret_cast<uint32_t*>(obj + 0x24) = stored_val;
+
+        ext_00673C20(&it);
+    }
+}
+} // namespace lift_004C4650

@@ -15237,6 +15237,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004C4650": {
+    "name": "setTreeNodesField",
+    "signature": "void __thiscall sub_004C4650(uint8_t* self, uint32_t val)",
+    "summary": "Iterates through a red-black tree and sets field_0x24 on each node's value object to the given value.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C4D80": {
     "name": "Vec3::Scale",
     "class": "Vec3",
@@ -24623,6 +24629,13 @@
     "signature": "void* fn_00530070()",
     "summary": "Auto-lifted identical-shape clone of 0x0061EA10 (HingeSecondaryConstraint::AllocAndConstruct).",
     "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
+  "0x0053F6C0": {
+    "name": "SelectionTool::vfunc_31",
+    "class": "SelectionTool",
+    "signature": "void fn_0053F6C0(void* self, uint32_t render_mode, uint32_t arg1)",
+    "summary": "Renders the selection tool's subobject at +0x98 with its transform matrix when not in GL_SELECT mode and sub_005434C0 returns 0",
+    "lifted_path": "lifted/classes/SelectionTool.cpp"
   },
   "0x0053F894": {
     "name": "sub_0053F894",
