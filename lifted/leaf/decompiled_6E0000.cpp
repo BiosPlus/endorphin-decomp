@@ -1053,3 +1053,18 @@ void __cdecl sub_006E0940(double* dst, const double* q) {
     dst[2] = zy_wx + zy_wx;
 }
 } // namespace lift_006E0940
+
+// [0x006E6800]
+namespace lift_006E6800 {
+// @name destroyPairMembers
+// @summary Destroys member at +0x50 and self using sub_006B9D70.
+// @field Unknown +0x50 void* field_0x50
+
+extern void ext_006B9D70(void* self);
+
+extern void fn_006E6800(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    ext_006B9D70(base + 0x50);
+    ext_006B9D70(base);
+}
+} // namespace lift_006E6800

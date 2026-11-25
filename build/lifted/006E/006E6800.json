@@ -1,0 +1,21 @@
+{
+  "va": "0x006E6800",
+  "size": 80,
+  "orig_symbol": "sub_006E6800",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "destroyPairMembers",
+  "signature": "extern \"C\" void fn_006E6800(void* self)",
+  "summary": "Destroys member at +0x50 and self using sub_006B9D70.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "void*",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:54:05Z"
+}
