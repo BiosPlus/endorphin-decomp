@@ -20491,6 +20491,13 @@
     "summary": "Walks the pointer range at this+0x18..this+0x1C and calls virtual slot 2 (no args) on each element.",
     "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
   },
+  "0x0054C490": {
+    "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_24",
+    "class": "ManagedDisplayList\u003cRenderableList\u003e",
+    "signature": "extern \"C\" void __thiscall fn_0054C490(void* self)",
+    "summary": "Walks the element pointer vector at +0x18..+0x1C and calls virtual slot 24 (byte offset 0x60) on each element.",
+    "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
+  },
   "0x0054C6C0": {
     "name": "RenderableList::vfunc_0",
     "class": "RenderableList",

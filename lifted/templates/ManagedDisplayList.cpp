@@ -104,3 +104,26 @@ void fn_0054C260(void* self) {
     }
 }
 } // namespace lift_0054C260
+
+// [0x0054C490] ManagedDisplayList<RenderableList>::vfunc_24 (76 bytes)
+namespace lift_0054C490 {
+// @name ManagedDisplayList<RenderableList>::vfunc_24
+// @class ManagedDisplayList<RenderableList>
+// @summary Walks the element pointer vector at +0x18..+0x1C and calls virtual slot 24 (byte offset 0x60) on each element.
+// @field ManagedDisplayList<RenderableList> +0x18 void** field_0x18
+// @field ManagedDisplayList<RenderableList> +0x1C void** field_0x1C
+extern void __thiscall fn_0054C490(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Iterate over the pointer range [begin, end). The end bound is re-read
+    // on every iteration, matching the original code's behavior.
+    void** cur = *reinterpret_cast<void***>(base + 0x18);
+    while (cur != *reinterpret_cast<void***>(base + 0x1C)) {
+        void* elem = *cur;
+        void** vtbl = *reinterpret_cast<void***>(elem);
+        auto fn = reinterpret_cast<void(__thiscall*)(void*)>(vtbl[24]);
+        fn(elem);
+        ++cur;
+    }
+}
+} // namespace lift_0054C490
