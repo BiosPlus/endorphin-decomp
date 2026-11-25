@@ -794,3 +794,18 @@ void fn_00557A10(void* self) {
     ext_006A6DD2(nullptr, nullptr);
 }
 } // namespace lift_00557A10
+
+// [0x00554D20] sub_00554D20 (27 bytes)
+namespace lift_00554D20 {
+// Known callee 0x00553170: AngleScaler::ScaleByUnitMode (Scales a float angle by a unit-mode selector: 0 = degrees to radians, 2 = turns to radians (2*pi), otherwise identity.)
+extern float ext_00553170(void* self, float value);
+
+// @name ScaleAngleByUnitModeAndDivide
+// @class UnknownObject
+// @summary Scales a float angle via ext_00553170 (unit-mode conversion), then divides the result by the float at this+0x20.
+// @field UnknownObject +0x20 float field_0x20
+float fn_00554D20(void* self, float value) {
+    const float scaled = ext_00553170(self, value);
+    return scaled / lift_field<float>(self, 0x20);
+}
+} // namespace lift_00554D20

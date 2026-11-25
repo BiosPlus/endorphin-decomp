@@ -20031,6 +20031,13 @@
     "summary": "Returns the argument passed through ext_005530B0, scaled by the float at self+0x20.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00554D20": {
+    "name": "ScaleAngleByUnitModeAndDivide",
+    "class": "UnknownObject",
+    "signature": "float fn_00554D20(void* self, float value)",
+    "summary": "Scales a float angle via ext_00553170 (unit-mode conversion), then divides the result by the float at this+0x20.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00556610": {
     "name": "std::vector\u003cchar\u003e::_Tidy",
     "class": "std::vector\u003cchar\u003e",

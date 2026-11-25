@@ -18,6 +18,7 @@ struct UnknownObject_Fields {
     // +0xC   void*                    field_0x0C  (evidence: 0x00857470, 0x008597B0)
     // +0x14  void*                    field_0x14  (evidence: 0x00468B10)
     // +0x1C  int32_t                  field_0x1c  (evidence: 0x0078C230, 0x0078CBD0)
+    // +0x20  float                    field_0x20  (evidence: 0x00554D20)
     // +0x24  uint32_t                 field_0x24  (evidence: 0x00468B10)
     // +0x28  uint32_t                 field_0x28  (evidence: 0x00468B10)
     // +0x2C  uint8_t                  field_0x2C  (evidence: 0x00468B10)
