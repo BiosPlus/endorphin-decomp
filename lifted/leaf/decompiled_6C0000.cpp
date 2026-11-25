@@ -1736,3 +1736,35 @@ void sub_006C3C10(uint32_t out_ptr, uint32_t a_ptr, uint32_t b_ptr) {
     out[2] = z;
 }
 } // namespace lift_006C3C10
+
+// [0x006C8440]
+namespace lift_006C8440 {
+extern void ext_006D80A0(void);
+
+// @name sub_006C8440_dtor
+// @summary Destructor that invokes empty subobject destructors at +0xa8 and +0x28.
+// @field Unknown +0xa8 void* field_0xa8
+// @field Unknown +0x28 void* field_0x28
+extern void __thiscall fn_006C8440(void* self) {
+    (void)self;
+    ext_006D80A0();
+    ext_006D80A0();
+}
+} // namespace lift_006C8440
+
+// [0x006C84B0]
+namespace lift_006C84B0 {
+extern void* __fastcall ext_00714570(void* self);
+extern void __fastcall ext_006C8510(void* self);
+
+// @name Unknown::InitWithSubobject
+// @class Unknown
+// @summary Initializes subobject at +0x8, initializes self via ext_006C8510, and returns self.
+// @field Unknown +0x8 uint8_t field_0x8
+extern void* __fastcall fn_006C84B0(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    ext_00714570(base + 0x8);
+    ext_006C8510(self);
+    return self;
+}
+} // namespace lift_006C84B0

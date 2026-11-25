@@ -1,0 +1,27 @@
+{
+  "va": "0x006C8440",
+  "size": 80,
+  "orig_symbol": "sub_006C8440",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "sub_006C8440_dtor",
+  "signature": "extern \"C\" void __thiscall fn_006C8440(void* self)",
+  "summary": "Destructor that invokes empty subobject destructors at +0xa8 and +0x28.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xA8",
+      "type": "void*",
+      "name": "field_0xa8"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "void*",
+      "name": "field_0x28"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:52:05Z"
+}

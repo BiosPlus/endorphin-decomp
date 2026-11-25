@@ -47858,6 +47858,13 @@
     "summary": "Destructor that invokes empty subobject destructors at +0xa8 and +0x28.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C84B0": {
+    "name": "Unknown::InitWithSubobject",
+    "class": "Unknown",
+    "signature": "extern \"C\" void* __fastcall fn_006C84B0(void* self)",
+    "summary": "Initializes subobject at +0x8, initializes self via ext_006C8510, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C8500": {
     "name": "sub_006C8500",
     "signature": "extern \"C\" void __fastcall fn_006C8500(void* self)",
