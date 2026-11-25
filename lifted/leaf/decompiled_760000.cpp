@@ -72,3 +72,35 @@ void fn_00766240(void* dst, const void* src) {
     }
 }
 } // namespace lift_00766240
+
+// [0x00764620] sub_00764620 (80 bytes)
+namespace lift_00764620 {
+extern int32_t __fastcall ext_006C3030(void* self);
+
+// @name fn_00764620
+// @summary Gets an object pointer from ext_006C3030; if non-null, calls virtual slot 0 on it three times and returns true when the 1st result is 4, the 2nd is 5, or the 3rd is 6.
+extern bool __stdcall fn_00764620(void* self) {
+    using VirtSlot0 = int32_t(__fastcall*)(void*);
+
+    const int32_t raw = ext_006C3030(self);
+    if (raw == 0) {
+        return false;
+    }
+
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(raw)));
+
+    auto call_slot0 = [obj]() -> int32_t {
+        void* vtable = *reinterpret_cast<void**>(obj);
+        VirtSlot0 target = reinterpret_cast<VirtSlot0>(*reinterpret_cast<void**>(vtable));
+        return target(obj);
+    };
+
+    if (call_slot0() == 4) {
+        return true;
+    }
+    if (call_slot0() == 5) {
+        return true;
+    }
+    return call_slot0() == 6;
+}
+} // namespace lift_00764620

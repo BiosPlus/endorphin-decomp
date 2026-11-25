@@ -1,0 +1,13 @@
+{
+  "va": "0x00764620",
+  "size": 80,
+  "orig_symbol": "sub_00764620",
+  "src_path": "src/leaf/decompiled_760000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_760000.cpp",
+  "name": "fn_00764620",
+  "signature": "extern \"C\" bool __stdcall fn_00764620(void* self)",
+  "summary": "Gets an object pointer from ext_006C3030; if non-null, calls virtual slot 0 on it three times and returns true when the 1st result is 4, the 2nd is 5, or the 3rd is 6.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:53:07Z"
+}
