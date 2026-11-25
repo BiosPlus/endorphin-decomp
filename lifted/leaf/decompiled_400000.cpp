@@ -1013,3 +1013,32 @@ int32_t __thiscall fn_00404720(void* self, uint32_t mode) {
     return 1;
 }
 } // namespace lift_00404720
+
+// [0x0040B710] sub_0040B710 (81 bytes)
+namespace lift_0040B710 {
+extern void ext_0040FD30(void* self, DWORD arg);
+extern void ext_0040FD40(void* self, DWORD arg);
+extern void ext_0040FD50(void* self, DWORD arg);
+extern void ext_006A7BC0(void* self, DWORD arg);
+extern const DWORD mem_0093A0C4; // .rdata pointer to string "bfu"
+extern const DWORD mem_0093A0CC; // .rdata u32 0x00FFFFFF
+extern const DWORD mem_0093A0C8; // .rdata pointer to string "MOV"
+extern const DWORD mem_0093A0D0; // .rdata u32 0x007F7F7F
+
+// @name InitSubobjectDefaults
+// @summary Calls a function pointer stored in the object at +0x340 (with arg 0) and then runs four helpers on the +0x340 subobject with constant arguments.
+// @field Unknown +0x340 void* field_0x340
+void fn_0040B710(void* self) {
+    // Sub-object lives inline at self+0x340; its pointer at self+0x340 is loaded for the vtable-style call.
+    void* sub = static_cast<uint8_t*>(self) + 0x340;
+    void* obj = lift_field<void*>(self, 0x340);
+
+    auto slot144 = lift_field<void (*)(void*, DWORD)>(obj, 0x144);
+    slot144(sub, 0);
+
+    ext_0040FD30(sub, mem_0093A0C4);
+    ext_0040FD40(sub, mem_0093A0CC);
+    ext_006A7BC0(sub, mem_0093A0C8);
+    ext_0040FD50(sub, mem_0093A0D0);
+}
+} // namespace lift_0040B710

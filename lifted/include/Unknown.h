@@ -1033,6 +1033,7 @@ struct Unknown_Fields {
     // +0x2FC DWORD field_0x2FC (on sub-object at this+0x0C)  (evidence: 0x007155B0, 0x0071C0E0, 0x0071F070)
     // +0x340 DWORD                    field_0x340  (evidence: 0x0070ACC0, 0x0070BF00) // CONFLICT: multiple definitions at +0x340
     // +0x340 uint32_t                 field_0x340  (evidence: 0x0070AD00, 0x0070BF00) // CONFLICT: multiple definitions at +0x340
+    // +0x340 void*                    field_0x340  (evidence: 0x0040B710) // CONFLICT: multiple definitions at +0x340
     // +0x344 DWORD                    field_0x344  (evidence: 0x0070ACC0, 0x0070BF00) // CONFLICT: multiple definitions at +0x344
     // +0x344 uint32_t                 field_0x344  (evidence: 0x0070AD00, 0x0070BF00) // CONFLICT: multiple definitions at +0x344
     // +0x348 DWORD                    field_0x348  (evidence: 0x0070ACC0, 0x0070BF00) // CONFLICT: multiple definitions at +0x348
