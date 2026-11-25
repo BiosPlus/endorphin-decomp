@@ -349,3 +349,28 @@ float Vec3DifferenceLength(const float* a, const float* b) {
     return ext_006A7250(sumSquares);
 }
 } // namespace lift_007F7FA0
+
+// [0x007F7190]
+namespace lift_007F7190 {
+// @name selectScaledFloatCandidate
+// @summary If b*c > a, store c to *out and return 1; else if a > b*d, store d and return 1; else return 0.
+//
+// Original x87 code: arguments are float a, b, c, d; out is a float* (first stack arg).
+// The product b*c is rounded to float (stored to memory in the original); b*d is
+// compared at extended precision, which for two floats is exact, so it is computed
+// in double here (also exact).
+
+extern __cdecl INT fn_007F7190(FLOAT* out, FLOAT a, FLOAT b, FLOAT c, FLOAT d) {
+    const FLOAT t = b * c;
+    if (t > a) {
+        *out = c;
+        return 1;
+    }
+    const DOUBLE p = static_cast<DOUBLE>(b) * static_cast<DOUBLE>(d);
+    if (static_cast<DOUBLE>(a) > p) {
+        *out = d;
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_007F7190

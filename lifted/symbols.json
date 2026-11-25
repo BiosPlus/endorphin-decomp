@@ -63569,6 +63569,12 @@
     "summary": "Inserts a doubly-linked list node after the given node.",
     "lifted_path": "lifted/leaf/tiny_7F0000.cpp"
   },
+  "0x007F7190": {
+    "name": "selectScaledFloatCandidate",
+    "signature": "extern \"C\" __cdecl INT fn_007F7190(FLOAT* out, FLOAT a, FLOAT b, FLOAT c, FLOAT d)",
+    "summary": "If b*c \u003e a, store c to *out and return 1; else if a \u003e b*d, store d and return 1; else return 0.",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
   "0x007F7FA0": {
     "name": "Vec3DifferenceLength",
     "signature": "float Vec3DifferenceLength(const float* a, const float* b)",

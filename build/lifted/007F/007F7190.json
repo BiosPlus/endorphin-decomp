@@ -1,0 +1,13 @@
+{
+  "va": "0x007F7190",
+  "size": 91,
+  "orig_symbol": "sub_007F7190",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "selectScaledFloatCandidate",
+  "signature": "extern \"C\" __cdecl INT fn_007F7190(FLOAT* out, FLOAT a, FLOAT b, FLOAT c, FLOAT d)",
+  "summary": "If b*c \u003e a, store c to *out and return 1; else if a \u003e b*d, store d and return 1; else return 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:25:00Z"
+}
