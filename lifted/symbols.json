@@ -39612,6 +39612,13 @@
     "summary": "Reads a byte from a table at 0x00AA2FC8 indexed by the 32-bit field at offset 0x48.",
     "lifted_path": "lifted/leaf/tiny_680000.cpp"
   },
+  "0x006872E0": {
+    "name": "Unknown::CheckStateFlags_006872E0",
+    "class": "Unknown",
+    "signature": "uint8_t fn_006872E0(void* self)",
+    "summary": "If state==0x15 returns 1 when both flag bytes are clear; otherwise returns 0 when the string at +0x10 equals the reference string, else looks up a byte table by state.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00687380": {
     "name": "copyRange0x24",
     "signature": "uint8_t* __cdecl sub_00687380(uint8_t* first, uint8_t* last, uint8_t* dest)",

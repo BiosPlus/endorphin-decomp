@@ -1,0 +1,40 @@
+{
+  "va": "0x006872E0",
+  "size": 76,
+  "orig_symbol": "sub_006872E0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "Unknown::CheckStateFlags_006872E0",
+  "class": "Unknown",
+  "signature": "uint8_t fn_006872E0(void* self)",
+  "summary": "If state==0x15 returns 1 when both flag bytes are clear; otherwise returns 0 when the string at +0x10 equals the reference string, else looks up a byte table by state.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "std::string",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "uint32_t",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB2",
+      "type": "uint8_t",
+      "name": "field_0xb2"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xB3",
+      "type": "uint8_t",
+      "name": "field_0xb3"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:40:31Z"
+}

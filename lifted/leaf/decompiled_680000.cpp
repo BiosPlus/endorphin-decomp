@@ -892,3 +892,39 @@ void fn_00682280(void* begin, void* end, void* gen) {
     } while (cur != last);
 }
 } // namespace lift_00682280
+
+// [0x006872E0] sub_006872E0 (76 bytes)
+namespace lift_006872E0 {
+// Import slot (MSVCP80 std::operator==(const basic_string&, const char*)), via IAT mem_00924FC0.
+extern uint8_t __cdecl ext_00924FC0(const void* str, const char* s);
+// .data pointer to the comparison C string (mem_00A9F838 -> 0x00958FC8).
+extern const char* mem_00A9F838;
+// Byte lookup table indexed by the state value at +0x48 (base 0x00AA2FE4).
+extern uint8_t mem_00AA2FE4;
+
+// @name Unknown::CheckStateFlags_006872E0
+// @class Unknown
+// @summary If state==0x15 returns 1 when both flag bytes are clear; otherwise returns 0 when the string at +0x10 equals the reference string, else looks up a byte table by state.
+// @field Unknown +0x10 std::string field_0x10
+// @field Unknown +0x48 uint32_t field_0x48
+// @field Unknown +0xB2 uint8_t field_0xb2
+// @field Unknown +0xB3 uint8_t field_0xb3
+uint8_t fn_006872E0(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    const uint32_t state = *reinterpret_cast<uint32_t*>(base + 0x48);
+
+    if (state == 0x15) {
+        const uint8_t flagB2 = base[0xb2];
+        const uint8_t flagB3 = base[0xb3];
+        if (flagB2 != 0 || flagB3 != 0) {
+            return 0;
+        }
+        return 1;
+    }
+
+    if (ext_00924FC0(base + 0x10, mem_00A9F838) != 0) {
+        return 0;
+    }
+    return (&mem_00AA2FE4)[state];
+}
+} // namespace lift_006872E0
