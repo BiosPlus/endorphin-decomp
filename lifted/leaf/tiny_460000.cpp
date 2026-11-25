@@ -969,3 +969,26 @@ void fn_00465E80(void* self) {
     }
 }
 } // namespace lift_00465E80
+
+// [0x004694E0]
+namespace lift_004694E0 {
+// @name checkSubObjectBitFlag
+// @summary Checks if the object is enabled at +0x10 and its sub-object at +0x1c has the given bit flag set.
+// @field Object +0x10 uint8_t field_0x10
+// @field Object +0x1c void* field_0x1c
+
+extern uint8_t mem_read8(const void* base, uint32_t offset);
+extern void* mem_read_ptr(const void* base, uint32_t offset);
+extern bool __thiscall ext_004B08A0(void* self, uint32_t index);
+
+bool __thiscall fn_004694E0(void* self, uint32_t index) {
+    if (mem_read8(self, 0x10) == 0) {
+        return false;
+    }
+    void* sub = mem_read_ptr(self, 0x1c);
+    if (sub == nullptr) {
+        return false;
+    }
+    return ext_004B08A0(sub, index);
+}
+} // namespace lift_004694E0
