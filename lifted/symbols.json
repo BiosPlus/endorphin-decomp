@@ -69226,6 +69226,12 @@
     "summary": "Forwards its single stack argument to the GlobalFree wrapper and returns the result.",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
+  "0x0080B570": {
+    "name": "MemsetWrapper_0080B570",
+    "signature": "void* fn_0080B570(void* dst, uint32_t value, uint32_t count)",
+    "summary": "cdecl forwarder: calls ext_00859740(dst, value, count) (memset semantics) and returns its result (dst).",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x0080B590": {
     "name": "Thunk::copyMemoryDwordThenBytesForward",
     "class": "Thunk",

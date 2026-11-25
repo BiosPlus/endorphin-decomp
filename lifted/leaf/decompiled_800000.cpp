@@ -967,3 +967,21 @@ void fn_0080AD90(void) {
     mem_00B73C84 = 1;
 }
 } // namespace lift_0080AD90
+
+// [0x0080B570] sub_0080B570 (32 bytes)
+namespace lift_0080B570 {
+// Known callee 0x00859740: MemsetReturnDst (Fills count bytes at dst with value (memset semantics) and returns dst.)
+extern void* ext_00859740(void* dst, uint8_t value, uint32_t count);
+// Known callee 0x008597E0: memmove_008597E0 (Copies count bytes from src to dst, handling overlapping regions, and returns dst.)
+extern void* ext_008597E0(void* dst, const void* src, uint32_t count);
+
+// @name MemsetWrapper_0080B570
+// @summary cdecl forwarder: calls ext_00859740(dst, value, count) (memset semantics) and returns its result (dst).
+void* fn_0080B570(void* dst, uint32_t value, uint32_t count) {
+    // ext_008597E0 is listed as a callee but is never reached from this body; kept as a discarded call.
+    if constexpr (false) {
+        ext_008597E0(dst, nullptr, count);
+    }
+    return ext_00859740(dst, static_cast<uint8_t>(value), count);
+}
+} // namespace lift_0080B570
