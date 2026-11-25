@@ -3363,6 +3363,12 @@
     "summary": "One-time initializer: on first call builds the global at mem_00ACE1D4 via ext_0066AD10 and registers it with ext_006A6C87; later calls only return its address.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00434CA0": {
+    "name": "InitOnceGlobalString_00434CA0",
+    "signature": "void* fn_00434CA0()",
+    "summary": "One-time initializer: on first call builds the global at mem_00ACE1F4 via ext_0066AD10 and registers it with ext_006A6C87; later calls only return its address.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00434E30": {
     "name": "sub_00434E30",
     "signature": "void fn_00434E30()",
