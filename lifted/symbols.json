@@ -45085,10 +45085,10 @@
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
   "0x00678D70": {
-    "name": "BaseEventDispatcher::vfunc_1",
+    "name": "BaseEventDispatcher::vfunc_3",
     "class": "BaseEventDispatcher",
-    "signature": "void BaseEventDispatcher_vfunc_1(void* self_ptr, void* arg)",
-    "summary": "Walks the dispatcher's pointer array at +0x8..+0xC and calls vtable slot 0 of each element with the given argument.",
+    "signature": "void __thiscall fn_00437AD0(uint8_t* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
     "lifted_path": "lifted/classes/BaseEventDispatcher.cpp"
   },
   "0x00678DE0": {
