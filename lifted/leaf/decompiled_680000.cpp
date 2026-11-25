@@ -2088,3 +2088,47 @@ void __thiscall fn_00688CC0(void* self, uint8_t** outPair, uint8_t* guard, uint8
     outPair[1] = src;
 }
 } // namespace lift_00688CC0
+
+// [0x00688C50] sub_00688C50 (107 bytes)
+namespace lift_00688C50 {
+// Known callee 0x00687E50: copyStringRecordRangeAdvance_00687E50 (Copies the StringRecord range [first, last) to dest, then returns dest advanced by the record count times 0x2C (sizeof StringRecord).)
+extern void* ext_00687E50(const void* first, const void* last, void* dest);
+// Import slot for MSVCP80 basic_string dtor (called as thiscall).
+extern uint32_t mem_00924FF4;
+// Import slot for MSVCR80 _invalid_parameter_noinfo.
+extern uint32_t mem_00925134;
+
+// Host hooks standing in for the imports behind mem_00924FF4 / mem_00925134.
+void ext_basic_string_dtor(void* self);
+void ext_invalid_parameter_noinfo();
+
+// @name StringRecordVector::eraseRange
+// @class StringRecordVector
+// @summary Erases [srcFirst, srcLast) from a vector of 0x2C-byte StringRecords by moving the tail down, destroying the vacated records' strings and shrinking end; writes the resulting iterator pair to out.
+// @field StringRecordVector +0x08 uint8_t* end
+void fn_00688C50(void* self, void* out, uint8_t* first, uint8_t* expected, uint8_t* srcFirst, uint8_t* srcLast) {
+    // Original asserts: first != nullptr && first == expected.
+    if (first == nullptr || first != expected) {
+        ext_invalid_parameter_noinfo();
+    }
+
+    uint8_t* resultFirst;
+    uint8_t* resultSecond;
+    if (srcFirst == srcLast) {
+        resultFirst = first;
+        resultSecond = srcFirst;
+    } else {
+        uint8_t* oldEnd = lift_field<uint8_t*>(self, 0x08);
+        uint8_t* newEnd = static_cast<uint8_t*>(ext_00687E50(srcLast, oldEnd, srcFirst));
+        for (uint8_t* p = newEnd; p != oldEnd; p += 0x2C) {
+            ext_basic_string_dtor(p + 0x10);
+        }
+        lift_field<uint8_t*>(self, 0x08) = newEnd;
+        resultFirst = expected;
+        resultSecond = srcLast;
+    }
+
+    lift_field<uint8_t*>(out, 0x00) = resultFirst;
+    lift_field<uint8_t*>(out, 0x04) = resultSecond;
+}
+} // namespace lift_00688C50
