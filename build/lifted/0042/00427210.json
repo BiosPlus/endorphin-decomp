@@ -1,0 +1,13 @@
+{
+  "va": "0x00427210",
+  "size": 91,
+  "orig_symbol": "sub_00427210",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "findMatchingString",
+  "signature": "uint32_t __stdcall sub_00427210(uint32_t str_ptr)",
+  "summary": "Searches a 54-entry string table for a match against a std::string and returns the matching C-string pointer or 0.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:26:09Z"
+}

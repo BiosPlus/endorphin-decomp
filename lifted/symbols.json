@@ -23035,6 +23035,12 @@
     "summary": "Returns (end - begin) / 12 for a 12-byte element array, or 0 when begin is null.",
     "lifted_path": "lifted/leaf/tiny_570000.cpp"
   },
+  "0x005731F0": {
+    "name": "allocateElements48",
+    "signature": "void* fn_005731F0(uint32_t count)",
+    "summary": "Allocates an array of 48-byte elements with overflow check, throwing std::bad_alloc on overflow.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00573250": {
     "name": "StringIter::checkedPosition",
     "class": "StringIter",
