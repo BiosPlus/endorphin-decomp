@@ -16809,6 +16809,13 @@
     "summary": "This-adjustor thunk: adjusts `this` by -0x4 and tail-calls sub_004F1210.",
     "lifted_path": "lifted/Properties/auto_tiny.cpp"
   },
+  "0x004F0FB0": {
+    "name": "ListNode::DestroyChain",
+    "class": "ListNode",
+    "signature": "static inline uint8_t* as_bytes(uint32_t va)",
+    "summary": "Recursively tears down a sibling-linked list of nodes: each node's child (+0x08) is",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004F1210": {
     "name": "sub_004F1210",
     "signature": "extern \"C\" void* __fastcall fn_004F1210(void* self, int edx_unused, unsigned int flags)",
