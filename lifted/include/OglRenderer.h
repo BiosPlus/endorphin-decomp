@@ -12,11 +12,13 @@ namespace lifted_layout {
 struct OglRenderer_Fields {
     // +0x0   void*                    vtable  (evidence: 0x005373F0)
     // +0x10  void*                    field_0x10  (evidence: 0x00536E80)
+    // +0x1C  HWND                     field_0x1C  (evidence: 0x00532F60)
     // +0x24  HDC                      field_0x24  (evidence: 0x00533090)
     // +0x28  HGLRC                    field_0x28  (evidence: 0x00533090)
     // +0x30  uint32_t                 field_0x30  (evidence: 0x00533090, 0x005330D0, 0x00536E80)
     // +0x38  void*                    delegate_0x38  (evidence: 0x00468730, 0x0046FE50, 0x0046FE70, 0x005355B0, 0x005355C0, 0x005355D0, 0x005355E0, 0x005355F0, 0x00535600, 0x00535610, 0x005356B0, 0x00545B80, 0x005FF1C0) // CONFLICT: multiple definitions at +0x38
     // +0x38  void*                    field_0x38  (evidence: 0x00468730, 0x0046FE10, 0x0046FE30, 0x005353F0, 0x00535610, 0x00535630, 0x00535650, 0x00535670, 0x00535690, 0x00545B80, 0x005FF1C0) // CONFLICT: multiple definitions at +0x38
+    // +0x48  TimerHandle              field_0x48  (evidence: 0x00532F60)
     // +0x80  uint32_t                 field_0x80  (evidence: 0x005353F0, 0x00535610, 0x00545B80, 0x005FF1C0)
     // +0x9C  void*                    field_0x9C  (evidence: 0x00533D10) // CONFLICT: multiple definitions at +0x9C
     // +0x9C  void*                    field_0x9c  (evidence: 0x00533C50) // CONFLICT: multiple definitions at +0x9C

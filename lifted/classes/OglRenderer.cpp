@@ -259,3 +259,21 @@ void fn_005373F0(void* self, uint8_t flag) {
     ext_00537380(self, arg);
 }
 } // namespace lift_005373F0
+
+// [0x00532F60]
+namespace lift_00532F60 {
+extern void __fastcall ext_0067B410(void* self);
+extern void __fastcall ext_0065C640(void* self);
+extern BOOL(__stdcall* mem_00925660)(HWND hWnd, UINT_PTR uIDEvent);
+
+// @name OglRenderer::stopTimers
+// @class OglRenderer
+// @summary Stops the multimedia timer at +0x48 and kills the window timer (ID 1) for the HWND at +0x1C.
+// @field OglRenderer +0x1C HWND field_0x1C
+// @field OglRenderer +0x48 TimerHandle field_0x48
+void __fastcall fn_00532F60(void* self) {
+    if (false) ext_0065C640(nullptr);
+    ext_0067B410(static_cast<uint8_t*>(self) + 0x48);
+    mem_00925660(lift_field<HWND>(self, 0x1C), 1);
+}
+} // namespace lift_00532F60

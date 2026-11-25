@@ -1,0 +1,28 @@
+{
+  "va": "0x00532F60",
+  "size": 25,
+  "orig_symbol": "OglRenderer::vfunc_113",
+  "src_path": "src/classes/OglRenderer.cpp",
+  "lifted_path": "lifted/classes/OglRenderer.cpp",
+  "name": "OglRenderer::stopTimers",
+  "class": "OglRenderer",
+  "signature": "void __fastcall fn_00532F60(void* self)",
+  "summary": "Stops the multimedia timer at +0x48 and kills the window timer (ID 1) for the HWND at +0x1C.",
+  "fields": [
+    {
+      "class": "OglRenderer",
+      "offset": "+0x1C",
+      "type": "HWND",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "OglRenderer",
+      "offset": "+0x48",
+      "type": "TimerHandle",
+      "name": "field_0x48"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T11:31:44Z"
+}
