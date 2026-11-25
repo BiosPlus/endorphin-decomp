@@ -1867,6 +1867,12 @@
     "summary": "Forwards a 3-argument virtual call (vtable +0x10) to the delegate at +0x08 if non-null, returning false otherwise.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041C5A0": {
+    "name": "sub_0041C5A0",
+    "signature": "bool __thiscall sub_0041C5A0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Forwards a 3-argument virtual call (vtable +0x14) to the delegate at +0x8, or returns false if null.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041C5D0": {
     "name": "sub_0041C5D0",
     "signature": "uint8_t __thiscall sub_0041C5D0(uintptr_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
@@ -2927,6 +2933,12 @@
     "name": "updateObjectFlagFromGlobal",
     "signature": "void __stdcall fn_004308D0(void* obj)",
     "summary": "Checks bit flag 0xb on the global sub-object and passes the result to the target object's vtable+0x4 method.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
+  "0x00430900": {
+    "name": "forwardChildStateToTarget",
+    "signature": "void __thiscall fn_00430900(void* self, void* arg1)",
+    "summary": "Reads a boolean state from child at +0x100 via ext_0044B660 and passes it to arg1's vtable+0x04 method.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
   "0x00430960": {

@@ -3336,3 +3336,22 @@ extern void __thiscall fn_0043CD60(void* self, uint32_t nIDEvent) {
     lift_field<uint32_t>(self, 0x138) = static_cast<uint32_t>(result);
 }
 } // namespace lift_0043CD60
+
+// [0x00430900]
+namespace lift_00430900 {
+extern uint8_t ext_0044B660(void* self);
+
+// @name forwardChildStateToTarget
+// @summary Reads a boolean state from child at +0x100 via ext_0044B660 and passes it to arg1's vtable+0x04 method.
+// @field Self +0x100 void* field_0x100
+void __thiscall fn_00430900(void* self, void* arg1) {
+    void* child = lift_field<void*>(self, 0x100);
+    if (!child) {
+        return;
+    }
+    void** vtable = *reinterpret_cast<void***>(arg1);
+    uint8_t state = ext_0044B660(child);
+    auto fn = reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(vtable[1]);
+    fn(arg1, static_cast<uint32_t>(state));
+}
+} // namespace lift_00430900
