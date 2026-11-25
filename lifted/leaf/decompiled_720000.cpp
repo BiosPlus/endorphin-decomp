@@ -760,3 +760,41 @@ extern void* __thiscall fn_0072B280(void* self, uint32_t arg1) {
     return self;
 }
 } // namespace lift_0072B280
+
+// [0x007267D0]
+namespace lift_007267D0 {
+// @name clearIndexedEntryField
+// @summary Finds a sub-object by key in field_0x250, validates an index against its count, and clears offset +0x1C of the indexed item.
+// @field Self +0x250 void* field_0x250
+
+extern void __stdcall ext_00732CB0(int32_t a1);
+extern void __fastcall ext_00789BA0(void* self, int32_t edx_unused, int32_t value);
+extern uint32_t __thiscall ext_00789C80(void* self, uint32_t key, int32_t* outIndex);
+extern int32_t __fastcall ext_006E7460(void* self);
+extern void __thiscall ext_0078CBC0(void* self, int32_t index);
+extern uint32_t __fastcall ext_0078CBE0(void* self);
+
+extern bool __thiscall fn_007267D0(void* self, uint32_t key, int32_t index) {
+    ext_00732CB0(static_cast<int32_t>(key));
+
+    void* container = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x250);
+    int32_t outIndex = static_cast<int32_t>(key);
+    uint32_t found = ext_00789C80(container, key, &outIndex);
+    if (found == 0) {
+        return false;
+    }
+
+    void* foundObj = reinterpret_cast<void*>(static_cast<uintptr_t>(found));
+    ext_00789BA0(*reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x250), 0, outIndex);
+
+    int32_t count = ext_006E7460(foundObj);
+    if (index >= count) {
+        return false;
+    }
+
+    ext_0078CBC0(foundObj, index);
+    uint32_t item = ext_0078CBE0(foundObj);
+    *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(item) + 0x1C) = 0;
+    return true;
+}
+} // namespace lift_007267D0

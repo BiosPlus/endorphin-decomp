@@ -1,0 +1,21 @@
+{
+  "va": "0x007267D0",
+  "size": 112,
+  "orig_symbol": "sub_007267D0",
+  "src_path": "src/leaf/decompiled_720000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_720000.cpp",
+  "name": "clearIndexedEntryField",
+  "signature": "extern \"C\" bool __thiscall fn_007267D0(void* self, uint32_t key, int32_t index)",
+  "summary": "Finds a sub-object by key in field_0x250, validates an index against its count, and clears offset +0x1C of the indexed item.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x250",
+      "type": "void*",
+      "name": "field_0x250"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:28:37Z"
+}

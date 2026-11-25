@@ -69174,6 +69174,12 @@
     "summary": "Looks up a key in the subobject at +0x250, sets its index, and clears offset +0x1C of its indexed entry.",
     "lifted_path": "lifted/leaf/decompiled_720000.cpp"
   },
+  "0x007267D0": {
+    "name": "clearIndexedEntryField",
+    "signature": "extern \"C\" bool __thiscall fn_007267D0(void* self, uint32_t key, int32_t index)",
+    "summary": "Finds a sub-object by key in field_0x250, validates an index against its count, and clears offset +0x1C of the indexed item.",
+    "lifted_path": "lifted/leaf/decompiled_720000.cpp"
+  },
   "0x00728570": {
     "name": "sub_00728570",
     "signature": "extern \"C\" void __fastcall fn_00728570(void* self)",
