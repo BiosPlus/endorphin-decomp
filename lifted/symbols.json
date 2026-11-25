@@ -50008,6 +50008,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006FA230 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006FA370": {
+    "name": "Unknown::SetFlag16IfGatedOrRelease",
+    "class": "Unknown",
+    "signature": "void fn_006FA370(uintptr_t self)",
+    "summary": "If getField34Shifted27(self) is nonzero, sets bit 0x10000 in the field at +0x34; otherwise calls ext_006FA3C0(self, 1) and then invokes two virtual methods on self's vtable (slot 0x10 with no args, slot 0x08 with arg 1).",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FA3B0": {
     "name": "getField34Shifted27",
     "signature": "int32_t __thiscall sub_006FA3B0(uintptr_t self)",

@@ -1181,3 +1181,36 @@ uint8_t __stdcall sub_006F95E0(uint32_t value) {
     return value == mem_00B5E400 ? 1 : 0;
 }
 } // namespace lift_006F95E0
+
+// [0x006FA370] sub_006FA370 (64 bytes)
+namespace lift_006FA370 {
+// Known callee 0x006FA3B0: getField34Shifted27 (Reads the 32-bit signed integer at offset 0x34 and arithmetic-shifts it right by 27 bits.)
+extern int32_t ext_006FA3B0(uintptr_t self);
+// Known callee 0x006FA3C0: sub_006FA3C0 (32B, thiscall with one stack argument; signature not yet identified.)
+extern void ext_006FA3C0(uintptr_t self, int32_t arg);
+
+// @name Unknown::SetFlag16IfGatedOrRelease
+// @class Unknown
+// @summary If getField34Shifted27(self) is nonzero, sets bit 0x10000 in the field at +0x34; otherwise calls ext_006FA3C0(self, 1) and then invokes two virtual methods on self's vtable (slot 0x10 with no args, slot 0x08 with arg 1).
+// @field Unknown +0x34 int32_t field_0x34
+void fn_006FA370(uintptr_t self) {
+    if (ext_006FA3B0(self) != 0) {
+        auto* flags = reinterpret_cast<int32_t*>(self + 0x34);
+        *flags = static_cast<int32_t>(static_cast<uint32_t>(*flags) | 0x10000u);
+        return;
+    }
+
+    ext_006FA3C0(self, 1);
+
+    // Virtual dispatch through self's vtable (slot 0x10, then slot 0x08 with arg 1).
+    auto** vtbl = *reinterpret_cast<void***>(self);
+    using Slot10Fn = void (*)(uintptr_t);
+    using Slot08Fn = void (*)(uintptr_t, int32_t);
+    reinterpret_cast<Slot10Fn>(vtbl[0x10 / sizeof(void*)])(self);
+
+    if (self != 0) {
+        auto** vtbl2 = *reinterpret_cast<void***>(self);
+        reinterpret_cast<Slot08Fn>(vtbl2[0x08 / sizeof(void*)])(self, 1);
+    }
+}
+} // namespace lift_006FA370
