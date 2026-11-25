@@ -953,3 +953,23 @@ void __thiscall fn_006483A0(void* self, uint32_t arg) {
     ext_00647BC0(self, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(v)));
 }
 } // namespace lift_006483A0
+
+// [0x0064C0A0] sub_0064C0A0 (86 bytes)
+namespace lift_0064C0A0 {
+// Known callee 0x00649730: Unknown::CopyRange24 (Copies a range of 24-byte (6-dword) records from [src_begin, src_end) to dst.)
+extern void ext_00649730(const uint32_t* src_begin, const uint32_t* src_end, uint32_t* dst);
+
+// @name Unknown::CopyRange24AndAdvance_0064C0A0
+// @summary Copies a range of 24-byte records via CopyRange24, then returns dst advanced by the record count (end-begin)/24.
+uint32_t* fn_0064C0A0(const uint32_t* src_begin, const uint32_t* src_end, uint32_t* dst) {
+    ext_00649730(src_begin, src_end, dst);
+
+    // Byte distance between the two source pointers, as a signed 32-bit value.
+    const int32_t diff = static_cast<int32_t>(
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src_end) - reinterpret_cast<uintptr_t>(src_begin)));
+
+    // Number of 24-byte records; advancing a uint32_t* by 6 elements is 24 bytes.
+    const int32_t count = diff / 24;
+    return dst + 6 * count;
+}
+} // namespace lift_0064C0A0

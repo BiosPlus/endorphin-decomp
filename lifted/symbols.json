@@ -36832,6 +36832,13 @@
     "summary": "Copies 0x18-byte records from [first, last) to dst; if dst is null, only advances the source (no copy).",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x0064C0A0": {
+    "name": "Unknown::CopyRange24AndAdvance_0064C0A0",
+    "class": "Unknown",
+    "signature": "uint32_t* fn_0064C0A0(const uint32_t* src_begin, const uint32_t* src_end, uint32_t* dst)",
+    "summary": "Copies a range of 24-byte records via CopyRange24, then returns dst advanced by the record count (end-begin)/24.",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x0064C900": {
     "name": "fillRecordsFromSource",
     "signature": "void fn_0064C900(void* dst, uint32_t count, const void* src)",
