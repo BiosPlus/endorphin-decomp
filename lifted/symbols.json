@@ -62213,6 +62213,12 @@
     "summary": "If arg2 != 0, set 0x400 in the dword at (*(self+0x04))+0x04; otherwise clear it.",
     "lifted_path": "lifted/leaf/decompiled_810000.cpp"
   },
+  "0x008106A0": {
+    "name": "SetStringBufferAndStoreLength",
+    "signature": "extern uint32_t mem_00AB6AB4; // result slot (.data, initial 0x00000001) extern uint32_t mem_00AB6AC0; // 4-byte string buffer (.data, initial 0x0000002C) uint32_t fn_008106A0(const uint8_t* src)",
+    "summary": "Copies the source string into a 3-byte static buffer (truncated, NUL-terminated), stores strlen of that buffer into mem_00AB6AB4, and returns it.",
+    "lifted_path": "lifted/leaf/decompiled_810000.cpp"
+  },
   "0x008106D0": {
     "name": "CopyStringToStaticBuffer",
     "class": "(none)",

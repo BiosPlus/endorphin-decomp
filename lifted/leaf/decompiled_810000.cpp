@@ -298,3 +298,26 @@ void fn_008106D0(const uint8_t* src) {
     ext_0080EB80(reinterpret_cast<uint8_t*>(&mem_00AB6AC4), 0x40, src);
 }
 } // namespace lift_008106D0
+
+// [0x008106A0]
+namespace lift_008106A0 {
+namespace lift_008106A0 {
+// @name SetStringBufferAndStoreLength
+// @summary Copies the source string into a 3-byte static buffer (truncated, NUL-terminated), stores strlen of that buffer into mem_00AB6AB4, and returns it.
+
+// CopyStringToFixedBuffer clone: copies src into dst (size bytes), forcing a NUL terminator.
+extern void ext_0080EB80(uint8_t* dst, size_t size, const uint8_t* src);
+// strlen clone: returns the length of a NUL-terminated string.
+extern uint32_t ext_0080F700(const char* str);
+
+extern uint32_t mem_00AB6AB4; // result slot (.data, initial 0x00000001)
+extern uint32_t mem_00AB6AC0; // 4-byte string buffer (.data, initial 0x0000002C)
+
+uint32_t fn_008106A0(const uint8_t* src) {
+    uint8_t* buf = reinterpret_cast<uint8_t*>(&mem_00AB6AC0);
+    ext_0080EB80(buf, 3, src);
+    mem_00AB6AB4 = ext_0080F700(reinterpret_cast<const char*>(buf));
+    return mem_00AB6AB4;
+}
+} // namespace lift_008106A0
+} // namespace lift_008106A0

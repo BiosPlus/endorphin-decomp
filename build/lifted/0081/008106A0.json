@@ -1,0 +1,13 @@
+{
+  "va": "0x008106A0",
+  "size": 36,
+  "orig_symbol": "sub_008106A0",
+  "src_path": "src/leaf/decompiled_810000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_810000.cpp",
+  "name": "SetStringBufferAndStoreLength",
+  "signature": "extern uint32_t mem_00AB6AB4; // result slot (.data, initial 0x00000001) extern uint32_t mem_00AB6AC0; // 4-byte string buffer (.data, initial 0x0000002C) uint32_t fn_008106A0(const uint8_t* src)",
+  "summary": "Copies the source string into a 3-byte static buffer (truncated, NUL-terminated), stores strlen of that buffer into mem_00AB6AB4, and returns it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:59:09Z"
+}
