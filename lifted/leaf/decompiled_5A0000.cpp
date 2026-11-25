@@ -445,3 +445,40 @@ void* fn_005AD010(void* self, const void* key) {
 }
 } // namespace lift_004205B0
 } // namespace lift_005AD010
+
+// [0x005ACB00]
+namespace lift_005ACB00 {
+// @name Unknown::InitFromVec4_005ACB00
+// @class Unknown
+// @summary Ctor-style init: calls base InitVtblAndArg(0), sets vtable 0x0095F57C, stores two dwords and copies four floats from the source pointer.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1C uint32_t field_0x1C
+// @field Unknown +0x20 float field_0x20
+// @field Unknown +0x24 float field_0x24
+// @field Unknown +0x28 float field_0x28
+// @field Unknown +0x2C float field_0x2C
+
+extern void* ext_006657F0(void* self, uint32_t arg);
+
+void* fn_005ACB00(void* self, uint32_t a1, uint32_t a2, const void* a3) {
+    uint8_t* base = reinterpret_cast<uint8_t*>(self);
+    const float* src = reinterpret_cast<const float*>(a3);
+
+    ext_006657F0(self, 0);
+
+    *reinterpret_cast<void**>(base + 0x00) = reinterpret_cast<void*>(static_cast<uintptr_t>(0x0095F57Cu));
+    *reinterpret_cast<uint32_t*>(base + 0x14) = a1;
+    *reinterpret_cast<uint32_t*>(base + 0x10) = 0u;
+    *reinterpret_cast<uint32_t*>(base + 0x18) = a2;
+    *reinterpret_cast<float*>(base + 0x20) = src[0];
+    *reinterpret_cast<uint32_t*>(base + 0x1C) = 0u;
+    *reinterpret_cast<float*>(base + 0x24) = src[1];
+    *reinterpret_cast<float*>(base + 0x28) = src[2];
+    *reinterpret_cast<float*>(base + 0x2C) = src[3];
+
+    return self;
+}
+} // namespace lift_005ACB00

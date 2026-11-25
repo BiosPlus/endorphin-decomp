@@ -24354,6 +24354,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00665810 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005ACB00": {
+    "name": "Unknown::InitFromVec4_005ACB00",
+    "class": "Unknown",
+    "signature": "void* fn_005ACB00(void* self, uint32_t a1, uint32_t a2, const void* a3)",
+    "summary": "Ctor-style init: calls base InitVtblAndArg(0), sets vtable 0x0095F57C, stores two dwords and copies four floats from the source pointer.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005ACC50": {
     "name": "Unknown::initWithArgsAndZeroFloats_005ACC50",
     "class": "Unknown",
