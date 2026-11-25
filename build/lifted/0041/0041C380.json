@@ -1,0 +1,13 @@
+{
+  "va": "0x0041C380",
+  "size": 20,
+  "orig_symbol": "sub_0041C380",
+  "src_path": "src/leaf/tiny_410000.cpp",
+  "lifted_path": "lifted/leaf/tiny_410000.cpp",
+  "name": "IndirectJumpThroughEsi",
+  "signature": "void fn_0041C380(void (*target)())",
+  "summary": "Tail-jumps to the code address held in ESI (push esi; ret), no other effects",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:18:41Z"
+}

@@ -1758,6 +1758,12 @@
     "summary": "Returns the address of the read-only string constant \",bj\" stored in .rdata (mem_0092DA8C).",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x0041C380": {
+    "name": "IndirectJumpThroughEsi",
+    "signature": "void fn_0041C380(void (*target)())",
+    "summary": "Tail-jumps to the code address held in ESI (push esi; ret), no other effects",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x0041C510": {
     "name": "GridPropertyPage::vfunc_1",
     "class": "GridPropertyPage",

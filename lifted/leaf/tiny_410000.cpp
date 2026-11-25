@@ -464,3 +464,16 @@ void* fn_00419940(void* self, uint32_t arg) {
     return self;
 }
 } // namespace lift_00419940
+
+// [0x0041C380] sub_0041C380 (20 bytes)
+namespace lift_0041C380 {
+// Executed bytes are only `push esi; ret`: pops ESI back off as the return
+// address, i.e. an indirect jump to ESI with the caller's return address left
+// on the stack. The trailing 16 bytes are never executed (data/padding).
+// The jump target lives in ESI, so it is passed in as a parameter here.
+// @name IndirectJumpThroughEsi
+// @summary Tail-jumps to the code address held in ESI (push esi; ret), no other effects
+void fn_0041C380(void (*target)()) {
+    target();
+}
+} // namespace lift_0041C380
