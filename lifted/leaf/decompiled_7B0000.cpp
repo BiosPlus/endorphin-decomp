@@ -1477,3 +1477,12 @@ void fn_007BC160(const SampleLog16Source* arg0, std::uint8_t* out, std::int32_t 
     }
 }
 } // namespace lift_007BC160
+
+// [0x007B5074]
+namespace lift_007B5074 {
+// @name sub_007B5074
+// @summary Data table or unreferenced stub at 0x007B5074
+
+void sub_007B5074(void) {
+}
+} // namespace lift_007B5074

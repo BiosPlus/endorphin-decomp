@@ -1,0 +1,13 @@
+{
+  "va": "0x007B5074",
+  "size": 100,
+  "orig_symbol": "sub_007B5074",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "sub_007B5074",
+  "signature": "void sub_007B5074(void)",
+  "summary": "Data table or unreferenced stub at 0x007B5074",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:59:26Z"
+}
