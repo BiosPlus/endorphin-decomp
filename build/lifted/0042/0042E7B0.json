@@ -8,7 +8,27 @@
   "class": "SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e",
   "signature": "void* fn_0042E7B0(void* self, const void* key)",
   "summary": "Looks up a string key in the embedded tree map; returns the node payload (node+0x28), or null if the map is empty or the key is absent.",
+  "fields": [
+    {
+      "class": "SearchableMap\u003cKeyMapping,GetNameFromAttribute\u003cKeyMapping\u003e\u003e",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "SearchableMap\u003cKeyMapping,GetNameFromAttribute\u003cKeyMapping\u003e\u003e",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "SearchableMap\u003cKeyMapping,GetNameFromAttribute\u003cKeyMapping\u003e\u003e",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "field_0x0C"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T04:03:18Z"
+  "lifted_at": "2026-11-25T04:03:35Z"
 }

@@ -16,9 +16,9 @@ extern void (*mem_00925134)();
 // @name SearchableMap<KeyMapping, GetNameFromAttribute<KeyMapping>>::vfunc_0
 // @class SearchableMap<KeyMapping, GetNameFromAttribute<KeyMapping>>
 // @summary Looks up a string key in the embedded tree map; returns the node payload (node+0x28), or null if the map is empty or the key is absent.
-// @field SearchableMap<KeyMapping, GetNameFromAttribute<KeyMapping>> +0x04 void* field_0x04
-// @field SearchableMap<KeyMapping, GetNameFromAttribute<KeyMapping>> +0x08 void* field_0x08
-// @field SearchableMap<KeyMapping, GetNameFromAttribute<KeyMapping>> +0x0C DWORD field_0x0C
+// @field SearchableMap<KeyMapping,GetNameFromAttribute<KeyMapping>> +0x04 void* field_0x04
+// @field SearchableMap<KeyMapping,GetNameFromAttribute<KeyMapping>> +0x08 void* field_0x08
+// @field SearchableMap<KeyMapping,GetNameFromAttribute<KeyMapping>> +0x0C DWORD field_0x0C
 void* fn_0042E7B0(void* self, const void* key) {
     char* base = static_cast<char*>(self);
 
