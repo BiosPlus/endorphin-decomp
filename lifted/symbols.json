@@ -14602,6 +14602,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004CF970": {
+    "name": "initStaticObjectOnce_004CF970",
+    "signature": "DWORD initStaticObjectOnce_004CF970(void)",
+    "summary": "One-time initializer for the global object at mem_00AE4B8C; sets guard bit 0 of mem_00AE4B90, runs ext_0067A670 on the object, then stores vtable 0x947584 into it. Returns the object's address.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CFA50": {
     "name": "NMData::IncarnationEventData::vfunc_3_off_158",
     "class": "NMData::IncarnationEventData",

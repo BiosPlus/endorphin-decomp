@@ -529,3 +529,26 @@ DWORD fn_004CB580(void* self) {
     return static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE44E0));
 }
 } // namespace lift_004CB580
+
+// [0x004CF970]
+namespace lift_004CF970 {
+// Declared for use by this function. Callee is storeArgIntoFirstDword_006721B0
+// (thiscall: self in ECX, one stack argument).
+DWORD ext_0067A670(void* self, DWORD value);
+
+extern DWORD mem_00AE4B90; // guard flags; bit 0 marks the object as initialized
+extern DWORD mem_00AE4B8C; // static object; first DWORD receives the vtable pointer
+
+// @name initStaticObjectOnce_004CF970
+// @summary One-time initializer for the global object at mem_00AE4B8C; sets guard bit 0 of mem_00AE4B90, runs ext_0067A670 on the object, then stores vtable 0x947584 into it. Returns the object's address.
+// @field none
+DWORD initStaticObjectOnce_004CF970(void) {
+    // Guard: bit 0 of mem_00AE4B90 marks the object as initialized.
+    if ((mem_00AE4B90 & 1u) == 0u) {
+        mem_00AE4B90 |= 1u;
+        ext_0067A670(&mem_00AE4B8C, 0u);
+        mem_00AE4B8C = 0x00947584u;
+    }
+    return static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE4B8C));
+}
+} // namespace lift_004CF970
