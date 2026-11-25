@@ -58556,6 +58556,12 @@
     "summary": "Returns the int32 value behind a double pointer (arg0) minus the int32 value behind a pointer (arg1).",
     "lifted_path": "lifted/leaf/tiny_800000.cpp"
   },
+  "0x00803B60": {
+    "name": "distanceManhattan3D_00803B60",
+    "signature": "float fn_00803B60(const void* ecx, const void* eax)",
+    "summary": "Returns |a.x-b.x| + |a.y-b.y| + |a.z-b.z| for two float vectors at ecx and eax (Manhattan distance), rounding each step to float as the x87 code did.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
   "0x00809540": {
     "name": "GlobalAllocZeroWrapper",
     "class": "Writer",

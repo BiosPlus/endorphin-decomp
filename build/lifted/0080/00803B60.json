@@ -1,0 +1,33 @@
+{
+  "va": "0x00803B60",
+  "size": 67,
+  "orig_symbol": "sub_00803B60",
+  "src_path": "src/leaf/decompiled_800000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_800000.cpp",
+  "name": "distanceManhattan3D_00803B60",
+  "signature": "float fn_00803B60(const void* ecx, const void* eax)",
+  "summary": "Returns |a.x-b.x| + |a.y-b.y| + |a.z-b.z| for two float vectors at ecx and eax (Manhattan distance), rounding each step to float as the x87 code did.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:17:59Z"
+}

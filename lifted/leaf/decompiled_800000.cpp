@@ -594,3 +594,25 @@ uint32_t __cdecl fn_0080B540(uint32_t handle, uint32_t size) {
     return ext_008596F0(handle, size);
 }
 } // namespace lift_0080B540
+
+// [0x00803B60] sub_00803B60 (67 bytes)
+namespace lift_00803B60 {
+namespace lift_00803B60 {
+// @name distanceManhattan3D_00803B60
+// @summary Returns |a.x-b.x| + |a.y-b.y| + |a.z-b.z| for two float vectors at ecx and eax (Manhattan distance), rounding each step to float as the x87 code did.
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+float fn_00803B60(const void* ecx, const void* eax) {
+    // fld [ecx+4]; fsub [eax+4]; fstp; fabs; fstp: |dy| rounded to float.
+    const float dy = std::fabs(lift_field<float>(ecx, 4) - lift_field<float>(eax, 4));
+    // fld [ecx]; fsub [eax]; fstp; fabs; fstp; fadd: |dy| + |dx|.
+    const float dx = std::fabs(lift_field<float>(ecx, 0) - lift_field<float>(eax, 0));
+    const float sumXY = dy + dx;
+    // fld [ecx+8]; fsub [eax+8]; fstp; fabs; fstp; fadd: (|dy| + |dx|) + |dz|.
+    const float dz = std::fabs(lift_field<float>(ecx, 8) - lift_field<float>(eax, 8));
+    // fstp [esp]; fld [esp]: result is returned in st0 as a float.
+    return sumXY + dz;
+}
+} // namespace lift_00803B60
+} // namespace lift_00803B60
