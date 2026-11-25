@@ -32314,6 +32314,13 @@
     "summary": "Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9EF9C; this is unused.",
     "lifted_path": "lifted/NMData/HingeData.cpp"
   },
+  "0x005E0970": {
+    "name": "NMData::SkeletalJointData::vfunc_60",
+    "class": "NMData::SkeletalJointData",
+    "signature": "int fn_005E0970(void* self)",
+    "summary": "Calls virtual slot 0xDC (index 55) with arguments 0..5 and returns how many calls returned true.",
+    "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
+  },
   "0x005E09B0": {
     "name": "NMData::FixedPathJointData::vfunc_44",
     "class": "NMData::FixedPathJointData",

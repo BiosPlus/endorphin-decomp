@@ -134,3 +134,28 @@ std::string fn_005F02B0(const void* /*self*/) {
 }
 } // namespace lift_0047DB90
 } // namespace lift_005F02B0
+
+// [0x005E0970]
+namespace lift_005E0970 {
+// @name NMData::SkeletalJointData::vfunc_60
+// @class NMData::SkeletalJointData
+// @summary Calls virtual slot 0xDC (index 55) with arguments 0..5 and returns how many calls returned true.
+// @field NMData::SkeletalJointData +0x00 void** vtable
+int fn_005E0970(void* self) {
+    using SlotFn = bool (*)(void* self, int index);
+
+    // Vtable pointer lives at the start of the object.
+    void** vtable = lift_field<void**>(self, 0);
+
+    int count = 0;
+    for (int i = 0; i < 6; ++i) {
+        // Slot at byte offset 0xDC of the vtable; called as a method with `self` as the implicit this.
+        auto slot = reinterpret_cast<SlotFn>(
+            lift_field<void*>(reinterpret_cast<void*>(vtable), 0xDC));
+        if (slot(self, i)) {
+            ++count;
+        }
+    }
+    return count;
+}
+} // namespace lift_005E0970
