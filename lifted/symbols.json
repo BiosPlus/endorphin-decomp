@@ -55735,6 +55735,12 @@
     "summary": "Initializes three 64-bit global values from MSVCR80!_HUGE.",
     "lifted_path": "lifted/clones/auto_clones_720000.cpp"
   },
+  "0x0072B460": {
+    "name": "CopyHugeToGlobals_0072B460",
+    "signature": "void fn_0072B460(void)",
+    "summary": "Copies the 8-byte value pointed to by the _HUGE pointer into four consecutive 8-byte globals.",
+    "lifted_path": "lifted/clones/auto_clones_720000.cpp"
+  },
   "0x0072B770": {
     "name": "isKnownGlobalHandle",
     "signature": "bool __stdcall sub_0072B770(uint32_t value)",

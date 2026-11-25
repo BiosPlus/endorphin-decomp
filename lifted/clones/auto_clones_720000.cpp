@@ -82,3 +82,35 @@ void sub_0072D210() {
     mem_00B602C4 = hi;
 }
 } // namespace lift_0072D210
+
+// [0x0072B460] sub_0072B460 (74 bytes)
+namespace lift_0072B460 {
+extern uint32_t mem_00925284;
+extern uint32_t mem_00B60148;
+extern uint32_t mem_00B6014C;
+extern uint32_t mem_00B60150;
+extern uint32_t mem_00B60154;
+extern uint32_t mem_00B60158;
+extern uint32_t mem_00B6015C;
+extern uint32_t mem_00B60160;
+extern uint32_t mem_00B60164;
+
+// @name CopyHugeToGlobals_0072B460
+// @summary Copies the 8-byte value pointed to by the _HUGE pointer into four consecutive 8-byte globals.
+void fn_0072B460(void) {
+    // _HUGE (MSVCR80) is a pointer to an 8-byte constant; the address is held in mem_00925284.
+    const uint32_t* src = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
+
+    mem_00B60148 = src[0];
+    mem_00B6014C = src[1];
+
+    mem_00B60150 = src[0];
+    mem_00B60154 = src[1];
+
+    mem_00B60158 = src[0];
+    mem_00B6015C = src[1];
+
+    mem_00B60160 = src[0];
+    mem_00B60164 = src[1];
+}
+} // namespace lift_0072B460
