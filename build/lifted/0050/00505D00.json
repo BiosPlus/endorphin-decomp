@@ -1,0 +1,34 @@
+{
+  "va": "0x00505D00",
+  "size": 73,
+  "orig_symbol": "sub_00505D00",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "Unknown::DestroyElementsAndFreeStorage_00505D00",
+  "class": "Unknown",
+  "signature": "void fn_00505D00(void* self)",
+  "summary": "Destroys each 0x68-byte element in the [begin, end) range via its vtable slot 0 (deleting-dtor flag 0), frees the begin buffer, and nulls begin/end/capacity.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (array begin pointer; element stride",
+      "name": "0x68)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void* field_0x08 (array end",
+      "name": "pointer)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "DWORD field_0x0C (capacity pointer,",
+      "name": "zeroed)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:31:03Z"
+}

@@ -591,3 +591,35 @@ void fn_00505DC0(void* self) {
     lift_field<void*>(self, 0xC) = nullptr;
 }
 } // namespace lift_00505DC0
+
+// [0x00505D00] sub_00505D00 (73 bytes)
+namespace lift_00505D00 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764; called with one pointer argument, cdecl, then caller pops 4).
+extern void ext_006A5C5C(void* ptr);
+
+// @name Unknown::DestroyElementsAndFreeStorage_00505D00
+// @class Unknown
+// @summary Destroys each 0x68-byte element in the [begin, end) range via its vtable slot 0 (deleting-dtor flag 0), frees the begin buffer, and nulls begin/end/capacity.
+// @field Unknown +0x04 void* field_0x04 (array begin pointer; element stride 0x68)
+// @field Unknown +0x08 void* field_0x08 (array end pointer)
+// @field Unknown +0x0C DWORD field_0x0C (capacity pointer, zeroed)
+void fn_00505D00(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    uint8_t* begin = *reinterpret_cast<uint8_t**>(base + 0x04);
+    if (begin != nullptr) {
+        uint8_t* end = *reinterpret_cast<uint8_t**>(base + 0x08);
+        for (uint8_t* p = begin; p != end; p += 0x68) {
+            void** vtbl = *reinterpret_cast<void***>(p);
+            reinterpret_cast<void (*)(void*, int)>(vtbl[0])(p, 0);
+        }
+        // Re-read begin: element destructors may have changed the field.
+        begin = *reinterpret_cast<uint8_t**>(base + 0x04);
+        ext_006A5C5C(begin);
+    }
+
+    *reinterpret_cast<void**>(base + 0x04) = nullptr;
+    *reinterpret_cast<void**>(base + 0x08) = nullptr;
+    *reinterpret_cast<uint32_t*>(base + 0x0C) = 0;
+}
+} // namespace lift_00505D00

@@ -15973,6 +15973,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x00505D00": {
+    "name": "Unknown::DestroyElementsAndFreeStorage_00505D00",
+    "class": "Unknown",
+    "signature": "void fn_00505D00(void* self)",
+    "summary": "Destroys each 0x68-byte element in the [begin, end) range via its vtable slot 0 (deleting-dtor flag 0), frees the begin buffer, and nulls begin/end/capacity.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00505DC0": {
     "name": "Unknown::DestroyElementsAndReset_00505DC0",
     "class": "Unknown",
