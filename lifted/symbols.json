@@ -6480,6 +6480,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0045AD80 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x0045B410": {
+    "name": "CWnd::updateFromWindowTextIfPositive_0045B410",
+    "class": "CWnd",
+    "signature": "void fn_0045B410(void* self)",
+    "summary": "Parses this window's text as a float and, if the value is strictly positive, forwards it to the object at +0x88 via vtable slot +0x7C.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x0045B450": {
     "name": "Unknown::forwardPositiveWindowValue_0045B450",
     "class": "Unknown",

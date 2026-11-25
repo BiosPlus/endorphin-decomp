@@ -1542,3 +1542,34 @@ void fn_0045B450(void* self) {
     method(target, value);
 }
 } // namespace lift_0045B450
+
+// [0x0045B410] sub_0045B410 (62 bytes)
+namespace lift_0045B410 {
+// Known callee 0x0045AEE0: getWindowTextAsFloat (Reads the window text of a CWnd into a string and parses it as a float using atof.)
+extern float ext_0045AEE0(void* wnd);
+
+// @name CWnd::updateFromWindowTextIfPositive_0045B410
+// @class CWnd
+// @summary Parses this window's text as a float and, if the value is strictly positive, forwards it to the object at +0x88 via vtable slot +0x7C.
+// @field CWnd +0x88 void* pTarget
+// @field CWnd +0x8C void field_0x8c
+void fn_0045B410(void* self) {
+    unsigned char* base = static_cast<unsigned char*>(self);
+
+    // Parse the text of the embedded window object at +0x8C.
+    float value = ext_0045AEE0(base + 0x8C);
+
+    // Only positive values (NaN and zero included in the rejection) are forwarded.
+    if (!(value > 0.0f)) {
+        return;
+    }
+
+    // Virtual call on the target object at +0x88: vtable[+0x7C](value), thiscall-style.
+    void* target = *reinterpret_cast<void**>(base + 0x88);
+    void** vtable = *reinterpret_cast<void***>(target);
+    using VirtualFloatMethod = void (*)(void* thisPtr, float arg);
+    auto method = reinterpret_cast<VirtualFloatMethod>(
+        *reinterpret_cast<void**>(reinterpret_cast<unsigned char*>(vtable) + 0x7C));
+    method(target, value);
+}
+} // namespace lift_0045B410

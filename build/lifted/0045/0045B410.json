@@ -1,0 +1,28 @@
+{
+  "va": "0x0045B410",
+  "size": 62,
+  "orig_symbol": "sub_0045B410",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "CWnd::updateFromWindowTextIfPositive_0045B410",
+  "class": "CWnd",
+  "signature": "void fn_0045B410(void* self)",
+  "summary": "Parses this window's text as a float and, if the value is strictly positive, forwards it to the object at +0x88 via vtable slot +0x7C.",
+  "fields": [
+    {
+      "class": "CWnd",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "pTarget"
+    },
+    {
+      "class": "CWnd",
+      "offset": "+0x8C",
+      "type": "void",
+      "name": "field_0x8c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:06:36Z"
+}
