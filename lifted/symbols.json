@@ -20165,6 +20165,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00559B00": {
+    "name": "Unknown::ReleaseAndThrowNull",
+    "class": "Unknown",
+    "signature": "void fn_00559B00(void* self)",
+    "summary": "Releases the handle held in the caller's local (passed in ecx), then raises a null-object exception via CxxThrowException.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00559B20": {
     "name": "sub_00559B20",
     "class": "Unknown",

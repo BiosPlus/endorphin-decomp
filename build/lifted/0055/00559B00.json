@@ -1,0 +1,14 @@
+{
+  "va": "0x00559B00",
+  "size": 17,
+  "orig_symbol": "sub_00559B00",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "Unknown::ReleaseAndThrowNull",
+  "class": "Unknown",
+  "signature": "void fn_00559B00(void* self)",
+  "summary": "Releases the handle held in the caller's local (passed in ecx), then raises a null-object exception via CxxThrowException.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:03:19Z"
+}

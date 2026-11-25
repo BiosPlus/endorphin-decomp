@@ -722,3 +722,21 @@ void fn_0055B880(void* self) {
 }
 } // namespace lift_00569970
 } // namespace lift_0055B880
+
+// [0x00559B00] sub_00559B00 (17 bytes)
+namespace lift_00559B00 {
+// Known callee 0x00559B20: sub_00559B20 (Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).)
+extern void ext_00559B20(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void);
+
+// @name Unknown::ReleaseAndThrowNull
+// @summary Releases the handle held in the caller's local (passed in ecx), then raises a null-object exception via CxxThrowException.
+// @field none
+void fn_00559B00(void* self) {
+    // mov ecx, [ebp-0x18]: self is the caller's stack local, supplied as ecx
+    ext_00559B20(self);
+    // push 0; push 0; call _CxxThrowException(NULL, NULL): raises a null throw.
+    ext_006A6DD2();
+}
+} // namespace lift_00559B00
