@@ -1,0 +1,14 @@
+{
+  "va": "0x00522160",
+  "size": 34,
+  "orig_symbol": "ThreeLayerNet::vfunc_25",
+  "src_path": "src/classes/ThreeLayerNet.cpp",
+  "lifted_path": "lifted/classes/ThreeLayerNet.cpp",
+  "name": "ThreeLayerNet::vfunc_25",
+  "class": "ThreeLayerNet",
+  "signature": "void* __stdcall fn_00522160(void* out, void* a2, void* a3)",
+  "summary": "Constructs a std::string from the C string at 0x00952958 into the caller-supplied sret buffer and returns that buffer (this/ecx unused; stdcall, 3 stack args).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:11:25Z"
+}

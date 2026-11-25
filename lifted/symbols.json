@@ -20613,6 +20613,13 @@
     "summary": "Pure jump thunk forwarding to NMData::NetworkConnectorData::vfunc_27.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00522160": {
+    "name": "ThreeLayerNet::vfunc_25",
+    "class": "ThreeLayerNet",
+    "signature": "void* __stdcall fn_00522160(void* out, void* a2, void* a3)",
+    "summary": "Constructs a std::string from the C string at 0x00952958 into the caller-supplied sret buffer and returns that buffer (this/ecx unused; stdcall, 3 stack args).",
+    "lifted_path": "lifted/classes/ThreeLayerNet.cpp"
+  },
   "0x00522220": {
     "name": "CopyFillRange_00522220",
     "class": "Unknown",
