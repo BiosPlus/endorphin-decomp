@@ -1,0 +1,22 @@
+{
+  "va": "0x00435FA0",
+  "size": 66,
+  "orig_symbol": "MainFrame::vfunc_26",
+  "src_path": "src/classes/MainFrame.cpp",
+  "lifted_path": "lifted/classes/MainFrame.cpp",
+  "name": "MainFrame::vfunc_26",
+  "class": "MainFrame",
+  "signature": "void __thiscall fn_00435FA0(uint32_t self)",
+  "summary": "Updates frame state and writes profile setting before forwarding to base handler",
+  "fields": [
+    {
+      "class": "MainFrame",
+      "offset": "+0xF5",
+      "type": "uint8_t",
+      "name": "field_0xf5"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:15:15Z"
+}
