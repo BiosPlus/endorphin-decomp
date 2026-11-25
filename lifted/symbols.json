@@ -56819,6 +56819,12 @@
     "summary": "Reads the DWORD at arg1[0], invokes arg2's callback at +0x0C with it, then invokes the callback again with arg1.",
     "lifted_path": "lifted/leaf/tiny_7D0000.cpp"
   },
+  "0x007DCAC0": {
+    "name": "HashTable_FindAndUnlinkByKey",
+    "signature": "uint32_t fn_007DCAC0(void* self, uint32_t key)",
+    "summary": "Hashes a packed 32-bit key into a chained bucket table, unlinks the first node with a matching key, and returns it (or 0).",
+    "lifted_path": "lifted/leaf/decompiled_7D0000.cpp"
+  },
   "0x007DCFF0": {
     "name": "sub_007DCFF0",
     "class": "\u003cunknown\u003e",

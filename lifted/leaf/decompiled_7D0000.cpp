@@ -741,3 +741,42 @@ void fn_007D5C60(void* self) {
     }
 }
 } // namespace lift_007D5C60
+
+// [0x007DCAC0] sub_007DCAC0 (61 bytes)
+namespace lift_007DCAC0 {
+// @name HashTable_FindAndUnlinkByKey
+// @summary Hashes a packed 32-bit key into a chained bucket table, unlinks the first node with a matching key, and returns it (or 0).
+// @field HashTable +0x00 uint32_t bucketsAddr
+// @field HashTable +0x08 uint32_t bucketCount
+// @field HashNode +0x08 uint32_t key
+// @field HashNode +0x10 uint32_t next
+uint32_t fn_007DCAC0(void* self, uint32_t key) {
+    // Guest-memory accessor: addresses are 32-bit guest pointers stored in the struct.
+    auto mem32 = [](uint32_t addr) -> uint32_t& {
+        return *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(addr));
+    };
+
+    // Bucket index: (high16 arithmetic-shifted) XOR low16, masked by (count - 1).
+    uint32_t hash = static_cast<uint32_t>(static_cast<int32_t>(key) >> 16) ^ (key & 0xFFFFu);
+    uint32_t mask = lift_field<uint32_t>(self, 0x08) - 1u;
+    uint32_t link = lift_field<uint32_t>(self, 0x00) + 4u * (hash & mask);
+
+    uint32_t node = mem32(link);
+    if (node == 0) {
+        return 0;
+    }
+
+    // Walk the chain. 'link' is the address of the pointer that refers to 'node'.
+    for (;;) {
+        if (mem32(node + 0x08) == key) {
+            mem32(link) = mem32(node + 0x10);  // unlink
+            return node;
+        }
+        if (mem32(node + 0x10) == 0) {
+            return 0;
+        }
+        link = node + 0x10;
+        node = mem32(link);
+    }
+}
+} // namespace lift_007DCAC0

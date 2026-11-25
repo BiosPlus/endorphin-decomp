@@ -1,0 +1,39 @@
+{
+  "va": "0x007DCAC0",
+  "size": 61,
+  "orig_symbol": "sub_007DCAC0",
+  "src_path": "src/leaf/decompiled_7D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7D0000.cpp",
+  "name": "HashTable_FindAndUnlinkByKey",
+  "signature": "uint32_t fn_007DCAC0(void* self, uint32_t key)",
+  "summary": "Hashes a packed 32-bit key into a chained bucket table, unlinks the first node with a matching key, and returns it (or 0).",
+  "fields": [
+    {
+      "class": "HashTable",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "bucketsAddr"
+    },
+    {
+      "class": "HashTable",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "bucketCount"
+    },
+    {
+      "class": "HashNode",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "key"
+    },
+    {
+      "class": "HashNode",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "next"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:58:21Z"
+}
