@@ -17425,6 +17425,12 @@
     "summary": "Returns one of two qword constants (as x87 st0) depending on whether this-\u003efield_0x08 is nonzero.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x0050FAA0": {
+    "name": "pushHeapByDoubleKey",
+    "signature": "inline double readKey(const void* obj)",
+    "summary": "Sift-up heap insertion of a pointer into an array of pointers, ordered by the double at object +0x20 (std::__push_heap style, max-heap by \"less\").",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050FB00": {
     "name": "SelectionMethod::vfunc_0",
     "class": "SelectionMethod",

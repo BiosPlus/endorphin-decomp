@@ -986,3 +986,38 @@ void* fn_00506030(void* self) {
     return self;
 }
 } // namespace lift_00506030
+
+// [0x0050FAA0]
+namespace lift_0050FAA0 {
+// @name pushHeapByDoubleKey
+// @summary Sift-up heap insertion of a pointer into an array of pointers, ordered by the double at object +0x20 (std::__push_heap style, max-heap by "less").
+// @field Unknown +0x20 double field_0x20
+
+
+namespace {
+
+// Reads the double key stored at object +0x20.
+inline double readKey(const void* obj) {
+    double key;
+    std::memcpy(&key, static_cast<const std::uint8_t*>(obj) + 0x20, sizeof key);
+    return key;
+}
+
+}  // namespace
+
+// first:  array of object pointers
+// hole:   index to insert at (sift starts here)
+// top:    lowest index the sift may reach
+// value:  object pointer being inserted
+void sub_0050FAA0(void** first, std::int32_t hole, std::int32_t top, void* value) {
+    const double valueKey = readKey(value);
+    std::int32_t parent = (hole - 1) / 2;
+
+    while (hole > top && readKey(first[parent]) < valueKey) {
+        first[hole] = first[parent];
+        hole = parent;
+        parent = (hole - 1) / 2;
+    }
+    first[hole] = value;
+}
+} // namespace lift_0050FAA0

@@ -1,0 +1,21 @@
+{
+  "va": "0x0050FAA0",
+  "size": 91,
+  "orig_symbol": "sub_0050FAA0",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "pushHeapByDoubleKey",
+  "signature": "inline double readKey(const void* obj)",
+  "summary": "Sift-up heap insertion of a pointer into an array of pointers, ordered by the double at object +0x20 (std::__push_heap style, max-heap by \"less\").",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "double",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:23:27Z"
+}
