@@ -2020,3 +2020,26 @@ void* fn_00508DD0() {
     return static_cast<void*>(mem_00AEBC34);
 }
 } // namespace lift_00508DD0
+
+// [0x00504C90] sub_00504C90 (95 bytes)
+namespace lift_00504C90 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, uint8_t flag);
+// Known callee 0x006A6C87: sub_006A6C87 (registers a process-exit cleanup for the static)
+extern void ext_006A6C87(void* handler);
+extern uint32_t mem_00AEBB68;  // one-time-init guard word (bit 0)
+extern char mem_00AEBB4C[];    // function-local static string storage
+
+// @name GetStaticBoolString
+// @summary Lazily builds a process-lifetime bool string once and returns its storage address.
+void* fn_00504C90() {
+    if ((mem_00AEBB68 & 1u) == 0) {
+        mem_00AEBB68 |= 1u;
+        // Original pushes 0x00A40D20 as the second argument; the callee's declared
+        // uint8_t parameter receives its low byte.
+        ext_0066AD10(mem_00AEBB4C, static_cast<uint8_t>(0x00A40D20u));
+        ext_006A6C87(reinterpret_cast<void*>(0x00919D00));
+    }
+    return mem_00AEBB4C;
+}
+} // namespace lift_00504C90
