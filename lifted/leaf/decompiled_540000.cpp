@@ -1211,3 +1211,25 @@ void* fn_0054C570(void* self) {
     return self;
 }
 } // namespace lift_0054C570
+
+// [0x0054E360] sub_0054E360 (108 bytes)
+namespace lift_0054E360 {
+extern int mem_009548FC;
+extern void __fastcall ext_00493D90(void* self);
+// Known callee 0x0065C660: sub_0065C660 (Stores address of mem_00928E8C into field at offset +0x0.)
+extern void __fastcall ext_0065C660(void* self);
+
+// @name Unknown::initSubobjectsAndResetVptr
+// @class Unknown
+// @summary Sets the vptr to mem_009548FC, runs ext_00493D90 on the sub-objects at +0x28, +0x18 and +0x8 (flags 2, 1, 0), then tail-calls ext_0065C660 on self, which rewrites the vptr.
+// @field Unknown +0x00 void* vptr
+extern void __fastcall fn_0054E360(void* self) {
+    lift_field<void*>(self, 0x0) = &mem_009548FC;
+
+    ext_00493D90(static_cast<uint8_t*>(self) + 0x28);
+    ext_00493D90(static_cast<uint8_t*>(self) + 0x18);
+    ext_00493D90(static_cast<uint8_t*>(self) + 0x08);
+
+    ext_0065C660(self);
+}
+} // namespace lift_0054E360

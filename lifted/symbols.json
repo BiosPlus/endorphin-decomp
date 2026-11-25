@@ -23799,6 +23799,13 @@
     "summary": "Returns 1 if the float at this+0x44 compares equal to 0.0 (NaN yields 0), else 0.",
     "lifted_path": "lifted/leaf/tiny_540000.cpp"
   },
+  "0x0054E360": {
+    "name": "Unknown::initSubobjectsAndResetVptr",
+    "class": "Unknown",
+    "signature": "extern \"C\" void __fastcall fn_0054E360(void* self)",
+    "summary": "Sets the vptr to mem_009548FC, runs ext_00493D90 on the sub-objects at +0x28, +0x18 and +0x8 (flags 2, 1, 0), then tail-calls ext_0065C660 on self, which rewrites the vptr.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x0054E3D0": {
     "name": "initDefaultFloats",
     "signature": "void fn_0054E3D0(void* self)",
@@ -25722,6 +25729,13 @@
     "name": "IsIdentityMatrix3x3_00582A20",
     "signature": "bool IsIdentityMatrix3x3_00582A20(const float* m)",
     "summary": "Returns true if the 9 floats at ecx (row-major 3x3) are exactly the identity matrix; NaN fails.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
+  "0x00582A70": {
+    "name": "Matrix4x4::isIdentity",
+    "class": "Matrix4x4",
+    "signature": "bool __thiscall fn_00582A70(void* self, uint32_t /*unused*/)",
+    "summary": "Checks whether a 4x4 float matrix is the identity matrix within 1e-6 tolerance.",
     "lifted_path": "lifted/leaf/decompiled_580000.cpp"
   },
   "0x00582B60": {

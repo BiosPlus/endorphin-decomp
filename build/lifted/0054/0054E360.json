@@ -1,0 +1,22 @@
+{
+  "va": "0x0054E360",
+  "size": 108,
+  "orig_symbol": "sub_0054E360",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::initSubobjectsAndResetVptr",
+  "class": "Unknown",
+  "signature": "extern \"C\" void __fastcall fn_0054E360(void* self)",
+  "summary": "Sets the vptr to mem_009548FC, runs ext_00493D90 on the sub-objects at +0x28, +0x18 and +0x8 (flags 2, 1, 0), then tail-calls ext_0065C660 on self, which rewrites the vptr.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:57:36Z"
+}
