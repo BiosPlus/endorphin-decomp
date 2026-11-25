@@ -17473,6 +17473,12 @@
     "summary": "One-time guarded initialization of the static object at 0x00AEB2AC; returns its address.",
     "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
   },
+  "0x004FFC40": {
+    "name": "getOrInitStaticVtableObject_004FFC40",
+    "signature": "extern \"C\" int mem_00AEB2B4;  // static object storage (first DWORD = vtable pointer) void* fn_004FFC40()",
+    "summary": "Lazily initializes the static object at mem_00AEB2B4 (guard bit 0 in mem_00AEB2B8), then returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_4F0000.cpp"
+  },
   "0x004FFF60": {
     "name": "sub_004FFF60",
     "signature": "extern \"C\" void __fastcall fn_004FFF60(void* self)",

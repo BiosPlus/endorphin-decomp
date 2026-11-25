@@ -599,3 +599,25 @@ void fn_004F94F0(uint32_t* pair, uint32_t value) {
     pair[1] = singleton;
 }
 } // namespace lift_004F94F0
+
+// [0x004FFC40] sub_004FFC40 (87 bytes)
+namespace lift_004FFC40 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack argument; stores the argument into the first DWORD of self and returns it).
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+extern int mem_00AEB2B8;  // init guard; bit 0 = initialized/initializing
+extern int mem_00AEB2B4;  // static object storage (first DWORD = vtable pointer)
+
+// @name getOrInitStaticVtableObject_004FFC40
+// @summary Lazily initializes the static object at mem_00AEB2B4 (guard bit 0 in mem_00AEB2B8), then returns its address.
+// The original wraps the body in an MSVC SEH frame (fs:[0] push/pop); that frame is runtime
+// bookkeeping with no portable equivalent and is omitted here.
+void* fn_004FFC40() {
+    if ((mem_00AEB2B8 & 1) == 0) {
+        // Mark as initializing before running the constructor so re-entry sees it as done.
+        mem_00AEB2B8 |= 1;
+        ext_0067A670(&mem_00AEB2B4, 0);
+        mem_00AEB2B4 = 0x0094E95C;  // vtable pointer
+    }
+    return &mem_00AEB2B4;
+}
+} // namespace lift_004FFC40

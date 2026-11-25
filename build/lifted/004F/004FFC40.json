@@ -1,0 +1,13 @@
+{
+  "va": "0x004FFC40",
+  "size": 87,
+  "orig_symbol": "sub_004FFC40",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "getOrInitStaticVtableObject_004FFC40",
+  "signature": "extern \"C\" int mem_00AEB2B4;  // static object storage (first DWORD = vtable pointer) void* fn_004FFC40()",
+  "summary": "Lazily initializes the static object at mem_00AEB2B4 (guard bit 0 in mem_00AEB2B8), then returns its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:09:48Z"
+}
