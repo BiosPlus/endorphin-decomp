@@ -452,3 +452,29 @@ void* fn_00509C10(const void* first, const void* last, void* dest) {
     return out;
 }
 } // namespace lift_00509C10
+
+// [0x00509C50] sub_00509C50 (61 bytes)
+namespace lift_00509C50 {
+extern int mem_00924FDC;
+extern void* ext_MSVCP80_basic_string_assign(void* self, const void* rhs);
+
+// @name CopyBackwardElements24
+// @summary Copy-backward over 0x24-byte elements (std::string at +0x04, float at +0x20); returns the new destination start.
+// @field Element +0x04 std::string field_0x04
+// @field Element +0x20 float field_0x20
+void* fn_00509C50(void* first, void* last, void* d_last) {
+    auto* begin = static_cast<uint8_t*>(first);
+    auto* cur = static_cast<uint8_t*>(last);
+    auto* dst = static_cast<uint8_t*>(d_last);
+    if (begin == cur) {
+        return dst;
+    }
+    do {
+        cur -= 0x24;
+        dst -= 0x24;
+        ext_MSVCP80_basic_string_assign(dst + 0x04, cur + 0x04);
+        lift_field<float>(dst, 0x20) = lift_field<float>(cur, 0x20);
+    } while (cur != begin);
+    return dst;
+}
+} // namespace lift_00509C50

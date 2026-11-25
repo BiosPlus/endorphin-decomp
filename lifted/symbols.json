@@ -15617,6 +15617,12 @@
     "summary": "Copies each 0x24-byte record in [first, last) to dest (string at +0x04, float at +0x20); returns the advanced dest pointer.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00509C50": {
+    "name": "CopyBackwardElements24",
+    "signature": "void* fn_00509C50(void* first, void* last, void* d_last)",
+    "summary": "Copy-backward over 0x24-byte elements (std::string at +0x04, float at +0x20); returns the new destination start.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050A1A0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1\u003e",
