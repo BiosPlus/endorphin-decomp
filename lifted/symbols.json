@@ -27321,6 +27321,13 @@
     "summary": "Returns the address of the global data slot mem_0092CE00 (leaf accessor; self is unused).",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005A9EE0": {
+    "name": "derivedDestructorBody",
+    "class": "UnknownDerived",
+    "signature": "void fn_005A9EE0(void* self)",
+    "summary": "Derived-class destructor body: resets the vtable word, destroys the two std::string members at +0x48 and +0x2C, then calls the base Unknown::~Unknown.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005A9F50": {
     "name": "XMLConverterSubclass::XMLConverterSubclass",
     "class": "XMLConverterSubclass",

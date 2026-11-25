@@ -591,3 +591,29 @@ void* fn_005A9E70(void* self) {
     return self;
 }
 } // namespace lift_005A9E70
+
+// [0x005A9EE0] sub_005A9EE0 (97 bytes)
+namespace lift_005A9EE0 {
+// Known callee 0x00678280: Unknown::~Unknown (base-class destructor body).
+extern void ext_00678280(void* self);
+
+// @name derivedDestructorBody
+// @class UnknownDerived
+// @summary Derived-class destructor body: resets the vtable word, destroys the two std::string members at +0x48 and +0x2C, then calls the base Unknown::~Unknown.
+// @field UnknownDerived +0x00 uint32_t vtable
+// @field UnknownDerived +0x2C std::string field_0x2c
+// @field UnknownDerived +0x48 std::string field_0x48
+void fn_005A9EE0(void* self) {
+    using Str = std::string;
+
+    // Original stores the derived vtable pointer (0x95EE1C) into the first object word.
+    lift_field<uint32_t>(self, 0x00) = 0x0095EE1Cu;
+
+    // Destroy member string at +0x48, then the one at +0x2C (same order as the original).
+    lift_field<Str>(self, 0x48).~Str();
+    lift_field<Str>(self, 0x2C).~Str();
+
+    // Base-class reset (Unknown::~Unknown).
+    ext_00678280(self);
+}
+} // namespace lift_005A9EE0
