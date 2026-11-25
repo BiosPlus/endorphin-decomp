@@ -1,0 +1,34 @@
+{
+  "va": "0x00428A60",
+  "size": 72,
+  "orig_symbol": "sub_00428A60",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "Unknown::ClearStringEntries",
+  "class": "Unknown",
+  "signature": "void fn_00428A60(void* self)",
+  "summary": "Destroys each 0x24-byte entry's embedded std::string (at +0x08), frees the entry buffer, and nulls the three buffer pointers.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:28:14Z"
+}

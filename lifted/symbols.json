@@ -2173,6 +2173,13 @@
     "summary": "Copy-constructs a std::string at dst from src via the MSVCP80 copy constructor; returns dst.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x00428A60": {
+    "name": "Unknown::ClearStringEntries",
+    "class": "Unknown",
+    "signature": "void fn_00428A60(void* self)",
+    "summary": "Destroys each 0x24-byte entry's embedded std::string (at +0x08), frees the entry buffer, and nulls the three buffer pointers.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x00428BA0": {
     "name": "sub_00428BA0",
     "signature": "DWORD* __thiscall fn_00428BA0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",

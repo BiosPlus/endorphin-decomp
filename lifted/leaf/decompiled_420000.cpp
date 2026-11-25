@@ -668,3 +668,43 @@ void* fn_004205B0(void* self, const void* key) {
     return result;
 }
 } // namespace lift_004205B0
+
+// [0x00428A60] sub_00428A60 (72 bytes)
+namespace lift_00428A60 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+// Called with one pointer argument (cdecl, caller cleans up).
+extern void ext_006A5C5C(void* p);
+// IAT slot holding the address of the basic_string destructor (MSVCP80), called thiscall.
+extern int mem_00924FF4;
+
+// @name Unknown::ClearStringEntries
+// @class Unknown
+// @summary Destroys each 0x24-byte entry's embedded std::string (at +0x08), frees the entry buffer, and nulls the three buffer pointers.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x08 void* field_0x08
+// @field Unknown +0x0C void* field_0x0C
+void fn_00428A60(void* self) {
+    constexpr std::size_t kEntrySize = 0x24;
+    constexpr std::size_t kStringOffset = 0x08;
+
+    auto& begin = lift_field<uint8_t*>(self, 0x04);
+    auto& end = lift_field<uint8_t*>(self, 0x08);
+    auto& cap = lift_field<uint8_t*>(self, 0x0C);
+
+    if (begin != nullptr) {
+        using StringDtor = void (*)(void*);
+        auto dtor = reinterpret_cast<StringDtor>(
+            static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4)));
+
+        for (uint8_t* entry = begin; entry != end; entry += kEntrySize) {
+            dtor(entry + kStringOffset);
+        }
+
+        ext_006A5C5C(begin);
+    }
+
+    begin = nullptr;
+    end = nullptr;
+    cap = nullptr;
+}
+} // namespace lift_00428A60
