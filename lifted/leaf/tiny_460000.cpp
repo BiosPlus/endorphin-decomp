@@ -932,3 +932,21 @@ void fn_0046FF50(void* self, uint32_t value) {
     lift_field<uint32_t>(target, 0x1fc) = value;
 }
 } // namespace lift_0046FF50
+
+// [0x0046FE90]
+namespace lift_0046FE90 {
+// @name Unknown::requestStopUnlessFlagSet
+// @class Unknown
+// @summary If the byte at this+0x152 is zero, tail-calls RequestStop; otherwise returns.
+// @field Unknown +0x152 uint8_t field_0x152
+
+void fn_0046F930(void* self);
+
+void fn_0046FE90(void* self)
+{
+    uint8_t flag = *reinterpret_cast<uint8_t*>(reinterpret_cast<uintptr_t>(self) + 0x152);
+    if (flag == 0) {
+        fn_0046F930(self);
+    }
+}
+} // namespace lift_0046FE90

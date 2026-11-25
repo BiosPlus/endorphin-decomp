@@ -1,0 +1,22 @@
+{
+  "va": "0x0046FE90",
+  "size": 15,
+  "orig_symbol": "sub_0046FE90",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "Unknown::requestStopUnlessFlagSet",
+  "class": "Unknown",
+  "signature": "void fn_0046FE90(void* self)",
+  "summary": "If the byte at this+0x152 is zero, tail-calls RequestStop; otherwise returns.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x152",
+      "type": "uint8_t",
+      "name": "field_0x152"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:15:04Z"
+}

@@ -6875,6 +6875,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005355B0 (OglRenderer::vfunc_71).",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x0046FE90": {
+    "name": "Unknown::requestStopUnlessFlagSet",
+    "class": "Unknown",
+    "signature": "void fn_0046FE90(void* self)",
+    "summary": "If the byte at this+0x152 is zero, tail-calls RequestStop; otherwise returns.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x0046FF50": {
     "name": "Unknown::SetValueAndForwardToChild",
     "class": "Unknown",
