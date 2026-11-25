@@ -55855,6 +55855,12 @@
     "summary": "Returns byte count (bits rounded up to bytes) of a row from fields at +0x30/+0x40, optionally scaled by +0x4e when the mode at +0x72 equals 1; returns 0 if +0x34 or +0x30 is zero.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AF310": {
+    "name": "clampAndAlignDimensions",
+    "signature": "void __cdecl sub_007AF310(uint32_t /*unused*/, int32_t* a2, int32_t* a3)",
+    "summary": "Clamps two integer pointers to 256 if less than 1, then aligns each up to a 16-byte/pixel boundary.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AF4C0": {
     "name": "compareKeyPairThenSignedField",
     "class": "Unknown",

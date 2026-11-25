@@ -483,3 +483,25 @@ void SwapDwordPairs(uint8_t* data, uint32_t count) {
     }
 }
 } // namespace lift_007AF080
+
+// [0x007AF310]
+namespace lift_007AF310 {
+// @name clampAndAlignDimensions
+// @summary Clamps two integer pointers to 256 if less than 1, then aligns each up to a 16-byte/pixel boundary.
+void __cdecl sub_007AF310(uint32_t /*unused*/, int32_t* a2, int32_t* a3) {
+    if (*a2 < 1) {
+        *a2 = 0x100;
+    }
+    if (*a3 < 1) {
+        *a3 = 0x100;
+    }
+    uint32_t v1 = static_cast<uint32_t>(*a2);
+    if ((v1 & 0xfu) != 0) {
+        *a2 = static_cast<int32_t>(((v1 + 0xfu) >> 4) << 4);
+    }
+    uint32_t v2 = static_cast<uint32_t>(*a3);
+    if ((v2 & 0xfu) != 0) {
+        *a3 = static_cast<int32_t>(((v2 + 0xfu) >> 4) << 4);
+    }
+}
+} // namespace lift_007AF310

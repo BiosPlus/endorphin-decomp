@@ -1,0 +1,13 @@
+{
+  "va": "0x007AF310",
+  "size": 65,
+  "orig_symbol": "sub_007AF310",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "clampAndAlignDimensions",
+  "signature": "void __cdecl sub_007AF310(uint32_t /*unused*/, int32_t* a2, int32_t* a3)",
+  "summary": "Clamps two integer pointers to 256 if less than 1, then aligns each up to a 16-byte/pixel boundary.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:14:08Z"
+}
