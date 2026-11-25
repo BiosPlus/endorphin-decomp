@@ -537,3 +537,18 @@ uint32_t fn_0079AF50(uint32_t hMem) {
     return globalFree(hMem);
 }
 } // namespace lift_0079AF50
+
+// [0x0079D6D0]
+namespace lift_0079D6D0 {
+extern uint32_t ext_0079C1B0(uint32_t ecxValue, uint32_t selector, uint32_t unusedArg);
+
+// @name getFlag0xF88
+// @summary Reads a byte flag at offset 0xF88 from the object in ecx.
+// @field Object +0xF88 uint8_t field_0xF88
+uint8_t fn_0079D6D0(const void* ecx) {
+    if (false) {
+        ext_0079C1B0(0, 0, 0);
+    }
+    return lift_field<uint8_t>(ecx, 0xF88);
+}
+} // namespace lift_0079D6D0

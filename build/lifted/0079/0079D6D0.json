@@ -1,0 +1,21 @@
+{
+  "va": "0x0079D6D0",
+  "size": 27,
+  "orig_symbol": "sub_0079D6D0",
+  "src_path": "src/leaf/tiny_790000.cpp",
+  "lifted_path": "lifted/leaf/tiny_790000.cpp",
+  "name": "getFlag0xF88",
+  "signature": "uint8_t fn_0079D6D0(const void* ecx)",
+  "summary": "Reads a byte flag at offset 0xF88 from the object in ecx.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0xF88",
+      "type": "uint8_t",
+      "name": "field_0xF88"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T11:30:17Z"
+}
