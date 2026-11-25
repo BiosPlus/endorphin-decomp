@@ -1813,3 +1813,53 @@ void* InitOnceGlobalString_00487C50() {
     return mem_00AD9DAC;
 }
 } // namespace lift_00487C50
+
+// [0x00481300] sub_00481300 (95 bytes)
+namespace lift_00481300 {
+// Known callee 0x00594000: ext_00594000 (Returns global int32 value from mem_00B40D08.)
+extern int32_t ext_00594000(void);
+// Known callee 0x00480920: ext_00480920 (tail-called when the range is empty or null).
+extern void ext_00480920(void);
+// MSVCR80!_invalid_parameter_noinfo (IAT slot)
+extern void (*mem_00925134)(void);
+
+// @name Unknown::ApplyFirstRangeElement_00481300
+// @class Unknown
+// @summary Calls vtable slot 4 of the embedded subobject at +0x10 to obtain a begin/end range, then invokes vtable slot 5 on the first element (offset +4) with ext_00594000() + 0x1C8 as the argument; tail-calls ext_00480920 when the range is empty.
+// @field Unknown +0x10 void** vptr_embedded_subobject
+void fn_00481300(void* self) {
+    uint8_t* const base = static_cast<uint8_t*>(self);
+    uint8_t* const sub = base + 0x10;
+
+    using RangeGetterFn = void* (*)(void* thisPtr);
+    using ElementSlot5Fn = void (*)(void* thisPtr, uint32_t arg);
+
+    void** const subVtbl = *reinterpret_cast<void***>(sub);
+    uint8_t* const range = static_cast<uint8_t*>(reinterpret_cast<RangeGetterFn>(subVtbl[4])(sub));
+
+    uint32_t begin = lift_field<uint32_t>(range, 0x4);
+    const uint32_t end = lift_field<uint32_t>(range, 0x8);
+
+    const int32_t count = static_cast<int32_t>(end - begin) >> 2;
+    if (begin == 0 || count == 0) {
+        ext_00480920();
+        return;
+    }
+
+    if (begin > end) {
+        mem_00925134();
+    }
+    if (begin >= lift_field<uint32_t>(range, 0x8)) {
+        mem_00925134();
+    }
+
+    const uint32_t elem = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(begin));
+    uint8_t* const obj = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(elem + 4));
+
+    const uint32_t global = static_cast<uint32_t>(ext_00594000());
+    const uint32_t arg = global + 0x1C8;
+
+    void** const objVtbl = *reinterpret_cast<void***>(obj);
+    reinterpret_cast<ElementSlot5Fn>(objVtbl[5])(obj, arg);
+}
+} // namespace lift_00481300

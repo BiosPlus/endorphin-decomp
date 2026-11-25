@@ -1,0 +1,22 @@
+{
+  "va": "0x00481300",
+  "size": 95,
+  "orig_symbol": "sub_00481300",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Unknown::ApplyFirstRangeElement_00481300",
+  "class": "Unknown",
+  "signature": "void fn_00481300(void* self)",
+  "summary": "Calls vtable slot 4 of the embedded subobject at +0x10 to obtain a begin/end range, then invokes vtable slot 5 on the first element (offset +4) with ext_00594000() + 0x1C8 as the argument; tail-calls ext_00480920 when the range is empty.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void**",
+      "name": "vptr_embedded_subobject"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:26:09Z"
+}

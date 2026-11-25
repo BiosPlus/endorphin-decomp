@@ -375,6 +375,7 @@ struct Unknown_Fields {
     // +0x10  uint32_t                 srcField0  (evidence: 0x007DEC80) // CONFLICT: multiple definitions at +0x10
     // +0x10  int32_t                  state  (evidence: 0x006D8FD0) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    subobject  (evidence: 0x005F51D0) // CONFLICT: multiple definitions at +0x10
+    // +0x10  void**                   vptr_embedded_subobject  (evidence: 0x00481300) // CONFLICT: multiple definitions at +0x10
     // +0x11  uint8_t                  appendedNewline  (evidence: 0x00640940) // CONFLICT: multiple definitions at +0x11
     // +0x11  uint8_t                  field_0x11  (evidence: 0x006408C0, 0x00648A20) // CONFLICT: multiple definitions at +0x11
     // +0x11  uint8_t                  flag  (evidence: 0x006408F0, 0x00648A20) // CONFLICT: multiple definitions at +0x11

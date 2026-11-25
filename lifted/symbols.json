@@ -8791,6 +8791,13 @@
     "summary": "Dispatches vfunc_0 on the first element's +0x0C subobject if the +0x10 subobject's vector has exactly one element, otherwise returns 4.",
     "lifted_path": "lifted/classes/ToolEngine.cpp"
   },
+  "0x00481300": {
+    "name": "Unknown::ApplyFirstRangeElement_00481300",
+    "class": "Unknown",
+    "signature": "void fn_00481300(void* self)",
+    "summary": "Calls vtable slot 4 of the embedded subobject at +0x10 to obtain a begin/end range, then invokes vtable slot 5 on the first element (offset +4) with ext_00594000() + 0x1C8 as the argument; tail-calls ext_00480920 when the range is empty.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x004816E0": {
     "name": "Commands::BufferTransformsCommand::vfunc_1",
     "class": "Commands::BufferTransformsCommand",
