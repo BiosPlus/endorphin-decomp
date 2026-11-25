@@ -109,3 +109,26 @@ std::string fn_005A98F0(const void* /*self*/) {
 }
 } // namespace lift_0047DB90
 } // namespace lift_005A98F0
+
+// [0x005A9880]
+namespace lift_005A9880 {
+// IAT slot for the MSVC std::string(const char*, allocator) constructor import.
+// The portable std::string copy constructor below replaces the call; the slot is only referenced here.
+extern int mem_00924FE0;
+
+// @name NMData::BackGroundData::vfunc_3_off_4
+// @class NMData::BackGroundData
+// @summary Calls virtual slot 9 (vtable +0x24) on self and copy-constructs the returned std::string into the hidden out-pointer.
+// @field NMData::BackGroundData +0x00 void** vtable
+std::string* fn_005A9880(void* self, std::string* out) {
+    static_cast<void>(&mem_00924FE0);
+    void** vtbl = *reinterpret_cast<void***>(self);
+    using slot9_fn = const std::string* (*)(void* self, void* arg, int flag);
+    auto slot9 = reinterpret_cast<slot9_fn>(vtbl[9]);
+    // NOTE: the original pushes the caller's esi as the first stack argument (not defined by this
+    // function); passed as nullptr here. The second stack argument is 0.
+    const std::string* src = slot9(self, nullptr, 0);
+    new (out) std::string(*src);
+    return out;
+}
+} // namespace lift_005A9880

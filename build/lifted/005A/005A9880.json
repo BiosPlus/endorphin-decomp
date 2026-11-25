@@ -1,0 +1,22 @@
+{
+  "va": "0x005A9880",
+  "size": 37,
+  "orig_symbol": "NMData::BackGroundData::vfunc_3_off_4",
+  "src_path": "src/NMData/BackGroundData.cpp",
+  "lifted_path": "lifted/NMData/BackGroundData.cpp",
+  "name": "NMData::BackGroundData::vfunc_3_off_4",
+  "class": "NMData::BackGroundData",
+  "signature": "std::string* fn_005A9880(void* self, std::string* out)",
+  "summary": "Calls virtual slot 9 (vtable +0x24) on self and copy-constructs the returned std::string into the hidden out-pointer.",
+  "fields": [
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x0",
+      "type": "void**",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:52:24Z"
+}
