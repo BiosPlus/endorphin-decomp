@@ -1,0 +1,13 @@
+{
+  "va": "0x00575E90",
+  "size": 92,
+  "orig_symbol": "sub_00575E90",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "fn_00575E90 (rangeLengthAdjustedOffset)",
+  "signature": "uint32_t fn_00575E90(uint32_t first, uint32_t last, uint32_t dst, uint32_t /*unused4*/, uint32_t /*unused5*/, uint32_t /*unused6*/, uint32_t /*unused7*/, uint32_t /*unused8*/)",
+  "summary": "Calls ext_00575280(first, last, dst), then returns dst minus (last - first) / 160 * 160 (signed truncating division).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:38:11Z"
+}

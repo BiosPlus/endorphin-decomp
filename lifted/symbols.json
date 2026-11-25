@@ -24089,6 +24089,12 @@
     "summary": "Bounds-checked address of element idx in an array of 20-byte elements; begin at +0x4, end at +0x8. Calls _invalid_parameter_noinfo when empty or out of range.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00575E90": {
+    "name": "fn_00575E90 (rangeLengthAdjustedOffset)",
+    "signature": "uint32_t fn_00575E90(uint32_t first, uint32_t last, uint32_t dst, uint32_t /*unused4*/, uint32_t /*unused5*/, uint32_t /*unused6*/, uint32_t /*unused7*/, uint32_t /*unused8*/)",
+    "summary": "Calls ext_00575280(first, last, dst), then returns dst minus (last - first) / 160 * 160 (signed truncating division).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00575EF0": {
     "name": "CopyBackwardStringRecords",
     "signature": "void* fn_00575EF0(void* first, void* last, void* dest_last)",
@@ -28025,6 +28031,12 @@
     "name": "getSingleton_005B8300",
     "signature": "void* fn_005B8300()",
     "summary": "Lazily initializes and returns a singleton object at 0x00B43CBC.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
+  "0x005B8360": {
+    "name": "getStaticSingleton_005B8360",
+    "signature": "void* fn_005B8360()",
+    "summary": "Lazily initializes and returns a static singleton object at 0x00B43CC4.",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
   "0x005B85A0": {

@@ -1441,3 +1441,23 @@ extern void* __fastcall fn_005726C0(void* self, int edx_unused, const void* src)
 }
 } // namespace lift_006998D0
 } // namespace lift_005726C0
+
+// [0x00575E90] sub_00575E90 (92 bytes)
+namespace lift_00575E90 {
+// Known callee 0x00575280: sub_00575280 (Auto-lifted identical-shape clone of 0x00520B90 (initArrayRangeReverse_00520B90).)
+extern uint32_t ext_00575280(uint32_t first, uint32_t last, uint32_t dst);
+
+// @name fn_00575E90 (rangeLengthAdjustedOffset)
+// @summary Calls ext_00575280(first, last, dst), then returns dst minus (last - first) / 160 * 160 (signed truncating division).
+// The eight stack arguments are passed through to the callee; only the first three are read by it, and the
+// caller cleans up, so only first/last/dst are modelled here. The callee's return value is discarded.
+uint32_t fn_00575E90(uint32_t first, uint32_t last, uint32_t dst, uint32_t /*unused4*/, uint32_t /*unused5*/,
+                     uint32_t /*unused6*/, uint32_t /*unused7*/, uint32_t /*unused8*/) {
+    ext_00575280(first, last, dst);
+
+    const int32_t diff = static_cast<int32_t>(last - first);
+    const int32_t quotient = diff / 160;
+    const uint32_t scaled = static_cast<uint32_t>(quotient * 160);
+    return dst - scaled;
+}
+} // namespace lift_00575E90
