@@ -39643,10 +39643,10 @@
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
   "0x0063E050": {
-    "name": "CharRangeView::copyTrimmedTail",
-    "class": "CharRangeView",
-    "signature": "void fn_0063E050(void* self, std::string\u0026 out, int skip)",
-    "summary": "Assigns to out the bytes from this view's begin pointer up to the owner's end pointer, minus skip bytes.",
+    "name": "Unknown::NotifyAndReturnSubobjectF8",
+    "class": "Unknown",
+    "signature": "void* fn_00630E60(void* self)",
+    "summary": "Calls ext_00630580 on self, passes its result to ext_00693F40 on the subobject at self+0xF8, and returns that subobject's address.",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
   "0x0063E0C0": {

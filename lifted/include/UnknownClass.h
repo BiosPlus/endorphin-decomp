@@ -15,7 +15,7 @@ struct UnknownClass_Fields {
     // +0x0   DWORD field_0x00 (array of 24-byte elements; element +0x10 holds table pointer)  (evidence: 0x0078D4E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vptr  (evidence: 0x00413C40) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable  (evidence: 0x005E2790, 0x005E27E0, 0x005E2830, 0x005E2880, 0x005E28D0, 0x005E2920, 0x005E2970, 0x005E29C0, 0x00622B40, 0x00629D00, 0x00629E20) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    vtable  (evidence: 0x00503BC0, 0x00509EB0, 0x00622B40, 0x006294D0, 0x0063D970, 0x0063DDF0, 0x006A7AE0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vtable  (evidence: 0x00503BC0, 0x00509EB0, 0x00622B40, 0x006294D0, 0x0063D970, 0x0063DDF0, 0x0063E050, 0x006A7AE0) // CONFLICT: multiple definitions at +0x0
     // +0x1   uint8_t                  field_0x01  (evidence: 0x004B0F50, 0x004B10D0, 0x004B6FF0)
     // +0x2   uint8_t                  field_0x02  (evidence: 0x004B0F50, 0x004B10D0, 0x004B6FF0)
     // +0x3   uint8_t                  field_0x03  (evidence: 0x004B0F50, 0x004B10D0, 0x004B6FF0)
@@ -66,15 +66,15 @@ struct UnknownClass_Fields {
     // +0x38  float                    field_0x38  (evidence: 0x00622B40, 0x00629D00) // CONFLICT: multiple definitions at +0x38
     // +0x38  uint32_t                 field_0x38  (evidence: 0x00526C70) // CONFLICT: multiple definitions at +0x38
     // +0x3C  float                    field_0x3C  (evidence: 0x0053B4B0) // CONFLICT: multiple definitions at +0x3C
-    // +0x3C  float                    field_0x3c  (evidence: 0x0063D970, 0x0063DDF0) // CONFLICT: multiple definitions at +0x3C
+    // +0x3C  float                    field_0x3c  (evidence: 0x0063D970, 0x0063DDF0, 0x0063E050) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  uint32_t                 field_0x3c  (evidence: 0x00526C70) // CONFLICT: multiple definitions at +0x3C
     // +0x3C  void*                    field_0x3c  (evidence: 0x00413C40) // CONFLICT: multiple definitions at +0x3C
-    // +0x40  float                    field_0x40  (evidence: 0x0063D970, 0x0063DDF0) // CONFLICT: multiple definitions at +0x40
+    // +0x40  float                    field_0x40  (evidence: 0x0063D970, 0x0063DDF0, 0x0063E050) // CONFLICT: multiple definitions at +0x40
     // +0x40  uint16_t                 field_0x40  (evidence: 0x00798840) // CONFLICT: multiple definitions at +0x40
     // +0x40  uint32_t                 field_0x40  (evidence: 0x006FC200, 0x006FC610) // CONFLICT: multiple definitions at +0x40
     // +0x40  uint8_t                  field_0x40  (evidence: 0x00526C70) // CONFLICT: multiple definitions at +0x40
     // +0x44  CRITICAL_SECTION         field_0x44  (evidence: 0x00413C40) // CONFLICT: multiple definitions at +0x44
-    // +0x44  float                    field_0x44  (evidence: 0x0063D970, 0x0063DDF0) // CONFLICT: multiple definitions at +0x44
+    // +0x44  float                    field_0x44  (evidence: 0x0063D970, 0x0063DDF0, 0x0063E050) // CONFLICT: multiple definitions at +0x44
     // +0x44  void*                    field_0x44  (evidence: 0x005D0670, 0x005DC930) // CONFLICT: multiple definitions at +0x44
     // +0x48  uint32_t                 field_0x48  (evidence: 0x0069C1C0)
     // +0x4C  uint32_t                 field_0x4C  (evidence: 0x0069C1C0)

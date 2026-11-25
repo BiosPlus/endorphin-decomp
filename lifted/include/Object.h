@@ -18,7 +18,7 @@ struct Object_Fields {
     // +0x0   uint32_t                 vptr  (evidence: 0x006B0040, 0x006B9950, 0x007ABBE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vptr  (evidence: 0x00430AE0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vptr  (evidence: 0x0062A580, 0x00682ED0, 0x00687230) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 vtable  (evidence: 0x005749F0, 0x0057BBE0, 0x00602EC0, 0x00622B40, 0x0062CD30, 0x0063E980, 0x006601E0, 0x006B19B0, 0x006B9950) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vtable  (evidence: 0x005749F0, 0x0057BBE0, 0x00602EC0, 0x00622B40, 0x0062CD30, 0x0063E050, 0x0063E980, 0x006601E0, 0x006B19B0, 0x006B9950) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t*                vtable  (evidence: 0x004304F0, 0x004A5A00, 0x006A7F50) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtable  (evidence: 0x00420070, 0x0042FD30, 0x005F35C0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x004030F0, 0x00406030, 0x0040BE90, 0x0040FD60, 0x005435A0, 0x005457B0, 0x007558B0) // CONFLICT: multiple definitions at +0x0
@@ -27,7 +27,7 @@ struct Object_Fields {
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00414880, 0x00419990, 0x00602EC0, 0x007D4800, 0x007D48A0, 0x007D8470, 0x007DEC80, 0x008101C0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x00810410) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 length  (evidence: 0x0080FBC0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   std::string              name  (evidence: 0x0063E980) // CONFLICT: multiple definitions at +0x4
+    // +0x4   std::string              name  (evidence: 0x0063E050, 0x0063E980) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (flags dword at target+0x4)  (evidence: 0x00810410) // CONFLICT: multiple definitions at +0x4
     // +0x8   float                    field_0x08  (evidence: 0x00533FB0) // CONFLICT: multiple definitions at +0x8
     // +0x8   int32_t                  field_0x08  (evidence: 0x00533F10) // CONFLICT: multiple definitions at +0x8

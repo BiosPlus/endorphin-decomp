@@ -14,7 +14,7 @@ struct this_Fields {
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00462D10) // CONFLICT: multiple definitions at +0x8
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x00462D10) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0x0c  (evidence: 0x0071C5C0) // CONFLICT: multiple definitions at +0xC
-    // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0063F480)
+    // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0063E050, 0x0063F480)
     // +0x54  uint32_t*                field_0x54  (evidence: 0x006AF8E0)
     // +0x58  int32_t                  field_0x58  (evidence: 0x006AF8E0)
     // +0xF0  uint32_t                 field_0xf0  (evidence: 0x0058AB90, 0x006C3390)
