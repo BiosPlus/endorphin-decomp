@@ -496,6 +496,7 @@ struct Unknown_Fields {
     // +0x38  uint8_t                  field_0x38  (evidence: 0x006ACEE0, 0x006AD290) // CONFLICT: multiple definitions at +0x38
     // +0x38  void*                    field_0x38  (evidence: 0x004345B0, 0x0053B040, 0x006FA990) // CONFLICT: multiple definitions at +0x38
     // +0x38  void* field_0x38 (subobject whose vtable slot 0x74 is invoked)  (evidence: 0x006FA9C0) // CONFLICT: multiple definitions at +0x38
+    // +0x38  void*                    ownedObject  (evidence: 0x0053B090) // CONFLICT: multiple definitions at +0x38
     // +0x38  uint8_t                  recordCopy[0x40]  (evidence: 0x004DE330) // CONFLICT: multiple definitions at +0x38
     // +0x39  uint8_t                  field_0x39  (evidence: 0x00553E80) // CONFLICT: multiple definitions at +0x39
     // +0x39  uint8_t                  flag  (evidence: 0x005A2BD0) // CONFLICT: multiple definitions at +0x39

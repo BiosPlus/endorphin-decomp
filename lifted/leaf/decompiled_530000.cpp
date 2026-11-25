@@ -889,3 +889,49 @@ void* fn_0053E290(void* self, uint32_t index) {
     return reinterpret_cast<void*>(static_cast<uintptr_t>(base + (index << 6)));
 }
 } // namespace lift_0053E290
+
+// [0x0053B090] sub_0053B090 (77 bytes)
+namespace lift_0053B090 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void ext_006A5C62();
+extern int mem_00955430;
+
+// Callee signatures (cdecl alloc, thiscall-style virtual slots).
+using AllocFn  = void* (*)(size_t);
+using SlotZeroFn = void (*)(void* self, int flags);
+using SlotFiveFn = uintptr_t (*)(void* self);
+
+// @name Unknown::ReplaceOwned_0053B090
+// @class Unknown
+// @summary Allocates a 12-byte polymorphic object (vtable 0x955430), swaps it into self+0x38 (destroying the previous occupant via slot 0), then tail-calls the new object's slot 5.
+// @field Unknown +0x38 void* ownedObject
+uintptr_t fn_0053B090(void* self) {
+    void*& owned = lift_field<void*>(self, 0x38);
+
+    // push 12; call alloc; add esp,4
+    auto alloc = reinterpret_cast<AllocFn>(&ext_006A5C62);
+    void* next = alloc(12);
+    if (next) {
+        lift_field<void*>(next, 0) = reinterpret_cast<void*>(&mem_00955430);
+        lift_field<int32_t>(next, 8) = 0;
+        lift_field<int32_t>(next, 4) = -1;
+    } else {
+        next = nullptr;
+    }
+
+    // Destroy previous occupant if it differs from the new one.
+    void* old = owned;
+    if (next != old && old != nullptr) {
+        void* oldVtbl = lift_field<void*>(old, 0);
+        auto slotZero = reinterpret_cast<SlotZeroFn>(lift_field<void*>(oldVtbl, 0));
+        slotZero(old, 1);
+    }
+
+    owned = next;
+
+    // mov ecx, esi; jmp [vtbl + 0x14]  (tail call, result returned in eax)
+    void* newVtbl = lift_field<void*>(next, 0);
+    auto slotFive = reinterpret_cast<SlotFiveFn>(lift_field<void*>(newVtbl, 0x14));
+    return slotFive(next);
+}
+} // namespace lift_0053B090
