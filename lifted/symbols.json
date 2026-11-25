@@ -32795,6 +32795,13 @@
     "summary": "Runs base constructor ext_0062CD30, sets vtable to 0x009794b4, zeroes floats at +0x38/+0x3c/+0x40, returns this.",
     "lifted_path": "lifted/leaf/decompiled_630000.cpp"
   },
+  "0x0063DE10": {
+    "name": "Unknown::initVtableAndZeroFloats",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_0063DE10(void* self)",
+    "summary": "Runs the base constructor ext_0062CD30, installs vtable 0x00979444, zeroes the floats at +0x38/+0x3c/+0x40, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063DFF4": {
     "name": "thunk_GLU32_gluErrorString",
     "signature": "extern \"C\" void fn_0063DFF4(void)",

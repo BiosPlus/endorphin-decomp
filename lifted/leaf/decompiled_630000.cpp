@@ -246,3 +246,26 @@ void* fn_0063DDF0(void* self) {
     return self;
 }
 } // namespace lift_0063DDF0
+
+// [0x0063DE10] sub_0063DE10 (29 bytes)
+namespace lift_0063DE10 {
+// Known callee 0x0062CD30: sub_0062CD30_ctor (Initializes object vtable to 0x009791a4 and zeroes two 3-dword blocks at +0x08 and +0x2c.)
+extern uint32_t ext_0062CD30(uint32_t this_ptr);
+
+// @name Unknown::initVtableAndZeroFloats
+// @class Unknown
+// @summary Runs the base constructor ext_0062CD30, installs vtable 0x00979444, zeroes the floats at +0x38/+0x3c/+0x40, and returns this.
+// @field Unknown +0x00 void* vptr
+// @field Unknown +0x38 float field_0x38
+// @field Unknown +0x3c float field_0x3c
+// @field Unknown +0x40 float field_0x40
+void* __thiscall fn_0063DE10(void* self) {
+    ext_0062CD30(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self))); // call 0x62CD30; this in ecx
+
+    lift_field<uint32_t>(self, 0x00) = 0x00979444u;   // mov [esi], 0x979444
+    lift_field<float>(self, 0x40) = 0.0f;             // fst [esi+0x40] (fldz)
+    lift_field<float>(self, 0x3C) = 0.0f;             // fst [esi+0x3c]
+    lift_field<float>(self, 0x38) = 0.0f;             // fstp [esi+0x38] (pops the zero)
+    return self;                                      // mov eax, esi
+}
+} // namespace lift_0063DE10
