@@ -2780,6 +2780,12 @@
     "summary": "Dispatches virtual slot 0 on arg with 1, then slot 1 on arg with 1 if this+0x100 gate yields 6 and ext_0044B5C0 returns 1, otherwise slot 1 with 0.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430720": {
+    "name": "dispatchGatedSlot1",
+    "signature": "void __thiscall fn_00430720(void* self, void* obj)",
+    "summary": "Calls virtual slot 0 of obj with 1; if this+0x100 (gate) is set, calls virtual slot 1 of obj with 1 when the gate's nested value is 6 and the forwarded check returns 0, otherwise with 0.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430780": {
     "name": "sub_00430780",
     "class": "Unknown",

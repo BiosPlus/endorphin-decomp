@@ -2700,3 +2700,34 @@ void* fn_0043B380(void* self) {
 }
 } // namespace lift_006B28A0
 } // namespace lift_0043B380
+
+// [0x00430720] sub_00430720 (90 bytes)
+namespace lift_00430720 {
+// Known callee 0x0044B5B0: GetNestedFieldOrZero (sub_0044B5B0) (If this+0x64 is nonzero, returns dword at (this+0x68)->+0x38; otherwise returns 0.)
+extern int __thiscall ext_0044B5B0(void* self);
+// Known callee 0x0044B5C0: ForwardToOwnedVirtualSlot4 (Returns 0 if the gate field is clear; otherwise tail-dispatches virtual slot 4 on the object at self->+0x68->+0x4C.)
+extern int __thiscall ext_0044B5C0(void* self);
+
+// @name dispatchGatedSlot1
+// @summary Calls virtual slot 0 of obj with 1; if this+0x100 (gate) is set, calls virtual slot 1 of obj with 1 when the gate's nested value is 6 and the forwarded check returns 0, otherwise with 0.
+// @field Unknown +0x100 void* field_0x100
+void __thiscall fn_00430720(void* self, void* obj) {
+    using ThisCallVoidInt = void(__thiscall*)(void*, int);
+
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    reinterpret_cast<ThisCallVoidInt>(vtbl[0])(obj, 1);
+
+    void* gate = *reinterpret_cast<void**>(static_cast<unsigned char*>(self) + 0x100);
+    if (gate == nullptr) {
+        return;
+    }
+
+    int takeFirstPath = 0;
+    if (ext_0044B5B0(gate) == 6 && ext_0044B5C0(gate) == 0) {
+        takeFirstPath = 1;
+    }
+
+    vtbl = *reinterpret_cast<void***>(obj);
+    reinterpret_cast<ThisCallVoidInt>(vtbl[1])(obj, takeFirstPath);
+}
+} // namespace lift_00430720
