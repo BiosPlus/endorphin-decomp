@@ -1,0 +1,28 @@
+{
+  "va": "0x004EA0D0",
+  "size": 46,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, isCollisionEnabled, 0\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, isCollisionEnabled, 0\u003e",
+  "signature": "void vfunc_5(void* self)",
+  "summary": "Vfunc 5: throws an ExceptionWithMessage; if the held object pointer is non-null, first throws a default-message exception using the byte at object+0x05.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "NMData::PoseToolOptions",
+      "offset": "+0x5",
+      "type": "uint8_t",
+      "name": "field_0x05"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:07:59Z"
+}

@@ -17303,6 +17303,13 @@
     "summary": "Evaluates PoseToolOptions::isCollisionEnabled() as a float (1.0f or 0.0f), throwing if null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004EA0D0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, isCollisionEnabled, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, isCollisionEnabled, 0\u003e",
+    "signature": "void vfunc_5(void* self)",
+    "summary": "Vfunc 5: throws an ExceptionWithMessage; if the held object pointer is non-null, first throws a default-message exception using the byte at object+0x05.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004EA260": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions,bool\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType",

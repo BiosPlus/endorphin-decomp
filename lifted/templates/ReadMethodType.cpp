@@ -42742,3 +42742,27 @@ int32_t fn_0068F050(void* arg) {
     return static_cast<int32_t>(adjusted);
 }
 } // namespace lift_0068F050
+
+// [0x004EA0D0]
+namespace lift_004EA0D0 {
+// @name ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, isCollisionEnabled, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, isCollisionEnabled, 0>
+// @summary Vfunc 5: throws an ExceptionWithMessage; if the held object pointer is non-null, first throws a default-message exception using the byte at object+0x05.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field NMData::PoseToolOptions +0x05 uint8_t field_0x05
+
+extern void ext_0046C4E0(uint8_t flag);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+extern const uint8_t mem_009DEC1C[];
+
+void vfunc_5(void* self) {
+    uint8_t* obj = *reinterpret_cast<uint8_t**>(self);
+    if (obj != nullptr) {
+        ext_0046C4E0(obj[0x05]);
+    }
+    alignas(16) uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004EA0D0
