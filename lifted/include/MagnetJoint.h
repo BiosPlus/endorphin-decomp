@@ -10,7 +10,7 @@
 // Recovered field layout for MagnetJoint:
 namespace lifted_layout {
 struct MagnetJoint_Fields {
-    // +0x10  void*                    field_0x10  (evidence: 0x00645D30)
-    // +0x14  void*                    field_0x14  (evidence: 0x00645D30)
+    // +0x10  void*                    field_0x10  (evidence: 0x00645D30, 0x00645D80)
+    // +0x14  void*                    field_0x14  (evidence: 0x00645D30, 0x00645D80)
 };
 } // namespace lifted_layout
