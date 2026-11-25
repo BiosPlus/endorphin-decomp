@@ -2448,3 +2448,105 @@ void* fn_006678A0(void* self, uint32_t index, const void* key, void* arg3) {
     return first + 0x28;
 }
 } // namespace lift_006678A0
+
+// [0x0066E050]
+namespace lift_0066E050 {
+// @name StringPool::freeNode
+// @class StringPool
+// @summary Destroys a string node and prepends it to the thread-safe free list.
+// @field StringPool +0x00 void* freeListHead
+// @field StringPool +0x14 CriticalSectionLock lock
+
+
+extern void ext_0065C640(void* self);
+extern void ext_0065C650(void* self);
+extern uint32_t mem_00924FF4;
+
+void sub_0066E050(void* self, void* node) {
+    if (!node) {
+        return;
+    }
+
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void* lock = base + 0x14;
+    ext_0065C640(lock);
+
+    auto dtor = reinterpret_cast<void(__thiscall*)(void*)>(static_cast<uintptr_t>(mem_00924FF4));
+    dtor(node);
+
+    uint32_t* headPtr = reinterpret_cast<uint32_t*>(base);
+    *reinterpret_cast<uint32_t*>(node) = *headPtr;
+    *headPtr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(node));
+
+    ext_0065C650(lock);
+}
+} // namespace lift_0066E050
+
+// [0x00667EA0]
+namespace lift_00667EA0 {
+// @name StdMapString::find
+// @class StdMapString
+// @summary Finds a node by string key in a std::map-like tree, returning a checked iterator {self, node} or {self, header} if not found.
+// @field StdMapString +0x04 void* header
+
+
+extern void* ext_004774B0(void* self, const void* key);
+extern void (*mem_00925134)();
+extern bool (*mem_00924EF4)(const void* lhs, const void* rhs);
+
+struct MapIterator {
+    void* container;
+    void* node;
+};
+
+void* fn_00667EA0(void* self, void* out_iter, const void* key) {
+    void* node = ext_004774B0(self, key);
+    if (!self) {
+        mem_00925134();
+    }
+    void* header = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x4);
+    MapIterator* it = reinterpret_cast<MapIterator*>(out_iter);
+    if (node != header && !mem_00924EF4(key, reinterpret_cast<uint8_t*>(node) + 0xC)) {
+        it->container = self;
+        it->node = node;
+    } else {
+        it->container = self;
+        it->node = header;
+    }
+    return out_iter;
+}
+} // namespace lift_00667EA0
+
+// [0x00668D10]
+namespace lift_00668D10 {
+// @name Tree::find
+// @class Tree
+// @summary MSVC std::_Tree<std::string, ...>::find: returns checked iterator to matching node or end()
+// @field Tree +0x04 void* head
+
+
+void* __thiscall ext_00472730(void* self, const void* key);
+extern void (__cdecl *mem_00925134)(void);
+extern uint8_t (__cdecl *mem_00924EF4)(const void* lhs, const void* rhs);
+
+struct TreeIter {
+    void* container;
+    void* node;
+};
+
+TreeIter* __thiscall fn_00668D10(void* self, TreeIter* out, const void* key) {
+    void* node = ext_00472730(self, key);
+    if (!self) {
+        mem_00925134();
+    }
+    void* head = *reinterpret_cast<void**>(reinterpret_cast<char*>(self) + 0x4);
+    if (node == head || mem_00924EF4(key, reinterpret_cast<const char*>(node) + 0xC) != 0) {
+        out->container = self;
+        out->node = head;
+    } else {
+        out->container = self;
+        out->node = node;
+    }
+    return out;
+}
+} // namespace lift_00668D10

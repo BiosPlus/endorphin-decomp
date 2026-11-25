@@ -1,0 +1,22 @@
+{
+  "va": "0x00668D10",
+  "size": 105,
+  "orig_symbol": "sub_00668D10",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "Tree::find",
+  "class": "Tree",
+  "signature": "TreeIter* __thiscall fn_00668D10(void* self, TreeIter* out, const void* key)",
+  "summary": "MSVC std::_Tree\u003cstd::string, ...\u003e::find: returns checked iterator to matching node or end()",
+  "fields": [
+    {
+      "class": "Tree",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "head"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:08:01Z"
+}
