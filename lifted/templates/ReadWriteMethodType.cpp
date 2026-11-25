@@ -10224,3 +10224,25 @@ void __stdcall fn_004D6090(void* self) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE5D2C));
 }
 } // namespace lift_004D6090
+
+// [0x004D6CD0] ExprParser::ReadWriteMethodType<NMData::RigEventData, int, {private: int __thiscall NMData::RigEventData::getSaveTweakToStockCharacterDummy(void) const, 0}, int, {private: void __thiscall NMData::RigEventData::saveTweakToStockCharacter(int), 0}>::vfunc_40 (122 bytes)
+namespace lift_004D6CD0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern unsigned char mem_00AE5D50;  // one-time init guard (bit 0)
+extern uint32_t mem_00AE5D4C;       // function-local static object; first dword = vtable 0x0094953C
+
+// @name ExprParser::ReadWriteMethodType<RigEventData,int>::vfunc_40 (saveTweakToStockCharacter / getSaveTweakToStockCharacterDummy)
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, int, {private: int __thiscall NMData::RigEventData::getSaveTweakToStockCharacterDummy(void) const, 0}, int, {private: void __thiscall NMData::RigEventData::saveTweakToStockCharacter(int), 0}>
+// @summary Lazily initializes the shared static accessor object (vtable 0x0094953C) once, then stores its address into the pointer at +0x04 of the argument.
+// @field ExprParser::ValuePtrType +0x04 uint32_t field_0x04
+void fn_004D6CD0(void* out) {
+    if ((mem_00AE5D50 & 1u) == 0) {
+        mem_00AE5D50 |= 1u;
+        ext_0067A670();                 // stores 0 into the static object's first dword via callee
+        mem_00AE5D4C = 0x0094953Cu;     // vtable pointer
+    }
+    *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(out) + 0x04) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE5D4C));
+}
+} // namespace lift_004D6CD0
