@@ -189,3 +189,21 @@ extern void* fn_004F9530(void* outPair, DWORD value) {
     return outPair;
 }
 } // namespace lift_004F9530
+
+// [0x004F9370]
+namespace lift_004F9370 {
+extern uint32_t mem_00AE9F48;
+extern uint32_t mem_00AE9F44;
+extern DWORD __thiscall ext_0067A670(void* self);
+
+// @name getStaticObject_004F9370
+// @summary Lazily initializes and returns the static object at 0x00AE9F44.
+void* fn_004F9370() {
+    if ((mem_00AE9F48 & 1u) == 0) {
+        mem_00AE9F48 |= 1u;
+        ext_0067A670(&mem_00AE9F44);
+        mem_00AE9F44 = 0x0094D6FCu;
+    }
+    return &mem_00AE9F44;
+}
+} // namespace lift_004F9370
