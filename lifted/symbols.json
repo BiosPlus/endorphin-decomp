@@ -10459,6 +10459,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046D230 (ExprParser::ReadMethodType\u003cImageExporter\u003e::vfunc_2 (ImageExporter::getDestination)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004989F0": {
+    "name": "initStaticObjectOnce_004989F0",
+    "signature": "void* fn_004989F0()",
+    "summary": "One-time guarded initializer for the static object at mem_00ADD16C; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00498F80": {
     "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_37",
     "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",
