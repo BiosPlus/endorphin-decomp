@@ -10314,6 +10314,13 @@
     "summary": "Forwards (self, a1, a1, 0) to ext_0046E780 (virtual slot 4 dispatch) and returns self unchanged.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x00497680": {
+    "name": "NMData::Transition::vfunc_12",
+    "class": "NMData::Transition",
+    "signature": "[[noreturn]] static void invalid_parameter()",
+    "summary": "Bounds-checked fetch of the 8-byte element at index from the element array (begin..end); copies it to out and returns out.",
+    "lifted_path": "lifted/NMData/Transition.cpp"
+  },
   "0x004976D0": {
     "name": "Unknown::PointInRectInclusive",
     "class": "Unknown",

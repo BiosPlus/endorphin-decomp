@@ -1,0 +1,28 @@
+{
+  "va": "0x00497680",
+  "size": 66,
+  "orig_symbol": "NMData::Transition::vfunc_12",
+  "src_path": "src/NMData/Transition.cpp",
+  "lifted_path": "lifted/NMData/Transition.cpp",
+  "name": "NMData::Transition::vfunc_12",
+  "class": "NMData::Transition",
+  "signature": "[[noreturn]] static void invalid_parameter()",
+  "summary": "Bounds-checked fetch of the 8-byte element at index from the element array (begin..end); copies it to out and returns out.",
+  "fields": [
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x88",
+      "type": "void*",
+      "name": "field_0x88"
+    },
+    {
+      "class": "NMData::Transition",
+      "offset": "+0x8C",
+      "type": "void*",
+      "name": "field_0x8C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:02:18Z"
+}

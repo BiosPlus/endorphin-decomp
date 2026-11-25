@@ -72,6 +72,7 @@ uint32_t fn_004972E0(void* self, void* arg1, void* arg2) {
     using VFn = uint32_t (*)(void* obj, void* a, void* b);
     return reinterpret_cast<VFn>(vtbl[11])(target, arg1, self);
 }
+#include <cstdlib>
 
 // [0x00497090] NMData::Transition::vfunc_37 (13 bytes)
 // @name NMData::Transition::vfunc_37
@@ -132,3 +133,48 @@ void* __stdcall fn_00499AF0(void* self) {
     return self;
 }
 } // namespace lift_00499AF0
+
+// [0x00497680] NMData::Transition::vfunc_12 (66 bytes)
+namespace lift_00497680 {
+// Import slot for MSVCR80!_invalid_parameter_noinfo (original asm: call [0x925134]).
+extern int mem_00925134;
+
+// Failure path: the original calls _invalid_parameter_noinfo through mem_00925134 and never returns.
+[[noreturn]] static void invalid_parameter() {
+    (void)&mem_00925134;
+    std::abort();
+}
+
+// @name NMData::Transition::vfunc_12
+// @class NMData::Transition
+// @summary Bounds-checked fetch of the 8-byte element at index from the element array (begin..end); copies it to out and returns out.
+// @field NMData::Transition +0x88 void* field_0x88
+// @field NMData::Transition +0x8C void* field_0x8C
+
+namespace {
+struct Pair64 {
+    uint32_t lo;
+    uint32_t hi;
+};
+} // namespace
+
+// Original is __thiscall-style with two stack args: (uint32_t index, Pair64* out); returns out.
+Pair64* fn_00497680(void* self, uint32_t index, Pair64* out) {
+    void* begin = lift_field<void*>(self, 0x88);
+    void* end = lift_field<void*>(self, 0x8C);
+
+    if (begin == nullptr) {
+        invalid_parameter();
+    }
+    uint32_t count = static_cast<uint32_t>(
+        (reinterpret_cast<uintptr_t>(end) - reinterpret_cast<uintptr_t>(begin)) >> 3);
+    if (index >= count) {
+        invalid_parameter();
+    }
+
+    const Pair64* elems = static_cast<const Pair64*>(begin);
+    out->lo = elems[index].lo;
+    out->hi = elems[index].hi;
+    return out;
+}
+} // namespace lift_00497680
