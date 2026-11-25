@@ -1,0 +1,14 @@
+{
+  "va": "0x00505000",
+  "size": 43,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e::vfunc_1",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cInterpreter, int, Interpreter::bogus, 0\u003e::vfunc_1",
+  "class": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e",
+  "signature": "float fn_00505000(void* self)",
+  "summary": "Returns 0.0f when the pointer stored at offset 0 is non-null; otherwise constructs a DerivedException and throws it.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:53:54Z"
+}

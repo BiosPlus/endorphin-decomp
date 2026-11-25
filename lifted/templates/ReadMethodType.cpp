@@ -56405,3 +56405,25 @@ extern float fn_004B1B30(void* self) {
     return 0.0f;
 }
 } // namespace lift_004B1B30
+
+// [0x00505000] ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_1 (43 bytes)
+namespace lift_00505000 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception_object, void* throw_info);
+
+// @name ExprParser::ReadMethodType<Interpreter, int, Interpreter::bogus, 0>::vfunc_1
+// @class ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>
+// @summary Returns 0.0f when the pointer stored at offset 0 is non-null; otherwise constructs a DerivedException and throws it.
+// @field ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0> +0x00 void* field_0x00
+float fn_00505000(void* self) {
+    if (lift_field<void*>(self, 0) == nullptr) {
+        alignas(8) unsigned char exception_object[0x28];
+        ext_0046C3C0(exception_object);
+        ext_006A6DD2(exception_object,
+                     reinterpret_cast<void*>(static_cast<uintptr_t>(0x009DEC1CU)));
+    }
+    return 0.0f;
+}
+} // namespace lift_00505000
