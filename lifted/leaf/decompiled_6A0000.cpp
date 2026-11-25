@@ -498,3 +498,53 @@ RECT* __stdcall fn_006ACE90(const RECT* src, RECT* dst) {
     return dst;
 }
 } // namespace lift_006ACE90
+
+// [0x006AD290] sub_006AD290 (75 bytes)
+namespace lift_006AD290 {
+// Imported MFC80 ord_310 slot (thiscall helper taking a subobject pointer in ECX).
+extern void (*mem_009242FC)(void* self);
+
+// @name Unknown::InitObject_006AD290
+// @class Unknown
+// @summary Sets the vtable, calls MFC80 ord_310 on subobjects at +0x08 and +0x0C, zeroes fields +0x18..+0x4C, and returns this.
+// @field Unknown +0x00 uint32_t vtable_ptr
+// @field Unknown +0x18 uint32_t field_0x18
+// @field Unknown +0x1c uint32_t field_0x1c
+// @field Unknown +0x20 uint32_t field_0x20
+// @field Unknown +0x24 uint32_t field_0x24
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x2c uint32_t field_0x2c
+// @field Unknown +0x30 uint32_t field_0x30
+// @field Unknown +0x34 uint32_t field_0x34
+// @field Unknown +0x38 uint8_t field_0x38
+// @field Unknown +0x3c uint32_t field_0x3c
+// @field Unknown +0x40 uint8_t field_0x40
+// @field Unknown +0x41 uint8_t field_0x41
+// @field Unknown +0x44 uint32_t field_0x44
+// @field Unknown +0x4c uint32_t field_0x4c
+void* fn_006AD290(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+
+    lift_field<uint32_t>(base, 0x00) = 0x0099103Cu;
+
+    mem_009242FC(base + 0x08);
+    mem_009242FC(base + 0x0C);
+
+    lift_field<uint32_t>(base, 0x18) = 0;
+    lift_field<uint32_t>(base, 0x1C) = 0;
+    lift_field<uint32_t>(base, 0x20) = 0;
+    lift_field<uint32_t>(base, 0x24) = 0;
+    lift_field<uint32_t>(base, 0x28) = 0;
+    lift_field<uint32_t>(base, 0x2C) = 0;
+    lift_field<uint32_t>(base, 0x30) = 0;
+    lift_field<uint32_t>(base, 0x34) = 0;
+    lift_field<uint8_t>(base, 0x38) = 0;
+    lift_field<uint32_t>(base, 0x3C) = 0;
+    lift_field<uint8_t>(base, 0x40) = 0;
+    lift_field<uint8_t>(base, 0x41) = 0;
+    lift_field<uint32_t>(base, 0x44) = 0;
+    lift_field<uint32_t>(base, 0x4C) = 0;
+
+    return self;
+}
+} // namespace lift_006AD290

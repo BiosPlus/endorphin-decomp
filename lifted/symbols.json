@@ -45377,6 +45377,13 @@
     "summary": "Reads a pointer at offset 0x4 and returns the dereferenced 32-bit value.",
     "lifted_path": "lifted/leaf/tiny_6A0000.cpp"
   },
+  "0x006AD290": {
+    "name": "Unknown::InitObject_006AD290",
+    "class": "Unknown",
+    "signature": "void* fn_006AD290(void* self)",
+    "summary": "Sets the vtable, calls MFC80 ord_310 on subobjects at +0x08 and +0x0C, zeroes fields +0x18..+0x4C, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006AD870": {
     "name": "GWCPropertyItem::vfunc_1",
     "class": "GWCPropertyItem",
