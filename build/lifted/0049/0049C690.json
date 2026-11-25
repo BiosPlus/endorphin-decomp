@@ -1,0 +1,14 @@
+{
+  "va": "0x0049C690",
+  "size": 79,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated, 0\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cNMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0\u003e",
+  "signature": "extern \"C\" void* __fastcall fn_0049C690(void* ecx_unused, void* edx_unused, void* dst, void** src)",
+  "summary": "Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:08:39Z"
+}

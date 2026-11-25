@@ -10960,6 +10960,13 @@
     "summary": "One-time guarded setup: on first call, runs the static initializer ext_0067A670 on mem_00ADD804 and sets its vtable word to 0x93FE74; every call binds the out-object's +4 slot to the static at 0x00ADD804 and returns (stdcall, 1 arg).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x0049C690": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated, 0\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cNMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0\u003e",
+    "signature": "extern \"C\" void* __fastcall fn_0049C690(void* ecx_unused, void* edx_unused, void* dst, void** src)",
+    "summary": "Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x0049C6E0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::State\u003e::vfunc_3 (NMData::State::isDeactivated)",
     "class": "ExprParser::ReadMethodType\u003cNMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0\u003e",

@@ -57201,3 +57201,45 @@ void* fn_00471D60(void* arg1, void* arg2) {
     ext_006A6DD2(exception_object, &mem_009DEC1C);
 }
 } // namespace lift_00471D60
+
+// [0x0049C690] ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>::vfunc_0 (79 bytes)
+namespace lift_0049C690 {
+// Callees (original asm references kept as ext_ symbols; leaf functions are differentially tested).
+// ext_0049AA20: thiscall on NMData::State* (returns bool)
+extern uint8_t __fastcall ext_0049AA20(void* state, void* edx_unused);
+// ext_006720A0: thiscall on the result object with one stack argument (value written to the result object)
+extern void __fastcall ext_006720A0(void* self, void* edx_unused, uint32_t value);
+// ext_0046C3C0: DerivedException::DerivedException (constructs exception object in place, returns it)
+extern void* __fastcall ext_0046C3C0(void* self, void* edx_unused);
+// ext_006A6DD2: thunk_MSVCR80__CxxThrowException (obj, throw-info)
+extern void ext_006A6DD2(void* obj, void* throw_info);
+// .rdata ThrowInfo address used by the throw
+extern char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<NMData::State, bool, isDeactivated, 0>::vfunc_0
+// @class ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>
+// @summary Reads a NMData::State pointer from *src, evaluates isDeactivated on it and stores the result into dst; throws if *src is null.
+extern void* __fastcall fn_0049C690(void* ecx_unused, void* edx_unused, void* dst, void** src) {
+    (void)ecx_unused;
+    (void)edx_unused;
+
+    void* state = *src;
+    if (state == nullptr) {
+        // Construct the exception on the stack and throw it.
+        alignas(8) unsigned char exc[0x20];
+        ext_0046C3C0(exc, nullptr);
+        ext_006A6DD2(exc, mem_009DEC1C);
+        return dst; // not reached
+    }
+
+    uint8_t result = ext_0049AA20(state, nullptr);
+
+    // The original stores the byte over the low byte of the src argument slot and then reads
+    // the 32-bit slot back as the value passed on; reproduce that exactly.
+    uint32_t slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(src));
+    slot = (slot & 0xFFFFFF00u) | static_cast<uint32_t>(result);
+
+    ext_006720A0(dst, nullptr, slot);
+    return dst;
+}
+} // namespace lift_0049C690
