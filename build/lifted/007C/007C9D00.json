@@ -1,0 +1,21 @@
+{
+  "va": "0x007C9D00",
+  "size": 35,
+  "orig_symbol": "sub_007C9D00",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "sub_007C9D00",
+  "signature": "extern \"C\" void sub_007C9D00(uint8_t* dst, float value)",
+  "summary": "Stores the absolute value of a float into dst+0x08 (negates when value \u003c 0 or unordered/NaN).",
+  "fields": [
+    {
+      "class": "\u003cClass\u003e",
+      "offset": "+0x8",
+      "type": "float field_0x08 (written: abs-like result of the float",
+      "name": "argument)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:18:01Z"
+}

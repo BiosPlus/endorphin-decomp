@@ -69861,6 +69861,12 @@
     "summary": "Stores the absolute value of a float argument into offset +0x04 of the target struct.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C9D00": {
+    "name": "sub_007C9D00",
+    "signature": "extern \"C\" void sub_007C9D00(uint8_t* dst, float value)",
+    "summary": "Stores the absolute value of a float into dst+0x08 (negates when value \u003c 0 or unordered/NaN).",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C9D30": {
     "name": "Unknown::storeClampedUnitFloat",
     "class": "Unknown",

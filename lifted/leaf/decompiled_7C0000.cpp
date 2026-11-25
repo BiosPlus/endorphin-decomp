@@ -1454,3 +1454,21 @@ void fn_007C5C00(unsigned char* self, const float* src) {
     out[2] = src[2];
 }
 } // namespace lift_007C5C00
+
+// [0x007C9D00]
+namespace lift_007C9D00 {
+// @name sub_007C9D00
+// @summary Stores the absolute value of a float into dst+0x08 (negates when value < 0 or unordered/NaN).
+// @field <Class> +0x08 float field_0x08 (written: abs-like result of the float argument)
+
+// Original: void __cdecl f(float* dst /*[esp+4]*/, float value /*[esp+8]*/)
+extern void sub_007C9D00(uint8_t* dst, float value)
+{
+    float result = value;
+    // fcom compares value against 0.0; C0 is set when value < 0 or the compare is unordered (NaN).
+    if (value < 0.0f || value != value) {
+        result = -value;
+    }
+    *reinterpret_cast<float*>(dst + 0x08) = result;
+}
+} // namespace lift_007C9D00
