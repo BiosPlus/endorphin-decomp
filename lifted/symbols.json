@@ -52601,6 +52601,13 @@
     "summary": "Stores address of mem_0099090C into field at offset +0x0.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B1AA0": {
+    "name": "ctor_vtbl_00991768_with_arg",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_006B1AA0(void* self, uint32_t arg0)",
+    "summary": "Runs base constructor sub_006B0C40 on this with arg0, then overwrites the vtable pointer with 0x00991768 and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B1AC0": {
     "name": "sub_006B1AC0",
     "signature": "extern \"C\" void __fastcall fn_006B1AC0(void* self)",

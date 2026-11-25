@@ -1,0 +1,22 @@
+{
+  "va": "0x006B1AA0",
+  "size": 25,
+  "orig_symbol": "sub_006B1AA0",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "ctor_vtbl_00991768_with_arg",
+  "class": "Unknown",
+  "signature": "void* __thiscall fn_006B1AA0(void* self, uint32_t arg0)",
+  "summary": "Runs base constructor sub_006B0C40 on this with arg0, then overwrites the vtable pointer with 0x00991768 and returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:26:34Z"
+}
