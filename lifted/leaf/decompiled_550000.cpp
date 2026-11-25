@@ -835,3 +835,38 @@ void copyVec4Range(const float* srcBegin, const float* srcEnd, float* dst) {
     } while (src != srcEnd);
 }
 } // namespace lift_0055E940
+
+// [0x00554260] sub_00554260 (68 bytes)
+namespace lift_00554260 {
+// @name Matrix3x3::transposeInPlace
+// @class Matrix3x3
+// @summary Transposes a row-major 3x3 float matrix in place (diagonal unchanged) and returns `this`.
+// @field Matrix3x3 +0x00 float field_0x00
+// @field Matrix3x3 +0x04 float field_0x04
+// @field Matrix3x3 +0x08 float field_0x08
+// @field Matrix3x3 +0x0c float field_0x0c
+// @field Matrix3x3 +0x10 float field_0x10
+// @field Matrix3x3 +0x14 float field_0x14
+// @field Matrix3x3 +0x18 float field_0x18
+// @field Matrix3x3 +0x1c float field_0x1c
+// @field Matrix3x3 +0x20 float field_0x20
+extern void* __fastcall fn_00554260(void* self, int edx_unused) {
+    (void)edx_unused;
+    float* m = static_cast<float*>(self);
+
+    // Snapshot all nine elements first, as the original does, so writes cannot alias reads.
+    float src[9];
+    std::memcpy(src, m, sizeof src);
+
+    // Swap off-diagonal pairs: (0,1)<->(1,0) is idx1<->idx3, (0,2)<->(2,0) is idx2<->idx6,
+    // (1,2)<->(2,1) is idx5<->idx7. Diagonal elements idx 0, 4, 8 stay as they are.
+    m[1] = src[3];
+    m[3] = src[1];
+    m[2] = src[6];
+    m[6] = src[2];
+    m[5] = src[7];
+    m[7] = src[5];
+
+    return self;
+}
+} // namespace lift_00554260

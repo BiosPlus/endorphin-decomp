@@ -1,0 +1,70 @@
+{
+  "va": "0x00554260",
+  "size": 68,
+  "orig_symbol": "sub_00554260",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "Matrix3x3::transposeInPlace",
+  "class": "Matrix3x3",
+  "signature": "extern \"C\" void* __fastcall fn_00554260(void* self, int edx_unused)",
+  "summary": "Transposes a row-major 3x3 float matrix in place (diagonal unchanged) and returns `this`.",
+  "fields": [
+    {
+      "class": "Matrix3x3",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Matrix3x3",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Matrix3x3",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Matrix3x3",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Matrix3x3",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Matrix3x3",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Matrix3x3",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Matrix3x3",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Matrix3x3",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:19:21Z"
+}

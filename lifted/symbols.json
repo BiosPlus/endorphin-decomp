@@ -20240,6 +20240,13 @@
     "summary": "Returns 0 if field +0x04 is zero; otherwise returns (field +0x08 - field +0x04) / 160 using a 0x66666667 magic-multiply with sign fix-up.",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x00554260": {
+    "name": "Matrix3x3::transposeInPlace",
+    "class": "Matrix3x3",
+    "signature": "extern \"C\" void* __fastcall fn_00554260(void* self, int edx_unused)",
+    "summary": "Transposes a row-major 3x3 float matrix in place (diagonal unchanged) and returns `this`.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00554510": {
     "name": "Unknown::getVec4At30_w1",
     "class": "Unknown",
