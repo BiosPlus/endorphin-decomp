@@ -736,3 +736,27 @@ extern void __thiscall fn_005052F0(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_005052F0
+
+// [0x00508740]
+namespace lift_00508740 {
+// @name UnknownClass_0094F92C::UnknownClass_0094F92C
+// @class UnknownClass_0094F92C
+// @summary Constructor that initializes base vtable, sets vtable 0x0094F92C, default-constructs std::string at +0x04, and zeroes float at +0x20.
+// @field UnknownClass_0094F92C +0x00 uint32_t vtable
+// @field UnknownClass_0094F92C +0x04 std::string field_0x04
+// @field UnknownClass_0094F92C +0x20 float field_0x20
+
+
+extern void ext_00661980(void* self);
+extern uint32_t mem_00924FE8;
+
+void* fn_00508740(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    ext_00661980(self);
+    *reinterpret_cast<uint32_t*>(base) = 0x0094F92Cu;
+    using StringCtorFn = void(__thiscall*)(void*);
+    reinterpret_cast<StringCtorFn>(mem_00924FE8)(base + 0x04);
+    *reinterpret_cast<float*>(base + 0x20) = 0.0f;
+    return self;
+}
+} // namespace lift_00508740

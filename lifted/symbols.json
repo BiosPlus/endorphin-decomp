@@ -16458,6 +16458,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051C6D0 (NMData::RealChannel::vfunc_4).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00508740": {
+    "name": "UnknownClass_0094F92C::UnknownClass_0094F92C",
+    "class": "UnknownClass_0094F92C",
+    "signature": "void* fn_00508740(void* self)",
+    "summary": "Constructor that initializes base vtable, sets vtable 0x0094F92C, default-constructs std::string at +0x04, and zeroes float at +0x20.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00508800": {
     "name": "FindMatchingNameIndex",
     "signature": "extern \"C\" bool fn_00508800(void* self, const void* str)",

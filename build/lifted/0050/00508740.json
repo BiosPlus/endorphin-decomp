@@ -1,0 +1,34 @@
+{
+  "va": "0x00508740",
+  "size": 80,
+  "orig_symbol": "sub_00508740",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "UnknownClass_0094F92C::UnknownClass_0094F92C",
+  "class": "UnknownClass_0094F92C",
+  "signature": "void* fn_00508740(void* self)",
+  "summary": "Constructor that initializes base vtable, sets vtable 0x0094F92C, default-constructs std::string at +0x04, and zeroes float at +0x20.",
+  "fields": [
+    {
+      "class": "UnknownClass_0094F92C",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "UnknownClass_0094F92C",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    },
+    {
+      "class": "UnknownClass_0094F92C",
+      "offset": "+0x20",
+      "type": "float",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:48:59Z"
+}
