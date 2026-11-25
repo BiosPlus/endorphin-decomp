@@ -2250,3 +2250,37 @@ void fn_00516000(void* const* holder) {
     ext_006A6DD2(exc, &mem_009DEC1C);
 }
 } // namespace lift_00516000
+
+// [0x004AB3B0] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_5 (47 bytes)
+namespace lift_004AB3B0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_5
+// @class ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_004A9CE0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004AB3B0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_004A9CE0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004AB3B0

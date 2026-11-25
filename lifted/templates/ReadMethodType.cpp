@@ -43126,3 +43126,3946 @@ extern const unsigned char mem_009DEC1C[];
     ext_006A6DD2(exception, mem_009DEC1C);
 }
 } // namespace lift_005DB750
+
+// [0x0046D320] ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_0046D320 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<ImageExporter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ImageExporter::getDestination(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_0042F6E0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_0046D320(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_0042F6E0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_0046D320
+
+// [0x0046DBC0] ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_0046DBC0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_0046C090(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_0046DBC0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_0046C090();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_0046DBC0
+
+// [0x0046EB90] ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_0046EB90 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getEndFrame(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_006ACFB0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_0046EB90(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_006ACFB0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_0046EB90
+
+// [0x0046EE70] ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_0046EE70 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<ImageExporter, int, {public: int __thiscall ImageExporter::getImageHeight(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_006AD1C0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_0046EE70(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_006AD1C0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_0046EE70
+
+// [0x00471490] ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_00471490 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_0046F7C0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00471490(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_0046F7C0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00471490
+
+// [0x00497FB0] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_00497FB0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00496F20(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00497FB0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00496F20();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00497FB0
+
+// [0x004983F0] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004983F0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00496F10(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004983F0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00496F10();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004983F0
+
+// [0x0049B960] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_0049B960 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_004C0310(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_0049B960(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_004C0310();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_0049B960
+
+// [0x0049C360] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_0049C360 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getFileName(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_0049AA10(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_0049C360(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_0049AA10();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_0049C360
+
+// [0x004A3CF0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004A3CF0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_004A2490(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004A3CF0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_004A2490();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004A3CF0
+
+// [0x004A45A0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004A45A0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getDrawDepth(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_0049AA40(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004A45A0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_0049AA40();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004A45A0
+
+// [0x004A4E40] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004A4E40 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getFontSize(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_006658C0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004A4E40(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_006658C0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004A4E40
+
+// [0x004AA7A0] ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004AA7A0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_004A9A40(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004AA7A0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_004A9A40();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004AA7A0
+
+// [0x004B4250] ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004B4250 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::GraphEngineData, int, {public: int __thiscall NMData::GraphEngineData::getMinNumTimeSteps(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_006AD190(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004B4250(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_006AD190();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004B4250
+
+// [0x004B8470] ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>::vfunc_5 (49 bytes)
+namespace lift_004B8470 {
+// @name ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004EA3D0 (ExceptionWithMessage::throw_004EA3D0).
+namespace lift_004EA3D0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (builds a default-message exception and throws it).
+extern void ext_0046C4E0(uint8_t flag);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs the exception with a fixed message).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk forwarding to MSVCR80!_CxxThrowException).
+[[noreturn]] void ext_006A6DD2(void* pObject, const void* pThrowInfo);
+// RDATA 0x009DEC1C: throw info passed by address as the ThrowInfo argument.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ExceptionWithMessage::throw_004EA3D0
+// @summary Throws a DerivedException; when the referenced object is non-null, first forwards its flag byte to the default-message thrower.
+// @field Unknown +0x06 uint8_t field_0x06
+void fn_004B8470(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj != nullptr) {
+        uint8_t flag = lift_field<uint8_t>(obj, 0x83);
+        ext_0046C4E0(flag);
+    }
+    alignas(8) uint8_t exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, reinterpret_cast<const void*>(mem_009DEC1C));
+}
+} // namespace lift_004EA3D0
+} // namespace lift_004B8470
+
+// [0x004C0470] ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004C0470 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::TriggeredEventData, int, {public: int __thiscall NMData::TriggeredEventData::getEndFrameNumber(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00410450(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004C0470(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00410450();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004C0470
+
+// [0x004C5970] ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004C5970 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005C84B0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004C5970(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005C84B0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004C5970
+
+// [0x004C7570] ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004C7570 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getStrength(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00486960(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004C7570(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00486960();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004C7570
+
+// [0x004CB900] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004CB900 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_004CA5E0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004CB900(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_004CA5E0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004CB900
+
+// [0x004CBC10] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_004CBC10 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_004CB3E0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004CBC10(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_004CB3E0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004CBC10
+
+// [0x004CBE70] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_004CBE70 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_004CB400(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004CBE70(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_004CB400();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004CBE70
+
+// [0x004CF390] ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004CF390 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::IncarnationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_004CEA30(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004CF390(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_004CEA30();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004CF390
+
+// [0x004D19B0] ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004D19B0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getRequiredPhysicsLevelName(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_004D0AF0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004D19B0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_004D0AF0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004D19B0
+
+// [0x004D22E0] ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004D22E0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::TransitionEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_004D0E00(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004D22E0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_004D0E00();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004D22E0
+
+// [0x004D5E80] ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004D5E80 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_004D39E0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004D5E80(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_004D39E0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004D5E80
+
+// [0x004D75E0] ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004D75E0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_004D39D0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004D75E0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_004D39D0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004D75E0
+
+// [0x004D8A40] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004D8A40 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00528530(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004D8A40(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00528530();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004D8A40
+
+// [0x004D8FD0] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004D8FD0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigEventData::getSourceName(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_004D3FD0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004D8FD0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_004D3FD0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004D8FD0
+
+// [0x004DF910] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004DF910 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_004DE160(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004DF910(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_004DE160();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004DF910
+
+// [0x004E0270] ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004E0270 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00486C90(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004E0270(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00486C90();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004E0270
+
+// [0x004E14B0] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004E14B0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionEndFrameNumber(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_004DE440(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004E14B0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_004DE440();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004E14B0
+
+// [0x004ED120] ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_004ED120 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<SelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00536F00(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004ED120(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00536F00();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004ED120
+
+// [0x004ED330] ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>::vfunc_5 (47 bytes)
+namespace lift_004ED330 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::NetworkConnectorData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00682ED0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004ED330(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00682ED0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004ED330
+
+// [0x004FF4F0] ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_004FF4F0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_006A7C10(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_004FF4F0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_006A7C10();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_004FF4F0
+
+// [0x005098C0] ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005098C0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00503A00(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005098C0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00503A00();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005098C0
+
+// [0x0050A2F0] ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_0050A2F0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00508BA0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_0050A2F0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00508BA0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_0050A2F0
+
+// [0x0051B240] ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>::vfunc_2 (47 bytes)
+namespace lift_0051B240 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::QuatChannel, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall NMData::QuatChannel::getValue(void) const, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_0051AEF0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_0051B240(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_0051AEF0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_0051B240
+
+// [0x00521580] ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_00521580 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<PoseLoader, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall PoseLoader::getPath(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00687090(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00521580(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00687090();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00521580
+
+// [0x00522400] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_5 (48 bytes)
+namespace lift_00522400 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00515EB0 (ExprParser::DynamicEnumType::vfunc_5).
+namespace lift_00515EB0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Called with one stack argument (the value loaded from obj+0x0C).
+extern void ext_0046C4E0(uint32_t arg);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Thiscall: `this` is the exception object buffer.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Forwards (exception object, ThrowInfo*) to _CxxThrowException.
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
+// @summary Virtual slot 5 stub that, when the referenced object is non-null, reports its +0x0C value via a default-message exception, then unconditionally throws a fixed DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 void* field_0x00
+// @field Unknown +0x0C uint32_t field_0x0C
+void fn_00522400(void* self) {
+    void* obj = *static_cast<void**>(self);
+    if (obj != nullptr) {
+        uint32_t msg = lift_field<uint32_t>(obj, 0xC4);
+        ext_0046C4E0(msg);
+    }
+
+    // Stack-allocated exception object (frame reserves 0x28 bytes).
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+}
+} // namespace lift_00515EB0
+} // namespace lift_00522400
+
+// [0x0058D1A0] ExprParser::ReadMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_0058D1A0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_0058B2A0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_0058D1A0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_0058B2A0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_0058D1A0
+
+// [0x00594CF0] ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_00594CF0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationTickNumber(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00594060(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00594CF0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00594060();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00594CF0
+
+// [0x00597EF0] ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_00597EF0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00596330(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00597EF0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00596330();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00597EF0
+
+// [0x0059F1A0] ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_0059F1A0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_0042F750(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_0059F1A0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_0042F750();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_0059F1A0
+
+// [0x005AAF90] ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005AAF90 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005AA9E0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005AAF90(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005AA9E0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005AAF90
+
+// [0x005AB340] ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005AB340 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_0044CCD0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005AB340(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_0044CCD0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005AB340
+
+// [0x005B95C0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_005B95C0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearVelocity(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005B6B60(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005B95C0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005B6B60();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005B95C0
+
+// [0x005B9AB0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularVelocity(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_005B9AB0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularVelocity(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularVelocity(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularVelocity(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005B6B90(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005B9AB0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005B6B90();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005B9AB0
+
+// [0x005BA010] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearAcceleration(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_005BA010 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearAcceleration(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearAcceleration(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearAcceleration(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005B6BC0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005BA010(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005B6BC0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005BA010
+
+// [0x005BA490] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularAcceleration(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_005BA490 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularAcceleration(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularAcceleration(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAngularAcceleration(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005B6BF0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005BA490(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005B6BF0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005BA490
+
+// [0x005BA980] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getForce(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_005BA980 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getForce(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getForce(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getForce(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005B6C20(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005BA980(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005B6C20();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005BA980
+
+// [0x005BAE70] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getTorque(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_005BAE70 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getTorque(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getTorque(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getTorque(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005B6C50(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005BAE70(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005B6C50();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005BAE70
+
+// [0x005BBBE0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_005BBBE0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTS(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005B6A10(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005BBBE0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005B6A10();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005BBBE0
+
+// [0x005BBF50] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_005BBF50 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005B6AF0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005BBF50(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005B6AF0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005BBF50
+
+// [0x005BC290] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_005BC290 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientation(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005B69A0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005BC290(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005B69A0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005BC290
+
+// [0x005BCF00] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_005BCF00 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005B6930(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005BCF00(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005B6930();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005BCF00
+
+// [0x005BD570] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_005BD570 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getOrientationTSA(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005B6A80(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005BD570(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005B6A80();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005BD570
+
+// [0x005C4A30] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_005C4A30 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005C3110(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005C4A30(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005C3110();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005C4A30
+
+// [0x005C4F20] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalYAxisInWorldSpace(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_005C4F20 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalYAxisInWorldSpace(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalYAxisInWorldSpace(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalYAxisInWorldSpace(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005C3130(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005C4F20(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005C3130();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005C4F20
+
+// [0x005C53A0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_005C53A0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005C3150(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005C53A0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005C3150();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005C53A0
+
+// [0x005C81C0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005C81C0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::CollisionModelDataBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005C2F40(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005C81C0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005C2F40();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005C81C0
+
+// [0x005C9010] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_005C9010 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAbsolutePosition(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005C3A30(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005C9010(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005C3A30();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005C9010
+
+// [0x005C9B10] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearVelocity(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_005C9B10 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearVelocity(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearVelocity(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearVelocity(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005C38F0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005C9B10(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005C38F0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005C9B10
+
+// [0x005C9F90] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularVelocity(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_005C9F90 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularVelocity(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularVelocity(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularVelocity(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005C3930(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005C9F90(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005C3930();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005C9F90
+
+// [0x005CA480] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearAcceleration(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_005CA480 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearAcceleration(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearAcceleration(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getLinearAcceleration(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005C3970(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005CA480(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005C3970();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005CA480
+
+// [0x005CA970] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularAcceleration(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_005CA970 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularAcceleration(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularAcceleration(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularAcceleration(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005C39B0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005CA970(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005C39B0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005CA970
+
+// [0x005D2890] ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>::vfunc_5 (46 bytes)
+namespace lift_005D2890 {
+// @name ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004EA3D0 (ExceptionWithMessage::throw_004EA3D0).
+namespace lift_004EA3D0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (builds a default-message exception and throws it).
+extern void ext_0046C4E0(uint8_t flag);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (constructs the exception with a fixed message).
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk forwarding to MSVCR80!_CxxThrowException).
+[[noreturn]] void ext_006A6DD2(void* pObject, const void* pThrowInfo);
+// RDATA 0x009DEC1C: throw info passed by address as the ThrowInfo argument.
+extern const uint8_t mem_009DEC1C[];
+
+// @name ExceptionWithMessage::throw_004EA3D0
+// @summary Throws a DerivedException; when the referenced object is non-null, first forwards its flag byte to the default-message thrower.
+// @field Unknown +0x06 uint8_t field_0x06
+void fn_005D2890(void* arg) {
+    void* obj = *reinterpret_cast<void**>(arg);
+    if (obj != nullptr) {
+        uint8_t flag = lift_field<uint8_t>(obj, 0x30);
+        ext_0046C4E0(flag);
+    }
+    alignas(8) uint8_t exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, reinterpret_cast<const void*>(mem_009DEC1C));
+}
+} // namespace lift_004EA3D0
+} // namespace lift_005D2890
+
+// [0x005DB960] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005DB960 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005D07E0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005DB960(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005D07E0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005DB960
+
+// [0x005DBE10] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005DBE10 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getCameraModeName(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005D07F0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005DBE10(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005D07F0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005DBE10
+
+// [0x005DBFD0] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005DBFD0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005D0810(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005DBFD0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005D0810();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005DBFD0
+
+// [0x005E30C0] ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005E30C0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_0044CCE0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005E30C0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_0044CCE0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005E30C0
+
+// [0x005E33F0] ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005E33F0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005E02A0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005E33F0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005E02A0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005E33F0
+
+// [0x005E8550] ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005E8550 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::SkeletalJointData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005E0E40(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005E8550(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005E0E40();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005E8550
+
+// [0x005F7C70] ExprParser::ReadMethodType<HelperGraphic, NM::Vector4 const &, {public: class NM::Vector4 const & __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_005F7C70 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector4 const &, {public: class NM::Vector4 const & __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector4 const &, {public: class NM::Vector4 const & __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<HelperGraphic, NM::Vector4 const &, {public: class NM::Vector4 const & __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005F5160(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005F7C70(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005F5160();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005F7C70
+
+// [0x005F8100] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_005F8100 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationXVector(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005F5190(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005F8100(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005F5190();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005F8100
+
+// [0x005F8620] ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005F8620 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getType(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005F5120(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005F8620(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005F5120();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005F8620
+
+// [0x005F87F0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getColour(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_005F87F0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getColour(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getColour(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getColour(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005F5410(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005F87F0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005F5410();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005F87F0
+
+// [0x005F8CC0] ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_005F8CC0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<HelperGraphic, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall HelperGraphic::getLineAxisName(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005F5280(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005F8CC0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005F5280();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005F8CC0
+
+// [0x005F92C0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_005F92C0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005F5140(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005F92C0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005F5140();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005F92C0
+
+// [0x005F9CF0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTS(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_005F9CF0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTS(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTS(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTS(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005F57F0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005F9CF0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005F57F0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005F9CF0
+
+// [0x005F9FC0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_005F9FC0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationTSA(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005F5860(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005F9FC0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005F5860();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005F9FC0
+
+// [0x005FA110] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationSE(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_005FA110 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationSE(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationSE(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationSE(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005F58D0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005FA110(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005F58D0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005FA110
+
+// [0x005FACE0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationE(void) const, 0}, 0>::vfunc_2 (47 bytes)
+namespace lift_005FACE0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationE(void) const, 0}, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationE(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getOrientationE(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_005F5940(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_005FACE0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_005F5940();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_005FACE0
+
+// [0x00603A40] ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getForce(void) const, 1>::vfunc_2 (47 bytes)
+namespace lift_00603A40 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getForce(void) const, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getForce(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getForce(void) const, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00602F00(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00603A40(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00602F00();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00603A40
+
+// [0x00603F30] ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_2 (47 bytes)
+namespace lift_00603F30 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00602F20(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00603F30(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00602F20();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00603F30
+
+// [0x00609C50] ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_5 (47 bytes)
+namespace lift_00609C50 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00609730(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00609C50(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00609730();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00609C50
+
+// [0x00627B30] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>::vfunc_2 (47 bytes)
+namespace lift_00627B30 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00627530(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00627B30(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00627530();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00627B30
+
+// [0x00628020] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwing(void) const, 1>::vfunc_2 (47 bytes)
+namespace lift_00628020 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwing(void) const, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwing(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwing(void) const, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_006275A0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00628020(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_006275A0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00628020
+
+// [0x00628510] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwingAngles(void) const, 1>::vfunc_2 (47 bytes)
+namespace lift_00628510 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwingAngles(void) const, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwingAngles(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwingAngles(void) const, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00627610(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00628510(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00627610();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00628510
+
+// [0x00628A00] ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffEulers(void) const, 1>::vfunc_2 (47 bytes)
+namespace lift_00628A00 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffEulers(void) const, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffEulers(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<Sensors::SensorAbsoluteOrientation, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::SensorAbsoluteOrientation::getDiffEulers(void) const, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00627680(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00628A00(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00627680();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00628A00
+
+// [0x0062EA10] ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>::vfunc_2 (47 bytes)
+namespace lift_0062EA10 {
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x0062E520 (ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_2).
+namespace lift_0062E520 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(const void* msgSource);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_2
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Reads the pointer stored at self+0x00; if non-null, raises a default-message exception using target+0x78, then always throws a DerivedException.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field Sensors::CompoundSensorPlanes +0x78 void* field_0x78
+void fn_0062EA10(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target != nullptr) {
+        ext_0046C4E0(static_cast<uint8_t*>(target) + 0x84);
+    }
+
+    alignas(8) uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+
+    const void* throwInfo = reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu));
+    ext_006A6DD2(exc, throwInfo);
+}
+} // namespace lift_0062E520
+} // namespace lift_0062EA10
+
+// [0x00631200] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1>::vfunc_2 (47 bytes)
+namespace lift_00631200 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngle(void) const, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00630580(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00631200(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00630580();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00631200
+
+// [0x00631680] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngleRaw(void) const, 1>::vfunc_2 (47 bytes)
+namespace lift_00631680 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngleRaw(void) const, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngleRaw(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingAngleRaw(void) const, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_006305A0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00631680(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_006305A0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00631680
+
+// [0x00631B70] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingNormalized(void) const, 1>::vfunc_2 (47 bytes)
+namespace lift_00631B70 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingNormalized(void) const, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingNormalized(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwingNormalized(void) const, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_006305C0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00631B70(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_006305C0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00631B70
+
+// [0x00632060] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualPosition(void) const, 1>::vfunc_2 (47 bytes)
+namespace lift_00632060 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualPosition(void) const, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualPosition(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualPosition(void) const, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00630560(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00632060(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00630560();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00632060
+
+// [0x00632550] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualLinearVelocity(void) const, 1>::vfunc_2 (47 bytes)
+namespace lift_00632550 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualLinearVelocity(void) const, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualLinearVelocity(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualLinearVelocity(void) const, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_006305E0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00632550(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_006305E0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00632550
+
+// [0x00635810] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getDesiredQuat(void) const, 0>::vfunc_2 (47 bytes)
+namespace lift_00635810 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getDesiredQuat(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getDesiredQuat(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getDesiredQuat(void) const, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00630540(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00635810(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00630540();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00635810
+
+// [0x006364F0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>::vfunc_2 (47 bytes)
+namespace lift_006364F0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0062E520 (ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_2).
+namespace lift_0062E520 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(const void* msgSource);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_2
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Reads the pointer stored at self+0x00; if non-null, raises a default-message exception using target+0x78, then always throws a DerivedException.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field Sensors::CompoundSensorPlanes +0x78 void* field_0x78
+void fn_006364F0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target != nullptr) {
+        ext_0046C4E0(static_cast<uint8_t*>(target) + 0x90);
+    }
+
+    alignas(8) uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+
+    const void* throwInfo = reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu));
+    ext_006A6DD2(exc, throwInfo);
+}
+} // namespace lift_0062E520
+} // namespace lift_006364F0
+
+// [0x00636C70] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>::vfunc_2 (47 bytes)
+namespace lift_00636C70 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingVelocity(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0062E520 (ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_2).
+namespace lift_0062E520 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(const void* msgSource);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_2
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Reads the pointer stored at self+0x00; if non-null, raises a default-message exception using target+0x78, then always throws a DerivedException.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field Sensors::CompoundSensorPlanes +0x78 void* field_0x78
+void fn_00636C70(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target != nullptr) {
+        ext_0046C4E0(static_cast<uint8_t*>(target) + 0xB4);
+    }
+
+    alignas(8) uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+
+    const void* throwInfo = reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu));
+    ext_006A6DD2(exc, throwInfo);
+}
+} // namespace lift_0062E520
+} // namespace lift_00636C70
+
+// [0x00638EF0] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_5 (48 bytes)
+namespace lift_00638EF0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x00515EB0 (ExprParser::DynamicEnumType::vfunc_5).
+namespace lift_00515EB0 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Called with one stack argument (the value loaded from obj+0x0C).
+extern void ext_0046C4E0(uint32_t arg);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+// Thiscall: `this` is the exception object buffer.
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Forwards (exception object, ThrowInfo*) to _CxxThrowException.
+extern void ext_006A6DD2(void* exception_object, const void* throw_info);
+
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>
+// @summary Virtual slot 5 stub that, when the referenced object is non-null, reports its +0x0C value via a default-message exception, then unconditionally throws a fixed DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 void* field_0x00
+// @field Unknown +0x0C uint32_t field_0x0C
+void fn_00638EF0(void* self) {
+    void* obj = *static_cast<void**>(self);
+    if (obj != nullptr) {
+        uint32_t msg = lift_field<uint32_t>(obj, 0xC0);
+        ext_0046C4E0(msg);
+    }
+
+    // Stack-allocated exception object (frame reserves 0x28 bytes).
+    alignas(8) unsigned char exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+}
+} // namespace lift_00515EB0
+} // namespace lift_00638EF0
+
+// [0x006397E0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>::vfunc_2 (47 bytes)
+namespace lift_006397E0 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0062E520 (ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_2).
+namespace lift_0062E520 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(const void* msgSource);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_2
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Reads the pointer stored at self+0x00; if non-null, raises a default-message exception using target+0x78, then always throws a DerivedException.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field Sensors::CompoundSensorPlanes +0x78 void* field_0x78
+void fn_006397E0(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target != nullptr) {
+        ext_0046C4E0(static_cast<uint8_t*>(target) + 0x9C);
+    }
+
+    alignas(8) uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+
+    const void* throwInfo = reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu));
+    ext_006A6DD2(exc, throwInfo);
+}
+} // namespace lift_0062E520
+} // namespace lift_006397E0
+
+// [0x00639A30] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>::vfunc_2 (47 bytes)
+namespace lift_00639A30 {
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredLinearVelocity(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x0062E520 (ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_2).
+namespace lift_0062E520 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0(const void* msgSource);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+
+// @name ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes>::vfunc_2
+// @class ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>
+// @summary Reads the pointer stored at self+0x00; if non-null, raises a default-message exception using target+0x78, then always throws a DerivedException.
+// @field ExprParser::ReadMethodType +0x00 void* field_0x00
+// @field Sensors::CompoundSensorPlanes +0x78 void* field_0x78
+void fn_00639A30(void* self) {
+    void* target = lift_field<void*>(self, 0x00);
+    if (target != nullptr) {
+        ext_0046C4E0(static_cast<uint8_t*>(target) + 0xA8);
+    }
+
+    alignas(8) uint8_t exc[0x28];
+    ext_0046C3C0(exc);
+
+    const void* throwInfo = reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu));
+    ext_006A6DD2(exc, throwInfo);
+}
+} // namespace lift_0062E520
+} // namespace lift_00639A30
+
+// [0x00639E00] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, 0>::vfunc_2 (47 bytes)
+namespace lift_00639E00 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPositionNormalized(void) const, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00630420(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00639E00(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00630420();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00639E00
+
+// [0x0063A100] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, 0>::vfunc_2 (47 bytes)
+namespace lift_0063A100 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwingNormalized(void) const, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00630740(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_0063A100(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00630740();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_0063A100
+
+// [0x0063A620] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getActualQuat(void) const, 1>::vfunc_2 (47 bytes)
+namespace lift_0063A620 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getActualQuat(void) const, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getActualQuat(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector4 const &, &public: class NM::Vector4 const & __thiscall EffectorSkeletal::getActualQuat(void) const, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00630E60(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_0063A620(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00630E60();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_0063A620
+
+// [0x0063AB10] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1>::vfunc_2 (47 bytes)
+namespace lift_0063AB10 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getActualTwistAndSwing(void) const, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00630E80(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_0063AB10(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00630E80();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_0063AB10
+
+// [0x0063B2A0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0>::vfunc_2 (47 bytes)
+namespace lift_0063B2A0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0>::vfunc_2
+// @class ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredTwistAndSwing(void) const, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00630E40(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_0063B2A0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00630E40();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_0063B2A0
+
+// [0x006539E0] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintPosition(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_006539E0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintPosition(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintPosition(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintPosition(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_0064E220(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_006539E0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_0064E220();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_006539E0
+
+// [0x00653ED0] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintPosition(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_00653ED0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintPosition(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintPosition(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintPosition(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_0064E250(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00653ED0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_0064E250();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00653ED0
+
+// [0x006564B0] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_006564B0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintOrientationTSA(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getPrimaryConstraintOrientationTSA(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00650800(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_006564B0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00650800();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_006564B0
+
+// [0x00656930] ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_2 (47 bytes)
+namespace lift_00656930 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintOrientationTSA(void) const, 0}, 1>::vfunc_2
+// @class ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintOrientationTSA(void) const, 0}, 1>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<SkeletalJoint, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall SkeletalJoint::getSecondaryConstraintOrientationTSA(void) const, 0}, 1> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_006508C0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00656930(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_006508C0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00656930
+
+// [0x00684900] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_00684900 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getType(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_006829E0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00684900(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_006829E0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00684900
+
+// [0x00684A70] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_00684A70 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getInitialValue(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_0049A9F0(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00684A70(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_0049A9F0();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00684A70
+
+// [0x00684E30] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_00684E30 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getPropertyType(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00682E10(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_00684E30(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00682E10();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_00684E30
+
+// [0x006854A0] ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_006854A0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<NMData::ValuePtrData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::ValuePtrData::getComment(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00672400(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_006854A0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00672400();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_006854A0
+
+// [0x0068DEE0] ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_0068DEE0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<Randomizer, int, {public: int __thiscall Randomizer::getSeed(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_0052F600(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_0068DEE0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_0052F600();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_0068DEE0
+
+// [0x006925B0] ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>::vfunc_5 (47 bytes)
+namespace lift_006925B0 {
+extern void ext_0046C3C0();
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0>
+// @summary Auto-lifted identical-shape clone of 0x004D51B0 (ExprParser::DynamicEnumType::vfunc_5).
+// @field ExprParser::ReadMethodType<ValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0> +0x0 int field_0x00
+namespace lift_004D51B0 {
+// @name ExprParser::DynamicEnumType::vfunc_5
+// @class ExprParser::DynamicEnumType
+// @summary Validates the pointer argument: if its first dword is nonzero, raises via sub_0046C4E0; otherwise throws a fixed-message DerivedException.
+// @field ExprParser::DynamicEnumType +0x00 int field_0x00
+
+extern int ext_00692210(void);
+extern void ext_0046C4E0(void);
+extern void* ext_0046C3C0(void* self);
+extern void ext_006A6DD2(void* exc, const void* throwInfo);
+
+extern const void* mem_009DEC1C;
+
+extern void fn_006925B0(int* arg) {
+    if (arg[0] != 0) {
+        (void)ext_00692210();
+        ext_0046C4E0();
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+}
+} // namespace lift_004D51B0
+} // namespace lift_006925B0
