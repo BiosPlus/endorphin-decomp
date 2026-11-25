@@ -156,3 +156,15 @@ void fn_0060AE20(void* self) {
     slot1(target, 1);
 }
 } // namespace lift_0060AE20
+
+// [0x0052EF40]
+namespace lift_0052EF40 {
+// @name ManagedDisplayList<UtilityGraphics::Grid>::vfunc_17
+// @class ManagedDisplayList<UtilityGraphics::Grid>
+// @summary Returns 1 if the byte at this+0x0C is nonzero, else 0.
+// @field ManagedDisplayList<UtilityGraphics::Grid> +0x0C uint8_t field_0x0C
+uint32_t fn_0052EF40(void* self) {
+    const uint8_t flag = lift_field<uint8_t>(self, 0x0C);
+    return flag != 0 ? 1u : 0u;
+}
+} // namespace lift_0052EF40
