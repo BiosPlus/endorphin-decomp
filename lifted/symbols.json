@@ -21189,6 +21189,12 @@
     "summary": "Pure jump thunk forwarding to sub_005B5AF0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00584B10": {
+    "name": "findFirstMatchingAncestor",
+    "signature": "uint32_t __thiscall sub_00584B10(uint32_t self)",
+    "summary": "Walks the +0x94 parent/next chain starting at this and returns the first node whose vtable+0x70 predicate returns true.",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x00584BD0": {
     "name": "Unknown::getStrPtrOrFallback",
     "class": "Unknown",
@@ -31389,6 +31395,13 @@
     "signature": "void* fn_00624D10(void* arg)",
     "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_620000.cpp"
+  },
+  "0x00624E50": {
+    "name": "Unknown::initWithArgs",
+    "class": "Unknown",
+    "signature": "void* fn_00624E50(void* self, uint32_t arg0, uint32_t arg1)",
+    "summary": "Runs the base initializer with arg0, installs the 0x009773BC vtable, clears the byte at +0x30, and stores arg1 at +0x34; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_620000.cpp"
   },
   "0x00624E80": {
     "name": "UnsignedOrderedPair_store",

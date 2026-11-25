@@ -1,0 +1,34 @@
+{
+  "va": "0x00624E50",
+  "size": 36,
+  "orig_symbol": "sub_00624E50",
+  "src_path": "src/leaf/decompiled_620000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_620000.cpp",
+  "name": "Unknown::initWithArgs",
+  "class": "Unknown",
+  "signature": "void* fn_00624E50(void* self, uint32_t arg0, uint32_t arg1)",
+  "summary": "Runs the base initializer with arg0, installs the 0x009773BC vtable, clears the byte at +0x30, and stores arg1 at +0x34; returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "uint8_t",
+      "name": "flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "value"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:16:26Z"
+}

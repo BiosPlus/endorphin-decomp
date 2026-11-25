@@ -921,3 +921,23 @@ void* fn_006271A0(void* self, uint32_t arg0) {
     return self;
 }
 } // namespace lift_006271A0
+
+// [0x00624E50] sub_00624E50 (36 bytes)
+namespace lift_00624E50 {
+// Known callee 0x005FF240: sub_005FF240 (Initializes object fields to zero, stores argument at +0x28, and sets vtable to 0x0096F154.)
+extern uint32_t ext_005FF240(void* self, uint32_t arg0);
+
+// @name Unknown::initWithArgs
+// @class Unknown
+// @summary Runs the base initializer with arg0, installs the 0x009773BC vtable, clears the byte at +0x30, and stores arg1 at +0x34; returns this.
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x30 uint8_t flag
+// @field Unknown +0x34 uint32_t value
+void* fn_00624E50(void* self, uint32_t arg0, uint32_t arg1) {
+    ext_005FF240(self, arg0);
+    lift_field<uint32_t>(self, 0x00) = 0x009773BC;
+    lift_field<uint32_t>(self, 0x34) = arg1;
+    lift_field<uint8_t>(self, 0x30) = 0;
+    return self;
+}
+} // namespace lift_00624E50
