@@ -1340,3 +1340,21 @@ uint32_t Object_GetArrayElementD0(uint8_t* self, uint32_t index) {
     return elements[index];
 }
 } // namespace lift_00707960
+
+// [0x00705160]
+namespace lift_00705160 {
+namespace lift_00705160 {
+// @name GetSubobjectByteField7CD
+// @class Unknown
+// @summary Loads the pointer at this+0xF0 and returns the byte at ptr+0x7CD in the low 8 bits of EAX (upper 24 bits keep the pointer's upper bits).
+// @field Unknown +0xF0 uint32_t field_0xf0
+// @field Unknown +0x7CD uint8_t field_0x7cd
+
+uint32_t GetSubobjectByteField7CD(const uint8_t* self) {
+    uint32_t ptr = *reinterpret_cast<const uint32_t*>(self + 0xF0);
+    uint8_t low = *reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(ptr) + 0x7CD);
+    // mov al, byte: only the low byte of EAX is replaced; upper 24 bits remain from the first mov.
+    return (ptr & 0xFFFFFF00u) | low;
+}
+} // namespace lift_00705160
+} // namespace lift_00705160

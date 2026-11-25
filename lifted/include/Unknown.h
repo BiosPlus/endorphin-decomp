@@ -990,7 +990,7 @@ struct Unknown_Fields {
     // +0xF0  ptr                      field_0xF0  (evidence: 0x00704DA0) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  uint32_t                 field_0xF0  (evidence: 0x006C1BB0, 0x006C3450, 0x006C3470, 0x006C3490, 0x006C3500, 0x006C3520, 0x006C3590, 0x006C35B0, 0x00705190, 0x0070AD00, 0x0070E390, 0x0070E3B0, 0x0070EC70, 0x007155B0, 0x0071C700) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  double                   field_0xf0  (evidence: 0x0043CA30) // CONFLICT: multiple definitions at +0xF0
-    // +0xF0  uint32_t                 field_0xf0  (evidence: 0x006C3360, 0x006C33C0) // CONFLICT: multiple definitions at +0xF0
+    // +0xF0  uint32_t                 field_0xf0  (evidence: 0x006C3360, 0x006C33C0, 0x00705160) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  void*                    field_0xf0  (evidence: 0x006C2070) // CONFLICT: multiple definitions at +0xF0
     // +0xF0  void*                    tablePtr  (evidence: 0x006C33F0) // CONFLICT: multiple definitions at +0xF0
     // +0xF4  DWORD                    field_0xF4  (evidence: 0x00540F60) // CONFLICT: multiple definitions at +0xF4
@@ -1317,6 +1317,7 @@ struct Unknown_Fields {
     // +0x74C DWORD                    field_0x74C  (evidence: 0x007155B0, 0x00719BB0)
     // +0x768 HWND                     field_0x768  (evidence: 0x00441C10)
     // +0x7CC u8                       field_0x7CC  (evidence: 0x00704DA0)
+    // +0x7CD uint8_t                  field_0x7cd  (evidence: 0x00705160)
     // +0x7D4 uint32_t                 field_0x7d4  (evidence: 0x007AC510)
     // +0x804 std::string              field_0x804  (evidence: 0x0054FCB0)
     // +0x81C void*                    field_0x81C  (evidence: 0x00704A20, 0x0070AD00)

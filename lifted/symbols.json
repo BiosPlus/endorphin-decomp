@@ -59921,6 +59921,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00515840 (sub_00511290).",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00705160": {
+    "name": "GetSubobjectByteField7CD",
+    "class": "Unknown",
+    "signature": "uint32_t GetSubobjectByteField7CD(const uint8_t* self)",
+    "summary": "Loads the pointer at this+0xF0 and returns the byte at ptr+0x7CD in the low 8 bits of EAX (upper 24 bits keep the pointer's upper bits).",
+    "lifted_path": "lifted/leaf/tiny_700000.cpp"
+  },
   "0x00705190": {
     "name": "GetChildInt32At0x7D0",
     "class": "Unknown",
