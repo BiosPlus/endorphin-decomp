@@ -65495,6 +65495,12 @@
     "summary": "Returns 1 if field +0x58 is zero; otherwise returns 1 when field +0x60 \u003e= field +0x5c (unsigned), else 0.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
   },
+  "0x007AEF70": {
+    "name": "ForwardArgPtrToThunk_007AEF70",
+    "signature": "extern \"C\" uint8_t __stdcall fn_007AEF70(void* args_ptr)",
+    "summary": "Passes a pointer to its stack argument block to sub_006B9D70 and returns 0 in AL (original is __stdcall-style, ret 0x54 cleans 84 bytes; the stack cleanup is ABI-only and not expressed here).",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AEF80": {
     "name": "ScopedGuardPair_007AEF80",
     "signature": "void fn_007AEF80(void* self)",

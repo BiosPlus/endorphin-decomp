@@ -1119,3 +1119,18 @@ uint32_t fn_007AF5E0(uint32_t a1, uint32_t a2) {
     return result;
 }
 } // namespace lift_007AF5E0
+
+// [0x007AEF70] sub_007AEF70 (14 bytes)
+namespace lift_007AEF70 {
+// Known callee 0x006B9D70: sub_006B9D70 (Pure jump thunk forwarding to sub_006B9970.)
+// The original passes its argument block pointer in ECX (lea ecx, [esp+4]),
+// so the external is declared __fastcall with that pointer as its single argument.
+extern void __fastcall ext_006B9D70(void* args_ptr);
+
+// @name ForwardArgPtrToThunk_007AEF70
+// @summary Passes a pointer to its stack argument block to sub_006B9D70 and returns 0 in AL (original is __stdcall-style, ret 0x54 cleans 84 bytes; the stack cleanup is ABI-only and not expressed here).
+extern uint8_t __stdcall fn_007AEF70(void* args_ptr) {
+    ext_006B9D70(args_ptr);
+    return 0; // xor al, al
+}
+} // namespace lift_007AEF70
