@@ -2671,6 +2671,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005FF040 (ResourceHolder::ReleaseAndReset).",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x0042ECC0": {
+    "name": "Unknown::ContainsValueInRange",
+    "class": "Unknown",
+    "signature": "bool fn_0042ECC0(void* self, uint32_t value)",
+    "summary": "Linear search of a 32-bit pointer range [+0x58, +0x5C) for a value; returns true if found.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x0042EE50": {
     "name": "sub_0042EE50",
     "class": "NMData::RealChannel",

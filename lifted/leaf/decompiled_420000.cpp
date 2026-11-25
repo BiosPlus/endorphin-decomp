@@ -1164,3 +1164,34 @@ extern void fn_00427640(void* unused, void* self, bool* out) {
     *out = (value == mem_0092F10C);
 }
 } // namespace lift_00427640
+
+// [0x0042ECC0] sub_0042ECC0 (102 bytes)
+namespace lift_0042ECC0 {
+extern void ext_invalid_parameter_noinfo(void);
+
+// @name Unknown::ContainsValueInRange
+// @class Unknown
+// @summary Linear search of a 32-bit pointer range [+0x58, +0x5C) for a value; returns true if found.
+// @field Unknown +0x58 uint32_t field_0x58
+// @field Unknown +0x5C uint32_t field_0x5C
+bool fn_0042ECC0(void* self, uint32_t value) {
+    const uintptr_t begin = lift_field<uint32_t>(self, 0x58);
+    const uintptr_t end = lift_field<uint32_t>(self, 0x5C);
+    if (begin > end) {
+        ext_invalid_parameter_noinfo();
+    }
+
+    uintptr_t cur = begin;
+    while (cur != end) {
+        if (*reinterpret_cast<const uint32_t*>(cur) == value) {
+            break;
+        }
+        cur += sizeof(uint32_t);
+    }
+
+    if (begin > end) {
+        ext_invalid_parameter_noinfo();
+    }
+    return cur != end;
+}
+} // namespace lift_0042ECC0
