@@ -3480,3 +3480,54 @@ void __thiscall sub_0043CA30(void* self) {
     *reinterpret_cast<double*>(p + 0x120) = diff_i / diff_d;
 }
 } // namespace lift_0043CA30
+
+// [0x0043DCF0]
+namespace lift_0043DCF0 {
+extern uint32_t mem_00925134;
+extern uint32_t __thiscall ext_005DF6B0(void* self, uint32_t out_iter, uint32_t key_ptr);
+
+// @name TreeFindValue
+// @class Unknown
+// @summary Look up a 32-bit signed key in an embedded MSVC-style red-black tree at this+0xa4 and return the node value, or 0 if absent
+// @field Unknown +0xa4 uint8_t field_0xa4
+// @field Unknown +0xa8 uint32_t field_0xa8
+// @field RbNode +0x10 uint32_t field_0x10
+
+static inline uint32_t lift_addr(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+static void invalid_parameter_noinfo() {
+    reinterpret_cast<void (*)()>(static_cast<uintptr_t>(mem_00925134))();
+}
+
+uint32_t __thiscall sub_0043DCF0(void* self, uint32_t key) {
+    uint8_t* p = static_cast<uint8_t*>(self);
+    uint8_t* tree = p + 0xa4;
+
+    // out[0] = iterator tree pointer, out[1] = iterator node pointer
+    uint32_t out[2] = {0, 0};
+    ext_005DF6B0(tree, lift_addr(out), lift_addr(&key));
+
+    uint32_t edi = out[0];
+    uint32_t esi = out[1];
+    uint32_t ebx = lift_field<uint32_t>(tree, 4); // header/end node, i.e. [this+0xa8]
+
+    if (edi == 0 || edi != lift_addr(tree)) {
+        invalid_parameter_noinfo();
+    }
+
+    if (esi == ebx) {
+        return 0; // not found
+    }
+
+    if (edi == 0) {
+        invalid_parameter_noinfo();
+    }
+    if (esi == lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(edi)), 4)) {
+        invalid_parameter_noinfo();
+    }
+
+    return lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(esi)), 0x10);
+}
+} // namespace lift_0043DCF0

@@ -4068,6 +4068,13 @@
     "summary": "Pure jump thunk forwarding to sub_0043D710.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0043DCF0": {
+    "name": "TreeFindValue",
+    "class": "Unknown",
+    "signature": "static inline uint32_t lift_addr(const void* p)",
+    "summary": "Look up a 32-bit signed key in an embedded MSVC-style red-black tree at this+0xa4 and return the node value, or 0 if absent",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043E090": {
     "name": "Unknown::InvokeSlot0OnEachElement",
     "class": "Unknown",

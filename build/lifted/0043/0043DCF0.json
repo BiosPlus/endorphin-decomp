@@ -1,0 +1,34 @@
+{
+  "va": "0x0043DCF0",
+  "size": 99,
+  "orig_symbol": "sub_0043DCF0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "TreeFindValue",
+  "class": "Unknown",
+  "signature": "static inline uint32_t lift_addr(const void* p)",
+  "summary": "Look up a 32-bit signed key in an embedded MSVC-style red-black tree at this+0xa4 and return the node value, or 0 if absent",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xA4",
+      "type": "uint8_t",
+      "name": "field_0xa4"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xA8",
+      "type": "uint32_t",
+      "name": "field_0xa8"
+    },
+    {
+      "class": "RbNode",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:10:04Z"
+}
