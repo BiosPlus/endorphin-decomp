@@ -1,0 +1,40 @@
+{
+  "va": "0x005EEDB0",
+  "size": 118,
+  "orig_symbol": "NMData::FixedPathJointData::vfunc_67",
+  "src_path": "src/NMData/FixedPathJointData.cpp",
+  "lifted_path": "lifted/NMData/FixedPathJointData.cpp",
+  "name": "NMData::FixedPathJointData::vfunc_67",
+  "class": "NMData::FixedPathJointData",
+  "signature": "void fn_005EEDB0(void* self)",
+  "summary": "Erases the element range [field_0x16c, field_0x170) from the child vector at +0x168, then calls ext_005EEB90 for each index in [0, vfunc_60()).",
+  "fields": [
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x0",
+      "type": "void* vtable (vptr; vfunc_60 at slot +0xF0 is the element",
+      "name": "count)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x16C",
+      "type": "uint32_t field_0x16c (erase range",
+      "name": "begin)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x168",
+      "type": "void* field_0x168 (address taken; vector container base for",
+      "name": "erase)"
+    },
+    {
+      "class": "NMData::FixedPathJointData",
+      "offset": "+0x170",
+      "type": "uint32_t field_0x170 (erase range",
+      "name": "end)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-25T13:26:17Z"
+}

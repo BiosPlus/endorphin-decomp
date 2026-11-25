@@ -287,3 +287,57 @@ void fn_005E0E70(void* self, uintptr_t arg) {
     reinterpret_cast<ChildFn>(lift_field<void*>(child_vtbl, 0xAC))(child, result);
 }
 } // namespace lift_005E0E70
+
+// [0x005EEDB0] NMData::FixedPathJointData::vfunc_67 (118 bytes)
+namespace lift_005EEDB0 {
+// IAT slot 0x00925134: MSVCR80!_invalid_parameter_noinfo (called indirectly; returns and execution continues).
+extern void (*mem_00925134)(void);
+
+// Known callee 0x0048EF80: std_vector_8_erase_range (MSVC thiscall, erases [first, last) of 8-byte elements,
+// returns the updated iterator through a hidden return pointer).
+extern void* ext_0048EF80(void* self, void* ret_iter, void* first_proxy, uint32_t first_ptr,
+                              void* last_proxy, uint32_t last_ptr);
+// Known callee 0x005EEB90: per-index hook (thiscall, takes the index as its single argument).
+extern void ext_005EEB90(void* self, int32_t index);
+// Known callee 0x005851B0: AnimatableTransform::vfunc_14_off_C. Listed as a callee of this function, but no
+// direct call to it appears in the bytes; it is probably the vtable dispatch target at slot +0xF0 (not verified).
+extern uint8_t ext_005851B0(void* self, uint32_t arg1, uint32_t arg2);
+
+// @name NMData::FixedPathJointData::vfunc_67
+// @class NMData::FixedPathJointData
+// @summary Erases the element range [field_0x16c, field_0x170) from the child vector at +0x168, then calls ext_005EEB90 for each index in [0, vfunc_60()).
+// @field NMData::FixedPathJointData +0x0 void* vtable (vptr; vfunc_60 at slot +0xF0 is the element count)
+// @field NMData::FixedPathJointData +0x16C uint32_t field_0x16c (erase range begin)
+// @field NMData::FixedPathJointData +0x168 void* field_0x168 (address taken; vector container base for erase)
+// @field NMData::FixedPathJointData +0x170 uint32_t field_0x170 (erase range end)
+void fn_005EEDB0(void* self) {
+    const uint32_t first = lift_field<uint32_t>(self, 0x16C);
+    const uint32_t last = lift_field<uint32_t>(self, 0x170);
+
+    // Original: if first > last (unsigned), call the CRT invalid-parameter handler via IAT 0x925134, then continue.
+    if (first > last) {
+        mem_00925134();
+    }
+
+    // Erase [first, last) from the container embedded at this+0x168.
+    void* vec = &lift_field<uint8_t>(self, 0x168);
+    uint32_t ret_iter[2] = {0, 0};
+    ext_0048EF80(vec, ret_iter, vec, first, vec, last);
+
+    // Callee 0x005851B0 is listed for this function but has no direct call in the bytes; reference only, no call.
+    (void)&ext_005851B0;
+
+    // Loop: for (i = 0; i < vfunc_60(); ++i) ext_005EEB90(self, i);
+    // The count is re-fetched through the vtable on every iteration, as in the original.
+    using CountFn = int32_t (__thiscall*)(void*);
+    auto count = [self]() -> int32_t {
+        void* vtbl = lift_field<void*>(self, 0x0);
+        void* fn = lift_field<void*>(vtbl, 0xF0);
+        return reinterpret_cast<CountFn>(fn)(self);
+    };
+
+    for (int32_t i = 0; i < count(); ++i) {
+        ext_005EEB90(self, i);
+    }
+}
+} // namespace lift_005EEDB0

@@ -34199,6 +34199,13 @@
     "summary": "Forwards code 0x22F to FixedPathJointData::vfunc_15; otherwise calls fillPairWithStaticObject, then returns self.",
     "lifted_path": "lifted/NMData/HingeData.cpp"
   },
+  "0x005EEDB0": {
+    "name": "NMData::FixedPathJointData::vfunc_67",
+    "class": "NMData::FixedPathJointData",
+    "signature": "void fn_005EEDB0(void* self)",
+    "summary": "Erases the element range [field_0x16c, field_0x170) from the child vector at +0x168, then calls ext_005EEB90 for each index in [0, vfunc_60()).",
+    "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
+  },
   "0x005EF8A0": {
     "name": "NMData::HingeData::vfunc_59",
     "class": "NMData::HingeData",
