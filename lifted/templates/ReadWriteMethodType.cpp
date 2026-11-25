@@ -10092,3 +10092,27 @@ void __stdcall fn_004D5980(void* self) {
         static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE5D14));
 }
 } // namespace lift_004D5980
+
+// [0x004D5BE0] ExprParser::ReadWriteMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, int, {public: void __thiscall NMData::RigEventData::setInitialPhysicsTicks(int), 0}>::vfunc_40 (122 bytes)
+namespace lift_004D5BE0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (calls ext_00672000 on self, then stores the stack argument into the first DWORD of self; returns that value).
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern int mem_00AE5D20;
+extern int mem_00AE5D1C;
+
+// @name ExprParser::ReadWriteMethodType<RigEventData,int>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, int, {public: void __thiscall NMData::RigEventData::setInitialPhysicsTicks(int), 0}>
+// @summary One-time init of the static ValuePtr singleton at 0xAE5D1C, then stores its address into self+0x04.
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+void fn_004D5BE0(void* self) {
+    // Lazy one-time init guarded by bit 0 of the static flag at 0xAE5D20.
+    if ((mem_00AE5D20 & 1) == 0) {
+        mem_00AE5D20 |= 1;
+        ext_0067A670(&mem_00AE5D1C, 0);
+        // Install the vtable pointer for the static object (0x00948B1C).
+        lift_field<uint32_t>(&mem_00AE5D1C, 0) = 0x00948B1CU;
+    }
+    // Both paths: self->field_0x04 = &mem_00AE5D1C.
+    lift_field<uint32_t>(self, 0x04) = 0x00AE5D1CU;
+}
+} // namespace lift_004D5BE0
