@@ -1,0 +1,27 @@
+{
+  "va": "0x005862A0",
+  "size": 89,
+  "orig_symbol": "sub_005862A0",
+  "src_path": "src/leaf/decompiled_580000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_580000.cpp",
+  "name": "visitChildren_005862A0",
+  "signature": "static void visitChildren_005862A0(void* self)",
+  "summary": "Calls virtual slot 0xA8 on self, then recursively visits each pointer in the child array delimited by self+0x80 (begin) and self+0x84 (end).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x80",
+      "type": "uint32_t",
+      "name": "field_0x80"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x84",
+      "type": "uint32_t",
+      "name": "field_0x84"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:16:49Z"
+}

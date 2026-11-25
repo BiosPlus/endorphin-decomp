@@ -23243,6 +23243,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005862A0": {
+    "name": "visitChildren_005862A0",
+    "signature": "static void visitChildren_005862A0(void* self)",
+    "summary": "Calls virtual slot 0xA8 on self, then recursively visits each pointer in the child array delimited by self+0x80 (begin) and self+0x84 (end).",
+    "lifted_path": "lifted/leaf/decompiled_580000.cpp"
+  },
   "0x005877A0": {
     "name": "IdentityNode::vfunc_1_off_C",
     "class": "IdentityNode",

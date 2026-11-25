@@ -709,7 +709,7 @@ struct Unknown_Fields {
     // +0x80  DWORD                    cachedA  (evidence: 0x007051F0, 0x0070BF00) // CONFLICT: multiple definitions at +0x80
     // +0x80  float                    field_0x80  (evidence: 0x00622B40, 0x0062E290) // CONFLICT: multiple definitions at +0x80
     // +0x80  int32_t                  field_0x80  (evidence: 0x007C8490, 0x007CDB70) // CONFLICT: multiple definitions at +0x80
-    // +0x80  uint32_t                 field_0x80  (evidence: 0x006B7DC0) // CONFLICT: multiple definitions at +0x80
+    // +0x80  uint32_t                 field_0x80  (evidence: 0x005862A0, 0x006B7DC0) // CONFLICT: multiple definitions at +0x80
     // +0x80  void*                    field_0x80  (evidence: 0x006D0490) // CONFLICT: multiple definitions at +0x80
     // +0x80  uint32_t                 storedValue  (evidence: 0x006F99B0) // CONFLICT: multiple definitions at +0x80
     // +0x84  DWORD                    cachedB  (evidence: 0x007051F0, 0x0070BF00) // CONFLICT: multiple definitions at +0x84
@@ -717,7 +717,7 @@ struct Unknown_Fields {
     // +0x84  BYTE                     field_0x84  (evidence: 0x00530740) // CONFLICT: multiple definitions at +0x84
     // +0x84  float                    field_0x84  (evidence: 0x00622B40, 0x0062E290) // CONFLICT: multiple definitions at +0x84
     // +0x84  std::string              field_0x84  (evidence: 0x00465960) // CONFLICT: multiple definitions at +0x84
-    // +0x84  uint32_t                 field_0x84  (evidence: 0x00420070, 0x00422B20, 0x006B7DC0, 0x00705760, 0x0070AD00, 0x0070BF00) // CONFLICT: multiple definitions at +0x84
+    // +0x84  uint32_t                 field_0x84  (evidence: 0x00420070, 0x00422B20, 0x005862A0, 0x006B7DC0, 0x00705760, 0x0070AD00, 0x0070BF00) // CONFLICT: multiple definitions at +0x84
     // +0x84  uint8_t[]                field_0x84  (evidence: 0x00406030, 0x0040BE90, 0x0040C300) // CONFLICT: multiple definitions at +0x84
     // +0x86  BYTE                     field_0x86  (evidence: 0x00530740)
     // +0x88  float                    field_0x88  (evidence: 0x00622B40, 0x0062E290) // CONFLICT: multiple definitions at +0x88

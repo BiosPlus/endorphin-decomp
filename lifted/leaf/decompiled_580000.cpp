@@ -596,3 +596,32 @@ void fn_00585120(void* self, uintptr_t arg1, float arg2) {
     forward(obj2, arg1, vec, arg2);
 }
 } // namespace lift_00585120
+
+// [0x005862A0]
+namespace lift_005862A0 {
+// @name visitChildren_005862A0
+// @summary Calls virtual slot 0xA8 on self, then recursively visits each pointer in the child array delimited by self+0x80 (begin) and self+0x84 (end).
+// @field Unknown +0x80 uint32_t field_0x80
+// @field Unknown +0x84 uint32_t field_0x84
+
+// Original is a 32-bit __thiscall; `self` is passed in ECX.
+// Pointer-sized fields are read as 32-bit values to match the game's layout.
+static void visitChildren_005862A0(void* self) {
+    unsigned char* base = static_cast<unsigned char*>(self);
+
+    // Virtual call: vtable = *(self), slot at byte offset 0xA8 (index 42 for 4-byte entries).
+    uint32_t vtblAddr = *reinterpret_cast<uint32_t*>(base);
+    uint32_t fnAddr = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(vtblAddr) + 0xA8);
+    using VFn = void (*)(void*);
+    reinterpret_cast<VFn>(static_cast<uintptr_t>(fnAddr))(self);
+
+    // Child array: [field_0x80, field_0x84) of 4-byte pointers.
+    uint32_t cur = *reinterpret_cast<uint32_t*>(base + 0x80);
+    const uint32_t end = *reinterpret_cast<uint32_t*>(base + 0x84);
+    while (cur != end) {
+        uint32_t child = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(cur));
+        visitChildren_005862A0(reinterpret_cast<void*>(static_cast<uintptr_t>(child)));
+        cur += 4;
+    }
+}
+} // namespace lift_005862A0
