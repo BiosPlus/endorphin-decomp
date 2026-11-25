@@ -1011,3 +1011,22 @@ void* fn_00456DE0(void* self, void* arg1) {
     return result;
 }
 } // namespace lift_00456DE0
+
+// [0x00454B20]
+namespace lift_00454B20 {
+// @name Unknown::postNcPaintAfterFlagCheck_00454B20
+// @class Unknown
+// @summary Calls the flag-check helper with (arg1, arg2), then sends WM_NCPAINT (0x85) with zero wParam/lParam to the window at +0x20; returns the helper's result.
+// @field Unknown +0x20 HWND field_0x20
+
+
+extern void* ext_00456DE0(void* self, void* arg1, void* arg2);
+extern LRESULT (*mem_00925694)(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+
+void* fn_00454B20(void* self, void* arg1, void* arg2) {
+    void* result = ext_00456DE0(self, arg1, arg2);
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+    mem_00925694(hwnd, 0x85, 0, 0);
+    return result;
+}
+} // namespace lift_00454B20

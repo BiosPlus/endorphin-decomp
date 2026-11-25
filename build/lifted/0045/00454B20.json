@@ -1,0 +1,22 @@
+{
+  "va": "0x00454B20",
+  "size": 49,
+  "orig_symbol": "sub_00454B20",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "Unknown::postNcPaintAfterFlagCheck_00454B20",
+  "class": "Unknown",
+  "signature": "void* fn_00454B20(void* self, void* arg1, void* arg2)",
+  "summary": "Calls the flag-check helper with (arg1, arg2), then sends WM_NCPAINT (0x85) with zero wParam/lParam to the window at +0x20; returns the helper's result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:04:18Z"
+}
