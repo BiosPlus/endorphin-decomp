@@ -679,3 +679,36 @@ void fn_00687890(void* first, void* end, const void* src) {
     } while (dst != reinterpret_cast<uint8_t*>(end));
 }
 } // namespace lift_00687890
+
+// [0x00687420]
+namespace lift_00687420 {
+// @name copyBackwardStruct0x24
+// @summary Copies a range of 0x24-byte structs backward, copying a u32, a u8, and assigning a std::string at +0x08.
+
+
+extern uint32_t mem_00924FDC;
+
+using StringAssignFn = uint32_t(__thiscall*)(uint32_t dst_str, uint32_t src_str);
+
+uint32_t __cdecl sub_00687420(uint32_t first, uint32_t last, uint32_t dest_end) {
+    uint32_t esi = last;
+    if (first == esi) {
+        return dest_end;
+    }
+
+    uint32_t edi = dest_end;
+    auto string_assign = reinterpret_cast<StringAssignFn>(static_cast<uintptr_t>(mem_00924FDC));
+
+    do {
+        esi -= 0x24;
+        edi -= 0x24;
+        *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(edi)) =
+            *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(esi));
+        *reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(edi + 0x4)) =
+            *reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(esi + 0x4));
+        string_assign(edi + 0x8, esi + 0x8);
+    } while (esi != first);
+
+    return edi;
+}
+} // namespace lift_00687420
