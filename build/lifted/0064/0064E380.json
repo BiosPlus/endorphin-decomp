@@ -1,0 +1,22 @@
+{
+  "va": "0x0064E380",
+  "size": 106,
+  "orig_symbol": "SkeletalJoint::vfunc_18",
+  "src_path": "src/classes/SkeletalJoint.cpp",
+  "lifted_path": "lifted/classes/SkeletalJoint.cpp",
+  "name": "SkeletalJoint::vfunc_18",
+  "class": "SkeletalJoint",
+  "signature": "void __thiscall fn_0064E380(void* self, float* out)",
+  "summary": "Retrieves joint limits into an output 3-float array based on flags from field_0x64.",
+  "fields": [
+    {
+      "class": "SkeletalJoint",
+      "offset": "+0x64",
+      "type": "uint32_t",
+      "name": "field_0x64"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:06:26Z"
+}

@@ -46312,6 +46312,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0064DEE0 (Unknown::AccumulateAndDispatchField64).",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x0064E380": {
+    "name": "SkeletalJoint::vfunc_18",
+    "class": "SkeletalJoint",
+    "signature": "void __thiscall fn_0064E380(void* self, float* out)",
+    "summary": "Retrieves joint limits into an output 3-float array based on flags from field_0x64.",
+    "lifted_path": "lifted/classes/SkeletalJoint.cpp"
+  },
   "0x0064E3F0": {
     "name": "SkeletalJoint::vfunc_19",
     "class": "SkeletalJoint",
