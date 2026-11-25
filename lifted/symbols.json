@@ -2694,6 +2694,12 @@
     "summary": "Checks a nested object's vtable+0x11c predicate and field+0x60 == 0, then tail-calls arg0's vtable[0] with the boolean result.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x00430C50": {
+    "name": "ForwardNegatedNestedVirtualResult",
+    "signature": "uint32_t read_u32(uint32_t base, uint32_t offset)",
+    "summary": "If ext_00430370() is nonzero, calls vtable slot +0x11C on the object from ext_00468660(ext_00465B30()) and forwards (result == 0) to self's vtable slot 0; otherwise forwards 1 to self's vtable slot 0. Stdcall, one argument (ret 4).",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00430CA0": {
     "name": "Unknown::forwardVirtual0WithArg1",
     "class": "Unknown",

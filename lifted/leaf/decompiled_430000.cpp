@@ -2444,3 +2444,52 @@ void fn_00433320(void* self) {
     ext_0065C660(self);
 }
 } // namespace lift_00433320
+
+// [0x00430C50] sub_00430C50 (78 bytes)
+namespace lift_00430C50 {
+// Known callee 0x00430370: CheckFieldAt60IsZero. Returns 1 if the int32 at +0x60 of the global object is zero.
+extern uint8_t ext_00430370(void);
+// Known callee 0x00465B30: get_global_field_0x58. Returns the int32 field at +0x58 of the global object.
+extern int32_t ext_00465B30(void);
+// Known callee 0x00468660: getNestedField_0x18_0xc. Returns the pointer stored at +0xC of the object at this+0x18.
+extern uint32_t ext_00468660(uint32_t this_ptr);
+
+namespace {
+
+uint32_t read_u32(uint32_t base, uint32_t offset) {
+    uint32_t value = 0;
+    std::memcpy(&value, reinterpret_cast<const void*>(static_cast<uintptr_t>(base + offset)), sizeof value);
+    return value;
+}
+
+} // namespace
+
+// @name ForwardNegatedNestedVirtualResult
+// @summary If ext_00430370() is nonzero, calls vtable slot +0x11C on the object from ext_00468660(ext_00465B30()) and forwards (result == 0) to self's vtable slot 0; otherwise forwards 1 to self's vtable slot 0. Stdcall, one argument (ret 4).
+// @field Unknown +0x00 void* vptr
+void fn_00430C50(void* self) {
+    const uint32_t self_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    using ArgSinkFn = void (*)(uint32_t self, int32_t arg);
+
+    if (ext_00430370() == 0) {
+        const uint32_t vt_self = read_u32(self_addr, 0x00);
+        const auto sink = reinterpret_cast<ArgSinkFn>(static_cast<uintptr_t>(read_u32(vt_self, 0x00)));
+        sink(self_addr, 1);
+        return;
+    }
+
+    using FlagGetterFn = uint8_t (*)(uint32_t self);
+
+    const int32_t global_value = ext_00465B30();
+    const uint32_t target = ext_00468660(static_cast<uint32_t>(global_value));
+    const uint32_t vt_self = read_u32(self_addr, 0x00);
+    const uint32_t vt_target = read_u32(target, 0x00);
+
+    const auto getter = reinterpret_cast<FlagGetterFn>(static_cast<uintptr_t>(read_u32(vt_target, 0x11C)));
+    const uint8_t result = getter(target);
+
+    const int32_t forwarded = (result == 0) ? 1 : 0;
+    const auto sink = reinterpret_cast<ArgSinkFn>(static_cast<uintptr_t>(read_u32(vt_self, 0x00)));
+    sink(self_addr, forwarded);
+}
+} // namespace lift_00430C50
