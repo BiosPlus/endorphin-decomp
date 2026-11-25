@@ -1557,3 +1557,44 @@ void __thiscall sub_00404CD0(void* self) {
     dtor(base + 0x04);
 }
 } // namespace lift_00404CD0
+
+// [0x0040FE10]
+namespace lift_0040FE10 {
+extern uint32_t mem_read32(uint32_t addr);
+extern void ext_006A6010(uint32_t self, uint32_t mode);
+
+// @name drawCenteredText
+// @summary Sets text color and transparent background mode on a DC, draws centered single-line text in a rect, and restores the previous text color.
+// @field DC +0x00 uint32_t* vtable
+void __stdcall fn_0040FE10(uint32_t dc, uint32_t rect_left, uint32_t rect_top, uint32_t rect_right, uint32_t rect_bottom, uint32_t text_ptr, uint32_t color) {
+    struct Rect {
+        uint32_t left;
+        uint32_t top;
+        uint32_t right;
+        uint32_t bottom;
+    } rect = { rect_left, rect_top, rect_right, rect_bottom };
+
+    using SetColorFn = uint32_t (__thiscall*)(uint32_t, uint32_t);
+    using DrawTextFn = uint32_t (__thiscall*)(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t);
+
+    uint32_t vtable = mem_read32(dc);
+    SetColorFn set_color = reinterpret_cast<SetColorFn>(static_cast<uintptr_t>(mem_read32(vtable + 0x38)));
+    uint32_t old_color = set_color(dc, color);
+
+    ext_006A6010(dc, 1);
+
+    const char* str = reinterpret_cast<const char*>(static_cast<uintptr_t>(text_ptr));
+    uint32_t len = 0;
+    while (str[len] != '\0') {
+        ++len;
+    }
+
+    vtable = mem_read32(dc);
+    DrawTextFn draw_text = reinterpret_cast<DrawTextFn>(static_cast<uintptr_t>(mem_read32(vtable + 0x70)));
+    draw_text(dc, text_ptr, len, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&rect)), 0x25);
+
+    vtable = mem_read32(dc);
+    set_color = reinterpret_cast<SetColorFn>(static_cast<uintptr_t>(mem_read32(vtable + 0x38)));
+    set_color(dc, old_color);
+}
+} // namespace lift_0040FE10
