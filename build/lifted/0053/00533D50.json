@@ -1,0 +1,28 @@
+{
+  "va": "0x00533D50",
+  "size": 33,
+  "orig_symbol": "sub_00533D50",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::dtor_00533D50",
+  "class": "Unknown",
+  "signature": "void fn_00533D50(void* self)",
+  "summary": "Resets vtable to 0x009547FC, deletes the display list at +0x30 if non-zero, then tail-calls the base dtor ext_00532B40.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "uint32_t",
+      "name": "field_0x30"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:10:58Z"
+}
