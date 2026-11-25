@@ -1,0 +1,51 @@
+{
+  "va": "0x00641350",
+  "size": 114,
+  "orig_symbol": "sub_00641350",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "Tree_find_i8",
+  "signature": "extern \"C\" uint32_t __thiscall sub_00641350(uint32_t self, uint32_t out_iter, uint32_t key_ptr)",
+  "summary": "Finds a signed-byte key in an MSVC red-black tree and returns an iterator.",
+  "fields": [
+    {
+      "class": "Tree",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "head"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "left"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "parent"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "right"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0xC",
+      "type": "int8_t",
+      "name": "key"
+    },
+    {
+      "class": "TreeNode",
+      "offset": "+0x2D",
+      "type": "uint8_t",
+      "name": "is_nil"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:40:53Z"
+}

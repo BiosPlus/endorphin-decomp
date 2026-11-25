@@ -2267,3 +2267,51 @@ void __cdecl sub_00641E90(void* str) {
     }
 }
 } // namespace lift_00641E90
+
+// [0x00641350]
+namespace lift_00641350 {
+// @name Tree_find_i8
+// @summary Finds a signed-byte key in an MSVC red-black tree and returns an iterator.
+// @field Tree +0x04 uint32_t head
+// @field TreeNode +0x00 uint32_t left
+// @field TreeNode +0x04 uint32_t parent
+// @field TreeNode +0x08 uint32_t right
+// @field TreeNode +0x0C int8_t key
+// @field TreeNode +0x2D uint8_t is_nil
+
+
+extern uint32_t mem_read32(uint32_t addr);
+extern uint8_t mem_read8(uint32_t addr);
+extern void mem_write32(uint32_t addr, uint32_t val);
+
+extern uint32_t __thiscall sub_00641350(uint32_t self, uint32_t out_iter, uint32_t key_ptr) {
+    uint32_t head = mem_read32(self + 0x4);
+    uint32_t where = head;
+    uint32_t node = mem_read32(head + 0x4);
+
+    if (mem_read8(node + 0x2d) == 0) {
+        int8_t key = static_cast<int8_t>(mem_read8(key_ptr));
+        do {
+            if (static_cast<int8_t>(mem_read8(node + 0xc)) < key) {
+                node = mem_read32(node + 0x8);
+            } else {
+                where = node;
+                node = mem_read32(node);
+            }
+        } while (mem_read8(node + 0x2d) == 0);
+    }
+
+    head = mem_read32(self + 0x4);
+    uint32_t result_node = head;
+    if (where != head) {
+        int8_t key = static_cast<int8_t>(mem_read8(key_ptr));
+        if (key >= static_cast<int8_t>(mem_read8(where + 0xc))) {
+            result_node = where;
+        }
+    }
+
+    mem_write32(out_iter, self);
+    mem_write32(out_iter + 0x4, result_node);
+    return out_iter;
+}
+} // namespace lift_00641350
