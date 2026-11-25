@@ -1,0 +1,13 @@
+{
+  "va": "0x0079AF40",
+  "size": 16,
+  "orig_symbol": "sub_0079AF40",
+  "src_path": "src/leaf/tiny_790000.cpp",
+  "lifted_path": "lifted/leaf/tiny_790000.cpp",
+  "name": "AllocGlobalMemory",
+  "signature": "uint32_t fn_0079AF40(uint32_t size)",
+  "summary": "Calls KERNEL32!GlobalAlloc(uFlags=0, dwBytes=size) through the IAT slot and returns the HGLOBAL. Cdecl caller cleans up the argument.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:29:24Z"
+}

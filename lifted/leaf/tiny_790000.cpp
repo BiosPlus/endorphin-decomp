@@ -505,3 +505,20 @@ extern void __fastcall fn_0079F380(void* self) {
     ext_007AA880(self);
 }
 } // namespace lift_0079F380
+
+// [0x0079AF40] sub_0079AF40 (16 bytes)
+namespace lift_0079AF40 {
+// IAT slot for KERNEL32!GlobalAlloc. The slot holds the resolved function address at runtime.
+extern uint32_t mem_009241F0;
+
+// @name AllocGlobalMemory
+// @summary Calls KERNEL32!GlobalAlloc(uFlags=0, dwBytes=size) through the IAT slot and returns the HGLOBAL. Cdecl caller cleans up the argument.
+
+// GlobalAlloc is stdcall; the IAT slot is called indirectly.
+using GlobalAllocFn = HGLOBAL(__stdcall*)(UINT uFlags, SIZE_T dwBytes);
+
+uint32_t fn_0079AF40(uint32_t size) {
+    auto global_alloc = reinterpret_cast<GlobalAllocFn>(static_cast<uintptr_t>(mem_009241F0));
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(global_alloc(0, size)));
+}
+} // namespace lift_0079AF40
