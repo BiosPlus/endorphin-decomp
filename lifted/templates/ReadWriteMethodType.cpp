@@ -10301,3 +10301,27 @@ void __stdcall fn_004DE980(void* self) {
     lift_field<void*>(self, 4) = static_cast<void*>(&mem_00AE641C);
 }
 } // namespace lift_004DE980
+
+// [0x004DEAE0] ExprParser::ReadWriteMethodType<NMData::AnimationEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::AnimationEventData::`vcall'{324, {flat}}, 0}>::vfunc_40 (122 bytes)
+namespace lift_004DEAE0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+extern int mem_00AE6428;
+extern int mem_00AE6424;
+
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData,...>::vfunc_40
+// @class ExprParser::ReadWriteMethodType<NMData::AnimationEventData,...>
+// @summary Lazily initializes the static holder at 0xAE6424 (one-time guard bit at 0xAE6428) and stores its address into the stack-argument object at +4.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_004DEAE0(void* holder) {
+    // One-time initialization guard (bit 0 of mem_00AE6428).
+    if ((mem_00AE6428 & 1) == 0) {
+        mem_00AE6428 |= 1;
+        // Constructs the static at &mem_00AE6424 (callee takes ECX = &mem_00AE6424 and one stack arg).
+        ext_0067A670();
+        // First DWORD of the static is its vtable pointer.
+        mem_00AE6424 = 0x00949F5C;
+    }
+    lift_field<void*>(holder, 4) = &mem_00AE6424;
+}
+} // namespace lift_004DEAE0

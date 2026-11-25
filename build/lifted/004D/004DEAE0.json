@@ -1,0 +1,22 @@
+{
+  "va": "0x004DEAE0",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::AnimationEventData::`vcall'{324, {flat}}, 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData,...\u003e::vfunc_40",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData,...\u003e",
+  "signature": "void fn_004DEAE0(void* holder)",
+  "summary": "Lazily initializes the static holder at 0xAE6424 (one-time guard bit at 0xAE6428) and stores its address into the stack-argument object at +4.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:35:12Z"
+}

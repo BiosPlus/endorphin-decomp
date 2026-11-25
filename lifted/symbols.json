@@ -16253,6 +16253,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004D50B0 (DynamicEnumType::vfunc_1).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004DEAE0": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData,...\u003e::vfunc_40",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData,...\u003e",
+    "signature": "void fn_004DEAE0(void* holder)",
+    "summary": "Lazily initializes the static holder at 0xAE6424 (one-time guard bit at 0xAE6428) and stores its address into the stack-argument object at +4.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004DEB60": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0\u003e",
