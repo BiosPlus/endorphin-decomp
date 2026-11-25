@@ -27567,6 +27567,12 @@
     "summary": "Stores a value into out[0] and the static singleton pointer into out[1].",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005B4030": {
+    "name": "storeValueWithStaticSingleton",
+    "signature": "void fn_005B4030(uint32_t* out, uint32_t value)",
+    "summary": "Writes a 32-bit value into out[0] and the static singleton pointer into out[1].",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B4150": {
     "name": "Geometry::SphereType::vfunc_18",
     "class": "Geometry::SphereType",

@@ -716,3 +716,17 @@ void fn_005B3FF0(void* dst, DWORD value) {
     lift_field<DWORD>(dst, 0x4) = singleton;
 }
 } // namespace lift_005B3FF0
+
+// [0x005B4030] sub_005B4030 (30 bytes)
+namespace lift_005B4030 {
+// Known callee 0x005B3D70: getStaticSingleton_005B3D70 (Initializes and returns a pointer to the static singleton at 0x00B4355C.)
+extern void* ext_005B3D70();
+
+// @name storeValueWithStaticSingleton
+// @summary Writes a 32-bit value into out[0] and the static singleton pointer into out[1].
+void fn_005B4030(uint32_t* out, uint32_t value) {
+    void* singleton = ext_005B3D70();
+    out[0] = value;
+    out[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(singleton));
+}
+} // namespace lift_005B4030
