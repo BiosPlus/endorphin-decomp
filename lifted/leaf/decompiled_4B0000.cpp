@@ -660,3 +660,27 @@ void* fn_004B99B0() {
     return &mem_00AE1694;
 }
 } // namespace lift_004B99B0
+
+// [0x004BA270] sub_004BA270 (87 bytes)
+namespace lift_004BA270 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern uint32_t mem_00AE16B0;
+extern uint32_t mem_00AE16AC;
+
+// @name initStaticObjectOnce_004BA270
+// @summary One-time guarded initializer for the static object at mem_00AE16AC; sets bit 0 of mem_00AE16B0, runs ext_0067A670 on the object, stores vtable-like pointer 0x00943694, and returns the object address.
+void* fn_004BA270() {
+    // The original wraps this in an MSVC SEH frame (fs:[0] push/pop). That
+    // is exception-state bookkeeping with no portable equivalent, so it is
+    // omitted; the guard and init logic below are unchanged.
+    if ((mem_00AE16B0 & 1u) == 0) {
+        mem_00AE16B0 |= 1u;
+        // The original passes a saved SEH word as the stack argument; it is
+        // overwritten by the vtable store below, so 0 is passed here.
+        ext_0067A670(&mem_00AE16AC, 0);
+        mem_00AE16AC = 0x00943694u;
+    }
+    return static_cast<void*>(&mem_00AE16AC);
+}
+} // namespace lift_004BA270

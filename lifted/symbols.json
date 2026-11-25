@@ -13166,6 +13166,12 @@
     "summary": "Calls sub_004B99B0 to obtain a 32-bit result and stores it into this+0x04.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x004BA270": {
+    "name": "initStaticObjectOnce_004BA270",
+    "signature": "void* fn_004BA270()",
+    "summary": "One-time guarded initializer for the static object at mem_00AE16AC; sets bit 0 of mem_00AE16B0, runs ext_0067A670 on the object, stores vtable-like pointer 0x00943694, and returns the object address.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004BA340": {
     "name": "lowerBoundStringPtr_004BA340",
     "signature": "DWORD* fn_004BA340(DWORD* first, DWORD* last, DWORD value)",
