@@ -771,6 +771,7 @@ struct Unknown_Fields {
     // +0x194 void*                    field_0x194  (evidence: 0x004CB400) // CONFLICT: multiple definitions at +0x194
     // +0x194 DWORD                    field_0x194[18]  (evidence: 0x007AA7F0, 0x007AA970, 0x007AC670) // CONFLICT: multiple definitions at +0x194
     // +0x198 float                    field_0x198  (evidence: 0x007C5C00, 0x007C8490)
+    // +0x1A0 RowFn                    callback  (evidence: 0x007BBB90)
     // +0x1A4 void* field_0x1a4 (callback: uint32_t(void* self, uint32_t cursor, uint32_t rowBytes, uint32_t arg))  (evidence: 0x007BBC30)
     // +0x1A8 HWND                     field_0x1A8  (evidence: 0x0045B4F0) // CONFLICT: multiple definitions at +0x1A8
     // +0x1A8 HWND                     field_0x1a8  (evidence: 0x00416B20) // CONFLICT: multiple definitions at +0x1A8

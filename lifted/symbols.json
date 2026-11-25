@@ -57050,6 +57050,13 @@
     "summary": "Invokes the callback stored at self +0x1A0 once per row-sized step over [start, start+count); returns 1 on success (or count == 0), 0 if the callback reports failure.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BBB90": {
+    "name": "Unknown::ForEachRow",
+    "class": "Unknown",
+    "signature": "uint32_t fn_007BBB90(void* self, uint32_t cursor, uint32_t remaining, uint32_t arg4)",
+    "summary": "Walks a byte span in row-sized steps, invoking the callback at +0x1a0 per row; returns 1 if the span was fully consumed.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BBBE0": {
     "name": "UnknownClass::processRows",
     "class": "UnknownClass",

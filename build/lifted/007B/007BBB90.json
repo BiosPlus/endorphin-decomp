@@ -1,0 +1,22 @@
+{
+  "va": "0x007BBB90",
+  "size": 70,
+  "orig_symbol": "sub_007BBB90",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "Unknown::ForEachRow",
+  "class": "Unknown",
+  "signature": "uint32_t fn_007BBB90(void* self, uint32_t cursor, uint32_t remaining, uint32_t arg4)",
+  "summary": "Walks a byte span in row-sized steps, invoking the callback at +0x1a0 per row; returns 1 if the span was fully consumed.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1A0",
+      "type": "RowFn",
+      "name": "callback"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:26:26Z"
+}
