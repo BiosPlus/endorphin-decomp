@@ -527,3 +527,21 @@ uint32_t SendMessageWithField20(uint8_t* self) {
     return send(hwnd, 0x18B, 0, 0);
 }
 } // namespace lift_0040BEE0
+
+// [0x004046E0]
+namespace lift_004046E0 {
+extern int (__stdcall *mem_00925688)(void* hWnd, const void* lpRect, int bErase);
+
+// @name CWnd::SetField54AndInvalidate
+// @class CWnd
+// @summary Sets field_0x54 and invalidates the window rect if HWND (field_0x20) is non-null.
+// @field CWnd +0x20 void* hWnd
+// @field CWnd +0x54 uint32_t field_0x54
+void __thiscall sub_004046E0(void* self, uint32_t value) {
+    lift_field<uint32_t>(self, 0x54) = value;
+    void* hwnd = lift_field<void*>(self, 0x20);
+    if (hwnd != nullptr) {
+        mem_00925688(hwnd, nullptr, 1);
+    }
+}
+} // namespace lift_004046E0
