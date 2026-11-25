@@ -1,0 +1,34 @@
+{
+  "va": "0x006FA830",
+  "size": 52,
+  "orig_symbol": "sub_006FA830",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "Unknown::removeEntriesAndReleaseFlagged",
+  "class": "Unknown",
+  "signature": "extern \"C\" void fn_006FA830(void* ecx)",
+  "summary": "Walks the pointer DynamicArray at +0x2C backwards (count from +0x1C), removing each element from the array via fn_006FA460 and calling its vtable slot 1 with 0 when its flag bit 0x10 (at +0x34) is set.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "int32_t",
+      "name": "field_0x1C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x2C",
+      "type": "void*",
+      "name": "field_0x2C"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x34",
+      "type": "uint32_t",
+      "name": "field_0x34"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:55:43Z"
+}

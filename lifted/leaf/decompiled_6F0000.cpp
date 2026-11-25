@@ -1633,3 +1633,74 @@ void fn_006FA460(void* self, int32_t value) {
     }
 }
 } // namespace lift_006FA460
+
+// [0x006F7560]
+namespace lift_006F7560 {
+uint32_t mem_read32(uint32_t addr);
+
+// @name getValidatedTarget
+// @summary Returns field_0x19c if its virtual type (vtable +0x8) matches field_0x198 (0->6 or 1->8 and != this), else 0
+// @field Self +0x198 uint32_t field_0x198
+// @field Self +0x19c uint32_t field_0x19c
+uint32_t __thiscall sub_006F7560(uint32_t self) {
+    uint32_t target = mem_read32(self + 0x19C);
+    if (target == 0) {
+        return 0;
+    }
+
+    uint32_t mode = mem_read32(self + 0x198);
+    if (mode == 0) {
+        uint32_t vtable = mem_read32(target);
+        auto fn = reinterpret_cast<uint32_t(__thiscall*)(uint32_t)>(mem_read32(vtable + 0x8));
+        if (fn(target) == 6) {
+            return mem_read32(self + 0x19C);
+        }
+    }
+
+    if (mem_read32(self + 0x198) == 1) {
+        uint32_t ecx = mem_read32(self + 0x19C);
+        uint32_t vtable = mem_read32(ecx);
+        auto fn = reinterpret_cast<uint32_t(__thiscall*)(uint32_t)>(mem_read32(vtable + 0x8));
+        if (fn(ecx) == 8) {
+            uint32_t res = mem_read32(self + 0x19C);
+            if (res != self) {
+                return res;
+            }
+        }
+    }
+
+    return 0;
+}
+} // namespace lift_006F7560
+
+// [0x006FA830]
+namespace lift_006FA830 {
+// @name Unknown::removeEntriesAndReleaseFlagged
+// @class Unknown
+// @summary Walks the pointer DynamicArray at +0x2C backwards (count from +0x1C), removing each element from the array via fn_006FA460 and calling its vtable slot 1 with 0 when its flag bit 0x10 (at +0x34) is set.
+// @field Unknown +0x1C int32_t field_0x1C
+// @field Unknown +0x2C void* field_0x2C
+// @field Element +0x34 uint32_t field_0x34
+
+extern void ext_006FA460(void* self, int32_t value);
+
+extern void fn_006FA830(void* ecx) {
+    int32_t i = lift_field<int32_t>(ecx, 0x1C) - 1;
+    while (i >= 0) {
+        // The array is re-read on every iteration because ext_006FA460 may modify it.
+        void** data = lift_field<void**>(ecx, 0x2C);
+        void* element = data[i];
+
+        ext_006FA460(ecx, static_cast<int32_t>(reinterpret_cast<intptr_t>(element)));
+
+        uint32_t flags = lift_field<uint32_t>(element, 0x34);
+        if ((flags & 0x10u) == 0x10u) {
+            void** vtable = *reinterpret_cast<void***>(element);
+            auto slot1 = reinterpret_cast<void (*)(void*, int32_t)>(vtable[1]);
+            slot1(element, 0);
+        }
+
+        --i;
+    }
+}
+} // namespace lift_006FA830

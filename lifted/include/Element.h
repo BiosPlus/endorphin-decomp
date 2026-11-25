@@ -19,6 +19,7 @@ struct Element_Fields {
     // +0x1C  int32_t                  field_0x1C  (evidence: 0x004C4390, 0x004C72D0) // CONFLICT: multiple definitions at +0x1C
     // +0x1C  std::string              field_0x1C  (evidence: 0x00575230) // CONFLICT: multiple definitions at +0x1C
     // +0x20  float                    field_0x20  (evidence: 0x00508BC0, 0x00509C50, 0x0050A6E0, 0x0050C4D0)
+    // +0x34  uint32_t                 field_0x34  (evidence: 0x006FA830)
     // +0x38  std::string              field_0x38  (evidence: 0x00575230)
 };
 } // namespace lifted_layout
