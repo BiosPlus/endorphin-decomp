@@ -902,3 +902,24 @@ void fn_004B5030(void* self) {
     ext_00665810(self);
 }
 } // namespace lift_004B5030
+
+// [0x004B7540] sub_004B7540 (95 bytes)
+namespace lift_004B7540 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+// Known callee 0x006A6C87: sub_006A6C87 (18B), called with a single argument (0x009184B0).
+void* ext_0066AD10(void* out_str, uint8_t flag);
+int ext_006A6C87(uintptr_t arg);
+extern uint32_t mem_00AE1658;
+extern uint32_t mem_00AE163C;
+
+// @name InitOnceGlobalString_004B7540
+// @summary One-time initializer for global string at mem_00AE163C; returns its address.
+void* fn_004B7540() {
+    if ((mem_00AE1658 & 1u) == 0) {
+        mem_00AE1658 |= 1u;
+        ext_0066AD10(&mem_00AE163C, static_cast<uint8_t>(0xA328D4u));
+        ext_006A6C87(static_cast<uintptr_t>(0x009184B0u));
+    }
+    return &mem_00AE163C;
+}
+} // namespace lift_004B7540

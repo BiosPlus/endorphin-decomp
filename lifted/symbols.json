@@ -13026,6 +13026,12 @@
     "summary": "Lazily constructs the shared static object on first use, then stores its address into the out argument at +0x04.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x004B7540": {
+    "name": "InitOnceGlobalString_004B7540",
+    "signature": "void* fn_004B7540()",
+    "summary": "One-time initializer for global string at mem_00AE163C; returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B77C0": {
     "name": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RenameElementCommand::vfunc_4",
     "class": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RenameElementCommand",
