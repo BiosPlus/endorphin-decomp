@@ -710,3 +710,21 @@ uint8_t* fn_007AF8F0(uint16_t key) {
     return nullptr;
 }
 } // namespace lift_007AF8F0
+
+// [0x007AE140] sub_007AE140 (80 bytes)
+namespace lift_007AE140 {
+// Default machine-name string in .data, copied when GetComputerNameA fails.
+extern const char mem_00AAC03C[];
+extern BOOL __stdcall ext_GetComputerNameA(LPSTR lpBuffer, DWORD* nSize);
+
+// @name GetComputerNameOrFallback
+// @summary Calls GetComputerNameA into buffer; on failure copies the fixed default name (including NUL) into buffer and returns false.
+bool fn_007AE140(LPSTR buffer, DWORD nSize) {
+    if (ext_GetComputerNameA(buffer, &nSize)) {
+        return true;
+    }
+    const char* src = mem_00AAC03C;
+    std::memcpy(buffer, src, std::strlen(src) + 1);
+    return false;
+}
+} // namespace lift_007AE140

@@ -49617,6 +49617,12 @@
     "summary": "Initializes a 16-byte object: stores arg2 at +0x00, zeroes +0x04 and +0x08, stores arg1 at +0x0C (thiscall, ret 8).",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E6800": {
+    "name": "destroyPairMembers",
+    "signature": "extern \"C\" void fn_006E6800(void* self)",
+    "summary": "Destroys member at +0x50 and self using sub_006B9D70.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E6850": {
     "name": "ForwardFlagThenNotifySecondary",
     "class": "Unknown",
@@ -58953,6 +58959,12 @@
     "signature": "extern \"C\" int32_t __fastcall fn_007AE130(void)",
     "summary": "Passes the address of global mem_00B61758 in ECX to fn_006E7460 (tail-jump thunk) and returns its result.",
     "lifted_path": "lifted/leaf/tiny_7A0000.cpp"
+  },
+  "0x007AE140": {
+    "name": "GetComputerNameOrFallback",
+    "signature": "bool fn_007AE140(LPSTR buffer, DWORD nSize)",
+    "summary": "Calls GetComputerNameA into buffer; on failure copies the fixed default name (including NUL) into buffer and returns false.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
   "0x007AE1D0": {
     "name": "sub_007AE1D0",
