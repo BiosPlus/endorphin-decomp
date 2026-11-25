@@ -405,3 +405,17 @@ float fn_007F6750(const float* a, const float* b, const float* c, const float* d
     return static_cast<float>(result);
 }
 } // namespace lift_007F6750
+
+// [0x007F9CE0] sub_007F9CE0 (103 bytes)
+namespace lift_007F9CE0 {
+// @name CopyFloatArrayForward
+// @summary Copies `count` consecutive floats from src to dst in ascending order (cdecl, 3 args).
+void fn_007F9CE0(int32_t count, float* dst, const float* src) {
+    // Equivalent to: for (i = 0; i < count; ++i) dst[i] = src[i];
+    // The original unrolls by 4 and falls back to a scalar tail; both forward-copy
+    // exactly `count` floats, so the single loop below is behaviour-preserving.
+    for (int32_t i = 0; i < count; ++i) {
+        dst[i] = src[i];
+    }
+}
+} // namespace lift_007F9CE0

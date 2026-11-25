@@ -68890,6 +68890,12 @@
     "summary": "qsort-style comparator for two structs by their float field at +0x10",
     "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
   },
+  "0x007F9CE0": {
+    "name": "CopyFloatArrayForward",
+    "signature": "void fn_007F9CE0(int32_t count, float* dst, const float* src)",
+    "summary": "Copies `count` consecutive floats from src to dst in ascending order (cdecl, 3 args).",
+    "lifted_path": "lifted/leaf/decompiled_7F0000.cpp"
+  },
   "0x007FC290": {
     "name": "copyVec3Float",
     "signature": "void copyVec3Float(const float* src, float* dst)",

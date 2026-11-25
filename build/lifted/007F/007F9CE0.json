@@ -1,0 +1,13 @@
+{
+  "va": "0x007F9CE0",
+  "size": 103,
+  "orig_symbol": "sub_007F9CE0",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "CopyFloatArrayForward",
+  "signature": "void fn_007F9CE0(int32_t count, float* dst, const float* src)",
+  "summary": "Copies `count` consecutive floats from src to dst in ascending order (cdecl, 3 args).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:48:25Z"
+}
