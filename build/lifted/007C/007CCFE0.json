@@ -1,0 +1,33 @@
+{
+  "va": "0x007CCFE0",
+  "size": 93,
+  "orig_symbol": "sub_007CCFE0",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "TriangularTableLookup",
+  "signature": "uint32_t fn_007CCFE0(void* self, uint32_t x, uint32_t y)",
+  "summary": "Returns a dword from a triangular-indexed table of 0x58-byte records, or 0 if either index exceeds the count at +0x00.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x54",
+      "type": "uint32_t field_0x54 (record field, per table",
+      "name": "element)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:19:50Z"
+}

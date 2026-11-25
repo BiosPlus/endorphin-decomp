@@ -1419,3 +1419,34 @@ uint32_t fn_007CCF80(const TriangularPairLookup* table, uint32_t a, uint32_t b) 
     return value;
 }
 } // namespace lift_007CCF80
+
+// [0x007CCFE0] sub_007CCFE0 (93 bytes)
+namespace lift_007CCFE0 {
+// @name TriangularTableLookup
+// @summary Returns a dword from a triangular-indexed table of 0x58-byte records, or 0 if either index exceeds the count at +0x00.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x08 uint8_t* field_0x08
+// @field Unknown +0x54 uint32_t field_0x54 (record field, per table element)
+uint32_t fn_007CCFE0(void* self, uint32_t x, uint32_t y) {
+    const uint32_t n = lift_field<uint32_t>(self, 0x00);
+    if (x > n) {
+        return 0;
+    }
+    if (y > n) {
+        return 0;
+    }
+
+    // Branchless min/max of (x, y) using the sign of (y - x).
+    const uint32_t diff = y - x;
+    const uint32_t m = static_cast<uint32_t>(static_cast<int32_t>(diff) >> 31);
+    const uint32_t hi = (m & x) | (~m & y);
+    const uint32_t lo = (~m & x) | (m & y);
+
+    // Triangular index: lo * n + hi - lo * (lo + 1) / 2.
+    const uint32_t tri = static_cast<uint32_t>(static_cast<int32_t>((lo + 1) * lo) >> 1);
+    const uint32_t idx = hi - tri + n * lo;
+
+    uint8_t* records = lift_field<uint8_t*>(self, 0x08);
+    return lift_field<uint32_t>(records, idx * 0x58u + 0x54u);
+}
+} // namespace lift_007CCFE0
