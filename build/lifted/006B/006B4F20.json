@@ -1,0 +1,22 @@
+{
+  "va": "0x006B4F20",
+  "size": 88,
+  "orig_symbol": "GWCPropInPlaceDateTime::vfunc_66",
+  "src_path": "src/classes/GWCPropInPlaceDateTime.cpp",
+  "lifted_path": "lifted/classes/GWCPropInPlaceDateTime.cpp",
+  "name": "GWCPropInPlaceDateTime::PreTranslateMessage",
+  "class": "GWCPropInPlaceDateTime",
+  "signature": "extern \"C\" int32_t __thiscall fn_006B4F20(void* self, void* pMsg)",
+  "summary": "Intercepts Return and Escape keydown messages, removes them from the queue, and moves focus to the parent window.",
+  "fields": [
+    {
+      "class": "GWCPropInPlaceDateTime",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "m_hWnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:19:16Z"
+}
