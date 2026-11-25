@@ -723,3 +723,31 @@ uint32_t sub_00859A50(uint32_t dst, uint32_t src, uint32_t count) {
     return dst;
 }
 } // namespace lift_00859A50
+
+// [0x00859AF0]
+namespace lift_00859AF0 {
+// @name destroyTreeNode
+// @summary Recursively destroys a node's right/child (+0x20 if flag 0x20000000 set) and left/next (+0x1c) pointers, then frees the node.
+// @field Node +0x00 uint32_t flags
+// @field Node +0x1c void* field_0x1c
+// @field Node +0x20 void* field_0x20
+
+
+extern void ext_0086CD00(void* ptr);
+
+void sub_00859AF0(uint32_t* node) {
+    if (((*node >> 24) & 0x20u) != 0) {
+        uint32_t* child20 = *reinterpret_cast<uint32_t**>(reinterpret_cast<uint8_t*>(node) + 0x20);
+        if (child20 != nullptr) {
+            sub_00859AF0(child20);
+        }
+    }
+
+    uint32_t* child1c = *reinterpret_cast<uint32_t**>(reinterpret_cast<uint8_t*>(node) + 0x1c);
+    if (child1c != nullptr) {
+        sub_00859AF0(child1c);
+    }
+
+    ext_0086CD00(node);
+}
+} // namespace lift_00859AF0

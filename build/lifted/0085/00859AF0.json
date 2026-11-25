@@ -1,0 +1,33 @@
+{
+  "va": "0x00859AF0",
+  "size": 64,
+  "orig_symbol": "sub_00859AF0",
+  "src_path": "src/leaf/decompiled_850000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_850000.cpp",
+  "name": "destroyTreeNode",
+  "signature": "void sub_00859AF0(uint32_t* node)",
+  "summary": "Recursively destroys a node's right/child (+0x20 if flag 0x20000000 set) and left/next (+0x1c) pointers, then frees the node.",
+  "fields": [
+    {
+      "class": "Node",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "flags"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Node",
+      "offset": "+0x20",
+      "type": "void*",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:17:53Z"
+}
