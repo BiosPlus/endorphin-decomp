@@ -1,0 +1,28 @@
+{
+  "va": "0x00612310",
+  "size": 82,
+  "orig_symbol": "sub_00612310",
+  "src_path": "src/leaf/decompiled_610000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_610000.cpp",
+  "name": "Unknown::applySourceParams",
+  "class": "Unknown",
+  "signature": "inline float load_f32(const uint8_t* p)",
+  "summary": "Copies source float/byte params into this object: stores src+0x08 into the element at index of the +0x08 sub-array, forwards src+0x0C and src+0x14 to the slot setters, and writes src+0x04 (byte) at this + slot(index) + 4.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "UnknownClass",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:19:38Z"
+}

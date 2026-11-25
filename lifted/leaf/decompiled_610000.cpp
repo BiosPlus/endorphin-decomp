@@ -546,3 +546,51 @@ float __thiscall fn_00611120(void* self, uint32_t index) {
     return value;
 }
 } // namespace lift_00611120
+
+// [0x00612310] sub_00612310 (82 bytes)
+namespace lift_00612310 {
+// Known callee 0x005B11D0: UnknownClass::getElementPtr (Returns a pointer to the 32-bit element at the given index in an inline array at offset 0x10.)
+extern uint32_t* ext_005B11D0(void* self, uint32_t index);
+// Callee 0x006110E0: unknown thiscall (self, index, value); no signature recovered yet.
+extern void ext_006110E0(void* self, uint32_t index, float value);
+// Known callee 0x00611100: setSlotValue (Maps index to a slot via mapIndexToOffset and stores a float into the slot array at +0xAC.)
+extern void ext_00611100(void* self, uint32_t index, float value);
+// Known callee 0x006110A0: mapIndexToOffset (Maps an unsigned index (0..3) to a slot index (0, 1, 1, 2) or 4 if out of range.)
+extern uint32_t ext_006110A0(uint32_t index);
+
+namespace {
+
+inline float load_f32(const uint8_t* p) {
+    float f;
+    std::memcpy(&f, p, sizeof f);
+    return f;
+}
+
+} // namespace
+
+// @name Unknown::applySourceParams
+// @class Unknown
+// @summary Copies source float/byte params into this object: stores src+0x08 into the element at index of the +0x08 sub-array, forwards src+0x0C and src+0x14 to the slot setters, and writes src+0x04 (byte) at this + slot(index) + 4.
+// @field Unknown +0x04 uint8_t field_0x04
+// @field Unknown +0x08 UnknownClass field_0x08
+void fn_00612310(void* self, const uint8_t* src, uint32_t index) {
+    // src layout (argument, class not recovered):
+    //   src+0x04 : uint8_t  flag
+    //   src+0x08 : float    elementValue
+    //   src+0x0C : float    slotValueA
+    //   src+0x14 : float    slotValueB
+    auto* base = static_cast<uint8_t*>(self);
+
+    // Store elementValue into the 32-bit element at index of this+0x08 (UnknownClass).
+    const float elementValue = load_f32(src + 0x08);
+    uint32_t* element = ext_005B11D0(base + 0x08, index);
+    std::memcpy(element, &elementValue, sizeof elementValue);
+
+    ext_006110E0(self, index, load_f32(src + 0x0C));
+    ext_00611100(self, index, load_f32(src + 0x14));
+
+    // Byte store at this + slot(index) + 4.
+    const uint32_t slot = ext_006110A0(index);
+    base[slot + 0x04] = src[0x04];
+}
+} // namespace lift_00612310

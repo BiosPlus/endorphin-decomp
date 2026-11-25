@@ -32507,6 +32507,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00610D10 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00612310": {
+    "name": "Unknown::applySourceParams",
+    "class": "Unknown",
+    "signature": "inline float load_f32(const uint8_t* p)",
+    "summary": "Copies source float/byte params into this object: stores src+0x08 into the element at index of the +0x08 sub-array, forwards src+0x0C and src+0x14 to the slot setters, and writes src+0x04 (byte) at this + slot(index) + 4.",
+    "lifted_path": "lifted/leaf/decompiled_610000.cpp"
+  },
   "0x00612370": {
     "name": "Unknown::setFirstElementAndNotify",
     "class": "Unknown",
