@@ -85,6 +85,7 @@ void fn_0067F8F0(void* self) {
 } // namespace lift_0067F8F0
 #include <cstddef>
 #include <algorithm>
+#include <stdexcept>
 
 // [0x0067EC70] sub_0067EC70 (34 bytes)
 namespace lift_0067EC70 {
@@ -1860,3 +1861,21 @@ void* fn_0067AB10(void* self) {
 }
 } // namespace lift_0046C3C0
 } // namespace lift_0067AB10
+
+// [0x0067F5B0]
+namespace lift_0067F5B0 {
+extern void ext_006A6DD2(void* pExceptionObject, const void* pThrowInfo);
+
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_009251C4;
+extern uint32_t mem_00924FE0;
+
+// @name throw_std_exception_0067F5B0
+// @summary Constructs an exception with a message string and throws it via _CxxThrowException.
+[[noreturn]] void fn_0067F5B0() {
+    std::string msg(reinterpret_cast<const char*>(0x0092DB70));
+    std::runtime_error exc(msg);
+    ext_006A6DD2(&exc, reinterpret_cast<const void*>(0x009CE164));
+    __builtin_unreachable();
+}
+} // namespace lift_0067F5B0

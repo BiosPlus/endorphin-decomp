@@ -50413,6 +50413,12 @@
     "summary": "Reads a 32-bit index from the receiver and returns the entry at that index in the global table at 0x00B5CA88.",
     "lifted_path": "lifted/leaf/tiny_670000.cpp"
   },
+  "0x0067F5B0": {
+    "name": "throw_std_exception_0067F5B0",
+    "signature": "[[noreturn]] void fn_0067F5B0()",
+    "summary": "Constructs an exception with a message string and throws it via _CxxThrowException.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067F8F0": {
     "name": "Unknown::PopBackIfSpanAtLeast4",
     "class": "Unknown",
@@ -59337,11 +59343,23 @@
     "summary": "Returns the 32-bit address of entry idx in a 496-byte-stride table at this-\u003efield_0xF0 + 0x1D38.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C3490": {
+    "name": "sub_006C3490",
+    "signature": "extern \"C\" void __thiscall fn_006C3490(void* self, uint32_t index, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4, uint32_t arg5, uint32_t arg6, uint32_t arg7, uint32_t arg8)",
+    "summary": "Copies an 8-dword value into an indexed element (stride 0x1F0) of a sub-array at +0x1D78 of field_0xF0.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C3500": {
     "name": "sub_006C3500",
     "class": "Unknown",
     "signature": "extern uint32_t __fastcall fn_006C3500(void* self, int edx_unused, int32_t idx)",
     "summary": "Auto-lifted identical-shape clone of 0x006C3470 (Unknown::GetEntryAddressAlt).",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
+  "0x006C3520": {
+    "name": "sub_006C3520",
+    "signature": "extern \"C\" void __thiscall fn_006C3520( void* self, uint32_t index, uint32_t arg2, uint32_t arg3, uint32_t arg4, uint32_t arg5, uint32_t arg6, uint32_t arg7, uint32_t arg8, uint32_t arg9)",
+    "summary": "Computes element pointer at *(this + 0xF0) + index * 0x1F0 + 0x1D98 and calls ext_007873F0 with \u0026arg2",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
   "0x006C3590": {

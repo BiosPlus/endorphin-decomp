@@ -1,0 +1,13 @@
+{
+  "va": "0x0067F5B0",
+  "size": 112,
+  "orig_symbol": "sub_0067F5B0",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "throw_std_exception_0067F5B0",
+  "signature": "[[noreturn]] void fn_0067F5B0()",
+  "summary": "Constructs an exception with a message string and throws it via _CxxThrowException.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T05:07:56Z"
+}
