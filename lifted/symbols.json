@@ -46404,6 +46404,13 @@
     "summary": "Lazily initializes a static TypeInfo/descriptor at 0x00B59F2C and returns its address.",
     "lifted_path": "lifted/templates/DynamicEnumType.cpp"
   },
+  "0x0067AB10": {
+    "name": "sub_0067AB10",
+    "class": "DerivedException",
+    "signature": "void* fn_0067AB10(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x0046C3C0 (DerivedException::DerivedException).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x0067AB80": {
     "name": "sub_0067AB80",
     "signature": "extern \"C\" void fn_0067AB80(void)",

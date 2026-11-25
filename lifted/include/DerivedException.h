@@ -8,6 +8,6 @@
 // Recovered field layout for DerivedException:
 namespace lifted_layout {
 struct DerivedException_Fields {
-    // +0x0   void*                    vtable  (evidence: 0x0046C3C0)
+    // +0x0   void*                    vtable  (evidence: 0x0046C3C0, 0x0067AB10)
 };
 } // namespace lifted_layout

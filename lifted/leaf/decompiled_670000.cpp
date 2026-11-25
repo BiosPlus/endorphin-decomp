@@ -1833,3 +1833,30 @@ void fn_0067B5C0(void* self) {
     } while (*flag != 0);
 }
 } // namespace lift_0067B5C0
+
+// [0x0067AB10] sub_0067AB10 (105 bytes)
+namespace lift_0067AB10 {
+// @name sub_0067AB10
+// @summary Auto-lifted identical-shape clone of 0x0046C3C0 (DerivedException::DerivedException).
+namespace lift_0046C3C0 {
+// @name DerivedException::DerivedException
+// @class DerivedException
+// @summary Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.
+// @field DerivedException +0x00 void* vtable
+
+extern void* (*mem_00924FE4)(void* self, const char* str);
+extern void (*mem_00924FF4)(void* self);
+extern void* ext_00403560(void* self, const void* msg);
+extern const char mem_0098C574[];
+extern void* mem_0098C56C[];
+
+void* fn_0067AB10(void* self) {
+    alignas(4) uint8_t msg[28];
+    mem_00924FE4(msg, mem_0098C574);
+    ext_00403560(self, msg);
+    mem_00924FF4(msg);
+    *reinterpret_cast<void**>(self) = mem_0098C56C;
+    return self;
+}
+} // namespace lift_0046C3C0
+} // namespace lift_0067AB10

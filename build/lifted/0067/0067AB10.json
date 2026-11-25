@@ -1,0 +1,22 @@
+{
+  "va": "0x0067AB10",
+  "size": 105,
+  "orig_symbol": "sub_0067AB10",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "sub_0067AB10",
+  "class": "DerivedException",
+  "signature": "void* fn_0067AB10(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x0046C3C0 (DerivedException::DerivedException).",
+  "fields": [
+    {
+      "class": "DerivedException",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T04:05:58Z"
+}
