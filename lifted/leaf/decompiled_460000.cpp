@@ -1374,3 +1374,21 @@ void* sub_0046F7D0(void* obj) {
     return obj;
 }
 } // namespace lift_0046F7D0
+
+// [0x0046FD70] sub_0046FD70 (36 bytes)
+namespace lift_0046FD70 {
+// @name Unknown::getPairFrom268Chain
+// @class Unknown
+// @summary Walks self->+0xCC->+0x26C and writes its two DWORDs at +0x1E0 and +0x1E4 into the caller-supplied out[2] buffer.
+// @field Unknown +0xCC DWORD field_0xcc
+// @field Unknown +0xCC.+0x26C DWORD field_0x26c (on object at self+0xCC)
+// @field Unknown +0xCC.+0x26C.+0x1E0 DWORD field_0x1e0 (on object at self+0xCC->+0x26C)
+// @field Unknown +0xCC.+0x26C.+0x1E4 DWORD field_0x1e4 (on object at self+0xCC->+0x26C)
+void __thiscall fn_0046FD70(void* self, DWORD* out) {
+    DWORD mid = lift_field<DWORD>(self, 0xCC);
+    DWORD inner = lift_field<DWORD>(reinterpret_cast<void*>(static_cast<uintptr_t>(mid)), 0x26C);
+    void* leaf = reinterpret_cast<void*>(static_cast<uintptr_t>(inner));
+    out[0] = lift_field<DWORD>(leaf, 0x1E0);
+    out[1] = lift_field<DWORD>(leaf, 0x1E4);
+}
+} // namespace lift_0046FD70

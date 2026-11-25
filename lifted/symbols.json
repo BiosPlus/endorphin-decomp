@@ -7841,6 +7841,13 @@
     "summary": "Forwards 1.0f/value to the sub-object at this+0xD4 via ext_00642630, then stores value as a float at this-\u003e+0xCC-\u003e+0x26C-\u003e+0x1D0.",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046FD70": {
+    "name": "Unknown::getPairFrom268Chain",
+    "class": "Unknown",
+    "signature": "void __thiscall fn_0046FD70(void* self, DWORD* out)",
+    "summary": "Walks self-\u003e+0xCC-\u003e+0x26C and writes its two DWORDs at +0x1E0 and +0x1E4 into the caller-supplied out[2] buffer.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046FDA0": {
     "name": "Unknown::setSubobject1E0Value",
     "class": "Unknown",
