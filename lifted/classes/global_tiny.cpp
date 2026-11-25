@@ -6715,3 +6715,19 @@ uint32_t fn_00544A90(void* self) {
 }
 } // namespace lift_00402050
 } // namespace lift_00544A90
+
+// [0x004010C0]
+namespace lift_004010C0 {
+// @name AddCharacterDialog::vfunc_64
+// @class AddCharacterDialog
+// @summary Disables the dialog's HWND (field +0x20) via USER32!EnableWindow(hwnd, FALSE).
+// @field AddCharacterDialog +0x20 HWND field_0x20
+
+// USER32!EnableWindow import slot (IAT entry at 0x00925684).
+extern BOOL(__stdcall* mem_00925684)(HWND hWnd, BOOL bEnable);
+
+void __thiscall AddCharacterDialog_vfunc_64(void* self) {
+    HWND hwnd = lift_field<HWND>(self, 0x20);
+    mem_00925684(hwnd, FALSE);
+}
+} // namespace lift_004010C0

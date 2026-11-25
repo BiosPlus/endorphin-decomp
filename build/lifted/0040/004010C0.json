@@ -1,0 +1,22 @@
+{
+  "va": "0x004010C0",
+  "size": 13,
+  "orig_symbol": "AddCharacterDialog::vfunc_64",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "AddCharacterDialog::vfunc_64",
+  "class": "AddCharacterDialog",
+  "signature": "void __thiscall AddCharacterDialog_vfunc_64(void* self)",
+  "summary": "Disables the dialog's HWND (field +0x20) via USER32!EnableWindow(hwnd, FALSE).",
+  "fields": [
+    {
+      "class": "AddCharacterDialog",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:21:06Z"
+}

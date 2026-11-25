@@ -12,6 +12,13 @@
     "summary": "Sends WM_SETFONT to the window handle with the font handle (or 0 if null) and redraw flag.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x004010C0": {
+    "name": "AddCharacterDialog::vfunc_64",
+    "class": "AddCharacterDialog",
+    "signature": "void __thiscall AddCharacterDialog_vfunc_64(void* self)",
+    "summary": "Disables the dialog's HWND (field +0x20) via USER32!EnableWindow(hwnd, FALSE).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00401670": {
     "name": "AdvRenderOptions::vfunc_1",
     "class": "AdvRenderOptions",
