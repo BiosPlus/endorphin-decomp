@@ -627,3 +627,62 @@ void* getStaticSingleton_005B85A0() {
     return &mem_00B43CF4;
 }
 } // namespace lift_005B85A0
+
+// [0x005B8300]
+namespace lift_005B8300 {
+// @name getSingleton_005B8300
+// @summary Lazily initializes and returns a singleton object at 0x00B43CBC.
+
+extern uint32_t mem_00B43CC0;
+extern uint32_t mem_00B43CBC;
+
+extern uint32_t __thiscall ext_0067A670(void* self);
+
+void* fn_005B8300() {
+    if ((mem_00B43CC0 & 1u) == 0) {
+        mem_00B43CC0 |= 1u;
+        ext_0067A670(&mem_00B43CBC);
+        mem_00B43CBC = 0x00960F3Cu;
+    }
+    return &mem_00B43CBC;
+}
+} // namespace lift_005B8300
+
+// [0x005B8360]
+namespace lift_005B8360 {
+extern uint32_t mem_00B43CC8;
+extern uint32_t mem_00B43CC4;
+extern void __thiscall ext_0067A670(void* self);
+
+// @name getStaticSingleton_005B8360
+// @summary Lazily initializes and returns a static singleton object at 0x00B43CC4.
+void* fn_005B8360() {
+    if ((mem_00B43CC8 & 1u) == 0u) {
+        mem_00B43CC8 |= 1u;
+        ext_0067A670(&mem_00B43CC4);
+        mem_00B43CC4 = 0x00961014u;
+    }
+    return &mem_00B43CC4;
+}
+} // namespace lift_005B8360
+
+// [0x005B83C0]
+namespace lift_005B83C0 {
+// @name getStaticObject_005B83C0
+// @summary Lazily initializes and returns a pointer to the static singleton object at 0x00B43CCC.
+
+
+extern uint32_t mem_00B43CD0;
+extern uint32_t mem_00B43CCC;
+
+extern void ext_0067A670(void* self);
+
+void* fn_005B83C0() {
+    if ((mem_00B43CD0 & 1u) == 0u) {
+        mem_00B43CD0 |= 1u;
+        ext_0067A670(&mem_00B43CCC);
+        mem_00B43CCC = 0x009610ECu;
+    }
+    return &mem_00B43CCC;
+}
+} // namespace lift_005B83C0
