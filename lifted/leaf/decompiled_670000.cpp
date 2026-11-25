@@ -772,3 +772,21 @@ void fn_00678280(void* self) {
     ext_0065C660(self);
 }
 } // namespace lift_00678280
+
+// [0x006721F0] sub_006721F0 (85 bytes)
+namespace lift_006721F0 {
+// Known callee 0x006721B0: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self, stack arg = value; writes value to self+0x00 and returns it)
+extern DWORD ext_006721B0(void* self, DWORD value);
+extern DWORD mem_00B599BC;
+
+// @name InitFirstDwordSeedSecondAndStore_006721F0
+// @summary Zeroes self's first DWORD, copies global mem_00B599BC into self+0x04, calls ext_006721B0(self, value) to store value into the first DWORD, and returns self. Original SEH frame bookkeeping is omitted.
+// @field Unknown +0x00 DWORD field_0x00
+// @field Unknown +0x04 DWORD field_0x04
+void* fn_006721F0(void* self, DWORD value) {
+    lift_field<DWORD>(self, 0x00) = 0;
+    lift_field<DWORD>(self, 0x04) = mem_00B599BC;
+    ext_006721B0(self, value);
+    return self;
+}
+} // namespace lift_006721F0

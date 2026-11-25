@@ -30,7 +30,7 @@ struct Unknown_Fields {
     // +0x0   DWORD                    field_00  (evidence: 0x0049AD40, 0x0057BB20, 0x006B2F70, 0x006BDAF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint16_t                 field_00  (evidence: 0x007B89BC, 0x007B9050, 0x007BD640) // CONFLICT: multiple definitions at +0x0
     // +0x0   BYTE*                    field_0x00  (evidence: 0x0066A720) // CONFLICT: multiple definitions at +0x0
-    // +0x0   DWORD                    field_0x00  (evidence: 0x00468730, 0x0046FA80, 0x0046FAA0, 0x005D1480, 0x0067ECF0, 0x006F8B30, 0x006FC200, 0x00728DE0, 0x007C8A10, 0x007DB130, 0x0086B180, 0x0086B200) // CONFLICT: multiple definitions at +0x0
+    // +0x0   DWORD                    field_0x00  (evidence: 0x00468730, 0x0046FA80, 0x0046FAA0, 0x005D1480, 0x006721F0, 0x0067ECF0, 0x006F8B30, 0x006FC200, 0x00728DE0, 0x007C8A10, 0x007DB130, 0x0086B180, 0x0086B200) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD*                   field_0x00  (evidence: 0x006E85D0) // CONFLICT: multiple definitions at +0x0
     // +0x0   FILE*                    field_0x00  (evidence: 0x00783670) // CONFLICT: multiple definitions at +0x0
     // +0x0   Unknown                  field_0x00  (evidence: 0x0072B130) // CONFLICT: multiple definitions at +0x0
@@ -146,7 +146,7 @@ struct Unknown_Fields {
     // +0x4   void* field_0x04 (base pointer of the 16-byte element array, on the object at field_0x00)  (evidence: 0x0077FF70, 0x0077FFB0) // CONFLICT: multiple definitions at +0x4
     // +0x4   BYTE                     field_0x04  (evidence: 0x004E9BB0, 0x005F5350, 0x006F8B30, 0x006FC200, 0x007148C0, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x4
     // +0x4   CSIBCString              field_0x04  (evidence: 0x005634D0, 0x00564600) // CONFLICT: multiple definitions at +0x4
-    // +0x4   DWORD                    field_0x04  (evidence: 0x00480280, 0x004F9800, 0x00522220, 0x00524BC0, 0x00528BB0, 0x005B34C0, 0x005D1480, 0x0063D970, 0x0063DDF0, 0x0063EA50, 0x006619D0, 0x0066A720, 0x006FC200, 0x006FC950, 0x0077F520, 0x00783570, 0x0078C230, 0x0078C3A0, 0x007DB130, 0x008102B0, 0x008103C0, 0x00810440, 0x0086B180, 0x0086B200, 0x00870320) // CONFLICT: multiple definitions at +0x4
+    // +0x4   DWORD                    field_0x04  (evidence: 0x00480280, 0x004F9800, 0x00522220, 0x00524BC0, 0x00528BB0, 0x005B34C0, 0x005D1480, 0x0063D970, 0x0063DDF0, 0x0063EA50, 0x006619D0, 0x0066A720, 0x006721F0, 0x006FC200, 0x006FC950, 0x0077F520, 0x00783570, 0x0078C230, 0x0078C3A0, 0x007DB130, 0x008102B0, 0x008103C0, 0x00810440, 0x0086B180, 0x0086B200, 0x00870320) // CONFLICT: multiple definitions at +0x4
     // +0x4   HANDLE*                  field_0x04  (evidence: 0x0067AE70) // CONFLICT: multiple definitions at +0x4
     // +0x4   MSVCP80_basic_string     field_0x04  (evidence: 0x00518030, 0x00519CB0) // CONFLICT: multiple definitions at +0x4
     // +0x4   char                     field_0x04  (evidence: 0x00780090) // CONFLICT: multiple definitions at +0x4
