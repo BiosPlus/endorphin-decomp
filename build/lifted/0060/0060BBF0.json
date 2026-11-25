@@ -1,0 +1,14 @@
+{
+  "va": "0x0060BBF0",
+  "size": 35,
+  "orig_symbol": "NMData::EffectorData::vfunc_8",
+  "src_path": "src/NMData/EffectorData.cpp",
+  "lifted_path": "lifted/NMData/EffectorData.cpp",
+  "name": "NMData::EffectorData::vfunc_8",
+  "class": "NMData::EffectorData",
+  "signature": "std::string fn_0060BBF0(const void* /*self*/)",
+  "summary": "Auto-lifted identical-shape clone of 0x0047DB90 (NMData::SceneData::vfunc_6).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T12:51:40Z"
+}

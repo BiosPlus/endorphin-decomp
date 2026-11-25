@@ -75,3 +75,28 @@ void* __stdcall fn_005EE3B0(void* self, uint32_t code) {
     return self;
 }
 } // namespace lift_005EE3B0
+
+// [0x005EF8A0] NMData::HingeData::vfunc_59 (35 bytes)
+namespace lift_005EF8A0 {
+extern const char* mem_00A9EF9C;
+
+// @name NMData::HingeData::vfunc_59
+// @class NMData::HingeData
+// @summary Auto-lifted identical-shape clone of 0x0047DB90 (NMData::SceneData::vfunc_6).
+namespace lift_0047DB90 {
+// Pointer-sized global holding the address of the C-string literal used below.
+extern const char* const mem_00A9EF9C;
+// IAT slot for the MSVC std::string(const char*, allocator) constructor import.
+// The portable std::string constructor below replaces the call; the slot is only referenced here.
+extern int mem_00924FE4;
+
+// @name NMData::SceneData::vfunc_6
+// @class NMData::SceneData
+// @summary Returns a std::string constructed from the C-string pointer stored in mem_00A9F23C; does not read self.
+// (no self fields are accessed by this function)
+std::string fn_005EF8A0(const void* /*self*/) {
+    static_cast<void>(&mem_00924FE4);
+    return std::string(mem_00A9EF9C);
+}
+} // namespace lift_0047DB90
+} // namespace lift_005EF8A0

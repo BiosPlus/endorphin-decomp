@@ -89,3 +89,28 @@ void fn_0060BDF0(void* self) {
     ext_0060BCD0();
 }
 } // namespace lift_0060BDF0
+
+// [0x0060BBF0] NMData::EffectorData::vfunc_8 (35 bytes)
+namespace lift_0060BBF0 {
+extern const char* mem_00A9EE64;
+
+// @name NMData::EffectorData::vfunc_8
+// @class NMData::EffectorData
+// @summary Auto-lifted identical-shape clone of 0x0047DB90 (NMData::SceneData::vfunc_6).
+namespace lift_0047DB90 {
+// Pointer-sized global holding the address of the C-string literal used below.
+extern const char* const mem_00A9EE64;
+// IAT slot for the MSVC std::string(const char*, allocator) constructor import.
+// The portable std::string constructor below replaces the call; the slot is only referenced here.
+extern int mem_00924FE4;
+
+// @name NMData::SceneData::vfunc_6
+// @class NMData::SceneData
+// @summary Returns a std::string constructed from the C-string pointer stored in mem_00A9F23C; does not read self.
+// (no self fields are accessed by this function)
+std::string fn_0060BBF0(const void* /*self*/) {
+    static_cast<void>(&mem_00924FE4);
+    return std::string(mem_00A9EE64);
+}
+} // namespace lift_0047DB90
+} // namespace lift_0060BBF0

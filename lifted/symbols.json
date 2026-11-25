@@ -26986,6 +26986,13 @@
     "summary": "Returns true if vfunc_10() or ext_00410390(this) returns non-zero.",
     "lifted_path": "lifted/NMData/CharacterData.cpp"
   },
+  "0x005A98F0": {
+    "name": "NMData::BackGroundData::vfunc_6",
+    "class": "NMData::BackGroundData",
+    "signature": "std::string fn_005A98F0(const void* /*self*/)",
+    "summary": "Auto-lifted identical-shape clone of 0x0047DB90 (NMData::SceneData::vfunc_6).",
+    "lifted_path": "lifted/NMData/BackGroundData.cpp"
+  },
   "0x005A9930": {
     "name": "NMData::BackGroundData::vfunc_1_off_10",
     "class": "NMData::BackGroundData",
@@ -33408,6 +33415,13 @@
     "summary": "Forwards code 0x22F to FixedPathJointData::vfunc_15; otherwise calls fillPairWithStaticObject, then returns self.",
     "lifted_path": "lifted/NMData/HingeData.cpp"
   },
+  "0x005EF8A0": {
+    "name": "NMData::HingeData::vfunc_59",
+    "class": "NMData::HingeData",
+    "signature": "std::string fn_005EF8A0(const void* /*self*/)",
+    "summary": "Auto-lifted identical-shape clone of 0x0047DB90 (NMData::SceneData::vfunc_6).",
+    "lifted_path": "lifted/NMData/HingeData.cpp"
+  },
   "0x005EF8D0": {
     "name": "NMData::HingeData::vfunc_1_off_C",
     "class": "NMData::HingeData",
@@ -33428,6 +33442,13 @@
     "signature": "extern \"C\" void __fastcall fn_005EFFA0(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by -0xC and tail-calls NMData::FixedPathJointData::vfunc_0.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
+  },
+  "0x005F02B0": {
+    "name": "NMData::SkeletalJointData::vfunc_59",
+    "class": "NMData::SkeletalJointData",
+    "signature": "std::string fn_005F02B0(const void* /*self*/)",
+    "summary": "Auto-lifted identical-shape clone of 0x0047DB90 (NMData::SceneData::vfunc_6).",
+    "lifted_path": "lifted/NMData/SkeletalJointData.cpp"
   },
   "0x005F02E0": {
     "name": "NMData::SkeletalJointData::vfunc_1_off_C",
@@ -35640,6 +35661,13 @@
     "summary": "Copy constructor calling base copy constructor 0x0060B990, setting vtable 0x0097215C, and copying fields at +0x44..+0x58.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x0060BBF0": {
+    "name": "NMData::EffectorData::vfunc_8",
+    "class": "NMData::EffectorData",
+    "signature": "std::string fn_0060BBF0(const void* /*self*/)",
+    "summary": "Auto-lifted identical-shape clone of 0x0047DB90 (NMData::SceneData::vfunc_6).",
+    "lifted_path": "lifted/NMData/EffectorData.cpp"
+  },
   "0x0060BCC0": {
     "name": "sub_0060BCC0",
     "signature": "extern \"C\" void __fastcall fn_0060BCC0(void* self)",
@@ -35720,6 +35748,13 @@
     "class": "NMData::EffectorGroupData",
     "signature": "void fn_0060D3A0(void* self, void* src, void* arg2, void* arg3)",
     "summary": "Copies the base EffectorBaseData properties from src into self, then copies the m_childEffectorNames string property.",
+    "lifted_path": "lifted/NMData/EffectorGroupData.cpp"
+  },
+  "0x0060D4D0": {
+    "name": "NMData::EffectorGroupData::vfunc_8",
+    "class": "NMData::EffectorGroupData",
+    "signature": "std::string fn_0060D4D0(const void* /*self*/)",
+    "summary": "Auto-lifted identical-shape clone of 0x0047DB90 (NMData::SceneData::vfunc_6).",
     "lifted_path": "lifted/NMData/EffectorGroupData.cpp"
   },
   "0x0060D730": {

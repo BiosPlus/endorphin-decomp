@@ -1,0 +1,14 @@
+{
+  "va": "0x005EF8A0",
+  "size": 35,
+  "orig_symbol": "NMData::HingeData::vfunc_59",
+  "src_path": "src/NMData/HingeData.cpp",
+  "lifted_path": "lifted/NMData/HingeData.cpp",
+  "name": "NMData::HingeData::vfunc_59",
+  "class": "NMData::HingeData",
+  "signature": "std::string fn_005EF8A0(const void* /*self*/)",
+  "summary": "Auto-lifted identical-shape clone of 0x0047DB90 (NMData::SceneData::vfunc_6).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T12:51:40Z"
+}

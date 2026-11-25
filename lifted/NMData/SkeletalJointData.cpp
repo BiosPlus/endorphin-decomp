@@ -109,3 +109,28 @@ bool __thiscall fn_005E20F0(void* self, uint32_t axis) {
             return false;
     }
 }
+
+// [0x005F02B0] NMData::SkeletalJointData::vfunc_59 (35 bytes)
+namespace lift_005F02B0 {
+extern const char* mem_00A9F280;
+
+// @name NMData::SkeletalJointData::vfunc_59
+// @class NMData::SkeletalJointData
+// @summary Auto-lifted identical-shape clone of 0x0047DB90 (NMData::SceneData::vfunc_6).
+namespace lift_0047DB90 {
+// Pointer-sized global holding the address of the C-string literal used below.
+extern const char* const mem_00A9F280;
+// IAT slot for the MSVC std::string(const char*, allocator) constructor import.
+// The portable std::string constructor below replaces the call; the slot is only referenced here.
+extern int mem_00924FE4;
+
+// @name NMData::SceneData::vfunc_6
+// @class NMData::SceneData
+// @summary Returns a std::string constructed from the C-string pointer stored in mem_00A9F23C; does not read self.
+// (no self fields are accessed by this function)
+std::string fn_005F02B0(const void* /*self*/) {
+    static_cast<void>(&mem_00924FE4);
+    return std::string(mem_00A9F280);
+}
+} // namespace lift_0047DB90
+} // namespace lift_005F02B0
