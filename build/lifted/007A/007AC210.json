@@ -1,0 +1,13 @@
+{
+  "va": "0x007AC210",
+  "size": 70,
+  "orig_symbol": "sub_007AC210",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "sub_007AC210",
+  "signature": "BOOLEAN __stdcall fn_007AC210(DWORD value)",
+  "summary": "Auto-lifted identical-shape clone of 0x0079F2E0 (sub_0079F2E0 (descriptiveName: IsAnyKnownValue)).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:25:42Z"
+}

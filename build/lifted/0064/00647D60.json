@@ -1,0 +1,22 @@
+{
+  "va": "0x00647D60",
+  "size": 70,
+  "orig_symbol": "sub_00647D60",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "sub_00647D60",
+  "class": "Unknown",
+  "signature": "void fn_00647D60(void* self, const float* a, const float* b)",
+  "summary": "Auto-lifted identical-shape clone of 0x00647CE0 (Unknown::ForwardVectorPair).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xA4",
+      "type": "void*",
+      "name": "field_0xa4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T01:25:42Z"
+}

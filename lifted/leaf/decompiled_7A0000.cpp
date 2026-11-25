@@ -4,6 +4,7 @@ extern "C" void __fastcall ext_007AD590(void* self);
 extern "C" void __cdecl ext_006A5C5C(void* ptr);
 #include <cstdint>
 #include <cstring>
+#include <cstdio>
 
 // [0x007AD5C0] sub_007AD5C0 (32 bytes)
 // @name sub_007AD5C0
@@ -505,3 +506,53 @@ void __cdecl sub_007AF310(uint32_t /*unused*/, int32_t* a2, int32_t* a3) {
     }
 }
 } // namespace lift_007AF310
+
+// [0x007ABF90] sub_007ABF90 (70 bytes)
+namespace lift_007ABF90 {
+// @name sub_007ABF90
+// @summary Auto-lifted identical-shape clone of 0x0079F2E0 (sub_0079F2E0 (descriptiveName: IsAnyKnownValue)).
+namespace lift_0079F2E0 {
+extern DWORD mem_00B61248;
+extern DWORD mem_00B61230;
+extern DWORD mem_00B60F58;
+extern DWORD mem_00B5EB78;
+extern DWORD mem_00B5E400;
+
+// @name sub_0079F2E0 (descriptiveName: IsAnyKnownValue)
+// @summary Returns TRUE if the argument equals any of five global sentinel values (mem_00B61168, mem_00B61230, mem_00B60F58, mem_00B5EB78, mem_00B5E400).
+// (no class; no struct field offsets accessed)
+BOOLEAN __stdcall fn_007ABF90(DWORD value) {
+    return static_cast<BOOLEAN>(
+        value == mem_00B61248 ||
+        value == mem_00B61230 ||
+        value == mem_00B60F58 ||
+        value == mem_00B5EB78 ||
+        value == mem_00B5E400);
+}
+} // namespace lift_0079F2E0
+} // namespace lift_007ABF90
+
+// [0x007AC210] sub_007AC210 (70 bytes)
+namespace lift_007AC210 {
+// @name sub_007AC210
+// @summary Auto-lifted identical-shape clone of 0x0079F2E0 (sub_0079F2E0 (descriptiveName: IsAnyKnownValue)).
+namespace lift_0079F2E0 {
+extern DWORD mem_00B61260;
+extern DWORD mem_00B61230;
+extern DWORD mem_00B60F58;
+extern DWORD mem_00B5EB78;
+extern DWORD mem_00B5E400;
+
+// @name sub_0079F2E0 (descriptiveName: IsAnyKnownValue)
+// @summary Returns TRUE if the argument equals any of five global sentinel values (mem_00B61168, mem_00B61230, mem_00B60F58, mem_00B5EB78, mem_00B5E400).
+// (no class; no struct field offsets accessed)
+BOOLEAN __stdcall fn_007AC210(DWORD value) {
+    return static_cast<BOOLEAN>(
+        value == mem_00B61260 ||
+        value == mem_00B61230 ||
+        value == mem_00B60F58 ||
+        value == mem_00B5EB78 ||
+        value == mem_00B5E400);
+}
+} // namespace lift_0079F2E0
+} // namespace lift_007AC210

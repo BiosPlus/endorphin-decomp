@@ -34351,6 +34351,13 @@
     "summary": "Loads two stack-passed vec3 pointers and forwards their components plus a context dword from this+0xA4 to ext_007C6880.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
+  "0x00647D60": {
+    "name": "sub_00647D60",
+    "class": "Unknown",
+    "signature": "void fn_00647D60(void* self, const float* a, const float* b)",
+    "summary": "Auto-lifted identical-shape clone of 0x00647CE0 (Unknown::ForwardVectorPair).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
   "0x00647E80": {
     "name": "sub_00647E80",
     "signature": "uint32_t __thiscall sub_00647E80(void* self, uint32_t arg0)",
@@ -56505,6 +56512,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x006EA820 (sub_006EA820_initGlobalTriple).",
     "lifted_path": "lifted/clones/auto_clones_7A0000.cpp"
   },
+  "0x007ABF90": {
+    "name": "sub_007ABF90",
+    "signature": "BOOLEAN __stdcall fn_007ABF90(DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0079F2E0 (sub_0079F2E0 (descriptiveName: IsAnyKnownValue)).",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007ABFE0": {
     "name": "sub_007ABFE0",
     "signature": "extern \"C\" int32_t __cdecl fn_007ABFE0(void)",
@@ -56540,6 +56553,12 @@
     "signature": "void fn_007AC160(void)",
     "summary": "Auto-lifted identical-shape clone of 0x006EA820 (sub_006EA820_initGlobalTriple).",
     "lifted_path": "lifted/clones/auto_clones_7A0000.cpp"
+  },
+  "0x007AC210": {
+    "name": "sub_007AC210",
+    "signature": "BOOLEAN __stdcall fn_007AC210(DWORD value)",
+    "summary": "Auto-lifted identical-shape clone of 0x0079F2E0 (sub_0079F2E0 (descriptiveName: IsAnyKnownValue)).",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
   "0x007AC260": {
     "name": "sub_007AC260",
