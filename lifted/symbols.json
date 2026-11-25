@@ -36479,6 +36479,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
+  "0x00605900": {
+    "name": "sub_00605900",
+    "signature": "void* fn_00605900()",
+    "summary": "Auto-lifted identical-shape clone of 0x0061DE20 (sub_0061DE20).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x00605960": {
     "name": "ExprParser::ReadWriteMethodType\u003cEffector, float, getForceBaseCap, setBaseForceCap\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cEffector, float, getForceBaseCap, setBaseForceCap\u003e",
@@ -36921,6 +36927,12 @@
     "signature": "void fn_0060AE20(void* self)",
     "summary": "If field +0x14 is zero and the object at +0x08 is non-null, invoke its vtable slot 1 with argument 1.",
     "lifted_path": "lifted/templates/auto_tiny.cpp"
+  },
+  "0x0060AF10": {
+    "name": "sub_0060AF10",
+    "signature": "void fn_0060AF10(uint32_t* first, uint32_t* last, uint32_t pred)",
+    "summary": "Auto-lifted identical-shape clone of 0x005190B0 (sub_005190B0).",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
   "0x0060B240": {
     "name": "Unknown::initVtablesAndClearFields",

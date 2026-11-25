@@ -64,8 +64,10 @@ uint32_t __thiscall sub_00602EC0(uint32_t this_ptr) {
 }
 } // namespace lift_00602EC0
 #include <cstring>
+#include <cmath>
+#include <cstdlib>
 
-// [0x0060FA40]
+#include <cstdlib>
 namespace lift_0060FA40 {
 // @name Unknown::ReleaseHandleAndThrowNull
 // @summary Passes a stack-slot value (ebp-0x18) to a release helper, then throws with two null arguments.
@@ -79,8 +81,10 @@ void fn_0060FA40(void* local_18) {
     ext_006A6DD2();
 }
 } // namespace lift_0060FA40
+#include <stdexcept>
+#include <bit>
 
-// [0x006098F0] sub_006098F0 (89 bytes)
+#include <bit>
 namespace lift_006098F0 {
 // Known callee 0x00661980: setVtable_0093BFB4 (Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).)
 extern void ext_00661980(void* self);
@@ -1101,3 +1105,77 @@ void* fn_0060A4F0(void* dst) {
     return dst;
 }
 } // namespace lift_0060A4F0
+
+// [0x00605900] sub_00605900 (87 bytes)
+namespace lift_00605900 {
+// @name sub_00605900
+// @summary Auto-lifted identical-shape clone of 0x0061DE20 (sub_0061DE20).
+namespace lift_0061DE20 {
+// @name sub_0061DE20
+// @summary Auto-lifted identical-shape clone of 0x0064B0C0 (sub_0064B0C0).
+namespace lift_0064B0C0 {
+// @name sub_0064B0C0
+// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
+namespace lift_004CAE30 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
+extern DWORD mem_fs_0;
+// Guard word: bit 0 marks that the static object below has been initialized.
+extern DWORD mem_00B47750;
+// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
+extern DWORD mem_00B4774C;
+
+// @name initStaticObjectOnce_004CAE30
+// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_00605900() {
+    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
+    DWORD frame[3];
+    frame[0] = mem_fs_0;
+    frame[1] = 0x8A7F2Eu;
+    frame[2] = 0xFFFFFFFFu;
+    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
+
+    if ((mem_00B47750 & 1u) == 0) {
+        mem_00B47750 |= 1u;
+        frame[2] = 0;
+        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
+        ext_0067A670(&mem_00B4774C, frame[0]);
+        mem_00B4774C = 0x970504u;
+    }
+
+    mem_fs_0 = frame[0];
+    return &mem_00B4774C;
+}
+} // namespace lift_004CAE30
+} // namespace lift_0064B0C0
+} // namespace lift_0061DE20
+} // namespace lift_00605900
+
+// [0x0060AF10] sub_0060AF10 (74 bytes)
+namespace lift_0060AF10 {
+// @name sub_0060AF10
+// @summary Auto-lifted identical-shape clone of 0x005190B0 (sub_005190B0).
+namespace lift_005190B0 {
+// @name sub_005190B0
+// @summary Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).
+namespace lift_00481C90 {
+extern void ext_0060A3A0(uint32_t* first, ptrdiff_t hole, ptrdiff_t count, uint32_t value, uint32_t pred);
+
+// @name SortHeapRange
+// @summary Heap-sorts a range of 4-byte elements in place (pop-heap loop); pred is forwarded to the sift-down helper.
+void fn_0060AF10(uint32_t* first, uint32_t* last, uint32_t pred) {
+    ptrdiff_t n = last - first;
+    while (n > 1) {
+        --last;
+        uint32_t value = *last;
+        *last = *first;
+        ext_0060A3A0(first, 0, last - first, value, pred);
+        n = last - first;
+    }
+}
+} // namespace lift_00481C90
+} // namespace lift_005190B0
+} // namespace lift_0060AF10
