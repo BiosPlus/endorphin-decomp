@@ -15412,6 +15412,12 @@
     "summary": "Updates cached frame/time at +0x9CC and triggers ext_004E1F50 on field_0xB74 when matching +0x160",
     "lifted_path": "lifted/NMData/AnimationEventData.cpp"
   },
+  "0x004E3140": {
+    "name": "Vector_erase_range",
+    "signature": "uint32_t __thiscall sub_004E3140( uint32_t this_ptr, uint32_t out_iter, uint32_t first_cont, uint32_t first_ptr, uint32_t last_cont, uint32_t last_ptr)",
+    "summary": "Erases a range [first, last) from a vector-like container with checked iterators",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004E31A0": {
     "name": "sub_004E31A0",
     "signature": "DWORD* __thiscall fn_004E31A0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -42023,6 +42029,13 @@
     "class": "String",
     "signature": "int32_t __thiscall sub_006988A0(void* self, const char* chars, int32_t startIndex)",
     "summary": "Find index of first character not in the given C-string starting at startIndex, or -1 if none.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
+  "0x00698900": {
+    "name": "String::findTokenEnd",
+    "class": "String",
+    "signature": "int32_t __thiscall sub_00698900(void* self, int32_t* pos, const char* chars)",
+    "summary": "Finds the end index of a token delimited by chars starting at *pos, advancing *pos to the next token or -1.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x006989B0": {

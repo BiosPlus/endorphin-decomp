@@ -1,0 +1,21 @@
+{
+  "va": "0x004E3140",
+  "size": 89,
+  "orig_symbol": "sub_004E3140",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "Vector_erase_range",
+  "signature": "uint32_t __thiscall sub_004E3140( uint32_t this_ptr, uint32_t out_iter, uint32_t first_cont, uint32_t first_ptr, uint32_t last_cont, uint32_t last_ptr)",
+  "summary": "Erases a range [first, last) from a vector-like container with checked iterators",
+  "fields": [
+    {
+      "class": "Container",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:21:48Z"
+}

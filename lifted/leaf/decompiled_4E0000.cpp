@@ -237,3 +237,37 @@ void fn_004E7DF0(uint32_t* first, uint32_t* last, uint32_t pred) {
 }
 } // namespace lift_00481C90
 } // namespace lift_004E7DF0
+
+// [0x004E3140]
+namespace lift_004E3140 {
+extern uint32_t ext_004DE780(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t);
+extern uint32_t mem_00925134;
+
+// @name Vector_erase_range
+// @summary Erases a range [first, last) from a vector-like container with checked iterators
+// @field Container +0x08 uint32_t field_0x08
+
+uint32_t __thiscall sub_004E3140(
+    uint32_t this_ptr,
+    uint32_t out_iter,
+    uint32_t first_cont,
+    uint32_t first_ptr,
+    uint32_t last_cont,
+    uint32_t last_ptr)
+{
+    if (first_cont == 0 || first_cont != last_cont) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+
+    if (first_ptr != last_ptr) {
+        uint32_t end_ptr = *reinterpret_cast<uint32_t*>(this_ptr + 0x8);
+        uint32_t scratch = (first_cont & 0xFFFFFF00u);
+        uint32_t new_end = ext_004DE780(last_ptr, end_ptr, first_ptr, scratch, out_iter, scratch);
+        *reinterpret_cast<uint32_t*>(this_ptr + 0x8) = new_end;
+    }
+
+    *reinterpret_cast<uint32_t*>(out_iter + 0x4) = first_ptr;
+    *reinterpret_cast<uint32_t*>(out_iter) = first_cont;
+    return out_iter;
+}
+} // namespace lift_004E3140
