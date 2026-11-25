@@ -8,9 +8,14 @@
 // Recovered field layout for struct_0:
 namespace lifted_layout {
 struct struct_0_Fields {
-    // +0x0   uint32_t[19]             field_0x00  (evidence: 0x0086BF40)
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x007986B0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t[19]             field_0x00  (evidence: 0x0086BF40) // CONFLICT: multiple definitions at +0x0
     // +0x10  uint32_t                 field_0x10  (evidence: 0x00441020, 0x00447520, 0x0044B6A0)
     // +0x4C  uint32_t                 field_0x4c  (evidence: 0x0086BF40)
+    // +0x4E  uint16_t                 field_0x4E  (evidence: 0x007986B0)
+    // +0x50  uint32_t                 field_0x50  (evidence: 0x007986B0)
+    // +0x72  uint16_t                 field_0x72  (evidence: 0x007986B0)
+    // +0xC8  uint32_t                 field_0xC8  (evidence: 0x007986B0)
     // +0x1A8 float                    field_0x1a8  (evidence: 0x007C2E50, 0x007C5910)
 };
 } // namespace lifted_layout

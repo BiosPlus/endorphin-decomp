@@ -855,3 +855,80 @@ extern uint32_t __fastcall fn_0079E450(void* self) {
     return (recordValue == 6u) ? 0u : 1u;
 }
 } // namespace lift_0079E450
+
+// [0x007986B0]
+namespace lift_007986B0 {
+// @name ComputeBufferOffset
+// @summary Computes a buffer offset by dividing arg2 by field_0x50 and adding a scaled plane/channel offset when field_0x72 == 2, or invoking ext_0079B140 if arg3 is out of range.
+// @field struct_0 +0x00 uint32_t field_0x00
+// @field struct_0 +0x4E uint16_t field_0x4E
+// @field struct_0 +0x50 uint32_t field_0x50
+// @field struct_0 +0x72 uint16_t field_0x72
+// @field struct_0 +0xC8 uint32_t field_0xC8
+
+
+extern void ext_0079B140(uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4);
+
+uint32_t fn_007986B0(uint8_t* a1, uint32_t a2, uint32_t a3) {
+    uint32_t divisor = *(const uint32_t*)(a1 + 0x50);
+    uint32_t result = a2 / divisor;
+
+    if (*(const uint16_t*)(a1 + 0x72) != 2) {
+        return result;
+    }
+
+    uint16_t limit = *(const uint16_t*)(a1 + 0x4E);
+    uint16_t index = (uint16_t)a3;
+    if (index >= limit) {
+        uint32_t handle = *(const uint32_t*)a1;
+        ext_0079B140(handle, 0x00AAFA2C, (uint32_t)index, (uint32_t)limit);
+        return 0;
+    }
+
+    uint32_t stride = *(const uint32_t*)(a1 + 0xC8);
+    return result + stride * (uint32_t)index;
+}
+} // namespace lift_007986B0
+
+// [0x0079A230]
+namespace lift_0079A230 {
+extern void ext_0079B140(uint32_t a1, uint32_t a2, uint32_t a3, ...);
+
+// @name MeasureNullTerminatedStringTableSize
+// @summary Measures the total byte size of a table of null-terminated strings bounded by a maximum length, reporting an error via ext_0079B140 if the bound is exceeded.
+// @field Record +0x00 uint32_t field_0x00
+// @field Record +0x4E uint16_t stringCount
+uint32_t fn_0079A230(uintptr_t record, int32_t maxLen, uintptr_t buf) {
+    uint32_t count = static_cast<uint32_t>(*reinterpret_cast<const uint16_t*>(record + 0x4E));
+    int32_t remaining = static_cast<int32_t>(count);
+
+    if (maxLen <= 0) {
+        uint32_t scanned = count - static_cast<uint32_t>(remaining);
+        uint32_t header = *reinterpret_cast<const uint32_t*>(record);
+        ext_0079B140(0x00AAFA78u, 0x00AAFBBCu, header, count, scanned);
+        return 0;
+    }
+
+    const uint8_t* start = reinterpret_cast<const uint8_t*>(buf);
+    const uint8_t* end = start + maxLen;
+    const uint8_t* p = start;
+
+    while (remaining > 0) {
+        if (*p != 0) {
+            do {
+                if (p >= end) {
+                    uint32_t scanned = count - static_cast<uint32_t>(remaining);
+                    uint32_t header = *reinterpret_cast<const uint32_t*>(record);
+                    ext_0079B140(0x00AAFA78u, 0x00AAFBBCu, header, count, scanned);
+                    return 0;
+                }
+                ++p;
+            } while (*p != 0);
+        }
+        ++p;
+        --remaining;
+    }
+
+    return static_cast<uint32_t>(p - start);
+}
+} // namespace lift_0079A230

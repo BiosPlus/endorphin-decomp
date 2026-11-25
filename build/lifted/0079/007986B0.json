@@ -1,0 +1,45 @@
+{
+  "va": "0x007986B0",
+  "size": 96,
+  "orig_symbol": "sub_007986B0",
+  "src_path": "src/leaf/decompiled_790000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_790000.cpp",
+  "name": "ComputeBufferOffset",
+  "signature": "uint32_t fn_007986B0(uint8_t* a1, uint32_t a2, uint32_t a3)",
+  "summary": "Computes a buffer offset by dividing arg2 by field_0x50 and adding a scaled plane/channel offset when field_0x72 == 2, or invoking ext_0079B140 if arg3 is out of range.",
+  "fields": [
+    {
+      "class": "struct_0",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "struct_0",
+      "offset": "+0x4E",
+      "type": "uint16_t",
+      "name": "field_0x4E"
+    },
+    {
+      "class": "struct_0",
+      "offset": "+0x50",
+      "type": "uint32_t",
+      "name": "field_0x50"
+    },
+    {
+      "class": "struct_0",
+      "offset": "+0x72",
+      "type": "uint16_t",
+      "name": "field_0x72"
+    },
+    {
+      "class": "struct_0",
+      "offset": "+0xC8",
+      "type": "uint32_t",
+      "name": "field_0xC8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:50:13Z"
+}
