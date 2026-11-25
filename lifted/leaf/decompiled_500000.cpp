@@ -2219,3 +2219,43 @@ uint32_t __thiscall sub_00505360(uint32_t self, uint32_t other) {
     return self;
 }
 } // namespace lift_00505360
+
+// [0x0050BFF0] sub_0050BFF0 (108 bytes)
+namespace lift_0050BFF0 {
+// Known callee 0x0050B060: Unknown::copyRecordRangeAndAdvance_0050B060.
+// Call order below follows the machine code's push order: (a5, dest, a3).
+extern void* ext_0050B060(const void* arg1, void* arg2, const void* arg3);
+extern void (*mem_00925134)();
+
+// @name Unknown::replaceRecordRange_0050BFF0
+// @class Unknown
+// @summary Copies a 0x24-byte record range into the member buffer, destroys the previous tail records, and reports the (begin, first) pair through out.
+// @field Unknown +0x08 void* field_0x08
+void fn_0050BFF0(void* self, void** out, const void* begin, const void* first,
+                 const void* begin_check, const void* last) {
+    // Argument validation: begin must be non-null and equal begin_check.
+    if (begin == nullptr || begin != begin_check) {
+        mem_00925134();
+    }
+
+    void** slot = reinterpret_cast<void**>(static_cast<uint8_t*>(self) + 0x08);
+
+    if (first != last) {
+        void* const dest = *slot;
+        void* const newEnd = ext_0050B060(last, dest, first);
+        void* const oldEnd = *slot;
+
+        // Destroy the old records in [newEnd, oldEnd) via vtable slot 0 with flag 0.
+        for (uint8_t* p = static_cast<uint8_t*>(newEnd); static_cast<void*>(p) != oldEnd; p += 0x24) {
+            void** vtbl = *reinterpret_cast<void***>(p);
+            auto dtor = reinterpret_cast<void (*)(void*, int)>(vtbl[0]);
+            dtor(static_cast<void*>(p), 0);
+        }
+
+        *slot = newEnd;
+    }
+
+    out[0] = const_cast<void*>(begin);
+    out[1] = const_cast<void*>(first);
+}
+} // namespace lift_0050BFF0

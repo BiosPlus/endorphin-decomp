@@ -19050,6 +19050,13 @@
     "summary": "Pure jump thunk forwarding to sub_0050B960.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x0050BFF0": {
+    "name": "Unknown::replaceRecordRange_0050BFF0",
+    "class": "Unknown",
+    "signature": "void fn_0050BFF0(void* self, void** out, const void* begin, const void* first, const void* begin_check, const void* last)",
+    "summary": "Copies a 0x24-byte record range into the member buffer, destroys the previous tail records, and reports the (begin, first) pair through out.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050C160": {
     "name": "sub_0050C160",
     "signature": "DWORD* __thiscall fn_0050C160(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
