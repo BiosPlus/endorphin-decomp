@@ -801,3 +801,22 @@ void* fn_007CC1C0(void* self, float x, float y) {
     return ext_007CC180(eax, self, x, y);
 }
 } // namespace lift_007CC1C0
+
+// [0x007C9AA0] sub_007C9AA0 (63 bytes)
+namespace lift_007C9AA0 {
+// @name SetVec3ByFlag
+// @class Unknown
+// @summary Stores a 3-float vector at offset 0xEC when flag is 0, otherwise at offset 0x12C.
+// @field Unknown +0xEC float field_0xEC
+// @field Unknown +0xF0 float field_0xF0
+// @field Unknown +0xF4 float field_0xF4
+// @field Unknown +0x12C float field_0x12C
+// @field Unknown +0x130 float field_0x130
+// @field Unknown +0x134 float field_0x134
+void fn_007C9AA0(void* self, float x, float y, float z, int32_t flag) {
+    const ptrdiff_t base = (flag == 0) ? 0xEC : 0x12C;
+    lift_field<float>(self, base + 0) = x;
+    lift_field<float>(self, base + 4) = y;
+    lift_field<float>(self, base + 8) = z;
+}
+} // namespace lift_007C9AA0

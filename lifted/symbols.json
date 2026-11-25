@@ -56536,6 +56536,13 @@
     "summary": "Copies a 4-float block from self+0x160 (flag==0) or self+0x174 (flag!=0) into out.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007C9AA0": {
+    "name": "SetVec3ByFlag",
+    "class": "Unknown",
+    "signature": "void fn_007C9AA0(void* self, float x, float y, float z, int32_t flag)",
+    "summary": "Stores a 3-float vector at offset 0xEC when flag is 0, otherwise at offset 0x12C.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007C9C50": {
     "name": "addOffset0x160",
     "signature": "uint32_t sub_007C9C50(uint32_t arg0)",
