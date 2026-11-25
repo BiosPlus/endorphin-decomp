@@ -2296,3 +2296,21 @@ void fn_00666930(void* self) {
 }
 } // namespace lift_004AD970
 } // namespace lift_00666930
+
+// [0x00662F80]
+namespace lift_00662F80 {
+extern uint32_t mem_00924FF0;
+extern uint32_t mem_009255E0;
+
+// @name showMessageBoxFromStrings
+// @summary Shows a MessageBoxA (type 0x40, no owner) with arg1's c_str() as text and arg0's c_str() as caption; returns the MessageBoxA result.
+// (No direct field accesses: the std::string operands are used only through c_str().)
+int32_t sub_00662F80(uint32_t arg0, uint32_t arg1) {
+    using CStrFn = uint32_t(__thiscall*)(uint32_t);
+    uint32_t caption = reinterpret_cast<CStrFn>(mem_00924FF0)(arg0);
+    uint32_t text = reinterpret_cast<CStrFn>(mem_00924FF0)(arg1);
+
+    using MessageBoxAFn = int32_t(__stdcall*)(uint32_t, uint32_t, uint32_t, uint32_t);
+    return reinterpret_cast<MessageBoxAFn>(mem_009255E0)(0, text, caption, 0x40u);
+}
+} // namespace lift_00662F80

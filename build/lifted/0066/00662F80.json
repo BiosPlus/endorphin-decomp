@@ -1,0 +1,13 @@
+{
+  "va": "0x00662F80",
+  "size": 33,
+  "orig_symbol": "sub_00662F80",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "showMessageBoxFromStrings",
+  "signature": "int32_t sub_00662F80(uint32_t arg0, uint32_t arg1)",
+  "summary": "Shows a MessageBoxA (type 0x40, no owner) with arg1's c_str() as text and arg0's c_str() as caption; returns the MessageBoxA result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:11:10Z"
+}

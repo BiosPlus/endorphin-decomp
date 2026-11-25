@@ -44954,6 +44954,12 @@
     "summary": "Logs/initializes via sub_00662F20, displays a fatal error MessageBoxA from a std::string, and exits with -1.",
     "lifted_path": "lifted/leaf/decompiled_660000.cpp"
   },
+  "0x00662F80": {
+    "name": "showMessageBoxFromStrings",
+    "signature": "int32_t sub_00662F80(uint32_t arg0, uint32_t arg1)",
+    "summary": "Shows a MessageBoxA (type 0x40, no owner) with arg1's c_str() as text and arg0's c_str() as caption; returns the MessageBoxA result.",
+    "lifted_path": "lifted/leaf/decompiled_660000.cpp"
+  },
   "0x00663060": {
     "name": "sub_00663060_dtor",
     "signature": "void __thiscall sub_00663060(void* self)",
