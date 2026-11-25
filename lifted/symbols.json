@@ -55937,6 +55937,12 @@
     "summary": "Checks a bitflag on subobject +0x00 (via fn_0071E680) or fallback +0x08+0xb0",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E7000": {
+    "name": "mapSubobjectTypeOrFallback",
+    "signature": "extern \"C\" uint32_t __fastcall fn_006E7000(void* self)",
+    "summary": "Maps subobject field +0x28 to a category code, or falls back to secondary object's +0x4C field.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E7078": {
     "name": "getStringByIndex_006E7078",
     "signature": "uint32_t sub_006E7078(uint32_t index)",

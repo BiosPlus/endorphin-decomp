@@ -1321,3 +1321,45 @@ extern uint8_t __thiscall fn_006E6DE0(void* self, uint32_t mask) {
     return (mask & flags) != 0 ? 1 : 0;
 }
 } // namespace lift_006E6DE0
+
+// [0x006E7000]
+namespace lift_006E7000 {
+// @name mapSubobjectTypeOrFallback
+// @summary Maps subobject field +0x28 to a category code, or falls back to secondary object's +0x4C field.
+// @field Self +0x00 void* field_0x00
+// @field Self +0x08 void* field_0x08
+// @field FallbackObj +0x4C uint32_t field_0x4c
+
+
+extern uint32_t __fastcall ext_00711DB0(void* self);
+
+extern uint32_t __fastcall fn_006E7000(void* self) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    void* primary = *reinterpret_cast<void**>(base + 0x00);
+    if (primary != nullptr) {
+        uint32_t val = ext_00711DB0(primary);
+        switch (val) {
+            case 1:
+                return 4;
+            case 2:
+                return 1;
+            case 3:
+            case 4:
+                return 2;
+            case 13:
+                return 5;
+            case 14:
+            case 15:
+                return 3;
+            default:
+                return 0;
+        }
+    }
+
+    void* fallback = *reinterpret_cast<void**>(base + 0x08);
+    if (fallback != nullptr) {
+        return *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(fallback) + 0x4C);
+    }
+    return 0;
+}
+} // namespace lift_006E7000

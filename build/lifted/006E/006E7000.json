@@ -1,0 +1,33 @@
+{
+  "va": "0x006E7000",
+  "size": 96,
+  "orig_symbol": "sub_006E7000",
+  "src_path": "src/leaf/decompiled_6E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6E0000.cpp",
+  "name": "mapSubobjectTypeOrFallback",
+  "signature": "extern \"C\" uint32_t __fastcall fn_006E7000(void* self)",
+  "summary": "Maps subobject field +0x28 to a category code, or falls back to secondary object's +0x4C field.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "FallbackObj",
+      "offset": "+0x4C",
+      "type": "uint32_t",
+      "name": "field_0x4c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:43:36Z"
+}
