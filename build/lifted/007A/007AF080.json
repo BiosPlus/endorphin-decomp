@@ -1,0 +1,13 @@
+{
+  "va": "0x007AF080",
+  "size": 64,
+  "orig_symbol": "sub_007AF080",
+  "src_path": "src/leaf/decompiled_7A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7A0000.cpp",
+  "name": "SwapDwordPairs",
+  "signature": "void SwapDwordPairs(uint8_t* data, uint32_t count)",
+  "summary": "Byte-swaps the 32-bit words of `count` dword pairs in place, after byte-swapping 2*count dwords via ext_007AF040.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:10:24Z"
+}

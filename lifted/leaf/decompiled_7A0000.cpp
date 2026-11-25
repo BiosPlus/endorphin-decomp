@@ -461,3 +461,25 @@ void fn_007AAB30(void* self) {
     *outer = nullptr;
 }
 } // namespace lift_007AAB30
+
+// [0x007AF080]
+namespace lift_007AF080 {
+// @name SwapDwordPairs
+// @summary Byte-swaps the 32-bit words of `count` dword pairs in place, after byte-swapping 2*count dwords via ext_007AF040.
+
+void ext_007AF040(uint8_t* data, uint32_t count);
+
+void SwapDwordPairs(uint8_t* data, uint32_t count) {
+    ext_007AF040(data, count * 2);
+
+    for (uint32_t i = 0; i < count; ++i) {
+        uint8_t* p = data + static_cast<size_t>(i) * 8;
+        uint32_t a;
+        uint32_t b;
+        std::memcpy(&a, p, 4);
+        std::memcpy(&b, p + 4, 4);
+        std::memcpy(p, &b, 4);
+        std::memcpy(p + 4, &a, 4);
+    }
+}
+} // namespace lift_007AF080

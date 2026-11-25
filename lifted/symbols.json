@@ -55765,6 +55765,12 @@
     "summary": "Reverses the byte order of each 32-bit word in an array of `count` dwords, in place.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AF080": {
+    "name": "SwapDwordPairs",
+    "signature": "void SwapDwordPairs(uint8_t* data, uint32_t count)",
+    "summary": "Byte-swaps the 32-bit words of `count` dword pairs in place, after byte-swapping 2*count dwords via ext_007AF040.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AF200": {
     "name": "Unknown::ComputeRowByteCount",
     "class": "Unknown",
