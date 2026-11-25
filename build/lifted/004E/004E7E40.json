@@ -1,0 +1,13 @@
+{
+  "va": "0x004E7E40",
+  "size": 67,
+  "orig_symbol": "sub_004E7E40",
+  "src_path": "src/leaf/decompiled_4E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4E0000.cpp",
+  "name": "sortHeapDWORD",
+  "signature": "void fn_004E7E40(DWORD* first, DWORD* last)",
+  "summary": "In-place heapsort tail: repeatedly moves the heap top to the end and sifts the remaining range down via ext_0059F310 (std::sort_heap-style).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:14:13Z"
+}

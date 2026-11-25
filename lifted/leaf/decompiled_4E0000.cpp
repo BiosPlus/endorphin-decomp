@@ -160,3 +160,20 @@ void* fn_004EF970(DWORD a0, DWORD a1, DWORD a2, const DWORD* a3, BYTE a4) {
     return rec;
 }
 } // namespace lift_004EF970
+
+// [0x004E7E40] sub_004E7E40 (67 bytes)
+namespace lift_004E7E40 {
+extern void ext_0059F310(DWORD* first, DWORD hole, DWORD len, DWORD value);
+
+// @name sortHeapDWORD
+// @summary In-place heapsort tail: repeatedly moves the heap top to the end and sifts the remaining range down via ext_0059F310 (std::sort_heap-style).
+void fn_004E7E40(DWORD* first, DWORD* last) {
+    ptrdiff_t n = last - first;
+    while (n > 1) {
+        DWORD value = first[n - 1];
+        first[n - 1] = first[0];
+        ext_0059F310(first, 0, static_cast<DWORD>(n - 1), value);
+        --n;
+    }
+}
+} // namespace lift_004E7E40

@@ -14256,6 +14256,12 @@
     "summary": "Forwards to virtual slot 24 (vtable +0x60) with arguments (a, 3, b, 1) and returns its result.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x004E7E40": {
+    "name": "sortHeapDWORD",
+    "signature": "void fn_004E7E40(DWORD* first, DWORD* last)",
+    "summary": "In-place heapsort tail: repeatedly moves the heap top to the end and sifts the remaining range down via ext_0059F310 (std::sort_heap-style).",
+    "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
   "0x004E7E90": {
     "name": "Unknown::initDefaults",
     "class": "Unknown",
