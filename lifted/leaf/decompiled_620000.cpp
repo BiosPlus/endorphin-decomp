@@ -1517,7 +1517,7 @@ extern float ext_00594010(void* self);
 
 // @name Unknown::updateScaledRatio_00629D30
 // @class Unknown
-// @summary Samples two floats (virtual getter on a sub-object, and a free-function/member pair), stores their offsets from this->field_0x34/0x38 as the new field_0x34/0x38, and writes their ratio to field_0x30.
+// @summary Samples two floats a (virtual getter on a sub-object) and b (via ext_00594000/ext_00594010), sets field_0x30 = (a - old field_0x34) / (b - old field_0x38), then stores field_0x38 = b and field_0x34 = a.
 // @field Unknown +0x28 void* field_0x28
 // @field Unknown +0x30 float field_0x30
 // @field Unknown +0x34 float field_0x34
