@@ -1,0 +1,13 @@
+{
+  "va": "0x0079BBD0",
+  "size": 36,
+  "orig_symbol": "sub_0079BBD0",
+  "src_path": "src/clones/auto_clones_790000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_790000.cpp",
+  "name": "SetNegHugeGlobals",
+  "signature": "void fn_0079BBD0(void* self)",
+  "summary": "Stores -_HUGE (negated MSVCRT HUGE_VAL) into three global doubles.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@medium",
+  "lifted_at": "2026-11-25T14:21:38Z"
+}

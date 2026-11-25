@@ -67598,6 +67598,12 @@
     "summary": "Destructor tail-call: restores vtable mem_00997530 and tail-calls base destructor sub_00705450.",
     "lifted_path": "lifted/leaf/tiny_790000.cpp"
   },
+  "0x0079BBD0": {
+    "name": "SetNegHugeGlobals",
+    "signature": "void fn_0079BBD0(void* self)",
+    "summary": "Stores -_HUGE (negated MSVCRT HUGE_VAL) into three global doubles.",
+    "lifted_path": "lifted/clones/auto_clones_790000.cpp"
+  },
   "0x0079C1B0": {
     "name": "codeSelectOrZero",
     "signature": "uint32_t fn_0079C1B0(uint32_t ecxValue, uint32_t selector, uint32_t unusedArg)",
