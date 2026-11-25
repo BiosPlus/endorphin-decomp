@@ -1975,3 +1975,20 @@ extern void __thiscall fn_0044C0D0(void* self) {
     ext_006A5EA8();
 }
 } // namespace lift_0044C0D0
+
+// [0x004444C0]
+namespace lift_004444C0 {
+// @name updateField0x69FromSub00584C20
+// @summary Sets byte at offset 0x69 to !ext_00584C20(obj) if obj is non-null.
+// @field Unknown +0x69 uint8_t field_0x69
+
+
+extern uint8_t __thiscall ext_00584C20(void* self);
+
+void __stdcall fn_004444C0(void* obj) {
+    if (obj) {
+        uint8_t res = ext_00584C20(obj);
+        lift_field<uint8_t>(obj, 0x69) = (res == 0) ? 1 : 0;
+    }
+}
+} // namespace lift_004444C0

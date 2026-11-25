@@ -3001,6 +3001,12 @@
     "summary": "Discards the caller's pushed stack slot and clobbers the saved esi register, then returns; a 2-byte \"pop esi / ret\" tail.",
     "lifted_path": "lifted/leaf/tiny_430000.cpp"
   },
+  "0x00430FA0": {
+    "name": "CWndSub_KillTimerAndCleanup",
+    "signature": "void __thiscall fn_00430FA0(void* self)",
+    "summary": "Kills the timer at +0x160 for HWND at +0x20 and tail-calls MFC80_ord_4342",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00431310": {
     "name": "sub_00431310",
     "signature": "void fn_00431310(uint32_t arg)",
@@ -4095,6 +4101,12 @@
     "signature": "extern \"C\" void __fastcall fn_004444B0(void* self)",
     "summary": "This-adjustor thunk: adjusts `this` by +0x15C and tail-calls sub_0045C240.",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
+  },
+  "0x004444C0": {
+    "name": "updateField0x69FromSub00584C20",
+    "signature": "void __stdcall fn_004444C0(void* obj)",
+    "summary": "Sets byte at offset 0x69 to !ext_00584C20(obj) if obj is non-null.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
   },
   "0x00444750": {
     "name": "ForwardToWindowPair_00444750",
