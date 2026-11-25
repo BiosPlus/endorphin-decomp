@@ -4040,6 +4040,12 @@
     "summary": "Calls MFC80!ord_578 on each 4-byte element in [begin, end), frees the",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x0043E690": {
+    "name": "copyChunkEntryMatch_0043E690",
+    "signature": "void* fn_0043E690(uint32_t /*unused_arg1*/, uint32_t /*unused_arg2*/, void* container, uint32_t index, uint32_t /*unused_arg5*/, uint32_t arg6, uint32_t end, const uint32_t* value, uint32_t /*unused_arg9*/, uint32_t /*unused_arg10*/, uint32_t /*unused_arg11*/, void* out)",
+    "summary": "Runs findChunkEntryMatch over [index, end) and copies its {0, container, matchIndex} result into out; returns out.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x0043E7D0": {
     "name": "sub_0043E7D0",
     "signature": "DWORD* __thiscall fn_0043E7D0(void* self, const DWORD* first, const DWORD* last, DWORD* out)",

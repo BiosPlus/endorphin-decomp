@@ -3364,3 +3364,28 @@ int32_t __thiscall sub_0043CE40(void* self, int32_t arg0) {
     return ext_006A6DE0(scaled);
 }
 } // namespace lift_0043CE40
+
+// [0x0043E690] sub_0043E690 (94 bytes)
+namespace lift_0043E690 {
+// Known callee 0x0043D800: findChunkEntryMatch_0043D800 (Scans indices [index, end) in a two-level chunk table for an entry equal to *value; writes {0, container, matchIndex} into out and returns out.)
+extern void* ext_0043D800(void* out, uint32_t unused_arg2, void* container, uint32_t index,
+                              uint32_t unused_arg5, uint32_t unused_arg6, uint32_t end,
+                              const uint32_t* value);
+
+// @name copyChunkEntryMatch_0043E690
+// @summary Runs findChunkEntryMatch over [index, end) and copies its {0, container, matchIndex} result into out; returns out.
+void* fn_0043E690(uint32_t /*unused_arg1*/, uint32_t /*unused_arg2*/, void* container, uint32_t index,
+                  uint32_t /*unused_arg5*/, uint32_t arg6, uint32_t end, const uint32_t* value,
+                  uint32_t /*unused_arg9*/, uint32_t /*unused_arg10*/, uint32_t /*unused_arg11*/,
+                  void* out) {
+    uint32_t scratch[3] = {0, 0, 0};
+    void* const result = ext_0043D800(scratch, 0, container, index, 0, arg6, end, value);
+
+    const uint32_t* match = static_cast<const uint32_t*>(result);
+    uint32_t* dst = static_cast<uint32_t*>(out);
+    dst[0] = 0;
+    dst[1] = match[1];
+    dst[2] = match[2];
+    return out;
+}
+} // namespace lift_0043E690

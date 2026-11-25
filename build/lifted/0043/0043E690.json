@@ -1,0 +1,13 @@
+{
+  "va": "0x0043E690",
+  "size": 94,
+  "orig_symbol": "sub_0043E690",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "copyChunkEntryMatch_0043E690",
+  "signature": "void* fn_0043E690(uint32_t /*unused_arg1*/, uint32_t /*unused_arg2*/, void* container, uint32_t index, uint32_t /*unused_arg5*/, uint32_t arg6, uint32_t end, const uint32_t* value, uint32_t /*unused_arg9*/, uint32_t /*unused_arg10*/, uint32_t /*unused_arg11*/, void* out)",
+  "summary": "Runs findChunkEntryMatch over [index, end) and copies its {0, container, matchIndex} result into out; returns out.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:05:33Z"
+}
