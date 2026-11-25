@@ -66444,6 +66444,12 @@
     "summary": "Returns bit 0 of the 32-bit field at +0x9C of the object passed as the single stack argument.",
     "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
   },
+  "0x007C9270": {
+    "name": "sub_007C9270",
+    "signature": "uint32_t sub_007C9270(std::uintptr_t self)",
+    "summary": "Returns the dword at offset +0x40 of the object passed as the single stack argument.",
+    "lifted_path": "lifted/leaf/tiny_7C0000.cpp"
+  },
   "0x007C9300": {
     "name": "sub_007C9300_getIndexedField94",
     "signature": "uint32_t sub_007C9300_getIndexedField94(const void* self, uint32_t idx)",

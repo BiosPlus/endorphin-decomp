@@ -1,0 +1,21 @@
+{
+  "va": "0x007C9270",
+  "size": 8,
+  "orig_symbol": "sub_007C9270",
+  "src_path": "src/leaf/tiny_7C0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_7C0000.cpp",
+  "name": "sub_007C9270",
+  "signature": "uint32_t sub_007C9270(std::uintptr_t self)",
+  "summary": "Returns the dword at offset +0x40 of the object passed as the single stack argument.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "uint32_t",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:14:24Z"
+}

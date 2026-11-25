@@ -1159,3 +1159,16 @@ void fn_007CD530(void* self) {
 }
 } // namespace lift_007CD510
 } // namespace lift_007CD530
+
+// [0x007C9270]
+namespace lift_007C9270 {
+// @name sub_007C9270
+// @summary Returns the dword at offset +0x40 of the object passed as the single stack argument.
+// @field Unknown +0x40 uint32_t field_0x40
+
+
+uint32_t sub_007C9270(std::uintptr_t self) {
+    const auto* base = reinterpret_cast<const std::uint8_t*>(self);
+    return *reinterpret_cast<const std::uint32_t*>(base + 0x40);
+}
+} // namespace lift_007C9270
