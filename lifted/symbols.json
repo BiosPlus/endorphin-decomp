@@ -65282,6 +65282,12 @@
     "summary": "Returns the last byte of the string at index in the pointer table, or 'S' if the table is empty or index is out of range.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x0078CA10": {
+    "name": "SwitchIndexByteTable_0078CA10",
+    "signature": "const unsigned char* sub_0078CA10()",
+    "summary": "Not code: 17-byte switch index lookup table (followed by 0x90 padding); returns the table.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x0078CB70": {
     "name": "getIndexedDword",
     "signature": "uint32_t getIndexedDword(void* ecx, uint32_t index)",

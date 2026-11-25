@@ -1,0 +1,13 @@
+{
+  "va": "0x0078CA10",
+  "size": 32,
+  "orig_symbol": "sub_0078CA10",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "SwitchIndexByteTable_0078CA10",
+  "signature": "const unsigned char* sub_0078CA10()",
+  "summary": "Not code: 17-byte switch index lookup table (followed by 0x90 padding); returns the table.",
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-25T12:43:20Z"
+}
