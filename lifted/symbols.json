@@ -2259,6 +2259,13 @@
     "summary": "Destroys the std::string at self+0x14, then clears the string-entry buffer at self+0x04.",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x00429150": {
+    "name": "Unknown::Ctor_00429150",
+    "class": "Unknown",
+    "signature": "void* __thiscall fn_00429150(uint8_t* self, uint32_t arg)",
+    "summary": "Constructor-style init: stores the first argument at +0x00, zeroes +0x08/+0x0C/+0x10, and default-constructs a std::string at +0x14 via the MSVCP80 import; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x004291A0": {
     "name": "sub_004291A0",
     "class": "Unknown",

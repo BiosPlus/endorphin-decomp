@@ -778,3 +778,30 @@ void fn_00429100(void* self) {
     ext_00428A60(static_cast<uint8_t*>(self) + 0x04);
 }
 } // namespace lift_00429100
+
+// [0x00429150] sub_00429150 (79 bytes)
+namespace lift_00429150 {
+extern uint32_t mem_00924FE8;
+
+// @name Unknown::Ctor_00429150
+// @class Unknown
+// @summary Constructor-style init: stores the first argument at +0x00, zeroes +0x08/+0x0C/+0x10, and default-constructs a std::string at +0x14 via the MSVCP80 import; returns this.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10
+// @field Unknown +0x14 std::string field_0x14
+void* __thiscall fn_00429150(uint8_t* self, uint32_t arg) {
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+    lift_field<uint32_t>(self, 0x10) = 0;
+
+    // Default-construct the string member at self + 0x14 (MSVCP80 basic_string ctor, thiscall).
+    using StringCtorFn = void(__thiscall*)(void*);
+    StringCtorFn string_ctor = reinterpret_cast<StringCtorFn>(static_cast<uintptr_t>(mem_00924FE8));
+    string_ctor(self + 0x14);
+
+    lift_field<uint32_t>(self, 0x00) = arg;
+    return self;
+}
+} // namespace lift_00429150
