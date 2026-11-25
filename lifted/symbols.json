@@ -55952,6 +55952,13 @@
     "summary": "Stores x into +0x10, then sets +0x18 to sqrt(x*x + y*y) where y is read from +0x14.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CB5F0": {
+    "name": "sub_007CB5F0",
+    "class": "ObjectField",
+    "signature": "void* fn_007CB5F0(void* self, void* a2, float a3, float a4)",
+    "summary": "Auto-lifted identical-shape clone of 0x007CC180 (ObjectField::InitFloatsFromArgs).",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CB940": {
     "name": "setNonNegativeFloat_0x10",
     "signature": "void sub_007CB940(void* self, float value)",
