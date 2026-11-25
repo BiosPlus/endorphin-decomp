@@ -46,3 +46,33 @@ void fn_00516E60(void* self) {
     }
 }
 } // namespace lift_00516E60
+
+// [0x00516E10]
+namespace lift_00516E10 {
+// @name EvolvedIndividual::vfunc_0_off_8
+// @class EvolvedIndividual
+// @summary Sets the owner pointer on an added Interpreter and updates indices of all elements
+// @field EvolvedIndividual +0x14 void** elements_begin (offset +0xC from Owner subobject at +0x8)
+// @field EvolvedIndividual +0x18 void** elements_end (offset +0x10 from Owner subobject at +0x8)
+
+void __thiscall fn_00516E10(void* self, void* item, uint32_t /*unused*/) {
+    uint8_t* base = static_cast<uint8_t*>(self);
+    uint8_t* item_ptr = static_cast<uint8_t*>(item);
+    *reinterpret_cast<uint32_t*>(item_ptr + 0x30) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base - 0x8));
+
+    for (uint32_t i = 0;; ++i) {
+        uint32_t begin_addr = *reinterpret_cast<uint32_t*>(base + 0xC);
+        if (begin_addr == 0) {
+            break;
+        }
+        uint32_t end_addr = *reinterpret_cast<uint32_t*>(base + 0x10);
+        int32_t count = static_cast<int32_t>(end_addr - begin_addr) >> 2;
+        if (i >= static_cast<uint32_t>(count)) {
+            break;
+        }
+        uint32_t* elements = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(begin_addr));
+        uint8_t* elem = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(elements[i]));
+        *reinterpret_cast<uint32_t*>(elem + 0x34) = i;
+    }
+}
+} // namespace lift_00516E10
