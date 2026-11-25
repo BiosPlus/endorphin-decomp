@@ -599,3 +599,28 @@ void* fn_005EAF40() {
     return reinterpret_cast<void*>(&mem_00B45F18);
 }
 } // namespace lift_005EAF40
+
+// [0x005EAFA0] sub_005EAFA0 (87 bytes)
+namespace lift_005EAFA0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self; stores its single stack argument into the first DWORD of self and returns it).
+extern void ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B45F24;  // init guard flags; bit 0 = initialized/in-progress
+extern DWORD mem_00B45F20;  // static object storage; first DWORD is its vtable pointer
+
+// @name getOrInitStaticObject_005EAFA0
+// @summary Lazily constructs the static object at 0x00B45F20 once (guarded by bit 0 of 0x00B45F24), then returns its address.
+// @field <unnamed> +0x00 DWORD vtbl
+void* fn_005EAFA0() {
+    // The original wraps the init in an MSVC SEH frame (fs:[0] push/restore,
+    // try-state -1 -> 0). That is runtime-specific and not portable, so it is
+    // dropped here; only the guard logic and the calls are kept.
+    if ((mem_00B45F24 & 1u) == 0) {
+        mem_00B45F24 |= 1u;
+        // The disassembly passes a stack slot as the single argument; its value
+        // is overwritten by the vtable store below, so 0 is used here.
+        ext_0067A670(&mem_00B45F20, 0);
+        mem_00B45F20 = 0x00969244u;  // vtable pointer
+    }
+    return &mem_00B45F20;
+}
+} // namespace lift_005EAFA0

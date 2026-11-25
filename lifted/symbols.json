@@ -32078,6 +32078,12 @@
     "summary": "Lazily initializes a static object at mem_00B45F18 once (guarded by bit 0 of mem_00B45F1C) via ext_0067A670(obj, 0), then sets its vptr to 0x969094 and returns the object's address.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005EAFA0": {
+    "name": "getOrInitStaticObject_005EAFA0",
+    "signature": "void* fn_005EAFA0()",
+    "summary": "Lazily constructs the static object at 0x00B45F20 once (guarded by bit 0 of 0x00B45F24), then returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005EB000": {
     "name": "getOrInitStaticObject_005EB000",
     "signature": "void* fn_005EB000(void)",
