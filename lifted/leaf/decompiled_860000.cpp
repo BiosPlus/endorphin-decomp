@@ -813,3 +813,29 @@ void fn_0086F050(void* src, void* dst) {
     }
 }
 } // namespace lift_0086F050
+
+// [0x0086AE50] sub_0086AE50 (81 bytes)
+namespace lift_0086AE50 {
+// @name BitsetBitLength
+// @summary Returns 1 + index of the highest set bit in a uint32 word array (0 if count==0 or all words are zero).
+uint32_t fn_0086AE50(const uint32_t* words, uint32_t count) {
+    if (count == 0) {
+        return 0;
+    }
+
+    // Scan down from the top word for the highest nonzero word.
+    uint32_t k = count;
+    while (k > 0 && words[k - 1] == 0) {
+        --k;
+    }
+    if (k == 0) {
+        return 0;
+    }
+
+    // Bit length of the top nonzero word (number of bits up to and including its MSB).
+    uint32_t top = words[k - 1];
+    uint32_t bits = static_cast<uint32_t>(std::bit_width(top));
+
+    return (k - 1) * 32u + bits;
+}
+} // namespace lift_0086AE50

@@ -62957,6 +62957,12 @@
     "summary": "Word-wise subtract-with-borrow over a uint32 array; returns final borrow flag (0/1). Returns 0 when count == 0.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
+  "0x0086AE50": {
+    "name": "BitsetBitLength",
+    "signature": "uint32_t fn_0086AE50(const uint32_t* words, uint32_t count)",
+    "summary": "Returns 1 + index of the highest set bit in a uint32 word array (0 if count==0 or all words are zero).",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
   "0x0086AEB0": {
     "name": "CompareDwordArraysReverse",
     "signature": "int32_t fn_0086AEB0(const uint32_t* a, uint32_t arg2)",
