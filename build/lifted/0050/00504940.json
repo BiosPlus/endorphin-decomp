@@ -1,0 +1,14 @@
+{
+  "va": "0x00504940",
+  "size": 35,
+  "orig_symbol": "Interpreter::vfunc_25",
+  "src_path": "src/classes/Interpreter.cpp",
+  "lifted_path": "lifted/classes/Interpreter.cpp",
+  "name": "Interpreter::vfunc_25",
+  "class": "Interpreter",
+  "signature": "std::string* fn_00504940(std::string* out, uint32_t /*unused*/, uint32_t /*unused*/)",
+  "summary": "Constructs a std::string in the caller-provided return slot from the C string pointed to by mem_00A9EE78 and returns that slot.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:14:03Z"
+}

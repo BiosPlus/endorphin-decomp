@@ -18619,6 +18619,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x00504940": {
+    "name": "Interpreter::vfunc_25",
+    "class": "Interpreter",
+    "signature": "std::string* fn_00504940(std::string* out, uint32_t /*unused*/, uint32_t /*unused*/)",
+    "summary": "Constructs a std::string in the caller-provided return slot from the C string pointed to by mem_00A9EE78 and returns that slot.",
+    "lifted_path": "lifted/classes/Interpreter.cpp"
+  },
   "0x00504970": {
     "name": "GetTableEntryPlus20",
     "signature": "void* __fastcall fn_00504970(void* self)",
