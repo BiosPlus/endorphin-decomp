@@ -17607,6 +17607,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00533E90 (ManagedDisplayList\u003cUtilityGraphics::Grid\u003e::vfunc_0).",
     "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
   },
+  "0x00533F10": {
+    "name": "Object::ApplyViewportAndScissor",
+    "class": "Object",
+    "signature": "void fn_00533F10(void* self)",
+    "summary": "Sets the GL viewport and scissor rectangle from the object's stored bounds.",
+    "lifted_path": "lifted/leaf/decompiled_530000.cpp"
+  },
   "0x00533FB0": {
     "name": "sub_00533FB0",
     "signature": "void* __thiscall sub_00533FB0(void* self, void* out)",

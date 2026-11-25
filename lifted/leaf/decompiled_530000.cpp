@@ -557,3 +557,33 @@ void fn_00534020(void* self, void* out) {
     std::memcpy(out, src, 16);
 }
 } // namespace lift_00534020
+
+// [0x00533F10] sub_00533F10 (61 bytes)
+namespace lift_00533F10 {
+// OpenGL entry points resolved through the import address table.
+using PFN_glViewport = void(__stdcall*)(GLint x, GLint y, GLsizei width, GLsizei height);
+using PFN_glScissor  = void(__stdcall*)(GLint x, GLint y, GLsizei width, GLsizei height);
+
+extern PFN_glViewport mem_00925400;
+extern PFN_glScissor  mem_009253FC;
+
+// @name Object::ApplyViewportAndScissor
+// @class Object
+// @summary Sets the GL viewport and scissor rectangle from the object's stored bounds.
+// @field Object +0x04 int32_t field_0x04
+// @field Object +0x08 int32_t field_0x08
+// @field Object +0x0C int32_t field_0x0C
+// @field Object +0x10 int32_t field_0x10
+void fn_00533F10(void* self) {
+    const GLint f04 = lift_field<int32_t>(self, 0x04);
+    const GLint f08 = lift_field<int32_t>(self, 0x08);
+    const GLint f0C = lift_field<int32_t>(self, 0x0C);
+    const GLint f10 = lift_field<int32_t>(self, 0x10);
+
+    const GLsizei width  = static_cast<GLsizei>(f10 - f08);
+    const GLsizei height = static_cast<GLsizei>(f0C - f04);
+
+    mem_00925400(f04, f08, width, height);  // glViewport
+    mem_009253FC(f04, f08, width, height);  // glScissor
+}
+} // namespace lift_00533F10

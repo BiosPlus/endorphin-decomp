@@ -1,0 +1,40 @@
+{
+  "va": "0x00533F10",
+  "size": 61,
+  "orig_symbol": "sub_00533F10",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Object::ApplyViewportAndScissor",
+  "class": "Object",
+  "signature": "void fn_00533F10(void* self)",
+  "summary": "Sets the GL viewport and scissor rectangle from the object's stored bounds.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Object",
+      "offset": "+0xC",
+      "type": "int32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:57:46Z"
+}
