@@ -27306,6 +27306,13 @@
     "summary": "Validates this-\u003e+0x08 / this-\u003e+0x0C linkage, then returns begin + 4*index for the 4-byte-element vector at (this-\u003e+0x0C)+0x2C, calling the invalid-parameter handler on bad state or out-of-range index.",
     "lifted_path": "lifted/leaf/decompiled_590000.cpp"
   },
+  "0x0059FF60": {
+    "name": "NMData::BackGroundData::vfunc_10_off_10",
+    "class": "NMData::BackGroundData",
+    "signature": "void fn_0059FF60(void* self, void* arg)",
+    "summary": "For each element pointer in the +0x74..+0x78 range, calls vslot 9(arg) and vslot 10(arg, 1) on the element's +0x0C subobject.",
+    "lifted_path": "lifted/NMData/BackGroundData.cpp"
+  },
   "0x005A0200": {
     "name": "copyStringRangeFromTreeIteratorWrapper",
     "signature": "void* fn_005A0200(void* container, void* node, void* expectedContainer, void* endNode, std::string* out)",

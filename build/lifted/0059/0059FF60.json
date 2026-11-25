@@ -1,0 +1,28 @@
+{
+  "va": "0x0059FF60",
+  "size": 109,
+  "orig_symbol": "NMData::BackGroundData::vfunc_10_off_10",
+  "src_path": "src/NMData/BackGroundData.cpp",
+  "lifted_path": "lifted/NMData/BackGroundData.cpp",
+  "name": "NMData::BackGroundData::vfunc_10_off_10",
+  "class": "NMData::BackGroundData",
+  "signature": "void fn_0059FF60(void* self, void* arg)",
+  "summary": "For each element pointer in the +0x74..+0x78 range, calls vslot 9(arg) and vslot 10(arg, 1) on the element's +0x0C subobject.",
+  "fields": [
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x74",
+      "type": "void**",
+      "name": "field_0x74"
+    },
+    {
+      "class": "NMData::BackGroundData",
+      "offset": "+0x78",
+      "type": "void**",
+      "name": "field_0x78"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:20:45Z"
+}

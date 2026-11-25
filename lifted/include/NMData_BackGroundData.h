@@ -11,6 +11,8 @@
 namespace lifted_layout {
 struct NMData_BackGroundData_Fields {
     // +0x0   void**                   vtable  (evidence: 0x0059DD70, 0x005A9880, 0x005A9960)
+    // +0x74  void**                   field_0x74  (evidence: 0x0059FF60)
+    // +0x78  void**                   field_0x78  (evidence: 0x0059FF60)
     // +0x4DC float                    field_0x4dc  (evidence: 0x0059DD70, 0x005A9960)
     // +0x540 void*                    field_0x540  (evidence: 0x005A5400, 0x00687100)
     // +0x544 void*                    field_0x544  (evidence: 0x005A5400, 0x00687100)

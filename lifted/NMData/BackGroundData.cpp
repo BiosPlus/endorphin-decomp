@@ -132,3 +132,42 @@ std::string* fn_005A9880(void* self, std::string* out) {
     return out;
 }
 } // namespace lift_005A9880
+
+// [0x0059FF60] NMData::BackGroundData::vfunc_10_off_10 (109 bytes)
+namespace lift_0059FF60 {
+// IAT slot for MSVCR80!_invalid_parameter_noinfo (debug iterator-range guard).
+extern void* mem_00925134;
+
+// Virtual slots are reached through the vtable at byte offsets 0x24 and 0x28
+// (slots 9 and 10 on the original 32-bit MSVC layout). Calls are __thiscall;
+// lift_compat.h defines that macro to nothing off-MSVC.
+using VSlot9Fn  = void(__thiscall*)(void* self, void* arg);
+using VSlot10Fn = void(__thiscall*)(void* self, void* arg, int flag);
+
+// @name NMData::BackGroundData::vfunc_10_off_10
+// @class NMData::BackGroundData
+// @summary For each element pointer in the +0x74..+0x78 range, calls vslot 9(arg) and vslot 10(arg, 1) on the element's +0x0C subobject.
+// @field NMData::BackGroundData +0x74 void** field_0x74
+// @field NMData::BackGroundData +0x78 void** field_0x78
+void fn_0059FF60(void* self, void* arg) {
+    // Iterator over the element-pointer range; the end bound is re-read each pass.
+    void** it = lift_field<void**>(self, 0x74);
+    while (it != lift_field<void**>(self, 0x78)) {
+        // Range guard: the iterator must be strictly before end (MSVC debug check).
+        if (!(it < lift_field<void**>(self, 0x78)))
+            reinterpret_cast<void (*)()>(mem_00925134)();
+
+        void* elem = *it;
+        void* sub = &lift_field<void*>(elem, 0x0C);
+
+        void* vtbl = lift_field<void*>(sub, 0);
+        lift_field<VSlot9Fn>(vtbl, 0x24)(sub, arg);
+
+        sub = &lift_field<void*>(*it, 0x0C);
+        vtbl = lift_field<void*>(sub, 0);
+        lift_field<VSlot10Fn>(vtbl, 0x28)(sub, arg, 1);
+
+        ++it;
+    }
+}
+} // namespace lift_0059FF60
