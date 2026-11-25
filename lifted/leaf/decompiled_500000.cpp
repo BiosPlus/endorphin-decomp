@@ -375,3 +375,28 @@ uint8_t* fn_005049B0(void* self, uint32_t index) {
     return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(begin + index * kElementSize));
 }
 } // namespace lift_005049B0
+
+// [0x0050A6E0]
+namespace lift_0050A6E0 {
+// @name fillElementRange
+// @summary Copies the string at +0x04 and float at +0x20 from the source element into every 0x24-byte element in [begin, end).
+// @field Element +0x04 uint8_t[28] field_0x04 (std::string sub-object, assigned via ext_MSVCP80_string_assign)
+// @field Element +0x20 float field_0x20
+
+// Import slot for MSVCP80 basic_string<char>::operator=(const string&).
+extern const uint32_t mem_00924FDC;
+
+// Thiscall string assignment: self = rhs, returns self.
+extern void* ext_MSVCP80_string_assign(void* self, const void* rhs);
+
+void fillElementRange(void* begin, void* end, const void* src) {
+    uint8_t* e = static_cast<uint8_t*>(begin);
+    uint8_t* last = static_cast<uint8_t*>(end);
+    const uint8_t* s = static_cast<const uint8_t*>(src);
+    while (e != last) {
+        ext_MSVCP80_string_assign(e + 0x04, s + 0x04);
+        lift_field<float>(e, 0x20) = lift_field<float>(s, 0x20);
+        e += 0x24;
+    }
+}
+} // namespace lift_0050A6E0

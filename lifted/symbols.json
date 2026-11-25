@@ -15578,6 +15578,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0050A6E0": {
+    "name": "fillElementRange",
+    "signature": "void fillElementRange(void* begin, void* end, const void* src)",
+    "summary": "Copies the string at +0x04 and float at +0x20 from the source element into every 0x24-byte element in [begin, end).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050AA00": {
     "name": "NMData::TaskTemplate::vfunc_13",
     "class": "NMData::TaskTemplate",
