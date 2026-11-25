@@ -146,3 +146,24 @@ uint32_t fn_00515830(void* self) {
 }
 } // namespace lift_004023C0
 } // namespace lift_00515830
+
+// [0x00519CE0]
+namespace lift_00519CE0 {
+// @name SetVptrAndTailDtor_00519CE0
+// @summary Stores the vtable address 0x0095219C at offset 0 of the object, then tail-jumps to the IAT-bound std::basic_string destructor with this = object + 4.
+
+extern const char mem_00924FF4[];  // .idata IAT slot holding MSVCP80!??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
+
+using StringDtorFn = void (*)(void*);
+
+void sub_00519CE0(void* ecx) {
+    // mov dword ptr [ecx], 0x95219c
+    *reinterpret_cast<uint32_t*>(ecx) = 0x0095219CU;
+
+    // add ecx, 4 ; jmp dword ptr [0x924ff4]
+    void* self = static_cast<char*>(ecx) + 4;
+    auto dtor = reinterpret_cast<StringDtorFn>(
+        static_cast<uintptr_t>(*reinterpret_cast<const uint32_t*>(mem_00924FF4)));
+    dtor(self);
+}
+} // namespace lift_00519CE0
