@@ -2232,3 +2232,42 @@ void __stdcall fn_00414E60(uint32_t owner, uint32_t node, uint32_t expectedOwner
     }
 }
 } // namespace lift_00414E60
+
+// [0x0041DA50]
+namespace lift_0041DA50 {
+// @name getFirstVectorElementOrZero
+// @summary Returns the first element of the vector returned by sub_00469170(sub_00465B30()), or 0 if sub_00660280() is 0 or the vector is empty.
+
+
+extern int32_t __cdecl ext_00660280(void);
+extern int32_t __cdecl ext_00465B30(void);
+extern void* __fastcall ext_00469170(void* self);
+extern void (__cdecl *mem_00925134)(void);
+
+extern int32_t __cdecl fn_0041DA50(void) {
+    if (ext_00660280() == 0) {
+        return 0;
+    }
+
+    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(ext_00465B30())));
+    uint8_t* vec = reinterpret_cast<uint8_t*>(ext_00469170(obj));
+
+    uint32_t begin_addr = *reinterpret_cast<uint32_t*>(vec + 0x4);
+    if (begin_addr == 0) {
+        return 0;
+    }
+
+    uint32_t end_addr = *reinterpret_cast<uint32_t*>(vec + 0x8);
+    int32_t count = static_cast<int32_t>(end_addr - begin_addr) >> 2;
+    if (count == 0) {
+        return 0;
+    }
+
+    if (static_cast<uint32_t>(count) == 0) {
+        mem_00925134();
+    }
+
+    int32_t* begin_ptr = reinterpret_cast<int32_t*>(static_cast<uintptr_t>(begin_addr));
+    return *begin_ptr;
+}
+} // namespace lift_0041DA50

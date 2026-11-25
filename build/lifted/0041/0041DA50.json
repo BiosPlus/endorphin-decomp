@@ -1,0 +1,13 @@
+{
+  "va": "0x0041DA50",
+  "size": 71,
+  "orig_symbol": "sub_0041DA50",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "getFirstVectorElementOrZero",
+  "signature": "extern \"C\" int32_t __cdecl fn_0041DA50(void)",
+  "summary": "Returns the first element of the vector returned by sub_00469170(sub_00465B30()), or 0 if sub_00660280() is 0 or the vector is empty.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:02:50Z"
+}
