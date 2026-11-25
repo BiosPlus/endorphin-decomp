@@ -53858,6 +53858,13 @@
     "summary": "Resolves a value index via GetValueIfCountPositive, then reads three float getters through chained sub-object lookups and stores them as doubles into the caller-supplied buffer at offsets 0x00, 0x08 and 0x10; returns that buffer.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x0070BC70": {
+    "name": "Unknown::FillValueTriple",
+    "class": "Unknown",
+    "signature": "double* fn_0070BC70(void* self, double* out)",
+    "summary": "Fills out[0..2] with three float getter results (as doubles) read from sub-objects of the value returned by GetValueIfCountPositive; returns out.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070BE80": {
     "name": "Unknown::GetFloatAtChainedValue",
     "class": "Unknown",

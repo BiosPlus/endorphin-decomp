@@ -1,0 +1,14 @@
+{
+  "va": "0x0070BC70",
+  "size": 80,
+  "orig_symbol": "sub_0070BC70",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::FillValueTriple",
+  "class": "Unknown",
+  "signature": "double* fn_0070BC70(void* self, double* out)",
+  "summary": "Fills out[0..2] with three float getter results (as doubles) read from sub-objects of the value returned by GetValueIfCountPositive; returns out.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:50:26Z"
+}

@@ -1726,3 +1726,33 @@ double* __thiscall fn_0070BBD0(void* self, double* out) {
     return out;
 }
 } // namespace lift_0070BBD0
+
+// [0x0070BC70] sub_0070BC70 (80 bytes)
+namespace lift_0070BC70 {
+// Callees (32-bit ABI: `this`/first arg arrives in ecx, values are 32-bit).
+extern int32_t ext_006DC460(void* self);            // Unknown::GetValueIfCountPositive
+extern int32_t ext_006C9810(int32_t self);          // sub_006C9810 (returns sub-object handle)
+extern int32_t ext_006C9830(int32_t self);          // sub_006C9830 (returns sub-object handle)
+extern int32_t ext_006C9850(int32_t self);          // sub_006C9850 (returns sub-object handle)
+// Known callee 0x006C9F70: sub_006C9F70 (Getter returning float field at offset +0x14.)
+extern float ext_006C9F70(int32_t self);
+
+// @name Unknown::FillValueTriple
+// @class Unknown
+// @summary Fills out[0..2] with three float getter results (as doubles) read from sub-objects of the value returned by GetValueIfCountPositive; returns out.
+// (No @field lines: self is only passed to callees; out[] offsets 0x00/0x08/0x10 are output slots, not class fields.)
+double* fn_0070BC70(void* self, double* out) {
+    int32_t base = ext_006DC460(self);
+
+    int32_t h0 = ext_006C9810(base);
+    out[0] = static_cast<double>(ext_006C9F70(h0));
+
+    int32_t h1 = ext_006C9830(base);
+    out[1] = static_cast<double>(ext_006C9F70(h1));
+
+    int32_t h2 = ext_006C9850(base);
+    out[2] = static_cast<double>(ext_006C9F70(h2));
+
+    return out;
+}
+} // namespace lift_0070BC70
