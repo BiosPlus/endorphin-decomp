@@ -1051,3 +1051,16 @@ DWORD* fn_00674F20(DWORD* dst, DWORD value) {
 }
 } // namespace lift_0046F6A0
 } // namespace lift_00674F20
+
+// [0x00675000] sub_00675000 (31 bytes)
+namespace lift_00675000 {
+// Known callee 0x00674F20: sub_00674F20 (Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).)
+extern DWORD* ext_00674F20(DWORD* dst, DWORD value);
+
+// @name initDwordToZero_00675000
+// @summary Calls ext_00674F20(dst, 0) to store a zero into *dst via the shared store helper, then returns dst.
+DWORD* fn_00675000(DWORD* dst) {
+    ext_00674F20(dst, 0);
+    return dst;
+}
+} // namespace lift_00675000

@@ -41105,6 +41105,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046F6A0 (StoreValueAndSingleton).",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
+  "0x00675000": {
+    "name": "initDwordToZero_00675000",
+    "signature": "DWORD* fn_00675000(DWORD* dst)",
+    "summary": "Calls ext_00674F20(dst, 0) to store a zero into *dst via the shared store helper, then returns dst.",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
   "0x00675100": {
     "name": "sub_00675100",
     "signature": "extern \"C\" void fn_00675100(void)",
