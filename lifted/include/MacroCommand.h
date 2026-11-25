@@ -11,5 +11,6 @@
 namespace lifted_layout {
 struct MacroCommand_Fields {
     // +0x20  DWORD                    field_0x20  (evidence: 0x00665840)
+    // +0x30  void*                    commandList  (evidence: 0x00665A50)
 };
 } // namespace lifted_layout

@@ -35434,6 +35434,13 @@
     "summary": "Returns true if the 32-bit field at offset +0x24 is non-zero.",
     "lifted_path": "lifted/leaf/tiny_660000.cpp"
   },
+  "0x00665A50": {
+    "name": "MacroCommand::vfunc_1",
+    "class": "MacroCommand",
+    "signature": "void fn_00665A50(void* self)",
+    "summary": "Walks the command list at +0x30 and invokes virtual slot 1 on each element's payload.",
+    "lifted_path": "lifted/classes/MacroCommand.cpp"
+  },
   "0x00666340": {
     "name": "MacroCommand::vfunc_0",
     "class": "MacroCommand",
