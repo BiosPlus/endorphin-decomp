@@ -67979,6 +67979,12 @@
     "summary": "Adjusts the stack pointer by 4 bytes and tail-calls ext_0084A145.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x00852427": {
+    "name": "tailJumpThroughESI",
+    "signature": "void fn_00852427(void* esi)",
+    "summary": "Discards 4 bytes of stack, then transfers control to the function pointer stored at [esi].",
+    "lifted_path": "lifted/leaf/tiny_850000.cpp"
+  },
   "0x00856F00": {
     "name": "initStruct24",
     "signature": "extern \"C\" uint32_t __cdecl fn_00856F00(uint32_t* obj)",

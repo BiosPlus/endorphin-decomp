@@ -1,0 +1,13 @@
+{
+  "va": "0x00852427",
+  "size": 6,
+  "orig_symbol": "sub_00852427",
+  "src_path": "src/leaf/tiny_850000.cpp",
+  "lifted_path": "lifted/leaf/tiny_850000.cpp",
+  "name": "tailJumpThroughESI",
+  "signature": "void fn_00852427(void* esi)",
+  "summary": "Discards 4 bytes of stack, then transfers control to the function pointer stored at [esi].",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:12:16Z"
+}

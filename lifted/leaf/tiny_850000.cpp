@@ -211,3 +211,17 @@ int fn_0085DA60(void* self) {
     }
 }
 } // namespace lift_0085DA60
+
+// [0x00852427] sub_00852427 (6 bytes)
+namespace lift_00852427 {
+// @name tailJumpThroughESI
+// @summary Discards 4 bytes of stack, then transfers control to the function pointer stored at [esi].
+//   Original asm: lea esp,[esp+4]; jmp dword ptr [esi]
+//   Lift note: the stack discard and true tail-jump cannot be expressed in portable C++;
+//   the target is invoked and this function returns to its caller.
+void fn_00852427(void* esi) {
+    using Fn = void (*)();
+    Fn target = lift_field<Fn>(esi, 0);
+    target();
+}
+} // namespace lift_00852427
