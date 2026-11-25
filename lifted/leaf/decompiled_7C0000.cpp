@@ -748,3 +748,29 @@ void* fn_007CB5F0(void* self, void* a2, float a3, float a4) {
 }
 } // namespace lift_007CC180
 } // namespace lift_007CB5F0
+
+// [0x007CB890] sub_007CB890 (61 bytes)
+namespace lift_007CB890 {
+// Known callee 0x007CB5F0: sub_007CB5F0 (Auto-lifted identical-shape clone of 0x007CC180 (ObjectField::InitFloatsFromArgs).)
+extern void* ext_007CB5F0(void* self, void* a2, float a3, float a4);
+
+// Factory slot: cdecl(uint32 size, uint32 arg) -> void*, read from object+8.
+using AllocFn = void* (__cdecl*)(uint32_t, uint32_t);
+
+// @name AllocAndInitFloats
+// @summary Allocates a 0x1C-byte object via the slot at [[self+0xB0]+8]; if that succeeds, initializes it with two floats via 0x007CB5F0, else returns null.
+// @field Unknown +0xB0 void* field_0xB0
+//
+// Note: the x87 loads in the original happen after `sub esp,8`, so the float
+// argument read from the 2nd parameter slot is forwarded as the callee's a3 and
+// the 3rd parameter as a4. Values are passed through unchanged.
+void* fn_007CB890(void* self, float a2, float a3) {
+    void* obj = lift_field<void*>(self, 0xB0);
+    AllocFn alloc = lift_field<AllocFn>(obj, 8);
+    void* result = alloc(0x1C, 0x10);
+    if (result == nullptr) {
+        return nullptr;
+    }
+    return ext_007CB5F0(result, self, a2, a3);
+}
+} // namespace lift_007CB890

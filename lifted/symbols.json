@@ -56264,6 +56264,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x007CC180 (ObjectField::InitFloatsFromArgs).",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CB890": {
+    "name": "AllocAndInitFloats",
+    "signature": "void* fn_007CB890(void* self, float a2, float a3)",
+    "summary": "Allocates a 0x1C-byte object via the slot at [[self+0xB0]+8]; if that succeeds, initializes it with two floats via 0x007CB5F0, else returns null.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CB940": {
     "name": "setNonNegativeFloat_0x10",
     "signature": "void sub_007CB940(void* self, float value)",
