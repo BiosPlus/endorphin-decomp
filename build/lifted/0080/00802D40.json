@@ -1,0 +1,33 @@
+{
+  "va": "0x00802D40",
+  "size": 66,
+  "orig_symbol": "sub_00802D40",
+  "src_path": "src/leaf/decompiled_800000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_800000.cpp",
+  "name": "sub_00802D40",
+  "signature": "void __thiscall sub_00802D40(uintptr_t ecx)",
+  "summary": "Copies aligned 32-bit float elements from field_0x30 to field_0x40 up to field_0x04 rounded up to a multiple of 4.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x30",
+      "type": "float*",
+      "name": "field_0x30"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "float*",
+      "name": "field_0x40"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:20:22Z"
+}

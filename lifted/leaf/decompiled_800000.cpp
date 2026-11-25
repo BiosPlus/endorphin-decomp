@@ -650,3 +650,31 @@ uint32_t __cdecl fn_0080B610(uint32_t handle, uint32_t size) {
 }
 } // namespace lift_0080B540
 } // namespace lift_0080B610
+
+// [0x00802D40]
+namespace lift_00802D40 {
+// @name sub_00802D40
+// @summary Copies aligned 32-bit float elements from field_0x30 to field_0x40 up to field_0x04 rounded up to a multiple of 4.
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x30 float* field_0x30
+// @field Unknown +0x40 float* field_0x40
+
+
+void __thiscall sub_00802D40(uintptr_t ecx) {
+    int32_t edx = 0;
+    for (;;) {
+        int32_t eax = *reinterpret_cast<const int32_t*>(ecx + 0x4);
+        int32_t rem = eax % 4;
+        if (rem != 0) {
+            eax = eax - rem + 4;
+        }
+        if (edx >= eax) {
+            break;
+        }
+        const float* src = *reinterpret_cast<const float* const*>(ecx + 0x30);
+        float* dst = *reinterpret_cast<float* const*>(ecx + 0x40);
+        dst[edx] = src[edx];
+        edx += 1;
+    }
+}
+} // namespace lift_00802D40
