@@ -8,7 +8,7 @@
 // Recovered field layout for StringIter:
 namespace lifted_layout {
 struct StringIter_Fields {
-    // +0x0   uint32_t                 owner  (evidence: 0x00573250)
-    // +0x4   uint32_t                 pos  (evidence: 0x00573250)
+    // +0x0   uint32_t                 owner  (evidence: 0x00573250, 0x0057BBE0)
+    // +0x4   uint32_t                 pos  (evidence: 0x00573250, 0x0057BBE0)
 };
 } // namespace lifted_layout

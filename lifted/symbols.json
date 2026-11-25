@@ -20870,10 +20870,10 @@
     "lifted_path": "lifted/leaf/tiny_570000.cpp"
   },
   "0x0057BBE0": {
-    "name": "Unknown::CopyBackwardStringPairs",
-    "class": "StringPairRecord",
-    "signature": "StringPairRecord* Unknown_CopyBackwardStringPairs(StringPairRecord* first, StringPairRecord* last, StringPairRecord* dst_end)",
-    "summary": "Copy-backward over 56-byte records (two std::string members); assigns each record into the destination ending at dst_end and returns the new destination begin.",
+    "name": "sub_00573A10",
+    "class": "Unknown",
+    "signature": "DWORD* __thiscall fn_00573A10(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+    "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x0057CF50": {

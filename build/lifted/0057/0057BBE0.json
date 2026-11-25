@@ -4,11 +4,59 @@
   "orig_symbol": "sub_0057BBE0",
   "src_path": "src/leaf/decompiled_570000.cpp",
   "lifted_path": "lifted/leaf/decompiled_570000.cpp",
-  "name": "Unknown::CopyBackwardStringPairs",
-  "class": "StringPairRecord",
-  "signature": "StringPairRecord* Unknown_CopyBackwardStringPairs(StringPairRecord* first, StringPairRecord* last, StringPairRecord* dst_end)",
-  "summary": "Copy-backward over 56-byte records (two std::string members); assigns each record into the destination ending at dst_end and returns the new destination begin.",
+  "name": "sub_00573A10",
+  "class": "Unknown",
+  "signature": "DWORD* __thiscall fn_00573A10(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
+  "summary": "Auto-lifted identical-shape clone of 0x0044C4D0 (DWORD_RangeCopy_thiscall).",
   "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "uint32_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "uint32_t",
+      "name": "field_0x28"
+    },
+    {
+      "class": "std::basic_istream",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vptr"
+    },
+    {
+      "class": "StringIter",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "owner"
+    },
+    {
+      "class": "StringIter",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "pos"
+    },
+    {
+      "class": "BasicString",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
     {
       "class": "StringPairRecord",
       "offset": "+0x0",
@@ -24,5 +72,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T01:04:25Z"
+  "lifted_at": "2026-11-25T01:04:32Z"
 }

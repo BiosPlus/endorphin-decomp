@@ -8,6 +8,6 @@
 // Recovered field layout for BasicString:
 namespace lifted_layout {
 struct BasicString_Fields {
-    // +0x14  uint32_t                 field_0x14  (evidence: 0x00573250)
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x00573250, 0x0057BBE0)
 };
 } // namespace lifted_layout
