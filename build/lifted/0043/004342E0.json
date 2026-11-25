@@ -1,0 +1,22 @@
+{
+  "va": "0x004342E0",
+  "size": 86,
+  "orig_symbol": "sub_004342E0",
+  "src_path": "src/leaf/decompiled_430000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_430000.cpp",
+  "name": "Unknown::dispatchOnField10C_004342E0",
+  "class": "Unknown",
+  "signature": "void fn_004342E0(void* self, void* arg)",
+  "summary": "If this+0x10C is null, forwards to vfunc0 of *arg with 0; otherwise calls vfunc0 of *arg with ext_00430370() and then vfunc1 of *arg with the result of vfunc 0x57 on this+0x10C.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10C",
+      "type": "void*",
+      "name": "field_0x10C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:10:49Z"
+}

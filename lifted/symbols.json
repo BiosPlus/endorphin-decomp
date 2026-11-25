@@ -3013,6 +3013,13 @@
     "summary": "Calls vtable slot 0 of the argument object with flag 1, queries owner+0x104 via vtable slot 0x57, then passes that result to the argument object's vtable slot 1.",
     "lifted_path": "lifted/leaf/decompiled_430000.cpp"
   },
+  "0x004342E0": {
+    "name": "Unknown::dispatchOnField10C_004342E0",
+    "class": "Unknown",
+    "signature": "void fn_004342E0(void* self, void* arg)",
+    "summary": "If this+0x10C is null, forwards to vfunc0 of *arg with 0; otherwise calls vfunc0 of *arg with ext_00430370() and then vfunc1 of *arg with the result of vfunc 0x57 on this+0x10C.",
+    "lifted_path": "lifted/leaf/decompiled_430000.cpp"
+  },
   "0x00434340": {
     "name": "Unknown::notifyThenForwardField11c",
     "class": "Unknown",

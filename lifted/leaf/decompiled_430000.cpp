@@ -2630,3 +2630,49 @@ extern void __thiscall fn_004306C0(void* self, void* arg) {
     }
 }
 } // namespace lift_004306C0
+
+// [0x004342E0] sub_004342E0 (86 bytes)
+namespace lift_004342E0 {
+// Known callee 0x00430370: CheckFieldAt60IsZero (Calls sub_004658C0 to get an object pointer, returns 1 if its int32 at +0x60 is zero, else 0.)
+extern uint8_t ext_00430370(void);
+
+// @name Unknown::dispatchOnField10C_004342E0
+// @class Unknown
+// @summary If this+0x10C is null, forwards to vfunc0 of *arg with 0; otherwise calls vfunc0 of *arg with ext_00430370() and then vfunc1 of *arg with the result of vfunc 0x57 on this+0x10C.
+// @field Unknown +0x10C void* field_0x10C
+void fn_004342E0(void* self, void* arg) {
+    uint8_t* selfBytes = static_cast<uint8_t*>(self);
+    void* field = *reinterpret_cast<void**>(selfBytes + 0x10C);
+
+    if (field == nullptr) {
+        // Tail-forward: vfunc0 of *arg called with this = arg and a zero argument.
+        void* obj = *reinterpret_cast<void**>(arg);
+        void** objVt = *reinterpret_cast<void***>(obj);
+        using Slot1Fn = void (*)(void* thisPtr, uint32_t a);
+        reinterpret_cast<Slot1Fn>(objVt[0])(arg, 0u);
+        return;
+    }
+
+    // vfunc0 of *arg, with this = arg and the flag from ext_00430370().
+    uint32_t flag = static_cast<uint32_t>(ext_00430370());
+    {
+        void* obj = *reinterpret_cast<void**>(arg);
+        void** objVt = *reinterpret_cast<void***>(obj);
+        using Slot1Fn = void (*)(void* thisPtr, uint32_t a);
+        reinterpret_cast<Slot1Fn>(objVt[0])(arg, flag);
+    }
+
+    // Vtable slot 0x57 (byte offset 0x15C on a 32-bit vtable) of this+0x10C, called with that object as this.
+    using Slot0Fn = uint32_t (*)(void* thisPtr);
+    void** fieldVt = *reinterpret_cast<void***>(field);
+    uint32_t r = reinterpret_cast<Slot0Fn>(fieldVt[0x57])(field);
+
+    // vfunc1 of *arg, with this = arg and the value r.
+    {
+        void* obj = *reinterpret_cast<void**>(arg);
+        void** objVt = *reinterpret_cast<void***>(obj);
+        using Slot1Fn = void (*)(void* thisPtr, uint32_t a);
+        reinterpret_cast<Slot1Fn>(objVt[1])(arg, r);
+    }
+}
+} // namespace lift_004342E0
