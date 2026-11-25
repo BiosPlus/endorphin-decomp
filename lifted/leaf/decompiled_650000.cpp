@@ -43,6 +43,7 @@ void* fn_005142F0(void* self, void* pair) {
 }
 } // namespace lift_005142F0
 #include <stdexcept>
+#include <bit>
 
 // [0x00519C80] sub_00519C80 (42 bytes)
 namespace lift_00519C80 {
@@ -1497,3 +1498,53 @@ void fn_005184F0(int* out, int n, int m) {
     }
 }
 } // namespace lift_005184F0
+
+// [0x0051CCC0] sub_0051CCC0 (103 bytes)
+namespace lift_0051CCC0 {
+// Known callee 0x00519C80: sub_005136C0 (Auto-lifted identical-shape clone of 0x00500310 (DwordPairInitFromCall_00500310).)
+extern void ext_00519C80(void* self);
+extern uint32_t mem_00952174;
+
+// @name Unknown::InitDefaultsFloatMax
+// @class Unknown
+// @summary Calls base initializer, sets vtable to 0x009525CC, zeroes DWORD fields, and sets float fields to FLT_MAX or 0.0f.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x30 DWORD field_0x30
+// @field Unknown +0x34 DWORD field_0x34
+// @field Unknown +0x38 DWORD field_0x38
+// @field Unknown +0x3C float field_0x3C
+// @field Unknown +0x40 float field_0x40
+// @field Unknown +0x44 float field_0x44
+// @field Unknown +0x48 float field_0x48
+// @field Unknown +0x4C float field_0x4C
+// @field Unknown +0x50 float field_0x50
+// @field Unknown +0x54 float field_0x54
+// @field Unknown +0x58 float field_0x58
+// @field Unknown +0x5C DWORD field_0x5C
+// @field Unknown +0x60 DWORD field_0x60
+void* fn_0051CCC0(void* self) {
+    ext_00519C80(self);
+
+    const float float_max = std::bit_cast<float>(mem_00952174);
+    const float zero = 0.0f;
+
+    lift_field<uint32_t>(self, 0x00) = 0x009525CCu;
+
+    lift_field<DWORD>(self, 0x30) = 0;
+    lift_field<DWORD>(self, 0x34) = 0;
+    lift_field<DWORD>(self, 0x38) = 0;
+    lift_field<float>(self, 0x3C) = float_max;
+
+    lift_field<DWORD>(self, 0x5C) = 0;
+    lift_field<float>(self, 0x4C) = zero;
+    lift_field<DWORD>(self, 0x60) = 0;
+    lift_field<float>(self, 0x48) = zero;
+    lift_field<float>(self, 0x44) = zero;
+    lift_field<float>(self, 0x40) = zero;
+    lift_field<float>(self, 0x58) = zero;
+    lift_field<float>(self, 0x54) = zero;
+    lift_field<float>(self, 0x50) = zero;
+
+    return self;
+}
+} // namespace lift_0051CCC0
