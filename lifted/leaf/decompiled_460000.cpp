@@ -1587,3 +1587,25 @@ DWORD* fn_0046F680(DWORD* dst, DWORD value) {
 }
 } // namespace lift_0046F6A0
 } // namespace lift_0046F680
+
+// [0x00462440] sub_00462440 (98 bytes)
+namespace lift_00462440 {
+extern int mem_00938BC4;
+
+extern void __fastcall ext_006A5DFA(void* self); // thunk_MFC80_ord_587
+extern void __fastcall ext_006A5F2C(void* self); // thunk_MFC80_ord_591
+extern void __fastcall ext_006A5F6E(void* self); // thunk_MFC80_ord_605
+
+// @name VersionControlDialog::~VersionControlDialog
+// @class VersionControlDialog
+// @summary Destructor: restores the VersionControlDialog vtable, destroys the member at +0xCC, the member at +0x78, then tail-destroys the base dialog.
+// @field VersionControlDialog +0x00 void* vfptr
+// @field VersionControlDialog +0x78 undefined field_0x78
+// @field VersionControlDialog +0xCC undefined field_0xCC
+extern void __fastcall fn_00462440(void* self) {
+    lift_field<void*>(self, 0x0) = &mem_00938BC4;
+    ext_006A5DFA(static_cast<char*>(self) + 0xCC);
+    ext_006A5F2C(static_cast<char*>(self) + 0x78);
+    ext_006A5F6E(self);
+}
+} // namespace lift_00462440

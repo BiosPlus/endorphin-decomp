@@ -1,0 +1,34 @@
+{
+  "va": "0x00462440",
+  "size": 98,
+  "orig_symbol": "sub_00462440",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "VersionControlDialog::~VersionControlDialog",
+  "class": "VersionControlDialog",
+  "signature": "extern \"C\" void __fastcall ext_006A5DFA(void* self); // thunk_MFC80_ord_587 extern \"C\" void __fastcall ext_006A5F2C(void* self); // thunk_MFC80_ord_591 extern \"C\" void __fastcall ext_006A5F6E(void* self); // thunk_MFC80_ord_605 extern \"C\" void __fastcall fn_00462440(void* self)",
+  "summary": "Destructor: restores the VersionControlDialog vtable, destroys the member at +0xCC, the member at +0x78, then tail-destroys the base dialog.",
+  "fields": [
+    {
+      "class": "VersionControlDialog",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vfptr"
+    },
+    {
+      "class": "VersionControlDialog",
+      "offset": "+0x78",
+      "type": "undefined",
+      "name": "field_0x78"
+    },
+    {
+      "class": "VersionControlDialog",
+      "offset": "+0xCC",
+      "type": "undefined",
+      "name": "field_0xCC"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:39:32Z"
+}
