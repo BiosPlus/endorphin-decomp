@@ -1877,3 +1877,30 @@ extern void* __thiscall Unknown_FindFirstKind13Element(void* self) {
     }
 }
 } // namespace lift_00688670
+
+// [0x006807A0] sub_006807A0 (94 bytes)
+namespace lift_006807A0 {
+// Known callee 0x00401C60: std::logic_error copy constructor (base subobject copy).
+extern void* ext_00401C60(void* self, const void* other);
+
+// @name Unknown::CopyConstruct_006807A0
+// @class Unknown
+// @summary Copy constructor for an exception-derived object: copies the logic_error base, sets the derived vtable, copy-constructs a std::string at +0x28, and copies the dword at +0x44.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x28 std::string field_0x28
+// @field Unknown +0x44 uint32_t field_0x44
+void* fn_006807A0(void* self, const void* other) {
+    ext_00401C60(self, other);
+
+    // Derived vtable pointer (0x0098CC20 in the original image).
+    lift_field<uint32_t>(self, 0x00) = 0x0098CC20u;
+
+    // std::string copy-construct at +0x28 (original calls MSVCP80 basic_string copy ctor).
+    ::new (static_cast<void*>(&lift_field<std::string>(self, 0x28)))
+        std::string(lift_field<std::string>(other, 0x28));
+
+    lift_field<uint32_t>(self, 0x44) = lift_field<uint32_t>(other, 0x44);
+
+    return self;
+}
+} // namespace lift_006807A0
