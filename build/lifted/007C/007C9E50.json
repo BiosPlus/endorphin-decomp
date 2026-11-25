@@ -1,0 +1,40 @@
+{
+  "va": "0x007C9E50",
+  "size": 43,
+  "orig_symbol": "sub_007C9E50",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "Unknown::setFlagFromState_007C9E50",
+  "class": "Unknown",
+  "signature": "void sub_007C9E50(void* self, int32_t flag)",
+  "summary": "Sets this+0x04 to 1 if the flag argument is nonzero or any of this+0x00/0x1C/0x50 is nonzero, otherwise to 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "int32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "int32_t",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "int32_t",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:30:27Z"
+}

@@ -67072,6 +67072,13 @@
     "summary": "Reads up to count bytes into buf via the wrapped FILE* when the wrapper's open flag is set; returns 0 otherwise.",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
+  "0x00783440": {
+    "name": "FileStream::readLine",
+    "class": "FileStream",
+    "signature": "extern \"C\" char* __thiscall sub_00783440(void* self, char* str, int num)",
+    "summary": "Reads a line from the underlying FILE* stream via fgets if the stream is open.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00783510": {
     "name": "StreamReader::readByte",
     "class": "StreamReader",
@@ -70320,6 +70327,13 @@
     "name": "SetValueAndUpdateFlag",
     "signature": "void SetValueAndUpdateFlag(uint32_t* p, uint32_t v)",
     "summary": "Stores a 32-bit value at *p, then sets p[+0x04] to 1 if the value is nonzero or p[+0x50]/p[+0x1c] is nonzero, otherwise 0.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
+  "0x007C9E50": {
+    "name": "Unknown::setFlagFromState_007C9E50",
+    "class": "Unknown",
+    "signature": "void sub_007C9E50(void* self, int32_t flag)",
+    "summary": "Sets this+0x04 to 1 if the flag argument is nonzero or any of this+0x00/0x1C/0x50 is nonzero, otherwise to 0.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
   "0x007C9E80": {

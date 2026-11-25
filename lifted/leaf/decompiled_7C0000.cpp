@@ -1516,3 +1516,28 @@ uint32_t __cdecl fn_007C8820(void* self, int32_t index) {
     return 1;
 }
 } // namespace lift_007C8820
+
+// [0x007C9E50]
+namespace lift_007C9E50 {
+// @name Unknown::setFlagFromState_007C9E50
+// @class Unknown
+// @summary Sets this+0x04 to 1 if the flag argument is nonzero or any of this+0x00/0x1C/0x50 is nonzero, otherwise to 0.
+// @field Unknown +0x00 int32_t field_0x00
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x1c int32_t field_0x1c
+// @field Unknown +0x50 int32_t field_0x50
+
+void sub_007C9E50(void* self, int32_t flag) {
+    uint8_t* p = static_cast<uint8_t*>(self);
+    int32_t result = 0;
+    if (flag == 0 &&
+        *reinterpret_cast<int32_t*>(p + 0x00) == 0 &&
+        *reinterpret_cast<int32_t*>(p + 0x50) == 0 &&
+        *reinterpret_cast<int32_t*>(p + 0x1c) == 0) {
+        result = 0;
+    } else {
+        result = 1;
+    }
+    *reinterpret_cast<int32_t*>(p + 0x04) = result;
+}
+} // namespace lift_007C9E50
