@@ -6603,6 +6603,12 @@
     "summary": "Sets the vtable to mem_0093785C; if the window handle at +0x1c is non-null, tail-calls SendMessageToFieldWindow, otherwise returns.",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x00459060": {
+    "name": "getOrCreateWindowWrapper",
+    "signature": "extern \"C\" uintptr_t fn_00459060(uintptr_t hWnd)",
+    "summary": "Sends a registered message to a window and returns the result, or allocates and constructs a 0x20-byte wrapper object if it returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x004590E0": {
     "name": "CMessageReflector::vfunc_0",
     "class": "CMessageReflector",
@@ -72990,6 +72996,12 @@
     "summary": "Adds scale * field_0x1D0 to field_0x1E0 and subtracts it from field_0x1E4; returns 1.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BF930": {
+    "name": "audioDeltaDecode16",
+    "signature": "void __cdecl sub_007BF930(void* a1, int16_t* buf, int32_t byteCount)",
+    "summary": "Decodes 16-bit audio samples in-place by adding each sample to the sample `step` positions ahead",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BF9C0": {
     "name": "testAndUpdateField1CC",
     "signature": "uint32_t sub_007BF9C0(uint32_t self, uint32_t a2, uint32_t a3, uint32_t a4)",
@@ -75384,6 +75396,12 @@
     "name": "sub_00802D40",
     "signature": "void __thiscall sub_00802D40(uintptr_t ecx)",
     "summary": "Copies aligned 32-bit float elements from field_0x30 to field_0x40 up to field_0x04 rounded up to a multiple of 4.",
+    "lifted_path": "lifted/leaf/decompiled_800000.cpp"
+  },
+  "0x00802D90": {
+    "name": "sub_00802D90",
+    "signature": "void __thiscall sub_00802D90(void* this_ptr, int32_t* out1, int32_t* out2)",
+    "summary": "Classify array elements against lower/upper bounds into two output int arrays",
     "lifted_path": "lifted/leaf/decompiled_800000.cpp"
   },
   "0x00803980": {

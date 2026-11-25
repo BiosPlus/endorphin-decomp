@@ -1687,3 +1687,29 @@ extern void fn_00453EB0(void* self) {
     reinterpret_cast<void(__thiscall*)(void*)>(mem_009242F4)(&local_str);
 }
 } // namespace lift_00453EB0
+
+// [0x00459060]
+namespace lift_00459060 {
+// @name getOrCreateWindowWrapper
+// @summary Sends a registered message to a window and returns the result, or allocates and constructs a 0x20-byte wrapper object if it returns 0.
+
+extern uint32_t mem_00AD3E34;
+extern uintptr_t (__stdcall *mem_00925694)(uintptr_t hWnd, uint32_t Msg, uintptr_t wParam, uintptr_t lParam);
+
+extern void* ext_006A5C62(uint32_t size);
+extern void* __thiscall ext_00459000(void* self, uintptr_t hWnd);
+
+extern uintptr_t fn_00459060(uintptr_t hWnd) {
+    uintptr_t res = mem_00925694(hWnd, mem_00AD3E34, 0, 0);
+    if (res != 0) {
+        return res;
+    }
+
+    void* obj = ext_006A5C62(0x20);
+    if (obj == nullptr) {
+        return 0;
+    }
+
+    return reinterpret_cast<uintptr_t>(ext_00459000(obj, hWnd));
+}
+} // namespace lift_00459060
