@@ -1360,3 +1360,22 @@ void fn_007051F0(void* self, DWORD* out, DWORD /*unused2*/, DWORD /*unused3*/, D
     out[1] = lift_field<DWORD>(self, 0x84);
 }
 } // namespace lift_007051F0
+
+// [0x00701E20] sub_00701E20 (69 bytes)
+namespace lift_00701E20 {
+// @name lookupStringAddressByIndex
+// @summary Maps an index in [0,5] to a fixed binary address constant; out-of-range returns 0.
+// @field none
+// Jump-table targets are assumed to follow case order 0..5 (table at 0x00701E68 not decoded).
+uint32_t lookupStringAddressByIndex(uint32_t index) {
+    switch (index) {
+        case 0: return 0x00AA8CECu;
+        case 1: return 0x00AABB38u;
+        case 2: return 0x00AABB2Cu;
+        case 3: return 0x00AABB20u;
+        case 4: return 0x00AABB14u;
+        case 5: return 0x00AABAFCu;
+        default: return 0u;
+    }
+}
+} // namespace lift_00701E20

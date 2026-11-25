@@ -1,0 +1,13 @@
+{
+  "va": "0x00701E20",
+  "size": 69,
+  "orig_symbol": "sub_00701E20",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "lookupStringAddressByIndex",
+  "signature": "uint32_t lookupStringAddressByIndex(uint32_t index)",
+  "summary": "Maps an index in [0,5] to a fixed binary address constant; out-of-range returns 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:22:58Z"
+}

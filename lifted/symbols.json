@@ -51351,6 +51351,12 @@
     "summary": "Pure jump thunk forwarding to sub_00711220.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x00701E20": {
+    "name": "lookupStringAddressByIndex",
+    "signature": "uint32_t lookupStringAddressByIndex(uint32_t index)",
+    "summary": "Maps an index in [0,5] to a fixed binary address constant; out-of-range returns 0.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00701E80": {
     "name": "getTableEntryByIndex",
     "signature": "extern \"C\" uint32_t __stdcall sub_00701E80(uint32_t index)",
