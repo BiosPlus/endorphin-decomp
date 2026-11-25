@@ -1,0 +1,13 @@
+{
+  "va": "0x0049DB00",
+  "size": 87,
+  "orig_symbol": "sub_0049DB00",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "initStaticObjectOnce_0049DB00",
+  "signature": "void* fn_0049DB00()",
+  "summary": "One-time guarded initializer: if bit 0 of mem_00ADD838 is clear, set it, run ext_0067A670 on \u0026mem_00ADD834, then store 0x009402AC there; returns \u0026mem_00ADD834.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:30:14Z"
+}

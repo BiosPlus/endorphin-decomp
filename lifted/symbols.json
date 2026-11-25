@@ -11038,6 +11038,12 @@
     "summary": "One-time guarded initializer for the static object at mem_00ADD82C; returns its address.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x0049DB00": {
+    "name": "initStaticObjectOnce_0049DB00",
+    "signature": "void* fn_0049DB00()",
+    "summary": "One-time guarded initializer: if bit 0 of mem_00ADD838 is clear, set it, run ext_0067A670 on \u0026mem_00ADD834, then store 0x009402AC there; returns \u0026mem_00ADD834.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049DB60": {
     "name": "ListFindByStringKey",
     "class": "ListNode",
