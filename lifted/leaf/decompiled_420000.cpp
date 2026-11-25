@@ -1145,3 +1145,22 @@ void* fn_00427700() {
     return obj;
 }
 } // namespace lift_00427700
+
+// [0x00427640] sub_00427640 (98 bytes)
+namespace lift_00427640 {
+// Callee 0x004275C0: called with the object pointer as `self` and a std::string
+// return slot; the caller then compares the returned string to a .rdata literal.
+extern void ext_004275C0(void* self, std::string* ret);
+
+// .rdata string literal at 0x0092F10C (contents not recovered).
+extern const char mem_0092F10C[];
+
+// @name checkStringEqualsLiteral
+// @summary Gets a string from the object via ext_004275C0, stores whether it equals the .rdata literal at 0x0092F10C into *out.
+extern void fn_00427640(void* unused, void* self, bool* out) {
+    (void)unused;
+    std::string value;
+    ext_004275C0(self, &value);
+    *out = (value == mem_0092F10C);
+}
+} // namespace lift_00427640

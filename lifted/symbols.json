@@ -2529,6 +2529,12 @@
     "summary": "Calls virtual slot 2 on src (returns const std::string\u0026) and assigns the result into dst. Caller cleans args (__cdecl).",
     "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
+  "0x00427640": {
+    "name": "checkStringEqualsLiteral",
+    "signature": "extern \"C\" void fn_00427640(void* unused, void* self, bool* out)",
+    "summary": "Gets a string from the object via ext_004275C0, stores whether it equals the .rdata literal at 0x0092F10C into *out.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x004276B0": {
     "name": "StdStringCopyConstruct",
     "signature": "void* fn_004276B0(void* dst, const void* src)",
