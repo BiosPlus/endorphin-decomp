@@ -1,0 +1,34 @@
+{
+  "va": "0x006FA1E0",
+  "size": 41,
+  "orig_symbol": "sub_006FA1E0",
+  "src_path": "src/leaf/decompiled_6F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6F0000.cpp",
+  "name": "SimpleBuffer::FreeAndClear",
+  "class": "SimpleBuffer",
+  "signature": "void __thiscall fn_006FA1E0(void* self)",
+  "summary": "thiscall: if the pointer at +0x00 is non-null, calls MSVCR80 free() on it, then zeroes the DWORDs at +0x00, +0x04 and +0x08.",
+  "fields": [
+    {
+      "class": "SimpleBuffer",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "ptr"
+    },
+    {
+      "class": "SimpleBuffer",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "SimpleBuffer",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:27:26Z"
+}

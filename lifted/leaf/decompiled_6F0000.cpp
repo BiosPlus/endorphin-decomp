@@ -1831,3 +1831,27 @@ void* __thiscall fn_006F9DC0(void* self, uint32_t arg1, uint32_t arg2, uint32_t 
     return self;
 }
 } // namespace lift_006F9DC0
+
+// [0x006FA1E0] sub_006FA1E0 (41 bytes)
+namespace lift_006FA1E0 {
+extern int mem_009251D8;
+
+// @name SimpleBuffer::FreeAndClear
+// @class SimpleBuffer
+// @summary thiscall: if the pointer at +0x00 is non-null, calls MSVCR80 free() on it, then zeroes the DWORDs at +0x00, +0x04 and +0x08.
+// @field SimpleBuffer +0x00 uint32_t ptr
+// @field SimpleBuffer +0x04 uint32_t field_0x04
+// @field SimpleBuffer +0x08 uint32_t field_0x08
+void __thiscall fn_006FA1E0(void* self) {
+    using FreeFn = void (__cdecl*)(void*);
+
+    uint32_t& ptr = lift_field<uint32_t>(self, 0x00);
+    if (ptr != 0) {
+        auto free_fn = reinterpret_cast<FreeFn>(static_cast<uintptr_t>(mem_009251D8));
+        free_fn(reinterpret_cast<void*>(static_cast<uintptr_t>(ptr)));
+    }
+    lift_field<uint32_t>(self, 0x00) = 0x00000000u;
+    lift_field<uint32_t>(self, 0x04) = 0x00000000u;
+    lift_field<uint32_t>(self, 0x08) = 0x00000000u;
+}
+} // namespace lift_006FA1E0

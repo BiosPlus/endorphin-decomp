@@ -61607,6 +61607,13 @@
     "summary": "Returns address of global mem_00B5E3F0.",
     "lifted_path": "lifted/leaf/tiny_6F0000.cpp"
   },
+  "0x006FA1E0": {
+    "name": "SimpleBuffer::FreeAndClear",
+    "class": "SimpleBuffer",
+    "signature": "void __thiscall fn_006FA1E0(void* self)",
+    "summary": "thiscall: if the pointer at +0x00 is non-null, calls MSVCR80 free() on it, then zeroes the DWORDs at +0x00, +0x04 and +0x08.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FA210": {
     "name": "sub_006FA210",
     "signature": "extern \"C\" void* __fastcall fn_006FA210(void* self, int edx_unused, unsigned int flags)",
