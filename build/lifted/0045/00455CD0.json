@@ -1,0 +1,21 @@
+{
+  "va": "0x00455CD0",
+  "size": 26,
+  "orig_symbol": "sub_00455CD0",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "CheckStateAt0x98",
+  "signature": "extern \"C\" int __fastcall fn_00455CD0(void* self)",
+  "summary": "If the int at +0x98 is 0xA or 0xB, tail-calls sub_00455CB0; otherwise tail-calls sub_004090C0.",
+  "fields": [
+    {
+      "class": "void",
+      "offset": "+0x98",
+      "type": "int",
+      "name": "state"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-25T12:39:42Z"
+}

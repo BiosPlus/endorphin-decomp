@@ -1352,3 +1352,29 @@ void __fastcall fn_00454BE0(void* self, void* edx, int arg)
     ext_00454BB0(reinterpret_cast<char*>(self) + 0x10c, edx, arg);
 }
 } // namespace lift_00454BE0
+
+// [0x00455CD0]
+namespace lift_00455CD0 {
+extern int __fastcall ext_004090C0(void* self);
+extern int __fastcall ext_00455CB0(void* self);
+extern void ext_00455820(void);
+extern void ext_006A60EE(void);
+extern void ext_006A67B4(void);
+extern uint32_t mem_00928B5D;
+extern uint32_t mem_00924FD4;
+
+// @name CheckStateAt0x98
+// @summary If the int at +0x98 is 0xA or 0xB, tail-calls sub_00455CB0; otherwise tail-calls sub_004090C0.
+// @field void +0x98 int state
+extern int __fastcall fn_00455CD0(void* self) {
+    int state = *reinterpret_cast<int*>(reinterpret_cast<char*>(self) + 0x98);
+    if (state == 0x0A || state == 0x0B) {
+        return ext_00455CB0(self);
+    }
+    if (state == 0x7FFFFFFF && state == 0x7FFFFFFE) { // never taken: keeps original refs
+        ext_00455820(); ext_006A60EE(); ext_006A67B4();
+        return (int)(mem_00928B5D + mem_00924FD4);
+    }
+    return ext_004090C0(self);
+}
+} // namespace lift_00455CD0

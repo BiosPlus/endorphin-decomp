@@ -5533,6 +5533,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x004090C0 (sub_004090C0).",
     "lifted_path": "lifted/leaf/tiny_450000.cpp"
   },
+  "0x00455CD0": {
+    "name": "CheckStateAt0x98",
+    "signature": "extern \"C\" int __fastcall fn_00455CD0(void* self)",
+    "summary": "If the int at +0x98 is 0xA or 0xB, tail-calls sub_00455CB0; otherwise tail-calls sub_004090C0.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00455CF0": {
     "name": "Unknown::stackTempsCallMfcOrd501ThenOrd709",
     "class": "Unknown",
