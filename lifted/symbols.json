@@ -27151,6 +27151,13 @@
     "summary": "Calls vtable slot 0x11C on the object at self+0x17C, then returns float index 0 of the result's +0x08 sub-object array.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005E2790": {
+    "name": "sub_005E2790",
+    "class": "UnknownClass",
+    "signature": "void fn_005E2790(uintptr_t self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005E27E0 (UnknownClass::forwardValueToSubobjectAt17C).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E27C0": {
     "name": "sub_005E27C0",
     "signature": "float fn_005E27C0(void* self)",
@@ -27170,10 +27177,24 @@
     "summary": "Calls vtable slot 0x11C on the object at self+0x17C, then returns float index 2 of the result's +0x08 sub-object array.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005E2830": {
+    "name": "sub_005E2830",
+    "class": "UnknownClass",
+    "signature": "void fn_005E2830(uintptr_t self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005E27E0 (UnknownClass::forwardValueToSubobjectAt17C).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E2860": {
     "name": "getChildSubobjectFloat3_005E2860",
     "signature": "float fn_005E2860(void* self)",
     "summary": "Fetches child object at +0x17C, calls its vtable slot +0x11C to get a sub-object, and returns float index 3 from that sub-object's array.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005E2880": {
+    "name": "sub_005E2880",
+    "class": "UnknownClass",
+    "signature": "void fn_005E2880(uintptr_t self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005E27E0 (UnknownClass::forwardValueToSubobjectAt17C).",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
   "0x005E28B0": {
@@ -27182,10 +27203,24 @@
     "summary": "Fetches the sub-object at this+0x17c, calls its virtual slot 0x124 to obtain a child object, and returns float index 0 from that child's array.",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005E28D0": {
+    "name": "sub_005E28D0",
+    "class": "UnknownClass",
+    "signature": "void fn_005E28D0(uintptr_t self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005E27E0 (UnknownClass::forwardValueToSubobjectAt17C).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E2900": {
     "name": "sub_005E2900",
     "signature": "float fn_005E2900(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x005E2770 (descriptiveName_005E2770).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005E2920": {
+    "name": "sub_005E2920",
+    "class": "UnknownClass",
+    "signature": "void fn_005E2920(uintptr_t self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005E27E0 (UnknownClass::forwardValueToSubobjectAt17C).",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
   "0x005E2950": {
@@ -27194,10 +27229,24 @@
     "summary": "Auto-lifted identical-shape clone of 0x005E2770 (descriptiveName_005E2770).",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
+  "0x005E2970": {
+    "name": "sub_005E2970",
+    "class": "UnknownClass",
+    "signature": "void fn_005E2970(uintptr_t self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005E27E0 (UnknownClass::forwardValueToSubobjectAt17C).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E29A0": {
     "name": "sub_005E29A0",
     "signature": "float fn_005E29A0(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x005E2770 (descriptiveName_005E2770).",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
+  "0x005E29C0": {
+    "name": "sub_005E29C0",
+    "class": "UnknownClass",
+    "signature": "void fn_005E29C0(uintptr_t self, float value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005E27E0 (UnknownClass::forwardValueToSubobjectAt17C).",
     "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
   },
   "0x005E29F0": {

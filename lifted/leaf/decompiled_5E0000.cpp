@@ -220,3 +220,192 @@ void fn_005E27E0(uintptr_t self, float value) {
     ext_006123C0(result, value);
 }
 } // namespace lift_005E27E0
+
+// [0x005E2790] sub_005E2790 (34 bytes)
+namespace lift_005E2790 {
+// @name sub_005E2790
+// @summary Auto-lifted identical-shape clone of 0x005E27E0 (UnknownClass::forwardValueToSubobjectAt17C).
+namespace lift_005E27E0 {
+// Known callee 0x006123C0: UnknownClass::setElement1AndNotify
+extern void ext_00612370(uintptr_t self, float value);
+
+// @name UnknownClass::forwardValueToSubobjectAt17C
+// @class UnknownClass
+// @summary Loads the subobject pointer at +0x17C, calls its vtable slot 0x120 with the float argument, and forwards the returned object plus the same float to setElement1AndNotify (0x006123C0). Stack arg is popped by callee (ret 4).
+// @field UnknownClass +0x17C uintptr_t subobject
+// @field UnknownClass +0x0 uint32_t vtable
+
+using VCall120Fn = uintptr_t (*)(uintptr_t self, float value);
+
+void fn_005E2790(uintptr_t self, float value) {
+    uintptr_t sub = lift_field<uintptr_t>(reinterpret_cast<void*>(self), 0x17C);
+    uint32_t vtbl = lift_field<uint32_t>(reinterpret_cast<void*>(sub), 0x0);
+    uint32_t slotAddr = lift_field<uint32_t>(reinterpret_cast<void*>(vtbl), 0x120);
+    VCall120Fn slot = reinterpret_cast<VCall120Fn>(static_cast<uintptr_t>(slotAddr));
+    uintptr_t result = slot(sub, value);
+    ext_00612370(result, value);
+}
+} // namespace lift_005E27E0
+} // namespace lift_005E2790
+
+// [0x005E2830] sub_005E2830 (34 bytes)
+namespace lift_005E2830 {
+// @name sub_005E2830
+// @summary Auto-lifted identical-shape clone of 0x005E27E0 (UnknownClass::forwardValueToSubobjectAt17C).
+namespace lift_005E27E0 {
+// Known callee 0x006123C0: UnknownClass::setElement1AndNotify
+extern void ext_00612410(uintptr_t self, float value);
+
+// @name UnknownClass::forwardValueToSubobjectAt17C
+// @class UnknownClass
+// @summary Loads the subobject pointer at +0x17C, calls its vtable slot 0x120 with the float argument, and forwards the returned object plus the same float to setElement1AndNotify (0x006123C0). Stack arg is popped by callee (ret 4).
+// @field UnknownClass +0x17C uintptr_t subobject
+// @field UnknownClass +0x0 uint32_t vtable
+
+using VCall120Fn = uintptr_t (*)(uintptr_t self, float value);
+
+void fn_005E2830(uintptr_t self, float value) {
+    uintptr_t sub = lift_field<uintptr_t>(reinterpret_cast<void*>(self), 0x17C);
+    uint32_t vtbl = lift_field<uint32_t>(reinterpret_cast<void*>(sub), 0x0);
+    uint32_t slotAddr = lift_field<uint32_t>(reinterpret_cast<void*>(vtbl), 0x120);
+    VCall120Fn slot = reinterpret_cast<VCall120Fn>(static_cast<uintptr_t>(slotAddr));
+    uintptr_t result = slot(sub, value);
+    ext_00612410(result, value);
+}
+} // namespace lift_005E27E0
+} // namespace lift_005E2830
+
+// [0x005E2880] sub_005E2880 (34 bytes)
+namespace lift_005E2880 {
+// @name sub_005E2880
+// @summary Auto-lifted identical-shape clone of 0x005E27E0 (UnknownClass::forwardValueToSubobjectAt17C).
+namespace lift_005E27E0 {
+// Known callee 0x006123C0: UnknownClass::setElement1AndNotify
+extern void ext_00612460(uintptr_t self, float value);
+
+// @name UnknownClass::forwardValueToSubobjectAt17C
+// @class UnknownClass
+// @summary Loads the subobject pointer at +0x17C, calls its vtable slot 0x120 with the float argument, and forwards the returned object plus the same float to setElement1AndNotify (0x006123C0). Stack arg is popped by callee (ret 4).
+// @field UnknownClass +0x17C uintptr_t subobject
+// @field UnknownClass +0x0 uint32_t vtable
+
+using VCall120Fn = uintptr_t (*)(uintptr_t self, float value);
+
+void fn_005E2880(uintptr_t self, float value) {
+    uintptr_t sub = lift_field<uintptr_t>(reinterpret_cast<void*>(self), 0x17C);
+    uint32_t vtbl = lift_field<uint32_t>(reinterpret_cast<void*>(sub), 0x0);
+    uint32_t slotAddr = lift_field<uint32_t>(reinterpret_cast<void*>(vtbl), 0x120);
+    VCall120Fn slot = reinterpret_cast<VCall120Fn>(static_cast<uintptr_t>(slotAddr));
+    uintptr_t result = slot(sub, value);
+    ext_00612460(result, value);
+}
+} // namespace lift_005E27E0
+} // namespace lift_005E2880
+
+// [0x005E28D0] sub_005E28D0 (34 bytes)
+namespace lift_005E28D0 {
+// @name sub_005E28D0
+// @summary Auto-lifted identical-shape clone of 0x005E27E0 (UnknownClass::forwardValueToSubobjectAt17C).
+namespace lift_005E27E0 {
+// Known callee 0x006123C0: UnknownClass::setElement1AndNotify
+extern void ext_00612370(uintptr_t self, float value);
+
+// @name UnknownClass::forwardValueToSubobjectAt17C
+// @class UnknownClass
+// @summary Loads the subobject pointer at +0x17C, calls its vtable slot 0x120 with the float argument, and forwards the returned object plus the same float to setElement1AndNotify (0x006123C0). Stack arg is popped by callee (ret 4).
+// @field UnknownClass +0x17C uintptr_t subobject
+// @field UnknownClass +0x0 uint32_t vtable
+
+using VCall120Fn = uintptr_t (*)(uintptr_t self, float value);
+
+void fn_005E28D0(uintptr_t self, float value) {
+    uintptr_t sub = lift_field<uintptr_t>(reinterpret_cast<void*>(self), 0x17C);
+    uint32_t vtbl = lift_field<uint32_t>(reinterpret_cast<void*>(sub), 0x0);
+    uint32_t slotAddr = lift_field<uint32_t>(reinterpret_cast<void*>(vtbl), 0x128);
+    VCall120Fn slot = reinterpret_cast<VCall120Fn>(static_cast<uintptr_t>(slotAddr));
+    uintptr_t result = slot(sub, value);
+    ext_00612370(result, value);
+}
+} // namespace lift_005E27E0
+} // namespace lift_005E28D0
+
+// [0x005E2920] sub_005E2920 (34 bytes)
+namespace lift_005E2920 {
+// @name sub_005E2920
+// @summary Auto-lifted identical-shape clone of 0x005E27E0 (UnknownClass::forwardValueToSubobjectAt17C).
+namespace lift_005E27E0 {
+// Known callee 0x006123C0: UnknownClass::setElement1AndNotify
+extern void ext_006123C0(uintptr_t self, float value);
+
+// @name UnknownClass::forwardValueToSubobjectAt17C
+// @class UnknownClass
+// @summary Loads the subobject pointer at +0x17C, calls its vtable slot 0x120 with the float argument, and forwards the returned object plus the same float to setElement1AndNotify (0x006123C0). Stack arg is popped by callee (ret 4).
+// @field UnknownClass +0x17C uintptr_t subobject
+// @field UnknownClass +0x0 uint32_t vtable
+
+using VCall120Fn = uintptr_t (*)(uintptr_t self, float value);
+
+void fn_005E2920(uintptr_t self, float value) {
+    uintptr_t sub = lift_field<uintptr_t>(reinterpret_cast<void*>(self), 0x17C);
+    uint32_t vtbl = lift_field<uint32_t>(reinterpret_cast<void*>(sub), 0x0);
+    uint32_t slotAddr = lift_field<uint32_t>(reinterpret_cast<void*>(vtbl), 0x128);
+    VCall120Fn slot = reinterpret_cast<VCall120Fn>(static_cast<uintptr_t>(slotAddr));
+    uintptr_t result = slot(sub, value);
+    ext_006123C0(result, value);
+}
+} // namespace lift_005E27E0
+} // namespace lift_005E2920
+
+// [0x005E2970] sub_005E2970 (34 bytes)
+namespace lift_005E2970 {
+// @name sub_005E2970
+// @summary Auto-lifted identical-shape clone of 0x005E27E0 (UnknownClass::forwardValueToSubobjectAt17C).
+namespace lift_005E27E0 {
+// Known callee 0x006123C0: UnknownClass::setElement1AndNotify
+extern void ext_00612410(uintptr_t self, float value);
+
+// @name UnknownClass::forwardValueToSubobjectAt17C
+// @class UnknownClass
+// @summary Loads the subobject pointer at +0x17C, calls its vtable slot 0x120 with the float argument, and forwards the returned object plus the same float to setElement1AndNotify (0x006123C0). Stack arg is popped by callee (ret 4).
+// @field UnknownClass +0x17C uintptr_t subobject
+// @field UnknownClass +0x0 uint32_t vtable
+
+using VCall120Fn = uintptr_t (*)(uintptr_t self, float value);
+
+void fn_005E2970(uintptr_t self, float value) {
+    uintptr_t sub = lift_field<uintptr_t>(reinterpret_cast<void*>(self), 0x17C);
+    uint32_t vtbl = lift_field<uint32_t>(reinterpret_cast<void*>(sub), 0x0);
+    uint32_t slotAddr = lift_field<uint32_t>(reinterpret_cast<void*>(vtbl), 0x128);
+    VCall120Fn slot = reinterpret_cast<VCall120Fn>(static_cast<uintptr_t>(slotAddr));
+    uintptr_t result = slot(sub, value);
+    ext_00612410(result, value);
+}
+} // namespace lift_005E27E0
+} // namespace lift_005E2970
+
+// [0x005E29C0] sub_005E29C0 (34 bytes)
+namespace lift_005E29C0 {
+// @name sub_005E29C0
+// @summary Auto-lifted identical-shape clone of 0x005E27E0 (UnknownClass::forwardValueToSubobjectAt17C).
+namespace lift_005E27E0 {
+// Known callee 0x006123C0: UnknownClass::setElement1AndNotify
+extern void ext_00612460(uintptr_t self, float value);
+
+// @name UnknownClass::forwardValueToSubobjectAt17C
+// @class UnknownClass
+// @summary Loads the subobject pointer at +0x17C, calls its vtable slot 0x120 with the float argument, and forwards the returned object plus the same float to setElement1AndNotify (0x006123C0). Stack arg is popped by callee (ret 4).
+// @field UnknownClass +0x17C uintptr_t subobject
+// @field UnknownClass +0x0 uint32_t vtable
+
+using VCall120Fn = uintptr_t (*)(uintptr_t self, float value);
+
+void fn_005E29C0(uintptr_t self, float value) {
+    uintptr_t sub = lift_field<uintptr_t>(reinterpret_cast<void*>(self), 0x17C);
+    uint32_t vtbl = lift_field<uint32_t>(reinterpret_cast<void*>(sub), 0x0);
+    uint32_t slotAddr = lift_field<uint32_t>(reinterpret_cast<void*>(vtbl), 0x128);
+    VCall120Fn slot = reinterpret_cast<VCall120Fn>(static_cast<uintptr_t>(slotAddr));
+    uintptr_t result = slot(sub, value);
+    ext_00612460(result, value);
+}
+} // namespace lift_005E27E0
+} // namespace lift_005E29C0
