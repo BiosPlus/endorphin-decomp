@@ -61646,6 +61646,13 @@
     "summary": "Epilogue fragment: pops saved edi, esi and ebx from the stack; no portable C++ equivalent for the register restore, so the body is empty.",
     "lifted_path": "lifted/leaf/decompiled_870000.cpp"
   },
+  "0x00870EF0": {
+    "name": "TextCursor::StepBackOneLine_00870EF0",
+    "class": "TextCursor",
+    "signature": "inline uint8_t load_u8(uint32_t addr)",
+    "summary": "Steps a backward text cursor to the start of the previous line (LF or CRLF terminated), tracking a line counter; resets to buffer start and line state when the start is reached.",
+    "lifted_path": "lifted/leaf/decompiled_870000.cpp"
+  },
   "0x00870F40": {
     "name": "StreamReader::matchString",
     "class": "StreamReader",

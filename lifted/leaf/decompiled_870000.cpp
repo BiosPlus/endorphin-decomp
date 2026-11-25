@@ -163,3 +163,48 @@ void fn_00870E40(void* self, uint32_t arg1) {
     ext_006A6DD2(exc, 0x00A2572C);
 }
 } // namespace lift_00870E40
+
+// [0x00870EF0]
+namespace lift_00870EF0 {
+// @name TextCursor::StepBackOneLine_00870EF0
+// @class TextCursor
+// @summary Steps a backward text cursor to the start of the previous line (LF or CRLF terminated), tracking a line counter; resets to buffer start and line state when the start is reached.
+// @field TextCursor +0x04 uint32_t field_0x04
+// @field TextCursor +0x08 uint32_t cursor
+// @field TextCursor +0x0C uint32_t field_0x0C
+// @field TextCursor +0x10 uint32_t field_0x10
+// @field TextCursor +0x14 uint32_t field_0x14
+// @field TextCursor +0x18 uint32_t field_0x18
+namespace {
+inline uint8_t load_u8(uint32_t addr) {
+    return *reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(addr));
+}
+}  // namespace
+
+void fn_00870EF0(void* self) {
+    uint32_t& cursor = lift_field<uint32_t>(self, 0x08);
+    const uint32_t limit = lift_field<uint32_t>(self, 0x0C);
+    if (cursor > limit) {
+        return;
+    }
+
+    const uint32_t begin = lift_field<uint32_t>(self, 0x04);
+    if (static_cast<uint32_t>(cursor - 1) < begin) {
+        // Already at (or before) the buffer start: reset cursor and line state.
+        cursor = begin;
+        lift_field<uint32_t>(self, 0x18) = 1;
+        lift_field<uint32_t>(self, 0x10) = 1;
+        lift_field<uint32_t>(self, 0x14) = 1;
+        return;
+    }
+
+    cursor -= 1;
+    if (load_u8(cursor) == 0x0A) {  // LF
+        if (cursor > begin && load_u8(cursor - 1) == 0x0D) {  // CR before LF
+            cursor -= 1;
+        }
+        lift_field<uint32_t>(self, 0x10) -= 1;
+    }
+    lift_field<uint32_t>(self, 0x14) = lift_field<uint32_t>(self, 0x18);
+}
+} // namespace lift_00870EF0
