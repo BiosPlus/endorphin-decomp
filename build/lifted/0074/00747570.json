@@ -1,0 +1,13 @@
+{
+  "va": "0x00747570",
+  "size": 16,
+  "orig_symbol": "sub_00747570",
+  "src_path": "src/leaf/decompiled_740000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_740000.cpp",
+  "name": "sub_00747570",
+  "signature": "bool __stdcall fn_00747570(void* arg0, void* arg1)",
+  "summary": "Calls sub_00700980 on its second argument with value 0 and returns true.",
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@medium",
+  "lifted_at": "2026-11-25T11:16:10Z"
+}

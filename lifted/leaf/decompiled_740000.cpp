@@ -184,3 +184,24 @@ extern void __thiscall fn_0074AEF0(void* self) {
     ext_006D2160(obj + 0x14);
 }
 } // namespace lift_0074AEF0
+
+// [0x00747570]
+namespace lift_00747570 {
+extern void __fastcall ext_00700980(void* self, void* edx, uint32_t value);
+extern void ext_006D2160();
+extern void ext_006B9D70();
+extern int32_t __fastcall ext_006E7460(void* self);
+extern int32_t __thiscall ext_006BA660(const char* const* self, const char* other);
+
+// @name sub_00747570
+// @summary Calls sub_00700980 on its second argument with value 0 and returns true.
+bool __stdcall fn_00747570(void* arg0, void* arg1) {
+    (void)arg0;
+    (void)&ext_006D2160;
+    (void)&ext_006B9D70;
+    (void)&ext_006E7460;
+    (void)&ext_006BA660;
+    ext_00700980(arg1, nullptr, 0);
+    return true;
+}
+} // namespace lift_00747570
