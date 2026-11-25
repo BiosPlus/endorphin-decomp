@@ -1304,3 +1304,27 @@ DWORD* fn_0050A120(DWORD* dst, DWORD value) {
 }
 } // namespace lift_0046F6A0
 } // namespace lift_0050A120
+
+// [0x0050FA40]
+namespace lift_0050FA40 {
+// @name heapPushSiftUp
+// @summary Sifts an element up a min-heap array by comparing its double key at offset +0x20.
+// @field Item +0x20 double key
+void __cdecl sub_0050FA40(const uint8_t** arr, int32_t hole, int32_t top, const uint8_t* val) {
+    int32_t parent = (hole - 1) / 2;
+    if (top < hole) {
+        double val_key = *reinterpret_cast<const double*>(val + 0x20);
+        do {
+            const uint8_t* parent_item = arr[parent];
+            double parent_key = *reinterpret_cast<const double*>(parent_item + 0x20);
+            if (!(val_key < parent_key)) {
+                break;
+            }
+            arr[hole] = parent_item;
+            hole = parent;
+            parent = (hole - 1) / 2;
+        } while (top < hole);
+    }
+    arr[hole] = val;
+}
+} // namespace lift_0050FA40

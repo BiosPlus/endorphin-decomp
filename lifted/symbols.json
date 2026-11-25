@@ -17911,6 +17911,12 @@
     "summary": "Returns one of two qword constants (as x87 st0) depending on whether this-\u003efield_0x08 is nonzero.",
     "lifted_path": "lifted/leaf/tiny_500000.cpp"
   },
+  "0x0050FA40": {
+    "name": "heapPushSiftUp",
+    "signature": "void __cdecl sub_0050FA40(const uint8_t** arr, int32_t hole, int32_t top, const uint8_t* val)",
+    "summary": "Sifts an element up a min-heap array by comparing its double key at offset +0x20.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050FAA0": {
     "name": "pushHeapByDoubleKey",
     "signature": "inline double readKey(const void* obj)",

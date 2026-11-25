@@ -1,0 +1,21 @@
+{
+  "va": "0x0050FA40",
+  "size": 91,
+  "orig_symbol": "sub_0050FA40",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "heapPushSiftUp",
+  "signature": "void __cdecl sub_0050FA40(const uint8_t** arr, int32_t hole, int32_t top, const uint8_t* val)",
+  "summary": "Sifts an element up a min-heap array by comparing its double key at offset +0x20.",
+  "fields": [
+    {
+      "class": "Item",
+      "offset": "+0x20",
+      "type": "double",
+      "name": "key"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:30:39Z"
+}
