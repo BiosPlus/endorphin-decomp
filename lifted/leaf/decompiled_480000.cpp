@@ -2117,3 +2117,36 @@ void* __thiscall fn_0048E200(void* self, uint32_t arg0, uint32_t arg1) {
     return self;
 }
 } // namespace lift_0048E200
+
+// [0x0048E190] sub_0048E190 (110 bytes)
+namespace lift_0048E190 {
+// Known callee 0x006657F0: Unknown::InitVtblAndArg (Stores the vtable pointer (0x00987A04), a stack argument at +0x04, and zeroes +0x08/+0x0C; returns self.)
+extern void* ext_006657F0(void* self, uint32_t arg);
+// Known callee 0x00468180: sub_00468180 (Returns global int32 value from mem_00AD7CD8.)
+extern int32_t ext_00468180();
+// Known callee 0x00469570: getVectorElementAt (Returns the 32-bit element at the given index from a vector, calling _invalid_parameter_noinfo if out of bounds.)
+extern uint32_t ext_00469570(void* self, uint32_t index);
+
+// @name Unknown::initFromArgs_0048E190
+// @class Unknown
+// @summary Runs InitVtblAndArg(this, 1), sets the vtable, stores both stack args, caches vector element 5 at +0x08 and *(arg1+0x1C) at +0x18, returns this.
+// @field Unknown +0x00 uint32_t vtbl
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 void* field_0x10
+// @field Unknown +0x14 uint32_t field_0x14
+// @field Unknown +0x18 uint32_t field_0x18
+void* fn_0048E190(void* self, void* arg1, uint32_t arg2) {
+    ext_006657F0(self, 1u);
+
+    lift_field<uint32_t>(self, 0x00) = 0x0093E5A0u;
+    lift_field<void*>(self, 0x10) = arg1;
+    lift_field<uint32_t>(self, 0x14) = arg2;
+
+    const uint32_t base = static_cast<uint32_t>(ext_00468180());
+    void* vec = reinterpret_cast<void*>(static_cast<uintptr_t>(base));
+    lift_field<uint32_t>(self, 0x08) = ext_00469570(vec, 5u);
+
+    lift_field<uint32_t>(self, 0x18) = lift_field<uint32_t>(arg1, 0x1C);
+    return self;
+}
+} // namespace lift_0048E190

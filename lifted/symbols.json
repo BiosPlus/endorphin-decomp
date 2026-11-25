@@ -10218,6 +10218,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005F0D40 (NMData::MagnetJointData::vfunc_59).",
     "lifted_path": "lifted/Commands/CreateTriggeredEventCommand.cpp"
   },
+  "0x0048E190": {
+    "name": "Unknown::initFromArgs_0048E190",
+    "class": "Unknown",
+    "signature": "void* fn_0048E190(void* self, void* arg1, uint32_t arg2)",
+    "summary": "Runs InitVtblAndArg(this, 1), sets the vtable, stores both stack args, caches vector element 5 at +0x08 and *(arg1+0x1C) at +0x18, returns this.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048E200": {
     "name": "sub_0048E200",
     "signature": "void* __thiscall fn_0048E200(void* self, uint32_t arg0, uint32_t arg1)",

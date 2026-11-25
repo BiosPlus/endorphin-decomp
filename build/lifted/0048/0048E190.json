@@ -1,0 +1,46 @@
+{
+  "va": "0x0048E190",
+  "size": 110,
+  "orig_symbol": "sub_0048E190",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Unknown::initFromArgs_0048E190",
+  "class": "Unknown",
+  "signature": "void* fn_0048E190(void* self, void* arg1, uint32_t arg2)",
+  "summary": "Runs InitVtblAndArg(this, 1), sets the vtable, stores both stack args, caches vector element 5 at +0x08 and *(arg1+0x1C) at +0x18, returns this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtbl"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "void*",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "uint32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "field_0x18"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:03:28Z"
+}
