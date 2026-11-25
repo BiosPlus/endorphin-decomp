@@ -1,0 +1,13 @@
+{
+  "va": "0x00527570",
+  "size": 33,
+  "orig_symbol": "sub_00527570",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "GetOnceInitString_00527570",
+  "signature": "void* fn_00527570(void* out)",
+  "summary": "Copy-constructs the caller-provided std::string slot from the process-global once-initialized string and returns that slot.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:31:59Z"
+}

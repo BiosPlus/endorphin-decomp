@@ -20189,6 +20189,12 @@
     "summary": "Returns the process-global string at 0x00AED2EC, initializing it once on first call and registering its teardown.",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00527570": {
+    "name": "GetOnceInitString_00527570",
+    "signature": "void* fn_00527570(void* out)",
+    "summary": "Copy-constructs the caller-provided std::string slot from the process-global once-initialized string and returns that slot.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00527AF0": {
     "name": "vectorBackPtr",
     "signature": "uint32_t __thiscall sub_00527AF0(void* self)",

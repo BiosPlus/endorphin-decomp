@@ -919,3 +919,17 @@ uint8_t* fn_00522760(uint8_t* first, uint8_t* last, uint8_t* dst_end) {
     return dst_end - static_cast<ptrdiff_t>(recordCount) * 0x28;
 }
 } // namespace lift_00522760
+
+// [0x00527570] sub_00527570 (33 bytes)
+namespace lift_00527570 {
+// Known callee 0x005273B0: GetOnceInitString_005273B0 (Returns the process-global string at 0x00AED2EC, initializing it once on first call and registering its teardown.)
+// The caller passes a 0 flag argument on the stack before the call.
+extern void* ext_005273B0(int flag);
+
+// @name GetOnceInitString_00527570
+// @summary Copy-constructs the caller-provided std::string slot from the process-global once-initialized string and returns that slot.
+void* fn_00527570(void* out) {
+    const auto* src = static_cast<const std::string*>(ext_005273B0(0));
+    return new (out) std::string(*src);
+}
+} // namespace lift_00527570
