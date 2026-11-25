@@ -1,0 +1,21 @@
+{
+  "va": "0x006A9290",
+  "size": 88,
+  "orig_symbol": "sub_006A9290",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "sub_006A9290",
+  "signature": "extern \"C\" int32_t __thiscall fn_006A9290(void* self, uint32_t arg1)",
+  "summary": "Calls MFC80!ord_1903 and if not -1, dispatches a virtual call on subobject at +0x108 with a zeroed 16-byte buffer",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x108",
+      "type": "uintptr_t",
+      "name": "field_0x108"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:18:26Z"
+}

@@ -631,3 +631,30 @@ void fn_006AC2E0(void* self) {
     }
 }
 } // namespace lift_006AC2E0
+
+// [0x006A9290]
+namespace lift_006A9290 {
+// @name sub_006A9290
+// @summary Calls MFC80!ord_1903 and if not -1, dispatches a virtual call on subobject at +0x108 with a zeroed 16-byte buffer
+// @field Unknown +0x108 uintptr_t field_0x108
+
+
+extern int32_t __thiscall fn_006A5EA8(void* self);
+
+extern int32_t __thiscall fn_006A9290(void* self, uint32_t arg1) {
+    (void)arg1;
+    int32_t res = fn_006A5EA8(self);
+    if (res == -1) {
+        return res;
+    }
+
+    uint32_t buf[4] = {0, 0, 0, 0};
+    uint8_t* subobj = reinterpret_cast<uint8_t*>(self) + 0x108;
+    uintptr_t vtable = *reinterpret_cast<uintptr_t*>(subobj);
+    using Vfn = void(__thiscall*)(void*, uint32_t, uint32_t*, void*, uint32_t);
+    Vfn vfn = reinterpret_cast<Vfn>(*reinterpret_cast<uintptr_t*>(vtable + 0x13c));
+    vfn(subobj, 0x40000005u, buf, self, 0x3e8u);
+
+    return 0;
+}
+} // namespace lift_006A9290
