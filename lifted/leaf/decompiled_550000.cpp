@@ -1690,3 +1690,38 @@ bool fn_00555630(void* self, uint32_t count) {
     return true;
 }
 } // namespace lift_00555630
+
+// [0x00555680] sub_00555680 (79 bytes)
+namespace lift_00555680 {
+// Known callee 0x00405FB0: throwPreparedStringError_00405FB0 (Builds a std::string from the literal at 0x00928F30 and throws it inside an std::exception-derived object.)
+extern void ext_00405FB0();
+// Known callee 0x00554140: AllocateElementsTimes60 (Allocates count * 60 bytes via MFC80 ord_762, throwing std::bad_alloc if count * 60 would overflow 32 bits; count 0 requests a zero-byte allocation.)
+// The caller pushes a zero word as a second cdecl argument before count; it is passed through unchanged.
+extern void* ext_00554140(uint32_t count, uint32_t zero);
+
+// @name ElementBuffer::allocate60
+// @class ElementBuffer
+// @summary Resets three buffer pointers, then allocates count 60-byte elements and sets begin/end/limit; returns false for count 0.
+// @field ElementBuffer +0x04 void* field_0x04
+// @field ElementBuffer +0x08 void* field_0x08
+// @field ElementBuffer +0x0C void* field_0x0C
+bool fn_00555680(void* self, uint32_t count) {
+    lift_field<void*>(self, 0x04) = nullptr;
+    lift_field<void*>(self, 0x08) = nullptr;
+    lift_field<void*>(self, 0x0C) = nullptr;
+
+    if (count == 0) {
+        return false;
+    }
+
+    if (count > 0x4444444u) {
+        ext_00405FB0();
+    }
+
+    void* base = ext_00554140(count, 0);
+    lift_field<void*>(self, 0x04) = base;
+    lift_field<void*>(self, 0x08) = base;
+    lift_field<void*>(self, 0x0C) = static_cast<uint8_t*>(base) + static_cast<size_t>(count) * 60u;
+    return true;
+}
+} // namespace lift_00555680
