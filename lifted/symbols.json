@@ -8893,6 +8893,12 @@
     "summary": "One-time initializer: on first call, runs ext_0067A670 on mem_00AD9DF4 and sets it to 0x93cf14; returns \u0026mem_00AD9DF4.",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00487F90": {
+    "name": "initOnceGuardedObject_00AD9DFC",
+    "signature": "extern \"C\" uint32_t mem_00AD9E00; // init-guard flags (bit 0 = initialized/in-progress) extern \"C\" uint32_t mem_00AD9DFC; // guarded global object storage void* fn_00487F90()",
+    "summary": "One-time initializer for the global at 0x00AD9DFC: on first call sets guard bit 0 in 0x00AD9E00, runs ext_0067A670 on the object with arg 0, then stores 0x0093CFEC into it; returns the object's address on every call.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00488260": {
     "name": "sub_00488260",
     "signature": "extern \"C\" void __fastcall fn_00488260(void* self)",

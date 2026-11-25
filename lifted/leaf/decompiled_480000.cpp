@@ -1592,3 +1592,22 @@ void* fn_00487ED0()
     return &mem_00AD9DEC;
 }
 } // namespace lift_00487ED0
+
+// [0x00487F90] sub_00487F90 (87 bytes)
+namespace lift_00487F90 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern uint32_t mem_00AD9E00; // init-guard flags (bit 0 = initialized/in-progress)
+extern uint32_t mem_00AD9DFC; // guarded global object storage
+
+// @name initOnceGuardedObject_00AD9DFC
+// @summary One-time initializer for the global at 0x00AD9DFC: on first call sets guard bit 0 in 0x00AD9E00, runs ext_0067A670 on the object with arg 0, then stores 0x0093CFEC into it; returns the object's address on every call.
+void* fn_00487F90() {
+    if (!(mem_00AD9E00 & 1u)) {
+        mem_00AD9E00 |= 1u;
+        ext_0067A670(&mem_00AD9DFC, 0);
+        mem_00AD9DFC = 0x0093CFECu;
+    }
+    return &mem_00AD9DFC;
+}
+} // namespace lift_00487F90

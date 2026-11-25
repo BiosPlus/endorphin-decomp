@@ -1,0 +1,13 @@
+{
+  "va": "0x00487F90",
+  "size": 87,
+  "orig_symbol": "sub_00487F90",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "initOnceGuardedObject_00AD9DFC",
+  "signature": "extern \"C\" uint32_t mem_00AD9E00; // init-guard flags (bit 0 = initialized/in-progress) extern \"C\" uint32_t mem_00AD9DFC; // guarded global object storage void* fn_00487F90()",
+  "summary": "One-time initializer for the global at 0x00AD9DFC: on first call sets guard bit 0 in 0x00AD9E00, runs ext_0067A670 on the object with arg 0, then stores 0x0093CFEC into it; returns the object's address on every call.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:27:43Z"
+}
