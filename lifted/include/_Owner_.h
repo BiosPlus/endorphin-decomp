@@ -8,6 +8,6 @@
 // Recovered field layout for <Owner>:
 namespace lifted_layout {
 struct _Owner__Fields {
-    // +0x20  uint32_t                 field_0x20  (evidence: 0x007C8850)
+    // +0x20  uint32_t                 field_0x20  (evidence: 0x007C8490, 0x007C8850)
 };
 } // namespace lifted_layout

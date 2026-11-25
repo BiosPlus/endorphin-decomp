@@ -8,6 +8,6 @@
 // Recovered field layout for ObjectField:
 namespace lifted_layout {
 struct ObjectField_Fields {
-    // +0x14  float                    field_0x14  (evidence: 0x007CB980)
+    // +0x14  float                    field_0x14  (evidence: 0x007C8490, 0x007CB980)
 };
 } // namespace lifted_layout

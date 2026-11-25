@@ -8,23 +8,23 @@
 // Recovered field layout for Obj:
 namespace lifted_layout {
 struct Obj_Fields {
-    // +0x0   int32_t                  field_0x00  (evidence: 0x007C8820) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x007C9E50) // CONFLICT: multiple definitions at +0x0
+    // +0x0   int32_t                  field_0x00  (evidence: 0x007C8490, 0x007C8820) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x007C8490, 0x007C9E50) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable  (evidence: 0x0077F9E0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable_0  (evidence: 0x0068DDD0) // CONFLICT: multiple definitions at +0x0
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x0077F9E0, 0x007C9E50) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x0077F9E0, 0x007C8490, 0x007C9E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 vtable_4  (evidence: 0x0068DDD0) // CONFLICT: multiple definitions at +0x4
     // +0x8   uint32_t                 field_0x08  (evidence: 0x0068DDD0, 0x0077F9E0)
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x007D47A0, 0x007D8470)
     // +0x10  uint8_t[0x9d8]           field_0x10  (evidence: 0x0068DDD0)
     // +0x14  uint32_t                 field_0x14  (evidence: 0x007D47A0, 0x007D8470)
-    // +0x1C  uint32_t                 field_0x1C  (evidence: 0x007C9E50)
-    // +0x20  uint32_t                 field_0x20  (evidence: 0x007C8820)
-    // +0x50  uint32_t                 field_0x50  (evidence: 0x007C9E50)
-    // +0xB0  uint32_t                 allocatorPtr  (evidence: 0x007CA750, 0x007CC5D0)
-    // +0x160 float                    field_0x160  (evidence: 0x007C5B70)
-    // +0x164 float                    field_0x164  (evidence: 0x007C5B70)
-    // +0x168 float                    field_0x168  (evidence: 0x007C5B70)
+    // +0x1C  uint32_t                 field_0x1C  (evidence: 0x007C8490, 0x007C9E50)
+    // +0x20  uint32_t                 field_0x20  (evidence: 0x007C8490, 0x007C8820)
+    // +0x50  uint32_t                 field_0x50  (evidence: 0x007C8490, 0x007C9E50)
+    // +0xB0  uint32_t                 allocatorPtr  (evidence: 0x007C8490, 0x007CA750, 0x007CC5D0)
+    // +0x160 float                    field_0x160  (evidence: 0x007C5B70, 0x007C8490)
+    // +0x164 float                    field_0x164  (evidence: 0x007C5B70, 0x007C8490)
+    // +0x168 float                    field_0x168  (evidence: 0x007C5B70, 0x007C8490)
     // +0x1CC uint32_t                 field_0x1CC  (evidence: 0x007BF9C0)
 };
 } // namespace lifted_layout

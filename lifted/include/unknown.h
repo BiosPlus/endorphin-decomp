@@ -24,16 +24,16 @@ struct unknown_Fields {
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x00441020, 0x00447510, 0x0044B6A0, 0x004925D0) // CONFLICT: multiple definitions at +0xC
     // +0xC   int32_t                  field_0x0c  (evidence: 0x00640930) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0xC  (evidence: 0x0071C3A0) // CONFLICT: multiple definitions at +0xC
-    // +0x10  float                    field_0x10  (evidence: 0x007CA8A0, 0x007CB940) // CONFLICT: multiple definitions at +0x10
+    // +0x10  float                    field_0x10  (evidence: 0x007C8490, 0x007CA8A0, 0x007CB940) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint32_t                 field_0x10  (evidence: 0x004925D0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t                  field_0x10  (evidence: 0x00640930) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t[]                field_0x10  (evidence: 0x0071B010, 0x0071F070) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    field_0x10  (evidence: 0x004584A0, 0x00458DF0, 0x0045BBE0) // CONFLICT: multiple definitions at +0x10
     // +0x10  uint8_t                  field_0x10[]  (evidence: 0x0068BF00) // CONFLICT: multiple definitions at +0x10
-    // +0x14  float                    field_0x14  (evidence: 0x007CA8A0) // CONFLICT: multiple definitions at +0x14
+    // +0x14  float                    field_0x14  (evidence: 0x007C8490, 0x007CA8A0) // CONFLICT: multiple definitions at +0x14
     // +0x14  uint32_t                 field_0x14  (evidence: 0x0041C630) // CONFLICT: multiple definitions at +0x14
     // +0x18  DWORD                    field_0x18  (evidence: 0x00857440) // CONFLICT: multiple definitions at +0x18
-    // +0x18  float                    field_0x18  (evidence: 0x007CA8A0) // CONFLICT: multiple definitions at +0x18
+    // +0x18  float                    field_0x18  (evidence: 0x007C8490, 0x007CA8A0) // CONFLICT: multiple definitions at +0x18
     // +0x18  uint32_t                 field_0x18  (evidence: 0x0041C630, 0x006658A0, 0x007C2E50, 0x007C6FD0) // CONFLICT: multiple definitions at +0x18
     // +0x1C  float                    field_0x1c  (evidence: 0x0046C2F0)
     // +0x20  DWORD                    field_0x20  (evidence: 0x00407830, 0x0040A910) // CONFLICT: multiple definitions at +0x20

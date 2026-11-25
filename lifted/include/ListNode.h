@@ -13,10 +13,10 @@ struct ListNode_Fields {
     // +0x0   ListNode*                next  (evidence: 0x0049FCF0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 next  (evidence: 0x0049DB60) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    next  (evidence: 0x0049BEE0, 0x0049DBA0) // CONFLICT: multiple definitions at +0x0
-    // +0x4   uint32_t                 prev  (evidence: 0x007CC930)
+    // +0x4   uint32_t                 prev  (evidence: 0x007C8490, 0x007CC930)
     // +0x8   void* payload (object; vptr at offset 0, predicate in vtable slot 10 at +0x28)  (evidence: 0x0049BEE0) // CONFLICT: multiple definitions at +0x8
-    // +0x8   uint32_t                 next  (evidence: 0x007CC930, 0x007F6830) // CONFLICT: multiple definitions at +0x8
-    // +0xC   uint32_t                 list  (evidence: 0x007CC930) // CONFLICT: multiple definitions at +0xC
+    // +0x8   uint32_t                 next  (evidence: 0x007C8490, 0x007CC930, 0x007F6830) // CONFLICT: multiple definitions at +0x8
+    // +0xC   uint32_t                 list  (evidence: 0x007C8490, 0x007CC930) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 prev  (evidence: 0x007F6830) // CONFLICT: multiple definitions at +0xC
     // +0x10  void*                    embeddedObjectVtable  (evidence: 0x0049DBA0) // CONFLICT: multiple definitions at +0x10
     // +0x10  void*                    embedded_obj  (evidence: 0x0049FCF0) // CONFLICT: multiple definitions at +0x10
