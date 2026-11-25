@@ -1,0 +1,99 @@
+{
+  "va": "0x0077FFD0",
+  "size": 96,
+  "orig_symbol": "sub_0077FFD0",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "sub_0077FFD0",
+  "signature": "uintptr_t __fastcall sub_0077FFD0(uintptr_t this_ptr)",
+  "summary": "Initializes object fields to zero and sets field_0x00 to -1, returning this.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint8_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x104",
+      "type": "uint32_t",
+      "name": "field_0x104"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x108",
+      "type": "uint32_t",
+      "name": "field_0x108"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10C",
+      "type": "uint32_t",
+      "name": "field_0x10c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x110",
+      "type": "uint32_t",
+      "name": "field_0x110"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x114",
+      "type": "uint32_t",
+      "name": "field_0x114"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x118",
+      "type": "uint32_t",
+      "name": "field_0x118"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x11C",
+      "type": "uint32_t",
+      "name": "field_0x11c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x120",
+      "type": "uint8_t",
+      "name": "field_0x120"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x121",
+      "type": "uint8_t",
+      "name": "field_0x121"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x124",
+      "type": "uint32_t",
+      "name": "field_0x124"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x128",
+      "type": "uint32_t",
+      "name": "field_0x128"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x12C",
+      "type": "uint32_t",
+      "name": "field_0x12c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:48:53Z"
+}

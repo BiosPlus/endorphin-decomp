@@ -436,3 +436,40 @@ extern void __stdcall fn_00774560(void* obj, double value) {
     *reinterpret_cast<double*>(p3 + 0x78) += value;
 }
 } // namespace lift_00774560
+
+// [0x0077FFD0]
+namespace lift_0077FFD0 {
+// @name sub_0077FFD0
+// @summary Initializes object fields to zero and sets field_0x00 to -1, returning this.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint8_t field_0x04
+// @field Unknown +0x104 uint32_t field_0x104
+// @field Unknown +0x108 uint32_t field_0x108
+// @field Unknown +0x10C uint32_t field_0x10c
+// @field Unknown +0x110 uint32_t field_0x110
+// @field Unknown +0x114 uint32_t field_0x114
+// @field Unknown +0x118 uint32_t field_0x118
+// @field Unknown +0x11C uint32_t field_0x11c
+// @field Unknown +0x120 uint8_t field_0x120
+// @field Unknown +0x121 uint8_t field_0x121
+// @field Unknown +0x124 uint32_t field_0x124
+// @field Unknown +0x128 uint32_t field_0x128
+// @field Unknown +0x12C uint32_t field_0x12c
+uintptr_t __fastcall sub_0077FFD0(uintptr_t this_ptr) {
+    *reinterpret_cast<uint32_t*>(this_ptr + 0x110) = 0;
+    *reinterpret_cast<uint32_t*>(this_ptr + 0x118) = 0;
+    *reinterpret_cast<uint32_t*>(this_ptr + 0x128) = 0;
+    *reinterpret_cast<uint32_t*>(this_ptr + 0x000) = 0xffffffffu;
+    *reinterpret_cast<uint8_t*>(this_ptr + 0x004) = 0;
+    *reinterpret_cast<uint32_t*>(this_ptr + 0x104) = 0;
+    *reinterpret_cast<uint32_t*>(this_ptr + 0x108) = 0;
+    *reinterpret_cast<uint32_t*>(this_ptr + 0x10c) = 0;
+    *reinterpret_cast<uint32_t*>(this_ptr + 0x114) = 0;
+    *reinterpret_cast<uint32_t*>(this_ptr + 0x11c) = 0;
+    *reinterpret_cast<uint32_t*>(this_ptr + 0x124) = 0;
+    *reinterpret_cast<uint32_t*>(this_ptr + 0x12c) = 0;
+    *reinterpret_cast<uint8_t*>(this_ptr + 0x120) = 0;
+    *reinterpret_cast<uint8_t*>(this_ptr + 0x121) = 0;
+    return this_ptr;
+}
+} // namespace lift_0077FFD0
