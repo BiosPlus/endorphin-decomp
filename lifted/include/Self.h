@@ -23,6 +23,7 @@ struct Self_Fields {
     // +0x8   uint32_t                 field_0x08  (evidence: 0x0041C570) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x08  (evidence: 0x0041C540) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    lock  (evidence: 0x0067AE20) // CONFLICT: multiple definitions at +0x8
+    // +0xC   DWORD                    field_0x0C  (evidence: 0x007B1E20) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x00700940, 0x0071B910) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0x0C  (evidence: 0x0067AE20) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0x0c  (evidence: 0x0041C540, 0x007008B0, 0x00700960, 0x0071C4E0, 0x0071C530, 0x0071C560) // CONFLICT: multiple definitions at +0xC
@@ -53,6 +54,8 @@ struct Self_Fields {
     // +0x11C int32_t                  field_0x11c  (evidence: 0x004329A0)
     // +0x150 uint32_t                 field_0x150  (evidence: 0x00687230, 0x00687280)
     // +0x158 BYTE field_0x158 (address taken only, passed to ext_00661A90; not dereferenced here)  (evidence: 0x0059DC60)
+    // +0x15C DWORD                    field_0x15C  (evidence: 0x007B1E20)
+    // +0x160 DWORD                    field_0x160  (evidence: 0x007B1E20)
     // +0x164 float                    field_0x164  (evidence: 0x005AA890)
     // +0x168 float                    field_0x168  (evidence: 0x005AA890)
     // +0x16C float                    field_0x16c  (evidence: 0x005AA890)

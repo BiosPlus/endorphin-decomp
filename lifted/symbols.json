@@ -59492,6 +59492,12 @@
     "summary": "Forwards the first dword of the argument object, the constant tag 0x00AB1400, and a second argument to ext_0079B140.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B1E20": {
+    "name": "SetModeFlagsAndVtblSlots",
+    "signature": "void fn_007B1E20(void* self, DWORD mode, DWORD flag)",
+    "summary": "Stores two dword slots on self based on mode id (0x4D4D); sets bit 0x80 in the low byte of field_0x0C when the flag arg condition holds.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B1E80": {
     "name": "sub_007B1E80",
     "signature": "void fn_007B1E80()",

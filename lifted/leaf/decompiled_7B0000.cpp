@@ -1164,3 +1164,27 @@ uint32_t fn_007BD5E0(void* self) {
     return 1;
 }
 } // namespace lift_007BD5E0
+
+// [0x007B1E20] sub_007B1E20 (82 bytes)
+namespace lift_007B1E20 {
+// @name SetModeFlagsAndVtblSlots
+// @summary Stores two dword slots on self based on mode id (0x4D4D); sets bit 0x80 in the low byte of field_0x0C when the flag arg condition holds.
+// @field Self +0x0C DWORD field_0x0C
+// @field Self +0x15C DWORD field_0x15C
+// @field Self +0x160 DWORD field_0x160
+void fn_007B1E20(void* self, DWORD mode, DWORD flag) {
+    if (mode == 0x4D4D) {
+        lift_field<DWORD>(self, 0x160) = 0x999430;
+        lift_field<DWORD>(self, 0x15C) = 0x999464;
+        if (flag == 0) {
+            lift_field<DWORD>(self, 0x0C) |= 0x80;
+        }
+    } else {
+        lift_field<DWORD>(self, 0x160) = 0x999430;
+        lift_field<DWORD>(self, 0x15C) = 0x999498;
+        if (flag != 0) {
+            lift_field<DWORD>(self, 0x0C) |= 0x80;
+        }
+    }
+}
+} // namespace lift_007B1E20

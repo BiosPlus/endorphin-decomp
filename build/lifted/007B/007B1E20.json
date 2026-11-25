@@ -1,0 +1,33 @@
+{
+  "va": "0x007B1E20",
+  "size": 82,
+  "orig_symbol": "sub_007B1E20",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "SetModeFlagsAndVtblSlots",
+  "signature": "void fn_007B1E20(void* self, DWORD mode, DWORD flag)",
+  "summary": "Stores two dword slots on self based on mode id (0x4D4D); sets bit 0x80 in the low byte of field_0x0C when the flag arg condition holds.",
+  "fields": [
+    {
+      "class": "Self",
+      "offset": "+0xC",
+      "type": "DWORD",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x15C",
+      "type": "DWORD",
+      "name": "field_0x15C"
+    },
+    {
+      "class": "Self",
+      "offset": "+0x160",
+      "type": "DWORD",
+      "name": "field_0x160"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:02:55Z"
+}
