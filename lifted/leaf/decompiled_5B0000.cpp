@@ -767,3 +767,27 @@ void fn_005B4130(void* out, uint32_t value) {
     lift_field<void*>(out, 0x04) = singleton;
 }
 } // namespace lift_005B4130
+
+// [0x005B8420]
+namespace lift_005B8420 {
+namespace lift_005B8420 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00B43CD8; // init guard flags (bit 0 = initialized)
+extern DWORD mem_00B43CD4; // function-local static object storage
+
+// @name getStaticObject_005B8420
+// @summary One-time guarded initializer for the static object at 0x00B43CD4 (guard bit 0 of 0x00B43CD8); sets its first DWORD to vtable 0x009611C4 and returns its address.
+// @field Unknown +0x00 DWORD field_0x00
+void* fn_005B8420() {
+    // The original wraps this in an MSVC SEH frame (fs:[0] push/restore) for thread-safe
+    // static init; that exception-frame plumbing is not reproduced here.
+    if ((mem_00B43CD8 & 1u) == 0) {
+        mem_00B43CD8 |= 1u;
+        ext_0067A670(&mem_00B43CD4, 0u);
+        mem_00B43CD4 = 0x009611C4u;
+    }
+    return &mem_00B43CD4;
+}
+} // namespace lift_005B8420
+} // namespace lift_005B8420

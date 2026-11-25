@@ -28165,6 +28165,12 @@
     "summary": "Lazily initializes and returns a pointer to the static singleton object at 0x00B43CCC.",
     "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
   },
+  "0x005B8420": {
+    "name": "getStaticObject_005B8420",
+    "signature": "extern DWORD mem_00B43CD8; // init guard flags (bit 0 = initialized) extern DWORD mem_00B43CD4; // function-local static object storage void* fn_005B8420()",
+    "summary": "One-time guarded initializer for the static object at 0x00B43CD4 (guard bit 0 of 0x00B43CD8); sets its first DWORD to vtable 0x009611C4 and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_5B0000.cpp"
+  },
   "0x005B85A0": {
     "name": "getStaticSingleton_005B85A0",
     "signature": "extern \"C\" DWORD mem_00B43CF8; // init guard flags (bit 0 = initialized/in progress) extern \"C\" DWORD mem_00B43CF4; // static object storage; first DWORD holds the vtable-like value void* getStaticSingleton_005B85A0()",
