@@ -2283,3 +2283,47 @@ void* uniqueStringPairRange_00687820(void* first, void* last) {
     return dst + kElemSize;
 }
 } // namespace lift_00687820
+
+// [0x00687DC0]
+namespace lift_00687DC0 {
+// @name Elements56Buffer::allocate
+// @class Elements56Buffer
+// @summary Resets the three buffer pointers, then if count != 0 allocates count 56-byte elements and sets begin = end = alloc, cap = alloc + 56*count. Returns true on allocation, false for count == 0.
+// @field Elements56Buffer +0x04 void* field_0x04 (begin pointer, set to allocation)
+// @field Elements56Buffer +0x08 void* field_0x08 (end pointer, set to allocation)
+// @field Elements56Buffer +0x0C void* field_0x0C (end-of-storage pointer, allocation + 56*count)
+
+namespace {
+    // Allocates storage for `count` 56-byte elements (throws on overflow).
+    // The disassembly pushes a second zero argument before calling; it is
+    // kept here as `extra` to match the caller's stack layout.
+    void* ext_0041D9E0(uint32_t count, uint32_t extra);
+    // Throws std::length_error for an oversized element count; does not return.
+    void ext_00405FB0();
+}
+
+struct Elements56Buffer {
+    uint8_t pad_0x00[0x04];
+    void* field_0x04;
+    void* field_0x08;
+    void* field_0x0C;
+
+    bool allocate(uint32_t count) {
+        field_0x04 = nullptr;
+        field_0x08 = nullptr;
+        field_0x0C = nullptr;
+        if (count == 0) {
+            return false;
+        }
+        if (count > 0x4924924u) {
+            ext_00405FB0();
+        }
+        void* base = ext_0041D9E0(count, 0u);
+        uint32_t bytes = count * 56u;
+        field_0x04 = base;
+        field_0x08 = base;
+        field_0x0C = static_cast<uint8_t*>(base) + bytes;
+        return true;
+    }
+};
+} // namespace lift_00687DC0

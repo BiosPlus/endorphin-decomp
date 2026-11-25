@@ -2179,6 +2179,13 @@
     "summary": "Passes arg through ext_006AD180, then tail-dispatches to vtable slot 5 (+0x14) of the object stored at self+0x4, passing the result as its argument.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041CC30": {
+    "name": "Properties::AutoCompleteSupplier::vfunc_2",
+    "class": "Properties::AutoCompleteSupplier",
+    "signature": "uint32_t __thiscall fn_0041CC30(uint32_t self, uint32_t out_str)",
+    "summary": "Delegates to the last global supplier's vfunc_1 if present, otherwise constructs an empty std::string.",
+    "lifted_path": "lifted/Properties/AutoCompleteSupplier.cpp"
+  },
   "0x0041CCA0": {
     "name": "ReleaseSubobjectAndChainDestructor",
     "signature": "void fn_0041CCA0(void* self)",
@@ -48518,6 +48525,13 @@
     "name": "sub_00687980",
     "signature": "void* fn_00687980(void* first, void* last, void* d_last)",
     "summary": "Auto-lifted identical-shape clone of 0x0050A720 (CopyBackwardElements24Wrapper).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x00687DC0": {
+    "name": "Elements56Buffer::allocate",
+    "class": "Elements56Buffer",
+    "signature": "bool allocate(uint32_t count)",
+    "summary": "Resets the three buffer pointers, then if count != 0 allocates count 56-byte elements and sets begin = end = alloc, cap = alloc + 56*count. Returns true on allocation, false for count == 0.",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x00687E20": {

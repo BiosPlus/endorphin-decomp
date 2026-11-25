@@ -1,0 +1,34 @@
+{
+  "va": "0x00687DC0",
+  "size": 81,
+  "orig_symbol": "sub_00687DC0",
+  "src_path": "src/leaf/decompiled_680000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_680000.cpp",
+  "name": "Elements56Buffer::allocate",
+  "class": "Elements56Buffer",
+  "signature": "bool allocate(uint32_t count)",
+  "summary": "Resets the three buffer pointers, then if count != 0 allocates count 56-byte elements and sets begin = end = alloc, cap = alloc + 56*count. Returns true on allocation, false for count == 0.",
+  "fields": [
+    {
+      "class": "Elements56Buffer",
+      "offset": "+0x4",
+      "type": "void* field_0x04 (begin pointer, set to",
+      "name": "allocation)"
+    },
+    {
+      "class": "Elements56Buffer",
+      "offset": "+0x8",
+      "type": "void* field_0x08 (end pointer, set to",
+      "name": "allocation)"
+    },
+    {
+      "class": "Elements56Buffer",
+      "offset": "+0xC",
+      "type": "void* field_0x0C (end-of-storage pointer, allocation +",
+      "name": "56*count)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:09:29Z"
+}
