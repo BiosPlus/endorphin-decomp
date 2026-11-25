@@ -9212,6 +9212,13 @@
     "summary": "Copies the 8-byte element at index from the array at +0x88 (end at +0x8C) into out and returns out; aborts on a null array or out-of-range index.",
     "lifted_path": "lifted/NMData/Transition.cpp"
   },
+  "0x004976D0": {
+    "name": "Unknown::PointInRectInclusive",
+    "class": "Unknown",
+    "signature": "uint8_t __thiscall fn_004976D0(const void* self, const void* point)",
+    "summary": "Returns true if the 2D point (arg[0], arg[1]) lies inside the float rect at this (x1,y1,x2,y2), inclusive; any NaN yields false.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00497780": {
     "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_42",
     "class": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e",

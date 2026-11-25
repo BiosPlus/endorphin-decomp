@@ -586,3 +586,30 @@ void fn_00496CE0(uint8_t* self, const void* key) {
 }
 } // namespace lift_005AAD10
 } // namespace lift_00496CE0
+
+// [0x004976D0] sub_004976D0 (71 bytes)
+namespace lift_004976D0 {
+// @name Unknown::PointInRectInclusive
+// @class Unknown
+// @summary Returns true if the 2D point (arg[0], arg[1]) lies inside the float rect at this (x1,y1,x2,y2), inclusive; any NaN yields false.
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+// @field Unknown +0x0C float field_0x0C
+uint8_t __thiscall fn_004976D0(const void* self, const void* point) {
+    const float rect_x1 = lift_field<float>(self, 0x0);
+    const float rect_y1 = lift_field<float>(self, 0x4);
+    const float rect_x2 = lift_field<float>(self, 0x8);
+    const float rect_y2 = lift_field<float>(self, 0xC);
+
+    const float px = lift_field<float>(point, 0x0);
+    const float py = lift_field<float>(point, 0x4);
+
+    // Ordered comparisons are false for NaN, matching the x87 unordered-flag checks.
+    if (!(rect_x1 <= px)) return 0;
+    if (!(rect_x2 >= px)) return 0;
+    if (!(rect_y1 <= py)) return 0;
+    if (!(rect_y2 >= py)) return 0;
+    return 1;
+}
+} // namespace lift_004976D0
