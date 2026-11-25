@@ -35239,6 +35239,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_0063E9E0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/AdvXMLParser/auto_tiny.cpp"
   },
+  "0x0063F350": {
+    "name": "Unknown::derivedCtor_0063F350",
+    "class": "Unknown",
+    "signature": "void* fn_0063F350(void* self, uint32_t arg0, const void* name)",
+    "summary": "Base-constructs via ext_0063E0C0, installs the derived vtable at 0x0097CC44, zeroes the five fields at +0x28..+0x38, and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_630000.cpp"
+  },
   "0x0063F600": {
     "name": "sub_0063F600",
     "signature": "__thiscall void* fn_0063F600(void* self, DWORD arg1, DWORD arg2)",

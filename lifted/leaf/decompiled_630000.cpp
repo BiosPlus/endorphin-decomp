@@ -384,3 +384,35 @@ void fn_0063E980(void* self, const std::string& src) {
         std::string(src);
 }
 } // namespace lift_0063E980
+
+// [0x0063F350] sub_0063F350 (85 bytes)
+namespace lift_0063F350 {
+// Known callee 0x0063E0C0: Unknown::Unknown(uint32_t, const std::string&) (string-copy ctor stub) (Stamps vtable 0x0097CB4C at +0x00, copy-constructs a std::string from the second argument into this+0x04, stores the first argument at +0x20, and returns this.)
+extern void* ext_0063E0C0(void* self, uint32_t arg0, const void* name);
+
+// @name Unknown::derivedCtor_0063F350
+// @class Unknown
+// @summary Base-constructs via ext_0063E0C0, installs the derived vtable at 0x0097CC44, zeroes the five fields at +0x28..+0x38, and returns this.
+// @field Unknown +0x00 uint32_t vfptr
+// @field Unknown +0x28 uint32_t field_0x28
+// @field Unknown +0x2C uint32_t field_0x2c
+// @field Unknown +0x30 uint32_t field_0x30
+// @field Unknown +0x34 uint32_t field_0x34
+// @field Unknown +0x38 uint32_t field_0x38
+//
+// The original wraps the base-constructor call in a structured exception frame
+// (scope -1, handler 0x008AED58). That frame only matters for unwinding if the
+// base constructor throws, so this portable form does not model it.
+void* fn_0063F350(void* self, uint32_t arg0, const void* name) {
+    ext_0063E0C0(self, arg0, name);
+
+    lift_field<uint32_t>(self, 0x00) = 0x0097CC44;
+    lift_field<uint32_t>(self, 0x28) = 0;
+    lift_field<uint32_t>(self, 0x2C) = 0;
+    lift_field<uint32_t>(self, 0x30) = 0;
+    lift_field<uint32_t>(self, 0x34) = 0;
+    lift_field<uint32_t>(self, 0x38) = 0;
+
+    return self;
+}
+} // namespace lift_0063F350
