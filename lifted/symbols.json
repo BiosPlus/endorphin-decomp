@@ -25730,6 +25730,13 @@
     "summary": "Iterates the managed element pointer vector (begin/end at +0x18/+0x1C) and invokes each element's virtual slot 11 with the two stack arguments, in order.",
     "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
   },
+  "0x0054C3A0": {
+    "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_12",
+    "class": "ManagedDisplayList\u003cRenderableList\u003e",
+    "signature": "void __thiscall fn_0054C3A0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3)",
+    "summary": "Forwards vfunc_12(arg1, arg2, arg3) to each Renderable element in the list.",
+    "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
+  },
   "0x0054C420": {
     "name": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_14",
     "class": "ManagedDisplayList\u003cRenderableList\u003e",
@@ -35722,6 +35729,12 @@
     "summary": "Looks up a 32-bit key in an MSVC-style red-black tree and returns the value at node+0x10, or 0 if the tree is empty or the key is absent.",
     "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
   },
+  "0x005DFE30": {
+    "name": "destroyTreeNodePayloads",
+    "signature": "void __stdcall fn_005DFE30(TreeIter first, TreeIter last)",
+    "summary": "Iterates over a red-black tree iterator range [first, last) and frees each node's +0x28 payload object and its +0x04 sub-buffer via MFC80!ord_764.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005E0060": {
     "name": "Unknown::InitEmptyList",
     "class": "Unknown",
@@ -39522,6 +39535,12 @@
     "class": "unknown",
     "signature": "void* fn_0060B910(void* self)",
     "summary": "Constructor: stamps vtable 0x009720F4 at this+0, default-constructs the std::string members at this+0x04 and this+0x20 via MSVCP80, zeroes the dwords at this+0x3C and this+0x40, and returns this. Exception-frame setup from the original is omitted.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
+  "0x0060B990": {
+    "name": "CopyCtor_0060B990",
+    "signature": "void* __thiscall sub_0060B990(void* self, const void* other)",
+    "summary": "Copy constructor setting vtable 0x009720F4, copying two std::string fields, and zeroing fields at +0x3c and +0x40.",
     "lifted_path": "lifted/leaf/decompiled_600000.cpp"
   },
   "0x0060BA10": {

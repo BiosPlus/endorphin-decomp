@@ -295,3 +295,25 @@ void fn_0054C330(void* self, uint32_t arg1, uint32_t arg2) {
     }
 }
 } // namespace lift_0054C330
+
+// [0x0054C3A0]
+namespace lift_0054C3A0 {
+// @name ManagedDisplayList<RenderableList>::vfunc_12
+// @class ManagedDisplayList<RenderableList>
+// @summary Forwards vfunc_12(arg1, arg2, arg3) to each Renderable element in the list.
+// @field ManagedDisplayList<RenderableList> +0x18 void** field_0x18
+// @field ManagedDisplayList<RenderableList> +0x1C void** field_0x1C
+
+
+void __thiscall fn_0054C3A0(void* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
+    auto** it = *reinterpret_cast<void***>(reinterpret_cast<uint8_t*>(self) + 0x18);
+    auto** end = *reinterpret_cast<void***>(reinterpret_cast<uint8_t*>(self) + 0x1C);
+    for (; it != end; ++it) {
+        void* item = *it;
+        void** vtable = *reinterpret_cast<void***>(item);
+        using VFunc12 = void(__thiscall*)(void*, uint32_t, uint32_t, uint32_t);
+        auto fn = reinterpret_cast<VFunc12>(vtable[0x30 / sizeof(void*)]);
+        fn(item, arg1, arg2, arg3);
+    }
+}
+} // namespace lift_0054C3A0
