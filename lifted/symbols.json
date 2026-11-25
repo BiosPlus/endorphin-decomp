@@ -52914,6 +52914,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_006BAC20 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006BAC20": {
+    "name": "sub_006BAC20_dtor",
+    "signature": "extern \"C\" void __thiscall fn_006BAC20(void* self)",
+    "summary": "Destructor that sets vtable to 0x009931C4, destroys subobject at +0x9C, and destroys base subobject at +0x04.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006BADB0": {
     "name": "sub_006BADB0",
     "signature": "extern \"C\" void __fastcall fn_006BADB0(void* self)",

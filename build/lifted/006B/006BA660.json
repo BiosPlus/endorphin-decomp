@@ -1,0 +1,22 @@
+{
+  "va": "0x006BA660",
+  "size": 96,
+  "orig_symbol": "sub_006BA660",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "String::compare",
+  "class": "String",
+  "signature": "int32_t __thiscall sub_006BA660(const char* const* self, const char* other)",
+  "summary": "Compare this string's buffer with another C-string, treating null pointers as mem_00B5D2C0",
+  "fields": [
+    {
+      "class": "String",
+      "offset": "+0x0",
+      "type": "const char*",
+      "name": "data"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:37:55Z"
+}

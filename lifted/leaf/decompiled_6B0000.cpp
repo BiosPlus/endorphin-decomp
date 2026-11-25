@@ -1424,3 +1424,24 @@ int32_t __thiscall sub_006BA660(const char* const* self, const char* other) {
     }
 }
 } // namespace lift_006BA660
+
+// [0x006BAC20]
+namespace lift_006BAC20 {
+// @name sub_006BAC20_dtor
+// @summary Destructor that sets vtable to 0x009931C4, destroys subobject at +0x9C, and destroys base subobject at +0x04.
+// @field Unknown +0x00 uint32_t vtable
+// @field Unknown +0x04 uint8_t base_subobject
+// @field Unknown +0x9C uint8_t subobject_0x9C
+
+
+extern void ext_006D2160(void);
+extern void __thiscall ext_006DE460(void* self);
+
+extern void __thiscall fn_006BAC20(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0x009931C4u;
+    (void)(base + 0x9C);
+    ext_006D2160();
+    ext_006DE460(base + 0x04);
+}
+} // namespace lift_006BAC20
