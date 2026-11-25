@@ -32176,6 +32176,13 @@
     "summary": "Returns early if kind equals the stored field; otherwise maps kind 5 to 3 and tail-forwards to NMData::FixedPathJointData::vfunc_63 (ext_005EB920).",
     "lifted_path": "lifted/NMData/RPROJointData.cpp"
   },
+  "0x005EC950": {
+    "name": "getOrInitStaticObject_005EC950",
+    "class": "\u003cClassName\u003e (optional)",
+    "signature": "void fn_005EC950(DWORD* out, DWORD value)",
+    "summary": "Stores a DWORD value into out[0] and the static object address from ext_005EB060 into out[1].",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005ECB10": {
     "name": "NMData::FixedPathJointData::vfunc_9_off_C",
     "class": "NMData::FixedPathJointData",

@@ -708,3 +708,19 @@ void* fn_005EB180() {
     return &mem_00B45F48;
 }
 } // namespace lift_005EB180
+
+// [0x005EC950] sub_005EC950 (30 bytes)
+namespace lift_005EC950 {
+// Known callee 0x005EB060: getOrInitStaticObject_005EB060 (One-time initializer for the static object at 0x00B45F30; returns its address.)
+extern void* ext_005EB060();
+
+// @name getOrInitStaticObject_005EC950
+// @class <ClassName> (optional)
+// @summary Stores a DWORD value into out[0] and the static object address from ext_005EB060 into out[1].
+// @field <ClassName> +0x00 <type> <fieldName>
+void fn_005EC950(DWORD* out, DWORD value) {
+    void* obj = ext_005EB060();
+    out[0] = value;
+    out[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_005EC950

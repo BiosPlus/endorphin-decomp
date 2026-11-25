@@ -1,0 +1,22 @@
+{
+  "va": "0x005EC950",
+  "size": 30,
+  "orig_symbol": "sub_005EC950",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "getOrInitStaticObject_005EC950",
+  "class": "\u003cClassName\u003e (optional)",
+  "signature": "void fn_005EC950(DWORD* out, DWORD value)",
+  "summary": "Stores a DWORD value into out[0] and the static object address from ext_005EB060 into out[1].",
+  "fields": [
+    {
+      "class": "\u003cClassName\u003e",
+      "offset": "+0x0",
+      "type": "\u003ctype\u003e",
+      "name": "\u003cfieldName\u003e"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:12:37Z"
+}
