@@ -562,3 +562,24 @@ void* fn_004FFAC0() {
     return reinterpret_cast<void*>(&mem_00AEB294);
 }
 } // namespace lift_004FFAC0
+
+// [0x004FFBE0] sub_004FFBE0 (87 bytes)
+namespace lift_004FFBE0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AEB2B0;
+extern DWORD mem_00AEB2AC;
+
+// @name initStaticSingletonWithVtable_004FFBE0
+// @summary One-time guarded initialization of the static object at 0x00AEB2AC; returns its address.
+// @field StaticObject +0x00 DWORD field_0x00
+void* fn_004FFBE0() {
+    // Guard bit 0 of mem_00AEB2B0: construct the static object only once.
+    if ((mem_00AEB2B0 & 1u) == 0) {
+        mem_00AEB2B0 |= 1u;
+        ext_0067A670(&mem_00AEB2AC, 0);
+        mem_00AEB2AC = 0x0094E884u;
+    }
+    return &mem_00AEB2AC;
+}
+} // namespace lift_004FFBE0

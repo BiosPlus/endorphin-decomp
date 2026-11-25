@@ -1,0 +1,21 @@
+{
+  "va": "0x004FFBE0",
+  "size": 87,
+  "orig_symbol": "sub_004FFBE0",
+  "src_path": "src/leaf/decompiled_4F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4F0000.cpp",
+  "name": "initStaticSingletonWithVtable_004FFBE0",
+  "signature": "void* fn_004FFBE0()",
+  "summary": "One-time guarded initialization of the static object at 0x00AEB2AC; returns its address.",
+  "fields": [
+    {
+      "class": "StaticObject",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:09:05Z"
+}
