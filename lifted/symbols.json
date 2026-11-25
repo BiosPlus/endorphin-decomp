@@ -46504,6 +46504,13 @@
     "summary": "Copies five dwords from self+0x1E8..0x1F8 and self+0x1FC into out, sets out+0x18 to double 1.0, returns out.",
     "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
   },
+  "0x006C0730": {
+    "name": "Unknown::CopyStateTo_006C0730",
+    "class": "Unknown",
+    "signature": "void fn_006C0730(void* self, void* out)",
+    "summary": "Copies five dwords and one dword from self into the output record, then writes the constant double 1.0 at +0x18.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C0AE0": {
     "name": "sub_006C0AE0",
     "signature": "void fn_006C0AE0(void* self, uint32_t a0, uint32_t a1)",

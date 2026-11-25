@@ -997,3 +997,29 @@ void* fn_006C0580(void* self, void* out) {
     return out;
 }
 } // namespace lift_006C0580
+
+// [0x006C0730] sub_006C0730 (74 bytes)
+namespace lift_006C0730 {
+// @name Unknown::CopyStateTo_006C0730
+// @class Unknown
+// @summary Copies five dwords and one dword from self into the output record, then writes the constant double 1.0 at +0x18.
+// @field Unknown +0x3c8 uint32_t field_0x3c8
+// @field Unknown +0x3cc uint32_t field_0x3cc
+// @field Unknown +0x3d0 uint32_t field_0x3d0
+// @field Unknown +0x3d4 uint32_t field_0x3d4
+// @field Unknown +0x3d8 uint32_t field_0x3d8
+// @field Unknown +0x3dc uint32_t field_0x3dc
+void fn_006C0730(void* self, void* out) {
+    // out[0x00..0x10] <- self[0x3c8..0x3d8]
+    lift_field<uint32_t>(out, 0x00) = lift_field<uint32_t>(self, 0x3c8);
+    lift_field<uint32_t>(out, 0x04) = lift_field<uint32_t>(self, 0x3cc);
+    lift_field<uint32_t>(out, 0x08) = lift_field<uint32_t>(self, 0x3d0);
+    lift_field<uint32_t>(out, 0x0c) = lift_field<uint32_t>(self, 0x3d4);
+    lift_field<uint32_t>(out, 0x10) = lift_field<uint32_t>(self, 0x3d8);
+    // out[0x14] <- self[0x3dc]
+    lift_field<uint32_t>(out, 0x14) = lift_field<uint32_t>(self, 0x3dc);
+    // out[0x18] (double 1.0): low dword 0, high dword 0x3ff00000
+    lift_field<uint32_t>(out, 0x18) = 0x00000000u;
+    lift_field<uint32_t>(out, 0x1c) = 0x3ff00000u;
+}
+} // namespace lift_006C0730
