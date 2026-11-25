@@ -1,0 +1,51 @@
+{
+  "va": "0x0070AC00",
+  "size": 60,
+  "orig_symbol": "sub_0070AC00",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "CopyBlock0x200ToOut",
+  "signature": "void fn_0070AC00(void* self, void* out)",
+  "summary": "Copies six DWORDs from this+0x200..this+0x214 into the caller-supplied output buffer.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x200",
+      "type": "DWORD",
+      "name": "field_0x200"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x204",
+      "type": "DWORD",
+      "name": "field_0x204"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x208",
+      "type": "DWORD",
+      "name": "field_0x208"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20C",
+      "type": "DWORD",
+      "name": "field_0x20C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x210",
+      "type": "DWORD",
+      "name": "field_0x210"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x214",
+      "type": "DWORD",
+      "name": "field_0x214"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:55:12Z"
+}

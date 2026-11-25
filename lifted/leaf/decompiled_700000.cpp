@@ -1189,3 +1189,23 @@ void sub_0070AD00(std::uint8_t* self, std::uint32_t* out) {
     out[5] = src[5];
 }
 } // namespace lift_0070AD00
+
+// [0x0070AC00]
+namespace lift_0070AC00 {
+// @name CopyBlock0x200ToOut
+// @summary Copies six DWORDs from this+0x200..this+0x214 into the caller-supplied output buffer.
+// @field Unknown +0x200 DWORD field_0x200
+// @field Unknown +0x204 DWORD field_0x204
+// @field Unknown +0x208 DWORD field_0x208
+// @field Unknown +0x20C DWORD field_0x20C
+// @field Unknown +0x210 DWORD field_0x210
+// @field Unknown +0x214 DWORD field_0x214
+void fn_0070AC00(void* self, void* out) {
+    lift_field<DWORD>(out, 0x00) = lift_field<DWORD>(self, 0x200);
+    lift_field<DWORD>(out, 0x04) = lift_field<DWORD>(self, 0x204);
+    lift_field<DWORD>(out, 0x08) = lift_field<DWORD>(self, 0x208);
+    lift_field<DWORD>(out, 0x0C) = lift_field<DWORD>(self, 0x20C);
+    lift_field<DWORD>(out, 0x10) = lift_field<DWORD>(self, 0x210);
+    lift_field<DWORD>(out, 0x14) = lift_field<DWORD>(self, 0x214);
+}
+} // namespace lift_0070AC00
