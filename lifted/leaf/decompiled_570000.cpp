@@ -21,6 +21,7 @@ DWORD* __thiscall fn_00573A10(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_00573A10
+#include <istream>
 
 // [0x00578020] sub_00578020 (41 bytes)
 namespace lift_00578020 {
@@ -602,3 +603,33 @@ void* fn_0057D7F0(void* self) {
     return self;
 }
 } // namespace lift_0057D7F0
+
+// [0x00570410] sub_00570410 (74 bytes)
+namespace lift_00570410 {
+// Known callee 0x00553170: AngleScaler::ScaleByUnitMode (Scales a float angle by a unit-mode selector: 0 = degrees to radians, 2 = turns to radians (2*pi), otherwise identity.)
+extern float ext_00553170(void* self, float value);
+
+// @name Unknown::ReadTwoScaledAngles_00570410
+// @class Unknown
+// @summary Reads two floats from a stream, scales each through AngleScaler, and stores results into a 0x18-stride entry array.
+// @field Unknown +0x5c AngleScaler angleScaler
+// @field ArgEntries +0x04 uint8_t field_0x04
+// @field ArgEntries +0x08 float field_0x08
+// @field ArgEntries +0x1c uint8_t field_0x1c
+// @field ArgEntries +0x20 float field_0x20
+void fn_00570410(void* self, void* base, std::istream* in) {
+    unsigned char* entry = static_cast<unsigned char*>(base) + 0x20;
+    unsigned char* scaler = static_cast<unsigned char*>(self) + 0x5c;
+
+    for (int remaining = 1; remaining >= 0; --remaining) {
+        float value = 0.0f;
+        *in >> value;
+
+        entry[-4] = 1;
+        float scaled = ext_00553170(scaler, value);
+        std::memcpy(entry, &scaled, sizeof(scaled));
+
+        entry -= 0x18;
+    }
+}
+} // namespace lift_00570410

@@ -21473,6 +21473,13 @@
     "summary": "Reads one char at a time from the istream until '\\n' is consumed (returns true) or the stream fails (returns false).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00570410": {
+    "name": "Unknown::ReadTwoScaledAngles_00570410",
+    "class": "Unknown",
+    "signature": "void fn_00570410(void* self, void* base, std::istream* in)",
+    "summary": "Reads two floats from a stream, scales each through AngleScaler, and stores results into a 0x18-stride entry array.",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00571B90": {
     "name": "CDLCharacterIO::LoadFromPath",
     "class": "CDLCharacterIO",
