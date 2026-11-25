@@ -1,0 +1,22 @@
+{
+  "va": "0x005C3970",
+  "size": 60,
+  "orig_symbol": "sub_005C3970",
+  "src_path": "src/leaf/decompiled_5C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5C0000.cpp",
+  "name": "Unknown::getDefaultZeroVec3",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint32_t mem_00AE5598; // init flag word (bit 0 = initialized) extern \"C\" float    mem_00AE558C; // static float[0] extern \"C\" float    mem_00AE5590; // static float[1] extern \"C\" float    mem_00AE5594; // static float[2] void* fn_005C3970(void* self)",
+  "summary": "If the pointer at +0x164 is set, tail-forwards to ext_005B6BC0 with it; otherwise lazily zeroes a static 3-float block (once, guarded by a flag bit) and returns its address.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x164",
+      "type": "void*",
+      "name": "field_0x164"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:54:07Z"
+}

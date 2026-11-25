@@ -1194,6 +1194,12 @@
     "summary": "Pure jump thunk forwarding to sub_00415580.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004155A0": {
+    "name": "descriptiveName: wideStringToAnsiBuffer",
+    "signature": "char* fn_004155A0(LPCWSTR src, LPSTR dst)",
+    "summary": "Converts a NUL-terminated wide string to the ANSI code page (CP_ACP) into dst, including the terminator; returns dst.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00415810": {
     "name": "sub_00415810",
     "signature": "extern \"C\" void fn_00415810(void)",
@@ -24235,6 +24241,13 @@
     "class": "Unknown",
     "signature": "float* fn_005C3930(void* self)",
     "summary": "If this+0x164 is non-null, forwards to that subobject via ext_005B6B90; otherwise lazily zeroes a three-float global block and returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
+  },
+  "0x005C3970": {
+    "name": "Unknown::getDefaultZeroVec3",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t mem_00AE5598; // init flag word (bit 0 = initialized) extern \"C\" float    mem_00AE558C; // static float[0] extern \"C\" float    mem_00AE5590; // static float[1] extern \"C\" float    mem_00AE5594; // static float[2] void* fn_005C3970(void* self)",
+    "summary": "If the pointer at +0x164 is set, tail-forwards to ext_005B6BC0 with it; otherwise lazily zeroes a static 3-float block (once, guarded by a flag bit) and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_5C0000.cpp"
   },
   "0x005C39B0": {
