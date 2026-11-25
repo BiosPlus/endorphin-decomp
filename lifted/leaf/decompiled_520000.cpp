@@ -1789,3 +1789,40 @@ void* __thiscall fn_00526DC0(void* self) {
     return self;
 }
 } // namespace lift_00526DC0
+
+// [0x0052EC80]
+namespace lift_0052EC80 {
+// @name sub_0052EC80_ctor
+// @summary Constructor that initializes vtables, an empty RB-tree at +0x08, and registers this in global 0x00AED9D0
+// @field Obj +0x00 uint32_t vtable_0x00
+// @field Obj +0x04 uint32_t vtable_0x04
+// @field Obj +0x08 uint32_t field_0x08
+// @field Obj +0x0C uint32_t tree_head
+// @field Obj +0x10 uint32_t tree_size
+
+
+extern uint32_t __thiscall ext_0052A410(void* self);
+extern uint32_t mem_00AED9D0;
+
+void* __thiscall sub_0052EC80(void* self) {
+    uint8_t* obj = reinterpret_cast<uint8_t*>(self);
+    uint8_t* tree = obj + 0x08;
+
+    *reinterpret_cast<uint32_t*>(obj + 0x00) = 0x00953938u;
+    *reinterpret_cast<uint32_t*>(obj + 0x04) = 0x00953930u;
+
+    uint32_t head_val = ext_0052A410(tree);
+    *reinterpret_cast<uint32_t*>(tree + 0x04) = head_val;
+
+    uint8_t* head = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(head_val));
+    head[0x61] = 1;
+    *reinterpret_cast<uint32_t*>(head + 0x04) = head_val;
+    *reinterpret_cast<uint32_t*>(head + 0x00) = head_val;
+    *reinterpret_cast<uint32_t*>(head + 0x08) = head_val;
+
+    *reinterpret_cast<uint32_t*>(tree + 0x08) = 0;
+    mem_00AED9D0 = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
+
+    return self;
+}
+} // namespace lift_0052EC80
