@@ -1,0 +1,22 @@
+{
+  "va": "0x004D5980",
+  "size": 122,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsUseSubticksEnabled(bool), 0}\u003e::vfunc_40",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData,bool\u003e::vfunc_40 (isUseSubTicksEnabled / setIsUseSubticksEnabled)",
+  "class": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsUseSubticksEnabled(bool), 0}\u003e",
+  "signature": "void __stdcall fn_004D5980(void* self)",
+  "summary": "Lazily initialises the shared singleton at mem_00AE5D14 (once, guarded by bit 0 of mem_00AE5D18) and points self+0x04 at it.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadWriteMethodType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:29:56Z"
+}

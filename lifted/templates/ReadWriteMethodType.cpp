@@ -10058,3 +10058,37 @@ void __stdcall fn_004D5670(void* arg) {
     *reinterpret_cast<void**>(static_cast<uint8_t*>(arg) + 0x04) = &mem_00AE5D0C;
 }
 } // namespace lift_004D5670
+
+// [0x004D5980] ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsUseSubticksEnabled(bool), 0}>::vfunc_40 (122 bytes)
+namespace lift_004D5980 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self; calls ext_00672000 on self, then stores the single stack argument into the first DWORD of self; returns that value.)
+extern void ext_0067A670();
+// One-time initialisation guard flag (bit 0 = initialised).
+extern uint32_t mem_00AE5D18;
+// Static singleton object storage; first DWORD holds its vtable pointer.
+extern uint32_t mem_00AE5D14;
+
+// @name ExprParser::ReadWriteMethodType<NMData::RigEventData,bool>::vfunc_40 (isUseSubTicksEnabled / setIsUseSubticksEnabled)
+// @class ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsUseSubticksEnabled(bool), 0}>
+// @summary Lazily initialises the shared singleton at mem_00AE5D14 (once, guarded by bit 0 of mem_00AE5D18) and points self+0x04 at it.
+// @field ExprParser::ReadWriteMethodType +0x04 void* field_0x04
+void __stdcall fn_004D5980(void* self) {
+    // Run the one-time setup if bit 0 of the guard flag is clear.
+    if ((mem_00AE5D18 & 1u) == 0u) {
+        mem_00AE5D18 |= 1u;
+
+        // Original: thiscall ext_0067A670 with ECX = &mem_00AE5D14 and stack arg 0.
+        using InitFn = uint32_t(__thiscall*)(void* thisPtr, uint32_t value);
+        InitFn init = reinterpret_cast<InitFn>(&ext_0067A670);
+        init(&mem_00AE5D14, 0u);
+
+        // Install the vtable pointer for the singleton.
+        mem_00AE5D14 = 0x0094896Cu;
+    }
+
+    // self+0x04 = address of the singleton object.
+    uint8_t* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x04) =
+        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE5D14));
+}
+} // namespace lift_004D5980
