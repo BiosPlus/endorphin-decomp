@@ -484,3 +484,30 @@ void fn_005ECDC0(void* self) {
     }
 }
 } // namespace lift_005ECDC0
+
+// [0x005E0BB0] sub_005E0BB0 (91 bytes)
+namespace lift_005E0BB0 {
+// @name Unknown::isLengthWithinOfUnit
+// @class Unknown
+// @summary Returns TRUE when the Euclidean length of the 3-float vector at this is within tol of 1.0 (|len - 1| <= tol); FALSE otherwise, including NaN.
+// @field Unknown +0x00 float field_0x00
+// @field Unknown +0x04 float field_0x04
+// @field Unknown +0x08 float field_0x08
+BOOL fn_005E0BB0(void* self, float tol) {
+    const double x = lift_field<float>(self, 0x00);
+    const double y = lift_field<float>(self, 0x04);
+    const double z = lift_field<float>(self, 0x08);
+
+    // The original stores the length as a 32-bit float before comparing.
+    const float len = static_cast<float>(std::sqrt(x * x + y * y + z * z));
+
+    const double lo = 1.0 - static_cast<double>(tol);
+    const double hi = 1.0 + static_cast<double>(tol);
+
+    // Unordered (NaN) comparisons are false, matching the FPU "jne"/"jp" exits.
+    if (!(static_cast<double>(len) >= lo)) {
+        return FALSE;
+    }
+    return (static_cast<double>(len) <= hi) ? TRUE : FALSE;
+}
+} // namespace lift_005E0BB0
