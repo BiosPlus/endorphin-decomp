@@ -1418,6 +1418,12 @@
     "summary": "Destructor tail-call: restores vtable mem_0092C764 and tail-calls base destructor sub_00404650.",
     "lifted_path": "lifted/leaf/tiny_410000.cpp"
   },
+  "0x00415FF6": {
+    "name": "GetSysColor_BtnFace_Thunk",
+    "signature": "extern \"C\" DWORD fn_00415FF6()",
+    "summary": "Tail thunk: restores two saved registers and returns GetSysColor(COLOR_BTNFACE) (index 0xF).",
+    "lifted_path": "lifted/leaf/tiny_410000.cpp"
+  },
   "0x0041603E": {
     "name": "GetSysColor_BtnFace",
     "signature": "extern \"C\" DWORD __stdcall fn_0041603E(int /*unused*/)",

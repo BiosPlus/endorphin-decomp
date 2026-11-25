@@ -1,0 +1,13 @@
+{
+  "va": "0x00415FF6",
+  "size": 16,
+  "orig_symbol": "sub_00415FF6",
+  "src_path": "src/leaf/tiny_410000.cpp",
+  "lifted_path": "lifted/leaf/tiny_410000.cpp",
+  "name": "GetSysColor_BtnFace_Thunk",
+  "signature": "extern \"C\" DWORD fn_00415FF6()",
+  "summary": "Tail thunk: restores two saved registers and returns GetSysColor(COLOR_BTNFACE) (index 0xF).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:27:23Z"
+}

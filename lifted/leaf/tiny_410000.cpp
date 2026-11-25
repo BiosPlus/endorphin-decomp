@@ -430,3 +430,19 @@ extern DWORD __stdcall fn_0041603E(int /*unused*/) {
     return getSysColor(15);
 }
 } // namespace lift_0041603E
+
+// [0x00415FF6]
+namespace lift_00415FF6 {
+// IAT slot holding the address of USER32!GetSysColor (VA 0x00925680).
+extern uintptr_t mem_00925680;
+
+// @name GetSysColor_BtnFace_Thunk
+// @summary Tail thunk: restores two saved registers and returns GetSysColor(COLOR_BTNFACE) (index 0xF).
+// Note: the pop esi / pop ebx pair only restores callee-saved registers in the original
+// frame and has no portable equivalent, so it is omitted; the net observable effect is the call.
+extern DWORD fn_00415FF6() {
+    using GetSysColorFn = DWORD(__stdcall*)(int nIndex);
+    auto getSysColor = reinterpret_cast<GetSysColorFn>(mem_00925680);
+    return getSysColor(0x0F);
+}
+} // namespace lift_00415FF6
