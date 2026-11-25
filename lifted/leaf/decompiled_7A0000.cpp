@@ -1069,3 +1069,34 @@ char* fn_007AECF0(void* self, char* dst, uint32_t maxCount) {
     return dst;
 }
 } // namespace lift_007AECF0
+
+// [0x007A1940]
+namespace lift_007A1940 {
+// @name freeStructWithBuffers
+// @summary Frees four optional buffer fields (+0x30, +0x34, +0x40, +0x44) and the struct itself, then nulls the pointer.
+// @field Struct +0x30 void* field_0x30
+// @field Struct +0x34 void* field_0x34
+// @field Struct +0x40 void* field_0x40
+// @field Struct +0x44 void* field_0x44
+
+extern void (*mem_009251D8)(void*);
+
+void sub_007A1940(uint32_t* pPtr) {
+    uint8_t* obj = reinterpret_cast<uint8_t*>(*pPtr);
+    if (!obj) {
+        return;
+    }
+
+    auto free_fn = mem_009251D8;
+    const uint32_t offsets[] = { 0x30, 0x34, 0x40, 0x44 };
+    for (uint32_t off : offsets) {
+        void* buf = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(*pPtr) + off);
+        if (buf) {
+            free_fn(buf);
+        }
+    }
+
+    free_fn(reinterpret_cast<void*>(*pPtr));
+    *pPtr = 0;
+}
+} // namespace lift_007A1940
