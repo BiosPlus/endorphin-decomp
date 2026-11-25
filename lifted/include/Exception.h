@@ -9,6 +9,7 @@
 // Recovered field layout for Exception:
 namespace lifted_layout {
 struct Exception_Fields {
-    // +0x0   uint32_t                 vftable  (evidence: 0x00401EF0)
+    // +0x0   uint32_t                 vftable  (evidence: 0x00401EF0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vtable  (evidence: 0x0067AB90) // CONFLICT: multiple definitions at +0x0
 };
 } // namespace lifted_layout

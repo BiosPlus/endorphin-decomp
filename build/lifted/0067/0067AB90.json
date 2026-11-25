@@ -1,0 +1,21 @@
+{
+  "va": "0x0067AB90",
+  "size": 25,
+  "orig_symbol": "sub_0067AB90",
+  "src_path": "src/leaf/decompiled_670000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_670000.cpp",
+  "name": "logic_error_derived_copy_ctor",
+  "signature": "void* __thiscall sub_0067AB90(void* self, const void* other)",
+  "summary": "Copy constructor for a std::logic_error-derived exception class (sets vtable 0x0098c56c)",
+  "fields": [
+    {
+      "class": "Exception",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:27:36Z"
+}

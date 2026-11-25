@@ -1012,3 +1012,19 @@ void* __thiscall fn_0067A670(void* self) {
     return self;
 }
 } // namespace lift_0067A670
+
+// [0x0067AB90]
+namespace lift_0067AB90 {
+// @name logic_error_derived_copy_ctor
+// @summary Copy constructor for a std::logic_error-derived exception class (sets vtable 0x0098c56c)
+// @field Exception +0x00 uint32_t vtable
+
+
+extern void* __thiscall ext_00401C60(void* self, const void* other);
+
+void* __thiscall sub_0067AB90(void* self, const void* other) {
+    ext_00401C60(self, other);
+    *reinterpret_cast<uint32_t*>(self) = 0x0098c56c;
+    return self;
+}
+} // namespace lift_0067AB90
