@@ -510,3 +510,39 @@ int32_t fn_00809540(int32_t a1) {
     return ext_00857440(a1, 0x10, static_cast<int32_t>(0x00B61FC0u));
 }
 } // namespace lift_00809540
+
+// [0x0080F440] sub_0080F440 (64 bytes)
+namespace lift_0080F440 {
+// Data: 0x00AB6AC4 (byte table, read-only use here).
+extern uint8_t mem_00AB6AC4[];
+
+// @name TableStepsExactlyToArg
+// @summary Walks the byte table at 0x00AB6AC4, subtracting each signed byte from (arg - 1), until the table hits 0x7F or a zero byte after a nonzero step; returns 1 if the remainder is exactly 0.
+extern uint32_t fn_0080F440(int32_t arg) {
+    int32_t remaining = arg - 1;
+    int32_t step = 0;
+
+    if (remaining == 0) {
+        return 0;
+    }
+
+    const uint8_t* p = mem_00AB6AC4;
+    while (remaining > 0) {
+        const uint8_t ch = *p;
+        if (ch == 0x7F) {
+            break;
+        }
+        if (ch != 0) {
+            step = static_cast<int8_t>(ch);
+            ++p;
+        }
+        // A zero byte reuses the previous step without advancing.
+        if (step == 0) {
+            break;
+        }
+        remaining -= step;
+    }
+
+    return remaining == 0 ? 1u : 0u;
+}
+} // namespace lift_0080F440

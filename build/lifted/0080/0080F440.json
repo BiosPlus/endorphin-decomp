@@ -1,0 +1,13 @@
+{
+  "va": "0x0080F440",
+  "size": 64,
+  "orig_symbol": "sub_0080F440",
+  "src_path": "src/leaf/decompiled_800000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_800000.cpp",
+  "name": "TableStepsExactlyToArg",
+  "signature": "extern \"C\" uint32_t fn_0080F440(int32_t arg)",
+  "summary": "Walks the byte table at 0x00AB6AC4, subtracting each signed byte from (arg - 1), until the table hits 0x7F or a zero byte after a nonzero step; returns 1 if the remainder is exactly 0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:10:35Z"
+}
