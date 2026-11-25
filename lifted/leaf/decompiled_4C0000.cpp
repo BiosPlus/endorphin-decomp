@@ -661,3 +661,18 @@ void fn_004CBBB0(void* dst, DWORD value) {
     lift_field<DWORD>(dst, 0x04) = object;
 }
 } // namespace lift_004CBBB0
+
+// [0x004CFDC0] sub_004CFDC0 (30 bytes)
+namespace lift_004CFDC0 {
+// Known callee 0x004CF910: sub_004CCDE0 (Auto-lifted identical-shape clone of 0x0051BF10 (NMData::RealChannel::clear).)
+// Called with one stack argument (0) and its result is returned in eax.
+extern uint32_t ext_004CF910(uint32_t arg);
+
+// @name storeValueAndCalleeResult
+// @summary Writes value to out[0..3] and the result of ext_004CF910(0) to out[4..7].
+void fn_004CFDC0(uint8_t* out, uint32_t value) {
+    const uint32_t result = ext_004CF910(0);
+    lift_field<uint32_t>(out, 0) = value;
+    lift_field<uint32_t>(out, 4) = result;
+}
+} // namespace lift_004CFDC0

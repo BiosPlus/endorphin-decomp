@@ -1,0 +1,13 @@
+{
+  "va": "0x004CFDC0",
+  "size": 30,
+  "orig_symbol": "sub_004CFDC0",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "storeValueAndCalleeResult",
+  "signature": "void fn_004CFDC0(uint8_t* out, uint32_t value)",
+  "summary": "Writes value to out[0..3] and the result of ext_004CF910(0) to out[4..7].",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:34:10Z"
+}

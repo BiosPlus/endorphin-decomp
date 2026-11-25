@@ -14680,6 +14680,12 @@
     "summary": "If the pointer at +0x184 is set, release it (via 0x4CE8D0 and the MFC80 free thunk) and clear the slot.",
     "lifted_path": "lifted/NMData/IncarnationEventData.cpp"
   },
+  "0x004CFDC0": {
+    "name": "storeValueAndCalleeResult",
+    "signature": "void fn_004CFDC0(uint8_t* out, uint32_t value)",
+    "summary": "Writes value to out[0..3] and the result of ext_004CF910(0) to out[4..7].",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004CFDE0": {
     "name": "storeStaticObjectPair_004CFDE0",
     "signature": "void storeStaticObjectPair_004CFDE0(DWORD* out, DWORD value)",
