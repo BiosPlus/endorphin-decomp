@@ -1,0 +1,64 @@
+{
+  "va": "0x0077F4E0",
+  "size": 64,
+  "orig_symbol": "sub_0077F4E0",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "Unknown::AdvanceCursorAndFindTaggedValue",
+  "class": "Unknown",
+  "signature": "uint32_t fn_0077F4E0(void* self)",
+  "summary": "Increments the cursor at +0x08; if it is in [0, count) and the table entry there holds an object whose tag matches the entry key, returns that object's value, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "table"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "count"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "int32_t",
+      "name": "cursor"
+    },
+    {
+      "class": "Unknown::Table",
+      "offset": "+0x10",
+      "type": "uint8_t*",
+      "name": "entries"
+    },
+    {
+      "class": "Unknown::Entry",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "key"
+    },
+    {
+      "class": "Unknown::Entry",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "object"
+    },
+    {
+      "class": "Unknown::Object",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "tag"
+    },
+    {
+      "class": "Unknown::Object",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "value"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:08:29Z"
+}

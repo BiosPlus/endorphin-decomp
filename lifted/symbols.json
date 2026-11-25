@@ -54141,6 +54141,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0072DC60 (Unknown::ForwardArgsToVirtualSlot8).",
     "lifted_path": "lifted/leaf/tiny_770000.cpp"
   },
+  "0x0077F4E0": {
+    "name": "Unknown::AdvanceCursorAndFindTaggedValue",
+    "class": "Unknown",
+    "signature": "uint32_t fn_0077F4E0(void* self)",
+    "summary": "Increments the cursor at +0x08; if it is in [0, count) and the table entry there holds an object whose tag matches the entry key, returns that object's value, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
   "0x0077F520": {
     "name": "Unknown::cacheIndirectDwordAndReset",
     "class": "Unknown",

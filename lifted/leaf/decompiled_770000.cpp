@@ -231,3 +231,38 @@ extern uint32_t sub_0077F550(uint32_t index) {
     }
 }
 } // namespace lift_0077F550
+
+// [0x0077F4E0] sub_0077F4E0 (64 bytes)
+namespace lift_0077F4E0 {
+// @name Unknown::AdvanceCursorAndFindTaggedValue
+// @class Unknown
+// @summary Increments the cursor at +0x08; if it is in [0, count) and the table entry there holds an object whose tag matches the entry key, returns that object's value, else 0.
+// @field Unknown +0x00 void* table
+// @field Unknown +0x04 int32_t count
+// @field Unknown +0x08 int32_t cursor
+// @field Unknown::Table +0x10 uint8_t* entries
+// @field Unknown::Entry +0x00 uint32_t key
+// @field Unknown::Entry +0x04 void* object
+// @field Unknown::Object +0x00 uint32_t tag
+// @field Unknown::Object +0x04 uint32_t value
+uint32_t fn_0077F4E0(void* self) {
+    int32_t index = ++lift_field<int32_t>(self, 0x08);
+    if (index < 0 || index >= lift_field<int32_t>(self, 0x04)) {
+        return 0;
+    }
+
+    void* table = lift_field<void*>(self, 0x00);
+    uint8_t* entries = lift_field<uint8_t*>(table, 0x10);
+    uint8_t* entry = entries + static_cast<ptrdiff_t>(index) * 12;
+
+    uint32_t key = lift_field<uint32_t>(entry, 0x00);
+    void* object = lift_field<void*>(entry, 0x04);
+    if (object == nullptr) {
+        return 0;
+    }
+    if (lift_field<uint32_t>(object, 0x00) != key) {
+        return 0;
+    }
+    return lift_field<uint32_t>(object, 0x04);
+}
+} // namespace lift_0077F4E0
