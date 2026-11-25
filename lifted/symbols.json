@@ -50398,6 +50398,13 @@
     "summary": "Returns true if any bit of the argument mask is set in the object's field at +0x78.",
     "lifted_path": "lifted/leaf/tiny_700000.cpp"
   },
+  "0x007057F0": {
+    "name": "Unknown::SetFlag70AndNotify",
+    "class": "Unknown",
+    "signature": "void fn_007057F0(void* self, uint8_t value)",
+    "summary": "Stores a byte flag at +0x70; if it changed, notifies via vtable slot 0xA4 (code 0x13 when set, 0x14 when cleared).",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x00705D70": {
     "name": "Unknown::InitThenDispatchVirtual33",
     "class": "Unknown",

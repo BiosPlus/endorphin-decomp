@@ -1,0 +1,28 @@
+{
+  "va": "0x007057F0",
+  "size": 62,
+  "orig_symbol": "sub_007057F0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::SetFlag70AndNotify",
+  "class": "Unknown",
+  "signature": "void fn_007057F0(void* self, uint8_t value)",
+  "summary": "Stores a byte flag at +0x70; if it changed, notifies via vtable slot 0xA4 (code 0x13 when set, 0x14 when cleared).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x70",
+      "type": "uint8_t",
+      "name": "field_0x70"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:01:12Z"
+}

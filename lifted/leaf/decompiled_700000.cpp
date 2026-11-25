@@ -1227,3 +1227,28 @@ void fn_0070AB80(void* self, void* out) {
     }
 }
 } // namespace lift_0070AB80
+
+// [0x007057F0] sub_007057F0 (62 bytes)
+namespace lift_007057F0 {
+extern int mem_00B5EB80;
+
+// @name Unknown::SetFlag70AndNotify
+// @class Unknown
+// @summary Stores a byte flag at +0x70; if it changed, notifies via vtable slot 0xA4 (code 0x13 when set, 0x14 when cleared).
+// @field Unknown +0x00 void* vtable
+// @field Unknown +0x70 uint8_t field_0x70
+void fn_007057F0(void* self, uint8_t value) {
+    uint8_t& flag = lift_field<uint8_t>(self, 0x70);
+    if (flag == value) {
+        return;
+    }
+    flag = value;
+
+    using NotifyFn = void (*)(void* self, int code, int* data, int zero, int minusOne);
+
+    void* vtable = lift_field<void*>(self, 0x00);
+    NotifyFn notify = reinterpret_cast<NotifyFn>(lift_field<void*>(vtable, 0xA4));
+    int code = (value != 0) ? 0x13 : 0x14;
+    notify(self, code, &mem_00B5EB80, 0, -1);
+}
+} // namespace lift_007057F0
