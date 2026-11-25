@@ -15611,6 +15611,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00471440 (ExprParser::ReadMethodType\u003cRuntimeEngine, int, getNumTicksToRun, 0\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00509C10": {
+    "name": "CopyRecordRange",
+    "signature": "void* fn_00509C10(const void* first, const void* last, void* dest)",
+    "summary": "Copies each 0x24-byte record in [first, last) to dest (string at +0x04, float at +0x20); returns the advanced dest pointer.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050A1A0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getNumTasks(void) const, 0}, 1\u003e",

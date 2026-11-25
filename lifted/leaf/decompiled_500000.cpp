@@ -426,3 +426,29 @@ extern bool fn_00508800(void* self, const void* str) {
     return false;
 }
 } // namespace lift_00508800
+
+// [0x00509C10] sub_00509C10 (61 bytes)
+namespace lift_00509C10 {
+extern int mem_00924FDC;
+extern void* ext_string_assign(void* dst, const void* src);
+
+// @name CopyRecordRange
+// @summary Copies each 0x24-byte record in [first, last) to dest (string at +0x04, float at +0x20); returns the advanced dest pointer.
+// @field Record +0x04 std::string field_0x04
+// @field Record +0x20 float field_0x20
+void* fn_00509C10(const void* first, const void* last, void* dest) {
+    constexpr std::ptrdiff_t kRecordSize = 0x24;
+
+    const uint8_t* src = static_cast<const uint8_t*>(first);
+    const uint8_t* end = static_cast<const uint8_t*>(last);
+    uint8_t* out = static_cast<uint8_t*>(dest);
+
+    while (src != end) {
+        ext_string_assign(out + 0x04, src + 0x04);
+        lift_field<float>(out, 0x20) = lift_field<const float>(src, 0x20);
+        src += kRecordSize;
+        out += kRecordSize;
+    }
+    return out;
+}
+} // namespace lift_00509C10
