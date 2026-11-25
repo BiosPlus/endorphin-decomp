@@ -434,3 +434,30 @@ uint32_t fn_007AF200(const void* self) {
     return (bits + 7) >> 3;
 }
 } // namespace lift_007AF200
+
+// [0x007AAB30] sub_007AAB30 (64 bytes)
+namespace lift_007AAB30 {
+// MSVCR80!free, called through its import-address-table slot.
+extern void(__cdecl* mem_009251D8)(void* ptr);
+
+// @name Unknown::ReleaseDoubleIndirectBuffer
+// @class Unknown
+// @summary Frees the buffer referenced by **self, then frees *self and nulls both slots.
+// @field Unknown +0x00 void* field_0x00
+void fn_007AAB30(void* self) {
+    void** outer = static_cast<void**>(self);
+    if (outer == nullptr) {
+        return;
+    }
+
+    void** inner = static_cast<void**>(*outer);
+    void* buffer = *inner;
+    if (buffer != nullptr) {
+        mem_009251D8(buffer);
+        *inner = nullptr;
+    }
+
+    mem_009251D8(*outer);
+    *outer = nullptr;
+}
+} // namespace lift_007AAB30

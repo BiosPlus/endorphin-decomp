@@ -55454,6 +55454,13 @@
     "summary": "Stores a dword into slot[index] of the dword array at +0x734 when 0 \u003c index \u003c 0x12; other indices are ignored. thiscall, 2 stack args, callee pops 8 bytes.",
     "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
   },
+  "0x007AAB30": {
+    "name": "Unknown::ReleaseDoubleIndirectBuffer",
+    "class": "Unknown",
+    "signature": "void fn_007AAB30(void* self)",
+    "summary": "Frees the buffer referenced by **self, then frees *self and nulls both slots.",
+    "lifted_path": "lifted/leaf/decompiled_7A0000.cpp"
+  },
   "0x007AB350": {
     "name": "sub_007AB350",
     "signature": "extern \"C\" void* __fastcall fn_007AB350(void* self, int edx_unused, unsigned int flags)",
