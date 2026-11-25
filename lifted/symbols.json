@@ -23921,6 +23921,13 @@
     "summary": "Destroys two std::string members at offsets +0x20 and +0x04",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x005541F0": {
+    "name": "PairRecord::copyConstruct",
+    "class": "PairRecord",
+    "signature": "void* fn_005541F0(void* self, const void* src)",
+    "summary": "Copy-constructs a record: two raw bytes at +0x00/+0x01, then std::string copies at +0x04 and +0x20; returns this.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00554260": {
     "name": "Matrix3x3::transposeInPlace",
     "class": "Matrix3x3",

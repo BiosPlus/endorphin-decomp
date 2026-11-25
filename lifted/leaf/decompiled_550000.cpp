@@ -41,6 +41,7 @@ uint8_t descriptiveName_00553960(void* arg) {
 } // namespace lift_00553960
 #include <cstdio>
 #include <cstddef>
+#include <memory>
 
 // [0x00554CE0] sub_00554CE0 (27 bytes)
 namespace lift_00554CE0 {
@@ -1515,3 +1516,28 @@ void fn_005567D0(void* first, void* last) {
     }
 }
 } // namespace lift_005567D0
+
+// [0x005541F0] sub_005541F0 (99 bytes)
+namespace lift_005541F0 {
+// @name PairRecord::copyConstruct
+// @class PairRecord
+// @summary Copy-constructs a record: two raw bytes at +0x00/+0x01, then std::string copies at +0x04 and +0x20; returns this.
+// @field PairRecord +0x00 uint8_t byte00
+// @field PairRecord +0x01 uint8_t byte01
+// @field PairRecord +0x04 std::string str04
+// @field PairRecord +0x20 std::string str20
+void* fn_005541F0(void* self, const void* src) {
+    lift_field<uint8_t>(self, 0x00) = lift_field<uint8_t>(src, 0x00);
+    lift_field<uint8_t>(self, 0x01) = lift_field<uint8_t>(src, 0x01);
+
+    new (&lift_field<std::string>(self, 0x04)) std::string(lift_field<std::string>(src, 0x04));
+    try {
+        new (&lift_field<std::string>(self, 0x20)) std::string(lift_field<std::string>(src, 0x20));
+    } catch (...) {
+        std::destroy_at(&lift_field<std::string>(self, 0x04));
+        throw;
+    }
+
+    return self;
+}
+} // namespace lift_005541F0
