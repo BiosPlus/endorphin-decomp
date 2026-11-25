@@ -1,0 +1,22 @@
+{
+  "va": "0x004B1E50",
+  "size": 46,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ReadMethodType\u003cGraphEntryData,isActive\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0\u003e",
+  "signature": "void fn_004B1E50(void* self)",
+  "summary": "Reads through the pointer held in self; if non-null, throws via a default-message exception keyed by the byte at +0x01, otherwise throws a DerivedException.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1",
+      "type": "uint8_t",
+      "name": "field_0x01"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:08:05Z"
+}

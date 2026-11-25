@@ -130,7 +130,7 @@ struct Unknown_Fields {
     // +0x0   uint32_t                 vtbl  (evidence: 0x0048E190, 0x0048E270) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtbl  (evidence: 0x006FC1E0, 0x007D4B10, 0x007D8470) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtbl  (evidence: 0x00648EA0, 0x006BB7C0) // CONFLICT: multiple definitions at +0x0
-    // +0x1   uint8_t                  field_0x01  (evidence: 0x0046E450, 0x0046EA50, 0x004886F0, 0x004A25E0, 0x004A2AD0, 0x004B1D40, 0x004B7BC0, 0x004CB250, 0x0057BC20, 0x00633240, 0x00678960, 0x007148E0, 0x007155B0)
+    // +0x1   uint8_t                  field_0x01  (evidence: 0x0046E450, 0x0046EA50, 0x004886F0, 0x004A25E0, 0x004A2AD0, 0x004B1D40, 0x004B1E50, 0x004B7BC0, 0x004CB250, 0x0057BC20, 0x00633240, 0x00678960, 0x007148E0, 0x007155B0)
     // +0x2   uint8_t                  field_0x02  (evidence: 0x007148E0, 0x007155B0)
     // +0x3   BYTE                     field_0x03  (evidence: 0x007148C0, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x3
     // +0x3   uint8_t                  field_0x03  (evidence: 0x007148A0, 0x007148E0, 0x007155B0, 0x0071F070) // CONFLICT: multiple definitions at +0x3

@@ -42890,3 +42890,32 @@ void fn_004B1320(void* slot) {
     ext_006A6DD2(excObj, reinterpret_cast<const void*>(kDerivedExceptionThrowInfo));
 }
 } // namespace lift_004B1320
+
+// [0x004B1E50] ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>::vfunc_5 (46 bytes)
+namespace lift_004B1E50 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Receives one byte argument (pushed by the caller).
+extern void ext_0046C4E0(uint8_t code);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+// Arguments: exception object, ThrowInfo pointer (0x009DEC1C).
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+
+// @name ReadMethodType<GraphEntryData,isActive>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::GraphEntryData, bool, &public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0>
+// @summary Reads through the pointer held in self; if non-null, throws via a default-message exception keyed by the byte at +0x01, otherwise throws a DerivedException.
+// @field Unknown +0x01 uint8_t field_0x01
+void fn_004B1E50(void* self) {
+    // self points at a slot holding a pointer to the value object.
+    uint8_t* value = *reinterpret_cast<uint8_t**>(self);
+    if (value != nullptr) {
+        ext_0046C4E0(value[0x01]);
+    }
+
+    // Local exception object (frame of 0x28 bytes in the original).
+    alignas(8) uint8_t exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, reinterpret_cast<const void*>(static_cast<uintptr_t>(0x009DEC1Cu)));
+}
+} // namespace lift_004B1E50

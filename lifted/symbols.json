@@ -13303,6 +13303,13 @@
     "summary": "Reads the GraphEntryData object through the value pointer, formats its byte flag at +0x01 into out via ext_0046C460 (makeBoolString), and returns out; throws if the object pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B1E50": {
+    "name": "ReadMethodType\u003cGraphEntryData,isActive\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0\u003e",
+    "signature": "void fn_004B1E50(void* self)",
+    "summary": "Reads through the pointer held in self; if non-null, throws via a default-message exception keyed by the byte at +0x01, otherwise throws a DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B1E80": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData,float,getMaxAutoWidth,setMaxAutoWidth\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData,float,getMaxAutoWidth,setMaxAutoWidth\u003e",
