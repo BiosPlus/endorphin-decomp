@@ -1,0 +1,21 @@
+{
+  "va": "0x004BA060",
+  "size": 99,
+  "orig_symbol": "sub_004BA060",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "DestroyStringPtrRange",
+  "signature": "inline uintptr_t slot_target(int slot)",
+  "summary": "Walks [it, last) over an array of 32-bit std::string* slots with debug-iterator checks against owner, destroying and freeing each non-null entry.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "DWORD",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:40:26Z"
+}

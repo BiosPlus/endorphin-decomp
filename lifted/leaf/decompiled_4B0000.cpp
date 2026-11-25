@@ -964,3 +964,64 @@ void* fn_004B4AA0(void* dst) {
     return dst;
 }
 } // namespace lift_004B4AA0
+
+// [0x004BA060] sub_004BA060 (99 bytes)
+namespace lift_004BA060 {
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* ptr);
+extern int mem_00925134;
+extern int mem_00924FF4;
+
+namespace {
+
+using StringDtorFn = void (*)(void*);
+using InvalidParamFn = void (*)();
+
+// Resolve an import slot (mem_*) holding a 32-bit code address.
+inline uintptr_t slot_target(int slot) {
+    return static_cast<uintptr_t>(static_cast<uint32_t>(slot));
+}
+
+inline void* as_ptr(uint32_t addr) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
+}
+
+inline uint32_t read_u32(uint32_t addr) {
+    return *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(addr));
+}
+
+// Debug-iterator compatibility failure: MSVCR80 _invalid_parameter_noinfo.
+[[noreturn]] inline void raise_invalid_parameter() {
+    reinterpret_cast<InvalidParamFn>(slot_target(mem_00925134))();
+    std::abort();
+}
+
+// Destroy the std::string object at obj (original: mov ecx, obj; call [mem_00924FF4]).
+// The original passes `this` in ECX (thiscall); this wrapper passes it as the first argument.
+inline void destroy_string(uint32_t obj) {
+    reinterpret_cast<StringDtorFn>(slot_target(mem_00924FF4))(as_ptr(obj));
+}
+
+}  // namespace
+
+// @name DestroyStringPtrRange
+// @summary Walks [it, last) over an array of 32-bit std::string* slots with debug-iterator checks against owner, destroying and freeing each non-null entry.
+// @field Unknown +0x08 DWORD field_0x08
+void fn_004BA060(uint32_t owner, uint32_t it, uint32_t expected_owner, uint32_t last) {
+    for (;;) {
+        if (owner == 0 || owner != expected_owner) raise_invalid_parameter();
+        if (it == last) return;
+
+        const uint32_t cur = it;
+        if (owner == 0 || !(cur < read_u32(owner + 8))) raise_invalid_parameter();
+        it = cur + 4;
+        if (owner == 0 || !(cur < read_u32(owner + 8))) raise_invalid_parameter();
+
+        const uint32_t element = read_u32(cur);
+        if (element == 0) continue;
+
+        destroy_string(element);
+        ext_006A5C5C(as_ptr(element));
+    }
+}
+} // namespace lift_004BA060
