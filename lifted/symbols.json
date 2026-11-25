@@ -28061,6 +28061,13 @@
     "summary": "Derived destructor: restores this class's vtable, destroys two std::string members (+0x48, then +0x2C), then chains to the Unknown base destructor.",
     "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
   },
+  "0x005AA020": {
+    "name": "CharacterReloader::vfunc_10",
+    "class": "CharacterReloader",
+    "signature": "void* __stdcall fn_005AA020(void* ret, const void* src)",
+    "summary": "Copy-constructs the std::string at src+0x04 into the caller-supplied return slot and returns that slot.",
+    "lifted_path": "lifted/classes/CharacterReloader.cpp"
+  },
   "0x005AA050": {
     "name": "CharacterUpgrader::vfunc_0",
     "class": "CharacterUpgrader",

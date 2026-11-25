@@ -1,0 +1,22 @@
+{
+  "va": "0x005AA020",
+  "size": 37,
+  "orig_symbol": "CharacterReloader::vfunc_10",
+  "src_path": "src/classes/CharacterReloader.cpp",
+  "lifted_path": "lifted/classes/CharacterReloader.cpp",
+  "name": "CharacterReloader::vfunc_10",
+  "class": "CharacterReloader",
+  "signature": "void* __stdcall fn_005AA020(void* ret, const void* src)",
+  "summary": "Copy-constructs the std::string at src+0x04 into the caller-supplied return slot and returns that slot.",
+  "fields": [
+    {
+      "class": "CharacterReloader",
+      "offset": "+0x4",
+      "type": "std::string",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:22:08Z"
+}
