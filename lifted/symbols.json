@@ -27623,6 +27623,13 @@
     "summary": "If the child pointer at +0x2C4 is non-null, tail-dispatch to its vtable slot at +0x3C; otherwise return the byte at +0x1F2.",
     "lifted_path": "lifted/leaf/tiny_5C0000.cpp"
   },
+  "0x005D0610": {
+    "name": "Unknown::computeScaledTanRatio_005D0610",
+    "class": "Unknown",
+    "signature": "float fn_005D0610(void* self, float arg)",
+    "summary": "Returns (getFloatAt(this+0x210, 1) * this-\u003e+0x204 * 12.7) / tan(arg * pi/180 * 0.5), computed as float.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005D06D0": {
     "name": "sub_005D06D0",
     "signature": "float fn_005D06D0(uint32_t ecx)",

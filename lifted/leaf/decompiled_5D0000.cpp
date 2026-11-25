@@ -136,3 +136,32 @@ void fn_005DC930(void* self) {
     *slot = nullptr;
 }
 } // namespace lift_005DC930
+
+// [0x005D0610] sub_005D0610 (84 bytes)
+namespace lift_005D0610 {
+// Known callee 0x005B11E0: getFloatAt (Returns a float from a 32-bit float array at offset +0x10 of the object passed in ecx, indexed by the argument.)
+float ext_005B11E0(void* ecx, uint32_t index);
+
+// Constants from .rdata used by this function.
+static constexpr double mem_00955AD8 = 12.699999809265137;
+static constexpr double mem_00965CE0 = 0.017453292519943295;
+static constexpr double mem_00993828 = 0.5;
+
+// @name Unknown::computeScaledTanRatio_005D0610
+// @class Unknown
+// @summary Returns (getFloatAt(this+0x210, 1) * this->+0x204 * 12.7) / tan(arg * pi/180 * 0.5), computed as float.
+// @field Unknown +0x204 float field_0x204
+// @field Unknown +0x210 void* field_0x210 (address passed as ecx to ext_005B11E0; sub-object, not read directly)
+float fn_005D0610(void* self, float arg) {
+    auto* base = static_cast<uint8_t*>(self);
+
+    const float sample = ext_005B11E0(base + 0x210, 1);
+    const float scale = lift_field<float>(self, 0x204);
+    const double numerator = static_cast<double>(sample * scale) * mem_00955AD8;
+
+    const double angle = (static_cast<double>(arg) * mem_00965CE0) * mem_00993828;
+    const float tanValue = static_cast<float>(std::tan(angle));
+
+    return static_cast<float>(numerator / static_cast<double>(tanValue));
+}
+} // namespace lift_005D0610

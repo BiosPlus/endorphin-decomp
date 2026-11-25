@@ -1,0 +1,28 @@
+{
+  "va": "0x005D0610",
+  "size": 84,
+  "orig_symbol": "sub_005D0610",
+  "src_path": "src/leaf/decompiled_5D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5D0000.cpp",
+  "name": "Unknown::computeScaledTanRatio_005D0610",
+  "class": "Unknown",
+  "signature": "float fn_005D0610(void* self, float arg)",
+  "summary": "Returns (getFloatAt(this+0x210, 1) * this-\u003e+0x204 * 12.7) / tan(arg * pi/180 * 0.5), computed as float.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x204",
+      "type": "float",
+      "name": "field_0x204"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x210",
+      "type": "void* field_0x210 (address passed as ecx to ext_005B11E0; sub-object, not read",
+      "name": "directly)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:07:09Z"
+}

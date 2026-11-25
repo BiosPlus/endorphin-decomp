@@ -1003,6 +1003,7 @@ struct Unknown_Fields {
     // +0x200 uint32_t                 invertedFlag  (evidence: 0x004A5810) // CONFLICT: multiple definitions at +0x200
     // +0x204 void*                    cachedSubobject  (evidence: 0x004A5810) // CONFLICT: multiple definitions at +0x204
     // +0x204 DWORD                    field_0x204  (evidence: 0x004A57F0, 0x0070AC00, 0x0070AD00, 0x0070BF00) // CONFLICT: multiple definitions at +0x204
+    // +0x204 float                    field_0x204  (evidence: 0x005D0610) // CONFLICT: multiple definitions at +0x204
     // +0x204 DWORD                    vecBegin  (evidence: 0x005ECDC0) // CONFLICT: multiple definitions at +0x204
     // +0x208 DWORD                    field_0x208  (evidence: 0x0070AC00, 0x0070AD00, 0x0070BF00) // CONFLICT: multiple definitions at +0x208
     // +0x208 float                    field_0x208  (evidence: 0x007C76B0) // CONFLICT: multiple definitions at +0x208
@@ -1011,6 +1012,7 @@ struct Unknown_Fields {
     // +0x20C DWORD                    field_0x20C  (evidence: 0x0070AC00, 0x0070AD00, 0x0070BF00) // CONFLICT: multiple definitions at +0x20C
     // +0x20C void*                    field_0x20c  (evidence: 0x00644F00) // CONFLICT: multiple definitions at +0x20C
     // +0x20C uint8_t                  flag  (evidence: 0x005F51D0) // CONFLICT: multiple definitions at +0x20C
+    // +0x210 void* field_0x210 (address passed as ecx to ext_005B11E0; sub-object, not read directly)  (evidence: 0x005D0610) // CONFLICT: multiple definitions at +0x210
     // +0x210 DWORD                    field_0x210  (evidence: 0x004A57F0, 0x0070AC00, 0x0070AD00, 0x0070BF00) // CONFLICT: multiple definitions at +0x210
     // +0x210 uint32_t                 field_0x210  (evidence: 0x007CD510) // CONFLICT: multiple definitions at +0x210
     // +0x214 DWORD                    field_0x214  (evidence: 0x0070AC00, 0x0070AD00, 0x0070BF00)
