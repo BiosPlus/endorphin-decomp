@@ -10106,6 +10106,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00487000 (WriteMethodType\u003cEffectorBase, Vector4 const\u0026\u003e::vfunc_41).",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x0048BBA0": {
+    "name": "TreeMap::find",
+    "class": "TreeMap",
+    "signature": "TreeMapIterator* __thiscall fn_0048BBA0(void* self, TreeMapIterator* out, const void* key)",
+    "summary": "Finds a node by std::string key in an MSVC-style std::map, returning an iterator {tree, node} or {tree, header} if not found.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x0048BC10": {
     "name": "SearchableMap\u003cNM::Matrix4, GetNameFromAttribute\u003cNM::Matrix4\u003e\u003e::vfunc_0",
     "class": "SearchableMap\u003cNM::Matrix4, GetNameFromAttribute\u003cNM::Matrix4\u003e\u003e",
@@ -17239,6 +17246,13 @@
     "signature": "extern \"C\" INT __cdecl fn_004E9D70(void)",
     "summary": "Fetches a global int32 as the receiver and dispatches index 5 (arg 0) to its indexed child.",
     "lifted_path": "lifted/leaf/decompiled_4E0000.cpp"
+  },
+  "0x004E9DE0": {
+    "name": "ExprParser::ReadWriteMethodType::vfunc_41",
+    "class": "ExprParser::ReadWriteMethodType",
+    "signature": "void ExprParser_ReadWriteMethodType_vfunc_41(void** pSelf, void* arg1)",
+    "summary": "Reads a bool from the wrapped object's getter (vtable slot 3 of the sub-object at arg1+0x04), stores it into the inner object at +0x04, then dispatches index 5; throws if the inner pointer is null.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
   "0x004EA030": {
     "name": "ExprParser::ReadMethodType\u003cNMData::PoseToolOptions, bool, isCollisionEnabled, 0\u003e::vfunc_0",

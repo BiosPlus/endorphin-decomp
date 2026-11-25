@@ -9801,3 +9801,46 @@ void fn_004CEF40(void* self) {
     *slot = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_00AE4B7C));
 }
 } // namespace lift_004CEF40
+
+// [0x004E9DE0] sub_004E9DE0 (70 bytes)
+namespace lift_004E9DE0 {
+// Known callee 0x004E9D70: Unknown::DispatchIndex5ToSelector (Fetches a global int32 as the receiver and dispatches index 5 to its indexed child.)
+extern INT ext_004E9D70(void);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void);
+// Throw-info descriptor pushed before the throw.
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadWriteMethodType::vfunc_41
+// @class ExprParser::ReadWriteMethodType
+// @summary Reads a bool from the wrapped object's getter (vtable slot 3 of the sub-object at arg1+0x04), stores it into the inner object at +0x04, then dispatches index 5; throws if the inner pointer is null.
+// @field ExprParser::ReadWriteMethodType +0x00 void* field_0x00
+
+typedef unsigned char (*BoolGetterFn)(void* self, void* arg);
+
+void ExprParser_ReadWriteMethodType_vfunc_41(void** pSelf, void* arg1) {
+    // esi = *pSelf (inner object)
+    unsigned char* inner = static_cast<unsigned char*>(*pSelf);
+    if (inner == nullptr) {
+        // Null inner pointer: build the exception from the address of the parameter slot, then throw.
+        ext_0046C3C0(static_cast<void*>(pSelf));
+        ext_006A6DD2();
+        return;
+    }
+
+    // eax = arg1; ecx = [arg1 + 0x04]; edx = [ecx] (vtable of sub-object)
+    void* sub = *reinterpret_cast<void**>(static_cast<unsigned char*>(arg1) + 0x04);
+    void** vtbl = *reinterpret_cast<void***>(sub);
+    // call [vtbl + 0x0C] with this = sub and argument = arg1; result in al
+    BoolGetterFn getter = reinterpret_cast<BoolGetterFn>(vtbl[3]);
+    unsigned char value = getter(sub, arg1);
+
+    // mov byte ptr [esi + 0x04], al
+    inner[0x04] = value;
+
+    // ecx = esi (receiver); dispatch index 5 to the indexed child
+    (void)ext_004E9D70();
+}
+} // namespace lift_004E9DE0

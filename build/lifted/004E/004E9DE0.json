@@ -1,0 +1,22 @@
+{
+  "va": "0x004E9DE0",
+  "size": 70,
+  "orig_symbol": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isGroundCollisionEnabled(void) const, bool, \u0026public: void __thiscall NMData::PoseToolOptions::setGroundCollisionEnabled(bool)\u003e::vfunc_41",
+  "src_path": "src/templates/ReadWriteMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadWriteMethodType.cpp",
+  "name": "ExprParser::ReadWriteMethodType::vfunc_41",
+  "class": "ExprParser::ReadWriteMethodType",
+  "signature": "void ExprParser_ReadWriteMethodType_vfunc_41(void** pSelf, void* arg1)",
+  "summary": "Reads a bool from the wrapped object's getter (vtable slot 3 of the sub-object at arg1+0x04), stores it into the inner object at +0x04, then dispatches index 5; throws if the inner pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadWriteMethodType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:06:41Z"
+}
