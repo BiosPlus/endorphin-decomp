@@ -1,0 +1,39 @@
+{
+  "va": "0x00774560",
+  "size": 96,
+  "orig_symbol": "sub_00774560",
+  "src_path": "src/leaf/decompiled_770000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_770000.cpp",
+  "name": "addDoubleToFourOffsets",
+  "signature": "extern \"C\" void __stdcall fn_00774560(void* obj, double value)",
+  "summary": "Adds a double value to four 0x28-spaced double fields on the object returned by ext_006D2A30.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "double",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "double",
+      "name": "field_0x28"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "double",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x78",
+      "type": "double",
+      "name": "field_0x78"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:48:38Z"
+}

@@ -409,3 +409,30 @@ extern void* fn_0077F010(void* arg) {
 }
 } // namespace lift_007B2210
 } // namespace lift_0077F010
+
+// [0x00774560]
+namespace lift_00774560 {
+// @name addDoubleToFourOffsets
+// @summary Adds a double value to four 0x28-spaced double fields on the object returned by ext_006D2A30.
+// @field Unknown +0x00 double field_0x00
+// @field Unknown +0x28 double field_0x28
+// @field Unknown +0x50 double field_0x50
+// @field Unknown +0x78 double field_0x78
+
+
+extern void* __fastcall ext_006D2A30(void* self);
+
+extern void __stdcall fn_00774560(void* obj, double value) {
+    uint8_t* p0 = reinterpret_cast<uint8_t*>(ext_006D2A30(obj));
+    *reinterpret_cast<double*>(p0 + 0x00) += value;
+
+    uint8_t* p1 = reinterpret_cast<uint8_t*>(ext_006D2A30(obj));
+    *reinterpret_cast<double*>(p1 + 0x28) += value;
+
+    uint8_t* p2 = reinterpret_cast<uint8_t*>(ext_006D2A30(obj));
+    *reinterpret_cast<double*>(p2 + 0x50) += value;
+
+    uint8_t* p3 = reinterpret_cast<uint8_t*>(ext_006D2A30(obj));
+    *reinterpret_cast<double*>(p3 + 0x78) += value;
+}
+} // namespace lift_00774560
