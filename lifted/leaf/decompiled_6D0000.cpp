@@ -943,3 +943,36 @@ int32_t fn_006D8240(void* self, int32_t index, int32_t sub) {
     return result;
 }
 } // namespace lift_006D8240
+
+// [0x006D8680] sub_006D8680 (64 bytes)
+namespace lift_006D8680 {
+// Known callee 0x006FDF70: sub_006FDF70 (thiscall, this in ecx, one stack arg; returns pointer).
+extern void* __thiscall ext_006FDF70(void* self, int32_t arg);
+// Known callee 0x006BC380: sub_006BC380 (fastcall, this in ecx; returns object pointer, dereferenced by caller).
+extern void* __fastcall ext_006BC380(void* self);
+
+// @name Unknown::GetValueIfTypeOneOrTwo
+// @class Unknown
+// @summary Looks up a child object via two accessor calls; if its type field at +0x04 is 1 or 2, returns its int32 at +0x30, else 0.
+// @field Unknown +0x04 int32_t field_0x04
+// @field Unknown +0x30 int32_t field_0x30
+int32_t GetValueIfTypeOneOrTwo(void* self) {
+    if (ext_006FDF70(self, 0) == nullptr) {
+        return 0;
+    }
+    void* child = ext_006FDF70(self, 0);
+    void* obj = ext_006BC380(child);
+    if (obj == nullptr) {
+        return 0;
+    }
+    int32_t type = lift_field<int32_t>(obj, 0x04);
+    if (type == 1 || type == 2) {
+        return lift_field<int32_t>(obj, 0x30);
+    }
+    return 0;
+}
+
+extern int32_t fn_006D8680(void* self) {
+    return GetValueIfTypeOneOrTwo(self);
+}
+} // namespace lift_006D8680

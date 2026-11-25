@@ -46505,6 +46505,13 @@
     "summary": "Resolves a sub-object via two ext_006FDF70 calls and ext_006FC930; returns the int32 at +0x08 of the result, or 0 if any step is null.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D8680": {
+    "name": "Unknown::GetValueIfTypeOneOrTwo",
+    "class": "Unknown",
+    "signature": "int32_t GetValueIfTypeOneOrTwo(void* self)",
+    "summary": "Looks up a child object via two accessor calls; if its type field at +0x04 is 1 or 2, returns its int32 at +0x30, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D86C0": {
     "name": "resolveAndReadDword",
     "signature": "int32_t fn_006D86C0()",
