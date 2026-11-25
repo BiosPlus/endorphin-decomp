@@ -9,5 +9,8 @@
 namespace lifted_layout {
 struct StreamReader_Fields {
     // +0x4   void*                    field_0x04  (evidence: 0x00783470, 0x00783510, 0x00788E50)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00870F40)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x00870F40)
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x00870F40)
 };
 } // namespace lifted_layout

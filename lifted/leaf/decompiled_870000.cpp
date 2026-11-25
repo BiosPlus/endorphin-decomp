@@ -98,3 +98,35 @@ void* fn_00871890(void* self, const void* src) {
     return self;
 }
 } // namespace lift_00871890
+
+// [0x00870F40]
+namespace lift_00870F40 {
+// @name StreamReader::matchString
+// @class StreamReader
+// @summary Matches a null-terminated string against the stream, restoring state on mismatch.
+// @field StreamReader +0x08 uint32_t field_0x08
+// @field StreamReader +0x10 uint32_t field_0x10
+// @field StreamReader +0x14 uint32_t field_0x14
+
+
+extern uint8_t __thiscall ext_00870E90(void* self);
+
+bool __thiscall sub_00870F40(void* self, const char* str) {
+    auto* base = static_cast<uint8_t*>(self);
+    uint32_t saved_0x10 = *reinterpret_cast<uint32_t*>(base + 0x10);
+    uint32_t saved_0x14 = *reinterpret_cast<uint32_t*>(base + 0x14);
+    uint32_t saved_0x08 = *reinterpret_cast<uint32_t*>(base + 0x08);
+
+    while (*str != '\0') {
+        uint8_t ch = ext_00870E90(self);
+        if (ch != static_cast<uint8_t>(*str)) {
+            *reinterpret_cast<uint32_t*>(base + 0x08) = saved_0x08;
+            *reinterpret_cast<uint32_t*>(base + 0x14) = saved_0x14;
+            *reinterpret_cast<uint32_t*>(base + 0x10) = saved_0x10;
+            return false;
+        }
+        ++str;
+    }
+    return true;
+}
+} // namespace lift_00870F40

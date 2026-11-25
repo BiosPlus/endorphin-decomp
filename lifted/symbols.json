@@ -3793,6 +3793,13 @@
     "summary": "Pure jump thunk forwarding to GetConstantAddress_00447F90.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x004481A0": {
+    "name": "ProgressDialog::vfunc_4_off_74",
+    "class": "ProgressDialog",
+    "signature": "extern \"C\" void __thiscall fn_004481A0(uintptr_t self, uint32_t delta, uintptr_t text)",
+    "summary": "Updates the progress dialog status text and increments the progress bar position.",
+    "lifted_path": "lifted/classes/ProgressDialog.cpp"
+  },
   "0x00448280": {
     "name": "sub_00448280",
     "signature": "uint32_t __thiscall sub_00448280(uint32_t self, uint32_t arg0)",
