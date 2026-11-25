@@ -2182,3 +2182,40 @@ void* fn_0050E4E0(void* self, const void* src) {
     return self;
 }
 } // namespace lift_0050E4E0
+
+// [0x00505360]
+namespace lift_00505360 {
+// @name UnknownClass::operator=
+// @class UnknownClass
+// @summary Copy assignment operator copying a string, two 32-bit fields, and ten floats
+// @field UnknownClass +0x08 std::string field_0x08
+// @field UnknownClass +0x24 uint32_t field_0x24
+// @field UnknownClass +0x28 float field_0x28
+// @field UnknownClass +0x2c float field_0x2c
+// @field UnknownClass +0x30 float field_0x30
+// @field UnknownClass +0x34 float field_0x34
+// @field UnknownClass +0x38 float field_0x38
+// @field UnknownClass +0x3c float field_0x3c
+// @field UnknownClass +0x40 float field_0x40
+// @field UnknownClass +0x44 float field_0x44
+// @field UnknownClass +0x48 float field_0x48
+// @field UnknownClass +0x4c float field_0x4c
+// @field UnknownClass +0x50 uint32_t field_0x50
+
+
+extern uint32_t mem_00924FDC;
+
+uint32_t __thiscall sub_00505360(uint32_t self, uint32_t other) {
+    using StringAssignFn = uint32_t(__thiscall*)(uint32_t, uint32_t);
+    reinterpret_cast<StringAssignFn>(mem_00924FDC)(self + 0x8, other + 0x8);
+
+    *reinterpret_cast<uint32_t*>(self + 0x24) = *reinterpret_cast<const uint32_t*>(other + 0x24);
+
+    for (uint32_t offset = 0x28; offset <= 0x4c; offset += 4) {
+        *reinterpret_cast<float*>(self + offset) = *reinterpret_cast<const float*>(other + offset);
+    }
+
+    *reinterpret_cast<uint32_t*>(self + 0x50) = *reinterpret_cast<const uint32_t*>(other + 0x50);
+    return self;
+}
+} // namespace lift_00505360

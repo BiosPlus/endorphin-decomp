@@ -1,0 +1,94 @@
+{
+  "va": "0x00505360",
+  "size": 100,
+  "orig_symbol": "sub_00505360",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "UnknownClass::operator=",
+  "class": "UnknownClass",
+  "signature": "uint32_t __thiscall sub_00505360(uint32_t self, uint32_t other)",
+  "summary": "Copy assignment operator copying a string, two 32-bit fields, and ten floats",
+  "fields": [
+    {
+      "class": "UnknownClass",
+      "offset": "+0x8",
+      "type": "std::string",
+      "name": "field_0x08"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x24",
+      "type": "uint32_t",
+      "name": "field_0x24"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x28",
+      "type": "float",
+      "name": "field_0x28"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x2C",
+      "type": "float",
+      "name": "field_0x2c"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x30",
+      "type": "float",
+      "name": "field_0x30"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x34",
+      "type": "float",
+      "name": "field_0x34"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x38",
+      "type": "float",
+      "name": "field_0x38"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x3C",
+      "type": "float",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x40",
+      "type": "float",
+      "name": "field_0x40"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x44",
+      "type": "float",
+      "name": "field_0x44"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x48",
+      "type": "float",
+      "name": "field_0x48"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x4C",
+      "type": "float",
+      "name": "field_0x4c"
+    },
+    {
+      "class": "UnknownClass",
+      "offset": "+0x50",
+      "type": "uint32_t",
+      "name": "field_0x50"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:57:25Z"
+}
