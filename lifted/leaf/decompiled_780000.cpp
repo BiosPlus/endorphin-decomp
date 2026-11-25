@@ -1866,3 +1866,88 @@ extern void __thiscall sub_00785E00(void* self) {
     ext_007857F0(self);
 }
 } // namespace lift_00785E00
+
+// [0x00788C90]
+namespace lift_00788C90 {
+// @name getLocalDateTime
+// @summary Queries the local system time via GetLocalTime and copies year, month, day, hour, minute, second, and milliseconds into a 7-dword output struct.
+// @field DateTime +0x00 uint32_t year
+// @field DateTime +0x04 uint32_t month
+// @field DateTime +0x08 uint32_t day
+// @field DateTime +0x0c uint32_t hour
+// @field DateTime +0x10 uint32_t minute
+// @field DateTime +0x14 uint32_t second
+// @field DateTime +0x18 uint32_t milliseconds
+
+struct SystemTime {
+    uint16_t wYear;
+    uint16_t wMonth;
+    uint16_t wDayOfWeek;
+    uint16_t wDay;
+    uint16_t wHour;
+    uint16_t wMinute;
+    uint16_t wSecond;
+    uint16_t wMilliseconds;
+};
+
+extern void ext_GetLocalTime(SystemTime* lpSystemTime);
+
+void sub_00788C90(uint32_t* out) {
+    SystemTime st{};
+    ext_GetLocalTime(&st);
+    out[0] = st.wYear;
+    out[1] = st.wMonth;
+    out[2] = st.wDay;
+    out[3] = st.wHour;
+    out[4] = st.wMinute;
+    out[5] = st.wSecond;
+    out[6] = st.wMilliseconds;
+}
+} // namespace lift_00788C90
+
+// [0x0078D1F0]
+namespace lift_0078D1F0 {
+// @name buildConvexPolygonTriangleIndices
+// @summary Generates triangle vertex indices for a convex polygon of n vertices in zigzag order.
+
+
+void sub_0078D1F0(int32_t* outIndices, int32_t vertexCount) {
+    int32_t hi = vertexCount - 1;
+    int32_t totalIndices = 3 * vertexCount - 6;
+
+    int32_t a = 0;
+    int32_t b = 2;
+    int32_t lo = 3;
+
+    outIndices[0] = 0;
+    outIndices[1] = 1;
+    outIndices[2] = 2;
+
+    int32_t count = 3;
+    if (hi < lo) {
+        return;
+    }
+
+    int32_t* p = outIndices + 3;
+    do {
+        p[0] = b;
+        p[1] = lo;
+        p[2] = a;
+        p += 3;
+        count += 3;
+        if (count == totalIndices) {
+            break;
+        }
+        p[0] = a;
+        p[1] = lo;
+        p[2] = hi;
+        p += 3;
+        count += 3;
+
+        b = lo;
+        a = hi;
+        lo += 1;
+        hi -= 1;
+    } while (lo <= hi);
+}
+} // namespace lift_0078D1F0

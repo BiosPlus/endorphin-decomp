@@ -70593,6 +70593,12 @@
     "summary": "Destructor tail-call: restores vtable mem_00996F6C and tail-calls base destructor sub_00785430.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
   },
+  "0x00788C90": {
+    "name": "getLocalDateTime",
+    "signature": "void sub_00788C90(uint32_t* out)",
+    "summary": "Queries the local system time via GetLocalTime and copies year, month, day, hour, minute, second, and milliseconds into a 7-dword output struct.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
   "0x00788D00": {
     "name": "Unknown::resetCounters",
     "class": "Unknown",
@@ -70829,6 +70835,12 @@
     "signature": "void __thiscall sub_0078D1E0(void* self)",
     "summary": "Leaves the critical section pointed to by the first member field.",
     "lifted_path": "lifted/leaf/tiny_780000.cpp"
+  },
+  "0x0078D1F0": {
+    "name": "buildConvexPolygonTriangleIndices",
+    "signature": "void sub_0078D1F0(int32_t* outIndices, int32_t vertexCount)",
+    "summary": "Generates triangle vertex indices for a convex polygon of n vertices in zigzag order.",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
   "0x0078D2C0": {
     "name": "sub_0078D2C0",
