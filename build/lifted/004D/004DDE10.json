@@ -1,0 +1,21 @@
+{
+  "va": "0x004DDE10",
+  "size": 33,
+  "orig_symbol": "sub_004DDE10",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "CallVfunc8WithCStr",
+  "signature": "DWORD fn_004DDE10(void* self, const void* str)",
+  "summary": "Passes the C string of a std::string argument to virtual slot +0x08 of self and returns its result.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:10:38Z"
+}

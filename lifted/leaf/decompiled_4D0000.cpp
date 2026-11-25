@@ -419,3 +419,24 @@ void* fn_004DE3D0(void* first, void* last, void* dest) {
     return dst;
 }
 } // namespace lift_004DE3D0
+
+// [0x004DDE10]
+namespace lift_004DDE10 {
+// IAT slot for MSVCP80 std::string::c_str (QBEPBDXZ)
+extern int mem_00924FF0;
+
+// @name CallVfunc8WithCStr
+// @summary Passes the C string of a std::string argument to virtual slot +0x08 of self and returns its result.
+// @field Unknown +0x00 void* vtable
+DWORD fn_004DDE10(void* self, const void* str) {
+    using CStrFn = const char* (*)(const void*);
+    using VFn8 = DWORD (*)(void*, const char*);
+
+    uint32_t vtable = lift_field<uint32_t>(self, 0);
+    CStrFn c_str = reinterpret_cast<CStrFn>(*reinterpret_cast<uintptr_t*>(&mem_00924FF0));
+    const char* s = c_str(str);
+    VFn8 slot8 = reinterpret_cast<VFn8>(
+        static_cast<uintptr_t>(lift_field<uint32_t>(reinterpret_cast<void*>(static_cast<uintptr_t>(vtable)), 8)));
+    return slot8(self, s);
+}
+} // namespace lift_004DDE10

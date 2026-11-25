@@ -16203,6 +16203,12 @@
     "summary": "Clears the low byte flag at mem_00A85D54 to zero.",
     "lifted_path": "lifted/leaf/tiny_4D0000.cpp"
   },
+  "0x004DDE10": {
+    "name": "CallVfunc8WithCStr",
+    "signature": "DWORD fn_004DDE10(void* self, const void* str)",
+    "summary": "Passes the C string of a std::string argument to virtual slot +0x08 of self and returns its result.",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004DDE80": {
     "name": "sub_004DDE80",
     "signature": "extern \"C\" void __fastcall fn_004DDE80(void* self, int edx_unused, float value)",
