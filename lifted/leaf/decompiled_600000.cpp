@@ -132,3 +132,35 @@ void fn_0060C4C0(void* self) {
     ext_0060BCC0(self);
 }
 } // namespace lift_0060C4C0
+
+// [0x006098F0] sub_006098F0 (89 bytes)
+namespace lift_006098F0 {
+// Known callee 0x00661980: setVtable_0093BFB4 (Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).)
+extern void ext_00661980(void* self);
+extern int mem_00924FE8;
+
+// Imported std::string default constructor (MSVCP80), resolved through the IAT slot at 0x00924FE8.
+using StringDefaultCtorFn = void (*)(void* thisPtr);
+
+static inline void construct_default_string(void* addr) {
+    reinterpret_cast<StringDefaultCtorFn>(static_cast<uintptr_t>(mem_00924FE8))(addr);
+}
+
+// @name Unknown::ctor_006098F0
+// @class Unknown
+// @summary Runs ext_00661980 on this, stores vtable 0x00971AF4, then default-constructs two std::string members at +0x04 and +0x20.
+// @field Unknown +0x00 DWORD vtable
+// @field Unknown +0x04 std::string str0
+// @field Unknown +0x20 std::string str1
+void fn_006098F0(void* self) {
+    // Base-stage initialisation (overwritten below by this class's vtable).
+    ext_00661980(self);
+
+    // Install this class's vtable.
+    lift_field<DWORD>(self, 0x00) = 0x00971AF4u;
+
+    // Default-construct the two string members (MSVC std::string is 0x1C bytes: +0x04..+0x20, +0x20..+0x3C).
+    construct_default_string(static_cast<uint8_t*>(self) + 0x04);
+    construct_default_string(static_cast<uint8_t*>(self) + 0x20);
+}
+} // namespace lift_006098F0

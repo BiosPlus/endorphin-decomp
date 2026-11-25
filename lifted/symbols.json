@@ -31699,6 +31699,13 @@
     "summary": "Default-constructs a std::string in place in the caller's result slot (first stack argument) and returns that slot. The incoming this (ecx) is overwritten and unused.",
     "lifted_path": "lifted/ExprParser/auto_tiny.cpp"
   },
+  "0x006098F0": {
+    "name": "Unknown::ctor_006098F0",
+    "class": "Unknown",
+    "signature": "static inline void construct_default_string(void* addr)",
+    "summary": "Runs ext_00661980 on this, stores vtable 0x00971AF4, then default-constructs two std::string members at +0x04 and +0x20.",
+    "lifted_path": "lifted/leaf/decompiled_600000.cpp"
+  },
   "0x00609950": {
     "name": "NMData::DisabledCollisionPair::vfunc_0",
     "class": "NMData::DisabledCollisionPair",
