@@ -768,3 +768,29 @@ int32_t Buffer_RebuildIfFlagged(void* self) {
     return 0;
 }
 } // namespace lift_0086D110
+
+// [0x0086AF80] sub_0086AF80 (80 bytes)
+namespace lift_0086AF80 {
+// @name AddDwordArrayWithCarry
+// @summary Adds two uint32 arrays element-wise with a rippling carry (dst[i] = a[i] + b[i] + carry); returns the final carry (0 or 1), or 0 when count is 0.
+uint32_t fn_0086AF80(uint32_t* dst, const uint32_t* a, const uint32_t* b, uint32_t count) {
+    uint32_t carry = 0;
+    if (count == 0) {
+        return 0;
+    }
+    for (uint32_t i = 0; i < count; ++i) {
+        uint32_t sum = a[i] + carry;
+        if (sum < carry) {
+            // a[i] + carry overflowed (a[i] == 0xFFFFFFFF, carry == 1); the
+            // result is just b[i] and the carry out stays set.
+            dst[i] = b[i];
+            carry = 1;
+        } else {
+            uint32_t total = sum + b[i];
+            carry = (total < b[i]) ? 1u : 0u;
+            dst[i] = total;
+        }
+    }
+    return carry;
+}
+} // namespace lift_0086AF80
