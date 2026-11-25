@@ -198,3 +198,22 @@ int fn_00743440(void* arg1, void* list) {
     return -1;
 }
 } // namespace lift_00743440
+
+// [0x0074AEF0]
+namespace lift_0074AEF0 {
+// @name sub_0074AEF0
+// @summary Destroys three member subobjects at offsets 0x44, 0x2c, and 0x14 in reverse order.
+// @field Unknown +0x14 void* field_0x14
+// @field Unknown +0x2c void* field_0x2c
+// @field Unknown +0x44 void* field_0x44
+
+
+extern void __thiscall ext_006D2160(void* self);
+
+extern void __thiscall fn_0074AEF0(void* self) {
+    uint8_t* obj = static_cast<uint8_t*>(self);
+    ext_006D2160(obj + 0x44);
+    ext_006D2160(obj + 0x2c);
+    ext_006D2160(obj + 0x14);
+}
+} // namespace lift_0074AEF0
