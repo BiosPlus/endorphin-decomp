@@ -1,0 +1,22 @@
+{
+  "va": "0x005B9AE0",
+  "size": 60,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getAngularVelocity(void) const, 0}, 1\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, getAngularVelocity\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getAngularVelocity(void) const, 0}, 1\u003e",
+  "signature": "void fn_005B9AE0(void* arg)",
+  "summary": "Reads the first pointer-sized value of its argument; if non-null it forwards to the subobject helper and throws the default ExceptionWithMessage, otherwise throws DerivedException. Never returns normally.",
+  "fields": [
+    {
+      "class": "ExprParser::ReadMethodType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "target"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T05:00:27Z"
+}
