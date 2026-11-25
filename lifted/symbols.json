@@ -13649,6 +13649,13 @@
     "summary": "Returns 1 if the wrapped GraphEngineData's getXMax() is at least 1e-6 (NaN yields 0); throws if the object pointer is null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004B21D0": {
+    "name": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData\u003e::getXMax (vfunc_5)",
+    "class": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0\u003e",
+    "signature": "void fn_004B21D0(void* self)",
+    "summary": "Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004B2370": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setYMin(float), 0}\u003e::vfunc_41",
     "class": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMin(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setYMin(float), 0}\u003e",

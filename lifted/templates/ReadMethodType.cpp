@@ -52267,3 +52267,35 @@ void fn_00490030(void* self) {
     ext_006A6DD2(exception, mem_009DEC1C);
 }
 } // namespace lift_00490030
+
+// [0x004B21D0] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>::vfunc_5 (58 bytes)
+namespace lift_004B21D0 {
+// Known callee 0x0048FAC0: NMData::SkeletalCalibrationVariables::vfunc_13 (4B; returns float in st0)
+extern void ext_0048FAC0();
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+extern void ext_0046C4E0();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<NMData::GraphEngineData>::getXMax (vfunc_5)
+// @class ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>
+// @summary Reads the wrapped GraphEngineData pointer; if non-null, queries its XMax value, otherwise throws a DerivedException. Never returns normally.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void fn_004B21D0(void* self) {
+    // Load the wrapped object pointer from self+0x00.
+    void* obj = *reinterpret_cast<void**>(self);
+    if (obj != nullptr) {
+        // Query the wrapped object's XMax (vfunc_13). Its float result is
+        // stored into the exception-building frame, then the default-message
+        // exception is thrown.
+        ext_0048FAC0();
+        ext_0046C4E0();
+    }
+    // Null path: construct DerivedException in a local frame and throw it.
+    alignas(8) unsigned char exc[16] = {};
+    ext_0046C3C0();
+    ext_006A6DD2();
+}
+} // namespace lift_004B21D0
