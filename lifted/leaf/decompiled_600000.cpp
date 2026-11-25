@@ -922,3 +922,25 @@ void* fn_0060A1E0() {
 }
 } // namespace lift_004CAE30
 } // namespace lift_0060A1E0
+
+// [0x00609A10] sub_00609A10 (95 bytes)
+namespace lift_00609A10 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, const char* str);
+// Known callee 0x006A6C87: sub_006A6C87 (18B), takes one function-pointer argument.
+extern void ext_006A6C87(void (*teardown)(void));
+extern uint32_t mem_00B478B8;   // once-init guard flag (bit 0)
+extern uint8_t mem_00B4789C[];  // static object storage (size not recovered)
+
+// @name GetOnceInitString_00609A10
+// @summary One-time guarded initializer for the global at 0x00B4789C; on first call builds it via ext_0066AD10 from the string at 0x00A948B0 and registers its teardown at 0x0091E800 via ext_006A6C87; later calls only return its address.
+void* fn_00609A10() {
+    // Guard bit 0 of mem_00B478B8: run the initializer only once.
+    if ((mem_00B478B8 & 1u) == 0u) {
+        mem_00B478B8 |= 1u;
+        ext_0066AD10(mem_00B4789C, reinterpret_cast<const char*>(uintptr_t{0xA948B0}));
+        ext_006A6C87(reinterpret_cast<void (*)(void)>(uintptr_t{0x91E800}));
+    }
+    return mem_00B4789C;
+}
+} // namespace lift_00609A10

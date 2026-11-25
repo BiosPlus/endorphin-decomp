@@ -1,0 +1,13 @@
+{
+  "va": "0x00609A10",
+  "size": 95,
+  "orig_symbol": "sub_00609A10",
+  "src_path": "src/leaf/decompiled_600000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_600000.cpp",
+  "name": "GetOnceInitString_00609A10",
+  "signature": "extern \"C\" uint32_t mem_00B478B8;   // once-init guard flag (bit 0) extern \"C\" uint8_t mem_00B4789C[];  // static object storage (size not recovered) void* fn_00609A10()",
+  "summary": "One-time guarded initializer for the global at 0x00B4789C; on first call builds it via ext_0066AD10 from the string at 0x00A948B0 and registers its teardown at 0x0091E800 via ext_006A6C87; later calls only return its address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:33:46Z"
+}
