@@ -2125,3 +2125,24 @@ void* fn_0066EB40() {
 }
 } // namespace lift_004CAE30
 } // namespace lift_0066EB40
+
+// [0x00663060]
+namespace lift_00663060 {
+// @name sub_00663060_dtor
+// @summary Destroys three std::string members at offsets +0x38, +0x1c, and +0x00
+// @field Unknown +0x00 std::string field_0x00
+// @field Unknown +0x1c std::string field_0x1c
+// @field Unknown +0x38 std::string field_0x38
+
+
+extern uint32_t mem_00924FF4;
+
+void __thiscall sub_00663060(void* self) {
+    using string_dtor_t = void(__thiscall*)(void*);
+    auto dtor = reinterpret_cast<string_dtor_t>(static_cast<uintptr_t>(mem_00924FF4));
+    auto* base = static_cast<uint8_t*>(self);
+    dtor(base + 0x38);
+    dtor(base + 0x1c);
+    dtor(base);
+}
+} // namespace lift_00663060

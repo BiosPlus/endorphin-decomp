@@ -1,0 +1,33 @@
+{
+  "va": "0x00663060",
+  "size": 92,
+  "orig_symbol": "sub_00663060",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "sub_00663060_dtor",
+  "signature": "void __thiscall sub_00663060(void* self)",
+  "summary": "Destroys three std::string members at offsets +0x38, +0x1c, and +0x00",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "std::string",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "std::string",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "std::string",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:16:47Z"
+}
