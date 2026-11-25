@@ -6289,6 +6289,12 @@
     "summary": "Virtual dispatch thunk: loads the object's vtable and tail-calls slot 1 (offset +0x4) with the same this pointer.",
     "lifted_path": "lifted/leaf/tiny_460000.cpp"
   },
+  "0x004646B0": {
+    "name": "isAltWithMouseButtonDown_004646B0",
+    "signature": "int32_t fn_004646B0(void)",
+    "summary": "Returns 1 when Alt (VK_MENU) is held per GetAsyncKeyState and any of the left, middle, or right mouse buttons is down per GetKeyState; else 0.",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x00464760": {
     "name": "sub_00464760",
     "signature": "extern void* fn_00464760()",

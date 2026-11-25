@@ -1167,3 +1167,33 @@ void __thiscall fn_00462980(void* self, const void* str, uint32_t mode) {
     (void)ext_00447500(target, lift_string_c_str(str));
 }
 } // namespace lift_00462980
+
+// [0x004646B0] sub_004646B0 (84 bytes)
+namespace lift_004646B0 {
+// Import thunk pointer for USER32!GetKeyState (stdcall, takes int vKey, returns SHORT).
+extern uint32_t mem_009255F4;
+// Import thunk pointer for USER32!GetAsyncKeyState (stdcall, takes int vKey, returns SHORT).
+extern uint32_t mem_009256E4;
+
+// @name isAltWithMouseButtonDown_004646B0
+// @summary Returns 1 when Alt (VK_MENU) is held per GetAsyncKeyState and any of the left, middle, or right mouse buttons is down per GetKeyState; else 0.
+int32_t fn_004646B0(void) {
+    using GetKeyStateFn = int16_t(__stdcall*)(int32_t vKey);
+    using GetAsyncKeyStateFn = int16_t(__stdcall*)(int32_t vKey);
+
+    auto getKeyState = reinterpret_cast<GetKeyStateFn>(mem_009255F4);
+    auto getAsyncKeyState = reinterpret_cast<GetAsyncKeyStateFn>(mem_009256E4);
+
+    // Sign bit of each SHORT result indicates the key is currently down.
+    const bool leftDown = getKeyState(0x01) < 0;   // VK_LBUTTON
+    const bool middleDown = getKeyState(0x04) < 0; // VK_MBUTTON
+    const bool rightDown = getKeyState(0x02) < 0;  // VK_RBUTTON
+
+    const bool altDown = getAsyncKeyState(0x12) < 0; // VK_MENU
+
+    if (altDown && (leftDown || middleDown || rightDown)) {
+        return 1;
+    }
+    return 0;
+}
+} // namespace lift_004646B0
