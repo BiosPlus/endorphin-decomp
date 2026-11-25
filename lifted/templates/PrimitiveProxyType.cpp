@@ -589,3 +589,21 @@ extern void __stdcall fn_0049DA30(void* self) {
     lift_field<uint32_t>(self, 0x04) = eax;
 }
 } // namespace lift_0049DA30
+
+// [0x004975B0] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_1 (33 bytes)
+namespace lift_004975B0 {
+// IAT slots (populated by the loader): MSVCP80 std::string::c_str (thiscall, this in ecx) and MSVCR80 atof.
+extern const char* (*mem_00924FF0)(void* self);
+extern double (*mem_009251F0)(const char* text);
+
+// @name ExprParser::PrimitiveProxyType<std::string>::vfunc_1
+// @class ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>
+// @summary Parses the wrapped std::string (pointer stored at +0x00) as a decimal float via atof and returns it.
+// @field ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>> +0x00 void* field_0x00
+float fn_004975B0(void* self) {
+    void* str = lift_field<void*>(self, 0x00);
+    const char* text = mem_00924FF0(str);
+    // Original rounds the double result of atof to float via fstp/fld before returning.
+    return static_cast<float>(mem_009251F0(text));
+}
+} // namespace lift_004975B0

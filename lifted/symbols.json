@@ -10237,6 +10237,13 @@
     "summary": "Returns the byte at this+0xB4 and resets it to zero.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004975B0": {
+    "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_1",
+    "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",
+    "signature": "float fn_004975B0(void* self)",
+    "summary": "Parses the wrapped std::string (pointer stored at +0x00) as a decimal float via atof and returns it.",
+    "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
+  },
   "0x004975E0": {
     "name": "ExprParser::PrimitiveProxyType\u003cstd::string\u003e::vfunc_3",
     "class": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e",
