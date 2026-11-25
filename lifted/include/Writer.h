@@ -8,8 +8,8 @@
 // Recovered field layout for Writer:
 namespace lifted_layout {
 struct Writer_Fields {
-    // +0x8   uint32_t                 cursorSlot  (evidence: 0x0080F830)
-    // +0x10  int32_t                  counterA  (evidence: 0x0080F830)
-    // +0x14  int32_t                  counterB  (evidence: 0x0080F830)
+    // +0x8   uint32_t                 cursorSlot  (evidence: 0x00809540, 0x0080F830)
+    // +0x10  int32_t                  counterA  (evidence: 0x00809540, 0x0080F830)
+    // +0x14  int32_t                  counterB  (evidence: 0x00809540, 0x0080F830)
 };
 } // namespace lifted_layout

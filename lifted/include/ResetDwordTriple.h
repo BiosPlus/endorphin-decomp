@@ -8,8 +8,8 @@
 // Recovered field layout for ResetDwordTriple:
 namespace lifted_layout {
 struct ResetDwordTriple_Fields {
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x0080FAF0)
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x0080FAF0)
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x0080FAF0)
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x00809540, 0x0080FAF0)
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00809540, 0x0080FAF0)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00809540, 0x0080FAF0)
 };
 } // namespace lifted_layout

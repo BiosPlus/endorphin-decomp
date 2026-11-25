@@ -4,11 +4,79 @@
   "orig_symbol": "sub_00809540",
   "src_path": "src/leaf/decompiled_800000.cpp",
   "lifted_path": "lifted/leaf/decompiled_800000.cpp",
-  "name": "CallGlobalSlotsOnce",
-  "class": "(none)",
-  "signature": "int32_t fn_00809540(int32_t a1)",
-  "summary": "On first call (flag set), runs the slot-0x10 hook once and clears the flag; then forwards the argument through the slot-0x18 dispatcher and returns its result.",
+  "name": "GlobalAllocZeroWrapper",
+  "class": "Writer",
+  "signature": "uint32_t fn_0080FC40(uint32_t size)",
+  "summary": "Forwards its single uint32_t size argument to ext_008596E0 (GlobalAllocZeroFlags clone) and returns the result.",
+  "fields": [
+    {
+      "class": "ResetDwordTriple",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "ResetDwordTriple",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ResetDwordTriple",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Writer",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "cursorSlot"
+    },
+    {
+      "class": "Writer",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "counterA"
+    },
+    {
+      "class": "Writer",
+      "offset": "+0x14",
+      "type": "int32_t",
+      "name": "counterB"
+    },
+    {
+      "class": "StreamBuffer",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "StreamBuffer",
+      "offset": "+0x10",
+      "type": "int32_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "StreamBuffer",
+      "offset": "+0x14",
+      "type": "int32_t",
+      "name": "field_0x14"
+    },
+    {
+      "class": "StreamBuffer",
+      "offset": "+0x18",
+      "type": "int32_t",
+      "name": "field_0x18"
+    }
+  ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T01:10:31Z"
+  "lifted_at": "2026-11-25T01:10:36Z"
 }

@@ -8,9 +8,9 @@
 // Recovered field layout for StreamBuffer:
 namespace lifted_layout {
 struct StreamBuffer_Fields {
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x0080F910)
-    // +0x10  int32_t                  field_0x10  (evidence: 0x0080F910)
-    // +0x14  int32_t                  field_0x14  (evidence: 0x0080F910)
-    // +0x18  int32_t                  field_0x18  (evidence: 0x0080F910)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00809540, 0x0080F910)
+    // +0x10  int32_t                  field_0x10  (evidence: 0x00809540, 0x0080F910)
+    // +0x14  int32_t                  field_0x14  (evidence: 0x00809540, 0x0080F910)
+    // +0x18  int32_t                  field_0x18  (evidence: 0x00809540, 0x0080F910)
 };
 } // namespace lifted_layout
