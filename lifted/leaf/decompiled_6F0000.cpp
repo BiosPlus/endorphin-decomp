@@ -1607,3 +1607,29 @@ std::uint32_t fn_006FDF90(void* self, std::uint32_t ordinal, std::uint32_t index
     return entries[found];
 }
 } // namespace lift_006FDF90
+
+// [0x006FA460] sub_006FA460 (64 bytes)
+namespace lift_006FA460 {
+// Known callee 0x006D2200: DynamicArray::removeAt (Removes the element at the given index by shifting subsequent elements left and decrementing the count.)
+extern void ext_006D2200(void* self, int32_t index);
+
+// @name Unknown::RemoveFirstMatch
+// @class Unknown
+// @summary Scans the int32 DynamicArray embedded at +0x1C for the given value and removes the first match.
+// @field Unknown +0x1C int32_t elementCount
+// @field Unknown +0x2C int32_t* elements
+void fn_006FA460(void* self, int32_t value) {
+    auto* array = static_cast<uint8_t*>(self) + 0x1C;
+    int32_t count = *reinterpret_cast<int32_t*>(array + 0x00);
+    if (count <= 0) {
+        return;
+    }
+    int32_t* elements = *reinterpret_cast<int32_t**>(array + 0x10);
+    for (int32_t index = 0; index < count; ++index) {
+        if (elements[index] == value) {
+            ext_006D2200(array, index);
+            return;
+        }
+    }
+}
+} // namespace lift_006FA460

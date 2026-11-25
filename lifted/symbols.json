@@ -52840,6 +52840,13 @@
     "summary": "Computes (int32 at +0x34 \u003e\u003e 27) - 1, passes it to ext_006FA3C0; if that value is zero and bit 0x10000 of +0x34 is set, calls vtable slot 1 with 0.",
     "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
   },
+  "0x006FA460": {
+    "name": "Unknown::RemoveFirstMatch",
+    "class": "Unknown",
+    "signature": "void fn_006FA460(void* self, int32_t value)",
+    "summary": "Scans the int32 DynamicArray embedded at +0x1C for the given value and removes the first match.",
+    "lifted_path": "lifted/leaf/decompiled_6F0000.cpp"
+  },
   "0x006FA520": {
     "name": "sub_006FA520",
     "signature": "void fn_006FA520(uint32_t arg)",
