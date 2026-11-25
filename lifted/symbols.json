@@ -33632,6 +33632,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B7D80 (ExprParser::ReadMethodType\u003cNMData::JointLimit\u003e::vfunc_16 (NMData::JointLimit::getDamping)).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005D7700": {
+    "name": "ExprParser::ReadMethodType\u003cVideoPlaneData, getXOffset\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0\u003e",
+    "signature": "void fn_005D7700(void* holder)",
+    "summary": "Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005D78A0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, getYOffset, 0\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, float, getYOffset, 0\u003e",
@@ -50272,6 +50279,13 @@
     "signature": "extern \"C\" void fn_006A34D0(void)",
     "summary": "Pure jump thunk forwarding to sub_006632B0.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
+  },
+  "0x006A3700": {
+    "name": "ByteBuffer::assignFromBytes",
+    "class": "ByteBuffer",
+    "signature": "void fn_006A3700(void* self, uint32_t n, const uint8_t* src)",
+    "summary": "Resets the three buffer pointers, allocates n bytes and copies n bytes from src into them; the buffer is empty when n is 0.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
   "0x006A3F80": {
     "name": "setGlobal_00AA4B74",

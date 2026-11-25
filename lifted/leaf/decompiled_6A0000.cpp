@@ -746,3 +746,45 @@ extern uint32_t __thiscall fn_006A8840(void* self, uint32_t arg0) {
     return result;
 }
 } // namespace lift_006A8840
+
+// [0x006A3700]
+namespace lift_006A3700 {
+// @name ByteBuffer::assignFromBytes
+// @class ByteBuffer
+// @summary Resets the three buffer pointers, allocates n bytes and copies n bytes from src into them; the buffer is empty when n is 0.
+// @field ByteBuffer +0x04 uint8_t* field_0x04
+// @field ByteBuffer +0x08 uint8_t* field_0x08
+// @field ByteBuffer +0x0C uint8_t* field_0x0C
+
+// Thiscall in the original: `self` is the ecx value, (n, src) are stack args, callee-cleaned (ret 8).
+// Unreachable in practice: the original compares n against 0xFFFFFFFF unsigned and only calls on a
+// value above that, which a 32-bit n cannot be.
+extern void ext_00405FB0();
+// Allocator: returns the new block in eax; the second (zero) argument is pushed by the caller.
+extern uint8_t* ext_0041A100(uint32_t n, uint32_t zero);
+
+void fn_006A3700(void* self, uint32_t n, const uint8_t* src) {
+    lift_field<uint8_t*>(self, 0x04) = nullptr;
+    lift_field<uint8_t*>(self, 0x08) = nullptr;
+    lift_field<uint8_t*>(self, 0x0C) = nullptr;
+
+    if (n == 0) {
+        return;
+    }
+
+    if (n > 0xFFFFFFFFu) {
+        ext_00405FB0();
+    }
+
+    uint8_t* dst = ext_0041A100(n, 0);
+    lift_field<uint8_t*>(self, 0x0C) = dst + n;
+    lift_field<uint8_t*>(self, 0x04) = dst;
+    lift_field<uint8_t*>(self, 0x08) = dst;
+
+    for (uint32_t i = 0; i < n; ++i) {
+        dst[i] = src[i];
+    }
+
+    lift_field<uint8_t*>(self, 0x08) = dst + n;
+}
+} // namespace lift_006A3700

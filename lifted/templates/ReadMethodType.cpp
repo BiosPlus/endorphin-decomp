@@ -47401,3 +47401,32 @@ extern void __cdecl fn_004B8AA0(void* holder) {
     ext_006A6DD2(exception_object, throw_info);
 }
 } // namespace lift_004B8AA0
+
+// [0x005D7700] ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>::vfunc_5 (48 bytes)
+namespace lift_005D7700 {
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (takes a float argument; builds a default-message ExceptionWithMessage and throws it.)
+extern void ext_0046C4E0(float value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall; `this` passed in ecx, constructs the exception object with a fixed message and vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk to MSVCR80!_CxxThrowException(exception object, ThrowInfo*).)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// ThrowInfo data referenced by the throw at 0x009DEC1C.
+extern const unsigned char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<VideoPlaneData, getXOffset>::vfunc_5
+// @class ExprParser::ReadMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getXOffset(void) const, 0>
+// @summary Reports the VideoPlaneData getXOffset value (field +0x3C) when the holder's object is non-null, then always throws a DerivedException.
+// @field NMData::VideoPlaneData +0x3C float field_0x3C
+void fn_005D7700(void* holder) {
+    void* obj = *static_cast<void**>(holder);
+    if (obj != nullptr) {
+        float value = lift_field<float>(obj, 0x3C);
+        ext_0046C4E0(value);
+    }
+
+    // Local exception object storage (frame reserves 0x28 bytes for locals).
+    alignas(8) unsigned char exception[0x28] = {};
+    ext_0046C3C0(exception);
+    ext_006A6DD2(exception, mem_009DEC1C);
+}
+} // namespace lift_005D7700

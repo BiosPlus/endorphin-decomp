@@ -1,0 +1,34 @@
+{
+  "va": "0x006A3700",
+  "size": 95,
+  "orig_symbol": "sub_006A3700",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "ByteBuffer::assignFromBytes",
+  "class": "ByteBuffer",
+  "signature": "void fn_006A3700(void* self, uint32_t n, const uint8_t* src)",
+  "summary": "Resets the three buffer pointers, allocates n bytes and copies n bytes from src into them; the buffer is empty when n is 0.",
+  "fields": [
+    {
+      "class": "ByteBuffer",
+      "offset": "+0x4",
+      "type": "uint8_t*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "ByteBuffer",
+      "offset": "+0x8",
+      "type": "uint8_t*",
+      "name": "field_0x08"
+    },
+    {
+      "class": "ByteBuffer",
+      "offset": "+0xC",
+      "type": "uint8_t*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:09:45Z"
+}
