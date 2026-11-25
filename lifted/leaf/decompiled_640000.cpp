@@ -22,6 +22,7 @@ uint32_t fn_00648480(void* self) {
 }
 } // namespace lift_00648480
 #include <cstdint>
+#include <cstring>
 
 // [0x00647F00] sub_00647F00 (18 bytes)
 namespace lift_00647F00 {
@@ -1778,3 +1779,51 @@ void Owner_eraseTailRange(void* this_ptr) {
     ext_00596660(vec, out_iter, container, first_ptr, container, last_ptr);
 }
 } // namespace lift_00648DB0
+
+// [0x00648800] sub_00648800 (74 bytes)
+namespace lift_00648800 {
+// Callee 0x0065ACC0: __thiscall taking the object pointer in ecx; return value unused.
+extern void ext_0065ACC0(uint32_t this_ptr);
+// Known callee 0x00596660: Vector_erase_range (Erases a range [first, last) of 4-byte elements from a vector and returns the updated iterator.)
+// __thiscall: this in ecx, then stack args (out_iter, first_container, first_ptr, last_container, last_ptr).
+extern uint32_t* ext_00596660(uint32_t this_ptr, uint32_t out_iter, uint32_t first_container,
+                                  uint32_t first_ptr, uint32_t last_container, uint32_t last_ptr);
+// IAT slot holding _invalid_parameter_noinfo (used as the failure path for bad range checks).
+extern void (*mem_00925134)();
+
+// @name Unknown::fn_00648800 (range-erase helper; descriptive name pending class identification)
+// @class Unknown
+// @summary Resets the flag at +0x46, validates the range [+0x4C, +0x50] and erases it from the vector at +0x48.
+// @field Unknown +0x46 uint8_t field_0x46
+// @field Unknown +0x4C uint32_t field_0x4C
+// @field Unknown +0x50 uint32_t field_0x50
+// @field Unknown +0x5C void* field_0x5C
+void fn_00648800(void* self) {
+    auto* base = static_cast<uint8_t*>(self);
+    const uint32_t base_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(base));
+
+    uint32_t inner_ptr = 0;
+    std::memcpy(&inner_ptr, base + 0x5C, sizeof(inner_ptr));
+    ext_0065ACC0(inner_ptr);
+
+    base[0x46] = 0;
+
+    uint32_t limit = 0;
+    std::memcpy(&limit, base + 0x50, sizeof(limit));
+
+    const uint32_t vec_addr = base_addr + 0x48;
+
+    uint32_t begin = 0;
+    std::memcpy(&begin, base + 0x4C, sizeof(begin));
+    if (begin > limit) {
+        mem_00925134();
+    }
+
+    // The second bounds check in the original repeats the same comparison
+    // on unchanged memory, so it is folded into the one above.
+
+    uint32_t out_iter[2] = {0, 0};
+    ext_00596660(vec_addr, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(out_iter)),
+                 vec_addr, begin, vec_addr, limit);
+}
+} // namespace lift_00648800

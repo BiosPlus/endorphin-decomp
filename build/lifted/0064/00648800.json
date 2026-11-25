@@ -1,0 +1,40 @@
+{
+  "va": "0x00648800",
+  "size": 74,
+  "orig_symbol": "sub_00648800",
+  "src_path": "src/leaf/decompiled_640000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_640000.cpp",
+  "name": "Unknown::fn_00648800 (range-erase helper; descriptive name pending class identification)",
+  "class": "Unknown",
+  "signature": "void fn_00648800(void* self)",
+  "summary": "Resets the flag at +0x46, validates the range [+0x4C, +0x50] and erases it from the vector at +0x48.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x46",
+      "type": "uint8_t",
+      "name": "field_0x46"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "uint32_t",
+      "name": "field_0x4C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "uint32_t",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x5C",
+      "type": "void*",
+      "name": "field_0x5C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:17:10Z"
+}

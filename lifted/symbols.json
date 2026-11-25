@@ -1311,6 +1311,12 @@
     "summary": "Returns the first 32-bit element of the owner's [begin,end) array, or 0 if empty.",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00412E60": {
+    "name": "getVectorElementAt",
+    "signature": "uint32_t __thiscall sub_00412E60(void* self, int32_t index)",
+    "summary": "Returns the 32-bit element at the given index from a vector-like container, or 0 if out of bounds.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x004136E0": {
     "name": "MultiTrackView::CompositeMarkerTrack::vfunc_0",
     "class": "MultiTrackView::CompositeMarkerTrack",
@@ -39685,6 +39691,13 @@
     "class": "Unknown",
     "signature": "void fn_00648510(void* self)",
     "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
+    "lifted_path": "lifted/leaf/decompiled_640000.cpp"
+  },
+  "0x00648800": {
+    "name": "Unknown::fn_00648800 (range-erase helper; descriptive name pending class identification)",
+    "class": "Unknown",
+    "signature": "void fn_00648800(void* self)",
+    "summary": "Resets the flag at +0x46, validates the range [+0x4C, +0x50] and erases it from the vector at +0x48.",
     "lifted_path": "lifted/leaf/decompiled_640000.cpp"
   },
   "0x00648850": {
