@@ -926,3 +926,53 @@ void fn_004562F0(void* self, int /*unused*/, int x, int y) {
     ext_006A5EA8();
 }
 } // namespace lift_004562F0
+
+// [0x004561C0] sub_004561C0 (79 bytes)
+namespace lift_004561C0 {
+// Known callee 0x006A67AE: thunk_MFC80_ord_5064 (IAT jump thunk forwarding to MFC80!ord_5064.)
+// Takes one stack argument (the flagged object); return value unused.
+extern void ext_006A67AE(void* arg);
+// Known callee 0x006A5E00: thunk_MFC80_ord_2372 (IAT jump thunk forwarding to MFC80!ord_2372.)
+// Takes one stack argument (the parent HWND); returns eax.
+extern void* ext_006A5E00(void* hwnd);
+// Known callee 0x006A5EC0: thunk_MFC80_ord_2654 (IAT jump thunk forwarding to MFC80!ord_2654.)
+// Takes its single argument in ecx; returns eax.
+extern void* ext_006A5EC0(void* ecx_arg);
+// Known callee 0x00455F40: Unknown::returnTrueIfNeitherCheckMatches_00455F40 (Returns 1 only if both ext_00455CB0 and ext_004090C0 return 0 for self; otherwise returns 0.)
+extern int ext_00455F40(void* self);
+// IAT slot for USER32!GetParent (called indirectly through this pointer).
+extern void* mem_00925650;
+
+// @name Unknown::InitParentAndFlags_004561C0
+// @class Unknown
+// @summary Sets 0x20 in the flags of the argument object, stores a value derived from the parent window of self in self+0xF4, then sets self+0xE0 to 1 when the callee check fails and the argument's 0x40 flag is set.
+// @field Unknown +0x18 uint32_t flags (of the stack argument `arg`; class not identified)
+// @field Unknown +0x20 HWND field_0x20
+// @field Unknown +0xE0 uint32_t field_0xe0
+// @field Unknown +0xF4 void* field_0xf4
+void fn_004561C0(void* self, void* arg) {
+    // or dword ptr [arg + 0x18], 0x20
+    lift_field<uint32_t>(arg, 0x18) |= 0x20u;
+
+    // push arg; call thunk_MFC80_ord_5064
+    ext_006A67AE(arg);
+
+    // push [self + 0x20]; call GetParent (via IAT slot)
+    using GetParentFn = HWND (*)(HWND);
+    HWND parent = reinterpret_cast<GetParentFn>(mem_00925650)(lift_field<HWND>(self, 0x20));
+
+    // push parent; call thunk_MFC80_ord_2372 -> eax
+    void* r1 = ext_006A5E00(parent);
+
+    // ecx = r1; call thunk_MFC80_ord_2654 -> eax
+    void* r2 = ext_006A5EC0(r1);
+
+    // [self + 0xF4] = r2
+    lift_field<void*>(self, 0xF4) = r2;
+
+    // if (ext_00455F40(self) == 0 && (arg->flags & 0x40)) self->+0xE0 = 1
+    if (ext_00455F40(self) == 0 && (lift_field<uint32_t>(arg, 0x18) & 0x40u) != 0) {
+        lift_field<uint32_t>(self, 0xE0) = 1u;
+    }
+}
+} // namespace lift_004561C0

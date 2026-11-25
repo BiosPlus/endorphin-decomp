@@ -1,0 +1,40 @@
+{
+  "va": "0x004561C0",
+  "size": 79,
+  "orig_symbol": "sub_004561C0",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "Unknown::InitParentAndFlags_004561C0",
+  "class": "Unknown",
+  "signature": "void fn_004561C0(void* self, void* arg)",
+  "summary": "Sets 0x20 in the flags of the argument object, stores a value derived from the parent window of self in self+0xF4, then sets self+0xE0 to 1 when the callee check fails and the argument's 0x40 flag is set.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t flags (of the stack argument `arg`; class not",
+      "name": "identified)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "HWND",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xE0",
+      "type": "uint32_t",
+      "name": "field_0xe0"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xF4",
+      "type": "void*",
+      "name": "field_0xf4"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:46:21Z"
+}

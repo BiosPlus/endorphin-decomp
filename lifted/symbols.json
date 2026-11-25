@@ -5268,6 +5268,13 @@
     "summary": "Returns 1 only if both ext_00455CB0 and ext_004090C0 return 0 for self; otherwise returns 0.",
     "lifted_path": "lifted/leaf/decompiled_450000.cpp"
   },
+  "0x004561C0": {
+    "name": "Unknown::InitParentAndFlags_004561C0",
+    "class": "Unknown",
+    "signature": "void fn_004561C0(void* self, void* arg)",
+    "summary": "Sets 0x20 in the flags of the argument object, stores a value derived from the parent window of self in self+0xF4, then sets self+0xE0 to 1 when the callee check fails and the argument's 0x40 flag is set.",
+    "lifted_path": "lifted/leaf/decompiled_450000.cpp"
+  },
   "0x00456250": {
     "name": "CWrapper::forwardToSubobjectVtable2OrMfcThunk",
     "class": "CWrapper",
