@@ -1,0 +1,13 @@
+{
+  "va": "0x006C7B60",
+  "size": 96,
+  "orig_symbol": "sub_006C7B60",
+  "src_path": "src/leaf/decompiled_6C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6C0000.cpp",
+  "name": "transformPoint3d",
+  "signature": "void sub_006C7B60(double* out, const double* mat, const double* vec)",
+  "summary": "Transforms a 3D double-precision point by a 4x4 double-precision affine matrix.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:39:18Z"
+}
