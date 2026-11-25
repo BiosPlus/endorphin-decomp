@@ -1,0 +1,28 @@
+{
+  "va": "0x0041CF00",
+  "size": 76,
+  "orig_symbol": "sub_0041CF00",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::CopyFromSource_0041CF00",
+  "class": "Unknown",
+  "signature": "void* fn_0041CF00(void* self, void* src)",
+  "summary": "Copies a (value, object) pair into self; value comes from virtual slot 0x70 of the source object, or 0 if there is no object.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "value"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "object"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:37:42Z"
+}

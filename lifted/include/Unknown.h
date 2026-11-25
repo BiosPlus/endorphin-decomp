@@ -86,6 +86,7 @@ struct Unknown_Fields {
     // +0x0   <unknown> (not accessed directly; the frame-local at [ebp-0x18] is passed as the release target)  (evidence: 0x00559A30) // CONFLICT: multiple definitions at +0x0
     // +0x0   void* field_0x00 (pointer to a sub-object; dereferenced to reach the target)  (evidence: 0x006BB780) // CONFLICT: multiple definitions at +0x0
     // +0x0   double                   value  (evidence: 0x006E0050) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 value  (evidence: 0x0041CF00) // CONFLICT: multiple definitions at +0x0
     // +0x0   DWORD                    vfptr  (evidence: 0x006B2F70, 0x006B95F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vfptr  (evidence: 0x00401B60, 0x0040A910, 0x0040BE90) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vftable  (evidence: 0x0048E2E0) // CONFLICT: multiple definitions at +0x0
@@ -166,6 +167,7 @@ struct Unknown_Fields {
     // +0x4   HMODULE                  module  (evidence: 0x0041FD20) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t*                 next  (evidence: 0x008103A0, 0x008103F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    obj_ptr  (evidence: 0x0058A960) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    object  (evidence: 0x0041CF00) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (pointer to index-holder object)  (evidence: 0x007F63D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t field_0x04 (enable flag on inner object)  (evidence: 0x00783540, 0x00788E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* field_0x04 (pointer to holder object)  (evidence: 0x00783440, 0x00788E50) // CONFLICT: multiple definitions at +0x4

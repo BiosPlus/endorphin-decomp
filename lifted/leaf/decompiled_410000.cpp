@@ -1318,3 +1318,41 @@ void fn_0041FD70(void* self, void** out) {
     *out = *cached;
 }
 } // namespace lift_0041FD70
+
+// [0x0041CF00] sub_0041CF00 (76 bytes)
+namespace lift_0041CF00 {
+// @name Unknown::CopyFromSource_0041CF00
+// @class Unknown
+// @summary Copies a (value, object) pair into self; value comes from virtual slot 0x70 of the source object, or 0 if there is no object.
+// @field Unknown +0x00 uint32_t value
+// @field Unknown +0x04 void* object
+
+namespace {
+
+// 32-bit thiscall signature of the virtual slot at vtable+0x70 (index 28).
+// self arrives in ecx, the scratch out-slot and source pointer are stack args.
+using VirtualQuerySlot = void* (__thiscall*)(void* self, uint32_t* out, void* src);
+
+}  // namespace
+
+void* fn_0041CF00(void* self, void* src) {
+    uint8_t* dst = static_cast<uint8_t*>(self);
+    uint8_t* srcBytes = static_cast<uint8_t*>(src);
+
+    uint32_t value = 0;
+    void* object = lift_field<void*>(srcBytes, 0x4);
+
+    if (object != nullptr) {
+        void* const* vtable = *reinterpret_cast<void* const* const*>(object);
+        auto slot = reinterpret_cast<VirtualQuerySlot>(vtable[0x70 / 4]);
+
+        uint32_t scratch = 0;
+        void* result = slot(object, &scratch, src);
+        value = *static_cast<uint32_t*>(result);
+    }
+
+    lift_field<uint32_t>(dst, 0x0) = value;
+    lift_field<void*>(dst, 0x4) = lift_field<void*>(srcBytes, 0x4);
+    return dst;
+}
+} // namespace lift_0041CF00
