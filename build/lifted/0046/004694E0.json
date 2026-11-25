@@ -1,0 +1,28 @@
+{
+  "va": "0x004694E0",
+  "size": 22,
+  "orig_symbol": "sub_004694E0",
+  "src_path": "src/leaf/tiny_460000.cpp",
+  "lifted_path": "lifted/leaf/tiny_460000.cpp",
+  "name": "Unknown::hasBitFlagIfEnabled",
+  "class": "Unknown",
+  "signature": "bool fn_004694E0(void* self, uint32_t index)",
+  "summary": "Returns false if the byte at +0x10 is zero or the child pointer at +0x1C is null; otherwise forwards the bit-flag query for index to the child via hasBitFlag.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint8_t",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x1C",
+      "type": "void*",
+      "name": "field_0x1C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:21:53Z"
+}

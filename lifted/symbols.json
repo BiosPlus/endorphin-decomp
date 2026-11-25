@@ -6883,6 +6883,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x00594790 (Unknown::releaseHeldObject (descriptive; owner class not identified)).",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x004694E0": {
+    "name": "Unknown::hasBitFlagIfEnabled",
+    "class": "Unknown",
+    "signature": "bool fn_004694E0(void* self, uint32_t index)",
+    "summary": "Returns false if the byte at +0x10 is zero or the child pointer at +0x1C is null; otherwise forwards the bit-flag query for index to the child via hasBitFlag.",
+    "lifted_path": "lifted/leaf/tiny_460000.cpp"
+  },
   "0x00469570": {
     "name": "getVectorElementAt",
     "signature": "uint32_t __thiscall sub_00469570(uint8_t* self, uint32_t index)",

@@ -950,3 +950,25 @@ void fn_0046FE90(void* self) {
     }
 }
 } // namespace lift_0046FE90
+
+// [0x004694E0] sub_004694E0 (22 bytes)
+namespace lift_004694E0 {
+// Known callee 0x004B08A0: hasBitFlag (Checks whether the bit flag corresponding to the given index is set in the object's flags field at +0x10.)
+extern bool ext_004B08A0(void* self, uint32_t index);
+
+// @name Unknown::hasBitFlagIfEnabled
+// @class Unknown
+// @summary Returns false if the byte at +0x10 is zero or the child pointer at +0x1C is null; otherwise forwards the bit-flag query for index to the child via hasBitFlag.
+// @field Unknown +0x10 uint8_t field_0x10
+// @field Unknown +0x1C void* field_0x1C
+bool fn_004694E0(void* self, uint32_t index) {
+    if (lift_field<uint8_t>(self, 0x10) == 0) {
+        return false;
+    }
+    void* child = lift_field<void*>(self, 0x1C);
+    if (child == nullptr) {
+        return false;
+    }
+    return ext_004B08A0(child, index);
+}
+} // namespace lift_004694E0
