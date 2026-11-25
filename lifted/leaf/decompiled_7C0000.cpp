@@ -1678,3 +1678,19 @@ void fn_007CFEC0(const float* m, const float* v, float* linear, float* point) {
     }
 }
 } // namespace lift_007CFEC0
+
+// [0x007CAF30] sub_007CAF30 (54 bytes)
+namespace lift_007CAF30 {
+// Known callee 0x007CA830: sub_007CA830 (Stores half of a, x, y into out[+0x10..+0x18] and writes half the Euclidean length of (a,x,y) to out[+0x1c].)
+extern void ext_007CA830(unsigned char* out, float a, float x, float y);
+// Unlifted callee 0x007CC8E0 (68 bytes); signature inferred from call site: (out, arg2, 2).
+extern void ext_007CC8E0(unsigned char* out, uint32_t arg2, int32_t count);
+
+// @name storeHalfLengthVectorAfterSetup
+// @summary Runs the 0x007CC8E0 setup with the second argument and count 2, then stores the (a,x,y) vector and half its length into out; returns out.
+unsigned char* fn_007CAF30(unsigned char* out, uint32_t arg2, float a, float x, float y) {
+    ext_007CC8E0(out, arg2, 2);
+    ext_007CA830(out, a, x, y);
+    return out;
+}
+} // namespace lift_007CAF30

@@ -68652,6 +68652,12 @@
     "summary": "Returns the sign of a float: 1.0 for x \u003e 0 (and NaN), -1.0 for x \u003c 0, 0.0 for x == 0.",
     "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
   },
+  "0x007CAF30": {
+    "name": "storeHalfLengthVectorAfterSetup",
+    "signature": "unsigned char* fn_007CAF30(unsigned char* out, uint32_t arg2, float a, float x, float y)",
+    "summary": "Runs the 0x007CC8E0 setup with the second argument and count 2, then stores the (a,x,y) vector and half its length into out; returns out.",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CAFC0": {
     "name": "getField0x14Float",
     "signature": "float sub_007CAFC0(uint32_t obj)",

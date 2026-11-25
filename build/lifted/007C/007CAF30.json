@@ -1,0 +1,13 @@
+{
+  "va": "0x007CAF30",
+  "size": 54,
+  "orig_symbol": "sub_007CAF30",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "storeHalfLengthVectorAfterSetup",
+  "signature": "unsigned char* fn_007CAF30(unsigned char* out, uint32_t arg2, float a, float x, float y)",
+  "summary": "Runs the 0x007CC8E0 setup with the second argument and count 2, then stores the (a,x,y) vector and half its length into out; returns out.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:59:16Z"
+}
