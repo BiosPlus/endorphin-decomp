@@ -47272,6 +47272,13 @@
     "summary": "Calls checkStringEqualsLiteral (its result is discarded); if arg2 is one of five magic keys stores the low byte of arg4 to *arg1, otherwise ORs arg3 into this+0x150.",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
+  "0x00687820": {
+    "name": "Unknown::uniqueStringPairRange_00687820",
+    "class": "Unknown",
+    "signature": "void* uniqueStringPairRange_00687820(void* first, void* last)",
+    "summary": "std::unique over a range of 0x38-byte records, comparing the first std::string (+0x00) and copying both strings on compaction; returns new end.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x00687890": {
     "name": "fillElementsFromSource",
     "class": "UnknownElement44",

@@ -2223,3 +2223,63 @@ void fn_00686180(void* first, void* last, void* src) {
     }
 }
 } // namespace lift_00686180
+
+// [0x00687820]
+namespace lift_00687820 {
+// @name Unknown::uniqueStringPairRange_00687820
+// @class Unknown
+// @summary std::unique over a range of 0x38-byte records, comparing the first std::string (+0x00) and copying both strings on compaction; returns new end.
+// @field Unknown +0x00 BYTE[0x1c] field_0x00
+// @field Unknown +0x1c BYTE[0x1c] field_0x1c
+
+// MSVCP80 std::operator==(const basic_string&, const basic_string&)
+extern bool (__cdecl* mem_00924FC4)(const void* lhs, const void* rhs);
+// MSVCP80 std::basic_string::operator=(const basic_string&)
+extern void* (__thiscall* mem_00924FDC)(void* self, const void* src);
+
+static constexpr ptrdiff_t kElemSize = 0x38;
+static constexpr ptrdiff_t kSecondStrOff = 0x1c;
+
+void* uniqueStringPairRange_00687820(void* first, void* last) {
+    uint8_t* const end = static_cast<uint8_t*>(last);
+    uint8_t* dst = static_cast<uint8_t*>(first);
+    if (dst == end) {
+        return end;
+    }
+
+    uint8_t* it = dst + kElemSize;
+    if (it == end) {
+        return end;
+    }
+
+    // Phase 1: scan until the first element equal to its kept predecessor.
+    for (;;) {
+        if (mem_00924FC4(it, dst)) {
+            break;
+        }
+        dst = it;
+        it += kElemSize;
+        if (it == end) {
+            return end;
+        }
+    }
+
+    // `it` now points at the first duplicate; skip it.
+    it += kElemSize;
+    if (it == end) {
+        return dst + kElemSize;
+    }
+
+    // Phase 2: compact, copying non-duplicates into the kept slot.
+    do {
+        if (!mem_00924FC4(it, dst)) {
+            dst += kElemSize;
+            mem_00924FDC(dst, it);
+            mem_00924FDC(dst + kSecondStrOff, it + kSecondStrOff);
+        }
+        it += kElemSize;
+    } while (it != end);
+
+    return dst + kElemSize;
+}
+} // namespace lift_00687820
