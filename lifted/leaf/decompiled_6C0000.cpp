@@ -1682,3 +1682,36 @@ bool __thiscall fn_006CC990(void* self, int32_t index) {
     return true;
 }
 } // namespace lift_006CC990
+
+// [0x006C30A0]
+namespace lift_006C30A0 {
+// @name sub_006C30A0
+// @summary Return field_0x158 if its virtual method 0 returns 4, 5, or 6, else 0.
+// @field Unknown +0x158 uint32_t field_0x158
+
+
+extern uint32_t mem_r32(uint32_t addr);
+
+uint32_t __fastcall sub_006C30A0(uint32_t self) {
+    using Vfn0 = uint32_t(__fastcall*)(uint32_t);
+    uint32_t obj = mem_r32(self + 0x158);
+    if (!obj) {
+        return 0;
+    }
+    uint32_t vtable = mem_r32(obj);
+    if (reinterpret_cast<Vfn0>(static_cast<uintptr_t>(mem_r32(vtable)))(obj) == 4) {
+        return mem_r32(self + 0x158);
+    }
+    obj = mem_r32(self + 0x158);
+    vtable = mem_r32(obj);
+    if (reinterpret_cast<Vfn0>(static_cast<uintptr_t>(mem_r32(vtable)))(obj) == 5) {
+        return mem_r32(self + 0x158);
+    }
+    obj = mem_r32(self + 0x158);
+    vtable = mem_r32(obj);
+    if (reinterpret_cast<Vfn0>(static_cast<uintptr_t>(mem_r32(vtable)))(obj) == 6) {
+        return mem_r32(self + 0x158);
+    }
+    return 0;
+}
+} // namespace lift_006C30A0
