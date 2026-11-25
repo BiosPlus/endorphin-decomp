@@ -2473,3 +2473,24 @@ bool __thiscall fn_00509DE0(uint8_t* self, uint32_t count) {
 }
 } // namespace lift_00509DE0
 } // namespace lift_00509DE0
+
+// [0x005082B0]
+namespace lift_005082B0 {
+void* ext_00517AD0(void* self);
+void ext_00508280(void* self, uint32_t arg1);
+
+// @name fn_005082B0
+// @summary Constructor that initializes base object, sets vtable pointers at +0x00/+0x08/+0x0C, and calls ext_00508280 with arg1.
+// @field unknown +0x00 uint32_t field_0x00
+// @field unknown +0x08 uint32_t field_0x08
+// @field unknown +0x0C uint32_t field_0x0C
+void* fn_005082B0(void* self, uint32_t arg1) {
+    ext_00517AD0(self);
+    auto* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<uint32_t*>(base + 0x00) = 0x0094F860u;
+    *reinterpret_cast<uint32_t*>(base + 0x08) = 0x0094F854u;
+    *reinterpret_cast<uint32_t*>(base + 0x0C) = 0x0094F7FCu;
+    ext_00508280(self, arg1);
+    return self;
+}
+} // namespace lift_005082B0

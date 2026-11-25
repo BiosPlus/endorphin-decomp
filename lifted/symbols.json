@@ -20049,6 +20049,12 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00507EB0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005082B0": {
+    "name": "fn_005082B0",
+    "signature": "void* fn_005082B0(void* self, uint32_t arg1)",
+    "summary": "Constructor that initializes base object, sets vtable pointers at +0x00/+0x08/+0x0C, and calls ext_00508280 with arg1.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00508310": {
     "name": "sub_00508310",
     "class": "NMData::RealChannel",
