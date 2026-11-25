@@ -343,3 +343,37 @@ void* fn_00566FF0(void* self) {
     return self;
 }
 } // namespace lift_00566FF0
+
+// [0x005634D0] sub_005634D0 (75 bytes)
+namespace lift_005634D0 {
+// Imported XSIFtk / MSVCP80 slots (IAT entries holding function pointers).
+extern int mem_00925754;
+extern int mem_00925750;
+extern int mem_0092574C;
+extern int mem_00924FE4;
+
+// String literals referenced by immediate address.
+extern const char str_00928B5D[];
+extern const char str_00B39FD8[];
+
+// Imported members, expressed with an explicit `this` as first argument.
+extern bool ext_CSIBCString_OpNotEqual(void* self, const char* rhs);       // CSIBCString::operator!=(const char*)
+extern void* ext_CSIBCString_OpAssign(void* self, const char* rhs);        // CSIBCString::operator=(const CSIBCString&)
+extern const char* ext_CSIBCString_GetText(void* self);                    // CSIBCString::GetText()
+
+// @name GetStdStringFromCSIBCString_005634D0
+// @class Unknown
+// @summary Ensures the embedded CSIBCString at +0x04 holds a non-default value, then copies its text into the returned std::string.
+// @field Unknown +0x04 CSIBCString field_0x04
+std::string* fn_005634D0(std::string* out, void* self) {
+    void* str = static_cast<unsigned char*>(self) + 0x04;
+
+    if (ext_CSIBCString_OpNotEqual(str, str_00928B5D)) {
+        ext_CSIBCString_OpAssign(str, str_00B39FD8);
+    }
+
+    const char* text = ext_CSIBCString_GetText(str);
+    new (out) std::string(text);
+    return out;
+}
+} // namespace lift_005634D0

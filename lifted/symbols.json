@@ -21387,6 +21387,13 @@
     "summary": "Returns true if model is non-null and is either a mesh/NURBS primitive or accepted by sub_00563220(this, model).",
     "lifted_path": "lifted/leaf/decompiled_560000.cpp"
   },
+  "0x005634D0": {
+    "name": "GetStdStringFromCSIBCString_005634D0",
+    "class": "Unknown",
+    "signature": "extern \"C\" bool ext_CSIBCString_OpNotEqual(void* self, const char* rhs);       // CSIBCString::operator!=(const char*) extern \"C\" void* ext_CSIBCString_OpAssign(void* self, const char* rhs);        // CSIBCString::operator=(const CSIBCString\u0026) extern \"C\" const char* ext_CSIBCString_GetText(void* self);                    // CSIBCString::GetText() std::string* fn_005634D0(std::string* out, void* self)",
+    "summary": "Ensures the embedded CSIBCString at +0x04 holds a non-default value, then copies its text into the returned std::string.",
+    "lifted_path": "lifted/leaf/decompiled_560000.cpp"
+  },
   "0x00563600": {
     "name": "XSIIO::vfunc_3",
     "class": "XSIIO",

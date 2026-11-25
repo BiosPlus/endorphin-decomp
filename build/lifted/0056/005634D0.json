@@ -1,0 +1,22 @@
+{
+  "va": "0x005634D0",
+  "size": 75,
+  "orig_symbol": "sub_005634D0",
+  "src_path": "src/leaf/decompiled_560000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_560000.cpp",
+  "name": "GetStdStringFromCSIBCString_005634D0",
+  "class": "Unknown",
+  "signature": "extern \"C\" bool ext_CSIBCString_OpNotEqual(void* self, const char* rhs);       // CSIBCString::operator!=(const char*) extern \"C\" void* ext_CSIBCString_OpAssign(void* self, const char* rhs);        // CSIBCString::operator=(const CSIBCString\u0026) extern \"C\" const char* ext_CSIBCString_GetText(void* self);                    // CSIBCString::GetText() std::string* fn_005634D0(std::string* out, void* self)",
+  "summary": "Ensures the embedded CSIBCString at +0x04 holds a non-default value, then copies its text into the returned std::string.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "CSIBCString",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:36:39Z"
+}
