@@ -19348,6 +19348,12 @@
     "summary": "Compare-exchange sorts three object-pointer slots ascending by the double key at +0x20.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x0050FE00": {
+    "name": "adjustHeapByDoubleKey",
+    "signature": "inline double readKey(const void* obj)",
+    "summary": "Sift-down a hole in a max-heap of object pointers keyed by the double at +0x20 (std::__adjust_heap style), then sift the value back up via ext_0050FAA0.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00510830": {
     "name": "CopyRangeBackwardAndComputeDestBegin",
     "signature": "void* fn_00510830(uint8_t* first, uint8_t* last, uint8_t* d_last)",

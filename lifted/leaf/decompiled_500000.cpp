@@ -2298,3 +2298,54 @@ void fn_005067A0(void* self, void** out, const void* first, void* dst,
 }
 } // namespace lift_005230B0
 } // namespace lift_005067A0
+
+// [0x0050FE00] sub_0050FE00 (109 bytes)
+namespace lift_0050FE00 {
+// Known callee 0x0050FAA0: pushHeapByDoubleKey (Sift-up heap insertion of a pointer into an array of pointers, ordered by the double at object +0x20 (std::__push_heap style, max-heap by "less").)
+extern void ext_0050FAA0(void** first, std::int32_t hole, std::int32_t top, void* value);
+
+// @name adjustHeapByDoubleKey
+// @summary Sift-down a hole in a max-heap of object pointers keyed by the double at +0x20 (std::__adjust_heap style), then sift the value back up via ext_0050FAA0.
+// @field Unknown +0x20 double field_0x20
+
+namespace {
+
+// Reads the double key stored at object +0x20.
+inline double readKey(const void* obj) {
+    double key;
+    std::memcpy(&key, static_cast<const std::uint8_t*>(obj) + 0x20, sizeof key);
+    return key;
+}
+
+}  // namespace
+
+// first: array of object pointers
+// hole:  index of the hole to fill
+// len:   number of valid elements in first
+// value: object pointer being re-inserted
+// comp:  forwarded by the original caller; ignored by the callee
+void fn_0050FE00(void** first, std::int32_t hole, std::int32_t len, void* value, void* comp) {
+    (void)comp;
+
+    const std::int32_t top = hole;
+    std::int32_t child = 2 * hole + 2;
+
+    while (child < len) {
+        // Pick the larger of the two children; ties and NaN choose the right child.
+        if (readKey(first[child - 1]) > readKey(first[child])) {
+            child--;
+        }
+        first[hole] = first[child];
+        hole = child;
+        child = 2 * child + 2;
+    }
+
+    if (child == len) {
+        // Only a left child remains.
+        first[hole] = first[len - 1];
+        hole = len - 1;
+    }
+
+    ext_0050FAA0(first, hole, top, value);
+}
+} // namespace lift_0050FE00

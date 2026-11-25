@@ -1,0 +1,21 @@
+{
+  "va": "0x0050FE00",
+  "size": 109,
+  "orig_symbol": "sub_0050FE00",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "adjustHeapByDoubleKey",
+  "signature": "inline double readKey(const void* obj)",
+  "summary": "Sift-down a hole in a max-heap of object pointers keyed by the double at +0x20 (std::__adjust_heap style), then sift the value back up via ext_0050FAA0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x20",
+      "type": "double",
+      "name": "field_0x20"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:59:27Z"
+}
