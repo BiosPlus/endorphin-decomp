@@ -10,6 +10,7 @@
 // Recovered field layout for Properties::PropertyIteratorTypes::PropertySourceType:
 namespace lifted_layout {
 struct Properties_PropertyIteratorTypes_PropertySourceType_Fields {
+    // +0x0   void* vtable (accessed to dispatch virtual slot 15)  (evidence: 0x00681B50)
     // +0x4C  vtable slot 19 (virtual call target)  (evidence: 0x00681C10)
 };
 } // namespace lifted_layout

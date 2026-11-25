@@ -1,0 +1,22 @@
+{
+  "va": "0x00681B50",
+  "size": 60,
+  "orig_symbol": "Properties::PropertyIteratorTypes::PropertySourceType::vfunc_0",
+  "src_path": "src/Properties/PropertyIteratorTypes/PropertySourceType.cpp",
+  "lifted_path": "lifted/Properties/PropertyIteratorTypes/PropertySourceType.cpp",
+  "name": "Properties::PropertyIteratorTypes::PropertySourceType::vfunc_0",
+  "class": "Properties::PropertyIteratorTypes::PropertySourceType",
+  "signature": "uint32_t* fn_00681B50(uint32_t* out, void* const* src, uint32_t arg)",
+  "summary": "Forwards to virtual slot 15 of the source object when *src is non-null; otherwise fills out via ext_00671F30. Returns out.",
+  "fields": [
+    {
+      "class": "Properties::PropertyIteratorTypes::PropertySourceType",
+      "offset": "+0x0",
+      "type": "void* vtable (accessed to dispatch virtual slot",
+      "name": "15)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:54:33Z"
+}

@@ -36827,6 +36827,13 @@
     "summary": "Forwards its first argument to ext_0046F7D0 with a zero second argument and returns the first argument unchanged.",
     "lifted_path": "lifted/Properties/PropertyIteratorTypes/ConstStringType.cpp"
   },
+  "0x00681B50": {
+    "name": "Properties::PropertyIteratorTypes::PropertySourceType::vfunc_0",
+    "class": "Properties::PropertyIteratorTypes::PropertySourceType",
+    "signature": "uint32_t* fn_00681B50(uint32_t* out, void* const* src, uint32_t arg)",
+    "summary": "Forwards to virtual slot 15 of the source object when *src is non-null; otherwise fills out via ext_00671F30. Returns out.",
+    "lifted_path": "lifted/Properties/PropertyIteratorTypes/PropertySourceType.cpp"
+  },
   "0x00681C10": {
     "name": "Properties::PropertyIteratorTypes::PropertySourceType::vfunc_8",
     "class": "Properties::PropertyIteratorTypes::PropertySourceType",
