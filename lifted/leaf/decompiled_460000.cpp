@@ -1514,3 +1514,18 @@ void sub_0046F5E0(DWORD* dst, DWORD value) {
     dst[1] = global_addr;
 }
 } // namespace lift_0046F5E0
+
+// [0x0046F600] sub_0046F600 (30 bytes)
+namespace lift_0046F600 {
+// Known callee 0x0046F3A0: lazyInitStaticObject_0046F3A0 (Function-local static guard: constructs the global object at mem_00AD834C once (ctor ext_0067A670 with arg 0), then sets its first DWORD to 0x0093A9DC and returns its address.)
+// Called with one pushed stack argument (value 0), caller-cleaned.
+extern void* ext_0046F3A0(DWORD arg);
+
+// @name storeValueAndStaticObjectAddr
+// @summary Writes value into out[0] and the address of the lazily-initialized static object into out[1].
+void fn_0046F600(DWORD* out, DWORD value) {
+    void* obj = ext_0046F3A0(0);
+    out[0] = value;
+    out[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_0046F600

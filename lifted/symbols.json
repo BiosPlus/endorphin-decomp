@@ -7579,6 +7579,12 @@
     "summary": "Stores a value into dst[0] and the lazily initialized global's address into dst[1].",
     "lifted_path": "lifted/leaf/decompiled_460000.cpp"
   },
+  "0x0046F600": {
+    "name": "storeValueAndStaticObjectAddr",
+    "signature": "void fn_0046F600(DWORD* out, DWORD value)",
+    "summary": "Writes value into out[0] and the address of the lazily-initialized static object into out[1].",
+    "lifted_path": "lifted/leaf/decompiled_460000.cpp"
+  },
   "0x0046F640": {
     "name": "fillStaticPair_0046F640",
     "signature": "void fillStaticPair_0046F640(uint32_t* out, uint32_t value)",
