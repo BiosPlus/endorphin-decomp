@@ -476,6 +476,7 @@ struct Unknown_Fields {
     // +0x44  float                    field_0x44  (evidence: 0x0054E340, 0x0054E400, 0x006296D0, 0x0063D950, 0x0063D970, 0x0063DB50, 0x0063DDF0, 0x007D8590) // CONFLICT: multiple definitions at +0x44
     // +0x44  uint32_t                 field_0x44  (evidence: 0x007C8490, 0x007C97A0) // CONFLICT: multiple definitions at +0x44
     // +0x44  void*                    field_0x44  (evidence: 0x005D0AF0, 0x005DA150) // CONFLICT: multiple definitions at +0x44
+    // +0x44  void*                    imageListAddMaskedProc  (evidence: 0x00444360) // CONFLICT: multiple definitions at +0x44
     // +0x48  DWORD                    field_0x48  (evidence: 0x006ACFE0) // CONFLICT: multiple definitions at +0x48
     // +0x48  double                   field_0x48  (evidence: 0x00766240) // CONFLICT: multiple definitions at +0x48
     // +0x48  float                    field_0x48  (evidence: 0x006296D0, 0x0062E290, 0x0063D950, 0x0063D970, 0x0063DB50, 0x0063DDF0, 0x007D8590) // CONFLICT: multiple definitions at +0x48

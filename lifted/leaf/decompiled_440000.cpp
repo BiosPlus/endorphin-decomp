@@ -1805,3 +1805,24 @@ void fn_0044B6B0(void* self) {
     lift_vslot<VoidFn>(obj, 0x154)(obj);
 }
 } // namespace lift_0044B6B0
+
+// [0x00444360] sub_00444360 (42 bytes)
+namespace lift_00444360 {
+// Known callee 0x0041FD20: Unknown::GetOrLoadModule (Returns cached module handle at +0x4; otherwise resolves it by name via GetModuleHandleA, falling back to LoadLibraryA (sets +0x8 flag on load path).)
+extern HMODULE fn_0041FD20(void* self);
+extern void* ext_GetProcAddress(HMODULE module, LPCSTR name);
+extern uint8_t mem_009328A0[];
+
+// @name Unknown::GetImageListAddMaskedProc
+// @class Unknown
+// @summary Lazily resolves and caches the address of ImageList_AddMasked from the module returned by GetOrLoadModule; stores the cached pointer to *out.
+// @field Unknown +0x44 void* imageListAddMaskedProc
+void fn_00444360(void* self, void** out) {
+    void*& proc = lift_field<void*>(self, 0x44);
+    if (proc == nullptr) {
+        HMODULE module = fn_0041FD20(self);
+        proc = ext_GetProcAddress(module, reinterpret_cast<LPCSTR>(mem_009328A0));
+    }
+    *out = proc;
+}
+} // namespace lift_00444360

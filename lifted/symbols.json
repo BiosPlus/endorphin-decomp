@@ -3705,6 +3705,13 @@
     "summary": "Starting from the object at arg, follows the dword at offset 0 of each node (linked chain) until it reaches a node whose byte at +0xC1 is nonzero; returns the node preceding that node (or arg itself if the first node already matches).",
     "lifted_path": "lifted/leaf/tiny_440000.cpp"
   },
+  "0x00444360": {
+    "name": "Unknown::GetImageListAddMaskedProc",
+    "class": "Unknown",
+    "signature": "void fn_00444360(void* self, void** out)",
+    "summary": "Lazily resolves and caches the address of ImageList_AddMasked from the module returned by GetOrLoadModule; stores the cached pointer to *out.",
+    "lifted_path": "lifted/leaf/decompiled_440000.cpp"
+  },
   "0x00444470": {
     "name": "NodeView::vfunc_106",
     "class": "NodeView",
