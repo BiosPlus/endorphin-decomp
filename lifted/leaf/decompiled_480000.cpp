@@ -1569,3 +1569,26 @@ DWORD* initStaticOnce_00487F30() {
     return &mem_00AD9DF4;
 }
 } // namespace lift_00487F30
+
+// [0x00487ED0]
+namespace lift_00487ED0 {
+// @name EnsureStaticInit_00487ED0
+// @summary One-time guarded init of the global at mem_00AD9DEC; sets an init flag bit, calls ext_0067A670 on it, then stores vtable-like value 0x0093CE3C. Returns the address of the global.
+
+extern DWORD mem_00AD9DF0; // init-flag dword (bit 0 = initialized)
+extern DWORD mem_00AD9DEC; // guarded object storage
+
+// __thiscall: ECX = &mem_00AD9DEC, one stack argument (0)
+extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
+
+void* fn_00487ED0()
+{
+    if ((mem_00AD9DF0 & 1u) == 0)
+    {
+        mem_00AD9DF0 |= 1u;
+        ext_0067A670(&mem_00AD9DEC, 0u);
+        mem_00AD9DEC = 0x0093CE3Cu;
+    }
+    return &mem_00AD9DEC;
+}
+} // namespace lift_00487ED0

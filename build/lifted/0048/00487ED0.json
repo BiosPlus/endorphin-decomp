@@ -1,0 +1,13 @@
+{
+  "va": "0x00487ED0",
+  "size": 87,
+  "orig_symbol": "sub_00487ED0",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "EnsureStaticInit_00487ED0",
+  "signature": "void* fn_00487ED0()",
+  "summary": "One-time guarded init of the global at mem_00AD9DEC; sets an init flag bit, calls ext_0067A670 on it, then stores vtable-like value 0x0093CE3C. Returns the address of the global.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:27:43Z"
+}
