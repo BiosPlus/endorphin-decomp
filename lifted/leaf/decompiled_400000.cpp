@@ -1262,3 +1262,30 @@ extern uint32_t fn_0040E6C0(uint32_t first, uint32_t last, uint32_t dest) {
 }
 } // namespace lift_00406290
 } // namespace lift_0040E6C0
+
+// [0x00401C60]
+namespace lift_00401C60 {
+extern uint32_t mem_009251C8;
+extern uint32_t mem_00924FE0;
+extern uint8_t mem_00928EF0[];
+
+// @name std::logic_error::logic_error
+// @class std::logic_error
+// @summary Copy constructor for std::logic_error (or derived exception with std::string at +0xc).
+// @field std::logic_error +0x00 void* vftable
+// @field std::logic_error +0x0c std::string message
+void* __thiscall sub_00401C60(void* self, const void* other) {
+    uint8_t* s = static_cast<uint8_t*>(self);
+    const uint8_t* o = static_cast<const uint8_t*>(other);
+
+    using ExceptionCopyCtor = void*(__thiscall*)(void*, const void*);
+    reinterpret_cast<ExceptionCopyCtor>(mem_009251C8)(s, o);
+
+    *reinterpret_cast<uintptr_t*>(s) = reinterpret_cast<uintptr_t>(mem_00928EF0);
+
+    using StringCopyCtor = void*(__thiscall*)(void*, const void*);
+    reinterpret_cast<StringCopyCtor>(mem_00924FE0)(s + 0xc, o + 0xc);
+
+    return self;
+}
+} // namespace lift_00401C60

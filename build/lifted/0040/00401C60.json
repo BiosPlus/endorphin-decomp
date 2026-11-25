@@ -1,0 +1,28 @@
+{
+  "va": "0x00401C60",
+  "size": 89,
+  "orig_symbol": "sub_00401C60",
+  "src_path": "src/leaf/decompiled_400000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_400000.cpp",
+  "name": "std::logic_error::logic_error",
+  "class": "std::logic_error",
+  "signature": "void* __thiscall sub_00401C60(void* self, const void* other)",
+  "summary": "Copy constructor for std::logic_error (or derived exception with std::string at +0xc).",
+  "fields": [
+    {
+      "class": "std::logic_error",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vftable"
+    },
+    {
+      "class": "std::logic_error",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "message"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T02:19:34Z"
+}
