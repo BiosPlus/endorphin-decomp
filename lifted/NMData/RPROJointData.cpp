@@ -19,3 +19,20 @@ void fn_005EC2A0(void* self, int32_t kind, int32_t arg2) {
     }
     ext_005EB920(self, kind, arg2);
 }
+
+// [0x00584FD0] NMData::RPROJointData::vfunc_59 (35 bytes)
+namespace lift_00584FD0 {
+extern int mem_00A9F1E4; // .data slot holding a const char* (0x009866A0)
+extern int mem_00924FE4; // IAT slot: MSVCP80 basic_string(const char*, allocator) ctor
+
+// @name NMData::RPROJointData::vfunc_59
+// @class NMData::RPROJointData
+// @summary Constructs a std::string from the literal pointed to by mem_00A9F1E4 into the caller-supplied buffer and returns that buffer; the this pointer is unused.
+std::string* fn_00584FD0(std::string* out) {
+    // Original: call [0x00924FE4] = MSVCP80 basic_string(const char*, allocator) ctor, lowered to placement new.
+    static_cast<void>(&mem_00924FE4);
+    const char* lit = *reinterpret_cast<const char* const*>(&mem_00A9F1E4);
+    ::new (static_cast<void*>(out)) std::string(lit);
+    return out;
+}
+} // namespace lift_00584FD0

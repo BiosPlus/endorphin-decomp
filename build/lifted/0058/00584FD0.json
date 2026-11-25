@@ -1,0 +1,14 @@
+{
+  "va": "0x00584FD0",
+  "size": 35,
+  "orig_symbol": "NMData::RPROJointData::vfunc_59",
+  "src_path": "src/NMData/RPROJointData.cpp",
+  "lifted_path": "lifted/NMData/RPROJointData.cpp",
+  "name": "NMData::RPROJointData::vfunc_59",
+  "class": "NMData::RPROJointData",
+  "signature": "extern \"C\" int mem_00A9F1E4; // .data slot holding a const char* (0x009866A0) extern \"C\" int mem_00924FE4; // IAT slot: MSVCP80 basic_string(const char*, allocator) ctor std::string* fn_00584FD0(std::string* out)",
+  "summary": "Constructs a std::string from the literal pointed to by mem_00A9F1E4 into the caller-supplied buffer and returns that buffer; the this pointer is unused.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T12:51:31Z"
+}

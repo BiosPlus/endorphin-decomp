@@ -24878,6 +24878,13 @@
     "summary": "Constructs a std::string from the literal pointed to by mem_00A9F1E8 into the caller-supplied buffer and returns that buffer.",
     "lifted_path": "lifted/NMData/RPROMagnetData.cpp"
   },
+  "0x00584FD0": {
+    "name": "NMData::RPROJointData::vfunc_59",
+    "class": "NMData::RPROJointData",
+    "signature": "extern \"C\" int mem_00A9F1E4; // .data slot holding a const char* (0x009866A0) extern \"C\" int mem_00924FE4; // IAT slot: MSVCP80 basic_string(const char*, allocator) ctor std::string* fn_00584FD0(std::string* out)",
+    "summary": "Constructs a std::string from the literal pointed to by mem_00A9F1E4 into the caller-supplied buffer and returns that buffer; the this pointer is unused.",
+    "lifted_path": "lifted/NMData/RPROJointData.cpp"
+  },
   "0x00585000": {
     "name": "sub_00585000",
     "signature": "extern \"C\" void fn_00585000(void)",
