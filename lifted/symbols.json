@@ -16675,6 +16675,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0051EBB0 (StateMachine::State::vfunc_2).",
     "lifted_path": "lifted/classes/EvolveEngine.cpp"
   },
+  "0x005013F0": {
+    "name": "sub_005013F0",
+    "class": "Unknown",
+    "signature": "VectorIterator* __thiscall fn_005013F0(void* self, VectorIterator* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr)",
+    "summary": "Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x005014B0": {
     "name": "sub_005014B0",
     "signature": "void* fn_005014B0(void* arg)",
@@ -23094,6 +23101,13 @@
     "summary": "Writes the byte at *src into count consecutive bytes starting at dst (src is not advanced, so it is re-read each iteration); returns dst + count. stdcall, callee pops 12 bytes.",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
+  "0x00577DE0": {
+    "name": "sub_00577DE0",
+    "class": "Unknown",
+    "signature": "VectorIterator* __thiscall fn_00577DE0(void* self, VectorIterator* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr)",
+    "summary": "Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
   "0x00578020": {
     "name": "sub_00578020",
     "signature": "DWORD* __thiscall fn_00578020(void* self, const DWORD* first, const DWORD* last, DWORD* out)",
@@ -23122,6 +23136,13 @@
     "name": "sub_0057A730",
     "signature": "uint32_t fn_0057A730(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3)",
     "summary": "Auto-lifted identical-shape clone of 0x0051AF30 (ComputeStride20Address).",
+    "lifted_path": "lifted/leaf/decompiled_570000.cpp"
+  },
+  "0x0057A770": {
+    "name": "sub_0057A770",
+    "class": "Unknown",
+    "signature": "VectorIterator* __thiscall fn_0057A770(void* self, VectorIterator* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr)",
+    "summary": "Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).",
     "lifted_path": "lifted/leaf/decompiled_570000.cpp"
   },
   "0x0057A7D0": {
@@ -40941,6 +40962,13 @@
     "name": "sub_006813D0",
     "signature": "uint32_t __stdcall fn_006813D0(uint32_t dst, uint32_t count, uint32_t src)",
     "summary": "Auto-lifted identical-shape clone of 0x00481DE0 (fillStructArrayAndGetEnd).",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
+  "0x00681410": {
+    "name": "sub_00681410",
+    "class": "Unknown",
+    "signature": "VectorIterator* __thiscall fn_00681410(void* self, VectorIterator* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr)",
+    "summary": "Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).",
     "lifted_path": "lifted/leaf/decompiled_680000.cpp"
   },
   "0x006816F0": {

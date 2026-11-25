@@ -1217,3 +1217,75 @@ VectorIterator* __thiscall fn_0057E9E0(void* self, VectorIterator* out_iter, voi
     return out_iter;
 }
 } // namespace lift_0057E9E0
+
+// [0x00577DE0] sub_00577DE0 (89 bytes)
+namespace lift_00577DE0 {
+// @name sub_00577DE0
+// @summary Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).
+namespace lift_0057E9E0 {
+// @name Unknown::eraseStringVectorRange
+// @class Unknown
+// @summary Erases [first, last) from a 0x14-byte-record vector by shifting [last, end) over first, destroying the trailing elements, and returning the updated iterator.
+// @field Unknown +0x08 void* end
+
+void ext_005566D0(void* first, void* last);
+void* ext_005761E0(const void* first, const void* last, void* out);
+extern void (*mem_00925134)();
+
+struct VectorIterator {
+    void* container;
+    void* ptr;
+};
+
+VectorIterator* __thiscall fn_00577DE0(void* self, VectorIterator* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr) {
+    if (!first_container || first_container != last_container) {
+        mem_00925134();
+    }
+    if (first_ptr != last_ptr) {
+        void* end_ptr = *(void**)((char*)self + 0x08);
+        void* new_end = ext_005761E0(last_ptr, end_ptr, first_ptr);
+        ext_005566D0(new_end, end_ptr);
+        *(void**)((char*)self + 0x08) = new_end;
+    }
+    out_iter->container = first_container;
+    out_iter->ptr = first_ptr;
+    return out_iter;
+}
+} // namespace lift_0057E9E0
+} // namespace lift_00577DE0
+
+// [0x0057A770] sub_0057A770 (89 bytes)
+namespace lift_0057A770 {
+// @name sub_0057A770
+// @summary Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).
+namespace lift_0057E9E0 {
+// @name Unknown::eraseStringVectorRange
+// @class Unknown
+// @summary Erases [first, last) from a 0x14-byte-record vector by shifting [last, end) over first, destroying the trailing elements, and returning the updated iterator.
+// @field Unknown +0x08 void* end
+
+void ext_00559840(void* first, void* last);
+void* ext_00579F40(const void* first, const void* last, void* out);
+extern void (*mem_00925134)();
+
+struct VectorIterator {
+    void* container;
+    void* ptr;
+};
+
+VectorIterator* __thiscall fn_0057A770(void* self, VectorIterator* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr) {
+    if (!first_container || first_container != last_container) {
+        mem_00925134();
+    }
+    if (first_ptr != last_ptr) {
+        void* end_ptr = *(void**)((char*)self + 0x08);
+        void* new_end = ext_00579F40(last_ptr, end_ptr, first_ptr);
+        ext_00559840(new_end, end_ptr);
+        *(void**)((char*)self + 0x08) = new_end;
+    }
+    out_iter->container = first_container;
+    out_iter->ptr = first_ptr;
+    return out_iter;
+}
+} // namespace lift_0057E9E0
+} // namespace lift_0057A770

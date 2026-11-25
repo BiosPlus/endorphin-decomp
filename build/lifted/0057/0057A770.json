@@ -1,0 +1,22 @@
+{
+  "va": "0x0057A770",
+  "size": 89,
+  "orig_symbol": "sub_0057A770",
+  "src_path": "src/leaf/decompiled_570000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_570000.cpp",
+  "name": "sub_0057A770",
+  "class": "Unknown",
+  "signature": "VectorIterator* __thiscall fn_0057A770(void* self, VectorIterator* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr)",
+  "summary": "Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "end"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T02:23:59Z"
+}

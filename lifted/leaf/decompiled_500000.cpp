@@ -32,8 +32,10 @@ void* __thiscall fn_00508310(const void* self) {
 } // namespace lift_00508310
 #include <cstdint>
 #include <cstring>
+#include <istream>
+#include <bit>
 
-// [0x00504930] sub_00504930 (10 bytes)
+#include <bit>
 namespace lift_00504930 {
 // @name sub_00504930
 // @summary Auto-lifted identical-shape clone of 0x007AE0F0 (sub_007AE0F0).
@@ -1021,3 +1023,39 @@ void sub_0050FAA0(void** first, std::int32_t hole, std::int32_t top, void* value
     first[hole] = value;
 }
 } // namespace lift_0050FAA0
+
+// [0x005013F0] sub_005013F0 (89 bytes)
+namespace lift_005013F0 {
+// @name sub_005013F0
+// @summary Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).
+namespace lift_0057E9E0 {
+// @name Unknown::eraseStringVectorRange
+// @class Unknown
+// @summary Erases [first, last) from a 0x14-byte-record vector by shifting [last, end) over first, destroying the trailing elements, and returning the updated iterator.
+// @field Unknown +0x08 void* end
+
+void ext_0049ECB0(void* first, void* last);
+void* ext_005007F0(const void* first, const void* last, void* out);
+extern void (*mem_00925134)();
+
+struct VectorIterator {
+    void* container;
+    void* ptr;
+};
+
+VectorIterator* __thiscall fn_005013F0(void* self, VectorIterator* out_iter, void* first_container, void* first_ptr, void* last_container, void* last_ptr) {
+    if (!first_container || first_container != last_container) {
+        mem_00925134();
+    }
+    if (first_ptr != last_ptr) {
+        void* end_ptr = *(void**)((char*)self + 0x08);
+        void* new_end = ext_005007F0(last_ptr, end_ptr, first_ptr);
+        ext_0049ECB0(new_end, end_ptr);
+        *(void**)((char*)self + 0x08) = new_end;
+    }
+    out_iter->container = first_container;
+    out_iter->ptr = first_ptr;
+    return out_iter;
+}
+} // namespace lift_0057E9E0
+} // namespace lift_005013F0
