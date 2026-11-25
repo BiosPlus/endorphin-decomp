@@ -70291,6 +70291,12 @@
     "summary": "Returns the byte at offset +0x01 of the object pointed to by self.",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x0085F750": {
+    "name": "compare_tagged_payload",
+    "signature": "int32_t __cdecl sub_0085F750(const uint8_t* a, const uint8_t* b)",
+    "summary": "Compare two tagged byte buffers based on a leading 1-byte type tag (1, 4, or 8)",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x0085F7B0": {
     "name": "memcmp",
     "signature": "int32_t __cdecl sub_0085F7B0(const void* buf1, const void* buf2, uint32_t count)",
