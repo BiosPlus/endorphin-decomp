@@ -1,0 +1,93 @@
+{
+  "va": "0x00519100",
+  "size": 108,
+  "orig_symbol": "sub_00519100",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "InitStateWithDefaults_00519100",
+  "signature": "void* fn_00519100(void* self)",
+  "summary": "Runs the base state initializer, installs the 0x00950A9C vtable, zeroes the state dwords, sets doubles at +0x50 (0.05) and +0x58 (0.5), sets +0x40 to 1, and returns self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "DWORD",
+      "name": "vtable"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34",
+      "type": "DWORD",
+      "name": "field_0x34"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "DWORD",
+      "name": "field_0x38"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x3C",
+      "type": "DWORD",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x40",
+      "type": "DWORD",
+      "name": "field_0x40"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x44",
+      "type": "DWORD",
+      "name": "field_0x44"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x48",
+      "type": "DWORD",
+      "name": "field_0x48"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4C",
+      "type": "DWORD",
+      "name": "field_0x4C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "double",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x58",
+      "type": "double",
+      "name": "field_0x58"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x64",
+      "type": "DWORD",
+      "name": "field_0x64"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "DWORD",
+      "name": "field_0x68"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x6C",
+      "type": "DWORD",
+      "name": "field_0x6C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:01:39Z"
+}

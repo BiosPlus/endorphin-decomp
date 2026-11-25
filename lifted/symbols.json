@@ -19994,6 +19994,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).",
     "lifted_path": "lifted/leaf/decompiled_650000.cpp"
   },
+  "0x00519100": {
+    "name": "InitStateWithDefaults_00519100",
+    "signature": "void* fn_00519100(void* self)",
+    "summary": "Runs the base state initializer, installs the 0x00950A9C vtable, zeroes the state dwords, sets doubles at +0x50 (0.05) and +0x58 (0.5), sets +0x40 to 1, and returns self.",
+    "lifted_path": "lifted/leaf/decompiled_650000.cpp"
+  },
   "0x00519170": {
     "name": "SelectionMethodSteadyStateGrid::ResetAndRelease",
     "class": "SelectionMethodSteadyStateGrid",

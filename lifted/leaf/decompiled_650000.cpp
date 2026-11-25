@@ -1635,3 +1635,46 @@ void fn_00517510(void* self, void* arg) {
     ext_00678D70(self, 1);
 }
 } // namespace lift_00517510
+
+// [0x00519100] sub_00519100 (108 bytes)
+namespace lift_00519100 {
+// Known callee 0x0050F970: InitZeroedStateWithVTable (Sets the vtable pointer to 0x00950A74 and zeroes the double, dword, and byte state fields.)
+extern void ext_0050F970(void* self);
+extern const double mem_009520D8; // .rdata 0.05
+extern const double mem_00993828; // .rdata 0.5
+
+// @name InitStateWithDefaults_00519100
+// @summary Runs the base state initializer, installs the 0x00950A9C vtable, zeroes the state dwords, sets doubles at +0x50 (0.05) and +0x58 (0.5), sets +0x40 to 1, and returns self.
+// @field Unknown +0x00 DWORD vtable
+// @field Unknown +0x34 DWORD field_0x34
+// @field Unknown +0x38 DWORD field_0x38
+// @field Unknown +0x3C DWORD field_0x3C
+// @field Unknown +0x40 DWORD field_0x40
+// @field Unknown +0x44 DWORD field_0x44
+// @field Unknown +0x48 DWORD field_0x48
+// @field Unknown +0x4C DWORD field_0x4C
+// @field Unknown +0x50 double field_0x50
+// @field Unknown +0x58 double field_0x58
+// @field Unknown +0x64 DWORD field_0x64
+// @field Unknown +0x68 DWORD field_0x68
+// @field Unknown +0x6C DWORD field_0x6C
+void* fn_00519100(void* self) {
+    ext_0050F970(self);
+
+    lift_field<std::uint32_t>(self, 0x00) = 0x00950A9Cu;
+    lift_field<std::uint32_t>(self, 0x34) = 0u;
+    lift_field<std::uint32_t>(self, 0x38) = 0u;
+    lift_field<std::uint32_t>(self, 0x3C) = 0u;
+    lift_field<double>(self, 0x50) = mem_009520D8;
+    lift_field<double>(self, 0x58) = mem_00993828;
+    lift_field<std::uint32_t>(self, 0x44) = 0u;
+    lift_field<std::uint32_t>(self, 0x48) = 0u;
+    lift_field<std::uint32_t>(self, 0x4C) = 0u;
+    lift_field<std::uint32_t>(self, 0x40) = 1u;
+    lift_field<std::uint32_t>(self, 0x64) = 0u;
+    lift_field<std::uint32_t>(self, 0x68) = 0u;
+    lift_field<std::uint32_t>(self, 0x6C) = 0u;
+
+    return self;
+}
+} // namespace lift_00519100
