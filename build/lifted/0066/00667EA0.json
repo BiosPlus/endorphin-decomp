@@ -1,0 +1,22 @@
+{
+  "va": "0x00667EA0",
+  "size": 105,
+  "orig_symbol": "sub_00667EA0",
+  "src_path": "src/leaf/decompiled_660000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_660000.cpp",
+  "name": "StdMapString::find",
+  "class": "StdMapString",
+  "signature": "void* fn_00667EA0(void* self, void* out_iter, const void* key)",
+  "summary": "Finds a node by string key in a std::map-like tree, returning a checked iterator {self, node} or {self, header} if not found.",
+  "fields": [
+    {
+      "class": "StdMapString",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "header"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:07:59Z"
+}
