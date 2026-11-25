@@ -709,3 +709,28 @@ uint32_t fn_007BE010(uint8_t* self) {
     return 1;
 }
 } // namespace lift_007BE010
+
+// [0x007BF9C0]
+namespace lift_007BF9C0 {
+// @name testAndUpdateField1CC
+// @summary Calls vtable+0x10(self, a2, a3, a4); if non-zero, calls vtable+0x0C(self, a2, a3) and returns 1, else 0.
+// @field Obj +0x1CC uint32_t field_0x1CC
+
+
+extern uint32_t mem_read32(uint32_t addr);
+
+uint32_t sub_007BF9C0(uint32_t self, uint32_t a2, uint32_t a3, uint32_t a4) {
+    uint32_t vtbl = mem_read32(self + 0x1CC);
+    using fn_check_t = uint32_t (*)(uint32_t, uint32_t, uint32_t, uint32_t);
+    using fn_action_t = void (*)(uint32_t, uint32_t, uint32_t);
+
+    auto fn_check = reinterpret_cast<fn_check_t>(static_cast<uintptr_t>(mem_read32(vtbl + 0x10)));
+    if (fn_check(self, a2, a3, a4) == 0) {
+        return 0;
+    }
+
+    auto fn_action = reinterpret_cast<fn_action_t>(static_cast<uintptr_t>(mem_read32(vtbl + 0x0C)));
+    fn_action(self, a2, a3);
+    return 1;
+}
+} // namespace lift_007BF9C0

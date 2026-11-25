@@ -25,5 +25,6 @@ struct Obj_Fields {
     // +0x160 float                    field_0x160  (evidence: 0x007C5B70)
     // +0x164 float                    field_0x164  (evidence: 0x007C5B70)
     // +0x168 float                    field_0x168  (evidence: 0x007C5B70)
+    // +0x1CC uint32_t                 field_0x1CC  (evidence: 0x007BF9C0)
 };
 } // namespace lifted_layout
