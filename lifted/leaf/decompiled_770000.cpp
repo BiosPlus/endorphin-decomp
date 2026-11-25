@@ -266,3 +266,24 @@ uint32_t fn_0077F4E0(void* self) {
     return lift_field<uint32_t>(object, 0x04);
 }
 } // namespace lift_0077F4E0
+
+// [0x00771FC0] sub_00771FC0 (80 bytes)
+namespace lift_00771FC0 {
+extern const char mem_00AA870C[];
+
+// @name StrCopyAfterMarker
+// @summary If the string at *dst contains the marker mem_00AA870C, copies the text after the marker's first two bytes back over *dst (inclusive of terminator); always returns 1.
+extern uint8_t __stdcall fn_00771FC0(char** dst) {
+    char* found = std::strstr(*dst, mem_00AA870C);
+    if (found != nullptr) {
+        const char* src = found + 2;
+        char* out = *dst;
+        size_t n = std::strlen(src) + 1;
+        // Forward copy, matching the original rep movs semantics for overlapping buffers.
+        for (size_t i = 0; i < n; ++i) {
+            out[i] = src[i];
+        }
+    }
+    return 1;
+}
+} // namespace lift_00771FC0
