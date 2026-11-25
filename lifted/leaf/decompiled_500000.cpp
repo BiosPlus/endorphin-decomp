@@ -2349,3 +2349,51 @@ void fn_0050FE00(void** first, std::int32_t hole, std::int32_t len, void* value,
     ext_0050FAA0(first, hole, top, value);
 }
 } // namespace lift_0050FE00
+
+// [0x0050FD30] sub_0050FD30 (109 bytes)
+namespace lift_0050FD30 {
+// Known callee 0x0050FA40: heapPushSiftUp (Sifts an element up a min-heap array by comparing its double key at offset +0x20.)
+extern void ext_0050FA40(const uint8_t** arr, int32_t hole, int32_t top, const uint8_t* val);
+
+// @name heapAdjust
+// @summary Moves a hole down a min-heap along the smaller child path to a leaf, then sifts the value up from there.
+// @field Item +0x20 double key
+namespace {
+
+// Reads the double key stored at +0x20 of a heap element (unaligned-safe).
+inline double itemKey(const uint8_t* item) {
+    double key;
+    std::memcpy(&key, item + 0x20, sizeof(key));
+    return key;
+}
+
+} // namespace
+
+void fn_0050FD30(const uint8_t** arr, int32_t hole, int32_t top, const uint8_t* val, uint32_t extra) {
+    (void)extra; // 5th stack argument is pushed by the caller but never read by this routine.
+
+    const int32_t origHole = hole;
+    int32_t h = hole;
+    int32_t child = h + h + 2;
+
+    if (child < top) {
+        do {
+            // Pick the smaller of the two children; ties (and NaN) choose the right child.
+            if (itemKey(arr[child - 1]) < itemKey(arr[child])) {
+                --child;
+            }
+            arr[h] = arr[child];
+            h = child;
+            child = child + child + 2;
+        } while (child < top);
+    }
+
+    if (child == top) {
+        // Lone left child at index top-1 with no right sibling.
+        arr[h] = arr[top - 1];
+        h = top - 1;
+    }
+
+    ext_0050FA40(arr, h, origHole, val);
+}
+} // namespace lift_0050FD30

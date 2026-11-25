@@ -19342,6 +19342,12 @@
     "summary": "Lazily initializes a static bool-string object once and returns its address.",
     "lifted_path": "lifted/leaf/decompiled_500000.cpp"
   },
+  "0x0050FD30": {
+    "name": "heapAdjust",
+    "signature": "inline double itemKey(const uint8_t* item)",
+    "summary": "Moves a hole down a min-heap along the smaller child path to a leaf, then sifts the value up from there.",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x0050FDA0": {
     "name": "Sort3PtrsByKey20",
     "signature": "void fn_0050FDA0(void** a, void** b, void** c)",

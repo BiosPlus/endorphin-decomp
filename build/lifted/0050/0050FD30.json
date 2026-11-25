@@ -1,0 +1,21 @@
+{
+  "va": "0x0050FD30",
+  "size": 109,
+  "orig_symbol": "sub_0050FD30",
+  "src_path": "src/leaf/decompiled_500000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_500000.cpp",
+  "name": "heapAdjust",
+  "signature": "inline double itemKey(const uint8_t* item)",
+  "summary": "Moves a hole down a min-heap along the smaller child path to a leaf, then sifts the value up from there.",
+  "fields": [
+    {
+      "class": "Item",
+      "offset": "+0x20",
+      "type": "double",
+      "name": "key"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:59:37Z"
+}
