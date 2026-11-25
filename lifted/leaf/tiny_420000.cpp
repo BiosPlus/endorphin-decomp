@@ -254,3 +254,18 @@ int fn_0042EA50(void* self, void* arg) {
     return releaseDC(hWnd, hDC);
 }
 } // namespace lift_0042EA50
+
+// [0x004271F0] sub_004271F0 (23 bytes)
+namespace lift_004271F0 {
+extern uint32_t mem_00ACD9E0; // global const char* operand
+extern uint32_t mem_00924FC8; // IAT slot: MSVCP80 operator!=(const basic_string<char>&, const char*)
+
+// @name isStringNotEqualToGlobalName
+// @summary Returns whether the std::string argument differs from the global C string at mem_00ACD9E0.
+bool __stdcall fn_004271F0(const void* str) {
+    using string_ne_fn = bool(__cdecl*)(const void* lhs, const char* rhs);
+    auto string_ne = reinterpret_cast<string_ne_fn>(static_cast<uintptr_t>(mem_00924FC8));
+    const char* rhs = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00ACD9E0));
+    return string_ne(str, rhs);
+}
+} // namespace lift_004271F0

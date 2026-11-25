@@ -1,0 +1,13 @@
+{
+  "va": "0x004271F0",
+  "size": 23,
+  "orig_symbol": "sub_004271F0",
+  "src_path": "src/leaf/tiny_420000.cpp",
+  "lifted_path": "lifted/leaf/tiny_420000.cpp",
+  "name": "isStringNotEqualToGlobalName",
+  "signature": "extern \"C\" uint32_t mem_00924FC8; // IAT slot: MSVCP80 operator!=(const basic_string\u003cchar\u003e\u0026, const char*) bool __stdcall fn_004271F0(const void* str)",
+  "summary": "Returns whether the std::string argument differs from the global C string at mem_00ACD9E0.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:22:44Z"
+}

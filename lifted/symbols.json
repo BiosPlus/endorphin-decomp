@@ -2305,6 +2305,12 @@
     "summary": "Calls the MSVCP80 std::string(const char*) constructor in place on self with the literal \"\" (mem_00928B5D) via the IAT slot mem_00924FE4, then returns self.",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
   },
+  "0x004271F0": {
+    "name": "isStringNotEqualToGlobalName",
+    "signature": "extern \"C\" uint32_t mem_00924FC8; // IAT slot: MSVCP80 operator!=(const basic_string\u003cchar\u003e\u0026, const char*) bool __stdcall fn_004271F0(const void* str)",
+    "summary": "Returns whether the std::string argument differs from the global C string at mem_00ACD9E0.",
+    "lifted_path": "lifted/leaf/tiny_420000.cpp"
+  },
   "0x00427210": {
     "name": "findMatchingString",
     "signature": "uint32_t __stdcall sub_00427210(uint32_t str_ptr)",
