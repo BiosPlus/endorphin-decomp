@@ -23421,6 +23421,13 @@
     "summary": "Thunk for the ToolClient sub-object (this+0x98 of PoseTool): forwards arg0 to vtable slot 45 of the object at PoseTool+0x88, then calls vtable slot 33 on the owning PoseTool.",
     "lifted_path": "lifted/classes/PoseTool.cpp"
   },
+  "0x005454D0": {
+    "name": "PoseTool::vfunc_5",
+    "class": "PoseTool",
+    "signature": "static inline void vcall0(void* obj, size_t slot)",
+    "summary": "Sets the active pose slot (flag 1 or 0), re-points the slot-A pointer to the matching embedded object, notifies the sub-object at +0x88, then fires the virtual hook at vtable slot 32 on self.",
+    "lifted_path": "lifted/classes/PoseTool.cpp"
+  },
   "0x005455F0": {
     "name": "PoseTool::vfunc_28",
     "class": "PoseTool",

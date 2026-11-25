@@ -262,3 +262,50 @@ uint32_t __thiscall fn_005451E0(void* self) {
     return reinterpret_cast<VFuncRet>(objVtbl[0x68 / sizeof(void*)])(obj);
 }
 } // namespace lift_005451E0
+
+// [0x005454D0] sub_005454D0 (109 bytes)
+namespace lift_005454D0 {
+// @name PoseTool::vfunc_5
+// @class PoseTool
+// @summary Sets the active pose slot (flag 1 or 0), re-points the slot-A pointer to the matching embedded object, notifies the sub-object at +0x88, then fires the virtual hook at vtable slot 32 on self.
+// @field PoseTool +0x88 void* field_0x88
+// @field PoseTool +0x9C uint32_t field_0x9c
+// @field PoseTool +0xA0 void* field_0xA0
+
+// Portable virtual-slot dispatch. Slot numbers are byte offsets / 4.
+static inline void vcall0(void* obj, size_t slot) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    reinterpret_cast<void (*)(void*)>(vtbl[slot])(obj);
+}
+
+static inline void vcall1(void* obj, size_t slot, uint32_t arg) {
+    void** vtbl = *reinterpret_cast<void***>(obj);
+    reinterpret_cast<void (*)(void*, uint32_t)>(vtbl[slot])(obj, arg);
+}
+
+// Original: thiscall with one stack argument (ret 4). `self` is ECX.
+void fn_005454D0(void* self, uint32_t arg) {
+    // Early out when the requested state is already active.
+    if (arg == lift_field<uint32_t>(self, 0x9C)) {
+        return;
+    }
+
+    // Tear down the current slot-A object (vtable slot 0x60 / 4 = 24).
+    vcall0(lift_field<void*>(self, 0xA0), 0x60 / 4);
+
+    if (arg == 1) {
+        // Slot A -> embedded object at +0x16C; state = 1.
+        lift_field<void*>(self, 0xA0) = static_cast<uint8_t*>(self) + 0x16C;
+        lift_field<uint32_t>(self, 0x9C) = arg;
+        vcall1(lift_field<void*>(self, 0x88), 0x0C / 4, arg);
+    } else {
+        // Slot A -> embedded object at +0xA4; state = 0.
+        lift_field<void*>(self, 0xA0) = static_cast<uint8_t*>(self) + 0xA4;
+        lift_field<uint32_t>(self, 0x9C) = 0;
+        vcall1(lift_field<void*>(self, 0x88), 0x0C / 4, 0);
+    }
+
+    // Final hook: virtual slot 0x80 / 4 = 32 on self.
+    vcall0(self, 0x80 / 4);
+}
+} // namespace lift_005454D0
