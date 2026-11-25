@@ -1468,6 +1468,13 @@
     "summary": "Initializes a 2D bounding box from four floats and normalizes min/max X and Y",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x00414E00": {
+    "name": "TreeRange::releaseChainUntil_00414E00",
+    "class": "TreeRange",
+    "signature": "static void invalid_parameter()",
+    "summary": "Walks tree iterator a1 toward a3, releasing each a2 node's +0x28 chain via fn_004153A0 and MFC80 ord_764, and returns once a2 equals a4.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00414EC0": {
     "name": "sub_00414EC0",
     "signature": "uint32_t __thiscall sub_00414EC0( uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5)",

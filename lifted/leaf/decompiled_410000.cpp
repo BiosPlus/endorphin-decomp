@@ -2049,3 +2049,55 @@ void fn_00419F50(void* self) {
 }
 } // namespace lift_005E0B20
 } // namespace lift_00419F50
+
+// [0x00414E00] sub_00414E00 (94 bytes)
+namespace lift_00414E00 {
+// Known callee 0x004153A0: sub_004153A0 (Pure jump thunk forwarding to sub_00415300.)
+extern void ext_004153A0(void* node);
+// Known callee 0x00673C20: advanceTreeIterator (Advances a red-black tree iterator to its in-order successor: goes to the leftmost node of the right subtree if one exists, otherwise climbs parents while the current node is a right child; reports an invalid parameter when the iterator is null or already at the end.)
+extern void ext_00673C20(void** iter);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(void* node);
+// IAT slot holding the MSVCR80 invalid-parameter handler (called through when a check fails).
+extern void* mem_00925134;
+
+static void invalid_parameter() {
+    reinterpret_cast<void (*)()>(mem_00925134)();
+}
+
+// @name TreeRange::releaseChainUntil_00414E00
+// @class TreeRange
+// @summary Walks tree iterator a1 toward a3, releasing each a2 node's +0x28 chain via fn_004153A0 and MFC80 ord_764, and returns once a2 equals a4.
+// @field TreeNode +0x04 void* field_0x04
+// @field TreeNode +0x28 void* field_0x28
+void fn_00414E00(void* a1, void* a2, void* a3, void* a4) {
+    for (;;) {
+        void* esi = a1;
+        if (esi == nullptr || esi != a3) {
+            invalid_parameter();
+        }
+
+        void* edi = a2;
+        if (edi == a4) {
+            return;
+        }
+
+        ext_00673C20(&a1);
+
+        if (esi == nullptr) {
+            invalid_parameter();
+        }
+        if (edi == lift_field<void*>(esi, 0x04)) {
+            invalid_parameter();
+        }
+
+        edi = lift_field<void*>(edi, 0x28);
+        if (edi == nullptr) {
+            continue;
+        }
+
+        ext_004153A0(edi);
+        ext_006A5C5C(edi);
+    }
+}
+} // namespace lift_00414E00
