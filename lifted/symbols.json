@@ -49690,6 +49690,12 @@
     "summary": "Sets the vtable word, initializes an embedded 20-byte sub-object at +0x04 with count 0x10 and value 4, and links its tail pointer at +0x18 to +0x14.",
     "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
   },
+  "0x006E7340": {
+    "name": "sub_006E7340",
+    "signature": "extern \"C\" void __fastcall fn_006E7340(void* self, void* /*edx*/, void* arg1)",
+    "summary": "Iterates over items in arg1, calling vtable+0x10 on self and vtable+0x8 per item.",
+    "lifted_path": "lifted/leaf/decompiled_6E0000.cpp"
+  },
   "0x006E7390": {
     "name": "sub_006E7390",
     "signature": "void* fn_006E7390(void* self, uint32_t arg1)",
