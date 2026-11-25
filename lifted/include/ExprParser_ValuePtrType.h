@@ -56,6 +56,7 @@ struct ExprParser_ValuePtrType_Fields {
     // +0x4   uint32_t                 field_0x4  (evidence: 0x005C6250, 0x0068C190, 0x0068C1E0, 0x0068C230) // CONFLICT: multiple definitions at +0x4
     // +0x4   void* owner (object whose vtable is used for get/set)  (evidence: 0x005B7BC0, 0x00649B70, 0x00649C20, 0x0064EC00) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t field_0x04 (source object pointer; its vtable slot +0x0c is the getter)  (evidence: 0x004886F0, 0x004A2630, 0x004A2AD0, 0x004CB250, 0x00633240) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    inner  (evidence: 0x00603480) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    m_object  (evidence: 0x005B7BC0, 0x0064EF60) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    owner  (evidence: 0x005B7BC0, 0x00649570, 0x0064EC00, 0x0064F0C0, 0x00651070) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    reader  (evidence: 0x005B7BC0, 0x005F3600, 0x00605360, 0x00649150, 0x006492B0, 0x0064EC00) // CONFLICT: multiple definitions at +0x4

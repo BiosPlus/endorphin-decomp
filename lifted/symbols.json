@@ -35769,6 +35769,13 @@
     "summary": "Evaluates a bool from a2's sub-object via vtable slot 3, then dispatches to vtable slot 6 (true) or slot 7 (false) on the target's sub-object at +0x04.",
     "lifted_path": "lifted/templates/WriteMethodType.cpp"
   },
+  "0x00603480": {
+    "name": "ExprParser::WriteMethodType\u003cEffectorBase,bool,setEnabled\u003e::vfunc_48",
+    "class": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026public: void __thiscall EffectorBase::setEnabled(bool)\u003e",
+    "signature": "Pair* __stdcall fn_00603480(Pair* out, void** target, char* src)",
+    "summary": "Reads a bool from the source value, invokes the target's enable/disable virtual, and returns a (result, source-\u003e+4) pair.",
+    "lifted_path": "lifted/templates/WriteMethodType.cpp"
+  },
   "0x00603500": {
     "name": "ExprParser::WriteMethodType\u003cEffector, float, \u0026public: void __thiscall Effector::setDesiredVelocity(float)\u003e::vfunc_41",
     "class": "ExprParser::WriteMethodType\u003cEffector, float, \u0026public: void __thiscall Effector::setDesiredVelocity(float)\u003e",

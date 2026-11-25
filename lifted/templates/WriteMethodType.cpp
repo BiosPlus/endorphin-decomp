@@ -7162,3 +7162,42 @@ extern void* __stdcall fn_005F35D0(void* self, void* arg) {
     return ext_0064F8E0(target, value, arg);
 }
 } // namespace lift_005F35D0
+
+// [0x00603480]
+namespace lift_00603480 {
+extern void ext_0067A670();
+extern int mem_00AD9E48;
+extern int mem_00AD9E44;
+
+struct Pair { void* first; void* second; };
+typedef bool (__thiscall *BoolFn)(void* self, void* arg);
+typedef void (__thiscall *VoidFn)(void* self);
+typedef void** (__thiscall *OutFn)(void* self, void** out, void* arg);
+
+// @name ExprParser::WriteMethodType<EffectorBase,bool,setEnabled>::vfunc_48
+// @class ExprParser::WriteMethodType<EffectorBase, bool, &public: void __thiscall EffectorBase::setEnabled(bool)>
+// @summary Reads a bool from the source value, invokes the target's enable/disable virtual, and returns a (result, source->+4) pair.
+// @field ExprParser::ValuePtrType +0x04 void* inner
+Pair* __stdcall fn_00603480(Pair* out, void** target, char* src) {
+    // Template-shared references (not executed in this function's own path).
+    static void* const kRefs[] = { (void*)&ext_0067A670, (void*)&mem_00AD9E48, (void*)&mem_00AD9E44 };
+    (void)kRefs;
+    void* inner = *(void**)(src + 4);
+    void** vt = *(void***)inner;
+    void* local = nullptr;
+    bool b = ((BoolFn)vt[3])(inner, src);
+    void* obj = *(void**)((char*)*target + 4);
+    void** ovt = *(void***)obj;
+    ((VoidFn)(b ? ovt[6] : ovt[7]))(obj);
+    void* second = *(void**)(src + 4);
+    if (second) {
+        void** ivt = *(void***)second;
+        void** r = ((OutFn)ivt[0x1c])(second, &local, src);
+        out->first = *r;
+    } else {
+        out->first = nullptr;
+    }
+    out->second = *(void**)(src + 4);
+    return out;
+}
+} // namespace lift_00603480

@@ -1,0 +1,22 @@
+{
+  "va": "0x00603480",
+  "size": 121,
+  "orig_symbol": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026public: void __thiscall EffectorBase::setEnabled(bool)\u003e::vfunc_48",
+  "src_path": "src/templates/WriteMethodType.cpp",
+  "lifted_path": "lifted/templates/WriteMethodType.cpp",
+  "name": "ExprParser::WriteMethodType\u003cEffectorBase,bool,setEnabled\u003e::vfunc_48",
+  "class": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026public: void __thiscall EffectorBase::setEnabled(bool)\u003e",
+  "signature": "Pair* __stdcall fn_00603480(Pair* out, void** target, char* src)",
+  "summary": "Reads a bool from the source value, invokes the target's enable/disable virtual, and returns a (result, source-\u003e+4) pair.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "inner"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@medium",
+  "lifted_at": "2026-11-25T13:34:51Z"
+}
