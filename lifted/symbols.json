@@ -14551,6 +14551,13 @@
     "summary": "Virtual dispatcher: loads this-\u003evtable[7] (offset 0x1C) and calls it with this, then pops the one stack argument.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x004CF320": {
+    "name": "NMData::IncarnationEventData::vfunc_89",
+    "class": "NMData::IncarnationEventData",
+    "signature": "void fn_004CF320(void* self)",
+    "summary": "Clears field_0x188 and, if field_0x17c is non-zero, calls ext_004CEAC0 on field_0x184 with self.",
+    "lifted_path": "lifted/NMData/IncarnationEventData.cpp"
+  },
   "0x004CF340": {
     "name": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, std::string const\u0026, getPhysicsLevel\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, std::string const\u0026, getPhysicsLevel\u003e",
