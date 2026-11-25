@@ -1637,3 +1637,27 @@ int32_t sub_007C8C90(void* self, int32_t* cursor, int32_t* out) {
     return 0;
 }
 } // namespace lift_007C8C90
+
+// [0x007CA830]
+namespace lift_007CA830 {
+// @name sub_007CA830
+// @class (none)
+// @summary Stores half of a, x, y into out[+0x10..+0x18] and writes half the Euclidean length of (a,x,y) to out[+0x1c].
+// @field (none) +0x10 float field_0x10
+// @field (none) +0x14 float field_0x14
+// @field (none) +0x18 float field_0x18
+// @field (none) +0x1c float field_0x1c
+extern void fn_007CA830(unsigned char* out, float a, float x, float y)
+{
+    const float h  = a * 0.5f;
+    const float hx = x * 0.5f;
+    const float hy = y * 0.5f;
+
+    *reinterpret_cast<float*>(out + 0x10) = h;
+    *reinterpret_cast<float*>(out + 0x14) = hx;
+    *reinterpret_cast<float*>(out + 0x18) = hy;
+
+    const float sumSq = (h * h + hx * hx) + hy * hy;
+    *reinterpret_cast<float*>(out + 0x1c) = std::sqrt(sumSq);
+}
+} // namespace lift_007CA830

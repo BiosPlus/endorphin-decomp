@@ -1,0 +1,40 @@
+{
+  "va": "0x007CA830",
+  "size": 108,
+  "orig_symbol": "sub_007CA830",
+  "src_path": "src/leaf/decompiled_7C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7C0000.cpp",
+  "name": "sub_007CA830",
+  "class": "(none)",
+  "signature": "extern \"C\" void fn_007CA830(unsigned char* out, float a, float x, float y)",
+  "summary": "Stores half of a, x, y into out[+0x10..+0x18] and writes half the Euclidean length of (a,x,y) to out[+0x1c].",
+  "fields": [
+    {
+      "class": "(none)",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "(none)",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "(none)",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    },
+    {
+      "class": "(none)",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:57:39Z"
+}

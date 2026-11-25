@@ -68420,6 +68420,13 @@
     "summary": "Pure jump thunk forwarding to sub_007CC930.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x007CA830": {
+    "name": "sub_007CA830",
+    "class": "(none)",
+    "signature": "extern \"C\" void fn_007CA830(unsigned char* out, float a, float x, float y)",
+    "summary": "Stores half of a, x, y into out[+0x10..+0x18] and writes half the Euclidean length of (a,x,y) to out[+0x1c].",
+    "lifted_path": "lifted/leaf/decompiled_7C0000.cpp"
+  },
   "0x007CA8A0": {
     "name": "getDoubledVec3",
     "signature": "void __cdecl sub_007CA8A0(const void* self, float* outX, float* outY, float* outZ)",
