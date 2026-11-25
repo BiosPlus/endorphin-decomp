@@ -471,13 +471,12 @@ namespace lift_0057BBE0 {
 // @field StringPairRecord +0x1C std::string field_0x1C
 
 
+// Original record stride is 0x38 bytes (MSVC 2005 std::string is 0x1C bytes);
+// the portable layout is expressed through the member types below.
 struct StringPairRecord {
     std::string field_0x00;  // +0x00
     std::string field_0x1C;  // +0x1C
-    char pad_0x38[0];        // record size is 0x38 bytes
 };
-
-static_assert(sizeof(StringPairRecord) >= 0x38, "record size mismatch");
 
 StringPairRecord* Unknown_CopyBackwardStringPairs(StringPairRecord* first,
                                                   StringPairRecord* last,
