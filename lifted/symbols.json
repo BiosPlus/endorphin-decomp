@@ -46518,6 +46518,12 @@
     "summary": "Resolves an object via ext_006FDF70(0); if non-null and ext_006BC380 returns non-null, returns the dword the getter points to, else 0.",
     "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
   },
+  "0x006D86F0": {
+    "name": "GetChainedValueIfInRange1To2",
+    "signature": "inline void* handle_to_ptr(int32_t value)",
+    "summary": "Resolves a handle via ext_006FDF70(0) and fn_006FC930; if the resolved pointer is non-null and the int32 it points to is in [1, 2], returns that value, else 0.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D89C0": {
     "name": "sub_006D89C0",
     "signature": "extern \"C\" void* __fastcall fn_006D89C0(void* self)",

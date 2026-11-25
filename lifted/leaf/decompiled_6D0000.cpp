@@ -976,3 +976,40 @@ extern int32_t fn_006D8680(void* self) {
     return GetValueIfTypeOneOrTwo(self);
 }
 } // namespace lift_006D8680
+
+// [0x006D86F0] sub_006D86F0 (64 bytes)
+namespace lift_006D86F0 {
+// Stack-argument call (one int32 pushed, callee pops); returns an int32 handle.
+extern int32_t __stdcall ext_006FDF70(int32_t arg);
+// Known callee 0x006FC930: sub_006FC930 (Getter returning int32_t field at offset +0x14.)
+extern int32_t __fastcall fn_006FC930(void* self);
+
+namespace {
+inline void* handle_to_ptr(int32_t value) {
+    return reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(value)));
+}
+} // namespace
+
+// @name GetChainedValueIfInRange1To2
+// @summary Resolves a handle via ext_006FDF70(0) and fn_006FC930; if the resolved pointer is non-null and the int32 it points to is in [1, 2], returns that value, else 0.
+// @field Unknown +0x00 int32_t field_0x00
+int32_t fn_006D86F0() {
+    const int32_t handle = ext_006FDF70(0);
+    if (handle == 0) {
+        return 0;
+    }
+
+    const int32_t ptrValue = fn_006FC930(handle_to_ptr(handle));
+    if (ptrValue == 0) {
+        return 0;
+    }
+
+    const int32_t value = lift_field<int32_t>(handle_to_ptr(ptrValue), 0);
+    if (value <= 0 || value > 2) {
+        return 0;
+    }
+
+    const int32_t result = fn_006FC930(handle_to_ptr(handle));
+    return lift_field<int32_t>(handle_to_ptr(result), 0);
+}
+} // namespace lift_006D86F0
