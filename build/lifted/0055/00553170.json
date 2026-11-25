@@ -1,0 +1,22 @@
+{
+  "va": "0x00553170",
+  "size": 63,
+  "orig_symbol": "sub_00553170",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "AngleScaler::ScaleByUnitMode",
+  "class": "AngleScaler",
+  "signature": "extern \"C\" const double mem_00957598; // 0.017453292519943295 (pi / 180) extern \"C\" const double mem_009576E8; // 3.1415927410125732 (pi, float-rounded) float fn_00553170(void* self, float value)",
+  "summary": "Scales a float angle by a unit-mode selector: 0 = degrees to radians, 2 = turns to radians (2*pi), otherwise identity.",
+  "fields": [
+    {
+      "class": "AngleScaler",
+      "offset": "+0x28",
+      "type": "int32_t",
+      "name": "unitMode"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:02:07Z"
+}

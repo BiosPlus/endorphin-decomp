@@ -428,3 +428,27 @@ void fn_00552860(void* self, int32_t index) {
     *reinterpret_cast<int32_t*>(base + 0x10) = index;
 }
 } // namespace lift_00552860
+
+// [0x00553170] sub_00553170 (63 bytes)
+namespace lift_00553170 {
+// .rdata constants
+extern const double mem_00957598; // 0.017453292519943295 (pi / 180)
+extern const double mem_009576E8; // 3.1415927410125732 (pi, float-rounded)
+
+// @name AngleScaler::ScaleByUnitMode
+// @class AngleScaler
+// @summary Scales a float angle by a unit-mode selector: 0 = degrees to radians, 2 = turns to radians (2*pi), otherwise identity.
+// @field AngleScaler +0x28 int32_t unitMode
+float fn_00553170(void* self, float value) {
+    const int32_t unitMode = lift_field<int32_t>(self, 0x28);
+    if (unitMode == 0) {
+        // Degrees -> radians; intermediate is stored as float before returning.
+        return static_cast<float>(static_cast<double>(value) * mem_00957598);
+    }
+    if (unitMode == 2) {
+        // value * pi, then doubled (fadd st0, st0) => value * 2 * pi.
+        return static_cast<float>(static_cast<double>(value) * mem_009576E8 * 2.0);
+    }
+    return value;
+}
+} // namespace lift_00553170

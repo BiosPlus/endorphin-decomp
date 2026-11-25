@@ -19842,6 +19842,13 @@
     "summary": "Stores constant vtable-like word at +0x00 of self, calls fn_005528D0(self), returns self.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00553170": {
+    "name": "AngleScaler::ScaleByUnitMode",
+    "class": "AngleScaler",
+    "signature": "extern \"C\" const double mem_00957598; // 0.017453292519943295 (pi / 180) extern \"C\" const double mem_009576E8; // 3.1415927410125732 (pi, float-rounded) float fn_00553170(void* self, float value)",
+    "summary": "Scales a float angle by a unit-mode selector: 0 = degrees to radians, 2 = turns to radians (2*pi), otherwise identity.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x00553720": {
     "name": "NMFileIO::vfunc_3",
     "class": "NMFileIO",
