@@ -1129,3 +1129,24 @@ uint32_t fn_0079EB80(uint32_t arg) {
     return ext_0079EAC0(arg) != 0 ? 1u : 0u;
 }
 } // namespace lift_0079EB80
+
+// [0x0079EA90] sub_0079EA90 (48 bytes)
+namespace lift_0079EA90 {
+extern uint8_t mem_00B61150;   // global entry count (byte)
+extern uint32_t mem_00B6114C;  // global table base pointer (value used as address)
+
+// @name getGlobalTableEntry
+// @summary Returns the global table entry at the low byte of the argument via sub_0079EBB0; if the low byte exceeds the global count, returns the argument unchanged.
+extern uint32_t ext_0079EBB0(uint32_t value);
+
+uint32_t fn_0079EA90(uint32_t arg) {
+    uint32_t eax = arg;
+    if (static_cast<uint8_t>(eax) > mem_00B61150) {
+        return eax;
+    }
+    uint32_t index = eax & 0xFFu;
+    const uint32_t* table = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00B6114C));
+    uint32_t entry = table[index];
+    return ext_0079EBB0(entry);
+}
+} // namespace lift_0079EA90

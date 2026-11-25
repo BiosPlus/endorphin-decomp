@@ -69285,6 +69285,12 @@
     "summary": "If the object's slot in the table (indexed by its byte at +0x0C) points to it, clear the slot and set the object's +0x0C byte to the sentinel from mem_009977EC.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079EA90": {
+    "name": "getGlobalTableEntry",
+    "signature": "uint32_t fn_0079EA90(uint32_t arg)",
+    "summary": "Returns the global table entry at the low byte of the argument via sub_0079EBB0; if the low byte exceeds the global count, returns the argument unchanged.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079EAC0": {
     "name": "getGlobalTableEntryOrZero",
     "signature": "extern \"C\" uint8_t mem_00B61150;   // global entry count (byte) extern \"C\" uint32_t mem_00B6114C;  // global table base pointer (value used as address) uint32_t fn_0079EAC0(uint32_t index)",
