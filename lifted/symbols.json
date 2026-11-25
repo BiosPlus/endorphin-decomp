@@ -13262,6 +13262,12 @@
     "summary": "Loads the float referenced by the source's first pointer, forwards it to ext_0046C390 with self, and returns self.",
     "lifted_path": "lifted/templates/PrimitiveProxyType.cpp"
   },
+  "0x004B72D0": {
+    "name": "sub_004B72D0",
+    "signature": "extern uint32_t __thiscall fn_004B72D0(void* self)",
+    "summary": "Auto-lifted identical-shape clone of 0x005C3FB0 (sub_005CF3E0).",
+    "lifted_path": "lifted/leaf/decompiled_4B0000.cpp"
+  },
   "0x004B7340": {
     "name": "Unknown::copyStringFromTable",
     "class": "Unknown",
