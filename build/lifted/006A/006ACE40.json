@@ -1,0 +1,22 @@
+{
+  "va": "0x006ACE40",
+  "size": 67,
+  "orig_symbol": "sub_006ACE40",
+  "src_path": "src/leaf/decompiled_6A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6A0000.cpp",
+  "name": "Unknown::copyRecordRebased",
+  "class": "Unknown",
+  "signature": "extern \"C\" uint32_t ext_00626440(void* ecx, void* eax); // TransformRefNode::vfunc_6_off_4 extern \"C\" uint32_t ext_006A7C40(void* ecx);            // sub_006A7C40 void* fn_006ACE40(void* self, void* out, void* in)",
+  "summary": "Copies a 16-byte record from arg into out, rebases field 0 by (node query + 1) and sets field 2 to node query + rebased field 0; returns out.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x14",
+      "type": "void*",
+      "name": "field_0x14"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:18:00Z"
+}

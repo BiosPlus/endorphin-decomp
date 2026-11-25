@@ -317,3 +317,32 @@ int fn_006A9360(void* self, void* other, void* unused) {
     return 0;
 }
 } // namespace lift_006A9360
+
+// [0x006ACE40] sub_006ACE40 (67 bytes)
+namespace lift_006ACE40 {
+extern uint32_t ext_00626440(void* ecx, void* eax); // TransformRefNode::vfunc_6_off_4
+extern uint32_t ext_006A7C40(void* ecx);            // sub_006A7C40
+
+// @name Unknown::copyRecordRebased
+// @class Unknown
+// @summary Copies a 16-byte record from arg into out, rebases field 0 by (node query + 1) and sets field 2 to node query + rebased field 0; returns out.
+// @field Unknown +0x14 void* field_0x14
+void* fn_006ACE40(void* self, void* out, void* in) {
+    uint8_t* o = reinterpret_cast<uint8_t*>(out);
+
+    *reinterpret_cast<uint32_t*>(o + 0x0) = lift_field<uint32_t>(in, 0x0);
+    *reinterpret_cast<uint32_t*>(o + 0x4) = lift_field<uint32_t>(in, 0x4);
+    *reinterpret_cast<uint32_t*>(o + 0x8) = lift_field<uint32_t>(in, 0x8);
+    *reinterpret_cast<uint32_t*>(o + 0xC) = lift_field<uint32_t>(in, 0xC);
+
+    void* node = lift_field<void*>(self, 0x14);
+    uint32_t r = ext_00626440(node, in);
+
+    *reinterpret_cast<uint32_t*>(o + 0x0) += r + 1;
+
+    uint32_t s = ext_006A7C40(node);
+    *reinterpret_cast<uint32_t*>(o + 0x8) = s + *reinterpret_cast<uint32_t*>(o + 0x0);
+
+    return out;
+}
+} // namespace lift_006ACE40

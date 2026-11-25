@@ -44066,6 +44066,13 @@
     "summary": "Returns address of global mem_0099101C.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x006ACE40": {
+    "name": "Unknown::copyRecordRebased",
+    "class": "Unknown",
+    "signature": "extern \"C\" uint32_t ext_00626440(void* ecx, void* eax); // TransformRefNode::vfunc_6_off_4 extern \"C\" uint32_t ext_006A7C40(void* ecx);            // sub_006A7C40 void* fn_006ACE40(void* self, void* out, void* in)",
+    "summary": "Copies a 16-byte record from arg into out, rebases field 0 by (node query + 1) and sets field 2 to node query + rebased field 0; returns out.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006ACEE0": {
     "name": "Unknown::setFlagAndForwardByte",
     "class": "Unknown",
