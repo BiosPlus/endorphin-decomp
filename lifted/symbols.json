@@ -11613,6 +11613,12 @@
     "summary": "Returns true if the 2D point pt[0..1] lies inside the box (e0,e4)-(e8,ec) stored in this.",
     "lifted_path": "lifted/NMData/State.cpp"
   },
+  "0x0049B170": {
+    "name": "descriptiveName: compareLocalStringToTwoLiterals",
+    "signature": "bool fn_0049B170()",
+    "summary": "Builds a local std::string, returns true if it equals either of two .rdata string literals.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x0049B1E0": {
     "name": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_0",
     "class": "ExprParser::PrimitiveProxyType\u003cbool\u003e",

@@ -1440,3 +1440,19 @@ bool fn_00490640(void* self, uint32_t count) {
     return true;
 }
 } // namespace lift_00490640
+
+// [0x0049B170] sub_0049B170 (112 bytes)
+namespace lift_0049B170 {
+extern const char mem_0092F10C[];
+extern const char mem_0093A810[];
+
+// @name descriptiveName: compareLocalStringToTwoLiterals
+// @summary Builds a local std::string, returns true if it equals either of two .rdata string literals.
+bool fn_0049B170() {
+    std::string s;
+    if (s == mem_0092F10C) {
+        return true;
+    }
+    return s == mem_0093A810;
+}
+} // namespace lift_0049B170
