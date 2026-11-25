@@ -10,7 +10,8 @@
 // Recovered field layout for std::out_of_range:
 namespace lifted_layout {
 struct std_out_of_range_Fields {
-    // +0x0   uint32_t                 vftable  (evidence: 0x004207F0)
+    // +0x0   uint32_t                 vftable  (evidence: 0x004207F0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vftable  (evidence: 0x0046C440) // CONFLICT: multiple definitions at +0x0
     // +0x28  uint8_t[0x1C]            field_0x28  (evidence: 0x004207F0)
 };
 } // namespace lifted_layout
