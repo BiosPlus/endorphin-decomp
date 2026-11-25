@@ -32732,6 +32732,13 @@
     "summary": "Recursively erases and frees all non-nil nodes in a red-black tree subtree",
     "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
   },
+  "0x005DF720": {
+    "name": "Unknown::forEachAdvanceInvoke_005DF720",
+    "class": "Unknown",
+    "signature": "void fn_005DF720(void* slot1, void* slot2, void* slot3, void* end)",
+    "summary": "Walks a cursor from slot1 toward end (arg4), advancing it each step and invoking ext_006A5C5C on the element at field +0x10 of the current node; reports invalid parameters via the CRT handler.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005E0060": {
     "name": "Unknown::InitEmptyList",
     "class": "Unknown",
@@ -66073,6 +66080,12 @@
     "summary": "Compares up to count bytes of two buffers and returns the signed difference of the first mismatching byte.",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079B070": {
+    "name": "logStderrFormatted",
+    "signature": "void __cdecl sub_0079B070(const char* prefix, const char* fmt, va_list args)",
+    "summary": "Prints an optional prefix, a fixed tag, a vfprintf-formatted message, and a trailing string to stderr.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079B0E0": {
     "name": "ReportWarningV",
     "signature": "void fn_0079B0E0(const char* prefix, const char* fmt, std::va_list args)",
@@ -67142,6 +67155,12 @@
     "name": "lookupTable_007B501C",
     "signature": "uint8_t fn_007B501C(uint32_t index)",
     "summary": "48-byte constant lookup table; returns the entry at a given index.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
+  "0x007B5074": {
+    "name": "sub_007B5074",
+    "signature": "void sub_007B5074(void)",
+    "summary": "Data table or unreferenced stub at 0x007B5074",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
   "0x007B50EC": {

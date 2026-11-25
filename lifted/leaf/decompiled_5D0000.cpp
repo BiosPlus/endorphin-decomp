@@ -394,3 +394,45 @@ void fn_005DC6C0(void* self) {
     ext_0065F440(self);
 }
 } // namespace lift_005DC6C0
+
+// [0x005DF720] sub_005DF720 (83 bytes)
+namespace lift_005DF720 {
+// Known callee 0x00419F50: sub_00419F50 (Auto-lifted identical-shape clone of 0x005E0B20 (TreeIterator::increment).)
+extern void ext_00419F50(void* self);
+// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
+extern void ext_006A5C5C(uint32_t arg);
+extern int mem_00925134;
+
+// @name Unknown::forEachAdvanceInvoke_005DF720
+// @summary Walks a cursor from slot1 toward end (arg4), advancing it each step and invoking ext_006A5C5C on the element at field +0x10 of the current node; reports invalid parameters via the CRT handler.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x10 uint32_t field_0x10
+void fn_005DF720(void* slot1, void* slot2, void* slot3, void* end) {
+    // Value of the CRT invalid-parameter handler pointer (loaded once at entry).
+    const uintptr_t invalid_handler = static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925134));
+
+    while (true) {
+        void* esi = slot1;
+        if (esi == nullptr || esi != slot3) {
+            reinterpret_cast<void (*)()>(invalid_handler)();
+        }
+
+        void* edi = slot2;
+        if (edi == end) {
+            return;
+        }
+
+        // Advance the cursor held in slot1 (passed by address as the "this" object).
+        ext_00419F50(&slot1);
+
+        if (esi == nullptr) {
+            reinterpret_cast<void (*)()>(invalid_handler)();
+        }
+        if (edi == lift_field<void*>(esi, 0x04)) {
+            reinterpret_cast<void (*)()>(invalid_handler)();
+        }
+
+        ext_006A5C5C(lift_field<uint32_t>(edi, 0x10));
+    }
+}
+} // namespace lift_005DF720

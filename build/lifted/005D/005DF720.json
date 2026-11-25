@@ -1,0 +1,28 @@
+{
+  "va": "0x005DF720",
+  "size": 83,
+  "orig_symbol": "sub_005DF720",
+  "src_path": "src/leaf/decompiled_5D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5D0000.cpp",
+  "name": "Unknown::forEachAdvanceInvoke_005DF720",
+  "class": "Unknown",
+  "signature": "void fn_005DF720(void* slot1, void* slot2, void* slot3, void* end)",
+  "summary": "Walks a cursor from slot1 toward end (arg4), advancing it each step and invoking ext_006A5C5C on the element at field +0x10 of the current node; reports invalid parameters via the CRT handler.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:59:27Z"
+}
