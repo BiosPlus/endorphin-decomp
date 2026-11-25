@@ -1,0 +1,28 @@
+{
+  "va": "0x0045E690",
+  "size": 105,
+  "orig_symbol": "sub_0045E690",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "Unknown::LookupOrDefault",
+  "class": "Unknown",
+  "signature": "static inline uint32_t guest_u32(uint32_t addr, ptrdiff_t off)",
+  "summary": "Looks up a 32-bit key in the tree at +0xc and returns the node's value at +0x10, or the default value at +0x18 if not found.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "tree"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x18",
+      "type": "uint32_t",
+      "name": "defaultValue"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:04:54Z"
+}

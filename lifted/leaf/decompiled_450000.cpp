@@ -1415,3 +1415,49 @@ float __stdcall fn_0045AEE0(void* wnd) {
     return result;
 }
 } // namespace lift_0045AEE0
+
+// [0x0045E690]
+namespace lift_0045E690 {
+// @name Unknown::LookupOrDefault
+// @class Unknown
+// @summary Looks up a 32-bit key in the tree at +0xc and returns the node's value at +0x10, or the default value at +0x18 if not found.
+// @field Unknown +0x0c uint32_t tree
+// @field Unknown +0x18 uint32_t defaultValue
+
+extern void __thiscall ext_0041A190(uint32_t tree, uint32_t out_iter, uint32_t key_ptr);
+extern uint32_t mem_00925134;
+
+static inline uint32_t guest_u32(uint32_t addr, ptrdiff_t off) {
+    return *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(addr) + off);
+}
+
+static inline uint32_t guest_addr(const void* p) {
+    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(p));
+}
+
+struct IterPair {
+    uint32_t container;
+    uint32_t node;
+};
+
+uint32_t __thiscall fn_0045E690(uint32_t self, uint32_t key) {
+    uint32_t tree = self + 0xc;
+    IterPair iter{0, 0};
+    ext_0041A190(tree, guest_addr(&iter), guest_addr(&key));
+
+    uint32_t header = guest_u32(tree, 0x4);
+    if (iter.container == 0 || iter.container != tree) {
+        reinterpret_cast<void(__cdecl*)()>(mem_00925134)();
+    }
+
+    if (iter.node == header) {
+        return guest_u32(self, 0x18);
+    }
+
+    if (iter.container == 0 || iter.node == guest_u32(iter.container, 0x4)) {
+        reinterpret_cast<void(__cdecl*)()>(mem_00925134)();
+    }
+
+    return guest_u32(iter.node, 0x10);
+}
+} // namespace lift_0045E690
