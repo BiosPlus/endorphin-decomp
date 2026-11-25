@@ -50770,6 +50770,13 @@
     "summary": "Copies six dwords from this+0x2A0..this+0x2B4 into the caller-provided output buffer (hidden return pointer on stack); __thiscall, ret 4.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
+  "0x0070ACC0": {
+    "name": "Unknown::StoreSixDwordsAt340",
+    "class": "Unknown",
+    "signature": "void fn_0070ACC0(void* self, DWORD a0, DWORD a1, DWORD a2, DWORD a3, DWORD a4, DWORD a5, DWORD a6, DWORD a7)",
+    "summary": "Copies six stack-argument DWORDs into consecutive this-relative fields at +0x340..+0x354; callee pops 8 argument DWORDs (ret 0x20), last two unused.",
+    "lifted_path": "lifted/leaf/decompiled_700000.cpp"
+  },
   "0x0070AD00": {
     "name": "sub_0070A1D0",
     "class": "Unknown",

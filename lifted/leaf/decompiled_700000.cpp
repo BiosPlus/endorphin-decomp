@@ -1252,3 +1252,29 @@ void fn_007057F0(void* self, uint8_t value) {
     notify(self, code, &mem_00B5EB80, 0, -1);
 }
 } // namespace lift_007057F0
+
+// [0x0070ACC0]
+namespace lift_0070ACC0 {
+// @name Unknown::StoreSixDwordsAt340
+// @class Unknown
+// @summary Copies six stack-argument DWORDs into consecutive this-relative fields at +0x340..+0x354; callee pops 8 argument DWORDs (ret 0x20), last two unused.
+// @field Unknown +0x340 DWORD field_0x340
+// @field Unknown +0x344 DWORD field_0x344
+// @field Unknown +0x348 DWORD field_0x348
+// @field Unknown +0x34C DWORD field_0x34C
+// @field Unknown +0x350 DWORD field_0x350
+// @field Unknown +0x354 DWORD field_0x354
+
+void fn_0070ACC0(void* self, DWORD a0, DWORD a1, DWORD a2, DWORD a3,
+                 DWORD a4, DWORD a5, DWORD a6, DWORD a7) {
+    (void)a6;
+    (void)a7;
+    auto* base = static_cast<uint8_t*>(self);
+    *reinterpret_cast<DWORD*>(base + 0x340) = a0;
+    *reinterpret_cast<DWORD*>(base + 0x344) = a1;
+    *reinterpret_cast<DWORD*>(base + 0x348) = a2;
+    *reinterpret_cast<DWORD*>(base + 0x34C) = a3;
+    *reinterpret_cast<DWORD*>(base + 0x350) = a4;
+    *reinterpret_cast<DWORD*>(base + 0x354) = a5;
+}
+} // namespace lift_0070ACC0

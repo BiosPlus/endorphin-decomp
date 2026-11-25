@@ -1,0 +1,52 @@
+{
+  "va": "0x0070ACC0",
+  "size": 63,
+  "orig_symbol": "sub_0070ACC0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "Unknown::StoreSixDwordsAt340",
+  "class": "Unknown",
+  "signature": "void fn_0070ACC0(void* self, DWORD a0, DWORD a1, DWORD a2, DWORD a3, DWORD a4, DWORD a5, DWORD a6, DWORD a7)",
+  "summary": "Copies six stack-argument DWORDs into consecutive this-relative fields at +0x340..+0x354; callee pops 8 argument DWORDs (ret 0x20), last two unused.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x340",
+      "type": "DWORD",
+      "name": "field_0x340"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x344",
+      "type": "DWORD",
+      "name": "field_0x344"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x348",
+      "type": "DWORD",
+      "name": "field_0x348"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x34C",
+      "type": "DWORD",
+      "name": "field_0x34C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x350",
+      "type": "DWORD",
+      "name": "field_0x350"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x354",
+      "type": "DWORD",
+      "name": "field_0x354"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:03:22Z"
+}
