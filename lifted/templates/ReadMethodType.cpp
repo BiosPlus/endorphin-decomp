@@ -56874,3 +56874,43 @@ void* fn_006749C0(void* a1, void** a2) {
     return nullptr; // not reached
 }
 } // namespace lift_006749C0
+
+// [0x00514020] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>::vfunc_0 (74 bytes)
+namespace lift_00514020 {
+// Known callee 0x00682ED0: VirtualSlot9Thunk (Virtual dispatch thunk: loads the vtable pointer from the receiver and returns the code address stored at vtable byte offset 0x24 (slot 9 on x86). The original tail-jumps to that address with the same this; this lift returns the target so the caller performs the call.)
+extern void* ext_00682ED0(void* self);
+// Known callee 0x006720E0: sub_006720E0 (43B), thiscall with one stack argument.
+extern void ext_006720E0(void* self, void* target);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exception, const void* throwInfo);
+// Exception RTTI/type descriptor pushed by the original (data reference 0x009DEC1C).
+extern const char mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<Chromosome::Descriptor>::vfunc_0
+// @class ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>
+// @summary Dereferences the second stack argument; if non-null, dispatches slot 9 on the embedded object at +4 and passes the result to sub_006720E0 with arg1 as this, returning arg1; otherwise throws a DerivedException.
+// @field Unknown +0x00 void* field_0x00
+// @field Unknown +0x04 void* field_0x04
+void* fn_00514020(void* self, void* arg1, void* arg2) {
+    (void)self; // ecx is never read by the original.
+
+    // mov eax, [arg2]; test eax, eax
+    void* p = lift_field<void*>(arg2, 0);
+    if (p != nullptr) {
+        // lea ecx, [eax + 4]; call VirtualSlot9Thunk
+        void* target = ext_00682ED0(static_cast<uint8_t*>(p) + 4);
+        // mov ecx, arg1; push target; call sub_006720E0
+        ext_006720E0(arg1, target);
+        // mov eax, arg1; ret 8
+        return arg1;
+    }
+
+    // Null path: construct DerivedException in a stack buffer and throw.
+    alignas(8) uint8_t exc[0x28] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, mem_009DEC1C);
+    return arg1; // not reached: _CxxThrowException does not return
+}
+} // namespace lift_00514020
