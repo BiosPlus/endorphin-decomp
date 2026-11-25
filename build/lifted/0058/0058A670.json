@@ -4,11 +4,41 @@
   "orig_symbol": "AnimatableTransform::vfunc_12_off_8",
   "src_path": "src/classes/AnimatableTransform.cpp",
   "lifted_path": "lifted/classes/AnimatableTransform.cpp",
-  "name": "AnimatableTransform::vfunc_12_off_8",
+  "name": "AnimatableTransform::vfunc_17_off_C",
   "class": "AnimatableTransform",
-  "signature": "void fn_0058A670(void* self, uint32_t index, uint32_t arg2, uint32_t arg3)",
-  "summary": "Assigns a two-dword value into the 8-byte slot at this+0xEC[index], then, if the value's first dword is non-null, invokes its vtable slot 30 (+0x78) with \u0026index.",
+  "signature": "void* fn_00593870(void* self)",
+  "summary": "Auto-lifted identical-shape clone of 0x004D3070 (NMData::TransitionEventData::vfunc_17_off_C).",
   "fields": [
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "vtable"
+    },
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0xE0",
+      "type": "uint32_t",
+      "name": "field_0xE0"
+    },
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0xE4",
+      "type": "uint32_t",
+      "name": "field_0xE4"
+    },
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable"
+    },
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "transformInterface_vtable"
+    },
     {
       "class": "AnimatableTransform",
       "offset": "+0xEC",
@@ -18,5 +48,5 @@
   ],
   "status": "lifted",
   "lifted_by": "claude-haiku-5.5@low",
-  "lifted_at": "2026-11-25T03:22:37Z"
+  "lifted_at": "2026-11-25T03:22:48Z"
 }

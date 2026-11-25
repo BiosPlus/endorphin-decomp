@@ -198,7 +198,9 @@ void fn_0058A670(void* self, uint32_t index, uint32_t arg2, uint32_t arg3) {
     auto* target = reinterpret_cast<void*>(static_cast<uintptr_t>(value[0]));
     if (target != nullptr) {
         void** vtable = *static_cast<void***>(target);
-        auto fn = reinterpret_cast<VSlot30>(vtable[0x78 / sizeof(void*)]);
+        // Slot at byte offset 0x78 of the vtable (32-bit target layout).
+        auto* slot = reinterpret_cast<uint8_t*>(vtable) + 0x78;
+        auto fn = reinterpret_cast<VSlot30>(*reinterpret_cast<void**>(slot));
         uint32_t idx = index;
         fn(target, &idx);
     }
