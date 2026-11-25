@@ -1,0 +1,76 @@
+{
+  "va": "0x00492C60",
+  "size": 81,
+  "orig_symbol": "sub_00492C60",
+  "src_path": "src/leaf/decompiled_490000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_490000.cpp",
+  "name": "AllocRecordFromParts",
+  "class": "Record",
+  "signature": "void* __stdcall fn_00492C60(DWORD a1, DWORD a2, DWORD a3, const DWORD* src, BYTE flag)",
+  "summary": "Allocates a 0x24-byte record, stores three dwords, copies five dwords from src into the record, and stores a flag byte followed by a zero byte. Returns the record, or nullptr if allocation fails.",
+  "fields": [
+    {
+      "class": "Record",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Record",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0c"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x10",
+      "type": "float",
+      "name": "field_0x10"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x14",
+      "type": "float",
+      "name": "field_0x14"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x18",
+      "type": "float",
+      "name": "field_0x18"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x1C",
+      "type": "float",
+      "name": "field_0x1c"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x20",
+      "type": "uint8_t",
+      "name": "field_0x20"
+    },
+    {
+      "class": "Record",
+      "offset": "+0x21",
+      "type": "uint8_t",
+      "name": "field_0x21"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:59:23Z"
+}

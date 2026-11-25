@@ -9203,6 +9203,13 @@
     "summary": "Validates that self-\u003e+0x0 is non-null, then returns the index at self-\u003e+0x4 after checking it is below the uint32 at (self-\u003e+0x0)-\u003e+0x8; calls the CRT invalid-parameter handler on either failure.",
     "lifted_path": "lifted/leaf/decompiled_490000.cpp"
   },
+  "0x00492C60": {
+    "name": "AllocRecordFromParts",
+    "class": "Record",
+    "signature": "void* __stdcall fn_00492C60(DWORD a1, DWORD a2, DWORD a3, const DWORD* src, BYTE flag)",
+    "summary": "Allocates a 0x24-byte record, stores three dwords, copies five dwords from src into the record, and stores a flag byte followed by a zero byte. Returns the record, or nullptr if allocation fails.",
+    "lifted_path": "lifted/leaf/decompiled_490000.cpp"
+  },
   "0x00492CC0": {
     "name": "fn_00492CC0 (allocate and zero small record)",
     "class": "Unknown",

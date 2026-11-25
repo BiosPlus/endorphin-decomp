@@ -660,3 +660,51 @@ void* fn_00495A60(void* self) {
     return self;
 }
 } // namespace lift_00495A60
+
+// [0x00492C60] sub_00492C60 (81 bytes)
+namespace lift_00492C60 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Called with one stack argument (0x24) and returns the allocated pointer in eax.
+extern void* __cdecl ext_006A5C62(size_t size);
+
+// @name AllocRecordFromParts
+// @class Record
+// @summary Allocates a 0x24-byte record, stores three dwords, copies five dwords from src into the record, and stores a flag byte followed by a zero byte. Returns the record, or nullptr if allocation fails.
+// @field Record +0x00 uint32_t field_0x00
+// @field Record +0x04 uint32_t field_0x04
+// @field Record +0x08 uint32_t field_0x08
+// @field Record +0x0c uint32_t field_0x0c
+// @field Record +0x10 float field_0x10
+// @field Record +0x14 float field_0x14
+// @field Record +0x18 float field_0x18
+// @field Record +0x1c float field_0x1c
+// @field Record +0x20 uint8_t field_0x20
+// @field Record +0x21 uint8_t field_0x21
+void* __stdcall fn_00492C60(DWORD a1, DWORD a2, DWORD a3, const DWORD* src, BYTE flag) {
+    void* p = ext_006A5C62(0x24);
+    if (p == nullptr) {
+        return nullptr;
+    }
+
+    uint8_t* out = static_cast<uint8_t*>(p);
+
+    // Copy raw 32-bit words so float payloads are preserved bit-for-bit.
+    auto store32 = [out](ptrdiff_t off, DWORD v) {
+        std::memcpy(out + off, &v, sizeof(v));
+    };
+
+    store32(0x00, a1);
+    store32(0x04, a2);
+    store32(0x08, a3);
+    store32(0x0c, src[0]);
+    store32(0x10, src[1]);
+    store32(0x14, src[2]);
+    store32(0x18, src[3]);
+    store32(0x1c, src[4]);
+
+    out[0x20] = flag;
+    out[0x21] = 0;
+
+    return p;
+}
+} // namespace lift_00492C60
