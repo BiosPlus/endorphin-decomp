@@ -1,0 +1,13 @@
+{
+  "va": "0x007F4C50",
+  "size": 116,
+  "orig_symbol": "sub_007F4C50",
+  "src_path": "src/leaf/decompiled_7F0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7F0000.cpp",
+  "name": "copyTransposed2x3x4",
+  "signature": "void sub_007F4C50(uintptr_t dst_addr, uintptr_t src_base, uint32_t index)",
+  "summary": "Copies two 3x4 blocks of floats from a strided source buffer into a contiguous destination buffer.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:43:59Z"
+}

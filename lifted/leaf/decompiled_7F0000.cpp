@@ -476,3 +476,33 @@ void __cdecl fn_007FC3D0(const float* a, const float* b, float* out) {
     out[3] = ((a2 * b0 - a1 * b1) + a0 * b2) * half;
 }
 } // namespace lift_007FC3D0
+
+// [0x007F4C50]
+namespace lift_007F4C50 {
+// @name copyTransposed2x3x4
+// @summary Copies two 3x4 blocks of floats from a strided source buffer into a contiguous destination buffer.
+
+
+void sub_007F4C50(uintptr_t dst_addr, uintptr_t src_base, uint32_t index) {
+    float* dst = reinterpret_cast<float*>(dst_addr);
+    const uint8_t* src = reinterpret_cast<const uint8_t*>(src_base + (index << 5));
+
+    for (int i = 0; i < 3; ++i) {
+        const uint8_t* col = src + i * 4;
+        for (int j = 0; j < 4; ++j) {
+            *dst++ = *reinterpret_cast<const float*>(col);
+            col += 0x40;
+        }
+    }
+
+    dst = reinterpret_cast<float*>(dst_addr + 0x30);
+    src = reinterpret_cast<const uint8_t*>(src_base + (index << 5) + 0x10);
+    for (int i = 0; i < 3; ++i) {
+        const uint8_t* col = src + i * 4;
+        for (int j = 0; j < 4; ++j) {
+            *dst++ = *reinterpret_cast<const float*>(col);
+            col += 0x40;
+        }
+    }
+}
+} // namespace lift_007F4C50
