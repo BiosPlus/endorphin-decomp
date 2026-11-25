@@ -686,6 +686,12 @@
     "summary": "Copies a range of 4-byte elements backward using memmove_s and returns the start of the destination range.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x004080C0": {
+    "name": "destroyPointerVectorRange",
+    "signature": "void __stdcall sub_004080C0(uint32_t container1, uint32_t iterPtr, uint32_t container2, uint32_t endPtr)",
+    "summary": "Iterates over a checked vector range of object pointers and invokes each non-null object's deleting destructor.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x004086A0": {
     "name": "BottomPanel::vfunc_92",
     "class": "BottomPanel",
@@ -42522,6 +42528,12 @@
     "class": "Unknown",
     "signature": "extern \"C\" void* __fastcall fn_00699870(void* self, int edx_unused, const void* src)",
     "summary": "Copies a 16-byte record from src into self; when src+0xC is non-null, calls vtable slot 0x70 on it to fetch the +0x8 value, otherwise +0x8 is zeroed. Returns self.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
+  "0x006998D0": {
+    "name": "copyStringAndRecord",
+    "signature": "extern \"C\" void* __fastcall fn_006998D0(void* self, int edx_unused, const void* src)",
+    "summary": "Copy-constructs the leading std::string from src, then copies the 16-byte record at +0x1C from src into this; returns this.",
     "lifted_path": "lifted/leaf/decompiled_690000.cpp"
   },
   "0x00699930": {
