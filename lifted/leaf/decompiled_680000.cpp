@@ -1904,3 +1904,32 @@ void* fn_006807A0(void* self, const void* other) {
     return self;
 }
 } // namespace lift_006807A0
+
+// [0x0068C530] sub_0068C530 (94 bytes)
+namespace lift_0068C530 {
+// Known callee 0x00661980: setVtable_0093BFB4 (Stores the vtable address 0x0093BFB4 into the first dword of the object pointed to by ECX (this).)
+extern void ext_00661980(void* self);
+// Callee 0x00695440 (sub_00695440, 19 bytes); invoked with this+0x10 as its receiver.
+extern void ext_00695440(void* self);
+
+// @name Unknown::Construct_0068C530
+// @class Unknown
+// @summary Initializes an object's vptr pair, runs ext_00661980 first, clears +0x08, and constructs the sub-object at +0x10 via ext_00695440.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x10 uint8_t field_0x10
+void fn_0068C530(void* self) {
+    auto store32 = [](void* base, std::size_t off, std::uint32_t v) {
+        std::memcpy(static_cast<std::uint8_t*>(base) + off, &v, sizeof v);
+    };
+
+    ext_00661980(self);                              // sets first vptr dword to 0x0093BFB4
+    store32(self, 0x04, 0x00928EFC);                 // intermediate vptr (overwritten below)
+    store32(self, 0x00, 0x0098DD14);                 // primary vptr
+    store32(self, 0x04, 0x0098DCE4);                 // final vptr for this object
+    store32(self, 0x08, 0);                          // clear field_0x08
+
+    ext_00695440(static_cast<std::uint8_t*>(self) + 0x10);
+}
+} // namespace lift_0068C530

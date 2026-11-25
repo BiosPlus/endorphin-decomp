@@ -45259,6 +45259,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0046EA50 (ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)).",
     "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
   },
+  "0x0068C530": {
+    "name": "Unknown::Construct_0068C530",
+    "class": "Unknown",
+    "signature": "void fn_0068C530(void* self)",
+    "summary": "Initializes an object's vptr pair, runs ext_00661980 first, clears +0x08, and constructs the sub-object at +0x10 via ext_00695440.",
+    "lifted_path": "lifted/leaf/decompiled_680000.cpp"
+  },
   "0x0068C590": {
     "name": "ExprParser::ReadMethodType\u003cRandomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cRandomizer, float, {public: float __thiscall Randomizer::rand(void) const, 0}, 1\u003e",
