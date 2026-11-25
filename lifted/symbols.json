@@ -28166,6 +28166,13 @@
     "summary": "Steps the state byte at +0x194 (1..6) down to the requested level arg1, calling the forward/notify helpers when leaving level 5.",
     "lifted_path": "lifted/NMData/FixedPathJointData.cpp"
   },
+  "0x005E4D90": {
+    "name": "CreateRecordFromArgs_005E4D90",
+    "class": "Unknown",
+    "signature": "void* fn_005E4D90(uint32_t a1, uint32_t a2, uint32_t a3, const void* a4, uint8_t a5)",
+    "summary": "Allocates a 0x54-byte record and fills it from five stdcall arguments; returns it or null.",
+    "lifted_path": "lifted/leaf/decompiled_5E0000.cpp"
+  },
   "0x005E4E20": {
     "name": "ExprParser::ReadMethodType\u003cNMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0\u003e::vfunc_2",
     "class": "ExprParser::ReadMethodType\u003cNMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0\u003e",

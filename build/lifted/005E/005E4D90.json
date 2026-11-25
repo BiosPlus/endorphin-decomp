@@ -1,0 +1,58 @@
+{
+  "va": "0x005E4D90",
+  "size": 74,
+  "orig_symbol": "sub_005E4D90",
+  "src_path": "src/leaf/decompiled_5E0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5E0000.cpp",
+  "name": "CreateRecordFromArgs_005E4D90",
+  "class": "Unknown",
+  "signature": "void* fn_005E4D90(uint32_t a1, uint32_t a2, uint32_t a3, const void* a4, uint8_t a5)",
+  "summary": "Allocates a 0x54-byte record and fills it from five stdcall arguments; returns it or null.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x10",
+      "type": "uint32_t",
+      "name": "field_0x10[16]"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x50",
+      "type": "uint8_t",
+      "name": "field_0x50"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x51",
+      "type": "uint8_t",
+      "name": "field_0x51"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:33:45Z"
+}

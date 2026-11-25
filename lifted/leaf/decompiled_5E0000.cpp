@@ -409,3 +409,38 @@ void fn_005E29C0(uintptr_t self, float value) {
 }
 } // namespace lift_005E27E0
 } // namespace lift_005E29C0
+
+// [0x005E4D90] sub_005E4D90 (74 bytes)
+namespace lift_005E4D90 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+// Used as an allocator: called with 0x54 (cdecl), result pointer returned in eax.
+extern void* ext_006A5C62(size_t size);
+
+// @name CreateRecordFromArgs_005E4D90
+// @class Unknown
+// @summary Allocates a 0x54-byte record and fills it from five stdcall arguments; returns it or null.
+// @field Unknown +0x00 uint32_t field_0x00
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+// @field Unknown +0x10 uint32_t field_0x10[16]
+// @field Unknown +0x50 uint8_t field_0x50
+// @field Unknown +0x51 uint8_t field_0x51
+void* fn_005E4D90(uint32_t a1, uint32_t a2, uint32_t a3, const void* a4, uint8_t a5) {
+    void* obj = ext_006A5C62(0x54);
+    if (obj == nullptr) {
+        return nullptr;
+    }
+
+    lift_field<uint32_t>(obj, 0x00) = a1;
+    lift_field<uint32_t>(obj, 0x04) = a2;
+    lift_field<uint32_t>(obj, 0x08) = a3;
+    lift_field<uint32_t>(obj, 0x0C) = lift_field<const uint32_t>(a4, 0);
+    std::memcpy(static_cast<uint8_t*>(obj) + 0x10,
+                static_cast<const uint8_t*>(a4) + 4,
+                16 * sizeof(uint32_t));
+    lift_field<uint8_t>(obj, 0x50) = a5;
+    lift_field<uint8_t>(obj, 0x51) = 0;
+    return obj;
+}
+} // namespace lift_005E4D90
