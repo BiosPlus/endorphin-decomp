@@ -1,0 +1,33 @@
+{
+  "va": "0x004BE680",
+  "size": 105,
+  "orig_symbol": "sub_004BE680",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "sub_004BE680",
+  "signature": "void __fastcall fn_004BE680(void* self)",
+  "summary": "Destructs three std::string fields and calls base destructor sub_0065F440",
+  "fields": [
+    {
+      "class": "unknown",
+      "offset": "+0x20",
+      "type": "std::string",
+      "name": "field_0x20"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x3C",
+      "type": "std::string",
+      "name": "field_0x3c"
+    },
+    {
+      "class": "unknown",
+      "offset": "+0x58",
+      "type": "std::string",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T04:06:23Z"
+}

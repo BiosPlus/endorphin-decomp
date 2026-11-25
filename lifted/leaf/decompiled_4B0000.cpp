@@ -1292,3 +1292,27 @@ std::string* fn_004B73A0(std::string* out, uint32_t index) {
     return new (out) std::string();
 }
 } // namespace lift_004B73A0
+
+// [0x004BE680]
+namespace lift_004BE680 {
+// @name sub_004BE680
+// @summary Destructs three std::string fields and calls base destructor sub_0065F440
+// @field unknown +0x20 std::string field_0x20
+// @field unknown +0x3c std::string field_0x3c
+// @field unknown +0x58 std::string field_0x58
+
+
+extern void __fastcall ext_0065F440(void* self);
+extern uint32_t mem_00924FF4;
+
+void __fastcall fn_004BE680(void* self) {
+    uint8_t* p = static_cast<uint8_t*>(self);
+    using dtor_fn = void (__fastcall*)(void*);
+    auto dtor = reinterpret_cast<dtor_fn>(static_cast<uintptr_t>(mem_00924FF4));
+
+    dtor(p + 0x58);
+    dtor(p + 0x3C);
+    dtor(p + 0x20);
+    ext_0065F440(self);
+}
+} // namespace lift_004BE680
