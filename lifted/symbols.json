@@ -22357,6 +22357,12 @@
     "summary": "Iterates the pointer vector at +0x74..+0x78 and, for each element, calls its AnimationInterface (+0xC) vtable slots 9 (arg) and 10 (arg, 1).",
     "lifted_path": "lifted/NMData/BackGroundData.cpp"
   },
+  "0x005A2BD0": {
+    "name": "DestroyNodeChain",
+    "signature": "void __thiscall ext_005A2BD0(void* self, void* node)",
+    "summary": "Walks a linked node chain, recursively processing each node's child at +0x08, destroying the string at +0x0C, calling ext_006A5C5C on the node, and stopping at a node whose +0x39 flag is set.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005A2C40": {
     "name": "ExprParser::WriteMethodType\u003cNMData::CharacterData, int, {public: void __thiscall NMData::CharacterData::setPhysicsLevelFromFSM(int), 0}\u003e::vfunc_48",
     "class": "ExprParser::WriteMethodType\u003cNMData::CharacterData, int, {public: void __thiscall NMData::CharacterData::setPhysicsLevelFromFSM(int), 0}\u003e",

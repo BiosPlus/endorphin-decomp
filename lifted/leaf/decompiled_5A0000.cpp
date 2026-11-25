@@ -315,3 +315,31 @@ void fn_005AE170(void* self, uint8_t* node) {
     }
 }
 } // namespace lift_005AE170
+
+// [0x005A2BD0]
+namespace lift_005A2BD0 {
+// @name DestroyNodeChain
+// @summary Walks a linked node chain, recursively processing each node's child at +0x08, destroying the string at +0x0C, calling ext_006A5C5C on the node, and stopping at a node whose +0x39 flag is set.
+// @field Unknown +0x00 void* next
+// @field Unknown +0x08 void* child
+// @field Unknown +0x0C std::string name
+// @field Unknown +0x39 uint8_t flag
+
+extern int mem_00924FF4;
+extern void __cdecl ext_006A5C5C(void* ptr);
+void __thiscall ext_005A2BD0(void* self, void* node);
+
+void __thiscall ext_005A2BD0(void* self, void* node) {
+    uint8_t* cur = static_cast<uint8_t*>(node);
+    while (!lift_field<uint8_t>(cur, 0x39)) {
+        void* child = lift_field<void*>(cur, 0x08);
+        ext_005A2BD0(self, child);
+        void* next = lift_field<void*>(cur, 0x00);
+        auto string_dtor = reinterpret_cast<void(__thiscall*)(void*)>(
+            static_cast<uintptr_t>(mem_00924FF4));
+        string_dtor(cur + 0x0C);
+        ext_006A5C5C(cur);
+        cur = static_cast<uint8_t*>(next);
+    }
+}
+} // namespace lift_005A2BD0

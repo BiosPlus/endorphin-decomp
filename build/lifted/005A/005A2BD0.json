@@ -1,0 +1,39 @@
+{
+  "va": "0x005A2BD0",
+  "size": 62,
+  "orig_symbol": "sub_005A2BD0",
+  "src_path": "src/leaf/decompiled_5A0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5A0000.cpp",
+  "name": "DestroyNodeChain",
+  "signature": "void __thiscall ext_005A2BD0(void* self, void* node)",
+  "summary": "Walks a linked node chain, recursively processing each node's child at +0x08, destroying the string at +0x0C, calling ext_006A5C5C on the node, and stopping at a node whose +0x39 flag is set.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "next"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void*",
+      "name": "child"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "std::string",
+      "name": "name"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x39",
+      "type": "uint8_t",
+      "name": "flag"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:00:58Z"
+}
