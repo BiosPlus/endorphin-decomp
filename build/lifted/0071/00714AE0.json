@@ -1,0 +1,21 @@
+{
+  "va": "0x00714AE0",
+  "size": 96,
+  "orig_symbol": "sub_00714AE0",
+  "src_path": "src/leaf/decompiled_710000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_710000.cpp",
+  "name": "getField0xD8",
+  "signature": "uint32_t __fastcall sub_00714AE0(uintptr_t ecx)",
+  "summary": "Return the 32-bit field at offset 0xD8 of the object in ecx.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0xD8",
+      "type": "uint32_t",
+      "name": "field_0xd8"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:44:58Z"
+}
