@@ -72022,6 +72022,12 @@
     "summary": "Classifies three 16-bit fields at +0x28, +0x36, and +0x2a into a status code",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007BC630": {
+    "name": "mapFieldPairAndValidate",
+    "signature": "uint32_t sub_007BC630(uint32_t arg0)",
+    "summary": "Maps two 16-bit fields via a lookup table and filters by a third 16-bit field",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007BD310": {
     "name": "initField40And4E",
     "signature": "uint32_t sub_007BD310(uint32_t a1)",
@@ -75514,6 +75520,12 @@
     "name": "sub_008607F4",
     "signature": "void fn_008607F4(void)",
     "summary": "No-op stub (add eax, 0).",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
+  "0x00860800": {
+    "name": "configureBroadcastNonBlockingSocket",
+    "signature": "uint32_t sub_00860800(uint32_t s)",
+    "summary": "Enable broadcast and non-blocking mode on a socket, closing it on failure.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
   "0x0086086B": {

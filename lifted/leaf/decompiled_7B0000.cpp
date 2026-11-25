@@ -1549,3 +1549,47 @@ uint32_t fn_007B06A0(void* a1, void* a2, uint32_t a3) {
     return 0;
 }
 } // namespace lift_007B06A0
+
+// [0x007BC630]
+namespace lift_007BC630 {
+// @name mapFieldPairAndValidate
+// @summary Maps two 16-bit fields via a lookup table and filters by a third 16-bit field
+// @field Obj +0x28 uint16_t field_0x28
+// @field Obj +0x2a uint16_t field_0x2a
+// @field Obj +0x36 uint16_t field_0x36
+
+
+extern uint8_t mem_read8(uint32_t addr);
+extern uint16_t mem_read16(uint32_t addr);
+extern uint32_t mem_read32(uint32_t addr);
+
+uint32_t sub_007BC630(uint32_t arg0) {
+    uint32_t f28 = mem_read16(arg0 + 0x28u);
+    uint32_t f2a = mem_read16(arg0 + 0x2Au);
+    uint32_t key = ((f28 << 3) | f2a) - 0x41u;
+
+    uint32_t res = 0xFFFFFFFFu;
+    if (key <= 0xC3u) {
+        uint32_t idx = mem_read8(0x007BC6B0u + key);
+        uint32_t target = mem_read32(0x007BC69Cu + 4u * idx);
+        if (target == 0x007BC65Eu) {
+            res = 0u;
+        } else if (target == 0x007BC662u) {
+            res = 2u;
+        } else if (target == 0x007BC669u) {
+            res = 1u;
+        } else if (target == 0x007BC670u) {
+            res = 3u;
+        }
+    }
+
+    uint32_t f36 = mem_read16(arg0 + 0x36u);
+    if (f36 == 1u) {
+        return (res == 2u) ? res : 0xFFFFFFFFu;
+    }
+    if (f36 == 3u) {
+        return (res != 2u) ? res : 0xFFFFFFFFu;
+    }
+    return 0xFFFFFFFFu;
+}
+} // namespace lift_007BC630
