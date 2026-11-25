@@ -1,0 +1,21 @@
+{
+  "va": "0x004BBB70",
+  "size": 117,
+  "orig_symbol": "sub_004BBB70",
+  "src_path": "src/leaf/decompiled_4B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4B0000.cpp",
+  "name": "std_binary_search_string",
+  "signature": "uint32_t __cdecl sub_004BBB70(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4, uint32_t arg5)",
+  "summary": "Performs a checked binary search for a std::string in a sorted range.",
+  "fields": [
+    {
+      "class": "CheckedContainer",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "end_ptr"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:45:50Z"
+}

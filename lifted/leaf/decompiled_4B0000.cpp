@@ -1330,3 +1330,36 @@ bool __thiscall fn_004B08A0(void* self, uint32_t index) {
     return (flags & flag) == flag;
 }
 } // namespace lift_004B08A0
+
+// [0x004BBB70]
+namespace lift_004BBB70 {
+// @name std_binary_search_string
+// @summary Performs a checked binary search for a std::string in a sorted range.
+// @field CheckedContainer +0x08 uint32_t end_ptr
+
+extern uint32_t ext_004BA2D0(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t);
+extern uint32_t mem_00925134;
+extern uint32_t mem_00924EF4;
+
+uint32_t __cdecl sub_004BBB70(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4, uint32_t arg5) {
+    uint32_t edi = ext_004BA2D0(arg1, arg3, arg4, arg5, 0);
+    if (arg0 == 0 || arg0 != arg2) {
+        reinterpret_cast<void(__cdecl*)()>(static_cast<uintptr_t>(mem_00925134))();
+    }
+    if (edi == arg3) {
+        return 0;
+    }
+    if (arg0 == 0) {
+        reinterpret_cast<void(__cdecl*)()>(static_cast<uintptr_t>(mem_00925134))();
+    }
+    uint32_t end_ptr = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(arg0 + 8));
+    if (edi >= end_ptr) {
+        reinterpret_cast<void(__cdecl*)()>(static_cast<uintptr_t>(mem_00925134))();
+    }
+    uint8_t less = reinterpret_cast<uint8_t(__cdecl*)(uint32_t, uint32_t)>(static_cast<uintptr_t>(mem_00924EF4))(arg4, edi);
+    if (less != 0) {
+        return 0;
+    }
+    return 1;
+}
+} // namespace lift_004BBB70
