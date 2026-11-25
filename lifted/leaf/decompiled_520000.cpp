@@ -1047,3 +1047,59 @@ void __thiscall fn_00526960(uint8_t* self) {
     ext_005013F0(sub, iter_b, sub, begin_b, sub, end_b);
 }
 } // namespace lift_00526960
+
+// [0x00524AE0]
+namespace lift_00524AE0 {
+namespace lift_00524AE0 {
+// @name Unknown::GetTableDoubleAsFloat
+// @class Unknown
+// @summary Looks up table entry via this->+0x04, takes element 0 of its 104-byte record array, and returns (float) of the double at index this->+0x08 from that record's vector; returns 0.0f on any null or empty step.
+// @field Unknown +0x04 void* field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+
+extern void* __fastcall ext_00504970(void* self);
+extern uint8_t* __thiscall ext_005049B0(void* self, uint32_t index);
+extern double __thiscall ext_005245D0(void* self, uint32_t index);
+
+extern float __thiscall fn_00524AE0(void* self) {
+    uint8_t* p = reinterpret_cast<uint8_t*>(self);
+
+    void* obj = *reinterpret_cast<void**>(p + 0x04);
+    if (obj == nullptr) {
+        return 0.0f;
+    }
+
+    void* entry = ext_00504970(obj);
+    if (entry == nullptr) {
+        return 0.0f;
+    }
+
+    uint8_t* e = reinterpret_cast<uint8_t*>(entry);
+    uint32_t begin = *reinterpret_cast<uint32_t*>(e + 0x04);
+    if (begin == 0) {
+        return 0.0f;
+    }
+    uint32_t end = *reinterpret_cast<uint32_t*>(e + 0x08);
+    int32_t byteDiff = static_cast<int32_t>(end - begin);
+    if (byteDiff / 104 == 0) {
+        return 0.0f;
+    }
+
+    uint8_t* rec = ext_005049B0(entry, 0u);
+
+    uint32_t vecBegin = *reinterpret_cast<uint32_t*>(rec + 0x08);
+    if (vecBegin == 0) {
+        return 0.0f;
+    }
+    uint32_t vecEnd = *reinterpret_cast<uint32_t*>(rec + 0x0C);
+    int32_t vecBytes = static_cast<int32_t>(vecEnd - vecBegin);
+    if ((vecBytes >> 3) == 0) {
+        return 0.0f;
+    }
+
+    uint32_t index = *reinterpret_cast<uint32_t*>(p + 0x08);
+    double value = ext_005245D0(rec, index);
+    return static_cast<float>(value);
+}
+} // namespace lift_00524AE0
+} // namespace lift_00524AE0

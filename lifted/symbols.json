@@ -20390,6 +20390,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).",
     "lifted_path": "lifted/leaf/decompiled_520000.cpp"
   },
+  "0x00524AE0": {
+    "name": "Unknown::GetTableDoubleAsFloat",
+    "class": "Unknown",
+    "signature": "extern float __thiscall fn_00524AE0(void* self)",
+    "summary": "Looks up table entry via this-\u003e+0x04, takes element 0 of its 104-byte record array, and returns (float) of the double at index this-\u003e+0x08 from that record's vector; returns 0.0f on any null or empty step.",
+    "lifted_path": "lifted/leaf/decompiled_520000.cpp"
+  },
   "0x00524BC0": {
     "name": "Unknown::SetElementFloat_00524BC0",
     "class": "Unknown",
@@ -64499,6 +64506,12 @@
     "class": "Unknown",
     "signature": "double fn_0077FFB0(void* self, DWORD index)",
     "summary": "Returns the double at element index (16-byte stride, +8 within element) of the array referenced via self-\u003efield_0x00-\u003efield_0x04. Callee pops 8 bytes (ret 0x8); second stack arg is unused.",
+    "lifted_path": "lifted/leaf/decompiled_770000.cpp"
+  },
+  "0x0077FFD0": {
+    "name": "sub_0077FFD0",
+    "signature": "uintptr_t __fastcall sub_0077FFD0(uintptr_t this_ptr)",
+    "summary": "Initializes object fields to zero and sets field_0x00 to -1, returning this.",
     "lifted_path": "lifted/leaf/decompiled_770000.cpp"
   },
   "0x00780090": {

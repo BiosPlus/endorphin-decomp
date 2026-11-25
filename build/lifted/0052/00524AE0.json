@@ -1,0 +1,28 @@
+{
+  "va": "0x00524AE0",
+  "size": 104,
+  "orig_symbol": "sub_00524AE0",
+  "src_path": "src/leaf/decompiled_520000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_520000.cpp",
+  "name": "Unknown::GetTableDoubleAsFloat",
+  "class": "Unknown",
+  "signature": "extern float __thiscall fn_00524AE0(void* self)",
+  "summary": "Looks up table entry via this-\u003e+0x04, takes element 0 of its 104-byte record array, and returns (float) of the double at index this-\u003e+0x08 from that record's vector; returns 0.0f on any null or empty step.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:48:56Z"
+}
