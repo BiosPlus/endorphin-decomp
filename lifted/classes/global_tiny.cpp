@@ -6633,3 +6633,19 @@ void fn_00545630(void* self, uint32_t arg) {
     reinterpret_cast<VMethod>(slot)(self, arg);
 }
 } // namespace lift_00545630
+
+// [0x00402050] AnimatableTransform::vfunc_37 (11 bytes)
+namespace lift_00402050 {
+// @name AnimatableTransform::vfunc_37
+// @class AnimatableTransform
+// @summary Dispatches virtual slot 0x10 of the embedded base subobject at +0x0C, passing that subobject as this (tail call in the original).
+// @field AnimatableTransform +0x0C void* field_0x0C
+uint32_t fn_00402050(void* self) {
+    // Embedded base subobject lives at self+0x0C; its first dword is its vtable pointer.
+    void* subobject = reinterpret_cast<uint8_t*>(self) + 0x0C;
+    void** vtbl = static_cast<void**>(lift_field<void*>(self, 0x0C));
+    using Slot = uint32_t (*)(void*);
+    Slot target = reinterpret_cast<Slot>(lift_field<void*>(vtbl, 0x10));
+    return target(subobject);
+}
+} // namespace lift_00402050

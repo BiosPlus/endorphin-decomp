@@ -241,6 +241,13 @@
     "summary": "Pure jump thunk forwarding to sub_00586140.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00402050": {
+    "name": "AnimatableTransform::vfunc_37",
+    "class": "AnimatableTransform",
+    "signature": "uint32_t fn_00402050(void* self)",
+    "summary": "Dispatches virtual slot 0x10 of the embedded base subobject at +0x0C, passing that subobject as this (tail call in the original).",
+    "lifted_path": "lifted/classes/global_tiny.cpp"
+  },
   "0x00402060": {
     "name": "AnimatableTransform::vfunc_38",
     "class": "AnimatableTransform",

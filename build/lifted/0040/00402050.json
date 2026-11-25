@@ -1,0 +1,22 @@
+{
+  "va": "0x00402050",
+  "size": 11,
+  "orig_symbol": "AnimatableTransform::vfunc_37",
+  "src_path": "src/classes/global_tiny.cpp",
+  "lifted_path": "lifted/classes/global_tiny.cpp",
+  "name": "AnimatableTransform::vfunc_37",
+  "class": "AnimatableTransform",
+  "signature": "uint32_t fn_00402050(void* self)",
+  "summary": "Dispatches virtual slot 0x10 of the embedded base subobject at +0x0C, passing that subobject as this (tail call in the original).",
+  "fields": [
+    {
+      "class": "AnimatableTransform",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:18:04Z"
+}
