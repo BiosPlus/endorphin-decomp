@@ -2779,3 +2779,41 @@ void __thiscall sub_00430660(unsigned char* self, void* pCmdUI) {
     reinterpret_cast<VFn1>(vtable[1])(pCmdUI, check);
 }
 } // namespace lift_00430660
+
+// [0x00434700]
+namespace lift_00434700 {
+// @name DispatchConditionCheck
+// @summary Evaluates three conditions and tail-calls arg0's vtable[0] with the boolean result.
+
+
+extern int32_t __cdecl ext_00594000(void);
+extern uint32_t __thiscall ext_006AD940(uint32_t self);
+extern int __thiscall ext_00492570(void* self);
+extern int32_t __cdecl ext_00465B30(void);
+extern uint32_t __thiscall ext_00468660(uint32_t self);
+extern uint8_t __cdecl ext_00430370(void);
+
+uint32_t __thiscall fn_00434700(uint32_t self, uint32_t arg0) {
+    (void)self;
+    uint32_t result = 0;
+
+    int32_t base = ext_00594000();
+    uint32_t obj1 = *(uint32_t*)(uintptr_t)(base + 0x26C);
+    uint32_t obj2 = ext_006AD940(obj1);
+    if ((uint8_t)ext_00492570((void*)(uintptr_t)obj2) == 0) {
+        int32_t obj3 = ext_00465B30();
+        uint32_t obj4 = ext_00468660((uint32_t)obj3);
+        uint32_t vtable4 = *(uint32_t*)(uintptr_t)obj4;
+        auto fn11c = (uint8_t(__thiscall*)(uint32_t))(uintptr_t)(*(uint32_t*)(uintptr_t)(vtable4 + 0x11C));
+        if (fn11c(obj4) == 0) {
+            if (ext_00430370() != 0) {
+                result = 1;
+            }
+        }
+    }
+
+    uint32_t vtable_arg0 = *(uint32_t*)(uintptr_t)arg0;
+    auto fn0 = (uint32_t(__thiscall*)(uint32_t, uint32_t))(uintptr_t)(*(uint32_t*)(uintptr_t)vtable_arg0);
+    return fn0(arg0, result);
+}
+} // namespace lift_00434700
