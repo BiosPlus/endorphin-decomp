@@ -14848,6 +14848,12 @@
     "summary": "One-time initializer for the static object at mem_00AE55B4; returns its address.",
     "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
   },
+  "0x004D25F0": {
+    "name": "initStaticObjectOnce_004D25F0",
+    "signature": "DWORD fn_004D25F0()",
+    "summary": "One-time initializer guard: on first call sets bit 0 of mem_00AE55C0, runs ext_0067A670 on mem_00AE55BC, then sets mem_00AE55BC to 0x947CBC; returns \u0026mem_00AE55BC.",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004D2C70": {
     "name": "sub_004D2C70",
     "class": "Unknown",

@@ -227,3 +227,24 @@ void* fn_004D2590() {
     return &mem_00AE55B4;
 }
 } // namespace lift_004D2590
+
+// [0x004D25F0] sub_004D25F0 (87 bytes)
+namespace lift_004D25F0 {
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (Calls ext_00672000 on self (thiscall, ECX = self), then stores the single stack argument into the first DWORD of self; returns that value.)
+extern DWORD ext_0067A670(void* self, DWORD value);
+extern DWORD mem_00AE55C0;
+extern DWORD mem_00AE55BC;
+
+// @name initStaticObjectOnce_004D25F0
+// @summary One-time initializer guard: on first call sets bit 0 of mem_00AE55C0, runs ext_0067A670 on mem_00AE55BC, then sets mem_00AE55BC to 0x947CBC; returns &mem_00AE55BC.
+// Note: the original pushes an SEH frame (fs:[0]) around this; it has no observable effect on the result and is omitted.
+// The stack argument passed to ext_0067A670 in the original is a stack slot that is overwritten afterwards, so 0 is passed here.
+DWORD fn_004D25F0() {
+    if ((mem_00AE55C0 & 1u) == 0) {
+        mem_00AE55C0 |= 1u;
+        ext_0067A670(&mem_00AE55BC, 0);
+        mem_00AE55BC = 0x947CBCu;
+    }
+    return static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE55BC));
+}
+} // namespace lift_004D25F0
