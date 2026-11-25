@@ -1557,3 +1557,17 @@ void fn_006B1790(void* self, uint32_t a0, uint32_t a1, uint32_t a2) {
     (void)mem_00925694(target, 0x201 /* WM_LBUTTONDOWN */, a0, lParam);
 }
 } // namespace lift_006B1790
+
+// [0x006BC3F0]
+namespace lift_006BC3F0 {
+extern uint32_t mem_read32(const void* base, int32_t offset);
+extern int32_t __fastcall ext_006E9610(void* self, void* edx, int32_t type);
+
+// @name countItemsByTypeWrapper
+// @summary Forwards countItemsByType call to the member object at +0x04.
+// @field Unknown +0x04 void* field_0x04
+extern int32_t __fastcall fn_006BC3F0(void* self, void* /*edx*/, int32_t type) {
+    void* inner = reinterpret_cast<void*>(static_cast<uintptr_t>(mem_read32(self, 0x04)));
+    return ext_006E9610(inner, nullptr, type);
+}
+} // namespace lift_006BC3F0
