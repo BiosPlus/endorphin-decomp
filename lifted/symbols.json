@@ -44333,6 +44333,13 @@
     "summary": "Converts the held std::string to a float via atof; returns 0.0f when the string pointer is null.",
     "lifted_path": "lifted/ExprParser/StringType.cpp"
   },
+  "0x0066B2E0": {
+    "name": "ExprParser::StringType::vfunc_4",
+    "class": "ExprParser::StringType",
+    "signature": "void* fn_0066B2E0(void* self, [[maybe_unused]] void* arg2)",
+    "summary": "If the slot at arg1 holds a non-null string pointer, copy-construct a std::string into arg1 from it; otherwise construct an empty-literal std::string in place. Returns arg1.",
+    "lifted_path": "lifted/ExprParser/StringType.cpp"
+  },
   "0x0066B4A0": {
     "name": "ExprParser::StringType::vfunc_33",
     "class": "ExprParser::StringType",

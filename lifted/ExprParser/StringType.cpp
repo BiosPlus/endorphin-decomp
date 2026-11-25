@@ -34,6 +34,7 @@ float fn_0066B240(void* self) {
         return 0.0f;
     return static_cast<float>(std::atof(str->c_str()));
 }
+#include <new>
 
 // [0x0066B200]
 namespace lift_0066B200 {
@@ -205,3 +206,26 @@ float __stdcall fn_0066B240(void* self) {
     return static_cast<float>(ext_009251F0(s));
 }
 } // namespace lift_0066B240
+
+// [0x0066B2E0]
+namespace lift_0066B2E0 {
+extern void* ext_004276B0(void* dst, const void* src);
+extern const char mem_00928B5D[];
+// MSVCP80 basic_string(const char*) import slot; the call is replaced by a portable std::string construction.
+extern void* mem_00924FE4;
+
+// @name ExprParser::StringType::vfunc_4
+// @class ExprParser::StringType
+// @summary If the slot at arg1 holds a non-null string pointer, copy-construct a std::string into arg1 from it; otherwise construct an empty-literal std::string in place. Returns arg1.
+// @field ExprParser::StringType +0x00 void* field_0x00
+void* fn_0066B2E0(void* self, [[maybe_unused]] void* arg2) {
+    void* src = lift_field<void*>(self, 0x00);
+    if (src != nullptr) {
+        ext_004276B0(self, src);
+    } else {
+        (void)&mem_00924FE4;
+        new (self) std::string(mem_00928B5D);
+    }
+    return self;
+}
+} // namespace lift_0066B2E0
