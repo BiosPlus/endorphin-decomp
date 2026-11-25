@@ -894,3 +894,27 @@ uint32_t* Fill8DwordsReturnSelf(uint32_t* self,
     return self;
 }
 } // namespace lift_006D23B0
+
+// [0x006D7AA0] sub_006D7AA0 (64 bytes)
+namespace lift_006D7AA0 {
+extern void* __fastcall ext_006FDF70(void* self, int edx_unused, int arg);
+extern int32_t __fastcall fn_006B99C0(void* self);
+
+// @name CheckAndGetNestedInt
+// @summary Resolves two chained lookups via sub_006FDF70 and sub_006B99C0; returns the int32 at +0x18 of the second result, or 0 if any lookup is null/zero.
+extern int32_t __fastcall fn_006D7AA0(void* self) {
+    if (ext_006FDF70(self, 0, 0) == nullptr) {
+        return 0;
+    }
+
+    void* b = ext_006FDF70(self, 0, 0);
+    if (fn_006B99C0(b) == 0) {
+        return 0;
+    }
+
+    void* c = ext_006FDF70(self, 0, 0);
+    int32_t w = fn_006B99C0(c);
+    auto base = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(w)));
+    return lift_field<int32_t>(base, 0x18);
+}
+} // namespace lift_006D7AA0

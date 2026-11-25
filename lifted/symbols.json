@@ -46395,6 +46395,12 @@
     "summary": "Getter returning int32_t field at offset +0x28.",
     "lifted_path": "lifted/leaf/tiny_6D0000.cpp"
   },
+  "0x006D7AA0": {
+    "name": "CheckAndGetNestedInt",
+    "signature": "extern \"C\" int32_t __fastcall fn_006D7AA0(void* self)",
+    "summary": "Resolves two chained lookups via sub_006FDF70 and sub_006B99C0; returns the int32 at +0x18 of the second result, or 0 if any lookup is null/zero.",
+    "lifted_path": "lifted/leaf/decompiled_6D0000.cpp"
+  },
   "0x006D7B30": {
     "name": "sub_006D7B30",
     "signature": "extern \"C\" void* __fastcall fn_006D7B30(void* self, int edx_unused, unsigned int flags)",
