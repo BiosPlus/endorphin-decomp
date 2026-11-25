@@ -1,0 +1,34 @@
+{
+  "va": "0x00555630",
+  "size": 77,
+  "orig_symbol": "sub_00555630",
+  "src_path": "src/leaf/decompiled_550000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_550000.cpp",
+  "name": "Unknown::reserveElements160_00555630",
+  "class": "Unknown",
+  "signature": "bool fn_00555630(void* self, uint32_t count)",
+  "summary": "Clears the three address fields; for count 0 returns false, otherwise allocates count 160-byte elements, sets begin/cur to the block and end past its last element, and returns true.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint32_t",
+      "name": "field_0x0C"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:08:08Z"
+}

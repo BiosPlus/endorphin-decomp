@@ -1653,3 +1653,40 @@ void destroyStringRecordRange_005566D0(std::uint8_t* first, std::uint8_t* last) 
     }
 }
 } // namespace lift_005566D0
+
+// [0x00555630] sub_00555630 (77 bytes)
+namespace lift_00555630 {
+// Known callee 0x00405FB0: throwPreparedStringError_00405FB0 (Builds a std::string from the literal at 0x00928F30 and throws it inside an std::exception-derived object.)
+extern void ext_00405FB0();
+// Known callee 0x00553F90: allocate_160_bytes (Allocates count * 160 bytes via MFC80 operator new, throwing std::bad_alloc on size_t overflow. Returns the block address as a 32-bit value.)
+extern uint32_t ext_00553F90(uint32_t count);
+
+// @name Unknown::reserveElements160_00555630
+// @class Unknown
+// @summary Clears the three address fields; for count 0 returns false, otherwise allocates count 160-byte elements, sets begin/cur to the block and end past its last element, and returns true.
+// @field Unknown +0x04 uint32_t field_0x04
+// @field Unknown +0x08 uint32_t field_0x08
+// @field Unknown +0x0C uint32_t field_0x0C
+bool fn_00555630(void* self, uint32_t count) {
+    lift_field<uint32_t>(self, 0x04) = 0;
+    lift_field<uint32_t>(self, 0x08) = 0;
+    lift_field<uint32_t>(self, 0x0C) = 0;
+
+    if (count == 0) {
+        return false;
+    }
+
+    // 0x1999999 * 160 would exceed the 32-bit size range.
+    if (count > 0x1999999u) {
+        ext_00405FB0();
+    }
+
+    const uint32_t base = ext_00553F90(count);
+    const uint32_t end = base + count * 160u;
+
+    lift_field<uint32_t>(self, 0x04) = base;
+    lift_field<uint32_t>(self, 0x08) = base;
+    lift_field<uint32_t>(self, 0x0C) = end;
+    return true;
+}
+} // namespace lift_00555630

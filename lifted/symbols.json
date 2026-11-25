@@ -25230,6 +25230,13 @@
     "summary": "Copies the 0x20-byte record at src into count consecutive 0x20-byte records starting at dst; a null dst skips only that element's copy.",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x00555630": {
+    "name": "Unknown::reserveElements160_00555630",
+    "class": "Unknown",
+    "signature": "bool fn_00555630(void* self, uint32_t count)",
+    "summary": "Clears the three address fields; for count 0 returns false, otherwise allocates count 160-byte elements, sets begin/cur to the block and end past its last element, and returns true.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x005565C0": {
     "name": "sub_005565C0",
     "signature": "void* fn_005565C0(const void* first, const void* last, void* dest)",
