@@ -1,0 +1,28 @@
+{
+  "va": "0x00489320",
+  "size": 42,
+  "orig_symbol": "sub_00489320",
+  "src_path": "src/leaf/decompiled_480000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_480000.cpp",
+  "name": "Cursor::initFromSelf",
+  "class": "Cursor",
+  "signature": "uint32_t* fn_00489320(uint32_t* self, uint32_t* out)",
+  "summary": "Zeroes the out-struct, reports invalid parameter if pos \u003e end, then stores {self, pos} into it and returns out.",
+  "fields": [
+    {
+      "class": "Cursor",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "field_0x04"
+    },
+    {
+      "class": "Cursor",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T14:27:43Z"
+}

@@ -1919,3 +1919,28 @@ void fn_0048D350(void* self) {
 }
 } // namespace lift_0044C500
 } // namespace lift_0048D350
+
+// [0x00489320] sub_00489320 (42 bytes)
+namespace lift_00489320 {
+extern int mem_00925134;                 // IAT slot for MSVCR80!_invalid_parameter_noinfo
+
+// @name Cursor::initFromSelf
+// @class Cursor
+// @summary Zeroes the out-struct, reports invalid parameter if pos > end, then stores {self, pos} into it and returns out.
+// @field Cursor +0x04 uint32_t field_0x04
+// @field Cursor +0x08 uint32_t field_0x08
+uint32_t* fn_00489320(uint32_t* self, uint32_t* out) {
+    // Read pos/end before writing out, matching the original load order.
+    const uint32_t pos = self[1];
+    const uint32_t end = self[2];
+
+    out[0] = 0;
+    if (pos > end) {
+        // call dword ptr [0x925134]: indirect call through the IAT slot.
+        (*reinterpret_cast<void (**)()>(&mem_00925134))();
+    }
+    out[0] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
+    out[1] = pos;
+    return out;
+}
+} // namespace lift_00489320

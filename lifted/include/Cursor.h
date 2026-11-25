@@ -9,9 +9,10 @@
 namespace lifted_layout {
 struct Cursor_Fields {
     // +0x0   uint32_t                 field_0x00  (evidence: 0x007D9680)
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x007D9680) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint32_t                 field_0x04  (evidence: 0x00489320, 0x007D9680) // CONFLICT: multiple definitions at +0x4
     // +0x4   int32_t                  index  (evidence: 0x007D4820) // CONFLICT: multiple definitions at +0x4
-    // +0x8   uint32_t                 value  (evidence: 0x007D4820)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00489320) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 value  (evidence: 0x007D4820) // CONFLICT: multiple definitions at +0x8
     // +0xC   int32_t                  limit  (evidence: 0x007D4820)
     // +0x10  uint32_t                 extra  (evidence: 0x007D4820)
     // +0x1C  uint32_t                 callbacks  (evidence: 0x007D4820)

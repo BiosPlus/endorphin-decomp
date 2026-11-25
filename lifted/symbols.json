@@ -9303,6 +9303,13 @@
     "summary": "Copies a range of std::string objects backward from [first, last) to [dest_end - (last - first), dest_end)",
     "lifted_path": "lifted/leaf/decompiled_480000.cpp"
   },
+  "0x00489320": {
+    "name": "Cursor::initFromSelf",
+    "class": "Cursor",
+    "signature": "uint32_t* fn_00489320(uint32_t* self, uint32_t* out)",
+    "summary": "Zeroes the out-struct, reports invalid parameter if pos \u003e end, then stores {self, pos} into it and returns out.",
+    "lifted_path": "lifted/leaf/decompiled_480000.cpp"
+  },
   "0x00489350": {
     "name": "AllocAndInitRecord",
     "signature": "void* fn_00489350()",
