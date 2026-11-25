@@ -53,6 +53,7 @@ void __stdcall fn_0041FD10(uint32_t arg0, uint32_t arg1) {
     fn_006A608E();
 }
 } // namespace lift_0041FD10
+#include <stdexcept>
 
 // [0x004137F0] sub_004137F0 (23 bytes)
 namespace lift_004137F0 {
@@ -1399,3 +1400,24 @@ void fn_00419B90(void* self, void* pMalloc) {
     *pField = nullptr;
 }
 } // namespace lift_00419B90
+
+// [0x0041A100] sub_0041A100 (84 bytes)
+namespace lift_0041A100 {
+// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
+extern void ext_006A5C62(uint32_t arg);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+
+// @name callMFC80Ord762Checked
+// @summary Forwards its argument to thunk_MFC80_ord_762; a nonzero argument is first checked via an unsigned 0xFFFFFFFF/n quotient guard that always passes.
+void fn_0041A100(uint32_t n) {
+    if (n != 0) {
+        // Original: eax = 0xFFFFFFFF / n; if (eax < 1) throw. For any 32-bit n != 0
+        // the quotient is always >= 1, so the throw path is unreachable.
+        const uint32_t quotient = 0xFFFFFFFFu / n;
+        if (quotient < 1u) {
+            throw std::runtime_error("l{b");
+        }
+    }
+    ext_006A5C62(n);
+}
+} // namespace lift_0041A100
