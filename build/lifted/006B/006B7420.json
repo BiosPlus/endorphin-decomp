@@ -1,0 +1,34 @@
+{
+  "va": "0x006B7420",
+  "size": 60,
+  "orig_symbol": "sub_006B7420",
+  "src_path": "src/leaf/decompiled_6B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6B0000.cpp",
+  "name": "PostMessageIfActive",
+  "class": "Unknown",
+  "signature": "int32_t fn_006B7420(void* self, int32_t arg)",
+  "summary": "Stores arg at +0x68; if the flag at +0x60 is set and arg != 13, posts WM_KEYDOWN(arg) to the window at +0x90. Returns 0, or -1 when the flag is clear and arg != 13.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x60",
+      "type": "uint8_t",
+      "name": "flag"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x68",
+      "type": "int32_t",
+      "name": "storedArg"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x90",
+      "type": "HWND",
+      "name": "hwnd"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T00:55:19Z"
+}

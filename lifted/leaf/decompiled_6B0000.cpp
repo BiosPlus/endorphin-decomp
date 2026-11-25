@@ -793,3 +793,37 @@ void sub_006BB9B0(void) {
     mem_00B5D2EC = huge_ptr[1];
 }
 } // namespace lift_006BB9B0
+
+// [0x006B7420] sub_006B7420 (60 bytes)
+namespace lift_006B7420 {
+extern uint32_t mem_00925618; // IAT slot holding USER32!PostMessageA
+
+// @name PostMessageIfActive
+// @class Unknown
+// @summary Stores arg at +0x68; if the flag at +0x60 is set and arg != 13, posts WM_KEYDOWN(arg) to the window at +0x90. Returns 0, or -1 when the flag is clear and arg != 13.
+// @field Unknown +0x60 uint8_t flag
+// @field Unknown +0x68 int32_t storedArg
+// @field Unknown +0x90 HWND hwnd
+int32_t fn_006B7420(void* self, int32_t arg) {
+    constexpr int32_t kSpecialArg = 0x0D;
+    constexpr uint32_t kWmKeyDown = 0x0100;
+
+    const uint8_t flag = lift_field<uint8_t>(self, 0x60);
+    lift_field<int32_t>(self, 0x68) = arg;
+
+    if (flag == 0) {
+        if (arg != kSpecialArg) {
+            return -1;
+        }
+        return 0;
+    }
+
+    if (arg != kSpecialArg) {
+        using PostMessageAFn = int32_t(*)(void* hwnd, uint32_t msg, uintptr_t wparam, intptr_t lparam);
+        auto postMessageA = reinterpret_cast<PostMessageAFn>(static_cast<uintptr_t>(mem_00925618));
+        void* hwnd = lift_field<void*>(self, 0x90);
+        postMessageA(hwnd, kWmKeyDown, static_cast<uintptr_t>(static_cast<uint32_t>(arg)), 0);
+    }
+    return 0;
+}
+} // namespace lift_006B7420

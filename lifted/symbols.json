@@ -43723,6 +43723,13 @@
     "summary": "Stores the argument at this+0x64, raising it to 2 if it is below 2 (unsigned); returns 0.",
     "lifted_path": "lifted/leaf/tiny_6B0000.cpp"
   },
+  "0x006B7420": {
+    "name": "PostMessageIfActive",
+    "class": "Unknown",
+    "signature": "int32_t fn_006B7420(void* self, int32_t arg)",
+    "summary": "Stores arg at +0x68; if the flag at +0x60 is set and arg != 13, posts WM_KEYDOWN(arg) to the window at +0x90. Returns 0, or -1 when the flag is clear and arg != 13.",
+    "lifted_path": "lifted/leaf/decompiled_6B0000.cpp"
+  },
   "0x006B75D0": {
     "name": "GWCPropInPlaceList::vfunc_1",
     "class": "GWCPropInPlaceList",
