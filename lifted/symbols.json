@@ -16279,6 +16279,13 @@
     "summary": "Assigns the 8-byte element at src to every 8-byte slot in [begin, end), releasing each slot's previous object through its vtable.",
     "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
   },
+  "0x004DE3D0": {
+    "name": "PairRange::copyBackward",
+    "class": "PairRange",
+    "signature": "void* fn_004DE3D0(void* first, void* last, void* dest)",
+    "summary": "Backward copy of 8-byte slots [first,last) into dest ending at dest; releases each destination's held object, copies the source object pointer, and stores the value returned by the source object's virtual getter (0 when no object). Returns the new start of the destination range.",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004DE440": {
     "name": "ComputeRangeCountWithBias",
     "signature": "int32_t fn_004DE440(void* self)",
@@ -70178,6 +70185,12 @@
     "name": "GlobalFreeForwarder_0085BFE0",
     "signature": "uint32_t __cdecl fn_0085BFE0(uint32_t hMem)",
     "summary": "Forwards its single stack argument (an HGLOBAL) to ext_00859730 (GlobalFree wrapper) and returns the result.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
+  "0x0085C1C0": {
+    "name": "computeTreeEncodedSize_0085C1C0",
+    "signature": "uint32_t sub_0085C1C0(uint32_t arg0)",
+    "summary": "Recursively computes encoded size for a node tree using field_0x00 flags, child (+0x20), and sibling (+0x1C)",
     "lifted_path": "lifted/leaf/decompiled_850000.cpp"
   },
   "0x0085C260": {

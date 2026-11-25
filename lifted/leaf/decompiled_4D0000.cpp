@@ -471,3 +471,55 @@ void* fn_004D41C0(void* self, void* out, uint32_t index) {
     return out;
 }
 } // namespace lift_004D41C0
+
+// [0x004DE3D0] sub_004DE3D0 (107 bytes)
+namespace lift_004DE3D0 {
+// @name PairRange::copyBackward
+// @class PairRange
+// @summary Backward copy of 8-byte slots [first,last) into dest ending at dest; releases each destination's held object, copies the source object pointer, and stores the value returned by the source object's virtual getter (0 when no object). Returns the new start of the destination range.
+// @field PairRange +0x00 uint32_t value
+// @field PairRange +0x04 uint32_t objPtr
+void* fn_004DE3D0(void* first, void* last, void* dest) {
+    if (first == last) {
+        return dest;
+    }
+
+    uint8_t* src = static_cast<uint8_t*>(last);
+    uint8_t* dst = static_cast<uint8_t*>(dest);
+    uint8_t* const begin = static_cast<uint8_t*>(first);
+
+    do {
+        src -= 8;
+        dst -= 8;
+        if (dst != src) {
+            // Release the object currently held by the destination slot.
+            uint32_t oldObj = lift_field<uint32_t>(dst, 4);
+            if (oldObj != 0) {
+                uint8_t* obj = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(oldObj));
+                uint8_t* vt = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(lift_field<uint32_t>(obj, 0)));
+                auto release = reinterpret_cast<void (*)(void*, void*)>(
+                    static_cast<uintptr_t>(lift_field<uint32_t>(vt, 0x78)));
+                release(obj, dst);
+            }
+
+            // Copy the source object pointer into the destination slot.
+            uint32_t srcObj = lift_field<uint32_t>(src, 4);
+            lift_field<uint32_t>(dst, 4) = srcObj;
+
+            // Fetch the value through the source object's virtual getter, or 0 if none.
+            uint32_t tmp = 0;
+            uint32_t* result = &tmp;
+            if (srcObj != 0) {
+                uint8_t* obj = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(srcObj));
+                uint8_t* vt = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(lift_field<uint32_t>(obj, 0)));
+                auto getter = reinterpret_cast<uint32_t* (*)(void*, uint32_t*, void*)>(
+                    static_cast<uintptr_t>(lift_field<uint32_t>(vt, 0x70)));
+                result = getter(obj, &tmp, src);
+            }
+            lift_field<uint32_t>(dst, 0) = *result;
+        }
+    } while (src != begin);
+
+    return dst;
+}
+} // namespace lift_004DE3D0
