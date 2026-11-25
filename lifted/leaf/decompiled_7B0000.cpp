@@ -1706,3 +1706,30 @@ float sub_007B0FC0(uint32_t reader, uint32_t entry) {
     return std::bit_cast<float>(result);
 }
 } // namespace lift_007B0FC0
+
+// [0x007BF930]
+namespace lift_007BF930 {
+// @name audioDeltaDecode16
+// @summary Decodes 16-bit audio samples in-place by adding each sample to the sample `step` positions ahead
+// @field Context +0x1cc void* field_0x1cc
+// @field SubContext +0x04 int32_t field_0x04
+
+
+void __cdecl sub_007BF930(void* a1, int16_t* buf, int32_t byteCount) {
+    uint8_t* subCtx = *reinterpret_cast<uint8_t* const*>(reinterpret_cast<uint8_t*>(a1) + 0x1cc);
+    int32_t step = *reinterpret_cast<const int32_t*>(subCtx + 0x04);
+    int32_t samples = byteCount / 2;
+    if (samples <= step) {
+        return;
+    }
+
+    int32_t remaining = samples - step;
+    while (remaining > 0) {
+        for (int32_t i = 0; i < step; ++i) {
+            buf[step] = static_cast<int16_t>(buf[step] + buf[0]);
+            ++buf;
+        }
+        remaining -= step;
+    }
+}
+} // namespace lift_007BF930

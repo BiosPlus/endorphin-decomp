@@ -9,5 +9,6 @@
 namespace lifted_layout {
 struct Context_Fields {
     // +0xB0  uint32_t                 field_0xb0  (evidence: 0x007DAE50)
+    // +0x1CC void*                    field_0x1cc  (evidence: 0x007BF930)
 };
 } // namespace lifted_layout

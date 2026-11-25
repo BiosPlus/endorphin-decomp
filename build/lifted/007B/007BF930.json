@@ -1,0 +1,27 @@
+{
+  "va": "0x007BF930",
+  "size": 115,
+  "orig_symbol": "sub_007BF930",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "audioDeltaDecode16",
+  "signature": "void __cdecl sub_007BF930(void* a1, int16_t* buf, int32_t byteCount)",
+  "summary": "Decodes 16-bit audio samples in-place by adding each sample to the sample `step` positions ahead",
+  "fields": [
+    {
+      "class": "Context",
+      "offset": "+0x1CC",
+      "type": "void*",
+      "name": "field_0x1cc"
+    },
+    {
+      "class": "SubContext",
+      "offset": "+0x4",
+      "type": "int32_t",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:42:53Z"
+}
