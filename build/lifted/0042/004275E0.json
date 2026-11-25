@@ -1,0 +1,13 @@
+{
+  "va": "0x004275E0",
+  "size": 90,
+  "orig_symbol": "sub_004275E0",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "copyStringFromSource_004275E0",
+  "signature": "void __cdecl copyStringFromSource_004275E0(std::string* dst, void* src)",
+  "summary": "Calls virtual slot 2 on src (returns const std::string\u0026) and assigns the result into dst. Caller cleans args (__cdecl).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:18:12Z"
+}

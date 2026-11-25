@@ -2350,6 +2350,12 @@
     "summary": "Returns the address of the global constant mem_0092E4B8 (initialised to 0x006A5FCE).",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
   },
+  "0x004275E0": {
+    "name": "copyStringFromSource_004275E0",
+    "signature": "void __cdecl copyStringFromSource_004275E0(std::string* dst, void* src)",
+    "summary": "Calls virtual slot 2 on src (returns const std::string\u0026) and assigns the result into dst. Caller cleans args (__cdecl).",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
+  },
   "0x004276B0": {
     "name": "StdStringCopyConstruct",
     "signature": "void* fn_004276B0(void* dst, const void* src)",

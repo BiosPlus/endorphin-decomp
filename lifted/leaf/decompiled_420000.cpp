@@ -907,3 +907,20 @@ void fn_00420070(void* self) {
     ext_00401BB0(self);
 }
 } // namespace lift_00420070
+
+// [0x004275E0]
+namespace lift_004275E0 {
+// @name copyStringFromSource_004275E0
+// @summary Calls virtual slot 2 on src (returns const std::string&) and assigns the result into dst. Caller cleans args (__cdecl).
+// Note: the original SEH frame (fs:[0] handler/trylevel) and the stack-based temp string are modeled with a plain local std::string.
+
+using GetStringFn = const std::string& (__thiscall*)(void* self, std::string* out);
+
+void __cdecl copyStringFromSource_004275E0(std::string* dst, void* src) {
+    void** vtbl = *reinterpret_cast<void***>(src);
+    GetStringFn get = reinterpret_cast<GetStringFn>(vtbl[2]);
+    std::string tmp;
+    const std::string& result = get(src, &tmp);
+    *dst = result;
+}
+} // namespace lift_004275E0
