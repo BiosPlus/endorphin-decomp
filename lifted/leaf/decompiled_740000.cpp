@@ -159,3 +159,16 @@ bool fn_0074D800(void* self) {
     return true;
 }
 } // namespace lift_0074D800
+
+// [0x00747570] sub_00747570 (16 bytes)
+namespace lift_00747570 {
+// Known callee 0x00700980: sub_00700980 (Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).)
+extern void ext_00700980(void* self, uint32_t value);
+
+// @name fn_00747570
+// @summary Calls ext_00700980 with self (second stack argument) and value 0, then returns 1.
+uint8_t fn_00747570(uint32_t /*stack_arg0*/, void* self) {
+    ext_00700980(self, 0);
+    return 1;
+}
+} // namespace lift_00747570

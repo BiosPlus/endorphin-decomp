@@ -53781,6 +53781,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x005304A0 (Unknown::SetByteAt1D8).",
     "lifted_path": "lifted/leaf/tiny_6C0000.cpp"
   },
+  "0x006C7B60": {
+    "name": "transformPoint3d",
+    "signature": "void sub_006C7B60(double* out, const double* mat, const double* vec)",
+    "summary": "Transforms a 3D double-precision point by a 4x4 double-precision affine matrix.",
+    "lifted_path": "lifted/leaf/decompiled_6C0000.cpp"
+  },
   "0x006C81A0": {
     "name": "scaleMatrix3x3Rows",
     "signature": "void* __cdecl sub_006C81A0(void* dst, const void* src, const void* scale)",
@@ -63205,6 +63211,12 @@
     "signature": "extern \"C\" void* __fastcall fn_00743AB0(void* self, int edx_unused, unsigned int flags)",
     "summary": "MSVC scalar deleting destructor: calls sub_00743AD0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/leaf/tiny_740000.cpp"
+  },
+  "0x00747570": {
+    "name": "fn_00747570",
+    "signature": "uint8_t fn_00747570(uint32_t /*stack_arg0*/, void* self)",
+    "summary": "Calls ext_00700980 with self (second stack argument) and value 0, then returns 1.",
+    "lifted_path": "lifted/leaf/decompiled_740000.cpp"
   },
   "0x0074ADF0": {
     "name": "sub_0074ADF0",
