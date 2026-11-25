@@ -1,0 +1,13 @@
+{
+  "va": "0x00510830",
+  "size": 73,
+  "orig_symbol": "sub_00510830",
+  "src_path": "src/leaf/decompiled_650000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_650000.cpp",
+  "name": "CopyRangeBackwardAndComputeDestBegin",
+  "signature": "void* fn_00510830(uint8_t* first, uint8_t* last, uint8_t* d_last)",
+  "summary": "Calls ext_004C72D0 to copy [first,last) backward ending at d_last, then returns d_last minus the byte span of [first,last) rounded down to a multiple of 0x20.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:31:41Z"
+}
