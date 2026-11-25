@@ -20,6 +20,7 @@ void fn_00467320() {
 }
 } // namespace lift_00437DE0
 } // namespace lift_00467320
+#include <cstdlib>
 
 // [0x00467330] sub_00467330 (8 bytes)
 namespace lift_00467330 {
@@ -995,3 +996,24 @@ void fn_00468630(void* self) {
     ext_0046F930(objPtr);
 }
 } // namespace lift_00468630
+
+// [0x0046C490] sub_0046C490 (69 bytes)
+namespace lift_0046C490 {
+// Tail-called with the biased value (original passes it on the x87 stack).
+extern double ext_006A6DE0(double value);
+
+// @name roundBiasedFloatFromString
+// @summary Parses a std::string as a float (atof), then adds or subtracts 0.5 by sign (round half away from zero) and tail-calls sub_006A6DE0 with the result.
+// @field none (only the std::string object is passed in; no field offsets accessed)
+double fn_0046C490(const std::string* text) {
+    // Original: atof(text->c_str()) stored as float32.
+    const float parsed = static_cast<float>(std::atof(text->c_str()));
+
+    // Original: fcom against 0.0; C0 set for "less than" or unordered -> subtract 0.5, else add 0.5.
+    const double biased = (parsed < 0.0f || std::isnan(parsed))
+                              ? static_cast<double>(parsed) - 0.5
+                              : static_cast<double>(parsed) + 0.5;
+
+    return ext_006A6DE0(biased);
+}
+} // namespace lift_0046C490

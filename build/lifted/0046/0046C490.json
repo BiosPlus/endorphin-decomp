@@ -1,0 +1,13 @@
+{
+  "va": "0x0046C490",
+  "size": 69,
+  "orig_symbol": "sub_0046C490",
+  "src_path": "src/leaf/decompiled_460000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_460000.cpp",
+  "name": "roundBiasedFloatFromString",
+  "signature": "double fn_0046C490(const std::string* text)",
+  "summary": "Parses a std::string as a float (atof), then adds or subtracts 0.5 by sign (round half away from zero) and tail-calls sub_006A6DE0 with the result.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:22:10Z"
+}
