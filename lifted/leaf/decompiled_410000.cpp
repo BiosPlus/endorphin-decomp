@@ -1218,3 +1218,37 @@ uint32_t fn_004141D0(void* self, void* arg1) {
     return 0;
 }
 } // namespace lift_004141D0
+
+// [0x0041FD20] sub_0041FD20 (72 bytes)
+namespace lift_0041FD20 {
+// MFC80!ord_3397 (IAT slot mem_009245A8): CString-style accessor, thiscall, returns LPCSTR buffer.
+extern LPCSTR __thiscall ext_MFC80_ord_3397(void* cstring);
+// KERNEL32!GetModuleHandleA (IAT slot mem_00924208).
+extern HMODULE __stdcall ext_GetModuleHandleA(LPCSTR name);
+// KERNEL32!LoadLibraryA (IAT slot mem_009241D4).
+extern HMODULE __stdcall ext_LoadLibraryA(LPCSTR name);
+
+// @name Unknown::GetOrLoadModule
+// @class Unknown
+// @summary Returns cached module handle at +0x4; otherwise resolves it by name via GetModuleHandleA, falling back to LoadLibraryA (sets +0x8 flag on load path).
+// @field Unknown +0x04 HMODULE module
+// @field Unknown +0x08 BOOLEAN field_0x08
+// @field Unknown +0x0C void field_0x0C (CString-style name object)
+extern HMODULE fn_0041FD20(void* self) {
+    HMODULE& module = lift_field<HMODULE>(self, 0x4);
+    if (module != nullptr) {
+        return module;
+    }
+
+    void* name_obj = static_cast<uint8_t*>(self) + 0xC;
+
+    module = ext_GetModuleHandleA(ext_MFC80_ord_3397(name_obj));
+    if (module != nullptr) {
+        return module;
+    }
+
+    module = ext_LoadLibraryA(ext_MFC80_ord_3397(name_obj));
+    lift_field<BOOLEAN>(self, 0x8) = (module != nullptr) ? 1 : 0;
+    return module;
+}
+} // namespace lift_0041FD20

@@ -154,6 +154,7 @@ struct Unknown_Fields {
     // +0x4   void* field_0x04 (sub-component object returned by vfunc_0; its class is not identified)  (evidence: 0x0066BDB0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    inner  (evidence: 0x007833F0, 0x00788E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    linked  (evidence: 0x006B2F70, 0x006BDAF0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   HMODULE                  module  (evidence: 0x0041FD20) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t*                 next  (evidence: 0x008103A0, 0x008103F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    obj_ptr  (evidence: 0x0058A960) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t field_0x04 (enable flag on inner object)  (evidence: 0x00783540, 0x00788E50) // CONFLICT: multiple definitions at +0x4
@@ -195,6 +196,7 @@ struct Unknown_Fields {
     // +0x8   uint32_t                 end  (evidence: 0x0067F9D0) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint8_t*                 end  (evidence: 0x0041CD10) // CONFLICT: multiple definitions at +0x8
     // +0x8   uint32_t                 endPtr  (evidence: 0x0041CCC0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   BOOLEAN                  field_0x08  (evidence: 0x0041FD20) // CONFLICT: multiple definitions at +0x8
     // +0x8   BYTE                     field_0x08  (evidence: 0x004E9BB0, 0x006F8B30, 0x00714920, 0x0071F070) // CONFLICT: multiple definitions at +0x8
     // +0x8   DWORD                    field_0x08  (evidence: 0x00480280, 0x004F9800, 0x00522220, 0x005B34C0, 0x0063D970, 0x0063DDF0, 0x0063EA50, 0x006619D0, 0x0066A720, 0x006BB7B0, 0x006C1BB0, 0x006C9F00, 0x006E7F90, 0x006E7FA0, 0x006E86A0, 0x006FC950, 0x0077F520, 0x0086B180, 0x0086B200) // CONFLICT: multiple definitions at +0x8
     // +0x8   DWORD*                   field_0x08  (evidence: 0x007D4780) // CONFLICT: multiple definitions at +0x8
@@ -261,6 +263,7 @@ struct Unknown_Fields {
     // +0xC   uint32_t                 index  (evidence: 0x00810C30) // CONFLICT: multiple definitions at +0xC
     // +0xC   std::string              name  (evidence: 0x005A2BD0) // CONFLICT: multiple definitions at +0xC
     // +0xC   HGLOBAL field_0x0c (inner handle of the holder object; freed via GlobalFree if non-null)  (evidence: 0x007BD340) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void field_0x0C (CString-style name object)  (evidence: 0x0041FD20) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    pObj  (evidence: 0x006D8FD0) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t slot3 (vtable entry 3, read as a pointer)  (evidence: 0x007DAD70) // CONFLICT: multiple definitions at +0xC
     // +0xC   void* field_0x0C (sub-object pointer)  (evidence: 0x007D5B30) // CONFLICT: multiple definitions at +0xC

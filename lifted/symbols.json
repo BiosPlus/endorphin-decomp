@@ -1948,6 +1948,13 @@
     "summary": "Forwards to MFC80!ord_6236 with a zero argument and cleans up 8 bytes of stack arguments",
     "lifted_path": "lifted/leaf/decompiled_410000.cpp"
   },
+  "0x0041FD20": {
+    "name": "Unknown::GetOrLoadModule",
+    "class": "Unknown",
+    "signature": "extern \"C\" HMODULE fn_0041FD20(void* self)",
+    "summary": "Returns cached module handle at +0x4; otherwise resolves it by name via GetModuleHandleA, falling back to LoadLibraryA (sets +0x8 flag on load path).",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x0041FEA0": {
     "name": "Unknown::SendWmUser100CAndIncrement",
     "class": "Unknown",

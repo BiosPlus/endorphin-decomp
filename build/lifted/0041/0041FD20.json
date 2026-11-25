@@ -1,0 +1,34 @@
+{
+  "va": "0x0041FD20",
+  "size": 72,
+  "orig_symbol": "sub_0041FD20",
+  "src_path": "src/leaf/decompiled_410000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_410000.cpp",
+  "name": "Unknown::GetOrLoadModule",
+  "class": "Unknown",
+  "signature": "extern \"C\" HMODULE fn_0041FD20(void* self)",
+  "summary": "Returns cached module handle at +0x4; otherwise resolves it by name via GetModuleHandleA, falling back to LoadLibraryA (sets +0x8 flag on load path).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x4",
+      "type": "HMODULE",
+      "name": "module"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "BOOLEAN",
+      "name": "field_0x08"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "void field_0x0C (CString-style name",
+      "name": "object)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:27:56Z"
+}
