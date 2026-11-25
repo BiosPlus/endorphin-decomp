@@ -576,6 +576,12 @@
     "summary": "Copy-assigns a range of 0x58-byte records backward (last to first) into a destination ending at dstEnd; returns the destination begin.",
     "lifted_path": "lifted/leaf/decompiled_400000.cpp"
   },
+  "0x00404F00": {
+    "name": "formatIntToString",
+    "signature": "void* __cdecl sub_00404F00(void* out_str, int32_t value)",
+    "summary": "Formats an integer into a stack buffer via _snprintf and constructs a std::string.",
+    "lifted_path": "lifted/leaf/decompiled_400000.cpp"
+  },
   "0x00405160": {
     "name": "Unknown::AdvanceIndexUnlessAtLast",
     "class": "Unknown",
@@ -64760,6 +64766,13 @@
     "class": "SortedArray",
     "signature": "extern uint32_t __thiscall fn_00782E70(void* self, uint32_t key, int32_t* outIndex)",
     "summary": "Auto-lifted identical-shape clone of 0x007846D0 (SortedArray::findValue).",
+    "lifted_path": "lifted/leaf/decompiled_780000.cpp"
+  },
+  "0x00783020": {
+    "name": "KeyValueMap::findEntry",
+    "class": "KeyValueMap",
+    "signature": "void* __thiscall sub_00783020(void* self, uint32_t key)",
+    "summary": "Binary-searches an 8-byte-entry array for a 32-bit key using one of two comparators",
     "lifted_path": "lifted/leaf/decompiled_780000.cpp"
   },
   "0x00783100": {

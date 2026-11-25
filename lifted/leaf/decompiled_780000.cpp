@@ -1624,3 +1624,30 @@ uint8_t* __thiscall sub_0078C8C0(void* self, int32_t index, uint8_t swapEndian, 
     return reinterpret_cast<uint8_t*>(entry + offset + 4);
 }
 } // namespace lift_0078C8C0
+
+// [0x00783020]
+namespace lift_00783020 {
+int __cdecl ext_00782FC0(const void* a, const void* b);
+int __cdecl ext_00782FE0(const void* a, const void* b);
+extern void* (__cdecl* mem_0092529C)(const void* key, const void* base, uint32_t num, uint32_t size, int(__cdecl* compar)(const void*, const void*));
+
+// @name KeyValueMap::findEntry
+// @class KeyValueMap
+// @summary Binary-searches an 8-byte-entry array for a 32-bit key using one of two comparators
+// @field KeyValueMap +0x00 void* entries
+// @field KeyValueMap +0x04 uint32_t count
+// @field KeyValueMap +0x11 uint8_t useAltComparator
+void* __thiscall sub_00783020(void* self, uint32_t key) {
+    uint8_t* base_ptr = static_cast<uint8_t*>(self);
+    uint32_t count = *reinterpret_cast<uint32_t*>(base_ptr + 0x4);
+    if (count == 0) {
+        return nullptr;
+    }
+
+    uint32_t search_key[2] = {key, 0};
+    void* entries = *reinterpret_cast<void**>(base_ptr);
+    uint8_t use_alt = *(base_ptr + 0x11);
+    auto compar = (use_alt != 0) ? ext_00782FE0 : ext_00782FC0;
+    return mem_0092529C(search_key, entries, count, 8, compar);
+}
+} // namespace lift_00783020

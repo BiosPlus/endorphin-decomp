@@ -1,0 +1,34 @@
+{
+  "va": "0x00783020",
+  "size": 95,
+  "orig_symbol": "sub_00783020",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "KeyValueMap::findEntry",
+  "class": "KeyValueMap",
+  "signature": "void* __thiscall sub_00783020(void* self, uint32_t key)",
+  "summary": "Binary-searches an 8-byte-entry array for a 32-bit key using one of two comparators",
+  "fields": [
+    {
+      "class": "KeyValueMap",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "entries"
+    },
+    {
+      "class": "KeyValueMap",
+      "offset": "+0x4",
+      "type": "uint32_t",
+      "name": "count"
+    },
+    {
+      "class": "KeyValueMap",
+      "offset": "+0x11",
+      "type": "uint8_t",
+      "name": "useAltComparator"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:51:24Z"
+}
