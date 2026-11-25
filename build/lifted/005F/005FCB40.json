@@ -1,0 +1,22 @@
+{
+  "va": "0x005FCB40",
+  "size": 73,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026private: class NM::Vector3 const \u0026 __thiscall Sensor::getMutableVector3(void) const, 1\u003e::vfunc_0",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cSensor\u003e::vfunc_0",
+  "class": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026private: class NM::Vector3 const \u0026 __thiscall Sensor::getMutableVector3(void) const, 1\u003e",
+  "signature": "void* fn_005FCB40(void* unused, void* self)",
+  "summary": "Returns the holder object after invoking its vtable slot 14 and forwarding the result to ext_00672110; throws a fixed DerivedException if the holder's target pointer is null.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T13:04:48Z"
+}

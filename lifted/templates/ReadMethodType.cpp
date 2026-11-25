@@ -56768,3 +56768,42 @@ void* fn_00505030(void* out, const void* src) {
     return out;
 }
 } // namespace lift_00505030
+
+// [0x005FCB40] ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &private: class NM::Vector3 const & __thiscall Sensor::getMutableVector3(void) const, 1>::vfunc_0 (73 bytes)
+namespace lift_005FCB40 {
+extern void ext_00672110();
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void ext_0046C3C0();
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2();
+
+// @name ExprParser::ReadMethodType<Sensor>::vfunc_0
+// @class ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &private: class NM::Vector3 const & __thiscall Sensor::getMutableVector3(void) const, 1>
+// @summary Returns the holder object after invoking its vtable slot 14 and forwarding the result to ext_00672110; throws a fixed DerivedException if the holder's target pointer is null.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+void* fn_005FCB40(void* unused, void* self) {
+    (void)unused;
+
+    // Holder's first dword is the target object pointer.
+    void* target = lift_field<void*>(self, 0);
+
+    if (target == nullptr) {
+        // Construct a DerivedException in a local buffer and throw it.
+        // Storage size is an upper bound (the real type's size is not recovered).
+        alignas(16) unsigned char exc_storage[64] = {};
+        reinterpret_cast<void (*)(void*)>(ext_0046C3C0)(exc_storage);
+        reinterpret_cast<void (*)(void*, void*)>(ext_006A6DD2)(exc_storage, reinterpret_cast<void*>(0x009DEC1Cu));
+        return nullptr; // not reached: the throw thunk does not return
+    }
+
+    // Virtual call: vtable slot 14 (offset 0x38) on target, no arguments.
+    void** vtbl = *reinterpret_cast<void***>(target);
+    using VSlot14 = void* (*)(void*);
+    void* result = reinterpret_cast<VSlot14>(vtbl[14])(target);
+
+    // Forward result to ext_00672110 with self as the implicit this.
+    reinterpret_cast<void (*)(void*, void*)>(ext_00672110)(self, result);
+
+    return self;
+}
+} // namespace lift_005FCB40

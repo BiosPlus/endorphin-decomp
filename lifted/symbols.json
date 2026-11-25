@@ -34604,6 +34604,13 @@
     "summary": "Reads the object's vtable pointer and returns the function pointer stored at vtable byte offset 0x48 (the original is a tail-jump to that slot; here the target is returned, since a portable tail-call needs the target's signature).",
     "lifted_path": "lifted/leaf/tiny_5F0000.cpp"
   },
+  "0x005FCB40": {
+    "name": "ExprParser::ReadMethodType\u003cSensor\u003e::vfunc_0",
+    "class": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026private: class NM::Vector3 const \u0026 __thiscall Sensor::getMutableVector3(void) const, 1\u003e",
+    "signature": "void* fn_005FCB40(void* unused, void* self)",
+    "summary": "Returns the holder object after invoking its vtable slot 14 and forwarding the result to ext_00672110; throws a fixed DerivedException if the holder's target pointer is null.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x005FCB90": {
     "name": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026Sensor::getMutableVector3, 1\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026Sensor::getMutableVector3, 1\u003e",
