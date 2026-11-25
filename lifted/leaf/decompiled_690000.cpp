@@ -1421,3 +1421,35 @@ uint32_t __thiscall fn_00698AD0(void* self, uint32_t sret, uint32_t* offset_ptr)
     return sret;
 }
 } // namespace lift_00698AD0
+
+// [0x00693CC0]
+namespace lift_00693CC0 {
+// @name Quat4f::normalize
+// @class Quat4f
+// @summary Normalizes a 4-component float vector/quaternion in place if its length is non-zero, returning this.
+// @field Quat4f +0x00 float x
+// @field Quat4f +0x04 float y
+// @field Quat4f +0x08 float z
+// @field Quat4f +0x0C float w
+
+
+extern uint32_t __fastcall fn_00693CC0(uint32_t ecx, uint32_t /*edx*/) {
+    float* q = reinterpret_cast<float*>(static_cast<uintptr_t>(ecx));
+    float x = q[0];
+    float y = q[1];
+    float z = q[2];
+    float w = q[3];
+
+    float len_sq = x * x + y * y + z * z + w * w;
+    float len = std::sqrt(len_sq);
+
+    if (len != 0.0f) {
+        q[0] = x / len;
+        q[1] = y / len;
+        q[2] = z / len;
+        q[3] = w / len;
+    }
+
+    return ecx;
+}
+} // namespace lift_00693CC0

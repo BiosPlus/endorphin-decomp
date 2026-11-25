@@ -52192,6 +52192,13 @@
     "summary": "Pure jump thunk forwarding to sub_0067C170.",
     "lifted_path": "lifted/thunks/jmp_thunks.cpp"
   },
+  "0x00693CC0": {
+    "name": "Quat4f::normalize",
+    "class": "Quat4f",
+    "signature": "extern \"C\" uint32_t __fastcall fn_00693CC0(uint32_t ecx, uint32_t /*edx*/)",
+    "summary": "Normalizes a 4-component float vector/quaternion in place if its length is non-zero, returning this.",
+    "lifted_path": "lifted/leaf/decompiled_690000.cpp"
+  },
   "0x00695620": {
     "name": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)",
     "class": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, float, \u0026public: void __thiscall DoubleWithProperties::setValue(float)\u003e",

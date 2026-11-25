@@ -1,0 +1,40 @@
+{
+  "va": "0x00693CC0",
+  "size": 115,
+  "orig_symbol": "sub_00693CC0",
+  "src_path": "src/leaf/decompiled_690000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_690000.cpp",
+  "name": "Quat4f::normalize",
+  "class": "Quat4f",
+  "signature": "extern \"C\" uint32_t __fastcall fn_00693CC0(uint32_t ecx, uint32_t /*edx*/)",
+  "summary": "Normalizes a 4-component float vector/quaternion in place if its length is non-zero, returning this.",
+  "fields": [
+    {
+      "class": "Quat4f",
+      "offset": "+0x0",
+      "type": "float",
+      "name": "x"
+    },
+    {
+      "class": "Quat4f",
+      "offset": "+0x4",
+      "type": "float",
+      "name": "y"
+    },
+    {
+      "class": "Quat4f",
+      "offset": "+0x8",
+      "type": "float",
+      "name": "z"
+    },
+    {
+      "class": "Quat4f",
+      "offset": "+0xC",
+      "type": "float",
+      "name": "w"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:42:07Z"
+}
