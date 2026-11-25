@@ -1,0 +1,28 @@
+{
+  "va": "0x006C2020",
+  "size": 77,
+  "orig_symbol": "sub_006C2020",
+  "src_path": "src/clones/auto_clones_6C0000.cpp",
+  "lifted_path": "lifted/clones/auto_clones_6C0000.cpp",
+  "name": "Unknown::DestroySubobjects_006C2020",
+  "class": "Unknown",
+  "signature": "extern \"C\" void fn_006C2020(void* self)",
+  "summary": "Runs the cleanup routine for the subobjects at +0x28 and +0x08 of this (SEH-guarded in the original, no return value).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "void field_0x08 (subobject passed to cleanup",
+      "name": "routine)"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x28",
+      "type": "void field_0x28 (subobject passed to cleanup",
+      "name": "routine)"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:44:41Z"
+}
