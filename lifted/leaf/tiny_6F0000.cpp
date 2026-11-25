@@ -2995,3 +2995,15 @@ uint32_t sub_006FC6E0(uint32_t index) {
     return *reinterpret_cast<uint32_t*>(entry + 0xC);
 }
 } // namespace lift_006FC6E0
+
+// [0x006FA940] sub_006FA940 (11 bytes)
+namespace lift_006FA940 {
+// @name descriptiveName: IsNonZeroAt08
+// @summary Returns true when the dword at this+0x08 is non-zero (ret 4: one stack arg, unused).
+// @field Unknown +0x08 uint32_t field_0x08
+bool fn_006FA940(void* self) {
+    const auto* base = static_cast<const unsigned char*>(self);
+    const uint32_t value = *reinterpret_cast<const uint32_t*>(base + 0x08);
+    return value != 0;
+}
+} // namespace lift_006FA940

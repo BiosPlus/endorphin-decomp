@@ -1,0 +1,21 @@
+{
+  "va": "0x006FA940",
+  "size": 11,
+  "orig_symbol": "sub_006FA940",
+  "src_path": "src/leaf/tiny_6F0000.cpp",
+  "lifted_path": "lifted/leaf/tiny_6F0000.cpp",
+  "name": "descriptiveName: IsNonZeroAt08",
+  "signature": "bool fn_006FA940(void* self)",
+  "summary": "Returns true when the dword at this+0x08 is non-zero (ret 4: one stack arg, unused).",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x8",
+      "type": "uint32_t",
+      "name": "field_0x08"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:19:21Z"
+}
