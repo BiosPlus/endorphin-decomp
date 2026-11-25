@@ -1310,3 +1310,69 @@ void __thiscall sub_006D9170(void* self, uint32_t value) {
     ext_00711CF0(target, 0x10, flag);
 }
 } // namespace lift_006D9170
+
+// [0x006D98F0]
+namespace lift_006D98F0 {
+extern int32_t __cdecl ext_006D98D0(void);
+extern double mem_00993BE0;
+extern uint8_t mem_00B5D910[];
+
+// @name getFrameRateForId
+// @summary Looks up a double value (defaulting to 30.0) in a 12-entry table at mem_00B5D910 by ID, falling back to ext_006D98D0 when arg0 is 0.
+extern double __cdecl fn_006D98F0(int32_t arg0) {
+    int32_t id = arg0;
+    if (id == 0) {
+        if (ext_006D98D0() != 0) {
+            id = ext_006D98D0();
+        }
+    }
+
+    double result = mem_00993BE0;
+    for (int32_t i = 0; i < 12; ++i) {
+        const uint8_t* entry = mem_00B5D910 + (static_cast<uint32_t>(i) << 5);
+        int32_t entry_id = *reinterpret_cast<const int32_t*>(entry + 0x0C);
+        if (entry_id == id) {
+            if (entry != nullptr) {
+                result = *reinterpret_cast<const double*>(entry);
+            }
+            break;
+        }
+    }
+    return result;
+}
+} // namespace lift_006D98F0
+
+// [0x006DE690]
+namespace lift_006DE690 {
+// @name Unknown::FindIndexByName
+// @class Unknown
+// @summary Searches items [0..count) by case-insensitive name using vtable+0x18 and ext_006DE3B0, returning index or -1.
+// @field Unknown +0x00 void** vtable
+// @field Unknown +0x20 int32_t count
+
+
+extern uint32_t __fastcall ext_006DE3B0(void* self);
+extern int(__cdecl* mem_009251D0)(const char*, const char*);
+
+extern int32_t __fastcall fn_006DE690(void* self, void* /*edx*/, const char* name) {
+    int32_t count = *reinterpret_cast<int32_t*>(reinterpret_cast<uint8_t*>(self) + 0x20);
+    if (count <= 0) {
+        return -1;
+    }
+
+    auto vtable = *reinterpret_cast<void***>(self);
+    using GetItemFn = void*(__thiscall*)(void*, int32_t);
+    auto get_item = reinterpret_cast<GetItemFn>(vtable[0x18 / sizeof(void*)]);
+
+    for (int32_t i = 0; i < count; ++i) {
+        void* item = get_item(self, i);
+        const char* item_name = reinterpret_cast<const char*>(static_cast<uintptr_t>(ext_006DE3B0(item)));
+        if (mem_009251D0(item_name, name) == 0) {
+            return i;
+        }
+        count = *reinterpret_cast<int32_t*>(reinterpret_cast<uint8_t*>(self) + 0x20);
+    }
+
+    return -1;
+}
+} // namespace lift_006DE690

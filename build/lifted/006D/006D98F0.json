@@ -1,0 +1,13 @@
+{
+  "va": "0x006D98F0",
+  "size": 80,
+  "orig_symbol": "sub_006D98F0",
+  "src_path": "src/leaf/decompiled_6D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_6D0000.cpp",
+  "name": "getFrameRateForId",
+  "signature": "extern \"C\" double __cdecl fn_006D98F0(int32_t arg0)",
+  "summary": "Looks up a double value (defaulting to 30.0) in a 12-entry table at mem_00B5D910 by ID, falling back to ext_006D98D0 when arg0 is 0.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T01:53:13Z"
+}
