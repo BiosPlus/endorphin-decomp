@@ -1294,3 +1294,28 @@ void* fn_00539490(uint32_t count) {
     return ext_006A5C62(size);
 }
 } // namespace lift_00539490
+
+// [0x00530610] sub_00530610 (47 bytes)
+namespace lift_00530610 {
+// Known callee 0x005432A0: Unknown::callOnEachElement (Walks the pointer range [begin, end) of this container and calls ext_005434E0 on each element, forwarding the single argument; aborts if the range is inverted.)
+extern void ext_005432A0(void* self, void* arg);
+
+// @name Unknown::notifyThenCallOnEachElement
+// @class Unknown
+// @summary If arg is non-null, invokes its vtable slot 1 with (this+0x0C); then forwards arg to callOnEachElement on this+0x38.
+// @field Unknown +0x0C uint8_t field_0x0C
+// @field Unknown +0x38 uint8_t field_0x38
+void fn_00530610(void* self, void* arg) {
+    if (arg != nullptr) {
+        void** vtbl = *reinterpret_cast<void***>(arg);
+        void* sub = nullptr;
+        if (self != nullptr) {
+            sub = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) + 0x0C);
+        }
+        auto slot1 = reinterpret_cast<void (*)(void*, void*)>(vtbl[1]);
+        slot1(arg, sub);
+    }
+    void* container = reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(self) + 0x38);
+    ext_005432A0(container, arg);
+}
+} // namespace lift_00530610

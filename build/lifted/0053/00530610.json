@@ -1,0 +1,28 @@
+{
+  "va": "0x00530610",
+  "size": 47,
+  "orig_symbol": "sub_00530610",
+  "src_path": "src/leaf/decompiled_530000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_530000.cpp",
+  "name": "Unknown::notifyThenCallOnEachElement",
+  "class": "Unknown",
+  "signature": "void fn_00530610(void* self, void* arg)",
+  "summary": "If arg is non-null, invokes its vtable slot 1 with (this+0x0C); then forwards arg to callOnEachElement on this+0x38.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0xC",
+      "type": "uint8_t",
+      "name": "field_0x0C"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x38",
+      "type": "uint8_t",
+      "name": "field_0x38"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:24:27Z"
+}
