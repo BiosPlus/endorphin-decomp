@@ -107,6 +107,7 @@ struct Unknown_Fields {
     // +0x0   void* const*             vtable  (evidence: 0x0064F8F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x00420070, 0x0042FAE0, 0x0042FDD0, 0x004345B0, 0x00456340, 0x00622B40, 0x0062A590, 0x00648A20, 0x00649010, 0x0067ADB0, 0x006C92D0, 0x006DE660, 0x006DE690, 0x006DE720, 0x006F99B0, 0x006FA920, 0x00704A20, 0x00707FB0, 0x0070AD00, 0x0070BF00, 0x007857A0, 0x00790D60, 0x0079ADA0, 0x0079DCE0, 0x0079E610) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtablePtr  (evidence: 0x00503CA0, 0x00508BC0, 0x0050C4D0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    vtable_or_ptr  (evidence: 0x005457B0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 vtable_ptr  (evidence: 0x006AD290) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vtbl  (evidence: 0x006FC1E0, 0x007D4B10, 0x007D8470) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtbl  (evidence: 0x00648EA0, 0x006BB7C0) // CONFLICT: multiple definitions at +0x0
@@ -738,6 +739,7 @@ struct Unknown_Fields {
     // +0x98  uint32_t                 field_0x98  (evidence: 0x006DE3E0, 0x00700970, 0x00715570, 0x0071B0F0, 0x0071B4F0, 0x0071B6C0, 0x0071BF90, 0x0071BFA0, 0x0071C360, 0x0071C380, 0x0071C4C0, 0x0071C600, 0x0071C940, 0x0071C9A0, 0x007C8490, 0x007C97C0, 0x007D8860) // CONFLICT: multiple definitions at +0x98
     // +0x98  void*                    field_0x98  (evidence: 0x007C8490, 0x007C9370) // CONFLICT: multiple definitions at +0x98
     // +0x9C  unknown                  field_0x9C  (evidence: 0x00545A70) // CONFLICT: multiple definitions at +0x9C
+    // +0x9C  BYTE                     field_0x9c  (evidence: 0x005457B0) // CONFLICT: multiple definitions at +0x9C
     // +0x9C  int32_t                  field_0x9c  (evidence: 0x006BB150) // CONFLICT: multiple definitions at +0x9C
     // +0x9C  std::string              field_0x9c  (evidence: 0x0053DAA0) // CONFLICT: multiple definitions at +0x9C
     // +0x9C  uint32_t                 field_0x9c  (evidence: 0x006DE3B0, 0x007C2E50, 0x007C9260) // CONFLICT: multiple definitions at +0x9C

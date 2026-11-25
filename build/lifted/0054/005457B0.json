@@ -1,0 +1,28 @@
+{
+  "va": "0x005457B0",
+  "size": 85,
+  "orig_symbol": "sub_005457B0",
+  "src_path": "src/leaf/decompiled_540000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_540000.cpp",
+  "name": "Unknown::construct_005457B0",
+  "class": "Unknown",
+  "signature": "void fn_005457B0(void* self)",
+  "summary": "Sets the object's vtable word, constructs the embedded subobject at +0x9C, then runs the lifted initializer fn_00543320 on self.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "vtable_or_ptr"
+    },
+    {
+      "class": "Unknown",
+      "offset": "+0x9C",
+      "type": "BYTE",
+      "name": "field_0x9c"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:08:26Z"
+}

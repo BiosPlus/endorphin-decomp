@@ -20739,6 +20739,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_00545540 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/classes/global_tiny.cpp"
   },
+  "0x005457B0": {
+    "name": "Unknown::construct_005457B0",
+    "class": "Unknown",
+    "signature": "void fn_005457B0(void* self)",
+    "summary": "Sets the object's vtable word, constructs the embedded subobject at +0x9C, then runs the lifted initializer fn_00543320 on self.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00545840": {
     "name": "sub_00545840",
     "signature": "extern \"C\" void fn_00545840(void)",

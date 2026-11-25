@@ -793,3 +793,25 @@ void fn_00544BE0(void* self) {
     ext_00543320(self);
 }
 } // namespace lift_00544BE0
+
+// [0x005457B0] sub_005457B0 (85 bytes)
+namespace lift_005457B0 {
+extern void __fastcall ext_00537E70(void* self);
+extern void __fastcall fn_00543320(void* self);
+
+// @name Unknown::construct_005457B0
+// @class Unknown
+// @summary Sets the object's vtable word, constructs the embedded subobject at +0x9C, then runs the lifted initializer fn_00543320 on self.
+// @field Unknown +0x00 void* vtable_or_ptr
+// @field Unknown +0x9C BYTE field_0x9c
+void fn_005457B0(void* self) {
+    // Vtable word for this class (0x956944); no symbol is recovered for it.
+    lift_field<uintptr_t>(self, 0x00) = static_cast<uintptr_t>(0x00956944u);
+
+    // Construct the embedded subobject at self+0x9C.
+    ext_00537E70(static_cast<uint8_t*>(self) + 0x9C);
+
+    // Final initialization of self (overwrites +0x00 with &mem_009560E4).
+    fn_00543320(self);
+}
+} // namespace lift_005457B0
