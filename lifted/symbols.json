@@ -8787,6 +8787,13 @@
     "summary": "Reads playback looping state from a RuntimeEngine pointer and formats it as a boolean string, or throws on null.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x00471E80": {
+    "name": "ExprParser::ReadMethodType\u003cRuntimeEngine, bool, getPlaybackLoopingEnabled, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0\u003e",
+    "signature": "void fn_00471E80(void* arg)",
+    "summary": "Reads the object pointer at offset 0 of the argument; if non-null, evaluates the byte from ReadF8ObjectByte12C and passes it to ExceptionWithMessage's throw helper; then always constructs a DerivedException and throws it.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004720D0": {
     "name": "ExprParser::ReadMethodType\u003cRuntimeEngine,int,RuntimeEngine::getNumTicksToRun\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cRuntimeEngine,int,RuntimeEngine::getNumTicksToRun\u003e",

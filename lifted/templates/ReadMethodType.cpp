@@ -50588,3 +50588,38 @@ void fn_0046CE90(void* self) {
     ext_006A6DD2(exc, mem_009DEC1C);
 }
 } // namespace lift_0046CE90
+
+// [0x00471E80] ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_00471E80 {
+// Known callee 0x0046F910: Unknown::ReadF8ObjectByte12C (thiscall, ecx = self, returns low byte at +0x12C of object at this+0xF8).
+extern uint8_t __thiscall ext_0046F910(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (one stack argument: the byte value; builds and throws).
+extern void __cdecl ext_0046C4E0(uint8_t value);
+// Known callee 0x0046C3C0: DerivedException::DerivedException (thiscall, ecx = exception storage; installs vtable).
+extern void* __thiscall ext_0046C3C0(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT thunk forwarding to _CxxThrowException(obj, throwInfo)).
+extern void __cdecl ext_006A6DD2(void* exc_obj, const void* throw_info);
+// ThrowInfo descriptor for the exception type, referenced by address at 0x009DEC1C.
+extern uint8_t mem_009DEC1C[];
+
+// @name ExprParser::ReadMethodType<RuntimeEngine, bool, getPlaybackLoopingEnabled, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<RuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0>
+// @summary Reads the object pointer at offset 0 of the argument; if non-null, evaluates the byte from ReadF8ObjectByte12C and passes it to ExceptionWithMessage's throw helper; then always constructs a DerivedException and throws it.
+// @field ExprParser::ValuePtrType +0x00 void* field_0x00
+
+void fn_00471E80(void* arg) {
+    // mov eax,[esp+4]; mov ecx,[eax] -> ecx = first dword of the argument object.
+    void* inner = *reinterpret_cast<void**>(arg);
+    if (inner != nullptr) {
+        // call 0x46F910 with ecx = inner; result byte in al.
+        uint8_t value = ext_0046F910(inner);
+        // push the byte and call the default-message throw helper.
+        ext_0046C4E0(value);
+    }
+    // Construct the exception object in a local buffer (lea ecx,[esp]).
+    alignas(8) uint8_t exc_obj[0x28];
+    ext_0046C3C0(exc_obj);
+    // push ThrowInfo address; push exception object address; call _CxxThrowException.
+    ext_006A6DD2(exc_obj, static_cast<const void*>(mem_009DEC1C));
+}
+} // namespace lift_00471E80

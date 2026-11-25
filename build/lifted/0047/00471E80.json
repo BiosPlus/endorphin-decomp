@@ -1,0 +1,22 @@
+{
+  "va": "0x00471E80",
+  "size": 55,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cRuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0\u003e::vfunc_5",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cRuntimeEngine, bool, getPlaybackLoopingEnabled, 0\u003e::vfunc_5",
+  "class": "ExprParser::ReadMethodType\u003cRuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0\u003e",
+  "signature": "void fn_00471E80(void* arg)",
+  "summary": "Reads the object pointer at offset 0 of the argument; if non-null, evaluates the byte from ReadF8ObjectByte12C and passes it to ExceptionWithMessage's throw helper; then always constructs a DerivedException and throws it.",
+  "fields": [
+    {
+      "class": "ExprParser::ValuePtrType",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T04:56:07Z"
+}
