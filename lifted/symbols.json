@@ -68618,6 +68618,12 @@
     "summary": "48-byte constant lookup table; returns the entry at a given index.",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
+  "0x007B50EC": {
+    "name": "jumpTableIndexBytes_007B50EC",
+    "signature": "extern \"C\" unsigned char sub_007B50EC(unsigned int idx)",
+    "summary": "Byte lookup table (switch index map) misdecoded as code; returns table byte for index.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
   "0x007B5224": {
     "name": "Table_007B5224_Bytes16",
     "summary": "16-byte constant lookup table of values 0..3 (data, not executable code)",

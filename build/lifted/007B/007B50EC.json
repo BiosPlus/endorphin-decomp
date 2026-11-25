@@ -1,0 +1,13 @@
+{
+  "va": "0x007B50EC",
+  "size": 36,
+  "orig_symbol": "sub_007B50EC",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "jumpTableIndexBytes_007B50EC",
+  "signature": "extern \"C\" unsigned char sub_007B50EC(unsigned int idx)",
+  "summary": "Byte lookup table (switch index map) misdecoded as code; returns table byte for index.",
+  "status": "lifted",
+  "lifted_by": "claude-sonnet-5.5@low",
+  "lifted_at": "2026-11-25T14:22:07Z"
+}
