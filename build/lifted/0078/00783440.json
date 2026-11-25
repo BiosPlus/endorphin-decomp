@@ -1,0 +1,22 @@
+{
+  "va": "0x00783440",
+  "size": 40,
+  "orig_symbol": "sub_00783440",
+  "src_path": "src/leaf/decompiled_780000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_780000.cpp",
+  "name": "FileStream::readLine",
+  "class": "FileStream",
+  "signature": "extern \"C\" char* __thiscall sub_00783440(void* self, char* str, int num)",
+  "summary": "Reads a line from the underlying FILE* stream via fgets if the stream is open.",
+  "fields": [
+    {
+      "class": "FileStream",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T14:30:27Z"
+}

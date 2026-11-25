@@ -1476,3 +1476,23 @@ uint32_t fn_00783410(void* self, void* buf, uint32_t count) {
     return static_cast<uint32_t>(fread_(buf, 1, count, stream));
 }
 } // namespace lift_00783410
+
+// [0x00783440]
+namespace lift_00783440 {
+// @name FileStream::readLine
+// @class FileStream
+// @summary Reads a line from the underlying FILE* stream via fgets if the stream is open.
+// @field FileStream +0x04 void* field_0x04
+
+
+extern char* (*mem_009252C0)(char* str, int num, void* stream);
+
+extern char* __thiscall sub_00783440(void* self, char* str, int num) {
+    uint8_t* streamWrapper = lift_field<uint8_t*>(self, 0x04);
+    if (lift_field<uint8_t>(streamWrapper, 0x04) == 0) {
+        return nullptr;
+    }
+    void* file = lift_field<void*>(streamWrapper, 0x00);
+    return mem_009252C0(str, num, file);
+}
+} // namespace lift_00783440

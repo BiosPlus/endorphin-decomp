@@ -10,7 +10,7 @@ namespace lifted_layout {
 struct FileStream_Fields {
     // +0x0   FILE*                    file  (evidence: 0x007833F0) // CONFLICT: multiple definitions at +0x0
     // +0x0   uint32_t                 stream_handle  (evidence: 0x00788E50) // CONFLICT: multiple definitions at +0x0
-    // +0x4   void*                    field_0x04  (evidence: 0x007836D0, 0x00788E50) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    field_0x04  (evidence: 0x00783440, 0x007836D0, 0x00788E50) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t                  isOpen  (evidence: 0x007833F0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    owner  (evidence: 0x00788E50) // CONFLICT: multiple definitions at +0x4
 };
