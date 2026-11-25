@@ -9821,6 +9821,13 @@
     "summary": "Loads the object pointer stored at *ecx; if non-null, calls its vtable slot at +0x154 with the object as this and returns that result (tail call).",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x00493F00": {
+    "name": "Unknown::forwardDispatchViaFirstField",
+    "class": "Unknown",
+    "signature": "uint32_t fn_00493F00(void* self)",
+    "summary": "Loads the pointer at self+0x00; if non-null, calls its vtable slot 45 and tail-dispatches the returned value to ext_005304E0 with it as `this`.",
+    "lifted_path": "lifted/leaf/tiny_490000.cpp"
+  },
   "0x00493F20": {
     "name": "sub_00493F20",
     "signature": "uint32_t fn_00493F20(void** self, uint32_t arg)",

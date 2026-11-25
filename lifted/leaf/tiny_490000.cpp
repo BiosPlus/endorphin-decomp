@@ -687,3 +687,25 @@ uintptr_t fn_00493E30(void* self) {
 }
 } // namespace lift_00493E80
 } // namespace lift_00493E30
+
+// [0x00493F00] sub_00493F00 (24 bytes)
+namespace lift_00493F00 {
+// Known callee 0x005304E0: Unknown::DispatchUnlessGated (Returns early if the +0x4C object's vtable slot 14 or the +0x10 object's vtable slot 49 reports true; otherwise tail-dispatches the +0x4C object's vtable slot 32.)
+extern uint32_t ext_005304E0(void* self);
+
+// Vtable slot 45 (+0xB4) of the object pointed to by self's first field.
+extern uint32_t ext_vcall_slot45(void* obj);
+
+// @name Unknown::forwardDispatchViaFirstField
+// @class Unknown
+// @summary Loads the pointer at self+0x00; if non-null, calls its vtable slot 45 and tail-dispatches the returned value to ext_005304E0 with it as `this`.
+// @field Unknown +0x00 void* field_0x00
+uint32_t fn_00493F00(void* self) {
+    void* obj = *static_cast<void**>(self);
+    if (obj == nullptr) {
+        return 0;
+    }
+    uint32_t next = ext_vcall_slot45(obj);
+    return ext_005304E0(reinterpret_cast<void*>(static_cast<uintptr_t>(next)));
+}
+} // namespace lift_00493F00

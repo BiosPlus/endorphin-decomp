@@ -1,0 +1,22 @@
+{
+  "va": "0x00493F00",
+  "size": 24,
+  "orig_symbol": "sub_00493F00",
+  "src_path": "src/leaf/tiny_490000.cpp",
+  "lifted_path": "lifted/leaf/tiny_490000.cpp",
+  "name": "Unknown::forwardDispatchViaFirstField",
+  "class": "Unknown",
+  "signature": "uint32_t fn_00493F00(void* self)",
+  "summary": "Loads the pointer at self+0x00; if non-null, calls its vtable slot 45 and tail-dispatches the returned value to ext_005304E0 with it as `this`.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x0",
+      "type": "void*",
+      "name": "field_0x00"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T11:23:47Z"
+}
