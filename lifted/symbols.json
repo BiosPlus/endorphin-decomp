@@ -67648,6 +67648,12 @@
     "summary": "Data/jump-table bytes at 0x0079ABA0 lifted as raw instruction sequence",
     "lifted_path": "lifted/leaf/decompiled_790000.cpp"
   },
+  "0x0079ACF0": {
+    "name": "readFileBytes",
+    "signature": "uint32_t __cdecl sub_0079ACF0(void* hFile, void* lpBuffer, uint32_t nNumberOfBytesToRead)",
+    "summary": "Reads bytes from a file handle using ReadFile and returns the number of bytes read, or 0 on failure.",
+    "lifted_path": "lifted/leaf/decompiled_790000.cpp"
+  },
   "0x0079AD20": {
     "name": "writeFileBytes",
     "signature": "uint32_t __cdecl sub_0079AD20(uint32_t hFile, uint32_t lpBuffer, uint32_t nNumberOfBytesToWrite)",
@@ -68927,6 +68933,12 @@
     "name": "SampleLog16ToSqrtBytes",
     "signature": "extern \"C\" const double mem_0092A278; // 0.0 (returned for zero magnitude) extern \"C\" const double mem_0092A270; // 1.0 extern \"C\" const double mem_00999A68; // 256.0 struct SampleLog16Source",
     "summary": "Decodes `count` sign-magnitude log16 codes from arg0-\u003esamples and stores each as a byte: sqrt(v)*256 for 0\u003cv\u003c1, 0 for v\u003c=0, 255 for v\u003e=1.",
+    "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
+  },
+  "0x007BD310": {
+    "name": "initDescriptorFields",
+    "signature": "void __cdecl sub_007BD310(void* self)",
+    "summary": "Initializes descriptor fields at +0x40, +0x42, and sets +0x4e to 1 if +0x46 equals 0x804c else 3",
     "lifted_path": "lifted/leaf/decompiled_7B0000.cpp"
   },
   "0x007BD340": {

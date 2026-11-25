@@ -1595,3 +1595,24 @@ void fn_00533E00(void* self) {
 }
 } // namespace lift_00533D50
 } // namespace lift_00533E00
+
+// [0x005356C0]
+namespace lift_005356C0 {
+// @name copy_bytes_memmove
+// @summary Copies a byte range [first, last) to dst using memmove_s if non-empty and returns dst + (last - first).
+
+
+extern int (__cdecl *mem_009251EC)(void* dest, size_t destsz, const void* src, size_t count);
+
+void* __cdecl sub_005356C0(const void* first, const void* last, void* dst) {
+    int32_t count = static_cast<int32_t>(
+        reinterpret_cast<uintptr_t>(last) - reinterpret_cast<uintptr_t>(first));
+    void* result = reinterpret_cast<void*>(
+        reinterpret_cast<uintptr_t>(dst) + static_cast<uintptr_t>(static_cast<intptr_t>(count)));
+    if (count > 0) {
+        size_t bytes = static_cast<size_t>(static_cast<uint32_t>(count));
+        mem_009251EC(dst, bytes, first, bytes);
+    }
+    return result;
+}
+} // namespace lift_005356C0
