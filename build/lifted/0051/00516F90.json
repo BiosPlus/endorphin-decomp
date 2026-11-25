@@ -1,0 +1,13 @@
+{
+  "va": "0x00516F90",
+  "size": 95,
+  "orig_symbol": "sub_00516F90",
+  "src_path": "src/leaf/decompiled_510000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_510000.cpp",
+  "name": "InitOnceGlobalString_00516F90",
+  "signature": "void* fn_00516F90()",
+  "summary": "One-time initializer for global string object 0x00AEC0A8; sets guard bit 0 of 0x00AEC0C4, builds the string, registers a cleanup routine, and returns the string's address.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:29:37Z"
+}

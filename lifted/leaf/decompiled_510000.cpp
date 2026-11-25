@@ -227,3 +227,25 @@ extern void* fn_0051DEA0(uint32_t count) {
     return ext_006A5C62(count * 0xC0u);
 }
 } // namespace lift_0051DEA0
+
+// [0x00516F90] sub_00516F90 (95 bytes)
+namespace lift_00516F90 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, const char* str);
+// Known callee 0x006A6C87: sub_006A6C87 (18B), takes one function-pointer argument.
+extern void ext_006A6C87(void (*fn)());
+extern int mem_00AEC0C4;
+extern int mem_00AEC0A8;
+
+// @name InitOnceGlobalString_00516F90
+// @summary One-time initializer for global string object 0x00AEC0A8; sets guard bit 0 of 0x00AEC0C4, builds the string, registers a cleanup routine, and returns the string's address.
+void* fn_00516F90() {
+    // Guard bit 0 of mem_00AEC0C4: run the initializer only once.
+    if ((mem_00AEC0C4 & 1) == 0) {
+        mem_00AEC0C4 |= 1;
+        ext_0066AD10(&mem_00AEC0A8, reinterpret_cast<const char*>(uintptr_t{0xA4090C}));
+        ext_006A6C87(reinterpret_cast<void (*)()>(uintptr_t{0x919E10}));
+    }
+    return &mem_00AEC0A8;
+}
+} // namespace lift_00516F90
