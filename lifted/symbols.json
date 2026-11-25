@@ -27828,6 +27828,12 @@
     "summary": "Returns (getFloatAt(this+0x210, 1) * this-\u003e+0x204 * 12.7) / tan(arg * pi/180 * 0.5), computed as float.",
     "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
   },
+  "0x005D0670": {
+    "name": "CallVirtualSlot1ForFloatAt0x268",
+    "signature": "extern \"C\" float __thiscall fn_005D0670(void* self)",
+    "summary": "Sets guard flag mem_00B3F200, calls vtable slot 1 of the object at this+0x268 (passing \u0026this+0x264), clears the flag, and returns the float result.",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005D06D0": {
     "name": "sub_005D06D0",
     "signature": "float fn_005D06D0(uint32_t ecx)",

@@ -1,0 +1,27 @@
+{
+  "va": "0x005D0670",
+  "size": 86,
+  "orig_symbol": "sub_005D0670",
+  "src_path": "src/leaf/decompiled_5D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5D0000.cpp",
+  "name": "CallVirtualSlot1ForFloatAt0x268",
+  "signature": "extern \"C\" float __thiscall fn_005D0670(void* self)",
+  "summary": "Sets guard flag mem_00B3F200, calls vtable slot 1 of the object at this+0x268 (passing \u0026this+0x264), clears the flag, and returns the float result.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0x264",
+      "type": "uint32_t",
+      "name": "field_0x264"
+    },
+    {
+      "class": "Object",
+      "offset": "+0x268",
+      "type": "void*",
+      "name": "field_0x268"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:11:39Z"
+}

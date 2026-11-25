@@ -210,3 +210,26 @@ float sub_005D05B0(std::uint8_t* self) {
     return result;
 }
 } // namespace lift_005D05B0
+
+// [0x005D0670] sub_005D0670 (86 bytes)
+namespace lift_005D0670 {
+extern uint8_t mem_00B3F200;
+
+// @name CallVirtualSlot1ForFloatAt0x268
+// @summary Sets guard flag mem_00B3F200, calls vtable slot 1 of the object at this+0x268 (passing &this+0x264), clears the flag, and returns the float result.
+// @field Object +0x264 uint32_t field_0x264
+// @field Object +0x268 void* field_0x268
+extern float __thiscall fn_005D0670(void* self) {
+    mem_00B3F200 = 1;
+
+    void* object = lift_field<void*>(self, 0x268);
+    void** vtable = *reinterpret_cast<void***>(object);
+    using VFloatMethod = float(__thiscall*)(void* self_obj, void* arg);
+    auto method = reinterpret_cast<VFloatMethod>(vtable[1]);
+    void* arg = static_cast<uint8_t*>(self) + 0x264;  // lea: address of field, not its value
+    float result = method(object, arg);
+
+    mem_00B3F200 = 0;
+    return result;
+}
+} // namespace lift_005D0670
