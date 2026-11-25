@@ -835,3 +835,31 @@ uint32_t sub_00859E00(uint32_t arg1, uint32_t arg2, uint32_t arg3) {
     return 0u;
 }
 } // namespace lift_00859E00
+
+// [0x00853680] sub_00853680 (80 bytes)
+namespace lift_00853680 {
+extern void __cdecl fn_008692F0(uint8_t* dst, uint32_t value, uint32_t count);
+
+// @name initSha1Context
+// @class Sha1Context
+// @summary Zeroes a 92-byte context block and loads the SHA-1 initial hash values (H0-H4) plus a zero bit counter.
+// @field Sha1Context +0x00 uint32_t h0
+// @field Sha1Context +0x04 uint32_t h1
+// @field Sha1Context +0x08 uint32_t h2
+// @field Sha1Context +0x0C uint32_t h3
+// @field Sha1Context +0x10 uint32_t h4
+// @field Sha1Context +0x14 uint32_t countLo
+// @field Sha1Context +0x18 uint32_t countHi
+void fn_00853680(uint8_t* self) {
+    fn_008692F0(self, 0, 0x5C);
+
+    uint32_t* state = reinterpret_cast<uint32_t*>(self);
+    state[0] = 0x67452301u;
+    state[1] = 0xEFCDAB89u;
+    state[2] = 0x98BADCFEu;
+    state[3] = 0x10325476u;
+    state[4] = 0xC3D2E1F0u;
+    state[5] = 0u; // +0x14
+    state[6] = 0u; // +0x18
+}
+} // namespace lift_00853680

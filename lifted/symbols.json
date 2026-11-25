@@ -62149,6 +62149,13 @@
     "summary": "Pops 4 bytes from stack and tail-jumps to the function pointer at [esi]",
     "lifted_path": "lifted/leaf/tiny_850000.cpp"
   },
+  "0x00853680": {
+    "name": "initSha1Context",
+    "class": "Sha1Context",
+    "signature": "void fn_00853680(uint8_t* self)",
+    "summary": "Zeroes a 92-byte context block and loads the SHA-1 initial hash values (H0-H4) plus a zero bit counter.",
+    "lifted_path": "lifted/leaf/decompiled_850000.cpp"
+  },
   "0x00856F00": {
     "name": "initStruct24",
     "signature": "extern \"C\" uint32_t __cdecl fn_00856F00(uint32_t* obj)",
