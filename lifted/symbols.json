@@ -1826,6 +1826,12 @@
     "summary": "One-time init guard: on first call sets guard bit 0 and zeroes the dwords at block+0xC and block+0x10; returns the block.",
     "lifted_path": "lifted/classes/ExportUnavailableDialog.cpp"
   },
+  "0x00419840": {
+    "name": "Destructor_00419840",
+    "signature": "extern \"C\" void __fastcall fn_00419840(void* self)",
+    "summary": "Destructor restoring primary/secondary vtables and tearing down member subobjects and base class.",
+    "lifted_path": "lifted/leaf/decompiled_410000.cpp"
+  },
   "0x00419920": {
     "name": "ExportUnavailableDialog::vfunc_1",
     "class": "ExportUnavailableDialog",
@@ -2685,6 +2691,12 @@
     "signature": "std::string* fn_00426960(std::string* self)",
     "summary": "Constructs *self as std::string from the empty C literal at mem_00928B5D and returns self.",
     "lifted_path": "lifted/leaf/tiny_420000.cpp"
+  },
+  "0x00426980": {
+    "name": "appendConstantString",
+    "signature": "void __stdcall sub_00426980(uint32_t arg1, uint32_t arg2)",
+    "summary": "Assigns a source std::string to a destination std::string and appends a constant C-string.",
+    "lifted_path": "lifted/leaf/decompiled_420000.cpp"
   },
   "0x004271F0": {
     "name": "IsArgStringNotEqualToGlobalName",
@@ -50505,6 +50517,13 @@
     "class": "Unknown",
     "signature": "void fn_0067BD80(void* self, DWORD arg)",
     "summary": "Builds a local 3x3 identity float matrix and passes it to two helper calls (with arg and self).",
+    "lifted_path": "lifted/leaf/decompiled_670000.cpp"
+  },
+  "0x0067C450": {
+    "name": "Vec3::rotateY",
+    "class": "Vec3",
+    "signature": "void __thiscall fn_0067C450(void* self, float angle)",
+    "summary": "Rotates a 3D vector around the Y axis by the given angle in radians.",
     "lifted_path": "lifted/leaf/decompiled_670000.cpp"
   },
   "0x0067DB90": {

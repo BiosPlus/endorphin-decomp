@@ -1365,3 +1365,28 @@ uint8_t __stdcall sub_00427270(uint32_t arg1) {
     return 1;
 }
 } // namespace lift_00427270
+
+// [0x00426980]
+namespace lift_00426980 {
+// @name appendConstantString
+// @summary Assigns a source std::string to a destination std::string and appends a constant C-string.
+
+extern uint32_t mem_00924FE4;
+extern uint32_t mem_00924EB8;
+extern uint32_t mem_00924EBC;
+extern uint32_t mem_00924FF4;
+
+void __stdcall sub_00426980(uint32_t arg1, uint32_t arg2) {
+    uint8_t local_str[0x1c];
+
+    using ctor_fn = void(__thiscall*)(void*, uint32_t);
+    using assign_fn = void*(__thiscall*)(void*, uint32_t);
+    using append_fn = void*(__thiscall*)(void*, void*);
+    using dtor_fn = void(__thiscall*)(void*);
+
+    reinterpret_cast<ctor_fn>(mem_00924FE4)(local_str, 0x0092EE48u);
+    reinterpret_cast<assign_fn>(mem_00924EB8)(reinterpret_cast<void*>(arg2), arg1);
+    reinterpret_cast<append_fn>(mem_00924EBC)(reinterpret_cast<void*>(arg2), local_str);
+    reinterpret_cast<dtor_fn>(mem_00924FF4)(local_str);
+}
+} // namespace lift_00426980

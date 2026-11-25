@@ -1,0 +1,13 @@
+{
+  "va": "0x00426980",
+  "size": 114,
+  "orig_symbol": "sub_00426980",
+  "src_path": "src/leaf/decompiled_420000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_420000.cpp",
+  "name": "appendConstantString",
+  "signature": "void __stdcall sub_00426980(uint32_t arg1, uint32_t arg2)",
+  "summary": "Assigns a source std::string to a destination std::string and appends a constant C-string.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:38:17Z"
+}
