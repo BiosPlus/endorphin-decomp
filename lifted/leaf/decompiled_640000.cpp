@@ -510,38 +510,6 @@ void fn_006408C0(void* self, uint32_t arg0, uint32_t arg1, uint32_t arg2) {
 }
 } // namespace lift_006408C0
 
-// [0x006408F0]
-namespace lift_006408F0 {
-// @name sub_006408F0
-// @class Unknown
-// @summary Clears the flag at +0x11, then appends the C-string at +0x04 to the string at +0x08 (count-1) times, with count read from +0x0C.
-// @field Unknown +0x04 const char* str_ptr
-// @field Unknown +0x08 void* str_obj
-// @field Unknown +0x0C int32_t count
-// @field Unknown +0x11 uint8_t flag
-
-// IAT slot for MSVCP80 basic_string<char>::operator+=(const char*); thiscall.
-extern DWORD mem_00924ED0;
-// Imported thunk wrapping the call through mem_00924ED0.
-extern void* ext_string_append_cstr(void* self, const char* s);
-
-void __thiscall sub_006408F0(void* ecx) {
-    auto self = ecx;
-    lift_field<uint8_t>(self, 0x11) = 0;
-
-    int32_t i = 0;
-    while (true) {
-        int32_t limit = lift_field<int32_t>(self, 0x0C) - 1;
-        if (!(i < limit)) {
-            break;
-        }
-        const char* s = lift_field<const char*>(self, 0x04);
-        ext_string_append_cstr(lift_field<void*>(self, 0x08), s);
-        ++i;
-    }
-}
-} // namespace lift_006408F0
-
 // [0x00649010] sub_00649010 (49 bytes)
 namespace lift_00649010 {
 // @name Unknown::forwardFloatToVfunc3Loop
@@ -642,35 +610,6 @@ uint32_t __thiscall fn_006426F0(void* self, float a1, float a2, float a3) {
 }
 } // namespace lift_006426F0
 
-// [0x00641760] sub_00641760 (62 bytes)
-namespace lift_00641760 {
-// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
-extern void ext_006A5C5C(void* p);
-extern int mem_00924FF4;
-
-// @name TreeNode::EraseSubtree
-// @class TreeNode
-// @summary Recursively erases a binary-tree subtree: recurses into the right child, walks the left-child chain destroying each node's key string and calling ext_006A5C5C on it until a sentinel (isNil at +0x2d) is reached.
-// @field TreeNode +0x00 TreeNode* left
-// @field TreeNode +0x08 TreeNode* right
-// @field TreeNode +0x10 std::string key
-// @field TreeNode +0x2d uint8_t isNil
-void fn_00641760(void* self, uint8_t* node) {
-    if (node[0x2d] != 0) {
-        return;
-    }
-    do {
-        uint8_t* right = *reinterpret_cast<uint8_t**>(node + 0x08);
-        fn_00641760(self, right);
-        uint8_t* left = *reinterpret_cast<uint8_t**>(node + 0x00);
-        // The original destroys the std::string at node+0x10 via mem_00924FF4
-        // (MSVC basic_string dtor). That MSVC-internal call is not reproduced here.
-        ext_006A5C5C(node);
-        node = left;
-    } while (node[0x2d] == 0);
-}
-} // namespace lift_00641760
-
 // [0x0064DEE0] sub_0064DEE0 (62 bytes)
 namespace lift_0064DEE0 {
 void ext_00693F40(void* subobject, void* arg);
@@ -739,28 +678,6 @@ void CopyRange24(const uint32_t* src_begin, const uint32_t* src_end, uint32_t* d
     } while (src != end);
 }
 } // namespace lift_00649730
-
-// [0x00649770]
-namespace lift_00649770 {
-extern uint32_t mem_read32(uint32_t addr);
-extern void mem_write32(uint32_t addr, uint32_t val);
-
-// @name copyBackward24
-// @summary Copies a range of 24-byte elements backward from [first, last) to [..., result).
-uint32_t sub_00649770(uint32_t first, uint32_t last, uint32_t result) {
-    while (last != first) {
-        last -= 0x18;
-        result -= 0x18;
-        mem_write32(result + 0x00, mem_read32(last + 0x00));
-        mem_write32(result + 0x04, mem_read32(last + 0x04));
-        mem_write32(result + 0x08, mem_read32(last + 0x08));
-        mem_write32(result + 0x0C, mem_read32(last + 0x0C));
-        mem_write32(result + 0x10, mem_read32(last + 0x10));
-        mem_write32(result + 0x14, mem_read32(last + 0x14));
-    }
-    return result;
-}
-} // namespace lift_00649770
 
 // [0x0064B840] sub_0064B840 (67 bytes)
 namespace lift_0064B840 {
@@ -884,42 +801,6 @@ void fn_00647D60(void* self, const float* a, const float* b) {
 }
 } // namespace lift_00647CE0
 } // namespace lift_00647D60
-
-// [0x00645EB0]
-namespace lift_00645EB0 {
-// @name Unknown::ResetHandleAndForwardSubobject
-// @class Unknown
-// @summary Writes three rdata pointers into the object, releases the handle at +0x10 if non-null, zeroes +0x10..+0x18, then tail-calls fn_0065F440 on the subobject at +0x8.
-// @field Unknown +0x00 u32 field_0x00
-// @field Unknown +0x04 u32 field_0x04
-// @field Unknown +0x08 u32 field_0x08
-// @field Unknown +0x10 u32 field_0x10
-// @field Unknown +0x14 u32 field_0x14
-// @field Unknown +0x18 u32 field_0x18
-
-extern void ext_006A5C5C(uint32_t handle);
-extern void __fastcall fn_0065F440(void* self);
-
-extern void __fastcall fn_00645EB0(void* self) {
-    auto* base = reinterpret_cast<uint8_t*>(self);
-    auto* sub = base + 0x08;
-
-    *reinterpret_cast<uint32_t*>(base + 0x00) = 0x0097D99Cu;
-    *reinterpret_cast<uint32_t*>(base + 0x04) = 0x0097D988u;
-    *reinterpret_cast<uint32_t*>(sub) = 0x0097D954u;
-
-    uint32_t handle = *reinterpret_cast<uint32_t*>(base + 0x10);
-    if (handle != 0) {
-        ext_006A5C5C(handle);
-    }
-
-    *reinterpret_cast<uint32_t*>(base + 0x10) = 0;
-    *reinterpret_cast<uint32_t*>(base + 0x14) = 0;
-    *reinterpret_cast<uint32_t*>(base + 0x18) = 0;
-
-    fn_0065F440(sub);
-}
-} // namespace lift_00645EB0
 
 // [0x0064CA20] sub_0064CA20 (43 bytes)
 namespace lift_0064CA20 {
@@ -1847,27 +1728,6 @@ void fn_00642600(void* self) {
 }
 } // namespace lift_00642600
 
-// [0x006455D0] sub_006455D0 (93 bytes)
-namespace lift_006455D0 {
-// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
-extern void ext_006A5C62();
-// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
-extern void ext_006A6DD2();
-// IAT slot for MSVCR80!std::exception::exception(const char* const&) (unused in portable lift).
-extern int mem_00925130;
-
-// @name std_allocate_array_12 (sub_006455D0)
-// @summary Allocate storage for `count` 12-byte elements; throws std::length_error when 12*count would overflow the 32-bit size check (0xFFFFFFFF / count < 24). count == 0 yields a zero-byte allocation.
-// Note: the original calls thunks whose signature is void(void) in the IAT; their
-// behaviour (allocate / throw) is expressed here with standard C++ equivalents.
-void* fn_006455D0(uint32_t count) {
-    if (count != 0 && (0xFFFFFFFFu / count) < 24u) {
-        throw std::length_error("vector too long");
-    }
-    return ::operator new(static_cast<size_t>(count) * 12u);
-}
-} // namespace lift_006455D0
-
 // [0x00649840] sub_00649840 (93 bytes)
 namespace lift_00649840 {
 // Known callee 0x00648F90: RelationshipRPROMagnet::vfunc_50 (Releases and clears field_0x94 if non-null after invoking vtable+0x1c)
@@ -1965,40 +1825,6 @@ uint32_t fn_0064B7E0(uint32_t first, uint32_t last, uint32_t result) {
 }
 } // namespace lift_0064B7E0
 
-// [0x00648640] sub_00648640 (102 bytes)
-namespace lift_00648640 {
-extern int mem_00925134;
-extern uint32_t mem_read32(uint32_t addr);
-extern void __cdecl ext_invalid_parameter_noinfo(void);
-
-// @name Unknown::ContainsDword
-// @class Unknown
-// @summary Linear search of a guest DWORD range [field_0x4c, field_0x50) for a value; returns true if found before the end.
-// @field Unknown +0x4c DWORD field_0x4c
-// @field Unknown +0x50 DWORD field_0x50
-extern bool __thiscall fn_00648640(void* self, DWORD value) {
-    const uint32_t base = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
-    const uint32_t first = mem_read32(base + 0x4c);
-    const uint32_t last = mem_read32(base + 0x50);
-
-    // Range sanity checks (original: first <= last, invalid-parameter otherwise).
-    if (first > last) {
-        ext_invalid_parameter_noinfo();
-    }
-
-    uint32_t cur = first;
-    while (cur != last) {
-        if (mem_read32(cur) == value) {
-            break;
-        }
-        cur += 4;
-    }
-
-    // Original re-checks first <= last after the scan; the range is unchanged, so the result is identical.
-    return cur != last;
-}
-} // namespace lift_00648640
-
 // [0x00648790] sub_00648790 (103 bytes)
 namespace lift_00648790 {
 // Known callee 0x0065ACB0: sub_0065ACB0 (This-adjustor thunk: adjusts `this` by +0x4 and tail-calls sub_0065F2A0.)
@@ -2085,60 +1911,6 @@ uint32_t fn_006452E0(void* self, float dx, float dy, float dz, uint32_t /*unused
     return method(sink, matrix);
 }
 } // namespace lift_006452E0
-
-// [0x00648300]
-namespace lift_00648300 {
-// Callees
-extern void __fastcall ext_0065A9A0(void* self);          // sub_0065A9A0: pure thunk to sub_0065A8E0
-extern void __cdecl ext_006A5C5C(void* p);                // thunk_MFC80_ord_764: CRT delete, one stack arg
-extern void __thiscall ext_00628FF0(void* self);          // MSVCP80 std::string dtor (pointer at mem_00924FF4 == 0x00628FF0)
-extern void __fastcall ext_005B1870(void* self);          // sub_005B1870: class destructor (string at +0x28, owned obj at +0x0C, base dtor)
-
-// @name Unknown::releaseOwnedAndDestroy_00648300
-// @class Unknown
-// @summary Releases the owned object at +0xA4 (if any), destroys the std::string at +0x4C, then runs the class destructor.
-// @field Unknown +0x4C std::string field_0x4C
-// @field Unknown +0xA4 void* field_0xA4
-extern void __thiscall fn_00648300(void* self) {
-    unsigned char* const esi = static_cast<unsigned char*>(self);
-
-    void* const owned = *reinterpret_cast<void**>(esi + 0xA4);
-    if (owned != nullptr) {
-        ext_0065A9A0(owned);
-        ext_006A5C5C(owned);
-    }
-
-    // Original calls the string dtor indirectly through mem_00924FF4 (== 0x00628FF0).
-    ext_00628FF0(esi + 0x4C);
-
-    ext_005B1870(self);
-}
-} // namespace lift_00648300
-
-// [0x006406D0]
-namespace lift_006406D0 {
-// @name sub_006406D0
-// @summary Iterates over vector of objects at +0x24, calls vtable+0x10 on each with arg0, and passes result to ext_00640240.
-// @field Class +0x28 uint32_t* field_0x28
-// @field Class +0x2C uint32_t* field_0x2C
-
-
-extern uint32_t __thiscall ext_00640240(void* self, uint32_t arg0);
-
-void __thiscall sub_006406D0(void* self, uint32_t arg0) {
-    uint8_t* vec = static_cast<uint8_t*>(self) + 0x24;
-    uint32_t* it = *reinterpret_cast<uint32_t**>(vec + 0x04);
-    while (it < *reinterpret_cast<uint32_t**>(vec + 0x08)) {
-        void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(*it));
-        uint32_t* vtable = *reinterpret_cast<uint32_t**>(obj);
-        using VFunc = uint32_t(__thiscall*)(void*, uint32_t);
-        VFunc fn = reinterpret_cast<VFunc>(static_cast<uintptr_t>(vtable[4]));
-        uint32_t res = fn(obj, arg0);
-        ext_00640240(reinterpret_cast<void*>(static_cast<uintptr_t>(arg0)), res);
-        ++it;
-    }
-}
-} // namespace lift_006406D0
 
 // [0x00641F10]
 namespace lift_00641F10 {
@@ -2267,54 +2039,6 @@ void __cdecl sub_00641E90(void* str) {
     }
 }
 } // namespace lift_00641E90
-
-// [0x00641350]
-namespace lift_00641350 {
-// @name Tree_find_i8
-// @summary Finds a signed-byte key in an MSVC red-black tree and returns an iterator.
-// @field Tree +0x04 uint32_t head
-// @field TreeNode +0x00 uint32_t left
-// @field TreeNode +0x04 uint32_t parent
-// @field TreeNode +0x08 uint32_t right
-// @field TreeNode +0x0C int8_t key
-// @field TreeNode +0x2D uint8_t is_nil
-
-
-extern uint32_t mem_read32(uint32_t addr);
-extern uint8_t mem_read8(uint32_t addr);
-extern void mem_write32(uint32_t addr, uint32_t val);
-
-extern uint32_t __thiscall sub_00641350(uint32_t self, uint32_t out_iter, uint32_t key_ptr) {
-    uint32_t head = mem_read32(self + 0x4);
-    uint32_t where = head;
-    uint32_t node = mem_read32(head + 0x4);
-
-    if (mem_read8(node + 0x2d) == 0) {
-        int8_t key = static_cast<int8_t>(mem_read8(key_ptr));
-        do {
-            if (static_cast<int8_t>(mem_read8(node + 0xc)) < key) {
-                node = mem_read32(node + 0x8);
-            } else {
-                where = node;
-                node = mem_read32(node);
-            }
-        } while (mem_read8(node + 0x2d) == 0);
-    }
-
-    head = mem_read32(self + 0x4);
-    uint32_t result_node = head;
-    if (where != head) {
-        int8_t key = static_cast<int8_t>(mem_read8(key_ptr));
-        if (key >= static_cast<int8_t>(mem_read8(where + 0xc))) {
-            result_node = where;
-        }
-    }
-
-    mem_write32(out_iter, self);
-    mem_write32(out_iter + 0x4, result_node);
-    return out_iter;
-}
-} // namespace lift_00641350
 
 // [0x006497C0]
 namespace lift_006497C0 {

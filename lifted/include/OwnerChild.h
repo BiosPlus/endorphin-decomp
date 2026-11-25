@@ -8,6 +8,6 @@
 // Recovered field layout for OwnerChild:
 namespace lifted_layout {
 struct OwnerChild_Fields {
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x007CAF70, 0x007CC970)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x007CAF70)
 };
 } // namespace lifted_layout

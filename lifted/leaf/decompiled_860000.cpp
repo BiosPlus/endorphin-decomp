@@ -73,23 +73,6 @@ void sub_00862976() {
 }
 } // namespace lift_00862976
 
-// [0x008665CC] sub_008665CC (20 bytes)
-namespace lift_008665CC {
-// Non-executing data block, not a function. Disassembly decodes as add/lea
-// pairs with no control flow: a byte table of values 0x00-0x04 followed by a
-// 4-byte `lea esp,[esp]` alignment pad.
-// @name DataBytes_008665CC
-// @summary Non-executing 20-byte data block (byte-value table 0x00-0x04); no observable logic.
-static const uint8_t kDataTable_008665CC[20] = {
-    0x00, 0x01, 0x04, 0x04, 0x04, 0x04, 0x04, 0x02, 0x04, 0x04,
-    0x04, 0x04, 0x04, 0x04, 0x04, 0x03, 0x8D, 0x64, 0x24, 0x00,
-};
-
-void fn_008665CC(void* self) {
-    (void)self;
-}
-} // namespace lift_008665CC
-
 // [0x00869310]
 namespace lift_00869310 {
 // @name CopyBytesForward
@@ -171,47 +154,6 @@ void* fn_0086CF90(uint32_t count, uint32_t size) {
 }
 } // namespace lift_0086CF90
 
-// [0x00867360] sub_00867360 (42 bytes)
-namespace lift_00867360 {
-// @name parseDecimalPrefix
-// @class (none)
-// @summary Parses leading ASCII decimal digits of a string into a 32-bit integer (atoi-like), stopping at the first non-digit.
-// @field none
-int fn_00867360(const char* s) {
-    uint32_t result = 0;
-    size_t i = 0;
-    int8_t c = static_cast<int8_t>(s[0]);
-    if (c < '0' || c > '9') {
-        return 0;
-    }
-    do {
-        result = result * 10u + static_cast<uint32_t>(c - '0');
-        ++i;
-        c = static_cast<int8_t>(s[i]);
-    } while (c >= '0' && c <= '9');
-    return static_cast<int>(result);
-}
-} // namespace lift_00867360
-
-// [0x0086AF30]
-namespace lift_0086AF30 {
-// @name CopyDwordRun
-// @summary Copies `count` DWORDs from src to dst, one at a time; returns immediately if count is zero.
-// (free function, no @class)
-
-extern void __cdecl fn_0086AF30(uint32_t* dst, const uint32_t* src, uint32_t count) {
-    if (count == 0) {
-        return;
-    }
-    do {
-        *dst = *src;
-        ++src;
-        ++dst;
-        --count;
-    } while (count != 0);
-}
-} // namespace lift_0086AF30
-
 // [0x00869380] sub_00869380 (48 bytes)
 namespace lift_00869380 {
 // @name MD5Context::init
@@ -250,28 +192,6 @@ void fn_0086EFD0(void* self) {
     slots[0] &= 0x3FFFFFFFu;
 }
 } // namespace lift_0086EFD0
-
-// [0x00864F30]
-namespace lift_00864F30 {
-// @name Unknown::initRecordHeader
-// @summary Writes tag 0xCF into the first u16 of the record at the 5th stack argument, zeroes the next three u16 fields, clears mem_00AB98EC, and returns 0.
-// @field Record +0x00 uint16_t tag
-// @field Record +0x02 uint16_t field_0x02
-// @field Record +0x04 uint16_t field_0x04
-// @field Record +0x06 uint16_t field_0x06
-
-extern uint32_t mem_00AB98EC;
-
-uint32_t fn_00864F30(uint32_t /*arg0*/, uint32_t /*arg1*/, uint32_t /*arg2*/, uint32_t /*arg3*/, uint8_t* record) {
-    uint16_t* w = reinterpret_cast<uint16_t*>(record);
-    w[0] = 0x00CF;
-    w[1] = 0x0000;
-    w[2] = 0x0000;
-    w[3] = 0x0000;
-    mem_00AB98EC = 0;
-    return 0;
-}
-} // namespace lift_00864F30
 
 // [0x0086AF00]
 namespace lift_0086AF00 {
@@ -316,62 +236,6 @@ extern uint32_t __cdecl fn_0086AF50(const uint32_t* data, uint32_t count) {
     return count;
 }
 } // namespace lift_0086AF50
-
-// [0x0086BF40]
-namespace lift_0086BF40 {
-// @name checkEmptySlotsAndState
-// @summary Checks that field_0x4c <= 1 and all 19 uint32_t entries at offset 0x00..0x48 are zero, returning 1 if field_0x4c == 1 else 0
-// @field struct_0 +0x00 uint32_t[19] field_0x00
-// @field struct_0 +0x4c uint32_t field_0x4c
-
-
-extern uint32_t mem_u32(uint32_t addr);
-
-uint16_t __cdecl sub_0086BF40(uint32_t self) {
-    uint32_t state = mem_u32(self + 0x4c);
-    if (state > 1) {
-        return 0;
-    }
-    for (int16_t i = 0; static_cast<uint32_t>(static_cast<int32_t>(i)) < 0x13; ++i) {
-        if (mem_u32(self + static_cast<int32_t>(i) * 4) != 0) {
-            return 0;
-        }
-    }
-    return state == 1 ? 1 : 0;
-}
-} // namespace lift_0086BF40
-
-// [0x0086B1C0]
-namespace lift_0086B1C0 {
-// @name bitShiftRight160Once
-// @summary Shifts a 160-bit value (five big-endian-ordered u32 words) right by one bit, OR-ing the carried-out LSB into bit 29 of word 0 when set.
-// @field Unknown +0x00 uint32_t field_0x00
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-// @field Unknown +0x0C uint32_t field_0x0C
-// @field Unknown +0x10 uint32_t field_0x10
-void fn_0086B1C0(void* self) {
-    auto* w = static_cast<uint32_t*>(self);
-
-    // shr [w0], 1 : CF receives the bit shifted out of word 0.
-    uint32_t carry = w[0] & 1u;
-    w[0] >>= 1;
-
-    // rcr chain over words at +0x04, +0x08, +0x0C, +0x10.
-    // Each word shifts right, taking the previous carry into its MSB.
-    for (int i = 1; i <= 4; ++i) {
-        uint32_t v = w[i];
-        uint32_t next_carry = v & 1u;
-        w[i] = (v >> 1) | (carry << 31);
-        carry = next_carry;
-    }
-
-    // jae skips the OR when CF == 0.
-    if (carry) {
-        w[0] |= 0x20000000u;
-    }
-}
-} // namespace lift_0086B1C0
 
 // [0x0086F120] sub_0086F120 (59 bytes)
 namespace lift_0086F120 {
@@ -516,52 +380,6 @@ void sub_0086F0A0(const uint32_t* src, uint32_t* dst) {
     }
 }
 } // namespace lift_0086F0A0
-
-// [0x0086D210]
-namespace lift_0086D210 {
-extern uint32_t mem_read32(uint32_t);
-extern uint32_t ext_0085C170(uint32_t);
-extern uint32_t ext_0085C130(uint32_t);
-
-// @name computeEncodedSize_0086D210
-// @summary Computes a size or offset from masked field_0x00 and signed field_0x0C via ext_0085C170 and ext_0085C130
-// @field Struct +0x00 uint32_t field_0x00
-// @field Struct +0x0C int32_t field_0x0C
-uint32_t sub_0086D210(uint32_t arg0) {
-    uint32_t val0 = mem_read32(arg0) & 0x0FFFFFFFu;
-    uint32_t acc = ext_0085C170(val0);
-    int32_t valC = static_cast<int32_t>(mem_read32(arg0 + 0x0Cu));
-    if (valC == -1) {
-        return acc + 3u;
-    }
-    acc += ext_0085C130(static_cast<uint32_t>(valC));
-    acc += mem_read32(arg0 + 0x0Cu);
-    return acc;
-}
-} // namespace lift_0086D210
-
-// [0x0086CFB0]
-namespace lift_0086CFB0 {
-extern uint32_t ext_008596E0(uint32_t size);
-extern void mem_write8(uint32_t addr, uint8_t val);
-extern void mem_write32(uint32_t addr, uint32_t val);
-
-// @name allocSyncObject
-// @summary Allocates and initializes a 16-byte synchronization/header object.
-uint32_t __cdecl fn_0086CFB0(uint32_t initial_state) {
-    uint32_t obj = ext_008596E0(0x10);
-    if (obj == 0) {
-        return 0;
-    }
-
-    mem_write8(obj + 0x0, 0xFE);
-    mem_write8(obj + 0x1, 0x01);
-    mem_write32(obj + 0x4, 0);
-    mem_write32(obj + 0x8, 0);
-    mem_write32(obj + 0xC, (initial_state == 0) ? 1u : 0u);
-    return obj;
-}
-} // namespace lift_0086CFB0
 
 // [0x0086F8F0]
 namespace lift_0086F8F0 {
@@ -797,25 +615,6 @@ uint32_t fn_0086AF80(uint32_t* dst, const uint32_t* a, const uint32_t* b, uint32
 }
 } // namespace lift_0086AF80
 
-// [0x0086F050]
-namespace lift_0086F050 {
-// @name SplitDwordHalvesIntoSlots
-// @summary Zeroes the 20-DWORD destination, then for i = 4..0 writes the low 16 bits of src[i] to dst[2i+11] and the high 16 bits to dst[2i+10].
-
-// ZeroDwordArray20 clone: zeroes the 20 DWORD entries (indices 0..19) of the array passed by pointer.
-extern void ext_0086F000(void* dst);
-
-void fn_0086F050(void* src, void* dst) {
-    ext_0086F000(dst);
-
-    for (int32_t i = 4; i >= 0; --i) {
-        uint32_t value = lift_field<uint32_t>(src, static_cast<size_t>(i) * 4u);
-        lift_field<uint32_t>(dst, static_cast<size_t>(2 * i + 11) * 4u) = value & 0xFFFFu;
-        lift_field<uint32_t>(dst, static_cast<size_t>(2 * i + 10) * 4u) = value >> 16;
-    }
-}
-} // namespace lift_0086F050
-
 // [0x0086AE50] sub_0086AE50 (81 bytes)
 namespace lift_0086AE50 {
 // @name BitsetBitLength
@@ -902,92 +701,6 @@ void __cdecl sub_00860E90(char* dst, const uint8_t* src, int32_t len) {
     dst[out_idx] = '\0';
 }
 } // namespace lift_00860E90
-
-// [0x008685C0] sub_008685C0 (106 bytes)
-namespace lift_008685C0 {
-// C++ has no portable CPUID. The original's EFLAGS.ID probe and CPUID calls are
-// provided by a platform shim: lift_cpuid(leaf, regs) executes CPUID for `leaf`
-// and stores EAX, EBX, ECX, EDX into regs[0..3]; it returns false when CPUID is
-// unsupported (the EFLAGS.ID toggle failed).
-extern bool lift_cpuid(DWORD leaf, DWORD regs[4]);
-
-// @name CpuFeatures::isIntelWithFeatureBit30
-// @summary Returns 1 if CPUID is available, the vendor is "GenuineIntel", and CPUID leaf 1 EDX bit 30 is set; otherwise 0.
-int fn_008685C0(void* self) {
-    (void)self;
-
-    DWORD regs[4] = {0, 0, 0, 0}; // eax, ebx, ecx, edx
-
-    // Leaf 0: vendor string "GenuineIntel" split across EBX, EDX, ECX.
-    if (!lift_cpuid(0, regs)) {
-        return 0;
-    }
-    constexpr DWORD kEbx = 0x756e6547u; // "Genu"
-    constexpr DWORD kEdx = 0x49656e69u; // "ineI"
-    constexpr DWORD kEcx = 0x6c65746eu; // "ntel"
-    if (regs[1] != kEbx || regs[3] != kEdx || regs[2] != kEcx) {
-        return 0;
-    }
-
-    // Leaf 1: EDX bit 30.
-    if (!lift_cpuid(1, regs)) {
-        return 0;
-    }
-    return (regs[3] & 0x40000000u) != 0 ? 1 : 0;
-}
-} // namespace lift_008685C0
-
-// [0x0086CDB0]
-namespace lift_0086CDB0 {
-// @name ensureWritableBufferCopy
-// @summary Reallocates and copies a copy-on-write buffer if flag 0x2 is set, returning 0 on success or 0xC on allocation failure.
-// @field Buffer +0x00 uint32_t data
-// @field Buffer +0x04 uint32_t size
-// @field Buffer +0x0c uint32_t capacity
-// @field Buffer +0x10 uint32_t extraSize
-// @field Buffer +0x14 uint32_t flags
-
-extern uint8_t mem_u8(uint32_t addr);
-extern uint32_t& mem_u32(uint32_t addr);
-extern uint32_t ext_008596E0(uint32_t size);
-extern void* ext_00859780(void* dst, const void* src, size_t n);
-
-uint32_t fn_0086CDB0(uint32_t bufPtr) {
-    uint32_t buf = bufPtr;
-    if (mem_u8(buf + 0x14) & 0x4u) {
-        buf = mem_u32(buf);
-    }
-
-    if ((mem_u8(buf + 0x14) & 0x2u) == 0) {
-        return 0;
-    }
-
-    uint32_t size = mem_u32(buf + 0x4);
-    uint32_t extra = mem_u32(buf + 0x10);
-    uint32_t newCap = size + extra;
-
-    uint32_t newBuf = ext_008596E0(newCap);
-    if (newBuf == 0) {
-        return 0xC;
-    }
-
-    size = mem_u32(buf + 0x4);
-    extra = mem_u32(buf + 0x10);
-    uint32_t oldBuf = mem_u32(buf);
-    mem_u32(buf + 0xC) = extra + size;
-
-    ext_00859780(reinterpret_cast<void*>(static_cast<uintptr_t>(newBuf)),
-                 reinterpret_cast<const void*>(static_cast<uintptr_t>(oldBuf)),
-                 size);
-
-    uint32_t flags = mem_u32(buf + 0x14);
-    flags &= ~0x2u;
-    mem_u32(buf) = newBuf;
-    mem_u32(buf + 0x14) = flags;
-
-    return 0;
-}
-} // namespace lift_0086CDB0
 
 // [0x00860EF0]
 namespace lift_00860EF0 {
@@ -1167,48 +880,6 @@ void __cdecl sub_00865960(uint32_t* state, const uint32_t* key) {
     }
 }
 } // namespace lift_00865960
-
-// [0x00869E50]
-namespace lift_00869E50 {
-// @name bytesToUint32ArrayLE
-// @summary Converts a big-endian byte array into a little-endian uint32_t array, zero-padding remaining words.
-
-
-uint8_t mem_r8(uint32_t addr);
-void mem_w32(uint32_t addr, uint32_t val);
-
-void sub_00869E50(uint32_t dst, uint32_t dst_count, uint32_t src, int32_t src_len) {
-    if (dst_count == 0) {
-        return;
-    }
-
-    int32_t src_idx = src_len - 1;
-    uint32_t dst_idx = 0;
-    uint32_t out_ptr = dst;
-
-    while (dst_idx < dst_count) {
-        if (src_idx < 0) {
-            for (uint32_t i = dst_idx; i < dst_count; ++i) {
-                mem_w32(dst + i * 4, 0);
-            }
-            return;
-        }
-
-        uint32_t word = 0;
-        uint32_t shift = 0;
-        while (shift < 32 && src_idx >= 0) {
-            uint32_t byte_val = mem_r8(src + static_cast<uint32_t>(src_idx));
-            word |= (byte_val << shift);
-            shift += 8;
-            --src_idx;
-        }
-
-        mem_w32(out_ptr, word);
-        ++dst_idx;
-        out_ptr += 4;
-    }
-}
-} // namespace lift_00869E50
 
 // [0x00869EC0]
 namespace lift_00869EC0 {

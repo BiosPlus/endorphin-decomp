@@ -38,29 +38,6 @@ void* ExprParser_ExtROType_vfunc_2(void* self) {
 extern "C" void ext_0066BA00(void* self);
 extern "C" void ext_0041CEB0(void* obj, int flag);
 
-// [0x0066AFC0]
-// @name ExprParser::ExtROType::vfunc_1
-// @class ExprParser::ExtROType
-// @summary Forwards vfunc_1 to the inner object: loads this->[0] -> P1, P1->[4] -> P2, then calls P2's vtable slot 1 with P1 as this.
-// @field ExprParser::ExtROType +0x00 void* field_0x00
-
-extern void* mem_read_ptr(void* addr, int offset);
-extern void* mem_vtable_slot(void* obj, int index);
-
-typedef void (*VFunc1)(void* self);
-
-void ExprParser_ExtROType_vfunc_1(void* self) {
-    // eax = *(self)                       -> P1
-    void* p1 = *reinterpret_cast<void**>(self);
-    // ecx = *(P1 + 4)                     -> P2
-    void* p2 = *reinterpret_cast<void**>(static_cast<char*>(p1) + 0x4);
-    // edx = *(P2)                         -> vtable of P2
-    void** vtbl = *reinterpret_cast<void***>(p2);
-    // eax = vtbl[1]; jmp eax with this = P1
-    VFunc1 target = reinterpret_cast<VFunc1>(vtbl[1]);
-    target(p1);
-}
-
 // [0x0066AFA0] ExprParser::ExtROType::vfunc_21 (20 bytes)
 // @name ExprParser::ExtROType::vfunc_21
 // @class ExprParser::ExtROType
@@ -278,32 +255,3 @@ uint32_t ExprParser_ExtROType_vfunc_45(void* self, void* arg2) {
     // push arg2; push self; call eax (this = inner)
     return target(inner, self, arg2);
 }
-
-// [0x0066B000] ExprParser::ExtROType::vfunc_4 (33 bytes)
-// @name ExprParser::ExtROType::vfunc_4
-// @class ExprParser::ExtROType
-// @summary Auto-lifted identical-shape clone of 0x0066CDF0 (ExprParser::ExtROType::vfunc_0).
-void* fn_0066B000(void* self, void* /*arg2*/) {
-    ext_0041CEB0(self, 0);
-    return self;
-}
-
-// [0x0066BB20]
-namespace lift_0066BB20 {
-// @name ExprParser::ExtROType::vfunc_46
-// @class ExprParser::ExtROType
-// @summary Refreshes the cached child via ext_0066BA00, then forwards (self, arg2) to vtable slot 46 (+0xB8) of the inner object.
-// @field ExprParser::ExtROType +0x04 void* field_0x04
-
-extern void ext_0066BA00(uint32_t* self);
-
-void fn_0066BB20(void* self, uint32_t arg2) {
-    ext_0066BA00(reinterpret_cast<uint32_t*>(self));
-
-    void* inner = lift_field<void*>(self, 0x04);
-    void** vtbl = *reinterpret_cast<void***>(inner);
-    using SlotFn = void (__thiscall*)(void* this_, void* self_arg, uint32_t arg2_arg);
-    SlotFn fn = reinterpret_cast<SlotFn>(vtbl[0xB8 / sizeof(void*)]);
-    fn(inner, self, arg2);
-}
-} // namespace lift_0066BB20

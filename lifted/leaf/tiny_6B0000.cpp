@@ -457,13 +457,6 @@ extern "C" int32_t __fastcall fn_006BC7F0(void* self) {
     return static_cast<int32_t>(lift_field<int32_t>(self, 0x74));
 }
 
-// [0x006BC960] sub_006BC960 (16 bytes)
-// @name sub_006BC960
-// @summary This-adjustor thunk: adjusts `this` by +0x78 and tail-calls sub_006E7460.
-extern "C" void __fastcall fn_006BC960(void* self) {
-    ext_006E7460(static_cast<char*>(self) + 0x78);
-}
-
 // [0x006B0040]
 namespace lift_006B0040 {
 extern uint32_t mem_00991188;
@@ -710,27 +703,6 @@ void* fn_006BB7C0(void* self) {
 }
 } // namespace lift_006BB7C0
 
-// [0x006B4FD0] sub_006B4FD0 (21 bytes)
-namespace lift_006B4FD0 {
-// @name IsEscapeKeyUp
-// @summary Queries GetKeyState(VK_ESCAPE) and returns 4 if the key is currently up (high bit clear), else 0.
-
-// USER32!GetKeyState (imported via IAT slot mem_009255F4).
-using GetKeyState_t = int16_t (__stdcall*)(int32_t nVirtKey);
-extern GetKeyState_t ext_GetKeyState;
-// IAT slot at 0x009255F4 holding the address of GetKeyState (resolved by the loader).
-extern uint32_t mem_009255F4;
-
-uint32_t fn_006B4FD0() {
-    const int16_t state = ext_GetKeyState(0x1B); // VK_ESCAPE
-    uint32_t eax = static_cast<uint16_t>(state); // movzx eax, ax
-    eax = ~eax;                                  // xor eax, -1
-    eax >>= 13;                                  // shr eax, 0xd
-    eax &= 0x4;                                  // and eax, 4
-    return eax;                                  // ret
-}
-} // namespace lift_006B4FD0
-
 // [0x006B0C60] sub_006B0C60 (23 bytes)
 namespace lift_006B0C60 {
 extern int mem_00991348;
@@ -801,43 +773,3 @@ void __thiscall sub_006B7DC0(uint8_t* self, uint32_t packed) {
     *reinterpret_cast<uint32_t*>(self + 0x84) = packed >> 16;
 }
 } // namespace lift_006B7DC0
-
-// [0x006B67E0] sub_006B67E0 (30 bytes)
-namespace lift_006B67E0 {
-// USER32!SendMessageA (imported through IAT slot at 0x00925694)
-extern LRESULT ext_SendMessageA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
-
-// @name SendUserMessage_WM_USER_6F
-// @class <unknown>
-// @summary Forwards two stack arguments to the window at this+0x74 via SendMessageA(WM_USER+0x6F) and returns 0.
-// @field <unknown> +0x74 HWND field_0x74
-int __thiscall fn_006B67E0(void* self, WPARAM a1, LPARAM a2) {
-    HWND hwnd = lift_field<HWND>(self, 0x74);
-    ext_SendMessageA(hwnd, 0x46F, a1, a2);
-    return 0;
-}
-} // namespace lift_006B67E0
-
-// [0x006B8170]
-namespace lift_006B8170 {
-// @name CObjectBase::UpdateSubobjectsIfEnabled
-// @class CObjectBase
-// @summary Conditionally calls UpdateSubobjects if the flag at +0x1A8 and pointer at +0x1A4 are non-zero.
-// @field CObjectBase +0x1A4 void* field_0x1A4
-// @field CObjectBase +0x1A8 uint8_t field_0x1A8
-
-
-extern uint8_t mem_u8(const void* base, int32_t off);
-extern uint32_t mem_u32(const void* base, int32_t off);
-extern void ext_006B7D90(void* self);
-
-void fn_006B8170(void* self) {
-    if (mem_u8(self, 0x1A8) == 0) {
-        return;
-    }
-    if (mem_u32(self, 0x1A4) == 0) {
-        return;
-    }
-    ext_006B7D90(self);
-}
-} // namespace lift_006B8170

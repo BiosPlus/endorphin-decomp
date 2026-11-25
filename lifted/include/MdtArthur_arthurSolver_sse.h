@@ -10,16 +10,9 @@
 // Recovered field layout for MdtArthur::arthurSolver_sse:
 namespace lifted_layout {
 struct MdtArthur_arthurSolver_sse_Fields {
-    // +0x0   float*                   out  (evidence: 0x007F44C0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   float[4]* out (16-byte vec4 per group; written)  (evidence: 0x007F4330) // CONFLICT: multiple definitions at +0x0
-    // +0x4   uint8_t* field_0x04 (96-byte element base; param block)  (evidence: 0x007F4330) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint8_t*                 field_0x04  (evidence: 0x007F44C0) // CONFLICT: multiple definitions at +0x4
+    // +0x0   float*                   out  (evidence: 0x007F44C0)
+    // +0x4   uint8_t*                 field_0x04  (evidence: 0x007F44C0)
     // +0x8   uint32_t                 field_0x08  (evidence: 0x007F44C0)
-    // +0xC   int32_t field_0x0c (record: index A, -1 = none; per-group record, stride 0x100)  (evidence: 0x007F4330) // CONFLICT: multiple definitions at +0xC
-    // +0xC   int32_t                  field_0x0c  (evidence: 0x007F44C0) // CONFLICT: multiple definitions at +0xC
-    // +0x2C  int32_t field_0x2c (record: index B, -1 = none; per-group record, stride 0x100)  (evidence: 0x007F4330)
-    // +0x34  int32_t* field_0x34 (index table A, row stride W; param block)  (evidence: 0x007F4330)
-    // +0x40  int32_t* field_0x40 (index table B; param block)  (evidence: 0x007F4330)
-    // +0x78  int32_t field_0x78 (row stride W; param block)  (evidence: 0x007F4330)
+    // +0xC   int32_t                  field_0x0c  (evidence: 0x007F44C0)
 };
 } // namespace lifted_layout

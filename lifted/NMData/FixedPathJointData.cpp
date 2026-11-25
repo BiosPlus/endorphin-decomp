@@ -95,43 +95,6 @@ void* fn_005E29F0(void* self, void* arg1, uint32_t arg2) {
     return arg1;
 }
 
-// [0x005EB890]
-#include "lift_compat.h"
-
-// @name NMData::FixedPathJointData::vfunc_10_off_C
-// @class NMData::FixedPathJointData
-// @summary For each entry in the child pointer list [field_0x74, field_0x78): unless flag is set and the child's vfunc +0xC4 returns true, call the child's +0xC subobject vfuncs +0x24(arg) and +0x28(arg, 1).
-// @field NMData::FixedPathJointData +0x74 void** field_0x74 (begin of child pointer array)
-// @field NMData::FixedPathJointData +0x78 void** field_0x78 (end of child pointer array)
-void fn_005EB890(void* self, void* arg, bool flag) {
-    for (void** it = lift_field<void**>(self, 0x74);
-         it != lift_field<void**>(self, 0x78); ++it) {
-        void* child = *it;
-        if (!flag) {
-            void** cvt = *static_cast<void***>(child);
-            auto pred = reinterpret_cast<bool (*)(void*)>(cvt[0xC4 / sizeof(void*)]);
-            if (pred(child)) {
-                continue;
-            }
-        }
-        void* sub = static_cast<uint8_t*>(child) + 0xC;
-        void** svt = *static_cast<void***>(sub);
-        reinterpret_cast<void (*)(void*, void*)>(svt[0x24 / sizeof(void*)])(sub, arg);
-        reinterpret_cast<void (*)(void*, void*, int)>(svt[0x28 / sizeof(void*)])(sub, arg, 1);
-    }
-}
-
-// [0x005ECCF0] NMData::FixedPathJointData::vfunc_4_off_C (26 bytes)
-// @name NMData::FixedPathJointData::vfunc_4_off_C
-// @class NMData::FixedPathJointData
-// @summary Forwards a float (read from the argument pointer) to ext_005EBC10 on the base subobject at this-0xC.
-// @field NMData::FixedPathJointData +0x00 none (no direct field access; only the this-0xC base adjustment)
-void fn_005ECCF0(void* self, const float* value) {
-    float v = *value;
-    void* base = static_cast<unsigned char*>(self) - 0xC;
-    ext_005EBC10(base, &v);
-}
-
 // [0x005E1060] NMData::FixedPathJointData::vfunc_15_off_4 (41 bytes)
 // @name NMData::FixedPathJointData::vfunc_15_off_4
 // @class NMData::FixedPathJointData
@@ -153,66 +116,6 @@ void fn_005E1060(void* self, void* arg) {
     auto slot15 = reinterpret_cast<SlotFn>(vtbl[15]);
     slot15(iface, arg);
 }
-
-// [0x005E09B0] NMData::FixedPathJointData::vfunc_44 (20 bytes)
-namespace lift_005E09B0 {
-// @name NMData::FixedPathJointData::vfunc_44
-// @class NMData::FixedPathJointData
-// @summary Auto-lifted identical-shape clone of 0x004AEC60 (thunk_004AEC60).
-// @field NMData::FixedPathJointData +0x18C void* field_0x18C
-// @field NMData::FixedPathJointData +0x4 void* field_0x4
-// @field NMData::FixedPathJointData +0xB0 void* field_0xB0
-namespace lift_004AEC60 {
-// @name thunk_004AEC60
-// @class Unknown
-// @summary Adjustor thunk: follows this->+0x04 to an embedded subobject, loads a vtable-like pointer from its +0x08, and forwards the call to slot +0x50 with this adjusted by +8.
-// @field Unknown +0x04 void* field_0x04
-// @field Unknown +0x08 void* field_0x08
-// @field Unknown +0x50 void* field_0x50
-void fn_005E09B0(void* self) {
-    // ecx = [self+0x4]; eax = [ecx+0x8]; edx = [eax+0x50]; ecx += 8; jmp edx
-    // The jmp is expressed as a plain call; the callee's return value (none) is passed back via return.
-    using ThisFn = void (*)(void*);
-
-    void* sub = lift_field<void*>(self, 0x18C);
-    void* vt = lift_field<void*>(sub, 0x4);
-    ThisFn target = lift_field<ThisFn>(vt, 0xB0);
-
-    target(static_cast<uint8_t*>(sub) + 0x4);
-}
-} // namespace lift_004AEC60
-} // namespace lift_005E09B0
-
-// [0x005ECB10] NMData::FixedPathJointData::vfunc_9_off_C (136 bytes)
-namespace lift_005ECB10 {
-// Known callee 0x00528C30: AnimatableTransform::vfunc_9_off_C (If the sub-object at +0x4 is non-null, forwards the call to its vtable slot 8; otherwise returns 0.)
-extern uint32_t ext_00528C30(void* self, uint32_t arg0);
-
-// @name NMData::FixedPathJointData::vfunc_9_off_C
-// @class NMData::FixedPathJointData
-// @summary Maps mode 1->3 and 2->4, forwards it to the AnimatableTransform base, then calls vtable slot 8 on each child pointer in the child vector.
-// @field NMData::FixedPathJointData +0x1F8 void** childBegin
-// @field NMData::FixedPathJointData +0x1FC void** childEnd
-void fn_005ECB10(void* self, uint32_t arg0) {
-    uint32_t mode = arg0;
-    if (mode == 1) {
-        mode = 3;
-    } else if (mode == 2) {
-        mode = 4;
-    }
-
-    ext_00528C30(self, mode);
-
-    using Slot8Fn = void (*)(void* self, uint32_t arg);
-    void** it = lift_field<void**>(self, 0x1F8);
-    while (it != lift_field<void**>(self, 0x1FC)) {
-        void* child = *it;
-        void** vtbl = *reinterpret_cast<void***>(child);
-        reinterpret_cast<Slot8Fn>(vtbl[8])(child, mode);
-        ++it;
-    }
-}
-} // namespace lift_005ECB10
 
 // [0x005E4850] NMData::FixedPathJointData::vfunc_68 (140 bytes)
 namespace lift_005E4850 {

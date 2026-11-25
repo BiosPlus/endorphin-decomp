@@ -142,14 +142,6 @@ extern "C" void* __fastcall fn_0072B970(void* self, int edx_unused, unsigned int
     return self;
 }
 
-// [0x0072C050] sub_0072C050 (16 bytes)
-// @name sub_0072C050
-// @summary Setter storing uint8_t argument into field at offset +0x14.
-extern "C" void __fastcall fn_0072C050(void* self, int edx_unused, uint8_t value) {
-    (void)edx_unused;
-    lift_field<uint8_t>(self, 0x14) = value;
-}
-
 // [0x0072CCD0] sub_0072CCD0 (6 bytes)
 // @name sub_0072CCD0
 // @summary Returns global int32 value from mem_00B60288.
@@ -207,34 +199,6 @@ void fn_0072B840(void) {
     ext_006B9D70();
 }
 } // namespace lift_0072B840
-
-// [0x0072B880]
-namespace lift_0072B880 {
-// @name initGlobalNoop_0072B880
-// @summary Tail-calls ext_006D80A0 with global 0x00B60020 in ECX.
-
-extern void __cdecl ext_006D80A0(void);
-
-extern void __cdecl fn_0072B880(void) {
-    ext_006D80A0();
-}
-} // namespace lift_0072B880
-
-// [0x0072B860] sub_0072B860 (10 bytes)
-namespace lift_0072B860 {
-// @name sub_0072B860
-// @summary Auto-lifted identical-shape clone of 0x0072B880 (initGlobalNoop_0072B880).
-namespace lift_0072B880 {
-// @name initGlobalNoop_0072B880
-// @summary Tail-calls ext_006D80A0 with global 0x00B60020 in ECX.
-
-extern void __cdecl ext_00714570(void);
-
-extern void __cdecl fn_0072B860(void) {
-    ext_00714570();
-}
-} // namespace lift_0072B880
-} // namespace lift_0072B860
 
 // [0x0072DB80]
 namespace lift_0072DB80 {

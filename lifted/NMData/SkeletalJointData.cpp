@@ -10,15 +10,6 @@ extern "C" void __thiscall ext_00587450(void* self, uint32_t arg);
 extern "C" const uint32_t mem_009849A8;
 extern "C" uint32_t mem_00B40640;
 
-// [0x005F02B0]
-// @class NMData::SkeletalJointData
-// @summary Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9F280; this is unused.
-std::string* fn_005F02B0(void* self, std::string* out) {
-    (void)self;
-    new (out) std::string(mem_00A9F280);
-    return out;
-}
-
 // [0x005E2A50]
 // @class NMData::SkeletalJointData
 // @summary Auto-lifted identical-shape clone of 0x0058F6B0 (NMData::AxisDefineSensorData::vfunc_14).

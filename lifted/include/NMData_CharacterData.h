@@ -10,7 +10,7 @@
 // Recovered field layout for NMData::CharacterData:
 namespace lifted_layout {
 struct NMData_CharacterData_Fields {
-    // +0x4   uint8_t                  field_0x04  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x004C0800, 0x00512A00, 0x0059F7C0, 0x0059F920, 0x005FCC10, 0x00604D80, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x4
+    // +0x4   uint8_t                  field_0x04  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x0059F370) // CONFLICT: multiple definitions at +0x4
     // +0xC   void*                    field_0x0c  (evidence: 0x0059F370)
     // +0x4DE uint8_t                  field_0x4de  (evidence: 0x0059D7D0)

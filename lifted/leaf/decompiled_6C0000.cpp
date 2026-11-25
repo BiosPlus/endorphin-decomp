@@ -470,29 +470,6 @@ void fn_006C33F0(void* self, uint32_t index, uint8_t value) {
 }
 } // namespace lift_006C33F0
 
-// [0x006C3040]
-namespace lift_006C3040 {
-// @name getValidatedChild0x158
-// @summary Returns the child object at +0x158 if non-null and its vtable[0]() returns 1, else 0.
-// @field Unknown +0x158 uint32_t field_0x158
-
-
-extern uint32_t mem_u32(uint32_t addr);
-
-uint32_t sub_006C3040(uint32_t self) {
-    uint32_t obj = mem_u32(self + 0x158);
-    if (obj != 0) {
-        uint32_t vtable = mem_u32(obj);
-        using Vfn0 = uint32_t(__thiscall*)(uint32_t);
-        auto fn = reinterpret_cast<Vfn0>(static_cast<uintptr_t>(mem_u32(vtable)));
-        if (fn(obj) == 1) {
-            return mem_u32(self + 0x158);
-        }
-    }
-    return 0;
-}
-} // namespace lift_006C3040
-
 // [0x006C33C0]
 namespace lift_006C33C0 {
 // @name Unknown::loadRecordDwordByIndex
@@ -507,29 +484,6 @@ void __thiscall fn_006C33C0(void* self, uint32_t index, uint32_t* out) {
     *out = value;
 }
 } // namespace lift_006C33C0
-
-// [0x006C30F0]
-namespace lift_006C30F0 {
-// @name sub_006C30F0
-// @summary Returns field_0x158 if non-null and its vtable[0]() returns 4, else 0
-// @field Unknown +0x158 uint32_t field_0x158
-
-
-extern uint32_t mem_read32(uint32_t addr);
-
-uint32_t __fastcall sub_006C30F0(uint32_t this_ptr, uint32_t /*edx*/) {
-    uint32_t obj = mem_read32(this_ptr + 0x158);
-    if (obj != 0) {
-        uint32_t vtable = mem_read32(obj);
-        typedef uint32_t(__fastcall * vfn_t)(uint32_t, uint32_t);
-        vfn_t fn = reinterpret_cast<vfn_t>(static_cast<uintptr_t>(mem_read32(vtable)));
-        if (fn(obj, 0) == 4) {
-            return mem_read32(this_ptr + 0x158);
-        }
-    }
-    return 0;
-}
-} // namespace lift_006C30F0
 
 // [0x006C3070]
 namespace lift_006C3070 {
@@ -550,30 +504,6 @@ uint32_t __thiscall sub_006C3070(uintptr_t self) {
     return 0;
 }
 } // namespace lift_006C3070
-
-// [0x006C3120]
-namespace lift_006C3120 {
-// @name sub_006C3120
-// @summary Returns field_0x158 if non-null and its vtable[0]() returns 5, otherwise 0.
-// @field unknown +0x158 uint32_t field_0x158
-
-
-uint32_t mem_u32(uint32_t);
-
-uint32_t __thiscall sub_006C3120(uint32_t this_ptr) {
-    uint32_t obj = mem_u32(this_ptr + 0x158);
-    if (obj == 0) {
-        return 0;
-    }
-    uint32_t vtable = mem_u32(obj);
-    uint32_t vfn = mem_u32(vtable);
-    using Vfn0 = uint32_t(__thiscall*)(uint32_t);
-    if (reinterpret_cast<Vfn0>(vfn)(obj) == 5) {
-        return mem_u32(this_ptr + 0x158);
-    }
-    return 0;
-}
-} // namespace lift_006C3120
 
 // [0x006C3EE0]
 namespace lift_006C3EE0 {
@@ -610,43 +540,6 @@ uint32_t Unknown_setMaskedBitsField10(Unknown* self, uint32_t value, uint32_t fl
     return result;
 }
 } // namespace lift_006C9D30
-
-// [0x006C3150]
-namespace lift_006C3150 {
-// @name sub_006C3150
-// @summary Returns field_0x158 if non-null and its vtable[0]() returns 6, else 0
-// @field Unknown +0x158 uint32_t field_0x158
-
-
-extern uint32_t mem_r32(uint32_t addr);
-
-uint32_t __thiscall sub_006C3150(uint32_t this_ptr) {
-    uint32_t obj = mem_r32(this_ptr + 0x158);
-    if (obj != 0) {
-        uint32_t vtable = mem_r32(obj);
-        uint32_t fn = mem_r32(vtable);
-        using VFunc0 = uint32_t(__thiscall*)(uint32_t);
-        if (reinterpret_cast<VFunc0>(static_cast<uintptr_t>(fn))(obj) == 6) {
-            return mem_r32(this_ptr + 0x158);
-        }
-    }
-    return 0;
-}
-} // namespace lift_006C3150
-
-// [0x006CA090]
-namespace lift_006CA090 {
-// @name sub_006CA090
-// @summary Conditionally subtracts a size from the global counter mem_00B5D768 and frees the pointer.
-extern int32_t mem_00B5D768;
-
-void sub_006CA090(void* ptr, int32_t size) {
-    if (ptr != nullptr) {
-        mem_00B5D768 -= size;
-    }
-    std::free(ptr);
-}
-} // namespace lift_006CA090
 
 // [0x006C9D70]
 namespace lift_006C9D70 {
@@ -724,27 +617,6 @@ void __thiscall sub_006C3360(void* self, uint32_t index, uint32_t value) {
 }
 } // namespace lift_006C3360
 
-// [0x006C31B0]
-namespace lift_006C31B0 {
-uint32_t mem_r32(uint32_t);
-
-// @name getTypedChildIfType8
-// @summary Returns field_0x158 if non-null and its vtable[0]() returns 8, otherwise 0.
-// @field Unknown +0x158 uint32_t field_0x158
-uint32_t __thiscall sub_006C31B0(uint32_t self) {
-    uint32_t obj = mem_r32(self + 0x158);
-    if (obj != 0) {
-        uint32_t vtbl = mem_r32(obj);
-        uint32_t fn = mem_r32(vtbl);
-        using vfn_t = uint32_t(__thiscall*)(uint32_t);
-        if (reinterpret_cast<vfn_t>(fn)(obj) == 8) {
-            return mem_r32(self + 0x158);
-        }
-    }
-    return 0;
-}
-} // namespace lift_006C31B0
-
 // [0x006C31E0]
 namespace lift_006C31E0 {
 // @name sub_006C31E0
@@ -767,45 +639,6 @@ uint32_t sub_006C31E0(uint32_t ecx) {
     return *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(ecx + 0x158));
 }
 } // namespace lift_006C31E0
-
-// [0x006C3180]
-namespace lift_006C3180 {
-// @name getTypedChild_0x158
-// @summary Returns the sub-object at +0x158 if non-null and its vtable[0] returns 7, otherwise 0.
-// @field Unknown +0x158 uint32_t field_0x158
-
-
-extern uint32_t mem_read32(uintptr_t addr);
-
-uint32_t __thiscall fn_006C3180(void* self) {
-    uintptr_t base = reinterpret_cast<uintptr_t>(self);
-    uint32_t obj = mem_read32(base + 0x158);
-    if (obj != 0) {
-        uint32_t vtbl = mem_read32(obj);
-        uint32_t fn_addr = mem_read32(vtbl);
-        using vfn0_t = uint32_t(__thiscall*)(uint32_t);
-        uint32_t res = reinterpret_cast<vfn0_t>(static_cast<uintptr_t>(fn_addr))(obj);
-        if (res == 7) {
-            return mem_read32(base + 0x158);
-        }
-    }
-    return 0;
-}
-} // namespace lift_006C3180
-
-// [0x006C3390]
-namespace lift_006C3390 {
-uint32_t& mem_u32(uintptr_t);
-
-// @name sub_006C3390
-// @summary Sets a 32-bit field at offset 0x1e78 in an array of 496-byte entries pointed to by this+0xf0.
-// @field this +0xf0 uint32_t field_0xf0
-
-void __thiscall sub_006C3390(uintptr_t self, uint32_t index, uint32_t value) {
-    uint32_t base = mem_u32(self + 0xf0);
-    mem_u32(base + index * 496u + 0x1e78u) = value;
-}
-} // namespace lift_006C3390
 
 // [0x006C04D0]
 namespace lift_006C04D0 {
@@ -1685,39 +1518,6 @@ bool __thiscall fn_006CC990(void* self, int32_t index) {
 }
 } // namespace lift_006CC990
 
-// [0x006C30A0]
-namespace lift_006C30A0 {
-// @name sub_006C30A0
-// @summary Return field_0x158 if its virtual method 0 returns 4, 5, or 6, else 0.
-// @field Unknown +0x158 uint32_t field_0x158
-
-
-extern uint32_t mem_r32(uint32_t addr);
-
-uint32_t __fastcall sub_006C30A0(uint32_t self) {
-    using Vfn0 = uint32_t(__fastcall*)(uint32_t);
-    uint32_t obj = mem_r32(self + 0x158);
-    if (!obj) {
-        return 0;
-    }
-    uint32_t vtable = mem_r32(obj);
-    if (reinterpret_cast<Vfn0>(static_cast<uintptr_t>(mem_r32(vtable)))(obj) == 4) {
-        return mem_r32(self + 0x158);
-    }
-    obj = mem_r32(self + 0x158);
-    vtable = mem_r32(obj);
-    if (reinterpret_cast<Vfn0>(static_cast<uintptr_t>(mem_r32(vtable)))(obj) == 5) {
-        return mem_r32(self + 0x158);
-    }
-    obj = mem_r32(self + 0x158);
-    vtable = mem_r32(obj);
-    if (reinterpret_cast<Vfn0>(static_cast<uintptr_t>(mem_r32(vtable)))(obj) == 6) {
-        return mem_r32(self + 0x158);
-    }
-    return 0;
-}
-} // namespace lift_006C30A0
-
 // [0x006C3C10]
 namespace lift_006C3C10 {
 // @name vec3dCross
@@ -1770,22 +1570,6 @@ extern void* __fastcall fn_006C84B0(void* self) {
     return self;
 }
 } // namespace lift_006C84B0
-
-// [0x006C8E00]
-namespace lift_006C8E00 {
-// @name initHugePos
-// @summary Initializes global positive infinity double from MSVCR80!_HUGE
-
-extern uint32_t mem_00925284;
-extern uint32_t mem_00B5D5E8;
-extern uint32_t mem_00B5D5EC;
-
-void sub_006C8E00() {
-    uint32_t* huge_ptr = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(mem_00925284));
-    mem_00B5D5E8 = huge_ptr[0];
-    mem_00B5D5EC = huge_ptr[1];
-}
-} // namespace lift_006C8E00
 
 // [0x006C92D0]
 namespace lift_006C92D0 {
@@ -2051,27 +1835,6 @@ extern void __thiscall fn_006C3520(
     ext_006D80A0();
 }
 } // namespace lift_006C3520
-
-// [0x006C3490]
-namespace lift_006C3490 {
-// @name sub_006C3490
-// @summary Copies an 8-dword value into an indexed element (stride 0x1F0) of a sub-array at +0x1D78 of field_0xF0.
-// @field Unknown +0xf0 uintptr_t field_0xf0
-
-
-extern uint32_t mem_read32(uintptr_t addr);
-extern void __thiscall ext_007873F0(void* self, void* src);
-extern void __cdecl ext_006D80A0(void* self);
-
-extern void __thiscall fn_006C3490(void* self, uint32_t index, uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4, uint32_t arg5, uint32_t arg6, uint32_t arg7, uint32_t arg8)
-{
-    uint32_t value[8] = { arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8 };
-    uintptr_t base = mem_read32(reinterpret_cast<uintptr_t>(self) + 0xF0);
-    uintptr_t target = base + 0x1D78 + static_cast<uintptr_t>(index) * 0x1F0;
-    ext_007873F0(reinterpret_cast<void*>(target), value);
-    ext_006D80A0(value);
-}
-} // namespace lift_006C3490
 
 // [0x006C83D0]
 namespace lift_006C83D0 {

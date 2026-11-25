@@ -31,20 +31,6 @@ extern "C" void __cdecl fn_0085F730(void) {
     return;
 }
 
-// [0x00852427]
-namespace lift_00852427 {
-template <typename T>
-T mem_read(uint32_t addr);
-
-// @name thunk_jmp_esi_00852427
-// @summary Pops 4 bytes from stack and tail-jumps to the function pointer at [esi]
-void thunk_jmp_esi_00852427(uint32_t esi) {
-    using Fn = void (*)();
-    Fn target = reinterpret_cast<Fn>(static_cast<uintptr_t>(mem_read<uint32_t>(esi)));
-    target();
-}
-} // namespace lift_00852427
-
 // [0x008523A4]
 namespace lift_008523A4 {
 extern void ext_0084A145();
@@ -82,38 +68,6 @@ uint32_t sub_00856FE0(uint32_t* dst, const uint32_t* src) {
     return 0;
 }
 } // namespace lift_00856FE0
-
-// [0x008596E0] sub_008596E0 (16 bytes)
-namespace lift_008596E0 {
-// @name sub_008596E0
-// @summary Auto-lifted identical-shape clone of 0x0079AF40 (GlobalAllocZeroFlags).
-namespace lift_0079AF40 {
-extern uint32_t mem_00924214;  // IAT slot holding KERNEL32!GlobalAlloc
-extern HGLOBAL __stdcall ext_GlobalAlloc(UINT uFlags, SIZE_T dwBytes);
-
-// @name GlobalAllocZeroFlags
-// @summary Allocates a global memory block of the requested size with uFlags = 0 (GMEM_FIXED) and returns the handle.
-uint32_t __cdecl fn_008596E0(uint32_t size) {
-    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(ext_GlobalAlloc(0, static_cast<SIZE_T>(size))));
-}
-} // namespace lift_0079AF40
-} // namespace lift_008596E0
-
-// [0x00859730] sub_00859730 (16 bytes)
-namespace lift_00859730 {
-// @name sub_00859730
-// @summary Auto-lifted identical-shape clone of 0x0079AF50 (GlobalFreeWrapper).
-namespace lift_0079AF50 {
-extern HGLOBAL ext_GlobalFree(HGLOBAL hMem);
-extern int mem_00924210;
-
-// @name GlobalFreeWrapper
-// @summary Frees a global memory handle via KERNEL32!GlobalFree and returns its result.
-HGLOBAL fn_00859730(HGLOBAL hMem) {
-    return ext_GlobalFree(hMem);
-}
-} // namespace lift_0079AF50
-} // namespace lift_00859730
 
 // [0x00859D30]
 namespace lift_00859D30 {
@@ -156,16 +110,6 @@ void setFlagBit1Offset14(void* self) {
     *reinterpret_cast<uint32_t*>(base + 0x14) |= 0x2u;
 }
 } // namespace lift_0085C260
-
-// [0x0085F740] sub_0085F740 (16 bytes)
-namespace lift_0085F740 {
-// @name GetByte01
-// @summary Returns the byte at offset +0x01 of the object pointed to by self.
-// @field UnknownStruct +0x01 uint8_t field_0x01
-uint8_t fn_0085F740(void* self) {
-    return lift_field<uint8_t>(self, 0x01);
-}
-} // namespace lift_0085F740
 
 // [0x00857490] sub_00857490 (19 bytes)
 namespace lift_00857490 {

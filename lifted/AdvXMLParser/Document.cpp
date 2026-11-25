@@ -15,20 +15,6 @@ void fn_006408B0(uint32_t arg) {
 }
 } // namespace lift_006408B0
 
-// [0x0065F5E0] AdvXMLParser::Document::vfunc_1 (34 bytes)
-namespace lift_0065F5E0 {
-extern const char mem_00928B5D[];
-
-// @name AdvXMLParser::Document::vfunc_1
-// @class AdvXMLParser::Document
-// @summary Auto-lifted identical-shape clone of 0x005F0D40 (NMData::MagnetJointData::vfunc_59).
-void* __thiscall fn_0065F5E0(void* self, void* out) {
-    (void)self;
-    new (out) std::string(mem_00928B5D);
-    return out;
-}
-} // namespace lift_0065F5E0
-
 // [0x0063E940] AdvXMLParser::Document::vfunc_3 (23 bytes)
 namespace lift_0063E940 {
 // @name AdvXMLParser::Document::vfunc_3

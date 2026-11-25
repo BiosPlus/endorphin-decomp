@@ -123,32 +123,6 @@ void* fn_006AD010(void* self, void* arg1) {
 } // namespace lift_0040A910
 } // namespace lift_006AD010
 
-// [0x006A7A90]
-namespace lift_006A7A90 {
-// @name CheckEscapeOrTabHeld
-// @summary Returns 0 if VK_ESCAPE or VK_TAB is currently held down, otherwise 4.
-// @field none
-
-extern uint32_t mem_009255F4;
-
-namespace {
-// GetKeyState returns SHORT; high bit set means the key is down.
-using GetKeyStateFn = short (*)(int);
-}
-
-// [0x006A7A90]
-int sub_006A7A90() {
-    auto getKeyState = reinterpret_cast<GetKeyStateFn>(static_cast<uintptr_t>(mem_009255F4));
-    if (getKeyState(0x1B) < 0) {   // VK_ESCAPE
-        return 0;
-    }
-    if (getKeyState(0x09) < 0) {   // VK_TAB
-        return 0;
-    }
-    return 4;
-}
-} // namespace lift_006A7A90
-
 // [0x006A88A0]
 namespace lift_006A88A0 {
 // @name sub_006A88A0
@@ -347,36 +321,6 @@ void* fn_006ACE40(void* self, void* out, void* in) {
 }
 } // namespace lift_006ACE40
 
-// [0x006AF840]
-namespace lift_006AF840 {
-// @name hasAnyFlaggedItem
-// @summary Checks whether any element in the array at +0x54/+0x58 satisfies sub_006AD090
-// @field unknown +0x54 uint32_t field_0x54
-// @field unknown +0x58 int32_t field_0x58
-
-
-extern uint8_t __thiscall ext_006AD090(uint32_t self);
-extern void ext_006A60EE(void);
-
-extern uint32_t mem_read32(uint32_t addr);
-
-uint8_t __thiscall fn_006AF840(uint32_t self) {
-    int32_t count = static_cast<int32_t>(mem_read32(self + 0x58));
-    for (int32_t i = 0; i < count; ++i) {
-        if (i < 0 || i >= static_cast<int32_t>(mem_read32(self + 0x58))) {
-            ext_006A60EE();
-            return 0;
-        }
-        uint32_t arr = mem_read32(self + 0x54);
-        uint32_t item = mem_read32(arr + static_cast<uint32_t>(i) * 4u);
-        if (ext_006AD090(item) != 0) {
-            return 1;
-        }
-    }
-    return 0;
-}
-} // namespace lift_006AF840
-
 // [0x006ACF10] sub_006ACF10 (68 bytes)
 namespace lift_006ACF10 {
 // Known callee 0x00626440: TransformRefNode::vfunc_6_off_4 (called on the object at this+0x14; returns a 32-bit value in eax).
@@ -499,56 +443,6 @@ RECT* __stdcall fn_006ACE90(const RECT* src, RECT* dst) {
 }
 } // namespace lift_006ACE90
 
-// [0x006AD290] sub_006AD290 (75 bytes)
-namespace lift_006AD290 {
-// Imported MFC80 ord_310 slot (thiscall helper taking a subobject pointer in ECX).
-extern void (*mem_009242FC)(void* self);
-
-// @name Unknown::InitObject_006AD290
-// @class Unknown
-// @summary Sets the vtable, calls MFC80 ord_310 on subobjects at +0x08 and +0x0C, zeroes fields +0x18..+0x4C, and returns this.
-// @field Unknown +0x00 uint32_t vtable_ptr
-// @field Unknown +0x18 uint32_t field_0x18
-// @field Unknown +0x1c uint32_t field_0x1c
-// @field Unknown +0x20 uint32_t field_0x20
-// @field Unknown +0x24 uint32_t field_0x24
-// @field Unknown +0x28 uint32_t field_0x28
-// @field Unknown +0x2c uint32_t field_0x2c
-// @field Unknown +0x30 uint32_t field_0x30
-// @field Unknown +0x34 uint32_t field_0x34
-// @field Unknown +0x38 uint8_t field_0x38
-// @field Unknown +0x3c uint32_t field_0x3c
-// @field Unknown +0x40 uint8_t field_0x40
-// @field Unknown +0x41 uint8_t field_0x41
-// @field Unknown +0x44 uint32_t field_0x44
-// @field Unknown +0x4c uint32_t field_0x4c
-void* fn_006AD290(void* self) {
-    uint8_t* base = static_cast<uint8_t*>(self);
-
-    lift_field<uint32_t>(base, 0x00) = 0x0099103Cu;
-
-    mem_009242FC(base + 0x08);
-    mem_009242FC(base + 0x0C);
-
-    lift_field<uint32_t>(base, 0x18) = 0;
-    lift_field<uint32_t>(base, 0x1C) = 0;
-    lift_field<uint32_t>(base, 0x20) = 0;
-    lift_field<uint32_t>(base, 0x24) = 0;
-    lift_field<uint32_t>(base, 0x28) = 0;
-    lift_field<uint32_t>(base, 0x2C) = 0;
-    lift_field<uint32_t>(base, 0x30) = 0;
-    lift_field<uint32_t>(base, 0x34) = 0;
-    lift_field<uint8_t>(base, 0x38) = 0;
-    lift_field<uint32_t>(base, 0x3C) = 0;
-    lift_field<uint8_t>(base, 0x40) = 0;
-    lift_field<uint8_t>(base, 0x41) = 0;
-    lift_field<uint32_t>(base, 0x44) = 0;
-    lift_field<uint32_t>(base, 0x4C) = 0;
-
-    return self;
-}
-} // namespace lift_006AD290
-
 // [0x006A92F0] sub_006A92F0 (75 bytes)
 namespace lift_006A92F0 {
 // Known callee 0x006A5EA8: thunk_MFC80_ord_1903 (IAT jump thunk forwarding to MFC80!ord_1903.)
@@ -598,66 +492,6 @@ void fn_006A92F0(void* self, void* other) {
     invalidate_rect(lift_field<HWND>(base, 0x20), nullptr, TRUE);
 }
 } // namespace lift_006A92F0
-
-// [0x006AC2E0] sub_006AC2E0 (89 bytes)
-namespace lift_006AC2E0 {
-// Known callee 0x006AB410: sub_006AB410 (takes this plus two sizes derived from the client rect; semantics not yet recovered)
-extern void ext_006AB410(void* self, LONG width, LONG height);
-
-// USER32 imports (called through IAT slots 0x925584, 0x92566C, 0x925668 in the original)
-extern BOOL LockWindowUpdate(HWND hWndLock);
-extern BOOL GetClientRect(HWND hWnd, RECT* lpRect);
-extern BOOL RedrawWindow(HWND hWnd, const RECT* lprcUpdate, HRGN hrgnUpdate, UINT flags);
-
-// @name Unknown::resizeAndRedrawClient
-// @class Unknown
-// @summary Clears a flag byte, locks window updates, forwards the client rect size to sub_006AB410, then redraws the window if its handle is set.
-// @field Unknown +0x20 HWND hwnd
-// @field Unknown +0x198 uint8_t flag
-void fn_006AC2E0(void* self) {
-    lift_field<uint8_t>(self, 0x198) = 0;
-    LockWindowUpdate(nullptr);
-
-    HWND hwnd = lift_field<HWND>(self, 0x20);
-    RECT rc{};
-    GetClientRect(hwnd, &rc);
-
-    // Original pushes (bottom - top) first and (right - left) last, so the callee sees right-left as its first argument.
-    ext_006AB410(self, rc.right - rc.left, rc.bottom - rc.top);
-
-    hwnd = lift_field<HWND>(self, 0x20);
-    if (hwnd != nullptr) {
-        RedrawWindow(hwnd, nullptr, nullptr, 0x105);
-    }
-}
-} // namespace lift_006AC2E0
-
-// [0x006A9290]
-namespace lift_006A9290 {
-// @name sub_006A9290
-// @summary Calls MFC80!ord_1903 and if not -1, dispatches a virtual call on subobject at +0x108 with a zeroed 16-byte buffer
-// @field Unknown +0x108 uintptr_t field_0x108
-
-
-extern int32_t __thiscall fn_006A5EA8(void* self);
-
-extern int32_t __thiscall fn_006A9290(void* self, uint32_t arg1) {
-    (void)arg1;
-    int32_t res = fn_006A5EA8(self);
-    if (res == -1) {
-        return res;
-    }
-
-    uint32_t buf[4] = {0, 0, 0, 0};
-    uint8_t* subobj = reinterpret_cast<uint8_t*>(self) + 0x108;
-    uintptr_t vtable = *reinterpret_cast<uintptr_t*>(subobj);
-    using Vfn = void(__thiscall*)(void*, uint32_t, uint32_t*, void*, uint32_t);
-    Vfn vfn = reinterpret_cast<Vfn>(*reinterpret_cast<uintptr_t*>(vtable + 0x13c));
-    vfn(subobj, 0x40000005u, buf, self, 0x3e8u);
-
-    return 0;
-}
-} // namespace lift_006A9290
 
 // [0x006A0680]
 namespace lift_006A0680 {
@@ -716,36 +550,6 @@ uint32_t fn_006A8A00(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
     }
 }
 } // namespace lift_006A8A00
-
-// [0x006A8840]
-namespace lift_006A8840 {
-// @name sub_006A8840
-// @summary Looks up a string key in the map at +0xb0, destroys the string argument, and returns the looked-up value.
-// @field sub_006A8840 +0xb0 uintptr_t field_0xb0
-
-
-extern void fn_0087274E(void);
-extern uint32_t mem_00924300;
-extern uint32_t mem_009242F4;
-
-typedef uint32_t (__thiscall *mfc_ord876_t)(void* self);
-typedef void (__thiscall *mfc_ord4066_t)(void* self, uint32_t key, uint32_t* out_val);
-typedef void (__thiscall *mfc_ord578_t)(void* self);
-
-extern uint32_t __thiscall fn_006A8840(void* self, uint32_t arg0) {
-    uint32_t result = 0;
-    auto ord876 = reinterpret_cast<mfc_ord876_t>(static_cast<uintptr_t>(mem_00924300));
-    uint32_t key = ord876(&arg0);
-
-    auto ord4066 = reinterpret_cast<mfc_ord4066_t>(&fn_0087274E);
-    ord4066(static_cast<uint8_t*>(self) + 0xb0, key, &result);
-
-    auto ord578 = reinterpret_cast<mfc_ord578_t>(static_cast<uintptr_t>(mem_009242F4));
-    ord578(&arg0);
-
-    return result;
-}
-} // namespace lift_006A8840
 
 // [0x006A3700]
 namespace lift_006A3700 {

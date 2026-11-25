@@ -10,7 +10,7 @@
 // Recovered field layout for XMLConverter:
 namespace lifted_layout {
 struct XMLConverter_Fields {
-    // +0x0   uint32_t                 vfptr  (evidence: 0x00678520, 0x0067A670)
-    // +0x4   std::string              field_0x04  (evidence: 0x00678520, 0x0067A670)
+    // +0x0   uint32_t                 vfptr  (evidence: 0x0067A670)
+    // +0x4   std::string              field_0x04  (evidence: 0x0067A670)
 };
 } // namespace lifted_layout

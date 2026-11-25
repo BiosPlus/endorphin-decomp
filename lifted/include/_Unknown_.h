@@ -8,7 +8,6 @@
 // Recovered field layout for <Unknown>:
 namespace lifted_layout {
 struct _Unknown__Fields {
-    // +0x0   void*                    vftable  (evidence: 0x005B1930) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    vptr  (evidence: 0x00610AB0, 0x00610AD0) // CONFLICT: multiple definitions at +0x0
     // +0x0   <DWORD>                  vtable  (evidence: 0x004F4D20) // CONFLICT: multiple definitions at +0x0
     // +0x0   void**                   vtable  (evidence: 0x006DE6E0) // CONFLICT: multiple definitions at +0x0
@@ -16,7 +15,6 @@ struct _Unknown__Fields {
     // +0x4   <DWORD>                  field_0x04  (evidence: 0x004F4D20) // CONFLICT: multiple definitions at +0x4
     // +0x4   DWORD                    field_0x04  (evidence: 0x004EF2B0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00810300) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint8_t[]                field_0x04  (evidence: 0x005B1930) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    field_0x04  (evidence: 0x00810300) // CONFLICT: multiple definitions at +0x4
     // +0x8   uint32_t                 end  (evidence: 0x004AEFF0) // CONFLICT: multiple definitions at +0x8
     // +0x8   <DWORD>                  field_0x08  (evidence: 0x004F4D20) // CONFLICT: multiple definitions at +0x8
@@ -26,17 +24,17 @@ struct _Unknown__Fields {
     // +0xC   int32_t                  field_0x0C  (evidence: 0x00665880) // CONFLICT: multiple definitions at +0xC
     // +0x1C  DWORD                    field_0x1C  (evidence: 0x00790DE0)
     // +0x20  int32_t                  count  (evidence: 0x006DE6E0) // CONFLICT: multiple definitions at +0x20
-    // +0x20  HWND                     hwnd  (evidence: 0x00414880, 0x0041FEF0) // CONFLICT: multiple definitions at +0x20
+    // +0x20  HWND                     hwnd  (evidence: 0x0041FEF0) // CONFLICT: multiple definitions at +0x20
     // +0x2C  DWORD                    field_0x2C  (evidence: 0x00790DE0)
     // +0x5C  DWORD                    field_0x5C  (evidence: 0x00790DE0)
-    // +0x78  double                   scale  (evidence: 0x007AA7F0, 0x007AB720, 0x007AC670)
+    // +0x78  double                   scale  (evidence: 0x007AA7F0, 0x007AB720)
     // +0x84  uint8_t*                 field_0x84  (evidence: 0x00543900) // CONFLICT: multiple definitions at +0x84
-    // +0x84  BOOLEAN                  flag  (evidence: 0x007AA7F0, 0x007AB720, 0x007AC670) // CONFLICT: multiple definitions at +0x84
+    // +0x84  BOOLEAN                  flag  (evidence: 0x007AA7F0, 0x007AB720) // CONFLICT: multiple definitions at +0x84
     // +0x88  uint8_t                  field_0x88  (evidence: 0x00440970, 0x00441020)
     // +0x8E  uint8_t                  field_0x8e  (evidence: 0x00440970, 0x00441020)
-    // +0xF5  BYTE                     field_0xF5  (evidence: 0x00430450, 0x00430DA0)
-    // +0x3B4 void*                    field_0x3b4  (evidence: 0x00480530, 0x004890D0)
-    // +0x3DC <embedded>               field_0x3dc  (evidence: 0x00480530, 0x004890D0)
-    // +0x3E8 <embedded>               field_0x3e8  (evidence: 0x00480530, 0x004890D0)
+    // +0xF5  BYTE                     field_0xF5  (evidence: 0x00430450)
+    // +0x3B4 void*                    field_0x3b4  (evidence: 0x00480530)
+    // +0x3DC <embedded>               field_0x3dc  (evidence: 0x00480530)
+    // +0x3E8 <embedded>               field_0x3e8  (evidence: 0x00480530)
 };
 } // namespace lifted_layout

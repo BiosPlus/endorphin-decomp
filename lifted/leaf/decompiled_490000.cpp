@@ -250,24 +250,6 @@ uint32_t fn_00497650(uint32_t self, uint32_t a1) {
 }
 } // namespace lift_00497650
 
-// [0x0049AD40]
-namespace lift_0049AD40 {
-extern int mem_00925134;
-extern void ext_invalid_parameter_noinfo(void);
-
-// @name checkKeyAndCompareValue
-// @summary Requires self->field_00 to be non-zero and equal to other->field_00 (else invalid-parameter path), then returns whether self->field_04 differs from other->field_04.
-// @field Unknown +0x00 DWORD field_00
-// @field Unknown +0x04 DWORD field_04
-bool fn_0049AD40(const void* self, const void* other) {
-    DWORD selfKey = lift_field<DWORD>(self, 0x00);
-    if (selfKey == 0 || selfKey != lift_field<DWORD>(other, 0x00)) {
-        ext_invalid_parameter_noinfo();
-    }
-    return lift_field<DWORD>(self, 0x04) != lift_field<DWORD>(other, 0x04);
-}
-} // namespace lift_0049AD40
-
 // [0x00491980] sub_00491980 (41 bytes)
 namespace lift_00491980 {
 // @name sub_00491980
@@ -313,60 +295,6 @@ void* fn_00497830(void* out_str, uint8_t flag) {
 } // namespace lift_00497860
 } // namespace lift_00497830
 
-// [0x004925D0]
-namespace lift_004925D0 {
-// @name sub_004925D0
-// @summary Checks whether field_0x08 equals field_0x0C (when mode == 0) or field_0x10 (when mode == 1), if field_0x00 == 1
-// @field unknown +0x00 uint32_t field_0x00
-// @field unknown +0x08 uint32_t field_0x08
-// @field unknown +0x0C uint32_t field_0x0C
-// @field unknown +0x10 uint32_t field_0x10
-
-
-extern uint32_t mem_r32(uint32_t addr);
-
-uint8_t __thiscall sub_004925D0(uint32_t self, uint32_t mode) {
-    if (mem_r32(self) != 1) {
-        return 0;
-    }
-    if (mode == 0) {
-        return mem_r32(self + 0x08) == mem_r32(self + 0x0C) ? 1 : 0;
-    }
-    if (mode == 1) {
-        return mem_r32(self + 0x08) == mem_r32(self + 0x10) ? 1 : 0;
-    }
-    return 0;
-}
-} // namespace lift_004925D0
-
-// [0x00493330]
-namespace lift_00493330 {
-// @name TreeErase
-// @summary Recursively erases a red-black tree subtree starting from the given node.
-// @field TreeNode +0x00 uint32_t left
-// @field TreeNode +0x08 uint32_t right
-// @field TreeNode +0x21 uint8_t is_nil
-
-
-extern uint8_t mem_read8(uint32_t addr);
-extern uint32_t mem_read32(uint32_t addr);
-extern void ext_006A5C5C(uint32_t ptr);
-
-void __thiscall fn_00493330(void* self, uint32_t node) {
-    uint32_t edi = node;
-    if (mem_read8(edi + 0x21) == 0) {
-        uint32_t esi = edi;
-        do {
-            uint32_t right = mem_read32(esi + 0x8);
-            fn_00493330(self, right);
-            esi = mem_read32(esi);
-            ext_006A5C5C(edi);
-            edi = esi;
-        } while (mem_read8(esi + 0x21) == 0);
-    }
-}
-} // namespace lift_00493330
-
 // [0x00492CC0]
 namespace lift_00492CC0 {
 // Import thunk forwarding to MFC80!ord_762 (cdecl, one stack argument, returns a pointer in eax).
@@ -402,31 +330,6 @@ extern void* fn_00492CC0(void) {
     return eax;
 }
 } // namespace lift_00492CC0
-
-// [0x00491890] sub_00491890 (55 bytes)
-namespace lift_00491890 {
-// @name sub_00491890
-// @summary Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).
-namespace lift_0054F2C0 {
-extern void ext_004917B0(std::uintptr_t a0, std::uint32_t a1, std::uint32_t a2,
-                             std::uint32_t a3, std::uint32_t a4, std::uint32_t a5);
-
-// @name ComputeRecordAddress
-// @summary Calls helper sub_0054F1E0 with the arguments and a zeroed flag word, then returns base + index * 0x68.
-// (no direct struct field accesses in this function)
-__stdcall std::uint8_t* fn_00491890(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2) {
-    // The original stores 0 into the low byte of a stack slot that previously held ECX,
-    // so the dword passed on is ECX with its low byte cleared. ECX at entry is not
-    // recoverable from the stdcall signature; it is modelled as a placeholder here.
-    std::uint32_t ecx_in = 0;
-    std::uint32_t flag_slot = ecx_in & 0xFFFFFF00u;
-
-    ext_004917B0(reinterpret_cast<std::uintptr_t>(base), index, arg2, ecx_in, arg2, flag_slot);
-
-    return base + static_cast<std::size_t>(index) * 0x7Cu;
-}
-} // namespace lift_0054F2C0
-} // namespace lift_00491890
 
 // [0x0049BEE0] sub_0049BEE0 (57 bytes)
 namespace lift_0049BEE0 {
@@ -537,36 +440,6 @@ void fn_0049DB60(uint32_t out, uint32_t head, uint32_t first, uint32_t unused, u
     store<uint32_t>(out + 4, node);
 }
 } // namespace lift_0049DB60
-
-// [0x004918D0] sub_004918D0 (63 bytes)
-namespace lift_004918D0 {
-// @name sub_004918D0
-// @summary Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).
-namespace lift_00569970 {
-extern void ext_00491730(uint32_t a0, uint32_t a1, void* a2, void* a3);
-extern void fn_006A5C5C(uint32_t arg);
-
-// @name Unknown::ReleaseHandleAndClear
-// @class Unknown
-// @summary If field +0x04 is nonzero, run ext_005693E0 with it and forward it to fn_006A5C5C, then clear fields +0x04, +0x08 and +0x0C.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-// @field Unknown +0x0C uint32_t field_0x0C
-void fn_004918D0(void* self) {
-    if (lift_field<uint32_t>(self, 0x4) != 0) {
-        // Argument order matches the original pushes: a0 = f04, a1 = f08, a2 = self, a3 = ecx (self).
-        ext_00491730(lift_field<uint32_t>(self, 0x4),
-                     lift_field<uint32_t>(self, 0x8),
-                     self,
-                     self);
-        fn_006A5C5C(lift_field<uint32_t>(self, 0x4));
-    }
-    lift_field<uint32_t>(self, 0x4) = 0;
-    lift_field<uint32_t>(self, 0x8) = 0;
-    lift_field<uint32_t>(self, 0xC) = 0;
-}
-} // namespace lift_00569970
-} // namespace lift_004918D0
 
 // [0x00496CE0] sub_00496CE0 (25 bytes)
 namespace lift_00496CE0 {
@@ -759,31 +632,6 @@ void* __thiscall fn_00494860(void* self, void* out_str, int32_t index) {
     return out_str;
 }
 } // namespace lift_00494860
-
-// [0x00494070]
-namespace lift_00494070 {
-// @name findAncestorWithFlags
-// @summary Walks up an object's parent chain via vtable+0x10 and dynamic_cast until finding one whose vtable+0x50 flags match the given mask
-
-extern uint32_t mem_read32(uint32_t addr);
-extern uint32_t ext_006A6E9E(uint32_t inptr, uint32_t vf_delta, uint32_t src_type, uint32_t dst_type, uint32_t is_reference);
-
-extern uint32_t fn_00494070(uint32_t mask, uint32_t obj) {
-    uint32_t cur = obj;
-    while (cur != 0) {
-        uint32_t vtable = mem_read32(cur);
-        uint32_t get_flags = mem_read32(vtable + 0x50);
-        uint32_t flags = reinterpret_cast<uint32_t (*)(uint32_t)>(static_cast<uintptr_t>(get_flags))(cur);
-        if ((flags & mask) == mask) {
-            return cur;
-        }
-        uint32_t get_parent = mem_read32(vtable + 0x10);
-        uint32_t parent = reinterpret_cast<uint32_t (*)(uint32_t, uint32_t)>(static_cast<uintptr_t>(get_parent))(cur, 0u);
-        cur = ext_006A6E9E(parent, 0u, 0x00A2E2F8u, 0x00A2E2D8u, 0u);
-    }
-    return 0;
-}
-} // namespace lift_00494070
 
 // [0x00490490] sub_00490490 (87 bytes)
 namespace lift_00490490 {
@@ -1156,47 +1004,6 @@ void* fn_0049B340() {
 }
 } // namespace lift_0049B340
 
-// [0x0049D190] sub_0049D190 (33 bytes)
-namespace lift_0049D190 {
-// Known callee 0x0049B340: InitOnceGlobalString_0049B340 (One-time guarded initializer for the global string at 0x00ADD7C4; registers its teardown via ext_006A6C87 and returns the global's address.)
-extern void* ext_0049B340();
-
-// @name CopyGlobalStringToOut
-// @summary Ensures the global string is initialized, copy-constructs it into the caller-supplied std::string slot, and returns that slot.
-void* fn_0049D190(void* self) {
-    // The original stores 0 to a local stack slot before the call; that slot is unused, so it is dropped.
-    void* global = ext_0049B340();
-    // MSVC's basic_string copy constructor (via mem_00924FE0) is replaced by placement-new copy construction.
-    new (self) std::string(*static_cast<const std::string*>(global));
-    return self;
-}
-} // namespace lift_0049D190
-
-// [0x0049DFA0]
-namespace lift_0049DFA0 {
-// @name Node::setValueRecursive
-// @class Node
-// @summary Recursively sets field_0x130 on this node and all non-flagged children in its child list
-// @field Node +0xdc void* child_list
-// @field Node +0x130 uint32_t field_0x130
-
-
-void __thiscall fn_0049DFA0(uintptr_t self, uint32_t value) {
-    *reinterpret_cast<uint32_t*>(self + 0x130) = value;
-
-    uintptr_t list_ptr = self + 0xdc;
-    uintptr_t head = *reinterpret_cast<uintptr_t*>(list_ptr + 0x4);
-    uintptr_t node = *reinterpret_cast<uintptr_t*>(head);
-
-    while (node != *reinterpret_cast<uintptr_t*>(list_ptr + 0x4)) {
-        if (*reinterpret_cast<uint8_t*>(node + 0x6c) == 0) {
-            fn_0049DFA0(node + 0x8, value);
-        }
-        node = *reinterpret_cast<uintptr_t*>(node);
-    }
-}
-} // namespace lift_0049DFA0
-
 // [0x00497890] sub_00497890 (98 bytes)
 namespace lift_00497890 {
 // Known callee 0x004276B0: StdStringCopyConstruct (copy-constructs a std::string at dst from src; returns dst)
@@ -1217,94 +1024,6 @@ void* fn_00497890(void* dst, void* src) {
     return dst;
 }
 } // namespace lift_00497890
-
-// [0x00495AB0]
-namespace lift_00495AB0 {
-// External callees (lifted elsewhere).
-extern void fn_004026E0(void* self);   // ext_004026E0: StringArray::ReleaseElements
-extern void fn_0065F440(void* self);   // ext_0065F440: stores &mem_0093BF24 at +0x0
-extern void fn_006A5C5C(void* arg);    // ext_006A5C5C: IAT thunk to MFC80!ord_764 (takes one pointer argument)
-
-// @name destructorReleaseStringArray
-// @class Unknown
-// @summary Resets vtable, frees the pointer at +0x1C, releases the StringArray at +0x08, then runs base cleanup.
-// @field Unknown +0x00 void* vptr
-// @field Unknown +0x08 StringArray stringArray
-// @field Unknown +0x1C void* ptr1C
-// @field Unknown +0x20 uint32_t field_0x20
-// @field Unknown +0x24 uint32_t field_0x24
-void fn_00495AB0(void* self) {
-    // Vtable pointer for this class (0x0093F0FC).
-    lift_field<void*>(self, 0x00) = reinterpret_cast<void*>(static_cast<uintptr_t>(0x0093F0FCu));
-
-    void* p = lift_field<void*>(self, 0x1C);
-    if (p != nullptr) {
-        fn_006A5C5C(p);
-    }
-
-    lift_field<void*>(self, 0x1C) = nullptr;
-    lift_field<uint32_t>(self, 0x20) = 0;
-    lift_field<uint32_t>(self, 0x24) = 0;
-
-    fn_004026E0(static_cast<uint8_t*>(self) + 0x08);
-    fn_0065F440(self);
-}
-} // namespace lift_00495AB0
-
-// [0x00492BC0] sub_00492BC0 (108 bytes)
-namespace lift_00492BC0 {
-// MSVCR80 _invalid_parameter_noinfo. The original calls it through the IAT slot at mem_00925134.
-extern void ext_invalid_parameter_noinfo(void);
-
-// @name TreeIterator::operator++
-// @class TreeIterator
-// @summary Advances an MSVC std::_Tree iterator to its in-order successor, or to the header sentinel at end.
-// @field TreeIterator +0x00 void* container
-// @field TreeIterator +0x04 void* node
-// @field TreeNode +0x00 void* left
-// @field TreeNode +0x04 void* parent
-// @field TreeNode +0x08 void* right
-// @field TreeNode +0x21 uint8_t isnil
-void fn_00492BC0(void* self) {
-    if (lift_field<void*>(self, 0x00) == nullptr) {
-        ext_invalid_parameter_noinfo();
-    }
-
-    void* node = lift_field<void*>(self, 0x04);
-    if (lift_field<uint8_t>(node, 0x21) != 0) {
-        ext_invalid_parameter_noinfo();
-        return;
-    }
-
-    void* right = lift_field<void*>(node, 0x08);
-    if (lift_field<uint8_t>(right, 0x21) == 0) {
-        // Has a right subtree: move to its leftmost node.
-        void* cur = right;
-        void* left = lift_field<void*>(cur, 0x00);
-        while (lift_field<uint8_t>(left, 0x21) == 0) {
-            cur = left;
-            left = lift_field<void*>(cur, 0x00);
-        }
-        lift_field<void*>(self, 0x04) = cur;
-        return;
-    }
-
-    // No right subtree: climb until we arrive from a left child.
-    void* parent = lift_field<void*>(node, 0x04);
-    if (lift_field<uint8_t>(parent, 0x21) == 0) {
-        void* child = node;
-        do {
-            if (child != lift_field<void*>(parent, 0x08)) {
-                break;
-            }
-            lift_field<void*>(self, 0x04) = parent;
-            child = parent;
-            parent = lift_field<void*>(parent, 0x04);
-        } while (lift_field<uint8_t>(parent, 0x21) == 0);
-    }
-    lift_field<void*>(self, 0x04) = parent;
-}
-} // namespace lift_00492BC0
 
 // [0x00490920] sub_00490920 (59 bytes)
 namespace lift_00490920 {
@@ -1440,22 +1159,6 @@ bool fn_00490640(void* self, uint32_t count) {
     return true;
 }
 } // namespace lift_00490640
-
-// [0x0049B170] sub_0049B170 (112 bytes)
-namespace lift_0049B170 {
-extern const char mem_0092F10C[];
-extern const char mem_0093A810[];
-
-// @name descriptiveName: compareLocalStringToTwoLiterals
-// @summary Builds a local std::string, returns true if it equals either of two .rdata string literals.
-bool fn_0049B170() {
-    std::string s;
-    if (s == mem_0092F10C) {
-        return true;
-    }
-    return s == mem_0093A810;
-}
-} // namespace lift_0049B170
 
 // [0x0049ACB0] sub_0049ACB0 (112 bytes)
 namespace lift_0049ACB0 {

@@ -40,20 +40,6 @@ void __thiscall fn_004CCDE0(uint8_t* self) {
 } // namespace lift_004CCDE0
 #include <cmath>
 
-// [0x004CFFE0] sub_004CFFE0 (34 bytes)
-namespace lift_004CFFE0 {
-extern const char mem_00947AC0[];
-
-// @name sub_004CFFE0
-// @summary Auto-lifted identical-shape clone of 0x00622380 (NMData::SkeletalCalibrationVariables::vfunc_28).
-void* fn_004CFFE0(void* self, void* dst, void* arg2) {
-    (void)self;
-    (void)arg2;
-    new (dst) std::string(mem_00947AC0);
-    return dst;
-}
-} // namespace lift_004CFFE0
-
 // [0x004C1AC0] sub_004C1AC0 (37 bytes)
 namespace lift_004C1AC0 {
 // Known callee 0x004C0340: SetGlobalObjectFlag4IfPresent (If the global object pointer mem_00AE29D0 is non-null, set the byte at its +0x04 offset to 1.)
@@ -182,22 +168,6 @@ extern uint8_t* __cdecl fn_004C72D0(uint8_t* first, uint8_t* last, uint8_t* d_la
 } // namespace lift_004C72D0
 } // namespace lift_004C72D0
 
-// [0x004C4390]
-namespace lift_004C4390 {
-// @name ResetStringAndFlag
-// @summary Re-initializes a std::string at offset 0, clears it, and zeroes the bool flag at +0x1c.
-// @field Unknown +0x00 std::string str
-// @field Unknown +0x1C bool flag
-void fn_004C4390(void* self) {
-    // Construct the string in place (original: MSVCP80 basic_string ctor), then clear it
-    // (original: basic_string::clear).
-    auto* str = new (self) std::string();
-    str->clear();
-    // Original: mov byte ptr [esi + 0x1c], al  (al == 0)
-    lift_field<uint8_t>(self, 0x1C) = 0;
-}
-} // namespace lift_004C4390
-
 // [0x004CA590] sub_004CA590 (75 bytes)
 namespace lift_004CA590 {
 // Known callee 0x004CA570: Unknown::SetIndexClamped0To4 (Stores arg if it is in 0..4 into this+0x184, then sets byte +4 of the global object at mem_00AE29D0 (if non-null) to 1.)
@@ -223,26 +193,6 @@ void fn_004CA590(void* self, const char* name) {
     ext_004CA570(self, index);
 }
 } // namespace lift_004CA590
-
-// [0x004CE7B0]
-namespace lift_004CE7B0 {
-extern std::string mem_00AE51C8[7];
-extern std::string mem_00AE5290[7];
-
-// @name StringTableLookup_004CE7B0
-// @summary Returns the index of the first entry in two 7-element std::string tables that equals the key string (0 if none match).
-int __stdcall fn_004CE7B0(const std::string* key) {
-    for (int i = 0; i < 7; ++i) {
-        if (*key == mem_00AE51C8[i]) {
-            return i;
-        }
-        if (*key == mem_00AE5290[i]) {
-            return i;
-        }
-    }
-    return 0;
-}
-} // namespace lift_004CE7B0
 
 // [0x004CEAC0] sub_004CEAC0 (87 bytes)
 namespace lift_004CEAC0 {
@@ -738,43 +688,6 @@ void* sub_004C1740() {
 }
 } // namespace lift_004C1740
 
-// [0x004CE590] sub_004CE590 (95 bytes)
-namespace lift_004CE590 {
-// Indirect callee slot (IAT entry) holding std::operator==(const basic_string&, const basic_string&).
-extern int mem_00924FC4;
-// Two global tables of 7 std::string-sized entries (stride 0x1C each).
-extern const uint8_t mem_00AE51C8[];
-extern const uint8_t mem_00AE5290[];
-
-// @name FindGlobalStringIndex
-// @summary Compares a key string against two 7-entry global string tables; returns the matching index in the table (first table first) or 7 if no match.
-namespace {
-
-using StringEqualFn = bool (*)(const void* lhs, const void* rhs);
-
-constexpr int kTableCount = 7;
-constexpr int kEntryStride = 0x1C;
-constexpr int kNotFound = 7;
-
-}  // namespace
-
-extern int fn_004CE590(const void* key) {
-    const auto equal = reinterpret_cast<StringEqualFn>(static_cast<uintptr_t>(mem_00924FC4));
-
-    for (int i = 0; i < kTableCount; ++i) {
-        if (equal(key, mem_00AE51C8 + i * kEntryStride)) {
-            return i;
-        }
-    }
-    for (int i = 0; i < kTableCount; ++i) {
-        if (equal(key, mem_00AE5290 + i * kEntryStride)) {
-            return i;
-        }
-    }
-    return kNotFound;
-}
-} // namespace lift_004CE590
-
 // [0x004C50C0]
 namespace lift_004C50C0 {
 // @name computeIdentityMatrixFirstRowNorm
@@ -822,42 +735,6 @@ void fn_004C70F0(void* self) {
     ext_00401BB0(self);
 }
 } // namespace lift_004C70F0
-
-// [0x004C7200]
-namespace lift_004C7200 {
-// @name ExceptionWithStrings::ExceptionWithStrings (copy ctor)
-// @class ExceptionWithStrings
-// @summary Copy-constructs a derived exception: copies the std::logic_error base, sets the vtable, then copy-constructs two std::string members at +0x28 and +0x44.
-// @field ExceptionWithStrings +0x00 void* vtable (field_0x00)
-// @field ExceptionWithStrings +0x28 std::string field_0x28
-// @field ExceptionWithStrings +0x44 std::string field_0x44
-
-// Base copy constructor (std::logic_error copy ctor).
-extern void* ext_00401C60(void* self, const void* other);
-
-// MSVCP80 std::string copy constructor, imported via mem_00924FE0.
-extern void* ext_std_string_copy_ctor(void* self, const void* other);
-
-// Vtable address written into the object after the base copy.
-constexpr uintptr_t kVtable_00945A5C = 0x00945A5Cu;
-
-// [0x004C7200]
-void* __thiscall ExceptionWithStrings_copy_ctor(void* self, const void* other) {
-    ext_00401C60(self, other);
-
-    lift_field<uintptr_t>(self, 0x00) = kVtable_00945A5C;
-
-    ext_std_string_copy_ctor(
-        static_cast<uint8_t*>(self) + 0x28,
-        static_cast<const uint8_t*>(other) + 0x28);
-
-    ext_std_string_copy_ctor(
-        static_cast<uint8_t*>(self) + 0x44,
-        static_cast<const uint8_t*>(other) + 0x44);
-
-    return self;
-}
-} // namespace lift_004C7200
 
 // [0x004C4650]
 namespace lift_004C4650 {

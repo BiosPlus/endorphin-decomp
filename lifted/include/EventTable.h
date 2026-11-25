@@ -8,6 +8,6 @@
 // Recovered field layout for EventTable:
 namespace lifted_layout {
 struct EventTable_Fields {
-    // +0xC   uint32_t                 slots  (evidence: 0x0067A670, 0x0067AEF0)
+    // +0xC   uint32_t                 slots  (evidence: 0x0067A670)
 };
 } // namespace lifted_layout

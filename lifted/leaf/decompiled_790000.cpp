@@ -4,20 +4,6 @@
 #include <cstdint>
 #include <cstdarg>
 
-// [0x0079EBE0]
-namespace lift_0079EBE0 {
-// @name GetGlobalIndirectInt32
-// @summary Calls ext_0079EBD0 (sub_0079EBD0) and returns the int32 stored at the address it yields.
-// @field none: no struct field offsets are accessed; the only load is a dereference of the callee's return value at +0.
-
-extern int32_t __cdecl fn_0079EBD0(void);
-
-extern int32_t __cdecl fn_0079EBE0(void) {
-    const uint32_t addr = static_cast<uint32_t>(fn_0079EBD0());
-    return *reinterpret_cast<const int32_t*>(static_cast<uintptr_t>(addr));
-}
-} // namespace lift_0079EBE0
-
 // [0x0079DD30] sub_0079DD30 (32 bytes)
 namespace lift_0079DD30 {
 // @name InitValueWithUnitDouble
@@ -52,18 +38,6 @@ void fn_0079B140(uint32_t a1, uint32_t a2, uint32_t a3) {
     fn(a1, a2, &a3);
 }
 } // namespace lift_0079B140
-
-// [0x0079EED0] sub_0079EED0 (32 bytes)
-namespace lift_0079EED0 {
-extern int32_t __cdecl fn_0079EBE0(void);
-
-// @name GlobalStreamSeekSet
-// @summary Seeks the global stream (from GetGlobalIndirectInt32) to the given offset from its start via fseek(stream, offset, SEEK_SET).
-void fn_0079EED0(int32_t offset) {
-    const auto stream = static_cast<uintptr_t>(static_cast<uint32_t>(fn_0079EBE0()));
-    std::fseek(reinterpret_cast<FILE*>(stream), static_cast<long>(offset), SEEK_SET);
-}
-} // namespace lift_0079EED0
 
 // [0x0079E5E0]
 namespace lift_0079E5E0 {
@@ -131,45 +105,6 @@ void sub_0079ABA0(uint32_t eax, uint32_t ebx, uint32_t ecx, uint32_t edx) {
 }
 } // namespace lift_0079ABA0
 
-// [0x0079A16C] sub_0079A16C (40 bytes)
-namespace lift_0079A16C {
-// @name fn_0079A16C_byteLookupTable
-// @summary Static 37-byte lookup table (values 0x00-0x14, 0x14 used as filler); trailing 3 bytes are padding/lea not part of the table.
-// @field <ClassName> +0x00 <type> <fieldName>
-
-namespace {
-
-// Raw bytes at 0x0079A16C..0x0079A190 (37 entries). 0x14 is the repeated filler value.
-[[maybe_unused]] constexpr uint8_t kTable_0079A16C[37] = {
-    0x00, 0x01, 0x14, 0x14, 0x14, 0x14, 0x14, 0x14, 0x14, 0x14, 0x02, 0x03, 0x14, 0x04, 0x05, 0x06,
-    0x07, 0x08, 0x09, 0x14, 0x14, 0x14, 0x14, 0x14, 0x14, 0x0A, 0x14, 0x0B, 0x0C, 0x0D, 0x14, 0x0E,
-    0x0F, 0x10, 0x11, 0x12, 0x13,
-};
-
-} // namespace
-
-void fn_0079A16C(void* self) {
-    // Data-only region: no executable logic. `self` is unused.
-    (void)self;
-}
-} // namespace lift_0079A16C
-
-// [0x0079ACF0]
-namespace lift_0079ACF0 {
-// @name readFileBytes
-// @summary Reads bytes from a file handle using ReadFile and returns the number of bytes read, or 0 on failure.
-
-extern uint32_t __stdcall ext_ReadFile(uint32_t hFile, uint32_t lpBuffer, uint32_t nNumberOfBytesToRead, uint32_t* lpNumberOfBytesRead, uint32_t lpOverlapped);
-
-uint32_t sub_0079ACF0(uint32_t hFile, uint32_t lpBuffer, uint32_t nNumberOfBytesToRead) {
-    uint32_t bytesRead = nNumberOfBytesToRead;
-    if (ext_ReadFile(hFile, lpBuffer, nNumberOfBytesToRead, &bytesRead, 0) != 0) {
-        return bytesRead;
-    }
-    return 0;
-}
-} // namespace lift_0079ACF0
-
 // [0x0079AD20]
 namespace lift_0079AD20 {
 // @name writeFileBytes
@@ -183,64 +118,6 @@ uint32_t __cdecl sub_0079AD20(uint32_t hFile, uint32_t lpBuffer, uint32_t nNumbe
     return ok ? bytesWritten : 0;
 }
 } // namespace lift_0079AD20
-
-// [0x007911E0]
-namespace lift_007911E0 {
-// @name sub_007911E0
-// @summary Initializes object fields at offsets 0x28, 0x2c, 0x48, 0x4c, 0x50, and 0x60 and returns 0
-// @field Unknown +0x28 uint32_t field_0x28
-// @field Unknown +0x2c uint32_t field_0x2c
-// @field Unknown +0x48 uint32_t field_0x48
-// @field Unknown +0x4c uint32_t field_0x4c
-// @field Unknown +0x50 uint32_t field_0x50
-// @field Unknown +0x60 uint32_t field_0x60
-
-
-void mem_write32(void* addr, uint32_t val);
-
-uint32_t __thiscall sub_007911E0(uint8_t* self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
-    mem_write32(self + 0x50, arg1);
-    mem_write32(self + 0x4c, arg3);
-    mem_write32(self + 0x48, arg2);
-    mem_write32(self + 0x60, 1);
-    mem_write32(self + 0x28, 0);
-    mem_write32(self + 0x2c, 0);
-    return 0;
-}
-} // namespace lift_007911E0
-
-// [0x0079A0EC]
-namespace lift_0079A0EC {
-// @name sub_0079A0EC
-// @summary Data table at 0x0079A0EC (43 bytes) misidentified as code; lifted as no-op/stub
-
-
-void sub_0079A0EC() {
-    // Bytes 00 19 01 02 03 04 19 19 05 06 19 19 07 19 19 08 09 0a 0b 19 0c 19 19 0d 0e 19 0f 10 11 12 13 14 15 16 19...17
-    // represent a static lookup table rather than executable instructions.
-}
-} // namespace lift_0079A0EC
-
-// [0x00798C98] sub_00798C98 (47 bytes)
-namespace lift_00798C98 {
-// @name lookupTable_00798C98
-// @summary 47-byte index-to-class lookup table (default 0x0c; sparse entries 0x00-0x0a); data, not code
-// Byte values by offset: 0:00 4:01 9:02 12:03 20:04 23:05 24:06 26:07 27:08 30:09 42:0A; all others 0x0C.
-
-static const unsigned char kLookup_00798C98[47] = {
-    0x00, 0x0c, 0x0c, 0x0c, 0x01, 0x0c, 0x0c, 0x0c,
-    0x0c, 0x02, 0x0c, 0x0c, 0x03, 0x0c, 0x0c, 0x0c,
-    0x0c, 0x0c, 0x0c, 0x0c, 0x04, 0x0c, 0x0c, 0x05,
-    0x06, 0x0c, 0x07, 0x08, 0x0c, 0x0c, 0x09, 0x0c,
-    0x0c, 0x0c, 0x0c, 0x0c, 0x0c, 0x0c, 0x0c, 0x0c,
-    0x0c, 0x0a, 0x0c, 0x0c, 0x0c,
-};
-
-void fn_00798C98(void* self) {
-    (void)self;
-    (void)kLookup_00798C98;
-}
-} // namespace lift_00798C98
 
 // [0x00798840] sub_00798840 (48 bytes)
 namespace lift_00798840 {
@@ -262,28 +139,6 @@ uint32_t fn_00798840(uint8_t* self) {
     return eax >> 3;
 }
 } // namespace lift_00798840
-
-// [0x0079E620] sub_0079E620 (41 bytes)
-namespace lift_0079E620 {
-// Known callee 0x00783860: InitInlineBufferHeader (Runs the 0x006D2130 initializer with count 0x10 and element size 4, then points +0x14 at the inline buffer at +0x10 and clears +0x18.)
-extern uint32_t __thiscall ext_00783860(uint32_t self);
-extern void mem_write32(uint32_t addr, uint32_t val);
-
-// @name SubobjectInitVtables
-// @class SubobjectInitVtables
-// @summary Stamps two vtable pointers into self (+0x00, then +0x04), initializes the sub-object at self+0x08 via InitInlineBufferHeader, then re-stamps the vtable pointers at +0x00 and +0x04 and returns self.
-// @field SubobjectInitVtables +0x00 uint32_t field_0x00 (vtable pointer; written 0x0099773C at the end)
-// @field SubobjectInitVtables +0x04 uint32_t field_0x04 (vtable pointer; written 0x0099772C at the end)
-// @field SubobjectInitVtables +0x08 uint8_t field_0x08[0x14] (embedded sub-object passed as this to ext_00783860)
-uint32_t fn_0079E620(uint32_t self) {
-    mem_write32(self + 0x00, 0x00995080);
-    mem_write32(self + 0x04, 0x00995080);
-    ext_00783860(self + 0x08);
-    mem_write32(self + 0x00, 0x0099773C);
-    mem_write32(self + 0x04, 0x0099772C);
-    return self;
-}
-} // namespace lift_0079E620
 
 // [0x0079EA60] sub_0079EA60 (48 bytes)
 namespace lift_0079EA60 {
@@ -527,28 +382,6 @@ BOOLEAN __stdcall fn_0079F2E0(DWORD value) {
 }
 } // namespace lift_0079F2E0
 
-// [0x0079AD50] sub_0079AD50 (70 bytes)
-namespace lift_0079AD50 {
-extern DWORD __stdcall ext_SetFilePointer(HANDLE hFile, LONG lDistanceToMove, LONG* lpDistanceToMoveHigh, DWORD dwMoveMethod);
-
-// @name SeekFile
-// @summary Returns -1 if offset is -1; otherwise maps origin 0/1/2 to FILE_BEGIN/CURRENT/END (other values to BEGIN) and returns SetFilePointer with a zero high part.
-LONG fn_0079AD50(HANDLE handle, LONG offset, LONG origin) {
-    if (offset == -1) {
-        return -1;
-    }
-    DWORD method = 0;
-    switch (origin) {
-    case 0: method = 0; break;
-    case 1: method = 1; break;
-    case 2: method = 2; break;
-    default: method = 0; break;
-    }
-    LONG high = 0;
-    return static_cast<LONG>(ext_SetFilePointer(handle, offset, &high, method));
-}
-} // namespace lift_0079AD50
-
 // [0x00798F10] sub_00798F10 (80 bytes)
 namespace lift_00798F10 {
 // Known callee 0x0079AF40: GlobalAllocZeroFlags (Allocates a global memory block of the requested size with uFlags = 0 (GMEM_FIXED) and returns the handle.)
@@ -679,19 +512,6 @@ uint32_t fn_007985F0(void* self, uint32_t flag) {
 }
 } // namespace lift_007985F0
 
-// [0x0079B0E0] sub_0079B0E0 (82 bytes)
-namespace lift_0079B0E0 {
-// @name ReportWarningV
-// @summary Writes an optional "prefix: " tag, a va_list-formatted message, and ".\n" to stderr.
-void fn_0079B0E0(const char* prefix, const char* fmt, std::va_list args) {
-    if (prefix != nullptr) {
-        std::fprintf(stderr, "%s: ", prefix);
-    }
-    std::vfprintf(stderr, fmt, args);
-    std::fprintf(stderr, ".\n");
-}
-} // namespace lift_0079B0E0
-
 // [0x00790F40] sub_00790F40 (85 bytes)
 namespace lift_00790F40 {
 // @name Unknown::computeSlotIndex_00790F40
@@ -778,19 +598,6 @@ std::uint32_t fn_00790EE0(void* self) {
     return result;
 }
 } // namespace lift_00790EE0
-
-// [0x00798F60] sub_00798F60 (48 bytes)
-namespace lift_00798F60 {
-// Known callee 0x00798F10: ReplaceGlobalBlock (Frees the global block held in *slot (if any); if src is non-null, allocates a new block of size bytes into *slot and copies src into it.)
-extern void ext_00798F10(uint32_t* slot, const void* src, uint32_t size);
-
-// @name ReplaceGlobalBlockFromString
-// @summary Replaces the global block in *slot with a copy of the NUL-terminated string src, sized strlen(src)+1 including the terminator.
-void fn_00798F60(uint32_t* slot, const char* src) {
-    const uint32_t size = static_cast<uint32_t>(std::strlen(src)) + 1u;
-    ext_00798F10(slot, src, size);
-}
-} // namespace lift_00798F60
 
 // [0x0079E410] sub_0079E410 (64 bytes)
 namespace lift_0079E410 {
@@ -933,65 +740,6 @@ uint32_t fn_0079A230(uintptr_t record, int32_t maxLen, uintptr_t buf) {
 }
 } // namespace lift_0079A230
 
-// [0x0079ADD0] sub_0079ADD0 (107 bytes)
-namespace lift_0079ADD0 {
-// Known callee 0x0079ADC0: GetFileSizeLow (returns low 32 bits of file size, or 0xFFFFFFFF on failure).
-extern DWORD ext_0079ADC0(DWORD hFile);
-
-// Win32 imports used via IAT slots 0x0092418C (CreateFileMappingA), 0x00924188 (MapViewOfFile),
-// 0x009241E0 (CloseHandle). Declared with their kernel32 prototypes for portable compilation.
-extern HANDLE CreateFileMappingA(HANDLE hFile, void* lpAttributes, DWORD flProtect,
-                                     DWORD dwMaximumSizeHigh, DWORD dwMaximumSizeLow,
-                                     const char* lpName);
-extern LPVOID MapViewOfFile(HANDLE hFileMappingObject, DWORD dwDesiredAccess,
-                                DWORD dwFileOffsetHigh, DWORD dwFileOffsetLow,
-                                SIZE_T dwNumberOfBytesToMap);
-extern BOOL CloseHandle(HANDLE hObject);
-
-// @name mapFileReadOnly
-// @summary Maps a file handle read-only; on success stores the view pointer in *outView and the file size in *outSize.
-BOOL fn_0079ADD0(DWORD hFile, LPVOID* outView, DWORD* outSize) {
-    constexpr DWORD kInvalidSize = 0xFFFFFFFFu;
-    constexpr DWORD kPageReadonly = 0x02;
-    constexpr DWORD kFileMapRead = 0x04;
-
-    const DWORD size = ext_0079ADC0(hFile);
-    if (size == kInvalidSize) {
-        return FALSE;
-    }
-
-    HANDLE hMap = CreateFileMappingA(reinterpret_cast<HANDLE>(static_cast<uintptr_t>(hFile)),
-                                     nullptr, kPageReadonly, 0, size, nullptr);
-    if (hMap == nullptr) {
-        return FALSE;
-    }
-
-    LPVOID view = MapViewOfFile(hMap, kFileMapRead, 0, 0, 0);
-    *outView = view;
-    CloseHandle(hMap);
-
-    if (view == nullptr) {
-        return FALSE;
-    }
-    *outSize = size;
-    return TRUE;
-}
-} // namespace lift_0079ADD0
-
-// [0x0079B070]
-namespace lift_0079B070 {
-// @name logStderrFormatted
-// @summary Prints an optional prefix, a fixed tag, a vfprintf-formatted message, and a trailing string to stderr.
-void __cdecl sub_0079B070(const char* prefix, const char* fmt, va_list args) {
-    if (prefix != nullptr) {
-        std::fprintf(stderr, reinterpret_cast<const char*>(0x00AAFC50u), prefix);
-    }
-    std::fprintf(stderr, reinterpret_cast<const char*>(0x00AAFC44u));
-    std::vfprintf(stderr, fmt, args);
-    std::fprintf(stderr, reinterpret_cast<const char*>(0x00AAFC40u));
-}
-} // namespace lift_0079B070
-
 // [0x007966D0] sub_007966D0 (110 bytes)
 namespace lift_007966D0 {
 // Known callee 0x00796740: CountAdjacentDeltasAboveThreshold (Counts how many adjacent double-pair deltas (p[i+1] - p[i]) over a span exceed a constant threshold; returns 0 when the index range is empty.)
@@ -1092,24 +840,6 @@ void fn_00796660(void* self) {
 }
 } // namespace lift_00796660
 
-// [0x0079EAC0] sub_0079EAC0 (32 bytes)
-namespace lift_0079EAC0 {
-extern uint8_t mem_00B61150;   // global entry count (byte)
-extern uint32_t mem_00B6114C;  // global table base pointer (value used as address)
-
-// @name getGlobalTableEntryOrZero
-// @summary Returns the table entry at index (low byte of arg) from the global table, or 0 if the index is >= the global count.
-uint32_t fn_0079EAC0(uint32_t index) {
-    const uint8_t idx = static_cast<uint8_t>(index & 0xFFu);
-    if (idx >= mem_00B61150) {
-        return 0u;
-    }
-    const uintptr_t base = static_cast<uintptr_t>(mem_00B6114C);
-    const auto* table = reinterpret_cast<const uint32_t*>(base);
-    return table[idx];
-}
-} // namespace lift_0079EAC0
-
 // [0x0079EB80]
 namespace lift_0079EB80 {
 // @name resolveGlobalTableFlag
@@ -1129,27 +859,6 @@ uint32_t fn_0079EB80(uint32_t arg) {
     return ext_0079EAC0(arg) != 0 ? 1u : 0u;
 }
 } // namespace lift_0079EB80
-
-// [0x0079EA90] sub_0079EA90 (48 bytes)
-namespace lift_0079EA90 {
-extern uint8_t mem_00B61150;   // global entry count (byte)
-extern uint32_t mem_00B6114C;  // global table base pointer (value used as address)
-
-// @name getGlobalTableEntry
-// @summary Returns the global table entry at the low byte of the argument via sub_0079EBB0; if the low byte exceeds the global count, returns the argument unchanged.
-extern uint32_t ext_0079EBB0(uint32_t value);
-
-uint32_t fn_0079EA90(uint32_t arg) {
-    uint32_t eax = arg;
-    if (static_cast<uint8_t>(eax) > mem_00B61150) {
-        return eax;
-    }
-    uint32_t index = eax & 0xFFu;
-    const uint32_t* table = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00B6114C));
-    uint32_t entry = table[index];
-    return ext_0079EBB0(entry);
-}
-} // namespace lift_0079EA90
 
 // [0x007990F0] sub_007990F0 (96 bytes)
 namespace lift_007990F0 {

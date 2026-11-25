@@ -492,51 +492,6 @@ extern "C" void __fastcall fn_0064F920(void* self) {
     target(self);
 }
 
-// [0x00648930]
-namespace lift_00648930 {
-extern uint8_t* mem_read_ptr(const void* addr);
-extern float mem_read_f32(const void* addr);
-
-// @name getField0x28Float0x04
-// @summary Reads a pointer at +0x28 and returns the float at +0x04 of that object.
-// @field unknown +0x28 void* field_0x28
-// @field unknown +0x04 float field_0x04
-float __thiscall sub_00648930(void* this_ptr) {
-    uint8_t* ptr = mem_read_ptr(static_cast<uint8_t*>(this_ptr) + 0x28);
-    return mem_read_f32(ptr + 0x04);
-}
-} // namespace lift_00648930
-
-// [0x00648920]
-namespace lift_00648920 {
-uint32_t mem_r32(uint32_t addr);
-
-// @name sub_00648920
-// @summary Reads a 32-bit value at offset 0x04 of the pointer stored at this+0x2c
-// @field Object +0x2c uint32_t field_0x2c
-
-uint32_t __fastcall sub_00648920(uint32_t ecx, uint32_t edx) {
-    (void)edx;
-    uint32_t ptr = mem_r32(ecx + 0x2c);
-    return mem_r32(ptr + 0x4);
-}
-} // namespace lift_00648920
-
-// [0x00648910]
-namespace lift_00648910 {
-// @name getNestedField0x0C
-// @summary Reads a 32-bit value at offset 0x0C from the pointer stored at this+0x28.
-// @field Unknown +0x28 uint32_t field_0x28
-
-
-extern uint32_t mem_read32(uint32_t addr);
-
-extern uint32_t __thiscall sub_00648910(uintptr_t self) {
-    uint32_t ptr = mem_read32(static_cast<uint32_t>(self + 0x28));
-    return mem_read32(ptr + 0x0C);
-}
-} // namespace lift_00648910
-
 // [0x006488F0]
 namespace lift_006488F0 {
 // @name get_field_0x28_float_0x08
@@ -548,26 +503,6 @@ float __thiscall sub_006488F0(const void* self) {
     return *reinterpret_cast<const float*>(ptr + 0x08);
 }
 } // namespace lift_006488F0
-
-// [0x00640930]
-namespace lift_00640930 {
-// @name sub_00640930
-// @summary Decrements dword at +0xc and sets byte at +0x10 to 1
-// @field unknown +0x0c int32_t field_0x0c
-// @field unknown +0x10 uint8_t field_0x10
-
-
-uint32_t mem_read32(uint32_t addr);
-void mem_write32(uint32_t addr, uint32_t val);
-void mem_write8(uint32_t addr, uint8_t val);
-
-void __thiscall sub_00640930(void* self) {
-    uint32_t base = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
-    uint32_t val = mem_read32(base + 0x0c);
-    mem_write32(base + 0x0c, val - 1);
-    mem_write8(base + 0x10, 1);
-}
-} // namespace lift_00640930
 
 // [0x00644F20]
 namespace lift_00644F20 {
@@ -584,21 +519,6 @@ void __fastcall sub_00644F20(uint32_t ecx)
     reinterpret_cast<Fn>(static_cast<uintptr_t>(target))(inner);
 }
 } // namespace lift_00644F20
-
-// [0x006452C0]
-namespace lift_006452C0 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name forwardVtable18
-// @summary Tail-calls virtual method at vtable +0x18 on member object at +0x4
-// @field unknown +0x04 uint32_t field_0x04
-uint32_t sub_006452C0(uint32_t self) {
-    uint32_t obj = mem_read32(self + 0x4);
-    uint32_t vtable = mem_read32(obj);
-    uint32_t fn = mem_read32(vtable + 0x18);
-    return reinterpret_cast<uint32_t (*)(uint32_t)>(static_cast<uintptr_t>(fn))(obj);
-}
-} // namespace lift_006452C0
 
 // [0x00648EC0] sub_00648EC0 (10 bytes)
 namespace lift_00648EC0 {
@@ -678,21 +598,6 @@ extern void fn_00642650(void) {
 }
 } // namespace lift_0041B3B0
 } // namespace lift_00642650
-
-// [0x006452D0]
-namespace lift_006452D0 {
-uint32_t mem_read32(uint32_t addr);
-
-// @name forwardVCall0x1c
-// @summary Tail-call virtual method at vtable +0x1c on delegate at +0x04
-// @field Self +0x04 void* field_0x04
-void __thiscall sub_006452D0(void* self) {
-    uint32_t delegate = mem_read32(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self) + 0x4));
-    uint32_t vtable = mem_read32(delegate);
-    uint32_t target = mem_read32(vtable + 0x1c);
-    reinterpret_cast<void(__thiscall*)(uint32_t)>(target)(delegate);
-}
-} // namespace lift_006452D0
 
 // [0x00648850] sub_00648850 (12 bytes)
 namespace lift_00648850 {

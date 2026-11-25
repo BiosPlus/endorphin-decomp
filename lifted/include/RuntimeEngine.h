@@ -15,9 +15,7 @@ struct RuntimeEngine_Fields {
     // +0xF8  void*                    field_0xF8  (evidence: 0x00473E70)
     // +0xFC  float[3]                 field_0xFC  (evidence: 0x00473E70)
     // +0x174 uint32_t                 field_0x174  (evidence: 0x00473E70)
-    // +0x17C uint8_t                  field_0x17c  (evidence: 0x0046F9E0)
-    // +0x180 object                   field_0x180  (evidence: 0x00473E70) // CONFLICT: multiple definitions at +0x180
-    // +0x180 uint8_t                  field_0x180  (evidence: 0x0046F9E0) // CONFLICT: multiple definitions at +0x180
+    // +0x180 object                   field_0x180  (evidence: 0x00473E70)
     // +0x288 object                   field_0x288  (evidence: 0x00473E70)
 };
 } // namespace lifted_layout

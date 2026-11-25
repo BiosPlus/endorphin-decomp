@@ -215,27 +215,6 @@ void fn_005B1B60(void* self, const void* src) {
 }
 } // namespace lift_005B1B60
 
-// [0x005B0E60]
-namespace lift_005B0E60 {
-extern int mem_00A88A40;
-extern int mem_00924FE4;
-
-extern uint32_t mem_read_u32(uintptr_t addr);
-// Indirect import through mem_00924FE4: MSVCP80 basic_string<char>::basic_string(const char*, const allocator&).
-extern void ext_00924FE4(uintptr_t self, uintptr_t cstr, uintptr_t alloc_ref);
-
-// @name Unknown::copyCStringTableEntryToString
-// @class Unknown
-// @summary Constructs the std::string at out from the C-string table entry selected by this->+0x08; returns out.
-// @field Unknown +0x08 uint32_t field_0x08
-uint32_t __thiscall sub_005B0E60(uintptr_t this_ptr, uintptr_t out_ptr) {
-    uint32_t index = mem_read_u32(this_ptr + 0x08);
-    uint32_t cstr = mem_read_u32(reinterpret_cast<uintptr_t>(&mem_00A88A40) + (static_cast<uintptr_t>(index) << 2));
-    ext_00924FE4(out_ptr, static_cast<uintptr_t>(cstr), 0);
-    return static_cast<uint32_t>(out_ptr);
-}
-} // namespace lift_005B0E60
-
 // [0x005B34C0]
 namespace lift_005B34C0 {
 // @name sub_005B34C0
@@ -297,25 +276,6 @@ float fn_005B68F0(void* self) {
     return static_cast<float>(prod * mem_00928E78);
 }
 } // namespace lift_005B68F0
-
-// [0x005B1930] sub_005B1930 (70 bytes)
-namespace lift_005B1930 {
-// IAT slot for MSVCP80 std::basic_string<char> default constructor (thiscall).
-extern int mem_00924FE8;
-// Portable stand-in for the MSVCP80 default constructor call through mem_00924FE8.
-extern void ext_basic_string_default_ctor(void* self);
-
-// @name ConstructWithStringMember
-// @class <Unknown> (object type not recovered)
-// @summary Sets the object's vtable, default-constructs a std::string member at +0x04, and returns this.
-// @field <Unknown> +0x00 void* vftable
-// @field <Unknown> +0x04 uint8_t[] field_0x04
-void* fn_005B1930(void* self) {
-    lift_field<uint32_t>(self, 0x00) = 0x0095FCF4u;
-    ext_basic_string_default_ctor(&lift_field<uint8_t>(self, 0x04));
-    return self;
-}
-} // namespace lift_005B1930
 
 // [0x005B1B90]
 namespace lift_005B1B90 {
@@ -987,34 +947,3 @@ void* fn_005B6AF0(void* self) {
 }
 } // namespace lift_005B6A80
 } // namespace lift_005B6AF0
-
-// [0x005B1870]
-namespace lift_005B1870 {
-// Calls into other lifted/imported functions.
-extern void __fastcall ext_0065F440(void* self);           // base-class destructor, re-stores base vtable at +0x00
-extern void __thiscall ext_00628FF0(void* self);           // MSVCP80 std::string dtor (via pointer at mem_00924FF4)
-extern void __thiscall ext_vcall_slot0(void* obj, int flags); // virtual slot 0 (deleting dtor) of object at +0x0C
-
-// Constant data.
-extern const uint32_t mem_00924FF4;                            // .rdata: 0x00628FF0 (string dtor pointer)
-
-// @name Unknown::DestructWithStringAndOwnedObject
-// @class Unknown
-// @summary Destructor: sets vtable, destroys std::string at +0x28, deletes owned object at +0x0C via its virtual slot 0, then runs base destructor sub_0065F440.
-// @field Unknown +0x00 uint32_t vtable
-// @field Unknown +0x0C void* owned_object
-// @field Unknown +0x28 std::string name
-extern void __fastcall fn_005B1870(void* self) {
-    // MSVC EH frame setup/teardown (fs:[0] SEH chain, unwind states) is omitted.
-    lift_field<uint32_t>(self, 0x00) = 0x0095f88cu;
-
-    ext_00628FF0(static_cast<uint8_t*>(self) + 0x28);
-
-    void* owned = reinterpret_cast<void*>(static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x0C)));
-    if (owned != nullptr) {
-        ext_vcall_slot0(owned, 1);
-    }
-
-    ext_0065F440(self);
-}
-} // namespace lift_005B1870

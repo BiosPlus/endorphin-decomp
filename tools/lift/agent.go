@@ -143,7 +143,8 @@ type rlInfo struct {
 }
 
 func buildLiftPrompt(root, addr, briefing string) (string, string) {
-	core := fmt.Sprintf(`Lift %[1]s to portable C++20 in TARGET_CPP (no __asm/naked/_emit/TODO).
+	core := fmt.Sprintf(`Lift %[1]s to portable C++20 in TARGET_CPP (no __asm/naked/_emit/TODO, no undefined helper stubs like mem_read/mem_write — use real pointer casts or lift_field<T>).
+Keep all non-boilerplate ext_/mem_ references from the original asm (leaf functions are differentially tested against endorphin.exe).
 Overwrite TARGET_CPP directly (no Read needed): #include "lift_compat.h", declare used ext_/mem_, keep // [%[1]s], and add:
 // @name <Class::method or descriptiveName>
 // @class <Class> (if member)

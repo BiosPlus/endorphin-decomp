@@ -21,28 +21,6 @@ void __thiscall fn_00544070(void* self) {
 }
 } // namespace lift_00544070
 
-// [0x00544040] ForceApplicationTool::vfunc_23 (37 bytes)
-namespace lift_00544040 {
-// @name ForceApplicationTool::vfunc_23
-// @class ForceApplicationTool
-// @summary If the held object at +0x88 is non-null, invoke its vmethod[14](1), then tail-dispatch this->vmethod[26]().
-// @field ForceApplicationTool +0x88 void* field_0x88
-
-typedef void (*VMethod1)(void* self, int arg);
-typedef void (*VMethod0)(void* self);
-
-// [0x00544040]
-void ForceApplicationTool_vfunc_23(void* self) {
-    void* held = lift_field<void*>(self, 0x88);
-    if (held != nullptr) {
-        void** held_vt = *reinterpret_cast<void***>(held);
-        reinterpret_cast<VMethod1>(held_vt[0x38 / sizeof(void*)])(held, 1);
-    }
-    void** vt = *reinterpret_cast<void***>(self);
-    reinterpret_cast<VMethod0>(vt[0x68 / sizeof(void*)])(self);
-}
-} // namespace lift_00544040
-
 // [0x005441C0] ForceApplicationTool::vfunc_28 (44 bytes)
 namespace lift_005441C0 {
 // Known callee 0x00552860: UnknownClass::SetIndexInRange (accepts index within [vfunc_2(), vfunc_3()],

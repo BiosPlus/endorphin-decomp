@@ -14,6 +14,5 @@ struct Inner_Fields {
     // +0x2F8 double                   field_0x2F8  (evidence: 0x0071C1B0)
     // +0xB90 double                   field_0xB90  (evidence: 0x0071C1B0)
     // +0xC18 double                   field_0xC18  (evidence: 0x0071C1B0)
-    // +0x1168 uint8_t                  field_0x1168  (evidence: 0x0071B910)
 };
 } // namespace lifted_layout

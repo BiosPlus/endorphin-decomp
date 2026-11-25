@@ -21,19 +21,6 @@ void* fn_00611830(void* self, void* arg1, uint32_t arg2) {
     return arg1;
 }
 
-// [0x0061EAB0] NMData::SecondaryTwistAndSwingConstraint::vfunc_17_off_C (99 bytes)
-// @name NMData::SecondaryTwistAndSwingConstraint::vfunc_17_off_C
-// @class NMData::SecondaryTwistAndSwingConstraint
-// @summary Auto-lifted identical-shape clone of 0x004CFC30 (NMData::IncarnationEventData::vfunc_17_off_C).
-void* fn_0061EAB0(void* self) {
-    void* mem = ext_006A5C62(0x164);
-    if (mem == nullptr) {
-        return nullptr;
-    }
-    void* owner = static_cast<unsigned char*>(self) - 0xC;
-    return ext_0061D750(mem, owner);
-}
-
 // [0x0061F990] sub_0061F990 (102 bytes)
 namespace lift_0061F990 {
 extern uint32_t ext_005DF1F0(void* self, DWORD arg2);

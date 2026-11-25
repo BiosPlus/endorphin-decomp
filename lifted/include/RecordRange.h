@@ -8,6 +8,6 @@
 // Recovered field layout for RecordRange:
 namespace lifted_layout {
 struct RecordRange_Fields {
-    // +0x8   uint8_t*                 field_0x08  (evidence: 0x005067A0, 0x005230B0, 0x0052F7D0)
+    // +0x8   uint8_t*                 field_0x08  (evidence: 0x005230B0, 0x0052F7D0)
 };
 } // namespace lifted_layout

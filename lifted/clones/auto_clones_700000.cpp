@@ -116,29 +116,6 @@ void sub_0070A2A0() {
 }
 } // namespace lift_0070A2A0
 
-// [0x0070F780]
-namespace lift_0070F780 {
-extern uint32_t mem_00925284;
-extern uint32_t mem_00B5EEE0;
-extern uint32_t mem_00B5EEE4;
-extern uint32_t mem_00B5EEE8;
-extern uint32_t mem_00B5EEEC;
-extern uint32_t mem_00B5EEF0;
-extern uint32_t mem_00B5EEF4;
-
-// @name initHugeDoubleGlobals
-// @summary Initializes three 64-bit globals from MSVCR80!_HUGE
-void sub_0070F780() {
-    const uint32_t* huge = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
-    mem_00B5EEE0 = huge[0];
-    mem_00B5EEE4 = huge[1];
-    mem_00B5EEE8 = huge[0];
-    mem_00B5EEEC = huge[1];
-    mem_00B5EEF0 = huge[0];
-    mem_00B5EEF4 = huge[1];
-}
-} // namespace lift_0070F780
-
 // [0x0070C8E0]
 namespace lift_0070C8E0 {
 extern uint32_t mem_00925284;
@@ -234,40 +211,3 @@ void fn_0070F810(void* self) {
     mem_00B5EF2C = src[1];
 }
 } // namespace lift_0070F810
-
-// [0x0070C970] sub_0070C970 (74 bytes)
-namespace lift_0070C970 {
-extern int mem_00925284;
-extern int mem_00B5ED78;
-extern int mem_00B5ED7C;
-extern int mem_00B5ED80;
-extern int mem_00B5ED84;
-extern int mem_00B5ED88;
-extern int mem_00B5ED8C;
-extern int mem_00B5ED90;
-extern int mem_00B5ED94;
-
-// @name CopyHugeValueToGlobals_0070C970
-// @summary Loads the 64-bit value pointed to by the _HUGE pointer and stores it into four 8-byte globals.
-void fn_0070C970(void* self) {
-    (void)self;
-
-    // mem_00925284 holds the address of the 64-bit source value (_HUGE).
-    const uint32_t* src = reinterpret_cast<const uint32_t*>(
-        static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925284)));
-
-    const uint32_t lo = src[0];
-    const uint32_t hi = src[1];
-
-    // Four 8-byte slots, each written as (lo, hi) dword pairs.
-    uint32_t* d0 = reinterpret_cast<uint32_t*>(&mem_00B5ED78);
-    uint32_t* d1 = reinterpret_cast<uint32_t*>(&mem_00B5ED80);
-    uint32_t* d2 = reinterpret_cast<uint32_t*>(&mem_00B5ED88);
-    uint32_t* d3 = reinterpret_cast<uint32_t*>(&mem_00B5ED90);
-
-    d0[0] = lo; d0[1] = hi;
-    d1[0] = lo; d1[1] = hi;
-    d2[0] = lo; d2[1] = hi;
-    d3[0] = lo; d3[1] = hi;
-}
-} // namespace lift_0070C970

@@ -47,21 +47,6 @@ extern "C" void __fastcall fn_0065F440(void* self) {
     lift_field<void*>(self, 0x0) = &mem_0093BF24;
 }
 
-// [0x0065A8B0]
-namespace lift_0065A8B0 {
-void mem_write32(uint32_t addr, uint32_t val);
-
-// @name initZeroField0
-// @summary Sets the 32-bit field at offset 0 of the object in ecx to zero and returns the object pointer.
-// @field Object +0x00 uint32_t field_0x00
-uint32_t __fastcall sub_0065A8B0(uint32_t ecx, uint32_t edx)
-{
-    (void)edx;
-    mem_write32(ecx, 0);
-    return ecx;
-}
-} // namespace lift_0065A8B0
-
 // [0x0065C650]
 namespace lift_0065C650 {
 extern void (__stdcall *mem_009241BC)(void*);
@@ -74,22 +59,6 @@ void __thiscall sub_0065C650(void* self) {
     mem_009241BC(*reinterpret_cast<void**>(self));
 }
 } // namespace lift_0065C650
-
-// [0x0065C640]
-namespace lift_0065C640 {
-// @name CriticalSectionLock::enter
-// @class CriticalSectionLock
-// @summary Enters the critical section referenced at offset 0x00 of the object.
-// @field CriticalSectionLock +0x00 void* criticalSection
-
-
-extern void __stdcall EnterCriticalSection(void* lpCriticalSection);
-
-void __thiscall sub_0065C640(void* self) {
-    void* cs = *reinterpret_cast<void**>(self);
-    EnterCriticalSection(cs);
-}
-} // namespace lift_0065C640
 
 // [0x0065BD80] sub_0065BD80 (22 bytes)
 namespace lift_0065BD80 {

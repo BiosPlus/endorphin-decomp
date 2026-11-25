@@ -11,7 +11,6 @@
 namespace lifted_layout {
 struct MultiTrackView_MultiTrackViewStates_MoveState_Fields {
     // +0x8   void*                    field_0x08  (evidence: 0x00442C70)
-    // +0x1C  int32_t                  field_0x1c  (evidence: 0x00443650)
     // +0x30  uint8_t                  field_0x30  (evidence: 0x00442C70)
 };
 } // namespace lifted_layout

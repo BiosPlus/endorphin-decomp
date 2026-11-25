@@ -64,23 +64,6 @@ void __thiscall sub_00494060(void* self, uint32_t mask)
 }
 } // namespace lift_00494060
 
-// [0x00493E30]
-namespace lift_00493E30 {
-// @name forwardVtable1A0
-// @summary Tail-calls vtable slot 0x1A0 on the object pointed to by field_0x00.
-// @field Unknown +0x00 uint32_t field_0x00
-
-
-uint32_t mem_r32(uint32_t addr);
-
-uint32_t __fastcall sub_00493E30(uint32_t ecx) {
-    uint32_t inner = mem_r32(ecx);
-    uint32_t vtable = mem_r32(inner);
-    uint32_t fn = mem_r32(vtable + 0x1a0u);
-    return reinterpret_cast<uint32_t (__fastcall *)(uint32_t)>(fn)(inner);
-}
-} // namespace lift_00493E30
-
 // [0x00493E00] sub_00493E00 (12 bytes)
 namespace lift_00493E00 {
 // @name forwardVtable0B4_viaFirstField
@@ -680,23 +663,3 @@ int32_t fn_0049AD70(void* self) {
     return (b - a) / 36;
 }
 } // namespace lift_0049AD70
-
-// [0x00493F00]
-namespace lift_00493F00 {
-extern uint32_t mem_read32(const void* base, ptrdiff_t offset);
-extern uint32_t ext_vcall_slot45(void* obj);   // vtable +0xB4
-extern uint32_t ext_005304E0(void* self);
-
-// @name Unknown::ForwardToSlot45AndDispatch
-// @class Unknown
-// @summary Dereferences field_0x00, invokes its vtable slot 45 if non-null, and tail-dispatches ext_005304E0 on the result.
-// @field Unknown +0x00 void* field_0x00
-void fn_00493F00(void* self) {
-    void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(mem_read32(self, 0x00)));
-    if (!obj) {
-        return;
-    }
-    void* next_obj = reinterpret_cast<void*>(static_cast<uintptr_t>(ext_vcall_slot45(obj)));
-    ext_005304E0(next_obj);
-}
-} // namespace lift_00493F00

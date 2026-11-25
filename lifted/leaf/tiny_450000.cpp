@@ -199,43 +199,6 @@ void fn_00455BB0(void* self) {
 }
 } // namespace lift_00455BB0
 
-// [0x004584B0]
-namespace lift_004584B0 {
-// @name forwardVirtualSlot3
-// @summary Tail-call virtual method at vtable +0xC on member pointer at +0x10
-// @field Class +0x10 uint32_t field_0x10
-
-
-extern uint32_t mem_read32(uint32_t addr);
-
-uint32_t __fastcall sub_004584B0(uint32_t ecx, uint32_t edx) {
-    (void)edx;
-    uint32_t obj = mem_read32(ecx + 0x10);
-    uint32_t vtable = mem_read32(obj);
-    uint32_t fn_addr = mem_read32(vtable + 0xC);
-    using fn_t = uint32_t(__fastcall*)(uint32_t, uint32_t);
-    return reinterpret_cast<fn_t>(static_cast<uintptr_t>(fn_addr))(obj, 0);
-}
-} // namespace lift_004584B0
-
-// [0x004584A0]
-namespace lift_004584A0 {
-// @name forwardVtableSlot5
-// @summary Tail-calls virtual method at vtable offset 0x14 on member at +0x10
-// @field unknown +0x10 void* field_0x10
-
-
-extern uint32_t mem_read32(uint32_t addr);
-
-void sub_004584A0(uint32_t self) {
-    uint32_t inner = mem_read32(self + 0x10);
-    uint32_t vtable = mem_read32(inner);
-    uint32_t fn = mem_read32(vtable + 0x14);
-    using Fn = void (*)(uint32_t);
-    reinterpret_cast<Fn>(static_cast<uintptr_t>(fn))(inner);
-}
-} // namespace lift_004584A0
-
 // [0x00454E70] sub_00454E70 (13 bytes)
 namespace lift_00454E70 {
 // @name ZeroThreeDwordFields_00454E70
@@ -250,21 +213,6 @@ void* fn_00454E70(void* self) {
     return self;
 }
 } // namespace lift_00454E70
-
-// [0x0045BBE0]
-namespace lift_0045BBE0 {
-extern int16_t ext_GetKeyState(int32_t nVirtKey);
-extern uint32_t mem_009255F4;
-
-// @name isVkControlDown
-// @summary Returns 1 if the Ctrl virtual key (VK_CONTROL, 0x11) is currently held down, else 0.
-// (no class / field accesses)
-uint32_t fn_0045BBE0() {
-    // GetKeyState(VK_CONTROL); the high bit of the returned SHORT is the "key down" flag.
-    const uint16_t state = static_cast<uint16_t>(ext_GetKeyState(0x11));
-    return static_cast<uint32_t>(state) >> 15;
-}
-} // namespace lift_0045BBE0
 
 // [0x004586C0] sub_004586C0 (18 bytes)
 namespace lift_004586C0 {
@@ -283,27 +231,6 @@ BOOL fn_004586C0(void* self, UINT_PTR timerId) {
     return killTimer(hwnd, timerId);
 }
 } // namespace lift_004586C0
-
-// [0x00458E10] sub_00458E10 (21 bytes)
-namespace lift_00458E10 {
-extern int mem_00AD3E2C;
-extern int mem_00925694;
-
-// Win32 SendMessageA(HWND, UINT, WPARAM, LPARAM) imported via USER32.
-extern int32_t ext_SendMessageA(uint32_t hWnd, uint32_t msg, uint32_t wParam, uint32_t lParam);
-
-// @name SendMessageToFieldWindow
-// @summary Sends the global message id to the window handle stored in self+0x1c, passing self as lParam and 0 as wParam; returns the LRESULT.
-// @field Unknown +0x1c HWND field_0x1c
-int32_t fn_00458E10(void* self) {
-    const auto base = static_cast<const unsigned char*>(self);
-    uint32_t hwnd = 0;
-    std::memcpy(&hwnd, base + 0x1c, sizeof hwnd);
-    const auto msg = static_cast<uint32_t>(mem_00AD3E2C);
-    const auto lParam = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
-    return ext_SendMessageA(hwnd, msg, 0u, lParam);
-}
-} // namespace lift_00458E10
 
 // [0x00458FE0] sub_00458FE0 (18 bytes)
 namespace lift_00458FE0 {
@@ -327,37 +254,6 @@ extern int32_t __fastcall fn_00458FE0(void* self) {
     return ext_00458E10(self);
 }
 } // namespace lift_00458FE0
-
-// [0x00455260] sub_00455260 (25 bytes)
-namespace lift_00455260 {
-extern int mem_00924EB0;
-
-// @name std::string::assign(const char*, size_t) wrapper
-// @class std::string
-// @summary Assigns the first n bytes of src into the std::string at self; returns 0 (stdcall, callee pops 16 bytes).
-// @field std::string +0x00 std::string (whole object, accessed via std::string::assign)
-extern int __stdcall fn_00455260(void* self, const char* src, size_t n, void* unused) {
-    (void)unused;
-    auto* str = reinterpret_cast<std::string*>(self);
-    str->assign(src, n);
-    return 0;
-}
-} // namespace lift_00455260
-
-// [0x004586A0] sub_004586A0 (25 bytes)
-namespace lift_004586A0 {
-// Known callee 0x006286D0: USER32!SetTimer (IAT jump thunk; args: hWnd, nIDEvent, uElapse, lpTimerFunc.)
-extern UINT_PTR ext_006286D0(HWND hWnd, UINT_PTR nIDEvent, UINT uElapse, void* lpTimerFunc);
-
-// @name StartOwnerTimerWithId
-// @class Unknown
-// @summary Starts a Win32 timer (no callback) with the given id and interval on the owner window stored at self+0x20.
-// @field Unknown +0x20 HWND ownerHwnd
-void fn_004586A0(void* self, UINT_PTR nIDEvent, UINT uElapse) {
-    HWND ownerHwnd = lift_field<HWND>(self, 0x20);
-    (void)ext_006286D0(ownerHwnd, nIDEvent, uElapse, nullptr);
-}
-} // namespace lift_004586A0
 
 // [0x00458DF0] sub_00458DF0 (26 bytes)
 namespace lift_00458DF0 {

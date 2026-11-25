@@ -52,40 +52,6 @@ uintptr_t fn_004F9D00(void* self) {
 } // namespace lift_004F9E50
 } // namespace lift_004F9D00
 
-// [0x004FA170]
-namespace lift_004FA170 {
-namespace lift_004FA170 {
-// @name VMCSModes::DefaultImplementation::vfunc_106
-// @class VMCSModes::DefaultImplementation
-// @summary Returns true if the vector at (object reached via this->+0x8 -> +0x14 -> +0x34)+0x3D0 is non-empty (end != begin, nonzero begin); false otherwise.
-// @field VMCSModes::DefaultImplementation +0x8 void* field_0x8
-
-extern uint32_t mem_read32(uint32_t guest_addr);
-
-// Guest-address convention: `self` is the guest address of the object.
-//   p = *(self + 0x08)
-//   s = *(p + 0x14)
-//   t = *(s + 0x34)
-//   begin = *(t + 0x3D0)
-//   if begin == 0: return false
-//   end = *(t + 0x3D4)
-//   return ((int32_t)(end - begin) >> 2) != 0
-extern bool __fastcall fn_004FA170(uint32_t self, int edx_unused) {
-    (void)edx_unused;
-    uint32_t p = mem_read32(self + 0x08u);
-    uint32_t s = mem_read32(p + 0x14u);
-    uint32_t t = mem_read32(s + 0x34u);
-    uint32_t begin = mem_read32(t + 0x3D0u);
-    if (begin == 0) {
-        return false;
-    }
-    uint32_t end = mem_read32(t + 0x3D4u);
-    int32_t count = static_cast<int32_t>(end - begin) >> 2;
-    return count != 0;
-}
-} // namespace lift_004FA170
-} // namespace lift_004FA170
-
 // [0x004FA1B0] VMCSModes::DefaultImplementation::vfunc_136 (58 bytes)
 namespace lift_004FA1B0 {
 extern void* ext_005B11F0(void* self);

@@ -76,8 +76,8 @@ func stripLiftedFunc(content, vaHex string) string {
 	var out []string
 	skipping := false
 	for _, l := range lines {
-		t := strings.TrimSpace(l)
-		if m := markerLineRe.FindStringSubmatch(t); len(m) == 2 {
+		// Only match unindented column-0 `// [0xXXXXXXXX]` block markers (never indented inline comments).
+		if m := markerLineRe.FindStringSubmatch(l); len(m) == 2 {
 			if unitstore.NormVA(m[1]) == norm {
 				skipping = true
 				continue

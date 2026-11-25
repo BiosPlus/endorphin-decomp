@@ -317,40 +317,6 @@ uint32_t __thiscall sub_0069B640(uint32_t ecx, uint32_t arg1, uint32_t arg2, uin
 }
 } // namespace lift_0069B640
 
-// [0x006968D0] read_line_until_newline_or_eof (58 bytes)
-namespace lift_006968D0 {
-// MSVCP80 imports used by this function (called through IAT slots 0x9250BC / 0x9250C0).
-// basic_istream<char>::get(char&) -- thiscall, returns istream&.
-extern void* __thiscall ext_MSVCP80_istream_get_char(void* self, char* out);
-// basic_ios::operator!() const -- thiscall, returns true when the stream is in a failed state.
-extern bool __thiscall ext_MSVCP80_ios_base_not(const void* self);
-
-// @name readLineUntilNewlineOrEof
-// @summary Reads chars from an istream until '\n' or 0xFF is read; returns false if the stream fails first, true otherwise.
-// (No direct class field offsets are accessed; the only offsets used are the istream vbtable displacement at vptr+4, which is not a class field.)
-bool fn_006968D0(void* stream) {
-    for (;;) {
-        char c = 0;
-        // get(c) on the stream
-        void* in = ext_MSVCP80_istream_get_char(stream, &c);
-
-        // Locate the basic_ios subobject via the virtual base displacement stored in the vtable at +4.
-        const void* vptr = lift_field<const void*>(in, 0);
-        ptrdiff_t disp = lift_field<int32_t>(vptr, 4);
-        void* ios = reinterpret_cast<uint8_t*>(in) + disp;
-
-        if (ext_MSVCP80_ios_base_not(ios)) {
-            return false;
-        }
-
-        const unsigned char uc = static_cast<unsigned char>(c);
-        if (uc == 0x0A || uc == 0xFF) {
-            return true;
-        }
-    }
-}
-} // namespace lift_006968D0
-
 // [0x006999B0] sub_006999B0 (60 bytes)
 namespace lift_006999B0 {
 extern void ext_006A6C87(DWORD arg);
@@ -373,34 +339,6 @@ void* fn_006999B0(void* self) {
     return &mem_00B5C99C;
 }
 } // namespace lift_006999B0
-
-// [0x00699360] sub_00699360 (60 bytes)
-namespace lift_00699360 {
-extern void ext_invalid_parameter_noinfo(void);
-
-// @name VectorLike::checkedBegin
-// @class VectorLike
-// @summary Returns the begin pointer when the range holds at least one 32-byte element, else a static sentinel; asserts begin is inside [begin, end).
-// @field VectorLike +0x08 uint32_t field_0x08
-// @field VectorLike +0x0C uint32_t field_0x0C
-uint32_t fn_00699360(void* self) {
-    const uint32_t begin = lift_field<uint32_t>(self, 0x08);
-    if (begin != 0) {
-        const uint32_t end = lift_field<uint32_t>(self, 0x0C);
-        const int32_t count = static_cast<int32_t>(end - begin) >> 5;
-        if (count != 0) {
-            if (begin > end) {
-                ext_invalid_parameter_noinfo();
-            }
-            if (!(begin < end)) {
-                ext_invalid_parameter_noinfo();
-            }
-            return begin;
-        }
-    }
-    return 0x00B59400u;
-}
-} // namespace lift_00699360
 
 // [0x00691FC0]
 namespace lift_00691FC0 {
@@ -518,30 +456,6 @@ uint32_t fn_0069E7E0(uint32_t begin, uint32_t end, uint32_t value) {
 } // namespace lift_0054F290
 } // namespace lift_0069E7E0
 
-// [0x006991A0]
-namespace lift_006991A0 {
-uint32_t mem_read32(uint32_t addr);
-void mem_write32(uint32_t addr, uint32_t val);
-
-// @name sub_006991A0_dtor
-// @summary Destructor that sets vtable 0x98fac4, deletes member at +0x8 via vtable[0](1), and restores base vtable 0x98fabc
-// @field Class +0x00 uint32_t vptr
-// @field Class +0x08 uint32_t field_0x08
-void __thiscall sub_006991A0(uint32_t ecx_this) {
-    mem_write32(ecx_this, 0x0098FAC4u);
-
-    uint32_t member = mem_read32(ecx_this + 0x8u);
-    if (member != 0u) {
-        uint32_t vtable = mem_read32(member);
-        uint32_t dtor_fn = mem_read32(vtable);
-        using dtor_t = void (__thiscall *)(uint32_t, uint32_t);
-        reinterpret_cast<dtor_t>(static_cast<uintptr_t>(dtor_fn))(member, 1u);
-    }
-
-    mem_write32(ecx_this, 0x0098FABCu);
-}
-} // namespace lift_006991A0
-
 // [0x00692B50]
 namespace lift_00692B50 {
 extern void ext_00661980(void* self);
@@ -653,43 +567,6 @@ void* fn_0069A090(const void* first, const void* last, void* dest) {
 } // namespace lift_00687E50
 } // namespace lift_0069A090
 
-// [0x00696B70] sub_00696B70 (86 bytes)
-namespace lift_00696B70 {
-extern int mem_009250E4;
-extern int mem_009250E8;
-extern int mem_009250EC;
-
-// MSVCP80 imports used by this function (called through IAT slots 0x9250E4, 0x9250E8, 0x9250EC).
-// basic_istream<char>::get() -- thiscall, returns int_type (low byte is the char, 0xFF is treated as EOF here).
-extern int __thiscall ext_MSVCP80_istream_get(void* self);
-// basic_istream<char>::putback(char) -- thiscall, returns istream&.
-extern void* __thiscall ext_MSVCP80_istream_putback(void* self, char c);
-// operator>>(basic_istream<char>&, basic_string<char>&) -- free function, returns istream&.
-extern void* __cdecl ext_MSVCP80_operator_extract_string(void* in, void* str);
-
-// @name readTokenSkippingBlanks
-// @summary Skips spaces and tabs on an istream; on EOF or newline returns false, otherwise puts the
-//          first non-blank char back, extracts a string token into `str`, and returns true.
-// (No class fields are accessed directly; `stream` and `str` are opaque MSVCP80 objects passed to imports.)
-bool fn_00696B70(void* stream, void* str) {
-    for (;;) {
-        const uint8_t b = static_cast<uint8_t>(ext_MSVCP80_istream_get(stream));
-        if (b == 0x20 || b == 0x09) {
-            continue;
-        }
-        if (b == 0xFF) {
-            return false;
-        }
-        ext_MSVCP80_istream_putback(stream, static_cast<char>(b));
-        if (b == 0x0A) {
-            return false;
-        }
-        ext_MSVCP80_operator_extract_string(stream, str);
-        return true;
-    }
-}
-} // namespace lift_00696B70
-
 // [0x006988A0]
 namespace lift_006988A0 {
 // @name String::findFirstNotOf
@@ -745,56 +622,6 @@ uint32_t* sub_00692010(uint32_t* first, uint32_t* last, const uint32_t* val_ptr,
     return first;
 }
 } // namespace lift_00692010
-
-// [0x00698840]
-namespace lift_00698840 {
-extern uint8_t mem_read8(uint32_t addr);
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name String::findFirstOf
-// @class String
-// @summary Finds the first occurrence of any character from a C-string starting at a given index.
-// @field String +0x00 uint32_t data_ptr
-// @field String +0x04 int32_t length
-int32_t __thiscall sub_00698840(void* self, uint32_t chars_ptr, int32_t start_index) {
-    int32_t chars_len = 0;
-    while (mem_read8(chars_ptr + static_cast<uint32_t>(chars_len)) != 0) {
-        ++chars_len;
-    }
-
-    uint32_t this_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
-    int32_t length = static_cast<int32_t>(mem_read32(this_addr + 0x04));
-    if (start_index >= length) {
-        return -1;
-    }
-
-    uint32_t data_ptr = mem_read32(this_addr);
-    for (int32_t i = start_index; i < length; ++i) {
-        uint8_t ch = mem_read8(data_ptr + static_cast<uint32_t>(i));
-        for (int32_t j = 0; j < chars_len; ++j) {
-            if (ch == mem_read8(chars_ptr + static_cast<uint32_t>(j))) {
-                return i;
-            }
-        }
-    }
-
-    return -1;
-}
-} // namespace lift_00698840
-
-// [0x00699810]
-namespace lift_00699810 {
-extern void* fn_006A5C62(uint32_t size);
-
-// @name allocate_array_0x2c
-// @summary Allocates an array of count 0x2c-byte elements, throwing std::bad_alloc on size_t overflow.
-extern void* fn_00699810(uint32_t count) {
-    if (count > 0 && (0xFFFFFFFFu / count) < 0x2Cu) {
-        throw std::bad_alloc();
-    }
-    return fn_006A5C62(count * 0x2Cu);
-}
-} // namespace lift_00699810
 
 // [0x006992E0] sub_006992E0 (89 bytes)
 namespace lift_006992E0 {
@@ -883,62 +710,6 @@ uint8_t __cdecl sub_00696BD0(void* stream, void* str) {
 }
 } // namespace lift_00696BD0
 
-// [0x006996C0]
-namespace lift_006996C0 {
-// @name sub_006996C0
-// @summary Checks a subobject at +0x48 via RTTI dynamic_cast, invokes a virtual method on its +0x4 member, and dynamic_casts the result.
-// @field Obj +0x48 uint32_t field_0x48
-// @field Obj +0x4c uint32_t field_0x4c
-
-
-extern uint32_t mem_read32(uint32_t addr);
-extern uint32_t ext_006A6E9E(uint32_t inptr, uint32_t vf_delta, uint32_t src_type, uint32_t target_type, uint32_t is_reference);
-
-extern uint32_t fn_006996C0(uint32_t arg0) {
-    if (arg0 == 0) {
-        return 0;
-    }
-    uint32_t esi = arg0 + 0x48;
-    if (mem_read32(esi) == 0) {
-        return 0;
-    }
-    uint32_t obj = mem_read32(esi + 0x4);
-    if (ext_006A6E9E(obj, 0, 0xA31114, 0xAA1808, 0) == 0) {
-        return 0;
-    }
-    uint32_t ecx = mem_read32(esi + 0x4);
-    uint32_t vtable = mem_read32(ecx);
-    uint32_t vfunc = mem_read32(vtable + 0x60);
-    typedef uint32_t(__thiscall* vfunc_t)(uint32_t, uint32_t);
-    uint32_t res = reinterpret_cast<vfunc_t>(static_cast<uintptr_t>(vfunc))(ecx, esi);
-    return ext_006A6E9E(res, 0, 0xA2E2F8, 0xAA3D80, 0);
-}
-} // namespace lift_006996C0
-
-// [0x00698900]
-namespace lift_00698900 {
-// @name String::findTokenEnd
-// @class String
-// @summary Finds the end index of a token delimited by chars starting at *pos, advancing *pos to the next token or -1.
-// @field String +0x04 int32_t length
-
-extern int32_t __thiscall ext_00698840(void* self, const char* chars, int32_t start_index);
-extern int32_t __thiscall ext_006988A0(void* self, const char* chars, int32_t start_index);
-
-int32_t __thiscall sub_00698900(void* self, int32_t* pos, const char* chars) {
-    int32_t found = ext_00698840(self, chars, *pos);
-    int32_t end_index;
-    if (found == -1) {
-        *pos = -1;
-        end_index = *reinterpret_cast<const int32_t*>(static_cast<const uint8_t*>(self) + 0x4) - 1;
-    } else {
-        end_index = found - 1;
-        *pos = ext_006988A0(self, chars, found);
-    }
-    return end_index < 0 ? 0 : end_index;
-}
-} // namespace lift_00698900
-
 // [0x0069B560]
 namespace lift_0069B560 {
 // @name LogicErrorDerived::LogicErrorDerived
@@ -1024,29 +795,6 @@ extern void* __fastcall fn_00699870(void* self, int edx_unused, const void* src)
     return self;
 }
 } // namespace lift_00699870
-
-// [0x006998D0] sub_006998D0 (82 bytes)
-namespace lift_006998D0 {
-// Known callee 0x00699870: Unknown::copyRecordWithOptionalResolve (Copies a 16-byte record from src into self; when src+0xC is non-null, calls vtable slot 0x70 on it to fetch the +0x8 value, otherwise +0x8 is zeroed. Returns self.)
-extern void* ext_00699870(void* self, int edx_unused, const void* src);
-
-// MSVCP80 std::string copy constructor, reached through the import slot mem_00924FE0.
-extern void ext_std_string_copy_ctor(void* self, const void* src);
-extern int mem_00924FE0;
-
-// @name copyStringAndRecord
-// @summary Copy-constructs the leading std::string from src, then copies the 16-byte record at +0x1C from src into this; returns this.
-// @field Unknown +0x1C uint8_t field_0x1c[16]
-extern void* __fastcall fn_006998D0(void* self, int edx_unused, const void* src) {
-    ext_std_string_copy_ctor(self, src);
-
-    auto* dst_record = static_cast<uint8_t*>(self) + 0x1C;
-    const auto* src_record = static_cast<const uint8_t*>(src) + 0x1C;
-    ext_00699870(dst_record, 0, src_record);
-
-    return self;
-}
-} // namespace lift_006998D0
 
 // [0x00695CE0] sub_00695CE0 (87 bytes)
 namespace lift_00695CE0 {
@@ -1160,73 +908,6 @@ VectorIterator* __thiscall fn_0069A160(void* self, VectorIterator* out_iter, voi
 } // namespace lift_0057E9E0
 } // namespace lift_0057A770
 } // namespace lift_0069A160
-
-// [0x0069A260] sub_0069A260 (59 bytes)
-namespace lift_0069A260 {
-// @name sub_0069A260
-// @summary Auto-lifted identical-shape clone of 0x0051EC00 (sub_0051EC00).
-namespace lift_0051EC00 {
-// @name sub_0051EC00
-// @summary Auto-lifted identical-shape clone of 0x005015E0 (Unknown::eraseRangeFromSelf).
-namespace lift_005015E0 {
-// Known callee 0x005013F0: sub_005013F0 (Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).)
-// Thiscall: self in ecx, then five stack args (out_iter, first_container, first_ptr, last_container, last_ptr).
-extern void* ext_0069A160(void* self, void* out_iter, void* first_container,
-                              void* first_ptr, void* last_container, void* last_ptr);
-
-// @name Unknown::eraseRangeFromSelf
-// @class Unknown
-// @summary Erases the element range bounded by self+0x04 .. self+0x08 by forwarding both bounds to 0x005013F0.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-void fn_0069A260(void* self) {
-    auto* base = static_cast<unsigned char*>(self);
-    auto load_u32 = [&](std::size_t off) {
-        std::uint32_t v;
-        std::memcpy(&v, base + off, sizeof v);
-        return v;
-    };
-
-    // The original asserts first <= last via _invalid_parameter_noinfo (diagnostic only; no
-    // observable effect on the erase), so it is omitted here.
-    const auto first = static_cast<std::uintptr_t>(load_u32(0x04));
-    const auto last = static_cast<std::uintptr_t>(load_u32(0x08));
-
-    // The out iterator is a caller-provided slot; this function never reads it.
-    alignas(8) unsigned char out_iter[16] = {};
-    ext_0069A160(self, out_iter, self, reinterpret_cast<void*>(first),
-                 self, reinterpret_cast<void*>(last));
-}
-} // namespace lift_005015E0
-} // namespace lift_0051EC00
-} // namespace lift_0069A260
-
-// [0x006999F0] sub_006999F0 (95 bytes)
-namespace lift_006999F0 {
-// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
-extern void ext_0066AD10(void* out_str, const void* src);
-// Known callee 0x006A6C87: sub_006A6C87 (registers a teardown routine, atexit-style)
-extern void ext_006A6C87(void (*fn)());
-// Teardown routine at 0x00922000
-extern void ext_00922000();
-// String literal source (address 0x00AA3DB0)
-extern char mem_00AA3DB0[];
-// Init guard byte/dword (address 0x00B5C9C4)
-extern int mem_00B5C9C4;
-// Static string object (address 0x00B5C9A8)
-extern char mem_00B5C9A8[];
-
-// @name GetOnceInitString_006999F0
-// @summary Constructs a static string object from a literal on first call, registers its destructor, and returns it.
-void* fn_006999F0() {
-    if ((mem_00B5C9C4 & 1) == 0) {
-        mem_00B5C9C4 |= 1;
-        ext_0066AD10(&mem_00B5C9A8, mem_00AA3DB0);
-        ext_006A6C87(ext_00922000);
-    }
-    return &mem_00B5C9A8;
-}
-} // namespace lift_006999F0
 
 // [0x00696910]
 namespace lift_00696910 {

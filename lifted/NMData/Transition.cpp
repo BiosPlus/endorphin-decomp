@@ -73,25 +73,6 @@ uint32_t fn_004972E0(void* self, void* arg1, void* arg2) {
     return reinterpret_cast<VFn>(vtbl[11])(target, arg1, self);
 }
 
-// [0x00497680] NMData::Transition::vfunc_12 (66 bytes)
-// @name NMData::Transition::vfunc_12
-// @class NMData::Transition
-// @summary Copies the 8-byte element at index from the array at +0x88 (end at +0x8C) into out and returns out; aborts on a null array or out-of-range index.
-// @field NMData::Transition +0x88 void* field_0x88
-// @field NMData::Transition +0x8C void* field_0x8C
-void* fn_00497680(void* self, void* out, uint32_t index) {
-    const void* begin = lift_field<void*>(self, 0x88);
-    const void* end = lift_field<void*>(self, 0x8C);
-    // Element size is 8 bytes; count is the arithmetic (signed) byte difference divided by 8.
-    const int32_t count = static_cast<int32_t>(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(end) - reinterpret_cast<uintptr_t>(begin))) >> 3;
-    if (begin == nullptr || index >= static_cast<uint32_t>(count)) {
-        // Original calls _invalid_parameter_noinfo, which does not return.
-        std::abort();
-    }
-    std::memcpy(out, static_cast<const uint8_t*>(begin) + 8u * static_cast<size_t>(index), 8);
-    return out;
-}
-
 // [0x00497090] NMData::Transition::vfunc_37 (13 bytes)
 // @name NMData::Transition::vfunc_37
 // @class NMData::Transition
@@ -112,45 +93,6 @@ uint32_t __thiscall fn_00499CE0(void* self, void* a1) {
     void* subobj = obj + 0x84;
     return ext_00505F00(a1, subobj);
 }
-
-// [0x004997E0]
-namespace lift_004997E0 {
-// @name NMData::Transition::vfunc_26
-// @class NMData::Transition
-// @summary Bounds-checks index against the 8-byte entry array at +0x88/+0x8C, stores the DWORD pair at src into that slot, then calls sub_004996E0 on this.
-// @field NMData::Transition +0x88 void* field_0x88
-// @field NMData::Transition +0x8C void* field_0x8C
-
-// sub_004996E0 (253B), __thiscall, takes the transition as `this`.
-void ext_004996E0(void* self);
-
-// MSVCR80!_invalid_parameter_noinfo (via IAT slot 0x925134).
-void ext_invalid_parameter_noinfo(void);
-
-// Original: __thiscall(this=ecx), stdcall args (src, index), `ret 8`.
-void fn_004997E0(void* self, const DWORD* src, DWORD index) {
-    uint8_t* begin = lift_field<uint8_t*>(self, 0x88);
-    if (begin == nullptr) {
-        ext_invalid_parameter_noinfo();
-        return;
-    }
-
-    uint8_t* end = lift_field<uint8_t*>(self, 0x8C);
-    // Entry count = (end - begin) / 8, signed shift, compared unsigned against index.
-    ptrdiff_t diff = end - begin;
-    uint32_t count = static_cast<uint32_t>(diff >> 3);
-    if (index >= count) {
-        ext_invalid_parameter_noinfo();
-        return;
-    }
-
-    DWORD* slot = reinterpret_cast<DWORD*>(begin + static_cast<size_t>(index) * 8);
-    slot[0] = src[0];
-    slot[1] = src[1];
-
-    ext_004996E0(self);
-}
-} // namespace lift_004997E0
 
 // [0x004991A0] NMData::Transition::vfunc_15_off_8 (59 bytes)
 namespace lift_004991A0 {

@@ -87,51 +87,6 @@ void fn_0067F8F0(void* self) {
 #include <algorithm>
 #include <stdexcept>
 
-// [0x0067EC70] sub_0067EC70 (34 bytes)
-namespace lift_0067EC70 {
-// Import slot for MSVCR80!_snprintf (0x009251E0). Not called directly; the
-// portable body below uses std::snprintf.
-extern int mem_009251E0;
-
-// @name Unknown::formatPairToBuffer
-// @class Unknown
-// @summary Formats the two ints at this+0x00 and this+0x04 into a caller buffer via snprintf (__thiscall, ret 8).
-// @field Unknown +0x00 int32_t field_0x00
-// @field Unknown +0x04 int32_t field_0x04
-//
-// Stack layout at entry: [esp+4] = buffer, [esp+8] = buffer size.
-// snprintf is called as snprintf(buffer, size, fmt, this->field_0x04, this->field_0x00),
-// with the format string at 0x0098C7C0 (not recovered here; see FORMAT below).
-// Return value is snprintf's result (left in eax).
-static constexpr const char* kFormat = "6|b"; // PLACEHOLDER: real format at 0x0098C7C0 not yet recovered
-
-int fn_0067EC70(void* self, char* buffer, int size) {
-    const int32_t field_0x00 = lift_field<int32_t>(self, 0x00);
-    const int32_t field_0x04 = lift_field<int32_t>(self, 0x04);
-    return std::snprintf(buffer, static_cast<size_t>(size), kFormat, field_0x04, field_0x00);
-}
-} // namespace lift_0067EC70
-
-// [0x0067ED10]
-namespace lift_0067ED10 {
-// @name parseHexFromString
-// @summary Parses a hexadecimal integer from a std::string and stores it at offset 0 of self
-// @field Unknown +0x00 uint32_t field_0x00
-
-extern uint32_t mem_00924FFC;
-extern uint32_t mem_0092530C;
-
-uint32_t __thiscall fn_0067ED10(void* self, const void* str) {
-    using StringIndexFn = const char* (__thiscall*)(const void*, uint32_t);
-    using StrtoulFn = uint32_t(__cdecl*)(const char*, char**, int);
-
-    const char* ptr = reinterpret_cast<StringIndexFn>(mem_00924FFC)(str, 0);
-    uint32_t val = reinterpret_cast<StrtoulFn>(mem_0092530C)(ptr, nullptr, 16);
-    *reinterpret_cast<uint32_t*>(self) = val;
-    return val;
-}
-} // namespace lift_0067ED10
-
 // [0x0067AE20]
 namespace lift_0067AE20 {
 // @name sub_0067AE20
@@ -327,54 +282,6 @@ BOOL fn_0067AEB0(void* self, INT index) {
 }
 } // namespace lift_0067AEB0
 
-// [0x0067AEF0] sub_0067AEF0 (56 bytes)
-namespace lift_0067AEF0 {
-// Known callee 0x0067AF28: cleanup_epilogue_pop_edi_stdcall4 (Stdcall (ret 4) epilogue fragment: restores the saved edi register and drops one stack argument; no other effect.)
-extern void __stdcall ext_0067AF28(void* arg);
-// Import KERNEL32!ResetEvent (IAT slot mem_0092428C).
-extern BOOL __stdcall ResetEvent(HANDLE hEvent);
-
-// @name EventTable::ResetEventAt
-// @class EventTable
-// @summary Resets the Win32 event whose handle is stored at the given index of the table's handle array; out-of-range or empty array aborts.
-// @field EventTable +0x0C uint32_t slots
-// @field EventSlotVec +0x04 uint32_t begin
-// @field EventSlotVec +0x08 uint32_t end
-
-// Guest-address layout of the handle vector reached through EventTable+0x0C.
-struct EventSlotVec {
-    uint32_t field_0x00;
-    uint32_t begin;  // +0x04: first handle slot (guest address)
-    uint32_t end;    // +0x08: one past last handle slot (guest address)
-};
-
-struct EventTable {
-    uint8_t  field_0x00[0x0C];
-    uint32_t slots;  // +0x0C: guest address of EventSlotVec
-};
-
-extern BOOL __thiscall fn_0067AEF0(void* self, int index) {
-    auto* table = static_cast<EventTable*>(self);
-
-    if (index < 0) {
-        // Negative index: fragment restores state and returns without touching the event.
-        ext_0067AF28(nullptr);
-        return FALSE;
-    }
-
-    auto* vec = reinterpret_cast<EventSlotVec*>(static_cast<uintptr_t>(table->slots));
-    if (vec->begin == 0 ||
-        static_cast<uint32_t>(index) >= (vec->end - vec->begin) / 4u) {
-        // Original calls _invalid_parameter_noinfo here (does not return).
-        std::abort();
-    }
-
-    auto* handles = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(vec->begin));
-    HANDLE hEvent = reinterpret_cast<HANDLE>(static_cast<uintptr_t>(handles[index]));
-    return ResetEvent(hEvent);
-}
-} // namespace lift_0067AEF0
-
 // [0x0067B410] sub_0067B410 (58 bytes)
 namespace lift_0067B410 {
 extern void __fastcall ext_0065C640(void* self); // CriticalSectionLock::enter
@@ -408,38 +315,6 @@ void fn_0067B410(void* self) {
 }
 } // namespace lift_0067B410
 
-// [0x0067AE70] sub_0067AE70 (58 bytes)
-namespace lift_0067AE70 {
-extern DWORD __stdcall WaitForSingleObject(HANDLE hHandle, DWORD dwMilliseconds);
-extern void __cdecl _invalid_parameter_noinfo(void);
-
-// @name HandleTable::waitOnHandle
-// @class Unknown
-// @summary Waits infinitely on the handle at the given index of the owner's handle array; negative indices return without waiting.
-// @field Unknown +0x0C void* field_0x0C
-// @field Unknown +0x04 HANDLE* field_0x04
-// @field Unknown +0x08 HANDLE* field_0x08
-void __thiscall fn_0067AE70(void* self, int32_t index) {
-    if (index < 0) {
-        return;
-    }
-
-    void* header = lift_field<void*>(self, 0x0C);
-    HANDLE* begin = lift_field<HANDLE*>(header, 0x04);
-    HANDLE* end = lift_field<HANDLE*>(header, 0x08);
-
-    // Original: if begin is null or index >= element count, report invalid parameter
-    // (the original then continues with the same read).
-    if (begin == nullptr ||
-        static_cast<uint32_t>(index) >= static_cast<uint32_t>(end - begin)) {
-        _invalid_parameter_noinfo();
-    }
-
-    HANDLE handle = begin[index];
-    WaitForSingleObject(handle, 0xFFFFFFFFu); // INFINITE
-}
-} // namespace lift_0067AE70
-
 // [0x00678170] sub_00678170 (62 bytes)
 namespace lift_00678170 {
 // @name ConvertAngleUnits
@@ -459,36 +334,6 @@ float fn_00678170(void* self, float value) {
     return value;
 }
 } // namespace lift_00678170
-
-// [0x00672E70] sub_00672E70 (63 bytes)
-namespace lift_00672E70 {
-// @name sub_00672E70
-// @summary Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).
-namespace lift_00569970 {
-extern void ext_00672C20(uint32_t a0, uint32_t a1, void* a2, void* a3);
-extern void fn_006A5C5C(uint32_t arg);
-
-// @name Unknown::ReleaseHandleAndClear
-// @class Unknown
-// @summary If field +0x04 is nonzero, run ext_005693E0 with it and forward it to fn_006A5C5C, then clear fields +0x04, +0x08 and +0x0C.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-// @field Unknown +0x0C uint32_t field_0x0C
-void fn_00672E70(void* self) {
-    if (lift_field<uint32_t>(self, 0x4) != 0) {
-        // Argument order matches the original pushes: a0 = f04, a1 = f08, a2 = self, a3 = ecx (self).
-        ext_00672C20(lift_field<uint32_t>(self, 0x4),
-                     lift_field<uint32_t>(self, 0x8),
-                     self,
-                     self);
-        fn_006A5C5C(lift_field<uint32_t>(self, 0x4));
-    }
-    lift_field<uint32_t>(self, 0x4) = 0;
-    lift_field<uint32_t>(self, 0x8) = 0;
-    lift_field<uint32_t>(self, 0xC) = 0;
-}
-} // namespace lift_00569970
-} // namespace lift_00672E70
 
 // [0x0067ECA0]
 namespace lift_0067ECA0 {
@@ -543,100 +388,6 @@ uint32_t __thiscall fn_0067F910(uintptr_t self) {
     return result;
 }
 } // namespace lift_0067F910
-
-// [0x00676780] sub_00676780 (70 bytes)
-namespace lift_00676780 {
-extern int mem_00924FE8;
-
-// @name ObjectInit_00676780
-// @class <ClassName> (unknown; object layout not recovered)
-// @summary Zeroes the scalar fields of a 0x34-byte object and default-constructs an embedded std::string at +0x04; returns this.
-// @field <ClassName> +0x00 u32 field_0x00
-// @field <ClassName> +0x04 std::string field_0x04
-// @field <ClassName> +0x24 u32 field_0x24
-// @field <ClassName> +0x28 u32 field_0x28
-// @field <ClassName> +0x2c u32 field_0x2c
-// @field <ClassName> +0x30 u32 field_0x30
-void* fn_00676780(void* self) {
-    uint8_t* obj = static_cast<uint8_t*>(self);
-    const uint32_t zero = 0;
-
-    // Original: sets [this+0] = 0, then calls the MSVC std::string default
-    // constructor on [this+4] via mem_00924FE8. The string constructor is
-    // platform-specific and is not reproduced here; the 0x18-byte region is
-    // zeroed as a neutral placeholder.
-    std::memset(obj + 0x00, 0, sizeof(uint32_t));
-    std::memset(obj + 0x04, 0, 0x20);
-
-    std::memcpy(obj + 0x24, &zero, sizeof(zero));
-    std::memcpy(obj + 0x28, &zero, sizeof(zero));
-    std::memcpy(obj + 0x2c, &zero, sizeof(zero));
-    std::memcpy(obj + 0x30, &zero, sizeof(zero));
-
-    return self;
-}
-} // namespace lift_00676780
-
-// [0x00678520] sub_00678520 (70 bytes)
-namespace lift_00678520 {
-// Known callee 0x006290D8: MSVCP80 std::basic_string<char>::basic_string() (default ctor, thiscall).
-extern void ext_006290D8(void* self);
-
-// @name XMLConverter::XMLConverter
-// @class XMLConverter
-// @summary Constructor: installs XMLConverter primary vtable and default-constructs the std::string member at +0x04; returns this.
-// @field XMLConverter +0x00 uint32_t vfptr
-// @field XMLConverter +0x04 std::string field_0x04
-void* fn_00678520(void* self) {
-    // Install primary vtable (0x0098C1F4).
-    lift_field<uint32_t>(self, 0x00) = 0x0098C1F4u;
-
-    // Default-construct std::string at this+0x04 (original: call [mem_00924FE8] thiscall).
-    ext_006290D8(static_cast<uint8_t*>(self) + 0x04);
-
-    return self;
-}
-} // namespace lift_00678520
-
-// [0x00672D10] sub_00672D10 (71 bytes)
-namespace lift_00672D10 {
-// @name sub_00672D10
-// @summary Auto-lifted identical-shape clone of 0x004026E0 (StringArray::ReleaseElements).
-namespace lift_004026E0 {
-// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
-// Takes one cdecl argument (the buffer pointer), pushed before the call in the original.
-extern void ext_006A5C5C(void* buffer);
-// Element destructor pointed to by mem_00924FF4 (0x00628FF0, MSVCP80 basic_string<char> dtor).
-extern void ext_00628FF0(void* self);
-extern int mem_00924FF4;
-
-// @name StringArray::ReleaseElements
-// @class StringArray
-// @summary Destroys each 28-byte string element in the array, frees its buffer, and nulls the begin/end/capacity pointers.
-// @field StringArray +0x04 void* begin
-// @field StringArray +0x08 void* end
-// @field StringArray +0x0C void* capacity
-void fn_00672D10(void* self) {
-    auto* obj = static_cast<unsigned char*>(self);
-    auto** begin_slot = reinterpret_cast<unsigned char**>(obj + 0x04);
-    auto** end_slot = reinterpret_cast<unsigned char**>(obj + 0x08);
-    auto** cap_slot = reinterpret_cast<unsigned char**>(obj + 0x0C);
-
-    unsigned char* begin = *begin_slot;
-    if (begin != nullptr) {
-        unsigned char* end = *end_slot;
-        for (unsigned char* p = begin; p != end; p += 0x20) {
-            ext_00628FF0(p);
-        }
-        ext_006A5C5C(begin);
-    }
-
-    *begin_slot = nullptr;
-    *end_slot = nullptr;
-    *cap_slot = nullptr;
-}
-} // namespace lift_004026E0
-} // namespace lift_00672D10
 
 // [0x00670EC0] sub_00670EC0 (72 bytes)
 namespace lift_00670EC0 {
@@ -760,26 +511,6 @@ void __fastcall fn_0067B450(void* self) {
 }
 } // namespace lift_0067B450
 
-// [0x00678280] sub_00678280 (83 bytes)
-namespace lift_00678280 {
-// Known callee 0x0065C660: sub_0065C660 (Stores address of mem_00928E8C into field at offset +0x0.)
-extern void ext_0065C660(void* self);
-// Import slot at 0x00924FF4 (.rdata constant 0x00628FF0): destructor thunk for the std::string member.
-extern const uint32_t mem_00924FF4;
-extern void ext_00628FF0(void* self);
-
-// @name Unknown::~Unknown
-// @class Unknown
-// @summary Destructor: sets the derived vtable, destroys the string member at +0x04, then runs the base-class reset via sub_0065C660.
-// @field Unknown +0x00 uint32_t vptr
-// @field Unknown +0x04 uint8_t field_0x04
-void fn_00678280(void* self) {
-    lift_field<uint32_t>(self, 0x00) = 0x0098C1F4u;
-    ext_00628FF0(static_cast<uint8_t*>(self) + 0x04);
-    ext_0065C660(self);
-}
-} // namespace lift_00678280
-
 // [0x006721F0] sub_006721F0 (85 bytes)
 namespace lift_006721F0 {
 // Known callee 0x006721B0: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self, stack arg = value; writes value to self+0x00 and returns it)
@@ -860,27 +591,6 @@ void __stdcall fn_00670D80(uint8_t* container1, uint32_t* first, uint8_t* contai
 }
 } // namespace lift_00670D80
 
-// [0x00672590] sub_00672590 (89 bytes)
-namespace lift_00672590 {
-extern void ext_00628FF0(void* self);
-
-// @name UnknownClass::dtor_00672590
-// @class UnknownClass
-// @summary If the pointer at +0x28 is set, calls virtual slot 0x78 on that object with &this->+0x24, then destroys this via the MSVCP80 string dtor.
-// @field UnknownClass +0x24 uint32_t field_0x24
-// @field UnknownClass +0x28 void* field_0x28
-void fn_00672590(void* self) {
-    void* child = lift_field<void*>(self, 0x28);
-    if (child != nullptr) {
-        void** vtbl = *reinterpret_cast<void***>(child);
-        auto slot = reinterpret_cast<void (*)(void*, void*)>(
-            *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtbl) + 0x78));
-        slot(child, reinterpret_cast<uint8_t*>(self) + 0x24);
-    }
-    ext_00628FF0(self);
-}
-} // namespace lift_00672590
-
 // [0x00679EB0]
 namespace lift_00679EB0 {
 // @name lowerBoundByStringField10
@@ -933,69 +643,6 @@ void* __cdecl sub_006788E0() {
     return &mem_00B59E70;
 }
 } // namespace lift_006788E0
-
-// [0x00672430]
-namespace lift_00672430 {
-extern void* ext_006A5C62(uint32_t size);
-
-// @name allocateElements80
-// @summary Allocates an array of count 80-byte elements, throwing std::bad_alloc on size overflow.
-extern void* fn_00672430(uint32_t count) {
-    if (count > 0) {
-        if (0xFFFFFFFFu / count < 0x50u) {
-            throw std::bad_alloc();
-        }
-    } else {
-        count = 0;
-    }
-    return ext_006A5C62(count * 0x50u);
-}
-} // namespace lift_00672430
-
-// [0x00670C50]
-namespace lift_00670C50 {
-// @name lowerBoundByPairU32
-// @summary Binary search (std::lower_bound) over pointer array comparing (field_0x04, field_0x08) as unsigned 32-bit pairs
-// @field Entry +0x04 uint32_t field_0x04
-// @field Entry +0x08 uint32_t field_0x08
-
-
-extern uint32_t mem_r32(uint32_t);
-
-extern uint32_t __cdecl sub_00670C50(uint32_t begin, uint32_t end, uint32_t key_ptr_addr) {
-    int32_t count = static_cast<int32_t>(end - begin) >> 2;
-    if (count <= 0) {
-        return begin;
-    }
-
-    uint32_t key = mem_r32(key_ptr_addr);
-    uint32_t key_hi = mem_r32(key + 0x4);
-    uint32_t key_lo = mem_r32(key + 0x8);
-
-    while (count > 0) {
-        int32_t half = count / 2;
-        uint32_t mid_elem = mem_r32(begin + static_cast<uint32_t>(half) * 4);
-        uint32_t mid_hi = mem_r32(mid_elem + 0x4);
-
-        bool less = false;
-        if (mid_hi < key_hi) {
-            less = true;
-        } else if (mid_hi == key_hi) {
-            uint32_t mid_lo = mem_r32(mid_elem + 0x8);
-            less = (mid_lo < key_lo);
-        }
-
-        if (less) {
-            begin += static_cast<uint32_t>(half + 1) * 4;
-            count -= half + 1;
-        } else {
-            count = half;
-        }
-    }
-
-    return begin;
-}
-} // namespace lift_00670C50
 
 // [0x0067A670] sub_0067A670 (26 bytes)
 namespace lift_0067A670 {
@@ -1253,49 +900,6 @@ void* fn_00670FD0(void* self) {
 }
 } // namespace lift_00670FD0
 
-// [0x006767D0]
-namespace lift_006767D0 {
-// Known callee 0x00596660: Vector_erase_range (Erases a range [first, last) of 4-byte elements from a vector and returns the updated iterator.)
-extern void* ext_00596660(void* this_ptr, void* out_iter, uint32_t first_container, uint32_t first_ptr, uint32_t last_container, uint32_t last_ptr);
-
-// [0x006767D0] sub_006767D0 (86 bytes)
-// @name resetStringAndEraseVectorTail
-// @class Unknown
-// @summary Clears the string at +0x04, erases the vector range [+0x24, +0x28) of the vector at +0x20, and zeroes fields +0x00 and +0x30.
-// @field Unknown +0x00 uint32_t field_0x00
-// @field Unknown +0x04 std::string field_0x04
-// @field Unknown +0x20 void* field_0x20
-// @field Unknown +0x24 uint32_t field_0x24
-// @field Unknown +0x28 uint32_t field_0x28
-// @field Unknown +0x30 uint32_t field_0x30
-void fn_006767D0(void* self_) {
-    auto* self = static_cast<uint8_t*>(self_);
-    auto rd32 = [self](size_t off) {
-        uint32_t v;
-        std::memcpy(&v, self + off, sizeof v);
-        return v;
-    };
-    auto wr32 = [self](size_t off, uint32_t v) {
-        std::memcpy(self + off, &v, sizeof v);
-    };
-
-    reinterpret_cast<std::string*>(self + 0x04)->clear();
-
-    const uint32_t last = rd32(0x28);
-    const uint32_t first = rd32(0x24);
-    if (first > last) {
-        std::abort(); // was _invalid_parameter_noinfo
-    }
-
-    uint32_t out_iter[2] = {0, 0};
-    const uint32_t vec = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self + 0x20));
-    ext_00596660(self + 0x20, out_iter, vec, first, vec, last);
-
-    wr32(0x30, 0);
-    wr32(0x00, 0);
-}
-} // namespace lift_006767D0
-
 // [0x006753D0] sub_006753D0 (90 bytes)
 namespace lift_006753D0 {
 // @name sub_006753D0
@@ -1526,31 +1130,6 @@ extern void fn_00675240(OwnedPointerRange* owner, void** first, OwnedPointerRang
 } // namespace lift_004A5F70
 } // namespace lift_00675240
 
-// [0x00673C90]
-namespace lift_00673C90 {
-// Imported MSVCP80 std::string copy-constructor (thiscall, one stack arg).
-// Original IAT slot: mem_00924FE0.
-extern void ext_std_string_copy_ctor(void* dst, const void* src);
-
-// @name Unknown::CopyConstruct
-// @class Unknown
-// @summary Copy constructor: copy-constructs std::string members at +0x00 and +0x1C from src, copies 4-byte fields +0x38/+0x3C/+0x40, returns this.
-// @field Unknown +0x00 std::string field_0x00
-// @field Unknown +0x1C std::string field_0x1C
-// @field Unknown +0x38 uint32_t field_0x38
-// @field Unknown +0x3C uint32_t field_0x3C
-// @field Unknown +0x40 uint32_t field_0x40
-extern void* __fastcall fn_00673C90(void* self, int edx_unused, const void* src) {
-    (void)edx_unused;
-    ext_std_string_copy_ctor(static_cast<uint8_t*>(self) + 0x00, static_cast<const uint8_t*>(src) + 0x00);
-    ext_std_string_copy_ctor(static_cast<uint8_t*>(self) + 0x1C, static_cast<const uint8_t*>(src) + 0x1C);
-    lift_field<uint32_t>(self, 0x38) = lift_field<uint32_t>(src, 0x38);
-    lift_field<uint32_t>(self, 0x3C) = lift_field<uint32_t>(src, 0x3C);
-    lift_field<uint32_t>(self, 0x40) = lift_field<uint32_t>(src, 0x40);
-    return self;
-}
-} // namespace lift_00673C90
-
 // [0x00676710] sub_00676710 (102 bytes)
 namespace lift_00676710 {
 // Known callee 0x006616D0: Unknown::IsSameDwordPair (Returns 1 if both leading DWORDs of *this and *other match, else 0 (stdcall-style, one stack arg, ret 4).)
@@ -1633,48 +1212,6 @@ void fn_0067DBF0(float* self, float angle) {
 }
 } // namespace lift_0067DBF0
 
-// [0x0067F960] sub_0067F960 (104 bytes)
-namespace lift_0067F960 {
-// Global container bounds: begin/last pointers of a 4-byte-element array.
-extern uint32_t mem_00B5A120;  // begin
-extern uint32_t mem_00B5A124;  // end (also [mem_00B5A11C + 8])
-
-// Stands in for MSVCR80!_invalid_parameter_noinfo (terminates on violation).
-static void invalid_parameter_noinfo() {
-    std::abort();
-}
-
-// @name GetLastElementOrZero
-// @summary Returns the last 4-byte element of the global array, or 0 if empty; checked bounds.
-uint32_t fn_0067F960(void) {
-    const uint32_t begin = mem_00B5A120;
-    if (begin == 0) {
-        return 0;
-    }
-
-    const uint32_t end = mem_00B5A124;
-    const int32_t count = static_cast<int32_t>(end - begin) >> 2;
-    if (count == 0) {
-        return 0;
-    }
-
-    if (begin > end) {
-        invalid_parameter_noinfo();
-    }
-
-    const uint32_t last = end - 4;
-    if (last > end || last < begin) {
-        invalid_parameter_noinfo();
-    }
-
-    if (last >= end) {
-        invalid_parameter_noinfo();
-    }
-
-    return *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(last));
-}
-} // namespace lift_0067F960
-
 // [0x0067E110]
 namespace lift_0067E110 {
 // @name ExtractMat3x3FromRows
@@ -1697,65 +1234,6 @@ void* __thiscall fn_0067E110(const void* self, void* out) {
     return out;
 }
 } // namespace lift_0067E110
-
-// [0x00673C20] sub_00673C20 (108 bytes)
-namespace lift_00673C20 {
-// Import slot for the CRT invalid-parameter handler (MSVCR80 _invalid_parameter_noinfo).
-extern void ext_invalid_parameter_noinfo(void);
-
-// @name advanceTreeIterator
-// @summary Advances a red-black tree iterator to its in-order successor: goes to the leftmost node of the right subtree if one exists, otherwise climbs parents while the current node is a right child; reports an invalid parameter when the iterator is null or already at the end.
-// @field TreeIterator +0x00 void* field_0x00
-// @field TreeIterator +0x04 void* node
-// @field TreeNode +0x00 void* left
-// @field TreeNode +0x04 void* parent
-// @field TreeNode +0x08 void* right
-// @field TreeNode +0x2D uint8_t is_nil
-static inline bool isNilNode(const void* n) {
-    return lift_field<uint8_t>(n, 0x2D) != 0;
-}
-
-void fn_00673C20(void* self) {
-    if (lift_field<void*>(self, 0x00) == nullptr) {
-        ext_invalid_parameter_noinfo();
-    }
-
-    void* node = lift_field<void*>(self, 0x04);
-    if (isNilNode(node)) {
-        ext_invalid_parameter_noinfo();
-        return;
-    }
-
-    void* right = lift_field<void*>(node, 0x08);
-    if (!isNilNode(right)) {
-        // Successor is the leftmost node of the right subtree.
-        void* cur = right;
-        void* left = lift_field<void*>(cur, 0x00);
-        if (isNilNode(left)) {
-            lift_field<void*>(self, 0x04) = cur;
-            return;
-        }
-        cur = left;
-        for (;;) {
-            void* next = lift_field<void*>(cur, 0x00);
-            if (isNilNode(next)) {
-                break;
-            }
-            cur = next;
-        }
-        lift_field<void*>(self, 0x04) = cur;
-        return;
-    }
-
-    // No right subtree: climb while the current node is a right child.
-    void* p = lift_field<void*>(node, 0x04);
-    while (!isNilNode(p) && lift_field<void*>(self, 0x04) == lift_field<void*>(p, 0x08)) {
-        lift_field<void*>(self, 0x04) = p;
-        p = lift_field<void*>(p, 0x04);
-    }
-    lift_field<void*>(self, 0x04) = p;
-}
-} // namespace lift_00673C20
 
 // [0x0067B530]
 namespace lift_0067B530 {
@@ -1861,24 +1339,6 @@ void* fn_0067AB10(void* self) {
 }
 } // namespace lift_0046C3C0
 } // namespace lift_0067AB10
-
-// [0x0067F5B0]
-namespace lift_0067F5B0 {
-extern void ext_006A6DD2(void* pExceptionObject, const void* pThrowInfo);
-
-extern uint32_t mem_00924FE4;
-extern uint32_t mem_009251C4;
-extern uint32_t mem_00924FE0;
-
-// @name throw_std_exception_0067F5B0
-// @summary Constructs an exception with a message string and throws it via _CxxThrowException.
-[[noreturn]] void fn_0067F5B0() {
-    std::string msg(reinterpret_cast<const char*>(0x0092DB70));
-    std::runtime_error exc(msg);
-    ext_006A6DD2(&exc, reinterpret_cast<const void*>(0x009CE164));
-    __builtin_unreachable();
-}
-} // namespace lift_0067F5B0
 
 // [0x0067C450]
 namespace lift_0067C450 {

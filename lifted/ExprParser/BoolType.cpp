@@ -242,22 +242,6 @@ uint32_t __stdcall fn_0067A700(const uint32_t* first, uint32_t self) {
     return ext_00698ED0(self, value);
 }
 
-// [0x005B65E0]
-// @name ExprParser::BoolType::vfunc_5
-// @class ExprParser::BoolType
-// @summary Builds a local exception object via sub_0046C3C0, then throws it through _CxxThrowException.
-
-extern "C" void ext_0046C3C0(void* self);
-extern "C" void fn_006A6DD2(void);
-extern const uint32_t mem_009DEC1C;
-
-extern "C" void fn_005B65E0(void) {
-    alignas(8) uint8_t exc_obj[0x28];
-    ext_0046C3C0(exc_obj);
-    (void)&mem_009DEC1C;
-    fn_006A6DD2();
-}
-
 // [0x0067AA30]
 #include "lift_compat.h"
 

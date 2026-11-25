@@ -130,29 +130,6 @@ extern "C" void __thiscall fn_005C3AB0(void* self, const float* scale) {
     }
 }
 
-// [0x005C4020]
-// @name NMData::CollisionModelData::vfunc_33
-// @class NMData::CollisionModelData
-// @summary Assigns a string literal to the string member at +0x17C, clears the dword at +0x198, sets flags at +0x19C..+0x19E (true) and +0x19F (false), then calls the base-class vfunc_33.
-// @field NMData::CollisionModelData +0x17C std::string field_0x17c
-// @field NMData::CollisionModelData +0x198 uint32_t field_0x198
-// @field NMData::CollisionModelData +0x19C uint8_t field_0x19c
-// @field NMData::CollisionModelData +0x19D uint8_t field_0x19d
-// @field NMData::CollisionModelData +0x19E uint8_t field_0x19e
-// @field NMData::CollisionModelData +0x19F uint8_t field_0x19f
-void __thiscall fn_005C4020(void* self) {
-    {
-        std::string tmp(reinterpret_cast<const char*>(static_cast<uintptr_t>(0x00928B5D)));
-        lift_field<std::string>(self, 0x17C) = tmp;
-    }
-    lift_field<uint32_t>(self, 0x198) = 0;
-    lift_field<uint8_t>(self, 0x19C) = 1;
-    lift_field<uint8_t>(self, 0x19D) = 1;
-    lift_field<uint8_t>(self, 0x19E) = 1;
-    lift_field<uint8_t>(self, 0x19F) = 0;
-    ext_005C3660(self);
-}
-
 // [0x005C3B40]
 // @name NMData::CollisionModelData::vfunc_38
 // @class NMData::CollisionModelData
@@ -291,37 +268,3 @@ void __thiscall fn_005C38B0(void* self, uint32_t arg1) {
     std::memcpy(dst, src, 64);
 }
 } // namespace lift_005C38B0
-
-// [0x005C37E0]
-namespace lift_005C37E0 {
-extern void __fastcall ext_005B1B60(void* self, void* /*edx*/, const void* src);
-
-// @name NMData::CollisionModelData::vfunc_5_off_C
-// @class NMData::CollisionModelData
-// @summary Copies a 4-float vector into the subobject at +0x150 and forwards a 3-float vector (with w=0) to vfunc +0x34 on the subobject at +0x04.
-// @field NMData::CollisionModelData +0x04 void* field_0x04
-// @field NMData::CollisionModelData +0x150 void* field_0x150
-extern void __fastcall fn_005C37E0(void* self, void* /*edx*/, const float* vec) {
-    auto* bytes = static_cast<uint8_t*>(self);
-    void* sub150 = *reinterpret_cast<void**>(bytes + 0x150);
-    if (!sub150) {
-        return;
-    }
-
-    ext_005B1B60(sub150, nullptr, vec);
-
-    float localVec[4];
-    localVec[0] = vec[0];
-    localVec[1] = vec[1];
-    localVec[2] = vec[2];
-    localVec[3] = 0.0f;
-
-    void* sub04 = *reinterpret_cast<void**>(bytes + 0x04);
-    if (sub04) {
-        void** vtable = *reinterpret_cast<void***>(sub04);
-        using VFunc = void(__fastcall*)(void*, void*, const float*);
-        auto fn = reinterpret_cast<VFunc>(vtable[0x34 / 4]);
-        fn(sub04, nullptr, localVec);
-    }
-}
-} // namespace lift_005C37E0

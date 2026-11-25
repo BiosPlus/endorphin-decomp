@@ -30,43 +30,6 @@ static const uint8_t kTable_007B5224[16] = {
 };
 } // namespace lift_007B5224
 
-// [0x007B6094] sub_007B6094 (19 bytes)
-namespace lift_007B6094 {
-// @name dataTable_007B6094
-// @summary 19-byte constant byte table at 0x007B6094; not executable code (bytes do not decode to a coherent function)
-
-// The 19 bytes at 0x007B6094 are reproduced verbatim as data. They are not
-// executable: decoding them yields no valid control flow.
-static const uint8_t kDataTable_007B6094[19] = {
-    0x00, 0x04, 0x01,
-    0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04,
-    0x04, 0x04, 0x04, 0x04, 0x04, 0x04,
-    0x02, 0x03, 0x03,
-};
-} // namespace lift_007B6094
-
-// [0x007B617C] sub_007B617C (20 bytes)
-namespace lift_007B617C {
-// @name DataBytes_007B617C
-// @summary Non-executing 20-byte data block (byte-value table 0x00-0x04); no observable logic.
-// Note: disassembly decodes as add/lea pairs with no control flow, consistent with table data rather than code.
-void fn_007B617C(void* self) {
-    (void)self;
-}
-} // namespace lift_007B617C
-
-// [0x007B04A8] sub_007B04A8 (24 bytes)
-namespace lift_007B04A8 {
-// @name dataTable_007B04A8
-// @class (none)
-// @summary Static 12-byte lookup table (00 01 04 04 04 04 04 04 02 04 04 03) followed by 12 bytes of 0x90 padding; not executable code.
-// @field none (no class fields accessed)
-static const uint8_t kTable_007B04A8[12] = {
-    0x00, 0x01, 0x04, 0x04, 0x04, 0x04,
-    0x04, 0x04, 0x02, 0x04, 0x04, 0x03,
-};
-} // namespace lift_007B04A8
-
 // [0x007B8A48]
 namespace lift_007B8A48 {
 // @name dataTable_007B8A48
@@ -115,32 +78,6 @@ void fn_007B0680(void* self, uint32_t a2) {
 }
 } // namespace lift_007B0680
 
-// [0x007B9050] sub_007B9050 (32 bytes)
-namespace lift_007B9050 {
-extern uint32_t mem_00B61DB8;
-
-// @name FindNodeByWordKey
-// @summary Walks the linked list headed by global mem_00B61DB8 and returns the first node whose leading 16-bit key equals the argument, or NULL.
-// @field Unknown +0x00 uint16_t field_00
-// @field Unknown +0x14 void* field_14
-uint32_t fn_007B9050(uint16_t key) {
-    // [0x007B9050] eax = head; while (eax && *(uint16_t*)eax != key) eax = eax->next;
-    uintptr_t node = static_cast<uintptr_t>(mem_00B61DB8);
-    while (node != 0) {
-        const uint8_t* p = reinterpret_cast<const uint8_t*>(node);
-        uint16_t k;
-        std::memcpy(&k, p, sizeof(k));
-        if (k == key) {
-            break;
-        }
-        uint32_t next;
-        std::memcpy(&next, p + 0x14, sizeof(next));
-        node = next;
-    }
-    return static_cast<uint32_t>(node);
-}
-} // namespace lift_007B9050
-
 // [0x007BDA20]
 namespace lift_007BDA20 {
 extern BYTE mem_007BDA50[];
@@ -158,37 +95,6 @@ int sub_007BDA20(BYTE* self) {
     return 1;
 }
 } // namespace lift_007BDA20
-
-// [0x007B50EC] sub_007B50EC (36 bytes)
-namespace lift_007B50EC {
-// @name dataTable_007B50EC
-// @summary 36-byte constant table (not executable code); bytes mostly 0x04 with 0x01/0x02/0x03 entries and a 0x8D 0x49 0x00 tail
-// Bytes as dumped: 00 04 04 04 04 04 04 04 01 02 04 04 04 04 04 04 04 03 8D 49 00 (+ padding to 36)
-// The disassembly decodes to nonsense x86 (add [esp+eax],al ...), so this is data embedded in .text.
-// Lifted as a byte table instead of a function body.
-extern const unsigned char dataTable_007B50EC[36];
-} // namespace lift_007B50EC
-
-// [0x007BD310]
-namespace lift_007BD310 {
-uint16_t mem_read16(uint32_t addr);
-void mem_write16(uint32_t addr, uint16_t val);
-
-// @name initField40And4E
-// @summary Sets +0x40 to 0x10, +0x42 to 2, and +0x4e to 1 if +0x46 == 0x804c else 3.
-// @field struct +0x40 uint16_t field_0x40
-// @field struct +0x42 uint16_t field_0x42
-// @field struct +0x46 uint16_t field_0x46
-// @field struct +0x4e uint16_t field_0x4e
-uint32_t sub_007BD310(uint32_t a1) {
-    uint16_t val46 = mem_read16(a1 + 0x46);
-    mem_write16(a1 + 0x40, 0x10);
-    mem_write16(a1 + 0x42, 0x2);
-    uint16_t val4e = (val46 == 0x804c) ? 1 : 3;
-    mem_write16(a1 + 0x4e, val4e);
-    return a1;
-}
-} // namespace lift_007BD310
 
 // [0x007B7044]
 namespace lift_007B7044 {
@@ -214,24 +120,6 @@ uint32_t sub_007B7044(uint32_t eax, uint32_t ebx, uint32_t ecx, uint32_t edx) {
     return eax;
 }
 } // namespace lift_007B7044
-
-// [0x007BFC60]
-namespace lift_007BFC60 {
-// @name sub_007BFC60
-// @summary Dispatches two virtual/table callbacks via *(arg1 + 0x1cc) at offsets +0xc and +0x10
-// @field Arg1 +0x1cc uint32_t field_0x1cc
-
-
-extern uint32_t mem_read32(uint32_t addr);
-
-uint32_t sub_007BFC60(uint32_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) {
-    uint32_t vtable = mem_read32(arg1 + 0x1cc);
-    using fn3_t = void (*)(uint32_t, uint32_t, uint32_t);
-    using fn4_t = uint32_t (*)(uint32_t, uint32_t, uint32_t, uint32_t);
-    reinterpret_cast<fn3_t>(mem_read32(vtable + 0xc))(arg1, arg2, arg3);
-    return reinterpret_cast<fn4_t>(mem_read32(vtable + 0x10))(arg1, arg2, arg3, arg4);
-}
-} // namespace lift_007BFC60
 
 // [0x007B1FA0] sub_007B1FA0 (22 bytes)
 namespace lift_007B1FA0 {
@@ -712,31 +600,6 @@ uint32_t fn_007BE010(uint8_t* self) {
 }
 } // namespace lift_007BE010
 
-// [0x007BF9C0]
-namespace lift_007BF9C0 {
-// @name testAndUpdateField1CC
-// @summary Calls vtable+0x10(self, a2, a3, a4); if non-zero, calls vtable+0x0C(self, a2, a3) and returns 1, else 0.
-// @field Obj +0x1CC uint32_t field_0x1CC
-
-
-extern uint32_t mem_read32(uint32_t addr);
-
-uint32_t sub_007BF9C0(uint32_t self, uint32_t a2, uint32_t a3, uint32_t a4) {
-    uint32_t vtbl = mem_read32(self + 0x1CC);
-    using fn_check_t = uint32_t (*)(uint32_t, uint32_t, uint32_t, uint32_t);
-    using fn_action_t = void (*)(uint32_t, uint32_t, uint32_t);
-
-    auto fn_check = reinterpret_cast<fn_check_t>(static_cast<uintptr_t>(mem_read32(vtbl + 0x10)));
-    if (fn_check(self, a2, a3, a4) == 0) {
-        return 0;
-    }
-
-    auto fn_action = reinterpret_cast<fn_action_t>(static_cast<uintptr_t>(mem_read32(vtbl + 0x0C)));
-    fn_action(self, a2, a3);
-    return 1;
-}
-} // namespace lift_007BF9C0
-
 // [0x007BBBE0]
 namespace lift_007BBBE0 {
 // @name UnknownClass::processRows
@@ -762,38 +625,6 @@ uint32_t fn_007BBBE0(uint8_t* self, uint8_t* base, uint32_t remaining, uint32_t 
     return 1;
 }
 } // namespace lift_007BBBE0
-
-// [0x007BBB40] sub_007BBB40 (70 bytes)
-namespace lift_007BBB40 {
-// Known callee 0x00798840: UnknownClass::computeRowByteSize (lifted, defined in lifted/leaf/decompiled_790000.cpp).
-uint32_t fn_00798840(uint8_t* self);
-
-// @name IterateRowRange
-// @class UnknownClass
-// @summary Invokes the callback stored at self +0x1A0 once per row-sized step over [start, start+count); returns 1 on success (or count == 0), 0 if the callback reports failure.
-// @field UnknownClass +0x1A0 <uint32_t (*)(uint8_t*, uint32_t, uint32_t, uint32_t)> field_0x1A0
-uint32_t fn_007BBB40(uint8_t* self, uint32_t start, uint32_t count, uint32_t arg4) {
-    using RowCallback = uint32_t (*)(uint8_t*, uint32_t, uint32_t, uint32_t);
-
-    const uint32_t rowBytes = fn_00798840(self);
-    if (count == 0) {
-        return 1;
-    }
-
-    uint32_t cur = start;
-    uint32_t remaining = count;
-    do {
-        const RowCallback cb = lift_field<RowCallback>(self, 0x1A0);
-        if (cb(self, cur, rowBytes, arg4) == 0) {
-            return 0;
-        }
-        cur += rowBytes;
-        remaining -= rowBytes;
-    } while (remaining != 0);
-
-    return 1;
-}
-} // namespace lift_007BBB40
 
 // [0x007BBC30]
 namespace lift_007BBC30 {
@@ -960,33 +791,6 @@ const uint8_t* fn_007B6F5C(void* self) {
     return sub_007B6F5C_table;
 }
 } // namespace lift_007B6F5C
-
-// [0x007B89BC] sub_007B89BC (80 bytes)
-namespace lift_007B89BC {
-// @name Data_007B89BC_ByteTable
-// @summary 80-byte constant table of small values (0-3) at 0x007B89BC; not executable code
-// @field none
-
-// Raw bytes at 0x007B89BC; disassembly of this region is meaningless (no instruction structure).
-// Index = address - 0x007B89BC. Non-0x03 entries: [0]=00, [16]=01, [17]=01, [32]=02, [48]=01, [64]=01.
-inline constexpr uint8_t kData_007B89BC_ByteTable[80] = {
-    0x00, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03,
-    0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03,
-    0x01, 0x01, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03,
-    0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03,
-    0x02, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03,
-    0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03,
-    0x01, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03,
-    0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03,
-    0x01, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03,
-    0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03,
-};
-
-void fn_007B89BC(void* self) {
-    (void)self;
-    // No code to execute: this address holds data, not a function body.
-}
-} // namespace lift_007B89BC
 
 // [0x007B8D80]
 namespace lift_007B8D80 {
@@ -1309,38 +1113,6 @@ int32_t fn_007B1920(const char* mode, uint32_t a2) {
 }
 } // namespace lift_007B1920
 
-// [0x007B8BB0]
-namespace lift_007B8BB0 {
-// @name freeLinkedList_007B8BB0
-// @summary Frees all nodes and their owned buffers in the linked list rooted at mem_00B61DB8.
-
-extern uintptr_t mem_00B61DB8;
-
-void sub_007B8BB0()
-{
-    uintptr_t node = mem_00B61DB8;
-    while (node != 0)
-    {
-        uintptr_t ptr8 = *reinterpret_cast<uintptr_t*>(node + 0x8);
-        if (ptr8 != 0)
-        {
-            std::free(reinterpret_cast<void*>(ptr8));
-        }
-
-        uintptr_t ptrC = *reinterpret_cast<uintptr_t*>(node + 0xC);
-        if (ptrC != 0)
-        {
-            std::free(reinterpret_cast<void*>(ptrC));
-        }
-
-        uintptr_t next = *reinterpret_cast<uintptr_t*>(node + 0x14);
-        std::free(reinterpret_cast<void*>(node));
-        node = next;
-    }
-    mem_00B61DB8 = 0;
-}
-} // namespace lift_007B8BB0
-
 // [0x007B7A30]
 namespace lift_007B7A30 {
 extern void ext_007B7720(uint32_t ch);
@@ -1368,40 +1140,6 @@ void sub_007B7A30(const char* str, uint32_t max_len) {
     }
 }
 } // namespace lift_007B7A30
-
-// [0x007BC4F0]
-namespace lift_007BC4F0 {
-// @name classifyPackedFields
-// @summary Classifies three 16-bit fields at +0x28, +0x36, and +0x2a into a status code
-// @field obj +0x28 uint16_t field_0x28
-// @field obj +0x2a uint16_t field_0x2a
-// @field obj +0x36 uint16_t field_0x36
-
-
-uint16_t mem_read16(uint32_t addr);
-
-int32_t __cdecl sub_007BC4F0(uint32_t obj) {
-    uint32_t f28 = mem_read16(obj + 0x28);
-    uint32_t f36 = mem_read16(obj + 0x36);
-    uint32_t f2a = mem_read16(obj + 0x2a);
-
-    int32_t key = static_cast<int32_t>((((f28 << 3) | f36) << 3) | f2a);
-
-    switch (key) {
-        case 0x209:
-        case 0x20c:
-            return 3;
-        case 0x409:
-        case 0x40a:
-        case 0x40c:
-            return 1;
-        case 0x80b:
-            return 0;
-        default:
-            return -1;
-    }
-}
-} // namespace lift_007BC4F0
 
 // [0x007BF430] sub_007BF430 (107 bytes)
 namespace lift_007BF430 {
@@ -1479,54 +1217,6 @@ void fn_007BC160(const SampleLog16Source* arg0, std::uint8_t* out, std::int32_t 
 }
 } // namespace lift_007BC160
 
-// [0x007B5074]
-namespace lift_007B5074 {
-// @name sub_007B5074
-// @summary Data table or unreferenced stub at 0x007B5074
-
-void sub_007B5074(void) {
-}
-} // namespace lift_007B5074
-
-// [0x007BFD80] sub_007BFD80 (110 bytes)
-namespace lift_007BFD80 {
-// @name Unknown::debugDumpAndForward_007BFD80
-// @class Unknown
-// @summary If flag bit 31 is set, writes a debug dump of the sub-object's counter to a stream; then forwards to the sub-object's callback at +0x24.
-// @field Unknown +0x1C DWORD flags
-// @field Unknown +0x1CC BYTE* subObject
-// Sub-object (pointer at self+0x1CC) accessed offsets:
-//   +0x00 DWORD counter   (read as DWORD; value 1 and 2 select label strings)
-//   +0x24 void (*callback)(void* self, FILE* stream, DWORD arg3)
-
-using DebugCallback = void(__cdecl*)(void* self, FILE* stream, DWORD arg3);
-
-void __cdecl fn_007BFD80(void* self, FILE* stream, DWORD arg3) {
-    BYTE* obj = reinterpret_cast<BYTE*>(self);
-    DWORD flags = *reinterpret_cast<DWORD*>(obj + 0x1C);
-    BYTE* sub = *reinterpret_cast<BYTE**>(obj + 0x1CC);
-
-    if (flags & 0x80000000u) {
-        std::fprintf(stream, reinterpret_cast<const char*>(0x00AB261Cu));
-
-        DWORD counter = *reinterpret_cast<DWORD*>(sub);
-        if (counter == 1) {
-            std::fprintf(stream, reinterpret_cast<const char*>(0x00AB25F8u));
-        } else if (counter == 2) {
-            std::fprintf(stream, reinterpret_cast<const char*>(0x00AB2600u));
-        }
-
-        counter = *reinterpret_cast<DWORD*>(sub);
-        std::fprintf(stream, reinterpret_cast<const char*>(0x00AB25ECu), counter, counter);
-    }
-
-    DebugCallback callback = *reinterpret_cast<DebugCallback*>(sub + 0x24);
-    if (callback) {
-        callback(self, stream, arg3);
-    }
-}
-} // namespace lift_007BFD80
-
 // [0x007B06A0] sub_007B06A0 (80 bytes)
 namespace lift_007B06A0 {
 // Known callee 0x007AF5E0: LookupEntryByKeyWithFallback (Looks up a cached entry by (a1, a2) with key2 = 0; if not found, dispatches a fallback hook with a2 and returns the (null) result.)
@@ -1550,162 +1240,6 @@ uint32_t fn_007B06A0(void* a1, void* a2, uint32_t a3) {
     return 0;
 }
 } // namespace lift_007B06A0
-
-// [0x007BC630]
-namespace lift_007BC630 {
-// @name mapFieldPairAndValidate
-// @summary Maps two 16-bit fields via a lookup table and filters by a third 16-bit field
-// @field Obj +0x28 uint16_t field_0x28
-// @field Obj +0x2a uint16_t field_0x2a
-// @field Obj +0x36 uint16_t field_0x36
-
-
-extern uint8_t mem_read8(uint32_t addr);
-extern uint16_t mem_read16(uint32_t addr);
-extern uint32_t mem_read32(uint32_t addr);
-
-uint32_t sub_007BC630(uint32_t arg0) {
-    uint32_t f28 = mem_read16(arg0 + 0x28u);
-    uint32_t f2a = mem_read16(arg0 + 0x2Au);
-    uint32_t key = ((f28 << 3) | f2a) - 0x41u;
-
-    uint32_t res = 0xFFFFFFFFu;
-    if (key <= 0xC3u) {
-        uint32_t idx = mem_read8(0x007BC6B0u + key);
-        uint32_t target = mem_read32(0x007BC69Cu + 4u * idx);
-        if (target == 0x007BC65Eu) {
-            res = 0u;
-        } else if (target == 0x007BC662u) {
-            res = 2u;
-        } else if (target == 0x007BC669u) {
-            res = 1u;
-        } else if (target == 0x007BC670u) {
-            res = 3u;
-        }
-    }
-
-    uint32_t f36 = mem_read16(arg0 + 0x36u);
-    if (f36 == 1u) {
-        return (res == 2u) ? res : 0xFFFFFFFFu;
-    }
-    if (f36 == 3u) {
-        return (res != 2u) ? res : 0xFFFFFFFFu;
-    }
-    return 0xFFFFFFFFu;
-}
-} // namespace lift_007BC630
-
-// [0x007B3120]
-namespace lift_007B3120 {
-// @name freePointerTable
-// @summary Frees a pointer-pair table, its entry pointers, and clears the table pointer
-// @field Table +0x00 uint32_t count
-// @field Table +0x04 uint32_t entries
-void __cdecl sub_007B3120(uint32_t* pTablePtr) {
-    if (!pTablePtr) {
-        return;
-    }
-
-    uint32_t table = *pTablePtr;
-    if (!table) {
-        return;
-    }
-
-    uint32_t entries = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(table) + 4);
-    if (entries != 0) {
-        uint32_t count = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(table));
-        for (uint32_t i = 0; i < count; ++i) {
-            uint32_t curTable = *pTablePtr;
-            uint32_t curEntries = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(curTable) + 4);
-            uint32_t itemPtr = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(curEntries) + static_cast<uintptr_t>(i) * 8);
-            std::free(reinterpret_cast<void*>(static_cast<uintptr_t>(itemPtr)));
-
-            curTable = *pTablePtr;
-            curEntries = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(curTable) + 4);
-            *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(curEntries) + static_cast<uintptr_t>(i) * 8 + 4) = 0;
-
-            table = *pTablePtr;
-            count = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(table));
-        }
-
-        uint32_t curTable = *pTablePtr;
-        uint32_t curEntries = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(curTable) + 4);
-        std::free(reinterpret_cast<void*>(static_cast<uintptr_t>(curEntries)));
-    }
-
-    std::free(reinterpret_cast<void*>(static_cast<uintptr_t>(*pTablePtr)));
-    *pTablePtr = 0;
-}
-} // namespace lift_007B3120
-
-// [0x007BA200]
-namespace lift_007BA200 {
-uint16_t mem_read16(uint32_t addr);
-uint32_t mem_read32(uint32_t addr);
-void mem_write16(uint32_t addr, uint16_t val);
-void mem_write32(uint32_t addr, uint32_t val);
-
-// @name tiff_set_ifd_short_or_long
-// @summary Populates a TIFF IFD entry with a 16-bit or 32-bit value, applying byte-order mask/shift for 16-bit values.
-// @field arg0 +0x150 uint16_t byte_order
-// @field arg0 +0x15c uint32_t* shift_info
-// @field arg0 +0x160 uint32_t* mask_info
-// @field arg2 +0x00 uint16_t tag
-// @field arg2 +0x02 uint16_t type
-// @field arg2 +0x04 uint32_t count
-// @field arg2 +0x08 uint32_t value_or_offset
-void sub_007BA200(uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
-    mem_write16(arg2 + 0x0, static_cast<uint16_t>(arg1));
-    mem_write32(arg2 + 0x4, 1);
-
-    if (arg3 > 0xffffu) {
-        mem_write32(arg2 + 0x8, arg3);
-        mem_write16(arg2 + 0x2, 4);
-        return;
-    }
-
-    mem_write16(arg2 + 0x2, 3);
-    uint32_t mask_ptr = mem_read32(arg0 + 0x160);
-    uint32_t val = mem_read32(mask_ptr + 0xc) & arg3;
-
-    if (mem_read16(arg0 + 0x150) == 0x4d4du) {
-        uint32_t shift_ptr = mem_read32(arg0 + 0x15c);
-        uint32_t shift = mem_read32(shift_ptr + 0xc);
-        val <<= (shift & 0x1fu);
-    }
-
-    mem_write32(arg2 + 0x8, val);
-}
-} // namespace lift_007BA200
-
-// [0x007B0FC0]
-namespace lift_007B0FC0 {
-// @name readTiffFieldFloat
-// @summary Reads a masked (and shifted if big-endian 'MM') 32-bit field value and returns it as a float.
-// @field TiffReader +0x150 uint16_t endianMagic
-// @field TiffReader +0x15c uint32_t* shiftTable
-// @field TiffReader +0x160 uint32_t* maskTable
-// @field TiffEntry +0x02 uint16_t typeIndex
-// @field TiffEntry +0x08 uint32_t rawValue
-
-
-uint16_t mem_r16(uint32_t addr);
-uint32_t mem_r32(uint32_t addr);
-
-float sub_007B0FC0(uint32_t reader, uint32_t entry) {
-    uint32_t idx = mem_r16(entry + 0x2);
-    uint32_t val = mem_r32(entry + 0x8);
-    uint32_t mask = mem_r32(mem_r32(reader + 0x160) + idx * 4);
-
-    if (mem_r16(reader + 0x150) == 0x4d4d) {
-        uint32_t shift = mem_r32(mem_r32(reader + 0x15c) + idx * 4);
-        val >>= (shift & 0x1f);
-    }
-
-    uint32_t result = val & mask;
-    return std::bit_cast<float>(result);
-}
-} // namespace lift_007B0FC0
 
 // [0x007BF930]
 namespace lift_007BF930 {

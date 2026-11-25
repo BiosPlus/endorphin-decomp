@@ -78,20 +78,6 @@ extern "C" void __fastcall fn_0068BBF0(void* self) {
     ext_00508680(static_cast<char*>(self) + 0x10);
 }
 
-// [0x006872C0]
-namespace lift_006872C0 {
-uint32_t mem_read32(uint32_t addr);
-uint8_t mem_read8(uint32_t addr);
-
-// @name getTableFlagAt0x48
-// @summary Reads a 32-bit index at +0x48 and returns the byte at 0x00AA2FAC + index.
-// @field Self +0x48 uint32_t field_0x48
-uint8_t sub_006872C0(uint32_t self) {
-    uint32_t idx = mem_read32(self + 0x48u);
-    return mem_read8(idx + 0x00AA2FACu);
-}
-} // namespace lift_006872C0
-
 // [0x006829D0]
 namespace lift_006829D0 {
 extern uint32_t mem_00B5ACC8;
@@ -103,21 +89,6 @@ void sub_006829D0(uint32_t val) {
     mem_00B5ACC8 = val;
 }
 } // namespace lift_006829D0
-
-// [0x006872D0]
-namespace lift_006872D0 {
-extern uint32_t mem_read32(uint32_t addr);
-extern uint8_t mem_read8(uint32_t addr);
-
-// @name sub_006872D0
-// @summary Reads a byte from a table at 0x00AA2FC8 indexed by the 32-bit field at offset 0x48.
-// @field unknown +0x48 uint32_t field_0x48
-
-uint8_t __thiscall sub_006872D0(uint32_t self) {
-    uint32_t index = mem_read32(self + 0x48);
-    return mem_read8(index + 0x00AA2FC8);
-}
-} // namespace lift_006872D0
 
 // [0x00687250] sub_00687250 (13 bytes)
 namespace lift_00687250 {
@@ -248,19 +219,3 @@ void fn_00687230(void* self) {
     lift_field<uint8_t>(self, 0xB0) = 1;
 }
 } // namespace lift_00687230
-
-// [0x00687260] sub_00687260 (30 bytes)
-namespace lift_00687260 {
-extern int mem_00924FDC;
-extern void* ext_MSVCP80_basic_string_assign(void* dst, const void* src);
-
-// @name ConditionalStringAssignIfMaskClear
-// @summary If (self->field_0x150 & mask) == 0, assign string arg1 into string arg2 (std::string::operator=); otherwise no-op. Callee-cleans 12 bytes.
-// @field Unknown +0x150 uint32_t field_0x150
-void fn_00687260(void* self, void* arg1, void* arg2, uint32_t mask) {
-    const uint32_t flags = *reinterpret_cast<const uint32_t*>(static_cast<const char*>(self) + 0x150);
-    if ((flags & mask) == 0) {
-        ext_MSVCP80_basic_string_assign(arg2, arg1);
-    }
-}
-} // namespace lift_00687260

@@ -8,7 +8,7 @@
 // Recovered field layout for ListFindResult:
 namespace lifted_layout {
 struct ListFindResult_Fields {
-    // +0x0   DWORD                    first  (evidence: 0x00495AB0, 0x0049B170, 0x0049DBA0)
-    // +0x4   void*                    node  (evidence: 0x00495AB0, 0x0049B170, 0x0049DBA0)
+    // +0x0   DWORD                    first  (evidence: 0x0049DBA0)
+    // +0x4   void*                    node  (evidence: 0x0049DBA0)
 };
 } // namespace lifted_layout

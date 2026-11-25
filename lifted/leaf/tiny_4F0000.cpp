@@ -74,24 +74,6 @@ extern "C" void __fastcall fn_004FFF60(void* self) {
     ext_00515B70(delegate_obj);
 }
 
-// [0x004FD800]
-namespace lift_004FD800 {
-// @name StringBuffer::clear
-// @class StringBuffer
-// @summary Clears the string buffer by writing a null terminator at the start of its data pointer.
-// @field StringBuffer +0x00 uint32_t data
-
-
-uint32_t mem_read32(uint32_t addr);
-void mem_write8(uint32_t addr, uint8_t val);
-
-void __fastcall sub_004FD800(uint32_t ecx, uint32_t edx)
-{
-    uint32_t ptr = mem_read32(ecx);
-    mem_write8(ptr, 0);
-}
-} // namespace lift_004FD800
-
 // [0x004FDC80] sub_004FDC80 (21 bytes)
 namespace lift_004FDC80 {
 // @name Unknown::ForwardFloatToSubobjectSlot1

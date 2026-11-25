@@ -1181,13 +1181,6 @@ extern "C" void __fastcall fn_006CD310(void* self, int edx_unused, int32_t value
     lift_field<int32_t>(self, 0x40) = value;
 }
 
-// [0x006CD320] sub_006CD320 (16 bytes)
-// @name sub_006CD320
-// @summary Getter returning int32_t field at offset +0x40.
-extern "C" int32_t __fastcall fn_006CD320(void* self) {
-    return static_cast<int32_t>(lift_field<int32_t>(self, 0x40));
-}
-
 // [0x006C03F0] sub_006C03F0 (17 bytes)
 // @name sub_006C03F0
 // @summary Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).

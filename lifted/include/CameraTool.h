@@ -10,17 +10,9 @@
 // Recovered field layout for CameraTool:
 namespace lifted_layout {
 struct CameraTool_Fields {
-    // +0x0   void*                    vtable  (evidence: 0x0041B2F0, 0x00535610, 0x00540100, 0x00540110, 0x005433F0, 0x00545630, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
+    // +0x0   void*                    vtable  (evidence: 0x0041B2F0, 0x00535610, 0x00540100, 0x00540110, 0x00545B80, 0x005FF1C0)
     // +0x4   uint8_t[64]              field_0x04  (evidence: 0x00543470)
-    // +0x34  float                    field_0x34  (evidence: 0x005433F0)
-    // +0x38  float                    field_0x38  (evidence: 0x005433F0)
-    // +0x3C  float                    field_0x3c  (evidence: 0x005433F0)
-    // +0x40  float                    field_0x40  (evidence: 0x005433F0)
     // +0x44  uint8_t[64]              field_0x44  (evidence: 0x00543470)
-    // +0x74  float                    field_0x74  (evidence: 0x005433F0)
-    // +0x78  float                    field_0x78  (evidence: 0x005433F0)
-    // +0x7C  float                    field_0x7c  (evidence: 0x005433F0)
-    // +0x80  float                    field_0x80  (evidence: 0x005433F0)
-    // +0x88  void*                    field_0x88  (evidence: 0x005433F0, 0x00543470)
+    // +0x88  void*                    field_0x88  (evidence: 0x00543470)
 };
 } // namespace lifted_layout

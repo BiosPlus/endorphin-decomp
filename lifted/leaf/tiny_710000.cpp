@@ -1525,23 +1525,6 @@ extern void fn_00714560(void) {
 } // namespace lift_007AE0A0
 } // namespace lift_00714560
 
-// [0x007101E0]
-namespace lift_007101E0 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name forwardVtableSlot4
-// @summary Tail-calls vtable slot 4 (+0x10) on the subobject at this+0xf4.
-// @field Class +0xf4 uint32_t field_0xf4
-
-void __fastcall sub_007101E0(uint32_t ecx, uint32_t edx) {
-    (void)edx;
-    uint32_t obj = mem_read32(ecx + 0xf4);
-    uint32_t vtable = mem_read32(obj);
-    uint32_t fn = mem_read32(vtable + 0x10);
-    reinterpret_cast<void(__fastcall *)(uint32_t, uint32_t)>(static_cast<uintptr_t>(fn))(obj, edx);
-}
-} // namespace lift_007101E0
-
 // [0x00715560] sub_00715560 (16 bytes)
 namespace lift_00715560 {
 // @name sub_00715560
@@ -2575,67 +2558,6 @@ void* fn_0071F060(void* ecx) {
 } // namespace lift_006F8AC0
 } // namespace lift_0071F060
 
-// [0x0071B910]
-namespace lift_0071B910 {
-extern uint32_t mem_read32(uint32_t addr);
-extern uint8_t mem_read8(uint32_t addr);
-
-// @name sub_0071B910
-// @summary Reads a byte flag at offset 0x1168 from the object pointer at this+0xC.
-// @field Self +0x0C uint32_t field_0x0C
-// @field Inner +0x1168 uint8_t field_0x1168
-uint8_t sub_0071B910(uint32_t self) {
-    uint32_t ptr = mem_read32(self + 0xC);
-    return mem_read8(ptr + 0x1168);
-}
-} // namespace lift_0071B910
-
-// [0x00715660]
-namespace lift_00715660 {
-// @name sub_00715660
-// @summary Reads a byte at offset 0x310 from the object pointed to by this+0x10.
-// @field Unknown +0x10 uint32_t field_0x10
-
-
-extern uint32_t mem_read32(uint32_t addr);
-extern uint8_t mem_read8(uintptr_t addr);
-
-uint8_t __thiscall sub_00715660(uint32_t self) {
-    uint32_t ptr = mem_read32(self + 0x10);
-    return mem_read8(ptr + 0x310);
-}
-} // namespace lift_00715660
-
-// [0x0071C3A0]
-namespace lift_0071C3A0 {
-// @name sub_0071C3A0
-// @summary Reads a byte flag at offset 0x15A8 from the object pointed to by this+0xC.
-// @field unknown +0x0C uint32_t field_0xC
-// @field unknown +0x15A8 uint8_t field_0x15A8
-
-extern uint32_t mem_read32(uint32_t addr);
-extern uint8_t mem_read8(uint32_t addr);
-
-uint8_t __fastcall sub_0071C3A0(uint32_t self) {
-    uint32_t obj = mem_read32(self + 0xC);
-    return mem_read8(obj + 0x15A8);
-}
-} // namespace lift_0071C3A0
-
-// [0x0071C4E0]
-namespace lift_0071C4E0 {
-extern uint32_t mem_r32(uintptr_t addr);
-extern uint8_t mem_r8(uintptr_t addr);
-
-// @name get_field_0x10e0
-// @summary Reads a byte at offset 0x10e0 from the object pointed to by field_0x0c.
-// @field Self +0x0c uint32_t field_0x0c
-uint8_t __thiscall sub_0071C4E0(uintptr_t ecx) {
-    uint32_t eax = mem_r32(ecx + 0xc);
-    return mem_r8(eax + 0x10e0);
-}
-} // namespace lift_0071C4E0
-
 // [0x0071F100]
 namespace lift_0071F100 {
 // @name zeroTwoDwords
@@ -2655,23 +2577,6 @@ Unknown* zeroTwoDwords(Unknown* self) {
     return self;
 }
 } // namespace lift_0071F100
-
-// [0x0071C530]
-namespace lift_0071C530 {
-// @name getIndirectByte_0x970
-// @summary Reads a byte at offset 0x970 from the object pointed to by this+0x0c.
-// @field Self +0x0C uint32_t field_0x0c
-
-
-extern uint32_t mem_read32(uint32_t addr);
-extern uint8_t mem_read8(uint32_t addr);
-
-uint8_t __fastcall sub_0071C530(uint32_t ecx, uint32_t edx) {
-    (void)edx;
-    uint32_t ptr = mem_read32(ecx + 0x0Cu);
-    return mem_read8(ptr + 0x970u);
-}
-} // namespace lift_0071C530
 
 // [0x0071C520]
 namespace lift_0071C520 {
@@ -2707,65 +2612,6 @@ uint8_t __thiscall fn_0071C970(uint8_t* self) {
     return inner[0x1960];
 }
 } // namespace lift_0071C970
-
-// [0x0071C560]
-namespace lift_0071C560 {
-extern uint32_t mem_read32(uintptr_t addr);
-extern uint8_t mem_read8(uintptr_t addr);
-
-// @name getField0x7d8
-// @summary Reads a byte at offset 0x7d8 from the pointer stored at this+0x0c
-// @field Self +0x0c uint32_t field_0x0c
-uint8_t __thiscall sub_0071C560(void* self) {
-    uint32_t ptr = mem_read32(reinterpret_cast<uintptr_t>(self) + 0x0c);
-    return mem_read8(static_cast<uintptr_t>(ptr) + 0x7d8);
-}
-} // namespace lift_0071C560
-
-// [0x0071C500]
-namespace lift_0071C500 {
-uint32_t mem_r32(uint32_t addr);
-uint8_t mem_r8(uint32_t addr);
-
-// @name getField0xEC0FromField0x0C
-// @summary Reads a byte at offset 0xEC0 from the pointer stored at this+0x0C.
-// @field Object +0x0C uint32_t field_0x0C
-uint8_t __fastcall sub_0071C500(uint32_t self) {
-    uint32_t ptr = mem_r32(self + 0x0C);
-    return mem_r8(ptr + 0x0EC0);
-}
-} // namespace lift_0071C500
-
-// [0x0071C5A0]
-namespace lift_0071C5A0 {
-// @name sub_0071C5A0
-// @summary Reads a byte at offset 0x9f8 from the object pointed to by this->field_0xc.
-// @field Class +0xc uint32_t field_0xc
-
-
-extern uint32_t mem_read32(uint32_t addr);
-extern uint8_t mem_read8(uint32_t addr);
-
-extern uint8_t __thiscall sub_0071C5A0(uint32_t ecx) {
-    uint32_t obj = mem_read32(ecx + 0xc);
-    return mem_read8(obj + 0x9f8);
-}
-} // namespace lift_0071C5A0
-
-// [0x0071C5C0]
-namespace lift_0071C5C0 {
-extern uint32_t mem_read32(uint32_t addr);
-extern uint8_t mem_read8(uint32_t addr);
-
-// @name get_field_0x1630_via_0x0c
-// @summary Reads byte at offset 0x1630 from the object pointed to by this+0x0c.
-// @field this +0x0c uint32_t field_0x0c
-uint8_t __fastcall sub_0071C5C0(uint32_t ecx, uint32_t edx) {
-    (void)edx;
-    uint32_t obj = mem_read32(ecx + 0xc);
-    return mem_read8(obj + 0x1630);
-}
-} // namespace lift_0071C5C0
 
 // [0x0071C740] sub_0071C740 (16 bytes)
 namespace lift_0071C740 {
@@ -2813,19 +2659,3 @@ extern uint8_t __stdcall fn_007131C0(void* self) {
     return 1;
 }
 } // namespace lift_007131C0
-
-// [0x007129A0]
-namespace lift_007129A0 {
-// @name sub_007129A0
-// @summary Reads fields at +0x84 and +0x80 from this into two output pointers
-// @field unknown +0x80 uint32_t field_0x80
-// @field unknown +0x84 uint32_t field_0x84
-
-
-extern uint32_t mem_read32(uint32_t addr);
-
-void __thiscall sub_007129A0(uint32_t self, uint32_t* out_a, uint32_t* out_b) {
-    *out_a = mem_read32(self + 0x84);
-    *out_b = mem_read32(self + 0x80);
-}
-} // namespace lift_007129A0

@@ -8,6 +8,6 @@
 // Recovered field layout for struct_0x10:
 namespace lifted_layout {
 struct struct_0x10_Fields {
-    // +0x10  float                    field_0x10  (evidence: 0x007C2E50, 0x007CB970)
+    // +0x10  float                    field_0x10  (evidence: 0x007C2E50)
 };
 } // namespace lifted_layout

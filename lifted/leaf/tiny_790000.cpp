@@ -215,14 +215,6 @@ extern "C" void* __fastcall fn_0079F360(void* self, int edx_unused, unsigned int
     return self;
 }
 
-// [0x0079F380] sub_0079F380 (16 bytes)
-// @name sub_0079F380
-// @summary Destructor tail-call: restores vtable mem_009977F0 and tail-calls base destructor sub_007AA880.
-extern "C" void __fastcall fn_0079F380(void* self) {
-    lift_field<void*>(self, 0x0) = &mem_009977F0;
-    ext_007AA880(self);
-}
-
 // [0x0079DD10] sub_0079DD10 (23 bytes)
 // @name sub_0079DD10
 // @summary Auto-lifted identical-shape clone of 0x0052EFA0 (Primitives::Animation::vfunc_14).
@@ -297,18 +289,6 @@ void fn_0079D730(void* self, uint32_t /*unused*/) {
 }
 } // namespace lift_0079D730
 
-// [0x0079AF40] sub_0079AF40 (16 bytes)
-namespace lift_0079AF40 {
-extern uint32_t mem_009241F0;  // IAT slot holding KERNEL32!GlobalAlloc
-extern HGLOBAL __stdcall ext_GlobalAlloc(UINT uFlags, SIZE_T dwBytes);
-
-// @name GlobalAllocZeroFlags
-// @summary Allocates a global memory block of the requested size with uFlags = 0 (GMEM_FIXED) and returns the handle.
-uint32_t __cdecl fn_0079AF40(uint32_t size) {
-    return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(ext_GlobalAlloc(0, static_cast<SIZE_T>(size))));
-}
-} // namespace lift_0079AF40
-
 // [0x0079EB70] sub_0079EB70 (16 bytes)
 namespace lift_0079EB70 {
 extern uint32_t mem_00B61148;
@@ -322,18 +302,6 @@ uint8_t fn_0079EB70(void) {
     return lift_field<uint8_t>(obj, 0x0C);
 }
 } // namespace lift_0079EB70
-
-// [0x0079AF50] sub_0079AF50 (16 bytes)
-namespace lift_0079AF50 {
-extern HGLOBAL ext_GlobalFree(HGLOBAL hMem);
-extern int mem_009241E8;
-
-// @name GlobalFreeWrapper
-// @summary Frees a global memory handle via KERNEL32!GlobalFree and returns its result.
-HGLOBAL fn_0079AF50(HGLOBAL hMem) {
-    return ext_GlobalFree(hMem);
-}
-} // namespace lift_0079AF50
 
 // [0x00790D40] sub_00790D40 (17 bytes)
 namespace lift_00790D40 {
@@ -505,16 +473,6 @@ extern void __cdecl fn_0079B010(void* dst, const void* src, uint32_t count) {
     }
 }
 } // namespace lift_0079B010
-
-// [0x0079D6D0]
-namespace lift_0079D6D0 {
-// @name ReadByteAtF88
-// @summary Returns the byte stored at this+0xF88 (thiscall; this in ECX, result in AL).
-// @field Unknown +0xF88 uint8_t field_0xF88
-uint8_t fn_0079D6D0(void* self) {
-    return lift_field<uint8_t>(self, 0xF88);
-}
-} // namespace lift_0079D6D0
 
 // [0x0079E670] sub_0079E670 (21 bytes)
 namespace lift_0079E670 {

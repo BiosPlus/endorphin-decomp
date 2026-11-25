@@ -17,44 +17,6 @@ extern "C" void* __fastcall fn_0072D620(void* self, int edx_unused, unsigned int
     return self;
 }
 
-// [0x0072B2F0]
-namespace lift_0072B2F0 {
-// @name sub_0072B2F0
-// @summary Constructor calling base constructor sub_0077F9E0 and setting vtable to 0x00996834
-// @field sub_0072B2F0 +0x00 uint32_t vtable
-
-
-extern uint32_t __thiscall ext_0077F9E0(uint32_t self, uint32_t arg1);
-extern void mem_write32(uint32_t addr, uint32_t val);
-
-uint32_t __thiscall sub_0072B2F0(uint32_t self, uint32_t arg1) {
-    ext_0077F9E0(self, arg1);
-    mem_write32(self, 0x00996834u);
-    return self;
-}
-} // namespace lift_0072B2F0
-
-// [0x0072CB00] sub_0072CB00 (32 bytes)
-namespace lift_0072CB00 {
-// @name sub_0072CB00
-// @summary Auto-lifted identical-shape clone of 0x0071B020 (Unknown::CallArgWithSubObjectAddr0x10).
-namespace lift_0071B020 {
-// Known callee 0x006D2390: ForwardArgToCalleeReturnThis (Forwards its single stack argument to sub_007873F0 with the same this pointer, then returns this.)
-extern void* ext_006B9D20(void* self, uint32_t arg1);
-
-// @name Unknown::CallArgWithSubObjectAddr0x10
-// @class Unknown
-// @summary Calls 0x006D2390 with arg as this and (self + 0x10) as its stack argument, then returns arg.
-// @field Unknown +0x10 BYTE field_0x10
-void* fn_0072CB00(void* self, void* arg) {
-    const uint32_t sub_addr =
-        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self) + 0x18);
-    ext_006B9D20(arg, sub_addr);
-    return arg;
-}
-} // namespace lift_0071B020
-} // namespace lift_0072CB00
-
 // [0x00724FA0] sub_00724FA0 (16 bytes)
 namespace lift_00724FA0 {
 // @name sub_00724FA0
@@ -373,33 +335,6 @@ double fn_00722660(double a, double b, double c) {
 }
 } // namespace lift_00722660
 
-// [0x007299C0] sub_007299C0 (64 bytes)
-namespace lift_007299C0 {
-// @name Unknown::FillDoubleOneAt24Stride32
-// @class Unknown
-// @summary For each of the count (+0x28) 32-byte entries starting at the array base (+0x38), writes the double 1.0 at entry offset +0x18.
-// @field Unknown +0x28 int32_t count
-// @field Unknown +0x38 uint32_t array_base
-void fn_007299C0(void* self) {
-    // Callee 0x006D23F0 (GetAddressAt8) computes self + 8 * index; with index 3 this is base + 24.
-    // Its 8-byte element at that address is written as the IEEE-754 double 1.0 (low dword 0, high dword 0x3FF00000).
-    const int32_t count = lift_field<int32_t>(self, 0x28);
-    if (count <= 0) {
-        return;
-    }
-    const uint32_t base = lift_field<uint32_t>(self, 0x38);
-    for (int32_t i = 0; i < count; ++i) {
-        const uint32_t entry = base + static_cast<uint32_t>(i) * 0x20u;
-        const uint32_t target = entry + 0x18u;
-        uint8_t* dst = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(target));
-        const uint32_t lo = 0x00000000u;
-        const uint32_t hi = 0x3FF00000u;
-        std::memcpy(dst + 0, &lo, sizeof(lo));
-        std::memcpy(dst + 4, &hi, sizeof(hi));
-    }
-}
-} // namespace lift_007299C0
-
 // [0x00725300] sub_00725300 (64 bytes)
 namespace lift_00725300 {
 namespace lift_00725300 {
@@ -660,69 +595,6 @@ extern bool __thiscall fn_00726770(void* self, uint32_t key) {
     return true;
 }
 } // namespace lift_00726770
-
-// [0x00729A00]
-namespace lift_00729A00 {
-template <typename T> T mem_read(uint32_t addr);
-template <typename T> void mem_write(uint32_t addr, T val);
-
-extern int32_t __fastcall ext_006FDF30(uint32_t self, uint32_t edx, uint32_t index);
-extern uint32_t __fastcall ext_006FDF90(uint32_t self, uint32_t edx, uint32_t ordinal, uint32_t index);
-extern uint32_t __fastcall ext_006B99C0(uint32_t self, uint32_t edx);
-extern uint32_t __fastcall ext_006D23F0(uint32_t self, uint32_t edx, uint32_t index);
-
-// @name ResetMatchingEntryDoubles
-// @summary Resets the 4th 8-byte slot (index 3) of each 0x20-byte element in the first matching entry's sub-array to 1.0.
-// @field EntryList +0x08 int32_t count
-// @field EntryList +0x18 uint32_t data_ptr
-void __stdcall fn_00729A00(uint32_t obj) {
-    if (ext_006FDF30(obj, 0, 1) <= 0) {
-        return;
-    }
-
-    uint32_t entry = ext_006FDF90(obj, 0, 0, 1);
-    uint32_t base = ext_006B99C0(entry, 0);
-    uint32_t list_ptr = base + 8;
-
-    int32_t count = mem_read<int32_t>(list_ptr);
-    if (count <= 0) {
-        return;
-    }
-
-    uint32_t data_ptr = mem_read<uint32_t>(list_ptr + 0x10);
-    uint32_t offset = 0;
-    for (int32_t i = 0; i < count; ++i) {
-        uint32_t slot = ext_006D23F0(data_ptr + offset, 0, 3);
-        mem_write<uint32_t>(slot, 0x00000000);
-        mem_write<uint32_t>(slot + 4, 0x3FF00000);
-        offset += 0x20;
-    }
-}
-} // namespace lift_00729A00
-
-// [0x0072BF70]
-namespace lift_0072BF70 {
-// @name sub_0072BF70
-// @summary Destructor/cleanup helper that frees field_0x10, clears field_0x64, and destroys subobject at +0x18.
-// @field Unknown +0x10 uint32_t field_0x10
-// @field Unknown +0x18 uint8_t field_0x18
-// @field Unknown +0x64 uint8_t field_0x64
-
-
-extern uint32_t mem_r32(uint32_t addr);
-extern void mem_w8(uint32_t addr, uint8_t val);
-extern void ext_006A5C5C(uint32_t ptr);
-extern void ext_006B9D70(uint32_t self);
-
-extern void fn_0072BF70(uint32_t self) {
-    uint32_t ptr = mem_r32(self + 0x10);
-    if (ptr != 0) {
-        ext_006A5C5C(ptr);
-    }
-    mem_w8(self + 0x64, 0);
-    ext_006B9D70(self + 0x18);
-}
-} // namespace lift_0072BF70
 
 // [0x0072C0B0]
 namespace lift_0072C0B0 {

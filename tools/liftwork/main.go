@@ -58,6 +58,10 @@ func main() {
 		cmdClean(args)
 	case "auto-lift":
 		cmdAutoLift(args)
+	case "audit":
+		cmdAudit(args)
+	case "verify":
+		cmdVerify(args)
 	case "-h", "--help", "help":
 		usage()
 	default:
@@ -80,7 +84,9 @@ Commands:
   is-lifted <VA> Exit 0 if VA is lifted, 1 otherwise
   commit-pending Commit any uncommitted lifted files and ledger entries
   clean [VA]     Remove stale lifted/wip/ files
-  auto-lift      Deterministically lift boilerplate patterns & identical-shape clones`)
+  auto-lift      Deterministically lift boilerplate patterns & identical-shape clones
+  audit          Run static equivalence checks across already-lifted functions
+  verify [VA]    Run native 32-bit differential execution against endorphin.exe`)
 }
 
 func loadUnits() ([]decomp.UnitEntry, map[string]decomp.UnitEntry, error) {
@@ -452,6 +458,7 @@ func cmdCheck(args []string) {
 	model := fs.String("model", "", "Model@effort identifier (or LIFT_MODEL / DECOMP_MODEL env)")
 	dryRun := fs.Bool("dry-run", false, "Validate and compile-check without merging or committing")
 	noCommit := fs.Bool("no-commit", false, "Merge and update ledger/headers without running git commit")
+	noExec := fs.Bool("no-exec", false, "Skip native 32-bit differential execution check for eligible leaf functions")
 
 	var vaArg string
 	var flagArgs []string
@@ -542,12 +549,38 @@ func cmdCheck(args []string) {
 		os.Exit(1)
 	}
 
-	// 3. Compile syntax check with native g++ / clang++
+	// 3. Static semantic equivalence check (callees, globals, undefined helpers, empty body)
+	syms := readSymbolsJSON()
+	semIssues := validateLiftedSemantics(rawSrc, u, srcIdx[va], byVA, syms)
+	if errs := semanticErrors(semIssues); len(errs) > 0 {
+		recordLiftCheckRun(va, liftedBy, "reject:semantics")
+		for _, e := range errs {
+			fmt.Fprintf(os.Stderr, "FAIL [%s] %s: %s\n", e.Code, va, e.Message)
+		}
+		os.Exit(1)
+	}
+	for _, is := range semIssues {
+		if is.Severity == "warn" {
+			fmt.Fprintf(os.Stderr, "WARN [%s] %s: %s\n", is.Code, va, is.Message)
+		}
+	}
+
+	// 4. Compile check with native g++ / clang++ (-c -o /dev/null)
 	compOut, err := syntaxCheckCpp(checkPath)
 	if err != nil {
 		recordLiftCheckRun(va, liftedBy, "reject:compile")
 		fmt.Fprintf(os.Stderr, "FAIL [compile] %s (%s):\n%s\n", va, checkPath, compOut)
 		os.Exit(1)
+	}
+
+	// 5. Native 32-bit differential execution check for eligible pure leaf functions
+	if !*noExec {
+		res := runDiffExecVerify(va, rawSrc, u, srcIdx[va], 32)
+		if res.Status == "fail" {
+			recordLiftCheckRun(va, liftedBy, "reject:diff")
+			fmt.Fprintf(os.Stderr, "FAIL [diff-exec] %s: %s (%s)\n", va, res.Reason, res.Details)
+			os.Exit(1)
+		}
 	}
 
 	if *dryRun {

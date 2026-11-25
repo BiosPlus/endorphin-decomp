@@ -121,49 +121,6 @@ void fn_0042FAA0(void* self) {
 }
 } // namespace lift_0042FAA0
 
-// [0x00426960] sub_00426960 (18 bytes)
-namespace lift_00426960 {
-extern int mem_00928B5D;
-
-// @name std::string::basic_string(const char*) [empty-literal ctor]
-// @class std::string
-// @summary Constructs *self as std::string from the empty C literal at mem_00928B5D and returns self.
-std::string* fn_00426960(std::string* self) {
-    new (self) std::string(reinterpret_cast<const char*>(&mem_00928B5D));
-    return self;  // original: mov eax, esi
-}
-} // namespace lift_00426960
-
-// [0x0042EA50] sub_0042EA50 (21 bytes)
-namespace lift_0042EA50 {
-extern int ext_ReleaseDC(HWND hWnd, HDC hDC);
-
-// @name Unknown::ReleaseDCFromArg
-// @class Unknown
-// @summary Releases the device context stored at this+0x20 using the window handle stored at arg+4; returns ReleaseDC's result.
-// @field Unknown +0x20 HDC hdc
-// @field arg +0x04 HWND hwnd
-int fn_0042EA50(void* self, void* arg) {
-    HWND hwnd = lift_field<HWND>(arg, 4);
-    HDC hdc = lift_field<HDC>(self, 0x20);
-    return ext_ReleaseDC(hwnd, hdc);
-}
-} // namespace lift_0042EA50
-
-// [0x004271F0] sub_004271F0 (23 bytes)
-namespace lift_004271F0 {
-extern const char* mem_00ACD9E0;
-
-// std::operator!=(const std::basic_string<char>&, const char*) from MSVCP80.
-extern bool __cdecl ext_operator_ne_string_cstr(const void* lhs, const char* rhs);
-
-// @name IsArgStringNotEqualToGlobalName
-// @summary Stdcall (callee pops 4): compares the std::string passed on the stack against the global C-string at mem_00ACD9E0 via operator!=, returning the bool result.
-extern bool __stdcall fn_004271F0(const void* str) {
-    return ext_operator_ne_string_cstr(str, mem_00ACD9E0);
-}
-} // namespace lift_004271F0
-
 // [0x00420590] sub_00420590 (27 bytes)
 namespace lift_00420590 {
 // @name sub_00420590
@@ -200,44 +157,6 @@ int32_t __thiscall sub_00422E00(void* self, uint32_t lParam, uint32_t wParam) {
     return fn(hWnd, 0x1102u, wParam, lParam);
 }
 } // namespace lift_00422E00
-
-// [0x00427370]
-namespace lift_00427370 {
-uint8_t mem_read8(uintptr_t addr);
-uint32_t mem_read32(uintptr_t addr);
-
-// @name findLastBeforeFlaggedChild
-// @summary Walks +0x08 pointers until the next node has a non-zero byte at +0x59, returning the preceding node.
-// @field Node +0x08 uintptr_t field_0x08
-// @field Node +0x59 uint8_t field_0x59
-uintptr_t sub_00427370(uintptr_t node) {
-    uintptr_t cur = node;
-    uintptr_t next = mem_read32(cur + 0x08);
-    while (mem_read8(next + 0x59) == 0) {
-        cur = next;
-        next = mem_read32(cur + 0x08);
-    }
-    return cur;
-}
-} // namespace lift_00427370
-
-// [0x00425DA0] sub_00425DA0 (29 bytes)
-namespace lift_00425DA0 {
-extern int mem_00AD7BD8;
-extern int mem_00ACD714;
-
-// std::string::operator=(const std::string&) imported from MSVCP80.
-extern void* ext_MSVCP80_string_assign(void* dst, const void* src);
-
-// @name ResetDwordAndAssignGlobalString
-// @summary Zeroes the DWORD at *self, assigns the global string at mem_00ACD714 from mem_00AD7BD8, and returns self.
-void* fn_00425DA0(void* self) {
-    lift_field<DWORD>(self, 0) = 0;
-    ext_MSVCP80_string_assign(reinterpret_cast<void*>(&mem_00ACD714),
-                              reinterpret_cast<const void*>(&mem_00AD7BD8));
-    return self;
-}
-} // namespace lift_00425DA0
 
 // [0x004275C0] sub_004275C0 (31 bytes)
 namespace lift_004275C0 {

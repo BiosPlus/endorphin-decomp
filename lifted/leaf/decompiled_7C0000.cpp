@@ -75,63 +75,6 @@ float fn_007C5950(void* self) {
 }
 } // namespace lift_007C5950
 
-// [0x007C5B70]
-namespace lift_007C5B70 {
-template <typename T>
-T mem_read(uint32_t addr);
-
-template <typename T>
-void mem_write(uint32_t addr, T val);
-
-// @name setVec3_0x160
-// @summary Copies a 3-float vector from src into dst offsets +0x160, +0x164, and +0x168.
-// @field Obj +0x160 float field_0x160
-// @field Obj +0x164 float field_0x164
-// @field Obj +0x168 float field_0x168
-void __cdecl sub_007C5B70(uint32_t dst, uint32_t src)
-{
-    mem_write<float>(dst + 0x160u, mem_read<float>(src));
-    mem_write<float>(dst + 0x164u, mem_read<float>(src + 0x4u));
-    mem_write<float>(dst + 0x168u, mem_read<float>(src + 0x8u));
-}
-} // namespace lift_007C5B70
-
-// [0x007C5C00]
-namespace lift_007C5C00 {
-// @name copyVec3ToOffset0x190
-// @summary Copies a 3-float vector from the second argument into fields at +0x190..+0x198 of the first argument
-// @field Unknown +0x190 float field_0x190
-// @field Unknown +0x194 float field_0x194
-// @field Unknown +0x198 float field_0x198
-
-
-uint32_t mem_read32(uint32_t addr);
-void mem_write32(uint32_t addr, uint32_t val);
-
-void sub_007C5C00(uint32_t self, uint32_t vec) {
-    mem_write32(self + 0x190, mem_read32(vec + 0x0));
-    mem_write32(self + 0x194, mem_read32(vec + 0x4));
-    mem_write32(self + 0x198, mem_read32(vec + 0x8));
-}
-} // namespace lift_007C5C00
-
-// [0x007C5FA0]
-namespace lift_007C5FA0 {
-template <typename T> T mem_read(uint32_t addr);
-template <typename T> void mem_write(uint32_t addr, T val);
-
-// @name getVec3_0x140
-// @summary Copies a 3D float vector from offset 0x140 of the source object into the destination buffer
-// @field Object +0x140 float field_0x140
-// @field Object +0x144 float field_0x144
-// @field Object +0x148 float field_0x148
-void sub_007C5FA0(uint32_t src, uint32_t dst) {
-    mem_write<float>(dst + 0x0, mem_read<float>(src + 0x140));
-    mem_write<float>(dst + 0x4, mem_read<float>(src + 0x144));
-    mem_write<float>(dst + 0x8, mem_read<float>(src + 0x148));
-}
-} // namespace lift_007C5FA0
-
 // [0x007C9340] sub_007C9340 (36 bytes)
 namespace lift_007C9340 {
 // @name copyVec3FromIndexedElement
@@ -156,21 +99,6 @@ void sub_007C9CD0(void* dst, float val) {
     *reinterpret_cast<float*>(reinterpret_cast<uint8_t*>(dst) + 0x4) = abs_val;
 }
 } // namespace lift_007C9CD0
-
-// [0x007C9310]
-namespace lift_007C9310 {
-extern uint32_t mem_read_u32(uint32_t addr);
-extern void mem_write_u32(uint32_t addr, uint32_t val);
-
-// @name copyVec3AtStride32
-// @summary Copies 3 floats from base + index * 32 to out.
-void __cdecl sub_007C9310(uint32_t base, uint32_t index, uint32_t out) {
-    uint32_t src = base + (index << 5);
-    mem_write_u32(out + 0x0, mem_read_u32(src + 0x0));
-    mem_write_u32(out + 0x4, mem_read_u32(src + 0x4));
-    mem_write_u32(out + 0x8, mem_read_u32(src + 0x8));
-}
-} // namespace lift_007C9310
 
 // [0x007C62B0]
 namespace lift_007C62B0 {
@@ -205,39 +133,6 @@ void sub_007C6DB0(uint32_t arg0) {
     fn(ptr, arg0);
 }
 } // namespace lift_007C6DB0
-
-// [0x007C9D00]
-namespace lift_007C9D00 {
-// @name setAbsFloatField_0x8
-// @summary Sets float field at offset +0x8 to the absolute value of the input float.
-// @field Unknown +0x08 float field_0x08
-
-extern void mem_write_f32(uint32_t addr, float val);
-
-void __cdecl sub_007C9D00(uint32_t arg0, float val) {
-    float abs_val = (val < 0.0f) ? -val : val;
-    mem_write_f32(arg0 + 0x8, abs_val);
-}
-} // namespace lift_007C9D00
-
-// [0x007CA790]
-namespace lift_007CA790 {
-// @name Vec3::dot
-// @class Vec3
-// @summary Computes the 3D dot product of this vector with another vector.
-// @field Vec3 +0x00 float x
-// @field Vec3 +0x04 float y
-// @field Vec3 +0x08 float z
-
-
-float mem_f32(uintptr_t addr);
-
-float __thiscall sub_007CA790(uintptr_t self, uintptr_t other)
-{
-    float xy = mem_f32(other + 0x4) * mem_f32(self + 0x4) + mem_f32(other) * mem_f32(self);
-    return xy + mem_f32(other + 0x8) * mem_f32(self + 0x8);
-}
-} // namespace lift_007CA790
 
 // [0x007C9E20]
 namespace lift_007C9E20 {
@@ -320,28 +215,6 @@ void fn_007C97C0(void* self, uint32_t val94, uint32_t val98) {
 }
 } // namespace lift_007C97C0
 
-// [0x007C8820]
-namespace lift_007C8820 {
-uint32_t mem_read32(uint32_t addr);
-
-// @name checkArrayEntryNonZero
-// @summary Checks if index is in bounds [0, count) and the 40-byte entry's field at +0x24 is non-zero.
-// @field Obj +0x00 int32_t field_0x00
-// @field Obj +0x20 uint32_t field_0x20
-uint32_t sub_007C8820(uint32_t obj, int32_t index) {
-    if (index < 0) {
-        return 0;
-    }
-    int32_t count = static_cast<int32_t>(mem_read32(obj));
-    if (index >= count) {
-        return 0;
-    }
-    uint32_t base = mem_read32(obj + 0x20);
-    uint32_t val = mem_read32(base + static_cast<uint32_t>(index) * 40u + 0x24u);
-    return (val != 0) ? 1u : 0u;
-}
-} // namespace lift_007C8820
-
 // [0x007C8850]
 namespace lift_007C8850 {
 extern uint32_t __cdecl ext_007C8820(uint32_t obj, int32_t index);
@@ -363,47 +236,6 @@ uint32_t fn_007C8850(uint32_t obj, int32_t index) {
     return lift_field<uint32_t>(array, static_cast<ptrdiff_t>(entry_offset));
 }
 } // namespace lift_007C8850
-
-// [0x007C9E50]
-namespace lift_007C9E50 {
-uint32_t mem_read32(uint32_t addr);
-void mem_write32(uint32_t addr, uint32_t val);
-
-// @name updateFlagIfAnySet
-// @summary Sets field at +0x04 to 1 if arg1 or any of fields +0x00, +0x1C, +0x50 are non-zero, else 0.
-// @field Obj +0x00 uint32_t field_0x00
-// @field Obj +0x04 uint32_t field_0x04
-// @field Obj +0x1C uint32_t field_0x1C
-// @field Obj +0x50 uint32_t field_0x50
-void sub_007C9E50(uint32_t arg0, uint32_t arg1) {
-    uint32_t val = (arg1 != 0 ||
-                    mem_read32(arg0 + 0x00) != 0 ||
-                    mem_read32(arg0 + 0x50) != 0 ||
-                    mem_read32(arg0 + 0x1C) != 0) ? 1u : 0u;
-    mem_write32(arg0 + 0x04, val);
-}
-} // namespace lift_007C9E50
-
-// [0x007CC5D0]
-namespace lift_007CC5D0 {
-// @name allocAndInit_007CC5D0
-// @summary Allocates a 16-byte object (16-byte aligned) via allocator at +0xb0/+0x8 and initializes it with sub_007CC200
-// @field Obj +0xb0 uint32_t allocatorPtr
-
-
-extern uint32_t mem_read32(uint32_t addr);
-extern uint32_t ext_007CC200(uint32_t obj, uint32_t arg);
-
-uint32_t fn_007CC5D0(uint32_t arg0) {
-    uint32_t allocator = mem_read32(arg0 + 0xb0);
-    uint32_t alloc_fn = mem_read32(allocator + 0x8);
-    uint32_t obj = ((uint32_t (*)(uint32_t, uint32_t))(uintptr_t)alloc_fn)(0x10, 0x10);
-    if (obj == 0) {
-        return 0;
-    }
-    return ext_007CC200(obj, arg0);
-}
-} // namespace lift_007CC5D0
 
 // [0x007CB940]
 namespace lift_007CB940 {
@@ -533,55 +365,6 @@ void fn_007C9A60(uint8_t* self, DWORD flag, float* out) {
 }
 } // namespace lift_007C9A60
 
-// [0x007CA750]
-namespace lift_007CA750 {
-// @name allocateAndInitObject
-// @summary Allocates 20 bytes (16-byte aligned) via object+0xB0->0x8 and initializes it with sub_007CA340
-// @field Obj +0xB0 uint32_t allocatorPtr
-
-
-extern uint32_t mem_read32(uint32_t addr);
-extern uint32_t ext_007CA340(uint32_t a1, uint32_t a2, float a3);
-
-extern uint32_t fn_007CA750(uint32_t a1, float a2) {
-    uint32_t alloc_obj = mem_read32(a1 + 0xb0);
-    uint32_t alloc_fn_addr = mem_read32(alloc_obj + 0x8);
-    using AllocFn = uint32_t(*)(uint32_t, uint32_t);
-    AllocFn alloc_fn = reinterpret_cast<AllocFn>(static_cast<uintptr_t>(alloc_fn_addr));
-    uint32_t ptr = alloc_fn(0x14, 0x10);
-    if (!ptr) {
-        return 0;
-    }
-    return ext_007CA340(ptr, a1, a2);
-}
-} // namespace lift_007CA750
-
-// [0x007CC930]
-namespace lift_007CC930 {
-extern uint32_t& mem_u32(uint32_t addr);
-extern int32_t& mem_i32(uint32_t addr);
-
-// @name unlinkListNode
-// @summary Unlinks a node from a circular doubly-linked list and decrements the list count.
-// @field ListNode +0x04 uint32_t prev
-// @field ListNode +0x08 uint32_t next
-// @field ListNode +0x0C uint32_t list
-// @field List +0x0C uint32_t head
-// @field List +0x1C int32_t count
-void __cdecl sub_007CC930(uint32_t node) {
-    uint32_t list = mem_u32(node + 0xC);
-    if (node == mem_u32(list + 0xC)) {
-        uint32_t new_head = (node == mem_u32(node + 0x4)) ? 0u : mem_u32(node + 0x8);
-        mem_u32(list + 0xC) = new_head;
-    }
-    uint32_t next = mem_u32(node + 0x8);
-    uint32_t prev = mem_u32(node + 0x4);
-    mem_u32(next + 0x4) = prev;
-    mem_u32(prev + 0x8) = next;
-    mem_i32(list + 0x1C) = mem_i32(list + 0x1C) - 1;
-}
-} // namespace lift_007CC930
-
 // [0x007CB980]
 namespace lift_007CB980 {
 extern const double mem_00993828;
@@ -601,36 +384,6 @@ void sub_007CB980(uint8_t* self, float x) {
     *reinterpret_cast<float*>(self + 0x14) = v;
 }
 } // namespace lift_007CB980
-
-// [0x007CDBC0]
-namespace lift_007CDBC0 {
-// @name clearIndexedSlots
-// @summary Zeroes three indexed 32-bit array elements referenced by pointer/index pairs in the struct.
-// @field struct +0x70 uint32_t* field_0x70
-// @field struct +0x74 uint32_t field_0x74
-// @field struct +0x7c uint32_t* field_0x7c
-// @field struct +0x80 uint32_t field_0x80
-// @field struct +0x88 uint32_t* field_0x88
-// @field struct +0x8c uint32_t field_0x8c
-
-
-uint32_t mem_read32(uint32_t addr);
-void mem_write32(uint32_t addr, uint32_t val);
-
-void sub_007CDBC0(uint32_t arg0) {
-    uint32_t idx_80 = mem_read32(arg0 + 0x80);
-    uint32_t ptr_7c = mem_read32(arg0 + 0x7c);
-    mem_write32(ptr_7c + 4 * idx_80, 0);
-
-    uint32_t idx_8c = mem_read32(arg0 + 0x8c);
-    uint32_t ptr_88 = mem_read32(arg0 + 0x88);
-    mem_write32(ptr_88 + 4 * idx_8c, 0);
-
-    uint32_t idx_74 = mem_read32(arg0 + 0x74);
-    uint32_t ptr_70 = mem_read32(arg0 + 0x70);
-    mem_write32(ptr_70 + 4 * idx_74, 0);
-}
-} // namespace lift_007CDBC0
 
 // [0x007CA1A0]
 namespace lift_007CA1A0 {
@@ -862,61 +615,6 @@ void fn_007C93A0(void* self, DWORD flag, [[maybe_unused]] DWORD unused_arg) {
     }
 }
 } // namespace lift_007C93A0
-
-// [0x007CDB70]
-namespace lift_007CDB70 {
-extern uint32_t mem_read32(uint32_t addr);
-extern void mem_write32(uint32_t addr, uint32_t val);
-
-// @name alignFieldAndIncrementCounters
-// @summary Aligns field_0xac up to a 4-byte boundary and increments four 32-bit counters
-// @field Unknown +0x74 int32_t field_0x74
-// @field Unknown +0x80 int32_t field_0x80
-// @field Unknown +0x8c int32_t field_0x8c
-// @field Unknown +0xa8 int32_t field_0xa8
-// @field Unknown +0xac int32_t field_0xac
-void sub_007CDB70(uint32_t arg0) {
-    int32_t val = static_cast<int32_t>(mem_read32(arg0 + 0xac));
-    int32_t rem = val % 4;
-    if (rem != 0) {
-        val = val - rem + 4;
-    }
-    mem_write32(arg0 + 0xac, static_cast<uint32_t>(val));
-
-    mem_write32(arg0 + 0x80, mem_read32(arg0 + 0x80) + 1);
-    mem_write32(arg0 + 0x8c, mem_read32(arg0 + 0x8c) + 1);
-    mem_write32(arg0 + 0x74, mem_read32(arg0 + 0x74) + 1);
-    mem_write32(arg0 + 0xa8, mem_read32(arg0 + 0xa8) + 1);
-}
-} // namespace lift_007CDB70
-
-// [0x007C6810]
-namespace lift_007C6810 {
-std::uint32_t mem_read32(std::uint32_t);
-std::uint32_t ext_007D4A70(std::uint32_t);
-std::uint32_t ext_007D4AA0(std::uint32_t, std::uint32_t);
-
-// @name Unknown::ForEachNode
-// @class Unknown
-// @summary Iterates over nodes in the link structure at +0x1D4, invoking a callback with each node's +0x14 value and a user argument.
-// @field Unknown +0x1d4 uint32_t field_0x1d4
-// @field Node +0x14 uint32_t field_0x14
-
-void sub_007C6810(std::uint32_t arg0, std::uint32_t arg1, std::uint32_t arg2) {
-    std::uint32_t list_head = arg0 + 0x1D4u;
-    std::uint32_t node = ext_007D4A70(list_head);
-    if (node == 0) {
-        return;
-    }
-    auto callback = reinterpret_cast<void (*)(std::uint32_t, std::uint32_t)>(arg1);
-    do {
-        std::uint32_t val = mem_read32(node + 0x14u);
-        std::uint32_t next = ext_007D4AA0(list_head, node);
-        callback(val, arg2);
-        node = next;
-    } while (node != 0);
-}
-} // namespace lift_007C6810
 
 // [0x007C9E80]
 namespace lift_007C9E80 {
@@ -1228,45 +926,6 @@ int32_t fn_007C15A0(void* self) {
     return 0;
 }
 } // namespace lift_007C15A0
-
-// [0x007CC970] sub_007CC970 (80 bytes)
-namespace lift_007CC970 {
-// Known callee 0x007D58E0: sub_007D58E0 (105 bytes; diagnostic/report routine called with flags 0, the owner's +0xB0 context, and a message string.)
-extern void ext_007D58E0(uint32_t flags, void* ctx, const char* message);
-
-// Referenced rdata message at 0x0099DD3C (diagnostic text passed to ext_007D58E0).
-extern const char mem_0099DD3C[];
-
-// @name DispatchReleaseByType
-// @summary Reports if the node's high flag bits are set, then invokes the owner's type-indexed handler for this node and notifies the owner's child vtable slot +0x10.
-// @field Node +0x00 uint32_t field_0x00
-// @field Node +0x0C void* field_0x0c
-// @field Owner +0x20 void* field_0x20
-// @field Owner +0xB0 void* field_0xb0
-// @field OwnerChild +0x10 uint32_t field_0x10
-void fn_007CC970(void* self) {
-    using Handler = void (*)(void*);
-
-    const uint32_t flags = lift_field<uint32_t>(self, 0x00);
-    if ((flags & 0xFFFFFF00u) != 0) {
-        void* owner = lift_field<void*>(self, 0x0C);
-        void* ownerChild = lift_field<void*>(owner, 0xB0);
-        ext_007D58E0(0, ownerChild, mem_0099DD3C);
-    }
-
-    // Type index is the low byte; each dispatch entry is 40 bytes (5 * 8).
-    const uint32_t typeIndex = flags & 0xFFu;
-    void* owner = lift_field<void*>(self, 0x0C);
-    void* dispatchTable = lift_field<void*>(owner, 0x20);
-    const uint32_t handler = lift_field<uint32_t>(dispatchTable, static_cast<ptrdiff_t>(typeIndex) * 40);
-    reinterpret_cast<Handler>(static_cast<uintptr_t>(handler))(self);
-
-    owner = lift_field<void*>(self, 0x0C);
-    void* ownerChild = lift_field<void*>(owner, 0xB0);
-    const uint32_t notify = lift_field<uint32_t>(ownerChild, 0x10);
-    reinterpret_cast<Handler>(static_cast<uintptr_t>(notify))(self);
-}
-} // namespace lift_007CC970
 
 // [0x007CA1E0]
 namespace lift_007CA1E0 {
@@ -1695,45 +1354,6 @@ unsigned char* fn_007CAF30(unsigned char* out, uint32_t arg2, float a, float x, 
 }
 } // namespace lift_007CAF30
 
-// [0x007CD960]
-namespace lift_007CD960 {
-// @name Quat::toMatrix4x3
-// @class Quat
-// @summary Builds a 4x3 matrix representation from a quaternion's four float components.
-// @field Quat +0x00 float w
-// @field Quat +0x04 float x
-// @field Quat +0x08 float y
-// @field Quat +0x0c float z
-
-
-float mem_read_f32(uint32_t addr);
-void mem_write_f32(uint32_t addr, float val);
-
-void sub_007CD960(uint32_t ecx, uint32_t eax) {
-    float q0 = mem_read_f32(ecx + 0x00);
-    float q1 = mem_read_f32(ecx + 0x04);
-    float q2 = mem_read_f32(ecx + 0x08);
-    float q3 = mem_read_f32(ecx + 0x0c);
-
-    mem_write_f32(eax + 0x00, -q1);
-    mem_write_f32(eax + 0x10, -q2);
-    mem_write_f32(eax + 0x20, -q3);
-
-    mem_write_f32(eax + 0x2c, q0);
-    mem_write_f32(eax + 0x18, q0);
-    mem_write_f32(eax + 0x04, q0);
-
-    mem_write_f32(eax + 0x28, -q1);
-    mem_write_f32(eax + 0x1c, q1);
-
-    mem_write_f32(eax + 0x0c, -q2);
-    mem_write_f32(eax + 0x24, q2);
-
-    mem_write_f32(eax + 0x14, -q3);
-    mem_write_f32(eax + 0x08, q3);
-}
-} // namespace lift_007CD960
-
 // [0x007CAF70] sub_007CAF70 (69 bytes)
 namespace lift_007CAF70 {
 // Known callee 0x007CAF30: storeHalfLengthVectorAfterSetup (Runs the 0x007CC8E0 setup with the second argument and count 2, then stores the (a,x,y) vector and half its length into out; returns out.)
@@ -1777,75 +1397,3 @@ bool fn_007C8C50(void* first, void* second) {
     return ext_007DD160(table, idA, idB);
 }
 } // namespace lift_007C8C50
-
-// [0x007C3C40]
-namespace lift_007C3C40 {
-extern void mem_write16(uintptr_t addr, uint16_t val);
-extern void mem_write32(uintptr_t addr, uint32_t val);
-
-// @name initStructFields_007C3C40
-// @summary Zeroes three strided uint16_t arrays and four uint32_t fields, and sets uint16_t at +0x48c to 1.
-void sub_007C3C40(uintptr_t arg0) {
-    uintptr_t eax = arg0 + 0x8c;
-    for (uint32_t ecx = 0x11e; ecx != 0; --ecx) {
-        mem_write16(eax, 0);
-        eax += 4;
-    }
-
-    eax = arg0 + 0x980;
-    for (uint32_t ecx = 0x1e; ecx != 0; --ecx) {
-        mem_write16(eax, 0);
-        eax += 4;
-    }
-
-    eax = arg0 + 0xa74;
-    for (uint32_t ecx = 0x13; ecx != 0; --ecx) {
-        mem_write16(eax, 0);
-        eax += 4;
-    }
-
-    mem_write32(arg0 + 0x16a4, 0);
-    mem_write32(arg0 + 0x16a0, 0);
-    mem_write32(arg0 + 0x16a8, 0);
-    mem_write32(arg0 + 0x1698, 0);
-    mem_write16(arg0 + 0x48c, 1);
-}
-} // namespace lift_007C3C40
-
-// [0x007C3BD0]
-namespace lift_007C3BD0 {
-// @name initStruct_007C3BD0
-// @summary Initializes struct pointers, vtables/descriptors, and fields before tail-calling initStructFields_007C3C40.
-// @field Struct +0xb10 uint32_t field_0xb10
-// @field Struct +0xb18 uint32_t field_0xb18
-// @field Struct +0xb1c uint32_t field_0xb1c
-// @field Struct +0xb24 uint32_t field_0xb24
-// @field Struct +0xb28 uint32_t field_0xb28
-// @field Struct +0xb30 uint32_t field_0xb30
-// @field Struct +0x16ac uint32_t field_0x16ac
-// @field Struct +0x16b0 uint16_t field_0x16b0
-// @field Struct +0x16b4 uint32_t field_0x16b4
-
-
-extern uint32_t& mem_u32(uintptr_t);
-extern uint16_t& mem_u16(uintptr_t);
-extern void ext_006D80A0(void);
-extern void ext_007C3C40(uintptr_t arg0);
-
-void sub_007C3BD0(uintptr_t arg0) {
-    ext_006D80A0();
-
-    mem_u32(arg0 + 0xb10) = static_cast<uint32_t>(arg0 + 0x8c);
-    mem_u32(arg0 + 0xb18) = 0xab286cu;
-    mem_u32(arg0 + 0xb1c) = static_cast<uint32_t>(arg0 + 0x980);
-    mem_u32(arg0 + 0xb24) = 0xab2880u;
-    mem_u32(arg0 + 0xb28) = static_cast<uint32_t>(arg0 + 0xa74);
-    mem_u32(arg0 + 0xb30) = 0xab2894u;
-
-    mem_u16(arg0 + 0x16b0) = 0;
-    mem_u32(arg0 + 0x16b4) = 0;
-    mem_u32(arg0 + 0x16ac) = 8;
-
-    ext_007C3C40(arg0);
-}
-} // namespace lift_007C3BD0

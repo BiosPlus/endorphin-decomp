@@ -44,37 +44,3 @@ void __thiscall fn_00448000(void* self, uint32_t pDX) {
 }
 } // namespace lift_00449F80
 } // namespace lift_00448000
-
-// [0x004481A0]
-namespace lift_004481A0 {
-// @name ProgressDialog::vfunc_4_off_74
-// @class ProgressDialog
-// @summary Updates the progress dialog status text and increments the progress bar position.
-// @field ProgressDialog +0x24 uint32_t field_0x24
-// @field ProgressDialog +0x58 void* field_0x58
-
-
-extern uint32_t mem_00924FF0;
-extern uint32_t mem_00925694;
-void fn_006A5F50(void);
-
-using c_str_fn = const char* (__thiscall*)(uintptr_t);
-using set_window_text_fn = void (__thiscall*)(uintptr_t, const char*);
-using send_message_fn = uint32_t (__stdcall*)(uintptr_t, uint32_t, uintptr_t, uintptr_t);
-
-extern void __thiscall fn_004481A0(uintptr_t self, uint32_t delta, uintptr_t text) {
-    auto get_cstr = reinterpret_cast<c_str_fn>(static_cast<uintptr_t>(mem_00924FF0));
-    const char* str = get_cstr(text);
-
-    auto set_text = reinterpret_cast<set_window_text_fn>(&fn_006A5F50);
-    set_text(self + 0x58, str);
-
-    uintptr_t hwnd = *reinterpret_cast<uint32_t*>(self + 0x24);
-    auto send_msg = reinterpret_cast<send_message_fn>(static_cast<uintptr_t>(mem_00925694));
-    uint32_t pos = send_msg(hwnd, 0x408, 0, 0);
-    pos += delta;
-
-    hwnd = *reinterpret_cast<uint32_t*>(self + 0x24);
-    send_msg(hwnd, 0x402, static_cast<uintptr_t>(pos), 0);
-}
-} // namespace lift_004481A0

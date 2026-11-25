@@ -301,26 +301,6 @@ void fn_005435F0(void* self, uint32_t a, uint32_t b) {
 }
 } // namespace lift_005435F0
 
-// [0x005435A0] sub_005435A0 (40 bytes)
-namespace lift_005435A0 {
-extern uint32_t mem_read32(uint32_t addr);
-extern void mem_write8(uint32_t addr, uint8_t value);
-
-// @name Object::dispatchVirtualSlot14AndClearFlags
-// @summary Calls virtual slot 0x50 on this with two stack arguments, then clears the byte flags at +0x91 and +0x94.
-// @field Object +0x00 void** vtable
-// @field Object +0x91 uint8_t field_0x91
-// @field Object +0x94 uint8_t field_0x94
-void __thiscall fn_005435A0(uint32_t self, uint32_t a1, uint32_t a2) {
-    uint32_t vtable = mem_read32(self);
-    uint32_t fn_ptr = mem_read32(vtable + 0x50);
-    using VMethod = void(__thiscall*)(uint32_t, uint32_t, uint32_t);
-    reinterpret_cast<VMethod>(static_cast<uintptr_t>(fn_ptr))(self, a1, a2);
-    mem_write8(self + 0x91, 0);
-    mem_write8(self + 0x94, 0);
-}
-} // namespace lift_005435A0
-
 // [0x00547E80]
 namespace lift_00547E80 {
 // @name Object::copyVec3IfFlagClearAndNotify
@@ -407,57 +387,6 @@ DWORD* __thiscall fn_0054F370(void* self, const DWORD* first, const DWORD* last,
 } // namespace lift_0044C4D0
 } // namespace lift_0054F370
 
-// [0x00540549]
-namespace lift_00540549 {
-// @name glSetWireframeNoCull
-// @summary Sets OpenGL polygon mode to wireframe, cull face to back, and disables face culling.
-
-extern void glPolygonMode(uint32_t face, uint32_t mode);
-extern void glCullFace(uint32_t mode);
-extern void glDisable(uint32_t cap);
-
-void sub_00540549() {
-    glPolygonMode(0x408u, 0x1B01u); // GL_FRONT_AND_BACK, GL_LINE
-    glCullFace(0x405u);             // GL_BACK
-    glDisable(0xB44u);              // GL_CULL_FACE
-}
-} // namespace lift_00540549
-
-// [0x00547B70]
-namespace lift_00547B70 {
-// @name rotateIfEmptyLabel
-// @summary Calls glRotatef(-90.0f, 1.0f, 0.0f, 0.0f) when the string at +0x24 is empty
-// @field unknown +0x24 const char* field_0x24
-
-
-extern void __stdcall ext_glRotatef(float angle, float x, float y, float z);
-
-void __fastcall sub_00547B70(uint8_t* self, uint32_t /*edx*/) {
-    const char* str = *reinterpret_cast<const char* const*>(self + 0x24);
-    if (*str == '\0') {
-        ext_glRotatef(-90.0f, 1.0f, 0.0f, 0.0f);
-    }
-}
-} // namespace lift_00547B70
-
-// [0x00540572]
-namespace lift_00540572 {
-// @name glSetupDefaultCulling
-// @summary Configure default OpenGL polygon fill mode, CCW front face, and back-face culling.
-
-void __stdcall glPolygonMode(uint32_t face, uint32_t mode);
-void __stdcall glFrontFace(uint32_t mode);
-void __stdcall glCullFace(uint32_t mode);
-void __stdcall glEnable(uint32_t cap);
-
-void __stdcall sub_00540572(uint32_t /*unused*/) {
-    glPolygonMode(0x0408u, 0x1B02u); // GL_FRONT_AND_BACK, GL_FILL
-    glFrontFace(0x0901u);            // GL_CCW
-    glCullFace(0x0405u);             // GL_BACK
-    glEnable(0x0B44u);               // GL_CULL_FACE
-}
-} // namespace lift_00540572
-
 // [0x005434F0]
 namespace lift_005434F0 {
 // @name CUnknown::LatchFlagsAndDispatch
@@ -520,55 +449,6 @@ void __thiscall fn_00543E00(void* self, float delta) {
 }
 } // namespace lift_00543E00
 
-// [0x0054F2C0] sub_0054F2C0 (55 bytes)
-namespace lift_0054F2C0 {
-extern void ext_0054F1E0(std::uintptr_t a0, std::uint32_t a1, std::uint32_t a2,
-                             std::uint32_t a3, std::uint32_t a4, std::uint32_t a5);
-
-// @name ComputeRecordAddress
-// @summary Calls helper sub_0054F1E0 with the arguments and a zeroed flag word, then returns base + index * 0x68.
-// (no direct struct field accesses in this function)
-__stdcall std::uint8_t* fn_0054F2C0(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2) {
-    // The original stores 0 into the low byte of a stack slot that previously held ECX,
-    // so the dword passed on is ECX with its low byte cleared. ECX at entry is not
-    // recoverable from the stdcall signature; it is modelled as a placeholder here.
-    std::uint32_t ecx_in = 0;
-    std::uint32_t flag_slot = ecx_in & 0xFFFFFF00u;
-
-    ext_0054F1E0(reinterpret_cast<std::uintptr_t>(base), index, arg2, ecx_in, arg2, flag_slot);
-
-    return base + static_cast<std::size_t>(index) * 0x68u;
-}
-} // namespace lift_0054F2C0
-
-// [0x00540D20]
-namespace lift_00540D20 {
-// @name StringMatchesKnownTableEntry
-// @summary Returns true if the string argument equals any of the 7 const char* entries in the table at mem_00A44BB8.
-
-// IAT slot for MSVCP80 std::operator==(const std::string&, const char*); holds the function address.
-extern uint32_t mem_00924FC0;
-// Table of 7 const char* pointers (0x00A44BB8 .. 0x00A44BD0 inclusive).
-extern uint32_t mem_00A44BB8[7];
-
-static bool ext_string_eq_cstr(const void* str, const char* cstr) {
-    auto fn = reinterpret_cast<bool (__cdecl*)(const void*, const char*)>(
-        static_cast<uintptr_t>(mem_00924FC0));
-    return fn(str, cstr);
-}
-
-bool __stdcall sub_00540D20(const void* str) {
-    for (size_t i = 0; i < 7; ++i) {
-        const char* entry = reinterpret_cast<const char*>(
-            static_cast<uintptr_t>(mem_00A44BB8[i]));
-        if (ext_string_eq_cstr(str, entry)) {
-            return true;
-        }
-    }
-    return false;
-}
-} // namespace lift_00540D20
-
 // [0x00540DD0] sub_00540DD0 (56 bytes)
 namespace lift_00540DD0 {
 extern void ext_00548110(int32_t width, int32_t height);
@@ -628,43 +508,6 @@ void __thiscall fn_00540510(void* self, DWORD arg) {
     reinterpret_cast<GlEnableFn>(static_cast<uintptr_t>(mem_00925418))(GL_CULL_FACE);
 }
 } // namespace lift_00540510
-
-// [0x0054EFF0] sub_0054EFF0 (60 bytes)
-namespace lift_0054EFF0 {
-extern void ext_invalid_parameter_noinfo(void); // MSVCR80 _invalid_parameter_noinfo (IAT slot 0x00925134)
-
-// @name sub_0054EFF0
-// @class <unknown>
-// @summary Returns the address of element [index] in a contiguous array of 104-byte (0x68) records bounded by this+0x1c (begin) and this+0x20 (end); invalid-parameter handler on null begin or out-of-range index.
-// @field <unknown> +0x1c uint32_t field_0x1c
-// @field <unknown> +0x20 uint32_t field_0x20
-
-namespace {
-
-constexpr uint32_t kElementStride = 0x68;
-
-inline uint32_t read_u32(const void* self, uintptr_t offset) {
-    return *reinterpret_cast<const uint32_t*>(static_cast<const uint8_t*>(self) + offset);
-}
-
-} // namespace
-
-uint32_t __thiscall fn_0054EFF0(void* self, uint32_t index) {
-    const uint32_t begin = read_u32(self, 0x1c);
-    if (begin == 0) {
-        ext_invalid_parameter_noinfo();
-    }
-
-    const uint32_t end = read_u32(self, 0x20);
-    const int32_t byte_span = static_cast<int32_t>(end - begin);
-    const uint32_t count = static_cast<uint32_t>(byte_span / static_cast<int32_t>(kElementStride));
-    if (index >= count) {
-        ext_invalid_parameter_noinfo();
-    }
-
-    return begin + index * kElementStride;
-}
-} // namespace lift_0054EFF0
 
 // [0x0054F0D0] sub_0054F0D0 (73 bytes)
 namespace lift_0054F0D0 {
@@ -796,28 +639,6 @@ void fn_00544BE0(void* self) {
 }
 } // namespace lift_00544BE0
 
-// [0x005457B0] sub_005457B0 (85 bytes)
-namespace lift_005457B0 {
-extern void __fastcall ext_00537E70(void* self);
-extern void __fastcall fn_00543320(void* self);
-
-// @name Unknown::construct_005457B0
-// @class Unknown
-// @summary Sets the object's vtable word, constructs the embedded subobject at +0x9C, then runs the lifted initializer fn_00543320 on self.
-// @field Unknown +0x00 void* vtable_or_ptr
-// @field Unknown +0x9C BYTE field_0x9c
-void fn_005457B0(void* self) {
-    // Vtable word for this class (0x956944); no symbol is recovered for it.
-    lift_field<uintptr_t>(self, 0x00) = static_cast<uintptr_t>(0x00956944u);
-
-    // Construct the embedded subobject at self+0x9C.
-    ext_00537E70(static_cast<uint8_t*>(self) + 0x9C);
-
-    // Final initialization of self (overwrites +0x00 with &mem_009560E4).
-    fn_00543320(self);
-}
-} // namespace lift_005457B0
-
 // [0x00549980]
 namespace lift_00549980 {
 // @name GraphicQuadricObject::GraphicQuadricObject
@@ -889,41 +710,6 @@ void fn_0054FCB0(void* self) {
     }
 }
 } // namespace lift_0054FCB0
-
-// [0x005404B0]
-namespace lift_005404B0 {
-// @name CopyFloat14
-// @summary Copies a 14-float (56-byte) block from src into self and returns self.
-void* fn_005404B0(void* self, const void* src) {
-    std::memcpy(self, src, 14 * sizeof(float));
-    return self;
-}
-} // namespace lift_005404B0
-
-// [0x005432A0] sub_005432A0 (91 bytes)
-namespace lift_005432A0 {
-// Known callee 0x005434E0: sub_005434E0 (13B). Thiscall-style: ecx = element, one stack argument.
-extern void ext_005434E0(void* self, void* arg);
-
-// @name Unknown::callOnEachElement
-// @class Unknown
-// @summary Walks the pointer range [begin, end) of this container and calls ext_005434E0 on each element, forwarding the single argument; aborts if the range is inverted.
-// @field Unknown +0x08 void** begin
-// @field Unknown +0x0C void** end
-void fn_005432A0(void* self, void* arg) {
-    void** const begin = lift_field<void**>(self, 0x08);
-    void** const end   = lift_field<void**>(self, 0x0C);
-
-    // Original code calls _invalid_parameter_noinfo (ebp) when begin > end.
-    if (begin > end) {
-        std::abort();
-    }
-
-    for (void** it = begin; it != end; ++it) {
-        ext_005434E0(*it, arg);
-    }
-}
-} // namespace lift_005432A0
 
 // [0x0054A0E0] sub_0054A0E0 (91 bytes)
 namespace lift_0054A0E0 {
@@ -1038,35 +824,6 @@ void fn_00545C40(void* self, float* out, int32_t index, float value) {
     out[index] = value;
 }
 } // namespace lift_00545C40
-
-// [0x0054C700] sub_0054C700 (94 bytes)
-namespace lift_0054C700 {
-// Imported MSVCP80 std::basic_string<char> members (called through the IAT in the original).
-extern void ext_MSVCP80_basic_string_ctor(void* str);
-extern void ext_MSVCP80_basic_string_assign_cstr(void* str, const char* s);
-
-// .rdata string literal passed to basic_string::operator=(const char*).
-extern const char mem_0092C520[];
-
-// @name Unknown::InitWithStringLiteral
-// @class Unknown
-// @summary Constructs the object: sets vtable, stores length 14 at +0x4, and assigns a literal string to the embedded std::string at +0x8; returns this.
-// @field Unknown +0x00 uint32_t vftable
-// @field Unknown +0x04 int32_t field_0x04
-// @field Unknown +0x08 void* field_0x08
-//
-// The original wraps the body in an MSVC SEH frame (fs:[0] push/pop, -1 try-state)
-// used only for unwinding if the string constructor throws; that is compiler
-// scaffolding and is not reproduced here.
-void* fn_0054C700(void* self) {
-    void* str = static_cast<uint8_t*>(self) + 0x08;            // embedded std::string (ecx = this+8)
-    lift_field<uint32_t>(self, 0x00) = 0x956DFC;               // vftable
-    ext_MSVCP80_basic_string_ctor(str);
-    lift_field<int32_t>(self, 0x04) = 0x0E;                    // stored length/state
-    ext_MSVCP80_basic_string_assign_cstr(str, mem_0092C520);
-    return self;                                               // mov eax, esi
-}
-} // namespace lift_0054C700
 
 // [0x005450C0] sub_005450C0 (95 bytes)
 namespace lift_005450C0 {
@@ -1234,43 +991,6 @@ extern void __fastcall fn_0054E360(void* self) {
 }
 } // namespace lift_0054E360
 
-// [0x0054C800] sub_0054C800 (109 bytes)
-namespace lift_0054C800 {
-// OpenGL / CRT imports reached through IAT slots in the original (mem_009252B8,
-// mem_0092546C, mem_00925518, mem_00925514, mem_0092552C).
-extern void __cdecl ext_glPushAttrib(GLbitfield mask);
-extern void __cdecl ext_glListBase(GLuint base);
-extern void __cdecl ext_glCallLists(GLsizei n, GLenum type, const GLvoid* lists);
-extern void __cdecl ext_glPopAttrib(void);
-
-// Global display-list base for the bitmap font (data at 0x00AF657C).
-extern int mem_00AF657C;
-
-// @name drawFormattedBitmapText
-// @summary printf-style formatting into a 256-byte buffer, then draws it as a
-//          string of bitmap-font display lists (glCallLists) with attributes saved.
-void fn_0054C800(const char* fmt, ...) {
-    if (fmt == nullptr) {
-        return;
-    }
-
-    const GLbitfield kGlListBit = 0x00020000u;   // GL_LIST_BIT
-    const GLenum kGlUnsignedByte = 0x1401u;      // GL_UNSIGNED_BYTE
-    const int kGlyphOffset = 0x20;               // font lists start at ' '
-
-    char buf[256];
-    va_list args;
-    va_start(args, fmt);
-    std::vsnprintf(buf, sizeof buf, fmt, args);
-    va_end(args);
-
-    ext_glPushAttrib(kGlListBit);
-    ext_glListBase(static_cast<GLuint>(mem_00AF657C - kGlyphOffset));
-    ext_glCallLists(static_cast<GLsizei>(std::strlen(buf)), kGlUnsignedByte, buf);
-    ext_glPopAttrib();
-}
-} // namespace lift_0054C800
-
 // [0x0054A070] sub_0054A070 (111 bytes)
 namespace lift_0054A070 {
 extern void ext_0063E036(void* quadric, double radius, int32_t slices, int32_t stacks);
@@ -1296,34 +1016,6 @@ void fn_0054A070(void* self, float radius) {
     mem_00925404();                 // glPopMatrix
 }
 } // namespace lift_0054A070
-
-// [0x0054A860]
-namespace lift_0054A860 {
-// @name TranslateHandleGraphic::TranslateHandleGraphic
-// @class TranslateHandleGraphic
-// @summary Constructs a TranslateHandleGraphic, creates and configures a GLU quadric, and initializes it.
-// @field TranslateHandleGraphic +0x00 uint32_t vtable
-// @field TranslateHandleGraphic +0x18 uint32_t quadric
-
-
-extern uint32_t& mem_u32(void* base, int32_t offset);
-extern void* ext_005528E0(void* self);
-extern void ext_00549940(void* self);
-extern uint32_t ext_0063E000(void);
-extern void ext_0063E00C(uint32_t quadric, uint32_t normals);
-extern void ext_0063E012(uint32_t quadric, uint32_t drawStyle);
-
-extern void* fn_0054A860(void* self) {
-    ext_005528E0(self);
-    mem_u32(self, 0x00) = 0x00956CFCu;
-    uint32_t quadric = ext_0063E000();
-    mem_u32(self, 0x18) = quadric;
-    ext_0063E012(quadric, 0x186ACu);
-    ext_0063E00C(mem_u32(self, 0x18), 0x186A0u);
-    ext_00549940(self);
-    return self;
-}
-} // namespace lift_0054A860
 
 // [0x0054C640]
 namespace lift_0054C640 {

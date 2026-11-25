@@ -166,38 +166,6 @@ void __thiscall OglRenderer_vfunc_18(void* self, uint32_t value) {
 }
 } // namespace lift_00533400
 
-// [0x005333C0]
-namespace lift_005333C0 {
-// @name OglRenderer::vfunc_17
-// @class OglRenderer
-// @summary Sets a renderer parameter at +0x398 or +0x388 based on +0x379, stores it at +0x450, sets +0x430 = 1, and invokes vtable +0x154.
-// @field OglRenderer +0x379 uint8_t field_0x379
-// @field OglRenderer +0x388 uint32_t field_0x388
-// @field OglRenderer +0x398 uint32_t field_0x398
-// @field OglRenderer +0x430 uint8_t field_0x430
-// @field OglRenderer +0x450 uint32_t field_0x450
-
-
-extern uint8_t mem_read8(uint32_t addr);
-extern uint32_t mem_read32(uint32_t addr);
-extern void mem_write8(uint32_t addr, uint8_t val);
-extern void mem_write32(uint32_t addr, uint32_t val);
-
-void __thiscall OglRenderer_vfunc_17(uint32_t self, uint32_t arg0) {
-    if (mem_read8(self + 0x379) != 0) {
-        mem_write32(self + 0x398, arg0);
-    } else {
-        mem_write32(self + 0x388, arg0);
-    }
-    mem_write32(self + 0x450, arg0);
-    uint32_t vtable = mem_read32(self);
-    uint32_t vfn = mem_read32(vtable + 0x154);
-    mem_write8(self + 0x430, 1);
-    typedef void (__thiscall *vfn_t)(uint32_t);
-    ((vfn_t)(uintptr_t)vfn)(self);
-}
-} // namespace lift_005333C0
-
 // [0x00533090] OglRenderer::vfunc_116 (55 bytes)
 namespace lift_00533090 {
 // Known callee 0x0065C640: CriticalSectionLock::enter (Enters the critical section referenced at offset 0x00 of the object.)
@@ -233,25 +201,6 @@ void fn_00533090(void* self) {
     ext_0065C650(lock);
 }
 } // namespace lift_00533090
-
-// [0x00532F60]
-namespace lift_00532F60 {
-// @name OglRenderer::vfunc_113
-// @class OglRenderer
-// @summary Stops the multimedia timer embedded at this+0x48, then kills the Win32 timer identified by this+0x1C on the window.
-// @field OglRenderer +0x1C void* field_0x1C
-// @field OglRenderer +0x48 void* field_0x48
-
-extern void __fastcall ext_0067B410(void* self);
-extern BOOL(__stdcall* mem_00925660)(HWND hWnd, UINT_PTR uIDEvent);
-
-void __fastcall fn_00532F60(void* self) {
-    unsigned char* p = static_cast<unsigned char*>(self);
-    ext_0067B410(p + 0x48);
-    HWND hwnd = *reinterpret_cast<HWND*>(p + 0x1C);
-    mem_00925660(hwnd, 1);
-}
-} // namespace lift_00532F60
 
 // [0x005365A0]
 namespace lift_005365A0 {

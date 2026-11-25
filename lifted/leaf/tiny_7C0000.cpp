@@ -33,43 +33,6 @@ uint32_t sub_007C6FA0(const void* ptr) {
 }
 } // namespace lift_007C6FA0
 
-// [0x007C6F30]
-namespace lift_007C6F30 {
-// @name getFloatField_0x1c
-// @summary Returns the float field at offset +0x1C of the given object.
-// @field Object +0x1C float field_0x1C
-
-float mem_f32(uint32_t addr);
-
-float sub_007C6F30(uint32_t obj) {
-    return mem_f32(obj + 0x1C);
-}
-} // namespace lift_007C6F30
-
-// [0x007C6FC0]
-namespace lift_007C6FC0 {
-extern uint32_t mem_read_u32(uint32_t addr);
-
-// @name getField0x14
-// @summary Reads and returns the 32-bit value at offset 0x14 from the pointer argument.
-// @field Object +0x14 uint32_t field_0x14
-uint32_t sub_007C6FC0(uint32_t arg0) {
-    return mem_read_u32(arg0 + 0x14);
-}
-} // namespace lift_007C6FC0
-
-// [0x007C6FF0]
-namespace lift_007C6FF0 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name get_field_0x7c
-// @summary Returns the 32-bit value at offset 0x7C of the given object pointer.
-// @field Object +0x7C uint32_t field_0x7c
-extern uint32_t sub_007C6FF0(uint32_t obj) {
-    return mem_read32(obj + 0x7Cu);
-}
-} // namespace lift_007C6FF0
-
 // [0x007C9DD0]
 namespace lift_007C9DD0 {
 // @name addOffset0x30
@@ -79,18 +42,6 @@ uint32_t sub_007C9DD0(uint32_t arg0) {
     return arg0 + 0x30;
 }
 } // namespace lift_007C9DD0
-
-// [0x007C9270]
-namespace lift_007C9270 {
-uint32_t mem_read32(uint32_t addr);
-
-// @name getField0x40
-// @summary Returns the 32-bit value at offset +0x40 of the given object.
-// @field Object +0x40 uint32_t field_0x40
-uint32_t __cdecl sub_007C9270(uint32_t arg0) {
-    return mem_read32(arg0 + 0x40);
-}
-} // namespace lift_007C9270
 
 // [0x007C9DE0]
 namespace lift_007C9DE0 {
@@ -109,96 +60,6 @@ uint32_t sub_007CA8D0(uint32_t arg0) {
     return arg0 + 0x10u;
 }
 } // namespace lift_007CA8D0
-
-// [0x007CAFC0]
-namespace lift_007CAFC0 {
-// @name getField0x14Float
-// @summary Loads and returns a 32-bit float from offset 0x14 of the struct pointer argument.
-// @field Struct +0x14 float field_0x14
-
-extern uint32_t mem_read32(uint32_t addr);
-
-float sub_007CAFC0(uint32_t obj) {
-    return std::bit_cast<float>(mem_read32(obj + 0x14));
-}
-} // namespace lift_007CAFC0
-
-// [0x007CB970]
-namespace lift_007CB970 {
-// @name getField0x10Float
-// @summary Reads a 32-bit float from offset 0x10 of the passed struct pointer.
-// @field struct_0x10 +0x10 float field_0x10
-
-
-float mem_r32f(uint32_t addr);
-
-float sub_007CB970(uint32_t arg0) {
-    return mem_r32f(arg0 + 0x10);
-}
-} // namespace lift_007CB970
-
-// [0x007CC600]
-namespace lift_007CC600 {
-extern uint32_t mem_r32(uint32_t addr);
-
-// @name get_field_0x28
-// @summary Reads and returns the 32-bit value at offset 0x28 of the given object pointer.
-// @field Object +0x28 uint32_t field_0x28
-uint32_t sub_007CC600(uint32_t arg0) {
-    return mem_r32(arg0 + 0x28u);
-}
-} // namespace lift_007CC600
-
-// [0x007CC9F0]
-namespace lift_007CC9F0 {
-extern uint32_t mem_read32(uintptr_t addr);
-
-// @name getField0x0C
-// @summary Reads and returns the 32-bit field at offset 0x0C of the object passed as arg0.
-// @field Object +0x0C uint32_t field_0x0C
-uint32_t sub_007CC9F0(uintptr_t arg0) {
-    return mem_read32(arg0 + 0x0C);
-}
-} // namespace lift_007CC9F0
-
-// [0x007C6C10]
-namespace lift_007C6C10 {
-// @name setFlag0x4At0x0C
-// @summary Sets bit 0x4 in the 32-bit flags field at offset +0x0C of the passed object.
-// @field Object +0x0C uint32_t field_0x0C
-
-
-extern uint32_t& mem_u32(uint32_t addr);
-
-void sub_007C6C10(uint32_t arg0) {
-    mem_u32(arg0 + 0x0C) |= 0x4u;
-}
-} // namespace lift_007C6C10
-
-// [0x007C6C20]
-namespace lift_007C6C20 {
-uint32_t mem_read32(uintptr_t addr);
-void mem_write32(uintptr_t addr, uint32_t val);
-
-// @name setFlag0x8At0xC
-// @summary Sets bit 0x8 in the 32-bit flags field at offset +0xC of the given object.
-// @field Object +0x0C uint32_t field_0x0C
-void sub_007C6C20(uintptr_t obj) {
-    mem_write32(obj + 0x0C, mem_read32(obj + 0x0C) | 0x8u);
-}
-} // namespace lift_007C6C20
-
-// [0x007C70E0]
-namespace lift_007C70E0 {
-uint16_t mem_read16(uint32_t addr);
-
-// @name getField0x24
-// @summary Reads a 16-bit value at offset 0x24 from the given pointer.
-// @field Object +0x24 uint16_t field_0x24
-uint16_t sub_007C70E0(uint32_t obj) {
-    return mem_read16(obj + 0x24);
-}
-} // namespace lift_007C70E0
 
 // [0x007C60A0]
 namespace lift_007C60A0 {
@@ -248,59 +109,6 @@ uint32_t sub_007CC9C0(const uint32_t* ptr) {
 }
 } // namespace lift_007CC9C0
 
-// [0x007C5F90]
-namespace lift_007C5F90 {
-// @name getField0x1c8
-// @summary Loads and returns the float at offset 0x1c8 from the first argument.
-// @field Unknown +0x1c8 float field_0x1c8
-
-
-extern float mem_f32(uint32_t addr);
-
-float sub_007C5F90(uint32_t arg0) {
-    return mem_f32(arg0 + 0x1c8);
-}
-} // namespace lift_007C5F90
-
-// [0x007C5900]
-namespace lift_007C5900 {
-uint32_t mem_read32(uint32_t addr);
-
-// @name getField0x1A4
-// @summary Returns the 32-bit field at offset 0x1A4 of the given object.
-// @field Object +0x1A4 uint32_t field_0x1A4
-extern uint32_t sub_007C5900(uint32_t obj) {
-    return mem_read32(obj + 0x1A4);
-}
-} // namespace lift_007C5900
-
-// [0x007C59B0]
-namespace lift_007C59B0 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name getField0x1B8
-// @summary Reads a 32-bit field at offset 0x1B8 from the passed object pointer.
-// @field Object +0x1B8 uint32_t field_0x1b8
-
-uint32_t sub_007C59B0(uint32_t obj) {
-    return mem_read32(obj + 0x1B8);
-}
-} // namespace lift_007C59B0
-
-// [0x007C5910]
-namespace lift_007C5910 {
-// @name get_field_0x1a8
-// @summary Returns the float field at offset 0x1a8 from the given object pointer.
-// @field struct_0 +0x1a8 float field_0x1a8
-
-
-extern float mem_read_f32(uint32_t);
-
-float sub_007C5910(uint32_t arg0) {
-    return mem_read_f32(arg0 + 0x1a8);
-}
-} // namespace lift_007C5910
-
 // [0x007C6110]
 namespace lift_007C6110 {
 // @name get_field_0x1cc_f32
@@ -313,31 +121,6 @@ float sub_007C6110(uint32_t arg0) {
 }
 } // namespace lift_007C6110
 
-// [0x007C6120]
-namespace lift_007C6120 {
-template <typename T>
-T mem_read(uintptr_t addr);
-
-// @name getField_0x1D0
-// @summary Returns the float field at offset 0x1D0 of the given object.
-// @field Object +0x1D0 float field_0x1d0
-float __cdecl sub_007C6120(uintptr_t arg0) {
-    return mem_read<float>(arg0 + 0x1D0u);
-}
-} // namespace lift_007C6120
-
-// [0x007C8880]
-namespace lift_007C8880 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name get_field_0xa8
-// @summary Reads and returns the 32-bit field at offset 0xA8 from the given object pointer.
-// @field Object +0xA8 uint32_t field_0xa8
-uint32_t sub_007C8880(uint32_t a1) {
-    return mem_read32(a1 + 0xA8u);
-}
-} // namespace lift_007C8880
-
 // [0x007C8810]
 namespace lift_007C8810 {
 // @name getField0x8cFloat
@@ -347,21 +130,6 @@ float sub_007C8810(const void* obj) {
     return *reinterpret_cast<const float*>(reinterpret_cast<const uint8_t*>(obj) + 0x8c);
 }
 } // namespace lift_007C8810
-
-// [0x007C6F20]
-namespace lift_007C6F20 {
-uint32_t mem_read32(uint32_t addr);
-uint8_t mem_read8(uint32_t addr);
-
-// @name get_byte_at_field_0x44
-// @summary Dereferences the pointer at offset +0x44 of the first argument and returns its first byte zero-extended.
-// @field Object +0x44 uint32_t field_0x44
-
-uint32_t sub_007C6F20(uint32_t arg0) {
-    uint32_t ptr = mem_read32(arg0 + 0x44);
-    return static_cast<uint32_t>(mem_read8(ptr));
-}
-} // namespace lift_007C6F20
 
 // [0x007C7690]
 namespace lift_007C7690 {
@@ -1041,17 +809,6 @@ uint32_t fn_007C9480(void* self) {
 }
 } // namespace lift_007C9480
 
-// [0x007C8D80] sub_007C8D80 (17 bytes)
-namespace lift_007C8D80 {
-// @name allocZeroed
-// @class (none)
-// @summary Thin cdecl wrapper that returns calloc(1, size): a zero-initialised allocation of `size` bytes via the MSVCR80 import at 0x92522C.
-void* fn_007C8D80(uint32_t size) {
-    // Import slot [0x92522C] resolves to MSVCR80!calloc; the call is calloc(1, size).
-    return std::calloc(1, size);
-}
-} // namespace lift_007C8D80
-
 // [0x007C8C70]
 namespace lift_007C8C70 {
 // @name descriptiveName_007C8C70
@@ -1191,23 +948,6 @@ void fn_007C9ED0(void* self) {
 }
 } // namespace lift_007C9ED0
 
-// [0x007C89F0]
-namespace lift_007C89F0 {
-// @name getGridElementPtr
-// @summary Computes pointer to a 24-byte element in a 2D array at (col, row)
-// @field struct +0x00 uint32_t field_0x00
-// @field struct +0x28 uint32_t field_0x28
-
-extern uint32_t mem_r32(uint32_t addr);
-
-uint32_t sub_007C89F0(uint32_t self, int32_t col, int32_t row) {
-    int32_t stride = static_cast<int32_t>(mem_r32(self));
-    int32_t idx = stride * row + col;
-    uint32_t base = mem_r32(self + 0x28);
-    return base + static_cast<uint32_t>(idx * 24);
-}
-} // namespace lift_007C89F0
-
 // [0x007C5C30]
 namespace lift_007C5C30 {
 // @name setFields_0x1e4_0x1f4
@@ -1222,43 +962,6 @@ void sub_007C5C30(void* self, uint32_t val1, uint32_t val2) {
     std::memcpy(base + 0x1f4, &val2, sizeof(val2));
 }
 } // namespace lift_007C5C30
-
-// [0x007CA2F0]
-namespace lift_007CA2F0 {
-float& mem_f32(uint32_t);
-
-// @name Vec3::assign
-// @class Vec3
-// @summary Copies three 32-bit floats from src to this and returns this.
-// @field Vec3 +0x00 float x
-// @field Vec3 +0x04 float y
-// @field Vec3 +0x08 float z
-
-extern uint32_t __thiscall sub_007CA2F0(uint32_t self, uint32_t src) {
-    mem_f32(self + 0x00) = mem_f32(src + 0x00);
-    mem_f32(self + 0x04) = mem_f32(src + 0x04);
-    mem_f32(self + 0x08) = mem_f32(src + 0x08);
-    return self;
-}
-} // namespace lift_007CA2F0
-
-// [0x007CCA00]
-namespace lift_007CCA00 {
-uint32_t mem_read32(uint32_t addr);
-
-// @name getIndexedField_007CCA00
-// @summary Reads a 32-bit value from a 40-byte-strided table using an index byte at +0x00 and table pointer at (+0x0C)->+0x20.
-// @field Arg0 +0x00 uint8_t field_0x00
-// @field Arg0 +0x0C uint32_t field_0x0C
-// @field SubObj +0x20 uint32_t field_0x20
-
-uint32_t __cdecl sub_007CCA00(uint32_t arg0) {
-    uint32_t index = mem_read32(arg0) & 0xffu;
-    uint32_t sub = mem_read32(arg0 + 0x0cu);
-    uint32_t table = mem_read32(sub + 0x20u);
-    return mem_read32(table + index * 40u + 0x1cu);
-}
-} // namespace lift_007CCA00
 
 // [0x007C9C90]
 namespace lift_007C9C90 {
@@ -1413,31 +1116,6 @@ void fn_007CD510(void* self) {
     lift_field<uint32_t>(self, 0x28) = 0;
 }
 } // namespace lift_007CD510
-
-// [0x007CD530] sub_007CD530 (31 bytes)
-namespace lift_007CD530 {
-// @name ClearMutualLinkAt0x210
-// @class <unknown>
-// @summary If self->field_0x210 points to an object whose +0x28 back-links to self, clear both links.
-// @field <unknown> +0x210 void* field_0x210
-// @field <unknown> +0x28 void* field_0x28 (on the object pointed to by field_0x210)
-void fn_007CD530(void* self) {
-    if (self == nullptr) {
-        return;
-    }
-    void*& link = lift_field<void*>(self, 0x210);
-    void* other = link;
-    if (other == nullptr) {
-        return;
-    }
-    void*& back = lift_field<void*>(other, 0x28);
-    if (back != self) {
-        return;
-    }
-    back = nullptr;
-    link = nullptr;
-}
-} // namespace lift_007CD530
 
 // [0x007C8BB0] sub_007C8BB0 (16 bytes)
 namespace lift_007C8BB0 {

@@ -101,34 +101,6 @@ uint32_t __cdecl fn_0080FC50(void) {
 }
 } // namespace lift_0080FC50
 
-// [0x0080ABE0] sub_0080ABE0 (32 bytes)
-namespace lift_0080ABE0 {
-extern void __stdcall ext_InitializeCriticalSection(void* lpCriticalSection);
-extern DWORD mem_00B73C58;
-extern DWORD mem_00B73C80;
-
-// @name InitCriticalSectionAndSetReadyFlag
-// @summary Initializes the critical section at 0x00B73C58 and sets the flag at 0x00B73C80 to 1.
-void fn_0080ABE0(void) {
-    ext_InitializeCriticalSection(&mem_00B73C58);
-    mem_00B73C80 = 1;
-}
-} // namespace lift_0080ABE0
-
-// [0x0080AD90] sub_0080AD90 (32 bytes)
-namespace lift_0080AD90 {
-extern void __stdcall ext_InitializeCriticalSection(void* lpCriticalSection);
-extern int mem_00B73C40;
-extern int mem_00B73C84;
-
-// @name InitGlobalCriticalSectionAndSetReadyFlag
-// @summary Initializes the global critical section at 0x00B73C40 and sets the flag at 0x00B73C84 to 1.
-void fn_0080AD90(void) {
-    ext_InitializeCriticalSection(&mem_00B73C40);
-    mem_00B73C84 = 1;
-}
-} // namespace lift_0080AD90
-
 // [0x0080ABC0]
 namespace lift_0080ABC0 {
 // @name LeaveGlobalCriticalSection
@@ -209,21 +181,6 @@ void fn_0080ABA0(void) {
 }
 } // namespace lift_0080ABA0
 
-// [0x0080FAE0] sub_0080FAE0 (16 bytes)
-namespace lift_0080FAE0 {
-// Known callee 0x00859730: sub_00859730 (Auto-lifted identical-shape clone of 0x0079AF50 (GlobalFreeWrapper).)
-extern void* ext_00859730(void* hMem);
-
-// @name GlobalFreeIfNonNull
-// @summary If the stack argument is non-null, forwards it to ext_00859730 (GlobalFree wrapper); result discarded.
-// @field none (no member fields accessed)
-void fn_0080FAE0(void* hMem) {
-    if (hMem != nullptr) {
-        (void)ext_00859730(hMem);
-    }
-}
-} // namespace lift_0080FAE0
-
 // [0x0080FAC0] sub_0080FAC0 (32 bytes)
 namespace lift_0080FAC0 {
 // Known callee 0x0080FAE0: GlobalFreeIfNonNull (If the stack argument is non-null, forwards it to ext_00859730 (GlobalFree wrapper); result discarded.)
@@ -272,46 +229,6 @@ void fn_0080F830(void* self, uint8_t value) {
     *counterB += 1;
 }
 } // namespace lift_0080F830
-
-// [0x0080EBD0]
-namespace lift_0080EBD0 {
-extern uint8_t mem_read8(uint32_t addr);
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name isCharInLookupTable
-// @summary Checks whether a signed byte character maps to a truthy jump-table entry.
-
-extern uint32_t sub_0080EBD0(int8_t ch) {
-    uint32_t idx = static_cast<uint32_t>(static_cast<int32_t>(ch) - 0x20);
-    if (idx > 0x5A) {
-        return 0;
-    }
-    uint8_t entry = mem_read8(0x0080EC00u + idx);
-    uint32_t target = mem_read32(0x0080EBF8u + static_cast<uint32_t>(entry) * 4u);
-    if (target == 0x0080EBECu) {
-        return 1;
-    }
-    return 0;
-}
-} // namespace lift_0080EBD0
-
-// [0x0080AC00]
-namespace lift_0080AC00 {
-void ext_0080AC30(void* self);
-void DeleteCriticalSection(void* lpCriticalSection);
-extern uint32_t mem_00B73C80;
-extern uint8_t mem_00B73C58;
-
-// @name ShutdownCriticalSections
-// @summary Shut down the first global critical section via ext_0080AC30 and, if mem_00B73C80 is set, delete the global critical section at mem_00B73C58 and clear the flag.
-void fn_0080AC00(void) {
-    ext_0080AC30(nullptr);
-    if (mem_00B73C80 != 0) {
-        DeleteCriticalSection(&mem_00B73C58);
-        mem_00B73C80 = 0;
-    }
-}
-} // namespace lift_0080AC00
 
 // [0x0080F910]
 namespace lift_0080F910 {
@@ -395,22 +312,6 @@ DWORD fn_0080B5B0(DWORD a, DWORD b, DWORD c) {
     return ext_008597B0(a, b, c);
 }
 } // namespace lift_0080B5B0
-
-// [0x0080B570] sub_0080B570 (32 bytes)
-namespace lift_0080B570 {
-// @name sub_0080B570
-// @summary Auto-lifted identical-shape clone of 0x0080B590 (Thunk::copyMemoryDwordThenBytesForward).
-namespace lift_0080B590 {
-// @name Thunk::copyMemoryDwordThenBytesForward
-// @summary Forwards (dst, src, n) unchanged to copyMemoryDwordThenBytes (ext_00859780) and returns its result.
-
-void* ext_00859740(void* dst, const void* src, size_t n);
-
-void* fn_0080B570(void* dst, const void* src, size_t n) {
-    return ext_00859740(dst, src, n);
-}
-} // namespace lift_0080B590
-} // namespace lift_0080B570
 
 // [0x0080B5D0] sub_0080B5D0 (32 bytes)
 namespace lift_0080B5D0 {
@@ -801,23 +702,6 @@ extern uint32_t __cdecl fn_0080FB60(void* self, uint32_t delta) {
 }
 } // namespace lift_0080FB60
 
-// [0x0080FB10] sub_0080FB10 (16 bytes)
-namespace lift_0080FB10 {
-// @name sub_0080FB10
-// @summary Auto-lifted identical-shape clone of 0x007AF730 (ForwardDispatchRecordByKey16Const).
-namespace lift_007AF730 {
-// Known callee 0x007AF750: Unknown::DispatchRecordByKey16 (Looks up the record keyed by this+0x44; forwards this+0x00 and either the record's first dword or the key, plus arg3, to the optional hook. Always returns -1.)
-// The call site pushes only two arguments (self, key constant); the third is not set here.
-extern int32_t ext_0080FB20(void* self, uint32_t key);
-
-// @name ForwardDispatchRecordByKey16Const
-// @summary Forwards its first argument and the constant key 0x00AB10C4 to DispatchRecordByKey16 and returns that result.
-int32_t fn_0080FB10(void* self) {
-    return ext_0080FB20(self, 0x0u);
-}
-} // namespace lift_007AF730
-} // namespace lift_0080FB10
-
 // [0x0080EB80] sub_0080EB80 (41 bytes)
 namespace lift_0080EB80 {
 // Known callee 0x008598E0: strncpyZeroPad (Copy up to n bytes of a NUL-terminated string from src to dst, zero-filling the remainder of the n-byte window; returns dst.)
@@ -952,34 +836,6 @@ uint32_t fn_0080FBC0(const char* str) {
 }
 } // namespace lift_0080FBC0
 
-// [0x0080B060]
-namespace lift_0080B060 {
-uint8_t mem_read8(uint32_t addr);
-
-// @name mapCodeToId
-// @summary Maps a 16-bit code (0x00..0x45) via an index table to an integer ID, returning 0x1f for out-of-range values
-
-uint32_t sub_0080B060(uint32_t arg0) {
-    uint32_t val = arg0 & 0xFFFFu;
-    if (val > 0x45u) {
-        return 0x1Fu;
-    }
-    uint8_t idx = mem_read8(0x0080B0E0u + val);
-    switch (idx) {
-        case 0: return 0x00u;
-        case 1: return 0x07u;
-        case 2: return 0x0Cu;
-        case 3: return 0x18u;
-        case 4: return 0x01u;
-        case 5: return 0x17u;
-        case 6: return 0x0Eu;
-        case 7: return 0x0Bu;
-        case 8: return 0x1Bu;
-        default: return 0x1Fu;
-    }
-}
-} // namespace lift_0080B060
-
 // [0x008039C0]
 namespace lift_008039C0 {
 // @name Heap_push
@@ -1024,37 +880,6 @@ int Heap_push(void* self, uint32_t value) {
     return 1;
 }
 } // namespace lift_008039C0
-
-// [0x0080AA80]
-namespace lift_0080AA80 {
-extern void ext_0080ABA0(void);
-extern void ext_0080ABC0(void);
-extern uint8_t mem_u8(uint32_t addr);
-extern uint32_t mem_u32(uint32_t addr);
-
-// @name LookupHandleEntry
-// @summary Validates a packed 32-bit handle against the 128-entry global table at 0x00B62030 under the global critical section and returns a pointer to the entry.
-extern uint32_t fn_0080AA80(uint32_t handle, uint32_t* out_entry) {
-    uint32_t index = handle >> 16;
-    uint32_t tag = handle & 0xFFFFu;
-    if (index >= 0x80u) {
-        return 9u;
-    }
-
-    ext_0080ABA0();
-
-    uint32_t offset = index * 0x238u;
-    uint8_t active = mem_u8(0x00B62260u + offset);
-    if (active == 0 || mem_u32(0x00B6204Cu + offset) != tag) {
-        ext_0080ABC0();
-        return 9u;
-    }
-
-    *out_entry = 0x00B62030u + offset;
-    ext_0080ABC0();
-    return 0u;
-}
-} // namespace lift_0080AA80
 
 // [0x00802D90]
 namespace lift_00802D90 {

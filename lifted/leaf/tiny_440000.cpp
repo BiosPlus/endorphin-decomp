@@ -250,73 +250,6 @@ void fn_0044D010(void* self, uint32_t a0, uint32_t a1) {
     lift_field<uint32_t>(self, 0xD0) = a1;
 }
 
-// [0x0044CF80]
-namespace lift_0044CF80 {
-// @name hasField0x74
-// @summary Checks whether the 32-bit field at offset 0x74 is non-zero.
-// @field Unknown +0x74 uint32_t field_0x74
-
-
-extern uint32_t mem_read32(uint32_t addr);
-
-uint32_t __thiscall sub_0044CF80(uint32_t self) {
-    return mem_read32(self + 0x74) != 0 ? 1u : 0u;
-}
-} // namespace lift_0044CF80
-
-// [0x004474E0]
-namespace lift_004474E0 {
-uint32_t mem_r32(uintptr_t addr);
-
-// @name invokeCallbackOrReturn
-// @summary Invokes a non-null callback pointer stored at offset 0 of this, or returns.
-// @field Unknown +0x00 uint32_t field_0x00
-void __thiscall sub_004474E0(void* self, uint32_t arg1) {
-    uint32_t fn = mem_r32(reinterpret_cast<uintptr_t>(self));
-    if (fn != 0) {
-        using FnType = void(__thiscall*)(void*, uint32_t);
-        reinterpret_cast<FnType>(static_cast<uintptr_t>(fn))(self, arg1);
-    }
-}
-} // namespace lift_004474E0
-
-// [0x004474F0]
-namespace lift_004474F0 {
-// @name invokeCallbackIfSet
-// @summary Invokes a member callback at +0x04 if non-null, passing one argument
-// @field Unknown +0x04 uint32_t field_0x04
-
-
-extern uint32_t mem_read32(uint32_t addr);
-
-uint32_t __thiscall sub_004474F0(uint32_t ecx, uint32_t arg1) {
-    uint32_t fn_ptr = mem_read32(ecx + 0x4);
-    if (fn_ptr != 0) {
-        using fn_t = uint32_t(__thiscall*)(uint32_t, uint32_t);
-        return reinterpret_cast<fn_t>(static_cast<uintptr_t>(fn_ptr))(ecx, arg1);
-    }
-    return 0;
-}
-} // namespace lift_004474F0
-
-// [0x00447500]
-namespace lift_00447500 {
-// @name invokeCallbackOrNull
-// @summary Tail-calls the callback stored at this+0x8 with arg0 if non-null, otherwise returns 0.
-// @field Class +0x08 uint32_t field_0x08
-
-extern uint32_t mem_read32(uint32_t addr);
-
-uint32_t __thiscall sub_00447500(uint32_t self, uint32_t arg0) {
-    uint32_t fn = mem_read32(self + 0x8u);
-    if (fn != 0u) {
-        using fn_t = uint32_t (__thiscall *)(uint32_t, uint32_t);
-        return reinterpret_cast<fn_t>(static_cast<uintptr_t>(fn))(self, arg0);
-    }
-    return 0u;
-}
-} // namespace lift_00447500
-
 // [0x00447510]
 namespace lift_00447510 {
 // @name sub_00447510
@@ -332,24 +265,6 @@ void __thiscall sub_00447510(void* self, uint32_t arg1) {
     }
 }
 } // namespace lift_00447510
-
-// [0x00447520]
-namespace lift_00447520 {
-// @name invokeCallback0x10
-// @summary Tail-calls the 2-arg __thiscall function pointer at this+0x10 if non-null
-// @field struct_0 +0x10 uint32_t field_0x10
-
-
-uint32_t mem_read32(uintptr_t addr);
-
-void __thiscall sub_00447520(void* self, uint32_t arg1, uint32_t arg2) {
-    uint32_t fn_addr = mem_read32(reinterpret_cast<uintptr_t>(self) + 0x10);
-    if (fn_addr != 0) {
-        using FnType = void(__thiscall*)(void*, uint32_t, uint32_t);
-        reinterpret_cast<FnType>(static_cast<uintptr_t>(fn_addr))(self, arg1, arg2);
-    }
-}
-} // namespace lift_00447520
 
 // [0x0044CCC0] sub_0044CCC0 (13 bytes)
 namespace lift_0044CCC0 {
@@ -438,22 +353,6 @@ DWORD fn_004407B0(void* self) {
     return *reinterpret_cast<DWORD*>(static_cast<uint8_t*>(p) + 0x10);
 }
 } // namespace lift_004407B0
-
-// [0x004474D0]
-namespace lift_004474D0 {
-extern BOOL ext_FreeLibrary(HMODULE hLibModule);
-
-// @name ReleaseLibraryHandle_0x20
-// @class Unknown
-// @summary If the handle stored at this+0x20 is non-null, free it with FreeLibrary; always returns.
-// @field Unknown +0x20 HMODULE field_0x20
-void fn_004474D0(void* self) {
-    HMODULE handle = lift_field<HMODULE>(self, 0x20);
-    if (handle != nullptr) {
-        ext_FreeLibrary(handle);
-    }
-}
-} // namespace lift_004474D0
 
 // [0x0044B6A0]
 namespace lift_0044B6A0 {

@@ -8,6 +8,6 @@
 // Recovered field layout for std::basic_istream:
 namespace lifted_layout {
 struct std_basic_istream_Fields {
-    // +0x0   void*                    vptr  (evidence: 0x00570380, 0x0057BBE0)
+    // +0x0   void*                    vptr  (evidence: 0x00570380)
 };
 } // namespace lifted_layout

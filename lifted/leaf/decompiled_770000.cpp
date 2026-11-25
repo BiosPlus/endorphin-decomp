@@ -108,19 +108,6 @@ void* fn_0077FB40(void* self) {
 }
 } // namespace lift_0077FB40
 
-// [0x00772010] sub_00772010 (48 bytes)
-namespace lift_00772010 {
-// @name copyNBytesAndTerminate
-// @summary Copies n bytes via strncpy within the buffer whose pointer is stored at *dstSlot, NUL-terminates at index n, and returns true.
-bool fn_00772010(char** dstSlot, std::size_t n) {
-    char* buf = *dstSlot;
-    std::strncpy(buf, buf, n);
-    buf = *dstSlot;
-    buf[n] = '\0';
-    return true;
-}
-} // namespace lift_00772010
-
 // [0x0077F520] sub_0077F520 (48 bytes)
 namespace lift_0077F520 {
 // @name Unknown::cacheIndirectDwordAndReset
@@ -170,28 +157,6 @@ int sub_0077FB10(void* self, const void* other) {
     return 0;
 }
 } // namespace lift_0077FB10
-
-// [0x0077F620] sub_0077F620 (48 bytes)
-namespace lift_0077F620 {
-extern uint32_t mem_read32(uint32_t addr);
-extern void mem_write32(uint32_t addr, uint32_t value);
-
-// @name Unknown::copyIndexedBlock32
-// @class Unknown
-// @summary Copies the 32-byte (8 x DWORD) entry at index from the table at self+0x10 into dest.
-// @field Unknown +0x10 uint32_t field_0x10 (table base address; entries are 32 bytes each)
-//
-// Original calling convention: thiscall (ecx = self), stdcall args (dest, index), ret 8.
-// The original also leaves ecx = 0 on return; that register side effect is not modeled here.
-void fn_0077F620(void* self, uint32_t dest, uint32_t index) {
-    const uint32_t base = lift_field<uint32_t>(self, 0x10);
-    const uint32_t src = base + (index << 5);
-
-    for (uint32_t i = 0; i < 8; ++i) {
-        mem_write32(dest + i * 4, mem_read32(src + i * 4));
-    }
-}
-} // namespace lift_0077F620
 
 // [0x0077F5D0]
 namespace lift_0077F5D0 {
@@ -267,27 +232,6 @@ uint32_t fn_0077F4E0(void* self) {
     return lift_field<uint32_t>(object, 0x04);
 }
 } // namespace lift_0077F4E0
-
-// [0x00771FC0] sub_00771FC0 (80 bytes)
-namespace lift_00771FC0 {
-extern const char mem_00AA870C[];
-
-// @name StrCopyAfterMarker
-// @summary If the string at *dst contains the marker mem_00AA870C, copies the text after the marker's first two bytes back over *dst (inclusive of terminator); always returns 1.
-extern uint8_t __stdcall fn_00771FC0(char** dst) {
-    char* found = std::strstr(*dst, mem_00AA870C);
-    if (found != nullptr) {
-        const char* src = found + 2;
-        char* out = *dst;
-        size_t n = std::strlen(src) + 1;
-        // Forward copy, matching the original rep movs semantics for overlapping buffers.
-        for (size_t i = 0; i < n; ++i) {
-            out[i] = src[i];
-        }
-    }
-    return 1;
-}
-} // namespace lift_00771FC0
 
 // [0x00771B90]
 namespace lift_00771B90 {

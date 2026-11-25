@@ -9,12 +9,12 @@
 namespace lifted_layout {
 struct Vec4_Fields {
     // +0x0   float                    field_0x00  (evidence: 0x00546570) // CONFLICT: multiple definitions at +0x0
-    // +0x0   float                    x  (evidence: 0x00486850, 0x004890D0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   float                    x  (evidence: 0x00486850) // CONFLICT: multiple definitions at +0x0
     // +0x4   float                    field_0x04  (evidence: 0x00546570) // CONFLICT: multiple definitions at +0x4
-    // +0x4   float                    y  (evidence: 0x00486850, 0x004890D0) // CONFLICT: multiple definitions at +0x4
+    // +0x4   float                    y  (evidence: 0x00486850) // CONFLICT: multiple definitions at +0x4
     // +0x8   float                    field_0x08  (evidence: 0x00546570) // CONFLICT: multiple definitions at +0x8
-    // +0x8   float                    z  (evidence: 0x00486850, 0x004890D0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   float                    z  (evidence: 0x00486850) // CONFLICT: multiple definitions at +0x8
     // +0xC   float                    field_0x0c  (evidence: 0x00546570) // CONFLICT: multiple definitions at +0xC
-    // +0xC   float                    w  (evidence: 0x00486850, 0x004890D0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   float                    w  (evidence: 0x00486850) // CONFLICT: multiple definitions at +0xC
 };
 } // namespace lifted_layout

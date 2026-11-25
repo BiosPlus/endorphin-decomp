@@ -10,10 +10,6 @@
 // Recovered field layout for MacroCommand:
 namespace lifted_layout {
 struct MacroCommand_Fields {
-    // +0xC   DWORD                    field_0x0C  (evidence: 0x00665B10)
     // +0x20  DWORD                    field_0x20  (evidence: 0x00665840)
-    // +0x30  void*                    commandList  (evidence: 0x00665A50)
-    // +0x3C  void*                    field_0x3C  (evidence: 0x00665B10)
-    // +0x40  void*                    field_0x40  (evidence: 0x00665B10)
 };
 } // namespace lifted_layout

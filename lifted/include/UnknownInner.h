@@ -8,8 +8,6 @@
 // Recovered field layout for UnknownInner:
 namespace lifted_layout {
 struct UnknownInner_Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x00783630)
-    // +0x4   uint8_t                  field_0x04  (evidence: 0x00783630)
     // +0x18  uint32_t                 value0  (evidence: 0x004689B0)
     // +0x1C  uint32_t                 value1  (evidence: 0x004689B0)
     // +0x20  CriticalSectionLock      lock  (evidence: 0x004689B0)

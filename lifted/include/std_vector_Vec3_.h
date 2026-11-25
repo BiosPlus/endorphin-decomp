@@ -8,7 +8,7 @@
 // Recovered field layout for std::vector<Vec3>:
 namespace lifted_layout {
 struct std_vector_Vec3__Fields {
-    // +0x4   void*                    begin  (evidence: 0x005B12B0, 0x005B4B10)
-    // +0x8   void*                    end  (evidence: 0x005B12B0, 0x005B4B10)
+    // +0x4   void*                    begin  (evidence: 0x005B4B10)
+    // +0x8   void*                    end  (evidence: 0x005B4B10)
 };
 } // namespace lifted_layout

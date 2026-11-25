@@ -12,7 +12,7 @@ namespace lifted_layout {
 struct EffectorSkeletal_Fields {
     // +0x0   void*                    field_0x00  (evidence: 0x00630D00)
     // +0x2C  void*                    field_0x2C  (evidence: 0x00630D00, 0x00630D40)
-    // +0x90  void*                    field_0x90  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00630D00, 0x00630D40, 0x00636470, 0x00639730, 0x00695740)
+    // +0x90  void*                    field_0x90  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00630D00, 0x00630D40, 0x00639730, 0x00695740)
     // +0x9C  float                    desiredPosition_x  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x006330E0) // CONFLICT: multiple definitions at +0x9C
     // +0x9C  void*                    field_0x9c  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740) // CONFLICT: multiple definitions at +0x9C
     // +0xA0  float                    desiredPosition_y  (evidence: 0x004886F0, 0x004A2AD0, 0x004CB250, 0x006330E0)

@@ -9,9 +9,7 @@
 namespace lifted_layout {
 struct Range_Fields {
     // +0x0   int32_t                  begin  (evidence: 0x007D9630)
-    // +0x4   int32_t                  end  (evidence: 0x007D9630) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00410D10) // CONFLICT: multiple definitions at +0x4
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x00410D10) // CONFLICT: multiple definitions at +0x8
-    // +0x8   int32_t                  flags  (evidence: 0x007D9630) // CONFLICT: multiple definitions at +0x8
+    // +0x4   int32_t                  end  (evidence: 0x007D9630)
+    // +0x8   int32_t                  flags  (evidence: 0x007D9630)
 };
 } // namespace lifted_layout

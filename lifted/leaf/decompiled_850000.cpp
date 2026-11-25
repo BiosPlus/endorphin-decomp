@@ -78,17 +78,6 @@ uint32_t __cdecl fn_0085BFE0(uint32_t hMem) {
 }
 } // namespace lift_0085BFE0
 
-// [0x0085D560] sub_0085D560 (16 bytes)
-namespace lift_0085D560 {
-extern void* ext_LocalAlloc(UINT uFlags, SIZE_T uBytes);
-
-// @name LocalAllocZeroFlags
-// @summary Allocates uBytes via LocalAlloc with uFlags = 0 and returns the handle.
-void* fn_0085D560(SIZE_T uBytes) {
-    return ext_LocalAlloc(0, uBytes);
-}
-} // namespace lift_0085D560
-
 // [0x00859E50] sub_00859E50 (32 bytes)
 namespace lift_00859E50 {
 // @name ResolveDwordThroughFlaggedIndirection
@@ -160,15 +149,6 @@ void* fn_00859E70(void* head, DWORD key) {
 }
 } // namespace lift_00859E70
 
-// [0x0085DA40] sub_0085DA40 (32 bytes)
-namespace lift_0085DA40 {
-// @name NoOpReturn_0085DA40
-// @summary Empty stub: returns immediately without touching state; trailing bytes are alignment padding.
-void fn_0085DA40(void* self) {
-    (void)self;
-}
-} // namespace lift_0085DA40
-
 // [0x0085E1F0] sub_0085E1F0 (32 bytes)
 namespace lift_0085E1F0 {
 // @name strlen
@@ -227,70 +207,6 @@ extern uint32_t __cdecl fn_00856F00(uint32_t* obj) {
     return 0;
 }
 } // namespace lift_00856F00
-
-// [0x00859A20]
-namespace lift_00859A20 {
-uint8_t mem_read8(uint32_t addr);
-void mem_write8(uint32_t addr, uint8_t val);
-
-// @name strcat_impl
-// @summary Appends a null-terminated source string to the end of a destination string and returns the destination pointer.
-
-uint32_t sub_00859A20(uint32_t dst_addr, uint32_t src_addr) {
-    uint32_t ecx = dst_addr;
-    if (mem_read8(ecx) != 0) {
-        uint8_t dl;
-        do {
-            dl = mem_read8(ecx + 1);
-            ecx++;
-        } while (dl != 0);
-    }
-
-    uint32_t esi = src_addr;
-    ecx++;
-    uint8_t dl = mem_read8(esi);
-    esi++;
-    mem_write8(ecx - 1, dl);
-    if (dl != 0) {
-        do {
-            dl = mem_read8(esi);
-            mem_write8(ecx, dl);
-            ecx++;
-            esi++;
-        } while (dl != 0);
-    }
-
-    return dst_addr;
-}
-} // namespace lift_00859A20
-
-// [0x0085BF40]
-namespace lift_0085BF40 {
-// @name findEntryValueByKey
-// @summary Linearly searches an array of 8-byte key-value pairs for a matching 32-bit key and returns its 32-bit value, or 0 if not found.
-// @field Table +0x00 uint32_t count
-// @field Table +0x04 uint32_t entriesPtr
-
-
-extern uint32_t mem_read32(uint32_t addr);
-
-uint32_t sub_0085BF40(uint32_t tablePtr, uint32_t key) {
-    uint32_t count = mem_read32(tablePtr + 0x0);
-    if (count == 0) {
-        return 0;
-    }
-
-    uint32_t entriesPtr = mem_read32(tablePtr + 0x4);
-    for (uint32_t i = 0; i < count; ++i) {
-        uint32_t entryAddr = entriesPtr + i * 8;
-        if (mem_read32(entryAddr) == key) {
-            return mem_read32(entryAddr + 0x4);
-        }
-    }
-
-    return 0;
-}
-} // namespace lift_0085BF40
 
 // [0x0085F7B0]
 namespace lift_0085F7B0 {
@@ -584,37 +500,6 @@ uint32_t __stdcall fn_0085C430(uint32_t index) {
 }
 } // namespace lift_0085C430
 
-// [0x008596F0]
-namespace lift_008596F0 {
-// @name LocalBlockResize
-// @summary Allocates, reallocates, or frees a LocalAlloc block depending on whether the handle and size arguments are zero.
-
-uint32_t ext_LocalAlloc(uint32_t uFlags, uint32_t uBytes);
-uint32_t ext_LocalFree(uint32_t hMem);
-uint32_t ext_LocalReAlloc(uint32_t hMem, uint32_t uBytes, uint32_t uFlags);
-
-// cdecl: (handle, size) -> handle
-//   handle != 0, size != 0 : LocalReAlloc(handle, size, LMEM_MOVEABLE)
-//   handle != 0, size == 0 : LocalFree(handle), return 0
-//   handle == 0, size != 0 : LocalAlloc(0, size)
-//   handle == 0, size == 0 : return 0
-uint32_t __cdecl fn_008596F0(uint32_t handle, uint32_t size) {
-    constexpr uint32_t kLmemMoveable = 0x0002;
-
-    if (handle != 0) {
-        if (size != 0) {
-            return ext_LocalReAlloc(handle, size, kLmemMoveable);
-        }
-        ext_LocalFree(handle);
-        return 0;
-    }
-    if (size == 0) {
-        return 0;
-    }
-    return ext_LocalAlloc(0, size);
-}
-} // namespace lift_008596F0
-
 // [0x00859740] sub_00859740 (64 bytes)
 namespace lift_00859740 {
 // @name MemsetReturnDst
@@ -650,79 +535,6 @@ void __cdecl sub_0085D890(uint32_t* ptr, uint16_t count) {
     } while (count != 0);
 }
 } // namespace lift_0085D890
-
-// [0x0085BF70]
-namespace lift_0085BF70 {
-extern uint8_t& mem_u8(uint32_t addr);
-extern uint32_t& mem_u32(uint32_t addr);
-extern uint32_t ext_00859DA0();
-extern uint32_t ext_0085BC20(uint32_t self_ptr);
-
-// @name CloneOrShareStream
-// @summary Allocates a stream/buffer wrapper via ext_00859DA0 and initializes it to share the underlying buffer of arg0, incrementing its reference count.
-// @field Stream +0x00 uint32_t inner_ptr
-// @field Stream +0x08 uint32_t field_0x08
-// @field Stream +0x10 uint32_t cursor
-// @field Stream +0x14 uint32_t flags
-// @field Stream +0x18 uint32_t ref_count
-uint32_t fn_0085BF70(uint32_t arg0) {
-    uint32_t esi = ext_00859DA0();
-    if (esi == 0) {
-        return 0;
-    }
-
-    uint32_t src = arg0;
-    if ((mem_u8(src + 0x14) & 0x4) != 0) {
-        src = mem_u32(src);
-    }
-
-    uint32_t ref_count = mem_u32(src + 0x18) + 1;
-    mem_u32(src + 0x18) = ref_count;
-    mem_u32(esi) = src;
-
-    mem_u32(esi + 0x8) = ext_0085BC20(src);
-    mem_u32(esi + 0x14) = mem_u32(esi + 0x14) | 0x6;
-    mem_u32(esi + 0x10) = 0;
-
-    return esi;
-}
-} // namespace lift_0085BF70
-
-// [0x00859A50]
-namespace lift_00859A50 {
-uint8_t mem_read8(uint32_t addr);
-void mem_write8(uint32_t addr, uint8_t val);
-
-// @name strncat
-// @summary Appends at most count characters from src to null-terminated dst, always null-terminating, and returns dst.
-
-uint32_t sub_00859A50(uint32_t dst, uint32_t src, uint32_t count) {
-    if (count == 0) {
-        return dst;
-    }
-
-    uint32_t cur = dst;
-    while (mem_read8(cur) != 0) {
-        cur++;
-    }
-
-    while (true) {
-        uint8_t ch = mem_read8(src++);
-        mem_write8(cur, ch);
-        if (ch == 0) {
-            break;
-        }
-        cur++;
-        count--;
-        if (count == 0) {
-            break;
-        }
-    }
-
-    mem_write8(cur, 0);
-    return dst;
-}
-} // namespace lift_00859A50
 
 // [0x00859AF0]
 namespace lift_00859AF0 {
@@ -797,72 +609,6 @@ uint32_t __cdecl sub_008597E0(uint32_t dst, uint32_t src, uint32_t count) {
     return dst;
 }
 } // namespace lift_008597E0
-
-// [0x00859E00]
-namespace lift_00859E00 {
-extern uint8_t mem_read8(uint32_t addr);
-extern uint32_t mem_read32(uint32_t addr);
-extern void mem_write32(uint32_t addr, uint32_t val);
-
-// @name seekBuffer
-// @summary Seeks a buffer/stream position relative to current, end, or start, bounds-checked against size.
-// @field Buffer +0x00 uint32_t field_0x00
-// @field Buffer +0x04 uint32_t field_0x04
-// @field Buffer +0x08 uint32_t field_0x08
-// @field Buffer +0x14 uint8_t field_0x14
-
-uint32_t sub_00859E00(uint32_t arg1, uint32_t arg2, uint32_t arg3) {
-    uint32_t new_pos = 0xFFFFFFFFu;
-    uint32_t base = arg1;
-    if ((mem_read8(arg1 + 0x14u) & 0x4u) != 0u) {
-        base = mem_read32(arg1);
-    }
-
-    if (arg3 == 0u) {
-        new_pos = mem_read32(arg1 + 0x8u) + arg2;
-    } else if (arg3 == 1u) {
-        new_pos = mem_read32(base + 0x4u) - arg2;
-    } else if (arg3 == 2u) {
-        new_pos = arg2;
-    }
-
-    uint32_t limit = mem_read32(base + 0x4u);
-    if (new_pos > limit) {
-        return 0x1Du;
-    }
-
-    mem_write32(arg1 + 0x8u, new_pos);
-    return 0u;
-}
-} // namespace lift_00859E00
-
-// [0x00853680] sub_00853680 (80 bytes)
-namespace lift_00853680 {
-extern void __cdecl fn_008692F0(uint8_t* dst, uint32_t value, uint32_t count);
-
-// @name initSha1Context
-// @class Sha1Context
-// @summary Zeroes a 92-byte context block and loads the SHA-1 initial hash values (H0-H4) plus a zero bit counter.
-// @field Sha1Context +0x00 uint32_t h0
-// @field Sha1Context +0x04 uint32_t h1
-// @field Sha1Context +0x08 uint32_t h2
-// @field Sha1Context +0x0C uint32_t h3
-// @field Sha1Context +0x10 uint32_t h4
-// @field Sha1Context +0x14 uint32_t countLo
-// @field Sha1Context +0x18 uint32_t countHi
-void fn_00853680(uint8_t* self) {
-    fn_008692F0(self, 0, 0x5C);
-
-    uint32_t* state = reinterpret_cast<uint32_t*>(self);
-    state[0] = 0x67452301u;
-    state[1] = 0xEFCDAB89u;
-    state[2] = 0x98BADCFEu;
-    state[3] = 0x10325476u;
-    state[4] = 0xC3D2E1F0u;
-    state[5] = 0u; // +0x14
-    state[6] = 0u; // +0x18
-}
-} // namespace lift_00853680
 
 // [0x008598E0]
 namespace lift_008598E0 {
@@ -1065,107 +811,6 @@ int32_t fn_0085A580(void* self) {
 }
 } // namespace lift_0085A580
 
-// [0x008522E0] sub_008522E0 (91 bytes)
-namespace lift_008522E0 {
-// Callees. ext_008179EA / ext_008179F2 / ext_008203F7 / ext_0083CAAF are only
-// reached through `jb` after an `and` (CF cleared) or `clc`, so they are never taken.
-extern void __cdecl ext_008179EA(void);
-extern void __cdecl ext_008179F2(void);
-extern void __cdecl ext_008203F7(void);
-extern void __cdecl ext_0083CAAF(void);
-// Tail-jump target; the packed value is passed in edi. Return type is assumed.
-extern uint32_t __cdecl ext_00852345(uint32_t packed);
-
-// @name sub_008522E0
-// @summary Packs four byte-sized caller stack locals (ebp-0x19..ebp-0x1c) into a big-endian uint32 and tail-jumps to ext_00852345.
-extern uint32_t __cdecl fn_008522E0(uint8_t mem_ebp_m19, uint8_t mem_ebp_m1a,
-                                        uint8_t mem_ebp_m1b, uint8_t mem_ebp_m1c) {
-    // Original sequence: edi = byte[ebp-0x19]; edi = (edi << 8) | byte[ebp-0x1a];
-    // edi = (edi << 8) | byte[ebp-0x1b]; edi = (edi << 8) | byte[ebp-0x1c].
-    // Each byte is masked with 0xff first. Overflow/carry paths are unreachable.
-    uint32_t packed = static_cast<uint32_t>(mem_ebp_m19) & 0xffu;
-    packed = (packed << 8) + (static_cast<uint32_t>(mem_ebp_m1a) & 0xffu);
-    packed = (packed << 8) + (static_cast<uint32_t>(mem_ebp_m1b) & 0xffu);
-    packed = (packed << 8) + (static_cast<uint32_t>(mem_ebp_m1c) & 0xffu);
-    return ext_00852345(packed);
-}
-} // namespace lift_008522E0
-
-// [0x00852AD0]
-namespace lift_00852AD0 {
-// @name initTypedPayload16
-// @summary Validates a 1-byte type tag (1..3), writes it to dst[0], and copies or zeroes 16 bytes at dst+1.
-
-
-void mem_write_u8(uint32_t addr, uint8_t val);
-uint32_t mem_read_u32(uint32_t addr);
-void mem_write_u32(uint32_t addr, uint32_t val);
-
-extern int32_t sub_00852AD0(uint32_t dst, uint8_t type, uint32_t src) {
-    if (type != 1 && type != 2 && type != 3) {
-        return -4;
-    }
-
-    mem_write_u8(dst, type);
-    uint32_t payload = dst + 1;
-
-    if (src != 0) {
-        mem_write_u32(payload + 0x0, mem_read_u32(src + 0x0));
-        mem_write_u32(payload + 0x4, mem_read_u32(src + 0x4));
-        mem_write_u32(payload + 0x8, mem_read_u32(src + 0x8));
-        mem_write_u32(payload + 0xC, mem_read_u32(src + 0xC));
-    } else {
-        mem_write_u32(payload + 0x0, 0);
-        mem_write_u32(payload + 0x4, 0);
-        mem_write_u32(payload + 0x8, 0);
-        mem_write_u32(payload + 0xC, 0);
-    }
-
-    return 1;
-}
-} // namespace lift_00852AD0
-
-// [0x008592A0]
-namespace lift_008592A0 {
-// @name calcCrc16Nibble
-// @summary Computes a 16-bit CRC over a byte buffer using a 16-entry nibble lookup table at 0x00AB8C70.
-
-extern uint8_t mem_r8(uint32_t addr);
-extern uint32_t mem_r32(uint32_t addr);
-
-uint32_t __cdecl sub_008592A0(uint32_t data_addr, uint32_t length) {
-    uint32_t eax = 0;
-    if (length == 0) {
-        return eax;
-    }
-
-    uint32_t esi = data_addr;
-    uint32_t edi = length;
-    constexpr uint32_t kTableBase = 0x00AB8C70u;
-
-    do {
-        uint32_t edx = mem_r8(esi);
-        uint32_t ecx = mem_r32(kTableBase + (eax & 0xFu) * 4u);
-        uint32_t ebx = edx & 0xFu;
-
-        eax = (eax & 0xFFFF0000u) | ((eax & 0xFFFFu) >> 4);
-        ecx ^= static_cast<uint16_t>(mem_r32(kTableBase + ebx * 4u));
-        edx >>= 4;
-        ecx ^= eax;
-
-        eax = mem_r32(kTableBase + (ecx & 0xFu) * 4u);
-        ecx = (ecx & 0xFFFF0000u) | ((ecx & 0xFFFFu) >> 4);
-        eax ^= static_cast<uint16_t>(mem_r32(kTableBase + edx * 4u));
-        eax ^= ecx;
-
-        esi += 1;
-        edi -= 1;
-    } while (edi != 0);
-
-    return eax;
-}
-} // namespace lift_008592A0
-
 // [0x0085BBC0]
 namespace lift_0085BBC0 {
 // @name __allshl
@@ -1242,47 +887,6 @@ extern uint32_t fn_0085BE20(void* self, uint32_t count, uint32_t* out_val) {
 }
 } // namespace lift_0085BE20
 
-// [0x0085D9D0] sub_0085D9D0 (106 bytes)
-namespace lift_0085D9D0 {
-extern uint32_t mem_read32(uint32_t addr);
-extern uint16_t mem_read16(uint32_t addr);
-
-// @name FindOrReserveKeyedSlot
-// @summary Scans the 20-byte slot table at 0x00ABB380..0x00AC018C for a live entry matching (key16a, key16b, key16c, key32); returns its 1-based index, else -(first empty 1-based index), else 0.
-// @class SlotEntry
-// @field SlotEntry +0x00 uint16_t key16a
-// @field SlotEntry +0x02 uint16_t key16b
-// @field SlotEntry +0x04 uint16_t key16c
-// @field SlotEntry +0x08 uint32_t key32
-// @field SlotEntry +0x0C uint32_t inUse
-int __cdecl fn_0085D9D0(uint16_t a1, uint16_t a2, uint16_t a3, uint32_t a4) {
-    constexpr uint32_t kTableBegin = 0x00ABB380u;
-    constexpr uint32_t kTableLastEntry = 0x00AC018Cu;
-    constexpr uint32_t kEntrySize = 0x14u;
-
-    int32_t firstEmpty = -1;
-    uint32_t index = 1;
-    for (uint32_t entry = kTableBegin; entry <= kTableLastEntry; entry += kEntrySize, ++index) {
-        if (mem_read32(entry) != 0) {
-            // Live entry: match on all four keys; the key block begins at entry - 0x0C.
-            if (mem_read16(entry - 0x08) == a3 &&
-                mem_read16(entry - 0x0C) == a1 &&
-                mem_read16(entry - 0x0A) == a2 &&
-                mem_read32(entry - 0x04) == a4) {
-                return static_cast<int32_t>(index);
-            }
-        } else if (firstEmpty < 0) {
-            firstEmpty = static_cast<int32_t>(index);
-        }
-    }
-
-    if (firstEmpty >= 0) {
-        return -firstEmpty;
-    }
-    return 0;
-}
-} // namespace lift_0085D9D0
-
 // [0x0085F750]
 namespace lift_0085F750 {
 extern int32_t __cdecl ext_0085F7B0(const void* buf1, const void* buf2, uint32_t count);
@@ -1307,136 +911,3 @@ int32_t __cdecl sub_0085F750(const uint8_t* a, const uint8_t* b) {
     return ext_0085F7B0(a + 1, b + 1, count) == 0 ? 1 : 0;
 }
 } // namespace lift_0085F750
-
-// [0x00859F60]
-namespace lift_00859F60 {
-// @name allocBufferObject
-// @summary Allocates a 16-byte buffer/sync object and optionally allocates a zero-initialized buffer of size bytes.
-// @field BufferObject +0x04 uint32_t data
-// @field BufferObject +0x08 uint32_t size
-// @field BufferObject +0x0C uint32_t field_0x0C
-
-
-void mem_write32(uint32_t addr, uint32_t val);
-uint32_t ext_00859730(uint32_t hMem);
-uint32_t ext_0086CF90(uint32_t count, uint32_t size);
-uint32_t ext_0086CFB0(uint32_t initial_state);
-
-uint32_t __cdecl fn_00859F60(uint32_t data, uint32_t size) {
-    uint32_t obj = ext_0086CFB0(0);
-    if (!obj) {
-        return 0;
-    }
-
-    if (!data) {
-        mem_write32(obj + 0x0C, 0);
-        if (size != 0) {
-            data = ext_0086CF90(size, 1);
-            if (!data) {
-                ext_00859730(obj);
-                return 0;
-            }
-        }
-    }
-
-    mem_write32(obj + 0x04, data);
-    mem_write32(obj + 0x08, size);
-    return obj;
-}
-} // namespace lift_00859F60
-
-// [0x0085C1C0]
-namespace lift_0085C1C0 {
-// @name computeTreeEncodedSize_0085C1C0
-// @summary Recursively computes encoded size for a node tree using field_0x00 flags, child (+0x20), and sibling (+0x1C)
-// @field Node +0x00 uint32_t field_0x00
-// @field Node +0x1C uint32_t field_0x1C
-// @field Node +0x20 uint32_t field_0x20
-
-
-extern uint32_t mem_r32(uint32_t);
-extern uint32_t ext_0085C130(uint32_t);
-extern uint32_t ext_0085C170(uint32_t);
-extern uint32_t ext_0086D210(uint32_t);
-
-uint32_t sub_0085C1C0(uint32_t arg0) {
-    uint32_t edi = arg0;
-    uint32_t eax = mem_r32(edi);
-    uint32_t esi;
-
-    if (((eax >> 24) & 0x20u) != 0u) {
-        uint32_t edx = mem_r32(edi + 0x20u);
-        uint32_t ebx = eax & 0x0FFFFFFFu;
-        esi = sub_0085C1C0(edx);
-        esi += ext_0085C130(esi);
-        esi += ext_0085C170(ebx);
-    } else {
-        esi = ext_0086D210(edi);
-    }
-
-    uint32_t next = mem_r32(edi + 0x1Cu);
-    if (next != 0u) {
-        esi += sub_0085C1C0(next);
-    }
-
-    return esi;
-}
-} // namespace lift_0085C1C0
-
-// [0x0085A110]
-namespace lift_0085A110 {
-// @name ClampedDecrementCounter
-// @summary Decrements a 32-bit counter stored at *counter when it is strictly greater than n; sets it to -1 when it equals n; leaves it unchanged when it is below n or already -1.
-// @field none (no class context; the counter is a plain uint32_t* argument)
-
-void ClampedDecrementCounter(uint32_t n, uint32_t* counter) {
-    uint32_t v = *counter;
-    if (v == 0xFFFFFFFFu) {
-        return;
-    }
-    if (v < n) {
-        return;
-    }
-    if (v == n) {
-        *counter = 0xFFFFFFFFu;
-        return;
-    }
-    *counter = v - 1u;
-}
-} // namespace lift_0085A110
-
-// [0x0085A370]
-namespace lift_0085A370 {
-// @name AllocEntry16
-// @summary Appends a new 16-byte entry to a LocalAlloc-backed array, initializing it and returning its index or -1 on failure.
-// @field Obj +0x08 uint32_t count
-// @field Obj +0x14 uint32_t entries
-
-
-extern uint32_t mem_read32(uint32_t addr);
-extern void mem_write32(uint32_t addr, uint32_t val);
-extern uint32_t __cdecl ext_008596F0(uint32_t handle, uint32_t size);
-
-uint32_t __cdecl fn_0085A370(uint32_t obj) {
-    uint32_t count = mem_read32(obj + 0x8);
-    uint32_t entries = mem_read32(obj + 0x14);
-    uint32_t new_size = (count + 1) << 4;
-
-    uint32_t new_entries = ext_008596F0(entries, new_size);
-    if (new_entries == 0) {
-        return 0xffffffffu;
-    }
-
-    uint32_t index = mem_read32(obj + 0x8);
-    mem_write32(obj + 0x14, new_entries);
-
-    uint32_t offset = index << 4;
-    mem_write32(new_entries + offset + 0x0, 0xffffffffu);
-    mem_write32(mem_read32(obj + 0x14) + offset + 0x4, 0);
-    mem_write32(mem_read32(obj + 0x14) + offset + 0x8, 0);
-    mem_write32(mem_read32(obj + 0x14) + offset + 0xc, 0);
-
-    mem_write32(obj + 0x8, mem_read32(obj + 0x8) + 1);
-    return index;
-}
-} // namespace lift_0085A370

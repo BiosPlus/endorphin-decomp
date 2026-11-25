@@ -8,6 +8,6 @@
 // Recovered field layout for field_0x0C:
 namespace lifted_layout {
 struct field_0x0C_Fields {
-    // +0xC   uint32_t                 field_0x0C  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x0068F050, 0x00695740)
+    // +0xC   uint32_t                 field_0x0C  (evidence: 0x0046CE90, 0x00488E30, 0x004A2930, 0x004B21D0, 0x0059F920, 0x005FCC10, 0x00639730, 0x00695740)
 };
 } // namespace lifted_layout

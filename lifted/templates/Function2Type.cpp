@@ -47,15 +47,6 @@ void fn_0067ABB0(void* self) {
     throw std::runtime_error("ExprParser::Function2Type<Randomizer>::vfunc_1: unsupported call");
 }
 
-// [0x0068BD10] ExprParser::Function2Type<Randomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}>::vfunc_16 (30 bytes)
-// @name ExprParser::Function2Type<Randomizer>::vfunc_16
-// @class ExprParser::Function2Type<Randomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}>
-// @summary Runtime type check: dynamic-casts self to the type at mem_00AA3000 (source type mem_00A2E2F8) and returns the result or NULL.
-void* fn_0068BD10(void* self) {
-    return ext_006A6E9E(self, 0, reinterpret_cast<const void*>(&mem_00A2E2F8),
-                        reinterpret_cast<const void*>(&mem_00AA3000), 0);
-}
-
 // [0x0068C120]
 namespace lift_0068C120 {
 extern float __thiscall ext_0068BDF0(void* self, float minVal, float maxVal);

@@ -311,31 +311,6 @@ double __thiscall sub_005245D0(void* self, uint32_t index) {
 }
 } // namespace lift_005245D0
 
-// [0x00520740] sub_00520740 (58 bytes)
-namespace lift_00520740 {
-// @name sub_00520740
-// @summary Auto-lifted identical-shape clone of 0x0054F2C0 (ComputeRecordAddress).
-namespace lift_0054F2C0 {
-extern void ext_00520500(std::uintptr_t a0, std::uint32_t a1, std::uint32_t a2,
-                             std::uint32_t a3, std::uint32_t a4, std::uint32_t a5);
-
-// @name ComputeRecordAddress
-// @summary Calls helper sub_0054F1E0 with the arguments and a zeroed flag word, then returns base + index * 0x68.
-// (no direct struct field accesses in this function)
-__stdcall std::uint8_t* fn_00520740(std::uint8_t* base, std::uint32_t index, std::uint32_t arg2) {
-    // The original stores 0 into the low byte of a stack slot that previously held ECX,
-    // so the dword passed on is ECX with its low byte cleared. ECX at entry is not
-    // recoverable from the stdcall signature; it is modelled as a placeholder here.
-    std::uint32_t ecx_in = 0;
-    std::uint32_t flag_slot = ecx_in & 0xFFFFFF00u;
-
-    ext_00520500(reinterpret_cast<std::uintptr_t>(base), index, arg2, ecx_in, arg2, flag_slot);
-
-    return base + static_cast<std::size_t>(index) * 0x168u;
-}
-} // namespace lift_0054F2C0
-} // namespace lift_00520740
-
 // [0x00520B90] sub_00520B90 (56 bytes)
 namespace lift_00520B90 {
 extern void __thiscall ext_00520AE0(uint32_t self, uint32_t arg);
@@ -377,27 +352,6 @@ void fn_00522220(uint8_t* first, uint8_t* last, const uint8_t* src) {
     }
 }
 } // namespace lift_00522220
-
-// [0x00522530]
-namespace lift_00522530 {
-// @name sub_00522530_copyRangeBackward
-// @summary Copies a backward range of 0x28-byte records (ending at last) into dst_end, returning the new begin of the destination.
-// @field UnknownRecord +0x04 uint32_t field_0x04
-// @field UnknownRecord +0x08 uint32_t field_0x08
-// @field UnknownRecord +0x0C std::string field_0x0C
-uint8_t* fn_00522530(uint8_t* first, uint8_t* last, uint8_t* dst_end) {
-    uint8_t* src = last;
-    uint8_t* dst = dst_end;
-    while (src != first) {
-        src -= 0x28;
-        dst -= 0x28;
-        lift_field<uint32_t>(dst, 0x04) = lift_field<uint32_t>(src, 0x04);
-        lift_field<uint32_t>(dst, 0x08) = lift_field<uint32_t>(src, 0x08);
-        lift_field<std::string>(dst, 0x0C) = lift_field<std::string>(src, 0x0C);
-    }
-    return dst;
-}
-} // namespace lift_00522530
 
 // [0x005224E0] sub_005224E0 (67 bytes)
 namespace lift_005224E0 {
@@ -466,42 +420,6 @@ uint32_t __thiscall sub_00527AF0(void* self) {
 }
 } // namespace lift_00527AF0
 
-// [0x0052A230] sub_0052A230 (70 bytes)
-namespace lift_0052A230 {
-// @name sub_0052A230
-// @summary Auto-lifted identical-shape clone of 0x004205B0 (TreeMap::lowerBound).
-namespace lift_004205B0 {
-// MSVCP80 std::operator<(const std::string&, const std::string&), imported via IAT slot mem_00924EF4.
-extern bool ext_std_string_less(const void* lhs, const void* rhs);
-
-// @name TreeMap::lowerBound
-// @class TreeMap
-// @summary Lower-bound search in an MSVC-style std::map tree: returns first node whose key is not less than the argument, or the header node if none.
-// @field TreeMap +0x04 void* head
-// Node layout used (MSVC _Tree node): +0x00 left, +0x04 parent, +0x08 right, +0x0C key (std::string), +0x59 isNil flag.
-void* fn_0052A230(void* self, const void* key) {
-    void* head = lift_field<void*>(self, 0x04);
-    void* node = lift_field<void*>(head, 0x04);   // root
-    void* result = head;
-
-    if (lift_field<uint8_t>(node, 0x61) != 0) {
-        return head;
-    }
-
-    while (lift_field<uint8_t>(node, 0x61) == 0) {
-        const void* nodeKey = reinterpret_cast<const uint8_t*>(node) + 0x0C;
-        if (ext_std_string_less(nodeKey, key)) {
-            node = lift_field<void*>(node, 0x08);     // go right
-        } else {
-            result = node;                            // candidate
-            node = lift_field<void*>(node, 0x00);     // go left
-        }
-    }
-    return result;
-}
-} // namespace lift_004205B0
-} // namespace lift_0052A230
-
 // [0x00520DC0] sub_00520DC0 (43 bytes)
 namespace lift_00520DC0 {
 // @name sub_00520DC0
@@ -533,76 +451,6 @@ uint32_t fn_00522FD0(uint32_t begin, uint32_t end, uint32_t value) {
 }
 } // namespace lift_0054F290
 } // namespace lift_00522FD0
-
-// [0x00524BC0] sub_00524BC0 (77 bytes)
-namespace lift_00524BC0 {
-// Known callee 0x00504970: GetTableEntryPlus20 (Returns the table entry at self->+0x34 offset by 0x20, or null if the global table or entry is absent.)
-extern void* ext_00504970(void* self);
-// Known callee 0x005049B0: ElementArray::getElementAt (Returns the address of element `index` in a contiguous array of 104-byte records; calls the invalid-parameter handler if the array is empty or index >= count.)
-extern uint8_t* ext_005049B0(void* self, uint32_t index);
-// Import 0x00925134 (MSVCR80!_invalid_parameter_noinfo), called through the IAT slot.
-extern void ext_msvcr80_invalid_parameter_noinfo(void);
-
-// @name Unknown::SetElementFloat_00524BC0
-// @class Unknown
-// @summary Looks up an entry via self->+0x04, takes element 0 of the returned 104-byte record array, and stores the float argument as a double at index self->+0x08 of the record's double array (bounds-checked); returns with ret 4.
-// @field Unknown +0x04 DWORD field_0x04
-// @field Unknown +0x08 DWORD field_0x08
-void fn_00524BC0(void* self, float value) {
-    auto* p = static_cast<unsigned char*>(self);
-
-    DWORD ecx = *reinterpret_cast<DWORD*>(p + 0x04);
-    if (ecx == 0) {
-        return;
-    }
-    void* entry = ext_00504970(reinterpret_cast<void*>(static_cast<uintptr_t>(ecx)));
-    if (entry == nullptr) {
-        return;
-    }
-
-    DWORD index = *reinterpret_cast<DWORD*>(p + 0x08);
-    uint8_t* rec = ext_005049B0(entry, 0);
-
-    // rec+0x08 = begin pointer, rec+0x0c = end pointer of a double array (8-byte elements).
-    DWORD begin = *reinterpret_cast<DWORD*>(rec + 0x08);
-    if (begin == 0) {
-        ext_msvcr80_invalid_parameter_noinfo();
-    }
-    DWORD end = *reinterpret_cast<DWORD*>(rec + 0x0c);
-    DWORD count = static_cast<DWORD>(static_cast<int32_t>(end - begin) >> 3);
-    if (!(index < count)) {
-        ext_msvcr80_invalid_parameter_noinfo();
-    }
-
-    double* data = reinterpret_cast<double*>(static_cast<uintptr_t>(begin));
-    data[index] = static_cast<double>(value);
-}
-} // namespace lift_00524BC0
-
-// [0x0052A020] sub_0052A020 (77 bytes)
-namespace lift_0052A020 {
-// @name sub_0052A020
-// @summary Auto-lifted identical-shape clone of 0x004757F0 (sub_0047A010).
-namespace lift_004757F0 {
-// Known callee 0x00672D10: sub_00672D10 (Auto-lifted identical-shape clone of 0x004026E0 (StringArray::ReleaseElements).)
-extern void ext_00532770(void* self);
-// Imported MSVC CRT slot for std::basic_string<char>::~basic_string (used via explicit dtor call below).
-extern int mem_00924FF4;
-
-// @name Unknown::Dtor_004757F0
-// @class Unknown
-// @summary Destructor body: releases the StringArray at +0x1C, then destroys the std::string at +0x00.
-// @field Unknown +0x00 std::string field_0x00
-// @field Unknown +0x1C StringArray field_0x1C
-void fn_0052A020(void* self) {
-    // ecx+0x1c is passed as `this` to the StringArray release routine.
-    ext_00532770(static_cast<unsigned char*>(self) + 0x1C);
-    // The original calls the MSVC CRT string dtor through mem_00924FF4 on `this`.
-    using StdString = std::string;
-    reinterpret_cast<StdString*>(self)->~StdString();
-}
-} // namespace lift_004757F0
-} // namespace lift_0052A020
 
 // [0x00526C70]
 namespace lift_00526C70 {
@@ -736,54 +584,6 @@ void* fn_00528100(void* self) {
     return self;
 }
 } // namespace lift_00528100
-
-// [0x00524610] sub_00524610 (91 bytes)
-namespace lift_00524610 {
-// @name NMData::VariableValue::VariableValue
-// @class NMData::VariableValue
-// @summary Constructor: sets PropertySource-derived vtable 0x0094F484, stores two constructor args at +0x04/+0x08, and default-constructs a std::string at +0x0C.
-// @field VariableValue +0x00 uint32_t vtable
-// @field VariableValue +0x04 uint32_t field_0x04
-// @field VariableValue +0x08 uint32_t field_0x08
-// @field VariableValue +0x0C std::string field_0x0C
-//
-// Note: the original first calls the base-vtable setter ext_00661980 (stores 0x0093BFB4).
-// That store is overwritten by 0x0094F484 below, so the call is omitted here.
-void* fn_00524610(void* self, uint32_t arg1, uint32_t arg2) {
-    lift_field<uint32_t>(self, 0x08) = arg2;
-    lift_field<uint32_t>(self, 0x00) = 0x0094F484u;
-    lift_field<uint32_t>(self, 0x04) = arg1;
-    new (static_cast<uint8_t*>(self) + 0x0C) std::string();
-    return self;
-}
-} // namespace lift_00524610
-
-// [0x0052A140] sub_0052A140 (82 bytes)
-namespace lift_0052A140 {
-// @name sub_0052A140
-// @summary Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).
-namespace lift_006998D0 {
-// Known callee 0x00699870: Unknown::copyRecordWithOptionalResolve (Copies a 16-byte record from src into self; when src+0xC is non-null, calls vtable slot 0x70 on it to fetch the +0x8 value, otherwise +0x8 is zeroed. Returns self.)
-extern void* ext_00532900(void* self, int edx_unused, const void* src);
-
-// MSVCP80 std::string copy constructor, reached through the import slot mem_00924FE0.
-extern void ext_std_string_copy_ctor(void* self, const void* src);
-extern int mem_00924FE0;
-
-// @name copyStringAndRecord
-// @summary Copy-constructs the leading std::string from src, then copies the 16-byte record at +0x1C from src into this; returns this.
-// @field Unknown +0x1C uint8_t field_0x1c[16]
-extern void* __fastcall fn_0052A140(void* self, int edx_unused, const void* src) {
-    ext_std_string_copy_ctor(self, src);
-
-    auto* dst_record = static_cast<uint8_t*>(self) + 0x1C;
-    const auto* src_record = static_cast<const uint8_t*>(src) + 0x1C;
-    ext_00532900(dst_record, 0, src_record);
-
-    return self;
-}
-} // namespace lift_006998D0
-} // namespace lift_0052A140
 
 // [0x00524750] sub_00524750 (87 bytes)
 namespace lift_00524750 {
@@ -921,20 +721,6 @@ uint8_t* fn_00522760(uint8_t* first, uint8_t* last, uint8_t* dst_end) {
 }
 } // namespace lift_00522760
 
-// [0x00527570] sub_00527570 (33 bytes)
-namespace lift_00527570 {
-// Known callee 0x005273B0: GetOnceInitString_005273B0 (Returns the process-global string at 0x00AED2EC, initializing it once on first call and registering its teardown.)
-// The caller passes a 0 flag argument on the stack before the call.
-extern void* ext_005273B0(int flag);
-
-// @name GetOnceInitString_00527570
-// @summary Copy-constructs the caller-provided std::string slot from the process-global once-initialized string and returns that slot.
-void* fn_00527570(void* out) {
-    const auto* src = static_cast<const std::string*>(ext_005273B0(0));
-    return new (out) std::string(*src);
-}
-} // namespace lift_00527570
-
 // [0x00524540]
 namespace lift_00524540 {
 extern void __thiscall ext_00661980(void* self);
@@ -958,52 +744,6 @@ void* __thiscall fn_00524540(void* self, uint32_t arg0, uint32_t arg1, const voi
     return self;
 }
 } // namespace lift_00524540
-
-// [0x00527D60] sub_00527D60 (99 bytes)
-namespace lift_00527D60 {
-// Import thunks used by this function.
-// ext_invalid_parameter_noinfo: MSVCR80!_invalid_parameter_noinfo (IAT slot mem_00925134).
-// ext_memmove_s: MSVCR80!memmove_s (IAT slot mem_009251EC).
-extern void ext_invalid_parameter_noinfo();
-extern int ext_memmove_s(void* dst, size_t dstSize, const void* src, size_t count);
-
-// @name Vector::removePointerAt
-// @class Vector
-// @summary Validates a position inside a range, deletes the pointed-to object (virtual deleting dtor, flag 1), removes that slot by shifting the tail down one element, shrinks the vector end by one slot, and writes {range, position} to out.
-// @field Vector +0x08 uint8_t* end
-void fn_00527D60(void* self, void** out, void* range, void** pos) {
-    if (range == nullptr) {
-        ext_invalid_parameter_noinfo();
-    }
-    if (!(reinterpret_cast<uint8_t*>(pos) < lift_field<uint8_t*>(range, 0x08))) {
-        ext_invalid_parameter_noinfo();
-    }
-
-    // Delete the object referenced by the slot (virtual deleting destructor, slot 0, flag 1).
-    void* obj = *pos;
-    if (obj != nullptr) {
-        void** vtbl = *reinterpret_cast<void***>(obj);
-        auto deleter = reinterpret_cast<void(__thiscall*)(void*, int)>(vtbl[0]);
-        deleter(obj, 1);
-    }
-
-    // Shift the remaining slots after pos down by one pointer-sized element.
-    uint8_t* end = lift_field<uint8_t*>(self, 0x08);
-    uint8_t* next = reinterpret_cast<uint8_t*>(pos) + 4;
-    std::ptrdiff_t count = (end - next) >> 2;
-    if (count > 0) {
-        size_t bytes = static_cast<size_t>(count) * 4;
-        ext_memmove_s(pos, bytes, next, bytes);
-    }
-
-    // Shrink the vector by one slot.
-    lift_field<uint8_t*>(self, 0x08) -= 4;
-
-    // Report the range and position back to the caller.
-    out[0] = range;
-    out[1] = pos;
-}
-} // namespace lift_00527D60
 
 // [0x00526960] sub_00526960 (102 bytes)
 namespace lift_00526960 {
@@ -1156,68 +896,6 @@ void fn_005230B0(void* self, void** out, const void* first, void* dst,
 }
 } // namespace lift_005230B0
 
-// [0x0052A1C0]
-namespace lift_0052A1C0 {
-// @name treeIteratorIncrement
-// @class TreeIterator
-// @summary Advances a tree iterator to its in-order successor: leftmost node of the right subtree if present, otherwise the nearest ancestor whose left subtree contains the current node. Aborts on null iterator or end iterator.
-// @field TreeIterator +0x00 void* field_0x00 (container/head pointer, null-checked)
-// @field TreeIterator +0x04 void* field_0x04 (current node pointer, updated)
-// @field TreeNode +0x00 void* field_0x00 (child link, traversed to leftmost)
-// @field TreeNode +0x04 void* field_0x04 (parent link, walked upward)
-// @field TreeNode +0x08 void* field_0x08 (right child link)
-// @field TreeNode +0x61 uint8_t field_0x61 (end/nil sentinel flag; nonzero = nil)
-void treeIteratorIncrement(void* self) {
-    // Original calls the MSVCR80 invalid-parameter handler on bad input; portable form aborts.
-    if (lift_field<void*>(self, 0x0) == nullptr) {
-        std::abort();
-    }
-
-    void* cur = lift_field<void*>(self, 0x4);
-    if (lift_field<uint8_t>(cur, 0x61) != 0) {
-        std::abort();
-    }
-
-    void* right = lift_field<void*>(cur, 0x8);
-    if (lift_field<uint8_t>(right, 0x61) == 0) {
-        // Right subtree exists: step right, then descend to its leftmost node.
-        void* first = lift_field<void*>(right, 0x0);
-        if (lift_field<uint8_t>(first, 0x61) != 0) {
-            lift_field<void*>(self, 0x4) = right;
-            return;
-        }
-        void* node = first;
-        void* left = lift_field<void*>(node, 0x0);
-        while (lift_field<uint8_t>(left, 0x61) == 0) {
-            node = left;
-            left = lift_field<void*>(node, 0x0);
-        }
-        lift_field<void*>(self, 0x4) = node;
-        return;
-    }
-
-    // No right subtree: climb to the nearest ancestor reached from a left child.
-    void* parent = lift_field<void*>(cur, 0x4);
-    if (lift_field<uint8_t>(parent, 0x61) != 0) {
-        lift_field<void*>(self, 0x4) = parent;
-        return;
-    }
-    for (;;) {
-        void* c = lift_field<void*>(self, 0x4);
-        if (c != lift_field<void*>(parent, 0x8)) {
-            lift_field<void*>(self, 0x4) = parent;
-            return;
-        }
-        lift_field<void*>(self, 0x4) = parent;
-        parent = lift_field<void*>(parent, 0x4);
-        if (lift_field<uint8_t>(parent, 0x61) != 0) {
-            lift_field<void*>(self, 0x4) = parent;
-            return;
-        }
-    }
-}
-} // namespace lift_0052A1C0
-
 // [0x00524B50]
 namespace lift_00524B50 {
 extern uint32_t mem_00925134;
@@ -1265,35 +943,6 @@ void __thiscall sub_00524B50(void* self, float value) {
     data[idx] = static_cast<double>(value);
 }
 } // namespace lift_00524B50
-
-// [0x00527690] sub_00527690 (109 bytes)
-namespace lift_00527690 {
-// @name Unknown::dispatchToElements_00527690
-// @class Unknown
-// @summary Walks a pointer array embedded at this+0x18..this+0x1C and calls virtual slot 2 (offset 0x08) on each element, passing the two stack arguments.
-// @field Unknown +0x18 uint8_t* field_0x18 (begin of element-pointer array)
-// @field Unknown +0x1C uint8_t* field_0x1C (end of element-pointer array, re-read every iteration)
-
-// Calls the element's virtual slot 2 with (element, arg1, arg2). On MSVC this
-// is a thiscall; the element pointer is passed as the first argument here.
-using ElementDispatchFn = void (*)(void* self, void* arg1, void* arg2);
-
-void fn_00527690(void* self, void* arg1, void* arg2) {
-    uint8_t* obj = static_cast<uint8_t*>(self);
-
-    // The original emits _invalid_parameter_noinfo guards for iterator
-    // range checks (begin <= end, it < end); they are debug-only and omitted.
-    uint8_t* it = *reinterpret_cast<uint8_t**>(obj + 0x18);
-
-    while (it != *reinterpret_cast<uint8_t**>(obj + 0x1C)) {
-        void* element = *reinterpret_cast<void**>(it);
-        void** vtable = *reinterpret_cast<void***>(element);
-        auto fn = reinterpret_cast<ElementDispatchFn>(vtable[2]);
-        fn(element, arg1, arg2);
-        it += 4; // element slots are 4 bytes on the 32-bit target
-    }
-}
-} // namespace lift_00527690
 
 // [0x0052FD90]
 namespace lift_0052FD90 {
@@ -1681,82 +1330,6 @@ uint32_t fn_0052F540(uint32_t index) {
     }
 }
 } // namespace lift_0052F540
-
-// [0x0052FFD0]
-namespace lift_0052FFD0 {
-// @name createAnimationDerived_0052FFD0
-// @summary Allocates a 0x40-byte animation-derived object, initializes its base, sets vtable pointers at +0x00/+0x14, and zeroes +0x3C.
-// @field Unknown +0x00 uint32_t vftable_0x00
-// @field Unknown +0x14 uint32_t vftable_0x14
-// @field Unknown +0x3C uint32_t field_0x3C
-
-
-extern void* fn_006A5C62(uint32_t size);
-extern void* fn_0053B240(void* self);
-
-void* fn_0052FFD0(void) {
-    uint8_t* obj = static_cast<uint8_t*>(fn_006A5C62(0x40));
-    if (!obj) {
-        return nullptr;
-    }
-
-    fn_0053B240(obj);
-    *reinterpret_cast<uint32_t*>(obj + 0x00) = 0x00953F94u;
-    *reinterpret_cast<uint32_t*>(obj + 0x14) = 0x00953F8Cu;
-    *reinterpret_cast<uint32_t*>(obj + 0x3C) = 0u;
-    return obj;
-}
-} // namespace lift_0052FFD0
-
-// [0x00524A60]
-namespace lift_00524A60 {
-// @name sub_00524A60
-// @summary Returns a float value from a nested vector element indexed by this+0x8, or 0.0f if null.
-// @field Unknown +0x04 void* field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-
-
-extern void (*mem_00925134)(void);
-
-float __thiscall fn_00524A60(void* self) {
-    uint8_t* obj = *reinterpret_cast<uint8_t**>(static_cast<uint8_t*>(self) + 0x04);
-    if (!obj) {
-        return 0.0f;
-    }
-
-    auto invalid_param = mem_00925134;
-    uint8_t* outer_begin = *reinterpret_cast<uint8_t**>(obj + 0x24);
-    if (!outer_begin) {
-        invalid_param();
-    } else {
-        uint8_t* outer_end = *reinterpret_cast<uint8_t**>(obj + 0x28);
-        int32_t count = static_cast<int32_t>(outer_end - outer_begin) / 104;
-        if (count == 0) {
-            invalid_param();
-        }
-    }
-
-    uint8_t* elem = *reinterpret_cast<uint8_t**>(obj + 0x24);
-    uint8_t* inner_vec = elem + 0x04;
-    double* inner_begin = *reinterpret_cast<double**>(inner_vec + 0x04);
-    uint32_t idx = *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(self) + 0x08);
-
-    if (!inner_begin) {
-        invalid_param();
-    } else {
-        double* inner_end = *reinterpret_cast<double**>(inner_vec + 0x08);
-        uint32_t inner_count = static_cast<uint32_t>(
-            static_cast<int32_t>(reinterpret_cast<uintptr_t>(inner_end) - reinterpret_cast<uintptr_t>(inner_begin)) >> 3
-        );
-        if (idx >= inner_count) {
-            invalid_param();
-        }
-    }
-
-    double* data = *reinterpret_cast<double**>(inner_vec + 0x04);
-    return static_cast<float>(data[idx]);
-}
-} // namespace lift_00524A60
 
 // [0x00526DC0]
 namespace lift_00526DC0 {

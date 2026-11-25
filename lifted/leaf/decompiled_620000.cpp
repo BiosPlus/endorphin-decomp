@@ -202,52 +202,6 @@ void fn_00629E80(void* self) {
 }
 } // namespace lift_00629E80
 
-// [0x00629EE0] sub_00629EE0 (36 bytes)
-namespace lift_00629EE0 {
-// @name ComputeDeltaFromSource
-// @summary Stores a float from a source provider at +0x30 and writes (value - +0x38) to +0x34.
-// @field <unknown> +0x30 float field_0x30
-// @field <unknown> +0x34 float field_0x34
-// @field <unknown> +0x38 float field_0x38
-
-extern int32_t __cdecl ext_00594000(void);
-extern float __fastcall ext_00594010(void* self);
-
-void fn_00629EE0(void* self) {
-    const int32_t src = ext_00594000();
-    void* const provider = reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(src)));
-    const float value = ext_00594010(provider);
-
-    lift_field<float>(self, 0x30) = value;
-    lift_field<float>(self, 0x34) = value - lift_field<float>(self, 0x38);
-}
-} // namespace lift_00629EE0
-
-// [0x00627450]
-namespace lift_00627450 {
-// @name copyIndirectMatrix64
-// @summary Copies 64 bytes (16 dwords) from an indirectly referenced object into self+0x60.
-// @field Object +0x28 uint32_t field_0x28
-// @field Object +0x60 uint32_t[16] field_0x60
-
-
-extern uint32_t mem_read32(uintptr_t addr);
-extern void mem_write32(uintptr_t addr, uint32_t val);
-extern uint32_t ext_00647F00(void* self);
-
-void fn_00627450(void* self) {
-    uint32_t a = mem_read32(reinterpret_cast<uintptr_t>(self) + 0x28u);
-    uint32_t b = mem_read32(static_cast<uintptr_t>(a) + 0x158u);
-    uint32_t c = mem_read32(static_cast<uintptr_t>(b) + 0xACu);
-    uint32_t src = ext_00647F00(reinterpret_cast<void*>(static_cast<uintptr_t>(c)));
-    uintptr_t dst = reinterpret_cast<uintptr_t>(self) + 0x60u;
-    for (uint32_t i = 0; i < 0x10u; ++i) {
-        uint32_t val = mem_read32(static_cast<uintptr_t>(src) + i * 4u);
-        mem_write32(dst + i * 4u, val);
-    }
-}
-} // namespace lift_00627450
-
 // [0x00624EE0] sub_00624EE0 (42 bytes)
 namespace lift_00624EE0 {
 // @name CompareDwordPairIsGreater
@@ -386,26 +340,6 @@ uint32_t fn_006233B0(uint32_t self, uint32_t a1, uint32_t a2, uint32_t a3) {
 }
 } // namespace lift_0051AF30
 } // namespace lift_006233B0
-
-// [0x00626770]
-namespace lift_00626770 {
-// Import thunk at 0x006294AC: forwards to MSVCP80 string-equality helper (std::operator==(basic_string const&, char const*)).
-extern uint8_t __cdecl ext_006294AC(const void* lhs, const char* rhs);
-// Table of 9 const char* string-literal pointers.
-extern uint32_t mem_00A97F70[9];
-
-// @name FindStringTableIndex
-// @summary Scans a 9-entry string-pointer table and returns the index of the first entry equal to the argument (0 if none match).
-int32_t fn_00626770(const void* arg) {
-    for (int32_t i = 0; i < 9; ++i) {
-        const char* entry = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A97F70[i]));
-        if (ext_006294AC(arg, entry) != 0) {
-            return i;
-        }
-    }
-    return 0;
-}
-} // namespace lift_00626770
 
 // [0x0062B1F0] sub_0062B1F0 (54 bytes)
 namespace lift_0062B1F0 {
@@ -584,50 +518,6 @@ float __thiscall sub_0062A590(uint32_t self) {
 }
 } // namespace lift_0062A590
 
-// [0x00624F10]
-namespace lift_00624F10 {
-extern uint32_t mem_read32(uintptr_t addr);
-extern uint8_t mem_read8(uintptr_t addr);
-
-// @name RBTree::lowerBoundU32Pair
-// @class RBTree
-// @summary Finds the lower_bound node in an MSVC RB-tree keyed by a pair of uint32_t values.
-// @field RBTree +0x04 void* head
-// @field RBTreeNode +0x00 void* left
-// @field RBTreeNode +0x04 void* parent
-// @field RBTreeNode +0x08 void* right
-// @field RBTreeNode +0x0C uint32_t key0
-// @field RBTreeNode +0x10 uint32_t key1
-// @field RBTreeNode +0x19 uint8_t isNil
-
-uint32_t __thiscall sub_00624F10(void* self, const uint32_t* key) {
-    uint32_t head = mem_read32(reinterpret_cast<uintptr_t>(self) + 0x04);
-    uint32_t node = mem_read32(head + 0x04);
-    uint32_t result = head;
-
-    if (mem_read8(node + 0x19) != 0) {
-        return result;
-    }
-
-    uint32_t key0 = key[0];
-    uint32_t key1 = key[1];
-
-    do {
-        uint32_t node_key0 = mem_read32(node + 0x0C);
-        if (key0 > node_key0) {
-            node = mem_read32(node + 0x08);
-        } else if (key0 < node_key0 || mem_read32(node + 0x10) >= key1) {
-            result = node;
-            node = mem_read32(node + 0x00);
-        } else {
-            node = mem_read32(node + 0x08);
-        }
-    } while (mem_read8(node + 0x19) == 0);
-
-    return result;
-}
-} // namespace lift_00624F10
-
 // [0x00621B30] sub_00621B30 (59 bytes)
 namespace lift_00621B30 {
 // @name ResetFieldsEx4_1C
@@ -663,29 +553,6 @@ void fn_00622C00(uint8_t* dst, const uint8_t* end, const uint8_t* src) {
     } while (dst != end);
 }
 } // namespace lift_00622C00
-
-// [0x0062B8B0] sub_0062B8B0 (64 bytes)
-namespace lift_0062B8B0 {
-// @name CopyStringPairRange
-// @summary Copy-assigns each 0x38-byte record in [first, last) to consecutive records starting at dest (both std::string members per record); returns one past the last destination record.
-// @field StringPairRecord +0x00 std::string field_0x00
-// @field StringPairRecord +0x1C std::string field_0x1C
-extern char* __cdecl fn_0062B8B0(char* first, char* last, char* dest) {
-    constexpr std::ptrdiff_t kRecordSize = 0x38;
-    constexpr std::ptrdiff_t kSecondStringOffset = 0x1C;
-
-    char* src = first;
-    char* out = dest;
-    while (src != last) {
-        lift_field<std::string>(out, 0) = lift_field<std::string>(src, 0);
-        lift_field<std::string>(out, kSecondStringOffset) =
-            lift_field<std::string>(src, kSecondStringOffset);
-        src += kRecordSize;
-        out += kRecordSize;
-    }
-    return out;
-}
-} // namespace lift_0062B8B0
 
 // [0x0062CD30]
 namespace lift_0062CD30 {
@@ -1194,43 +1061,6 @@ uint32_t fn_00622FE0(uint32_t begin, uint32_t end, uint32_t value) {
 } // namespace lift_0054F290
 } // namespace lift_00622FE0
 
-// [0x00621090] sub_00621090 (76 bytes)
-namespace lift_00621090 {
-// MSVCP80 basic_string<char>::operator=(const basic_string&), reached through the IAT slot at mem_00924FDC.
-extern void* ext_string_assign(void* dst, const void* src);
-
-// @name Unknown::CopyRecordsBackward_00621090
-// @class Unknown
-// @summary Backward-copies records [first, last) into the block ending at dst_last (0x48-byte records); returns the new begin.
-// @field Unknown +0x00 std::string field_0x00
-// @field Unknown +0x1C std::string field_0x1c
-// @field Unknown +0x38 double field_0x38
-// @field Unknown +0x40 double field_0x40
-void* fn_00621090(void* first, void* last, void* dst_last) {
-    constexpr ptrdiff_t kRecordSize = 0x48;
-
-    uint8_t* const begin = static_cast<uint8_t*>(first);
-    uint8_t* src = static_cast<uint8_t*>(last);
-    uint8_t* dst = static_cast<uint8_t*>(dst_last);
-
-    if (begin == src) {
-        return dst;
-    }
-
-    do {
-        src -= kRecordSize;
-        dst -= kRecordSize;
-
-        ext_string_assign(dst, src);
-        ext_string_assign(dst + 0x1C, src + 0x1C);
-        lift_field<double>(dst, 0x38) = lift_field<double>(src, 0x38);
-        lift_field<double>(dst, 0x40) = lift_field<double>(src, 0x40);
-    } while (src != begin);
-
-    return dst;
-}
-} // namespace lift_00621090
-
 // [0x00621040]
 namespace lift_00621040 {
 // @name CopyRecordRange_00621040
@@ -1407,45 +1237,6 @@ void fn_00624630(void* self) {
 }
 } // namespace lift_00624630
 
-// [0x00622700]
-namespace lift_00622700 {
-extern uint32_t mem_read32(uint32_t addr);
-extern void mem_write32(uint32_t addr, uint32_t val);
-extern float mem_read_f32(uint32_t addr);
-extern void mem_write_f32(uint32_t addr, float val);
-
-// @name copy_backward_20b
-// @summary Copies 20-byte elements (1 dword + 4 floats) backward from [src_begin, src_end) to dst_end.
-uint32_t sub_00622700(uint32_t src_begin, uint32_t src_end, uint32_t dst_end) {
-    uint32_t eax = dst_end;
-    uint32_t esi = src_end;
-    uint32_t edi = src_begin;
-    if (edi == esi) {
-        return eax;
-    }
-
-    uint32_t edx = eax + 0xc;
-    uint32_t ecx = esi + 0xc;
-    do {
-        mem_write32(eax - 0x14, mem_read32(esi - 0x14));
-        float f0 = mem_read_f32(ecx - 0x1c);
-        esi -= 0x14;
-        mem_write_f32(edx - 0x1c, f0);
-        float f1 = mem_read_f32(ecx - 0x18);
-        ecx -= 0x14;
-        eax -= 0x14;
-        mem_write_f32(edx - 0x18, f1);
-        float f2 = mem_read_f32(ecx);
-        edx -= 0x14;
-        mem_write_f32(edx, f2);
-        float f3 = mem_read_f32(ecx + 0x4);
-        mem_write_f32(edx + 0x4, f3);
-    } while (esi != edi);
-
-    return eax;
-}
-} // namespace lift_00622700
-
 // [0x00622D80] sub_00622D80 (82 bytes)
 namespace lift_00622D80 {
 // @name CopyRecord20Range
@@ -1571,106 +1362,6 @@ uint8_t* fn_00621190(const uint8_t* first, const uint8_t* last, uint8_t* dst) {
 }
 } // namespace lift_00621190
 
-// [0x00629AA0]
-namespace lift_00629AA0 {
-// @name sub_00629AA0
-// @summary Constructor that initializes base object, sets vtable to 0x00978494, and initializes a 4x4 identity matrix and 3D zero vector.
-// @field sub_00629AA0 +0x00 uint32_t vtable
-// @field sub_00629AA0 +0x30 float field_0x30
-// @field sub_00629AA0 +0x34 float field_0x34
-// @field sub_00629AA0 +0x38 float field_0x38
-// @field sub_00629AA0 +0x3c float field_0x3c
-// @field sub_00629AA0 +0x40 float field_0x40
-// @field sub_00629AA0 +0x44 float field_0x44
-// @field sub_00629AA0 +0x48 float field_0x48
-// @field sub_00629AA0 +0x4c float field_0x4c
-// @field sub_00629AA0 +0x50 float field_0x50
-// @field sub_00629AA0 +0x54 float field_0x54
-// @field sub_00629AA0 +0x58 float field_0x58
-// @field sub_00629AA0 +0x5c float field_0x5c
-// @field sub_00629AA0 +0x60 float field_0x60
-// @field sub_00629AA0 +0x64 float field_0x64
-// @field sub_00629AA0 +0x68 float field_0x68
-// @field sub_00629AA0 +0x6c float field_0x6c
-// @field sub_00629AA0 +0x70 float field_0x70
-// @field sub_00629AA0 +0x74 float field_0x74
-// @field sub_00629AA0 +0x78 float field_0x78
-
-extern uint32_t& mem_u32(uintptr_t addr);
-extern float& mem_f32(uintptr_t addr);
-extern uint32_t __thiscall ext_005FF240(uintptr_t this_ptr, uint32_t arg0);
-
-uintptr_t __thiscall sub_00629AA0(uintptr_t this_ptr, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
-    (void)arg1;
-    (void)arg2;
-    (void)arg3;
-
-    ext_005FF240(this_ptr, arg0);
-    mem_u32(this_ptr + 0x00) = 0x00978494u;
-
-    mem_f32(this_ptr + 0x30) = 1.0f;
-    mem_f32(this_ptr + 0x34) = 0.0f;
-    mem_f32(this_ptr + 0x38) = 0.0f;
-    mem_f32(this_ptr + 0x3c) = 0.0f;
-    mem_f32(this_ptr + 0x40) = 0.0f;
-    mem_f32(this_ptr + 0x44) = 1.0f;
-    mem_f32(this_ptr + 0x48) = 0.0f;
-    mem_f32(this_ptr + 0x4c) = 0.0f;
-    mem_f32(this_ptr + 0x50) = 0.0f;
-    mem_f32(this_ptr + 0x54) = 0.0f;
-    mem_f32(this_ptr + 0x58) = 1.0f;
-    mem_f32(this_ptr + 0x5c) = 0.0f;
-    mem_f32(this_ptr + 0x60) = 0.0f;
-    mem_f32(this_ptr + 0x64) = 0.0f;
-    mem_f32(this_ptr + 0x68) = 0.0f;
-    mem_f32(this_ptr + 0x6c) = 1.0f;
-
-    mem_f32(this_ptr + 0x70) = 0.0f;
-    mem_f32(this_ptr + 0x74) = 0.0f;
-    mem_f32(this_ptr + 0x78) = 0.0f;
-
-    return this_ptr;
-}
-} // namespace lift_00629AA0
-
-// [0x0062C3F0] sub_0062C3F0 (90 bytes)
-namespace lift_0062C3F0 {
-// Known callee 0x005FF240: sub_005FF240 (Initializes object fields to zero, stores argument at +0x28, and sets vtable to 0x0096F154)
-extern uint32_t __thiscall ext_005FF240(uintptr_t this_ptr, uint32_t arg0);
-
-template<typename T> void mem_write(uintptr_t addr, T val);
-
-// @name Sensors::AxisSensor::AxisSensor
-// @class Sensors::AxisSensor
-// @summary Constructor: runs base init, sets AxisSensor vtable, zeroes float fields at +0x30/+0x34/+0x38, stores arg2 at +0x3C, zeroes +0x44/+0x48/+0x4C; returns this.
-// @field Sensors::AxisSensor +0x00 uint32_t vtable
-// @field Sensors::AxisSensor +0x30 float field_0x30
-// @field Sensors::AxisSensor +0x34 float field_0x34
-// @field Sensors::AxisSensor +0x38 float field_0x38
-// @field Sensors::AxisSensor +0x3C uint32_t field_0x3c
-// @field Sensors::AxisSensor +0x44 uint32_t field_0x44
-// @field Sensors::AxisSensor +0x48 uint32_t field_0x48
-// @field Sensors::AxisSensor +0x4C uint32_t field_0x4c
-uintptr_t fn_0062C3F0(uintptr_t self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
-    // arg1 and arg3 are part of the stdcall-style frame (ret 0x10) but unused here.
-    (void)arg1;
-    (void)arg3;
-
-    ext_005FF240(self, arg0);
-
-    mem_write<uint32_t>(self + 0x00, 0x0097900Cu);
-    mem_write<float>(self + 0x30, 0.0f);
-    mem_write<float>(self + 0x34, 0.0f);
-    mem_write<float>(self + 0x38, 0.0f);
-    mem_write<uint32_t>(self + 0x3C, arg2);
-    mem_write<uint32_t>(self + 0x44, 0u);
-    mem_write<uint32_t>(self + 0x48, 0u);
-    mem_write<uint32_t>(self + 0x4C, 0u);
-
-    return self;
-}
-} // namespace lift_0062C3F0
-
 // [0x00621740] sub_00621740 (89 bytes)
 namespace lift_00621740 {
 extern void __cdecl ext_00621680(int a1, int a2, void* self, int a4);
@@ -1713,123 +1404,6 @@ uint32_t* __thiscall fn_00621740(
 }
 } // namespace lift_0048CCC0
 } // namespace lift_00621740
-
-// [0x0062C4D0]
-namespace lift_0062C4D0 {
-// @name Sensors::AxisSensorDerived::AxisSensorDerived
-// @class Sensors::AxisSensorDerived
-// @summary Constructor: calls Sensors::AxisSensor::AxisSensor, sets vtable to 0x00979084, returns this.
-// @field Sensors::AxisSensorDerived +0x00 uint32_t vtable
-
-
-uintptr_t ext_0062C3F0(uintptr_t self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
-void mem_write32(uintptr_t addr, uint32_t val);
-
-uintptr_t fn_0062C4D0(uintptr_t self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
-    ext_0062C3F0(self, arg0, arg1, arg2, arg3);
-    mem_write32(self, 0x00979084u);
-    return self;
-}
-} // namespace lift_0062C4D0
-
-// [0x0062C510]
-namespace lift_0062C510 {
-// @name Sensors::AxisSensorDerived::AxisSensorDerived
-// @class Sensors::AxisSensorDerived
-// @summary Constructor: calls Sensors::AxisSensor::AxisSensor(arg0, arg1, arg2, arg3) and sets vtable to 0x009790FC; returns this.
-// @field Sensors::AxisSensorDerived +0x00 uint32_t vtable
-
-
-uintptr_t ext_0062C3F0(uintptr_t self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3);
-void mem_write32(uintptr_t addr, uint32_t val);
-
-uintptr_t fn_0062C510(uintptr_t self, uint32_t arg0, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
-    ext_0062C3F0(self, arg0, arg1, arg2, arg3);
-    mem_write32(self + 0x00, 0x009790FCu);
-    return self;
-}
-} // namespace lift_0062C510
-
-// [0x006226A0] sub_006226A0 (91 bytes)
-namespace lift_006226A0 {
-// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
-// Cdecl, one argument (size in bytes), returns an allocated block or NULL.
-extern void* ext_006A5C62(size_t size);
-
-// @name allocateElements20
-// @summary Allocates storage for `count` 20-byte elements; count 0 allocates 0 bytes, and a count whose byte size would overflow 32 bits throws std::length_error.
-void* fn_006226A0(uint32_t count) {
-    if (count == 0) {
-        return ext_006A5C62(0);
-    }
-    // Overflow check: 0xFFFFFFFF / count < 20 means count * 20 does not fit in 32 bits.
-    if (0xFFFFFFFFu / count < 20u) {
-        throw std::length_error("l{b");
-    }
-    return ext_006A5C62(static_cast<size_t>(count * 20u));
-}
-} // namespace lift_006226A0
-
-// [0x00629850] sub_00629850 (91 bytes)
-namespace lift_00629850 {
-// Known callee 0x005FF240: sub_005FF240 (Initializes object fields to zero, stores argument at +0x28, and sets vtable to 0x0096F154)
-extern uint32_t ext_005FF240(void* self, uint32_t arg0);
-extern int mem_00928EAC;
-extern int mem_009783FC;
-extern int mem_009783E4;
-
-// @name Unknown::initFloatDefaults
-// @class Unknown
-// @summary Runs base initializer with arg0, then sets vtable and seeds float fields at +0x34..+0x70 with 0.0/1.0.
-// @field Unknown +0x00 void* vtable
-// @field Unknown +0x28 uint32_t field_0x28
-// @field Unknown +0x30 uint32_t field_0x30
-// @field Unknown +0x34 float field_0x34
-// @field Unknown +0x38 float field_0x38
-// @field Unknown +0x3c float field_0x3c
-// @field Unknown +0x40 float field_0x40
-// @field Unknown +0x44 float field_0x44
-// @field Unknown +0x48 float field_0x48
-// @field Unknown +0x4c float field_0x4c
-// @field Unknown +0x50 float field_0x50
-// @field Unknown +0x54 float field_0x54
-// @field Unknown +0x58 float field_0x58
-// @field Unknown +0x5c float field_0x5c
-// @field Unknown +0x60 float field_0x60
-// @field Unknown +0x64 float field_0x64
-// @field Unknown +0x68 float field_0x68
-// @field Unknown +0x6c float field_0x6c
-// @field Unknown +0x70 float field_0x70
-void* fn_00629850(void* self, uint32_t arg0) {
-    ext_005FF240(self, arg0);
-
-    // Original writes +0x30 twice (first to &mem_00928EAC, then overwritten); only final value kept.
-    // The vtable write also overwrites the vtable set by the callee.
-    auto* base = static_cast<uint8_t*>(self);
-    lift_field<void*>(base, 0x00) = &mem_009783FC;
-    lift_field<uint32_t>(base, 0x30) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&mem_009783E4));
-
-    // Float seeds: 1.0 at +0x34, +0x48, +0x5c, +0x70; 0.0 elsewhere in the block.
-    lift_field<float>(base, 0x34) = 1.0f;
-    lift_field<float>(base, 0x38) = 0.0f;
-    lift_field<float>(base, 0x3c) = 0.0f;
-    lift_field<float>(base, 0x40) = 0.0f;
-    lift_field<float>(base, 0x44) = 0.0f;
-    lift_field<float>(base, 0x48) = 1.0f;
-    lift_field<float>(base, 0x4c) = 0.0f;
-    lift_field<float>(base, 0x50) = 0.0f;
-    lift_field<float>(base, 0x54) = 0.0f;
-    lift_field<float>(base, 0x58) = 0.0f;
-    lift_field<float>(base, 0x5c) = 1.0f;
-    lift_field<float>(base, 0x60) = 0.0f;
-    lift_field<float>(base, 0x64) = 0.0f;
-    lift_field<float>(base, 0x68) = 0.0f;
-    lift_field<float>(base, 0x6c) = 0.0f;
-    lift_field<float>(base, 0x70) = 1.0f;
-
-    return self;
-}
-} // namespace lift_00629850
 
 // [0x006259A0] sub_006259A0 (30 bytes)
 namespace lift_006259A0 {
@@ -2412,22 +1986,6 @@ void* fn_0062EE60() {
 } // namespace lift_004CAE30
 } // namespace lift_0062EE60
 
-// [0x00620FE0]
-namespace lift_00620FE0 {
-// @name allocate_72byte_elements
-// @summary Allocates count * 72 bytes via MFC80 operator new, throwing std::bad_alloc on 32-bit overflow.
-
-
-extern void* ext_006A5C62(uint32_t size);
-
-void* fn_00620FE0(uint32_t count) {
-    if (count > 0 && (0xFFFFFFFFu / count) < 0x48u) {
-        throw std::bad_alloc();
-    }
-    return ext_006A5C62(count * 0x48u);
-}
-} // namespace lift_00620FE0
-
 // [0x00622C40] sub_00622C40 (93 bytes)
 namespace lift_00622C40 {
 // @name sub_00622C40
@@ -2462,34 +2020,6 @@ extern char* __cdecl fn_0062BA00(char* first, char* last, char* dest) {
 }
 } // namespace lift_0062BA00
 
-// [0x0062CC90] sub_0062CC90 (95 bytes)
-namespace lift_0062CC90 {
-// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
-// Called as cdecl with (destination object, source string literal); caller cleans the stack.
-extern void* ext_0066AD10(void* out_str, const void* src);
-// Known callee 0x006A6C87: sub_006A6C87 (CRT-style exit-registration of a destructor)
-extern int ext_006A6C87(void (*fn)(void));
-// Destructor registered with ext_006A6C87 for the static object at mem_00B522E4 (address 0x00920180)
-extern void ext_00920180(void);
-// One-time-init guard word; bit 0 set once the static has been constructed
-extern int mem_00B52300;
-// Static object storage (address 0x00B522E4)
-extern int mem_00B522E4;
-// String literal source (address 0x00A98938)
-extern char mem_00A98938[];
-
-// @name GetOnceInitString_0062CC90
-// @summary Constructs a static string object from a literal on first call, registers its destructor, and returns it.
-void* fn_0062CC90() {
-    if ((mem_00B52300 & 1) == 0) {
-        mem_00B52300 |= 1;
-        ext_0066AD10(&mem_00B522E4, mem_00A98938);
-        ext_006A6C87(ext_00920180);
-    }
-    return &mem_00B522E4;
-}
-} // namespace lift_0062CC90
-
 // [0x006202F0] sub_006202F0 (95 bytes)
 namespace lift_006202F0 {
 // Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
@@ -2514,27 +2044,6 @@ void* fn_006202F0() {
     return &mem_00B49E24;
 }
 } // namespace lift_006202F0
-
-// [0x00620F80] sub_00620F80 (95 bytes)
-namespace lift_00620F80 {
-// Imported MSVCP80 std::basic_string<char> copy constructor (IAT slot mem_00924FE0).
-extern void ext_MSVCP80_string_copy_ctor(void* dst, const void* src);
-
-// @name Unknown::copyConstruct (descriptive; owner class not identified)
-// @class Unknown
-// @summary Copy-constructs a two-string record from src into self (SEH-guarded in the original), copies two doubles, and returns self.
-// @field Unknown +0x00 std::string field_00
-// @field Unknown +0x1C std::string field_1C
-// @field Unknown +0x38 double field_38
-// @field Unknown +0x40 double field_40
-void* fn_00620F80(void* self, const void* src) {
-    ext_MSVCP80_string_copy_ctor(&lift_field<uint8_t>(self, 0x00), &lift_field<uint8_t>(src, 0x00));
-    ext_MSVCP80_string_copy_ctor(&lift_field<uint8_t>(self, 0x1C), &lift_field<uint8_t>(src, 0x1C));
-    lift_field<double>(self, 0x38) = lift_field<double>(src, 0x38);
-    lift_field<double>(self, 0x40) = lift_field<double>(src, 0x40);
-    return self;
-}
-} // namespace lift_00620F80
 
 // [0x00621130] sub_00621130 (95 bytes)
 namespace lift_00621130 {
@@ -2716,50 +2225,6 @@ void* fn_006267B0(void* self) {
     return self;
 }
 } // namespace lift_006267B0
-
-// [0x00624640]
-namespace lift_00624640 {
-extern void* fn_005A07A0(void* self, void* out_iter, const void* key);
-extern void (*mem_00925134)();
-
-// @name StdMapString::lookupValue
-// @class StdMapString
-// @summary Looks up a string key in the map and returns its mapped pointer value, or nullptr if absent.
-// @field StdMapString +0x04 void* head_node
-// @field StdMapString +0x08 uint32_t size
-void* fn_00624640(void* self, const void* key) {
-    if (*reinterpret_cast<const uint32_t*>(reinterpret_cast<const char*>(self) + 0x8) == 0) {
-        return nullptr;
-    }
-
-    struct MapIter {
-        void* container;
-        void* node;
-    } iter{};
-
-    fn_005A07A0(self, &iter, key);
-
-    void* end_node = *reinterpret_cast<void* const*>(reinterpret_cast<const char*>(self) + 0x4);
-    auto invalid_param = mem_00925134;
-
-    if (iter.container == nullptr || iter.container != self) {
-        invalid_param();
-    }
-
-    if (iter.node == end_node) {
-        return nullptr;
-    }
-
-    if (iter.container == nullptr) {
-        invalid_param();
-    }
-    if (iter.node == *reinterpret_cast<void* const*>(reinterpret_cast<const char*>(iter.container) + 0x4)) {
-        invalid_param();
-    }
-
-    return *reinterpret_cast<void* const*>(reinterpret_cast<const char*>(iter.node) + 0x28);
-}
-} // namespace lift_00624640
 
 // [0x00626E80]
 namespace lift_00626E80 {

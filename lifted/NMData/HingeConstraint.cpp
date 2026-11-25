@@ -46,28 +46,6 @@ uint32_t fn_0061E9A0(void* self, uint32_t a, uint32_t /*unused*/, uint32_t c) {
     return a;
 }
 
-// [0x00611580] NMData::HingeConstraint::vfunc_69 (98 bytes)
-// @name NMData::HingeConstraint::vfunc_69
-// @class NMData::HingeConstraint
-// @summary Constructs a std::string in the caller-supplied return slot from one of three names chosen by an int mode argument (0, 1, or other).
-// (no fields: the function never reads `this`)
-std::string* fn_00611580(void* self, std::string* out, int32_t mode) {
-    (void)self;
-    // mem_00A9F058 / mem_00A9F380 hold pointers to string literals; mem_00928B5D is the literal for the default case.
-    extern const char* const mem_00A9F058;
-    extern const char* const mem_00A9F380;
-    extern const char mem_00928B5D[];
-    const char* name;
-    if (mode == 0) {
-        name = mem_00A9F058;
-    } else if (mode == 1) {
-        name = mem_00A9F380;
-    } else {
-        name = mem_00928B5D;
-    }
-    return new (out) std::string(name);
-}
-
 // [0x0061E930] NMData::HingeConstraint::vfunc_17_off_C (99 bytes)
 // @name NMData::HingeConstraint::vfunc_17_off_C
 // @class NMData::HingeConstraint

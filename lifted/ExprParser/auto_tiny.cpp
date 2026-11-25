@@ -704,17 +704,6 @@ uint32_t fn_006A1840(void* self, void* a, void* b) {
     return fn(obj, a, b);
 }
 
-// [0x00609740] ExprParser::ROMethod0Type<NM::Vector3, &NM::Vector3::normalize2>::vfunc_4 (29 bytes)
-// @name ExprParser::ROMethod0Type<NM::Vector3, normalize2>::vfunc_4
-// @class ExprParser::ROMethod0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>
-// @summary Default-constructs a std::string in place in the caller's result slot (first stack argument) and returns that slot. The incoming this (ecx) is overwritten and unused.
-void* fn_00609740(void* self, void* dst, void* arg2) {
-    (void)self;
-    (void)arg2;
-    new (dst) std::string();
-    return dst;
-}
-
 // [0x0066BA70] ExprParser::ExtROType::vfunc_42 (30 bytes)
 // @name ExprParser::ExtROType::vfunc_42_forward
 // @class ExprParser::ExtROType

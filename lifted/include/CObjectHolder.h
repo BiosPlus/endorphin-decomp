@@ -8,7 +8,7 @@
 // Recovered field layout for CObjectHolder:
 namespace lifted_layout {
 struct CObjectHolder_Fields {
-    // +0x4   void*                    m_pObject  (evidence: 0x005C3090, 0x005C3FB0)
-    // +0x164 void*                    m_pSubobject  (evidence: 0x005C3090, 0x005C3FB0)
+    // +0x4   void*                    m_pObject  (evidence: 0x005C3090)
+    // +0x164 void*                    m_pSubobject  (evidence: 0x005C3090)
 };
 } // namespace lifted_layout

@@ -39,21 +39,6 @@ float* __stdcall sub_00479A90(float* dst, uint32_t count, const float* value) {
 }
 } // namespace lift_00479A90
 
-// [0x00476630] sub_00476630 (47 bytes)
-namespace lift_00476630 {
-// @name makeStdStringFromCStr
-// @summary Constructs a std::string in caller-provided storage from a C string; if the pointer is null, constructs an empty string. Returns the storage pointer.
-void* fn_00476630(std::string* out, const char* s)
-{
-    if (s != nullptr) {
-        ::new (static_cast<void*>(out)) std::string(s);
-    } else {
-        ::new (static_cast<void*>(out)) std::string();
-    }
-    return out;
-}
-} // namespace lift_00476630
-
 // [0x00477E60] sub_00477E60 (49 bytes)
 namespace lift_00477E60 {
 // @name FillTriplesFromSource
@@ -163,18 +148,6 @@ uint32_t CopyBackwardElements8(uint32_t begin, uint32_t end, uint32_t dstEnd) {
     return result;
 }
 } // namespace lift_004788D0
-
-// [0x00476660] sub_00476660 (62 bytes)
-namespace lift_00476660 {
-// @name FormatIndexedString
-// @summary Formats an int with a fixed .rdata format into a 50-byte buffer and constructs a std::string in the caller-provided slot.
-std::string* fn_00476660(std::string* out, int value) {
-    char buf[50];
-    std::snprintf(buf, sizeof(buf), "%d", value);
-    new (out) std::string(buf);
-    return out;
-}
-} // namespace lift_00476660
 
 // [0x00478D00] sub_00478D00 (67 bytes)
 namespace lift_00478D00 {
@@ -357,27 +330,6 @@ void fn_0047FFA0(const float* a, float* out, const float* b) {
 }
 } // namespace lift_0047FFA0
 
-// [0x004757F0] sub_004757F0 (77 bytes)
-namespace lift_004757F0 {
-// Known callee 0x00672D10: sub_00672D10 (Auto-lifted identical-shape clone of 0x004026E0 (StringArray::ReleaseElements).)
-extern void ext_00672D10(void* self);
-// Imported MSVC CRT slot for std::basic_string<char>::~basic_string (used via explicit dtor call below).
-extern int mem_00924FF4;
-
-// @name Unknown::Dtor_004757F0
-// @class Unknown
-// @summary Destructor body: releases the StringArray at +0x1C, then destroys the std::string at +0x00.
-// @field Unknown +0x00 std::string field_0x00
-// @field Unknown +0x1C StringArray field_0x1C
-void fn_004757F0(void* self) {
-    // ecx+0x1c is passed as `this` to the StringArray release routine.
-    ext_00672D10(static_cast<unsigned char*>(self) + 0x1C);
-    // The original calls the MSVC CRT string dtor through mem_00924FF4 on `this`.
-    using StdString = std::string;
-    reinterpret_cast<StdString*>(self)->~StdString();
-}
-} // namespace lift_004757F0
-
 // [0x00478CB0] sub_00478CB0 (78 bytes)
 namespace lift_00478CB0 {
 // Known callee 0x00477210: ext_00477210 (heap sift-down helper; called as (first, hole=0, len, value)).
@@ -422,33 +374,6 @@ std::uint8_t* fn_004772E0(std::uint8_t* first, std::uint8_t* last, std::uint8_t*
 }
 } // namespace lift_004772E0
 
-// [0x00475840] sub_00475840 (82 bytes)
-namespace lift_00475840 {
-// @name sub_00475840
-// @summary Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).
-namespace lift_006998D0 {
-// Known callee 0x00699870: Unknown::copyRecordWithOptionalResolve (Copies a 16-byte record from src into self; when src+0xC is non-null, calls vtable slot 0x70 on it to fetch the +0x8 value, otherwise +0x8 is zeroed. Returns self.)
-extern void* ext_00475160(void* self, int edx_unused, const void* src);
-
-// MSVCP80 std::string copy constructor, reached through the import slot mem_00924FE0.
-extern void ext_std_string_copy_ctor(void* self, const void* src);
-extern int mem_00924FE0;
-
-// @name copyStringAndRecord
-// @summary Copy-constructs the leading std::string from src, then copies the 16-byte record at +0x1C from src into this; returns this.
-// @field Unknown +0x1C uint8_t field_0x1c[16]
-extern void* __fastcall fn_00475840(void* self, int edx_unused, const void* src) {
-    ext_std_string_copy_ctor(self, src);
-
-    auto* dst_record = static_cast<uint8_t*>(self) + 0x1C;
-    const auto* src_record = static_cast<const uint8_t*>(src) + 0x1C;
-    ext_00475160(dst_record, 0, src_record);
-
-    return self;
-}
-} // namespace lift_006998D0
-} // namespace lift_00475840
-
 // [0x004722F0] sub_004722F0 (95 bytes)
 namespace lift_004722F0 {
 // Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
@@ -473,52 +398,6 @@ void* fn_004722F0() {
 }
 } // namespace lift_004722F0
 } // namespace lift_004722F0
-
-// [0x00476F70] sub_00476F70 (95 bytes)
-namespace lift_00476F70 {
-// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
-// Callee's pushed second argument is a 32-bit literal (0x00A32888), so it is declared as uint32_t here.
-extern void* ext_0066AD10(void* out, uint32_t arg);
-// Callee 0x006A6C87 takes one pointer argument (0x00916F10, a teardown routine registered once).
-extern int ext_006A6C87(void* fn);
-extern int mem_00AD9098;   // once-init guard flag (bit 0)
-extern int mem_00AD907C;   // static object storage
-extern void ext_00916F10(); // teardown routine (address pushed as the argument to 0x006A6C87)
-
-// @name InitStaticObjectOnce_00476F70
-// @summary Runs one-time construction of a static object at mem_00AD907C (guarded by bit 0 of mem_00AD9098) and returns its address.
-void* fn_00476F70(void) {
-    if ((mem_00AD9098 & 1) == 0) {
-        mem_00AD9098 |= 1;
-        ext_0066AD10(&mem_00AD907C, 0x00A32888u);
-        ext_006A6C87(reinterpret_cast<void*>(&ext_00916F10));
-    }
-    return &mem_00AD907C;
-}
-} // namespace lift_00476F70
-
-// [0x00476FD0] sub_00476FD0 (95 bytes)
-namespace lift_00476FD0 {
-// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
-// Second pushed argument is a 32-bit literal (0x00A328A4), so it is declared as uint32_t.
-extern void* ext_0066AD10(void* out, uint32_t arg);
-// Callee 0x006A6C87 takes one pointer argument (0x00916F00, a teardown routine registered once).
-extern int ext_006A6C87(void* fn);
-extern void ext_00916F00(); // teardown routine (address passed to 0x006A6C87)
-extern uint8_t mem_00AD90B8;  // once-init guard flag (bit 0)
-extern uint8_t mem_00AD909C[]; // static object storage (size not recovered)
-
-// @name InitOnceGlobalString_00476FD0
-// @summary Runs one-time construction of the static object at mem_00AD909C (guarded by bit 0 of mem_00AD90B8), registers its teardown, and returns its address.
-void* fn_00476FD0(void) {
-    if ((mem_00AD90B8 & 1u) == 0) {
-        mem_00AD90B8 |= 1u;
-        ext_0066AD10(mem_00AD909C, 0x00A328A4u);
-        ext_006A6C87(reinterpret_cast<void*>(&ext_00916F00));
-    }
-    return mem_00AD909C;
-}
-} // namespace lift_00476FD0
 
 // [0x00477030] sub_00477030 (95 bytes)
 namespace lift_00477030 {
@@ -564,31 +443,6 @@ extern void __cdecl sub_00476CA0(uint32_t* arr, int32_t holeIndex, int32_t topIn
 }
 } // namespace lift_00476CA0
 
-// [0x00477F30] sub_00477F30 (99 bytes)
-namespace lift_00477F30 {
-// @name Unknown::getMaxChildField160
-// @class Unknown
-// @summary Returns the maximum of the int at +0x160 over all element pointers in the vector at +0x34..+0x38 (floored at 0).
-// @field Unknown +0x34 void** childBegin
-// @field Unknown +0x38 void** childEnd
-// @field Unknown +0x160 int maxValue (on each child object pointed to by the vector; the child's own class is unknown)
-int fn_00477F30(void* self) {
-    auto* base = static_cast<char*>(self);
-    void** cur = *reinterpret_cast<void***>(base + 0x34);
-    void** end = *reinterpret_cast<void***>(base + 0x38);
-
-    int best = 0;
-    for (; cur != end; ++cur) {
-        auto* child = static_cast<char*>(*cur);
-        int value = *reinterpret_cast<int*>(child + 0x160);
-        if (value > best) {
-            best = value;
-        }
-    }
-    return best;
-}
-} // namespace lift_00477F30
-
 // [0x00476DF0] sub_00476DF0 (102 bytes)
 namespace lift_00476DF0 {
 // Callee sub_006A6D5C takes four 32-bit arguments and cleans its own stack
@@ -610,28 +464,6 @@ void fn_00476DF0(void* self) {
     ext_006A6D5C(base + 0x18, 0x1Cu, 4u, dtor);
 }
 } // namespace lift_00476DF0
-
-// [0x00478410] sub_00478410 (95 bytes)
-namespace lift_00478410 {
-// Known callee 0x005170D0: Unknown::CallSlot3OnEachEntry (thiscall: self in ecx, one stack arg)
-extern void ext_005170D0(void* self, void* arg);
-// Known callee 0x00678D70: BaseEventDispatcher::vfunc_1 (thiscall: self in ecx, one stack arg = 1)
-extern void ext_00678D70(void* self, int flag);
-
-// @name Unknown::ForEachEntryThenDispatch
-// @class Unknown
-// @summary Calls ext_005170D0 on each pointer in the range [range+0x04, range+0x08), then calls ext_00678D70(self, 1).
-// @field Unknown +0x04 void** field_0x04
-// @field Unknown +0x08 void** field_0x08
-void fn_00478410(void* self, void* range) {
-    void** it = lift_field<void**>(range, 0x04);
-    while (it != lift_field<void**>(range, 0x08)) {
-        ext_005170D0(self, *it);
-        ++it;
-    }
-    ext_00678D70(self, 1);
-}
-} // namespace lift_00478410
 
 // [0x00477120]
 namespace lift_00477120 {
@@ -870,22 +702,6 @@ void fn_00474FF0(void* self) {
 }
 } // namespace lift_005E0B20
 } // namespace lift_00474FF0
-
-// [0x00476770] sub_00476770 (106 bytes)
-namespace lift_00476770 {
-// @name ReleaseStringMembers_00476770
-// @summary Destroys four std::string members of the object at self, in reverse layout order (+0x54, +0x38, +0x1c, +0x00).
-// @field Object +0x00 std::string field_0x00
-// @field Object +0x1c std::string field_0x1C
-// @field Object +0x38 std::string field_0x38
-// @field Object +0x54 std::string field_0x54
-void fn_00476770(void* self) {
-    lift_field<std::string>(self, 0x54).~basic_string();
-    lift_field<std::string>(self, 0x38).~basic_string();
-    lift_field<std::string>(self, 0x1C).~basic_string();
-    lift_field<std::string>(self, 0x00).~basic_string();
-}
-} // namespace lift_00476770
 
 // [0x00476530]
 namespace lift_00476530 {

@@ -89,35 +89,6 @@ void fn_00401DE0(void* self) {
 } // namespace lift_00594790
 } // namespace lift_00401DE0
 
-// [0x00401B60]
-namespace lift_00401B60 {
-extern int mem_00928ECC;
-
-extern void ext_MSVCP80_basic_string_char_dtor(void* self);
-extern void ext_MSVCR80_exception_dtor(void* self);
-
-// @name Unknown::~Unknown (std::exception-derived, std::string member at +0x0C)
-// @class Unknown
-// @summary Destructor: installs derived vtable, destroys the std::string member at +0x0C, then tail-calls the std::exception base destructor.
-// @field Unknown +0x00 void* vfptr
-// @field Unknown +0x0C std::string field_0x0C
-void fn_00401B60(void* self) {
-    lift_field<const void*>(self, 0x00) = reinterpret_cast<const void*>(&mem_00928ECC);
-    ext_MSVCP80_basic_string_char_dtor(static_cast<uint8_t*>(self) + 0x0C);
-    ext_MSVCR80_exception_dtor(self);
-}
-} // namespace lift_00401B60
-
-// [0x00407870] sub_00407870 (27 bytes)
-namespace lift_00407870 {
-// @name FloorFloat
-// @summary Returns floor(x) for a float argument, computed via double precision and returned as float.
-float fn_00407870(float x) {
-    // Original: widen arg to double, call MSVCR80 floor (ext_006A6E92), narrow result back to float.
-    return static_cast<float>(std::floor(static_cast<double>(x)));
-}
-} // namespace lift_00407870
-
 // [0x004064B0] sub_004064B0 (27 bytes)
 namespace lift_004064B0 {
 // @name sub_004064B0
@@ -134,24 +105,6 @@ void fn_004064B0(void* self, int edx_unused, int a1, int a2) {
 }
 } // namespace lift_005694F0
 } // namespace lift_004064B0
-
-// [0x0040F270]
-namespace lift_0040F270 {
-// @name sub_0040F270
-// @summary Sets flags 0xb at offset +0x2c, calls thunk_MFC80_ord_1903, and returns -1 if result is -1 else 0
-// @field struct_0040F270 +0x2c uint32_t field_0x2c
-
-
-extern uint32_t ext_006A5EA8(void);
-uint32_t mem_read32(uintptr_t addr);
-void mem_write32(uintptr_t addr, uint32_t val);
-
-extern int32_t __stdcall fn_0040F270(uintptr_t arg0) {
-    mem_write32(arg0 + 0x2c, mem_read32(arg0 + 0x2c) | 0xb);
-    uint32_t res = ext_006A5EA8();
-    return (res == 0xFFFFFFFFu) ? -1 : 0;
-}
-} // namespace lift_0040F270
 
 // [0x00403400] sub_00403400 (30 bytes)
 namespace lift_00403400 {
@@ -253,30 +206,6 @@ extern void fn_0040EFF0(unsigned int selector) {
     ext_006A60F4();
 }
 } // namespace lift_0040EFF0
-
-// [0x0040FE70]
-namespace lift_0040FE70 {
-extern void ext_006A5EA8(void);
-extern uint32_t mem_00925688;
-
-// @name ToggleFlag54AndInvalidate
-// @class Unknown
-// @summary Sets this+0x54 to 1 if it was 0 (else 0), calls ext_006A5EA8, then InvalidateRect(this+0x20, NULL, TRUE).
-// @field Unknown +0x20 uint32_t field_0x20
-// @field Unknown +0x54 uint32_t field_0x54
-
-extern void fn_0040FE70(uint8_t* self) {
-    uint32_t prev = *reinterpret_cast<uint32_t*>(self + 0x54);
-    *reinterpret_cast<uint32_t*>(self + 0x54) = (prev == 0) ? 1u : 0u;
-
-    ext_006A5EA8();
-
-    uint32_t hwnd = *reinterpret_cast<uint32_t*>(self + 0x20);
-    using InvalidateRect_t = int(__stdcall*)(uint32_t, const void*, int);
-    auto invalidateRect = reinterpret_cast<InvalidateRect_t>(mem_00925688);
-    invalidateRect(hwnd, nullptr, 1);
-}
-} // namespace lift_0040FE70
 
 // [0x0040C300] sub_0040C300 (37 bytes)
 namespace lift_0040C300 {
@@ -657,36 +586,6 @@ extern bool __thiscall fn_00405160(void* self) {
 }
 } // namespace lift_00405160
 
-// [0x00406590] sub_00406590 (63 bytes)
-namespace lift_00406590 {
-// @name sub_00406590
-// @summary Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).
-namespace lift_00569970 {
-extern void ext_00406380(uint32_t a0, uint32_t a1, void* a2, void* a3);
-extern void fn_006A5C5C(uint32_t arg);
-
-// @name Unknown::ReleaseHandleAndClear
-// @class Unknown
-// @summary If field +0x04 is nonzero, run ext_005693E0 with it and forward it to fn_006A5C5C, then clear fields +0x04, +0x08 and +0x0C.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-// @field Unknown +0x0C uint32_t field_0x0C
-void fn_00406590(void* self) {
-    if (lift_field<uint32_t>(self, 0x4) != 0) {
-        // Argument order matches the original pushes: a0 = f04, a1 = f08, a2 = self, a3 = ecx (self).
-        ext_00406380(lift_field<uint32_t>(self, 0x4),
-                     lift_field<uint32_t>(self, 0x8),
-                     self,
-                     self);
-        fn_006A5C5C(lift_field<uint32_t>(self, 0x4));
-    }
-    lift_field<uint32_t>(self, 0x4) = 0;
-    lift_field<uint32_t>(self, 0x8) = 0;
-    lift_field<uint32_t>(self, 0xC) = 0;
-}
-} // namespace lift_00569970
-} // namespace lift_00406590
-
 // [0x004028B0] sub_004028B0 (17 bytes)
 namespace lift_004028B0 {
 // @name sub_004028B0
@@ -708,163 +607,6 @@ void fn_004028B0(void* self) {
 }
 } // namespace lift_00559B00
 } // namespace lift_004028B0
-
-// [0x00404770]
-namespace lift_00404770 {
-// @name Unknown::SetControlFont
-// @class Unknown
-// @summary Stores two pointer-sized args at this+0x60/+0x64, then sends WM_SETFONT (0x30) to the control handle at this+0x20 using the font from the first non-null argument.
-// @field Unknown +0x20 HWND hwnd
-// @field Unknown +0x60 uint32_t arg1_saved
-// @field Unknown +0x64 uint32_t arg2_saved
-
-// Guest-memory helpers (resolved by the host harness).
-extern uint32_t ext_ReadGuest32(uint32_t addr);
-extern int32_t ext_SendMessageA(uint32_t hwnd, uint32_t msg, uint32_t wparam, int32_t lparam);
-
-// Import-table slot for USER32!SendMessageA (value at this address is the IAT entry).
-extern const uint32_t mem_00925694;
-
-namespace {
-constexpr uint32_t kWmSetFont = 0x30;
-}
-
-// __thiscall-style: this in ecx, two stack args, callee cleans 8 bytes.
-int32_t Unknown_SetControlFont(void* self, uint32_t arg1, uint32_t arg2) {
-    lift_field<uint32_t>(self, 0x60) = arg1;
-    lift_field<uint32_t>(self, 0x64) = arg2;
-
-    const uint32_t hwnd = lift_field<uint32_t>(self, 0x20);
-
-    if (arg2 != 0) {
-        const uint32_t font = ext_ReadGuest32(arg2 + 0x4);
-        return ext_SendMessageA(hwnd, kWmSetFont, font, 1);
-    }
-    if (arg1 != 0) {
-        const uint32_t font = ext_ReadGuest32(arg1 + 0x4);
-        return ext_SendMessageA(hwnd, kWmSetFont, font, 1);
-    }
-    return 0;
-}
-} // namespace lift_00404770
-
-// [0x004077E0] sub_004077E0 (69 bytes)
-namespace lift_004077E0 {
-// MFC80 ordinal 2902: thiscall (ecx = textObj), one stack arg (out pointer), returns a count. Semantics not identified.
-extern uint32_t ext_MFC80_ord_2902(void* self, void* out);
-// MFC80 ordinal 876: thiscall (ecx = textObj), no stack args, returns the string pointer.
-extern LPCTSTR ext_MFC80_ord_876(void* self);
-// GDI32!GetTextExtentPoint32A: stdcall(hdc, lpString, cbString, lpSize).
-extern BOOL ext_GDI32_GetTextExtentPoint32A(HDC hdc, LPCTSTR str, int32_t count, SIZE* size);
-
-// @name Unknown::getTextExtent
-// @class Unknown
-// @summary Measures a text object with GDI and writes the resulting cx/cy pair to an output SIZE.
-// @field Unknown +0x08 HDC field_0x08
-void fn_004077E0(void* self, SIZE* outSize, void* textObj) {
-    SIZE measured{};
-
-    const uint32_t count = ext_MFC80_ord_2902(textObj, &measured);
-    LPCTSTR text = ext_MFC80_ord_876(textObj);
-
-    HDC hdc = lift_field<HDC>(self, 0x08);
-    ext_GDI32_GetTextExtentPoint32A(hdc, text, static_cast<int32_t>(count), &measured);
-
-    outSize->cx = measured.cx;
-    outSize->cy = measured.cy;
-}
-} // namespace lift_004077E0
-
-// [0x004053C0] sub_004053C0 (70 bytes)
-namespace lift_004053C0 {
-// IAT slot 0x00925134 holds MSVCR80!_invalid_parameter_noinfo (noreturn).
-extern void ext_MSVCR80_invalid_parameter_noinfo();
-extern int mem_00925134;
-
-// @name Unknown::getIndexedRecordDword
-// @class Unknown
-// @summary Returns the first dword of the record at index this->+0x684 in the 0x58-byte record array [+0x564, +0x568); invalid-parameter path if the array is empty or the index is out of range.
-// @field Unknown +0x564 DWORD recordsBegin
-// @field Unknown +0x568 DWORD recordsEnd
-// @field Unknown +0x684 DWORD recordIndex
-DWORD fn_004053C0(void* self) {
-    auto* base = static_cast<uint8_t*>(self);
-    const DWORD begin = *reinterpret_cast<DWORD*>(base + 0x564);
-    const DWORD index = *reinterpret_cast<DWORD*>(base + 0x684);
-
-    // Record count = (end - begin) / sizeof(record) with sizeof(record) == 0x58.
-    const DWORD end = *reinterpret_cast<DWORD*>(base + 0x568);
-    const auto diff = static_cast<int32_t>(end - begin);
-    const DWORD count = static_cast<DWORD>(diff / 0x58);
-
-    if (begin == 0 || index >= count) {
-        ext_MSVCR80_invalid_parameter_noinfo();
-    }
-
-    const DWORD recordBase = *reinterpret_cast<DWORD*>(base + 0x564);
-    const auto* record = reinterpret_cast<const uint8_t*>(static_cast<uintptr_t>(recordBase))
-                         + static_cast<size_t>(index) * 0x58;
-    return *reinterpret_cast<const DWORD*>(record);
-}
-} // namespace lift_004053C0
-
-// [0x004026E0] sub_004026E0 (71 bytes)
-namespace lift_004026E0 {
-// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
-// Takes one cdecl argument (the buffer pointer), pushed before the call in the original.
-extern void ext_006A5C5C(void* buffer);
-// Element destructor pointed to by mem_00924FF4 (0x00628FF0, MSVCP80 basic_string<char> dtor).
-extern void ext_00628FF0(void* self);
-extern int mem_00924FF4;
-
-// @name StringArray::ReleaseElements
-// @class StringArray
-// @summary Destroys each 28-byte string element in the array, frees its buffer, and nulls the begin/end/capacity pointers.
-// @field StringArray +0x04 void* begin
-// @field StringArray +0x08 void* end
-// @field StringArray +0x0C void* capacity
-void fn_004026E0(void* self) {
-    auto* obj = static_cast<unsigned char*>(self);
-    auto** begin_slot = reinterpret_cast<unsigned char**>(obj + 0x04);
-    auto** end_slot = reinterpret_cast<unsigned char**>(obj + 0x08);
-    auto** cap_slot = reinterpret_cast<unsigned char**>(obj + 0x0C);
-
-    unsigned char* begin = *begin_slot;
-    if (begin != nullptr) {
-        unsigned char* end = *end_slot;
-        for (unsigned char* p = begin; p != end; p += 0x1c) {
-            ext_00628FF0(p);
-        }
-        ext_006A5C5C(begin);
-    }
-
-    *begin_slot = nullptr;
-    *end_slot = nullptr;
-    *cap_slot = nullptr;
-}
-} // namespace lift_004026E0
-
-// [0x0040B2B0]
-namespace lift_0040B2B0 {
-// @name Unknown::StringFromModeOrGlobal
-// @summary Constructs an std::string into the caller's sret slot: copies the global string for mode 1 or 2, otherwise builds it from the rdata C string; returns the slot pointer.
-// Note: no struct fields are accessed; the function only constructs std::string objects, so no @field lines are emitted.
-
-// Rdata C string literal (contents not recovered).
-extern const char mem_00928B5D[];
-// Global std::string object (0x00AC8884).
-extern std::string mem_00AC8884;
-
-// Stdcall, 2 args (callee cleans 8 bytes): hidden std::string* return slot and an int mode selector.
-std::string* __stdcall fn_0040B2B0(std::string* out, int mode) {
-    if (mode == 1 || mode == 2) {
-        new (out) std::string(mem_00AC8884);
-    } else {
-        new (out) std::string(mem_00928B5D);
-    }
-    return out;
-}
-} // namespace lift_0040B2B0
 
 // [0x0040BE90] sub_0040BE90 (73 bytes)
 namespace lift_0040BE90 {
@@ -928,34 +670,6 @@ uint32_t fn_00406350(uint32_t begin, uint32_t end, uint32_t value) {
 }
 } // namespace lift_0054F290
 } // namespace lift_00406350
-
-// [0x004060F0] sub_004060F0 (75 bytes)
-namespace lift_004060F0 {
-extern int mem_00924FDC;
-
-// @name CopyRecordRange_004060F0
-// @class ExtRecord58
-// @summary Copy-assigns one 0x58-byte record from src into every record in [dst, dstEnd) (no-op when dst == dstEnd).
-// @field ExtRecord58 +0x00 uint32_t field_0x00
-// @field ExtRecord58 +0x04 std::string field_0x04
-// @field ExtRecord58 +0x20 std::string field_0x20
-// @field ExtRecord58 +0x3C std::string field_0x3C
-void fn_004060F0(void* dst, void* dstEnd, const void* src) {
-    if (dst == dstEnd) {
-        return;
-    }
-    // The source pointer is not advanced: each destination record receives
-    // the same source record (matches the original loop, which never increments edi).
-    for (uint8_t* p = static_cast<uint8_t*>(dst);
-         p != static_cast<uint8_t*>(dstEnd);
-         p += 0x58) {
-        lift_field<uint32_t>(p, 0x00) = lift_field<const uint32_t>(src, 0x00);
-        lift_field<std::string>(p, 0x04) = lift_field<const std::string>(src, 0x04);
-        lift_field<std::string>(p, 0x20) = lift_field<const std::string>(src, 0x20);
-        lift_field<std::string>(p, 0x3C) = lift_field<const std::string>(src, 0x3C);
-    }
-}
-} // namespace lift_004060F0
 
 // [0x00401A10]
 namespace lift_00401A10 {
@@ -1129,57 +843,6 @@ void* fn_00404E40(const void* first, const void* last, void* dest) {
 }
 } // namespace lift_00404E40
 
-// [0x00404EA0] sub_00404EA0 (86 bytes)
-namespace lift_00404EA0 {
-// MSVCP80 std::string::operator=(const std::string&), thiscall; import slot mem_00924FDC resolves to 0x006291BE.
-extern void* __thiscall ext_006291BE(void* self, const void* src);
-
-// @name copyBackwardRecordRange_00404EA0
-// @summary Copy-assigns a range of 0x58-byte records backward (last to first) into a destination ending at dstEnd; returns the destination begin.
-void* fn_00404EA0(void* begin, void* end, void* dstEnd) {
-    uint8_t* first = static_cast<uint8_t*>(begin);
-    uint8_t* last = static_cast<uint8_t*>(end);
-    uint8_t* dst = static_cast<uint8_t*>(dstEnd);
-
-    while (last != first) {
-        last -= 0x58;
-        uint32_t key = *reinterpret_cast<uint32_t*>(last);
-        dst -= 0x58;
-        *reinterpret_cast<uint32_t*>(dst) = key;
-        ext_006291BE(dst + 0x04, last + 0x04);
-        ext_006291BE(dst + 0x20, last + 0x20);
-        ext_006291BE(dst + 0x3C, last + 0x3C);
-    }
-    return dst;
-}
-} // namespace lift_00404EA0
-
-// [0x00406030] sub_00406030 (87 bytes)
-namespace lift_00406030 {
-// Allocator thunk: IAT jump to MFC80!ord_762 (operator new-style allocator).
-extern void* ext_006A5C62(uint32_t size);
-
-// @name newArrayOfRecords_00406030
-// @class (none)
-// @summary Allocates an array of `count` 0x58-byte records; throws bad_array_new_length on size overflow.
-void* fn_00406030(uint32_t count) {
-    if (count == 0) {
-        // Zero elements: request a zero-byte allocation.
-        return ext_006A5C62(0);
-    }
-
-    // Overflow guard: 0xFFFFFFFF / count must be >= 0x58 for count * 0x58 to fit in 32 bits.
-    const uint32_t maxCount = 0xFFFFFFFFu / count;
-    if (maxCount < 0x58u) {
-        throw std::bad_array_new_length();
-    }
-
-    // Truncation to 32 bits is safe here because the guard above ensures no overflow.
-    const uint32_t bytes = count * 0x58u;
-    return ext_006A5C62(bytes);
-}
-} // namespace lift_00406030
-
 // [0x00406090]
 namespace lift_00406090 {
 // @name std::copy<std::string*, std::string*>
@@ -1334,42 +997,6 @@ extern void* fn_00406140(void* begin, void* end, void* dstEnd) {
     return reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(dstEnd) - static_cast<uintptr_t>(count * 0x58));
 }
 } // namespace lift_00406140
-
-// [0x004065D0] sub_004065D0 (59 bytes)
-namespace lift_004065D0 {
-// @name sub_004065D0
-// @summary Auto-lifted identical-shape clone of 0x005015E0 (Unknown::eraseRangeFromSelf).
-namespace lift_005015E0 {
-// Known callee 0x005013F0: sub_005013F0 (Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).)
-// Thiscall: self in ecx, then five stack args (out_iter, first_container, first_ptr, last_container, last_ptr).
-extern void* ext_00406510(void* self, void* out_iter, void* first_container,
-                              void* first_ptr, void* last_container, void* last_ptr);
-
-// @name Unknown::eraseRangeFromSelf
-// @class Unknown
-// @summary Erases the element range bounded by self+0x04 .. self+0x08 by forwarding both bounds to 0x005013F0.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-void fn_004065D0(void* self) {
-    auto* base = static_cast<unsigned char*>(self);
-    auto load_u32 = [&](std::size_t off) {
-        std::uint32_t v;
-        std::memcpy(&v, base + off, sizeof v);
-        return v;
-    };
-
-    // The original asserts first <= last via _invalid_parameter_noinfo (diagnostic only; no
-    // observable effect on the erase), so it is omitted here.
-    const auto first = static_cast<std::uintptr_t>(load_u32(0x04));
-    const auto last = static_cast<std::uintptr_t>(load_u32(0x08));
-
-    // The out iterator is a caller-provided slot; this function never reads it.
-    alignas(8) unsigned char out_iter[16] = {};
-    ext_00406510(self, out_iter, self, reinterpret_cast<void*>(first),
-                 self, reinterpret_cast<void*>(last));
-}
-} // namespace lift_005015E0
-} // namespace lift_004065D0
 
 // [0x0040AB60]
 namespace lift_0040AB60 {
@@ -1560,47 +1187,6 @@ void __thiscall sub_00404CD0(void* self) {
 }
 } // namespace lift_00404CD0
 
-// [0x0040FE10]
-namespace lift_0040FE10 {
-extern uint32_t mem_read32(uint32_t addr);
-extern void ext_006A6010(uint32_t self, uint32_t mode);
-
-// @name drawCenteredText
-// @summary Sets text color and transparent background mode on a DC, draws centered single-line text in a rect, and restores the previous text color.
-// @field DC +0x00 uint32_t* vtable
-void __stdcall fn_0040FE10(uint32_t dc, uint32_t rect_left, uint32_t rect_top, uint32_t rect_right, uint32_t rect_bottom, uint32_t text_ptr, uint32_t color) {
-    struct Rect {
-        uint32_t left;
-        uint32_t top;
-        uint32_t right;
-        uint32_t bottom;
-    } rect = { rect_left, rect_top, rect_right, rect_bottom };
-
-    using SetColorFn = uint32_t (__thiscall*)(uint32_t, uint32_t);
-    using DrawTextFn = uint32_t (__thiscall*)(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t);
-
-    uint32_t vtable = mem_read32(dc);
-    SetColorFn set_color = reinterpret_cast<SetColorFn>(static_cast<uintptr_t>(mem_read32(vtable + 0x38)));
-    uint32_t old_color = set_color(dc, color);
-
-    ext_006A6010(dc, 1);
-
-    const char* str = reinterpret_cast<const char*>(static_cast<uintptr_t>(text_ptr));
-    uint32_t len = 0;
-    while (str[len] != '\0') {
-        ++len;
-    }
-
-    vtable = mem_read32(dc);
-    DrawTextFn draw_text = reinterpret_cast<DrawTextFn>(static_cast<uintptr_t>(mem_read32(vtable + 0x70)));
-    draw_text(dc, text_ptr, len, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(&rect)), 0x25);
-
-    vtable = mem_read32(dc);
-    set_color = reinterpret_cast<SetColorFn>(static_cast<uintptr_t>(mem_read32(vtable + 0x38)));
-    set_color(dc, old_color);
-}
-} // namespace lift_0040FE10
-
 // [0x00404BE0] sub_00404BE0 (94 bytes)
 namespace lift_00404BE0 {
 // Known callee 0x00404720: sub_00404720 (Sets mode at +0x5c if <= 2, toggles style 0x2000 via MFC80!ord_4115 and invalidates window if +0x20 is non-null.)
@@ -1629,31 +1215,6 @@ void* fn_00404BE0(void* self, uint32_t mode) {
     return self;
 }
 } // namespace lift_00404BE0
-
-// [0x004019B0] sub_004019B0 (95 bytes)
-namespace lift_004019B0 {
-// @name Unknown::CopyConstruct_004019B0
-// @class Unknown
-// @summary Copy-constructs a record from another: two std::string members at +0x00 and +0x20, and 32-bit ints at +0x1C and +0x3C.
-// @field Unknown +0x00 std::string field_0x00
-// @field Unknown +0x1C int32_t field_0x1C
-// @field Unknown +0x20 std::string field_0x20
-// @field Unknown +0x3C int32_t field_0x3C
-void* fn_004019B0(void* self, const void* other) {
-    // String members are constructed in place from the source, in original order.
-    new (static_cast<unsigned char*>(self) + 0x00)
-        std::string(*reinterpret_cast<const std::string*>(static_cast<const unsigned char*>(other) + 0x00));
-
-    lift_field<int32_t>(self, 0x1C) = lift_field<int32_t>(other, 0x1C);
-
-    new (static_cast<unsigned char*>(self) + 0x20)
-        std::string(*reinterpret_cast<const std::string*>(static_cast<const unsigned char*>(other) + 0x20));
-
-    lift_field<int32_t>(self, 0x3C) = lift_field<int32_t>(other, 0x3C);
-
-    return self;
-}
-} // namespace lift_004019B0
 
 // [0x004030F0] sub_004030F0 (98 bytes)
 namespace lift_004030F0 {
@@ -1708,85 +1269,6 @@ void fn_004030F0(void* self) {
 }
 } // namespace lift_004030F0
 
-// [0x00401E80] sub_00401E80 (97 bytes)
-namespace lift_00401E80 {
-// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762; takes a byte count, returns a pointer).
-extern void* ext_006A5C62(uint32_t size);
-
-// @name checkedArrayAllocate
-// @summary Allocates n elements of 28 bytes each; n == 0 requests a zero-byte block, and an n whose byte count would overflow throws bad_array_new_length.
-void* fn_00401E80(uint32_t n) {
-    if (n == 0) {
-        return ext_006A5C62(0);
-    }
-    // Overflow guard: 28 * n must fit in 32 bits, i.e. 0xFFFFFFFF / n >= 28.
-    if (0xFFFFFFFFu / n < 28u) {
-        throw std::bad_array_new_length();
-    }
-    return ext_006A5C62(28u * n);
-}
-} // namespace lift_00401E80
-
-// [0x00403560] sub_00403560 (104 bytes)
-namespace lift_00403560 {
-// Import slots referenced by the original thunks (IAT entries).
-extern int mem_00924FF0;  // MSVCP80 std::basic_string<char>::c_str
-extern int mem_00925130;  // MSVCR80 std::exception::exception(const char* const&)
-extern int mem_00924FE0;  // MSVCP80 std::basic_string<char>::basic_string(const basic_string&)
-extern int mem_00928EF0;  // vtable address written into the object
-
-// Imported helpers, bound to the slots above.
-extern const char* ext_std_string_c_str(const void* str);
-extern void ext_std_exception_ctor(void* self, const char* const* what);
-extern void ext_std_string_copy_ctor(void* dst, const void* src);
-
-// @name ExceptionWithMessage::ExceptionWithMessage
-// @class ExceptionWithMessage
-// @summary Constructs a std::exception-derived object from a const std::string&: passes its c_str() to the base exception, installs the class vtable, and copy-constructs the string at +0x0C.
-// @field ExceptionWithMessage +0x0C std::string field_0x0c
-void* fn_00403560(void* self, const void* msg) {
-    const char* what = ext_std_string_c_str(msg);
-    ext_std_exception_ctor(self, &what);
-    lift_field<uint32_t>(self, 0x00) = 0x00928EF0u;
-    ext_std_string_copy_ctor(static_cast<uint8_t*>(self) + 0x0C, msg);
-    return self;
-}
-} // namespace lift_00403560
-
-// [0x00404C60] sub_00404C60 (105 bytes)
-namespace lift_00404C60 {
-// Import thunks for MSVCP80 std::basic_string<char> constructors (IAT slots 0x924FE4 / 0x924FE8).
-extern void ext_string_ctor_cstr(void* self, const char* s);  // basic_string(const char*) via mem_00924FE4
-extern void ext_string_ctor_default(void* self);              // basic_string()          via mem_00924FE8
-
-// Empty C string in .rdata.
-extern const char mem_00928B5D[];
-
-// @name sub_00404C60
-// @class <ClassName> (optional)
-// @summary Constructs an object in place: stores its argument at +0x00, then builds three std::string members.
-// @field <ClassName> +0x00 uint32_t field_0x00
-// @field <ClassName> +0x04 std::string field_0x04
-// @field <ClassName> +0x20 std::string field_0x20
-// @field <ClassName> +0x3C std::string field_0x3c
-void* fn_00404C60(void* self, uint32_t arg) {
-    // Stores the first argument as the leading 32-bit field.
-    lift_field<uint32_t>(self, 0x00) = arg;
-
-    // Member string at +0x04 is constructed from "".
-    ext_string_ctor_cstr(&lift_field<uint8_t>(self, 0x04), mem_00928B5D);
-
-    // Member string at +0x20 is constructed from "".
-    ext_string_ctor_cstr(&lift_field<uint8_t>(self, 0x20), mem_00928B5D);
-
-    // Member string at +0x3C is default-constructed.
-    ext_string_ctor_default(&lift_field<uint8_t>(self, 0x3C));
-
-    // Original returns `this` in EAX (thiscall, ret 4).
-    return self;
-}
-} // namespace lift_00404C60
-
 // [0x00404F00]
 namespace lift_00404F00 {
 extern const char mem_00929F48[];
@@ -1802,91 +1284,6 @@ void* __cdecl sub_00404F00(void* out_str, int32_t value) {
     return out_str;
 }
 } // namespace lift_00404F00
-
-// [0x00406380] sub_00406380 (111 bytes)
-namespace lift_00406380 {
-// MSVC 2005 std::string destructor (MSVCP80, reached via IAT slot mem_00924FF4).
-extern void __thiscall ext_MSVCP80_basic_string_dtor(void* self);
-
-// @name Unknown::destroyStringRange_00406380
-// @class Unknown
-// @summary Destroys three std::string members of each 0x58-byte element in [first, last), in reverse member order.
-// @field Unknown +0x04 std::string field_0x04
-// @field Unknown +0x20 std::string field_0x20
-// @field Unknown +0x3c std::string field_0x3c
-void fn_00406380(void* first, void* last) {
-    constexpr std::ptrdiff_t kElementSize = 0x58;
-
-    for (uint8_t* p = static_cast<uint8_t*>(first);
-         p != static_cast<uint8_t*>(last);
-         p += kElementSize) {
-        ext_MSVCP80_basic_string_dtor(p + 0x3c);
-        ext_MSVCP80_basic_string_dtor(p + 0x20);
-        ext_MSVCP80_basic_string_dtor(p + 0x04);
-    }
-}
-} // namespace lift_00406380
-
-// [0x00404D70]
-namespace lift_00404D70 {
-// @name Unknown::copyConstruct_00404D70
-// @class Unknown
-// @summary Copy-constructs an object: a leading u32 plus three std::string members, from a source object.
-// @field Unknown +0x00 u32 field_0x00
-// @field Unknown +0x04 std::string field_0x04
-// @field Unknown +0x20 std::string field_0x20
-// @field Unknown +0x3C std::string field_0x3C
-
-// std::basic_string<char> copy constructor (MSVCP80), reached through the IAT slot mem_00924FE0.
-extern void ext_string_copy_ctor(void* self, const void* src);
-
-// Sub-object offsets within the object (std::string is 0x1C bytes in this layout).
-constexpr ptrdiff_t kOffStr04 = 0x04;
-constexpr ptrdiff_t kOffStr20 = 0x20;
-constexpr ptrdiff_t kOffStr3C = 0x3C;
-
-void* fn_00404D70(void* self, const void* src) {
-    // Copy the leading 32-bit value.
-    lift_field<uint32_t>(self, 0x00) = lift_field<uint32_t>(src, 0x00);
-
-    // Copy-construct each std::string member from the matching source member.
-    ext_string_copy_ctor(static_cast<uint8_t*>(self) + kOffStr04,
-                         static_cast<const uint8_t*>(src) + kOffStr04);
-    ext_string_copy_ctor(static_cast<uint8_t*>(self) + kOffStr20,
-                         static_cast<const uint8_t*>(src) + kOffStr20);
-    ext_string_copy_ctor(static_cast<uint8_t*>(self) + kOffStr3C,
-                         static_cast<const uint8_t*>(src) + kOffStr3C);
-
-    return self;  // eax = this
-}
-} // namespace lift_00404D70
-
-// [0x00405FB0] sub_00405FB0 (112 bytes)
-namespace lift_00405FB0 {
-// @name throwPreparedStringError_00405FB0
-// @class Unknown
-// @summary Builds a std::string from the literal at 0x00928F30 and throws it inside an std::exception-derived object.
-// @field Unknown +0x0C std::string field_0x0C
-
-// Exception object layout as seen by the throw site: std::exception base
-// (vptr + internal state, 0x0C bytes) followed by a std::string at +0x0C.
-class Unknown : public std::exception {
-public:
-    explicit Unknown(const std::string& message)
-        : std::exception(), field_0x0C(message) {}
-
-    std::string field_0x0C;
-};
-
-// Literal stored at rdata VA 0x00928F30. Its text was not recovered in this lift.
-static const std::string kLiteral_00928F30 = "<rdata 0x00928F30>";
-
-void fn_00405FB0() {
-    std::string source = kLiteral_00928F30;
-    Unknown thrown(source);
-    throw thrown;
-}
-} // namespace lift_00405FB0
 
 // [0x00402480] sub_00402480 (81 bytes)
 namespace lift_00402480 {
@@ -1927,41 +1324,6 @@ bool fn_00402480(void* self, uint32_t n) {
 }
 } // namespace lift_00402480
 
-// [0x0040B640]
-namespace lift_0040B640 {
-// @name sub_0040B640
-// @summary Reads window text from child control at +0xe8 into std::string at +0x298
-// @field Class +0xe8 void* field_0xe8
-// @field Class +0x298 void* field_0x298
-
-
-extern void fn_006A5F4A(void);
-extern uint32_t mem_009242FC;
-extern uint32_t mem_00924300;
-extern uint32_t mem_00924FD4;
-extern uint32_t mem_009242F4;
-
-void __thiscall fn_0040B640(void* self) {
-    uint8_t* base = reinterpret_cast<uint8_t*>(self);
-    uint32_t cstr_storage = 0;
-
-    // MFC80!ord_310: CString::CString()
-    reinterpret_cast<void(__thiscall*)(void*)>(static_cast<uintptr_t>(mem_009242FC))(&cstr_storage);
-
-    // thunk_MFC80_ord_3761: CWnd::GetWindowTextA(CString&)
-    reinterpret_cast<void(__thiscall*)(void*, void*)>(&fn_006A5F4A)(base + 0xE8, &cstr_storage);
-
-    // MFC80!ord_876: CString::GetString() / operator const char*()
-    const char* text = reinterpret_cast<const char*(__thiscall*)(void*)>(static_cast<uintptr_t>(mem_00924300))(&cstr_storage);
-
-    // MSVCP80!std::string::operator=(const char*)
-    reinterpret_cast<void*(__thiscall*)(void*, const char*)>(static_cast<uintptr_t>(mem_00924FD4))(base + 0x298, text);
-
-    // MFC80!ord_578: CString::~CString()
-    reinterpret_cast<void(__thiscall*)(void*)>(static_cast<uintptr_t>(mem_009242F4))(&cstr_storage);
-}
-} // namespace lift_0040B640
-
 // [0x0040B930]
 namespace lift_0040B930 {
 // @name sub_0040B930
@@ -1986,23 +1348,6 @@ extern void __thiscall fn_0040B930(void* self) {
 }
 } // namespace lift_0040B930
 
-// [0x0040BF00]
-namespace lift_0040BF00 {
-// @name sub_0040BF00
-// @summary Calls MFC80_ord_1084, passes [eax+4] to MFC80_ord_1308, and returns self.
-
-
-extern void* ext_006A5EDE(void);
-extern void __thiscall ext_006A60D6(void* self);
-
-extern void* __thiscall fn_0040BF00(void* self) {
-    void* obj = ext_006A5EDE();
-    void* inner = reinterpret_cast<void*>(*reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(obj) + 0x4));
-    ext_006A60D6(inner);
-    return self;
-}
-} // namespace lift_0040BF00
-
 // [0x0040CAC0]
 namespace lift_0040CAC0 {
 extern void ext_0040B640(void* self);
@@ -2026,41 +1371,3 @@ void fn_0040CAC0(uint8_t* self) {
     vfunc_168(self);
 }
 } // namespace lift_0040CAC0
-
-// [0x00402630]
-namespace lift_00402630 {
-// @name copyElements32
-// @summary Copies 32-byte structs from [src, srcEnd) to dst, skipping writes if dst is null, and returns the advanced dst pointer.
-
-
-uint8_t mem_read8(uint32_t addr);
-uint16_t mem_read16(uint32_t addr);
-uint32_t mem_read32(uint32_t addr);
-void mem_write8(uint32_t addr, uint8_t val);
-void mem_write16(uint32_t addr, uint16_t val);
-void mem_write32(uint32_t addr, uint32_t val);
-
-uint32_t sub_00402630(uint32_t src, uint32_t srcEnd, uint32_t dst) {
-    if (src == srcEnd) {
-        return dst;
-    }
-
-    do {
-        if (dst != 0) {
-            mem_write32(dst + 0x00, mem_read32(src + 0x00));
-            mem_write32(dst + 0x04, mem_read32(src + 0x04));
-            mem_write32(dst + 0x08, mem_read32(src + 0x08));
-            mem_write32(dst + 0x0c, mem_read32(src + 0x0c));
-            mem_write32(dst + 0x10, mem_read32(src + 0x10));
-            mem_write32(dst + 0x14, mem_read32(src + 0x14));
-            mem_write32(dst + 0x18, mem_read32(src + 0x18));
-            mem_write16(dst + 0x1c, mem_read16(src + 0x1c));
-            mem_write8(dst + 0x1e, mem_read8(src + 0x1e));
-        }
-        src += 0x20;
-        dst += 0x20;
-    } while (src != srcEnd);
-
-    return dst;
-}
-} // namespace lift_00402630

@@ -10,11 +10,11 @@
 // Recovered field layout for PointainerWithUndo<UndoablePointainerVector<Interpreter>>::AddElementCommand:
 namespace lifted_layout {
 struct PointainerWithUndo_UndoablePointainerVector_Interpreter___AddElementCommand_Fields {
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x004BC6D0, 0x004BC720, 0x00501ED0, 0x00528370)
-    // +0x14  uint32_t                 field_0x14  (evidence: 0x004BC6D0, 0x004BC720, 0x00501ED0, 0x00528370)
-    // +0x18  uint32_t                 field_0x18  (evidence: 0x004BC6D0, 0x004BC720, 0x00501ED0, 0x00528370)
-    // +0x1C  uint32_t                 field_0x1c  (evidence: 0x004BC6D0, 0x004BC720, 0x00501ED0, 0x00528370)
-    // +0x20  uint32_t                 field_0x20  (evidence: 0x004BC6D0, 0x004BC720, 0x00501ED0, 0x00528370)
-    // +0x24  uint32_t                 field_0x24  (evidence: 0x004BC6D0, 0x004BC720, 0x00501ED0, 0x00528370)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x00528370)
+    // +0x14  uint32_t                 field_0x14  (evidence: 0x00528370)
+    // +0x18  uint32_t                 field_0x18  (evidence: 0x00528370)
+    // +0x1C  uint32_t                 field_0x1c  (evidence: 0x00528370)
+    // +0x20  uint32_t                 field_0x20  (evidence: 0x00528370)
+    // +0x24  uint32_t                 field_0x24  (evidence: 0x00528370)
 };
 } // namespace lifted_layout

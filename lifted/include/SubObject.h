@@ -9,7 +9,7 @@
 namespace lifted_layout {
 struct SubObject_Fields {
     // +0x0   void*                    field_0x00  (evidence: 0x006722B0, 0x00672490, 0x00673B60)
-    // +0xC   void*                    field_0x0C  (evidence: 0x006722B0, 0x0067ADE0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   void*                    field_0x0C  (evidence: 0x006722B0) // CONFLICT: multiple definitions at +0xC
     // +0xC   void*                    field_0x0c  (evidence: 0x0058A9E0) // CONFLICT: multiple definitions at +0xC
     // +0x20  HWND                     hwnd  (evidence: 0x006A95C0)
     // +0x24  void*                    embeddedAt24  (evidence: 0x005B68F0) // CONFLICT: multiple definitions at +0x24
@@ -19,8 +19,6 @@ struct SubObject_Fields {
     // +0x2C  void*                    field_0x2c  (evidence: 0x0058A9E0) // CONFLICT: multiple definitions at +0x2C
     // +0x30  uint32_t                 field_0x30  (evidence: 0x007BD5E0) // CONFLICT: multiple definitions at +0x30
     // +0x30  void*                    owner  (evidence: 0x005B68F0) // CONFLICT: multiple definitions at +0x30
-    // +0x34  uint32_t                 field_0x34  (evidence: 0x004519B0)
-    // +0x38  uint32_t                 field_0x38  (evidence: 0x004519B0)
     // +0x48  uint32_t                 field_0x48  (evidence: 0x007BD5E0)
     // +0x68  DWORD                    field_0x68  (evidence: 0x00687230, 0x00687250)
     // +0x6C  uint32_t                 field_0x6C  (evidence: 0x007BD5E0)

@@ -123,23 +123,6 @@ uint32_t __thiscall fn_004F9BD0(void* this_ptr) {
 }
 } // namespace lift_004F9BD0
 
-// [0x004F9BE0]
-namespace lift_004F9BE0 {
-extern uint32_t mem_r32(uint32_t addr);
-extern uint32_t __thiscall ext_0046F8A0(uint32_t self);
-
-// @name VMCSModes::DefaultImplementation::vfunc_34
-// @class VMCSModes::DefaultImplementation
-// @summary Forwards vfunc_34 to sub_0046F8A0 on the object at delegate_0x8 + 0x14
-// @field VMCSModes::DefaultImplementation +0x8 uint32_t delegate_0x8
-
-uint32_t __thiscall fn_004F9BE0(uint32_t self) {
-    uint32_t delegate = mem_r32(self + 0x8);
-    uint32_t target = mem_r32(delegate + 0x14);
-    return ext_0046F8A0(target);
-}
-} // namespace lift_004F9BE0
-
 // [0x004F2890] VMCSModes::SimulationMode::vfunc_143 (11 bytes)
 namespace lift_004F2890 {
 // @name VMCSModes::SimulationMode::vfunc_143

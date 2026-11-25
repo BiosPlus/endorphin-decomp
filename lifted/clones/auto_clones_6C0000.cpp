@@ -79,20 +79,3 @@ void fn_006BBA40(void) {
 }
 } // namespace lift_006BBA40
 } // namespace lift_006C8EF0
-
-// [0x006C2020]
-namespace lift_006C2020 {
-// @name Unknown::DestroySubobjects_006C2020
-// @class Unknown
-// @summary Runs the cleanup routine for the subobjects at +0x28 and +0x08 of this (SEH-guarded in the original, no return value).
-// @field Unknown +0x08 void field_0x08 (subobject passed to cleanup routine)
-// @field Unknown +0x28 void field_0x28 (subobject passed to cleanup routine)
-
-extern void ext_006D80A0(void* self);
-
-extern void fn_006C2020(void* self) {
-    auto* base = static_cast<unsigned char*>(self);
-    ext_006D80A0(base + 0x28);
-    ext_006D80A0(base + 0x08);
-}
-} // namespace lift_006C2020

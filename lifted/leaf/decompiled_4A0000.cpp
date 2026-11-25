@@ -134,37 +134,6 @@ extern void __stdcall sub_004AEF30(uint32_t begin, uint32_t end) {
 }
 } // namespace lift_004AEF30
 
-// [0x004A5A50]
-namespace lift_004A5A50 {
-extern uint32_t mem_r32(uint32_t addr);
-extern uint8_t mem_r8(uint32_t addr);
-
-// @name sub_004A5A50
-// @summary Returns 1 if pointer array is null/empty or flag at +0x24 is non-zero, otherwise 0.
-// @field Unknown +0x0c uint32_t field_0x0c
-// @field Unknown +0x10 uint32_t field_0x10
-// @field Unknown +0x24 uint8_t field_0x24
-
-uint32_t __thiscall sub_004A5A50(uint32_t self) {
-    uint32_t begin = mem_r32(self + 0x0c);
-    if (begin == 0) {
-        return 1;
-    }
-
-    uint32_t end = mem_r32(self + 0x10);
-    int32_t count = static_cast<int32_t>(end - begin) >> 2;
-    if (count == 0) {
-        return 1;
-    }
-
-    if (mem_r8(self + 0x24) != 0) {
-        return 1;
-    }
-
-    return 0;
-}
-} // namespace lift_004A5A50
-
 // [0x004A96E0] sub_004A96E0 (60 bytes)
 namespace lift_004A96E0 {
 // Holds the address of the MSVCP80 std::string equality operator (indirect call target).
@@ -185,40 +154,6 @@ uint32_t fn_004A96E0(const void* key) {
     return 0;
 }
 } // namespace lift_004A96E0
-
-// [0x004A6020]
-namespace lift_004A6020 {
-// @name DwordVector::EraseAt
-// @class DwordVector
-// @summary Erases the dword at pos by shifting the tail down one slot, decrements end, and writes {value, pos} to out.
-// @field DwordVector +0x08 uint32_t* end (one past the last element)
-
-struct DwordVector {
-    // Thiscall: `this` is passed in ECX, out/value/pos on the stack (callee-cleans 12 bytes).
-    void EraseAt(void* out, uint32_t value, uint32_t* pos);
-};
-
-void DwordVector::EraseAt(void* out, uint32_t value, uint32_t* pos) {
-    uint32_t*& end = lift_field<uint32_t*>(this, 0x08);
-
-    // Count of dwords strictly after pos (signed; sar 2 in the original).
-    const intptr_t tail_bytes = reinterpret_cast<intptr_t>(end) -
-                                reinterpret_cast<intptr_t>(pos + 1);
-    const intptr_t count = tail_bytes >> 2;
-
-    if (count > 0) {
-        // Shift the tail down by one dword (memmove_s in the original).
-        std::memmove(pos, pos + 1, static_cast<size_t>(count) * 4);
-    }
-
-    // Drop one element from the end (add dword ptr [esi+8], -4).
-    end = end - 1;
-
-    // Return value written through the sret/out buffer: { value, pos }.
-    lift_field<uint32_t>(out, 0) = value;
-    lift_field<uint32_t*>(out, 4) = pos;
-}
-} // namespace lift_004A6020
 
 // [0x004ABA70] sub_004ABA70 (39 bytes)
 namespace lift_004ABA70 {
@@ -241,63 +176,6 @@ void fn_004ABA70(StringFindResult* out, void* owner, void* first, void* unused, 
 }
 } // namespace lift_004ABA70
 
-// [0x004A5810] sub_004A5810 (61 bytes)
-namespace lift_004A5810 {
-// @name Unknown::UpdateInvertedFlagAndChildCache
-// @class Unknown
-// @summary Stores the inverted low bit of its argument at +0x200; if the child at +0x258 is non-null, caches (child's +0x168 pointer + 4) at +0x204, or 0 when that pointer is null.
-// @field Unknown +0x200 uint32_t invertedFlag
-// @field Unknown +0x204 void* cachedSubobject
-// @field Unknown +0x258 void* child
-void __thiscall fn_004A5810(void* self, uint8_t value) {
-    uint8_t* base = static_cast<uint8_t*>(self);
-
-    void* child = *reinterpret_cast<void**>(base + 0x258);
-    *reinterpret_cast<uint32_t*>(base + 0x200) = static_cast<uint32_t>(~value) & 1u;
-
-    if (child == nullptr) {
-        return;
-    }
-
-    void* inner = *reinterpret_cast<void**>(static_cast<uint8_t*>(child) + 0x168);
-    if (inner == nullptr) {
-        *reinterpret_cast<void**>(base + 0x204) = nullptr;
-        return;
-    }
-    *reinterpret_cast<void**>(base + 0x204) = static_cast<uint8_t*>(inner) + 4;
-}
-} // namespace lift_004A5810
-
-// [0x004A0620] sub_004A0620 (63 bytes)
-namespace lift_004A0620 {
-// @name sub_004A0620
-// @summary Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).
-namespace lift_00569970 {
-extern void ext_0049ECB0(uint32_t a0, uint32_t a1, void* a2, void* a3);
-extern void fn_006A5C5C(uint32_t arg);
-
-// @name Unknown::ReleaseHandleAndClear
-// @class Unknown
-// @summary If field +0x04 is nonzero, run ext_005693E0 with it and forward it to fn_006A5C5C, then clear fields +0x04, +0x08 and +0x0C.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-// @field Unknown +0x0C uint32_t field_0x0C
-void fn_004A0620(void* self) {
-    if (lift_field<uint32_t>(self, 0x4) != 0) {
-        // Argument order matches the original pushes: a0 = f04, a1 = f08, a2 = self, a3 = ecx (self).
-        ext_0049ECB0(lift_field<uint32_t>(self, 0x4),
-                     lift_field<uint32_t>(self, 0x8),
-                     self,
-                     self);
-        fn_006A5C5C(lift_field<uint32_t>(self, 0x4));
-    }
-    lift_field<uint32_t>(self, 0x4) = 0;
-    lift_field<uint32_t>(self, 0x8) = 0;
-    lift_field<uint32_t>(self, 0xC) = 0;
-}
-} // namespace lift_00569970
-} // namespace lift_004A0620
-
 // [0x004A9760]
 namespace lift_004A9760 {
 extern uintptr_t mem_00924FC4;  // holds address of MSVCP80 basic_string operator== (cdecl)
@@ -318,37 +196,6 @@ int __stdcall fn_004A9760(const void* name) {
     return 1;
 }
 } // namespace lift_004A9760
-
-// [0x004A5A00]
-namespace lift_004A5A00 {
-// @name findAncestorOfType
-// @summary Walks an object hierarchy via vtable+0x10 until __RTDynamicCast succeeds.
-// @field Object +0x00 uint32_t* vtable
-
-extern uint32_t ext_006A6E9E(uint32_t inptr, uint32_t vf_delta, uint32_t src_type, uint32_t target_type, uint32_t is_reference);
-extern uint32_t mem_read32(uint32_t addr);
-
-uint32_t fn_004A5A00(uint32_t obj) {
-    uint32_t esi = obj;
-    if (esi == 0) {
-        return 0;
-    }
-
-    uint32_t edi = 0;
-    do {
-        edi = ext_006A6E9E(esi, 0, 0x00A2E2F8u, 0x00A2FB78u, 0);
-        if (edi != 0) {
-            break;
-        }
-        uint32_t vtable = mem_read32(esi);
-        uint32_t fn_addr = mem_read32(vtable + 0x10u);
-        auto fn = reinterpret_cast<uint32_t (*)(uint32_t, uint32_t)>(static_cast<uintptr_t>(fn_addr));
-        esi = fn(esi, 0u);
-    } while (esi != 0);
-
-    return edi;
-}
-} // namespace lift_004A5A00
 
 // [0x004AEFF0] sub_004AEFF0 (70 bytes)
 namespace lift_004AEFF0 {
@@ -480,79 +327,6 @@ void fn_004AD970(void* self) {
 }
 } // namespace lift_004AD970
 
-// [0x004A5890] sub_004A5890 (77 bytes)
-namespace lift_004A5890 {
-// @name sub_004A5890
-// @summary Auto-lifted identical-shape clone of 0x004757F0 (sub_0047A010).
-namespace lift_004757F0 {
-// Known callee 0x00672D10: sub_00672D10 (Auto-lifted identical-shape clone of 0x004026E0 (StringArray::ReleaseElements).)
-extern void ext_005B0D90(void* self);
-// Imported MSVC CRT slot for std::basic_string<char>::~basic_string (used via explicit dtor call below).
-extern int mem_00924FF4;
-
-// @name Unknown::Dtor_004757F0
-// @class Unknown
-// @summary Destructor body: releases the StringArray at +0x1C, then destroys the std::string at +0x00.
-// @field Unknown +0x00 std::string field_0x00
-// @field Unknown +0x1C StringArray field_0x1C
-void fn_004A5890(void* self) {
-    // ecx+0x1c is passed as `this` to the StringArray release routine.
-    ext_005B0D90(static_cast<unsigned char*>(self) + 0x1C);
-    // The original calls the MSVC CRT string dtor through mem_00924FF4 on `this`.
-    using StdString = std::string;
-    reinterpret_cast<StdString*>(self)->~StdString();
-}
-} // namespace lift_004757F0
-} // namespace lift_004A5890
-
-// [0x004AFE50]
-namespace lift_004AFE50 {
-// @name Unknown::releaseAndClearSlots_004AFE50
-// @class Unknown
-// @summary Releases three pointer slots (+0x18, +0x38, +0x58) via ext_006A5C5C when non-null, zeroes them and their adjacent companion fields, then tail-calls fn_00665810(self).
-
-extern void ext_006A5C5C(void* p);
-extern void __fastcall fn_00665810(void* self);
-
-// @field Unknown +0x18 void* field_0x18
-// @field Unknown +0x1C uint32_t field_0x1c
-// @field Unknown +0x20 uint32_t field_0x20
-// @field Unknown +0x38 void* field_0x38
-// @field Unknown +0x3C uint32_t field_0x3c
-// @field Unknown +0x40 uint32_t field_0x40
-// @field Unknown +0x58 void* field_0x58
-// @field Unknown +0x5C uint32_t field_0x5c
-// @field Unknown +0x60 uint32_t field_0x60
-extern void __fastcall fn_004AFE50(void* self) {
-    auto& p18 = lift_field<void*>(self, 0x18);
-    auto& p38 = lift_field<void*>(self, 0x38);
-    auto& p58 = lift_field<void*>(self, 0x58);
-
-    if (p58 != nullptr) {
-        ext_006A5C5C(p58);
-    }
-    p58 = nullptr;
-    lift_field<uint32_t>(self, 0x5C) = 0;
-    lift_field<uint32_t>(self, 0x60) = 0;
-
-    if (p38 != nullptr) {
-        ext_006A5C5C(p38);
-    }
-    p38 = nullptr;
-    lift_field<uint32_t>(self, 0x3C) = 0;
-    lift_field<uint32_t>(self, 0x40) = 0;
-
-    if (p18 != nullptr) {
-        ext_006A5C5C(p18);
-    }
-    p18 = nullptr;
-    lift_field<uint32_t>(self, 0x1C) = 0;
-    lift_field<uint32_t>(self, 0x20) = 0;
-
-    fn_00665810(self);
-}
-} // namespace lift_004AFE50
-
 // [0x004A6060] sub_004A6060 (90 bytes)
 namespace lift_004A6060 {
 // Known callee 0x00644F20: forwardVCall24 (Dereferences the inner object at +0x00 and tail-calls its vtable slot +0x24)
@@ -582,60 +356,6 @@ uint32_t* fn_004A6060(uint32_t* first, uint32_t* last, uint32_t key) {
     return first;
 }
 } // namespace lift_004A6060
-
-// [0x004A82D0] sub_004A82D0 (82 bytes)
-namespace lift_004A82D0 {
-// @name sub_004A82D0
-// @summary Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).
-namespace lift_006998D0 {
-// Known callee 0x00699870: Unknown::copyRecordWithOptionalResolve (Copies a 16-byte record from src into self; when src+0xC is non-null, calls vtable slot 0x70 on it to fetch the +0x8 value, otherwise +0x8 is zeroed. Returns self.)
-extern void* ext_0048C080(void* self, int edx_unused, const void* src);
-
-// MSVCP80 std::string copy constructor, reached through the import slot mem_00924FE0.
-extern void ext_std_string_copy_ctor(void* self, const void* src);
-extern int mem_00924FE0;
-
-// @name copyStringAndRecord
-// @summary Copy-constructs the leading std::string from src, then copies the 16-byte record at +0x1C from src into this; returns this.
-// @field Unknown +0x1C uint8_t field_0x1c[16]
-extern void* __fastcall fn_004A82D0(void* self, int edx_unused, const void* src) {
-    ext_std_string_copy_ctor(self, src);
-
-    auto* dst_record = static_cast<uint8_t*>(self) + 0x1C;
-    const auto* src_record = static_cast<const uint8_t*>(src) + 0x1C;
-    ext_0048C080(dst_record, 0, src_record);
-
-    return self;
-}
-} // namespace lift_006998D0
-} // namespace lift_004A82D0
-
-// [0x004ADA20] sub_004ADA20 (82 bytes)
-namespace lift_004ADA20 {
-// @name sub_004ADA20
-// @summary Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).
-namespace lift_006998D0 {
-// Known callee 0x00699870: Unknown::copyRecordWithOptionalResolve (Copies a 16-byte record from src into self; when src+0xC is non-null, calls vtable slot 0x70 on it to fetch the +0x8 value, otherwise +0x8 is zeroed. Returns self.)
-extern void* ext_00402800(void* self, int edx_unused, const void* src);
-
-// MSVCP80 std::string copy constructor, reached through the import slot mem_00924FE0.
-extern void ext_std_string_copy_ctor(void* self, const void* src);
-extern int mem_00924FE0;
-
-// @name copyStringAndRecord
-// @summary Copy-constructs the leading std::string from src, then copies the 16-byte record at +0x1C from src into this; returns this.
-// @field Unknown +0x1C uint8_t field_0x1c[16]
-extern void* __fastcall fn_004ADA20(void* self, int edx_unused, const void* src) {
-    ext_std_string_copy_ctor(self, src);
-
-    auto* dst_record = static_cast<uint8_t*>(self) + 0x1C;
-    const auto* src_record = static_cast<const uint8_t*>(src) + 0x1C;
-    ext_00402800(dst_record, 0, src_record);
-
-    return self;
-}
-} // namespace lift_006998D0
-} // namespace lift_004ADA20
 
 // [0x004ABAA0] sub_004ABAA0 (30 bytes)
 namespace lift_004ABAA0 {
@@ -746,30 +466,6 @@ DWORD sub_004AB8E0() {
     return (DWORD)(uintptr_t)&mem_00ADFA08;
 }
 } // namespace lift_004AB8E0
-
-// [0x004A5C00] sub_004A5C00 (95 bytes)
-namespace lift_004A5C00 {
-// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
-// Second pushed argument is a 32-bit literal (0x00A36678), so it is declared as uint32_t.
-extern void* ext_0066AD10(void* out, uint32_t arg);
-// Callee 0x006A6C87 takes one pointer argument (0x00917E10, a teardown routine registered once).
-extern int ext_006A6C87(void* fn);
-extern void ext_00917E10(); // teardown routine (address passed to 0x006A6C87)
-extern uint8_t mem_00ADEBE0;  // once-init guard flag (bit 0)
-extern uint8_t mem_00ADEBC4[]; // static object storage (size not recovered)
-
-// @name InitOnceGlobalString_004A5C00
-// @summary Runs one-time construction of the static object at mem_00ADEBC4 (guarded by bit 0 of mem_00ADEBE0), registers its teardown, and returns its address.
-// @field none (free function, no class members accessed)
-void* fn_004A5C00(void) {
-    if ((mem_00ADEBE0 & 1u) == 0) {
-        mem_00ADEBE0 |= 1u;
-        ext_0066AD10(mem_00ADEBC4, 0x00A36678u);
-        ext_006A6C87(reinterpret_cast<void*>(&ext_00917E10));
-    }
-    return mem_00ADEBC4;
-}
-} // namespace lift_004A5C00
 
 // [0x004A5F70] sub_004A5F70 (98 bytes)
 namespace lift_004A5F70 {
@@ -890,53 +586,6 @@ int fn_004AC060(void* self, uintptr_t* a5) {
                         value, value);
 }
 } // namespace lift_004AC060
-
-// [0x004A7440]
-namespace lift_004A7440 {
-// @name Unknown::findStringKeyPair_004A7440
-// @class Unknown
-// @summary Looks up a string key in the tree and writes (holder, node-or-head) pair to the out pointer.
-// @field Unknown +0x04 DWORD field_0x04
-
-// Lifted callee: tree lookup returning the last left-branch node visited (or the holder).
-extern uint8_t* ext_004A73F0(uint8_t* holder, const void* key);
-
-// Import slot for _invalid_parameter_noinfo (called through a pointer).
-extern void (*mem_00925134)(void);
-
-// Import slot for the MSVCP80 std::string less-than operator: lhs < rhs.
-extern bool (*mem_00924EF4)(const void* lhs, const void* rhs);
-
-static inline DWORD toDword(const void* p) {
-    return static_cast<DWORD>(reinterpret_cast<uintptr_t>(p));
-}
-
-// self  : holder (passed in ecx)
-// out   : hidden return buffer receiving two DWORDs
-// key   : const std::string& to look up
-// Returns the out pointer (eax), matching the original stdcall-style return.
-DWORD* Unknown_findStringKeyPair_004A7440(uint8_t* self, DWORD* out, const void* key) {
-    uint8_t* node = ext_004A73F0(self, key);
-
-    if (self == nullptr) {
-        mem_00925134();
-    }
-
-    DWORD head = lift_field<DWORD>(self, 0x04);
-    DWORD nodeVal = toDword(node);
-
-    // Use the head sentinel when the lookup landed on it, or when the key
-    // compares less than the node's string key at +0x0C.
-    bool useHead = (nodeVal == head);
-    if (!useHead) {
-        useHead = mem_00924EF4(key, node + 0x0C);
-    }
-
-    out[0] = toDword(self);
-    out[1] = useHead ? head : nodeVal;
-    return out;
-}
-} // namespace lift_004A7440
 
 // [0x004A2410]
 namespace lift_004A2410 {

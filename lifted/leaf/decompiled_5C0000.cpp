@@ -201,29 +201,6 @@ extern void __thiscall fn_005C3030(void* self, DWORD arg0) {
 }
 } // namespace lift_005C3030
 
-// [0x005CFE10]
-namespace lift_005CFE10 {
-// @name sub_005CFE10
-// @summary Forwards a byte/flag to child object at +0x2C4 via vtable[1] if present, and stores it at +0x1F2.
-// @field Unknown +0x1F2 uint8_t field_0x1F2
-// @field Unknown +0x2C4 uint32_t field_0x2C4
-
-
-extern uint32_t mem_read32(uint32_t addr);
-extern void mem_write8(uint32_t addr, uint8_t val);
-
-void __thiscall sub_005CFE10(uint32_t self, uint32_t arg) {
-    uint32_t child = mem_read32(self + 0x2C4);
-    if (child != 0) {
-        uint32_t vtable = mem_read32(child);
-        uint32_t fn = mem_read32(vtable + 0x4);
-        using FnType = void(__thiscall*)(uint32_t, uint32_t);
-        reinterpret_cast<FnType>(static_cast<uintptr_t>(fn))(child, arg);
-    }
-    mem_write8(self + 0x1F2, static_cast<uint8_t>(arg));
-}
-} // namespace lift_005CFE10
-
 // [0x005C40C0] sub_005C40C0 (56 bytes)
 namespace lift_005C40C0 {
 // Known callee 0x006484F0: sub_006484F0 (Member forwarding thunk: loads subobject pointer at +0x5C and tail-calls sub_0065AF30.)
@@ -252,38 +229,6 @@ void fn_005C40C0(void* self, void* peer) {
     ext_006484F0(self_delegate, peer_delegate);
 }
 } // namespace lift_005C40C0
-
-// [0x005C38F0] sub_005C38F0 (60 bytes)
-namespace lift_005C38F0 {
-// Known callee 0x005B6B60: Unknown::forwardToSubobjectAt158 (Forwards to ext_005CE9C0 with the +0x1B8 member address when the subobject pointer at +0x158 is non-null.)
-extern void ext_005B6B60(void* self);
-// Known callee 0x005B6B90: Unknown::forwardToSubobject158 (If the pointer at +0x158 is non-null, forwards this+0x1C4 to ext_005CE9D0 on that pointer.)
-extern void ext_005B6B90(void* self);
-extern int mem_00AE5598;
-extern int mem_00AE558C;
-extern int mem_00AE5590;
-extern int mem_00AE5594;
-
-// @name Unknown::getStaticZeroVec4
-// @class Unknown
-// @summary If this+0x164 is nonzero, forwards to ext_005B6B60; otherwise lazily zeroes a static float4 at mem_00AE558C on first call and returns its address.
-// @field Unknown +0x164 int field_164
-float* fn_005C38F0(void* self) {
-    int subFlag = *reinterpret_cast<int*>(static_cast<char*>(self) + 0x164);
-    if (subFlag != 0) {
-        ext_005B6B60(self);
-        return nullptr;
-    }
-    if ((mem_00AE5598 & 1) == 0) {
-        mem_00AE5598 |= 1;
-        // 0.0f has an all-zero bit pattern, so zeroing the int storage matches the original fldz/fst stores.
-        mem_00AE558C = 0;
-        mem_00AE5590 = 0;
-        mem_00AE5594 = 0;
-    }
-    return reinterpret_cast<float*>(&mem_00AE558C);
-}
-} // namespace lift_005C38F0
 
 // [0x005C39B0]
 namespace lift_005C39B0 {
@@ -484,29 +429,6 @@ uint32_t __stdcall findNamedEntryIndex(const void* arg) {
     return 3;
 }
 } // namespace lift_005CFD60
-
-// [0x005C35E0]
-namespace lift_005C35E0 {
-// @name allocate_32byte_array
-// @summary Allocates an array of 32-byte elements with overflow check, throwing bad_alloc on overflow.
-
-
-
-extern void* ext_006A5C62(uint32_t size);
-extern void ext_006A6DD2(void* pExceptionObject, uint32_t pThrowInfo);
-
-extern void* fn_005C35E0(uint32_t count) {
-    if (count > 0) {
-        if ((0xFFFFFFFFu / count) < 0x20u) {
-            std::bad_alloc ex;
-            ext_006A6DD2(&ex, 0x009CDF94u);
-        }
-    } else {
-        count = 0;
-    }
-    return ext_006A5C62(count << 5);
-}
-} // namespace lift_005C35E0
 
 // [0x005CC750] sub_005CC750 (30 bytes)
 namespace lift_005CC750 {
@@ -1413,30 +1335,6 @@ void* fn_005CF420() {
 } // namespace lift_004CAE30
 } // namespace lift_005CF420
 
-// [0x005CFDB0]
-namespace lift_005CFDB0 {
-// @name findStringIndex
-// @summary Checks if a string matches a literal or an element in a 4-element std::string array and returns its index (or 1 / 0).
-
-extern uint8_t __cdecl ext_006294AC(uint32_t str_ptr, uint32_t cstr_ptr);
-extern uint8_t __cdecl ext_00629432(uint32_t str1_ptr, uint32_t str2_ptr);
-
-int32_t __stdcall sub_005CFDB0(uint32_t arg1) {
-    if (ext_006294AC(arg1, 0x0092F10Cu) != 0) {
-        return 1;
-    }
-
-    int32_t idx = 0;
-    for (uint32_t elem = 0x00B45938u; elem < 0x00B459A8u; elem += 0x1Cu, ++idx) {
-        if (ext_00629432(elem, arg1) != 0) {
-            return idx;
-        }
-    }
-
-    return 0;
-}
-} // namespace lift_005CFDB0
-
 // [0x005C7D20] sub_005C7D20 (95 bytes)
 namespace lift_005C7D20 {
 // Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
@@ -1460,90 +1358,6 @@ void* fn_005C7D20(void) {
     return static_cast<void*>(mem_00B444F0);
 }
 } // namespace lift_005C7D20
-
-// [0x005C3EA0] sub_005C3EA0 (99 bytes)
-namespace lift_005C3EA0 {
-// Vector-of-records globals (begin / end pointers); element stride is 28 bytes.
-extern int mem_00B44C08;
-extern int mem_00B44C0C;
-// IAT slot for MSVCR80!_invalid_parameter_noinfo (no arguments).
-extern void (__cdecl* mem_00925134)(void);
-
-// @name Unknown::setStringFromTableEntry
-// @class Unknown
-// @summary Stores the thiscall argument at this+0x198, then assigns the std::string at this+0x17c from the 28-byte table entry at index (arg) of the global record vector (mem_00B44C08..0C).
-// @field Unknown +0x17c std::string field_0x17c
-// @field Unknown +0x198 DWORD field_0x198
-void fn_005C3EA0(void* self, DWORD index) {
-    auto* base = static_cast<unsigned char*>(self);
-    *reinterpret_cast<DWORD*>(base + 0x198) = index;
-
-    auto begin_of = [] {
-        return reinterpret_cast<unsigned char*>(static_cast<uintptr_t>(static_cast<uint32_t>(mem_00B44C08)));
-    };
-
-    unsigned char* begin = begin_of();
-    if (begin != nullptr) {
-        ptrdiff_t diff = static_cast<ptrdiff_t>(static_cast<uint32_t>(mem_00B44C0C))
-                       - reinterpret_cast<ptrdiff_t>(begin);
-        uint32_t count = static_cast<uint32_t>(diff / 28);
-        if (index < count) {
-            goto assign;
-        }
-    }
-
-    // Out-of-range or uninitialised table: report invalid parameter, then
-    // continue with whatever begin pointer is current (mirrors the original).
-    mem_00925134();
-    begin = begin_of();
-
-assign:
-    {
-        unsigned char* entry = begin + static_cast<size_t>(index) * 28;
-        // The entry's first member is a std::string (MSVC layout).
-        auto* dst = reinterpret_cast<std::string*>(base + 0x17c);
-        auto* src = reinterpret_cast<const std::string*>(entry);
-        *dst = *src;
-    }
-}
-} // namespace lift_005C3EA0
-
-// [0x005C3FB0]
-namespace lift_005C3FB0 {
-// @name FindEntryIndexByStringAt17C
-// @summary Scans the 28-byte entries between mem_00B44C08 (begin) and mem_00B44C0C (end) for the first whose leading std::string equals this+0x17C; returns its index, or 0 when none matches or the array is empty.
-// @field +0x17C uint8_t[28] field_0x17C
-
-
-extern uintptr_t mem_00B44C08;  // vector-like begin pointer (global)
-extern uintptr_t mem_00B44C0C;  // vector-like end pointer (global)
-
-extern bool __cdecl ext_MSVCP80_string_equal(const void* lhs, const void* rhs);
-
-constexpr uint32_t kEntryStride = 0x1C;
-constexpr ptrdiff_t kKeyOffset = 0x17C;
-
-extern uint32_t __thiscall fn_005C3FB0(void* self) {
-    uint8_t* obj = static_cast<uint8_t*>(self);
-
-    uint8_t* begin = reinterpret_cast<uint8_t*>(mem_00B44C08);
-    if (begin == nullptr) {
-        return 0;
-    }
-
-    uint32_t span = static_cast<uint32_t>(mem_00B44C0C - mem_00B44C08);
-    uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(span) / static_cast<int32_t>(kEntryStride));
-
-    for (uint32_t i = 0; i < count; ++i) {
-        uint8_t* entry = begin + static_cast<size_t>(i) * kEntryStride;
-        if (ext_MSVCP80_string_equal(entry, obj + kKeyOffset)) {
-            return i;
-        }
-    }
-
-    return 0;
-}
-} // namespace lift_005C3FB0
 
 // [0x005C3A30] sub_005C3A30 (107 bytes)
 namespace lift_005C3A30 {
@@ -1584,32 +1398,6 @@ float* fn_005C3A30(void* self) {
     return reinterpret_cast<float*>(static_cast<uint8_t*>(r) + 0x30);
 }
 } // namespace lift_005C3A30
-
-// [0x005C3F40] sub_005C3F40 (109 bytes)
-namespace lift_005C3F40 {
-// Global string-table range: begin pointer and end pointer.
-extern uintptr_t mem_00B44C08;
-extern uintptr_t mem_00B44C0C;
-
-// @name GetStringTableEntryCopy
-// @summary Copy-constructs the string at index from the global string table into out; returns an empty string when the table is empty or index is out of range.
-std::string* fn_005C3F40(std::string* out, uint32_t index) {
-    const uintptr_t begin = mem_00B44C08;
-    if (begin != 0) {
-        const uintptr_t end = mem_00B44C0C;
-        // Element count = byte span / sizeof(std::string) (28 bytes on the target).
-        const int32_t span = static_cast<int32_t>(end - begin);
-        const uint32_t count = static_cast<uint32_t>(span / 28);
-        if (index < count) {
-            const auto* src = reinterpret_cast<const std::string*>(begin + static_cast<uintptr_t>(index) * 28u);
-            new (out) std::string(*src);
-            return out;
-        }
-    }
-    new (out) std::string();
-    return out;
-}
-} // namespace lift_005C3F40
 
 // [0x005C3AA0]
 namespace lift_005C3AA0 {

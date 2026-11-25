@@ -493,32 +493,6 @@ void fn_006E85D0(void* self, void* dst) {
 }
 } // namespace lift_006E85D0
 
-// [0x006E8750] sub_006E8750 (48 bytes)
-namespace lift_006E8750 {
-// @name Unknown::storeDoubleAgainstLimit
-// @class Unknown
-// @summary Compares a double argument against the double at +0x50; if the argument is below it (or unordered), copies the +0x50 bits into +0x58, otherwise stores the argument bits into +0x58.
-// @field Unknown +0x50 double limit
-// @field Unknown +0x54 uint32_t limitHi
-// @field Unknown +0x58 uint32_t result
-// @field Unknown +0x5c uint32_t resultHi
-void fn_006E8750(void** self, double value) {
-    void* obj = *self;
-    double limit = lift_field<double>(obj, 0x50);
-
-    // Matches fcomp + test ah,1 (C0 set): taken when value < limit or unordered (NaN).
-    if (!(value >= limit)) {
-        lift_field<uint32_t>(obj, 0x58) = lift_field<uint32_t>(obj, 0x50);
-        lift_field<uint32_t>(obj, 0x5c) = lift_field<uint32_t>(obj, 0x54);
-    } else {
-        uint64_t bits;
-        std::memcpy(&bits, &value, sizeof(bits));
-        lift_field<uint32_t>(obj, 0x58) = static_cast<uint32_t>(bits);
-        lift_field<uint32_t>(obj, 0x5c) = static_cast<uint32_t>(bits >> 32);
-    }
-}
-} // namespace lift_006E8750
-
 // [0x006E7190] sub_006E7190 (48 bytes)
 namespace lift_006E7190 {
 // Known callee 0x00711BB0: sub_00711BB0 (Auto-lifted identical-shape clone of 0x00711BA0 (getSubobjectField_0x18).)
@@ -1108,25 +1082,6 @@ extern void __fastcall fn_006E7340(void* self, void* /*edx*/, void* arg1) {
 }
 } // namespace lift_006E7340
 
-// [0x006E7730]
-namespace lift_006E7730 {
-// @name Unknown::destroyMembers
-// @class Unknown
-// @summary Destroys member subobjects at offsets +0x90 and +0x8
-// @field Unknown +0x08 uint8_t field_0x08
-// @field Unknown +0x90 uint8_t field_0x90
-
-
-extern void __fastcall ext_007641C0(void* self);
-extern void __fastcall ext_006B9D70(void* self);
-
-extern void __fastcall fn_006E7730(void* self) {
-    uint8_t* base = static_cast<uint8_t*>(self);
-    ext_007641C0(base + 0x90);
-    ext_006B9D70(base + 0x8);
-}
-} // namespace lift_006E7730
-
 // [0x006E67E0]
 namespace lift_006E67E0 {
 // @name Unknown::releaseSubobjectAt08
@@ -1215,112 +1170,6 @@ uint32_t __thiscall sub_006E99C0(uint32_t self, uint32_t arg1) {
     return self;
 }
 } // namespace lift_006E99C0
-
-// [0x006E4CD0] sub_006E4CD0 (95 bytes)
-namespace lift_006E4CD0 {
-// @name WrapAngleNear
-// @summary Returns a + 360*n, where n is the whole number of turns that brings the difference (b - a) into [-180, 180] degrees (rounding to nearest, with a tie at exactly 0.5 turns left unchanged).
-double fn_006E4CD0(double a, double b) {
-    // t = (b - a) / 360 (the constant is 1/360 as a double).
-    const double t = (b - a) * 0.002777777777777778;
-
-    // Split t into integer and fractional parts; n receives the integer part.
-    double n = 0.0;
-    const double frac = std::modf(t, &n);
-
-    // Round the fractional part to nearest, with ties at +/-0.5 left alone.
-    if (frac > 0.5) {
-        n += 1.0;
-    }
-    if (frac < -0.5) {
-        n -= 1.0;
-    }
-
-    return a + n * 360.0;
-}
-} // namespace lift_006E4CD0
-
-// [0x006E5750]
-namespace lift_006E5750 {
-// @name sub_006E5750
-// @summary Updates state flags/counters on field_0x98 and invokes registered callbacks before calling sub_006E5730
-// @field unknown +0x5c uint32_t field_0x5c
-// @field unknown +0x98 uint32_t field_0x98
-
-
-template <typename T>
-T mem_rd(uint32_t addr);
-template <typename T>
-void mem_wr(uint32_t addr, T val);
-
-extern void __thiscall ext_006E5730(uint32_t self);
-
-void __thiscall sub_006E5750(uint32_t self, uint32_t flags) {
-    uint32_t state = mem_rd<uint32_t>(self + 0x98);
-    if (state == 0) {
-        return;
-    }
-
-    mem_wr<uint32_t>(state, mem_rd<uint32_t>(state) | flags);
-    mem_wr<uint32_t>(state + 0x8, mem_rd<uint32_t>(state + 0x8) + 1);
-    mem_wr<uint32_t>(self + 0x5c, mem_rd<uint32_t>(self + 0x5c) + 1);
-
-    state = mem_rd<uint32_t>(self + 0x98);
-    if (mem_rd<uint8_t>(state + 0x40) == 0) {
-        return;
-    }
-
-    int32_t idx = static_cast<int32_t>(mem_rd<uint32_t>(state + 0x10)) - 1;
-    while (idx >= 0) {
-        state = mem_rd<uint32_t>(self + 0x98);
-        uint32_t user_data_arr = mem_rd<uint32_t>(state + 0x38);
-        uint32_t fn_arr = mem_rd<uint32_t>(state + 0x20);
-        uint32_t user_data = mem_rd<uint32_t>(user_data_arr + static_cast<uint32_t>(idx) * 4);
-        uint32_t fn_addr = mem_rd<uint32_t>(fn_arr + static_cast<uint32_t>(idx) * 4);
-
-        using CallbackFn = void(__cdecl*)(uint32_t, uint32_t, uint32_t);
-        reinterpret_cast<CallbackFn>(static_cast<uintptr_t>(fn_addr))(self, state, user_data);
-        --idx;
-    }
-
-    ext_006E5730(self);
-}
-} // namespace lift_006E5750
-
-// [0x006E6DE0]
-namespace lift_006E6DE0 {
-// @name sub_006E6DE0
-// @summary Checks a bitflag on subobject +0x00 (via fn_0071E680) or fallback +0x08+0xb0
-// @field unknown +0x00 void* field_0x00
-// @field unknown +0x08 void* field_0x08
-
-
-extern void* __fastcall fn_0071E680(void* self);
-
-extern uint8_t __thiscall fn_006E6DE0(void* self, uint32_t mask) {
-    uint8_t* base = static_cast<uint8_t*>(self);
-    void* obj0 = *reinterpret_cast<void**>(base);
-    if (obj0 != nullptr) {
-        uint32_t shift = 0;
-        switch (mask) {
-            case 1: shift = 1; break;
-            case 2: shift = 6; break;
-            case 4: shift = 7; break;
-            default: return 0;
-        }
-        uint32_t* flags = static_cast<uint32_t*>(fn_0071E680(obj0));
-        return static_cast<uint8_t>((*flags >> shift) & 1u);
-    }
-
-    uint8_t* obj8 = *reinterpret_cast<uint8_t**>(base + 0x8);
-    if (obj8 == nullptr) {
-        return 0;
-    }
-
-    uint32_t flags = *reinterpret_cast<uint32_t*>(obj8 + 0xb0);
-    return (mask & flags) != 0 ? 1 : 0;
-}
-} // namespace lift_006E6DE0
 
 // [0x006E7000]
 namespace lift_006E7000 {
@@ -1448,20 +1297,6 @@ extern void __fastcall fn_006E8470(void* self) {
     ext_006D80A0();
 }
 } // namespace lift_006E8470
-
-// [0x006E9C30]
-namespace lift_006E9C30 {
-extern int32_t __fastcall ext_006E7460(void* self);
-
-// @name getElementFieldAtIndex
-// @summary Retrieves an object pointer from an array at offset +0x1C by index and returns its int32_t field at +0x0.
-// @field unknown +0x1C void** field_0x1C
-extern int32_t __thiscall fn_006E9C30(void* self, int32_t index) {
-    void** arr = *reinterpret_cast<void***>(reinterpret_cast<uint8_t*>(self) + 0x1C);
-    void* elem = arr[index];
-    return ext_006E7460(elem);
-}
-} // namespace lift_006E9C30
 
 // [0x006E9610]
 namespace lift_006E9610 {

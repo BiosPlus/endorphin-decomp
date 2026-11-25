@@ -8,7 +8,7 @@
 // Recovered field layout for EventSlotVec:
 namespace lifted_layout {
 struct EventSlotVec_Fields {
-    // +0x4   uint32_t                 begin  (evidence: 0x0067A670, 0x0067AEF0)
-    // +0x8   uint32_t                 end  (evidence: 0x0067A670, 0x0067AEF0)
+    // +0x4   uint32_t                 begin  (evidence: 0x0067A670)
+    // +0x8   uint32_t                 end  (evidence: 0x0067A670)
 };
 } // namespace lifted_layout

@@ -8,8 +8,8 @@
 // Recovered field layout for StringArray:
 namespace lifted_layout {
 struct StringArray_Fields {
-    // +0x4   void*                    begin  (evidence: 0x004026E0, 0x004030F0, 0x00406030, 0x0040BE90, 0x00672D10, 0x0067A670)
-    // +0x8   void*                    end  (evidence: 0x004026E0, 0x004030F0, 0x00406030, 0x0040BE90, 0x00672D10, 0x0067A670)
-    // +0xC   void*                    capacity  (evidence: 0x004026E0, 0x004030F0, 0x00406030, 0x0040BE90, 0x00672D10, 0x0067A670)
+    // +0x4   void*                    begin  (evidence: 0x004030F0, 0x0040BE90, 0x0067A670)
+    // +0x8   void*                    end  (evidence: 0x004030F0, 0x0040BE90, 0x0067A670)
+    // +0xC   void*                    capacity  (evidence: 0x004030F0, 0x0040BE90, 0x0067A670)
 };
 } // namespace lifted_layout

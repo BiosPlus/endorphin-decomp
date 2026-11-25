@@ -65,21 +65,6 @@ uint32_t __thiscall sub_00602EC0(uint32_t this_ptr) {
 } // namespace lift_00602EC0
 #include <cstring>
 
-// [0x0060B8D0] sub_0060B8D0 (62 bytes)
-namespace lift_0060B8D0 {
-// Format string at 0x009720E8 (.rdata), used as the snprintf format.
-extern const char mem_009720E8[];
-
-// @name StringFromFormattedInt
-// @summary Formats an int into a 50-byte buffer with snprintf and constructs a std::string in place from it; returns the string object.
-std::string* fn_0060B8D0(std::string* self, int value) {
-    char buf[50];
-    std::snprintf(buf, sizeof(buf), mem_009720E8, value);
-    new (self) std::string(buf);
-    return self;
-}
-} // namespace lift_0060B8D0
-
 // [0x0060FA40]
 namespace lift_0060FA40 {
 // @name Unknown::ReleaseHandleAndThrowNull
@@ -94,47 +79,6 @@ void fn_0060FA40(void* local_18) {
     ext_006A6DD2();
 }
 } // namespace lift_0060FA40
-
-// [0x0060AF10] sub_0060AF10 (74 bytes)
-namespace lift_0060AF10 {
-// @name sub_0060AF10
-// @summary Auto-lifted identical-shape clone of 0x00481C90 (SortHeapRange).
-namespace lift_00481C90 {
-extern void ext_0060A3A0(uint32_t* first, ptrdiff_t hole, ptrdiff_t count, uint32_t value, uint32_t pred);
-
-// @name SortHeapRange
-// @summary Heap-sorts a range of 4-byte elements in place (pop-heap loop); pred is forwarded to the sift-down helper.
-void fn_0060AF10(uint32_t* first, uint32_t* last, uint32_t pred) {
-    ptrdiff_t n = last - first;
-    while (n > 1) {
-        --last;
-        uint32_t value = *last;
-        *last = *first;
-        ext_0060A3A0(first, 0, last - first, value, pred);
-        n = last - first;
-    }
-}
-} // namespace lift_00481C90
-} // namespace lift_0060AF10
-
-// [0x0060C4C0] sub_0060C4C0 (77 bytes)
-namespace lift_0060C4C0 {
-// Known callee 0x0060BCC0: sub_0060BCC0 (Destructor tail-call: restores vtable mem_0097215C and tail-calls base destructor sub_0060BA10.)
-extern void ext_0060BCC0(void* self);
-
-// @name Unknown::Destructor_0060C4C0
-// @class Unknown
-// @summary Destroys the std::string member at +0x60, then runs the base destructor chain via ext_0060BCC0.
-// @field Unknown +0x60 std::string field_0x60
-void fn_0060C4C0(void* self) {
-    // Destroy the embedded std::string at this+0x60 (MSVC basic_string dtor in the original).
-    auto* str = &lift_field<std::string>(self, 0x60);
-    str->~basic_string();
-
-    // Tail-call the base destructor chain.
-    ext_0060BCC0(self);
-}
-} // namespace lift_0060C4C0
 
 // [0x006098F0] sub_006098F0 (89 bytes)
 namespace lift_006098F0 {
@@ -204,59 +148,6 @@ uint32_t __fastcall sub_00609670(uint32_t this_ptr, uint32_t /*edx*/, uint32_t o
     return 0;
 }
 } // namespace lift_00609670
-
-// [0x0060A340] sub_0060A340 (85 bytes)
-namespace lift_0060A340 {
-// Known callee 0x00609670: StringPairKey::operator< (__fastcall: this in ECX, EDX unused, other on stack; returns bool in AL)
-extern uint32_t ext_00609670(uint32_t this_ptr, uint32_t unused_edx, uint32_t other_ptr);
-
-// @name Sort3StringPairKeys
-// @summary Three-element compare-and-swap network over 32-bit slots holding StringPairKey pointers; orders *a <= *b <= *c using StringPairKey::operator<.
-void fn_0060A340(uint32_t* a, uint32_t* b, uint32_t* c) {
-    auto lessThan = [](uint32_t lhs, uint32_t rhs) -> bool {
-        return (ext_00609670(lhs, 0, rhs) & 0xFFu) != 0;
-    };
-    auto swapSlots = [](uint32_t* x, uint32_t* y) {
-        uint32_t tmp = *x;
-        *x = *y;
-        *y = tmp;
-    };
-
-    // Step 1: if (*b < *a) swap(a, b)
-    if (lessThan(*b, *a)) {
-        swapSlots(b, a);
-    }
-    // Step 2: if (*c < *b) swap(c, b)
-    if (lessThan(*c, *b)) {
-        swapSlots(c, b);
-    }
-    // Step 3: if (*b < *a) swap(b, a)
-    if (lessThan(*b, *a)) {
-        swapSlots(b, a);
-    }
-}
-} // namespace lift_0060A340
-
-// [0x006096D0] sub_006096D0 (91 bytes)
-namespace lift_006096D0 {
-// Known callee 0x0065F440: sub_0065F440 (Stores address of mem_0093BF24 into field at offset +0x0.)
-extern void ext_0065F440(void* self);
-
-// @name Unknown::resetStringFieldsAndInit
-// @class Unknown
-// @summary Clears the two std::string members at +0x20 and +0x04, then runs the 0x0065F440 initializer on self.
-// @field Unknown +0x04 std::string field_0x04
-// @field Unknown +0x20 std::string field_0x20
-void fn_006096D0(void* self) {
-    // The original MSVC code tears down the two string members via their
-    // destructor thunk (through the IAT slot at 0x00924FF4) and then calls
-    // 0x0065F440. Portable form: reset each string to empty in place (same
-    // observable state as the destroyed string being left empty), then call the initializer.
-    lift_field<std::string>(self, 0x20) = std::string();
-    lift_field<std::string>(self, 0x04) = std::string();
-    ext_0065F440(self);
-}
-} // namespace lift_006096D0
 
 // [0x00602F70] sub_00602F70 (91 bytes)
 namespace lift_00602F70 {
@@ -846,46 +737,6 @@ void* fn_006058A0() {
 } // namespace lift_004CAE30
 } // namespace lift_006058A0
 
-// [0x00605900] sub_00605900 (87 bytes)
-namespace lift_00605900 {
-// @name sub_00605900
-// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
-namespace lift_004CAE30 {
-// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
-extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
-
-// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
-extern DWORD mem_fs_0;
-// Guard word: bit 0 marks that the static object below has been initialized.
-extern DWORD mem_00B47750;
-// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
-extern DWORD mem_00B4774C;
-
-// @name initStaticObjectOnce_004CAE30
-// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
-// @field Unknown +0x00 DWORD field_0x00
-void* fn_00605900() {
-    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
-    DWORD frame[3];
-    frame[0] = mem_fs_0;
-    frame[1] = 0x8A7F2Eu;
-    frame[2] = 0xFFFFFFFFu;
-    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
-
-    if ((mem_00B47750 & 1u) == 0) {
-        mem_00B47750 |= 1u;
-        frame[2] = 0;
-        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
-        ext_0067A670(&mem_00B4774C, frame[0]);
-        mem_00B4774C = 0x970504u;
-    }
-
-    mem_fs_0 = frame[0];
-    return &mem_00B4774C;
-}
-} // namespace lift_004CAE30
-} // namespace lift_00605900
-
 // [0x0060A1E0] sub_0060A1E0 (87 bytes)
 namespace lift_0060A1E0 {
 // @name sub_0060A1E0
@@ -995,43 +846,6 @@ void* fn_00605AC0() {
 }
 } // namespace lift_00605AC0
 
-// [0x0060BA10] sub_0060BA10 (97 bytes)
-namespace lift_0060BA10 {
-extern void __fastcall ext_0065F440(void* self);
-
-// @name ConstructStringsThenCallBase_0060BA10
-// @class Unknown
-// @summary Constructs two std::string members (at +0x20 then +0x04), then calls ext_0065F440 on self, which overwrites the dword at +0x00. The original SEH frame setup and the vtable store at +0x00 are omitted because ext_0065F440 replaces that slot.
-// @field Unknown +0x00 void* field_0x00
-// @field Unknown +0x04 std::string field_0x04
-// @field Unknown +0x20 std::string field_0x20
-void fn_0060BA10(void* self) {
-    // Original order: string at +0x20 is initialised first, then string at +0x04.
-    new (static_cast<uint8_t*>(self) + 0x20) std::string();
-    new (static_cast<uint8_t*>(self) + 0x04) std::string();
-
-    ext_0065F440(self);
-}
-} // namespace lift_0060BA10
-
-// [0x0060A4F0] sub_0060A4F0 (33 bytes)
-namespace lift_0060A4F0 {
-// @name sub_0060A4F0
-// @summary Auto-lifted identical-shape clone of 0x00527570 (GetOnceInitString_00527570).
-namespace lift_00527570 {
-// Known callee 0x005273B0: GetOnceInitString_005273B0 (Returns the process-global string at 0x00AED2EC, initializing it once on first call and registering its teardown.)
-// The caller passes a 0 flag argument on the stack before the call.
-extern void* ext_00609A10(int flag);
-
-// @name GetOnceInitString_00527570
-// @summary Copy-constructs the caller-provided std::string slot from the process-global once-initialized string and returns that slot.
-void* fn_0060A4F0(void* out) {
-    const auto* src = static_cast<const std::string*>(ext_00609A10(0));
-    return new (out) std::string(*src);
-}
-} // namespace lift_00527570
-} // namespace lift_0060A4F0
-
 // [0x0060B910] sub_0060B910 (98 bytes)
 namespace lift_0060B910 {
 // IAT slot for MSVCP80 std::basic_string<char>::basic_string() (default ctor, thiscall).
@@ -1140,28 +954,6 @@ void* fn_0060B240(void* self) {
     return self;
 }
 } // namespace lift_0060B240
-
-// [0x0060CCC0]
-namespace lift_0060CCC0 {
-extern void* __thiscall ext_0060C570(void* self);
-extern void __thiscall ext_0060BDF0(void* self);
-uint32_t& mem_u32(void* base, ptrdiff_t offset);
-float& mem_f32(void* base, ptrdiff_t offset);
-
-// @name Unknown::constructEffectorData
-// @summary Constructs an object via ext_0060C570, sets vtable 0x009721BC, calls EffectorData::vfunc_19, and initializes fields at +0x5C and +0x60.
-// @field Unknown +0x00 uint32_t vtable
-// @field Unknown +0x5C float field_0x5C
-// @field Unknown +0x60 uint32_t field_0x60
-void* __thiscall fn_0060CCC0(void* self) {
-    ext_0060C570(self);
-    mem_u32(self, 0x00) = 0x009721BCu;
-    ext_0060BDF0(self);
-    mem_f32(self, 0x5C) = 0.0f;
-    mem_u32(self, 0x60) = 0x14u;
-    return self;
-}
-} // namespace lift_0060CCC0
 
 // [0x00607F20]
 namespace lift_00607F20 {

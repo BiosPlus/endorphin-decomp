@@ -177,29 +177,6 @@ float fn_005E29A0(void* self) {
 } // namespace lift_005E2770
 } // namespace lift_005E29A0
 
-// [0x005ED330]
-namespace lift_005ED330 {
-// @name std_Tree_Erase
-// @summary Recursively erases a red-black tree subtree in post-order (right child recursively, then left spine iteratively).
-// @field TreeNode +0x00 uint32_t left
-// @field TreeNode +0x08 uint32_t right
-// @field TreeNode +0x51 uint8_t isNil
-
-
-extern uint8_t mem_read8(uint32_t addr);
-extern uint32_t mem_read32(uint32_t addr);
-extern void ext_006A5C5C(uint32_t ptr);
-
-void __thiscall fn_005ED330(uint32_t self, uint32_t node) {
-    while (mem_read8(node + 0x51) == 0) {
-        fn_005ED330(self, mem_read32(node + 0x8));
-        uint32_t left = mem_read32(node);
-        ext_006A5C5C(node);
-        node = left;
-    }
-}
-} // namespace lift_005ED330
-
 // [0x005E27E0]
 namespace lift_005E27E0 {
 // Known callee 0x006123C0: UnknownClass::setElement1AndNotify
@@ -249,33 +226,6 @@ void fn_005E2790(uintptr_t self, float value) {
 }
 } // namespace lift_005E27E0
 } // namespace lift_005E2790
-
-// [0x005E2830] sub_005E2830 (34 bytes)
-namespace lift_005E2830 {
-// @name sub_005E2830
-// @summary Auto-lifted identical-shape clone of 0x005E27E0 (UnknownClass::forwardValueToSubobjectAt17C).
-namespace lift_005E27E0 {
-// Known callee 0x006123C0: UnknownClass::setElement1AndNotify
-extern void ext_00612410(uintptr_t self, float value);
-
-// @name UnknownClass::forwardValueToSubobjectAt17C
-// @class UnknownClass
-// @summary Loads the subobject pointer at +0x17C, calls its vtable slot 0x120 with the float argument, and forwards the returned object plus the same float to setElement1AndNotify (0x006123C0). Stack arg is popped by callee (ret 4).
-// @field UnknownClass +0x17C uintptr_t subobject
-// @field UnknownClass +0x0 uint32_t vtable
-
-using VCall120Fn = uintptr_t (*)(uintptr_t self, float value);
-
-void fn_005E2830(uintptr_t self, float value) {
-    uintptr_t sub = lift_field<uintptr_t>(reinterpret_cast<void*>(self), 0x17C);
-    uint32_t vtbl = lift_field<uint32_t>(reinterpret_cast<void*>(sub), 0x0);
-    uint32_t slotAddr = lift_field<uint32_t>(reinterpret_cast<void*>(vtbl), 0x120);
-    VCall120Fn slot = reinterpret_cast<VCall120Fn>(static_cast<uintptr_t>(slotAddr));
-    uintptr_t result = slot(sub, value);
-    ext_00612410(result, value);
-}
-} // namespace lift_005E27E0
-} // namespace lift_005E2830
 
 // [0x005E2880] sub_005E2880 (34 bytes)
 namespace lift_005E2880 {
@@ -385,33 +335,6 @@ void fn_005E2970(uintptr_t self, float value) {
 } // namespace lift_005E27E0
 } // namespace lift_005E2970
 
-// [0x005E29C0] sub_005E29C0 (34 bytes)
-namespace lift_005E29C0 {
-// @name sub_005E29C0
-// @summary Auto-lifted identical-shape clone of 0x005E27E0 (UnknownClass::forwardValueToSubobjectAt17C).
-namespace lift_005E27E0 {
-// Known callee 0x006123C0: UnknownClass::setElement1AndNotify
-extern void ext_00612460(uintptr_t self, float value);
-
-// @name UnknownClass::forwardValueToSubobjectAt17C
-// @class UnknownClass
-// @summary Loads the subobject pointer at +0x17C, calls its vtable slot 0x120 with the float argument, and forwards the returned object plus the same float to setElement1AndNotify (0x006123C0). Stack arg is popped by callee (ret 4).
-// @field UnknownClass +0x17C uintptr_t subobject
-// @field UnknownClass +0x0 uint32_t vtable
-
-using VCall120Fn = uintptr_t (*)(uintptr_t self, float value);
-
-void fn_005E29C0(uintptr_t self, float value) {
-    uintptr_t sub = lift_field<uintptr_t>(reinterpret_cast<void*>(self), 0x17C);
-    uint32_t vtbl = lift_field<uint32_t>(reinterpret_cast<void*>(sub), 0x0);
-    uint32_t slotAddr = lift_field<uint32_t>(reinterpret_cast<void*>(vtbl), 0x128);
-    VCall120Fn slot = reinterpret_cast<VCall120Fn>(static_cast<uintptr_t>(slotAddr));
-    uintptr_t result = slot(sub, value);
-    ext_00612460(result, value);
-}
-} // namespace lift_005E27E0
-} // namespace lift_005E29C0
-
 // [0x005E4D90] sub_005E4D90 (74 bytes)
 namespace lift_005E4D90 {
 // Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
@@ -486,33 +409,6 @@ void fn_005ECDC0(void* self) {
     }
 }
 } // namespace lift_005ECDC0
-
-// [0x005E0BB0] sub_005E0BB0 (91 bytes)
-namespace lift_005E0BB0 {
-// @name Unknown::isLengthWithinOfUnit
-// @class Unknown
-// @summary Returns TRUE when the Euclidean length of the 3-float vector at this is within tol of 1.0 (|len - 1| <= tol); FALSE otherwise, including NaN.
-// @field Unknown +0x00 float field_0x00
-// @field Unknown +0x04 float field_0x04
-// @field Unknown +0x08 float field_0x08
-BOOL fn_005E0BB0(void* self, float tol) {
-    const double x = lift_field<float>(self, 0x00);
-    const double y = lift_field<float>(self, 0x04);
-    const double z = lift_field<float>(self, 0x08);
-
-    // The original stores the length as a 32-bit float before comparing.
-    const float len = static_cast<float>(std::sqrt(x * x + y * y + z * z));
-
-    const double lo = 1.0 - static_cast<double>(tol);
-    const double hi = 1.0 + static_cast<double>(tol);
-
-    // Unordered (NaN) comparisons are false, matching the FPU "jne"/"jp" exits.
-    if (!(static_cast<double>(len) >= lo)) {
-        return FALSE;
-    }
-    return (static_cast<double>(len) <= hi) ? TRUE : FALSE;
-}
-} // namespace lift_005E0BB0
 
 // [0x005EB060] sub_005EB060 (87 bytes)
 namespace lift_005EB060 {
@@ -1291,28 +1187,6 @@ void fn_005ECAF0(DWORD* dst, DWORD value) {
 } // namespace lift_005EC8D0
 } // namespace lift_005ECAF0
 
-// [0x005E46B0] sub_005E46B0 (95 bytes)
-namespace lift_005E46B0 {
-// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
-// Second argument is passed as the raw 32-bit immediate 0x00A911C4 (listed signature shows uint8_t flag; kept full width).
-extern void* ext_0066AD10(void* out_str, uint32_t arg);
-// Known callee 0x006A6C87: sub_006A6C87 (18B). Called with 0x0091E480 (likely an atexit-style registration of a destructor).
-extern void ext_006A6C87(void* fn);
-extern uint8_t mem_00B45F0C;  // init guard byte; bit 0 = initialized
-extern int mem_00B45EF0;      // static storage object
-
-// @name GetOnceInitString_005E46B0
-// @summary One-time initializer for static object at 0x00B45EF0; returns its address.
-void* fn_005E46B0() {
-    if ((mem_00B45F0C & 1u) == 0) {
-        mem_00B45F0C |= 1u;
-        ext_0066AD10(&mem_00B45EF0, 0x00A911C4u);
-        ext_006A6C87(reinterpret_cast<void*>(static_cast<uintptr_t>(0x0091E480u)));
-    }
-    return &mem_00B45EF0;
-}
-} // namespace lift_005E46B0
-
 // [0x005E0180] sub_005E0180 (104 bytes)
 namespace lift_005E0180 {
 extern void* ext_0059F5C0(void* self);
@@ -1456,51 +1330,3 @@ void fn_005E0B20(void* self) {
     store_ptr(it, 0x04, p);
 }
 } // namespace lift_005E0B20
-
-// [0x005ED2C0]
-namespace lift_005ED2C0 {
-// @name Tree::find
-// @class Tree
-// @summary Finds a node by uint32_t key in a red-black tree and writes the iterator to out.
-// @field Tree +0x04 uint32_t head
-// @field TreeNode +0x00 uint32_t left
-// @field TreeNode +0x04 uint32_t parent
-// @field TreeNode +0x08 uint32_t right
-// @field TreeNode +0x0C uint32_t key
-// @field TreeNode +0x51 uint8_t is_nil
-
-
-uint8_t mem_read8(uint32_t addr);
-uint32_t mem_read32(uint32_t addr);
-void mem_write32(uint32_t addr, uint32_t val);
-
-extern uint32_t __thiscall sub_005ED2C0(uint32_t self, uint32_t out_iter, uint32_t key_ptr) {
-    uint32_t head = mem_read32(self + 0x4);
-    uint32_t best = head;
-    uint32_t node = mem_read32(head + 0x4);
-    uint32_t key = 0;
-
-    while (mem_read8(node + 0x51) == 0) {
-        key = mem_read32(key_ptr);
-        if (mem_read32(node + 0xC) < key) {
-            node = mem_read32(node + 0x8);
-        } else {
-            best = node;
-            node = mem_read32(node);
-        }
-    }
-
-    uint32_t end_node = mem_read32(self + 0x4);
-    uint32_t result_node = end_node;
-    if (best != end_node) {
-        key = mem_read32(key_ptr);
-        if (key >= mem_read32(best + 0xC)) {
-            result_node = best;
-        }
-    }
-
-    mem_write32(out_iter, self);
-    mem_write32(out_iter + 0x4, result_node);
-    return out_iter;
-}
-} // namespace lift_005ED2C0

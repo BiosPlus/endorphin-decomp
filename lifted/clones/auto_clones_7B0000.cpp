@@ -13,16 +13,3 @@ void fn_007B1E80() {
     ext_007B1EA0();
 }
 } // namespace lift_007B1E80
-
-// [0x007B1F60]
-namespace lift_007B1F60 {
-extern void ext_007B1F70();
-extern void ext_007B1F80();
-
-// @name initAndDispatch_007B1F60
-// @summary Calls sub_007B1F70 and tail-calls sub_007B1F80
-void fn_007B1F60(void) {
-    ext_007B1F70();
-    ext_007B1F80();
-}
-} // namespace lift_007B1F60

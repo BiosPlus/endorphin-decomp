@@ -90,23 +90,6 @@ uint32_t __thiscall sub_004AEC90(void* self) {
 }
 } // namespace lift_004AEC90
 
-// [0x004A5880]
-namespace lift_004A5880 {
-uint32_t mem_read32(uintptr_t addr);
-
-// @name sub_004A5880
-// @summary Adjusts this by +4 and tail-calls vtable slot 3 (+0xc)
-// @field unknown +0x04 void** vtable
-
-void __fastcall sub_004A5880(void* ecx) {
-    uintptr_t subobj = reinterpret_cast<uintptr_t>(ecx) + 0x4;
-    uintptr_t vtable = mem_read32(subobj);
-    uintptr_t fn_addr = mem_read32(vtable + 0xc);
-    using fn_t = void (__fastcall*)(void*);
-    reinterpret_cast<fn_t>(fn_addr)(reinterpret_cast<void*>(subobj));
-}
-} // namespace lift_004A5880
-
 // [0x004A24A0] sub_004A24A0 (12 bytes)
 namespace lift_004A24A0 {
 extern uint32_t mem_00A35B7C;

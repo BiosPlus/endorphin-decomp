@@ -8,6 +8,6 @@
 // Recovered field layout for ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions>:
 namespace lifted_layout {
 struct ExprParser_DynamicEnumType_NMData_EvolverRuntimeOptions__Fields {
-    // +0x0   void*                    field_0x00  (evidence: 0x00494DE0, 0x005161A0)
+    // +0x0   void*                    field_0x00  (evidence: 0x00494DE0)
 };
 } // namespace lifted_layout

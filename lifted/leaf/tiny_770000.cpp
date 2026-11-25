@@ -71,13 +71,6 @@ extern "C" void __fastcall fn_0077FA20(void* self) {
     lift_field<void*>(self, 0x0) = &mem_00996D48;
 }
 
-// [0x0077FE40] sub_0077FE40 (16 bytes)
-// @name sub_0077FE40
-// @summary Returns constant 0xB1.
-extern "C" int32_t __cdecl fn_0077FE40(void) {
-    return 0xB1;
-}
-
 // [0x0077FAB0] sub_0077FAB0 (16 bytes)
 namespace lift_0077FAB0 {
 // @name Unknown::zeroFourDwords

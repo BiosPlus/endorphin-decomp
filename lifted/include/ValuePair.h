@@ -8,7 +8,7 @@
 // Recovered field layout for ValuePair:
 namespace lifted_layout {
 struct ValuePair_Fields {
-    // +0x0   void*                    first  (evidence: 0x00487000, 0x005B7BC0, 0x0064EC00)
-    // +0x4   void*                    second  (evidence: 0x00487000, 0x005B7BC0, 0x0064EC00)
+    // +0x0   void*                    first  (evidence: 0x005B7BC0, 0x0064EC00)
+    // +0x4   void*                    second  (evidence: 0x005B7BC0, 0x0064EC00)
 };
 } // namespace lifted_layout

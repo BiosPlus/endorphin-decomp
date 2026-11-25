@@ -43,20 +43,3 @@ extern "C" void* __fastcall fn_00755590(void* self, int edx_unused, unsigned int
     }
     return self;
 }
-
-// [0x007558B0]
-namespace lift_007558B0 {
-// @name callVtableSlot0x20WithZero
-// @summary Calls virtual method at vtable offset 0x20 on this with argument 0
-// @field Object +0x00 void** vtable
-
-
-extern uint32_t mem_read32(uint32_t addr);
-
-void __thiscall sub_007558B0(uint32_t this_ptr) {
-    uint32_t vtable = mem_read32(this_ptr);
-    uint32_t fn_ptr = mem_read32(vtable + 0x20);
-    using VMethod = void(__thiscall*)(uint32_t, uint32_t);
-    reinterpret_cast<VMethod>(static_cast<uintptr_t>(fn_ptr))(this_ptr, 0);
-}
-} // namespace lift_007558B0

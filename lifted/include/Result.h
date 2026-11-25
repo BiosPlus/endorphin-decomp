@@ -8,7 +8,7 @@
 // Recovered field layout for Result:
 namespace lifted_layout {
 struct Result_Fields {
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x00495AB0, 0x00499130, 0x0049B170)
-    // +0x4   void*                    field_0x04  (evidence: 0x00495AB0, 0x00499130, 0x0049B170)
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x00499130)
+    // +0x4   void*                    field_0x04  (evidence: 0x00499130)
 };
 } // namespace lifted_layout

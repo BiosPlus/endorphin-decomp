@@ -8,6 +8,6 @@
 // Recovered field layout for DynEnumVfunc9Arg:
 namespace lifted_layout {
 struct DynEnumVfunc9Arg_Fields {
-    // +0x4   void**                   field_0x4  (evidence: 0x00494DE0, 0x00516550)
+    // +0x4   void**                   field_0x4  (evidence: 0x00494DE0)
 };
 } // namespace lifted_layout

@@ -5,16 +5,6 @@
 extern "C" const char* mem_00A9F1E4;
 extern "C" void ext_005EB920(void* self, int32_t kind, int32_t arg2);
 
-// [0x00584FD0] NMData::RPROJointData::vfunc_59 (35 bytes)
-// @name NMData::RPROJointData::vfunc_59
-// @class NMData::RPROJointData
-// @summary Returns a std::string (via hidden out-pointer) constructed from the C string at global mem_00A9F1E4; this is unused.
-std::string* fn_00584FD0(void* self, std::string* out) {
-    (void)self;
-    new (out) std::string(mem_00A9F1E4);
-    return out;
-}
-
 // [0x005EC2A0] NMData::RPROJointData::vfunc_63 (34 bytes)
 // @name NMData::RPROJointData::vfunc_63
 // @class NMData::RPROJointData

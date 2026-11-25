@@ -111,19 +111,6 @@ extern "C" void* __fastcall fn_006A7FD0(void* self, int edx_unused, unsigned int
     return self;
 }
 
-// [0x0052EF40]
-namespace lift_0052EF40 {
-extern uint8_t mem_read8(uintptr_t addr);
-
-// @name ManagedDisplayList<UtilityGraphics::Grid>::vfunc_17
-// @class ManagedDisplayList<UtilityGraphics::Grid>
-// @summary Returns whether the byte field at offset 0x0C is non-zero.
-// @field ManagedDisplayList<UtilityGraphics::Grid> +0x0C uint8_t field_0x0C
-uint32_t __thiscall fn_0052EF40(uintptr_t ecx) {
-    return static_cast<uint32_t>(mem_read8(ecx + 0xC) != 0);
-}
-} // namespace lift_0052EF40
-
 // [0x004B77C0]
 namespace lift_004B77C0 {
 // @name PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>::RenameElementCommand::vfunc_4
@@ -169,24 +156,3 @@ void fn_0060AE20(void* self) {
     slot1(target, 1);
 }
 } // namespace lift_0060AE20
-
-// [0x00476EA0]
-namespace lift_00476EA0 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name SymbolPtrMap::vfunc_1
-// @class SymbolPtrMap<SearchableMap<NMData::TriggeredEventData *, GetNameFromAttribute<NMData::TriggeredEventData *>>>
-// @summary Looks up a symbol pointer in the inner searchable map and dereferences the result if found.
-// @field SymbolPtrMap<SearchableMap<NMData::TriggeredEventData *, GetNameFromAttribute<NMData::TriggeredEventData *>>> +0x04 uint32_t field_0x04
-uint32_t __thiscall fn_00476EA0(uint32_t self, uint32_t key) {
-    uint32_t inner = mem_read32(self + 0x4);
-    uint32_t vtable = mem_read32(inner);
-    uint32_t vfunc0 = mem_read32(vtable);
-    using Vfunc0Fn = uint32_t(__thiscall*)(uint32_t, uint32_t);
-    uint32_t entry = reinterpret_cast<Vfunc0Fn>(vfunc0)(inner, key);
-    if (entry != 0) {
-        return mem_read32(entry);
-    }
-    return 0;
-}
-} // namespace lift_00476EA0

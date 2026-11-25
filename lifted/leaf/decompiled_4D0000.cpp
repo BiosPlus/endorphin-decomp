@@ -101,23 +101,6 @@ void fn_004DA800(void* self) {
 } // namespace lift_00594790
 } // namespace lift_004DA800
 
-// [0x004DDE10] sub_004DDE10 (33 bytes)
-namespace lift_004DDE10 {
-// @name Unknown::forwardStringToVtableSlot2
-// @class Unknown
-// @summary Passes the C string of a std::string argument to virtual slot 2 of this object's vtable (thiscall, ret 4).
-// @field Unknown +0x00 void* vtable vtable pointer (dereferenced to fetch slot 2 at +0x08)
-
-// Thiscall on MSVC x86; empty macro elsewhere so this still type-checks on Linux.
-using VSlot2Fn = void(__thiscall*)(void* self, const char* text);
-
-void fn_004DDE10(void* self, const std::string& text) {
-    void** vtable = lift_field<void**>(self, 0x00);
-    VSlot2Fn slot2 = reinterpret_cast<VSlot2Fn>(vtable[2]);
-    slot2(self, text.c_str());
-}
-} // namespace lift_004DDE10
-
 // [0x004DE330] sub_004DE330 (55 bytes)
 namespace lift_004DE330 {
 extern void ext_0067E990(void* self, uint32_t arg);
@@ -146,34 +129,6 @@ void fn_004DE330(void* self, const void* src) {
     ext_0067E990(rec, result);
 }
 } // namespace lift_004DE330
-
-// [0x004D3DE0]
-namespace lift_004D3DE0 {
-// @name Unknown::ForwardToChildrenIfFlag
-// @class Unknown
-// @summary If the flag argument is nonzero, forwards the object at this+0x1EC entries to the subobject at global-object+0xF8.
-// @field Unknown +0x1EC int32_t field_0x1EC
-
-extern int32_t __cdecl fn_00594000(void);
-extern void __fastcall fn_00642680(void* self);
-
-// __thiscall: this in ECX, one stack argument (flag), callee cleans up 4 bytes (ret 4).
-extern void __thiscall fn_004D3DE0(void* self, uint8_t flag) {
-    if (flag == 0) {
-        return;
-    }
-
-    uint8_t* base = static_cast<uint8_t*>(self);
-
-    uintptr_t global_obj = static_cast<uintptr_t>(static_cast<uint32_t>(fn_00594000()));
-    uintptr_t sub = static_cast<uintptr_t>(*reinterpret_cast<uint32_t*>(global_obj + 0xF8));
-
-    // Count is re-read each iteration, matching the original cmp against [edi+0x1ec].
-    for (int32_t i = 0; i < *reinterpret_cast<int32_t*>(base + 0x1EC); ++i) {
-        fn_00642680(reinterpret_cast<void*>(sub));
-    }
-}
-} // namespace lift_004D3DE0
 
 // [0x004D0B20]
 namespace lift_004D0B20 {
@@ -412,65 +367,6 @@ void fn_004D0D40(void* self, const void* name) {
     *reinterpret_cast<int32_t*>(reinterpret_cast<uint8_t*>(self) + 0x190) = result;
 }
 } // namespace lift_004D0D40
-
-// [0x004D4230]
-namespace lift_004D4230 {
-extern void ext_invalid_parameter_noinfo();
-
-// @name GetIndexedString
-// @summary Copy-constructs the std::string at element `index` of the vector stored at self+0x458 into the caller-provided return slot (returned as out).
-// @field Unknown +0x458 std::string* field_0x458
-// @field Unknown +0x45C std::string* field_0x45C
-std::string* fn_004D4230(void* self, std::string* out, uint32_t index) {
-    auto begin = lift_field<uint8_t*>(self, 0x458);
-    auto end = lift_field<uint8_t*>(self, 0x45C);
-
-    // Element count: (end - begin) / sizeof(std::string) where sizeof == 28 (MSVC layout).
-    const ptrdiff_t bytes = end - begin;
-    const size_t count = begin ? static_cast<size_t>(bytes / 28) : 0;
-
-    if (begin == nullptr || index >= count) {
-        ext_invalid_parameter_noinfo();
-        return out;
-    }
-
-    const std::string* elem = reinterpret_cast<const std::string*>(begin + static_cast<size_t>(index) * 28);
-    new (out) std::string(*elem);
-    return out;
-}
-} // namespace lift_004D4230
-
-// [0x004D41C0] sub_004D41C0 (103 bytes)
-namespace lift_004D41C0 {
-// Known import 0x00924FE0 (mem_00924FE0): MSVCP80 std::basic_string<char> copy constructor.
-// Called as this=dst, one argument = source string (28-byte std::string element).
-extern void ext_MSVCP80_string_copy_ctor(void* dst, const void* src);
-// Known import 0x00925134 (mem_00925134): MSVCR80 _invalid_parameter_noinfo (no return on failure path).
-extern void ext_MSVCR80_invalid_parameter_noinfo();
-extern int mem_00924FE0;
-extern int mem_00925134;
-
-// @name Unknown::CopyStringElementAt
-// @class Unknown
-// @summary Copy-constructs the std::string at index (element size 28) of the vector whose begin/end pointers live at +0x448/+0x44C into the caller-supplied out slot, and returns out.
-// @field Unknown +0x448 uint32_t vector_begin
-// @field Unknown +0x44C uint32_t vector_end
-void* fn_004D41C0(void* self, void* out, uint32_t index) {
-    const uint32_t begin = lift_field<uint32_t>(self, 0x448);
-    const uint32_t end = lift_field<uint32_t>(self, 0x44C);
-
-    // Bounds check: begin must be non-null and index must be below element count.
-    const uint32_t count = (end - begin) / 28u;
-    if (begin == 0 || index >= count) {
-        ext_MSVCR80_invalid_parameter_noinfo();
-    }
-
-    // Reload begin (original re-reads +0x448 after the check) and locate element.
-    const uint32_t element = lift_field<uint32_t>(self, 0x448) + index * 28u;
-    ext_MSVCP80_string_copy_ctor(out, reinterpret_cast<const void*>(static_cast<uintptr_t>(element)));
-    return out;
-}
-} // namespace lift_004D41C0
 
 // [0x004DE3D0] sub_004DE3D0 (107 bytes)
 namespace lift_004DE3D0 {

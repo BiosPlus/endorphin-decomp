@@ -10,10 +10,7 @@
 // Recovered field layout for BehaviourData:
 namespace lifted_layout {
 struct BehaviourData_Fields {
-    // +0x5C  uint8_t                  field_0x5c  (evidence: 0x004ABE70)
     // +0x180 void*                    field_0x180  (evidence: 0x004A9BA0)
     // +0x364 uint8_t field_0x364 (address taken only, passed to ext_00661650)  (evidence: 0x004A9BA0)
-    // +0x3D0 void**                   field_0x3d0  (evidence: 0x004ABE70)
-    // +0x3D4 void**                   field_0x3d4  (evidence: 0x004ABE70)
 };
 } // namespace lifted_layout

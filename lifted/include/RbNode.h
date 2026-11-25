@@ -8,6 +8,6 @@
 // Recovered field layout for RbNode:
 namespace lifted_layout {
 struct RbNode_Fields {
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x0043DCF0, 0x005DF940)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x0043DCF0)
 };
 } // namespace lifted_layout

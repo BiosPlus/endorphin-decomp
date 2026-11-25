@@ -20,26 +20,3 @@ void __thiscall fn_006A0460(void* this_ptr) {
     vfunc(target, self + 0x10, self + 0x20);
 }
 } // namespace lift_006A0460
-
-// [0x006A04E0]
-namespace lift_006A04E0 {
-// @name Commands::ChangePropertyCommand::vfunc_2
-// @class Commands::ChangePropertyCommand
-// @summary Invokes virtual method +0xA4 on field_0x14 with pointers to field_0x10 and field_0x18.
-// @field Commands::ChangePropertyCommand +0x10 uint32_t field_0x10
-// @field Commands::ChangePropertyCommand +0x14 uint32_t field_0x14
-// @field Commands::ChangePropertyCommand +0x18 uint32_t field_0x18
-
-
-uint32_t mem_u32(uint32_t addr);
-
-void __thiscall Commands_ChangePropertyCommand_vfunc_2(uint32_t self) {
-    uint32_t obj = mem_u32(self + 0x14);
-    uint32_t vtable = mem_u32(obj);
-    uint32_t fn = mem_u32(vtable + 0xa4);
-    uint32_t arg1 = self + 0x10;
-    uint32_t arg2 = self + 0x18;
-    using Fn = void(__thiscall*)(uint32_t, uint32_t, uint32_t);
-    reinterpret_cast<Fn>(static_cast<uintptr_t>(fn))(obj, arg1, arg2);
-}
-} // namespace lift_006A04E0

@@ -10,7 +10,7 @@
 // Recovered field layout for DIBException:
 namespace lifted_layout {
 struct DIBException_Fields {
-    // +0x0   uint32_t                 vtable  (evidence: 0x00401BB0, 0x004030F0, 0x00406030)
-    // +0xC   std::string              message  (evidence: 0x00401BB0, 0x004030F0, 0x00406030)
+    // +0x0   uint32_t                 vtable  (evidence: 0x00401BB0, 0x004030F0)
+    // +0xC   std::string              message  (evidence: 0x00401BB0, 0x004030F0)
 };
 } // namespace lifted_layout

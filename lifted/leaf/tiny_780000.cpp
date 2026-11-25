@@ -211,36 +211,6 @@ extern "C" void* __fastcall fn_0078D830(void* self, int edx_unused, unsigned int
     return self;
 }
 
-// [0x007835F0]
-namespace lift_007835F0 {
-// @name sub_007835F0
-// @summary Reads a byte at offset +0x4 from the pointer stored at this+0x4
-// @field unknown +0x04 uint32_t field_0x04
-
-
-uint32_t mem_read32(uint32_t addr);
-uint8_t mem_read8(uint32_t addr);
-
-uint8_t __fastcall sub_007835F0(uint32_t ecx) {
-    uint32_t eax = mem_read32(ecx + 0x4);
-    return mem_read8(eax + 0x4);
-}
-} // namespace lift_007835F0
-
-// [0x0078D1E0]
-namespace lift_0078D1E0 {
-extern void __stdcall LeaveCriticalSection(void* lpCriticalSection);
-
-// @name CriticalSectionLock::unlock
-// @class CriticalSectionLock
-// @summary Leaves the critical section pointed to by the first member field.
-// @field CriticalSectionLock +0x00 void* criticalSection
-void __thiscall sub_0078D1E0(void* self) {
-    void* criticalSection = *reinterpret_cast<void**>(self);
-    LeaveCriticalSection(criticalSection);
-}
-} // namespace lift_0078D1E0
-
 // [0x00780290] sub_00780290 (10 bytes)
 namespace lift_00780290 {
 // @name sub_00780290
@@ -432,27 +402,6 @@ void zeroTwoDwordsAt18(uint8_t* this_) {
 }
 } // namespace lift_0078CB80
 
-// [0x00783630] sub_00783630 (21 bytes)
-namespace lift_00783630 {
-extern int mem_00925194;
-extern void __cdecl ext_0062D47C(void* stream);
-
-// @name ClearInnerStreamErrorIfFlagged
-// @class UnknownClass
-// @summary If the inner object's byte flag at +0x4 is nonzero, call the imported clearerr on its stream pointer at +0x0.
-// @field UnknownClass +0x04 void* field_0x04
-// @field UnknownInner +0x00 void* field_0x00
-// @field UnknownInner +0x04 uint8_t field_0x04
-void __fastcall fn_00783630(void* self) {
-    void* inner = lift_field<void*>(self, 0x04);
-    uint8_t flag = lift_field<uint8_t>(inner, 0x04);
-    if (flag != 0) {
-        void* stream = lift_field<void*>(inner, 0x00);
-        ext_0062D47C(stream);
-    }
-}
-} // namespace lift_00783630
-
 // [0x00783610] sub_00783610 (22 bytes)
 namespace lift_00783610 {
 // @name descriptiveName: ReturnFlag20IfSubFlag4Set
@@ -471,27 +420,6 @@ DWORD fn_00783610(void* self) {
     return flags & 0x20;
 }
 } // namespace lift_00783610
-
-// [0x00783650]
-namespace lift_00783650 {
-uint32_t mem_u32(uintptr_t);
-uint8_t mem_u8(uintptr_t);
-
-// @name sub_00783650
-// @summary Checks whether bit 4 of an inner object's flags at +0xc is set when the wrapper at +0x4 is active.
-// @field Self +0x04 uint32_t field_0x04
-
-bool __thiscall sub_00783650(uintptr_t ecx) {
-    uint32_t eax = mem_u32(ecx + 0x4);
-    uint8_t cl = mem_u8(eax + 0x4);
-    if (cl == 0) {
-        return false;
-    }
-    uint32_t inner = mem_u32(eax);
-    uint32_t flags = mem_u32(inner + 0xc);
-    return ((flags >> 4) & 0x1) != 0;
-}
-} // namespace lift_00783650
 
 // [0x00784790]
 namespace lift_00784790 {

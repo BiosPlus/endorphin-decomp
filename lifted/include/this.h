@@ -8,21 +8,18 @@
 // Recovered field layout for this:
 namespace lifted_layout {
 struct this_Fields {
-    // +0x0   int32_t                  count  (evidence: 0x00780160) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 vtable  (evidence: 0x006AFDC0) // CONFLICT: multiple definitions at +0x0
+    // +0x0   int32_t                  count  (evidence: 0x00780160)
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00524B50, 0x0052F7D0) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint8_t*                 field_0x04  (evidence: 0x0058AB90) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 items  (evidence: 0x00780160) // CONFLICT: multiple definitions at +0x4
     // +0x8   struct                   field_0x08  (evidence: 0x006111A0) // CONFLICT: multiple definitions at +0x8
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x00462D10, 0x00524B50, 0x0052F7D0) // CONFLICT: multiple definitions at +0x8
-    // +0xC   uint32_t                 field_0x0C  (evidence: 0x00462D10) // CONFLICT: multiple definitions at +0xC
-    // +0xC   uint32_t                 field_0x0c  (evidence: 0x0071C5C0) // CONFLICT: multiple definitions at +0xC
-    // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0063E050, 0x0063F480)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00524B50, 0x0052F7D0) // CONFLICT: multiple definitions at +0x8
+    // +0x2C  uint32_t                 field_0x2c  (evidence: 0x0063F480)
     // +0x54  uint32_t*                field_0x54  (evidence: 0x006AF8E0)
     // +0x58  int32_t                  field_0x58  (evidence: 0x006AF8E0)
-    // +0xF0  uint32_t                 field_0xf0  (evidence: 0x0058AB90, 0x006C3390)
+    // +0xF0  uint32_t                 field_0xf0  (evidence: 0x0058AB90)
     // +0x108 uint32_t                 field_0x108  (evidence: 0x00434040)
-    // +0x114 void*                    child  (evidence: 0x00430260, 0x00430DA0, 0x00433B70) // CONFLICT: multiple definitions at +0x114
+    // +0x114 void*                    child  (evidence: 0x00430260, 0x00433B70) // CONFLICT: multiple definitions at +0x114
     // +0x114 uint32_t                 field_0x114  (evidence: 0x0041B540) // CONFLICT: multiple definitions at +0x114
     // +0x118 uint32_t                 field_0x118  (evidence: 0x0041B540)
 };

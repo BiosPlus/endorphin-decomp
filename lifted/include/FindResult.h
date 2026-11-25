@@ -8,7 +8,7 @@
 // Recovered field layout for FindResult:
 namespace lifted_layout {
 struct FindResult_Fields {
-    // +0x0   uint32_t                 value  (evidence: 0x00495AB0, 0x0049B170, 0x0049BEE0)
-    // +0x4   void*                    node  (evidence: 0x00495AB0, 0x0049B170, 0x0049BEE0)
+    // +0x0   uint32_t                 value  (evidence: 0x0049BEE0)
+    // +0x4   void*                    node  (evidence: 0x0049BEE0)
 };
 } // namespace lifted_layout

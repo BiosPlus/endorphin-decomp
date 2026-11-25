@@ -289,13 +289,6 @@ extern "C" void __fastcall fn_006DECE0(void* self, int edx_unused, int32_t value
     lift_field<int32_t>(self, 0x44) = value;
 }
 
-// [0x006DEEC0] sub_006DEEC0 (16 bytes)
-// @name sub_006DEEC0
-// @summary Getter returning int32_t field at offset +0x38.
-extern "C" int32_t __fastcall fn_006DEEC0(void* self) {
-    return static_cast<int32_t>(lift_field<int32_t>(self, 0x38));
-}
-
 // [0x006D2A90]
 namespace lift_006D2A90 {
 // @name Unknown::sub_006D2A90
@@ -495,23 +488,6 @@ void sub_006DD930() {
     mem_00B5DC1C = hi;
 }
 } // namespace lift_006DD930
-
-// [0x006D5620]
-namespace lift_006D5620 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name getElementAt
-// @summary Returns the 32-bit element at the given index if within [0, count), otherwise 0.
-// @field Unknown +0x64 int32_t field_0x64
-// @field Unknown +0x74 uint32_t field_0x74
-uint32_t __thiscall sub_006D5620(uint32_t self, int32_t index) {
-    if (index < 0 || index >= static_cast<int32_t>(mem_read32(self + 0x64))) {
-        return 0;
-    }
-    uint32_t table = mem_read32(self + 0x74);
-    return mem_read32(table + static_cast<uint32_t>(index) * 4);
-}
-} // namespace lift_006D5620
 
 // [0x006DADE0] sub_006DADE0 (31 bytes)
 namespace lift_006DADE0 {

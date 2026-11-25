@@ -490,61 +490,6 @@ extern void fn_004EFA50(OwnedPointerRange* owner, void** first, OwnedPointerRang
 } // namespace lift_004A5F70
 } // namespace lift_004EFA50
 
-// [0x004ED640] sub_004ED640 (111 bytes)
-namespace lift_004ED640 {
-// @name Unknown::ctor_004ED640
-// @class Unknown
-// @summary Object constructor: runs base ctor ext_00692B50, installs three vtable pointers, constructs an embedded std::string at +0x1c, zeroes five trailing fields, and returns this.
-// @field Unknown +0x00 uint32_t field_0x00
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x18 uint32_t field_0x18
-// @field Unknown +0x1c std::string field_0x1c
-// @field Unknown +0x38 uint32_t field_0x38
-// @field Unknown +0x40 uint32_t field_0x40
-// @field Unknown +0x44 uint32_t field_0x44
-// @field Unknown +0x48 uint32_t field_0x48
-// @field Unknown +0x4c uint32_t field_0x4c
-
-// Base class constructor (listed callee ext_00692B50 / ctor_00944E74).
-extern void* __thiscall ext_00692B50(void* self);
-
-// Imported MSVCP80 std::basic_string<char> default constructor.
-// Import slot mem_00924FE8 holds 0x006290D8, which is called through here.
-extern void* __thiscall ext_006290D8(void* self);
-
-// Vtable addresses (in .rdata) installed by this constructor.
-static constexpr uint32_t kVtblA       = 0x009451B4; // stored at +0x00 (overwritten by base ctor's view)
-static constexpr uint32_t kVtblB       = 0x00945184; // stored at +0x04
-static constexpr uint32_t kVtblC_first = 0x009443BC; // stored at +0x18 before string ctor
-static constexpr uint32_t kVtblC_final = 0x00945174; // stored at +0x18 after string ctor
-
-// The original function is a MSVC SEH-protected constructor: it pushes an
-// exception frame (scope table 0x0088EF84, trylevel -1) and restores the
-// previous fs:[0] handler on exit. That exception bookkeeping has no portable
-// equivalent and is omitted; the observable object initialisation is kept.
-extern void* __thiscall fn_004ED640(void* self) {
-    // Base constructor.
-    ext_00692B50(self);
-
-    lift_field<uint32_t>(self, 0x18) = kVtblC_first;
-
-    // Embedded std::string lives at self+0x1c; construct it.
-    ext_006290D8(reinterpret_cast<uint8_t*>(self) + 0x1c);
-
-    lift_field<uint32_t>(self, 0x00) = kVtblA;
-    lift_field<uint32_t>(self, 0x04) = kVtblB;
-    lift_field<uint32_t>(self, 0x18) = kVtblC_final;
-
-    lift_field<uint32_t>(self, 0x38) = 0;
-    lift_field<uint32_t>(self, 0x40) = 0;
-    lift_field<uint32_t>(self, 0x44) = 0;
-    lift_field<uint32_t>(self, 0x48) = 0;
-    lift_field<uint32_t>(self, 0x4c) = 0;
-
-    return self;
-}
-} // namespace lift_004ED640
-
 // [0x004EC380]
 namespace lift_004EC380 {
 // @name TreeMap::find

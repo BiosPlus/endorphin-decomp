@@ -10,10 +10,10 @@
 // Recovered field layout for Primitives::Bone:
 namespace lifted_layout {
 struct Primitives_Bone_Fields {
-    // +0x1C  uint32_t                 flags  (evidence: 0x0053C520, 0x0053E1C0)
-    // +0x3C  float                    value0  (evidence: 0x0053C520, 0x0053E1C0)
-    // +0x40  float                    value1  (evidence: 0x0053C520, 0x0053E1C0)
-    // +0x44  float                    value2  (evidence: 0x0053C520, 0x0053E1C0)
-    // +0x48  float                    value3  (evidence: 0x0053C520, 0x0053E1C0)
+    // +0x1C  uint32_t                 flags  (evidence: 0x0053E1C0)
+    // +0x3C  float                    value0  (evidence: 0x0053E1C0)
+    // +0x40  float                    value1  (evidence: 0x0053E1C0)
+    // +0x44  float                    value2  (evidence: 0x0053E1C0)
+    // +0x48  float                    value3  (evidence: 0x0053E1C0)
 };
 } // namespace lifted_layout

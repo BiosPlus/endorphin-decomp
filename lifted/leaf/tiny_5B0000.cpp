@@ -32,20 +32,6 @@ uint32_t* __thiscall sub_005B11D0(uintptr_t self, uint32_t index) {
 }
 } // namespace lift_005B11D0
 
-// [0x005B11E0]
-namespace lift_005B11E0 {
-// @name getFloatAt
-// @summary Returns a float from a 32-bit float array at offset +0x10 indexed by the argument
-// @field Object +0x10 float[] field_0x10
-
-
-float mem_read_f32(uint32_t addr);
-
-float __thiscall sub_005B11E0(uint32_t ecx, uint32_t index) {
-    return mem_read_f32(ecx + 4 * index + 0x10);
-}
-} // namespace lift_005B11E0
-
 // [0x005B64D0]
 namespace lift_005B64D0 {
 // @name sub_005B64D0_IsField184Equal6
@@ -181,25 +167,6 @@ void fn_005B72C0(void* self, DWORD stackArg) {
 } // namespace lift_00433290
 } // namespace lift_005B72C0
 
-// [0x005B72A0]
-namespace lift_005B72A0 {
-// @name sub_005B72A0
-// @class Unknown
-// @summary Loads the subobject pointer at this+0x158; tail-calls fn_005CE990 on it if non-null, otherwise returns (ret 8).
-// @field Unknown +0x158 void* field_0x158
-
-extern void fn_005CE990(void* self);
-
-extern void __fastcall fn_005B72A0(void* self, void* /*edx*/, uintptr_t /*arg1*/, uintptr_t /*arg2*/) {
-    void* sub = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x158);
-    if (sub != nullptr) {
-        fn_005CE990(sub);
-        return;
-    }
-    return;
-}
-} // namespace lift_005B72A0
-
 // [0x005B7260] sub_005B7260 (18 bytes)
 namespace lift_005B7260 {
 // Known callee 0x005CE970: sub_005CE970 (Member forwarding thunk: loads subobject pointer at +0xAC and tail-calls sub_00647CE0.)
@@ -257,26 +224,6 @@ DWORD fn_005B2130(void* self, DWORD arg) {
 }
 } // namespace lift_005B2130
 
-// [0x005B6980] sub_005B6980 (24 bytes)
-namespace lift_005B6980 {
-extern uint32_t mem_read32(uint32_t addr);
-extern uint32_t ext_00647F80(uint32_t self, uint32_t stack_arg);
-
-// @name Unknown::ForwardToSubobjectField0xAC
-// @class Unknown
-// @summary If the pointer at +0x158 is non-null, tail-forwards to ext_00647F80 with the child pointer's +0xAC value as `this`; otherwise returns 0.
-// @field Unknown +0x158 uint32_t field_0x158 (child pointer; non-null selects the forward path)
-// @field Unknown +0xAC uint32_t field_0xac (read from the child at +0x158; becomes `this` for the forward)
-uint32_t fn_005B6980(uint32_t self, uint32_t stack_arg) {
-    const uint32_t child = mem_read32(self + 0x158);
-    if (child == 0) {
-        return 0;
-    }
-    const uint32_t next_self = mem_read32(child + 0xAC);
-    return ext_00647F80(next_self, stack_arg);
-}
-} // namespace lift_005B6980
-
 // [0x005B6FE0] sub_005B6FE0 (24 bytes)
 namespace lift_005B6FE0 {
 // Known callee 0x006481E0: sub_006481E0 (Auto-lifted identical-shape clone of 0x00648480 (GetIndirectField_0x5c_0x00).)
@@ -326,27 +273,6 @@ uint32_t fn_005B6FC0(void* self) {
     return ext_006481C0(recv);
 }
 } // namespace lift_005B6FC0
-
-// [0x005B18E0]
-namespace lift_005B18E0 {
-// @name Unknown::assignStringAndSetFlag
-// @class Unknown
-// @summary Copy-assigns the std::string argument into the member at +0x28, then sets the byte flag at +0x04 to 1.
-// @field Unknown +0x04 uint8_t field_0x04
-// @field Unknown +0x28 std::string field_0x28
-
-// MSVCP80 std::basic_string<char>::operator=(const basic_string&), reached via import slot mem_00924FDC.
-extern void ext_string_assign(void* dst_string, const void* src_string);
-
-// Import slot value from .rdata at 0x00924FDC (documentation only; the call goes through ext_string_assign).
-extern const uint32_t mem_00924FDC;
-
-void __thiscall fn_005B18E0(void* self, const void* src_string) {
-    auto* base = static_cast<uint8_t*>(self);
-    ext_string_assign(base + 0x28, src_string);
-    base[0x04] = 1;
-}
-} // namespace lift_005B18E0
 
 // [0x005B7040] sub_005B7040 (28 bytes)
 namespace lift_005B7040 {

@@ -18,61 +18,6 @@ uint32_t __thiscall fn_005321E0(void* self, void* other) {
 }
 } // namespace lift_005321E0
 
-// [0x0053A6A0]
-namespace lift_0053A6A0 {
-// @name HasConstantTMPtr::vfunc_1
-// @class HasConstantTMPtr
-// @summary Forwards the constant transform pointer at +0x4 with the output buffer to copyVec3WithZeroW and returns the output buffer.
-// @field HasConstantTMPtr +0x04 const float* field_0x04
-
-void ext_004F9950(void* self, float* out);
-
-float* fn_0053A6A0(void* self, float* out) {
-    const float* tm = *reinterpret_cast<const float* const*>(reinterpret_cast<const char*>(self) + 0x4);
-    ext_004F9950(const_cast<float*>(tm), out);
-    return out;
-}
-} // namespace lift_0053A6A0
-
-// [0x00532200] HasConstantTMPtr::vfunc_12 (23 bytes)
-namespace lift_00532200 {
-// @name HasConstantTMPtr::vfunc_12
-// @class HasConstantTMPtr
-// @summary Tail-calls other->vfunc_7 passing (this->field_0x04 + 0x30) as its argument.
-// @field HasConstantTMPtr +0x04 const float* field_0x04
-void fn_00532200(void* self, void* other) {
-    // Load this->field_0x04 and offset it by 0x30 bytes (12 floats = 3 floats, i.e. the Vec3 at +0x30).
-    const auto* base = *reinterpret_cast<const unsigned char* const*>(
-        static_cast<unsigned char*>(self) + 0x04);
-    const void* arg = base + 0x30;
-
-    // other->vtable[7] (vtable slot at +0x1C), invoked with `other` as this and `arg` as the sole stack argument.
-    void* const* vtbl = *reinterpret_cast<void* const* const*>(other);
-    using Slot7Fn = void (*)(void* self, const void* arg);
-    auto fn = reinterpret_cast<Slot7Fn>(vtbl[7]);
-    fn(other, arg);
-}
-} // namespace lift_00532200
-
-// [0x005321B0]
-namespace lift_005321B0 {
-// @name HasConstantTMPtr::vfunc_13
-// @class HasConstantTMPtr
-// @summary Calls glTranslatef with the translation vector at offset 0x30 of the transform matrix pointed to by field_0x04.
-// @field HasConstantTMPtr +0x04 const float* field_0x04
-
-extern void (*mem_009253D0)(float, float, float);
-
-void __thiscall fn_005321B0(void* this_ptr) {
-    const float* tm = *reinterpret_cast<const float* const*>(
-        reinterpret_cast<const uint8_t*>(this_ptr) + 0x4);
-    float x = tm[0x30 / sizeof(float)];
-    float y = tm[0x34 / sizeof(float)];
-    float z = tm[0x38 / sizeof(float)];
-    mem_009253D0(x, y, z);
-}
-} // namespace lift_005321B0
-
 // [0x0053A6C0] HasConstantTMPtr::vfunc_3
 namespace lift_0053A6C0 {
 // Known callee 0x0067DAD0: sub_0067DAD0 (59B), called with ecx=this->field_0x04, arg=out matrix.

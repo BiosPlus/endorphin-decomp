@@ -25,31 +25,6 @@ void* fn_004B6C90(void* self, void* dst, void* arg2) {
 #include <memory>
 #include <cstddef>
 
-// [0x004B6CF0]
-namespace lift_004B6CF0 {
-// @name sub_004B6CF0
-// @class Unknown
-// @summary Initializes float fields at +0x1C..+0x30: 0.2, 100.0, then zeros for +0x24..+0x30.
-// @field Unknown +0x1C float field_0x1C
-// @field Unknown +0x20 float field_0x20
-// @field Unknown +0x24 float field_0x24
-// @field Unknown +0x28 float field_0x28
-// @field Unknown +0x2C float field_0x2C
-// @field Unknown +0x30 float field_0x30
-
-extern float mem_00940694; // .rdata float 0.2
-extern float mem_00943350; // .rdata float 100
-
-void sub_004B6CF0(uint8_t* ecx) {
-    *reinterpret_cast<float*>(ecx + 0x1C) = mem_00940694;
-    *reinterpret_cast<float*>(ecx + 0x20) = mem_00943350;
-    *reinterpret_cast<float*>(ecx + 0x24) = 0.0f;
-    *reinterpret_cast<float*>(ecx + 0x28) = 0.0f;
-    *reinterpret_cast<float*>(ecx + 0x2C) = 0.0f;
-    *reinterpret_cast<float*>(ecx + 0x30) = 0.0f;
-}
-} // namespace lift_004B6CF0
-
 // [0x004B7030]
 namespace lift_004B7030 {
 // RDATA constants
@@ -69,66 +44,6 @@ void sub_004B7030(float *out)
     out[2] = mem_00A384A4;
 }
 } // namespace lift_004B7030
-
-// [0x004B6CC0] sub_004B6CC0 (33 bytes)
-namespace lift_004B6CC0 {
-// The string constructor is reached through the MSVCP80 import slot at 0x924FE8,
-// whose .rdata value is 0x006290D8 (mem_00924FE8); it is called here by that target.
-extern void __thiscall ext_006290D8(void* self);
-
-// @name Unknown::initStringAndZeroFloats1C
-// @class Unknown
-// @summary Default-constructs the std::string at +0x00, then zeroes the float fields at +0x1C..+0x30; returns this.
-// @field Unknown +0x00 std::string field_0x00
-// @field Unknown +0x1C float field_0x1C
-// @field Unknown +0x20 float field_0x20
-// @field Unknown +0x24 float field_0x24
-// @field Unknown +0x28 float field_0x28
-// @field Unknown +0x2C float field_0x2C
-// @field Unknown +0x30 float field_0x30
-
-// [0x004B6CC0]
-void* fn_004B6CC0(void* self) {
-    uint8_t* esi = static_cast<uint8_t*>(self);
-    ext_006290D8(esi);
-    *reinterpret_cast<float*>(esi + 0x1C) = 0.0f;
-    *reinterpret_cast<float*>(esi + 0x20) = 0.0f;
-    *reinterpret_cast<float*>(esi + 0x24) = 0.0f;
-    *reinterpret_cast<float*>(esi + 0x28) = 0.0f;
-    *reinterpret_cast<float*>(esi + 0x2C) = 0.0f;
-    *reinterpret_cast<float*>(esi + 0x30) = 0.0f;
-    return esi;
-}
-} // namespace lift_004B6CC0
-
-// [0x004B0F50] sub_004B0F50 (37 bytes)
-namespace lift_004B0F50 {
-// @name InitFlagsAndEmptyString
-// @summary Sets four header bytes (3 x 1, 1 x 0), default-constructs a std::string at +0x04, zeroes the dword at +0x20, and returns self.
-// @field UnknownClass +0x00 uint8_t field_0x00
-// @field UnknownClass +0x01 uint8_t field_0x01
-// @field UnknownClass +0x02 uint8_t field_0x02
-// @field UnknownClass +0x03 uint8_t field_0x03
-// @field UnknownClass +0x04 std::string field_0x04
-// @field UnknownClass +0x20 uint32_t field_0x20
-void* fn_004B0F50(void* self) {
-    auto* base = static_cast<std::uint8_t*>(self);
-
-    base[0x00] = 1;
-    base[0x01] = 1;
-    base[0x02] = 1;
-    base[0x03] = 0;
-
-    // Original calls the MSVC std::string default ctor through mem_00924FE8
-    // (MSVCP80) on this+4. Expressed here as a placement-new of std::string.
-    // Caveat: MSVC basic_string is 0x18 bytes; libstdc++ differs, so the
-    // +0x20 store below only matches the original layout under MSVC ABI.
-    new (base + 0x04) std::string();
-
-    *reinterpret_cast<std::uint32_t*>(base + 0x20) = 0;
-    return self;
-}
-} // namespace lift_004B0F50
 
 // [0x004B4740] sub_004B4740 (37 bytes)
 namespace lift_004B4740 {
@@ -253,44 +168,6 @@ void fn_004B1100(void* self, float arg0) {
 }
 } // namespace lift_004B1100
 
-// [0x004B1130] sub_004B1130 (46 bytes)
-namespace lift_004B1130 {
-extern void __thiscall ext_004B0ED0(void* self, float* out, float b, float c, float d);
-
-// @name sub_004B1130
-// @class Unknown
-// @summary Copies three float fields from self into locals, calls sub_004B0ED0 with them plus the stack float argument, and returns (ret 4).
-// @field Unknown +0x1c float field_0x1C
-// @field Unknown +0x20 float field_0x20
-// @field Unknown +0x24 float field_0x24
-extern void __thiscall fn_004B1130(void* self, float arg) {
-    float a = lift_field<float>(self, 0x1c);
-    float b = lift_field<float>(self, 0x20);
-    float c = lift_field<float>(self, 0x24);
-    ext_004B0ED0(self, &a, b, c, arg);}
-} // namespace lift_004B1130
-
-// [0x004B6FF0] sub_004B6FF0 (61 bytes)
-namespace lift_004B6FF0 {
-extern const char mem_009433A0[];
-extern const char mem_0093C18C[];
-extern std::string mem_00AE173C;
-
-// @name ConfigStrings::ResetDefaults
-// @class ConfigStrings
-// @summary Resets four std::string members to defaults: +0x04 = "default_default", +0x20 and +0x3C = copies of global mem_00AE173C, +0x58 = "Default".
-// @field ConfigStrings +0x04 std::string name0
-// @field ConfigStrings +0x20 std::string name1
-// @field ConfigStrings +0x3C std::string name2
-// @field ConfigStrings +0x58 std::string name3
-extern void __thiscall fn_004B6FF0(void* self) {
-    lift_field<std::string>(self, 0x04) = mem_009433A0;
-    lift_field<std::string>(self, 0x20) = mem_00AE173C;
-    lift_field<std::string>(self, 0x3C) = mem_00AE173C;
-    lift_field<std::string>(self, 0x58) = mem_0093C18C;
-}
-} // namespace lift_004B6FF0
-
 // [0x004BEB00] sub_004BEB00 (76 bytes)
 namespace lift_004BEB00 {
 // @name sub_004BEB00
@@ -313,65 +190,6 @@ void fn_004BEB00(void* self) {
 }
 } // namespace lift_0050C4D0
 } // namespace lift_004BEB00
-
-// [0x004B4CD0] sub_004B4CD0 (84 bytes)
-namespace lift_004B4CD0 {
-// Import thunk slot holding MSVCR80!_invalid_parameter_noinfo (__cdecl, no args).
-// Called by the CRT iterator-debug checks when a range invariant is violated.
-extern uint32_t mem_00925134;
-
-// Calls the CRT invalid-parameter handler through its import slot.
-static void invalidParameter() {
-    const uint32_t handler = mem_00925134;
-    if (handler != 0) {
-        reinterpret_cast<void (*)()>(static_cast<uintptr_t>(handler))();
-    }
-}
-
-// Guest addresses are 32-bit virtual addresses; widen them to host pointers.
-static inline uint8_t* guestBytes(uint32_t addr) {
-    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(addr));
-}
-
-// @name Unknown::copyByte2ToByte1_004B4CD0
-// @class Unknown
-// @summary For each 32-bit pointer in the range [this+0x0C, this+0x10) (stepping by 4), copies byte +2 of the pointed-to object into byte +1 of that object; asserts the range is ordered.
-// @field Unknown +0x0C uint32_t field_0x0C
-// @field Unknown +0x10 uint32_t field_0x10
-void fn_004B4CD0(void* self) {
-    // Range bounds: begin at +0x0C, end (exclusive) at +0x10.
-    const uint32_t begin = lift_field<uint32_t>(self, 0x0C);
-    const uint32_t end0 = lift_field<uint32_t>(self, 0x10);
-
-    // Iterator-debug precondition: begin must not exceed end.
-    if (begin > end0) {
-        invalidParameter();
-    }
-
-    uint32_t cur = begin;
-    for (;;) {
-        const uint32_t end = lift_field<uint32_t>(self, 0x10);
-        if (cur == end) {
-            break;
-        }
-
-        // Iterator-debug bounds check: cur must lie before end before dereferencing.
-        if (!(cur < end)) {
-            invalidParameter();
-        }
-
-        // Each slot holds a 32-bit pointer to an object.
-        uint32_t obj = 0;
-        std::memcpy(&obj, guestBytes(cur), sizeof(obj));
-
-        // obj[1] = obj[2]
-        const uint8_t src = guestBytes(obj)[2];
-        guestBytes(obj)[1] = src;
-
-        cur += 4;
-    }
-}
-} // namespace lift_004B4CD0
 
 // [0x004BA340] sub_004BA340 (85 bytes)
 namespace lift_004BA340 {
@@ -399,41 +217,6 @@ DWORD* fn_004BA340(DWORD* first, DWORD* last, DWORD value) {
     return first;
 }
 } // namespace lift_004BA340
-
-// [0x004B7340] sub_004B7340 (90 bytes)
-namespace lift_004B7340 {
-extern std::string* mem_00AE1D18; // global string table: begin
-extern std::string* mem_00AE1D1C; // global string table: end
-
-extern void ext_invalid_parameter_noinfo(void);
-
-// @name Unknown::copyStringFromTable
-// @class Unknown
-// @summary Copies table[index] into this+0x58 (std::string), with bounds check on the global table.
-// @field Unknown +0x58 std::string field_0x58
-
-void fn_004B7340(void* self, uint32_t index) {
-    std::string* begin = mem_00AE1D18;
-    std::string* end = mem_00AE1D1C;
-    size_t count = static_cast<size_t>(end - begin);
-
-    if (begin == nullptr || static_cast<size_t>(index) >= count) {
-        ext_invalid_parameter_noinfo();
-        return;
-    }
-
-    lift_field<std::string>(self, 0x58) = begin[index];
-}
-} // namespace lift_004B7340
-
-// [0x004B79B0]
-namespace lift_004B79B0 {
-// @name parseFloatFromString
-// @summary Converts a std::string argument (by value) to float via atof; returns the result in ST0.
-float parseFloatFromString(std::string s) {
-    return static_cast<float>(std::atof(s.c_str()));
-}
-} // namespace lift_004B79B0
 
 // [0x004B4D30]
 namespace lift_004B4D30 {
@@ -767,27 +550,6 @@ void fn_004B51F0(void* self) {
 } // namespace lift_0050BE20
 } // namespace lift_004B51F0
 
-// [0x004BA170] sub_004BA170 (94 bytes)
-namespace lift_004BA170 {
-// Known callee 0x00665810: sub_00665810 (Stores address of mem_00987A04 into field at offset +0x0.)
-extern void ext_00665810(void* self);
-
-// @name Unknown::ReleaseStringAndBase
-// @class Unknown
-// @summary Destroys and frees the heap-allocated std::string at +0x18 if set, then runs the base-part reset (ext_00665810).
-// @field Unknown +0x18 void* field_0x18
-void fn_004BA170(void* self) {
-    auto* base = static_cast<unsigned char*>(self);
-    void** slot = reinterpret_cast<void**>(base + 0x18);
-    void* str = *slot;
-    if (str != nullptr) {
-        std::destroy_at(static_cast<std::string*>(str));
-        ::operator delete(str);
-    }
-    ext_00665810(self);
-}
-} // namespace lift_004BA170
-
 // [0x004B6680] sub_004B6680 (94 bytes)
 namespace lift_004B6680 {
 // Import slot (IAT entry for MSVCR80!_invalid_parameter_noinfo).
@@ -879,31 +641,6 @@ void* fn_004BEAA0() {
 }
 } // namespace lift_004BEAA0
 
-// [0x004B5030] sub_004B5030 (95 bytes)
-namespace lift_004B5030 {
-// Known callee 0x00665810: sub_00665810 (Stores address of mem_00987A04 into field at offset +0x0.)
-extern void __fastcall ext_00665810(void* self);
-// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
-// Called cdecl with one pointer argument (push esi; call; add esp,4).
-extern void ext_006A5C5C(void* p);
-
-// @name ReleaseOwnedStringNode
-// @summary If the owner's +0x18 node pointer is set, destroy the std::string at node+0x4, free the node, then reset this object via sub_00665810.
-// @field field_0x18 +0x18 void* node
-void fn_004B5030(void* self) {
-    auto* owner = static_cast<uint8_t*>(self);
-    void* node = lift_field<void*>(owner, 0x18);
-
-    if (node != nullptr) {
-        auto* str = reinterpret_cast<std::string*>(static_cast<uint8_t*>(node) + 0x4);
-        str->~basic_string();
-        ext_006A5C5C(node);
-    }
-
-    ext_00665810(self);
-}
-} // namespace lift_004B5030
-
 // [0x004B7540] sub_004B7540 (95 bytes)
 namespace lift_004B7540 {
 // Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
@@ -924,28 +661,6 @@ void* fn_004B7540() {
     return &mem_00AE163C;
 }
 } // namespace lift_004B7540
-
-// [0x004B74E0]
-namespace lift_004B74E0 {
-// @name InitOnceGlobalString_004B74E0
-// @summary One-time guarded initializer for the global string at mem_00AE161C; runs the setup call and registers its teardown on first use, then returns the global's address.
-
-extern uint32_t mem_00AE1638;   // init guard flag (bit 0 = initialized)
-extern uint8_t  mem_00AE161C[]; // global string storage
-
-void* ext_0066AD10(void* out_str, uint8_t flag);
-void  ext_006A6C87(void* teardown);
-void  ext_009184C0(void);       // teardown routine registered via ext_006A6C87
-
-void* sub_004B74E0() {
-    if ((mem_00AE1638 & 1u) == 0) {
-        mem_00AE1638 |= 1u;
-        ext_0066AD10(static_cast<void*>(mem_00AE161C), static_cast<uint8_t>(0x30));
-        ext_006A6C87(reinterpret_cast<void*>(&ext_009184C0));
-    }
-    return static_cast<void*>(mem_00AE161C);
-}
-} // namespace lift_004B74E0
 
 // [0x004B4AA0] sub_004B4AA0 (33 bytes)
 namespace lift_004B4AA0 {
@@ -1063,235 +778,6 @@ DWORD* fn_004B64C0(DWORD* dst, DWORD selector) {
     return dst;
 }
 } // namespace lift_004B64C0
-
-// [0x004B72D0] sub_004B72D0 (100 bytes)
-namespace lift_004B72D0 {
-// @name sub_004B72D0
-// @summary Auto-lifted identical-shape clone of 0x005C3FB0 (sub_005CF3E0).
-namespace lift_005C3FB0 {
-// @name FindEntryIndexByStringAt17C
-// @summary Scans the 28-byte entries between mem_00B44C08 (begin) and mem_00B44C0C (end) for the first whose leading std::string equals this+0x17C; returns its index, or 0 when none matches or the array is empty.
-// @field +0x17C uint8_t[28] field_0x17C
-
-
-extern uintptr_t mem_00AE1D18;  // vector-like begin pointer (global)
-extern uintptr_t mem_00AE1D1C;  // vector-like end pointer (global)
-
-extern bool __cdecl ext_MSVCP80_string_equal(const void* lhs, const void* rhs);
-
-constexpr uint32_t kEntryStride = 0x1C;
-constexpr ptrdiff_t kKeyOffset = 0x58;
-
-extern uint32_t __thiscall fn_004B72D0(void* self) {
-    uint8_t* obj = static_cast<uint8_t*>(self);
-
-    uint8_t* begin = reinterpret_cast<uint8_t*>(mem_00AE1D18);
-    if (begin == nullptr) {
-        return 0;
-    }
-
-    uint32_t span = static_cast<uint32_t>(mem_00AE1D1C - mem_00AE1D18);
-    uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(span) / static_cast<int32_t>(kEntryStride));
-
-    for (uint32_t i = 0; i < count; ++i) {
-        uint8_t* entry = begin + static_cast<size_t>(i) * kEntryStride;
-        if (ext_MSVCP80_string_equal(entry, obj + kKeyOffset)) {
-            return i;
-        }
-    }
-
-    return 0;
-}
-} // namespace lift_005C3FB0
-} // namespace lift_004B72D0
-
-// [0x004B4930]
-namespace lift_004B4930 {
-// @name destroyStringEntryRange
-// @summary Iterates a checked vector iterator range, destroying each non-null entry's std::string at +0x4 and freeing the entry.
-// @field Vector +0x08 uint32_t end_ptr
-
-
-extern void fn_006A5C5C(void* ptr);
-extern uint32_t mem_00925134;
-extern uint32_t mem_00924FF4;
-
-void __stdcall fn_004B4930(uint32_t begin_cont, uint32_t begin_ptr, uint32_t end_cont, uint32_t end_ptr) {
-    using InvalidParamFn = void (__cdecl*)(void);
-    using StringDtorFn = void (__thiscall*)(void*);
-
-    auto invalid_param = reinterpret_cast<InvalidParamFn>(static_cast<uintptr_t>(mem_00925134));
-    auto string_dtor = reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(mem_00924FF4));
-
-    uint32_t cur = begin_ptr;
-    for (;;) {
-        if (begin_cont == 0 || begin_cont != end_cont) {
-            invalid_param();
-        }
-        if (cur == end_ptr) {
-            break;
-        }
-        uint32_t elem_slot = cur;
-        if (begin_cont == 0) {
-            invalid_param();
-        }
-        uint32_t vec_end = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(begin_cont + 0x8u));
-        if (cur >= vec_end) {
-            invalid_param();
-        }
-        cur += 4u;
-        if (begin_cont == 0) {
-            invalid_param();
-        }
-        vec_end = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(begin_cont + 0x8u));
-        if (elem_slot >= vec_end) {
-            invalid_param();
-        }
-        uint32_t elem = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(elem_slot));
-        if (elem == 0) {
-            continue;
-        }
-        string_dtor(reinterpret_cast<void*>(static_cast<uintptr_t>(elem + 0x4u)));
-        fn_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(elem)));
-    }
-}
-} // namespace lift_004B4930
-
-// [0x004B5180] sub_004B5180 (109 bytes)
-namespace lift_004B5180 {
-// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
-extern void ext_006A5C5C();
-extern int mem_00925134;
-extern int mem_00924FF4;
-extern int mem_009251EC;
-
-// @name eraseStringNodeAt
-// @summary Erases one pointer-slot from a pointer array at an iterator: frees the node's string and pointer, shifts the tail down, shrinks end by one slot, and returns (v, it) through the hidden out pointer.
-// @field self +0x08 uintptr_t field_0x08
-// @field v +0x08 uintptr_t field_0x08
-void fn_004B5180(void* self, uintptr_t* out, uintptr_t* v, uintptr_t it) {
-    // Error handler pointer stored in the .rdata slot (MSVCR80!_invalid_parameter_noinfo).
-    const uintptr_t invalid_handler = static_cast<uintptr_t>(static_cast<uint32_t>(mem_00925134));
-    auto invalid_parameter = [invalid_handler]() {
-        reinterpret_cast<void (*)()>(invalid_handler)();
-    };
-
-    auto* selfBytes = static_cast<unsigned char*>(self);
-
-    // Null container or iterator past the end -> invalid parameter.
-    if (v == nullptr) {
-        invalid_parameter();
-    }
-    const uintptr_t vEnd = *reinterpret_cast<uintptr_t*>(reinterpret_cast<unsigned char*>(v) + 0x08);
-    if (it >= vEnd) {
-        invalid_parameter();
-    }
-
-    // Node pointer stored at the iterator.
-    const uintptr_t node = *reinterpret_cast<uintptr_t*>(it);
-    if (node != 0) {
-        // Destroy std::string at node+4 (function pointer in mem_00924FF4, thiscall with ecx = node+4).
-        const uintptr_t strDtor = static_cast<uintptr_t>(static_cast<uint32_t>(mem_00924FF4));
-        reinterpret_cast<void (*)(void*)>(strDtor)(reinterpret_cast<void*>(node + 4));
-
-        // Free the node itself via the MFC80 thunk.
-        reinterpret_cast<void (*)(void*)>(reinterpret_cast<void*>(&ext_006A5C5C))(
-            reinterpret_cast<void*>(node));
-    }
-
-    // Number of pointer slots after the erased one, from (it + 4) up to self->end.
-    const uintptr_t selfEnd = *reinterpret_cast<uintptr_t*>(selfBytes + 0x08);
-    const intptr_t remaining = (static_cast<intptr_t>(selfEnd) - static_cast<intptr_t>(it + 4)) >> 2;
-    if (remaining > 0) {
-        const size_t bytes = static_cast<size_t>(remaining) * 4;
-        std::memmove(reinterpret_cast<void*>(it), reinterpret_cast<const void*>(it + 4), bytes);
-    }
-
-    // Shrink end by one slot.
-    *reinterpret_cast<uintptr_t*>(selfBytes + 0x08) = selfEnd - 4;
-
-    // Return pair: { v, it }.
-    out[0] = reinterpret_cast<uintptr_t>(v);
-    out[1] = it;
-}
-} // namespace lift_004B5180
-
-// [0x004BBB00] sub_004BBB00 (108 bytes)
-namespace lift_004BBB00 {
-// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
-extern void ext_006A5C5C(void* p);
-// .rdata slots: _invalid_parameter_noinfo, std::string dtor, memmove_s
-extern void* mem_00925134;
-extern void* mem_00924FF4;
-extern void* mem_009251EC;
-
-// @name eraseStringPtrAt
-// @class StringPtrVector
-// @summary Destroys the std::string* at iterator slot `it` (checked against owner end), erases it from the vector by shifting the tail down, and returns {owner, it} through `out`.
-// @field StringPtrVector +0x08 uint8_t* field_0x08
-// @field Owner +0x08 uint8_t* field_0x08
-void* fn_004BBB00(void* self, void* out, void* owner, void* it) {
-    uint8_t* vec = static_cast<uint8_t*>(self);
-    uint8_t* own = static_cast<uint8_t*>(owner);
-    uint8_t* slot = static_cast<uint8_t*>(it);
-
-    if (own == nullptr) {
-        reinterpret_cast<void (*)()>(mem_00925134)();  // _invalid_parameter_noinfo
-    }
-    uint8_t* ownerEnd = *reinterpret_cast<uint8_t**>(own + 0x8);
-    if (!(reinterpret_cast<uintptr_t>(slot) < reinterpret_cast<uintptr_t>(ownerEnd))) {
-        reinterpret_cast<void (*)()>(mem_00925134)();  // _invalid_parameter_noinfo
-    }
-
-    void* str = *reinterpret_cast<void**>(slot);
-    if (str != nullptr) {
-        reinterpret_cast<void (*)(void*)>(mem_00924FF4)(str);  // std::string::~string
-        ext_006A5C5C(str);                                     // operator delete
-    }
-
-    uint8_t* end = *reinterpret_cast<uint8_t**>(vec + 0x8);
-    uint8_t* src = slot + 0x4;
-    ptrdiff_t count = (static_cast<ptrdiff_t>(reinterpret_cast<uintptr_t>(end) - reinterpret_cast<uintptr_t>(src))) >> 2;
-    if (count > 0) {
-        size_t bytes = static_cast<size_t>(count) * 4;
-        reinterpret_cast<int (*)(void*, size_t, const void*, size_t)>(mem_009251EC)(slot, bytes, src, bytes);
-    }
-
-    *reinterpret_cast<uint8_t**>(vec + 0x8) = end - 4;
-
-    void** ret = static_cast<void**>(out);
-    ret[0] = owner;
-    ret[1] = it;
-    return out;
-}
-} // namespace lift_004BBB00
-
-// [0x004B73A0] sub_004B73A0 (109 bytes)
-namespace lift_004B73A0 {
-// Globals: begin/end pointers of a std::vector<std::string> (28-byte elements).
-extern uint8_t* mem_00AE1D18;
-extern uint8_t* mem_00AE1D1C;
-
-// @name getStringAt
-// @summary Copy-constructs element `index` of the global string vector into the hidden return buffer `out`, or an empty string if index is out of range.
-// Returns `out` (as the original did via eax).
-std::string* fn_004B73A0(std::string* out, uint32_t index) {
-    uint8_t* begin = mem_00AE1D18;
-    uint8_t* end   = mem_00AE1D1C;
-
-    if (begin != nullptr) {
-        // Element count = byte span / sizeof(std::string) as laid out by MSVC 2005 (28 bytes).
-        ptrdiff_t span  = end - begin;
-        int32_t   count = static_cast<int32_t>(span / 28);
-        if (index < static_cast<uint32_t>(count)) {
-            uint8_t* elem = begin + static_cast<size_t>(index) * 28;
-            return new (out) std::string(*reinterpret_cast<const std::string*>(elem));
-        }
-    }
-
-    return new (out) std::string();
-}
-} // namespace lift_004B73A0
 
 // [0x004BE680]
 namespace lift_004BE680 {

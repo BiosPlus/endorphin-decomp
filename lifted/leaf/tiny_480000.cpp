@@ -53,42 +53,6 @@ extern "C" int __thiscall fn_0048FB60(void* self) {
     return diff >> 3;
 }
 
-// [0x0048FB00]
-namespace lift_0048FB00 {
-extern uint32_t mem_read32(uintptr_t);
-extern uint8_t mem_read8(uintptr_t);
-
-// @name sub_0048FB00
-// @summary Reads byte at offset +0x1 from the pointer at this+0x4
-// @field unknown +0x04 uint32_t field_0x04
-uint8_t __thiscall sub_0048FB00(void* self) {
-    uint32_t ptr = mem_read32(reinterpret_cast<uintptr_t>(self) + 0x4);
-    return mem_read8(static_cast<uintptr_t>(ptr) + 0x1);
-}
-} // namespace lift_0048FB00
-
-// [0x00486AF0] sub_00486AF0 (17 bytes)
-namespace lift_00486AF0 {
-// @name sub_00486AF0
-// @summary Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).
-namespace lift_00402050 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name AnimatableTransform::vfunc_37
-// @class AnimatableTransform
-// @summary Forwards virtual call to RenderObjectOwner/Updateable subobject vtable slot +0x10
-// @field AnimatableTransform +0x0C uint32_t* renderObjectOwner_vtable
-
-uint32_t __thiscall fn_00486AF0(uint32_t self) {
-    uint32_t subobj = self + 0x19C;
-    uint32_t vtable = mem_read32(subobj);
-    uint32_t target = mem_read32(vtable + 0x1C);
-    using Fn = uint32_t(__thiscall*)(uint32_t);
-    return reinterpret_cast<Fn>(static_cast<uintptr_t>(target))(subobj);
-}
-} // namespace lift_00402050
-} // namespace lift_00486AF0
-
 // [0x0048FB10]
 namespace lift_0048FB10 {
 // @name sub_0048FB10

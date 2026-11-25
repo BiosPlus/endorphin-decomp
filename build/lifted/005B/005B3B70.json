@@ -1,0 +1,22 @@
+{
+  "va": "0x005B3B70",
+  "size": 78,
+  "orig_symbol": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, 0\u003e::vfunc_4",
+  "src_path": "src/templates/ReadMethodType.cpp",
+  "lifted_path": "lifted/templates/ReadMethodType.cpp",
+  "name": "ExprParser::ReadMethodType\u003cGeometry, std::string const \u0026, \u0026Geometry::getFileName, 0\u003e::vfunc_4",
+  "class": "ExprParser::ReadMethodType",
+  "signature": "void* __thiscall fn_005B3B70(void* self, void* out_str, void** obj_ptr)",
+  "summary": "Evaluates Geometry::getFileName on the dereferenced object's Geometry member and copy-constructs the result string, or throws on null.",
+  "fields": [
+    {
+      "class": "Object",
+      "offset": "+0xC",
+      "type": "void*",
+      "name": "geometry"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:50:24Z"
+}

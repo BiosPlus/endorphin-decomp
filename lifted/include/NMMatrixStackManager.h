@@ -11,8 +11,8 @@
 namespace lifted_layout {
 struct NMMatrixStackManager_Fields {
     // +0x8   uint32_t field_0x08 (window lower bound, unsigned compare)  (evidence: 0x0054EA30) // CONFLICT: multiple definitions at +0x8
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x0054EB50, 0x0054ECF0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x0054ECF0) // CONFLICT: multiple definitions at +0x8
     // +0xC   uint32_t field_0x0C (window end; matrix block is [end-0x40, end))  (evidence: 0x0054EA30) // CONFLICT: multiple definitions at +0xC
-    // +0xC   uint32_t                 field_0x0C  (evidence: 0x0054EB50, 0x0054ECF0) // CONFLICT: multiple definitions at +0xC
+    // +0xC   uint32_t                 field_0x0C  (evidence: 0x0054ECF0) // CONFLICT: multiple definitions at +0xC
 };
 } // namespace lifted_layout

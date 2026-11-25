@@ -904,31 +904,6 @@ void sub_00710C00() {
 }
 } // namespace lift_00710C00
 
-// [0x0071E070]
-namespace lift_0071E070 {
-// @name initHugeVector
-// @summary Initializes three 64-bit values from MSVCR80!_HUGE
-
-
-extern uint32_t mem_00925284;
-extern uint32_t mem_00B5FE48;
-extern uint32_t mem_00B5FE4C;
-extern uint32_t mem_00B5FE50;
-extern uint32_t mem_00B5FE54;
-extern uint32_t mem_00B5FE58;
-extern uint32_t mem_00B5FE5C;
-
-void sub_0071E070() {
-    uint32_t* huge_ptr = reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(mem_00925284));
-    mem_00B5FE48 = huge_ptr[0];
-    mem_00B5FE4C = huge_ptr[1];
-    mem_00B5FE50 = huge_ptr[0];
-    mem_00B5FE54 = huge_ptr[1];
-    mem_00B5FE58 = huge_ptr[0];
-    mem_00B5FE5C = huge_ptr[1];
-}
-} // namespace lift_0071E070
-
 // [0x00712BA0]
 namespace lift_00712BA0 {
 extern uint32_t mem_00925284;
@@ -1079,41 +1054,6 @@ void fn_00718330(void* self) {
     mem_00B5FCFC = src[1];
 }
 } // namespace lift_00718330
-
-// [0x00710620] sub_00710620 (74 bytes)
-namespace lift_00710620 {
-extern int mem_00925284;
-extern int mem_00B5F0A8;
-extern int mem_00B5F0AC;
-extern int mem_00B5F0B0;
-extern int mem_00B5F0B4;
-extern int mem_00B5F0B8;
-extern int mem_00B5F0BC;
-extern int mem_00B5F0C0;
-extern int mem_00B5F0C4;
-
-// @name CopyHugeValueToGlobals_00710620
-// @summary Reads the 8-byte value pointed to by mem_00925284 (_HUGE) and copies it into four consecutive 8-byte global slots.
-void fn_00710620(void* self) {
-    (void)self;
-    // mem_00925284 holds the address of the source 8-byte value (_HUGE).
-    const auto src_addr = static_cast<std::uintptr_t>(static_cast<std::uint32_t>(mem_00925284));
-    std::uint32_t src[2];
-    std::memcpy(src, reinterpret_cast<const void*>(src_addr), sizeof(src));
-
-    // Four 8-byte copies into the globals at 0xB5F0A8, 0xB5F0B0, 0xB5F0B8, 0xB5F0C0.
-    std::uint32_t* dst[4] = {
-        reinterpret_cast<std::uint32_t*>(&mem_00B5F0A8),
-        reinterpret_cast<std::uint32_t*>(&mem_00B5F0B0),
-        reinterpret_cast<std::uint32_t*>(&mem_00B5F0B8),
-        reinterpret_cast<std::uint32_t*>(&mem_00B5F0C0),
-    };
-    for (std::uint32_t* d : dst) {
-        d[0] = src[0];
-        d[1] = src[1];
-    }
-}
-} // namespace lift_00710620
 
 // [0x00710C90] sub_00710C90 (74 bytes)
 namespace lift_00710C90 {

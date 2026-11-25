@@ -257,29 +257,6 @@ extern "C" void __fastcall fn_004602F0(void* self) {
     ext_0045F600(static_cast<char*>(self) - 0x4);
 }
 
-// [0x00460450] MultiTrackView::TriggeredEventView::vfunc_1 (30 bytes)
-// @name MultiTrackView::TriggeredEventView::vfunc_1
-// @class MultiTrackView::TriggeredEventView
-// @summary MSVC scalar deleting destructor: calls sub_00460310 and frees memory when (flags & 1) is set.
-extern "C" void* __fastcall fn_00460450(void* self, int edx_unused, unsigned int flags) {
-    (void)edx_unused;
-    ext_00460310(self);
-    if ((flags & 1u) != 0) {
-        ext_006A5C5C(self);
-    }
-    return self;
-}
-
-// [0x0043CEE0] MultiTrackView::View::vfunc_81 (15 bytes)
-// @name MultiTrackView::View::vfunc_81
-// @class MultiTrackView::View
-// @summary Invalidates the view's window (InvalidateRect with a NULL rect and erase=TRUE, i.e. the whole client area is repainted).
-// @field MultiTrackView::View +0x20 HWND field_0x20
-void fn_0043CEE0(void* self) {
-    HWND hWnd = lift_field<HWND>(self, 0x20);
-    InvalidateRect(hWnd, nullptr, TRUE);
-}
-
 // [0x0043EA80] MultiTrackView::View::vfunc_82 (20 bytes)
 // @name MultiTrackView::View::vfunc_82
 // @class MultiTrackView::View
@@ -290,18 +267,6 @@ void fn_0043EA80(void* self) {
     auto* record = static_cast<std::uint32_t*>(self);
     record[0] = 0u;
     record[1] = 0u;
-}
-
-// [0x00443500] MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_12 (22 bytes)
-// @name MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_12
-// @class MultiTrackView::MultiTrackViewStates::DragSelectState
-// @summary Invalidates the owning view's window (full client area, erase background) and returns TRUE.
-// @field MultiTrackView::MultiTrackViewStates::DragSelectState +0x08 void* field_0x08
-BOOLEAN fn_00443500(void* self) {
-    void* owner = lift_field<void*>(self, 0x08);
-    HWND hwnd = lift_field<HWND>(owner, 0x20);
-    ext_InvalidateRect(hwnd, nullptr, TRUE);
-    return TRUE;
 }
 
 // [0x00442CD0] MultiTrackView::MultiTrackViewStates::ResizeLeftState::vfunc_7 (22 bytes)

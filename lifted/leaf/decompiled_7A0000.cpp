@@ -22,26 +22,6 @@ extern "C" void* __fastcall fn_007AD5C0(void* self, int edx_unused, unsigned int
 }
 #include <cstdarg>
 
-// [0x007AEF70]
-namespace lift_007AEF70 {
-// @name sub_007AEF70
-// @summary Thiscall-style thunk: passes the address of its stack argument block (esp+4) in ecx to fn_006B9D70, then returns 0 (al = 0) and pops 0x54 bytes of arguments.
-// @class none
-//
-// Notes:
-//   lea ecx, [esp+4]   ; ecx = address of first stack argument
-//   call sub_006B9D70  ; forwards to sub_006B9970
-//   xor al, al         ; return value = 0
-//   ret 0x54           ; callee cleans 0x54 bytes of stack args
-
-extern void fn_006B9D70(void);
-
-extern unsigned char fn_007AEF70(void) {
-    fn_006B9D70();
-    return 0;
-}
-} // namespace lift_007AEF70
-
 // [0x007AA8F0]
 namespace lift_007AA8F0 {
 // @name Unknown::SetIndexedDwordIfInRange
@@ -193,20 +173,6 @@ void fn_007AB720(void* self) {
 }
 } // namespace lift_007AB720
 
-// [0x007AC670] sub_007AC670 (32 bytes)
-namespace lift_007AC670 {
-// @name FreeAndClearPointerSlot
-// @summary Frees the pointer stored in *slot (if slot is non-null) via free(), then sets *slot to null.
-// @field Unknown +0x00 void* field_0x00
-void fn_007AC670(void* self) {
-    void** slot = static_cast<void**>(self);
-    if (slot != nullptr) {
-        std::free(*slot);
-        *slot = nullptr;
-    }
-}
-} // namespace lift_007AC670
-
 // [0x007AEC30]
 namespace lift_007AEC30 {
 // @name sub_007AEC30
@@ -265,18 +231,6 @@ void fn_007AF010(uint8_t* buffer, uint32_t count) {
     }
 }
 } // namespace lift_007AF010
-
-// [0x007AD590] sub_007AD590 (48 bytes)
-namespace lift_007AD590 {
-// @name UnknownClass::initVtable
-// @class UnknownClass
-// @summary Stores vtable pointer 0x009989F0 into the object's first dword (thiscall, no args, no return value).
-// @field UnknownClass +0x00 uint32_t field_0x00
-void fn_007AD590(void* self) {
-    // Single store of the vtable pointer at offset 0, then return.
-    lift_field<uint32_t>(self, 0) = 0x009989F0u;
-}
-} // namespace lift_007AD590
 
 // [0x007AF4C0] sub_007AF4C0 (50 bytes)
 namespace lift_007AF4C0 {
@@ -645,34 +599,6 @@ DWORD fn_007AEE00(void* self, const void* src, DWORD count) {
 }
 } // namespace lift_007AEE00
 
-// [0x007AE020] sub_007AE020 (77 bytes)
-namespace lift_007AE020 {
-// @name Unknown::ReleaseSlotPointers_007AE020
-// @class Unknown
-// @summary For each of 7 slots whose flag byte is nonzero and whose pointer is non-null, clears the slot and calls virtual slot 1 (arg 0) on the object; then frees both slot and flag arrays.
-// @field Unknown +0x00 void** field_0x00
-// @field Unknown +0x04 uint8_t* field_0x04
-void fn_007AE020(void* self) {
-    void** slots = lift_field<void**>(self, 0x00);
-    if (slots == nullptr) {
-        return;
-    }
-    uint8_t* flags = lift_field<uint8_t*>(self, 0x04);
-
-    for (int i = 0; i < 7; ++i) {
-        void* obj = slots[i];
-        if (flags[i] != 0 && obj != nullptr) {
-            slots[i] = nullptr;
-            void** vtbl = *reinterpret_cast<void***>(obj);
-            reinterpret_cast<void (*)(void*, int)>(vtbl[1])(obj, 0);
-        }
-    }
-
-    std::free(slots);
-    std::free(flags);
-}
-} // namespace lift_007AE020
-
 // [0x007AF8F0] sub_007AF8F0 (80 bytes)
 namespace lift_007AF8F0 {
 extern uint8_t* mem_00B61C18;   // head of singly linked node list
@@ -714,24 +640,6 @@ uint8_t* fn_007AF8F0(uint16_t key) {
     return nullptr;
 }
 } // namespace lift_007AF8F0
-
-// [0x007AE140] sub_007AE140 (80 bytes)
-namespace lift_007AE140 {
-// Default machine-name string in .data, copied when GetComputerNameA fails.
-extern const char mem_00AAC03C[];
-extern BOOL __stdcall ext_GetComputerNameA(LPSTR lpBuffer, DWORD* nSize);
-
-// @name GetComputerNameOrFallback
-// @summary Calls GetComputerNameA into buffer; on failure copies the fixed default name (including NUL) into buffer and returns false.
-bool fn_007AE140(LPSTR buffer, DWORD nSize) {
-    if (ext_GetComputerNameA(buffer, &nSize)) {
-        return true;
-    }
-    const char* src = mem_00AAC03C;
-    std::memcpy(buffer, src, std::strlen(src) + 1);
-    return false;
-}
-} // namespace lift_007AE140
 
 // [0x007AF750] sub_007AF750 (79 bytes)
 namespace lift_007AF750 {
@@ -1002,29 +910,6 @@ uint32_t sub_007AECD0(void* self, void* dst, uint32_t size) {
 }
 } // namespace lift_007AECD0
 
-// [0x007AEF10]
-namespace lift_007AEF10 {
-// @name Stream::printf
-// @class Stream
-// @summary Formats a string and writes it via vtable+0x30 if field_0x58 is non-zero
-// @field Stream +0x58 uint32_t field_0x58
-void sub_007AEF10(uint8_t* obj, const char* fmt, ...) {
-    if (*reinterpret_cast<const uint32_t*>(obj + 0x58) == 0) {
-        return;
-    }
-    char buf[0x4000];
-    va_list ap;
-    va_start(ap, fmt);
-    std::vsnprintf(buf, sizeof(buf), fmt, ap);
-    va_end(ap);
-    uint32_t len = static_cast<uint32_t>(std::strlen(buf));
-    const uint8_t* vtable = *reinterpret_cast<const uint8_t* const*>(obj);
-    using WriteFn = void (*)(uint8_t*, const char*, uint32_t);
-    auto write_fn = *reinterpret_cast<const WriteFn*>(vtable + 0x30);
-    write_fn(obj, buf, len);
-}
-} // namespace lift_007AEF10
-
 // [0x007AECF0] sub_007AECF0 (101 bytes)
 namespace lift_007AECF0 {
 // @name TextReader::ReadLine
@@ -1218,38 +1103,6 @@ extern void* __fastcall fn_007AEBA0(void* ecx) {
 }
 } // namespace lift_007AEBA0
 
-// [0x007AF500]
-namespace lift_007AF500 {
-// @name getPixelFormatType
-// @summary Maps bit depth at +0x40 and channel count at +0x42 to a format enum value.
-// @field Unknown +0x40 uint16_t field_0x40
-// @field Unknown +0x42 uint16_t field_0x42
-
-
-uint16_t mem_read16(uint32_t addr);
-
-uint32_t sub_007AF500(uint32_t arg0) {
-    uint32_t byteDepth = (static_cast<uint32_t>(mem_read16(arg0 + 0x40)) + 7u) >> 3;
-    uint32_t kind = static_cast<uint32_t>(mem_read16(arg0 + 0x42));
-    switch (kind - 1u) {
-    case 0:
-        if (static_cast<int32_t>(byteDepth) <= 1) {
-            return 1;
-        }
-        return (static_cast<int32_t>(byteDepth) > 2) ? 4u : 3u;
-    case 2:
-        if (static_cast<int32_t>(byteDepth) <= 1) {
-            return 6;
-        }
-        return (static_cast<int32_t>(byteDepth) > 2) ? 9u : 8u;
-    case 3:
-        return (byteDepth != 4u) ? 12u : 11u;
-    default:
-        return 7;
-    }
-}
-} // namespace lift_007AF500
-
 // [0x007AF5E0]
 namespace lift_007AF5E0 {
 // @name LookupEntryByKeyWithFallback
@@ -1266,21 +1119,3 @@ uint32_t fn_007AF5E0(uint32_t a1, uint32_t a2) {
     return result;
 }
 } // namespace lift_007AF5E0
-
-// [0x007AEBE0]
-namespace lift_007AEBE0 {
-// @name sub_007AEBE0
-// @summary Destructor: sets vtable 0x00998a30, clears fields via sub_007AEC60, and runs base destructor sub_00783270.
-// @field Unknown +0x00 uint32_t vtable
-
-
-extern void mem_write32(void* addr, uint32_t val);
-extern void ext_007AEC60(uint8_t* self);
-extern void ext_00783270(void* self);
-
-void fn_007AEBE0(uint8_t* self) {
-    mem_write32(self, 0x00998a30u);
-    ext_007AEC60(self);
-    ext_00783270(self);
-}
-} // namespace lift_007AEBE0

@@ -110,28 +110,6 @@ void* __thiscall fn_0063E0C0(void* self, uint32_t arg0, const void* name) {
 }
 } // namespace lift_0063E0C0
 
-// [0x00630510] sub_00630510 (40 bytes)
-namespace lift_00630510 {
-// @name Unknown::copyVec3ToFieldsAndSetFlag
-// @class Unknown
-// @summary Copies three floats from the source pointer into self+0xB4..0xBC and sets the byte flag at self+0xF6 to 1.
-// @field Unknown +0xB4 float field_0xB4
-// @field Unknown +0xB8 float field_0xB8
-// @field Unknown +0xBC float field_0xBC
-// @field Unknown +0xF6 uint8_t field_0xF6
-void fn_00630510(void* self, const float* src) {
-    auto* base = static_cast<uint8_t*>(self);
-    float x, y, z;
-    std::memcpy(&x, src + 0, sizeof(float));
-    std::memcpy(&y, src + 1, sizeof(float));
-    std::memcpy(&z, src + 2, sizeof(float));
-    std::memcpy(base + 0xB4, &x, sizeof(float));
-    std::memcpy(base + 0xB8, &y, sizeof(float));
-    std::memcpy(base + 0xBC, &z, sizeof(float));
-    base[0xF6] = 1;
-}
-} // namespace lift_00630510
-
 // [0x0063DAB0] sub_0063DAB0 (29 bytes)
 namespace lift_0063DAB0 {
 // Known callee 0x0062CD30: sub_0062CD30_ctor (Initializes object vtable to 0x009791a4 and zeroes two 3-dword blocks at +0x08 and +0x2c.)
@@ -185,21 +163,6 @@ void* fn_0063D950(void* self) {
 }
 } // namespace lift_0063D950
 
-// [0x00630540] sub_00630540 (25 bytes)
-namespace lift_00630540 {
-// Known callee 0x00693F40: sub_00693F40 (148 bytes, thiscall-style: ecx = receiver, one stack argument)
-extern void ext_00693F40(void* self, void* arg);
-
-// @name initSubobjectPairAndGetFirst
-// @summary Passes this+0x15c as the receiver and this+0x90 as the argument to sub_00693F40, then returns this+0x15c.
-void* fn_00630540(void* self) {
-    uint8_t* const first = reinterpret_cast<uint8_t*>(self) + 0x15c;
-    uint8_t* const second = reinterpret_cast<uint8_t*>(self) + 0x90;
-    ext_00693F40(first, second);
-    return first;
-}
-} // namespace lift_00630540
-
 // [0x0063D970] sub_0063D970 (29 bytes)
 namespace lift_0063D970 {
 // Known callee 0x0062CD30: sub_0062CD30_ctor (Initializes object vtable to 0x009791a4 and zeroes two 3-dword blocks at +0x08 and +0x2c.)
@@ -251,29 +214,6 @@ void* fn_0063DDF0(void* self) {
 }
 } // namespace lift_0063DDF0
 
-// [0x0063DE10] sub_0063DE10 (29 bytes)
-namespace lift_0063DE10 {
-// Known callee 0x0062CD30: sub_0062CD30_ctor (Initializes object vtable to 0x009791a4 and zeroes two 3-dword blocks at +0x08 and +0x2c.)
-extern uint32_t ext_0062CD30(uint32_t this_ptr);
-
-// @name Unknown::initVtableAndZeroFloats
-// @class Unknown
-// @summary Runs the base constructor ext_0062CD30, installs vtable 0x00979444, zeroes the floats at +0x38/+0x3c/+0x40, and returns this.
-// @field Unknown +0x00 void* vptr
-// @field Unknown +0x38 float field_0x38
-// @field Unknown +0x3c float field_0x3c
-// @field Unknown +0x40 float field_0x40
-void* __thiscall fn_0063DE10(void* self) {
-    ext_0062CD30(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self))); // call 0x62CD30; this in ecx
-
-    lift_field<uint32_t>(self, 0x00) = 0x00979444u;   // mov [esi], 0x979444
-    lift_field<float>(self, 0x40) = 0.0f;             // fst [esi+0x40] (fldz)
-    lift_field<float>(self, 0x3C) = 0.0f;             // fst [esi+0x3c]
-    lift_field<float>(self, 0x38) = 0.0f;             // fstp [esi+0x38] (pops the zero)
-    return self;                                      // mov eax, esi
-}
-} // namespace lift_0063DE10
-
 // [0x0063DB50]
 namespace lift_0063DB50 {
 // @name Unknown::initFloatsAndVtable
@@ -300,31 +240,6 @@ uint32_t sub_0063DB50(uint32_t this_ptr) {
     return this_ptr;
 }
 } // namespace lift_0063DB50
-
-// [0x0063EA80] sub_0063EA80 (69 bytes)
-namespace lift_0063EA80 {
-// Known callee 0x0063E970: sub_0063E970 (Stores address of mem_0097CC34 into field at offset +0x0.)
-extern void __fastcall ext_0063E970(void* self);
-// Imported string destructor slot at 0x00924FF4 (MSVCP80 basic_string::~basic_string).
-extern uint32_t mem_00924FF4;
-
-// @name Unknown::destroyStringAndStampVtable
-// @class Unknown
-// @summary Destroys the std::string at offset +0x04, then stores the vtable pointer at +0x00 via ext_0063E970.
-// @field Unknown +0x00 void* field_0x00
-// @field Unknown +0x04 std::string field_0x04
-void __fastcall fn_0063EA80(void* self) {
-    using StringDtorFn = void(__fastcall*)(void* this_ptr);
-    uint8_t* base = static_cast<uint8_t*>(self);
-
-    // Destroy the embedded std::string at self+0x04 (original: ecx = self+4; call [mem_00924FF4]).
-    StringDtorFn string_dtor = reinterpret_cast<StringDtorFn>(static_cast<uintptr_t>(mem_00924FF4));
-    string_dtor(base + 0x04);
-
-    // Stamp the vtable/field at +0x00 (original: ecx = self; call sub_0063E970).
-    ext_0063E970(self);
-}
-} // namespace lift_0063EA80
 
 // [0x0063E9E0] sub_0063E9E0 (77 bytes)
 namespace lift_0063E9E0 {
@@ -363,29 +278,6 @@ uint32_t __thiscall sub_0063FFF0(uint32_t this_ptr, uint32_t other_ptr) {
     return this_ptr;
 }
 } // namespace lift_0063FFF0
-
-// [0x0063E980] sub_0063E980 (82 bytes)
-namespace lift_0063E980 {
-// @name ConstructFromString
-// @summary Initializes an object's vtable pointer to 0x0097CC3C and copy-constructs a std::string member at +0x04 from the argument.
-// @field Object +0x00 uint32_t vtable
-// @field Object +0x04 std::string name
-
-namespace {
-constexpr uint32_t kVtable_0097CC3C = 0x0097CC3C;
-}
-
-void fn_0063E980(void* self, const std::string& src) {
-    // The original calls the base initializer sub_0063E960, which only stores
-    // 0x0097CC34 at +0x00; that value is immediately overwritten with
-    // 0x0097CC3C below, so the base call has no observable effect here.
-    std::memcpy(self, &kVtable_0097CC3C, sizeof(uint32_t));
-
-    // Copy-construct the std::string member at +0x04 in place.
-    ::new (static_cast<void*>(static_cast<unsigned char*>(self) + 0x04))
-        std::string(src);
-}
-} // namespace lift_0063E980
 
 // [0x0063F350] sub_0063F350 (85 bytes)
 namespace lift_0063F350 {
@@ -813,46 +705,6 @@ void* fn_00632CC0() {
 } // namespace lift_004CAE30
 } // namespace lift_00632CC0
 
-// [0x0063CC00] sub_0063CC00 (87 bytes)
-namespace lift_0063CC00 {
-// @name sub_0063CC00
-// @summary Auto-lifted identical-shape clone of 0x004CAE30 (initStaticObjectOnce_004CAE30).
-namespace lift_004CAE30 {
-// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall: ECX = self, one stack arg; calls ext_00672000 on self, then stores the arg into self[0]; returns it.)
-extern DWORD __thiscall ext_0067A670(void* self, DWORD value);
-
-// TEB exception-list head (fs:[0]); modeled as a global because the header has no TEB accessor.
-extern DWORD mem_fs_0;
-// Guard word: bit 0 marks that the static object below has been initialized.
-extern DWORD mem_00B53180;
-// Static object (global) whose address is returned; its first DWORD is set to a vtable-like pointer.
-extern DWORD mem_00B5317C;
-
-// @name initStaticObjectOnce_004CAE30
-// @summary One-time initializer for the static object at mem_00AE44A8: under a local SEH frame, runs the helper on first call, marks the guard bit, sets the object's first DWORD to 0x946754, and returns its address.
-// @field Unknown +0x00 DWORD field_0x00
-void* fn_0063CC00() {
-    // Local SEH registration record: [0] = previous frame, [1] = handler, [2] = trylevel.
-    DWORD frame[3];
-    frame[0] = mem_fs_0;
-    frame[1] = 0x8AE8FEu;
-    frame[2] = 0xFFFFFFFFu;
-    mem_fs_0 = static_cast<DWORD>(reinterpret_cast<uintptr_t>(frame));
-
-    if ((mem_00B53180 & 1u) == 0) {
-        mem_00B53180 |= 1u;
-        frame[2] = 0;
-        // The callee's stack argument is the value at the top of the frame (the saved previous frame).
-        ext_0067A670(&mem_00B5317C, frame[0]);
-        mem_00B5317C = 0x97C844u;
-    }
-
-    mem_fs_0 = frame[0];
-    return &mem_00B5317C;
-}
-} // namespace lift_004CAE30
-} // namespace lift_0063CC00
-
 // [0x0063D8F0]
 namespace lift_0063D8F0 {
 extern float mem_009518E0;
@@ -924,23 +776,6 @@ void __thiscall sub_0063D8F0(void* self) {
 }
 } // namespace lift_0063D8F0
 
-// [0x0063E610] sub_0063E610 (94 bytes)
-namespace lift_0063E610 {
-// Known callee 0x0063E0C0: Unknown::Unknown(uint32_t, const std::string&) (string-copy ctor stub) (Stamps vtable 0x0097CB4C at +0x00, copy-constructs a std::string from the second argument into this+0x04, stores the first argument at +0x20, and returns this.)
-extern void* ext_0063E0C0(void* self, uint32_t arg0, const void* name);
-
-// @name Unknown::Unknown
-// @class Unknown
-// @summary Derived ctor: runs base ctor (arg0, name), sets derived vtable 0x0097CBEC, copy-constructs std::string at +0x24 from extra.
-// @field Unknown +0x00 void* vtable
-// @field Unknown +0x24 std::string field_0x24
-void fn_0063E610(void* self, uint32_t arg0, const void* name, const void* extra) {
-    ext_0063E0C0(self, arg0, name);
-    lift_field<void*>(self, 0x00) = reinterpret_cast<void*>(static_cast<uintptr_t>(0x0097CBECu));
-    new (&lift_field<std::string>(self, 0x24)) std::string(*static_cast<const std::string*>(extra));
-}
-} // namespace lift_0063E610
-
 // [0x00630420] sub_00630420 (95 bytes)
 namespace lift_00630420 {
 // @name scaleVec3At0x144ByReciprocalOfQuery
@@ -1001,24 +836,6 @@ void* __thiscall fn_0063E5B0(void* self, const void* arg0, const void* arg1) {
     return self;
 }
 } // namespace lift_0063E5B0
-
-// [0x0063E050] sub_0063E050 (102 bytes)
-namespace lift_0063E050 {
-// @name CharRangeView::copyTrimmedTail
-// @class CharRangeView
-// @summary Assigns to out the bytes from this view's begin pointer up to the owner's end pointer, minus skip bytes.
-// @field CharRangeView +0x00 void* owner
-// @field CharRangeView +0x04 const char* begin
-// @field TextBuffer +0x08 const char* end
-void fn_0063E050(void* self, std::string& out, int skip) {
-    const char* begin = lift_field<const char*>(self, 4);
-    void* owner = lift_field<void*>(self, 0);
-    const char* end = lift_field<const char*>(owner, 8);
-
-    const auto count = static_cast<uint32_t>(end - begin) - static_cast<uint32_t>(skip);
-    out = std::string(begin, count);
-}
-} // namespace lift_0063E050
 
 // [0x0063D990] sub_0063D990 (101 bytes)
 namespace lift_0063D990 {

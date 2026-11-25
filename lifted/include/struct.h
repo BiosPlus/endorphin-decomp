@@ -8,28 +8,26 @@
 // Recovered field layout for struct:
 namespace lifted_layout {
 struct struct_Fields {
-    // +0x0   uint32_t                 field_0x00  (evidence: 0x00696DB0, 0x0069B680, 0x007C89F0, 0x007D6290)
+    // +0x0   uint32_t                 field_0x00  (evidence: 0x00696DB0, 0x0069B680)
     // +0x4   uint32_t                 field_0x04  (evidence: 0x00696DB0, 0x0069B680)
     // +0x8   uint32_t                 field_0x08  (evidence: 0x00696DB0, 0x0069B680)
     // +0xC   uint32_t                 field_0x0C  (evidence: 0x00696DB0, 0x0069B680) // CONFLICT: multiple definitions at +0xC
     // +0xC   uint32_t                 field_0xc  (evidence: 0x007C8490, 0x007CAF70, 0x007CCC00) // CONFLICT: multiple definitions at +0xC
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x00696DB0, 0x0069B680, 0x007C2E50, 0x007C6FA0, 0x007D6290)
-    // +0x14  uint32_t                 field_0x14  (evidence: 0x007D6290)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x00696DB0, 0x0069B680, 0x007C2E50, 0x007C6FA0)
     // +0x1C  float                    field_0x1c  (evidence: 0x007C8490, 0x007CAF70, 0x007CCC00) // CONFLICT: multiple definitions at +0x1C
-    // +0x1C  uint32_t                 field_0x1c  (evidence: 0x007C8490, 0x007C9E80, 0x007CAF70, 0x007D6290) // CONFLICT: multiple definitions at +0x1C
-    // +0x28  uint32_t                 field_0x28  (evidence: 0x007C89F0)
-    // +0x40  uint16_t                 field_0x40  (evidence: 0x007B89BC, 0x007BD310, 0x007BD640)
-    // +0x42  uint16_t                 field_0x42  (evidence: 0x007B89BC, 0x007BD310, 0x007BD640)
-    // +0x46  uint16_t                 field_0x46  (evidence: 0x007B89BC, 0x007BD310, 0x007BD640)
-    // +0x4E  uint16_t                 field_0x4e  (evidence: 0x007B89BC, 0x007BD310, 0x007BD640)
+    // +0x1C  uint32_t                 field_0x1c  (evidence: 0x007C8490, 0x007C9E80, 0x007CAF70) // CONFLICT: multiple definitions at +0x1C
+    // +0x40  uint16_t                 field_0x40  (evidence: 0x007BD640)
+    // +0x42  uint16_t                 field_0x42  (evidence: 0x007BD640)
+    // +0x46  uint16_t                 field_0x46  (evidence: 0x007BD640)
+    // +0x4E  uint16_t                 field_0x4e  (evidence: 0x007BD640)
     // +0x50  uint32_t                 field_0x50  (evidence: 0x007C8490, 0x007C9E80, 0x007CAF70)
     // +0x54  float                    field_0x54  (evidence: 0x007C8490, 0x007C9E80, 0x007CAF70)
     // +0x58  float                    field_0x58  (evidence: 0x007C8490, 0x007C9E80, 0x007CAF70)
-    // +0x70  uint32_t*                field_0x70  (evidence: 0x007C8490, 0x007CAF70, 0x007CDBC0)
-    // +0x74  uint32_t                 field_0x74  (evidence: 0x007C8490, 0x007CAF70, 0x007CDBC0)
-    // +0x7C  uint32_t*                field_0x7c  (evidence: 0x007C8490, 0x007CAF70, 0x007CDBC0)
-    // +0x80  uint32_t                 field_0x80  (evidence: 0x007C8490, 0x007CAF70, 0x007CDBC0)
-    // +0x88  uint32_t*                field_0x88  (evidence: 0x007C8490, 0x007CAF70, 0x007CDBC0)
-    // +0x8C  uint32_t                 field_0x8c  (evidence: 0x007C8490, 0x007CAF70, 0x007CDBC0)
+    // +0x70  uint32_t*                field_0x70  (evidence: 0x007C8490, 0x007CAF70)
+    // +0x74  uint32_t                 field_0x74  (evidence: 0x007C8490, 0x007CAF70)
+    // +0x7C  uint32_t*                field_0x7c  (evidence: 0x007C8490, 0x007CAF70)
+    // +0x80  uint32_t                 field_0x80  (evidence: 0x007C8490, 0x007CAF70)
+    // +0x88  uint32_t*                field_0x88  (evidence: 0x007C8490, 0x007CAF70)
+    // +0x8C  uint32_t                 field_0x8c  (evidence: 0x007C8490, 0x007CAF70)
 };
 } // namespace lifted_layout

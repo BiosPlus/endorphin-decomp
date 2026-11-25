@@ -10,10 +10,8 @@
 // Recovered field layout for Commands::ChangePropertyCommand:
 namespace lifted_layout {
 struct Commands_ChangePropertyCommand_Fields {
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x006A0460, 0x006A04E0)
-    // +0x14  uint32_t                 field_0x14  (evidence: 0x006A04E0) // CONFLICT: multiple definitions at +0x14
-    // +0x14  void*                    field_0x14  (evidence: 0x006A0460) // CONFLICT: multiple definitions at +0x14
-    // +0x18  uint32_t                 field_0x18  (evidence: 0x006A04E0)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x006A0460)
+    // +0x14  void*                    field_0x14  (evidence: 0x006A0460)
     // +0x20  uint32_t                 field_0x20  (evidence: 0x006A0460)
 };
 } // namespace lifted_layout

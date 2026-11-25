@@ -58,26 +58,6 @@ float fn_004F4ED0(void* self) {
 }
 } // namespace lift_004F4ED0
 
-// [0x004FDE90] sub_004FDE90 (83 bytes)
-namespace lift_004FDE90 {
-// Known callee 0x00665810: sub_00665810 (Stores address of mem_00987A04 into field at offset +0x0.)
-extern void __fastcall ext_00665810(void* self);
-
-// @name Unknown::releaseChildAndResetBase_004FDE90
-// @class Unknown
-// @summary Releases the object at +0x18 via its virtual slot 0 (deleting dtor, flag 1), then calls the base-reset helper on self.
-// @field Unknown +0x18 void* field_0x18
-void fn_004FDE90(void* self) {
-    void* child = lift_field<void*>(self, 0x18);
-    if (child != nullptr) {
-        void** vtbl = *reinterpret_cast<void***>(child);
-        using ScalarDtorFn = void (*)(void* thisPtr, int flags);
-        reinterpret_cast<ScalarDtorFn>(vtbl[0])(child, 1);
-    }
-    ext_00665810(self);
-}
-} // namespace lift_004FDE90
-
 // [0x004FDEF0]
 namespace lift_004FDEF0 {
 // @name sub_004FDEF0_dtor
@@ -689,80 +669,6 @@ void* fn_004FDCA0() {
     return static_cast<void*>(mem_00AEB22C);
 }
 } // namespace lift_004FDCA0
-
-// [0x004F0FB0] sub_004F0FB0 (95 bytes)
-namespace lift_004F0FB0 {
-// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764,
-// used here as a cdecl one-argument release call on a heap block).
-extern void fn_006A5C5C(void* p);
-// Indirect callee: MSVCP80 std::basic_string<char> destructor, reached through the
-// IAT slot at mem_00924FF4 (whose value is 0x00628FF0).
-extern int mem_00924FF4;
-extern void ext_00628FF0(void* self);
-
-// @name ListNode::DestroyChain
-// @class ListNode
-// @summary Recursively tears down a sibling-linked list of nodes: each node's child (+0x08) is
-//          destroyed first, its optional block at +0x2c is released, its string at +0x0c is
-//          destroyed, and the node itself is freed. Iteration stops at a node whose +0x39 flag is set.
-// @field ListNode +0x00 ListNode* next
-// @field ListNode +0x08 ListNode* child
-// @field ListNode +0x0c std::string text
-// @field ListNode +0x20 uint32_t field_0x20
-// @field ListNode +0x24 uint32_t field_0x24
-// @field ListNode +0x28 uint32_t field_0x28
-// @field ListNode +0x2c void* extra
-// @field ListNode +0x39 uint8_t stopFlag
-
-static inline uint8_t* as_bytes(uint32_t va) {
-    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(va));
-}
-
-static inline uint8_t* as_bytes(void* p) {
-    return static_cast<uint8_t*>(p);
-}
-
-static inline uint32_t& u32_at(void* base, size_t off) {
-    return *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(base) + off);
-}
-
-void fn_004F0FB0(void* self, void* node) {
-    uint8_t* ebp = as_bytes(node);
-    if (ebp[0x39] != 0) {
-        return;
-    }
-
-    uint8_t* esi = ebp;
-    for (;;) {
-        // Destroy child chain first.
-        fn_004F0FB0(self, as_bytes(u32_at(esi, 0x08)));
-
-        uint32_t extra = u32_at(ebp, 0x2c);
-        uint32_t next = u32_at(esi, 0x00);
-        uint8_t* edi = ebp + 0x0c;
-
-        if (extra != 0) {
-            fn_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(extra)));
-        }
-
-        u32_at(edi, 0x20) = 0;
-        u32_at(edi, 0x24) = 0;
-        u32_at(edi, 0x28) = 0;
-
-        // Destroy the std::string at +0x0c.
-        ext_00628FF0(edi);
-
-        // Release the node itself.
-        fn_006A5C5C(ebp);
-
-        esi = as_bytes(next);
-        ebp = esi;
-        if (ebp[0x39] != 0) {
-            return;
-        }
-    }
-}
-} // namespace lift_004F0FB0
 
 // [0x004FDD00] sub_004FDD00 (95 bytes)
 namespace lift_004FDD00 {

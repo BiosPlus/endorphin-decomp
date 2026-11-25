@@ -10,25 +10,18 @@ namespace lifted_layout {
 struct Class_Fields {
     // +0x0   void*                    field_0x0  (evidence: 0x00661710) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    field_0x00  (evidence: 0x006618F0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 vptr  (evidence: 0x006991A0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 vtable  (evidence: 0x0060B990, 0x00626E80, 0x00783270) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 vtable  (evidence: 0x0060B990, 0x00626E80) // CONFLICT: multiple definitions at +0x0
     // +0x4   std::string              field_0x04  (evidence: 0x0060B990) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint32_t                 field_0x04  (evidence: 0x00783270) // CONFLICT: multiple definitions at +0x4
     // +0x4   uint32_t                 field_0x4  (evidence: 0x00661710) // CONFLICT: multiple definitions at +0x4
-    // +0x8   uint32_t                 field_0x08  (evidence: 0x00441020, 0x00447500, 0x0044B6A0, 0x006991A0) // CONFLICT: multiple definitions at +0x8
-    // +0x8   void*                    field_0x08  (evidence: 0x0050E350, 0x0050EA10) // CONFLICT: multiple definitions at +0x8
-    // +0xC   uint32_t                 field_0x0c  (evidence: 0x0071C750) // CONFLICT: multiple definitions at +0xC
-    // +0xC   uint8_t                  field_0x0c  (evidence: 0x00783270) // CONFLICT: multiple definitions at +0xC
-    // +0xC   uint32_t                 field_0xc  (evidence: 0x0071C5A0) // CONFLICT: multiple definitions at +0xC
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x004584B0, 0x00458DF0, 0x0045BBE0) // CONFLICT: multiple definitions at +0x10
-    // +0x10  uint8_t                  field_0x10  (evidence: 0x00688B50, 0x00689570, 0x0068BDC0, 0x0068BDF0) // CONFLICT: multiple definitions at +0x10
-    // +0x10  void*                    field_0x10  (evidence: 0x00480130, 0x004890D0, 0x0078D550) // CONFLICT: multiple definitions at +0x10
-    // +0x14  void*                    field_0x14  (evidence: 0x00401960, 0x00401970)
+    // +0x8   uint32_t                 field_0x08  (evidence: 0x00441020, 0x0044B6A0) // CONFLICT: multiple definitions at +0x8
+    // +0x8   void*                    field_0x08  (evidence: 0x0050E350) // CONFLICT: multiple definitions at +0x8
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x00458DF0) // CONFLICT: multiple definitions at +0x10
+    // +0x10  uint8_t                  field_0x10  (evidence: 0x00689570, 0x0068BDC0, 0x0068BDF0) // CONFLICT: multiple definitions at +0x10
+    // +0x10  void*                    field_0x10  (evidence: 0x00480130, 0x0078D550) // CONFLICT: multiple definitions at +0x10
+    // +0x14  void*                    field_0x14  (evidence: 0x00401960)
     // +0x20  std::string              field_0x20  (evidence: 0x0060B990) // CONFLICT: multiple definitions at +0x20
     // +0x20  uint32_t                 field_0x20  (evidence: 0x0043CE40) // CONFLICT: multiple definitions at +0x20
-    // +0x28  uint32_t*                field_0x28  (evidence: 0x006406D0) // CONFLICT: multiple definitions at +0x28
-    // +0x28  void                     field_0x28  (evidence: 0x006E8470) // CONFLICT: multiple definitions at +0x28
-    // +0x2C  uint32_t*                field_0x2C  (evidence: 0x006406D0)
+    // +0x28  void                     field_0x28  (evidence: 0x006E8470)
     // +0x3C  uint32_t                 field_0x3c  (evidence: 0x0060B990)
     // +0x40  uint32_t                 field_0x40  (evidence: 0x0060B990)
     // +0x44  uint8_t                  field_0x44  (evidence: 0x00626E80)
@@ -37,10 +30,7 @@ struct Class_Fields {
     // +0x78  void                     field_0x78  (evidence: 0x006E8470)
     // +0x90  void                     field_0x90  (evidence: 0x006E8470)
     // +0xA4  uint32_t*                field_0xa4  (evidence: 0x00647E80, 0x00648A20)
-    // +0xE8  void*                    field_0xe8  (evidence: 0x0040B640)
-    // +0xF4  uint32_t                 field_0xf4  (evidence: 0x007101E0)
     // +0xF8  int32_t                  field_0xf8  (evidence: 0x0043CE40)
-    // +0x240 void*                    field_0x240  (evidence: 0x00480130, 0x004890D0)
-    // +0x298 void*                    field_0x298  (evidence: 0x0040B640)
+    // +0x240 void*                    field_0x240  (evidence: 0x00480130)
 };
 } // namespace lifted_layout

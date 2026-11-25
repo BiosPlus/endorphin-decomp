@@ -66,16 +66,6 @@ extern "C" bool __thiscall fn_004BFC20(void* self, const void* unused) {
 }
 #include <new>
 
-// [0x004C1A80] NMData::AnimationEventData::vfunc_23 (28 bytes)
-// @name NMData::AnimationEventData::vfunc_23
-// @class NMData::AnimationEventData
-// @summary Assigns the std::string argument into the member at +0x14, then calls ext_004C0340(this).
-// @field NMData::AnimationEventData +0x14 std::string field_0x14
-extern "C" void __thiscall fn_004C1A80(void* self, const std::string* src) {
-    lift_field<std::string>(self, 0x14) = *src;
-    ext_004C0340(self);
-}
-
 // [0x004DDED0] NMData::AnimationEventData::vfunc_59 (34 bytes)
 // @name NMData::AnimationEventData::vfunc_59
 // @class NMData::AnimationEventData
@@ -87,31 +77,6 @@ extern "C" void __thiscall fn_004DDED0(void* self, void* a) {
     void* r = ext_006404E0(a, g);
     void** vt = *reinterpret_cast<void***>(self);
     reinterpret_cast<VFn>(vt[22])(self, r);
-}
-
-// [0x00486BE0] NMData::AnimationEventData::vfunc_81 (37 bytes)
-// @name NMData::AnimationEventData::vfunc_81
-// @class NMData::AnimationEventData
-// @summary Sets field +0x168 to ext_00594640(ext_00594000()), then calls ext_004C0340(this); the stack argument is unused.
-// @field NMData::AnimationEventData +0x168 int32_t field_0x168
-extern "C" void __thiscall fn_00486BE0(void* self, int32_t arg) {
-    // The original pushes its stack argument before calling ext_00594000, which takes no
-    // arguments; the caller's argument is cleaned up by the ret 4 and never read here.
-    (void)arg;
-    int32_t r = ext_00594000();
-    lift_field<int32_t>(self, 0x168) = ext_00594640(reinterpret_cast<void*>(static_cast<intptr_t>(r)));
-    ext_004C0340(self);
-}
-
-// [0x004BF800] NMData::AnimationEventData::vfunc_3 (40 bytes)
-// @name NMData::AnimationEventData::vfunc_3
-// @class NMData::AnimationEventData
-// @summary Returns "Events." concatenated with the string stored at +0x14.
-// @field NMData::AnimationEventData +0x14 std::string field_0x14
-std::string fn_004BF800(const void* self) {
-    const auto* name = reinterpret_cast<const std::string*>(
-        static_cast<const unsigned char*>(self) + 0x14);
-    return std::string("Events.") + *name;
 }
 
 // [0x004DE0F0] NMData::AnimationEventData::vfunc_69 (51 bytes)
@@ -144,39 +109,6 @@ uint32_t fn_004DE0F0(void* self, int32_t x) {
     return ext_0047C480(reinterpret_cast<void*>(static_cast<intptr_t>(mem_00AE29D0)), v);
 }
 } // namespace lift_004DE0F0
-
-// [0x004E2760]
-namespace lift_004E2760 {
-extern uint8_t mem_read8(const void* base, uint32_t offset);
-extern uint32_t mem_read32(const void* base, uint32_t offset);
-extern void mem_write32(void* base, uint32_t offset, uint32_t value);
-extern void __thiscall ext_004E1F50(uint32_t self);
-
-// @name NMData::AnimationEventData::vfunc_85
-// @class NMData::AnimationEventData
-// @summary Updates cached frame/time at +0x9CC and triggers ext_004E1F50 on field_0xB74 when matching +0x160
-// @field NMData::AnimationEventData +0x160 uint32_t field_0x160
-// @field NMData::AnimationEventData +0x17C uint8_t field_0x17c
-// @field NMData::AnimationEventData +0x9CC uint32_t field_0x9cc
-// @field NMData::AnimationEventData +0xB74 uint32_t field_0xb74
-void __thiscall fn_004E2760(void* self, uint32_t arg1) {
-    uint32_t target = mem_read32(self, 0xB74);
-    if (target == 0) {
-        return;
-    }
-    if (mem_read8(self, 0x17C) == 0) {
-        return;
-    }
-    if (mem_read32(self, 0x9CC) == arg1) {
-        return;
-    }
-    bool matches = (arg1 == mem_read32(self, 0x160));
-    mem_write32(self, 0x9CC, arg1);
-    if (matches) {
-        ext_004E1F50(target);
-    }
-}
-} // namespace lift_004E2760
 
 // [0x004E2700]
 namespace lift_004E2700 {
@@ -218,58 +150,3 @@ void __thiscall fn_004E2700(uint8_t* self) {
     *reinterpret_cast<uint32_t*>(self + 0x9C0) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(vec));
 }
 } // namespace lift_004E2700
-
-// [0x004C28F0]
-namespace lift_004C28F0 {
-// @name NMData::AnimationEventData::vfunc_92
-// @class NMData::AnimationEventData
-// @summary Copies the input string, passes it to sub_004C2790, then invokes vtable+0x5C with it.
-// @field NMData::AnimationEventData +0x00 void** vptr
-
-extern void __thiscall ext_004C2790(void* self, void* str);
-
-void __thiscall fn_004C28F0(void* self, const std::string& arg0) {
-    std::string local_str(arg0);
-    ext_004C2790(self, &local_str);
-
-    void** vtable = *reinterpret_cast<void***>(self);
-    using vfunc_t = void(__thiscall*)(void*, void*);
-    auto vfunc_5c = reinterpret_cast<vfunc_t>(vtable[0x5C / 4]);
-    vfunc_5c(self, &local_str);
-}
-} // namespace lift_004C28F0
-
-// [0x0048AF30] NMData::AnimationEventData::vfunc_1_off_154 (112 bytes)
-namespace lift_0048AF30 {
-// @name NMData::AnimationEventData::vfunc_1_off_154
-// @class NMData::AnimationEventData
-// @summary Auto-lifted identical-shape clone of 0x004C8440 (NMData::BehaviourData::vfunc_1_off_154).
-namespace lift_004C8440 {
-extern void __thiscall ext_004026E0(void* self);
-extern void __thiscall ext_004C28C0(void* self, void* arg);
-
-// @name NMData::BehaviourData::vfunc_1_off_154
-// @class NMData::BehaviourData
-// @summary Thunk at +0x154 (HasDependentSelection) that queries arg0->vfunc_0x34 into a local buffer, passes it to ext_004C28C0 on BehaviourData, and destroys the buffer
-void __thiscall fn_0048AF30(void* self, void* arg0) {
-    struct LocalBuf {
-        uint32_t f0;
-        uint32_t f4;
-        uint32_t f8;
-        uint32_t fC;
-    } local_buf;
-    local_buf.f4 = 0;
-    local_buf.f8 = 0;
-    local_buf.fC = 0;
-
-    using VFunc34 = void(__thiscall*)(void*, void*);
-    void** vtbl = *reinterpret_cast<void***>(arg0);
-    reinterpret_cast<VFunc34>(vtbl[0x38 / 4])(arg0, &local_buf);
-
-    void* behaviour_data = reinterpret_cast<uint8_t*>(self) - 0x154;
-    ext_004C28C0(behaviour_data, &local_buf);
-
-    ext_004026E0(&local_buf);
-}
-} // namespace lift_004C8440
-} // namespace lift_0048AF30

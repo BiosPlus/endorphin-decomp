@@ -597,15 +597,6 @@ void* fn_0044CD70(void* self) {
     return &mem_00935578;
 }
 
-// [0x0044CFB0]
-// @name RigEditorAddRenameDialog::vfunc_0
-// @class RigEditorAddRenameDialog
-// @summary Returns the address of the constant mem_00935594 (value 0x00935550).
-extern "C" const void* __fastcall fn_0044CFB0(void* self) {
-    (void)self;
-    return reinterpret_cast<const void*>(static_cast<uintptr_t>(0x00935550u));
-}
-
 // [0x00454B60] ConsoleWnd::vfunc_107 (6 bytes)
 // @name ConsoleWnd::vfunc_107
 // @class ConsoleWnd
@@ -869,23 +860,6 @@ bool __thiscall fn_00584690(void* self) {
     SlotFn slot = reinterpret_cast<SlotFn>(vtable[57]);
     uint8_t al = static_cast<uint8_t>(slot(self));
     return (al & 1) == 1;
-}
-
-// [0x00582BA0] Acclaim2MotionIO::vfunc_57 (20 bytes)
-// @name Acclaim2MotionIO::vfunc_57
-// @class Acclaim2MotionIO
-// @summary Returns 2 if the std::string member at +0x568 is empty, otherwise 3.
-// @field Acclaim2MotionIO +0x568 std::string field_0x568
-// @field Acclaim2MotionIO +0x578 size_t field_0x578
-//
-// Original: ecx = this+0x568; call std::string::empty (MSVCP80, __thiscall);
-// result is (al != 0) ? 2 : 3, computed via neg/sbb/add.
-//
-// Portable form: MSVC std::string (basic_string<char>, MSVC 2005 layout)
-// stores its length at offset +0x10 inside the object, so empty() == (size == 0).
-int fn_00582BA0(void* self) {
-    const size_t size = lift_field<size_t>(self, 0x568 + 0x10);
-    return size == 0 ? 2 : 3;
 }
 
 // [0x0055BBD0]
@@ -4465,66 +4439,6 @@ void* GuiBaseElement_vfunc_19(void* self) {
 }
 } // namespace lift_00499AB0
 
-// [0x006B0480]
-namespace lift_006B0480 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name GWCCategoryWithButtonsItem::vfunc_11
-// @class GWCCategoryWithButtonsItem
-// @summary Tail-call virtual dispatch to vtable slot 10 (+0x28) on this.
-// @field GWCCategoryWithButtonsItem +0x00 uint32_t vtable
-void __thiscall fn_006B0480(uint32_t ecx) {
-    uint32_t vtable = mem_read32(ecx);
-    uint32_t target = mem_read32(vtable + 0x28);
-    typedef void (__thiscall *vfunc_t)(uint32_t);
-    ((vfunc_t)(uintptr_t)target)(ecx);
-}
-} // namespace lift_006B0480
-
-// [0x00402060] AnimatableTransform::vfunc_38 (10 bytes)
-namespace lift_00402060 {
-// @name AnimatableTransform::vfunc_38
-// @class AnimatableTransform
-// @summary Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).
-// @field AnimatableTransform +0x0 uint32_t vtable
-namespace lift_006B0480 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name GWCCategoryWithButtonsItem::vfunc_11
-// @class GWCCategoryWithButtonsItem
-// @summary Tail-call virtual dispatch to vtable slot 10 (+0x28) on this.
-// @field GWCCategoryWithButtonsItem +0x00 uint32_t vtable
-void __thiscall fn_00402060(uint32_t ecx) {
-    uint32_t vtable = mem_read32(ecx);
-    uint32_t target = mem_read32(vtable + 0x90);
-    typedef void (__thiscall *vfunc_t)(uint32_t);
-    ((vfunc_t)(uintptr_t)target)(ecx);
-}
-} // namespace lift_006B0480
-} // namespace lift_00402060
-
-// [0x00646220] NullRelationship::vfunc_52 (10 bytes)
-namespace lift_00646220 {
-// @name NullRelationship::vfunc_52
-// @class NullRelationship
-// @summary Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).
-// @field NullRelationship +0x0 uint32_t vtable
-namespace lift_006B0480 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name GWCCategoryWithButtonsItem::vfunc_11
-// @class GWCCategoryWithButtonsItem
-// @summary Tail-call virtual dispatch to vtable slot 10 (+0x28) on this.
-// @field GWCCategoryWithButtonsItem +0x00 uint32_t vtable
-void __thiscall fn_00646220(uint32_t ecx) {
-    uint32_t vtable = mem_read32(ecx);
-    uint32_t target = mem_read32(vtable + 0xC0);
-    typedef void (__thiscall *vfunc_t)(uint32_t);
-    ((vfunc_t)(uintptr_t)target)(ecx);
-}
-} // namespace lift_006B0480
-} // namespace lift_00646220
-
 // [0x0053A560]
 namespace lift_0053A560 {
 // @name HasRelativeTMPtr::vfunc_4
@@ -4551,22 +4465,6 @@ uint32_t __thiscall CColorCheck_vfunc_82(void* self) {
 }
 } // namespace lift_0040FD20
 
-// [0x00437E70]
-namespace lift_00437E70 {
-uint32_t mem_read32(uintptr_t addr);
-
-// @name BaseEventDispatcher::vfunc_2
-// @class BaseEventDispatcher
-// @summary Dispatches to vtable slot 1 with argument 0.
-// @field BaseEventDispatcher +0x00 void** vtable
-
-void __thiscall BaseEventDispatcher_vfunc_2(void* self) {
-    uint32_t vtable = mem_read32(reinterpret_cast<uintptr_t>(self));
-    uint32_t vfunc_1 = mem_read32(static_cast<uintptr_t>(vtable) + 4u);
-    reinterpret_cast<void(__thiscall*)(void*, uint32_t)>(static_cast<uintptr_t>(vfunc_1))(self, 0u);
-}
-} // namespace lift_00437E70
-
 // [0x00537AA0]
 namespace lift_00537AA0 {
 // @name CompoundRenderable::vfunc_13
@@ -4581,22 +4479,6 @@ void CompoundRenderable_vfunc_13(void* self) {
     reinterpret_cast<VFunc13>(vtable[0x34 / 4])(child);
 }
 } // namespace lift_00537AA0
-
-// [0x00544B00]
-namespace lift_00544B00 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name ReshapeTool::vfunc_19_off_98
-// @class ReshapeTool
-// @summary Tail-calls vtable slot +0x7c on the object pointer at this - 0x10 (ToolClient subobject).
-// @field ReshapeTool +0x88 uint32_t field_0x88
-uint32_t __thiscall fn_00544B00(uint32_t self) {
-    uint32_t target = mem_read32(self - 0x10);
-    uint32_t vtable = mem_read32(target);
-    uint32_t fn = mem_read32(vtable + 0x7c);
-    return ((uint32_t(__thiscall*)(uint32_t))(uintptr_t)fn)(target);
-}
-} // namespace lift_00544B00
 
 // [0x00544E00]
 namespace lift_00544E00 {
@@ -4646,59 +4528,6 @@ uint32_t __thiscall fn_005FC040(void* self) {
 }
 } // namespace lift_005FC040
 
-// [0x00545630]
-namespace lift_00545630 {
-// @name CameraTool::vfunc_27
-// @class CameraTool
-// @summary Dispatches to vtable slot 26 (offset +0x68) on this, ignoring the 4-byte stack argument.
-// @field CameraTool +0x0 void* vtable
-
-
-uint32_t mem_read32(uintptr_t addr);
-
-uint32_t __thiscall CameraTool_vfunc_27(void* self, uint32_t arg1) {
-    (void)arg1;
-    uintptr_t vtable = mem_read32(reinterpret_cast<uintptr_t>(self));
-    uintptr_t fn_addr = mem_read32(vtable + 0x68);
-    using fn_t = uint32_t(__thiscall*)(void*);
-    return reinterpret_cast<fn_t>(fn_addr)(self);
-}
-} // namespace lift_00545630
-
-// [0x00544E10]
-namespace lift_00544E10 {
-// @name SnapTranslateTool::vfunc_19_off_98
-// @class SnapTranslateTool
-// @summary Tail-calls virtual method +0x4c on the object at offset -0x10 from ToolClient (SnapTranslateTool +0x88)
-// @field SnapTranslateTool +0x88 uint32_t field_0x88
-
-
-extern uint32_t mem_read32(uint32_t addr);
-
-void __thiscall SnapTranslateTool_vfunc_19_off_98(void* self) {
-    uint32_t target = mem_read32(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)) - 0x10);
-    uint32_t vtable = mem_read32(target);
-    uint32_t fn = mem_read32(vtable + 0x4c);
-    reinterpret_cast<void(__thiscall*)(uint32_t)>(fn)(target);
-}
-} // namespace lift_00544E10
-
-// [0x00627270]
-namespace lift_00627270 {
-uint32_t mem_read32(uint32_t addr);
-
-// @name CompoundSensor::vfunc_18
-// @class CompoundSensor
-// @summary Virtual method wrapper that invokes vtable slot +0x40 (vfunc_16) with argument 0
-// @field CompoundSensor +0x00 uint32_t* vtable
-uint32_t __thiscall fn_00627270(uint32_t self) {
-    uint32_t vtable = mem_read32(self);
-    uint32_t fn_ptr = mem_read32(vtable + 0x40u);
-    auto fn = reinterpret_cast<uint32_t(__thiscall*)(uint32_t, uint32_t)>(fn_ptr);
-    return fn(self, 0u);
-}
-} // namespace lift_00627270
-
 // [0x00629B00]
 namespace lift_00629B00 {
 // @name CompoundSensor::vfunc_19
@@ -4714,28 +4543,6 @@ uint32_t __thiscall fn_00629B00(void* self) {
     return reinterpret_cast<vfunc_t>(static_cast<uintptr_t>(fn_addr))(self, 1);
 }
 } // namespace lift_00629B00
-
-// [0x00544B20] ReshapeTool::vfunc_50_off_98 (13 bytes)
-namespace lift_00544B20 {
-// @name ReshapeTool::vfunc_50_off_98
-// @class ReshapeTool
-// @summary Auto-lifted identical-shape clone of 0x00544B00 (ReshapeTool::vfunc_19_off_98).
-// @field ReshapeTool +0x88 uint32_t field_0x88
-namespace lift_00544B00 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name ReshapeTool::vfunc_19_off_98
-// @class ReshapeTool
-// @summary Tail-calls vtable slot +0x7c on the object pointer at this - 0x10 (ToolClient subobject).
-// @field ReshapeTool +0x88 uint32_t field_0x88
-uint32_t __thiscall fn_00544B20(uint32_t self) {
-    uint32_t target = mem_read32(self - 0x10);
-    uint32_t vtable = mem_read32(target);
-    uint32_t fn = mem_read32(vtable + 0xC8);
-    return ((uint32_t(__thiscall*)(uint32_t))(uintptr_t)fn)(target);
-}
-} // namespace lift_00544B00
-} // namespace lift_00544B20
 
 // [0x00545650] PoseTool::vfunc_8_off_98 (13 bytes)
 namespace lift_00545650 {
@@ -4758,24 +4565,6 @@ void __fastcall fn_00545650(void* ecx) {
 } // namespace lift_00544E00
 } // namespace lift_00545650
 
-// [0x00402050]
-namespace lift_00402050 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name AnimatableTransform::vfunc_37
-// @class AnimatableTransform
-// @summary Forwards virtual call to RenderObjectOwner/Updateable subobject vtable slot +0x10
-// @field AnimatableTransform +0x0C uint32_t* renderObjectOwner_vtable
-
-uint32_t __thiscall fn_00402050(uint32_t self) {
-    uint32_t subobj = self + 0x0C;
-    uint32_t vtable = mem_read32(subobj);
-    uint32_t target = mem_read32(vtable + 0x10);
-    using Fn = uint32_t(__thiscall*)(uint32_t);
-    return reinterpret_cast<Fn>(static_cast<uintptr_t>(target))(subobj);
-}
-} // namespace lift_00402050
-
 // [0x00402070]
 namespace lift_00402070 {
 // @name AnimatableTransform::vfunc_39
@@ -4789,78 +4578,6 @@ void __thiscall AnimatableTransform_vfunc_39(void* self) {
     reinterpret_cast<fn_t>(vtable[2])(subobj);
 }
 } // namespace lift_00402070
-
-// [0x005379F0] CompoundRenderable::vfunc_9 (11 bytes)
-namespace lift_005379F0 {
-// @name CompoundRenderable::vfunc_9
-// @class CompoundRenderable
-// @summary Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).
-// @field CompoundRenderable +0x18 uint32_t* field_0x18
-namespace lift_00402050 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name AnimatableTransform::vfunc_37
-// @class AnimatableTransform
-// @summary Forwards virtual call to RenderObjectOwner/Updateable subobject vtable slot +0x10
-// @field AnimatableTransform +0x0C uint32_t* renderObjectOwner_vtable
-
-uint32_t __thiscall fn_005379F0(uint32_t self) {
-    uint32_t subobj = self + 0x18;
-    uint32_t vtable = mem_read32(subobj);
-    uint32_t target = mem_read32(vtable + 0x20);
-    using Fn = uint32_t(__thiscall*)(uint32_t);
-    return reinterpret_cast<Fn>(static_cast<uintptr_t>(target))(subobj);
-}
-} // namespace lift_00402050
-} // namespace lift_005379F0
-
-// [0x00544980] ReshapeTool::vfunc_28 (17 bytes)
-namespace lift_00544980 {
-// @name ReshapeTool::vfunc_28
-// @class ReshapeTool
-// @summary Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).
-// @field ReshapeTool +0x9C uint32_t* field_0x9C
-namespace lift_00402050 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name AnimatableTransform::vfunc_37
-// @class AnimatableTransform
-// @summary Forwards virtual call to RenderObjectOwner/Updateable subobject vtable slot +0x10
-// @field AnimatableTransform +0x0C uint32_t* renderObjectOwner_vtable
-
-uint32_t __thiscall fn_00544980(uint32_t self) {
-    uint32_t subobj = self + 0x9C;
-    uint32_t vtable = mem_read32(subobj);
-    uint32_t target = mem_read32(vtable + 0x70);
-    using Fn = uint32_t(__thiscall*)(uint32_t);
-    return reinterpret_cast<Fn>(static_cast<uintptr_t>(target))(subobj);
-}
-} // namespace lift_00402050
-} // namespace lift_00544980
-
-// [0x00544A90] ReshapeTool::vfunc_31 (17 bytes)
-namespace lift_00544A90 {
-// @name ReshapeTool::vfunc_31
-// @class ReshapeTool
-// @summary Auto-lifted identical-shape clone of 0x00402050 (AnimatableTransform::vfunc_37).
-// @field ReshapeTool +0x9C uint32_t* field_0x9C
-namespace lift_00402050 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name AnimatableTransform::vfunc_37
-// @class AnimatableTransform
-// @summary Forwards virtual call to RenderObjectOwner/Updateable subobject vtable slot +0x10
-// @field AnimatableTransform +0x0C uint32_t* renderObjectOwner_vtable
-
-uint32_t __thiscall fn_00544A90(uint32_t self) {
-    uint32_t subobj = self + 0x9C;
-    uint32_t vtable = mem_read32(subobj);
-    uint32_t target = mem_read32(vtable + 0x7C);
-    using Fn = uint32_t(__thiscall*)(uint32_t);
-    return reinterpret_cast<Fn>(static_cast<uintptr_t>(target))(subobj);
-}
-} // namespace lift_00402050
-} // namespace lift_00544A90
 
 // [0x005321A0]
 namespace lift_005321A0 {
@@ -4901,34 +4618,6 @@ int fn_00545A60(void* self) {
     return value >= 0 ? 1 : 0;
 }
 } // namespace lift_00545A60
-
-// [0x004010D0] AddCharacterDialog::vfunc_65 (13 bytes)
-namespace lift_004010D0 {
-extern BOOL ext_EnableWindow(HWND hWnd, BOOL bEnable);
-
-// @name AddCharacterDialog::vfunc_65
-// @class AddCharacterDialog
-// @summary Enables the dialog's stored window handle (EnableWindow(hwnd, TRUE)).
-// @field AddCharacterDialog +0x20 HWND field_0x20
-void fn_004010D0(void* self) {
-    HWND hWnd = lift_field<HWND>(self, 0x20);
-    ext_EnableWindow(hWnd, TRUE);
-}
-} // namespace lift_004010D0
-
-// [0x004010C0] AddCharacterDialog::vfunc_64 (13 bytes)
-namespace lift_004010C0 {
-extern BOOL ext_EnableWindow(HWND hWnd, BOOL bEnable);
-
-// @name AddCharacterDialog::vfunc_64
-// @class AddCharacterDialog
-// @summary Disables the dialog's stored window handle (EnableWindow(hwnd, FALSE)).
-// @field AddCharacterDialog +0x20 HWND field_0x20
-void fn_004010C0(void* self) {
-    HWND hWnd = lift_field<HWND>(self, 0x20);
-    ext_EnableWindow(hWnd, FALSE);
-}
-} // namespace lift_004010C0
 
 // [0x004023C0] AVIIO::vfunc_23 (13 bytes)
 namespace lift_004023C0 {
@@ -5250,37 +4939,6 @@ uint32_t fn_004020E0(void* self, uint32_t arg) {
 }
 } // namespace lift_004020E0
 
-// [0x00404660] CBaseTabCtrl::vfunc_84 (14 bytes)
-namespace lift_00404660 {
-// Imported from USER32.dll (resolved through the IAT slot at mem_00925680).
-extern DWORD ext_GetSysColor(int nIndex);
-
-// @name CBaseTabCtrl::vfunc_84
-// @class CBaseTabCtrl
-// @summary Returns GetSysColor(COLOR_BTNFACE); the incoming stack argument is discarded.
-// (No CBaseTabCtrl fields are accessed.)
-DWORD fn_00404660(void* self, int /*ignored stack arg, overwritten with 0xF*/) {
-    (void)self;
-    // mov [esp+4], 0Fh ; jmp GetSysColor  -> tail call with COLOR_BTNFACE (15)
-    return ext_GetSysColor(15);
-}
-} // namespace lift_00404660
-
-// [0x00404670] CBaseTabCtrl::vfunc_85 (14 bytes)
-namespace lift_00404670 {
-// USER32!GetSysColor, reached through the IAT slot at mem_00925680.
-extern DWORD ext_GetSysColor(int nIndex);
-extern int mem_00925680;
-
-// @name CBaseTabCtrl::vfunc_85
-// @class CBaseTabCtrl
-// @summary Returns GetSysColor(COLOR_BTNFACE); the incoming stack argument is overwritten with 8 before tail-jumping to USER32!GetSysColor.
-DWORD fn_00404670(void* self) {
-    (void)self;
-    return ext_GetSysColor(8);
-}
-} // namespace lift_00404670
-
 // [0x004067D0] AddCharacterDialog::vfunc_79 (14 bytes)
 namespace lift_004067D0 {
 // Known callee 0x006A5F92: thunk_MFC80_ord_1551 (IAT jump thunk forwarding to MFC80!ord_1551.)
@@ -5467,23 +5125,6 @@ int MetaBodySensor_vfunc_25(const void* self, int value) {
     return (stored == value) ? 1 : 0;
 }
 } // namespace lift_005FF1C0
-
-// [0x005A9ED0] CharacterReloader::vfunc_14 (15 bytes)
-namespace lift_005A9ED0 {
-// Imported MSVCP80 std::basic_string<char> destructor, reached through the IAT slot at mem_00924FF4.
-extern void __thiscall ext_msvcp80_string_dtor(void* self);
-
-// Stdcall-style thunk: the 0x20-byte argument block holds a std::string by value at its start;
-// the function destroys that string and returns true. The RET 0x20 stack pop cannot be expressed
-// portably, so the argument block is passed as a pointer and the caller owns cleanup.
-// @name CharacterReloader::vfunc_14
-// @class CharacterReloader
-// @summary Destroys the by-value std::string argument at the start of the 0x20-byte argument block and returns true.
-bool fn_005A9ED0(void* argBlock) {
-    ext_msvcp80_string_dtor(argBlock);
-    return true;
-}
-} // namespace lift_005A9ED0
 
 // [0x0040FD10]
 namespace lift_0040FD10 {

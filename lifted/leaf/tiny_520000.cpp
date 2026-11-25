@@ -125,22 +125,6 @@ uint32_t fn_00528C10(void* self, uint32_t a0, uint32_t a1) {
 }
 } // namespace lift_00528C10
 
-// [0x00528CA0]
-namespace lift_00528CA0 {
-// @name descriptiveName_00528CA0 (freeIfNonNull)
-// @summary Frees the pointer argument via the CRT free import if it is non-null; pops its one stack argument (ret 4).
-//
-// Original: mov eax,[esp+4] / test eax,eax / je -> ret 4 / push eax /
-//           call [MSVCR80!free] (IAT slot 0x009251D8) / pop ecx / ret 4
-// The import is cdecl, so the callee's stack-argument cleanup is the stdcall ret 4
-// performed by this function. The IAT slot is replaced by a direct call to free().
-void __stdcall fn_00528CA0(void* p) {
-    if (p != nullptr) {
-        free(p);
-    }
-}
-} // namespace lift_00528CA0
-
 // [0x00528BD0] sub_00528BD0 (21 bytes)
 namespace lift_00528BD0 {
 // @name sub_00528BD0

@@ -11,6 +11,5 @@ struct Item_Fields {
     // +0x10  float                    field_0x10  (evidence: 0x007F8500)
     // +0x20  double                   key  (evidence: 0x0050FA40, 0x0050FD30)
     // +0x4C  int32_t                  field_0x4c  (evidence: 0x006E7340)
-    // +0x218 uint32_t                 bucketIndex  (evidence: 0x007F0B00)
 };
 } // namespace lifted_layout

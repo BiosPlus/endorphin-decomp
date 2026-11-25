@@ -35,36 +35,6 @@ float fn_0066B240(void* self) {
     return static_cast<float>(std::atof(str->c_str()));
 }
 
-// [0x0066B290] ExprParser::StringType::vfunc_3 (71 bytes)
-// @name ExprParser::StringType::vfunc_3
-// @class ExprParser::StringType
-// @summary Returns 1 if the held std::string equals either of two literal strings, else 0 (0 if the string pointer is null).
-// @field ExprParser::StringType +0x00 std::string* field_0x00
-int fn_0066B290(void* self) {
-    auto* const s = *static_cast<std::string**>(self);
-    if (s == nullptr) {
-        return 0;
-    }
-    if (std::strcmp(s->c_str(), ext_0092F10C) == 0) {
-        return 1;
-    }
-    if (std::strcmp(s->c_str(), ext_0093A810) == 0) {
-        return 1;
-    }
-    return 0;
-}
-
-// [0x0066B320] ExprParser::StringType::vfunc_23 (36 bytes)
-// @name ExprParser::StringType::vfunc_23
-// @class ExprParser::StringType
-// @summary Calls ext_006720E0(self, &arg2->+0x2C, 0) and returns self; arguments 3-5 are unused.
-void* fn_0066B320(void* self, void* arg2, [[maybe_unused]] void* arg3,
-                  [[maybe_unused]] void* arg4, [[maybe_unused]] void* arg5) {
-    void* subobject = static_cast<char*>(arg2) + 0x2C;
-    ext_006720E0(self, subobject, 0);
-    return self;
-}
-
 // [0x0066B200]
 namespace lift_0066B200 {
 // @name ExprParser::StringType::vfunc_0
@@ -84,31 +54,6 @@ void* __stdcall fn_0066B200(void* out_str, const uint32_t* value_ptr) {
     return out_str;
 }
 } // namespace lift_0066B200
-
-// [0x0066B2E0]
-namespace lift_0066B2E0 {
-namespace lift_0066B2E0 {
-// @name ExprParser::StringType::vfunc_4
-// @class ExprParser::StringType
-// @summary Fills an output string from a StringType value pointer, or assigns a literal when the value is null.
-// @field ExprParser::StringType +0x00 void* field_0x00
-
-// Callee: sub_004276B0 (cdecl, 2 args: value, out).
-extern void __cdecl ext_004276B0(uint32_t value, void* out);
-// Indirect IAT slot mem_00924FE4 resolves to MSVCP80 basic_string(const char*) ctor (thiscall).
-extern void __thiscall ext_00629122(void* self, const char* s);
-
-void* __stdcall fn_0066B2E0(void* out_str, const uint32_t* value_ptr) {
-    uint32_t val = *value_ptr;
-    if (val != 0) {
-        ext_004276B0(val, out_str);
-    } else {
-        ext_00629122(out_str, reinterpret_cast<const char*>(0x00928B5Du));
-    }
-    return out_str;
-}
-} // namespace lift_0066B2E0
-} // namespace lift_0066B2E0
 
 // [0x0066CFD0]
 namespace lift_0066CFD0 {
@@ -221,51 +166,3 @@ void __thiscall fn_0066B4A0(void* self, void* arg1, void* arg2, void* arg3) {
     str_dtor(local_str);
 }
 } // namespace lift_0066B4A0
-
-// [0x0066B410] ExprParser::StringType::vfunc_42 (136 bytes)
-namespace lift_0066B410 {
-// Known callee 0x0041CEB0: UnknownClass::forwardToSubobjectSlot4 (Calls vtable slot 4 of the subobject at +0x04 with (arg1, self, 0, 0), then returns arg1.)
-extern void* ext_0041CEB0(void* self, void* out);
-
-// @name ExprParser::StringType::vfunc_42
-// @class ExprParser::StringType
-// @summary Renders two stack-passed values into std::string temporaries via ext_0041CEB0 and returns whether the resulting strings are equal.
-bool fn_0066B410([[maybe_unused]] void* self, void* arg1, void* arg2) {
-    std::string lhs;
-    ext_0041CEB0(arg2, &lhs);
-
-    std::string rhs;
-    ext_0041CEB0(arg1, &rhs);
-
-    return lhs == rhs;
-}
-} // namespace lift_0066B410
-
-// [0x0066B350] ExprParser::StringType::vfunc_25 (188 bytes)
-namespace lift_0066B350 {
-// Known callee 0x0041CEB0: UnknownClass::forwardToSubobjectSlot4 (Calls vtable slot 4 of the subobject at +0x04 with (arg1, self, 0, 0), then returns arg1.)
-extern void ext_0041CEB0();
-extern void ext_006720E0();
-extern int mem_00924FE4;
-extern int mem_00924FD0;
-extern int mem_00924ECC;
-extern int mem_00924FF4;
-
-// @name ExprParser::StringType::vfunc_25
-// @class ExprParser::StringType
-// @summary Concatenates a string obtained via forwardToSubobjectSlot4 with two literal fragments and stores the result in the output buffer.
-// @field ExprParser::StringType +0x00 void* field_0x00
-void fn_0066B350(void* self, std::string* result) {
-    // forwardToSubobjectSlot4(self, &tmp) returns &tmp, so the forwarded
-    // string is the caller-visible temporary populated by the subobject.
-    std::string tmp;
-    std::string* forwarded = &tmp;
-
-    std::string head;
-    std::string combined = head + *forwarded;
-    std::string tail;
-    *result = combined + tail;
-
-    (void)self;
-}
-} // namespace lift_0066B350

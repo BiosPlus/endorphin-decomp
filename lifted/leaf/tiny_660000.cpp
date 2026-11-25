@@ -115,38 +115,6 @@ extern "C" void __fastcall fn_0066AC80(void* self) {
     lift_field<void*>(self, 0x0) = &mem_0092DF34;
 }
 
-// [0x006616B0]
-namespace lift_006616B0 {
-uint32_t mem_read32(uint32_t addr);
-
-// @name forwardVtableSlot0x18
-// @summary Tail-calls vtable slot +0x18 on the object pointed to by this+0x00.
-// @field Unknown +0x00 void* inner
-int __thiscall sub_006616B0(void* thisPtr) {
-    uint32_t inner = mem_read32(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(thisPtr)));
-    uint32_t vtable = mem_read32(inner);
-    uint32_t fnAddr = mem_read32(vtable + 0x18);
-    using Vfn = int(__thiscall*)(uint32_t);
-    return reinterpret_cast<Vfn>(static_cast<uintptr_t>(fnAddr))(inner);
-}
-} // namespace lift_006616B0
-
-// [0x00661880]
-namespace lift_00661880 {
-// @name sub_00661880
-// @summary Tail-calls virtual method at vtable+0x10 on dereferenced first field
-
-
-extern uint32_t mem_read32(uint32_t addr);
-
-void sub_00661880(uint32_t ecx) {
-    uint32_t inner = mem_read32(ecx);
-    uint32_t vtable = mem_read32(inner);
-    uint32_t fn = mem_read32(vtable + 0x10);
-    ((void(__thiscall*)(uint32_t))fn)(inner);
-}
-} // namespace lift_00661880
-
 // [0x00661980] sub_00661980 (9 bytes)
 namespace lift_00661980 {
 // @name setVtable_0093BFB4
@@ -183,33 +151,6 @@ uint32_t __thiscall sub_006658A0(void* self) {
     return *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t>(self) + 0x18) != 0 ? 1u : 0u;
 }
 } // namespace lift_006658A0
-
-// [0x006658B0]
-namespace lift_006658B0 {
-template <typename T>
-T mem_read(uint32_t addr);
-
-// @name sub_006658B0_hasField24
-// @summary Returns true if the 32-bit field at offset +0x24 is non-zero.
-// @field unknown +0x24 uint32_t field_0x24
-bool __fastcall sub_006658B0(uint32_t ecx, uint32_t /*edx*/) {
-    return mem_read<uint32_t>(ecx + 0x24) != 0;
-}
-} // namespace lift_006658B0
-
-// [0x00661A30]
-namespace lift_00661A30 {
-extern uint32_t mem_read32(uint32_t addr);
-extern float mem_readf32(uint32_t addr);
-
-// @name sub_00661A30_getFloat0x138
-// @summary Reads a pointer at this+0x4 and returns the float at offset 0x138 of that object.
-// @field Self +0x04 uint32_t field_0x04
-extern float __thiscall sub_00661A30(uint32_t thisPtr) {
-    uint32_t obj = mem_read32(thisPtr + 0x4);
-    return mem_readf32(obj + 0x138);
-}
-} // namespace lift_00661A30
 
 // [0x00665880] sub_00665880 (14 bytes)
 namespace lift_00665880 {
@@ -418,22 +359,6 @@ void* fn_006657F0(void* self, uint32_t arg) {
     return self;
 }
 } // namespace lift_006657F0
-
-// [0x00662E50] sub_00662E50 (28 bytes)
-namespace lift_00662E50 {
-// MSVCP80 std::basic_string<char>::c_str (thiscall, this in ecx)
-extern const char* __thiscall ext_MSVCP80_string_c_str(const void* self);
-// SHLWAPI PathIsRelativeA (stdcall, returns BOOL)
-extern BOOL __stdcall ext_SHLWAPI_PathIsRelativeA(const char* path);
-
-// @name IsRelativePathString
-// @summary Returns 1 if the std::string path is relative (PathIsRelativeA == TRUE), else 0.
-extern int __cdecl fn_00662E50(const void* path_string) {
-    const char* path = ext_MSVCP80_string_c_str(path_string);
-    BOOL relative = ext_SHLWAPI_PathIsRelativeA(path);
-    return relative == TRUE ? 1 : 0;
-}
-} // namespace lift_00662E50
 
 // [0x006649B0]
 namespace lift_006649B0 {

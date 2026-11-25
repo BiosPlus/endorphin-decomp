@@ -3,16 +3,6 @@
 extern "C" void ext_00672150(void* self, const char* src, int flag);
 extern "C" void ext_0053B470();
 
-// [0x006710B0] ExprParser::Vector4Type::vfunc_0 (35 bytes)
-// @name ExprParser::Vector4Type::vfunc_0
-// @class ExprParser::Vector4Type
-// @summary Auto-lifted identical-shape clone of 0x00497900 (ExprParser::PrimitiveProxyType<std::string>::vfunc_0).
-void* fn_006710B0(void* self, void* src) {
-    const char* s = *static_cast<const char* const*>(src);
-    ext_00672150(self, s, 0);
-    return self;
-}
-
 // [0x0066B860] ExprParser::Vector4Type::vfunc_43 (57 bytes)
 // @name ExprParser::Vector4Type::vfunc_43
 // @class ExprParser::Vector4Type

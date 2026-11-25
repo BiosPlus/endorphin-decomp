@@ -10,6 +10,6 @@
 // Recovered field layout for TranslateTool:
 namespace lifted_layout {
 struct TranslateTool_Fields {
-    // +0xA8  int32_t                  field_0xA8  (evidence: 0x00535610, 0x00545B80, 0x005472B0, 0x005A9ED0, 0x005FF1C0)
+    // +0xA8  int32_t                  field_0xA8  (evidence: 0x00535610, 0x00545B80, 0x005472B0, 0x005FF1C0)
 };
 } // namespace lifted_layout

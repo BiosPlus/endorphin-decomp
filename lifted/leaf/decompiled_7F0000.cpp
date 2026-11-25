@@ -45,67 +45,6 @@ DWORD fn_007F1480(void) {
 }
 } // namespace lift_007F1480
 
-// [0x007F0B30]
-namespace lift_007F0B30 {
-extern uint32_t mem_read32(uint32_t addr);
-extern void mem_write32(uint32_t addr, uint32_t val);
-
-// @name insertNodeIntoBucket
-// @summary Allocates an 8-byte node from a pool, stores edi and bucket index, and prepends it to the bucket's linked list.
-// @field struct_ecx +0x00 uint32_t buckets
-// @field struct_ecx +0x0C uint32_t node_pool
-// @field struct_ecx +0x14 uint32_t node_count
-// @field struct_edi +0x154 uint32_t field_0x154
-// @field bucket +0x0C uint32_t head
-// @field bucket +0x10 uint32_t count
-// @field node +0x00 uint32_t next
-// @field node +0x04 uint32_t value
-uint32_t sub_007F0B30(uint32_t ecx, uint32_t edx, uint32_t edi) {
-    uint32_t buckets = mem_read32(ecx);
-    mem_write32(edi + 0x154, edx);
-    uint32_t bucket = buckets + edx * 20;
-    uint32_t pool = mem_read32(ecx + 0x0C);
-    uint32_t idx = mem_read32(ecx + 0x14);
-    uint32_t node = pool + idx * 8;
-    mem_write32(ecx + 0x14, idx + 1);
-    mem_write32(node + 0x04, edi);
-    uint32_t head = mem_read32(bucket + 0x0C);
-    mem_write32(node, head);
-    mem_write32(bucket + 0x10, mem_read32(bucket + 0x10) + 1);
-    mem_write32(bucket + 0x0C, node);
-    return bucket;
-}
-} // namespace lift_007F0B30
-
-// [0x007F0B00]
-namespace lift_007F0B00 {
-extern uint32_t mem_read32(uint32_t addr);
-extern void mem_write32(uint32_t addr, uint32_t val);
-
-// @name SpatialHash::insertItem
-// @class SpatialHash
-// @summary Inserts an item into a spatial hash bucket and updates its bucket index
-// @field SpatialHash +0x00 uint32_t buckets
-// @field SpatialHash +0x08 uint32_t nodePool
-// @field SpatialHash +0x10 uint32_t nodeCount
-// @field Item +0x218 uint32_t bucketIndex
-uint32_t __fastcall sub_007F0B00(uint32_t ecx, uint32_t edx, uint32_t edi) {
-    uint32_t buckets = mem_read32(ecx);
-    mem_write32(edi + 0x218, edx);
-    uint32_t bucket = buckets + (edx * 5) * 4;
-    uint32_t nodePool = mem_read32(ecx + 0x8);
-    uint32_t nodeCount = mem_read32(ecx + 0x10);
-    uint32_t node = nodePool + nodeCount * 8;
-    mem_write32(ecx + 0x10, nodeCount + 1);
-    mem_write32(node + 0x4, edi);
-    uint32_t head = mem_read32(bucket + 0x4);
-    mem_write32(node, head);
-    mem_write32(bucket + 0x8, mem_read32(bucket + 0x8) + 1);
-    mem_write32(bucket + 0x4, node);
-    return bucket;
-}
-} // namespace lift_007F0B00
-
 // [0x007F6690] sub_007F6690 (54 bytes)
 namespace lift_007F6690 {
 // Known callee 0x007C7000: sub_007C7000_derefDwordAt44Thunk (adds +0x44 to arg and tail-forwards to derefDword, returning the dword read there.)
@@ -420,20 +359,6 @@ void fn_007F9CE0(int32_t count, float* dst, const float* src) {
 }
 } // namespace lift_007F9CE0
 
-// [0x007FC4E0]
-namespace lift_007FC4E0 {
-extern uint32_t mem_read32(uint32_t addr);
-extern void mem_write32(uint32_t addr, uint32_t val);
-
-// @name copyFloat16
-// @summary Copies 16 32-bit floats (64 bytes, e.g. a 4x4 matrix) from eax to ecx.
-void sub_007FC4E0(uint32_t ecx_dst, uint32_t eax_src) {
-    for (uint32_t offset = 0; offset < 0x40; offset += 4) {
-        mem_write32(ecx_dst + offset, mem_read32(eax_src + offset));
-    }
-}
-} // namespace lift_007FC4E0
-
 // [0x007F9D50]
 namespace lift_007F9D50 {
 // @name negateFloatArray
@@ -533,22 +458,3 @@ uint8_t __cdecl sub_007F66D0(const float* a, const float* b, float threshold) {
     return (epsSq > distSq) ? 1 : 0;
 }
 } // namespace lift_007F66D0
-
-// [0x007F9F30]
-namespace lift_007F9F30 {
-template <typename T> T mem_read(uint32_t addr);
-template <typename T> void mem_write(uint32_t addr, T val);
-
-// @name scaleFloatArray
-// @summary Scales an array of count 32-bit floats from src by scale and writes to dst.
-
-void sub_007F9F30(int32_t count, uint32_t dst, uint32_t src, float scale) {
-    uint32_t end = dst + static_cast<uint32_t>(count) * 4u;
-    while (dst < end) {
-        float val = mem_read<float>(src);
-        mem_write<float>(dst, val * scale);
-        dst += 4u;
-        src += 4u;
-    }
-}
-} // namespace lift_007F9F30

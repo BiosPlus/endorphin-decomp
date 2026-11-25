@@ -12,14 +12,12 @@ namespace lifted_layout {
 struct OglRenderer_Fields {
     // +0x0   void*                    vtable  (evidence: 0x005373F0)
     // +0x10  void*                    field_0x10  (evidence: 0x00536E80)
-    // +0x1C  void*                    field_0x1C  (evidence: 0x00532F60)
     // +0x24  HDC                      field_0x24  (evidence: 0x00533090)
     // +0x28  HGLRC                    field_0x28  (evidence: 0x00533090)
     // +0x30  uint32_t                 field_0x30  (evidence: 0x00533090, 0x005330D0, 0x00536E80)
-    // +0x38  void*                    delegate_0x38  (evidence: 0x004646A0, 0x00468730, 0x0046FE50, 0x0046FE70, 0x005355B0, 0x005355C0, 0x005355D0, 0x005355E0, 0x005355F0, 0x00535600, 0x00535610, 0x005356B0, 0x00545B80, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0x38
-    // +0x38  void*                    field_0x38  (evidence: 0x00468730, 0x0046FE10, 0x0046FE30, 0x005353F0, 0x00535610, 0x00535630, 0x00535650, 0x00535670, 0x00535690, 0x00545B80, 0x005A9ED0, 0x005FF1C0) // CONFLICT: multiple definitions at +0x38
-    // +0x48  void*                    field_0x48  (evidence: 0x00532F60)
-    // +0x80  uint32_t                 field_0x80  (evidence: 0x005353F0, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
+    // +0x38  void*                    delegate_0x38  (evidence: 0x00468730, 0x0046FE50, 0x0046FE70, 0x005355B0, 0x005355C0, 0x005355D0, 0x005355E0, 0x005355F0, 0x00535600, 0x00535610, 0x005356B0, 0x00545B80, 0x005FF1C0) // CONFLICT: multiple definitions at +0x38
+    // +0x38  void*                    field_0x38  (evidence: 0x00468730, 0x0046FE10, 0x0046FE30, 0x005353F0, 0x00535610, 0x00535630, 0x00535650, 0x00535670, 0x00535690, 0x00545B80, 0x005FF1C0) // CONFLICT: multiple definitions at +0x38
+    // +0x80  uint32_t                 field_0x80  (evidence: 0x005353F0, 0x00535610, 0x00545B80, 0x005FF1C0)
     // +0x9C  void*                    field_0x9C  (evidence: 0x00533D10) // CONFLICT: multiple definitions at +0x9C
     // +0x9C  void*                    field_0x9c  (evidence: 0x00533C50) // CONFLICT: multiple definitions at +0x9C
     // +0x9C  void* field_0x9C (embedded subobject; its first dword is the vtable pointer)  (evidence: 0x00533C70) // CONFLICT: multiple definitions at +0x9C
@@ -32,23 +30,20 @@ struct OglRenderer_Fields {
     // +0x370 uint32_t                 field_0x370  (evidence: 0x005373F0)
     // +0x376 uint8_t                  field_0x376  (evidence: 0x005373F0)
     // +0x378 uint8_t                  field_0x378  (evidence: 0x005331F0, 0x00535610, 0x00545B80)
-    // +0x379 uint8_t                  field_0x379  (evidence: 0x00533340, 0x00533380, 0x005333C0, 0x00533400)
+    // +0x379 uint8_t                  field_0x379  (evidence: 0x00533340, 0x00533380, 0x00533400)
     // +0x37C float                    field_0x37c  (evidence: 0x00533340)
     // +0x380 float                    field_0x380  (evidence: 0x00533380)
     // +0x384 uint32_t                 field_0x384  (evidence: 0x00533400)
-    // +0x388 uint32_t                 field_0x388  (evidence: 0x005333C0)
     // +0x38C float                    field_0x38c  (evidence: 0x00533340)
     // +0x390 float                    field_0x390  (evidence: 0x00533380)
     // +0x394 uint32_t                 field_0x394  (evidence: 0x00533400)
-    // +0x398 uint32_t                 field_0x398  (evidence: 0x005333C0)
-    // +0x3F4 float                    field_0x3F4  (evidence: 0x00533A30, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
-    // +0x3FC float                    field_0x3FC  (evidence: 0x00533A40, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
-    // +0x400 float                    field_0x400  (evidence: 0x00533AE0, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
-    // +0x404 float                    field_0x404  (evidence: 0x00533AC0, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
-    // +0x408 float                    field_0x408  (evidence: 0x00533AD0, 0x00535610, 0x00545B80, 0x005A9ED0, 0x005FF1C0)
-    // +0x430 uint8_t                  field_0x430  (evidence: 0x00533340, 0x00533380, 0x005333C0, 0x00533400)
+    // +0x3F4 float                    field_0x3F4  (evidence: 0x00533A30, 0x00535610, 0x00545B80, 0x005FF1C0)
+    // +0x3FC float                    field_0x3FC  (evidence: 0x00533A40, 0x00535610, 0x00545B80, 0x005FF1C0)
+    // +0x400 float                    field_0x400  (evidence: 0x00533AE0, 0x00535610, 0x00545B80, 0x005FF1C0)
+    // +0x404 float                    field_0x404  (evidence: 0x00533AC0, 0x00535610, 0x00545B80, 0x005FF1C0)
+    // +0x408 float                    field_0x408  (evidence: 0x00533AD0, 0x00535610, 0x00545B80, 0x005FF1C0)
+    // +0x430 uint8_t                  field_0x430  (evidence: 0x00533340, 0x00533380, 0x00533400)
     // +0x44C uint32_t                 field_0x44C  (evidence: 0x00533400)
-    // +0x450 uint32_t                 field_0x450  (evidence: 0x005333C0)
     // +0x454 float                    field_0x454  (evidence: 0x00533340)
     // +0x458 float                    field_0x458  (evidence: 0x00533380)
     // +0x464 uint8_t                  field_0x464  (evidence: 0x00536D00)

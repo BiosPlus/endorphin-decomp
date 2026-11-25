@@ -57,42 +57,6 @@ extern "C" void __fastcall fn_0054E890(void* self) {
     lift_field<void*>(self, 0x0) = &mem_00956F94;
 }
 
-// [0x00543620] sub_00543620 (7 bytes)
-namespace lift_00543620 {
-// @name sub_00543620
-// @summary Auto-lifted identical-shape clone of 0x006B0480 (GWCCategoryWithButtonsItem::vfunc_11).
-namespace lift_006B0480 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name GWCCategoryWithButtonsItem::vfunc_11
-// @class GWCCategoryWithButtonsItem
-// @summary Tail-call virtual dispatch to vtable slot 10 (+0x28) on this.
-// @field GWCCategoryWithButtonsItem +0x00 uint32_t vtable
-void __thiscall fn_00543620(uint32_t ecx) {
-    uint32_t vtable = mem_read32(ecx);
-    uint32_t target = mem_read32(vtable + 0x48);
-    typedef void (__thiscall *vfunc_t)(uint32_t);
-    ((vfunc_t)(uintptr_t)target)(ecx);
-}
-} // namespace lift_006B0480
-} // namespace lift_00543620
-
-// [0x00543210]
-namespace lift_00543210 {
-uint32_t mem_read32(uintptr_t addr);
-
-// @name forwardToMemberVtableSlot0x6c
-// @summary Tail-calls vtable slot +0x6c on member pointer at +0x14.
-// @field Unknown +0x14 void* field_0x14
-void __thiscall sub_00543210(void* self) {
-    uint32_t member = mem_read32(reinterpret_cast<uintptr_t>(self) + 0x14);
-    uint32_t vtable = mem_read32(member);
-    uint32_t target = mem_read32(vtable + 0x6c);
-    reinterpret_cast<void(__thiscall*)(void*)>(static_cast<uintptr_t>(target))(
-        reinterpret_cast<void*>(static_cast<uintptr_t>(member)));
-}
-} // namespace lift_00543210
-
 // [0x00548260] sub_00548260 (20 bytes)
 namespace lift_00548260 {
 // @name sub_00548260
@@ -128,42 +92,6 @@ uint8_t fn_00543630() {
     return static_cast<uint8_t>((state >> 15) & 0x01u);
 }
 } // namespace lift_00543630
-
-// [0x005478F0] sub_005478F0 (15 bytes)
-namespace lift_005478F0 {
-// @name sub_005478F0
-// @summary Auto-lifted identical-shape clone of 0x00519CE0 (std::basic_string<char>::~basic_string (vtable-stamping thunk)).
-namespace lift_00519CE0 {
-extern void __thiscall ext_00628FF0(void* self);
-
-// @name std::basic_string<char>::~basic_string (vtable-stamping thunk)
-// @class <unknown> (this is in ecx; owning class not yet recovered)
-// @summary Stamps the object's vtable pointer (0x0095219C) into its first dword, then tail-jumps to the MSVCP80 basic_string destructor on this+4.
-// @field <unknown> +0x00 uint32_t field_0x00
-void fn_005478F0(void* self) {
-    lift_field<uint32_t>(self, 0x00) = 0x956C2Cu;   // mov dword ptr [ecx], 0x95219c
-    ext_00628FF0(static_cast<uint8_t*>(self) + 8);    // add ecx, 4 ; jmp [0x924ff4] (MSVCP80 ~basic_string)
-}
-} // namespace lift_00519CE0
-} // namespace lift_005478F0
-
-// [0x0054C760] sub_0054C760 (15 bytes)
-namespace lift_0054C760 {
-// @name sub_0054C760
-// @summary Auto-lifted identical-shape clone of 0x00519CE0 (std::basic_string<char>::~basic_string (vtable-stamping thunk)).
-namespace lift_00519CE0 {
-extern void __thiscall ext_00628FF0(void* self);
-
-// @name std::basic_string<char>::~basic_string (vtable-stamping thunk)
-// @class <unknown> (this is in ecx; owning class not yet recovered)
-// @summary Stamps the object's vtable pointer (0x0095219C) into its first dword, then tail-jumps to the MSVCP80 basic_string destructor on this+4.
-// @field <unknown> +0x00 uint32_t field_0x00
-void fn_0054C760(void* self) {
-    lift_field<uint32_t>(self, 0x00) = 0x956DFCu;   // mov dword ptr [ecx], 0x95219c
-    ext_00628FF0(static_cast<uint8_t*>(self) + 8);    // add ecx, 4 ; jmp [0x924ff4] (MSVCP80 ~basic_string)
-}
-} // namespace lift_00519CE0
-} // namespace lift_0054C760
 
 // [0x0054C7F0] sub_0054C7F0 (15 bytes)
 namespace lift_0054C7F0 {

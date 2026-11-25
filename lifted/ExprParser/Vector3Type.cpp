@@ -68,25 +68,6 @@ void fn_0066B6B0(void* self, void** a1, void* a2) {
     }
 }
 
-// [0x0066B560] ExprParser::Vector3Type::vfunc_5 (57 bytes)
-// @name ExprParser::Vector3Type::vfunc_5
-// @class ExprParser::Vector3Type
-// @summary Returns the float[3] already held in *a1, or lazily initialises and returns the shared zero vector.
-// @field Unknown +0x00 void* field_0x00
-void* fn_0066B560(void* self, void** a1) {
-    (void)self;
-    if (*a1 != nullptr) {
-        return *a1;
-    }
-    if ((mem_00B59648 & 1u) == 0) {
-        mem_00B59648 |= 1u;
-        mem_00B5963C[0] = 0.0f;
-        mem_00B5963C[1] = 0.0f;
-        mem_00B5963C[2] = 0.0f;
-    }
-    return mem_00B5963C;
-}
-
 // [0x0066B620] ExprParser::Vector3Type::vfunc_42 (93 bytes)
 // @name ExprParser::Vector3Type::vfunc_42
 // @class ExprParser::Vector3Type

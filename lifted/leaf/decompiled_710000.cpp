@@ -76,40 +76,6 @@ Unknown* fn_00714570(Unknown* ecx) {
 } // namespace lift_006B9D10
 } // namespace lift_00714570
 
-// [0x00711BA0]
-namespace lift_00711BA0 {
-// @name getSubobjectField_0x18
-// @summary Calls fn_0071E680 on self and returns the double at offset +0x18 of the returned subobject.
-// @field Subobject +0x18 double field_0x18
-
-
-extern void* __fastcall fn_0071E680(void* self);
-
-extern double __fastcall fn_00711BA0(void* self) {
-    void* sub = fn_0071E680(self);
-    return *reinterpret_cast<const double*>(static_cast<const uint8_t*>(sub) + 0x18);
-}
-} // namespace lift_00711BA0
-
-// [0x00711BB0] sub_00711BB0 (16 bytes)
-namespace lift_00711BB0 {
-// @name sub_00711BB0
-// @summary Auto-lifted identical-shape clone of 0x00711BA0 (getSubobjectField_0x18).
-namespace lift_00711BA0 {
-// @name getSubobjectField_0x18
-// @summary Calls fn_0071E680 on self and returns the double at offset +0x18 of the returned subobject.
-// @field Subobject +0x18 double field_0x18
-
-
-extern void* __fastcall fn_0071E680(void* self);
-
-extern double __fastcall fn_00711BB0(void* self) {
-    void* sub = fn_0071E680(self);
-    return *reinterpret_cast<const double*>(static_cast<const uint8_t*>(sub) + 0x20);
-}
-} // namespace lift_00711BA0
-} // namespace lift_00711BB0
-
 // [0x00711FD0]
 namespace lift_00711FD0 {
 // @name getSubobjectField_0x40_0x08
@@ -150,18 +116,6 @@ extern uint32_t __fastcall fn_00712000(void* self) {
     return *reinterpret_cast<uint32_t*>(subobj + 0x4);
 }
 } // namespace lift_00712000
-
-// [0x0071B010]
-namespace lift_0071B010 {
-extern uint32_t __thiscall ext_007873F0(void* self, uint32_t arg1);
-
-// @name adjustThisAndForward_0071B010
-// @summary Adjusts the this pointer by +0x10 and forwards the argument to sub_007873F0.
-// @field unknown +0x10 uint8_t[] field_0x10
-uint32_t __thiscall sub_0071B010(void* self, uint32_t arg1) {
-    return ext_007873F0(reinterpret_cast<uint8_t*>(self) + 0x10, arg1);
-}
-} // namespace lift_0071B010
 
 // [0x00712240] sub_00712240 (16 bytes)
 namespace lift_00712240 {
@@ -377,27 +331,6 @@ void* fn_0071B020(void* self, void* arg) {
     return arg;
 }
 } // namespace lift_0071B020
-
-// [0x00714950] sub_00714950 (32 bytes)
-namespace lift_00714950 {
-// @name sub_00714950
-// @summary Auto-lifted identical-shape clone of 0x0071B020 (Unknown::CallArgWithSubObjectAddr0x10).
-namespace lift_0071B020 {
-// Known callee 0x006D2390: ForwardArgToCalleeReturnThis (Forwards its single stack argument to sub_007873F0 with the same this pointer, then returns this.)
-extern void* ext_006D2390(void* self, uint32_t arg1);
-
-// @name Unknown::CallArgWithSubObjectAddr0x10
-// @class Unknown
-// @summary Calls 0x006D2390 with arg as this and (self + 0x10) as its stack argument, then returns arg.
-// @field Unknown +0x10 BYTE field_0x10
-void* fn_00714950(void* self, void* arg) {
-    const uint32_t sub_addr =
-        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self) + 0x28);
-    ext_006D2390(arg, sub_addr);
-    return arg;
-}
-} // namespace lift_0071B020
-} // namespace lift_00714950
 
 // [0x0071B050] sub_0071B050 (32 bytes)
 namespace lift_0071B050 {
@@ -721,27 +654,6 @@ const void* sub_0071A850(uint32_t selector) {
 }
 } // namespace lift_0071A850
 
-// [0x00713F30]
-namespace lift_00713F30 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name sub_00713F30
-// @summary Maps an index (0..3) via jump table to one of three constant addresses, defaulting to 0x00AAC03C.
-uint32_t __stdcall sub_00713F30(uint32_t arg0) {
-    if (arg0 > 3u) {
-        return 0x00AAC03Cu;
-    }
-    switch (mem_read32(0x00713F58u + arg0 * 4u)) {
-    case 0x00713F40u:
-        return 0x00AAC224u;
-    case 0x00713F48u:
-        return 0x00AAC220u;
-    default:
-        return 0x00AAC03Cu;
-    }
-}
-} // namespace lift_00713F30
-
 // [0x0071A760]
 namespace lift_0071A760 {
 extern const char mem_00AAC9D8[];
@@ -959,21 +871,6 @@ void* fn_00715BE0(void* dst, const void* src) {
     return dst;
 }
 } // namespace lift_00715BE0
-
-// [0x00711DA0] sub_00711DA0 (15 bytes)
-namespace lift_00711DA0 {
-// Known callee 0x0071E680: sub_0071E680 (Returns pointer to subobject/field at offset +0x40.)
-extern void* __fastcall fn_0071E680(void* self);
-
-// @name Subobject::setField28
-// @class Subobject
-// @summary Resolves the subobject at self+0x40 via fn_0071E680 and stores the stack argument at its +0x28 field.
-// @field Subobject +0x28 uint32_t field_0x28
-extern void __thiscall fn_00711DA0(void* self, uint32_t value) {
-    void* sub = fn_0071E680(self);
-    *reinterpret_cast<uint32_t*>(static_cast<uint8_t*>(sub) + 0x28) = value;
-}
-} // namespace lift_00711DA0
 
 // [0x00715710] sub_00715710 (48 bytes)
 namespace lift_00715710 {
@@ -1613,63 +1510,6 @@ void fn_00715770(void* self, const void* src) {
 }
 } // namespace lift_00715770
 
-// [0x00713390]
-namespace lift_00713390 {
-// @name parseDouble4
-// @summary Parses a brace-enclosed, comma-separated 4-double tuple "{d0,d1,d2,d3}" into an array of 4 doubles.
-
-
-bool __stdcall sub_00713390(const char* str, double* out) {
-    if (*str != '{') {
-        return false;
-    }
-
-    const char* cur = str;
-    char* endptr = nullptr;
-
-    for (int i = 0; i < 4; ++i) {
-        ++cur;
-        out[i] = std::strtod(cur, &endptr);
-        if (cur == endptr) {
-            return false;
-        }
-        if (*endptr != ',' && i < 3) {
-            return false;
-        }
-        cur = endptr;
-    }
-
-    return *endptr == '}';
-}
-} // namespace lift_00713390
-
-// [0x007135C0]
-namespace lift_007135C0 {
-// @name parseDoubleArray16
-// @summary Parses a brace-enclosed comma-separated list of 16 doubles into an output array.
-bool __stdcall sub_007135C0(const char* str, double* out) {
-    if (*str != '{') {
-        return false;
-    }
-
-    const char* cur = str;
-    char* endptr = nullptr;
-    for (int i = 0; i < 16; ++i) {
-        ++cur;
-        out[i] = std::strtod(cur, &endptr);
-        if (cur == endptr) {
-            return false;
-        }
-        if (*endptr != ',' && i < 15) {
-            return false;
-        }
-        cur = endptr;
-    }
-
-    return *endptr == '}';
-}
-} // namespace lift_007135C0
-
 // [0x0071EFD0] sub_0071EFD0 (97 bytes)
 namespace lift_0071EFD0 {
 // Known callee 0x006D2130: uint32_t __thiscall sub_006D2130(self, arg1, arg2).
@@ -1718,18 +1558,6 @@ extern void* fn_0071C630(void* arg) {
 }
 } // namespace lift_007B2210
 } // namespace lift_0071C630
-
-// [0x00710520]
-namespace lift_00710520 {
-// @name getGlobal00B5EEB8
-// @summary Returns the 32-bit value stored at global 0x00B5EEB8.
-
-extern uint32_t mem_00B5EEB8;
-
-uint32_t sub_00710520() {
-    return mem_00B5EEB8;
-}
-} // namespace lift_00710520
 
 // [0x00712250]
 namespace lift_00712250 {
@@ -1799,18 +1627,6 @@ uint32_t fn_00712FC0(const char* name) {
     return ext_00782E70(mem_00B5FA68, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(name)), nullptr);
 }
 } // namespace lift_00712FC0
-
-// [0x00714AE0]
-namespace lift_00714AE0 {
-// @name getField0xD8
-// @summary Return the 32-bit field at offset 0xD8 of the object in ecx.
-// @field Object +0xd8 uint32_t field_0xd8
-
-
-uint32_t __fastcall sub_00714AE0(uintptr_t ecx) {
-    return *reinterpret_cast<const uint32_t*>(ecx + 0xd8);
-}
-} // namespace lift_00714AE0
 
 // [0x00715450]
 namespace lift_00715450 {
@@ -1924,21 +1740,6 @@ double __thiscall fn_0071C1B0(void* self) {
     return angle;
 }
 } // namespace lift_0071C1B0
-
-// [0x0071C750]
-namespace lift_0071C750 {
-uint32_t& mem_u32(uint32_t addr);
-
-// @name sub_0071C750
-// @summary Copies 8 32-bit words (32 bytes) from a source struct into the object's sub-struct at +0xc -> +0x738.
-// @field Class +0x0c uint32_t field_0x0c
-void __thiscall sub_0071C750(uint32_t this_ptr, uint32_t src) {
-    uint32_t dst = mem_u32(this_ptr + 0xc);
-    for (uint32_t i = 0; i < 8; ++i) {
-        mem_u32(dst + 0x738 + i * 4) = mem_u32(src + i * 4);
-    }
-}
-} // namespace lift_0071C750
 
 // [0x00712010] sub_00712010 (104 bytes)
 namespace lift_00712010 {

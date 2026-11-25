@@ -8,7 +8,7 @@
 // Recovered field layout for InlineBufferHeader:
 namespace lifted_layout {
 struct InlineBufferHeader_Fields {
-    // +0x14  uint32_t field_0x14 (set to self+0x10, the address of inline storage)  (evidence: 0x00783860, 0x00788E50)
-    // +0x18  uint32_t field_0x18 (cleared to 0)  (evidence: 0x00783860, 0x00788E50)
+    // +0x14  uint32_t field_0x14 (set to self+0x10, the address of inline storage)  (evidence: 0x00788E50)
+    // +0x18  uint32_t field_0x18 (cleared to 0)  (evidence: 0x00788E50)
 };
 } // namespace lifted_layout

@@ -290,46 +290,6 @@ void fn_0046F920(void* self) {
     fn(sub);
 }
 
-// [0x00468660]
-namespace lift_00468660 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name getNestedField_0x18_0xc
-// @summary Reads a 32-bit value at offset 0xc of the object pointed to by this+0x18
-// @field Unknown +0x18 uint32_t field_0x18
-uint32_t __thiscall sub_00468660(uint32_t this_ptr) {
-    uint32_t inner = mem_read32(this_ptr + 0x18);
-    return mem_read32(inner + 0x0c);
-}
-} // namespace lift_00468660
-
-// [0x00462A60]
-namespace lift_00462A60 {
-extern uint32_t mem_r32(uint32_t addr);
-extern uint8_t mem_r8(uint32_t addr);
-
-// @name getInnerByte1C
-// @summary Reads a byte at offset 0x1C from the pointer stored at this+0x00.
-uint8_t __thiscall sub_00462A60(uint32_t this_ptr) {
-    uint32_t inner = mem_r32(this_ptr);
-    return mem_r8(inner + 0x1c);
-}
-} // namespace lift_00462A60
-
-// [0x00462A70]
-namespace lift_00462A70 {
-extern uint32_t mem_read32(uint32_t addr);
-extern void mem_write32(uint32_t addr, uint32_t val);
-
-// @name setSubField0x4To2
-// @summary Sets dword at offset 0x4 of the pointer at this+0x4 to 2
-// @field Self +0x04 uint32_t field_0x04
-void __thiscall sub_00462A70(void* self) {
-    uint32_t ptr = mem_read32(static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self)) + 0x4);
-    mem_write32(ptr + 0x4, 2);
-}
-} // namespace lift_00462A70
-
 // [0x00462A80]
 namespace lift_00462A80 {
 // @name sub_00462A80
@@ -340,21 +300,6 @@ void __thiscall sub_00462A80(uint8_t* this_ptr) {
     *reinterpret_cast<uint32_t*>(obj + 0x4) = 1;
 }
 } // namespace lift_00462A80
-
-// [0x00462A90]
-namespace lift_00462A90 {
-// @name sub_00462A90
-// @summary Clears the dword at offset 0x4 of the object pointed to by field_0x04.
-// @field unknown +0x04 uint32_t field_0x04
-
-
-uint32_t& mem_u32(uint32_t addr);
-
-void __thiscall sub_00462A90(uint32_t this_) {
-    uint32_t eax = mem_u32(this_ + 0x4);
-    mem_u32(eax + 0x4) = 0;
-}
-} // namespace lift_00462A90
 
 // [0x00465B00] sub_00465B00 (11 bytes)
 namespace lift_00465B00 {
@@ -469,25 +414,6 @@ uint8_t fn_0046FE70(void* self) {
 }
 } // namespace lift_005355B0
 } // namespace lift_0046FE70
-
-// [0x004646A0] sub_004646A0 (15 bytes)
-namespace lift_004646A0 {
-// USER32!GetKeyState import slot (IAT entry at 0x009255F4).
-extern int mem_009255F4;
-// Imported USER32!GetKeyState(int nVirtKey) -> SHORT (__stdcall).
-extern SHORT ext_GetKeyState(INT nVirtKey);
-
-// @name Input::isMiddleMouseDown
-// @summary Returns 1 if virtual key 0x04 (VK_MBUTTON) is currently down, else 0.
-// Note: no struct fields are accessed, so no @field lines.
-uint8_t fn_004646A0() {
-    // push 4; call GetKeyState; test ax,ax; setl al; ret
-    // setl after test: OF is cleared by test, so result = sign bit of AX
-    // (i.e. the high bit of GetKeyState's SHORT return, set while the key is down).
-    const SHORT state = ext_GetKeyState(4);
-    return static_cast<uint8_t>(state < 0);
-}
-} // namespace lift_004646A0
 
 // [0x00465B20] sub_00465B20 (16 bytes)
 namespace lift_00465B20 {
@@ -705,25 +631,6 @@ void __thiscall fn_00468730(void* self, uint8_t value) {
 }
 } // namespace lift_00468730
 
-// [0x00463950] sub_00463950 (23 bytes)
-namespace lift_00463950 {
-// @name sub_00463950
-// @summary Auto-lifted identical-shape clone of 0x0040BEE0 (Window::sendMessage_0x18B).
-namespace lift_0040BEE0 {
-extern int mem_00925694;
-extern int32_t __stdcall ext_SendMessageA(uint32_t hWnd, uint32_t msg, uint32_t wParam, uint32_t lParam);
-
-// @name Window::sendMessage_0x18B
-// @class Window
-// @summary Sends message 0x18B with zero wParam/lParam to the window handle stored in this->+0x20.
-// @field Window +0x20 uint32_t hWnd
-void fn_00463950(void* self) {
-    const uint32_t hWnd = lift_field<uint32_t>(self, 0x2E4);
-    ext_SendMessageA(hWnd, 0x1009, 0, 0);
-}
-} // namespace lift_0040BEE0
-} // namespace lift_00463950
-
 // [0x00465EF0] sub_00465EF0 (24 bytes)
 namespace lift_00465EF0 {
 // Known callee 0x00433290: Unknown::forwardToChildAt154 (Forwards the call to the child object at +0x154 via sub_0044E160; does nothing when the child is null.)
@@ -933,24 +840,6 @@ void fn_0046FF50(void* self, uint32_t value) {
 }
 } // namespace lift_0046FF50
 
-// [0x0046FE90]
-namespace lift_0046FE90 {
-// @name Unknown::requestStopUnlessFlagSet
-// @class Unknown
-// @summary If the byte at this+0x152 is zero, tail-calls RequestStop; otherwise returns.
-// @field Unknown +0x152 uint8_t field_0x152
-
-void fn_0046F930(void* self);
-
-void fn_0046FE90(void* self)
-{
-    uint8_t flag = *reinterpret_cast<uint8_t*>(reinterpret_cast<uintptr_t>(self) + 0x152);
-    if (flag == 0) {
-        fn_0046F930(self);
-    }
-}
-} // namespace lift_0046FE90
-
 // [0x00465E80] sub_00465E80 (22 bytes)
 namespace lift_00465E80 {
 // Known callee 0x00435B30: sub_00435B30 (Auto-lifted identical-shape clone of 0x00642600 (forwardEraseTailRange).)
@@ -969,26 +858,3 @@ void fn_00465E80(void* self) {
     }
 }
 } // namespace lift_00465E80
-
-// [0x004694E0]
-namespace lift_004694E0 {
-// @name checkSubObjectBitFlag
-// @summary Checks if the object is enabled at +0x10 and its sub-object at +0x1c has the given bit flag set.
-// @field Object +0x10 uint8_t field_0x10
-// @field Object +0x1c void* field_0x1c
-
-extern uint8_t mem_read8(const void* base, uint32_t offset);
-extern void* mem_read_ptr(const void* base, uint32_t offset);
-extern bool __thiscall ext_004B08A0(void* self, uint32_t index);
-
-bool __thiscall fn_004694E0(void* self, uint32_t index) {
-    if (mem_read8(self, 0x10) == 0) {
-        return false;
-    }
-    void* sub = mem_read_ptr(self, 0x1c);
-    if (sub == nullptr) {
-        return false;
-    }
-    return ext_004B08A0(sub, index);
-}
-} // namespace lift_004694E0

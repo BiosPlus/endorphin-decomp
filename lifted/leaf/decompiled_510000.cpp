@@ -42,24 +42,6 @@ uint32_t fn_0051F610(uint32_t begin, uint32_t end, uint32_t value) {
 } // namespace lift_0054F290
 } // namespace lift_0051F610
 
-// [0x0051DF00] sub_0051DF00 (92 bytes)
-namespace lift_0051DF00 {
-// @name sub_0051DF00
-// @summary Auto-lifted identical-shape clone of 0x00699810 (allocate_array_0x2c).
-namespace lift_00699810 {
-extern void* fn_006A5C62(uint32_t size);
-
-// @name allocate_array_0x2c
-// @summary Allocates an array of count 0x2c-byte elements, throwing std::bad_alloc on size_t overflow.
-extern void* fn_0051DF00(uint32_t count) {
-    if (count > 0 && (0xFFFFFFFFu / count) < 0x168u) {
-        throw std::bad_alloc();
-    }
-    return fn_006A5C62(count * 0x168u);
-}
-} // namespace lift_00699810
-} // namespace lift_0051DF00
-
 // [0x0051E170] sub_0051E170 (43 bytes)
 namespace lift_0051E170 {
 // @name sub_0051E170
@@ -118,90 +100,6 @@ int32_t fn_0051E070(int32_t a, int32_t b, int32_t c) {
 }
 } // namespace lift_0051E070
 
-// [0x00519D50] sub_00519D50 (91 bytes)
-namespace lift_00519D50 {
-// @name AllocateElements8
-// @summary Allocates storage for `count` 8-byte elements; throws std::length_error if count*8 would overflow.
-void* fn_00519D50(uint32_t count) {
-    if (count != 0 && (0xFFFFFFFFu / count) < 8u) {
-        throw std::length_error("vector<T> too long");
-    }
-    return ::operator new(static_cast<size_t>(count) * 8u);
-}
-} // namespace lift_00519D50
-
-// [0x0051EC00] sub_0051EC00 (59 bytes)
-namespace lift_0051EC00 {
-// @name sub_0051EC00
-// @summary Auto-lifted identical-shape clone of 0x005015E0 (Unknown::eraseRangeFromSelf).
-namespace lift_005015E0 {
-// Known callee 0x005013F0: sub_005013F0 (Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).)
-// Thiscall: self in ecx, then five stack args (out_iter, first_container, first_ptr, last_container, last_ptr).
-extern void* ext_0051E740(void* self, void* out_iter, void* first_container,
-                              void* first_ptr, void* last_container, void* last_ptr);
-
-// @name Unknown::eraseRangeFromSelf
-// @class Unknown
-// @summary Erases the element range bounded by self+0x04 .. self+0x08 by forwarding both bounds to 0x005013F0.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-void fn_0051EC00(void* self) {
-    auto* base = static_cast<unsigned char*>(self);
-    auto load_u32 = [&](std::size_t off) {
-        std::uint32_t v;
-        std::memcpy(&v, base + off, sizeof v);
-        return v;
-    };
-
-    // The original asserts first <= last via _invalid_parameter_noinfo (diagnostic only; no
-    // observable effect on the erase), so it is omitted here.
-    const auto first = static_cast<std::uintptr_t>(load_u32(0x04));
-    const auto last = static_cast<std::uintptr_t>(load_u32(0x08));
-
-    // The out iterator is a caller-provided slot; this function never reads it.
-    alignas(8) unsigned char out_iter[16] = {};
-    ext_0051E740(self, out_iter, self, reinterpret_cast<void*>(first),
-                 self, reinterpret_cast<void*>(last));
-}
-} // namespace lift_005015E0
-} // namespace lift_0051EC00
-
-// [0x0051FEB0] sub_0051FEB0 (59 bytes)
-namespace lift_0051FEB0 {
-// @name sub_0051FEB0
-// @summary Auto-lifted identical-shape clone of 0x005015E0 (Unknown::eraseRangeFromSelf).
-namespace lift_005015E0 {
-// Known callee 0x005013F0: sub_005013F0 (Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).)
-// Thiscall: self in ecx, then five stack args (out_iter, first_container, first_ptr, last_container, last_ptr).
-extern void* ext_0051F840(void* self, void* out_iter, void* first_container,
-                              void* first_ptr, void* last_container, void* last_ptr);
-
-// @name Unknown::eraseRangeFromSelf
-// @class Unknown
-// @summary Erases the element range bounded by self+0x04 .. self+0x08 by forwarding both bounds to 0x005013F0.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-void fn_0051FEB0(void* self) {
-    auto* base = static_cast<unsigned char*>(self);
-    auto load_u32 = [&](std::size_t off) {
-        std::uint32_t v;
-        std::memcpy(&v, base + off, sizeof v);
-        return v;
-    };
-
-    // The original asserts first <= last via _invalid_parameter_noinfo (diagnostic only; no
-    // observable effect on the erase), so it is omitted here.
-    const auto first = static_cast<std::uintptr_t>(load_u32(0x04));
-    const auto last = static_cast<std::uintptr_t>(load_u32(0x08));
-
-    // The out iterator is a caller-provided slot; this function never reads it.
-    alignas(8) unsigned char out_iter[16] = {};
-    ext_0051F840(self, out_iter, self, reinterpret_cast<void*>(first),
-                 self, reinterpret_cast<void*>(last));
-}
-} // namespace lift_005015E0
-} // namespace lift_0051FEB0
-
 // [0x0051DEA0]
 namespace lift_0051DEA0 {
 extern void* ext_006A5C62(uint32_t size);
@@ -249,83 +147,6 @@ void* fn_00516F90() {
     return &mem_00AEC0A8;
 }
 } // namespace lift_00516F90
-
-// [0x0051A210] sub_0051A210 (95 bytes)
-namespace lift_0051A210 {
-// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
-extern void* ext_0066AD10(void* out, uint32_t arg);
-// Known callee 0x006A6C87: sub_006A6C87 (18B) - registers a teardown routine.
-extern void ext_006A6C87(void (*teardown)(void));
-// Teardown routine whose address is pushed to 0x006A6C87.
-extern void ext_00919FF0(void);
-extern uint32_t mem_00AEC728;   // once-init guard flag (bit 0)
-extern uint8_t mem_00AEC70C[];  // static object storage (size not recovered)
-
-// @name GetOnceInitString_0051A210
-// @summary One-time guarded initializer for the global at 0x00AEC70C; on first call builds it via ext_0066AD10 and registers its teardown via ext_006A6C87; later calls only return its address.
-void* fn_0051A210(void) {
-    // Guard bit 0 of mem_00AEC728. Original MSVC SEH frame (fs:[0] push/pop around the
-    // initialization) is an exception-unwind detail and is not reproduced here.
-    if ((mem_00AEC728 & 1u) == 0u) {
-        mem_00AEC728 |= 1u;
-        // Original pushes the operand 0x00A4320C as the second argument.
-        ext_0066AD10(mem_00AEC70C, 0x00A4320Cu);
-        // Original pushes 0x00919FF0 as the teardown address for 0x006A6C87.
-        ext_006A6C87(ext_00919FF0);
-    }
-    return mem_00AEC70C;
-}
-} // namespace lift_0051A210
-
-// [0x0051A270] sub_0051A270 (95 bytes)
-namespace lift_0051A270 {
-// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
-// Second pushed argument is a 32-bit literal (0x00A43218), so it is declared as uint32_t.
-extern void* ext_0066AD10(void* out, uint32_t arg);
-// Callee 0x006A6C87 takes one pointer argument (0x00919FE0, a teardown routine registered once).
-extern int ext_006A6C87(void* fn);
-extern int mem_00AEC748;   // once-init guard flag (bit 0)
-extern int mem_00AEC72C;   // static string/object storage
-extern void ext_00919FE0(); // teardown routine (address pushed as the argument to 0x006A6C87)
-
-// @name InitOnceGlobalString_0051A270
-// @summary One-time guarded initializer for the global at mem_00AEC72C (guarded by bit 0 of mem_00AEC748); registers a teardown and returns its address.
-void* fn_0051A270(void) {
-    if ((mem_00AEC748 & 1) == 0) {
-        mem_00AEC748 |= 1;
-        ext_0066AD10(&mem_00AEC72C, 0x00A43218u);
-        ext_006A6C87(reinterpret_cast<void*>(&ext_00919FE0));
-    }
-    return &mem_00AEC72C;
-}
-} // namespace lift_0051A270
-
-// [0x0051A560] sub_0051A560 (95 bytes)
-namespace lift_0051A560 {
-// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
-extern void* ext_0066AD10(void* out, uint32_t arg);
-// Known callee 0x006A6C87: sub_006A6C87 (18B) - registers a teardown routine.
-extern void ext_006A6C87(void (*teardown)(void));
-// Teardown routine whose address is pushed to 0x006A6C87.
-extern void ext_0091A000(void);
-extern uint32_t mem_00AEC778;   // once-init guard flag (bit 0)
-extern uint8_t mem_00AEC75C[];  // static object storage (size not recovered)
-
-// @name GetOnceInitString_0051A560
-// @summary One-time guarded initializer for the global at 0x00AEC75C; on first call builds it via ext_0066AD10 and registers its teardown (0x0091A000) via ext_006A6C87; later calls only return its address.
-void* fn_0051A560(void) {
-    // Guard bit 0 of mem_00AEC778. The original MSVC SEH frame (fs:[0] push/pop, try-state
-    // slot) is an exception-unwind detail and is not reproduced here.
-    if ((mem_00AEC778 & 1u) == 0u) {
-        mem_00AEC778 |= 1u;
-        // Original pushes the operand 0x00A43418 as the second argument.
-        ext_0066AD10(mem_00AEC75C, 0x00A43418u);
-        // Original pushes 0x0091A000 as the teardown address for 0x006A6C87.
-        ext_006A6C87(ext_0091A000);
-    }
-    return mem_00AEC75C;
-}
-} // namespace lift_0051A560
 
 // [0x00517070] sub_00517070 (33 bytes)
 namespace lift_00517070 {

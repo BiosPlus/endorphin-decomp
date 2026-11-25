@@ -100,78 +100,6 @@ uint8_t* fn_007DC8C0(uint8_t* p, int32_t key) {
 }
 } // namespace lift_007DC8C0
 
-// [0x007D6260]
-namespace lift_007D6260 {
-extern uint32_t mem_read_u32(uint32_t addr);
-extern void mem_write_u32(uint32_t addr, uint32_t val);
-
-// @name freeBuffer
-// @summary Frees a buffer via an allocator callback at +0x1c/+0x10 and clears +0x00 and +0x04.
-// @field Buffer +0x00 uint32_t field_0x00
-// @field Buffer +0x04 uint32_t field_0x04
-// @field Buffer +0x1c uint32_t field_0x1c
-void sub_007D6260(uint32_t arg0) {
-    uint32_t ptr = mem_read_u32(arg0);
-    if (ptr != 0) {
-        uint32_t alloc = mem_read_u32(arg0 + 0x1c);
-        uint32_t free_fn = mem_read_u32(alloc + 0x10);
-        reinterpret_cast<void (*)(uint32_t)>(static_cast<uintptr_t>(free_fn))(ptr);
-        mem_write_u32(arg0, 0);
-        mem_write_u32(arg0 + 0x04, 0);
-    }
-}
-} // namespace lift_007D6260
-
-// [0x007D48C0]
-namespace lift_007D48C0 {
-uint32_t mem_read32(uint32_t addr);
-void mem_write32(uint32_t addr, uint32_t val);
-
-// @name TreeNode::rotateLeft
-// @class TreeNode
-// @summary Performs a left rotation on a binary tree node with parent pointers.
-// @field TreeNode +0x00 uint32_t left
-// @field TreeNode +0x04 uint32_t right
-// @field TreeNode +0x08 uint32_t parent
-
-void sub_007D48C0(uint32_t eax) {
-    uint32_t ecx = mem_read32(eax + 0x4);
-    uint32_t edx = mem_read32(ecx);
-    mem_write32(eax + 0x4, edx);
-    mem_write32(edx + 0x8, eax);
-    edx = mem_read32(eax + 0x8);
-    mem_write32(ecx + 0x8, edx);
-    if (eax == mem_read32(edx)) {
-        mem_write32(edx, ecx);
-    } else {
-        mem_write32(edx + 0x4, ecx);
-    }
-    mem_write32(ecx, eax);
-    mem_write32(eax + 0x8, ecx);
-}
-} // namespace lift_007D48C0
-
-// [0x007D5DA0] sub_007D5DA0 (39 bytes)
-namespace lift_007D5DA0 {
-// x87 control-word access (fnstcw / fnclex + fldcw). No external code is
-// called; these are hardware-state hooks the portable build provides.
-extern uint16_t lift_x87_read_cw(void);
-extern void lift_x87_write_cw(uint16_t cw);
-
-// @name x87_setPrecisionControl
-// @summary Replaces x87 precision-control bits (CW bits 8-9) with the low 2 bits of the
-//          stack argument, keeping exception masks and clearing the rest of the control word, then reloads it.
-void fn_007D5DA0(uint32_t mode) {
-    uint32_t slot = 0;                                  // mov dword ptr [esp], 0
-    slot = lift_x87_read_cw();                          // fnstcw word ptr [esp]
-    uint32_t eax = (mode & 0x3u) << 8;                  // and eax,3 / shl eax,8
-    uint32_t edx = slot & 0x7Fu;                        // mov edx,[esp] / and edx,7Fh
-    eax |= edx;                                         // or eax,edx
-    slot = eax;                                         // mov [esp],eax
-    lift_x87_write_cw(static_cast<uint16_t>(slot));     // fnclex / fldcw word ptr [esp]
-}
-} // namespace lift_007D5DA0
-
 // [0x007DEC80] sub_007DEC80 (39 bytes)
 namespace lift_007DEC80 {
 // @name Unknown::initFromSource (descriptive placeholder; owning class not identified)
@@ -203,55 +131,6 @@ void fn_007DEC80(void* eax, void* ecx, uint16_t dx, float f) {
 }
 } // namespace lift_007DEC80
 
-// [0x007DAD70]
-namespace lift_007DAD70 {
-// Memory and external helpers used by this lift (32-bit guest address space).
-extern uint32_t mem_read_u32(uint32_t addr);
-extern uint32_t ext_007D5950(uint32_t a1, uint32_t a2, uint32_t a3);
-
-// @name Unknown::forwardSlot3Field0xB0Passthrough
-// @class Unknown
-// @summary Reads the object's vtable slot 3, takes the pointer stored there, reads its +0xB0 dword, and tail-forwards it with a constant to ext_007D5950.
-// @field Unknown +0x00 uint32_t vtable (object's vtable pointer)
-// @field Unknown +0x0c uint32_t slot3 (vtable entry 3, read as a pointer)
-// @field Unknown +0xb0 uint32_t field_0xb0 (dword inside the object referenced by slot3)
-uint32_t fn_007DAD70(uint32_t self_ptr) {
-    uint32_t vtable = mem_read_u32(self_ptr + 0x00);
-    uint32_t slot3  = mem_read_u32(vtable + 0x0c);
-    uint32_t value  = mem_read_u32(slot3 + 0xb0);
-    // Original: push 0x99e1e0 / push value / push 0 ; jmp sub_007D5950 (tail call)
-    return ext_007D5950(0u, value, 0x0099E1E0u);
-}
-} // namespace lift_007DAD70
-
-// [0x007D48F0] sub_007D48F0 (40 bytes)
-namespace lift_007D48F0 {
-extern uint32_t mem_read_u32(uint32_t addr);
-extern void mem_write_u32(uint32_t addr, uint32_t val);
-
-// @name TreeNode::rotateRightAbout
-// @class TreeNode
-// @summary Rotates node x's left child up into x's place (right rotation); updates child/parent links.
-// @field TreeNode +0x00 uint32_t left
-// @field TreeNode +0x04 uint32_t right
-// @field TreeNode +0x08 uint32_t parent
-void fn_007D48F0(uint32_t x) {
-    const uint32_t l  = mem_read_u32(x + 0x00);   // x->left
-    const uint32_t lr = mem_read_u32(l + 0x04);   // l->right
-    mem_write_u32(x + 0x00, lr);                  // x->left = l->right
-    mem_write_u32(lr + 0x08, x);                  // lr->parent = x
-    const uint32_t p = mem_read_u32(x + 0x08);    // p = x->parent
-    mem_write_u32(l + 0x08, p);                   // l->parent = p
-    if (x == mem_read_u32(p + 0x04)) {
-        mem_write_u32(p + 0x04, l);               // p->right = l (x was right child)
-    } else {
-        mem_write_u32(p + 0x00, l);               // p->left = l (x was left child)
-    }
-    mem_write_u32(l + 0x04, x);                   // l->right = x
-    mem_write_u32(x + 0x08, l);                   // x->parent = l
-}
-} // namespace lift_007D48F0
-
 // [0x007DFD80]
 namespace lift_007DFD80 {
 // @name initAllocatedArray
@@ -269,28 +148,6 @@ void __cdecl sub_007DFD80(uint32_t* out_header, uint32_t count, uint32_t* alloca
     out_header[2] = 0u;
 }
 } // namespace lift_007DFD80
-
-// [0x007DAE50]
-namespace lift_007DAE50 {
-// @name allocAndInit_007DAE50
-// @summary Allocates a 32-byte (16-byte aligned) block via context->field_0xb0 and initializes it with sub_007DAD50.
-// @field Context +0xb0 uint32_t field_0xb0
-
-extern uint32_t mem_read32(uint32_t addr);
-extern uint32_t ext_007DAD50(uint32_t a1, uint32_t a2);
-
-uint32_t fn_007DAE50(uint32_t a1) {
-    uint32_t alloc_obj = mem_read32(a1 + 0xb0);
-    uint32_t alloc_fn_addr = mem_read32(alloc_obj + 0x8);
-    using AllocFn = uint32_t (*)(uint32_t, uint32_t);
-    AllocFn alloc_fn = reinterpret_cast<AllocFn>(static_cast<uintptr_t>(alloc_fn_addr));
-    uint32_t ptr = alloc_fn(0x20, 0x10);
-    if (ptr == 0) {
-        return 0;
-    }
-    return ext_007DAD50(ptr, a1);
-}
-} // namespace lift_007DAE50
 
 // [0x007DD130]
 namespace lift_007DD130 {
@@ -406,35 +263,6 @@ extern void fn_007D8890(void* self, uint32_t a1, uint32_t a2) {
 }
 } // namespace lift_007D8890
 
-// [0x007DB9E0]
-namespace lift_007DB9E0 {
-// @name buildSkewSymmetricMatrix
-// @summary Builds a 3x3 skew-symmetric (cross-product) matrix in [eax] from a 3D vector in [ecx]
-// @field Vec3 +0x00 float x
-// @field Vec3 +0x04 float y
-// @field Vec3 +0x08 float z
-
-
-float mem_read_f32(uint32_t addr);
-void mem_write_f32(uint32_t addr, float val);
-
-void sub_007DB9E0(uint32_t eax, uint32_t ecx) {
-    float x = mem_read_f32(ecx + 0x0);
-    float y = mem_read_f32(ecx + 0x4);
-    float z = mem_read_f32(ecx + 0x8);
-
-    mem_write_f32(eax + 0x20, 0.0f);
-    mem_write_f32(eax + 0x10, 0.0f);
-    mem_write_f32(eax + 0x00, 0.0f);
-    mem_write_f32(eax + 0x04, z);
-    mem_write_f32(eax + 0x0c, -z);
-    mem_write_f32(eax + 0x08, -y);
-    mem_write_f32(eax + 0x18, y);
-    mem_write_f32(eax + 0x14, x);
-    mem_write_f32(eax + 0x1c, -x);
-}
-} // namespace lift_007DB9E0
-
 // [0x007DA8E0]
 namespace lift_007DA8E0 {
 // @name AccumulateStats
@@ -463,37 +291,6 @@ extern void fn_007DA8E0(void* out_stats, void* obj) {
     }
 }
 } // namespace lift_007DA8E0
-
-// [0x007D6290]
-namespace lift_007D6290 {
-extern uint32_t mem_r32(uint32_t addr);
-extern void mem_w32(uint32_t addr, uint32_t val);
-
-// @name setOwnedState
-// @summary Updates state at +0x10 and invokes callback at +0x1c/+0x10 on pointer at +0x00 when transitioning from 1 with +0x14 == 0.
-// @field struct +0x00 uint32_t field_0x00
-// @field struct +0x10 uint32_t field_0x10
-// @field struct +0x14 uint32_t field_0x14
-// @field struct +0x1c uint32_t field_0x1c
-
-void sub_007D6290(uint32_t arg0, uint32_t arg1) {
-    uint32_t old_val = mem_r32(arg0 + 0x10);
-    if (old_val == arg1) {
-        return;
-    }
-
-    if (mem_r32(arg0 + 0x14) == 0 && old_val == 1) {
-        uint32_t ptr = mem_r32(arg0);
-        if (ptr != 0) {
-            uint32_t ctx = mem_r32(arg0 + 0x1c);
-            uint32_t fn = mem_r32(ctx + 0x10);
-            reinterpret_cast<void (*)(uint32_t)>(static_cast<uintptr_t>(fn))(ptr);
-        }
-    }
-
-    mem_w32(arg0 + 0x10, arg1);
-}
-} // namespace lift_007D6290
 
 // [0x007D4860] sub_007D4860 (54 bytes)
 namespace lift_007D4860 {
@@ -826,67 +623,6 @@ std::uint32_t fn_007D4AA0(std::uint32_t key, std::uint32_t head) {
 }
 } // namespace lift_007D4AA0
 
-// [0x007DA820]
-namespace lift_007DA820 {
-// @name FindNonFlaggedLinkNode
-// @summary Walks a link structure via ext_007D4AA0 until a node whose +0x14 object lacks flag 0x2 at +0x1C4 is found.
-// @field LinkNode +0x14 uint32_t field_0x14
-// @field LinkObject +0x1C4 uint8_t field_0x1C4
-
-
-extern std::uint32_t mem_load32(std::uint32_t addr);
-extern std::uint8_t mem_load8(std::uint32_t addr);
-extern std::uint32_t ext_007D4AA0(std::uint32_t key, std::uint32_t node);
-
-extern std::uint32_t fn_007DA820(std::uint32_t key, std::uint32_t node) {
-    while (node != 0u) {
-        std::uint32_t obj = mem_load32(node + 0x14u);
-        if ((mem_load8(obj + 0x1C4u) & 0x2u) == 0u) {
-            return node;
-        }
-        node = ext_007D4AA0(key, node);
-    }
-    return 0u;
-}
-} // namespace lift_007DA820
-
-// [0x007DFCE0] sub_007DFCE0 (68 bytes)
-namespace lift_007DFCE0 {
-extern uint32_t ext_007C8880(uint32_t a1);
-extern uint32_t mem_read32(uint32_t addr);
-extern void mem_call1(uint32_t fn, void* arg);
-
-// @name Unknown::initPairAndNotify
-// @class Unknown
-// @summary Stores two inputs into the record, caches a lookup result, clears scratch slots, and invokes the object's vtable slot 0x98 if present.
-// @field Unknown +0x00 uint32_t field_0x00
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x0C uint32_t field_0x0C
-// @field Unknown +0x10 uint32_t field_0x10
-// @field Unknown +0x14 uint32_t field_0x14
-// @field Unknown +0x18 uint32_t field_0x18
-// @field Unknown +0x1C uint32_t field_0x1C
-void fn_007DFCE0(void* self, uint32_t a2, uint32_t a3) {
-    lift_field<uint32_t>(self, 0x00) = a2;
-    lift_field<uint32_t>(self, 0x04) = a3;
-
-    uint32_t vtable = mem_read32(a2);
-    lift_field<uint32_t>(self, 0x0C) = ext_007C8880(vtable);
-
-    lift_field<uint32_t>(self, 0x10) = 0;
-    lift_field<uint32_t>(self, 0x1C) = 0;
-    lift_field<uint32_t>(self, 0x18) = 0;
-    lift_field<uint32_t>(self, 0x14) = 0;
-
-    uint32_t obj = lift_field<uint32_t>(self, 0x00);
-    uint32_t objVtable = mem_read32(obj);
-    uint32_t notify = mem_read32(objVtable + 0x98);
-    if (notify != 0) {
-        mem_call1(notify, self);
-    }
-}
-} // namespace lift_007DFCE0
-
 // [0x007D83B0] sub_007D83B0 (68 bytes)
 namespace lift_007D83B0 {
 // Known callee 0x006A6E8C: thunk_MSVCR80_memset (IAT jump thunk forwarding to MSVCR80!memset.)
@@ -984,35 +720,6 @@ void __stdcall SplitRangeEvenly_007D9630(Range* out, int32_t start, int32_t tota
 }
 } // namespace lift_007D9630
 
-// [0x007D6660]
-namespace lift_007D6660 {
-uint32_t mem_read32(uint32_t addr);
-void mem_write32(uint32_t addr, uint32_t val);
-
-// @name incrementClampedBucket
-// @summary Rounds input up to a multiple of 4, divides by 4, clamps to [0, field_0x14 - 1], increments that uint32_t entry in field_0x10, and returns its address.
-// @field unknown +0x10 uint32_t field_0x10
-// @field unknown +0x14 int32_t field_0x14
-uint32_t sub_007D6660(int32_t eax, uint32_t esi) {
-    int32_t rem = eax % 4;
-    if (rem != 0) {
-        eax = eax - rem + 4;
-    }
-    int32_t idx = eax / 4;
-    int32_t max_idx = mem_read32(esi + 0x14) - 1;
-    if (idx >= max_idx) {
-        idx = max_idx;
-    }
-    if (idx < 0) {
-        idx = 0;
-    }
-    uint32_t arr = mem_read32(esi + 0x10);
-    uint32_t addr = arr + static_cast<uint32_t>(idx) * 4u;
-    mem_write32(addr, mem_read32(addr) + 1u);
-    return addr;
-}
-} // namespace lift_007D6660
-
 // [0x007DD040] sub_007DD040 (81 bytes)
 namespace lift_007DD040 {
 // Known callee 0x007DCBB0 (97 bytes): one stack argument, caller-cleaned.
@@ -1091,49 +798,6 @@ int fn_007DB130(void* self) {
     return call(0x14);
 }
 } // namespace lift_007DB130
-
-// [0x007DB6C0]
-namespace lift_007DB6C0 {
-extern uint32_t mem_r32(uint32_t);
-extern void ext_007CC9E0(uint32_t);
-extern void ext_007CC930(uint32_t);
-
-// @name destroyListNode
-// @summary Releases a node's array elements, frees its buffers via allocator callbacks, and unlinks it.
-// @field Node +0x0c uint32_t field_0x0c
-// @field Node +0x10 uint32_t field_0x10
-// @field Node +0x14 uint32_t field_0x14
-// @field Node +0x1c int32_t count
-void sub_007DB6C0(uint32_t node) {
-    if (node == 0) {
-        return;
-    }
-
-    int32_t count = static_cast<int32_t>(mem_r32(node + 0x1c));
-    for (int32_t i = 0; i < count; ++i) {
-        uint32_t arr = mem_r32(node + 0x14);
-        uint32_t elem = mem_r32(arr + static_cast<uint32_t>(i) * 4);
-        if (elem == 0) {
-            break;
-        }
-        ext_007CC9E0(elem);
-    }
-
-    uint32_t owner1 = mem_r32(node + 0xc);
-    uint32_t alloc1 = mem_r32(owner1 + 0xb0);
-    uint32_t free_fn1 = mem_r32(alloc1 + 0xc);
-    uint32_t buf1 = mem_r32(node + 0x14);
-    reinterpret_cast<void (*)(uint32_t)>(static_cast<uintptr_t>(free_fn1))(buf1);
-
-    uint32_t owner2 = mem_r32(node + 0xc);
-    uint32_t alloc2 = mem_r32(owner2 + 0xb0);
-    uint32_t free_fn2 = mem_r32(alloc2 + 0x10);
-    uint32_t buf2 = mem_r32(node + 0x10);
-    reinterpret_cast<void (*)(uint32_t)>(static_cast<uintptr_t>(free_fn2))(buf2);
-
-    ext_007CC930(node);
-}
-} // namespace lift_007DB6C0
 
 // [0x007DCA30] sub_007DCA30 (106 bytes)
 namespace lift_007DCA30 {

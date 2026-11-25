@@ -107,23 +107,6 @@ void fn_00557360(void* self, int edx_unused, int a1, int a2) {
 } // namespace lift_005694F0
 } // namespace lift_00557360
 
-// [0x00559620] sub_00559620 (27 bytes)
-namespace lift_00559620 {
-// @name sub_00559620
-// @summary Auto-lifted identical-shape clone of 0x005694F0 (DestroyRangeForward_005694F0).
-namespace lift_005694F0 {
-extern void __cdecl ext_00558F20(int a1, int a2, void* self, int a4);
-
-// @name DestroyRangeForward_005694F0
-// @class (none)
-// @summary Forwards two stack arguments plus the incoming ECX value to ext_005693E0 (range destroy helper).
-void fn_00559620(void* self, int edx_unused, int a1, int a2) {
-    // Original: push a2, push ecx, push a2, push a1, call ext_005693E0(a1, a2, self, a2).
-    ext_00558F20(a1, a2, self, a2);
-}
-} // namespace lift_005694F0
-} // namespace lift_00559620
-
 // [0x00559640] sub_00559640 (27 bytes)
 namespace lift_00559640 {
 // @name sub_00559640
@@ -458,276 +441,6 @@ float fn_00553170(void* self, float value) {
 }
 } // namespace lift_00553170
 
-// [0x005577A0] sub_005577A0 (63 bytes)
-namespace lift_005577A0 {
-// @name sub_005577A0
-// @summary Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).
-namespace lift_00569970 {
-extern void ext_0041DD40(uint32_t a0, uint32_t a1, void* a2, void* a3);
-extern void fn_006A5C5C(uint32_t arg);
-
-// @name Unknown::ReleaseHandleAndClear
-// @class Unknown
-// @summary If field +0x04 is nonzero, run ext_005693E0 with it and forward it to fn_006A5C5C, then clear fields +0x04, +0x08 and +0x0C.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-// @field Unknown +0x0C uint32_t field_0x0C
-void fn_005577A0(void* self) {
-    if (lift_field<uint32_t>(self, 0x4) != 0) {
-        // Argument order matches the original pushes: a0 = f04, a1 = f08, a2 = self, a3 = ecx (self).
-        ext_0041DD40(lift_field<uint32_t>(self, 0x4),
-                     lift_field<uint32_t>(self, 0x8),
-                     self,
-                     self);
-        fn_006A5C5C(lift_field<uint32_t>(self, 0x4));
-    }
-    lift_field<uint32_t>(self, 0x4) = 0;
-    lift_field<uint32_t>(self, 0x8) = 0;
-    lift_field<uint32_t>(self, 0xC) = 0;
-}
-} // namespace lift_00569970
-} // namespace lift_005577A0
-
-// [0x005577E0] sub_005577E0 (63 bytes)
-namespace lift_005577E0 {
-// @name sub_005577E0
-// @summary Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).
-namespace lift_00569970 {
-extern void ext_00556740(uint32_t a0, uint32_t a1, void* a2, void* a3);
-extern void fn_006A5C5C(uint32_t arg);
-
-// @name Unknown::ReleaseHandleAndClear
-// @class Unknown
-// @summary If field +0x04 is nonzero, run ext_005693E0 with it and forward it to fn_006A5C5C, then clear fields +0x04, +0x08 and +0x0C.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-// @field Unknown +0x0C uint32_t field_0x0C
-void fn_005577E0(void* self) {
-    if (lift_field<uint32_t>(self, 0x4) != 0) {
-        // Argument order matches the original pushes: a0 = f04, a1 = f08, a2 = self, a3 = ecx (self).
-        ext_00556740(lift_field<uint32_t>(self, 0x4),
-                     lift_field<uint32_t>(self, 0x8),
-                     self,
-                     self);
-        fn_006A5C5C(lift_field<uint32_t>(self, 0x4));
-    }
-    lift_field<uint32_t>(self, 0x4) = 0;
-    lift_field<uint32_t>(self, 0x8) = 0;
-    lift_field<uint32_t>(self, 0xC) = 0;
-}
-} // namespace lift_00569970
-} // namespace lift_005577E0
-
-// [0x00557920] sub_00557920 (63 bytes)
-namespace lift_00557920 {
-// @name sub_00557920
-// @summary Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).
-namespace lift_00569970 {
-extern void ext_005567D0(uint32_t a0, uint32_t a1, void* a2, void* a3);
-extern void fn_006A5C5C(uint32_t arg);
-
-// @name Unknown::ReleaseHandleAndClear
-// @class Unknown
-// @summary If field +0x04 is nonzero, run ext_005693E0 with it and forward it to fn_006A5C5C, then clear fields +0x04, +0x08 and +0x0C.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-// @field Unknown +0x0C uint32_t field_0x0C
-void fn_00557920(void* self) {
-    if (lift_field<uint32_t>(self, 0x4) != 0) {
-        // Argument order matches the original pushes: a0 = f04, a1 = f08, a2 = self, a3 = ecx (self).
-        ext_005567D0(lift_field<uint32_t>(self, 0x4),
-                     lift_field<uint32_t>(self, 0x8),
-                     self,
-                     self);
-        fn_006A5C5C(lift_field<uint32_t>(self, 0x4));
-    }
-    lift_field<uint32_t>(self, 0x4) = 0;
-    lift_field<uint32_t>(self, 0x8) = 0;
-    lift_field<uint32_t>(self, 0xC) = 0;
-}
-} // namespace lift_00569970
-} // namespace lift_00557920
-
-// [0x005587E0] sub_005587E0 (63 bytes)
-namespace lift_005587E0 {
-// @name sub_005587E0
-// @summary Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).
-namespace lift_00569970 {
-extern void ext_005566D0(uint32_t a0, uint32_t a1, void* a2, void* a3);
-extern void fn_006A5C5C(uint32_t arg);
-
-// @name Unknown::ReleaseHandleAndClear
-// @class Unknown
-// @summary If field +0x04 is nonzero, run ext_005693E0 with it and forward it to fn_006A5C5C, then clear fields +0x04, +0x08 and +0x0C.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-// @field Unknown +0x0C uint32_t field_0x0C
-void fn_005587E0(void* self) {
-    if (lift_field<uint32_t>(self, 0x4) != 0) {
-        // Argument order matches the original pushes: a0 = f04, a1 = f08, a2 = self, a3 = ecx (self).
-        ext_005566D0(lift_field<uint32_t>(self, 0x4),
-                     lift_field<uint32_t>(self, 0x8),
-                     self,
-                     self);
-        fn_006A5C5C(lift_field<uint32_t>(self, 0x4));
-    }
-    lift_field<uint32_t>(self, 0x4) = 0;
-    lift_field<uint32_t>(self, 0x8) = 0;
-    lift_field<uint32_t>(self, 0xC) = 0;
-}
-} // namespace lift_00569970
-} // namespace lift_005587E0
-
-// [0x005597C0] sub_005597C0 (63 bytes)
-namespace lift_005597C0 {
-// @name sub_005597C0
-// @summary Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).
-namespace lift_00569970 {
-extern void ext_00558F20(uint32_t a0, uint32_t a1, void* a2, void* a3);
-extern void fn_006A5C5C(uint32_t arg);
-
-// @name Unknown::ReleaseHandleAndClear
-// @class Unknown
-// @summary If field +0x04 is nonzero, run ext_005693E0 with it and forward it to fn_006A5C5C, then clear fields +0x04, +0x08 and +0x0C.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-// @field Unknown +0x0C uint32_t field_0x0C
-void fn_005597C0(void* self) {
-    if (lift_field<uint32_t>(self, 0x4) != 0) {
-        // Argument order matches the original pushes: a0 = f04, a1 = f08, a2 = self, a3 = ecx (self).
-        ext_00558F20(lift_field<uint32_t>(self, 0x4),
-                     lift_field<uint32_t>(self, 0x8),
-                     self,
-                     self);
-        fn_006A5C5C(lift_field<uint32_t>(self, 0x4));
-    }
-    lift_field<uint32_t>(self, 0x4) = 0;
-    lift_field<uint32_t>(self, 0x8) = 0;
-    lift_field<uint32_t>(self, 0xC) = 0;
-}
-} // namespace lift_00569970
-} // namespace lift_005597C0
-
-// [0x00559800] sub_00559800 (63 bytes)
-namespace lift_00559800 {
-// @name sub_00559800
-// @summary Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).
-namespace lift_00569970 {
-extern void ext_00558F80(uint32_t a0, uint32_t a1, void* a2, void* a3);
-extern void fn_006A5C5C(uint32_t arg);
-
-// @name Unknown::ReleaseHandleAndClear
-// @class Unknown
-// @summary If field +0x04 is nonzero, run ext_005693E0 with it and forward it to fn_006A5C5C, then clear fields +0x04, +0x08 and +0x0C.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-// @field Unknown +0x0C uint32_t field_0x0C
-void fn_00559800(void* self) {
-    if (lift_field<uint32_t>(self, 0x4) != 0) {
-        // Argument order matches the original pushes: a0 = f04, a1 = f08, a2 = self, a3 = ecx (self).
-        ext_00558F80(lift_field<uint32_t>(self, 0x4),
-                     lift_field<uint32_t>(self, 0x8),
-                     self,
-                     self);
-        fn_006A5C5C(lift_field<uint32_t>(self, 0x4));
-    }
-    lift_field<uint32_t>(self, 0x4) = 0;
-    lift_field<uint32_t>(self, 0x8) = 0;
-    lift_field<uint32_t>(self, 0xC) = 0;
-}
-} // namespace lift_00569970
-} // namespace lift_00559800
-
-// [0x00559B20] sub_00559B20 (63 bytes)
-namespace lift_00559B20 {
-// @name sub_00559B20
-// @summary Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).
-namespace lift_00569970 {
-extern void ext_00558FE0(uint32_t a0, uint32_t a1, void* a2, void* a3);
-extern void fn_006A5C5C(uint32_t arg);
-
-// @name Unknown::ReleaseHandleAndClear
-// @class Unknown
-// @summary If field +0x04 is nonzero, run ext_005693E0 with it and forward it to fn_006A5C5C, then clear fields +0x04, +0x08 and +0x0C.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-// @field Unknown +0x0C uint32_t field_0x0C
-void fn_00559B20(void* self) {
-    if (lift_field<uint32_t>(self, 0x4) != 0) {
-        // Argument order matches the original pushes: a0 = f04, a1 = f08, a2 = self, a3 = ecx (self).
-        ext_00558FE0(lift_field<uint32_t>(self, 0x4),
-                     lift_field<uint32_t>(self, 0x8),
-                     self,
-                     self);
-        fn_006A5C5C(lift_field<uint32_t>(self, 0x4));
-    }
-    lift_field<uint32_t>(self, 0x4) = 0;
-    lift_field<uint32_t>(self, 0x8) = 0;
-    lift_field<uint32_t>(self, 0xC) = 0;
-}
-} // namespace lift_00569970
-} // namespace lift_00559B20
-
-// [0x00559F50] sub_00559F50 (63 bytes)
-namespace lift_00559F50 {
-// @name sub_00559F50
-// @summary Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).
-namespace lift_00569970 {
-extern void ext_00559840(uint32_t a0, uint32_t a1, void* a2, void* a3);
-extern void fn_006A5C5C(uint32_t arg);
-
-// @name Unknown::ReleaseHandleAndClear
-// @class Unknown
-// @summary If field +0x04 is nonzero, run ext_005693E0 with it and forward it to fn_006A5C5C, then clear fields +0x04, +0x08 and +0x0C.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-// @field Unknown +0x0C uint32_t field_0x0C
-void fn_00559F50(void* self) {
-    if (lift_field<uint32_t>(self, 0x4) != 0) {
-        // Argument order matches the original pushes: a0 = f04, a1 = f08, a2 = self, a3 = ecx (self).
-        ext_00559840(lift_field<uint32_t>(self, 0x4),
-                     lift_field<uint32_t>(self, 0x8),
-                     self,
-                     self);
-        fn_006A5C5C(lift_field<uint32_t>(self, 0x4));
-    }
-    lift_field<uint32_t>(self, 0x4) = 0;
-    lift_field<uint32_t>(self, 0x8) = 0;
-    lift_field<uint32_t>(self, 0xC) = 0;
-}
-} // namespace lift_00569970
-} // namespace lift_00559F50
-
-// [0x0055B880] sub_0055B880 (63 bytes)
-namespace lift_0055B880 {
-// @name sub_0055B880
-// @summary Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).
-namespace lift_00569970 {
-extern void ext_0055B780(uint32_t a0, uint32_t a1, void* a2, void* a3);
-extern void fn_006A5C5C(uint32_t arg);
-
-// @name Unknown::ReleaseHandleAndClear
-// @class Unknown
-// @summary If field +0x04 is nonzero, run ext_005693E0 with it and forward it to fn_006A5C5C, then clear fields +0x04, +0x08 and +0x0C.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-// @field Unknown +0x0C uint32_t field_0x0C
-void fn_0055B880(void* self) {
-    if (lift_field<uint32_t>(self, 0x4) != 0) {
-        // Argument order matches the original pushes: a0 = f04, a1 = f08, a2 = self, a3 = ecx (self).
-        ext_0055B780(lift_field<uint32_t>(self, 0x4),
-                     lift_field<uint32_t>(self, 0x8),
-                     self,
-                     self);
-        fn_006A5C5C(lift_field<uint32_t>(self, 0x4));
-    }
-    lift_field<uint32_t>(self, 0x4) = 0;
-    lift_field<uint32_t>(self, 0x8) = 0;
-    lift_field<uint32_t>(self, 0xC) = 0;
-}
-} // namespace lift_00569970
-} // namespace lift_0055B880
-
 // [0x00559B00] sub_00559B00 (17 bytes)
 namespace lift_00559B00 {
 // Known callee 0x00559B20: sub_00559B20 (Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).)
@@ -875,42 +588,6 @@ extern void* __fastcall fn_00554260(void* self, int edx_unused) {
     return self;
 }
 } // namespace lift_00554260
-
-// [0x0055C490] sub_0055C490 (70 bytes)
-namespace lift_0055C490 {
-// @name sub_0055C490
-// @summary Auto-lifted identical-shape clone of 0x004205B0 (TreeMap::lowerBound).
-namespace lift_004205B0 {
-// MSVCP80 std::operator<(const std::string&, const std::string&), imported via IAT slot mem_00924EF4.
-extern bool ext_std_string_less(const void* lhs, const void* rhs);
-
-// @name TreeMap::lowerBound
-// @class TreeMap
-// @summary Lower-bound search in an MSVC-style std::map tree: returns first node whose key is not less than the argument, or the header node if none.
-// @field TreeMap +0x04 void* head
-// Node layout used (MSVC _Tree node): +0x00 left, +0x04 parent, +0x08 right, +0x0C key (std::string), +0x59 isNil flag.
-void* fn_0055C490(void* self, const void* key) {
-    void* head = lift_field<void*>(self, 0x04);
-    void* node = lift_field<void*>(head, 0x04);   // root
-    void* result = head;
-
-    if (lift_field<uint8_t>(node, 0x2D) != 0) {
-        return head;
-    }
-
-    while (lift_field<uint8_t>(node, 0x2D) == 0) {
-        const void* nodeKey = reinterpret_cast<const uint8_t*>(node) + 0x0C;
-        if (ext_std_string_less(nodeKey, key)) {
-            node = lift_field<void*>(node, 0x08);     // go right
-        } else {
-            result = node;                            // candidate
-            node = lift_field<void*>(node, 0x00);     // go left
-        }
-    }
-    return result;
-}
-} // namespace lift_004205B0
-} // namespace lift_0055C490
 
 // [0x00556680] sub_00556680 (73 bytes)
 namespace lift_00556680 {
@@ -1115,21 +792,6 @@ void fn_00551A20(void* self) {
 }
 } // namespace lift_00551A20
 
-// [0x005541A0]
-namespace lift_005541A0 {
-extern void ext_00628FF0(void* self);
-
-// @name destroyStringPair
-// @summary Destroys two std::string members at offsets +0x20 and +0x04
-// @field Object +0x04 std::string field_0x04
-// @field Object +0x20 std::string field_0x20
-void __thiscall sub_005541A0(void* self) {
-    auto* base = static_cast<uint8_t*>(self);
-    ext_00628FF0(base + 0x20);
-    ext_00628FF0(base + 0x04);
-}
-} // namespace lift_005541A0
-
 // [0x00554E50] sub_00554E50 (85 bytes)
 namespace lift_00554E50 {
 // Callee: thiscall-style, self passed in ecx, dst receives a 3-float vector.
@@ -1229,20 +891,6 @@ void fn_00558F20(void* first, void* last) {
 }
 } // namespace lift_00558F20
 
-// [0x00553EA0]
-namespace lift_00553EA0 {
-extern void* ext_006A5C62(uint32_t size);
-
-// @name allocate_0x54_elements
-// @summary Allocates an array of 0x54-byte elements with overflow checking, throwing std::bad_alloc on overflow.
-void* fn_00553EA0(uint32_t count) {
-    if (count > 0 && (0xFFFFFFFFu / count) < 0x54u) {
-        throw std::bad_alloc();
-    }
-    return ext_006A5C62(count * 0x54u);
-}
-} // namespace lift_00553EA0
-
 // [0x00554D60] sub_00554D60 (91 bytes)
 namespace lift_00554D60 {
 extern void ext_00553230();
@@ -1265,94 +913,6 @@ void fn_00554D60(void* self, float* out, float x, float y, float z) {
     out[2] = scale * result[2];
 }
 } // namespace lift_00554D60
-
-// [0x00557200] sub_00557200 (82 bytes)
-namespace lift_00557200 {
-// @name sub_00557200
-// @summary Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).
-namespace lift_006998D0 {
-// Known callee 0x00699870: Unknown::copyRecordWithOptionalResolve (Copies a 16-byte record from src into self; when src+0xC is non-null, calls vtable slot 0x70 on it to fetch the +0x8 value, otherwise +0x8 is zeroed. Returns self.)
-extern void* ext_0049EEE0(void* self, int edx_unused, const void* src);
-
-// MSVCP80 std::string copy constructor, reached through the import slot mem_00924FE0.
-extern void ext_std_string_copy_ctor(void* self, const void* src);
-extern int mem_00924FE0;
-
-// @name copyStringAndRecord
-// @summary Copy-constructs the leading std::string from src, then copies the 16-byte record at +0x1C from src into this; returns this.
-// @field Unknown +0x1C uint8_t field_0x1c[16]
-extern void* __fastcall fn_00557200(void* self, int edx_unused, const void* src) {
-    ext_std_string_copy_ctor(self, src);
-
-    auto* dst_record = static_cast<uint8_t*>(self) + 0x1C;
-    const auto* src_record = static_cast<const uint8_t*>(src) + 0x1C;
-    ext_0049EEE0(dst_record, 0, src_record);
-
-    return self;
-}
-} // namespace lift_006998D0
-} // namespace lift_00557200
-
-// [0x005588C0] sub_005588C0 (82 bytes)
-namespace lift_005588C0 {
-// @name sub_005588C0
-// @summary Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).
-namespace lift_006998D0 {
-// Known callee 0x00699870: Unknown::copyRecordWithOptionalResolve (Copies a 16-byte record from src into self; when src+0xC is non-null, calls vtable slot 0x70 on it to fetch the +0x8 value, otherwise +0x8 is zeroed. Returns self.)
-extern void* ext_00557960(void* self, int edx_unused, const void* src);
-
-// MSVCP80 std::string copy constructor, reached through the import slot mem_00924FE0.
-extern void ext_std_string_copy_ctor(void* self, const void* src);
-extern int mem_00924FE0;
-
-// @name copyStringAndRecord
-// @summary Copy-constructs the leading std::string from src, then copies the 16-byte record at +0x1C from src into this; returns this.
-// @field Unknown +0x1C uint8_t field_0x1c[16]
-extern void* __fastcall fn_005588C0(void* self, int edx_unused, const void* src) {
-    ext_std_string_copy_ctor(self, src);
-
-    auto* dst_record = static_cast<uint8_t*>(self) + 0x1C;
-    const auto* src_record = static_cast<const uint8_t*>(src) + 0x1C;
-    ext_00557960(dst_record, 0, src_record);
-
-    return self;
-}
-} // namespace lift_006998D0
-} // namespace lift_005588C0
-
-// [0x00553F90]
-namespace lift_00553F90 {
-extern void* ext_006A5C62(uint32_t size);
-
-// @name allocate_160_bytes
-// @summary Allocates count * 160 bytes via MFC80 operator new, throwing std::bad_alloc on size_t overflow.
-extern void* fn_00553F90(uint32_t count) {
-    if (count > 0 && (0xFFFFFFFFu / count) < 0xA0u) {
-        throw std::bad_alloc();
-    }
-    return ext_006A5C62(count * 0xA0u);
-}
-} // namespace lift_00553F90
-
-// [0x00553FF0] sub_00553FF0 (77 bytes)
-namespace lift_00553FF0 {
-// Known callee 0x00663060: sub_00663060_dtor (Destroys three std::string members at offsets +0x38, +0x1c, and +0x00.)
-extern void ext_00663060(void* self);
-
-// @name DestroyStringAt54AndMembers
-// @summary Destroys the std::string at +0x54, then delegates destruction of the three other string members to ext_00663060.
-// @field Unknown +0x54 std::string stringAt54
-void fn_00553FF0(void* self) {
-    using StdString = std::string;
-
-    // Destroy the std::string at +0x54 (the original calls the MSVCP80 dtor through mem_00924FF4).
-    StdString& s54 = lift_field<StdString>(self, 0x54);
-    s54.~StdString();
-
-    // Destroy the remaining string members.
-    ext_00663060(self);
-}
-} // namespace lift_00553FF0
 
 // [0x005555D0]
 namespace lift_005555D0 {
@@ -1391,24 +951,6 @@ void FillRecordsFromTemplate(void* dst, DWORD count, const void* src)
     } while (--count != 0);
 }
 } // namespace lift_005555D0
-
-// [0x00554140] sub_00554140 (95 bytes)
-namespace lift_00554140 {
-// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
-// Called cdecl with one 4-byte argument (byte size); returns allocated pointer in eax.
-extern void* ext_006A5C62(unsigned int size);
-
-// @name AllocateElementsTimes60
-// @summary Allocates count * 60 bytes via MFC80 ord_762, throwing std::bad_alloc if count * 60 would overflow 32 bits; count 0 requests a zero-byte allocation.
-void* fn_00554140(unsigned int count) {
-    // Largest count for which count * 60 fits in 32 bits.
-    constexpr unsigned int kMaxCount = 0xFFFFFFFFu / 60u;
-    if (count > kMaxCount) {
-        throw std::bad_alloc();
-    }
-    return ext_006A5C62(count * 60u);
-}
-} // namespace lift_00554140
 
 // [0x005550A0]
 namespace lift_005550A0 {
@@ -1517,52 +1059,6 @@ void fn_005567D0(void* first, void* last) {
 }
 } // namespace lift_005567D0
 
-// [0x005541F0] sub_005541F0 (99 bytes)
-namespace lift_005541F0 {
-// @name PairRecord::copyConstruct
-// @class PairRecord
-// @summary Copy-constructs a record: two raw bytes at +0x00/+0x01, then std::string copies at +0x04 and +0x20; returns this.
-// @field PairRecord +0x00 uint8_t byte00
-// @field PairRecord +0x01 uint8_t byte01
-// @field PairRecord +0x04 std::string str04
-// @field PairRecord +0x20 std::string str20
-void* fn_005541F0(void* self, const void* src) {
-    lift_field<uint8_t>(self, 0x00) = lift_field<uint8_t>(src, 0x00);
-    lift_field<uint8_t>(self, 0x01) = lift_field<uint8_t>(src, 0x01);
-
-    new (&lift_field<std::string>(self, 0x04)) std::string(lift_field<std::string>(src, 0x04));
-    try {
-        new (&lift_field<std::string>(self, 0x20)) std::string(lift_field<std::string>(src, 0x20));
-    } catch (...) {
-        std::destroy_at(&lift_field<std::string>(self, 0x04));
-        throw;
-    }
-
-    return self;
-}
-} // namespace lift_005541F0
-
-// [0x00553F00] sub_00553F00 (101 bytes)
-namespace lift_00553F00 {
-// @name Unknown::copyConstructThreeStrings
-// @class Unknown
-// @summary Copy-constructs three std::string members at +0x00, +0x1C and +0x38 from the same offsets of a source object (thiscall, one stack arg, callee pops 4) and returns this.
-// @field Unknown +0x00 std::string str0
-// @field Unknown +0x1C std::string str1
-// @field Unknown +0x38 std::string str2
-void* fn_00553F00(void* self, const void* src) {
-    auto* dst = static_cast<uint8_t*>(self);
-    const auto* s = static_cast<const uint8_t*>(src);
-
-    // Offsets follow the MSVC 2005 std::string layout (0x1C bytes per string).
-    new (dst + 0x00) std::string(*reinterpret_cast<const std::string*>(s + 0x00));
-    new (dst + 0x1C) std::string(*reinterpret_cast<const std::string*>(s + 0x1C));
-    new (dst + 0x38) std::string(*reinterpret_cast<const std::string*>(s + 0x38));
-
-    return self;
-}
-} // namespace lift_00553F00
-
 // [0x0055CD10] sub_0055CD10 (104 bytes)
 namespace lift_0055CD10 {
 extern void* ext_0059F5C0();
@@ -1627,32 +1123,6 @@ void* fn_0055CD10(void* self, uint32_t arg) {
     return self;
 }
 } // namespace lift_0055CD10
-
-// [0x005566D0]
-namespace lift_005566D0 {
-// @name Unknown::destroyStringRecordRange_005566D0
-// @class Unknown
-// @summary Destroys each 0x54-byte record in [first, last), releasing three std::string members at +0x38, +0x1C and +0x00.
-// @field Unknown +0x00 std::string field_00
-// @field Unknown +0x1C std::string field_1C
-// @field Unknown +0x38 std::string field_38
-
-namespace {
-constexpr std::size_t kRecordSize = 0x54;
-constexpr std::size_t kOffsetA = 0x00;
-constexpr std::size_t kOffsetB = 0x1C;
-constexpr std::size_t kOffsetC = 0x38;
-}  // namespace
-
-void destroyStringRecordRange_005566D0(std::uint8_t* first, std::uint8_t* last) {
-    using StringT = std::string;
-    for (std::uint8_t* rec = first; rec != last; rec += kRecordSize) {
-        reinterpret_cast<StringT*>(rec + kOffsetC)->~StringT();
-        reinterpret_cast<StringT*>(rec + kOffsetB)->~StringT();
-        reinterpret_cast<StringT*>(rec + kOffsetA)->~StringT();
-    }
-}
-} // namespace lift_005566D0
 
 // [0x00555630] sub_00555630 (77 bytes)
 namespace lift_00555630 {

@@ -178,40 +178,6 @@ extern void fn_0041B3B0(void) {
 }
 } // namespace lift_0041B3B0
 
-// [0x0041603E] sub_0041603E (14 bytes)
-namespace lift_0041603E {
-// @name sub_0041603E
-// @summary Auto-lifted identical-shape clone of 0x00404670 (CBaseTabCtrl::vfunc_85).
-namespace lift_00404670 {
-// USER32!GetSysColor, reached through the IAT slot at mem_00925680.
-extern DWORD ext_GetSysColor(int nIndex);
-extern int mem_00925680;
-
-// @name CBaseTabCtrl::vfunc_85
-// @class CBaseTabCtrl
-// @summary Returns GetSysColor(COLOR_BTNFACE); the incoming stack argument is overwritten with 8 before tail-jumping to USER32!GetSysColor.
-DWORD fn_0041603E(void* self) {
-    (void)self;
-    return ext_GetSysColor(15);
-}
-} // namespace lift_00404670
-} // namespace lift_0041603E
-
-// [0x00415FF6]
-namespace lift_00415FF6 {
-// Imported from USER32.dll (resolved through the IAT slot at mem_00925680).
-extern DWORD ext_GetSysColor(int nIndex);
-
-// @name GetSysColorBtnFace_TailThunk
-// @summary Returns GetSysColor(COLOR_BTNFACE); the incoming stack argument is overwritten with 0xF before tail-jumping to USER32!GetSysColor.
-// (No class fields are accessed.)
-DWORD fn_00415FF6(void* self, int /*ignored stack arg, overwritten with 0xF*/) {
-    (void)self;
-    // pop esi; pop ebx; mov [esp+4], 0Fh; jmp GetSysColor  -> tail call with COLOR_BTNFACE (15)
-    return ext_GetSysColor(15);
-}
-} // namespace lift_00415FF6
-
 // [0x00417630] sub_00417630 (18 bytes)
 namespace lift_00417630 {
 // @name sub_00417630
@@ -284,34 +250,6 @@ uint8_t fn_0041C710(void* self) {
     return fn(child);
 }
 } // namespace lift_0041C710
-
-// [0x00419940] sub_00419940 (20 bytes)
-namespace lift_00419940 {
-// MFC80 import thunk slot (ordinal 297, IMAGE_ORDINAL_FLAG | 0x129).
-extern uint32_t mem_00924494;
-// MFC80 ordinal 297 import; its signature is not recovered, so it takes one
-// DWORD argument and its return value is ignored.
-extern void ext_MFC80_ord297(uint32_t arg);
-
-// @name ThisPassthrough_CallMfc80Ord297
-// @summary Forwards its single stack argument to MFC80 ordinal 297 and returns this unchanged.
-void* fn_00419940(void* self, uint32_t arg) {
-    ext_MFC80_ord297(arg);
-    return self;
-}
-} // namespace lift_00419940
-
-// [0x0041C380] sub_0041C380 (20 bytes)
-namespace lift_0041C380 {
-// @name JumpToEsiTrampoline
-// @summary Trampoline: push esi; ret. Pops ESI as a return address, i.e. an indirect jump to the address held in ESI. The jump target is passed in as esi; the transfer itself cannot be expressed in portable C++ and is not performed here.
-// @field none (no memory or object fields accessed)
-void fn_0041C380(uintptr_t esi) {
-    // Models only the stack effect of `push esi`; the subsequent `ret`
-    // transfers control to `esi`, which portable C++ cannot express.
-    (void)esi;
-}
-} // namespace lift_0041C380
 
 // [0x0041C6B0] sub_0041C6B0 (21 bytes)
 namespace lift_0041C6B0 {
@@ -420,26 +358,6 @@ uint32_t fn_00414510(uint32_t lhs, uint32_t rhs) {
 }
 } // namespace lift_00414510
 
-// [0x0041FEA0] sub_0041FEA0 (23 bytes)
-namespace lift_0041FEA0 {
-// USER32!SendMessageA, imported via the IAT slot at mem_00925694.
-extern LRESULT ext_SendMessageA(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
-
-// @name Unknown::SendWmUser100CAndIncrement
-// @class Unknown
-// @summary Sends message 0x100C (WM_USER+12) to the handle at +0x20 with wParam=-1, lParam=2, and returns the result plus one.
-// @field Unknown +0x20 DWORD field_0x20
-int32_t fn_0041FEA0(void* self) {
-    const DWORD hwnd = lift_field<DWORD>(self, 0x20);
-    const LRESULT result = ext_SendMessageA(
-        reinterpret_cast<HWND>(static_cast<uintptr_t>(hwnd)),
-        0x100C,
-        static_cast<WPARAM>(-1),
-        static_cast<LPARAM>(2));
-    return static_cast<int32_t>(result) + 1;
-}
-} // namespace lift_0041FEA0
-
 // [0x004160A0]
 namespace lift_004160A0 {
 // @name sub_004160A0
@@ -499,48 +417,3 @@ void fn_00410310(void* self, DWORD value) {
     redraw(hwnd, nullptr, nullptr, 0x105u);
 }
 } // namespace lift_00410310
-
-// [0x00412CA0] sub_00412CA0 (29 bytes)
-namespace lift_00412CA0 {
-// MFC80 imports (ordinal 876 and 1482), resolved through the IAT slots
-// mem_00924300 and mem_0092449C at runtime.
-// ext_MFC80_ord876: takes its argument in ECX (thiscall-style), returns EAX.
-extern int ext_MFC80_ord876(void* self);
-// ext_MFC80_ord1482: receives `self` in ECX and one stack argument, returns EAX.
-extern int ext_MFC80_ord1482(void* self, int value);
-
-// @name descriptiveName: sub_00412CA0_negateCompareResult
-// @summary Calls ord876 on arg2, feeds its result into ord1482 on arg1, and returns 1 if that result is zero, else 0.
-// (no @field: the function does not dereference any struct offsets)
-int fn_00412CA0(void* arg1, void* arg2) {
-    int r = ext_MFC80_ord876(arg2);
-    int s = ext_MFC80_ord1482(arg1, r);
-    // neg/sbb/add sequence: returns 1 when s == 0, otherwise 0.
-    return s == 0 ? 1 : 0;
-}
-} // namespace lift_00412CA0
-
-// [0x0041D330] sub_0041D330 (30 bytes)
-namespace lift_0041D330 {
-// IAT slot 0x0092561C resolves to thunk 0x006287CC, which forwards to USER32!IsWindow.
-extern int __stdcall ext_006287CC(void* hwnd);
-
-// @name Unknown::hasLiveWindow
-// @class Unknown
-// @summary Returns 1 if the window handle at this->+0x0C->+0x20 is still a valid window (USER32 IsWindow), else 0.
-// @field Unknown +0x0C void* field_0x0C
-// @field Unknown +0x0C->+0x20 void* field_0x20 (window handle passed to IsWindow)
-int fn_0041D330(void* self) {
-    unsigned char* base = static_cast<unsigned char*>(self);
-
-    void* sub = nullptr;
-    std::memcpy(&sub, base + 0x0C, sizeof(sub));
-    if (sub == nullptr) {
-        return 0;
-    }
-
-    void* hwnd = nullptr;
-    std::memcpy(&hwnd, static_cast<unsigned char*>(sub) + 0x20, sizeof(hwnd));
-    return ext_006287CC(hwnd) != 0 ? 1 : 0;
-}
-} // namespace lift_0041D330

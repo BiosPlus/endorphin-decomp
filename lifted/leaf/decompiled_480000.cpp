@@ -140,29 +140,6 @@ void fn_004805A0(void* self, uint32_t arg) {
 }
 } // namespace lift_004805A0
 
-// [0x00489320] sub_00489320 (42 bytes)
-namespace lift_00489320 {
-extern void ext_invalid_parameter_noinfo(void);
-
-// @name validatedRangeOut
-// @class <ClassName> (unknown; ecx-passed object)
-// @summary Writes {self, self->+0x04} into the hidden out slot, asserting begin <= end first; returns out.
-// @field ThisObject +0x04 uint32_t field_0x04
-// @field ThisObject +0x08 uint32_t field_0x08
-void* fn_00489320(void* self, void* out) {
-    uint32_t begin = lift_field<uint32_t>(self, 0x04);
-    uint32_t end = lift_field<uint32_t>(self, 0x08);
-
-    lift_field<uint32_t>(out, 0x00) = 0;
-    if (begin > end) {
-        ext_invalid_parameter_noinfo();
-    }
-    lift_field<uint32_t>(out, 0x00) = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
-    lift_field<uint32_t>(out, 0x04) = begin;
-    return out;
-}
-} // namespace lift_00489320
-
 // [0x004820D0] sub_004820D0 (41 bytes)
 namespace lift_004820D0 {
 // @name sub_004820D0
@@ -213,30 +190,6 @@ DWORD* __thiscall fn_0048CDB0(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_0048CDB0
-
-// [0x00480C70]
-namespace lift_00480C70 {
-// @name fillRange64
-// @summary Fills a range [first, last) of 64-byte elements by copying from a source 64-byte element.
-
-
-extern uint32_t mem_read32(uint32_t addr);
-extern void mem_write32(uint32_t addr, uint32_t val);
-
-void __cdecl sub_00480C70(uint32_t first, uint32_t last, uint32_t value_ptr) {
-    if (first == last) {
-        return;
-    }
-
-    uint32_t cur = first;
-    do {
-        for (uint32_t i = 0; i < 16; ++i) {
-            mem_write32(cur + i * 4, mem_read32(value_ptr + i * 4));
-        }
-        cur += 0x40;
-    } while (cur != last);
-}
-} // namespace lift_00480C70
 
 // [0x00480130]
 namespace lift_00480130 {
@@ -304,24 +257,6 @@ void* fn_0048E2E0(void* self, uint32_t arg1, uint32_t arg2) {
 }
 } // namespace lift_0048E2E0
 
-// [0x00486BB0] sub_00486BB0 (45 bytes)
-namespace lift_00486BB0 {
-// Known callee 0x004C0340: SetGlobalObjectFlag4IfPresent (If the global object pointer mem_00AE29D0 is non-null, set the byte at its +0x04 offset to 1.)
-extern void ext_004C0340();
-
-// @name Unknown::AssignNameIfNonEmpty
-// @class Unknown
-// @summary If the source string is non-empty, copy it into the string at +0x180 and notify the global object.
-// @field Unknown +0x180 std::string field_0x180
-void fn_00486BB0(void* self, const std::string& src) {
-    if (src.empty()) {
-        return;
-    }
-    *reinterpret_cast<std::string*>(static_cast<unsigned char*>(self) + 0x180) = src;
-    ext_004C0340();
-}
-} // namespace lift_00486BB0
-
 // [0x00480560] sub_00480560 (46 bytes)
 namespace lift_00480560 {
 // Indirect virtual call through the object stored at self+0x10 (vtable slot 3, offset 0x0C).
@@ -355,83 +290,6 @@ bool fn_00480560(void* self) {
     return (diff >> 2) == 0;
 }
 } // namespace lift_00480560
-
-// [0x00481770]
-namespace lift_00481770 {
-// @name fillStructArray64
-// @summary Copies a 64-byte template structure into count consecutive 64-byte slots starting at dst, skipping null dst.
-
-
-extern uint32_t mem_read32(uint32_t addr);
-extern void mem_write32(uint32_t addr, uint32_t val);
-
-void sub_00481770(uint32_t dst, uint32_t count, uint32_t src) {
-    if (count == 0) {
-        return;
-    }
-
-    do {
-        if (dst != 0) {
-            for (uint32_t i = 0; i < 16; ++i) {
-                mem_write32(dst + i * 4, mem_read32(src + i * 4));
-            }
-        }
-        count -= 1;
-        dst += 0x40;
-    } while (count > 0);
-}
-} // namespace lift_00481770
-
-// [0x0048A120]
-namespace lift_0048A120 {
-// @name notifyRangeVtable78
-// @summary Iterates over an 8-byte-strided range [begin, end) and invokes vtable+0x78 on each non-null object at +0x04, passing the element address.
-
-uint32_t mem_read32(uint32_t addr);
-
-void sub_0048A120(uint32_t begin, uint32_t end) {
-    if (begin == end) {
-        return;
-    }
-
-    uint32_t cur = begin;
-    do {
-        uint32_t obj = mem_read32(cur + 4u);
-        if (obj != 0u) {
-            uint32_t vtable = mem_read32(obj);
-            uint32_t vfn = mem_read32(vtable + 0x78u);
-            ((void(__thiscall*)(uint32_t, uint32_t))(uintptr_t)vfn)(obj, cur);
-        }
-        cur += 8u;
-    } while (cur != end);
-}
-} // namespace lift_0048A120
-
-// [0x00480DD0]
-namespace lift_00480DD0 {
-extern uint32_t mem_read32(uint32_t addr);
-extern void mem_write32(uint32_t addr, uint32_t val);
-
-// @name copyRange64
-// @summary Copies 64-byte elements from [first, last) to dst (skipping writes if dst is null) and returns the advanced dst pointer.
-extern uint32_t sub_00480DD0(uint32_t first, uint32_t last, uint32_t dst) {
-    uint32_t eax = dst;
-    uint32_t edx = first;
-    if (edx == last) {
-        return eax;
-    }
-    do {
-        if (eax != 0) {
-            for (uint32_t i = 0; i < 16; ++i) {
-                mem_write32(eax + i * 4, mem_read32(edx + i * 4));
-            }
-        }
-        edx += 0x40;
-        eax += 0x40;
-    } while (edx != last);
-    return eax;
-}
-} // namespace lift_00480DD0
 
 // [0x0048C860] sub_0048C860 (49 bytes)
 namespace lift_0048C860 {
@@ -500,34 +358,6 @@ void Matrix4x4_SetIdentity(void* self) {
 }
 } // namespace lift_004803F0
 
-// [0x00480E00]
-namespace lift_00480E00 {
-extern uint32_t mem_read32(uint32_t addr);
-extern void mem_write32(uint32_t addr, uint32_t val);
-
-// @name copyVec4Range
-// @summary Copies a range of 16-byte (4-float) elements from [src_begin, src_end) to dst, returning the end destination pointer.
-uint32_t sub_00480E00(uint32_t src_begin, uint32_t src_end, uint32_t dst) {
-    uint32_t ecx = src_begin;
-    uint32_t edx = src_end;
-    uint32_t eax = dst;
-    if (ecx == edx) {
-        return eax;
-    }
-    do {
-        if (eax != 0) {
-            mem_write32(eax + 0x0, mem_read32(ecx + 0x0));
-            mem_write32(eax + 0x4, mem_read32(ecx + 0x4));
-            mem_write32(eax + 0x8, mem_read32(ecx + 0x8));
-            mem_write32(eax + 0xc, mem_read32(ecx + 0xc));
-        }
-        ecx += 0x10;
-        eax += 0x10;
-    } while (ecx != edx);
-    return eax;
-}
-} // namespace lift_00480E00
-
 // [0x00481DE0] sub_00481DE0 (55 bytes)
 namespace lift_00481DE0 {
 extern void ext_00481770(uint32_t dst, uint32_t count, uint32_t src);
@@ -541,54 +371,6 @@ uint32_t __stdcall fn_00481DE0(uint32_t dst, uint32_t count, uint32_t src) {
     return dst + (count << 6);
 }
 } // namespace lift_00481DE0
-
-// [0x004817A0]
-namespace lift_004817A0 {
-float mem_read_f32(uint32_t addr);
-void mem_write_f32(uint32_t addr, float val);
-
-// @name fillVec4Array
-// @summary Fills an array of 16-byte 4-float vectors with a constant 4-float value.
-
-void sub_004817A0(uint32_t dst, uint32_t count, uint32_t src) {
-    if (count == 0) {
-        return;
-    }
-    do {
-        if (dst != 0) {
-            mem_write_f32(dst + 0x0, mem_read_f32(src + 0x0));
-            mem_write_f32(dst + 0x4, mem_read_f32(src + 0x4));
-            mem_write_f32(dst + 0x8, mem_read_f32(src + 0x8));
-            mem_write_f32(dst + 0xc, mem_read_f32(src + 0xc));
-        }
-        count -= 1;
-        dst += 0x10;
-    } while (count > 0);
-}
-} // namespace lift_004817A0
-
-// [0x00480CA0]
-namespace lift_00480CA0 {
-// @name copyVec4Loop
-// @summary Copies one 4-float vector from src to dst; repeats while dst+0x10 != end (loop index is never advanced in the original).
-
-// Memory accessors used by this function.
-float mem_read_f32(uint32_t addr);
-void mem_write_f32(uint32_t addr, float value);
-
-// cdecl: arguments are (dst, end, src) on the stack; caller cleans up.
-void sub_00480CA0(uint32_t dst, uint32_t end, uint32_t src) {
-    if (dst == end) {
-        return;
-    }
-    do {
-        mem_write_f32(dst + 0x0, mem_read_f32(src + 0x0));
-        mem_write_f32(dst + 0x4, mem_read_f32(src + 0x4));
-        mem_write_f32(dst + 0x8, mem_read_f32(src + 0x8));
-        mem_write_f32(dst + 0xc, mem_read_f32(src + 0xc));
-    } while (dst + 0x10 != end);
-}
-} // namespace lift_00480CA0
 
 // [0x00489350] sub_00489350 (55 bytes)
 namespace lift_00489350 {
@@ -778,51 +560,6 @@ void fn_0048A0E0(void* self, void* node) {
 } // namespace lift_0048A0E0
 } // namespace lift_0048A0E0
 
-// [0x0048D310] sub_0048D310 (63 bytes)
-namespace lift_0048D310 {
-// @name sub_0048D310
-// @summary Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).
-namespace lift_00569970 {
-extern void ext_0048CB80(uint32_t a0, uint32_t a1, void* a2, void* a3);
-extern void fn_006A5C5C(uint32_t arg);
-
-// @name Unknown::ReleaseHandleAndClear
-// @class Unknown
-// @summary If field +0x04 is nonzero, run ext_005693E0 with it and forward it to fn_006A5C5C, then clear fields +0x04, +0x08 and +0x0C.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-// @field Unknown +0x0C uint32_t field_0x0C
-void fn_0048D310(void* self) {
-    if (lift_field<uint32_t>(self, 0x4) != 0) {
-        // Argument order matches the original pushes: a0 = f04, a1 = f08, a2 = self, a3 = ecx (self).
-        ext_0048CB80(lift_field<uint32_t>(self, 0x4),
-                     lift_field<uint32_t>(self, 0x8),
-                     self,
-                     self);
-        fn_006A5C5C(lift_field<uint32_t>(self, 0x4));
-    }
-    lift_field<uint32_t>(self, 0x4) = 0;
-    lift_field<uint32_t>(self, 0x8) = 0;
-    lift_field<uint32_t>(self, 0xC) = 0;
-}
-} // namespace lift_00569970
-} // namespace lift_0048D310
-
-// [0x00486880]
-namespace lift_00486880 {
-// Format string literal at 0x0093C670 (contents not recovered from .rdata listing).
-extern const char mem_0093C670[];
-
-// @name sub_00486880 (formatDoubleToString)
-// @summary Formats a double into a 50-byte buffer with snprintf and assigns the result to a std::string via the hidden return pointer.
-std::string* fn_00486880(std::string* out, double value) {
-    char buf[50] = {};
-    std::snprintf(buf, sizeof(buf), mem_0093C670, value);
-    *out = std::string(buf);
-    return out;
-}
-} // namespace lift_00486880
-
 // [0x0048CB80] sub_0048CB80 (67 bytes)
 namespace lift_0048CB80 {
 // Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
@@ -907,43 +644,6 @@ bool fn_004801C0(uint32_t a, uint32_t b) {
     return fa != fb;
 }
 } // namespace lift_004801C0
-
-// [0x00487C00]
-namespace lift_00487C00 {
-// @name TreeMap::lowerBound (string key, nil flag at node +0x69)
-// @class TreeMap
-// @summary Lower-bound search in an MSVC-style std::map<std::string, ...> tree: returns the first node whose key is not less than the argument, or the header node if none; header node is returned for an empty tree.
-// @field TreeMap +0x04 void* head
-// Node layout used (MSVC _Tree node): +0x00 left, +0x04 parent, +0x08 right, +0x0C key (std::string), +0x69 isNil flag.
-
-namespace lift_00487C00 {
-
-// MSVCP80 std::operator<(const std::string&, const std::string&), reached via IAT slot mem_00924EF4.
-extern bool ext_std_string_less(const void* lhs, const void* rhs);
-
-void* fn_00487C00(void* self, const void* key) {
-    void* head = lift_field<void*>(self, 0x04);
-    void* node = lift_field<void*>(head, 0x04);   // root (header parent)
-    void* result = head;
-
-    if (lift_field<uint8_t>(node, 0x69) != 0) {
-        return head;
-    }
-
-    while (lift_field<uint8_t>(node, 0x69) == 0) {
-        const void* nodeKey = reinterpret_cast<const uint8_t*>(node) + 0x0C;
-        if (ext_std_string_less(nodeKey, key)) {
-            node = lift_field<void*>(node, 0x08);     // go right
-        } else {
-            result = node;                            // candidate
-            node = lift_field<void*>(node, 0x00);     // go left
-        }
-    }
-    return result;
-}
-
-} // namespace lift_00487C00
-} // namespace lift_00487C00
 
 // [0x00481BD0] sub_00481BD0 (71 bytes)
 namespace lift_00481BD0 {
@@ -1265,117 +965,6 @@ extern void __fastcall fn_0048B730(void* ecx) {
 }
 } // namespace lift_0048B730
 
-// [0x004890D0] sub_004890D0 (87 bytes)
-namespace lift_004890D0 {
-// @name sortThreeStrings_004890D0
-// @summary Sorts three std::string references into ascending order in place (3-element bubble network).
-void fn_004890D0(std::string& a, std::string& b, std::string& c) {
-    // Pass 1: if (b < a) swap(b, a)
-    if (b < a) {
-        b.swap(a);
-    }
-    // Pass 2: if (c < b) swap(c, b)
-    if (c < b) {
-        c.swap(b);
-    }
-    // Pass 3: if (b < a) swap(b, a)
-    if (b < a) {
-        b.swap(a);
-    }
-}
-} // namespace lift_004890D0
-
-// [0x0048FB80] sub_0048FB80 (87 bytes)
-namespace lift_0048FB80 {
-// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
-extern void ext_006A5C62();
-// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
-extern void ext_006A6DD2();
-extern int mem_00925130;
-
-// @name allocArrayOf0x7C
-// @summary Allocates count * 0x7C bytes via MFC80 ord_762; throws std::exception("l{b") when the size would overflow.
-void* fn_0048FB80(unsigned int count) {
-    using AllocFn = void* (*)(std::size_t);
-
-    std::size_t size = 0;
-    if (count != 0) {
-        // Overflow guard: if UINT_MAX / count < 0x7C, count * 0x7C does not fit.
-        const unsigned int limit = 0xFFFFFFFFu / count;
-        if (limit < 0x7Cu) {
-            throw std::length_error("l{b");
-        }
-        size = static_cast<std::size_t>(count) * 0x7Cu;
-    }
-    return reinterpret_cast<AllocFn>(ext_006A5C62)(size);
-}
-} // namespace lift_0048FB80
-
-// [0x00486EA0] sub_00486EA0 (87 bytes)
-namespace lift_00486EA0 {
-// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
-extern void ext_006A5C62();
-// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
-extern void ext_006A6DD2();
-// std::exception(const char* const&) constructor IAT slot; the C++ throw below replaces it.
-extern int mem_00925130;
-
-// @name allocArrayOf0x68Checked
-// @summary Allocates count * 0x68 bytes via the MFC80 allocator; count==0 allocates 0 bytes, and a count whose byte size would overflow throws.
-// @field none (free function; no struct member accessed)
-void* fn_00486EA0(uint32_t count) {
-    using AllocFn = void* (*)(size_t);
-    auto alloc = reinterpret_cast<AllocFn>(ext_006A5C62);
-
-    if (count == 0) {
-        return alloc(0);
-    }
-    // Overflow guard: (0xFFFFFFFF / count) < 0x68 means count * 0x68 would not fit in 32 bits.
-    if (0xFFFFFFFFu / count < 0x68u) {
-        throw std::length_error("allocation size overflow");
-    }
-    return alloc(static_cast<size_t>(count) * 0x68u);
-}
-} // namespace lift_00486EA0
-
-// [0x00480310] sub_00480310 (87 bytes)
-namespace lift_00480310 {
-// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
-// Used as an allocator: takes a byte count (cdecl), returns a pointer.
-extern void* ext_006A5C62(uint32_t byteCount);
-
-// @name allocArray16ByteElements_00480310
-// @summary Allocates count*16 bytes via ext_006A5C62; throws if count*16 would overflow 32 bits.
-void* fn_00480310(uint32_t count) {
-    // Overflow guard: count * 16 must fit in 32 bits, i.e. count <= 0x0FFFFFFF.
-    // (Original computes 0xFFFFFFFF / count and compares against 0x10.)
-    if (count > 0x0FFFFFFFu) {
-        throw std::length_error("allocation size overflow");
-    }
-    return ext_006A5C62(count << 4);
-}
-} // namespace lift_00480310
-
-// [0x004802B0] sub_004802B0 (87 bytes)
-namespace lift_004802B0 {
-// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
-// Used as the allocator: takes the byte count and returns the allocated block.
-extern void* ext_006A5C62(uint32_t bytes);
-
-// @name allocateCountTimes64
-// @summary Returns a block of count*64 bytes from ext_006A5C62; throws std::length_error when count*64 overflows 32 bits.
-void* fn_004802B0(uint32_t count) {
-    // Original: count==0 falls through to a zero-size request; count>0 is valid
-    // only if count*64 fits in 32 bits (count <= 0x03FFFFFF). The overflow path
-    // builds a std::exception with a null message, retags it as a length error,
-    // and throws; a portable C++ throw expresses the same control flow.
-    if (count > 0x03FFFFFFu) {
-        throw std::length_error("allocation size overflow");
-    }
-    return ext_006A5C62(count << 6);
-}
-} // namespace lift_004802B0
-
 // [0x00489230]
 namespace lift_00489230 {
 // @name std_copy_backward_string
@@ -1477,78 +1066,6 @@ uint32_t* __thiscall fn_0048CCC0(
   return out_iter;
 }
 } // namespace lift_0048CCC0
-
-// [0x00481C50] sub_00481C50 (59 bytes)
-namespace lift_00481C50 {
-// @name sub_00481C50
-// @summary Auto-lifted identical-shape clone of 0x005015E0 (Unknown::eraseRangeFromSelf).
-namespace lift_005015E0 {
-// Known callee 0x005013F0: sub_005013F0 (Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).)
-// Thiscall: self in ecx, then five stack args (out_iter, first_container, first_ptr, last_container, last_ptr).
-extern void* ext_00596660(void* self, void* out_iter, void* first_container,
-                              void* first_ptr, void* last_container, void* last_ptr);
-
-// @name Unknown::eraseRangeFromSelf
-// @class Unknown
-// @summary Erases the element range bounded by self+0x04 .. self+0x08 by forwarding both bounds to 0x005013F0.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-void fn_00481C50(void* self) {
-    auto* base = static_cast<unsigned char*>(self);
-    auto load_u32 = [&](std::size_t off) {
-        std::uint32_t v;
-        std::memcpy(&v, base + off, sizeof v);
-        return v;
-    };
-
-    // The original asserts first <= last via _invalid_parameter_noinfo (diagnostic only; no
-    // observable effect on the erase), so it is omitted here.
-    const auto first = static_cast<std::uintptr_t>(load_u32(0x04));
-    const auto last = static_cast<std::uintptr_t>(load_u32(0x08));
-
-    // The out iterator is a caller-provided slot; this function never reads it.
-    alignas(8) unsigned char out_iter[16] = {};
-    ext_00596660(self, out_iter, self, reinterpret_cast<void*>(first),
-                 self, reinterpret_cast<void*>(last));
-}
-} // namespace lift_005015E0
-} // namespace lift_00481C50
-
-// [0x0048D350] sub_0048D350 (59 bytes)
-namespace lift_0048D350 {
-// @name sub_0048D350
-// @summary Auto-lifted identical-shape clone of 0x005015E0 (Unknown::eraseRangeFromSelf).
-namespace lift_005015E0 {
-// Known callee 0x005013F0: sub_005013F0 (Auto-lifted identical-shape clone of 0x0057E9E0 (Unknown::eraseStringVectorRange).)
-// Thiscall: self in ecx, then five stack args (out_iter, first_container, first_ptr, last_container, last_ptr).
-extern void* ext_0048CCC0(void* self, void* out_iter, void* first_container,
-                              void* first_ptr, void* last_container, void* last_ptr);
-
-// @name Unknown::eraseRangeFromSelf
-// @class Unknown
-// @summary Erases the element range bounded by self+0x04 .. self+0x08 by forwarding both bounds to 0x005013F0.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-void fn_0048D350(void* self) {
-    auto* base = static_cast<unsigned char*>(self);
-    auto load_u32 = [&](std::size_t off) {
-        std::uint32_t v;
-        std::memcpy(&v, base + off, sizeof v);
-        return v;
-    };
-
-    // The original asserts first <= last via _invalid_parameter_noinfo (diagnostic only; no
-    // observable effect on the erase), so it is omitted here.
-    const auto first = static_cast<std::uintptr_t>(load_u32(0x04));
-    const auto last = static_cast<std::uintptr_t>(load_u32(0x08));
-
-    // The out iterator is a caller-provided slot; this function never reads it.
-    alignas(8) unsigned char out_iter[16] = {};
-    ext_0048CCC0(self, out_iter, self, reinterpret_cast<void*>(first),
-                 self, reinterpret_cast<void*>(last));
-}
-} // namespace lift_005015E0
-} // namespace lift_0048D350
 
 // [0x00487F30]
 namespace lift_00487F30 {
@@ -1894,40 +1411,6 @@ bool __cdecl sub_00481B50(uint32_t* first1, uint32_t* last1, uint32_t* cont2, ui
 }
 } // namespace lift_00481B50
 
-// [0x00486F20] sub_00486F20 (98 bytes)
-namespace lift_00486F20 {
-// @name std::unique<std::string>
-// @summary Removes consecutive duplicate std::string elements in [first, last) (std::unique semantics); returns new logical end.
-// @field std::string +0x00 <element> (no fixed field offsets accessed; whole 28-byte elements are compared and assigned)
-std::string* fn_00486F20(std::string* first, std::string* last) {
-    if (first == last) return last;
-
-    std::string* dst = first;
-    std::string* src = first + 1;
-    if (src == last) return last;
-
-    // Find the first adjacent pair that compares equal.
-    while (!(*dst == *src)) {
-        dst = src;
-        ++src;
-        if (src == last) return last;
-    }
-
-    // Compact the remainder, keeping only elements that differ from their predecessor kept.
-    ++src;
-    if (src == last) return dst + 1;
-    do {
-        if (!(*dst == *src)) {
-            ++dst;
-            *dst = *src;
-        }
-        ++src;
-    } while (src != last);
-
-    return dst + 1;
-}
-} // namespace lift_00486F20
-
 // [0x0048E270] sub_0048E270 (102 bytes)
 namespace lift_0048E270 {
 // Known callee 0x006657F0: Unknown::InitVtblAndArg (Stores the vtable pointer (0x00987A04), a stack argument at +0x04, and zeroes +0x08/+0x0C; returns self.)
@@ -1956,55 +1439,6 @@ void* fn_0048E270(void* self, uint32_t a, uint32_t b) {
     return self;
 }
 } // namespace lift_0048E270
-
-// [0x0048FC00]
-namespace lift_0048FC00 {
-// @name moveRangeWithRelease_0048FC00
-// @summary Move-assigns an 8-byte-element range [first,last) into dest; releases each dest object via vtable+0x78 and derives dest value from src object via vtable+0x70. Returns dest end (or dest begin if range empty).
-// @field Element +0x00 uint32_t field_0x00
-// @field Element +0x04 uint32_t field_0x04
-
-
-template <typename T>
-T mem_read(uint32_t addr);
-
-template <typename T>
-void mem_write(uint32_t addr, T value);
-
-// Virtual slot calls: the slot is read from the object's vtable at the given byte offset.
-extern void ext_vcall_0x78(uint32_t thisPtr, uint32_t arg);
-extern uint32_t ext_vcall_0x70(uint32_t thisPtr, uint32_t arg);
-
-uint32_t sub_0048FC00(uint32_t first, uint32_t last, uint32_t dest) {
-    if (first == last) {
-        return dest;
-    }
-
-    uint32_t d = dest;
-    uint32_t s = first;
-    do {
-        if (d != s) {
-            uint32_t oldPtr = mem_read<uint32_t>(d + 0x04u);
-            if (oldPtr != 0u) {
-                ext_vcall_0x78(oldPtr, d);
-            }
-
-            uint32_t srcPtr = mem_read<uint32_t>(s + 0x04u);
-            mem_write<uint32_t>(d + 0x04u, srcPtr);
-
-            uint32_t value = 0u;
-            if (srcPtr != 0u) {
-                value = ext_vcall_0x70(srcPtr, s);
-            }
-            mem_write<uint32_t>(d + 0x00u, value);
-        }
-        s += 8u;
-        d += 8u;
-    } while (s != last);
-
-    return d;
-}
-} // namespace lift_0048FC00
 
 // [0x00486E30] sub_00486E30 (108 bytes)
 namespace lift_00486E30 {

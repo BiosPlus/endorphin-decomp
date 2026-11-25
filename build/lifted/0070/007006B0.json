@@ -1,0 +1,13 @@
+{
+  "va": "0x007006B0",
+  "size": 44,
+  "orig_symbol": "sub_007006B0",
+  "src_path": "src/leaf/decompiled_700000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_700000.cpp",
+  "name": "getLightTypeName",
+  "signature": "const char* __stdcall sub_007006B0(uint32_t lightType)",
+  "summary": "Returns the human-readable name string for a light type index (0=Point, 1=Infinite, 2=Spot), or nullptr.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-24T14:10:07Z"
+}

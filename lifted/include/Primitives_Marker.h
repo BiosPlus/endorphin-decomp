@@ -13,7 +13,7 @@ struct Primitives_Marker_Fields {
     // +0x8   uint32_t                 field_0x08  (evidence: 0x0053D320)
     // +0x1C  uint32_t                 field_0x1c  (evidence: 0x0053D320)
     // +0x24  DWORD                    bufferedValue  (evidence: 0x0052FA20, 0x0053B790)
-    // +0x3C  void*                    field_0x3c  (evidence: 0x0052F6F0, 0x0052FF70, 0x0053BDD0, 0x0053D320)
+    // +0x3C  void*                    field_0x3c  (evidence: 0x0052F6F0, 0x0052FF70, 0x0053D320)
     // +0x50  float                    field_0x50  (evidence: 0x0052FA20)
 };
 } // namespace lifted_layout

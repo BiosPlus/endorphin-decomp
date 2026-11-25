@@ -78,27 +78,6 @@ void* fn_0058F550(void* self) {
 }
 } // namespace lift_0058F550
 
-// [0x00584A10] sub_00584A10 (34 bytes)
-namespace lift_00584A10 {
-extern int mem_00924FC8;
-extern const char mem_00928B5D[];
-extern bool ext_string_eq_cstr(const void* str, const char* s);
-
-// @name descriptiveName: SelectStringByLiteralMatch
-// @summary Returns the address of the member at +0x30 if its string equals the literal at mem_00928B5D, otherwise the address of the member at +0x14.
-// @field self +0x14 unknown field_0x14
-// @field self +0x30 unknown field_0x30
-void* fn_00584A10(void* self) {
-    auto* base = static_cast<unsigned char*>(self);
-    void* at30 = base + 0x30;
-    void* at14 = base + 0x14;
-    if (ext_string_eq_cstr(at30, mem_00928B5D)) {
-        return at30;
-    }
-    return at14;
-}
-} // namespace lift_00584A10
-
 // [0x00584BD0] sub_00584BD0 (34 bytes)
 namespace lift_00584BD0 {
 // Literal string compared against the std::string at this+0x4C (.rdata 0x928B5D).
@@ -120,22 +99,6 @@ void* fn_00584BD0(void* self) {
     return base + 0x14;
 }
 } // namespace lift_00584BD0
-
-// [0x0058A170]
-namespace lift_0058A170 {
-extern uintptr_t mem_00A9F3AC;
-extern void (__thiscall* mem_00924FE4)(void* self, const char* str);
-
-// @name initDefaultString
-// @summary Initializes a std::string at arg1 with the global C-string at mem_00A9F3AC and returns arg1
-uint32_t __stdcall sub_0058A170(uint32_t arg1, uint32_t arg2) {
-    (void)arg2;
-    void* out_str = reinterpret_cast<void*>(static_cast<uintptr_t>(arg1));
-    const char* src = reinterpret_cast<const char*>(mem_00A9F3AC);
-    mem_00924FE4(out_str, src);
-    return arg1;
-}
-} // namespace lift_0058A170
 
 // [0x005817F0] sub_005817F0 (41 bytes)
 namespace lift_005817F0 {
@@ -502,34 +465,6 @@ void* __thiscall sub_005851E0(void* self, uint32_t arg0) {
 }
 } // namespace lift_005851E0
 
-// [0x00584B10]
-namespace lift_00584B10 {
-extern uint32_t mem_r32(uint32_t addr);
-
-// @name findFirstMatchingAncestor
-// @summary Walks the +0x94 parent/next chain starting at this and returns the first node whose vtable+0x70 predicate returns true.
-// @field Node +0x00 uint32_t* vtable
-// @field Node +0x94 uint32_t next
-
-uint32_t __thiscall sub_00584B10(uint32_t self) {
-    auto vfn = reinterpret_cast<uint8_t(__thiscall*)(uint32_t)>(mem_r32(mem_r32(self) + 0x70));
-    if (vfn(self) != 0) {
-        return self;
-    }
-
-    uint32_t result = 0;
-    uint32_t cur = mem_r32(self + 0x94);
-    while (cur != 0 && result == 0) {
-        auto cur_vfn = reinterpret_cast<uint8_t(__thiscall*)(uint32_t)>(mem_r32(mem_r32(cur) + 0x70));
-        if (cur_vfn(cur) != 0) {
-            result = cur;
-        }
-        cur = mem_r32(cur + 0x94);
-    }
-    return result;
-}
-} // namespace lift_00584B10
-
 // [0x00582A20]
 namespace lift_00582A20 {
 // @name IsIdentityMatrix3x3_00582A20
@@ -598,66 +533,6 @@ void fn_00585120(void* self, uintptr_t arg1, float arg2) {
     forward(obj2, arg1, vec, arg2);
 }
 } // namespace lift_00585120
-
-// [0x005862A0]
-namespace lift_005862A0 {
-// @name visitChildren_005862A0
-// @summary Calls virtual slot 0xA8 on self, then recursively visits each pointer in the child array delimited by self+0x80 (begin) and self+0x84 (end).
-// @field Unknown +0x80 uint32_t field_0x80
-// @field Unknown +0x84 uint32_t field_0x84
-
-// Original is a 32-bit __thiscall; `self` is passed in ECX.
-// Pointer-sized fields are read as 32-bit values to match the game's layout.
-static void visitChildren_005862A0(void* self) {
-    unsigned char* base = static_cast<unsigned char*>(self);
-
-    // Virtual call: vtable = *(self), slot at byte offset 0xA8 (index 42 for 4-byte entries).
-    uint32_t vtblAddr = *reinterpret_cast<uint32_t*>(base);
-    uint32_t fnAddr = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(vtblAddr) + 0xA8);
-    using VFn = void (*)(void*);
-    reinterpret_cast<VFn>(static_cast<uintptr_t>(fnAddr))(self);
-
-    // Child array: [field_0x80, field_0x84) of 4-byte pointers.
-    uint32_t cur = *reinterpret_cast<uint32_t*>(base + 0x80);
-    const uint32_t end = *reinterpret_cast<uint32_t*>(base + 0x84);
-    while (cur != end) {
-        uint32_t child = *reinterpret_cast<uint32_t*>(static_cast<uintptr_t>(cur));
-        visitChildren_005862A0(reinterpret_cast<void*>(static_cast<uintptr_t>(child)));
-        cur += 4;
-    }
-}
-} // namespace lift_005862A0
-
-// [0x00586240]
-namespace lift_00586240 {
-// @name Node::traverseVirtualA4
-// @class Node
-// @summary Calls virtual method at vtable+0xa4 on this and recursively on all child pointers in vector at +0x7c.
-// @field Node +0x00 void** vtable
-// @field Node +0x7c void* field_0x7c
-// @field Node +0x80 Node** children_begin
-// @field Node +0x84 Node** children_end
-
-void __thiscall sub_00586240(void* self) {
-    uint8_t* obj = static_cast<uint8_t*>(self);
-    uint32_t* vtable = *reinterpret_cast<uint32_t**>(obj);
-    using VMethod = void(__thiscall*)(void*);
-    VMethod fn = reinterpret_cast<VMethod>(vtable[0xa4 / 4]);
-    fn(self);
-
-    uint8_t* vec = obj + 0x7c;
-    uint32_t* it = *reinterpret_cast<uint32_t**>(vec + 0x4);
-    while (true) {
-        uint32_t* end = *reinterpret_cast<uint32_t**>(vec + 0x8);
-        if (it == end) {
-            break;
-        }
-        void* child = reinterpret_cast<void*>(*it);
-        sub_00586240(child);
-        ++it;
-    }
-}
-} // namespace lift_00586240
 
 // [0x0058D850] sub_0058D850 (30 bytes)
 namespace lift_0058D850 {
@@ -1137,34 +1012,6 @@ void fn_00586660(void* self) {
 }
 } // namespace lift_00586660
 
-// [0x00585270] sub_00585270 (95 bytes)
-namespace lift_00585270 {
-// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
-// Called as cdecl with (destination object, source string literal); caller cleans the stack.
-extern void* ext_0066AD10(void* out_str, const void* src);
-// Known callee 0x006A6C87: sub_006A6C87 (CRT-style exit-registration of a destructor)
-extern int ext_006A6C87(void (*fn)(void));
-// Destructor for the static object at mem_00B3EB64 (address 0x0091D140; passed to ext_006A6C87)
-extern void ext_0091D140(void);
-// One-time-init guard word; bit 0 set once the static has been constructed
-extern int mem_00B3EB80;
-// Static object storage (address 0x00B3EB64)
-extern int mem_00B3EB64;
-// String literal source (address 0x00A85C84)
-extern char mem_00A85C84[];
-
-// @name GetOnceInitString_00585270
-// @summary Constructs a static string object from a literal on first call, registers its destructor, and returns it.
-void* fn_00585270() {
-    if ((mem_00B3EB80 & 1) == 0) {
-        mem_00B3EB80 |= 1;
-        ext_0066AD10(&mem_00B3EB64, mem_00A85C84);
-        ext_006A6C87(ext_0091D140);
-    }
-    return &mem_00B3EB64;
-}
-} // namespace lift_00585270
-
 // [0x00587110] sub_00587110 (99 bytes)
 namespace lift_00587110 {
 extern void ext_00587110(void* self);
@@ -1206,25 +1053,6 @@ void fn_00587110(void* self) {
     }
 }
 } // namespace lift_00587110
-
-// [0x005861D0] sub_005861D0 (103 bytes)
-namespace lift_005861D0 {
-// @name Unknown::CountSubtreeNodes
-// @class Unknown
-// @summary Recursively counts this node plus all nodes reachable through the child-pointer array at self+0x80..0x84.
-// @field Unknown +0x80 DWORD field_0x80
-// @field Unknown +0x84 DWORD field_0x84
-uint32_t fn_005861D0(void* self) {
-    uint32_t count = 1;
-    uint32_t cur = lift_field<uint32_t>(self, 0x80);
-    while (cur != lift_field<uint32_t>(self, 0x84)) {
-        const uintptr_t child_addr = static_cast<uintptr_t>(*reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(cur)));
-        count += fn_005861D0(reinterpret_cast<void*>(child_addr));
-        cur += 4;
-    }
-    return count;
-}
-} // namespace lift_005861D0
 
 // [0x00582A70]
 namespace lift_00582A70 {

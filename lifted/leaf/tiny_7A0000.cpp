@@ -328,23 +328,6 @@ extern void fn_007AE100(void) {
 } // namespace lift_007AE0A0
 } // namespace lift_007AE100
 
-// [0x007AEEE0]
-namespace lift_007AEEE0 {
-// @name sub_007AEEE0
-// @class UnknownClass
-// @summary Returns true if field_0x58 is non-zero
-// @field UnknownClass +0x58 uint32_t field_0x58
-
-
-extern uint32_t mem_read32(uint32_t addr);
-
-bool __thiscall sub_007AEEE0(uint32_t ecx)
-{
-    uint32_t edx = mem_read32(ecx + 0x58);
-    return edx != 0;
-}
-} // namespace lift_007AEEE0
-
 // [0x007AEEB0] sub_007AEEB0 (14 bytes)
 namespace lift_007AEEB0 {
 // @name Unknown::getField60IfField58
@@ -359,19 +342,6 @@ DWORD fn_007AEEB0(void* self) {
     return 0;
 }
 } // namespace lift_007AEEB0
-
-// [0x007AE130]
-namespace lift_007AE130 {
-// @name get_global_B61758_value
-// @summary Passes the address of global mem_00B61758 in ECX to fn_006E7460 (tail-jump thunk) and returns its result.
-
-extern int32_t __fastcall fn_006E7460(void* self);
-extern uint8_t mem_00B61758[];
-
-extern int32_t __fastcall fn_007AE130(void) {
-    return fn_006E7460(static_cast<void*>(mem_00B61758));
-}
-} // namespace lift_007AE130
 
 // [0x007AEC60]
 namespace lift_007AEC60 {

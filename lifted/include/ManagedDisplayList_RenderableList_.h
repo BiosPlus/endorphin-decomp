@@ -10,9 +10,9 @@
 // Recovered field layout for ManagedDisplayList<RenderableList>:
 namespace lifted_layout {
 struct ManagedDisplayList_RenderableList__Fields {
-    // +0x0   void*                    vptr  (evidence: 0x00533ED0, 0x0054C1F0)
-    // +0x18  void**                   field_0x18  (evidence: 0x0054C030, 0x0054C090, 0x0054C0F0, 0x0054C1F0, 0x0054C260, 0x0054C330, 0x0054C3A0, 0x0054C420, 0x0054C490)
-    // +0x1C  void**                   field_0x1C  (evidence: 0x0054C030, 0x0054C090, 0x0054C0F0, 0x0054C1F0, 0x0054C260, 0x0054C330, 0x0054C3A0, 0x0054C420, 0x0054C490)
+    // +0x0   void*                    vptr  (evidence: 0x00533ED0)
+    // +0x18  void**                   field_0x18  (evidence: 0x0054C090)
+    // +0x1C  void**                   field_0x1C  (evidence: 0x0054C090)
     // +0x2C  GLuint                   field_0x2C  (evidence: 0x00533ED0)
 };
 } // namespace lifted_layout

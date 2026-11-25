@@ -10,9 +10,6 @@
 // Recovered field layout for ASFData::Bone:
 namespace lifted_layout {
 struct ASFData_Bone_Fields {
-    // +0x28  uint32_t                 field_0x28  (evidence: 0x00569FD0)
-    // +0x2C  uint32_t                 field_0x2C  (evidence: 0x00569FD0)
     // +0x1DC int32                    field_0x1DC  (evidence: 0x00569FC0)
-    // +0x1E0 uint32_t                 field_0x1E0  (evidence: 0x00569FD0)
 };
 } // namespace lifted_layout

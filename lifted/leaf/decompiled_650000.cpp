@@ -45,30 +45,6 @@ void* fn_005142F0(void* self, void* pair) {
 #include <stdexcept>
 #include <bit>
 
-// [0x00519C80] sub_00519C80 (42 bytes)
-namespace lift_00519C80 {
-// MSVC std::basic_string<char>::basic_string(const char*) (thiscall), imported via IAT slot mem_00924FE4.
-extern void ext_00629122(void* self, const char* s);
-// Literal passed to the string constructor (.rdata).
-extern const char mem_00928B5D[];
-
-// @name initStringAndCounters
-// @summary Constructs a vtable-tagged object holding a std::string built from a literal, then zeroes two counters and sets a flag to 1; returns this.
-// @field +0x00 uint32_t vtable (0x0095219C)
-// @field +0x04 std::string name (basic_string subobject, constructed from literal)
-// @field +0x20 int32_t field_0x20 (set to 1)
-// @field +0x24 int32_t field_0x24 (set to 0)
-// @field +0x28 int32_t field_0x28 (set to 0)
-void* fn_00519C80(void* self) {
-    lift_field<uint32_t>(self, 0x00) = 0x0095219C;
-    ext_00629122(reinterpret_cast<uint8_t*>(self) + 0x04, mem_00928B5D);
-    lift_field<int32_t>(self, 0x24) = 0;
-    lift_field<int32_t>(self, 0x28) = 0;
-    lift_field<int32_t>(self, 0x20) = 1;
-    return self;
-}
-} // namespace lift_00519C80
-
 // [0x0051E7D0] sub_0051E7D0 (41 bytes)
 namespace lift_0051E7D0 {
 // @name sub_0051E7D0
@@ -85,36 +61,6 @@ DWORD* __thiscall fn_0051E7D0(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_0051E7D0
-
-// [0x00519CB0] sub_00519CB0 (44 bytes)
-namespace lift_00519CB0 {
-// Import thunk reached via indirect call through IAT slot 0x00924FE0
-// (its .rdata value is 0x0062916E). Annotated as the MSVCP80
-// basic_string copy constructor: basic_string(const basic_string&).
-extern void ext_0062916E(void* self, const void* src);
-
-static inline void store_u32(unsigned char* base, std::size_t off, std::uint32_t v) {
-    std::memcpy(base + off, &v, sizeof v);
-}
-
-// @name ctorFromStdString
-// @class Unknown (vtable 0x0095219C)
-// @summary Constructor: writes vtable 0x0095219C, copy-constructs a std::string at +0x04 from the argument, sets +0x20 = 1, zeroes +0x24 and +0x28, returns this.
-// @field Unknown +0x00 const void* vptr
-// @field Unknown +0x04 MSVCP80_basic_string field_0x04
-// @field Unknown +0x20 std::uint32_t field_0x20
-// @field Unknown +0x24 std::uint32_t field_0x24
-// @field Unknown +0x28 std::uint32_t field_0x28
-void* fn_00519CB0(void* self, const void* name) {
-    auto* obj = static_cast<unsigned char*>(self);
-    store_u32(obj, 0x00, 0x0095219Cu);
-    ext_0062916E(obj + 0x04, name);
-    store_u32(obj, 0x24, 0u);
-    store_u32(obj, 0x28, 0u);
-    store_u32(obj, 0x20, 1u);
-    return self;
-}
-} // namespace lift_00519CB0
 
 // [0x00519D10]
 namespace lift_00519D10 {
@@ -662,67 +608,6 @@ void* fn_00518080(void* self) {
     return self;
 }
 } // namespace lift_00518080
-
-// [0x00517360] sub_00517360 (76 bytes)
-namespace lift_00517360 {
-// @name Unknown::CallVirtual6CForEachPtr_00517360
-// @class Unknown
-// @summary Walks the pointer array stored at self+0x14..+0x18 and invokes virtual slot 0x6C/4 (thiscall, no args) on each element.
-// @field Unknown +0x14 void** field_0x14
-// @field Unknown +0x18 void** field_0x18
-void fn_00517360(void* self) {
-    // Range-style loop over the element array. The original invalid-parameter
-    // checks (calls through the MSVCR80 handler) are bounds assertions only
-    // and are omitted here.
-    using VirtualVoidFn = void(__thiscall*)(void*);
-
-    void** it = lift_field<void**>(self, 0x14);
-    void** const end = lift_field<void**>(self, 0x18);
-
-    while (it != end) {
-        void* obj = *it;
-        void** vtable = *reinterpret_cast<void***>(obj);
-        auto fn = reinterpret_cast<VirtualVoidFn>(vtable[0x6C / 4]);
-        fn(obj);
-        ++it;
-    }
-}
-} // namespace lift_00517360
-
-// [0x00517310] sub_00517310 (76 bytes)
-namespace lift_00517310 {
-extern int mem_00925134;
-
-// @name Unknown::CallVirtual68OnRange_00517310
-// @class Unknown
-// @summary Walks the pointer range stored at self+0x14..self+0x18 and invokes virtual slot 26 (vtable +0x68) on each element object.
-// @field Unknown +0x14 void** range_begin
-// @field Unknown +0x18 void** range_end
-//
-// The original is an MSVC debug-iterator loop. Its invalid-parameter guards
-// (calls through the MSVCR80 _invalid_parameter_noinfo pointer) are
-// assertion-only and are omitted here. The `cmp esi, esi` check is always
-// equal and therefore a no-op.
-void fn_00517310(void* self) {
-    using VirtualVoidFn = void(__thiscall*)(void*);
-
-    void** it = lift_field<void**>(self, 0x14);
-    for (;;) {
-        void** end = lift_field<void**>(self, 0x18);
-        if (it == end) {
-            break;
-        }
-
-        void* obj = *it;
-        void** vtable = *reinterpret_cast<void***>(obj);
-        auto fn = reinterpret_cast<VirtualVoidFn>(
-            *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(vtable) + 0x68));
-        fn(obj);
-
-        ++it;
-    }
-}
-} // namespace lift_00517310
 
 // [0x00515B20] sub_00515B20 (79 bytes)
 namespace lift_00515B20 {
@@ -1549,78 +1434,6 @@ void* fn_0051CCC0(void* self) {
 }
 } // namespace lift_0051CCC0
 
-// [0x005172A0] sub_005172A0 (104 bytes)
-namespace lift_005172A0 {
-// @name Unknown::ForEachInvokeVirtualSlot24
-// @class Unknown
-// @summary Iterates the pointer range at self+0x14..self+0x18 and calls vtable slot 24 on each element with one argument.
-// @field Unknown +0x14 void** m_begin
-// @field Unknown +0x18 void** m_end
-void fn_005172A0(void* self, void* arg) {
-    void** cur = lift_field<void**>(self, 0x14);
-    void** end = lift_field<void**>(self, 0x18);
-    for (; cur != end; ++cur) {
-        void* obj = *cur;
-        void** vtbl = *reinterpret_cast<void***>(obj);
-        // Slot 24 (0x60 bytes into a 32-bit vtable).
-        auto fn = reinterpret_cast<void (*)(void*, void*)>(vtbl[24]);
-        fn(obj, arg);
-    }
-}
-} // namespace lift_005172A0
-
-// [0x005170D0] sub_005170D0 (104 bytes)
-namespace lift_005170D0 {
-// @name Unknown::CallSlot3OnEachEntry
-// @class Unknown
-// @summary Walks the pointer array bounded by this+0x18 (begin) and this+0x1C (end) and calls vtable slot 3 (+0x0C) on each object with the argument.
-// @field Unknown +0x18 uint32_t field_0x18
-// @field Unknown +0x1C uint32_t field_0x1c
-void fn_005170D0(void* self, void* arg) {
-    uint32_t cursor = lift_field<uint32_t>(self, 0x18);
-    const uint32_t last = lift_field<uint32_t>(self, 0x1C);
-
-    while (cursor != last) {
-        const uint32_t objAddr = *reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(cursor));
-        void* obj = reinterpret_cast<void*>(static_cast<uintptr_t>(objAddr));
-
-        void** vtable = *reinterpret_cast<void***>(obj);
-        auto method = reinterpret_cast<void (*)(void*, void*)>(vtable[3]);
-        method(obj, arg);
-
-        cursor += sizeof(uint32_t);
-    }
-}
-} // namespace lift_005170D0
-
-// [0x00517230] sub_00517230 (104 bytes)
-namespace lift_00517230 {
-// @name Unknown::InvokeSlot23OnChildren
-// @class Unknown
-// @summary Iterates the pointer vector at this+0x14..0x18 and calls virtual slot 23 on each element with one argument.
-// @field Unknown +0x14 void** children_begin
-// @field Unknown +0x18 void** children_end
-void __fastcall fn_00517230(void* self, int edx_unused, void* arg) {
-    (void)edx_unused;
-
-    struct ChildList {
-        void** begin;
-        void** end;
-    };
-    using Slot23Fn = void(__fastcall*)(void* self, int edx_unused, void* arg);
-
-    auto* list = reinterpret_cast<ChildList*>(static_cast<uint8_t*>(self) + 0x10);
-    void** cur = list->begin;
-    while (cur != list->end) {
-        void* child = *cur;
-        void* const* vtbl = *reinterpret_cast<void* const* const*>(child);
-        auto fn = reinterpret_cast<Slot23Fn>(vtbl[23]);
-        fn(child, 0, arg);
-        ++cur;
-    }
-}
-} // namespace lift_00517230
-
 // [0x00517510] sub_00517510 (26 bytes)
 namespace lift_00517510 {
 // Known callee 0x005170D0: Unknown::CallSlot3OnEachEntry (Walks the pointer array bounded by this+0x18 (begin) and this+0x1C (end) and calls vtable slot 3 (+0x0C) on each object with the argument.)
@@ -1635,69 +1448,6 @@ void fn_00517510(void* self, void* arg) {
     ext_00678D70(self, 1);
 }
 } // namespace lift_00517510
-
-// [0x00519100] sub_00519100 (108 bytes)
-namespace lift_00519100 {
-// Known callee 0x0050F970: InitZeroedStateWithVTable (Sets the vtable pointer to 0x00950A74 and zeroes the double, dword, and byte state fields.)
-extern void ext_0050F970(void* self);
-extern const double mem_009520D8; // .rdata 0.05
-extern const double mem_00993828; // .rdata 0.5
-
-// @name InitStateWithDefaults_00519100
-// @summary Runs the base state initializer, installs the 0x00950A9C vtable, zeroes the state dwords, sets doubles at +0x50 (0.05) and +0x58 (0.5), sets +0x40 to 1, and returns self.
-// @field Unknown +0x00 DWORD vtable
-// @field Unknown +0x34 DWORD field_0x34
-// @field Unknown +0x38 DWORD field_0x38
-// @field Unknown +0x3C DWORD field_0x3C
-// @field Unknown +0x40 DWORD field_0x40
-// @field Unknown +0x44 DWORD field_0x44
-// @field Unknown +0x48 DWORD field_0x48
-// @field Unknown +0x4C DWORD field_0x4C
-// @field Unknown +0x50 double field_0x50
-// @field Unknown +0x58 double field_0x58
-// @field Unknown +0x64 DWORD field_0x64
-// @field Unknown +0x68 DWORD field_0x68
-// @field Unknown +0x6C DWORD field_0x6C
-void* fn_00519100(void* self) {
-    ext_0050F970(self);
-
-    lift_field<std::uint32_t>(self, 0x00) = 0x00950A9Cu;
-    lift_field<std::uint32_t>(self, 0x34) = 0u;
-    lift_field<std::uint32_t>(self, 0x38) = 0u;
-    lift_field<std::uint32_t>(self, 0x3C) = 0u;
-    lift_field<double>(self, 0x50) = mem_009520D8;
-    lift_field<double>(self, 0x58) = mem_00993828;
-    lift_field<std::uint32_t>(self, 0x44) = 0u;
-    lift_field<std::uint32_t>(self, 0x48) = 0u;
-    lift_field<std::uint32_t>(self, 0x4C) = 0u;
-    lift_field<std::uint32_t>(self, 0x40) = 1u;
-    lift_field<std::uint32_t>(self, 0x64) = 0u;
-    lift_field<std::uint32_t>(self, 0x68) = 0u;
-    lift_field<std::uint32_t>(self, 0x6C) = 0u;
-
-    return self;
-}
-} // namespace lift_00519100
-
-// [0x00517FC0]
-namespace lift_00517FC0 {
-// @name parseDoubleFromString
-// @summary Converts a string retrieved via ext_004275C0 to a double using atof and stores it at out.
-
-
-void* ext_004275C0(void* out_str);
-const char* __thiscall mem_00924FF0(void* self);
-void __thiscall mem_00924FF4(void* self);
-double mem_009251F0(const char* str);
-
-extern void fn_00517FC0(double* out) {
-    alignas(4) uint8_t local_str[0x1c]{};
-    void* str_ptr = ext_004275C0(local_str);
-    const char* cstr = mem_00924FF0(str_ptr);
-    *out = std::atof(cstr);
-    mem_00924FF4(local_str);
-}
-} // namespace lift_00517FC0
 
 // [0x0051C730] sub_0051C730 (110 bytes)
 namespace lift_0051C730 {
@@ -1746,39 +1496,3 @@ void fn_0051C730(void* self, const void* name) {
     lift_field<int32_t>(self, 0x60) = 0;
 }
 } // namespace lift_0051C730
-
-// [0x00517AD0]
-namespace lift_00517AD0 {
-extern void ext_00661980(void* self);
-extern void mem_write8(void* addr, uint8_t val);
-extern void mem_write32(void* addr, uint32_t val);
-
-// @name sub_00517AD0
-// @summary Constructor that initializes vtables, subobject at +0x0C, and zero-initializes fields at +0x14..+0x1C.
-// @field Object +0x00 uint32_t vtable_0x00
-// @field Object +0x04 uint8_t field_0x04
-// @field Object +0x08 uint32_t vtable_0x08
-// @field Object +0x0C uint32_t vtable_0x0C
-// @field Object +0x14 uint32_t field_0x14
-// @field Object +0x18 uint32_t field_0x18
-// @field Object +0x1C uint32_t field_0x1C
-void* fn_00517AD0(void* self) {
-    uint8_t* obj = static_cast<uint8_t*>(self);
-
-    mem_write8(obj + 0x04, 1);
-    mem_write32(obj + 0x00, 0x0093C08Cu);
-    mem_write32(obj + 0x08, 0x00951F3Cu);
-
-    void* subobj = obj + 0x0C;
-    ext_00661980(subobj);
-
-    mem_write32(subobj, 0x00951FB4u);
-    mem_write32(obj + 0x00, 0x00952018u);
-    mem_write32(obj + 0x08, 0x0095200Cu);
-    mem_write32(obj + 0x14, 0u);
-    mem_write32(obj + 0x18, 0u);
-    mem_write32(obj + 0x1C, 0u);
-
-    return self;
-}
-} // namespace lift_00517AD0

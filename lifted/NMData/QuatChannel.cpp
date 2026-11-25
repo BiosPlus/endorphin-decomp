@@ -23,32 +23,6 @@ void fn_0051C7C0(void* self) {
     lift_field<int32_t>(self, 0x60) = begin;
 }
 
-// [0x0051ADC0] NMData::QuatChannel::vfunc_7 (82 bytes)
-// @name NMData::QuatChannel::vfunc_7
-// @class NMData::QuatChannel
-// @summary Returns the first float (time) of the last 20-byte keyframe in [begin, end), or 0.0f if the range is empty.
-// @field NMData::QuatChannel +0x30 int32_t begin
-// @field NMData::QuatChannel +0x34 int32_t end
-float fn_0051ADC0(void* self) {
-    // Keyframe array bounds are stored as 32-bit addresses.
-    const int32_t begin = lift_field<int32_t>(self, 0x30);
-    if (begin == 0) {
-        return 0.0f;
-    }
-
-    const int32_t end = lift_field<int32_t>(self, 0x34);
-
-    // Element stride is 20 bytes (signed division by 20).
-    const int32_t count = (end - begin) / 20;
-    if (count == 0) {
-        return 0.0f;
-    }
-
-    // Read the leading float of the last keyframe.
-    const int32_t last = end - 20;
-    return *reinterpret_cast<const float*>(static_cast<uintptr_t>(static_cast<uint32_t>(last)));
-}
-
 // [0x0051D8C0]
 // @name NMData::QuatChannel::vfunc_8
 // @class NMData::QuatChannel

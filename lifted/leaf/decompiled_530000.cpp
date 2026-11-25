@@ -80,38 +80,6 @@ void* fn_00530190() {
 }
 } // namespace lift_00530190
 
-// [0x00537EC0]
-namespace lift_00537EC0 {
-extern uint32_t mem_read32(uint32_t addr);
-extern void ext_0063E006(uint32_t quadric);
-
-// @name QuadricWrapper::destroy
-// @class QuadricWrapper
-// @summary Deletes the GLU quadric object stored at offset +0x00.
-// @field QuadricWrapper +0x00 uint32_t quadric
-void __fastcall fn_00537EC0(uint32_t ecx, uint32_t edx) {
-    (void)edx;
-    uint32_t quadric = mem_read32(ecx);
-    ext_0063E006(quadric);
-}
-} // namespace lift_00537EC0
-
-// [0x0053C8F0]
-namespace lift_0053C8F0 {
-// @name Unknown::initDerivedVtable
-// @class Unknown
-// @summary Runs the base initializer on self, then installs the derived vtable at +0x00 and returns self.
-// @field Unknown +0x00 uint32_t vtable
-
-void fn_00532B60(void* self);
-
-void* fn_0053C8F0(void* self) {
-    fn_00532B60(self);
-    *reinterpret_cast<uint32_t*>(self) = 0x00955B6Cu;
-    return self;
-}
-} // namespace lift_0053C8F0
-
 // [0x00532B40]
 namespace lift_00532B40 {
 // @name Unknown::dtor_00532B40
@@ -171,53 +139,6 @@ void fn_0053ACF0(void* self, uint32_t mask, uint8_t flag) {
 }
 } // namespace lift_0053ACF0
 
-// [0x0053F6A0] sub_0053F6A0 (32 bytes)
-namespace lift_0053F6A0 {
-// Callee (ext_00533D40): stores its 3rd argument into this+0x498.
-void fn_00533D40(void* self, DWORD arg0, DWORD value);
-
-// @name ForwardSetField498ToChild
-// @class Unknown
-// @summary Forwards the second stack argument to child object at this+0xB4 via SetField498 with tag 0x93A444; pops 8 bytes.
-// @field Unknown +0xB4 void* field_0xB4
-void fn_0053F6A0(void* self, DWORD arg0, DWORD value) {
-    (void)arg0; // first stack argument is unused; callee receives the constant tag 0x93A444
-    void* child = lift_field<void*>(self, 0xB4);
-    fn_00533D40(child, 0x93A444u, value);
-}
-} // namespace lift_0053F6A0
-
-// [0x00533D50] sub_00533D50 (33 bytes)
-namespace lift_00533D50 {
-// Known callee 0x00532B40: Unknown::dtor_00532B40 (Sets vtable to 0x009543E4 and unlinks peer at +0x08 if it points back to this at +0x04.)
-extern void ext_00532B40(void* self);
-extern uint32_t mem_009253E8; // IAT slot holding glDeleteLists
-extern uint32_t mem_009547FC; // .rdata constant (unused by this body; vtable is written as an immediate)
-
-// @name Unknown::dtor_00533D50
-// @class Unknown
-// @summary Sets vtable to 0x009547FC, deletes the display list at +0x30 if present, then chains to the base dtor 0x00532B40.
-// @field Unknown +0x00 uint32_t vtable
-// @field Unknown +0x30 GLuint displayList
-void fn_00533D50(void* self) {
-    // [0x00533D50] mov [esi], 0x9547fc
-    lift_field<uint32_t>(self, 0x00) = 0x009547FCu;
-
-    // [0x00533D53] mov eax, [esi+0x30]; test eax, eax; je ...
-    GLuint displayList = lift_field<GLuint>(self, 0x30);
-    if (displayList != 0) {
-        // [0x00533D60] push 1; push eax; call [0x9253e8] ; glDeleteLists(list, 1)
-        using glDeleteLists_t = void (*)(GLuint, GLsizei);
-        auto glDeleteLists = reinterpret_cast<glDeleteLists_t>(
-            static_cast<uintptr_t>(mem_009253E8));
-        glDeleteLists(displayList, 1);
-    }
-
-    // [0x00533D69] mov ecx, esi; pop esi; jmp 0x532b40  (tail call with this = self)
-    ext_00532B40(self);
-}
-} // namespace lift_00533D50
-
 // [0x00533FB0]
 namespace lift_00533FB0 {
 // @name sub_00533FB0
@@ -239,24 +160,6 @@ void* __thiscall sub_00533FB0(void* self, void* out) {
 }
 } // namespace lift_00533FB0
 
-// [0x005356C0]
-namespace lift_005356C0 {
-// @name copyByteRange
-// @summary Copies a byte range [first, last) to dest using memmove if last > first, returning dest + (last - first).
-uint32_t sub_005356C0(uint32_t first, uint32_t last, uint32_t dest) {
-    int32_t size = static_cast<int32_t>(last - first);
-    uint32_t result = dest + static_cast<uint32_t>(size);
-    if (size > 0) {
-        std::memmove(
-            reinterpret_cast<void*>(static_cast<uintptr_t>(dest)),
-            reinterpret_cast<const void*>(static_cast<uintptr_t>(first)),
-            static_cast<size_t>(size)
-        );
-    }
-    return result;
-}
-} // namespace lift_005356C0
-
 // [0x00539B00] sub_00539B00 (41 bytes)
 namespace lift_00539B00 {
 // @name sub_00539B00
@@ -273,22 +176,6 @@ DWORD* __thiscall fn_00539B00(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_00539B00
-
-// [0x00538D10]
-namespace lift_00538D10 {
-// @name Unknown::SetFloatsAndField24
-// @class Unknown
-// @summary Forwards three floats to fn_00538CF0 and stores a 32-bit value at this+0x24.
-// @field Unknown +0x24 uint32_t field_0x24
-
-extern void mem_write32(uintptr_t addr, uint32_t val);
-extern void __fastcall ext_00538CF0(void* self, void* edx, float arg1, float arg2, float arg3);
-
-void __fastcall fn_00538D10(void* self, void* /*edx, unused*/, float arg1, float arg2, float arg3, uint32_t arg4) {
-    ext_00538CF0(self, nullptr, arg1, arg2, arg3);
-    mem_write32(reinterpret_cast<uintptr_t>(self) + 0x24, arg4);
-}
-} // namespace lift_00538D10
 
 // [0x0053A5E0] sub_0053A5E0 (44 bytes)
 namespace lift_0053A5E0 {
@@ -409,48 +296,6 @@ uint32_t fn_005304E0(void* self) {
 
 } // namespace lift_005304E0
 } // namespace lift_005304E0
-
-// [0x005331B0]
-namespace lift_005331B0 {
-// @name PumpOneWindowMessage
-// @summary Peeks one queued window message (PM_REMOVE); if present, translates and dispatches it.
-// @class none
-
-// USER32 imports, reached in the original via IAT slots at 0x009255A0..0x009255A8.
-using ext_PeekMessageA_t = int32_t (*)(void* lpMsg, void* hWnd, uint32_t wMsgFilterMin, uint32_t wMsgFilterMax, uint32_t wRemoveMsg);
-using ext_TranslateMessage_t = int32_t (*)(const void* lpMsg);
-using ext_DispatchMessageA_t = int32_t (*)(const void* lpMsg);
-
-extern ext_PeekMessageA_t ext_PeekMessageA;
-extern ext_TranslateMessage_t ext_TranslateMessage;
-extern ext_DispatchMessageA_t ext_DispatchMessageA;
-
-// IAT slot addresses (.rdata); the call goes through these.
-extern void* mem_009255A0;
-extern void* mem_009255A4;
-extern void* mem_009255A8;
-
-// MSG is 0x1C bytes: hwnd, message, wParam, lParam, time, pt.x, pt.y (7 x 32-bit).
-struct WinMsg {
-    void* hwnd;
-    uint32_t message;
-    uint32_t wParam;
-    int32_t lParam;
-    uint32_t time;
-    int32_t ptX;
-    int32_t ptY;
-};
-static_assert(sizeof(WinMsg) == 0x1C || sizeof(void*) == 8, "MSG must be 0x1C bytes on 32-bit");
-
-void PumpOneWindowMessage() {
-    WinMsg msg{};
-    // PM_REMOVE = 1; no HWND filter, no min/max filter.
-    if (ext_PeekMessageA(&msg, nullptr, 0, 0, 1) != 0) {
-        ext_TranslateMessage(&msg);
-        ext_DispatchMessageA(&msg);
-    }
-}
-} // namespace lift_005331B0
 
 // [0x005398C0]
 namespace lift_005398C0 {
@@ -1278,25 +1123,6 @@ CheckedFloat3Iter* __thiscall fn_00539AA0(
 }
 } // namespace lift_00539AA0
 
-// [0x00539490] sub_00539490 (91 bytes)
-namespace lift_00539490 {
-// Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
-extern void* ext_006A5C62(uint32_t size);
-
-// @name Unknown::allocateElements12
-// @summary Allocates raw storage for count 12-byte elements; throws std::length_error if 12*count overflows 32 bits.
-void* fn_00539490(uint32_t count) {
-    uint32_t size = 0;
-    if (count != 0) {
-        if (count > 0xFFFFFFFFu / 12u) {
-            throw std::length_error("");
-        }
-        size = count * 12u;
-    }
-    return ext_006A5C62(size);
-}
-} // namespace lift_00539490
-
 // [0x00530610] sub_00530610 (47 bytes)
 namespace lift_00530610 {
 // Known callee 0x005432A0: Unknown::callOnEachElement (Walks the pointer range [begin, end) of this container and calls ext_005434E0 on each element, forwarding the single argument; aborts if the range is inverted.)
@@ -1662,17 +1488,3 @@ void* fn_005301F0(void) {
 }
 } // namespace lift_0052FD90
 } // namespace lift_005301F0
-
-// [0x0053F5F0]
-namespace lift_0053F5F0 {
-// @name parseIntFromField
-// @summary Parses an integer from a string retrieved via ext_004275C0 and stores it in outValue.
-
-extern std::string* __thiscall ext_004275C0(void* self, std::string* outStr);
-
-extern void __cdecl fn_0053F5F0(int* outValue, void* obj) {
-    std::string str;
-    ext_004275C0(obj, &str);
-    *outValue = std::atoi(str.c_str());
-}
-} // namespace lift_0053F5F0

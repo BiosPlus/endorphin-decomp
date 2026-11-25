@@ -9,38 +9,24 @@
 namespace lifted_layout {
 struct ListNode_Fields {
     // +0x0   uint8_t*                 field_0x00  (evidence: 0x007AF8F0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   WORD                     index  (evidence: 0x007B89BC, 0x007B8E30, 0x007BD640) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 item  (evidence: 0x006FACA0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 key  (evidence: 0x007B2DF0, 0x007B89BC, 0x007BD640) // CONFLICT: multiple definitions at +0x0
-    // +0x0   ListNode*                next  (evidence: 0x0049FCF0, 0x004F0FB0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 next  (evidence: 0x00495AB0, 0x0049B170, 0x0049DB60) // CONFLICT: multiple definitions at +0x0
-    // +0x0   void*                    next  (evidence: 0x00495AB0, 0x0049B170, 0x0049BEE0, 0x0049DBA0) // CONFLICT: multiple definitions at +0x0
-    // +0x0   uint32_t                 obj  (evidence: 0x006FAD90) // CONFLICT: multiple definitions at +0x0
+    // +0x0   WORD                     index  (evidence: 0x007B8E30, 0x007BD640) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 key  (evidence: 0x007B2DF0, 0x007BD640) // CONFLICT: multiple definitions at +0x0
+    // +0x0   uint32_t                 next  (evidence: 0x0049DB60) // CONFLICT: multiple definitions at +0x0
+    // +0x0   void*                    next  (evidence: 0x0049BEE0, 0x0049DBA0) // CONFLICT: multiple definitions at +0x0
     // +0x0   void*                    prev  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0x0
     // +0x4   uint8_t*                 field_0x04  (evidence: 0x007AF8F0) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint32_t                 next  (evidence: 0x006FACA0, 0x006FAD90) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    next  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0x4
-    // +0x4   uint32_t                 prev  (evidence: 0x007C8490, 0x007CAF70, 0x007CC930) // CONFLICT: multiple definitions at +0x4
-    // +0x8   void* payload (object; vptr at offset 0, predicate in vtable slot 10 at +0x28)  (evidence: 0x00495AB0, 0x0049B170, 0x0049BEE0) // CONFLICT: multiple definitions at +0x8
-    // +0x8   ListNode*                child  (evidence: 0x004F0FB0) // CONFLICT: multiple definitions at +0x8
+    // +0x4   uint32_t                 prev  (evidence: 0x007C8490, 0x007CAF70) // CONFLICT: multiple definitions at +0x4
+    // +0x8   void* payload (object; vptr at offset 0, predicate in vtable slot 10 at +0x28)  (evidence: 0x0049BEE0) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_08  (evidence: 0x005E0060) // CONFLICT: multiple definitions at +0x8
     // +0x8   void*                    field_0x08  (evidence: 0x007C8690, 0x007CAF70) // CONFLICT: multiple definitions at +0x8
-    // +0x8   uint32_t                 next  (evidence: 0x007C8490, 0x007CAF70, 0x007CC930, 0x007F6830) // CONFLICT: multiple definitions at +0x8
-    // +0xC   uint32_t                 list  (evidence: 0x007C8490, 0x007CAF70, 0x007CC930) // CONFLICT: multiple definitions at +0xC
-    // +0xC   uint32_t                 prev  (evidence: 0x007F6830) // CONFLICT: multiple definitions at +0xC
-    // +0xC   std::string              text  (evidence: 0x004F0FB0) // CONFLICT: multiple definitions at +0xC
-    // +0x10  void*                    embeddedObjectVtable  (evidence: 0x00495AB0, 0x0049B170, 0x0049DBA0) // CONFLICT: multiple definitions at +0x10
-    // +0x10  void*                    embedded_obj  (evidence: 0x0049FCF0) // CONFLICT: multiple definitions at +0x10
-    // +0x10  uint32_t                 next  (evidence: 0x007B2DF0, 0x007B89BC, 0x007BD640) // CONFLICT: multiple definitions at +0x10
+    // +0x8   uint32_t                 next  (evidence: 0x007C8490, 0x007CAF70) // CONFLICT: multiple definitions at +0x8
+    // +0xC   uint32_t                 list  (evidence: 0x007C8490, 0x007CAF70)
+    // +0x10  void*                    embeddedObjectVtable  (evidence: 0x0049DBA0) // CONFLICT: multiple definitions at +0x10
+    // +0x10  uint32_t                 next  (evidence: 0x007B2DF0, 0x007BD640) // CONFLICT: multiple definitions at +0x10
     // +0x14  void*                    field_0x14  (evidence: 0x007B8D80) // CONFLICT: multiple definitions at +0x14
-    // +0x14  DWORD                    next  (evidence: 0x007B89BC, 0x007B8E30, 0x007BD640) // CONFLICT: multiple definitions at +0x14
-    // +0x20  uint32_t                 field_0x20  (evidence: 0x004F0FB0)
-    // +0x24  uint32_t                 field_0x24  (evidence: 0x004F0FB0) // CONFLICT: multiple definitions at +0x24
-    // +0x24  std::string              key  (evidence: 0x00495AB0, 0x0049B170, 0x0049DB60) // CONFLICT: multiple definitions at +0x24
-    // +0x28  uint32_t                 field_0x28  (evidence: 0x004F0FB0)
-    // +0x2C  void*                    extra  (evidence: 0x004F0FB0)
+    // +0x14  DWORD                    next  (evidence: 0x007B8E30, 0x007BD640) // CONFLICT: multiple definitions at +0x14
+    // +0x24  std::string              key  (evidence: 0x0049DB60)
     // +0x2D  uint8_t                  isNil  (evidence: 0x005E0060)
-    // +0x39  uint8_t                  stopFlag  (evidence: 0x004F0FB0)
-    // +0x6D  uint8_t                  skip_flag  (evidence: 0x0049FCF0)
 };
 } // namespace lifted_layout

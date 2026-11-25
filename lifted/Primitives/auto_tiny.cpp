@@ -169,19 +169,6 @@ extern "C" void* __fastcall fn_0053D0B0(void* self, int edx_unused, unsigned int
     return self;
 }
 
-// [0x0053D260] Primitives::RadiusLimit::vfunc_0 (30 bytes)
-// @name Primitives::RadiusLimit::vfunc_0
-// @class Primitives::RadiusLimit
-// @summary MSVC scalar deleting destructor: calls sub_0053C060 and frees memory when (flags & 1) is set.
-extern "C" void* __fastcall fn_0053D260(void* self, int edx_unused, unsigned int flags) {
-    (void)edx_unused;
-    ext_0053C060(self);
-    if ((flags & 1u) != 0) {
-        ext_006A5C5C(self);
-    }
-    return self;
-}
-
 // [0x0053D970] Primitives::Sensor2::vfunc_0 (30 bytes)
 // @name Primitives::Sensor2::vfunc_0
 // @class Primitives::Sensor2
@@ -203,16 +190,6 @@ extern "C" void* __fastcall fn_0053D970(void* self, int edx_unused, unsigned int
 uint32_t fn_0052F5F0(void* self) {
     const uint32_t flags = *reinterpret_cast<const uint32_t*>(static_cast<const char*>(self) + 0x1C);
     return (flags & 0x20u) == 0x20u ? 1u : 0u;
-}
-
-// [0x0053A5D0] Primitives::Animation::vfunc_24 (16 bytes)
-// @name Primitives::Animation::vfunc_24
-// @class Primitives::Animation
-// @summary Allocates one OpenGL display list via glGenLists(1) and stores its id at this+0x34.
-// @field Primitives::Animation +0x34 uint32_t field_0x34
-void fn_0053A5D0(void* self) {
-    auto* obj = static_cast<unsigned char*>(self);
-    *reinterpret_cast<UINT*>(obj + 0x34) = glGenLists(1);
 }
 
 // [0x0052EFA0] Primitives::Animation::vfunc_14 (17 bytes)

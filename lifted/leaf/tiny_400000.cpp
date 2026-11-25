@@ -180,21 +180,6 @@ extern "C" void __fastcall fn_0040FD00(void* self) {
     ext_006A5DFA(self);
 }
 
-// [0x00401970]
-namespace lift_00401970 {
-extern uint32_t mem_read32(const void* base, uint32_t offset);
-
-// @name sub_00401970
-// @summary Tail-calls a callback function pointer stored at offset 0x14 if non-null
-// @field Class +0x14 void* field_0x14
-void __thiscall sub_00401970(void* self) {
-    uint32_t fn = mem_read32(self, 0x14);
-    if (fn != 0) {
-        ((void (*)())(uintptr_t)fn)();
-    }
-}
-} // namespace lift_00401970
-
 // [0x00401930] sub_00401930 (13 bytes)
 namespace lift_00401930 {
 // @name CallFirstFieldIfNonNull
@@ -336,21 +321,6 @@ void sub_00401920(void* self) {
 }
 } // namespace lift_00401920
 
-// [0x0040BEE0] sub_0040BEE0 (20 bytes)
-namespace lift_0040BEE0 {
-extern int mem_00925694;
-extern int32_t __stdcall ext_SendMessageA(uint32_t hWnd, uint32_t msg, uint32_t wParam, uint32_t lParam);
-
-// @name Window::sendMessage_0x18B
-// @class Window
-// @summary Sends message 0x18B with zero wParam/lParam to the window handle stored in this->+0x20.
-// @field Window +0x20 uint32_t hWnd
-void fn_0040BEE0(void* self) {
-    const uint32_t hWnd = lift_field<uint32_t>(self, 0x20);
-    ext_SendMessageA(hWnd, 0x18B, 0, 0);
-}
-} // namespace lift_0040BEE0
-
 // [0x00401CC0]
 namespace lift_00401CC0 {
 // @name FwdChildVfunc_78
@@ -484,25 +454,6 @@ void __thiscall sub_00404700(void* self, uint32_t value) {
     }
 }
 } // namespace lift_00404700
-
-// [0x004046E0]
-namespace lift_004046E0 {
-// @name CWnd_SetField54AndInvalidate
-// @summary Sets field_0x54 and invalidates the window rect if hwnd (field_0x20) is non-null.
-// @field CWnd +0x20 uint32_t hwnd
-// @field CWnd +0x54 uint32_t field_0x54
-
-extern void __stdcall ext_InvalidateRect(uint32_t hWnd, uint32_t lpRect, uint32_t bErase);
-
-void __thiscall sub_004046E0(void* self, uint32_t value) {
-    uint8_t* base = static_cast<uint8_t*>(self);
-    *reinterpret_cast<uint32_t*>(base + 0x54) = value;
-    uint32_t hwnd = *reinterpret_cast<uint32_t*>(base + 0x20);
-    if (hwnd != 0) {
-        ext_InvalidateRect(hwnd, 0, 1);
-    }
-}
-} // namespace lift_004046E0
 
 // [0x004090C0] sub_004090C0 (29 bytes)
 namespace lift_004090C0 {

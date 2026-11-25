@@ -56,22 +56,6 @@ void fn_00452100(void* self, DWORD arg) {
 }
 } // namespace lift_00452100
 
-// [0x00458C80] sub_00458C80 (22 bytes)
-namespace lift_00458C80 {
-// Callee thunks (IAT forwarders to MFC80).
-extern void fn_006A60F4(void); // thunk_MFC80_ord_1187 (no-arg throw helper)
-extern void fn_006A6304(DWORD hr); // thunk_MFC80_ord_1191 (HRESULT throw helper)
-
-// @name ThrowIfFailedHResult
-// @summary If hr == E_OUTOFMEMORY (0x8007000E) raise the MFC memory exception, then raise an OLE exception with hr.
-void fn_00458C80(DWORD hr) {
-    if (hr == 0x8007000Eu) {
-        fn_006A60F4();
-    }
-    fn_006A6304(hr);
-}
-} // namespace lift_00458C80
-
 // [0x00455CF0] sub_00455CF0 (25 bytes)
 namespace lift_00455CF0 {
 // Known callee 0x006A5EBA: thunk_MFC80_ord_709 (IAT jump thunk forwarding to MFC80!ord_709.)
@@ -159,42 +143,6 @@ extern int __fastcall sub_00455F40(void* self) {
     return 1;
 }
 } // namespace lift_00455F40
-
-// [0x00455CD0] sub_00455CD0 (26 bytes)
-namespace lift_00455CD0 {
-// Known callee 0x004090C0: sub_004090C0 (Returns 1 if the int at self+0xF4 equals 0xE81C or 0xE81D, otherwise 0.)
-extern int ext_004090C0(void* self);
-// Known callee 0x00455CB0: sub_00455CB0 (Auto-lifted identical-shape clone of 0x004090C0 (sub_004090C0).)
-extern int ext_00455CB0(void* self);
-
-// @name descriptiveName: sub_00455CD0_dispatchOnStateAOrB
-// @summary Tail-dispatches to ext_00455CB0 when the int at self+0x98 is 0x0A or 0x0B, otherwise tail-calls ext_004090C0.
-// @field Unknown +0x98 int32_t field_0x98
-extern int __fastcall fn_00455CD0(void* self) {
-    const int32_t state = *reinterpret_cast<const int32_t*>(reinterpret_cast<const uint8_t*>(self) + 0x98);
-    if (state == 0x0A || state == 0x0B) {
-        return ext_00455CB0(self);
-    }
-    return ext_004090C0(self);
-}
-} // namespace lift_00455CD0
-
-// [0x00454BE0] sub_00454BE0 (25 bytes)
-namespace lift_00454BE0 {
-// Callee 0x00454BB0 (sub_00454BB0, 10B): reached by tail jump.
-// Assumed ABI: this in ecx -> first parameter, stack argument -> second parameter.
-extern void ext_00454BB0(void* self, DWORD value);
-
-// @name sub_00454BE0_storeArgAndTailCallSubobject
-// @class Unknown
-// @summary Stores its stack argument at self+0x120, then tail-forwards the same argument to sub_00454BB0 on the subobject at self+0x10C.
-// @field Unknown +0x120 DWORD field_0x120
-void fn_00454BE0(void* self, DWORD value) {
-    BYTE* obj = static_cast<BYTE*>(self);
-    *reinterpret_cast<DWORD*>(obj + 0x120) = value;
-    ext_00454BB0(obj + 0x10C, value);
-}
-} // namespace lift_00454BE0
 
 // [0x00458670] sub_00458670 (30 bytes)
 namespace lift_00458670 {
@@ -425,29 +373,6 @@ uint32_t __thiscall sub_004545A0(uint32_t this_, uint32_t child) {
 }
 } // namespace lift_004545A0
 
-// [0x00456340]
-namespace lift_00456340 {
-// @name sub_00456340
-// @summary Conditionally invokes vtable+0x188 on this before calling MFC80!ord_1903
-// @field Unknown +0x00 void** vtable
-// @field Unknown +0xdc uint32_t field_0xdc
-
-
-extern void fn_006A5EA8(void);
-
-extern void __thiscall fn_00456340(void* self, void* arg1) {
-    uint8_t* base = reinterpret_cast<uint8_t*>(self);
-    uint32_t flag = *reinterpret_cast<uint32_t*>(base + 0xdc);
-    if (flag != 0 && arg1 != self) {
-        void** vtable = *reinterpret_cast<void***>(self);
-        using Vfn0 = void(__thiscall*)(void*);
-        Vfn0 fn = reinterpret_cast<Vfn0>(vtable[0x188 / sizeof(void*)]);
-        fn(self);
-    }
-    fn_006A5EA8();
-}
-} // namespace lift_00456340
-
 // [0x0045B6C0]
 namespace lift_0045B6C0 {
 // @name initFromMFC80Ord2867
@@ -594,43 +519,6 @@ void fn_0045B4F0(void* self) {
 }
 } // namespace lift_0045B4F0
 
-// [0x00456280] sub_00456280 (56 bytes)
-namespace lift_00456280 {
-// Known callee 0x00455F40: Unknown::returnTrueIfNeitherCheckMatches_00455F40
-// (Returns 1 only if both ext_00455CB0 and ext_004090C0 return 0 for self; otherwise returns 0.)
-extern int __fastcall ext_00455F40(void* self);
-
-// @name Unknown::dispatchIfArg10To17_00456280
-// @class Unknown
-// @summary Returns 0 if +0xDC is nonzero; returns 1 if ext_00455F40 is true; returns arg1 if arg1 is outside 10..17; otherwise calls the vtable slot at +0x184 with (arg1, arg2, arg3).
-// @field Unknown +0xDC uint32_t field_0xdc (read-only gate; multiple conflicting definitions in Unknown.h)
-// @field Unknown +0x00 void* vtable (dereferenced to locate slot +0x184)
-int fn_00456280(void* self, int arg1, int arg2, int arg3) {
-    using VSlot3 = int(__thiscall*)(void* self, int a1, int a2, int a3);
-
-    // Gate: a nonzero dword at +0xDC short-circuits. The original returns the
-    // caller's stale eax here, which has no portable equivalent; 0 is used.
-    if (lift_field<uint32_t>(self, 0xDC) != 0) {
-        return 0;
-    }
-
-    int sub = ext_00455F40(self);
-    if (sub != 0) {
-        return sub;
-    }
-
-    // Original: unsigned (arg1 - 10) > 7 -> return arg1 unchanged.
-    if (static_cast<uint32_t>(arg1) - 10u > 7u) {
-        return arg1;
-    }
-
-    // Virtual dispatch: vtable = *(void**)self; slot = *(vtable + 0x184).
-    void* vtbl = lift_field<void*>(self, 0);
-    auto fn = reinterpret_cast<VSlot3>(lift_field<void*>(vtbl, 0x184));
-    return fn(self, arg1, arg2, arg3);
-}
-} // namespace lift_00456280
-
 // [0x004564A0] sub_004564A0 (57 bytes)
 namespace lift_004564A0 {
 // Known callee 0x006A5E00: thunk_MFC80_ord_2372 (IAT jump thunk forwarding to MFC80!ord_2372.)
@@ -695,41 +583,6 @@ extern void __thiscall fn_0045BC30(void* self, DWORD lparam) {
 }
 } // namespace lift_0045BC30
 
-// [0x00458860] sub_00458860 (68 bytes)
-namespace lift_00458860 {
-// @name Unknown::setCurrentByIndex
-// @class Unknown
-// @summary Releases the current element via vtable slot 2, selects element `index` from the array at +0x04..+0x08, stores it as current at +0x10, and invokes its vtable slot 1.
-// @field Unknown +0x04 void** field_0x04
-// @field Unknown +0x08 void** field_0x08
-// @field Unknown +0x10 void* field_0x10
-void fn_00458860(void* self, uint32_t index) {
-    using VFn = void (*)(void*);
-
-    // Notify the current element (vtable slot 2) if one is set.
-    void*& current = lift_field<void*>(self, 0x10);
-    if (current != nullptr) {
-        void** vtbl = *reinterpret_cast<void***>(current);
-        reinterpret_cast<VFn>(vtbl[2])(current);
-    }
-
-    // Bounds check: array must exist and index must be < element count.
-    void**& begin = lift_field<void**>(self, 0x04);
-    void** end = lift_field<void**>(self, 0x08);
-    intptr_t byteSpan = reinterpret_cast<uint8_t*>(end) - reinterpret_cast<uint8_t*>(begin);
-    uint32_t count = static_cast<uint32_t>(byteSpan >> 2);
-    if (begin == nullptr || index >= count) {
-        std::abort(); // original calls _invalid_parameter_noinfo
-    }
-
-    // Select the element and activate it (vtable slot 1).
-    void* next = begin[index];
-    current = next;
-    void** nextVtbl = *reinterpret_cast<void***>(next);
-    reinterpret_cast<VFn>(nextVtbl[1])(next);
-}
-} // namespace lift_00458860
-
 // [0x00455860] sub_00455860 (73 bytes)
 namespace lift_00455860 {
 // Known callee 0x00455260: std::string::assign(const char*, size_t) wrapper (Assigns the first n bytes of src into the std::string at self; returns 0 (stdcall, callee pops 16 bytes).)
@@ -760,101 +613,6 @@ void __thiscall fn_00455860(uint8_t* self) {
     (void)send_message(hwnd, 0x44A, 2, reinterpret_cast<LPARAM>(request));
 }
 } // namespace lift_00455860
-
-// [0x00455B50]
-namespace lift_00455B50 {
-// @name Unknown::Sub_00455B50
-// @class Unknown
-// @summary Calls two helpers on this, then passes the byte at +0x158 and the address of +0x13c to a helper and forwards its result to another helper.
-// @field Unknown +0x13c uint8_t field_0x13c
-// @field Unknown +0x158 uint8_t field_0x158
-
-extern void ext_00455860(uint8_t* self);
-extern void ext_00455410(uintptr_t self);
-extern int32_t ext_00465B30(uint32_t flag, uint8_t* ptr);
-extern void ext_004691D0(int32_t value);
-
-void fn_00455B50(uint8_t* self)
-{
-    ext_00455860(self);
-    ext_00455410(reinterpret_cast<uintptr_t>(self));
-
-    uint32_t flag = static_cast<uint32_t>(self[0x158]);
-    int32_t result = ext_00465B30(flag, self + 0x13c);
-    ext_004691D0(result);
-}
-} // namespace lift_00455B50
-
-// [0x00456C20] sub_00456C20 (75 bytes)
-namespace lift_00456C20 {
-// Known callee 0x00455C20: CSizingControlBar::vfunc_0 (Returns address of global mem_00936D1C.)
-extern void* ext_00455C20(void);
-// Known callee 0x006A63BE: thunk_MFC80_ord_3952 (IAT jump thunk forwarding to MFC80!ord_3952.)
-// Original calling convention: ecx = obj, one stack argument; returns BOOL in eax.
-extern int ext_006A63BE(void* ecx_obj, void* stack_arg);
-
-// @name NotifyNodeList_00456C20
-// @summary Walks a singly linked list at this+0x88; for each node, calls ext_006A63BE(obj, ext_00455C20()) and, if true, invokes virtual slot +0x17c on obj with arg.
-// @field Unknown +0x88 void* nodeList
-// (node layout: +0x00 next pointer, +0x08 object pointer; object vtable slot at +0x17c)
-// The original tail-jump to thunk_MFC80_ord_1185 (ext_006A60EE) is only reached when the list head is null
-// at a point the loop already guarantees non-null, so it is unreachable and omitted.
-void fn_00456C20(void* self, void* arg) {
-    void* node = *reinterpret_cast<void**>(static_cast<char*>(self) + 0x88);
-    while (node != nullptr) {
-        void* next = *reinterpret_cast<void**>(node);
-        void* obj = *reinterpret_cast<void**>(static_cast<char*>(node) + 0x08);
-        void* token = ext_00455C20();
-        int ok = ext_006A63BE(obj, token);
-        if (ok != 0) {
-            void** vtbl = *reinterpret_cast<void***>(obj);
-            void* slot = *reinterpret_cast<void**>(reinterpret_cast<char*>(vtbl) + 0x17c);
-            auto method = reinterpret_cast<void (*)(void*, void*)>(slot);
-            method(obj, arg);
-        }
-        node = next;
-    }
-}
-} // namespace lift_00456C20
-
-// [0x00456C70] (75 bytes)
-namespace lift_00456C70 {
-// @name ProcessNodeList_00456C70
-// @summary Walks a singly linked list hanging off the owner at +0x88. For each node, it calls the global getter fn_00455C20, passes that result to thunk_MFC80_ord_3952 on the node's object; if that returns nonzero, it invokes the object's virtual slot at +0x180 with `arg2`. Iteration continues until the next-node pointer is null.
-// @field Owner +0x88 void* field_0x88
-// @field Node +0x00 uint8_t* next
-// @field Node +0x08 void* obj
-//
-// Note: the asm contains an `je` to ext_006A60EE (thunk_MFC80_ord_1185) at the
-// top of the loop. The loop condition guarantees the node is nonzero there, so
-// that tail-jump path is unreachable and is omitted.
-
-extern void* ext_00455C20(void);
-extern uint32_t ext_006A63BE(void* self, void* arg);
-
-void fn_00456C70(void* self, void* arg2) {
-    uint8_t* node = lift_field<uint8_t*>(self, 0x88);
-    if (node == nullptr) {
-        return;
-    }
-
-    while (node != nullptr) {
-        uint8_t* next = lift_field<uint8_t*>(node, 0x00);
-        void* obj = lift_field<void*>(node, 0x08);
-
-        void* global_ptr = ext_00455C20();
-
-        if (ext_006A63BE(obj, global_ptr) != 0) {
-            void* vtbl = lift_field<void*>(obj, 0x00);
-            using VirtFn = void (*)(void*, void*);
-            VirtFn slot = lift_field<VirtFn>(vtbl, 0x180);
-            slot(obj, arg2);
-        }
-
-        node = next;
-    }
-}
-} // namespace lift_00456C70
 
 // [0x00454AD0]
 namespace lift_00454AD0 {
@@ -1033,35 +791,6 @@ void* fn_00454B20(void* self, void* arg1, void* arg2) {
 }
 } // namespace lift_00454B20
 
-// [0x0045BED0] sub_0045BED0 (87 bytes)
-namespace lift_0045BED0 {
-extern bool ext_0045BCF0(void* self);
-// Known callee 0x0045B6C0: initFromMFC80Ord2867 (Calls MFC80_ord_2867 with arg2, invokes vtable+0xc on the returned object with arg1, and returns arg1.)
-extern uint32_t ext_0045B6C0(void* self, uint32_t arg1, uint32_t arg2);
-extern uint32_t mem_00A9F414;   // .data: address of a const char* string literal
-
-extern LRESULT __stdcall SendMessageA(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
-
-// @name Unknown::resolveStringViaWindowMessage_0045BED0
-// @class Unknown
-// @summary Constructs *out from a global string when ext_0045BCF0 succeeds; otherwise sends window message 0x110A to the owning HWND and forwards the result to ext_0045B6C0. Always returns out.
-// @field Unknown +0x20 HWND hwnd
-std::string* fn_0045BED0(void* self, std::string* out) {
-    // The original's zeroed stack local is not passed to ext_0045BCF0 (no argument is pushed), so it has no observable effect and is omitted.
-    if (ext_0045BCF0(self)) {
-        const char* literal = reinterpret_cast<const char*>(static_cast<uintptr_t>(mem_00A9F414));
-        new (out) std::string(literal);
-        return out;
-    }
-
-    HWND hwnd = lift_field<HWND>(self, 0x20);
-    LRESULT result = SendMessageA(hwnd, 0x110A, 9, 0);
-    ext_0045B6C0(self, static_cast<uint32_t>(reinterpret_cast<uintptr_t>(out)),
-                 static_cast<uint32_t>(result));
-    return out;
-}
-} // namespace lift_0045BED0
-
 // [0x0045D8D0]
 namespace lift_0045D8D0 {
 // @name indexToCode_0045D8D0
@@ -1083,26 +812,6 @@ int __stdcall indexToCode_0045D8D0(UINT index) {
     }
 }
 } // namespace lift_0045D8D0
-
-// [0x00455EB0]
-namespace lift_00455EB0 {
-// @name sub_00455EB0_dtor
-// @summary Destructor that resets vtables at +0x00 and +0xfc and invokes MFC base/member destructors
-// @field Obj +0x00 uint32_t vtable
-// @field Obj +0xfc uint32_t subobj_vtable
-
-extern void mem_w32(uintptr_t addr, uint32_t val);
-extern void __thiscall ext_006A5FF2(uintptr_t self);
-extern void __thiscall ext_006A679C(uintptr_t self);
-
-extern void __thiscall fn_00455EB0(uintptr_t self) {
-    mem_w32(self, 0x00936D5Cu);
-    uintptr_t subobj = self + 0xFCu;
-    mem_w32(subobj, 0x0092A23Cu);
-    ext_006A5FF2(subobj);
-    ext_006A679C(self);
-}
-} // namespace lift_00455EB0
 
 // [0x0045C1C0]
 namespace lift_0045C1C0 {
@@ -1226,75 +935,6 @@ void fn_00458A00(void* self) {
 }
 } // namespace lift_00458A00
 
-// [0x004519B0] sub_004519B0 (107 bytes)
-namespace lift_004519B0 {
-// Known callee 0x00594000: returns the owner object pointer (guest address).
-extern int32_t ext_00594000();
-
-namespace {
-
-// Guest addresses are 32-bit values; convert them to host pointers.
-inline void* guest_ptr(uint32_t addr) {
-    return reinterpret_cast<void*>(static_cast<uintptr_t>(addr));
-}
-
-// Original calls the CRT invalid-parameter handler (via a pointer loaded from
-// 0x00925134) on range violations; the default handler terminates the process.
-inline void invalid_parameter() {
-    std::abort();
-}
-
-} // namespace
-
-// @name dispatchSlotRangeHooks
-// @summary Walks the slot range of the owner's sub-object; for each non-null element, calls its vtable slot 0xF8, and if that returns 7 also calls vtable slot 0x164.
-// @field Owner +0x26C uint32_t field_0x26c
-// @field SubObject +0x34 uint32_t field_0x34
-// @field SubObject +0x38 uint32_t field_0x38
-void fn_004519B0() {
-    void* owner = guest_ptr(static_cast<uint32_t>(ext_00594000()));
-    void* subObject = guest_ptr(lift_field<uint32_t>(owner, 0x26C));
-
-    // Range: begin at +0x34, end at +0x38 (exclusive), elements are 4-byte slots.
-    uint32_t cursor = lift_field<uint32_t>(subObject, 0x34);
-    if (cursor > lift_field<uint32_t>(subObject, 0x38)) {
-        invalid_parameter();
-    }
-
-    for (;;) {
-        uint32_t end = lift_field<uint32_t>(subObject, 0x38);
-        if (lift_field<uint32_t>(subObject, 0x34) > end) {
-            invalid_parameter();
-        }
-        if (cursor == end) {
-            break;
-        }
-        if (cursor >= end) {
-            invalid_parameter();
-        }
-
-        uint32_t elem = lift_field<uint32_t>(guest_ptr(cursor), 0);
-        if (elem != 0) {
-            void* obj = guest_ptr(elem);
-            uint32_t vtable = lift_field<uint32_t>(obj, 0);
-
-            uint32_t slot0F8 = lift_field<uint32_t>(guest_ptr(vtable), 0xF8);
-            auto fn0F8 = reinterpret_cast<int32_t (*)(void*)>(guest_ptr(slot0F8));
-            if (fn0F8(obj) == 7) {
-                uint32_t slot164 = lift_field<uint32_t>(guest_ptr(vtable), 0x164);
-                auto fn164 = reinterpret_cast<void (*)(void*)>(guest_ptr(slot164));
-                fn164(obj);
-            }
-        }
-
-        if (cursor >= lift_field<uint32_t>(subObject, 0x38)) {
-            invalid_parameter();
-        }
-        cursor += 4;
-    }
-}
-} // namespace lift_004519B0
-
 // [0x0045C0C0]
 namespace lift_0045C0C0 {
 // @name sub_0045C0C0
@@ -1326,33 +966,6 @@ void __thiscall fn_0045C0C0(void* self, uint32_t arg0, uint8_t flag) {
     ext_006A6442(self, arg0, 0x22, 0, res2, res1, 0, 0, 0);
 }
 } // namespace lift_0045C0C0
-
-// [0x0045E4C0] sub_0045E4C0 (61 bytes)
-namespace lift_0045E4C0 {
-// @name sub_0045E4C0
-// @summary Auto-lifted identical-shape clone of 0x0046A4D0 (advanceIteratorCounted).
-namespace lift_0046A4D0 {
-// Known callee 0x00474FF0: sub_00474FF0 (Auto-lifted identical-shape clone of 0x005E0B20 (TreeIterator::increment).)
-extern void ext_00419F50(void* self);
-// IAT slot holding MSVCR80!_invalid_parameter_noinfo (called with no arguments).
-extern void (*mem_00925134)();
-
-// @name advanceIteratorCounted
-// @summary Advances an iterator with TreeIterator::increment until it equals `last`, incrementing `*counter` once per step; asserts the iterator is non-null and equal to `guard` before each step.
-void fn_0045E4C0(void* it, void* last, void* guard, void* end, int32_t* counter) {
-    for (;;) {
-        if (it == nullptr || it != guard) {
-            mem_00925134();
-        }
-        if (last == end) {
-            return;
-        }
-        ++*counter;
-        ext_00419F50(&it);
-    }
-}
-} // namespace lift_0046A4D0
-} // namespace lift_0045E4C0
 
 // [0x0045E700]
 namespace lift_0045E700 {
@@ -1394,27 +1007,6 @@ uint32_t __thiscall sub_0045E700(uint32_t self, uint32_t key) {
     return read_u32(node, 0x10);
 }
 } // namespace lift_0045E700
-
-// [0x0045AEE0]
-namespace lift_0045AEE0 {
-// @name getWindowTextAsFloat
-// @summary Reads the window text of a CWnd into a string and parses it as a float using atof.
-
-extern void fn_006A5F4A(void);
-
-float __stdcall fn_0045AEE0(void* wnd) {
-    char buf[256]{};
-    // MFC80!ord_310: CString::CString()
-    // thunk_MFC80_ord_3761: CWnd::GetWindowTextA(CString&)
-    (void)wnd;
-    fn_006A5F4A();
-    // MFC80!ord_876: CString::operator const char*()
-    // MSVCR80!atof
-    float result = static_cast<float>(std::atof(buf));
-    // MFC80!ord_578: CString::~CString()
-    return result;
-}
-} // namespace lift_0045AEE0
 
 // [0x0045E690]
 namespace lift_0045E690 {
@@ -1633,33 +1225,6 @@ void fn_0045B530(void* self) {
 }
 } // namespace lift_0045B530
 
-// [0x0045B620] sub_0045B620 (65 bytes)
-namespace lift_0045B620 {
-// Known callee 0x0045AEE0: getWindowTextAsFloat (Reads the window text of a CWnd into a string and parses it as a float using atof.)
-extern float __stdcall ext_0045AEE0(void* wnd);
-
-// @name Unknown::forwardPositiveWindowFloat_0045B620
-// @class Unknown
-// @summary Reads a float from the window text at this+0x2D8; if it is greater than zero, passes it to the object at this+0x88 through vtable slot 0x98.
-// @field Unknown +0x88 void* target
-// @field Unknown +0x2D8 uint8_t wnd
-void fn_0045B620(void* self) {
-    void* wnd = reinterpret_cast<uint8_t*>(self) + 0x2D8;
-    float value = ext_0045AEE0(wnd);
-
-    // fcom/fnstsw/test ah,0x41: proceed only when value > 0 (false for zero, negative, and NaN).
-    if (!(value > 0.0f)) {
-        return;
-    }
-
-    void* target = lift_field<void*>(self, 0x88);
-    void** vtable = lift_field<void**>(target, 0);
-    using Method = void(__thiscall*)(void*, float);
-    Method method = reinterpret_cast<Method>(vtable[0x98 / sizeof(void*)]);
-    method(target, value);
-}
-} // namespace lift_0045B620
-
 // [0x00453EB0]
 namespace lift_00453EB0 {
 // @name OnEditChangeText
@@ -1687,29 +1252,3 @@ extern void fn_00453EB0(void* self) {
     reinterpret_cast<void(__thiscall*)(void*)>(mem_009242F4)(&local_str);
 }
 } // namespace lift_00453EB0
-
-// [0x00459060]
-namespace lift_00459060 {
-// @name getOrCreateWindowWrapper
-// @summary Sends a registered message to a window and returns the result, or allocates and constructs a 0x20-byte wrapper object if it returns 0.
-
-extern uint32_t mem_00AD3E34;
-extern uintptr_t (__stdcall *mem_00925694)(uintptr_t hWnd, uint32_t Msg, uintptr_t wParam, uintptr_t lParam);
-
-extern void* ext_006A5C62(uint32_t size);
-extern void* __thiscall ext_00459000(void* self, uintptr_t hWnd);
-
-extern uintptr_t fn_00459060(uintptr_t hWnd) {
-    uintptr_t res = mem_00925694(hWnd, mem_00AD3E34, 0, 0);
-    if (res != 0) {
-        return res;
-    }
-
-    void* obj = ext_006A5C62(0x20);
-    if (obj == nullptr) {
-        return 0;
-    }
-
-    return reinterpret_cast<uintptr_t>(ext_00459000(obj, hWnd));
-}
-} // namespace lift_00459060

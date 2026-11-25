@@ -85,14 +85,6 @@ extern "C" void* __fastcall fn_006EA170(void* self, int edx_unused, unsigned int
     return self;
 }
 
-// [0x006EF800] sub_006EF800 (16 bytes)
-// @name sub_006EF800
-// @summary Setter storing int32_t argument into field at offset +0xC.
-extern "C" void __fastcall fn_006EF800(void* self, int edx_unused, int32_t value) {
-    (void)edx_unused;
-    lift_field<int32_t>(self, 0xC) = value;
-}
-
 // [0x006EF8A0] sub_006EF8A0 (6 bytes)
 // @name sub_006EF8A0
 // @summary Returns global int32 value from mem_00B5E0A8.

@@ -116,30 +116,6 @@ void fn_005D9F30(void* self) {
 }
 } // namespace lift_005D9F30
 
-// [0x005DC930] sub_005DC930 (37 bytes)
-namespace lift_005DC930 {
-// Known callee 0x005D9F30: ReleaseOwnedObjectScope (ECX = self; thiscall, one pointer argument)
-extern void ext_005D9F30(void* self);
-// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk to MFC80!ord_764; cdecl, one argument pushed)
-extern void ext_006A5C5C(void* arg);
-
-// @name ClearOwnedObjectAt0x44
-// @summary If the owned pointer at +0x44 is non-null, release its scope, pass it to MFC80!ord_764, then clear the slot.
-// @field UnknownClass +0x44 void* field_0x44
-
-void fn_005DC930(void* self) {
-    auto* base = static_cast<std::uint8_t*>(self);
-    auto** slot = reinterpret_cast<void**>(base + 0x44);
-
-    void* owned = *slot;
-    if (owned != nullptr) {
-        ext_005D9F30(owned);
-        ext_006A5C5C(owned);
-    }
-    *slot = nullptr;
-}
-} // namespace lift_005DC930
-
 // [0x005D0610] sub_005D0610 (84 bytes)
 namespace lift_005D0610 {
 // Known callee 0x005B11E0: getFloatAt (Returns a float from a 32-bit float array at offset +0x10 of the object passed in ecx, indexed by the argument.)
@@ -479,108 +455,6 @@ extern void* __fastcall fn_005DC650(void* self) {
     return self;
 }
 } // namespace lift_005DC650
-
-// [0x005DF6B0]
-namespace lift_005DF6B0 {
-uint32_t mem_r32(uint32_t addr);
-uint8_t mem_r8(uint32_t addr);
-void mem_w32(uint32_t addr, uint32_t val);
-
-// @name RbTree::find
-// @class RbTree
-// @summary Finds a node matching the given 32-bit signed key in an MSVC-style red-black tree, returning an iterator pair (tree, node) or (tree, head) if not found.
-// @field RbTree +0x04 uint32_t head
-// @field RbTreeNode +0x00 uint32_t left
-// @field RbTreeNode +0x04 uint32_t parent
-// @field RbTreeNode +0x08 uint32_t right
-// @field RbTreeNode +0x0C int32_t key
-// @field RbTreeNode +0x15 uint8_t is_nil
-
-uint32_t __thiscall sub_005DF6B0(uint32_t self, uint32_t out_iter, uint32_t key_ptr) {
-    uint32_t head = mem_r32(self + 0x4);
-    uint32_t node = mem_r32(head + 0x4);
-    uint32_t best = head;
-
-    if (mem_r8(node + 0x15) == 0) {
-        int32_t target_key = static_cast<int32_t>(mem_r32(key_ptr));
-        do {
-            if (static_cast<int32_t>(mem_r32(node + 0xC)) < target_key) {
-                node = mem_r32(node + 0x8);
-            } else {
-                best = node;
-                node = mem_r32(node + 0x0);
-            }
-        } while (mem_r8(node + 0x15) == 0);
-    }
-
-    uint32_t cur_head = mem_r32(self + 0x4);
-    uint32_t result_node = cur_head;
-    if (best != cur_head) {
-        int32_t target_key = static_cast<int32_t>(mem_r32(key_ptr));
-        if (target_key >= static_cast<int32_t>(mem_r32(best + 0xC))) {
-            result_node = best;
-        }
-    }
-
-    mem_w32(out_iter + 0x0, self);
-    mem_w32(out_iter + 0x4, result_node);
-    return out_iter;
-}
-} // namespace lift_005DF6B0
-
-// [0x005DF940] sub_005DF940 (110 bytes)
-namespace lift_005DF940 {
-// Known callee 0x005DF6B0: RbTree::find (Finds a node matching the given 32-bit signed key in an MSVC-style red-black tree, returning an iterator pair (tree, node) or (tree, head) if not found.)
-extern uint32_t ext_005DF6B0(void* self, uint32_t* out_iter, uint32_t key_ptr);
-
-namespace {
-
-// Stand-in for the CRT invalid-parameter path (original: indirect call through the CRT slot).
-[[noreturn]] void invalid_parameter() {
-    std::abort();
-}
-
-// Converts a 32-bit guest address into a host pointer.
-inline void* addr_of(uint32_t a) {
-    return reinterpret_cast<void*>(static_cast<uintptr_t>(a));
-}
-
-} // namespace
-
-// @name RbTree::lookupValue
-// @class RbTree
-// @summary Looks up a 32-bit key in an MSVC-style red-black tree and returns the value at node+0x10, or 0 if the tree is empty or the key is absent.
-// @field RbTree +0x04 uint32_t field_0x04
-// @field RbTree +0x08 uint32_t field_0x08
-// @field RbNode +0x10 uint32_t field_0x10
-uint32_t fn_005DF940(void* self, uint32_t key_ptr) {
-    // Empty tree: nothing to find.
-    if (lift_field<uint32_t>(self, 0x08) == 0) {
-        return 0;
-    }
-
-    // find() writes the iterator pair (tree, node) into iter.
-    uint32_t iter[2] = {0, 0};
-    ext_005DF6B0(self, iter, key_ptr);
-
-    const uint32_t self_addr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
-    const uint32_t tree = iter[0];
-    const uint32_t node = iter[1];
-
-    // The iterator must belong to this tree.
-    if (tree != self_addr) {
-        invalid_parameter();
-    }
-
-    // Not found: node is the head sentinel.
-    const uint32_t head = lift_field<uint32_t>(self, 0x04);
-    if (node == head) {
-        return 0;
-    }
-
-    return lift_field<uint32_t>(addr_of(node), 0x10);
-}
-} // namespace lift_005DF940
 
 // [0x005DFE30]
 namespace lift_005DFE30 {

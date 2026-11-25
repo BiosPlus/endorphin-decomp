@@ -45,19 +45,6 @@ extern "C" void __fastcall fn_0051DDD0(void* self) {
     ext_00680800(static_cast<char*>(self) + 0x5C);
 }
 
-// [0x00515830]
-namespace lift_00515830 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name sub_00515830
-// @summary Reads a 32-bit field at +0x30 from the pointer stored at this +0x4.
-// @field Unknown +0x04 uint32_t field_0x04
-uint32_t __thiscall sub_00515830(uint32_t this_ptr) {
-    uint32_t ptr = mem_read32(this_ptr + 0x4);
-    return mem_read32(ptr + 0x30);
-}
-} // namespace lift_00515830
-
 // [0x00515840] sub_00515840 (14 bytes)
 namespace lift_00515840 {
 // Known callee 0x00508BA0: sub_00508BA0 (Auto-lifted identical-shape clone of 0x0051BED0 (NMData::RealChannel::vfunc_9).)
@@ -71,20 +58,6 @@ extern int __thiscall fn_00515840(void* self) {
     return ext_00508BA0(static_cast<uint8_t*>(inner) + 0xA4);
 }
 } // namespace lift_00515840
-
-// [0x00519CE0] sub_00519CE0 (15 bytes)
-namespace lift_00519CE0 {
-extern void __thiscall ext_00628FF0(void* self);
-
-// @name std::basic_string<char>::~basic_string (vtable-stamping thunk)
-// @class <unknown> (this is in ecx; owning class not yet recovered)
-// @summary Stamps the object's vtable pointer (0x0095219C) into its first dword, then tail-jumps to the MSVCP80 basic_string destructor on this+4.
-// @field <unknown> +0x00 uint32_t field_0x00
-void fn_00519CE0(void* self) {
-    lift_field<uint32_t>(self, 0x00) = 0x0095219Cu;   // mov dword ptr [ecx], 0x95219c
-    ext_00628FF0(static_cast<uint8_t*>(self) + 4);    // add ecx, 4 ; jmp [0x924ff4] (MSVCP80 ~basic_string)
-}
-} // namespace lift_00519CE0
 
 // [0x0051DDB0] sub_0051DDB0 (17 bytes)
 namespace lift_0051DDB0 {

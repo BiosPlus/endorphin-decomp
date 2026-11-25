@@ -110,26 +110,6 @@ int fn_0074F7A0(const void* a, const void* b) {
 }
 } // namespace lift_0074F7A0
 
-// [0x0074F7F0] sub_0074F7F0 (48 bytes)
-namespace lift_0074F7F0 {
-// Known callee 0x0074F7A0: Compare3Int32Keys (Three-key ordering compare of two 12-byte records: keys at +0x00, +0x08, +0x04 (in that priority); returns 0 if all equal, else 1 or -1.)
-extern int ext_0074F7A0(const void* a, const void* b);
-extern int mem_0092529C;
-
-// @name Compare3Int32KeysBsearch
-// @summary Binary-searches a table of 12-byte records (base pointer read from *table_ref, count from *count_ref) for key using ext_0074F7A0; returns the matching record or NULL.
-void* fn_0074F7F0(const void* const* table_ref, const int32_t* count_ref, const void* key) {
-    const int32_t count = *count_ref;
-    if (count <= 0) {
-        return nullptr;
-    }
-    return std::bsearch(key, *table_ref, static_cast<size_t>(count), 16,
-                        [](const void* a, const void* b) -> int {
-                            return ext_0074F7A0(a, b);
-                        });
-}
-} // namespace lift_0074F7F0
-
 // [0x0074D800] sub_0074D800 (80 bytes)
 namespace lift_0074D800 {
 // Known callee 0x006D2250: Buffer::release (Frees the buffer at +0x10 if non-null and resets fields at +0x00, +0x04, and +0x10 to zero.)
@@ -159,19 +139,6 @@ bool fn_0074D800(void* self) {
     return true;
 }
 } // namespace lift_0074D800
-
-// [0x00747570] sub_00747570 (16 bytes)
-namespace lift_00747570 {
-// Known callee 0x00700980: sub_00700980 (Auto-lifted identical-shape clone of 0x004F9840 (VMCSModes::DefaultImplementation::vfunc_16).)
-extern void ext_00700980(void* self, uint32_t value);
-
-// @name fn_00747570
-// @summary Calls ext_00700980 with self (second stack argument) and value 0, then returns 1.
-uint8_t fn_00747570(uint32_t /*stack_arg0*/, void* self) {
-    ext_00700980(self, 0);
-    return 1;
-}
-} // namespace lift_00747570
 
 // [0x00743440] sub_00743440 (64 bytes)
 namespace lift_00743440 {

@@ -124,26 +124,6 @@ void fn_00782D00(void* self, DWORD arg) {
 }
 } // namespace lift_00782D00
 
-// [0x007833F0] sub_007833F0 (32 bytes)
-namespace lift_007833F0 {
-// @name CloseOwnedFileIfOpen
-// @class Unknown
-// @summary If the inner handle's open flag (+0x04) is set, clear it and fclose the FILE* at inner+0x00.
-// @field Unknown +0x04 void* inner
-// @field Unknown +0x04 uint8_t openFlag (inner+0x04)
-// @field Unknown +0x00 FILE* file (inner+0x00)
-void fn_007833F0(void* self) {
-    void* inner = lift_field<void*>(self, 0x04);
-    if (lift_field<uint8_t>(inner, 0x04) == 0) {
-        return;
-    }
-    lift_field<uint8_t>(inner, 0x04) = 0;
-    inner = lift_field<void*>(self, 0x04);
-    FILE* file = lift_field<FILE*>(inner, 0x00);
-    fclose(file);
-}
-} // namespace lift_007833F0
-
 // [0x00783800] sub_00783800 (32 bytes)
 namespace lift_00783800 {
 // @name ResetNodeChain (descriptive label inferred from behavior; no class name recovered)
@@ -247,17 +227,6 @@ DWORD fn_00789650(void* self) {
 }
 } // namespace lift_00789650
 
-// [0x0078CA10]
-namespace lift_0078CA10 {
-// @name SwitchIndexByteTable_0078CA10
-// @summary Byte lookup table (17 entries) used as switch-case index map; not executable code.
-
-extern const unsigned char sub_0078CA10[17] = {
-    0x00, 0x01, 0x05, 0x02, 0x05, 0x05, 0x02, 0x05, 0x05,
-    0x01, 0x05, 0x05, 0x05, 0x05, 0x05, 0x03, 0x04
-};
-} // namespace lift_0078CA10
-
 // [0x0078BEC0] sub_0078BEC0 (37 bytes)
 namespace lift_0078BEC0 {
 // Known callee 0x00789650: Unknown::ForwardVirtualByField08OrField14 (Forwards to a virtual method on the object at +0x08 if set, otherwise to a virtual method on the object at +0x14.)
@@ -288,25 +257,6 @@ DWORD fn_0078BEC0(void* self) {
 }
 } // namespace lift_0078BEC0
 
-// [0x00783440] sub_00783440 (40 bytes)
-namespace lift_00783440 {
-// @name readLineFromHolderStream
-// @class Unknown
-// @summary Reads a line into buf from the FILE* held by the holder object; returns buf, or NULL when the holder's flag byte is zero.
-// @field Unknown +0x04 void* field_0x04 (pointer to holder object)
-// @field Holder +0x00 FILE* field_0x00 (stream handle passed to fgets)
-// @field Holder +0x04 uint8_t field_0x04 (enabled flag; zero means no read)
-char* fn_00783440(void* self, char* buf, int n) {
-    auto* base = static_cast<unsigned char*>(self);
-    auto* holder = *reinterpret_cast<unsigned char**>(base + 0x04);
-    if (holder[0x04] == 0) {
-        return nullptr;
-    }
-    FILE* stream = *reinterpret_cast<FILE**>(holder + 0x00);
-    return std::fgets(buf, n, stream);
-}
-} // namespace lift_00783440
-
 // [0x007836D0]
 namespace lift_007836D0 {
 extern uint32_t mem_00925198;
@@ -326,24 +276,6 @@ int32_t __thiscall fn_007836D0(void* this_ptr, int32_t size) {
     return chsize_fn(fd, size);
 }
 } // namespace lift_007836D0
-
-// [0x00783410] sub_00783410 (42 bytes)
-namespace lift_00783410 {
-// @name FileStream::ReadBytes
-// @class FileStream
-// @summary If the owner's flag byte at +0x04 is set, fread(buf, 1, count, stream) on the stream at +0x00 of the owner; otherwise return 0.
-// @field FileStream +0x04 void* owner
-// @field FileStream +0x00 uint32_t stream_handle
-uint32_t fn_00783410(void* self, void* buf, uint32_t count) {
-    void* owner = lift_field<void*>(self, 0x04);
-    if (lift_field<uint8_t>(owner, 0x04) == 0) {
-        return 0;
-    }
-    uint32_t stream = lift_field<uint32_t>(owner, 0x00);
-    return static_cast<uint32_t>(
-        std::fread(buf, 1, count, reinterpret_cast<FILE*>(static_cast<uintptr_t>(stream))));
-}
-} // namespace lift_00783410
 
 // [0x00783510]
 namespace lift_00783510 {
@@ -530,26 +462,6 @@ void bumpNodeChainCounters(Node* self)
 }
 } // namespace lift_007837A0
 
-// [0x00784720] sub_00784720 (48 bytes)
-namespace lift_00784720 {
-// @name resetBufferState
-// @summary Frees the owned buffer at +0x00 (if non-null), then zeroes the buffer pointer, +0x04, +0x08 and the flag byte at +0x10.
-// @field Unknown +0x00 void* buffer
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-// @field Unknown +0x10 uint8_t field_0x10
-void fn_00784720(void* self) {
-    void*& buffer = lift_field<void*>(self, 0x00);
-    if (buffer != nullptr) {
-        std::free(buffer);
-        buffer = nullptr;
-    }
-    lift_field<uint32_t>(self, 0x04) = 0;
-    lift_field<uint32_t>(self, 0x08) = 0;
-    lift_field<uint8_t>(self, 0x10) = 0;
-}
-} // namespace lift_00784720
-
 // [0x007837D0]
 namespace lift_007837D0 {
 // @name IndexListNode::shiftIndicesAfterRemove
@@ -591,105 +503,6 @@ uint32_t fn_0078D720(void* self, int32_t arg1) {
     return static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
 }
 } // namespace lift_0078D720
-
-// [0x00783540]
-namespace lift_00783540 {
-// Imported from MSVCR80: fwrite(const void* ptr, size_t size, size_t nmemb, FILE* stream).
-size_t ext_fwrite(const void* ptr, size_t size, size_t nmemb, FILE* stream);
-
-// @name writeIfEnabled (sub_00783540)
-// @summary Writes count bytes from buf to the stream held by self's inner object, unless that object's flag byte at +0x04 is zero; returns fwrite's result or 0 when disabled.
-// @field Unknown +0x04 void* field_0x04 (pointer to inner object)
-// @field Unknown +0x00 void* field_0x00 (FILE* stream passed to fwrite)
-// @field Unknown +0x04 uint8_t field_0x04 (enable flag on inner object)
-UINT fn_00783540(void* self, const void* buf, UINT count) {
-    void* inner = lift_field<void*>(self, 0x04);
-    if (lift_field<uint8_t>(inner, 0x04) == 0) {
-        return 0;
-    }
-    void* stream = lift_field<void*>(inner, 0x00);
-    return static_cast<UINT>(ext_fwrite(buf, 1, count, static_cast<FILE*>(stream)));
-}
-} // namespace lift_00783540
-
-// [0x00783860] sub_00783860 (32 bytes)
-namespace lift_00783860 {
-// Known callee 0x006D2130: sub_006D2130 (Initializes a 20-byte struct with zeroed fields, a clamped minimum-1 count at +0x08, and arg2 at +0x0C, returning this.)
-extern uint32_t __thiscall ext_006D2130(uint32_t self, int32_t arg1, uint32_t arg2);
-extern void mem_write32(uint32_t addr, uint32_t val);
-
-// @name InitInlineBufferHeader
-// @summary Runs the 0x006D2130 initializer with count 0x10 and element size 4, then points +0x14 at the inline buffer at +0x10 and clears +0x18.
-// @field InlineBufferHeader +0x14 uint32_t field_0x14 (set to self+0x10, the address of inline storage)
-// @field InlineBufferHeader +0x18 uint32_t field_0x18 (cleared to 0)
-uint32_t fn_00783860(uint32_t self) {
-    ext_006D2130(self, 0x10, 4);
-    mem_write32(self + 0x18, 0);
-    mem_write32(self + 0x14, self + 0x10);
-    return self;
-}
-} // namespace lift_00783860
-
-// [0x007847B0]
-namespace lift_007847B0 {
-// @name sortEntriesIfDirty
-// @summary If the flag at +0x10 is set, qsorts the entry array at +0x00 (count at +0x04, 8-byte elements) with ext_00784790, then clears the flag; always returns 0.
-// @field sortEntriesIfDirty +0x00 void* field_0x00
-// @field sortEntriesIfDirty +0x04 uint32_t field_0x04
-// @field sortEntriesIfDirty +0x10 uint8_t field_0x10
-
-// Known callee 0x00784790: comparator passed to qsort.
-extern int __cdecl ext_00784790(const void* a, const void* b);
-// Known callee: IAT target of MSVCR80!qsort (called via mem_00925298 slot in the original).
-extern void __cdecl ext_0062D38C(void* base, size_t nmemb, size_t size,
-                                     int(__cdecl* compar)(const void*, const void*));
-
-// __thiscall-style: self in ECX, no stack arguments, returns 0 in EAX.
-int32_t sortEntriesIfDirty(void* self) {
-    uint8_t& dirty = lift_field<uint8_t>(self, 0x10);
-    if (dirty != 0) {
-        void* base = lift_field<void*>(self, 0x00);
-        uint32_t count = lift_field<uint32_t>(self, 0x04);
-        ext_0062D38C(base, static_cast<size_t>(count), 8, ext_00784790);
-        dirty = 0;
-    }
-    return 0;
-}
-} // namespace lift_007847B0
-
-// [0x00788DF0]
-namespace lift_00788DF0 {
-// @name FileFindCursor::findNextRaw
-// @class FileFindCursor
-// @summary Calls FindNextFileW on the handle at +0x00 with the WIN32_FIND_DATAW buffer at +0x04, wrapped in SetErrorMode(1)/SetErrorMode(0); returns true if an entry was found.
-
-extern void* mem_0092416C; // .rdata u32 0x0062D568 -> KERNEL32!SetErrorMode (IAT slot)
-extern void* mem_00924170; // .rdata u32 0x0062D578 -> KERNEL32!FindNextFileW (IAT slot)
-
-struct FileFindCursor {
-    HANDLE hFind;                       // +0x00 (field_0x00)
-    uint8_t findData[0x23C];            // +0x04 WIN32_FIND_DATAW (field_0x04)
-
-    bool findNextRaw();
-};
-
-using SetErrorMode_fn  = UINT (*)(UINT);
-using FindNextFileW_fn = BOOL (*)(HANDLE, void*);
-
-bool FileFindCursor::findNextRaw()
-{
-    auto setErrorMode = reinterpret_cast<SetErrorMode_fn>(mem_0092416C);
-    auto findNext     = reinterpret_cast<FindNextFileW_fn>(mem_00924170);
-
-    bool found = false;
-    setErrorMode(1);
-    if (findNext(this->hFind, this->findData) != 0) {
-        found = true;
-    }
-    setErrorMode(0);
-    return found;
-}
-} // namespace lift_00788DF0
 
 // [0x00788E20]
 namespace lift_00788E20 {
@@ -822,36 +635,6 @@ uint8_t fn_0078C410(const void* self, int32_t index) {
 }
 } // namespace lift_0078C410
 
-// [0x0078AAC0] sub_0078AAC0 (48 bytes)
-namespace lift_0078AAC0 {
-// @name dataTable_0078AAC0
-// @summary 48-byte constant byte table at 0x0078AAC0; disassembles as junk, so it is data, not code.
-//
-// The bytes at this address do not form a meaningful function: they decode to
-// `add [ebx], al` / `add eax, [ebx]` pairs followed by a run of 0x90 values.
-// Recovered here as a constant byte table so the content is preserved.
-// No entry point with behavior is recovered; fn_0078AAC0 is a no-op kept for
-// signature compatibility with the lift pipeline.
-
-namespace {
-
-inline constexpr uint8_t kDataTable_0078AAC0[48] = {
-    0x00, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03,
-    0x03, 0x03, 0x03, 0x03, 0x00, 0x03, 0x03, 0x03,
-    0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03,
-    0x03, 0x03, 0x01, 0x03, 0x03, 0x03, 0x03, 0x03,
-    0x02, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90,
-    0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90,
-};
-
-} // namespace
-
-void fn_0078AAC0(void* self) {
-    (void)self;
-    (void)kDataTable_0078AAC0;
-}
-} // namespace lift_0078AAC0
-
 // [0x0078CB90] sub_0078CB90 (48 bytes)
 namespace lift_0078CB90 {
 extern int32_t ext_006E7460(void* self);
@@ -922,59 +705,6 @@ int32_t EntryTable_getEntryValue(EntryTable* self, int32_t idx, uint32_t* outKey
     return static_cast<int32_t>(self->entries[idx * 2 + 1]);
 }
 } // namespace lift_00784750
-
-// [0x007847E0]
-namespace lift_007847E0 {
-// @name SortedArray::find
-// @class SortedArray
-// @summary Binary-searches an 8-byte-element sorted array for a matching key, returning the element pointer or null.
-// @field SortedArray +0x00 void* data
-// @field SortedArray +0x04 int32_t count
-
-
-extern uint32_t mem_0092529C;
-extern int __cdecl ext_00784790(const void* a, const void* b);
-
-void* __thiscall sub_007847E0(void* self, uint32_t key_val) {
-    int32_t count = *reinterpret_cast<const int32_t*>(reinterpret_cast<const uint8_t*>(self) + 0x04);
-    if (count <= 0) {
-        return nullptr;
-    }
-
-    uint32_t key[2] = { key_val, 0 };
-    void* base = *reinterpret_cast<void* const*>(self);
-    auto bsearch_fn = reinterpret_cast<void* (__cdecl*)(const void*, const void*, size_t, size_t, int (__cdecl*)(const void*, const void*))>(mem_0092529C);
-    return bsearch_fn(key, base, static_cast<size_t>(count), 8, ext_00784790);
-}
-} // namespace lift_007847E0
-
-// [0x00783570] sub_00783570 (63 bytes)
-namespace lift_00783570 {
-// @name Unknown::SeekStreamFromObject
-// @class Unknown
-// @summary Seeks the FILE* held by the object at self+0x04 when that object's flag byte is set; arg1 selects SEEK_SET/SEEK_CUR/SEEK_END (anything else -> SEEK_SET) and arg2 is the signed offset.
-// @field Unknown +0x04 DWORD field_0x04
-// @field Unknown +0x00 FILE* field_0x00 (inner object: stream pointer)
-// @field Unknown +0x04 BYTE field_0x04 (inner object: valid flag)
-void fn_00783570(void* self, DWORD whence_arg, DWORD offset) {
-    const DWORD obj_addr = lift_field<DWORD>(self, 0x04);
-    auto* obj = reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(obj_addr));
-    if (obj == nullptr || lift_field<uint8_t>(obj, 0x04) == 0) {
-        return;
-    }
-
-    int whence = SEEK_SET;
-    if (whence_arg == 1) {
-        whence = SEEK_CUR;
-    } else if (whence_arg == 2) {
-        whence = SEEK_END;
-    }
-
-    const DWORD stream_addr = lift_field<DWORD>(obj, 0x00);
-    auto* stream = reinterpret_cast<FILE*>(static_cast<uintptr_t>(stream_addr));
-    std::fseek(stream, static_cast<long>(static_cast<int32_t>(offset)), whence);
-}
-} // namespace lift_00783570
 
 // [0x00780090] sub_00780090 (64 bytes)
 namespace lift_00780090 {
@@ -1125,66 +855,6 @@ int32_t __thiscall fn_0078D510(void* self, int32_t group, int32_t sub, int32_t k
 }
 } // namespace lift_0078D510
 
-// [0x00783470]
-namespace lift_00783470 {
-// @name StreamReader::readUInt32
-// @class StreamReader
-// @summary Reads a 32-bit unsigned integer from an open stream, optionally byte-swapping it.
-// @field StreamReader +0x04 void* field_0x04
-
-extern size_t __cdecl MSVCR80_fread(void* ptr, size_t size, size_t count, void* stream);
-// mem_009252AC -> MSVCR80.dll!fread
-
-uint32_t __thiscall sub_00783470(void* self, uint32_t* outVal, uint8_t swapEndian) {
-    uint8_t* streamWrapper = *reinterpret_cast<uint8_t**>(reinterpret_cast<uint8_t*>(self) + 0x4);
-    if (streamWrapper[0x4] == 0) {
-        return 0;
-    }
-
-    void* fp = *reinterpret_cast<void**>(streamWrapper);
-    MSVCR80_fread(outVal, 4, 1, fp);
-
-    if (swapEndian != 0) {
-        uint32_t val = *outVal;
-        val = ((val & 0x000000FFu) << 24) |
-              ((val & 0x0000FF00u) << 8)  |
-              ((val & 0x00FF0000u) >> 8)  |
-              ((val & 0xFF000000u) >> 24);
-        *outVal = val;
-    }
-
-    return *outVal;
-}
-} // namespace lift_00783470
-
-// [0x007834C0] sub_007834C0 (71 bytes)
-namespace lift_007834C0 {
-// MSVCR80 fread import (IAT slot 0x009252AC).
-extern size_t ext_fread(void* buf, size_t size, size_t count, void* stream);
-
-// @name Unknown::ReadU16
-// @class Unknown
-// @summary Reads one 16-bit value from the open stream (if valid), optionally byte-swapping it; returns 0 if the stream is not valid.
-// @field Unknown +0x04 void* field_04
-struct StreamRec {
-    uint32_t handle; // +0x00 FILE* handle
-    uint8_t  valid;  // +0x04 nonzero when stream is open
-};
-
-uint16_t __thiscall fn_007834C0(void* self, uint16_t* buf, uint8_t swap) {
-    auto* rec = *reinterpret_cast<StreamRec**>(reinterpret_cast<uint8_t*>(self) + 0x04);
-    if (rec->valid == 0) {
-        return 0;
-    }
-    ext_fread(buf, 1, 2, reinterpret_cast<void*>(static_cast<uintptr_t>(rec->handle)));
-    if (swap != 0) {
-        const uint16_t v = *buf;
-        *buf = static_cast<uint16_t>((v >> 8) | (v << 8));
-    }
-    return *buf;
-}
-} // namespace lift_007834C0
-
 // [0x007856A0]
 namespace lift_007856A0 {
 // @name Unknown::InvokeSlot4ForEachArg
@@ -1323,60 +993,6 @@ uint32_t __thiscall fn_00789C80(void* self, uint32_t key, int32_t* outIndex) {
 }
 } // namespace lift_00789C80
 
-// [0x00783670] sub_00783670 (83 bytes)
-namespace lift_00783670 {
-// @name Unknown::logFormatted_00783670
-// @class Unknown
-// @summary Formats a printf-style message into a 16 KiB stack buffer and writes it to the sink's FILE* when the sink's enabled byte is nonzero.
-// @field Unknown +0x04 void* field_0x04
-// @field Unknown +0x00 FILE* field_0x00
-// @field Unknown +0x04 uint8_t field_0x04
-void fn_00783670(void* self, const char* fmt, ...) {
-    // self+0x4 points to a sink object: sink+0x0 is the FILE*, sink+0x4 is an enabled flag.
-    void* sink = lift_field<void*>(self, 0x4);
-    if (lift_field<uint8_t>(sink, 0x4) == 0) {
-        return;
-    }
-
-    char buf[0x4000];
-    va_list args;
-    va_start(args, fmt);
-    std::vsnprintf(buf, sizeof(buf), fmt, args);
-    va_end(args);
-
-    FILE* stream = lift_field<FILE*>(sink, 0x0);
-    std::fputs(buf, stream);
-}
-} // namespace lift_00783670
-
-// [0x0078BF70] sub_0078BF70 (84 bytes)
-namespace lift_0078BF70 {
-namespace lift_0078BF70 {
-// IAT slot for MSVCR80!vsprintf
-extern int (__cdecl* mem_009252B8)(char* dst, const char* fmt, va_list args);
-
-// @name Unknown::formatAndDispatch_0078BF70
-// @class Unknown
-// @summary printf-style formats into a 16 KiB stack buffer via vsprintf, then calls virtual slot +0x1c on this with (buffer, strlen+1).
-// @field Unknown +0x00 void* vptr
-void fn_0078BF70(void* self, const char* fmt, ...) {
-    char buf[0x4000];
-
-    va_list args;
-    va_start(args, fmt);
-    mem_009252B8(buf, fmt, args);
-    va_end(args);
-
-    DWORD len = static_cast<DWORD>(std::strlen(buf) + 1);
-
-    void* vtbl = lift_field<void*>(self, 0x0);
-    void* slot = lift_field<void*>(vtbl, 0x1c);
-    using DispatchFn = void(__thiscall*)(void* self_, char* text, DWORD length);
-    reinterpret_cast<DispatchFn>(slot)(self, buf, len);
-}
-} // namespace lift_0078BF70
-} // namespace lift_0078BF70
-
 // [0x0078A1A0] sub_0078A1A0 (93 bytes)
 namespace lift_0078A1A0 {
 extern const unsigned char mem_0078A20C[];
@@ -1430,37 +1046,6 @@ void* fn_00789810(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint8_t a4)
 }
 } // namespace lift_00789810
 
-// [0x00782D30]
-namespace lift_00782D30 {
-// @name sub_00782D30_clear
-// @summary Frees an array of 8-byte entries and their owned pointers, then resets counts and flag.
-// @field Unknown +0x00 uint32_t* field_0x00
-// @field Unknown +0x04 int32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-// @field Unknown +0x10 uint8_t field_0x10
-
-
-void __thiscall sub_00782D30(void* this_ptr) {
-    uint8_t* self = static_cast<uint8_t*>(this_ptr);
-    uintptr_t* entries = *reinterpret_cast<uintptr_t**>(self + 0x00);
-    if (entries != nullptr) {
-        int32_t count = *reinterpret_cast<int32_t*>(self + 0x04);
-        for (int32_t i = 0; i < count; ++i) {
-            uintptr_t* current_entries = *reinterpret_cast<uintptr_t**>(self + 0x00);
-            std::free(reinterpret_cast<void*>(current_entries[i * 2]));
-            current_entries = *reinterpret_cast<uintptr_t**>(self + 0x00);
-            current_entries[i * 2] = 0;
-            count = *reinterpret_cast<int32_t*>(self + 0x04);
-        }
-        std::free(*reinterpret_cast<void**>(self + 0x00));
-        *reinterpret_cast<uintptr_t*>(self + 0x00) = 0;
-    }
-    *reinterpret_cast<uint32_t*>(self + 0x04) = 0;
-    *reinterpret_cast<uint32_t*>(self + 0x08) = 0;
-    *reinterpret_cast<uint8_t*>(self + 0x10) = 0;
-}
-} // namespace lift_00782D30
-
 // [0x00783880]
 namespace lift_00783880 {
 // @name DestroyEntriesAndBase
@@ -1513,44 +1098,6 @@ bool __thiscall sub_00783D00(void* self, uint32_t* outIndex) {
 }
 } // namespace lift_00783D00
 
-// [0x0078C690]
-namespace lift_0078C690 {
-// @name sub_0078C690
-// @summary Reads a 32-bit integer from either a binary row/offset table (with optional byte-swap) or a string array via atoi.
-// @field UnknownClass +0x04 int32_t field_0x04
-// @field UnknownClass +0x14 uintptr_t field_0x14
-// @field UnknownClass +0x20 uintptr_t field_0x20
-// @field UnknownClass +0x28 int32_t field_0x28
-// @field UnknownClass +0x2C uintptr_t field_0x2C
-uint32_t __thiscall sub_0078C690(void* self, int32_t index, uint8_t swap_endian) {
-    uint8_t* base = static_cast<uint8_t*>(self);
-    uintptr_t offset = *reinterpret_cast<uintptr_t*>(base + 0x20);
-    if (offset != 0) {
-        int32_t count = *reinterpret_cast<int32_t*>(base + 0x28);
-        if (index >= count) {
-            return 0;
-        }
-        uintptr_t* rows = *reinterpret_cast<uintptr_t**>(base + 0x2C);
-        uintptr_t row_ptr = rows[index];
-        uint32_t val = *reinterpret_cast<uint32_t*>(row_ptr + offset);
-        if (swap_endian == 0) {
-            return val;
-        }
-        return ((val & 0x000000FFu) << 24) |
-               ((val & 0x0000FF00u) << 8) |
-               ((val & 0x00FF0000u) >> 8) |
-               ((val & 0xFF000000u) >> 24);
-    }
-
-    int32_t str_count = *reinterpret_cast<int32_t*>(base + 0x04);
-    if (index >= str_count) {
-        return 0;
-    }
-    const char** strings = *reinterpret_cast<const char***>(base + 0x14);
-    return static_cast<uint32_t>(std::atoi(strings[index]));
-}
-} // namespace lift_0078C690
-
 // [0x00780030] sub_00780030 (96 bytes)
 namespace lift_00780030 {
 // Known callee 0x006A5C62: thunk_MFC80_ord_762 (IAT jump thunk forwarding to MFC80!ord_762.)
@@ -1583,48 +1130,6 @@ void* __thiscall fn_00780030(void* self_ptr, int32_t count) {
     return self;
 }
 } // namespace lift_00780030
-
-// [0x0078C8C0]
-namespace lift_0078C8C0 {
-uint32_t mem_r32(uintptr_t addr);
-
-// @name sub_0078C8C0
-// @summary Reads a 32-bit length (optionally byte-swapped) at offset +0x20 of an indexed buffer and returns a pointer to the payload after it.
-// @field unknown +0x20 uint32_t field_0x20
-// @field unknown +0x28 int32_t field_0x28
-// @field unknown +0x2c uint8_t** field_0x2c
-uint8_t* __thiscall sub_0078C8C0(void* self, int32_t index, uint8_t swapEndian, uint32_t* outLength) {
-    *outLength = 0;
-
-    uint32_t offset = mem_r32(reinterpret_cast<uintptr_t>(self) + 0x20);
-    if (offset == 0) {
-        return nullptr;
-    }
-
-    int32_t count = static_cast<int32_t>(mem_r32(reinterpret_cast<uintptr_t>(self) + 0x28));
-    if (index >= count) {
-        return nullptr;
-    }
-
-    uintptr_t table = mem_r32(reinterpret_cast<uintptr_t>(self) + 0x2C);
-    uintptr_t entry = mem_r32(table + static_cast<uintptr_t>(index) * 4);
-    uint32_t length = mem_r32(entry + offset);
-
-    if (swapEndian != 0) {
-        length = ((length & 0x000000FFu) << 24) |
-                 ((length & 0x0000FF00u) << 8) |
-                 ((length & 0x00FF0000u) >> 8) |
-                 ((length & 0xFF000000u) >> 24);
-    }
-
-    if (length == 0) {
-        return nullptr;
-    }
-
-    *outLength = length;
-    return reinterpret_cast<uint8_t*>(entry + offset + 4);
-}
-} // namespace lift_0078C8C0
 
 // [0x00783020]
 namespace lift_00783020 {
@@ -1711,28 +1216,6 @@ void __stdcall sub_0078FED0(
 }
 } // namespace lift_0078FED0
 
-// [0x00783270]
-namespace lift_00783270 {
-extern void fn_007833F0(void* self);
-extern void fn_006A5C5C(uint32_t ptr);
-extern void fn_006B9D70(void* self);
-
-// @name sub_00783270
-// @summary Destructor-like cleanup: sets vtable 0x00996e80, closes owned file, frees +0x04 via MFC80_ord_764, and destroys +0x0c.
-// @field Class +0x00 uint32_t vtable
-// @field Class +0x04 uint32_t field_0x04
-// @field Class +0x0c uint8_t field_0x0c
-void fn_00783270(void* self) {
-    uint8_t* obj = static_cast<uint8_t*>(self);
-    *reinterpret_cast<uint32_t*>(obj + 0x00) = 0x00996E80u;
-    fn_007833F0(obj);
-    uint32_t val = *reinterpret_cast<uint32_t*>(obj + 0x04);
-    fn_006A5C5C(val);
-    *reinterpret_cast<uint32_t*>(obj + 0x04) = 0u;
-    fn_006B9D70(obj + 0x0C);
-}
-} // namespace lift_00783270
-
 // [0x00780160]
 namespace lift_00780160 {
 // @name findItemIndexByName
@@ -1758,73 +1241,6 @@ int32_t __thiscall sub_00780160(void* self, const char* name) {
     return -1;
 }
 } // namespace lift_00780160
-
-// [0x00783940]
-namespace lift_00783940 {
-// @name DynamicArray::removePairByValue
-// @class DynamicArray
-// @summary Finds a pair matching (first, second), removes it, frees the node, and shifts index list.
-// @field DynamicArray +0x00 int32_t count
-// @field DynamicArray +0x10 uint32_t* items
-// @field DynamicArray +0x18 void* indexListHead
-
-extern uint32_t mem_read32(uint32_t addr);
-extern void __thiscall ext_006D2200(void* self, int32_t index);
-extern void __cdecl ext_006A5C5C(void* ptr);
-extern void __thiscall ext_007837D0(void* self, int32_t removedIndex);
-
-int32_t __thiscall sub_00783940(void* self, int32_t first, int32_t second) {
-    uint32_t selfAddr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self));
-    int32_t count = static_cast<int32_t>(mem_read32(selfAddr));
-    if (count <= 0) {
-        return 1;
-    }
-
-    uint32_t itemsAddr = mem_read32(selfAddr + 0x10);
-    for (int32_t i = 0; i < count; ++i) {
-        uint32_t elemAddr = mem_read32(itemsAddr + static_cast<uint32_t>(i) * 4);
-        if (static_cast<int32_t>(mem_read32(elemAddr)) == first &&
-            static_cast<int32_t>(mem_read32(elemAddr + 0x04)) == second) {
-            ext_006D2200(self, i);
-            ext_006A5C5C(reinterpret_cast<void*>(static_cast<uintptr_t>(elemAddr)));
-            uint32_t listAddr = mem_read32(selfAddr + 0x18);
-            if (listAddr != 0) {
-                ext_007837D0(reinterpret_cast<void*>(static_cast<uintptr_t>(listAddr)), i);
-            }
-            return 0;
-        }
-    }
-
-    return 1;
-}
-} // namespace lift_00783940
-
-// [0x00783A80]
-namespace lift_00783A80 {
-extern void* fn_006A5C62(uint32_t size);
-extern void* fn_00782D00(void* self, uint32_t arg);
-
-extern void* mem_00B608DC;
-extern uint8_t mem_00AAF3B1;
-
-// @name getOrInitSingleton_00783A80
-// @summary Lazily allocates and initializes a 0x14-byte singleton at mem_00B608DC if mem_00AAF3B1 is non-zero.
-
-void* fn_00783A80(void) {
-    void* obj = mem_00B608DC;
-    if (obj == nullptr && mem_00AAF3B1 != 0) {
-        void* raw = fn_006A5C62(0x14);
-        if (raw != nullptr) {
-            obj = fn_00782D00(raw, 0x14);
-        } else {
-            obj = nullptr;
-        }
-        mem_00B608DC = obj;
-        mem_00AAF3B1 = 0;
-    }
-    return obj;
-}
-} // namespace lift_00783A80
 
 // [0x00785E00]
 namespace lift_00785E00 {
@@ -1867,44 +1283,6 @@ extern void __thiscall sub_00785E00(void* self) {
     ext_007857F0(self);
 }
 } // namespace lift_00785E00
-
-// [0x00788C90]
-namespace lift_00788C90 {
-// @name getLocalDateTime
-// @summary Queries the local system time via GetLocalTime and copies year, month, day, hour, minute, second, and milliseconds into a 7-dword output struct.
-// @field DateTime +0x00 uint32_t year
-// @field DateTime +0x04 uint32_t month
-// @field DateTime +0x08 uint32_t day
-// @field DateTime +0x0c uint32_t hour
-// @field DateTime +0x10 uint32_t minute
-// @field DateTime +0x14 uint32_t second
-// @field DateTime +0x18 uint32_t milliseconds
-
-struct SystemTime {
-    uint16_t wYear;
-    uint16_t wMonth;
-    uint16_t wDayOfWeek;
-    uint16_t wDay;
-    uint16_t wHour;
-    uint16_t wMinute;
-    uint16_t wSecond;
-    uint16_t wMilliseconds;
-};
-
-extern void ext_GetLocalTime(SystemTime* lpSystemTime);
-
-void sub_00788C90(uint32_t* out) {
-    SystemTime st{};
-    ext_GetLocalTime(&st);
-    out[0] = st.wYear;
-    out[1] = st.wMonth;
-    out[2] = st.wDay;
-    out[3] = st.wHour;
-    out[4] = st.wMinute;
-    out[5] = st.wSecond;
-    out[6] = st.wMilliseconds;
-}
-} // namespace lift_00788C90
 
 // [0x0078D1F0]
 namespace lift_0078D1F0 {
@@ -1980,48 +1358,6 @@ double __thiscall sub_0078D550(void* self, int32_t idx1, int32_t idx2, bool take
     return sum;
 }
 } // namespace lift_0078D550
-
-// [0x0078C280]
-namespace lift_0078C280 {
-// @name sub_0078C280
-// @summary Initializes subobjects at +0x04 and +0x38, sets pointer at +0x18, and zeroes remaining fields, returning this.
-// @field Unknown +0x00 uint32_t field_0x00
-// @field Unknown +0x04 uint8_t[20] field_0x04
-// @field Unknown +0x14 uint8_t field_0x14
-// @field Unknown +0x18 uint32_t field_0x18
-// @field Unknown +0x1c uint32_t field_0x1c
-// @field Unknown +0x20 uint32_t field_0x20
-// @field Unknown +0x24 uint32_t field_0x24
-// @field Unknown +0x28 uint32_t field_0x28
-// @field Unknown +0x2c uint32_t field_0x2c
-// @field Unknown +0x30 uint32_t field_0x30
-// @field Unknown +0x34 uint8_t field_0x34
-// @field Unknown +0x38 uint8_t field_0x38
-
-
-extern void mem_write32(uint32_t addr, uint32_t val);
-extern void mem_write8(uint32_t addr, uint8_t val);
-extern uint32_t __thiscall ext_006D2130(uint32_t self, int32_t arg1, uint32_t arg2);
-extern uint32_t __thiscall ext_006B9D10(uint32_t self);
-
-uint32_t __thiscall sub_0078C280(uint32_t self) {
-    uint32_t subobj = self + 0x4;
-    ext_006D2130(subobj, 0x10, 0x4);
-    mem_write32(subobj + 0x14, subobj + 0x10);
-    ext_006B9D10(self + 0x38);
-
-    mem_write32(self + 0x00, 0);
-    mem_write32(self + 0x1c, 0);
-    mem_write32(self + 0x20, 0);
-    mem_write8(self + 0x34, 0);
-    mem_write32(self + 0x24, 0);
-    mem_write32(self + 0x28, 0);
-    mem_write32(self + 0x2c, 0);
-    mem_write32(self + 0x30, 0);
-
-    return self;
-}
-} // namespace lift_0078C280
 
 // [0x0078D6B0]
 namespace lift_0078D6B0 {

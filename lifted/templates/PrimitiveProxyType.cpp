@@ -311,24 +311,6 @@ void fn_004BA3A0(void* self) {
     static_cast<void**>(self)[1] = result;
 }
 
-// [0x0049CFE0] ExprParser::PrimitiveProxyType<bool>::vfunc_37 (15 bytes)
-// @name ExprParser::PrimitiveProxyType<bool>::vfunc_37
-// @class ExprParser::PrimitiveProxyType<bool>
-// @summary Auto-lifted identical-shape clone of 0x00499190 (ExprParser::PrimitiveProxyType<std::string>::vfunc_38).
-void fn_0049CFE0(void* self) {
-    uint32_t result = ext_0049B3A0();
-    lift_field<uint32_t>(self, 0x04) = result;
-}
-
-// [0x0049DA30] ExprParser::PrimitiveProxyType<int>::vfunc_37 (15 bytes)
-// @name ExprParser::PrimitiveProxyType<int>::vfunc_37
-// @class ExprParser::PrimitiveProxyType<int>
-// @summary Auto-lifted identical-shape clone of 0x00499190 (ExprParser::PrimitiveProxyType<std::string>::vfunc_38).
-void fn_0049DA30(void* self) {
-    uint32_t result = ext_0049CC60();
-    lift_field<uint32_t>(self, 0x04) = result;
-}
-
 // [0x00497620] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_4 (37 bytes)
 // @name ExprParser::PrimitiveProxyType<std::string>::vfunc_4
 // @class ExprParser::PrimitiveProxyType<std::string>
@@ -377,30 +359,6 @@ void* fn_004B71C0(void* self, void* src) {
     float value = *p;
     ext_0046C390(self, value);
     return self;
-}
-
-// [0x0049B2C0] ExprParser::PrimitiveProxyType<bool>::vfunc_10 (45 bytes)
-// @name ExprParser::PrimitiveProxyType<bool>::vfunc_10
-// @class ExprParser::PrimitiveProxyType<bool>
-// @summary Parses a string argument via ext_0049B170 and stores the resulting bool through the value pointer.
-// @field ExprParser::PrimitiveProxyType<bool> +0x00 uint8_t* value_ptr
-void fn_0049B2C0(void* self, const std::string& text) {
-    // Original: copy-constructs a temporary std::string from the argument, calls
-    // sub_0049B170 on it (result in al), then writes al through *(this->value_ptr).
-    uint8_t result = ext_0049B170(text);
-    uint8_t* value_ptr = lift_field<uint8_t*>(self, 0x00);
-    *value_ptr = result;
-}
-
-// [0x0049C0F0] ExprParser::PrimitiveProxyType<int>::vfunc_10 (45 bytes)
-// @name ExprParser::PrimitiveProxyType<int>::vfunc_10
-// @class ExprParser::PrimitiveProxyType<int>
-// @summary Parses the std::string argument into an int32 and stores it through the value_ptr at +0x00.
-// @field ExprParser::PrimitiveProxyType<int> +0x00 const int32_t* value_ptr
-void fn_0049C0F0(void* self, const std::string& src) {
-    const int32_t parsed = ext_0049BF70(src);
-    auto* valuePtr = const_cast<int32_t*>(lift_field<const int32_t*>(self, 0x00));
-    *valuePtr = parsed;
 }
 
 // [0x004B7AE0]

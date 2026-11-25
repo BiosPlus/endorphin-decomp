@@ -137,26 +137,6 @@ float fn_00700A20(void* self) {
 } // namespace lift_007009E0
 } // namespace lift_00700A20
 
-// [0x00706AF0]
-namespace lift_00706AF0 {
-// @name Unknown::CallWithFieldOrDefault
-// @class Unknown
-// @summary Passes self->field_0x58 to fn_006E7460, or the address of mem_00B5D268 when that field is zero.
-// @field Unknown +0x58 int32_t field_0x58
-
-extern int32_t __fastcall ext_006E7460(void* self);
-extern uint8_t mem_00B5D268[];
-
-// [0x00706AF0]
-extern int32_t __fastcall fn_00706AF0(void* self) {
-    int32_t v = *reinterpret_cast<int32_t*>(reinterpret_cast<uintptr_t>(self) + 0x58);
-    if (v == 0) {
-        v = static_cast<int32_t>(reinterpret_cast<uintptr_t>(mem_00B5D268));
-    }
-    return ext_006E7460(reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(v))));
-}
-} // namespace lift_00706AF0
-
 // [0x00702640] sub_00702640 (32 bytes)
 namespace lift_00702640 {
 // @name Unknown::IsChainedFlagClear
@@ -773,46 +753,6 @@ extern DWORD __fastcall fn_0070ED30(void* self, int edx_unused, DWORD arg) {
 } // namespace lift_0070EC30
 } // namespace lift_0070ED30
 
-// [0x0070EA90] sub_0070EA90 (32 bytes)
-namespace lift_0070EA90 {
-// @name sub_0070EA90
-// @summary Auto-lifted identical-shape clone of 0x0071B020 (Unknown::CallArgWithSubObjectAddr0x10).
-namespace lift_0071B020 {
-// Known callee 0x006D2390: ForwardArgToCalleeReturnThis (Forwards its single stack argument to sub_007873F0 with the same this pointer, then returns this.)
-extern void* ext_006B9D20(void* self, uint32_t arg1);
-
-// @name Unknown::CallArgWithSubObjectAddr0x10
-// @class Unknown
-// @summary Calls 0x006D2390 with arg as this and (self + 0x10) as its stack argument, then returns arg.
-// @field Unknown +0x10 BYTE field_0x10
-void* fn_0070EA90(void* self, void* arg) {
-    const uint32_t sub_addr =
-        static_cast<uint32_t>(reinterpret_cast<uintptr_t>(self) + 0xC);
-    ext_006B9D20(arg, sub_addr);
-    return arg;
-}
-} // namespace lift_0071B020
-} // namespace lift_0070EA90
-
-// [0x00705760]
-namespace lift_00705760 {
-uint32_t mem_r32(uintptr_t addr);
-void mem_w32(uintptr_t addr, uint32_t val);
-
-// @name sub_00705760
-// @summary Clears bit 0 of field_0x84, invokes vtable+0xbc with the masked value, and zeroes field_0xdc.
-// @field Unknown +0x00 void* vtable
-// @field Unknown +0x84 uint32_t field_0x84
-// @field Unknown +0xdc uint32_t field_0xdc
-void __thiscall sub_00705760(uintptr_t self) {
-    uint32_t masked = mem_r32(self + 0x84) & ~1u;
-    uintptr_t vtable = mem_r32(self);
-    auto vfn = reinterpret_cast<void(__thiscall*)(uintptr_t, uint32_t)>(mem_r32(vtable + 0xbc));
-    vfn(self, masked);
-    mem_w32(self + 0xdc, 0);
-}
-} // namespace lift_00705760
-
 // [0x00706CD0] sub_00706CD0 (45 bytes)
 namespace lift_00706CD0 {
 // @name LookupTable::findValueByIndexAndKey
@@ -948,26 +888,6 @@ void* fn_0070EBC0(void* self, void* arg1) {
 }
 } // namespace lift_006C2CB0
 } // namespace lift_0070EBC0
-
-// [0x0070EBF0] sub_0070EBF0 (48 bytes)
-namespace lift_0070EBF0 {
-// @name sub_0070EBF0
-// @summary Auto-lifted identical-shape clone of 0x006C2CB0 (ForwardOffsetFieldToCalleeReturnArg).
-namespace lift_006C2CB0 {
-// @name ForwardOffsetFieldToCalleeReturnArg
-// @summary Passes (self + 0x118) to ext_006D2390 with arg1 as its this pointer, then returns arg1.
-// @field unknown +0x118 uint8_t field_0x118
-
-
-extern void* ext_006B9D20(void* self, uint32_t arg1);
-
-void* fn_0070EBF0(void* self, void* arg1) {
-    uint32_t field_ptr = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(static_cast<uint8_t*>(self) + 0xF8));
-    ext_006B9D20(arg1, field_ptr);
-    return arg1;
-}
-} // namespace lift_006C2CB0
-} // namespace lift_0070EBF0
 
 // [0x00708D70]
 namespace lift_00708D70 {
@@ -1555,35 +1475,6 @@ void fn_006BBA40(void) {
 } // namespace lift_006BBA40
 } // namespace lift_00703CF0
 
-// [0x00707FB0] sub_00707FB0 (77 bytes)
-namespace lift_00707FB0 {
-// Known callee 0x006D2250: Buffer::release (Frees the buffer at +0x10 if non-null and resets fields at +0x00, +0x04, and +0x10 to zero.)
-extern void ext_006D2250(void* self);
-
-// @name Unknown::DestroyElementsAndRelease_00707FB0
-// @class Unknown
-// @summary Calls virtual slot +0xD8 and frees each pointer in the element buffer (last to first), then releases the buffer at +0xA4.
-// @field Unknown +0x00 void** vtable
-// @field Unknown +0xA4 int32_t elementCount
-// @field Unknown +0xB4 void** elements
-void fn_00707FB0(void* self) {
-    // Buffer at +0xA4: +0x00 = element count, +0x10 (i.e. +0xB4) = element pointer array.
-    auto& count = lift_field<int32_t>(self, 0xA4);
-    for (int32_t i = count - 1; i >= 0; --i) {
-        void* const* vtbl = lift_field<void* const*>(self, 0x00);
-        auto vfn = reinterpret_cast<void (*)(void*, void*)>(
-            lift_field<void*>(vtbl, 0xD8));
-        void** elems = lift_field<void**>(self, 0xB4);
-        vfn(self, elems[i]);
-
-        elems = lift_field<void**>(self, 0xB4);
-        std::free(elems[i]);
-    }
-
-    ext_006D2250(reinterpret_cast<uint8_t*>(self) + 0xA4);
-}
-} // namespace lift_00707FB0
-
 // [0x00708CC0]
 namespace lift_00708CC0 {
 // @name Unknown::FindFirstMatchAndSelect
@@ -1637,34 +1528,6 @@ extern double* __thiscall fn_00702AA0(void* self, double* out) {
     return out;
 }
 } // namespace lift_00702AA0
-
-// [0x00702A00]
-namespace lift_00702A00 {
-// @name Unknown::FillVec3FromAccessors
-// @class Unknown
-// @summary Fills a 3-double output buffer with float values fetched via accessor chains off a shared base object.
-
-// ext_006DC460: returns the base object used by all accessors.
-int32_t Unknown_GetValueIfCountPositive(void* self);
-// ext_006C9620 / ext_006C9640 / ext_006C9660: accessors returning a sub-object pointer.
-void* sub_006C9620(void* self);
-void* sub_006C9640(void* self);
-void* sub_006C9660(void* self);
-// ext_006C9F70: float getter on a sub-object.
-float sub_006C9F70(void* self);
-
-// Single stack argument (output buffer) at entry; returns it in eax.
-extern double* fn_00702A00(double* out) {
-    const void* base = reinterpret_cast<const void*>(
-        static_cast<uintptr_t>(static_cast<uint32_t>(Unknown_GetValueIfCountPositive(nullptr))));
-
-    out[0] = static_cast<double>(sub_006C9F70(sub_006C9620(const_cast<void*>(base))));
-    out[1] = static_cast<double>(sub_006C9F70(sub_006C9640(const_cast<void*>(base))));
-    out[2] = static_cast<double>(sub_006C9F70(sub_006C9660(const_cast<void*>(base))));
-
-    return out;
-}
-} // namespace lift_00702A00
 
 // [0x00700990] sub_00700990 (80 bytes)
 namespace lift_00700990 {
@@ -1869,37 +1732,6 @@ double* __thiscall fn_0070BDB0(void* self, double* out) {
 }
 } // namespace lift_0070BBD0
 } // namespace lift_0070BDB0
-
-// [0x0070BF00]
-namespace lift_0070BF00 {
-// @name ClampedScaledFloatGetter
-// @summary Chains three getters, scales the float result by 1/128, and clamps it to [0, 1].
-
-extern uint32_t ext_006DC460(void* self);
-extern uint32_t ext_006C98F0(void* self);
-extern float fn_006C9F70(void* self);
-
-static const double mem_00995B48 = 0.0078125;
-static const double mem_0092A278 = 0.0;
-static const double mem_0092A270 = 1.0;
-
-extern float __fastcall fn_0070BF00(void* self) {
-    uint32_t a = ext_006DC460(self);
-    uint32_t b = ext_006C98F0(reinterpret_cast<void*>(static_cast<uintptr_t>(a)));
-    float f = fn_006C9F70(reinterpret_cast<void*>(static_cast<uintptr_t>(b)));
-
-    double x = static_cast<double>(f) * mem_00995B48;
-
-    // Clamp: NaN or x < 0 -> 0.0; x > 1 -> 1.0; otherwise x.
-    if (!(x >= mem_0092A278)) {
-        return static_cast<float>(mem_0092A278);
-    }
-    if (x <= mem_0092A270) {
-        return static_cast<float>(x);
-    }
-    return static_cast<float>(mem_0092A270);
-}
-} // namespace lift_0070BF00
 
 // [0x00704B30] sub_00704B30 (85 bytes)
 namespace lift_00704B30 {

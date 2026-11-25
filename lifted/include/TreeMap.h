@@ -8,7 +8,7 @@
 // Recovered field layout for TreeMap:
 namespace lifted_layout {
 struct TreeMap_Fields {
-    // +0x4   void*                    head  (evidence: 0x00420070, 0x004205B0, 0x00472780, 0x004757F0, 0x00487C00, 0x004890D0, 0x0052A230, 0x0052EBA0, 0x0052F7D0, 0x0055C490, 0x005947B0, 0x005963F0, 0x0059B290, 0x0059B2E0, 0x005AD010) // CONFLICT: multiple definitions at +0x4
+    // +0x4   void*                    head  (evidence: 0x00472780, 0x0052EBA0, 0x0052F7D0, 0x005947B0, 0x0059B2E0) // CONFLICT: multiple definitions at +0x4
     // +0x4   void*                    header  (evidence: 0x004280C0, 0x0048BBA0, 0x004EC380) // CONFLICT: multiple definitions at +0x4
 };
 } // namespace lifted_layout

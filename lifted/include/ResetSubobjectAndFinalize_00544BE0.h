@@ -8,6 +8,6 @@
 // Recovered field layout for ResetSubobjectAndFinalize_00544BE0:
 namespace lifted_layout {
 struct ResetSubobjectAndFinalize_00544BE0_Fields {
-    // +0x98  uint8_t                  field_0x98  (evidence: 0x00544BE0, 0x005457B0)
+    // +0x98  uint8_t                  field_0x98  (evidence: 0x00544BE0)
 };
 } // namespace lifted_layout

@@ -8,7 +8,7 @@
 // Recovered field layout for LookupTable:
 namespace lifted_layout {
 struct LookupTable_Fields {
-    // +0x0   void*                    entries  (evidence: 0x00706CD0, 0x0070AD00, 0x0070BF00)
-    // +0x4   int32_t                  index  (evidence: 0x00706CD0, 0x0070AD00, 0x0070BF00)
+    // +0x0   void*                    entries  (evidence: 0x00706CD0, 0x0070AD00)
+    // +0x4   int32_t                  index  (evidence: 0x00706CD0, 0x0070AD00)
 };
 } // namespace lifted_layout

@@ -130,34 +130,6 @@ void __thiscall fn_00545440(void* self, uint32_t arg0) {
 }
 } // namespace lift_00545440
 
-// [0x005451B0]
-namespace lift_005451B0 {
-// @name PoseTool::vfunc_26
-// @class PoseTool
-// @summary Invokes vtable slots +0xA4 and +0xA8 on field_0x88, then tail-calls PoseTool::vfunc_32 (+0x80).
-// @field PoseTool +0x88 void* field_0x88
-
-
-extern uint32_t mem_read32(uint32_t addr);
-extern void ext_call_thiscall_0(uint32_t fn, uint32_t self);
-
-void fn_005451B0(uint32_t self) {
-    uint32_t obj = mem_read32(self + 0x88);
-    uint32_t vtable = mem_read32(obj);
-    uint32_t fn1 = mem_read32(vtable + 0xA4);
-    ext_call_thiscall_0(fn1, obj);
-
-    obj = mem_read32(self + 0x88);
-    vtable = mem_read32(obj);
-    uint32_t fn2 = mem_read32(vtable + 0xA8);
-    ext_call_thiscall_0(fn2, obj);
-
-    uint32_t self_vtable = mem_read32(self);
-    uint32_t fn3 = mem_read32(self_vtable + 0x80);
-    ext_call_thiscall_0(fn3, self);
-}
-} // namespace lift_005451B0
-
 // [0x00545370]
 namespace lift_00545370 {
 // @name PoseTool::vfunc_21

@@ -10,7 +10,6 @@
 // Recovered field layout for NMData::EffectorGroupData:
 namespace lifted_layout {
 struct NMData_EffectorGroupData_Fields {
-    // +0x4   std::string              field_0x04  (evidence: 0x0060D500)
     // +0x44  uint8_t                  field_0x44  (evidence: 0x0060DB20) // CONFLICT: multiple definitions at +0x44
     // +0x44  undefined                field_0x44  (evidence: 0x0060D3A0) // CONFLICT: multiple definitions at +0x44
 };

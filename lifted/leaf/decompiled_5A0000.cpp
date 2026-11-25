@@ -290,36 +290,6 @@ void ReleaseChainNodes(void* self, void* node) {
 }
 } // namespace lift_005AE480
 
-// [0x005AE170] sub_005AE170 (62 bytes)
-namespace lift_005AE170 {
-// Known callee 0x006A5C5C: thunk_MFC80_ord_764 (IAT jump thunk forwarding to MFC80!ord_764.)
-extern void ext_006A5C5C(void* p);
-// Indirect callee via mem_00924FF4 (holds 0x00628FF0): MSVCP80 basic_string<char> destructor, thiscall.
-extern void ext_00628FF0(void* self);
-
-static inline uint8_t* lift_ptr(uint32_t v) {
-    return reinterpret_cast<uint8_t*>(static_cast<uintptr_t>(v));
-}
-
-// @name ReleaseNodeChain
-// @class <unknown>
-// @summary Walks a linked list of nodes from `node`; for each node whose +0x29 flag is clear, recursively releases its child at +0x08 (same `self`), destroys the std::string at +0x0C, passes the node to ext_006A5C5C, and advances via the next pointer at +0x00. Stops at the first flagged node.
-// @field <unknown> +0x00 uint32_t nextNode
-// @field <unknown> +0x08 uint32_t childNode
-// @field <unknown> +0x0C std::string name
-// @field <unknown> +0x29 uint8_t releasedFlag
-void fn_005AE170(void* self, uint8_t* node) {
-    uint8_t* cur = node;
-    while (lift_field<uint8_t>(cur, 0x29) == 0) {
-        fn_005AE170(self, lift_ptr(lift_field<uint32_t>(cur, 0x08)));
-        uint8_t* next = lift_ptr(lift_field<uint32_t>(cur, 0x00));
-        ext_00628FF0(cur + 0x0C);
-        ext_006A5C5C(cur);
-        cur = next;
-    }
-}
-} // namespace lift_005AE170
-
 // [0x005A2BD0]
 namespace lift_005A2BD0 {
 // @name DestroyNodeChain
@@ -414,42 +384,6 @@ void fn_005ABBE0(uint8_t* self, const void* key) {
 }
 } // namespace lift_005ABBE0
 
-// [0x005AD010] sub_005AD010 (70 bytes)
-namespace lift_005AD010 {
-// @name sub_005AD010
-// @summary Auto-lifted identical-shape clone of 0x004205B0 (TreeMap::lowerBound).
-namespace lift_004205B0 {
-// MSVCP80 std::operator<(const std::string&, const std::string&), imported via IAT slot mem_00924EF4.
-extern bool ext_std_string_less(const void* lhs, const void* rhs);
-
-// @name TreeMap::lowerBound
-// @class TreeMap
-// @summary Lower-bound search in an MSVC-style std::map tree: returns first node whose key is not less than the argument, or the header node if none.
-// @field TreeMap +0x04 void* head
-// Node layout used (MSVC _Tree node): +0x00 left, +0x04 parent, +0x08 right, +0x0C key (std::string), +0x59 isNil flag.
-void* fn_005AD010(void* self, const void* key) {
-    void* head = lift_field<void*>(self, 0x04);
-    void* node = lift_field<void*>(head, 0x04);   // root
-    void* result = head;
-
-    if (lift_field<uint8_t>(node, 0x29) != 0) {
-        return head;
-    }
-
-    while (lift_field<uint8_t>(node, 0x29) == 0) {
-        const void* nodeKey = reinterpret_cast<const uint8_t*>(node) + 0x0C;
-        if (ext_std_string_less(nodeKey, key)) {
-            node = lift_field<void*>(node, 0x08);     // go right
-        } else {
-            result = node;                            // candidate
-            node = lift_field<void*>(node, 0x00);     // go left
-        }
-    }
-    return result;
-}
-} // namespace lift_004205B0
-} // namespace lift_005AD010
-
 // [0x005ACB00]
 namespace lift_005ACB00 {
 // @name Unknown::InitFromVec4_005ACB00
@@ -523,30 +457,6 @@ void* fn_005ACD30(void* self, uint32_t arg1, uint32_t arg2, const float* values)
 }
 } // namespace lift_005ACD30
 
-// [0x005ACD80] sub_005ACD80 (83 bytes)
-namespace lift_005ACD80 {
-// Known callee 0x00665810: sub_00665810 (Stores address of mem_00987A04 into field at offset +0x0.)
-extern void __fastcall ext_00665810(void* self);
-
-// @name Unknown::ReleaseOptionalChildAndReset_005ACD80
-// @class Unknown
-// @summary Deletes the polymorphic child at +0x1c if non-null (vtable slot 0 with delete flag 1), then calls ext_00665810(self).
-// @field Unknown +0x1c void* field_0x1c
-
-void fn_005ACD80(void* self) {
-    using ScalarDeletingDtor = void(__thiscall*)(void* obj, int flags);
-
-    auto* base = static_cast<unsigned char*>(self);
-    void* child = *reinterpret_cast<void**>(base + 0x1c);
-    if (child != nullptr) {
-        void** vtbl = *reinterpret_cast<void***>(child);
-        auto dtor = reinterpret_cast<ScalarDeletingDtor>(vtbl[0]);
-        dtor(child, 1);
-    }
-    ext_00665810(self);
-}
-} // namespace lift_005ACD80
-
 // [0x005A9F50] sub_005A9F50 (89 bytes)
 namespace lift_005A9F50 {
 // Known callee 0x00678520: XMLConverter::XMLConverter (Constructor: installs XMLConverter primary vtable and default-constructs the std::string member at +0x04; returns this.)
@@ -568,59 +478,6 @@ void* fn_005A9F50(void* self) {
     return self;
 }
 } // namespace lift_005A9F50
-
-// [0x005A9E70] sub_005A9E70 (89 bytes)
-namespace lift_005A9E70 {
-// Known callee 0x00678520: XMLConverter::XMLConverter (Constructor: installs XMLConverter primary vtable and default-constructs the std::string member at +0x04; returns this.)
-extern void* ext_00678520(void* self);
-
-// @name ctor_005A9E70_XMLConverterDerived
-// @class XMLConverterDerived
-// @summary Constructor for an XMLConverter-derived object: runs the XMLConverter base ctor, installs the derived vtable 0x0095EE1C, and default-constructs two std::string members at +0x2c and +0x48.
-// @field XMLConverterDerived +0x00 uint32_t vtable
-// @field XMLConverterDerived +0x2c std::string field_0x2c
-// @field XMLConverterDerived +0x48 std::string field_0x48
-void* fn_005A9E70(void* self) {
-    // Base XMLConverter constructor runs first (installs its own vtable and
-    // constructs the string at +0x04).
-    ext_00678520(self);
-
-    // Overwrite the primary vtable pointer with this class's vtable.
-    lift_field<uint32_t>(self, 0x00) = 0x0095EE1C;
-
-    // Default-construct the two std::string members in place.
-    ::new (static_cast<void*>(static_cast<uint8_t*>(self) + 0x2c)) std::string();
-    ::new (static_cast<void*>(static_cast<uint8_t*>(self) + 0x48)) std::string();
-
-    return self;
-}
-} // namespace lift_005A9E70
-
-// [0x005A9EE0] sub_005A9EE0 (97 bytes)
-namespace lift_005A9EE0 {
-// Known callee 0x00678280: Unknown::~Unknown (base-class destructor body).
-extern void ext_00678280(void* self);
-
-// @name derivedDestructorBody
-// @class UnknownDerived
-// @summary Derived-class destructor body: resets the vtable word, destroys the two std::string members at +0x48 and +0x2C, then calls the base Unknown::~Unknown.
-// @field UnknownDerived +0x00 uint32_t vtable
-// @field UnknownDerived +0x2C std::string field_0x2c
-// @field UnknownDerived +0x48 std::string field_0x48
-void fn_005A9EE0(void* self) {
-    using Str = std::string;
-
-    // Original stores the derived vtable pointer (0x95EE1C) into the first object word.
-    lift_field<uint32_t>(self, 0x00) = 0x0095EE1Cu;
-
-    // Destroy member string at +0x48, then the one at +0x2C (same order as the original).
-    lift_field<Str>(self, 0x48).~Str();
-    lift_field<Str>(self, 0x2C).~Str();
-
-    // Base-class reset (Unknown::~Unknown).
-    ext_00678280(self);
-}
-} // namespace lift_005A9EE0
 
 // [0x005A9FB0] sub_005A9FB0 (97 bytes)
 namespace lift_005A9FB0 {
@@ -651,103 +508,6 @@ void fn_005A9FB0(void* self) {
 }
 } // namespace lift_005A9FB0
 
-// [0x005AC8C0]
-namespace lift_005AC8C0 {
-// @name TreeIterator::increment
-// @class TreeIterator
-// @summary Advances a tree iterator to its in-order successor (MSVC-style _Tree::_Inc); reports invalid_parameter on null container or sentinel node.
-// @field TreeIterator +0x00 void* field_0x00
-// @field TreeIterator +0x04 TreeNode* field_0x04
-// @field TreeNode +0x00 TreeNode* field_0x00
-// @field TreeNode +0x04 TreeNode* field_0x04
-// @field TreeNode +0x08 TreeNode* field_0x08
-// @field TreeNode +0x29 uint8_t field_0x29
-
-extern void (*ext_invalid_parameter_noinfo)(void);
-
-struct TreeNode {
-    TreeNode* field_0x00;   // left child
-    TreeNode* field_0x04;   // parent
-    TreeNode* field_0x08;   // right child
-    uint8_t   field_0x0C[0x29 - 0x0C];
-    uint8_t   field_0x29;   // nonzero when this node is the sentinel/head
-};
-
-struct TreeIterator {
-    void*     field_0x00;   // container; must be nonnull
-    TreeNode* field_0x04;   // current node
-
-    void increment();
-};
-
-void TreeIterator::increment() {
-    if (this->field_0x00 == nullptr) {
-        ext_invalid_parameter_noinfo();
-    }
-
-    TreeNode* node = this->field_0x04;
-    if (node->field_0x29 != 0) {
-        ext_invalid_parameter_noinfo();
-        return;
-    }
-
-    TreeNode* right = node->field_0x08;
-    if (right->field_0x29 == 0) {
-        // Successor is the leftmost node of the right subtree.
-        TreeNode* cur = right;
-        while (cur->field_0x00->field_0x29 == 0) {
-            cur = cur->field_0x00;
-        }
-        this->field_0x04 = cur;
-        return;
-    }
-
-    // No right subtree: climb until we come from a left child.
-    TreeNode* p = node->field_0x04;
-    if (p->field_0x29 != 0) {
-        this->field_0x04 = p;
-        return;
-    }
-
-    TreeNode* cur = node;
-    while (cur == p->field_0x08) {
-        cur = p;
-        p = p->field_0x04;
-        if (p->field_0x29 != 0) {
-            break;
-        }
-    }
-    this->field_0x04 = p;
-}
-} // namespace lift_005AC8C0
-
-// [0x005A0380] sub_005A0380 (61 bytes)
-namespace lift_005A0380 {
-// @name sub_005A0380
-// @summary Auto-lifted identical-shape clone of 0x0046A4D0 (advanceIteratorCounted).
-namespace lift_0046A4D0 {
-// Known callee 0x00474FF0: sub_00474FF0 (Auto-lifted identical-shape clone of 0x005E0B20 (TreeIterator::increment).)
-extern void ext_00673C20(void* self);
-// IAT slot holding MSVCR80!_invalid_parameter_noinfo (called with no arguments).
-extern void (*mem_00925134)();
-
-// @name advanceIteratorCounted
-// @summary Advances an iterator with TreeIterator::increment until it equals `last`, incrementing `*counter` once per step; asserts the iterator is non-null and equal to `guard` before each step.
-void fn_005A0380(void* it, void* last, void* guard, void* end, int32_t* counter) {
-    for (;;) {
-        if (it == nullptr || it != guard) {
-            mem_00925134();
-        }
-        if (last == end) {
-            return;
-        }
-        ++*counter;
-        ext_00673C20(&it);
-    }
-}
-} // namespace lift_0046A4D0
-} // namespace lift_005A0380
-
 // [0x005A0200] sub_005A0200 (53 bytes)
 namespace lift_005A0200 {
 // Known callee 0x0059FDE0: copyStringRangeFromTreeIterator (Walks a red-black tree range from (container, node) up to endNode, assigning each node's std::string at +0x0C into consecutive 0x1C-byte output slots and advancing the iterator; returns the final output pointer.)
@@ -760,84 +520,6 @@ void* fn_005A0200(void* container, void* node, void* expectedContainer, void* en
     return ext_0059FDE0(container, node, expectedContainer, endNode, out);
 }
 } // namespace lift_005A0200
-
-// [0x005A07A0] sub_005A07A0 (105 bytes)
-namespace lift_005A07A0 {
-// @name sub_005A07A0
-// @summary Auto-lifted identical-shape clone of 0x00667EA0 (StdMapString::find).
-namespace lift_00667EA0 {
-// @name StdMapString::find
-// @class StdMapString
-// @summary Finds a node by string key in a std::map-like tree, returning a checked iterator {self, node} or {self, header} if not found.
-// @field StdMapString +0x04 void* header
-
-
-extern void* ext_0055C490(void* self, const void* key);
-extern void (*mem_00925134)();
-extern bool (*mem_00924EF4)(const void* lhs, const void* rhs);
-
-struct MapIterator {
-    void* container;
-    void* node;
-};
-
-void* fn_005A07A0(void* self, void* out_iter, const void* key) {
-    void* node = ext_0055C490(self, key);
-    if (!self) {
-        mem_00925134();
-    }
-    void* header = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x4);
-    MapIterator* it = reinterpret_cast<MapIterator*>(out_iter);
-    if (node != header && !mem_00924EF4(key, reinterpret_cast<uint8_t*>(node) + 0xC)) {
-        it->container = self;
-        it->node = node;
-    } else {
-        it->container = self;
-        it->node = header;
-    }
-    return out_iter;
-}
-} // namespace lift_00667EA0
-} // namespace lift_005A07A0
-
-// [0x005AE100] sub_005AE100 (105 bytes)
-namespace lift_005AE100 {
-// @name sub_005AE100
-// @summary Auto-lifted identical-shape clone of 0x00667EA0 (StdMapString::find).
-namespace lift_00667EA0 {
-// @name StdMapString::find
-// @class StdMapString
-// @summary Finds a node by string key in a std::map-like tree, returning a checked iterator {self, node} or {self, header} if not found.
-// @field StdMapString +0x04 void* header
-
-
-extern void* ext_005AD010(void* self, const void* key);
-extern void (*mem_00925134)();
-extern bool (*mem_00924EF4)(const void* lhs, const void* rhs);
-
-struct MapIterator {
-    void* container;
-    void* node;
-};
-
-void* fn_005AE100(void* self, void* out_iter, const void* key) {
-    void* node = ext_005AD010(self, key);
-    if (!self) {
-        mem_00925134();
-    }
-    void* header = *reinterpret_cast<void**>(reinterpret_cast<uint8_t*>(self) + 0x4);
-    MapIterator* it = reinterpret_cast<MapIterator*>(out_iter);
-    if (node != header && !mem_00924EF4(key, reinterpret_cast<uint8_t*>(node) + 0xC)) {
-        it->container = self;
-        it->node = node;
-    } else {
-        it->container = self;
-        it->node = header;
-    }
-    return out_iter;
-}
-} // namespace lift_00667EA0
-} // namespace lift_005AE100
 
 // [0x005AC360]
 namespace lift_005AC360 {

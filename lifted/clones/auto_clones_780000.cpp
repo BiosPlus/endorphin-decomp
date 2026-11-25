@@ -4,22 +4,6 @@
 #include <string>
 #include <cstring>
 
-// [0x0078D2C0] sub_0078D2C0 (8 bytes)
-namespace lift_0078D2C0 {
-// @name sub_0078D2C0
-// @summary Auto-lifted identical-shape clone of 0x00437DE0 (callSub00437DC0WithOne).
-namespace lift_00437DE0 {
-// @name callSub00437DC0WithOne
-// @summary Calls ext_00437DC0 with argument 1.
-
-extern void ext_0078D720(void* arg);
-
-void fn_0078D2C0() {
-    ext_0078D720(reinterpret_cast<void*>(static_cast<uintptr_t>(16)));
-}
-} // namespace lift_00437DE0
-} // namespace lift_0078D2C0
-
 // [0x00784820]
 namespace lift_00784820 {
 // @name sub_00784820
@@ -70,26 +54,6 @@ void negate_huge_into_globals() {
 }
 } // namespace lift_00785FB0
 
-// [0x00787520] sub_00787520 (36 bytes)
-namespace lift_00787520 {
-// MSVCR80 _HUGE: pointer to the HUGE_VAL double (original reads it via an import slot at 0x925284).
-extern double* ext__HUGE;
-
-extern double mem_00B60B58;
-extern double mem_00B60B60;
-extern double mem_00B60B68;
-
-// @name initNegHugeGlobals
-// @summary Stores -HUGE_VAL into three double globals (mem_00B60B58/60/68).
-void fn_00787520(void* self) {
-    (void)self;
-    const double negHuge = -*ext__HUGE;
-    mem_00B60B58 = negHuge;
-    mem_00B60B60 = negHuge;
-    mem_00B60B68 = negHuge;
-}
-} // namespace lift_00787520
-
 // [0x00783100] sub_00783100 (41 bytes)
 namespace lift_00783100 {
 extern uint32_t mem_00B608C8;
@@ -108,24 +72,6 @@ void fn_00783100(void* self) {
 }
 } // namespace lift_00783100
 
-// [0x007844A0] sub_007844A0 (41 bytes)
-namespace lift_007844A0 {
-extern uint32_t mem_00B60908;
-extern uint32_t mem_00B60910;
-extern uint32_t mem_00B6090C;
-extern uint32_t mem_00B60914;
-
-// @name SetGlobalsInitA_007844A0
-// @summary Stores three constant pointers/values into globals mem_00B60908/0C/10 and clears mem_00B60914.
-void fn_007844A0(void* self) {
-    (void)self;
-    mem_00B60908 = 0x00B608ECu;
-    mem_00B60910 = 0x00AAF3C0u;
-    mem_00B6090C = 0x00B5EB68u;
-    mem_00B60914 = 0x00000000u;
-}
-} // namespace lift_007844A0
-
 // [0x00784430] sub_00784430 (41 bytes)
 namespace lift_00784430 {
 extern int mem_00B60918;
@@ -142,29 +88,6 @@ void fn_00784430(void) {
     mem_00B60924 = 0x00000000;
 }
 } // namespace lift_00784430
-
-// [0x007874D0]
-namespace lift_007874D0 {
-extern uint32_t mem_00925284;
-extern uint32_t mem_00B60B40;
-extern uint32_t mem_00B60B44;
-extern uint32_t mem_00B60B48;
-extern uint32_t mem_00B60B4C;
-extern uint32_t mem_00B60B50;
-extern uint32_t mem_00B60B54;
-
-// @name initGlobalHugeTriple
-// @summary Initializes three 64-bit globals from MSVCR80.dll!_HUGE.
-void sub_007874D0() {
-    const uint32_t* huge = reinterpret_cast<const uint32_t*>(static_cast<uintptr_t>(mem_00925284));
-    mem_00B60B40 = huge[0];
-    mem_00B60B44 = huge[1];
-    mem_00B60B48 = huge[0];
-    mem_00B60B4C = huge[1];
-    mem_00B60B50 = huge[0];
-    mem_00B60B54 = huge[1];
-}
-} // namespace lift_007874D0
 
 // [0x00785F60]
 namespace lift_00785F60 {
@@ -258,17 +181,3 @@ void fn_006BBA40(void) {
 }
 } // namespace lift_006BBA40
 } // namespace lift_00787560
-
-// [0x00780270]
-namespace lift_00780270 {
-// @name initGlobalArray_00B608A0
-// @summary Initializes global array at 0x00B608A0 with 0xB1 (177) elements.
-
-
-extern uint8_t mem_00B608A0;
-extern void* __thiscall ext_00780030(void* self_ptr, int32_t count);
-
-void* fn_00780270() {
-    return ext_00780030(&mem_00B608A0, 0xB1);
-}
-} // namespace lift_00780270

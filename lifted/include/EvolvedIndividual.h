@@ -11,10 +11,6 @@
 namespace lifted_layout {
 struct EvolvedIndividual_Fields {
     // +0x0   void*                    vtable  (evidence: 0x00477EA0)
-    // +0xC   void**                   elements_begin  (evidence: 0x00516E60)
-    // +0x10  void**                   elements_end  (evidence: 0x00516E60) // CONFLICT: multiple definitions at +0x10
-    // +0x10  uint32_t                 field_0x10  (evidence: 0x005171B0) // CONFLICT: multiple definitions at +0x10
-    // +0x14  void** elements_begin (offset +0xC from Owner subobject at +0x8)  (evidence: 0x00516E10)
-    // +0x18  void** elements_end (offset +0x10 from Owner subobject at +0x8)  (evidence: 0x00516E10)
+    // +0x10  uint32_t                 field_0x10  (evidence: 0x005171B0)
 };
 } // namespace lifted_layout

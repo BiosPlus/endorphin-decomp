@@ -10,13 +10,7 @@
 // Recovered field layout for NMData::RealChannel:
 namespace lifted_layout {
 struct NMData_RealChannel_Fields {
-    // +0x30  int32_t                  begin  (evidence: 0x0051BEF0) // CONFLICT: multiple definitions at +0x30
-    // +0x30  uint32_t                 begin  (evidence: 0x00414880, 0x0041A4F0, 0x0041DED0, 0x00420070, 0x0042EE50, 0x0042FAE0, 0x00437AD0, 0x00495A20, 0x00495AB0, 0x0049AD40, 0x0049B170, 0x004C4390, 0x004CCDE0, 0x004CF910, 0x0051BF10, 0x00678D70, 0x00692D90, 0x00699360, 0x0069B5A0) // CONFLICT: multiple definitions at +0x30
-    // +0x30  uint8_t*                 begin  (evidence: 0x0051BA70, 0x0051C2A0) // CONFLICT: multiple definitions at +0x30
-    // +0x34  int32_t                  end  (evidence: 0x0051BEF0) // CONFLICT: multiple definitions at +0x34
-    // +0x34  uint32_t                 end  (evidence: 0x00414880, 0x0041A4F0, 0x0041DED0, 0x00420070, 0x0042EE50, 0x0042FAE0, 0x00437AD0, 0x00495A20, 0x00495AB0, 0x0049AD40, 0x0049B170, 0x004C4390, 0x004CCDE0, 0x004CF910, 0x0051BF10, 0x00678D70, 0x00692D90, 0x00699360, 0x0069B5A0) // CONFLICT: multiple definitions at +0x34
-    // +0x34  uint8_t*                 end  (evidence: 0x0051BA70, 0x0051C2A0) // CONFLICT: multiple definitions at +0x34
-    // +0x3C  void*                    field_0x3C  (evidence: 0x0051BEF0)
-    // +0x40  int32_t                  field_0x40  (evidence: 0x0051BEF0)
+    // +0x30  uint32_t                 begin  (evidence: 0x0041A4F0, 0x0041DED0, 0x0042EE50, 0x0042FAE0, 0x00437AD0, 0x00495A20, 0x004CCDE0, 0x004CF910, 0x0051BF10, 0x00692D90, 0x0069B5A0)
+    // +0x34  uint32_t                 end  (evidence: 0x0041A4F0, 0x0041DED0, 0x0042EE50, 0x0042FAE0, 0x00437AD0, 0x00495A20, 0x004CCDE0, 0x004CF910, 0x0051BF10, 0x00692D90, 0x0069B5A0)
 };
 } // namespace lifted_layout

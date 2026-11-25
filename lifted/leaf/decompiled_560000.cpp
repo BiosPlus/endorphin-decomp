@@ -17,26 +17,6 @@ void fn_005694F0(void* self, int edx_unused, int a1, int a2) {
 }
 } // namespace lift_005694F0
 
-// [0x005649D0] sub_005649D0 (34 bytes)
-namespace lift_005649D0 {
-// Known callee 0x007C569A: thunk_XSIFtk-3.6.2.1_?Open@CSLScene@@QAEHPAD@Z
-// (IAT jump thunk forwarding to XSIFtk-3.6.2.1!?Open@CSLScene@@QAEHPAD@Z).
-// Original is a thiscall (this in ecx, one stack arg) returning BOOL-like int.
-extern int ext_007C569A(void* scene, const char* path);
-
-// @name Unknown::openSceneFromString
-// @class Unknown
-// @summary Opens the scene stored at this+0x494 using the C string of a std::string argument; returns true on failure (sete of Open's zero-check).
-// @field Unknown +0x494 void* field_0x494
-bool fn_005649D0(void* self, const std::string* path) {
-    // Original: c_str() via MSVCP80 IAT slot (mem_00924FF0), then CSLScene::Open(path).
-    // Portable form: path->c_str(); the IAT indirection is just the import for c_str.
-    void* scene = lift_field<void*>(self, 0x494);
-    int result = ext_007C569A(scene, path->c_str());
-    return result == 0;
-}
-} // namespace lift_005649D0
-
 // [0x005631F0]
 namespace lift_005631F0 {
 // @name isMeshOrNurbsPrimitive
@@ -118,26 +98,6 @@ DWORD* __thiscall fn_00569440(void* self, const DWORD* first, const DWORD* last,
 }
 } // namespace lift_0044C4D0
 } // namespace lift_00569440
-
-// [0x0056B900]
-namespace lift_0056B900 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name hasMultipleElements
-// @summary Returns 1 if the 4-byte-element vector at +0x28..+0x2C has more than 1 element, else 0.
-// @field Unknown +0x28 uint32_t field_0x28
-// @field Unknown +0x2c uint32_t field_0x2c
-uint32_t __fastcall sub_0056B900(uint32_t ecx, uint32_t edx) {
-    (void)edx;
-    uint32_t begin = mem_read32(ecx + 0x28);
-    if (begin == 0) {
-        return 0;
-    }
-    uint32_t end = mem_read32(ecx + 0x2c);
-    uint32_t count = static_cast<uint32_t>(static_cast<int32_t>(end - begin) >> 2);
-    return (count > 1u) ? 1u : 0u;
-}
-} // namespace lift_0056B900
 
 // [0x00567040] sub_00567040 (45 bytes)
 namespace lift_00567040 {
@@ -225,32 +185,6 @@ bool fn_005637D0(void* self, uint32_t arg) {
     return false;
 }
 } // namespace lift_005637D0
-
-// [0x00569970]
-namespace lift_00569970 {
-extern void ext_005693E0(uint32_t a0, uint32_t a1, void* a2, void* a3);
-extern void fn_006A5C5C(uint32_t arg);
-
-// @name Unknown::ReleaseHandleAndClear
-// @class Unknown
-// @summary If field +0x04 is nonzero, run ext_005693E0 with it and forward it to fn_006A5C5C, then clear fields +0x04, +0x08 and +0x0C.
-// @field Unknown +0x04 uint32_t field_0x04
-// @field Unknown +0x08 uint32_t field_0x08
-// @field Unknown +0x0C uint32_t field_0x0C
-void fn_00569970(void* self) {
-    if (lift_field<uint32_t>(self, 0x4) != 0) {
-        // Argument order matches the original pushes: a0 = f04, a1 = f08, a2 = self, a3 = ecx (self).
-        ext_005693E0(lift_field<uint32_t>(self, 0x4),
-                     lift_field<uint32_t>(self, 0x8),
-                     self,
-                     self);
-        fn_006A5C5C(lift_field<uint32_t>(self, 0x4));
-    }
-    lift_field<uint32_t>(self, 0x4) = 0;
-    lift_field<uint32_t>(self, 0x8) = 0;
-    lift_field<uint32_t>(self, 0xC) = 0;
-}
-} // namespace lift_00569970
 
 // [0x00566380] sub_00566380 (25 bytes)
 namespace lift_00566380 {
@@ -344,84 +278,6 @@ void* fn_00566FF0(void* self) {
 }
 } // namespace lift_00566FF0
 
-// [0x005634D0] sub_005634D0 (75 bytes)
-namespace lift_005634D0 {
-// Imported XSIFtk / MSVCP80 slots (IAT entries holding function pointers).
-extern int mem_00925754;
-extern int mem_00925750;
-extern int mem_0092574C;
-extern int mem_00924FE4;
-
-// String literals referenced by immediate address.
-extern const char str_00928B5D[];
-extern const char str_00B39FD8[];
-
-// Imported members, expressed with an explicit `this` as first argument.
-extern bool ext_CSIBCString_OpNotEqual(void* self, const char* rhs);       // CSIBCString::operator!=(const char*)
-extern void* ext_CSIBCString_OpAssign(void* self, const char* rhs);        // CSIBCString::operator=(const CSIBCString&)
-extern const char* ext_CSIBCString_GetText(void* self);                    // CSIBCString::GetText()
-
-// @name GetStdStringFromCSIBCString_005634D0
-// @class Unknown
-// @summary Ensures the embedded CSIBCString at +0x04 holds a non-default value, then copies its text into the returned std::string.
-// @field Unknown +0x04 CSIBCString field_0x04
-std::string* fn_005634D0(std::string* out, void* self) {
-    void* str = static_cast<unsigned char*>(self) + 0x04;
-
-    if (ext_CSIBCString_OpNotEqual(str, str_00928B5D)) {
-        ext_CSIBCString_OpAssign(str, str_00B39FD8);
-    }
-
-    const char* text = ext_CSIBCString_GetText(str);
-    new (out) std::string(text);
-    return out;
-}
-} // namespace lift_005634D0
-
-// [0x00564600] sub_00564600 (81 bytes)
-namespace lift_00564600 {
-// Known callee 0x007C569A: thunk_XSIFtk-3.6.2.1_?Open@CSLScene@@QAEHPAD@Z (IAT jump thunk forwarding to XSIFtk-3.6.2.1!?Open@CSLScene@@QAEHPAD@Z.)
-extern void ext_007C569A();
-
-namespace {
-
-// Reads the vtable pointer stored at the start of `obj`, then the slot at byte offset `slotOffset`.
-inline void* lift_vslot(void* obj, ptrdiff_t slotOffset) {
-    void* vptr = lift_field<void*>(obj, 0);
-    return lift_field<void*>(vptr, slotOffset);
-}
-
-} // namespace
-
-// @name OpenSceneFromName
-// @class Unknown
-// @summary Notifies the sub-object at +0x27c, optionally notifies the object at +0x424, then opens the scene at +0x494 using the given name.
-// @field Unknown +0x27c void* field_0x27c (embedded polymorphic sub-object; its vptr is read at +0x27c)
-// @field Unknown +0x424 void* field_0x424 (optional object pointer; vtable slot +0x0C is called with 0xB39F84 when non-null)
-// @field Unknown +0x494 void* field_0x494 (CSLScene instance passed as `this` to Open)
-bool fn_00564600(void* self, const std::string& name) {
-    // Step 1: vcall slot +0x84 on the embedded sub-object at self+0x27c (return value discarded).
-    void* subObj = static_cast<uint8_t*>(self) + 0x27c;
-    using VoidThisFn = void (*)(void*);
-    reinterpret_cast<VoidThisFn>(lift_vslot(subObj, 0x84))(subObj);
-
-    // Step 2: if the pointer at self+0x424 is set, vcall slot +0x0C on it with argument 0xB39F84.
-    void* optObj = lift_field<void*>(self, 0x424);
-    if (optObj != nullptr) {
-        using ArgThisFn = void (*)(void*, uint32_t);
-        reinterpret_cast<ArgThisFn>(lift_vslot(optObj, 0x0C))(optObj, 0x00B39F84u);
-    }
-
-    // Step 3: pass the C string of `name` to CSLScene::Open on the object at self+0x494.
-    void* sceneObj = lift_field<void*>(self, 0x494);
-    using OpenFn = int (*)(void*, const char*);
-    int ret = reinterpret_cast<OpenFn>(reinterpret_cast<void*>(&ext_007C569A))(sceneObj, name.c_str());
-
-    // Original returns (ret == 0) as a bool via sete al.
-    return ret == 0;
-}
-} // namespace lift_00564600
-
 // [0x00563330] sub_00563330 (97 bytes)
 namespace lift_00563330 {
 // Known callee 0x005632F0: CheckModelAgainstSelf (Returns true if model is non-null and is either a mesh/NURBS primitive or accepted by sub_00563220(this, model).)
@@ -478,139 +334,3 @@ BOOL fn_00563280(void* self, DWORD arg1, DWORD arg2) {
     return (first && second) ? TRUE : FALSE;
 }
 } // namespace lift_00563280
-
-// [0x00566F70] sub_00566F70 (109 bytes)
-namespace lift_00566F70 {
-// Imported MSVCP80 entry points (called through IAT slots in the original binary).
-extern int ext_istream_get(void* stream);                                  // basic_istream::get()
-extern void ext_istream_putback(void* stream, char c);                     // basic_istream::putback(char)
-extern void* ext_istream_extract_string(void* stream, void* str);          // operator>>(istream&, string&)
-extern bool ext_string_equals_cstr(const void* str, const char* s);        // operator==(string, const char*)
-extern void ext_string_append_char(void* str, char c);                     // string::operator+=(char)
-extern void ext_string_append_string(void* dst, const void* src);          // string::operator+=(const string&)
-
-// String literal at .rdata 0x00958BFC (compared against the token read after ':').
-extern const char mem_00958BFC[];
-
-// @name Unknown::readKeyUntilColonMatch
-// @class Unknown
-// @summary Reads chars from a stream into a buffer until ':'; then reads a token and returns true if it equals a literal, otherwise appends the token to the buffer and continues.
-// @field Unknown +0x00 void* field_0x00 (pointer to owner whose +0x3C is the accumulation std::string)
-// @field Unknown +0x04 std::string field_0x04 (token string read after ':')
-bool fn_00566F70(void* self, void* stream) {
-    uint8_t* obj = reinterpret_cast<uint8_t*>(self);
-    for (;;) {
-        int c = ext_istream_get(stream);
-        uint8_t ch = static_cast<uint8_t>(c);
-        if (ch != 0x3A) {
-            void* accum = *reinterpret_cast<uint8_t**>(obj) + 0x3C;
-            ext_string_append_char(accum, static_cast<char>(ch));
-            continue;
-        }
-        ext_istream_putback(stream, static_cast<char>(ch));
-        void* token = obj + 0x04;
-        ext_istream_extract_string(stream, token);
-        if (ext_string_equals_cstr(token, mem_00958BFC)) {
-            return true;
-        }
-        void* accum = *reinterpret_cast<uint8_t**>(obj) + 0x3C;
-        ext_string_append_string(accum, token);
-    }
-}
-} // namespace lift_00566F70
-
-// [0x00567210] sub_00567210 (109 bytes)
-namespace lift_00567210 {
-// @name Unknown::visitChildrenRecursive_00567210
-// @class Unknown
-// @summary Recursively walks the dword child-pointer list at node+0x28..+0x2C, calling itself on each child with the same second argument.
-// @field Unknown +0x28 uint32_t* field_0x28
-// @field Unknown +0x2C uint32_t* field_0x2C
-void fn_00567210(void* self, void* node, void* arg2) {
-    uint32_t* it = reinterpret_cast<uint32_t*>(
-        static_cast<uintptr_t>(lift_field<uint32_t>(node, 0x28)));
-    for (;;) {
-        uint32_t* end = reinterpret_cast<uint32_t*>(
-            static_cast<uintptr_t>(lift_field<uint32_t>(node, 0x2C)));
-        if (it == end) {
-            return;
-        }
-        void* child = reinterpret_cast<void*>(static_cast<uintptr_t>(*it));
-        fn_00567210(self, child, arg2);
-        ++it;
-    }
-}
-} // namespace lift_00567210
-
-// [0x005679D0] sub_005679D0 (95 bytes)
-namespace lift_005679D0 {
-// Known callee 0x00567210: Unknown::visitChildrenRecursive_00567210 (Recursively walks the dword child-pointer list at node+0x28..+0x2C, calling itself on each child with the same second argument.)
-extern void ext_00567210(void* self, void* node, void* arg2);
-extern int mem_00925134;
-
-// @name Unknown::visitChildren_005679D0
-// @class Unknown
-// @summary Calls visitChildrenRecursive_00567210 on every dword entry in the list bounded by this+0x18 (begin) and this+0x1C (end), passing a null second argument.
-// @field Unknown +0x18 DWORD field_0x18
-// @field Unknown +0x1C DWORD field_0x1C
-void fn_005679D0(void* self) {
-    // Pointers are stored as 32-bit dwords in the original image; keep them as DWORD values.
-    auto* base = static_cast<unsigned char*>(self);
-    DWORD cur = *reinterpret_cast<DWORD*>(base + 0x18);
-
-    for (;;) {
-        DWORD end = *reinterpret_cast<DWORD*>(base + 0x1C);
-        if (cur == end) {
-            break;
-        }
-        // Element is a dword node pointer; read it and recurse with a null second argument.
-        DWORD node = *reinterpret_cast<DWORD*>(static_cast<uintptr_t>(cur));
-        ext_00567210(self, reinterpret_cast<void*>(static_cast<uintptr_t>(node)), nullptr);
-        cur += 4;
-    }
-}
-} // namespace lift_005679D0
-
-// [0x0056B850]
-namespace lift_0056B850 {
-// @name getDisplayNameOrPrefixed
-// @summary Returns obj's alternate string if it differs from vfunc_0x24(), otherwise concatenates vfunc_0x24() with global string 0x00B3A9F4.
-// @field Unknown +0x00 void** vtable
-
-
-extern void* ext_00584BD0(void* self);
-
-extern uint32_t mem_00924FB0; // std::operator!=(const std::string&, const std::string&)
-extern uint32_t mem_00924FD0; // std::operator+(std::string*, const std::string&, const std::string&)
-extern uint32_t mem_00924FE0; // std::string::string(const std::string&)
-extern uint8_t  mem_00B3A9F4[];
-
-using vfunc_0x24_t = void* (__thiscall*)(void* self);
-using str_neq_t    = bool (__cdecl*)(const void* a, const void* b);
-using str_copy_t   = void* (__thiscall*)(void* self, const void* other);
-using str_concat_t = void* (__cdecl*)(void* out, const void* a, const void* b);
-
-void* __stdcall fn_0056B850(void* out_str, void* obj) {
-    void** vtable = *reinterpret_cast<void***>(obj);
-    auto vfunc_0x24 = reinterpret_cast<vfunc_0x24_t>(vtable[0x24 / 4]);
-
-    void* base_str = vfunc_0x24(obj);
-    void* alt_str  = ext_00584BD0(obj);
-
-    auto str_neq = reinterpret_cast<str_neq_t>(static_cast<uintptr_t>(mem_00924FB0));
-    if (str_neq(alt_str, base_str)) {
-        void* copy_src = ext_00584BD0(obj);
-        auto str_copy = reinterpret_cast<str_copy_t>(static_cast<uintptr_t>(mem_00924FE0));
-        str_copy(out_str, copy_src);
-        return out_str;
-    }
-
-    void** vtable2 = *reinterpret_cast<void***>(obj);
-    auto vfunc_0x24_2 = reinterpret_cast<vfunc_0x24_t>(vtable2[0x24 / 4]);
-    void* base_str2 = vfunc_0x24_2(obj);
-
-    auto str_concat = reinterpret_cast<str_concat_t>(static_cast<uintptr_t>(mem_00924FD0));
-    str_concat(out_str, base_str2, mem_00B3A9F4);
-    return out_str;
-}
-} // namespace lift_0056B850

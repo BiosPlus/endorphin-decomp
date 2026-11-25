@@ -31,19 +31,6 @@ void fn_007AE0B0(void) {
 }
 } // namespace lift_007AE0B0
 
-// [0x007AE0F0]
-namespace lift_007AE0F0 {
-extern void ext_007AE100(void);
-extern void ext_007AE110(void);
-
-// @name sub_007AE0F0
-// @summary Calls ext_007AE100 and tail-calls ext_007AE110.
-void fn_007AE0F0(void) {
-    ext_007AE100();
-    ext_007AE110();
-}
-} // namespace lift_007AE0F0
-
 // [0x007AA6B0]
 namespace lift_007AA6B0 {
 // @name sub_007AA6B0_initGlobalPtrs

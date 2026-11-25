@@ -126,20 +126,6 @@ uint32_t __fastcall fn_0067F5A0(void* self) {
 }
 } // namespace lift_0067F5A0
 
-// [0x00679A30]
-namespace lift_00679A30 {
-// @name queryPerformanceCounter
-// @summary Calls KERNEL32!QueryPerformanceCounter with the pointer stored at [ecx]
-// @field Unknown +0x00 uint32_t field_0x00
-
-extern uint32_t ext_QueryPerformanceCounter(uint32_t lpPerformanceCount);
-
-uint32_t __thiscall sub_00679A30(uint32_t* self) {
-    uint32_t lpPerformanceCount = self[0];
-    return ext_QueryPerformanceCounter(lpPerformanceCount);
-}
-} // namespace lift_00679A30
-
 // [0x0067ADD0]
 namespace lift_0067ADD0 {
 // @name sleepMs
@@ -155,23 +141,6 @@ void sub_0067ADD0(std::uint32_t dwMilliseconds) {
     fn(dwMilliseconds);
 }
 } // namespace lift_0067ADD0
-
-// [0x00679A40]
-namespace lift_00679A40 {
-// @name sub_00679A40 (QueryPerformanceCounter into *(this) + 8)
-// @summary Reads a pointer-sized value from the object at ecx, offsets it by 8, and passes the result to QueryPerformanceCounter.
-
-// Imported KERNEL32!QueryPerformanceCounter (IAT slot at 0x0092427C).
-extern uint32_t mem_0092427C;
-extern BOOL(__stdcall* ext_QueryPerformanceCounter)(void* lpPerformanceCount);
-
-__declspec(noinline) void __thiscall sub_00679A40(void* self) {
-    // mov eax, [ecx]; add eax, 8; push eax; call [QueryPerformanceCounter]; ret
-    uint32_t base = lift_field<uint32_t>(self, 0);
-    uintptr_t target = static_cast<uintptr_t>(base) + 8u;
-    (void)ext_QueryPerformanceCounter(reinterpret_cast<void*>(target));
-}
-} // namespace lift_00679A40
 
 // [0x00673B80] sub_00673B80 (14 bytes)
 namespace lift_00673B80 {
@@ -349,23 +318,6 @@ void fn_00672490(void* self) {
     fn(child, arg);
 }
 } // namespace lift_00672490
-
-// [0x0067ADE0] sub_0067ADE0 (22 bytes)
-namespace lift_0067ADE0 {
-extern DWORD ext_GetCurrentThreadId(void);
-
-// @name SubObject::IsCurrentThreadOwner
-// @class SubObject
-// @summary Returns 1 if the calling thread matches the owner thread id stored in the object at this+0x0C, else 0.
-// @field SubObject +0x0C void* field_0x0C
-// @field ThreadOwner +0x14 DWORD field_0x14
-uint8_t fn_0067ADE0(void* self) {
-    void* owner = lift_field<void*>(self, 0x0C);
-    DWORD current = ext_GetCurrentThreadId();
-    DWORD ownerThread = lift_field<DWORD>(owner, 0x14);
-    return current == ownerThread ? 1 : 0;
-}
-} // namespace lift_0067ADE0
 
 // [0x0067B390] sub_0067B390 (22 bytes)
 namespace lift_0067B390 {
@@ -557,20 +509,6 @@ int __stdcall fn_0067ADB0(void* self) {
     return 0;
 }
 } // namespace lift_0067ADB0
-
-// [0x0067ECF0] sub_0067ECF0 (30 bytes)
-namespace lift_0067ECF0 {
-extern const char mem_0098C7CC[]; // .rdata "%08x"
-
-// @name Unknown::formatDwordHex (descriptive; owner class not identified)
-// @class Unknown
-// @summary Formats the DWORD at offset 0 of this object as 8-digit lowercase hex into a caller buffer (snprintf "%08x"), callee-cleans 2 stack args.
-// @field Unknown +0x00 DWORD field_0x00
-void fn_0067ECF0(void* self, char* buffer, size_t size) {
-    const DWORD value = lift_field<DWORD>(self, 0x00);
-    std::snprintf(buffer, size, mem_0098C7CC, value);
-}
-} // namespace lift_0067ECF0
 
 // [0x00672410] sub_00672410 (31 bytes)
 namespace lift_00672410 {

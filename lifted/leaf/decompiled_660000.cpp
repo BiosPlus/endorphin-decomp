@@ -94,27 +94,6 @@ void* fn_00661860(void* self, void* arg1, void* arg2) {
 }
 } // namespace lift_00661860
 
-// [0x00662F80]
-namespace lift_00662F80 {
-// @name showInfoMessageBox
-// @summary Shows an information message box: arg1 is the caption, arg2 is the message text, no owner window.
-// (free function, no @class)
-
-// MSVCP80 std::string::c_str (thiscall import thunk at mem_00924FF0)
-// USER32!MessageBoxA (import thunk at mem_009255E0)
-extern int __stdcall ext_MessageBoxA(void* hWnd, const char* lpText, const char* lpCaption, unsigned int uType);
-
-namespace {
-constexpr unsigned int kMbIconInformation = 0x40u;
-}
-
-void showInfoMessageBox(const std::string* caption, const std::string* text) {
-    const char* captionCStr = caption->c_str();
-    const char* textCStr = text->c_str();
-    ext_MessageBoxA(nullptr, textCStr, captionCStr, kMbIconInformation);
-}
-} // namespace lift_00662F80
-
 // [0x006619D0] sub_006619D0 (34 bytes)
 namespace lift_006619D0 {
 // @name Unknown::copyFieldsFrom
@@ -174,22 +153,6 @@ void fn_0066BA00(uint32_t* self) {
 }
 } // namespace lift_0066BA00
 
-// [0x006629B0]
-namespace lift_006629B0 {
-// @name fileExists
-// @summary Checks whether a file exists by calling _stat64i32 on std::string::c_str()
-
-uint32_t __thiscall ext_MSVCP80_std_string_c_str(uint32_t this_ptr);
-int32_t __cdecl ext_MSVCR80__stat64i32(uint32_t path, void* stat_buf);
-
-uint32_t __cdecl sub_006629B0(uint32_t path_str) {
-    uint8_t stat_buf[0x30];
-    uint32_t c_str = ext_MSVCP80_std_string_c_str(path_str);
-    int32_t res = ext_MSVCR80__stat64i32(c_str, stat_buf);
-    return (res == 0) ? 1u : 0u;
-}
-} // namespace lift_006629B0
-
 // [0x006618F0]
 namespace lift_006618F0 {
 // @name sub_006618F0
@@ -204,32 +167,6 @@ uint32_t __thiscall sub_006618F0(void* this_ptr, uint32_t arg1, uint32_t arg2, u
     return fn(inner, this_plus_4, arg1, arg2, arg3);
 }
 } // namespace lift_006618F0
-
-// [0x00661920]
-namespace lift_00661920 {
-extern uint32_t mem_read32(uint32_t addr);
-
-// @name sub_00661920
-// @summary Forwards a 3-argument virtual call to vtable slot 0x2c on the object at this+0x00, prepending this+0x04
-// @field <unknown> +0x00 uint32_t field_0x00
-
-uint32_t __thiscall sub_00661920(uint32_t self, uint32_t arg1, uint32_t arg2, uint32_t arg3) {
-    uint32_t inner = mem_read32(self);
-    uint32_t vtable = mem_read32(inner);
-    uint32_t fn_addr = mem_read32(vtable + 0x2c);
-    using Fn = uint32_t(__thiscall*)(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t);
-    return reinterpret_cast<Fn>(fn_addr)(inner, self + 4, arg1, arg2, arg3);
-}
-} // namespace lift_00661920
-
-// [0x00664B20] sub_00664B20 (37 bytes)
-namespace lift_00664B20 {
-// @name ContainsSubstring
-// @summary Returns true if needle occurs as a substring of haystack (strstr on c_str() of both strings).
-bool fn_00664B20(const std::string& haystack, const std::string& needle) {
-    return std::strstr(haystack.c_str(), needle.c_str()) != nullptr;
-}
-} // namespace lift_00664B20
 
 // [0x00662F50]
 namespace lift_00662F50 {
@@ -315,22 +252,6 @@ uint32_t __thiscall sub_00661710(void* self, uint32_t arg1, uint32_t arg2) {
     return arg1;
 }
 } // namespace lift_00661710
-
-// [0x00664C30] sub_00664C30 (33 bytes)
-namespace lift_00664C30 {
-// @name sub_00664C30
-// @summary Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).
-namespace lift_00497860 {
-extern void ext_00664910(void* self, uint8_t flag);
-
-// @name forwardMakeBoolString
-// @summary Forwards out_str and flag to makeBoolString (0x0046C460) and returns out_str.
-void* fn_00664C30(void* out_str, uint8_t flag) {
-    ext_00664910(out_str, flag);
-    return out_str;
-}
-} // namespace lift_00497860
-} // namespace lift_00664C30
 
 // [0x0066AD10] sub_0066AD10 (33 bytes)
 namespace lift_0066AD10 {
@@ -443,28 +364,6 @@ uint8_t __thiscall sub_00661B10(void* self) {
 }
 } // namespace lift_00661B10
 
-// [0x00662BF0]
-namespace lift_00662BF0 {
-// @name GetCurrentDirectoryString
-// @summary Fills a std::string with the process current directory (GetCurrentDirectoryA into a 260-byte buffer) and returns the output string pointer.
-
-    extern uint32_t mem_00924254; // IAT slot: KERNEL32!GetCurrentDirectoryA
-    extern uint32_t mem_00924FE4; // IAT slot: MSVCP80 basic_string(const char*) ctor
-    extern uint32_t ext_GetCurrentDirectoryA(uint32_t nBufferLength, char* lpBuffer);
-    extern void ext_basic_string_ctor_cstr(void* self, const char* s);
-
-// Lifted from: sub_00662BF0 (cdecl, one stack arg: output std::string*)
-void* sub_00662BF0(void* out) {
-    char buf[0x104 + 4];
-    buf[0x104] = 0;
-    // GetCurrentDirectoryA(0x104, buf)
-    ext_GetCurrentDirectoryA(0x104, buf);
-    // std::string(buf) constructed in place in *out
-    ext_basic_string_ctor_cstr(out, buf);
-    return out;
-}
-} // namespace lift_00662BF0
-
 // [0x0066A720] sub_0066A720 (63 bytes)
 namespace lift_0066A720 {
 // Known callee 0x006A611E: thunk_MFC80_ord_265 (IAT jump thunk forwarding to MFC80!ord_265.)
@@ -511,29 +410,6 @@ char* sub_00664B50(const char* first, const char* last, char* dest) {
     return dest;
 }
 } // namespace lift_00664B50
-
-// [0x00662B20]
-namespace lift_00662B20 {
-// @name appendTrailingBackslash
-// @summary Ensures the std::string at arg2 ends with '\\' (appending one in place if needed), then returns a copy of it through the hidden return slot arg1.
-// @field none (object is only passed to std::string members; no direct field offsets accessed)
-
-// std::string members, reached through MSVCP80 thunks (IAT slots 0x924EAC, 0x92500C, 0x924EC0, 0x924FE0).
-extern size_t ext_string_size(void* str);                  // size() const
-extern char*  ext_string_index(void* str, size_t pos);     // operator[](size_t) -> char&
-extern void   ext_string_append_char(void* str, char ch);  // operator+=(char) -> basic_string&
-extern void   ext_string_copy_construct(void* dst, const void* src); // basic_string(const basic_string&)
-
-// Hidden return slot convention: ret receives the result; ret is also returned.
-void* fn_00662B20(void* ret, void* path) {
-    size_t last = ext_string_size(path) - 1;
-    if (*ext_string_index(path, last) != '\\') {
-        ext_string_append_char(path, '\\');
-    }
-    ext_string_copy_construct(ret, path);
-    return ret;
-}
-} // namespace lift_00662B20
 
 // [0x00660210]
 namespace lift_00660210 {
@@ -590,53 +466,6 @@ void* fn_00662E70(void* out, const void* in) {
 }
 } // namespace lift_00662E70
 
-// [0x006648C0] sub_006648C0 (72 bytes)
-namespace lift_006648C0 {
-extern const char mem_009879C8[];
-
-// @name Unknown::FormatIntAndDoubleToString
-// @class Unknown
-// @summary Formats an int and a double with the format string at 0x009879C8 into a 50-byte buffer and constructs the output std::string in place from it.
-// @field Unknown +0x00 uint32_t vtable
-std::string* fn_006648C0(std::string* out, double value, int32_t intArg) {
-    char buf[50];
-    buf[49] = '\0';
-    std::snprintf(buf, sizeof(buf) - 1, mem_009879C8, intArg, value);
-    new (out) std::string(buf);
-    return out;
-}
-} // namespace lift_006648C0
-
-// [0x006630C0] sub_006630C0 (75 bytes)
-namespace lift_006630C0 {
-// MSVCP80 std::string helpers (thiscall in the original binary, wrapped here).
-extern uint32_t ext_std_string_size(const void* str);
-extern const char* ext_std_string_at(const void* str, uint32_t index);
-
-extern int mem_00924EAC;
-extern int mem_00924FFC;
-extern int mem_00A9FB8C;
-
-// @name IsTailSignatureMatch_006630C0
-// @class (none)
-// @summary Returns true if the string is at least 20 chars long and its last 16 chars equal the 16-byte signature at mem_00A9FB8C.
-bool fn_006630C0(const void* str) {
-    const uint32_t size = ext_std_string_size(str);
-    if (size < 0x14) {
-        return false;
-    }
-
-    const uint8_t* signature = reinterpret_cast<const uint8_t*>(&mem_00A9FB8C);
-    for (uint32_t i = 0; i < 0x10; ++i) {
-        const char* ch = ext_std_string_at(str, size + i - 0x10);
-        if (static_cast<uint8_t>(*ch) != signature[i]) {
-            return false;
-        }
-    }
-    return true;
-}
-} // namespace lift_006630C0
-
 // [0x00665B80]
 namespace lift_00665B80 {
 // @name Unknown::ReleaseElements_00665B80
@@ -681,31 +510,6 @@ void __thiscall fn_00665B80(void* self) {
     }
 }
 } // namespace lift_00665B80
-
-// [0x00666930] sub_00666930 (77 bytes)
-namespace lift_00666930 {
-// @name sub_00666930
-// @summary Auto-lifted identical-shape clone of 0x004757F0 (sub_0047A010).
-namespace lift_004757F0 {
-// Known callee 0x00672D10: sub_00672D10 (Auto-lifted identical-shape clone of 0x004026E0 (StringArray::ReleaseElements).)
-extern void ext_006668B0(void* self);
-// Imported MSVC CRT slot for std::basic_string<char>::~basic_string (used via explicit dtor call below).
-extern int mem_00924FF4;
-
-// @name Unknown::Dtor_004757F0
-// @class Unknown
-// @summary Destructor body: releases the StringArray at +0x1C, then destroys the std::string at +0x00.
-// @field Unknown +0x00 std::string field_0x00
-// @field Unknown +0x1C StringArray field_0x1C
-void fn_00666930(void* self) {
-    // ecx+0x1c is passed as `this` to the StringArray release routine.
-    ext_006668B0(static_cast<unsigned char*>(self) + 0x1C);
-    // The original calls the MSVC CRT string dtor through mem_00924FF4 on `this`.
-    using StdString = std::string;
-    reinterpret_cast<StdString*>(self)->~StdString();
-}
-} // namespace lift_004757F0
-} // namespace lift_00666930
 
 // [0x00662A50] sub_00662A50 (83 bytes)
 namespace lift_00662A50 {
@@ -819,34 +623,6 @@ void __stdcall sub_006659F0(uint32_t first_cont, uint32_t first_node, uint32_t l
 }
 } // namespace lift_006659F0
 
-// [0x00660180] sub_00660180 (91 bytes)
-namespace lift_00660180 {
-// 32-byte element: opaque leading payload (0x1c bytes, a string-like header in the
-// original MSVC layout) followed by a 32-bit key at +0x1c.
-struct Elem {
-    uint8_t head[0x1c];
-    int32_t key;  // +0x1c
-};
-static_assert(sizeof(Elem) == 0x20, "Elem must be 32 bytes");
-
-// Sift-down helper: (first, index, count, value-by-value).
-extern void ext_0065FE50(Elem* first, ptrdiff_t index, ptrdiff_t count, Elem value);
-
-// @name makeHeapElements32
-// @summary Heapify a range of 32-byte elements: sift down each internal node from count/2-1 to 0, passing a copy of the node by value to ext_0065FE50.
-// @field Unknown +0x1c int32_t field_0x1c
-void fn_00660180(Elem* first, Elem* last) {
-    const ptrdiff_t count = last - first;
-    if (count / 2 <= 0) {
-        return;
-    }
-    for (ptrdiff_t i = count / 2 - 1; i >= 0; --i) {
-        Elem value = first[i];
-        ext_0065FE50(first, i, count, value);
-    }
-}
-} // namespace lift_00660180
-
 // [0x00665D20] sub_00665D20 (76 bytes)
 namespace lift_00665D20 {
 extern void ext_004369D0(void* self);
@@ -916,33 +692,6 @@ void fn_00665D70(void* self) {
     } while (cur != head);
 }
 } // namespace lift_00665D70
-
-// [0x00666BA0] sub_00666BA0 (82 bytes)
-namespace lift_00666BA0 {
-// @name sub_00666BA0
-// @summary Auto-lifted identical-shape clone of 0x006998D0 (copyStringAndRecord).
-namespace lift_006998D0 {
-// Known callee 0x00699870: Unknown::copyRecordWithOptionalResolve (Copies a 16-byte record from src into self; when src+0xC is non-null, calls vtable slot 0x70 on it to fetch the +0x8 value, otherwise +0x8 is zeroed. Returns self.)
-extern void* ext_006669B0(void* self, int edx_unused, const void* src);
-
-// MSVCP80 std::string copy constructor, reached through the import slot mem_00924FE0.
-extern void ext_std_string_copy_ctor(void* self, const void* src);
-extern int mem_00924FE0;
-
-// @name copyStringAndRecord
-// @summary Copy-constructs the leading std::string from src, then copies the 16-byte record at +0x1C from src into this; returns this.
-// @field Unknown +0x1C uint8_t field_0x1c[16]
-extern void* __fastcall fn_00666BA0(void* self, int edx_unused, const void* src) {
-    ext_std_string_copy_ctor(self, src);
-
-    auto* dst_record = static_cast<uint8_t*>(self) + 0x1C;
-    const auto* src_record = static_cast<const uint8_t*>(src) + 0x1C;
-    ext_006669B0(dst_record, 0, src_record);
-
-    return self;
-}
-} // namespace lift_006998D0
-} // namespace lift_00666BA0
 
 // [0x0066BD00] sub_0066BD00 (34 bytes)
 namespace lift_0066BD00 {
@@ -2148,39 +1897,6 @@ void __thiscall sub_00663060(void* self) {
 }
 } // namespace lift_00663060
 
-// [0x00660710] sub_00660710 (95 bytes)
-namespace lift_00660710 {
-// Element type handled by the loop: 32 bytes (0x20), sized from the sar 5 index math.
-struct SortElem32 {
-    std::uint8_t bytes[0x20];
-};
-
-extern void ext_0065FF50(void* first, void* hole, void* hole2, SortElem32 value);
-
-// @name SortHeapTail_00660710
-// @summary Sort-heap style tail loop over 32-byte elements: repeatedly saves the element at the shrinking end and calls ext_0065FF50 to sift it into the heap rooted at first.
-// @field UnknownElem +0x1c int field_0x1c
-void fn_00660710(std::uint8_t* last, std::uint8_t* first) {
-    const std::ptrdiff_t n = (last - first) >> 5;
-    if (n <= 1) {
-        return;
-    }
-
-    for (std::ptrdiff_t k = 1;; ++k) {
-        std::uint8_t* hole = last - 0x20 * k;
-
-        SortElem32 value;
-        std::memcpy(value.bytes, hole, sizeof(value.bytes));
-
-        ext_0065FF50(first, hole, hole, value);
-
-        if (n - k <= 1) {
-            break;
-        }
-    }
-}
-} // namespace lift_00660710
-
 // [0x00665990]
 namespace lift_00665990 {
 extern void (*mem_00925134)(void);
@@ -2221,28 +1937,6 @@ extern void* __thiscall fn_00665990(void* self, void* ret_iter, void* cont, void
     return out_iter;
 }
 } // namespace lift_00665990
-
-// [0x00662AB0]
-namespace lift_00662AB0 {
-// @name makeTempFileName
-// @summary Gets the temp directory, creates a unique temp file name using the global prefix, and constructs the resulting path string into the caller-supplied std::string.
-
-DWORD __stdcall ext_GetTempPathA(DWORD nBufferLength, LPSTR lpBuffer);
-UINT __stdcall ext_GetTempFileNameA(LPCSTR lpPathName, LPCSTR lpPrefixString, UINT uUnique, LPSTR lpTempFileName);
-
-extern std::string mem_00B5925C;
-
-std::string* __cdecl fn_00662AB0(std::string* out) {
-    char tempPath[0x104];
-    char tempName[0x104];
-
-    ext_GetTempPathA(0x104, tempPath);
-    ext_GetTempFileNameA(tempPath, mem_00B5925C.c_str(), 0, tempName);
-
-    new (out) std::string(tempName);
-    return out;
-}
-} // namespace lift_00662AB0
 
 // [0x00664CD0] sub_00664CD0 (103 bytes)
 namespace lift_00664CD0 {
@@ -2406,48 +2100,6 @@ void fn_00667030(void* self) {
     lift_field<void*>(self, 0x04) = eax;
 }
 } // namespace lift_00667030
-
-// [0x006678A0]
-namespace lift_006678A0 {
-// Known callee 0x00667F10: SearchableMap<FileProject::File, GetNameFromAttribute<FileProject::File>>::vfunc_0
-extern void ext_00667F10();
-// Known callee 0x00668D80: SearchableMap<NM::Vector4, GetNameFromAttribute<NM::Vector4>>::vfunc_0
-extern void ext_00668D80();
-
-// @name lookupIndexedSearchableMapValue_006678A0
-// @summary Indexes a 16-byte-stride table at self, looks up key in the SearchableMap found there, and returns the first value (or result of a second lookup when arg3+0x14 is nonzero); returns null on miss.
-// @field Unknown +0x14 int32_t field_0x14
-// @field Unknown +0x0C uint32_t field_0x0C
-// @field Unknown +0x08 uint8_t* field_0x08
-// @field Unknown +0x00 uint8_t* field_0x00
-// @field Unknown +0x28 uint8_t field_0x28
-void* fn_006678A0(void* self, uint32_t index, const void* key, void* arg3) {
-    using LookupFn = void* (*)(void*, const void*);
-    auto lookupVector4 = reinterpret_cast<LookupFn>(ext_00668D80);
-    auto lookupFile = reinterpret_cast<LookupFn>(ext_00667F10);
-
-    uint8_t* entry = static_cast<uint8_t*>(self) + (static_cast<size_t>(index) << 4) + 8;
-    void* map = lookupVector4(entry, key);
-    if (map == nullptr) {
-        return nullptr;
-    }
-
-    if (lift_field<int32_t>(arg3, 0x14) != 0) {
-        return lookupFile(map, arg3);
-    }
-
-    if (lift_field<uint32_t>(map, 0x0C) == 0) {
-        return nullptr;
-    }
-
-    uint8_t* head = lift_field<uint8_t*>(map, 0x08);
-    uint8_t* first = lift_field<uint8_t*>(head, 0x00);
-    if (first == head) {
-        std::abort();
-    }
-    return first + 0x28;
-}
-} // namespace lift_006678A0
 
 // [0x0066E050]
 namespace lift_0066E050 {
