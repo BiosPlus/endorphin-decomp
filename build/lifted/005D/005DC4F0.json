@@ -1,0 +1,13 @@
+{
+  "va": "0x005DC4F0",
+  "size": 30,
+  "orig_symbol": "sub_005DC4F0",
+  "src_path": "src/leaf/decompiled_5D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_5D0000.cpp",
+  "name": "sub_005DC4F0",
+  "signature": "void fn_005DC4F0(uint32_t* out, uint32_t value)",
+  "summary": "Auto-lifted identical-shape clone of 0x005B4030 (storeValueWithStaticSingleton).",
+  "status": "lifted",
+  "lifted_by": "script:auto_lift_clone",
+  "lifted_at": "2026-11-25T03:10:50Z"
+}

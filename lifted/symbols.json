@@ -30867,6 +30867,18 @@
     "summary": "Auto-lifted identical-shape clone of 0x004B3110 (ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, getXMin, 0\u003e::vfunc_3).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x005DA7C0": {
+    "name": "sub_005DA7C0",
+    "signature": "void* fn_005DA7C0()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B120 (sub_0064B120).",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
+  "0x005DA820": {
+    "name": "sub_005DA820",
+    "signature": "void* fn_005DA820()",
+    "summary": "Auto-lifted identical-shape clone of 0x0064B120 (sub_0064B120).",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
   "0x005DA9C0": {
     "name": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, getEndFrame\u003e::vfunc_0",
     "class": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0\u003e",
@@ -31033,6 +31045,18 @@
     "signature": "extern \"C\" void __fastcall fn_005DC420(void* self)",
     "summary": "Member forwarding thunk: loads subobject pointer at +0x44 and tail-calls sub_005DA190.",
     "lifted_path": "lifted/leaf/tiny_5D0000.cpp"
+  },
+  "0x005DC4D0": {
+    "name": "sub_005DC4D0",
+    "signature": "void fn_005DC4D0(uint32_t* out, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B4030 (storeValueWithStaticSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
+  },
+  "0x005DC4F0": {
+    "name": "sub_005DC4F0",
+    "signature": "void fn_005DC4F0(uint32_t* out, uint32_t value)",
+    "summary": "Auto-lifted identical-shape clone of 0x005B4030 (storeValueWithStaticSingleton).",
+    "lifted_path": "lifted/leaf/decompiled_5D0000.cpp"
   },
   "0x005DC510": {
     "name": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getStartFrame(void) const, int, \u0026public: void __thiscall NMData::VideoPlaneData::setStartFrame(int)\u003e::vfunc_41",
