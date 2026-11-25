@@ -761,3 +761,18 @@ void fn_00559A30(void* self) {
     ext_006A6DD2();
 }
 } // namespace lift_00559A30
+
+// [0x0055B970] sub_0055B970 (17 bytes)
+namespace lift_0055B970 {
+// Known callee 0x0055B880: sub_0055B880 (Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).)
+extern void ext_0055B880(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exceptionObject, void* throwInfo);
+
+// @name ReleaseHandleAndThrowNull
+// @summary Releases the handle held in the caller's stack slot, then raises a C++ exception with null arguments.
+void fn_0055B970(void* self) {
+    ext_0055B880(self);
+    ext_006A6DD2(nullptr, nullptr);
+}
+} // namespace lift_0055B970

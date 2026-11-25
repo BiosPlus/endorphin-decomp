@@ -20289,6 +20289,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00569970 (Unknown::ReleaseHandleAndClear).",
     "lifted_path": "lifted/leaf/decompiled_550000.cpp"
   },
+  "0x0055B970": {
+    "name": "ReleaseHandleAndThrowNull",
+    "signature": "void fn_0055B970(void* self)",
+    "summary": "Releases the handle held in the caller's stack slot, then raises a C++ exception with null arguments.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x0055BBD0": {
     "name": "ExportDialog::vfunc_0",
     "class": "ExportDialog",
