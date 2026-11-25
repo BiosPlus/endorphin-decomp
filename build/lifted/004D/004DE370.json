@@ -1,0 +1,27 @@
+{
+  "va": "0x004DE370",
+  "size": 95,
+  "orig_symbol": "sub_004DE370",
+  "src_path": "src/leaf/decompiled_4D0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4D0000.cpp",
+  "name": "FillRangeWithElement",
+  "signature": "void fn_004DE370(void* begin, void* end, void* src)",
+  "summary": "Assigns the 8-byte element at src to every 8-byte slot in [begin, end), releasing each slot's previous object through its vtable.",
+  "fields": [
+    {
+      "class": "Element",
+      "offset": "+0x0",
+      "type": "uint32_t",
+      "name": "field_0x00"
+    },
+    {
+      "class": "Element",
+      "offset": "+0x4",
+      "type": "void*",
+      "name": "field_0x04"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:27:55Z"
+}

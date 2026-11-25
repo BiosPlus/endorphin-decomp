@@ -332,3 +332,47 @@ void* fn_004DE720() {
     return &mem_00AE6414;
 }
 } // namespace lift_004DE720
+
+// [0x004DE370] sub_004DE370 (95 bytes)
+namespace lift_004DE370 {
+// @name FillRangeWithElement
+// @summary Assigns the 8-byte element at src to every 8-byte slot in [begin, end), releasing each slot's previous object through its vtable.
+// @field Element +0x00 uint32_t field_0x00
+// @field Element +0x04 void* field_0x04
+void fn_004DE370(void* begin, void* end, void* src) {
+    // Each element is 8 bytes: a 4-byte value at +0 and an object pointer at +4.
+    // Object vtable slots used: 30 (0x78) = release old object, 28 (0x70) = fetch value.
+    // Calling convention is mapped to an explicit `this` first argument.
+    if (begin == end) {
+        return;
+    }
+
+    uint8_t* s = static_cast<uint8_t*>(src);
+    for (uint8_t* d = static_cast<uint8_t*>(begin); d != static_cast<uint8_t*>(end); d += 8) {
+        if (d == s) {
+            continue;
+        }
+
+        // Release the object previously held by this slot.
+        void* oldObj = lift_field<void*>(d, 4);
+        if (oldObj) {
+            void** vt = *static_cast<void***>(oldObj);
+            auto release = reinterpret_cast<void (*)(void*, void*)>(vt[30]);
+            release(oldObj, d);
+        }
+
+        // Share the source object.
+        void* srcObj = lift_field<void*>(s, 4);
+        lift_field<void*>(d, 4) = srcObj;
+
+        // Fetch the value from the source object into the slot's first dword.
+        uint32_t value = 0;
+        if (srcObj) {
+            void** vt = *static_cast<void***>(srcObj);
+            auto fetch = reinterpret_cast<void (*)(void*, uint32_t*, void*)>(vt[28]);
+            fetch(srcObj, &value, s);
+        }
+        lift_field<uint32_t>(d, 0) = value;
+    }
+}
+} // namespace lift_004DE370

@@ -15924,6 +15924,12 @@
     "summary": "Copies a 64-byte record from the source pointer into self+0x38, then calls the object at self+0x30 (vtable slot 5) with the global mem_00B40640 and forwards the returned value to ext_0067E990 on self+0x38.",
     "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
   },
+  "0x004DE370": {
+    "name": "FillRangeWithElement",
+    "signature": "void fn_004DE370(void* begin, void* end, void* src)",
+    "summary": "Assigns the 8-byte element at src to every 8-byte slot in [begin, end), releasing each slot's previous object through its vtable.",
+    "lifted_path": "lifted/leaf/decompiled_4D0000.cpp"
+  },
   "0x004DE440": {
     "name": "ComputeRangeCountWithBias",
     "signature": "int32_t fn_004DE440(void* self)",
