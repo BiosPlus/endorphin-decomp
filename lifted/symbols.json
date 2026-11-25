@@ -51475,6 +51475,12 @@
     "summary": "Takes the next index from the counter at +0x16C, passes the index to the object in arg2, then stores arg2 into the slot returned by the sub-object at +0xB0 for arg1.",
     "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
   },
+  "0x006A8840": {
+    "name": "sub_006A8840",
+    "signature": "extern \"C\" uint32_t __thiscall fn_006A8840(void* self, uint32_t arg0)",
+    "summary": "Looks up a string key in the map at +0xb0, destroys the string argument, and returns the looked-up value.",
+    "lifted_path": "lifted/leaf/decompiled_6A0000.cpp"
+  },
   "0x006A88A0": {
     "name": "sub_006A88A0",
     "class": "(none)",

@@ -716,3 +716,33 @@ uint32_t fn_006A8A00(void* self, uint32_t a1, uint32_t a2, uint32_t a3) {
     }
 }
 } // namespace lift_006A8A00
+
+// [0x006A8840]
+namespace lift_006A8840 {
+// @name sub_006A8840
+// @summary Looks up a string key in the map at +0xb0, destroys the string argument, and returns the looked-up value.
+// @field sub_006A8840 +0xb0 uintptr_t field_0xb0
+
+
+extern void fn_0087274E(void);
+extern uint32_t mem_00924300;
+extern uint32_t mem_009242F4;
+
+typedef uint32_t (__thiscall *mfc_ord876_t)(void* self);
+typedef void (__thiscall *mfc_ord4066_t)(void* self, uint32_t key, uint32_t* out_val);
+typedef void (__thiscall *mfc_ord578_t)(void* self);
+
+extern uint32_t __thiscall fn_006A8840(void* self, uint32_t arg0) {
+    uint32_t result = 0;
+    auto ord876 = reinterpret_cast<mfc_ord876_t>(static_cast<uintptr_t>(mem_00924300));
+    uint32_t key = ord876(&arg0);
+
+    auto ord4066 = reinterpret_cast<mfc_ord4066_t>(&fn_0087274E);
+    ord4066(static_cast<uint8_t*>(self) + 0xb0, key, &result);
+
+    auto ord578 = reinterpret_cast<mfc_ord578_t>(static_cast<uintptr_t>(mem_009242F4));
+    ord578(&arg0);
+
+    return result;
+}
+} // namespace lift_006A8840
