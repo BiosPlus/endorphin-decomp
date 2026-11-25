@@ -53352,8 +53352,8 @@
   "0x00702A00": {
     "name": "Unknown::FillVec3FromAccessors",
     "class": "Unknown",
-    "signature": "extern \"C\" double* __stdcall fn_00702A00(double* out)",
-    "summary": "Fills a 3-double output buffer with float values fetched via accessor chains off a singleton-like object.",
+    "signature": "extern \"C\" double* fn_00702A00(double* out)",
+    "summary": "Fills a 3-double output buffer with float values fetched via accessor chains off a shared base object.",
     "lifted_path": "lifted/leaf/decompiled_700000.cpp"
   },
   "0x00702AA0": {
