@@ -18472,6 +18472,13 @@
     "summary": "MSVC scalar deleting destructor: calls sub_005052F0 and frees memory when (flags \u0026 1) is set.",
     "lifted_path": "lifted/NMData/auto_tiny.cpp"
   },
+  "0x00505360": {
+    "name": "UnknownClass::operator=",
+    "class": "UnknownClass",
+    "signature": "uint32_t __thiscall sub_00505360(uint32_t self, uint32_t other)",
+    "summary": "Copy assignment operator copying a string, two 32-bit fields, and ten floats",
+    "lifted_path": "lifted/leaf/decompiled_500000.cpp"
+  },
   "0x00505510": {
     "name": "ExprParser::ReadMethodType\u003cInterpreter\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e",
@@ -22840,6 +22847,13 @@
     "summary": "Returns true if the string argument equals any of the 7 const char* entries in the table at mem_00A44BB8.",
     "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
+  "0x00540D60": {
+    "name": "Vec3::normalize",
+    "class": "Vec3",
+    "signature": "Vec3* __fastcall fn_00540D60(Vec3* self)",
+    "summary": "Normalizes a 3D vector in place if its length is non-zero and returns this.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
+  },
   "0x00540DD0": {
     "name": "SetRectAndCallSize",
     "class": "Unknown",
@@ -23723,6 +23737,13 @@
     "signature": "extern \"C\" void __thiscall fn_0054C490(void* self)",
     "summary": "Walks the element pointer vector at +0x18..+0x1C and calls virtual slot 24 (byte offset 0x60) on each element.",
     "lifted_path": "lifted/templates/ManagedDisplayList.cpp"
+  },
+  "0x0054C570": {
+    "name": "Unknown::ctor_0054C570",
+    "class": "Unknown",
+    "signature": "void* fn_0054C570(void* self)",
+    "summary": "Constructs the object, initializes base and embedded subobject, and invokes subobject virtual init.",
+    "lifted_path": "lifted/leaf/decompiled_540000.cpp"
   },
   "0x0054C6C0": {
     "name": "RenderableList::vfunc_0",
@@ -70495,6 +70516,12 @@
     "name": "bytesToHex",
     "signature": "void __cdecl sub_00860E90(char* dst, const uint8_t* src, int32_t len)",
     "summary": "Converts a byte buffer of given length into a null-terminated hex string.",
+    "lifted_path": "lifted/leaf/decompiled_860000.cpp"
+  },
+  "0x00860EF0": {
+    "name": "appendDecimalU8",
+    "signature": "char* fn_00860EF0(char* dst, std::uint8_t value)",
+    "summary": "Appends the decimal text of an unsigned byte (no leading zeros, \"0\" for zero) to dst via strcat; returns dst.",
     "lifted_path": "lifted/leaf/decompiled_860000.cpp"
   },
   "0x00862970": {

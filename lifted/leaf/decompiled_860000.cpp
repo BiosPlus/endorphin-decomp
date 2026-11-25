@@ -1,5 +1,6 @@
 // Lifted C++ translation unit: lifted/leaf/decompiled_860000.cpp
 #include "lift_compat.h"
+#include <cstdint>
 
 // [0x0086086B] sub_0086086B (5 bytes)
 // @name sub_0086086B
@@ -986,3 +987,33 @@ uint32_t fn_0086CDB0(uint32_t bufPtr) {
     return 0;
 }
 } // namespace lift_0086CDB0
+
+// [0x00860EF0]
+namespace lift_00860EF0 {
+// @name appendDecimalU8
+// @summary Appends the decimal text of an unsigned byte (no leading zeros, "0" for zero) to dst via strcat; returns dst.
+
+extern char* ext_0085E9E0(char* dst, const char* src);
+
+char* fn_00860EF0(char* dst, std::uint8_t value) {
+    char buf[4];
+    unsigned v = value;
+    int n = 0;
+
+    unsigned hundreds = v / 100u;
+    if (hundreds != 0) {
+        buf[n++] = static_cast<char>('0' + hundreds);
+        v %= 100u;
+    }
+
+    unsigned tens = v / 10u;
+    if (tens != 0 || n != 0) {
+        buf[n++] = static_cast<char>('0' + tens);
+    }
+
+    buf[n++] = static_cast<char>('0' + v % 10u);
+    buf[n] = '\0';
+
+    return ext_0085E9E0(dst, buf);
+}
+} // namespace lift_00860EF0

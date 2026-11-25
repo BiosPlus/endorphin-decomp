@@ -1,0 +1,13 @@
+{
+  "va": "0x00860EF0",
+  "size": 108,
+  "orig_symbol": "sub_00860EF0",
+  "src_path": "src/leaf/decompiled_860000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_860000.cpp",
+  "name": "appendDecimalU8",
+  "signature": "char* fn_00860EF0(char* dst, std::uint8_t value)",
+  "summary": "Appends the decimal text of an unsigned byte (no leading zeros, \"0\" for zero) to dst via strcat; returns dst.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T03:57:30Z"
+}
