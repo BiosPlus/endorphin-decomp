@@ -1470,3 +1470,25 @@ void fn_00555100(void* dst, const void* end, const void* src) {
     } while (p != last);
 }
 } // namespace lift_00555100
+
+// [0x0055E8E0] sub_0055E8E0 (95 bytes)
+namespace lift_0055E8E0 {
+// Known callee 0x0066AD10: sub_0066AD10 (Auto-lifted identical-shape clone of 0x00497860 (forwardMakeBoolString).)
+extern void* ext_0066AD10(void* out_str, uint8_t flag);
+// Known callee 0x006A6C87: sub_006A6C87 (18B), registers a one-time callback/destructor.
+extern void ext_006A6C87(void* callback);
+extern int mem_00B39908;
+extern int mem_00B398EC;
+
+// @name GetOnceInitString_0055E8E0
+// @summary One-time initializer: on first call, builds the string at mem_00B398EC and registers its cleanup; always returns its address.
+void* fn_0055E8E0() {
+    // Guard bit 0 of mem_00B39908 marks the one-time initialization.
+    if ((mem_00B39908 & 1) == 0) {
+        mem_00B39908 |= 1;
+        ext_0066AD10(&mem_00B398EC, static_cast<uint8_t>(0xA85538u));
+        ext_006A6C87(reinterpret_cast<void*>(uintptr_t{0x0091C0B0u}));
+    }
+    return &mem_00B398EC;
+}
+} // namespace lift_0055E8E0

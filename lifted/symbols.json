@@ -24214,6 +24214,12 @@
     "summary": "Auto-lifted identical-shape clone of 0x00401AF0 (FindPredecessorOfFlagged).",
     "lifted_path": "lifted/leaf/tiny_550000.cpp"
   },
+  "0x0055E8E0": {
+    "name": "GetOnceInitString_0055E8E0",
+    "signature": "void* fn_0055E8E0()",
+    "summary": "One-time initializer: on first call, builds the string at mem_00B398EC and registers its cleanup; always returns its address.",
+    "lifted_path": "lifted/leaf/decompiled_550000.cpp"
+  },
   "0x0055E940": {
     "name": "copyVec4Range",
     "signature": "void copyVec4Range(const float* srcBegin, const float* srcEnd, float* dst)",
