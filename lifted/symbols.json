@@ -13795,6 +13795,12 @@
     "summary": "Calls initStaticObjectOnce_004C6010 and writes its result and a second argument into the first argument's buffer.",
     "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
   },
+  "0x004C6380": {
+    "name": "storeValueAndStaticObjectPtr_004C6380",
+    "signature": "void fn_004C6380(uint32_t* dst, uint32_t value)",
+    "summary": "Calls initStaticObjectOnce_004C6070 and writes its result and a second argument into the first argument's buffer.",
+    "lifted_path": "lifted/leaf/decompiled_4C0000.cpp"
+  },
   "0x004C6590": {
     "name": "NMData::ForceEventData::vfunc_3_off_158",
     "class": "NMData::ForceEventData",

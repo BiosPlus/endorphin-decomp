@@ -1,0 +1,13 @@
+{
+  "va": "0x004C6380",
+  "size": 30,
+  "orig_symbol": "sub_004C6380",
+  "src_path": "src/leaf/decompiled_4C0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_4C0000.cpp",
+  "name": "storeValueAndStaticObjectPtr_004C6380",
+  "signature": "void fn_004C6380(uint32_t* dst, uint32_t value)",
+  "summary": "Calls initStaticObjectOnce_004C6070 and writes its result and a second argument into the first argument's buffer.",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T02:34:06Z"
+}

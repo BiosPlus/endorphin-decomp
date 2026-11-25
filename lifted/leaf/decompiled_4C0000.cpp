@@ -631,3 +631,18 @@ void fn_004C2270(DWORD* dst, DWORD value) {
     dst[1] = static_cast<DWORD>(reinterpret_cast<uintptr_t>(obj));
 }
 } // namespace lift_004C2270
+
+// [0x004C6380]
+namespace lift_004C6380 {
+// @name storeValueAndStaticObjectPtr_004C6380
+// @summary Calls initStaticObjectOnce_004C6070 and writes its result and a second argument into the first argument's buffer.
+
+extern void* ext_004C6070(void);
+
+// dst[0] = value; dst[1] = (uint32_t)initStaticObjectOnce_004C6070();
+void fn_004C6380(uint32_t* dst, uint32_t value) {
+    void* obj = ext_004C6070();
+    dst[0] = value;
+    dst[1] = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(obj));
+}
+} // namespace lift_004C6380
