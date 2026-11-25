@@ -50694,3 +50694,32 @@ void fn_0046E2B0(void* self) {
     ext_006A6DD2(exception_object, mem_009DEC1C);
 }
 } // namespace lift_0046E2B0
+
+// [0x004A2930] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>::vfunc_5 (55 bytes)
+namespace lift_004A2930 {
+// Known callee 0x0046C3C0: DerivedException::DerivedException (Constructs an ExceptionWithMessage-derived exception with a fixed message string and installs its vtable.)
+extern void* ext_0046C3C0(void* self);
+// Known callee 0x0046C4E0: ExceptionWithMessage::throwDefaultMessage_0046C4E0 (Builds a default-message ExceptionWithMessage on the stack and throws it via _CxxThrowException.)
+// Call site pushes one byte argument (the bool result of ext_0049AA60).
+extern void ext_0046C4E0(uint8_t value);
+// Unresolved helper; returns the bool result of the drawVariables-related check.
+extern uint8_t ext_0049AA60(void* self);
+// Known callee 0x006A6DD2: thunk_MSVCR80__CxxThrowException (IAT jump thunk forwarding to MSVCR80!_CxxThrowException.)
+extern void ext_006A6DD2(void* exceptionObject, const void* throwInfo);
+extern int mem_009DEC1C;
+
+// @name ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawVariables, 0>::vfunc_5
+// @class ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawVariables, 0>
+// @summary Throws an exception; if the stored pointer is non-null, first evaluates it via ext_0049AA60 and throws with that bool result, otherwise throws a DerivedException.
+// @field ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, drawVariables, 0> +0x00 void* field_0x00
+void fn_004A2930(void* self) {
+    void* inner = lift_field<void*>(self, 0x00);
+    if (inner != nullptr) {
+        uint8_t result = ext_0049AA60(inner);
+        ext_0046C4E0(result);  // always throws
+    }
+    alignas(16) unsigned char exc[16] = {};
+    ext_0046C3C0(exc);
+    ext_006A6DD2(exc, &mem_009DEC1C);  // always throws
+}
+} // namespace lift_004A2930

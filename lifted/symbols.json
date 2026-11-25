@@ -12341,6 +12341,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004A2930": {
+    "name": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, drawVariables, 0\u003e::vfunc_5",
+    "class": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, drawVariables, 0\u003e",
+    "signature": "void fn_004A2930(void* self)",
+    "summary": "Throws an exception; if the stored pointer is non-null, first evaluates it via ext_0049AA60 and throws with that bool result, otherwise throws a DerivedException.",
+    "lifted_path": "lifted/templates/ReadMethodType.cpp"
+  },
   "0x004A2AD0": {
     "name": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties\u003e::vfunc_41 (DoubleWithProperties::getValue)",
     "class": "ExprParser::ReadWriteMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, float, \u0026public: void __thiscall DoubleWithProperties::setValue(float)\u003e",
