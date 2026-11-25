@@ -1480,3 +1480,49 @@ void fn_00596A70(void* ret, void* first_head, void* first_node,
     }
 }
 } // namespace lift_00596A70
+
+// [0x0059FDE0] sub_0059FDE0 (88 bytes)
+namespace lift_0059FDE0 {
+// Known callee 0x00673C20: advanceTreeIterator (Advances a red-black tree iterator to its in-order successor: goes to the leftmost node of the right subtree if one exists, otherwise climbs parents while the current node is a right child; reports an invalid parameter when the iterator is null or already at the end.)
+extern void ext_00673C20(void* iter);
+// IAT slot holding MSVCR80!_invalid_parameter_noinfo (function pointer, not data).
+extern int mem_00925134;
+
+static inline void invalid_parameter_noinfo() {
+    (*reinterpret_cast<void (**)()>(&mem_00925134))();
+}
+
+// @name copyStringRangeFromTreeIterator
+// @summary Walks a red-black tree range from (container, node) up to endNode, assigning each node's std::string at +0x0C into consecutive 0x1C-byte output slots and advancing the iterator; returns the final output pointer.
+// @field TreeIterator +0x00 void* container
+// @field TreeIterator +0x04 void* node
+// @field TreeContainer +0x04 void* field_0x04
+// @field TreeNode +0x0C std::string field_0x0C
+void* fn_0059FDE0(void* container, void* node, void* expectedContainer, void* endNode, std::string* out) {
+    struct Iter {
+        void* container; // +0x00
+        void* node;      // +0x04
+    } it{container, node};
+
+    for (;;) {
+        void* cur = it.container;
+        if (cur == nullptr || cur != expectedContainer) {
+            invalid_parameter_noinfo();
+        }
+        if (it.node == endNode) {
+            break;
+        }
+        if (cur == nullptr) {
+            invalid_parameter_noinfo();
+        }
+        if (it.node == *reinterpret_cast<void* const*>(static_cast<uint8_t*>(cur) + 0x04)) {
+            invalid_parameter_noinfo();
+        }
+
+        *out = *reinterpret_cast<std::string*>(static_cast<uint8_t*>(it.node) + 0x0C);
+        ext_00673C20(&it);
+        out = reinterpret_cast<std::string*>(reinterpret_cast<uint8_t*>(out) + 0x1C);
+    }
+    return out;
+}
+} // namespace lift_0059FDE0

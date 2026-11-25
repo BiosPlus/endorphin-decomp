@@ -27963,6 +27963,12 @@
     "summary": "Loads the object pointer held in *arg; if it is null throws, otherwise returns 1 when the float from the child's getter (sub_0059DEB0) is \u003e= 1e-6 (NaN yields 0), else 0.",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x0059FDE0": {
+    "name": "copyStringRangeFromTreeIterator",
+    "signature": "static inline void invalid_parameter_noinfo()",
+    "summary": "Walks a red-black tree range from (container, node) up to endNode, assigning each node's std::string at +0x0C into consecutive 0x1C-byte output slots and advancing the iterator; returns the final output pointer.",
+    "lifted_path": "lifted/leaf/decompiled_590000.cpp"
+  },
   "0x0059FE40": {
     "name": "makeHeapU32Range",
     "signature": "void fn_0059FE40(uint32_t* first, const uint32_t* last)",
