@@ -1292,3 +1292,35 @@ void fn_004519B0() {
     }
 }
 } // namespace lift_004519B0
+
+// [0x0045C0C0]
+namespace lift_0045C0C0 {
+// @name sub_0045C0C0
+// @summary Updates an MFC control/item state based on a boolean flag and dispatches a message/command with computed parameters.
+
+
+void __thiscall ext_006A682C(void* self, uint32_t arg0, uint32_t flag);
+uint32_t __thiscall ext_006A6820(void* self, uint32_t arg0);
+uint32_t __thiscall ext_0045B850(void* self, uint32_t val);
+uint32_t __thiscall ext_0045B720(void* self, uint32_t val);
+uint32_t __thiscall ext_0045BAB0(void* self, uint32_t val);
+uint32_t __thiscall ext_0045B980(void* self, uint32_t val);
+void __thiscall ext_006A6442(void* self, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t a4, uint32_t a5, uint32_t a6, uint32_t a7, uint32_t a8);
+
+void __thiscall fn_0045C0C0(void* self, uint32_t arg0, uint8_t flag) {
+    ext_006A682C(self, arg0, static_cast<uint32_t>(flag));
+    uint32_t val = ext_006A6820(self, arg0);
+
+    uint32_t res1;
+    uint32_t res2;
+    if (flag != 0) {
+        res1 = ext_0045B850(self, val);
+        res2 = ext_0045B720(self, val);
+    } else {
+        res1 = ext_0045BAB0(self, val);
+        res2 = ext_0045B980(self, val);
+    }
+
+    ext_006A6442(self, arg0, 0x22, 0, res2, res1, 0, 0, 0);
+}
+} // namespace lift_0045C0C0

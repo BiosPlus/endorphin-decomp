@@ -1,0 +1,13 @@
+{
+  "va": "0x0045C0C0",
+  "size": 100,
+  "orig_symbol": "sub_0045C0C0",
+  "src_path": "src/leaf/decompiled_450000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_450000.cpp",
+  "name": "sub_0045C0C0",
+  "signature": "void __thiscall fn_0045C0C0(void* self, uint32_t arg0, uint8_t flag)",
+  "summary": "Updates an MFC control/item state based on a boolean flag and dispatches a message/command with computed parameters.",
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T03:55:51Z"
+}
