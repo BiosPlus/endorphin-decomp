@@ -1,0 +1,14 @@
+{
+  "va": "0x0049ABE0",
+  "size": 56,
+  "orig_symbol": "NMData::State::vfunc_35_off_8",
+  "src_path": "src/NMData/State.cpp",
+  "lifted_path": "lifted/NMData/State.cpp",
+  "name": "NMData::State::vfunc_35_off_8",
+  "class": "NMData::State",
+  "signature": "void __thiscall fn_0049ABE0(void* self, void* arg1, void* arg2)",
+  "summary": "Adjustor method on GuiBaseElement (+0x8): dynamic_casts arg2 from GuiControllerClient to StateMachineEditor::StateMachineEditorClient and, if non-null, invokes its vtable slot 10 (+0x28) with (arg1, this - 0x8).",
+  "status": "lifted",
+  "lifted_by": "gemini-4-carbon@low",
+  "lifted_at": "2026-11-25T13:17:24Z"
+}

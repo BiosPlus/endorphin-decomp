@@ -10650,6 +10650,13 @@
     "summary": "Returns byte +0x09 of the pointer stored at +0x12C, or 0 if that pointer is null.",
     "lifted_path": "lifted/leaf/tiny_490000.cpp"
   },
+  "0x0049ABE0": {
+    "name": "NMData::State::vfunc_35_off_8",
+    "class": "NMData::State",
+    "signature": "void __thiscall fn_0049ABE0(void* self, void* arg1, void* arg2)",
+    "summary": "Adjustor method on GuiBaseElement (+0x8): dynamic_casts arg2 from GuiControllerClient to StateMachineEditor::StateMachineEditorClient and, if non-null, invokes its vtable slot 10 (+0x28) with (arg1, this - 0x8).",
+    "lifted_path": "lifted/NMData/State.cpp"
+  },
   "0x0049ACB0": {
     "name": "descriptiveName: allFourFloatsInUnitRange",
     "signature": "bool fn_0049ACB0(const float* p)",

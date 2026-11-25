@@ -168,3 +168,36 @@ void* fn_0049FA70(void* dst) {
     return dst;
 }
 } // namespace lift_0049FA70
+
+// [0x0049ABE0] NMData::State::vfunc_35_off_8 (56 bytes)
+namespace lift_0049ABE0 {
+// Known callee 0x006A6E9E: thunk_MSVCR80___RTDynamicCast (IAT jump thunk forwarding to MSVCR80!__RTDynamicCast.)
+extern void* __cdecl ext_006A6E9E(void* inptr, int32_t vfDelta, const void* srcType, const void* targetType, int32_t isReference);
+// Known callee 0x0046F7D0: initAndReturnObject (Initializes an object via ext_00661620 and returns it.)
+extern void ext_0046F7D0();
+extern void ext_0049D360();
+// Known callee 0x0055DA20: initDwordPair (Stores two stack-passed DWORDs into the object at ECX and returns that object pointer (callee pops 8 bytes).)
+extern void ext_0055DA20();
+
+// Type descriptors referenced by address (GuiControllerClient -> StateMachineEditor::StateMachineEditorClient).
+extern int mem_00A303F4;
+extern int mem_00A30418;
+
+// @name NMData::State::vfunc_35_off_8
+// @class NMData::State
+// @summary Adjustor method on GuiBaseElement (+0x8): dynamic_casts arg2 from GuiControllerClient to StateMachineEditor::StateMachineEditorClient and, if non-null, invokes its vtable slot 10 (+0x28) with (arg1, this - 0x8).
+void __thiscall fn_0049ABE0(void* self, void* arg1, void* arg2) {
+    // Adjacent forward declarations attributed to this span by src/ scanner; not invoked by 0x0049ABE0.
+    (void)&ext_0046F7D0;
+    (void)&ext_0049D360;
+    (void)&ext_0055DA20;
+
+    void* target = ext_006A6E9E(arg2, 0, &mem_00A303F4, &mem_00A30418, 0);
+    if (target != nullptr) {
+        void** vtbl = lift_field<void**>(target, 0);
+        using VFn = void(__thiscall*)(void* obj, void* a, void* b);
+        void* base_self = static_cast<uint8_t*>(self) - 0x8;
+        reinterpret_cast<VFn>(vtbl[0x28 / 4])(target, arg1, base_self);
+    }
+}
+} // namespace lift_0049ABE0
