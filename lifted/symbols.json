@@ -16302,6 +16302,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x0049CB10 (ExprParser::ReadMethodType\u003cNMData::State, bool, isDeactivated\u003e::vfunc_4).",
     "lifted_path": "lifted/templates/ReadMethodType.cpp"
   },
+  "0x004DEF80": {
+    "name": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, bool, isActiveAnimationEnabled, setIsActiveAnimationEnabled\u003e::vfunc_40 (static-guarded link to shared object)",
+    "class": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, bool, {public: void __thiscall NMData::AnimationEventData::setIsActiveAnimationEnabled(bool), 0}\u003e",
+    "signature": "void fn_004DEF80(void* obj)",
+    "summary": "On first use, initializes the shared link object's vtable pointer (guarded by a one-time flag); then stores the address of that shared object into the argument's +0x04 slot.",
+    "lifted_path": "lifted/templates/ReadWriteMethodType.cpp"
+  },
   "0x004DF000": {
     "name": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0\u003e::vfunc_1",
     "class": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, 0\u003e",

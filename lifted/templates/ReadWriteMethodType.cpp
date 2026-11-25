@@ -10428,3 +10428,34 @@ void __stdcall fn_004DFC60(void* out) {
     *reinterpret_cast<DWORD*>(static_cast<unsigned char*>(out) + 4) = 0x00AE644Cu;
 }
 } // namespace lift_004DFC60
+
+// [0x004DEF80]
+namespace lift_004DEF80 {
+extern DWORD mem_00AE6438; // one-time-init guard flag (bit 0)
+extern DWORD mem_00AE6434; // shared link object; first DWORD holds its vtable pointer
+
+// Known callee 0x0067A670: storeArgIntoFirstDword_006721B0 (thiscall, ECX = self; stores the single stack argument into the first DWORD of self; returns that value).
+extern DWORD ext_0067A670(void* self, DWORD value);
+
+// @name ExprParser::ReadWriteMethodType<NMData::AnimationEventData, bool, isActiveAnimationEnabled, setIsActiveAnimationEnabled>::vfunc_40 (static-guarded link to shared object)
+// @class ExprParser::ReadWriteMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isActiveAnimationEnabled(void) const, 0}, bool, {public: void __thiscall NMData::AnimationEventData::setIsActiveAnimationEnabled(bool), 0}>
+// @summary On first use, initializes the shared link object's vtable pointer (guarded by a one-time flag); then stores the address of that shared object into the argument's +0x04 slot.
+// @field ExprParser::ValuePtrType +0x04 void* field_0x04
+void fn_004DEF80(void* obj) {
+    // One-time initialization of the shared link object.
+    if ((mem_00AE6438 & 1u) == 0) {
+        // Set the guard before doing the work so re-entry sees it as done.
+        mem_00AE6438 |= 1u;
+
+        // Original: ecx = &mem_00AE6434; push 0; call ext_0067A670 (stores 0 into its first DWORD).
+        ext_0067A670(&mem_00AE6434, 0u);
+
+        // Install the vtable pointer into the shared object.
+        mem_00AE6434 = 0x0094A2BCu;
+    }
+
+    // Link the argument object's +0x04 slot to the shared object.
+    lift_field<DWORD>(obj, 0x04) =
+        static_cast<DWORD>(reinterpret_cast<uintptr_t>(&mem_00AE6434));
+}
+} // namespace lift_004DEF80
