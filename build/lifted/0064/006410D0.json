@@ -1,0 +1,28 @@
+{
+  "va": "0x006410D0",
+  "size": 115,
+  "orig_symbol": "AdvXMLParser::Document::vfunc_5",
+  "src_path": "src/AdvXMLParser/Document.cpp",
+  "lifted_path": "lifted/AdvXMLParser/Document.cpp",
+  "name": "AdvXMLParser::Document::vfunc_5",
+  "class": "AdvXMLParser::Document",
+  "signature": "extern \"C\" void __thiscall fn_006410D0(void* self, void* ctx)",
+  "summary": "Serializes the XML declaration header using version/encoding strings, appends a newline, and delegates to NodeContainer::vfunc_5.",
+  "fields": [
+    {
+      "class": "AdvXMLParser::Document",
+      "offset": "+0x3C",
+      "type": "std::string",
+      "name": "field_0x3C"
+    },
+    {
+      "class": "AdvXMLParser::Document",
+      "offset": "+0x58",
+      "type": "std::string",
+      "name": "field_0x58"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "gemini-4-hydrogen@low",
+  "lifted_at": "2026-11-25T06:41:40Z"
+}

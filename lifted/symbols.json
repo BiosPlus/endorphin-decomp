@@ -44974,6 +44974,13 @@
     "summary": "Serializes an XML attribute as name=\"value\" into the output context string and recurses into child nodes.",
     "lifted_path": "lifted/AdvXMLParser/Attribute.cpp"
   },
+  "0x006410D0": {
+    "name": "AdvXMLParser::Document::vfunc_5",
+    "class": "AdvXMLParser::Document",
+    "signature": "extern \"C\" void __thiscall fn_006410D0(void* self, void* ctx)",
+    "summary": "Serializes the XML declaration header using version/encoding strings, appends a newline, and delegates to NodeContainer::vfunc_5.",
+    "lifted_path": "lifted/AdvXMLParser/Document.cpp"
+  },
   "0x00641350": {
     "name": "Tree_find_i8",
     "signature": "extern \"C\" uint32_t __thiscall sub_00641350(uint32_t self, uint32_t out_iter, uint32_t key_ptr)",
