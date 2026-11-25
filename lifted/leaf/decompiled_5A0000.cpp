@@ -370,3 +370,18 @@ int __stdcall fn_005AAA00(const void* key) {
     return 0;
 }
 } // namespace lift_005AAA00
+
+// [0x005AAD10]
+namespace lift_005AAD10 {
+// @name ObjectWithChild::SetValueFromStringKey
+// @class ObjectWithChild
+// @summary Looks up a key in a 7-entry string table and stores the resulting index on the object via setValueAndNotifyChild.
+
+extern int __stdcall ext_005AAA00(const void* key);
+extern void ext_005AA830(uint8_t* self, int32_t value);
+
+void fn_005AAD10(uint8_t* self, const void* key) {
+    int32_t index = ext_005AAA00(key);
+    ext_005AA830(self, index);
+}
+} // namespace lift_005AAD10

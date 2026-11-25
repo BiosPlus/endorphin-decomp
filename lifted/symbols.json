@@ -22869,6 +22869,13 @@
     "summary": "Auto-lifted identical-shape clone of 0x005AAAB0 (NMData::SourceRigNode::vfunc_59).",
     "lifted_path": "lifted/NMData/TargetRigNode.cpp"
   },
+  "0x005AAD10": {
+    "name": "ObjectWithChild::SetValueFromStringKey",
+    "class": "ObjectWithChild",
+    "signature": "void fn_005AAD10(uint8_t* self, const void* key)",
+    "summary": "Looks up a key in a 7-entry string table and stores the resulting index on the object via setValueAndNotifyChild.",
+    "lifted_path": "lifted/leaf/decompiled_5A0000.cpp"
+  },
   "0x005AAD30": {
     "name": "NMData::RigRoot::vfunc_21",
     "class": "NMData::RigRoot",
