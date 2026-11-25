@@ -792,3 +792,35 @@ uint32_t fn_007BBB40(uint8_t* self, uint32_t start, uint32_t count, uint32_t arg
     return 1;
 }
 } // namespace lift_007BBB40
+
+// [0x007BBC30]
+namespace lift_007BBC30 {
+// @name Unknown::ForEachRow
+// @class Unknown
+// @summary Steps through rows of ComputeRowByteCount bytes from cursor, calling the callback at +0x1a4 per row; returns 1 if all rows were consumed with the callback returning 0, else 0.
+// @field Unknown +0x1a4 void* field_0x1a4 (callback: uint32_t(void* self, uint32_t cursor, uint32_t rowBytes, uint32_t arg))
+
+extern uint32_t ext_007AF200(const void* self);
+
+typedef uint32_t (*RowCallback)(void* self, uint32_t cursor, uint32_t rowBytes, uint32_t arg);
+
+uint32_t fn_007BBC30(void* self, uint32_t cursor, uint32_t rows, uint32_t arg) {
+    const uint32_t rowBytes = ext_007AF200(self);
+    if (rows == 0) {
+        return 1;
+    }
+
+    const uintptr_t cbAddr = static_cast<uintptr_t>(lift_field<uint32_t>(self, 0x1a4));
+    const RowCallback callback = reinterpret_cast<RowCallback>(cbAddr);
+
+    do {
+        if (callback(self, cursor, rowBytes, arg) != 0) {
+            break;
+        }
+        cursor += rowBytes;
+        rows -= rowBytes;
+    } while (rows != 0);
+
+    return rows == 0 ? 1u : 0u;
+}
+} // namespace lift_007BBC30

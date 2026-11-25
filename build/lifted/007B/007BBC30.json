@@ -1,0 +1,22 @@
+{
+  "va": "0x007BBC30",
+  "size": 70,
+  "orig_symbol": "sub_007BBC30",
+  "src_path": "src/leaf/decompiled_7B0000.cpp",
+  "lifted_path": "lifted/leaf/decompiled_7B0000.cpp",
+  "name": "Unknown::ForEachRow",
+  "class": "Unknown",
+  "signature": "uint32_t fn_007BBC30(void* self, uint32_t cursor, uint32_t rows, uint32_t arg)",
+  "summary": "Steps through rows of ComputeRowByteCount bytes from cursor, calling the callback at +0x1a4 per row; returns 1 if all rows were consumed with the callback returning 0, else 0.",
+  "fields": [
+    {
+      "class": "Unknown",
+      "offset": "+0x1A4",
+      "type": "void* field_0x1a4 (callback: uint32_t(void* self, uint32_t cursor, uint32_t rowBytes, uint32_t",
+      "name": "arg))"
+    }
+  ],
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T01:26:25Z"
+}
