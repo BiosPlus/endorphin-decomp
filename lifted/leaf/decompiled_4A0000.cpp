@@ -890,3 +890,50 @@ int fn_004AC060(void* self, uintptr_t* a5) {
                         value, value);
 }
 } // namespace lift_004AC060
+
+// [0x004A7440]
+namespace lift_004A7440 {
+// @name Unknown::findStringKeyPair_004A7440
+// @class Unknown
+// @summary Looks up a string key in the tree and writes (holder, node-or-head) pair to the out pointer.
+// @field Unknown +0x04 DWORD field_0x04
+
+// Lifted callee: tree lookup returning the last left-branch node visited (or the holder).
+extern uint8_t* ext_004A73F0(uint8_t* holder, const void* key);
+
+// Import slot for _invalid_parameter_noinfo (called through a pointer).
+extern void (*mem_00925134)(void);
+
+// Import slot for the MSVCP80 std::string less-than operator: lhs < rhs.
+extern bool (*mem_00924EF4)(const void* lhs, const void* rhs);
+
+static inline DWORD toDword(const void* p) {
+    return static_cast<DWORD>(reinterpret_cast<uintptr_t>(p));
+}
+
+// self  : holder (passed in ecx)
+// out   : hidden return buffer receiving two DWORDs
+// key   : const std::string& to look up
+// Returns the out pointer (eax), matching the original stdcall-style return.
+DWORD* Unknown_findStringKeyPair_004A7440(uint8_t* self, DWORD* out, const void* key) {
+    uint8_t* node = ext_004A73F0(self, key);
+
+    if (self == nullptr) {
+        mem_00925134();
+    }
+
+    DWORD head = lift_field<DWORD>(self, 0x04);
+    DWORD nodeVal = toDword(node);
+
+    // Use the head sentinel when the lookup landed on it, or when the key
+    // compares less than the node's string key at +0x0C.
+    bool useHead = (nodeVal == head);
+    if (!useHead) {
+        useHead = mem_00924EF4(key, node + 0x0C);
+    }
+
+    out[0] = toDword(self);
+    out[1] = useHead ? head : nodeVal;
+    return out;
+}
+} // namespace lift_004A7440
