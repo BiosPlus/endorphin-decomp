@@ -519,3 +519,20 @@ float fn_00661A30(void* self) {
 }
 } // namespace lift_0046C110
 } // namespace lift_00661A30
+
+// [0x006658B0]
+namespace lift_006658B0 {
+// @name fn_006658B0 (dword at +0x24 nonzero test)
+// @summary Returns 1 if the dword at this+0x24 is nonzero, otherwise 0 (thiscall, this in ECX).
+// @field field_0x24 is accessed via a raw offset because the owning class is unknown.
+
+static inline std::uint32_t fn_006658B0_read_u32(const void* self, std::uintptr_t off) {
+    return *reinterpret_cast<const std::uint32_t*>(
+        reinterpret_cast<const std::uint8_t*>(self) + off);
+}
+
+std::uint32_t fn_006658B0(const void* self) {
+    std::uint32_t value = fn_006658B0_read_u32(self, 0x24);
+    return value != 0u ? 1u : 0u;
+}
+} // namespace lift_006658B0

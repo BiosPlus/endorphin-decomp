@@ -1,0 +1,13 @@
+{
+  "va": "0x006658B0",
+  "size": 9,
+  "orig_symbol": "sub_006658B0",
+  "src_path": "src/leaf/tiny_660000.cpp",
+  "lifted_path": "lifted/leaf/tiny_660000.cpp",
+  "name": "fn_006658B0 (dword at +0x24 nonzero test)",
+  "signature": "static inline std::uint32_t fn_006658B0_read_u32(const void* self, std::uintptr_t off)",
+  "summary": "Returns 1 if the dword at this+0x24 is nonzero, otherwise 0 (thiscall, this in ECX).",
+  "status": "lifted",
+  "lifted_by": "claude-haiku-5.5@low",
+  "lifted_at": "2026-11-25T07:15:55Z"
+}
